@@ -1,27 +1,24 @@
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
-import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/ml_services/smart_reply_service.dart';
 import 'package:vowl/core/utils/widgets/smart_reply_chip.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
-
-import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_header.dart';
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_exchange_stage.dart';
+import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_header.dart';
+import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
+import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
+import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
+import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 
 class DialogueRoleplayScreen extends StatefulWidget {
   final int level;
@@ -38,18 +35,26 @@ class DialogueRoleplayScreen extends StatefulWidget {
 }
 
 class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
-    with SingleTickerProviderStateMixin {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+    with
+        SingleTickerProviderStateMixin,
+        GameScreenMixin<DialogueRoleplayScreen>,
+        SpeakingGameScreenMixin<DialogueRoleplayScreen> {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => context.tr(
+        'speaking_games.dialogue_expert',
+        fallback: 'DIALOGUE EXPERT!',
+      );
 
   final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
   Timer? _ttsTimer;
+  Timer? _autoPlayTimer;
+  Timer? _scrollTimer;
 
   late AnimationController _synapticController;
   final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
@@ -62,35 +67,74 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
   @override
   void initState() {
     super.initState();
-    context.read<SpeakingBloc>().add(
-      FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initGameLifecycle();
+    initSpeakingGame();
 
-    _synapticController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 3))
-          ..addListener(() {
-            _timeVal.value = _synapticController.value;
-          });
+    _synapticController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 3),
+    )..addListener(() {
+        _timeVal.value = _synapticController.value;
+      });
     _synapticController.repeat();
+
+    final initialBlocState = context.read<SpeakingBloc>().state;
+    if (initialBlocState is SpeakingLoaded &&
+        !initialBlocState.answerStatus.isAnswered) {
+      if (initialBlocState.currentIndex == 0) {
+        di.sl<SmartReplyService>().clearConversation();
+      }
+      if (VowlMotion.lowAnimationModeOverride.value) {
+        _triggerAutoPlay(initialBlocState.currentQuest);
+      } else {
+        _autoPlayTimer = Timer(const Duration(milliseconds: 300), () {
+          if (mounted) _triggerAutoPlay(initialBlocState.currentQuest);
+        });
+      }
+    }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final mediaQuery = MediaQuery.maybeOf(context);
+    final reduceMotion = (mediaQuery?.disableAnimations ?? false) ||
+        VowlMotion.lowAnimationModeOverride.value;
+    if (reduceMotion) {
+      _synapticController.stop();
+      _timeVal.value = 0.5;
+    } else if (!_synapticController.isAnimating) {
+      _synapticController.repeat();
+    }
   }
 
   @override
   void dispose() {
+    _autoPlayTimer?.cancel();
+    _ttsTimer?.cancel();
+    _scrollTimer?.cancel();
     _synapticController.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
     _timeVal.dispose();
     _smartReplies.dispose();
     _chosenReply.dispose();
     _scrollController.dispose();
     _ttsFinished.dispose();
-    _ttsTimer?.cancel();
+    disposeSpeakingGame();
     super.dispose();
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 100), () {
+    _scrollTimer?.cancel();
+    _scrollTimer = null;
+    if (VowlMotion.lowAnimationModeOverride.value) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && _scrollController.hasClients) {
+          _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+        }
+      });
+      return;
+    }
+    _scrollTimer = Timer(const Duration(milliseconds: 100), () {
       if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
@@ -103,11 +147,10 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
 
   void _triggerAutoPlay(SpeakingQuest quest) async {
     if (quest.partnerDialogue != null) {
-      _soundService.playTts(quest.partnerDialogue!);
+      soundService.playTts(quest.partnerDialogue!);
 
       // Fetch AI Smart Replies based on the NPC's dialogue
       final smartReplyService = di.sl<SmartReplyService>();
-      // smartReplyService.clearConversation();
       smartReplyService.addMessage(quest.partnerDialogue!, isLocalUser: false);
 
       final suggestions = await smartReplyService.getSuggestions();
@@ -136,12 +179,17 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
 
         _smartReplies.value = finalReplies;
         _ttsTimer?.cancel();
-        _ttsTimer = Timer(const Duration(seconds: 2), () {
-          if (mounted) {
-            _ttsFinished.value = true;
-            _scrollToBottom();
-          }
-        });
+        if (VowlMotion.lowAnimationModeOverride.value) {
+          _ttsFinished.value = true;
+          _scrollToBottom();
+        } else {
+          _ttsTimer = Timer(const Duration(seconds: 2), () {
+            if (mounted) {
+              _ttsFinished.value = true;
+              _scrollToBottom();
+            }
+          });
+        }
       }
     } else {
       _ttsFinished.value = true;
@@ -149,51 +197,34 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
+  void _submitVerbalEvaluation(bool nailedIt, SpeakingQuest quest) {
+    if (isAnsweredNotifier.value) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    final responseText = _chosenReply.value.isNotEmpty
+        ? _chosenReply.value
+        : (_acceptedSynonyms.isNotEmpty
+            ? _acceptedSynonyms.first
+            : (quest.sentence ?? "Yes"));
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
-
-      // Add a default or chosen message to history if correct
-      final responseText = _chosenReply.value.isNotEmpty
-          ? _chosenReply.value
-          : (_acceptedSynonyms.isNotEmpty ? _acceptedSynonyms.first : "Yes");
       di.sl<SmartReplyService>().addMessage(responseText, isLocalUser: true);
-
-      context.read<SpeakingBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        final currentState = context.read<SpeakingBloc>().state;
-        final actualQuestion =
-            (currentState is SpeakingLoaded &&
-                currentState.currentQuestOrNull != null)
-            ? (currentState.currentQuestOrNull!.partnerDialogue ?? 'Roleplay')
-            : 'Roleplay';
-
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: actualQuestion,
-          userAnswer: '[Failed Dialogue]',
-          correctAnswer: _chosenReply.value.isNotEmpty
-              ? _chosenReply.value
-              : (_acceptedSynonyms.isNotEmpty ? _acceptedSynonyms.first : ''),
-          level: widget.level,
-        );
-      }
-
-      context.read<SpeakingBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: quest,
+        userAnswer: '[Failed Dialogue]',
+      );
     }
+  }
+
+  @override
+  void onQuestionReset() {
+    _smartReplies.value = [];
+    _chosenReply.value = "";
+    _ttsFinished.value = false;
+    _ttsTimer?.cancel();
+    _autoPlayTimer?.cancel();
+    _scrollTimer?.cancel();
   }
 
   @override
@@ -203,43 +234,27 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     final mediaQuery = MediaQuery.of(context);
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
+      listenWhen: speakingListenWhen,
       listener: (context, state) {
+        onSpeakingStateChanged(context, state);
         if (state is SpeakingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered.value)) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
+          if (state.currentIndex == 0) {
+            di.sl<SmartReplyService>().clearConversation();
+          }
+          if (!state.answerStatus.isAnswered) {
             _smartReplies.value = [];
             _chosenReply.value = "";
             _ttsFinished.value = false;
             _ttsTimer?.cancel();
-            if (state.currentIndex == 0) {
-              di.sl<SmartReplyService>().clearConversation();
+            _autoPlayTimer?.cancel();
+            if (VowlMotion.lowAnimationModeOverride.value) {
+              _triggerAutoPlay(state.currentQuest);
+            } else {
+              _autoPlayTimer = Timer(const Duration(milliseconds: 300), () {
+                if (mounted) _triggerAutoPlay(state.currentQuest);
+              });
             }
-            Future.delayed(const Duration(milliseconds: 300), () {
-              if (mounted) _triggerAutoPlay(state.currentQuest);
-            });
-          } else if (state.answerStatus == AnswerStatus.incorrect) {
-            _isCorrect.value = false;
-            _isAnswered.value = true; // Always show feedback card on incorrect
           }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is SpeakingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'speaking_games.dialogue_expert',
-              fallback: 'DIALOGUE EXPERT!',
-            ),
-            enableDoubleUp: true,
-          );
         }
       },
       builder: (context, state) {
@@ -251,13 +266,13 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
 
         return MediaQuery(
           data: mediaQuery.copyWith(
-            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.5),
+            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _isAnswered,
-              _isCorrect,
-              _showConfetti,
+              isAnsweredNotifier,
+              isCorrectNotifier,
+              showConfettiNotifier,
               _timeVal,
               _smartReplies,
               _chosenReply,
@@ -267,14 +282,14 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
               final expectedText = _chosenReply.value.isNotEmpty
                   ? _chosenReply.value
                   : (_acceptedSynonyms.isNotEmpty
-                        ? _acceptedSynonyms.first
-                        : "");
+                      ? _acceptedSynonyms.first
+                      : "");
 
               return SpeakingBaseLayout(
                 gameType: widget.gameType,
                 level: widget.level,
-                isAnswered: _isAnswered.value,
-                isCorrect: _isCorrect.value,
+                isAnswered: isAnsweredNotifier.value,
+                isCorrect: isCorrectNotifier.value,
                 isFinalFailure: state is SpeakingLoaded
                     ? state.isFinalFailure
                     : false,
@@ -306,41 +321,51 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     DialogueRoleplayHeader(
+                                      key: const Key(
+                                        'dialogue_roleplay_header',
+                                      ),
                                       primaryColor: theme.primaryColor,
                                       instruction:
                                           InstructionHelper.getInstruction(
-                                            quest,
-                                          ),
+                                        quest,
+                                      ),
                                     ),
                                     SizedBox(height: 24.h),
                                     DialogueRoleplayExchangeStage(
+                                      key: const Key(
+                                        'dialogue_roleplay_exchange_stage',
+                                      ),
                                       quest: quest,
                                       primaryColor: theme.primaryColor,
                                       isDark: isDark,
                                       timeVal: _timeVal.value,
-                                      isAnswered: _isAnswered.value,
-                                      isCorrect: _isCorrect.value ?? false,
+                                      isAnswered: isAnsweredNotifier.value,
+                                      isCorrect:
+                                          isCorrectNotifier.value ?? false,
                                       userDisplayAnswer:
                                           _chosenReply.value.isNotEmpty
-                                          ? _chosenReply.value
-                                          : context.tr(
-                                              'speaking_games.pick_a_reply',
-                                              fallback:
-                                                  'Pick a response to speak!',
-                                            ),
+                                              ? _chosenReply.value
+                                              : context.tr(
+                                                  'speaking_games.pick_a_reply',
+                                                  fallback:
+                                                      'Pick a response to speak!',
+                                                ),
                                     ),
                                   ],
                                 ),
                               ),
                             ),
                             if (_smartReplies.value.isNotEmpty &&
-                                !_isAnswered.value)
+                                !isAnsweredNotifier.value)
                               SliverToBoxAdapter(
                                 child: Padding(
                                   padding: EdgeInsets.only(bottom: 16.h),
                                   child: SizedBox(
                                     height: 54.h,
                                     child: ListView.builder(
+                                      key: const Key(
+                                        'dialogue_roleplay_smart_replies_list',
+                                      ),
                                       scrollDirection: Axis.horizontal,
                                       padding: EdgeInsets.symmetric(
                                         horizontal: 20.w,
@@ -351,6 +376,9 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                         final reply =
                                             _smartReplies.value[index];
                                         return SmartReplyChip(
+                                          key: Key(
+                                            'dialogue_roleplay_smart_reply_$index',
+                                          ),
                                           text: reply,
                                           isPremium: true,
                                           onTap: () {
@@ -362,7 +390,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                   ),
                                 ),
                               ),
-                            if (!_isAnswered.value)
+                            if (!isAnsweredNotifier.value)
                               SliverToBoxAdapter(
                                 child: AnimatedOpacity(
                                   opacity: _ttsFinished.value ? 1.0 : 0.4,
@@ -377,6 +405,9 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                         }.toList();
 
                                         return SpeakToConfirmOverlay(
+                                          key: const Key(
+                                            'dialogue_roleplay_speak_confirm_overlay',
+                                          ),
                                           expectedText: expectedText,
                                           acceptedSynonyms: currentSynonyms,
                                           primaryColor: theme.primaryColor,
@@ -387,9 +418,15 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                           subtitle:
                                               'Say the selected option aloud',
                                           onConfirmed: () =>
-                                              _submitVerbalEvaluation(true),
+                                              _submitVerbalEvaluation(
+                                                true,
+                                                quest,
+                                              ),
                                           onSkipped: () =>
-                                              _submitVerbalEvaluation(false),
+                                              _submitVerbalEvaluation(
+                                                false,
+                                                quest,
+                                              ),
                                         );
                                       },
                                     ),

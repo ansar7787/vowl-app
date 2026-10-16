@@ -29,14 +29,18 @@ class DialogueRoleplayHeader extends StatelessWidget {
             color: primaryColor,
           ),
           SizedBox(width: 8.w),
-          Text(
-            instruction.toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.bold,
-              color: primaryColor,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              instruction.toUpperCase(),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.bold,
+                color: primaryColor,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],
