@@ -1,5 +1,6 @@
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
+import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -57,6 +58,34 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   final ValueNotifier<int?> _activeShardIndex = ValueNotifier(null);
   BoxConstraints? _lastConstraints;
   bool _insideHapticZone = false;
+  Timer? _scrollTimer;
+  Timer? _hintTimer;
+
+  void _ensureShardNotifiers(int count) {
+    while (_shardOffsets.length < count) {
+      _shardOffsets.add(ValueNotifier(Offset.zero));
+    }
+    while (_isWarping.length < count) {
+      _isWarping.add(ValueNotifier(false));
+    }
+    while (_shardTrails.length < count) {
+      _shardTrails.add(ValueNotifier([]));
+    }
+  }
+
+  void _resetShardNotifiers() {
+    _activeShardIndex.value = null;
+    _insideHapticZone = false;
+    for (var n in _shardOffsets) {
+      n.value = Offset.zero;
+    }
+    for (var n in _isWarping) {
+      n.value = false;
+    }
+    for (var n in _shardTrails) {
+      n.value = [];
+    }
+  }
 
   @override
   void initState() {
@@ -66,6 +95,8 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
+    _hintTimer?.cancel();
     for (var n in _shardOffsets) {
       n.dispose();
     }
@@ -186,8 +217,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
   void _scrollToBottom() {
     if (_scrollController.hasClients) {
-      Future.delayed(const Duration(milliseconds: 300), () {
-        if (_scrollController.hasClients) {
+      _scrollTimer?.cancel();
+      _scrollTimer = Timer(const Duration(milliseconds: 300), () {
+        if (mounted && _scrollController.hasClients) {
           _scrollController.animateTo(
             _scrollController.position.maxScrollExtent,
             duration: const Duration(milliseconds: 600),
@@ -252,7 +284,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
   @override
   void onQuestionReset() {
-    _activeShardIndex.value = null;
+    _scrollTimer?.cancel();
+    _hintTimer?.cancel();
+    _resetShardNotifiers();
   }
 
   @override
@@ -275,6 +309,10 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
         final quest = (state is VocabularyLoaded)
             ? state.currentQuest
             : _lastQuest;
+
+        if (quest != null) {
+          _ensureShardNotifiers(quest.options?.length ?? 0);
+        }
 
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -315,7 +353,8 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                         ) *
                         -0.2;
 
-                    Future.delayed(1.seconds, () {
+                    _hintTimer?.cancel();
+                    _hintTimer = Timer(1.seconds, () {
                       if (mounted && !isAnsweredNotifier.value) {
                         _shardOffsets[i].value = Offset.zero;
                       }
@@ -348,32 +387,36 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                             : (screenSize.height * 0.6));
                         final isCompact = safeHeight < 580;
 
-                        return Stack(
-                          children: [
-                            RawScrollbar(
-                              controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(
-                                alpha: 0.5,
-                              ),
-                              radius: Radius.circular(8.r),
-                              thickness: 4.w,
-                              crossAxisMargin: 2.w,
-                              mainAxisMargin: 2.h,
-                              interactive: true,
-                              child: CustomScrollView(
-                                controller: _scrollController,
-                                physics: const BouncingScrollPhysics(),
-                                slivers: [
-                                  SliverToBoxAdapter(
-                                    child: Column(
-                                      children: [
-                                        IgnorePointer(
-                                          ignoring:
-                                              isFirstStagePassedNotifier.value,
-                                          child: SizedBox(
-                                            width: safeWidth,
-                                            height: safeHeight,
-                                            child: Stack(
+                        return ValueListenableBuilder<bool>(
+                          valueListenable: isFirstStagePassedNotifier,
+                          builder: (context, isFirstStagePassed, _) {
+                            return Stack(
+                              children: [
+                                RawScrollbar(
+                                  controller: _scrollController,
+                                  thumbColor: theme.primaryColor.withValues(
+                                    alpha: 0.5,
+                                  ),
+                                  radius: Radius.circular(8.r),
+                                  thickness: 4.w,
+                                  crossAxisMargin: 2.w,
+                                  mainAxisMargin: 2.h,
+                                  interactive: true,
+                                  child: CustomScrollView(
+                                    controller: _scrollController,
+                                    physics: isFirstStagePassed
+                                        ? const BouncingScrollPhysics()
+                                        : const NeverScrollableScrollPhysics(),
+                                    slivers: [
+                                      SliverToBoxAdapter(
+                                        child: Column(
+                                          children: [
+                                            IgnorePointer(
+                                              ignoring: isFirstStagePassed,
+                                              child: SizedBox(
+                                                width: safeWidth,
+                                                height: safeHeight,
+                                                child: Stack(
                                               alignment: Alignment.center,
                                               clipBehavior: Clip.none,
                                               children: [
@@ -530,18 +573,20 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                                   top: isCompact ? 2.h : 10.h,
                                                   left: 16.w,
                                                   right: 16.w,
-                                                  child: SynonymInstructionHeader(
-                                                    color: theme.primaryColor,
-                                                    instruction:
-                                                        quest
-                                                            .instruction
-                                                            .isNotEmpty
-                                                        ? InstructionHelper.getInstruction(
-                                                            quest,
-                                                          )
-                                                        : "WARP THE SYNONYM SHARD",
-                                                    hint: quest.hint,
-                                                    isCompact: isCompact,
+                                                  child: IgnorePointer(
+                                                    child: SynonymInstructionHeader(
+                                                      color: theme.primaryColor,
+                                                      instruction:
+                                                          quest
+                                                              .instruction
+                                                              .isNotEmpty
+                                                          ? InstructionHelper.getInstruction(
+                                                              quest,
+                                                            )
+                                                          : "WARP THE SYNONYM SHARD",
+                                                      hint: quest.hint,
+                                                      isCompact: isCompact,
+                                                    ),
                                                   ),
                                                 ),
                                               ],
@@ -615,8 +660,10 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                           ],
                         );
                       },
-                    ),
-            );
+                    );
+                  },
+                ),
+        );
           },
         );
       },
