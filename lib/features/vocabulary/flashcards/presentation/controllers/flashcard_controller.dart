@@ -1,11 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/sound_service.dart';
 
 class FlashcardController extends ChangeNotifier {
   final HapticService _hapticService;
-  final SoundService _soundService;
   final void Function(bool) onSubmitAnswer;
 
   final ValueNotifier<Offset> dragOffset = ValueNotifier(Offset.zero);
@@ -22,10 +20,8 @@ class FlashcardController extends ChangeNotifier {
 
   FlashcardController({
     required HapticService hapticService,
-    required SoundService soundService,
     required this.onSubmitAnswer,
-  }) : _hapticService = hapticService,
-       _soundService = soundService;
+  }) : _hapticService = hapticService;
 
   void reset(bool retry) {
     _hintTimer?.cancel();

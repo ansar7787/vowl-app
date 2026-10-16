@@ -7,7 +7,6 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_game_body.dart';
@@ -60,7 +59,6 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
     }
     _controller = FlashcardController(
       hapticService: di.sl<HapticService>(),
-      soundService: di.sl<SoundService>(),
       onSubmitAnswer: (mastered) {
         if (mastered) {
           submitCorrectAnswer();
