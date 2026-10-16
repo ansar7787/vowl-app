@@ -16,7 +16,9 @@ class ContextCluesCaseHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    final reduceMotion =
+        MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+    final headerContent = Container(
       padding: EdgeInsets.symmetric(vertical: 10.h),
       child: Column(
         children: [
@@ -60,6 +62,8 @@ class ContextCluesCaseHeader extends StatelessWidget {
           ),
         ],
       ),
-    ).animate().fadeIn().slideY(begin: -0.2);
+    );
+    if (reduceMotion) return headerContent;
+    return headerContent.animate().fadeIn().slideY(begin: -0.2);
   }
 }
