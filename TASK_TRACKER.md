@@ -316,7 +316,8 @@ Every game test suite MUST rigorously satisfy:
 
 - [x] **10.1** `vocabulary_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [x] **10.2** `vocabulary_quest_model_test.dart` (Model Test) — ✅ `[DONE - 5/5 tests passing]`
-- [ ] **10.3** `academic_word_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **10.3** `academic_word_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 78/78 tests passing]`
+  - Validates full 2-stage interaction: Phase 1 thrust (tap & drag shards to thesis paper slot, drag boundary limits, proximity snapping), Phase 2 collocations & `TypeToConfirmOverlay` keyboard typing, final answer submission, `GameFeedbackCard` educational tips & pedagogical rule explanations, hint and audio lifecycle management, and small-screen/compact/tablet responsive layouts without overflow.
 - [ ] **10.4** `antonym_search_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **10.5** `collocations_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **10.6** `contextual_usage_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
