@@ -123,7 +123,6 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
       _pendingSubmit.value = true;
       _scrollToBottom();
     } else {
-      hapticService.error();
       final userAns = points
           .map((p) => _blueprintSlots.value[p] ?? '')
           .join('; ');
@@ -138,7 +137,6 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
     if (state is! WritingLoaded) return;
 
     if (!nailedTyping) {
-      hapticService.error();
       submitWrongAnswer(quest: state.currentQuest);
       return;
     }
@@ -254,8 +252,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
           disablePadding: true,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<WritingBloc>().add(const WritingHintUsed()),
+          onHint: () {},
           child: ListenableBuilder(
             listenable: Listenable.merge([
               showConfettiNotifier,
@@ -276,72 +273,73 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                       radius: Radius.circular(8.r),
                       thickness: 4.w,
                       child: CustomScrollView(
+                        key: const Key('essay_drafting_scroll_view'),
                         controller: _scrollController,
                         physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverPadding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             sliver: SliverToBoxAdapter(
-                              child: AbsorbPointer(
-                                absorbing: _pendingSubmit.value && !isAnswered,
-                                child: Column(
-                                  children: [
-                                    SizedBox(height: 16.h),
-                                    EssayDraftingInstruction(
-                                      primaryColor: theme.primaryColor,
-                                      instruction:
-                                          InstructionHelper.getInstruction(
-                                            activeQuest,
-                                          ),
-                                    ),
-                                    SizedBox(height: 24.h),
-
-                                    EssayDraftingTopicBanner(
-                                      topic: activeQuest.essayTopic ?? "",
-                                      thesisStatement:
-                                          activeQuest.thesisStatement,
-                                      color: theme.primaryColor,
-                                      isDark: isDark,
-                                    ),
-                                    SizedBox(height: 8.h),
-
-                                    ..._blueprintSlots.value.keys.map(
-                                      (k) => EssayDraftingHexSlot(
-                                        slotKey: k,
-                                        slotValue: _blueprintSlots.value[k],
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        onSlot: (key, data) =>
-                                            _onSlot(key, data, isAnswered),
-                                        onClearSlot: (key) =>
-                                            _clearSlot(key, isAnswered),
-                                      ),
-                                    ),
-                                    SizedBox(height: 24.h),
-
-                                    EssayDraftingDataStream(
-                                      items: _shuffledOptions.value.isNotEmpty
-                                          ? _shuffledOptions.value
-                                          : options,
-                                      slots: _blueprintSlots.value,
-                                      color: theme.primaryColor,
-                                      isDark: isDark,
-                                      onDragUpdate: _handleAutoScroll,
-                                    ),
-                                    SizedBox(height: 16.h),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          SliverToBoxAdapter(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
+                                  AbsorbPointer(
+                                    absorbing:
+                                        _pendingSubmit.value && !isAnswered,
+                                    child: Column(
+                                      children: [
+                                        SizedBox(height: 16.h),
+                                        EssayDraftingInstruction(
+                                          primaryColor: theme.primaryColor,
+                                          instruction:
+                                              InstructionHelper.getInstruction(
+                                                activeQuest,
+                                              ),
+                                        ),
+                                        SizedBox(height: 24.h),
+
+                                        EssayDraftingTopicBanner(
+                                          topic: activeQuest.essayTopic ?? "",
+                                          thesisStatement:
+                                              activeQuest.thesisStatement,
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                        ),
+                                        SizedBox(height: 8.h),
+
+                                        ..._blueprintSlots.value.keys.map(
+                                          (k) => EssayDraftingHexSlot(
+                                            slotKey: k,
+                                            slotValue: _blueprintSlots.value[k],
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                            onSlot: (key, data) =>
+                                                _onSlot(key, data, isAnswered),
+                                            onClearSlot: (key) =>
+                                                _clearSlot(key, isAnswered),
+                                          ),
+                                        ),
+                                        SizedBox(height: 24.h),
+
+                                        EssayDraftingDataStream(
+                                          items:
+                                              _shuffledOptions.value.isNotEmpty
+                                              ? _shuffledOptions.value
+                                              : options,
+                                          slots: _blueprintSlots.value,
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                          onDragUpdate: _handleAutoScroll,
+                                        ),
+                                        SizedBox(height: 16.h),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 24.h),
                                   if (!isAnswered && !_pendingSubmit.value)
                                     ScaleButton(
+                                      key: const Key(
+                                        'essay_drafting_confirm_button',
+                                      ),
                                       onTap: slotsFilled
                                           ? () => _submitAnswer(
                                               isAnswered,
@@ -415,17 +413,18 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                               : 60.h)
                                         : 160.h,
                                   ),
+                                  SizedBox(
+                                    height:
+                                        MediaQuery.of(context).viewInsets.bottom >
+                                            0
+                                        ? MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom +
+                                              40.h
+                                        : 120.h,
+                                  ),
                                 ],
                               ),
-                            ),
-                          ),
-                          SliverToBoxAdapter(
-                            child: SizedBox(
-                              height:
-                                  MediaQuery.of(context).viewInsets.bottom > 0
-                                  ? MediaQuery.of(context).viewInsets.bottom +
-                                        40.h
-                                  : 120.h,
                             ),
                           ),
                         ],
