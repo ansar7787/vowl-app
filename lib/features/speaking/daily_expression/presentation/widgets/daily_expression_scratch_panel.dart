@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/scratch_painter.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -36,217 +37,260 @@ class DailyExpressionScratchPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(28.r),
-      child: Container(
-        width: 1.sw,
-        constraints: BoxConstraints(minHeight: 190.h),
-        decoration: BoxDecoration(
-          color: isDark ? _LocalPalette.color131326 : Colors.white,
-          borderRadius: BorderRadius.circular(28.r),
-          border: Border.all(color: Colors.white10),
-          boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 15.r)],
-        ),
-        child: ValueListenableBuilder<double>(
-          valueListenable: scratchProgressNotifier,
-          builder: (context, scratchProgress, child) {
-            return Stack(
-              children: [
-                // Underlying Revealed Golden Card (Sets the height of the stack)
-                Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: isDark
-                          ? [
-                              _LocalPalette.color1e1e38,
-                              _LocalPalette.color111124,
-                            ]
-                          : [primaryColor.withValues(alpha: 0.2), Colors.white],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                  ),
-                  padding: EdgeInsets.all(22.r),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "DAILY IDIOM",
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              color: primaryColor,
-                              letterSpacing: 1.5,
-                            ),
-                          ),
-                          ScaleButton(
-                            onTap: onPlayTts,
-                            child: Icon(
-                              Icons.volume_up_rounded,
-                              color: primaryColor,
-                              size: 18.r,
-                            ),
-                          ),
-                        ],
+    final bool reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
+    return Semantics(
+      label: scratchProgressNotifier.value >= 1.0
+          ? 'Daily expression: ${quest.expression ?? "Bite the bullet"}. Meaning: ${quest.meaning ?? ""}'
+          : 'Hidden daily idiom. Swipe or tap to reveal idiom.',
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(28.r),
+        child: Container(
+          key: const Key('daily_expression_scratch_panel'),
+          width: 1.sw,
+          constraints: BoxConstraints(minHeight: 190.h),
+          decoration: BoxDecoration(
+            color: isDark ? _LocalPalette.color131326 : Colors.white,
+            borderRadius: BorderRadius.circular(28.r),
+            border: Border.all(color: Colors.white10),
+            boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 15.r)],
+          ),
+          child: ValueListenableBuilder<double>(
+            valueListenable: scratchProgressNotifier,
+            builder: (context, scratchProgress, child) {
+              return Stack(
+                children: [
+                  // Underlying Revealed Golden Card (Sets the height of the stack)
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: isDark
+                            ? [
+                                _LocalPalette.color1e1e38,
+                                _LocalPalette.color111124,
+                              ]
+                            : [primaryColor.withValues(alpha: 0.2), Colors.white],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
                       ),
-                      SizedBox(height: 20.h),
-                      if (scratchProgress == 1.0)
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10.w,
-                            vertical: 4.h,
-                          ),
-                          margin: EdgeInsets.only(bottom: 8.h),
-                          decoration: BoxDecoration(
-                            color: primaryColor.withValues(alpha: 0.15),
-                            borderRadius: BorderRadius.circular(20.r),
-                            border: Border.all(
-                              color: primaryColor.withValues(alpha: 0.3),
+                    ),
+                    padding: EdgeInsets.all(22.r),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "DAILY IDIOM",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                color: primaryColor,
+                                letterSpacing: 1.5,
+                              ),
                             ),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                    Icons.mic_rounded,
-                                    size: 12.r,
-                                    color: primaryColor,
-                                  )
-                                  .animate(
-                                    onPlay: (c) => c.repeat(reverse: true),
-                                  )
-                                  .scale(
-                                    begin: const Offset(1, 1),
-                                    end: const Offset(1.2, 1.2),
-                                  ),
-                              SizedBox(width: 4.w),
-                              Text(
-                                "SPEAK THIS",
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 9.sp,
-                                  fontWeight: FontWeight.bold,
+                            Semantics(
+                              label: 'Listen to expression pronunciation',
+                              button: true,
+                              child: ScaleButton(
+                                key: const Key('daily_expression_tts_button'),
+                                onTap: onPlayTts,
+                                child: Icon(
+                                  Icons.volume_up_rounded,
                                   color: primaryColor,
-                                  letterSpacing: 1.0,
+                                  size: 18.r,
                                 ),
                               ),
-                            ],
-                          ),
-                        ).animate().fadeIn().slideY(begin: 0.5),
-                      Text(
-                        quest.expression ?? "Bite the bullet",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 26.sp,
-                          fontWeight: FontWeight.w900,
-                          color: primaryColor,
-                          shadows: [
-                            Shadow(
-                              color: primaryColor.withValues(alpha: 0.3),
-                              blurRadius: 10.r,
                             ),
                           ],
                         ),
-                      ),
-                      SizedBox(height: 10.h),
-                      AnimatedOpacity(
-                        opacity: 1.0,
-                        duration: const Duration(milliseconds: 300),
-                        child: Text(
-                          (quest.meaning ?? "Meaning").toUpperCase(),
+                        SizedBox(height: 20.h),
+                        if (scratchProgress == 1.0)
+                          () {
+                            final speakBadge = Container(
+                              key: const Key('daily_expression_speak_badge'),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 10.w,
+                                vertical: 4.h,
+                              ),
+                              margin: EdgeInsets.only(bottom: 8.h),
+                              decoration: BoxDecoration(
+                                color: primaryColor.withValues(alpha: 0.15),
+                                borderRadius: BorderRadius.circular(20.r),
+                                border: Border.all(
+                                  color: primaryColor.withValues(alpha: 0.3),
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  reduceMotion
+                                      ? Icon(
+                                          Icons.mic_rounded,
+                                          size: 12.r,
+                                          color: primaryColor,
+                                        )
+                                      : Icon(
+                                          Icons.mic_rounded,
+                                          size: 12.r,
+                                          color: primaryColor,
+                                        )
+                                          .animate(
+                                            onPlay: (c) =>
+                                                c.repeat(reverse: true),
+                                          )
+                                          .scale(
+                                            begin: const Offset(1, 1),
+                                            end: const Offset(1.2, 1.2),
+                                          ),
+                                  SizedBox(width: 4.w),
+                                  Text(
+                                    "SPEAK THIS",
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 9.sp,
+                                      fontWeight: FontWeight.bold,
+                                      color: primaryColor,
+                                      letterSpacing: 1.0,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                            return reduceMotion
+                                ? speakBadge
+                                : speakBadge
+                                    .animate()
+                                    .fadeIn()
+                                    .slideY(begin: 0.5);
+                          }(),
+                        Text(
+                          quest.expression ?? "Bite the bullet",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.bold,
-                            color: isDark ? Colors.white70 : Colors.black87,
-                            height: 1.3,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 10.h),
-                    ],
-                  ),
-                ),
-
-                // Scratch Foil Overlay
-                if (scratchProgress < 1.0)
-                  Positioned.fill(
-                    child: GestureDetector(
-                      onTap: reduceComplexGestures
-                          ? () => onScratchUpdate(1.0)
-                          : null,
-                      onPanUpdate: reduceComplexGestures
-                          ? null
-                          : (details) {
-                              final double dx = details.delta.dx;
-                              final double dy = details.delta.dy;
-                              final double dist = (dx.abs() + dy.abs()) / 300.0;
-                              onScratchUpdate(dist);
-                            },
-                      child: ValueListenableBuilder<double>(
-                        valueListenable: timeValNotifier,
-                        builder: (context, timeVal, _) {
-                          return CustomPaint(
-                            painter: ScratchPainter(
-                              progress: scratchProgress,
-                              time: timeVal,
-                              primaryColor: primaryColor,
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-
-                // Scratch Instructions Overlay
-                if (scratchProgress == 0.0)
-                  Positioned.fill(
-                    child: IgnorePointer(
-                      child: Container(
-                        color: Colors.black.withValues(alpha: 0.1),
-                        child: Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                    reduceComplexGestures
-                                        ? Icons.touch_app_rounded
-                                        : Icons.swipe_rounded,
-                                    color: Colors.white,
-                                    size: 30.r,
-                                  )
-                                  .animate(onPlay: (c) => c.repeat())
-                                  .shake(hz: 2, curve: Curves.easeInOut)
-                                  .then()
-                                  .fadeOut(),
-                              SizedBox(height: 8.h),
-                              Text(
-                                reduceComplexGestures
-                                    ? "TAP TO REVEAL IDIOM"
-                                    : "SWIPE TO REVEAL IDIOM",
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 10.sp,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 1.0,
-                                ),
+                            fontSize: 26.sp,
+                            fontWeight: FontWeight.w900,
+                            color: primaryColor,
+                            shadows: [
+                              Shadow(
+                                color: primaryColor.withValues(alpha: 0.3),
+                                blurRadius: 10.r,
                               ),
                             ],
                           ),
                         ),
-                      ),
+                        SizedBox(height: 10.h),
+                        AnimatedOpacity(
+                          opacity: 1.0,
+                          duration: const Duration(milliseconds: 300),
+                          child: Text(
+                            (quest.meaning ?? "Meaning").toUpperCase(),
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.bold,
+                              color: isDark ? Colors.white70 : Colors.black87,
+                              height: 1.3,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 10.h),
+                      ],
                     ),
                   ),
-              ],
-            );
-          },
+
+                  // Scratch Foil Overlay
+                  if (scratchProgress < 1.0)
+                    Positioned.fill(
+                      child: GestureDetector(
+                        key: const Key('daily_expression_scratch_foil'),
+                        behavior: HitTestBehavior.opaque,
+                        onTap: () => onScratchUpdate(1.0),
+                        onPanUpdate: reduceComplexGestures
+                            ? null
+                            : (details) {
+                                final double dx = details.delta.dx;
+                                final double dy = details.delta.dy;
+                                final double dist =
+                                    (dx.abs() + dy.abs()) / 300.0;
+                                onScratchUpdate(dist);
+                              },
+                        child: ValueListenableBuilder<double>(
+                          valueListenable: timeValNotifier,
+                          builder: (context, timeVal, _) {
+                            return CustomPaint(
+                              painter: ScratchPainter(
+                                progress: scratchProgress,
+                                time: timeVal,
+                                primaryColor: primaryColor,
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+
+                  // Scratch Instructions Overlay
+                  if (scratchProgress == 0.0)
+                    Positioned.fill(
+                      child: IgnorePointer(
+                        child: Container(
+                          key: const Key('daily_expression_scratch_hint'),
+                          color: Colors.black.withValues(alpha: 0.1),
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                reduceMotion
+                                    ? Icon(
+                                        reduceComplexGestures
+                                            ? Icons.touch_app_rounded
+                                            : Icons.swipe_rounded,
+                                        color: Colors.white,
+                                        size: 30.r,
+                                      )
+                                    : Icon(
+                                        reduceComplexGestures
+                                            ? Icons.touch_app_rounded
+                                            : Icons.swipe_rounded,
+                                        color: Colors.white,
+                                        size: 30.r,
+                                      )
+                                        .animate(onPlay: (c) => c.repeat())
+                                        .shake(
+                                          hz: 2,
+                                          curve: Curves.easeInOut,
+                                        )
+                                        .then()
+                                        .fadeOut(),
+                                SizedBox(height: 8.h),
+                                Text(
+                                  reduceComplexGestures
+                                      ? "TAP TO REVEAL IDIOM"
+                                      : "SWIPE TO REVEAL IDIOM",
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 1.0,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
+              );
+            },
+          ),
         ),
       ),
     );

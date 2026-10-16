@@ -22,6 +22,7 @@ class DailyExpressionUsagePanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: const Key('daily_expression_usage_panel'),
       width: 1.sw,
       padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 16.h),
       decoration: BoxDecoration(
@@ -46,13 +47,16 @@ class DailyExpressionUsagePanel extends StatelessWidget {
                     size: 16.r,
                   ),
                   SizedBox(width: 8.w),
-                  Text(
-                    "ORIGIN / EXPLANATION",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      color: Colors.grey,
-                      letterSpacing: 1.0,
+                  Flexible(
+                    child: Text(
+                      "ORIGIN / EXPLANATION",
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        color: Colors.grey,
+                        letterSpacing: 1.0,
+                      ),
                     ),
                   ),
                 ],
@@ -81,13 +85,16 @@ class DailyExpressionUsagePanel extends StatelessWidget {
                   size: 16.r,
                 ),
                 SizedBox(width: 8.w),
-                Text(
-                  "CONTEXTUAL SAMPLE USAGE",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    color: Colors.grey,
-                    letterSpacing: 1.0,
+                Flexible(
+                  child: Text(
+                    "CONTEXTUAL SAMPLE USAGE",
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      color: Colors.grey,
+                      letterSpacing: 1.0,
+                    ),
                   ),
                 ),
               ],
