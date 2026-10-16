@@ -15,6 +15,7 @@ import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_header.dart';
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_sentence_panel.dart';
@@ -51,6 +52,7 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
 
   final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
   Timer? _ttsTimer;
+  Timer? _autoPlayTimer;
 
   final ScrollController _scrollController = ScrollController();
 
@@ -60,15 +62,48 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
   @override
   void initState() {
     super.initState();
+    initGameLifecycle();
     initSpeakingGame();
+
+    final initialBlocState = context.read<SpeakingBloc>().state;
+    if (initialBlocState is SpeakingLoaded &&
+        !initialBlocState.answerStatus.isAnswered) {
+      if (VowlMotion.lowAnimationModeOverride.value) {
+        _triggerAutoPlay(initialBlocState.currentQuest);
+      } else {
+        _autoPlayTimer = Timer(const Duration(milliseconds: 300), () {
+          if (mounted) _triggerAutoPlay(initialBlocState.currentQuest);
+        });
+      }
+    } else {
+      _ttsFinished.value = true;
+    }
+  }
+
+  void _triggerAutoPlay(SpeakingQuest quest) {
+    final text = (quest.textToSpeak ?? "").replaceAll('*', '').trim();
+    if (text.isNotEmpty) {
+      soundService.playTts(text);
+      _ttsTimer?.cancel();
+      if (VowlMotion.lowAnimationModeOverride.value) {
+        _ttsFinished.value = true;
+      } else {
+        _ttsTimer = Timer(const Duration(seconds: 2), () {
+          if (mounted) _ttsFinished.value = true;
+        });
+      }
+    } else {
+      _ttsFinished.value = true;
+    }
   }
 
   @override
   void dispose() {
+    _autoPlayTimer?.cancel();
+    _ttsTimer?.cancel();
     _bloomProgress.dispose();
     _scrollController.dispose();
     _ttsFinished.dispose();
-    _ttsTimer?.cancel();
     disposeSpeakingGame();
     super.dispose();
   }
@@ -108,15 +143,31 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
     }
   }
 
-  void _extractTargetWord(String text, List<String> synonyms) {
-    _acceptedSyns = synonyms;
+  @visibleForTesting
+  void submitEvaluation(bool nailedIt) => _submitVerbalEvaluation(nailedIt);
+
+  @visibleForTesting
+  ValueNotifier<bool> get ttsFinishedNotifier => _ttsFinished;
+
+  @visibleForTesting
+  ValueNotifier<double> get bloomProgressNotifier => _bloomProgress;
+
+  void _extractTargetWord(String text, List<String> synonyms, String? correctAnswer) {
+    if (synonyms.isNotEmpty) {
+      _acceptedSyns = List<String>.from(synonyms);
+    } else if (correctAnswer != null && correctAnswer.trim().isNotEmpty) {
+      _acceptedSyns = [correctAnswer.trim()];
+    } else {
+      _acceptedSyns = [];
+    }
   }
 
   @override
   void onQuestionReset() {
     _bloomProgress.value = 0.0;
-
     _ttsFinished.value = false;
+    _ttsTimer?.cancel();
+    _autoPlayTimer?.cancel();
   }
 
   @override
@@ -127,17 +178,45 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
       listenWhen: speakingListenWhen,
-      listener: onSpeakingStateChanged,
+      listener: (context, state) {
+        onSpeakingStateChanged(context, state);
+        if (state is SpeakingLoaded && !state.answerStatus.isAnswered) {
+          _ttsFinished.value = false;
+          _ttsTimer?.cancel();
+          _autoPlayTimer?.cancel();
+          if (VowlMotion.lowAnimationModeOverride.value) {
+            _triggerAutoPlay(state.currentQuest);
+          } else {
+            _autoPlayTimer = Timer(const Duration(milliseconds: 300), () {
+              if (mounted) _triggerAutoPlay(state.currentQuest);
+            });
+          }
+        }
+      },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
         final hintUsed = (state is SpeakingLoaded) ? state.hintUsed : false;
 
+        String expectedText = "";
         if (quest != null) {
           _currentQuest = quest;
           _extractTargetWord(
             quest.textToSpeak ?? "",
             quest.acceptedSynonyms ?? [],
+            quest.correctAnswer,
           );
+          if (_acceptedSyns.isNotEmpty) {
+            final correct = quest.correctAnswer;
+            expectedText = (correct != null && _acceptedSyns.contains(correct))
+                ? correct
+                : _acceptedSyns.first;
+          }
+        }
+
+        final reduceMotion = (mediaQuery.disableAnimations) ||
+            VowlMotion.lowAnimationModeOverride.value;
+        if (reduceMotion && !_ttsFinished.value) {
+          _ttsFinished.value = true;
         }
 
         return MediaQuery(
@@ -167,11 +246,13 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
                     : RawScrollbar(
+                        key: const Key('speak_synonym_scrollbar'),
                         controller: _scrollController,
                         thumbColor: theme.primaryColor.withValues(alpha: 0.5),
                         radius: Radius.circular(8.r),
                         thickness: 4.w,
                         child: CustomScrollView(
+                          key: const Key('speak_synonym_scroll_view'),
                           controller: _scrollController,
                           physics: const BouncingScrollPhysics(
                             parent: AlwaysScrollableScrollPhysics(),
@@ -187,12 +268,13 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SpeakSynonymHeader(
+                                      key: const Key('speak_synonym_header'),
                                       primaryColor: theme.primaryColor,
-                                      instruction:
-                                          "Say a different word with the same meaning",
+                                      instruction: quest.instruction,
                                     ),
                                     SizedBox(height: 24.h),
                                     SpeakSynonymSentencePanel(
+                                      key: const Key('speak_synonym_sentence_panel'),
                                       quest: quest,
                                       primaryColor: theme.primaryColor,
                                       isDark: isDark,
@@ -213,6 +295,7 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                     if (hintUsed && quest.hint != null) ...[
                                       SizedBox(height: 16.h),
                                       Container(
+                                        key: const Key('speak_synonym_hint_card'),
                                         padding: EdgeInsets.all(16.r),
                                         decoration: BoxDecoration(
                                           color: theme.primaryColor.withValues(
@@ -232,6 +315,7 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                           children: [
                                             Icon(
                                               Icons.lightbulb_outline,
+                                              key: const Key('speak_synonym_hint_icon'),
                                               color: theme.primaryColor,
                                               size: 20.r,
                                             ),
@@ -239,6 +323,7 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                             Expanded(
                                               child: Text(
                                                 quest.hint!,
+                                                key: const Key('speak_synonym_hint_text'),
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
                                                   fontSize: 14.sp,
@@ -268,7 +353,10 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                     child: AbsorbPointer(
                                       absorbing: !_ttsFinished.value,
                                       child: SpeakToConfirmOverlay(
-                                        expectedText: _acceptedSyns.join(', '),
+                                        key: const Key(
+                                          'speak_synonym_speak_to_confirm_overlay',
+                                        ),
+                                        expectedText: expectedText,
                                         acceptedSynonyms: _acceptedSyns,
                                         primaryColor: theme.primaryColor,
                                         isPositioned: false,
