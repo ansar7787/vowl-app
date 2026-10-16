@@ -22,7 +22,7 @@ class SituationalResponseFormalityGauge extends StatelessWidget {
       return const SizedBox();
     }
 
-    final double score = (quest.formalityScore ?? 50) / 100.0;
+    final double score = ((quest.formalityScore ?? 50) / 100.0).clamp(0.0, 1.0);
 
     return Container(
       width: double.infinity,
@@ -91,36 +91,42 @@ class SituationalResponseFormalityGauge extends StatelessWidget {
             ],
           ),
           SizedBox(height: 4.h),
-          Stack(
-            children: [
-              Container(
-                height: 6.h,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: primaryColor.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(3.r),
-                ),
-              ),
-              AnimatedContainer(
-                duration: const Duration(milliseconds: 800),
-                curve: Curves.easeOutCubic,
-                height: 6.h,
-                width: (1.sw - 64.w) * score,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Colors.blueAccent, primaryColor],
-                  ),
-                  borderRadius: BorderRadius.circular(3.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: primaryColor.withValues(alpha: 0.4),
-                      blurRadius: 4,
-                      spreadRadius: 1,
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final trackWidth = constraints.maxWidth;
+              final fillWidth = trackWidth * score;
+              return Stack(
+                children: [
+                  Container(
+                    height: 6.h,
+                    width: trackWidth,
+                    decoration: BoxDecoration(
+                      color: primaryColor.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(3.r),
                     ),
-                  ],
-                ),
-              ),
-            ],
+                  ),
+                  AnimatedContainer(
+                    duration: const Duration(milliseconds: 800),
+                    curve: Curves.easeOutCubic,
+                    height: 6.h,
+                    width: fillWidth,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Colors.blueAccent, primaryColor],
+                      ),
+                      borderRadius: BorderRadius.circular(3.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: primaryColor.withValues(alpha: 0.4),
+                          blurRadius: 4,
+                          spreadRadius: 1,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              );
+            },
           ),
         ],
       ),

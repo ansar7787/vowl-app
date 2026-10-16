@@ -54,27 +54,52 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
   final ValueNotifier<int> _shuffledCorrectIndex = ValueNotifier(-1);
 
+  void _initializeOptions(RoleplayQuest quest) {
+    if (_shuffledOptions.value.isNotEmpty) return;
+
+    final List<String> originalOptions =
+        (quest.options != null && quest.options!.isNotEmpty)
+            ? quest.options!
+            : (quest.correctAnswer != null && quest.correctAnswer!.isNotEmpty)
+                ? [quest.correctAnswer!]
+                : <String>[];
+
+    if (originalOptions.isNotEmpty) {
+      int originalCorrect = 0;
+      if (quest.correctAnswerIndex != null &&
+          quest.correctAnswerIndex! >= 0 &&
+          quest.correctAnswerIndex! < originalOptions.length) {
+        originalCorrect = quest.correctAnswerIndex!;
+      } else if (quest.correctAnswer != null) {
+        final idx = originalOptions.indexOf(quest.correctAnswer!);
+        if (idx >= 0) originalCorrect = idx;
+      }
+
+      final List<int> indices = List.generate(
+        originalOptions.length,
+        (i) => i,
+      )..shuffle();
+
+      _shuffledOptions.value =
+          indices.map((i) => originalOptions[i]).toList();
+      _shuffledCorrectIndex.value = indices.indexOf(originalCorrect);
+    }
+  }
+
   @override
   void onRoleplayStateChanged(BuildContext context, RoleplayState state) {
     super.onRoleplayStateChanged(context, state);
     if (state is RoleplayLoaded) {
-      final quest = state.currentQuest;
-      if (_shuffledOptions.value.isEmpty &&
-          quest.options != null &&
-          quest.options!.isNotEmpty) {
-        final List<String> originalOptions = quest.options!;
-        final originalCorrect = quest.correctAnswerIndex ?? 0;
+      _initializeOptions(state.currentQuest);
+    }
+  }
 
-        final List<int> indices = List.generate(
-          originalOptions.length,
-          (i) => i,
-        )..shuffle();
-
-        _shuffledOptions.value = indices
-            .map((i) => originalOptions[i])
-            .toList();
-        _shuffledCorrectIndex.value = indices.indexOf(originalCorrect);
-      }
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final state = context.read<RoleplayBloc>().state;
+    if (state is RoleplayLoaded) {
+      _initializeOptions(state.currentQuest);
     }
   }
 
@@ -110,7 +135,16 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   }
 
   void _triggerAutoPlay(RoleplayQuest quest) {
-    soundService.playTts(quest.scene ?? "");
+    hapticService.selection();
+    final rawText = quest.textToSpeak ?? quest.scene ?? quest.prompt ?? '';
+    if (rawText.startsWith('http://') || rawText.startsWith('https://')) {
+      soundService.playUrl(rawText);
+      return;
+    }
+    final text = rawText.replaceAll(RegExp(r'\[pause:\d+\]'), ' ').trim();
+    if (text.isNotEmpty) {
+      soundService.playTts(text);
+    }
   }
 
   void _scrollToBottom() {
@@ -166,6 +200,9 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
     _selectedOrbIndex.value = null;
     _shuffledOptions.value = [];
     _shuffledCorrectIndex.value = -1;
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0);
+    }
   }
 
   @override
@@ -210,197 +247,167 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        return RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverToBoxAdapter(child: SizedBox(height: 24.h)),
-                              SliverToBoxAdapter(
-                                child: IgnorePointer(
-                                  ignoring:
-                                      isFirstStagePassedNotifier.value ||
-                                      isAnsweredNotifier.value,
-                                  child: ConstrainedBox(
-                                    constraints: BoxConstraints(
-                                      minHeight: constraints.maxHeight,
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        LayoutBuilder(
-                                          builder: (context, innerConstraints) {
-                                            final isCompact =
-                                                innerConstraints.maxHeight <
-                                                580;
-                                            return Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                horizontal: 16.w,
-                                              ),
-                                              child: Column(
-                                                children: [
-                                                  SituationalResponseInstruction(
-                                                    primaryColor:
-                                                        theme.primaryColor,
-                                                    instruction:
-                                                        InstructionHelper.getInstruction(
-                                                          quest,
-                                                        ),
-                                                    isDark: isDark,
-                                                  ),
-                                                  SizedBox(
-                                                    height: isCompact
-                                                        ? 10.h
-                                                        : 16.h,
-                                                  ),
-                                                  SituationalResponseSceneDisplay(
-                                                    quest: quest,
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                    onListen: () =>
-                                                        _triggerAutoPlay(quest),
-                                                  ),
-                                                  SizedBox(
-                                                    height: isCompact
-                                                        ? 16.h
-                                                        : 24.h,
-                                                  ),
-                                                  SituationalResponseOptionsPanel(
-                                                    options:
-                                                        _shuffledOptions.value,
-                                                    correctIndex:
-                                                        _shuffledCorrectIndex
-                                                            .value,
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                    isAnswered:
-                                                        isAnsweredNotifier
-                                                            .value ||
-                                                        isFirstStagePassedNotifier
-                                                            .value,
-                                                    isCorrect:
-                                                        isCorrectNotifier.value,
-                                                    selectedIndex:
-                                                        _selectedOrbIndex.value,
-                                                    onOptionTap: (idx, corr) =>
-                                                        _onOptionTap(
-                                                          idx,
-                                                          corr,
-                                                          quest,
-                                                        ),
-                                                  ),
-                                                  SizedBox(
-                                                    height: isCompact
-                                                        ? 12.h
-                                                        : 20.h,
-                                                  ),
+                            final isCompact = constraints.maxHeight < 620;
+                            final hintUsed =
+                                (state is RoleplayLoaded) ? state.hintUsed : false;
 
-                                                  // Explanations Card when answered
-                                                  AnimatedCrossFade(
-                                                    firstChild:
-                                                        const SizedBox(),
-                                                    secondChild:
-                                                        SituationalResponseExplanationPanel(
-                                                          quest: quest,
-                                                          isDark: isDark,
-                                                          isCorrect:
-                                                              isCorrectNotifier
-                                                                  .value,
-                                                        ),
-                                                    crossFadeState:
-                                                        isAnsweredNotifier.value
-                                                        ? CrossFadeState
-                                                              .showSecond
-                                                        : CrossFadeState
-                                                              .showFirst,
-                                                    duration: const Duration(
-                                                      milliseconds: 450,
-                                                    ),
-                                                  ),
-                                                  if (isFirstStagePassedNotifier
-                                                      .value) ...[
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 12.h
-                                                          : 20.h,
-                                                    ),
-                                                    SituationalResponseFormalityGauge(
-                                                      quest: quest,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      isDark: isDark,
-                                                    ),
-                                                  ],
-                                                  SizedBox(
-                                                    height: isCompact
-                                                        ? 20.h
-                                                        : 40.h,
-                                                  ),
-                                                ],
-                                              ),
-                                            );
-                                          },
+                            return RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(height: isCompact ? 12.h : 20.h),
+                                  ),
+                                  SliverToBoxAdapter(
+                                    child: IgnorePointer(
+                                      ignoring:
+                                          isFirstStagePassedNotifier.value ||
+                                          isAnsweredNotifier.value,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 16.w,
                                         ),
+                                        child: Column(
+                                          children: [
+                                            SituationalResponseInstruction(
+                                              primaryColor: theme.primaryColor,
+                                              instruction:
+                                                  quest.instruction.isNotEmpty
+                                                      ? InstructionHelper.getInstruction(
+                                                          quest,
+                                                        )
+                                                      : null,
+                                              isDark: isDark,
+                                              hint: quest.hint,
+                                              hintUsed: hintUsed,
+                                            ),
+                                        SizedBox(
+                                          height: isCompact ? 10.h : 16.h,
+                                        ),
+                                        SituationalResponseSceneDisplay(
+                                          quest: quest,
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                          onListen: () =>
+                                              _triggerAutoPlay(quest),
+                                        ),
+                                        SizedBox(
+                                          height: isCompact ? 14.h : 20.h,
+                                        ),
+                                        SituationalResponseOptionsPanel(
+                                          options: _shuffledOptions.value,
+                                          correctIndex:
+                                              _shuffledCorrectIndex.value,
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                          isAnswered:
+                                              isAnsweredNotifier.value ||
+                                              isFirstStagePassedNotifier.value,
+                                          isCorrect: isCorrectNotifier.value,
+                                          selectedIndex:
+                                              _selectedOrbIndex.value,
+                                          onOptionTap: (idx, corr) =>
+                                              _onOptionTap(idx, corr, quest),
+                                        ),
+                                        SizedBox(
+                                          height: isCompact ? 10.h : 16.h,
+                                        ),
+
+                                        // Explanations Card when answered
+                                        AnimatedCrossFade(
+                                          firstChild: const SizedBox(),
+                                          secondChild:
+                                              SituationalResponseExplanationPanel(
+                                                quest: quest,
+                                                isDark: isDark,
+                                                isCorrect:
+                                                    isCorrectNotifier.value,
+                                              ),
+                                          crossFadeState:
+                                              isAnsweredNotifier.value
+                                                  ? CrossFadeState.showSecond
+                                                  : CrossFadeState.showFirst,
+                                          duration: const Duration(
+                                            milliseconds: 450,
+                                          ),
+                                        ),
+                                        if (isFirstStagePassedNotifier.value ||
+                                            isAnsweredNotifier.value) ...[
+                                          SizedBox(
+                                            height: isCompact ? 10.h : 16.h,
+                                          ),
+                                          SituationalResponseFormalityGauge(
+                                            quest: quest,
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                          ),
+                                        ],
                                       ],
                                     ),
                                   ),
                                 ),
                               ),
 
-                              SliverToBoxAdapter(
-                                child: SizedBox(
-                                  height:
-                                      (isAnsweredNotifier.value ||
-                                          isFirstStagePassedNotifier.value)
-                                      ? 180.h
-                                      : 60.h,
-                                ),
-                              ),
-
                               if (isFirstStagePassedNotifier.value &&
                                   !isAnsweredNotifier.value &&
-                                  _selectedOrbIndex.value != null)
+                                  _selectedOrbIndex.value != null &&
+                                  _selectedOrbIndex.value! <
+                                      _shuffledOptions.value.length) ...[
                                 SliverToBoxAdapter(
-                                  child: Column(
-                                    children: [
-                                      Builder(
-                                        builder: (context) {
-                                          final expectedText = _shuffledOptions
-                                              .value[_selectedOrbIndex.value!];
-                                          return SpeakToConfirmOverlay(
-                                            expectedText: expectedText,
-                                            displayText: expectedText,
-                                            title: 'SPEAK TO RESPOND',
-                                            subtitle: 'Say your response aloud',
-                                            displayFontSize: 16.sp,
-                                            displayFontWeight: FontWeight.w500,
-                                            displayTextAlign: TextAlign.center,
-                                            primaryColor: theme.primaryColor,
-                                            isPositioned: false,
-                                            onConfirmed: () {
-                                              context.read<RoleplayBloc>().add(
-                                                const RoleplaySpeakConfirmed(5),
-                                              );
+                                  child: SizedBox(height: 16.h),
+                                ),
+                                SliverToBoxAdapter(
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                    ),
+                                    child: Builder(
+                                      builder: (context) {
+                                        final expectedText = _shuffledOptions
+                                            .value[_selectedOrbIndex.value!];
+                                        return SpeakToConfirmOverlay(
+                                          expectedText: expectedText,
+                                          displayText: expectedText,
+                                          title: 'SPEAK TO RESPOND',
+                                          subtitle: 'Say your response aloud',
+                                          displayFontSize: 16.sp,
+                                          displayFontWeight: FontWeight.w500,
+                                          displayTextAlign: TextAlign.center,
+                                          primaryColor: theme.primaryColor,
+                                          isPositioned: false,
+                                          onConfirmed: () {
+                                            context.read<RoleplayBloc>().add(
+                                              const RoleplaySpeakConfirmed(5),
+                                            );
+                                            _submitVerbalEvaluation(
+                                              true,
+                                              quest,
+                                            );
+                                          },
+                                          onSkipped: () =>
                                               _submitVerbalEvaluation(
-                                                true,
+                                                false,
                                                 quest,
-                                              );
-                                            },
-                                            onSkipped: () =>
-                                                _submitVerbalEvaluation(
-                                                  false,
-                                                  quest,
-                                                ),
-                                          );
-                                        },
-                                      ),
-                                      SizedBox(height: 60.h),
-                                    ],
+                                              ),
+                                        );
+                                      },
+                                    ),
                                   ),
                                 ),
+                              ],
+
+                              SliverToBoxAdapter(
+                                child: SizedBox(
+                                  height: isAnsweredNotifier.value
+                                      ? 160.h
+                                      : 40.h,
+                                ),
+                              ),
                             ],
                           ),
                         );

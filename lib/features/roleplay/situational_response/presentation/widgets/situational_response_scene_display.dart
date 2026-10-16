@@ -112,7 +112,7 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
     final Color glowColor = color.withValues(alpha: 0.25);
 
     return Container(
-      width: 1.sw,
+      width: double.infinity,
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
@@ -143,54 +143,62 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
             child: Column(
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
                       Icons.theater_comedy_rounded,
                       color: color,
-                      size: 24.r,
+                      size: 22.r,
                     ),
                     SizedBox(width: 8.w),
-                    Text(
-                      "ACTIVE SCENARIO",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.bold,
-                        color: color,
-                        letterSpacing: 1.5,
+                    Expanded(
+                      child: Text(
+                        "ACTIVE SCENARIO",
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                          color: color,
+                          letterSpacing: 1.5,
+                        ),
                       ),
                     ),
-                    const Spacer(),
-                    ScaleButton(
-                      onTap: onListen,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 10.w,
-                          vertical: 4.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: color.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(12.r),
-                        ),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.volume_up_rounded,
-                              size: 16.r,
-                              color: color,
-                            ),
-                            SizedBox(width: 4.w),
-                            Text(
-                              "LISTEN",
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.bold,
+                    SizedBox(width: 8.w),
+                    Semantics(
+                      button: true,
+                      label: 'Listen to scenario',
+                      excludeSemantics: true,
+                      child: ScaleButton(
+                        onTap: onListen,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 10.w,
+                            vertical: 4.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: color.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(12.r),
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.volume_up_rounded,
+                                size: 16.r,
                                 color: color,
                               ),
-                            ),
-                          ],
+                              SizedBox(width: 4.w),
+                              Text(
+                                "LISTEN",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: color,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
