@@ -19,6 +19,7 @@ class ContextualUsageRegisterMeter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     String levelText = "";
     if (registerLevel != null) {
@@ -31,7 +32,7 @@ class ContextualUsageRegisterMeter extends StatelessWidget {
       }
     }
 
-    return Container(
+    final container = Container(
           width: double.infinity,
           padding: EdgeInsets.all(16.r),
           decoration: BoxDecoration(
@@ -207,7 +208,10 @@ class ContextualUsageRegisterMeter extends StatelessWidget {
               ],
             ],
           ),
-        )
+        );
+
+    if (reduceMotion) return container;
+    return container
         .animate()
         .fadeIn(duration: 400.ms)
         .slideY(begin: 0.2, end: 0, curve: Curves.easeOut);

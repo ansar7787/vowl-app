@@ -23,91 +23,119 @@ class ContextualUsageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+
+    Widget cardContent = AnimatedContainer(
+      duration: reduceMotion ? Duration.zero : const Duration(milliseconds: 600),
+      curve: Curves.elasticOut,
+      width: 0.88.sw,
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 40.h),
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.surface,
+        borderRadius: BorderRadius.circular(4.r),
+        border: Border.all(
+          color: color.withValues(alpha: isAnswered ? 0.6 : 0.2),
+          width: 1.5,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: color.withValues(alpha: isAnswered ? 0.3 : 0.05),
+            blurRadius: isAnswered ? 40 : 15,
+            offset: Offset(0, isAnswered ? 15 : 5),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            height: 1,
+            width: double.infinity,
+            color: color.withValues(alpha: 0.1),
+          ),
+          SizedBox(height: 20.h),
+          reduceMotion
+              ? Text.rich(
+                  TextSpan(
+                    children: _buildSentenceSpans(
+                      question,
+                      color,
+                      isDark,
+                    ),
+                  ),
+                  textAlign: TextAlign.center,
+                )
+              : Text.rich(
+                  TextSpan(
+                    children: _buildSentenceSpans(
+                      question,
+                      color,
+                      isDark,
+                    ),
+                  ),
+                  textAlign: TextAlign.center,
+                )
+                .animate(target: isAnswered ? 1 : 0)
+                .shimmer(
+                  duration: 1.5.seconds,
+                  color: color.withValues(alpha: 0.2),
+                )
+                .scale(
+                  begin: const Offset(1, 1),
+                  end: const Offset(1.05, 1.05),
+                ),
+          SizedBox(height: 20.h),
+          Container(
+            height: 1,
+            width: double.infinity,
+            color: color.withValues(alpha: 0.1),
+          ),
+        ],
+      ),
+    );
+
+    if (!reduceMotion) {
+      cardContent = cardContent
+          .animate(target: isAnswered ? 1 : 0)
+          .custom(
+            builder: (context, value, child) => Transform(
+              transform: Matrix4.identity()
+                ..setEntry(3, 2, 0.001)
+                ..rotateX((1 - value) * 0.2),
+              alignment: Alignment.topCenter,
+              child: child,
+            ),
+          );
+    }
+
     return Center(
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Container(
-                width: 0.8.sw,
-                height: 180.h,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: color.withValues(alpha: 0.05),
-                ),
-              )
-              .animate(target: isAnswered ? 1 : 0)
-              .scale(
-                begin: const Offset(0.5, 0.5),
-                end: const Offset(1.5, 1.5),
-                curve: Curves.easeOutCubic,
-              ),
-          AnimatedContainer(
-                duration: const Duration(milliseconds: 600),
-                curve: Curves.elasticOut,
-                width: 0.88.sw,
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 40.h),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surface,
-                  borderRadius: BorderRadius.circular(4.r),
-                  border: Border.all(
-                    color: color.withValues(alpha: isAnswered ? 0.6 : 0.2),
-                    width: 1.5,
+          reduceMotion
+              ? Container(
+                  width: 0.8.sw,
+                  height: 180.h,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: color.withValues(alpha: 0.05),
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: color.withValues(alpha: isAnswered ? 0.3 : 0.05),
-                      blurRadius: isAnswered ? 40 : 15,
-                      offset: Offset(0, isAnswered ? 15 : 5),
-                    ),
-                  ],
+                )
+              : Container(
+                  width: 0.8.sw,
+                  height: 180.h,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: color.withValues(alpha: 0.05),
+                  ),
+                )
+                .animate(target: isAnswered ? 1 : 0)
+                .scale(
+                  begin: const Offset(0.5, 0.5),
+                  end: const Offset(1.5, 1.5),
+                  curve: Curves.easeOutCubic,
                 ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Container(
-                      height: 1,
-                      width: double.infinity,
-                      color: color.withValues(alpha: 0.1),
-                    ),
-                    SizedBox(height: 20.h),
-                    Text.rich(
-                          TextSpan(
-                            children: _buildSentenceSpans(
-                              question,
-                              color,
-                              isDark,
-                            ),
-                          ),
-                          textAlign: TextAlign.center,
-                        )
-                        .animate(target: isAnswered ? 1 : 0)
-                        .shimmer(
-                          duration: 1.5.seconds,
-                          color: color.withValues(alpha: 0.2),
-                        )
-                        .scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(1.05, 1.05),
-                        ),
-                    SizedBox(height: 20.h),
-                    Container(
-                      height: 1,
-                      width: double.infinity,
-                      color: color.withValues(alpha: 0.1),
-                    ),
-                  ],
-                ),
-              )
-              .animate(target: isAnswered ? 1 : 0)
-              .custom(
-                builder: (context, value, child) => Transform(
-                  transform: Matrix4.identity()
-                    ..setEntry(3, 2, 0.001)
-                    ..rotateX((1 - value) * 0.2),
-                  alignment: Alignment.topCenter,
-                  child: child,
-                ),
-              ),
+          cardContent,
         ],
       ),
     );
