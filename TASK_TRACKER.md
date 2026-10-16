@@ -4,10 +4,10 @@
 > **Executive Summary & Brutal Audit**:
 >
 > - **Total Dart Files in `lib/`**: **1,068 files**
-> - **Total Test Files in `test/`**: **78 files**
-> - **Total Passing Tests**: **896+ Tests Passing (100% Green)**
-> - **Completed Test Suites**: **65 files** (Auth 12, Games Hub 5, Kids 22, Reading 13, Accent 13, Core & Daily)
-> - **Remaining Game Screens & Hubs to Test**: **75+ screens** across remaining game categories, hubs, and shell routes.
+> - **Total Test Files in `test/`**: **160 files**
+> - **Total Passing Tests**: **2,500+ Tests Passing (100% Green on completed suites)**
+> - **Completed Test Suites**: **145 files** (Auth 12, Games Hub 5, Kids 35, Reading 13, Accent 13, Grammar 21, Listening 5, Roleplay 12, Speaking 10, Vocab 3, Writing 1, Elite 1, Daily & Micro 11, Settings & Daily Words 2, Core 7)
+> - **Remaining Game Screens & Hubs to Test / Harden**: **30 screens/suites** across pending categories and shell routes.
 
 ---
 
@@ -46,20 +46,20 @@ Every game test suite MUST rigorously satisfy:
 | --- | -------------------- | :-------------------: | :---------: | :---------: | :--------------: |
 | **1** | **Authentication & Accounts** | 12 | 12 | 0 | 🟢 100% Complete (62 tests) |
 | **2** | **Games Hub & Routing** | 5 | 5 | 0 | 🟢 100% Complete (58 tests) |
-| **3** | **Kids Zone** | 35 | 35 | 0 | 🟢 100% Complete (35/35 items done) |
+| **3** | **Kids Zone** | 35 | 35 | 0 | 🟢 100% Complete (35/35 items done, 354 tests) |
 | **4** | **Reading Category** | 13 | 13 | 0 | 🟢 100% Complete (163 tests) |
 | **5** | **Accent Training** | 13 | 13 | 0 | 🟢 100% Complete (195 tests) |
-| **6** | **Grammar Category** | 20 | 2 | 18 | ⚠️ BLoC + Model only (19 games remaining) |
-| **7** | **Listening Category** | 11 | 2 | 9 | ⚠️ BLoC + Model only (10 games remaining) |
-| **8** | **Roleplay Category** | 11 | 2 | 9 | ⚠️ BLoC + Model only (10 games remaining) |
-| **9** | **Speaking Category** | 11 | 1 | 10 | ⚠️ BLoC only (10 games remaining) |
-| **10** | **Vocabulary Category** | 13 | 2 | 11 | ⚠️ BLoC + Model only (12 games remaining) |
-| **11** | **Writing Category** | 12 | 1 | 11 | ⚠️ BLoC only (11 games remaining) |
-| **12** | **Elite Mastery** | 5 | 1 | 4 | ⚠️ BLoC only (4 games remaining) |
-| **13** | **Daily Challenges & Micro-Games** | 11 | 11 | 0 | 🟢 100% Complete |
-| **14** | **Home, Shell & Navigation** | 6 | 0 | 6 | 🔴 0% Tested (6 screens) |
-| **15** | **Profile, Progress & Trophies** | 7 | 0 | 7 | 🔴 0% Tested (7 screens) |
-| **16** | **Leaderboard, Settings, Paywall, Splash** | 8 | 1 | 7 | ⚠️ 1 Sheet tested (7 items remaining) |
+| **6** | **Grammar Category** | 21 | 21 | 0 | 🟢 100% Complete (395 tests) |
+| **7** | **Listening Category** | 12 | 5 | 7 | 🟡 5 Suites Passing (95 tests; 7 pending timer fixes) |
+| **8** | **Roleplay Category** | 12 | 12 | 0 | 🟢 100% Complete (468 tests) |
+| **9** | **Speaking Category** | 11 | 10 | 1 | 🟡 10 Suites Passing (614 tests; 1 pending synonym fix) |
+| **10** | **Vocabulary Category** | 14 | 3 | 11 | 🟡 3 Suites Passing (87 tests; 11 remaining) |
+| **11** | **Writing Category** | 12 | 1 | 11 | ⚠️ BLoC only (4 tests; 11 games remaining) |
+| **12** | **Elite Mastery** | 5 | 1 | 4 | ⚠️ BLoC only (4 tests; 4 games remaining) |
+| **13** | **Daily Challenges & Micro-Games** | 11 | 11 | 0 | 🟢 100% Complete (57 tests) |
+| **14** | **Home, Shell & Navigation** | 6 | 0 | 6 | 🔴 0% Tested (6 screens remaining) |
+| **15** | **Profile, Progress & Trophies** | 7 | 0 | 7 | 🔴 0% Tested (7 screens remaining) |
+| **16** | **Leaderboard, Settings, Paywall, Splash** | 8 | 2 | 6 | 🟡 2 Items Completed (21 tests; 6 items remaining) |
 
 ---
 
@@ -223,7 +223,7 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 6: GRAMMAR QUESTS CATEGORY (19 GAMES)
+### SECTION 6: GRAMMAR QUESTS CATEGORY (100% COMPLETE)
 
 - [x] **6.1** `grammar_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [x] **6.2** `grammar_quest_model_test.dart` (Model Test) — ✅ `[DONE - 5/5 tests passing]`
@@ -253,12 +253,18 @@ Every game test suite MUST rigorously satisfy:
   - Validates initial quest rendering with instruction, grammar rule box, context card, sticker slots, words, and draggable stickers, grammar rule box hiding when grammarRule is null, custom instruction rendering in PunctuationMasteryInstruction, accepting sticker into slot and updating slot display, tapping filled slot removing sticker, submitting incorrect stickers marking wrong answer and dispatching SubmitAnswer(false), submitting correct stickers entering pending typing mode and revealing TypeToConfirmOverlay, Phase 2 typing correct target sentence in TypeToConfirmOverlay dispatching SubmitAnswer(true), Phase 2 skipping confirm dispatching SubmitAnswer(false), lockout preventing multiple answers and hiding CHECK ANSWER button when already answered, GameShimmerLoading rendering when state is not loaded, level 1 briefing dialog display and dismissal, reduced motion support overriding infinite rotating animation and shimmer/scale animations, compact mobile layout (360x640) zero overflow, tablet viewport (800x1280) zero overflow, dark mode rendering with dark theme styling, and light mode rendering cleanly.
 - [x] **6.15** `question_formatter_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 21/21 tests passing]`
   - Validates initial quest rendering with instruction badge, grammar rule box, 3D inverter context card, mechanical crank with energy ring, options appearing upon crank threshold, auto-spin bolt unlocking options, dragging gesture on crank, selecting correct option transitioning to TypeToConfirmOverlay (Phase 2), Phase 2 text input and confirm submitting correct answer, Phase 2 skipping submitting answer, selecting wrong option dispatching SubmitAnswer(false), answered lockout preventing re-taps, GameShimmerLoading rendering when state is GrammarInitial, level 1 briefing dialog display and dismissal, compact mobile layout (360x640) zero overflow, dark and light theme rendering cleanly, and reduced motion compliance.
-- [ ] **6.16** `relative_clauses_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **6.17** `sentence_correction_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **6.18** `subject_verb_agreement_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **6.19** `tense_mastery_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **6.20** `voice_swap_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **6.21** `word_reorder_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **6.16** `relative_clauses_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 22/22 tests passing]`
+  - Validates initial quest rendering with instruction, context card, relative clause pronoun options, tapping incorrect pronoun submitting wrong answer to GrammarBloc, tapping correct pronoun transitioning to Phase 2 TypeToConfirmOverlay with haptics/audio, Phase 2 keyboard typing confirmation and submission, Phase 2 skip fallback dispatching wrong answer, interaction lockout preventing secondary taps once answered, hint button dispatching GrammarHintUsed, level 1 briefing dialog display and dismissal, compact mobile layout (320x568) zero overflow, tablet viewport (768x1024) zero overflow, dark mode contrast, and reduced motion compliance.
+- [x] **6.17** `sentence_correction_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 24/24 tests passing]`
+  - Validates initial quest rendering with instruction, flawed sentence context, error highlight target, correction options rack, tapping incorrect correction submitting wrong answer, tapping correct correction transitioning to Phase 2 TypeToConfirmOverlay, Phase 2 typing reconstructed sentence and confirming, Phase 2 skip fallback, lockout preventing double submission, hint button dispatching GrammarHintUsed, level 1 briefing dialog display and dismissal, compact mobile layout (320x568) zero overflow, tablet viewport (768x1024) zero overflow, and dark mode contrast.
+- [x] **6.18** `subject_verb_agreement_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 24/24 tests passing]`
+  - Validates initial quest rendering with sentence prompt, subject-verb agreement indicator chip, singular/plural agreement options, tapping incorrect verb form submitting wrong answer, tapping correct verb form triggering success audio/haptic and opening TypeToConfirmOverlay (Phase 2), Phase 2 full sentence typing confirmation, Phase 2 skip fallback, interaction lockout once answered, hint button dispatching GrammarHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x568) and tablet (768x1024) zero-overflow layout safety.
+- [x] **6.19** `tense_mastery_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 26/26 tests passing]`
+  - Validates initial quest rendering with timeline track, tense indicator chip, context card with blank, tense conjugation options, tapping incorrect tense option submitting wrong answer, tapping correct option opening Phase 2 TypeToConfirmOverlay with haptic feedback, Phase 2 full sentence typing confirmation, Phase 2 skip fallback, interaction lockout once answered, hint button dispatching GrammarHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x568) and tablet (768x1024) zero-overflow layout safety, and reduced motion compliance.
+- [x] **6.20** `voice_swap_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 26/26 tests passing]`
+  - Validates initial quest rendering with active/passive transformation context card, voice mode indicator chip, transformed sentence options, tapping incorrect transformed voice option submitting wrong answer, tapping correct voice option opening Phase 2 TypeToConfirmOverlay, Phase 2 typing target sentence confirmation, Phase 2 skip fallback, interaction lockout once answered, hint button dispatching GrammarHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x568) and tablet (768x1024) zero-overflow layout safety, and reduced motion compliance.
+- [x] **6.21** `word_reorder_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 26/26 tests passing]`
+  - Validates initial quest rendering with instruction, target structure container, floating shuffled word tiles, assembly card, check sentence button disabled until all words assembled, tapping word tile moving it to assembly card, tapping assembled word restoring it to floating area, submitting incorrect order triggering error feedback, submitting correct order opening Phase 2 TypeToConfirmOverlay, Phase 2 typing confirmation, Phase 2 skip fallback, hint button highlighting next expected tile and dispatching GrammarHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x568) and tablet (768x1024) zero-overflow layout safety, and reduced motion compliance.
 
 ---
 
@@ -267,10 +273,13 @@ Every game test suite MUST rigorously satisfy:
 - [x] **7.1** `listening_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [x] **7.2** `listening_quest_model_test.dart` (Model Test) — ✅ `[DONE - 5/5 tests passing]`
 - [ ] **7.3** `ambient_id_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **7.4** `audio_fill_blanks_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **7.4** `audio_fill_blanks_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 29/29 tests passing]`
+  - Validates audio playback trigger, listening blanks passage, word option tiles, tapping incorrect word submitting wrong answer, tapping correct word filling blank and completing question, textToSpeak fallback for TTS audio, answered state revealing full text on canvas, continue button dispatching NextQuestion, hint button dispatching ListeningHintUsed, level 1 briefing dialog display & dismissal, dark theme mode styling, and small screen 320dp zero-overflow layout safety.
 - [ ] **7.5** `audio_multiple_choice_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **7.6** `audio_sentence_order_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **7.7** `audio_true_false_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **7.6** `audio_sentence_order_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 27/27 tests passing]`
+  - Validates audio listening prompt, chronological word/phrase segment tiles, drag & tap reordering mechanics, submitting incorrect segment order triggering error audio and SubmitAnswer(false), arranging correct segment order triggering success audio and SubmitAnswer(true), custom emoji rendering in oscilloscope, continue button dispatching NextQuestion, hint button dispatching ListeningHintUsed, level 1 briefing dialog display & dismissal, dark mode styling, and small screen 320dp zero-overflow layout safety.
+- [x] **7.7** `audio_true_false_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 30/30 tests passing]`
+  - Validates audio stream player, statement prompt card, TRUE and FALSE verdict buttons with accessibility semantics, tapping wrong verdict submitting wrong answer, tapping correct verdict submitting correct answer, question transition clearing selected verdict and restarting timer without crashes, continue button dispatching NextQuestion, hint button dispatching ListeningHintUsed, level 1 briefing dialog display & dismissal, dark theme mode styling, and small screen 320dp zero-overflow layout safety.
 - [ ] **7.8** `detail_spotlight_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **7.9** `emotion_recognition_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **7.10** `fast_speech_decoder_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
@@ -279,36 +288,55 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 8: ROLEPLAY CATEGORY (10 GAMES)
+### SECTION 8: ROLEPLAY CATEGORY (100% COMPLETE)
 
 - [x] **8.1** `roleplay_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [x] **8.2** `roleplay_quest_model_test.dart` (Model Test) — ✅ `[DONE - 5/5 tests passing]`
-- [ ] **8.3** `branching_dialogue_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **8.4** `conflict_resolver_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **8.5** `elevator_pitch_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **8.6** `emergency_hub_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **8.7** `gourmet_order_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **8.8** `job_interview_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **8.9** `medical_consult_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **8.10** `situational_response_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **8.11** `social_spark_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **8.12** `travel_desk_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **8.3** `branching_dialogue_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 35/35 tests passing]`
+  - Validates dialogue scenario prompt, partner avatar and speech bubble, branching choice cards, selecting wrong branching response submitting wrong answer, selecting optimal branching path revealing SpeakToConfirmOverlay (Phase 2), verbal evaluation confirmation ("Nailed It") dispatching bonus coins and SubmitAnswer(true), skip fallback ("Needs Work") dispatching SubmitAnswer(false), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching RoleplayHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x568) and tablet (768x1024) zero-overflow layout safety.
+- [x] **8.4** `conflict_resolver_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 35/35 tests passing]`
+  - Validates tense interpersonal scenario, conflict de-escalation meter, response options with diplomacy ratings, selecting escalating option submitting wrong answer, selecting diplomatic resolution path revealing SpeakToConfirmOverlay (Phase 2), verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching RoleplayHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x568) and tablet (768x1024) zero-overflow layout safety.
+- [x] **8.5** `elevator_pitch_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 36/36 tests passing]`
+  - Validates elevator timer, audience persona card, hook/body/call-to-action pitch segment options, selecting weak pitch option submitting wrong answer, selecting compelling pitch sequence revealing SpeakToConfirmOverlay (Phase 2), verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching RoleplayHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x568) and tablet (768x1024) zero-overflow layout safety.
+- [x] **8.6** `emergency_hub_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 39/39 tests passing]`
+  - Validates emergency dispatcher scenario, urgent incoming call prompt, priority response chips, selecting incorrect emergency response submitting wrong answer, selecting protocol-compliant response revealing SpeakToConfirmOverlay (Phase 2), verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching RoleplayHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x568) and tablet (768x1024) zero-overflow layout safety.
+- [x] **8.7** `gourmet_order_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 49/49 tests passing]`
+  - Validates restaurant dining scene, waiter interaction prompt, polite ordering phrase options, selecting incorrect ordering phrasing submitting wrong answer, selecting natural polite dining request revealing SpeakToConfirmOverlay (Phase 2), verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching RoleplayHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x568) and tablet (768x1024) zero-overflow layout safety.
+- [x] **8.8** `job_interview_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 50/50 tests passing]`
+  - Validates professional interviewer prompt, behavioral interview question, STAR-method answer options, selecting weak interview response submitting wrong answer, selecting professional STAR response revealing SpeakToConfirmOverlay (Phase 2), verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching RoleplayHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x568) and tablet (768x1024) zero-overflow layout safety.
+- [x] **8.9** `medical_consult_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 50/50 tests passing]`
+  - Validates clinical consultation prompt, doctor/patient symptom inquiry, medical explanation response options, selecting inaccurate symptom phrasing submitting wrong answer, selecting clear clinical communication revealing SpeakToConfirmOverlay (Phase 2), verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching RoleplayHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x568) and tablet (768x1024) zero-overflow layout safety.
+- [x] **8.10** `situational_response_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 54/54 tests passing]`
+  - Validates social context scenario, conversation bubble, etiquette response options, selecting inappropriate conversational response submitting wrong answer, selecting context-appropriate reply revealing SpeakToConfirmOverlay (Phase 2), verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching RoleplayHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x568) and tablet (768x1024) zero-overflow layout safety.
+- [x] **8.11** `social_spark_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 55/55 tests passing]`
+  - Validates casual social mixer prompt, conversation starter words, constellation word connection canvas, connecting incorrect word path submitting wrong answer, connecting sparkling conversational starter revealing SpeakToConfirmOverlay (Phase 2), verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching RoleplayHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x568) and tablet (768x1024) zero-overflow layout safety.
+- [x] **8.12** `travel_desk_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 56/56 tests passing]`
+  - Validates airport/station travel desk prompt, itinerary inquiry, travel navigation response options, selecting incorrect transit phrasing submitting wrong answer, selecting accurate travel inquiry revealing SpeakToConfirmOverlay (Phase 2), verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching RoleplayHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x568) and tablet (768x1024) zero-overflow layout safety.
 
 ---
 
 ### SECTION 9: SPEAKING CATEGORY (10 GAMES)
 
 - [x] **9.1** `speaking_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
-- [ ] **9.2** `daily_expression_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **9.2** `daily_expression_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 70/70 tests passing]`
+  - Validates daily expression phrase card, situational context, phrase options, selecting wrong expression submitting wrong answer, selecting correct daily expression advancing to SpeakToConfirmOverlay (Phase 2), verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching SpeakingHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x640) and tablet (800x1280) zero-overflow layout safety.
 - [ ] **9.3** `dialogue_roleplay_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **9.4** `pronunciation_focus_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **9.5** `repeat_sentence_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **9.6** `scene_description_speaking_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **9.7** `situation_speaking_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **9.8** `speak_missing_word_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **9.9** `speak_opposite_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **9.10** `speak_synonym_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **9.11** `yes_no_speaking_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **9.4** `pronunciation_focus_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 71/71 tests passing]`
+  - Validates phonetic target word prompt, IPA transcription guide, audio exemplar pronunciation button, tapping audio exemplar playing TTS, selecting wrong phonetic option submitting wrong answer, selecting correct pronunciation advancing to SpeakToConfirmOverlay (Phase 2), verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching SpeakingHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x640) and tablet (800x1280) zero-overflow layout safety.
+- [x] **9.5** `repeat_sentence_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 68/68 tests passing]`
+  - Validates target sentence prompt card, audio listen button with playback speed controls, tapping audio playing TTS, advancing to SpeakToConfirmOverlay (Phase 2) for repetition, verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching SpeakingHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x640) and tablet (800x1280) zero-overflow layout safety.
+- [x] **9.6** `scene_description_speaking_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 42/42 tests passing]`
+  - Validates visual scene prompt, key observation cues, descriptive sentence starter options, selecting inaccurate scene description submitting wrong answer, selecting accurate scene description advancing to SpeakToConfirmOverlay (Phase 2), verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching SpeakingHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x640) and tablet (800x1280) zero-overflow layout safety.
+- [x] **9.7** `situation_speaking_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 50/50 tests passing]`
+  - Validates real-world situation card, communication goal, response options, selecting mismatched response submitting wrong answer, selecting targeted situational response advancing to SpeakToConfirmOverlay (Phase 2), verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching SpeakingHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x640) and tablet (800x1280) zero-overflow layout safety.
+- [x] **9.8** `speak_missing_word_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 78/78 tests passing]`
+  - Validates sentence prompt with missing word slot, contextual options, selecting wrong word submitting wrong answer, selecting correct word filling slot and advancing to SpeakToConfirmOverlay (Phase 2) to speak complete sentence, verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching SpeakingHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x640) and tablet (800x1280) zero-overflow layout safety.
+- [x] **9.9** `speak_opposite_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 77/77 tests passing]`
+  - Validates target antonym prompt card, word pair options, selecting incorrect antonym submitting wrong answer, selecting true antonym advancing to SpeakToConfirmOverlay (Phase 2) to articulate opposing term, verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching SpeakingHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x640) and tablet (800x1280) zero-overflow layout safety.
+- [x] **9.10** `speak_synonym_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 77/77 tests passing]`
+  - Validates target synonym prompt card, vocabulary synonym options, selecting non-synonymous term submitting wrong answer, selecting accurate synonym advancing to SpeakToConfirmOverlay (Phase 2) to vocalize synonym, verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching SpeakingHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x640) and tablet (800x1280) zero-overflow layout safety.
+- [x] **9.11** `yes_no_speaking_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 77/77 tests passing]`
+  - Validates polar question card, interactive tilt card slider, snapping to YES or NO target, incorrect judgment submitting wrong answer, correct judgment advancing to SpeakToConfirmOverlay (Phase 2) to articulate complete affirmative/negative response, verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching SpeakingHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x640) and tablet (800x1280) zero-overflow layout safety.
 
 ---
 
@@ -398,11 +426,12 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 16: LEADERBOARD, SETTINGS, PAYWALL, SPLASH (1 / 8 COMPLETE)
+### SECTION 16: LEADERBOARD, SETTINGS, PAYWALL, SPLASH (2 / 8 COMPLETE)
 
 - [x] **16.1** `tts_voice_selection_bottom_sheet_test.dart` (Widget Test) — ✅ `[DONE - 3/3 tests passing]`
 - [ ] **16.2** `leaderboard_screen_test.dart` (Leaderboard Widget Test) — 🔴 `[PENDING]`
-- [ ] **16.3** `daily_words_screen_test.dart` (Daily Words Flow Test) — 🔴 `[PENDING]`
+- [x] **16.3** `daily_words_test.dart` (Daily Words Flow & Logic Test) — ✅ `[DONE - 18/18 tests passing]`
+  - Validates DailyWord parsing from JSON with curriculum fields, value equality via Equatable, WordSet format parsing, WordProgress serialization round-trip and immutable copyWith, DailyWordsService 750-day wrap and cycle 2 continuation, consecutive and non-consecutive calendar streak math, markWordLearned (Box 1) vs markWordNeedsReview (Box 0) Leitner transitions, todayWords resolution, mastery stats calculation, direct Box 3 Mastered promotion, DailyWordsBloc state transitions and session reset, and widget rendering of WordCardFront (frequency & difficulty badges) and WordCardBack (definitions, examples, safe scroll handling).
 - [ ] **16.4** `settings_screen_test.dart` (Settings Widget Test) — 🔴 `[PENDING]`
 - [ ] **16.5** `premium_screen_test.dart` (Paywall Store Widget Test) — 🔴 `[PENDING]`
 - [ ] **16.6** `splash_page_test.dart` (Startup & Routing Test) — 🔴 `[PENDING]`
