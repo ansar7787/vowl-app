@@ -37,8 +37,10 @@ class RadarBeaconPainter extends CustomPainter {
 
     if (isActive) {
       // Rapid active glowing expansion ripples
+      final rippleAlpha = (1.0 - progress).clamp(0.0, 1.0);
+      final rippleRadius = (maxRadius * progress).clamp(0.0, maxRadius);
       final Paint ripplePaint = Paint()
-        ..color = primaryColor.withValues(alpha: 1.0 - progress)
+        ..color = primaryColor.withValues(alpha: rippleAlpha)
         ..style = PaintingStyle.stroke
         ..strokeWidth = 2.w;
 
@@ -46,14 +48,14 @@ class RadarBeaconPainter extends CustomPainter {
         ..color = primaryColor
         ..style = PaintingStyle.fill;
 
-      canvas.drawCircle(center, maxRadius * progress, ripplePaint);
+      canvas.drawCircle(center, rippleRadius, ripplePaint);
       canvas.drawCircle(center, maxRadius * 0.4, corePaint);
     } else {
       // Gentle floating sleeping beacons
+      final sleepAlpha =
+          (0.2 + (0.3 * math.sin(progress * math.pi * 2))).clamp(0.0, 1.0);
       final Paint sleepPaint = Paint()
-        ..color = primaryColor.withValues(
-          alpha: 0.2 + (0.3 * math.sin(progress * math.pi * 2)),
-        )
+        ..color = primaryColor.withValues(alpha: sleepAlpha)
         ..style = PaintingStyle.fill;
 
       canvas.drawCircle(center, maxRadius * 0.45, sleepPaint);
