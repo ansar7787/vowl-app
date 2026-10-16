@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,24 +23,34 @@ class FlashcardActionButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion =
+        (MediaQuery.maybeOf(context)?.disableAnimations ?? false) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
     if (!isFlipped) {
       return Padding(
         padding: EdgeInsets.symmetric(vertical: 8.h),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-                  Icons.touch_app_rounded,
-                  color: isDark ? Colors.white70 : Colors.black54,
-                  size: 30.r,
-                )
-                .animate(onPlay: (c) => c.repeat())
-                .moveY(
-                  begin: 4,
-                  end: -4,
-                  duration: 1.seconds,
-                  curve: Curves.easeInOut,
-                ),
+            reduceMotion
+                ? Icon(
+                    Icons.touch_app_rounded,
+                    color: isDark ? Colors.white70 : Colors.black54,
+                    size: 30.r,
+                  )
+                : Icon(
+                    Icons.touch_app_rounded,
+                    color: isDark ? Colors.white70 : Colors.black54,
+                    size: 30.r,
+                  )
+                    .animate(onPlay: (c) => c.repeat())
+                    .moveY(
+                      begin: 4,
+                      end: -4,
+                      duration: 1.seconds,
+                      curve: Curves.easeInOut,
+                    ),
             SizedBox(height: 8.h),
             Text(
               context.tr(
@@ -60,7 +71,7 @@ class FlashcardActionButtons extends StatelessWidget {
       );
     }
 
-    return Padding(
+    final buttonsRow = Padding(
       padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 24.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -86,8 +97,11 @@ class FlashcardActionButtons extends StatelessWidget {
             ),
           ),
         ],
-      ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2),
+      ),
     );
+
+    if (reduceMotion) return buttonsRow;
+    return buttonsRow.animate().fadeIn(duration: 400.ms).slideY(begin: 0.2);
   }
 }
 
