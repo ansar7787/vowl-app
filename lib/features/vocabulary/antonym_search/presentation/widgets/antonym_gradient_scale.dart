@@ -74,14 +74,17 @@ class _AntonymGradientScaleState extends State<AntonymGradientScale> {
                     size: 18.r,
                   ),
                   SizedBox(width: 6.w),
-                  AutoSizeText(
-                    'DRAG TO EXPLORE INTENSITY',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w900,
-                      color: widget.primaryColor,
-                      letterSpacing: 1.5,
+                  Flexible(
+                    child: AutoSizeText(
+                      'DRAG TO EXPLORE INTENSITY',
+                      maxLines: 1,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w900,
+                        color: widget.primaryColor,
+                        letterSpacing: 1.5,
+                      ),
                     ),
                   ),
                 ],

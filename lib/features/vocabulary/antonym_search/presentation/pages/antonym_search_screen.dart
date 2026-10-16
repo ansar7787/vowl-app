@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -56,6 +57,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
   final ValueNotifier<int?> _activeShardIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
   BoxConstraints? _lastConstraints;
+  Timer? _tapAnimationTimer;
+  Timer? _scrollTimer;
 
   @override
   void initState() {
@@ -65,6 +68,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
 
   @override
   void dispose() {
+    _tapAnimationTimer?.cancel();
+    _scrollTimer?.cancel();
     _isDragPassed.dispose();
     _activeShardIndex.dispose();
     _scrollController.dispose();
@@ -84,11 +89,27 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
     _isFused.clear();
   }
 
+  void _ensureShardNotifiers(int count) {
+    for (int i = 0; i < count; i++) {
+      _shardOffsets.putIfAbsent(i, () => ValueNotifier(Offset.zero));
+      _isFused.putIfAbsent(i, () => ValueNotifier(false));
+    }
+  }
+
   @override
   void onQuestionReset() {
+    _tapAnimationTimer?.cancel();
+    _scrollTimer?.cancel();
     _isDragPassed.value = false;
-
     _activeShardIndex.value = null;
+    _isAnimatingTap = false;
+    _hapticZoneIndex = null;
+    for (var n in _shardOffsets.values) {
+      n.value = Offset.zero;
+    }
+    for (var n in _isFused.values) {
+      n.value = false;
+    }
   }
 
   @override
@@ -106,12 +127,16 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
         );
 
         if (state is VocabularyLoaded) {
-          _lastQuest = state.currentQuest;
+          _lastQuest = state.currentQuestOrNull;
         }
 
         final quest = (state is VocabularyLoaded)
-            ? state.currentQuest
+            ? state.currentQuestOrNull
             : _lastQuest;
+
+        if (quest?.options != null) {
+          _ensureShardNotifiers(quest!.options!.length);
+        }
 
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -516,7 +541,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
     );
     _shardOffsets[activeIndex]?.value = center - initial;
 
-    Future.delayed(const Duration(milliseconds: 300), () {
+    _tapAnimationTimer?.cancel();
+    _tapAnimationTimer = Timer(const Duration(milliseconds: 300), () {
       if (mounted) {
         _isAnimatingTap = false;
         _evaluateShard(activeIndex);
@@ -525,6 +551,11 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
   }
 
   void _evaluateShard(int index) {
+    if (_lastQuest == null ||
+        _lastQuest!.options == null ||
+        index >= _lastQuest!.options!.length) {
+      return;
+    }
     final bool isAntonym =
         _lastQuest!.options![index].trim().toLowerCase() ==
         _lastQuest!.correctAnswer?.trim().toLowerCase();
@@ -544,7 +575,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
     _isDragPassed.value = true;
     _activeShardIndex.value = null;
 
-    Future.delayed(const Duration(milliseconds: 300), () {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 300), () {
       if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
