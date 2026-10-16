@@ -73,6 +73,7 @@ class CompleteSentenceTargetWall extends StatelessWidget {
           children: [
             const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
             DragTarget<String>(
+              key: const Key('complete_sentence_target_wall_drop_zone'),
               onWillAcceptWithDetails: (details) {
                 HapticFeedback.selectionClick();
                 return true;

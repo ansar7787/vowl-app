@@ -82,6 +82,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen>
 
   void _scrollToBottom() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
@@ -116,7 +117,6 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen>
       _showAnagram.value = true;
       _scrollToBottom();
     } else {
-      hapticService.error();
       final targetQuest = quest ?? _lastQuest;
       if (targetQuest != null) {
         submitWrongAnswer(quest: targetQuest, userAnswer: selected);
@@ -303,6 +303,7 @@ class _CompleteSentenceBody extends StatelessWidget {
                     SizedBox(height: 32.h),
                     if (level >= 6) ...[
                       GestureDetector(
+                        key: const Key('complete_sentence_disabled_ammo_touch_zone'),
                         onTap: () {
                           CustomSnackBar.show(
                             context: context,
