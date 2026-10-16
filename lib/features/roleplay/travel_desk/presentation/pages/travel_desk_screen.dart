@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +6,7 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_mixin.dart';
@@ -12,6 +14,7 @@ import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_customs_terminal.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_passport_book.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_stamp_station.dart';
@@ -53,9 +56,20 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
   final ValueNotifier<int?> _hoveredIndex = ValueNotifier(null);
 
   late final Listenable _mergedListenable;
+  Timer? _scrollTimer;
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 150), () {
+    final bool reduceMotion =
+        (mounted && (MediaQuery.maybeDisableAnimationsOf(context) ?? false)) ||
+            VowlMotion.lowAnimationModeOverride.value;
+    if (reduceMotion) {
+      if (_scrollController.hasClients) {
+        _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+      }
+      return;
+    }
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 150), () {
       if (!mounted) return;
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
@@ -91,18 +105,16 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
-    if (reduceMotion) {
-      if (_rippleController.isAnimating) _rippleController.stop();
-    } else {
-      if (!_rippleController.isAnimating) {
-        _rippleController.repeat(reverse: true);
-      }
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+    if (reduceMotion && _rippleController.isAnimating) {
+      _rippleController.stop();
     }
   }
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _rippleController.dispose();
     _selectedIndex.dispose();
     _hoveredIndex.dispose();
@@ -111,7 +123,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
     super.dispose();
   }
 
-  void _submitStamp(int index, int correctIndex, GameQuest quest) {
+  void _submitStamp(int index, int correctIndex, RoleplayQuest quest) {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
 
     final isCorrect = index == correctIndex;
@@ -127,28 +139,24 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
       // Wait for Phase 2
     } else {
       _scrollToBottom();
-      final userAnswer = quest.options != null && index < quest.options!.length
-          ? quest.options![index]
+      final effectiveOptions = quest.itinerary ?? quest.options ?? [];
+      final userAnswer = index < effectiveOptions.length
+          ? effectiveOptions[index]
           : null;
       submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
+  void _submitVerbalEvaluation(bool nailedIt, RoleplayQuest quest) {
     if (isAnsweredNotifier.value) return;
 
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
       submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      final userAnswer =
-          (_selectedIndex.value != null &&
-              quest.options != null &&
-              _selectedIndex.value! < quest.options!.length)
-          ? quest.options![_selectedIndex.value!]
+      final effectiveOptions = quest.itinerary ?? quest.options ?? [];
+      final userAnswer = (_selectedIndex.value != null &&
+              _selectedIndex.value! < effectiveOptions.length)
+          ? effectiveOptions[_selectedIndex.value!]
           : null;
       submitWrongAnswer(quest: quest, userAnswer: userAnswer);
     }
@@ -157,8 +165,10 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
   @override
   void onQuestionReset() {
     _selectedIndex.value = null;
-
     _hoveredIndex.value = null;
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0);
+    }
   }
 
   @override
@@ -171,7 +181,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
       listener: onRoleplayStateChanged,
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
-        final options = quest?.options ?? [];
+        final options = quest?.itinerary ?? quest?.options ?? [];
 
         return ListenableBuilder(
           listenable: _mergedListenable,
@@ -236,7 +246,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
 
                                           // Biometric Passport Book (Full Width)
                                           TravelDeskPassportBook(
-                                            options: quest.itinerary ?? options,
+                                            options: options,
                                             color: theme.primaryColor,
                                             correctIndex:
                                                 quest.correctAnswerIndex ?? 0,
@@ -331,8 +341,12 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                   _selectedIndex.value != null)
                                 SliverToBoxAdapter(
                                   child: SpeakToConfirmOverlay(
-                                    expectedText:
-                                        options[_selectedIndex.value!],
+                                    expectedText: (_selectedIndex.value !=
+                                                null &&
+                                            _selectedIndex.value! <
+                                                options.length)
+                                        ? options[_selectedIndex.value!]
+                                        : (quest.correctAnswer ?? ""),
                                     primaryColor: theme.primaryColor,
                                     isPositioned: false,
                                     onConfirmed: () {

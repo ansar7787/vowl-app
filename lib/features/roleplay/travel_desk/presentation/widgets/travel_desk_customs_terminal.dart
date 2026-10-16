@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -20,6 +21,7 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      key: const Key('travel_desk_customs_terminal'),
       elevation: 6,
       shadowColor: color.withValues(alpha: 0.2),
       color: isDark ? AppColors.deepDark : Colors.white,
@@ -75,9 +77,9 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
               children: [
                 Builder(
                   builder: (context) {
-                    final reduceMotion = MediaQuery.disableAnimationsOf(
-                      context,
-                    );
+                    final reduceMotion =
+                        MediaQuery.disableAnimationsOf(context) ||
+                        VowlMotion.lowAnimationModeOverride.value;
                     Widget icon = Container(
                       padding: EdgeInsets.all(12.r),
                       decoration: BoxDecoration(

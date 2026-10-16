@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -65,6 +66,7 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: const Key('travel_desk_passport_book'),
       width: 1.sw,
       padding: EdgeInsets.symmetric(vertical: 16.h),
       decoration: BoxDecoration(
@@ -78,18 +80,21 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  (widget.travelDocument ?? "BIOMETRIC PASSPORT BOOKLET")
-                      .toUpperCase(),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    color: widget.color.withValues(alpha: 0.7),
-                    letterSpacing: 1.5,
+                Expanded(
+                  child: Text(
+                    (widget.travelDocument ?? "BIOMETRIC PASSPORT BOOKLET")
+                        .toUpperCase(),
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      color: widget.color.withValues(alpha: 0.7),
+                      letterSpacing: 1.5,
+                    ),
                   ),
                 ),
+                SizedBox(width: 8.w),
                 Icon(
                   Icons.menu_book_rounded,
                   color: widget.color.withValues(alpha: 0.5),
@@ -142,6 +147,8 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
   Widget _buildDragTargetPage(int index, String text) {
     final bool isSelected = widget.selectedIndex == index;
     final bool isHovered = widget.hoveredIndex == index;
+    final bool reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
 
     Color borderColor = widget.color.withValues(alpha: 0.15);
     if (isHovered && !widget.isAnswered) {
@@ -152,21 +159,29 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
           : AppColors.gameIncorrect;
     }
 
-    return DragTarget<int>(
-      onWillAcceptWithDetails: (data) => !widget.isAnswered,
-      onAcceptWithDetails: (details) {
-        widget.onSubmitStamp(index, widget.correctIndex);
-      },
-      onMove: (details) {
-        if (widget.hoveredIndex != index) {
-          widget.onHoverChanged(index);
-        }
-      },
-      onLeave: (data) {
-        widget.onHoverEnded();
-      },
-      builder: (context, candidateData, rejectedData) {
-        return AnimatedContainer(
+    return Semantics(
+      button: true,
+      label: 'Passport page ${index + 1}, ${text.toUpperCase()}',
+      child: GestureDetector(
+        key: Key('travel_desk_page_$index'),
+        onTap: widget.isAnswered
+            ? null
+            : () => widget.onSubmitStamp(index, widget.correctIndex),
+        child: DragTarget<int>(
+          onWillAcceptWithDetails: (data) => !widget.isAnswered,
+          onAcceptWithDetails: (details) {
+            widget.onSubmitStamp(index, widget.correctIndex);
+          },
+          onMove: (details) {
+            if (widget.hoveredIndex != index) {
+              widget.onHoverChanged(index);
+            }
+          },
+          onLeave: (data) {
+            widget.onHoverEnded();
+          },
+          builder: (context, candidateData, rejectedData) {
+            final pageContainer = AnimatedContainer(
               duration: const Duration(milliseconds: 200),
               width: 120.w,
               constraints: BoxConstraints(minHeight: 165.h),
@@ -285,58 +300,99 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                   // Stamp mark locked on page
                   if (isSelected)
                     Center(
-                      child:
-                          Transform.rotate(
-                            angle: -0.22,
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 6.w,
-                                vertical: 4.h,
-                              ),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: (index == widget.correctIndex)
-                                      ? AppColors.gameCorrect
-                                      : AppColors.gameIncorrect,
-                                  width: 2.5,
+                      child: reduceMotion
+                          ? Transform.rotate(
+                              angle: -0.22,
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 6.w,
+                                  vertical: 4.h,
                                 ),
-                                borderRadius: BorderRadius.circular(8.r),
-                                color: Colors.black.withValues(alpha: 0.1),
-                              ),
-                              child: Text(
-                                (index == widget.correctIndex)
-                                    ? "APPROVED"
-                                    : "DENIED",
-                                maxLines: 1,
-                                softWrap: false,
-                                overflow: TextOverflow.visible,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: (index == widget.correctIndex)
-                                      ? AppColors.gameCorrect
-                                      : AppColors.gameIncorrect,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: (index == widget.correctIndex)
+                                        ? AppColors.gameCorrect
+                                        : AppColors.gameIncorrect,
+                                    width: 2.5,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.r),
+                                  color: Colors.black.withValues(alpha: 0.1),
+                                ),
+                                child: Text(
+                                  (index == widget.correctIndex)
+                                      ? "APPROVED"
+                                      : "DENIED",
+                                  maxLines: 1,
+                                  softWrap: false,
+                                  overflow: TextOverflow.visible,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 11.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: (index == widget.correctIndex)
+                                        ? AppColors.gameCorrect
+                                        : AppColors.gameIncorrect,
+                                  ),
                                 ),
                               ),
+                            )
+                          : Transform.rotate(
+                              angle: -0.22,
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 6.w,
+                                  vertical: 4.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: (index == widget.correctIndex)
+                                        ? AppColors.gameCorrect
+                                        : AppColors.gameIncorrect,
+                                    width: 2.5,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.r),
+                                  color: Colors.black.withValues(alpha: 0.1),
+                                ),
+                                child: Text(
+                                  (index == widget.correctIndex)
+                                      ? "APPROVED"
+                                      : "DENIED",
+                                  maxLines: 1,
+                                  softWrap: false,
+                                  overflow: TextOverflow.visible,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 11.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: (index == widget.correctIndex)
+                                        ? AppColors.gameCorrect
+                                        : AppColors.gameIncorrect,
+                                  ),
+                                ),
+                              ),
+                            ).animate().scale(
+                              duration: 200.ms,
+                              curve: Curves.elasticOut,
+                              begin: const Offset(3.5, 3.5),
+                              end: const Offset(1, 1),
                             ),
-                          ).animate().scale(
-                            duration: 200.ms,
-                            curve: Curves.elasticOut,
-                            begin: const Offset(3.5, 3.5),
-                            end: const Offset(1, 1),
-                          ),
                     ),
                 ],
               ),
-            )
-            .animate(target: isHovered ? 1.0 : 0.0)
-            .scale(
-              begin: const Offset(1, 1),
-              end: const Offset(1.05, 1.05),
-              duration: 150.ms,
             );
-      },
+
+            return reduceMotion
+                ? pageContainer
+                : pageContainer
+                    .animate(target: isHovered ? 1.0 : 0.0)
+                    .scale(
+                      begin: const Offset(1, 1),
+                      end: const Offset(1.05, 1.05),
+                      duration: 150.ms,
+                    );
+          },
+        ),
+      ),
     );
   }
 }
