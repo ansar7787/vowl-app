@@ -16,6 +16,8 @@ class CollocationAnchorBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+
     return Container(
           padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 25.h),
           decoration: BoxDecoration(
@@ -45,7 +47,7 @@ class CollocationAnchorBubble extends StatelessWidget {
             ),
           ),
         )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .animate(onPlay: reduceMotion ? null : (c) => c.repeat(reverse: true))
         .moveY(begin: -5, end: 5, duration: 2.seconds, curve: Curves.easeInOut);
   }
 }
