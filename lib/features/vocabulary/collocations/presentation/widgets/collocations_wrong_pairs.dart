@@ -41,15 +41,17 @@ class CollocationsWrongPairs extends StatelessWidget {
                     size: 20.r,
                   ),
                   SizedBox(width: 8.w),
-                  AutoSizeText(
-                    "COMMON MISTAKES",
-                    maxLines: 1,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w800,
-                      color: warningColor,
-                      letterSpacing: 1.5,
+                  Flexible(
+                    child: AutoSizeText(
+                      "COMMON MISTAKES",
+                      maxLines: 1,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w800,
+                        color: warningColor,
+                        letterSpacing: 1.5,
+                      ),
                     ),
                   ),
                 ],

@@ -36,6 +36,7 @@ class CollocationOptionBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
     final isSelected = selectedOption == text;
     final isPhase1Correct = isFirstStagePassed && isSelected;
     final isExploding =
@@ -142,7 +143,7 @@ class CollocationOptionBubble extends StatelessWidget {
     // Apply a pulsing glow if it's a hint
     if (isGlowingHint) {
       animatedBubble = animatedBubble
-          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .animate(onPlay: reduceMotion ? null : (c) => c.repeat(reverse: true))
           .scale(
             begin: const Offset(1.0, 1.0),
             end: const Offset(1.05, 1.05),
@@ -157,7 +158,7 @@ class CollocationOptionBubble extends StatelessWidget {
     return Transform.translate(
       offset: Offset(0, staggeredOffset),
       child: animatedBubble
-          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .animate(onPlay: reduceMotion ? null : (c) => c.repeat(reverse: true))
           .moveY(
             begin: -6,
             end: 6,

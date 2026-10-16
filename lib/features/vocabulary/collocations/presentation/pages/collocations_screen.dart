@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -47,6 +48,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
   final ValueNotifier<bool> _isDragPassed = ValueNotifier(false);
   final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
 
   VocabularyQuest? _lastQuest;
 
@@ -58,6 +60,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _isDragPassed.dispose();
     _selectedOption.dispose();
     _scrollController.dispose();
@@ -81,7 +84,8 @@ class _CollocationsScreenState extends State<CollocationsScreen>
       hapticService.selection();
       _isDragPassed.value = true;
 
-      Future.delayed(const Duration(milliseconds: 300), () {
+      _scrollTimer?.cancel();
+      _scrollTimer = Timer(const Duration(milliseconds: 300), () {
         if (mounted && _scrollController.hasClients) {
           _scrollController.animateTo(
             _scrollController.position.maxScrollExtent,
@@ -122,8 +126,8 @@ class _CollocationsScreenState extends State<CollocationsScreen>
 
   @override
   void onQuestionReset() {
+    _scrollTimer?.cancel();
     _isDragPassed.value = false;
-
     _selectedOption.value = null;
   }
 
@@ -141,11 +145,11 @@ class _CollocationsScreenState extends State<CollocationsScreen>
         );
 
         if (state is VocabularyLoaded) {
-          _lastQuest = state.currentQuest;
+          _lastQuest = state.currentQuestOrNull;
         }
 
         final quest = (state is VocabularyLoaded)
-            ? state.currentQuest
+            ? state.currentQuestOrNull
             : _lastQuest;
 
         return ListenableBuilder(
@@ -591,7 +595,8 @@ class _CollocationsScreenState extends State<CollocationsScreen>
   }
 
   Widget _buildInstruction(Color color, bool isDark, String instruction) {
-    return Container(
+    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+    final container = Container(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: isDark
@@ -611,6 +616,8 @@ class _CollocationsScreenState extends State<CollocationsScreen>
           letterSpacing: 1.5,
         ),
       ),
-    ).animate().shimmer(duration: 2.seconds);
+    );
+    if (reduceMotion) return container;
+    return container.animate().shimmer(duration: 2.seconds);
   }
 }
