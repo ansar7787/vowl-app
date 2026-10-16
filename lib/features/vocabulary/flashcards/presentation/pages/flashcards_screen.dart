@@ -53,6 +53,11 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
   @override
   void initState() {
     super.initState();
+    final initialBlocState = context.read<VocabularyBloc>().state;
+    if (initialBlocState is VocabularyLoaded) {
+      lastProcessedIndex = initialBlocState.currentIndex;
+      _lastQuest = initialBlocState.currentQuestOrNull;
+    }
     _controller = FlashcardController(
       hapticService: di.sl<HapticService>(),
       soundService: di.sl<SoundService>(),

@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_action_buttons.dart';
@@ -292,50 +293,58 @@ class _InstructionBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: BoxConstraints(maxWidth: 430.w),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-        decoration: BoxDecoration(
-          color: primaryColor.withValues(alpha: 0.10),
-          borderRadius: BorderRadius.circular(30.r),
-          border: Border.all(color: primaryColor.withValues(alpha: 0.20)),
-        ),
-        child: AnimatedSwitcher(
-          duration: 300.ms,
-          child: FittedBox(
-            key: ValueKey<bool>(isFlipped),
-            fit: BoxFit.scaleDown,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  isFlipped ? Icons.swipe_rounded : Icons.touch_app_rounded,
-                  size: 14.r,
+    final reduceMotion =
+        (MediaQuery.maybeOf(context)?.disableAnimations ?? false) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
+    final bannerContent = Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.10),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.20)),
+      ),
+      child: AnimatedSwitcher(
+        duration: 300.ms,
+        child: FittedBox(
+          key: ValueKey<bool>(isFlipped),
+          fit: BoxFit.scaleDown,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                isFlipped ? Icons.swipe_rounded : Icons.touch_app_rounded,
+                size: 14.r,
+                color: primaryColor,
+              ),
+              SizedBox(width: 8.w),
+              Text(
+                isFlipped
+                    ? context.tr(
+                        'instructions.flashcards.swipe_instruction',
+                        fallback: 'SWIPE LEFT (AGAIN) OR RIGHT (GOT IT)',
+                      )
+                    : InstructionHelper.getInstruction(quest),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w900,
                   color: primaryColor,
+                  letterSpacing: 1.1,
                 ),
-                SizedBox(width: 8.w),
-                Text(
-                  isFlipped
-                      ? context.tr(
-                          'instructions.flashcards.swipe_instruction',
-                          fallback: 'SWIPE LEFT (AGAIN) OR RIGHT (GOT IT)',
-                        )
-                      : InstructionHelper.getInstruction(quest),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w900,
-                    color: primaryColor,
-                    letterSpacing: 1.1,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
-      ).animate().fadeIn(duration: 600.ms).slideY(begin: -0.2, end: 0),
+      ),
+    );
+
+    return ConstrainedBox(
+      constraints: BoxConstraints(maxWidth: 430.w),
+      child: reduceMotion
+          ? bannerContent
+          : bannerContent.animate().fadeIn(duration: 600.ms).slideY(begin: -0.2, end: 0),
     );
   }
 }

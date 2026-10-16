@@ -75,14 +75,6 @@ class FlashcardController extends ChangeNotifier {
     if (isAnswered) return;
     _hintTimer?.cancel();
 
-    if (mastered) {
-      _hapticService.success();
-      _soundService.playCorrect();
-    } else {
-      _hapticService.error();
-      _soundService.playWrong();
-    }
-
     isAnswered = true;
     isCorrect = mastered;
     dragOffset.value = Offset(mastered ? 1000 : -1000, 0);

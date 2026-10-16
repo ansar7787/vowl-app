@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,6 +33,7 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
   late final ScrollController _scrollController;
   final TtsService _ttsService = di.sl<TtsService>();
   final HapticService _hapticService = di.sl<HapticService>();
+  Timer? _ttsTimer;
 
   bool _hasHitTop = true;
   bool _hasHitBottom = false;
@@ -41,7 +43,7 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
     super.initState();
     _scrollController = ScrollController();
     if (widget.quest.word != null && widget.quest.word!.isNotEmpty) {
-      Future.delayed(const Duration(milliseconds: 200), () {
+      _ttsTimer = Timer(const Duration(milliseconds: 200), () {
         if (mounted) _ttsService.speak(widget.quest.word!);
       });
     }
@@ -49,6 +51,7 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
 
   @override
   void dispose() {
+    _ttsTimer?.cancel();
     _scrollController.dispose();
     super.dispose();
   }

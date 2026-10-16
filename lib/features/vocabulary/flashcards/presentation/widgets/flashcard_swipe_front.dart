@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -49,6 +50,10 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion =
+        (MediaQuery.maybeOf(context)?.disableAnimations ?? false) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
     return Semantics(
       label:
           '${context.tr('games.hint', fallback: 'Hint')}: ${widget.quest.hint ?? InstructionHelper.getInstruction(widget.quest)}. ${context.tr('instructions.flashcards.tap_to_reveal', fallback: 'TAP TO REVEAL')}',
@@ -85,27 +90,31 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
               final compactHeight = widget.height < 260;
               final compactWidth = widget.width < 290;
 
+              final emojiBox = Container(
+                padding: EdgeInsets.all(compactHeight ? 16.r : 20.r),
+                decoration: BoxDecoration(
+                  color: widget.color.withValues(alpha: 0.10),
+                  shape: BoxShape.circle,
+                ),
+                child: Text(
+                  widget.quest.topicEmoji ?? '🏷️',
+                  style: TextStyle(
+                    fontSize: compactHeight ? 44.sp : 58.sp,
+                  ),
+                ),
+              );
+
               return Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
                 child: Column(
                   children: [
                     const Spacer(flex: 2),
-                    Container(
-                      padding: EdgeInsets.all(compactHeight ? 16.r : 20.r),
-                      decoration: BoxDecoration(
-                        color: widget.color.withValues(alpha: 0.10),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Text(
-                        widget.quest.topicEmoji ?? '🏷️',
-                        style: TextStyle(
-                          fontSize: compactHeight ? 44.sp : 58.sp,
-                        ),
-                      ),
-                    ).animate().scale(
-                      duration: 600.ms,
-                      curve: Curves.elasticOut,
-                    ),
+                    reduceMotion
+                        ? emojiBox
+                        : emojiBox.animate().scale(
+                            duration: 600.ms,
+                            curve: Curves.elasticOut,
+                          ),
                     SizedBox(height: compactHeight ? 16.h : 24.h),
                     Flexible(
                       flex: 6,
