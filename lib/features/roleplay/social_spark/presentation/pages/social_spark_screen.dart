@@ -12,6 +12,7 @@ import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 import 'package:vowl/features/roleplay/social_spark/presentation/widgets/social_spark_connection_monitor.dart';
@@ -60,6 +61,14 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   }
 
   void _scrollToBottom() {
+    final bool reduceMotion = (mounted && (MediaQuery.maybeDisableAnimationsOf(context) ?? false)) ||
+        VowlMotion.lowAnimationModeOverride.value;
+    if (reduceMotion) {
+      if (_scrollController.hasClients) {
+        _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+      }
+      return;
+    }
     Future.delayed(const Duration(milliseconds: 150), () {
       if (!mounted) return;
       if (_scrollController.hasClients) {
@@ -87,7 +96,8 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) {
       if (_pulseController.isAnimating) _pulseController.stop();
     } else {
@@ -137,6 +147,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
 
     // Assemble sentence in correct tapped order
     final String result = _selectedIndices.value
+        .where((idx) => idx >= 0 && idx < shuffledWords.length)
         .map((idx) => shuffledWords[idx])
         .join(' ');
 
@@ -178,6 +189,17 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   @override
   void onQuestionReset() {
     _selectedIndices.value = [];
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0);
+    }
+  }
+
+  Widget _maybeFadeIn(BuildContext context, Widget child) {
+    final bool reduceMotion =
+        (MediaQuery.maybeDisableAnimationsOf(context) ?? false) ||
+            VowlMotion.lowAnimationModeOverride.value;
+    if (reduceMotion) return child;
+    return child.animate().fadeIn(duration: 300.ms);
   }
 
   @override
@@ -191,6 +213,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
         final words = quest?.shuffledWords ?? [];
+        final hintUsed = (state is RoleplayLoaded) ? state.hintUsed : false;
 
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -270,6 +293,10 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                 InstructionHelper.getInstruction(
                                                   quest,
                                                 ),
+                                            hint: quest.hint,
+                                            hintUsed: hintUsed,
+                                            explanation: quest.explanation,
+                                            culturalNote: quest.culturalNote,
                                             color: theme.primaryColor,
                                             isDark: isDark,
                                             isAnswered:
@@ -311,11 +338,14 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                           // Trigger Action Buttons
                                           if (!isAnsweredNotifier.value &&
                                               _selectedIndices.value.isNotEmpty)
-                                            Column(
+                                            _maybeFadeIn(
+                                              context,
+                                              Column(
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.stretch,
                                               children: [
                                                 ScaleButton(
+                                                  key: const Key('social_spark_ignite_button'),
                                                   onTap: () => _submitAnswer(
                                                     words,
                                                     quest.correctAnswer ?? "",
@@ -393,6 +423,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                       : 16.h,
                                                 ),
                                                 ScaleButton(
+                                                  key: const Key('social_spark_clear_button'),
                                                   onTap: _clearSelection,
                                                   child: Container(
                                                     alignment: Alignment.center,
@@ -442,9 +473,8 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                   ),
                                                 ),
                                               ],
-                                            ).animate().fadeIn(
-                                              duration: 300.ms,
                                             ),
+                                          ),
                                           // Post-answer review cards
                                           SizedBox(
                                             height: isCompact ? 20.h : 40.h,

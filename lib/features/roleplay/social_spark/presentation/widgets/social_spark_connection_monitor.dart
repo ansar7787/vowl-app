@@ -2,12 +2,15 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 
 class SocialSparkConnectionMonitor extends StatelessWidget {
   final String text;
   final String? socialContext;
   final String? instruction;
+  final String? hint;
+  final bool hintUsed;
+  final String? explanation;
+  final String? culturalNote;
   final Color color;
   final bool isDark;
   final bool isAnswered;
@@ -18,6 +21,10 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
     required this.text,
     this.socialContext,
     this.instruction,
+    this.hint,
+    this.hintUsed = false,
+    this.explanation,
+    this.culturalNote,
     required this.color,
     required this.isDark,
     required this.isAnswered,
@@ -35,6 +42,7 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
     }
 
     return Container(
+      key: const Key('social_spark_connection_monitor'),
       width: double.infinity,
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
@@ -88,6 +96,40 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w500,
                 color: isDark ? Colors.grey.shade300 : Colors.grey.shade700,
+              ),
+            ),
+          ],
+          if (hintUsed && hint != null && hint!.isNotEmpty) ...[
+            SizedBox(height: 12.h),
+            Container(
+              key: const Key('social_spark_hint_banner'),
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+              decoration: BoxDecoration(
+                color: Colors.amber.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.lightbulb_outline_rounded,
+                    color: Colors.amber,
+                    size: 16.r,
+                  ),
+                  SizedBox(width: 8.w),
+                  Expanded(
+                    child: Text(
+                      hint!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        color: Colors.amber.shade700,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
@@ -154,8 +196,77 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
               ),
             ),
           ),
+          if (isAnswered && (explanation != null || culturalNote != null)) ...[
+            SizedBox(height: 14.h),
+            Container(
+              key: const Key('social_spark_explanation_card'),
+              width: double.infinity,
+              padding: EdgeInsets.all(14.r),
+              decoration: BoxDecoration(
+                color: outlineColor.withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(color: outlineColor.withValues(alpha: 0.2)),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        (isCorrect ?? false)
+                            ? Icons.verified_rounded
+                            : Icons.info_outline_rounded,
+                        color: outlineColor,
+                        size: 16.r,
+                      ),
+                      SizedBox(width: 6.w),
+                      Expanded(
+                        child: Text(
+                          (isCorrect ?? false)
+                              ? "CONSTELLATION HARMONIZED"
+                              : "COMMUNICATION INSIGHT",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.bold,
+                            color: outlineColor,
+                            letterSpacing: 1.0,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  if (explanation != null) ...[
+                    SizedBox(height: 6.h),
+                    Text(
+                      explanation!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 13.sp,
+                        color: isDark ? Colors.grey.shade300 : Colors.grey.shade800,
+                        height: 1.3,
+                      ),
+                    ),
+                  ],
+                  if (culturalNote != null) ...[
+                    SizedBox(height: 6.h),
+                    Text(
+                      "Note: $culturalNote",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontStyle: FontStyle.italic,
+                        color: isDark ? Colors.grey.shade400 : Colors.grey.shade600,
+                        height: 1.2,
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ],
         ],
       ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.05);
+    );
   }
 }

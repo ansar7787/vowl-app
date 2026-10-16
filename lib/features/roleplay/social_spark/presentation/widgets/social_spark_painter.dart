@@ -21,7 +21,10 @@ class ConstellationPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    if (selectedIndices.length < 2) return;
+    final validIndices = selectedIndices
+        .where((idx) => idx >= 0 && idx < starOffsets.length)
+        .toList();
+    if (validIndices.length < 2) return;
 
     Color lineColor = themeColor;
     if (isAnswered) {
@@ -43,11 +46,11 @@ class ConstellationPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round;
 
     final Path path = Path();
-    final Offset start = starOffsets[selectedIndices.first];
+    final Offset start = starOffsets[validIndices.first];
     path.moveTo(start.dx, start.dy);
 
-    for (int i = 1; i < selectedIndices.length; i++) {
-      final Offset target = starOffsets[selectedIndices[i]];
+    for (int i = 1; i < validIndices.length; i++) {
+      final Offset target = starOffsets[validIndices[i]];
       path.lineTo(target.dx, target.dy);
     }
 
@@ -61,7 +64,7 @@ class ConstellationPainter extends CustomPainter {
       ..color = lineColor
       ..style = PaintingStyle.fill;
 
-    for (int idx in selectedIndices) {
+    for (int idx in validIndices) {
       canvas.drawCircle(starOffsets[idx], 4.r, sparkPaint);
     }
   }
