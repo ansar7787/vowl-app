@@ -113,8 +113,6 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
     }
 
     if (!nailedTyping) {
-      hapticService.error();
-      soundService.playWrong();
       _selectedOption.value = _pendingSelectedOption.value;
       submitWrongAnswer(quest: quest, userAnswer: _pendingSelectedOption.value);
       return;
@@ -245,8 +243,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
           useScrolling: false,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<WritingBloc>().add(const WritingHintUsed()),
+          onHint: () {},
           child: ListenableBuilder(
             listenable: Listenable.merge([
               showConfettiNotifier,
@@ -265,6 +262,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
                       radius: Radius.circular(8.r),
                       thickness: 4.w,
                       child: CustomScrollView(
+                        key: const Key('fix_the_sentence_scroll_view'),
                         controller: _scrollController,
                         physics: const BouncingScrollPhysics(),
                         slivers: [
@@ -342,7 +340,6 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
                                               selected;
                                           _scrollToBottom();
                                         } else {
-                                          hapticService.error();
                                           submitWrongAnswer(
                                             quest: quest,
                                             userAnswer: selected,

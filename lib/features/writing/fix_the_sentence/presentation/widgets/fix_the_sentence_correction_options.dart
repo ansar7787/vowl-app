@@ -27,6 +27,7 @@ class FixTheSentenceCorrectionOptions extends StatelessWidget {
       alignment: WrapAlignment.center,
       children: options.map((o) {
         return ScaleButton(
+          key: Key('fix_the_sentence_option_$o'),
           onTap: () => onSelect(o, correct),
           child: ConstrainedBox(
             constraints: BoxConstraints(

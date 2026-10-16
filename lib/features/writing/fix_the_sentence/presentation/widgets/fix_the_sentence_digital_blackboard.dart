@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
@@ -98,6 +99,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                     ? tokens.gameCorrect
                                     : KidsColors.safeGreen;
                                 return Container(
+                                  key: const Key('fix_the_sentence_wiped_target'),
                                   margin: EdgeInsets.symmetric(
                                     horizontal: 4.w,
                                     vertical: 4.h,
@@ -153,6 +155,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                 border: Border.all(color: color, width: 2),
                               ),
                               child: GestureDetector(
+                                key: const Key('fix_the_sentence_scratch_target'),
                                 onTap: onTap,
                                 onPanUpdate: (details) =>
                                     onErase(details.localPosition),
@@ -194,8 +197,13 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                                               : Colors.black54,
                                                         )
                                                         .animate(
-                                                          onPlay: (c) =>
-                                                              c.repeat(),
+                                                          onPlay: (c) {
+                                                            if (!VowlMotion
+                                                                .lowAnimationModeOverride
+                                                                .value) {
+                                                              c.repeat();
+                                                            }
+                                                          },
                                                         )
                                                         .moveX(
                                                           begin: -15,
