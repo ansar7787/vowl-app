@@ -105,39 +105,43 @@ class _MorphInjectionRailState extends State<MorphInjectionRail> {
                       left: value * maxSlide,
                       top: 0,
                       bottom: 0,
-                      child: GestureDetector(
-                        onTap: () {
-                          if (widget.isBlocked || _isFusing) return;
-                          _progress.value = 1.0;
-                          _isFusing = true;
-                          widget.onMorph(widget.suffix);
-                        },
-                        onHorizontalDragUpdate: (details) {
-                          if (widget.isBlocked || _isFusing) return;
-                          _progress.value =
-                              (_progress.value + details.delta.dx / maxSlide)
-                                  .clamp(0.0, 1.0);
-
-                          if (_progress.value > 0.2) {
-                            widget.onHover(widget.index);
-                          } else {
-                            widget.onHover(null);
-                          }
-
-                          if (_progress.value >= 0.95 && !_isFusing) {
+                      child: Semantics(
+                        button: true,
+                        label: 'Suffix ${widget.suffix}',
+                        child: GestureDetector(
+                          onTap: () {
+                            if (widget.isBlocked || _isFusing) return;
+                            _progress.value = 1.0;
                             _isFusing = true;
                             widget.onMorph(widget.suffix);
-                          }
-                        },
-                        onHorizontalDragEnd: (_) {
-                          widget.onHover(null);
-                          if (!_isFusing) {
-                            _progress.value = 0.0;
-                          }
-                        },
-                        child: _HandleDecoration(
-                          color: widget.color,
-                          suffix: widget.suffix,
+                          },
+                          onHorizontalDragUpdate: (details) {
+                            if (widget.isBlocked || _isFusing) return;
+                            _progress.value =
+                                (_progress.value + details.delta.dx / maxSlide)
+                                    .clamp(0.0, 1.0);
+
+                            if (_progress.value > 0.2) {
+                              widget.onHover(widget.index);
+                            } else {
+                              widget.onHover(null);
+                            }
+
+                            if (_progress.value >= 0.95 && !_isFusing) {
+                              _isFusing = true;
+                              widget.onMorph(widget.suffix);
+                            }
+                          },
+                          onHorizontalDragEnd: (_) {
+                            widget.onHover(null);
+                            if (!_isFusing) {
+                              _progress.value = 0.0;
+                            }
+                          },
+                          child: _HandleDecoration(
+                            color: widget.color,
+                            suffix: widget.suffix,
+                          ),
                         ),
                       ),
                     );

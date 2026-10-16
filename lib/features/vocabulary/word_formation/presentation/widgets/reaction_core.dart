@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/controllers/word_formation_controller.dart';
 
 class ReactionCore extends StatelessWidget {
@@ -25,6 +26,144 @@ class ReactionCore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
+    final glowWidget = Container(
+      width: 150.r,
+      height: 150.r,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        boxShadow: [
+          BoxShadow(
+            color: color.withValues(alpha: 0.15),
+            blurRadius: 40,
+            spreadRadius: 10,
+          ),
+        ],
+      ),
+    );
+
+    final chamberWidget = Container(
+      width: 260.w,
+      height: 100.h,
+      decoration: BoxDecoration(
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.05)
+            : Colors.black.withValues(alpha: 0.03),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(
+          color: color.withValues(alpha: 0.3),
+          width: 2,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: color.withValues(alpha: 0.1),
+            blurRadius: 20,
+            offset: const Offset(0, 10),
+          ),
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30.r),
+        child: Stack(
+          children: [
+            // Dynamic Liquid/Energy Background
+            Positioned.fill(
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      color.withValues(alpha: 0.05),
+                      color.withValues(alpha: 0.1),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+
+            // Word Text with Shimmer
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Builder(
+                    builder: (context) {
+                      final wordWidget = Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            (((controller.isAnswered &&
+                                            controller.isCorrect == true) ||
+                                        controller.isFirstStagePassed)
+                                    ? (quest?.correctAnswer ?? "")
+                                    : root)
+                                .toUpperCase(),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 24.sp,
+                              fontWeight: FontWeight.w900,
+                              color: isDark
+                                  ? Colors.white
+                                  : AppColors.slate900,
+                              letterSpacing: 4,
+                            ),
+                          ),
+                        ),
+                      );
+                      if (reduceMotion) return wordWidget;
+                      return wordWidget
+                          .animate()
+                          .fadeIn()
+                          .shimmer(duration: 2.seconds);
+                    },
+                  ),
+                  if (suffix != null &&
+                      !controller.isAnswered &&
+                      !controller.isFirstStagePassed) ...[
+                    SizedBox(height: 8.h),
+                    Icon(
+                      Icons.add_rounded,
+                      color: color,
+                      size: 20.r,
+                    ),
+                    Builder(
+                      builder: (context) {
+                        final suffixWidget = Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                          ),
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              suffix!.toUpperCase(),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.bold,
+                                color: color,
+                                letterSpacing: 2,
+                              ),
+                            ),
+                          ),
+                        );
+                        if (reduceMotion) return suffixWidget;
+                        return suffixWidget.animate().slideY(begin: 0.5, end: 0);
+                      },
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+
     return SizedBox(
       height: 140.h,
       width: 1.sw,
@@ -33,21 +172,9 @@ class ReactionCore extends StatelessWidget {
         children: [
           // Energy Field Glow - RepaintBoundary for optimization
           RepaintBoundary(
-            child:
-                Container(
-                      width: 150.r,
-                      height: 150.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: color.withValues(alpha: 0.15),
-                            blurRadius: 40,
-                            spreadRadius: 10,
-                          ),
-                        ],
-                      ),
-                    )
+            child: reduceMotion
+                ? glowWidget
+                : glowWidget
                     .animate(onPlay: (c) => c.repeat(reverse: true))
                     .scale(
                       begin: const Offset(0.8, 0.8),
@@ -58,137 +185,40 @@ class ReactionCore extends StatelessWidget {
 
           // Hexagonal Chamber
           RepaintBoundary(
-                child: Container(
-                  width: 260.w,
-                  height: 100.h,
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.05)
-                        : Colors.black.withValues(alpha: 0.03),
-                    borderRadius: BorderRadius.circular(30.r),
-                    border: Border.all(
-                      color: color.withValues(alpha: 0.3),
-                      width: 2,
+            child: reduceMotion
+                ? chamberWidget
+                : chamberWidget
+                    .animate(onPlay: (c) => c.repeat(reverse: true))
+                    .moveY(
+                      begin: -5,
+                      end: 5,
+                      duration: 3.seconds,
+                      curve: Curves.easeInOutQuad,
                     ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: color.withValues(alpha: 0.1),
-                        blurRadius: 20,
-                        offset: const Offset(0, 10),
-                      ),
-                    ],
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(30.r),
-                    child: Stack(
-                      children: [
-                        // Dynamic Liquid/Energy Background
-                        Positioned.fill(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  color.withValues(alpha: 0.05),
-                                  color.withValues(alpha: 0.1),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-
-                        // Word Text with Shimmer
-                        Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: Text(
-                                    (((controller.isAnswered &&
-                                                    controller.isCorrect ==
-                                                        true) ||
-                                                controller.isFirstStagePassed)
-                                            ? (quest?.correctAnswer ?? "")
-                                            : root)
-                                        .toUpperCase(),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 24.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: isDark
-                                          ? Colors.white
-                                          : AppColors.slate900,
-                                      letterSpacing: 4,
-                                    ),
-                                  ),
-                                ),
-                              ).animate().fadeIn().shimmer(duration: 2.seconds),
-                              if (suffix != null &&
-                                  !controller.isAnswered &&
-                                  !controller.isFirstStagePassed) ...[
-                                SizedBox(height: 8.h),
-                                Icon(
-                                  Icons.add_rounded,
-                                  color: color,
-                                  size: 20.r,
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
-                                  ),
-                                  child: FittedBox(
-                                    fit: BoxFit.scaleDown,
-                                    child: Text(
-                                      suffix!.toUpperCase(),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 20.sp,
-                                        fontWeight: FontWeight.bold,
-                                        color: color,
-                                        letterSpacing: 2,
-                                      ),
-                                    ),
-                                  ),
-                                ).animate().slideY(begin: 0.5, end: 0),
-                              ],
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .moveY(
-                begin: -5,
-                end: 5,
-                duration: 3.seconds,
-                curve: Curves.easeInOutQuad,
-              ),
+          ),
 
           // Particle Orbits - Optimized with RepaintBoundary
           ...List.generate(3, (index) {
-            return RepaintBoundary(child: _buildEnergyOrbit(index, color));
+            return RepaintBoundary(
+              child: _buildEnergyOrbit(index, color, reduceMotion),
+            );
           }),
         ],
       ),
     );
   }
 
-  Widget _buildEnergyOrbit(int index, Color color) {
+  Widget _buildEnergyOrbit(int index, Color color, bool reduceMotion) {
     final duration = (2 + index).seconds;
-    return Container(
+    final orbit = Container(
       width: (280 + (index * 20)).w,
       height: (120 + (index * 20)).h,
       decoration: BoxDecoration(
         border: Border.all(color: color.withValues(alpha: 0.1), width: 1),
         borderRadius: BorderRadius.circular(100.r),
       ),
-    ).animate(onPlay: (c) => c.repeat()).rotate(duration: duration);
+    );
+    if (reduceMotion) return orbit;
+    return orbit.animate(onPlay: (c) => c.repeat()).rotate(duration: duration);
   }
 }
