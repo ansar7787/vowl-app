@@ -46,6 +46,7 @@ class DescribeSituationConstellationMap extends StatelessWidget {
                     ? 'Double tap to close keyword list'
                     : 'Double tap to open keywords for this category',
                 child: GestureDetector(
+                  key: Key('describe_situation_emoji_$index'),
                   onTap: () => onEmojiTap(index),
                   child:
                       Container(
@@ -137,6 +138,7 @@ class DescribeSituationConstellationMap extends StatelessWidget {
                                         hint:
                                             'Double tap to inject into your text',
                                         child: InkWell(
+                                          key: Key('describe_situation_keyword_$k'),
                                           onTap: () => onInjectKeyword(k),
                                           borderRadius: BorderRadius.circular(
                                             12.r,
