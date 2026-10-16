@@ -1,26 +1,25 @@
-import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-
-import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
-import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
-import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/audio_recording_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_header.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_scratch_panel.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_usage_panel.dart';
-import 'package:vowl/core/utils/audio_recording_service.dart';
+import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
+import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
+import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
+import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 
 class DailyExpressionScreen extends StatefulWidget {
   final int level;
@@ -56,6 +55,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
   final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
   String _targetExpression = "";
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
   bool _reduceComplexGestures = false;
 
   @override
@@ -69,7 +69,25 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
           ..addListener(() {
             _timeVal.value = _glowController.value;
           });
-    _glowController.repeat();
+    if (!VowlMotion.lowAnimationModeOverride.value) {
+      _glowController.repeat();
+    }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final bool reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+    if (reduceMotion) {
+      if (_glowController.isAnimating) {
+        _glowController.stop();
+      }
+    } else {
+      if (!_glowController.isAnimating) {
+        _glowController.repeat();
+      }
+    }
   }
 
   Future<void> _loadAccessibilitySettings() async {
@@ -84,6 +102,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _glowController.dispose();
     _scratchProgress.dispose();
     _timeVal.dispose();
@@ -93,7 +112,17 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 100), () {
+    _scrollTimer?.cancel();
+    _scrollTimer = null;
+    if (VowlMotion.lowAnimationModeOverride.value) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && _scrollController.hasClients) {
+          _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+        }
+      });
+      return;
+    }
+    _scrollTimer = Timer(const Duration(milliseconds: 100), () {
       if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
@@ -115,34 +144,16 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, SpeakingQuest quest) {
     if (isAnsweredNotifier.value || _scratchProgress.value < 1.0) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<SpeakingBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: _targetExpression,
-          userAnswer: '[Failed Speak to Confirm]',
-          correctAnswer: _targetExpression,
-          level: widget.level,
-        );
-      }
-
-      context.read<SpeakingBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: quest,
+        userAnswer: '[Failed Speak to Confirm]',
+      );
     }
   }
 
@@ -158,6 +169,9 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);
     final mediaQuery = MediaQuery.of(context);
+
+    final bool reduceMotion = mediaQuery.disableAnimations ||
+        VowlMotion.lowAnimationModeOverride.value;
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
       listenWhen: speakingListenWhen,
@@ -225,54 +239,62 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                         ),
                                         SizedBox(height: 24.h),
                                         if (hintUsed && quest.hint != null)
-                                          Container(
-                                                width: double.infinity,
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 16.w,
-                                                  vertical: 12.h,
-                                                ),
-                                                margin: EdgeInsets.only(
-                                                  bottom: 24.h,
-                                                ),
-                                                decoration: BoxDecoration(
+                                          () {
+                                            final hintWidget = Container(
+                                              key: const Key(
+                                                'daily_expression_hint_container',
+                                              ),
+                                              width: double.infinity,
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 16.w,
+                                                vertical: 12.h,
+                                              ),
+                                              margin: EdgeInsets.only(
+                                                bottom: 24.h,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                color: theme.primaryColor
+                                                    .withValues(alpha: 0.1),
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                      16.r,
+                                                    ),
+                                                border: Border.all(
                                                   color: theme.primaryColor
-                                                      .withValues(alpha: 0.1),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                        16.r,
-                                                      ),
-                                                  border: Border.all(
-                                                    color: theme.primaryColor
-                                                        .withValues(alpha: 0.3),
+                                                      .withValues(alpha: 0.3),
+                                                ),
+                                              ),
+                                              child: Row(
+                                                children: [
+                                                  Icon(
+                                                    Icons
+                                                        .lightbulb_outline_rounded,
+                                                    color: theme.primaryColor,
+                                                    size: 18.r,
                                                   ),
-                                                ),
-                                                child: Row(
-                                                  children: [
-                                                    Icon(
-                                                      Icons
-                                                          .lightbulb_outline_rounded,
-                                                      color: theme.primaryColor,
-                                                      size: 18.r,
-                                                    ),
-                                                    SizedBox(width: 8.w),
-                                                    Expanded(
-                                                      child: Text(
-                                                        quest.hint!,
-                                                        style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: 14.sp,
-                                                          color: isDark
-                                                              ? Colors.white70
-                                                              : Colors.black87,
-                                                        ),
+                                                  SizedBox(width: 8.w),
+                                                  Expanded(
+                                                    child: Text(
+                                                      quest.hint!,
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 14.sp,
+                                                        color: isDark
+                                                            ? Colors.white70
+                                                            : Colors.black87,
                                                       ),
                                                     ),
-                                                  ],
-                                                ),
-                                              )
-                                              .animate()
-                                              .fadeIn(duration: 300.ms)
-                                              .slideY(begin: -0.1),
+                                                  ),
+                                                ],
+                                              ),
+                                            );
+                                            return reduceMotion
+                                                ? hintWidget
+                                                : hintWidget
+                                                    .animate()
+                                                    .fadeIn(duration: 300.ms)
+                                                    .slideY(begin: -0.1);
+                                          }(),
                                         DailyExpressionScratchPanel(
                                           quest: quest,
                                           primaryColor: theme.primaryColor,
@@ -296,15 +318,21 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                         ),
                                         SizedBox(height: 32.h),
                                         if (scratchProgress > 0.3)
-                                          DailyExpressionUsagePanel(
-                                                quest: quest,
-                                                primaryColor:
-                                                    theme.primaryColor,
-                                                isDark: isDark,
-                                              )
-                                              .animate()
-                                              .fadeIn(duration: 300.ms)
-                                              .slideY(begin: 0.1),
+                                          () {
+                                            final usagePanel =
+                                                DailyExpressionUsagePanel(
+                                              quest: quest,
+                                              primaryColor:
+                                                  theme.primaryColor,
+                                              isDark: isDark,
+                                            );
+                                            return reduceMotion
+                                                ? usagePanel
+                                                : usagePanel
+                                                    .animate()
+                                                    .fadeIn(duration: 300.ms)
+                                                    .slideY(begin: 0.1);
+                                          }(),
                                       ],
                                     );
                                   },
@@ -318,14 +346,17 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                     scratchProgress >= 1.0) {
                                   return SliverToBoxAdapter(
                                     child: ShadowPlaybackCompare(
+                                      key: const Key(
+                                        'daily_expression_shadow_compare',
+                                      ),
                                       expectedText: _targetExpression,
                                       primaryColor: theme.primaryColor,
                                       isPositioned: false,
                                       showExpectedText: false,
                                       onConfirmed: () =>
-                                          _submitVerbalEvaluation(true),
+                                          _submitVerbalEvaluation(true, quest),
                                       onSkipped: () =>
-                                          _submitVerbalEvaluation(false),
+                                          _submitVerbalEvaluation(false, quest),
                                     ),
                                   );
                                 }

@@ -14,6 +14,7 @@ class DailyExpressionHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: const Key('daily_expression_header'),
       padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.1),
@@ -25,14 +26,17 @@ class DailyExpressionHeader extends StatelessWidget {
         children: [
           Icon(Icons.auto_awesome_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 8.w),
-          Text(
-            instruction.toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.bold,
-              color: primaryColor,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              instruction.toUpperCase(),
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.bold,
+                color: primaryColor,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],

@@ -7,6 +7,15 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 mixin SpeakingGameScreenMixin<T extends StatefulWidget>
     on State<T>, GameScreenMixin<T> {
   void initSpeakingGame() {
+    final current = context.read<SpeakingBloc>().state;
+    if (current is SpeakingLoaded) {
+      handleStateUpdate(
+        currentIndex: current.currentIndex,
+        livesRemaining: current.livesRemaining,
+        isAnswered: current.answerStatus.isAnswered,
+        isCorrect: current.answerStatus.asBoolOrNull,
+      );
+    }
     context.read<SpeakingBloc>().add(
       FetchSpeakingQuests(gameType: gameType, level: level),
     );
