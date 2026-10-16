@@ -44,6 +44,7 @@ class SpeedSpellingCharacterDeck extends StatelessWidget {
                 ),
           excludeSemantics: true,
           child: ScaleButton(
+            key: Key('speed_spelling_tile_$index'),
             scaleDown: 0.9,
             debounceDuration: const Duration(milliseconds: 50),
             onTap: char == "" ? null : () => onCharTap(char, index),
