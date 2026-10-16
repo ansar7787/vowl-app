@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -52,6 +53,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
   VocabularyQuest? _lastQuest;
 
   late AnimationController _vaultController;
+  Timer? _scrollTimer;
 
   @override
   void initState() {
@@ -62,6 +64,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _selectedOption.dispose();
     _scrollController.dispose();
     _vaultController.dispose();
@@ -85,7 +88,8 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
       _vaultController.forward(from: 0);
       isFirstStagePassedNotifier.value = true;
 
-      Future.delayed(const Duration(milliseconds: 1000), () {
+      _scrollTimer?.cancel();
+      _scrollTimer = Timer(const Duration(milliseconds: 1000), () {
         if (mounted && _scrollController.hasClients) {
           _scrollController.animateTo(
             _scrollController.position.maxScrollExtent,
@@ -137,6 +141,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
 
   @override
   void onQuestionReset() {
+    _scrollTimer?.cancel();
     _selectedOption.value = null;
   }
 
@@ -502,34 +507,37 @@ class _PhrasalVerbsStageLayout extends StatelessWidget {
   }
 
   Widget _buildVaultStatus(Color color, bool isDark) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.vpn_key_rounded, size: 16.r, color: color),
-          SizedBox(width: 10.w),
-          AutoSizeText(
-            "VAULT SECURITY: L-$level",
-            maxLines: 1,
-            minFontSize: 4,
-            stepGranularity: 0.5,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.bold,
-              color: color,
-              letterSpacing: 2,
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(30.r),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.vpn_key_rounded, size: 16.r, color: color),
+            SizedBox(width: 10.w),
+            AutoSizeText(
+              "VAULT SECURITY: L-$level",
+              maxLines: 1,
+              minFontSize: 4,
+              stepGranularity: 0.5,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 12.sp,
+                fontWeight: FontWeight.bold,
+                color: color,
+                letterSpacing: 2,
+              ),
             ),
-          ),
-        ],
-      ),
-    ).animate().shimmer(duration: 2.seconds);
+          ],
+        ),
+      ).animate().shimmer(duration: 2.seconds),
+    );
   }
 
   Widget _buildInstruction(String text, Color color, bool isCompact) {
