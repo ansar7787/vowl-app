@@ -32,14 +32,17 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
               color: isDark ? Colors.white54 : Colors.black54,
             ),
             SizedBox(width: 8.w),
-            Text(
-              "REQUIRED KEYWORDS (USE ALL)",
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                color: isDark ? Colors.white54 : Colors.black54,
-                fontWeight: FontWeight.w600,
-                letterSpacing: 1.2,
+            Expanded(
+              child: Text(
+                "REQUIRED KEYWORDS (USE ALL)",
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 10.sp,
+                  color: isDark ? Colors.white54 : Colors.black54,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1.2,
+                ),
               ),
             ),
           ],
@@ -63,6 +66,7 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
                 : (isDark ? Colors.white24 : Colors.black26);
 
             return AnimatedContainer(
+              key: Key('short_answer_booster_token_$k'),
               duration: 300.milliseconds,
               padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
               decoration: BoxDecoration(

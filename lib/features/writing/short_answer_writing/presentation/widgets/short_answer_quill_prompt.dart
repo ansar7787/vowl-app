@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class ShortAnswerQuillPrompt extends StatelessWidget {
   final String prompt;
@@ -56,7 +57,12 @@ class ShortAnswerQuillPrompt extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Container(
+                    Builder(
+                      builder: (context) {
+                        final reduceMotion =
+                            MediaQuery.disableAnimationsOf(context) ||
+                            VowlMotion.lowAnimationModeOverride.value;
+                        final iconContainer = Container(
                           padding: EdgeInsets.all(8.r),
                           decoration: BoxDecoration(
                             color: color.withValues(alpha: 0.2),
@@ -67,12 +73,16 @@ class ShortAnswerQuillPrompt extends StatelessWidget {
                             color: color,
                             size: 18.r,
                           ),
-                        )
-                        .animate(onPlay: (c) => c.repeat(reverse: true))
-                        .scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(1.1, 1.1),
-                        ),
+                        );
+                        if (reduceMotion) return iconContainer;
+                        return iconContainer
+                            .animate(onPlay: (c) => c.repeat(reverse: true))
+                            .scale(
+                              begin: const Offset(1, 1),
+                              end: const Offset(1.1, 1.1),
+                            );
+                      },
+                    ),
                     SizedBox(width: 10.w),
                     Text(
                       "PROMPT",
