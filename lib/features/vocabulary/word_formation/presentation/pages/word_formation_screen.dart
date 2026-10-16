@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
@@ -49,6 +51,8 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   late final WordFormationController _controller;
   final ScrollController _scrollController = ScrollController();
   bool _hasScrolledToStage2 = false;
+  Timer? _scrollTimer;
+  Timer? _hintTimer;
 
   void _onControllerUpdate() {
     if (!mounted) return;
@@ -56,7 +60,8 @@ class _WordFormationScreenState extends State<WordFormationScreen>
         !_controller.isAnswered &&
         !_hasScrolledToStage2) {
       _hasScrolledToStage2 = true;
-      Future.delayed(const Duration(milliseconds: 400), _scrollToBottom);
+      _scrollTimer?.cancel();
+      _scrollTimer = Timer(const Duration(milliseconds: 400), _scrollToBottom);
     } else if (!_controller.isFirstStagePassed) {
       _hasScrolledToStage2 = false;
     }
@@ -101,6 +106,8 @@ class _WordFormationScreenState extends State<WordFormationScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
+    _hintTimer?.cancel();
     _controller.removeListener(_onControllerUpdate);
     _scrollController.dispose();
     _controller.dispose();
@@ -119,10 +126,19 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
       listener: onVocabularyStateChanged,
       builder: (context, state) {
+        if (state is VocabularyLoaded && state.currentQuestOrNull != null) {
+          if (_controller.lastQuest != state.currentQuestOrNull ||
+              _controller.lastProcessedIndex != state.currentIndex) {
+            _controller.reset(state.currentQuestOrNull!, state.currentIndex);
+          }
+        }
+
         final theme = LevelThemeHelper.getTheme(
           'vocabulary',
           level: widget.level,
@@ -183,7 +199,8 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                 if (correctIdx != null) {
                   _controller.setHoveringIndex(correctIdx);
                   // Auto-reset after a short delay if they don't drag
-                  Future.delayed(2.seconds, () {
+                  _hintTimer?.cancel();
+                  _hintTimer = Timer(2.seconds, () {
                     if (mounted && !_controller.isAnswered) {
                       _controller.setHoveringIndex(null);
                     }
@@ -223,6 +240,38 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                             ? (gapUnit * 2).clamp(12.0, 30.0)
                             : 12.0;
 
+                        final instructionWidget = InstructionPanel(
+                          color: theme.primaryColor,
+                          quest: quest,
+                        );
+
+                        final reactionCoreWidget = isCompact
+                            ? SizedBox(
+                                height: 120.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: SizedBox(
+                                    width: constraints.maxWidth,
+                                    child: ReactionCore(
+                                      quest: quest,
+                                      root: root,
+                                      suffix: activeSuffix,
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                      controller: _controller,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            : ReactionCore(
+                                quest: quest,
+                                root: root,
+                                suffix: activeSuffix,
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                controller: _controller,
+                              );
+
                         return RawScrollbar(
                           controller: _scrollController,
                           thumbColor: theme.primaryColor.withValues(alpha: 0.5),
@@ -249,11 +298,9 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                                           padding: EdgeInsets.symmetric(
                                             horizontal: 24.w,
                                           ),
-                                          child:
-                                              InstructionPanel(
-                                                    color: theme.primaryColor,
-                                                    quest: quest,
-                                                  )
+                                          child: reduceMotion
+                                              ? instructionWidget
+                                              : instructionWidget
                                                   .animate()
                                                   .fadeIn(duration: 500.ms)
                                                   .slideY(
@@ -266,43 +313,17 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                                         SizedBox(height: gapMiddle * 0.4),
 
                                         // Reaction Core
-                                        (isCompact
-                                                ? SizedBox(
-                                                    height: 120.h,
-                                                    child: FittedBox(
-                                                      fit: BoxFit.scaleDown,
-                                                      child: SizedBox(
-                                                        width: constraints
-                                                            .maxWidth,
-                                                        child: ReactionCore(
-                                                          quest: quest,
-                                                          root: root,
-                                                          suffix: activeSuffix,
-                                                          color: theme
-                                                              .primaryColor,
-                                                          isDark: isDark,
-                                                          controller:
-                                                              _controller,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  )
-                                                : ReactionCore(
-                                                    quest: quest,
-                                                    root: root,
-                                                    suffix: activeSuffix,
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                    controller: _controller,
-                                                  ))
-                                            .animate()
-                                            .scale(
-                                              begin: const Offset(0.8, 0.8),
-                                              end: const Offset(1.0, 1.0),
-                                              duration: 600.ms,
-                                              curve: Curves.easeOutCubic,
-                                            )
-                                            .fadeIn(duration: 600.ms),
+                                        reduceMotion
+                                            ? reactionCoreWidget
+                                            : reactionCoreWidget
+                                                .animate()
+                                                .scale(
+                                                  begin: const Offset(0.8, 0.8),
+                                                  end: const Offset(1.0, 1.0),
+                                                  duration: 600.ms,
+                                                  curve: Curves.easeOutCubic,
+                                                )
+                                                .fadeIn(duration: 600.ms),
 
                                         SizedBox(height: gapMiddle),
 
@@ -314,6 +335,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                                           theme.primaryColor,
                                           isDark,
                                           isCompact,
+                                          reduceMotion,
                                         ),
                                         SizedBox(height: gapBottom),
                                       ],
@@ -366,36 +388,43 @@ class _WordFormationScreenState extends State<WordFormationScreen>
     Color color,
     bool isDark,
     bool isCompact,
+    bool reduceMotion,
   ) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Column(
         children: options.asMap().entries.map((entry) {
-          return Padding(
-                padding: EdgeInsets.only(bottom: isCompact ? 6.h : 12.h),
-                child: SizedBox(
-                  width: 1.sw,
-                  height: isCompact ? 50.h : 60.h,
-                  child: MorphInjectionRail(
-                    index: entry.key,
-                    suffix: entry.value,
-                    color: color,
-                    isDark: isDark,
-                    isBlocked:
-                        _controller.isAnswered ||
-                        _controller.isFirstStagePassed,
-                    onMorph: (suffix) {
-                      _controller.submitMorph(suffix, root, correct, entry.key);
-                    },
-                    onHover: (index) {
-                      if (!_controller.isAnswered &&
-                          !_controller.isFirstStagePassed) {
-                        _controller.setHoveringIndex(index);
-                      }
-                    },
-                  ),
-                ),
-              )
+          final railPadding = Padding(
+            padding: EdgeInsets.only(bottom: isCompact ? 6.h : 12.h),
+            child: SizedBox(
+              width: 1.sw,
+              height: isCompact ? 50.h : 60.h,
+              child: MorphInjectionRail(
+                index: entry.key,
+                suffix: entry.value,
+                color: color,
+                isDark: isDark,
+                isBlocked:
+                    _controller.isAnswered ||
+                    _controller.isFirstStagePassed,
+                onMorph: (suffix) {
+                  _controller.submitMorph(suffix, root, correct, entry.key);
+                },
+                onHover: (index) {
+                  if (!_controller.isAnswered &&
+                      !_controller.isFirstStagePassed) {
+                    _controller.setHoveringIndex(index);
+                  }
+                },
+              ),
+            ),
+          );
+
+          if (reduceMotion) {
+            return railPadding;
+          }
+
+          return railPadding
               .animate()
               .fadeIn(duration: 400.ms, delay: (entry.key * 100).ms)
               .slideX(
