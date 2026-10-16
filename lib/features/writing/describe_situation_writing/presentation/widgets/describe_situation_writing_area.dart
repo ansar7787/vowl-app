@@ -45,6 +45,7 @@ class DescribeSituationWritingArea extends StatelessWidget {
       child: Column(
         children: [
           TextField(
+            key: const Key('describe_situation_input_field'),
             controller: textController,
             focusNode: focusNode,
             maxLines: 4,
@@ -76,15 +77,19 @@ class DescribeSituationWritingArea extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "Booster words used: ${usedKeywords.length}",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 11.sp,
-                  color: color,
-                  fontWeight: FontWeight.w500,
+              Expanded(
+                child: Text(
+                  "Booster words used: ${usedKeywords.length}",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    color: color,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
+              SizedBox(width: 8.w),
               Builder(
                 builder: (context) {
                   final displayColor = wordCount >= minWords

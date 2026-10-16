@@ -414,7 +414,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
           useScrolling: false,
           disablePadding: true,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
-          onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
+          onHint: () {},
           child: ListenableBuilder(
             listenable: Listenable.merge([
               showConfettiNotifier,
@@ -433,6 +433,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
                       radius: Radius.circular(8.r),
                       thickness: 4.w,
                       child: CustomScrollView(
+                        key: const Key('describe_situation_scroll_view'),
                         controller: _scrollController,
                         physics: const BouncingScrollPhysics(),
                         slivers: [
@@ -526,19 +527,10 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
                                       ),
                                     ),
                                   ],
-                                  SizedBox(height: 30.h),
-                                ],
-                              ),
-                            ),
-                          ),
-                          SliverToBoxAdapter(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
+                                  SizedBox(height: 24.h),
                                   if (!_showSpeakToConfirm.value && !isAnswered)
                                     ScaleButton(
+                                      key: const Key('describe_situation_submit_button'),
                                       onTap: () => _submitAnswer(
                                         minWords,
                                         allKeywordPool,
@@ -577,28 +569,25 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
                                         ),
                                       ),
                                     ),
+                                  if (_showSpeakToConfirm.value && !isAnswered)
+                                    SpeakToConfirmOverlay(
+                                      expectedText: _textController.text.trim(),
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      displayFontSize: 14.sp,
+                                      displayFontWeight: FontWeight.w400,
+                                      displayTextAlign: TextAlign.left,
+                                      onConfirmed: _onSpeakConfirmed,
+                                      onSkipped: () {
+                                        _showSpeakToConfirm.value = false;
+                                        submitCorrectAnswer();
+                                      },
+                                    ),
+                                  SizedBox(height: !isAnswered ? 40.h : 200.h),
                                 ],
                               ),
                             ),
                           ),
-
-                          if (_showSpeakToConfirm.value && !isAnswered)
-                            SliverToBoxAdapter(
-                              child: SpeakToConfirmOverlay(
-                                expectedText: _textController.text.trim(),
-                                primaryColor: theme.primaryColor,
-                                isPositioned: false,
-                                displayFontSize: 14.sp,
-                                displayFontWeight: FontWeight.w400,
-                                displayTextAlign: TextAlign.left,
-                                onConfirmed: _onSpeakConfirmed,
-                                onSkipped: () {
-                                  _showSpeakToConfirm.value = false;
-                                  submitCorrectAnswer();
-                                },
-                              ),
-                            ),
-                          SliverToBoxAdapter(child: SizedBox(height: 120.h)),
                         ],
                       ),
                     );
