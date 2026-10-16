@@ -1,4 +1,6 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -39,7 +41,10 @@ class AccentShadowingOptionsPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final tokens = Theme.of(context).extension<AppColorTokens>();
+    final reduceMotion = VowlMotion.shouldReduceMotion(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
     return Column(
       children: List.generate(shuffledOptions.length, (index) {
         final option = shuffledOptions[index];
@@ -49,11 +54,6 @@ class AccentShadowingOptionsPanel extends StatelessWidget {
             showCorrectAnswer && originalIndices[index] == correctAnswerIndex;
         Color textColor = Theme.of(context).colorScheme.onSurface;
 
-        // FIX: this option previously had zero Semantics. A sighted player
-        // gets the outcome from border color (green/red) plus the cancel
-        // icon on wrong answers; a screen-reader user got none of that —
-        // just the bare option text repeated identically regardless of
-        // state. Build one combined label per option instead.
         final semanticLabel = _buildOptionLabel(
           context,
           option,
@@ -61,7 +61,7 @@ class AccentShadowingOptionsPanel extends StatelessWidget {
           isWrong,
         );
 
-        return Padding(
+        final optionWidget = Padding(
           padding: EdgeInsets.only(bottom: 16.h),
           child: Semantics(
             button: true,
@@ -70,6 +70,7 @@ class AccentShadowingOptionsPanel extends StatelessWidget {
             label: semanticLabel,
             excludeSemantics: true,
             child: ScaleButton(
+              key: Key('accent_shadowing_option_$index'),
               onTap: isAnswered ? null : () => onOptionSelected(index),
               child: GlassTile(
                 borderRadius: BorderRadius.circular(20.r),
@@ -111,7 +112,9 @@ class AccentShadowingOptionsPanel extends StatelessWidget {
                                   : Icons.psychology_alt_rounded),
                         color: (isCorrect || isSelected)
                             ? Colors.green
-                            : (isWrong ? tokens.gameIncorrect : primaryColor),
+                            : (isWrong
+                                  ? (tokens?.gameIncorrect ?? AppColors.red500)
+                                  : primaryColor),
                         size: 18.r,
                       ),
                     ),
@@ -133,7 +136,16 @@ class AccentShadowingOptionsPanel extends StatelessWidget {
               ),
             ),
           ),
-        ).animate().fadeIn(delay: (index * 100).ms).slideX(begin: 0.1);
+        );
+
+        if (reduceMotion) {
+          return optionWidget;
+        }
+
+        return optionWidget
+            .animate()
+            .fadeIn(delay: (index * 100).ms)
+            .slideX(begin: 0.1);
       }),
     );
   }

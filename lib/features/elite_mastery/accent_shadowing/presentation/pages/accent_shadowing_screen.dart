@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -52,6 +53,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
   final ValueNotifier<List<int>> _originalIndices = ValueNotifier([]);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<List<int>> _wrongIndices = ValueNotifier([]);
+  Timer? _scrollTimer;
 
   static const double _kCompactHeightBreakpoint = 580;
 
@@ -59,10 +61,15 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
   void initState() {
     super.initState();
     initEliteMasteryGame();
+    final initial = context.read<EliteMasteryBloc>().state;
+    if (initial is EliteMasteryLoaded && initial.quests.isNotEmpty) {
+      _initializeOptionsIfNeeded(initial.currentQuest);
+    }
   }
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _attempts.dispose();
     _matchedIndices.dispose();
     _shuffledOptions.dispose();
@@ -111,7 +118,8 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 300), () {
+    _scrollTimer?.cancel();
+    _scrollTimer = Timer(const Duration(milliseconds: 300), () {
       if (!mounted) return;
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
@@ -177,6 +185,13 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
       listenWhen: eliteMasteryListenWhen,
       listener: onEliteMasteryStateChanged,
       builder: (context, state) {
+        final bool isAnswered =
+            (state is EliteMasteryLoaded && state.answerStatus.isAnswered) ||
+            isAnsweredNotifier.value;
+        final bool? isCorrect = state is EliteMasteryLoaded
+            ? (state.answerStatus.asBoolOrNull ?? isCorrectNotifier.value)
+            : isCorrectNotifier.value;
+
         return ListenableBuilder(
           listenable: Listenable.merge([
             isAnsweredNotifier,
@@ -190,9 +205,9 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
             return EliteBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: isAnsweredNotifier.value,
+              isAnswered: isAnswered,
               state: state,
-              isCorrect: isCorrectNotifier.value,
+              isCorrect: isCorrect,
               isFinalFailure:
                   (state is EliteMasteryLoaded && state.isFinalFailure) ||
                   (state is EliteMasteryLoaded
@@ -243,9 +258,11 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
     ThemeResult theme,
   ) {
     if (state is EliteMasteryLoaded) {
+      if (state.quests.isEmpty) return const SizedBox.shrink();
       return _buildGameUI(context, state, isDark, theme);
     }
     if (state is EliteMasteryGameOver) {
+      if (state.quests.isEmpty) return const SizedBox.shrink();
       return Opacity(
         opacity: 0.5,
         child: AbsorbPointer(
@@ -271,7 +288,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
     EliteMasteryState state,
   ) {
     super.onEliteMasteryStateChanged(context, state);
-    if (state is EliteMasteryLoaded) {
+    if (state is EliteMasteryLoaded && state.quests.isNotEmpty) {
       _initializeOptionsIfNeeded(state.currentQuest);
     }
   }
@@ -295,6 +312,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
           crossAxisMargin: 4.w,
           mainAxisMargin: 16.h,
           child: CustomScrollView(
+            key: const Key('accent_shadowing_scroll_view'),
             controller: _scrollController,
             physics: const BouncingScrollPhysics(),
             slivers: [
@@ -318,6 +336,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                           children: [
                             if (quest.instruction.isNotEmpty) ...[
                               Container(
+                                key: const Key('accent_shadowing_instruction_banner'),
                                 width: double.infinity,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 20.w,
@@ -456,6 +475,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
               if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
                 SliverToBoxAdapter(
                   child: AccentShadowingInsightsPanel(
+                    key: const Key('accent_shadowing_insights_panel'),
                     quest: quest,
                     isDark: isDark,
                     primaryColor: theme.primaryColor,
@@ -549,13 +569,15 @@ class AccentShadowingInsightsPanel extends StatelessWidget {
                 size: 24.r,
               ),
               SizedBox(width: 8.w),
-              Text(
-                'Pedagogical Insights',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w800,
-                  color: isDark ? Colors.white : AppColors.slate800,
+              Expanded(
+                child: Text(
+                  'Pedagogical Insights',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w800,
+                    color: isDark ? Colors.white : AppColors.slate800,
+                  ),
                 ),
               ),
             ],
