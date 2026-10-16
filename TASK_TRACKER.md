@@ -5,9 +5,9 @@
 >
 > - **Total Dart Files in `lib/`**: **1,068 files**
 > - **Total Test Files in `test/`**: **160 files**
-> - **Total Passing Tests**: **2,700+ Tests Passing (100% Green on completed suites)**
-> - **Completed Test Suites**: **152 files** (Auth 12, Games Hub 5, Kids 35, Reading 13, Accent 13, Grammar 21, Listening 12, Roleplay 12, Speaking 10, Vocab 3, Writing 1, Elite 1, Daily & Micro 11, Settings & Daily Words 2, Core 7)
-> - **Remaining Game Screens & Hubs to Test / Harden**: **23 screens/suites** across pending categories and shell routes.
+> - **Total Passing Tests**: **2,800+ Tests Passing (100% Green on completed suites)**
+> - **Completed Test Suites**: **153 files** (Auth 12, Games Hub 5, Kids 35, Reading 13, Accent 13, Grammar 21, Listening 12, Roleplay 12, Speaking 11, Vocab 3, Writing 1, Elite 1, Daily & Micro 11, Settings & Daily Words 2, Core 7)
+> - **Remaining Game Screens & Hubs to Test / Harden**: **22 screens/suites** across pending categories and shell routes.
 
 ---
 
@@ -52,7 +52,7 @@ Every game test suite MUST rigorously satisfy:
 | **6** | **Grammar Category** | 21 | 21 | 0 | 🟢 100% Complete (395 tests) |
 | **7** | **Listening Category** | 12 | 12 | 0 | 🟢 100% Complete (300 tests) |
 | **8** | **Roleplay Category** | 12 | 12 | 0 | 🟢 100% Complete (468 tests) |
-| **9** | **Speaking Category** | 11 | 10 | 1 | 🟡 10 Suites Passing (614 tests; 1 pending synonym fix) |
+| **9** | **Speaking Category** | 11 | 11 | 0 | 🟢 100% Complete (685 tests) |
 | **10** | **Vocabulary Category** | 14 | 3 | 11 | 🟡 3 Suites Passing (87 tests; 11 remaining) |
 | **11** | **Writing Category** | 12 | 1 | 11 | ⚠️ BLoC only (4 tests; 11 games remaining) |
 | **12** | **Elite Mastery** | 5 | 1 | 4 | ⚠️ BLoC only (4 tests; 4 games remaining) |
@@ -268,7 +268,7 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 7: LISTENING CATEGORY (10 GAMES)
+### SECTION 7: LISTENING CATEGORY (100% COMPLETE)
 
 - [x] **7.1** `listening_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [x] **7.2** `listening_quest_model_test.dart` (Model Test) — ✅ `[DONE - 5/5 tests passing]`
@@ -322,12 +322,13 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 9: SPEAKING CATEGORY (10 GAMES)
+### SECTION 9: SPEAKING CATEGORY (100% COMPLETE)
 
 - [x] **9.1** `speaking_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [x] **9.2** `daily_expression_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 70/70 tests passing]`
   - Validates daily expression phrase card, situational context, phrase options, selecting wrong expression submitting wrong answer, selecting correct daily expression advancing to SpeakToConfirmOverlay (Phase 2), verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching SpeakingHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x640) and tablet (800x1280) zero-overflow layout safety.
-- [ ] **9.3** `dialogue_roleplay_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **9.3** `dialogue_roleplay_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 71/71 tests passing]`
+  - Validates partner dialogue scenario & avatar, audio playback completion barrier (`_ttsFinished`), smart replies & ML deduplication, synaptic link canvas with dynamic particle wire, chosen reply updates, Phase 2 `SpeakToConfirmOverlay` verbal evaluation confirmation ("Nailed It") dispatching bonus coins & `SubmitAnswer(true)`, skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching `NextQuestion`, hint button dispatching `SpeakingHintUsed`, level 1 briefing dialog display and dismissal, compact mobile (320x568) and tablet (768x1024) zero-overflow layout safety.
 - [x] **9.4** `pronunciation_focus_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 71/71 tests passing]`
   - Validates phonetic target word prompt, IPA transcription guide, audio exemplar pronunciation button, tapping audio exemplar playing TTS, selecting wrong phonetic option submitting wrong answer, selecting correct pronunciation advancing to SpeakToConfirmOverlay (Phase 2), verbal evaluation confirmation ("Nailed It") dispatching SubmitAnswer(true), skip fallback ("Needs Work"), answered interaction lockout, continue button dispatching NextQuestion, hint button dispatching SpeakingHintUsed, level 1 briefing dialog display and dismissal, compact mobile (320x640) and tablet (800x1280) zero-overflow layout safety.
 - [x] **9.5** `repeat_sentence_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 68/68 tests passing]`
