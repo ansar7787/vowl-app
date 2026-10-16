@@ -64,11 +64,15 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
     String message, {
     CustomSnackBarType type = CustomSnackBarType.warning,
   }) {
+    if (!mounted) return;
     _strikeCount++;
     if (_strikeCount >= 3) {
       _savedTextForRetry = _controller.text;
       _isSubmitting.value = false;
-      submitWrongAnswer(quest: _lastQuest!);
+      final targetQuest = _lastQuest;
+      if (targetQuest != null) {
+        submitWrongAnswer(quest: targetQuest, userAnswer: _controller.text);
+      }
     } else {
       CustomSnackBar.show(
         context: context,
@@ -295,7 +299,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
           useScrolling: false,
           disablePadding: true,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
-          onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
+          onHint: () {},
           child: ListenableBuilder(
             listenable: Listenable.merge([
               showConfettiNotifier,
@@ -314,6 +318,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                       radius: Radius.circular(8.r),
                       thickness: 4.w,
                       child: CustomScrollView(
+                        key: const Key('daily_journal_scroll_view'),
                         controller: _scrollController,
                         physics: const BouncingScrollPhysics(),
                         slivers: [
@@ -366,14 +371,16 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                                                 size: 16.sp,
                                               ),
                                               SizedBox(width: 8.w),
-                                              Text(
-                                                "Guiding Questions",
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 13.sp,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: theme.primaryColor,
-                                                  letterSpacing: 0.5,
+                                              Expanded(
+                                                child: Text(
+                                                  "Guiding Questions",
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 13.sp,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: theme.primaryColor,
+                                                    letterSpacing: 0.5,
+                                                  ),
                                                 ),
                                               ),
                                             ],
@@ -419,19 +426,12 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                                     color: theme.primaryColor,
                                     isDark: isDark,
                                   ),
-                                  SizedBox(height: 32.h),
-                                ],
-                              ),
-                            ),
-                          ),
-                          SliverToBoxAdapter(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
+                                  SizedBox(height: 24.h),
                                   if (!_showSpeakToConfirm.value && !isAnswered)
                                     ScaleButton(
+                                      key: const Key(
+                                        'daily_journal_save_button',
+                                      ),
                                       onTap: () => _submitAnswer(
                                         targetKeywords,
                                         isAnswered,
@@ -469,40 +469,34 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                                         ),
                                       ),
                                     ),
+                                  if (_showSpeakToConfirm.value && !isAnswered)
+                                    SpeakToConfirmOverlay(
+                                      isPositioned: false,
+                                      expectedText: _controller.text.trim(),
+                                      primaryColor: theme.primaryColor,
+                                      onConfirmed: _onSpeakConfirmed,
+                                      onSkipped: () {
+                                        _showSpeakToConfirm.value = false;
+                                        submitCorrectAnswer();
+                                      },
+                                    ),
+                                  SizedBox(
+                                    height: !isAnswered
+                                        ? (_showSpeakToConfirm.value
+                                              ? 20.h
+                                              : (MediaQuery.of(
+                                                          context,
+                                                        ).viewInsets.bottom >
+                                                        0
+                                                    ? MediaQuery.of(
+                                                            context,
+                                                          ).viewInsets.bottom +
+                                                          20.h
+                                                    : 40.h))
+                                        : 200.h, // Space for Feedback Card
+                                  ),
                                 ],
                               ),
-                            ),
-                          ),
-                          if (_showSpeakToConfirm.value && !isAnswered)
-                            SliverToBoxAdapter(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: SpeakToConfirmOverlay(
-                                  expectedText: _controller.text.trim(),
-                                  primaryColor: theme.primaryColor,
-                                  onConfirmed: _onSpeakConfirmed,
-                                  onSkipped: () {
-                                    _showSpeakToConfirm.value = false;
-                                    submitCorrectAnswer();
-                                  },
-                                ),
-                              ),
-                            ),
-                          SliverToBoxAdapter(
-                            child: SizedBox(
-                              height: !isAnswered
-                                  ? (_showSpeakToConfirm.value
-                                        ? 20.h
-                                        : (MediaQuery.of(
-                                                    context,
-                                                  ).viewInsets.bottom >
-                                                  0
-                                              ? MediaQuery.of(
-                                                      context,
-                                                    ).viewInsets.bottom +
-                                                    20.h
-                                              : 40.h))
-                                  : 200.h, // Space for Feedback Card
                             ),
                           ),
                         ],

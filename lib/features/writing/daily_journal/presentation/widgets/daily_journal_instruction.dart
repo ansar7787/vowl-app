@@ -15,6 +15,7 @@ class DailyJournalInstruction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: const Key('daily_journal_instruction'),
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
