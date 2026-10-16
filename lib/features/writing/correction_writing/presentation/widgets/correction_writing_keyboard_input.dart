@@ -75,6 +75,7 @@ class _CorrectionWritingKeyboardInputState
             children: [
               Expanded(
                 child: TextField(
+                  key: const Key('correction_keyboard_input_field'),
                   controller: _controller,
                   focusNode: _focusNode,
                   onTap: () {
@@ -106,6 +107,7 @@ class _CorrectionWritingKeyboardInputState
                 ),
               ),
               ScaleButton(
+                key: const Key('correction_keyboard_submit_button'),
                 onTap: _submitInput,
                 child: Container(
                   padding: EdgeInsets.all(10.r),

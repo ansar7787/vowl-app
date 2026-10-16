@@ -79,6 +79,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
       .replaceAll(RegExp(r'\s+'), ' ');
 
   void _submitAnswer(bool isAnswered, [String? typedText]) {
+    if (!mounted) return;
     final currentState = context.read<WritingBloc>().state;
     if (currentState is! WritingLoaded) return;
 
@@ -96,6 +97,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
     if (isHardMode && typedText != null) {
       final rawText = typedText.trim();
       if (!RegExp(r'^[A-Z]').hasMatch(rawText)) {
+        if (!mounted) return;
         CustomSnackBar.show(
           context: context,
           message: context.tr(
@@ -110,6 +112,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
 
       final lastChar = rawText.isNotEmpty ? rawText[rawText.length - 1] : '';
       if (!['.', '!', '?'].contains(lastChar)) {
+        if (!mounted) return;
         CustomSnackBar.show(
           context: context,
           message: context.tr(
@@ -134,12 +137,8 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
     }
 
     if (correct) {
-      hapticService.success();
-      soundService.playCorrect();
       submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
       submitWrongAnswer(
         quest: quest,
         userAnswer: isHardMode ? typedText : _selectedCorrection.value,
@@ -190,7 +189,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
           useScrolling: false,
           disablePadding: true,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
-          onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
+          onHint: () {},
           child: ListenableBuilder(
             listenable: Listenable.merge([
               showConfettiNotifier,
@@ -205,6 +204,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
                       radius: Radius.circular(8.r),
                       thickness: 4.w,
                       child: CustomScrollView(
+                        key: const Key('correction_writing_scroll_view'),
                         controller: _scrollController,
                         physics: const BouncingScrollPhysics(),
                         slivers: [
@@ -236,7 +236,11 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
 
                                   if (widget.level >= 6) ...[
                                     GestureDetector(
+                                      key: const Key(
+                                        'correction_hard_mode_vault_detector',
+                                      ),
                                       onTap: () {
+                                        if (!mounted) return;
                                         CustomSnackBar.show(
                                           context: context,
                                           message: context.tr(
@@ -293,6 +297,9 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
                                 children: [
                                   if (!isAnswered && widget.level < 6)
                                     ScaleButton(
+                                      key: const Key(
+                                        'correction_writing_check_button',
+                                      ),
                                       onTap: _selectedCorrection.value != null
                                           ? () => _submitAnswer(isAnswered)
                                           : null,

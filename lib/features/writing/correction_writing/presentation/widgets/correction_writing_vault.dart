@@ -52,6 +52,7 @@ class CorrectionWritingVault extends StatelessWidget {
               selected: isSelected,
               label: 'Option: $opt',
               child: GestureDetector(
+                key: Key('correction_vault_chip_$opt'),
                 onTap: () => onSelectCorrection(opt),
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 200),
