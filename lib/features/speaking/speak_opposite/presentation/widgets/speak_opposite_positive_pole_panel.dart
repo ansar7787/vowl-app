@@ -90,6 +90,7 @@ class SpeakOppositePositivePolePanel extends StatelessWidget {
               ],
             ),
             child: Semantics(
+              container: true,
               label: 'Target word to find opposite: $targetWord',
               child: Text(
                 targetWord,
