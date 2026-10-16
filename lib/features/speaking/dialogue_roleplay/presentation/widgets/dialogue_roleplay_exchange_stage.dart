@@ -46,6 +46,8 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
         // AI Partner Speech Card
         _buildBubbleCard(
           context,
+          cardKey: const Key('dialogue_roleplay_partner_card'),
+          ttsButtonKey: const Key('dialogue_roleplay_partner_tts_button'),
           title: context.tr(
             'speaking_games.roleplay_partner',
             fallback: "ROLEPLAY PARTNER",
@@ -61,6 +63,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(vertical: 8.h),
           child: SizedBox(
+            key: const Key('dialogue_roleplay_synaptic_link'),
             height: 60.h,
             width: double.infinity,
             child: CustomPaint(
@@ -76,6 +79,8 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
         // User Spoken Target Card
         _buildBubbleCard(
           context,
+          cardKey: const Key('dialogue_roleplay_user_card'),
+          ttsButtonKey: const Key('dialogue_roleplay_user_tts_button'),
           title: context.tr(
             'speaking_games.your_response',
             fallback: "YOUR RESPONSE",
@@ -92,6 +97,8 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
 
   Widget _buildBubbleCard(
     BuildContext context, {
+    required Key cardKey,
+    required Key ttsButtonKey,
     required String title,
     required String content,
     required IconData avatarIcon,
@@ -108,6 +115,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
               : color.withValues(alpha: 0.6));
 
     return Container(
+      key: cardKey,
       width: 1.sw,
       padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
@@ -150,54 +158,65 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 9.sp,
-                        color: highlight ? AppColors.gameCorrect : color,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 1.0,
+                    Flexible(
+                      child: Text(
+                        title,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 9.sp,
+                          color: highlight ? AppColors.gameCorrect : color,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.0,
+                        ),
                       ),
                     ),
                     if (content.isNotEmpty)
-                      ScaleButton(
-                        onTap: () {
-                          if (di.sl<AudioRecordingService>().isRecording) {
-                            return;
-                          }
-                          if (isUser) {
-                            MlMonetizationController.attemptFeature(
-                              context,
-                              featureIcon: Icons.volume_up_rounded,
-                              featureTitle: context.tr(
-                                'translation.pronunciation_title',
-                                fallback: 'Native Pronunciation',
-                              ),
-                              featureSubtitle: context.tr(
-                                'translation.pronunciation_desc',
-                                fallback:
-                                    'Listen to the perfect native pronunciation of your line',
-                              ),
-                              adButtonLabel: context.tr(
-                                'translation.pronunciation_ad',
-                                fallback: 'Watch Ad (1 Listen)',
-                              ),
-                              onSuccess: () {
-                                soundService.playTts(content);
-                              },
-                            );
-                          } else {
-                            soundService.playTts(content);
-                          }
-                        },
-                        child: Container(
-                          color: Colors.transparent,
-                          padding: EdgeInsets.all(12.r),
-                          child: Icon(
-                            Icons.volume_up_rounded,
-                            color: color,
-                            size: 16.r,
+                      Semantics(
+                        button: true,
+                        label: isUser
+                            ? 'Listen to pronunciation of your line'
+                            : 'Listen to partner dialogue',
+                        child: ScaleButton(
+                          key: ttsButtonKey,
+                          onTap: () {
+                            if (di.sl<AudioRecordingService>().isRecording) {
+                              return;
+                            }
+                            if (isUser) {
+                              MlMonetizationController.attemptFeature(
+                                context,
+                                featureIcon: Icons.volume_up_rounded,
+                                featureTitle: context.tr(
+                                  'translation.pronunciation_title',
+                                  fallback: 'Native Pronunciation',
+                                ),
+                                featureSubtitle: context.tr(
+                                  'translation.pronunciation_desc',
+                                  fallback:
+                                      'Listen to the perfect native pronunciation of your line',
+                                ),
+                                adButtonLabel: context.tr(
+                                  'translation.pronunciation_ad',
+                                  fallback: 'Watch Ad (1 Listen)',
+                                ),
+                                onSuccess: () {
+                                  soundService.playTts(content);
+                                },
+                              );
+                            } else {
+                              soundService.playTts(content);
+                            }
+                          },
+                          child: Container(
+                            color: Colors.transparent,
+                            padding: EdgeInsets.all(12.r),
+                            child: Icon(
+                              Icons.volume_up_rounded,
+                              color: color,
+                              size: 16.r,
+                            ),
                           ),
                         ),
                       ),
