@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class TopicContainmentBin extends StatelessWidget {
   final int index;
@@ -22,7 +23,40 @@ class TopicContainmentBin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
     IconData bucketIcon = Icons.category_rounded;
+
+    final outerContainer = Container(
+      width: 130.w,
+      height: 160.h,
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(10.r),
+          bottom: Radius.circular(30.r),
+        ),
+        border: Border.all(
+          color: isHinted
+              ? Colors.white
+              : color.withValues(alpha: 0.4),
+          width: isHinted ? 3.5 : 2,
+        ),
+        boxShadow: [
+          if (isHinted)
+            const BoxShadow(
+              color: Colors.white,
+              blurRadius: 25,
+              spreadRadius: 2,
+            ),
+          BoxShadow(
+            color: color.withValues(alpha: 0.2),
+            blurRadius: 20,
+            spreadRadius: -5,
+          ),
+        ],
+      ),
+    );
 
     return Column(
       children: [
@@ -32,41 +66,14 @@ class TopicContainmentBin extends StatelessWidget {
           child: Stack(
             alignment: Alignment.bottomCenter,
             children: [
-              Container(
-                    width: 130.w,
-                    height: 160.h,
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(10.r),
-                        bottom: Radius.circular(30.r),
+              reduceMotion
+                  ? outerContainer
+                  : outerContainer
+                      .animate(target: isHinted ? 1 : 0)
+                      .shimmer(
+                        duration: 1.seconds,
+                        color: Colors.white.withValues(alpha: 0.3),
                       ),
-                      border: Border.all(
-                        color: isHinted
-                            ? Colors.white
-                            : color.withValues(alpha: 0.4),
-                        width: isHinted ? 3.5 : 2,
-                      ),
-                      boxShadow: [
-                        if (isHinted)
-                          const BoxShadow(
-                            color: Colors.white,
-                            blurRadius: 25,
-                            spreadRadius: 2,
-                          ),
-                        BoxShadow(
-                          color: color.withValues(alpha: 0.2),
-                          blurRadius: 20,
-                          spreadRadius: -5,
-                        ),
-                      ],
-                    ),
-                  )
-                  .animate(target: isHinted ? 1 : 0)
-                  .shimmer(
-                    duration: 1.seconds,
-                    color: Colors.white.withValues(alpha: 0.3),
-                  ),
 
               Positioned(
                 bottom: 10.h,
@@ -81,7 +88,7 @@ class TopicContainmentBin extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20.r),
                     child: Stack(
                       children: [
-                        _buildPlasmaFill(color),
+                        _buildPlasmaFill(context, color),
                         Padding(
                           padding: EdgeInsets.all(12.r),
                           child: Column(
@@ -163,28 +170,36 @@ class TopicContainmentBin extends StatelessWidget {
     );
   }
 
-  Widget _buildPlasmaFill(Color color) {
+  Widget _buildPlasmaFill(BuildContext context, Color color) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
+    final container = Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
+          colors: [
+            color.withValues(alpha: 0.3),
+            color.withValues(alpha: 0.1),
+            Colors.transparent,
+          ],
+          stops: const [0.0, 0.6, 1.0],
+        ),
+      ),
+    );
+
+    if (reduceMotion) {
+      return Positioned.fill(child: container);
+    }
+
     return Positioned.fill(
-      child:
-          Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                    colors: [
-                      color.withValues(alpha: 0.3),
-                      color.withValues(alpha: 0.1),
-                      Colors.transparent,
-                    ],
-                    stops: const [0.0, 0.6, 1.0],
-                  ),
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .shimmer(
-                duration: 3.seconds,
-                color: Colors.white.withValues(alpha: 0.1),
-              ),
+      child: container
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .shimmer(
+            duration: 3.seconds,
+            color: Colors.white.withValues(alpha: 0.1),
+          ),
     );
   }
 }

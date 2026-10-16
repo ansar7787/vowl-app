@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
@@ -28,6 +29,7 @@ class TopicVocabController extends ChangeNotifier {
 
   VocabularyQuest? currentQuest;
   bool _isDisposed = false;
+  Timer? _flickTimer;
 
   TopicVocabController({
     required HapticService hapticService,
@@ -39,10 +41,12 @@ class TopicVocabController extends ChangeNotifier {
   @override
   void dispose() {
     _isDisposed = true;
+    _flickTimer?.cancel();
     super.dispose();
   }
 
   void reset(VocabularyQuest? quest) {
+    _flickTimer?.cancel();
     currentQuest = quest;
     isAnswered = false;
     isCorrect = null;
@@ -99,7 +103,8 @@ class TopicVocabController extends ChangeNotifier {
     flickStartOffset = dropOffset;
     notifyListeners();
 
-    Future.delayed(const Duration(milliseconds: 250), () {
+    _flickTimer?.cancel();
+    _flickTimer = Timer(const Duration(milliseconds: 250), () {
       if (_isDisposed) return;
 
       flickedWord = null;
