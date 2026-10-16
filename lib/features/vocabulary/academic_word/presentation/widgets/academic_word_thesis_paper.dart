@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/vocabulary/academic_word/academic_word_constants.dart';
 
 /// The thesis paper card displaying the fill-in-the-blank passage.
@@ -45,7 +46,8 @@ class AcademicWordThesisPaper extends StatelessWidget {
           );
           final slotHeight = (40.h).clamp(32.0, 44.0);
 
-          return Container(
+          final paper = Container(
+                key: const Key('academic_word_thesis_paper'),
                 width: cardWidth,
                 constraints: BoxConstraints(
                   maxHeight: constraints.maxHeight > 0
@@ -71,7 +73,13 @@ class AcademicWordThesisPaper extends StatelessWidget {
                     slotHeight: slotHeight,
                   ),
                 ),
-              )
+              );
+
+          if (VowlMotion.lowAnimationModeOverride.value) {
+            return paper;
+          }
+
+          return paper
               .animate()
               .fadeIn(duration: 1.seconds)
               .slideY(begin: -0.05, end: 0, curve: Curves.easeOutCubic);
@@ -79,6 +87,7 @@ class AcademicWordThesisPaper extends StatelessWidget {
       ),
     );
   }
+
 
   BoxDecoration _cardDecoration(bool isDark) {
     return BoxDecoration(
@@ -257,48 +266,86 @@ class _AnswerSlot extends StatelessWidget {
         : color.withValues(alpha: 0.05);
     final borderColor = isSlotSelected ? color : underlineColor;
 
-    return GestureDetector(
-      onTap: onSlotTap,
-      behavior: HitTestBehavior.opaque,
-      child: Container(
-        key: slotKey,
-        width: width,
-        height: height,
-        margin: EdgeInsets.symmetric(horizontal: 6.w),
-        decoration: BoxDecoration(
-          color: effectiveColor,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(4.r)),
-          border: Border(bottom: BorderSide(color: borderColor, width: 2.5)),
-        ),
-        child: Center(
-          child:
-              (isAnswered && isCorrect == true) ||
-                  (isAnswered && isCorrect == false && userSpelledWord != null)
-              ? FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    (isCorrect == true ? correctAnswer : userSpelledWord)
-                            ?.toUpperCase() ??
-                        '',
-                    style: isCorrect == true
-                        ? answerStyle
-                        : answerStyle.copyWith(
-                            color: AcademicWordColors.slotError,
-                          ),
-                  ).animate().fadeIn().scale(),
-                )
-              : FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    AcademicWordStrings.slotPending,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isSlotSelected ? Colors.white : pendingColor,
-                      fontSize: 9,
-                      letterSpacing: 1,
-                    ),
-                  ).animate(onPlay: (c) => c.repeat()).shimmer(),
-                ),
+    return Semantics(
+      button: true,
+      label: isAnswered
+          ? (isCorrect == true
+              ? 'Answer: $correctAnswer'
+              : 'Incorrect: $userSpelledWord')
+          : (isSlotSelected ? 'Slot selected' : 'Slot pending'),
+      child: GestureDetector(
+        key: const Key('academic_word_slot_detector'),
+        onTap: onSlotTap,
+        behavior: HitTestBehavior.opaque,
+        child: Container(
+          key: slotKey,
+          width: width,
+          height: height,
+          margin: EdgeInsets.symmetric(horizontal: 6.w),
+          decoration: BoxDecoration(
+            color: effectiveColor,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(4.r)),
+            border: Border(bottom: BorderSide(color: borderColor, width: 2.5)),
+          ),
+          child: Center(
+            child:
+                (isAnswered && isCorrect == true) ||
+                    (isAnswered && isCorrect == false && userSpelledWord != null)
+                ? FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: VowlMotion.lowAnimationModeOverride.value
+                        ? Text(
+                            (isCorrect == true ? correctAnswer : userSpelledWord)
+                                    ?.toUpperCase() ??
+                                '',
+                            key: const Key('academic_word_slot_answered_text'),
+                            style: isCorrect == true
+                                ? answerStyle
+                                : answerStyle.copyWith(
+                                    color: AcademicWordColors.slotError,
+                                  ),
+                          )
+                        : Text(
+                            (isCorrect == true ? correctAnswer : userSpelledWord)
+                                    ?.toUpperCase() ??
+                                '',
+                            key: const Key('academic_word_slot_answered_text'),
+                            style: isCorrect == true
+                                ? answerStyle
+                                : answerStyle.copyWith(
+                                    color: AcademicWordColors.slotError,
+                                  ),
+                          ).animate().fadeIn().scale(),
+                  )
+                : FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: VowlMotion.lowAnimationModeOverride.value
+                        ? Text(
+                            AcademicWordStrings.slotPending,
+                            key: const Key('academic_word_slot_pending_text'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              color: isSlotSelected ? Colors.white : pendingColor,
+                              fontSize: 9,
+                              letterSpacing: 1,
+                            ),
+                          )
+                        : Text(
+                            AcademicWordStrings.slotPending,
+                            key: const Key('academic_word_slot_pending_text'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              color: isSlotSelected ? Colors.white : pendingColor,
+                              fontSize: 9,
+                              letterSpacing: 1,
+                            ),
+                          )
+                            .animate(
+                              onPlay: (c) => c.repeat(),
+                            )
+                            .shimmer(),
+                  ),
+          ),
         ),
       ),
     );

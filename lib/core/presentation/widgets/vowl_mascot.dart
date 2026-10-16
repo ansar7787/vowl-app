@@ -281,46 +281,46 @@ class VowlMascot extends StatelessWidget {
                 duration: state == VowlMascotState.sleeping ? 4000.ms : 2000.ms,
                 curve: Curves.easeInOutQuad,
               );
-        }
 
-        if (state == VowlMascotState.happy) {
-          animatedBot = animatedBot
-              .animate()
-              .shake(hz: 4, curve: Curves.easeInOutCubic)
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.2, 1.2),
-                duration: 400.ms,
-              )
-              .then()
-              .scale(
-                begin: const Offset(1.2, 1.2),
-                end: const Offset(1, 1),
-                duration: 400.ms,
-              );
-        }
+          if (state == VowlMascotState.happy) {
+            animatedBot = animatedBot
+                .animate()
+                .shake(hz: 4, curve: Curves.easeInOutCubic)
+                .scale(
+                  begin: const Offset(1, 1),
+                  end: const Offset(1.2, 1.2),
+                  duration: 400.ms,
+                )
+                .then()
+                .scale(
+                  begin: const Offset(1.2, 1.2),
+                  end: const Offset(1, 1),
+                  duration: 400.ms,
+                );
+          }
 
-        if (state == VowlMascotState.worried) {
-          animatedBot = animatedBot
-              .animate()
-              .shake(hz: 8, curve: Curves.easeInOut)
-              .tint(color: Colors.blue.withValues(alpha: 0.2));
-        }
+          if (state == VowlMascotState.worried) {
+            animatedBot = animatedBot
+                .animate()
+                .shake(hz: 8, curve: Curves.easeInOut)
+                .tint(color: Colors.blue.withValues(alpha: 0.2));
+          }
 
-        if (state == VowlMascotState.sleeping) {
-          animatedBot = animatedBot.animate().blur(
-            begin: const Offset(0, 0),
-            end: const Offset(1, 1),
-          );
-        }
+          if (state == VowlMascotState.sleeping) {
+            animatedBot = animatedBot.animate().blur(
+              begin: const Offset(0, 0),
+              end: const Offset(1, 1),
+            );
+          }
 
-        if (state == VowlMascotState.thinking) {
-          animatedBot = animatedBot.animate().rotate(
-            begin: -0.1,
-            end: 0.1,
-            duration: 2.seconds,
-            curve: Curves.easeInOut,
-          );
+          if (state == VowlMascotState.thinking) {
+            animatedBot = animatedBot.animate().rotate(
+              begin: -0.1,
+              end: 0.1,
+              duration: 2.seconds,
+              curve: Curves.easeInOut,
+            );
+          }
         }
 
         // ── State emoji overlays ──────────────────────────────────────────

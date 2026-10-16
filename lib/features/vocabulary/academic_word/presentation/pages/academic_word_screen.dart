@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -5,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
@@ -56,6 +58,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
   final ValueNotifier<bool> _isSlotSelected = ValueNotifier(false);
 
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
 
   VocabularyQuest? _lastQuest;
 
@@ -64,6 +67,8 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
   BoxConstraints? _dragConstraints;
   @override
   void dispose() {
+    _scrollTimer?.cancel();
+    _scrollTimer = null;
     _isDragPassed.dispose();
     _misspelledWord.dispose();
     _isSlotSelected.dispose();
@@ -76,12 +81,11 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
 
   final GlobalKey _slotKey = GlobalKey();
 
-  // Use dynamic so this works regardless of the actual return type of
-  // LevelThemeHelper.getTheme() in your codebase.
-  late dynamic _cachedTheme;
+  late ThemeResult _cachedTheme;
   @override
   void initState() {
     super.initState();
+    initGameLifecycle();
     _cachedTheme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
     initVocabularyGame();
   }
@@ -99,18 +103,31 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
 
   // ── Build ──────────────────────────────────────────────────────────────────
   @override
+  void onGamePaused() {
+    super.onGamePaused();
+    soundService.stopAudio();
+    _scrollTimer?.cancel();
+  }
+
+  @override
   void onQuestionReset() {
+    _scrollTimer?.cancel();
+    _scrollTimer = null;
     _isDragPassed.value = false;
     _misspelledWord.value = null;
     _isSlotSelected.value = false;
     _dragOffset.value = Offset.zero;
     _activeShardIndex.value = null;
     if (_scrollController.hasClients) {
-      _scrollController.animateTo(
-        0,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeOutCubic,
-      );
+      if (VowlMotion.lowAnimationModeOverride.value) {
+        _scrollController.jumpTo(0);
+      } else {
+        _scrollController.animateTo(
+          0,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOutCubic,
+        );
+      }
     }
   }
 
@@ -171,11 +188,15 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
               _isDragPassed.value = false;
               _misspelledWord.value = null;
               if (_scrollController.hasClients) {
-                _scrollController.animateTo(
-                  0,
-                  duration: const Duration(milliseconds: 400),
-                  curve: Curves.easeOutCubic,
-                );
+                if (VowlMotion.lowAnimationModeOverride.value) {
+                  _scrollController.jumpTo(0);
+                } else {
+                  _scrollController.animateTo(
+                    0,
+                    duration: const Duration(milliseconds: 400),
+                    curve: Curves.easeOutCubic,
+                  );
+                }
               }
             } else {
               context.read<VocabularyBloc>().add(NextQuestion());
@@ -186,7 +207,10 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
           useScrolling: false,
           disablePadding: true,
           child: quest == null
-              ? GameShimmerLoading(primaryColor: Theme.of(context).primaryColor)
+              ? GameShimmerLoading(
+                  key: const Key('academic_word_shimmer_loading'),
+                  primaryColor: Theme.of(context).primaryColor,
+                )
               : LayoutBuilder(
                   builder: (context, constraints) {
                     final keyboardHeight = MediaQuery.of(
@@ -197,14 +221,14 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
                     return Stack(
                       children: [
                         RawScrollbar(
+                          key: const Key('academic_word_scrollbar'),
                           controller: _scrollController,
-                          thumbColor: _cachedTheme
-                              .of(context)
-                              .primaryColor
+                          thumbColor: _cachedTheme.primaryColor
                               .withValues(alpha: 0.5),
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
                           child: CustomScrollView(
+                            key: const Key('academic_word_scroll_view'),
                             controller: _scrollController,
                             physics: (!_isDragPassed.value)
                                 ? const NeverScrollableScrollPhysics()
@@ -222,6 +246,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
                                         child: IgnorePointer(
                                           ignoring: _isDragPassed.value,
                                           child: _AcademicWordGameBody(
+                                            key: const Key('academic_word_game_body'),
                                             quest: quest,
                                             isAnswered:
                                                 isAnsweredNotifier.value,
@@ -241,9 +266,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
                                             activeShardIndex:
                                                 _activeShardIndex.value,
                                             dragOffset: _dragOffset.value,
-                                            themeColor: _cachedTheme
-                                                .of(context)
-                                                .primaryColor,
+                                            themeColor: _cachedTheme.primaryColor,
                                             onShardTap: (i) =>
                                                 _attemptThrust(i, quest),
                                             onDragStart: _onShardDragStart,
@@ -272,6 +295,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
                                                 ),
                                                 child:
                                                     AcademicWordFieldCollocations(
+                                                      key: const Key('academic_word_collocations_panel'),
                                                       academicField:
                                                           quest.academicField,
                                                       collocations:
@@ -290,6 +314,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
                                                 children: [
                                                   SizedBox(height: 24.h),
                                                   TypeToConfirmOverlay(
+                                                    key: const Key('academic_word_type_confirm_overlay'),
                                                     expectedText:
                                                         quest.correctAnswer ??
                                                         '',
@@ -395,15 +420,22 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
       _isDragPassed.value = true;
       _activeShardIndex.value = null;
 
-      Future.delayed(const Duration(milliseconds: 300), () {
-        if (mounted && _scrollController.hasClients) {
-          _scrollController.animateTo(
-            _scrollController.position.maxScrollExtent,
-            duration: const Duration(milliseconds: 600),
-            curve: Curves.easeOutCubic,
-          );
+      _scrollTimer?.cancel();
+      if (VowlMotion.lowAnimationModeOverride.value) {
+        if (_scrollController.hasClients) {
+          _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
         }
-      });
+      } else {
+        _scrollTimer = Timer(const Duration(milliseconds: 300), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 600),
+              curve: Curves.easeOutCubic,
+            );
+          }
+        });
+      }
     } else {
       _isSlotSelected.value = false;
       _activeShardIndex.value = null;
@@ -501,6 +533,59 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
 
     return Offset(col == 0 ? -hStep / 2 : hStep / 2, startY + (row * vStep));
   }
+
+  // ── Testing helpers ───────────────────────────────────────────────────────
+
+  @visibleForTesting
+  ValueNotifier<bool> get isDragPassedNotifier => _isDragPassed;
+
+  @visibleForTesting
+  ValueNotifier<String?> get misspelledWordNotifier => _misspelledWord;
+
+  @visibleForTesting
+  ValueNotifier<bool> get isSlotSelectedNotifier => _isSlotSelected;
+
+  @visibleForTesting
+  ValueNotifier<Offset> get dragOffsetNotifier => _dragOffset;
+
+  @visibleForTesting
+  ValueNotifier<int?> get activeShardIndexNotifier => _activeShardIndex;
+
+  @visibleForTesting
+  ScrollController get scrollController => _scrollController;
+
+  @visibleForTesting
+  void attemptThrust(int index, VocabularyQuest quest) =>
+      _attemptThrust(index, quest);
+
+  @visibleForTesting
+  void submitFinalAnswer(
+    bool nailedIt, {
+    GameQuest? quest,
+    String? wrongWord,
+  }) => _submitFinalAnswer(nailedIt, quest: quest, wrongWord: wrongWord);
+
+  @visibleForTesting
+  void onShardDragStart(int index, BoxConstraints constraints) =>
+      _onShardDragStart(index, constraints);
+
+  @visibleForTesting
+  void onShardDragUpdate(int index, DragUpdateDetails details) =>
+      _onShardDragUpdate(index, details);
+
+  @visibleForTesting
+  void onShardDragEnd(int index, VocabularyQuest quest) =>
+      _onShardDragEnd(index, quest);
+
+  @visibleForTesting
+  bool isNearSlot() => _isNearSlot();
+
+  @visibleForTesting
+  Offset getShardInitialPosition(
+    int index,
+    double maxHeight,
+    double maxWidth,
+  ) => _getShardInitialPosition(index, maxHeight, maxWidth);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -535,6 +620,7 @@ class _AcademicWordGameBody extends StatelessWidget {
   final _InitialPositionCallback getInitialPosition;
 
   const _AcademicWordGameBody({
+    super.key,
     required this.quest,
     required this.isAnswered,
     required this.isCorrect,
