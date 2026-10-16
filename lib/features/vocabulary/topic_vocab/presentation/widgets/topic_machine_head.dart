@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class TopicMachineHead extends StatelessWidget {
   final Color primaryColor;
@@ -10,6 +11,39 @@ class TopicMachineHead extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
+    final outerRing = Container(
+      width: 160.w,
+      height: 40.h,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.3),
+          width: 1,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: primaryColor.withValues(alpha: 0.1),
+            blurRadius: 20,
+          ),
+        ],
+      ),
+    );
+
+    Widget coreChild;
+    if (emoji != null) {
+      final emojiWidget = Text(emoji!, style: TextStyle(fontSize: 32.sp));
+      coreChild = reduceMotion
+          ? emojiWidget
+          : emojiWidget
+              .animate(onPlay: (c) => c.repeat())
+              .shimmer(duration: 2.seconds);
+    } else {
+      coreChild = Icon(Icons.bolt_rounded, color: primaryColor, size: 30.r);
+    }
+
     return SizedBox(
       width: 180.w,
       height: 120.h,
@@ -17,25 +51,14 @@ class TopicMachineHead extends StatelessWidget {
         alignment: Alignment.topCenter,
         children: [
           // Outer Energy Rings
-          Container(
-                width: 160.w,
-                height: 40.h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(
-                    color: primaryColor.withValues(alpha: 0.3),
-                    width: 1,
+          reduceMotion
+              ? outerRing
+              : outerRing
+                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                  .scale(
+                    begin: const Offset(1, 1),
+                    end: const Offset(1.1, 1.2),
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: primaryColor.withValues(alpha: 0.1),
-                      blurRadius: 20,
-                    ),
-                  ],
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.2)),
 
           // The Core Machine
           Container(
@@ -61,11 +84,7 @@ class TopicMachineHead extends StatelessWidget {
               ],
             ),
             child: Center(
-              child: emoji != null
-                  ? Text(emoji!, style: TextStyle(fontSize: 32.sp))
-                        .animate(onPlay: (c) => c.repeat())
-                        .shimmer(duration: 2.seconds)
-                  : Icon(Icons.bolt_rounded, color: primaryColor, size: 30.r),
+              child: coreChild,
             ),
           ),
 

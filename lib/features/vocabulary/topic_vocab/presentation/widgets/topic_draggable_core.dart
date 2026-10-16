@@ -35,6 +35,7 @@ class _TopicDraggableWordState extends State<TopicDraggableWord> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      behavior: HitTestBehavior.opaque,
       onHorizontalDragStart: (_) => _isDragging.value = true,
       onHorizontalDragUpdate: (details) {
         _dragOffset.value += details.delta.dx;

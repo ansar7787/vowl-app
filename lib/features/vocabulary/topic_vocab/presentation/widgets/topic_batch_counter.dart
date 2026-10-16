@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class TopicBatchCounter extends StatelessWidget {
   final int count;
@@ -17,6 +18,9 @@ class TopicBatchCounter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
       decoration: BoxDecoration(
@@ -42,7 +46,7 @@ class TopicBatchCounter extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: List.generate(total, (i) {
               bool isFilled = i < count;
-              return Container(
+              final pip = Container(
                 width: 12.w,
                 height: 3.h,
                 margin: EdgeInsets.symmetric(horizontal: 2.w),
@@ -50,7 +54,10 @@ class TopicBatchCounter extends StatelessWidget {
                   color: isFilled ? color : color.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(1),
                 ),
-              ).animate(target: isFilled ? 1 : 0).shimmer(duration: 1.seconds);
+              );
+              return reduceMotion
+                  ? pip
+                  : pip.animate(target: isFilled ? 1 : 0).shimmer(duration: 1.seconds);
             }),
           ),
         ],

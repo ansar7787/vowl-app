@@ -11,6 +11,7 @@ import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_scr
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
@@ -92,6 +93,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
       listener: onVocabularyStateChanged,
@@ -108,6 +111,10 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
         final quest = (state is VocabularyLoaded)
             ? state.currentQuest
             : _lastQuest;
+
+        if (quest != null && _controller.currentQuest != quest) {
+          _controller.reset(quest);
+        }
 
         return ListenableBuilder(
           listenable: _controller,
@@ -220,6 +227,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                                     button: true,
                                     label: 'Sort into ${buckets[0]}',
                                     child: GestureDetector(
+                                      behavior: HitTestBehavior.opaque,
                                       onTap: () {
                                         if (!_controller.isAnswered &&
                                             !_controller.isFirstStagePassed &&
@@ -264,6 +272,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                                       button: true,
                                       label: 'Sort into ${buckets[1]}',
                                       child: GestureDetector(
+                                        behavior: HitTestBehavior.opaque,
                                         onTap: () {
                                           if (!_controller.isAnswered &&
                                               !_controller.isFirstStagePassed &&
@@ -331,6 +340,9 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                                             ),
                                           );
                                         }
+                                        if (reduceMotion) {
+                                          return word;
+                                        }
                                         return word
                                             .animate(
                                               key: ValueKey(
@@ -356,69 +368,86 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                                   Positioned(
                                     bottom: wordBottom - 35.h,
                                     child: IgnorePointer(
-                                      child:
-                                          Row(
+                                      child: Builder(
+                                        builder: (context) {
+                                          final leftArrow = Icon(
+                                            Icons.keyboard_double_arrow_left_rounded,
+                                            color: Colors.white.withValues(alpha: 0.5),
+                                            size: 24.r,
+                                          );
+                                          final handIcon = Icon(
+                                            Icons.touch_app_rounded,
+                                            color: Colors.white.withValues(alpha: 0.9),
+                                            size: 32.r,
+                                          );
+                                          final rightArrow = Icon(
+                                            Icons.keyboard_double_arrow_right_rounded,
+                                            color: Colors.white.withValues(alpha: 0.5),
+                                            size: 24.r,
+                                          );
+
+                                          final row = Row(
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
-                                              Icon(
-                                                    Icons
-                                                        .keyboard_double_arrow_left_rounded,
-                                                    color: Colors.white
-                                                        .withValues(alpha: 0.5),
-                                                    size: 24.r,
-                                                  )
-                                                  .animate(
-                                                    onPlay: (c) => c.repeat(),
-                                                  )
-                                                  .fadeIn(duration: 500.ms)
-                                                  .fadeOut(delay: 500.ms),
+                                              reduceMotion
+                                                  ? leftArrow
+                                                  : leftArrow
+                                                      .animate(
+                                                        onPlay: (c) => c.repeat(),
+                                                      )
+                                                      .fadeIn(duration: 500.ms)
+                                                      .fadeOut(delay: 500.ms),
                                               SizedBox(width: 8.w),
-                                              Icon(
-                                                    Icons.touch_app_rounded,
-                                                    color: Colors.white
-                                                        .withValues(alpha: 0.9),
-                                                    size: 32.r,
-                                                  )
-                                                  .animate(
-                                                    onPlay: (c) =>
-                                                        c.repeat(reverse: true),
-                                                  )
-                                                  .moveX(
-                                                    begin: -25.w,
-                                                    end: 25.w,
-                                                    duration: 1200.ms,
-                                                    curve: Curves.easeInOutSine,
-                                                  ),
+                                              reduceMotion
+                                                  ? handIcon
+                                                  : handIcon
+                                                      .animate(
+                                                        onPlay: (c) =>
+                                                            c.repeat(reverse: true),
+                                                      )
+                                                      .moveX(
+                                                        begin: -25.w,
+                                                        end: 25.w,
+                                                        duration: 1200.ms,
+                                                        curve: Curves.easeInOutSine,
+                                                      ),
                                               SizedBox(width: 8.w),
-                                              Icon(
-                                                    Icons
-                                                        .keyboard_double_arrow_right_rounded,
-                                                    color: Colors.white
-                                                        .withValues(alpha: 0.5),
-                                                    size: 24.r,
-                                                  )
-                                                  .animate(
-                                                    onPlay: (c) => c.repeat(),
-                                                  )
-                                                  .fadeIn(duration: 500.ms)
-                                                  .fadeOut(delay: 500.ms),
+                                              reduceMotion
+                                                  ? rightArrow
+                                                  : rightArrow
+                                                      .animate(
+                                                        onPlay: (c) => c.repeat(),
+                                                      )
+                                                      .fadeIn(duration: 500.ms)
+                                                      .fadeOut(delay: 500.ms),
                                             ],
-                                          ).animate().fadeIn(
-                                            delay: 1.seconds,
-                                            duration: 500.ms,
-                                          ),
+                                          );
+
+                                          return reduceMotion
+                                              ? row
+                                              : row.animate().fadeIn(
+                                                  delay: 1.seconds,
+                                                  duration: 500.ms,
+                                                );
+                                        },
+                                      ),
                                     ),
                                   ),
                                 if (_controller.flickedWord != null)
                                   Positioned(
                                     bottom: flyingWordBottom,
-                                    child:
-                                        TopicDraggableWord(
-                                              word: _controller.flickedWord!,
-                                              primaryColor: theme.primaryColor,
-                                              isDark: isDark,
-                                              onFlick: (v, offset) {},
-                                            )
+                                    child: Builder(
+                                      builder: (context) {
+                                        final flyingWord = TopicDraggableWord(
+                                          word: _controller.flickedWord!,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          onFlick: (v, offset) {},
+                                        );
+                                        if (reduceMotion) {
+                                          return flyingWord;
+                                        }
+                                        return flyingWord
                                             .animate()
                                             .move(
                                               begin: Offset(
@@ -446,7 +475,9 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                                                   ? -0.2
                                                   : 0.2,
                                               duration: 250.ms,
-                                            ),
+                                            );
+                                      },
+                                    ),
                                   ),
                               ],
                             ),
@@ -479,38 +510,47 @@ class _TopicInstructionBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
+    final bannerContent = Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.10),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.20)),
+      ),
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.touch_app_rounded, size: 14.r, color: primaryColor),
+            SizedBox(width: 8.w),
+            Text(
+              '${InstructionHelper.getInstruction(quest).toUpperCase()} (OR TAP)',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 11.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.1,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
 
     return ConstrainedBox(
       constraints: BoxConstraints(maxWidth: screenWidth - 32.w),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: primaryColor.withValues(alpha: 0.10),
-          borderRadius: BorderRadius.circular(30.r),
-          border: Border.all(color: primaryColor.withValues(alpha: 0.20)),
-        ),
-        child: FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.touch_app_rounded, size: 14.r, color: primaryColor),
-              SizedBox(width: 8.w),
-              Text(
-                '${InstructionHelper.getInstruction(quest).toUpperCase()} (OR TAP)',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.w900,
-                  color: primaryColor,
-                  letterSpacing: 1.1,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ).animate().fadeIn(duration: 600.ms).slideY(begin: -0.2, end: 0),
+      child: reduceMotion
+          ? bannerContent
+          : bannerContent
+              .animate()
+              .fadeIn(duration: 600.ms)
+              .slideY(begin: -0.2, end: 0),
     );
   }
 }
