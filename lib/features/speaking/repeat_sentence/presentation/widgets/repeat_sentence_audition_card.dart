@@ -46,6 +46,7 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
                 button: true,
                 label: 'Listen to the target sentence again',
                 child: ScaleButton(
+                  key: const Key('repeat_sentence_listen_button'),
                   onTap: onPlayTts,
                   child: Container(
                     padding: EdgeInsets.symmetric(
@@ -57,6 +58,7 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.r),
                     ),
                     child: Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
                           Icons.volume_up_rounded,
@@ -83,6 +85,7 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
           SizedBox(height: 16.h),
           Text(
             quest.textToSpeak ?? quest.correctAnswer ?? "",
+            key: const Key('repeat_sentence_target_text'),
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
@@ -95,6 +98,7 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
               (quest as SpeakingQuest).pronunciationTips != null) ...[
             SizedBox(height: 16.h),
             Container(
+              key: const Key('repeat_sentence_pronunciation_tips'),
               padding: EdgeInsets.all(12.r),
               decoration: BoxDecoration(
                 color: primaryColor.withValues(alpha: 0.1),

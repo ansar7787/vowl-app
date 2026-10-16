@@ -1,25 +1,22 @@
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/instruction_helper.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/utils/audio_recording_service.dart';
-
-import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_instruction.dart';
+import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_audition_card.dart';
-import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_instruction.dart';
 
 class RepeatSentenceScreen extends StatefulWidget {
   final int level;
@@ -34,51 +31,92 @@ class RepeatSentenceScreen extends StatefulWidget {
   State<RepeatSentenceScreen> createState() => _RepeatSentenceScreenState();
 }
 
-class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
+class _RepeatSentenceScreenState extends State<RepeatSentenceScreen>
+    with
+        GameScreenMixin<RepeatSentenceScreen>,
+        SpeakingGameScreenMixin<RepeatSentenceScreen> {
+  @override
+  GameSubtype get gameType => widget.gameType;
 
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  @override
+  int get level => widget.level;
+
+  @override
+  String getCompletionTitle(BuildContext context) => context.tr(
+        'speaking_games.sound_wave_transcriber',
+        fallback: 'SOUND WAVE TRANSCRIBER!',
+      );
+
   final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
-  Timer? _autoplayTimer;
+  Timer? _ttsTimer;
+  Timer? _autoPlayTimer;
   final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
-    context.read<SpeakingBloc>().add(
-      FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
-    );
+    initGameLifecycle();
+    initSpeakingGame();
+  }
+
+  @override
+  void onQuestionReset() {
+    _ttsFinished.value = false;
+    _ttsTimer?.cancel();
+    _autoPlayTimer?.cancel();
+    if (mounted) {
+      final state = context.read<SpeakingBloc>().state;
+      if (state is SpeakingLoaded && !state.answerStatus.isAnswered) {
+        if (VowlMotion.lowAnimationModeOverride.value) {
+          _triggerAutoPlay(state.currentQuest);
+        } else {
+          _autoPlayTimer = Timer(const Duration(milliseconds: 300), () {
+            if (mounted) _triggerAutoPlay(state.currentQuest);
+          });
+        }
+      }
+    }
   }
 
   @override
   void dispose() {
-    _autoplayTimer?.cancel();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
+    _autoPlayTimer?.cancel();
+    _ttsTimer?.cancel();
     _ttsFinished.dispose();
     _scrollController.dispose();
+    disposeSpeakingGame();
     super.dispose();
   }
 
-  Future<void> _triggerAutoPlay(GameQuest quest) async {
+  void _triggerAutoPlay(GameQuest quest) {
     if (quest.textToSpeak != null) {
       try {
-        await _soundService.playTts(quest.textToSpeak!);
+        soundService.playTts(quest.textToSpeak!);
       } catch (_) {}
-    }
-    if (mounted) {
+      _ttsTimer?.cancel();
+      if (VowlMotion.lowAnimationModeOverride.value) {
+        _ttsFinished.value = true;
+        _scrollToBottom();
+      } else {
+        _ttsTimer = Timer(const Duration(seconds: 2), () {
+          if (mounted) {
+            _ttsFinished.value = true;
+            _scrollToBottom();
+          }
+        });
+      }
+    } else {
       _ttsFinished.value = true;
-      _scrollToBottom();
     }
   }
 
   void _scrollToBottom() {
+    if (VowlMotion.lowAnimationModeOverride.value) {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+      }
+      return;
+    }
     Future.delayed(const Duration(milliseconds: 100), () {
       if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
@@ -91,31 +129,15 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
   }
 
   void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
-    if (_isAnswered.value) return;
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    if (isAnsweredNotifier.value) return;
+
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      context.read<SpeakingBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: InstructionHelper.getInstruction(quest),
-          userAnswer: '[Pronunciation Error]',
-          correctAnswer: quest.textToSpeak ?? '',
-          level: widget.level,
-        );
-      }
-
-      context.read<SpeakingBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: quest,
+        userAnswer: '[Pronunciation Error]',
+      );
     }
   }
 
@@ -125,68 +147,33 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
-      listener: (context, state) {
-        if (state is SpeakingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered.value)) {
-            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _ttsFinished.value = false;
-            _autoplayTimer?.cancel();
-            _autoplayTimer = Timer(const Duration(milliseconds: 300), () {
-              if (mounted) _triggerAutoPlay(state.currentQuest);
-            });
-          } else if (state.answerStatus == AnswerStatus.incorrect) {
-            _isCorrect.value = false;
-            _isAnswered.value =
-                true; // Always show feedback card on incorrect (Try Again or Continue)
-          }
-          _lastLives = state.livesRemaining;
-        }
-        if (state is SpeakingGameComplete) {
-          _showConfetti.value = true;
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: context.tr(
-              'speaking_games.sound_wave_transcriber',
-              fallback: 'SOUND WAVE TRANSCRIBER!',
-            ),
-            enableDoubleUp: true,
-          );
-        }
-      },
+      listener: (context, state) => onSpeakingStateChanged(context, state),
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
         final mediaQuery = MediaQuery.of(context);
 
         return MediaQuery(
           data: mediaQuery.copyWith(
-            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.5),
+            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
           child: ListenableBuilder(
             listenable: Listenable.merge([
-              _isAnswered,
-              _isCorrect,
-              _showConfetti,
+              isAnsweredNotifier,
+              isCorrectNotifier,
+              showConfettiNotifier,
               _ttsFinished,
             ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
                 gameType: widget.gameType,
                 level: widget.level,
-                isAnswered: _isAnswered.value,
-                isCorrect: _isCorrect.value,
+                isAnswered: isAnsweredNotifier.value,
+                isCorrect: isCorrectNotifier.value,
                 isFinalFailure: state is SpeakingLoaded
                     ? state.isFinalFailure
                     : false,
-                showConfetti: _showConfetti.value,
-                disablePadding:
-                    true, // Fixes "width not fully used" and "scroll bar not edge"
+                showConfetti: showConfettiNotifier.value,
+                disablePadding: true,
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
                 onHint: () =>
@@ -211,12 +198,14 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                               ),
                               sliver: SliverToBoxAdapter(
                                 child: AbsorbPointer(
-                                  absorbing: !_ttsFinished
-                                      .value, // Prevent interaction only while initial TTS is playing
+                                  absorbing: !_ttsFinished.value,
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       RepeatSentenceInstruction(
+                                        key: const Key(
+                                          'repeat_sentence_instruction',
+                                        ),
                                         primaryColor: theme.primaryColor,
                                         instruction:
                                             InstructionHelper.getInstruction(
@@ -225,6 +214,9 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                                       ),
                                       SizedBox(height: 24.h),
                                       RepeatSentenceAuditionCard(
+                                        key: const Key(
+                                          'repeat_sentence_audition_card',
+                                        ),
                                         quest: quest,
                                         primaryColor: theme.primaryColor,
                                         isDark: isDark,
@@ -234,7 +226,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                                               .isRecording) {
                                             return;
                                           }
-                                          _soundService.playTts(
+                                          soundService.playTts(
                                             quest.textToSpeak ?? "",
                                           );
                                         },
@@ -244,7 +236,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                                 ),
                               ),
                             ),
-                            if (!_isAnswered.value)
+                            if (!isAnsweredNotifier.value)
                               SliverToBoxAdapter(
                                 child: AnimatedOpacity(
                                   opacity: _ttsFinished.value ? 1.0 : 0.4,
@@ -252,7 +244,9 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                                   child: AbsorbPointer(
                                     absorbing: !_ttsFinished.value,
                                     child: ShadowPlaybackCompare(
-                                      key: ValueKey(quest.id),
+                                      key: const Key(
+                                        'repeat_sentence_shadow_compare',
+                                      ),
                                       expectedText: quest.textToSpeak ?? "",
                                       primaryColor: theme.primaryColor,
                                       isPositioned: false,
@@ -268,7 +262,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                             SliverToBoxAdapter(
                               child: SizedBox(
                                 height: 120.h,
-                              ), // Provide enough padding for feedback card
+                              ),
                             ),
                           ],
                         ),
