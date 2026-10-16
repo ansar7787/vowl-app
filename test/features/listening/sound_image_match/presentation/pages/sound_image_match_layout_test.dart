@@ -638,6 +638,8 @@ void main() {
 
       expect(find.text('CAR'), findsOneWidget);
       expect(find.text('TRAIN'), findsOneWidget);
+
+      await tester.pump(const Duration(milliseconds: 500));
     });
 
     testWidgets('22. Hint button in header dispatches selection haptic', (tester) async {

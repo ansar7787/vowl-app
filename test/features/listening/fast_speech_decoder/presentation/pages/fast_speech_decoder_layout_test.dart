@@ -577,6 +577,8 @@ void main() {
 
       expect(find.text('Give me a break'), findsOneWidget);
       expect(find.text('Gimme that book'), findsOneWidget);
+
+      await tester.pump(const Duration(milliseconds: 500));
     });
 
     testWidgets('20. Hint button in header dispatches ListeningHintUsed', (tester) async {

@@ -407,6 +407,8 @@ void main() {
       expect(find.text('LOCATE THE SOURCE OF THE SONAR PING.'), findsOneWidget);
       expect(find.text('DEEP OCEAN'), findsOneWidget);
       expect(find.text('DESERT DUNES'), findsOneWidget);
+
+      await tester.pump(const Duration(milliseconds: 500));
     });
 
     testWidgets('11. Continue button dispatches NextQuestion event', (tester) async {
