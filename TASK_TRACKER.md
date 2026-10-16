@@ -6,8 +6,8 @@
 > - **Total Dart Files in `lib/`**: **1,068 files**
 > - **Total Test Files in `test/`**: **160 files**
 > - **Total Passing Tests**: **2,800+ Tests Passing (100% Green on completed suites)**
-> - **Completed Test Suites**: **153 files** (Auth 12, Games Hub 5, Kids 35, Reading 13, Accent 13, Grammar 21, Listening 12, Roleplay 12, Speaking 11, Vocab 3, Writing 1, Elite 1, Daily & Micro 11, Settings & Daily Words 2, Core 7)
-> - **Remaining Game Screens & Hubs to Test / Harden**: **22 screens/suites** across pending categories and shell routes.
+> - **Completed Test Suites**: **154 files** (Auth 12, Games Hub 5, Kids 35, Reading 13, Accent 13, Grammar 21, Listening 12, Roleplay 12, Speaking 11, Vocab 4, Writing 1, Elite 1, Daily & Micro 11, Settings & Daily Words 2, Core 7)
+> - **Remaining Game Screens & Hubs to Test / Harden**: **21 screens/suites** across pending categories and shell routes.
 
 ---
 
@@ -53,7 +53,7 @@ Every game test suite MUST rigorously satisfy:
 | **7** | **Listening Category** | 12 | 12 | 0 | 🟢 100% Complete (300 tests) |
 | **8** | **Roleplay Category** | 12 | 12 | 0 | 🟢 100% Complete (468 tests) |
 | **9** | **Speaking Category** | 11 | 11 | 0 | 🟢 100% Complete (685 tests) |
-| **10** | **Vocabulary Category** | 14 | 3 | 11 | 🟡 3 Suites Passing (87 tests; 11 remaining) |
+| **10** | **Vocabulary Category** | 14 | 4 | 10 | 🟡 4 Suites Passing (120 tests; 10 remaining) |
 | **11** | **Writing Category** | 12 | 1 | 11 | ⚠️ BLoC only (4 tests; 11 games remaining) |
 | **12** | **Elite Mastery** | 5 | 1 | 4 | ⚠️ BLoC only (4 tests; 4 games remaining) |
 | **13** | **Daily Challenges & Micro-Games** | 11 | 11 | 0 | 🟢 100% Complete (57 tests) |
@@ -353,8 +353,8 @@ Every game test suite MUST rigorously satisfy:
 - [x] **10.1** `vocabulary_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
 - [x] **10.2** `vocabulary_quest_model_test.dart` (Model Test) — ✅ `[DONE - 5/5 tests passing]`
 - [x] **10.3** `academic_word_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 78/78 tests passing]`
-  - Validates full 2-stage interaction: Phase 1 thrust (tap & drag shards to thesis paper slot, drag boundary limits, proximity snapping), Phase 2 collocations & `TypeToConfirmOverlay` keyboard typing, final answer submission, `GameFeedbackCard` educational tips & pedagogical rule explanations, hint and audio lifecycle management, and small-screen/compact/tablet responsive layouts without overflow.
-- [ ] **10.4** `antonym_search_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **10.4** `antonym_search_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 33/33 tests passing]`
+  - Validates full 2-stage interaction: Phase 1 opposite discovery (tap & drag shards to central nebula core, touch slop threshold, proximity snapping to center drop zone, plasma thunder connection lines, tap-to-select with core trigger), Phase 2 `AntonymGradientScale` intensity slider & explanation card with lightbulb tip, `SpeakToConfirmOverlay` verbal confirmation ("Nailed It" / skip fallback), answered lockout via IgnorePointer, continue button dispatching NextQuestion, header hint button dispatching `VocabularyHintUsed`, Level Complete dialog timer disposal, and small-screen/compact/tablet/light/dark zero-overflow layout safety.
 - [ ] **10.5** `collocations_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **10.6** `contextual_usage_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **10.7** `context_clues_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`

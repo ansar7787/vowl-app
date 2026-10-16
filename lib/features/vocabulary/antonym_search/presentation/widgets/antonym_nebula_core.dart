@@ -17,6 +17,8 @@ class AntonymNebulaCore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -54,7 +56,7 @@ class AntonymNebulaCore extends StatelessWidget {
                   Positioned.fill(
                         child: CustomPaint(painter: CorePainter(color)),
                       )
-                      .animate(onPlay: (c) => c.repeat())
+                      .animate(onPlay: reduceMotion ? null : (c) => c.repeat())
                       .rotate(duration: 12.seconds),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -78,7 +80,9 @@ class AntonymNebulaCore extends StatelessWidget {
                 ],
               ),
             )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
+            .animate(
+              onPlay: reduceMotion ? null : (c) => c.repeat(reverse: true),
+            )
             .scale(
               begin: const Offset(1, 1),
               end: const Offset(1.04, 1.04),

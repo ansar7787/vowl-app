@@ -34,6 +34,8 @@ class AntonymOptionShard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+
     return AnimatedPositioned(
       duration: isDragging ? Duration.zero : 600.ms,
       curve: Curves.elasticOut,
@@ -106,7 +108,9 @@ class AntonymOptionShard extends StatelessWidget {
                     duration: 150.ms,
                     curve: Curves.easeOut,
                   )
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                  .animate(
+                    onPlay: reduceMotion ? null : (c) => c.repeat(reverse: true),
+                  )
                   .moveY(
                     begin: isDragging ? 0 : -3,
                     end: isDragging ? 0 : 3,
