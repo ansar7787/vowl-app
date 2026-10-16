@@ -53,7 +53,7 @@ Every game test suite MUST rigorously satisfy:
 | **7** | **Listening Category** | 12 | 12 | 0 | 🟢 100% Complete (300 tests) |
 | **8** | **Roleplay Category** | 12 | 12 | 0 | 🟢 100% Complete (468 tests) |
 | **9** | **Speaking Category** | 11 | 11 | 0 | 🟢 100% Complete (685 tests) |
-| **10** | **Vocabulary Category** | 14 | 5 | 9 | 🟡 5 Suites Passing (153 tests; 9 remaining) |
+| **10** | **Vocabulary Category** | 14 | 6 | 8 | 🟡 6 Suites Passing (188 tests; 8 remaining) |
 | **11** | **Writing Category** | 12 | 1 | 11 | ⚠️ BLoC only (4 tests; 11 games remaining) |
 | **12** | **Elite Mastery** | 5 | 1 | 4 | ⚠️ BLoC only (4 tests; 4 games remaining) |
 | **13** | **Daily Challenges & Micro-Games** | 11 | 11 | 0 | 🟢 100% Complete (57 tests) |
@@ -356,7 +356,8 @@ Every game test suite MUST rigorously satisfy:
 - [x] **10.4** `antonym_search_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 33/33 tests passing]`
 - [x] **10.5** `collocations_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 33/33 tests passing]`
   - Validates full 2-stage interaction: Phase 1 collocation pairing (tap-to-answer option bubble, drag-and-drop onto central anchor bubble with drop-target glow, haptic and error audio on incorrect pair), Phase 2 `CollocationsWrongPairs` common mistake cards & `ContextSentenceBuilder` typing and sentence validation, `GameFeedbackCard` educational tips with retry ('TRY AGAIN') vs continue ('CONTINUE'), answered lockout prevention, hint button dispatching `VocabularyHintUsed` with hint glow, level 1 briefing dialog, timer and controller cleanup without leaks, dark/light theme, and small-screen (320x568) & tablet zero-overflow layout safety.
-- [ ] **10.6** `contextual_usage_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **10.6** `contextual_usage_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 35/35 tests passing]`
+  - Validates full 2-stage interaction: Phase 1 tap-to-answer option selection on `ContextualUsageCard` with question prompt & uppercase instruction banner, haptic success and error SFX handling, Phase 2 `ContextualUsageRegisterMeter` formality meter (10-step level bar reflecting `registerLevel`), nuance difference card & usage example quote, Phase 2 `SpeakToConfirmOverlay` verbal evaluation confirmation ("Nailed It") dispatching `SubmitAnswer(true)` & skip fallback ("Needs Work"), answered interaction lockout, retry button (`TRY AGAIN`) resetting for retry on non-final failures vs `SEE RESULTS` on terminal failure (0 lives), hint button dispatching `VocabularyHintUsed`, level 1 briefing dialog, timer and controller cleanup without leaks, dark/light theme, text scaling up to 1.5x, and small-screen (320x568) & tablet zero-overflow layout safety.
 - [ ] **10.7** `context_clues_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **10.8** `flashcards_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **10.9** `idioms_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`

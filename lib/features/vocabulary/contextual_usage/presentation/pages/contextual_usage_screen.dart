@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -45,11 +46,15 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
 
   final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
+  Timer? _answerTimer;
+  Timer? _scrollTimer;
 
   VocabularyQuest? _lastQuest;
 
   @override
   void dispose() {
+    _answerTimer?.cancel();
+    _scrollTimer?.cancel();
     _selectedOption.dispose();
     _scrollController.dispose();
     disposeVocabularyGame();
@@ -71,12 +76,14 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
     bool isCorrect =
         selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
-    Future.delayed(600.ms, () {
+    _answerTimer?.cancel();
+    _answerTimer = Timer(const Duration(milliseconds: 600), () {
       if (!mounted) return;
       if (isCorrect) {
         hapticService.success();
         isFirstStagePassedNotifier.value = true;
-        Future.delayed(const Duration(milliseconds: 300), () {
+        _scrollTimer?.cancel();
+        _scrollTimer = Timer(const Duration(milliseconds: 300), () {
           if (mounted && _scrollController.hasClients) {
             _scrollController.animateTo(
               _scrollController.position.maxScrollExtent,
@@ -118,6 +125,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
 
   @override
   void onQuestionReset() {
+    _answerTimer?.cancel();
+    _scrollTimer?.cancel();
     _selectedOption.value = null;
   }
 
@@ -132,11 +141,11 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
           level: widget.level,
         );
         if (state is VocabularyLoaded) {
-          _lastQuest = state.currentQuest;
+          _lastQuest = state.currentQuestOrNull;
         }
 
         final quest = (state is VocabularyLoaded)
-            ? state.currentQuest
+            ? state.currentQuestOrNull
             : _lastQuest;
 
         final isDarkMode = Theme.of(context).brightness == Brightness.dark;
@@ -164,6 +173,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
                 final currentState = context.read<VocabularyBloc>().state;
                 if (currentState is VocabularyLoaded &&
                     !currentState.isFinalFailure &&
+                    currentState.livesRemaining > 0 &&
                     isCorrectNotifier.value == false) {
                   isAnsweredNotifier.value = false;
                   isCorrectNotifier.value = null;
@@ -374,6 +384,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
         ? (gapUnit * 2.5).clamp(20.0, 60.0)
         : 20.0;
 
+    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+
     return Column(
       children: [
         SizedBox(height: gapTop),
@@ -395,17 +407,29 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
                   ),
                 ),
               )
-            : Text(
-                InstructionHelper.getInstruction(quest).toUpperCase(),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 11.sp,
-                  color: color,
-                  letterSpacing: 2,
-                  fontWeight: FontWeight.bold,
-                ),
-              ).animate().fadeIn(duration: 800.ms).shimmer(duration: 2.seconds),
+            : (reduceMotion
+                ? Text(
+                    InstructionHelper.getInstruction(quest).toUpperCase(),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      color: color,
+                      letterSpacing: 2,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
+                : Text(
+                    InstructionHelper.getInstruction(quest).toUpperCase(),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      color: color,
+                      letterSpacing: 2,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ).animate().fadeIn(duration: 800.ms).shimmer(duration: 2.seconds)),
 
         SizedBox(height: gapMiddle),
 
@@ -478,23 +502,27 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
     bool isCompact,
     bool? currentOptionCorrect,
   ) {
-    return Wrap(
-          spacing: 16.w,
-          runSpacing: isCompact ? 10.h : 16.h,
-          alignment: WrapAlignment.center,
-          children: (quest.options ?? []).map((o) {
-            return ContextualUsageOptionChip(
-              text: o,
-              color: color,
-              isDark: isDark,
-              isSelected: _selectedOption.value == o,
-              isCorrect: _selectedOption.value == o
-                  ? currentOptionCorrect
-                  : null,
-              onTap: () => _submitAnswer(o, quest.correctAnswer ?? "", quest),
-            );
-          }).toList(),
-        )
+    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+    final wrap = Wrap(
+      spacing: 16.w,
+      runSpacing: isCompact ? 10.h : 16.h,
+      alignment: WrapAlignment.center,
+      children: (quest.options ?? []).map((o) {
+        return ContextualUsageOptionChip(
+          text: o,
+          color: color,
+          isDark: isDark,
+          isSelected: _selectedOption.value == o,
+          isCorrect: _selectedOption.value == o
+              ? currentOptionCorrect
+              : null,
+          onTap: () => _submitAnswer(o, quest.correctAnswer ?? "", quest),
+        );
+      }).toList(),
+    );
+
+    if (reduceMotion) return wrap;
+    return wrap
         .animate()
         .fadeIn(delay: 600.ms)
         .slideY(begin: 0.2, curve: Curves.easeOutCubic);
