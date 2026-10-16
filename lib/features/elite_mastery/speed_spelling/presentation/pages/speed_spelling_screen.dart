@@ -230,9 +230,11 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
     ThemeResult theme,
   ) {
     if (state is EliteMasteryLoaded) {
+      if (state.quests.isEmpty) return const SizedBox.shrink();
       return _buildGameUI(context, state, isDark, theme);
     }
     if (state is EliteMasteryGameOver) {
+      if (state.quests.isEmpty) return const SizedBox.shrink();
       return Opacity(
         opacity: 0.5,
         child: AbsorbPointer(
@@ -281,6 +283,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
           radius: Radius.circular(8.r),
           thickness: 4.w,
           child: CustomScrollView(
+            key: const Key('speed_spelling_scroll_view'),
             physics: const BouncingScrollPhysics(),
             slivers: [
               SliverToBoxAdapter(child: SizedBox(height: 40.h)),
@@ -304,6 +307,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                 children: [
                                   Flexible(
                                     child: Semantics(
+                                      key: const Key(
+                                        'speed_spelling_instruction_banner',
+                                      ),
                                       header: true,
                                       child: Text(
                                         quest.instruction,
@@ -328,6 +334,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                         fallback: 'Replay audio',
                                       ),
                                       child: ScaleButton(
+                                        key: const Key(
+                                          'speed_spelling_replay_audio_button',
+                                        ),
                                         onTap: () => di.sl<TtsService>().speak(
                                           quest.word!,
                                         ),
@@ -355,6 +364,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                           if (quest.difficultyTier != null) ...[
                             SizedBox(width: 12.w),
                             Container(
+                              key: const Key(
+                                'speed_spelling_difficulty_badge',
+                              ),
                               padding: EdgeInsets.symmetric(
                                 horizontal: 12.w,
                                 vertical: 6.h,
@@ -516,6 +528,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                         listenable: _shuffledChars,
                         builder: (context, _) {
                           return SpeedSpellingCharacterDeck(
+                            key: const Key('speed_spelling_character_deck'),
                             shuffledChars: _shuffledChars.value,
                             isDark: isDark,
                             onCharTap: _onCharTap,
@@ -540,6 +553,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                               child: Opacity(
                                 opacity: canSubmit ? 1.0 : 0.5,
                                 child: ScaleButton(
+                                  key: const Key(
+                                    'speed_spelling_submit_button',
+                                  ),
                                   onTap: canSubmit
                                       ? () => _submit(quest)
                                       : null,

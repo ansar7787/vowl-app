@@ -31,18 +31,21 @@ class SpeedSpellingInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final tokens = Theme.of(context).extension<AppColorTokens>();
+    final correctColor = tokens?.gameCorrect ?? AppColors.gameCorrect;
+    final incorrectColor = tokens?.gameIncorrect ?? AppColors.gameIncorrect;
     final showCorrectGlow = isCorrect == true;
 
     return Container(
+      key: const Key('speed_spelling_input_field'),
       height: 100.h,
       width: double.infinity,
       decoration: BoxDecoration(
         gradient: showCorrectGlow
             ? LinearGradient(
                 colors: [
-                  tokens.gameCorrect.withValues(alpha: 0.2),
-                  tokens.gameCorrect.withValues(alpha: 0.05),
+                  correctColor.withValues(alpha: 0.2),
+                  correctColor.withValues(alpha: 0.05),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -63,8 +66,8 @@ class SpeedSpellingInputField extends StatelessWidget {
         border: Border.all(
           color: (isAnswered || (isCorrect == false && attempts > 0))
               ? (isCorrect == true
-                    ? tokens.gameCorrect.withValues(alpha: 0.6)
-                    : tokens.gameIncorrect.withValues(alpha: 0.6))
+                    ? correctColor.withValues(alpha: 0.6)
+                    : incorrectColor.withValues(alpha: 0.6))
               : (isDark
                     ? Colors.white.withValues(alpha: 0.15)
                     : Colors.black.withValues(alpha: 0.1)),
@@ -73,7 +76,7 @@ class SpeedSpellingInputField extends StatelessWidget {
         boxShadow: showCorrectGlow
             ? [
                 BoxShadow(
-                  color: tokens.gameCorrect.withValues(alpha: 0.2),
+                  color: correctColor.withValues(alpha: 0.2),
                   blurRadius: 30,
                   spreadRadius: -5,
                 ),
@@ -143,13 +146,13 @@ class SpeedSpellingInputField extends StatelessWidget {
                       fontSize: 36.sp,
                       fontWeight: FontWeight.w900,
                       color: showCorrectGlow
-                          ? tokens.gameCorrect
+                          ? correctColor
                           : (isDark ? primaryColor : AppColors.slate900),
                       letterSpacing: 6,
                       shadows: showCorrectGlow
                           ? [
                               Shadow(
-                                color: tokens.gameCorrect.withValues(
+                                color: correctColor.withValues(
                                   alpha: 0.5,
                                 ),
                                 blurRadius: 20,
@@ -179,6 +182,7 @@ class SpeedSpellingInputField extends StatelessWidget {
                       ),
                       excludeSemantics: true,
                       child: ScaleButton(
+                        key: const Key('speed_spelling_backspace_button'),
                         onTap: onBackspace,
                         debounceDuration: Duration.zero,
                         // FIX: 8.r padding + 18.r icon ≈ 34 logical px,
@@ -219,6 +223,7 @@ class SpeedSpellingInputField extends StatelessWidget {
                       ),
                       excludeSemantics: true,
                       child: ScaleButton(
+                        key: const Key('speed_spelling_clear_button'),
                         onTap: onClear,
                         debounceDuration: Duration.zero,
                         child: ConstrainedBox(
