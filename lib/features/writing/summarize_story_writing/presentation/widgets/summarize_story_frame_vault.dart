@@ -68,6 +68,7 @@ class SummarizeStoryFrameVault extends StatelessWidget {
               child: _buildOptionCard(o, context),
             ),
             child: GestureDetector(
+              key: Key('summarize_story_option_$o'),
               onTap: () => onTapOption?.call(o),
               child: _buildOptionCard(o, context),
             ),
