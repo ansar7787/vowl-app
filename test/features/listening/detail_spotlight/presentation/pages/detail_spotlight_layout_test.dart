@@ -586,6 +586,8 @@ void main() {
       expect(find.text('compass'), findsOneWidget);
       expect(find.text('secret map'), findsOneWidget);
       expect(find.text('SCAN FOR AUDITORY TARGET'), findsOneWidget);
+
+      await tester.pump(const Duration(milliseconds: 500));
     });
 
     testWidgets('21. Hint button in header dispatches ListeningHintUsed', (tester) async {

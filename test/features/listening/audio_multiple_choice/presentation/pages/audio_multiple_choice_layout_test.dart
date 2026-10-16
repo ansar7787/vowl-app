@@ -467,10 +467,12 @@ void main() {
       when(() => mockListeningBloc.state).thenReturn(nextState);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump(const Duration(milliseconds: 500));
 
       expect(find.text('Airport Terminal'), findsOneWidget);
       expect(find.text('Train Station'), findsOneWidget);
       expect(find.text('Subway Platform'), findsOneWidget);
+      await tester.pump(const Duration(milliseconds: 500));
     });
 
     testWidgets('11. Continue button dispatches NextQuestion event', (tester) async {
