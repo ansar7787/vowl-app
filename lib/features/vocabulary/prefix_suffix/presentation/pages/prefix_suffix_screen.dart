@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -47,6 +48,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
   late final PrefixSuffixController _controller;
   final ScrollController _scrollController = ScrollController();
   bool _hasScrolledToStage2 = false;
+  Timer? _scrollTimer;
 
   void _onControllerUpdate() {
     if (!mounted) return;
@@ -54,7 +56,10 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
         !_controller.isAnswered &&
         !_hasScrolledToStage2) {
       _hasScrolledToStage2 = true;
-      Future.delayed(const Duration(milliseconds: 400), _scrollToBottom);
+      _scrollTimer?.cancel();
+      _scrollTimer = Timer(const Duration(milliseconds: 400), () {
+        if (mounted) _scrollToBottom();
+      });
     } else if (!_controller.isFirstStagePassed) {
       _hasScrolledToStage2 = false;
     }
@@ -100,6 +105,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
 
   @override
   void dispose() {
+    _scrollTimer?.cancel();
     _controller.removeListener(_onControllerUpdate);
     _scrollController.dispose();
     _controller.dispose();
@@ -109,6 +115,8 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
 
   @override
   void onQuestionReset() {
+    _scrollTimer?.cancel();
+    _hasScrolledToStage2 = false;
     final state = context.read<VocabularyBloc>().state;
     if (state is VocabularyLoaded) {
       _controller.reset(state.currentQuestOrNull, state.currentIndex);
@@ -169,7 +177,9 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                               SliverToBoxAdapter(
                                 child: ConstrainedBox(
                                   constraints: BoxConstraints(
-                                    minHeight: maxHeight,
+                                    minHeight: _controller.isFirstStagePassed
+                                        ? 0
+                                        : maxHeight,
                                   ),
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(
@@ -214,7 +224,12 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                                                     ),
                                           ),
                                         ),
-                                        SizedBox(height: 60.h),
+                                        SizedBox(
+                                          height:
+                                              _controller.isFirstStagePassed
+                                                  ? 16.h
+                                                  : 60.h,
+                                        ),
                                       ],
                                     ),
                                   ),

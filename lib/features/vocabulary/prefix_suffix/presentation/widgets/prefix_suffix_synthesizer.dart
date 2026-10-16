@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -51,11 +52,11 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
               : _buildMagneticTrack(),
         ),
 
-        SizedBox(height: 60.h),
+        SizedBox(height: widget.isFirstStagePassed ? 16.h : 60.h),
 
         // ── EXPLANATION OR ARSENAL DOCK ──
         if (widget.isFirstStagePassed) ...[
-          SizedBox(height: 120.h), // extra space for the typing overlay
+          const SizedBox.shrink(),
         ] else ...[
           // Arsenal Dock (Draggable Chips)
           Wrap(
@@ -184,7 +185,10 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
       ),
     );
 
-    if (isHinted) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
+    if (isHinted && !reduceMotion) {
       chip = chip
           .animate(onPlay: (controller) => controller.repeat(reverse: true))
           .scale(
@@ -246,40 +250,49 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
   }
 
   Widget _buildFusedWord() {
-    return FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 24.h),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  widget.primaryColor,
-                  widget.primaryColor.withValues(alpha: 0.8),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              borderRadius: BorderRadius.circular(24.r),
-              boxShadow: [
-                BoxShadow(
-                  color: widget.primaryColor.withValues(alpha: 0.4),
-                  blurRadius: 20,
-                  offset: const Offset(0, 8),
-                ),
-              ],
-            ),
-            child: Text(
-              widget.correctAnswer.toUpperCase(),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 36.sp,
-                fontWeight: FontWeight.w900,
-                color: Colors.white,
-                letterSpacing: 4,
-              ),
-            ),
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
+    final content = FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 24.h),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              widget.primaryColor,
+              widget.primaryColor.withValues(alpha: 0.8),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
-        )
+          borderRadius: BorderRadius.circular(24.r),
+          boxShadow: [
+            BoxShadow(
+              color: widget.primaryColor.withValues(alpha: 0.4),
+              blurRadius: 20,
+              offset: const Offset(0, 8),
+            ),
+          ],
+        ),
+        child: Text(
+          widget.correctAnswer.toUpperCase(),
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 36.sp,
+            fontWeight: FontWeight.w900,
+            color: Colors.white,
+            letterSpacing: 4,
+          ),
+        ),
+      ),
+    );
+
+    if (reduceMotion) {
+      return content;
+    }
+
+    return content
         .animate()
         .scale(
           begin: const Offset(0.8, 0.8),
@@ -408,30 +421,34 @@ class _MagneticDropZoneState extends State<_MagneticDropZone> {
                             color: widget.primaryColor,
                             size: 36.r,
                           )
-                        : Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.add_rounded,
-                                color: widget.isDark
-                                    ? Colors.white54
-                                    : Colors.black45,
-                                size: 24.r,
-                              ),
-                              SizedBox(height: 2.h),
-                              Text(
-                                widget.isPrefixSlot ? "PREFIX" : "SUFFIX",
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w800,
+                        : FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  Icons.add_rounded,
                                   color: widget.isDark
                                       ? Colors.white54
                                       : Colors.black45,
-                                  letterSpacing: 1.5,
+                                  size: 22.r,
                                 ),
-                              ),
-                            ],
+                                SizedBox(height: 2.h),
+                                Text(
+                                  widget.isPrefixSlot ? "PREFIX" : "SUFFIX",
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: widget.isDark
+                                        ? Colors.white54
+                                        : Colors.black45,
+                                    letterSpacing: 1.5,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                   );
                 },
