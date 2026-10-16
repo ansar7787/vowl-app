@@ -31,6 +31,7 @@ class SentenceBuilderWorkbench extends StatelessWidget {
           final isHovered = candidateData.isNotEmpty;
 
           return AnimatedContainer(
+            key: const Key('sentence_builder_workbench_target'),
             duration: const Duration(milliseconds: 200),
             width: double.infinity,
             constraints: BoxConstraints(minHeight: 110.h),
@@ -56,6 +57,7 @@ class SentenceBuilderWorkbench extends StatelessWidget {
                             '${e.value}, position ${e.key + 1}. Tap to remove.',
                         button: true,
                         child: SentenceBuilderJigsawPiece(
+                          key: Key('sentence_builder_assembled_piece_${e.value}_${e.key}'),
                           text: e.value,
                           isAssembled: true,
                           onTap: () => onRemovePiece(e.key),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class SentenceBuilderJigsawPiece extends StatelessWidget {
   final String text;
@@ -73,7 +74,7 @@ class SentenceBuilderJigsawPiece extends StatelessWidget {
       ),
     );
 
-    if (isAssembled) {
+    if (isAssembled && !VowlMotion.lowAnimationModeOverride.value) {
       return piece
           .animate()
           .scale(

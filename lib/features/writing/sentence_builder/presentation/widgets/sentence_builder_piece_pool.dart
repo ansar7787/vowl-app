@@ -58,6 +58,7 @@ class SentenceBuilderPiecePool extends StatelessWidget {
         alignment: WrapAlignment.center,
         children: available.map((p) {
           return Draggable<String>(
+            key: Key('sentence_builder_draggable_$p'),
             data: p,
             feedback: Material(
               color: Colors.transparent,
@@ -82,6 +83,7 @@ class SentenceBuilderPiecePool extends StatelessWidget {
             // Accessibility users and users on devices with imprecise touch
             // can simply tap a piece to place it in the workbench.
             child: SentenceBuilderJigsawPiece(
+              key: Key('sentence_builder_piece_$p'),
               text: p,
               isAssembled: false,
               color: color,

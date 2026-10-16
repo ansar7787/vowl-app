@@ -183,15 +183,14 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen>
     }
 
     if (isCorrect) {
-      hapticService.success();
       if (isHardMode) {
         submitCorrectAnswer();
       } else {
+        hapticService.success();
         _showTypeToConfirm.value = true;
         _scrollToBottom();
       }
     } else {
-      hapticService.error();
       final targetQuest = quest ?? _lastQuest;
       if (targetQuest != null) {
         submitWrongAnswer(quest: targetQuest, userAnswer: rawUserAnswer);
@@ -218,13 +217,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen>
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return BlocConsumer<WritingBloc, WritingState>(
-      listenWhen: (prev, curr) =>
-          (curr is WritingGameComplete && prev is! WritingGameComplete) ||
-          (curr is WritingGameOver && prev is! WritingGameOver) ||
-          (curr is WritingLoaded && prev is! WritingLoaded) ||
-          (prev is WritingLoaded &&
-              curr is WritingLoaded &&
-              prev.answerStatus != curr.answerStatus),
+      listenWhen: writingListenWhen,
       listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
@@ -350,108 +343,103 @@ class _SentenceBuilderBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      key: const Key('sentence_builder_scroll_view'),
       controller: scrollController,
       physics: const BouncingScrollPhysics(),
       slivers: [
         SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           sliver: SliverToBoxAdapter(
-            child: AbsorbPointer(
-              absorbing: showTypeToConfirm,
-              child: Column(
-                children: [
-                  SizedBox(height: 16.h),
-                  SentenceBuilderInstruction(
-                    primaryColor: theme.primaryColor,
-                    instruction: InstructionHelper.getInstruction(quest),
-                    sentenceType: quest.sentenceType,
-                  ),
-                  SizedBox(height: 32.h),
+            child: Column(
+              children: [
+                AbsorbPointer(
+                  absorbing: showTypeToConfirm,
+                  child: Column(
+                    children: [
+                      SizedBox(height: 16.h),
+                      SentenceBuilderInstruction(
+                        primaryColor: theme.primaryColor,
+                        instruction: InstructionHelper.getInstruction(quest),
+                        sentenceType: quest.sentenceType,
+                      ),
+                      SizedBox(height: 32.h),
 
-                  if (level >= 6) ...[
-                    GestureDetector(
-                      onTap: () {
-                        CustomSnackBar.show(
-                          context: context,
-                          message:
-                              "Hard Mode! Dragging is disabled. Please type your answer below.",
-                          type: CustomSnackBarType.info,
-                        );
-                      },
-                      child: AbsorbPointer(
-                        child: Opacity(
-                          opacity: 0.8,
-                          child: SentenceBuilderPiecePool(
-                            pool: pool,
-                            assembledPieces: const [],
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            onSnap: (_) {},
+                      if (level >= 6) ...[
+                        GestureDetector(
+                          key: const Key('sentence_builder_hard_mode_pool_gesture'),
+                          behavior: HitTestBehavior.opaque,
+                          onTap: () {
+                            CustomSnackBar.show(
+                              context: context,
+                              message:
+                                  "Hard Mode! Dragging is disabled. Please type your answer below.",
+                              type: CustomSnackBarType.info,
+                            );
+                          },
+                          child: AbsorbPointer(
+                            child: Opacity(
+                              opacity: 0.8,
+                              child: SentenceBuilderPiecePool(
+                                pool: pool,
+                                assembledPieces: const [],
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                onSnap: (_) {},
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    ),
-                    SizedBox(height: 16.h),
-                    SentenceBuilderKeyboardInput(
-                      controller: textController,
-                      color: theme.primaryColor,
-                      isDark: isDark,
-                    ),
-                  ] else ...[
-                    SentenceBuilderWorkbench(
-                      assembledPieces: assembledPieces,
-                      color: theme.primaryColor,
-                      isDark: isDark,
-                      onSnap: onSnap,
-                      onRemovePiece: onRemovePiece,
-                    ),
-                    SizedBox(height: 32.h),
-                    SentenceBuilderPiecePool(
-                      pool: pool,
-                      assembledPieces: assembledPieces,
-                      color: theme.primaryColor,
-                      isDark: isDark,
-                      onSnap: onSnap,
-                    ),
-                  ],
-                ],
-              ),
+                        SizedBox(height: 16.h),
+                        SentenceBuilderKeyboardInput(
+                          controller: textController,
+                          color: theme.primaryColor,
+                          isDark: isDark,
+                        ),
+                      ] else ...[
+                        SentenceBuilderWorkbench(
+                          assembledPieces: assembledPieces,
+                          color: theme.primaryColor,
+                          isDark: isDark,
+                          onSnap: onSnap,
+                          onRemovePiece: onRemovePiece,
+                        ),
+                        SizedBox(height: 32.h),
+                        SentenceBuilderPiecePool(
+                          pool: pool,
+                          assembledPieces: assembledPieces,
+                          color: theme.primaryColor,
+                          isDark: isDark,
+                          onSnap: onSnap,
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+                SizedBox(height: 32.h),
+                if (!isAnswered && !showTypeToConfirm)
+                  _SubmitButton(theme: theme, onTap: onSubmit),
+                if (showTypeToConfirm && !isAnswered)
+                  TypeToConfirmOverlay(
+                    expectedText: quest.correctAnswer ?? '',
+                    primaryColor: theme.primaryColor,
+                    onConfirmed: onTypeConfirmed,
+                    onSkipped: onSkipped,
+                    isPositioned: false, // Renders inline instead of stacked!
+                  ),
+                SizedBox(
+                  height: !isAnswered
+                      ? ((level >= 6 || showTypeToConfirm)
+                            ? MediaQuery.viewInsetsOf(context).bottom + 40.h
+                            : 60.h)
+                      : 160.h,
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).viewInsets.bottom > 0
+                      ? MediaQuery.of(context).viewInsets.bottom + 40.h
+                      : 120.h,
+                ),
+              ],
             ),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              SizedBox(height: 32.h),
-              if (!isAnswered && !showTypeToConfirm)
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: _SubmitButton(theme: theme, onTap: onSubmit),
-                ),
-              if (showTypeToConfirm && !isAnswered)
-                TypeToConfirmOverlay(
-                  expectedText: quest.correctAnswer ?? '',
-                  primaryColor: theme.primaryColor,
-                  onConfirmed: onTypeConfirmed,
-                  onSkipped: onSkipped,
-                  isPositioned: false, // Renders inline instead of stacked!
-                ),
-              SizedBox(
-                height: !isAnswered
-                    ? ((level >= 6 || showTypeToConfirm)
-                          ? MediaQuery.viewInsetsOf(context).bottom + 40.h
-                          : 60.h)
-                    : 160.h,
-              ),
-            ],
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: SizedBox(
-            height: MediaQuery.of(context).viewInsets.bottom > 0
-                ? MediaQuery.of(context).viewInsets.bottom + 40.h
-                : 120.h,
           ),
         ),
       ],
@@ -474,6 +462,7 @@ class _SubmitButton extends StatelessWidget {
       label: 'Submit assembled sentence',
       button: true,
       child: ScaleButton(
+        key: const Key('sentence_builder_submit_button'),
         onTap: onTap,
         child: Container(
           width: double.infinity,

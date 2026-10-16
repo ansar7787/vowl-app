@@ -42,6 +42,7 @@ class _SentenceBuilderKeyboardInputState
         ),
       ),
       child: TextField(
+        key: const Key('sentence_builder_text_field'),
         controller: widget.controller,
         focusNode: _focusNode,
         onTap: () {
