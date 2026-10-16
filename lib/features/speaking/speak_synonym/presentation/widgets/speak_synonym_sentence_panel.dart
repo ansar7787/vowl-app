@@ -22,84 +22,100 @@ class SpeakSynonymSentencePanel extends StatelessWidget {
   Widget build(BuildContext context) {
     final String fullText = quest.textToSpeak ?? "";
     final List<String> segments = fullText.split('*');
+    final String cleanText = fullText.replaceAll('*', '');
 
-    return GlassTile(
-      padding: EdgeInsets.all(22.r),
-      borderRadius: BorderRadius.circular(26.r),
-      child: Column(
-        children: [
-          RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 18.sp,
-                color: isDark ? Colors.white70 : Colors.black54,
-                height: 1.4,
-              ),
-              children: segments.asMap().entries.map((e) {
-                final bool isTarget = e.key % 2 != 0;
-                if (isTarget) {
-                  return WidgetSpan(
-                    alignment: PlaceholderAlignment.middle,
-                    child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 4.w),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 10.w,
-                        vertical: 4.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: primaryColor.withValues(alpha: 0.15),
-                        borderRadius: BorderRadius.circular(12.r),
-                        border: Border.all(
-                          color: primaryColor.withValues(alpha: 0.6),
-                          width: 1.5.w,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: primaryColor.withValues(alpha: 0.1),
-                            blurRadius: 8,
+    return Semantics(
+      container: true,
+      label: 'Sentence: $cleanText',
+      child: GlassTile(
+        padding: EdgeInsets.all(22.r),
+        borderRadius: BorderRadius.circular(26.r),
+        child: Column(
+          children: [
+            Semantics(
+              container: true,
+              child: RichText(
+                key: const Key('speak_synonym_rich_text'),
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 18.sp,
+                    color: isDark ? Colors.white70 : Colors.black54,
+                    height: 1.4,
+                  ),
+                  children: segments.asMap().entries.map((e) {
+                    final bool isTarget = e.key % 2 != 0;
+                    if (isTarget) {
+                      return WidgetSpan(
+                        alignment: PlaceholderAlignment.middle,
+                        child: Container(
+                          key: Key('speak_synonym_target_chip_${e.key}'),
+                          margin: EdgeInsets.symmetric(horizontal: 4.w),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 10.w,
+                            vertical: 4.h,
                           ),
-                        ],
-                      ),
-                      child: Text(
-                        e.value,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.bold,
-                          color: primaryColor,
+                          decoration: BoxDecoration(
+                            color: primaryColor.withValues(alpha: 0.15),
+                            borderRadius: BorderRadius.circular(12.r),
+                            border: Border.all(
+                              color: primaryColor.withValues(alpha: 0.6),
+                              width: 1.5.w,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: primaryColor.withValues(alpha: 0.1),
+                                blurRadius: 8,
+                              ),
+                            ],
+                          ),
+                          child: Text(
+                            e.value,
+                            key: Key('speak_synonym_target_text_${e.key}'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.bold,
+                              color: primaryColor,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                  );
-                } else {
-                  return TextSpan(text: e.value);
-                }
-              }).toList(),
-            ),
-          ),
-          SizedBox(height: 16.h),
-          ScaleButton(
-            onTap: onPlayTts,
-            child: Container(
-              padding: EdgeInsets.all(8.r),
-              decoration: BoxDecoration(
-                color: primaryColor.withValues(alpha: 0.1),
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: primaryColor.withValues(alpha: 0.2),
-                  width: 1.5,
+                      );
+                    } else {
+                      return TextSpan(text: e.value);
+                    }
+                  }).toList(),
                 ),
               ),
-              child: Icon(
-                Icons.volume_up_rounded,
-                color: primaryColor,
-                size: 20.r,
+            ),
+            SizedBox(height: 16.h),
+            ScaleButton(
+              key: const Key('speak_synonym_listen_button'),
+              onTap: onPlayTts,
+              child: Semantics(
+                button: true,
+                label: 'Listen to sentence',
+                child: Container(
+                  padding: EdgeInsets.all(8.r),
+                  decoration: BoxDecoration(
+                    color: primaryColor.withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: primaryColor.withValues(alpha: 0.2),
+                      width: 1.5,
+                    ),
+                  ),
+                  child: Icon(
+                    Icons.volume_up_rounded,
+                    color: primaryColor,
+                    size: 20.r,
+                  ),
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
