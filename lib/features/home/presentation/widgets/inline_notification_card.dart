@@ -131,28 +131,25 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
 
     if (streak >= 3) {
       final streakTitles = [
-        context
-            .tr(
-              'notification_card.streak_protect',
-              fallback: 'Protect your {}-Day Streak!',
-            )
-            .replaceAll('{}', streak.toString()),
-        context
-            .tr(
-              'notification_card.streak_strong',
-              fallback: '{} days strong! Keep it up.',
-            )
-            .replaceAll('{}', streak.toString()),
+        context.tr(
+          'notification_card.streak_protect',
+          args: [streak.toString()],
+          fallback: 'Protect your {}-Day Streak!',
+        ),
+        context.tr(
+          'notification_card.streak_strong',
+          args: [streak.toString()],
+          fallback: '{} days strong! Keep it up.',
+        ),
         context.tr(
           'notification_card.streak_unstoppable',
           fallback: 'Unstoppable! Protect your streak.',
         ),
-        context
-            .tr(
-              'notification_card.streak_dont_lose',
-              fallback: "Don't lose your {}-day progress!",
-            )
-            .replaceAll('{}', streak.toString()),
+        context.tr(
+          'notification_card.streak_dont_lose',
+          args: [streak.toString()],
+          fallback: "Don't lose your {}-day progress!",
+        ),
       ];
       return streakTitles[hour % streakTitles.length];
     } else if (streak == 1 || streak == 2) {

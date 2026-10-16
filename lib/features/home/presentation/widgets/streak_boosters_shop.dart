@@ -385,7 +385,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                 Text(
                   context.tr(
                     'streak.confirm_purchase_body',
-                    args: [name, cost.toString()],
+                    args: [cost.toString(), name],
                     fallback: 'Spend $cost coins on $name?',
                   ),
                   textAlign: TextAlign.center,

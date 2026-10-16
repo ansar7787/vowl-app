@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
@@ -15,6 +16,7 @@ import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
 
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_parser.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_positive_pole_panel.dart';
 
@@ -47,6 +49,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
 
   final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
   Timer? _ttsTimer;
+  Timer? _autoPlayTimer;
   final ScrollController _scrollController = ScrollController();
 
   List<String> _acceptedAntonyms = [];
@@ -54,14 +57,50 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
   @override
   void initState() {
     super.initState();
+    initGameLifecycle();
     initSpeakingGame();
+
+    final initialBlocState = context.read<SpeakingBloc>().state;
+    if (initialBlocState is SpeakingLoaded &&
+        !initialBlocState.answerStatus.isAnswered) {
+      if (VowlMotion.lowAnimationModeOverride.value) {
+        _triggerAutoPlay(initialBlocState.currentQuest);
+      } else {
+        _autoPlayTimer = Timer(const Duration(milliseconds: 300), () {
+          if (mounted) _triggerAutoPlay(initialBlocState.currentQuest);
+        });
+      }
+    } else {
+      _ttsFinished.value = true;
+    }
+  }
+
+  void _triggerAutoPlay(SpeakingQuest quest) {
+    final parsed = SpeakOppositeParser.parseQuestTexts(
+      textToSpeak: quest.textToSpeak ?? "",
+      fallbackInstruction: quest.instruction,
+    );
+    if (parsed.targetWord.isNotEmpty && parsed.targetWord != "?") {
+      soundService.playTts(parsed.targetWord);
+      _ttsTimer?.cancel();
+      if (VowlMotion.lowAnimationModeOverride.value) {
+        _ttsFinished.value = true;
+      } else {
+        _ttsTimer = Timer(const Duration(seconds: 2), () {
+          if (mounted) _ttsFinished.value = true;
+        });
+      }
+    } else {
+      _ttsFinished.value = true;
+    }
   }
 
   @override
   void dispose() {
+    _autoPlayTimer?.cancel();
+    _ttsTimer?.cancel();
     _scrollController.dispose();
     _ttsFinished.dispose();
-    _ttsTimer?.cancel();
     disposeSpeakingGame();
     super.dispose();
   }
@@ -113,6 +152,8 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
   @override
   void onQuestionReset() {
     _ttsFinished.value = false;
+    _ttsTimer?.cancel();
+    _autoPlayTimer?.cancel();
   }
 
   @override
@@ -123,7 +164,21 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
       listenWhen: speakingListenWhen,
-      listener: onSpeakingStateChanged,
+      listener: (context, state) {
+        onSpeakingStateChanged(context, state);
+        if (state is SpeakingLoaded && !state.answerStatus.isAnswered) {
+          _ttsFinished.value = false;
+          _ttsTimer?.cancel();
+          _autoPlayTimer?.cancel();
+          if (VowlMotion.lowAnimationModeOverride.value) {
+            _triggerAutoPlay(state.currentQuest);
+          } else {
+            _autoPlayTimer = Timer(const Duration(milliseconds: 300), () {
+              if (mounted) _triggerAutoPlay(state.currentQuest);
+            });
+          }
+        }
+      },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
 
@@ -154,9 +209,15 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
           contextText = parsed.contextText;
         }
 
+        final reduceMotion = (mediaQuery.disableAnimations) ||
+            VowlMotion.lowAnimationModeOverride.value;
+        if (reduceMotion && !_ttsFinished.value) {
+          _ttsFinished.value = true;
+        }
+
         return MediaQuery(
           data: mediaQuery.copyWith(
-            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.5),
+            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
           child: ListenableBuilder(
             listenable: Listenable.merge([
@@ -180,11 +241,13 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
                     : RawScrollbar(
+                        key: const Key('speak_opposite_scrollbar'),
                         controller: _scrollController,
                         thumbColor: theme.primaryColor.withValues(alpha: 0.5),
                         radius: Radius.circular(8.r),
                         thickness: 4.w,
                         child: CustomScrollView(
+                          key: const Key('speak_opposite_scroll_view'),
                           controller: _scrollController,
                           physics: const BouncingScrollPhysics(
                             parent: AlwaysScrollableScrollPhysics(),
@@ -236,6 +299,9 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                             MainAxisAlignment.end,
                                         children: [
                                           SpeakToConfirmOverlay(
+                                            key: const Key(
+                                              'speak_opposite_speak_to_confirm_overlay',
+                                            ),
                                             expectedText: expectedText,
                                             acceptedSynonyms: _acceptedAntonyms,
                                             primaryColor: theme.primaryColor,
