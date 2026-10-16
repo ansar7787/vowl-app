@@ -81,10 +81,8 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
         _draftedOptions.value.every((opt) => correctOptions.contains(opt));
 
     if (isCorrect) {
-      hapticService.success();
       submitCorrectAnswer();
     } else {
-      hapticService.error();
       final userAns = 'Drafted: ${_draftedOptions.value.join(" | ")}';
       submitWrongAnswer(quest: quest, userAnswer: userAns);
     }
@@ -134,8 +132,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
           disablePadding: true,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<WritingBloc>().add(const WritingHintUsed()),
+          onHint: () {},
           child: quest == null || quest.options == null
               ? GameShimmerLoading(primaryColor: theme.primaryColor)
               : Builder(
@@ -161,6 +158,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
                           child: CustomScrollView(
+                            key: const Key('opinion_writing_scroll_view'),
                             controller: _scrollController,
                             physics: const BouncingScrollPhysics(),
                             slivers: [
@@ -169,8 +167,11 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                   horizontal: 24.w,
                                   vertical: 16.h,
                                 ),
-                                sliver: SliverList(
-                                  delegate: SliverChildListDelegate([
+                                sliver: SliverToBoxAdapter(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
                                     if (quest.prompt != null ||
                                         quest.instruction.isNotEmpty) ...[
                                       Container(
@@ -337,6 +338,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                       },
                                       builder: (context, candidateData, rejectedData) {
                                         return Container(
+                                          key: const Key('opinion_drafting_pad_target'),
                                           width: double.infinity,
                                           padding: EdgeInsets.all(20.w),
                                           decoration: BoxDecoration(
@@ -390,6 +392,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                                   final option =
                                                       draftedOptions[index];
                                                   return OpinionWritingDraftedCard(
+                                                    key: Key('opinion_drafted_card_$option'),
                                                     text: option,
                                                     isDark: isDark,
                                                     primaryColor:
@@ -489,6 +492,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                       ...availableOptions.map((option) {
                                         if (isAnswered) {
                                           return OpinionWritingIdeaCard(
+                                            key: Key('opinion_idea_card_$option'),
                                             text: option,
                                             isDark: isDark,
                                             primaryColor: theme.primaryColor,
@@ -510,6 +514,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                         }
 
                                         return Draggable<String>(
+                                          key: Key('opinion_draggable_$option'),
                                           data: option,
                                           feedback: Material(
                                             color: Colors.transparent,
@@ -537,6 +542,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                             ),
                                           ),
                                           child: OpinionWritingIdeaCard(
+                                            key: Key('opinion_idea_card_$option'),
                                             text: option,
                                             isDark: isDark,
                                             primaryColor: theme.primaryColor,
@@ -546,72 +552,63 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                       }),
                                     ],
                                     SizedBox(height: 24.h),
-                                  ]),
-                                ),
-                              ),
-                              SliverToBoxAdapter(
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      if (!isAnswered)
-                                        ScaleButton(
-                                          onTap: canSubmit
-                                              ? () => _submitAnswer(quest)
-                                              : null,
-                                          child: AnimatedContainer(
-                                            duration: const Duration(
-                                              milliseconds: 200,
-                                            ),
-                                            width: double.infinity,
-                                            height: 60.h,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(20.r),
-                                              color: canSubmit
-                                                  ? theme.primaryColor
-                                                  : Colors.grey.withValues(
-                                                      alpha: 0.5,
-                                                    ),
-                                              boxShadow: canSubmit
-                                                  ? [
-                                                      BoxShadow(
-                                                        color: theme
-                                                            .primaryColor
-                                                            .withValues(
-                                                              alpha: 0.3,
-                                                            ),
-                                                        blurRadius: 15,
-                                                        offset: const Offset(
-                                                          0,
-                                                          4,
-                                                        ),
+                                    if (!isAnswered)
+                                      ScaleButton(
+                                        key: const Key('opinion_writing_submit_button'),
+                                        onTap: canSubmit
+                                            ? () => _submitAnswer(quest)
+                                            : null,
+                                        child: AnimatedContainer(
+                                          duration: const Duration(
+                                            milliseconds: 200,
+                                          ),
+                                          width: double.infinity,
+                                          height: 60.h,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20.r),
+                                            color: canSubmit
+                                                ? theme.primaryColor
+                                                : Colors.grey.withValues(
+                                                    alpha: 0.5,
+                                                  ),
+                                            boxShadow: canSubmit
+                                                ? [
+                                                    BoxShadow(
+                                                      color: theme
+                                                          .primaryColor
+                                                          .withValues(
+                                                            alpha: 0.3,
+                                                          ),
+                                                      blurRadius: 15,
+                                                      offset: const Offset(
+                                                        0,
+                                                        4,
                                                       ),
-                                                    ]
-                                                  : [],
-                                            ),
-                                            child: Center(
-                                              child: Text(
-                                                "SUBMIT",
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 16.sp,
-                                                  fontWeight: FontWeight.w700,
-                                                  color: Colors.white,
-                                                  letterSpacing: 1.2,
-                                                ),
+                                                    ),
+                                                  ]
+                                                : [],
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              "SUBMIT",
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 16.sp,
+                                                fontWeight: FontWeight.w700,
+                                                color: Colors.white,
+                                                letterSpacing: 1.2,
                                               ),
                                             ),
                                           ),
                                         ),
-                                      SizedBox(height: 120.h),
-                                    ],
-                                  ),
+                                      ),
+                                    SizedBox(height: 120.h),
+                                  ],
                                 ),
                               ),
-                            ],
+                            ),
+                          ],
                           ),
                         );
                       },
