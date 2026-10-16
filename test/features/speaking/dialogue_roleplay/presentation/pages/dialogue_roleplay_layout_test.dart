@@ -919,7 +919,11 @@ void main() {
       testWidgets(
         '7.5 autoplay prioritizes quest authored synonyms/smartReplies before ML replies',
         (tester) async {
-          await pumpDialogueRoleplayScreen(tester);
+          final priorityQuest = createQuest(
+            smartReplies: const ['Sure, it is right around the corner.'],
+          );
+          final state = testLoadedState.copyWith(quests: [priorityQuest]);
+          await pumpDialogueRoleplayScreen(tester, state: state);
           expect(
             find.text('Sure, it is right around the corner.'),
             findsOneWidget,
@@ -934,11 +938,18 @@ void main() {
             () => mockSmartReplyService.getSuggestions(),
           ).thenAnswer((_) async => ['Sure, it is right around the corner.']);
 
-          await pumpDialogueRoleplayScreen(tester);
+          final dedupeQuest = createQuest(
+            smartReplies: null,
+            acceptedSynonyms: const ['Sure, it is right around the corner.'],
+          );
+          final state = testLoadedState.copyWith(quests: [dedupeQuest]);
+          await pumpDialogueRoleplayScreen(tester, state: state);
+
           expect(
             find.text('Sure, it is right around the corner.'),
             findsOneWidget,
           );
+          expect(find.byType(SmartReplyChip), findsOneWidget);
         },
       );
 
