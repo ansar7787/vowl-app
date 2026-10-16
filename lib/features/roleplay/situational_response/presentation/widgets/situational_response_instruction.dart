@@ -5,12 +5,16 @@ class SituationalResponseInstruction extends StatelessWidget {
   final Color primaryColor;
   final String? instruction;
   final bool isDark;
+  final String? hint;
+  final bool hintUsed;
 
   const SituationalResponseInstruction({
     super.key,
     required this.primaryColor,
     required this.isDark,
     this.instruction,
+    this.hint,
+    this.hintUsed = false,
   });
 
   @override
@@ -46,6 +50,42 @@ class SituationalResponseInstruction extends StatelessWidget {
             color: isDark ? Colors.grey.shade400 : Colors.black54,
           ),
         ),
+        if (hintUsed && hint != null && hint!.isNotEmpty) ...[
+          SizedBox(height: 10.h),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+            decoration: BoxDecoration(
+              color: Colors.amber.withValues(alpha: 0.12),
+              borderRadius: BorderRadius.circular(12.r),
+              border: Border.all(color: Colors.amber.withValues(alpha: 0.35)),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.lightbulb_outline_rounded,
+                  color: Colors.amber,
+                  size: 16.r,
+                ),
+                SizedBox(width: 6.w),
+                Flexible(
+                  child: Text(
+                    hint!,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isDark
+                          ? Colors.amber.shade200
+                          : Colors.amber.shade900,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ],
     );
   }

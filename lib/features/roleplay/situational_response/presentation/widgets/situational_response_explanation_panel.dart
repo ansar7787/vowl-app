@@ -29,7 +29,7 @@ class SituationalResponseExplanationPanel extends StatelessWidget {
         : Colors.orangeAccent;
 
     return Container(
-      width: 1.sw,
+      width: double.infinity,
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         color: isDark ? _LocalPalette.color131326 : Colors.white,
@@ -55,13 +55,15 @@ class SituationalResponseExplanationPanel extends StatelessWidget {
                 size: 24.r,
               ),
               SizedBox(width: 8.w),
-              Text(
-                (isCorrect ?? false) ? "Great response!" : "Not quite right!",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).colorScheme.onSurface,
+              Expanded(
+                child: Text(
+                  (isCorrect ?? false) ? "Great response!" : "Not quite right!",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
                 ),
               ),
             ],
