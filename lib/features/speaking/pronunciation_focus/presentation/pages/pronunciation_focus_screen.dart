@@ -7,12 +7,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 import 'package:vowl/features/speaking/pronunciation_focus/presentation/widgets/pronunciation_focus_header.dart';
 import 'package:vowl/features/speaking/pronunciation_focus/presentation/widgets/pronunciation_focus_phoneme_crucible.dart';
@@ -46,12 +47,14 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('speaking_games.pronunciation_focus_complete', fallback: 'PHONETIC MASTER!');
 
   final ValueNotifier<double> _heatLevel = ValueNotifier(0.0);
 
   final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
   Timer? _ttsTimer;
+  Timer? _autoPlayTimer;
 
   late AnimationController _tickerController;
   final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
@@ -63,6 +66,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
   @override
   void initState() {
     super.initState();
+    initGameLifecycle();
     initSpeakingGame();
 
     _tickerController =
@@ -71,10 +75,38 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
             _timeVal.value = _tickerController.value;
           });
     _tickerController.repeat();
+
+    final initialBlocState = context.read<SpeakingBloc>().state;
+    if (initialBlocState is SpeakingLoaded &&
+        !initialBlocState.answerStatus.isAnswered) {
+      if (VowlMotion.lowAnimationModeOverride.value) {
+        _triggerAutoPlay(initialBlocState.currentQuest);
+      } else {
+        _autoPlayTimer = Timer(const Duration(milliseconds: 300), () {
+          if (mounted) _triggerAutoPlay(initialBlocState.currentQuest);
+        });
+      }
+    }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final mediaQuery = MediaQuery.maybeOf(context);
+    final reduceMotion = (mediaQuery?.disableAnimations ?? false) ||
+        VowlMotion.lowAnimationModeOverride.value;
+    if (reduceMotion) {
+      _tickerController.stop();
+      _timeVal.value = 0.5;
+    } else if (!_tickerController.isAnimating) {
+      _tickerController.repeat();
+    }
   }
 
   @override
   void dispose() {
+    _autoPlayTimer?.cancel();
+    _ttsTimer?.cancel();
     _tickerController.dispose();
     _heatLevel.dispose();
     _timeVal.dispose();
@@ -82,59 +114,50 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
     _isUserRecording.dispose();
     _scrollController.dispose();
     _ttsFinished.dispose();
-    _ttsTimer?.cancel();
     disposeSpeakingGame();
     super.dispose();
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _triggerAutoPlay(SpeakingQuest quest) {
+    if (quest.textToSpeak != null) {
+      soundService.playTts(quest.textToSpeak!);
+      _ttsTimer?.cancel();
+      if (VowlMotion.lowAnimationModeOverride.value) {
+        _ttsFinished.value = true;
+      } else {
+        _ttsTimer = Timer(const Duration(seconds: 2), () {
+          if (mounted) _ttsFinished.value = true;
+        });
+      }
+    } else {
+      _ttsFinished.value = true;
+    }
+  }
+
+  void _submitVerbalEvaluation(bool nailedIt, SpeakingQuest quest) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
     _heatLevel.value = nailedIt ? 1.0 : 0.0;
 
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<SpeakingBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        // Find quest from state to log details accurately
-        final state = context.read<SpeakingBloc>().state;
-        final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
-
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: quest?.textToSpeak ?? widget.gameType.name,
-          userAnswer: '[Failed Pronunciation]',
-          correctAnswer:
-              quest?.targetPhoneme ?? 'Shadow Playback Compare Target',
-          level: widget.level,
-        );
-      }
-
-      context.read<SpeakingBloc>().add(const SubmitAnswer(false));
+      submitWrongAnswer(
+        quest: quest,
+        userAnswer: '[Failed Pronunciation]',
+      );
     }
   }
 
   @override
   void onQuestionReset() {
     _heatLevel.value = 0.0;
-
     _ttsFinished.value = false;
-
     _timeVal.value = 0.0;
-
     _showGuide.value = false;
-
     _isUserRecording.value = false;
+    _ttsTimer?.cancel();
+    _autoPlayTimer?.cancel();
   }
 
   @override
@@ -145,7 +168,26 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
       listenWhen: speakingListenWhen,
-      listener: onSpeakingStateChanged,
+      listener: (context, state) {
+        onSpeakingStateChanged(context, state);
+        if (state is SpeakingLoaded) {
+          if (!state.answerStatus.isAnswered) {
+            _heatLevel.value = 0.0;
+            _showGuide.value = false;
+            _isUserRecording.value = false;
+            _ttsFinished.value = false;
+            _ttsTimer?.cancel();
+            _autoPlayTimer?.cancel();
+            if (VowlMotion.lowAnimationModeOverride.value) {
+              _triggerAutoPlay(state.currentQuest);
+            } else {
+              _autoPlayTimer = Timer(const Duration(milliseconds: 300), () {
+                if (mounted) _triggerAutoPlay(state.currentQuest);
+              });
+            }
+          }
+        }
+      },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
 
@@ -200,6 +242,9 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       PronunciationFocusHeader(
+                                        key: const Key(
+                                          'pronunciation_focus_header',
+                                        ),
                                         primaryColor: theme.primaryColor,
                                         instruction:
                                             InstructionHelper.getInstruction(
@@ -208,6 +253,9 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                       ),
                                       SizedBox(height: 24.h),
                                       PronunciationFocusPhonemeCrucible(
+                                        key: const Key(
+                                          'pronunciation_focus_phoneme_crucible',
+                                        ),
                                         quest: quest,
                                         primaryColor: theme.primaryColor,
                                         isDark: isDark,
@@ -226,6 +274,9 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                             valueListenable: _timeVal,
                                             builder: (context, timeVal, _) {
                                               return PronunciationFocusThermalGrid(
+                                                key: const Key(
+                                                  'pronunciation_focus_thermal_grid',
+                                                ),
                                                 heatLevel: _heatLevel.value,
                                                 isListening: isRecording,
                                                 timeVal: timeVal,
@@ -237,6 +288,9 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                       ),
                                       SizedBox(height: 32.h),
                                       PronunciationFocusHighlightedSentence(
+                                        key: const Key(
+                                          'pronunciation_focus_highlighted_sentence',
+                                        ),
                                         quest: quest,
                                         primaryColor: theme.primaryColor,
                                         isDark: isDark,
@@ -254,6 +308,9 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                   child: AbsorbPointer(
                                     absorbing: !_ttsFinished.value,
                                     child: ShadowPlaybackCompare(
+                                      key: const Key(
+                                        'pronunciation_focus_shadow_compare',
+                                      ),
                                       expectedText:
                                           quest.textToSpeak ??
                                           "", // BUG FIX: targetWord was null
@@ -265,9 +322,9 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                         _isUserRecording.value = isRecording;
                                       },
                                       onConfirmed: () =>
-                                          _submitVerbalEvaluation(true),
+                                          _submitVerbalEvaluation(true, quest),
                                       onSkipped: () =>
-                                          _submitVerbalEvaluation(false),
+                                          _submitVerbalEvaluation(false, quest),
                                     ),
                                   ),
                                 ),
