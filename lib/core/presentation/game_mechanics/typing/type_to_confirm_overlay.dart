@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -153,10 +154,18 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
               ? MediaQuery.paddingOf(context).top + 12.h
               : 0,
         ),
-        child: _buildPanel(isDark)
-            .animate()
-            .slideY(begin: 0.2, end: 0, duration: 400.ms, curve: Curves.easeOut)
-            .fadeIn(duration: 300.ms),
+        child: (MediaQuery.disableAnimationsOf(context) ||
+                VowlMotion.lowAnimationModeOverride.value)
+            ? _buildPanel(isDark)
+            : _buildPanel(isDark)
+                .animate()
+                .slideY(
+                  begin: 0.2,
+                  end: 0,
+                  duration: 400.ms,
+                  curve: Curves.easeOut,
+                )
+                .fadeIn(duration: 300.ms),
       ),
     );
 
@@ -222,9 +231,9 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                   children: [
                     Builder(
                       builder: (context) {
-                        final reduceMotion = MediaQuery.disableAnimationsOf(
-                          context,
-                        );
+                        final reduceMotion =
+                            MediaQuery.disableAnimationsOf(context) ||
+                            VowlMotion.lowAnimationModeOverride.value;
                         Widget iconContainer = Container(
                           padding: EdgeInsets.all(10.r),
                           decoration: BoxDecoration(
@@ -369,134 +378,153 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                   valueListenable: _result,
                   builder: (context, result, _) {
                     if (result == _ConfirmResult.success) {
+                      final reduceMotion =
+                          MediaQuery.disableAnimationsOf(context) ||
+                          VowlMotion.lowAnimationModeOverride.value;
+                      final badge = Container(
+                        padding: EdgeInsets.all(16.r),
+                        decoration: BoxDecoration(
+                          color: AppColors.gameCorrect.withValues(
+                            alpha: 0.15,
+                          ),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.verified_rounded,
+                          color: AppColors.gameCorrect,
+                          size: 48.r,
+                        ),
+                      );
+                      final label = Text(
+                        'PERFECT!',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w900,
+                          color: AppColors.gameCorrect,
+                          letterSpacing: 2,
+                        ),
+                      );
+
                       return Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Column(
                           children: [
-                            Container(
-                              padding: EdgeInsets.all(16.r),
-                              decoration: BoxDecoration(
-                                color: AppColors.gameCorrect.withValues(
-                                  alpha: 0.15,
-                                ),
-                                shape: BoxShape.circle,
-                              ),
-                              child: Icon(
-                                Icons.verified_rounded,
-                                color: AppColors.gameCorrect,
-                                size: 48.r,
-                              ),
-                            ).animate().scale(
-                              begin: const Offset(0, 0),
-                              end: const Offset(1, 1),
-                              duration: 400.ms,
-                              curve: Curves.easeOutCubic,
-                            ),
+                            reduceMotion
+                                ? badge
+                                : badge.animate().scale(
+                                    begin: const Offset(0, 0),
+                                    end: const Offset(1, 1),
+                                    duration: 400.ms,
+                                    curve: Curves.easeOutCubic,
+                                  ),
                             SizedBox(height: 12.h),
-                            Text(
-                              'PERFECT!',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w900,
-                                color: AppColors.gameCorrect,
-                                letterSpacing: 2,
-                              ),
-                            ).animate().fadeIn(delay: 200.ms),
+                            reduceMotion
+                                ? label
+                                : label.animate().fadeIn(delay: 200.ms),
                           ],
                         ),
                       );
                     }
 
+                    final reduceMotion =
+                        MediaQuery.disableAnimationsOf(context) ||
+                        VowlMotion.lowAnimationModeOverride.value;
+
+                    final inputContainer = Container(
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? Colors.black.withValues(alpha: 0.2)
+                            : Colors.white.withValues(alpha: 0.5),
+                        borderRadius: BorderRadius.circular(16.r),
+                        border: Border.all(
+                          color: result == _ConfirmResult.mismatch
+                              ? AppColors.gameIncorrect.withValues(
+                                  alpha: 0.5,
+                                )
+                              : widget.primaryColor.withValues(
+                                  alpha: 0.2,
+                                ),
+                        ),
+                      ),
+                      child: Stack(
+                        children: [
+                          TextField(
+                            controller: _textController,
+                            focusNode: _focusNode,
+                            minLines: 1,
+                            maxLines: 4,
+                            keyboardType: TextInputType.multiline,
+                            textInputAction: TextInputAction.done,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              color: textColor,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            decoration: InputDecoration(
+                              hintText: 'Type exactly...',
+                              hintStyle: TextStyle(
+                                color: subtitleColor.withValues(
+                                  alpha: 0.5,
+                                ),
+                                fontWeight: FontWeight.w400,
+                              ),
+                              border: InputBorder.none,
+                              contentPadding: EdgeInsets.only(
+                                left: 16.w,
+                                right: 16.w,
+                                top: 16.h,
+                                bottom: 32.h,
+                              ),
+                            ),
+                            onSubmitted: (_) => _evaluate(),
+                            onChanged: (_) {
+                              if (_result.value ==
+                                      _ConfirmResult.mismatch ||
+                                  _result.value ==
+                                      _ConfirmResult.empty) {
+                                _result.value = null;
+                              }
+                            },
+                          ),
+                          Positioned(
+                            bottom: 12.h,
+                            left: 16.w,
+                            child: ValueListenableBuilder<int>(
+                              valueListenable: _attempts,
+                              builder: (context, attempts, _) {
+                                if (attempts > 0) {
+                                  return Text(
+                                    '${widget.maxAttempts - attempts} attempts left',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: AppColors.gameIncorrect
+                                          .withValues(alpha: 0.8),
+                                    ),
+                                  );
+                                }
+                                return const SizedBox.shrink();
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+
                     return Column(
                       children: [
                         // Input field
-                        Container(
-                              decoration: BoxDecoration(
-                                color: isDark
-                                    ? Colors.black.withValues(alpha: 0.2)
-                                    : Colors.white.withValues(alpha: 0.5),
-                                borderRadius: BorderRadius.circular(16.r),
-                                border: Border.all(
-                                  color: result == _ConfirmResult.mismatch
-                                      ? AppColors.gameIncorrect.withValues(
-                                          alpha: 0.5,
-                                        )
-                                      : widget.primaryColor.withValues(
-                                          alpha: 0.2,
-                                        ),
-                                ),
-                              ),
-                              child: Stack(
-                                children: [
-                                  TextField(
-                                    controller: _textController,
-                                    focusNode: _focusNode,
-                                    minLines: 1,
-                                    maxLines: 4,
-                                    keyboardType: TextInputType.multiline,
-                                    textInputAction: TextInputAction.done,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 16.sp,
-                                      color: textColor,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                    decoration: InputDecoration(
-                                      hintText: 'Type exactly...',
-                                      hintStyle: TextStyle(
-                                        color: subtitleColor.withValues(
-                                          alpha: 0.5,
-                                        ),
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                      border: InputBorder.none,
-                                      contentPadding: EdgeInsets.only(
-                                        left: 16.w,
-                                        right: 16.w,
-                                        top: 16.h,
-                                        bottom: 32.h,
-                                      ),
-                                    ),
-                                    onSubmitted: (_) => _evaluate(),
-                                    onChanged: (_) {
-                                      if (_result.value ==
-                                              _ConfirmResult.mismatch ||
-                                          _result.value ==
-                                              _ConfirmResult.empty) {
-                                        _result.value = null;
-                                      }
-                                    },
-                                  ),
-                                  Positioned(
-                                    bottom: 12.h,
-                                    left: 16.w,
-                                    child: ValueListenableBuilder<int>(
-                                      valueListenable: _attempts,
-                                      builder: (context, attempts, _) {
-                                        if (attempts > 0) {
-                                          return Text(
-                                            '${widget.maxAttempts - attempts} attempts left',
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 10.sp,
-                                              fontWeight: FontWeight.w600,
-                                              color: AppColors.gameIncorrect
-                                                  .withValues(alpha: 0.8),
-                                            ),
-                                          );
-                                        }
-                                        return const SizedBox.shrink();
-                                      },
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            )
-                            .animate(
-                              target: result == _ConfirmResult.mismatch ? 1 : 0,
-                            )
-                            .shakeX(amount: 5, duration: 400.ms),
+                        reduceMotion
+                            ? inputContainer
+                            : inputContainer
+                                .animate(
+                                  target: result == _ConfirmResult.mismatch ? 1 : 0,
+                                )
+                                .shakeX(amount: 5, duration: 400.ms),
+
 
                         // Status message
                         if (result == _ConfirmResult.mismatch ||

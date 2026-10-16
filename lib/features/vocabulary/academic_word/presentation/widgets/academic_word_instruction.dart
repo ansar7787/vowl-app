@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// Animated pill-shaped instruction banner at the top of the game.
 class AcademicWordInstruction extends StatelessWidget {
@@ -23,23 +24,42 @@ class AcademicWordInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MediaQuery.withClampedTextScaling(
-      maxScaleFactor: 1.5,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-        constraints: BoxConstraints(maxWidth: 320.w),
-        decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.05),
-          borderRadius: BorderRadius.circular(30.r),
-          border: Border.all(color: color.withValues(alpha: 0.2)),
+    final banner = Semantics(
+      container: true,
+      label: label,
+      child: MediaQuery.withClampedTextScaling(
+        maxScaleFactor: 1.5,
+        child: Container(
+          key: const Key('academic_word_instruction'),
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+          constraints: BoxConstraints(maxWidth: 320.w),
+          decoration: BoxDecoration(
+            color: color.withValues(alpha: 0.05),
+            borderRadius: BorderRadius.circular(30.r),
+            border: Border.all(color: color.withValues(alpha: 0.2)),
+          ),
+          child: VowlMotion.lowAnimationModeOverride.value
+              ? Text(
+                  label,
+                  key: const Key('academic_word_instruction_text'),
+                  maxLines: 2,
+                  textAlign: TextAlign.center,
+                  style: _labelStyle(color),
+                )
+              : Text(
+                  label,
+                  key: const Key('academic_word_instruction_text'),
+                  maxLines: 2,
+                  textAlign: TextAlign.center,
+                  style: _labelStyle(color),
+                ).animate().shimmer(duration: 2.seconds),
         ),
-        child: Text(
-          label,
-          maxLines: 2,
-          textAlign: TextAlign.center,
-          style: _labelStyle(color),
-        ).animate().shimmer(duration: 2.seconds),
       ),
-    ).animate().fadeIn(duration: 800.ms);
+    );
+
+    if (VowlMotion.lowAnimationModeOverride.value) {
+      return banner;
+    }
+    return banner.animate().fadeIn(duration: 800.ms);
   }
 }
