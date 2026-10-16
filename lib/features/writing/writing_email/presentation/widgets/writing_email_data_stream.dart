@@ -39,6 +39,7 @@ class WritingEmailDataStream extends StatelessWidget {
                   hint: "Double tap to place in next available slot",
                   button: true,
                   child: GestureDetector(
+                    key: Key('writing_email_option_$i'),
                     onTap: () => onTapItem(i),
                     child: Draggable<String>(
                       data: i,
