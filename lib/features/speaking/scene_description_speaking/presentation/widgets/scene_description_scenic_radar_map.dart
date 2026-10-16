@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
@@ -34,9 +35,12 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    final disableAnimations = MediaQuery.of(context).disableAnimations;
+    final disableAnimations =
+        MediaQuery.maybeOf(context)?.disableAnimations == true ||
+        VowlMotion.lowAnimationModeOverride.value;
 
     return Container(
+      key: const Key('scene_description_scenic_radar_map'),
       width: 1.sw,
       height: 230.h,
       decoration: BoxDecoration(
@@ -69,39 +73,46 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
           Center(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 40.w),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.photo_size_select_large_rounded,
-                    color: primaryColor,
-                    size: 36.r,
-                  ),
-                  SizedBox(height: 8.h),
-                  Text(
-                    sceneTitle.toUpperCase(),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Theme.of(context).colorScheme.onSurface,
-                      letterSpacing: 1.0,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.photo_size_select_large_rounded,
+                      color: primaryColor,
+                      size: 36.r,
                     ),
-                  ),
-                  SizedBox(height: 6.h),
-                  Text(
-                    "${inspectedHotspots.length} OF ${hotspotLabels.length} FEATURES STABILIZED",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      color: inspectedHotspots.length == hotspotLabels.length
-                          ? tokens.gameCorrect
-                          : Colors.grey,
-                      fontWeight: FontWeight.bold,
+                    SizedBox(height: 8.h),
+                    Text(
+                      sceneTitle.toUpperCase(),
+                      key: const Key('scene_description_title_text'),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w900,
+                        color: Theme.of(context).colorScheme.onSurface,
+                        letterSpacing: 1.0,
+                      ),
                     ),
-                  ),
-                ],
+                    SizedBox(height: 6.h),
+                    Text(
+                      "${inspectedHotspots.length} OF ${hotspotLabels.length} FEATURES STABILIZED",
+                      key: const Key('scene_description_progress_text'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        color: inspectedHotspots.length == hotspotLabels.length
+                            ? tokens.gameCorrect
+                            : Colors.grey,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -124,74 +135,83 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
 
     final isInspected = inspectedHotspots.contains(index);
     final isActive = activeHotspot == index;
+    final label = hotspotLabels[index];
 
     return Align(
       alignment: alignment,
       child: Padding(
         padding: EdgeInsets.all(22.r),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            GestureDetector(
-              onTap: () => onHotspotTap(index),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  if (!disableAnimations)
-                    AnimatedBuilder(
-                      animation: radarController,
-                      builder: (context, child) {
-                        return SizedBox(
-                          width: 52.r,
-                          height: 52.r,
-                          child: CustomPaint(
-                            painter: RadarBeaconPainter(
-                              progress: radarController.value,
-                              isActive: isActive,
-                              isCompleted: isInspected,
-                              primaryColor: primaryColor,
+        child: Semantics(
+          button: true,
+          label: 'Beacon ${index + 1}: $label',
+          selected: isActive,
+          checked: isInspected,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              GestureDetector(
+                key: Key('scene_description_beacon_$index'),
+                onTap: () => onHotspotTap(index),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    if (!disableAnimations)
+                      AnimatedBuilder(
+                        animation: radarController,
+                        builder: (context, child) {
+                          return SizedBox(
+                            width: 52.r,
+                            height: 52.r,
+                            child: CustomPaint(
+                              painter: RadarBeaconPainter(
+                                progress: radarController.value,
+                                isActive: isActive,
+                                isCompleted: isInspected,
+                                primaryColor: primaryColor,
+                              ),
                             ),
-                          ),
-                        );
-                      },
+                          );
+                        },
+                      ),
+                    // Icon indicator
+                    Container(
+                      width: 32.r,
+                      height: 32.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: isInspected
+                            ? AppColors.gameCorrect
+                            : (isActive ? primaryColor : Colors.black26),
+                        border: Border.all(color: Colors.white30),
+                      ),
+                      child: Icon(
+                        isInspected
+                            ? Icons.check_rounded
+                            : (isActive
+                                  ? Icons.spatial_tracking_rounded
+                                  : Icons.radar_rounded),
+                        color: Colors.white,
+                        size: 14.r,
+                      ),
                     ),
-                  // Icon indicator
-                  Container(
-                    width: 32.r,
-                    height: 32.r,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: isInspected
-                          ? AppColors.gameCorrect
-                          : (isActive ? primaryColor : Colors.black26),
-                      border: Border.all(color: Colors.white30),
-                    ),
-                    child: Icon(
-                      isInspected
-                          ? Icons.check_rounded
-                          : (isActive
-                                ? Icons.spatial_tracking_rounded
-                                : Icons.radar_rounded),
-                      color: Colors.white,
-                      size: 14.r,
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 4.h),
-            Text(
-              hotspotLabels[index].toUpperCase(),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 8.sp,
-                color: isInspected
-                    ? AppColors.gameCorrect
-                    : (isActive ? primaryColor : Colors.grey),
-                fontWeight: FontWeight.bold,
+              SizedBox(height: 4.h),
+              Text(
+                label.toUpperCase(),
+                key: Key('scene_description_beacon_label_$index'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 8.sp,
+                  color: isInspected
+                      ? AppColors.gameCorrect
+                      : (isActive ? primaryColor : Colors.grey),
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

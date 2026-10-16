@@ -1,28 +1,28 @@
-import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/services/error_journal_collector.dart';
+import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
-import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
-import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
-import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
-import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/core/utils/audio_recording_service.dart';
-
-import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_header.dart';
-import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_scenic_radar_map.dart';
+import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
+import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
+import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
+import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_active_prompt_card.dart';
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_explorer_guide_card.dart';
+import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_header.dart';
+import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_scenic_radar_map.dart';
 
 class SceneDescriptionScreen extends StatefulWidget {
   final int level;
@@ -50,7 +50,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+  String getCompletionTitle(BuildContext context) => 'VISUAL NARRATOR!';
 
   final ValueNotifier<Set<int>> _inspectedHotspots = ValueNotifier({});
   final ValueNotifier<int> _activeHotspot = ValueNotifier(-1);
@@ -66,12 +66,28 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   @override
   void initState() {
     super.initState();
+    initGameLifecycle();
     initSpeakingGame();
 
     _radarController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
-    )..repeat();
+    );
+    if (!VowlMotion.lowAnimationModeOverride.value) {
+      _radarController.repeat();
+    }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final disable = VowlMotion.lowAnimationModeOverride.value ||
+        (MediaQuery.maybeOf(context)?.disableAnimations ?? false);
+    if (disable && _radarController.isAnimating) {
+      _radarController.stop();
+    } else if (!disable && !_radarController.isAnimating) {
+      _radarController.repeat();
+    }
   }
 
   @override
@@ -85,6 +101,12 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   }
 
   void _scrollToBottom() {
+    if (!mounted || !_scrollController.hasClients) return;
+    if (VowlMotion.lowAnimationModeOverride.value ||
+        (MediaQuery.maybeOf(context)?.disableAnimations ?? false)) {
+      _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+      return;
+    }
     Future.delayed(const Duration(milliseconds: 100), () {
       if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
@@ -97,13 +119,16 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   }
 
   void _onHotspotTap(int index) {
+    if (index < 0 || index >= _hotspotLabels.length) return;
     if (isAnsweredNotifier.value || _inspectedHotspots.value.contains(index)) {
       return;
     }
     hapticService.selection();
-    if (!di.sl<AudioRecordingService>().isRecording) {
-      soundService.playTts(_hotspotLabels[index]);
-    }
+    try {
+      if (!di.sl<AudioRecordingService>().isRecording) {
+        soundService.playTts(_hotspotLabels[index]);
+      }
+    } catch (_) {}
     _activeHotspot.value = index;
     _scrollToBottom();
   }
@@ -115,7 +140,9 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
 
     if (nailedIt) {
       hapticService.success();
-      soundService.playCorrect();
+      try {
+        soundService.playCorrect();
+      } catch (_) {}
       _inspectedHotspots.value = Set.from(_inspectedHotspots.value)
         ..add(_activeHotspot.value);
       _activeHotspot.value = -1;
@@ -127,20 +154,28 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
       }
     } else {
       hapticService.error();
-      soundService.playWrong();
+      try {
+        soundService.playWrong();
+      } catch (_) {}
 
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: _hotspotPrompts[_activeHotspot.value],
-          userAnswer: '[Failed Self-Evaluation]',
-          correctAnswer: _hotspotLabels[_activeHotspot.value],
-          level: widget.level,
-        );
-      }
+      try {
+        final authState = context.read<AuthBloc>().state;
+        if (authState.status == AuthStatus.authenticated &&
+            authState.user != null) {
+          ErrorJournalCollector.record(
+            userId: authState.user!.id,
+            gameType: widget.gameType.name,
+            question: _hotspotPrompts.length > _activeHotspot.value
+                ? _hotspotPrompts[_activeHotspot.value]
+                : 'Scene Hotspot',
+            userAnswer: '[Failed Self-Evaluation]',
+            correctAnswer: _hotspotLabels.length > _activeHotspot.value
+                ? _hotspotLabels[_activeHotspot.value]
+                : '',
+            level: widget.level,
+          );
+        }
+      } catch (_) {}
 
       isAnsweredNotifier.value = true;
       isCorrectNotifier.value = false;
@@ -149,14 +184,18 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   }
 
   void _parseQuestData(SpeakingQuest quest) {
-    _hotspotLabels = quest.options ?? ["Object A", "Object B", "Object C"];
+    _hotspotLabels = (quest.options != null && quest.options!.isNotEmpty)
+        ? quest.options!
+        : const ["Object A", "Object B", "Object C"];
     final int count = _hotspotLabels.length;
 
     final String text =
         quest.sceneText ??
         "Visual Space Cabin|Describe features.|Describe features.|Describe features.";
     final List<String> parts = text.split('|');
-    _sceneTitle = parts[0];
+    _sceneTitle = parts.isNotEmpty && parts[0].trim().isNotEmpty
+        ? parts[0]
+        : "Scene Visualizer";
 
     _hotspotPrompts = [];
     for (int i = 1; i <= count; i++) {
@@ -214,6 +253,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                 gameType: widget.gameType,
                 level: widget.level,
                 isAnswered: isAnsweredNotifier.value,
+                isCorrect: isCorrectNotifier.value,
+                showConfetti: showConfettiNotifier.value,
                 disablePadding: true,
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
@@ -286,6 +327,9 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                         alignment: Alignment.centerLeft,
                                         child: Text(
                                           "Target Vocabulary",
+                                          key: const Key(
+                                            'scene_description_vocab_title',
+                                          ),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
                                             fontSize: 12.sp,
@@ -301,10 +345,16 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                         spacing: 8.w,
                                         runSpacing: 8.h,
                                         alignment: WrapAlignment.start,
-                                        children: quest.keyVocabulary!.map((
-                                          word,
-                                        ) {
+                                        children: quest.keyVocabulary!
+                                            .asMap()
+                                            .entries
+                                            .map((entry) {
+                                          final index = entry.key;
+                                          final word = entry.value;
                                           return Container(
+                                            key: Key(
+                                              'scene_description_vocab_$index',
+                                            ),
                                             padding: EdgeInsets.symmetric(
                                               horizontal: 12.w,
                                               vertical: 6.h,
@@ -340,7 +390,9 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                 _activeHotspot.value != -1)
                               SliverToBoxAdapter(
                                 child: SpeakToConfirmOverlay(
-                                  key: ValueKey(_activeHotspot.value),
+                                  key: ValueKey(
+                                    'scene_description_speak_confirm_overlay_${_activeHotspot.value}',
+                                  ),
                                   expectedText:
                                       _hotspotKeywords[_activeHotspot.value]
                                           .join(" "),
@@ -375,6 +427,9 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                 ),
                                 sliver: SliverToBoxAdapter(
                                   child: Container(
+                                    key: const Key(
+                                      'scene_description_sample_answer_card',
+                                    ),
                                     padding: EdgeInsets.all(20.r),
                                     decoration: BoxDecoration(
                                       color: theme.primaryColor.withValues(
@@ -389,31 +444,37 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                     ),
                                     child: Column(
                                       children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(
-                                              Icons.auto_awesome_rounded,
-                                              color: theme.primaryColor,
-                                              size: 18.r,
-                                            ),
-                                            SizedBox(width: 8.w),
-                                            Text(
-                                              "FULL SCENE DESCRIPTION",
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 12.sp,
-                                                fontWeight: FontWeight.bold,
+                                        FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                Icons.auto_awesome_rounded,
                                                 color: theme.primaryColor,
-                                                letterSpacing: 1.0,
+                                                size: 18.r,
                                               ),
-                                            ),
-                                          ],
+                                              SizedBox(width: 8.w),
+                                              Text(
+                                                "FULL SCENE DESCRIPTION",
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 12.sp,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: theme.primaryColor,
+                                                  letterSpacing: 1.0,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                         SizedBox(height: 12.h),
                                         Text(
                                           quest.sampleAnswer!,
+                                          key: const Key(
+                                            'scene_description_sample_answer_text',
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
@@ -427,11 +488,16 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                         ),
                                         SizedBox(height: 16.h),
                                         GestureDetector(
+                                          key: const Key(
+                                            'scene_description_sample_tts_button',
+                                          ),
                                           onTap: () {
                                             di.sl<HapticService>().selection();
-                                            di.sl<SoundService>().playTts(
-                                              quest.sampleAnswer!,
-                                            );
+                                            try {
+                                              di.sl<SoundService>().playTts(
+                                                quest.sampleAnswer!,
+                                              );
+                                            } catch (_) {}
                                           },
                                           child: Container(
                                             padding: EdgeInsets.symmetric(
