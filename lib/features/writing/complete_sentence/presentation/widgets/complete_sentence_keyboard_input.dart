@@ -71,6 +71,7 @@ class _CompleteSentenceKeyboardInputState
             children: [
               Expanded(
                 child: TextField(
+                  key: const Key('complete_sentence_input_field'),
                   controller: _controller,
                   focusNode: _focusNode,
                   onTap: () {
@@ -96,18 +97,23 @@ class _CompleteSentenceKeyboardInputState
                   onSubmitted: (_) => _submitInput(),
                 ),
               ),
-              ScaleButton(
-                onTap: _submitInput,
-                child: Container(
-                  padding: EdgeInsets.all(10.r),
-                  decoration: BoxDecoration(
-                    color: widget.color,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    Icons.arrow_upward_rounded,
-                    color: Colors.white,
-                    size: 24.sp,
+              Semantics(
+                button: true,
+                label: 'Submit answer',
+                child: ScaleButton(
+                  key: const Key('complete_sentence_submit_button'),
+                  onTap: _submitInput,
+                  child: Container(
+                    padding: EdgeInsets.all(10.r),
+                    decoration: BoxDecoration(
+                      color: widget.color,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      Icons.arrow_upward_rounded,
+                      color: Colors.white,
+                      size: 24.sp,
+                    ),
                   ),
                 ),
               ),

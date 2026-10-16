@@ -379,8 +379,8 @@ Every game test suite MUST rigorously satisfy:
 
 ### SECTION 11: WRITING CATEGORY (11 GAMES)
 
-- [x] **11.1** `writing_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
-- [ ] **11.2** `complete_sentence_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **11.2** `complete_sentence_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 32/32 tests passing]`
+  - Validates full complete sentence gameplay: `WritingBaseLayout` integration, `CompleteSentenceInstruction` displaying instruction and grammar focus badges ("PAST TENSE", "CONDITIONAL"), `CompleteSentenceTargetWall` sentence rendering with blanks and dynamic word injection, ballista ammo selection chips with drag-and-drop to target wall drop zone, correct ammo launch triggering haptics and opening `DynamicAnagramWrapper`, anagram tile arrangement with letter pool, placed slot manipulation and `CLEAR ALL` mechanics, premium skip bypass and free user rewarded ad skip flows submitting correct answer to BLoC, hard mode (Level >= 6) dragging lockout with info snackbar and `CompleteSentenceKeyboardInput` text field / submit button interactions, `GameFeedbackCard` display on answer with educational context, pedagogical explanation on final failure (`isFinalFailure: true`), question progression resetting projectile and anagram state, `WritingGameComplete` completion dialog with XP/coin rewards, `WritingGameOver` handling, `WritingError` retry handling, quest hint button dispatching `WritingHintUsed`, back button exit confirmation dialog ("QUIT GAME?"), and responsive zero-overflow layout rendering on compact mobile (320x568), tablet (800x1280), high text scaling (1.3x), and light/dark themes.
 - [ ] **11.3** `correction_writing_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **11.4** `daily_journal_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
 - [ ] **11.5** `describe_situation_writing_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`

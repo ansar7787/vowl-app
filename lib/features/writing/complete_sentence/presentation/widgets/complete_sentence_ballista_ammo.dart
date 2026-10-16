@@ -60,6 +60,7 @@ class CompleteSentenceBallistaAmmo extends StatelessWidget {
             label: 'Fire word: $o',
             button: true,
             child: GestureDetector(
+              key: ValueKey('ammo_$o'),
               onTap: () => onFire(o),
               child: Draggable<String>(
                 data: o,
