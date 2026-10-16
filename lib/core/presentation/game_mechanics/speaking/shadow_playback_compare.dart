@@ -631,16 +631,19 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                                           color: Colors.orange,
                                                         ),
                                                         SizedBox(width: 6.w),
-                                                        Text(
-                                                          "We couldn't hear you. Try again?",
-                                                          style: TextStyle(
-                                                            fontFamily:
-                                                                'Outfit',
-                                                            fontSize: 11.sp,
-                                                            color:
-                                                                Colors.orange,
-                                                            fontWeight:
-                                                                FontWeight.w600,
+                                                        Flexible(
+                                                          child: Text(
+                                                            "We couldn't hear you. Try again?",
+                                                            style: TextStyle(
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              fontSize: 11.sp,
+                                                              color:
+                                                                  Colors.orange,
+                                                              fontWeight:
+                                                                  FontWeight.w600,
+                                                            ),
+                                                            overflow: TextOverflow.ellipsis,
                                                           ),
                                                         ),
                                                       ],

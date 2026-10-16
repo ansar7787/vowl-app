@@ -18,54 +18,63 @@ class SpeakMissingWordVortexSentence extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GlassTile(
-      padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 28.h),
-      borderRadius: BorderRadius.circular(32.r),
-      child: Column(
-        children: [
-          Text(
-            "VOCAL SENTENCE CONSTRUCTOR",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              color: primaryColor,
-              letterSpacing: 1.5,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 16.h),
-          Text(
-            text,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 20.sp,
-              color: Theme.of(context).colorScheme.onSurface,
-              height: 1.45,
-            ),
-          ),
-          if (insertedWord.isNotEmpty) ...[
-            SizedBox(height: 14.h),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 4.h),
-              decoration: BoxDecoration(
-                color: primaryColor.withValues(alpha: 0.15),
-                borderRadius: BorderRadius.circular(20.r),
-                border: Border.all(color: primaryColor.withValues(alpha: 0.4)),
+    return Semantics(
+      container: true,
+      label: 'Sentence constructor: $text',
+      child: GlassTile(
+        key: const Key('speak_missing_word_vortex_sentence'),
+        padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 28.h),
+        borderRadius: BorderRadius.circular(32.r),
+        child: Column(
+          children: [
+            Text(
+              "VOCAL SENTENCE CONSTRUCTOR",
+              key: const Key('speak_missing_word_vortex_header'),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                color: primaryColor,
+                letterSpacing: 1.5,
+                fontWeight: FontWeight.bold,
               ),
-              child: Text(
-                "LOCKED OPTION: ${insertedWord.toUpperCase()}",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: primaryColor,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1,
+            ),
+            SizedBox(height: 16.h),
+            Text(
+              text,
+              key: const Key('speak_missing_word_sentence_text'),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 20.sp,
+                color: Theme.of(context).colorScheme.onSurface,
+                height: 1.45,
+              ),
+            ),
+            if (insertedWord.isNotEmpty) ...[
+              SizedBox(height: 14.h),
+              Container(
+                key: const Key('speak_missing_word_locked_option'),
+                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 4.h),
+                decoration: BoxDecoration(
+                  color: primaryColor.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(20.r),
+                  border: Border.all(color: primaryColor.withValues(alpha: 0.4)),
+                ),
+                child: Text(
+                  "LOCKED OPTION: ${insertedWord.toUpperCase()}",
+                  key: const Key('speak_missing_word_locked_option_text'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    color: primaryColor,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1,
+                  ),
                 ),
               ),
-            ),
+            ],
           ],
-        ],
+        ),
       ),
     );
   }

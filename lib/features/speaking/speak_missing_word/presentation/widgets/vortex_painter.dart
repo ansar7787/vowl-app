@@ -26,8 +26,10 @@ class VortexPainter extends CustomPainter {
       ..strokeWidth = 2.w
       ..color = themeColor.withValues(alpha: 0.25);
 
-    canvas.drawCircle(center, radius - 20.w, ringPaint);
-    canvas.drawCircle(center, radius - 40.w, ringPaint);
+    final double r1 = math.max(0.0, radius - 20.w);
+    final double r2 = math.max(0.0, radius - 40.w);
+    if (r1 > 0) canvas.drawCircle(center, r1, ringPaint);
+    if (r2 > 0) canvas.drawCircle(center, r2, ringPaint);
 
     // 2. Draw spinning particles inside vortex
     final Paint particlesPaint = Paint()
