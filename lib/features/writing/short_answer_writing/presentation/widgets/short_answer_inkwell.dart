@@ -129,6 +129,7 @@ class ShortAnswerInkwell extends StatelessWidget {
             ),
             SizedBox(height: 12.h),
             TextField(
+              key: const Key('short_answer_text_field'),
               controller: controller,
               focusNode: focusNode,
               maxLines: 5,

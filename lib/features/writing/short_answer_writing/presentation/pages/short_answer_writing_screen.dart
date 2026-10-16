@@ -182,7 +182,6 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
       return;
     }
 
-    hapticService.success();
     submitCorrectAnswer();
   }
 
@@ -217,9 +216,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
     return BlocConsumer<WritingBloc, WritingState>(
-      listenWhen: (prev, curr) =>
-          (curr is WritingGameComplete && prev is! WritingGameComplete) ||
-          (curr is WritingLoaded && !curr.answerStatus.isAnswered),
+      listenWhen: writingListenWhen,
       listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
@@ -246,8 +243,9 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
           showConfetti: showConfettiNotifier.value,
           useScrolling: false,
           disablePadding: true,
-          onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
-          onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
+          onContinue: () =>
+              context.read<WritingBloc>().add(const NextQuestion()),
+          onHint: () {},
           child: ListenableBuilder(
             listenable: Listenable.merge([
               showConfettiNotifier,
@@ -263,6 +261,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                       radius: Radius.circular(8.r),
                       thickness: 4.w,
                       child: CustomScrollView(
+                        key: const Key('short_answer_scroll_view'),
                         controller: _scrollController,
                         physics: const BouncingScrollPhysics(),
                         slivers: [
@@ -409,6 +408,9 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                     ),
                                   if (!isAnswered && livesRemaining > 0) ...[
                                     ScaleButton(
+                                      key: const Key(
+                                        'short_answer_submit_button',
+                                      ),
                                       onTap: () => _submitAnswer(
                                         targetKeywords,
                                         isAnswered,
