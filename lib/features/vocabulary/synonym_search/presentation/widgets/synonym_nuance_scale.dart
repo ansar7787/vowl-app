@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class SynonymNuanceScale extends StatelessWidget {
   final String targetWord;
@@ -21,7 +22,9 @@ class SynonymNuanceScale extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Container(
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+    final content = Container(
           margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(24.r),
@@ -141,7 +144,9 @@ class SynonymNuanceScale extends StatelessWidget {
                                     color: primaryColor.withValues(alpha: 0.3),
                                   ),
                                 ),
-                                Container(
+                                Builder(
+                                  builder: (context) {
+                                    Widget sliderDot = Container(
                                       width: 12.r,
                                       height: 12.r,
                                       decoration: BoxDecoration(
@@ -156,15 +161,22 @@ class SynonymNuanceScale extends StatelessWidget {
                                           ),
                                         ],
                                       ),
-                                    )
-                                    .animate(
-                                      onPlay: (c) => c.repeat(reverse: true),
-                                    )
-                                    .scale(
-                                      begin: const Offset(1, 1),
-                                      end: const Offset(1.3, 1.3),
-                                      duration: 1.seconds,
-                                    ),
+                                    );
+                                    if (!reduceMotion) {
+                                      sliderDot = sliderDot
+                                          .animate(
+                                            onPlay: (c) =>
+                                                c.repeat(reverse: true),
+                                          )
+                                          .scale(
+                                            begin: const Offset(1, 1),
+                                            end: const Offset(1.3, 1.3),
+                                            duration: 1.seconds,
+                                          );
+                                    }
+                                    return sliderDot;
+                                  },
+                                ),
                                 Expanded(
                                   child: Container(
                                     height: 2.h,
@@ -264,7 +276,13 @@ class SynonymNuanceScale extends StatelessWidget {
               ),
             ),
           ),
-        )
+        );
+
+    if (reduceMotion) {
+      return content;
+    }
+
+    return content
         .animate()
         .fadeIn(duration: 600.ms, curve: Curves.easeOut)
         .slideY(begin: 0.2, end: 0, curve: Curves.easeOut, duration: 600.ms);
