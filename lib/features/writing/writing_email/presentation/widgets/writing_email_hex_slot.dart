@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +26,7 @@ class WritingEmailHexSlot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final tokens = Theme.of(context).extension<AppColorTokens>();
     bool hasData = slotValue != null;
 
     return DragTarget<String>(
@@ -32,7 +34,9 @@ class WritingEmailHexSlot extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final highlight = candidateData.isNotEmpty;
 
-        final successColor = isDark ? tokens.gameCorrect : KidsColors.safeGreen;
+        final successColor = isDark
+            ? (tokens?.gameCorrect ?? AppColors.emerald500)
+            : KidsColors.safeGreen;
 
         return Semantics(
           label: "Slot for $slotKey",
@@ -40,6 +44,7 @@ class WritingEmailHexSlot extends StatelessWidget {
           hint: hasData ? "Double tap to clear" : "Drag an email part here",
           button: hasData,
           child: GestureDetector(
+            key: Key('writing_email_slot_$slotKey'),
             onTap: () => onClearSlot(slotKey),
             child: Container(
               margin: EdgeInsets.only(bottom: 12.h),
@@ -98,11 +103,18 @@ class WritingEmailHexSlot extends StatelessWidget {
                     ),
                   ),
                   if (hasData)
-                    Icon(
-                      Icons.check_circle_rounded,
-                      color: successColor,
-                      size: 18.r,
-                    ).animate().scale().fadeIn(),
+                    (VowlMotion.shouldReduceMotion(context) ||
+                            VowlMotion.lowAnimationModeOverride.value)
+                        ? Icon(
+                            Icons.check_circle_rounded,
+                            color: successColor,
+                            size: 18.r,
+                          )
+                        : Icon(
+                            Icons.check_circle_rounded,
+                            color: successColor,
+                            size: 18.r,
+                          ).animate().scale().fadeIn(),
                 ],
               ),
             ),

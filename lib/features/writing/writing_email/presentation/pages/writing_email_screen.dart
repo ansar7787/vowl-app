@@ -58,22 +58,27 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
     return List.generate(count, (i) => 'PART ${i + 1}');
   }
 
+  void _initQuest(WritingQuest? quest) {
+    if (quest == null || quest.id == _lastQuest?.id) return;
+    _lastQuest = quest;
+    final opts = List<String>.from(quest.options ?? []);
+
+    _currentSlotKeys = _getSlotKeys(opts.length);
+    final newSlots = <String, String?>{};
+    for (final key in _currentSlotKeys) {
+      newSlots[key] = null;
+    }
+    _slots.value = newSlots;
+
+    opts.shuffle();
+    _shuffledOptions.value = opts;
+  }
+
   @override
   void onWritingStateChanged(BuildContext context, WritingState state) {
     super.onWritingStateChanged(context, state);
-    if (state is WritingLoaded && state.currentQuest != _lastQuest) {
-      _lastQuest = state.currentQuest;
-      final opts = List<String>.from(state.currentQuest.options ?? []);
-
-      _currentSlotKeys = _getSlotKeys(opts.length);
-      final newSlots = <String, String?>{};
-      for (final key in _currentSlotKeys) {
-        newSlots[key] = null;
-      }
-      _slots.value = newSlots;
-
-      opts.shuffle();
-      _shuffledOptions.value = opts;
+    if (state is WritingLoaded) {
+      _initQuest(state.currentQuestOrNull);
     }
   }
 
@@ -91,6 +96,10 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
     super.initState();
     _scrollController = ScrollController();
     initWritingGame();
+    final initialState = context.read<WritingBloc>().state;
+    if (initialState is WritingLoaded) {
+      _initQuest(initialState.currentQuestOrNull);
+    }
   }
 
   void _onSlot(String slotKey, String data, bool isAnswered) {
@@ -169,10 +178,8 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
     }
 
     if (isCorrect) {
-      hapticService.success();
       submitCorrectAnswer();
     } else {
-      hapticService.error();
       final userAns = _currentSlotKeys
           .map((key) => "$key: ${_slots.value[key] ?? ''}")
           .join(", ");
@@ -182,6 +189,9 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
 
   @override
   void onQuestionReset() {
+    isAnsweredNotifier.value = false;
+    isCorrectNotifier.value = null;
+
     final newSlots = <String, String?>{};
     for (final key in _currentSlotKeys) {
       newSlots[key] = null;
@@ -197,26 +207,25 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
     return BlocConsumer<WritingBloc, WritingState>(
-      listenWhen: (prev, curr) =>
-          (curr is WritingGameComplete && prev is! WritingGameComplete) ||
-          (curr is WritingGameOver && prev is! WritingGameOver) ||
-          (curr is WritingLoaded && !curr.answerStatus.isAnswered),
+      listenWhen: writingListenWhen,
       listener: onWritingStateChanged,
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
-        final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
+        final WritingQuest? quest =
+            isLoaded ? state.currentQuestOrNull : _lastQuest;
 
         final options = quest?.options ?? [];
 
-        final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
+        final bool isAnswered =
+            (isLoaded && state.answerStatus.isAnswered) ||
+            isAnsweredNotifier.value;
         final bool? isCorrect = isLoaded
-            ? state.answerStatus.asBoolOrNull
-            : null;
+            ? (state.answerStatus.asBoolOrNull ?? isCorrectNotifier.value)
+            : isCorrectNotifier.value;
 
         final lives = state.livesRemaining;
-        final bool isFinalFailure = isLoaded
-            ? state.isFinalFailure
-            : (lives == 0);
+        final bool isFinalFailure =
+            isLoaded ? state.isFinalFailure : (lives == 0);
 
         return WritingBaseLayout(
           gameType: widget.gameType,
@@ -227,22 +236,24 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
           showConfetti: showConfettiNotifier.value,
           useScrolling: false,
           disablePadding: true,
-          onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
-          onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
-          child: (state is WritingLoading || _lastQuest == null)
-              ? GameShimmerLoading(primaryColor: theme.primaryColor)
-              : quest == null
+          onContinue: () =>
+              context.read<WritingBloc>().add(const NextQuestion()),
+          onHint: () {},
+          child: (state is WritingLoading || quest == null)
               ? GameShimmerLoading(primaryColor: theme.primaryColor)
               : ListenableBuilder(
                   listenable: Listenable.merge([
                     showConfettiNotifier,
+                    isAnsweredNotifier,
+                    isCorrectNotifier,
                     _slots,
                     _shuffledOptions,
                   ]),
                   builder: (context, _) {
-                    final slotsFilled = _slots.value.values.every(
-                      (v) => v != null,
-                    );
+                    final slotsFilled = _slots.value.isNotEmpty &&
+                        _slots.value.values.every(
+                          (v) => v != null,
+                        );
 
                     return RawScrollbar(
                       controller: _scrollController,
@@ -250,6 +261,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                       radius: Radius.circular(8.r),
                       thickness: 4.w,
                       child: CustomScrollView(
+                        key: const Key('writing_email_scroll_view'),
                         controller: _scrollController,
                         physics: const BouncingScrollPhysics(),
                         slivers: [
@@ -314,6 +326,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                                 children: [
                                   if (!isAnswered)
                                     ScaleButton(
+                                      key: const Key('writing_email_send_button'),
                                       onTap: slotsFilled
                                           ? () => _submitAnswer(isAnswered)
                                           : null,
