@@ -20,6 +20,7 @@ class CorrectionWritingInstruction extends StatelessWidget {
     );
 
     return Container(
+      key: const Key('correction_writing_instruction'),
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(

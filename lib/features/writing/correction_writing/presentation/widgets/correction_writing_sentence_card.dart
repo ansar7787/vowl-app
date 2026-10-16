@@ -30,6 +30,7 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
 
     if (startIdx == -1 || endIdx == -1) {
       return Container(
+        key: const Key('correction_writing_sentence_card'),
         padding: EdgeInsets.all(24.r),
         decoration: BoxDecoration(
           color: color.withValues(alpha: 0.05),
@@ -53,6 +54,7 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
     final postText = passage.substring(endIdx + 1);
 
     return Container(
+      key: const Key('correction_writing_sentence_card'),
       width: double.infinity,
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
