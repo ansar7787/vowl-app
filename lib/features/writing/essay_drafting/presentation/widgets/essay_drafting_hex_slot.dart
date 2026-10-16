@@ -34,6 +34,7 @@ class EssayDraftingHexSlot extends StatelessWidget {
         final highlight = candidateData.isNotEmpty;
 
         return GestureDetector(
+          key: Key('essay_drafting_slot_$slotKey'),
           onTap: () => onClearSlot(slotKey),
           child: Container(
             margin: EdgeInsets.only(bottom: 12.h),

@@ -80,6 +80,7 @@ class EssayDraftingDataStream extends StatelessWidget {
             (i) => Padding(
               padding: EdgeInsets.only(bottom: 12.h),
               child: Draggable<String>(
+                key: Key('essay_drafting_draggable_$i'),
                 data: i,
                 onDragUpdate: onDragUpdate,
                 feedback: Material(
