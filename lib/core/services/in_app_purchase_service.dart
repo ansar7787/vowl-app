@@ -16,7 +16,10 @@ class InAppPurchaseService {
   static InAppPurchaseService get instance => _instance;
   InAppPurchaseService._();
 
-  final InAppPurchase _iap = InAppPurchase.instance;
+  @visibleForTesting
+  static InAppPurchase? testIapInstance;
+
+  InAppPurchase get _iap => testIapInstance ?? InAppPurchase.instance;
   StreamSubscription<List<PurchaseDetails>>? _subscription;
 
   // Product IDs matching what you'll configure in Play Console
@@ -40,6 +43,11 @@ class InAppPurchaseService {
   bool isAvailable = false;
 
   static String? _cachedCountryCode;
+
+  @visibleForTesting
+  static void setCachedCountryCodeForTesting(String? code) {
+    _cachedCountryCode = code;
+  }
 
   // Callbacks
   void Function(PurchaseDetails)? onPurchaseSuccess;
@@ -246,8 +254,12 @@ class InAppPurchaseService {
     return countryCode == 'IN';
   }
 
+  @visibleForTesting
+  static bool? testShouldUseIAPOverride;
+
   /// Whether to use IAP (non-India) or Razorpay (India) by default.
   static bool get shouldUseIAP {
+    if (testShouldUseIAPOverride != null) return testShouldUseIAPOverride!;
     if (!Platform.isAndroid && !Platform.isIOS) return false;
     return !isUserInIndia;
   }

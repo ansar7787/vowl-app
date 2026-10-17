@@ -1130,7 +1130,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
     final plan = _activePlansVal[_selectedPlanIndexVal];
 
     try {
-      final hasConnection = await InternetConnection().hasInternetAccess;
+      final internetConnection = di.sl.isRegistered<InternetConnection>()
+          ? di.sl<InternetConnection>()
+          : InternetConnection();
+      final hasConnection = await internetConnection.hasInternetAccess;
       if (!hasConnection) {
         if (!mounted) return;
         di.sl<HapticService>().error();
@@ -1337,8 +1340,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
           ),
         ),
         SizedBox(height: 6.h),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        Wrap(
+          alignment: WrapAlignment.center,
+          crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             InkWell(
               borderRadius: BorderRadius.circular(4.r),
@@ -1364,7 +1368,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.w),
+              padding: EdgeInsets.symmetric(horizontal: 4.w),
               child: Text(
                 '•',
                 style: TextStyle(color: muted, fontSize: 10.sp),
@@ -1394,7 +1398,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.w),
+              padding: EdgeInsets.symmetric(horizontal: 4.w),
               child: Text(
                 '•',
                 style: TextStyle(color: muted, fontSize: 10.sp),
