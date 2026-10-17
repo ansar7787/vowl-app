@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'dart:ui';
 import 'package:intl/intl.dart' hide TextDirection;
 import 'package:flutter/material.dart';
@@ -348,23 +349,28 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                           MainAxisAlignment.center,
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
-                                        AutoSizeText(
-                                          context.tr(
-                                            'vowl_mascot.nest_title',
-                                            fallback: 'VOWL NEST',
-                                          ),
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 20.sp,
-                                            fontWeight: FontWeight.w900,
-                                            color: textColor,
-                                            letterSpacing: 2,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxLines: 1,
-                                          minFontSize: 12,
-                                          overflow: TextOverflow.visible,
-                                        ).animate().fadeIn(),
+                                        () {
+                                          final titleText = AutoSizeText(
+                                            context.tr(
+                                              'vowl_mascot.nest_title',
+                                              fallback: 'VOWL NEST',
+                                            ),
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 20.sp,
+                                              fontWeight: FontWeight.w900,
+                                              color: textColor,
+                                              letterSpacing: 2,
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            maxLines: 1,
+                                            minFontSize: 12,
+                                            overflow: TextOverflow.visible,
+                                          );
+                                          return VowlMotion.shouldReduceMotion(context)
+                                              ? titleText
+                                              : titleText.animate().fadeIn();
+                                        }(),
                                         AutoSizeText(
                                           context.tr(
                                             'vowl_mascot.nest_subtitle',
@@ -421,47 +427,52 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     // One-shot entrance animation — no infinite shimmer. The old infinite
     // shimmer burned GPU every frame and psychologically signaled "loading"
     // when nothing was loading.
-    return Semantics(
-          label: context.tr(
-            'home.coins_value_label',
-            fallback: 'Coins',
-            args: [user.coins.toString()],
-          ),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-            decoration: BoxDecoration(
-              color: primaryColor.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(16.r),
-              border: Border.all(color: primaryColor.withValues(alpha: 0.25)),
-            ),
-            child: ExcludeSemantics(
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.attach_money_rounded,
-                    color: primaryColor,
-                    size: 12.r,
-                  ),
-                  SizedBox(width: 2.w),
-                  Text(
-                    NumberFormat.decimalPattern().format(user.coins),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isDark ? Colors.white : Colors.black,
-                      fontWeight: FontWeight.w900,
-                      fontSize: 10.sp,
-                    ),
-                    maxLines: 1,
-                  ),
-                ],
+    final pill = Semantics(
+      label: context.tr(
+        'home.coins_value_label',
+        fallback: 'Coins',
+        args: [user.coins.toString()],
+      ),
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+        decoration: BoxDecoration(
+          color: primaryColor.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: primaryColor.withValues(alpha: 0.25)),
+        ),
+        child: ExcludeSemantics(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.attach_money_rounded,
+                color: primaryColor,
+                size: 12.r,
               ),
-            ),
+              SizedBox(width: 2.w),
+              Text(
+                NumberFormat.decimalPattern().format(user.coins),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  color: isDark ? Colors.white : Colors.black,
+                  fontWeight: FontWeight.w900,
+                  fontSize: 10.sp,
+                ),
+                maxLines: 1,
+              ),
+            ],
           ),
-        )
-        .animate()
-        .fadeIn(duration: 600.ms)
-        .slideX(begin: 0.1, duration: 600.ms, curve: Curves.easeOutCubic);
+        ),
+      ),
+    );
+
+    if (!VowlMotion.shouldReduceMotion(context)) {
+      return pill
+          .animate()
+          .fadeIn(duration: 600.ms)
+          .slideX(begin: 0.1, duration: 600.ms, curve: Curves.easeOutCubic);
+    }
+    return pill;
   }
 
   // ===========================================================================
@@ -801,14 +812,16 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     } else if (isSelected) {
       // Only the selected mascot gets a subtle breathing animation.
       // Every other tile is static — no shimmers, no infinite animations.
-      avatar = avatar
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .scale(
-            begin: const Offset(1, 1),
-            end: const Offset(1.08, 1.08),
-            duration: 2.seconds,
-            curve: Curves.easeInOut,
-          );
+      if (!VowlMotion.shouldReduceMotion(context)) {
+        avatar = avatar
+            .animate(onPlay: (c) => c.repeat(reverse: true))
+            .scale(
+              begin: const Offset(1, 1),
+              end: const Offset(1.08, 1.08),
+              duration: 2.seconds,
+              curve: Curves.easeInOut,
+            );
+      }
     }
 
     return Semantics(
@@ -903,11 +916,16 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
 
                   SizedBox(height: 8.h),
                   if (isSelected)
-                    Icon(
-                      Icons.check_circle_rounded,
-                      color: primaryColor,
-                      size: 14.r,
-                    ).animate().scale()
+                    () {
+                      final checkIcon = Icon(
+                        Icons.check_circle_rounded,
+                        color: primaryColor,
+                        size: 14.r,
+                      );
+                      return VowlMotion.shouldReduceMotion(context)
+                          ? checkIcon
+                          : checkIcon.animate().scale();
+                    }()
                   else
                     Container(
                       padding: EdgeInsets.symmetric(
@@ -1000,7 +1018,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
             fallback: 'NO AUGMENTATIONS',
           );
 
-    return Semantics(
+    final section = Semantics(
       label:
           '${context.tr('vowl_mascot.elite_interface_label', fallback: 'ELITE INTERFACE:')} $mascotName. $accessoryLabel',
       child: Column(
@@ -1034,31 +1052,38 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                         // Breathing glow ring — replaces the old infinite
                         // rotate + shimmer combo that felt cheap. This
                         // gentle fade pulse is premium and subtle.
-                        Container(
-                              width: 84.r,
-                              height: 84.r,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: primaryColor.withValues(alpha: 0.3),
-                                  width: 2,
-                                ),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: primaryColor.withValues(alpha: 0.15),
-                                    blurRadius: 20,
-                                    spreadRadius: 2,
-                                  ),
-                                ],
+                        () {
+                          final ring = Container(
+                            width: 84.r,
+                            height: 84.r,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: primaryColor.withValues(alpha: 0.3),
+                                width: 2,
                               ),
-                            )
-                            .animate(onPlay: (c) => c.repeat(reverse: true))
-                            .fade(
-                              begin: 0.6,
-                              end: 1.0,
-                              duration: 3.seconds,
-                              curve: Curves.easeInOut,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: primaryColor.withValues(alpha: 0.15),
+                                  blurRadius: 20,
+                                  spreadRadius: 2,
+                                ),
+                              ],
                             ),
+                          );
+                          return VowlMotion.shouldReduceMotion(context)
+                              ? ring
+                              : ring
+                                  .animate(
+                                    onPlay: (c) => c.repeat(reverse: true),
+                                  )
+                                  .fade(
+                                    begin: 0.6,
+                                    end: 1.0,
+                                    duration: 3.seconds,
+                                    curve: Curves.easeInOut,
+                                  );
+                        }(),
                         Text(
                           VowlAssets.getMascotEmoji(
                             user.vowlMascot ?? 'vowl_prime',
@@ -1132,7 +1157,12 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
           ),
         ],
       ),
-    ).animate().fadeIn().slideY(begin: 0.2);
+    );
+
+    if (!VowlMotion.shouldReduceMotion(context)) {
+      return section.animate().fadeIn().slideY(begin: 0.2);
+    }
+    return section;
   }
 
   // ===========================================================================
@@ -1170,7 +1200,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
           );
     final accessibleActionLabel = '${name.toUpperCase()}, $statusLabel';
 
-    return GlassTile(
+    final tile = GlassTile(
       borderRadius: BorderRadius.circular(24.r),
       blur: 0,
       child: Container(
@@ -1187,21 +1217,26 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
-              child:
-                  ExcludeSemantics(
-                        child: Center(
-                          child: AnimatedOpacity(
-                            opacity: (!isOwned && !canAfford) ? 0.4 : 1.0,
-                            duration: const Duration(milliseconds: 300),
-                            child: Text(
-                              emoji,
-                              style: TextStyle(fontSize: 48.sp),
-                            ),
-                          ),
-                        ),
-                      )
-                      .animate(target: isEquipped ? 1 : 0)
-                      .shimmer(color: primaryColor.withValues(alpha: 0.3)),
+              child: () {
+                final emojiWidget = ExcludeSemantics(
+                  child: Center(
+                    child: AnimatedOpacity(
+                      opacity: (!isOwned && !canAfford) ? 0.4 : 1.0,
+                      duration: const Duration(milliseconds: 300),
+                      child: Text(
+                        emoji,
+                        style: TextStyle(fontSize: 48.sp),
+                      ),
+                    ),
+                  ),
+                );
+                if (VowlMotion.shouldReduceMotion(context)) {
+                  return emojiWidget;
+                }
+                return emojiWidget
+                    .animate(target: isEquipped ? 1 : 0)
+                    .shimmer(color: primaryColor.withValues(alpha: 0.3));
+              }(),
             ),
             AutoSizeText(
               name.toUpperCase(),
@@ -1296,7 +1331,12 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
           ],
         ),
       ),
-    ).animate().fadeIn(delay: 100.ms);
+    );
+
+    if (!VowlMotion.shouldReduceMotion(context)) {
+      return tile.animate().fadeIn(delay: 100.ms);
+    }
+    return tile;
   }
 
   // ===========================================================================
@@ -1458,7 +1498,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    _buildSyncIndicator(primaryColor),
+                    _buildSyncIndicator(context, primaryColor),
                   ],
                 ),
               ),
@@ -1472,19 +1512,27 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
   /// Sync indicator bars — slow breathing pulse (2s cycle) instead of the
   /// old 600ms frenetic animation. Calm enough to feel "alive" without
   /// burning GPU cycles on something nobody watches after 0.5 seconds.
-  Widget _buildSyncIndicator(Color primaryColor) {
+  Widget _buildSyncIndicator(BuildContext context, Color primaryColor) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: List.generate(4, (index) {
-        return Container(
-              width: 3.w,
-              height: 10.h,
-              margin: EdgeInsets.only(left: 3.w),
-              decoration: BoxDecoration(
-                color: primaryColor,
-                borderRadius: BorderRadius.circular(2),
-              ),
-            )
+        final bar = Container(
+          width: 3.w,
+          height: 10.h,
+          margin: EdgeInsets.only(left: 3.w),
+          decoration: BoxDecoration(
+            color: primaryColor,
+            borderRadius: BorderRadius.circular(2),
+          ),
+        );
+
+        if (reduceMotion) {
+          return bar;
+        }
+
+        return bar
             .animate(onPlay: (c) => c.repeat(reverse: true))
             .scaleY(
               begin: 0.7,
