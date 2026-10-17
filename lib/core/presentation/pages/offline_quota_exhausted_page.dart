@@ -60,7 +60,11 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
   Timer? _loadingAdTimeout;
 
   void _updateState() {
-    if (mounted) _stateHash.value++;
+    if (mounted) {
+      setState(() {
+        _stateHash.value++;
+      });
+    }
   }
 
   bool _lastAdState = false;
@@ -89,9 +93,9 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
 
   Future<void> _handleRetry() async {
     if (_isChecking) return;
-    await Haptics.vibrate(HapticsType.selection);
     _isChecking = true;
     _updateState();
+    Haptics.vibrate(HapticsType.selection);
     try {
       await widget.onRetry();
     } finally {
@@ -193,33 +197,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
             ),
           ),
 
-          // 4. Close / Back Button
-          Positioned(
-            top: MediaQuery.of(context).padding.top + 16.h,
-            left: 16.w,
-            child: GestureDetector(
-              onTap: () {
-                Haptics.vibrate(HapticsType.selection);
-                widget.onClose();
-              },
-              child: Container(
-                padding: EdgeInsets.all(10.r),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: isDark
-                      ? Colors.white10
-                      : Colors.black.withValues(alpha: 0.05),
-                ),
-                child: Icon(
-                  LucideIcons.x,
-                  color: isDark ? Colors.white : Colors.black87,
-                  size: 24.r,
-                ),
-              ),
-            ),
-          ),
-
-          // 5. Main content
+          // 4. Main content
           RepaintBoundary(
             child: SafeArea(
               child: LayoutBuilder(
@@ -424,6 +402,33 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
               ),
             ),
           ),
+
+          // 5. Close / Back Button (on top of main content for unambiguous hit testing)
+          Positioned(
+            top: MediaQuery.of(context).padding.top + 16.h,
+            left: 16.w,
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () {
+                Haptics.vibrate(HapticsType.selection);
+                widget.onClose();
+              },
+              child: Container(
+                padding: EdgeInsets.all(10.r),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: isDark
+                      ? Colors.white10
+                      : Colors.black.withValues(alpha: 0.05),
+                ),
+                child: Icon(
+                  LucideIcons.x,
+                  color: isDark ? Colors.white : Colors.black87,
+                  size: 24.r,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -532,6 +537,14 @@ class _ActionButtonState extends State<_ActionButton> {
 
   void _updateState() {
     if (mounted) _stateHash.value++;
+  }
+
+  @override
+  void didUpdateWidget(_ActionButton oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.isLoading != widget.isLoading) {
+      _updateState();
+    }
   }
 
   @override

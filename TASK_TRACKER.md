@@ -5,9 +5,9 @@
 >
 > - **Total Dart Files in `lib/`**: **1,068 files**
 > - **Total Test Files in `test/`**: **200 files**
-> - **Total Passing Tests**: **4,188+ Tests Passing (100% Green on completed suites)**
-> - **Completed Test Suites**: **189 items** across Sections 1 to 16 (100% complete) and Section 17 (2 items complete)
-> - **Remaining Screens & Services to Test / Harden**: **6 items** remaining (Section 17).
+> - **Total Passing Tests**: **4,200+ Tests Passing (100% Green on completed suites)**
+> - **Completed Test Suites**: **190 items** across Sections 1 to 16 (100% complete) and Section 17 (3 items complete)
+> - **Remaining Screens & Services to Test / Harden**: **5 items** remaining (Section 17).
 
 ---
 
@@ -576,7 +576,7 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 17: CORE SCREENS, ONBOARDING & CRITICAL SERVICES (2 / 8 COMPLETE)
+### SECTION 17: CORE SCREENS, ONBOARDING & CRITICAL SERVICES (3 / 8 COMPLETE)
 
 - [x] **17.1** `hatching_page_test.dart` (Companion Egg Hatching & Pet Naming Onboarding Test) — 🟢 `[DONE - 13/13 tests passing]`
   - Validates full `HatchingPage` companion hatching onboarding flow across 6 test groups (13 tests):
@@ -593,8 +593,13 @@ Every game test suite MUST rigorously satisfy:
     3. Legal & Open Source Action Buttons: Tapping "Privacy Policy" triggers `UrlLauncherPlatform` to launch external URL (`privacy.html`); tapping "Terms of Service" launches external URL (`terms.html`); tapping "View Open Source Licenses" displays `LicensePage`.
     4. App Bar & Navigation: Pinned `SliverAppBar` with blur backdrop; tapping back button calls `context.pop()` and navigates back to settings.
     5. Responsive Viewports, Themes & Accessibility: Compact mobile layout (320x568) zero overflow, large tablet layout (800x1280) zero overflow, 1.3x accessibility text scaling without overflow, Dark Theme mode (`AppColors.slate900`), and Light Theme mode (`AppColors.slate50`).
-- [ ] **17.3** `offline_quota_exhausted_page_test.dart` (Offline Play Gate & Quota Blocker Test) — 🔴 `[PENDING]`
-  - Covers `lib/core/presentation/pages/offline_quota_exhausted_page.dart` (678 lines): 3-level offline limit enforcement for free tier, rewarded ad unlock trigger, premium subscription upsell button, offline retry connectivity check, and back navigation.
+- [x] **17.3** `offline_quota_exhausted_page_test.dart` (Offline Play Gate & Quota Blocker Test) — 🟢 `[DONE - 12/12 tests passing]`
+  - Validates full `OfflineQuotaExhaustedPage` quota gate, ad unlock, and network retry across 5 test groups (12 tests):
+    1. Initial Rendering & Quota Display: Displays offline quota icon, "3/3" levels counter badge, header title, localized description, retry connection CTA, and premium upgrade link.
+    2. Watch Ad Button Lifecycle & Reward Flow: Dynamically renders "WATCH AD FOR +3 LEVELS" button when rewarded ad is loaded; hides button when ad is unavailable; automatically reveals button when periodic ad-polling timer detects an ad becoming ready; grants +3 offline plays via `OfflinePlayGateService.resetQuotaAfterAd()` and executes reward callback.
+    3. Retry Connection Interaction: In-flight retry displays `VowlButtonSpinner` and disables duplicate taps; clears loading indicator and restores CTA on completion.
+    4. Close Action & Navigation Triggers: Close/Back button at top of stack responds to taps triggering `onClose`; premium upsell button responds with haptics.
+    5. Responsive Viewports, Themes & Safe Disposal: Compact mobile (320x568) zero overflow, tablet (800x1280) zero overflow, reduced motion disables animations cleanly, dark theme adapts background overlay, safe unmount cancels polling and timeout timers without lingering timers.
 - [ ] **17.4** `quest_sequence_page_test.dart` (Quest Sequence Multi-Game Runner Test) — 🔴 `[PENDING]`
   - Covers `lib/core/presentation/pages/quest_sequence_page.dart` (479 lines): `/quest-sequence` route, sequence progress bar, multi-activity progression (Daily Duo, Speed Blitz, Deep Dive), score tallying, reward payout, and completion dialog.
 - [ ] **17.5** `insecure_device_screen_test.dart` (Root / Jailbreak Security Alert Test) — 🔴 `[PENDING]`
