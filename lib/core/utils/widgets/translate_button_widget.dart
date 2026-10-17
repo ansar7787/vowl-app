@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/core/utils/translation_monetization_controller.dart';
 import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
@@ -89,12 +91,13 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
       );
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text(
-              'Translation failed. Please check internet connection.',
-            ),
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'translation.error',
+            fallback: 'Translation failed. Please check internet connection.',
           ),
+          type: CustomSnackBarType.error,
         );
       }
     } finally {

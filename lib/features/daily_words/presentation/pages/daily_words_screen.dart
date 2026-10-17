@@ -14,6 +14,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/core/utils/translation_monetization_controller.dart';
 import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
@@ -713,16 +714,13 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       );
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              context.tr(
-                'translation.error',
-                fallback:
-                    'Translation failed. Please check internet connection.',
-              ),
-            ),
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'translation.error',
+            fallback: 'Translation failed. Please check internet connection.',
           ),
+          type: CustomSnackBarType.error,
         );
       }
     } finally {

@@ -2,6 +2,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
+import 'package:vowl/features/settings/presentation/widgets/settings_dialogs.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -408,6 +409,28 @@ class GameDialogHelper {
           onQuit();
         },
       ),
+    );
+  }
+
+  // ─── Delete Confirmation ──────────────────────────────────────────────
+
+  /// Confirms before deleting a resource (e.g. offline translation language pack).
+  static Future<bool?> showDeleteConfirmation(
+    BuildContext context, {
+    required String title,
+    required String description,
+    String? confirmText,
+    String? cancelText,
+    VoidCallback? onConfirm,
+    VoidCallback? onCancel,
+  }) {
+    return SettingsDialogs.showDeleteConfirmation(
+      context,
+      title: title,
+      description: description,
+      confirmLabel: confirmText,
+      cancelLabel: cancelText,
+      onConfirm: onConfirm,
     );
   }
 
