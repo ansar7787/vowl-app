@@ -200,44 +200,46 @@ class SettingsDialogs {
             width: width,
             padding: EdgeInsets.all(32.r),
             borderRadius: BorderRadius.circular(40.r),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _DialogIcon(icon: icon, color: color),
-                SizedBox(height: 24.h),
-                Text(
-                  context.tr(titleKey, fallback: titleFallback),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : AppColors.slate900,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _DialogIcon(icon: icon, color: color),
+                  SizedBox(height: 24.h),
+                  Text(
+                    context.tr(titleKey, fallback: titleFallback),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: 16.h),
-                Text(
-                  context.tr(bodyKey, fallback: bodyFallback),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    color: isDark ? Colors.white60 : Colors.black54,
-                    height: 1.5,
+                  SizedBox(height: 16.h),
+                  Text(
+                    context.tr(bodyKey, fallback: bodyFallback),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      color: isDark ? Colors.white60 : Colors.black54,
+                      height: 1.5,
+                    ),
                   ),
-                ),
-                SizedBox(height: 32.h),
-                _PrimaryButton(
-                  label: context.tr(keepKey, fallback: keepFallback),
-                  color: Colors.blue,
-                  onPressed: () => Navigator.pop(dialogContext, false),
-                ),
-                SizedBox(height: 12.h),
-                _DestructiveTextButton(
-                  label: context.tr(disableKey, fallback: disableFallback),
-                  onPressed: () => Navigator.pop(dialogContext, true),
-                ),
-              ],
+                  SizedBox(height: 32.h),
+                  _PrimaryButton(
+                    label: context.tr(keepKey, fallback: keepFallback),
+                    color: Colors.blue,
+                    onPressed: () => Navigator.pop(dialogContext, false),
+                  ),
+                  SizedBox(height: 12.h),
+                  _DestructiveTextButton(
+                    label: context.tr(disableKey, fallback: disableFallback),
+                    onPressed: () => Navigator.pop(dialogContext, true),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -311,75 +313,77 @@ class SettingsDialogs {
             width: width,
             padding: EdgeInsets.all(32.r),
             borderRadius: BorderRadius.circular(40.r),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _DialogIcon(
-                  icon: Icons.mark_email_read_rounded,
-                  color: Colors.blue,
-                ),
-                SizedBox(height: 24.h),
-                Text(
-                  context.tr(
-                    'settings_dialogs.reset_password_title',
-                    fallback: 'Reset Password',
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _DialogIcon(
+                    icon: Icons.mark_email_read_rounded,
+                    color: Colors.blue,
                   ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : AppColors.slate900,
+                  SizedBox(height: 24.h),
+                  Text(
+                    context.tr(
+                      'settings_dialogs.reset_password_title',
+                      fallback: 'Reset Password',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                    ),
                   ),
-                ),
-                SizedBox(height: 16.h),
-                Text(
-                  // FIX (HIGH-2): Was hardcoded 'We will send a password...'
-                  context.tr(
-                    'settings_dialogs.reset_password_body',
-                    fallback: 'We will send a password recovery email to:\n{}',
-                    args: [email],
+                  SizedBox(height: 16.h),
+                  Text(
+                    // FIX (HIGH-2): Was hardcoded 'We will send a password...'
+                    context.tr(
+                      'settings_dialogs.reset_password_body',
+                      fallback: 'We will send a password recovery email to:\n{}',
+                      args: [email],
+                    ),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      color: isDark ? Colors.white60 : Colors.black54,
+                      height: 1.5,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    color: isDark ? Colors.white60 : Colors.black54,
-                    height: 1.5,
-                  ),
-                ),
-                SizedBox(height: 32.h),
-                _PrimaryButton(
-                  label: context.tr(
-                    'settings_dialogs.send_link',
-                    fallback: 'Send Link Now',
-                  ),
-                  color: Colors.blue,
-                  onPressed: () {
-                    context.read<AuthBloc>().add(
-                      AuthPasswordResetRequested(email),
-                    );
-                    Navigator.pop(ctx);
-                    if (ctx.mounted) {
-                      CustomSnackBar.show(
-                        context: ctx,
-                        // FIX (HIGH-2): Was hardcoded 'Reset link sent to $email'
-                        message: context.tr(
-                          'settings_dialogs.reset_link_sent',
-                          fallback: 'Reset link sent!',
-                          args: [email],
-                        ),
-                        type: CustomSnackBarType.info,
+                  SizedBox(height: 32.h),
+                  _PrimaryButton(
+                    label: context.tr(
+                      'settings_dialogs.send_link',
+                      fallback: 'Send Link Now',
+                    ),
+                    color: Colors.blue,
+                    onPressed: () {
+                      context.read<AuthBloc>().add(
+                        AuthPasswordResetRequested(email),
                       );
-                    }
-                  },
-                ),
-                SizedBox(height: 12.h),
-                _SecondaryTextButton(
-                  label: context.tr('common.cancel', fallback: 'CANCEL'),
-                  isDark: isDark,
-                  onPressed: () => Navigator.pop(ctx),
-                ),
-              ],
+                      Navigator.pop(ctx);
+                      if (ctx.mounted) {
+                        CustomSnackBar.show(
+                          context: ctx,
+                          // FIX (HIGH-2): Was hardcoded 'Reset link sent to $email'
+                          message: context.tr(
+                            'settings_dialogs.reset_link_sent',
+                            fallback: 'Reset link sent!',
+                            args: [email],
+                          ),
+                          type: CustomSnackBarType.info,
+                        );
+                      }
+                    },
+                  ),
+                  SizedBox(height: 12.h),
+                  _SecondaryTextButton(
+                    label: context.tr('common.cancel', fallback: 'CANCEL'),
+                    isDark: isDark,
+                    onPressed: () => Navigator.pop(ctx),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -411,63 +415,65 @@ class SettingsDialogs {
             width: width,
             padding: EdgeInsets.all(32.r),
             borderRadius: BorderRadius.circular(40.r),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _DialogIcon(
-                  icon: Icons.warning_amber_rounded,
-                  color: Colors.red,
-                ),
-                SizedBox(height: 24.h),
-                Text(
-                  context.tr(
-                    'settings_dialogs.delete_account_title',
-                    fallback: 'Delete Account?',
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _DialogIcon(
+                    icon: Icons.warning_amber_rounded,
+                    color: Colors.red,
                   ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : AppColors.slate900,
+                  SizedBox(height: 24.h),
+                  Text(
+                    context.tr(
+                      'settings_dialogs.delete_account_title',
+                      fallback: 'Delete Account?',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                    ),
                   ),
-                ),
-                SizedBox(height: 16.h),
-                Text(
-                  context.tr(
-                    'settings_dialogs.delete_account_body',
-                    fallback:
-                        'This action cannot be undone. All your data will be permanently deleted, including:\n\n• Learning progress & levels\n• Coins & purchases\n• Streak history\n• Premium subscription (if any)',
+                  SizedBox(height: 16.h),
+                  Text(
+                    context.tr(
+                      'settings_dialogs.delete_account_body',
+                      fallback:
+                          'This action cannot be undone. All your data will be permanently deleted, including:\n\n• Learning progress & levels\n• Coins & purchases\n• Streak history\n• Premium subscription (if any)',
+                    ),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      color: isDark ? Colors.white60 : Colors.black54,
+                      height: 1.5,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    color: isDark ? Colors.white60 : Colors.black54,
-                    height: 1.5,
+                  SizedBox(height: 32.h),
+                  _PrimaryButton(
+                    label: context.tr(
+                      'settings_dialogs.delete_everything',
+                      fallback: 'Delete Everything',
+                    ),
+                    color: Colors.red,
+                    onPressed: () {
+                      Navigator.pop(dialogContext);
+                      _showFinalDeleteConfirmation(context);
+                    },
                   ),
-                ),
-                SizedBox(height: 32.h),
-                _PrimaryButton(
-                  label: context.tr(
-                    'settings_dialogs.delete_everything',
-                    fallback: 'Delete Everything',
+                  SizedBox(height: 12.h),
+                  _SecondaryTextButton(
+                    label: context.tr(
+                      'settings_dialogs.keep_account',
+                      fallback: 'Keep My Account',
+                    ),
+                    isDark: isDark,
+                    onPressed: () => Navigator.pop(dialogContext),
                   ),
-                  color: Colors.red,
-                  onPressed: () {
-                    Navigator.pop(dialogContext);
-                    _showFinalDeleteConfirmation(context);
-                  },
-                ),
-                SizedBox(height: 12.h),
-                _SecondaryTextButton(
-                  label: context.tr(
-                    'settings_dialogs.keep_account',
-                    fallback: 'Keep My Account',
-                  ),
-                  isDark: isDark,
-                  onPressed: () => Navigator.pop(dialogContext),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
@@ -552,53 +558,55 @@ class SettingsDialogs {
             width: width,
             padding: EdgeInsets.all(32.r),
             borderRadius: BorderRadius.circular(40.r),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _DialogIcon(
-                  icon: Icons.rocket_launch_rounded,
-                  color: Colors.blue,
-                ),
-                SizedBox(height: 24.h),
-                Text(
-                  title ??
-                      context.tr(
-                        'settings_dialogs.coming_soon_title',
-                        fallback: 'Coming Soon!',
-                      ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : AppColors.slate900,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _DialogIcon(
+                    icon: Icons.rocket_launch_rounded,
+                    color: Colors.blue,
                   ),
-                ),
-                SizedBox(height: 16.h),
-                Text(
-                  message ??
-                      context.tr(
-                        'settings_dialogs.coming_soon_body',
-                        fallback: 'This feature is currently in development.',
-                      ),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    color: isDark ? Colors.white60 : Colors.black54,
-                    height: 1.5,
+                  SizedBox(height: 24.h),
+                  Text(
+                    title ??
+                        context.tr(
+                          'settings_dialogs.coming_soon_title',
+                          fallback: 'Coming Soon!',
+                        ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                    ),
                   ),
-                ),
-                SizedBox(height: 32.h),
-                _PrimaryButton(
-                  // FIX (HIGH-2): Was hardcoded 'Got it!'
-                  label: context.tr(
-                    'settings_dialogs.got_it',
-                    fallback: 'Got it',
+                  SizedBox(height: 16.h),
+                  Text(
+                    message ??
+                        context.tr(
+                          'settings_dialogs.coming_soon_body',
+                          fallback: 'This feature is currently in development.',
+                        ),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      color: isDark ? Colors.white60 : Colors.black54,
+                      height: 1.5,
+                    ),
                   ),
-                  color: Colors.blue,
-                  onPressed: () => Navigator.pop(ctx),
-                ),
-              ],
+                  SizedBox(height: 32.h),
+                  _PrimaryButton(
+                    // FIX (HIGH-2): Was hardcoded 'Got it!'
+                    label: context.tr(
+                      'settings_dialogs.got_it',
+                      fallback: 'Got it',
+                    ),
+                    color: Colors.blue,
+                    onPressed: () => Navigator.pop(ctx),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -768,9 +776,10 @@ class _EditProfileDialogContentState extends State<_EditProfileDialogContent> {
       width: widget.dialogWidth,
       padding: EdgeInsets.all(32.r),
       borderRadius: BorderRadius.circular(40.r),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
           Text(
             context.tr(
               'settings_dialogs.profile_settings',
@@ -965,7 +974,8 @@ class _EditProfileDialogContentState extends State<_EditProfileDialogContent> {
           ),
         ],
       ),
-    );
+    ),
+  );
   }
 }
 
@@ -1050,9 +1060,10 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
               width: widget.dialogWidth,
               padding: EdgeInsets.all(32.r),
               borderRadius: BorderRadius.circular(40.r),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
                   Text(
                     context.tr(
                       'settings_dialogs.final_warning',
@@ -1131,6 +1142,7 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
                 ],
               ),
             ),
+          ),
           );
         },
       ),

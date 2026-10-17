@@ -4,10 +4,10 @@
 > **Executive Summary & Brutal Audit**:
 >
 > - **Total Dart Files in `lib/`**: **1,068 files**
-> - **Total Test Files in `test/`**: **199 files**
-> - **Total Passing Tests**: **4,050+ Tests Passing (100% Green on completed suites)**
-> - **Completed Test Suites**: **182 items** across Sections 1 to 15 (100% complete) and Section 16 (3 items complete)
-> - **Remaining Game Screens & Hubs to Test / Harden**: **5 items** remaining in Section 16.
+> - **Total Test Files in `test/`**: **200 files**
+> - **Total Passing Tests**: **4,084+ Tests Passing (100% Green on completed suites)**
+> - **Completed Test Suites**: **183 items** across Sections 1 to 15 (100% complete) and Section 16 (4 items complete)
+> - **Remaining Screens & Services to Test / Harden**: **12 items** remaining (4 in Section 16, 8 in Section 17).
 
 ---
 
@@ -59,7 +59,8 @@ Every game test suite MUST rigorously satisfy:
 | **13** | **Daily Challenges & Micro-Games** | 11 | 11 | 0 | 🟢 100% Complete (57 tests) |
 | **14** | **Home, Shell & Navigation** | 6 | 6 | 0 | 🟢 100% Complete (131 tests) |
 | **15** | **Profile, Progress & Trophies** | 7 | 7 | 0 | 🟢 100% Complete (117 tests) |
-| **16** | **Leaderboard, Settings, Paywall, Splash** | 8 | 3 | 5 | 🟡 3 Items Completed (39 tests; 5 items remaining) |
+| **16** | **Leaderboard, Settings, Paywall, Splash** | 8 | 4 | 4 | 🟡 4 Items Completed (73 tests; 4 items remaining) |
+| **17** | **Core Screens, Onboarding & Critical Services** | 8 | 0 | 8 | 🔴 0 Items Completed (8 items pending) |
 
 ---
 
@@ -534,10 +535,41 @@ Every game test suite MUST rigorously satisfy:
     9. Responsive Viewports, Accessibility & Themes: Compact mobile layout (320x568) zero overflow, large tablet layout (800x1280) zero overflow, accessibility text scaling (1.3x) without layout errors, Dark Theme mode, and Midnight Theme mode (`isMidnight = isDark && scaffoldBackgroundColor == Colors.black`).
 - [x] **16.3** `daily_words_test.dart` (Daily Words Flow & Logic Test) — ✅ `[DONE - 18/18 tests passing]`
   - Validates DailyWord parsing from JSON with curriculum fields, value equality via Equatable, WordSet format parsing, WordProgress serialization round-trip and immutable copyWith, DailyWordsService 750-day wrap and cycle 2 continuation, consecutive and non-consecutive calendar streak math, markWordLearned (Box 1) vs markWordNeedsReview (Box 0) Leitner transitions, todayWords resolution, mastery stats calculation, direct Box 3 Mastered promotion, DailyWordsBloc state transitions and session reset, and widget rendering of WordCardFront (frequency & difficulty badges) and WordCardBack (definitions, examples, safe scroll handling).
-- [ ] **16.4** `settings_screen_test.dart` (Settings Widget Test) — 🔴 `[PENDING]`
+- [x] **16.4** `settings_screen_test.dart` (Settings Widget Test) — ✅ `[DONE - 34/34 tests passing]`
+  - Validates full `SettingsScreen` and settings components across 8 test groups (34 tests):
+    1. Initial & Loading States: Renders error banner when user is null in auth state; renders `LoadingOverlay` when auth state is loggingOut.
+    2. App Bar & Navigation: Renders pinned `SliverAppBar` with Settings title and back button; back button navigates to `/home` when route cannot be popped.
+    3. Profile Section: Renders free account user details with "FREE ACCOUNT" badge; renders premium user details with "PREMIUM QUESTER" badge; tapping avatar opens Profile Settings dialog.
+    4. Account Section: Renders Account section header and action tiles; tapping Security & Password opens password reset dialog and dispatches `AuthPasswordResetRequested`; tapping Age Verification opens dialog and confirming calls `resetAgeGate` and navigates.
+    5. App Preferences Section: Renders App Preferences header and switch tiles; toggling Sound Effects off opens confirmation and confirming mutes `SoundService`; toggling Game Sounds updates preference and `SoundService`; Pronunciation Voice tile renders current preset and opens bottom sheet on tap; toggling Push Notifications off opens confirmation dialog and confirming updates `NotificationService`; toggling Reduce Complex Gestures updates `SharedPreferences`; toggling Low Animation Mode updates global override; toggling Analytics calls `FirebaseAnalyticsPlatform`; Midnight Mode switch is hidden in Light Theme, visible in Dark Theme; Language Selection tile displays flag and name and opens `LanguagePickerSheet` on tap; Translation Language tile renders configured language name.
+    6. Support & Legal Section: Renders Support & Legal header and info tiles; tapping Help Center launches support email link; tapping Terms of Service launches legal terms URL; tapping Privacy Policy launches legal privacy URL; tapping About pushes `/about` route.
+    7. Danger Zone & Logout Flow: Renders Danger Zone header and destructive action tiles; tapping Clear App Cache shows success SnackBar; tapping Delete Account opens warning dialog and "Keep My Account" dismisses; tapping SIGN OUT ACCOUNT opens sign out dialog and confirming dispatches `AuthLogoutRequested`.
+    8. Responsive Viewports, Accessibility & Themes: Compact mobile layout (320x568) with zero overflow; tablet layout (800x1280) with zero overflow; accessibility text scaling (1.3x) without layout errors; Midnight theme mode.
 - [ ] **16.5** `premium_screen_test.dart` (Paywall Store Widget Test) — 🔴 `[PENDING]`
 - [ ] **16.6** `splash_page_test.dart` (Startup & Routing Test) — 🔴 `[PENDING]`
 - [ ] **16.7** `in_app_purchase_service_test.dart` (Google Play Billing & Cloud Function Receipt Verification — Zero Money Leakage) — 🔴 `[PENDING]`
   - Validates `validateIAPReceipt` backend verification, consumable coin packs, subscription time-limited grants, and anti-fraud receipt handling.
 - [ ] **16.8** `payment_service_test.dart` (Razorpay Server Order & Signature Verification — Zero Money Leakage) — 🔴 `[PENDING]`
   - Validates server order creation, webhook/signature verification, payment success coin credit, and failure/cancel state handling.
+
+---
+
+### SECTION 17: CORE SCREENS, ONBOARDING & CRITICAL SERVICES (0 / 8 COMPLETE)
+
+- [ ] **17.1** `hatching_page_test.dart` (Companion Egg Hatching & Pet Naming Onboarding Test) — 🔴 `[PENDING]`
+  - Covers `lib/features/onboarding/presentation/pages/hatching_page.dart` (497 lines): egg cracking animations, pet reveal, companion name selection, audio effects, sound/haptic feedback, and transition to main app.
+- [ ] **17.2** `about_screen_test.dart` (App About, Legal & Build Attribution Test) — 🔴 `[PENDING]`
+  - Covers `lib/features/settings/presentation/pages/about_screen.dart` (337 lines): `/about` route, version string, build number, app credits, terms/privacy web launch triggers, and licenses navigation.
+- [ ] **17.3** `offline_quota_exhausted_page_test.dart` (Offline Play Gate & Quota Blocker Test) — 🔴 `[PENDING]`
+  - Covers `lib/core/presentation/pages/offline_quota_exhausted_page.dart` (678 lines): 3-level offline limit enforcement for free tier, rewarded ad unlock trigger, premium subscription upsell button, offline retry connectivity check, and back navigation.
+- [ ] **17.4** `quest_sequence_page_test.dart` (Quest Sequence Multi-Game Runner Test) — 🔴 `[PENDING]`
+  - Covers `lib/core/presentation/pages/quest_sequence_page.dart` (479 lines): `/quest-sequence` route, sequence progress bar, multi-activity progression (Daily Duo, Speed Blitz, Deep Dive), score tallying, reward payout, and completion dialog.
+- [ ] **17.5** `insecure_device_screen_test.dart` (Root / Jailbreak Security Alert Test) — 🔴 `[PENDING]`
+  - Covers `lib/core/presentation/widgets/insecure_device_screen.dart` (100 lines): root/jailbreak detected warning barrier, security alert details, acknowledge button, and app exit trigger.
+- [ ] **17.6** `error_journal_collector_test.dart` (Cross-Game Mistake Tracking Service Test) — 🔴 `[PENDING]`
+  - Covers `lib/core/services/error_journal_collector.dart`: mistake collection and persistence across all 9 game categories, deduplication, timestamp recording, review-ready queueing, and clear operations.
+- [ ] **17.7** `security_service_test.dart` (Security, Anti-Tamper & Production Integrity Test) — 🔴 `[PENDING]`
+  - Covers `lib/core/utils/security_service.dart` & `lib/core/utils/production_guard.dart`: device integrity check, emulator / jailbreak detection, debug mode safety guards, and release assertion verification.
+- [ ] **17.8** `ad_service_test.dart` (Mobile Ad Lifecycle & Rewarded Ad Caching Test) — 🔴 `[PENDING]`
+  - Covers `lib/core/utils/ad_service.dart`: rewarded video ad caching, interstitial ad display, banner ad lifecycle, fallback handling when ad fails to load, and reward callback dispatch.
+
