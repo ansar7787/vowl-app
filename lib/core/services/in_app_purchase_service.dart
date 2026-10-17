@@ -6,6 +6,7 @@ import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
 /// Manages Google Play Billing purchases for non-India markets.
 ///
@@ -183,9 +184,10 @@ class InAppPurchaseService {
       // The Cloud Function must both validate the Google Play receipt
       // and grant the purchased item (premium days or coins+keys),
       // mirroring the Razorpay verifyPayment/verifyCoinPurchase flow.
-      final callable = FirebaseFunctions.instance.httpsCallable(
-        'validateIAPReceipt',
-      );
+      final functions = di.sl.isRegistered<FirebaseFunctions>()
+          ? di.sl<FirebaseFunctions>()
+          : FirebaseFunctions.instance;
+      final callable = functions.httpsCallable('validateIAPReceipt');
 
       final Map<String, dynamic> payload = {
         'purchaseToken': purchase.verificationData.serverVerificationData,

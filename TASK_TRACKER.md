@@ -557,9 +557,14 @@ Every game test suite MUST rigorously satisfy:
   - Validates full `SplashPage` startup, lifecycle, theme adaptation, and auth routing across 3 groups (11 tests):
     1. Initial Post-Frame Navigation Checks: Holds on splash when `AuthStatus.unknown` on initial frame without routing; navigates to `AppRouter.homeRoute` on first frame when `AuthStatus.authenticated`; navigates to `AppRouter.homeRoute` on first frame when `AuthStatus.unauthenticated`.
     2. BlocListener Dynamic State Transitions: Listens to live AuthBloc emissions, dynamically routing to `/home` upon unknown->authenticated and unknown->unauthenticated transitions; ignores duplicate emissions with identical status; guards against duplicate navigation when `_hasNavigated` is true.
-    3. Theming, System UI Overlay & Viewports: Renders white background and dark system overlay in Light mode; renders `AppColors.slate900` and light system overlay in Dark mode; renders `SizedBox.expand` with zero overflow on compact mobile (320x568) and tablet (800x1280).
-- [ ] **16.7** `in_app_purchase_service_test.dart` (Google Play Billing & Cloud Function Receipt Verification — Zero Money Leakage) — 🔴 `[PENDING]`
-  - Validates `validateIAPReceipt` backend verification, consumable coin packs, subscription time-limited grants, and anti-fraud receipt handling.
+- [x] **16.7** `in_app_purchase_service_test.dart` (Google Play Billing & Cloud Function Receipt Verification — Zero Money Leakage) — 🟢 `[DONE - 23/23 tests passing]`
+  - Validates full `InAppPurchaseService` lifecycle, market partitioning, and anti-fraud verification across 6 groups (23 tests):
+    1. Singleton & Availability: Singleton identity, cached country code loading from `SharedPreferences`, early abort when `isAvailable` is false, stream listening and catalog initialization when true.
+    2. GeoIP & Market Partitioning: India detection (IN returns true, US/GB return false, locale fallback), `shouldUseIAP` flag compliance with test override, background GeoIP HTTP refresh (`https://api.country.is/`) cache update, and network error handling.
+    3. Product Catalog Loading: Queries 6 target product IDs (weekly, monthly, yearly passes, 100/500/1000 coin packs), populates `products`, and handles query errors gracefully.
+    4. Consumable Pass Handling: Wraps products in `PurchaseParam`, enforces `buyConsumable` for both coins and time-limited subscriptions (preventing Google Play non-consumable lock), and invokes `onPurchaseError` when buy fails.
+    5. Purchase Stream Updates: Ignores `pending` status; handles `error` with message and completes pending purchase; handles `canceled` with callback and completes pending purchase; delegates `restorePurchases`.
+    6. Zero Money Leakage & Anti-Fraud: Calls Cloud Function `validateIAPReceipt` with `purchaseToken`, `productId`, `grantType` ('premium' with 7/30/365 days or 'coins'); completes purchase and delivers upon `success == true`; on backend rejection (`success != true`) or Cloud Function network exception, NEVER completes purchase, preventing money leakage and fraudulent unlocks.
 - [ ] **16.8** `payment_service_test.dart` (Razorpay Server Order & Signature Verification — Zero Money Leakage) — 🔴 `[PENDING]`
   - Validates server order creation, webhook/signature verification, payment success coin credit, and failure/cancel state handling.
 
