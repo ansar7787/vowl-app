@@ -40,7 +40,9 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final tokens = Theme.of(context).extension<AppColorTokens>();
+    final correctColor = tokens?.gameCorrect ?? AppColors.gameCorrect;
+    final incorrectColor = tokens?.gameIncorrect ?? AppColors.gameIncorrect;
     final correctOrderIndex = quest.correctOrder?.indexOf(originalIndex) ?? -1;
 
     // Check if this specific tile is currently in its correct position
@@ -58,9 +60,9 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
     if (isSelected) {
       borderColor = theme.primaryColor;
     } else if (isCorrect == true) {
-      borderColor = tokens.gameCorrect;
+      borderColor = correctColor;
     } else if (isCorrect == false) {
-      borderColor = tokens.gameIncorrect;
+      borderColor = incorrectColor;
     } else if (isHintVisible && isCorrectPosition) {
       borderColor = theme.primaryColor.withValues(alpha: 0.5);
     }
@@ -180,9 +182,9 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
                             ? Icons.cancel_rounded
                             : Icons.check_circle_rounded),
                   color: isCorrect == true
-                      ? tokens.gameCorrect
+                      ? correctColor
                       : (isCorrect == false
-                            ? tokens.gameIncorrect
+                            ? incorrectColor
                             : (isDark ? Colors.white30 : Colors.black26)),
                   size: 26.r,
                 ),
