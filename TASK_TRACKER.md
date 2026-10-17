@@ -596,7 +596,7 @@ Every game test suite MUST rigorously satisfy:
 - [x] **17.2** `about_screen_test.dart` (App About, Legal & Build Attribution Test) — 🟢 `[DONE - 11/11 tests passing]`
   - Validates full `AboutScreen` legal, attribution, and build metadata across 5 test groups (11 tests):
     1. Initial Rendering & Branding Presentation: Renders `MeshGradientBackground`, pinned `SliverAppBar` with "About" title, school icon badge, Vowl title, subtitle, and dynamic version ("Version 2.4.0") loaded asynchronously from `PackageInfo`.
-    2. Developer & Contact Info Tiles: Renders Developer tile ("Vowl Team") and Contact tile ("support.vowl.app@gmail.com"); tapping Contact tile triggers `UrlLauncherPlatform` to launch `mailto:support.vowl.app@gmail.com` with `externalApplication` mode.
+    2. Developer & Contact Info Tiles: Renders Developer tile ("Vowl Team") and Contact tile (`support.vowl.app@gmail.com`); tapping Contact tile triggers `UrlLauncherPlatform` to launch `mailto:support.vowl.app@gmail.com` with `externalApplication` mode.
     3. Legal & Open Source Action Buttons: Tapping "Privacy Policy" triggers `UrlLauncherPlatform` to launch external URL (`privacy.html`); tapping "Terms of Service" launches external URL (`terms.html`); tapping "View Open Source Licenses" displays `LicensePage`.
     4. App Bar & Navigation: Pinned `SliverAppBar` with blur backdrop; tapping back button calls `context.pop()` and navigates back to settings.
     5. Responsive Viewports, Themes & Accessibility: Compact mobile layout (320x568) zero overflow, large tablet layout (800x1280) zero overflow, 1.3x accessibility text scaling without overflow, Dark Theme mode (`AppColors.slate900`), and Light Theme mode (`AppColors.slate50`).
