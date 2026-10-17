@@ -553,8 +553,11 @@ Every game test suite MUST rigorously satisfy:
     5. Razorpay Checkout & Callbacks Flow: Launches Razorpay subscription, 2-minute payment timeout, failure overlay, cancellation overlay, successful payment callback with `upgradeToPremium`, user reload, and confetti.
     6. Google Play / IAP Checkout Flow: Product querying and `buyConsumable` launch with matching product details, failure handling, and purchase cancellation reset.
     7. Restore Purchases & Offline Connectivity: Triggers `restorePurchases` for international/mobile users, shows account-linked info snackbar for India users, and handles unreachable network gracefully.
-    8. Legal Links, Modern Features & Responsive Layout Safety: Renders secure tag, cancellation note, modern feature bar, launches Terms, Privacy, and Refund Policy URLs, and zero-overflow rendering on compact mobile (320x568), tablet (800x1280), 1.3x accessibility text scale, and dark theme.
-- [ ] **16.6** `splash_page_test.dart` (Startup & Routing Test) — 🔴 `[PENDING]`
+- [x] **16.6** `splash_page_test.dart` (Startup & Routing Test) — 🟢 `[DONE - 11/11 tests passing]`
+  - Validates full `SplashPage` startup, lifecycle, theme adaptation, and auth routing across 3 groups (11 tests):
+    1. Initial Post-Frame Navigation Checks: Holds on splash when `AuthStatus.unknown` on initial frame without routing; navigates to `AppRouter.homeRoute` on first frame when `AuthStatus.authenticated`; navigates to `AppRouter.homeRoute` on first frame when `AuthStatus.unauthenticated`.
+    2. BlocListener Dynamic State Transitions: Listens to live AuthBloc emissions, dynamically routing to `/home` upon unknown->authenticated and unknown->unauthenticated transitions; ignores duplicate emissions with identical status; guards against duplicate navigation when `_hasNavigated` is true.
+    3. Theming, System UI Overlay & Viewports: Renders white background and dark system overlay in Light mode; renders `AppColors.slate900` and light system overlay in Dark mode; renders `SizedBox.expand` with zero overflow on compact mobile (320x568) and tablet (800x1280).
 - [ ] **16.7** `in_app_purchase_service_test.dart` (Google Play Billing & Cloud Function Receipt Verification — Zero Money Leakage) — 🔴 `[PENDING]`
   - Validates `validateIAPReceipt` backend verification, consumable coin packs, subscription time-limited grants, and anti-fraud receipt handling.
 - [ ] **16.8** `payment_service_test.dart` (Razorpay Server Order & Signature Verification — Zero Money Leakage) — 🔴 `[PENDING]`
