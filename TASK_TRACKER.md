@@ -4,10 +4,10 @@
 > **Executive Summary & Brutal Audit**:
 >
 > - **Total Dart Files in `lib/`**: **1,068 files**
-> - **Total Test Files in `test/`**: **200 files**
-> - **Total Passing Tests**: **4,256+ Tests Passing (100% Green on completed suites)**
-> - **Completed Test Suites**: **194 items** across Sections 1 to 16 (100% complete) and Section 17 (7 items complete)
-> - **Remaining Screens & Services to Test / Harden**: **1 item** remaining (Section 17).
+> - **Total Test Files in `test/`**: **201 files**
+> - **Total Passing Tests**: **4,286+ Tests Passing (100% Green across all suites)**
+> - **Completed Test Suites**: **195 items** across Sections 1 to 17 (100% COMPLETE!)
+> - **Remaining Screens & Services to Test / Harden**: **0 items** remaining (ALL COMPLETE 🟢).
 
 ---
 
@@ -60,7 +60,7 @@ Every game test suite MUST rigorously satisfy:
 | **14** | **Home, Shell & Navigation** | 6 | 6 | 0 | 🟢 100% Complete (131 tests) |
 | **15** | **Profile, Progress & Trophies** | 7 | 7 | 0 | 🟢 100% Complete (117 tests) |
 | **16** | **Leaderboard, Settings, Paywall, Splash** | 8 | 8 | 0 | 🟢 100% Complete (150 tests) |
-| **17** | **Core Screens, Onboarding & Critical Services** | 8 | 2 | 6 | 🟡 2 Items Completed (24 tests; 6 items remaining) |
+| **17** | **Core Screens, Onboarding & Critical Services** | 8 | 8 | 0 | 🟢 100% Complete (8/8 items done, 122 tests) |
 
 ---
 
@@ -576,7 +576,7 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 17: CORE SCREENS, ONBOARDING & CRITICAL SERVICES (7 / 8 COMPLETE)
+### SECTION 17: CORE SCREENS, ONBOARDING & CRITICAL SERVICES (8 / 8 COMPLETE)
 
 - [x] **17.1** `hatching_page_test.dart` (Companion Egg Hatching & Pet Naming Onboarding Test) — 🟢 `[DONE - 13/13 tests passing]`
   - Validates full `HatchingPage` companion hatching onboarding flow across 6 test groups (13 tests):
@@ -628,6 +628,15 @@ Every game test suite MUST rigorously satisfy:
     2. Device Security Verification Flow: Evaluates `SafeDevice.isJailBroken` and `SafeDevice.isRealDevice` platform channel checks concurrently; returns `true` for standard genuine hardware; blocks rooted/jailbroken devices returning `false`; fails open (returns `true`) upon channel errors to prevent false-positive lockouts of paying users.
     3. Developer Mode Verification Flow: Returns `true` when developer options enabled; returns `false` when disabled; safely catches platform exceptions and defaults to `false`.
     4. ProductionGuard Configuration Integrity: Verifies key format compliance; logs debug telemetry when test keys are loaded in debug/test mode; completes without error when keys are null or valid in non-release mode.
-- [ ] **17.8** `ad_service_test.dart` (Mobile Ad Lifecycle & Rewarded Ad Caching Test) — 🔴 `[PENDING]`
-  - Covers `lib/core/utils/ad_service.dart`: rewarded video ad caching, interstitial ad display, banner ad lifecycle, fallback handling when ad fails to load, and reward callback dispatch.
+- [x] **17.8** `ad_service_test.dart` (Mobile Ad Lifecycle & Rewarded Ad Caching Test) — 🟢 `[DONE - 30/30 tests passing]`
+  - Validates full `AdService` mobile ad lifecycle, counter management, and COPPA compliance across 8 test groups (30 tests):
+    1. Ad Frequency & Counter Management: `levelsPerInterstitial` defaults to 3; adapts dynamically to RemoteConfig multiplier (2.0 -> 2, 0.5 -> 6, clamped between 1 and 10); non-positive fallback to 3; `interstitialCooldownMinutes` reads RemoteConfig; `recordLevelCompletion` increments counter and returns true at threshold.
+    2. Initialization & Age Gate Configuration: `init()` initializes MobileAds SDK and updates `RequestConfiguration`; subsequent calls are no-ops; `refreshAdConfig` dynamically updates treatment (unspecified for adult, child for under-16/minor).
+    3. Interstitial Ad Loading & Retries: Requests ad from platform; successful load marks ad as immersive (`immersiveModeEnabled: true`); failed load handles error gracefully without crash; ad loaded post-disposal is discarded immediately.
+    4. Interstitial Ad Presentation Flow: Premium users bypass ads immediately; frequency gate skips ad when below threshold; force flag bypasses frequency gate; availability gate handles null ad gracefully; full show and dismiss cycle resets completed levels counter; cooldown gate prevents back-to-back ads; failure to show disposes ad and calls onDismissed.
+    5. Rewarded Ad Loading & State: `isRewardedAdLoaded` reflects cache status; duplicate in-flight load requests are blocked; load failure clears in-flight state and keeps loaded false; rewarded ad loaded post-disposal is discarded.
+    6. Rewarded Ad Presentation & Reward Delivery: Premium users receive reward immediately; unloaded ad triggers `CustomSnackBar` when mounted context provided; full rewarded ad cycle delivers reward item and triggers onDismissed; failed to show invokes onDismissed; `showHintRewardedAd` forwards hint callback.
+    7. COPPA & Child-Safe Mode: Forced child-safe request for adult session flushes pre-loaded personalized ad, requests fresh child-safe ad, shows and delivers reward without leaking adult ad.
+    8. Teardown & Resource Disposal: `dispose()` cleans up platform interstitial and rewarded ads; subsequent operations are safely ignored.
+
 
