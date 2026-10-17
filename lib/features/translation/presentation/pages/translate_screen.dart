@@ -61,7 +61,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
   void dispose() {
     _debounce?.cancel();
     _tts.stop();
-    _speech.stop();
+    _speech.cancel();
     _inputController.dispose();
     _focusNode.dispose();
     _scrollController.dispose();
@@ -101,6 +101,16 @@ class _TranslateScreenState extends State<TranslateScreen> {
     bool isDark, {
     required bool isSource,
   }) {
+    if (_isListening.value) {
+      _speech.stop();
+      _isListening.value = false;
+    }
+    if (_tts.isSpeaking) {
+      _tts.stop();
+      _isSourceSpeaking.value = false;
+      _isTargetSpeaking.value = false;
+    }
+
     final blocState = context.read<TranslationBloc>().state;
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
@@ -152,6 +162,12 @@ class _TranslateScreenState extends State<TranslateScreen> {
 
     if (text.trim().isEmpty) return;
 
+    // Stop active speech dictation before synthesizing audio
+    if (_isListening.value) {
+      await _speech.stop();
+      _isListening.value = false;
+    }
+
     _haptics.light();
     notifier.value = true;
 
@@ -173,10 +189,20 @@ class _TranslateScreenState extends State<TranslateScreen> {
       await _speech.stop();
       _isListening.value = false;
       _haptics.light();
+      if (_inputController.text.trim().isNotEmpty) {
+        _triggerImmediateTranslation();
+      }
       return;
     }
 
     _haptics.selection();
+
+    // Prevent acoustic feedback loop by silencing TTS before listening
+    if (_tts.isSpeaking) {
+      await _tts.stop();
+      _isSourceSpeaking.value = false;
+      _isTargetSpeaking.value = false;
+    }
     try {
       final hasPerm = await _speech.initializeStt();
       if (!hasPerm) {
@@ -201,20 +227,41 @@ class _TranslateScreenState extends State<TranslateScreen> {
       final langObj = TranslationService.supportedLanguages[sourceLanguage];
       final localeId = langObj?.bcpCode ?? 'en-US';
 
+      // Capture initial text before this dictation session started to allow appending
+      final baseText = _inputController.text.trim();
+
       await _speech.listen(
         localeId: localeId,
-        onResult: (words, isFinal) {
-          if (words.isNotEmpty && mounted) {
-            final phrase = words.join(' ');
-            _inputController.text = phrase;
-            _inputController.selection = TextSelection.collapsed(
-              offset: phrase.length,
-            );
-            _onInputChanged(phrase);
+        onResult: (candidates, isFinal) {
+          if (candidates.isNotEmpty && mounted) {
+            // SpeechService returns an N-best list of alternative hypotheses for the entire utterance.
+            // candidates.first is ALWAYS the primary recognized text.
+            // Joining candidates previously created 10x duplicated words because speech engines
+            // (especially for Arabic, Kannada, etc.) emit 5-10 alternate hypotheses of the same utterance.
+            final transcript = candidates.first.trim();
+            if (transcript.isNotEmpty) {
+              final phrase = baseText.isEmpty
+                  ? transcript
+                  : '$baseText $transcript';
+              _inputController.text = phrase;
+              _inputController.selection = TextSelection.collapsed(
+                offset: phrase.length,
+              );
+              if (isFinal) {
+                _triggerImmediateTranslation();
+              } else {
+                _onInputChanged(phrase);
+              }
+            }
           }
         },
         onDone: () {
-          if (mounted) _isListening.value = false;
+          if (mounted) {
+            _isListening.value = false;
+            if (_inputController.text.trim().isNotEmpty) {
+              _triggerImmediateTranslation();
+            }
+          }
         },
       );
     } catch (_) {
@@ -225,6 +272,15 @@ class _TranslateScreenState extends State<TranslateScreen> {
   void _onSwapTapped(bool isPremium) {
     _haptics.selection();
     _focusNode.unfocus();
+    if (_isListening.value) {
+      _speech.stop();
+      _isListening.value = false;
+    }
+    if (_tts.isSpeaking) {
+      _tts.stop();
+      _isSourceSpeaking.value = false;
+      _isTargetSpeaking.value = false;
+    }
     setState(() {
       _swapTurns += 0.5;
     });
@@ -900,94 +956,96 @@ class _TranslateScreenState extends State<TranslateScreen> {
                         ),
                       ],
                     ),
-                    ValueListenableBuilder<TextEditingValue>(
-                      valueListenable: _inputController,
-                      builder: (context, value, _) {
-                        final isEmpty = value.text.isEmpty;
-                        return Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            if (!isEmpty) ...[
-                              Text(
-                                '${value.text.length}/$_maxCharacterLimit',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w500,
-                                  color: value.text.length > _maxCharacterLimit
-                                      ? AppColors.red500
-                                      : (isDark
-                                            ? Colors.white38
-                                            : AppColors.slate400),
-                                ),
-                              ),
-                              SizedBox(width: 8.w),
-                              ValueListenableBuilder<bool>(
-                                valueListenable: _isSourceSpeaking,
-                                builder: (context, speaking, _) {
-                                  return IconButton(
-                                    visualDensity: VisualDensity.compact,
-                                    padding: EdgeInsets.zero,
-                                    constraints: BoxConstraints(
-                                      minWidth: 32.r,
-                                      minHeight: 32.r,
+                    ValueListenableBuilder<bool>(
+                      valueListenable: _isListening,
+                      builder: (context, listening, _) {
+                        return ValueListenableBuilder<TextEditingValue>(
+                          valueListenable: _inputController,
+                          builder: (context, value, _) {
+                            final isEmpty = value.text.isEmpty;
+                            return Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                if (listening) ...[
+                                  InkWell(
+                                    onTap: () => _toggleVoiceDictation(
+                                      state.currentSourceLanguage,
                                     ),
-                                    tooltip: 'Listen to input',
-                                    onPressed: () => _speakText(
-                                      text: value.text,
-                                      languageName: state.currentSourceLanguage,
-                                      isSource: true,
+                                    borderRadius: BorderRadius.circular(16.r),
+                                    child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 10.w,
+                                        vertical: 5.h,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: AppColors.red500.withValues(
+                                          alpha: 0.15,
+                                        ),
+                                        borderRadius: BorderRadius.circular(
+                                          16.r,
+                                        ),
+                                        border: Border.all(
+                                          color: AppColors.red500,
+                                        ),
+                                      ),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Icon(
+                                            Icons.mic_rounded,
+                                            color: AppColors.red500,
+                                            size: 14.r,
+                                          ),
+                                          SizedBox(width: 4.w),
+                                          Text(
+                                            'Listening...',
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 12.sp,
+                                              fontWeight: FontWeight.w500,
+                                              color: AppColors.red500,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                    icon: Icon(
-                                      speaking
-                                          ? Icons.volume_up_rounded
-                                          : Icons.volume_down_rounded,
-                                      color: speaking
-                                          ? AppColors.indigo500
-                                          : (isDark
-                                                ? Colors.white60
-                                                : AppColors.slate500),
-                                      size: 18.r,
-                                    ),
-                                  );
-                                },
-                              ),
-                              SizedBox(width: 4.w),
-                              InkWell(
-                                onTap: () {
-                                  _inputController.clear();
-                                  context.read<TranslationBloc>().add(
-                                    TranslationTextChanged(
-                                      '',
-                                      isPremium: isPremium,
-                                    ),
-                                  );
-                                  _haptics.light();
-                                },
-                                borderRadius: BorderRadius.circular(16.r),
-                                child: Container(
-                                  padding: EdgeInsets.all(4.r),
-                                  decoration: BoxDecoration(
-                                    color: isDark
-                                        ? Colors.white10
-                                        : AppColors.slate100,
-                                    shape: BoxShape.circle,
                                   ),
-                                  child: Icon(
-                                    Icons.close_rounded,
-                                    color: isDark
-                                        ? Colors.white54
-                                        : AppColors.slate500,
-                                    size: 14.r,
-                                  ),
-                                ),
-                              ),
-                            ],
-                            if (isEmpty) ...[
-                              ValueListenableBuilder<bool>(
-                                valueListenable: _isListening,
-                                builder: (context, listening, _) {
-                                  return InkWell(
+                                  if (!isEmpty) ...[
+                                    SizedBox(width: 6.w),
+                                    InkWell(
+                                      onTap: () {
+                                        _speech.stop();
+                                        _isListening.value = false;
+                                        _inputController.clear();
+                                        context.read<TranslationBloc>().add(
+                                          TranslationTextChanged(
+                                            '',
+                                            isPremium: isPremium,
+                                          ),
+                                        );
+                                        _haptics.light();
+                                      },
+                                      borderRadius: BorderRadius.circular(16.r),
+                                      child: Container(
+                                        padding: EdgeInsets.all(4.r),
+                                        decoration: BoxDecoration(
+                                          color: isDark
+                                              ? Colors.white10
+                                              : AppColors.slate100,
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Icon(
+                                          Icons.close_rounded,
+                                          color: isDark
+                                              ? Colors.white54
+                                              : AppColors.slate500,
+                                          size: 14.r,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ] else if (isEmpty) ...[
+                                  InkWell(
                                     onTap: () => _toggleVoiceDictation(
                                       state.currentSourceLanguage,
                                     ),
@@ -999,117 +1057,203 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                         vertical: 5.h,
                                       ),
                                       decoration: BoxDecoration(
-                                        color: listening
-                                            ? AppColors.red500.withValues(
-                                                alpha: 0.15,
-                                              )
-                                            : (isDark
-                                                  ? Colors.white10
-                                                  : AppColors.slate100),
+                                        color: isDark
+                                            ? Colors.white10
+                                            : AppColors.slate100,
                                         borderRadius: BorderRadius.circular(
                                           16.r,
                                         ),
-                                        border: listening
-                                            ? Border.all(
-                                                color: AppColors.red500,
-                                              )
-                                            : null,
                                       ),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Icon(
-                                            listening
-                                                ? Icons.mic_rounded
-                                                : Icons.mic_none_rounded,
-                                            color: listening
-                                                ? AppColors.red500
-                                                : (isDark
-                                                      ? Colors.white70
-                                                      : AppColors.slate600),
+                                            Icons.mic_none_rounded,
+                                            color: isDark
+                                                ? Colors.white70
+                                                : AppColors.slate600,
                                             size: 14.r,
                                           ),
                                           SizedBox(width: 4.w),
                                           Text(
-                                            listening
-                                                ? 'Listening...'
-                                                : 'Voice',
+                                            'Voice',
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
                                               fontSize: 12.sp,
                                               fontWeight: FontWeight.w500,
-                                              color: listening
-                                                  ? AppColors.red500
-                                                  : (isDark
-                                                        ? Colors.white70
-                                                        : AppColors.slate600),
+                                              color: isDark
+                                                  ? Colors.white70
+                                                  : AppColors.slate600,
                                             ),
                                           ),
                                         ],
                                       ),
                                     ),
-                                  );
-                                },
-                              ),
-                              InkWell(
-                                onTap: () async {
-                                  final data = await Clipboard.getData(
-                                    'text/plain',
-                                  );
-                                  if (data != null &&
-                                      (data.text?.isNotEmpty ?? false)) {
-                                    _inputController.text = data.text!;
-                                    _inputController.selection =
-                                        TextSelection.collapsed(
-                                          offset: data.text!.length,
-                                        );
-                                    _onInputChanged(data.text!);
-                                    _haptics.light();
-                                  }
-                                },
-                                borderRadius: BorderRadius.circular(16.r),
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 10.w,
-                                    vertical: 5.h,
                                   ),
-                                  decoration: BoxDecoration(
-                                    color: isDark
-                                        ? Colors.white10
-                                        : AppColors.slate100,
+                                  InkWell(
+                                    onTap: () async {
+                                      final data = await Clipboard.getData(
+                                        'text/plain',
+                                      );
+                                      if (data != null &&
+                                          (data.text?.isNotEmpty ?? false)) {
+                                        _inputController.text = data.text!;
+                                        _inputController.selection =
+                                            TextSelection.collapsed(
+                                              offset: data.text!.length,
+                                            );
+                                        _onInputChanged(data.text!);
+                                        _haptics.light();
+                                      }
+                                    },
                                     borderRadius: BorderRadius.circular(16.r),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Icon(
-                                        Icons.paste_rounded,
+                                    child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 10.w,
+                                        vertical: 5.h,
+                                      ),
+                                      decoration: BoxDecoration(
                                         color: isDark
-                                            ? Colors.white70
-                                            : AppColors.slate600,
+                                            ? Colors.white10
+                                            : AppColors.slate100,
+                                        borderRadius: BorderRadius.circular(
+                                          16.r,
+                                        ),
+                                      ),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Icon(
+                                            Icons.paste_rounded,
+                                            color: isDark
+                                                ? Colors.white70
+                                                : AppColors.slate600,
+                                            size: 14.r,
+                                          ),
+                                          SizedBox(width: 4.w),
+                                          Text(
+                                            context.tr(
+                                              'common.paste',
+                                              fallback: 'Paste',
+                                            ),
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 12.sp,
+                                              fontWeight: FontWeight.w500,
+                                              color: isDark
+                                                  ? Colors.white70
+                                                  : AppColors.slate600,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ] else ...[
+                                  Text(
+                                    '${value.text.length}/$_maxCharacterLimit',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 11.sp,
+                                      fontWeight: FontWeight.w500,
+                                      color:
+                                          value.text.length >
+                                              _maxCharacterLimit
+                                          ? AppColors.red500
+                                          : (isDark
+                                                ? Colors.white38
+                                                : AppColors.slate400),
+                                    ),
+                                  ),
+                                  SizedBox(width: 6.w),
+                                  ValueListenableBuilder<bool>(
+                                    valueListenable: _isSourceSpeaking,
+                                    builder: (context, speaking, _) {
+                                      return IconButton(
+                                        visualDensity: VisualDensity.compact,
+                                        padding: EdgeInsets.zero,
+                                        constraints: BoxConstraints(
+                                          minWidth: 28.r,
+                                          minHeight: 28.r,
+                                        ),
+                                        tooltip: 'Listen to input',
+                                        onPressed: () => _speakText(
+                                          text: value.text,
+                                          languageName:
+                                              state.currentSourceLanguage,
+                                          isSource: true,
+                                        ),
+                                        icon: Icon(
+                                          speaking
+                                              ? Icons.volume_up_rounded
+                                              : Icons.volume_down_rounded,
+                                          color: speaking
+                                              ? AppColors.indigo500
+                                              : (isDark
+                                                    ? Colors.white60
+                                                    : AppColors.slate500),
+                                          size: 18.r,
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                  SizedBox(width: 2.w),
+                                  InkWell(
+                                    onTap: () => _toggleVoiceDictation(
+                                      state.currentSourceLanguage,
+                                    ),
+                                    borderRadius: BorderRadius.circular(16.r),
+                                    child: Container(
+                                      padding: EdgeInsets.all(4.r),
+                                      decoration: BoxDecoration(
+                                        color: isDark
+                                            ? Colors.white10
+                                            : AppColors.slate100,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Icon(
+                                        Icons.mic_none_rounded,
+                                        color: isDark
+                                            ? Colors.white54
+                                            : AppColors.slate500,
                                         size: 14.r,
                                       ),
-                                      SizedBox(width: 4.w),
-                                      Text(
-                                        context.tr(
-                                          'common.paste',
-                                          fallback: 'Paste',
-                                        ),
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w500,
-                                          color: isDark
-                                              ? Colors.white70
-                                              : AppColors.slate600,
-                                        ),
-                                      ),
-                                    ],
+                                    ),
                                   ),
-                                ),
-                              ),
-                            ],
-                          ],
+                                  SizedBox(width: 4.w),
+                                  InkWell(
+                                    onTap: () {
+                                      _inputController.clear();
+                                      context.read<TranslationBloc>().add(
+                                        TranslationTextChanged(
+                                          '',
+                                          isPremium: isPremium,
+                                        ),
+                                      );
+                                      _haptics.light();
+                                    },
+                                    borderRadius: BorderRadius.circular(16.r),
+                                    child: Container(
+                                      padding: EdgeInsets.all(4.r),
+                                      decoration: BoxDecoration(
+                                        color: isDark
+                                            ? Colors.white10
+                                            : AppColors.slate100,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Icon(
+                                        Icons.close_rounded,
+                                        color: isDark
+                                            ? Colors.white54
+                                            : AppColors.slate500,
+                                        size: 14.r,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ],
+                            );
+                          },
                         );
                       },
                     ),

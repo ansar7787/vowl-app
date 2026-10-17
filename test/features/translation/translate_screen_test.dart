@@ -59,7 +59,9 @@ class FakeTtsService implements TtsService {
   }) async {}
 
   @override
-  Future<void> stop() async {}
+  Future<void> stop() async {
+    isSpeaking = false;
+  }
 
   @override
   Future<void> dispose() async {}
@@ -86,24 +88,37 @@ class FakeSpeechService implements SpeechService {
   @override
   bool isListening = false;
 
-  @override
-  Future<void> stop() async {}
+  SpeechResultCallback? capturedOnResult;
+  VoidCallback? capturedOnDone;
+  String? capturedLocaleId;
 
   @override
-  Future<void> cancel() async {}
+  Future<void> stop() async {
+    isListening = false;
+  }
+
+  @override
+  Future<void> cancel() async {
+    isListening = false;
+  }
 
   @override
   Future<bool> initializeStt() async => true;
 
   @override
   Future<void> listen({
-    required Function(List<String>, bool) onResult,
+    required SpeechResultCallback onResult,
     required VoidCallback onDone,
     Function(double)? onSoundLevelChange,
     String? localeId,
     Duration? pauseFor,
     ListenMode listenMode = ListenMode.dictation,
-  }) async {}
+  }) async {
+    isListening = true;
+    capturedOnResult = onResult;
+    capturedOnDone = onDone;
+    capturedLocaleId = localeId;
+  }
 
   @override
   Future<void> setSpeechRate(double rate) async {}
@@ -329,6 +344,141 @@ void main() {
       await tester.tap(find.text('KEEP PLAYING'));
       await tester.pump(const Duration(milliseconds: 500));
       expect(find.byType(ModernGameDialog), findsNothing);
+    });
+
+    testWidgets('voice dictation uses primary candidate and does NOT duplicate alternates for Arabic/Kannada', (tester) async {
+      tester.view.physicalSize = const Size(1080, 2400);
+      addTearDown(tester.view.resetPhysicalSize);
+
+      when(() => mockTranslationBloc.state).thenReturn(
+        const TranslationState(
+          status: TranslationStatus.loaded,
+          currentSourceLanguage: 'Arabic',
+          currentTargetLanguage: 'English',
+          downloadedLanguages: ['Arabic', 'English'],
+          freeTranslationsRemaining: 3,
+        ),
+      );
+
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pump(const Duration(milliseconds: 600));
+
+      // Tap Voice button to start dictation
+      final voiceFinder = find.text('Voice');
+      expect(voiceFinder, findsOneWidget);
+      await tester.tap(voiceFinder);
+      await tester.pump();
+
+      expect(fakeSpeech.capturedLocaleId, 'ar');
+      expect(fakeSpeech.capturedOnResult, isNotNull);
+
+      // Simulate speech engine returning 10 alternate hypotheses for a single Arabic word
+      fakeSpeech.capturedOnResult!([
+        'مرحبا',
+        'مرحبا',
+        'مرحبًا',
+        'مر حبا',
+        'مرحبا',
+        'مرحبا',
+        'مرحبا',
+        'مرحبا',
+        'مرحبا',
+        'مرحبا',
+      ], true);
+      await tester.pump(const Duration(milliseconds: 100));
+
+      // Verify that the TextField receives EXACTLY 1 clean word, NOT 10 duplicates!
+      final textField = tester.widget<TextField>(find.byType(TextField));
+      expect(textField.controller?.text, 'مرحبا');
+    });
+
+    testWidgets('voice dictation appends cleanly to existing text with a space', (tester) async {
+      tester.view.physicalSize = const Size(1080, 2400);
+      addTearDown(tester.view.resetPhysicalSize);
+
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pump(const Duration(milliseconds: 600));
+
+      // User already typed "Hello"
+      await tester.enterText(find.byType(TextField), 'Hello');
+      await tester.pump(const Duration(milliseconds: 100));
+
+      // Tap mic icon (which is visible when text is non-empty)
+      final micIconFinder = find.byIcon(Icons.mic_none_rounded);
+      expect(micIconFinder, findsOneWidget);
+      await tester.tap(micIconFinder);
+      await tester.pump();
+
+      expect(fakeSpeech.capturedOnResult, isNotNull);
+
+      // Simulate speaking "friend"
+      fakeSpeech.capturedOnResult!(['friend', 'fiend', 'frend'], true);
+      await tester.pump(const Duration(milliseconds: 100));
+
+      final textField = tester.widget<TextField>(find.byType(TextField));
+      expect(textField.controller?.text, 'Hello friend');
+    });
+
+    testWidgets('tapping clear button stops active speech listening session', (tester) async {
+      tester.view.physicalSize = const Size(1080, 2400);
+      addTearDown(tester.view.resetPhysicalSize);
+
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pump(const Duration(milliseconds: 600));
+
+      // Start voice dictation
+      await tester.tap(find.text('Voice'));
+      await tester.pump();
+
+      // Speech emits a word
+      fakeSpeech.capturedOnResult!(['testing'], false);
+      await tester.pump(const Duration(milliseconds: 100));
+
+      expect(fakeSpeech.isListening, isTrue);
+
+      // Tap close/clear button
+      await tester.tap(find.byIcon(Icons.close_rounded));
+      await tester.pump();
+
+      expect(fakeSpeech.isListening, isFalse);
+      final textField = tester.widget<TextField>(find.byType(TextField));
+      expect(textField.controller?.text, '');
+    });
+
+    testWidgets('tapping swap button stops active voice listening session', (tester) async {
+      tester.view.physicalSize = const Size(1080, 2400);
+      addTearDown(tester.view.resetPhysicalSize);
+
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pump(const Duration(milliseconds: 600));
+
+      // Start voice dictation
+      await tester.tap(find.text('Voice'));
+      await tester.pump();
+      expect(fakeSpeech.isListening, isTrue);
+
+      // Tap swap button
+      await tester.tap(find.byIcon(Icons.swap_horiz_rounded));
+      await tester.pump();
+
+      expect(fakeSpeech.isListening, isFalse);
+    });
+
+    testWidgets('tapping voice dictation stops TTS audio if speaking', (tester) async {
+      tester.view.physicalSize = const Size(1080, 2400);
+      addTearDown(tester.view.resetPhysicalSize);
+
+      fakeTts.isSpeaking = true;
+
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pump(const Duration(milliseconds: 600));
+
+      // Tap voice button
+      await tester.tap(find.text('Voice'));
+      await tester.pump();
+
+      expect(fakeTts.isSpeaking, isFalse);
+      expect(fakeSpeech.isListening, isTrue);
     });
   });
 }

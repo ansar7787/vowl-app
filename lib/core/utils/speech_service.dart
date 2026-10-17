@@ -7,6 +7,20 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/injection_container.dart';
 
+/// Callback signature for speech recognition result events.
+///
+/// [candidates] contains alternative hypotheses for the entire spoken utterance,
+/// ordered by confidence. The primary, highest-confidence transcription is ALWAYS [candidates.first].
+///
+/// NOTE: [candidates] is NOT a list of individual words in a sentence; it contains
+/// alternative hypotheses for the entire spoken utterance (an N-best list).
+/// Callers who want the transcribed speech should use `candidates.first`,
+/// and MUST NOT do `candidates.join(' ')`.
+typedef SpeechResultCallback = void Function(
+  List<String> candidates,
+  bool isFinal,
+);
+
 /// Abstract contract defining Text-To-Speech (TTS) and Speech-To-Text (STT) services.
 ///
 /// Decouples voice components from calling speaking pages/BLoCs,
@@ -52,7 +66,7 @@ abstract class SpeechService {
   /// so this only adds capability, in line with the explicit "void async"
   /// production-readiness audit category.
   Future<void> listen({
-    required Function(List<String>, bool) onResult,
+    required SpeechResultCallback onResult,
     required VoidCallback onDone,
     Function(double)? onSoundLevelChange,
     String? localeId,
@@ -68,6 +82,7 @@ class SpeechServiceImpl implements SpeechService {
 
   bool _isSttInitialized = false;
   VoidCallback? _onDoneCallback;
+  List<LocaleName> _availableLocales = [];
 
   SpeechServiceImpl({TtsService? ttsService})
       : _ttsService = ttsService ?? sl<TtsService>();
@@ -164,6 +179,11 @@ class SpeechServiceImpl implements SpeechService {
           }
         },
       );
+      if (_isSttInitialized) {
+        try {
+          _availableLocales = await _stt.locales();
+        } catch (_) {}
+      }
       return _isSttInitialized;
     } catch (e) {
       sl<AppLogger>().error(
@@ -174,9 +194,35 @@ class SpeechServiceImpl implements SpeechService {
     }
   }
 
+  String? _resolveLocale(String? requestedLocale) {
+    if (requestedLocale == null || _availableLocales.isEmpty) {
+      return requestedLocale;
+    }
+    final reqClean = requestedLocale.trim().toLowerCase();
+    final reqNormalized = reqClean.replaceAll('-', '_');
+
+    // 1. Exact match (e.g. 'ar_SA' == 'ar_SA')
+    for (final loc in _availableLocales) {
+      final locId = loc.localeId.toLowerCase().replaceAll('-', '_');
+      if (locId == reqNormalized) {
+        return loc.localeId;
+      }
+    }
+
+    // 2. Prefix / language tag match (e.g. 'ar' matches 'ar_SA', 'kn' matches 'kn_IN')
+    for (final loc in _availableLocales) {
+      final locId = loc.localeId.toLowerCase().replaceAll('-', '_');
+      if (locId.startsWith('${reqNormalized}_') || locId == reqNormalized) {
+        return loc.localeId;
+      }
+    }
+
+    return requestedLocale;
+  }
+
   @override
   Future<void> listen({
-    required Function(List<String>, bool) onResult,
+    required SpeechResultCallback onResult,
     required VoidCallback onDone,
     Function(double)? onSoundLevelChange,
     String? localeId,
@@ -195,17 +241,29 @@ class SpeechServiceImpl implements SpeechService {
         await _stt.cancel();
       }
 
+      final resolvedLocale = _resolveLocale(localeId);
+
       await _stt.listen(
         onResult: (result) {
-          final Set<String> candidates = {result.recognizedWords};
-          for (var alternate in result.alternates) {
-            candidates.add(alternate.recognizedWords);
+          final primary = result.recognizedWords.trim();
+          final Set<String> candidates = {};
+          if (primary.isNotEmpty) {
+            candidates.add(primary);
+          }
+          for (final alternate in result.alternates) {
+            final alt = alternate.recognizedWords.trim();
+            if (alt.isNotEmpty) {
+              candidates.add(alt);
+            }
+          }
+          if (candidates.isEmpty && result.recognizedWords.isNotEmpty) {
+            candidates.add(result.recognizedWords);
           }
           onResult(candidates.toList(), result.finalResult);
         },
         onSoundLevelChange: onSoundLevelChange,
         listenOptions: SpeechListenOptions(
-          localeId: localeId,
+          localeId: resolvedLocale,
           listenFor: const Duration(seconds: 45),
           pauseFor:
               pauseFor ??
