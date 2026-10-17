@@ -775,32 +775,35 @@ class _LeaderboardToggle extends StatelessWidget {
                       : null,
                 ),
                 alignment: Alignment.center,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.public_rounded,
-                      color: !isKidsMode
-                          ? Colors.white
-                          : (isDark ? Colors.white54 : Colors.black54),
-                      size: 15.r,
-                    ),
-                    SizedBox(width: 5.w),
-                    Text(
-                      context.tr(
-                        'leaderboard.global_ranks',
-                        fallback: 'Global Ranks',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontWeight: FontWeight.w800,
-                        fontSize: 13.sp,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.public_rounded,
                         color: !isKidsMode
                             ? Colors.white
                             : (isDark ? Colors.white54 : Colors.black54),
+                        size: 15.r,
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 5.w),
+                      Text(
+                        context.tr(
+                          'leaderboard.global_ranks',
+                          fallback: 'Global Ranks',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontWeight: FontWeight.w800,
+                          fontSize: 13.sp,
+                          color: !isKidsMode
+                              ? Colors.white
+                              : (isDark ? Colors.white54 : Colors.black54),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -830,32 +833,35 @@ class _LeaderboardToggle extends StatelessWidget {
                       : null,
                 ),
                 alignment: Alignment.center,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.child_care_rounded,
-                      color: isKidsMode
-                          ? Colors.white
-                          : (isDark ? Colors.white54 : Colors.black54),
-                      size: 15.r,
-                    ),
-                    SizedBox(width: 5.w),
-                    Text(
-                      context.tr(
-                        'leaderboard.kids_zone',
-                        fallback: 'Kids Zone',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontWeight: FontWeight.w800,
-                        fontSize: 13.sp,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.child_care_rounded,
                         color: isKidsMode
                             ? Colors.white
                             : (isDark ? Colors.white54 : Colors.black54),
+                        size: 15.r,
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 5.w),
+                      Text(
+                        context.tr(
+                          'leaderboard.kids_zone',
+                          fallback: 'Kids Zone',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontWeight: FontWeight.w800,
+                          fontSize: 13.sp,
+                          color: isKidsMode
+                              ? Colors.white
+                              : (isDark ? Colors.white54 : Colors.black54),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

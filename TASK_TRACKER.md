@@ -4,10 +4,10 @@
 > **Executive Summary & Brutal Audit**:
 >
 > - **Total Dart Files in `lib/`**: **1,068 files**
-> - **Total Test Files in `test/`**: **198 files**
-> - **Total Passing Tests**: **4,000+ Tests Passing (100% Green on completed suites)**
-> - **Completed Test Suites**: **181 items** across Sections 1 to 15 (100% complete) and Section 16 (2 items complete)
-> - **Remaining Game Screens & Hubs to Test / Harden**: **6 items** remaining in Section 16.
+> - **Total Test Files in `test/`**: **199 files**
+> - **Total Passing Tests**: **4,050+ Tests Passing (100% Green on completed suites)**
+> - **Completed Test Suites**: **182 items** across Sections 1 to 15 (100% complete) and Section 16 (3 items complete)
+> - **Remaining Game Screens & Hubs to Test / Harden**: **5 items** remaining in Section 16.
 
 ---
 
@@ -59,7 +59,7 @@ Every game test suite MUST rigorously satisfy:
 | **13** | **Daily Challenges & Micro-Games** | 11 | 11 | 0 | 🟢 100% Complete (57 tests) |
 | **14** | **Home, Shell & Navigation** | 6 | 6 | 0 | 🟢 100% Complete (131 tests) |
 | **15** | **Profile, Progress & Trophies** | 7 | 7 | 0 | 🟢 100% Complete (117 tests) |
-| **16** | **Leaderboard, Settings, Paywall, Splash** | 8 | 2 | 6 | 🟡 2 Items Completed (21 tests; 6 items remaining) |
+| **16** | **Leaderboard, Settings, Paywall, Splash** | 8 | 3 | 5 | 🟡 3 Items Completed (39 tests; 5 items remaining) |
 
 ---
 
@@ -518,10 +518,20 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 16: LEADERBOARD, SETTINGS, PAYWALL, SPLASH (2 / 8 COMPLETE)
+### SECTION 16: LEADERBOARD, SETTINGS, PAYWALL, SPLASH (3 / 8 COMPLETE)
 
 - [x] **16.1** `tts_voice_selection_bottom_sheet_test.dart` (Widget Test) — ✅ `[DONE - 3/3 tests passing]`
-- [ ] **16.2** `leaderboard_screen_test.dart` (Leaderboard Widget Test) — 🔴 `[PENDING]`
+- [x] **16.2** `leaderboard_screen_test.dart` (Leaderboard Widget Test) — ✅ `[DONE - 18/18 tests passing]`
+  - Validates full `LeaderboardScreen` standings, podium, global vs kids toggle, and user ranking across 9 groups (18 tests):
+    1. Initial & Loading States: Renders `LeaderboardShimmerLoading` placeholder when state is `LeaderboardLoading` and `LeaderboardInitial`, verifies `LoadLeaderboard(isKids: false)` was dispatched on initial screen mount.
+    2. Error State & Retry Flow: Renders `_LeaderboardErrorView` with `Icons.cloud_off_rounded`, error message, and retry button; tapping retry dispatches `LoadLeaderboard(isKids: false)`.
+    3. Empty State Handling: Renders empty state when users list is empty (`Icons.emoji_events_outlined`, "No rankings yet", "Complete lessons to appear on the leaderboard!"), handles kids empty state, and renders empty placeholder under podium when users length <= 3.
+    4. Populated Leaderboard — Header, Podium & Rank Card: Renders `LeaderboardHeader` with title and update time badge (`Icons.update_rounded`), renders `LeaderboardPodium` with top 3 users (1st place with crown, 2nd, 3rd with scores and level counts), and renders sticky `LeaderboardRankCard` with user standing, rank (#7), progress bar, and level ratio (`42 / 100`).
+    5. Populated Leaderboard — Rank 4-N List & Current User Highlighting: Renders section divider and "Top Challengers" header, renders `LeaderboardRankTile` for rank 4 to 10, highlights current user tile with distinctive border and "You" badge.
+    6. Kids Zone vs Global Toggle: Displays toggle with "Global Ranks" (globe icon) and "Kids Zone" (child care icon); tapping "Kids Zone" switches mode and dispatches `LoadLeaderboard(isKids: true)`; renders Kids Leaderboard header and "Coins" score labels; tapping "Global Ranks" switches back.
+    7. Pull-To-Refresh: Pull down gesture triggers `RefreshIndicator` and dispatches `LoadLeaderboard(completer: ...)`.
+    8. "Find Me" Floating Action Button: Renders floating action button with `Icons.my_location_rounded` and `#7` when user rank is >= 6; tapping FAB animates scroll to current user's standing; hides button when user is already in top 3 podium.
+    9. Responsive Viewports, Accessibility & Themes: Compact mobile layout (320x568) zero overflow, large tablet layout (800x1280) zero overflow, accessibility text scaling (1.3x) without layout errors, Dark Theme mode, and Midnight Theme mode (`isMidnight = isDark && scaffoldBackgroundColor == Colors.black`).
 - [x] **16.3** `daily_words_test.dart` (Daily Words Flow & Logic Test) — ✅ `[DONE - 18/18 tests passing]`
   - Validates DailyWord parsing from JSON with curriculum fields, value equality via Equatable, WordSet format parsing, WordProgress serialization round-trip and immutable copyWith, DailyWordsService 750-day wrap and cycle 2 continuation, consecutive and non-consecutive calendar streak math, markWordLearned (Box 1) vs markWordNeedsReview (Box 0) Leitner transitions, todayWords resolution, mastery stats calculation, direct Box 3 Mastered promotion, DailyWordsBloc state transitions and session reset, and widget rendering of WordCardFront (frequency & difficulty badges) and WordCardBack (definitions, examples, safe scroll handling).
 - [ ] **16.4** `settings_screen_test.dart` (Settings Widget Test) — 🔴 `[PENDING]`
