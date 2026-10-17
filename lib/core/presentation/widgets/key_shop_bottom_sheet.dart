@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -140,7 +141,9 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                         ),
                       ),
                     ),
-                    Container(
+                    Builder(
+                      builder: (ctx) {
+                        final keyIcon = Container(
                           padding: EdgeInsets.all(16.r),
                           decoration: BoxDecoration(
                             color: widget.primaryColor.withValues(alpha: 0.2),
@@ -163,13 +166,19 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                             size: 56.r,
                             color: widget.primaryColor,
                           ),
-                        )
-                        .animate(onPlay: (c) => c.repeat())
-                        .shimmer(
-                          duration: 2.seconds,
-                          delay: 1.seconds,
-                          color: Colors.white.withValues(alpha: 0.4),
-                        ),
+                        );
+                        if (VowlMotion.shouldReduceMotion(ctx)) {
+                          return keyIcon;
+                        }
+                        return keyIcon
+                            .animate(onPlay: (c) => c.repeat())
+                            .shimmer(
+                              duration: 2.seconds,
+                              delay: 1.seconds,
+                              color: Colors.white.withValues(alpha: 0.4),
+                            );
+                      },
+                    ),
                     SizedBox(height: 16.h),
                     Text(
                       context.tr(

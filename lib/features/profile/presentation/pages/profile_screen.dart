@@ -30,6 +30,7 @@ import 'package:vowl/features/home/presentation/widgets/vowl_mascot_card.dart';
 
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -126,22 +127,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           buildWhen: (prev, curr) =>
                                               prev.photoUrl != curr.photoUrl,
                                           builder: (context, profileState) {
-                                            return ProfileHeader(
-                                              user: user,
-                                              immediatePhotoUrl:
-                                                  profileState.photoUrl,
-                                              onEditName: () =>
-                                                  _showEditNameSheet(
-                                                    context,
-                                                    user.displayName ?? '',
-                                                  ),
-                                              onEditPhoto: () =>
-                                                  _showImageSourceSheet(
-                                                    context,
-                                                  ),
-                                            ).animate().fadeIn(
-                                              duration: 800.ms,
-                                              curve: Curves.easeOutCubic,
+                                            return Builder(
+                                              builder: (ctx) {
+                                                final header = ProfileHeader(
+                                                  user: user,
+                                                  immediatePhotoUrl:
+                                                      profileState.photoUrl,
+                                                  onEditName: () =>
+                                                      _showEditNameSheet(
+                                                        context,
+                                                        user.displayName ?? '',
+                                                      ),
+                                                  onEditPhoto: () =>
+                                                      _showImageSourceSheet(
+                                                        context,
+                                                      ),
+                                                );
+                                                if (VowlMotion.shouldReduceMotion(ctx)) {
+                                                  return header;
+                                                }
+                                                return header.animate().fadeIn(
+                                                  duration: 800.ms,
+                                                  curve: Curves.easeOutCubic,
+                                                );
+                                              },
                                             );
                                           },
                                         ),
@@ -203,11 +212,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
 
                     SliverToBoxAdapter(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children:
-                            [
-                                  // ── 0. Vowl Mascot / Companion ──
+                      child: Builder(
+                        builder: (ctx) {
+                          final contentChildren = <Widget>[
+                            // ── 0. Vowl Mascot / Companion ──
                                   Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
@@ -451,7 +459,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       SizedBox(height: 100.h),
                                     ],
                                   ),
-                                ]
+                          ];
+                          if (VowlMotion.shouldReduceMotion(ctx)) {
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: contentChildren,
+                            );
+                          }
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: contentChildren
                                 .animate(interval: 80.ms)
                                 .fadeIn(
                                   duration: 600.ms,
@@ -469,6 +486,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   duration: 600.ms,
                                   curve: Curves.easeOutCubic,
                                 ),
+                          );
+                        },
                       ),
                     ),
                   ],
@@ -609,13 +628,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
               size: 20.r,
             ),
             SizedBox(width: 10.w),
-            Text(
-              context.tr('settings.sign_out', fallback: 'SIGN OUT ACCOUNT'),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w700,
-                color: AppColors.red500,
+            Flexible(
+              child: Text(
+                context.tr('settings.sign_out', fallback: 'SIGN OUT ACCOUNT'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.red500,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
@@ -660,6 +683,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     showModalBottomSheet(
       context: context,
       useRootNavigator: true,
+      isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (context) => BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
@@ -676,10 +700,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   : Colors.black.withValues(alpha: 0.05),
             ),
           ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
               Container(
                 width: 40.w,
                 height: 4.h,
@@ -761,6 +786,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(height: 24.h),
             ],
           ),
+        ),
         ),
       ),
     );
@@ -876,8 +902,9 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
               : Colors.black.withValues(alpha: 0.05),
         ),
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(height: 12.h),
           Container(
@@ -1011,8 +1038,9 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
           ),
         ],
       ),
-    );
-  }
+    ),
+  );
+}
 }
 
 class ProfileShimmerLoading extends StatelessWidget {

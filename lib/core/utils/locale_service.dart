@@ -306,7 +306,7 @@ extension LocaleContextExtension on BuildContext {
 }
 
 /// Cached reference to avoid repeated GetIt lookups in hot paths.
-late final LocaleService _localeServiceInstance;
+late LocaleService _localeServiceInstance;
 
 /// Must be called once during DI initialization.
 void initLocaleServiceReference(LocaleService service) {

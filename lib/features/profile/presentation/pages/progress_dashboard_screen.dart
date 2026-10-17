@@ -90,7 +90,7 @@ class ProgressDashboardScreen extends StatelessWidget {
       child: Row(
         children: [
           IconButton(
-            onPressed: () => context.pop(),
+            onPressed: () => context.canPop() ? context.pop() : context.go('/home'),
             icon: Icon(
               Icons.arrow_back_rounded,
               color: Theme.of(context).colorScheme.onSurface,
@@ -229,16 +229,16 @@ class _WeeklyXpChart extends StatelessWidget {
           SizedBox(height: 20.h),
           // Bar Chart
           SizedBox(
-            height: 120.h,
+            height: 135.h,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: days.map((day) {
                 final fraction = maxXp > 0
                     ? (day.xp / maxXp).clamp(0.0, 1.0)
                     : 0.0;
-                final barHeight = (fraction * 80.h).clamp(
-                  day.xp > 0 ? 8.h : 4.h,
-                  80.h,
+                final barHeight = (fraction * 36.h).clamp(
+                  day.xp > 0 ? 6.h : 4.h,
+                  36.h,
                 );
 
                 return Expanded(
@@ -299,7 +299,7 @@ class _WeeklyXpChart extends StatelessWidget {
                             borderRadius: BorderRadius.circular(6.r),
                           ),
                         ),
-                        SizedBox(height: 8.h),
+                        SizedBox(height: 4.h),
                         FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Text(

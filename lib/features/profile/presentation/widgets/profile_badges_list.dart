@@ -10,6 +10,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -236,32 +237,37 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                         ..setEntry(3, 2, 0.001)
                                         ..rotateY(0.1),
                                       alignment: FractionalOffset.center,
-                                      child:
-                                          ShaderMask(
-                                                shaderCallback: (bounds) =>
-                                                    LinearGradient(
-                                                      begin: Alignment(
-                                                        -1.0 + foilShift,
-                                                        -1.0,
-                                                      ),
-                                                      end: Alignment(
-                                                        1.0 + foilShift,
-                                                        1.0,
-                                                      ),
-                                                      colors: [
-                                                        Colors.white,
-                                                        badge.color,
-                                                        badge.color.withValues(
-                                                          alpha: 0.5,
-                                                        ),
-                                                      ],
-                                                    ).createShader(bounds),
-                                                child: Icon(
-                                                  badge.icon,
-                                                  size: 80.r,
-                                                  color: Colors.white,
-                                                ),
-                                              )
+                                      child: Builder(
+                                        builder: (context) {
+                                          final iconShader = ShaderMask(
+                                            shaderCallback: (bounds) =>
+                                                LinearGradient(
+                                                  begin: Alignment(
+                                                    -1.0 + foilShift,
+                                                    -1.0,
+                                                  ),
+                                                  end: Alignment(
+                                                    1.0 + foilShift,
+                                                    1.0,
+                                                  ),
+                                                  colors: [
+                                                    Colors.white,
+                                                    badge.color,
+                                                    badge.color.withValues(
+                                                      alpha: 0.5,
+                                                    ),
+                                                  ],
+                                                ).createShader(bounds),
+                                            child: Icon(
+                                              badge.icon,
+                                              size: 80.r,
+                                              color: Colors.white,
+                                            ),
+                                          );
+                                          if (VowlMotion.shouldReduceMotion(context)) {
+                                            return iconShader;
+                                          }
+                                          return iconShader
                                               .animate(
                                                 onPlay: (c) =>
                                                     c.repeat(reverse: true),
@@ -275,7 +281,9 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                                 begin: const Offset(0.95, 0.95),
                                                 end: const Offset(1.05, 1.05),
                                                 duration: 2500.ms,
-                                              ),
+                                              );
+                                        },
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -404,18 +412,23 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      context.tr(
-                        'profile.hall_of_fame_progress',
-                        fallback: 'Collection Progress',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w800,
-                        color: isDark ? Colors.white70 : AppColors.slate700,
+                    Expanded(
+                      child: Text(
+                        context.tr(
+                          'profile.hall_of_fame_progress',
+                          fallback: 'Collection Progress',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w800,
+                          color: isDark ? Colors.white70 : AppColors.slate700,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
+                    SizedBox(width: 8.w),
                     Text(
                       context.tr(
                         'profile.badges_progress',

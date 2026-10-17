@@ -20,6 +20,7 @@ import 'package:vowl/core/presentation/widgets/hint_purchase_dialog.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/premium_store_bottom_sheet.dart';
 
 class VowlCoinsScreen extends StatelessWidget {
@@ -136,18 +137,23 @@ class VowlCoinsScreen extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(width: 10.w),
-                              Text(
-                                'Vowl Treasury',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: isDark
-                                      ? Colors.white
-                                      : AppColors.slate900,
+                              Expanded(
+                                child: AutoSizeText(
+                                  'Vowl Treasury',
+                                  maxLines: 1,
+                                  minFontSize: 12,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: isDark
+                                        ? Colors.white
+                                        : AppColors.slate900,
+                                  ),
                                 ),
                               ),
-                              const Spacer(),
+                              SizedBox(width: 8.w),
                               Container(
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 10.w,
@@ -422,7 +428,11 @@ class VowlCoinsScreen extends StatelessWidget {
                         ],
                       ),
                     )
-                    .animate(onPlay: (c) => c.repeat(reverse: true))
+                    .animate(
+                      onPlay: VowlMotion.shouldReduceMotion(context)
+                          ? null
+                          : (c) => c.repeat(reverse: true),
+                    )
                     .scale(
                       begin: const Offset(0.92, 0.92),
                       end: const Offset(1.08, 1.08),
@@ -822,19 +832,23 @@ class VowlCoinsScreen extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                Text(
-                                  pack.name,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w700,
-                                    color: canAfford
-                                        ? (isDark
-                                              ? Colors.white
-                                              : AppColors.slate800)
-                                        : (isDark
-                                              ? Colors.white30
-                                              : Colors.black26),
+                                Flexible(
+                                  child: Text(
+                                    pack.name,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: canAfford
+                                          ? (isDark
+                                                ? Colors.white
+                                                : AppColors.slate800)
+                                          : (isDark
+                                                ? Colors.white30
+                                                : Colors.black26),
+                                    ),
                                   ),
                                 ),
                                 if (pack.isBest) ...[

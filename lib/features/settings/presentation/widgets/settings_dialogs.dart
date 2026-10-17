@@ -100,65 +100,67 @@ class SettingsDialogs {
             width: width,
             padding: EdgeInsets.all(32.r),
             borderRadius: BorderRadius.circular(40.r),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _DialogIcon(
-                  icon: Icons.power_settings_new_rounded,
-                  color: Colors.red,
-                ),
-                SizedBox(height: 24.h),
-                Text(
-                  context.tr(
-                    'settings_dialogs.sign_out_title',
-                    fallback: 'Sign Out?',
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _DialogIcon(
+                    icon: Icons.power_settings_new_rounded,
+                    color: Colors.red,
                   ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : AppColors.slate900,
+                  SizedBox(height: 24.h),
+                  Text(
+                    context.tr(
+                      'settings_dialogs.sign_out_title',
+                      fallback: 'Sign Out?',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: 16.h),
-                Text(
-                  // FIX (HIGH-2): Was hardcoded English. Now localised.
-                  context.tr(
-                    'settings_dialogs.sign_out_body',
-                    fallback:
-                        'Are you sure you want to sign out? Any unsaved progress may be lost. You will need an internet connection to sign back in.',
+                  SizedBox(height: 16.h),
+                  Text(
+                    // FIX (HIGH-2): Was hardcoded English. Now localised.
+                    context.tr(
+                      'settings_dialogs.sign_out_body',
+                      fallback:
+                          'Are you sure you want to sign out? Any unsaved progress may be lost. You will need an internet connection to sign back in.',
+                    ),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      color: isDark ? Colors.white60 : Colors.black54,
+                      height: 1.5,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    color: isDark ? Colors.white60 : Colors.black54,
-                    height: 1.5,
+                  SizedBox(height: 32.h),
+                  _PrimaryButton(
+                    label: context.tr(
+                      'settings_dialogs.sign_out_confirm',
+                      fallback: 'Sign Out',
+                    ),
+                    color: Colors.red,
+                    onPressed: () {
+                      Navigator.pop(dialogContext);
+                      authBloc.add(const AuthLogoutRequested());
+                    },
                   ),
-                ),
-                SizedBox(height: 32.h),
-                _PrimaryButton(
-                  label: context.tr(
-                    'settings_dialogs.sign_out_confirm',
-                    fallback: 'Sign Out',
+                  SizedBox(height: 12.h),
+                  _SecondaryTextButton(
+                    label: context.tr(
+                      'settings_dialogs.sign_out_cancel',
+                      fallback: 'CANCEL',
+                    ),
+                    isDark: isDark,
+                    onPressed: () => Navigator.pop(dialogContext),
                   ),
-                  color: Colors.red,
-                  onPressed: () {
-                    Navigator.pop(dialogContext);
-                    authBloc.add(const AuthLogoutRequested());
-                  },
-                ),
-                SizedBox(height: 12.h),
-                _SecondaryTextButton(
-                  label: context.tr(
-                    'settings_dialogs.sign_out_cancel',
-                    fallback: 'CANCEL',
-                  ),
-                  isDark: isDark,
-                  onPressed: () => Navigator.pop(dialogContext),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

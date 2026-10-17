@@ -231,27 +231,31 @@ class AdventureMasteryGrid extends StatelessWidget {
                           color: isDark ? Colors.white : AppColors.slate800,
                         ),
                       ),
-                      Row(
-                        children: [
-                          Text(
-                            '${cat.levelsCompleted} ${context.tr('adventure.levels_dot', fallback: 'levels ·')} ',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 9.sp,
-                              fontWeight: FontWeight.w600,
-                              color: isDark ? Colors.white38 : Colors.black38,
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        alignment: Alignment.centerLeft,
+                        child: Row(
+                          children: [
+                            Text(
+                              '${cat.levelsCompleted} ${context.tr('adventure.levels_dot', fallback: 'levels ·')} ',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 9.sp,
+                                fontWeight: FontWeight.w600,
+                                color: isDark ? Colors.white38 : Colors.black38,
+                              ),
                             ),
-                          ),
-                          Text(
-                            levelLabel,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 9.sp,
-                              fontWeight: FontWeight.w800,
-                              color: cat.color.withValues(alpha: 0.7),
+                            Text(
+                              levelLabel,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 9.sp,
+                                fontWeight: FontWeight.w800,
+                                color: cat.color.withValues(alpha: 0.7),
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                       SizedBox(height: 10.r),
                       ClipRRect(
