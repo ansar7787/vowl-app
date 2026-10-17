@@ -5,9 +5,9 @@
 >
 > - **Total Dart Files in `lib/`**: **1,068 files**
 > - **Total Test Files in `test/`**: **200 files**
-> - **Total Passing Tests**: **4,164+ Tests Passing (100% Green on completed suites)**
-> - **Completed Test Suites**: **187 items** across Sections 1 to 16 (100% complete)
-> - **Remaining Screens & Services to Test / Harden**: **8 items** remaining (Section 17).
+> - **Total Passing Tests**: **4,177+ Tests Passing (100% Green on completed suites)**
+> - **Completed Test Suites**: **188 items** across Sections 1 to 16 (100% complete) and Section 17 (1 item complete)
+> - **Remaining Screens & Services to Test / Harden**: **7 items** remaining (Section 17).
 
 ---
 
@@ -60,7 +60,7 @@ Every game test suite MUST rigorously satisfy:
 | **14** | **Home, Shell & Navigation** | 6 | 6 | 0 | 🟢 100% Complete (131 tests) |
 | **15** | **Profile, Progress & Trophies** | 7 | 7 | 0 | 🟢 100% Complete (117 tests) |
 | **16** | **Leaderboard, Settings, Paywall, Splash** | 8 | 8 | 0 | 🟢 100% Complete (150 tests) |
-| **17** | **Core Screens, Onboarding & Critical Services** | 8 | 0 | 8 | 🔴 0 Items Completed (8 items pending) |
+| **17** | **Core Screens, Onboarding & Critical Services** | 8 | 1 | 7 | 🟡 1 Item Completed (13 tests; 7 items remaining) |
 
 ---
 
@@ -576,10 +576,16 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 17: CORE SCREENS, ONBOARDING & CRITICAL SERVICES (0 / 8 COMPLETE)
+### SECTION 17: CORE SCREENS, ONBOARDING & CRITICAL SERVICES (1 / 8 COMPLETE)
 
-- [ ] **17.1** `hatching_page_test.dart` (Companion Egg Hatching & Pet Naming Onboarding Test) — 🔴 `[PENDING]`
-  - Covers `lib/features/onboarding/presentation/pages/hatching_page.dart` (497 lines): egg cracking animations, pet reveal, companion name selection, audio effects, sound/haptic feedback, and transition to main app.
+- [x] **17.1** `hatching_page_test.dart` (Companion Egg Hatching & Pet Naming Onboarding Test) — 🟢 `[DONE - 13/13 tests passing]`
+  - Validates full `HatchingPage` companion hatching onboarding flow across 6 test groups (13 tests):
+    1. Initial Rendering & Stage 0 (Egg Display): Renders `MeshGradientBackground`, egg container, glowing spark icon (`Icons.auto_awesome`), status text "Tap to begin", semantics button "An egg is hatching", and pre-allocated CTA spacer.
+    2. Egg Tapping & Cracking State (Stage 0 -> Stage 1): Tap triggers `HapticService.selection()`, renders `EggCrackPainter` custom painter, updates text to "Something is happening...", and ignores redundant taps during cracking.
+    3. Hatching Animation, Mascot Reveal & Audio (Stage 1 -> Stage 2): 1500ms timer triggers `HapticService.success()`, transitions to Stage 2, plays explosive confetti, reveals `VowlMascot` in happy state, shows Owly dialogue box with quotes, runs typewriter animation, invokes `TtsService.speak` with user's name ("Aria"), and animates in "Start Learning!" CTA button.
+    4. Locale & TTS Language Mapping Matrix: Spanish (`es`) maps to `es-ES`, Hindi (`hi`) maps to `hi-IN`, Japanese (`ja`) maps to `ja-JP`, unsupported code falls back to `en-US`.
+    5. CTA Button Interaction & Navigation Flow: Tapping "Start Learning!" stops active TTS via `TtsService.stop()` and navigates to `/home`.
+    6. Responsive Viewports, Themes & Safe Disposal: Compact mobile (320x568) zero overflow, tablet (800x1280) zero overflow, dark theme background palette (`AppColors.slate900`), light theme background palette (`AppColors.slate50`), safe unmount and disposal canceling timers and stopping TTS.
 - [ ] **17.2** `about_screen_test.dart` (App About, Legal & Build Attribution Test) — 🔴 `[PENDING]`
   - Covers `lib/features/settings/presentation/pages/about_screen.dart` (337 lines): `/about` route, version string, build number, app credits, terms/privacy web launch triggers, and licenses navigation.
 - [ ] **17.3** `offline_quota_exhausted_page_test.dart` (Offline Play Gate & Quota Blocker Test) — 🔴 `[PENDING]`
