@@ -288,63 +288,66 @@ class _PodiumSlot extends StatelessWidget {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 6.h),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Flexible(
-                            child: AutoSizeText(
-                              (user.displayName ?? 'Player').split(' ').first,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: isFirst ? 11.sp : 9.sp,
-                                fontWeight: FontWeight.w900,
-                                color: MeshGradientBackground.getContrastColor(
-                                  context,
+                  padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 4.h),
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Flexible(
+                              child: AutoSizeText(
+                                (user.displayName ?? 'Player').split(' ').first,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: isFirst ? 11.sp : 9.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: MeshGradientBackground.getContrastColor(
+                                    context,
+                                  ),
+                                  height: 1.1,
                                 ),
-                                height: 1.1,
-                              ),
-                              maxLines: 1,
-                              minFontSize: 6,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                          if (user.isPremium)
-                            Padding(
-                              padding: EdgeInsets.only(left: 4.w),
-                              child: Icon(
-                                Icons.verified_rounded,
-                                color: AppColors.amber500,
-                                size: isFirst ? 12.r : 10.r,
+                                maxLines: 1,
+                                minFontSize: 6,
+                                overflow: TextOverflow.ellipsis,
+                                textAlign: TextAlign.center,
                               ),
                             ),
-                        ],
-                      ),
-                      SizedBox(height: 2.h),
-                      // Primary score — single metric, no clutter
-                      AutoSizeText(
-                        '$score $scoreLabel',
-                        maxLines: 1,
-                        minFontSize: 5,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: isFirst ? 9.sp : 7.sp,
-                          fontWeight: FontWeight.w800,
-                          color: colors[0].withValues(alpha: 0.9),
-                          height: 1.1,
+                            if (user.isPremium)
+                              Padding(
+                                padding: EdgeInsets.only(left: 4.w),
+                                child: Icon(
+                                  Icons.verified_rounded,
+                                  color: AppColors.amber500,
+                                  size: isFirst ? 12.r : 10.r,
+                                ),
+                              ),
+                          ],
                         ),
-                      ),
-                      if (user.previousRank != null) ...[
                         SizedBox(height: 2.h),
-                        _buildRankChangeIndicator(user.previousRank!, rank),
+                        // Primary score — single metric, no clutter
+                        AutoSizeText(
+                          '$score $scoreLabel',
+                          maxLines: 1,
+                          minFontSize: 5,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: isFirst ? 9.sp : 7.sp,
+                            fontWeight: FontWeight.w800,
+                            color: colors[0].withValues(alpha: 0.9),
+                            height: 1.1,
+                          ),
+                        ),
+                        if (user.previousRank != null) ...[
+                          SizedBox(height: 2.h),
+                          _buildRankChangeIndicator(user.previousRank!, rank),
+                        ],
                       ],
-                    ],
+                    ),
                   ),
                 ),
               ),
