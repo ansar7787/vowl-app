@@ -484,6 +484,95 @@ class SettingsDialogs {
   }
 
   // ---------------------------------------------------------------------------
+  // Generic Delete Confirmation Card (DRY)
+  // ---------------------------------------------------------------------------
+
+  /// Shows the app-wide glassmorphic delete confirmation card (matching the
+  /// settings delete account card design).
+  static Future<bool?> showDeleteConfirmation(
+    BuildContext context, {
+    required String title,
+    required String description,
+    String? confirmLabel,
+    String? cancelLabel,
+    VoidCallback? onConfirm,
+  }) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    di.sl<HapticService>().warning();
+    final width = _dialogWidth(context, 320.w);
+
+    return showGeneralDialog<bool>(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
+      barrierColor: Colors.black54,
+      transitionDuration: const Duration(milliseconds: 300),
+      pageBuilder: (dialogContext, anim1, anim2) => Center(
+        child: Material(
+          color: Colors.transparent,
+          child: GlassTile(
+            width: width,
+            padding: EdgeInsets.all(32.r),
+            borderRadius: BorderRadius.circular(40.r),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const _DialogIcon(
+                    icon: Icons.delete_outline_rounded,
+                    color: Colors.red,
+                  ),
+                  SizedBox(height: 24.h),
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 22.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 16.h),
+                  Text(
+                    description,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      color: isDark ? Colors.white60 : Colors.black54,
+                      height: 1.5,
+                    ),
+                  ),
+                  SizedBox(height: 32.h),
+                  _PrimaryButton(
+                    label: confirmLabel ??
+                        context.tr('common.delete', fallback: 'Delete'),
+                    color: Colors.red,
+                    onPressed: () {
+                      Navigator.pop(dialogContext, true);
+                      onConfirm?.call();
+                    },
+                  ),
+                  SizedBox(height: 12.h),
+                  _SecondaryTextButton(
+                    label: cancelLabel ??
+                        context.tr('common.cancel', fallback: 'CANCEL'),
+                    isDark: isDark,
+                    onPressed: () => Navigator.pop(dialogContext, false),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+      transitionBuilder: (_, anim1, anim2, child) =>
+          _dialogTransition(anim1, child),
+    );
+  }
+
+  // ---------------------------------------------------------------------------
   // Delete Account (Step 2 — final type-to-confirm)
   // FIX (CRITICAL-3): Extracted to StatefulWidget for controller disposal.
   // ---------------------------------------------------------------------------

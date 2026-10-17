@@ -452,6 +452,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                               onTapTranslationLanguage: () async {
                                                 await LanguageSelectionBottomSheet.show(
                                                   context,
+                                                  currentLanguage:
+                                                      _translationLanguageNameVal,
                                                 );
                                                 if (!mounted) return;
                                                 _loadTranslationLanguageName();
@@ -853,7 +855,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
               onTap: onTapTranslationLanguage,
               trailing: translationLanguageName != null
                   ? Text(
-                      translationLanguageName!,
+                      '${TranslationService.getFlag(translationLanguageName!)} $translationLanguageName',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,

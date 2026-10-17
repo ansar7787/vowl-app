@@ -22,7 +22,6 @@ import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/translation/presentation/bloc/translation_bloc.dart';
-import 'package:vowl/features/translation/presentation/widgets/language_manager_sheet.dart';
 
 class TranslateScreen extends StatefulWidget {
   const TranslateScreen({super.key});
@@ -136,17 +135,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
 
   void _showLanguageManager(BuildContext context, bool isDark) {
     _haptics.selection();
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      barrierColor: Colors.black.withValues(alpha: 0.55),
-      isScrollControlled: true,
-      useSafeArea: true,
-      builder: (ctx) => BlocProvider.value(
-        value: context.read<TranslationBloc>(),
-        child: LanguageManagerSheet(isDark: isDark),
-      ),
-    );
+    _showLanguagePicker(context, isDark, isSource: false);
   }
 
   Future<void> _speakText({
@@ -1455,7 +1444,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                     Text(
                       context.tr(
                         'translation.downloading_pack',
-                        fallback: 'Downloading offline language pack (~30MB)...',
+                        fallback: 'Downloading offline language pack...',
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
