@@ -21,6 +21,7 @@ import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -131,38 +132,34 @@ class AdventureLevelScreen extends StatelessWidget {
                         backgroundColor: Colors.transparent,
                         surfaceTintColor: Colors.transparent,
                         elevation: 0,
-                        expandedHeight: 80.h,
-                        collapsedHeight: 64.h,
                         toolbarHeight: 64.h,
-                        flexibleSpace: FlexibleSpaceBar(
-                          titlePadding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 8.h,
+                        titleSpacing: 16.w,
+                        centerTitle: false,
+                        title: GlassTile(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8.w,
+                            vertical: 6.h,
                           ),
-                          title: GlassTile(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 8.w,
-                              vertical: 6.h,
-                            ),
-                            borderRadius: BorderRadius.circular(20.r),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(
-                                  width: 32.r,
-                                  height: 32.r,
-                                  child: IconButton(
-                                    padding: EdgeInsets.zero,
-                                    iconSize: 18.r,
-                                    onPressed: () => context.pop(),
-                                    icon: const Icon(
-                                      Icons.arrow_back_ios_new_rounded,
-                                    ),
+                          borderRadius: BorderRadius.circular(20.r),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 32.r,
+                                height: 32.r,
+                                child: IconButton(
+                                  padding: EdgeInsets.zero,
+                                  iconSize: 18.r,
+                                  onPressed: () => context.pop(),
+                                  icon: const Icon(
+                                    Icons.arrow_back_ios_new_rounded,
                                   ),
                                 ),
-                                SizedBox(width: 6.w),
-                                Text(
+                              ),
+                              SizedBox(width: 6.w),
+                              Expanded(
+                                child: Text(
                                   'Adventure Level',
+                                  overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 14.sp,
@@ -172,41 +169,41 @@ class AdventureLevelScreen extends StatelessWidget {
                                         : AppColors.slate900,
                                   ),
                                 ),
-                                const Spacer(),
-                                Container(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 10.w,
-                                    vertical: 4.h,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: const Color(
-                                      0xFF10B981,
-                                    ).withValues(alpha: 0.15),
-                                    borderRadius: BorderRadius.circular(12.r),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Icon(
-                                        Icons.monetization_on_rounded,
-                                        color: AppColors.emerald500,
-                                        size: 14.r,
-                                      ),
-                                      SizedBox(width: 4.w),
-                                      Text(
-                                        '${user.coins}',
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w800,
-                                          color: AppColors.emerald500,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                              ),
+                              SizedBox(width: 6.w),
+                              Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 10.w,
+                                  vertical: 4.h,
                                 ),
-                              ],
-                            ),
+                                decoration: BoxDecoration(
+                                  color: const Color(
+                                    0xFF10B981,
+                                  ).withValues(alpha: 0.15),
+                                  borderRadius: BorderRadius.circular(12.r),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(
+                                      Icons.monetization_on_rounded,
+                                      color: AppColors.emerald500,
+                                      size: 14.r,
+                                    ),
+                                    SizedBox(width: 4.w),
+                                    Text(
+                                      '${user.coins}',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: AppColors.emerald500,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -513,7 +510,7 @@ class AdventureLevelScreen extends StatelessWidget {
         ),
         SizedBox(height: 16.h),
         SizedBox(
-          height: 140.h,
+          height: 156.h,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -527,103 +524,96 @@ class AdventureLevelScreen extends StatelessWidget {
 
               return GlassTile(
                 width: 240.w,
-                padding: EdgeInsets.all(20.r),
+                padding: EdgeInsets.all(14.r),
                 borderRadius: BorderRadius.circular(32.r),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(10.r),
-                          decoration: BoxDecoration(
-                            color: color.withValues(alpha: 0.1),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            perk['icon'] as IconData,
-                            color: color,
-                            size: 20.r,
-                          ),
-                        ),
-                        const Spacer(),
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 8.w,
-                            vertical: 4.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: isActive
-                                ? AppColors.emerald500.withValues(alpha: 0.1)
-                                : Colors.grey.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(8.r),
-                          ),
-                          child: Text(
-                            isActive
-                                ? context.tr(
-                                    'adventure.perk_status_active',
-                                    fallback: 'ACTIVE',
-                                  )
-                                : context.tr(
-                                    'adventure.perk_status_locked',
-                                    fallback: 'LOCKED',
-                                  ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w900,
-                              color: isActive
-                                  ? AppColors.emerald500
-                                  : Colors.grey,
+                child: SingleChildScrollView(
+                  physics: const NeverScrollableScrollPhysics(),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(10.r),
+                            decoration: BoxDecoration(
+                              color: color.withValues(alpha: 0.1),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              perk['icon'] as IconData,
+                              color: color,
+                              size: 20.r,
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    const Spacer(),
-                    // RESPONSIVENESS FIX: this card has a fixed height
-                    // (140.h). Without maxLines/overflow, a longer
-                    // translated title/description (or a large
-                    // accessibility text-scale factor) could push the
-                    // rendered content taller than the fixed card,
-                    // producing a real "RenderFlex overflowed" error.
-                    // Clamping to 1/2 lines with ellipsis guarantees this
-                    // card can never overflow, while looking identical to
-                    // the original for the existing English copy, which
-                    // already fits comfortably within these limits.
-                    FittedBox(
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        perk['title'] as String,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w800,
-                          color: isDark ? Colors.white : AppColors.slate900,
-                        ),
-                      ),
-                    ),
-                    FittedBox(
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        isActive
-                            ? perk['desc'] as String
-                            : context.tr(
-                                'adventure.perk_unlocks_at_level',
-                                fallback: 'Unlocks at Lvl',
-                                args: ['${perk['level']}'],
+                          const Spacer(),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 8.w,
+                              vertical: 4.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: isActive
+                                  ? AppColors.emerald500.withValues(alpha: 0.1)
+                                  : Colors.grey.withValues(alpha: 0.1),
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                            child: Text(
+                              isActive
+                                  ? context.tr(
+                                      'adventure.perk_status_active',
+                                      fallback: 'ACTIVE',
+                                    )
+                                  : context.tr(
+                                      'adventure.perk_status_locked',
+                                      fallback: 'LOCKED',
+                                    ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w900,
+                                color: isActive
+                                    ? AppColors.emerald500
+                                    : Colors.grey,
                               ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
-                          color: isDark ? Colors.white38 : Colors.black38,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 12.h),
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          perk['title'] as String,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w800,
+                            color: isDark ? Colors.white : AppColors.slate900,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          isActive
+                              ? perk['desc'] as String
+                              : context.tr(
+                                  'adventure.perk_unlocks_at_level',
+                                  fallback: 'Unlocks at Lvl',
+                                  args: ['${perk['level']}'],
+                                ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                            color: isDark ? Colors.white38 : Colors.black38,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               );
             },
@@ -668,7 +658,7 @@ class AdventureLevelScreen extends StatelessWidget {
               milestoneLevel,
             );
 
-            return _buildMilestoneItem(
+            final item = _buildMilestoneItem(
               context,
               context.tr(badge.nameKey),
               context.tr(
@@ -681,7 +671,11 @@ class AdventureLevelScreen extends StatelessWidget {
               isReached,
               isClaimed,
               milestoneLevel,
-            ).animate().fadeIn(delay: (index * 50).ms).slideX(begin: 0.05);
+            );
+            if (VowlMotion.shouldReduceMotion(context)) {
+              return item;
+            }
+            return item.animate().fadeIn(delay: (index * 50).ms).slideX(begin: 0.05);
           },
         ),
       ],

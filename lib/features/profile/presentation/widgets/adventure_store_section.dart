@@ -269,60 +269,63 @@ class AdventureStoreSection extends StatelessWidget {
                               ),
                               SizedBox(width: 12.r),
                               Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      item['title'] as String,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 13.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: isDark
-                                            ? Colors.white
-                                            : AppColors.slate900,
+                                child: SingleChildScrollView(
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        item['title'] as String,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 13.sp,
+                                          fontWeight: FontWeight.w900,
+                                          color: isDark
+                                              ? Colors.white
+                                              : AppColors.slate900,
+                                        ),
                                       ),
-                                    ),
-                                    Text(
-                                      isLocked
-                                          ? context.tr(
-                                              'adventure.locked_premium_200',
-                                              fallback: 'Premium + Lvl 200',
-                                            )
-                                          : isCurrentlyActive
-                                          ? (item['activeText'] as String? ??
-                                                context.tr(
-                                                  'adventure.item_active',
-                                                  fallback: 'ITEM ACTIVE',
-                                                ))
-                                          : '${item['cost']} ${context.tr('adventure.coins_label', fallback: 'Coins')}',
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 10.sp,
-                                        fontWeight: FontWeight.w700,
-                                        color: isLocked
-                                            ? Colors.red.withValues(alpha: 0.7)
+                                      Text(
+                                        isLocked
+                                            ? context.tr(
+                                                'adventure.locked_premium_200',
+                                                fallback: 'Premium + Lvl 200',
+                                              )
                                             : isCurrentlyActive
-                                            ? AppColors.amber500
-                                            : AppColors.emerald500,
+                                            ? (item['activeText'] as String? ??
+                                                  context.tr(
+                                                    'adventure.item_active',
+                                                    fallback: 'ITEM ACTIVE',
+                                                  ))
+                                            : '${item['cost']} ${context.tr('adventure.coins_label', fallback: 'Coins')}',
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.w700,
+                                          color: isLocked
+                                              ? Colors.red.withValues(alpha: 0.7)
+                                              : isCurrentlyActive
+                                              ? AppColors.amber500
+                                              : AppColors.emerald500,
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(height: 2.r),
-                                    Text(
-                                      item['desc'] as String,
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 8.sp,
-                                        fontWeight: FontWeight.w500,
-                                        color: isDark
-                                            ? Colors.white38
-                                            : Colors.black38,
+                                      SizedBox(height: 2.r),
+                                      Text(
+                                        item['desc'] as String,
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 8.sp,
+                                          fontWeight: FontWeight.w500,
+                                          color: isDark
+                                              ? Colors.white38
+                                              : Colors.black38,
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],

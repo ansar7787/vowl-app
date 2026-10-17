@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 /// Premium glassmorphic full-screen loading overlay with cycling status text.
@@ -65,6 +66,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
   void _startRotation() {
     _statusIndex = 0;
     _timer?.cancel();
+    if (VowlMotion.lowAnimationModeOverride.value) return;
     _timer = Timer.periodic(const Duration(milliseconds: 1500), (_) {
       if (mounted) {
         _statusIndex = (_statusIndex + 1) % _statusKeys.length;
@@ -88,7 +90,8 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.shouldReduceMotion(context);
 
     Widget spinner = SizedBox(
       width: 120.r,
@@ -99,7 +102,13 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
           AppColors.indigo500.withValues(alpha: 0.5),
         ),
       ),
-    ).animate(onPlay: (c) => c.repeat()).rotate(duration: 2000.ms);
+    );
+
+    if (!reduceMotion) {
+      spinner = spinner
+          .animate(onPlay: (c) => c.repeat())
+          .rotate(duration: 2000.ms);
+    }
 
     Widget logo = Container(
       width: 80.r,

@@ -171,6 +171,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                 SliverAppBar(
                                   centerTitle: true,
                                   expandedHeight: 125.h,
+                                  toolbarHeight: 60.h,
                                   collapsedHeight: 60.h,
                                   pinned: true,
                                   backgroundColor: bgColor.withValues(
@@ -189,40 +190,43 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                         titlePadding: EdgeInsets.only(
                                           bottom: 12.h,
                                         ),
-                                        title: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            Text(
-                                              context.tr(
-                                                'profile.review_mistakes',
-                                                fallback: 'Review & Master',
+                                        title: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Text(
+                                                context.tr(
+                                                  'profile.review_mistakes',
+                                                  fallback: 'Review & Master',
+                                                ),
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontWeight: FontWeight.w800,
+                                                  color: isDark
+                                                      ? Colors.white
+                                                      : Colors.black,
+                                                  letterSpacing: -0.5,
+                                                ),
                                               ),
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontWeight: FontWeight.w800,
-                                                color: isDark
-                                                    ? Colors.white
-                                                    : Colors.black,
-                                                letterSpacing: -0.5,
+                                              SizedBox(height: 2.h),
+                                              Text(
+                                                context.tr(
+                                                  'profile.review_instructions',
+                                                  fallback:
+                                                      'Swipe left to dismiss when mastered',
+                                                ),
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 10.sp,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: isDark
+                                                      ? Colors.white54
+                                                      : Colors.black54,
+                                                ),
                                               ),
-                                            ),
-                                            SizedBox(height: 2.h),
-                                            Text(
-                                              context.tr(
-                                                'profile.review_instructions',
-                                                fallback:
-                                                    'Swipe left to dismiss when mastered',
-                                              ),
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 10.sp,
-                                                fontWeight: FontWeight.w500,
-                                                color: isDark
-                                                    ? Colors.white54
-                                                    : Colors.black54,
-                                              ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                         centerTitle: true,
                                       ),
@@ -690,49 +694,59 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                   // Top row: category badge + timestamp + level
                   Row(
                     children: [
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 8.w,
-                          vertical: 4.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: categoryColor.withValues(alpha: 0.12),
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        child: Text(
-                          humanName.toUpperCase(),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.bold,
-                            color: categoryColor,
-                            letterSpacing: 0.5,
-                          ),
+                      Flexible(
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Flexible(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 8.w,
+                                  vertical: 4.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: categoryColor.withValues(alpha: 0.12),
+                                  borderRadius: BorderRadius.circular(8.r),
+                                ),
+                                child: Text(
+                                  humanName.toUpperCase(),
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.bold,
+                                    color: categoryColor,
+                                    letterSpacing: 0.5,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 8.w),
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 6.w,
+                                vertical: 3.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.06)
+                                    : Colors.black.withValues(alpha: 0.05),
+                                borderRadius: BorderRadius.circular(6.r),
+                              ),
+                              child: Text(
+                                'Lv.${entry.level}',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: isDark ? Colors.white54 : Colors.black45,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      SizedBox(width: 8.w),
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 6.w,
-                          vertical: 3.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.06)
-                              : Colors.black.withValues(alpha: 0.05),
-                          borderRadius: BorderRadius.circular(6.r),
-                        ),
-                        child: Text(
-                          'Lv.${entry.level}',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w600,
-                            color: isDark ? Colors.white54 : Colors.black45,
-                          ),
-                        ),
-                      ),
-                      const Spacer(),
+                      const SizedBox(width: 8),
                       if (timeAgo.isNotEmpty)
                         Text(
                           timeAgo,
@@ -835,16 +849,19 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                             color: isDark ? Colors.white54 : Colors.black54,
                           ),
                           SizedBox(width: 8.w),
-                          Text(
-                            context.tr(
-                              'profile.tap_to_reveal',
-                              fallback: 'Tap to Reveal Answer',
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w600,
-                              color: isDark ? Colors.white54 : Colors.black54,
+                          Flexible(
+                            child: Text(
+                              context.tr(
+                                'profile.tap_to_reveal',
+                                fallback: 'Tap to Reveal Answer',
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w600,
+                                color: isDark ? Colors.white54 : Colors.black54,
+                              ),
                             ),
                           ),
                         ],
