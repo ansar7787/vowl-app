@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,9 +25,7 @@ import 'package:vowl/features/home/presentation/widgets/vowl_mascot_card.dart';
 import 'package:vowl/features/profile/presentation/pages/profile_screen.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_badges_list.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_bento_stats.dart';
-import 'package:vowl/features/profile/presentation/widgets/profile_feature_card.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_header.dart';
-import 'package:vowl/features/profile/presentation/widgets/profile_preferences_list.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_stickers_progress.dart';
 
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
