@@ -5,9 +5,9 @@
 >
 > - **Total Dart Files in `lib/`**: **1,068 files**
 > - **Total Test Files in `test/`**: **200 files**
-> - **Total Passing Tests**: **4,084+ Tests Passing (100% Green on completed suites)**
-> - **Completed Test Suites**: **183 items** across Sections 1 to 15 (100% complete) and Section 16 (4 items complete)
-> - **Remaining Screens & Services to Test / Harden**: **12 items** remaining (4 in Section 16, 8 in Section 17).
+> - **Total Passing Tests**: **4,164+ Tests Passing (100% Green on completed suites)**
+> - **Completed Test Suites**: **187 items** across Sections 1 to 16 (100% complete)
+> - **Remaining Screens & Services to Test / Harden**: **8 items** remaining (Section 17).
 
 ---
 
@@ -59,7 +59,7 @@ Every game test suite MUST rigorously satisfy:
 | **13** | **Daily Challenges & Micro-Games** | 11 | 11 | 0 | 🟢 100% Complete (57 tests) |
 | **14** | **Home, Shell & Navigation** | 6 | 6 | 0 | 🟢 100% Complete (131 tests) |
 | **15** | **Profile, Progress & Trophies** | 7 | 7 | 0 | 🟢 100% Complete (117 tests) |
-| **16** | **Leaderboard, Settings, Paywall, Splash** | 8 | 4 | 4 | 🟡 4 Items Completed (73 tests; 4 items remaining) |
+| **16** | **Leaderboard, Settings, Paywall, Splash** | 8 | 8 | 0 | 🟢 100% Complete (150 tests) |
 | **17** | **Core Screens, Onboarding & Critical Services** | 8 | 0 | 8 | 🔴 0 Items Completed (8 items pending) |
 
 ---
@@ -519,7 +519,7 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 16: LEADERBOARD, SETTINGS, PAYWALL, SPLASH (3 / 8 COMPLETE)
+### SECTION 16: LEADERBOARD, SETTINGS, PAYWALL, SPLASH (8 / 8 COMPLETE - 100%)
 
 - [x] **16.1** `tts_voice_selection_bottom_sheet_test.dart` (Widget Test) — ✅ `[DONE - 3/3 tests passing]`
 - [x] **16.2** `leaderboard_screen_test.dart` (Leaderboard Widget Test) — ✅ `[DONE - 18/18 tests passing]`
@@ -565,8 +565,14 @@ Every game test suite MUST rigorously satisfy:
     4. Consumable Pass Handling: Wraps products in `PurchaseParam`, enforces `buyConsumable` for both coins and time-limited subscriptions (preventing Google Play non-consumable lock), and invokes `onPurchaseError` when buy fails.
     5. Purchase Stream Updates: Ignores `pending` status; handles `error` with message and completes pending purchase; handles `canceled` with callback and completes pending purchase; delegates `restorePurchases`.
     6. Zero Money Leakage & Anti-Fraud: Calls Cloud Function `validateIAPReceipt` with `purchaseToken`, `productId`, `grantType` ('premium' with 7/30/365 days or 'coins'); completes purchase and delivers upon `success == true`; on backend rejection (`success != true`) or Cloud Function network exception, NEVER completes purchase, preventing money leakage and fraudulent unlocks.
-- [ ] **16.8** `payment_service_test.dart` (Razorpay Server Order & Signature Verification — Zero Money Leakage) — 🔴 `[PENDING]`
-  - Validates server order creation, webhook/signature verification, payment success coin credit, and failure/cancel state handling.
+- [x] **16.8** `payment_service_test.dart` (Razorpay Server Order & Signature Verification — Zero Money Leakage) — 🟢 `[DONE - 21/21 tests passing]`
+  - Validates full `RazorpayPaymentService` lifecycle, server order creation, signature verification, and zero money leakage across 6 groups (21 tests):
+    1. Contract Factory, Initialization & Lifecycle: Factory constructor returns RazorpayPaymentService instance; `init()` registers event handlers; calling `init()` multiple times cleans previous instance; `dispose()` clears and nullifies Razorpay instance.
+    2. Checkout Options & Pre-Flight Validation: Missing RAZORPAY_KEY_ID safely returns false without crashing; uninitialized SDK safely returns false; amount is accurately converted to smallest currency unit (paise = amount * 100); optional fields (orderId, contact) properly handled; native bridge exceptions caught safely.
+    3. Server-Side Order Creation (`createOrder`): Cloud Function call with `planId` for subscriptions and `packId` for coins; assertions when neither provided; timeout conversion to user-friendly error; backend server error propagation.
+    4. Subscription Purchase Flow (`purchaseSubscription`): Anti-tamper price lock via server order before checkout launch.
+    5. Zero Money Leakage: Subscription Upgrade Endpoint (`upgradeToPremium`): Validates payment signature on backend; anti-fraud rejection when backend returns `success != true`; rethrows unauthenticated / network errors.
+    6. Zero Money Leakage: Coin Pack Verification Endpoint (`verifyCoinPurchase`): Validates coin order and signature via Cloud Function; anti-fraud rejection on backend mismatch; rethrows backend database / network errors.
 
 ---
 
