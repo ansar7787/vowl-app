@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -766,43 +767,48 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                     PositionedDirectional(
                       start: 20.w,
                       top: -15.h,
-                      child:
-                          Container(
-                                width: 64.r,
-                                height: 64.r,
-                                decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      displayColor,
-                                      displayColor.withValues(alpha: 0.7),
-                                    ],
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.bottomRight,
-                                  ),
-                                  borderRadius: BorderRadius.circular(20.r),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: displayColor.withValues(
-                                        alpha: 0.4,
-                                      ),
-                                      blurRadius: 20,
-                                      offset: const Offset(0, 8),
-                                    ),
-                                  ],
+                      child: () {
+                        final icon = Container(
+                          width: 64.r,
+                          height: 64.r,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                displayColor,
+                                displayColor.withValues(alpha: 0.7),
+                              ],
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                            ),
+                            borderRadius: BorderRadius.circular(20.r),
+                            boxShadow: [
+                              BoxShadow(
+                                color: displayColor.withValues(
+                                  alpha: 0.4,
                                 ),
-                                child: Icon(
-                                  GameHelper.getIconForSubtype(subtype),
-                                  color: Colors.white,
-                                  size: 32.r,
-                                ),
-                              )
-                              .animate(onPlay: (c) => c.repeat(reverse: true))
-                              .moveY(
-                                begin: 0,
-                                end: -5,
-                                duration: 2.seconds,
-                                curve: Curves.easeInOutQuad,
+                                blurRadius: 20,
+                                offset: const Offset(0, 8),
                               ),
+                            ],
+                          ),
+                          child: Icon(
+                            GameHelper.getIconForSubtype(subtype),
+                            color: Colors.white,
+                            size: 32.r,
+                          ),
+                        );
+                        if (VowlMotion.shouldReduceMotion(context)) {
+                          return icon;
+                        }
+                        return icon
+                            .animate(onPlay: (c) => c.repeat(reverse: true))
+                            .moveY(
+                              begin: 0,
+                              end: -5,
+                              duration: 2.seconds,
+                              curve: Curves.easeInOutQuad,
+                            );
+                      }(),
                     ),
                   ],
                 ),
@@ -844,17 +850,25 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
             child: child,
           );
         },
-        child: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [color, color.withValues(alpha: 0.6)],
-            ),
-            borderRadius: BorderRadius.circular(10.r),
-            boxShadow: [
-              BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 4),
-            ],
-          ),
-        ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
+        child: Builder(
+          builder: (context) {
+            final bar = Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [color, color.withValues(alpha: 0.6)],
+                ),
+                borderRadius: BorderRadius.circular(10.r),
+                boxShadow: [
+                  BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 4),
+                ],
+              ),
+            );
+            if (VowlMotion.shouldReduceMotion(context)) {
+              return bar;
+            }
+            return bar.animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds);
+          },
+        ),
       ),
     );
   }
