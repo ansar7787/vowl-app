@@ -39,6 +39,7 @@ class StreakHero extends StatelessWidget {
   Widget build(BuildContext context) {
     final streak = user.currentStreak;
     const color = IllustrationColors.warmOrange;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     final now = DateTime.now();
     final hasPlayedToday =
@@ -97,86 +98,109 @@ class StreakHero extends StatelessWidget {
                 Stack(
                   alignment: Alignment.center,
                   children: [
-                    Container(
-                          width: 100.r,
-                          height: 100.r,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              BoxShadow(
-                                color: color.withValues(alpha: 0.3),
-                                blurRadius: 40,
-                                spreadRadius: 8,
-                              ),
-                            ],
+                    () {
+                      final glow = Container(
+                        width: 100.r,
+                        height: 100.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: color.withValues(alpha: 0.3),
+                              blurRadius: 40,
+                              spreadRadius: 8,
+                            ),
+                          ],
+                        ),
+                      );
+                      return reduceMotion
+                          ? glow
+                          : glow
+                              .animate()
+                              .scale(
+                                begin: const Offset(0.5, 0.5),
+                                end: const Offset(1, 1),
+                                duration: 800.ms,
+                                curve: Curves.easeOutCubic,
+                              )
+                              .fadeIn(duration: 800.ms);
+                    }(),
+                    () {
+                      final flame = Container(
+                        padding: EdgeInsets.all(20.r),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [color, AppColors.red500],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
                           ),
-                        )
-                        .animate()
-                        .scale(
-                          begin: const Offset(0.5, 0.5),
-                          end: const Offset(1, 1),
-                          duration: 800.ms,
-                          curve: Curves.easeOutCubic,
-                        )
-                        .fadeIn(duration: 800.ms),
-                    Container(
-                      padding: EdgeInsets.all(20.r),
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [color, AppColors.red500],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.3),
+                            width: 4,
+                          ),
                         ),
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.3),
-                          width: 4,
+                        child: Icon(
+                          LucideIcons.flame,
+                          color: Colors.white,
+                          size: 40.r,
                         ),
-                      ),
-                      child: Icon(
-                        LucideIcons.flame,
-                        color: Colors.white,
-                        size: 40.r,
-                      ),
-                    ).animate().scale(
-                      begin: const Offset(0.5, 0.5),
-                      end: const Offset(1, 1),
-                      duration: 800.ms,
-                      curve: Curves.easeOutCubic,
-                    ),
+                      );
+                      return reduceMotion
+                          ? flame
+                          : flame.animate().scale(
+                              begin: const Offset(0.5, 0.5),
+                              end: const Offset(1, 1),
+                              duration: 800.ms,
+                              curve: Curves.easeOutCubic,
+                            );
+                    }(),
                   ],
                 ),
                 SizedBox(height: 24.h),
                 Column(
                   children: [
-                    Text(
-                      '$streak',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 80.sp,
-                        fontWeight: FontWeight.w900,
-                        height: 1,
-                        color: Theme.of(context).colorScheme.onSurface,
-                      ),
-                    ).animate().scale(
-                      duration: 600.ms,
-                      curve: Curves.easeOutCubic,
-                      delay: 200.ms,
-                    ),
+                    () {
+                      final count = Text(
+                        '$streak',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 80.sp,
+                          fontWeight: FontWeight.w900,
+                          height: 1,
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
+                      );
+                      return reduceMotion
+                          ? count
+                          : count.animate().scale(
+                              duration: 600.ms,
+                              curve: Curves.easeOutCubic,
+                              delay: 200.ms,
+                            );
+                    }(),
                     SizedBox(height: 4.h),
-                    Text(
-                      context.tr(
-                        'streak.day_streak_label',
-                        fallback: 'DAY STREAK',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w900,
-                        color: color,
-                        letterSpacing: 4,
-                      ),
-                    ).animate().fadeIn(duration: 600.ms, delay: 400.ms),
+                    () {
+                      final label = Text(
+                        context.tr(
+                          'streak.day_streak_label',
+                          fallback: 'DAY STREAK',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w900,
+                          color: color,
+                          letterSpacing: 4,
+                        ),
+                      );
+                      return reduceMotion
+                          ? label
+                          : label.animate().fadeIn(
+                              duration: 600.ms,
+                              delay: 400.ms,
+                            );
+                    }(),
                   ],
                 ),
                 SizedBox(height: 24.h),
@@ -261,9 +285,6 @@ class StreakHero extends StatelessWidget {
                         ),
                       );
 
-                      final reduceMotion = VowlMotion.shouldReduceMotion(
-                        context,
-                      );
                       if (!reduceMotion) {
                         container = container
                             .animate(onPlay: (c) => c.repeat(reverse: true))

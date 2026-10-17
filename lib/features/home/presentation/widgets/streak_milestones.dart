@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 /// A single streak milestone: the day count it unlocks at, and its reward.
@@ -81,9 +82,10 @@ class _StreakMilestonesState extends State<StreakMilestones> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final milestones = StreakMilestoneCalculator.compute(widget.user);
 
-    return BlocListener<ProgressionBloc, ProgressionState>(
+    final content = BlocListener<ProgressionBloc, ProgressionState>(
       listenWhen: (prev, curr) => prev.message != curr.message,
       listener: (context, state) {
         if (state.message == 'progression.milestone_claimed') {
@@ -372,43 +374,12 @@ class _StreakMilestonesState extends State<StreakMilestones> {
                                       constraints: BoxConstraints(
                                         minHeight: 48.r,
                                       ),
-                                      child:
-                                          ElevatedButton(
-                                            onPressed: () => context
-                                                .read<ProgressionBloc>()
-                                                .add(
-                                                  ProgressionClaimStreakMilestoneRequested(
-                                                    days,
-                                                  ),
-                                                ),
-                                            style: ElevatedButton.styleFrom(
-                                              backgroundColor: Colors.amber,
-                                              foregroundColor: Colors.black,
-                                              padding: EdgeInsets.symmetric(
-                                                horizontal: 12.w,
-                                                vertical: 8.h,
-                                              ),
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(12.r),
-                                              ),
-                                              elevation: 0,
-                                            ),
-                                            child: AutoSizeText(
-                                              statusLabel,
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 10.sp,
-                                                fontWeight: FontWeight.w900,
-                                              ),
-                                              maxLines: 1,
-                                              minFontSize: 6,
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ).animate().shimmer(
-                                            duration: 2.seconds,
-                                            delay: 400.ms,
-                                          ),
+                                      child: _buildClaimButton(
+                                        context: context,
+                                        days: days,
+                                        statusLabel: statusLabel,
+                                        reduceMotion: reduceMotion,
+                                      ),
                                     ),
                                   )
                                 else if (isClaimed)
@@ -446,15 +417,22 @@ class _StreakMilestonesState extends State<StreakMilestones> {
                         if (isNext)
                           Positioned.fill(
                             child: IgnorePointer(
-                              child:
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(24.r),
+                              child: reduceMotion
+                                  ? Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(24.r),
+                                      ),
+                                    )
+                                  : Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(24.r),
+                                      ),
+                                    ).animate().shimmer(
+                                      duration: 3.seconds,
+                                      color: Colors.blue.withValues(alpha: 0.1),
                                     ),
-                                  ).animate().shimmer(
-                                    duration: 3.seconds,
-                                    color: Colors.blue.withValues(alpha: 0.1),
-                                  ),
                             ),
                           ),
                       ],
@@ -466,6 +444,50 @@ class _StreakMilestonesState extends State<StreakMilestones> {
           ),
         ],
       ),
-    ).animate().fadeIn(delay: 400.ms).slideX(begin: 0.05);
+    );
+
+    if (!reduceMotion) {
+      return content.animate().fadeIn(delay: 400.ms).slideX(begin: 0.05);
+    }
+    return content;
+  }
+
+  Widget _buildClaimButton({
+    required BuildContext context,
+    required int days,
+    required String statusLabel,
+    required bool reduceMotion,
+  }) {
+    final btn = ElevatedButton(
+      onPressed: () => context.read<ProgressionBloc>().add(
+        ProgressionClaimStreakMilestoneRequested(days),
+      ),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.amber,
+        foregroundColor: Colors.black,
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.r),
+        ),
+        elevation: 0,
+      ),
+      child: AutoSizeText(
+        statusLabel,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 10.sp,
+          fontWeight: FontWeight.w900,
+        ),
+        maxLines: 1,
+        minFontSize: 6,
+        overflow: TextOverflow.ellipsis,
+      ),
+    );
+
+    if (reduceMotion) return btn;
+    return btn.animate().shimmer(
+      duration: 2.seconds,
+      delay: 400.ms,
+    );
   }
 }
