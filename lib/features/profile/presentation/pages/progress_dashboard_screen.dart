@@ -16,6 +16,7 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
@@ -592,9 +593,12 @@ class _ContinueLearningSection extends StatelessWidget {
     final recentGames = <_RecentGame>[];
 
     for (final subtype in GameSubtype.values) {
-      final completedCount = user.completedLevels[subtype.name]?.length ?? 0;
+      final totalLevels = CurriculumManifest.getLevels(subtype.name);
+      final completedCount =
+          (user.completedLevels[subtype.name]?.length ?? 0).clamp(0, totalLevels);
       if (completedCount > 0) {
-        final currentLevel = completedCount + 1;
+        final isMastered = completedCount >= totalLevels;
+        final currentLevel = isMastered ? totalLevels : completedCount + 1;
         final color = LevelThemeHelper.getCategoryBaseColor(
           subtype.category.name,
         );
@@ -604,6 +608,7 @@ class _ContinueLearningSection extends StatelessWidget {
             subtype: subtype,
             currentLevel: currentLevel,
             completedCount: completedCount,
+            isMastered: isMastered,
             color: color,
             icon: theme.icon,
             title: theme.title,
@@ -815,15 +820,17 @@ class _ContinueLearningSection extends StatelessWidget {
                     fit: BoxFit.scaleDown,
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      context.tr(
-                        'report.level_progress',
-                        fallback:
-                            'Level ${game.currentLevel} · $missionPercent% complete',
-                        args: [
-                          game.currentLevel.toString(),
-                          missionPercent.toString(),
-                        ],
-                      ),
+                      game.isMastered
+                          ? '${context.tr('category_games.mastered', fallback: 'Mastered')} · 100%'
+                          : context.tr(
+                              'report.level_progress',
+                              fallback:
+                                  'Level ${game.currentLevel} · $missionPercent% complete',
+                              args: [
+                                game.currentLevel.toString(),
+                                missionPercent.toString(),
+                              ],
+                            ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
@@ -860,6 +867,7 @@ class _RecentGame {
   final GameSubtype subtype;
   final int currentLevel;
   final int completedCount;
+  final bool isMastered;
   final Color color;
   final IconData icon;
   final String title;
@@ -868,6 +876,7 @@ class _RecentGame {
     required this.subtype,
     required this.currentLevel,
     required this.completedCount,
+    this.isMastered = false,
     required this.color,
     required this.icon,
     required this.title,

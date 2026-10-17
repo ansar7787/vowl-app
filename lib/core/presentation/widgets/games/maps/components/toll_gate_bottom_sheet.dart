@@ -13,6 +13,8 @@ import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
+import 'package:vowl/core/data/constants/curriculum_manifest.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class TollGateBottomSheet {
   static void show({
@@ -21,6 +23,55 @@ class TollGateBottomSheet {
     required String gameType,
   }) {
     final parentContext = context;
+    final maxLevels = CurriculumManifest.getLevels(gameType);
+    final int remainingToMax = maxLevels - level + 1;
+    final int levelsToUnlock = remainingToMax.clamp(1, 3);
+
+    final String sheetTitle;
+    final String sheetDesc;
+    final String successDesc;
+
+    if (levelsToUnlock == 1) {
+      sheetTitle = context.tr(
+        'games.unlock_final_level',
+        fallback: 'Unlock Final Level!',
+      );
+      sheetDesc = context.tr(
+        'store.toll_need_key_desc_1',
+        fallback: 'You need 1 Golden Key to unlock the final Level $maxLevels.',
+      );
+      successDesc = context.tr(
+        'games.level_unlocked_success_1',
+        fallback: 'Final Level Unlocked! Go for the Grand Finale!',
+      );
+    } else if (levelsToUnlock == 2) {
+      sheetTitle = context.tr(
+        'games.unlock_final_2_levels',
+        fallback: 'Unlock Final 2 Levels!',
+      );
+      sheetDesc = context.tr(
+        'store.toll_need_key_desc_2',
+        fallback: 'You need 1 Golden Key to unlock the final 2 levels.',
+      );
+      successDesc = context.tr(
+        'games.level_unlocked_success_2',
+        fallback: 'Final 2 Levels Unlocked!',
+      );
+    } else {
+      sheetTitle = context.tr(
+        'games.unlock_level_title',
+        fallback: 'Unlock Next 3 Levels!',
+      );
+      sheetDesc = context.tr(
+        'store.toll_need_key_desc',
+        fallback: 'You need 1 Golden Key to unlock the next 3 levels.',
+      );
+      successDesc = context.tr(
+        'games.level_unlocked_success',
+        fallback: 'Next 3 Levels Unlocked!',
+      );
+    }
+
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
@@ -62,7 +113,9 @@ class TollGateBottomSheet {
                         ),
                       ),
                     ),
-                    Container(
+                    Builder(
+                      builder: (ctx) {
+                        final lockIcon = Container(
                           padding: EdgeInsets.all(16.r),
                           decoration: BoxDecoration(
                             color: Colors.amber.withValues(alpha: 0.15),
@@ -73,20 +126,23 @@ class TollGateBottomSheet {
                             size: 56.r,
                             color: Colors.amber.shade600,
                           ),
-                        )
-                        .animate(onPlay: (c) => c.repeat(reverse: true))
-                        .shake(
-                          hz: 2,
-                          curve: Curves.easeInOutSine,
-                          duration: 1500.ms,
-                        )
-                        .then(delay: 2000.ms),
+                        );
+                        if (VowlMotion.shouldReduceMotion(ctx)) {
+                          return lockIcon;
+                        }
+                        return lockIcon
+                            .animate(onPlay: (c) => c.repeat(reverse: true))
+                            .shake(
+                              hz: 2,
+                              curve: Curves.easeInOutSine,
+                              duration: 1500.ms,
+                            )
+                            .then(delay: 2000.ms);
+                      },
+                    ),
                     SizedBox(height: 16.h),
                     Text(
-                      context.tr(
-                        'games.unlock_level_title',
-                        fallback: 'Unlock Next 3 Levels!',
-                      ),
+                      sheetTitle,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 20.sp,
@@ -98,11 +154,7 @@ class TollGateBottomSheet {
                     ),
                     SizedBox(height: 8.h),
                     Text(
-                      context.tr(
-                        'store.toll_need_key_desc',
-                        fallback:
-                            'You need 1 Golden Key to unlock the next 3 levels.',
-                      ),
+                      sheetDesc,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 14.sp,
@@ -201,10 +253,7 @@ class TollGateBottomSheet {
                                             'store.gate_unlocked_title',
                                             fallback: 'GATE UNLOCKED!',
                                           ),
-                                          description: context.tr(
-                                            'games.level_unlocked_success',
-                                            fallback: 'Next 3 Levels Unlocked!',
-                                          ),
+                                          description: successDesc,
                                           buttonText: context.tr(
                                             'store.awesome',
                                             fallback: 'AWESOME',
@@ -270,22 +319,26 @@ class TollGateBottomSheet {
                                   size: 20.r,
                                 ),
                                 SizedBox(width: 8.w),
-                                Text(
-                                  hasKey
-                                      ? context.tr(
-                                          'store.use_key_to_unlock',
-                                          fallback: 'USE 1 KEY TO UNLOCK',
-                                        )
-                                      : context.tr(
-                                          'store.get_a_key',
-                                          fallback: 'GET A KEY',
-                                        ),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w800,
-                                    color: Colors.white,
-                                    letterSpacing: 0.5,
+                                Flexible(
+                                  child: Text(
+                                    hasKey
+                                        ? context.tr(
+                                            'store.use_key_to_unlock',
+                                            fallback: 'USE 1 KEY TO UNLOCK',
+                                          )
+                                        : context.tr(
+                                            'store.get_a_key',
+                                            fallback: 'GET A KEY',
+                                          ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w800,
+                                      color: Colors.white,
+                                      letterSpacing: 0.5,
+                                    ),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
                               ],

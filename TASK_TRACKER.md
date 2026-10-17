@@ -655,3 +655,11 @@ Every game test suite MUST rigorously satisfy:
   - Validates `GlassTile` backdrop filter blur, glass decoration, responsive padding, and tap callbacks.
 - [x] **17.13** `scale_button_test.dart` (Core UI Scale Button Test) — 🟢 `[DONE - 3/3 tests passing]`
   - Validates `ScaleButton` spring physics bounce animation, down/up gestures, tap debouncing, and disabled state styling.
+- [x] **17.14** `category_games_mastery_architecture_test.dart` (Level 200 / Kids 25 Mastery, Toll Gate & Clean Subtitle Architecture) — 🟢 `[DONE - 53/53 tests passing across 5 suites]`
+  - Audited and hardened 200-level curriculum and Kids Zone 25-level architecture across games, shelves, library cards, and level maps:
+    1. **Level 201 Prevention:** Clamped `completedCount` and `currentLevel` to `CurriculumManifest.getLevels(subtype)` across `CategoryGamesPage`, `QuestLibraryPage`, `CategoryShelf`, `KidsCategoryShelf`, and `ProgressDashboardScreen` so completed games never announce or display level 201 or 26.
+    2. **Unified Playing Card Layout:** Reunited all cards on `CategoryGamesPage` with the 3D floating icon and streamlined mastery badge showing exclusively the trophy icon (`Icons.emoji_events_rounded` / `Icons.stars_rounded`) without redundant text.
+    3. **Crisp 10sp Legible Subtitle Format:** Shortened subtitle strings to `★ $gameplayStars / $maxGameplayStars • REPLAY FOR 3★` (and `★ 600 / 600 • 100% PERFECT`), eliminating text shrinking in `FittedBox` so font size stays at full readable 10sp across all devices.
+    4. **Pure GAME STARS Subtitle & 0% Truncation Fix:** Eliminated redundant and confusing in-progress percentages (which suffered from integer truncation yielding `0%` for players with 1–5 stars out of 600) by switching in-progress subtitles to explicit `★ $gameplayStars / $maxGameplayStars GAME STARS` (e.g. `★ 5 / 600 GAME STARS`), while keeping mastered states as `★ $gameplayStars / $maxGameplayStars • REPLAY FOR 3★` (and `100% PERFECT`).
+    5. **Level 199 Dynamic Toll Gate & Star Vault:** Handled final-level unlocking at level 199 dynamically (1 level remaining instead of 3), clamped Firestore transaction unlock writes to `math.min(maxLevels, unlocked + 3)`, and guarded Star Vault metrics columns against layout overflow.
+

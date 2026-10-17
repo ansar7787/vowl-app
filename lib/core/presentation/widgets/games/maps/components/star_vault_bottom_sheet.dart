@@ -86,7 +86,9 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
     }
   }
 
-  int _calculateTotalStars(Map<String, dynamic> categoryStars) {
+  ({int totalStars, int gameplayStars, int magicStars}) _calculateStars(
+    Map<String, dynamic> categoryStars,
+  ) {
     int gameplayStars = 0;
     final magicStars = (categoryStars['magic_stars'] as num?)?.toInt() ?? 0;
 
@@ -95,7 +97,11 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
         gameplayStars += (value as num?)?.toInt() ?? 0;
       }
     });
-    return gameplayStars + magicStars;
+    return (
+      totalStars: gameplayStars + magicStars,
+      gameplayStars: gameplayStars,
+      magicStars: magicStars,
+    );
   }
 
   /// Shows a failure dialog when a reward grant doesn't go through -
@@ -374,7 +380,10 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
         if (user == null) return const SizedBox.shrink();
 
         final categoryStars = user.starRatings[widget.gameType] ?? {};
-        final totalStars = _calculateTotalStars(categoryStars);
+        final starsData = _calculateStars(categoryStars);
+        final totalStars = starsData.totalStars;
+        final gameplayStars = starsData.gameplayStars;
+        final magicStars = starsData.magicStars;
         final claimedTier = categoryStars['claimed_chests'] ?? 0;
         final isPremium = user.isPremium;
 
@@ -494,43 +503,73 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    Column(
-                                      children: [
-                                        Text(
-                                          context.tr(
-                                            'store.your_stars',
-                                            fallback: 'Your Stars',
+                                    Expanded(
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            context.tr(
+                                              'store.vault_stars',
+                                              fallback: 'Vault Stars',
+                                            ),
+                                            style: TextStyle(
+                                              fontSize: 12.sp,
+                                              color: isDark
+                                                  ? Colors.white54
+                                                  : Colors.black54,
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                           ),
-                                          style: TextStyle(
-                                            fontSize: 12.sp,
-                                            color: isDark
-                                                ? Colors.white54
-                                                : Colors.black54,
-                                            fontWeight: FontWeight.w600,
+                                          SizedBox(height: 4.h),
+                                          Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Text(
+                                                "$totalStars",
+                                                style: TextStyle(
+                                                  fontSize: 32.sp,
+                                                  fontFamily: 'Outfit',
+                                                  fontWeight: FontWeight.w900,
+                                                  color: widget.primaryColor,
+                                                ),
+                                              ),
+                                              SizedBox(width: 4.w),
+                                              Icon(
+                                                Icons.star_rounded,
+                                                color: IllustrationColors
+                                                    .premiumGold,
+                                                size: 28.sp,
+                                              ),
+                                            ],
                                           ),
-                                        ),
-                                        SizedBox(height: 4.h),
-                                        Row(
-                                          children: [
-                                            Text(
-                                              "$totalStars",
-                                              style: TextStyle(
-                                                fontSize: 32.sp,
-                                                fontFamily: 'Outfit',
-                                                fontWeight: FontWeight.w900,
-                                                color: widget.primaryColor,
+                                          if (magicStars > 0) ...[
+                                            SizedBox(height: 4.h),
+                                            Container(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 8.w,
+                                                vertical: 2.h,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                color: widget.primaryColor
+                                                    .withValues(alpha: 0.12),
+                                                borderRadius:
+                                                    BorderRadius.circular(10.r),
+                                              ),
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: Text(
+                                                  '$gameplayStars Game + $magicStars Bonus',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 9.sp,
+                                                    fontWeight: FontWeight.w800,
+                                                    color: widget.primaryColor,
+                                                  ),
+                                                ),
                                               ),
                                             ),
-                                            SizedBox(width: 4.w),
-                                            Icon(
-                                              Icons.star_rounded,
-                                              color: IllustrationColors
-                                                  .premiumGold,
-                                              size: 28.sp,
-                                            ),
                                           ],
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                     Container(
                                       width: 2,
@@ -539,42 +578,45 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                         alpha: 0.2,
                                       ),
                                     ),
-                                    Column(
-                                      children: [
-                                        Text(
-                                          context.tr(
-                                            'store.next_chest',
-                                            fallback: 'Next Chest',
+                                    Expanded(
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            context.tr(
+                                              'store.next_chest',
+                                              fallback: 'Next Chest',
+                                            ),
+                                            style: TextStyle(
+                                              fontSize: 12.sp,
+                                              color: isDark
+                                                  ? Colors.white54
+                                                  : Colors.black54,
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                           ),
-                                          style: TextStyle(
-                                            fontSize: 12.sp,
-                                            color: isDark
-                                                ? Colors.white54
-                                                : Colors.black54,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                        ),
-                                        SizedBox(height: 4.h),
-                                        Row(
-                                          children: [
-                                            Text(
-                                              "$nextRequirement",
-                                              style: TextStyle(
-                                                fontSize: 32.sp,
-                                                fontFamily: 'Outfit',
-                                                fontWeight: FontWeight.w900,
-                                                color: Colors.grey,
+                                          SizedBox(height: 4.h),
+                                          Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Text(
+                                                "$nextRequirement",
+                                                style: TextStyle(
+                                                  fontSize: 32.sp,
+                                                  fontFamily: 'Outfit',
+                                                  fontWeight: FontWeight.w900,
+                                                  color: Colors.grey,
+                                                ),
                                               ),
-                                            ),
-                                            SizedBox(width: 4.w),
-                                            Icon(
-                                              Icons.star_border_rounded,
-                                              color: Colors.grey,
-                                              size: 28.sp,
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                              SizedBox(width: 4.w),
+                                              Icon(
+                                                Icons.star_border_rounded,
+                                                color: Colors.grey,
+                                                size: 28.sp,
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -649,7 +691,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
 
                               // Chests ListView — auto-scrolls to the next claimable chest
                               SizedBox(
-                                height: 160.h,
+                                height: 175.h,
                                 child: Builder(
                                   builder: (context) {
                                     // Each tile is 120.w wide + 16.w right margin = 136.w per tile.
@@ -830,119 +872,123 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                                   width: canClaim ? 2 : 1,
                                                 ),
                                               ),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Icon(
-                                                        isClaimed
-                                                            ? Icons
-                                                                  .inventory_2_rounded
-                                                            : canClaim
-                                                            ? Icons
-                                                                  .redeem_rounded
-                                                            : Icons
-                                                                  .lock_rounded,
-                                                        size: 44.sp,
-                                                        color: isClaimed
-                                                            ? Colors.grey
-                                                            : canClaim
-                                                            ? Colors.white
-                                                            : Colors
-                                                                  .grey
-                                                                  .shade400,
-                                                      )
-                                                      .animate(
-                                                        target: canClaim
-                                                            ? 1
-                                                            : 0,
-                                                      )
-                                                      .shake(
-                                                        hz: 3,
-                                                        duration: 1.5.seconds,
-                                                      )
-                                                      .then()
-                                                      .shimmer(
-                                                        duration: 1.seconds,
-                                                        color: Colors.white,
-                                                      ),
-                                                  SizedBox(height: 8.h),
-                                                  Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Text(
-                                                        "$requirement",
-                                                        style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.w900,
-                                                          fontSize: 16.sp,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Icon(
+                                                          isClaimed
+                                                              ? Icons
+                                                                    .inventory_2_rounded
+                                                              : canClaim
+                                                              ? Icons
+                                                                    .redeem_rounded
+                                                              : Icons
+                                                                    .lock_rounded,
+                                                          size: 44.sp,
                                                           color: isClaimed
                                                               ? Colors.grey
                                                               : canClaim
                                                               ? Colors.white
-                                                              : isDark
-                                                              ? Colors.white70
-                                                              : Colors.black87,
+                                                              : Colors
+                                                                    .grey
+                                                                    .shade400,
+                                                        )
+                                                        .animate(
+                                                          target: canClaim
+                                                              ? 1
+                                                              : 0,
+                                                        )
+                                                        .shake(
+                                                          hz: 3,
+                                                          duration: 1.5.seconds,
+                                                        )
+                                                        .then()
+                                                        .shimmer(
+                                                          duration: 1.seconds,
+                                                          color: Colors.white,
                                                         ),
-                                                      ),
-                                                      Icon(
-                                                        Icons.star_rounded,
-                                                        size: 16.sp,
-                                                        color: isClaimed
-                                                            ? Colors.grey
-                                                            : const Color(
-                                                                0xFFFFD700,
-                                                              ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  if (isClaimed) ...[
-                                                    SizedBox(height: 6.h),
-                                                    Text(
-                                                      context.tr(
-                                                        'store.chest_opened',
-                                                        fallback: 'OPENED',
-                                                      ),
-                                                      style: TextStyle(
-                                                        fontSize: 10.sp,
-                                                        fontWeight:
-                                                            FontWeight.w900,
-                                                        color: Colors.grey,
-                                                      ),
-                                                    ),
-                                                  ] else if (canClaim) ...[
-                                                    SizedBox(height: 6.h),
-                                                    Container(
-                                                      padding:
-                                                          EdgeInsets.symmetric(
-                                                            horizontal: 10.w,
-                                                            vertical: 4.h,
+                                                    SizedBox(height: 8.h),
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Text(
+                                                          "$requirement",
+                                                          style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.w900,
+                                                            fontSize: 16.sp,
+                                                            color: isClaimed
+                                                                ? Colors.grey
+                                                                : canClaim
+                                                                ? Colors.white
+                                                                : isDark
+                                                                ? Colors.white70
+                                                                : Colors
+                                                                      .black87,
                                                           ),
-                                                      decoration: BoxDecoration(
-                                                        color: Colors.white,
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                              12.r,
-                                                            ),
-                                                      ),
-                                                      child: Text(
+                                                        ),
+                                                        Icon(
+                                                          Icons.star_rounded,
+                                                          size: 16.sp,
+                                                          color: isClaimed
+                                                              ? Colors.grey
+                                                              : const Color(
+                                                                  0xFFFFD700,
+                                                                ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    if (isClaimed) ...[
+                                                      SizedBox(height: 6.h),
+                                                      Text(
                                                         context.tr(
-                                                          'store.chest_open',
-                                                          fallback: 'OPEN',
+                                                          'store.chest_opened',
+                                                          fallback: 'OPENED',
                                                         ),
                                                         style: TextStyle(
                                                           fontSize: 10.sp,
                                                           fontWeight:
                                                               FontWeight.w900,
-                                                          color: widget
-                                                              .primaryColor,
+                                                          color: Colors.grey,
                                                         ),
                                                       ),
-                                                    ),
+                                                    ] else if (canClaim) ...[
+                                                      SizedBox(height: 6.h),
+                                                      Container(
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              horizontal: 10.w,
+                                                              vertical: 4.h,
+                                                            ),
+                                                        decoration: BoxDecoration(
+                                                          color: Colors.white,
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                12.r,
+                                                              ),
+                                                        ),
+                                                        child: Text(
+                                                          context.tr(
+                                                            'store.chest_open',
+                                                            fallback: 'OPEN',
+                                                          ),
+                                                          style: TextStyle(
+                                                            fontSize: 10.sp,
+                                                            fontWeight:
+                                                                FontWeight.w900,
+                                                            color: widget
+                                                                .primaryColor,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ],
-                                                ],
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -1061,24 +1107,29 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                                     size: 24.sp,
                                                   ),
                                                   SizedBox(width: 12.w),
-                                                  Text(
-                                                    isPremium
-                                                        ? context.tr(
-                                                            'store.claim_magic_stars',
-                                                            fallback:
-                                                                'Claim +2 Free Magic Stars',
-                                                          )
-                                                        : context.tr(
-                                                            'store.watch_ad_magic_stars',
-                                                            fallback:
-                                                                'Watch Ad for +2 Magic Stars',
-                                                          ),
-                                                    style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      fontSize: 16.sp,
-                                                      fontWeight:
-                                                          FontWeight.w800,
-                                                      color: Colors.white,
+                                                  Flexible(
+                                                    child: FittedBox(
+                                                      fit: BoxFit.scaleDown,
+                                                      child: Text(
+                                                        isPremium
+                                                            ? context.tr(
+                                                                'store.claim_magic_stars',
+                                                                fallback:
+                                                                    'Claim +2 Free Magic Stars',
+                                                              )
+                                                            : context.tr(
+                                                                'store.watch_ad_magic_stars',
+                                                                fallback:
+                                                                    'Watch Ad for +2 Magic Stars',
+                                                              ),
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 16.sp,
+                                                          fontWeight:
+                                                              FontWeight.w800,
+                                                          color: Colors.white,
+                                                        ),
+                                                      ),
                                                     ),
                                                   ),
                                                 ],

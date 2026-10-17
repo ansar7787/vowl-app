@@ -351,7 +351,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       // Scroll so Speaking category is well in view
-      gamesScrollController.jumpTo(2200);
+      gamesScrollController.jumpTo(500);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 

@@ -1,8 +1,10 @@
+import 'dart:math' as math;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:flutter/foundation.dart';
 
+import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/features/auth/data/models/user_model.dart';
 import 'package:vowl/features/auth/data/repositories/firebase_failure_handler_mixin.dart';
@@ -263,7 +265,8 @@ class GamificationRepositoryImpl
       // Free levels (1-10) or Premium users automatically unlock the next level.
       // Otherwise, the user must explicitly purchase the next level via the Toll Gate.
       if (level < 10 || userData.isPremium) {
-        unlockedLevels[gameType] = level + 1;
+        final maxLevels = CurriculumManifest.getLevels(gameType);
+        unlockedLevels[gameType] = math.min(maxLevels, level + 1);
       }
     }
 
@@ -371,7 +374,8 @@ class GamificationRepositoryImpl
 
         final currentUnlocked = unlockedLevels[categoryId] ?? 1;
         if (newLevel > currentUnlocked) {
-          unlockedLevels[categoryId] = newLevel;
+          final maxLevels = CurriculumManifest.getLevels(categoryId);
+          unlockedLevels[categoryId] = math.min(maxLevels, newLevel);
           transaction.update(docRef, {'unlockedLevels': unlockedLevels});
         }
       });
@@ -713,7 +717,8 @@ class GamificationRepositoryImpl
 
         final unlockedLevels = _parseIntMap(data['unlockedLevels']);
         final currentUnlocked = unlockedLevels[gameType] ?? 1;
-        unlockedLevels[gameType] = currentUnlocked + 3;
+        final maxLevels = CurriculumManifest.getLevels(gameType);
+        unlockedLevels[gameType] = math.min(maxLevels, currentUnlocked + 3);
 
         transaction.update(docRef, {
           'keys': currentKeys - cost,

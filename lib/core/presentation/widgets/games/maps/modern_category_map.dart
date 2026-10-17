@@ -174,8 +174,13 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     // Preload current quest batch for instant game start
     final user = context.read<AuthBloc>().state.user;
     if (user != null) {
-      final unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
-      di.sl<AssetQuestService>().preloadBatch(widget.gameType, unlockedLevel);
+      final unlockedLevel = math.min(
+        _totalLevels,
+        user.unlockedLevels[widget.gameType] ?? 1,
+      );
+      if (unlockedLevel < _totalLevels) {
+        di.sl<AssetQuestService>().preloadBatch(widget.gameType, unlockedLevel);
+      }
     }
 
     if (mounted) {
@@ -406,9 +411,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
 
     // Auto-correct unlockedLevels for premium users who previously hit a free-tier toll gate
     // and then upgraded, so they don't have to replay the previous level to trigger the unlock.
-    if (isPremium && unlockedLevels <= completedLevels) {
+    if (isPremium && unlockedLevels <= completedLevels && completedLevels < _totalLevels) {
       unlockedLevels = completedLevels + 1;
     }
+    unlockedLevels = math.min(_totalLevels, unlockedLevels);
 
     final List<Offset> points = _generatePointsCached(theme.category);
     final double rowSpacing = _getVerticalSpacing(theme.category);

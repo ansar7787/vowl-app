@@ -91,7 +91,9 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     }
   }
 
-  int _calculateTotalStars(Map<String, dynamic> categoryStars) {
+  ({int totalStars, int gameplayStars, int magicStars}) _calculateStars(
+    Map<String, dynamic> categoryStars,
+  ) {
     int gameplayStars = 0;
     final magicStars = (categoryStars['magic_stars'] as num?)?.toInt() ?? 0;
 
@@ -100,7 +102,11 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
         gameplayStars += (value as num?)?.toInt() ?? 0;
       }
     });
-    return gameplayStars + magicStars;
+    return (
+      totalStars: gameplayStars + magicStars,
+      gameplayStars: gameplayStars,
+      magicStars: magicStars,
+    );
   }
 
   Future<void> _claimChest(int tierIndex, int currentStars) async {
@@ -350,7 +356,10 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
         if (user == null) return const SizedBox.shrink();
 
         final categoryStars = user.starRatings[widget.gameType] ?? {};
-        final totalStars = _calculateTotalStars(categoryStars);
+        final starsData = _calculateStars(categoryStars);
+        final totalStars = starsData.totalStars;
+        final gameplayStars = starsData.gameplayStars;
+        final magicStars = starsData.magicStars;
         final claimedTier = categoryStars['claimed_chests'] ?? 0;
         final isPremium = user.isPremium;
 
@@ -497,44 +506,82 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,
                                       children: [
-                                        Column(
-                                          children: [
-                                            Text(
-                                              context.tr(
-                                                'store.your_stars',
-                                                fallback: "Your Stars",
-                                              ),
-                                              style: TextStyle(
-                                                fontSize: 14.sp,
-                                                color: isDark
-                                                    ? Colors.white54
-                                                    : Colors.black54,
-                                                fontWeight: FontWeight.w800,
-                                              ),
-                                            ),
-                                            SizedBox(height: 4.h),
-                                            Row(
-                                              children: [
-                                                Text(
-                                                  "$totalStars",
-                                                  style: TextStyle(
-                                                    fontSize: 36.sp,
-                                                    fontFamily: 'Outfit',
-                                                    fontWeight: FontWeight.w900,
-                                                    color: widget.primaryColor,
-                                                  ),
+                                        Expanded(
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                context.tr(
+                                                  'store.vault_stars',
+                                                  fallback: "Vault Stars",
                                                 ),
-                                                SizedBox(width: 4.w),
-                                                Icon(
-                                                  Icons.star_rounded,
-                                                  color: const Color(
-                                                    0xFFFFD700,
+                                                style: TextStyle(
+                                                  fontSize: 14.sp,
+                                                  color: isDark
+                                                      ? Colors.white54
+                                                      : Colors.black54,
+                                                  fontWeight: FontWeight.w800,
+                                                ),
+                                              ),
+                                              SizedBox(height: 4.h),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  Text(
+                                                    "$totalStars",
+                                                    style: TextStyle(
+                                                      fontSize: 36.sp,
+                                                      fontFamily: 'Outfit',
+                                                      fontWeight:
+                                                          FontWeight.w900,
+                                                      color:
+                                                          widget.primaryColor,
+                                                    ),
                                                   ),
-                                                  size: 32.sp,
+                                                  SizedBox(width: 4.w),
+                                                  Icon(
+                                                    Icons.star_rounded,
+                                                    color: const Color(
+                                                      0xFFFFD700,
+                                                    ),
+                                                    size: 32.sp,
+                                                  ),
+                                                ],
+                                              ),
+                                              if (magicStars > 0) ...[
+                                                SizedBox(height: 4.h),
+                                                Container(
+                                                  padding: EdgeInsets.symmetric(
+                                                    horizontal: 8.w,
+                                                    vertical: 2.h,
+                                                  ),
+                                                  decoration: BoxDecoration(
+                                                    color: widget.primaryColor
+                                                        .withValues(
+                                                          alpha: 0.15,
+                                                        ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                          12.r,
+                                                        ),
+                                                  ),
+                                                  child: FittedBox(
+                                                    fit: BoxFit.scaleDown,
+                                                    child: Text(
+                                                      '$gameplayStars Game + $magicStars Bonus',
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 10.sp,
+                                                        fontWeight:
+                                                            FontWeight.w800,
+                                                        color:
+                                                            widget.primaryColor,
+                                                      ),
+                                                    ),
+                                                  ),
                                                 ),
                                               ],
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                         Container(
                                           width: 3.w,
@@ -543,42 +590,46 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                             alpha: 0.2,
                                           ),
                                         ),
-                                        Column(
-                                          children: [
-                                            Text(
-                                              context.tr(
-                                                'store.next_chest',
-                                                fallback: "Next Chest",
+                                        Expanded(
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                context.tr(
+                                                  'store.next_chest',
+                                                  fallback: "Next Chest",
+                                                ),
+                                                style: TextStyle(
+                                                  fontSize: 14.sp,
+                                                  color: isDark
+                                                      ? Colors.white54
+                                                      : Colors.black54,
+                                                  fontWeight: FontWeight.w800,
+                                                ),
                                               ),
-                                              style: TextStyle(
-                                                fontSize: 14.sp,
-                                                color: isDark
-                                                    ? Colors.white54
-                                                    : Colors.black54,
-                                                fontWeight: FontWeight.w800,
-                                              ),
-                                            ),
-                                            SizedBox(height: 4.h),
-                                            Row(
-                                              children: [
-                                                Text(
-                                                  "$nextRequirement",
-                                                  style: TextStyle(
-                                                    fontSize: 36.sp,
-                                                    fontFamily: 'Outfit',
-                                                    fontWeight: FontWeight.w900,
-                                                    color: Colors.grey,
+                                              SizedBox(height: 4.h),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  Text(
+                                                    "$nextRequirement",
+                                                    style: TextStyle(
+                                                      fontSize: 36.sp,
+                                                      fontFamily: 'Outfit',
+                                                      fontWeight:
+                                                          FontWeight.w900,
+                                                      color: Colors.grey,
+                                                    ),
                                                   ),
-                                                ),
-                                                SizedBox(width: 4.w),
-                                                Icon(
-                                                  Icons.star_border_rounded,
-                                                  color: Colors.grey,
-                                                  size: 32.sp,
-                                                ),
-                                              ],
-                                            ),
-                                          ],
+                                                  SizedBox(width: 4.w),
+                                                  Icon(
+                                                    Icons.star_border_rounded,
+                                                    color: Colors.grey,
+                                                    size: 32.sp,
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -980,14 +1031,17 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                                                 "Loading...",
                                                           ),
                                                           style: TextStyle(
-                                                            fontFamily: 'Outfit',
+                                                            fontFamily:
+                                                                'Outfit',
                                                             fontSize: 16.sp,
                                                             fontWeight:
                                                                 FontWeight.w800,
-                                                            color: Colors.white70,
+                                                            color:
+                                                                Colors.white70,
                                                           ),
                                                           maxLines: 1,
-                                                          overflow: TextOverflow.ellipsis,
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
                                                         ),
                                                       ),
                                                     ],
@@ -1013,14 +1067,17 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                                                 "Daily Limit Reached",
                                                           ),
                                                           style: TextStyle(
-                                                            fontFamily: 'Outfit',
+                                                            fontFamily:
+                                                                'Outfit',
                                                             fontSize: 15.sp,
                                                             fontWeight:
                                                                 FontWeight.w900,
-                                                            color: Colors.white70,
+                                                            color:
+                                                                Colors.white70,
                                                           ),
                                                           maxLines: 1,
-                                                          overflow: TextOverflow.ellipsis,
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
                                                         ),
                                                       ),
                                                     ],
@@ -1054,14 +1111,16 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                                                       "Watch Ad for +2 Magic Stars",
                                                                 ),
                                                           style: TextStyle(
-                                                            fontFamily: 'Outfit',
+                                                            fontFamily:
+                                                                'Outfit',
                                                             fontSize: 15.sp,
                                                             fontWeight:
                                                                 FontWeight.w900,
                                                             color: Colors.white,
                                                           ),
                                                           maxLines: 1,
-                                                          overflow: TextOverflow.ellipsis,
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
                                                         ),
                                                       ),
                                                     ],

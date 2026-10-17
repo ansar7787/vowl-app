@@ -7,6 +7,7 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/domain/services/kids_game_helper.dart';
+import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 class _LocalPalette {
@@ -221,10 +222,14 @@ class _KidsGameEntryCard extends StatelessWidget {
   }
 
   Widget _buildCardIndicator(BuildContext context, Color color) {
-    final levelsCleared = user.completedLevels[metadata.gameType]?.length ?? 0;
-    final currentLevel = (user.unlockedLevels[metadata.gameType] ?? 1);
+    final maxLevels = CurriculumManifest.getLevels(metadata.gameType);
+    final levelsCleared = (user.completedLevels[metadata.gameType]?.length ?? 0).clamp(0, maxLevels);
+    final isMastered = levelsCleared >= maxLevels;
+    final currentLevel = isMastered
+        ? maxLevels
+        : (user.unlockedLevels[metadata.gameType] ?? 1).clamp(1, maxLevels);
     final isNew =
-        currentLevel == 1 &&
+        levelsCleared == 0 &&
         (user.completedLevels[metadata.gameType]?.isEmpty ?? true);
 
     if (isNew) {
@@ -252,7 +257,7 @@ class _KidsGameEntryCard extends StatelessWidget {
     }
 
     // Mastery completion state
-    if (levelsCleared >= 200) {
+    if (isMastered) {
       return Container(
         width: 26.r,
         height: 26.r,

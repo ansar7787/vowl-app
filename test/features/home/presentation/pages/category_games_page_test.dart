@@ -428,4 +428,189 @@ void main() {
       },
     );
   });
+
+  group('Group 7: Level 200 Completion & Gameplay Stars', () {
+    testWidgets(
+      'displays trophy icon badge and pure gameplay stars excluding magic_stars when 200 levels completed',
+      (tester) async {
+        final completed200User = testUser.copyWith(
+          completedLevels: {
+            'partsOfSpeech': List.generate(200, (i) => i + 1),
+          },
+          starRatings: {
+            'partsOfSpeech': {
+              '1': 3,
+              '2': 3,
+              'magic_stars': 500, // Ad stars from vault must be excluded
+              'claimed_chests': 2,
+            },
+          },
+        );
+
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(completed200User),
+        );
+
+        await pumpCategoryGamesPage(tester, categoryId: 'grammar');
+
+        final scrollable = find.byType(CustomScrollView);
+        await tester.drag(scrollable, const Offset(0, -400));
+        await tester.pumpAndSettle();
+
+        // Must NOT show 201 anywhere
+        expect(find.text('201'), findsNothing);
+        expect(find.text('Lv.201'), findsNothing);
+
+        // Must NOT display MASTERED text in badge (user requested only trophy icon)
+        expect(find.text('MASTERED'), findsNothing);
+        // Trophy icon is present in the badge
+        expect(find.byIcon(Icons.emoji_events_rounded), findsOneWidget);
+
+        // Must display pure gameplay stars (6/600), NOT including magic_stars (506/600)
+        expect(
+          find.text('★ 6 / 600 • REPLAY FOR 3★'),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets(
+      'displays 100% PERFECT and pure gameplay stars when all 200 levels have 3 stars (600 stars)',
+      (tester) async {
+        final perfectUser = testUser.copyWith(
+          completedLevels: {
+            'partsOfSpeech': List.generate(200, (i) => i + 1),
+          },
+          starRatings: {
+            'partsOfSpeech': {
+              for (var i = 1; i <= 200; i++) '$i': 3,
+              'magic_stars': 200,
+            },
+          },
+        );
+
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(perfectUser),
+        );
+
+        await pumpCategoryGamesPage(tester, categoryId: 'grammar');
+
+        final scrollable = find.byType(CustomScrollView);
+        await tester.drag(scrollable, const Offset(0, -400));
+        await tester.pumpAndSettle();
+
+        // Text 'PERFECT' is omitted from badge; star icon is displayed
+        expect(find.text('PERFECT'), findsNothing);
+        expect(find.byIcon(Icons.stars_rounded), findsWidgets);
+        expect(
+          find.text('★ 600 / 600 • 100% PERFECT'),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets(
+      'renders unified spatial playing card layout with floating icon for all cards, replacing level badge with trophy icon on mastered cards',
+      (tester) async {
+        // partsOfSpeech is mastered (200 levels), while other games in grammar are unmastered (0 levels)
+        final mixedUser = testUser.copyWith(
+          completedLevels: {
+            'partsOfSpeech': List.generate(200, (i) => i + 1),
+          },
+          starRatings: {
+            'partsOfSpeech': {
+              '1': 3,
+              '2': 3,
+            },
+          },
+        );
+
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(mixedUser),
+        );
+
+        await pumpCategoryGamesPage(tester, categoryId: 'grammar');
+
+        final scrollable = find.byType(CustomScrollView);
+        await tester.drag(scrollable, const Offset(0, -400));
+        await tester.pumpAndSettle();
+
+        // 1. Mastered card exists with trophy icon and no MASTERED text
+        expect(find.text('MASTERED'), findsNothing);
+        expect(find.byIcon(Icons.emoji_events_rounded), findsOneWidget);
+
+        // 2. Unmastered cards still have level badge pills (e.g. NEW for fresh games)
+        expect(find.text('NEW'), findsWidgets);
+
+        // 3. Floating spatial icon PositionedDirectional is present for all cards (including mastered)
+        expect(find.byType(PositionedDirectional), findsWidgets);
+      },
+    );
+
+    testWidgets(
+      'calculates and displays pure gameplay stars count without misleading percentages for in-progress games',
+      (tester) async {
+        // partsOfSpeech has 60 stars out of 600 across 20 levels
+        final inProgressUser = testUser.copyWith(
+          completedLevels: {
+            'partsOfSpeech': List.generate(20, (i) => i + 1),
+          },
+          starRatings: {
+            'partsOfSpeech': {
+              for (var i = 1; i <= 20; i++) '$i': 3, // 20 * 3 = 60 stars
+              'magic_stars': 100, // Excluded from pure gameplay stars
+            },
+          },
+        );
+
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(inProgressUser),
+        );
+
+        await pumpCategoryGamesPage(tester, categoryId: 'grammar');
+
+        final scrollable = find.byType(CustomScrollView);
+        await tester.drag(scrollable, const Offset(0, -400));
+        await tester.pumpAndSettle();
+
+        // Must display pure gameplay stars without confusing percentages
+        expect(find.text('★ 60 / 600 GAME STARS'), findsOneWidget);
+        expect(find.text('★ 60 / 600 • 10%'), findsNothing);
+      },
+    );
+
+    testWidgets(
+      'displays pure gameplay stars for early in-progress games (e.g. 5 stars) completely eliminating 0% truncation bug',
+      (tester) async {
+        // partsOfSpeech has 5 stars out of 600 across 2 levels (level 1: 3 stars, level 2: 2 stars)
+        final lowStarUser = testUser.copyWith(
+          completedLevels: {
+            'partsOfSpeech': [1, 2],
+          },
+          starRatings: {
+            'partsOfSpeech': {
+              '1': 3,
+              '2': 2,
+              'magic_stars': 50, // Excluded
+            },
+          },
+        );
+
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(lowStarUser),
+        );
+
+        await pumpCategoryGamesPage(tester, categoryId: 'grammar');
+
+        final scrollable = find.byType(CustomScrollView);
+        await tester.drag(scrollable, const Offset(0, -400));
+        await tester.pumpAndSettle();
+
+        // Must display exact stars without the misleading 0% integer truncation bug
+        expect(find.text('★ 5 / 600 GAME STARS'), findsOneWidget);
+        expect(find.text('★ 5 / 600 • 0%'), findsNothing);
+        expect(find.textContaining('0%'), findsNothing);
+      },
+    );
+  });
 }
