@@ -32,7 +32,7 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.dart';
 import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc.dart';
 import 'package:vowl/features/elite_mastery/presentation/layout/elite_base_layout.dart';
-import 'package:vowl/features/elite_mastery/presentation/widgets/elite_feedback_card.dart';
+import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/elite_mastery/presentation/widgets/elite_game_header.dart';
 import 'package:vowl/features/elite_mastery/presentation/widgets/elite_hint_card.dart';
 import 'package:vowl/features/elite_mastery/speed_spelling/presentation/pages/speed_spelling_screen.dart';
@@ -876,7 +876,7 @@ void main() {
       expect(find.byType(QuestHintButton), findsNothing);
     });
 
-    testWidgets('EliteFeedbackCard appears on answered; tapping continue dispatches NextEliteQuestion', (
+    testWidgets('GameFeedbackCard appears on answered; tapping continue dispatches NextEliteQuestion', (
       tester,
     ) async {
       await pumpScreen(tester);
@@ -899,7 +899,7 @@ void main() {
       await tester.tap(find.byKey(const Key('speed_spelling_submit_button')));
       await tester.pumpAndSettle();
 
-      expect(find.byType(EliteFeedbackCard), findsOneWidget);
+      expect(find.byType(GameFeedbackCard), findsOneWidget);
 
       final continueBtn = find.text('CONTINUE');
       expect(continueBtn, findsOneWidget);

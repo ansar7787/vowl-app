@@ -5,6 +5,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
+import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 
 /// Unified, high-performance bottom sheet for selecting translation languages across Vowl.
 ///
@@ -41,6 +42,7 @@ class LanguageSelectionBottomSheet extends StatefulWidget {
     String? title,
     String? subtitle,
   }) {
+    TtsSpeakerButtonWidget.stopAll();
     return showModalBottomSheet<String>(
       context: context,
       isScrollControlled: true,

@@ -9,6 +9,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/premium/presentation/pages/premium_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/widgets/premium_upsell_content.dart';
+import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 
 /// Manages the monetization flow for ML Kit Translations.
 ///
@@ -29,9 +30,15 @@ class TranslationMonetizationController {
     final isPremium = authState.user?.isPremium ?? false;
 
     if (isPremium) {
+      await TtsSpeakerButtonWidget.stopAll();
       onSuccess();
       return;
     }
+
+    // Immediately silence audio before presenting ad/upsell dialog
+    await TtsSpeakerButtonWidget.stopAll();
+
+    if (!context.mounted) return;
 
     // Show Free User Dialog (Watch Ad or Upgrade)
     final result = await showDialog<String>(

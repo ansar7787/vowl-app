@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 
 class TranslationDownloadSheet extends StatefulWidget {
   /// The future that represents the actual download task.
@@ -14,6 +15,8 @@ class TranslationDownloadSheet extends StatefulWidget {
   const TranslationDownloadSheet({super.key, required this.downloadTask});
 
   static Future<void> show(BuildContext context, Future<void> task) async {
+    await TtsSpeakerButtonWidget.stopAll();
+    if (!context.mounted) return;
     return showModalBottomSheet(
       context: context,
       isDismissible: false,

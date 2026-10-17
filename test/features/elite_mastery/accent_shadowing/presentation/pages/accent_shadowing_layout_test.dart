@@ -40,7 +40,7 @@ import 'package:vowl/features/elite_mastery/accent_shadowing/presentation/widget
 import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.dart';
 import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc.dart';
 import 'package:vowl/features/elite_mastery/presentation/layout/elite_base_layout.dart';
-import 'package:vowl/features/elite_mastery/presentation/widgets/elite_feedback_card.dart';
+import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/elite_mastery/presentation/widgets/elite_game_header.dart';
 import 'package:vowl/features/elite_mastery/presentation/widgets/elite_hint_card.dart';
 
@@ -941,7 +941,7 @@ void main() {
       );
     });
 
-    testWidgets('EliteFeedbackCard appears on answered; tapping continue dispatches NextEliteQuestion', (
+    testWidgets('GameFeedbackCard appears on answered; tapping continue dispatches NextEliteQuestion', (
       tester,
     ) async {
       final answeredState = EliteMasteryLoaded(
@@ -955,7 +955,7 @@ void main() {
 
       await pumpScreen(tester, state: answeredState);
 
-      expect(find.byType(EliteFeedbackCard), findsOneWidget);
+      expect(find.byType(GameFeedbackCard), findsOneWidget);
 
       final continueButton = find.text('CONTINUE');
       expect(continueButton, findsOneWidget);

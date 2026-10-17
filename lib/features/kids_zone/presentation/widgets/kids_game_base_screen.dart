@@ -308,6 +308,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                         state.isFinalFailure)
                     ? state.currentQuest.explanation
                     : null,
+                correctAnswer:
+                    state.isFinalFailure ? state.currentQuest.correctAnswer : null,
+                isKids: true,
                 onContinue: () {
                   di.sl<KidsTTSService>().stop();
                   if (state.answerStatus == AnswerStatus.correct ||
