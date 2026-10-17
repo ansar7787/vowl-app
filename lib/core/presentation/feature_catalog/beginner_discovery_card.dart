@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vowl/core/presentation/feature_catalog/feature_directory_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -87,8 +86,8 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
     ),
     _DiscoveryQuest(
       key: 'photo_vocab',
-      title: 'Try Camera AI in Photo Vocab',
-      subtitle: 'Discover words with AI',
+      title: 'Try Photo Vocabulary',
+      subtitle: 'Learn words with camera',
       icon: LucideIcons.camera,
       route: AppRouter.photoVocabularyRoute,
       actionLabel: 'Try',
@@ -96,16 +95,16 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
     ),
     _DiscoveryQuest(
       key: 'translate',
-      title: 'Test 50+ Offline Languages',
-      subtitle: 'Translate without Wi-Fi',
+      title: 'Offline Translator',
+      subtitle: 'Translate in 50+ languages',
       icon: LucideIcons.languages,
       route: AppRouter.translateRoute,
-      actionLabel: 'Translate',
+      actionLabel: 'Open',
       themeColor: Color(0xFF10B981), // Emerald
     ),
     _DiscoveryQuest(
       key: 'boutique',
-      title: 'Visit Buddy Boutique & Pet',
+      title: 'Buddy Boutique & Pet',
       subtitle: 'Style your mascot pet',
       icon: LucideIcons.sparkles,
       route: AppRouter.vowlMascotRoute,
@@ -114,8 +113,8 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
     ),
     _DiscoveryQuest(
       key: 'reports',
-      title: 'Check Learning Report & Errors',
-      subtitle: 'Track accuracy & errors',
+      title: 'Learning Progress',
+      subtitle: 'Check accuracy and stats',
       icon: LucideIcons.barChart2,
       route: AppRouter.progressDashboardRoute,
       actionLabel: 'View',
@@ -470,7 +469,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
     double progress,
   ) {
     return Container(
-      padding: EdgeInsets.fromLTRB(14.w, 12.h, 14.w, 10.h),
+      padding: EdgeInsets.fromLTRB(0, 11.h, 0, 10.h),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
@@ -479,7 +478,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
               ? const [Color(0xFF161928), Color(0xFF10121B)]
               : const [Colors.white, Color(0xFFF8FAFD)],
         ),
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: isDark
               ? Colors.white.withValues(alpha: 0.08)
@@ -489,8 +488,8 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: isDark ? 0.25 : 0.04),
-            blurRadius: 16.r,
-            offset: Offset(0, 4.h),
+            blurRadius: 14.r,
+            offset: Offset(0, 3.h),
           ),
         ],
       ),
@@ -499,206 +498,179 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
         mainAxisSize: MainAxisSize.min,
         children: [
           // ── Header Row ───────────────────────────────────────────────
-          Row(
-            children: [
-              Container(
-                width: 32.r,
-                height: 32.r,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.r),
-                  color: AppColors.indigo500.withValues(alpha: 0.15),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: Row(
+              children: [
+                Container(
+                  width: 28.r,
+                  height: 28.r,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.r),
+                    color: AppColors.indigo500.withValues(alpha: 0.12),
+                  ),
+                  child: Icon(
+                    LucideIcons.compass,
+                    size: 15.r,
+                    color: AppColors.indigo500,
+                  ),
                 ),
-                child: Icon(
-                  LucideIcons.compass,
-                  size: 16.r,
-                  color: AppColors.indigo500,
-                ),
-              ),
-              SizedBox(width: 8.w),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
+                SizedBox(width: 8.w),
+                Expanded(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    alignment: Alignment.centerLeft,
+                    child: Text(
                       context.tr(
                         'beginner_discovery.title',
                         fallback: 'Beginner Discovery Quests',
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 13.5.sp,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w700,
                         color: Theme.of(context).colorScheme.onSurface,
                       ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
                     ),
-                    SizedBox(height: 1.h),
-                    Text(
-                      '$completedCount of ${_quests.length} Completed',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white60 : AppColors.slate600,
-                      ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(width: 6.w),
-              // +150 Coin Pill
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 3.5.h),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      AppColors.amber500.withValues(alpha: 0.2),
-                      const Color(0xFFD97706).withValues(alpha: 0.15),
-                    ],
-                  ),
-                  borderRadius: BorderRadius.circular(10.r),
-                  border: Border.all(
-                    color: AppColors.amber500.withValues(alpha: 0.4),
-                    width: 1,
                   ),
                 ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      Icons.monetization_on_rounded,
-                      size: 12.r,
-                      color: AppColors.amber500,
+                SizedBox(width: 6.w),
+                IconButton(
+                  onPressed: _dismissCard,
+                  icon: Icon(
+                    Icons.close_rounded,
+                    size: 16.r,
+                    color: isDark ? Colors.white38 : Colors.black38,
+                  ),
+                  padding: EdgeInsets.zero,
+                  visualDensity: VisualDensity.compact,
+                  constraints: BoxConstraints(minWidth: 26.r, minHeight: 26.r),
+                  tooltip: context.tr('common.dismiss', fallback: 'Dismiss'),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 6.h),
+
+          // ── Subtitle & Reward Alignment Row ──────────────────────────────
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    '$completedCount of ${_quests.length} completed',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w500,
+                      color: isDark ? Colors.white60 : AppColors.slate600,
                     ),
-                    SizedBox(width: 3.w),
-                    Text(
-                      '+150',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.5.sp,
-                        fontWeight: FontWeight.w800,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                SizedBox(width: 8.w),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 2.h),
+                  decoration: BoxDecoration(
+                    color: AppColors.amber500.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(8.r),
+                    border: Border.all(
+                      color: AppColors.amber500.withValues(alpha: 0.35),
+                      width: 0.8,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.monetization_on_rounded,
+                        size: 11.5.r,
                         color: AppColors.amber500,
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 3.w),
+                      Text(
+                        '+150 Coins',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.5.sp,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.amber500,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(width: 2.w),
-              IconButton(
-                onPressed: _dismissCard,
-                icon: Icon(
-                  Icons.close_rounded,
-                  size: 16.r,
-                  color: isDark ? Colors.white38 : Colors.black38,
-                ),
-                padding: EdgeInsets.zero,
-                visualDensity: VisualDensity.compact,
-                constraints: BoxConstraints(minWidth: 28.r, minHeight: 28.r),
-                tooltip: context.tr('common.dismiss', fallback: 'Dismiss'),
-              ),
-            ],
+              ],
+            ),
           ),
-          SizedBox(height: 8.h),
+          SizedBox(height: 6.h),
 
           // ── Progress Bar ─────────────────────────────────────────────
-          ClipRRect(
-            borderRadius: BorderRadius.circular(6.r),
-            child: Container(
-              height: 4.h,
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.08)
-                  : Colors.black.withValues(alpha: 0.06),
-              alignment: Alignment.centerLeft,
-              child: FractionallySizedBox(
-                widthFactor: progress.clamp(0.04, 1.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [AppColors.amber400, Color(0xFFD97706)],
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(4.r),
+              child: Container(
+                height: 3.5.h,
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : Colors.black.withValues(alpha: 0.06),
+                alignment: Alignment.centerLeft,
+                child: FractionallySizedBox(
+                  widthFactor: progress.clamp(0.04, 1.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [AppColors.amber400, Color(0xFFD97706)],
+                      ),
+                      borderRadius: BorderRadius.circular(4.r),
                     ),
-                    borderRadius: BorderRadius.circular(6.r),
                   ),
                 ),
               ),
             ),
           ),
-          SizedBox(height: 10.h),
-
-          // ── Horizontal Quests Row Deck ────────────────────────────────
-          SizedBox(
-            height: 148.h,
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              physics: const BouncingScrollPhysics(),
-              child: Row(
-                children: [
-                  for (int index = 0; index < _quests.length; index++) ...[
-                    if (index > 0) SizedBox(width: 10.w),
-                    _buildQuestMiniCard(
-                      context,
-                      _quests[index],
-                      index,
-                      _completedMap[_quests[index].key] == true,
-                      isDark,
-                    ),
-                  ],
-                ],
-              ),
-            ),
-          ),
           SizedBox(height: 8.h),
 
-          // ── Explore Directory Mini Link ──────────────────────────────
-          ScaleButton(
-            onTap: () {
-              di.sl<HapticService>().light();
-              FeatureDirectoryBottomSheet.show(context);
-            },
-            child: Container(
-              padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.03)
-                    : AppColors.indigo500.withValues(alpha: 0.04),
-                borderRadius: BorderRadius.circular(10.r),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    LucideIcons.compass,
-                    size: 12.r,
-                    color: AppColors.indigo500,
-                  ),
-                  SizedBox(width: 6.w),
-                  Flexible(
-                    child: Text(
-                      context.tr(
-                        'beginner_discovery.explore_directory',
-                        fallback:
-                            'Explore full directory of all 50+ features & games',
+          // ── Horizontal Quests Row Deck (Edge-to-edge scroll with smooth edge fade) ─
+          SizedBox(
+            height: 98.h,
+            child: ShaderMask(
+              shaderCallback: (Rect bounds) {
+                return LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: const [
+                    Colors.transparent,
+                    Colors.white,
+                    Colors.white,
+                    Colors.transparent,
+                  ],
+                  stops: const [0.0, 0.05, 0.95, 1.0],
+                ).createShader(bounds);
+              },
+              blendMode: BlendMode.dstIn,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 3.h),
+                clipBehavior: Clip.none,
+                child: Row(
+                  children: [
+                    for (int index = 0; index < _quests.length; index++) ...[
+                      if (index > 0) SizedBox(width: 8.w),
+                      _buildQuestMiniCard(
+                        context,
+                        _quests[index],
+                        index,
+                        _completedMap[_quests[index].key] == true,
+                        isDark,
                       ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.indigo500,
-                      ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                  SizedBox(width: 4.w),
-                  Icon(
-                    LucideIcons.chevronRight,
-                    size: 12.r,
-                    color: AppColors.indigo500,
-                  ),
-                ],
+                    ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -718,8 +690,8 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
     bool isDark,
   ) {
     final card = Container(
-      width: 138.w,
-      padding: EdgeInsets.all(8.r),
+      width: 140.w,
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: isDark
             ? (isDone
@@ -731,7 +703,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
           color: isDone
               ? AppColors.emerald500.withValues(alpha: 0.25)
               : (isDark
-                    ? Colors.white.withValues(alpha: 0.06)
+                    ? Colors.white.withValues(alpha: 0.07)
                     : Colors.black.withValues(alpha: 0.06)),
           width: 1.1,
         ),
@@ -745,8 +717,9 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // Top Icon & Check/Step Row
+          // Top Row: Category icon (left) + Action/Done pill (right)
           Row(
             children: [
               Container(
@@ -760,160 +733,112 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
                 ),
                 child: Icon(
                   quest.icon,
-                  size: 14.r,
+                  size: 13.r,
                   color: isDone ? AppColors.emerald500 : quest.themeColor,
                 ),
               ),
               const Spacer(),
               if (isDone)
                 Container(
-                  width: 18.r,
-                  height: 18.r,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: AppColors.emerald500,
+                  padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                  decoration: BoxDecoration(
+                    color: AppColors.emerald500.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(6.r),
                   ),
-                  child: Icon(
-                    LucideIcons.check,
-                    size: 11.r,
-                    color: Colors.white,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        LucideIcons.check,
+                        size: 10.r,
+                        color: AppColors.emerald500,
+                      ),
+                      SizedBox(width: 3.w),
+                      Text(
+                        context.tr('common.done', fallback: 'Done'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 9.sp,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.emerald500,
+                        ),
+                      ),
+                    ],
                   ),
                 )
               else
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 1.h),
+                  padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
                   decoration: BoxDecoration(
-                    color: (isDark ? Colors.white : Colors.black).withValues(
-                      alpha: 0.05,
-                    ),
-                    borderRadius: BorderRadius.circular(5.r),
+                    color: quest.themeColor.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(6.r),
                   ),
-                  child: Text(
-                    '0${index + 1}',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 8.5.sp,
-                      fontWeight: FontWeight.w800,
-                      color: isDark ? Colors.white38 : Colors.black38,
-                    ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        context.tr(
+                          'beginner_quest.${quest.key}_action',
+                          fallback: quest.actionLabel,
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 9.sp,
+                          fontWeight: FontWeight.w600,
+                          color: quest.themeColor,
+                        ),
+                      ),
+                      SizedBox(width: 2.w),
+                      Icon(
+                        LucideIcons.chevronRight,
+                        size: 9.r,
+                        color: quest.themeColor,
+                      ),
+                    ],
                   ),
                 ),
             ],
           ),
-          SizedBox(height: 5.h),
 
-          // Quest Title
-          Text(
-            quest.title,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 11.sp,
-              fontWeight: FontWeight.w700,
-              height: 1.15,
-              decoration: isDone ? TextDecoration.lineThrough : null,
-              color: isDone
-                  ? (isDark ? Colors.white38 : Colors.black38)
-                  : Theme.of(context).colorScheme.onSurface,
-            ),
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-          ),
-          SizedBox(height: 2.h),
-
-          // Quest Subtitle
-          Text(
-            quest.subtitle,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 9.sp,
-              color: isDark ? Colors.white54 : AppColors.slate500,
-            ),
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-          ),
-          const Spacer(),
-
-          // Uniform Action Button / Done Pill
-          if (!isDone)
-            Container(
-              height: 26.h,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    quest.themeColor,
-                    quest.themeColor.withValues(alpha: 0.85),
-                  ],
-                ),
-                borderRadius: BorderRadius.circular(9.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: quest.themeColor.withValues(alpha: 0.25),
-                    blurRadius: 6.r,
-                    offset: Offset(0, 2.h),
+          // Title & Subtitle block (scaled down gracefully if needed, NEVER ellipsis)
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  quest.title,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.5.sp,
+                    fontWeight: FontWeight.w600,
+                    decoration: isDone ? TextDecoration.lineThrough : null,
+                    color: isDone
+                        ? (isDark ? Colors.white38 : Colors.black38)
+                        : Theme.of(context).colorScheme.onSurface,
                   ),
-                ],
-              ),
-              child: Center(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      context.tr(
-                        'beginner_quest.${quest.key}_action',
-                        fallback: quest.actionLabel,
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
-                      ),
-                    ),
-                    SizedBox(width: 3.w),
-                    Icon(
-                      LucideIcons.arrowRight,
-                      size: 9.r,
-                      color: Colors.white,
-                    ),
-                  ],
+                  maxLines: 1,
                 ),
               ),
-            )
-          else
-            Container(
-              height: 26.h,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: AppColors.emerald500.withValues(alpha: 0.12),
-                borderRadius: BorderRadius.circular(9.r),
-                border: Border.all(
-                  color: AppColors.emerald500.withValues(alpha: 0.2),
+              SizedBox(height: 2.h),
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  quest.subtitle,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 9.5.sp,
+                    fontWeight: FontWeight.w400,
+                    color: isDark ? Colors.white54 : AppColors.slate500,
+                  ),
+                  maxLines: 1,
                 ),
               ),
-              child: Center(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      LucideIcons.checkCheck,
-                      size: 11.r,
-                      color: AppColors.emerald500,
-                    ),
-                    SizedBox(width: 4.w),
-                    Text(
-                      context.tr('common.done', fallback: 'Done'),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.emerald500,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            ],
+          ),
         ],
       ),
     );
@@ -922,7 +847,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
 
     return Semantics(
       button: true,
-      label: 'Quest ${index + 1}: ${quest.title}',
+      label: 'Quest ${index + 1}: ${quest.title}. ${quest.subtitle}',
       child: ScaleButton(
         onTap: () => _handleQuestTap(quest),
         child: card,

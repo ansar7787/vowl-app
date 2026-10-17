@@ -196,8 +196,8 @@ void main() {
 
       expect(find.text('Beginner Discovery Quests'), findsOneWidget);
       expect(find.text('Complete 1 Lesson'), findsOneWidget);
-      expect(find.text('Try Camera AI in Photo Vocab'), findsOneWidget);
-      expect(find.text('Visit Buddy Boutique & Pet'), findsOneWidget);
+      expect(find.text('Try Photo Vocabulary'), findsOneWidget);
+      expect(find.text('Buddy Boutique & Pet'), findsOneWidget);
       expect(tester.takeException(), isNull);
 
       // Tap dismiss
