@@ -5,8 +5,8 @@
 >
 > - **Total Dart Files in `lib/`**: **1,070 files**
 > - **Total Test Files in `test/`**: **212 test files**
-> - **Total Passing Tests**: **4,128+ Tests Passing across 204 itemized suites (100% Green)**
-> - **Completed Test Suites**: **204 of 204 items** across Sections 1 to 17 (100% COMPLETE!)
+> - **Total Passing Tests**: **4,153+ Tests Passing across 212 itemized suites (100% Green)**
+> - **Completed Test Suites**: **212 of 212 items** across Sections 1 to 17 (100% COMPLETE!)
 > - **Remaining Screens & Services to Test / Harden**: **0 items** remaining (ALL COMPLETE 🟢).
 
 ---
@@ -46,7 +46,7 @@ Every game test suite MUST rigorously satisfy:
 | :-: | -------------------- | :-------------------: | :---------: | :---------: | :--------------: |
 | **1** | **Authentication & Accounts** | 12 | 12 | 0 | 🟢 100% Complete (62 tests) |
 | **2** | **Games Hub & Routing** | 5 | 5 | 0 | 🟢 100% Complete (58 tests) |
-| **3** | **Kids Zone** | 34 | 34 | 0 | 🟢 100% Complete (34 items done, 331 tests) |
+| **3** | **Kids Zone** | 35 | 35 | 0 | 🟢 100% Complete (35 items done, 336 tests) |
 | **4** | **Reading Category** | 13 | 13 | 0 | 🟢 100% Complete (163 tests) |
 | **5** | **Accent Training** | 13 | 13 | 0 | 🟢 100% Complete (195 tests) |
 | **6** | **Grammar Category** | 21 | 21 | 0 | 🟢 100% Complete (395 tests) |
@@ -56,12 +56,12 @@ Every game test suite MUST rigorously satisfy:
 | **10** | **Vocabulary Category** | 14 | 14 | 0 | 🟢 100% Complete (442 tests) |
 | **11** | **Writing Category** | 12 | 12 | 0 | 🟢 100% Complete (321 tests) |
 | **12** | **Elite Mastery** | 5 | 5 | 0 | 🟢 100% Complete (138 tests) |
-| **13** | **Daily Challenges & Micro-Games** | 11 | 11 | 0 | 🟢 100% Complete (47 tests) |
+| **13** | **Daily Challenges & Micro-Games** | 12 | 12 | 0 | 🟢 100% Complete (48 tests) |
 | **14** | **Home, Shell & Navigation** | 6 | 6 | 0 | 🟢 100% Complete (131 tests) |
 | **15** | **Profile, Progress & Trophies** | 7 | 7 | 0 | 🟢 100% Complete (117 tests) |
-| **16** | **Leaderboard, Settings, Paywall, Splash** | 8 | 8 | 0 | 🟢 100% Complete (153 tests) |
-| **17** | **Core Screens, Onboarding & Critical Services** | 8 | 8 | 0 | 🟢 100% Complete (8/8 items done, 122 tests) |
-| **TOTAL** | **All Categories & Systems** | **204** | **204** | **0** | 🟢 **100% Complete (4,128 tests)** |
+| **16** | **Leaderboard, Settings, Paywall, Splash** | 9 | 9 | 0 | 🟢 100% Complete (157 tests) |
+| **17** | **Core Screens, Onboarding & Critical Services** | 13 | 13 | 0 | 🟢 100% Complete (13 items done, 140 tests) |
+| **TOTAL** | **All Categories & Systems** | **212** | **212** | **0** | 🟢 **100% Complete (4,153 tests)** |
 
 ---
 
@@ -162,6 +162,8 @@ Every game test suite MUST rigorously satisfy:
   - Validates title and subtitle headers, 3 mascot cards (Owly, Foxie, Dino) with traits, dynamic selected state ("SELECTED" with check icon) vs unselected ("SELECT"), interactive "Try me!" button triggering `SoundService.playMascotInteraction()` with 2-second cooldown lock, mascot selection dispatching `ProfileUpdateMascotRequested(id)` and displaying success snackbar, back button navigation popping to root route, dark theme mode styling, and small screen 320dp width zero-overflow layout safety.
 - [x] **3.35** `sticker_book_screen_test.dart` (Sticker Collection Viewer Test) — ✅ `[DONE - 9/9 tests passing]`
   - Validates sticker album title, unlocked stats pill ($earned / 100), back button navigation to root route, category tabs for all 25 categories with earned count badges, rarity labels (COMMON for lvl 10, RARE for lvl 50, EPIC for lvl 100, LEGENDARY for lvl 200), equipped checkmark badge, unequipping equipped sticker via `ProfileEquipStickerRequested(null)`, equipping unequipped sticker via `ProfileEquipStickerRequested(id)`, locked quest warning snackbar upon tapping locked sticker, dark mode theme rendering, and small screen 320dp width zero-overflow layout safety.
+- [x] **3.36** `kids_verbs_story_and_instructions_test.dart` (Widget & Milestone Services Test) — ✅ `[DONE - 5/5 tests passing]`
+  - Validates story and instruction milestone services, kids verbs layout interactions, instructions banner rendering, and story layout flow.
 
 ---
 
@@ -435,6 +437,8 @@ Every game test suite MUST rigorously satisfy:
 - [x] **13.9** `scan_and_learn_widgets_test.dart` (Widget Test) — ✅ `[DONE - 3/3 tests passing]`
 - [x] **13.10** `translate_screen_test.dart` (Widget Test) — ✅ `[DONE - 4/4 tests passing]`
 - [x] **13.11** `translation_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
+- [x] **13.12** `daily_challenge_service_test.dart` (Unit Test) — ✅ `[DONE - 1/1 tests passing]`
+  - Validates daily challenge service curriculum loader for Word Mixer and Word Snap puzzles.
 
 ---
 
@@ -520,7 +524,7 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 16: LEADERBOARD, SETTINGS, PAYWALL, SPLASH (8 / 8 COMPLETE - 100%)
+### SECTION 16: LEADERBOARD, SETTINGS, PAYWALL, SPLASH (9 / 9 COMPLETE - 100%)
 
 - [x] **16.1** `tts_voice_selection_bottom_sheet_test.dart` (Widget Test) — ✅ `[DONE - 3/3 tests passing]`
 - [x] **16.2** `leaderboard_screen_test.dart` (Leaderboard Widget Test) — ✅ `[DONE - 18/18 tests passing]`
@@ -574,10 +578,12 @@ Every game test suite MUST rigorously satisfy:
     4. Subscription Purchase Flow (`purchaseSubscription`): Anti-tamper price lock via server order before checkout launch.
     5. Zero Money Leakage: Subscription Upgrade Endpoint (`upgradeToPremium`): Validates payment signature on backend; anti-fraud rejection when backend returns `success != true`; rethrows unauthenticated / network errors.
     6. Zero Money Leakage: Coin Pack Verification Endpoint (`verifyCoinPurchase`): Validates coin order and signature via Cloud Function; anti-fraud rejection on backend mismatch; rethrows backend database / network errors.
+- [x] **16.9** `tts_voice_helper_test.dart` (Unit Test) — ✅ `[DONE - 4/4 tests passing]`
+  - Validates TTS voice presets, gender selection, language code matching, and SharedPreferences voice persistence.
 
 ---
 
-### SECTION 17: CORE SCREENS, ONBOARDING & CRITICAL SERVICES (8 / 8 COMPLETE)
+### SECTION 17: CORE SCREENS, ONBOARDING & CRITICAL SERVICES (13 / 13 COMPLETE - 100%)
 
 - [x] **17.1** `hatching_page_test.dart` (Companion Egg Hatching & Pet Naming Onboarding Test) — 🟢 `[DONE - 13/13 tests passing]`
   - Validates full `HatchingPage` companion hatching onboarding flow across 6 test groups (13 tests):
@@ -639,3 +645,13 @@ Every game test suite MUST rigorously satisfy:
     6. Rewarded Ad Presentation & Reward Delivery: Premium users receive reward immediately; unloaded ad triggers `CustomSnackBar` when mounted context provided; full rewarded ad cycle delivers reward item and triggers onDismissed; failed to show invokes onDismissed; `showHintRewardedAd` forwards hint callback.
     7. COPPA & Child-Safe Mode: Forced child-safe request for adult session flushes pre-loaded personalized ad, requests fresh child-safe ad, shows and delivers reward without leaking adult ad.
     8. Teardown & Resource Disposal: `dispose()` cleans up platform interstitial and rewarded ads; subsequent operations are safely ignored.
+- [x] **17.9** `app_feature_catalog_test.dart` (Core Feature Registry Test) — 🟢 `[DONE - 3/3 tests passing]`
+  - Validates full feature catalog registry across all 6 core categories (kids, games, social, practice, profile, settings), route definitions, icons, and localized labels.
+- [x] **17.10** `feature_directory_sheet_test.dart` (Feature Directory & Welcome Showcase Test) — 🟢 `[DONE - 5/5 tests passing]`
+  - Validates `FeatureDirectoryBottomSheet` modal rendering, category search filtering, `BeginnerDiscoveryCard`, and `FirstTimeWelcomeShowcase` presentation.
+- [x] **17.11** `dynamic_jigsaw_wrapper_test.dart` (Jigsaw Game Mechanics Test) — 🟢 `[DONE - 4/4 tests passing]`
+  - Validates `DynamicJigsawWrapper` arranging mechanics, piece placement, snap targets, and completion triggers.
+- [x] **17.12** `glass_tile_test.dart` (Core UI Glass Component Test) — 🟢 `[DONE - 3/3 tests passing]`
+  - Validates `GlassTile` backdrop filter blur, glass decoration, responsive padding, and tap callbacks.
+- [x] **17.13** `scale_button_test.dart` (Core UI Scale Button Test) — 🟢 `[DONE - 3/3 tests passing]`
+  - Validates `ScaleButton` spring physics bounce animation, down/up gestures, tap debouncing, and disabled state styling.
