@@ -5,9 +5,9 @@
 >
 > - **Total Dart Files in `lib/`**: **1,068 files**
 > - **Total Test Files in `test/`**: **200 files**
-> - **Total Passing Tests**: **4,200+ Tests Passing (100% Green on completed suites)**
-> - **Completed Test Suites**: **190 items** across Sections 1 to 16 (100% complete) and Section 17 (3 items complete)
-> - **Remaining Screens & Services to Test / Harden**: **5 items** remaining (Section 17).
+> - **Total Passing Tests**: **4,218+ Tests Passing (100% Green on completed suites)**
+> - **Completed Test Suites**: **191 items** across Sections 1 to 16 (100% complete) and Section 17 (4 items complete)
+> - **Remaining Screens & Services to Test / Harden**: **4 items** remaining (Section 17).
 
 ---
 
@@ -576,7 +576,7 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 17: CORE SCREENS, ONBOARDING & CRITICAL SERVICES (3 / 8 COMPLETE)
+### SECTION 17: CORE SCREENS, ONBOARDING & CRITICAL SERVICES (4 / 8 COMPLETE)
 
 - [x] **17.1** `hatching_page_test.dart` (Companion Egg Hatching & Pet Naming Onboarding Test) — 🟢 `[DONE - 13/13 tests passing]`
   - Validates full `HatchingPage` companion hatching onboarding flow across 6 test groups (13 tests):
@@ -600,8 +600,14 @@ Every game test suite MUST rigorously satisfy:
     3. Retry Connection Interaction: In-flight retry displays `VowlButtonSpinner` and disables duplicate taps; clears loading indicator and restores CTA on completion.
     4. Close Action & Navigation Triggers: Close/Back button at top of stack responds to taps triggering `onClose`; premium upsell button responds with haptics.
     5. Responsive Viewports, Themes & Safe Disposal: Compact mobile (320x568) zero overflow, tablet (800x1280) zero overflow, reduced motion disables animations cleanly, dark theme adapts background overlay, safe unmount cancels polling and timeout timers without lingering timers.
-- [ ] **17.4** `quest_sequence_page_test.dart` (Quest Sequence Multi-Game Runner Test) — 🔴 `[PENDING]`
-  - Covers `lib/core/presentation/pages/quest_sequence_page.dart` (479 lines): `/quest-sequence` route, sequence progress bar, multi-activity progression (Daily Duo, Speed Blitz, Deep Dive), score tallying, reward payout, and completion dialog.
+- [x] **17.4** `quest_sequence_page_test.dart` (Quest Sequence Multi-Game Runner Test) — 🟢 `[DONE - 18/18 tests passing]`
+  - Validates full `QuestSequencePage` multi-part quest sequence runner, navigation, and completion across 6 test groups (18 tests):
+    1. Initial Rendering, Sequence Titles & Themed Metadata: Title resolution for `daily_duo` ('DAILY DUO'), `speed_blitz` ('SPEED BLITZ'), `grammar_pro` ('GRAMMAR PRO'), and unknown IDs ('THEMED QUEST'); initial 'Part 1 of 2' status and 'Start Part 1' CTA; progress bar at 0.0 with 'Progress 0' semantics; empty quest list graceful completion at 1.0 with 'Progress 100', 'SUMMARY', and 'FINISH' button.
+    2. Game Category Icons Extension Mapping: Verifies icon resolution across all 9 `QuestType` categories: speaking (`Icons.mic_rounded`), listening (`Icons.hearing_rounded`), reading (`Icons.menu_book_rounded`), writing (`Icons.edit_note_rounded`), grammar (`Icons.extension_rounded`), vocabulary (`Icons.abc_rounded`), accent (`Icons.record_voice_over_rounded`), roleplay (`Icons.forum_rounded`), and eliteMastery (`Icons.workspace_premium_rounded`); fallback `auto_awesome_rounded` when subtype is null.
+    3. Game Launching, Navigation & Step Transitions: Tapping 'Start Part 1' pushes `/game` route with category, subtype, and level query parameters; cancellation leaves sequence on current part with info snackbar; completing Part 1 auto-advances to Part 2 via post-frame callback.
+    4. Sequence Completion & Dialog Trigger: Completing final quest in sequence triggers `GameDialogHelper.showCompletion` with level complete sound and success haptics; tapping 'FINISH' button on finished summary triggers completion dialog.
+    5. Close Button & Navigation: Tapping header close button pops sequence route back to parent screen.
+    6. Responsive Viewports, Themes & Safe Disposal: Small screen safety at `320x568` using `LayoutBuilder` + `SingleChildScrollView` + `ConstrainedBox` + `IntrinsicHeight` with zero `RenderFlex` overflow; tablet layout at `800x1280` zero overflow; dark theme background (`AppColors.slate900`); light theme background (`Colors.white`); clean disposal of `_stateHash` notifier without memory leaks.
 - [ ] **17.5** `insecure_device_screen_test.dart` (Root / Jailbreak Security Alert Test) — 🔴 `[PENDING]`
   - Covers `lib/core/presentation/widgets/insecure_device_screen.dart` (100 lines): root/jailbreak detected warning barrier, security alert details, acknowledge button, and app exit trigger.
 - [ ] **17.6** `error_journal_collector_test.dart` (Cross-Game Mistake Tracking Service Test) — 🔴 `[PENDING]`
