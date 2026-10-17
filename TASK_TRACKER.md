@@ -5,9 +5,9 @@
 >
 > - **Total Dart Files in `lib/`**: **1,068 files**
 > - **Total Test Files in `test/`**: **200 files**
-> - **Total Passing Tests**: **4,218+ Tests Passing (100% Green on completed suites)**
-> - **Completed Test Suites**: **191 items** across Sections 1 to 16 (100% complete) and Section 17 (4 items complete)
-> - **Remaining Screens & Services to Test / Harden**: **4 items** remaining (Section 17).
+> - **Total Passing Tests**: **4,228+ Tests Passing (100% Green on completed suites)**
+> - **Completed Test Suites**: **192 items** across Sections 1 to 16 (100% complete) and Section 17 (5 items complete)
+> - **Remaining Screens & Services to Test / Harden**: **3 items** remaining (Section 17).
 
 ---
 
@@ -576,7 +576,7 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 17: CORE SCREENS, ONBOARDING & CRITICAL SERVICES (4 / 8 COMPLETE)
+### SECTION 17: CORE SCREENS, ONBOARDING & CRITICAL SERVICES (5 / 8 COMPLETE)
 
 - [x] **17.1** `hatching_page_test.dart` (Companion Egg Hatching & Pet Naming Onboarding Test) — 🟢 `[DONE - 13/13 tests passing]`
   - Validates full `HatchingPage` companion hatching onboarding flow across 6 test groups (13 tests):
@@ -608,8 +608,12 @@ Every game test suite MUST rigorously satisfy:
     4. Sequence Completion & Dialog Trigger: Completing final quest in sequence triggers `GameDialogHelper.showCompletion` with level complete sound and success haptics; tapping 'FINISH' button on finished summary triggers completion dialog.
     5. Close Button & Navigation: Tapping header close button pops sequence route back to parent screen.
     6. Responsive Viewports, Themes & Safe Disposal: Small screen safety at `320x568` using `LayoutBuilder` + `SingleChildScrollView` + `ConstrainedBox` + `IntrinsicHeight` with zero `RenderFlex` overflow; tablet layout at `800x1280` zero overflow; dark theme background (`AppColors.slate900`); light theme background (`Colors.white`); clean disposal of `_stateHash` notifier without memory leaks.
-- [ ] **17.5** `insecure_device_screen_test.dart` (Root / Jailbreak Security Alert Test) — 🔴 `[PENDING]`
-  - Covers `lib/core/presentation/widgets/insecure_device_screen.dart` (100 lines): root/jailbreak detected warning barrier, security alert details, acknowledge button, and app exit trigger.
+- [x] **17.5** `insecure_device_screen_test.dart` (Root / Jailbreak Security Alert Test) — 🟢 `[DONE - 10/10 tests passing]`
+  - Validates full `InsecureDeviceScreen` security alert barrier across 4 test groups (10 tests):
+    1. Direct Root Mount & Visual Hierarchy: Mounts directly as root widget (simulating `main.dart` `runApp(const InsecureDeviceScreen())` early-boot execution) with safe `AppColorTokens.dark` fallback; renders dark Scaffold (`AppColors.slate900`); renders 80dp `Icons.security_rounded` with `AppColors.gameIncorrect` and 'Security warning' semantic label; displays 'SECURITY ALERT' header, explanation body, and standard device instruction footer.
+    2. Accessibility & Semantics: Screen wrapped in `Semantics` with `liveRegion: true` and 'Security alert: this device is not supported'; isolates repaint with `RepaintBoundary`; supports large accessibility text scaling (2.5x) without overflow.
+    3. Viewport Responsiveness: Compact mobile (320x568) zero overflow; standard phone (390x844) centered scrollable layout; tablet (800x1280) zero overflow.
+    4. Custom Themed Context Compatibility: Seamlessly inherits and adapts to custom `AppColorTokens` when mounted inside a themed application tree.
 - [ ] **17.6** `error_journal_collector_test.dart` (Cross-Game Mistake Tracking Service Test) — 🔴 `[PENDING]`
   - Covers `lib/core/services/error_journal_collector.dart`: mistake collection and persistence across all 9 game categories, deduplication, timestamp recording, review-ready queueing, and clear operations.
 - [ ] **17.7** `security_service_test.dart` (Security, Anti-Tamper & Production Integrity Test) — 🔴 `[PENDING]`
