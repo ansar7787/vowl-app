@@ -60,6 +60,22 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
   void initState() {
     super.initState();
     initEliteMasteryGame();
+    final state = context.read<EliteMasteryBloc>().state;
+    if (state is EliteMasteryLoaded) {
+      if (state.currentQuest.sentences != null &&
+          state.currentQuest.sentences!.isNotEmpty) {
+        _currentOrder.value = List.generate(
+          state.currentQuest.sentences!.length,
+          (i) => i,
+        );
+      }
+      handleStateUpdate(
+        currentIndex: state.currentIndex,
+        livesRemaining: state.livesRemaining,
+        isAnswered: state.answerStatus.isAnswered,
+        isCorrect: state.answerStatus.asBoolOrNull,
+      );
+    }
   }
 
   @override
@@ -214,6 +230,22 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
   }
 
   @override
+  void onEliteMasteryStateChanged(
+    BuildContext context,
+    EliteMasteryState state,
+  ) {
+    super.onEliteMasteryStateChanged(context, state);
+    if (state is EliteMasteryLoaded &&
+        state.currentQuest.sentences != null &&
+        _currentOrder.value.isEmpty) {
+      _currentOrder.value = List.generate(
+        state.currentQuest.sentences!.length,
+        (i) => i,
+      );
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight =
@@ -296,9 +328,11 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
     // directly inside its Stack and never includes this `child` slot for
     // either state, so no local UI is built (or ever shown) for them here.
     if (state is EliteMasteryLoaded) {
+      if (state.quests.isEmpty) return const SizedBox.shrink();
       return _buildGameUI(context, state, isDark, theme);
     }
     if (state is EliteMasteryGameOver) {
+      if (state.quests.isEmpty) return const SizedBox.shrink();
       return Opacity(
         opacity: 0.5,
         child: AbsorbPointer(
@@ -326,12 +360,29 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
   ) {
     final quest = state.currentQuest;
 
+    if (_currentOrder.value.isEmpty &&
+        quest.sentences != null &&
+        quest.sentences!.isNotEmpty) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && _currentOrder.value.isEmpty) {
+          _currentOrder.value = List.generate(
+            quest.sentences!.length,
+            (i) => i,
+          );
+        }
+      });
+    }
+
     return Stack(
       children: [
         ListenableBuilder(
           listenable: Listenable.merge([_currentOrder, _selectedTileIndex]),
           builder: (context, _) {
-            final currentOrder = _currentOrder.value;
+            final currentOrder = _currentOrder.value.isNotEmpty
+                ? _currentOrder.value
+                : (quest.sentences != null
+                    ? List.generate(quest.sentences!.length, (i) => i)
+                    : const <int>[]);
             final selectedIndex = _selectedTileIndex.value;
             return RawScrollbar(
               controller: _scrollController,
@@ -339,6 +390,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
               radius: Radius.circular(8.r),
               thickness: 4.w,
               child: CustomScrollView(
+                key: const Key('story_builder_scroll_view'),
                 controller: _scrollController,
                 physics: const BouncingScrollPhysics(),
                 slivers: [
@@ -363,6 +415,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                               ],
                               if (quest.instruction.isNotEmpty) ...[
                                 Container(
+                                  key: const Key(
+                                    'story_builder_instruction_banner',
+                                  ),
                                   width: double.infinity,
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 16.w,
@@ -408,6 +463,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                               ],
                               if (quest.plotStructure != null) ...[
                                 Container(
+                                  key: const Key('story_builder_narrative_arc'),
                                   width: double.infinity,
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 16.w,
@@ -502,6 +558,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                 ),
                                 padding: EdgeInsets.only(bottom: 8.h),
                                 child: StoryBuilderNarrativeTile(
+                                  key: Key('story_builder_tile_$index'),
                                   index: index,
                                   sentence:
                                       quest.sentences![currentOrder[index]],
@@ -527,6 +584,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                               ),
                               padding: EdgeInsets.only(bottom: 8.h),
                               child: StoryBuilderNarrativeTile(
+                                key: Key('story_builder_tile_$index'),
                                 index: index,
                                 sentence: quest.sentences![currentOrder[index]],
                                 quest: quest,
@@ -578,6 +636,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                       ),
                                       excludeSemantics: true,
                                       child: ScaleButton(
+                                        key: const Key(
+                                          'story_builder_finalize_button',
+                                        ),
                                         onTap: () => _submitOrder(quest),
                                         child: Container(
                                           width: double.infinity,
@@ -654,6 +715,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                       child: Column(
                         children: [
                           SpeakToConfirmOverlay(
+                            key: const Key('story_builder_speak_overlay'),
                             expectedText:
                                 (quest.sentences != null &&
                                     quest.sentences!.isNotEmpty &&
