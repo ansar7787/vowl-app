@@ -4,10 +4,10 @@
 > **Executive Summary & Brutal Audit**:
 >
 > - **Total Dart Files in `lib/`**: **1,068 files**
-> - **Total Test Files in `test/`**: **161 files**
-> - **Total Passing Tests**: **3,150+ Tests Passing (100% Green on completed suites)**
-> - **Completed Test Suites**: **166 files** (Auth 12, Games Hub 5, Kids 35, Reading 13, Accent 13, Grammar 21, Listening 12, Roleplay 12, Speaking 11, Vocab 14, Writing 12, Elite 1, Daily & Micro 11, Settings & Daily Words 2, Core 7)
-> - **Remaining Game Screens & Hubs to Test / Harden**: **9 screens/suites** across pending categories (Elite 4, Home/Shell 5).
+> - **Total Test Files in `test/`**: **191 files**
+> - **Total Passing Tests**: **3,900+ Tests Passing (100% Green on completed suites)**
+> - **Completed Test Suites**: **174 items** across Sections 1 to 14 (100% complete) and Section 16 (2 items complete)
+> - **Remaining Game Screens & Hubs to Test / Harden**: **13 screens/suites** across pending categories (Section 15: 7 screens, Section 16: 6 items).
 
 ---
 
@@ -55,9 +55,9 @@ Every game test suite MUST rigorously satisfy:
 | **9** | **Speaking Category** | 11 | 11 | 0 | 🟢 100% Complete (685 tests) |
 | **10** | **Vocabulary Category** | 14 | 14 | 0 | 🟢 100% Complete (450 tests) |
 | **11** | **Writing Category** | 12 | 12 | 0 | 🟢 100% Complete (321 tests) |
-| **12** | **Elite Mastery** | 5 | 1 | 4 | ⚠️ BLoC only (4 tests; 4 games remaining) |
+| **12** | **Elite Mastery** | 5 | 5 | 0 | 🟢 100% Complete (138 tests) |
 | **13** | **Daily Challenges & Micro-Games** | 11 | 11 | 0 | 🟢 100% Complete (57 tests) |
-| **14** | **Home, Shell & Navigation** | 6 | 0 | 6 | 🔴 0% Tested (6 screens remaining) |
+| **14** | **Home, Shell & Navigation** | 6 | 6 | 0 | 🟢 100% Complete (131 tests) |
 | **15** | **Profile, Progress & Trophies** | 7 | 0 | 7 | 🔴 0% Tested (7 screens remaining) |
 | **16** | **Leaderboard, Settings, Paywall, Splash** | 8 | 2 | 6 | 🟡 2 Items Completed (21 tests; 6 items remaining) |
 
@@ -406,13 +406,17 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 12: ELITE MASTERY CATEGORY (4 GAMES)
+### SECTION 12: ELITE MASTERY CATEGORY (4 GAMES - 100% COMPLETE)
 
 - [x] **12.1** `elite_mastery_bloc_test.dart` (BLoC Test) — ✅ `[DONE - 4/4 tests passing]`
-- [ ] **12.2** `accent_shadowing_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **12.3** `idiom_match_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **12.4** `speed_spelling_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
-- [ ] **12.5** `story_builder_layout_test.dart` (Game Screen Layout Test) — 🔴 `[PENDING]`
+- [x] **12.2** `accent_shadowing_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 28/28 tests passing]`
+  - Validates full accent shadowing gameplay: `EliteBaseLayout` integration, `EliteGameHeader` rendering, `CustomScrollView` and instruction banner, `AccentShadowingTargetPanel` target sentence and words wrapping with word-level highlight animation, listen button playing TTS with configurable speedMultiplier (default 0.4x), fallback target text handling on empty quest strings, Mode A multiple-choice option pool (`AccentShadowingOptionsPanel`) with shuffled option matching, wrong option selection dispatching `SubmitEliteAnswer(false)` and error haptic feedback, correct option selection dispatching selection haptics and triggering Stage 2, pedagogical insights panel (`AccentShadowingInsightsPanel`) rendering target sound, phonetic rule, usage context, spelling pattern, and sequence logic without horizontal RenderFlex overflow, Stage 2 `SpeakToConfirmOverlay` with `SpeakingSelfEvaluationControls`, bypass skip flow for premium users dispatching `EliteSpeakConfirmed(5)` and `SubmitEliteAnswer(true)`, manual self-evaluation recording with mic toggle, audio recording service invocation, and "Nailed It" / "Needs Work" evaluation flows, Mode B zero-option flow directly presenting `AccentSelfEvaluationPanel`, hint button dispatching `MarkEliteHintUsed` and `ShowEliteHint`, hint card display, `EliteFeedbackCard` continuation dispatching `NextEliteQuestion`, game completion handling (`EliteMasteryGameComplete`), game over handling (`EliteMasteryGameOver`), empty quest handling without exceptions, semantics accessibility on listen button and target panel, and responsive zero-overflow layout rendering across compact mobile (320x568), tablet (800x1280), high text scaling (1.3x), and light/dark themes.
+- [x] **12.3** `idiom_match_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 31/31 tests passing]`
+  - Validates full idiom match gameplay: `EliteBaseLayout` integration, `EliteGameHeader` rendering, `CustomScrollView`, instruction banner, `idiom_match_prompt_card` prompt card with quotation icon and question text, `IdiomMatchOptionsPanel` with shuffled options, option tap interactions, error haptics and wrong answer submission to bloc, duplicate wrong tap prevention, correct option selection passing Stage 1, Stage 2 `SpeakToConfirmOverlay` with verbal confirmation, premium user skip flow dispatching `EliteSpeakConfirmed(5)` and `SubmitEliteAnswer(true)`, manual self-evaluation recording with mic toggle and "Nailed It" / "Needs Work" evaluation flows, STT auto-pass skip flow, pedagogical insights panel (`IdiomMatchInsightsPanel`) rendering `EXPLANATION`, `USAGE CONTEXT`, `IDIOM ORIGIN`, and `VISUAL METAPHOR` with graceful handling of partial annotations and full omission when metadata is absent, hint button dispatching `MarkEliteHintUsed` and `ShowEliteHint`, hint ad dialog on missing hint, `EliteFeedbackCard` continuation dispatching `NextEliteQuestion`, game completion handling (`EliteMasteryGameComplete`), game over handling (`EliteMasteryGameOver`), empty quest handling without exceptions, semantics accessibility on options, and responsive zero-overflow layout rendering across compact mobile (320x568), tablet (800x1280), high text scaling (1.3x), and light/dark themes.
+- [x] **12.4** `speed_spelling_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 35/35 tests passing]`
+  - Validates full speed spelling gameplay: `EliteBaseLayout` integration, `EliteGameHeader` rendering, `CustomScrollView`, instruction banner, target audio replay button with volume icon and TTS speech trigger on tap, audio replay button omission when target word is null, difficulty tier badge rendering with tier label and icon (`Rare`, `Advanced`, `Common`), 30-second speed bonus countdown progress bar and `SPEED BONUS` label, input field (`SpeedSpellingInputField`) and character deck (`SpeedSpellingCharacterDeck`), automatic TTS speech on initial post-frame load, loading state with `ShimmerLoading` widgets, error state with `GameErrorView` and retry trigger, deck tile tapping with character appending to input field and light haptics, consumed tile tap safety, backspace button visibility logic and letter restoring to deck, clear button restoring all deck tiles and clearing input, submit button disabled opacity and tapping safety when word is incomplete, complete word enabling submit button with full opacity, correct submission dispatching success haptics, correct sound, and `SubmitEliteAnswer(true)`, wrong submission dispatching error haptics, wrong sound, and `SubmitEliteAnswer(false)`, submit button hidden once answered, input field correct glow styling, 30s timer expiration triggering automatic wrong answer submission, hint button dispatching `MarkEliteHintUsed` and `ShowEliteHint`, `EliteHintCard` rendering when hint is visible, hint button omission when quest hint is null, `EliteFeedbackCard` presentation on answer with continue button dispatching `NextEliteQuestion`, game completion handling (`EliteMasteryGameComplete`) with dialog presentation and confetti timer flush, game over handling (`EliteMasteryGameOver`), graceful handling of empty quests, accessible semantics on character tiles and controls, and responsive zero-overflow layout rendering across compact mobile (320x568), tablet (800x1280), high text scaling (1.3x), and light/dark themes.
+- [x] **12.5** `story_builder_layout_test.dart` (Game Screen Layout Test) — ✅ `[DONE - 40/40 tests passing - SECTION 12 100% COMPLETE!]`
+  - Validates full story builder gameplay: `EliteBaseLayout` integration, `EliteGameHeader` rendering, `CustomScrollView`, instruction banner, narrative arc and plot structure banner rendering with timeline icon and formatted step transitions (`Setup ➔ Conflict ➔ Climax ➔ Resolution`), narrative arc graceful omission when null, sequence logic banner rendering in uppercase, 1-based order indicators for all narrative sentence tiles, tile tap selection highlighting with primary theme border, deselecting active tile on re-tap, tile position swapping on tapping second tile with selection haptics, drag-and-drop reordering via `SliverReorderableList` updating narrative sequence and clearing previous selection, drag indicator icon display in reorderable state, accessibility semantics for position and sentence content on narrative tiles, Stage 1 sequence submission via `FINALIZE STORY` button, wrong sequence submission dispatching `SubmitEliteAnswer(false)` with error sound/haptic and `EliteFeedbackCard` presentation, correct sequence submission triggering success haptics without early answer submission, Stage 1 completion locking tiles into non-reorderable `SliverList` and hiding finalize button, Stage 2 `SpeakToConfirmOverlay` presentation displaying concatenated story text in correct order and read aloud title, premium user skip/bypass button triggering `onConfirmed` dispatching `SubmitEliteAnswer(true)` with correct sound, verbal evaluation submission via `EliteFeedbackCard` continuation action dispatching `NextEliteQuestion`, verbal skip evaluation calling `submitWrongAnswer` and dispatching `SubmitEliteAnswer(false)` with wrong sound, `SpeakToConfirmOverlay` unmounting upon answered state, tile tap interaction lockout in answered state, hint button dispatching `MarkEliteHintUsed` and `ShowEliteHint`, `EliteHintCard` presentation when hint is visible, tile `#N` position badges and correct-position highlight borders when hint is visible, header hint button omission when quest hint is null, `EliteMasteryGameOver` dimmed layout handling with 0 lives, `EliteMasteryGameComplete` level complete dialog presentation with multi-cycle confetti timer flush, loading skeleton state with `ShimmerLoading`, error view with `GameErrorView` and retry trigger, and responsive zero-overflow layout rendering across compact mobile (320x568), tablet (800x1280), high text scaling (1.3x), and light/dark themes.
 
 ---
 
@@ -432,14 +436,66 @@ Every game test suite MUST rigorously satisfy:
 
 ---
 
-### SECTION 14: HOME, SHELL & NAVIGATION (0 / 6 COMPLETE)
+### SECTION 14: HOME, SHELL & NAVIGATION (6 / 6 COMPLETE - 100%)
 
-- [ ] **14.1** `home_screen_test.dart` (Widget Test) — 🔴 `[PENDING]`
-- [ ] **14.2** `main_wrapper_test.dart` (Shell Navigation Test) — 🔴 `[PENDING]`
-- [ ] **14.3** `category_games_page_test.dart` (Widget Test) — 🔴 `[PENDING]`
-- [ ] **14.4** `quest_library_page_test.dart` (Widget Test) — 🔴 `[PENDING]`
-- [ ] **14.5** `streak_screen_test.dart` (Milestone Widget Test) — 🔴 `[PENDING]`
-- [ ] **14.6** `vowl_mascot_screen_test.dart` (Mascot Widget Test) — 🔴 `[PENDING]`
+- [x] **14.1** `home_screen_test.dart` (Widget Test) — ✅ `[DONE - 35/35 tests passing]`
+  - Validates full HomeScreen orchestration across 14 groups (35 tests):
+    1. Authentication & Loading States: `HomeShimmerLoading` placeholder when unauthenticated and message is null, error view with `Icons.cloud_off_rounded` and "Try Again" button when message exists, "Try Again" tap dispatching `AuthReloadUser`.
+    2. Main Home Feed Initial Layout & Hero Header: Hero header `CommandPod` rendering with user display name ("Aria") and Commander rank badge, level 1 Rookie rank badge rendering.
+    3. Continue Learning CTA Card: Next uncompleted category detection and rendering, tap interaction triggering selection haptics and routing to `/category-games?category=reading`.
+    4. Unified Stats Row: All 4 stat tiles rendering streak (12), coins (350), badges (2), and rank, tile taps routing to `/streak`, `/coins-details`, `/trophy-room`, and `/leaderboard`.
+    5. Leaderboard Rank Fetching & Error Resilience: Repository failure handling displaying fallback dash `—` for rank, exception catching without crashing UI.
+    6. Quest Arena & BentoArena: `HomeSectionHeader` rendering with title ("QUEST ARENA") and subtitle, "SEE ALL" tap routing to `/library`, `BentoArena` in collapsed mode with "See All 9 Categories" toggle, toggle tap expanding arena with "Show Less", category tile tap routing to `/category-games?category=vocabulary`.
+    7. Review Mistakes Card Gating: Card omission when user is in `isKidsModeOnly`, card omission when non-kids user has 0 mistakes in journal, card rendering and tap routing to `/review-mistakes` when guest mistakes exist with selection haptics.
+    8. Global Progress Card: Completed levels and rank rendering, tap routing to `/leaderboard`.
+    9. Explore & Tools Strip: Section header rendering ("EXPLORE & TOOLS"), `ToolsStrip` rendering, "SEE ALL" tap opening `FeatureDirectoryBottomSheet`.
+    10. Discovery Hub Carousel: Section header rendering ("DISCOVERY HUB"), `DiscoveryDeck` rendering, themed quest card tap launching `/quest-sequence?id=smart_recommendation`.
+    11. Daily Wisdom Card: `DailyMotivationCard` rendering with current streak count.
+    12. Pull-to-Refresh Interaction: `RefreshIndicator` triggering `AuthReloadUser` and `EconomyCheckDailyRewardRequested` without timeout or deadlocks.
+    13. MultiBlocListener State Triggers: `EconomyCheckDailyRewardRequested` dispatch on initial mount, `EconomyResetRequested` and `ProgressionResetRequested` dispatch on unauthenticated transition, `MysteryChestDialog` presentation when `isDailyRewardAvailable` transitions to true.
+- [x] **14.2** `main_wrapper_test.dart` (Shell Navigation Test) — ✅ `[DONE - 16/16 tests passing]`
+  - Validates full `MainWrapper` shell navigation and bottom navigation bar mechanics across 5 groups (16 tests):
+    1. Initial Shell Rendering & Active Indicator: Renders all 4 navigation items with correct icons and Semantics labels, displays active pill with label "Home" and active icon `Icons.home_rounded`, inactive tabs show outline icons without text labels, renders glass container with `BackdropFilter` blur and rounded clipping.
+    2. Tab Switching & Branch Navigation: Tapping Games tab navigates to branch 1 (`/games`), displays Games content, expands Games pill with label, collapses Home pill; tapping Ranks tab navigates to branch 2 (`/ranks`), displays Ranks content, expands Ranks pill, collapses previous; tapping Profile tab navigates to branch 3 (`/profile`), displays Profile content, expands Profile pill; sequential navigation across tabs preserves branch state and restores Home view smoothly.
+    3. Scroll-to-Top on Active Tab Re-Tap: Re-tapping active Home tab when scrolled down animates `di.sl<ScrollController>(instanceName: 'home')` to top (`0.0`), re-tapping active Games tab when scrolled down animates `di.sl<ScrollController>(instanceName: 'games')` to top (`0.0`), re-tapping tab when scroll controller is unregistered does not throw exceptions.
+    4. Accessibility & Semantics: Verifies `Semantics(button: true, selected: isSelected, label: label)` across all 4 navigation tabs, enforces 48dp minimum touch target floor on all items (`minWidth: 48.r, minHeight: 48.r`).
+    5. Responsive Layouts & Themes: Compact mobile layout (320x568) zero overflow, large tablet layout (800x1280) zero overflow, accessibility text scaling (1.3x) without overflow, Dark Theme mode, and Midnight Theme mode (`isMidnight = isDark && scaffoldBackgroundColor == Colors.black`).
+- [x] **14.3** `category_games_page_test.dart` (Widget Test) — ✅ `[DONE - 14/14 tests passing]`
+  - Validates full `CategoryGamesPage` category hub and practice library across 6 groups (14 tests):
+    1. Authentication & Loading States: Renders `GameShimmerLoading` placeholder when `user == null`, renders full category feed with `CustomScrollView` when authenticated.
+    2. Floating Glass Island AppBar: Category title in uppercase (e.g. "GRAMMAR"), back button rendering; back button navigates to `/home` when `canPop` is false, pops route when `canPop` is true.
+    3. Mastery Dashboard: Renders "OVERALL MASTERY" label, power level, total games count, learner rank, and stat icons (`Icons.bolt_rounded`, `Icons.sports_esports_rounded`, `Icons.stars_rounded`).
+    4. Pedagogical Blueprint Integration: Renders `CategoryRadarChart`, `AdaptiveSmartMixWidget`, and "PRACTICE LIBRARY" section header for categories with blueprint (`grammar`); cleanly omits radar chart, smart mix, and practice header for categories without blueprint.
+    5. Game Grid & Routing: Renders spatial game cards with subtype titles, liquid progress bars, badges ("NEW" or "LVL X"), and navigates to `/levels?subtype=...&category=...` on card tap.
+    6. Responsive Viewports & Themes: Compact mobile layout (320x568) zero overflow, large tablet layout (800x1280) zero overflow, accessibility text scaling (1.3x) without overflow, Dark Theme mode, and Midnight Theme mode (`isMidnight = isDark && scaffoldBackgroundColor == Colors.black`).
+- [x] **14.4** `quest_library_page_test.dart` (Widget Test) — ✅ `[DONE - 19/19 tests passing]`
+  - Validates full `QuestLibraryPage` quest archive, search filtering, and category navigation across 6 groups (19 tests):
+    1. Authentication & Loading States: Renders `HomeShimmerLoading` placeholder when `user == null`, renders full quest library with `CustomScrollView` when authenticated.
+    2. Floating Glass Island AppBar: Renders "QUEST ARCHIVE" title pill with `Icons.auto_stories_rounded`, back button with RTL support; back button navigates to `/home` when `canPop` is false, pops route when `canPop` is true.
+    3. Stats Dashboard Panel: Renders "GLOBAL ARCHIVE PROGRESS", "Mastery", levels cleared count, "STATUS", and "NEXT RANK" with stat icons (`Icons.check_circle_rounded`, `Icons.stars_rounded`, `Icons.arrow_upward_rounded`).
+    4. Search & Category Filtering: Renders search `TextField` and all category filter chips (`ALL`, `VOCABULARY`, `GRAMMAR`, `SPEAKING`, etc.); tapping a category chip switches to filtered vertical list mode; entering search query filters list and displays matching cards; entering non-matching query displays empty state (`Icons.search_off_rounded`, "No matching quests found"); tapping clear button resets search and restores content.
+    5. Grouped Sections & Routing: In default "all" view, renders horizontal sections per category with section headers ("X Quests · Y%") and "VIEW ALL" buttons; tapping "VIEW ALL" selects that category; tapping compact quest card in horizontal list or vertical card in filtered list navigates to `/levels?category=...&gameType=...`.
+    6. Responsive Viewports, Accessibility & Themes: Compact mobile layout (320x568) zero overflow, large tablet layout (800x1280) zero overflow, accessibility text scaling (1.3x) without overflow, Dark Theme mode, and Midnight Theme mode (`isMidnight = isDark && scaffoldBackgroundColor == Colors.black`).
+- [x] **14.5** `streak_screen_test.dart` (Milestone Widget Test) — ✅ `[DONE - 17/17 tests passing]`
+  - Validates full `StreakScreen` daily streak, calendar, milestone progression, boosters shop, and coin economy across 8 groups (17 tests):
+    1. Authentication & Loading States: Renders `HomeShimmerLoading` placeholder when `user == null`, renders full streak screen with `CustomScrollView` when authenticated.
+    2. Floating Glass Island AppBar & Inventory: Renders "DAILY STREAK" title pill with fire icon and back button; back button navigates to `/home` when `canPop` is false, pops route when `canPop` is true; renders streak freeze inventory chip with shield icon and freeze count.
+    3. Streak Hero Widget: Renders `StreakHero` with day count, "DAY STREAK" label, and dynamic status text.
+    4. Streak Calendar & Week View: Renders `StreakCalendar` with "THIS WEEK" title, day nodes, and "PROTECTED" status badge.
+    5. Streak Milestones & Milestone Rewards: Renders `StreakMilestones` section and computes reward nodes; displays SnackBar when progression message indicates milestone claimed (`progression.milestone_claimed`).
+    6. Streak Boosters Shop & Economy: Renders `StreakBoostersShop` with booster cards and "STREAK BOOSTERS" header.
+    7. Earn More Coins & Ad Reward Card: Renders "EARN MORE COINS" header, subtitle, and `AdRewardCard` in streak screen.
+    8. Responsive Viewports, Accessibility & Themes: Compact mobile layout (320x568) zero overflow, large tablet layout (800x1280) zero overflow, accessibility text scaling (1.3x) without overflow, Dark Theme mode, and Midnight Theme mode (`isMidnight = isDark && scaffoldBackgroundColor == Colors.black`).
+- [x] **14.6** `vowl_mascot_screen_test.dart` (Mascot Widget Test) — ✅ `[DONE - 30/30 tests passing - SECTION 14 100% COMPLETE!]`
+  - Validates full `VowlMascotScreen` companion nest, cybernetic boutique, and mascot progression across 8 groups (30 tests):
+    1. Authentication & Loading States: Renders `HomeShimmerLoading` placeholder when unauthenticated (`user == null`), renders full screen with `CustomScrollView` and "VOWL NEST" when authenticated.
+    2. Floating Sliver AppBar, Title & Coins Display: Renders "VOWL NEST" title, "Manage your companion" subtitle, back button, and user coin balance; back button navigates to `/home` when `canPop` is false, pops router when `canPop` is true; formats coin balance with decimal thousand separators (e.g. `1,234,567`).
+    3. Tab Switcher (COMPANION vs BOUTIQUE): Sliding glass pill tab switcher defaults to COMPANION tab displaying "SYNCHRONIZED ELITES"; tapping BOUTIQUE switches view to "CYBERNETIC AUGMENTS" with selection haptics; tapping COMPANION restores companion grid view.
+    4. Companion Tab — Mascot Selection & Equipping: Renders all 10 mascots in grid with uppercase names, emojis, and equipped indicators; tapping owned unequipped mascot dispatches `ProfileUpdateVowlMascotRequested(id)` and light haptic; tapping affordable unowned mascot dispatches `ProfileBuyVowlMascotRequested(id, price)` and light haptic; tapping unaffordable unowned mascot triggers error haptics and displays "Insufficient Elite credits for this augment" SnackBar; renders Elite Neural Link section with equipped mascot details and accessory label ("NO AUGMENTATIONS" or equipped accessory name).
+    5. Boutique Tab — Cybernetic Augments & Accessory Equipping: Displays all 12 cybernetic augments in boutique tab with names, emojis, and action buttons; owned unequipped accessory displays "LINK" and dispatches `ProfileEquipVowlAccessoryRequested(id)` on tap; equipped accessory displays "DISCONNECT" and dispatches `ProfileEquipVowlAccessoryRequested(null)` on tap; affordable unowned accessory displays formatted price and dispatches `ProfileBuyVowlAccessoryRequested(id, price)` on tap; unaffordable unowned accessory triggers error haptics and error SnackBar.
+    6. Purchase Feedback & MultiBlocListener State Notifications: Displays success SnackBar ("Mascot Linked!") and plays success haptics when mascot purchase succeeds; displays success SnackBar ("Augment Integrated!") when accessory purchase succeeds; displays error SnackBar when sync fails; all feedback paths dispatch `ProfileClearPurchaseFeedback()`; safety timeout clears processing spinner after 3 seconds.
+    7. Status Overlay & Accessibility Semantics: Renders floating elite status bar overlay with security icon, "Status OK", and sync indicator bars; provides accessible semantics for back button (`label: 'Back'`), tab switcher items (`COMPANION`, `BOUTIQUE`), and section headers (`header: true`).
+    8. Responsive Viewports & Themes: Compact mobile layout (320x568) zero overflow, tablet layout (800x1280) dynamically scales to 3 columns (`crossAxisCount == 3`), Midnight Theme mode (`scaffoldBackgroundColor == Colors.black`) renders with `_LocalPalette.color020617` surface, accessibility text scaling (1.3x) without layout errors.
 
 ---
 
