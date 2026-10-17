@@ -157,22 +157,26 @@ class _BentoArenaState extends State<BentoArena> {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          isExpanded
-                              ? context.tr(
-                                  'home.show_less',
-                                  fallback: 'Show Less',
-                                )
-                              : context.tr(
-                                  'home.see_all_categories',
-                                  fallback: 'See All 9 Categories',
-                                ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w800,
-                            color: AppColors.indigo500,
-                            letterSpacing: 0.5,
+                        Flexible(
+                          child: Text(
+                            isExpanded
+                                ? context.tr(
+                                    'home.show_less',
+                                    fallback: 'Show Less',
+                                  )
+                                : context.tr(
+                                    'home.see_all_categories',
+                                    fallback: 'See All 9 Categories',
+                                  ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w800,
+                              color: AppColors.indigo500,
+                              letterSpacing: 0.5,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                         SizedBox(width: 8.w),

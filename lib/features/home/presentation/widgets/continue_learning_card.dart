@@ -373,13 +373,17 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
           children: [
             Icon(Icons.rocket_launch_rounded, color: Colors.white, size: 16.r),
             SizedBox(width: 8.w),
-            Text(
-              context.tr('home.ready_to_start', fallback: 'Ready to launch!'),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w800,
-                color: Colors.white,
+            Expanded(
+              child: Text(
+                context.tr('home.ready_to_start', fallback: 'Ready to launch!'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w800,
+                  color: Colors.white,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],

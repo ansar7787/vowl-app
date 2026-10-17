@@ -11,6 +11,7 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -586,7 +587,10 @@ class _ShimmerLineState extends State<_ShimmerLine>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1400),
-    )..repeat();
+    );
+    if (!VowlMotion.lowAnimationModeOverride.value) {
+      _controller.repeat();
+    }
   }
 
   @override

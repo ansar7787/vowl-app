@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/presentation/widgets/animated_page_indicator.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -340,7 +341,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                                         Builder(
                                           builder: (context) {
                                             final reduceMotion =
-                                                MediaQuery.disableAnimationsOf(
+                                                VowlMotion.shouldReduceMotion(
                                                   context,
                                                 );
                                             Widget circle = Container(
@@ -513,7 +514,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
   Widget _buildStartButton(Color color, bool isRtl) {
     return Builder(
       builder: (context) {
-        final reduceMotion = MediaQuery.disableAnimationsOf(context);
+        final reduceMotion = VowlMotion.shouldReduceMotion(context);
         Widget button = Container(
           padding: EdgeInsets.all(12.r),
           decoration: BoxDecoration(
