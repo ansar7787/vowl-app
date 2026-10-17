@@ -789,7 +789,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
               borderSide: const BorderSide(color: AppColors.blue500, width: 2),
             ),
             contentPadding: EdgeInsets.symmetric(
-              vertical: 20.h,
+              vertical: 16.h,
               horizontal: 20.w,
             ),
           ),
@@ -998,7 +998,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
 
           // ── Horizontal Card Scroll ──
           SizedBox(
-            height: 160.h,
+            height: 172.h,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
@@ -1145,12 +1145,14 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                 // Title
                 Text(
                   theme.title,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w900,
                     color: contentColor,
-                    height: 1.2,
+                    height: 1.1,
                   ),
                 ),
                 SizedBox(height: 8.h),
@@ -1497,9 +1499,9 @@ class _StickyFilterDelegate extends SliverPersistentHeaderDelegate {
   });
 
   @override
-  double get minExtent => 160.h; // increased to prevent RenderFlex overflow
+  double get minExtent => 168.h; // sized to accommodate 1.3x accessibility text scaling without overflow
   @override
-  double get maxExtent => 160.h;
+  double get maxExtent => 168.h;
 
   @override
   Widget build(
@@ -1532,7 +1534,7 @@ class _StickyFilterDelegate extends SliverPersistentHeaderDelegate {
                   )
                 : null,
           ),
-          padding: EdgeInsets.only(top: 16.h, bottom: 8.h),
+          padding: EdgeInsets.only(top: 12.h, bottom: 8.h),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
