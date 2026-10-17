@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
@@ -214,7 +215,9 @@ class DiscoveryHelper {
     GameSubtype subtype,
     String instructionKey,
   ) {
-    final currentLevel = user.unlockedLevels[subtype.name] ?? 10;
+    final maxLevels = CurriculumManifest.getLevels(subtype.name);
+    final currentLevel = (user.unlockedLevels[subtype.name] ?? 1)
+        .clamp(1, maxLevels > 0 ? maxLevels : 50);
     return GameQuest(
       id: '${subtype.name}_$currentLevel',
       type: subtype.category,

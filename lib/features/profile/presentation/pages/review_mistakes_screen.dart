@@ -616,36 +616,13 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
           key: Key(entry.id),
           direction: DismissDirection.endToStart,
           background: Container(
-            margin: EdgeInsets.only(bottom: 4.h),
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  AppColors.red500.withValues(alpha: 0.1),
-                  AppColors.red500.withValues(alpha: 0.8),
-                ],
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-              ),
+              color: AppColors.red500,
               borderRadius: BorderRadius.circular(16.r),
             ),
             alignment: Alignment.centerRight,
             padding: EdgeInsets.only(right: 24.w),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  context.tr('general.dismiss', fallback: 'Dismiss'),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
-                ),
-                SizedBox(width: 8.w),
-                Icon(LucideIcons.trash2, color: Colors.white, size: 22.r),
-              ],
-            ),
+            child: Icon(LucideIcons.trash2, color: Colors.white, size: 24.r),
           ),
           confirmDismiss: (_) async => true,
           onDismissed: (_) {
@@ -906,6 +883,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
       case 'writing':
         return AppColors.orange500;
       case 'elite_mastery':
+      case 'elitemastery':
         return AppColors.red500;
       default:
         return AppColors.indigo500;
@@ -1000,8 +978,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
           ),
           ...categories.map((cat) {
             final color = _categoryColor(cat);
-            // Capitalize category name
-            final name = cat[0].toUpperCase() + cat.substring(1);
+            final name = _formatCategoryName(context, cat);
             return Padding(
               padding: EdgeInsets.only(left: 8.w),
               child: _buildChip(
@@ -1021,6 +998,52 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
         ],
       ),
     );
+  }
+
+  /// Formats category keys into readable, localized display titles without underscores.
+  String _formatCategoryName(BuildContext context, String cat) {
+    final normalized =
+        cat.trim().toLowerCase().replaceAll(' ', '').replaceAll('_', '');
+    String fallback;
+    switch (normalized) {
+      case 'speaking':
+        fallback = 'Speaking';
+        break;
+      case 'listening':
+        fallback = 'Listening';
+        break;
+      case 'reading':
+        fallback = 'Reading';
+        break;
+      case 'writing':
+        fallback = 'Writing';
+        break;
+      case 'grammar':
+        fallback = 'Grammar';
+        break;
+      case 'vocabulary':
+        fallback = 'Vocabulary';
+        break;
+      case 'accent':
+        fallback = 'Accent';
+        break;
+      case 'roleplay':
+        fallback = 'Roleplay';
+        break;
+      case 'elitemastery':
+        fallback = 'Elite Mastery';
+        break;
+      default:
+        fallback = cat
+            .split('_')
+            .where((w) => w.isNotEmpty)
+            .map((w) => w[0].toUpperCase() + w.substring(1).toLowerCase())
+            .join(' ');
+    }
+
+    final translationKey =
+        normalized == 'elitemastery' ? 'elite_mastery' : cat.trim().toLowerCase();
+    return context.tr('games.$translationKey.title', fallback: fallback);
   }
 
   Future<bool> _checkMonetizationGate() async {

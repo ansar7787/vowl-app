@@ -333,12 +333,14 @@ class ErrorJournalCollector {
   /// e.g., 'syllableStress' → 'Syllable Stress', 'readAndAnswer' → 'Read And Answer'
   static String humanReadableName(String gameType) {
     if (gameType.isEmpty) return gameType;
-    final result = gameType.replaceAllMapped(
+    final clean = gameType.replaceAll('_', ' ').trim();
+    if (clean.isEmpty) return gameType;
+    final result = clean.replaceAllMapped(
       RegExp(r'([A-Z])'),
       (match) => ' ${match.group(0)}',
     );
-    // Capitalize first letter
-    return result[0].toUpperCase() + result.substring(1);
+    final words = result.split(RegExp(r'\s+')).where((w) => w.isNotEmpty);
+    return words.map((w) => w[0].toUpperCase() + w.substring(1)).join(' ');
   }
 }
 

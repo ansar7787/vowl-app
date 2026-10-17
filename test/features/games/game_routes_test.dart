@@ -224,6 +224,18 @@ void main() {
       expect(screen.gameType, equals(GameSubtype.storyBuilder));
     });
 
+    test('resolves elite_mastery (with underscore) category properly', () {
+      final state = createMockState('/game?category=elite_mastery&gameType=storyBuilder&level=2');
+      final page = gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<BlocProvider<EliteMasteryBloc>>());
+      final blocProvider = page.child as BlocProvider<EliteMasteryBloc>;
+      expect(blocProvider.child, isA<StoryBuilderScreen>());
+      final screen = blocProvider.child as StoryBuilderScreen;
+      expect(screen.level, equals(2));
+      expect(screen.gameType, equals(GameSubtype.storyBuilder));
+    });
+
     test('supports subtype parameter as alias for gameType', () {
       final state = createMockState('/game?category=writing&subtype=sentenceBuilder&level=2');
       final page = gameRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;

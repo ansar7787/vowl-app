@@ -79,6 +79,10 @@ class GameRoutes {
       defaultSubtype: GameSubtype.storyBuilder,
       factory: AppRouterGameResolvers.getEliteMasteryScreen,
     ),
+    'elite_mastery': _CategoryConfig(
+      defaultSubtype: GameSubtype.storyBuilder,
+      factory: AppRouterGameResolvers.getEliteMasteryScreen,
+    ),
   };
 
   // ---------------------------------------------------------------------------
@@ -90,7 +94,9 @@ class GameRoutes {
     required String? gameTypeStr,
     required int level,
   }) {
+    final normalized = category.toLowerCase().replaceAll('_', '').replaceAll(' ', '');
     final config =
+        _categoryConfigs[normalized] ??
         _categoryConfigs[category.toLowerCase()] ??
         _categoryConfigs['reading']!;
 
