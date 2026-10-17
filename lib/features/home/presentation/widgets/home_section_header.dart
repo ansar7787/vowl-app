@@ -30,10 +30,10 @@ class HomeSectionHeader extends StatelessWidget {
     final contrastColor = MeshGradientBackground.getContrastColor(context);
     final secondaryColor = contrastColor.withValues(alpha: 0.6);
     final resolvedTitle = localizedTitleKey != null
-        ? context.tr(localizedTitleKey!)
+        ? context.tr(localizedTitleKey!, fallback: title)
         : title;
     final resolvedSubtitle = localizedSubtitleKey != null
-        ? context.tr(localizedSubtitleKey!)
+        ? context.tr(localizedSubtitleKey!, fallback: subtitle)
         : subtitle;
 
     return Row(
