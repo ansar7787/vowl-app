@@ -88,12 +88,13 @@ class GamificationRepositoryImpl
 
       // Derived purely from the starsEarned *parameter* — identical on every
       // transaction retry — so it's computed once, outside the closure.
-      final int finalStarsEarned = starsEarned ?? 3;
+      // Vault rewards (chests, ads for stars) must never default to awarding 3 level stars.
+      final int finalStarsEarned = starsEarned ?? (isVaultReward ? 0 : 3);
 
       // INSTANT UI UPDATE: Fire the reactive stars notifier synchronously BEFORE
       // the network transaction. This prevents the UI from showing a stale "mock"
       // value while waiting for the network, and eliminates the perceived lag.
-      if (starsEarned != null) {
+      if (starsEarned != null && !isVaultReward) {
         lastEarnedStars.value = finalStarsEarned;
       }
 
@@ -147,7 +148,7 @@ class GamificationRepositoryImpl
           coinIncrease: coinIncrease,
           isDoubleReward: isDoubleReward,
           isVaultReward: isVaultReward,
-          finalStarsEarned: starsEarned ?? 3,
+          finalStarsEarned: starsEarned ?? (isVaultReward ? 0 : 3),
           addMagicStars: addMagicStars,
           claimChestTier: claimChestTier,
         );
@@ -194,7 +195,9 @@ class GamificationRepositoryImpl
       );
 
       // Immediately notify UI so stars can animate based on offline local data
-      lastEarnedStars.value = finalStarsEarned;
+      if (!isVaultReward && finalStarsEarned > 0) {
+        lastEarnedStars.value = finalStarsEarned;
+      }
 
       // Atomic update (Queued offline)
       // Fire-and-forget: do NOT await. In the Firebase SDK, awaiting an update
@@ -274,10 +277,12 @@ class GamificationRepositoryImpl
       starRatings[gameType] ?? <String, int>{},
     );
 
-    // 1. Update Gameplay Stars
-    final currentStars = categoryStars[level.toString()] ?? 0;
-    if (finalStarsEarned > currentStars) {
-      categoryStars[level.toString()] = finalStarsEarned;
+    // 1. Update Gameplay Stars (skipped for vault rewards like chests or ads for magic stars)
+    if (!isVaultReward) {
+      final currentStars = categoryStars[level.toString()] ?? 0;
+      if (finalStarsEarned > currentStars) {
+        categoryStars[level.toString()] = finalStarsEarned;
+      }
     }
 
     // 2. Add Magic Stars
@@ -306,14 +311,16 @@ class GamificationRepositoryImpl
     );
 
     // ---- Recent activities ----
-    activities.insert(0, <String, dynamic>{
-      'titleKey': 'activity.quest_completed',
-      'gameType': gameType,
-      'xpEarned': finalXpIncrease,
-      'coinsEarned': coinIncrease,
-      'timestamp': Timestamp.now(),
-      'type': 'quest',
-    });
+    if (!isVaultReward) {
+      activities.insert(0, <String, dynamic>{
+        'titleKey': 'activity.quest_completed',
+        'gameType': gameType,
+        'xpEarned': finalXpIncrease,
+        'coinsEarned': coinIncrease,
+        'timestamp': Timestamp.now(),
+        'type': 'quest',
+      });
+    }
     final trimmedActivities =
         activities.length > UserGameConstants.kActivityHistoryLimit
         ? activities.sublist(0, UserGameConstants.kActivityHistoryLimit)
@@ -330,13 +337,18 @@ class GamificationRepositoryImpl
     }
 
     // ---- Coin history ----
-    coinHistoryList = _recordCoinHistory(
-      coinHistoryList,
-      titleKey: 'coin_history.quest_reward',
-      amount: finalCoinIncrease,
-      isEarned: true,
-      params: {'gameType': gameType},
-    );
+    if (finalCoinIncrease > 0) {
+      final coinTitle = isVaultReward
+          ? (claimChestTier != null ? 'coin_history.daily_chest' : 'coin_history.ad_reward')
+          : 'coin_history.quest_reward';
+      coinHistoryList = _recordCoinHistory(
+        coinHistoryList,
+        titleKey: coinTitle,
+        amount: finalCoinIncrease,
+        isEarned: true,
+        params: {'gameType': gameType},
+      );
+    }
 
     return {
       'totalExp': userData.totalExp + finalXpIncrease,

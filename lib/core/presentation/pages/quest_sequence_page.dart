@@ -48,6 +48,11 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
 
   String get _sequenceTitle {
     switch (widget.sequenceId) {
+      case 'smart_recommendation':
+        return context.tr(
+          'home.discovery_foryou_title',
+          fallback: 'For You',
+        );
       case 'daily_duo':
         return context.tr(
           'home.discovery_dailyduo_title',

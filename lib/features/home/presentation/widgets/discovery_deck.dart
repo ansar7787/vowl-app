@@ -409,13 +409,10 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                             subtitle,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: index == 2 ? 22.sp : 20.sp,
-                              fontStyle: index == 2
-                                  ? FontStyle.italic
-                                  : FontStyle.normal,
+                              fontSize: 20.sp,
                               fontWeight: FontWeight.w900,
                               color: Theme.of(context).colorScheme.onSurface,
-                              height: 1.1,
+                              height: 1.15,
                             ),
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,

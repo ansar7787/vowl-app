@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/ad_service.dart';
@@ -320,9 +321,63 @@ void main() {
       expect(find.text('Mistake to Dismiss'), findsNothing);
       expect(find.text("You're All Caught Up!"), findsOneWidget);
     });
+
+    testWidgets('swipe background has solid red color and white trash icon without gradient', (tester) async {
+      SharedPreferences.setMockInitialValues({
+        'vowl_local_error_journal': <String>[
+          jsonEncode(makeEntryJson(
+            id: 'dismiss_entry_bg',
+            gameType: 'consonantClarity',
+            question: 'Mistake Background Test',
+            userAnswer: 'wrong_ans',
+            correctAnswer: 'right_ans',
+          )),
+        ],
+      });
+
+      await tester.pumpWidget(buildTestWidget());
+      await tester.pumpAndSettle();
+
+      final dismissible = tester.widget<Dismissible>(find.byType(Dismissible));
+      final background = dismissible.background as Container;
+      final decoration = background.decoration as BoxDecoration;
+      expect(decoration.color, AppColors.red500);
+      expect(decoration.gradient, isNull);
+
+      final icon = background.child as Icon;
+      expect(icon.icon, LucideIcons.trash2);
+      expect(icon.color, Colors.white);
+    });
   });
 
   group('Group 5: Category Filter Chips', () {
+    testWidgets('formats elite_mastery category as "Elite Mastery" without underscore', (tester) async {
+      SharedPreferences.setMockInitialValues({
+        'vowl_local_error_journal': <String>[
+          jsonEncode(makeEntryJson(
+            id: 'entry_elite',
+            gameType: 'storyBuilder',
+            question: 'Elite Story Question',
+            userAnswer: 'wrong',
+            correctAnswer: 'right',
+          )),
+        ],
+      });
+
+      await tester.pumpWidget(buildTestWidget());
+      await tester.pumpAndSettle();
+
+      expect(find.text('All'), findsOneWidget);
+      expect(find.text('Elite Mastery'), findsOneWidget);
+      expect(find.text('Elite_Mastery'), findsNothing);
+      expect(find.text('Elite_mastery'), findsNothing);
+
+      // Tap Elite Mastery chip
+      await tester.tap(find.text('Elite Mastery'));
+      await tester.pumpAndSettle();
+      expect(find.text('Elite Story Question'), findsOneWidget);
+    });
+
     testWidgets('filtering by category displays only matching mistakes and resetting restores all', (tester) async {
       SharedPreferences.setMockInitialValues({
         'vowl_local_error_journal': <String>[
