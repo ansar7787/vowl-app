@@ -5,6 +5,7 @@ import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/core/utils/translation_monetization_controller.dart';
 import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
 import 'package:vowl/core/utils/widgets/translation_download_sheet.dart';
+import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 /// A reusable button that triggers the translation flow.
@@ -18,11 +19,13 @@ class TranslateButtonWidget extends StatefulWidget {
   final String originalText;
   final bool isKidsZone;
   final Function(String translatedText) onTranslationComplete;
+  final Function(String translatedText, String? languageCode)? onTranslationWithLanguage;
 
   const TranslateButtonWidget({
     super.key,
     required this.originalText,
     required this.onTranslationComplete,
+    this.onTranslationWithLanguage,
     this.isKidsZone = false,
   });
 
@@ -34,12 +37,15 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
   final ValueNotifier<bool> _isTranslating = ValueNotifier(false);
 
   Future<void> _handleTranslatePress() async {
+    // Immediately stop any active TTS narration across the app on tap
+    await TtsSpeakerButtonWidget.stopAll();
     _isTranslating.value = true;
 
     try {
       // 1. Check if they selected a language yet
       final isConfigured = await TranslationService().isLanguageConfigured();
       if (!isConfigured) {
+        await TtsSpeakerButtonWidget.stopAll();
         if (!mounted) return;
         await LanguageSelectionBottomSheet.show(context);
 
@@ -60,6 +66,8 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
         context,
         isKidsZone: widget.isKidsZone,
         onSuccess: () async {
+          // Immediately silence audio before modal or translation
+          await TtsSpeakerButtonWidget.stopAll();
           if (!isDownloaded && mounted) {
             // Show the cool dopamine UI while the model is downloading
             await TranslationDownloadSheet.show(
@@ -68,10 +76,15 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
             );
           }
           // 4. Perform the actual ML Kit translation
+          final bcpCode =
+              await TranslationService().getTargetLanguageBcpCode();
           final translated = await TranslationService().translate(
             widget.originalText,
           );
+          // Ensure audio remains stopped when translation renders
+          await TtsSpeakerButtonWidget.stopAll();
           widget.onTranslationComplete(translated);
+          widget.onTranslationWithLanguage?.call(translated, bcpCode);
         },
       );
     } catch (e) {

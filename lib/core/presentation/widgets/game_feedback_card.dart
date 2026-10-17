@@ -7,10 +7,33 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
+import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
-/// A universal feedback card to be used across all game categories.
-/// Consolidates duplicate feedback card patterns.
+/// Descriptor for a single pedagogical rule item (e.g. grammar rule, phonetic rule,
+/// mouth position, spelling rule, sequence logic, fun fact).
+class PedagogicalRuleItem {
+  final IconData icon;
+  final String title;
+  final String rule;
+
+  const PedagogicalRuleItem({
+    required this.icon,
+    required this.title,
+    required this.rule,
+  });
+}
+
+/// A universal, production-grade feedback card used across all 100 main games
+/// and 25 kids games.
+///
+/// Features:
+/// - Deterministic on-demand TTS audio speaker button (stops on re-tap, stops on continue,
+///   never auto-shouts without user consent).
+/// - Instant translation support with monetization check and download sheet.
+/// - Support for single or multiple pedagogical rule boxes with rich iconography.
+/// - Correct answer reveal and explanation display on final failures.
+/// - 60/120 FPS hardware-accelerated animations isolated via [RepaintBoundary].
 class GameFeedbackCard extends StatelessWidget {
   /// Whether the last answer was correct. Drives color scheme and copy.
   final bool? isCorrect;
@@ -23,8 +46,6 @@ class GameFeedbackCard extends StatelessWidget {
 
   /// Called when the user taps the primary action button.
   final VoidCallback onContinue;
-
-  /// Called when the user taps "Pass to Tutor" (optional, used in some games).
 
   /// Whether the app is currently in dark mode.
   final bool isDark;
@@ -41,6 +62,12 @@ class GameFeedbackCard extends StatelessWidget {
   /// Optional: the content of the pedagogical rule.
   final String? ruleContent;
 
+  /// Optional: multiple pedagogical rules to display (used in Accent, Elite Mastery, etc.).
+  final List<PedagogicalRuleItem>? pedagogicalRules;
+
+  /// Optional: the verified correct answer to reveal on failure.
+  final String? correctAnswer;
+
   /// Optional: a sample answer (used in writing games).
   final String? sampleAnswer;
 
@@ -53,22 +80,27 @@ class GameFeedbackCard extends StatelessWidget {
   /// Whether this is a 2-stage game. If true, pedagogical fields are hidden to avoid redundancy.
   final bool isTwoStageGame;
 
+  /// Whether this game belongs to the Kids Zone (routes TTS to warm teacher cadence).
+  final bool isKids;
+
   const GameFeedbackCard({
     super.key,
     required this.isCorrect,
     required this.isFinalFailure,
     required this.livesRemaining,
     required this.onContinue,
-
     required this.isDark,
     required this.primaryColor,
     this.explanation,
     this.ruleTitle,
     this.ruleContent,
+    this.pedagogicalRules,
+    this.correctAnswer,
     this.sampleAnswer,
     this.requiredPoints,
     this.customContent,
     this.isTwoStageGame = false,
+    this.isKids = false,
   });
 
   static const _successGradient = [AppColors.teal400, AppColors.emerald500];
@@ -140,9 +172,28 @@ class GameFeedbackCard extends StatelessWidget {
                 customContent!,
               ],
 
+              // Correct answer card (when available on final failure)
+              if (showEducationalInfo &&
+                  correctAnswer != null &&
+                  correctAnswer!.trim().isNotEmpty) ...[
+                SizedBox(height: 16.h),
+                PedagogicalRuleBox(
+                  icon: Icons.check_circle_outline_rounded,
+                  capsKey: 'games.correct_answer_caps',
+                  capsFallback: 'CORRECT ANSWER',
+                  titleKey: 'games.correct_answer',
+                  titleFallback: 'Correct Answer',
+                  rule: correctAnswer!,
+                  shadowColor: shadowColor,
+                  isDark: isDark,
+                  isKids: isKids,
+                ),
+              ],
+
+              // Single pedagogical rule (Grammar, Kids Fun Fact, etc.)
               if (showPedagogicalFields &&
                   ruleContent != null &&
-                  ruleContent!.isNotEmpty) ...[
+                  ruleContent!.trim().isNotEmpty) ...[
                 SizedBox(height: 16.h),
                 PedagogicalRuleBox(
                   icon: Icons.menu_book_rounded,
@@ -153,23 +204,44 @@ class GameFeedbackCard extends StatelessWidget {
                   rule: ruleContent!,
                   shadowColor: shadowColor,
                   isDark: isDark,
+                  isKids: isKids,
                 ),
               ],
 
+              // Multiple pedagogical rules (Accent prosody, Elite Mastery patterns)
+              if (showPedagogicalFields && pedagogicalRules != null) ...[
+                for (final item in pedagogicalRules!) ...[
+                  SizedBox(height: 16.h),
+                  PedagogicalRuleBox(
+                    icon: item.icon,
+                    capsKey: '',
+                    capsFallback: item.title.toUpperCase(),
+                    titleKey: '',
+                    titleFallback: item.title,
+                    rule: item.rule,
+                    shadowColor: shadowColor,
+                    isDark: isDark,
+                    isKids: isKids,
+                  ),
+                ],
+              ],
+
+              // Explanation card with interactive Translate & TTS Speaker buttons
               if (showEducationalInfo &&
                   explanation != null &&
-                  explanation!.isNotEmpty) ...[
+                  explanation!.trim().isNotEmpty) ...[
                 SizedBox(height: 16.h),
                 _ExplanationCard(
                   originalExplanation: explanation!,
                   accentColor: shadowColor,
                   isDark: isDark,
+                  isKids: isKids,
                 ),
               ],
 
               if (showPedagogicalFields &&
                   sampleAnswer != null &&
-                  sampleAnswer!.isNotEmpty) ...[
+                  sampleAnswer!.trim().isNotEmpty) ...[
                 SizedBox(height: 16.h),
                 PedagogicalRuleBox(
                   icon: Icons.lightbulb_outline_rounded,
@@ -180,6 +252,7 @@ class GameFeedbackCard extends StatelessWidget {
                   rule: sampleAnswer!,
                   shadowColor: shadowColor,
                   isDark: isDark,
+                  isKids: isKids,
                 ),
               ],
 
@@ -196,6 +269,7 @@ class GameFeedbackCard extends StatelessWidget {
                   rule: requiredPoints!.join("\n• "),
                   shadowColor: shadowColor,
                   isDark: isDark,
+                  isKids: isKids,
                 ),
               ],
 
@@ -228,13 +302,14 @@ class GameFeedbackCard extends StatelessWidget {
 
     return Row(
       children: [
-        if (reduceMotion)
-          iconWidget
-        else
-          iconWidget.animate().scale(
-            duration: 400.ms,
-            curve: Curves.elasticOut,
-          ),
+        RepaintBoundary(
+          child: reduceMotion
+              ? iconWidget
+              : iconWidget.animate().scale(
+                  duration: 400.ms,
+                  curve: Curves.elasticOut,
+                ),
+        ),
         SizedBox(width: 16.w),
         Expanded(
           child: AutoSizeText(
@@ -267,7 +342,10 @@ class GameFeedbackCard extends StatelessWidget {
         VowlMotion.lowAnimationModeOverride.value;
 
     final button = ScaleButton(
-      onTap: onContinue,
+      onTap: () {
+        TtsSpeakerButtonWidget.stopAll();
+        onContinue();
+      },
       child: Container(
         width: double.infinity,
         height: 65.h,
@@ -305,16 +383,18 @@ class GameFeedbackCard extends StatelessWidget {
       ),
     );
 
-    return Semantics(
-      label: label,
-      button: true,
-      child: reduceMotion
-          ? button
-          : button.animate().scale(
-              delay: 150.ms,
-              duration: 300.ms,
-              curve: Curves.elasticOut,
-            ),
+    return RepaintBoundary(
+      child: Semantics(
+        label: label,
+        button: true,
+        child: reduceMotion
+            ? button
+            : button.animate().scale(
+                delay: 150.ms,
+                duration: 300.ms,
+                curve: Curves.elasticOut,
+              ),
+      ),
     );
   }
 }
@@ -323,11 +403,13 @@ class _ExplanationCard extends StatefulWidget {
   final String originalExplanation;
   final Color accentColor;
   final bool isDark;
+  final bool isKids;
 
   const _ExplanationCard({
     required this.originalExplanation,
     required this.accentColor,
     required this.isDark,
+    this.isKids = false,
   });
 
   @override
@@ -336,11 +418,21 @@ class _ExplanationCard extends StatefulWidget {
 
 class _ExplanationCardState extends State<_ExplanationCard> {
   late final ValueNotifier<String?> _translatedTextNotifier;
+  String? _translatedLocale;
 
   @override
   void initState() {
     super.initState();
     _translatedTextNotifier = ValueNotifier<String?>(null);
+  }
+
+  @override
+  void didUpdateWidget(covariant _ExplanationCard oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.originalExplanation != widget.originalExplanation) {
+      _translatedTextNotifier.value = null;
+      _translatedLocale = null;
+    }
   }
 
   @override
@@ -395,15 +487,88 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                     ),
                   ),
                   const Spacer(),
-                  if (translatedText == null)
-                    TranslateButtonWidget(
-                      originalText: widget.originalExplanation,
-                      onTranslationComplete: (translated) {
-                        if (mounted) {
-                          _translatedTextNotifier.value = translated;
-                        }
-                      },
-                    ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      TtsSpeakerButtonWidget(
+                        text: displayText,
+                        color: widget.accentColor,
+                        isKids: widget.isKids,
+                        locale: translatedText != null
+                            ? _translatedLocale
+                            : null,
+                      ),
+                      if (translatedText == null) ...[
+                        SizedBox(width: 8.w),
+                        TranslateButtonWidget(
+                          originalText: widget.originalExplanation,
+                          isKidsZone: widget.isKids,
+                          onTranslationComplete: (translated) {
+                            TtsSpeakerButtonWidget.stopAll();
+                            if (mounted) {
+                              _translatedTextNotifier.value = translated;
+                            }
+                          },
+                          onTranslationWithLanguage: (translated, langCode) {
+                            TtsSpeakerButtonWidget.stopAll();
+                            if (mounted) {
+                              _translatedLocale = langCode;
+                              _translatedTextNotifier.value = translated;
+                            }
+                          },
+                        ),
+                      ] else ...[
+                        SizedBox(width: 8.w),
+                        ScaleButton(
+                          onTap: () {
+                            TtsSpeakerButtonWidget.stopAll();
+                            if (mounted) {
+                              setState(() {
+                                _translatedLocale = null;
+                                _translatedTextNotifier.value = null;
+                              });
+                            }
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 8.w,
+                              vertical: 4.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: widget.accentColor.withValues(
+                                alpha: widget.isDark ? 0.2 : 0.1,
+                              ),
+                              borderRadius: BorderRadius.circular(12.r),
+                              border: Border.all(
+                                color: widget.accentColor.withValues(alpha: 0.3),
+                                width: 1,
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  Icons.undo_rounded,
+                                  size: 12.r,
+                                  color: widget.accentColor,
+                                ),
+                                SizedBox(width: 4.w),
+                                Text(
+                                  'EN',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: widget.accentColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
                 ],
               ),
               SizedBox(height: 8.h),
@@ -425,15 +590,17 @@ class _ExplanationCardState extends State<_ExplanationCard> {
           return card;
         }
 
-        return card
-            .animate()
-            .fadeIn(delay: 100.ms)
-            .slideY(
-              begin: 0.2,
-              end: 0,
-              duration: 300.ms,
-              curve: Curves.easeOutCubic,
-            );
+        return RepaintBoundary(
+          child: card
+              .animate()
+              .fadeIn(delay: 100.ms)
+              .slideY(
+                begin: 0.2,
+                end: 0,
+                duration: 300.ms,
+                curve: Curves.easeOutCubic,
+              ),
+        );
       },
     );
   }

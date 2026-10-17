@@ -278,18 +278,29 @@ class TtsServiceImpl implements TtsService {
 
     try {
       final targetPreset = forcedPreset ?? await TtsVoiceHelper.getSavedPreset();
-      if (_activeEnginePreset != targetPreset || isKids) {
+      if (_activeEnginePreset != targetPreset || isKids || locale != null) {
         await TtsVoiceHelper.applyPresetToTts(
           _flutterTts,
           preset: targetPreset,
           isKids: isKids,
           explicitLocale: locale,
         );
-        _activeEnginePreset = isKids ? null : targetPreset;
+        // Invalidate cache if a custom foreign locale was applied, ensuring subsequent
+        // English calls restore the saved voice preset seamlessly.
+        _activeEnginePreset = (isKids || locale != null) ? null : targetPreset;
       }
 
       if (locale != null) {
-        await _flutterTts.setLanguage(locale);
+        final dynamic isAvailable = await _flutterTts.isLanguageAvailable(locale);
+        final bool canSpeakLocale = isAvailable == 1 || isAvailable == true;
+        if (canSpeakLocale) {
+          await _flutterTts.setLanguage(locale);
+        } else {
+          sl<AppLogger>().warning(
+            'TTS locale "$locale" not supported on this device engine, using default voice.',
+            tag: 'TTS',
+          );
+        }
       }
       if (rate != null) {
         await _flutterTts.setSpeechRate(rate);
@@ -309,9 +320,14 @@ class TtsServiceImpl implements TtsService {
             },
           );
       if (result == 0) {
-        sl<AppLogger>().error(
-          "TTS Engine failed to speak (possibly unbound or crashed)",
-        );
+        // Android TTS returns 0 (TextToSpeech.ERROR) when an utterance is interrupted
+        // by stop(), replaced by a new utterance, or preempted by navigation.
+        if (_isSpeaking) {
+          sl<AppLogger>().warning(
+            'TtsService: Utterance was interrupted, stopped, or skipped by the engine.',
+            tag: 'TTS',
+          );
+        }
         return;
       }
     } catch (e) {

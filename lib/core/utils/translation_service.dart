@@ -98,6 +98,12 @@ class TranslationService {
     }
   }
 
+  /// Returns the BCP-47 language code of the user's configured target language (e.g. 'es', 'fr', 'de').
+  Future<String?> getTargetLanguageBcpCode() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(_kTargetLangKey);
+  }
+
   /// Returns true if the user has previously selected and downloaded a target language.
   Future<bool> isLanguageConfigured() async {
     final prefs = await SharedPreferences.getInstance();

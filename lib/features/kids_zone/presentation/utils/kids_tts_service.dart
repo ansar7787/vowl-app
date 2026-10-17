@@ -20,6 +20,8 @@ class KidsTTSService {
     }
   }
 
+  bool get isSpeaking => _ttsService.isSpeaking;
+
   Future<bool> isNarrationEnabled() async {
     final prefs = await SharedPreferences.getInstance();
     final globalEnabled = prefs.getBool('sound_enabled') ?? true;
