@@ -79,6 +79,9 @@ class RazorpayPaymentService implements PaymentService {
 
   Razorpay? _razorpay;
 
+  @visibleForTesting
+  Razorpay? testRazorpayInstance;
+
   RazorpayPaymentService({required this.functions});
 
   @override
@@ -90,7 +93,7 @@ class RazorpayPaymentService implements PaymentService {
     // Prevent memory leaks by clearing any existing active instances
     _razorpay?.clear();
 
-    final instance = Razorpay();
+    final instance = testRazorpayInstance ?? Razorpay();
     instance.on(Razorpay.EVENT_PAYMENT_SUCCESS, onSuccess);
     instance.on(Razorpay.EVENT_PAYMENT_ERROR, onFailure);
     instance.on(Razorpay.EVENT_EXTERNAL_WALLET, onExternalWallet);
@@ -107,7 +110,7 @@ class RazorpayPaymentService implements PaymentService {
     String currency = 'INR',
     String description = 'Vowl Premium - 30 Days',
   }) {
-    final razorpayKey = dotenv.env['RAZORPAY_KEY_ID'];
+    final razorpayKey = dotenv.isInitialized ? dotenv.env['RAZORPAY_KEY_ID'] : null;
 
     if (razorpayKey == null || razorpayKey.isEmpty) {
       if (kDebugMode) {
