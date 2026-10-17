@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class VowlButtonSpinner extends StatelessWidget {
   final Color color;
@@ -13,16 +14,24 @@ class VowlButtonSpinner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
     return Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(3, (index) {
-        return Container(
-              margin: EdgeInsets.symmetric(horizontal: size * 0.05),
-              width: size * 0.2,
-              height: size * 0.2,
-              decoration: BoxDecoration(color: color, shape: BoxShape.circle),
-            )
+        final dot = Container(
+          margin: EdgeInsets.symmetric(horizontal: size * 0.05),
+          width: size * 0.2,
+          height: size * 0.2,
+          decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+        );
+
+        if (reduceMotion) {
+          return dot;
+        }
+
+        return dot
             .animate(
               onPlay: (controller) => controller.repeat(),
               delay: (index * 150).ms,

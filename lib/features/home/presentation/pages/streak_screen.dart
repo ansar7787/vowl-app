@@ -226,39 +226,44 @@ class _StreakScreenState extends State<StreakScreen> {
                 ),
               ),
               // Centered Title Pill
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-                decoration: BoxDecoration(
-                  color: IllustrationColors.warmOrange.withValues(alpha: 0.15),
-                  borderRadius: BorderRadius.circular(24.r),
-                  border: Border.all(
-                    color: IllustrationColors.warmOrange.withValues(alpha: 0.2),
+              Flexible(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                  decoration: BoxDecoration(
+                    color: IllustrationColors.warmOrange.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(24.r),
+                    border: Border.all(
+                      color: IllustrationColors.warmOrange.withValues(alpha: 0.2),
+                    ),
                   ),
-                ),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.local_fire_department_rounded,
-                      color: IllustrationColors.warmOrange,
-                      size: 16.r,
-                    ),
-                    SizedBox(width: 8.w),
-                    Text(
-                      context.tr(
-                        'streak.daily_streak_title',
-                        fallback: 'DAILY STREAK',
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.local_fire_department_rounded,
+                        color: IllustrationColors.warmOrange,
+                        size: 16.r,
                       ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w900,
-                        color: contentColor,
-                        letterSpacing: 1.5,
+                      SizedBox(width: 8.w),
+                      Flexible(
+                        child: Text(
+                          context.tr(
+                            'streak.daily_streak_title',
+                            fallback: 'DAILY STREAK',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w900,
+                            color: contentColor,
+                            letterSpacing: 1.5,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               // Streak Freeze Inventory Pill

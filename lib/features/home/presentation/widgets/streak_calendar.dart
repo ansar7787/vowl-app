@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -23,7 +24,8 @@ class StreakCalendar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    return GlassTile(
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    final content = GlassTile(
       padding: EdgeInsets.all(20.r),
       borderRadius: BorderRadius.circular(24.r),
       child: Column(
@@ -71,46 +73,54 @@ class StreakCalendar extends StatelessWidget {
                     fallback:
                         'XP Level 50 Mastery: Permanent Streak Protection Active',
                   ),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 8.w,
-                      vertical: 4.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.emerald500.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(
-                        color: AppColors.emerald500.withValues(alpha: 0.3),
+                  child: () {
+                    final badge = Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 8.w,
+                        vertical: 4.h,
                       ),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.security_rounded,
-                          color: AppColors.emerald500,
-                          size: 12.r,
+                      decoration: BoxDecoration(
+                        color: AppColors.emerald500.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(12.r),
+                        border: Border.all(
+                          color: AppColors.emerald500.withValues(alpha: 0.3),
                         ),
-                        SizedBox(width: 4.w),
-                        AutoSizeText(
-                          context.tr(
-                            'streak.protected_badge',
-                            fallback: 'PROTECTED',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 9.sp,
-                            fontWeight: FontWeight.w900,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.security_rounded,
                             color: AppColors.emerald500,
-                            letterSpacing: 0.5,
+                            size: 12.r,
                           ),
-                          maxLines: 1,
-                          minFontSize: 5,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ],
-                    ),
-                  ).animate().shimmer(duration: 2000.ms, delay: 1000.ms),
+                          SizedBox(width: 4.w),
+                          AutoSizeText(
+                            context.tr(
+                              'streak.protected_badge',
+                              fallback: 'PROTECTED',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 9.sp,
+                              fontWeight: FontWeight.w900,
+                              color: AppColors.emerald500,
+                              letterSpacing: 0.5,
+                            ),
+                            maxLines: 1,
+                            minFontSize: 5,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
+                      ),
+                    );
+                    return reduceMotion
+                        ? badge
+                        : badge.animate().shimmer(
+                            duration: 2000.ms,
+                            delay: 1000.ms,
+                          );
+                  }(),
                 ),
             ],
           ),
@@ -135,7 +145,12 @@ class StreakCalendar extends StatelessWidget {
           _buildModernCalendar(context),
         ],
       ),
-    ).animate().fadeIn(delay: 200.ms).slideX(begin: 0.05);
+    );
+
+    if (!reduceMotion) {
+      return content.animate().fadeIn(delay: 200.ms).slideX(begin: 0.05);
+    }
+    return content;
   }
 
   /// Determines whether [day] falls within the user's current streak window.
@@ -345,16 +360,22 @@ class StreakCalendar extends StatelessWidget {
                           size: isFrozen ? 14.r : 16.r,
                         )
                       : (isToday
-                            ? Icon(
-                                LucideIcons.circle,
-                                color: Colors.blueAccent,
-                                size: 8.r,
-                              ).animate().scale(
-                                begin: const Offset(0.5, 0.5),
-                                end: const Offset(1, 1),
-                                duration: 800.ms,
-                                curve: Curves.easeOutCubic,
-                              )
+                            ? (VowlMotion.shouldReduceMotion(context)
+                                  ? Icon(
+                                      LucideIcons.circle,
+                                      color: Colors.blueAccent,
+                                      size: 8.r,
+                                    )
+                                  : Icon(
+                                      LucideIcons.circle,
+                                      color: Colors.blueAccent,
+                                      size: 8.r,
+                                    ).animate().scale(
+                                      begin: const Offset(0.5, 0.5),
+                                      end: const Offset(1, 1),
+                                      duration: 800.ms,
+                                      curve: Curves.easeOutCubic,
+                                    ))
                             : null)),
           ),
         ),
