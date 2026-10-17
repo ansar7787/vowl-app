@@ -14,10 +14,13 @@ class InsecureDeviceScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final tokens =
+        Theme.of(context).extension<AppColorTokens>() ?? AppColorTokens.dark;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
+      theme: ThemeData.dark().copyWith(
+        extensions: const [AppColorTokens.dark],
+      ),
       home: Scaffold(
         backgroundColor: AppColors.slate900,
         body: Semantics(
