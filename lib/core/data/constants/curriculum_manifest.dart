@@ -185,10 +185,13 @@ abstract class CurriculumManifest {
     'weather': 200,
   };
 
-  /// Returns the level count for [gameType], or [defaultLevelCount]
-  /// if the game type was not present at build time.
+  /// Returns the level count for [gameType], supporting both main games
+  /// and kids games (with or without `kids_` prefix), falling back to [defaultLevelCount].
   static int getLevels(String gameType) =>
-      levelCounts[gameType] ?? defaultLevelCount;
+      levelCounts[gameType] ??
+      kidsLevelCounts[gameType] ??
+      levelCounts['kids_$gameType'] ??
+      defaultLevelCount;
 
   /// Returns the level count for a kids game by topic name.
   /// Accepts both `"alphabet"` and `"kids_alphabet"` forms.

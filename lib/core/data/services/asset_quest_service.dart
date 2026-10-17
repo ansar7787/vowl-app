@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:vowl/core/error/exceptions.dart';
+import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/data/constants/quest_registry.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/injection_container.dart';
@@ -77,6 +78,13 @@ class AssetQuestService implements QuestService {
     String gameType,
     int level,
   ) async {
+    final maxLevels = CurriculumManifest.getLevels(gameType);
+    if (level > maxLevels) {
+      throw ServerException(
+        'AssetQuestService: Requested level $level exceeds maximum level $maxLevels for $gameType',
+      );
+    }
+
     final path = QuestRegistry.getAssetPath(gameType, level);
 
     // 1. Return from cache if already loaded (move to end for LRU)
@@ -131,11 +139,20 @@ class AssetQuestService implements QuestService {
   /// Pre-loads a batch for the next set of levels.
   @override
   Future<void> preloadBatch(String gameType, int currentLevel) async {
+    final maxLevels = CurriculumManifest.getLevels(gameType);
+    if (currentLevel >= maxLevels) {
+      return;
+    }
+
     // Fast O(1) integer arithmetic without floating-point conversions.
     // currentBatch = which batch currentLevel falls in (1-indexed);
     // nextBatchFirstLevel = the first level of the *following* batch.
     final currentBatch = ((currentLevel - 1) ~/ 10) + 1;
     final nextBatchFirstLevel = currentBatch * 10 + 1;
+    if (nextBatchFirstLevel > maxLevels) {
+      return;
+    }
+
     final path = QuestRegistry.getAssetPath(gameType, nextBatchFirstLevel);
 
     if (_batchCache.containsKey(path) || _loadingPaths.containsKey(path)) {

@@ -12,6 +12,7 @@ import 'package:vowl/features/auth/domain/usecases/purchase_level_unlock.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
+import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 
 class KidsTollGateBottomSheet {
   static void show({
@@ -21,6 +22,42 @@ class KidsTollGateBottomSheet {
     required Color primaryColor,
   }) {
     final parentContext = context;
+    final maxLevels = CurriculumManifest.getLevels(gameType);
+    final int remainingToMax = maxLevels - level + 1;
+    final int levelsToUnlock = remainingToMax.clamp(1, 3);
+
+    final String sheetDesc;
+    final String successDesc;
+
+    if (levelsToUnlock == 1) {
+      sheetDesc = context.tr(
+        'games.magic_lock_desc_1',
+        fallback: 'Use 1 Key or watch a video to unlock the final Level $maxLevels!',
+      );
+      successDesc = context.tr(
+        'games.magic_lock_success_1',
+        fallback: 'Final Level Unlocked! Have fun!',
+      );
+    } else if (levelsToUnlock == 2) {
+      sheetDesc = context.tr(
+        'games.magic_lock_desc_2',
+        fallback: 'Use 1 Key or watch a video to unlock the final 2 levels!',
+      );
+      successDesc = context.tr(
+        'games.magic_lock_success_2',
+        fallback: 'Final 2 Levels Unlocked!',
+      );
+    } else {
+      sheetDesc = context.tr(
+        'games.magic_lock_desc',
+        fallback: 'Watch a quick video to unlock the next 3 levels!',
+      );
+      successDesc = context.tr(
+        'games.magic_lock_success',
+        fallback: 'Magic Lock Opened!',
+      );
+    }
+
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
@@ -79,11 +116,7 @@ class KidsTollGateBottomSheet {
                     ),
                     SizedBox(height: 8.h),
                     Text(
-                      context.tr(
-                        'games.magic_lock_desc',
-                        fallback:
-                            'Watch a quick video to unlock the next 3 levels!',
-                      ),
+                      sheetDesc,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 14.sp,
@@ -173,10 +206,7 @@ class KidsTollGateBottomSheet {
                                       children: [
                                         ModernGameDialog(
                                           title: 'GATE UNLOCKED!',
-                                          description: context.tr(
-                                            'games.magic_lock_success',
-                                            fallback: 'Magic Lock Opened!',
-                                          ),
+                                          description: successDesc,
                                           buttonText: 'AWESOME',
                                           isSuccess: true,
                                           onButtonPressed: () =>
@@ -227,14 +257,18 @@ class KidsTollGateBottomSheet {
                                   size: 20.r,
                                 ),
                                 SizedBox(width: 8.w),
-                                Text(
-                                  hasKey ? "USE 1 KEY TO UNLOCK" : "GET A KEY",
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w800,
-                                    color: Colors.white,
-                                    letterSpacing: 0.5,
+                                Flexible(
+                                  child: Text(
+                                    hasKey ? "USE 1 KEY TO UNLOCK" : "GET A KEY",
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w800,
+                                      color: Colors.white,
+                                      letterSpacing: 0.5,
+                                    ),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
                               ],

@@ -667,26 +667,40 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     required int index,
   }) {
     final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
-    final currentLevel = (user.completedLevels[subtype.name]?.length ?? 0) + 1;
+    final completedCount = user.completedLevels[subtype.name]?.length ?? 0;
+    final gameTotalLevels = CurriculumManifest.getLevels(subtype.name);
+    final isMastered = completedCount >= gameTotalLevels;
+    final currentLevel = isMastered ? gameTotalLevels : completedCount + 1;
     final isNew =
-        !user.categoryStats.containsKey(subtype.name) && currentLevel == 1;
+        !user.categoryStats.containsKey(subtype.name) && completedCount == 0;
 
     final displayColor = theme.primaryColor;
     final contentColor = Theme.of(context).colorScheme.onSurface;
 
-    // Use build-time manifest for accurate per-game level count
-    final gameTotalLevels = CurriculumManifest.getLevels(subtype.name);
-
     // Abstract the math out of the widget parameters to ensure raw floats are clean
     final double cardProgress =
-        ((currentLevel - 1).clamp(0, gameTotalLevels)) /
+        (completedCount.clamp(0, gameTotalLevels)) /
         gameTotalLevels.toDouble();
-    final missionPercent = (cardProgress * 100).toInt();
+
+    // Pure gameplay stars calculation (excluding Star Vault magic stars and claimed chests)
+    final categoryStars = user.starRatings[subtype.name] ?? {};
+    int gameplayStars = 0;
+    categoryStars.forEach((key, value) {
+      if (key != 'magic_stars' && key != 'claimed_chests') {
+        gameplayStars += value;
+      }
+    });
+    final maxGameplayStars = gameTotalLevels * 3;
+    final isAllThreeStars = isMastered && gameplayStars >= maxGameplayStars;
+    final gameStarsLabel = context.tr(
+      'category_games.game_stars',
+      fallback: 'GAME STARS',
+    );
 
     return Semantics(
           button: true,
           label:
-              '${theme.title}, ${context.tr('category_games.mission_progress', fallback: 'Mission Progress', args: [missionPercent.toString()])}',
+              '${theme.title}, ${isMastered ? (isAllThreeStars ? context.tr('category_games.perfect', fallback: 'PERFECT') : context.tr('category_games.mastered', fallback: 'MASTERED')) : '$gameplayStars of $maxGameplayStars Game Stars'}',
           child: RepaintBoundary(
             child: ScaleButton(
               onTap: () {
@@ -730,35 +744,44 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                                 ),
                                 SizedBox(height: 8.h),
                                 _buildLiquidProgressBar(
-                                  color: displayColor,
+                                  color: isAllThreeStars ? Colors.amber : displayColor,
                                   progress: cardProgress,
                                 ),
                                 SizedBox(height: 8.h),
                                 FittedBox(
                                   fit: BoxFit.scaleDown,
-                                  alignment: Alignment.centerLeft,
+                                  alignment: AlignmentDirectional.centerStart,
                                   child: Text(
-                                    context.tr(
-                                      'category_games.mission_progress',
-                                      fallback: 'Mission Progress',
-                                      args: [missionPercent.toString()],
-                                    ),
+                                    isMastered
+                                        ? (isAllThreeStars
+                                            ? '★ $gameplayStars / $maxGameplayStars • 100% PERFECT'
+                                            : '★ $gameplayStars / $maxGameplayStars • REPLAY FOR 3★')
+                                        : '★ $gameplayStars / $maxGameplayStars $gameStarsLabel',
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
-                                      fontSize: 9.sp,
+                                      fontSize: 10.sp,
                                       fontWeight: FontWeight.w800,
-                                      color: displayColor.withValues(
-                                        alpha: 0.6,
-                                      ),
+                                      color: isAllThreeStars
+                                          ? Colors.amber.shade700
+                                          : displayColor.withValues(
+                                              alpha: isMastered ? 0.9 : 0.7,
+                                            ),
                                       letterSpacing: 0.5,
                                     ),
+                                    maxLines: 1,
                                   ),
                                 ),
                               ],
                             ),
                           ),
                           SizedBox(width: 12.w),
-                          _buildSpatialBadge(displayColor, currentLevel, isNew),
+                          _buildSpatialBadge(
+                            color: displayColor,
+                            currentLevel: currentLevel,
+                            isNew: isNew,
+                            isMastered: isMastered,
+                            isAllThreeStars: isAllThreeStars,
+                          ),
                         ],
                       ),
                     ),
@@ -873,7 +896,45 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     );
   }
 
-  Widget _buildSpatialBadge(Color color, int currentLevel, bool isNew) {
+  Widget _buildSpatialBadge({
+    required Color color,
+    required int currentLevel,
+    required bool isNew,
+    required bool isMastered,
+    required bool isAllThreeStars,
+  }) {
+    if (isMastered) {
+      return Container(
+        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: isAllThreeStars
+                ? [Colors.amber.shade400, Colors.orange.shade500]
+                : [color, color.withValues(alpha: 0.85)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(12.r),
+          boxShadow: [
+            BoxShadow(
+              color: (isAllThreeStars ? Colors.amber : color).withValues(
+                alpha: 0.35,
+              ),
+              blurRadius: 8.r,
+              offset: Offset(0, 2.h),
+            ),
+          ],
+        ),
+        child: Icon(
+          isAllThreeStars
+              ? Icons.stars_rounded
+              : Icons.emoji_events_rounded,
+          color: Colors.white,
+          size: 16.r,
+        ),
+      );
+    }
+
     if (isNew) {
       return Container(
         padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
@@ -900,17 +961,17 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     }
 
     return Container(
-      padding: EdgeInsets.all(10.r),
+      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.1),
-        shape: BoxShape.circle,
-        border: Border.all(color: color.withValues(alpha: 0.2)),
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(color: color.withValues(alpha: 0.25)),
       ),
       child: Text(
-        "$currentLevel",
+        "Lv.$currentLevel",
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 14.sp,
+          fontSize: 12.sp,
           fontWeight: FontWeight.w900,
           color: color,
         ),

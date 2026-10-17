@@ -256,9 +256,14 @@ void main() {
         await tester.tap(find.text('AWESOME'));
         await tester.pumpAndSettle();
 
+        // Card completes eating collapse animation and automatically disappears
+        expect(
+          find.text('Claim 150 Coins Reward'),
+          findsNothing,
+        );
         expect(
           find.text('150 Coins Claimed'),
-          findsOneWidget,
+          findsNothing,
         );
       },
     );

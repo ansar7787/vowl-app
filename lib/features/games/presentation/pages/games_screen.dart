@@ -1,6 +1,5 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -83,26 +82,18 @@ class GamesScreen extends StatelessWidget {
     bool isDark,
   ) => [
     if (!user.isKidsModeOnly)
-      Padding(
-        padding: EdgeInsets.fromLTRB(24.w, 12.h, 24.w, 8.h),
-        child: BeginnerDiscoveryCard(user: user),
-      ),
+      BeginnerDiscoveryCard(user: user),
     // Phase 1: Hero Dashboard
     _HeroDashboard(user: user, isDark: isDark),
     // Kids Zone — visually differentiated section
-    _AnimatedSection(index: 0, child: _KidsGameSection(user: user)),
+    _KidsGameSection(user: user),
     // Adult categories with progress headers
-    ...QuestType.values.asMap().entries.map((entry) {
-      final i = entry.key;
-      final type = entry.value;
-      return _AnimatedSection(
-        index: i + 1,
-        child: _GameSection(
-          titleKey: 'games.${type.serializedName}.title',
-          subtitleKey: 'games.${type.serializedName}.subtitle',
-          type: type,
-          user: user,
-        ),
+    ...QuestType.values.map((type) {
+      return _GameSection(
+        titleKey: 'games.${type.serializedName}.title',
+        subtitleKey: 'games.${type.serializedName}.subtitle',
+        type: type,
+        user: user,
       );
     }),
   ];
@@ -332,101 +323,6 @@ class _StatPill extends StatelessWidget {
   }
 }
 
-// ---------------------------------------------------------------------------
-// Phase 3: Staggered entry animation wrapper
-// ---------------------------------------------------------------------------
-
-class _AnimatedSection extends StatefulWidget {
-  final int index;
-  final Widget child;
-
-  const _AnimatedSection({required this.index, required this.child});
-
-  @override
-  State<_AnimatedSection> createState() => _AnimatedSectionState();
-}
-
-class _AnimatedSectionState extends State<_AnimatedSection>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _controller;
-  late final Animation<double> _opacity;
-  late final Animation<Offset> _slide;
-  ScrollController? _scrollController;
-  bool _hasTriggered = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 500),
-    );
-    _opacity = CurvedAnimation(parent: _controller, curve: Curves.easeOut);
-    _slide = Tween<Offset>(
-      begin: const Offset(0, 0.08),
-      end: Offset.zero,
-    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic));
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    if (_scrollController == null && !_hasTriggered) {
-      _scrollController = di.sl<ScrollController>(instanceName: 'games');
-      _scrollController?.addListener(_checkVisibility);
-
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) _checkVisibility();
-      });
-    }
-  }
-
-  void _checkVisibility() {
-    if (_hasTriggered || !mounted || _scrollController == null) return;
-    if (!_scrollController!.hasClients) return;
-
-    final renderObject = context.findRenderObject();
-    if (renderObject == null || !renderObject.attached) return;
-
-    try {
-      final viewport = RenderAbstractViewport.of(renderObject);
-      final offsetToReveal = viewport.getOffsetToReveal(renderObject, 0.0);
-
-      // Bottom edge of the current viewport
-      final currentBottomEdge =
-          _scrollController!.position.pixels +
-          MediaQuery.of(context).size.height;
-
-      // Trigger when the top of the widget enters the screen
-      if (currentBottomEdge > offsetToReveal.offset + 20) {
-        _hasTriggered = true;
-        _scrollController!.removeListener(_checkVisibility);
-
-        // Micro-stagger if multiple enter at once
-        Future.delayed(Duration(milliseconds: 60 * (widget.index % 3)), () {
-          if (mounted) _controller.forward();
-        });
-      }
-    } catch (_) {
-      // Ignore layout exceptions during early frames
-    }
-  }
-
-  @override
-  void dispose() {
-    _scrollController?.removeListener(_checkVisibility);
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return FadeTransition(
-      opacity: _opacity,
-      child: SlideTransition(position: _slide, child: widget.child),
-    );
-  }
-}
 
 // ---------------------------------------------------------------------------
 // Glass App Bar — with user context stats

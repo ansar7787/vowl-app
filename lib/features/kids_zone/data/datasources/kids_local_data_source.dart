@@ -3,6 +3,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/features/kids_zone/data/models/kids_quest_model.dart';
 
 abstract class KidsLocalDataSource {
@@ -17,6 +18,11 @@ class KidsLocalDataSourceImpl implements KidsLocalDataSource {
     String gameType,
     int level,
   ) async {
+    final maxLevels = CurriculumManifest.getKidsLevels(gameType);
+    if (level > maxLevels || level < 1) {
+      return [];
+    }
+
     try {
       // Calculate batch (10 levels per batch)
       final batchIndex = ((level - 1) / 10).floor() + 1;

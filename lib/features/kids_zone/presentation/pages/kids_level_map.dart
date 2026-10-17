@@ -349,7 +349,10 @@ class _KidsLevelMapState extends State<KidsLevelMap>
           List<int> completedLevels = [];
           bool isPremium = false;
           if (authStatus == AuthStatus.authenticated && user != null) {
-            unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
+            unlockedLevel = math.min(
+              _totalLevels,
+              user.unlockedLevels[widget.gameType] ?? 1,
+            );
             completedLevels = user.completedLevels[widget.gameType] ?? [];
             isPremium = user.isPremium;
           }
