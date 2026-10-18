@@ -1022,10 +1022,13 @@ class _PremiumScreenState extends State<PremiumScreen> {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: 16.h),
-          const PremiumHero(),
-          SizedBox(height: 24.h),
-          if (isPremium) ...[
+          if (!isPremium) ...[
+            SizedBox(height: 16.h),
+            const PremiumHero(),
+            SizedBox(height: 24.h),
+            _buildPlanList(),
+          ] else ...[
+            SizedBox(height: 16.h),
             _buildAlreadyPremiumCard(isDark, user),
             if (_showExtendPlans) ...[
               SizedBox(height: 24.h),
@@ -1034,8 +1037,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
               _buildPaymentMethodSelector(isDark),
               _buildCTAButton(),
             ],
-          ] else ...[
-            _buildPlanList(),
           ],
           SizedBox(height: 24.h),
           const ModernFeatureBar(),
