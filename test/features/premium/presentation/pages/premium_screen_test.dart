@@ -1117,6 +1117,81 @@ void main() {
 
       await tester.pumpWidget(const SizedBox());
     });
+
+    testWidgets('contact bottom sheet prompts for phone when contact not saved, validates 10 digits, and submits safely', (
+      tester,
+    ) async {
+      InAppPurchaseService.setCachedCountryCodeForTesting('IN');
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.remove('user_payment_contact');
+
+      await tester.pumpWidget(
+        buildTestableWidget(
+          child: const PremiumScreen(),
+          authBloc: mockAuthBloc,
+          tester: tester,
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      final ctaBtn = find.text('Continue');
+      await scrollAndTap(tester, ctaBtn);
+      await tester.pumpAndSettle();
+
+      expect(find.text('UPI & Payment Mobile Number'), findsOneWidget);
+      expect(find.text('Proceed to Payment Options'), findsOneWidget);
+      expect(find.byType(TextField), findsOneWidget);
+
+      final proceedBtn = find.text('Proceed to Payment Options');
+      await tester.tap(proceedBtn);
+      await tester.pumpAndSettle();
+      expect(find.text('UPI & Payment Mobile Number'), findsOneWidget);
+
+      await tester.enterText(find.byType(TextField), '9876543210');
+      await tester.pumpAndSettle();
+
+      await tester.tap(proceedBtn);
+      await tester.pumpAndSettle();
+
+      expect(find.text('UPI & Payment Mobile Number'), findsNothing);
+      expect(find.text('Processing Payment...'), findsOneWidget);
+
+      expect(prefs.getString('user_payment_contact'), equals('9876543210'));
+
+      await tester.pumpWidget(const SizedBox());
+    });
+
+    testWidgets('skipping contact bottom sheet proceeds to payment with empty contact', (
+      tester,
+    ) async {
+      InAppPurchaseService.setCachedCountryCodeForTesting('IN');
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.remove('user_payment_contact');
+
+      await tester.pumpWidget(
+        buildTestableWidget(
+          child: const PremiumScreen(),
+          authBloc: mockAuthBloc,
+          tester: tester,
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      final ctaBtn = find.text('Continue');
+      await scrollAndTap(tester, ctaBtn);
+      await tester.pumpAndSettle();
+
+      expect(find.text('UPI & Payment Mobile Number'), findsOneWidget);
+
+      final skipBtn = find.text('Skip and enter inside payment gateway');
+      await tester.tap(skipBtn);
+      await tester.pumpAndSettle();
+
+      expect(find.text('UPI & Payment Mobile Number'), findsNothing);
+      expect(find.text('Processing Payment...'), findsOneWidget);
+
+      await tester.pumpWidget(const SizedBox());
+    });
   });
 
   // =========================================================================
