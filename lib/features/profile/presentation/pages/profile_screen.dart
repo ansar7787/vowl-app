@@ -1,3 +1,5 @@
+import 'dart:io';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -93,7 +95,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       backgroundColor: Colors.transparent,
                       surfaceTintColor: Colors.transparent,
                       elevation: 0,
-                      leading: const SizedBox.shrink(),
+                      automaticallyImplyLeading: false,
                       flexibleSpace: LayoutBuilder(
                         builder: (context, constraints) {
                           // Calculate collapse progress for smooth transition
@@ -106,95 +108,143 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       (expandedHeight - collapsedHeight))
                                   .clamp(0.0, 1.0);
 
-                          return FlexibleSpaceBar(
-                            background: Opacity(
-                              opacity: (1.0 - collapseProgress * 1.5).clamp(
-                                0.0,
-                                1.0,
-                              ),
-                              child: Align(
-                                alignment: Alignment.bottomCenter,
-                                child: FittedBox(
-                                  alignment: Alignment.bottomCenter,
-                                  fit: BoxFit.scaleDown,
-                                  child: SizedBox(
-                                    width: 1.sw,
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        BlocBuilder<ProfileBloc, ProfileState>(
-                                          buildWhen: (prev, curr) =>
-                                              prev.photoUrl != curr.photoUrl,
-                                          builder: (context, profileState) {
-                                            return ProfileHeader(
-                                              user: user,
-                                              immediatePhotoUrl:
-                                                  profileState.photoUrl,
-                                              onEditName: () =>
-                                                  _showEditNameSheet(
-                                                    context,
-                                                    user.displayName ?? '',
-                                                  ),
-                                              onEditPhoto: () =>
-                                                  _showImageSourceSheet(
-                                                    context,
-                                                  ),
-                                            );
-                                          },
+                          return Stack(
+                            fit: StackFit.expand,
+                            children: [
+                              // Expanded profile header (fades out on scroll)
+                              if (collapseProgress < 1.0)
+                                Opacity(
+                                  opacity: (1.0 - collapseProgress * 1.5).clamp(
+                                    0.0,
+                                    1.0,
+                                  ),
+                                  child: Align(
+                                    alignment: Alignment.bottomCenter,
+                                    child: FittedBox(
+                                      alignment: Alignment.bottomCenter,
+                                      fit: BoxFit.scaleDown,
+                                      child: SizedBox(
+                                        width: 1.sw,
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            BlocBuilder<ProfileBloc, ProfileState>(
+                                              buildWhen: (prev, curr) =>
+                                                  prev.photoUrl !=
+                                                  curr.photoUrl,
+                                              builder: (context, profileState) {
+                                                return ProfileHeader(
+                                                  user: user,
+                                                  immediatePhotoUrl:
+                                                      profileState.photoUrl,
+                                                  onEditName: () =>
+                                                      _showEditNameSheet(
+                                                        context,
+                                                        user.displayName ?? '',
+                                                      ),
+                                                  onEditPhoto: () =>
+                                                      _showImageSourceSheet(
+                                                        context,
+                                                      ),
+                                                );
+                                              },
+                                            ),
+                                            SizedBox(height: 2.h),
+                                          ],
                                         ),
-                                        SizedBox(height: 2.h),
-                                      ],
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ),
-                            // Collapsed state: show mini avatar + name
-                            title: collapseProgress > 0.6
-                                ? Opacity(
-                                    opacity: ((collapseProgress - 0.6) / 0.4)
-                                        .clamp(0.0, 1.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        CircleAvatar(
-                                          radius: 16.r,
-                                          backgroundColor: isDark
-                                              ? Colors.white.withValues(
-                                                  alpha: 0.1,
-                                                )
-                                              : AppColors.slate100,
-                                          backgroundImage:
-                                              (user.photoUrl != null)
-                                              ? NetworkImage(user.photoUrl!)
-                                              : null,
-                                          child: user.photoUrl == null
-                                              ? Icon(
-                                                  Icons.person_rounded,
-                                                  color: const Color(
-                                                    0xFF94A3B8,
+
+                              // Collapsed state: perfectly centered mini avatar + name
+                              if (collapseProgress > 0.6)
+                                Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: SizedBox(
+                                    height: collapsedHeight,
+                                    child: SafeArea(
+                                      bottom: false,
+                                      child: Center(
+                                        child: Opacity(
+                                          opacity:
+                                              ((collapseProgress - 0.6) / 0.4)
+                                                  .clamp(0.0, 1.0),
+                                          child: ConstrainedBox(
+                                            constraints: BoxConstraints(
+                                              maxWidth: 0.75.sw,
+                                            ),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                BlocBuilder<ProfileBloc, ProfileState>(
+                                                  buildWhen: (prev, curr) =>
+                                                      prev.photoUrl !=
+                                                      curr.photoUrl,
+                                                  builder: (context, profileState) {
+                                                    final photoUrl =
+                                                        profileState.photoUrl ??
+                                                        user.photoUrl;
+                                                    final isLocalFile =
+                                                        photoUrl != null &&
+                                                        !photoUrl.startsWith('http');
+                                                    ImageProvider? imageProvider;
+                                                    if (photoUrl != null) {
+                                                      imageProvider = isLocalFile
+                                                          ? FileImage(File(photoUrl))
+                                                          : CachedNetworkImageProvider(photoUrl);
+                                                    }
+
+                                                    return CircleAvatar(
+                                                      radius: 16.r,
+                                                      backgroundColor: isDark
+                                                          ? Colors.white.withValues(
+                                                              alpha: 0.1,
+                                                            )
+                                                          : AppColors.slate100,
+                                                      backgroundImage: imageProvider,
+                                                      child: photoUrl == null
+                                                          ? Icon(
+                                                              Icons.person_rounded,
+                                                              color: const Color(
+                                                                0xFF94A3B8,
+                                                              ),
+                                                              size: 18.r,
+                                                            )
+                                                          : null,
+                                                    );
+                                                  },
+                                                ),
+                                                SizedBox(width: 10.w),
+                                                Flexible(
+                                                  child: Text(
+                                                    user.displayName ?? 'Explorer',
+                                                    maxLines: 1,
+                                                    overflow: TextOverflow.ellipsis,
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 16.sp,
+                                                      fontWeight: FontWeight.w800,
+                                                      color: isDark
+                                                          ? Colors.white
+                                                          : AppColors.slate900,
+                                                    ),
                                                   ),
-                                                  size: 18.r,
-                                                )
-                                              : null,
-                                        ),
-                                        SizedBox(width: 10.w),
-                                        Text(
-                                          user.displayName ?? 'Explorer',
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 16.sp,
-                                            fontWeight: FontWeight.w800,
-                                            color: isDark
-                                                ? Colors.white
-                                                : AppColors.slate900,
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
-                                      ],
+                                      ),
                                     ),
-                                  )
-                                : null,
-                            collapseMode: CollapseMode.pin,
+                                  ),
+                                ),
+                            ],
                           );
                         },
                       ),
