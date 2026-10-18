@@ -319,7 +319,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   children: [
                     const MeshGradientBackground(),
                     CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
+                      physics: const AlwaysScrollableScrollPhysics(
+                        parent: BouncingScrollPhysics(),
+                      ),
                       slivers: [
                         _buildAppBar(context, isDark),
                         SliverToBoxAdapter(
@@ -702,14 +704,35 @@ class _SettingsPreferencesGroup extends StatelessWidget {
               icon: Icons.language_rounded,
               color: AppColors.teal500,
               onTap: () => LanguagePickerSheet.show(context),
-              trailing: Text(
-                '${di.sl<LocaleService>().currentLocaleFlag} '
-                '${di.sl<LocaleService>().currentLocaleName}',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  color: AppColors.teal500,
-                  fontWeight: FontWeight.w700,
+              trailing: Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                decoration: BoxDecoration(
+                  color: AppColors.teal500.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(10.r),
+                  border: Border.all(
+                    color: AppColors.teal500.withValues(alpha: 0.25),
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '${di.sl<LocaleService>().currentLocaleFlag} '
+                      '${di.sl<LocaleService>().currentLocaleName}',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        color: AppColors.teal500,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    SizedBox(width: 4.w),
+                    Icon(
+                      Icons.chevron_right_rounded,
+                      size: 14.r,
+                      color: AppColors.teal500,
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -726,13 +749,37 @@ class _SettingsPreferencesGroup extends StatelessWidget {
               color: AppColors.amber500,
               onTap: onTapTranslationLanguage,
               trailing: translationLanguageName != null
-                  ? Text(
-                      '${TranslationService.getFlag(translationLanguageName!)} $translationLanguageName',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        color: AppColors.amber500,
-                        fontWeight: FontWeight.w700,
+                  ? Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10.w,
+                        vertical: 5.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.amber500.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(10.r),
+                        border: Border.all(
+                          color: AppColors.amber500.withValues(alpha: 0.25),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            '${TranslationService.getFlag(translationLanguageName!)} $translationLanguageName',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              color: AppColors.amber500,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          SizedBox(width: 4.w),
+                          Icon(
+                            Icons.chevron_right_rounded,
+                            size: 14.r,
+                            color: AppColors.amber500,
+                          ),
+                        ],
                       ),
                     )
                   : null,

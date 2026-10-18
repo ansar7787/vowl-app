@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:math' as math;
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -297,35 +296,33 @@ class _TtsVoiceSelectionBottomSheetState
     final bottomInset = MediaQuery.of(context).padding.bottom;
     final isUserPremium = _isPremium;
 
-    return ClipRRect(
-      borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
-        child: Container(
-          constraints: BoxConstraints(
-            maxHeight: MediaQuery.of(context).size.height * 0.88,
-          ),
-          decoration: BoxDecoration(
+    return Container(
+      constraints: BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height * 0.88,
+      ),
+      decoration: BoxDecoration(
+        color: isDark
+            ? const Color(0xFF13141C).withValues(alpha: 0.96)
+            : Colors.white.withValues(alpha: 0.97),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
+        border: Border(
+          top: BorderSide(
             color: isDark
-                ? const Color(0xFF13141C).withValues(alpha: 0.96)
-                : Colors.white.withValues(alpha: 0.97),
-            borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
-            border: Border(
-              top: BorderSide(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.08)
-                    : Colors.black.withValues(alpha: 0.06),
-              ),
-            ),
+                ? Colors.white.withValues(alpha: 0.08)
+                : Colors.black.withValues(alpha: 0.06),
           ),
-          padding: EdgeInsets.only(
-            left: 20.w,
-            right: 20.w,
-            top: 14.h,
-            bottom: bottomInset + 16.h,
-          ),
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
+        ),
+      ),
+      padding: EdgeInsets.only(
+        left: 20.w,
+        right: 20.w,
+        top: 14.h,
+        bottom: bottomInset + 16.h,
+      ),
+      child: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(
+          parent: BouncingScrollPhysics(),
+        ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -753,9 +750,7 @@ class _TtsVoiceSelectionBottomSheetState
               ],
             ),
           ),
-        ),
-      ),
-    );
+        );
   }
 }
 

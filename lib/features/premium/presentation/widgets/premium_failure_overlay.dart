@@ -1,5 +1,4 @@
 import 'package:vowl/core/theme/app_colors.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -276,53 +275,47 @@ class PremiumFailureOverlay extends StatelessWidget {
       buttonsWidget = buttonsWidget.animate().fadeIn(delay: 500.ms);
     }
 
-    Widget content = ClipRRect(
-      borderRadius: BorderRadius.circular(32.r),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-        child: Container(
-          padding: EdgeInsets.all(32.r),
-          margin: EdgeInsets.symmetric(horizontal: 24.w),
-          decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(32.r),
-            border: Border.all(
-              color: AppColors.rose500.withValues(alpha: 0.4),
-              width: 1.5,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.rose500.withValues(alpha: 0.15),
-                blurRadius: 50,
-                spreadRadius: 10,
+    Widget content = Container(
+      padding: EdgeInsets.all(32.r),
+      margin: EdgeInsets.symmetric(horizontal: 24.w),
+      decoration: BoxDecoration(
+        color: const Color(0xFF13141C).withValues(alpha: 0.95),
+        borderRadius: BorderRadius.circular(32.r),
+        border: Border.all(
+          color: AppColors.rose500.withValues(alpha: 0.4),
+          width: 1.5,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.rose500.withValues(alpha: 0.15),
+            blurRadius: 50,
+            spreadRadius: 10,
+          ),
+        ],
+      ),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Semantics(
+              liveRegion: true,
+              label: context.tr(
+                'premium.failure_title',
+                fallback: 'TRANSACTION FAILED',
               ),
-            ],
-          ),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Semantics(
-                  liveRegion: true,
-                  label: context.tr(
-                    'premium.failure_title',
-                    fallback: 'TRANSACTION FAILED',
-                  ),
-                  child: iconWidget,
-                ),
-                SizedBox(height: 28.h),
-                titleWidget,
-                SizedBox(height: 12.h),
-                // ignore: use_null_aware_elements
-                if (errorWidget != null) errorWidget,
-                bodyWidget,
-                SizedBox(height: 16.h),
-                helpWidget,
-                SizedBox(height: 32.h),
-                buttonsWidget,
-              ],
+              child: iconWidget,
             ),
-          ),
+            SizedBox(height: 28.h),
+            titleWidget,
+            SizedBox(height: 12.h),
+            // ignore: use_null_aware_elements
+            if (errorWidget != null) errorWidget,
+            bodyWidget,
+            SizedBox(height: 16.h),
+            helpWidget,
+            SizedBox(height: 32.h),
+            buttonsWidget,
+          ],
         ),
       ),
     );

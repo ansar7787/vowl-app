@@ -638,43 +638,29 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
           ),
           SizedBox(height: 8.h),
 
-          // ── Horizontal Quests Row Deck (Edge-to-edge scroll with smooth edge fade) ─
+          // ── Horizontal Quests Row Deck (Edge-to-edge scroll with smooth physics) ─
           SizedBox(
             height: 98.h,
-            child: ShaderMask(
-              shaderCallback: (Rect bounds) {
-                return LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: const [
-                    Colors.transparent,
-                    Colors.white,
-                    Colors.white,
-                    Colors.transparent,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              physics: const AlwaysScrollableScrollPhysics(
+                parent: BouncingScrollPhysics(),
+              ),
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 3.h),
+              clipBehavior: Clip.hardEdge,
+              child: Row(
+                children: [
+                  for (int index = 0; index < _quests.length; index++) ...[
+                    if (index > 0) SizedBox(width: 8.w),
+                    _buildQuestMiniCard(
+                      context,
+                      _quests[index],
+                      index,
+                      _completedMap[_quests[index].key] == true,
+                      isDark,
+                    ),
                   ],
-                  stops: const [0.0, 0.05, 0.95, 1.0],
-                ).createShader(bounds);
-              },
-              blendMode: BlendMode.dstIn,
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 3.h),
-                clipBehavior: Clip.hardEdge,
-                child: Row(
-                  children: [
-                    for (int index = 0; index < _quests.length; index++) ...[
-                      if (index > 0) SizedBox(width: 8.w),
-                      _buildQuestMiniCard(
-                        context,
-                        _quests[index],
-                        index,
-                        _completedMap[_quests[index].key] == true,
-                        isDark,
-                      ),
-                    ],
-                  ],
-                ),
+                ],
               ),
             ),
           ),

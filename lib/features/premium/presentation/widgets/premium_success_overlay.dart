@@ -1,5 +1,4 @@
 import 'package:vowl/core/theme/app_colors.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -20,20 +19,16 @@ class PremiumSuccessOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(32.r),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-        child: Container(
-          padding: EdgeInsets.all(32.r),
-          margin: EdgeInsets.symmetric(horizontal: 24.w),
-          decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(32.r),
-            border: Border.all(
-              color: AppColors.indigo500.withValues(alpha: 0.4),
-              width: 1.5,
-            ),
+    return Container(
+      padding: EdgeInsets.all(32.r),
+      margin: EdgeInsets.symmetric(horizontal: 24.w),
+      decoration: BoxDecoration(
+        color: const Color(0xFF13141C).withValues(alpha: 0.95),
+        borderRadius: BorderRadius.circular(32.r),
+        border: Border.all(
+          color: AppColors.indigo500.withValues(alpha: 0.4),
+          width: 1.5,
+        ),
             boxShadow: [
               BoxShadow(
                 color: AppColors.indigo500.withValues(alpha: 0.15),
@@ -232,12 +227,10 @@ class PremiumSuccessOverlay extends StatelessWidget {
               ],
             ),
           ),
-        ),
-      ),
-    ).animate().fade().scale(
-      begin: const Offset(0.95, 0.95),
-      curve: Curves.easeOutCubic,
-      duration: 400.ms,
-    );
+        ).animate().fade().scale(
+          begin: const Offset(0.95, 0.95),
+          curve: Curves.easeOutCubic,
+          duration: 400.ms,
+        );
   }
 }

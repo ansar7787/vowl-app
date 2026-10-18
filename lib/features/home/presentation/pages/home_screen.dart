@@ -211,7 +211,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   displacement: 40.h,
                   child: CustomScrollView(
                     controller: di.sl<ScrollController>(instanceName: 'home'),
-                    physics: const BouncingScrollPhysics(),
+                    physics: const AlwaysScrollableScrollPhysics(
+                      parent: BouncingScrollPhysics(),
+                    ),
                     slivers: [
                       // ---------------- Top Safe Area ----------------
                       SliverToBoxAdapter(
