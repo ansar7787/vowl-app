@@ -5,11 +5,9 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/domain/services/kids_game_helper.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -27,8 +25,12 @@ class KidsCategoryShelf extends StatefulWidget {
   State<KidsCategoryShelf> createState() => _KidsCategoryShelfState();
 }
 
-class _KidsCategoryShelfState extends State<KidsCategoryShelf> {
+class _KidsCategoryShelfState extends State<KidsCategoryShelf>
+    with AutomaticKeepAliveClientMixin {
   late ScrollController _scrollController;
+
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   void initState() {
@@ -44,6 +46,7 @@ class _KidsCategoryShelfState extends State<KidsCategoryShelf> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     final games = KidsGameHelper.allGames;
 
     return SizedBox(
@@ -55,57 +58,18 @@ class _KidsCategoryShelfState extends State<KidsCategoryShelf> {
           child: ListView.builder(
             controller: _scrollController,
             scrollDirection: Axis.horizontal,
-            physics: const BouncingScrollPhysics(),
+            physics: const AlwaysScrollableScrollPhysics(
+              parent: BouncingScrollPhysics(),
+            ),
             padding: EdgeInsets.symmetric(horizontal: 24.w),
             addAutomaticKeepAlives: false,
             itemCount: games.length,
             itemBuilder: (context, index) {
-              return AnimatedBuilder(
-                animation: _scrollController,
-                builder: (context, child) {
-                  if (VowlMotion.shouldReduceMotion(context)) {
-                    return child!;
-                  }
-
-                  double scrollPixels = 0;
-                  if (_scrollController.hasClients) {
-                    scrollPixels = _scrollController.position.pixels;
-                  }
-
-                  // Mathematical approximation of the card's position on screen
-                  final itemWidth = 150.w + 16.w; // Card width + right margin
-                  final itemCenter = 24.w + (index * itemWidth) + (150.w / 2);
-                  // 2026 Spatial Physics: Left-Aligned Focal Lens
-                  // Instead of screen center, the "focus point" is exactly where
-                  // the first item rests when scroll is at 0.
-                  final focalPoint = scrollPixels + 24.w + (150.w / 2);
-
-                  // Distance from focus point (-1.0 to 1.0 across the screen)
-                  final distance =
-                      (itemCenter - focalPoint) /
-                      MediaQuery.of(context).size.width;
-
-                  // 2026 Spatial Physics:
-                  // 1. Tilt (Rotate Y)
-                  final tilt = distance * 0.4;
-                  // 2. Scale
-                  final scale = 1.0 - (distance.abs() * 0.1).clamp(0.0, 0.15);
-
-                  return Transform(
-                    transform: Matrix4.identity()
-                      ..setEntry(3, 2, 0.002) // Deep perspective
-                      ..rotateY(tilt)
-                      ..scaleByDouble(scale, scale, 1.0, 1.0),
-                    alignment: FractionalOffset.center,
-                    child: child,
-                  );
-                },
-                child: Padding(
-                  padding: EdgeInsets.only(right: 16.w),
-                  child: _KidsGameEntryCard(
-                    metadata: games[index],
-                    user: widget.user,
-                  ),
+              return Padding(
+                padding: EdgeInsets.only(right: 16.w),
+                child: _KidsGameEntryCard(
+                  metadata: games[index],
+                  user: widget.user,
                 ),
               );
             },
@@ -176,10 +140,9 @@ class _KidsGameEntryCard extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    AutoSizeText(
+                    Text(
                       title.toUpperCase(),
                       maxLines: 2,
-                      minFontSize: 12,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontFamily: 'Outfit',

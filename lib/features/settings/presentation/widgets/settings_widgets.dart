@@ -177,13 +177,13 @@ class SettingsTile extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                       if (subtitle != null) ...[
-                        SizedBox(height: 3.h),
+                        SizedBox(height: 4.h),
                         AutoSizeText(
                           subtitle!,
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
-                            height: 1.25,
+                            height: 1.3,
                             color: isDark ? Colors.white54 : Colors.grey[600],
                             fontWeight: FontWeight.w400,
                           ),
@@ -195,7 +195,7 @@ class SettingsTile extends StatelessWidget {
                     ],
                   ),
                 ),
-                if (trailing != null || onTap != null) SizedBox(width: 14.w),
+                if (trailing != null || onTap != null) SizedBox(width: 16.w),
                 if (trailing != null)
                   trailing!
                 else if (onTap != null)
@@ -244,79 +244,92 @@ class SettingsSwitchTile extends StatelessWidget {
       // FIX (HIGH-5): Switch tiles now announce their on/off state.
       label: '$title. $subtitle',
       toggled: value,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-        child: Row(
-          children: [
-            ExcludeSemantics(
-              child: Container(
-                padding: EdgeInsets.all(10.r),
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(12.r),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: isLoading
+              ? null
+              : () {
+                  di.sl<HapticService>().light();
+                  onChanged(!value);
+                },
+          borderRadius: BorderRadius.circular(24.r),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 13.h),
+            child: Row(
+              children: [
+                ExcludeSemantics(
+                  child: Container(
+                    padding: EdgeInsets.all(10.r),
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
+                    child: Icon(icon, color: color, size: 20.r),
+                  ),
                 ),
-                child: Icon(icon, color: color, size: 20.r),
-              ),
-            ),
-            SizedBox(width: 14.w),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  AutoSizeText(
-                    title,
-                    maxLines: 1,
-                    minFontSize: 11,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Theme.of(context).colorScheme.onSurface,
+                SizedBox(width: 14.w),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      AutoSizeText(
+                        title,
+                        maxLines: 1,
+                        minFontSize: 11,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w600,
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
+                      ),
+                      SizedBox(height: 4.h),
+                      AutoSizeText(
+                        subtitle,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          height: 1.3,
+                          color: isDark ? Colors.white54 : Colors.grey[600],
+                          fontWeight: FontWeight.w400,
+                        ),
+                        maxLines: 2,
+                        minFontSize: 9,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(width: 16.w),
+                if (isLoading)
+                  SizedBox(
+                    width: 50.w,
+                    height: 30.h,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: color.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(15.r),
+                      ),
+                    ),
+                  )
+                else
+                  ExcludeSemantics(
+                    // The parent Semantics already announces toggled state.
+                    child: Switch.adaptive(
+                      value: value,
+                      onChanged: (val) {
+                        di.sl<HapticService>().light();
+                        onChanged(val);
+                      },
+                      activeThumbColor: AppColors.indigo500,
+                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     ),
                   ),
-                  SizedBox(height: 3.h),
-                  AutoSizeText(
-                    subtitle,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      height: 1.25,
-                      color: isDark ? Colors.white54 : Colors.grey[600],
-                      fontWeight: FontWeight.w400,
-                    ),
-                    maxLines: 2,
-                    minFontSize: 9,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ],
-              ),
+              ],
             ),
-            SizedBox(width: 14.w),
-            if (isLoading)
-              SizedBox(
-                width: 50.w,
-                height: 30.h,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(15.r),
-                  ),
-                ),
-              )
-            else
-              ExcludeSemantics(
-                // The parent Semantics already announces toggled state.
-                child: Switch.adaptive(
-                  value: value,
-                  onChanged: (val) {
-                    di.sl<HapticService>().light();
-                    onChanged(val);
-                  },
-                  activeThumbColor: AppColors.indigo500,
-                ),
-              ),
-          ],
+          ),
         ),
       ),
     );

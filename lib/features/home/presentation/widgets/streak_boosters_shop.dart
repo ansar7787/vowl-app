@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -339,18 +338,29 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
-      builder: (sheetContext) => ClipRRect(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-          child: Container(
-            padding: EdgeInsets.all(24.r),
-            decoration: BoxDecoration(
+      builder: (sheetContext) => Container(
+        padding: EdgeInsets.all(24.r),
+        decoration: BoxDecoration(
+          color: isDark
+              ? AppColors.slate900.withValues(alpha: 0.96)
+              : Colors.white.withValues(alpha: 0.97),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+          border: Border(
+            top: BorderSide(
               color: isDark
-                  ? AppColors.slate800.withValues(alpha: 0.95)
-                  : Colors.white.withValues(alpha: 0.95),
-              borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+                  ? Colors.white.withValues(alpha: 0.12)
+                  : Colors.black.withValues(alpha: 0.08),
+              width: 1.5,
             ),
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.2),
+              blurRadius: 20,
+              offset: const Offset(0, -4),
+            ),
+          ],
+        ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [

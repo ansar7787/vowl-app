@@ -66,6 +66,8 @@ class GamesScreen extends StatelessWidget {
                       delegate: SliverChildBuilderDelegate(
                         (context, index) => sections[index],
                         childCount: sections.length,
+                        addAutomaticKeepAlives: true,
+                        addRepaintBoundaries: true,
                       ),
                     ),
                   ),
@@ -83,14 +85,26 @@ class GamesScreen extends StatelessWidget {
     UserEntity user,
     bool isDark,
   ) => [
-    if (!user.isKidsModeOnly) BeginnerDiscoveryCard(user: user),
+    if (!user.isKidsModeOnly)
+      BeginnerDiscoveryCard(
+        key: const ValueKey('beginner_discovery'),
+        user: user,
+      ),
     // Phase 1: Hero Dashboard
-    _HeroDashboard(user: user, isDark: isDark),
+    _HeroDashboard(
+      key: const ValueKey('hero_dashboard'),
+      user: user,
+      isDark: isDark,
+    ),
     // Kids Zone — visually differentiated section
-    _KidsGameSection(user: user),
+    _KidsGameSection(
+      key: const ValueKey('kids_game_section'),
+      user: user,
+    ),
     // Adult categories with progress headers
     ...QuestType.values.map((type) {
       return _GameSection(
+        key: ValueKey('quest_section_${type.name}'),
         titleKey: 'games.${type.serializedName}.title',
         subtitleKey: 'games.${type.serializedName}.subtitle',
         type: type,
@@ -108,7 +122,7 @@ class _HeroDashboard extends StatelessWidget {
   final UserEntity user;
   final bool isDark;
 
-  const _HeroDashboard({required this.user, required this.isDark});
+  const _HeroDashboard({super.key, required this.user, required this.isDark});
 
   @override
   Widget build(BuildContext context) {
@@ -406,6 +420,7 @@ class _GameSection extends StatelessWidget {
   final UserEntity user;
 
   const _GameSection({
+    super.key,
     required this.titleKey,
     required this.subtitleKey,
     required this.type,
@@ -468,7 +483,7 @@ class _GameSection extends StatelessWidget {
 class _KidsGameSection extends StatelessWidget {
   final UserEntity user;
 
-  const _KidsGameSection({required this.user});
+  const _KidsGameSection({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {

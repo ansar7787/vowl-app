@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -647,21 +646,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
       useRootNavigator: true,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
-      builder: (context) => BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-        child: Container(
-          padding: EdgeInsets.all(32.w),
-          decoration: BoxDecoration(
+      builder: (context) => Container(
+        padding: EdgeInsets.all(32.w),
+        decoration: BoxDecoration(
+          color: isDark ? AppColors.slate900 : Colors.white,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+          border: Border.all(
             color: isDark
-                ? AppColors.slate800.withValues(alpha: 0.8)
-                : Colors.white.withValues(alpha: 0.8),
-            borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-            border: Border.all(
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.1)
-                  : Colors.black.withValues(alpha: 0.05),
-            ),
+                ? Colors.white.withValues(alpha: 0.1)
+                : Colors.black.withValues(alpha: 0.05),
           ),
+        ),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -750,9 +745,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ),
         ),
-      ),
-    );
-  }
+      );
+    }
 
   Widget _buildSourceOption({
     required BuildContext context,

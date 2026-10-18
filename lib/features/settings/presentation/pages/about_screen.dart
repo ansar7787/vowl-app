@@ -1,5 +1,4 @@
 import 'package:vowl/core/theme/app_colors.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -50,7 +49,9 @@ class _AboutScreenState extends State<AboutScreen> {
         children: [
           const MeshGradientBackground(),
           CustomScrollView(
-            physics: const BouncingScrollPhysics(),
+            physics: const AlwaysScrollableScrollPhysics(
+              parent: BouncingScrollPhysics(),
+            ),
             slivers: [
               _buildAppBar(context, isDark),
               SliverToBoxAdapter(
@@ -182,14 +183,9 @@ class _AboutScreenState extends State<AboutScreen> {
       elevation: 0,
       pinned: true,
       centerTitle: true,
-      flexibleSpace: ClipRect(
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-          child: Container(
-            color: (isDark ? AppColors.slate900 : AppColors.slate50).withValues(
-              alpha: 0.7,
-            ),
-          ),
+      flexibleSpace: Container(
+        color: (isDark ? AppColors.slate900 : AppColors.slate50).withValues(
+          alpha: 0.94,
         ),
       ),
       leading: IconButton(

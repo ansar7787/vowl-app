@@ -265,14 +265,20 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
               Positioned.fill(
                 child: GestureDetector(
                   onTap: widget.isOpened ? widget.onClose : null,
-                  child: BackdropFilter(
-                    filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                    child: Container(
-                      color: Colors.black.withValues(
-                        alpha: 0.6 * _entranceFade.value,
-                      ),
-                    ),
-                  ),
+                  child: VowlMotion.shouldReduceMotion(context)
+                      ? Container(
+                          color: Colors.black.withValues(
+                            alpha: 0.82 * _entranceFade.value,
+                          ),
+                        )
+                      : BackdropFilter(
+                          filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                          child: Container(
+                            color: Colors.black.withValues(
+                              alpha: 0.6 * _entranceFade.value,
+                            ),
+                          ),
+                        ),
                 ),
               ),
 

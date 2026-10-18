@@ -25,7 +25,7 @@ void main() {
   });
 
   setUp(() {
-    VowlMotion.lowAnimationModeOverride.value = true;
+    VowlMotion.lowAnimationModeOverride.value = false;
     reset(mockLocaleService);
 
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
@@ -77,6 +77,7 @@ void main() {
     }
     homeScrollController.dispose();
     gamesScrollController.dispose();
+    VowlMotion.lowAnimationModeOverride.value = false;
   });
 
   GoRouter createTestRouter({String initialLocation = '/home'}) {

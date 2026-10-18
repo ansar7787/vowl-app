@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -19,6 +20,7 @@ class MainWrapper extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight =
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -33,38 +35,65 @@ class MainWrapper extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 children: [
                   // 1. Premium Glass Background
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(24.r),
-                    child: BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-                      child: Container(
-                        height: 65.h,
-                        decoration: BoxDecoration(
-                          color: isMidnight
-                              ? Colors.black.withValues(alpha: 0.2)
-                              : (isDark
-                                    ? Colors.white.withValues(alpha: 0.08)
-                                    : Colors.white.withValues(alpha: 0.7)),
-                          borderRadius: BorderRadius.circular(24.r),
-                          border: Border.all(
+                  VowlMotion.lowAnimationModeOverride.value
+                      ? Container(
+                          height: 65.h,
+                          decoration: BoxDecoration(
                             color: isMidnight
-                                ? Colors.white.withValues(alpha: 0.08)
+                                ? const Color(0xFF0F172A).withValues(alpha: 0.95)
                                 : (isDark
-                                      ? Colors.white.withValues(alpha: 0.12)
-                                      : Colors.white.withValues(alpha: 0.4)),
-                            width: 1.5,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withValues(alpha: 0.15),
-                              blurRadius: 40,
-                              offset: const Offset(0, 15),
+                                      ? AppColors.slate900.withValues(alpha: 0.94)
+                                      : Colors.white.withValues(alpha: 0.96)),
+                            borderRadius: BorderRadius.circular(24.r),
+                            border: Border.all(
+                              color: isMidnight
+                                  ? Colors.white.withValues(alpha: 0.12)
+                                  : (isDark
+                                        ? Colors.white.withValues(alpha: 0.15)
+                                        : Colors.black.withValues(alpha: 0.08)),
+                              width: 1.5,
                             ),
-                          ],
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withValues(alpha: 0.15),
+                                blurRadius: 40,
+                                offset: const Offset(0, 15),
+                              ),
+                            ],
+                          ),
+                        )
+                      : ClipRRect(
+                          borderRadius: BorderRadius.circular(24.r),
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+                            child: Container(
+                              height: 65.h,
+                              decoration: BoxDecoration(
+                                color: isMidnight
+                                    ? Colors.black.withValues(alpha: 0.2)
+                                    : (isDark
+                                          ? Colors.white.withValues(alpha: 0.08)
+                                          : Colors.white.withValues(alpha: 0.7)),
+                                borderRadius: BorderRadius.circular(24.r),
+                                border: Border.all(
+                                  color: isMidnight
+                                      ? Colors.white.withValues(alpha: 0.08)
+                                      : (isDark
+                                            ? Colors.white.withValues(alpha: 0.12)
+                                            : Colors.white.withValues(alpha: 0.4)),
+                                  width: 1.5,
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withValues(alpha: 0.15),
+                                    blurRadius: 40,
+                                    offset: const Offset(0, 15),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                  ),
 
                   // 2. Navigation Items
                   Padding(
