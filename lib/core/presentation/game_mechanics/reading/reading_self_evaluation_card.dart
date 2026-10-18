@@ -6,7 +6,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
@@ -58,7 +57,6 @@ class ReadingSelfEvaluationCard extends StatefulWidget {
 
 class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
   final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
 
   final ValueNotifier<bool> _isRevealed = ValueNotifier(false);
   final ValueNotifier<bool> _isEvaluated = ValueNotifier(false);
@@ -94,7 +92,6 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
 
     if (isCorrect) {
       _hapticService.success();
-      _soundService.playCorrect();
       // Award bonus coins
       // Cheat detection: If they evaluated themselves in under 1.5 seconds,
       // they probably didn't actually read and compare the answer.
@@ -110,7 +107,6 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
       }
     } else {
       _hapticService.error();
-      _soundService.playWrong();
     }
 
     Future.delayed(const Duration(milliseconds: 400), () {
@@ -258,7 +254,7 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w800,
                   color: widget.primaryColor,
-                  letterSpacing: 2,
+                  letterSpacing: 1.5,
                 ),
               ),
               if (widget.bonusCoins != null) ...[
@@ -275,15 +271,15 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
                     borderRadius: BorderRadius.circular(20.r),
                   ),
                   child: AutoSizeText(
-                    '+${widget.bonusCoins} Coins',
+                    '+${widget.bonusCoins} coins',
                     maxLines: 1,
                     minFontSize: 6,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w700,
                       color: Colors.white,
-                      letterSpacing: 1,
+                      letterSpacing: 0.5,
                     ),
                   ),
                 ),

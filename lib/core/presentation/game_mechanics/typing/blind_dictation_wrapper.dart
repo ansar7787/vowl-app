@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 import 'package:vowl/core/utils/gibberish_detector_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 
@@ -61,7 +61,6 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
   static final _whitespacePattern = RegExp(r'\s+');
 
   final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
   late final SmartTypoController _controller;
   final FocusNode _focusNode = FocusNode();
 
@@ -126,7 +125,6 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
       _isSubmitting.value = true;
       _hasError.value = false;
       _hapticService.success();
-      _soundService.playCorrect();
       _focusNode.unfocus();
 
       // Award bonus coins
@@ -140,7 +138,6 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
       });
     } else {
       _hapticService.error();
-      _soundService.playWrong();
       _hasError.value = true;
       _controller.showDiff = true;
       _attempts.value++;
@@ -234,19 +231,25 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        'BLIND DICTATION',
+                                      AutoSizeText(
+                                        'LISTEN & TYPE',
+                                        maxLines: 1,
+                                        minFontSize: 8,
+                                        overflow: TextOverflow.visible,
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.w900,
+                                          fontSize: 13.sp,
+                                          fontWeight: FontWeight.w800,
                                           color: widget.primaryColor,
-                                          letterSpacing: 2,
+                                          letterSpacing: 1.5,
                                         ),
                                       ),
                                       SizedBox(height: 2.h),
-                                      Text(
-                                        'Type exactly what you heard',
+                                      AutoSizeText(
+                                        'Type what you heard',
+                                        maxLines: 1,
+                                        minFontSize: 8,
+                                        overflow: TextOverflow.visible,
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 11.sp,
@@ -301,14 +304,17 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                                       ),
                                       borderRadius: BorderRadius.circular(20.r),
                                     ),
-                                    child: Text(
-                                      '+${widget.bonusCoins} Coins',
+                                    child: AutoSizeText(
+                                      '+${widget.bonusCoins} coins',
+                                      maxLines: 1,
+                                      minFontSize: 6,
+                                      overflow: TextOverflow.visible,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 10.sp,
-                                        fontWeight: FontWeight.w800,
+                                        fontWeight: FontWeight.w700,
                                         color: Colors.white,
-                                        letterSpacing: 1,
+                                        letterSpacing: 0.5,
                                       ),
                                     ),
                                   ),
@@ -394,8 +400,10 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                                           valueListenable: _attempts,
                                           builder: (context, attempts, _) {
                                             if (attempts > 0) {
-                                              return Text(
+                                              return AutoSizeText(
                                                 '${widget.maxAttempts - attempts} attempts left',
+                                                maxLines: 1,
+                                                minFontSize: 7,
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
                                                   fontSize: 10.sp,
@@ -457,16 +465,17 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                                             ),
                                           ),
                                         ),
-                                        child: Text(
+                                        child: AutoSizeText(
                                           outOfAttempts ? 'CONTINUE' : 'SUBMIT',
+                                          maxLines: 1,
+                                          minFontSize: 10,
+                                          overflow: TextOverflow.visible,
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
-                                            fontSize: 16.sp,
-                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15.sp,
+                                            fontWeight: FontWeight.w700,
                                             color: Colors.white,
-                                            letterSpacing: outOfAttempts
-                                                ? 2
-                                                : 1,
+                                            letterSpacing: 1.5,
                                           ),
                                         ),
                                       ),

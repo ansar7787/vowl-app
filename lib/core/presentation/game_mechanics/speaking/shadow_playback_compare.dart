@@ -632,8 +632,10 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                                         ),
                                                         SizedBox(width: 6.w),
                                                         Flexible(
-                                                          child: Text(
+                                                          child: AutoSizeText(
                                                             "We couldn't hear you. Try again?",
+                                                            maxLines: 2,
+                                                            minFontSize: 8,
                                                             style: TextStyle(
                                                               fontFamily:
                                                                   'Outfit',
@@ -644,9 +646,6 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                                                   FontWeight
                                                                       .w600,
                                                             ),
-                                                            overflow:
-                                                                TextOverflow
-                                                                    .ellipsis,
                                                           ),
                                                         ),
                                                       ],
