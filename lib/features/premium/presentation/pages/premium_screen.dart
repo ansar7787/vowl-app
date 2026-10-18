@@ -2024,7 +2024,7 @@ class _ContactPhoneBottomSheetState extends State<_ContactPhoneBottomSheet> {
       padding: EdgeInsets.only(
         left: 24.w,
         right: 24.w,
-        top: 24.h,
+        top: 20.h,
         bottom: MediaQuery.of(context).viewInsets.bottom + 24.h,
       ),
       decoration: BoxDecoration(
@@ -2037,219 +2037,245 @@ class _ContactPhoneBottomSheetState extends State<_ContactPhoneBottomSheet> {
           width: 1,
         ),
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Center(
-            child: Container(
-              width: 40.w,
-              height: 4.h,
-              decoration: BoxDecoration(
-                color: isDark ? Colors.white24 : AppColors.slate300,
-                borderRadius: BorderRadius.circular(2.r),
-              ),
-            ),
-          ),
-          SizedBox(height: 20.h),
-          Row(
+      child: SafeArea(
+        top: false,
+        child: SingleChildScrollView(
+          physics: const ClampingScrollPhysics(),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                padding: EdgeInsets.all(10.r),
-                decoration: BoxDecoration(
-                  color: AppColors.indigo500.withValues(alpha: 0.15),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  Icons.phone_android_rounded,
-                  color: AppColors.indigo500,
-                  size: 24.sp,
+              Center(
+                child: Container(
+                  width: 40.w,
+                  height: 4.h,
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white24 : AppColors.slate300,
+                    borderRadius: BorderRadius.circular(2.r),
+                  ),
                 ),
               ),
-              SizedBox(width: 14.w),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      context.tr(
-                        'premium.contact_prompt_title',
-                        fallback: 'UPI & Payment Mobile Number',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w700,
-                        color: isDark ? Colors.white : AppColors.slate900,
-                      ),
+              SizedBox(height: 18.h),
+              Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(10.r),
+                    decoration: BoxDecoration(
+                      color: AppColors.indigo500.withValues(alpha: 0.15),
+                      shape: BoxShape.circle,
                     ),
-                    SizedBox(height: 2.h),
-                    Text(
-                      context.tr(
-                        'premium.contact_prompt_subtitle',
-                        fallback:
-                            'Razorpay requires your phone number for UPI routing and receipts.',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        color: isDark ? Colors.white60 : AppColors.slate500,
-                      ),
+                    child: Icon(
+                      Icons.phone_android_rounded,
+                      color: AppColors.indigo500,
+                      size: 24.sp,
                     ),
-                  ],
-                ),
+                  ),
+                  SizedBox(width: 14.w),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          context.tr(
+                            'premium.contact_prompt_title',
+                            fallback: 'UPI & Payment Mobile Number',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w700,
+                            color: isDark ? Colors.white : AppColors.slate900,
+                          ),
+                        ),
+                        SizedBox(height: 2.h),
+                        Text(
+                          context.tr(
+                            'premium.contact_prompt_subtitle',
+                            fallback:
+                                'Razorpay requires your phone number for UPI routing and receipts.',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            color: isDark ? Colors.white60 : AppColors.slate500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-          SizedBox(height: 20.h),
-          TextField(
-            controller: _controller,
-            focusNode: _focusNode,
-            keyboardType: TextInputType.phone,
-            autofocus: true,
-            inputFormatters: [
-              FilteringTextInputFormatter.digitsOnly,
-              _IndiaPhoneInputFormatter(),
-            ],
-            onChanged: (_) => setState(() {}),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w600,
-              color: isDark ? Colors.white : AppColors.slate900,
-              letterSpacing: 1.0,
-            ),
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: isDark
-                  ? Colors.white.withValues(alpha: 0.05)
-                  : AppColors.slate100,
-              prefixIcon: Icon(
-                Icons.phone_android_rounded,
-                color: isValid
-                    ? AppColors.indigo500
-                    : (isDark ? Colors.white38 : AppColors.slate400),
-                size: 20.sp,
-              ),
-              prefixText: '+91  ',
-              prefixStyle: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w700,
-                color: isDark ? Colors.white : AppColors.slate900,
-                letterSpacing: 0.5,
-              ),
-              hintText: 'Enter 10-digit number',
-              hintStyle: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w400,
-                color: isDark ? Colors.white30 : AppColors.slate400,
-                letterSpacing: 0.2,
-              ),
-              suffixIcon: _controller.text.isNotEmpty
-                  ? IconButton(
-                      icon: Icon(
-                        Icons.cancel_rounded,
-                        size: 18.sp,
-                        color: isDark ? Colors.white38 : AppColors.slate400,
-                      ),
-                      onPressed: () {
-                        _controller.clear();
-                        setState(() {});
-                      },
-                    )
-                  : null,
-              contentPadding: EdgeInsets.symmetric(
-                horizontal: 16.w,
-                vertical: 16.h,
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: BorderSide(
-                  color: isDark ? Colors.white12 : AppColors.slate200,
-                  width: 1.5,
-                ),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: BorderSide(
-                  color: isValid
-                      ? AppColors.indigo500
-                      : (isDark ? Colors.white12 : AppColors.slate200),
-                  width: 1.5,
-                ),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: const BorderSide(
-                  color: AppColors.indigo500,
-                  width: 2.0,
-                ),
-              ),
-            ),
-          ),
-          SizedBox(height: 20.h),
-          ScaleButton(
-            onTap: isValid
-                ? () {
+              SizedBox(height: 20.h),
+              TextField(
+                controller: _controller,
+                focusNode: _focusNode,
+                keyboardType: TextInputType.phone,
+                textInputAction: TextInputAction.done,
+                autofocus: true,
+                cursorColor: AppColors.indigo500,
+                cursorWidth: 2.2,
+                cursorRadius: Radius.circular(2.r),
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                  _IndiaPhoneInputFormatter(),
+                ],
+                onChanged: (_) => setState(() {}),
+                onSubmitted: (_) {
+                  if (isValid) {
                     Navigator.of(context).pop(_controller.text.trim());
                   }
-                : null,
-            child: Container(
-              width: double.infinity,
-              height: 52.h,
-              decoration: BoxDecoration(
-                gradient: isValid
-                    ? const LinearGradient(
-                        colors: [
-                          AppColors.indigo500,
-                          AppColors.violet500,
-                        ],
-                      )
+                },
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.white : AppColors.slate900,
+                  letterSpacing: 1.0,
+                ),
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: isDark
+                      ? Colors.white.withValues(alpha: 0.05)
+                      : AppColors.slate100,
+                  prefixIcon: Icon(
+                    Icons.phone_android_rounded,
+                    color: isValid
+                        ? AppColors.indigo500
+                        : (isDark ? Colors.white38 : AppColors.slate400),
+                    size: 20.sp,
+                  ),
+                  prefixText: '+91  ',
+                  prefixStyle: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w700,
+                    color: isDark ? Colors.white : AppColors.slate900,
+                    letterSpacing: 0.5,
+                  ),
+                  hintText: 'Enter 10-digit number',
+                  hintStyle: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w400,
+                    color: isDark ? Colors.white30 : AppColors.slate400,
+                    letterSpacing: 0.2,
+                  ),
+                  suffixIcon: _controller.text.isNotEmpty
+                      ? IconButton(
+                          icon: Icon(
+                            Icons.cancel_rounded,
+                            size: 18.sp,
+                            color: isDark ? Colors.white38 : AppColors.slate400,
+                          ),
+                          onPressed: () {
+                            _controller.clear();
+                            setState(() {});
+                          },
+                        )
+                      : null,
+                  contentPadding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 16.h,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16.r),
+                    borderSide: BorderSide(
+                      color: isDark ? Colors.white12 : AppColors.slate200,
+                      width: 1.5,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16.r),
+                    borderSide: BorderSide(
+                      color: isValid
+                          ? AppColors.indigo500
+                          : (isDark ? Colors.white12 : AppColors.slate200),
+                      width: 1.5,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16.r),
+                    borderSide: const BorderSide(
+                      color: AppColors.indigo500,
+                      width: 2.0,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20.h),
+              ScaleButton(
+                onTap: isValid
+                    ? () {
+                        Navigator.of(context).pop(_controller.text.trim());
+                      }
                     : null,
-                color: isValid
-                    ? null
-                    : (isDark ? Colors.white12 : AppColors.slate200),
-                borderRadius: BorderRadius.circular(18.r),
-              ),
-              alignment: Alignment.center,
-              child: Text(
-                context.tr(
-                  'premium.continue_to_payment',
-                  fallback: 'Proceed to Payment Options',
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  curve: Curves.easeInOut,
+                  width: double.infinity,
+                  height: 52.h,
+                  decoration: BoxDecoration(
+                    gradient: isValid
+                        ? const LinearGradient(
+                            colors: [
+                              AppColors.indigo500,
+                              AppColors.violet500,
+                            ],
+                          )
+                        : null,
+                    color: isValid
+                        ? null
+                        : (isDark ? Colors.white12 : AppColors.slate200),
+                    borderRadius: BorderRadius.circular(18.r),
+                    boxShadow: isValid
+                        ? [
+                            BoxShadow(
+                              color: AppColors.indigo500.withValues(alpha: 0.35),
+                              blurRadius: 16,
+                              offset: const Offset(0, 4),
+                            ),
+                          ]
+                        : null,
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    context.tr(
+                      'premium.continue_to_payment',
+                      fallback: 'Proceed to Payment Options',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isValid
+                          ? Colors.white
+                          : (isDark ? Colors.white38 : AppColors.slate400),
+                    ),
+                  ),
                 ),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w700,
-                  color: isValid
-                      ? Colors.white
-                      : (isDark ? Colors.white38 : AppColors.slate400),
+              ),
+              SizedBox(height: 8.h),
+              Center(
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop('');
+                  },
+                  child: Text(
+                    context.tr(
+                      'common.skip',
+                      fallback: 'Skip and enter inside payment gateway',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      color: isDark ? Colors.white54 : AppColors.slate500,
+                    ),
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
-          SizedBox(height: 8.h),
-          Center(
-            child: TextButton(
-              onPressed: () {
-                Navigator.of(context).pop('');
-              },
-              child: Text(
-                context.tr(
-                  'common.skip',
-                  fallback: 'Skip and enter inside payment gateway',
-                ),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  color: isDark ? Colors.white54 : AppColors.slate500,
-                ),
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
