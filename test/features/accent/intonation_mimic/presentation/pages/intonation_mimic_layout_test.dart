@@ -475,7 +475,7 @@ void main() {
 
       expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
       expect(find.text('NOW SAY IT'), findsOneWidget);
-      expect(find.text('+5 COINS'), findsOneWidget);
+      expect(find.text('+5 COINS'), findsNothing);
       expect(find.text('Tap to Speak'), findsOneWidget);
 
       // Switch to manual evaluation mode
