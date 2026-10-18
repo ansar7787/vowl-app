@@ -74,3 +74,15 @@ class VowlMotion {
     return MediaQuery.disableAnimationsOf(context);
   }
 }
+
+/// Zero-overhead animation gating extension for low-animation mode.
+extension VowlMotionWidgetExtension on Widget {
+  /// Skips all animations if Low Animation Mode or Reduce Motion is enabled.
+  Widget animateIf(
+    BuildContext context,
+    Widget Function(Widget target) animateBuilder,
+  ) {
+    if (VowlMotion.shouldReduceMotion(context)) return this;
+    return animateBuilder(this);
+  }
+}

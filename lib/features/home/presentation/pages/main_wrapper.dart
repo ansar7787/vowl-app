@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
@@ -110,11 +111,14 @@ class MainWrapper extends StatelessWidget {
                     ),
                   ),
                 ],
-              ).animate().slideY(
-                begin: 0.5,
-                end: 0,
-                duration: 350.ms,
-                curve: Curves.easeOutCubic,
+              ).animateIf(
+                context,
+                (w) => w.animate().slideY(
+                  begin: 0.5,
+                  end: 0,
+                  duration: 350.ms,
+                  curve: Curves.easeOutCubic,
+                ),
               ),
         ),
       ),
@@ -131,6 +135,7 @@ class MainWrapper extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isSelected = navigationShell.currentIndex == index;
     const accentColor = IllustrationColors.brightBlue;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     return Semantics(
       button: true,
@@ -162,40 +167,62 @@ class MainWrapper extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(
-                        isSelected ? activeIcon : inactiveIcon,
-                        color: isSelected
-                            ? accentColor
-                            : (isDark ? Colors.white54 : Colors.black45),
-                        size: 24.r,
-                      )
-                      .animate(target: isSelected ? 1 : 0)
-                      .shimmer(
-                        delay: 400.ms,
-                        duration: 1200.ms,
-                        color: Colors.white24,
-                      )
-                      .scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.1, 1.1),
-                      ),
+                  reduceMotion
+                      ? Icon(
+                          isSelected ? activeIcon : inactiveIcon,
+                          color: isSelected
+                              ? accentColor
+                              : (isDark ? Colors.white54 : Colors.black45),
+                          size: 24.r,
+                        )
+                      : Icon(
+                          isSelected ? activeIcon : inactiveIcon,
+                          color: isSelected
+                              ? accentColor
+                              : (isDark ? Colors.white54 : Colors.black45),
+                          size: 24.r,
+                        )
+                          .animate(target: isSelected ? 1 : 0)
+                          .shimmer(
+                            delay: 400.ms,
+                            duration: 1200.ms,
+                            color: Colors.white24,
+                          )
+                          .scale(
+                            begin: const Offset(1, 1),
+                            end: const Offset(1.1, 1.1),
+                          ),
 
                   if (isSelected) ...[
                     SizedBox(width: 4.w),
                     Flexible(
-                      child: AutoSizeText(
-                        label,
-                        maxLines: 1,
-                        minFontSize: 6,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w700,
-                          color: accentColor,
-                          letterSpacing: 0.5,
-                        ),
-                      ).animate().fadeIn().slideX(begin: -0.2),
+                      child: reduceMotion
+                          ? AutoSizeText(
+                              label,
+                              maxLines: 1,
+                              minFontSize: 6,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w700,
+                                color: accentColor,
+                                letterSpacing: 0.5,
+                              ),
+                            )
+                          : AutoSizeText(
+                              label,
+                              maxLines: 1,
+                              minFontSize: 6,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w700,
+                                color: accentColor,
+                                letterSpacing: 0.5,
+                              ),
+                            ).animate().fadeIn().slideX(begin: -0.2),
                     ),
                   ],
                 ],

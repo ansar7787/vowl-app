@@ -103,73 +103,75 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     if (_blueprint == null) return const SizedBox.shrink();
 
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final theme = LevelThemeHelper.getCategoryTheme(
       widget.categoryId,
       isDark: isDark,
     );
     final displayColor = theme.primaryColor;
 
+    Widget icon = Icon(
+      Icons.auto_awesome,
+      color: displayColor,
+      size: 20.r,
+    );
+    if (!reduceMotion) {
+      icon = icon
+          .animate(onPlay: (controller) => controller.repeat())
+          .shimmer(duration: 2000.ms, color: Colors.white54);
+    }
+
+    final titleRow = Row(
+      children: [
+        icon,
+        SizedBox(width: 8.w),
+        AutoSizeText(
+          context.tr('category.daily_mix', fallback: 'DAILY SMART MIX'),
+          maxLines: 1,
+          minFontSize: 8,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w900,
+            color: (Theme.of(context).brightness == Brightness.dark)
+                ? Colors.white
+                : AppColors.slate900,
+            letterSpacing: 2,
+          ),
+        ),
+      ],
+    );
+
+    final subtitle = AutoSizeText(
+      context.tr(
+        'category.daily_mix_desc',
+        fallback:
+            'Your personalized 3-step workout based on your weakest skills.',
+      ),
+      maxLines: 2,
+      minFontSize: 8,
+      style: TextStyle(
+        fontFamily: 'Outfit',
+        fontSize: 12.sp,
+        fontWeight: FontWeight.w500,
+        color: (Theme.of(context).brightness == Brightness.dark)
+            ? Colors.white70
+            : Colors.black54,
+      ),
+    );
+
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Builder(
-                builder: (context) {
-                  final reduceMotion = VowlMotion.shouldReduceMotion(context);
-                  Widget icon = Icon(
-                    Icons.auto_awesome,
-                    color: displayColor,
-                    size: 20.r,
-                  );
-                  if (!reduceMotion) {
-                    icon = icon
-                        .animate(
-                          target: reduceMotion ? 0 : 1,
-                          onPlay: (controller) => controller.repeat(),
-                        )
-                        .shimmer(duration: 2000.ms, color: Colors.white54);
-                  }
-                  return icon;
-                },
-              ),
-              SizedBox(width: 8.w),
-              AutoSizeText(
-                context.tr('category.daily_mix', fallback: 'DAILY SMART MIX'),
-                maxLines: 1,
-                minFontSize: 8,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w900,
-                  color: (Theme.of(context).brightness == Brightness.dark)
-                      ? Colors.white
-                      : AppColors.slate900,
-                  letterSpacing: 2,
-                ),
-              ),
-            ],
-          ).animate().fadeIn(duration: 400.ms).slideX(begin: -0.1, end: 0),
+          reduceMotion
+              ? titleRow
+              : titleRow.animate().fadeIn(duration: 400.ms).slideX(begin: -0.1, end: 0),
           SizedBox(height: 8.h),
-          AutoSizeText(
-            context.tr(
-              'category.daily_mix_desc',
-              fallback:
-                  'Your personalized 3-step workout based on your weakest skills.',
-            ),
-            maxLines: 2,
-            minFontSize: 8,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w500,
-              color: (Theme.of(context).brightness == Brightness.dark)
-                  ? Colors.white70
-                  : Colors.black54,
-            ),
-          ).animate().fadeIn(delay: 100.ms, duration: 400.ms),
+          reduceMotion
+              ? subtitle
+              : subtitle.animate().fadeIn(delay: 100.ms, duration: 400.ms),
           SizedBox(height: 16.h),
           ValueListenableBuilder<List<GameSubtype>>(
             valueListenable: _mixNotifier,
@@ -182,17 +184,19 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
                   if (entry.key == 1) tierLabel = _blueprint!.tier2Label;
                   if (entry.key == 2) tierLabel = _blueprint!.tier3Label;
 
-                  return Padding(
-                        key: ValueKey('${entry.value.name}_${entry.key}'),
-                        padding: EdgeInsets.only(bottom: 12.h),
-                        child: _buildMixCard(
-                          context,
-                          entry.value,
-                          entry.key + 1,
-                          theme.primaryColor,
-                          tierLabel,
-                        ),
-                      )
+                  final itemCard = Padding(
+                    key: ValueKey('${entry.value.name}_${entry.key}'),
+                    padding: EdgeInsets.only(bottom: 12.h),
+                    child: _buildMixCard(
+                      context,
+                      entry.value,
+                      entry.key + 1,
+                      theme.primaryColor,
+                      tierLabel,
+                    ),
+                  );
+                  if (reduceMotion) return itemCard;
+                  return itemCard
                       .animate(
                         key: ValueKey('anim_${entry.value.name}_${entry.key}'),
                       )

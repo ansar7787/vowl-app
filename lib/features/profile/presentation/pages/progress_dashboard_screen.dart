@@ -17,6 +17,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
@@ -51,7 +52,9 @@ class ProgressDashboardScreen extends StatelessWidget {
                     Expanded(
                       child: SingleChildScrollView(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        physics: const BouncingScrollPhysics(),
+                        physics: const AlwaysScrollableScrollPhysics(
+                          parent: BouncingScrollPhysics(),
+                        ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
@@ -152,7 +155,7 @@ class _WeeklyXpChart extends StatelessWidget {
     final totalXp = days.fold<int>(0, (sum, d) => sum + d.xp);
     final activeDays = days.where((d) => d.xp > 0).length;
 
-    return GlassTile(
+    final card = GlassTile(
       padding: EdgeInsets.all(20.r),
       borderRadius: BorderRadius.circular(24.r),
       child: Column(
@@ -330,7 +333,9 @@ class _WeeklyXpChart extends StatelessWidget {
           ),
         ],
       ),
-    ).animate().fadeIn(delay: 100.ms).slideY(begin: 0.05);
+    );
+    if (VowlMotion.shouldReduceMotion(context)) return card;
+    return card.animate().fadeIn(delay: 100.ms).slideY(begin: 0.05);
   }
 }
 
@@ -391,7 +396,7 @@ class _CategoryMasteryOverview extends StatelessWidget {
         : 0.0;
     final overallPercent = (overallProgress * 100).toStringAsFixed(1);
 
-    return GlassTile(
+    final card = GlassTile(
       padding: EdgeInsets.all(20.r),
       borderRadius: BorderRadius.circular(24.r),
       child: Column(
@@ -498,7 +503,9 @@ class _CategoryMasteryOverview extends StatelessWidget {
           ),
         ],
       ),
-    ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.05);
+    );
+    if (VowlMotion.shouldReduceMotion(context)) return card;
+    return card.animate().fadeIn(delay: 200.ms).slideY(begin: 0.05);
   }
 
   Widget _buildCategoryChip(BuildContext context, _CategoryProgress cat) {
@@ -722,12 +729,16 @@ class _ContinueLearningSection extends StatelessWidget {
         ...topGames.asMap().entries.map((entry) {
           final index = entry.key;
           final game = entry.value;
+          final card = _buildGameResumeCard(context, game);
+          final animatedCard = VowlMotion.shouldReduceMotion(context)
+              ? card
+              : card
+                  .animate()
+                  .fadeIn(delay: (300 + index * 100).ms)
+                  .slideX(begin: 0.05);
           return Padding(
             padding: EdgeInsets.only(bottom: 12.h),
-            child: _buildGameResumeCard(context, game)
-                .animate()
-                .fadeIn(delay: (300 + index * 100).ms)
-                .slideX(begin: 0.05),
+            child: animatedCard,
           );
         }),
       ],

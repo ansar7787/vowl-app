@@ -1,5 +1,4 @@
 import 'package:lucide_icons/lucide_icons.dart';
-import 'dart:ui';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -175,62 +174,54 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                   collapsedHeight: 60.h,
                                   pinned: true,
                                   backgroundColor: bgColor.withValues(
-                                    alpha: 0.8,
+                                    alpha: 0.94,
                                   ),
                                   elevation: 0,
                                   scrolledUnderElevation: 0,
                                   surfaceTintColor: Colors.transparent,
-                                  flexibleSpace: ClipRect(
-                                    child: BackdropFilter(
-                                      filter: ImageFilter.blur(
-                                        sigmaX: 16,
-                                        sigmaY: 16,
-                                      ),
-                                      child: FlexibleSpaceBar(
-                                        titlePadding: EdgeInsets.only(
-                                          bottom: 12.h,
-                                        ),
-                                        title: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              Text(
-                                                context.tr(
-                                                  'profile.review_mistakes',
-                                                  fallback: 'Review & Master',
-                                                ),
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontWeight: FontWeight.w800,
-                                                  color: isDark
-                                                      ? Colors.white
-                                                      : Colors.black,
-                                                  letterSpacing: -0.5,
-                                                ),
-                                              ),
-                                              SizedBox(height: 2.h),
-                                              Text(
-                                                context.tr(
-                                                  'profile.review_instructions',
-                                                  fallback:
-                                                      'Swipe left to dismiss when mastered',
-                                                ),
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 10.sp,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: isDark
-                                                      ? Colors.white54
-                                                      : Colors.black54,
-                                                ),
-                                              ),
-                                            ],
+                                  flexibleSpace: FlexibleSpaceBar(
+                                    titlePadding: EdgeInsets.only(
+                                      bottom: 12.h,
+                                    ),
+                                    title: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Text(
+                                            context.tr(
+                                              'profile.review_mistakes',
+                                              fallback: 'Review & Master',
+                                            ),
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontWeight: FontWeight.w800,
+                                              color: isDark
+                                                  ? Colors.white
+                                                  : Colors.black,
+                                              letterSpacing: -0.5,
+                                            ),
                                           ),
-                                        ),
-                                        centerTitle: true,
+                                          SizedBox(height: 2.h),
+                                          Text(
+                                            context.tr(
+                                              'profile.review_instructions',
+                                              fallback:
+                                                  'Swipe left to dismiss when mastered',
+                                            ),
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 10.sp,
+                                              fontWeight: FontWeight.w500,
+                                              color: isDark
+                                                  ? Colors.white54
+                                                  : Colors.black54,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
+                                    centerTitle: true,
                                   ),
                                   leading: Center(
                                     child: Container(

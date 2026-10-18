@@ -94,7 +94,9 @@ class AdventureXPScreen extends StatelessWidget {
                     const MeshGradientBackground(),
                     SafeArea(
                       child: CustomScrollView(
-                        physics: const BouncingScrollPhysics(),
+                        physics: const AlwaysScrollableScrollPhysics(
+                          parent: BouncingScrollPhysics(),
+                        ),
                         slivers: [
                           // ── App Bar ──────────────────────────────────
                           SliverAppBar(

@@ -3,6 +3,7 @@ import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 class LeaderboardHeader extends StatelessWidget {
@@ -20,7 +21,7 @@ class LeaderboardHeader extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final timeAgo = _formatTimeAgo(context, lastUpdated);
 
-    return Semantics(
+    final header = Semantics(
       // FIX (HIGH-5): Screen readers now announce the leaderboard title,
       // subtitle, and when it was last updated in a single label.
       label:
@@ -144,7 +145,9 @@ class LeaderboardHeader extends StatelessWidget {
           ),
         ],
       ),
-    ).animate().fadeIn(duration: 500.ms);
+    );
+    if (VowlMotion.shouldReduceMotion(context)) return header;
+    return header.animate().fadeIn(duration: 500.ms);
   }
 
   String _formatTimeAgo(BuildContext context, DateTime dateTime) {
