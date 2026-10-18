@@ -3,13 +3,11 @@ import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'dart:math' as math;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 
 class _LocalPalette {
@@ -24,7 +22,6 @@ class DynamicAnagramWrapper extends StatefulWidget {
   final VoidCallback onConfirmed;
   final VoidCallback onFailed;
   final Function(String)? onFailedWithSpelling;
-  final int? bonusCoins;
   final VoidCallback? onBypassed;
   final bool allowSkip;
 
@@ -40,7 +37,6 @@ class DynamicAnagramWrapper extends StatefulWidget {
     required this.onConfirmed,
     required this.onFailed,
     this.onFailedWithSpelling,
-    this.bonusCoins = 5,
     this.onBypassed,
     this.allowSkip = true,
     this.title,
@@ -210,13 +206,6 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
     if (currentWord == widget.expectedText.toUpperCase().trim()) {
       _hapticService.success();
       _isSubmitting.value = true;
-      if (widget.bonusCoins != null &&
-          widget.bonusCoins! > 0 &&
-          _attempts.value < widget.maxAttempts) {
-        context.read<EconomyBloc>().add(
-          EconomyAddCoinsRequested(widget.bonusCoins!),
-        );
-      }
       widget.onConfirmed();
     } else {
       _hapticService.error();
@@ -376,36 +365,6 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                             ],
                           ),
                         ),
-                        if (widget.bonusCoins != null)
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 10.w,
-                              vertical: 4.h,
-                            ),
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
-                                  widget.primaryColor,
-                                  widget.primaryColor.withValues(alpha: 0.7),
-                                ],
-                              ),
-                              borderRadius: BorderRadius.circular(20.r),
-                            ),
-                            child: AutoSizeText(
-                              '+${widget.bonusCoins} coins',
-                              maxLines: 1,
-                              minFontSize: 4,
-                              stepGranularity: 0.5,
-                              overflow: TextOverflow.visible,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
-                                letterSpacing: 0.5,
-                              ),
-                            ),
-                          ),
                       ],
                     ),
 

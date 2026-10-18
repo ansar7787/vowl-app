@@ -68,7 +68,6 @@ void main() {
                   ContextSentenceBuilder(
                     targetKeyword: 'resilient',
                     primaryColor: Colors.teal,
-                    bonusCoins: 5,
                     onConfirmed: () {},
                     onSkipped: () {},
                   ),

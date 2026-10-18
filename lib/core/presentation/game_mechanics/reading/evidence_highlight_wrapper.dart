@@ -4,12 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -57,9 +55,6 @@ class EvidenceHighlightWrapper extends StatefulWidget {
   /// Optional instruction text override.
   final String? instruction;
 
-  /// Bonus coins label. Null hides badge.
-  final int? bonusCoins;
-
   const EvidenceHighlightWrapper({
     super.key,
     required this.passage,
@@ -70,7 +65,6 @@ class EvidenceHighlightWrapper extends StatefulWidget {
     this.requiredHighlights,
     this.isPositioned = true,
     this.instruction,
-    this.bonusCoins = 5,
   });
 
   @override
@@ -248,13 +242,6 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
         _isComplete.value = true;
         _isSubmitting.value = true;
 
-        // Award bonus coins for finding all evidence
-        if (widget.bonusCoins != null && widget.bonusCoins! > 0) {
-          context.read<EconomyBloc>().add(
-            EconomyAddCoinsRequested(widget.bonusCoins!),
-          );
-        }
-
         Future.delayed(const Duration(milliseconds: 500), () {
           if (mounted) widget.onCorrectHighlight();
         });
@@ -413,38 +400,6 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                 );
                               },
                             ),
-                            if (widget.bonusCoins != null) ...[
-                              SizedBox(width: 8.w),
-                              Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 10.w,
-                                  vertical: 4.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      widget.primaryColor,
-                                      widget.primaryColor.withValues(alpha: 0.7),
-                                    ],
-                                  ),
-                                  borderRadius: BorderRadius.circular(20.r),
-                                ),
-                                child: AutoSizeText(
-                                  '+${widget.bonusCoins} coins',
-                                  maxLines: 1,
-                                  minFontSize: 4,
-                                  stepGranularity: 0.5,
-                                  overflow: TextOverflow.visible,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 10.sp,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.white,
-                                    letterSpacing: 0.5,
-                                  ),
-                                ),
-                              ),
-                            ],
                           ],
                         ),
                           SizedBox(height: 20.h),

@@ -80,9 +80,9 @@ void main() {
     // Give animations time to settle
     await tester.pumpAndSettle();
 
-    // Verify words and standardized coins badge are present
+    // Verify words are present and no coin badge is shown
     expect(find.text('hello'), findsOneWidget);
     expect(find.text('world'), findsOneWidget);
-    expect(find.text('+5 coins'), findsOneWidget);
+    expect(find.text('+5 coins'), findsNothing);
   });
 }

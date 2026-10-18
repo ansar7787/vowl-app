@@ -68,7 +68,6 @@ void main() {
                   BlindDictationWrapper(
                     expectedText: 'listen to this audio',
                     primaryColor: Colors.blue,
-                    bonusCoins: 5,
                     onConfirmed: () {},
                     onSkipped: () {},
                   ),
@@ -83,9 +82,9 @@ void main() {
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 500));
 
-    // Verify non-buzzword header and standardized coin badge
+    // Verify non-buzzword header and submit button, no coin badge
     expect(find.text('LISTEN & TYPE'), findsOneWidget);
-    expect(find.text('+5 coins'), findsOneWidget);
+    expect(find.text('+5 coins'), findsNothing);
     expect(find.text('SUBMIT'), findsOneWidget);
   });
 }

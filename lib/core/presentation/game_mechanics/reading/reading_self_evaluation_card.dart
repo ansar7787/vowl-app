@@ -2,13 +2,11 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
 /// Self-evaluation card for reading comprehension games.
 ///
@@ -37,9 +35,6 @@ class ReadingSelfEvaluationCard extends StatefulWidget {
   /// Whether to wrap in a Positioned widget (for Stack layouts).
   final bool isPositioned;
 
-  /// Bonus coins awarded on "Nailed It". Null hides badge.
-  final int? bonusCoins;
-
   const ReadingSelfEvaluationCard({
     super.key,
     required this.correctAnswer,
@@ -47,7 +42,6 @@ class ReadingSelfEvaluationCard extends StatefulWidget {
     required this.primaryColor,
     required this.onEvaluated,
     this.isPositioned = false,
-    this.bonusCoins = 5,
   });
 
   @override
@@ -78,11 +72,8 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
     super.dispose();
   }
 
-  DateTime? _revealTime;
-
   void _reveal() {
     _hapticService.selection();
-    _revealTime = DateTime.now();
     _isRevealed.value = true;
   }
 
@@ -92,19 +83,6 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
 
     if (isCorrect) {
       _hapticService.success();
-      // Award bonus coins
-      // Cheat detection: If they evaluated themselves in under 1.5 seconds,
-      // they probably didn't actually read and compare the answer.
-      final bool isCheating =
-          _revealTime != null &&
-          DateTime.now().difference(_revealTime!).inMilliseconds < 1500;
-
-      // Award bonus coins only if not cheating
-      if (!isCheating && widget.bonusCoins != null && widget.bonusCoins! > 0) {
-        context.read<EconomyBloc>().add(
-          EconomyAddCoinsRequested(widget.bonusCoins!),
-        );
-      }
     } else {
       _hapticService.error();
     }
@@ -257,33 +235,6 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
                   letterSpacing: 1.5,
                 ),
               ),
-              if (widget.bonusCoins != null) ...[
-                SizedBox(width: 10.w),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        widget.primaryColor,
-                        widget.primaryColor.withValues(alpha: 0.7),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(20.r),
-                  ),
-                  child: AutoSizeText(
-                    '+${widget.bonusCoins} coins',
-                    maxLines: 1,
-                    minFontSize: 6,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
-                      letterSpacing: 0.5,
-                    ),
-                  ),
-                ),
-              ],
             ],
           ),
           SizedBox(height: 12.h),

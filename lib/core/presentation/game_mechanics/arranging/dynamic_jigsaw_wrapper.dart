@@ -3,12 +3,10 @@ import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
@@ -24,7 +22,6 @@ class DynamicJigsawWrapper extends StatefulWidget {
   final VoidCallback onConfirmed;
   final VoidCallback onSkipped;
   final VoidCallback? onBypassed;
-  final int? bonusCoins;
   final bool allowSkip;
   final bool isPositioned;
   final List<String>? customShuffledWords;
@@ -38,7 +35,6 @@ class DynamicJigsawWrapper extends StatefulWidget {
     required this.onConfirmed,
     required this.onSkipped,
     this.onBypassed,
-    this.bonusCoins = 5,
     this.allowSkip = true,
     this.isPositioned = true,
     this.customShuffledWords,
@@ -237,13 +233,6 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
     if (currentSentence == _targetSentence) {
       _hapticService.success();
       _isSubmitting.value = true;
-      if (widget.bonusCoins != null &&
-          widget.bonusCoins! > 0 &&
-          _attempts.value < widget.maxAttempts) {
-        context.read<EconomyBloc>().add(
-          EconomyAddCoinsRequested(widget.bonusCoins!),
-        );
-      }
       widget.onConfirmed();
     } else {
       _hapticService.error();
@@ -408,38 +397,6 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                         },
                       ),
                     ),
-                    if (widget.bonusCoins != null) ...[
-                      SizedBox(width: 8.w),
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 10.w,
-                          vertical: 4.h,
-                        ),
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              widget.primaryColor,
-                              widget.primaryColor.withValues(alpha: 0.7),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(20.r),
-                        ),
-                        child: AutoSizeText(
-                          '+${widget.bonusCoins} coins',
-                          maxLines: 1,
-                          minFontSize: 4,
-                          stepGranularity: 0.5,
-                          overflow: TextOverflow.visible,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                      ),
-                    ],
                   ],
                 ),
 

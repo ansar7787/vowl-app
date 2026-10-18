@@ -3,7 +3,6 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -11,7 +10,6 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/text_similarity_helper.dart';
 import 'package:vowl/core/utils/gibberish_detector_service.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
-import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/smart_typo_controller.dart';
 
 class TypeToConfirmOverlay extends StatefulWidget {
@@ -23,7 +21,6 @@ class TypeToConfirmOverlay extends StatefulWidget {
   final VoidCallback? onBypassed;
   final double threshold;
   final int maxAttempts;
-  final int? bonusCoins;
   final bool allowSkip;
   final bool isPositioned;
   final double? displayFontSize;
@@ -40,7 +37,6 @@ class TypeToConfirmOverlay extends StatefulWidget {
     this.onBypassed,
     this.threshold = 0.85,
     this.maxAttempts = 3,
-    this.bonusCoins,
     this.allowSkip = true,
     this.isPositioned = true,
     this.displayFontSize,
@@ -116,15 +112,6 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
       _isSubmitting.value = true;
       _hapticService.success();
       _focusNode.unfocus();
-
-      // Award bonus coins if earned within attempt limit
-      if (widget.bonusCoins != null &&
-          widget.bonusCoins! > 0 &&
-          _attempts.value < widget.maxAttempts) {
-        context.read<EconomyBloc>().add(
-          EconomyAddCoinsRequested(widget.bonusCoins!),
-        );
-      }
 
       await Future.delayed(const Duration(milliseconds: 800));
       if (mounted) widget.onConfirmed();
@@ -295,42 +282,6 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                         ],
                       ),
                     ),
-                    if (widget.bonusCoins != null)
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 10.w,
-                          vertical: 4.h,
-                        ),
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              widget.primaryColor,
-                              widget.primaryColor.withValues(alpha: 0.7),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(20.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: widget.primaryColor.withValues(alpha: 0.3),
-                              blurRadius: 8,
-                              offset: const Offset(0, 2),
-                            ),
-                          ],
-                        ),
-                        child: AutoSizeText(
-                          '+${widget.bonusCoins} coins',
-                          maxLines: 1,
-                          minFontSize: 6,
-                          overflow: TextOverflow.visible,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                      ),
                     if (widget.allowSkip)
                       Padding(
                         padding: EdgeInsets.only(left: 8.w),
