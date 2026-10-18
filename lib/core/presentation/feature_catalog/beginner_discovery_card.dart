@@ -469,6 +469,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
     double progress,
   ) {
     return Container(
+      clipBehavior: Clip.antiAlias,
       padding: EdgeInsets.fromLTRB(0, 11.h, 0, 10.h),
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -656,7 +657,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
                 scrollDirection: Axis.horizontal,
                 physics: const BouncingScrollPhysics(),
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 3.h),
-                clipBehavior: Clip.none,
+                clipBehavior: Clip.hardEdge,
                 child: Row(
                   children: [
                     for (int index = 0; index < _quests.length; index++) ...[
