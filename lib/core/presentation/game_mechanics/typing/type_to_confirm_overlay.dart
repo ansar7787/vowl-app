@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -68,8 +69,6 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
     _textController.addListener(() {
       if (_textController.showDiff) {
         _textController.showDiff = false;
-        // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
-        _textController.notifyListeners();
       }
     });
   }
@@ -145,8 +144,6 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
       type: MaterialType.transparency,
       child: Padding(
         padding: EdgeInsets.only(
-          left: widget.isPositioned ? 24.w : 0,
-          right: widget.isPositioned ? 24.w : 0,
           bottom: widget.isPositioned
               ? MediaQuery.of(context).viewInsets.bottom + 12.h
               : 0,
@@ -202,7 +199,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
               : widget.primaryColor.withValues(alpha: 0.3);
 
           return Container(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             decoration: BoxDecoration(
               color: isDark
                   ? Colors.black.withValues(alpha: 0.85)
@@ -269,19 +266,25 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          AutoSizeText(
                             'NOW TYPE IT',
+                            maxLines: 1,
+                            minFontSize: 8,
+                            overflow: TextOverflow.visible,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w900,
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w800,
                               color: widget.primaryColor,
-                              letterSpacing: 2,
+                              letterSpacing: 1.5,
                             ),
                           ),
                           SizedBox(height: 2.h),
-                          Text(
+                          AutoSizeText(
                             'Type the answer to confirm',
+                            maxLines: 1,
+                            minFontSize: 8,
+                            overflow: TextOverflow.visible,
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 11.sp,
@@ -314,14 +317,17 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                             ),
                           ],
                         ),
-                        child: Text(
-                          '+${widget.bonusCoins} COIN',
+                        child: AutoSizeText(
+                          '+${widget.bonusCoins} coins',
+                          maxLines: 1,
+                          minFontSize: 6,
+                          overflow: TextOverflow.visible,
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 10.sp,
-                            fontWeight: FontWeight.w800,
+                            fontWeight: FontWeight.w700,
                             color: Colors.white,
-                            letterSpacing: 1,
+                            letterSpacing: 0.5,
                           ),
                         ),
                       ),
@@ -394,14 +400,17 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                           size: 48.r,
                         ),
                       );
-                      final label = Text(
-                        'PERFECT!',
+                      final label = AutoSizeText(
+                        'CORRECT!',
+                        maxLines: 1,
+                        minFontSize: 10,
+                        overflow: TextOverflow.visible,
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 18.sp,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w800,
                           color: AppColors.gameCorrect,
-                          letterSpacing: 2,
+                          letterSpacing: 1.5,
                         ),
                       );
 
@@ -486,8 +495,10 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                               valueListenable: _attempts,
                               builder: (context, attempts, _) {
                                 if (attempts > 0) {
-                                  return Text(
+                                  return AutoSizeText(
                                     '${widget.maxAttempts - attempts} attempts left',
+                                    maxLines: 1,
+                                    minFontSize: 7,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: 10.sp,
@@ -524,11 +535,14 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                             result == _ConfirmResult.empty)
                           Padding(
                             padding: EdgeInsets.only(top: 12.h),
-                            child: Text(
+                            child: AutoSizeText(
                               result == _ConfirmResult.mismatch
-                                  ? "Hmm, that didn't match. Try checking your spelling!"
+                                  ? 'Not quite right. Check your spelling.'
                                   : 'Please type your answer.',
                               textAlign: TextAlign.center,
+                              maxLines: 2,
+                              minFontSize: 8,
+                              overflow: TextOverflow.visible,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 12.sp,
@@ -601,14 +615,17 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                                         ],
                                       ),
                                       child: Center(
-                                        child: Text(
+                                        child: AutoSizeText(
                                           outOfAttempts ? 'CONTINUE' : 'SUBMIT',
+                                          maxLines: 1,
+                                          minFontSize: 10,
+                                          overflow: TextOverflow.visible,
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
-                                            fontSize: 14.sp,
-                                            fontWeight: FontWeight.w800,
+                                            fontSize: 15.sp,
+                                            fontWeight: FontWeight.w700,
                                             color: Colors.white,
-                                            letterSpacing: 2,
+                                            letterSpacing: 1.5,
                                           ),
                                         ),
                                       ),

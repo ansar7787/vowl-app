@@ -9,7 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:vowl/core/utils/gibberish_detector_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/sound_service.dart';
+
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -51,7 +51,6 @@ class ContextSentenceBuilder extends StatefulWidget {
 
 class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
   final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
   final _controller = TextEditingController();
   final _focusNode = FocusNode();
   final _scrollController = ScrollController();
@@ -123,7 +122,6 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
     _feedbackMessage.value = ContextSentenceStrings.successMessage(context);
     _isSubmitting.value = true;
     _hapticService.success();
-    _soundService.playCorrect();
     _focusNode.unfocus();
 
     if (widget.bonusCoins != null && widget.bonusCoins! > 0) {
@@ -229,8 +227,6 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
               child: widget.isPositioned
                   ? Padding(
                       padding: EdgeInsets.only(
-                        left: 20.w,
-                        right: 20.w,
                         bottom: MediaQuery.of(context).viewInsets.bottom + 12.h,
                         top: MediaQuery.paddingOf(context).top + 12.h,
                       ),
@@ -238,8 +234,6 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                     )
                   : Padding(
                       padding: EdgeInsets.only(
-                        left: 20.w,
-                        right: 20.w,
                         bottom: MediaQuery.of(context).viewInsets.bottom,
                       ),
                       child: innerContent,
@@ -317,7 +311,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 13.sp,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w800,
                       color: widget.primaryColor,
                       letterSpacing: 1.5,
                     ),
@@ -623,10 +617,10 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                       ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.w900,
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w700,
                                         color: Colors.white,
-                                        letterSpacing: 2,
+                                        letterSpacing: 1.5,
                                       ),
                                     ),
                                     if (canEarnCoins) ...[
@@ -655,8 +649,8 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                               '+${widget.bonusCoins}',
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
-                                                fontSize: 12.sp,
-                                                fontWeight: FontWeight.w900,
+                                                fontSize: 10.sp,
+                                                fontWeight: FontWeight.w700,
                                                 color: Colors.amberAccent,
                                               ),
                                             ),
@@ -833,11 +827,11 @@ class ContextSentenceStrings {
       context.tr('game.sentence_builder.skip_button', fallback: 'SKIP');
   static String headerTitle(BuildContext context) => context.tr(
     'game.sentence_builder.header_title',
-    fallback: 'USE IT IN A SENTENCE',
+    fallback: 'YOUR SENTENCE',
   );
   static String headerSubtitle(BuildContext context) => context.tr(
     'game.sentence_builder.header_subtitle',
-    fallback: 'Prove your mastery using the target word.',
+    fallback: 'Write a sentence using the word below.',
   );
   static String examplePrefix(BuildContext context) =>
       context.tr('game.sentence_builder.example_prefix', fallback: 'Example:');
@@ -863,6 +857,6 @@ class ContextSentenceStrings {
   );
   static String masteryProven(BuildContext context) => context.tr(
     'game.sentence_builder.mastery_proven',
-    fallback: 'MASTERY PROVEN!',
+    fallback: 'WELL DONE!',
   );
 }

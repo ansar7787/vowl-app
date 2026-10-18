@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter/services.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'dart:math' as math;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -53,6 +54,7 @@ class DynamicAnagramWrapper extends StatefulWidget {
 }
 
 class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
+  final _hapticService = di.sl<HapticService>();
   late ValueNotifier<List<_Tile>> _availableTiles;
   late ValueNotifier<List<_Tile?>> _placedTiles;
   final ValueNotifier<bool> _hasError = ValueNotifier(false);
@@ -96,7 +98,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
     if (_isSubmitting.value) return;
     if (!_availableTiles.value.contains(tile)) return; // Anti-double-tap guard
     if (_hasError.value) _hasError.value = false;
-    HapticFeedback.lightImpact();
+    _hapticService.selection();
 
     final currentPlaced = List<_Tile?>.from(_placedTiles.value);
     int emptyIndex = currentPlaced.indexWhere((t) => t == null);
@@ -121,7 +123,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
     final currentPlaced = List<_Tile?>.from(_placedTiles.value);
     _Tile? tile = currentPlaced[index];
     if (tile != null && tile.id != -1) {
-      HapticFeedback.lightImpact();
+      _hapticService.selection();
       currentPlaced[index] = null;
       _placedTiles.value = currentPlaced;
 
@@ -167,7 +169,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
 
     _placedTiles.value = currentPlaced;
     _availableTiles.value = currentAvail;
-    HapticFeedback.lightImpact();
+    _hapticService.selection();
 
     if (!currentPlaced.contains(null)) {
       _onSubmit();
@@ -199,14 +201,14 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
 
     final currentPlaced = _placedTiles.value;
     if (currentPlaced.contains(null)) {
-      HapticFeedback.heavyImpact();
+      _hapticService.error();
       _hasError.value = true;
       return;
     }
 
     String currentWord = currentPlaced.map((t) => t!.letter).join('');
     if (currentWord == widget.expectedText.toUpperCase().trim()) {
-      HapticFeedback.mediumImpact();
+      _hapticService.success();
       _isSubmitting.value = true;
       if (widget.bonusCoins != null &&
           widget.bonusCoins! > 0 &&
@@ -217,7 +219,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
       }
       widget.onConfirmed();
     } else {
-      HapticFeedback.heavyImpact();
+      _hapticService.error();
       _hasError.value = true;
       _attempts.value++;
 
@@ -343,17 +345,17 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               AutoSizeText(
-                                widget.title ?? 'NOW SPELL IT!',
+                                widget.title ?? 'SPELL IT OUT',
                                 maxLines: 1,
                                 minFontSize: 4,
                                 stepGranularity: 0.5,
                                 overflow: TextOverflow.visible,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w900,
+                                  fontSize: 13.sp,
+                                  fontWeight: FontWeight.w800,
                                   color: widget.primaryColor,
-                                  letterSpacing: 2,
+                                  letterSpacing: 1.5,
                                 ),
                               ),
                               SizedBox(height: 2.h),
@@ -390,7 +392,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                               borderRadius: BorderRadius.circular(20.r),
                             ),
                             child: AutoSizeText(
-                              '+${widget.bonusCoins} Coins',
+                              '+${widget.bonusCoins} coins',
                               maxLines: 1,
                               minFontSize: 4,
                               stepGranularity: 0.5,
@@ -398,9 +400,9 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 10.sp,
-                                fontWeight: FontWeight.w800,
+                                fontWeight: FontWeight.w700,
                                 color: Colors.white,
-                                letterSpacing: 1,
+                                letterSpacing: 0.5,
                               ),
                             ),
                           ),
@@ -422,12 +424,14 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                                 padding: EdgeInsets.only(top: 8.h),
                                 child: GestureDetector(
                                   onTap: _clearAll,
-                                  child: Text(
+                                  child: AutoSizeText(
                                     'CLEAR ALL',
+                                    maxLines: 1,
+                                    minFontSize: 7,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: 10.sp,
-                                      fontWeight: FontWeight.w800,
+                                      fontWeight: FontWeight.w700,
                                       color: subtitleColor,
                                       letterSpacing: 1.5,
                                     ),
@@ -724,9 +728,10 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                                           overflow: TextOverflow.visible,
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
-                                            fontSize: 16.sp,
-                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15.sp,
+                                            fontWeight: FontWeight.w700,
                                             color: Colors.white,
+                                            letterSpacing: 1.5,
                                           ),
                                         ),
                                       ),

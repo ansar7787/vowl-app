@@ -7,7 +7,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
@@ -81,7 +80,6 @@ class EvidenceHighlightWrapper extends StatefulWidget {
 
 class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
   final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
 
   late List<_HighlightWord> _words;
   final ValueNotifier<Set<int>> _highlightedIndices = ValueNotifier({});
@@ -236,7 +234,6 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
     if (word.isEvidence) {
       // Correct evidence word
       _hapticService.success();
-      _soundService.playCorrect();
 
       final newSet = Set<int>.from(_highlightedIndices.value);
       newSet.add(index);
@@ -350,21 +347,21 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     AutoSizeText(
-                                      'FIND THE EVIDENCE',
+                                      'FIND THE KEY WORDS',
                                       maxLines: 1,
                                       minFontSize: 8,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.w900,
+                                        fontSize: 13.sp,
+                                        fontWeight: FontWeight.w800,
                                         color: widget.primaryColor,
-                                        letterSpacing: 2,
+                                        letterSpacing: 1.5,
                                       ),
                                     ),
                                     SizedBox(height: 2.h),
                                     AutoSizeText(
                                       widget.instruction ??
-                                          'Tap the word(s) that prove the answer',
+                                          'Tap the word(s) that support the answer',
                                       maxLines: 2,
                                       minFontSize: 6,
                                       style: TextStyle(
@@ -569,16 +566,16 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                           AutoSizeText(
                                             context.tr(
                                               'game.evidence_found',
-                                              fallback: 'EVIDENCE FOUND!',
+                                              fallback: 'CORRECT!',
                                             ),
                                             maxLines: 1,
                                             minFontSize: 8,
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
                                               fontSize: 14.sp,
-                                              fontWeight: FontWeight.w900,
+                                              fontWeight: FontWeight.w800,
                                               color: tokens.gameCorrect,
-                                              letterSpacing: 1,
+                                              letterSpacing: 1.5,
                                             ),
                                           ),
                                         ],

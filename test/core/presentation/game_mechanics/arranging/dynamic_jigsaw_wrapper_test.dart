@@ -9,18 +9,35 @@ import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
 class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState> implements EconomyBloc {}
+class MockHapticService extends Mock implements HapticService {}
 
 void main() {
   late MockAuthBloc mockAuthBloc;
   late MockEconomyBloc mockEconomyBloc;
+  late MockHapticService mockHapticService;
 
   setUp(() {
     mockAuthBloc = MockAuthBloc();
     mockEconomyBloc = MockEconomyBloc();
+    mockHapticService = MockHapticService();
     when(() => mockAuthBloc.state).thenReturn(const AuthState.unauthenticated());
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
+
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    di.sl.registerSingleton<HapticService>(mockHapticService);
+  });
+
+  tearDown(() {
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
   });
 
   testWidgets('DynamicJigsawWrapper renders expected text split into words', (

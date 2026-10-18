@@ -78,8 +78,6 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
               type: MaterialType.transparency,
               child: Padding(
                 padding: EdgeInsets.only(
-                  left: 20.w,
-                  right: 20.w,
                   bottom: widget.isPositioned
                       ? MediaQuery.of(context).viewInsets.bottom + 24.h
                       : 0,
@@ -158,25 +156,25 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                               SizedBox(width: 12.w),
                               Expanded(
                                 child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     AutoSizeText(
                                       widget.title,
-                                      textAlign: TextAlign.center,
+                                      textAlign: TextAlign.start,
                                       maxLines: 2,
                                       minFontSize: 10,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.w900,
+                                        fontSize: 13.sp,
+                                        fontWeight: FontWeight.w800,
                                         color: widget.primaryColor,
-                                        letterSpacing: 2,
+                                        letterSpacing: 1.5,
                                       ),
                                     ),
                                     SizedBox(height: 2.h),
                                     AutoSizeText(
                                       widget.subtitle,
-                                      textAlign: TextAlign.center,
+                                      textAlign: TextAlign.start,
                                       maxLines: 2,
                                       minFontSize: 9,
                                       style: TextStyle(
@@ -215,14 +213,16 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                                       ),
                                     ],
                                   ),
-                                  child: Text(
-                                    '+${widget.bonusCoins} COINS',
+                                  child: AutoSizeText(
+                                    '+${widget.bonusCoins} coins',
+                                    maxLines: 1,
+                                    minFontSize: 7,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: 10.sp,
-                                      fontWeight: FontWeight.w800,
+                                      fontWeight: FontWeight.w700,
                                       color: Colors.white,
-                                      letterSpacing: 1,
+                                      letterSpacing: 0.5,
                                     ),
                                   ),
                                 ),

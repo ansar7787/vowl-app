@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter/services.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
@@ -49,6 +51,7 @@ class DynamicJigsawWrapper extends StatefulWidget {
 }
 
 class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
+  final _hapticService = di.sl<HapticService>();
   late ValueNotifier<List<_WordTile>> _availableTiles;
   late ValueNotifier<List<_WordTile?>> _placedTiles;
   late String _targetSentence;
@@ -126,7 +129,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
     if (!_availableTiles.value.contains(tile)) return; // Anti-double-tap guard
     if (_hasError.value) _hasError.value = false;
     _positionalFeedback.value = null;
-    HapticFeedback.lightImpact();
+    _hapticService.selection();
 
     final currentPlaced = List<_WordTile?>.from(_placedTiles.value);
     int emptyIndex = currentPlaced.indexWhere((t) => t == null);
@@ -153,7 +156,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
     final currentPlaced = List<_WordTile?>.from(_placedTiles.value);
     _WordTile? tile = currentPlaced[index];
     if (tile != null) {
-      HapticFeedback.lightImpact();
+      _hapticService.selection();
       currentPlaced[index] = null;
       _placedTiles.value = currentPlaced;
 
@@ -191,7 +194,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
 
     _placedTiles.value = currentPlaced;
     _availableTiles.value = currentAvail;
-    HapticFeedback.lightImpact();
+    _hapticService.selection();
 
     if (!currentPlaced.contains(null)) {
       _onSubmit();
@@ -224,7 +227,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
 
     final currentPlaced = _placedTiles.value;
     if (currentPlaced.contains(null)) {
-      HapticFeedback.heavyImpact();
+      _hapticService.error();
       _hasError.value = true;
       return;
     }
@@ -232,7 +235,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
     String currentSentence = currentPlaced.map((t) => t!.word).join(' ');
 
     if (currentSentence == _targetSentence) {
-      HapticFeedback.mediumImpact();
+      _hapticService.success();
       _isSubmitting.value = true;
       if (widget.bonusCoins != null &&
           widget.bonusCoins! > 0 &&
@@ -243,7 +246,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
       }
       widget.onConfirmed();
     } else {
-      HapticFeedback.heavyImpact();
+      _hapticService.error();
       _hasError.value = true;
       _attempts.value++;
 
@@ -347,19 +350,25 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'BUILD THE SENTENCE!',
+                          AutoSizeText(
+                            'ARRANGE THE WORDS',
+                            maxLines: 1,
+                            minFontSize: 8,
+                            overflow: TextOverflow.visible,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w900,
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w800,
                               color: widget.primaryColor,
-                              letterSpacing: 2,
+                              letterSpacing: 1.5,
                             ),
                           ),
                           SizedBox(height: 2.h),
-                          Text(
-                            'Tap the words in the correct grammatical order',
+                          AutoSizeText(
+                            'Tap the words in the right order',
+                            maxLines: 2,
+                            minFontSize: 8,
+                            overflow: TextOverflow.visible,
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 11.sp,
@@ -383,14 +392,17 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                       child: ValueListenableBuilder<List<_WordTile?>>(
                         valueListenable: _placedTiles,
                         builder: (context, placedTiles, _) {
-                          return Text(
+                          return AutoSizeText(
                             '${placedTiles.length} words',
+                            maxLines: 1,
+                            minFontSize: 6,
+                            overflow: TextOverflow.visible,
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w700,
                               color: widget.primaryColor,
-                              letterSpacing: 1,
+                              letterSpacing: 0.5,
                             ),
                           );
                         },
@@ -412,12 +424,15 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                             padding: EdgeInsets.only(top: 8.h),
                             child: GestureDetector(
                               onTap: _clearAll,
-                              child: Text(
+                              child: AutoSizeText(
                                 'CLEAR ALL',
+                                maxLines: 1,
+                                minFontSize: 6,
+                                overflow: TextOverflow.visible,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 10.sp,
-                                  fontWeight: FontWeight.w800,
+                                  fontWeight: FontWeight.w700,
                                   color: subtitleColor,
                                   letterSpacing: 1.5,
                                 ),
@@ -565,14 +580,17 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                                       mainAxisSize:
                                                           MainAxisSize.min,
                                                       children: [
-                                                        Text(
+                                                        AutoSizeText(
                                                           tile.word,
+                                                          maxLines: 1,
+                                                          minFontSize: 8,
+                                                          overflow: TextOverflow.visible,
                                                           style: TextStyle(
                                                             fontFamily:
                                                                 'Outfit',
                                                             fontSize: 16.sp,
                                                             fontWeight:
-                                                                FontWeight.bold,
+                                                                FontWeight.w700,
                                                             color: textColor,
                                                           ),
                                                         ),
@@ -739,16 +757,20 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                         ),
                                       ),
                                     ),
-                                    child: Text(
+                                    child: AutoSizeText(
                                       context.tr(
                                         'game.submit_button',
                                         fallback: 'Submit',
                                       ),
+                                      maxLines: 1,
+                                      minFontSize: 10,
+                                      overflow: TextOverflow.visible,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
-                                        fontSize: 16.sp,
-                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w700,
                                         color: Colors.white,
+                                        letterSpacing: 1.5,
                                       ),
                                     ),
                                   ),
@@ -831,8 +853,11 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
             ),
           ],
         ),
-        child: Text(
+        child: AutoSizeText(
           tile.word,
+          maxLines: 1,
+          minFontSize: 8,
+          overflow: TextOverflow.visible,
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 16.sp,

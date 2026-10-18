@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -155,7 +156,7 @@ class _GameSkipBypassButtonState extends State<GameSkipBypassButton> {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
+                  AutoSizeText(
                     outOfAttempts
                         ? context.tr(
                             'game.continue_button',
@@ -163,6 +164,8 @@ class _GameSkipBypassButtonState extends State<GameSkipBypassButton> {
                           )
                         : (widget.skipLabel ??
                               context.tr('game.skip_button', fallback: 'SKIP')),
+                    maxLines: 1,
+                    minFontSize: 7,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,

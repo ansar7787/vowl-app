@@ -15,6 +15,7 @@ import 'package:vowl/features/kids_zone/domain/services/kids_game_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -182,7 +183,16 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                 itemCount: games.length,
                 itemBuilder: (context, index) {
                   final game = games[index];
-                  final completed = completedLevels[game.gameType]?.length ?? 0;
+                  final gameLevels = completedLevels[game.gameType] ?? [];
+                  final totalLevels =
+                      CurriculumManifest.getKidsLevels(game.gameType);
+                  final completedCount = gameLevels.length;
+                  final highestCompleted =
+                      gameLevels.isEmpty ? 0 : gameLevels.reduce(math.max);
+                  final isMastered = completedCount >= totalLevels;
+                  final currentLevel = isMastered
+                      ? totalLevels
+                      : math.min(totalLevels, highestCompleted + 1);
 
                   if (game.gameType == 'handwriting') {
                     return ListenableBuilder(
@@ -266,7 +276,10 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                                     : game.subtitle),
                           game.color,
                           game.icon,
-                          completedCount: completed,
+                          currentLevel: currentLevel,
+                          completedCount: completedCount,
+                          totalLevels: totalLevels,
+                          isMastered: isMastered,
                           trailing: _isCheckingModel.value
                               ? RepaintBoundary(
                                   child:
@@ -324,7 +337,10 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                     game.subtitle,
                     game.color,
                     game.icon,
-                    completedCount: completed,
+                    currentLevel: currentLevel,
+                    completedCount: completedCount,
+                    totalLevels: totalLevels,
+                    isMastered: isMastered,
                   );
                 },
               ),
@@ -343,117 +359,213 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
     String subtitle,
     Color color,
     IconData icon, {
+    required int currentLevel,
+    required int completedCount,
+    required int totalLevels,
+    required bool isMastered,
     Widget? trailing,
-    int completedCount = 0,
   }) {
-    final progress = (completedCount / 200).clamp(0.0, 1.0);
-    return ScaleButton(
-      onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.all(20.r),
-        decoration: BoxDecoration(
-          color: widget.isDark ? AppColors.slate800 : Colors.white,
-          borderRadius: BorderRadius.circular(32.r),
-          border: Border.all(color: color, width: 3.w),
-          boxShadow: [
-            BoxShadow(
-              color: color.withValues(alpha: 0.6),
-              offset: Offset(0, 6.h),
-            ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  padding: EdgeInsets.all(12.r),
-                  decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(20.r),
+    return Semantics(
+      button: true,
+      label: isMastered
+          ? '$title, ${context.tr('category_games.mastered', fallback: 'Mastered')}! $totalLevels of $totalLevels'
+          : (completedCount == 0
+              ? '$title, ${context.tr('quest_archive.new_badge', fallback: 'New')} adventure'
+              : '$title, ${context.tr('quest_archive.level', fallback: 'Level $currentLevel', args: [currentLevel.toString()])}, $completedCount of $totalLevels completed'),
+      child: ScaleButton(
+        onTap: onTap,
+        child: Container(
+          padding: EdgeInsets.all(20.r),
+          decoration: BoxDecoration(
+            color: widget.isDark ? AppColors.slate800 : Colors.white,
+            borderRadius: BorderRadius.circular(32.r),
+            border: Border.all(color: color, width: 3.w),
+            boxShadow: [
+              BoxShadow(
+                color: color.withValues(alpha: 0.6),
+                offset: Offset(0, 6.h),
+              ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(12.r),
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(20.r),
+                    ),
+                    child: Icon(icon, color: color, size: 32.sp),
                   ),
-                  child: Icon(icon, color: color, size: 32.sp),
-                ),
-                // Per-category progress ring
-                if (completedCount > 0)
-                  SizedBox(
-                    width: 36.r,
-                    height: 36.r,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        SizedBox(
-                          width: 36.r,
-                          height: 36.r,
-                          child: CustomPaint(
-                            painter: _ProgressRingPainter(
-                              progress: progress,
-                              color: color,
-                              trackColor: color.withValues(alpha: 0.15),
-                              strokeWidth: 3.5.r,
-                            ),
-                          ),
-                        ),
-                        Text(
-                          '$completedCount',
+                  _buildProgressBadge(
+                    context: context,
+                    color: color,
+                    currentLevel: currentLevel,
+                    completedCount: completedCount,
+                    totalLevels: totalLevels,
+                    isMastered: isMastered,
+                  ),
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: AutoSizeText(
+                          title,
+                          maxLines: 2,
+                          minFontSize: 12,
+                          overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 9.sp,
+                            fontSize: 18.sp,
                             fontWeight: FontWeight.w900,
-                            color: color,
+                            color: widget.isDark
+                                ? Colors.white
+                                : AppColors.slate800,
+                            height: 1.1,
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: AutoSizeText(
-                        title,
-                        maxLines: 2,
-                        minFontSize: 12,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w900,
-                          color: widget.isDark
-                              ? Colors.white
-                              : AppColors.slate800,
-                          height: 1.1,
-                        ),
                       ),
-                    ),
-                    if (trailing != null) ...[SizedBox(width: 4.w), trailing],
-                  ],
-                ),
-                AutoSizeText(
-                  subtitle,
-                  maxLines: 1,
-                  minFontSize: 8,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w500,
-                    color: widget.isDark ? Colors.white60 : Colors.black45,
+                      if (trailing != null) ...[SizedBox(width: 4.w), trailing],
+                    ],
                   ),
-                ),
-              ],
+                  AutoSizeText(
+                    subtitle,
+                    maxLines: 1,
+                    minFontSize: 8,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w500,
+                      color: widget.isDark ? Colors.white60 : Colors.black45,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildProgressBadge({
+    required BuildContext context,
+    required Color color,
+    required int currentLevel,
+    required int completedCount,
+    required int totalLevels,
+    required bool isMastered,
+  }) {
+    if (isMastered) {
+      return Container(
+        width: 38.r,
+        height: 38.r,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: const LinearGradient(
+            colors: [AppColors.amber400, AppColors.amber600],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.amber500.withValues(alpha: 0.4),
+              blurRadius: 8.r,
+              offset: Offset(0, 2.h),
             ),
           ],
         ),
+        child: Icon(
+          Icons.emoji_events_rounded,
+          color: Colors.white,
+          size: 20.r,
+        ),
+      );
+    }
+
+    if (completedCount == 0) {
+      return Container(
+        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.12),
+          borderRadius: BorderRadius.circular(10.r),
+          border: Border.all(
+            color: color.withValues(alpha: 0.3),
+            width: 1.5.w,
+          ),
+        ),
+        child: Text(
+          context.tr('quest_archive.new_badge', fallback: 'NEW'),
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 9.sp,
+            fontWeight: FontWeight.w900,
+            color: color,
+            letterSpacing: 0.5,
+          ),
+        ),
+      );
+    }
+
+    final progress = (completedCount / totalLevels).clamp(0.0, 1.0);
+    return SizedBox(
+      width: 38.r,
+      height: 38.r,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          SizedBox(
+            width: 38.r,
+            height: 38.r,
+            child: CustomPaint(
+              painter: _ProgressRingPainter(
+                progress: progress,
+                color: color,
+                trackColor: color.withValues(alpha: 0.15),
+                strokeWidth: 3.5.r,
+              ),
+            ),
+          ),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'LV',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 7.sp,
+                  fontWeight: FontWeight.w900,
+                  color: color.withValues(alpha: 0.75),
+                  height: 1.0,
+                  letterSpacing: 0.5,
+                ),
+              ),
+              Text(
+                '$currentLevel',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: currentLevel >= 100 ? 9.5.sp : 11.sp,
+                  fontWeight: FontWeight.w900,
+                  color: color,
+                  height: 1.05,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
