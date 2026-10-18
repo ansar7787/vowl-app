@@ -240,7 +240,6 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
                                   onConfirmed: _onSentenceBuilderComplete,
                                   onSkipped: _onSentenceBuilderComplete,
                                   allowSkip: true,
-                                  bonusCoins: 5,
                                   isPositioned: false,
                                   exampleSentence: quest.wordInContext,
                                 ),

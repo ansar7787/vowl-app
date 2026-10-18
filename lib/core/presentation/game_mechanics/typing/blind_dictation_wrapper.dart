@@ -3,13 +3,11 @@ import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 import 'package:vowl/core/utils/gibberish_detector_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 
 import 'package:vowl/core/presentation/game_mechanics/typing/smart_typo_controller.dart';
@@ -26,7 +24,6 @@ class BlindDictationWrapper extends StatefulWidget {
   final VoidCallback onSkipped;
   final VoidCallback? onBypassed;
   final VoidCallback? onReplayAudio;
-  final int? bonusCoins;
   final bool allowSkip;
 
   /// Whether to wrap in a Positioned widget (for Stack layouts).
@@ -44,7 +41,6 @@ class BlindDictationWrapper extends StatefulWidget {
     required this.onSkipped,
     this.onBypassed,
     this.onReplayAudio,
-    this.bonusCoins = 5,
     this.allowSkip = true,
     this.isPositioned = true,
     this.maxAttempts = 3,
@@ -127,12 +123,6 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
       _hapticService.success();
       _focusNode.unfocus();
 
-      // Award bonus coins
-      if (widget.bonusCoins != null && widget.bonusCoins! > 0) {
-        context.read<EconomyBloc>().add(
-          EconomyAddCoinsRequested(widget.bonusCoins!),
-        );
-      }
       Future.delayed(const Duration(milliseconds: 600), () {
         if (mounted) widget.onConfirmed();
       });
@@ -287,37 +277,6 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                                     ),
                                   ),
                                 ],
-                                if (widget.bonusCoins != null)
-                                  Container(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 10.w,
-                                      vertical: 4.h,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          widget.primaryColor,
-                                          widget.primaryColor.withValues(
-                                            alpha: 0.7,
-                                          ),
-                                        ],
-                                      ),
-                                      borderRadius: BorderRadius.circular(20.r),
-                                    ),
-                                    child: AutoSizeText(
-                                      '+${widget.bonusCoins} coins',
-                                      maxLines: 1,
-                                      minFontSize: 6,
-                                      overflow: TextOverflow.visible,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 10.sp,
-                                        fontWeight: FontWeight.w700,
-                                        color: Colors.white,
-                                        letterSpacing: 0.5,
-                                      ),
-                                    ),
-                                  ),
                                 if (widget.allowSkip)
                                   Padding(
                                     padding: EdgeInsets.only(left: 8.w),

@@ -187,7 +187,6 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                       primaryColor: theme.primaryColor,
                                       onTimeUp: () =>
                                           _submitIncorrectAnswer(quest),
-                                      showBonusLabel: false,
                                     ),
 
                                   SizedBox(height: 16.h),

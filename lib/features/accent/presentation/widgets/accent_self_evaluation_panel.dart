@@ -8,7 +8,6 @@ class AccentSelfEvaluationPanel extends StatelessWidget {
   final Color primaryColor;
   final bool isCompact;
   final void Function(bool isCorrect) onEvaluate;
-  final int? bonusCoins;
 
   const AccentSelfEvaluationPanel({
     super.key,
@@ -16,7 +15,6 @@ class AccentSelfEvaluationPanel extends StatelessWidget {
     required this.primaryColor,
     required this.isCompact,
     required this.onEvaluate,
-    this.bonusCoins = 5,
   });
 
   @override
@@ -41,26 +39,7 @@ class AccentSelfEvaluationPanel extends StatelessWidget {
                 color: primaryColor,
               ),
             ),
-            if (bonusCoins != null)
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [primaryColor, primaryColor.withValues(alpha: 0.7)],
-                  ),
-                  borderRadius: BorderRadius.circular(20.r),
-                ),
-                child: Text(
-                  '+$bonusCoins Coins',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.white,
-                    letterSpacing: 1,
-                  ),
-                ),
-              ),
+            
           ],
         ),
         if (textToSpeak.trim().isNotEmpty) ...[

@@ -57,7 +57,6 @@ void main() {
                 correctAnswer: 'Paris is the capital',
                 explanation: 'Geography context',
                 primaryColor: Colors.blue,
-                bonusCoins: 5,
                 onEvaluated: (_) {},
               ),
             ),
@@ -77,9 +76,9 @@ void main() {
     await tester.pump();
     await tester.pump(const Duration(seconds: 1));
 
-    // Shows correct answer and standardized coin badge
+    // Shows correct answer and evaluation buttons, but no coin badge
     expect(find.text('Paris is the capital'), findsOneWidget);
-    expect(find.text('+5 coins'), findsOneWidget);
+    expect(find.text('+5 coins'), findsNothing);
     expect(find.text('NAILED IT'), findsOneWidget);
     expect(find.text('MISSED IT'), findsOneWidget);
   });

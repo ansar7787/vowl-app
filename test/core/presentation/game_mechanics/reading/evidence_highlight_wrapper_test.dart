@@ -61,7 +61,6 @@ void main() {
                     passage: 'The cat slept soundly by the warm fire.',
                     evidenceWords: const ['warm', 'fire'],
                     primaryColor: Colors.amber,
-                    bonusCoins: 5,
                     onCorrectHighlight: () {},
                   ),
                 ],
@@ -75,10 +74,10 @@ void main() {
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 500));
 
-    // Verify natural non-buzzword instruction text and coins badge
+    // Verify natural non-buzzword instruction text and no coin badge
     expect(find.text('FIND THE KEY WORDS'), findsOneWidget);
     expect(find.text('Tap the word(s) that support the answer'), findsOneWidget);
-    expect(find.text('+5 coins'), findsOneWidget);
+    expect(find.text('+5 coins'), findsNothing);
   });
 }
 

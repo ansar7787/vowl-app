@@ -42,8 +42,6 @@ void main() {
           home: Scaffold(
             body: SpeedChallengeTimer(
               durationSeconds: 30,
-              bonusCoinsForSpeed: 5,
-              showBonusLabel: true,
               autoStart: false,
               onTimeUp: () {},
             ),
@@ -55,7 +53,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('30s'), findsOneWidget);
-    expect(find.text('+5 speed bonus'), findsOneWidget);
+    expect(find.text('+5 speed bonus'), findsNothing);
   });
 }
 

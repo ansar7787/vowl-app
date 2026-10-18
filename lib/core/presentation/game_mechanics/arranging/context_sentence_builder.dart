@@ -5,13 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:vowl/core/utils/gibberish_detector_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 
@@ -25,7 +22,6 @@ class ContextSentenceBuilder extends StatefulWidget {
   final List<String>? acceptedKeywordForms;
   final bool isPositioned;
   final int maxAttempts;
-  final int? bonusCoins;
   final bool allowSkip;
   final String? exampleSentence;
 
@@ -40,7 +36,6 @@ class ContextSentenceBuilder extends StatefulWidget {
     this.acceptedKeywordForms,
     this.isPositioned = true,
     this.maxAttempts = 3,
-    this.bonusCoins = 5,
     this.allowSkip = true,
     this.exampleSentence,
   });
@@ -123,14 +118,6 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
     _isSubmitting.value = true;
     _hapticService.success();
     _focusNode.unfocus();
-
-    if (widget.bonusCoins != null && widget.bonusCoins! > 0) {
-      if (_attempts.value < widget.maxAttempts) {
-        context.read<EconomyBloc>().add(
-          EconomyAddCoinsRequested(widget.bonusCoins!),
-        );
-      }
-    }
 
     Future.delayed(const Duration(milliseconds: 800), () {
       if (mounted) widget.onConfirmed();
@@ -573,104 +560,48 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                         : text.split(RegExp(r'\s+')).length;
                     final hasEnoughWords = wordCount >= widget.minWordCount;
 
-                    return ValueListenableBuilder<int>(
-                      valueListenable: _attempts,
-                      builder: (context, attempts, _) {
-                        final canEarnCoins =
-                            widget.bonusCoins != null &&
-                            widget.bonusCoins! > 0 &&
-                            attempts < widget.maxAttempts;
-
-                        return GestureDetector(
-                          onTap: () {
-                            if (!hasEnoughWords) return;
-                            _evaluate();
-                          },
-                          child: Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.symmetric(vertical: 16.h),
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: !hasEnoughWords
-                                    ? [
-                                        Colors.grey.withValues(alpha: 0.8),
-                                        Colors.grey.withValues(alpha: 0.6),
-                                      ]
-                                    : [
-                                        widget.primaryColor,
-                                        widget.primaryColor.withValues(
-                                          alpha: 0.8,
-                                        ),
-                                      ],
-                              ),
-                              borderRadius: BorderRadius.circular(20.r),
-                            ),
-                            child: Center(
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    AutoSizeText(
-                                      ContextSentenceStrings.submitButton(
-                                        context,
-                                      ),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 15.sp,
-                                        fontWeight: FontWeight.w700,
-                                        color: Colors.white,
-                                        letterSpacing: 1.5,
-                                      ),
+                    return GestureDetector(
+                      onTap: () {
+                        if (!hasEnoughWords) return;
+                        _evaluate();
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(vertical: 16.h),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: !hasEnoughWords
+                                ? [
+                                    Colors.grey.withValues(alpha: 0.8),
+                                    Colors.grey.withValues(alpha: 0.6),
+                                  ]
+                                : [
+                                    widget.primaryColor,
+                                    widget.primaryColor.withValues(
+                                      alpha: 0.8,
                                     ),
-                                    if (canEarnCoins) ...[
-                                      SizedBox(width: 8.w),
-                                      Container(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 6.w,
-                                          vertical: 2.h,
-                                        ),
-                                        decoration: BoxDecoration(
-                                          color: Colors.amberAccent.withValues(
-                                            alpha: 0.2,
-                                          ),
-                                          borderRadius: BorderRadius.circular(
-                                            8.r,
-                                          ),
-                                          border: Border.all(
-                                            color: Colors.amberAccent
-                                                .withValues(alpha: 0.5),
-                                          ),
-                                        ),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            AutoSizeText(
-                                              '+${widget.bonusCoins}',
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 10.sp,
-                                                fontWeight: FontWeight.w700,
-                                                color: Colors.amberAccent,
-                                              ),
-                                            ),
-                                            SizedBox(width: 4.w),
-                                            Icon(
-                                              Icons.monetization_on_rounded,
-                                              size: 14.r,
-                                              color: Colors.amberAccent,
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
                                   ],
-                                ),
+                          ),
+                          borderRadius: BorderRadius.circular(20.r),
+                        ),
+                        child: Center(
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: AutoSizeText(
+                              ContextSentenceStrings.submitButton(
+                                context,
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 15.sp,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                                letterSpacing: 1.5,
                               ),
                             ),
                           ),
-                        );
-                      },
+                        ),
+                      ),
                     );
                   },
                 ),

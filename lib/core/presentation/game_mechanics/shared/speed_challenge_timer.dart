@@ -43,16 +43,6 @@ class SpeedChallengeTimer extends StatefulWidget {
   /// Optional callback on each second tick with remaining seconds.
   final ValueChanged<int>? onTick;
 
-  /// Display-only bonus coins label value. Set to 0 to hide.
-  ///
-  /// **Important**: This widget does NOT award coins itself. The parent
-  /// widget must listen to [onTimeUp] and award coins via [EconomyBloc]
-  /// when the user answers before time expires.
-  final int bonusCoinsForSpeed;
-
-  /// Whether to show the "+X Speed Bonus" label. Display-only.
-  final bool showBonusLabel;
-
   /// Whether to auto-start the timer on mount. Default true.
   final bool autoStart;
 
@@ -62,8 +52,6 @@ class SpeedChallengeTimer extends StatefulWidget {
     this.primaryColor,
     required this.onTimeUp,
     this.onTick,
-    this.bonusCoinsForSpeed = 10,
-    this.showBonusLabel = true,
     this.autoStart = true,
   });
 
@@ -282,34 +270,6 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
                     .fade(begin: 1.0, end: 0.4, duration: 400.ms)
                     .then()
                     .fade(begin: 0.4, end: 1.0, duration: 400.ms),
-
-                // Speed bonus indicator
-                if (widget.showBonusLabel && widget.bonusCoinsForSpeed > 0)
-                  Flexible(
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 8.w,
-                        vertical: 2.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: barColor.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(12.r),
-                      ),
-                      child: AutoSizeText(
-                        '+${widget.bonusCoinsForSpeed} speed bonus',
-                        maxLines: 1,
-                        minFontSize: 6,
-                        overflow: TextOverflow.visible,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 9.sp,
-                          fontWeight: FontWeight.w700,
-                          color: barColor,
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                    ),
-                  ),
               ],
             );
           },

@@ -68,7 +68,6 @@ void main() {
                   DynamicAnagramWrapper(
                     expectedText: 'cat',
                     primaryColor: Colors.purple,
-                    bonusCoins: 5,
                     onConfirmed: () {},
                     onFailed: () {},
                   ),
@@ -84,7 +83,7 @@ void main() {
     await tester.pump(const Duration(milliseconds: 500));
 
     expect(find.text('SPELL IT OUT'), findsOneWidget);
-    expect(find.text('+5 coins'), findsOneWidget);
+    expect(find.text('+5 coins'), findsNothing);
   });
 }
 

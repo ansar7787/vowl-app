@@ -27,7 +27,6 @@ class SpeakToConfirmOverlay extends StatefulWidget {
   final VoidCallback? onBypassed;
   final double threshold;
   final int maxAttempts;
-  final int? bonusCoins;
   final bool allowSkip;
   final bool isPositioned;
 
@@ -49,7 +48,6 @@ class SpeakToConfirmOverlay extends StatefulWidget {
     this.onBypassed,
     this.threshold = 0.65,
     this.maxAttempts = 3,
-    this.bonusCoins = 5,
     this.allowSkip = true,
     this.isPositioned = true,
   });
@@ -187,45 +185,6 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                                   ],
                                 ),
                               ),
-                              if (widget.bonusCoins != null)
-                                Container(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 10.w,
-                                    vertical: 4.h,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        widget.primaryColor,
-                                        widget.primaryColor.withValues(
-                                          alpha: 0.7,
-                                        ),
-                                      ],
-                                    ),
-                                    borderRadius: BorderRadius.circular(20.r),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: widget.primaryColor.withValues(
-                                          alpha: 0.3,
-                                        ),
-                                        blurRadius: 8,
-                                        offset: const Offset(0, 2),
-                                      ),
-                                    ],
-                                  ),
-                                  child: AutoSizeText(
-                                    '+${widget.bonusCoins} coins',
-                                    maxLines: 1,
-                                    minFontSize: 7,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 10.sp,
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.white,
-                                      letterSpacing: 0.5,
-                                    ),
-                                  ),
-                                ),
                             ],
                           ),
                           SizedBox(height: 24.h),
