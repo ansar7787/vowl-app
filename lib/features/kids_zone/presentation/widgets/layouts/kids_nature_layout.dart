@@ -79,6 +79,11 @@ class _KidsNatureLayoutState extends State<KidsNatureLayout>
   @override
   void dispose() {
     _fireflyController.dispose();
+        try {
+      if (di.sl.isRegistered<KidsTTSService>()) {
+        di.sl<KidsTTSService>().stop();
+      }
+    } catch (_) {}
     super.dispose();
   }
 

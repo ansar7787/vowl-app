@@ -83,6 +83,15 @@ class _KidsHomeLayoutState extends State<KidsHomeLayout> {
       di.sl<HapticService>().selection();
     }
   }
+  @override
+  void dispose() {
+    try {
+      if (di.sl.isRegistered<KidsTTSService>()) {
+        di.sl<KidsTTSService>().stop();
+      }
+    } catch (_) {}
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

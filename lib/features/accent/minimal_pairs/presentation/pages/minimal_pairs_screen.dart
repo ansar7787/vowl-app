@@ -90,6 +90,9 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen>
     _scrollTimer?.cancel();
     _scrollController.dispose();
     _selectedDroneIndex.dispose();
+        try {
+      soundService.stopTts();
+    } catch (_) {}
     disposeAccentGame();
     super.dispose();
   }

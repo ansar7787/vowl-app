@@ -97,7 +97,7 @@ class _TtsVoiceSelectionBottomSheetState
     _authSubscription?.cancel();
     try {
       if (di.sl.isRegistered<TtsService>()) {
-        di.sl<TtsService>().stop();
+        unawaited(di.sl<TtsService>().stop());
       }
     } catch (_) {}
     super.dispose();
@@ -413,6 +413,42 @@ class _TtsVoiceSelectionBottomSheetState
                   ],
                 ),
                 SizedBox(height: 18.h),
+
+                // No Engine Warning Banner (Empty/Degraded State)
+                if (di.sl.isRegistered<TtsService>() &&
+                    di.sl<TtsService>().engineStatus == TtsEngineStatus.noEngine)
+                  Container(
+                    margin: EdgeInsets.only(bottom: 16.h),
+                    padding: EdgeInsets.all(12.r),
+                    decoration: BoxDecoration(
+                      color: AppColors.rose500.withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(14.r),
+                      border: Border.all(
+                        color: AppColors.rose500.withValues(alpha: 0.35),
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.warning_amber_rounded,
+                          color: AppColors.rose500,
+                          size: 20.r,
+                        ),
+                        SizedBox(width: 10.w),
+                        Expanded(
+                          child: Text(
+                            'No Text-to-Speech engine detected on this device. Voice previews and audio may be unavailable until a speech engine is installed in system settings.',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              color: isDark ? Colors.white70 : Colors.black87,
+                              height: 1.35,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
 
                 // Voice Preset Option Cards
                 ...TtsVoicePreset.values.map((preset) {

@@ -354,6 +354,15 @@ class _KidsTimeLayoutState extends State<KidsTimeLayout> {
     di.sl<HapticService>().selection();
     di.sl<KidsTTSService>().speak(questData.rawInstruction, force: true);
   }
+  @override
+  void dispose() {
+    try {
+      if (di.sl.isRegistered<KidsTTSService>()) {
+        di.sl<KidsTTSService>().stop();
+      }
+    } catch (_) {}
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

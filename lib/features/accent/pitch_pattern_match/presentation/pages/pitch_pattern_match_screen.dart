@@ -69,6 +69,9 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
     _isPreviewing.dispose();
     _sliderValue.dispose();
     _selectedIndex.dispose();
+        try {
+      soundService.stopTts();
+    } catch (_) {}
     disposeAccentGame();
     super.dispose();
   }

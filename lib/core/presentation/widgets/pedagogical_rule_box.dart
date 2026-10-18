@@ -50,6 +50,7 @@ class _PedagogicalRuleBoxState extends State<PedagogicalRuleBox> {
 
   @override
   void dispose() {
+    TtsSpeakerButtonWidget.stopAll();
     _translatedText.dispose();
     super.dispose();
   }

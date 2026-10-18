@@ -1,3 +1,6 @@
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -48,12 +51,54 @@ class ContextualUsageCard extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Flexible(
+                child: Text(
+                  'CONTEXT USAGE',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 1,
+                    color: color.withValues(alpha: 0.8),
+                  ),
+                ),
+              ),
+              ScaleButton(
+                onTap: () {
+                  if (di.sl.isRegistered<SoundService>()) {
+                    final speechSentence = question.replaceAll(
+                      '_____',
+                      selectedOption ?? 'blank',
+                    );
+                    di.sl<SoundService>().playTts(speechSentence);
+                  }
+                },
+                child: Semantics(
+                  label: 'Listen to sentence',
+                  button: true,
+                  child: Padding(
+                    padding: EdgeInsets.all(4.r),
+                    child: Icon(
+                      Icons.volume_up_rounded,
+                      size: 18.r,
+                      color: color,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 12.h),
           Container(
             height: 1,
             width: double.infinity,
             color: color.withValues(alpha: 0.1),
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: 16.h),
           reduceMotion
               ? Text.rich(
                   TextSpan(

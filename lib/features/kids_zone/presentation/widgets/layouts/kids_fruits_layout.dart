@@ -124,6 +124,15 @@ class _KidsFruitsLayoutState extends State<KidsFruitsLayout> {
       }
     }
   }
+  @override
+  void dispose() {
+    try {
+      if (di.sl.isRegistered<KidsTTSService>()) {
+        di.sl<KidsTTSService>().stop();
+      }
+    } catch (_) {}
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

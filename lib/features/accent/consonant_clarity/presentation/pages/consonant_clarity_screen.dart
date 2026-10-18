@@ -81,6 +81,9 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen>
   void dispose() {
     _scrollController.dispose();
     _selectedIndex.dispose();
+        try {
+      soundService.stopTts();
+    } catch (_) {}
     disposeAccentGame();
     super.dispose();
   }

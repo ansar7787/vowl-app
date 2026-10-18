@@ -89,6 +89,11 @@ class _KidsPhonicsLayoutState extends State<KidsPhonicsLayout>
   @override
   void dispose() {
     _animController.dispose();
+        try {
+      if (di.sl.isRegistered<KidsTTSService>()) {
+        di.sl<KidsTTSService>().stop();
+      }
+    } catch (_) {}
     super.dispose();
   }
 

@@ -14,6 +14,7 @@ class WordCardFront extends StatelessWidget {
   final DailyWord word;
   final bool isDark;
   final VoidCallback onSpeak;
+  final VoidCallback? onSpeakSlow;
   final VoidCallback onTranslate;
   final bool isTranslating;
   final String? translatedWord;
@@ -26,6 +27,7 @@ class WordCardFront extends StatelessWidget {
     required this.word,
     required this.isDark,
     required this.onSpeak,
+    this.onSpeakSlow,
     required this.onTranslate,
     required this.isTranslating,
     this.translatedWord,
@@ -137,19 +139,39 @@ class WordCardFront extends StatelessWidget {
                   ),
                 ],
                 SizedBox(height: 12.h),
-                AutoSizeText(
-                  word.phonetic,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w400,
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.6)
-                        : AppColors.slate500,
+                InkWell(
+                  onTap: onSpeakSlow ?? onSpeak,
+                  borderRadius: BorderRadius.circular(8.r),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        AutoSizeText(
+                          word.phonetic,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w400,
+                            color: isDark
+                                ? Colors.white.withValues(alpha: 0.6)
+                                : AppColors.slate500,
+                          ),
+                          maxLines: 2,
+                          minFontSize: 12,
+                        ),
+                        SizedBox(width: 6.w),
+                        Icon(
+                          Icons.volume_down_rounded,
+                          size: 14.r,
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.4)
+                              : AppColors.slate400,
+                        ),
+                      ],
+                    ),
                   ),
-                  maxLines: 2,
-                  minFontSize: 12,
                 ),
                 SizedBox(height: 28.h),
                 Row(
@@ -160,12 +182,20 @@ class WordCardFront extends StatelessWidget {
                       isTranslated: translatedWord != null,
                       onTap: onTranslate,
                     ),
-                    SizedBox(width: 16.w),
+                    SizedBox(width: 12.w),
                     DailyWordsIconButton(
                       icon: Icons.volume_up_rounded,
                       onTap: onSpeak,
                       tooltip: 'Listen to pronunciation',
                     ),
+                    if (onSpeakSlow != null) ...[
+                      SizedBox(width: 12.w),
+                      DailyWordsIconButton(
+                        icon: Icons.slow_motion_video_rounded,
+                        onTap: onSpeakSlow!,
+                        tooltip: 'Listen slowly for clear pronunciation',
+                      ),
+                    ],
                   ],
                 ),
                 // Tap to flip hint

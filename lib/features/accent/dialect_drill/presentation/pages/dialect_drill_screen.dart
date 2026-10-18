@@ -51,6 +51,9 @@ class _DialectDrillScreenState extends State<DialectDrillScreen>
   @override
   void dispose() {
     _scrollController.dispose();
+        try {
+      soundService.stopTts();
+    } catch (_) {}
     disposeAccentGame();
     super.dispose();
   }

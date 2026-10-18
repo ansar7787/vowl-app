@@ -1,3 +1,5 @@
+import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,14 +46,21 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
 
   final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
   final ValueNotifier<bool> _showEvidenceStep = ValueNotifier(false);
+  final ValueNotifier<String?> _activeKaraokeWord = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     soundService.stopTts();
+    if (di.sl.isRegistered<TtsService>()) {
+      try {
+        di.sl<TtsService>().setWordCallback(null);
+      } catch (_) {}
+    }
     _showEvidenceStep.removeListener(_scrollToBottom);
     _pendingSelectedIndex.dispose();
     _showEvidenceStep.dispose();
+    _activeKaraokeWord.dispose();
     _scrollController.dispose();
     disposeReadingGame();
     super.dispose();
@@ -135,14 +144,43 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
   @override
   void onQuestionReset() {
     soundService.stopTts();
+    _activeKaraokeWord.value = null;
+    if (di.sl.isRegistered<TtsService>()) {
+      try {
+        di.sl<TtsService>().setWordCallback(null);
+      } catch (_) {}
+    }
     _pendingSelectedIndex.value = null;
     _showEvidenceStep.value = false;
   }
 
   void _playTts(String text) {
-    if (text.isNotEmpty) {
-      soundService.playTts(text);
+    if (text.isEmpty) return;
+    if (di.sl.isRegistered<TtsService>()) {
+      try {
+        final tts = di.sl<TtsService>();
+        bool isSpeaking = false;
+        try {
+          isSpeaking = tts.isSpeaking;
+        } catch (_) {}
+        if (isSpeaking) {
+          soundService.stopTts();
+          _activeKaraokeWord.value = null;
+          try {
+            tts.setWordCallback(null);
+          } catch (_) {}
+          return;
+        }
+        try {
+          tts.setWordCallback((word) {
+            if (mounted) {
+              _activeKaraokeWord.value = word;
+            }
+          });
+        } catch (_) {}
+      } catch (_) {}
     }
+    soundService.playTts(text);
   }
 
   Widget _buildReadTimeBadge(

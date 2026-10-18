@@ -7,6 +7,7 @@ class ReadAndAnswerFloatingPassage extends StatelessWidget {
   final Color color;
   final bool isDark;
   final VoidCallback? onPlayAudio;
+  final ValueNotifier<String?>? activeWordNotifier;
 
   const ReadAndAnswerFloatingPassage({
     super.key,
@@ -14,6 +15,7 @@ class ReadAndAnswerFloatingPassage extends StatelessWidget {
     required this.color,
     required this.isDark,
     this.onPlayAudio,
+    this.activeWordNotifier,
   });
 
   @override
@@ -109,20 +111,78 @@ class ReadAndAnswerFloatingPassage extends StatelessWidget {
               ),
               SizedBox(height: 10.h),
             ],
-            Text(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 17.sp,
-                height: 1.65,
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.9)
-                    : AppColors.slate800,
-                fontWeight: FontWeight.w400,
+            if (activeWordNotifier != null)
+              ValueListenableBuilder<String?>(
+                valueListenable: activeWordNotifier!,
+                builder: (context, activeWord, _) {
+                  return _buildKaraokeText(text, activeWord, isDark);
+                },
+              )
+            else
+              Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 17.sp,
+                  height: 1.65,
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.9)
+                      : AppColors.slate800,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
-            ),
           ],
         ),
+      ),
+    );
+  }
+  Widget _buildKaraokeText(String text, String? activeWord, bool isDark) {
+    if (activeWord == null || activeWord.trim().isEmpty) {
+      return Text(
+        text,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 17.sp,
+          height: 1.65,
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.9)
+              : AppColors.slate800,
+          fontWeight: FontWeight.w400,
+        ),
+      );
+    }
+
+    final cleanActive = activeWord.replaceAll(RegExp(r'[^\w]'), '').toLowerCase();
+    final tokens = text.split(' ');
+
+    return RichText(
+      text: TextSpan(
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 17.sp,
+          height: 1.65,
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.9)
+              : AppColors.slate800,
+          fontWeight: FontWeight.w400,
+        ),
+        children: tokens.asMap().entries.map((entry) {
+          final token = entry.value;
+          final isLast = entry.key == tokens.length - 1;
+          final cleanToken = token.replaceAll(RegExp(r'[^\w]'), '').toLowerCase();
+          final isMatch = cleanToken.isNotEmpty && cleanToken == cleanActive;
+
+          return TextSpan(
+            text: isLast ? token : '$token ',
+            style: isMatch
+                ? TextStyle(
+                    backgroundColor: color.withValues(alpha: 0.28),
+                    color: color,
+                    fontWeight: FontWeight.bold,
+                  )
+                : null,
+          );
+        }).toList(),
       ),
     );
   }

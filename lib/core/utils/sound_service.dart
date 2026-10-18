@@ -61,6 +61,13 @@ abstract class SoundService {
     List<int>? pauseMarkers,
   });
 
+  /// Speaks text with comparative dual-speed pronunciation (normal then slow).
+  Future<void> playTtsComparison(
+    String text, {
+    double normalRate = 0.8,
+    double slowRate = 0.32,
+  });
+
   /// Aborts all active synthesized speech playback.
   Future<void> stopTts();
 
@@ -324,7 +331,29 @@ class SoundServiceImpl implements SoundService {
       );
     } catch (e) {
       di.sl<AppLogger>().error('SoundService: Error playing TTS', error: e);
-      rethrow;
+    }
+  }
+
+  @override
+  Future<void> playTtsComparison(
+    String text, {
+    double normalRate = 0.8,
+    double slowRate = 0.32,
+  }) async {
+    await _initFuture;
+    if (_isMuted) return;
+    if (di.sl.isRegistered<AudioRecordingService>() &&
+        di.sl<AudioRecordingService>().isRecording) {
+      return;
+    }
+    try {
+      await _ttsService.speakComparison(
+        text,
+        normalRate: normalRate,
+        slowRate: slowRate,
+      );
+    } catch (e) {
+      di.sl<AppLogger>().error('SoundService: Error playing TTS comparison', error: e);
     }
   }
 

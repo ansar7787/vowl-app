@@ -266,7 +266,6 @@ void main() {
     when(() => mockSpeechService.stop()).thenAnswer((_) async {});
     when(() => mockSpeechService.cancel()).thenAnswer((_) async {});
     when(() => mockSpeechService.setWordCallback(any())).thenReturn(null);
-    when(() => mockSpeechService.setSpeechRate(any())).thenAnswer((_) async {});
     when(
       () => mockSpeechService.listen(
         onResult: any(named: 'onResult'),

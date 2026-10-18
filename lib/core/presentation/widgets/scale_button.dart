@@ -11,6 +11,7 @@ import 'package:flutter/services.dart';
 class ScaleButton extends StatefulWidget {
   final Widget child;
   final VoidCallback? onTap;
+  final VoidCallback? onLongPress;
   final double scaleDown;
   final Duration duration;
   final Duration debounceDuration;
@@ -19,6 +20,7 @@ class ScaleButton extends StatefulWidget {
     super.key,
     required this.child,
     this.onTap,
+    this.onLongPress,
     this.scaleDown = 0.95,
     this.duration = const Duration(milliseconds: 100),
     this.debounceDuration = const Duration(milliseconds: 500),
@@ -91,6 +93,12 @@ class _ScaleButtonState extends State<ScaleButton>
           if (widget.onTap != null) _controller.reverse();
         },
         onTap: _handleTap,
+        onLongPress: widget.onLongPress != null
+            ? () {
+                HapticFeedback.mediumImpact();
+                widget.onLongPress!();
+              }
+            : null,
         behavior: HitTestBehavior.opaque,
         child: ScaleTransition(scale: _scaleAnimation, child: widget.child),
       ),

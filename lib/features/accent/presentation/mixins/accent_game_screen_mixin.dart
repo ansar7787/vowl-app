@@ -13,6 +13,10 @@ mixin AccentGameScreenMixin<T extends StatefulWidget>
   }
 
   void disposeAccentGame() {
+    try {
+      soundService.stopTts();
+      soundService.stopAudio();
+    } catch (_) {}
     disposeGame();
   }
 

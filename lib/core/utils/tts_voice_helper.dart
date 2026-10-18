@@ -139,9 +139,14 @@ class TtsVoiceHelper {
 
   static List<dynamic>? _cachedVoices;
 
+  /// Invalidates the in-memory voices cache (e.g., when the app resumes after user installs a new TTS engine).
+  static void invalidateVoiceCache() {
+    _cachedVoices = null;
+  }
+
   /// Warm up and cache available voices in memory to remove preview tap delay.
-  static Future<void> warmUpVoices(FlutterTts tts) async {
-    if (_cachedVoices != null) return;
+  static Future<void> warmUpVoices(FlutterTts tts, {bool force = false}) async {
+    if (!force && _cachedVoices != null) return;
     try {
       final dynamic raw = await tts.getVoices;
       if (raw is List && raw.isNotEmpty) {
@@ -351,21 +356,47 @@ class TtsVoiceHelper {
     }
   }
 
-  /// Sample sentence for the settings audio preview.
+  static final Map<TtsVoicePreset, int> _sampleSentenceIndex = {};
+
+  static const Map<TtsVoicePreset, List<String>> _sampleSentenceCatalog = {
+    TtsVoicePreset.friendlyTeacher: [
+      "Hello! Let's learn and have fun together today!",
+      "Great job! Keep practicing and you will do wonderfully!",
+      "Listen carefully, and repeat after me: The sun is shining bright!",
+    ],
+    TtsVoicePreset.clearGuide: [
+      "Hello! Welcome to Vowl. Let's practice clear English pronunciation.",
+      "Focus on enunciating each syllable clearly and steadily.",
+      "Your pronunciation is improving with every single lesson.",
+    ],
+    TtsVoicePreset.britishAccent: [
+      "Hello! Splendid! Welcome to Vowl. Ready for today's pronunciation lesson?",
+      "Notice the crisp distinction between vowel sounds like bath and trap.",
+      "Practice makes perfect. Shall we have another go at today's quest?",
+    ],
+    TtsVoicePreset.australianAccent: [
+      "Hello! G'day! Welcome to Vowl. Ready to practice natural English pronunciation?",
+      "Listen closely to the relaxed vowel sounds and upbeat intonation.",
+      "Awesome work mate! You're making fantastic progress on your journey.",
+    ],
+    TtsVoicePreset.indianEnglish: [
+      "Hello! Namaste! Welcome to Vowl. Let's master English together.",
+      "Focus on standard rhythm and clear syllable stress for global communication.",
+      "Wonderful effort! Consistent daily practice will build your confidence.",
+    ],
+    TtsVoicePreset.systemDefault: [
+      "Hello! This is your device's default speech voice.",
+      "This voice uses your operating system's standard text-to-speech engine.",
+      "You can adjust system speech preferences in your device settings.",
+    ],
+  };
+
+  /// Sample sentence for the settings audio preview, rotating through varied natural sentences.
   static String getSampleSentence(TtsVoicePreset preset) {
-    switch (preset) {
-      case TtsVoicePreset.friendlyTeacher:
-        return "Hello! Let's learn and have fun together!";
-      case TtsVoicePreset.clearGuide:
-        return "Hello! Welcome to Vowl. Let's practice English.";
-      case TtsVoicePreset.britishAccent:
-        return "Hello! Welcome to Vowl. Ready for today's lesson?";
-      case TtsVoicePreset.australianAccent:
-        return "Hello! Welcome to Vowl. Ready to practice Australian English?";
-      case TtsVoicePreset.indianEnglish:
-        return "Hello! Welcome to Vowl. Let's master English together.";
-      case TtsVoicePreset.systemDefault:
-        return "Hello! This is your device's default speech voice.";
-    }
+    final list = _sampleSentenceCatalog[preset] ?? _sampleSentenceCatalog[TtsVoicePreset.clearGuide]!;
+    final index = _sampleSentenceIndex[preset] ?? 0;
+    final sentence = list[index % list.length];
+    _sampleSentenceIndex[preset] = index + 1;
+    return sentence;
   }
 }

@@ -57,7 +57,7 @@ class TtsSpeakerButtonWidget extends StatefulWidget {
 class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
   int? _mySessionId;
   bool _isSpeaking = false;
-  Timer? _pollTimer;
+  Timer? _watchdogTimer;
 
   @override
   void initState() {
@@ -65,6 +65,13 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
     TtsSpeakerButtonWidget._activeSessionNotifier.addListener(
       _onActiveSessionChanged,
     );
+    if (di.sl.isRegistered<TtsService>()) {
+      try {
+        di.sl<TtsService>().isSpeakingNotifier.addListener(
+          _onEngineSpeakingChanged,
+        );
+      } catch (_) {}
+    }
   }
 
   @override
@@ -80,7 +87,14 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
     TtsSpeakerButtonWidget._activeSessionNotifier.removeListener(
       _onActiveSessionChanged,
     );
-    _pollTimer?.cancel();
+    if (di.sl.isRegistered<TtsService>()) {
+      try {
+        di.sl<TtsService>().isSpeakingNotifier.removeListener(
+          _onEngineSpeakingChanged,
+        );
+      } catch (_) {}
+    }
+    _watchdogTimer?.cancel();
     if (_isSpeaking &&
         TtsSpeakerButtonWidget._activeSessionNotifier.value == _mySessionId) {
       TtsSpeakerButtonWidget.stopAll();
@@ -91,7 +105,7 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
   void _onActiveSessionChanged() {
     final activeId = TtsSpeakerButtonWidget._activeSessionNotifier.value;
     if (activeId != _mySessionId && _isSpeaking) {
-      _pollTimer?.cancel();
+      _watchdogTimer?.cancel();
       if (mounted) {
         setState(() {
           _isSpeaking = false;
@@ -100,7 +114,24 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
     }
   }
 
-  Future<void> _handleTap() async {
+  void _onEngineSpeakingChanged() {
+    if (!mounted) return;
+    bool isSpeakingNow = false;
+    try {
+      isSpeakingNow = di.sl<TtsService>().isSpeakingNotifier.value;
+    } catch (_) {}
+    if (!isSpeakingNow &&
+        _isSpeaking &&
+        TtsSpeakerButtonWidget._activeSessionNotifier.value == _mySessionId) {
+      _watchdogTimer?.cancel();
+      TtsSpeakerButtonWidget._activeSessionNotifier.value = null;
+      setState(() {
+        _isSpeaking = false;
+      });
+    }
+  }
+
+  Future<void> _speak({bool slow = false}) async {
     if (widget.text.trim().isEmpty) return;
 
     if (_isSpeaking) {
@@ -122,6 +153,7 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
     }
 
     try {
+      final double? targetRate = slow ? 0.3 : null;
       if (widget.isKids &&
           widget.locale == null &&
           di.sl.isRegistered<KidsTTSService>()) {
@@ -129,6 +161,7 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
       } else if (di.sl.isRegistered<TtsService>()) {
         await di.sl<TtsService>().speak(
           widget.text,
+          rate: targetRate,
           isKids: widget.isKids,
           locale: widget.locale,
         );
@@ -142,28 +175,16 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
       return;
     }
 
-    // Watchdog and polling timer to detect when speech has completed
-    _pollTimer?.cancel();
-    int ticks = 0;
-    // Allow up to 30 seconds for long explanation sentences
-    const int maxTicks = 30 * 4;
-    _pollTimer = Timer.periodic(const Duration(milliseconds: 250), (timer) {
-      ticks++;
-      if (!mounted ||
-          TtsSpeakerButtonWidget._activeSessionNotifier.value != sessionId) {
-        timer.cancel();
-        return;
-      }
-
-      final isEngineSpeaking =
-          di.sl.isRegistered<TtsService>() && di.sl<TtsService>().isSpeaking;
-
-      // After giving the engine at least 500ms to spin up, check if it has stopped
-      if ((ticks > 2 && !isEngineSpeaking) || ticks >= maxTicks) {
-        timer.cancel();
-        if (TtsSpeakerButtonWidget._activeSessionNotifier.value == sessionId) {
-          TtsSpeakerButtonWidget._activeSessionNotifier.value = null;
-        }
+    // Defensive single watchdog timeout: fires ONLY if native OEM drops completion event completely
+    _watchdogTimer?.cancel();
+    _watchdogTimer = Timer(const Duration(seconds: 30), () {
+      if (mounted &&
+          _isSpeaking &&
+          TtsSpeakerButtonWidget._activeSessionNotifier.value == sessionId) {
+        TtsSpeakerButtonWidget._activeSessionNotifier.value = null;
+        setState(() {
+          _isSpeaking = false;
+        });
       }
     });
   }
@@ -172,25 +193,60 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
   Widget build(BuildContext context) {
     final iconSize = (widget.size ?? 16).r;
 
+    // Check TTS engine availability — show disabled state if unavailable
+    bool isEngineReady = true;
+    if (di.sl.isRegistered<TtsService>()) {
+      try {
+        isEngineReady =
+            di.sl<TtsService>().engineStatus == TtsEngineStatus.ready;
+      } catch (_) {
+        isEngineReady = true;
+      }
+    }
+
     return Semantics(
-      label: _isSpeaking ? 'Stop audio narration' : 'Listen to audio narration',
+      label: !isEngineReady
+          ? 'Audio narration unavailable'
+          : (_isSpeaking
+              ? 'Stop audio narration'
+              : 'Listen to audio narration. Long press for slow pronunciation.'),
       button: true,
-      child: ScaleButton(
-        onTap: _handleTap,
-        child: Container(
-          padding: EdgeInsets.all(6.r),
-          decoration: BoxDecoration(
-            color: widget.color.withValues(alpha: _isSpeaking ? 0.25 : 0.1),
-            shape: BoxShape.circle,
-            border: Border.all(
-              color: widget.color.withValues(alpha: _isSpeaking ? 0.5 : 0.2),
-              width: 1,
+      child: Tooltip(
+        message: !isEngineReady
+            ? 'Text-to-speech unavailable on this device'
+            : (_isSpeaking
+                ? 'Tap to stop'
+                : 'Tap to listen • Hold for slow pronunciation'),
+        child: ScaleButton(
+          onTap: isEngineReady ? () => _speak(slow: false) : null,
+          onLongPress: isEngineReady ? () => _speak(slow: true) : null,
+          child: Container(
+            padding: EdgeInsets.all(6.r),
+            decoration: BoxDecoration(
+              color: widget.color.withValues(
+                alpha: !isEngineReady
+                    ? 0.05
+                    : (_isSpeaking ? 0.25 : 0.1),
+              ),
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: widget.color.withValues(
+                  alpha: !isEngineReady
+                      ? 0.1
+                      : (_isSpeaking ? 0.5 : 0.2),
+                ),
+                width: 1,
+              ),
             ),
-          ),
-          child: Icon(
-            _isSpeaking ? Icons.stop_rounded : Icons.volume_up_rounded,
-            color: widget.color,
-            size: iconSize,
+            child: Icon(
+              !isEngineReady
+                  ? Icons.volume_off_rounded
+                  : (_isSpeaking
+                      ? Icons.stop_rounded
+                      : Icons.volume_up_rounded),
+              color: widget.color.withValues(alpha: isEngineReady ? 1.0 : 0.3),
+              size: iconSize,
+            ),
           ),
         ),
       ),
