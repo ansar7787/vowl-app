@@ -156,6 +156,7 @@ class _WeeklyXpChart extends StatelessWidget {
     final activeDays = days.where((d) => d.xp > 0).length;
 
     final card = GlassTile(
+      blur: 0,
       padding: EdgeInsets.all(20.r),
       borderRadius: BorderRadius.circular(24.r),
       child: Column(
@@ -397,6 +398,7 @@ class _CategoryMasteryOverview extends StatelessWidget {
     final overallPercent = (overallProgress * 100).toStringAsFixed(1);
 
     final card = GlassTile(
+      blur: 0,
       padding: EdgeInsets.all(20.r),
       borderRadius: BorderRadius.circular(24.r),
       child: Column(
@@ -657,6 +659,7 @@ class _ContinueLearningSection extends StatelessWidget {
 
     if (topGames.isEmpty) {
       return GlassTile(
+        blur: 0,
         padding: EdgeInsets.all(20.r),
         borderRadius: BorderRadius.circular(24.r),
         child: Column(
@@ -758,6 +761,7 @@ class _ContinueLearningSection extends StatelessWidget {
         );
       },
       child: GlassTile(
+        blur: 0,
         borderRadius: BorderRadius.circular(24.r),
         padding: EdgeInsets.all(16.r),
         child: Row(

@@ -74,6 +74,7 @@ class AdventureDailyXpChart extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.r),
           child: GlassTile(
+            blur: 0,
             padding: EdgeInsets.all(20.r),
             borderRadius: BorderRadius.circular(32.r),
             child: weeklyTotal == 0

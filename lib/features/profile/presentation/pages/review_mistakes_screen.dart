@@ -654,6 +654,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
               }
             },
             child: GlassTile(
+              blur: 0,
               borderRadius: BorderRadius.circular(16.r),
               padding: EdgeInsets.all(16.r),
               child: Column(
@@ -953,7 +954,9 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
 
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      physics: const BouncingScrollPhysics(),
+      physics: const AlwaysScrollableScrollPhysics(
+        parent: BouncingScrollPhysics(),
+      ),
       padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 28.h, bottom: 4.h),
       child: Row(
         children: [
