@@ -26,72 +26,72 @@ class PremiumSuccessOverlay extends StatelessWidget {
         color: const Color(0xFF13141C).withValues(alpha: 0.95),
         borderRadius: BorderRadius.circular(32.r),
         border: Border.all(
-          color: AppColors.indigo500.withValues(alpha: 0.4),
+          color: AppColors.emerald500.withValues(alpha: 0.4),
           width: 1.5,
         ),
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.indigo500.withValues(alpha: 0.15),
-                blurRadius: 50,
-                spreadRadius: 10,
-              ),
-            ],
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.emerald500.withValues(alpha: 0.18),
+            blurRadius: 50,
+            spreadRadius: 10,
           ),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Semantics(
-                  liveRegion: true,
-                  label: context.tr(
-                    'premium.success_title',
-                    fallback: 'UPGRADE SUCCESSFUL',
-                  ),
-                  child:
-                      Container(
-                            width: 90.r,
-                            height: 90.r,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              gradient: const LinearGradient(
-                                colors: [
-                                  AppColors.indigo500,
-                                  AppColors.violet500,
-                                ],
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
+        ],
+      ),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Semantics(
+              liveRegion: true,
+              label: context.tr(
+                'premium.success_title',
+                fallback: 'UPGRADE SUCCESSFUL',
+              ),
+              child:
+                  Container(
+                        width: 90.r,
+                        height: 90.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: const LinearGradient(
+                            colors: [
+                              AppColors.emerald400,
+                              AppColors.emerald600,
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.emerald500.withValues(
+                                alpha: 0.5,
                               ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: const Color(
-                                    0xFF6366F1,
-                                  ).withValues(alpha: 0.5),
-                                  blurRadius: 20,
-                                  offset: const Offset(0, 10),
-                                ),
-                              ],
-                              border: Border.all(
-                                color: Colors.white.withValues(alpha: 0.5),
-                                width: 2,
-                              ),
+                              blurRadius: 20,
+                              offset: const Offset(0, 10),
                             ),
-                            child: Icon(
-                              LucideIcons.checkCircle2,
-                              color: Colors.white,
-                              size: 44.r,
-                            ),
-                          )
-                          .animate()
-                          .scale(duration: 600.ms, curve: Curves.elasticOut)
-                          .shimmer(duration: 2.seconds, delay: 500.ms),
-                ),
-                SizedBox(height: 28.h),
-                ShaderMask(
-                  shaderCallback: (bounds) => const LinearGradient(
-                    colors: [AppColors.indigo500, AppColors.violet500],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ).createShader(bounds),
+                          ],
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.5),
+                            width: 2,
+                          ),
+                        ),
+                        child: Icon(
+                          LucideIcons.checkCircle2,
+                          color: Colors.white,
+                          size: 44.r,
+                        ),
+                      )
+                      .animate()
+                      .scale(duration: 600.ms, curve: Curves.elasticOut)
+                      .shimmer(duration: 2.seconds, delay: 500.ms),
+            ),
+            SizedBox(height: 28.h),
+            ShaderMask(
+              shaderCallback: (bounds) => const LinearGradient(
+                colors: [AppColors.emerald400, AppColors.emerald500],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ).createShader(bounds),
                   child: Text(
                     context.tr(
                       'premium.success_title',
@@ -184,16 +184,14 @@ class PremiumSuccessOverlay extends StatelessWidget {
                       padding: EdgeInsets.symmetric(vertical: 16.h),
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(
-                          colors: [AppColors.indigo500, AppColors.violet500],
+                          colors: [AppColors.emerald500, AppColors.emerald600],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
                         borderRadius: BorderRadius.circular(24.r),
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(
-                              0xFF6366F1,
-                            ).withValues(alpha: 0.4),
+                            color: AppColors.emerald500.withValues(alpha: 0.4),
                             blurRadius: 15,
                             offset: const Offset(0, 5),
                           ),
