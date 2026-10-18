@@ -795,7 +795,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byIcon(LucideIcons.checkCircle), findsOneWidget);
-      expect(find.text("You're already a Premium Quester!"), findsOneWidget);
+      expect(find.text('Pro Membership Active'), findsOneWidget);
       expect(find.textContaining('Valid until:'), findsOneWidget);
 
       // Plans and checkout button should NOT be rendered
