@@ -14,53 +14,55 @@ void main() {
 
   setUp(() {
     mockAuthBloc = MockAuthBloc();
-    when(() => mockAuthBloc.state).thenReturn(const AuthState.unauthenticated());
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(const AuthState.unauthenticated());
   });
 
-  testWidgets('GameSkipBypassButton renders SKIP label and responds to attempts', (
-    WidgetTester tester,
-  ) async {
-    tester.view.physicalSize = const Size(390, 844);
-    tester.view.devicePixelRatio = 1.0;
-    addTearDown(() {
-      tester.view.resetPhysicalSize();
-      tester.view.resetDevicePixelRatio();
-    });
+  testWidgets(
+    'GameSkipBypassButton renders SKIP label and responds to attempts',
+    (WidgetTester tester) async {
+      tester.view.physicalSize = const Size(390, 844);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
 
-    final isSubmitting = ValueNotifier<bool>(false);
-    final attempts = ValueNotifier<int>(0);
+      final isSubmitting = ValueNotifier<bool>(false);
+      final attempts = ValueNotifier<int>(0);
 
-    await tester.pumpWidget(
-      ScreenUtilInit(
-        designSize: const Size(390, 844),
-        builder: (context, _) => BlocProvider<AuthBloc>.value(
-          value: mockAuthBloc,
-          child: MaterialApp(
-            home: Scaffold(
-              body: GameSkipBypassButton(
-                subtitleColor: Colors.grey,
-                isSubmitting: isSubmitting,
-                attempts: attempts,
-                maxAttempts: 3,
-                onConfirmed: () {},
-                onSkipped: () {},
-                onSubmittingChanged: (_) {},
+      await tester.pumpWidget(
+        ScreenUtilInit(
+          designSize: const Size(390, 844),
+          builder: (context, _) => BlocProvider<AuthBloc>.value(
+            value: mockAuthBloc,
+            child: MaterialApp(
+              home: Scaffold(
+                body: GameSkipBypassButton(
+                  subtitleColor: Colors.grey,
+                  isSubmitting: isSubmitting,
+                  attempts: attempts,
+                  maxAttempts: 3,
+                  onConfirmed: () {},
+                  onSkipped: () {},
+                  onSubmittingChanged: (_) {},
+                ),
               ),
             ),
           ),
         ),
-      ),
-    );
+      );
 
-    await tester.pumpAndSettle();
+      await tester.pumpAndSettle();
 
-    expect(find.text('SKIP'), findsOneWidget);
+      expect(find.text('SKIP'), findsOneWidget);
 
-    // When attempts reach maxAttempts (3), label changes to CONTINUE
-    attempts.value = 3;
-    await tester.pumpAndSettle();
+      // When attempts reach maxAttempts (3), label changes to CONTINUE
+      attempts.value = 3;
+      await tester.pumpAndSettle();
 
-    expect(find.text('CONTINUE'), findsOneWidget);
-  });
+      expect(find.text('CONTINUE'), findsOneWidget);
+    },
+  );
 }
-

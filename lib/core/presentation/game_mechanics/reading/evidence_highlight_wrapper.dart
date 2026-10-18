@@ -410,11 +410,43 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                             : widget.primaryColor,
                                       ),
                                     ),
-                                  );
-                                },
+                                );
+                              },
+                            ),
+                            if (widget.bonusCoins != null) ...[
+                              SizedBox(width: 8.w),
+                              Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 10.w,
+                                  vertical: 4.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      widget.primaryColor,
+                                      widget.primaryColor.withValues(alpha: 0.7),
+                                    ],
+                                  ),
+                                  borderRadius: BorderRadius.circular(20.r),
+                                ),
+                                child: AutoSizeText(
+                                  '+${widget.bonusCoins} coins',
+                                  maxLines: 1,
+                                  minFontSize: 4,
+                                  stepGranularity: 0.5,
+                                  overflow: TextOverflow.visible,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                    letterSpacing: 0.5,
+                                  ),
+                                ),
                               ),
                             ],
-                          ),
+                          ],
+                        ),
                           SizedBox(height: 20.h),
 
                           // Passage with tappable words

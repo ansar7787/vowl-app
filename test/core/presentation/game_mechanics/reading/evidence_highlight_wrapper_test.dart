@@ -75,9 +75,10 @@ void main() {
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 500));
 
-    // Verify natural non-buzzword instruction text
+    // Verify natural non-buzzword instruction text and coins badge
     expect(find.text('FIND THE KEY WORDS'), findsOneWidget);
     expect(find.text('Tap the word(s) that support the answer'), findsOneWidget);
+    expect(find.text('+5 coins'), findsOneWidget);
   });
 }
 
