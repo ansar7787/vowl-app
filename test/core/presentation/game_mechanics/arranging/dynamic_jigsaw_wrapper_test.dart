@@ -80,8 +80,9 @@ void main() {
     // Give animations time to settle
     await tester.pumpAndSettle();
 
-    // Verify words are present in the available tiles area
+    // Verify words and standardized coins badge are present
     expect(find.text('hello'), findsOneWidget);
     expect(find.text('world'), findsOneWidget);
+    expect(find.text('+5 coins'), findsOneWidget);
   });
 }
