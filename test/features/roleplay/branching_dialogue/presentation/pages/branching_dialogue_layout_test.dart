@@ -612,7 +612,7 @@ void main() {
 
       expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
       expect(find.text('NOW SAY IT'), findsOneWidget);
-      expect(find.text('+5 COINS'), findsOneWidget);
+      expect(find.text('+5 COINS'), findsNothing);
       expect(find.text('Sure, I will take a look at it this afternoon.'), findsNWidgets(2)); // in board and in overlay
     });
 

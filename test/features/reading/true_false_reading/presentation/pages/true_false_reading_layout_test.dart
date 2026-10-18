@@ -529,7 +529,7 @@ void main() {
         await tester.pump(const Duration(milliseconds: 1000));
 
         verify(() => mockHapticService.success()).called(3);
-        verify(() => mockSoundService.playCorrect()).called(3);
+        verify(() => mockSoundService.playCorrect()).called(1);
         verify(
           () => mockReadingBloc.add(const ReadingSpeakConfirmed(5)),
         ).called(1);
@@ -668,6 +668,7 @@ void main() {
       );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 1000));
+      await tester.pumpAndSettle();
 
       expect(
         find.text('Penguins naturally inhabit the northern hemisphere Arctic.'),

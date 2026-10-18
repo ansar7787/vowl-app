@@ -293,8 +293,8 @@ void main() {
       expect(find.byKey(const Key('audio_sentence_order_oscilloscope')), findsOneWidget);
 
       expect(find.byType(DynamicJigsawWrapper), findsOneWidget);
-      expect(find.text('BUILD THE SENTENCE!'), findsOneWidget);
-      expect(find.text('Tap the words in the correct grammatical order'), findsOneWidget);
+      expect(find.text('ARRANGE THE WORDS'), findsOneWidget);
+      expect(find.text('Tap the words in the right order'), findsOneWidget);
       expect(find.text('4 words'), findsOneWidget);
     });
 

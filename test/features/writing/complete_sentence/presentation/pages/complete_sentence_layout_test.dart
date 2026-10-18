@@ -439,7 +439,7 @@ void main() {
 
       // DynamicAnagramWrapper should now be rendered!
       expect(find.byType(DynamicAnagramWrapper), findsOneWidget);
-      expect(find.text('NOW SPELL IT!'), findsOneWidget);
+      expect(find.text('SPELL IT OUT'), findsOneWidget);
     });
 
     testWidgets('dragging correct ammo onto target wall triggers fire', (

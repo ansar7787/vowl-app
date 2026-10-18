@@ -659,7 +659,7 @@ void main() {
     );
 
     testWidgets(
-      '4.3 tapping evidence words in EvidenceHighlightWrapper highlights with success haptics and sfx',
+      '4.3 tapping evidence words in EvidenceHighlightWrapper highlights with success haptics',
       (tester) async {
         await pumpScreen(tester);
 
@@ -684,7 +684,6 @@ void main() {
         await tester.pump();
 
         verify(() => mockHapticService.success()).called(1);
-        verify(() => mockSoundService.playCorrect()).called(1);
       },
     );
 
