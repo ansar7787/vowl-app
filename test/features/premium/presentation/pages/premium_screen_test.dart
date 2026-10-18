@@ -31,6 +31,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
 import 'package:vowl/features/premium/presentation/pages/premium_screen.dart';
 import 'package:vowl/features/premium/presentation/widgets/widgets.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 // ---------------------------------------------------------------------------
 // Mocks & Test Doubles
@@ -474,6 +475,7 @@ void main() {
     UrlLauncherPlatform.instance = mockUrlLauncherPlatform;
 
     HttpOverrides.global = TestHttpOverrides(statusCode: 200);
+    SharedPreferences.setMockInitialValues({'user_payment_contact': '9876543210'});
 
     // Default InAppPurchase products
     InAppPurchaseService.instance.products = [
@@ -802,6 +804,50 @@ void main() {
 
       await tester.pumpWidget(const SizedBox());
     });
+
+    testWidgets('tapping Extend Membership reveals plan list and CTA button, tapping Hide Plans hides them', (
+      tester,
+    ) async {
+      when(() => mockAuthBloc.state).thenReturn(
+        AuthState.authenticated(testPremiumUser),
+      );
+
+      await tester.pumpWidget(
+        buildTestableWidget(
+          child: const PremiumScreen(),
+          authBloc: mockAuthBloc,
+          tester: tester,
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      // Initially plans are hidden
+      expect(find.byType(PremiumPlanCard), findsNothing);
+      expect(find.text('Continue'), findsNothing);
+
+      // Tap Extend Membership
+      final extendBtn = find.text('Extend Membership');
+      expect(extendBtn, findsOneWidget);
+      await scrollAndTap(tester, extendBtn);
+      await tester.pumpAndSettle();
+
+      // Plans and checkout button should now be rendered
+      expect(find.byType(PremiumPlanCard), findsNWidgets(3));
+      expect(find.text('Continue'), findsOneWidget);
+      expect(find.text('Hide Plans'), findsOneWidget);
+
+      // Tap Hide Plans to collapse again
+      final hideBtn = find.text('Hide Plans');
+      await scrollAndTap(tester, hideBtn);
+      await tester.pumpAndSettle();
+
+      // Plans should be hidden again
+      expect(find.byType(PremiumPlanCard), findsNothing);
+      expect(find.text('Continue'), findsNothing);
+      expect(find.text('Extend Membership'), findsOneWidget);
+
+      await tester.pumpWidget(const SizedBox());
+    });
   });
 
   // =========================================================================
@@ -998,8 +1044,8 @@ void main() {
 
       fakePaymentService.onFailure?.call(
         PaymentFailureResponse(
-          Razorpay.PAYMENT_CANCELLED,
-          'Payment cancelled by user',
+          Razorpay.NETWORK_ERROR,
+          'Network connection lost',
           {},
         ),
       );
@@ -1007,7 +1053,39 @@ void main() {
 
       verify(() => mockHapticService.error()).called(1);
       expect(find.byType(PremiumFailureOverlay), findsOneWidget);
-      expect(find.text('Payment cancelled by user'), findsOneWidget);
+      expect(find.text('Network connection lost'), findsOneWidget);
+
+      await tester.pumpWidget(const SizedBox());
+    });
+
+    testWidgets('cancellation Razorpay callback dismisses gracefully without error overlay', (
+      tester,
+    ) async {
+      InAppPurchaseService.setCachedCountryCodeForTesting('IN');
+
+      await tester.pumpWidget(
+        buildTestableWidget(
+          child: const PremiumScreen(),
+          authBloc: mockAuthBloc,
+          tester: tester,
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      final ctaBtn = find.text('Continue');
+      await scrollAndTap(tester, ctaBtn);
+
+      fakePaymentService.onFailure?.call(
+        PaymentFailureResponse(
+          Razorpay.PAYMENT_CANCELLED,
+          'Payment cancelled by user',
+          {},
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      verify(() => mockHapticService.light()).called(1);
+      expect(find.byType(PremiumFailureOverlay), findsNothing);
 
       await tester.pumpWidget(const SizedBox());
     });
@@ -1264,8 +1342,8 @@ void main() {
       expect(find.byType(ModernFeatureBar), findsOneWidget);
       expect(find.text('PREMIUM PERKS'), findsOneWidget);
 
-      await scrollTo(tester, find.text('SECURE TRANSACTION • CANCEL ANYTIME'));
-      expect(find.text('SECURE TRANSACTION • CANCEL ANYTIME'), findsOneWidget);
+      await scrollTo(tester, find.text('100% SECURE CHECKOUT • NO AUTO-RENEWAL'));
+      expect(find.text('100% SECURE CHECKOUT • NO AUTO-RENEWAL'), findsOneWidget);
       expect(
         find.text(
           'One-time payment. Access for the selected duration. No recurring charges.',

@@ -193,12 +193,12 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
   }
 
   void _handlePaymentFailure(PaymentFailureResponse response) {
-    di.sl<HapticService>().error();
     _pendingPack = null;
     if (mounted) {
       _isProcessing = false;
       _updateState();
       if (response.code == Razorpay.PAYMENT_CANCELLED) {
+        di.sl<HapticService>().light();
         CustomSnackBar.show(
           context: context,
           message: context.tr(
@@ -208,6 +208,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
           type: CustomSnackBarType.info,
         );
       } else {
+        di.sl<HapticService>().error();
         CustomSnackBar.show(
           context: context,
           message:

@@ -147,6 +147,9 @@ class RazorpayPaymentService implements PaymentService {
         if (contact.isNotEmpty) 'contact': contact,
         if (email.isNotEmpty) 'email': email,
       },
+      'theme': {
+        'color': '#6366F1',
+      },
     };
 
     try {

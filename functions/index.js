@@ -334,6 +334,7 @@ exports.verifyPayment = onCall(async (request) => {
 
   // 5. Payment verified - Grant Premium
   const userRef = db.collection('users').doc(uid);
+  let grantedExpiryDate = null;
 
   await db.runTransaction(async (transaction) => {
     const userDoc = await transaction.get(userRef);
@@ -346,12 +347,14 @@ exports.verifyPayment = onCall(async (request) => {
     // Prevent duplicate claims for the same payment
     if (userData.lastPaymentId === paymentId) {
       console.warn(`Payment ${paymentId} already processed for user ${uid}`);
+      grantedExpiryDate = userData.premiumExpiryDate?.toDate?.() || new Date();
       return;
     }
 
     const currentExpiry = userData.premiumExpiryDate?.toDate?.() || null;
     const base = (currentExpiry && currentExpiry > new Date()) ? currentExpiry : new Date();
     const expiryDate = new Date(base.getTime() + days * 24 * 60 * 60 * 1000);
+    grantedExpiryDate = expiryDate;
 
     transaction.update(userRef, {
       isPremium: true,
@@ -368,10 +371,11 @@ exports.verifyPayment = onCall(async (request) => {
     }
   }
 
+  const finalIso = (grantedExpiryDate || new Date()).toISOString();
   console.log(
-    `Premium granted to user ${uid} until ${expiryDate.toISOString()}`,
+    `Premium granted to user ${uid} until ${finalIso}`,
   );
-  return { success: true, expiryDate: expiryDate.toISOString() };
+  return { success: true, expiryDate: finalIso };
 });
 
 // --------------------------------------------------

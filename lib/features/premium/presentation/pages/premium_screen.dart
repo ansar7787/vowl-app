@@ -26,10 +26,34 @@ import 'package:vowl/features/premium/presentation/widgets/widgets.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:vowl/core/services/in_app_purchase_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class _LocalPalette {
   _LocalPalette._();
   static const Color color020617 = Color(0xFF020617);
+}
+
+class _IndiaPhoneInputFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
+    var digits = newValue.text.replaceAll(RegExp(r'\D'), '');
+    if (digits.startsWith('91') && digits.length > 10) {
+      digits = digits.substring(2);
+    } else if (digits.startsWith('0') && digits.length > 10) {
+      digits = digits.substring(1);
+    }
+    if (digits.length > 10) {
+      digits = digits.substring(0, 10);
+    }
+    return TextEditingValue(
+      text: digits,
+      selection: TextSelection.collapsed(offset: digits.length),
+    );
+  }
 }
 
 enum PaymentMethod { razorpay, googlePlay }
@@ -47,6 +71,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   bool _isProcessingVal = false;
   bool _paymentCompletedVal = false;
   PaymentMethod _selectedPaymentMethod = PaymentMethod.razorpay;
+  bool _showExtendPlans = false;
   bool? _paymentSuccessVal;
   String? _errorMessageVal;
   String? _transactionIdVal;
@@ -113,6 +138,16 @@ class _PremiumScreenState extends State<PremiumScreen> {
   }
 
   Future<void> _loadDynamicPlans() async {
+    // REAL-WORLD OPTIMIZATION:
+    // When a user is already an active Premium member, their plans are not displayed
+    // (they see the VIP Member Pass). Skip the network fetch upfront to eliminate
+    // latency, reduce Firestore reads, and make the screen open instantaneously.
+    // Plans will be lazily loaded only if the user explicitly taps "Extend Membership".
+    final user = context.read<AuthBloc>().state.user;
+    if (user?.isPremium == true && !_showExtendPlans) {
+      return;
+    }
+
     try {
       final plans = await di.sl<SubscriptionPlansService>().fetchPlans();
       if (mounted && plans.isNotEmpty) {
@@ -162,9 +197,73 @@ class _PremiumScreenState extends State<PremiumScreen> {
     _cancelPaymentTimeout();
     if (!mounted) return;
 
+    final user = context.read<AuthBloc>().state.user;
+    if (user == null) {
+      if (mounted) {
+        _isProcessingVal = false;
+        _paymentCompletedVal = true;
+        _paymentSuccessVal = false;
+        _errorMessageVal = 'Session expired. Please restart the app.';
+        _updateState();
+      }
+      return;
+    }
+
+    void triggerCelebration() {
+      if (!mounted) return;
+      context.read<AuthBloc>().add(const AuthReloadUser());
+      di.sl<HapticService>().success();
+      _confettiController.play();
+
+      _showExtendPlans = false;
+      _isProcessingVal = false;
+      _paymentCompletedVal = true;
+      _paymentSuccessVal = true;
+      _transactionIdVal = response.paymentId;
+      _errorMessageVal = null;
+      _updateState();
+    }
+
     try {
-      final user = context.read<AuthBloc>().state.user;
-      if (user != null) {
+      final selectedPlan = _activePlansVal[_selectedPlanIndexVal];
+      await _paymentService.upgradeToPremium(
+        orderId: response.orderId ?? '',
+        paymentId: response.paymentId ?? '',
+        signature: response.signature ?? '',
+        days: selectedPlan.days,
+      );
+
+      if (mounted) {
+        triggerCelebration();
+      }
+    } catch (e, stackTrace) {
+      di.sl<AppLogger>().error(
+        'Initial upgrade call encountered error, starting resilient verification',
+        error: e,
+        stackTrace: stackTrace,
+      );
+
+      // PRODUCTION RESILIENCE:
+      // The gateway already confirmed payment success. An exception at this stage
+      // often means Firestore updated the user doc, but the function returned 500
+      // during response serialization (e.g., scoping bug), or mobile network dropped.
+      // NEVER show "Payment failed - retry card" without checking Firestore state first!
+      if (mounted) {
+        context.read<AuthBloc>().add(const AuthReloadUser());
+      }
+      await Future.delayed(const Duration(milliseconds: 1200));
+      if (!mounted) return;
+
+      if (context.read<AuthBloc>().state.user?.isPremium == true) {
+        di.sl<AppLogger>().debug(
+          'User already has active premium status in Firestore. Displaying success overlay.',
+        );
+        triggerCelebration();
+        return;
+      }
+
+      // Retry verification once with backoff (backend endpoint is idempotent)
+      try {
         final selectedPlan = _activePlansVal[_selectedPlanIndexVal];
         await _paymentService.upgradeToPremium(
           orderId: response.orderId ?? '',
@@ -172,69 +271,77 @@ class _PremiumScreenState extends State<PremiumScreen> {
           signature: response.signature ?? '',
           days: selectedPlan.days,
         );
-
         if (mounted) {
-          // Refresh user state to reflect premium status
-          context.read<AuthBloc>().add(const AuthReloadUser());
-
-          di.sl<HapticService>().success();
-          _confettiController.play();
-
-          _isProcessingVal = false;
-          _paymentCompletedVal = true;
-          _paymentSuccessVal = true;
-          _transactionIdVal = response.paymentId;
-          _errorMessageVal = null;
-          _updateState();
+          triggerCelebration();
+          return;
         }
-      } else {
-        _isProcessingVal = false;
-        _paymentCompletedVal = true;
-        _paymentSuccessVal = false;
-        _errorMessageVal = 'Session expired. Please restart the app.';
-        _updateState();
-      }
-    } catch (e, stackTrace) {
-      // SECURITY / UX FIX: the original code surfaced `e.toString()`
-      // directly to the user (e.g. "Failed to upgrade account:
-      // _TypeError: ..."), which can leak internal implementation detail
-      // and is confusing/unactionable for a paying customer. The raw
-      // error is still logged for diagnostics; the user only ever sees a
-      // safe, localized, generic message.
-      di.sl<AppLogger>().error(
-        'Premium upgrade failed after successful payment',
-        error: e,
-        stackTrace: stackTrace,
-      );
-      if (mounted) {
-        di.sl<HapticService>().error();
-        _isProcessingVal = false;
-        _paymentCompletedVal = true;
-        _paymentSuccessVal = false;
-        _errorMessageVal = context.tr(
-          'premium.error_upgrade_failed',
-          fallback: 'We couldn\'t activate your Pro access. Please contact support with your transaction ID.',
+      } catch (retryError) {
+        di.sl<AppLogger>().error(
+          'Payment upgrade retry also failed',
+          error: retryError,
         );
-        _updateState();
       }
+
+      // Final state check
+      if (mounted) {
+        context.read<AuthBloc>().add(const AuthReloadUser());
+      }
+      await Future.delayed(const Duration(milliseconds: 800));
+      if (!mounted) return;
+
+      if (context.read<AuthBloc>().state.user?.isPremium == true) {
+        triggerCelebration();
+        return;
+      }
+
+      // Reassuring pending status notice — money was debited, never prompt user to retry card!
+      di.sl<HapticService>().error();
+      _isProcessingVal = false;
+      _paymentCompletedVal = true;
+      _paymentSuccessVal = false;
+      _transactionIdVal = response.paymentId;
+      _errorMessageVal = context.tr(
+        'premium.payment_verifying_notice',
+        fallback: 'Payment received (Ref: ${response.paymentId}). Your transaction was confirmed by your bank, but server synchronization is delayed. Your Pro access will activate shortly. Please do not pay again.',
+      );
+      _updateState();
     }
   }
 
   void _handlePaymentFailure(PaymentFailureResponse response) {
     _cancelPaymentTimeout();
-    di.sl<HapticService>().error();
-    if (mounted) {
+    if (!mounted) return;
+
+    if (response.code == Razorpay.PAYMENT_CANCELLED) {
+      // User cancelled checkout / swiped back -- not a failure!
+      di.sl<HapticService>().light();
       _isProcessingVal = false;
-      _paymentCompletedVal = true;
-      _paymentSuccessVal = false;
-      // Razorpay's `response.message` is already a user-safe,
-      // gateway-provided description (not a raw exception), so it is
-      // fine to surface directly, with a localized fallback.
-      _errorMessageVal =
-          response.message ??
-          context.tr('premium.error_generic', fallback: 'Payment failed. Please try again.');
+      _paymentCompletedVal = false;
+      _paymentSuccessVal = null;
+      _errorMessageVal = null;
       _updateState();
+      CustomSnackBar.show(
+        context: context,
+        message: context.tr(
+          'premium.payment_cancelled',
+          fallback: 'Payment cancelled.',
+        ),
+        type: CustomSnackBarType.info,
+      );
+      return;
     }
+
+    di.sl<HapticService>().error();
+    _isProcessingVal = false;
+    _paymentCompletedVal = true;
+    _paymentSuccessVal = false;
+    // Razorpay's `response.message` is already a user-safe,
+    // gateway-provided description (not a raw exception), so it is
+    // fine to surface directly, with a localized fallback.
+    _errorMessageVal =
+        response.message ??
+        context.tr('premium.error_generic', fallback: 'Payment failed. Please try again.');
+    _updateState();
   }
 
   void _handleExternalWallet(ExternalWalletResponse response) {
@@ -286,7 +393,34 @@ class _PremiumScreenState extends State<PremiumScreen> {
             ? Brightness.light
             : Brightness.dark,
       ),
-      child: Scaffold(
+      child: PopScope(
+        canPop: !_isProcessingVal && !_paymentCompletedVal,
+        onPopInvokedWithResult: (didPop, result) {
+          if (didPop) return;
+          if (_isProcessingVal) {
+            _cancelPaymentTimeout();
+            _isProcessingVal = false;
+            _updateState();
+            return;
+          }
+          if (_paymentCompletedVal) {
+            if (_paymentSuccessVal == true) {
+              if (context.canPop()) {
+                context.pop();
+              } else {
+                context.go('/home');
+              }
+            } else {
+              _paymentCompletedVal = false;
+              _paymentSuccessVal = null;
+              _errorMessageVal = null;
+              _transactionIdVal = null;
+              _updateState();
+            }
+            return;
+          }
+        },
+        child: Scaffold(
         body: Container(
           width: double.infinity,
           height: double.infinity,
@@ -423,11 +557,11 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   numberOfParticles: 50,
                   gravity: 0.1,
                   colors: [
+                    AppColors.emerald500,
+                    AppColors.emerald400,
+                    AppColors.amber500,
                     AppColors.indigo500,
                     AppColors.violet500,
-                    IllustrationColors.richPurple,
-                    AppColors.indigo500,
-                    AppColors.rose500,
                   ],
                 ),
               ),
@@ -435,8 +569,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
           ),
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   /// RESPONSIVENESS / OVERFLOW FIX
   ///
@@ -465,50 +600,417 @@ class _PremiumScreenState extends State<PremiumScreen> {
   /// original four `Spacer`/`Spacer(flex: 2)` had), since flexible gaps
   /// cannot be used inside a scrollable's unbounded main axis.
   Widget _buildAlreadyPremiumCard(bool isDark, user) {
+    final DateTime? expiryDate = user?.premiumExpiryDate;
+    final int daysLeft = expiryDate != null
+        ? ((expiryDate.difference(DateTime.now()).inHours) / 24).ceil()
+        : 0;
+
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: AppColors.emerald500.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(28.r),
+        gradient: isDark
+            ? const LinearGradient(
+                colors: [
+                  Color(0xFF0F172A),
+                  Color(0xFF1E1B4B),
+                  Color(0xFF0A0F1D),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              )
+            : const LinearGradient(
+                colors: [
+                  Colors.white,
+                  Color(0xFFF8FAFC),
+                  Color(0xFFEEF2FF),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
         border: Border.all(
-          color: AppColors.emerald500.withValues(alpha: 0.3),
+          color: AppColors.indigo500.withValues(alpha: 0.35),
           width: 1.5,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.indigo500.withValues(alpha: 0.18),
+            blurRadius: 28,
+            spreadRadius: 2,
+            offset: const Offset(0, 10),
+          ),
+          BoxShadow(
+            color: isDark
+                ? Colors.black45
+                : AppColors.slate200.withValues(alpha: 0.6),
+            blurRadius: 15,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
+      padding: EdgeInsets.all(22.r),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(
-            LucideIcons.checkCircle,
-            color: AppColors.emerald500,
-            size: 48.r,
+          // Top Row: Metallic Badge & Active Pulsing Status
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(6.r),
+                      decoration: BoxDecoration(
+                        color: AppColors.emerald500.withValues(alpha: 0.15),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(
+                        LucideIcons.checkCircle,
+                        color: AppColors.emerald500,
+                        size: 20.r,
+                      ),
+                    ),
+                    SizedBox(width: 8.w),
+                    Flexible(
+                      child: Text(
+                        'VOWL PRO VIP PASS',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: 1.4,
+                          color: isDark ? Colors.white70 : AppColors.slate700,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(width: 8.w),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                decoration: BoxDecoration(
+                  color: AppColors.emerald500.withValues(alpha: 0.12),
+                  borderRadius: BorderRadius.circular(20.r),
+                  border: Border.all(
+                    color: AppColors.emerald500.withValues(alpha: 0.4),
+                    width: 1,
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      width: 7.r,
+                      height: 7.r,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AppColors.emerald400,
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.emerald400,
+                            blurRadius: 6,
+                            spreadRadius: 1,
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(width: 6.w),
+                    Text(
+                      'ACTIVE',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: AppColors.emerald500,
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: 1.2,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-          SizedBox(height: 16.h),
-          Text(
-            context.tr(
-              'premium.already_premium',
-              fallback: "You're already a Premium Quester!",
-            ),
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 18.sp,
-              fontWeight: FontWeight.w800,
-              color: isDark ? Colors.white : AppColors.slate900,
-            ),
+
+          SizedBox(height: 20.h),
+
+          // Member Profile Spotlight
+          Row(
+            children: [
+              Container(
+                width: 52.r,
+                height: 52.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: const LinearGradient(
+                    colors: [AppColors.indigo500, AppColors.violet500],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.indigo500.withValues(alpha: 0.35),
+                      blurRadius: 12,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                  border: Border.all(
+                    color: Colors.white.withValues(alpha: 0.6),
+                    width: 1.5,
+                  ),
+                ),
+                child: Center(
+                  child: Icon(
+                    LucideIcons.crown,
+                    color: Colors.white,
+                    size: 26.r,
+                  ),
+                ),
+              ),
+              SizedBox(width: 14.w),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      context.tr(
+                        'premium.already_premium',
+                        fallback: "You're already a Premium Quester!",
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 17.sp,
+                        fontWeight: FontWeight.w800,
+                        color: isDark ? Colors.white : AppColors.slate900,
+                      ),
+                    ),
+                    SizedBox(height: 3.h),
+                    Text(
+                      user?.displayName ?? 'Valued VIP Quester',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w500,
+                        color: isDark ? Colors.white60 : AppColors.slate500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-          if (user.premiumExpiryDate != null) ...[
-            SizedBox(height: 8.h),
-            Text(
-              '${context.tr('premium.valid_until', fallback: 'Valid until:')} ${DateFormat.yMMMd().format(user.premiumExpiryDate!.toLocal())}',
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w500,
-                color: isDark ? Colors.white70 : AppColors.slate500,
+
+          SizedBox(height: 18.h),
+
+          // Expiry & Countdown Banner
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  AppColors.amber500.withValues(alpha: 0.12),
+                  AppColors.violet500.withValues(alpha: 0.1),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(16.r),
+              border: Border.all(
+                color: AppColors.amber500.withValues(alpha: 0.3),
+                width: 1,
               ),
             ),
-          ],
+            child: Row(
+              children: [
+                Icon(
+                  LucideIcons.sparkles,
+                  color: AppColors.amber400,
+                  size: 20.r,
+                ),
+                SizedBox(width: 12.w),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        expiryDate != null && daysLeft > 1
+                            ? '$daysLeft Days of Unlimited Superpowers'
+                            : (expiryDate != null && daysLeft == 1
+                                ? '1 Day of Unlimited Superpowers'
+                                : (expiryDate != null &&
+                                        expiryDate.isAfter(DateTime.now())
+                                    ? 'Expiring Today · Unlimited Superpowers'
+                                    : 'Active VIP Membership')),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w700,
+                          color: isDark ? Colors.white : AppColors.slate900,
+                        ),
+                      ),
+                      if (expiryDate != null) ...[
+                        SizedBox(height: 2.h),
+                        Text(
+                          '${context.tr('premium.valid_until', fallback: 'Valid until:')} ${DateFormat.yMMMd().format(expiryDate.toLocal())}',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w500,
+                            color: isDark ? Colors.white60 : AppColors.slate500,
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          SizedBox(height: 20.h),
+
+          // Primary CTA: Start Questing / Back to Learning
+          Semantics(
+            button: true,
+            label: context.tr(
+              'premium.start_questing',
+              fallback: 'Start Questing',
+            ),
+            child: ScaleButton(
+              onTap: () {
+                di.sl<HapticService>().selection();
+                if (context.canPop()) {
+                  context.pop();
+                } else {
+                  context.go('/home');
+                }
+              },
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 16.h),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [AppColors.indigo500, AppColors.violet500],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(20.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.indigo500.withValues(alpha: 0.4),
+                      blurRadius: 18,
+                      offset: const Offset(0, 6),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      LucideIcons.compass,
+                      color: Colors.white,
+                      size: 18.sp,
+                    ),
+                    SizedBox(width: 8.w),
+                    Text(
+                      context.tr(
+                        'premium.start_questing',
+                        fallback: 'Start Questing',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: Colors.white,
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+
+          SizedBox(height: 10.h),
+
+          // Secondary CTA: Extend Membership
+          Semantics(
+            button: true,
+            label: _showExtendPlans
+                ? context.tr('premium.hide_plans', fallback: 'Hide Plans')
+                : context.tr(
+                    'premium.extend_membership',
+                    fallback: 'Extend Membership',
+                  ),
+            child: ScaleButton(
+              onTap: () {
+                di.sl<HapticService>().selection();
+                setState(() {
+                  _showExtendPlans = !_showExtendPlans;
+                });
+                if (_showExtendPlans) {
+                  _loadDynamicPlans();
+                }
+              },
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 14.h),
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.06)
+                      : AppColors.slate100,
+                  borderRadius: BorderRadius.circular(20.r),
+                  border: Border.all(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.12)
+                        : AppColors.slate300,
+                    width: 1,
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      LucideIcons.calendarPlus,
+                      color: isDark ? Colors.white70 : AppColors.slate700,
+                      size: 16.sp,
+                    ),
+                    SizedBox(width: 8.w),
+                    Text(
+                      _showExtendPlans
+                          ? context.tr(
+                              'premium.hide_plans',
+                              fallback: 'Hide Plans',
+                            )
+                          : context.tr(
+                              'premium.extend_membership',
+                              fallback: 'Extend Membership',
+                            ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.8)
+                            : AppColors.slate800,
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    SizedBox(width: 6.w),
+                    Icon(
+                      _showExtendPlans
+                          ? LucideIcons.chevronUp
+                          : LucideIcons.chevronDown,
+                      color: isDark ? Colors.white70 : AppColors.slate600,
+                      size: 16.sp,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -528,10 +1030,18 @@ class _PremiumScreenState extends State<PremiumScreen> {
           SizedBox(height: 16.h),
           const PremiumHero(),
           SizedBox(height: 24.h),
-          if (isPremium)
-            _buildAlreadyPremiumCard(isDark, user)
-          else
+          if (isPremium) ...[
+            _buildAlreadyPremiumCard(isDark, user),
+            if (_showExtendPlans) ...[
+              SizedBox(height: 24.h),
+              _buildPlanList(),
+              SizedBox(height: 24.h),
+              _buildPaymentMethodSelector(isDark),
+              _buildCTAButton(),
+            ],
+          ] else ...[
             _buildPlanList(),
+          ],
           SizedBox(height: 24.h),
           const ModernFeatureBar(),
           SizedBox(height: 32.h),
@@ -657,7 +1167,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 Text(
                   context.tr(
                     'premium.processing_subtitle',
-                    fallback: 'Please wait while we process your request',
+                    fallback: 'Setting up your payment session. Please wait...',
                   ),
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -709,6 +1219,14 @@ class _PremiumScreenState extends State<PremiumScreen> {
               : PremiumFailureOverlay(
                   errorMessage: _errorMessageVal,
                   onRetry: () {
+                    context.read<AuthBloc>().add(const AuthReloadUser());
+                    final user = context.read<AuthBloc>().state.user;
+                    if (user?.isPremium == true) {
+                      _paymentSuccessVal = true;
+                      _errorMessageVal = null;
+                      _updateState();
+                      return;
+                    }
                     _paymentCompletedVal = false;
                     _paymentSuccessVal = null;
                     _errorMessageVal = null;
@@ -1256,8 +1774,32 @@ class _PremiumScreenState extends State<PremiumScreen> {
           _updateState();
         }
       } else {
+        final prefs = await SharedPreferences.getInstance();
+        String contact = prefs.getString('user_payment_contact') ??
+            FirebaseAuth.instance.currentUser?.phoneNumber ??
+            '';
+
+        if (contact.isEmpty && mounted) {
+          _isProcessingVal = false;
+          _updateState();
+
+          final enteredPhone = await _showContactBottomSheet(context);
+          if (enteredPhone == null) {
+            // User cancelled out of the phone prompt
+            return;
+          }
+          contact = enteredPhone;
+          if (contact.isNotEmpty) {
+            await prefs.setString('user_payment_contact', contact);
+          }
+
+          if (!mounted) return;
+          _isProcessingVal = true;
+          _updateState();
+        }
+
         final checkoutOpened = await _paymentService.purchaseSubscription(
-          contact: '',
+          contact: contact,
           email: user.email,
           planId: plan.id,
           days: plan.days,
@@ -1297,12 +1839,235 @@ class _PremiumScreenState extends State<PremiumScreen> {
     }
   }
 
+  Future<String?> _showContactBottomSheet(BuildContext context) async {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final controller = TextEditingController();
+
+    try {
+      return await showModalBottomSheet<String>(
+        context: context,
+        isScrollControlled: true,
+        backgroundColor: Colors.transparent,
+        builder: (sheetContext) {
+          return StatefulBuilder(
+            builder: (context, setSheetState) {
+              final isValid = controller.text.trim().length == 10;
+              return Container(
+                padding: EdgeInsets.only(
+                  left: 24.w,
+                  right: 24.w,
+                  top: 24.h,
+                  bottom: MediaQuery.of(sheetContext).viewInsets.bottom + 24.h,
+                ),
+                decoration: BoxDecoration(
+                  color: isDark ? const Color(0xFF0F172A) : Colors.white,
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
+                  border: Border.all(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.1)
+                        : AppColors.slate200,
+                    width: 1,
+                  ),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: Container(
+                        width: 40.w,
+                        height: 4.h,
+                        decoration: BoxDecoration(
+                          color: isDark ? Colors.white24 : AppColors.slate300,
+                          borderRadius: BorderRadius.circular(2.r),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20.h),
+                    Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(10.r),
+                          decoration: BoxDecoration(
+                            color: AppColors.indigo500.withValues(alpha: 0.15),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.phone_android_rounded,
+                            color: AppColors.indigo500,
+                            size: 24.sp,
+                          ),
+                        ),
+                        SizedBox(width: 14.w),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                sheetContext.tr(
+                                  'premium.contact_prompt_title',
+                                  fallback: 'UPI & Payment Mobile Number',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: isDark ? Colors.white : AppColors.slate900,
+                                ),
+                              ),
+                              SizedBox(height: 2.h),
+                              Text(
+                                sheetContext.tr(
+                                  'premium.contact_prompt_subtitle',
+                                  fallback:
+                                      'Razorpay requires your phone number for UPI routing and receipts.',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  color: isDark ? Colors.white60 : AppColors.slate500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 20.h),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 14.w),
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.05)
+                            : AppColors.slate100,
+                        borderRadius: BorderRadius.circular(16.r),
+                        border: Border.all(
+                          color: isValid
+                              ? AppColors.indigo500
+                              : (isDark ? Colors.white12 : AppColors.slate200),
+                          width: 1.5,
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Text(
+                            '+91 ',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w700,
+                              color: isDark ? Colors.white70 : AppColors.slate700,
+                            ),
+                          ),
+                          Expanded(
+                            child: TextField(
+                              controller: controller,
+                              keyboardType: TextInputType.phone,
+                              autofocus: true,
+                              inputFormatters: [
+                                FilteringTextInputFormatter.digitsOnly,
+                                _IndiaPhoneInputFormatter(),
+                              ],
+                              onChanged: (_) => setSheetState(() {}),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w600,
+                                color: isDark ? Colors.white : AppColors.slate900,
+                                letterSpacing: 1.2,
+                              ),
+                              decoration: InputDecoration(
+                                hintText: 'Enter 10-digit number',
+                                hintStyle: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  color: isDark ? Colors.white30 : AppColors.slate400,
+                                ),
+                                border: InputBorder.none,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20.h),
+                    ScaleButton(
+                      onTap: isValid
+                          ? () {
+                              Navigator.of(sheetContext).pop(controller.text.trim());
+                            }
+                          : null,
+                      child: Container(
+                        width: double.infinity,
+                        height: 52.h,
+                        decoration: BoxDecoration(
+                          gradient: isValid
+                              ? const LinearGradient(
+                                  colors: [
+                                    AppColors.indigo500,
+                                    AppColors.violet500,
+                                  ],
+                                )
+                              : null,
+                          color: isValid
+                              ? null
+                              : (isDark ? Colors.white12 : AppColors.slate200),
+                          borderRadius: BorderRadius.circular(18.r),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          sheetContext.tr(
+                            'premium.continue_to_payment',
+                            fallback: 'Proceed to Payment Options',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w700,
+                            color: isValid
+                                ? Colors.white
+                                : (isDark ? Colors.white38 : AppColors.slate400),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 8.h),
+                    Center(
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.of(sheetContext).pop('');
+                        },
+                        child: Text(
+                          sheetContext.tr(
+                            'common.skip',
+                            fallback: 'Skip and enter inside payment gateway',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            color: isDark ? Colors.white54 : AppColors.slate500,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          );
+        },
+      );
+    } finally {
+      controller.dispose();
+    }
+  }
+
   Widget _buildSecureTag() {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Text(
       context.tr(
         'premium.secure_transaction_tag',
-        fallback: 'SECURE TRANSACTION • CANCEL ANYTIME',
+        fallback: '100% SECURE CHECKOUT • NO AUTO-RENEWAL',
       ),
       textAlign: TextAlign.center,
       style: TextStyle(
