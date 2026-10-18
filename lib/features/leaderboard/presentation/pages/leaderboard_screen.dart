@@ -1,8 +1,8 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'dart:async';
 import 'dart:math' as math;
-import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -378,44 +378,41 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                       final isMe = widget.currentUser?.id == user.id;
                       final isLast = userIndex == widget.state.users.length - 1;
 
+                      final reduceMotion = VowlMotion.shouldReduceMotion(
+                        context,
+                      );
+                      final tile = Padding(
+                        padding: EdgeInsets.only(bottom: isLast ? 0 : 10.h),
+                        child: LeaderboardRankTile(
+                          user: user,
+                          rank: rank,
+                          isMe: isMe,
+                        ),
+                      );
+
+                      // Only animate the first 8 initially visible items on page entry.
+                      // Off-screen items scroll into view without animation overhead.
+                      // Removed .blurXY() to eliminate GPU rasterization bottlenecks.
+                      final animatedTile = (!reduceMotion && index < 8)
+                          ? tile
+                                .animate()
+                                .fadeIn(
+                                  duration: const Duration(milliseconds: 300),
+                                  delay: Duration(milliseconds: index * 35),
+                                  curve: Curves.easeOut,
+                                )
+                                .slideX(
+                                  begin: 0.08,
+                                  end: 0,
+                                  duration: const Duration(milliseconds: 350),
+                                  delay: Duration(milliseconds: index * 35),
+                                  curve: Curves.easeOutCubic,
+                                )
+                          : tile;
+
                       return RepaintBoundary(
                         key: ValueKey('rank_tile_${user.id}'),
-                        child: Padding(
-                          padding: EdgeInsets.only(bottom: isLast ? 0 : 10.h),
-                          child:
-                              LeaderboardRankTile(
-                                    user: user,
-                                    rank: rank,
-                                    isMe: isMe,
-                                  )
-                                  .animate()
-                                  .fadeIn(
-                                    duration: 400.ms,
-                                    delay: (index < 12 ? index * 40 : 0).ms,
-                                    curve: Curves.easeOut,
-                                  )
-                                  .blurXY(
-                                    begin: 4,
-                                    end: 0,
-                                    duration: 400.ms,
-                                    delay: (index < 12 ? index * 40 : 0).ms,
-                                    curve: Curves.easeOut,
-                                  )
-                                  .slideX(
-                                    begin: 0.1,
-                                    end: 0,
-                                    duration: 500.ms,
-                                    delay: (index < 12 ? index * 40 : 0).ms,
-                                    curve: Curves.easeOutCubic,
-                                  )
-                                  .scaleXY(
-                                    begin: 0.9,
-                                    end: 1.0,
-                                    duration: 500.ms,
-                                    delay: (index < 12 ? index * 40 : 0).ms,
-                                    curve: Curves.easeOutCubic,
-                                  ),
-                        ),
+                        child: animatedTile,
                       );
                     }, childCount: widget.state.users.length - 3),
                   ),
@@ -430,23 +427,36 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                     ),
                     child: Column(
                       children: [
-                        // Animated trophy icon
-                        Icon(
-                              widget.state.isKids
-                                  ? Icons.child_care_rounded
-                                  : Icons.emoji_events_outlined,
-                              size: 56.r,
-                              color: isDark
-                                  ? const Color(
-                                      0xFF6366F1,
-                                    ).withValues(alpha: 0.4)
-                                  : const Color(
-                                      0xFF6366F1,
-                                    ).withValues(alpha: 0.3),
-                            )
-                            .animate(onPlay: (c) => c.repeat(reverse: true))
-                            .scaleXY(begin: 0.95, end: 1.05, duration: 1800.ms)
-                            .fade(begin: 0.7, end: 1.0),
+                        // Animated trophy icon — isolated in RepaintBoundary
+                        RepaintBoundary(
+                          child:
+                              Icon(
+                                    widget.state.isKids
+                                        ? Icons.child_care_rounded
+                                        : Icons.emoji_events_outlined,
+                                    size: 56.r,
+                                    color: isDark
+                                        ? const Color(
+                                            0xFF6366F1,
+                                          ).withValues(alpha: 0.4)
+                                        : const Color(
+                                            0xFF6366F1,
+                                          ).withValues(alpha: 0.3),
+                                  )
+                                  .animate(
+                                    target:
+                                        VowlMotion.shouldReduceMotion(context)
+                                        ? 0
+                                        : 1,
+                                    onPlay: (c) => c.repeat(reverse: true),
+                                  )
+                                  .scaleXY(
+                                    begin: 0.95,
+                                    end: 1.05,
+                                    duration: 1800.ms,
+                                  )
+                                  .fade(begin: 0.7, end: 1.0),
+                        ),
                         SizedBox(height: 16.h),
                         Text(
                           widget.state.isKids
@@ -598,23 +608,17 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
     );
     final isPinned = collapseProgress > 0.5 || overlapsContent;
 
+    // PERF: Avoid heavy BackdropFilter(sigma: 24) on every scroll frame.
+    // When pinned, a solid high-opacity color (0.96) occludes content beneath
+    // cleanly without forcing expensive GPU offscreen render passes during scroll.
+    final backdropColor = (isDark ? AppColors.slate900 : Colors.white)
+        .withValues(alpha: isPinned ? 0.96 : 0.7);
+
     return ClipRect(
       child: Stack(
         children: [
-          // Frosted backdrop that fully occludes content beneath
-          Positioned.fill(
-            child: BackdropFilter(
-              filter: ui.ImageFilter.blur(
-                sigmaX: isPinned ? 24 : 8,
-                sigmaY: isPinned ? 24 : 8,
-              ),
-              child: Container(
-                color: (isDark ? AppColors.slate900 : Colors.white).withValues(
-                  alpha: isPinned ? 0.92 : 0.7,
-                ),
-              ),
-            ),
-          ),
+          // Frosted / solid backdrop that fully occludes content beneath
+          Positioned.fill(child: Container(color: backdropColor)),
           // Rank card content
           Padding(
             padding: EdgeInsets.symmetric(

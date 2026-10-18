@@ -77,10 +77,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
               fallback: 'Streak Shield',
             );
           } else if (msg == 'progression.double_xp_activated') {
-            name = context.tr(
-              'adventure.double_xp',
-              fallback: 'Double XP',
-            );
+            name = context.tr('adventure.double_xp', fallback: 'Double XP');
           }
 
           CustomSnackBar.show(
@@ -278,10 +275,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
             currentCoins: user.coins,
             onTap: () => _handlePurchase(
               context,
-              name: context.tr(
-                'adventure.double_xp',
-                fallback: 'Double XP',
-              ),
+              name: context.tr('adventure.double_xp', fallback: 'Double XP'),
               cost: 300,
               currentCoins: user.coins,
               action: () => context.read<ProgressionBloc>().add(

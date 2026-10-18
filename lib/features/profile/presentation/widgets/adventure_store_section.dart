@@ -272,7 +272,8 @@ class AdventureStoreSection extends StatelessWidget {
                                 child: SingleChildScrollView(
                                   physics: const NeverScrollableScrollPhysics(),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
@@ -304,7 +305,9 @@ class AdventureStoreSection extends StatelessWidget {
                                           fontSize: 10.sp,
                                           fontWeight: FontWeight.w700,
                                           color: isLocked
-                                              ? Colors.red.withValues(alpha: 0.7)
+                                              ? Colors.red.withValues(
+                                                  alpha: 0.7,
+                                                )
                                               : isCurrentlyActive
                                               ? AppColors.amber500
                                               : AppColors.emerald500,

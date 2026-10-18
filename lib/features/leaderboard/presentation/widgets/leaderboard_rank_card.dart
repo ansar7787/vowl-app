@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -50,7 +51,7 @@ class LeaderboardRankCard extends StatelessWidget {
     final contrastColor = Theme.of(context).colorScheme.onSurface;
     final secondaryTextColor = isDark ? Colors.white60 : AppColors.slate500;
 
-    return Semantics(
+    final card = Semantics(
       // FIX (HIGH-5): Full accessibility label so TalkBack/VoiceOver
       // announces the user's rank and progress in one utterance.
       label: isRanked
@@ -67,10 +68,10 @@ class LeaderboardRankCard extends StatelessWidget {
             BoxShadow(
               color: const Color(
                 0xFF3B82F6,
-              ).withValues(alpha: isDark ? 0.25 : 0.15),
-              blurRadius: 32,
-              spreadRadius: 4,
-              offset: const Offset(0, 8),
+              ).withValues(alpha: isDark ? 0.20 : 0.12),
+              blurRadius: 16,
+              spreadRadius: 0,
+              offset: const Offset(0, 4),
             ),
           ],
         ),
@@ -80,6 +81,7 @@ class LeaderboardRankCard extends StatelessWidget {
             vertical: 12.h - (4.h * collapseProgress),
           ),
           borderRadius: BorderRadius.circular(24.r),
+          blur: 0,
           borderColor: isDark
               ? AppColors.blue500.withValues(alpha: 0.5)
               : AppColors.indigo500.withValues(alpha: 0.3),
@@ -295,6 +297,15 @@ class LeaderboardRankCard extends StatelessWidget {
           ),
         ),
       ),
-    ).animate().fadeIn(duration: 600.ms).slideY(begin: -0.1, end: 0);
+    );
+
+    if (VowlMotion.shouldReduceMotion(context)) {
+      return card;
+    }
+
+    return card
+        .animate()
+        .fadeIn(duration: const Duration(milliseconds: 350))
+        .slideY(begin: -0.05, end: 0, curve: Curves.easeOutCubic);
   }
 }

@@ -10,7 +10,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -64,6 +63,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
               width: double.infinity,
               padding: EdgeInsets.all(32.w),
               borderRadius: BorderRadius.circular(32.r),
+              blur: 0,
               child: Column(
                 children: [
                   VowlMascot(state: VowlMascotState.thinking, size: 60.r),
@@ -172,13 +172,14 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                           borderRadius: BorderRadius.circular(32.r),
                           usePremiumStyle: true,
                           showShadow: false,
+                          blur: 0,
                           border: Border.all(
                             color: badge.color.withValues(alpha: 0.5),
                             width: 1.5,
                           ),
                           child: Stack(
                             children: [
-                              // Abstract glowing background meshes
+                              // Abstract glowing background meshes (optimized blur radii)
                               Positioned(
                                 top: -40.h,
                                 right: -30.w,
@@ -190,10 +191,10 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                     boxShadow: [
                                       BoxShadow(
                                         color: badge.color.withValues(
-                                          alpha: 0.6,
+                                          alpha: 0.4,
                                         ),
-                                        blurRadius: 50,
-                                        spreadRadius: 15,
+                                        blurRadius: 16,
+                                        spreadRadius: 2,
                                       ),
                                     ],
                                   ),
@@ -210,10 +211,10 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                     boxShadow: [
                                       BoxShadow(
                                         color: badge.color.withValues(
-                                          alpha: 0.4,
+                                          alpha: 0.3,
                                         ),
-                                        blurRadius: 40,
-                                        spreadRadius: 8,
+                                        blurRadius: 12,
+                                        spreadRadius: 1,
                                       ),
                                     ],
                                   ),
@@ -237,52 +238,30 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                         ..setEntry(3, 2, 0.001)
                                         ..rotateY(0.1),
                                       alignment: FractionalOffset.center,
-                                      child: Builder(
-                                        builder: (context) {
-                                          final iconShader = ShaderMask(
-                                            shaderCallback: (bounds) =>
-                                                LinearGradient(
-                                                  begin: Alignment(
-                                                    -1.0 + foilShift,
-                                                    -1.0,
-                                                  ),
-                                                  end: Alignment(
-                                                    1.0 + foilShift,
-                                                    1.0,
-                                                  ),
-                                                  colors: [
-                                                    Colors.white,
-                                                    badge.color,
-                                                    badge.color.withValues(
-                                                      alpha: 0.5,
-                                                    ),
-                                                  ],
-                                                ).createShader(bounds),
-                                            child: Icon(
-                                              badge.icon,
-                                              size: 80.r,
-                                              color: Colors.white,
-                                            ),
-                                          );
-                                          if (VowlMotion.shouldReduceMotion(context)) {
-                                            return iconShader;
-                                          }
-                                          return iconShader
-                                              .animate(
-                                                onPlay: (c) =>
-                                                    c.repeat(reverse: true),
-                                              )
-                                              .moveY(
-                                                begin: -5,
-                                                end: 5,
-                                                duration: 3000.ms,
-                                              )
-                                              .scale(
-                                                begin: const Offset(0.95, 0.95),
-                                                end: const Offset(1.05, 1.05),
-                                                duration: 2500.ms,
-                                              );
-                                        },
+                                      child: ShaderMask(
+                                        shaderCallback: (bounds) =>
+                                            LinearGradient(
+                                              begin: Alignment(
+                                                -1.0 + foilShift,
+                                                -1.0,
+                                              ),
+                                              end: Alignment(
+                                                1.0 + foilShift,
+                                                1.0,
+                                              ),
+                                              colors: [
+                                                Colors.white,
+                                                badge.color,
+                                                badge.color.withValues(
+                                                  alpha: 0.5,
+                                                ),
+                                              ],
+                                            ).createShader(bounds),
+                                        child: Icon(
+                                          badge.icon,
+                                          size: 80.r,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -390,6 +369,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
     return GlassTile(
       borderRadius: BorderRadius.circular(20.r),
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+      blur: 0,
       child: Row(
         children: [
           Container(
@@ -464,8 +444,8 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                             begin: 0.0,
                             end: progress.clamp(0.0, 1.0),
                           ),
-                          duration: 1500.ms,
-                          curve: Curves.elasticOut,
+                          duration: 600.ms,
+                          curve: Curves.easeOutCubic,
                           builder: (context, value, child) {
                             return Container(
                               height: 8.h,

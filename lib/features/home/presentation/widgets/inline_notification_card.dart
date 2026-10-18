@@ -154,7 +154,10 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
       return streakTitles[hour % streakTitles.length];
     } else if (streak == 1 || streak == 2) {
       final starterTitles = [
-        context.tr('notification_card.starter_on_roll', fallback: 'You are on a roll!'),
+        context.tr(
+          'notification_card.starter_on_roll',
+          fallback: 'You are on a roll!',
+        ),
         context.tr(
           'notification_card.starter_momentum',
           fallback: 'Keep the momentum going!',
@@ -184,7 +187,10 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
         fallback: 'Evening Knowledge Boost',
       );
     } else {
-      return context.tr('notification_card.night_owl', fallback: 'Night Owl Training');
+      return context.tr(
+        'notification_card.night_owl',
+        fallback: 'Night Owl Training',
+      );
     }
   }
 
@@ -192,12 +198,14 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
     if (widget.streak >= 3) {
       return context.tr(
         'notification_card.subtitle_streak',
-        fallback: 'Enable notifications so Owly can remind you to protect your streak.',
+        fallback:
+            'Enable notifications so Owly can remind you to protect your streak.',
       );
     }
     return context.tr(
       'notification_card.subtitle_default',
-      fallback: 'Turn on notifications so Owly can remind you to practice daily.',
+      fallback:
+          'Turn on notifications so Owly can remind you to practice daily.',
     );
   }
 

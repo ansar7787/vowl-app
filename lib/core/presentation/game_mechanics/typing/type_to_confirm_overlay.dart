@@ -154,18 +154,19 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
               ? MediaQuery.paddingOf(context).top + 12.h
               : 0,
         ),
-        child: (MediaQuery.disableAnimationsOf(context) ||
+        child:
+            (MediaQuery.disableAnimationsOf(context) ||
                 VowlMotion.lowAnimationModeOverride.value)
             ? _buildPanel(isDark)
             : _buildPanel(isDark)
-                .animate()
-                .slideY(
-                  begin: 0.2,
-                  end: 0,
-                  duration: 400.ms,
-                  curve: Curves.easeOut,
-                )
-                .fadeIn(duration: 300.ms),
+                  .animate()
+                  .slideY(
+                    begin: 0.2,
+                    end: 0,
+                    duration: 400.ms,
+                    curve: Curves.easeOut,
+                  )
+                  .fadeIn(duration: 300.ms),
       ),
     );
 
@@ -384,9 +385,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                       final badge = Container(
                         padding: EdgeInsets.all(16.r),
                         decoration: BoxDecoration(
-                          color: AppColors.gameCorrect.withValues(
-                            alpha: 0.15,
-                          ),
+                          color: AppColors.gameCorrect.withValues(alpha: 0.15),
                           shape: BoxShape.circle,
                         ),
                         child: Icon(
@@ -439,12 +438,8 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                         borderRadius: BorderRadius.circular(16.r),
                         border: Border.all(
                           color: result == _ConfirmResult.mismatch
-                              ? AppColors.gameIncorrect.withValues(
-                                  alpha: 0.5,
-                                )
-                              : widget.primaryColor.withValues(
-                                  alpha: 0.2,
-                                ),
+                              ? AppColors.gameIncorrect.withValues(alpha: 0.5)
+                              : widget.primaryColor.withValues(alpha: 0.2),
                         ),
                       ),
                       child: Stack(
@@ -465,9 +460,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                             decoration: InputDecoration(
                               hintText: 'Type exactly...',
                               hintStyle: TextStyle(
-                                color: subtitleColor.withValues(
-                                  alpha: 0.5,
-                                ),
+                                color: subtitleColor.withValues(alpha: 0.5),
                                 fontWeight: FontWeight.w400,
                               ),
                               border: InputBorder.none,
@@ -480,10 +473,8 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                             ),
                             onSubmitted: (_) => _evaluate(),
                             onChanged: (_) {
-                              if (_result.value ==
-                                      _ConfirmResult.mismatch ||
-                                  _result.value ==
-                                      _ConfirmResult.empty) {
+                              if (_result.value == _ConfirmResult.mismatch ||
+                                  _result.value == _ConfirmResult.empty) {
                                 _result.value = null;
                               }
                             },
@@ -501,8 +492,9 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                                       fontFamily: 'Outfit',
                                       fontSize: 10.sp,
                                       fontWeight: FontWeight.w600,
-                                      color: AppColors.gameIncorrect
-                                          .withValues(alpha: 0.8),
+                                      color: AppColors.gameIncorrect.withValues(
+                                        alpha: 0.8,
+                                      ),
                                     ),
                                   );
                                 }
@@ -520,11 +512,12 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                         reduceMotion
                             ? inputContainer
                             : inputContainer
-                                .animate(
-                                  target: result == _ConfirmResult.mismatch ? 1 : 0,
-                                )
-                                .shakeX(amount: 5, duration: 400.ms),
-
+                                  .animate(
+                                    target: result == _ConfirmResult.mismatch
+                                        ? 1
+                                        : 0,
+                                  )
+                                  .shakeX(amount: 5, duration: 400.ms),
 
                         // Status message
                         if (result == _ConfirmResult.mismatch ||

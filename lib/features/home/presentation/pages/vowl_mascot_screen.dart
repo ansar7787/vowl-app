@@ -367,7 +367,9 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                             minFontSize: 12,
                                             overflow: TextOverflow.visible,
                                           );
-                                          return VowlMotion.shouldReduceMotion(context)
+                                          return VowlMotion.shouldReduceMotion(
+                                                context,
+                                              )
                                               ? titleText
                                               : titleText.animate().fadeIn();
                                         }(),
@@ -444,11 +446,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(
-                Icons.attach_money_rounded,
-                color: primaryColor,
-                size: 12.r,
-              ),
+              Icon(Icons.attach_money_rounded, color: primaryColor, size: 12.r),
               SizedBox(width: 2.w),
               Text(
                 NumberFormat.decimalPattern().format(user.coins),
@@ -1074,15 +1072,15 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                           return VowlMotion.shouldReduceMotion(context)
                               ? ring
                               : ring
-                                  .animate(
-                                    onPlay: (c) => c.repeat(reverse: true),
-                                  )
-                                  .fade(
-                                    begin: 0.6,
-                                    end: 1.0,
-                                    duration: 3.seconds,
-                                    curve: Curves.easeInOut,
-                                  );
+                                    .animate(
+                                      onPlay: (c) => c.repeat(reverse: true),
+                                    )
+                                    .fade(
+                                      begin: 0.6,
+                                      end: 1.0,
+                                      duration: 3.seconds,
+                                      curve: Curves.easeInOut,
+                                    );
                         }(),
                         Text(
                           VowlAssets.getMascotEmoji(
@@ -1223,10 +1221,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                     child: AnimatedOpacity(
                       opacity: (!isOwned && !canAfford) ? 0.4 : 1.0,
                       duration: const Duration(milliseconds: 300),
-                      child: Text(
-                        emoji,
-                        style: TextStyle(fontSize: 48.sp),
-                      ),
+                      child: Text(emoji, style: TextStyle(fontSize: 48.sp)),
                     ),
                   ),
                 );
@@ -1317,7 +1312,8 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                     context,
                                     context.tr(
                                       'vowl_mascot.feedback_insufficient_credits',
-                                      fallback: 'Insufficient Elite credits for this augment',
+                                      fallback:
+                                          'Insufficient Elite credits for this augment',
                                     ),
                                     false,
                                   );

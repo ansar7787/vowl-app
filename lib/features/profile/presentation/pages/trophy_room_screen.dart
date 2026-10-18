@@ -390,7 +390,8 @@ class _TrophyRoomView extends StatelessWidget {
               )
             : context.tr(
                 'profile.no_trophies',
-                fallback: 'No trophies yet. Keep completing lessons and challenges to earn your first shiny badge!',
+                fallback:
+                    'No trophies yet. Keep completing lessons and challenges to earn your first shiny badge!',
               );
 
         return Padding(

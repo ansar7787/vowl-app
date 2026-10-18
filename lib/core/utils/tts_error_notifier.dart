@@ -21,10 +21,8 @@ class TtsError {
   final String userMessage;
   final DateTime timestamp;
 
-  TtsError({
-    required this.type,
-    required this.userMessage,
-  }) : timestamp = DateTime.now();
+  TtsError({required this.type, required this.userMessage})
+    : timestamp = DateTime.now();
 
   @override
   String toString() => 'TtsError($type: $userMessage)';
@@ -39,7 +37,9 @@ class TtsErrorNotifier {
 
   static final TtsErrorNotifier instance = TtsErrorNotifier._();
 
-  final ValueNotifier<TtsError?> _errorNotifier = ValueNotifier<TtsError?>(null);
+  final ValueNotifier<TtsError?> _errorNotifier = ValueNotifier<TtsError?>(
+    null,
+  );
 
   /// Listen to this notifier for TTS error events.
   ValueNotifier<TtsError?> get errorNotifier => _errorNotifier;

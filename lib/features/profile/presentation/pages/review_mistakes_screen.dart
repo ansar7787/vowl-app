@@ -716,7 +716,9 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                                   fontFamily: 'Outfit',
                                   fontSize: 10.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: isDark ? Colors.white54 : Colors.black45,
+                                  color: isDark
+                                      ? Colors.white54
+                                      : Colors.black45,
                                 ),
                               ),
                             ),
@@ -1002,8 +1004,11 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
 
   /// Formats category keys into readable, localized display titles without underscores.
   String _formatCategoryName(BuildContext context, String cat) {
-    final normalized =
-        cat.trim().toLowerCase().replaceAll(' ', '').replaceAll('_', '');
+    final normalized = cat
+        .trim()
+        .toLowerCase()
+        .replaceAll(' ', '')
+        .replaceAll('_', '');
     String fallback;
     switch (normalized) {
       case 'speaking':
@@ -1041,8 +1046,9 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
             .join(' ');
     }
 
-    final translationKey =
-        normalized == 'elitemastery' ? 'elite_mastery' : cat.trim().toLowerCase();
+    final translationKey = normalized == 'elitemastery'
+        ? 'elite_mastery'
+        : cat.trim().toLowerCase();
     return context.tr('games.$translationKey.title', fallback: fallback);
   }
 

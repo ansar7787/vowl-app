@@ -41,7 +41,9 @@ class GameInstructionService {
         fallbackTitle?.toLowerCase().replaceAll(' ', '_') ??
         "default";
     final isLevel100 = level == 100;
-    final prefix = isLevel100 ? 'instructions.$baseKey.level_100' : 'instructions.$baseKey';
+    final prefix = isLevel100
+        ? 'instructions.$baseKey.level_100'
+        : 'instructions.$baseKey';
 
     final title = context.tr(
       '$prefix.title',
@@ -1634,7 +1636,8 @@ class GameInstructionService {
             "Tap any block's speaker to hear the shape name out loud",
           ],
           actionText: "Start Playing",
-          tip: "Tip: Count the sides and corners to help you find the right shape! 📐",
+          tip:
+              "Tip: Count the sides and corners to help you find the right shape! 📐",
         );
       case 'body_parts':
         return const GameBriefing(
@@ -1769,7 +1772,8 @@ class GameInstructionService {
             "Tap any card's speaker to hear the word pronounced aloud",
           ],
           actionText: "Go to School",
-          tip: "Tip: Tap the Listen button on the board anytime to hear the teacher's clue again.",
+          tip:
+              "Tip: Tap the Listen button on the board anytime to hear the teacher's clue again.",
         );
       case 'home':
         return const GameBriefing(

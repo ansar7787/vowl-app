@@ -393,7 +393,9 @@ class TtsVoiceHelper {
 
   /// Sample sentence for the settings audio preview, rotating through varied natural sentences.
   static String getSampleSentence(TtsVoicePreset preset) {
-    final list = _sampleSentenceCatalog[preset] ?? _sampleSentenceCatalog[TtsVoicePreset.clearGuide]!;
+    final list =
+        _sampleSentenceCatalog[preset] ??
+        _sampleSentenceCatalog[TtsVoicePreset.clearGuide]!;
     final index = _sampleSentenceIndex[preset] ?? 0;
     final sentence = list[index % list.length];
     _sampleSentenceIndex[preset] = index + 1;

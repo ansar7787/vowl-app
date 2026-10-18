@@ -218,14 +218,14 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
                         fallback: 'Model Optimized!',
                       )
                     : (_progress.value >= 0.95
-                        ? context.tr(
-                            'translation.finalizing_model',
-                            fallback: 'Finalizing offline pack...',
-                          )
-                        : context.tr(
-                            'translation.initializing_engine',
-                            fallback: 'Initializing AI Engine...',
-                          )),
+                          ? context.tr(
+                              'translation.finalizing_model',
+                              fallback: 'Finalizing offline pack...',
+                            )
+                          : context.tr(
+                              'translation.initializing_engine',
+                              fallback: 'Initializing AI Engine...',
+                            )),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 22.sp,
@@ -241,16 +241,16 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
                         fallback: 'On-device translation ready forever.',
                       )
                     : (_progress.value >= 0.95
-                        ? context.tr(
-                            'translation.installing_model_desc',
-                            fallback:
-                                'Installing on-device neural translator. Almost ready...',
-                          )
-                        : context.tr(
-                            'translation.download_desc',
-                            fallback:
-                                'Downloading offline AI language model. This happens only once!',
-                          )),
+                          ? context.tr(
+                              'translation.installing_model_desc',
+                              fallback:
+                                  'Installing on-device neural translator. Almost ready...',
+                            )
+                          : context.tr(
+                              'translation.download_desc',
+                              fallback:
+                                  'Downloading offline AI language model. This happens only once!',
+                            )),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',

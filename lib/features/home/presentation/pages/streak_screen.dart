@@ -228,12 +228,19 @@ class _StreakScreenState extends State<StreakScreen> {
               // Centered Title Pill
               Flexible(
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 8.h,
+                  ),
                   decoration: BoxDecoration(
-                    color: IllustrationColors.warmOrange.withValues(alpha: 0.15),
+                    color: IllustrationColors.warmOrange.withValues(
+                      alpha: 0.15,
+                    ),
                     borderRadius: BorderRadius.circular(24.r),
                     border: Border.all(
-                      color: IllustrationColors.warmOrange.withValues(alpha: 0.2),
+                      color: IllustrationColors.warmOrange.withValues(
+                        alpha: 0.2,
+                      ),
                     ),
                   ),
                   child: Row(

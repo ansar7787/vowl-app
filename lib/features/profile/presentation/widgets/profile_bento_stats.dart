@@ -1,5 +1,4 @@
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -52,139 +51,128 @@ class ProfileBentoStats extends StatelessWidget {
           },
         ),
         SizedBox(height: 16.h),
-        Builder(
-          builder: (ctx) {
-            final row = Row(
-              children: [
-                Expanded(
-                  child: _StatPod(
-                    title: context.tr(
-                      'profile.vowl_treasury',
-                      fallback: 'Vowl Treasury',
-                    ),
-                    value: '${user.coins}',
-                    icon: Icons.paid_rounded,
-                    color: AppColors.emerald500,
-                    onTap: () => context.push(AppRouter.questCoinsRoute),
-                  ),
+        Row(
+          children: [
+            Expanded(
+              child: _StatPod(
+                title: context.tr(
+                  'profile.vowl_treasury',
+                  fallback: 'Vowl Treasury',
                 ),
-                SizedBox(width: 16.w),
-                Expanded(
-                  child: _StatPod(
-                    title: context.tr(
-                      'profile.daily_streak',
-                      fallback: 'Daily Streak',
-                    ),
-                    value: context.tr(
-                      'profile.streak_days',
-                      fallback: '{0} Days',
-                      args: ['${user.currentStreak}'],
-                    ),
-                    icon: Icons.local_fire_department_rounded,
-                    color: AppColors.red500,
-                    onTap: () => context.push(AppRouter.streakRoute),
-                  ),
+                value: '${user.coins}',
+                icon: Icons.paid_rounded,
+                color: AppColors.emerald500,
+                onTap: () => context.push(AppRouter.questCoinsRoute),
+              ),
+            ),
+            SizedBox(width: 16.w),
+            Expanded(
+              child: _StatPod(
+                title: context.tr(
+                  'profile.daily_streak',
+                  fallback: 'Daily Streak',
                 ),
-              ],
-            );
-            if (VowlMotion.shouldReduceMotion(ctx)) return row;
-            return row.animate().fadeIn(delay: 200.ms).slideY(begin: 0.1);
-          },
+                value: context.tr(
+                  'profile.streak_days',
+                  fallback: '{0} Days',
+                  args: ['${user.currentStreak}'],
+                ),
+                icon: Icons.local_fire_department_rounded,
+                color: AppColors.red500,
+                onTap: () => context.push(AppRouter.streakRoute),
+              ),
+            ),
+          ],
         ),
-        Builder(
-          builder: (ctx) {
-            final xpCard = _BentoWideCard(
-              title: context.tr(
-                'profile.adventure_xp_label',
-                fallback: 'ADVENTURE XP',
-              ),
-              value: context.tr(
-                'profile.total_experience',
-                fallback: 'Total Experience: {0}',
-                args: ['${user.totalExp}'],
-              ),
-              icon: Icons.auto_awesome_rounded,
-              color: AppColors.blue500,
-              onTap: () {
-                di.sl<HapticService>().selection();
-                context.push(AppRouter.adventureXPRoute);
-              },
-              bottomContent: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+        SizedBox(height: 16.h),
+        _BentoWideCard(
+          title: context.tr(
+            'profile.adventure_xp_label',
+            fallback: 'ADVENTURE XP',
+          ),
+          value: context.tr(
+            'profile.total_experience',
+            fallback: 'Total Experience: {0}',
+            args: ['${user.totalExp}'],
+          ),
+          icon: Icons.auto_awesome_rounded,
+          color: AppColors.blue500,
+          onTap: () {
+            di.sl<HapticService>().selection();
+            context.push(AppRouter.adventureXPRoute);
+          },
+          bottomContent: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Flexible(
-                        child: AutoSizeText(
-                          context.tr(
-                            'profile.progress_to_level',
-                            fallback: 'Progress to next level',
-                            args: ['${user.level + 1}'],
-                          ),
-                          maxLines: 1,
-                          minFontSize: 6,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w800,
-                            color: isDark ? Colors.white38 : Colors.black38,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
+                  Flexible(
+                    child: AutoSizeText(
+                      context.tr(
+                        'profile.progress_to_level',
+                        fallback: 'Progress to next level',
+                        args: ['${user.level + 1}'],
                       ),
-                      Text(
-                        '${(xpProgress * 100).toInt()}%',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w900,
-                          color: AppColors.blue500,
-                        ),
+                      maxLines: 1,
+                      minFontSize: 6,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w800,
+                        color: isDark ? Colors.white38 : Colors.black38,
+                        letterSpacing: 0.5,
                       ),
-                    ],
+                    ),
                   ),
-                  SizedBox(height: 10.h),
-                  LayoutBuilder(
-                    builder: (context, trackConstraints) {
-                      final trackWidth = trackConstraints.maxWidth;
-                      return Stack(
-                        children: [
-                          Container(
-                            height: 10.h,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white10
-                                  : Colors.black.withValues(alpha: 0.05),
-                              borderRadius: BorderRadius.circular(10.r),
-                            ),
-                          ),
-                          AnimatedContainer(
-                            duration: 800.ms,
-                            height: 10.h,
-                            width: trackWidth * xpProgress.clamp(0.0, 1.0),
-                            decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                colors: [
-                                  AppColors.blue500,
-                                  _LocalPalette.color60a5fa,
-                                ],
-                              ),
-                              borderRadius: BorderRadius.circular(10.r),
-                            ),
-                          ),
-                        ],
-                      );
-                    },
+                  Text(
+                    '${(xpProgress * 100).toInt()}%',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w900,
+                      color: AppColors.blue500,
+                    ),
                   ),
                 ],
               ),
-            );
-            if (VowlMotion.shouldReduceMotion(ctx)) return xpCard;
-            return xpCard.animate().fadeIn(delay: 400.ms).slideY(begin: 0.1);
-          },
+              SizedBox(height: 10.h),
+              LayoutBuilder(
+                builder: (context, trackConstraints) {
+                  final trackWidth = trackConstraints.maxWidth;
+                  return Stack(
+                    children: [
+                      Container(
+                        height: 10.h,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? Colors.white10
+                              : Colors.black.withValues(alpha: 0.05),
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                      ),
+                      AnimatedContainer(
+                        duration: 800.ms,
+                        height: 10.h,
+                        width: trackWidth * xpProgress.clamp(0.0, 1.0),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [
+                              AppColors.blue500,
+                              _LocalPalette.color60a5fa,
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ],
     );
@@ -218,6 +206,7 @@ class _BentoWideCard extends StatelessWidget {
       child: GlassTile(
         borderRadius: BorderRadius.circular(32.r),
         padding: EdgeInsets.all(24.w),
+        blur: 0,
         child: Column(
           children: [
             Row(
@@ -322,6 +311,7 @@ class _StatPod extends StatelessWidget {
       child: GlassTile(
         borderRadius: BorderRadius.circular(32.r),
         padding: EdgeInsets.all(20.w),
+        blur: 0,
         child: SizedBox(
           width: double.infinity,
           child: Column(

@@ -74,16 +74,18 @@ class ProfileHeader extends StatelessWidget {
                   color: Theme.of(context).colorScheme.surface,
                   boxShadow: [
                     BoxShadow(
-                      color: glowColor.withValues(alpha: isPremium ? 0.4 : 0.1),
-                      blurRadius: isPremium ? 40 : 30,
-                      spreadRadius: isPremium ? 2 : 0,
-                      offset: const Offset(0, 10),
+                      color: glowColor.withValues(
+                        alpha: isPremium ? 0.35 : 0.1,
+                      ),
+                      blurRadius: isPremium ? 20 : 16,
+                      spreadRadius: isPremium ? 1 : 0,
+                      offset: const Offset(0, 6),
                     ),
                     if (user.level >= 200)
                       BoxShadow(
-                        color: AppColors.amber500.withValues(alpha: 0.5),
-                        blurRadius: 20,
-                        spreadRadius: 5,
+                        color: AppColors.amber500.withValues(alpha: 0.3),
+                        blurRadius: 12,
+                        spreadRadius: 2,
                       ),
                   ],
                 ),
@@ -99,7 +101,7 @@ class ProfileHeader extends StatelessWidget {
                         height: 132.r,
                         child: TweenAnimationBuilder<double>(
                           tween: Tween<double>(begin: 0, end: xpProgress),
-                          duration: const Duration(milliseconds: 1500),
+                          duration: const Duration(milliseconds: 800),
                           curve: Curves.easeOutCubic,
                           onEnd: () {
                             if (xpProgress > 0) {
@@ -239,6 +241,7 @@ class ProfileHeader extends StatelessWidget {
               child: GlassTile(
                 borderRadius: BorderRadius.circular(20.r),
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                blur: 0,
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [

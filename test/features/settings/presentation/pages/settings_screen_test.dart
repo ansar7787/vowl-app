@@ -84,7 +84,9 @@ class MockPathProviderPlatform extends PathProviderPlatform
     with MockPlatformInterfaceMixin {
   @override
   Future<String?> getTemporaryPath() async {
-    final dir = Directory('${Directory.systemTemp.path}/vowl_test_cache_${DateTime.now().millisecondsSinceEpoch}');
+    final dir = Directory(
+      '${Directory.systemTemp.path}/vowl_test_cache_${DateTime.now().millisecondsSinceEpoch}',
+    );
     if (!dir.existsSync()) dir.createSync(recursive: true);
     return dir.path;
   }
@@ -225,17 +227,21 @@ void main() {
     });
 
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
-        .setMockMethodCallHandler(const MethodChannel('flutter_tts'), (call) async {
-      if (call.method == 'getVoices') {
-        return <Map<String, String>>[];
-      }
-      return 1;
-    });
+        .setMockMethodCallHandler(const MethodChannel('flutter_tts'), (
+          call,
+        ) async {
+          if (call.method == 'getVoices') {
+            return <Map<String, String>>[];
+          }
+          return 1;
+        });
 
-    when(() => mockAuthBloc.state)
-        .thenReturn(AuthState.authenticated(testUser));
-    when(() => mockThemeCubit.state)
-        .thenReturn(const ThemeState(themeMode: ThemeMode.light, isMidnight: false));
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
+    when(() => mockThemeCubit.state).thenReturn(
+      const ThemeState(themeMode: ThemeMode.light, isMidnight: false),
+    );
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
@@ -245,8 +251,9 @@ void main() {
     when(() => mockSoundService.setMuted(any())).thenReturn(null);
     when(() => mockSoundService.setGameSoundsEnabled(any())).thenReturn(null);
     when(() => mockKidsTtsService.stop()).thenAnswer((_) async {});
-    when(() => mockNotificationService.onNotificationPreferenceChanged(any()))
-        .thenAnswer((_) async {});
+    when(
+      () => mockNotificationService.onNotificationPreferenceChanged(any()),
+    ).thenAnswer((_) async {});
     when(() => mockThemeCubit.toggleMidnight(any())).thenAnswer((_) async {});
 
     if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
@@ -255,21 +262,27 @@ void main() {
     if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
     di.sl.registerSingleton<SoundService>(mockSoundService);
 
-    if (di.sl.isRegistered<KidsTTSService>()) di.sl.unregister<KidsTTSService>();
+    if (di.sl.isRegistered<KidsTTSService>()) {
+      di.sl.unregister<KidsTTSService>();
+    }
     di.sl.registerSingleton<KidsTTSService>(mockKidsTtsService);
 
-    if (di.sl.isRegistered<NotificationService>()) di.sl.unregister<NotificationService>();
+    if (di.sl.isRegistered<NotificationService>()) {
+      di.sl.unregister<NotificationService>();
+    }
     di.sl.registerSingleton<NotificationService>(mockNotificationService);
 
     if (di.sl.isRegistered<AuthBloc>()) di.sl.unregister<AuthBloc>();
     di.sl.registerSingleton<AuthBloc>(mockAuthBloc);
 
     if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
-    when(() => mockLocaleService.tr(
-          any(),
-          args: any(named: 'args'),
-          fallback: any(named: 'fallback'),
-        )).thenAnswer((invocation) {
+    when(
+      () => mockLocaleService.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
       final key = invocation.positionalArguments[0] as String;
       final args = (invocation.namedArguments[#args] as List<String>?) ?? [];
       final fallback = invocation.namedArguments[#fallback] as String?;
@@ -294,7 +307,10 @@ void main() {
     bool isMidnight = false,
   }) {
     if (tester != null) {
-      tester.view.physicalSize = Size(screenSize.width * 2.0, screenSize.height * 2.0);
+      tester.view.physicalSize = Size(
+        screenSize.width * 2.0,
+        screenSize.height * 2.0,
+      );
       tester.view.devicePixelRatio = 2.0;
       addTearDown(() {
         tester.view.resetPhysicalSize();
@@ -303,11 +319,14 @@ void main() {
     }
 
     final effectiveAuthState = authState ?? AuthState.authenticated(testUser);
-    final effectiveThemeState = themeState ??
+    final effectiveThemeState =
+        themeState ??
         ThemeState(
           themeMode: isMidnight
               ? ThemeMode.dark
-              : (brightness == Brightness.dark ? ThemeMode.dark : ThemeMode.light),
+              : (brightness == Brightness.dark
+                    ? ThemeMode.dark
+                    : ThemeMode.light),
           isMidnight: isMidnight,
         );
 
@@ -366,8 +385,8 @@ void main() {
                     scaffoldBackgroundColor: Colors.black,
                   )
                 : (brightness == Brightness.dark
-                    ? ThemeData.dark()
-                    : ThemeData.light()),
+                      ? ThemeData.dark()
+                      : ThemeData.light()),
           ),
         ),
       ),
@@ -386,30 +405,29 @@ void main() {
   }
 
   group('Group 1: Initial & Loading States', () {
-    testWidgets('renders user error container when user is null in auth state',
-        (tester) async {
-      await tester.pumpWidget(
-        buildTestableWidget(
-          authState: const AuthState.unauthenticated(),
-        ),
-      );
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders user error container when user is null in auth state',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestableWidget(authState: const AuthState.unauthenticated()),
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('Failed to load user profile.'), findsOneWidget);
-      expect(find.byIcon(Icons.error_outline), findsOneWidget);
-    });
+        expect(find.text('Failed to load user profile.'), findsOneWidget);
+        expect(find.byIcon(Icons.error_outline), findsOneWidget);
+      },
+    );
 
-    testWidgets('renders LoadingOverlay when auth state is loggingOut',
-        (tester) async {
-      final loggingOutState =
-          AuthState.authenticated(testUser).copyWith(status: AuthStatus.loggingOut);
+    testWidgets('renders LoadingOverlay when auth state is loggingOut', (
+      tester,
+    ) async {
+      final loggingOutState = AuthState.authenticated(
+        testUser,
+      ).copyWith(status: AuthStatus.loggingOut);
       when(() => mockAuthBloc.state).thenReturn(loggingOutState);
 
       await tester.pumpWidget(
-        buildTestableWidget(
-          tester: tester,
-          authState: loggingOutState,
-        ),
+        buildTestableWidget(tester: tester, authState: loggingOutState),
       );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
@@ -423,17 +441,20 @@ void main() {
   });
 
   group('Group 2: App Bar & Navigation', () {
-    testWidgets('renders pinned SliverAppBar with Settings title and back button',
-        (tester) async {
-      await tester.pumpWidget(buildTestableWidget());
-      await tester.pumpAndSettle();
+    testWidgets(
+      'renders pinned SliverAppBar with Settings title and back button',
+      (tester) async {
+        await tester.pumpWidget(buildTestableWidget());
+        await tester.pumpAndSettle();
 
-      expect(find.text('Settings'), findsOneWidget);
-      expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
-    });
+        expect(find.text('Settings'), findsOneWidget);
+        expect(find.byIcon(Icons.arrow_back_ios_new_rounded), findsOneWidget);
+      },
+    );
 
-    testWidgets('back button navigates to /home when route cannot be popped',
-        (tester) async {
+    testWidgets('back button navigates to /home when route cannot be popped', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
@@ -446,8 +467,9 @@ void main() {
   });
 
   group('Group 3: Profile Section', () {
-    testWidgets('renders free account user details with FREE ACCOUNT badge',
-        (tester) async {
+    testWidgets('renders free account user details with FREE ACCOUNT badge', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
@@ -458,10 +480,13 @@ void main() {
       expect(find.byIcon(Icons.person_outline_rounded), findsOneWidget);
     });
 
-    testWidgets('renders premium user details with PREMIUM QUESTER badge',
-        (tester) async {
+    testWidgets('renders premium user details with PREMIUM QUESTER badge', (
+      tester,
+    ) async {
       await tester.pumpWidget(
-        buildTestableWidget(authState: AuthState.authenticated(testPremiumUser)),
+        buildTestableWidget(
+          authState: AuthState.authenticated(testPremiumUser),
+        ),
       );
       await tester.pumpAndSettle();
 
@@ -489,8 +514,9 @@ void main() {
   });
 
   group('Group 4: Account Section', () {
-    testWidgets('renders Account section header and action tiles',
-        (tester) async {
+    testWidgets('renders Account section header and action tiles', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
@@ -502,47 +528,53 @@ void main() {
     });
 
     testWidgets(
-        'tapping Security & Password opens password reset dialog, sending link dispatches event',
-        (tester) async {
-      await tester.pumpWidget(buildTestableWidget(tester: tester));
-      await tester.pumpAndSettle();
+      'tapping Security & Password opens password reset dialog, sending link dispatches event',
+      (tester) async {
+        await tester.pumpWidget(buildTestableWidget(tester: tester));
+        await tester.pumpAndSettle();
 
-      await tapVisible(tester, find.text('Security & Password'));
+        await tapVisible(tester, find.text('Security & Password'));
 
-      expect(find.text('Reset Password'), findsOneWidget);
-      expect(find.textContaining('aria.stark@vowl.app'), findsOneWidget);
+        expect(find.text('Reset Password'), findsOneWidget);
+        expect(find.textContaining('aria.stark@vowl.app'), findsOneWidget);
 
-      // Tap Send Link Now
-      await tester.tap(find.text('Send Link Now'));
-      await tester.pumpAndSettle();
+        // Tap Send Link Now
+        await tester.tap(find.text('Send Link Now'));
+        await tester.pumpAndSettle();
 
-      verify(() => mockAuthBloc.add(const AuthPasswordResetRequested('aria.stark@vowl.app')))
-          .called(1);
-      expect(find.text('Reset link sent!'), findsOneWidget);
-    });
+        verify(
+          () => mockAuthBloc.add(
+            const AuthPasswordResetRequested('aria.stark@vowl.app'),
+          ),
+        ).called(1);
+        expect(find.text('Reset link sent!'), findsOneWidget);
+      },
+    );
 
     testWidgets(
-        'tapping Age Verification opens dialog, confirming calls resetAgeGate and navigates',
-        (tester) async {
-      await tester.pumpWidget(buildTestableWidget(tester: tester));
-      await tester.pumpAndSettle();
+      'tapping Age Verification opens dialog, confirming calls resetAgeGate and navigates',
+      (tester) async {
+        await tester.pumpWidget(buildTestableWidget(tester: tester));
+        await tester.pumpAndSettle();
 
-      await tapVisible(tester, find.text('Age Verification'));
+        await tapVisible(tester, find.text('Age Verification'));
 
-      expect(find.text('Reset Age Verification?'), findsOneWidget);
+        expect(find.text('Reset Age Verification?'), findsOneWidget);
 
-      // Tap Continue
-      await tester.tap(find.text('Continue'));
-      await tester.pumpAndSettle();
+        // Tap Continue
+        await tester.tap(find.text('Continue'));
+        await tester.pumpAndSettle();
 
-      expect(navigatedRoutes.contains('/age-gate'), isTrue);
-      expect(find.text('Age Gate Screen'), findsOneWidget);
-    });
+        expect(navigatedRoutes.contains('/age-gate'), isTrue);
+        expect(find.text('Age Gate Screen'), findsOneWidget);
+      },
+    );
   });
 
   group('Group 5: App Preferences Section', () {
-    testWidgets('renders App Preferences header and switch tiles',
-        (tester) async {
+    testWidgets('renders App Preferences header and switch tiles', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
@@ -559,32 +591,34 @@ void main() {
     });
 
     testWidgets(
-        'toggling Sound Effects off opens confirmation; confirming mutes SoundService',
-        (tester) async {
-      await tester.pumpWidget(buildTestableWidget(tester: tester));
-      await tester.pumpAndSettle();
+      'toggling Sound Effects off opens confirmation; confirming mutes SoundService',
+      (tester) async {
+        await tester.pumpWidget(buildTestableWidget(tester: tester));
+        await tester.pumpAndSettle();
 
-      final soundSwitch = find.descendant(
-        of: find.widgetWithText(SettingsSwitchTile, 'Sound Effects'),
-        matching: find.byType(Switch),
-      );
-      expect(soundSwitch, findsOneWidget);
+        final soundSwitch = find.descendant(
+          of: find.widgetWithText(SettingsSwitchTile, 'Sound Effects'),
+          matching: find.byType(Switch),
+        );
+        expect(soundSwitch, findsOneWidget);
 
-      // Toggle off
-      await tapVisible(tester, soundSwitch);
+        // Toggle off
+        await tapVisible(tester, soundSwitch);
 
-      expect(find.text('Disable Sound?'), findsOneWidget);
+        expect(find.text('Disable Sound?'), findsOneWidget);
 
-      // Tap Mute Anyway
-      await tester.tap(find.text('Mute Anyway'));
-      await tester.pumpAndSettle();
+        // Tap Mute Anyway
+        await tester.tap(find.text('Mute Anyway'));
+        await tester.pumpAndSettle();
 
-      verify(() => mockSoundService.setMuted(true)).called(1);
-      verify(() => mockKidsTtsService.stop()).called(1);
-    });
+        verify(() => mockSoundService.setMuted(true)).called(1);
+        verify(() => mockKidsTtsService.stop()).called(1);
+      },
+    );
 
-    testWidgets('toggling Game Sounds updates preference and SoundService',
-        (tester) async {
+    testWidgets('toggling Game Sounds updates preference and SoundService', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget(tester: tester));
       await tester.pumpAndSettle();
 
@@ -601,45 +635,49 @@ void main() {
     });
 
     testWidgets(
-        'Pronunciation Voice tile renders current preset and opens bottom sheet on tap',
-        (tester) async {
-      await tester.pumpWidget(buildTestableWidget(tester: tester));
-      await tester.pumpAndSettle();
+      'Pronunciation Voice tile renders current preset and opens bottom sheet on tap',
+      (tester) async {
+        await tester.pumpWidget(buildTestableWidget(tester: tester));
+        await tester.pumpAndSettle();
 
-      expect(find.text('Clear Guide'), findsOneWidget);
+        expect(find.text('Clear Guide'), findsOneWidget);
 
-      await tapVisible(tester, find.text('Pronunciation Voice'));
+        await tapVisible(tester, find.text('Pronunciation Voice'));
 
-      expect(find.byType(TtsVoiceSelectionBottomSheet), findsOneWidget);
-    });
+        expect(find.byType(TtsVoiceSelectionBottomSheet), findsOneWidget);
+      },
+    );
 
     testWidgets(
-        'toggling Push Notifications off opens confirmation; confirming updates NotificationService',
-        (tester) async {
-      await tester.pumpWidget(buildTestableWidget(tester: tester));
-      await tester.pumpAndSettle();
+      'toggling Push Notifications off opens confirmation; confirming updates NotificationService',
+      (tester) async {
+        await tester.pumpWidget(buildTestableWidget(tester: tester));
+        await tester.pumpAndSettle();
 
-      final notifSwitch = find.descendant(
-        of: find.widgetWithText(SettingsSwitchTile, 'Push Notifications'),
-        matching: find.byType(Switch),
-      );
-      expect(notifSwitch, findsOneWidget);
+        final notifSwitch = find.descendant(
+          of: find.widgetWithText(SettingsSwitchTile, 'Push Notifications'),
+          matching: find.byType(Switch),
+        );
+        expect(notifSwitch, findsOneWidget);
 
-      // Toggle off
-      await tapVisible(tester, notifSwitch);
+        // Toggle off
+        await tapVisible(tester, notifSwitch);
 
-      expect(find.text('Disable Notifications?'), findsOneWidget);
+        expect(find.text('Disable Notifications?'), findsOneWidget);
 
-      // Confirm disable
-      await tester.tap(find.text('Yes, Disable'));
-      await tester.pumpAndSettle();
+        // Confirm disable
+        await tester.tap(find.text('Yes, Disable'));
+        await tester.pumpAndSettle();
 
-      verify(() => mockNotificationService.onNotificationPreferenceChanged(false))
-          .called(1);
-    });
+        verify(
+          () => mockNotificationService.onNotificationPreferenceChanged(false),
+        ).called(1);
+      },
+    );
 
-    testWidgets('toggling Reduce Complex Gestures updates SharedPreferences',
-        (tester) async {
+    testWidgets('toggling Reduce Complex Gestures updates SharedPreferences', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
@@ -655,8 +693,9 @@ void main() {
       expect(prefs.getBool('reduce_complex_gestures'), isTrue);
     });
 
-    testWidgets('toggling Low Animation Mode updates global override',
-        (tester) async {
+    testWidgets('toggling Low Animation Mode updates global override', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
@@ -671,8 +710,9 @@ void main() {
       expect(VowlMotion.lowAnimationModeOverride.value, isTrue);
     });
 
-    testWidgets('toggling Analytics calls FirebaseAnalytics platform',
-        (tester) async {
+    testWidgets('toggling Analytics calls FirebaseAnalytics platform', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
@@ -688,60 +728,67 @@ void main() {
     });
 
     testWidgets(
-        'Midnight Mode switch is hidden in Light Theme, visible in Dark Theme',
-        (tester) async {
-      // In Light Theme:
-      await tester.pumpWidget(
-        buildTestableWidget(brightness: Brightness.light),
-      );
-      await tester.pumpAndSettle();
-      expect(find.text('Midnight Mode'), findsNothing);
+      'Midnight Mode switch is hidden in Light Theme, visible in Dark Theme',
+      (tester) async {
+        // In Light Theme:
+        await tester.pumpWidget(
+          buildTestableWidget(brightness: Brightness.light),
+        );
+        await tester.pumpAndSettle();
+        expect(find.text('Midnight Mode'), findsNothing);
 
-      // In Dark Theme:
-      await tester.pumpWidget(
-        buildTestableWidget(
-          brightness: Brightness.dark,
-          themeState: const ThemeState(themeMode: ThemeMode.dark, isMidnight: false),
-        ),
-      );
-      await tester.pumpAndSettle();
+        // In Dark Theme:
+        await tester.pumpWidget(
+          buildTestableWidget(
+            brightness: Brightness.dark,
+            themeState: const ThemeState(
+              themeMode: ThemeMode.dark,
+              isMidnight: false,
+            ),
+          ),
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.text('Midnight Mode'), findsOneWidget);
+        expect(find.text('Midnight Mode'), findsOneWidget);
 
-      final midnightSwitch = find.descendant(
-        of: find.widgetWithText(SettingsSwitchTile, 'Midnight Mode'),
-        matching: find.byType(Switch),
-      );
-      await tapVisible(tester, midnightSwitch);
+        final midnightSwitch = find.descendant(
+          of: find.widgetWithText(SettingsSwitchTile, 'Midnight Mode'),
+          matching: find.byType(Switch),
+        );
+        await tapVisible(tester, midnightSwitch);
 
-      verify(() => mockThemeCubit.toggleMidnight(true)).called(1);
-    });
+        verify(() => mockThemeCubit.toggleMidnight(true)).called(1);
+      },
+    );
 
     testWidgets(
-        'Language Selection tile displays flag and name, opens LanguagePickerSheet on tap',
-        (tester) async {
+      'Language Selection tile displays flag and name, opens LanguagePickerSheet on tap',
+      (tester) async {
+        await tester.pumpWidget(buildTestableWidget());
+        await tester.pumpAndSettle();
+
+        expect(find.text('🇺🇸 English'), findsOneWidget);
+
+        await tapVisible(tester, find.text('Language Selection'));
+
+        expect(find.byType(LanguagePickerSheet), findsOneWidget);
+      },
+    );
+
+    testWidgets('Translation Language tile renders configured language name', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
-      expect(find.text('🇺🇸 English'), findsOneWidget);
-
-      await tapVisible(tester, find.text('Language Selection'));
-
-      expect(find.byType(LanguagePickerSheet), findsOneWidget);
-    });
-
-    testWidgets('Translation Language tile renders configured language name',
-        (tester) async {
-      await tester.pumpWidget(buildTestableWidget());
-      await tester.pumpAndSettle();
-
-      expect(find.text('Spanish'), findsOneWidget);
+      expect(find.textContaining('Spanish'), findsOneWidget);
     });
   });
 
   group('Group 6: Support & Legal Section', () {
-    testWidgets('renders Support & Legal section header and info tiles',
-        (tester) async {
+    testWidgets('renders Support & Legal section header and info tiles', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
@@ -754,19 +801,27 @@ void main() {
       expect(find.text('2.4.0 (108)'), findsOneWidget);
     });
 
-    testWidgets('tapping Help Center launches support email link',
-        (tester) async {
+    testWidgets('tapping Help Center launches support email link', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
       await tapVisible(tester, find.text('Help Center'));
 
-      expect(mockUrlLauncher.lastLaunchedUrl, startsWith('mailto:support.vowl.app@gmail.com'));
-      expect(mockUrlLauncher.lastLaunchedUrl, contains('App%20Version%3A%202.4.0'));
+      expect(
+        mockUrlLauncher.lastLaunchedUrl,
+        startsWith('mailto:support.vowl.app@gmail.com'),
+      );
+      expect(
+        mockUrlLauncher.lastLaunchedUrl,
+        contains('App%20Version%3A%202.4.0'),
+      );
     });
 
-    testWidgets('tapping Terms of Service launches legal terms URL',
-        (tester) async {
+    testWidgets('tapping Terms of Service launches legal terms URL', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
@@ -778,8 +833,9 @@ void main() {
       );
     });
 
-    testWidgets('tapping Privacy Policy launches legal privacy URL',
-        (tester) async {
+    testWidgets('tapping Privacy Policy launches legal privacy URL', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
@@ -803,8 +859,9 @@ void main() {
   });
 
   group('Group 7: Danger Zone & Logout Flow', () {
-    testWidgets('renders Danger Zone header and destructive action tiles',
-        (tester) async {
+    testWidgets('renders Danger Zone header and destructive action tiles', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
@@ -815,8 +872,9 @@ void main() {
       expect(find.text('SIGN OUT ACCOUNT'), findsOneWidget);
     });
 
-    testWidgets('tapping Clear App Cache shows success SnackBar',
-        (tester) async {
+    testWidgets('tapping Clear App Cache shows success SnackBar', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pumpAndSettle();
 
@@ -827,61 +885,66 @@ void main() {
     });
 
     testWidgets(
-        'tapping Delete Account opens warning dialog, Keep My Account dismisses',
-        (tester) async {
-      await tester.pumpWidget(buildTestableWidget(tester: tester));
-      await tester.pumpAndSettle();
+      'tapping Delete Account opens warning dialog, Keep My Account dismisses',
+      (tester) async {
+        await tester.pumpWidget(buildTestableWidget(tester: tester));
+        await tester.pumpAndSettle();
 
-      await tapVisible(tester, find.text('Delete Account'));
+        await tapVisible(tester, find.text('Delete Account'));
 
-      expect(find.text('Delete Account?'), findsOneWidget);
-      expect(find.text('Keep My Account'), findsOneWidget);
-      expect(find.text('Delete Everything'), findsOneWidget);
+        expect(find.text('Delete Account?'), findsOneWidget);
+        expect(find.text('Keep My Account'), findsOneWidget);
+        expect(find.text('Delete Everything'), findsOneWidget);
 
-      await tester.tap(find.text('Keep My Account'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('Keep My Account'));
+        await tester.pumpAndSettle();
 
-      expect(find.text('Delete Account?'), findsNothing);
-    });
+        expect(find.text('Delete Account?'), findsNothing);
+      },
+    );
 
     testWidgets(
-        'tapping SIGN OUT ACCOUNT opens sign out dialog, confirming dispatches AuthLogoutRequested',
-        (tester) async {
-      await tester.pumpWidget(buildTestableWidget(tester: tester));
-      await tester.pumpAndSettle();
+      'tapping SIGN OUT ACCOUNT opens sign out dialog, confirming dispatches AuthLogoutRequested',
+      (tester) async {
+        await tester.pumpWidget(buildTestableWidget(tester: tester));
+        await tester.pumpAndSettle();
 
-      await tapVisible(tester, find.text('SIGN OUT ACCOUNT'));
+        await tapVisible(tester, find.text('SIGN OUT ACCOUNT'));
 
-      expect(find.text('Sign Out?'), findsOneWidget);
-      expect(find.text('Sign Out'), findsOneWidget);
-      expect(find.text('CANCEL'), findsOneWidget);
+        expect(find.text('Sign Out?'), findsOneWidget);
+        expect(find.text('Sign Out'), findsOneWidget);
+        expect(find.text('CANCEL'), findsOneWidget);
 
-      await tester.tap(find.text('Sign Out'));
-      await tester.pumpAndSettle();
+        await tester.tap(find.text('Sign Out'));
+        await tester.pumpAndSettle();
 
-      verify(() => mockAuthBloc.add(const AuthLogoutRequested())).called(1);
-    });
+        verify(() => mockAuthBloc.add(const AuthLogoutRequested())).called(1);
+      },
+    );
   });
 
   group('Group 8: Responsive Viewports, Accessibility & Themes', () {
-    testWidgets('renders on compact mobile viewport (320x568) with zero overflow',
-        (tester) async {
-      tester.view.physicalSize = const Size(320 * 2.0, 568 * 2.0);
-      tester.view.devicePixelRatio = 2.0;
-      addTearDown(() => tester.view.resetPhysicalSize());
+    testWidgets(
+      'renders on compact mobile viewport (320x568) with zero overflow',
+      (tester) async {
+        tester.view.physicalSize = const Size(320 * 2.0, 568 * 2.0);
+        tester.view.devicePixelRatio = 2.0;
+        addTearDown(() => tester.view.resetPhysicalSize());
 
-      await tester.pumpWidget(
-        buildTestableWidget(screenSize: const Size(320, 568)),
-      );
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(
+          buildTestableWidget(screenSize: const Size(320, 568)),
+        );
+        await tester.pumpAndSettle();
 
-      expect(find.byType(SettingsScreen), findsOneWidget);
-      expect(find.text('Settings'), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(SettingsScreen), findsOneWidget);
+        expect(find.text('Settings'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('renders on tablet viewport (800x1280) with zero overflow',
-        (tester) async {
+    testWidgets('renders on tablet viewport (800x1280) with zero overflow', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(800 * 1.5, 1280 * 1.5);
       tester.view.devicePixelRatio = 1.5;
       addTearDown(() => tester.view.resetPhysicalSize());
@@ -896,8 +959,9 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('renders cleanly under 1.3x accessibility text scale',
-        (tester) async {
+    testWidgets('renders cleanly under 1.3x accessibility text scale', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildTestableWidget(textScaleFactor: 1.3));
       await tester.pumpAndSettle();
 
@@ -910,7 +974,10 @@ void main() {
       await tester.pumpWidget(
         buildTestableWidget(
           isMidnight: true,
-          themeState: const ThemeState(themeMode: ThemeMode.dark, isMidnight: true),
+          themeState: const ThemeState(
+            themeMode: ThemeMode.dark,
+            isMidnight: true,
+          ),
         ),
       );
       await tester.pumpAndSettle();

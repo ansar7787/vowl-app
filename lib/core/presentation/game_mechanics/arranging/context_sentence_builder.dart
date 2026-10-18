@@ -644,9 +644,8 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                             8.r,
                                           ),
                                           border: Border.all(
-                                            color: Colors.amberAccent.withValues(
-                                              alpha: 0.5,
-                                            ),
+                                            color: Colors.amberAccent
+                                                .withValues(alpha: 0.5),
                                           ),
                                         ),
                                         child: Row(

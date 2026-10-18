@@ -420,14 +420,16 @@ class _StreakMilestonesState extends State<StreakMilestones> {
                               child: reduceMotion
                                   ? Container(
                                       decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(24.r),
+                                        borderRadius: BorderRadius.circular(
+                                          24.r,
+                                        ),
                                       ),
                                     )
                                   : Container(
                                       decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(24.r),
+                                        borderRadius: BorderRadius.circular(
+                                          24.r,
+                                        ),
                                       ),
                                     ).animate().shimmer(
                                       duration: 3.seconds,
@@ -485,9 +487,6 @@ class _StreakMilestonesState extends State<StreakMilestones> {
     );
 
     if (reduceMotion) return btn;
-    return btn.animate().shimmer(
-      duration: 2.seconds,
-      delay: 400.ms,
-    );
+    return btn.animate().shimmer(duration: 2.seconds, delay: 400.ms);
   }
 }

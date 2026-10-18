@@ -221,7 +221,10 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
       // Check if user already claimed this reward in Firestore:
       if (_hasClaimedInAccount || rewardClaimed || isDismissed) {
         if (_hasClaimedInAccount) {
-          await prefs.setBool(BeginnerDiscoveryCard.prefsKeyRewardClaimed, true);
+          await prefs.setBool(
+            BeginnerDiscoveryCard.prefsKeyRewardClaimed,
+            true,
+          );
           await prefs.setBool(BeginnerDiscoveryCard.prefsKeyDismissed, true);
         }
         if (mounted) {
@@ -849,10 +852,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
     return Semantics(
       button: true,
       label: 'Quest ${index + 1}: ${quest.title}. ${quest.subtitle}',
-      child: ScaleButton(
-        onTap: () => _handleQuestTap(quest),
-        child: card,
-      ),
+      child: ScaleButton(onTap: () => _handleQuestTap(quest), child: card),
     );
   }
 
@@ -938,7 +938,9 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
                                 vertical: 1.5.h,
                               ),
                               decoration: BoxDecoration(
-                                color: AppColors.amber500.withValues(alpha: 0.18),
+                                color: AppColors.amber500.withValues(
+                                  alpha: 0.18,
+                                ),
                                 borderRadius: BorderRadius.circular(5.r),
                               ),
                               child: Text(

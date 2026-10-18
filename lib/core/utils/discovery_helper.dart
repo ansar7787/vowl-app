@@ -216,8 +216,10 @@ class DiscoveryHelper {
     String instructionKey,
   ) {
     final maxLevels = CurriculumManifest.getLevels(subtype.name);
-    final currentLevel = (user.unlockedLevels[subtype.name] ?? 1)
-        .clamp(1, maxLevels > 0 ? maxLevels : 50);
+    final currentLevel = (user.unlockedLevels[subtype.name] ?? 1).clamp(
+      1,
+      maxLevels > 0 ? maxLevels : 50,
+    );
     return GameQuest(
       id: '${subtype.name}_$currentLevel',
       type: subtype.category,

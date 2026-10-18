@@ -19,6 +19,7 @@ class ProfilePreferencesList extends StatelessWidget {
     return GlassTile(
       borderRadius: BorderRadius.circular(28.r),
       padding: EdgeInsets.symmetric(horizontal: 4.w),
+      blur: 0,
       child: Column(
         children: [
           _buildPreferenceTile(

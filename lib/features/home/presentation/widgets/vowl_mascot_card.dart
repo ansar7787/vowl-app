@@ -98,6 +98,7 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
                 borderRadius: BorderRadius.circular(20.r),
                 borderColor: AppColors.amber500.withValues(alpha: 0.3),
+                blur: 0,
                 child: SizedBox(
                   width: double.infinity,
                   child: Row(

@@ -411,7 +411,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
 
     // Auto-correct unlockedLevels for premium users who previously hit a free-tier toll gate
     // and then upgraded, so they don't have to replay the previous level to trigger the unlock.
-    if (isPremium && unlockedLevels <= completedLevels && completedLevels < _totalLevels) {
+    if (isPremium &&
+        unlockedLevels <= completedLevels &&
+        completedLevels < _totalLevels) {
       unlockedLevels = completedLevels + 1;
     }
     unlockedLevels = math.min(_totalLevels, unlockedLevels);

@@ -1031,8 +1031,8 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   ) {
     final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
     final totalLevels = CurriculumManifest.getLevels(subtype.name);
-    final completedCount =
-        (user.completedLevels[subtype.name]?.length ?? 0).clamp(0, totalLevels);
+    final completedCount = (user.completedLevels[subtype.name]?.length ?? 0)
+        .clamp(0, totalLevels);
     final isMastered = completedCount >= totalLevels;
     final currentLevel = isMastered ? totalLevels : completedCount + 1;
     final isNew =
@@ -1232,16 +1232,17 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   ) {
     final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
     final totalLevels = CurriculumManifest.getLevels(subtype.name);
-    final completedCount =
-        (user.completedLevels[subtype.name]?.length ?? 0).clamp(0, totalLevels);
+    final completedCount = (user.completedLevels[subtype.name]?.length ?? 0)
+        .clamp(0, totalLevels);
     final isMastered = completedCount >= totalLevels;
     final currentLevel = isMastered ? totalLevels : completedCount + 1;
     final isNew =
         !user.categoryStats.containsKey(subtype.name) && completedCount == 0;
     final displayColor = theme.primaryColor;
     final contentColor = Theme.of(context).colorScheme.onSurface;
-    final completedPercent =
-        totalLevels > 0 ? (completedCount / totalLevels * 100).toInt() : 0;
+    final completedPercent = totalLevels > 0
+        ? (completedCount / totalLevels * 100).toInt()
+        : 0;
 
     return Semantics(
       button: true,
@@ -1379,7 +1380,11 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                               ),
                             ),
                             SizedBox(height: 10.h),
-                            _buildProgressBar(displayColor, completedCount, total: totalLevels),
+                            _buildProgressBar(
+                              displayColor,
+                              completedCount,
+                              total: totalLevels,
+                            ),
                             SizedBox(height: 6.h),
                             Text(
                               context.tr(
@@ -1410,7 +1415,9 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   }
 
   Widget _buildProgressBar(Color color, int completedCount, {int total = 200}) {
-    final progress = total > 0 ? (completedCount.clamp(0, total)) / total.toDouble() : 0.0;
+    final progress = total > 0
+        ? (completedCount.clamp(0, total)) / total.toDouble()
+        : 0.0;
     return Container(
       height: 8.h,
       width: double.infinity,

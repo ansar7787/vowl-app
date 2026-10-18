@@ -153,7 +153,9 @@ class _PedagogicalRuleBoxState extends State<PedagogicalRuleBox> {
                               ),
                               borderRadius: BorderRadius.circular(12.r),
                               border: Border.all(
-                                color: widget.shadowColor.withValues(alpha: 0.3),
+                                color: widget.shadowColor.withValues(
+                                  alpha: 0.3,
+                                ),
                                 width: 1,
                               ),
                             ),

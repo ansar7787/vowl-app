@@ -792,14 +792,14 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
     final animatedContent = reduceMotion
         ? content
         : content
-            .animate()
-            .slideY(
-              begin: 1.0,
-              end: 0,
-              duration: 400.ms,
-              curve: Curves.easeOut,
-            )
-            .fadeIn(duration: 300.ms);
+              .animate()
+              .slideY(
+                begin: 1.0,
+                end: 0,
+                duration: 400.ms,
+                curve: Curves.easeOut,
+              )
+              .fadeIn(duration: 300.ms);
 
     if (widget.isPositioned) {
       return Positioned(bottom: 0, left: 0, right: 0, child: animatedContent);

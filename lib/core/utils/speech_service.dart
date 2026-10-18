@@ -16,10 +16,8 @@ import 'package:vowl/core/utils/injection_container.dart';
 /// alternative hypotheses for the entire spoken utterance (an N-best list).
 /// Callers who want the transcribed speech should use `candidates.first`,
 /// and MUST NOT do `candidates.join(' ')`.
-typedef SpeechResultCallback = void Function(
-  List<String> candidates,
-  bool isFinal,
-);
+typedef SpeechResultCallback =
+    void Function(List<String> candidates, bool isFinal);
 
 /// Abstract contract defining Text-To-Speech (TTS) and Speech-To-Text (STT) services.
 ///
@@ -37,7 +35,6 @@ abstract class SpeechService {
 
   /// Registers a word callback callback to track Karaoke progress.
   void setWordCallback(Function(String)? callback);
-
 
   /// Sets text-to-speech presentation rate speed.
   ///
@@ -95,7 +92,7 @@ class SpeechServiceImpl implements SpeechService {
   List<LocaleName> _availableLocales = [];
 
   SpeechServiceImpl({TtsService? ttsService})
-      : _ttsService = ttsService ?? sl<TtsService>();
+    : _ttsService = ttsService ?? sl<TtsService>();
 
   @override
   bool get isPlaying => _ttsService.isSpeaking;
@@ -105,9 +102,10 @@ class SpeechServiceImpl implements SpeechService {
 
   @override
   void setWordCallback(Function(String)? callback) {
-    _ttsService.setWordCallback(callback != null ? (word) => callback(word) : null);
+    _ttsService.setWordCallback(
+      callback != null ? (word) => callback(word) : null,
+    );
   }
-
 
   @override
   @Deprecated('Pass speech rate directly to speak(..., rate: ...)')
@@ -313,10 +311,7 @@ class SpeechServiceImpl implements SpeechService {
       }
       await _ttsService.stop();
     } catch (e) {
-      sl<AppLogger>().error(
-        'SpeechService: Error during disposal',
-        error: e,
-      );
+      sl<AppLogger>().error('SpeechService: Error during disposal', error: e);
     }
   }
 }

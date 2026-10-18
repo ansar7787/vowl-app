@@ -56,9 +56,9 @@ class GlobalProgressCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(28.r),
             boxShadow: [
               BoxShadow(
-                color: AppColors.indigo500.withValues(alpha: 0.15),
-                blurRadius: 30,
-                offset: const Offset(0, 10),
+                color: AppColors.indigo500.withValues(alpha: 0.12),
+                blurRadius: 14,
+                offset: const Offset(0, 5),
               ),
             ],
           ),
@@ -66,6 +66,7 @@ class GlobalProgressCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(28.r),
             padding: EdgeInsets.all(20.r),
             borderColor: AppColors.indigo500.withValues(alpha: 0.3),
+            blur: 0,
             child: ExcludeSemantics(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

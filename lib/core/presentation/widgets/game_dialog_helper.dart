@@ -180,7 +180,8 @@ class GameDialogHelper {
                         context,
                         context.tr(
                           'games.ad_not_ready',
-                          fallback: 'Ad not ready yet. Please try again in a few seconds!',
+                          fallback:
+                              'Ad not ready yet. Please try again in a few seconds!',
                         ),
                         icon: Icons.hourglass_empty_rounded,
                         color: Colors.orange,
@@ -331,7 +332,8 @@ class GameDialogHelper {
                       context,
                       context.tr(
                         'games.ad_not_ready',
-                        fallback: 'Ad not ready yet. Please try again in a few seconds!',
+                        fallback:
+                            'Ad not ready yet. Please try again in a few seconds!',
                       ),
                       icon: Icons.hourglass_empty_rounded,
                       color: Colors.orange,
@@ -536,7 +538,8 @@ class GameDialogHelper {
               context,
               context.tr(
                 'games.ad_not_ready',
-                fallback: 'Ad not ready yet. Please try again in a few seconds!',
+                fallback:
+                    'Ad not ready yet. Please try again in a few seconds!',
               ),
               icon: Icons.hourglass_empty_rounded,
               color: Colors.orange,

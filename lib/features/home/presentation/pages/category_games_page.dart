@@ -679,8 +679,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
 
     // Abstract the math out of the widget parameters to ensure raw floats are clean
     final double cardProgress =
-        (completedCount.clamp(0, gameTotalLevels)) /
-        gameTotalLevels.toDouble();
+        (completedCount.clamp(0, gameTotalLevels)) / gameTotalLevels.toDouble();
 
     // Pure gameplay stars calculation (excluding Star Vault magic stars and claimed chests)
     final categoryStars = user.starRatings[subtype.name] ?? {};
@@ -744,7 +743,9 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                                 ),
                                 SizedBox(height: 8.h),
                                 _buildLiquidProgressBar(
-                                  color: isAllThreeStars ? Colors.amber : displayColor,
+                                  color: isAllThreeStars
+                                      ? Colors.amber
+                                      : displayColor,
                                   progress: cardProgress,
                                 ),
                                 SizedBox(height: 8.h),
@@ -754,8 +755,8 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                                   child: Text(
                                     isMastered
                                         ? (isAllThreeStars
-                                            ? '★ $gameplayStars / $maxGameplayStars • 100% PERFECT'
-                                            : '★ $gameplayStars / $maxGameplayStars • REPLAY FOR 3★')
+                                              ? '★ $gameplayStars / $maxGameplayStars • 100% PERFECT'
+                                              : '★ $gameplayStars / $maxGameplayStars • REPLAY FOR 3★')
                                         : '★ $gameplayStars / $maxGameplayStars $gameStarsLabel',
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
@@ -806,9 +807,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                             borderRadius: BorderRadius.circular(20.r),
                             boxShadow: [
                               BoxShadow(
-                                color: displayColor.withValues(
-                                  alpha: 0.4,
-                                ),
+                                color: displayColor.withValues(alpha: 0.4),
                                 blurRadius: 20,
                                 offset: const Offset(0, 8),
                               ),
@@ -889,7 +888,9 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
             if (VowlMotion.shouldReduceMotion(context)) {
               return bar;
             }
-            return bar.animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds);
+            return bar
+                .animate(onPlay: (c) => c.repeat())
+                .shimmer(duration: 2.seconds);
           },
         ),
       ),
@@ -926,9 +927,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
           ],
         ),
         child: Icon(
-          isAllThreeStars
-              ? Icons.stars_rounded
-              : Icons.emoji_events_rounded,
+          isAllThreeStars ? Icons.stars_rounded : Icons.emoji_events_rounded,
           color: Colors.white,
           size: 16.r,
         ),

@@ -9,6 +9,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/domain/services/kids_game_helper.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -62,6 +63,10 @@ class _KidsCategoryShelfState extends State<KidsCategoryShelf> {
               return AnimatedBuilder(
                 animation: _scrollController,
                 builder: (context, child) {
+                  if (VowlMotion.shouldReduceMotion(context)) {
+                    return child!;
+                  }
+
                   double scrollPixels = 0;
                   if (_scrollController.hasClients) {
                     scrollPixels = _scrollController.position.pixels;
@@ -82,11 +87,9 @@ class _KidsCategoryShelfState extends State<KidsCategoryShelf> {
 
                   // 2026 Spatial Physics:
                   // 1. Tilt (Rotate Y)
-                  final tilt = distance * 0.6;
+                  final tilt = distance * 0.4;
                   // 2. Scale
-                  final scale = 1.0 - (distance.abs() * 0.15).clamp(0.0, 0.2);
-                  // 3. Dynamic Opacity
-                  final opacity = 1.0 - (distance.abs() * 0.4).clamp(0.0, 0.6);
+                  final scale = 1.0 - (distance.abs() * 0.1).clamp(0.0, 0.15);
 
                   return Transform(
                     transform: Matrix4.identity()
@@ -94,7 +97,7 @@ class _KidsCategoryShelfState extends State<KidsCategoryShelf> {
                       ..rotateY(tilt)
                       ..scaleByDouble(scale, scale, 1.0, 1.0),
                     alignment: FractionalOffset.center,
-                    child: Opacity(opacity: opacity, child: child),
+                    child: child,
                   );
                 },
                 child: Padding(
@@ -223,7 +226,8 @@ class _KidsGameEntryCard extends StatelessWidget {
 
   Widget _buildCardIndicator(BuildContext context, Color color) {
     final maxLevels = CurriculumManifest.getLevels(metadata.gameType);
-    final levelsCleared = (user.completedLevels[metadata.gameType]?.length ?? 0).clamp(0, maxLevels);
+    final levelsCleared = (user.completedLevels[metadata.gameType]?.length ?? 0)
+        .clamp(0, maxLevels);
     final isMastered = levelsCleared >= maxLevels;
     final currentLevel = isMastered
         ? maxLevels

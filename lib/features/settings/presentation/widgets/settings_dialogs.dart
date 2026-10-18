@@ -339,7 +339,8 @@ class SettingsDialogs {
                     // FIX (HIGH-2): Was hardcoded 'We will send a password...'
                     context.tr(
                       'settings_dialogs.reset_password_body',
-                      fallback: 'We will send a password recovery email to:\n{}',
+                      fallback:
+                          'We will send a password recovery email to:\n{}',
                       args: [email],
                     ),
                     textAlign: TextAlign.center,
@@ -546,7 +547,8 @@ class SettingsDialogs {
                   ),
                   SizedBox(height: 32.h),
                   _PrimaryButton(
-                    label: confirmLabel ??
+                    label:
+                        confirmLabel ??
                         context.tr('common.delete', fallback: 'Delete'),
                     color: Colors.red,
                     onPressed: () {
@@ -556,7 +558,8 @@ class SettingsDialogs {
                   ),
                   SizedBox(height: 12.h),
                   _SecondaryTextButton(
-                    label: cancelLabel ??
+                    label:
+                        cancelLabel ??
                         context.tr('common.cancel', fallback: 'CANCEL'),
                     isDark: isDark,
                     onPressed: () => Navigator.pop(dialogContext, false),
@@ -869,202 +872,205 @@ class _EditProfileDialogContentState extends State<_EditProfileDialogContent> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-          Text(
-            context.tr(
-              'settings_dialogs.profile_settings',
-              fallback: 'Profile Settings',
+            Text(
+              context.tr(
+                'settings_dialogs.profile_settings',
+                fallback: 'Profile Settings',
+              ),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 24.sp,
+                fontWeight: FontWeight.w900,
+                color: isDark ? Colors.white : AppColors.slate900,
+              ),
+              textAlign: TextAlign.center,
             ),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 24.sp,
-              fontWeight: FontWeight.w900,
-              color: isDark ? Colors.white : AppColors.slate900,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(height: 32.h),
-          // Avatar picker
-          GestureDetector(
-            onTap: () async {
-              final XFile? image = await _picker.pickImage(
-                source: ImageSource.gallery,
-              );
-              if (image != null && context.mounted) {
-                context.read<ProfileBloc>().add(
-                  ProfileUpdatePictureRequested(image.path),
+            SizedBox(height: 32.h),
+            // Avatar picker
+            GestureDetector(
+              onTap: () async {
+                final XFile? image = await _picker.pickImage(
+                  source: ImageSource.gallery,
                 );
-                if (context.mounted) Navigator.pop(context);
-              }
-            },
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  padding: EdgeInsets.all(4.r),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.blue.withValues(alpha: 0.2),
-                        blurRadius: 15,
-                        spreadRadius: 2,
-                      ),
-                    ],
-                    gradient: LinearGradient(
-                      colors: [Colors.blue, Colors.blue.withValues(alpha: 0.1)],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                  ),
-                  child: CircleAvatar(
-                    radius: 50.r,
-                    backgroundColor: Colors.white.withValues(alpha: 0.05),
-                    backgroundImage: widget.user.photoUrl?.isNotEmpty == true
-                        ? (widget.user.photoUrl!.startsWith('http')
-                              ? NetworkImage(widget.user.photoUrl!)
-                              : FileImage(File(widget.user.photoUrl!))
-                                    as ImageProvider)
-                        : null,
-                    child: widget.user.photoUrl?.isNotEmpty != true
-                        ? Icon(
-                            Icons.person_rounded,
-                            size: 50.r,
-                            color: Colors.white24,
-                          )
-                        : null,
-                  ),
-                ),
-                Positioned(
-                  bottom: 4,
-                  right: 4,
-                  child: Container(
-                    padding: EdgeInsets.all(10.r),
+                if (image != null && context.mounted) {
+                  context.read<ProfileBloc>().add(
+                    ProfileUpdatePictureRequested(image.path),
+                  );
+                  if (context.mounted) Navigator.pop(context);
+                }
+              },
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(4.r),
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Colors.blue, Colors.blue.shade700],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
                       shape: BoxShape.circle,
-                      border: Border.all(color: Colors.white, width: 2),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.blue.withValues(alpha: 0.4),
-                          blurRadius: 12,
+                          color: Colors.blue.withValues(alpha: 0.2),
+                          blurRadius: 15,
                           spreadRadius: 2,
                         ),
                       ],
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.blue,
+                          Colors.blue.withValues(alpha: 0.1),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
                     ),
-                    child: Icon(
-                      Icons.camera_alt_rounded,
-                      color: Colors.white,
-                      size: 20.r,
+                    child: CircleAvatar(
+                      radius: 50.r,
+                      backgroundColor: Colors.white.withValues(alpha: 0.05),
+                      backgroundImage: widget.user.photoUrl?.isNotEmpty == true
+                          ? (widget.user.photoUrl!.startsWith('http')
+                                ? NetworkImage(widget.user.photoUrl!)
+                                : FileImage(File(widget.user.photoUrl!))
+                                      as ImageProvider)
+                          : null,
+                      child: widget.user.photoUrl?.isNotEmpty != true
+                          ? Icon(
+                              Icons.person_rounded,
+                              size: 50.r,
+                              color: Colors.white24,
+                            )
+                          : null,
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 4,
+                    right: 4,
+                    child: Container(
+                      padding: EdgeInsets.all(10.r),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Colors.blue, Colors.blue.shade700],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.white, width: 2),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.blue.withValues(alpha: 0.4),
+                            blurRadius: 12,
+                            spreadRadius: 2,
+                          ),
+                        ],
+                      ),
+                      child: Icon(
+                        Icons.camera_alt_rounded,
+                        color: Colors.white,
+                        size: 20.r,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 32.h),
+            // Name field
+            TextField(
+              controller: _nameController,
+              maxLength: 30,
+              buildCounter:
+                  (
+                    context, {
+                    required currentLength,
+                    required isFocused,
+                    maxLength,
+                  }) => null,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                color: isDark ? Colors.white : AppColors.slate900,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w600,
+              ),
+              decoration: InputDecoration(
+                labelText: context.tr(
+                  'settings_dialogs.display_name',
+                  fallback: 'Display Name',
+                ),
+                labelStyle: TextStyle(
+                  fontFamily: 'Outfit',
+                  color: isDark ? Colors.white38 : Colors.black38,
+                ),
+                prefixIcon: Icon(
+                  Icons.badge_rounded,
+                  color: Colors.blue,
+                  size: 20.r,
+                ),
+                filled: true,
+                fillColor: Colors.white.withValues(alpha: 0.05),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16.r),
+                  borderSide: BorderSide.none,
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16.r),
+                  borderSide: const BorderSide(color: Colors.blue, width: 2),
+                ),
+              ),
+            ),
+            SizedBox(height: 32.h),
+            Row(
+              children: [
+                Expanded(
+                  child: TextButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: Text(
+                      context.tr('common.cancel', fallback: 'Cancel'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: isDark ? Colors.white38 : Colors.black38,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 16.w),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      final trimmed = _nameController.text.trim();
+                      if (trimmed.isEmpty) return;
+                      if (trimmed.length < 2) return;
+                      if (trimmed != widget.user.displayName) {
+                        FocusScope.of(
+                          context,
+                        ).unfocus(); // L-05: dismiss keyboard on save
+                        context.read<ProfileBloc>().add(
+                          ProfileUpdateDisplayNameRequested(trimmed),
+                        );
+                      }
+                      Navigator.pop(context);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      foregroundColor: Colors.white,
+                      padding: EdgeInsets.symmetric(vertical: 16.h),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.r),
+                      ),
+                    ),
+                    child: Text(
+                      context.tr('common.save', fallback: 'Save'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontWeight: FontWeight.w900,
+                        fontSize: 16.sp,
+                      ),
                     ),
                   ),
                 ),
               ],
             ),
-          ),
-          SizedBox(height: 32.h),
-          // Name field
-          TextField(
-            controller: _nameController,
-            maxLength: 30,
-            buildCounter:
-                (
-                  context, {
-                  required currentLength,
-                  required isFocused,
-                  maxLength,
-                }) => null,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              color: isDark ? Colors.white : AppColors.slate900,
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w600,
-            ),
-            decoration: InputDecoration(
-              labelText: context.tr(
-                'settings_dialogs.display_name',
-                fallback: 'Display Name',
-              ),
-              labelStyle: TextStyle(
-                fontFamily: 'Outfit',
-                color: isDark ? Colors.white38 : Colors.black38,
-              ),
-              prefixIcon: Icon(
-                Icons.badge_rounded,
-                color: Colors.blue,
-                size: 20.r,
-              ),
-              filled: true,
-              fillColor: Colors.white.withValues(alpha: 0.05),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: BorderSide.none,
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: const BorderSide(color: Colors.blue, width: 2),
-              ),
-            ),
-          ),
-          SizedBox(height: 32.h),
-          Row(
-            children: [
-              Expanded(
-                child: TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: Text(
-                    context.tr('common.cancel', fallback: 'Cancel'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isDark ? Colors.white38 : Colors.black38,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(width: 16.w),
-              Expanded(
-                child: ElevatedButton(
-                  onPressed: () {
-                    final trimmed = _nameController.text.trim();
-                    if (trimmed.isEmpty) return;
-                    if (trimmed.length < 2) return;
-                    if (trimmed != widget.user.displayName) {
-                      FocusScope.of(
-                        context,
-                      ).unfocus(); // L-05: dismiss keyboard on save
-                      context.read<ProfileBloc>().add(
-                        ProfileUpdateDisplayNameRequested(trimmed),
-                      );
-                    }
-                    Navigator.pop(context);
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                    padding: EdgeInsets.symmetric(vertical: 16.h),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16.r),
-                    ),
-                  ),
-                  child: Text(
-                    context.tr('common.save', fallback: 'Save'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontWeight: FontWeight.w900,
-                      fontSize: 16.sp,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
-  );
+    );
   }
 }
 
@@ -1153,85 +1159,86 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                  Text(
-                    context.tr(
-                      'settings_dialogs.final_warning',
-                      fallback: 'Final Warning',
-                    ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.red,
-                    ),
-                  ),
-                  SizedBox(height: 16.h),
-                  Text(
-                    context.tr(
-                      'settings_dialogs.type_delete',
-                      fallback: 'Type "DELETE" below to confirm account removal.',
-                    ),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      color: isDark ? Colors.white60 : Colors.black54,
-                    ),
-                  ),
-                  SizedBox(height: 24.h),
-                  TextField(
-                    controller: _confirmController,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isDark ? Colors.white : AppColors.slate900,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    decoration: InputDecoration(
-                      hintText: deleteWord,
-                      hintStyle: TextStyle(
+                    Text(
+                      context.tr(
+                        'settings_dialogs.final_warning',
+                        fallback: 'Final Warning',
+                      ),
+                      style: TextStyle(
                         fontFamily: 'Outfit',
-                        color: isDark ? Colors.white10 : Colors.black12,
-                      ),
-                      filled: true,
-                      fillColor: isDark
-                          ? Colors.white.withValues(alpha: 0.05)
-                          : Colors.black.withValues(alpha: 0.05),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(16.r),
-                        borderSide: BorderSide.none,
+                        fontSize: 24.sp,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.red,
                       ),
                     ),
-                  ),
-                  SizedBox(height: 32.h),
-                  _PrimaryButton(
-                    label: context.tr(
-                      'settings_dialogs.delete_forever',
-                      fallback: 'Delete Forever',
+                    SizedBox(height: 16.h),
+                    Text(
+                      context.tr(
+                        'settings_dialogs.type_delete',
+                        fallback:
+                            'Type "DELETE" below to confirm account removal.',
+                      ),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        color: isDark ? Colors.white60 : Colors.black54,
+                      ),
                     ),
-                    color: Colors.red,
-                    onPressed: isConfirmed && !isDeleting
-                        ? () {
-                            _isDeleting.value = true;
-                            widget.authBloc.add(
-                              const AuthDeleteAccountRequested(),
-                            );
-                          }
-                        : null,
-                  ),
-                  SizedBox(height: 12.h),
-                  _SecondaryTextButton(
-                    label: context.tr(
-                      'settings_dialogs.nevermind',
-                      fallback: 'Nevermind',
+                    SizedBox(height: 24.h),
+                    TextField(
+                      controller: _confirmController,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: isDark ? Colors.white : AppColors.slate900,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      decoration: InputDecoration(
+                        hintText: deleteWord,
+                        hintStyle: TextStyle(
+                          fontFamily: 'Outfit',
+                          color: isDark ? Colors.white10 : Colors.black12,
+                        ),
+                        filled: true,
+                        fillColor: isDark
+                            ? Colors.white.withValues(alpha: 0.05)
+                            : Colors.black.withValues(alpha: 0.05),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16.r),
+                          borderSide: BorderSide.none,
+                        ),
+                      ),
                     ),
-                    isDark: isDark,
-                    onPressed: () => Navigator.pop(context),
-                  ),
-                ],
+                    SizedBox(height: 32.h),
+                    _PrimaryButton(
+                      label: context.tr(
+                        'settings_dialogs.delete_forever',
+                        fallback: 'Delete Forever',
+                      ),
+                      color: Colors.red,
+                      onPressed: isConfirmed && !isDeleting
+                          ? () {
+                              _isDeleting.value = true;
+                              widget.authBloc.add(
+                                const AuthDeleteAccountRequested(),
+                              );
+                            }
+                          : null,
+                    ),
+                    SizedBox(height: 12.h),
+                    _SecondaryTextButton(
+                      label: context.tr(
+                        'settings_dialogs.nevermind',
+                        fallback: 'Nevermind',
+                      ),
+                      isDark: isDark,
+                      onPressed: () => Navigator.pop(context),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
           );
         },
       ),

@@ -91,7 +91,8 @@ class ProgressDashboardScreen extends StatelessWidget {
       child: Row(
         children: [
           IconButton(
-            onPressed: () => context.canPop() ? context.pop() : context.go('/home'),
+            onPressed: () =>
+                context.canPop() ? context.pop() : context.go('/home'),
             icon: Icon(
               Icons.arrow_back_rounded,
               color: Theme.of(context).colorScheme.onSurface,
@@ -594,8 +595,8 @@ class _ContinueLearningSection extends StatelessWidget {
 
     for (final subtype in GameSubtype.values) {
       final totalLevels = CurriculumManifest.getLevels(subtype.name);
-      final completedCount =
-          (user.completedLevels[subtype.name]?.length ?? 0).clamp(0, totalLevels);
+      final completedCount = (user.completedLevels[subtype.name]?.length ?? 0)
+          .clamp(0, totalLevels);
       if (completedCount > 0) {
         final isMastered = completedCount >= totalLevels;
         final currentLevel = isMastered ? totalLevels : completedCount + 1;

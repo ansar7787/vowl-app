@@ -21,7 +21,8 @@ class TranslateButtonWidget extends StatefulWidget {
   final String originalText;
   final bool isKidsZone;
   final Function(String translatedText) onTranslationComplete;
-  final Function(String translatedText, String? languageCode)? onTranslationWithLanguage;
+  final Function(String translatedText, String? languageCode)?
+  onTranslationWithLanguage;
 
   const TranslateButtonWidget({
     super.key,
@@ -78,8 +79,7 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
             );
           }
           // 4. Perform the actual ML Kit translation
-          final bcpCode =
-              await TranslationService().getTargetLanguageBcpCode();
+          final bcpCode = await TranslationService().getTargetLanguageBcpCode();
           final translated = await TranslationService().translate(
             widget.originalText,
           );
