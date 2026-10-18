@@ -32,6 +32,7 @@ class ProfileFeatureCard extends StatelessWidget {
       child: GlassTile(
         borderRadius: BorderRadius.circular(24.r),
         padding: EdgeInsets.all(20.w),
+        blur: 0,
         child: Column(
           children: [
             Row(

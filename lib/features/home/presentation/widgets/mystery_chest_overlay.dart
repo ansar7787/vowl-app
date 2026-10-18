@@ -362,7 +362,10 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
         isOpen
             ? context.tr('home.chest_claimed', fallback: 'CLAIMED!')
             : (widget.isPremium
-                  ? context.tr('home.chest_vip_gift', fallback: 'VIP DAILY GIFT')
+                  ? context.tr(
+                      'home.chest_vip_gift',
+                      fallback: 'VIP DAILY GIFT',
+                    )
                   : context.tr(
                       'home.chest_daily_mystery',
                       fallback: 'DAILY MYSTERY',
@@ -396,7 +399,10 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
               fallback: 'TREASURE UNLOCKED',
             )
           : (widget.isPremium
-                ? context.tr('home.chest_pro_reward', fallback: 'YOUR EXCLUSIVE PRO REWARD')
+                ? context.tr(
+                    'home.chest_pro_reward',
+                    fallback: 'YOUR EXCLUSIVE PRO REWARD',
+                  )
                 : context.tr(
                     'home.chest_ready_to_open',
                     fallback: 'READY TO OPEN?',

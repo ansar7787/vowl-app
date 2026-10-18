@@ -102,6 +102,7 @@ class UnifiedStatsRow extends StatelessWidget {
             child: GlassTile(
               borderRadius: BorderRadius.circular(20.r),
               padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 4.w),
+              blur: 0,
               child: ExcludeSemantics(
                 child: SizedBox(
                   width: double.infinity,

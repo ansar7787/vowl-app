@@ -110,7 +110,9 @@ class RazorpayPaymentService implements PaymentService {
     String currency = 'INR',
     String description = 'Vowl Premium - 30 Days',
   }) {
-    final razorpayKey = dotenv.isInitialized ? dotenv.env['RAZORPAY_KEY_ID'] : null;
+    final razorpayKey = dotenv.isInitialized
+        ? dotenv.env['RAZORPAY_KEY_ID']
+        : null;
 
     if (razorpayKey == null || razorpayKey.isEmpty) {
       if (kDebugMode) {

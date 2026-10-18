@@ -115,7 +115,9 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
   @override
   void dispose() {
     if (_ttsErrorListener != null) {
-      TtsErrorNotifier.instance.errorNotifier.removeListener(_ttsErrorListener!);
+      TtsErrorNotifier.instance.errorNotifier.removeListener(
+        _ttsErrorListener!,
+      );
     }
     _stateHash.dispose();
     _nudgeTimer?.cancel();
@@ -130,7 +132,12 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
     _nudgeTimer?.cancel();
     _nudgeTimer = Timer(_kNudgeDelay, () {
       if (!mounted) return;
-      _ttsService.speak(context.tr('games.kids_nudge', fallback: 'Focus! Use a hint if you need help saving your last life.'));
+      _ttsService.speak(
+        context.tr(
+          'games.kids_nudge',
+          fallback: 'Focus! Use a hint if you need help saving your last life.',
+        ),
+      );
       _hapticService.warning();
     });
   }

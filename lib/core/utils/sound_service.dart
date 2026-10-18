@@ -353,7 +353,10 @@ class SoundServiceImpl implements SoundService {
         slowRate: slowRate,
       );
     } catch (e) {
-      di.sl<AppLogger>().error('SoundService: Error playing TTS comparison', error: e);
+      di.sl<AppLogger>().error(
+        'SoundService: Error playing TTS comparison',
+        error: e,
+      );
     }
   }
 

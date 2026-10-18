@@ -641,9 +641,12 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                                               color:
                                                                   Colors.orange,
                                                               fontWeight:
-                                                                  FontWeight.w600,
+                                                                  FontWeight
+                                                                      .w600,
                                                             ),
-                                                            overflow: TextOverflow.ellipsis,
+                                                            overflow:
+                                                                TextOverflow
+                                                                    .ellipsis,
                                                           ),
                                                         ),
                                                       ],
@@ -784,12 +787,15 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                                   decoration: BoxDecoration(
                                                     shape: BoxShape.circle,
                                                     color: widget.primaryColor
-                                                        .withValues(alpha: 0.15),
+                                                        .withValues(
+                                                          alpha: 0.15,
+                                                        ),
                                                   ),
                                                   child: Center(
                                                     child: Icon(
                                                       Icons.graphic_eq_rounded,
-                                                      color: widget.primaryColor,
+                                                      color:
+                                                          widget.primaryColor,
                                                       size: 32.sp,
                                                     ),
                                                   ),

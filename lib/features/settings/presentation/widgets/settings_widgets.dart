@@ -1,9 +1,7 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:io';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_dialogs.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -83,6 +81,7 @@ class SettingsGroup extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return GlassTile(
       borderRadius: BorderRadius.circular(28.r),
+      blur: 0,
       child: Column(
         children: [
           for (int i = 0; i < children.length; i++) ...[
@@ -144,7 +143,7 @@ class SettingsTile extends StatelessWidget {
           onTap: onTap,
           borderRadius: BorderRadius.circular(24.r),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
             child: Row(
               children: [
                 ExcludeSemantics(
@@ -157,7 +156,7 @@ class SettingsTile extends StatelessWidget {
                     child: Icon(icon, color: color, size: 20.r),
                   ),
                 ),
-                SizedBox(width: 16.w),
+                SizedBox(width: 14.w),
                 Expanded(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -174,27 +173,29 @@ class SettingsTile extends StatelessWidget {
                               : (Theme.of(context).colorScheme.onSurface),
                         ),
                         maxLines: 1,
-                        minFontSize: 10,
+                        minFontSize: 11,
                         overflow: TextOverflow.ellipsis,
                       ),
                       if (subtitle != null) ...[
-                        SizedBox(height: 2.h),
+                        SizedBox(height: 3.h),
                         AutoSizeText(
                           subtitle!,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            color: isDark ? Colors.white38 : Colors.grey[600],
-                            fontWeight: FontWeight.w500,
+                            fontSize: 12.sp,
+                            height: 1.25,
+                            color: isDark ? Colors.white54 : Colors.grey[600],
+                            fontWeight: FontWeight.w400,
                           ),
                           maxLines: 2,
-                          minFontSize: 8,
+                          minFontSize: 9,
                           overflow: TextOverflow.ellipsis,
                         ),
                       ],
                     ],
                   ),
                 ),
+                if (trailing != null || onTap != null) SizedBox(width: 14.w),
                 if (trailing != null)
                   trailing!
                 else if (onTap != null)
@@ -257,15 +258,16 @@ class SettingsSwitchTile extends StatelessWidget {
                 child: Icon(icon, color: color, size: 20.r),
               ),
             ),
-            SizedBox(width: 16.w),
+            SizedBox(width: 14.w),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   AutoSizeText(
                     title,
                     maxLines: 1,
-                    minFontSize: 10,
+                    minFontSize: 11,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 15.sp,
@@ -273,34 +275,34 @@ class SettingsSwitchTile extends StatelessWidget {
                       color: Theme.of(context).colorScheme.onSurface,
                     ),
                   ),
+                  SizedBox(height: 3.h),
                   AutoSizeText(
                     subtitle,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      color: isDark ? Colors.white38 : Colors.grey[600],
-                      fontWeight: FontWeight.w500,
+                      fontSize: 12.sp,
+                      height: 1.25,
+                      color: isDark ? Colors.white54 : Colors.grey[600],
+                      fontWeight: FontWeight.w400,
                     ),
                     maxLines: 2,
-                    minFontSize: 8,
+                    minFontSize: 9,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
             ),
+            SizedBox(width: 14.w),
             if (isLoading)
               SizedBox(
                 width: 50.w,
                 height: 30.h,
-                child:
-                    Container(
-                          decoration: BoxDecoration(
-                            color: color.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(15.r),
-                          ),
-                        )
-                        .animate(onPlay: (c) => c.repeat())
-                        .shimmer(color: color.withValues(alpha: 0.3)),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: color.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(15.r),
+                  ),
+                ),
               )
             else
               ExcludeSemantics(
@@ -346,67 +348,64 @@ class SettingsLogoutButton extends StatelessWidget {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(24.r),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Colors.red.withValues(alpha: 0.1),
-                    Colors.red.withValues(alpha: 0.05),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(24.r),
-                border: Border.all(
-                  color: Colors.red.withValues(alpha: 0.2),
-                  width: 1.5,
-                ),
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Colors.red.withValues(alpha: 0.12),
+                  Colors.red.withValues(alpha: 0.06),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
               ),
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  onTap: () => SettingsDialogs.showLogout(context),
-                  borderRadius: BorderRadius.circular(24.r),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20.h),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(8.r),
-                          decoration: BoxDecoration(
-                            color: Colors.red.withValues(alpha: 0.1),
-                            shape: BoxShape.circle,
+              borderRadius: BorderRadius.circular(24.r),
+              border: Border.all(
+                color: Colors.red.withValues(alpha: 0.25),
+                width: 1.5,
+              ),
+            ),
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: () => SettingsDialogs.showLogout(context),
+                borderRadius: BorderRadius.circular(24.r),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 20.h),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(8.r),
+                        decoration: BoxDecoration(
+                          color: Colors.red.withValues(alpha: 0.1),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.logout_rounded,
+                          size: 18.r,
+                          color: Colors.red,
+                        ),
+                      ),
+                      SizedBox(width: 16.w),
+                      Flexible(
+                        child: AutoSizeText(
+                          context.tr(
+                            'settings.sign_out',
+                            fallback: 'SIGN OUT ACCOUNT',
                           ),
-                          child: Icon(
-                            Icons.logout_rounded,
-                            size: 18.r,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w700,
                             color: Colors.red,
+                            letterSpacing: 0.5,
                           ),
+                          maxLines: 1,
+                          minFontSize: 8,
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(width: 16.w),
-                        Flexible(
-                          child: AutoSizeText(
-                            context.tr(
-                              'settings.sign_out',
-                              fallback: 'SIGN OUT ACCOUNT',
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.red,
-                              letterSpacing: 0.5,
-                            ),
-                            maxLines: 1,
-                            minFontSize: 8,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -414,7 +413,7 @@ class SettingsLogoutButton extends StatelessWidget {
           ),
         ),
       ),
-    ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2);
+    );
   }
 }
 
@@ -447,6 +446,7 @@ class SettingsProfileSection extends StatelessWidget {
       child: GlassTile(
         padding: EdgeInsets.all(24.r),
         borderRadius: BorderRadius.circular(32.r),
+        blur: 0,
         child: Row(
           children: [
             // Avatar with edit overlay
@@ -633,6 +633,6 @@ class SettingsProfileSection extends StatelessWidget {
           ],
         ),
       ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, curve: Curves.easeOut);
+    );
   }
 }

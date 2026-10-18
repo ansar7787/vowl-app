@@ -53,6 +53,13 @@ class ShimmerImage extends StatelessWidget {
       );
     }
 
+    final resolvedMemCacheWidth = width != null
+        ? (width! * 2.5).round().clamp(60, 600)
+        : 300;
+    final resolvedMemCacheHeight = height != null
+        ? (height! * 2.5).round().clamp(60, 600)
+        : 300;
+
     return Semantics(
       image: true,
       label: semanticsLabel,
@@ -60,6 +67,8 @@ class ShimmerImage extends StatelessWidget {
         imageUrl: imageUrl,
         width: width,
         height: height,
+        memCacheWidth: resolvedMemCacheWidth,
+        memCacheHeight: resolvedMemCacheHeight,
         fit: fit,
         placeholder: (context, url) => RepaintBoundary(
           child: Shimmer.fromColors(

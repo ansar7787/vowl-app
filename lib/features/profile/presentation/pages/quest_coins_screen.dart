@@ -1267,15 +1267,9 @@ class VowlCoinsScreen extends StatelessWidget {
       case 'coin_history.vip_gift':
         return context.tr('coin_history.vip_gift', fallback: 'VIP Gift');
       case 'coin_history.spin_reward':
-        return context.tr(
-          'coin_history.spin_reward',
-          fallback: 'Spin Reward',
-        );
+        return context.tr('coin_history.spin_reward', fallback: 'Spin Reward');
       case 'coin_history.daily_chest':
-        return context.tr(
-          'coin_history.daily_chest',
-          fallback: 'Daily Chest',
-        );
+        return context.tr('coin_history.daily_chest', fallback: 'Daily Chest');
       case 'coin_history.speaking_bonus':
         return context.tr(
           'coin_history.speaking_bonus',

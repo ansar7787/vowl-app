@@ -94,7 +94,10 @@ class GameRoutes {
     required String? gameTypeStr,
     required int level,
   }) {
-    final normalized = category.toLowerCase().replaceAll('_', '').replaceAll(' ', '');
+    final normalized = category
+        .toLowerCase()
+        .replaceAll('_', '')
+        .replaceAll(' ', '');
     final config =
         _categoryConfigs[normalized] ??
         _categoryConfigs[category.toLowerCase()] ??

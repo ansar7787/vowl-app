@@ -121,10 +121,7 @@ class _FullErrorScreen extends StatelessWidget {
         : errorMessage;
 
     return Semantics(
-      label: context.tr(
-        'error.system_anomaly',
-        fallback: 'SYSTEM ANOMALY',
-      ),
+      label: context.tr('error.system_anomaly', fallback: 'SYSTEM ANOMALY'),
       child: Scaffold(
         backgroundColor: AppColors.slate900,
         body: RepaintBoundary(

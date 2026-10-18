@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,21 +48,24 @@ class GamesScreen extends StatelessWidget {
 
           if (user == null) return const _QuestHubShimmer();
 
+          final sections = _buildSections(context, user, isDark);
+
           return Stack(
             children: [
               const MeshGradientBackground(showLetters: false),
               CustomScrollView(
                 controller: di.sl<ScrollController>(instanceName: 'games'),
-                physics: const BouncingScrollPhysics(),
-                cacheExtent:
-                    500, // PERF: Pre-render 500px off-screen for smoother scroll
+                physics: const AlwaysScrollableScrollPhysics(
+                  parent: BouncingScrollPhysics(),
+                ),
                 slivers: [
                   _GamesAppBar(isDark: isDark, user: user),
                   SliverPadding(
                     padding: EdgeInsets.only(bottom: 120.h),
                     sliver: SliverList(
-                      delegate: SliverChildListDelegate(
-                        _buildSections(context, user, isDark),
+                      delegate: SliverChildBuilderDelegate(
+                        (context, index) => sections[index],
+                        childCount: sections.length,
                       ),
                     ),
                   ),
@@ -81,8 +83,7 @@ class GamesScreen extends StatelessWidget {
     UserEntity user,
     bool isDark,
   ) => [
-    if (!user.isKidsModeOnly)
-      BeginnerDiscoveryCard(user: user),
+    if (!user.isKidsModeOnly) BeginnerDiscoveryCard(user: user),
     // Phase 1: Hero Dashboard
     _HeroDashboard(user: user, isDark: isDark),
     // Kids Zone — visually differentiated section
@@ -137,7 +138,7 @@ class _HeroDashboard extends StatelessWidget {
         padding: EdgeInsets.all(20.r),
         usePremiumStyle: true,
         showShadow: true,
-        blur: 10,
+        blur: 0,
         child: Column(
           children: [
             // Top Row: Mastery ring + stats
@@ -323,7 +324,6 @@ class _StatPill extends StatelessWidget {
   }
 }
 
-
 // ---------------------------------------------------------------------------
 // Glass App Bar — with user context stats
 // ---------------------------------------------------------------------------
@@ -344,55 +344,52 @@ class _GamesAppBar extends StatelessWidget {
       expandedHeight: 120.h,
       flexibleSpace: FlexibleSpaceBar(
         collapseMode: CollapseMode.pin,
-        title: ClipRRect(
-          borderRadius: BorderRadius.circular(20.r),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-              decoration: BoxDecoration(
+        centerTitle: true,
+        title: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+            decoration: BoxDecoration(
+              color: isDark
+                  ? const Color(0xFF1E293B).withValues(alpha: 0.85)
+                  : Colors.white.withValues(alpha: 0.90),
+              borderRadius: BorderRadius.circular(20.r),
+              border: Border.all(
                 color: isDark
-                    ? Colors.white.withValues(alpha: 0.05)
-                    : Colors.black.withValues(alpha: 0.03),
-                borderRadius: BorderRadius.circular(20.r),
-                border: Border.all(
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.1)
-                      : Colors.black.withValues(alpha: 0.05),
+                    ? Colors.white.withValues(alpha: 0.12)
+                    : Colors.black.withValues(alpha: 0.06),
+              ),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(6.r),
+                  decoration: BoxDecoration(
+                    color: AppColors.blue500.withValues(alpha: 0.15),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.auto_awesome_mosaic_rounded,
+                    color: AppColors.blue500,
+                    size: 14.r,
+                  ),
                 ),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(6.r),
-                    decoration: BoxDecoration(
-                      color: AppColors.blue500.withValues(alpha: 0.15),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(
-                      Icons.auto_awesome_mosaic_rounded,
-                      color: AppColors.blue500,
-                      size: 14.r,
-                    ),
+                SizedBox(width: 10.w),
+                Text(
+                  context.tr('games.quest_hub', fallback: 'Quest Hub'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isDark ? Colors.white : AppColors.slate900,
+                    letterSpacing: 2.0,
                   ),
-                  SizedBox(width: 10.w),
-                  Text(
-                    context.tr('games.quest_hub', fallback: 'Quest Hub'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : AppColors.slate900,
-                      letterSpacing: 2.0,
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
-        centerTitle: true,
       ),
     );
   }

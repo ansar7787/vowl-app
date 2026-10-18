@@ -125,6 +125,7 @@ class GlassTile extends StatelessWidget {
                         usePremiumStyle: usePremiumStyle,
                         color: color,
                         hasBlur: hasBlur,
+                        glassOpacity: glassOpacity,
                       ),
                     )
                   : _GlassOverlay(
@@ -133,6 +134,7 @@ class GlassTile extends StatelessWidget {
                       usePremiumStyle: usePremiumStyle,
                       color: color,
                       hasBlur: hasBlur,
+                      glassOpacity: glassOpacity,
                     ),
             ),
             // 2. Content — isolated in its own repaint boundary so child
@@ -157,6 +159,7 @@ class _GlassOverlay extends StatelessWidget {
   final bool usePremiumStyle;
   final Color? color;
   final bool hasBlur;
+  final double? glassOpacity;
 
   const _GlassOverlay({
     required this.isDark,
@@ -164,20 +167,52 @@ class _GlassOverlay extends StatelessWidget {
     required this.usePremiumStyle,
     required this.color,
     required this.hasBlur,
+    this.glassOpacity,
   });
 
   @override
   Widget build(BuildContext context) {
-    // PERF/READABILITY FIX: If there is no blur (e.g. Low Animation Mode is ON),
-    // we MUST use a solid, fully opaque color. Otherwise, the semi-transparent
-    // gradient will let background text bleed through, ruining readability.
     if (!hasBlur) {
+      final reduceMotion = VowlMotion.shouldReduceMotion(context);
+      final baseColor =
+          color ??
+          (isMidnight
+              ? Theme.of(context).scaffoldBackgroundColor
+              : (isDark ? const Color(0xFF1E293B) : Colors.white));
+
+      // 75% Perf / 25% Visual sweet spot:
+      // Lightweight specular tinted-glass gradient (zero BackdropFilter blur cost)
+      // allowing background aurora colors to softly glow through with zero GPU jank.
+      final opacity = reduceMotion
+          ? 1.0
+          : (glassOpacity ?? (isDark ? 0.82 : 0.88));
+
       return Container(
-        color:
-            color ??
-            (isMidnight
-                ? Theme.of(context).scaffoldBackgroundColor
-                : Theme.of(context).colorScheme.surface),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: isDark
+                ? [
+                    baseColor.withValues(
+                      alpha: (opacity * 1.05).clamp(0.0, 1.0),
+                    ),
+                    baseColor.withValues(alpha: opacity),
+                    baseColor.withValues(
+                      alpha: (opacity * 0.92).clamp(0.0, 1.0),
+                    ),
+                  ]
+                : [
+                    baseColor.withValues(
+                      alpha: (opacity * 1.02).clamp(0.0, 1.0),
+                    ),
+                    baseColor.withValues(alpha: opacity),
+                    baseColor.withValues(
+                      alpha: (opacity * 0.95).clamp(0.0, 1.0),
+                    ),
+                  ],
+          ),
+        ),
       );
     }
 

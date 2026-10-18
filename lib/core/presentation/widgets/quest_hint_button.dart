@@ -45,7 +45,11 @@ class QuestHintButton extends StatelessWidget {
       if (hintText != null) {
         final isDynamic = HintUtility.isGenericHint(hintText);
         final displayText = isDynamic
-            ? context.tr('hint.pro_tip_generic', fallback: 'PRO TIP: Look for context clues! Eliminating unlikely options often reveals the truth.')
+            ? context.tr(
+                'hint.pro_tip_generic',
+                fallback:
+                    'PRO TIP: Look for context clues! Eliminating unlikely options often reveals the truth.',
+              )
             : hintText!;
 
         try {

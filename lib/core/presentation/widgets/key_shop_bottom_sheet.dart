@@ -323,8 +323,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                           ),
                                           description: context.tr(
                                             'store.got_key_desc',
-                                            fallback:
-                                                'You got a Golden Key!',
+                                            fallback: 'You got a Golden Key!',
                                           ),
                                           buttonText: context.tr(
                                             'store.awesome',

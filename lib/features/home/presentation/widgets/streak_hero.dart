@@ -116,14 +116,14 @@ class StreakHero extends StatelessWidget {
                       return reduceMotion
                           ? glow
                           : glow
-                              .animate()
-                              .scale(
-                                begin: const Offset(0.5, 0.5),
-                                end: const Offset(1, 1),
-                                duration: 800.ms,
-                                curve: Curves.easeOutCubic,
-                              )
-                              .fadeIn(duration: 800.ms);
+                                .animate()
+                                .scale(
+                                  begin: const Offset(0.5, 0.5),
+                                  end: const Offset(1, 1),
+                                  duration: 800.ms,
+                                  curve: Curves.easeOutCubic,
+                                )
+                                .fadeIn(duration: 800.ms);
                     }(),
                     () {
                       final flame = Container(

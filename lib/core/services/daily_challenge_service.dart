@@ -69,7 +69,9 @@ class DailyChallengeService {
         return _cachedMixerItems!;
       }
     } catch (e) {
-      debugPrint('[DailyChallengeService] Failed to load Word Mixer curriculum: $e');
+      debugPrint(
+        '[DailyChallengeService] Failed to load Word Mixer curriculum: $e',
+      );
     }
 
     return const [];
@@ -89,7 +91,9 @@ class DailyChallengeService {
         return _cachedSnapItems!;
       }
     } catch (e) {
-      debugPrint('[DailyChallengeService] Failed to load Word Snap curriculum: $e');
+      debugPrint(
+        '[DailyChallengeService] Failed to load Word Snap curriculum: $e',
+      );
     }
 
     return const [];

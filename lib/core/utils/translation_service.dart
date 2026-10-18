@@ -11,7 +11,8 @@ class TranslationService {
   factory TranslationService() => _instance;
   static const String _kSourceLangKey = 'translation_source_lang';
   static const String _kTargetLangKey = 'translation_target_lang';
-  static const String _kCachedDownloadedLangsKey = 'cached_downloaded_languages';
+  static const String _kCachedDownloadedLangsKey =
+      'cached_downloaded_languages';
 
   TranslationService._internal() {
     _loadCachedDownloadedLanguages();
@@ -285,10 +286,12 @@ class TranslationService {
 
     _currentTargetLanguage = target;
 
-    await Future.wait({
-      TranslateLanguage.english.bcpCode,
-      target.bcpCode,
-    }.map(_ensureModelDownloadedInternal));
+    await Future.wait(
+      {
+        TranslateLanguage.english.bcpCode,
+        target.bcpCode,
+      }.map(_ensureModelDownloadedInternal),
+    );
     await refreshDownloadedLanguages();
   }
 
@@ -304,10 +307,12 @@ class TranslationService {
 
     _currentSourceLanguage = source;
 
-    await Future.wait({
-      TranslateLanguage.english.bcpCode,
-      source.bcpCode,
-    }.map(_ensureModelDownloadedInternal));
+    await Future.wait(
+      {
+        TranslateLanguage.english.bcpCode,
+        source.bcpCode,
+      }.map(_ensureModelDownloadedInternal),
+    );
     await refreshDownloadedLanguages();
   }
 
@@ -328,11 +333,13 @@ class TranslationService {
     _currentSourceLanguage = source;
     _currentTargetLanguage = target;
 
-    await Future.wait({
-      TranslateLanguage.english.bcpCode,
-      source.bcpCode,
-      target.bcpCode,
-    }.map(_ensureModelDownloadedInternal));
+    await Future.wait(
+      {
+        TranslateLanguage.english.bcpCode,
+        source.bcpCode,
+        target.bcpCode,
+      }.map(_ensureModelDownloadedInternal),
+    );
     await refreshDownloadedLanguages();
   }
 
@@ -354,18 +361,16 @@ class TranslationService {
     if (target == null) return false;
 
     // Check if already downloaded
-    final isAlreadyDownloaded =
-        await _modelManager.isModelDownloaded(target.bcpCode);
+    final isAlreadyDownloaded = await _modelManager.isModelDownloaded(
+      target.bcpCode,
+    );
     if (isAlreadyDownloaded) {
       final current = Set<String>.from(downloadedLanguagesNotifier.value)
         ..add(languageName);
       downloadedLanguagesNotifier.value = current;
       try {
         final prefs = await SharedPreferences.getInstance();
-        await prefs.setStringList(
-          _kCachedDownloadedLangsKey,
-          current.toList(),
-        );
+        await prefs.setStringList(_kCachedDownloadedLangsKey, current.toList());
       } catch (_) {}
       return true;
     }
@@ -380,8 +385,9 @@ class TranslationService {
 
     // Start simulated progress for smooth real-time visual feedback
     double progress = 0.08;
-    final progressMap =
-        Map<String, double>.from(downloadingProgressNotifier.value);
+    final progressMap = Map<String, double>.from(
+      downloadingProgressNotifier.value,
+    );
     progressMap[languageName] = progress;
     downloadingProgressNotifier.value = progressMap;
 
@@ -394,8 +400,9 @@ class TranslationService {
       } else if (progress < 0.95) {
         progress += 0.005;
       }
-      final currentMap =
-          Map<String, double>.from(downloadingProgressNotifier.value);
+      final currentMap = Map<String, double>.from(
+        downloadingProgressNotifier.value,
+      );
       if (currentMap.containsKey(languageName)) {
         currentMap[languageName] = progress;
         downloadingProgressNotifier.value = currentMap;
@@ -403,16 +410,19 @@ class TranslationService {
     });
 
     try {
-      await Future.wait({
-        TranslateLanguage.english.bcpCode,
-        target.bcpCode,
-      }.map(_ensureModelDownloadedInternal));
+      await Future.wait(
+        {
+          TranslateLanguage.english.bcpCode,
+          target.bcpCode,
+        }.map(_ensureModelDownloadedInternal),
+      );
 
       progressTimer.cancel();
 
       // Complete to 100%
-      final finalMap =
-          Map<String, double>.from(downloadingProgressNotifier.value);
+      final finalMap = Map<String, double>.from(
+        downloadingProgressNotifier.value,
+      );
       finalMap[languageName] = 1.0;
       downloadingProgressNotifier.value = finalMap;
 
@@ -430,8 +440,9 @@ class TranslationService {
 
       // Brief pause so user sees completion feedback
       await Future.delayed(const Duration(milliseconds: 300));
-      final cleanMap =
-          Map<String, double>.from(downloadingProgressNotifier.value);
+      final cleanMap = Map<String, double>.from(
+        downloadingProgressNotifier.value,
+      );
       cleanMap.remove(languageName);
       downloadingProgressNotifier.value = cleanMap;
 
@@ -440,8 +451,9 @@ class TranslationService {
       return true;
     } catch (e) {
       progressTimer.cancel();
-      final errMap =
-          Map<String, double>.from(downloadingProgressNotifier.value);
+      final errMap = Map<String, double>.from(
+        downloadingProgressNotifier.value,
+      );
       errMap.remove(languageName);
       downloadingProgressNotifier.value = errMap;
       _activeDownloads.remove(languageName);
@@ -461,11 +473,13 @@ class TranslationService {
     if (text.isEmpty) return text;
 
     final prefs = await SharedPreferences.getInstance();
-    final source = sourceLanguage ??
+    final source =
+        sourceLanguage ??
         _resolveLanguage(prefs.getString(_kSourceLangKey)) ??
         TranslateLanguage.english;
 
-    final target = targetLanguage ??
+    final target =
+        targetLanguage ??
         _resolveLanguage(prefs.getString(_kTargetLangKey)) ??
         TranslateLanguage.spanish;
 
@@ -485,11 +499,13 @@ class TranslationService {
     }
 
     // Ensure models are fully downloaded before translating
-    await Future.wait({
-      source.bcpCode,
-      target.bcpCode,
-      TranslateLanguage.english.bcpCode,
-    }.map(_ensureModelDownloadedInternal));
+    await Future.wait(
+      {
+        source.bcpCode,
+        target.bcpCode,
+        TranslateLanguage.english.bcpCode,
+      }.map(_ensureModelDownloadedInternal),
+    );
 
     try {
       var result = await _translator!.translateText(text);

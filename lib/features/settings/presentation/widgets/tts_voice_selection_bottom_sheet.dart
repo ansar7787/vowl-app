@@ -209,11 +209,7 @@ class _TtsVoiceSelectionBottomSheetState
             color: AppColors.amber500.withValues(alpha: 0.15),
             shape: BoxShape.circle,
           ),
-          child: Icon(
-            LucideIcons.crown,
-            color: AppColors.amber500,
-            size: 24.r,
-          ),
+          child: Icon(LucideIcons.crown, color: AppColors.amber500, size: 24.r),
         ),
         title: Text(
           'Premium Voice Accent',
@@ -416,7 +412,8 @@ class _TtsVoiceSelectionBottomSheetState
 
                 // No Engine Warning Banner (Empty/Degraded State)
                 if (di.sl.isRegistered<TtsService>() &&
-                    di.sl<TtsService>().engineStatus == TtsEngineStatus.noEngine)
+                    di.sl<TtsService>().engineStatus ==
+                        TtsEngineStatus.noEngine)
                   Container(
                     margin: EdgeInsets.only(bottom: 16.h),
                     padding: EdgeInsets.all(12.r),
@@ -473,18 +470,18 @@ class _TtsVoiceSelectionBottomSheetState
                           decoration: BoxDecoration(
                             color: isSelected
                                 ? (isDark
-                                    ? const Color(0xFF1E2235)
-                                    : const Color(0xFFF0F3FF))
+                                      ? const Color(0xFF1E2235)
+                                      : const Color(0xFFF0F3FF))
                                 : (isDark
-                                    ? const Color(0xFF1A1C26)
-                                    : const Color(0xFFF8FAFC)),
+                                      ? const Color(0xFF1A1C26)
+                                      : const Color(0xFFF8FAFC)),
                             borderRadius: BorderRadius.circular(16.r),
                             border: Border.all(
                               color: isSelected
                                   ? AppColors.indigo500
                                   : (isDark
-                                      ? Colors.white.withValues(alpha: 0.07)
-                                      : Colors.black.withValues(alpha: 0.06)),
+                                        ? Colors.white.withValues(alpha: 0.07)
+                                        : Colors.black.withValues(alpha: 0.06)),
                               width: isSelected ? 1.5 : 1.0,
                             ),
                           ),
@@ -500,10 +497,12 @@ class _TtsVoiceSelectionBottomSheetState
                                           alpha: 0.15,
                                         )
                                       : (isDark
-                                          ? Colors.white.withValues(alpha: 0.06)
-                                          : Colors.black.withValues(
-                                              alpha: 0.04,
-                                            )),
+                                            ? Colors.white.withValues(
+                                                alpha: 0.06,
+                                              )
+                                            : Colors.black.withValues(
+                                                alpha: 0.04,
+                                              )),
                                   borderRadius: BorderRadius.circular(11.r),
                                 ),
                                 child: Icon(
@@ -512,8 +511,8 @@ class _TtsVoiceSelectionBottomSheetState
                                   color: isSelected
                                       ? AppColors.indigo500
                                       : (isDark
-                                          ? Colors.white70
-                                          : Colors.black54),
+                                            ? Colors.white70
+                                            : Colors.black54),
                                 ),
                               ),
                               SizedBox(width: 12.w),
@@ -538,8 +537,8 @@ class _TtsVoiceSelectionBottomSheetState
                                             fontWeight: FontWeight.w600,
                                             color: isSelected
                                                 ? (isDark
-                                                    ? Colors.white
-                                                    : AppColors.indigo500)
+                                                      ? Colors.white
+                                                      : AppColors.indigo500)
                                                 : Theme.of(
                                                     context,
                                                   ).colorScheme.onSurface,
@@ -697,12 +696,12 @@ class _TtsVoiceSelectionBottomSheetState
                                       color: isSelected
                                           ? AppColors.indigo500
                                           : (isDark
-                                              ? Colors.white.withValues(
-                                                  alpha: 0.2,
-                                                )
-                                              : Colors.black.withValues(
-                                                  alpha: 0.2,
-                                                )),
+                                                ? Colors.white.withValues(
+                                                    alpha: 0.2,
+                                                  )
+                                                : Colors.black.withValues(
+                                                    alpha: 0.2,
+                                                  )),
                                       width: 1.5,
                                     ),
                                   ),
@@ -840,8 +839,8 @@ class _AudioPreviewButtonState extends State<_AudioPreviewButton>
                 color: widget.isPlaying
                     ? activeColor.withValues(alpha: 0.12)
                     : (widget.isDark
-                        ? Colors.white.withValues(alpha: 0.05)
-                        : Colors.black.withValues(alpha: 0.03)),
+                          ? Colors.white.withValues(alpha: 0.05)
+                          : Colors.black.withValues(alpha: 0.03)),
                 borderRadius: BorderRadius.circular(10.r),
                 border: Border.all(
                   color: widget.isPlaying
@@ -863,14 +862,12 @@ class _AudioPreviewButtonState extends State<_AudioPreviewButton>
                             5.0 +
                             9.0 *
                                 (0.5 +
-                                    0.5 *
-                                        math.sin((val + 0.33) * 2 * math.pi));
+                                    0.5 * math.sin((val + 0.33) * 2 * math.pi));
                         final h3 =
                             5.0 +
                             6.5 *
                                 (0.5 +
-                                    0.5 *
-                                        math.sin((val + 0.66) * 2 * math.pi));
+                                    0.5 * math.sin((val + 0.66) * 2 * math.pi));
 
                         return Row(
                           mainAxisSize: MainAxisSize.min,
@@ -886,10 +883,10 @@ class _AudioPreviewButtonState extends State<_AudioPreviewButton>
                       },
                     )
                   : Icon(
-                    LucideIcons.volume2,
-                    size: 16.r,
-                    color: widget.isSelected ? activeColor : idleColor,
-                  ),
+                      LucideIcons.volume2,
+                      size: 16.r,
+                      color: widget.isSelected ? activeColor : idleColor,
+                    ),
             ),
           ),
         ),

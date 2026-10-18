@@ -96,10 +96,14 @@ class _LanguageSelectionBottomSheetState
     // Instant warm rendering if caller provided languages or already cached
     if (widget.downloadedLanguages != null &&
         widget.downloadedLanguages!.isNotEmpty) {
-      _translationService.downloadedLanguagesNotifier.value =
-          widget.downloadedLanguages!.toSet();
+      _translationService.downloadedLanguagesNotifier.value = widget
+          .downloadedLanguages!
+          .toSet();
       _isLoading = false;
-    } else if (_translationService.downloadedLanguagesNotifier.value.isNotEmpty) {
+    } else if (_translationService
+        .downloadedLanguagesNotifier
+        .value
+        .isNotEmpty) {
       _isLoading = false;
     }
 
@@ -107,8 +111,12 @@ class _LanguageSelectionBottomSheetState
     _loadInitialMetadata();
 
     // Listen to app-wide reactive state so any download anywhere updates this sheet live
-    _translationService.downloadedLanguagesNotifier.addListener(_onStateUpdated);
-    _translationService.downloadingProgressNotifier.addListener(_onStateUpdated);
+    _translationService.downloadedLanguagesNotifier.addListener(
+      _onStateUpdated,
+    );
+    _translationService.downloadingProgressNotifier.addListener(
+      _onStateUpdated,
+    );
   }
 
   void _onStateUpdated() {
@@ -141,10 +149,12 @@ class _LanguageSelectionBottomSheetState
 
   @override
   void dispose() {
-    _translationService.downloadedLanguagesNotifier
-        .removeListener(_onStateUpdated);
-    _translationService.downloadingProgressNotifier
-        .removeListener(_onStateUpdated);
+    _translationService.downloadedLanguagesNotifier.removeListener(
+      _onStateUpdated,
+    );
+    _translationService.downloadingProgressNotifier.removeListener(
+      _onStateUpdated,
+    );
     _searchController.dispose();
     super.dispose();
   }
@@ -349,10 +359,11 @@ class _LanguageSelectionBottomSheetState
     final downloadingMap =
         _translationService.downloadingProgressNotifier.value;
 
-    final readyList = downloadedSet
-        .where((lang) => _filteredLanguages.contains(lang))
-        .toList()
-      ..sort();
+    final readyList =
+        downloadedSet
+            .where((lang) => _filteredLanguages.contains(lang))
+            .toList()
+          ..sort();
 
     final defaultTitle = widget.isSource
         ? context.tr(
@@ -564,139 +575,134 @@ class _LanguageSelectionBottomSheetState
                 child: _isLoading
                     ? _buildShimmerLoading(isDark)
                     : _filteredLanguages.isEmpty
-                        ? Center(
-                            key: const ValueKey('empty_results'),
-                            child: Text(
-                              context.tr(
-                                'language_picker.no_results',
-                                fallback: 'No languages found',
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 15.sp,
-                                color: isDark
-                                    ? Colors.white38
-                                    : AppColors.slate400,
-                              ),
-                            ),
-                          )
-                        : CustomScrollView(
-                            key: const ValueKey('loaded_content'),
-                            physics: const BouncingScrollPhysics(
-                              parent: AlwaysScrollableScrollPhysics(),
-                            ),
-                            keyboardDismissBehavior:
-                                ScrollViewKeyboardDismissBehavior.onDrag,
-                            slivers: [
-                              // Pinned Downloaded Section
-                              if (readyList.isNotEmpty &&
-                                  _searchController.text.isEmpty) ...[
-                                SliverToBoxAdapter(
-                                  child: Padding(
-                                    padding: EdgeInsets.fromLTRB(
-                                      20.w,
-                                      4.h,
-                                      20.w,
-                                      8.h,
-                                    ),
-                                    child: Row(
-                                      children: [
-                                        Icon(
-                                          Icons.offline_pin_rounded,
-                                          color: AppColors.emerald500,
-                                          size: 16.r,
-                                        ),
-                                        SizedBox(width: 6.w),
-                                        Text(
-                                          '${context.tr('translation.downloaded_ready', fallback: 'Downloaded')} (${readyList.length})',
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 11.5.sp,
-                                            fontWeight: FontWeight.w700,
-                                            color: AppColors.emerald500,
-                                            letterSpacing: 0.5,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                    ? Center(
+                        key: const ValueKey('empty_results'),
+                        child: Text(
+                          context.tr(
+                            'language_picker.no_results',
+                            fallback: 'No languages found',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 15.sp,
+                            color: isDark ? Colors.white38 : AppColors.slate400,
+                          ),
+                        ),
+                      )
+                    : CustomScrollView(
+                        key: const ValueKey('loaded_content'),
+                        physics: const BouncingScrollPhysics(
+                          parent: AlwaysScrollableScrollPhysics(),
+                        ),
+                        keyboardDismissBehavior:
+                            ScrollViewKeyboardDismissBehavior.onDrag,
+                        slivers: [
+                          // Pinned Downloaded Section
+                          if (readyList.isNotEmpty &&
+                              _searchController.text.isEmpty) ...[
+                            SliverToBoxAdapter(
+                              child: Padding(
+                                padding: EdgeInsets.fromLTRB(
+                                  20.w,
+                                  4.h,
+                                  20.w,
+                                  8.h,
                                 ),
-                                SliverPadding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 16.w),
-                                  sliver: SliverList(
-                                    delegate: SliverChildBuilderDelegate((
-                                      context,
-                                      index,
-                                    ) {
-                                      final lang = readyList[index];
-                                      final isActive = lang == _activeLanguage;
-                                      final downloadProgress =
-                                          downloadingMap[lang];
-                                      return _buildLanguageRow(
-                                        lang: lang,
-                                        isActive: isActive,
-                                        isDownloaded: true,
-                                        downloadProgress: downloadProgress,
-                                        isDark: isDark,
-                                      );
-                                    }, childCount: readyList.length),
-                                  ),
-                                ),
-                                SliverToBoxAdapter(
-                                  child: Padding(
-                                    padding: EdgeInsets.fromLTRB(
-                                      20.w,
-                                      16.h,
-                                      20.w,
-                                      8.h,
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.offline_pin_rounded,
+                                      color: AppColors.emerald500,
+                                      size: 16.r,
                                     ),
-                                    child: Text(
-                                      context.tr(
-                                        'translation.all_languages',
-                                        fallback: 'All Languages',
-                                      ),
+                                    SizedBox(width: 6.w),
+                                    Text(
+                                      '${context.tr('translation.downloaded_ready', fallback: 'Downloaded')} (${readyList.length})',
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 11.5.sp,
                                         fontWeight: FontWeight.w700,
-                                        color: isDark
-                                            ? Colors.white54
-                                            : AppColors.slate400,
+                                        color: AppColors.emerald500,
                                         letterSpacing: 0.5,
                                       ),
                                     ),
-                                  ),
-                                ),
-                              ],
-
-                              // All Languages List
-                              SliverPadding(
-                                padding:
-                                    EdgeInsets.fromLTRB(16.w, 0, 16.w, 24.h),
-                                sliver: SliverList(
-                                  delegate: SliverChildBuilderDelegate((
-                                    context,
-                                    index,
-                                  ) {
-                                    final lang = _filteredLanguages[index];
-                                    final isActive = lang == _activeLanguage;
-                                    final isDownloaded =
-                                        downloadedSet.contains(lang);
-                                    final downloadProgress =
-                                        downloadingMap[lang];
-                                    return _buildLanguageRow(
-                                      lang: lang,
-                                      isActive: isActive,
-                                      isDownloaded: isDownloaded,
-                                      downloadProgress: downloadProgress,
-                                      isDark: isDark,
-                                    );
-                                  }, childCount: _filteredLanguages.length),
+                                  ],
                                 ),
                               ),
-                            ],
+                            ),
+                            SliverPadding(
+                              padding: EdgeInsets.symmetric(horizontal: 16.w),
+                              sliver: SliverList(
+                                delegate: SliverChildBuilderDelegate((
+                                  context,
+                                  index,
+                                ) {
+                                  final lang = readyList[index];
+                                  final isActive = lang == _activeLanguage;
+                                  final downloadProgress = downloadingMap[lang];
+                                  return _buildLanguageRow(
+                                    lang: lang,
+                                    isActive: isActive,
+                                    isDownloaded: true,
+                                    downloadProgress: downloadProgress,
+                                    isDark: isDark,
+                                  );
+                                }, childCount: readyList.length),
+                              ),
+                            ),
+                            SliverToBoxAdapter(
+                              child: Padding(
+                                padding: EdgeInsets.fromLTRB(
+                                  20.w,
+                                  16.h,
+                                  20.w,
+                                  8.h,
+                                ),
+                                child: Text(
+                                  context.tr(
+                                    'translation.all_languages',
+                                    fallback: 'All Languages',
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 11.5.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: isDark
+                                        ? Colors.white54
+                                        : AppColors.slate400,
+                                    letterSpacing: 0.5,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+
+                          // All Languages List
+                          SliverPadding(
+                            padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 24.h),
+                            sliver: SliverList(
+                              delegate: SliverChildBuilderDelegate((
+                                context,
+                                index,
+                              ) {
+                                final lang = _filteredLanguages[index];
+                                final isActive = lang == _activeLanguage;
+                                final isDownloaded = downloadedSet.contains(
+                                  lang,
+                                );
+                                final downloadProgress = downloadingMap[lang];
+                                return _buildLanguageRow(
+                                  lang: lang,
+                                  isActive: isActive,
+                                  isDownloaded: isDownloaded,
+                                  downloadProgress: downloadProgress,
+                                  isDark: isDark,
+                                );
+                              }, childCount: _filteredLanguages.length),
+                            ),
                           ),
+                        ],
+                      ),
               ),
             ),
           ],
@@ -861,15 +867,15 @@ class _LanguageSelectionBottomSheetState
               color: isActive
                   ? AppColors.indigo500.withValues(alpha: isDark ? 0.15 : 0.08)
                   : (isDark
-                      ? Colors.white.withValues(alpha: 0.03)
-                      : AppColors.slate50),
+                        ? Colors.white.withValues(alpha: 0.03)
+                        : AppColors.slate50),
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: isActive
                     ? AppColors.indigo500.withValues(alpha: 0.5)
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.06)
-                        : AppColors.slate200.withValues(alpha: 0.6)),
+                          ? Colors.white.withValues(alpha: 0.06)
+                          : AppColors.slate200.withValues(alpha: 0.6)),
                 width: isActive ? 1.5 : 1.0,
               ),
             ),
@@ -886,10 +892,7 @@ class _LanguageSelectionBottomSheetState
                         : AppColors.slate100,
                     shape: BoxShape.circle,
                   ),
-                  child: Text(
-                    flag,
-                    style: TextStyle(fontSize: 18.sp),
-                  ),
+                  child: Text(flag, style: TextStyle(fontSize: 18.sp)),
                 ),
                 SizedBox(width: 12.w),
 
@@ -918,7 +921,8 @@ class _LanguageSelectionBottomSheetState
                         width: 16.r,
                         height: 16.r,
                         child: CircularProgressIndicator(
-                          value: (downloadProgress > 0 && downloadProgress < 0.95)
+                          value:
+                              (downloadProgress > 0 && downloadProgress < 0.95)
                               ? downloadProgress
                               : null,
                           strokeWidth: 2.2,
@@ -990,7 +994,9 @@ class _LanguageSelectionBottomSheetState
                             child: Icon(
                               Icons.delete_outline_rounded,
                               size: 19.r,
-                              color: isDark ? Colors.white38 : AppColors.slate400,
+                              color: isDark
+                                  ? Colors.white38
+                                  : AppColors.slate400,
                             ),
                           ),
                         ),
@@ -1010,8 +1016,9 @@ class _LanguageSelectionBottomSheetState
                         child: Container(
                           padding: EdgeInsets.all(6.r),
                           decoration: BoxDecoration(
-                            color: AppColors.indigo500
-                                .withValues(alpha: isDark ? 0.15 : 0.08),
+                            color: AppColors.indigo500.withValues(
+                              alpha: isDark ? 0.15 : 0.08,
+                            ),
                             shape: BoxShape.circle,
                           ),
                           child: Icon(

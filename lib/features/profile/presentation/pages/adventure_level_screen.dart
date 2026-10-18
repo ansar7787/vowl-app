@@ -675,7 +675,10 @@ class AdventureLevelScreen extends StatelessWidget {
             if (VowlMotion.shouldReduceMotion(context)) {
               return item;
             }
-            return item.animate().fadeIn(delay: (index * 50).ms).slideX(begin: 0.05);
+            return item
+                .animate()
+                .fadeIn(delay: (index * 50).ms)
+                .slideX(begin: 0.05);
           },
         ),
       ],

@@ -1,6 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -58,6 +57,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool _isLoadingVal = true;
   String? _translationLanguageNameVal;
   TtsVoicePreset _voicePresetVal = TtsVoicePreset.clearGuide;
+  bool _hasPlayedEntranceAnimation = false;
 
   late final ValueNotifier<int> _stateHash = ValueNotifier(0);
 
@@ -203,7 +203,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
       if (context.mounted) {
         CustomSnackBar.show(
           context: context,
-          message: context.tr('settings.email_error', fallback: 'Could not open your email app.'),
+          message: context.tr(
+            'settings.email_error',
+            fallback: 'Could not open your email app.',
+          ),
           type: CustomSnackBarType.error,
         );
       }
@@ -284,7 +287,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
           context: context,
           message: context.tr(
             'settings.cache_clear_error',
-            fallback: 'We couldn\'t clear the cache right now. Please try again.',
+            fallback:
+                'We couldn\'t clear the cache right now. Please try again.',
           ),
           type: CustomSnackBarType.error,
         );
@@ -326,197 +330,186 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               20.w,
                               MediaQuery.of(context).padding.bottom + 32.h,
                             ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children:
-                                  [
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            BlocSelector<
-                                              AuthBloc,
-                                              AuthState,
-                                              dynamic
-                                            >(
-                                              selector: (state) => state.user,
-                                              builder: (context, user) {
-                                                if (user == null) {
-                                                  return Container(
-                                                    padding: EdgeInsets.all(
-                                                      16.r,
-                                                    ),
-                                                    decoration: BoxDecoration(
-                                                      color: Colors.red
-                                                          .withValues(
-                                                            alpha: 0.1,
-                                                          ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                            16.r,
-                                                          ),
-                                                      border: Border.all(
-                                                        color: Colors.red
-                                                            .withValues(
-                                                              alpha: 0.3,
-                                                            ),
+                            child: Builder(
+                              builder: (context) {
+                                final contentChildren = <Widget>[
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      BlocSelector<
+                                        AuthBloc,
+                                        AuthState,
+                                        dynamic
+                                      >(
+                                        selector: (state) => state.user,
+                                        builder: (context, user) {
+                                          if (user == null) {
+                                            return Container(
+                                              padding: EdgeInsets.all(16.r),
+                                              decoration: BoxDecoration(
+                                                color: Colors.red.withValues(
+                                                  alpha: 0.1,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(16.r),
+                                                border: Border.all(
+                                                  color: Colors.red.withValues(
+                                                    alpha: 0.3,
+                                                  ),
+                                                ),
+                                              ),
+                                              child: Row(
+                                                children: [
+                                                  const Icon(
+                                                    Icons.error_outline,
+                                                    color: Colors.red,
+                                                  ),
+                                                  SizedBox(width: 12.w),
+                                                  const Expanded(
+                                                    child: Text(
+                                                      'Failed to load user profile.',
+                                                      style: TextStyle(
+                                                        color: Colors.red,
+                                                        fontFamily: 'Outfit',
                                                       ),
                                                     ),
-                                                    child: Row(
-                                                      children: [
-                                                        const Icon(
-                                                          Icons.error_outline,
-                                                          color: Colors.red,
-                                                        ),
-                                                        SizedBox(width: 12.w),
-                                                        const Expanded(
-                                                          child: Text(
-                                                            'Failed to load user profile.',
-                                                            style: TextStyle(
-                                                              color: Colors.red,
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  );
-                                                }
-                                                return SettingsProfileSection(
-                                                  user: user,
-                                                  isDark: isDark,
-                                                );
-                                              },
-                                            ),
-                                            SizedBox(height: 32.h),
-                                          ],
-                                        ),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            // FIX (HIGH-4): Sections extracted to private widgets.
-                                            _SettingsAccountGroup(
-                                              isDark: isDark,
-                                            ),
-                                            SizedBox(height: 32.h),
-                                          ],
-                                        ),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            _SettingsPreferencesGroup(
-                                              translationLanguageName:
-                                                  _translationLanguageNameVal,
-                                              isDark: isDark,
-                                              soundEnabled: _soundEnabledVal,
-                                              gameSoundsEnabled:
-                                                  _gameSoundsEnabledVal,
-                                              notificationsEnabled:
-                                                  _notificationsEnabledVal,
-                                              reduceComplexGestures:
-                                                  _reduceComplexGesturesVal,
-                                              lowAnimationMode:
-                                                  _lowAnimationModeVal,
-                                              analyticsEnabled:
-                                                  _analyticsEnabledVal,
-                                              isLoading: _isLoadingVal,
-                                              voicePresetTitle:
-                                                  _voicePresetVal.title,
-                                              onTapVoicePreset: () async {
-                                                final newPreset =
-                                                    await TtsVoiceSelectionBottomSheet
-                                                        .show(
-                                                          context,
-                                                          currentPreset:
-                                                              _voicePresetVal,
-                                                        );
-                                                if (newPreset != null &&
-                                                    mounted) {
-                                                  _voicePresetVal = newPreset;
-                                                  _updateState();
-                                                }
-                                              },
-                                              onToggleSound: _toggleSound,
-                                              onToggleGameSounds:
-                                                  _toggleGameSounds,
-                                              onToggleNotifications:
-                                                  _toggleNotifications,
-                                              onToggleGestures: _toggleGestures,
-                                              onToggleLowAnimationMode:
-                                                  _toggleLowAnimationMode,
-                                              onToggleAnalytics:
-                                                  _toggleAnalytics,
-                                              onTapTranslationLanguage: () async {
-                                                await LanguageSelectionBottomSheet.show(
-                                                  context,
-                                                  currentLanguage:
-                                                      _translationLanguageNameVal,
-                                                );
-                                                if (!mounted) return;
-                                                _loadTranslationLanguageName();
-                                              },
-                                            ),
-                                            SizedBox(height: 32.h),
-                                          ],
-                                        ),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            _SettingsSupportGroup(
-                                              isDark: isDark,
-                                              appVersion: _appVersionVal,
-                                              buildNumber: _buildNumberVal,
-                                              onSupportTap: () =>
-                                                  _handleSupportLink(context),
-                                              onLegalTap: (title) =>
-                                                  _handleLegalLink(
-                                                    context,
-                                                    title,
                                                   ),
-                                            ),
-                                            SizedBox(height: 32.h),
-                                          ],
-                                        ),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            _SettingsDangerGroup(
-                                              onClearCache: () =>
-                                                  _handleClearCache(context),
-                                            ),
-                                            SizedBox(height: 40.h),
-                                          ],
-                                        ),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            const SettingsLogoutButton(),
-                                          ],
-                                        ),
-                                      ]
-                                      .animate(interval: 80.ms)
-                                      .fadeIn(
-                                        duration: 600.ms,
-                                        curve: Curves.easeOutCubic,
-                                      )
-                                      .scaleXY(
-                                        begin: 0.95,
-                                        end: 1.0,
-                                        duration: 600.ms,
-                                        curve: Curves.easeOutCubic,
-                                      )
-                                      .slideY(
-                                        begin: 0.05,
-                                        end: 0,
-                                        duration: 600.ms,
-                                        curve: Curves.easeOutCubic,
+                                                ],
+                                              ),
+                                            );
+                                          }
+                                          return SettingsProfileSection(
+                                            user: user,
+                                            isDark: isDark,
+                                          );
+                                        },
                                       ),
+                                      SizedBox(height: 32.h),
+                                    ],
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      _SettingsPreferencesGroup(
+                                        translationLanguageName:
+                                            _translationLanguageNameVal,
+                                        isDark: isDark,
+                                        soundEnabled: _soundEnabledVal,
+                                        gameSoundsEnabled:
+                                            _gameSoundsEnabledVal,
+                                        notificationsEnabled:
+                                            _notificationsEnabledVal,
+                                        reduceComplexGestures:
+                                            _reduceComplexGesturesVal,
+                                        lowAnimationMode: _lowAnimationModeVal,
+                                        analyticsEnabled: _analyticsEnabledVal,
+                                        isLoading: _isLoadingVal,
+                                        voicePresetTitle: _voicePresetVal.title,
+                                        onTapVoicePreset: () async {
+                                          final newPreset =
+                                              await TtsVoiceSelectionBottomSheet.show(
+                                                context,
+                                                currentPreset: _voicePresetVal,
+                                              );
+                                          if (newPreset != null && mounted) {
+                                            _voicePresetVal = newPreset;
+                                            _updateState();
+                                          }
+                                        },
+                                        onToggleSound: _toggleSound,
+                                        onToggleGameSounds: _toggleGameSounds,
+                                        onToggleNotifications:
+                                            _toggleNotifications,
+                                        onToggleGestures: _toggleGestures,
+                                        onToggleLowAnimationMode:
+                                            _toggleLowAnimationMode,
+                                        onToggleAnalytics: _toggleAnalytics,
+                                        onTapTranslationLanguage: () async {
+                                          await LanguageSelectionBottomSheet.show(
+                                            context,
+                                            currentLanguage:
+                                                _translationLanguageNameVal,
+                                          );
+                                          if (!mounted) return;
+                                          _loadTranslationLanguageName();
+                                        },
+                                      ),
+                                      SizedBox(height: 32.h),
+                                    ],
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      // FIX (HIGH-4): Sections extracted to private widgets.
+                                      _SettingsAccountGroup(isDark: isDark),
+                                      SizedBox(height: 32.h),
+                                    ],
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      _SettingsSupportGroup(
+                                        isDark: isDark,
+                                        appVersion: _appVersionVal,
+                                        buildNumber: _buildNumberVal,
+                                        onSupportTap: () =>
+                                            _handleSupportLink(context),
+                                        onLegalTap: (title) =>
+                                            _handleLegalLink(context, title),
+                                      ),
+                                      SizedBox(height: 32.h),
+                                    ],
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      _SettingsDangerGroup(
+                                        onClearCache: () =>
+                                            _handleClearCache(context),
+                                      ),
+                                      SizedBox(height: 40.h),
+                                    ],
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [const SettingsLogoutButton()],
+                                  ),
+                                ];
+
+                                final shouldAnimate =
+                                    !_hasPlayedEntranceAnimation &&
+                                    !VowlMotion.shouldReduceMotion(context);
+                                if (shouldAnimate) {
+                                  _hasPlayedEntranceAnimation = true;
+                                  return Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: contentChildren
+                                        .animate(interval: 30.ms)
+                                        .fadeIn(
+                                          duration: 300.ms,
+                                          curve: Curves.easeOutCubic,
+                                        )
+                                        .slideY(
+                                          begin: 0.02,
+                                          end: 0,
+                                          duration: 300.ms,
+                                          curve: Curves.easeOutCubic,
+                                        ),
+                                  );
+                                }
+
+                                return Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: contentChildren,
+                                );
+                              },
                             ),
                           ),
                         ),
@@ -538,14 +531,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
       elevation: 0,
       pinned: true,
       centerTitle: true,
-      flexibleSpace: ClipRect(
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-          child: Container(
-            color: (isDark ? AppColors.slate900 : AppColors.slate50).withValues(
-              alpha: 0.7,
-            ),
-          ),
+      flexibleSpace: Container(
+        color: (isDark ? AppColors.slate900 : AppColors.slate50).withValues(
+          alpha: 0.95,
         ),
       ),
       leading: IconButton(
@@ -702,130 +690,14 @@ class _SettingsPreferencesGroup extends StatelessWidget {
         ),
         SettingsGroup(
           children: [
-            SettingsSwitchTile(
-              title: context.tr(
-                'settings.sound_effects',
-                fallback: 'Sound Effects',
-              ),
-              subtitle: context.tr(
-                'settings.sound_effects_subtitle',
-                fallback: 'App audio and UI feedback',
-              ),
-              icon: Icons.volume_up_rounded,
-              color: IllustrationColors.vibrantPink,
-              value: soundEnabled,
-              isLoading: isLoading,
-              onChanged: onToggleSound,
-            ),
-            SettingsSwitchTile(
-              title: context.tr(
-                'settings.game_sounds',
-                fallback: 'Game Sounds',
-              ),
-              subtitle: context.tr(
-                'settings.game_sounds_subtitle',
-                fallback: 'Celebratory sounds like cheering',
-              ),
-              icon: Icons.celebration_rounded,
-              color: IllustrationColors.vibrantPink,
-              value: gameSoundsEnabled,
-              isLoading: isLoading,
-              onChanged: onToggleGameSounds,
-            ),
-            SettingsTile(
-              title: context.tr(
-                'settings.pronunciation_voice',
-                fallback: 'Pronunciation Voice',
-              ),
-              subtitle: voicePresetTitle,
-              icon: Icons.record_voice_over_rounded,
-              color: AppColors.indigo500,
-              onTap: onTapVoicePreset,
-              trailing: Icon(
-                Icons.chevron_right_rounded,
-                color: isDark ? Colors.white38 : Colors.grey[400],
-                size: 20.r,
-              ),
-            ),
-            SettingsSwitchTile(
-              title: context.tr(
-                'settings.push_notifications',
-                fallback: 'Push Notifications',
-              ),
-              subtitle: context.tr(
-                'settings.push_notifications_subtitle',
-                fallback: 'Stay updated with daily quests',
-              ),
-              icon: Icons.notifications_active_rounded,
-              color: IllustrationColors.warmOrange,
-              value: notificationsEnabled,
-              isLoading: isLoading,
-              onChanged: onToggleNotifications,
-            ),
-            SettingsSwitchTile(
-              title: context.tr(
-                'settings.reduce_complex_gestures',
-                fallback: 'Reduce Complex Gestures',
-              ),
-              subtitle: context.tr(
-                'settings.reduce_complex_gestures_subtitle',
-                fallback: 'Replace swiping with tapping for accessibility',
-              ),
-              icon: Icons.accessibility_new_rounded,
-              color: AppColors.emerald500,
-              value: reduceComplexGestures,
-              isLoading: isLoading,
-              onChanged: onToggleGestures,
-            ),
-            SettingsSwitchTile(
-              title: context.tr(
-                'settings.low_animation_mode',
-                fallback: 'Low Animation Mode',
-              ),
-              subtitle: context.tr(
-                'settings.low_animation_mode_subtitle',
-                fallback: 'Reduce motion and save battery',
-              ),
-              icon: Icons.battery_saver_rounded,
-              color: AppColors.rose500,
-              value: lowAnimationMode,
-              isLoading: isLoading,
-              onChanged: onToggleLowAnimationMode,
-            ),
-            SettingsSwitchTile(
-              title: context.tr('settings.analytics', fallback: 'Analytics'),
-              subtitle: context.tr(
-                'settings.analytics_subtitle',
-                fallback:
-                    'Help us improve the app by sharing anonymous usage data',
-              ),
-              icon: Icons.analytics_rounded,
-              color: AppColors.blue500,
-              value: analyticsEnabled,
-              isLoading: isLoading,
-              onChanged: onToggleAnalytics,
-            ),
-            if (isDark)
-              SettingsSwitchTile(
-                title: context.tr(
-                  'settings.midnight_mode',
-                  fallback: 'Midnight Mode',
-                ),
-                subtitle: context.tr(
-                  'settings.midnight_mode_subtitle',
-                  fallback: 'True black background for OLED screens',
-                ),
-                icon: Icons.nightlight_round,
-                color: AppColors.indigo500,
-                value: context.watch<ThemeCubit>().state.isMidnight,
-                isLoading: false,
-                onChanged: (val) =>
-                    context.read<ThemeCubit>().toggleMidnight(val),
-              ),
             SettingsTile(
               title: context.tr(
                 'settings.language_selection',
                 fallback: 'Language Selection',
+              ),
+              subtitle: context.tr(
+                'settings.language_selection_subtitle',
+                fallback: 'App interface language',
               ),
               icon: Icons.language_rounded,
               color: AppColors.teal500,
@@ -864,6 +736,126 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                       ),
                     )
                   : null,
+            ),
+            SettingsTile(
+              title: context.tr(
+                'settings.pronunciation_voice',
+                fallback: 'Pronunciation Voice',
+              ),
+              subtitle: voicePresetTitle,
+              icon: Icons.record_voice_over_rounded,
+              color: AppColors.indigo500,
+              onTap: onTapVoicePreset,
+              trailing: Icon(
+                Icons.chevron_right_rounded,
+                color: isDark ? Colors.white38 : Colors.grey[400],
+                size: 20.r,
+              ),
+            ),
+            SettingsSwitchTile(
+              title: context.tr(
+                'settings.push_notifications',
+                fallback: 'Push Notifications',
+              ),
+              subtitle: context.tr(
+                'settings.push_notifications_subtitle',
+                fallback: 'Stay updated with daily quests',
+              ),
+              icon: Icons.notifications_active_rounded,
+              color: IllustrationColors.warmOrange,
+              value: notificationsEnabled,
+              isLoading: isLoading,
+              onChanged: onToggleNotifications,
+            ),
+            SettingsSwitchTile(
+              title: context.tr(
+                'settings.sound_effects',
+                fallback: 'Sound Effects',
+              ),
+              subtitle: context.tr(
+                'settings.sound_effects_subtitle',
+                fallback: 'App audio and UI feedback',
+              ),
+              icon: Icons.volume_up_rounded,
+              color: IllustrationColors.vibrantPink,
+              value: soundEnabled,
+              isLoading: isLoading,
+              onChanged: onToggleSound,
+            ),
+            SettingsSwitchTile(
+              title: context.tr(
+                'settings.game_sounds',
+                fallback: 'Game Sounds',
+              ),
+              subtitle: context.tr(
+                'settings.game_sounds_subtitle',
+                fallback: 'Celebratory sounds like cheering',
+              ),
+              icon: Icons.celebration_rounded,
+              color: IllustrationColors.vibrantPink,
+              value: gameSoundsEnabled,
+              isLoading: isLoading,
+              onChanged: onToggleGameSounds,
+            ),
+            if (isDark)
+              SettingsSwitchTile(
+                title: context.tr(
+                  'settings.midnight_mode',
+                  fallback: 'Midnight Mode',
+                ),
+                subtitle: context.tr(
+                  'settings.midnight_mode_subtitle',
+                  fallback: 'True black background for OLED screens',
+                ),
+                icon: Icons.nightlight_round,
+                color: AppColors.indigo500,
+                value: context.watch<ThemeCubit>().state.isMidnight,
+                isLoading: false,
+                onChanged: (val) =>
+                    context.read<ThemeCubit>().toggleMidnight(val),
+              ),
+            SettingsSwitchTile(
+              title: context.tr(
+                'settings.low_animation_mode',
+                fallback: 'Low Animation Mode',
+              ),
+              subtitle: context.tr(
+                'settings.low_animation_mode_subtitle',
+                fallback: 'Reduce motion and save battery',
+              ),
+              icon: Icons.battery_saver_rounded,
+              color: AppColors.rose500,
+              value: lowAnimationMode,
+              isLoading: isLoading,
+              onChanged: onToggleLowAnimationMode,
+            ),
+            SettingsSwitchTile(
+              title: context.tr(
+                'settings.reduce_complex_gestures',
+                fallback: 'Reduce Complex Gestures',
+              ),
+              subtitle: context.tr(
+                'settings.reduce_complex_gestures_subtitle',
+                fallback: 'Replace swiping with tapping for accessibility',
+              ),
+              icon: Icons.accessibility_new_rounded,
+              color: AppColors.emerald500,
+              value: reduceComplexGestures,
+              isLoading: isLoading,
+              onChanged: onToggleGestures,
+            ),
+            SettingsSwitchTile(
+              title: context.tr('settings.analytics', fallback: 'Analytics'),
+              subtitle: context.tr(
+                'settings.analytics_subtitle',
+                fallback:
+                    'Help us improve the app by sharing anonymous usage data',
+              ),
+              icon: Icons.analytics_rounded,
+              color: AppColors.blue500,
+              value: analyticsEnabled,
+              isLoading: isLoading,
+              onChanged: onToggleAnalytics,
             ),
           ],
         ),

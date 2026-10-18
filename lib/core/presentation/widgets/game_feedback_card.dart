@@ -541,7 +541,9 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                               ),
                               borderRadius: BorderRadius.circular(12.r),
                               border: Border.all(
-                                color: widget.accentColor.withValues(alpha: 0.3),
+                                color: widget.accentColor.withValues(
+                                  alpha: 0.3,
+                                ),
                                 width: 1,
                               ),
                             ),

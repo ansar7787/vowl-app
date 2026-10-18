@@ -55,11 +55,13 @@ void main() {
 
     mockLocale = MockLocaleService();
     when(() => mockLocale.currentLocale).thenReturn(const Locale('en'));
-    when(() => mockLocale.tr(
-      any(),
-      args: any(named: 'args'),
-      fallback: any(named: 'fallback'),
-    )).thenAnswer((invocation) {
+    when(
+      () => mockLocale.tr(
+        any(),
+        args: any(named: 'args'),
+        fallback: any(named: 'fallback'),
+      ),
+    ).thenAnswer((invocation) {
       final fallback = invocation.namedArguments[#fallback] as String?;
       return fallback ?? invocation.positionalArguments[0] as String;
     });
@@ -123,59 +125,73 @@ void main() {
   // GROUP 1: Initial Rendering & Branding Presentation
   // =========================================================================
   group('Group 1: Initial Rendering & Branding Presentation', () {
-    testWidgets('renders background, app bar, app logo, and PackageInfo version', (tester) async {
-      tester.view.physicalSize = const Size(390 * 3, 844 * 3);
-      tester.view.devicePixelRatio = 3.0;
-      addTearDown(() => tester.view.resetPhysicalSize());
+    testWidgets(
+      'renders background, app bar, app logo, and PackageInfo version',
+      (tester) async {
+        tester.view.physicalSize = const Size(390 * 3, 844 * 3);
+        tester.view.devicePixelRatio = 3.0;
+        addTearDown(() => tester.view.resetPhysicalSize());
 
-      await tester.pumpWidget(buildAboutHarness());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.pumpWidget(buildAboutHarness());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      expect(find.byType(MeshGradientBackground), findsOneWidget);
-      expect(find.text('About'), findsOneWidget);
-      expect(find.byIcon(Icons.school_rounded), findsOneWidget);
-      expect(find.text('Vowl'), findsOneWidget);
-      expect(find.text('English Language Learning App'), findsOneWidget);
-      expect(find.text('Version 2.4.0'), findsOneWidget);
-    });
+        expect(find.byType(MeshGradientBackground), findsOneWidget);
+        expect(find.text('About'), findsOneWidget);
+        expect(find.byIcon(Icons.school_rounded), findsOneWidget);
+        expect(find.text('Vowl'), findsOneWidget);
+        expect(find.text('English Language Learning App'), findsOneWidget);
+        expect(find.text('Version 2.4.0'), findsOneWidget);
+      },
+    );
   });
 
   // =========================================================================
   // GROUP 2: Developer & Contact Info Tiles
   // =========================================================================
   group('Group 2: Developer & Contact Info Tiles', () {
-    testWidgets('displays developer and contact tiles, tapping contact launches email URL', (tester) async {
-      tester.view.physicalSize = const Size(390 * 3, 844 * 3);
-      tester.view.devicePixelRatio = 3.0;
-      addTearDown(() => tester.view.resetPhysicalSize());
+    testWidgets(
+      'displays developer and contact tiles, tapping contact launches email URL',
+      (tester) async {
+        tester.view.physicalSize = const Size(390 * 3, 844 * 3);
+        tester.view.devicePixelRatio = 3.0;
+        addTearDown(() => tester.view.resetPhysicalSize());
 
-      await tester.pumpWidget(buildAboutHarness());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.pumpWidget(buildAboutHarness());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      expect(find.text('Developer'), findsOneWidget);
-      expect(find.text('Vowl Team'), findsOneWidget);
-      expect(find.byIcon(Icons.person_rounded), findsOneWidget);
+        expect(find.text('Developer'), findsOneWidget);
+        expect(find.text('Vowl Team'), findsOneWidget);
+        expect(find.byIcon(Icons.person_rounded), findsOneWidget);
 
-      expect(find.text('Contact'), findsOneWidget);
-      expect(find.text('support.vowl.app@gmail.com'), findsOneWidget);
-      expect(find.byIcon(Icons.email_rounded), findsOneWidget);
+        expect(find.text('Contact'), findsOneWidget);
+        expect(find.text('support.vowl.app@gmail.com'), findsOneWidget);
+        expect(find.byIcon(Icons.email_rounded), findsOneWidget);
 
-      // Tap on the contact tile
-      await tester.tap(find.text('support.vowl.app@gmail.com'));
-      await tester.pump();
+        // Tap on the contact tile
+        await tester.tap(find.text('support.vowl.app@gmail.com'));
+        await tester.pump();
 
-      expect(fakeUrlLauncher.lastLaunchedUrl, 'mailto:support.vowl.app@gmail.com');
-      expect(fakeUrlLauncher.lastOptions?.mode, PreferredLaunchMode.externalApplication);
-    });
+        expect(
+          fakeUrlLauncher.lastLaunchedUrl,
+          'mailto:support.vowl.app@gmail.com',
+        );
+        expect(
+          fakeUrlLauncher.lastOptions?.mode,
+          PreferredLaunchMode.externalApplication,
+        );
+      },
+    );
   });
 
   // =========================================================================
   // GROUP 3: Legal & Open Source Action Buttons
   // =========================================================================
   group('Group 3: Legal & Open Source Action Buttons', () {
-    testWidgets('tapping Privacy Policy launches web policy URL', (tester) async {
+    testWidgets('tapping Privacy Policy launches web policy URL', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(390 * 3, 844 * 3);
       tester.view.devicePixelRatio = 3.0;
       addTearDown(() => tester.view.resetPhysicalSize());
@@ -194,10 +210,15 @@ void main() {
         fakeUrlLauncher.lastLaunchedUrl,
         'https://vowl-official.github.io/vowl-legal/privacy.html',
       );
-      expect(fakeUrlLauncher.lastOptions?.mode, PreferredLaunchMode.externalApplication);
+      expect(
+        fakeUrlLauncher.lastOptions?.mode,
+        PreferredLaunchMode.externalApplication,
+      );
     });
 
-    testWidgets('tapping Terms of Service launches web terms URL', (tester) async {
+    testWidgets('tapping Terms of Service launches web terms URL', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(390 * 3, 844 * 3);
       tester.view.devicePixelRatio = 3.0;
       addTearDown(() => tester.view.resetPhysicalSize());
@@ -216,10 +237,15 @@ void main() {
         fakeUrlLauncher.lastLaunchedUrl,
         'https://vowl-official.github.io/vowl-legal/terms.html',
       );
-      expect(fakeUrlLauncher.lastOptions?.mode, PreferredLaunchMode.externalApplication);
+      expect(
+        fakeUrlLauncher.lastOptions?.mode,
+        PreferredLaunchMode.externalApplication,
+      );
     });
 
-    testWidgets('tapping View Open Source Licenses opens LicensePage', (tester) async {
+    testWidgets('tapping View Open Source Licenses opens LicensePage', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(390 * 3, 844 * 3);
       tester.view.devicePixelRatio = 3.0;
       addTearDown(() => tester.view.resetPhysicalSize());
@@ -242,7 +268,9 @@ void main() {
   // GROUP 4: App Bar & Navigation
   // =========================================================================
   group('Group 4: App Bar & Navigation', () {
-    testWidgets('tapping back button pops route and returns to settings', (tester) async {
+    testWidgets('tapping back button pops route and returns to settings', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(390 * 3, 844 * 3);
       tester.view.devicePixelRatio = 3.0;
       addTearDown(() => tester.view.resetPhysicalSize());
@@ -265,12 +293,16 @@ void main() {
   // GROUP 5: Responsive Viewports, Themes & Accessibility
   // =========================================================================
   group('Group 5: Responsive Viewports, Themes & Accessibility', () {
-    testWidgets('compact mobile layout (320x568) renders without overflow', (tester) async {
+    testWidgets('compact mobile layout (320x568) renders without overflow', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(320 * 2, 568 * 2);
       tester.view.devicePixelRatio = 2.0;
       addTearDown(() => tester.view.resetPhysicalSize());
 
-      await tester.pumpWidget(buildAboutHarness(viewport: const Size(320, 568)));
+      await tester.pumpWidget(
+        buildAboutHarness(viewport: const Size(320, 568)),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 200));
 
@@ -279,12 +311,16 @@ void main() {
       expect(find.text('Version 2.4.0'), findsOneWidget);
     });
 
-    testWidgets('tablet viewport (800x1280) renders without overflow', (tester) async {
+    testWidgets('tablet viewport (800x1280) renders without overflow', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(800 * 1.5, 1280 * 1.5);
       tester.view.devicePixelRatio = 1.5;
       addTearDown(() => tester.view.resetPhysicalSize());
 
-      await tester.pumpWidget(buildAboutHarness(viewport: const Size(800, 1280)));
+      await tester.pumpWidget(
+        buildAboutHarness(viewport: const Size(800, 1280)),
+      );
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 200));
 
@@ -292,7 +328,9 @@ void main() {
       expect(find.text('Vowl'), findsOneWidget);
     });
 
-    testWidgets('accessibility text scaling (1.3x) renders without overflow', (tester) async {
+    testWidgets('accessibility text scaling (1.3x) renders without overflow', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(390 * 3, 844 * 3);
       tester.view.devicePixelRatio = 3.0;
       addTearDown(() => tester.view.resetPhysicalSize());
@@ -305,7 +343,9 @@ void main() {
       expect(find.text('English Language Learning App'), findsOneWidget);
     });
 
-    testWidgets('dark theme adapts background and text contrast', (tester) async {
+    testWidgets('dark theme adapts background and text contrast', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildAboutHarness(themeMode: ThemeMode.dark));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 200));
@@ -314,7 +354,9 @@ void main() {
       expect(scaffold.backgroundColor, AppColors.slate900);
     });
 
-    testWidgets('light theme adapts background and text contrast', (tester) async {
+    testWidgets('light theme adapts background and text contrast', (
+      tester,
+    ) async {
       await tester.pumpWidget(buildAboutHarness(themeMode: ThemeMode.light));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 200));

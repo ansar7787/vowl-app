@@ -42,12 +42,14 @@ void main() {
 
   setUp(() {
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
-        .setMockMethodCallHandler(const MethodChannel('flutter_tts'), (call) async {
-      if (call.method == 'getVoices') {
-        return <Map<String, String>>[];
-      }
-      return 1;
-    });
+        .setMockMethodCallHandler(const MethodChannel('flutter_tts'), (
+          call,
+        ) async {
+          if (call.method == 'getVoices') {
+            return <Map<String, String>>[];
+          }
+          return 1;
+        });
 
     SharedPreferences.setMockInitialValues({});
     if (!di.sl.isRegistered<AppLogger>()) {
@@ -139,84 +141,86 @@ void main() {
     expect(saved, TtsVoicePreset.clearGuide);
   });
 
-  testWidgets('tapping preview button starts audio wave animation and toggle stops it', (
-    tester,
-  ) async {
-    await tester.pumpWidget(
-      buildTestableWidget(initialPreset: TtsVoicePreset.friendlyTeacher),
-    );
-    await tester.pumpAndSettle();
+  testWidgets(
+    'tapping preview button starts audio wave animation and toggle stops it',
+    (tester) async {
+      await tester.pumpWidget(
+        buildTestableWidget(initialPreset: TtsVoicePreset.friendlyTeacher),
+      );
+      await tester.pumpAndSettle();
 
-    // Find the preview button
-    final previewBtnFinder = find.byTooltip('Listen to voice sample').first;
-    expect(previewBtnFinder, findsOneWidget);
+      // Find the preview button
+      final previewBtnFinder = find.byTooltip('Listen to voice sample').first;
+      expect(previewBtnFinder, findsOneWidget);
 
-    // Tap preview
-    await tester.tap(previewBtnFinder);
-    await tester.pump();
+      // Tap preview
+      await tester.tap(previewBtnFinder);
+      await tester.pump();
 
-    // Verify tooltip updated to stop
-    expect(find.byTooltip('Stop voice sample'), findsOneWidget);
+      // Verify tooltip updated to stop
+      expect(find.byTooltip('Stop voice sample'), findsOneWidget);
 
-    // Tap to stop
-    await tester.tap(find.byTooltip('Stop voice sample').first);
-    await tester.pump();
+      // Tap to stop
+      await tester.tap(find.byTooltip('Stop voice sample').first);
+      await tester.pump();
 
-    expect(find.byTooltip('Listen to voice sample'), findsWidgets);
-    expect(tester.takeException(), isNull);
-  });
+      expect(find.byTooltip('Listen to voice sample'), findsWidgets);
+      expect(tester.takeException(), isNull);
+    },
+  );
 
-  testWidgets('premium user can select British Accent and tap Done to return it', (
-    tester,
-  ) async {
-    tester.view.physicalSize = const Size(400, 1100);
-    tester.view.devicePixelRatio = 1.0;
-    addTearDown(tester.view.resetPhysicalSize);
-    addTearDown(tester.view.resetDevicePixelRatio);
+  testWidgets(
+    'premium user can select British Accent and tap Done to return it',
+    (tester) async {
+      tester.view.physicalSize = const Size(400, 1100);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
 
-    TtsVoicePreset? selectedResult;
+      TtsVoicePreset? selectedResult;
 
-    await tester.pumpWidget(
-      ScreenUtilInit(
-        designSize: const Size(400, 1100),
-        builder: (context, child) => MaterialApp(
-          home: Scaffold(
-            body: Builder(
-              builder: (ctx) => ElevatedButton(
-                onPressed: () async {
-                  selectedResult = await TtsVoiceSelectionBottomSheet.show(
-                    ctx,
-                    currentPreset: TtsVoicePreset.friendlyTeacher,
-                    isPremium: true,
-                  );
-                },
-                child: const Text('Open Sheet'),
+      await tester.pumpWidget(
+        ScreenUtilInit(
+          designSize: const Size(400, 1100),
+          builder: (context, child) => MaterialApp(
+            home: Scaffold(
+              body: Builder(
+                builder: (ctx) => ElevatedButton(
+                  onPressed: () async {
+                    selectedResult = await TtsVoiceSelectionBottomSheet.show(
+                      ctx,
+                      currentPreset: TtsVoicePreset.friendlyTeacher,
+                      isPremium: true,
+                    );
+                  },
+                  child: const Text('Open Sheet'),
+                ),
               ),
             ),
           ),
         ),
-      ),
-    );
-    await tester.pumpAndSettle();
+      );
+      await tester.pumpAndSettle();
 
-    // Open sheet
-    await tester.tap(find.text('Open Sheet'));
-    await tester.pumpAndSettle();
+      // Open sheet
+      await tester.tap(find.text('Open Sheet'));
+      await tester.pumpAndSettle();
 
-    // Select British Accent
-    await tester.tap(find.text('British Accent'));
-    await tester.pumpAndSettle();
+      // Select British Accent
+      await tester.tap(find.text('British Accent'));
+      await tester.pumpAndSettle();
 
-    // Ensure Done is visible and tap
-    await tester.ensureVisible(find.text('Done'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Done'));
-    await tester.pumpAndSettle();
+      // Ensure Done is visible and tap
+      await tester.ensureVisible(find.text('Done'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Done'));
+      await tester.pumpAndSettle();
 
-    // Sheet dismissed
-    expect(find.text('Pronunciation Voice'), findsNothing);
-    expect(selectedResult, TtsVoicePreset.britishAccent);
-  });
+      // Sheet dismissed
+      expect(find.text('Pronunciation Voice'), findsNothing);
+      expect(selectedResult, TtsVoicePreset.britishAccent);
+    },
+  );
 
   testWidgets(
     'free user opening sheet with initial preset set to locked voice sanitizes safely to Clear Guide',

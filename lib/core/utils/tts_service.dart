@@ -123,8 +123,9 @@ class TtsServiceImpl implements TtsService {
   Future<void> _initTts() async {
     try {
       // Check if a TTS engine is actually installed on the device
-      final dynamic isAvailable =
-          await _flutterTts.isLanguageAvailable('en-US');
+      final dynamic isAvailable = await _flutterTts.isLanguageAvailable(
+        'en-US',
+      );
       if (isAvailable == false || isAvailable == 0) {
         _engineStatus = TtsEngineStatus.noEngine;
         TtsErrorNotifier.instance.report(TtsErrorType.noEngine);
@@ -271,7 +272,9 @@ class TtsServiceImpl implements TtsService {
       // Defensive hardware watchdog: fires ONLY if Android OEM drops onDone event completely
       _watchdogTimer = Timer(const Duration(seconds: 10), () {
         if (sessionId == _activeSessionId && _isSpeaking) {
-          sl<AppLogger>().debug('TtsService: Watchdog auto-cleared preview state');
+          sl<AppLogger>().debug(
+            'TtsService: Watchdog auto-cleared preview state',
+          );
           handleDone();
         }
       });
@@ -338,7 +341,8 @@ class TtsServiceImpl implements TtsService {
     }
 
     try {
-      final targetPreset = forcedPreset ?? await TtsVoiceHelper.getSavedPreset();
+      final targetPreset =
+          forcedPreset ?? await TtsVoiceHelper.getSavedPreset();
       if (_activeEnginePreset != targetPreset || isKids || locale != null) {
         await TtsVoiceHelper.applyPresetToTts(
           _flutterTts,
@@ -352,7 +356,9 @@ class TtsServiceImpl implements TtsService {
       }
 
       if (locale != null) {
-        final dynamic isAvailable = await _flutterTts.isLanguageAvailable(locale);
+        final dynamic isAvailable = await _flutterTts.isLanguageAvailable(
+          locale,
+        );
         final bool canSpeakLocale = isAvailable == 1 || isAvailable == true;
         if (canSpeakLocale) {
           await _flutterTts.setLanguage(locale);

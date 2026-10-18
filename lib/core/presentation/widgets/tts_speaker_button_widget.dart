@@ -46,8 +46,9 @@ class TtsSpeakerButtonWidget extends StatefulWidget {
     } catch (_) {}
   }
 
-  static final ValueNotifier<int?> _activeSessionNotifier =
-      ValueNotifier<int?>(null);
+  static final ValueNotifier<int?> _activeSessionNotifier = ValueNotifier<int?>(
+    null,
+  );
   static int _sessionCounter = 0;
 
   @override
@@ -208,15 +209,15 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
       label: !isEngineReady
           ? 'Audio narration unavailable'
           : (_isSpeaking
-              ? 'Stop audio narration'
-              : 'Listen to audio narration. Long press for slow pronunciation.'),
+                ? 'Stop audio narration'
+                : 'Listen to audio narration. Long press for slow pronunciation.'),
       button: true,
       child: Tooltip(
         message: !isEngineReady
             ? 'Text-to-speech unavailable on this device'
             : (_isSpeaking
-                ? 'Tap to stop'
-                : 'Tap to listen • Hold for slow pronunciation'),
+                  ? 'Tap to stop'
+                  : 'Tap to listen • Hold for slow pronunciation'),
         child: ScaleButton(
           onTap: isEngineReady ? () => _speak(slow: false) : null,
           onLongPress: isEngineReady ? () => _speak(slow: true) : null,
@@ -224,16 +225,12 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
             padding: EdgeInsets.all(6.r),
             decoration: BoxDecoration(
               color: widget.color.withValues(
-                alpha: !isEngineReady
-                    ? 0.05
-                    : (_isSpeaking ? 0.25 : 0.1),
+                alpha: !isEngineReady ? 0.05 : (_isSpeaking ? 0.25 : 0.1),
               ),
               shape: BoxShape.circle,
               border: Border.all(
                 color: widget.color.withValues(
-                  alpha: !isEngineReady
-                      ? 0.1
-                      : (_isSpeaking ? 0.5 : 0.2),
+                  alpha: !isEngineReady ? 0.1 : (_isSpeaking ? 0.5 : 0.2),
                 ),
                 width: 1,
               ),
@@ -242,8 +239,8 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
               !isEngineReady
                   ? Icons.volume_off_rounded
                   : (_isSpeaking
-                      ? Icons.stop_rounded
-                      : Icons.volume_up_rounded),
+                        ? Icons.stop_rounded
+                        : Icons.volume_up_rounded),
               color: widget.color.withValues(alpha: isEngineReady ? 1.0 : 0.3),
               size: iconSize,
             ),
@@ -253,4 +250,3 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
     );
   }
 }
-

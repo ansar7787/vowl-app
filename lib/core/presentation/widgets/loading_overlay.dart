@@ -90,7 +90,8 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.shouldReduceMotion(context);
 
     Widget spinner = SizedBox(

@@ -49,10 +49,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
   String get _sequenceTitle {
     switch (widget.sequenceId) {
       case 'smart_recommendation':
-        return context.tr(
-          'home.discovery_foryou_title',
-          fallback: 'For You',
-        );
+        return context.tr('home.discovery_foryou_title', fallback: 'For You');
       case 'daily_duo':
         return context.tr(
           'home.discovery_dailyduo_title',
@@ -129,7 +126,10 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     } else {
       GameDialogHelper.showPremiumSnackBar(
         context,
-        context.tr('quest_sequence.part_cancelled', fallback: 'Quest part cancelled. You can try again or exit.'),
+        context.tr(
+          'quest_sequence.part_cancelled',
+          fallback: 'Quest part cancelled. You can try again or exit.',
+        ),
         icon: Icons.info_outline_rounded,
         color: Colors.orange,
       );
@@ -183,7 +183,12 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                         ),
                         child: IntrinsicHeight(
                           child: Padding(
-                            padding: EdgeInsets.fromLTRB(24.w, 10.h, 24.w, 24.w),
+                            padding: EdgeInsets.fromLTRB(
+                              24.w,
+                              10.h,
+                              24.w,
+                              24.w,
+                            ),
                             child: Column(
                               children: [
                                 _Header(
@@ -194,7 +199,10 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                                   progress: _progress,
                                 ),
                                 SizedBox(height: 32.h),
-                                _ProgressBar(isDark: isDark, progress: _progress),
+                                _ProgressBar(
+                                  isDark: isDark,
+                                  progress: _progress,
+                                ),
                                 const Spacer(),
                                 _QuestCard(
                                   isDark: isDark,
@@ -202,7 +210,9 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                                   isLaunching: _isLaunching,
                                   currentIndex: _currentIndex,
                                   quests: widget.quests,
-                                  onAction: _isLaunching ? null : _startNextGame,
+                                  onAction: _isLaunching
+                                      ? null
+                                      : _startNextGame,
                                 ),
                                 const Spacer(flex: 2),
                               ],

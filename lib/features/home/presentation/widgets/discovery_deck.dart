@@ -266,6 +266,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(28.r),
               padding: EdgeInsets.zero,
               showShadow: false,
+              blur: 0,
               borderColor: isSelected
                   ? color.withValues(alpha: 0.5)
                   : Colors.white.withValues(alpha: 0.1),

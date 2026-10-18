@@ -11,6 +11,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -67,41 +68,33 @@ class _CategoryShelfState extends State<CategoryShelf> {
               return AnimatedBuilder(
                 animation: _scrollController,
                 builder: (context, child) {
+                  if (VowlMotion.shouldReduceMotion(context)) {
+                    return child!;
+                  }
+
                   double scrollPixels = 0;
                   if (_scrollController.hasClients) {
                     scrollPixels = _scrollController.position.pixels;
                   }
 
-                  // Mathematical approximation of the card's position on screen
-                  final itemWidth = 150.w + 16.w; // Card width + right margin
+                  final itemWidth = 150.w + 16.w;
                   final itemCenter = 24.w + (index * itemWidth) + (150.w / 2);
-                  // 2026 Spatial Physics: Left-Aligned Focal Lens
-                  // Instead of screen center, the "focus point" is exactly where
-                  // the first item rests when scroll is at 0.
                   final focalPoint = scrollPixels + 24.w + (150.w / 2);
 
-                  // Distance from focus point (-1.0 to 1.0 across the screen)
                   final distance =
                       (itemCenter - focalPoint) /
                       MediaQuery.of(context).size.width;
 
-                  // 2026 Spatial Physics:
-                  // 1. Tilt (Rotate Y) - tilts towards the user as it approaches center
-                  final tilt = distance * 0.6; // Max 0.6 radians tilt at edges
-
-                  // 2. Scale - peaks at center, shrinks slightly at edges
-                  final scale = 1.0 - (distance.abs() * 0.15).clamp(0.0, 0.2);
-
-                  // 3. Dynamic Opacity - brighter in center, darker on edges
-                  final opacity = 1.0 - (distance.abs() * 0.4).clamp(0.0, 0.6);
+                  final tilt = distance * 0.4;
+                  final scale = 1.0 - (distance.abs() * 0.1).clamp(0.0, 0.15);
 
                   return Transform(
                     transform: Matrix4.identity()
-                      ..setEntry(3, 2, 0.002) // Deep perspective
+                      ..setEntry(3, 2, 0.002)
                       ..rotateY(tilt)
                       ..scaleByDouble(scale, scale, 1.0, 1.0),
                     alignment: FractionalOffset.center,
-                    child: Opacity(opacity: opacity, child: child),
+                    child: child,
                   );
                 },
                 child: Padding(
@@ -235,7 +228,8 @@ class _GameEntryCard extends StatelessWidget {
 
   Widget _buildCardIndicator(BuildContext context, Color color) {
     final maxLevels = CurriculumManifest.getLevels(subtype.name);
-    final levelsCleared = (user.completedLevels[subtype.name]?.length ?? 0).clamp(0, maxLevels);
+    final levelsCleared = (user.completedLevels[subtype.name]?.length ?? 0)
+        .clamp(0, maxLevels);
     final isMastered = levelsCleared >= maxLevels;
     final currentLevel = isMastered ? maxLevels : levelsCleared + 1;
     final isNew =

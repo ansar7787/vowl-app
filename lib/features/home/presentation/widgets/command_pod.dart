@@ -99,15 +99,16 @@ class CommandPod extends StatelessWidget {
         borderRadius: BorderRadius.circular(28.r),
         boxShadow: [
           BoxShadow(
-            color: AppColors.indigo500.withValues(alpha: 0.15),
-            blurRadius: 40,
-            offset: const Offset(0, 15),
+            color: AppColors.indigo500.withValues(alpha: 0.12),
+            blurRadius: 16,
+            offset: const Offset(0, 6),
           ),
         ],
       ),
       child: GlassTile(
         borderRadius: BorderRadius.circular(28.r),
         padding: EdgeInsets.all(24.r),
+        blur: 0,
         child: Column(
           children: [
             // ── Identity Area ──────────────────────────────────
@@ -580,6 +581,7 @@ class CommandPod extends StatelessWidget {
           child: GlassTile(
             borderRadius: BorderRadius.circular(20.r),
             padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 6.w),
+            blur: 0,
             child: ExcludeSemantics(
               child: SizedBox(
                 width: double.infinity,
