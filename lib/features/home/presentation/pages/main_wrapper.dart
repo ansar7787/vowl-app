@@ -20,7 +20,6 @@ class MainWrapper extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight =
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
-    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,

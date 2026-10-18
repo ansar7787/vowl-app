@@ -480,8 +480,6 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
               ],
             ),
           ),
-        ),
-      ),
     );
   }
 
