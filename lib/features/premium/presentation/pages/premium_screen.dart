@@ -328,6 +328,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
               LayoutBuilder(
                 builder: (context, constraints) {
                   return CustomScrollView(
+                    physics: const AlwaysScrollableScrollPhysics(
+                      parent: BouncingScrollPhysics(),
+                    ),
                     slivers: [
                       SliverAppBar(
                         backgroundColor: Colors.transparent,

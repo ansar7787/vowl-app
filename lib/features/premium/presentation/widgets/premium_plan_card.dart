@@ -5,6 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:intl/intl.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class PremiumPlanCard extends StatelessWidget {
   final SubscriptionPlan plan;
@@ -56,10 +57,11 @@ class PremiumPlanCard extends StatelessWidget {
           '${context.tr('premium.days_of_elite_access', fallback: 'Days of Elite Access', args: ['${plan.days}'])}',
       child: GestureDetector(
         onTap: onTap,
-        child:
-            Container(
-                  margin: EdgeInsets.only(bottom: 16.h),
-                  child: Stack(
+        child: Builder(
+          builder: (context) {
+            final cardContent = Container(
+              margin: EdgeInsets.only(bottom: 16.h),
+              child: Stack(
                     clipBehavior: Clip.none,
                     children: [
                       AnimatedContainer(
@@ -268,60 +270,72 @@ class PremiumPlanCard extends StatelessWidget {
                         Positioned(
                           top: -12.h,
                           right: 20.w,
-                          child:
-                              Container(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 12.w,
-                                      vertical: 6.h,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          accentColor,
-                                          accentColor.withValues(alpha: 0.8),
-                                        ],
-                                      ),
-                                      borderRadius: BorderRadius.circular(20.r),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: accentColor.withValues(
-                                            alpha: 0.4,
-                                          ),
-                                          blurRadius: 8,
-                                          offset: const Offset(0, 4),
-                                        ),
-                                      ],
-                                    ),
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: Text(
-                                        plan.tag,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          color: Colors.white,
-                                          fontSize: 10.sp,
-                                          fontWeight: FontWeight.bold,
-                                          letterSpacing: 1,
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                  .animate(target: isSelected ? 1 : 0)
-                                  .scale(
-                                    begin: const Offset(0.9, 0.9),
-                                    end: const Offset(1.1, 1.1),
-                                    duration: 300.ms,
-                                    curve: Curves.elasticOut,
+                          child: Builder(
+                            builder: (context) {
+                              final tagWidget = Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 12.w,
+                                  vertical: 6.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      accentColor,
+                                      accentColor.withValues(alpha: 0.8),
+                                    ],
                                   ),
+                                  borderRadius: BorderRadius.circular(20.r),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: accentColor.withValues(
+                                        alpha: 0.4,
+                                      ),
+                                      blurRadius: 8,
+                                      offset: const Offset(0, 4),
+                                    ),
+                                  ],
+                                ),
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: Text(
+                                    plan.tag,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      color: Colors.white,
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.bold,
+                                      letterSpacing: 1,
+                                    ),
+                                  ),
+                                ),
+                              );
+                              return VowlMotion.shouldReduceMotion(context)
+                                  ? tagWidget
+                                  : tagWidget
+                                      .animate(target: isSelected ? 1 : 0)
+                                      .scale(
+                                        begin: const Offset(0.9, 0.9),
+                                        end: const Offset(1.1, 1.1),
+                                        duration: 300.ms,
+                                        curve: Curves.elasticOut,
+                                      );
+                            },
+                          ),
                         ),
                     ],
                   ),
-                )
-                .animate(target: isSelected ? 1 : 0)
-                .scale(
-                  begin: const Offset(1, 1),
-                  end: const Offset(1.02, 1.02),
-                ),
+                );
+
+            return VowlMotion.shouldReduceMotion(context)
+                ? cardContent
+                : cardContent
+                    .animate(target: isSelected ? 1 : 0)
+                    .scale(
+                      begin: const Offset(1, 1),
+                      end: const Offset(1.02, 1.02),
+                    );
+          },
+        ),
       ),
     );
   }

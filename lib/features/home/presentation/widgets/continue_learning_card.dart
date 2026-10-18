@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -356,6 +357,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     // Entrance animation: only fire once, not on every BLoC rebuild.
     if (!_hasAnimated) {
       _hasAnimated = true;
+      if (VowlMotion.shouldReduceMotion(context)) return card;
       return card
           .animate()
           .fadeIn(duration: 600.ms)
@@ -457,20 +459,23 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                             ),
                             borderRadius: BorderRadius.circular(100.r),
                           ),
-                        )
-                        .animate()
-                        .scaleX(
-                          begin: 0,
-                          end: 1,
-                          duration: 800.ms,
-                          curve: Curves.easeOutQuart,
-                          alignment: Alignment.centerLeft,
-                        )
-                        .then()
-                        .shimmer(
-                          delay: 400.ms,
-                          duration: 1800.ms,
-                          color: Colors.white.withValues(alpha: 0.5),
+                        ).animateIf(
+                          context,
+                          (w) => w
+                              .animate()
+                              .scaleX(
+                                begin: 0,
+                                end: 1,
+                                duration: 800.ms,
+                                curve: Curves.easeOutQuart,
+                                alignment: Alignment.centerLeft,
+                              )
+                              .then()
+                              .shimmer(
+                                delay: 400.ms,
+                                duration: 1800.ms,
+                                color: Colors.white.withValues(alpha: 0.5),
+                              ),
                         ),
               ),
             ],
@@ -505,11 +510,14 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
         ],
       ),
       child: Icon(Icons.play_arrow_rounded, color: color, size: 26.r),
-    ).animate().scale(
-      begin: const Offset(0.8, 0.8),
-      end: const Offset(1, 1),
-      duration: 800.ms,
-      curve: Curves.easeOutCubic,
+    ).animateIf(
+      context,
+      (w) => w.animate().scale(
+        begin: const Offset(0.8, 0.8),
+        end: const Offset(1, 1),
+        duration: 800.ms,
+        curve: Curves.easeOutCubic,
+      ),
     );
   }
 }

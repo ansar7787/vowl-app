@@ -13,6 +13,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/profile/presentation/bloc/trophy_room_cubit.dart';
 import 'package:vowl/core/theme/category_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -70,7 +71,9 @@ class _TrophyRoomView extends StatelessWidget {
 
           SafeArea(
             child: CustomScrollView(
-              physics: const BouncingScrollPhysics(),
+              physics: const AlwaysScrollableScrollPhysics(
+                parent: BouncingScrollPhysics(),
+              ),
               slivers: [
                 _buildSliverAppBar(context, isDark),
 
@@ -235,29 +238,39 @@ class _TrophyRoomView extends StatelessWidget {
               ),
             ),
             SizedBox(width: 24.w),
-            Container(
-              padding: EdgeInsets.all(16.r),
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [AppColors.gold, AppColors.amber500],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.amber500.withValues(alpha: 0.3),
-                    blurRadius: 15,
-                    offset: const Offset(0, 6),
+            Builder(
+              builder: (context) {
+                final trophyIcon = Container(
+                  padding: EdgeInsets.all(16.r),
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [AppColors.gold, AppColors.amber500],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.amber500.withValues(alpha: 0.3),
+                        blurRadius: 15,
+                        offset: const Offset(0, 6),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              child: Icon(
-                Icons.emoji_events_rounded,
-                color: Colors.white,
-                size: 32.r,
-              ),
-            ).animate().scale(duration: 600.ms, curve: Curves.easeOutCubic),
+                  child: Icon(
+                    Icons.emoji_events_rounded,
+                    color: Colors.white,
+                    size: 32.r,
+                  ),
+                );
+                return VowlMotion.shouldReduceMotion(context)
+                    ? trophyIcon
+                    : trophyIcon.animate().scale(
+                        duration: 600.ms,
+                        curve: Curves.easeOutCubic,
+                      );
+              },
+            ),
           ],
         );
       },
@@ -268,7 +281,7 @@ class _TrophyRoomView extends StatelessWidget {
     return BlocBuilder<TrophyRoomCubit, TrophyRoomState>(
       builder: (context, state) {
         final isLegendary = state.currentFilter == TrophyFilter.legendary;
-        return Container(
+        final tabs = Container(
           height: 52.h,
           width: double.infinity,
           padding: EdgeInsets.all(4.r),
@@ -339,7 +352,9 @@ class _TrophyRoomView extends StatelessWidget {
               );
             },
           ),
-        ).animate().fadeIn(duration: 400.ms).slideY(begin: -0.1, end: 0);
+        );
+        if (VowlMotion.shouldReduceMotion(context)) return tabs;
+        return tabs.animate().fadeIn(duration: 400.ms).slideY(begin: -0.1, end: 0);
       },
     );
   }
@@ -394,29 +409,37 @@ class _TrophyRoomView extends StatelessWidget {
                     'No trophies yet. Keep completing lessons and challenges to earn your first shiny badge!',
               );
 
-        return Padding(
-          padding: EdgeInsets.only(bottom: 16.h),
-          child: Row(
-            children: [
-              Icon(
-                Icons.info_outline_rounded,
-                size: 16.r,
-                color: isDark ? Colors.white54 : Colors.black54,
-              ),
-              SizedBox(width: 8.w),
-              Expanded(
-                child: Text(
-                  text,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white54 : Colors.black54,
-                  ),
+        final messageRow = Row(
+          children: [
+            Icon(
+              Icons.info_outline_rounded,
+              size: 16.r,
+              color: isDark ? Colors.white54 : Colors.black54,
+            ),
+            SizedBox(width: 8.w),
+            Expanded(
+              child: Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.white54 : Colors.black54,
                 ),
               ),
-            ],
-          ).animate(key: ValueKey(text)).fadeIn().slideX(begin: -0.1),
+            ),
+          ],
+        );
+        final animatedMessage = VowlMotion.shouldReduceMotion(context)
+            ? messageRow
+            : messageRow
+                .animate(key: ValueKey(text))
+                .fadeIn()
+                .slideX(begin: -0.1);
+
+        return Padding(
+          padding: EdgeInsets.only(bottom: 16.h),
+          child: animatedMessage,
         );
       },
     );

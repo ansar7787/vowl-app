@@ -13,6 +13,7 @@ import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/home/presentation/widgets/mastery_avatar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -33,7 +34,7 @@ class CommandPod extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    final column = Column(
       children: [
         if (mode == CommandPodMode.full ||
             mode == CommandPodMode.headerOnly) ...[
@@ -48,7 +49,9 @@ class CommandPod extends StatelessWidget {
           _buildBentoMasteryVault(context),
         ],
       ],
-    ).animate().fadeIn(duration: 800.ms).slideY(begin: 0.05, end: 0);
+    );
+    if (VowlMotion.shouldReduceMotion(context)) return column;
+    return column.animate().fadeIn(duration: 800.ms).slideY(begin: 0.05, end: 0);
   }
 
   /// Returns a dynamic rank label and accent color based on the user's level.
@@ -118,22 +121,30 @@ class CommandPod extends StatelessWidget {
                 Stack(
                   alignment: Alignment.center,
                   children: [
-                    // Outer pulsing ring
-                    Container(
-                      width: 75.r,
-                      height: 75.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: AppColors.indigo500.withValues(alpha: 0.2),
-                          width: 2,
-                        ),
-                      ),
-                    ).animate().scale(
-                      begin: const Offset(1.15, 1.15),
-                      end: const Offset(1, 1),
-                      duration: 800.ms,
-                      curve: Curves.easeOutCubic,
+                    Builder(
+                      builder: (context) {
+                        final reduceMotion = VowlMotion.shouldReduceMotion(context);
+                        Widget ring = Container(
+                          width: 75.r,
+                          height: 75.r,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: AppColors.indigo500.withValues(alpha: 0.2),
+                              width: 2,
+                            ),
+                          ),
+                        );
+                        if (!reduceMotion) {
+                          ring = ring.animate().scale(
+                            begin: const Offset(1.15, 1.15),
+                            end: const Offset(1, 1),
+                            duration: 800.ms,
+                            curve: Curves.easeOutCubic,
+                          );
+                        }
+                        return ring;
+                      },
                     ),
 
                     MasteryAvatar(user: user, progress: progress),
@@ -229,6 +240,7 @@ class CommandPod extends StatelessWidget {
   }
 
   Widget _buildKidsLearningCard(BuildContext context) {
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     return Semantics(
       button: true,
       label:
@@ -285,16 +297,21 @@ class CommandPod extends StatelessWidget {
                       PositionedDirectional(
                         start: 20.w,
                         top: 20.h,
-                        child:
-                            Icon(
-                              Icons.auto_awesome_rounded,
-                              size: 24.r,
-                              color: Colors.white.withValues(alpha: 0.2),
-                            ).animate().scale(
-                              begin: const Offset(1, 1),
-                              end: const Offset(1.3, 1.3),
-                              duration: 3.seconds,
-                            ),
+                        child: reduceMotion
+                            ? Icon(
+                                Icons.auto_awesome_rounded,
+                                size: 24.r,
+                                color: Colors.white.withValues(alpha: 0.2),
+                              )
+                            : Icon(
+                                Icons.auto_awesome_rounded,
+                                size: 24.r,
+                                color: Colors.white.withValues(alpha: 0.2),
+                              ).animate().scale(
+                                begin: const Offset(1, 1),
+                                end: const Offset(1.3, 1.3),
+                                duration: 3.seconds,
+                              ),
                       ),
 
                       // Text Content (Moved to left side)
@@ -411,96 +428,146 @@ class CommandPod extends StatelessWidget {
                     alignment: Alignment.center,
                     children: [
                       // 1. Outer Soft Glow
-                      Container(
-                        width: 140.r,
-                        height: 140.r,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: RadialGradient(
-                            colors: [
-                              Colors.white.withValues(alpha: 0.1),
-                              Colors.transparent,
-                            ],
-                          ),
-                        ),
-                      ).animate().scale(
-                        begin: const Offset(0.8, 0.8),
-                        end: const Offset(1.2, 1.2),
-                        duration: 4.seconds,
-                      ),
+                      reduceMotion
+                          ? Container(
+                              width: 140.r,
+                              height: 140.r,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                gradient: RadialGradient(
+                                  colors: [
+                                    Colors.white.withValues(alpha: 0.1),
+                                    Colors.transparent,
+                                  ],
+                                ),
+                              ),
+                            )
+                          : Container(
+                              width: 140.r,
+                              height: 140.r,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                gradient: RadialGradient(
+                                  colors: [
+                                    Colors.white.withValues(alpha: 0.1),
+                                    Colors.transparent,
+                                  ],
+                                ),
+                              ),
+                            ).animate().scale(
+                              begin: const Offset(0.8, 0.8),
+                              end: const Offset(1.2, 1.2),
+                              duration: 4.seconds,
+                            ),
 
                       // 2. Secondary Interactive Ring
-                      Container(
-                        width: 100.r,
-                        height: 100.r,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.white.withValues(alpha: 0.15),
-                            width: 1.5,
-                          ),
-                        ),
-                      ).animate().rotate(duration: 10.seconds),
+                      reduceMotion
+                          ? Container(
+                              width: 100.r,
+                              height: 100.r,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: Colors.white.withValues(alpha: 0.15),
+                                  width: 1.5,
+                                ),
+                              ),
+                            )
+                          : Container(
+                              width: 100.r,
+                              height: 100.r,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: Colors.white.withValues(alpha: 0.15),
+                                  width: 1.5,
+                                ),
+                              ),
+                            ).animate().rotate(duration: 10.seconds),
 
                       // 3. Floating Sparkles/Particles
-                      ...List.generate(5, (index) {
-                        final random = math.Random(index + 50);
-                        return Positioned(
-                          left: 20.w + random.nextDouble() * 100.w,
-                          top: 20.h + random.nextDouble() * 80.h,
-                          child:
-                              Icon(
-                                    Icons.star_rounded,
-                                    color: Colors.white.withValues(alpha: 0.3),
-                                    size: (8 + random.nextInt(8)).r,
-                                  )
-                                  .animate()
-                                  .fadeIn(
-                                    duration: (1 + random.nextDouble()).seconds,
-                                  )
-                                  .moveY(
-                                    begin: 0,
-                                    end: -20,
-                                    duration: 2.seconds,
-                                  ),
-                        );
-                      }),
+                      if (!reduceMotion)
+                        ...List.generate(5, (index) {
+                          final random = math.Random(index + 50);
+                          return Positioned(
+                            left: 20.w + random.nextDouble() * 100.w,
+                            top: 20.h + random.nextDouble() * 80.h,
+                            child:
+                                Icon(
+                                      Icons.star_rounded,
+                                      color: Colors.white.withValues(alpha: 0.3),
+                                      size: (8 + random.nextInt(8)).r,
+                                    )
+                                    .animate()
+                                    .fadeIn(
+                                      duration: (1 + random.nextDouble()).seconds,
+                                    )
+                                    .moveY(
+                                      begin: 0,
+                                      end: -20,
+                                      duration: 2.seconds,
+                                    ),
+                          );
+                        }),
 
                       // 4. The Buddy Icon (Grounded in Center)
-                      Container(
-                            padding: EdgeInsets.all(12.r),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.15),
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: Colors.white.withValues(alpha: 0.25),
-                                width: 2.r,
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withValues(alpha: 0.1),
-                                  blurRadius: 25,
-                                  offset: const Offset(0, 12),
+                      reduceMotion
+                          ? Container(
+                              padding: EdgeInsets.all(12.r),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withValues(alpha: 0.15),
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: Colors.white.withValues(alpha: 0.25),
+                                  width: 2.r,
                                 ),
-                              ],
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withValues(alpha: 0.1),
+                                    blurRadius: 25,
+                                    offset: const Offset(0, 12),
+                                  ),
+                                ],
+                              ),
+                              child: Text(
+                                "🧸",
+                                style: TextStyle(fontSize: 56.sp, height: 1.0),
+                              ),
+                            )
+                          : Container(
+                              padding: EdgeInsets.all(12.r),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withValues(alpha: 0.15),
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: Colors.white.withValues(alpha: 0.25),
+                                  width: 2.r,
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withValues(alpha: 0.1),
+                                    blurRadius: 25,
+                                    offset: const Offset(0, 12),
+                                  ),
+                                ],
+                              ),
+                              child: Text(
+                                "🧸",
+                                style: TextStyle(fontSize: 56.sp, height: 1.0),
+                              ),
+                            )
+                            .animate()
+                            .moveY(
+                              begin: -6,
+                              end: 6,
+                              duration: 2.seconds,
+                              curve: Curves.easeInOut,
+                            )
+                            .scale(
+                              begin: const Offset(1, 1),
+                              end: const Offset(1.05, 1.05),
+                              duration: 2.seconds,
                             ),
-                            child: Text(
-                              "🧸",
-                              style: TextStyle(fontSize: 56.sp, height: 1.0),
-                            ),
-                          )
-                          .animate()
-                          .moveY(
-                            begin: -6,
-                            end: 6,
-                            duration: 2.seconds,
-                            curve: Curves.easeInOut,
-                          )
-                          .scale(
-                            begin: const Offset(1, 1),
-                            end: const Offset(1.05, 1.05),
-                            duration: 2.seconds,
-                          ),
                     ],
                   ),
                 ),

@@ -241,6 +241,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
       );
     }
 
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final rankIndex = widget.state.users.indexWhere(
       (u) => u.id == widget.currentUser?.id,
     );
@@ -429,25 +430,34 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                       children: [
                         // Animated trophy icon — isolated in RepaintBoundary
                         RepaintBoundary(
-                          child:
-                              Icon(
-                                    widget.state.isKids
-                                        ? Icons.child_care_rounded
-                                        : Icons.emoji_events_outlined,
-                                    size: 56.r,
-                                    color: isDark
-                                        ? const Color(
-                                            0xFF6366F1,
-                                          ).withValues(alpha: 0.4)
-                                        : const Color(
-                                            0xFF6366F1,
-                                          ).withValues(alpha: 0.3),
-                                  )
+                          child: reduceMotion
+                              ? Icon(
+                                  widget.state.isKids
+                                      ? Icons.child_care_rounded
+                                      : Icons.emoji_events_outlined,
+                                  size: 56.r,
+                                  color: isDark
+                                      ? const Color(
+                                          0xFF6366F1,
+                                        ).withValues(alpha: 0.4)
+                                      : const Color(
+                                          0xFF6366F1,
+                                        ).withValues(alpha: 0.3),
+                                )
+                              : Icon(
+                                  widget.state.isKids
+                                      ? Icons.child_care_rounded
+                                      : Icons.emoji_events_outlined,
+                                  size: 56.r,
+                                  color: isDark
+                                      ? const Color(
+                                          0xFF6366F1,
+                                        ).withValues(alpha: 0.4)
+                                      : const Color(
+                                          0xFF6366F1,
+                                        ).withValues(alpha: 0.3),
+                                )
                                   .animate(
-                                    target:
-                                        VowlMotion.shouldReduceMotion(context)
-                                        ? 0
-                                        : 1,
                                     onPlay: (c) => c.repeat(reverse: true),
                                   )
                                   .scaleXY(
@@ -560,10 +570,13 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                             ),
                           ],
                         ),
-                      )
-                      .animate()
-                      .fadeIn(duration: 400.ms, delay: 800.ms)
-                      .slideY(begin: 0.3, end: 0, curve: Curves.easeOutCubic),
+                      ).animateIf(
+                        context,
+                        (w) => w
+                            .animate()
+                            .fadeIn(duration: 400.ms, delay: 800.ms)
+                            .slideY(begin: 0.3, end: 0, curve: Curves.easeOutCubic),
+                      ),
             ),
           ),
       ],

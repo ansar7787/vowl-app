@@ -1,6 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -69,7 +68,9 @@ class _StreakScreenState extends State<StreakScreen> {
               // 2. Dynamic Scrollable Body
               CustomScrollView(
                 controller: _scrollController,
-                physics: const BouncingScrollPhysics(),
+                physics: const AlwaysScrollableScrollPhysics(
+                  parent: BouncingScrollPhysics(),
+                ),
                 slivers: [
                   // Safe area space matching the floating app bar
                   SliverToBoxAdapter(
@@ -158,29 +159,26 @@ class _StreakScreenState extends State<StreakScreen> {
   ) {
     final isRtl = Directionality.of(context) == TextDirection.rtl;
 
-    return ClipRRect(
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
-        child: Container(
-          padding: EdgeInsets.only(
-            top: MediaQuery.of(context).padding.top + 12.h,
-            bottom: 16.h,
-            left: 20.w,
-            right: 20.w,
-          ),
-          decoration: BoxDecoration(
-            color: (isDark ? Colors.black : Colors.white).withValues(
-              alpha: 0.1,
-            ),
-            border: Border(
-              bottom: BorderSide(
-                color: (isDark ? Colors.white : Colors.black).withValues(
-                  alpha: 0.05,
-                ),
-              ),
+    return Container(
+      padding: EdgeInsets.only(
+        top: MediaQuery.of(context).padding.top + 12.h,
+        bottom: 16.h,
+        left: 20.w,
+        right: 20.w,
+      ),
+      decoration: BoxDecoration(
+        color: isDark
+            ? AppColors.slate900.withValues(alpha: 0.92)
+            : Colors.white.withValues(alpha: 0.92),
+        border: Border(
+          bottom: BorderSide(
+            color: (isDark ? Colors.white : Colors.black).withValues(
+              alpha: 0.08,
             ),
           ),
-          child: Row(
+        ),
+      ),
+      child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Semantics(
@@ -277,8 +275,6 @@ class _StreakScreenState extends State<StreakScreen> {
               _buildStreakFreezeChip(context, user),
             ],
           ),
-        ),
-      ),
     );
   }
 

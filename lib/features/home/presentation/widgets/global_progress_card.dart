@@ -1,5 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -42,7 +43,9 @@ class GlobalProgressCard extends StatelessWidget {
         ? _getRankGradient(globalRank!)
         : null;
 
-    return Semantics(
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
+    final card = Semantics(
       button: true,
       label: context.tr(
         'home.quest_journey_progress_label',
@@ -378,12 +381,15 @@ class GlobalProgressCard extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                              ).animate().scaleX(
-                                begin: 0,
-                                end: 1,
-                                duration: 800.ms,
-                                curve: Curves.easeOutQuart,
-                                alignment: Alignment.centerLeft,
+                              ).animateIf(
+                                context,
+                                (w) => w.animate().scaleX(
+                                  begin: 0,
+                                  end: 1,
+                                  duration: 800.ms,
+                                  curve: Curves.easeOutQuart,
+                                  alignment: Alignment.centerLeft,
+                                ),
                               ),
                         ),
                       ],
@@ -395,7 +401,9 @@ class GlobalProgressCard extends StatelessWidget {
           ),
         ),
       ),
-    ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.1, end: 0);
+    );
+    if (reduceMotion) return card;
+    return card.animate().fadeIn(duration: 600.ms).slideY(begin: 0.1, end: 0);
   }
 
   Widget _buildCategoryDot(BuildContext context, QuestType type, int count) {

@@ -396,6 +396,8 @@ class VowlCoinsScreen extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final color = AppColors.emerald500; // Emerald Green for adult coins
 
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
     return GlassTile(
       padding: EdgeInsets.all(32.r),
       borderRadius: BorderRadius.circular(28.r),
@@ -414,31 +416,44 @@ class VowlCoinsScreen extends StatelessWidget {
             Stack(
               alignment: Alignment.center,
               children: [
-                Container(
-                      width: 100.r,
-                      height: 100.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: color.withValues(alpha: 0.25),
-                            blurRadius: 30,
-                            spreadRadius: 5,
-                          ),
-                        ],
-                      ),
-                    )
-                    .animate(
-                      onPlay: VowlMotion.shouldReduceMotion(context)
-                          ? null
-                          : (c) => c.repeat(reverse: true),
-                    )
-                    .scale(
-                      begin: const Offset(0.92, 0.92),
-                      end: const Offset(1.08, 1.08),
-                      duration: 3.seconds,
-                      curve: Curves.easeInOut,
-                    ),
+                reduceMotion
+                    ? Container(
+                        width: 100.r,
+                        height: 100.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: color.withValues(alpha: 0.25),
+                              blurRadius: 30,
+                              spreadRadius: 5,
+                            ),
+                          ],
+                        ),
+                      )
+                    : Container(
+                        width: 100.r,
+                        height: 100.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: color.withValues(alpha: 0.25),
+                              blurRadius: 30,
+                              spreadRadius: 5,
+                            ),
+                          ],
+                        ),
+                      )
+                        .animate(
+                          onPlay: (c) => c.repeat(reverse: true),
+                        )
+                        .scale(
+                          begin: const Offset(0.92, 0.92),
+                          end: const Offset(1.08, 1.08),
+                          duration: 3.seconds,
+                          curve: Curves.easeInOut,
+                        ),
 
                 Container(
                   padding: EdgeInsets.all(28.r),
@@ -466,31 +481,57 @@ class VowlCoinsScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 24.h),
-            Text(
-              context.tr('economy.total_balance', fallback: 'TOTAL BALANCE'),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w700,
-                color: color,
-                letterSpacing: 2,
-              ),
-            ).animate().fadeIn(delay: 400.ms),
+            reduceMotion
+                ? Text(
+                    context.tr('economy.total_balance', fallback: 'TOTAL BALANCE'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w700,
+                      color: color,
+                      letterSpacing: 2,
+                    ),
+                  )
+                : Text(
+                    context.tr('economy.total_balance', fallback: 'TOTAL BALANCE'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w700,
+                      color: color,
+                      letterSpacing: 2,
+                    ),
+                  ).animate().fadeIn(delay: 400.ms),
             SizedBox(height: 4.h),
-            AutoSizeText(
-              _formatCoins(coins),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 48.sp,
-                fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : AppColors.slate900,
-                height: 1.1,
-                letterSpacing: -1,
-              ),
-              maxLines: 1,
-              minFontSize: 24,
-              textAlign: TextAlign.center,
-            ).animate().scale(begin: const Offset(0.9, 0.9)),
+            reduceMotion
+                ? AutoSizeText(
+                    _formatCoins(coins),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 48.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                      height: 1.1,
+                      letterSpacing: -1,
+                    ),
+                    maxLines: 1,
+                    minFontSize: 24,
+                    textAlign: TextAlign.center,
+                  )
+                : AutoSizeText(
+                    _formatCoins(coins),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 48.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                      height: 1.1,
+                      letterSpacing: -1,
+                    ),
+                    maxLines: 1,
+                    minFontSize: 24,
+                    textAlign: TextAlign.center,
+                  ).animate().scale(begin: const Offset(0.9, 0.9)),
             SizedBox(height: 8.h),
             _buildWeeklyEarnings(context, user, color),
             SizedBox(height: 20.h),
@@ -1071,11 +1112,9 @@ class VowlCoinsScreen extends StatelessWidget {
               }
             }
 
-            return Padding(
-              padding: EdgeInsets.only(bottom: 12.h),
-              child: GlassTile(
-                blur: 0, // PERFORMANCE FIX: Disabled blur for list items
-                padding: EdgeInsets.all(16.r),
+            final tile = GlassTile(
+              blur: 0, // PERFORMANCE FIX: Disabled blur for list items
+              padding: EdgeInsets.all(16.r),
                 borderRadius: BorderRadius.circular(24.r),
                 borderColor: isDark
                     ? Colors.white.withValues(alpha: 0.15)
@@ -1173,9 +1212,21 @@ class VowlCoinsScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-              ).animate(delay: (idx * 50).ms).fadeIn().slideX(begin: 0.05),
-            );
-          }),
+              );
+
+              final animatedTile = VowlMotion.shouldReduceMotion(context)
+                  ? tile
+                  : tile
+                      .animate(delay: (idx * 50).ms)
+                      .fadeIn()
+                      .slideX(begin: 0.05);
+
+              return Padding(
+                padding: EdgeInsets.only(bottom: 12.h),
+                child: animatedTile,
+              );
+            },
+          ),
       ],
     );
   }
