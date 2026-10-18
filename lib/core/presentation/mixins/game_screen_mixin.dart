@@ -47,6 +47,10 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
 
   void disposeGame() {
     _gameLifecycleListener?.dispose();
+    try {
+      soundService.stopTts();
+      soundService.stopAudio();
+    } catch (_) {}
     isAnsweredNotifier.dispose();
     isCorrectNotifier.dispose();
     showConfettiNotifier.dispose();

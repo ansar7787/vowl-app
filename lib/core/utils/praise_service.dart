@@ -60,6 +60,12 @@ abstract class PraiseService {
 
   /// Plays a randomly selected positive reinforcement praise phrase.
   void givePraise();
+
+  /// Stops any actively playing praise audio.
+  void stop();
+
+  /// Releases resources held by this praise service.
+  void dispose();
 }
 
 /// Concrete implementation of [PraiseService] using [TtsService].
@@ -88,8 +94,18 @@ class PraiseServiceImpl implements PraiseService {
       fallback: pool[index],
     );
 
-    // Play through the injected TtsService (DIP compliant)
-    _ttsService.speak(phrase);
+    // Play through the injected TtsService (DIP compliant) with clear, energetic rate
+    _ttsService.speak(phrase, rate: 0.9);
+  }
+
+  @override
+  void stop() {
+    _ttsService.stop();
+  }
+
+  @override
+  void dispose() {
+    _ttsService.stop();
   }
 
   String _localizedPhrase({

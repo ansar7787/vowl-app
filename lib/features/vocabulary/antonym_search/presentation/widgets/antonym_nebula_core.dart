@@ -1,3 +1,7 @@
+import 'package:vowl/features/photo_vocabulary/utils/photo_vocabulary_dictionary.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -61,19 +65,42 @@ class AntonymNebulaCore extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.w),
-                        child: FittedBox(
-                          child: Text(
-                            word.toUpperCase(),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 20.sp,
-                              fontWeight: FontWeight.w900,
-                              color: Theme.of(context).colorScheme.onSurface,
+                      Builder(
+                        builder: (context) {
+                          final cleanWord = word.trim().toLowerCase();
+                          final entry = PhotoVocabularyDictionary.dictionary[cleanWord];
+                          return Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10.w),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                FittedBox(
+                                  child: Text(
+                                    word.toUpperCase(),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 20.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: Theme.of(context).colorScheme.onSurface,
+                                    ),
+                                  ),
+                                ),
+                                if (entry?.ipa != null) ...[
+                                  SizedBox(height: 2.h),
+                                  Text(
+                                    entry!.ipa!,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 10.sp,
+                                      color: color.withValues(alpha: 0.85),
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
+                              ],
                             ),
-                          ),
-                        ),
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -88,6 +115,38 @@ class AntonymNebulaCore extends StatelessWidget {
               end: const Offset(1.04, 1.04),
               duration: 2.seconds,
             ),
+        SizedBox(height: 8.h),
+        ScaleButton(
+          onTap: () {
+            if (di.sl.isRegistered<SoundService>()) {
+              di.sl<SoundService>().playTts(word);
+            }
+          },
+          child: Padding(
+            padding: EdgeInsets.all(4.r),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.volume_up_rounded,
+                  size: 14.r,
+                  color: color,
+                ),
+                SizedBox(width: 4.w),
+                Text(
+                  "LISTEN",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w700,
+                    color: color,
+                    letterSpacing: 0.8,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ],
     );
   }

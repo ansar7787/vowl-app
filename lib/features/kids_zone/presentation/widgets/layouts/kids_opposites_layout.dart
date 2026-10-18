@@ -209,6 +209,11 @@ class _KidsOppositesLayoutState extends State<KidsOppositesLayout>
   void dispose() {
     _pulseController.dispose();
     _isHoveringTarget.dispose();
+        try {
+      if (di.sl.isRegistered<KidsTTSService>()) {
+        di.sl<KidsTTSService>().stop();
+      }
+    } catch (_) {}
     super.dispose();
   }
 

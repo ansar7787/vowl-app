@@ -2,14 +2,21 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/tts_text_cleaner.dart';
 import 'package:vowl/core/utils/tts_voice_helper.dart';
 
 class KidsTTSService {
   final TtsService _ttsService;
   static const String _narrationKey = "is_kids_narration_enabled";
 
+  SharedPreferences? _prefs;
+
   KidsTTSService({TtsService? ttsService})
       : _ttsService = ttsService ?? di.sl<TtsService>();
+
+  Future<SharedPreferences> _getPrefs() async {
+    return _prefs ??= await SharedPreferences.getInstance();
+  }
 
   /// Reloads active voice calibration when user changes settings.
   Future<void> reloadVoice() async {
@@ -23,14 +30,14 @@ class KidsTTSService {
   bool get isSpeaking => _ttsService.isSpeaking;
 
   Future<bool> isNarrationEnabled() async {
-    final prefs = await SharedPreferences.getInstance();
+    final prefs = await _getPrefs();
     final globalEnabled = prefs.getBool('sound_enabled') ?? true;
     if (!globalEnabled) return false;
     return prefs.getBool(_narrationKey) ?? true;
   }
 
   Future<void> setNarrationEnabled(bool enabled) async {
-    final prefs = await SharedPreferences.getInstance();
+    final prefs = await _getPrefs();
     await prefs.setBool(_narrationKey, enabled);
   }
 
@@ -39,20 +46,7 @@ class KidsTTSService {
     if (!force && !(await isNarrationEnabled())) return false;
 
     // Clean emojis and decorative symbols for pure phonetic speech output
-    final cleanText = text
-        .replaceAll(
-          RegExp(
-            r'[\u{1F1E6}-\u{1F1FF}\u{1F300}-\u{1F5FF}\u{1F600}-\u{1F64F}'
-            r'\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}'
-            r'\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}'
-            r'\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}'
-            r'\u{FE0F}\u{200D}\u{1F3FB}-\u{1F3FF}]',
-            unicode: true,
-          ),
-          '',
-        )
-        .replaceAll(RegExp(r'\s+'), ' ')
-        .trim();
+    final cleanText = TtsTextCleaner.clean(text);
 
     if (cleanText.isEmpty) return false;
 
@@ -66,6 +60,72 @@ class KidsTTSService {
       return true;
     } catch (e) {
       di.sl<AppLogger>().warning("Kids TTS Error: $e", tag: 'KidsZone');
+      return false;
+    }
+  }
+
+  /// Speaks a word, pauses, spells it letter by letter slowly, pauses, and repeats the word.
+  /// Ideal for alphabet and spelling quest learning.
+  Future<bool> speakWithSpelling(String word, {bool force = false}) async {
+    if (word.isEmpty) return false;
+    if (!force && !(await isNarrationEnabled())) return false;
+
+    final cleanWord = TtsTextCleaner.clean(word);
+    if (cleanWord.isEmpty) return false;
+
+    // e.g. "Cat, C, A, T, Cat"
+    final letters = cleanWord
+        .toUpperCase()
+        .split('')
+        .where((c) => RegExp(r'[A-Z]').hasMatch(c))
+        .join(', ');
+    final speechText = '$cleanWord, $letters, $cleanWord';
+
+    try {
+      await _ttsService.speak(
+        speechText,
+        forcedPreset: TtsVoicePreset.friendlyTeacher,
+        isKids: true,
+        rate: 0.38,
+      );
+      return true;
+    } catch (e) {
+      di.sl<AppLogger>().warning(
+        "Kids TTS speakWithSpelling Error: $e",
+        tag: 'KidsZone',
+      );
+      return false;
+    }
+  }
+
+  /// Speaks a letter with phonics example (e.g., "B, as in Ball").
+  Future<bool> speakPhonics(
+    String letter,
+    String exampleWord, {
+    bool force = false,
+  }) async {
+    if (letter.isEmpty || exampleWord.isEmpty) return false;
+    if (!force && !(await isNarrationEnabled())) return false;
+
+    final cleanLetter = TtsTextCleaner.clean(letter).toUpperCase();
+    final cleanWord = TtsTextCleaner.clean(exampleWord);
+    if (cleanLetter.isEmpty || cleanWord.isEmpty) return false;
+
+    final speechText = '$cleanLetter, as in $cleanWord';
+
+    try {
+      await _ttsService.speak(
+        speechText,
+        forcedPreset: TtsVoicePreset.friendlyTeacher,
+        isKids: true,
+        rate: 0.42,
+      );
+      return true;
+    } catch (e) {
+      di.sl<AppLogger>().warning(
+        "Kids TTS speakPhonics Error: $e",
+        tag: 'KidsZone',
+      );
       return false;
     }
   }

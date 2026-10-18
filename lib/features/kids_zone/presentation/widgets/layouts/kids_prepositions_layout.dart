@@ -185,6 +185,11 @@ class _KidsPrepositionsLayoutState extends State<KidsPrepositionsLayout> {
   @override
   void dispose() {
     _isHoveringTarget.dispose();
+        try {
+      if (di.sl.isRegistered<KidsTTSService>()) {
+        di.sl<KidsTTSService>().stop();
+      }
+    } catch (_) {}
     super.dispose();
   }
 

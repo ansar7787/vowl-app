@@ -5,6 +5,9 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/audio_recording_service.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -96,60 +99,79 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
           ),
           SizedBox(height: 16.h),
 
-          // Glowing liquid metal sphere capsule
-          Semantics(
-            label: "Target phonetic sound: $targetSound",
-            child: Container(
-              key: const Key('pronunciation_focus_target_phoneme_badge'),
-              padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 14.h),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Color.lerp(
-                      _LocalPalette.color1f1c2c,
-                      _LocalPalette.colorff512f,
-                      heatLevel,
-                    )!,
-                    Color.lerp(
-                      _LocalPalette.color928dab,
-                      _LocalPalette.colordd2476,
-                      heatLevel,
-                    )!,
+          // Glowing liquid metal sphere capsule with comparison pronunciation
+          ScaleButton(
+            key: const Key('pronunciation_focus_target_phoneme_badge_btn'),
+            onTap: () {
+              if (di.sl<AudioRecordingService>().isRecording) return;
+              final word = quest.targetWord ?? quest.textToSpeak ?? targetSound;
+              di.sl<SoundService>().playTtsComparison(word);
+            },
+            child: Semantics(
+              label: "Target phonetic sound: $targetSound. Tap to compare pronunciation.",
+              button: true,
+              child: Container(
+                key: const Key('pronunciation_focus_target_phoneme_badge'),
+                padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 14.h),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color.lerp(
+                        _LocalPalette.color1f1c2c,
+                        _LocalPalette.colorff512f,
+                        heatLevel,
+                      )!,
+                      Color.lerp(
+                        _LocalPalette.color928dab,
+                        _LocalPalette.colordd2476,
+                        heatLevel,
+                      )!,
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(24.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.lerp(
+                        Colors.blue,
+                        Colors.orangeAccent,
+                        heatLevel,
+                      )!.withValues(alpha: 0.35 + heatLevel * 0.25),
+                      blurRadius: 15.r + heatLevel * 10.r,
+                    ),
                   ],
                 ),
-                borderRadius: BorderRadius.circular(24.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.lerp(
-                      Colors.blue,
-                      Colors.orangeAccent,
-                      heatLevel,
-                    )!.withValues(alpha: 0.35 + heatLevel * 0.25),
-                    blurRadius: 15.r + heatLevel * 10.r,
+                child: Text(
+                  targetSound,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 32.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                    letterSpacing: 1.0,
                   ),
-                ],
-              ),
-              child: Text(
-                targetSound,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 32.sp,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.white,
-                  letterSpacing: 1.0,
                 ),
-              ),
-            )
-                .animate(
-                  target: reduceMotion ? 0 : 1,
-                  onPlay: (c) =>
-                      reduceMotion ? c.stop() : c.repeat(reverse: true),
-                )
-                .slideY(
-                  begin: -0.05,
-                  end: 0.05,
-                  duration: const Duration(milliseconds: 1500),
-                ),
+              )
+                  .animate(
+                    target: reduceMotion ? 0 : 1,
+                    onPlay: (c) =>
+                        reduceMotion ? c.stop() : c.repeat(reverse: true),
+                  )
+                  .slideY(
+                    begin: -0.05,
+                    end: 0.05,
+                    duration: const Duration(milliseconds: 1500),
+                  ),
+            ),
+          ),
+          SizedBox(height: 8.h),
+          Text(
+            "Tap sound to compare (1.0x → 0.4x)",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 10.sp,
+              color: isDark ? Colors.white54 : Colors.black45,
+              fontWeight: FontWeight.w500,
+            ),
           ),
 
           AnimatedCrossFade(
@@ -160,21 +182,71 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                 children: [
                   const Divider(color: Colors.white12),
                   SizedBox(height: 8.h),
-                  Text(
-                    quest.phoneticHint ??
-                        "Accentuate the critical sound matching the crucible target.",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 13.sp,
-                      color: isDark ? Colors.white70 : Colors.black87,
-                      height: 1.4,
-                      fontStyle: FontStyle.italic,
+                  InkWell(
+                    onTap: () {
+                      if (di.sl<AudioRecordingService>().isRecording) return;
+                      final word = quest.targetWord ?? quest.textToSpeak ?? targetSound;
+                      di.sl<SoundService>().playTts(word, speed: 0.28);
+                    },
+                    borderRadius: BorderRadius.circular(8.r),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.volume_up_rounded,
+                            color: Colors.orangeAccent,
+                            size: 14.r,
+                          ),
+                          SizedBox(width: 6.w),
+                          Flexible(
+                            child: Text(
+                              quest.phoneticHint ??
+                                  "Accentuate the critical sound matching the crucible target.",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 13.sp,
+                                color: isDark ? Colors.white70 : Colors.black87,
+                                height: 1.4,
+                                fontStyle: FontStyle.italic,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
+                  if (quest.pronunciationTips != null &&
+                      quest.pronunciationTips!.isNotEmpty) ...[
+                    SizedBox(height: 10.h),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(
+                          Icons.lightbulb_outline_rounded,
+                          color: Colors.amberAccent,
+                          size: 14.r,
+                        ),
+                        SizedBox(width: 6.w),
+                        Expanded(
+                          child: Text(
+                            quest.pronunciationTips!,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              color: isDark ? Colors.white70 : Colors.black87,
+                              height: 1.35,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                   if (quest.commonMistakes != null &&
                       quest.commonMistakes!.isNotEmpty) ...[
-                    SizedBox(height: 12.h),
+                    SizedBox(height: 10.h),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

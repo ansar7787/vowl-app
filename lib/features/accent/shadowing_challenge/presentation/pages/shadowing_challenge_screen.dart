@@ -65,6 +65,9 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
     _scrollController.dispose();
     _selectedIndex.dispose();
     _currentSpeed.dispose();
+        try {
+      soundService.stopTts();
+    } catch (_) {}
     disposeAccentGame();
     super.dispose();
   }

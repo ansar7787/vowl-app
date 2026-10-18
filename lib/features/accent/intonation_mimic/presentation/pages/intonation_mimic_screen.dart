@@ -71,6 +71,9 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
     _isRiding.dispose();
     _selectedIndex.dispose();
     _sliderValue.dispose();
+        try {
+      soundService.stopTts();
+    } catch (_) {}
     disposeAccentGame();
     super.dispose();
   }

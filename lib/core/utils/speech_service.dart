@@ -38,7 +38,11 @@ abstract class SpeechService {
   /// Registers a word callback callback to track Karaoke progress.
   void setWordCallback(Function(String)? callback);
 
+
   /// Sets text-to-speech presentation rate speed.
+  ///
+  /// Deprecated: Pass speech rate directly to [speak(..., rate: ...)].
+  @Deprecated('Pass speech rate directly to speak(..., rate: ...)')
   Future<void> setSpeechRate(double rate);
 
   /// Speaks a phrase aloud.
@@ -50,6 +54,12 @@ abstract class SpeechService {
   /// Immediately cancels the current listening session and forcefully releases
   /// mic resources without waiting for a final result. Critical for cleanup during long sessions.
   Future<void> cancel();
+
+  /// Releases all platform resources held by this service.
+  ///
+  /// Must be called when the service is no longer needed to prevent
+  /// microphone resource leaks and orphaned speech engine handles.
+  Future<void> dispose();
 
   /// Requests permissions and registers speech recognition listeners.
   Future<bool> initializeStt();
@@ -98,9 +108,11 @@ class SpeechServiceImpl implements SpeechService {
     _ttsService.setWordCallback(callback != null ? (word) => callback(word) : null);
   }
 
+
   @override
+  @Deprecated('Pass speech rate directly to speak(..., rate: ...)')
   Future<void> setSpeechRate(double rate) async {
-    // Handled dynamically per speak call in centralized TtsService
+    // Deprecated no-op: speech rate is handled dynamically per speak call
   }
 
   @override
@@ -229,11 +241,22 @@ class SpeechServiceImpl implements SpeechService {
     Duration? pauseFor,
     ListenMode listenMode = ListenMode.dictation,
   }) async {
+    // Guard: if a previous session's callback is pending, invoke it before
+    // replacing — prevents the previous caller from hanging indefinitely.
+    if (_onDoneCallback != null && _stt.isListening) {
+      _onDoneCallback?.call();
+    }
     _onDoneCallback = onDone;
     if (!_isSttInitialized) {
       bool ok = await initializeStt();
       if (!ok) return;
     }
+
+    // CRITICAL: Stop any active TTS before starting STT — otherwise TTS audio
+    // bleeds into the microphone and corrupts speech recognition results.
+    try {
+      await _ttsService.stop();
+    } catch (_) {}
 
     try {
       // Aggressively cancel any lingering zombie sessions before starting a new one
@@ -274,6 +297,26 @@ class SpeechServiceImpl implements SpeechService {
       );
     } catch (e) {
       sl<AppLogger>().error('SpeechService: STT listening exception', error: e);
+    }
+  }
+
+  /// Releases STT platform resources and stops any active TTS/STT sessions.
+  ///
+  /// Must be called when the service is no longer needed to prevent
+  /// microphone resource leaks and orphaned speech engine handles.
+  @override
+  Future<void> dispose() async {
+    try {
+      _onDoneCallback = null;
+      if (_stt.isListening) {
+        await _stt.cancel();
+      }
+      await _ttsService.stop();
+    } catch (e) {
+      sl<AppLogger>().error(
+        'SpeechService: Error during disposal',
+        error: e,
+      );
     }
   }
 }

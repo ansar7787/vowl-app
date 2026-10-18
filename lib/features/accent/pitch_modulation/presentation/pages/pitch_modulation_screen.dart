@@ -104,6 +104,9 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
     _scrollTimer?.cancel();
     _scrollController.dispose();
     _state.dispose();
+        try {
+      soundService.stopTts();
+    } catch (_) {}
     disposeAccentGame();
     super.dispose();
   }

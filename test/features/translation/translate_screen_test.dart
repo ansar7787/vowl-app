@@ -1,4 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -79,6 +80,19 @@ class FakeTtsService implements TtsService {
 
   @override
   void setWordCallback(void Function(String word)? callback) {}
+
+  @override
+  TtsEngineStatus get engineStatus => TtsEngineStatus.ready;
+
+  @override
+  ValueListenable<bool> get isSpeakingNotifier => ValueNotifier<bool>(isSpeaking);
+
+  @override
+  Future<void> speakComparison(
+    String text, {
+    double normalRate = 0.8,
+    double slowRate = 0.32,
+  }) async {}
 }
 
 class FakeSpeechService implements SpeechService {
@@ -91,6 +105,11 @@ class FakeSpeechService implements SpeechService {
   SpeechResultCallback? capturedOnResult;
   VoidCallback? capturedOnDone;
   String? capturedLocaleId;
+
+  @override
+  Future<void> dispose() async {
+    isListening = false;
+  }
 
   @override
   Future<void> stop() async {

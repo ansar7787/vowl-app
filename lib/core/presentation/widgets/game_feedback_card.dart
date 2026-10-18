@@ -437,6 +437,7 @@ class _ExplanationCardState extends State<_ExplanationCard> {
 
   @override
   void dispose() {
+    TtsSpeakerButtonWidget.stopAll();
     _translatedTextNotifier.dispose();
     super.dispose();
   }

@@ -40,6 +40,7 @@ import 'package:vowl/core/utils/ml_services/image_labeling_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/presentation/widgets/global_audio_feedback_listener.dart';
 
 // FIX (HIGH-3): AppLogger imported so it can be registered in the DI graph.
 import 'package:vowl/core/utils/app_logger.dart';
@@ -148,7 +149,10 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<CoinPacksService>(
     () => CoinPacksService(firestore: sl<FirebaseFirestore>()),
   );
-  sl.registerLazySingleton<SpeechService>(() => SpeechService());
+  sl.registerLazySingleton<SpeechService>(
+    () => SpeechService(),
+    dispose: (service) => service.dispose(),
+  );
   sl.registerLazySingleton<AudioRecordingService>(
     () => AudioRecordingService(),
     dispose: (service) => service.dispose(),
@@ -164,8 +168,10 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<AssetQuestService>(() => AssetQuestService());
   sl.registerLazySingleton<StoryService>(() => StoryService());
   sl.registerLazySingleton<PraiseService>(
-    () => PraiseService(sl<TtsService>()),
+    () => PraiseService(sl<TtsService>(), localeService: sl<LocaleService>()),
+    dispose: (service) => service.dispose(),
   );
+  sl.registerLazySingleton<GamePraiseSignal>(() => GamePraiseSignal());
   sl.registerLazySingleton<AnalyticsService>(() => AnalyticsService());
   sl.registerLazySingleton<ReviewService>(() => ReviewService());
   sl.registerLazySingleton<LocaleService>(() => LocaleService());

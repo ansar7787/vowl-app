@@ -50,6 +50,9 @@ class _SyllableStressScreenState extends State<SyllableStressScreen>
   void dispose() {
     _scrollController.dispose();
     _selectedIndex.dispose();
+        try {
+      soundService.stopTts();
+    } catch (_) {}
     disposeAccentGame();
     super.dispose();
   }

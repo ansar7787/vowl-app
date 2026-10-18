@@ -130,6 +130,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
   @override
   void dispose() {
+    try {
+      _tts.stop();
+    } catch (_) {}
     _flipController.dispose();
     _slideController.dispose();
     _entranceController.dispose();
@@ -662,8 +665,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     _entranceController.forward();
   }
 
-  void _speakWord(String word) {
-    _tts.speak(word);
+  void _speakWord(String text, {double? rate}) {
+    unawaited(_tts.stop());
+    _tts.speak(text, rate: rate);
     _haptics.selection();
   }
 
@@ -1166,6 +1170,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                       word: word,
                                       isDark: isDark,
                                       onSpeak: () => _speakWord(word.word),
+                                      onSpeakSlow: () => _speakWord(word.word, rate: 0.28),
                                       onTranslate: () => _handleTranslate(word),
                                       isTranslating: _isTranslating.value,
                                       translatedWord: _translatedWord.value,

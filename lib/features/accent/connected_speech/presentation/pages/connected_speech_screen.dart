@@ -61,6 +61,9 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
     _scrollTimer?.cancel();
     _scrollController.dispose();
     _selectedIndex.dispose();
+        try {
+      soundService.stopTts();
+    } catch (_) {}
     disposeAccentGame();
     super.dispose();
   }

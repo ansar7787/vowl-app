@@ -70,6 +70,9 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
     _isDragging.dispose();
     _selectedIndex.dispose();
     _isNaturalSpeed.dispose();
+        try {
+      soundService.stopTts();
+    } catch (_) {}
     disposeAccentGame();
     super.dispose();
   }

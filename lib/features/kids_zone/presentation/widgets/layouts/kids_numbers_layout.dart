@@ -137,6 +137,11 @@ class _KidsNumbersLayoutState extends State<KidsNumbersLayout>
   @override
   void dispose() {
     _orbitController.dispose();
+        try {
+      if (di.sl.isRegistered<KidsTTSService>()) {
+        di.sl<KidsTTSService>().stop();
+      }
+    } catch (_) {}
     super.dispose();
   }
 

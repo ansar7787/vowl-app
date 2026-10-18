@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/tts_error_notifier.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -75,6 +76,7 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
 
   Timer? _nudgeTimer;
   int _lastIndex = -1;
+  VoidCallback? _ttsErrorListener;
 
   void _updateState() {
     if (mounted) _stateHash.value++;
@@ -87,6 +89,21 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
     _soundService = di.sl<SoundService>();
     _hapticService = di.sl<HapticService>();
     _showBriefing = _kBriefingLevels.contains(widget.config.level);
+
+    _ttsErrorListener = () {
+      final error = TtsErrorNotifier.instance.errorNotifier.value;
+      if (error != null && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(error.userMessage),
+            behavior: SnackBarBehavior.floating,
+            duration: const Duration(seconds: 4),
+          ),
+        );
+        TtsErrorNotifier.instance.clear();
+      }
+    };
+    TtsErrorNotifier.instance.errorNotifier.addListener(_ttsErrorListener!);
   }
 
   @override
@@ -97,6 +114,9 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
 
   @override
   void dispose() {
+    if (_ttsErrorListener != null) {
+      TtsErrorNotifier.instance.errorNotifier.removeListener(_ttsErrorListener!);
+    }
     _stateHash.dispose();
     _nudgeTimer?.cancel();
     _ttsService.stop();

@@ -57,6 +57,11 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
   void dispose() {
     _isChecking.dispose();
     _hasInk.dispose();
+        try {
+      if (di.sl.isRegistered<KidsTTSService>()) {
+        di.sl<KidsTTSService>().stop();
+      }
+    } catch (_) {}
     super.dispose();
   }
 
