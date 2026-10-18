@@ -9,7 +9,6 @@ import 'package:go_router/go_router.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'dart:async';
 import 'dart:io';
-import 'dart:ui' as ui;
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -627,11 +626,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
   Widget _buildProcessingOverlay() {
     return Positioned.fill(
-      child: BackdropFilter(
-        filter: ui.ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-        child: Container(
-          color: Colors.black.withValues(alpha: 0.6),
-          child: Center(
+      child: Container(
+        color: Colors.black.withValues(alpha: 0.75),
+        child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -690,46 +687,42 @@ class _PremiumScreenState extends State<PremiumScreen> {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 
   Widget _buildCompletedOverlay() {
     return Positioned.fill(
-      child: BackdropFilter(
-        filter: ui.ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-        child: Container(
-          color: Colors.black.withValues(alpha: 0.6),
-          child: Center(
-            child: _paymentSuccessVal == true
-                ? PremiumSuccessOverlay(
-                    transactionId: _transactionIdVal,
-                    onBeginAdventure: () {
-                      if (context.canPop()) {
-                        context.pop();
-                      } else {
-                        context.go('/home');
-                      }
-                    },
-                  )
-                : PremiumFailureOverlay(
-                    errorMessage: _errorMessageVal,
-                    onRetry: () {
-                      _paymentCompletedVal = false;
-                      _paymentSuccessVal = null;
-                      _errorMessageVal = null;
-                      _transactionIdVal = null;
-                      _updateState();
-                    },
-                    onClose: () {
-                      if (context.canPop()) {
-                        context.pop();
-                      } else {
-                        context.go('/home');
-                      }
-                    },
-                  ),
-          ),
+      child: Container(
+        color: Colors.black.withValues(alpha: 0.75),
+        child: Center(
+          child: _paymentSuccessVal == true
+              ? PremiumSuccessOverlay(
+                  transactionId: _transactionIdVal,
+                  onBeginAdventure: () {
+                    if (context.canPop()) {
+                      context.pop();
+                    } else {
+                      context.go('/home');
+                    }
+                  },
+                )
+              : PremiumFailureOverlay(
+                  errorMessage: _errorMessageVal,
+                  onRetry: () {
+                    _paymentCompletedVal = false;
+                    _paymentSuccessVal = null;
+                    _errorMessageVal = null;
+                    _transactionIdVal = null;
+                    _updateState();
+                  },
+                  onClose: () {
+                    if (context.canPop()) {
+                      context.pop();
+                    } else {
+                      context.go('/home');
+                    }
+                  },
+                ),
         ),
       ),
     );

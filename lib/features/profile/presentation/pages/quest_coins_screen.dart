@@ -114,6 +114,7 @@ class VowlCoinsScreen extends StatelessWidget {
                         toolbarHeight: 70.h,
                         automaticallyImplyLeading: false,
                         title: GlassTile(
+                          blur: 0,
                           padding: EdgeInsets.symmetric(
                             horizontal: 12.w,
                             vertical: 8.h,
@@ -333,6 +334,7 @@ class VowlCoinsScreen extends StatelessWidget {
         PremiumStoreBottomSheet.show(context: context);
       },
       child: GlassTile(
+        blur: 0,
         padding: EdgeInsets.all(20.r),
         borderRadius: BorderRadius.circular(24.r),
         child: Row(
@@ -399,6 +401,7 @@ class VowlCoinsScreen extends StatelessWidget {
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     return GlassTile(
+      blur: 0,
       padding: EdgeInsets.all(32.r),
       borderRadius: BorderRadius.circular(28.r),
       borderColor: isDark
@@ -635,6 +638,7 @@ class VowlCoinsScreen extends StatelessWidget {
     return ScaleButton(
       onTap: item.onTap,
       child: GlassTile(
+        blur: 0,
         padding: EdgeInsets.all(16.r),
         borderRadius: BorderRadius.circular(24.r),
         child: Row(
@@ -785,6 +789,7 @@ class VowlCoinsScreen extends StatelessWidget {
     ];
 
     return GlassTile(
+      blur: 0,
       padding: EdgeInsets.all(20.r),
       borderRadius: BorderRadius.circular(24.r),
       child: Column(
@@ -1037,6 +1042,7 @@ class VowlCoinsScreen extends StatelessWidget {
         SizedBox(height: 16.h),
         if (recentHistory.isEmpty)
           GlassTile(
+            blur: 0,
             padding: EdgeInsets.all(32.r),
             borderRadius: BorderRadius.circular(24.r),
             borderColor: isDark

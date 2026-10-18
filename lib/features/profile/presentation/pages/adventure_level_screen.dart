@@ -138,6 +138,7 @@ class AdventureLevelScreen extends StatelessWidget {
                         titleSpacing: 16.w,
                         centerTitle: false,
                         title: GlassTile(
+                          blur: 0,
                           padding: EdgeInsets.symmetric(
                             horizontal: 8.w,
                             vertical: 6.h,
@@ -262,6 +263,7 @@ class AdventureLevelScreen extends StatelessWidget {
     final color = AppColors.amber500;
 
     return GlassTile(
+      blur: 0,
       padding: EdgeInsets.all(24.r),
       borderRadius: BorderRadius.circular(32.r),
       child: Column(
@@ -386,6 +388,7 @@ class AdventureLevelScreen extends StatelessWidget {
     final nextLevel = user.level + 1;
 
     return GlassTile(
+      blur: 0,
       padding: EdgeInsets.all(20.r),
       borderRadius: BorderRadius.circular(24.r),
       child: Row(
@@ -516,7 +519,9 @@ class AdventureLevelScreen extends StatelessWidget {
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.symmetric(horizontal: 24.w),
-            physics: const BouncingScrollPhysics(),
+            physics: const AlwaysScrollableScrollPhysics(
+              parent: BouncingScrollPhysics(),
+            ),
             itemCount: perks.length,
             separatorBuilder: (context, index) => SizedBox(width: 16.w),
             itemBuilder: (context, index) {
@@ -525,6 +530,7 @@ class AdventureLevelScreen extends StatelessWidget {
               final color = perk['color'] as Color;
 
               return GlassTile(
+                blur: 0,
                 width: 240.w,
                 padding: EdgeInsets.all(14.r),
                 borderRadius: BorderRadius.circular(32.r),
@@ -711,6 +717,7 @@ class AdventureLevelScreen extends StatelessWidget {
             }
           : null,
       child: GlassTile(
+        blur: 0,
         padding: EdgeInsets.all(16.r),
         borderRadius: BorderRadius.circular(20.r),
         child: Row(
@@ -851,12 +858,15 @@ class AdventureLevelScreen extends StatelessWidget {
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.symmetric(horizontal: 24.w),
-            physics: const BouncingScrollPhysics(),
+            physics: const AlwaysScrollableScrollPhysics(
+              parent: BouncingScrollPhysics(),
+            ),
             itemCount: hints.length,
             separatorBuilder: (context, index) => SizedBox(width: 12.w),
             itemBuilder: (context, index) {
               final item = hints[index];
               return GlassTile(
+                blur: 0,
                 width: 160.w,
                 padding: EdgeInsets.all(12.r),
                 borderRadius: BorderRadius.circular(20.r),

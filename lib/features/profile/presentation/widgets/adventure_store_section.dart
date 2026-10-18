@@ -363,6 +363,7 @@ class AdventureStoreSection extends StatelessWidget {
       builder: (dialogContext) => Dialog(
         backgroundColor: Colors.transparent,
         child: GlassTile(
+          blur: 0,
           padding: EdgeInsets.all(24.r),
           borderRadius: BorderRadius.circular(28.r),
           child: Column(

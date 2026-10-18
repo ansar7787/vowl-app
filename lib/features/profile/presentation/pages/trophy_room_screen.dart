@@ -498,6 +498,7 @@ class _TrophyRoomView extends StatelessWidget {
       key: ValueKey('${filter.name}_${badgeId}_$index'),
       onTap: () => Haptics.vibrate(HapticsType.light),
       child: GlassTile(
+        blur: 0,
         borderRadius: BorderRadius.circular(20.r),
         padding: EdgeInsets.all(2.r),
         borderColor: colorPair[0].withValues(alpha: 0.3),
@@ -584,6 +585,7 @@ class _TrophyRoomView extends StatelessWidget {
     TrophyFilter filter,
   ) {
     return GlassTile(
+      blur: 0,
       key: ValueKey('${filter.name}_locked_$badgeId'),
       borderRadius: BorderRadius.circular(20.r),
       padding: EdgeInsets.all(2.r),

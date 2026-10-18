@@ -111,6 +111,7 @@ class AdventureXPScreen extends StatelessWidget {
                             titleSpacing: 16.r,
                             centerTitle: false,
                             title: GlassTile(
+                              blur: 0,
                               padding: EdgeInsets.symmetric(
                                 horizontal: 8.r,
                                 vertical: 6.r,

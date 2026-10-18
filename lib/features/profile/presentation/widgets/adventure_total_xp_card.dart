@@ -23,6 +23,7 @@ class AdventureTotalXpCard extends StatelessWidget {
     final progressToNext = (xpInCurrentLevel / xpPerLevel).clamp(0.0, 1.0);
 
     return GlassTile(
+      blur: 0,
       padding: EdgeInsets.all(24.r),
       borderRadius: BorderRadius.circular(32.r),
       child: Column(
