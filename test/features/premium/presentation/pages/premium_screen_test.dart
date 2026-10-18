@@ -798,7 +798,8 @@ void main() {
       expect(find.text('Pro Membership Active'), findsOneWidget);
       expect(find.textContaining('Valid until:'), findsOneWidget);
 
-      // Plans and checkout button should NOT be rendered
+      // Marketing hero, plans, and checkout button should NOT be rendered
+      expect(find.byType(PremiumHero), findsNothing);
       expect(find.byType(PremiumPlanCard), findsNothing);
       expect(find.text('Continue'), findsNothing);
 
