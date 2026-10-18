@@ -650,52 +650,47 @@ class _PremiumScreenState extends State<PremiumScreen> {
       ),
       padding: EdgeInsets.all(22.r),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // Top Row: Metallic Badge & Active Pulsing Status
+          // Top Row: Brand & Active Pulsing Status
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(
-                child: Row(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(6.r),
-                      decoration: BoxDecoration(
-                        color: AppColors.emerald500.withValues(alpha: 0.15),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        LucideIcons.checkCircle,
-                        color: AppColors.emerald500,
-                        size: 20.r,
-                      ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(5.r),
+                    decoration: BoxDecoration(
+                      color: AppColors.emerald500.withValues(alpha: 0.15),
+                      shape: BoxShape.circle,
                     ),
-                    SizedBox(width: 8.w),
-                    Flexible(
-                      child: Text(
-                        'VOWL PRO VIP PASS',
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w900,
-                          letterSpacing: 1.4,
-                          color: isDark ? Colors.white70 : AppColors.slate700,
-                        ),
-                      ),
+                    child: Icon(
+                      LucideIcons.checkCircle,
+                      color: AppColors.emerald500,
+                      size: 16.r,
                     ),
-                  ],
-                ),
+                  ),
+                  SizedBox(width: 8.w),
+                  Text(
+                    'VOWL PRO',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 1.1,
+                      color: isDark ? Colors.white70 : AppColors.slate700,
+                    ),
+                  ),
+                ],
               ),
-              SizedBox(width: 8.w),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
                 decoration: BoxDecoration(
                   color: AppColors.emerald500.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(20.r),
                   border: Border.all(
-                    color: AppColors.emerald500.withValues(alpha: 0.4),
+                    color: AppColors.emerald500.withValues(alpha: 0.35),
                     width: 1,
                   ),
                 ),
@@ -703,8 +698,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
-                      width: 7.r,
-                      height: 7.r,
+                      width: 6.r,
+                      height: 6.r,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: AppColors.emerald400,
@@ -724,130 +719,123 @@ class _PremiumScreenState extends State<PremiumScreen> {
                         fontFamily: 'Outfit',
                         color: AppColors.emerald500,
                         fontSize: 10.sp,
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: 1.2,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 1.0,
                       ),
                     ),
                   ],
                 ),
               ),
             ],
+          ),
+
+          SizedBox(height: 22.h),
+
+          // Centered Crown Hero
+          Container(
+            width: 58.r,
+            height: 58.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: const LinearGradient(
+                colors: [AppColors.indigo500, AppColors.violet500],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: AppColors.indigo500.withValues(alpha: 0.35),
+                  blurRadius: 16,
+                  offset: const Offset(0, 6),
+                ),
+              ],
+              border: Border.all(
+                color: Colors.white.withValues(alpha: 0.6),
+                width: 1.5,
+              ),
+            ),
+            child: Center(
+              child: Icon(
+                LucideIcons.crown,
+                color: Colors.white,
+                size: 28.r,
+              ),
+            ),
+          ),
+
+          SizedBox(height: 14.h),
+
+          // Centered Title & User Display Name
+          Text(
+            context.tr(
+              'premium.already_premium',
+              fallback: 'Pro Membership Active',
+            ),
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w700,
+              color: isDark ? Colors.white : AppColors.slate900,
+            ),
+          ),
+          SizedBox(height: 4.h),
+          Text(
+            user?.displayName ?? user?.email ?? 'Pro Member',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w500,
+              color: isDark ? Colors.white70 : AppColors.slate600,
+            ),
           ),
 
           SizedBox(height: 20.h),
-
-          // Member Profile Spotlight
-          Row(
-            children: [
-              Container(
-                width: 52.r,
-                height: 52.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: const LinearGradient(
-                    colors: [AppColors.indigo500, AppColors.violet500],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.indigo500.withValues(alpha: 0.35),
-                      blurRadius: 12,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
-                  border: Border.all(
-                    color: Colors.white.withValues(alpha: 0.6),
-                    width: 1.5,
-                  ),
-                ),
-                child: Center(
-                  child: Icon(
-                    LucideIcons.crown,
-                    color: Colors.white,
-                    size: 26.r,
-                  ),
-                ),
-              ),
-              SizedBox(width: 14.w),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      context.tr(
-                        'premium.already_premium',
-                        fallback: "You're already a Premium Quester!",
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 17.sp,
-                        fontWeight: FontWeight.w800,
-                        color: isDark ? Colors.white : AppColors.slate900,
-                      ),
-                    ),
-                    SizedBox(height: 3.h),
-                    Text(
-                      user?.displayName ?? 'Valued VIP Quester',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w500,
-                        color: isDark ? Colors.white60 : AppColors.slate500,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-
-          SizedBox(height: 18.h),
 
           // Expiry & Countdown Banner
           Container(
             width: double.infinity,
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  AppColors.amber500.withValues(alpha: 0.12),
-                  AppColors.violet500.withValues(alpha: 0.1),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.05)
+                  : AppColors.indigo500.withValues(alpha: 0.06),
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: AppColors.amber500.withValues(alpha: 0.3),
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.indigo500.withValues(alpha: 0.15),
                 width: 1,
               ),
             ),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
                   LucideIcons.sparkles,
                   color: AppColors.amber400,
-                  size: 20.r,
+                  size: 18.sp,
                 ),
-                SizedBox(width: 12.w),
-                Expanded(
+                SizedBox(width: 10.w),
+                Flexible(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
                         expiryDate != null && daysLeft > 1
-                            ? '$daysLeft Days of Unlimited Superpowers'
+                            ? '$daysLeft Days Remaining'
                             : (expiryDate != null && daysLeft == 1
-                                ? '1 Day of Unlimited Superpowers'
+                                ? '1 Day Remaining'
                                 : (expiryDate != null &&
                                         expiryDate.isAfter(DateTime.now())
-                                    ? 'Expiring Today · Unlimited Superpowers'
-                                    : 'Active VIP Membership')),
+                                    ? 'Expiring Today'
+                                    : 'Pro Membership Active')),
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 13.sp,
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w600,
                           color: isDark ? Colors.white : AppColors.slate900,
                         ),
                       ),
@@ -855,6 +843,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                         SizedBox(height: 2.h),
                         Text(
                           '${context.tr('premium.valid_until', fallback: 'Valid until:')} ${DateFormat.yMMMd().format(expiryDate.toLocal())}',
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 11.sp,
@@ -872,12 +861,15 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
           SizedBox(height: 20.h),
 
-          // Primary CTA: Start Questing / Back to Learning
+          // Primary CTA: Continue Learning
           Semantics(
             button: true,
             label: context.tr(
-              'premium.start_questing',
-              fallback: 'Start Questing',
+              'premium.continue_learning',
+              fallback: context.tr(
+                'premium.start_questing',
+                fallback: 'Continue Learning',
+              ),
             ),
             child: ScaleButton(
               onTap: () {
@@ -900,7 +892,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   borderRadius: BorderRadius.circular(20.r),
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.indigo500.withValues(alpha: 0.4),
+                      color: AppColors.indigo500.withValues(alpha: 0.35),
                       blurRadius: 18,
                       offset: const Offset(0, 6),
                     ),
@@ -917,14 +909,17 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     SizedBox(width: 8.w),
                     Text(
                       context.tr(
-                        'premium.start_questing',
-                        fallback: 'Start Questing',
+                        'premium.continue_learning',
+                        fallback: context.tr(
+                          'premium.start_questing',
+                          fallback: 'Continue Learning',
+                        ),
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         color: Colors.white,
                         fontSize: 15.sp,
-                        fontWeight: FontWeight.w800,
+                        fontWeight: FontWeight.w700,
                         letterSpacing: 0.5,
                       ),
                     ),
