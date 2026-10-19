@@ -16,15 +16,17 @@ class InstructionPanel extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final hint = quest?.hint;
 
+    final instructionText = InstructionHelper.getInstruction(quest);
+
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(16.r),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
       decoration: BoxDecoration(
         color: isDark
             ? Colors.white.withValues(alpha: 0.05)
             : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: color.withValues(alpha: 0.25), width: 1.5),
         boxShadow: [
           BoxShadow(
             color: color.withValues(alpha: 0.05),
@@ -39,44 +41,46 @@ class InstructionPanel extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.school_rounded, color: color, size: 14.r),
-              SizedBox(width: 6.w),
+              Icon(Icons.school_rounded, color: color, size: 16.r),
+              SizedBox(width: 8.w),
               Flexible(
                 child: Text(
-                  InstructionHelper.getInstruction(quest).toUpperCase(),
+                  instructionText,
                   textAlign: TextAlign.center,
+                  softWrap: true,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w800,
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w600,
                     color: color,
-                    letterSpacing: 1.2,
+                    letterSpacing: 0.3,
                   ),
                 ),
               ),
             ],
           ),
           if (hint != null && hint.isNotEmpty) ...[
-            SizedBox(height: 12.h),
+            SizedBox(height: 10.h),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
               decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(16.r),
+                color: color.withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(14.r),
               ),
               child: Text(
                 hint,
                 textAlign: TextAlign.center,
+                softWrap: true,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w500,
                   color: isDark
                       ? Colors.white.withValues(alpha: 0.95)
                       : AppColors.slate900,
-                  letterSpacing: 0.3,
-                  height: 1.4,
+                  letterSpacing: 0.2,
+                  height: 1.45,
                 ),
               ),
             ),
