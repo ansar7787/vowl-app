@@ -14,7 +14,9 @@ import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/ant
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_nebula_core.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_option_shard.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_gradient_scale.dart';
+import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_instruction_header.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/utils/instruction_helper.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -50,6 +52,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
 
   VocabularyQuest? _lastQuest;
   bool _isAnimatingTap = false;
+  bool _isDraggingShard = false;
   int? _hapticZoneIndex;
 
   final Map<int, ValueNotifier<Offset>> _shardOffsets = {};
@@ -103,6 +106,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
     _isDragPassed.value = false;
     _activeShardIndex.value = null;
     _isAnimatingTap = false;
+    _isDraggingShard = false;
     _hapticZoneIndex = null;
     for (var n in _shardOffsets.values) {
       n.value = Offset.zero;
@@ -180,6 +184,9 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
                               ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
+                              crossAxisMargin: 2.w,
+                              mainAxisMargin: 2.h,
+                              interactive: true,
                               child: CustomScrollView(
                                 controller: _scrollController,
                                 physics: (!_isDragPassed.value)
@@ -198,6 +205,21 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
                                               child: CustomPaint(
                                                 painter: FluxGridPainter(
                                                   isDark,
+                                                ),
+                                              ),
+                                            ),
+
+                                            Positioned(
+                                              top: isCompact ? 4.h : 12.h,
+                                              left: 16.w,
+                                              right: 16.w,
+                                              child: IgnorePointer(
+                                                child: AntonymInstructionHeader(
+                                                  color: theme.primaryColor,
+                                                  instruction: quest.instruction.isNotEmpty
+                                                      ? InstructionHelper.getInstruction(quest)
+                                                      : "Find the opposite word",
+                                                  isCompact: isCompact,
                                                 ),
                                               ),
                                             ),
@@ -245,6 +267,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
                                                     _activeShardIndex,
                                                   ]),
                                                   builder: (context, _) {
+                                                    final isSelected =
+                                                        _activeShardIndex.value == i;
                                                     return AntonymOptionShard(
                                                       index: i,
                                                       text: quest.options![i],
@@ -257,9 +281,10 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
                                                       offset: _shardOffsets[i]!
                                                           .value,
                                                       isDragging:
-                                                          _activeShardIndex
-                                                              .value ==
-                                                          i,
+                                                          _isDraggingShard &&
+                                                              isSelected,
+                                                      isSelected: isSelected,
+                                                      isCompact: isCompact,
                                                       isFused:
                                                           _isFused[i]!.value,
                                                       onPanStart: () =>
@@ -395,7 +420,11 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
                                             ),
                                           ],
                                           SizedBox(height: 24.h),
-                                          SpeakToConfirmOverlay(
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 20.w,
+                                            ),
+                                            child: SpeakToConfirmOverlay(
                                             expectedText:
                                                 "${quest.word} ${quest.correctAnswer}",
                                             displayText:
@@ -413,7 +442,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
                                                 ),
                                             isPositioned: false,
                                           ),
-                                          SizedBox(height: 60.h),
+                                        ),
+                                        SizedBox(height: 60.h),
                                         ],
                                       ),
                                     ),
@@ -437,6 +467,16 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
     final h = _lastConstraints!.maxHeight;
     final isLeft = index % 2 == 0;
     final int total = _lastQuest?.options?.length ?? 4;
+    final isCompact = h < 580;
+
+    final double maxShardHalfWidth = (isCompact ? 116.w : 128.w) / 2;
+    final double minMargin = 16.w;
+    final double maxAllowedHDist = (w / 2) - maxShardHalfWidth - minMargin;
+    final double targetHDist = w * 0.25;
+    final double hDist = targetHDist.clamp(
+      50.w,
+      maxAllowedHDist > 50.w ? maxAllowedHDist : (w / 2) - maxShardHalfWidth,
+    );
 
     double yPos;
     if (total <= 4) {
@@ -454,7 +494,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
       }
     }
 
-    return Offset(isLeft ? (w * 0.25) : (w * 0.75), yPos);
+    return Offset(isLeft ? ((w / 2) - hDist) : ((w / 2) + hDist), yPos);
   }
 
   void _onShardStart(int index) {
@@ -464,20 +504,23 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
         _isFused[index]?.value == true) {
       return;
     }
-    _activeShardIndex.value = index;
-    hapticService.light();
+    _isDraggingShard = true;
+    if (_activeShardIndex.value != index) {
+      _activeShardIndex.value = index;
+      hapticService.light();
+    }
   }
 
   void _onShardUpdate(int index, DragUpdateDetails details) {
-    if (_activeShardIndex.value != index) return;
+    if (_activeShardIndex.value != index || _isAnimatingTap) return;
     if (_shardOffsets[index] != null) {
       _shardOffsets[index]!.value += details.delta;
       final initial = _getInitialPosition(index);
       final currentY = initial.dy + _shardOffsets[index]!.value.dy;
       final maxHeight = _lastConstraints?.maxHeight ?? 600;
 
-      final triggerTop = maxHeight * 0.40;
-      final triggerBottom = maxHeight * 0.60;
+      final triggerTop = maxHeight * 0.35;
+      final triggerBottom = maxHeight * 0.65;
 
       final inZone = currentY > triggerTop && currentY < triggerBottom;
       if (inZone && _hapticZoneIndex != index) {
@@ -490,7 +533,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
   }
 
   void _onShardEnd(int index) {
-    if (_activeShardIndex.value != index || _lastConstraints == null) return;
+    _isDraggingShard = false;
+    if (_activeShardIndex.value != index || _lastConstraints == null || _isAnimatingTap) return;
     final initial = _getInitialPosition(index);
     final offset = _shardOffsets[index]?.value ?? Offset.zero;
     final currentY = initial.dy + offset.dy;
@@ -501,6 +545,12 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
 
     if (nearCenter) {
       _evaluateShard(index);
+    } else if (offset.distance < 18.w) {
+      // Touch jitter on low-end devices: finger barely moved (< 18.w).
+      // Keep shard cleanly centered at its slot and retain selection!
+      if (_shardOffsets[index] != null) {
+        _shardOffsets[index]!.value = Offset.zero;
+      }
     } else {
       if (_shardOffsets[index] != null) {
         _shardOffsets[index]!.value = Offset.zero;
@@ -517,6 +567,13 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
         _isFused[index]?.value == true) {
       return;
     }
+
+    if (_activeShardIndex.value == index) {
+      // Tapping already-selected shard confirms and fuses into core!
+      _animateTapToCore(index);
+      return;
+    }
+
     _activeShardIndex.value = index;
     hapticService.light();
   }
@@ -531,21 +588,26 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
     }
 
     final activeIndex = _activeShardIndex.value!;
+    _animateTapToCore(activeIndex);
+  }
+
+  void _animateTapToCore(int index) {
+    if (_lastConstraints == null || _isAnimatingTap) return;
     _isAnimatingTap = true;
     _activeShardIndex.value = null; // trigger animation
 
-    final initial = _getInitialPosition(activeIndex);
+    final initial = _getInitialPosition(index);
     final center = Offset(
       _lastConstraints!.maxWidth / 2,
       _lastConstraints!.maxHeight / 2,
     );
-    _shardOffsets[activeIndex]?.value = center - initial;
+    _shardOffsets[index]?.value = center - initial;
 
     _tapAnimationTimer?.cancel();
     _tapAnimationTimer = Timer(const Duration(milliseconds: 300), () {
       if (mounted) {
         _isAnimatingTap = false;
-        _evaluateShard(activeIndex);
+        _evaluateShard(index);
       }
     });
   }

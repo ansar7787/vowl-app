@@ -700,7 +700,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                                               quest,
                                                             )
                                                           : "Find the matching synonym",
-                                                      hint: quest.hint,
                                                       isCompact: isCompact,
                                                     ),
                                                   ),
