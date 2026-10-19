@@ -32,6 +32,7 @@ import 'package:vowl/features/vocabulary/antonym_search/presentation/pages/anton
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_gradient_scale.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_nebula_core.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_option_shard.dart';
+import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_instruction_header.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 
@@ -460,6 +461,53 @@ void main() {
         verify(() => mockHapticService.error()).called(1);
       },
     );
+
+    testWidgets(
+      '2.5 tapping already selected correct shard fuses shard directly and advances to Phase 2',
+      (tester) async {
+        await pumpScreen(tester);
+
+        // Tap once to select
+        await tester.tap(find.text('OPAQUE'));
+        await tester.pump(const Duration(milliseconds: 50));
+
+        // Tap second time to confirm directly without needing to tap core
+        await tester.tap(find.text('OPAQUE'));
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 350));
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // Verifies Phase 2 reached
+        expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
+        expect(find.byType(AntonymGradientScale), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '2.6 renders AntonymInstructionHeader with centered instruction text',
+      (tester) async {
+        await pumpScreen(tester);
+
+        expect(find.byType(AntonymInstructionHeader), findsOneWidget);
+        final header = tester.widget<AntonymInstructionHeader>(
+          find.byType(AntonymInstructionHeader),
+        );
+        expect(header.instruction, isNotEmpty);
+
+        final textWidgets = tester.widgetList<Text>(
+          find.descendant(
+            of: find.byType(AntonymInstructionHeader),
+            matching: find.byType(Text),
+          ),
+        );
+        for (final textWidget in textWidgets) {
+          expect(textWidget.textAlign, equals(TextAlign.center));
+        }
+
+        // Verify hint is NOT rendered in instruction header (hints belong to hint button)
+        expect(find.text(sampleQuest1.hint!), findsNothing);
+      },
+    );
   });
 
   group('3. Phase 1: Drag-and-Drop Fusion Mechanics', () {
@@ -572,6 +620,26 @@ void main() {
       expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
       expect(find.text('TRANSPARENT   ↔   OPAQUE'), findsOneWidget);
     });
+
+    testWidgets(
+      '4.4 SpeakToConfirmOverlay is padded with horizontal margins preventing edge touching',
+      (tester) async {
+        await advanceToPhase2(tester);
+        final overlayFinder = find.byType(SpeakToConfirmOverlay);
+        expect(overlayFinder, findsOneWidget);
+
+        final paddingParentFinder = find.ancestor(
+          of: overlayFinder,
+          matching: find.byType(Padding),
+        );
+        expect(paddingParentFinder, findsWidgets);
+
+        final overlayRect = tester.getRect(overlayFinder);
+        // Screen width is 390; overlay must not touch the edges (at least 16.0 margin)
+        expect(overlayRect.left, greaterThanOrEqualTo(16.0));
+        expect(overlayRect.right, lessThanOrEqualTo(390.0 - 16.0));
+      },
+    );
   });
 
   group('5. Phase 2: Verbal Evaluation Submission (Success & Failure)', () {

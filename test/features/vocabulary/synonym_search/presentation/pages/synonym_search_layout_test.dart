@@ -316,12 +316,12 @@ void main() {
       expect(find.byType(GameShimmerLoading), findsOneWidget);
     });
 
-    testWidgets('2. renders SynonymInstructionHeader with instruction and hint', (tester) async {
+    testWidgets('2. renders SynonymInstructionHeader with instruction', (tester) async {
       await pumpScreen(tester);
 
       expect(find.byType(SynonymInstructionHeader), findsOneWidget);
       expect(find.text('WARP THE SYNONYM SHARD'), findsOneWidget);
-      expect(find.text('Showing goodwill and kindness'), findsOneWidget);
+      expect(find.text('Showing goodwill and kindness'), findsNothing);
     });
 
     testWidgets('3. renders SynonymWarpGate displaying uppercase target word', (tester) async {

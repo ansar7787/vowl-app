@@ -25,7 +25,7 @@ class _AntonymGradientScaleState extends State<AntonymGradientScale> {
     super.initState();
     _sliderNotifier = ValueNotifier(
       (widget.gradientScale.length - 1) / 2.0,
-    ); // start in the middle
+    );
   }
 
   @override
@@ -46,8 +46,8 @@ class _AntonymGradientScaleState extends State<AntonymGradientScale> {
 
     return Container(
           width: double.infinity,
-          margin: EdgeInsets.symmetric(horizontal: 32.w, vertical: 8.h),
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+          margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
           decoration: BoxDecoration(
             color: bgColor,
             borderRadius: BorderRadius.circular(24.r),
@@ -57,9 +57,9 @@ class _AntonymGradientScaleState extends State<AntonymGradientScale> {
             ),
             boxShadow: [
               BoxShadow(
-                color: widget.primaryColor.withValues(alpha: 0.1),
-                blurRadius: 20,
-                offset: const Offset(0, 8),
+                color: widget.primaryColor.withValues(alpha: 0.08),
+                blurRadius: 16,
+                offset: const Offset(0, 4),
               ),
             ],
           ),
@@ -73,17 +73,17 @@ class _AntonymGradientScaleState extends State<AntonymGradientScale> {
                     color: widget.primaryColor,
                     size: 18.r,
                   ),
-                  SizedBox(width: 6.w),
+                  SizedBox(width: 8.w),
                   Flexible(
                     child: AutoSizeText(
-                      'DRAG TO EXPLORE INTENSITY',
+                      'WORD INTENSITY SPECTRUM',
                       maxLines: 1,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w900,
+                        fontSize: 12.5.sp,
+                        fontWeight: FontWeight.w700,
                         color: widget.primaryColor,
-                        letterSpacing: 1.5,
+                        letterSpacing: 1.0,
                       ),
                     ),
                   ),
@@ -123,12 +123,13 @@ class _AntonymGradientScaleState extends State<AntonymGradientScale> {
                               currentWord.toUpperCase(),
                               maxLines: 1,
                               minFontSize: 12,
+                              stepGranularity: 0.5,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w600,
                                 color: textColor,
-                                letterSpacing: 1.5,
+                                letterSpacing: 1.2,
                               ),
                             ),
                           )
@@ -181,13 +182,13 @@ class _AntonymGradientScaleState extends State<AntonymGradientScale> {
                     child: AutoSizeText(
                       widget.gradientScale.first.toUpperCase(),
                       maxLines: 1,
-                      minFontSize: 8,
+                      minFontSize: 9,
                       textAlign: TextAlign.start,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 9.sp,
+                        fontSize: 11.5.sp,
                         fontWeight: FontWeight.w600,
-                        color: widget.primaryColor.withValues(alpha: 0.7),
+                        color: widget.primaryColor.withValues(alpha: 0.8),
                       ),
                     ),
                   ),
@@ -195,13 +196,13 @@ class _AntonymGradientScaleState extends State<AntonymGradientScale> {
                     child: AutoSizeText(
                       widget.gradientScale.last.toUpperCase(),
                       maxLines: 1,
-                      minFontSize: 8,
+                      minFontSize: 9,
                       textAlign: TextAlign.end,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 9.sp,
+                        fontSize: 11.5.sp,
                         fontWeight: FontWeight.w600,
-                        color: widget.primaryColor.withValues(alpha: 0.7),
+                        color: widget.primaryColor.withValues(alpha: 0.8),
                       ),
                     ),
                   ),

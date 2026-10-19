@@ -5,6 +5,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_painters.dart';
 
 class AntonymNebulaCore extends StatelessWidget {
@@ -21,7 +22,7 @@ class AntonymNebulaCore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -30,13 +31,13 @@ class AntonymNebulaCore extends StatelessWidget {
           "MATCH TO OPPOSITE",
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 12.sp,
-            fontWeight: FontWeight.bold,
+            fontSize: 12.5.sp,
+            fontWeight: FontWeight.w700,
             color: color,
-            letterSpacing: 1,
+            letterSpacing: 1.2,
           ),
         ).animate().fadeIn(),
-        SizedBox(height: 15.h),
+        SizedBox(height: 14.h),
         Container(
               width: 140.r,
               height: 140.r,
@@ -70,28 +71,30 @@ class AntonymNebulaCore extends StatelessWidget {
                           final cleanWord = word.trim().toLowerCase();
                           final entry = PhotoVocabularyDictionary.dictionary[cleanWord];
                           return Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 10.w),
+                            padding: EdgeInsets.symmetric(horizontal: 12.w),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 FittedBox(
+                                  fit: BoxFit.scaleDown,
                                   child: Text(
                                     word.toUpperCase(),
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: 20.sp,
-                                      fontWeight: FontWeight.w900,
+                                      fontWeight: FontWeight.w700,
                                       color: Theme.of(context).colorScheme.onSurface,
+                                      letterSpacing: 0.8,
                                     ),
                                   ),
                                 ),
                                 if (entry?.ipa != null) ...[
-                                  SizedBox(height: 2.h),
+                                  SizedBox(height: 3.h),
                                   Text(
                                     entry!.ipa!,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
-                                      fontSize: 10.sp,
+                                      fontSize: 11.5.sp,
                                       color: color.withValues(alpha: 0.85),
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -115,15 +118,23 @@ class AntonymNebulaCore extends StatelessWidget {
               end: const Offset(1.04, 1.04),
               duration: 2.seconds,
             ),
-        SizedBox(height: 8.h),
+        SizedBox(height: 10.h),
         ScaleButton(
           onTap: () {
             if (di.sl.isRegistered<SoundService>()) {
               di.sl<SoundService>().playTts(word);
             }
           },
-          child: Padding(
-            padding: EdgeInsets.all(4.r),
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: isDark ? 0.12 : 0.08),
+              borderRadius: BorderRadius.circular(12.r),
+              border: Border.all(
+                color: color.withValues(alpha: 0.25),
+                width: 1,
+              ),
+            ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -137,8 +148,8 @@ class AntonymNebulaCore extends StatelessWidget {
                   "LISTEN",
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w700,
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w600,
                     color: color,
                     letterSpacing: 0.8,
                   ),

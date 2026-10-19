@@ -2,20 +2,17 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 class SynonymInstructionHeader extends StatelessWidget {
   final Color color;
   final String instruction;
-  final String? hint;
   final bool isCompact;
 
   const SynonymInstructionHeader({
     super.key,
     required this.color,
     this.instruction = "Find the matching synonym",
-    this.hint,
     this.isCompact = false,
   });
 
@@ -56,41 +53,18 @@ class SynonymInstructionHeader extends StatelessWidget {
                 ),
               ],
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  instruction,
-                  textAlign: TextAlign.center,
-                  softWrap: true,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: isCompact ? 12.sp : 13.5.sp,
-                    fontWeight: FontWeight.w600,
-                    color: Theme.of(context).colorScheme.onSurface,
-                    letterSpacing: 0.3,
-                    height: 1.35,
-                  ),
-                ),
-                if (hint != null && hint!.trim().isNotEmpty) ...[
-                  SizedBox(height: 4.h),
-                  Text(
-                    hint!,
-                    textAlign: TextAlign.center,
-                    softWrap: true,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: isCompact ? 11.sp : 12.sp,
-                      fontWeight: FontWeight.w400,
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.75)
-                          : AppColors.slate600,
-                      height: 1.3,
-                    ),
-                  ),
-                ],
-              ],
+            child: Text(
+              instruction,
+              textAlign: TextAlign.center,
+              softWrap: true,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: isCompact ? 12.sp : 13.5.sp,
+                fontWeight: FontWeight.w600,
+                color: Theme.of(context).colorScheme.onSurface,
+                letterSpacing: 0.3,
+                height: 1.35,
+              ),
             ),
           ),
         ),
