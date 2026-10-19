@@ -723,6 +723,44 @@ void main() {
       );
       expect(railSemantics, findsOneWidget);
     });
+
+    testWidgets('34. displays prefix on the left side of root word and slides inward/left', (tester) async {
+      final prefixQuest = createQuest(
+        id: 'quest_wf_prefix',
+        word: 'invited',
+        rootWord: 'invited',
+        correctAnswer: 'uninvited',
+        options: ['dis-', 'mis-', 'un-', 'non-'],
+        hint: 'An uninvited guest.',
+        instruction: 'Add the correct prefix.',
+        explanation: 'UN- + INVITED = UNINVITED',
+      );
+      final prefixState = VocabularyLoaded(
+        quests: [prefixQuest],
+        currentIndex: 0,
+        livesRemaining: 3,
+        wrongCount: 0,
+        hintUsed: false,
+        answerStatus: AnswerStatus.unanswered,
+      );
+
+      await pumpScreen(tester, state: prefixState);
+
+      expect(find.text('UN-'), findsOneWidget);
+      expect(find.text('INVITED'), findsOneWidget);
+
+      // Slide prefix handle to the left towards the word
+      await tester.drag(find.text('UN-').first, const Offset(-300, 0));
+      await tester.pump();
+      verify(() => mockHapticService.success()).called(1);
+
+      await tester.pump(const Duration(milliseconds: 400));
+      await tester.pump(const Duration(milliseconds: 600));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(TypeToConfirmOverlay), findsOneWidget);
+      expect(find.textContaining('UNINVITED'), findsWidgets);
+    });
   });
 }
 
