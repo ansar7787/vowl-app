@@ -29,41 +29,42 @@ class FlashcardActionButtons extends StatelessWidget {
 
     if (!isFlipped) {
       return Padding(
-        padding: EdgeInsets.symmetric(vertical: 8.h),
+        padding: EdgeInsets.symmetric(vertical: 6.h),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             reduceMotion
                 ? Icon(
                     Icons.touch_app_rounded,
-                    color: isDark ? Colors.white70 : Colors.black54,
-                    size: 30.r,
+                    color: isDark ? AppColors.slate400 : AppColors.slate500,
+                    size: 24.r,
                   )
                 : Icon(
                     Icons.touch_app_rounded,
-                    color: isDark ? Colors.white70 : Colors.black54,
-                    size: 30.r,
+                    color: isDark ? AppColors.slate400 : AppColors.slate500,
+                    size: 24.r,
                   )
                     .animate(onPlay: (c) => c.repeat())
                     .moveY(
-                      begin: 4,
-                      end: -4,
+                      begin: 2,
+                      end: -2,
                       duration: 1.seconds,
                       curve: Curves.easeInOut,
                     ),
-            SizedBox(height: 8.h),
+            SizedBox(height: 6.h),
             Text(
               context.tr(
                 'instructions.flashcards.tap_to_reveal',
-                fallback: 'TAP TO REVEAL',
+                fallback: 'Tap card to flip',
               ),
               textAlign: TextAlign.center,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                color: isDark ? Colors.white70 : Colors.black54,
-                letterSpacing: 1.8,
-                fontWeight: FontWeight.w900,
-                fontSize: 12.sp,
+                color: isDark ? AppColors.slate300 : AppColors.slate600,
+                letterSpacing: 0.3,
+                fontWeight: FontWeight.w600,
+                fontSize: 13.sp,
               ),
             ),
           ],
@@ -72,25 +73,25 @@ class FlashcardActionButtons extends StatelessWidget {
     }
 
     final buttonsRow = Padding(
-      padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 24.w),
+      padding: EdgeInsets.symmetric(vertical: 6.h, horizontal: 20.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
             child: _ActionBtn(
-              label: context.tr('actions.again', fallback: 'AGAIN'),
+              label: context.tr('actions.again', fallback: 'Again'),
               icon: Icons.keyboard_double_arrow_left_rounded,
-              color: AppColors.red500, // Premium Red
+              color: AppColors.red500,
               isDark: isDark,
               onTap: isTransitioning ? null : onAgain,
             ),
           ),
-          SizedBox(width: 16.w),
+          SizedBox(width: 14.w),
           Expanded(
             child: _ActionBtn(
-              label: context.tr('actions.got_it', fallback: 'GOT IT'),
+              label: context.tr('actions.got_it', fallback: 'Got It'),
               icon: Icons.keyboard_double_arrow_right_rounded,
-              color: AppColors.emerald500, // Premium Green
+              color: AppColors.emerald500,
               isDark: isDark,
               onTap: isTransitioning ? null : onGotIt,
               isRight: true,
@@ -125,7 +126,7 @@ class _ActionBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: color.withValues(alpha: 0.10), // Softer background
+      color: color.withValues(alpha: 0.10),
       borderRadius: BorderRadius.circular(16.r),
       child: InkWell(
         onTap: onTap,
@@ -133,40 +134,38 @@ class _ActionBtn extends StatelessWidget {
         splashColor: color.withValues(alpha: 0.2),
         highlightColor: color.withValues(alpha: 0.1),
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 16.h),
+          padding: EdgeInsets.symmetric(vertical: 14.h),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
-              color: color.withValues(alpha: 0.3),
+              color: color.withValues(alpha: 0.25),
               width: 1.5,
-            ), // Softer border
+            ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               if (!isRight) ...[
-                Icon(icon, color: color, size: 20.r),
-                SizedBox(width: 4.w),
+                Icon(icon, color: color, size: 18.r),
+                SizedBox(width: 6.w),
               ],
               Flexible(
-                // Added flexible to prevent ellipsis if translated text is long
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    label,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: color,
-                      fontWeight: FontWeight.w900,
-                      fontSize: 14.sp,
-                      letterSpacing: 1.5,
-                    ),
+                child: Text(
+                  label,
+                  textAlign: TextAlign.center,
+                  softWrap: true,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    color: color,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 14.sp,
+                    letterSpacing: 0.5,
                   ),
                 ),
               ),
               if (isRight) ...[
-                SizedBox(width: 4.w),
-                Icon(icon, color: color, size: 20.r),
+                SizedBox(width: 6.w),
+                Icon(icon, color: color, size: 18.r),
               ],
             ],
           ),

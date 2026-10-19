@@ -442,7 +442,7 @@ void main() {
     ) async {
       await pumpScreen(tester);
 
-      expect(find.text('TAP TO REVEAL'), findsOneWidget);
+      expect(find.text('Tap card to flip'), findsOneWidget);
       expect(find.byIcon(Icons.touch_app_rounded), findsWidgets);
     });
   });
@@ -475,7 +475,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
 
       expect(find.text('EPHEMERAL'), findsOneWidget);
-      expect(find.text('DEFINITION'), findsOneWidget);
+      expect(find.text('Definition'), findsOneWidget);
       expect(
         find.text('Lasting for a very short time; transitory.'),
         findsOneWidget,
@@ -491,7 +491,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('DID YOU KNOW?'), findsOneWidget);
+      expect(find.text('Note'), findsOneWidget);
       expect(find.byIcon(Icons.lightbulb_outline_rounded), findsOneWidget);
       expect(
         find.text(
@@ -510,7 +510,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('EXAMPLE'), findsOneWidget);
+      expect(find.text('Example'), findsOneWidget);
       expect(
         find.text('The ephemeral glow of dusk faded quickly into night.'),
         findsOneWidget,
@@ -526,14 +526,14 @@ void main() {
     ) async {
       await pumpScreen(tester);
 
-      expect(find.text('TAP TO REVEAL'), findsOneWidget);
+      expect(find.text('Tap card to flip'), findsOneWidget);
 
       await tester.tap(find.byType(FlashcardSwipeFront));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('AGAIN'), findsOneWidget);
-      expect(find.text('GOT IT'), findsOneWidget);
+      expect(find.text('Again'), findsOneWidget);
+      expect(find.text('Got It'), findsOneWidget);
       expect(find.byIcon(Icons.keyboard_double_arrow_left_rounded), findsOneWidget);
       expect(find.byIcon(Icons.keyboard_double_arrow_right_rounded), findsOneWidget);
     });
@@ -548,7 +548,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
 
       expect(
-        find.text('SWIPE LEFT (AGAIN) OR RIGHT (GOT IT)'),
+        find.text('Swipe left to review, right if you got it'),
         findsOneWidget,
       );
       expect(find.byIcon(Icons.swipe_rounded), findsOneWidget);
@@ -676,8 +676,8 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      // Tap GOT IT
-      await tester.tap(find.text('GOT IT'));
+      // Tap Got It
+      await tester.tap(find.text('Got It'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 400));
 
@@ -696,8 +696,8 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      // Tap AGAIN
-      await tester.tap(find.text('AGAIN'));
+      // Tap Again
+      await tester.tap(find.text('Again'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 400));
 
@@ -716,12 +716,12 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
 
       // First submit
-      await tester.tap(find.text('GOT IT'));
+      await tester.tap(find.text('Got It'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 400));
 
-      // Second attempt to tap AGAIN
-      await tester.tap(find.text('AGAIN'), warnIfMissed: false);
+      // Second attempt to tap Again
+      await tester.tap(find.text('Again'), warnIfMissed: false);
       await tester.pump();
 
       // Only one submit
@@ -843,7 +843,7 @@ void main() {
       await tester.tap(find.byType(FlashcardSwipeFront));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
-      await tester.tap(find.text('GOT IT'));
+      await tester.tap(find.text('Got It'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 400));
 
@@ -874,7 +874,7 @@ void main() {
       await tester.tap(find.byType(FlashcardSwipeFront));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
-      await tester.tap(find.text('AGAIN'));
+      await tester.tap(find.text('Again'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 400));
 
@@ -929,9 +929,9 @@ void main() {
       vocabularyStreamController.add(completeState);
       await tester.pump(const Duration(milliseconds: 100));
 
-      expect(find.text('VOCAB MASTERY!'), findsOneWidget);
+      expect(find.text('Practice Complete!'), findsOneWidget);
 
-      Navigator.of(tester.element(find.text('VOCAB MASTERY!'))).pop();
+      Navigator.of(tester.element(find.text('Practice Complete!'))).pop();
       await tester.pump(const Duration(milliseconds: 500));
     });
   });
@@ -1012,7 +1012,7 @@ void main() {
         (w) =>
             w is Semantics &&
             w.properties.label != null &&
-            w.properties.label!.contains('TAP TO REVEAL'),
+            w.properties.label!.contains('Tap card to flip'),
       );
       expect(frontSemantics, findsWidgets);
 

@@ -56,7 +56,7 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
 
     return Semantics(
       label:
-          '${context.tr('games.hint', fallback: 'Hint')}: ${widget.quest.hint ?? InstructionHelper.getInstruction(widget.quest)}. ${context.tr('instructions.flashcards.tap_to_reveal', fallback: 'TAP TO REVEAL')}',
+          '${context.tr('games.hint', fallback: 'Hint')}: ${widget.quest.hint ?? InstructionHelper.getInstruction(widget.quest)}. ${context.tr('instructions.flashcards.tap_to_reveal', fallback: 'Tap card to flip')}',
       child: Container(
         width: widget.width,
         height: widget.height,
@@ -91,39 +91,72 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
               final compactWidth = widget.width < 290;
 
               final emojiBox = Container(
-                padding: EdgeInsets.all(compactHeight ? 16.r : 20.r),
+                padding: EdgeInsets.all(compactHeight ? 12.r : 16.r),
                 decoration: BoxDecoration(
-                  color: widget.color.withValues(alpha: 0.10),
+                  color: widget.color.withValues(alpha: 0.08),
                   shape: BoxShape.circle,
                 ),
                 child: Text(
                   widget.quest.topicEmoji ?? '🏷️',
                   style: TextStyle(
-                    fontSize: compactHeight ? 44.sp : 58.sp,
+                    fontSize: compactHeight ? 38.sp : 48.sp,
                   ),
                 ),
               );
 
+              final rawHint = widget.quest.hint ??
+                  InstructionHelper.getInstruction(widget.quest);
+              final trimmedHint = rawHint.trim();
+              final displayHint = (trimmedHint == trimmedHint.toUpperCase() &&
+                      trimmedHint.length > 2)
+                  ? trimmedHint[0].toUpperCase() +
+                      trimmedHint.substring(1).toLowerCase()
+                  : trimmedHint;
+
               return Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+                padding: EdgeInsets.symmetric(
+                  horizontal: compactWidth ? 16.w : 22.w,
+                  vertical: compactHeight ? 14.h : 20.h,
+                ),
                 child: Column(
                   children: [
-                    const Spacer(flex: 2),
+                    const Spacer(),
                     reduceMotion
                         ? emojiBox
                         : emojiBox.animate().scale(
-                            duration: 600.ms,
+                            duration: 500.ms,
                             curve: Curves.elasticOut,
                           ),
-                    SizedBox(height: compactHeight ? 16.h : 24.h),
+                    SizedBox(height: compactHeight ? 10.h : 16.h),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10.w,
+                        vertical: 3.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: widget.color.withValues(alpha: 0.08),
+                        borderRadius: BorderRadius.circular(8.r),
+                      ),
+                      child: Text(
+                        'Clue',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w600,
+                          color: widget.color,
+                          letterSpacing: 0.5,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: compactHeight ? 8.h : 12.h),
                     Flexible(
-                      flex: 6,
+                      flex: 8,
                       child: RawScrollbar(
                         controller: _scrollController,
-                        thumbColor: widget.color.withValues(alpha: 0.4),
+                        thumbColor: widget.color.withValues(alpha: 0.35),
                         radius: Radius.circular(8.r),
-                        thickness: 4.w,
-                        crossAxisMargin: -16.w,
+                        thickness: 3.w,
+                        crossAxisMargin: -12.w,
                         child: NotificationListener<ScrollNotification>(
                           onNotification: (notification) {
                             if (notification is OverscrollNotification) {
@@ -154,22 +187,20 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                             child: Container(
                               alignment: Alignment.center,
                               constraints: BoxConstraints(
-                                minHeight: compactHeight ? 80.h : 120.h,
+                                minHeight: compactHeight ? 60.h : 90.h,
                               ),
                               child: Text(
-                                widget.quest.hint ??
-                                    InstructionHelper.getInstruction(
-                                      widget.quest,
-                                    ),
+                                displayHint,
                                 textAlign: TextAlign.center,
+                                softWrap: true,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: compactWidth ? 18.sp : 22.sp,
-                                  fontWeight: FontWeight.w600,
+                                  fontSize: compactWidth ? 16.sp : 19.sp,
+                                  fontWeight: FontWeight.w500,
                                   color: widget.isDark
                                       ? Colors.white
-                                      : Colors.black87,
-                                  height: 1.4,
+                                      : AppColors.slate900,
+                                  height: 1.45,
                                 ),
                               ),
                             ),
@@ -177,7 +208,7 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 16.h),
+                    const Spacer(),
                   ],
                 ),
               );
