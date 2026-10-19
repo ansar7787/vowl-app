@@ -1,8 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 
 class PrefixSuffixMissionControl extends StatelessWidget {
   final Color primaryColor;
@@ -17,26 +15,24 @@ class PrefixSuffixMissionControl extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
-        VowlMotion.lowAnimationModeOverride.value;
 
     final content = Container(
       width: double.infinity,
-      padding: EdgeInsets.all(16.r),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
       decoration: BoxDecoration(
         color: isDark
             ? Colors.white.withValues(alpha: 0.05)
             : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: primaryColor.withValues(alpha: 0.3),
-          width: 1.5,
+          color: primaryColor.withValues(alpha: 0.25),
+          width: 1.2,
         ),
         boxShadow: [
           BoxShadow(
-            color: primaryColor.withValues(alpha: 0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
+            color: primaryColor.withValues(alpha: 0.04),
+            blurRadius: 8,
+            offset: const Offset(0, 3),
           ),
         ],
       ),
@@ -45,8 +41,9 @@ class PrefixSuffixMissionControl extends StatelessWidget {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.school_rounded, color: primaryColor, size: 14.r),
+              Icon(Icons.school_rounded, color: primaryColor, size: 16.r),
               SizedBox(width: 6.w),
               Flexible(
                 child: Text(
@@ -54,35 +51,36 @@ class PrefixSuffixMissionControl extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w900,
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w700,
                     color: primaryColor,
-                    letterSpacing: 2.0,
+                    letterSpacing: 1.2,
                   ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 12.h),
+          SizedBox(height: 10.h),
           Container(
             width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
             decoration: BoxDecoration(
-              color: primaryColor.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(16.r),
+              color: primaryColor.withValues(alpha: 0.08),
+              borderRadius: BorderRadius.circular(14.r),
             ),
             child: Text(
-              instruction, // This variable holds the 'hint' content
+              instruction,
               textAlign: TextAlign.center,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w500,
                 color: isDark
                     ? Colors.white.withValues(alpha: 0.95)
                     : AppColors.slate900,
-                letterSpacing: 0.3,
-                height: 1.4,
+                letterSpacing: 0.2,
+                height: 1.35,
               ),
             ),
           ),
@@ -90,15 +88,6 @@ class PrefixSuffixMissionControl extends StatelessWidget {
       ),
     );
 
-    if (reduceMotion) {
-      return content;
-    }
-
-    return content
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .shimmer(
-          duration: 3.seconds,
-          color: primaryColor.withValues(alpha: 0.15),
-        );
+    return content;
   }
 }

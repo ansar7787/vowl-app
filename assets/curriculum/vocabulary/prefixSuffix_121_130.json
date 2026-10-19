@@ -22,16 +22,17 @@
             "hint": "A bank app confirms: 'Your $200 has successfully moved from your checking account into your savings account.'",
             "explanation": "TRANSFER is TRANS- ('across') + FER ('carry'), to move something from one place, account, or person to another.",
             "interactionType": "choice",
-            "correctAnswer": "TRANSFER",
+            "correctAnswer": "TRANS-",
             "rootWord": "FER",
             "options": [
-                "TRANSFER",
-                "TRANSPORT",
-                "TRANSFORM",
-                "TRANSLATE"
+                "CROSS-",
+                "INTER-",
+                "INTRA-",
+                "TRANS-"
             ],
             "meaningBreakdown": "TRANS (prefix, 'across') + FER (root, 'carry')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "TRANSFER"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L121_Q3",
@@ -70,16 +71,17 @@
             "hint": "A naval vessel that can travel completely underwater for months at a time without surfacing.",
             "explanation": "SUBMARINE is SUB- ('under') + MARINE ('sea'), a vessel that travels beneath the surface of the water.",
             "interactionType": "choice",
-            "correctAnswer": "SUBMARINE",
+            "correctAnswer": "SUB-",
             "rootWord": "MARINE",
             "options": [
-                "SUBWAY",
-                "SUBMARINE",
-                "SUBTITLE",
-                "SUBURB"
+                "OUT-",
+                "OVER-",
+                "UNDER-",
+                "SUB-"
             ],
             "meaningBreakdown": "SUB (prefix, 'under') + MARINE (root, 'sea')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "SUBMARINE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L122_Q3",
@@ -118,21 +120,22 @@
             "hint": "Two strangers on a train strike up a conversation, exchanging stories about their trips.",
             "explanation": "INTERACT is INTER- ('between') + ACT, to act or communicate between two or more people.",
             "interactionType": "choice",
-            "correctAnswer": "INTERACT",
+            "correctAnswer": "INTER-",
             "rootWord": "ACT",
             "options": [
-                "TRANSACT",
-                "REACT",
-                "SUBTRACT",
-                "INTERACT"
+                "INTRA-",
+                "CROSS-",
+                "TRANS-",
+                "INTER-"
             ],
             "meaningBreakdown": "INTER (prefix, 'between') + ACT (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "INTERACT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L123_Q3",
             "hint": "A soccer tournament features teams representing dozens of different countries competing against each other.",
-            "explanation": "INTER- + NATIONAL = INTERNATIONAL, involving or occurring between multiple nations. SUB- would instead suggest something smaller than or beneath a nation, like a state or region \u2014 the opposite scale.",
+            "explanation": "INTER- + NATIONAL = INTERNATIONAL, involving or occurring between multiple nations. SUB- would instead suggest something smaller than or beneath a nation, like a state or region — the opposite scale.",
             "interactionType": "choice",
             "correctAnswer": "INTER-",
             "rootWord": "NATIONAL",
@@ -166,16 +169,17 @@
             "hint": "The person who checks in on the whole team's progress and signs off on their timesheets each week.",
             "explanation": "SUPERVISOR is SUPER- ('above') + VIS ('see') + -OR, someone who watches over and oversees others' work.",
             "interactionType": "choice",
-            "correctAnswer": "SUPERVISOR",
+            "correctAnswer": "SUPER-",
             "rootWord": "VISOR",
             "options": [
-                "SUPERVISOR",
-                "SUPERHERO",
-                "SUPERMARKET",
-                "SUPERSTAR"
+                "HYPER-",
+                "ULTRA-",
+                "MEGA-",
+                "SUPER-"
             ],
             "meaningBreakdown": "SUPER (prefix, 'above') + VIS (root, 'see') + OR (suffix, 'person who does')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "SUPERVISOR"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L124_Q3",
@@ -214,21 +218,22 @@
             "hint": "An editor layers a translated caption directly on top of a foreign film's original picture.",
             "explanation": "SUPERIMPOSE is SUPER- ('above/over') + IMPOSE ('place'), to place one image or layer directly over another.",
             "interactionType": "choice",
-            "correctAnswer": "SUPERIMPOSE",
+            "correctAnswer": "SUPER-",
             "rootWord": "IMPOSE",
             "options": [
-                "SUBMERGE",
-                "SUPERIMPOSE",
-                "INTERACT",
-                "TRANSPORT"
+                "ULTRA-",
+                "HYPER-",
+                "SUPER-",
+                "MEGA-"
             ],
             "meaningBreakdown": "SUPER (prefix, 'over') + IMPOSE (root, 'place')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "SUPERIMPOSE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L125_Q3",
-            "hint": "A hotel review complains: 'The room was dirty, the shower didn't work, and the sheets had stains \u2014 this place is far below the quality we paid for.'",
-            "explanation": "SUB- + STANDARD = SUBSTANDARD, below the usual or acceptable level of quality. SUPER- would instead describe something exceeding expectations \u2014 the opposite complaint entirely.",
+            "hint": "A hotel review complains: 'The room was dirty, the shower didn't work, and the sheets had stains — this place is far below the quality we paid for.'",
+            "explanation": "SUB- + STANDARD = SUBSTANDARD, below the usual or acceptable level of quality. SUPER- would instead describe something exceeding expectations — the opposite complaint entirely.",
             "interactionType": "choice",
             "correctAnswer": "SUB-",
             "rootWord": "STANDARD",
@@ -262,21 +267,22 @@
             "hint": "A singer holds a small device close to her mouth so the sound of her voice can be heard throughout the concert hall.",
             "explanation": "MICROPHONE is MICRO- ('small') + -PHONE, a device that picks up small sounds and makes them louder.",
             "interactionType": "choice",
-            "correctAnswer": "MICROPHONE",
+            "correctAnswer": "MICRO-",
             "rootWord": "MICRO",
             "options": [
-                "TELEPHONE",
-                "MICROPHONE",
-                "SAXOPHONE",
-                "MEGAPHONE"
+                "DIS-",
+                "MIS-",
+                "MICRO-",
+                "UN-"
             ],
             "meaningBreakdown": "MICRO (root, 'small') + PHONE (suffix, 'sound')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "MICROPHONE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L126_Q3",
             "hint": "A jazz musician plays a curved brass instrument with a reed mouthpiece, known for its smooth, rich tone.",
-            "explanation": "-PHONE forms SAXOPHONE from SAXO- (named after its inventor, Sax), a sound-producing musical instrument. -SCOPE wouldn't fit \u2014 that suffix is for viewing things, not making sound.",
+            "explanation": "-PHONE forms SAXOPHONE from SAXO- (named after its inventor, Sax), a sound-producing musical instrument. -SCOPE wouldn't fit — that suffix is for viewing things, not making sound.",
             "interactionType": "choice",
             "correctAnswer": "-PHONE",
             "rootWord": "SAXO",
@@ -310,21 +316,22 @@
             "hint": "A biology student places a thin slice of onion skin on a glass slide to examine its individual cells.",
             "explanation": "MICROSCOPE is MICRO- ('small') + -SCOPE, a tool for viewing extremely small objects.",
             "interactionType": "choice",
-            "correctAnswer": "MICROSCOPE",
+            "correctAnswer": "MICRO-",
             "rootWord": "MICRO",
             "options": [
-                "TELESCOPE",
-                "MICROSCOPE",
-                "PERISCOPE",
-                "STETHOSCOPE"
+                "MICRO-",
+                "MIS-",
+                "DIS-",
+                "UN-"
             ],
             "meaningBreakdown": "MICRO (root, 'small') + SCOPE (suffix, 'to see')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "MICROSCOPE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L127_Q3",
             "hint": "A submarine crew uses a long tube with mirrors to see what's happening on the surface of the ocean while staying underwater.",
-            "explanation": "-SCOPE forms PERISCOPE from PERI- ('around'), an instrument for viewing around obstacles or from a hidden position. -PHONE wouldn't fit here \u2014 this device is for seeing, not for sound.",
+            "explanation": "-SCOPE forms PERISCOPE from PERI- ('around'), an instrument for viewing around obstacles or from a hidden position. -PHONE wouldn't fit here — this device is for seeing, not for sound.",
             "interactionType": "choice",
             "correctAnswer": "-SCOPE",
             "rootWord": "PERI",
@@ -358,21 +365,22 @@
             "hint": "A dashboard display tells the driver exactly how many miles per hour the car is currently traveling.",
             "explanation": "SPEEDOMETER is SPEED + -O- + -METER, an instrument that measures a vehicle's speed.",
             "interactionType": "choice",
-            "correctAnswer": "SPEEDOMETER",
+            "correctAnswer": "-METER",
             "rootWord": "SPEED",
             "options": [
-                "SPEEDOMETER",
-                "THERMOMETER",
-                "DIAMETER",
-                "KILOMETER"
+                "-SION",
+                "-METER",
+                "-TION",
+                "-MENT"
             ],
             "meaningBreakdown": "SPEED (root) + METER (suffix, 'measure')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "SPEEDOMETER"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L128_Q3",
             "hint": "A geometry worksheet asks students to measure the straight-line distance all the way across a perfect circle, through its center.",
-            "explanation": "-METER forms DIAMETER from DIA- ('across'), the measurement straight across a circle. -SCOPE wouldn't fit \u2014 this word is about a measurement, not something you look through.",
+            "explanation": "-METER forms DIAMETER from DIA- ('across'), the measurement straight across a circle. -SCOPE wouldn't fit — this word is about a measurement, not something you look through.",
             "interactionType": "choice",
             "correctAnswer": "-METER",
             "rootWord": "DIA",
@@ -406,32 +414,34 @@
             "hint": "A quiet residential neighborhood just outside the city, with more space and a shorter commute than downtown.",
             "explanation": "SUBURB is SUB- ('near/under the influence of') + URB ('city'), a residential area on the outskirts of a city.",
             "interactionType": "choice",
-            "correctAnswer": "SUBURB",
+            "correctAnswer": "SUB-",
             "rootWord": "URB",
             "options": [
-                "SUBURB",
-                "SUBWAY",
-                "SUBMARINE",
-                "SUBTITLE"
+                "UNDER-",
+                "SUB-",
+                "OUT-",
+                "OVER-"
             ],
             "meaningBreakdown": "SUB (prefix, 'near') + URB (root, 'city')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "SUBURB"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L129_Q3",
             "hint": "A job candidate sits across the table from a hiring manager, answering questions about their experience.",
             "explanation": "INTERVIEW is INTER- ('between') + VIEW, a formal conversation or meeting between two or more people, often for a job.",
             "interactionType": "choice",
-            "correctAnswer": "INTERVIEW",
+            "correctAnswer": "INTER-",
             "rootWord": "VIEW",
             "options": [
-                "INTERVIEW",
-                "PREVIEW",
-                "REVIEW",
-                "OVERVIEW"
+                "INTRA-",
+                "INTER-",
+                "CROSS-",
+                "TRANS-"
             ],
             "meaningBreakdown": "INTER (prefix, 'between') + VIEW (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "INTERVIEW"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L130_Q1",
@@ -452,7 +462,7 @@
         {
             "id": "VOC_PREFIXSUFFIX_L130_Q2",
             "hint": "A doctor presses a device with earpieces against a patient's chest to listen closely to their heartbeat.",
-            "explanation": "-SCOPE forms STETHOSCOPE from STETHO- ('chest'), an instrument used to examine \u2014 here, to listen closely to sounds inside the body. This checkpoint reviews the three Greek-origin instrument suffixes: -PHONE (sound), -SCOPE (see/examine), and -METER (measure).",
+            "explanation": "-SCOPE forms STETHOSCOPE from STETHO- ('chest'), an instrument used to examine — here, to listen closely to sounds inside the body. This checkpoint reviews the three Greek-origin instrument suffixes: -PHONE (sound), -SCOPE (see/examine), and -METER (measure).",
             "interactionType": "choice",
             "correctAnswer": "-SCOPE",
             "rootWord": "STETHO",

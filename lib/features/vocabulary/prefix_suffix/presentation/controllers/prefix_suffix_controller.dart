@@ -80,6 +80,103 @@ class PrefixSuffixController extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Resolves the full target English word for a given prefix/suffix quest.
+  String getTargetWord(VocabularyQuest? quest) {
+    if (quest == null) return "";
+
+    final correct = quest.correctAnswer?.trim() ?? "";
+    final root = quest.rootWord?.trim() ?? "";
+
+    final bool isAffix = correct.startsWith('-') || correct.endsWith('-');
+    final cleanCorrect = correct.replaceAll('-', '').trim();
+
+    // 1. If correctAnswer is already a full word (doesn't start/end with hyphen, length > 2)
+    if (!isAffix && correct.isNotEmpty) {
+      if (root.isEmpty || cleanCorrect.toLowerCase() != root.toLowerCase()) {
+        return cleanCorrect;
+      }
+    }
+
+    // If quest has a valid full word specified in quest.word
+    if (quest.word != null &&
+        quest.word!.isNotEmpty &&
+        !quest.word!.contains('-') &&
+        quest.word!.toLowerCase() != root.toLowerCase()) {
+      final w = quest.word!.trim().toUpperCase();
+      final upperRoot = root.toUpperCase();
+      final upperAffix = cleanCorrect.toUpperCase();
+      if (upperRoot.isEmpty ||
+          w.contains(upperRoot) ||
+          upperRoot.contains(w) ||
+          w.startsWith(upperAffix) ||
+          w.endsWith(upperAffix)) {
+        return quest.word!.trim();
+      }
+    }
+
+    // 2. Try to extract target word from explanation
+    final expl = quest.explanation ?? "";
+    if (expl.isNotEmpty) {
+      // Pattern 1: "= WORD"
+      final equalsMatch = RegExp(r'=\s*([A-Za-z]{3,})').firstMatch(expl);
+      if (equalsMatch != null) {
+        return equalsMatch.group(1)!.trim();
+      }
+
+      // Pattern 2: "forms WORD" / "creates WORD" / "produces WORD" / "to form WORD"
+      final formsMatch = RegExp(
+        r'(?:forms|creates|produces|to\s+form)\s+([A-Za-z]{3,})',
+        caseSensitive: false,
+      ).firstMatch(expl);
+      if (formsMatch != null) {
+        return formsMatch.group(1)!.trim();
+      }
+
+      // Pattern 3: "WORD is built" / "WORD combines" / "WORD layers" / "WORD means" / "WORD reverses"
+      final startMatch = RegExp(
+        r'^([A-Za-z]{3,})\s+(?:is built|combines|layers|means|reverses)',
+        caseSensitive: false,
+      ).firstMatch(expl);
+      if (startMatch != null) {
+        return startMatch.group(1)!.trim();
+      }
+
+      // Pattern 4: Search all uppercase words of length >= 3
+      final allCaps = RegExp(r'\b[A-Z]{3,}\b')
+          .allMatches(expl)
+          .map((m) => m.group(0)!)
+          .toList();
+      final upperAffix = cleanCorrect.toUpperCase();
+      final upperRoot = root.toUpperCase();
+      const ignoreWords = {
+        'THE', 'AND', 'NOT', 'FOR', 'THIS', 'THAT', 'WITH', 'FROM',
+        'WORD', 'ROOT', 'PREFIX', 'SUFFIX', 'ADDED', 'MEANS', 'ACTION'
+      };
+
+      for (final w in allCaps) {
+        if (!ignoreWords.contains(w) && w != upperAffix && w != upperRoot) {
+          if (w.startsWith(upperAffix) ||
+              w.endsWith(upperAffix) ||
+              w.contains(upperRoot) ||
+              upperRoot.contains(w)) {
+            return w;
+          }
+        }
+      }
+    }
+
+    // 3. Fallback: Combine affix and rootWord directly
+    if (root.isNotEmpty) {
+      if (correct.endsWith('-') || (!correct.startsWith('-') && isAffix)) {
+        return '$cleanCorrect$root';
+      } else {
+        return '$root$cleanCorrect';
+      }
+    }
+
+    return cleanCorrect.isNotEmpty ? cleanCorrect : correct;
+  }
+
   void onAffixSelected(
     String option,
     VocabularyQuest quest,
@@ -91,14 +188,14 @@ class PrefixSuffixController extends ChangeNotifier {
     bool isOptionPrefix = option.endsWith('-');
     bool isOptionSuffix = option.startsWith('-');
 
-    // Fallback: If the JSON curriculum missed the hyphens, infer from the correct answer
+    // Fallback: If the JSON curriculum missed the hyphens, infer from the target word
     if (!isOptionPrefix && !isOptionSuffix) {
       final cleanOption = option.trim().toLowerCase();
-      final correctWord = quest.correctAnswer?.toLowerCase() ?? "";
-      if (correctWord.startsWith(cleanOption) && correctWord != cleanOption) {
+      final targetWord = getTargetWord(quest).toLowerCase();
+      if (targetWord.startsWith(cleanOption) && targetWord != cleanOption) {
         isOptionPrefix = true;
-      } else if (correctWord.endsWith(cleanOption) &&
-          correctWord != cleanOption) {
+      } else if (targetWord.endsWith(cleanOption) &&
+          targetWord != cleanOption) {
         isOptionSuffix = true;
       }
     }
@@ -125,6 +222,15 @@ class PrefixSuffixController extends ChangeNotifier {
     final rootWord = quest.rootWord?.toLowerCase() ?? "";
     final options = quest.options ?? [];
 
+    // Direct match check (e.g. if options contains "RE-" and correctAnswer is "RE-")
+    for (final option in options) {
+      if (option.trim().toLowerCase() == correctWord.trim().toLowerCase()) {
+        return option;
+      }
+    }
+
+    final targetWord = getTargetWord(quest).toLowerCase();
+
     // First pass: exact remainder match
     for (final option in options) {
       final clean = option.replaceAll('-', '').trim().toLowerCase();
@@ -132,20 +238,20 @@ class PrefixSuffixController extends ChangeNotifier {
       bool isSuffix = option.startsWith('-');
 
       if (!isPrefix && !isSuffix) {
-        if (correctWord.startsWith(clean) && correctWord != clean) {
+        if (targetWord.startsWith(clean) && targetWord != clean) {
           isPrefix = true;
-        } else if (correctWord.endsWith(clean) && correctWord != clean) {
+        } else if (targetWord.endsWith(clean) && targetWord != clean) {
           isSuffix = true;
         }
       }
 
-      if (isPrefix && correctWord.startsWith(clean)) {
-        final remainder = correctWord.substring(clean.length);
+      if (isPrefix && targetWord.startsWith(clean)) {
+        final remainder = targetWord.substring(clean.length);
         if (remainder == rootWord) return option;
-      } else if (isSuffix && correctWord.endsWith(clean)) {
-        final remainder = correctWord.substring(
+      } else if (isSuffix && targetWord.endsWith(clean)) {
+        final remainder = targetWord.substring(
           0,
-          correctWord.length - clean.length,
+          targetWord.length - clean.length,
         );
         if (remainder == rootWord) return option;
       }
@@ -161,19 +267,19 @@ class PrefixSuffixController extends ChangeNotifier {
       bool isSuffix = option.startsWith('-');
 
       if (!isPrefix && !isSuffix) {
-        if (correctWord.startsWith(clean) && correctWord != clean) {
+        if (targetWord.startsWith(clean) && targetWord != clean) {
           isPrefix = true;
-        } else if (correctWord.endsWith(clean) && correctWord != clean) {
+        } else if (targetWord.endsWith(clean) && targetWord != clean) {
           isSuffix = true;
         }
       }
 
       String remainder = "";
 
-      if (isPrefix && correctWord.startsWith(clean)) {
-        remainder = correctWord.substring(clean.length);
-      } else if (isSuffix && correctWord.endsWith(clean)) {
-        remainder = correctWord.substring(0, correctWord.length - clean.length);
+      if (isPrefix && targetWord.startsWith(clean)) {
+        remainder = targetWord.substring(clean.length);
+      } else if (isSuffix && targetWord.endsWith(clean)) {
+        remainder = targetWord.substring(0, targetWord.length - clean.length);
       } else {
         continue;
       }
@@ -239,7 +345,7 @@ class PrefixSuffixController extends ChangeNotifier {
       _soundService.playCorrect();
       _hapticService.success();
 
-      final correctWord = quest?.correctAnswer ?? "";
+      final correctWord = getTargetWord(quest);
       if (correctWord.isNotEmpty) {
         _ttsService.speak(correctWord);
       }
@@ -253,10 +359,11 @@ class PrefixSuffixController extends ChangeNotifier {
   }
 
   void onHint(VocabularyQuest? quest) {
-    final correctWord = quest?.correctAnswer?.toLowerCase() ?? "";
+    if (quest == null) return;
+    final targetWord = getTargetWord(quest).toLowerCase();
 
-    if (correctWord.isNotEmpty) {
-      _ttsService.speak(correctWord);
+    if (targetWord.isNotEmpty) {
+      _ttsService.speak(targetWord);
     }
 
     if (isFirstStagePassed) {
@@ -264,7 +371,7 @@ class PrefixSuffixController extends ChangeNotifier {
       return;
     }
 
-    final correctOption = _findCorrectOption(quest!);
+    final correctOption = _findCorrectOption(quest);
 
     if (correctOption != null) {
       hintedAffix = correctOption;

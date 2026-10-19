@@ -184,7 +184,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(
                                       horizontal: 20.w,
-                                      vertical: 20.h,
+                                      vertical: 16.h,
                                     ),
                                     child: Column(
                                       mainAxisAlignment:
@@ -198,7 +198,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                                                 quest,
                                               ),
                                         ),
-                                        SizedBox(height: 32.h),
+                                        SizedBox(height: 24.h),
                                         IgnorePointer(
                                           ignoring:
                                               _controller.isFirstStagePassed,
@@ -207,6 +207,8 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                                             options: quest.options ?? [],
                                             correctAnswer:
                                                 quest.correctAnswer ?? "",
+                                            targetWord:
+                                                _controller.getTargetWord(quest),
                                             selectedAffix:
                                                 _controller.selectedAffix,
                                             hintedAffix:
@@ -228,7 +230,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                                           height:
                                               _controller.isFirstStagePassed
                                                   ? 16.h
-                                                  : 60.h,
+                                                  : 32.h,
                                         ),
                                       ],
                                     ),
@@ -240,6 +242,8 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                                 SliverToBoxAdapter(
                                   child: Padding(
                                     padding: EdgeInsets.only(
+                                      left: 20.w,
+                                      right: 20.w,
                                       bottom:
                                           24.h +
                                           MediaQuery.viewInsetsOf(
@@ -248,7 +252,14 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                                     ),
                                     child: TypeToConfirmOverlay(
                                       isPositioned: false,
-                                      expectedText: quest.correctAnswer ?? "",
+                                      expectedText:
+                                          _controller.getTargetWord(quest),
+                                      displayText: _controller
+                                          .getTargetWord(quest)
+                                          .toUpperCase(),
+                                      displayFontSize: 22.sp,
+                                      displayFontWeight: FontWeight.w700,
+                                      hintText: 'Type the full word',
                                       primaryColor: theme.primaryColor,
                                       onConfirmed: () => _controller
                                           .submitFinalAnswer(true, quest),

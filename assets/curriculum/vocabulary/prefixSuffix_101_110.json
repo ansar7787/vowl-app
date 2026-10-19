@@ -3,7 +3,7 @@
     "quests": [
         {
             "id": "VOC_PREFIXSUFFIX_L101_Q1",
-            "hint": "Email subject line: 'Meeting Moved \u2014 Please See New Time Below.' The organizer needs a word for arranging something for a different time.",
+            "hint": "Email subject line: 'Meeting Moved — Please See New Time Below.' The organizer needs a word for arranging something for a different time.",
             "explanation": "RE- + SCHEDULE = RESCHEDULE, to schedule something again for a different time. This is one of the most common words in workplace email.",
             "interactionType": "choice",
             "correctAnswer": "RE-",
@@ -22,32 +22,34 @@
             "hint": "Email line: 'Please see the file attached below for the full budget breakdown.' What do you call the file itself?",
             "explanation": "ATTACHMENT is ATTACH + -MENT, the noun naming a file or item joined to an email or document.",
             "interactionType": "choice",
-            "correctAnswer": "ATTACHMENT",
+            "correctAnswer": "-MENT",
             "rootWord": "ATTACH",
             "options": [
-                "ATTACHMENT",
-                "ARRANGEMENT",
-                "AGREEMENT",
-                "ASSIGNMENT"
+                "-TION",
+                "-SION",
+                "-NESS",
+                "-MENT"
             ],
-            "meaningBreakdown": "ATTACH (root) + MENT (suffix, verb \u2192 noun)",
-            "instruction": "Which word matches this situation?"
+            "meaningBreakdown": "ATTACH (root) + MENT (suffix, verb → noun)",
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "ATTACHMENT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L101_Q3",
             "hint": "Terms and conditions: 'Deposits can be returned in full if you cancel within 48 hours.' Which word describes a deposit like this?",
             "explanation": "REFUNDABLE is REFUND + -ABLE, capable of being paid back.",
             "interactionType": "choice",
-            "correctAnswer": "REFUNDABLE",
+            "correctAnswer": "-ABLE",
             "rootWord": "REFUND",
             "options": [
-                "PAYABLE",
-                "AFFORDABLE",
-                "REFUNDABLE",
-                "WASHABLE"
+                "-IBLE",
+                "-FUL",
+                "-LESS",
+                "-ABLE"
             ],
             "meaningBreakdown": "REFUND (root) + ABLE (suffix, 'capable of being')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "REFUNDABLE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L102_Q1",
@@ -70,21 +72,22 @@
             "hint": "A receipt reads: 'Items may be brought back within 30 days for a full refund, with tags attached.' Which word describes items like these?",
             "explanation": "RETURNABLE is RETURN + -ABLE, capable of being brought back to the store.",
             "interactionType": "choice",
-            "correctAnswer": "RETURNABLE",
+            "correctAnswer": "-ABLE",
             "rootWord": "RETURN",
             "options": [
-                "REFUNDABLE",
-                "WASHABLE",
-                "RETURNABLE",
-                "BREAKABLE"
+                "-IBLE",
+                "-FUL",
+                "-LESS",
+                "-ABLE"
             ],
             "meaningBreakdown": "RETURN (root) + ABLE (suffix, 'capable of being')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "RETURNABLE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L102_Q3",
-            "hint": "A sign on a staff door reads: 'Employees Only \u2014 Do Not Enter Without Permission.' Which word describes someone who enters anyway?",
-            "explanation": "UN- + AUTHORIZED = UNAUTHORIZED, not given official permission. NON- would sound overly formal and unnatural here \u2014 English speakers say 'unauthorized entry,' not 'nonauthorized entry.'",
+            "hint": "A sign on a staff door reads: 'Employees Only — Do Not Enter Without Permission.' Which word describes someone who enters anyway?",
+            "explanation": "UN- + AUTHORIZED = UNAUTHORIZED, not given official permission. NON- would sound overly formal and unnatural here — English speakers say 'unauthorized entry,' not 'nonauthorized entry.'",
             "interactionType": "choice",
             "correctAnswer": "UN-",
             "rootWord": "AUTHORIZED",
@@ -102,48 +105,51 @@
             "hint": "A university email reads: 'The window to sign up for fall classes closes this Friday at midnight.' What's the formal word for signing up like this?",
             "explanation": "REGISTRATION is REGISTER + -TION, with a spelling shift, the formal process of signing up or enrolling.",
             "interactionType": "choice",
-            "correctAnswer": "REGISTRATION",
+            "correctAnswer": "-TION",
             "rootWord": "REGISTER",
             "options": [
-                "GRADUATION",
-                "DISCUSSION",
-                "REGISTRATION",
-                "EXPLANATION"
+                "-MENT",
+                "-SION",
+                "-NESS",
+                "-TION"
             ],
-            "meaningBreakdown": "REGISTR (root) + ATION (suffix, verb \u2192 noun)",
-            "instruction": "Which word matches this situation?"
+            "meaningBreakdown": "REGISTR (root) + ATION (suffix, verb → noun)",
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "REGISTRATION"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L103_Q2",
             "hint": "A syllabus states: 'Ten percent of your grade depends on speaking up and contributing during class discussions.' What's this graded category called?",
             "explanation": "PARTICIPATION is PARTICIPATE + -TION, the act of taking part in something.",
             "interactionType": "choice",
-            "correctAnswer": "PARTICIPATION",
+            "correctAnswer": "-TION",
             "rootWord": "PARTICIPATE",
             "options": [
-                "REGISTRATION",
-                "PARTICIPATION",
-                "GRADUATION",
-                "EXPLANATION"
+                "-NESS",
+                "-MENT",
+                "-SION",
+                "-TION"
             ],
-            "meaningBreakdown": "PARTICIPA (root) + TION (suffix, verb \u2192 noun)",
-            "instruction": "Which word matches this situation?"
+            "meaningBreakdown": "PARTICIPA (root) + TION (suffix, verb → noun)",
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "PARTICIPATION"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L103_Q3",
-            "hint": "A financial aid letter reads: 'Congratulations \u2014 your tuition for next year has been fully covered based on your grades.' What's the name for this kind of award?",
+            "hint": "A financial aid letter reads: 'Congratulations — your tuition for next year has been fully covered based on your grades.' What's the name for this kind of award?",
             "explanation": "SCHOLARSHIP is SCHOLAR + -SHIP, financial support awarded to a student, or more broadly, the state of being a serious student.",
             "interactionType": "choice",
-            "correctAnswer": "SCHOLARSHIP",
+            "correctAnswer": "-SHIP",
             "rootWord": "SCHOLAR",
             "options": [
-                "SCHOLARSHIP",
-                "MEMBERSHIP",
-                "INTERNSHIP",
-                "FRIENDSHIP"
+                "-SION",
+                "-MENT",
+                "-TION",
+                "-SHIP"
             ],
             "meaningBreakdown": "SCHOLAR (root) + SHIP (suffix, forms a noun of state/relationship)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "SCHOLARSHIP"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L104_Q1",
@@ -166,21 +172,22 @@
             "hint": "A caption reads: 'Sharing this again because it deserves way more views than it got the first time.' Which word names this action?",
             "explanation": "REPOST is RE- + POST, to post something again, usually content someone else originally shared.",
             "interactionType": "choice",
-            "correctAnswer": "REPOST",
+            "correctAnswer": "RE-",
             "rootWord": "POST",
             "options": [
-                "UNFOLLOW",
-                "PREVIEW",
-                "UNSUBSCRIBE",
-                "REPOST"
+                "DE-",
+                "PRE-",
+                "POST-",
+                "RE-"
             ],
             "meaningBreakdown": "RE (prefix, 'again') + POST (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "REPOST"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L104_Q3",
             "hint": "The bottom of a newsletter email reads: 'Click here to stop receiving these emails.' Which prefix names this action?",
-            "explanation": "UN- + SUBSCRIBE = UNSUBSCRIBE, to cancel a subscription. DIS- doesn't attach to SUBSCRIBE in standard English \u2014 'dissubscribe' isn't how this idea is expressed.",
+            "explanation": "UN- + SUBSCRIBE = UNSUBSCRIBE, to cancel a subscription. DIS- doesn't attach to SUBSCRIBE in standard English — 'dissubscribe' isn't how this idea is expressed.",
             "interactionType": "choice",
             "correctAnswer": "UN-",
             "rootWord": "SUBSCRIBE",
@@ -198,32 +205,34 @@
             "hint": "A news article reads: 'Witnesses praised the firefighter's selfless bravery in running back into the building to save the child.' What's the name for behavior like this?",
             "explanation": "-ISM names a belief, practice, or characteristic behavior. HERO + -ISM = HEROISM, heroic behavior or the quality of being heroic.",
             "interactionType": "choice",
-            "correctAnswer": "HEROISM",
+            "correctAnswer": "-ISM",
             "rootWord": "HERO",
             "options": [
-                "OPTIMISM",
-                "CRITICISM",
-                "JOURNALISM",
-                "HEROISM"
+                "-SION",
+                "-MENT",
+                "-TION",
+                "-ISM"
             ],
             "meaningBreakdown": "HERO (root) + ISM (suffix, 'practice/quality of')",
-            "instruction": "Which word fits the meaning below?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "HEROISM"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L105_Q2",
             "hint": "A review states: 'The plot dragged in the middle, and several reviewers pointed out weak pacing as the movie's biggest flaw.' What do you call feedback like this?",
             "explanation": "CRITICISM is CRITIC + -ISM, the act of pointing out flaws or evaluating something's quality.",
             "interactionType": "choice",
-            "correctAnswer": "CRITICISM",
+            "correctAnswer": "-ISM",
             "rootWord": "CRITIC",
             "options": [
-                "HEROISM",
-                "CRITICISM",
-                "JOURNALISM",
-                "OPTIMISM"
+                "-TION",
+                "-SION",
+                "-MENT",
+                "-ISM"
             ],
             "meaningBreakdown": "CRITIC (root) + ISM (suffix, 'practice of')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "CRITICISM"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L105_Q3",
@@ -262,21 +271,22 @@
             "hint": "A university department focuses on how people think, feel, and behave, and why.",
             "explanation": "PSYCHOLOGY is PSYCHO- ('mind') + -LOGY, the study of the mind and behavior.",
             "interactionType": "choice",
-            "correctAnswer": "PSYCHOLOGY",
+            "correctAnswer": "PSYCHO-",
             "rootWord": "PSYCHO",
             "options": [
-                "BIOLOGY",
-                "TECHNOLOGY",
-                "GEOLOGY",
-                "PSYCHOLOGY"
+                "DIS-",
+                "MIS-",
+                "UN-",
+                "PSYCHO-"
             ],
             "meaningBreakdown": "PSYCHO (root, 'mind') + LOGY (suffix, 'the study of')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "PSYCHOLOGY"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L106_Q3",
             "hint": "A field trip takes students to a canyon to examine rock layers formed over millions of years.",
-            "explanation": "-LOGY forms GEOLOGY from GEO- ('earth'), the study of the Earth's physical structure. You've already met the person who studies this \u2014 a GEOLOGIST \u2014 built from the same root with -IST instead.",
+            "explanation": "-LOGY forms GEOLOGY from GEO- ('earth'), the study of the Earth's physical structure. You've already met the person who studies this — a GEOLOGIST — built from the same root with -IST instead.",
             "interactionType": "choice",
             "correctAnswer": "-LOGY",
             "rootWord": "GEO",
@@ -310,16 +320,17 @@
             "hint": "A budget airline's ticket policy reads: 'Once purchased, this fare cannot be returned or exchanged for cash under any circumstances.' What's the word for a ticket like this?",
             "explanation": "NONREFUNDABLE stacks NON- ('not') onto REFUNDABLE, itself REFUND + -ABLE, meaning not capable of being refunded.",
             "interactionType": "choice",
-            "correctAnswer": "NONREFUNDABLE",
+            "correctAnswer": "NON-",
             "rootWord": "REFUNDABLE",
             "options": [
-                "RETURNABLE",
-                "AFFORDABLE",
-                "REFUNDABLE",
-                "NONREFUNDABLE"
+                "MIS-",
+                "DIS-",
+                "NON-",
+                "UN-"
             ],
             "meaningBreakdown": "NON (prefix, 'not') + REFUNDABLE (root, itself refund + able)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "NONREFUNDABLE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L107_Q3",
@@ -340,7 +351,7 @@
         {
             "id": "VOC_PREFIXSUFFIX_L108_Q1",
             "hint": "Someone who wakes up every morning expecting good things to happen, no matter what went wrong yesterday.",
-            "explanation": "-IST names the person who holds a belief: OPTIM- + -IST = OPTIMIST. Compare this to OPTIMISM, the belief itself, built with -ISM instead \u2014 same root, two different jobs.",
+            "explanation": "-IST names the person who holds a belief: OPTIM- + -IST = OPTIMIST. Compare this to OPTIMISM, the belief itself, built with -ISM instead — same root, two different jobs.",
             "interactionType": "choice",
             "correctAnswer": "-IST",
             "rootWord": "OPTIM",
@@ -355,35 +366,37 @@
         },
         {
             "id": "VOC_PREFIXSUFFIX_L108_Q2",
-            "hint": "A news article explains how a newspaper works: reporters investigate stories, editors check facts, and photographers capture images \u2014 together, this entire profession is called ___.",
-            "explanation": "JOURNALISM is JOURNAL + -ISM, the profession or practice of reporting news. You already know JOURNALIST, the person who does this \u2014 same root, one suffix for the practice, another for the person.",
+            "hint": "A news article explains how a newspaper works: reporters investigate stories, editors check facts, and photographers capture images — together, this entire profession is called ___.",
+            "explanation": "JOURNALISM is JOURNAL + -ISM, the profession or practice of reporting news. You already know JOURNALIST, the person who does this — same root, one suffix for the practice, another for the person.",
             "interactionType": "choice",
-            "correctAnswer": "JOURNALISM",
+            "correctAnswer": "-ISM",
             "rootWord": "JOURNAL",
             "options": [
-                "JOURNALIST",
-                "JOURNALISM",
-                "CRITICISM",
-                "HEROISM"
+                "-TION",
+                "-SION",
+                "-ISM",
+                "-MENT"
             ],
             "meaningBreakdown": "JOURNAL (root) + ISM (suffix, 'the practice of')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "JOURNALISM"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L108_Q3",
             "hint": "The person whose job is to watch new movies and write an honest review for the newspaper.",
-            "explanation": "Here's a useful exception: the person who does this is simply a CRITIC \u2014 English never added -IST to make 'criticist.' CRITIC itself already functions as the person-noun, while -ISM (CRITICISM) names the act of judging or the feedback given. Not every pattern is perfectly regular, and recognizing the exceptions is part of mastering real English.",
+            "explanation": "Here's a useful exception: the person who does this is simply a CRITIC — English never added -IST to make 'criticist.' CRITIC itself already functions as the person-noun, while -ISM (CRITICISM) names the act of judging or the feedback given. Not every pattern is perfectly regular, and recognizing the exceptions is part of mastering real English.",
             "interactionType": "choice",
-            "correctAnswer": "CRITIC",
+            "correctAnswer": "-IST",
             "rootWord": "CRITIC",
             "options": [
-                "CRITICIST",
-                "CRITIC",
-                "CRITICISM",
-                "CRITICAL"
+                "-IST",
+                "-EE",
+                "-OR",
+                "-ER"
             ],
-            "meaningBreakdown": "CRITIC (root, already the person-noun \u2014 no added suffix)",
-            "instruction": "Which word correctly names this person?"
+            "meaningBreakdown": "CRITIC (root, already the person-noun — no added suffix)",
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "CRITIC"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L109_Q1",
@@ -406,37 +419,39 @@
             "hint": "A fact-checking website states: 'Before publishing, our team confirms every claim against at least two independent sources.' What's the name for this process?",
             "explanation": "VERIFICATION comes from VERIFY, with a spelling shift, plus -ATION, the process of confirming something is true.",
             "interactionType": "choice",
-            "correctAnswer": "VERIFICATION",
+            "correctAnswer": "-ATION",
             "rootWord": "VERIFY",
             "options": [
-                "INFORMATION",
-                "EXPLANATION",
-                "IMAGINATION",
-                "VERIFICATION"
+                "-ATION",
+                "-SION",
+                "-TION",
+                "-MENT"
             ],
-            "meaningBreakdown": "VERIFIC (root) + ATION (suffix, verb \u2192 noun)",
-            "instruction": "Which word matches this situation?"
+            "meaningBreakdown": "VERIFIC (root) + ATION (suffix, verb → noun)",
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "VERIFICATION"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L109_Q3",
             "hint": "A tech review states: 'This laptop has never crashed once in the two years I've owned it.' What's the word for a product like this?",
             "explanation": "RELIABLE comes from RELY, with the Y changing to I, plus -ABLE, capable of being depended on.",
             "interactionType": "choice",
-            "correctAnswer": "RELIABLE",
+            "correctAnswer": "-ABLE",
             "rootWord": "RELY",
             "options": [
-                "AFFORDABLE",
-                "RELIABLE",
-                "COMFORTABLE",
-                "REFUNDABLE"
+                "-LESS",
+                "-ABLE",
+                "-FUL",
+                "-IBLE"
             ],
             "meaningBreakdown": "RELI (root, y changes to i) + ABLE (suffix, 'capable of being')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "RELIABLE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L110_Q1",
             "hint": "A university program focuses on how animals, plants, and their environments interact and depend on each other.",
-            "explanation": "-LOGY forms ECOLOGY from ECO- ('environment/habitat'), the study of how living things relate to their surroundings. This closes the loop on BIOLOGY, PSYCHOLOGY, and GEOLOGY from earlier \u2014 all built the same way.",
+            "explanation": "-LOGY forms ECOLOGY from ECO- ('environment/habitat'), the study of how living things relate to their surroundings. This closes the loop on BIOLOGY, PSYCHOLOGY, and GEOLOGY from earlier — all built the same way.",
             "interactionType": "choice",
             "correctAnswer": "-LOGY",
             "rootWord": "ECO",
@@ -454,32 +469,34 @@
             "hint": "A customer service reply reads: 'We've received your complaint and will respond within 48 hours.' What's the word for confirming that a message was received?",
             "explanation": "ACKNOWLEDGMENT is ACKNOWLEDGE + -MENT, with the silent E often dropping, the act of confirming that something was noticed or received.",
             "interactionType": "choice",
-            "correctAnswer": "ACKNOWLEDGMENT",
+            "correctAnswer": "-MENT",
             "rootWord": "ACKNOWLEDGE",
             "options": [
-                "ATTACHMENT",
-                "AGREEMENT",
-                "ARRANGEMENT",
-                "ACKNOWLEDGMENT"
+                "-TION",
+                "-SION",
+                "-NESS",
+                "-MENT"
             ],
-            "meaningBreakdown": "ACKNOWLEDG (root, e dropped) + MENT (suffix, verb \u2192 noun)",
-            "instruction": "Which word matches this situation?"
+            "meaningBreakdown": "ACKNOWLEDG (root, e dropped) + MENT (suffix, verb → noun)",
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "ACKNOWLEDGMENT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L110_Q3",
-            "hint": "A community group shares an old, outdated post claiming a local store closed down \u2014 nobody meant to lie, they just shared outdated news without checking first.",
-            "explanation": "MIS- ('wrongly') plus INFORM plus -ATION gives MISINFORMATION, false information spread by mistake, without intent to deceive. DISINFORMATION uses DIS- instead, specifically meaning false information spread deliberately and knowingly \u2014 a meaningful real-world distinction between an honest mistake and an intentional lie.",
+            "hint": "A community group shares an old, outdated post claiming a local store closed down — nobody meant to lie, they just shared outdated news without checking first.",
+            "explanation": "MIS- ('wrongly') plus INFORM plus -ATION gives MISINFORMATION, false information spread by mistake, without intent to deceive. DISINFORMATION uses DIS- instead, specifically meaning false information spread deliberately and knowingly — a meaningful real-world distinction between an honest mistake and an intentional lie.",
             "interactionType": "choice",
-            "correctAnswer": "MISINFORMATION",
+            "correctAnswer": "MIS-",
             "rootWord": "INFORM",
             "options": [
-                "DISINFORMATION",
-                "INFORMATION",
-                "MISINFORMATION",
-                "NONINFORMATION"
+                "UN-",
+                "DIS-",
+                "NON-",
+                "MIS-"
             ],
             "meaningBreakdown": "MIS (prefix, 'wrongly') + INFORM (root) + ATION (suffix, forms a noun)",
-            "instruction": "Capstone: which word fits information that was false, but not spread on purpose?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "MISINFORMATION"
         }
     ],
     "gameType": "prefixSuffix",

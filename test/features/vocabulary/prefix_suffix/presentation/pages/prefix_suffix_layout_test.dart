@@ -610,6 +610,66 @@ void main() {
         ),
       ).called(1);
     });
+
+    testWidgets('19b. when correctAnswer is an affix like RE-, Stage 2 expects full word REDO', (tester) async {
+      final affixLoadedState = VocabularyLoaded(
+        quests: [
+          createQuest(
+            id: 'quest_ps_affix',
+            word: 'redo',
+            rootWord: 'DO',
+            correctAnswer: 'RE-',
+            options: ['MIS-', 'DE-', 'PRE-', 'RE-'],
+            hint: 'To perform an action a second time.',
+            explanation: "RE- means 'again.' Added to DO, it forms REDO.",
+          ),
+        ],
+        currentIndex: 0,
+        livesRemaining: 3,
+        wrongCount: 0,
+        hintUsed: false,
+        answerStatus: AnswerStatus.unanswered,
+      );
+
+      await pumpScreen(tester, state: affixLoadedState);
+
+      // Tap the correct affix RE-
+      await tester.tap(find.text('RE-').first);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+      await tester.pump(const Duration(milliseconds: 500));
+      await tester.pumpAndSettle();
+
+      // Fused word banner should display the full word REDO, not RE-
+      expect(find.text('REDO'), findsWidgets);
+
+      // TypeToConfirmOverlay should expect REDO, not RE-
+      final overlayFinder = find.byType(TypeToConfirmOverlay);
+      expect(overlayFinder, findsOneWidget);
+      final overlay = tester.widget<TypeToConfirmOverlay>(overlayFinder);
+      expect(overlay.expectedText.toLowerCase(), equals('redo'));
+
+      // Check that TypeToConfirmOverlay is padded from screen sides
+      final overlayTopLeft = tester.getTopLeft(overlayFinder);
+      final overlayTopRight = tester.getTopRight(overlayFinder);
+      expect(overlayTopLeft.dx, greaterThanOrEqualTo(20.0));
+      expect(390 - overlayTopRight.dx, greaterThanOrEqualTo(20.0));
+
+      // Confirm entering REDO passes the stage
+      final textField = find.byType(TextField);
+      await tester.enterText(textField, 'redo');
+      await tester.pump();
+      await tester.tap(find.text('SUBMIT'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 900));
+      await tester.pumpAndSettle();
+
+      verify(
+        () => mockVocabularyBloc.add(
+          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', isTrue)),
+        ),
+      ).called(1);
+    });
   });
 
   group('Group 4: Hint System & Audio Lifecycle', () {
