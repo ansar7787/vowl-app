@@ -9,6 +9,7 @@ class SynonymWarpGate extends StatelessWidget {
   final Color color;
   final bool isDark;
   final VoidCallback? onTap;
+  final bool hasActiveSelection;
 
   const SynonymWarpGate({
     super.key,
@@ -16,24 +17,24 @@ class SynonymWarpGate extends StatelessWidget {
     required this.color,
     required this.isDark,
     this.onTap,
+    this.hasActiveSelection = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
-        VowlMotion.lowAnimationModeOverride.value;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     Widget outerPulse = Container(
-      width: 220.r,
-      height: 220.r,
+      width: 175.r,
+      height: 175.r,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: RadialGradient(
           colors: [
-            color.withValues(alpha: 0.2),
+            color.withValues(alpha: 0.18),
             Colors.transparent,
           ],
-          stops: const [0.3, 1.0],
+          stops: const [0.35, 1.0],
         ),
       ),
     );
@@ -41,8 +42,8 @@ class SynonymWarpGate extends StatelessWidget {
       outerPulse = outerPulse
           .animate(onPlay: (c) => c.repeat())
           .scale(
-            begin: const Offset(0.8, 0.8),
-            end: const Offset(1.3, 1.3),
+            begin: const Offset(0.85, 0.85),
+            end: const Offset(1.2, 1.2),
             duration: 3.seconds,
             curve: Curves.easeInOut,
           )
@@ -57,28 +58,30 @@ class SynonymWarpGate extends StatelessWidget {
     if (!reduceMotion) {
       vortex = vortex
           .animate(onPlay: (c) => c.repeat())
-          .rotate(duration: 10.seconds);
+          .rotate(duration: 12.seconds);
     }
 
     Widget gateCore = Container(
-      width: 180.r,
-      height: 180.r,
+      width: 145.r,
+      height: 145.r,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
-          color: color.withValues(alpha: 0.8),
-          width: 5,
+          color: hasActiveSelection
+              ? Colors.white
+              : color.withValues(alpha: 0.85),
+          width: hasActiveSelection ? 3.0 : 2.5,
         ),
         boxShadow: [
           BoxShadow(
-            color: color.withValues(alpha: 0.6),
-            blurRadius: 40,
-            spreadRadius: 8,
+            color: color.withValues(alpha: hasActiveSelection ? 0.55 : 0.3),
+            blurRadius: hasActiveSelection ? 28 : 20,
+            spreadRadius: hasActiveSelection ? 4 : 2,
           ),
           BoxShadow(
-            color: color.withValues(alpha: 0.3),
-            blurRadius: 80,
-            spreadRadius: 15,
+            color: Colors.black.withValues(alpha: isDark ? 0.35 : 0.1),
+            blurRadius: 12,
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -89,30 +92,61 @@ class SynonymWarpGate extends StatelessWidget {
             Positioned.fill(child: vortex),
             Center(
               child: Padding(
-                padding: EdgeInsets.all(25.r),
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    word.toUpperCase(),
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w800,
-                      color: Colors.white,
-                      letterSpacing: 3,
-                      shadows: [
-                        Shadow(
-                          color: Colors.black.withValues(
-                            alpha: 0.5,
-                          ),
-                          blurRadius: 12,
+                padding: EdgeInsets.symmetric(horizontal: 16.r, vertical: 8.r),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        word.toUpperCase(),
+                        textAlign: TextAlign.center,
+                        maxLines: 1,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                          letterSpacing: 1.2,
+                          shadows: [
+                            Shadow(
+                              color: Colors.black.withValues(alpha: 0.6),
+                              blurRadius: 8,
+                              offset: const Offset(0, 2),
+                            ),
+                          ],
                         ),
-                        Shadow(color: color, blurRadius: 25),
-                      ],
+                      ),
                     ),
-                  ),
+                    if (hasActiveSelection) ...[
+                      SizedBox(height: 4.h),
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 8.w,
+                          vertical: 2.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.22),
+                          borderRadius: BorderRadius.circular(8.r),
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.45),
+                            width: 1,
+                          ),
+                        ),
+                        child: Text(
+                          'TAP TO MATCH',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 9.sp,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                            letterSpacing: 0.8,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ],
                 ),
               ),
             ),
@@ -125,25 +159,30 @@ class SynonymWarpGate extends StatelessWidget {
           .animate(onPlay: (c) => c.repeat(reverse: true))
           .scale(
             begin: const Offset(1.0, 1.0),
-            end: const Offset(1.05, 1.05),
+            end: const Offset(1.04, 1.04),
             duration: 2.seconds,
           );
     }
 
     return RepaintBoundary(
-      child: GestureDetector(
-        onTap: onTap,
-        child: Center(
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              outerPulse,
-              gateCore,
-              ...List.generate(
-                4,
-                (i) => _buildOrbitalParticle(i, color, reduceMotion),
-              ),
-            ],
+      child: Center(
+        child: SizedBox(
+          width: 175.r,
+          height: 175.r,
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: onTap,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                outerPulse,
+                gateCore,
+                ...List.generate(
+                  4,
+                  (i) => _buildOrbitalParticle(i, color, reduceMotion),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -155,18 +194,18 @@ class SynonymWarpGate extends StatelessWidget {
     Widget particle = RotationTransition(
       turns: AlwaysStoppedAnimation(index * 0.25),
       child: SizedBox(
-        width: 170.r,
-        height: 170.r,
+        width: 140.r,
+        height: 140.r,
         child: Align(
           alignment: Alignment.topCenter,
           child: Container(
-            width: 8.r,
-            height: 8.r,
+            width: 5.5.r,
+            height: 5.5.r,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: color,
               boxShadow: [
-                BoxShadow(color: color, blurRadius: 15, spreadRadius: 2),
+                BoxShadow(color: color, blurRadius: 6, spreadRadius: 1),
               ],
             ),
           ),

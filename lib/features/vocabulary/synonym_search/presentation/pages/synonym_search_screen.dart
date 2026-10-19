@@ -19,6 +19,7 @@ import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/syn
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_word_shard.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_nuance_scale.dart';
 import 'package:vowl/core/presentation/game_mechanics/arranging/context_sentence_builder.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class SynonymSearchScreen extends StatefulWidget {
   final int level;
@@ -58,8 +59,11 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   final ValueNotifier<int?> _activeShardIndex = ValueNotifier(null);
   BoxConstraints? _lastConstraints;
   bool _insideHapticZone = false;
+  bool _isAnimatingFlight = false;
+  bool _isDragging = false;
   Timer? _scrollTimer;
   Timer? _hintTimer;
+  AnimationController? _flightController;
 
   void _ensureShardNotifiers(int count) {
     while (_shardOffsets.length < count) {
@@ -95,6 +99,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
   @override
   void dispose() {
+    _flightController?.dispose();
+    _isAnimatingFlight = false;
+    _isDragging = false;
     _scrollTimer?.cancel();
     _hintTimer?.cancel();
     for (var n in _shardOffsets) {
@@ -113,14 +120,17 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   }
 
   void _onShardDragStart(int index, DragStartDetails details) {
-    if (isAnsweredNotifier.value || _isWarping[index].value) return;
-    _activeShardIndex.value = index;
+    if (isAnsweredNotifier.value || _isWarping[index].value || _isAnimatingFlight) return;
+    _isDragging = true;
+    if (_activeShardIndex.value != index) {
+      _activeShardIndex.value = index;
+      hapticService.light();
+    }
     _shardTrails[index].value = [];
-    hapticService.light();
   }
 
   void _onShardDragUpdate(int index, DragUpdateDetails details) {
-    if (isAnsweredNotifier.value || _activeShardIndex.value != index) return;
+    if (isAnsweredNotifier.value || _activeShardIndex.value != index || _isAnimatingFlight) return;
     if (_lastConstraints == null) return;
 
     final currentOffset = _shardOffsets[index].value + details.delta;
@@ -141,7 +151,10 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     final currentPos = shardInitialPos + currentOffset;
     final distance = currentPos.distance;
 
-    if (distance < 120.r && distance > 100.r) {
+    final isCompact = _lastConstraints != null && _lastConstraints!.maxHeight < 580;
+    final hapticMax = isCompact ? 100.r : 115.r;
+    final hapticMin = isCompact ? 75.r : 90.r;
+    if (distance < hapticMax && distance > hapticMin) {
       if (!_insideHapticZone) {
         _insideHapticZone = true;
         hapticService.selection();
@@ -152,7 +165,14 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   }
 
   void _onShardDragEnd(int index, VocabularyQuest quest) {
-    if (isAnsweredNotifier.value || _activeShardIndex.value != index) return;
+    _isDragging = false;
+    if (isAnsweredNotifier.value || _activeShardIndex.value != index || _isAnimatingFlight) {
+      if (_shardOffsets.length > index && _shardOffsets[index].value != Offset.zero) {
+        _shardOffsets[index].value = Offset.zero;
+        _shardTrails[index].value = [];
+      }
+      return;
+    }
     if (_lastConstraints == null) return;
 
     final isCompact = _lastConstraints!.maxHeight < 580;
@@ -167,11 +187,16 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     );
     final currentPos = shardInitialPos + currentOffset;
 
-    final double snapDistance = isCompact ? 65.r : 100.r;
+    final double snapDistance = isCompact ? 60.r : 85.r;
     if (currentPos.distance < snapDistance) {
       _warpShard(index, selectedText, quest);
+    } else if (currentOffset.distance < 18.w) {
+      // Touch jitter on low-end devices: finger barely moved (< 18.w).
+      // Keep shard cleanly centered at its slot and retain selection!
+      _shardOffsets[index].value = Offset.zero;
+      _shardTrails[index].value = [];
     } else {
-      // Snap back
+      // Snap back from an intentional but aborted drag
       _shardOffsets[index].value = Offset.zero;
       _shardTrails[index].value = [];
       _activeShardIndex.value = null;
@@ -179,8 +204,18 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     }
   }
 
-  void _onShardTapped(int index) {
-    if (isAnsweredNotifier.value || _isWarping[index].value) return;
+  void _onShardTapped(int index, VocabularyQuest quest) {
+    if (isAnsweredNotifier.value || _isWarping[index].value || _isAnimatingFlight || _isDragging) return;
+
+    if (_activeShardIndex.value == index) {
+      // Tapping already-selected shard confirms and warps into center gate
+      final options = quest.options ?? [];
+      if (index < options.length) {
+        _animateAndWarp(index, options[index], quest);
+      }
+      return;
+    }
+
     _activeShardIndex.value = index;
     hapticService.light();
   }
@@ -188,6 +223,8 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   void _onWarpGateTapped(VocabularyQuest quest) {
     if (_activeShardIndex.value == null ||
         isAnsweredNotifier.value ||
+        _isAnimatingFlight ||
+        _isDragging ||
         _lastConstraints == null) {
       return;
     }
@@ -195,7 +232,65 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     final options = quest.options ?? [];
     if (index >= options.length) return;
 
-    _warpShard(index, options[index], quest);
+    _animateAndWarp(index, options[index], quest);
+  }
+
+  void _animateAndWarp(int index, String text, VocabularyQuest quest) {
+    if (_isWarping[index].value || isAnsweredNotifier.value || _isAnimatingFlight) return;
+    _isAnimatingFlight = true;
+
+    final reduceMotion = !mounted
+        ? true
+        : VowlMotion.shouldReduceMotion(context);
+
+    final startOffset = _shardOffsets[index].value;
+    final initialPos = _lastConstraints != null
+        ? _getShardInitialPosition(
+            index,
+            quest.options?.length ?? 4,
+            _lastConstraints!,
+          )
+        : Offset.zero;
+    final targetOffset = -initialPos;
+
+    if (reduceMotion) {
+      _shardOffsets[index].value = targetOffset;
+      _isAnimatingFlight = false;
+      _warpShard(index, text, quest);
+      return;
+    }
+
+    _flightController?.dispose();
+    _flightController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 220),
+    );
+
+    final curved = CurvedAnimation(
+      parent: _flightController!,
+      curve: Curves.easeInCubic,
+    );
+
+    curved.addListener(() {
+      if (mounted) {
+        _shardOffsets[index].value = Offset.lerp(
+          startOffset,
+          targetOffset,
+          curved.value,
+        )!;
+      }
+    });
+
+    curved.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        if (mounted) {
+          _isAnimatingFlight = false;
+          _warpShard(index, text, quest);
+        }
+      }
+    });
+
+    _flightController!.forward();
   }
 
   void _warpShard(int index, String text, VocabularyQuest quest) {
@@ -250,20 +345,24 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     int total,
     BoxConstraints constraints,
   ) {
-    final screenSize = MediaQuery.of(context).size;
+    final screenSize = MediaQuery.sizeOf(context);
     final double safeWidth = constraints.maxWidth.isFinite
         ? constraints.maxWidth
         : screenSize.width;
     final double safeHeight = constraints.maxHeight.isFinite
-        ? constraints.maxHeight
+        ? math.max(constraints.maxHeight, 560.h)
         : (screenSize.height * 0.6);
     final isCompact = safeHeight < 580;
 
-    double hDist = (safeWidth - 100.w) / 2;
-    double vDist = (safeHeight - (isCompact ? 95.h : 120.h)) / 2;
+    final double maxShardHalfWidth = (isCompact ? 112.w : 124.w) / 2;
+    final double minMargin = 16.w;
+    final double maxAllowedHDist = (safeWidth / 2) - maxShardHalfWidth - minMargin;
+    final double targetHDist = isCompact ? 80.w : 98.w;
+    final double hDist = targetHDist.clamp(65.w, maxAllowedHDist);
 
-    hDist = hDist.clamp(isCompact ? 65.w : 90.w, 130.w);
-    vDist = vDist.clamp(isCompact ? 90.h : 120.h, 140.h);
+    final double targetVDist = isCompact ? 82.h : 100.h;
+    final double maxAllowedVDist = (safeHeight / 2) - (isCompact ? 45.h : 55.h);
+    final double vDist = targetVDist.clamp(70.h, math.max(70.h, maxAllowedVDist));
 
     switch (index) {
       case 0:
@@ -280,10 +379,12 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     }
   }
 
-  double _lastKeyboardHeight = 0;
-
   @override
   void onQuestionReset() {
+    _flightController?.dispose();
+    _flightController = null;
+    _isAnimatingFlight = false;
+    _isDragging = false;
     _scrollTimer?.cancel();
     _hintTimer?.cancel();
     _resetShardNotifiers();
@@ -368,23 +469,15 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                   : LayoutBuilder(
                       builder: (context, constraints) {
                         _lastConstraints = constraints;
-                        final keyboardHeight = MediaQuery.of(
-                          context,
-                        ).viewInsets.bottom;
 
-                        if (keyboardHeight > 0 && _lastKeyboardHeight == 0) {
-                          _scrollToBottom();
-                        }
-                        _lastKeyboardHeight = keyboardHeight;
-
-                        final screenSize = MediaQuery.of(context).size;
+                        final screenSize = MediaQuery.sizeOf(context);
                         final double safeWidth = constraints.maxWidth.isFinite
                             ? constraints.maxWidth
                             : screenSize.width;
                         final double safeHeight =
-                            (constraints.maxHeight.isFinite
-                            ? constraints.maxHeight
-                            : (screenSize.height * 0.6));
+                            constraints.maxHeight.isFinite
+                            ? math.max(constraints.maxHeight, 560.h)
+                            : (screenSize.height * 0.6);
                         final isCompact = safeHeight < 580;
 
                         return ValueListenableBuilder<bool>(
@@ -433,31 +526,51 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                                     ),
                                                   ),
                                                 ),
-                                                isCompact
-                                                    ? Transform.scale(
-                                                        scale: 0.8,
-                                                        child: SynonymWarpGate(
-                                                          word:
-                                                              quest.word ?? "",
-                                                          color: theme
-                                                              .primaryColor,
-                                                          isDark: isDark,
-                                                          onTap: () =>
-                                                              _onWarpGateTapped(
-                                                                quest,
-                                                              ),
-                                                        ),
-                                                      )
-                                                    : SynonymWarpGate(
-                                                        word: quest.word ?? "",
-                                                        color:
-                                                            theme.primaryColor,
-                                                        isDark: isDark,
-                                                        onTap: () =>
-                                                            _onWarpGateTapped(
-                                                              quest,
+                                                ValueListenableBuilder<int?>(
+                                                  valueListenable:
+                                                      _activeShardIndex,
+                                                  builder: (
+                                                    context,
+                                                    activeIndex,
+                                                    _,
+                                                  ) {
+                                                    final hasActiveSelection =
+                                                        activeIndex != null;
+                                                    return isCompact
+                                                        ? Transform.scale(
+                                                            scale: 0.8,
+                                                            child:
+                                                                SynonymWarpGate(
+                                                              word:
+                                                                  quest.word ??
+                                                                  "",
+                                                              color: theme
+                                                                  .primaryColor,
+                                                              isDark: isDark,
+                                                              hasActiveSelection:
+                                                                  hasActiveSelection,
+                                                              onTap: () =>
+                                                                  _onWarpGateTapped(
+                                                                    quest,
+                                                                  ),
                                                             ),
-                                                      ),
+                                                          )
+                                                        : SynonymWarpGate(
+                                                            word:
+                                                                quest.word ??
+                                                                "",
+                                                            color: theme
+                                                                .primaryColor,
+                                                            isDark: isDark,
+                                                            hasActiveSelection:
+                                                                hasActiveSelection,
+                                                            onTap: () =>
+                                                                _onWarpGateTapped(
+                                                                  quest,
+                                                                ),
+                                                          );
+                                                  },
+                                                ),
                                                 ...List.generate(quest.options?.length ?? 0, (
                                                   i,
                                                 ) {
@@ -565,7 +678,10 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                                             quest,
                                                           ),
                                                       onTap: () =>
-                                                          _onShardTapped(i),
+                                                          _onShardTapped(
+                                                            i,
+                                                            quest,
+                                                          ),
                                                     );
                                                   },
                                                 ),
@@ -583,7 +699,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                                           ? InstructionHelper.getInstruction(
                                                               quest,
                                                             )
-                                                          : "WARP THE SYNONYM SHARD",
+                                                          : "Find the matching synonym",
                                                       hint: quest.hint,
                                                       isCompact: isCompact,
                                                     ),
@@ -628,7 +744,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                         alignment: Alignment.bottomCenter,
                                         child: Padding(
                                           padding: EdgeInsets.only(
-                                            bottom: 24.h + keyboardHeight,
+                                            left: 16.w,
+                                            right: 16.w,
+                                            bottom: 24.h,
                                           ),
                                           child: ContextSentenceBuilder(
                                             targetKeyword:
