@@ -1172,16 +1172,16 @@ class GameInstructionService {
           "PRO TIP: Be honest with yourself! Swiping left ensures you'll get another chance to really lock the word into your memory.",
     ),
     GameSubtype.synonymSearch: GameBriefing(
-      title: "Synonym Warp",
-      icon: Icons.cyclone,
+      title: "Synonym Match",
+      icon: Icons.compare_arrows_rounded,
       objective:
-          "Identify the exact same meaning for the target word and drag the shard into the warp gate. Finally, speak the complete sentence aloud to confirm the nuance.",
+          "Find the word that has the same meaning as the target word. Tap or drag the matching word to the center, then practice using it in a natural sentence.",
       rules: [
-        "Find the synonym shard",
-        "Drag it into the warp gate",
-        "Speak the full sentence",
+        "Find the matching synonym",
+        "Tap or drag to the center",
+        "Practice with a sentence",
       ],
-      actionText: "Start Warp",
+      actionText: "Start Practice",
       tip:
           "PRO TIP: Don't get tricked by words that just look similar. Focus entirely on the core meaning!",
     ),

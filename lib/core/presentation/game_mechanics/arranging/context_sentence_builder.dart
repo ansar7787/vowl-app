@@ -208,27 +208,33 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
       ),
     );
 
-    final content =
-        Material(
-              type: MaterialType.transparency,
-              child: widget.isPositioned
-                  ? Padding(
-                      padding: EdgeInsets.only(
-                        bottom: MediaQuery.of(context).viewInsets.bottom + 12.h,
-                        top: MediaQuery.paddingOf(context).top + 12.h,
-                      ),
-                      child: innerContent,
-                    )
-                  : Padding(
-                      padding: EdgeInsets.only(
-                        bottom: MediaQuery.of(context).viewInsets.bottom,
-                      ),
-                      child: innerContent,
-                    ),
+    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
+    final content = Material(
+      type: MaterialType.transparency,
+      child: widget.isPositioned
+          ? Padding(
+              padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom + 12.h,
+                top: MediaQuery.paddingOf(context).top + 12.h,
+              ),
+              child: innerContent,
             )
-            .animate()
-            .slideY(begin: 1.0, end: 0, duration: 600.ms, curve: Curves.easeOut)
-            .fadeIn(duration: 400.ms);
+          : Padding(
+              padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom,
+              ),
+              child: innerContent,
+            ),
+    );
+
+    final animatedContent = reduceMotion
+        ? content
+        : content
+            .animate(key: const ValueKey('context_sentence_builder_anim'))
+            .slideY(begin: 0.2, end: 0, duration: 400.ms, curve: Curves.easeOut)
+            .fadeIn(duration: 300.ms);
 
     if (widget.isPositioned) {
       return Positioned(
@@ -238,12 +244,12 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
         right: 0,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
-          children: [Flexible(child: content)],
+          children: [Flexible(child: animatedContent)],
         ),
       );
     }
 
-    return content;
+    return animatedContent;
   }
 
   Widget _buildFormContent(bool isDark, Color subtitleColor, Color textColor) {

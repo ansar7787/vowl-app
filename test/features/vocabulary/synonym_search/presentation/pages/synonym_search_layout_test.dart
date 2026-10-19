@@ -420,6 +420,54 @@ void main() {
       ).called(1);
     });
 
+    testWidgets('10a. tapping selected shard a second time (double-tap/confirm) with correct synonym advances to Phase 2', (tester) async {
+      await pumpScreen(tester);
+
+      await tester.tap(find.text('KIND'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 100));
+
+      await tester.tap(find.text('KIND'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 350));
+      await tester.pumpAndSettle();
+
+      verify(() => mockHapticService.selection()).called(1);
+      expect(find.byType(ContextSentenceBuilder), findsOneWidget);
+    });
+
+    testWidgets('10b. tapping selected shard a second time with wrong synonym triggers wrong sound, error haptic, and dispatches SubmitAnswer(false)', (tester) async {
+      await pumpScreen(tester);
+
+      await tester.tap(find.text('CRUEL'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 100));
+
+      await tester.tap(find.text('CRUEL'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 400));
+      await tester.pumpAndSettle();
+
+      verify(() => mockSoundService.playWrong()).called(greaterThanOrEqualTo(1));
+      verify(() => mockHapticService.error()).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockVocabularyBloc.add(
+          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', isFalse)),
+        ),
+      ).called(1);
+    });
+
+    testWidgets('10c. when a shard is selected, warp gate displays TAP TO MATCH', (tester) async {
+      await pumpScreen(tester);
+
+      expect(find.text('TAP TO MATCH'), findsNothing);
+
+      await tester.tap(find.text('KIND'));
+      await tester.pump();
+
+      expect(find.text('TAP TO MATCH'), findsOneWidget);
+    });
+
     testWidgets('11. dragging correct shard close to warp gate triggers near-gate proximity selection haptic', (tester) async {
       await pumpScreen(tester);
 
