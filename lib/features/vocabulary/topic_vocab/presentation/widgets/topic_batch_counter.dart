@@ -18,27 +18,35 @@ class TopicBatchCounter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
 
+    final progressLabel = context.tr(
+      'instructions.topicVocab.words_in_batch',
+      fallback: 'Progress',
+    );
+
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.05), // Minimal glass
+        color: isDark
+            ? color.withValues(alpha: 0.12)
+            : color.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: color.withValues(alpha: 0.2), width: 1),
+        border: Border.all(color: color.withValues(alpha: 0.22), width: 1),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "${context.tr('instructions.topicVocab.words_in_batch', fallback: 'BATCH PROGRESS')}: $count / $total",
+            "$progressLabel: $count / $total",
             style: TextStyle(
               fontFamily: 'Outfit',
-              color: color.withValues(alpha: 0.8),
-              fontSize: 10.sp,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 1.2,
+              color: isDark ? Colors.white.withValues(alpha: 0.9) : color,
+              fontSize: 11.sp,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 0.4,
             ),
           ),
           SizedBox(height: 5.h),
@@ -47,17 +55,17 @@ class TopicBatchCounter extends StatelessWidget {
             children: List.generate(total, (i) {
               bool isFilled = i < count;
               final pip = Container(
-                width: 12.w,
-                height: 3.h,
+                width: 14.w,
+                height: 3.5.h,
                 margin: EdgeInsets.symmetric(horizontal: 2.w),
                 decoration: BoxDecoration(
-                  color: isFilled ? color : color.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(1),
+                  color: isFilled ? color : color.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(2.r),
                 ),
               );
               return reduceMotion
                   ? pip
-                  : pip.animate(target: isFilled ? 1 : 0).shimmer(duration: 1.seconds);
+                  : pip.animate(target: isFilled ? 1 : 0).shimmer(duration: 800.ms);
             }),
           ),
         ],
