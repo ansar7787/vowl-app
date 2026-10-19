@@ -36,44 +36,41 @@ class AcademicWordThesisPaper extends StatelessWidget {
       maxScaleFactor: 1.2,
       child: LayoutBuilder(
         builder: (context, constraints) {
-          final cardWidth = constraints.maxWidth > 0
-              ? (330.w).clamp(0.0, constraints.maxWidth - 32.w)
-              : 330.w;
-          final cardPadding = (cardWidth * 0.082).clamp(12.0, 28.0);
-          final slotWidth = ((cardWidth - cardPadding * 2) * 0.55).clamp(
-            90.0,
-            150.w,
-          );
-          final slotHeight = (40.h).clamp(32.0, 44.0);
+          final maxAllowedWidth = constraints.maxWidth.isFinite
+              ? constraints.maxWidth
+              : (MediaQuery.of(context).size.width - 40.w);
+          final cardWidth = maxAllowedWidth.clamp(0.0, 420.0);
+          final slotWidth = ((cardWidth - 40.w) * 0.50).clamp(100.0, 160.w);
+          final slotHeight = (38.h).clamp(32.0, 44.0);
 
           final paper = Container(
-                key: const Key('academic_word_thesis_paper'),
-                width: cardWidth,
-                constraints: BoxConstraints(
-                  maxHeight: constraints.maxHeight > 0
-                      ? constraints.maxHeight * 0.65
-                      : double.infinity,
-                ),
-                padding: EdgeInsets.all(cardPadding),
-                decoration: _cardDecoration(isDark),
-                child: SingleChildScrollView(
-                  physics: const NeverScrollableScrollPhysics(),
-                  child: _ThesisPaperContent(
-                    passage: passage,
-                    color: color,
-                    slotKey: slotKey,
-                    isAnswered: isAnswered,
-                    isCorrect: isCorrect,
-                    correctAnswer: correctAnswer,
-                    userSpelledWord: userSpelledWord,
-                    isSlotSelected: isSlotSelected,
-                    onSlotTap: onSlotTap,
-                    isDark: isDark,
-                    slotWidth: slotWidth,
-                    slotHeight: slotHeight,
-                  ),
-                ),
-              );
+            key: const Key('academic_word_thesis_paper'),
+            width: cardWidth,
+            constraints: BoxConstraints(
+              maxHeight: constraints.maxHeight.isFinite && constraints.maxHeight > 0
+                  ? constraints.maxHeight * 0.75
+                  : double.infinity,
+            ),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+            decoration: _cardDecoration(isDark),
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: _ThesisPaperContent(
+                passage: passage,
+                color: color,
+                slotKey: slotKey,
+                isAnswered: isAnswered,
+                isCorrect: isCorrect,
+                correctAnswer: correctAnswer,
+                userSpelledWord: userSpelledWord,
+                isSlotSelected: isSlotSelected,
+                onSlotTap: onSlotTap,
+                isDark: isDark,
+                slotWidth: slotWidth,
+                slotHeight: slotHeight,
+              ),
+            ),
+          );
 
           if (VowlMotion.lowAnimationModeOverride.value) {
             return paper;
@@ -81,30 +78,32 @@ class AcademicWordThesisPaper extends StatelessWidget {
 
           return paper
               .animate()
-              .fadeIn(duration: 1.seconds)
+              .fadeIn(duration: 800.ms)
               .slideY(begin: -0.05, end: 0, curve: Curves.easeOutCubic);
         },
       ),
     );
   }
 
-
   BoxDecoration _cardDecoration(bool isDark) {
     return BoxDecoration(
       color: isDark ? AcademicWordColors.cardDark : Colors.white,
-      borderRadius: BorderRadius.circular(4.r),
+      borderRadius: BorderRadius.circular(20.r),
       boxShadow: [
         BoxShadow(
-          color: Colors.black.withValues(alpha: isDark ? 0.5 : 0.1),
-          blurRadius: 30,
-          offset: const Offset(0, 15),
+          color: Colors.black.withValues(alpha: isDark ? 0.35 : 0.08),
+          blurRadius: 24,
+          offset: const Offset(0, 10),
         ),
-        BoxShadow(color: color.withValues(alpha: 0.1), blurRadius: 50),
+        BoxShadow(
+          color: color.withValues(alpha: isDark ? 0.08 : 0.05),
+          blurRadius: 36,
+        ),
       ],
       border: Border.all(
         color: isDark
-            ? color.withValues(alpha: 0.3)
-            : color.withValues(alpha: 0.1),
+            ? color.withValues(alpha: 0.25)
+            : color.withValues(alpha: 0.15),
         width: 1.5,
       ),
     );
@@ -176,22 +175,26 @@ class _ThesisPaperContentState extends State<_ThesisPaperContent> {
 
   static TextStyle _passageStyle(Color textColor) => TextStyle(
     fontFamily: 'Spectral',
-    fontSize: 19,
-    height: 1.6,
+    fontSize: 16.5.sp,
+    fontWeight: FontWeight.w500,
+    height: 1.55,
     color: textColor,
   );
 
   static TextStyle _answerStyle(Color color) => TextStyle(
     fontFamily: 'Outfit',
     color: color,
-    fontWeight: FontWeight.bold,
-    fontSize: 15,
+    fontWeight: FontWeight.w700,
+    fontSize: 15.sp,
+    letterSpacing: 0.5,
   );
 
   @override
   Widget build(BuildContext context) {
-    final passageTextColor = widget.isDark ? Colors.white70 : Colors.black87;
-    final pendingColor = widget.color.withValues(alpha: 0.3);
+    final passageTextColor = widget.isDark
+        ? Colors.white.withValues(alpha: 0.92)
+        : Colors.black87;
+    final pendingColor = widget.color.withValues(alpha: 0.6);
     final slotUnderlineColor = widget.isAnswered && widget.isCorrect == false
         ? AcademicWordColors.slotError
         : widget.color;
@@ -262,8 +265,8 @@ class _AnswerSlot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final effectiveColor = isSlotSelected
-        ? color
-        : color.withValues(alpha: 0.05);
+        ? color.withValues(alpha: 0.16)
+        : color.withValues(alpha: 0.06);
     final borderColor = isSlotSelected ? color : underlineColor;
 
     return Semantics(
@@ -282,10 +285,14 @@ class _AnswerSlot extends StatelessWidget {
           width: width,
           height: height,
           margin: EdgeInsets.symmetric(horizontal: 6.w),
+          padding: EdgeInsets.symmetric(horizontal: 8.w),
           decoration: BoxDecoration(
             color: effectiveColor,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(4.r)),
-            border: Border(bottom: BorderSide(color: borderColor, width: 2.5)),
+            borderRadius: BorderRadius.circular(10.r),
+            border: Border.all(
+              color: isSlotSelected ? color : borderColor.withValues(alpha: 0.6),
+              width: isSlotSelected ? 2.0 : 1.5,
+            ),
           ),
           child: Center(
             child:
@@ -325,9 +332,10 @@ class _AnswerSlot extends StatelessWidget {
                             key: const Key('academic_word_slot_pending_text'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              color: isSlotSelected ? Colors.white : pendingColor,
-                              fontSize: 9,
-                              letterSpacing: 1,
+                              color: isSlotSelected ? color : pendingColor,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 0.3,
                             ),
                           )
                         : Text(
@@ -335,15 +343,16 @@ class _AnswerSlot extends StatelessWidget {
                             key: const Key('academic_word_slot_pending_text'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              color: isSlotSelected ? Colors.white : pendingColor,
-                              fontSize: 9,
-                              letterSpacing: 1,
+                              color: isSlotSelected ? color : pendingColor,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 0.3,
                             ),
                           )
                             .animate(
                               onPlay: (c) => c.repeat(),
                             )
-                            .shimmer(),
+                            .shimmer(duration: 2.seconds),
                   ),
           ),
         ),

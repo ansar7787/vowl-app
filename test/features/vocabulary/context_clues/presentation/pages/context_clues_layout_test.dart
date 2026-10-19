@@ -381,20 +381,23 @@ void main() {
 
   group('1. Initial Screen & Layout Setup', () {
     testWidgets(
-      '1.1 renders ContextCluesCaseHeader with forensic unit and case number',
+      '1.1 renders ContextCluesCaseHeader with header and clue number',
       (tester) async {
         await pumpScreen(tester);
 
         expect(find.byType(ContextCluesCaseHeader), findsOneWidget);
-        expect(find.text('LINGUISTIC FORENSIC UNIT'), findsOneWidget);
-        expect(find.text('CASE #2-1'), findsOneWidget);
+        expect(find.text('CONTEXT CLUES'), findsOneWidget);
+        expect(find.text('Level 2 • Clue 1'), findsOneWidget);
       },
     );
 
-    testWidgets('1.2 renders instruction banner in uppercase', (tester) async {
+    testWidgets('1.2 renders instruction banner', (tester) async {
       await pumpScreen(tester);
 
-      expect(find.text('IDENTIFY THE REDACTED COMPONENT.'), findsOneWidget);
+      expect(
+        find.text('Read the sentence and find the missing word from the clues.'),
+        findsOneWidget,
+      );
     });
 
     testWidgets(
@@ -413,7 +416,7 @@ void main() {
 
         expect(find.byType(ContextCluesEvidenceSentence), findsWidgets);
         final sentenceFinder = find.descendant(
-          of: find.byType(ContextCluesEvidenceSentence),
+            of: find.byType(ContextCluesEvidenceSentence),
           matching: find.byType(RichText),
         );
         final richText = tester.widget<RichText>(sentenceFinder.first);
@@ -430,10 +433,10 @@ void main() {
       await pumpScreen(tester);
 
       expect(find.byType(ContextCluesEvidenceTags), findsOneWidget);
-      expect(find.text('WEAPON'), findsOneWidget);
-      expect(find.text('DOCUMENT'), findsOneWidget);
-      expect(find.text('COIN'), findsOneWidget);
-      expect(find.text('MAP'), findsOneWidget);
+      expect(find.text('weapon'), findsOneWidget);
+      expect(find.text('document'), findsOneWidget);
+      expect(find.text('coin'), findsOneWidget);
+      expect(find.text('map'), findsOneWidget);
     });
 
     testWidgets('1.6 renders minimal quest with 2 options cleanly', (
@@ -445,8 +448,8 @@ void main() {
       );
       await pumpScreen(tester, state: minState);
 
-      expect(find.text('YES'), findsOneWidget);
-      expect(find.text('NO'), findsOneWidget);
+      expect(find.text('yes'), findsOneWidget);
+      expect(find.text('no'), findsOneWidget);
     });
 
     testWidgets('1.7 dispatches FetchVocabularyQuests on mount', (
@@ -497,8 +500,12 @@ void main() {
         final scannerFinder = find.byType(ContextCluesScanner);
         expect(scannerFinder, findsOneWidget);
 
-        // Drag scanner horizontally by 40 so distance % 40 < 5
-        await tester.drag(scannerFinder, const Offset(40, 0));
+        final gesture = await tester.startGesture(tester.getCenter(scannerFinder));
+        for (int i = 0; i < 45; i++) {
+          await gesture.moveBy(const Offset(1, 0));
+          await tester.pump(const Duration(milliseconds: 16));
+        }
+        await gesture.up();
         await tester.pump();
 
         verify(
@@ -513,7 +520,10 @@ void main() {
         await pumpScreen(tester);
 
         final scannerFinder = find.byType(ContextCluesScanner);
-        await tester.drag(scannerFinder, const Offset(1000, 1000));
+        final gesture = await tester.startGesture(tester.getCenter(scannerFinder));
+        await gesture.moveBy(const Offset(1000, 0));
+        await tester.pump();
+        await gesture.up();
         await tester.pump();
 
         // Scanner remains within widget bounds without crashing or throwing
@@ -528,7 +538,7 @@ void main() {
       (tester) async {
         await pumpScreen(tester);
 
-        final optionTag = find.text('DOCUMENT');
+        final optionTag = find.text('document');
         expect(optionTag, findsOneWidget);
 
         await tester.tap(optionTag);
@@ -544,7 +554,7 @@ void main() {
       (tester) async {
         await pumpScreen(tester);
 
-        await tester.tap(find.text('DOCUMENT'));
+        await tester.tap(find.text('document'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 100));
 
@@ -561,7 +571,7 @@ void main() {
       (tester) async {
         await pumpScreen(tester);
 
-        await tester.tap(find.text('WEAPON'));
+        await tester.tap(find.text('weapon'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 350));
         await tester.pump(const Duration(milliseconds: 300));
@@ -584,7 +594,7 @@ void main() {
       vocabularyStreamController.add(answeredState);
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('DOCUMENT'), warnIfMissed: false);
+      await tester.tap(find.text('document'), warnIfMissed: false);
       await tester.pumpAndSettle();
 
       // SubmitAnswer should not be called since already answered
@@ -600,7 +610,7 @@ void main() {
         await pumpScreen(tester, state: answeredState);
 
         expect(find.byType(ContextCluesEvidenceTags), findsOneWidget);
-        expect(find.text('WEAPON'), findsOneWidget);
+        expect(find.text('weapon'), findsOneWidget);
       },
     );
   });
@@ -611,7 +621,7 @@ void main() {
       (tester) async {
         await pumpScreen(tester);
 
-        await tester.tap(find.text('WEAPON'));
+        await tester.tap(find.text('weapon'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 350));
         await tester.pump(const Duration(milliseconds: 300));
@@ -619,7 +629,7 @@ void main() {
         final evidenceWrapper = find.byType(EvidenceHighlightWrapper);
         expect(evidenceWrapper, findsOneWidget);
         expect(
-          find.text('Find the location clue that proves the answer'),
+          find.text('Tap the clue words in the sentence that support your answer'),
           findsOneWidget,
         );
       },
@@ -631,7 +641,7 @@ void main() {
         await pumpScreen(tester);
 
         // Advance to Phase 2
-        await tester.tap(find.text('WEAPON'));
+        await tester.tap(find.text('weapon'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 350));
         await tester.pumpAndSettle();
@@ -664,7 +674,7 @@ void main() {
         await pumpScreen(tester);
 
         // Advance to Phase 2
-        await tester.tap(find.text('WEAPON'));
+        await tester.tap(find.text('weapon'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 350));
         await tester.pumpAndSettle();
@@ -693,7 +703,7 @@ void main() {
         await pumpScreen(tester);
 
         // Advance to Phase 2
-        await tester.tap(find.text('WEAPON'));
+        await tester.tap(find.text('weapon'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 350));
         await tester.pumpAndSettle();
@@ -753,7 +763,7 @@ void main() {
         await pumpScreen(tester, state: minState);
 
         // Tap correct option
-        await tester.tap(find.text('YES'));
+        await tester.tap(find.text('yes'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 350));
         await tester.pump(const Duration(milliseconds: 300));
@@ -819,7 +829,7 @@ void main() {
         await pumpScreen(tester);
 
         // Tap wrong answer
-        await tester.tap(find.text('DOCUMENT'));
+        await tester.tap(find.text('document'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 100));
 
@@ -844,7 +854,7 @@ void main() {
         await pumpScreen(tester);
 
         // Tap wrong answer
-        await tester.tap(find.text('DOCUMENT'));
+        await tester.tap(find.text('document'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 100));
 
@@ -884,7 +894,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 200));
 
       // Tapping option does not dispatch another answer
-      await tester.tap(find.text('DOCUMENT'), warnIfMissed: false);
+      await tester.tap(find.text('document'), warnIfMissed: false);
       await tester.pump();
 
       verifyNever(() => mockVocabularyBloc.add(const SubmitAnswer(false)));
@@ -930,9 +940,9 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 200));
 
-        expect(find.text('TRAIL'), findsOneWidget);
-        expect(find.text('OCEAN'), findsOneWidget);
-        expect(find.text('CASE #2-2'), findsOneWidget);
+        expect(find.text('trail'), findsOneWidget);
+        expect(find.text('ocean'), findsOneWidget);
+        expect(find.text('Level 2 • Clue 2'), findsOneWidget);
       },
     );
 

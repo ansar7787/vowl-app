@@ -27,7 +27,6 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/pages/phrasal_verbs_screen.dart';
-import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_lcd.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_literal_comparison.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_option_key.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_vault_handle.dart';
@@ -326,21 +325,20 @@ void main() {
       tester,
     ) async {
       await pumpScreen(tester);
-      expect(find.text('VAULT SECURITY: L-2'), findsOneWidget);
-      expect(find.byIcon(Icons.vpn_key_rounded), findsOneWidget);
+      expect(find.text('Level 2'), findsOneWidget);
+      expect(find.byIcon(Icons.stars_rounded), findsOneWidget);
       expect(
         find.textContaining('Select the correct particle'),
         findsOneWidget,
       );
     });
 
-    testWidgets('1.3 renders PhrasalVerbsLcd terminal with decrypted definition', (
+    testWidgets('1.3 does not spoil quest hint on screen by default', (
       tester,
     ) async {
       await pumpScreen(tester);
-      expect(find.byType(PhrasalVerbsLcd), findsOneWidget);
-      expect(find.text('DECRYPTING TARGET'), findsOneWidget);
-      expect(find.text('TO CANCEL AN EVENT'), findsOneWidget);
+      expect(find.text('MEANING'), findsNothing);
+      expect(find.text('To cancel an event'), findsNothing);
     });
 
     testWidgets('1.4 renders central PhrasalVerbsVaultHandle with target verb', (
@@ -655,6 +653,9 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
 
       expect(find.text('LEVEL COMPLETE!'), findsOneWidget);
+
+      Navigator.of(tester.element(find.text('LEVEL COMPLETE!'))).pop();
+      await tester.pump(const Duration(milliseconds: 500));
     });
   });
 

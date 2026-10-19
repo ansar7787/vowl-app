@@ -1,48 +1,28 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PaperGridPainter extends CustomPainter {
+  final bool isDark;
+
+  PaperGridPainter({this.isDark = false});
+
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Colors.blue.withValues(alpha: 0.03)
+      ..color = (isDark ? Colors.white : Colors.blueGrey).withValues(alpha: 0.04)
       ..strokeWidth = 1.0;
 
-    const step = 25.0;
+    const step = 28.0;
     for (double i = 0; i < size.width; i += step) {
       canvas.drawLine(Offset(i, 0), Offset(i, size.height), paint);
     }
     for (double i = 0; i < size.height; i += step) {
       canvas.drawLine(Offset(0, i), Offset(size.width, i), paint);
     }
-
-    // "CONFIDENTIAL" Stamp
-    final textPainter = TextPainter(
-      text: TextSpan(
-        text: "CONFIDENTIAL",
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 60.sp,
-          color: Colors.red.withValues(alpha: 0.03),
-          fontWeight: FontWeight.w900,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    textPainter.layout();
-    canvas.save();
-    canvas.translate(size.width / 2, size.height / 2);
-    canvas.rotate(-math.pi / 6);
-    textPainter.paint(
-      canvas,
-      Offset(-textPainter.width / 2, -textPainter.height / 2),
-    );
-    canvas.restore();
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant PaperGridPainter oldDelegate) =>
+      oldDelegate.isDark != isDark;
 }
 
 class ScannerCrosshairPainter extends CustomPainter {

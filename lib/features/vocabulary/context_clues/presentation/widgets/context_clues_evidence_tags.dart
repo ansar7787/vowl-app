@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 
 class ContextCluesEvidenceTags extends StatelessWidget {
   final List<String> options;
@@ -27,115 +28,140 @@ class ContextCluesEvidenceTags extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>();
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final reduceMotion =
         MediaQuery.maybeOf(context)?.disableAnimations ?? false;
-    final content = Column(
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: Row(
+
+    final content = Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
             children: [
-              Icon(Icons.label_important_rounded, size: 14.r, color: color),
+              Icon(
+                Icons.check_circle_outline_rounded,
+                size: 16.r,
+                color: color,
+              ),
               SizedBox(width: 8.w),
               Expanded(
                 child: Text(
-                  "IDENTIFY REDACTED COMPONENT",
+                  "Choose the correct word:",
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.bold,
-                    color: color.withValues(alpha: 0.7),
-                    letterSpacing: 1.5,
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w600,
+                    color: tokens?.textSecondary ?? color.withValues(alpha: 0.8),
+                    letterSpacing: 0.3,
                   ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+                  softWrap: true,
                 ),
               ),
             ],
           ),
-        ),
-        SizedBox(height: 15.h),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: Row(
-            children: options.map((o) {
-              final isSelected = selectedOption == o;
-              final showCorrect =
-                  (isAnswered && isCorrect == true && o == correct) ||
-                  (isAnswered && isFinalFailure && o == correct);
-              final showWrong = isAnswered && isSelected && isCorrect == false;
+          SizedBox(height: 12.h),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final double cardWidth = (constraints.maxWidth - 12.w) / 2;
 
-              return Padding(
-                padding: EdgeInsets.only(right: 15.w),
-                child: ScaleButton(
-                  onTap: () => onOptionSelected(o),
-                  child: Container(
-                    padding: EdgeInsets.only(left: 10.w),
-                    decoration: BoxDecoration(
-                      color: color.withValues(alpha: 0.05),
-                      borderRadius: BorderRadius.circular(4.r),
-                    ),
-                    child: IntrinsicWidth(
-                      child: Row(
-                        children: [
-                          // Tag String Hole
-                          Container(
-                            width: 10.r,
-                            height: 10.r,
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                            ),
+              return Wrap(
+                spacing: 12.w,
+                runSpacing: 10.h,
+                children: options.map((o) {
+                  final isSelected = selectedOption == o;
+                  final showCorrect =
+                      (isAnswered && isCorrect == true && o == correct) ||
+                      (isAnswered && isFinalFailure && o == correct);
+                  final showWrong =
+                      isAnswered && isSelected && isCorrect == false;
+
+                  final normalBg = isDark
+                      ? (tokens?.surface ?? const Color(0xFF161822))
+                      : Colors.white;
+                  final normalBorder = isDark
+                      ? (tokens?.borderSubtle ?? Colors.white.withValues(alpha: 0.1))
+                      : color.withValues(alpha: 0.18);
+                  final normalTextColor = tokens?.textPrimary ??
+                      (isDark ? Colors.white : const Color(0xFF0F172A));
+
+                  Color cardBg = normalBg;
+                  Color borderColor = normalBorder;
+                  Color textColor = normalTextColor;
+
+                  if (showCorrect) {
+                    final correctColor = tokens?.gameCorrect ?? Colors.green;
+                    cardBg = correctColor.withValues(alpha: 0.12);
+                    borderColor = correctColor;
+                    textColor = correctColor;
+                  } else if (showWrong) {
+                    final wrongColor = tokens?.gameIncorrect ?? Colors.red;
+                    cardBg = wrongColor.withValues(alpha: 0.12);
+                    borderColor = wrongColor;
+                    textColor = wrongColor;
+                  } else if (isSelected) {
+                    cardBg = color.withValues(alpha: 0.15);
+                    borderColor = color;
+                    textColor = color;
+                  }
+
+                  return SizedBox(
+                    width: cardWidth,
+                    child: ScaleButton(
+                      onTap: () => onOptionSelected(o),
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 200),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 14.w,
+                          vertical: 13.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: cardBg,
+                          borderRadius: BorderRadius.circular(14.r),
+                          border: Border.all(
+                            color: borderColor,
+                            width: (isSelected || showCorrect || showWrong)
+                                ? 2.0
+                                : 1.2,
                           ),
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 20.w,
-                              vertical: 15.h,
+                          boxShadow: [
+                            BoxShadow(
+                              color: isDark
+                                  ? Colors.black.withValues(alpha: 0.2)
+                                  : Colors.black.withValues(alpha: 0.03),
+                              blurRadius: 8,
+                              offset: const Offset(0, 2),
                             ),
-                            decoration: BoxDecoration(
-                              color: showCorrect
-                                  ? Colors.green.withValues(alpha: 0.2)
-                                  : (showWrong
-                                        ? Colors.red.withValues(alpha: 0.2)
-                                        : (isSelected
-                                              ? color.withValues(alpha: 0.2)
-                                              : Colors.white)),
-                              border: Border(
-                                left: BorderSide(
-                                  color: color.withValues(alpha: 0.2),
-                                  width: 1,
-                                ),
-                              ),
-                            ),
-                            child: Text(
-                              o.toUpperCase(),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.bold,
-                                color: showCorrect
-                                    ? Colors.green
-                                    : (showWrong
-                                          ? Colors.red
-                                          : (isSelected
-                                                ? color
-                                                : Colors.black87)),
-                              ),
-                            ),
+                          ],
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          o,
+                          textAlign: TextAlign.center,
+                          softWrap: true,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.5.sp,
+                            fontWeight: (isSelected || showCorrect)
+                                ? FontWeight.w700
+                                : FontWeight.w600,
+                            color: textColor,
                           ),
-                        ],
+                        ),
                       ),
                     ),
-                  ),
-                ),
+                  );
+                }).toList(),
               );
-            }).toList(),
+            },
           ),
-        ),
-      ],
+        ],
+      ),
     );
+
     if (reduceMotion) return content;
-    return content.animate().fadeIn(delay: 400.ms).slideY(begin: 0.2);
+    return content.animate().fadeIn(delay: 200.ms).slideY(begin: 0.1);
   }
 }

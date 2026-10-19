@@ -16,14 +16,16 @@ class AcademicWordInstruction extends StatelessWidget {
 
   static TextStyle _labelStyle(Color color) => TextStyle(
     fontFamily: 'Outfit',
-    fontSize: 11,
-    fontWeight: FontWeight.bold,
+    fontSize: 13.5.sp,
+    fontWeight: FontWeight.w600,
     color: color,
-    letterSpacing: 2,
+    height: 1.35,
+    letterSpacing: 0.2,
   );
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final banner = Semantics(
       container: true,
       label: label,
@@ -31,26 +33,28 @@ class AcademicWordInstruction extends StatelessWidget {
         maxScaleFactor: 1.5,
         child: Container(
           key: const Key('academic_word_instruction'),
-          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-          constraints: BoxConstraints(maxWidth: 320.w),
+          padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 8.h),
+          constraints: BoxConstraints(maxWidth: 340.w),
           decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.05),
-            borderRadius: BorderRadius.circular(30.r),
-            border: Border.all(color: color.withValues(alpha: 0.2)),
+            color: color.withValues(alpha: isDark ? 0.12 : 0.08),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(color: color.withValues(alpha: 0.25)),
           ),
           child: VowlMotion.lowAnimationModeOverride.value
               ? Text(
                   label,
                   key: const Key('academic_word_instruction_text'),
-                  maxLines: 2,
+                  maxLines: 3,
                   textAlign: TextAlign.center,
+                  softWrap: true,
                   style: _labelStyle(color),
                 )
               : Text(
                   label,
                   key: const Key('academic_word_instruction_text'),
-                  maxLines: 2,
+                  maxLines: 3,
                   textAlign: TextAlign.center,
+                  softWrap: true,
                   style: _labelStyle(color),
                 ).animate().shimmer(duration: 2.seconds),
         ),
@@ -60,6 +64,6 @@ class AcademicWordInstruction extends StatelessWidget {
     if (VowlMotion.lowAnimationModeOverride.value) {
       return banner;
     }
-    return banner.animate().fadeIn(duration: 800.ms);
+    return banner.animate().fadeIn(duration: 600.ms);
   }
 }

@@ -29,22 +29,26 @@ class ContextualUsageCard extends StatelessWidget {
     final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
 
     Widget cardContent = AnimatedContainer(
-      duration: reduceMotion ? Duration.zero : const Duration(milliseconds: 600),
-      curve: Curves.elasticOut,
-      width: 0.88.sw,
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 40.h),
+      duration: reduceMotion ? Duration.zero : const Duration(milliseconds: 300),
+      curve: Curves.easeOutCubic,
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 22.h),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
-        borderRadius: BorderRadius.circular(4.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: color.withValues(alpha: isAnswered ? 0.6 : 0.2),
+          color: color.withValues(
+            alpha: isAnswered ? 0.5 : (isDark ? 0.25 : 0.18),
+          ),
           width: 1.5,
         ),
         boxShadow: [
           BoxShadow(
-            color: color.withValues(alpha: isAnswered ? 0.3 : 0.05),
-            blurRadius: isAnswered ? 40 : 15,
-            offset: Offset(0, isAnswered ? 15 : 5),
+            color: (isDark ? Colors.black : color).withValues(
+              alpha: isAnswered ? 0.12 : 0.05,
+            ),
+            blurRadius: isAnswered ? 24 : 16,
+            offset: Offset(0, isAnswered ? 8 : 4),
           ),
         ],
       ),
@@ -55,15 +59,22 @@ class ContextualUsageCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Flexible(
-                child: Text(
-                  'CONTEXT USAGE',
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 1,
-                    color: color.withValues(alpha: 0.8),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                  decoration: BoxDecoration(
+                    color: color.withValues(alpha: isDark ? 0.15 : 0.08),
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  child: Text(
+                    'Sentence Context',
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.5.sp,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 0.5,
+                      color: color,
+                    ),
                   ),
                 ),
               ),
@@ -71,7 +82,7 @@ class ContextualUsageCard extends StatelessWidget {
                 onTap: () {
                   if (di.sl.isRegistered<SoundService>()) {
                     final speechSentence = question.replaceAll(
-                      '_____',
+                      RegExp(r'_+'),
                       selectedOption ?? 'blank',
                     );
                     di.sl<SoundService>().playTts(speechSentence);
@@ -80,8 +91,12 @@ class ContextualUsageCard extends StatelessWidget {
                 child: Semantics(
                   label: 'Listen to sentence',
                   button: true,
-                  child: Padding(
-                    padding: EdgeInsets.all(4.r),
+                  child: Container(
+                    padding: EdgeInsets.all(6.r),
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: isDark ? 0.15 : 0.08),
+                      shape: BoxShape.circle,
+                    ),
                     child: Icon(
                       Icons.volume_up_rounded,
                       size: 18.r,
@@ -92,49 +107,19 @@ class ContextualUsageCard extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 12.h),
-          Container(
-            height: 1,
-            width: double.infinity,
-            color: color.withValues(alpha: 0.1),
+          SizedBox(height: 18.h),
+          Text.rich(
+            TextSpan(
+              children: _buildSentenceSpans(
+                question,
+                color,
+                isDark,
+              ),
+            ),
+            textAlign: TextAlign.center,
+            softWrap: true,
           ),
-          SizedBox(height: 16.h),
-          reduceMotion
-              ? Text.rich(
-                  TextSpan(
-                    children: _buildSentenceSpans(
-                      question,
-                      color,
-                      isDark,
-                    ),
-                  ),
-                  textAlign: TextAlign.center,
-                )
-              : Text.rich(
-                  TextSpan(
-                    children: _buildSentenceSpans(
-                      question,
-                      color,
-                      isDark,
-                    ),
-                  ),
-                  textAlign: TextAlign.center,
-                )
-                .animate(target: isAnswered ? 1 : 0)
-                .shimmer(
-                  duration: 1.5.seconds,
-                  color: color.withValues(alpha: 0.2),
-                )
-                .scale(
-                  begin: const Offset(1, 1),
-                  end: const Offset(1.05, 1.05),
-                ),
-          SizedBox(height: 20.h),
-          Container(
-            height: 1,
-            width: double.infinity,
-            color: color.withValues(alpha: 0.1),
-          ),
+          SizedBox(height: 6.h),
         ],
       ),
     );
@@ -142,47 +127,16 @@ class ContextualUsageCard extends StatelessWidget {
     if (!reduceMotion) {
       cardContent = cardContent
           .animate(target: isAnswered ? 1 : 0)
-          .custom(
-            builder: (context, value, child) => Transform(
-              transform: Matrix4.identity()
-                ..setEntry(3, 2, 0.001)
-                ..rotateX((1 - value) * 0.2),
-              alignment: Alignment.topCenter,
-              child: child,
-            ),
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.02, 1.02),
+            curve: Curves.easeOutCubic,
+            duration: 300.ms,
           );
     }
 
     return Center(
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          reduceMotion
-              ? Container(
-                  width: 0.8.sw,
-                  height: 180.h,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: color.withValues(alpha: 0.05),
-                  ),
-                )
-              : Container(
-                  width: 0.8.sw,
-                  height: 180.h,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: color.withValues(alpha: 0.05),
-                  ),
-                )
-                .animate(target: isAnswered ? 1 : 0)
-                .scale(
-                  begin: const Offset(0.5, 0.5),
-                  end: const Offset(1.5, 1.5),
-                  curve: Curves.easeOutCubic,
-                ),
-          cardContent,
-        ],
-      ),
+      child: cardContent,
     );
   }
 
@@ -191,8 +145,8 @@ class ContextualUsageCard extends StatelessWidget {
     Color color,
     bool isDark,
   ) {
-    final parts = sentence.split("_____");
-    List<TextSpan> spans = [];
+    final parts = sentence.split(RegExp(r'_+'));
+    final List<TextSpan> spans = [];
 
     for (int i = 0; i < parts.length; i++) {
       spans.add(
@@ -200,37 +154,51 @@ class ContextualUsageCard extends StatelessWidget {
           text: parts[i],
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 19.sp,
-            fontWeight: FontWeight.w400,
+            fontSize: 17.5.sp,
+            fontWeight: FontWeight.w500,
             color: isDark
-                ? Colors.white.withValues(alpha: 0.9)
-                : Colors.black87,
-            height: 1.5,
+                ? Colors.white.withValues(alpha: 0.95)
+                : const Color(0xFF1E293B),
+            height: 1.55,
           ),
         ),
       );
 
       if (i < parts.length - 1) {
+        final displayText = selectedOption != null
+            ? " ${_formatOptionInSentence(selectedOption!)} "
+            : "  _______  ";
+
         spans.add(
           TextSpan(
-            text: selectedOption ?? " ________ ",
+            text: displayText,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 20.sp,
-              fontWeight: FontWeight.w900,
+              fontSize: 17.5.sp,
+              fontWeight: FontWeight.w700,
               color: isAnswered
                   ? (isCorrect == true
-                        ? AppColors.gameCorrect
-                        : AppColors.gameIncorrect)
+                      ? AppColors.gameCorrect
+                      : AppColors.gameIncorrect)
                   : color,
               decoration: isAnswered
                   ? TextDecoration.none
                   : TextDecoration.underline,
+              decorationColor: color.withValues(alpha: 0.4),
+              decorationThickness: 2,
             ),
           ),
         );
       }
     }
     return spans;
+  }
+
+  String _formatOptionInSentence(String option) {
+    if (option.isEmpty) return option;
+    if (option == option.toUpperCase() && option.length > 1) {
+      return option.toLowerCase();
+    }
+    return option;
   }
 }

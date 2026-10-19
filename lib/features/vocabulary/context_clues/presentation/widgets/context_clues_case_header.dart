@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 
 class ContextCluesCaseHeader extends StatelessWidget {
   final int level;
@@ -16,54 +17,55 @@ class ContextCluesCaseHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>();
     final reduceMotion =
         MediaQuery.maybeOf(context)?.disableAnimations ?? false;
-    final headerContent = Container(
-      padding: EdgeInsets.symmetric(vertical: 10.h),
+
+    final headerContent = Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            "LINGUISTIC FORENSIC UNIT",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              letterSpacing: 5,
-              color: color.withValues(alpha: 0.6),
-              fontWeight: FontWeight.bold,
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(20.r),
+              border: Border.all(
+                color: color.withValues(alpha: 0.25),
+                width: 1,
+              ),
+            ),
+            child: Text(
+              "CONTEXT CLUES",
+              textAlign: TextAlign.center,
+              softWrap: true,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 11.sp,
+                letterSpacing: 1.2,
+                color: color,
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
-          SizedBox(height: 4.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 40.w,
-                height: 1,
-                color: color.withValues(alpha: 0.2),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.w),
-                child: Text(
-                  "CASE #$level-${questIndex + 1}",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    color: color,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              Container(
-                width: 40.w,
-                height: 1,
-                color: color.withValues(alpha: 0.2),
-              ),
-            ],
+          SizedBox(height: 6.h),
+          Text(
+            "Level $level • Clue ${questIndex + 1}",
+            textAlign: TextAlign.center,
+            softWrap: true,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 13.sp,
+              color: tokens?.textSecondary ?? color.withValues(alpha: 0.8),
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ],
       ),
     );
+
     if (reduceMotion) return headerContent;
-    return headerContent.animate().fadeIn().slideY(begin: -0.2);
+    return headerContent.animate().fadeIn().slideY(begin: -0.15);
   }
 }

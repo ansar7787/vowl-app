@@ -73,14 +73,14 @@ class CollocationOptionBubble extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
         curve: Curves.easeOutCubic,
-        width: isCompact ? 100.w : 130.w,
-        height: isCompact ? 100.w : 130.w,
+        width: isCompact ? 96.w : 118.w,
+        height: isCompact ? 96.w : 118.w,
         decoration: BoxDecoration(
           color: bubbleColor,
           shape: BoxShape.circle,
           border: Border.all(
             color: borderColor,
-            width: isSelected || showCorrect || showWrong ? 3 : 1,
+            width: isSelected || showCorrect || showWrong ? 2.5 : 1.2,
           ),
           boxShadow: [
             BoxShadow(
@@ -94,7 +94,7 @@ class CollocationOptionBubble extends StatelessWidget {
         ),
         child: Center(
           child: Padding(
-            padding: EdgeInsets.all(15.r),
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: Text(
@@ -102,10 +102,10 @@ class CollocationOptionBubble extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w700,
                   color: textColor,
-                  letterSpacing: 1,
+                  letterSpacing: 0.5,
                 ),
               ),
             ),

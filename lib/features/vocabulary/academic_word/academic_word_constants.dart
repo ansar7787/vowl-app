@@ -8,7 +8,7 @@ abstract final class AcademicWordColors {
 }
 
 abstract final class AcademicWordStrings {
-  static const String slotPending = 'THRUST_PENDING';
+  static const String slotPending = 'Drop word here';
 }
 
 abstract final class AcademicWordLayout {

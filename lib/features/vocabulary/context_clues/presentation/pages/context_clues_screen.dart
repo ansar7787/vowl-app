@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:ui';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
@@ -94,7 +93,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
 
     final double halfWidth = constraints.maxWidth / 2;
     final double halfHeight = constraints.maxHeight / 2;
-    final double padding = (lensSize / 2) + 10.r;
+    final double padding = (lensSize / 2) + 24.r;
 
     final double maxX = math.max(0.0, halfWidth - padding);
     final double maxY = math.max(0.0, halfHeight - padding);
@@ -156,15 +155,31 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
   void onQuestionReset() {
     _scrollTimer?.cancel();
     _lensPosition.value = Offset.zero;
-
     _selectedOption.value = null;
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0);
+    } else {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (_scrollController.hasClients) {
+          _scrollController.jumpTo(0);
+        }
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
-      listener: onVocabularyStateChanged,
+      listener: (context, state) {
+        if (state is VocabularyLoaded &&
+            state.currentIndex != lastProcessedIndex) {
+          if (_scrollController.hasClients) {
+            _scrollController.jumpTo(0);
+          }
+        }
+        onVocabularyStateChanged(context, state);
+      },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(
           'vocabulary',
@@ -219,11 +234,14 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                   if (_scrollController.hasClients) {
                     _scrollController.animateTo(
                       0,
-                      duration: const Duration(milliseconds: 400),
+                      duration: const Duration(milliseconds: 300),
                       curve: Curves.easeOutCubic,
                     );
                   }
                 } else {
+                  if (_scrollController.hasClients) {
+                    _scrollController.jumpTo(0);
+                  }
                   context.read<VocabularyBloc>().add(NextQuestion());
                 }
               },
@@ -242,9 +260,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                           thickness: 4.w,
                           child: CustomScrollView(
                             controller: _scrollController,
-                            physics: (!isFirstStagePassedNotifier.value)
-                                ? const NeverScrollableScrollPhysics()
-                                : const BouncingScrollPhysics(),
+                            physics: const BouncingScrollPhysics(),
                             slivers: [
                               SliverToBoxAdapter(
                                 child: Column(
@@ -268,22 +284,27 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                                     ),
                                     if (isFirstStagePassedNotifier.value &&
                                         !isAnsweredNotifier.value)
-                                      EvidenceHighlightWrapper(
-                                        passage:
-                                            quest.sentence?.replaceAll(
-                                              '[TARGET]',
-                                              quest.correctAnswer ?? '',
-                                            ) ??
-                                            "",
-                                        evidenceWords:
-                                            quest.evidenceWords ?? [],
-                                        primaryColor: theme.primaryColor,
-                                        instruction:
-                                            "Find the ${quest.clueType ?? 'context'} clue that proves the answer",
-                                        onCorrectHighlight: () =>
-                                            _submitFinalAnswer(true, quest),
-                                        onWrongHighlight: () => {},
-                                        isPositioned: false,
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          vertical: 8.h,
+                                        ),
+                                        child: EvidenceHighlightWrapper(
+                                          passage:
+                                              quest.sentence?.replaceAll(
+                                                '[TARGET]',
+                                                quest.correctAnswer ?? '',
+                                              ) ??
+                                              "",
+                                          evidenceWords:
+                                              quest.evidenceWords ?? [],
+                                          primaryColor: theme.primaryColor,
+                                          instruction:
+                                              "Tap the clue words in the sentence that support your answer",
+                                          onCorrectHighlight: () =>
+                                              _submitFinalAnswer(true, quest),
+                                          onWrongHighlight: () => {},
+                                          isPositioned: false,
+                                        ),
                                       ),
                                     SizedBox(height: 60.h),
                                   ],
@@ -312,25 +333,20 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
     return LayoutBuilder(
       builder: (context, constraints) {
         final maxHeight = constraints.maxHeight;
-        final isCompact = maxHeight < 580;
+        final isCompact = maxHeight < 620;
 
         final double estimatedContentHeight =
-            (isCompact ? 40.h : 60.h) +
-            (isCompact ? 10.h : 20.h) +
-            (isCompact ? 90.h : 110.h) +
-            30.h;
-        final remainingHeight = maxHeight - estimatedContentHeight;
+            (isCompact ? 48.h : 56.h) +
+            (isCompact ? 28.h : 36.h) +
+            (isCompact ? 116.h : 130.h) +
+            24.h;
+        final remainingHeight =
+            math.max(0.0, maxHeight - estimatedContentHeight);
 
         final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
-        final double gapTop = remainingHeight > 0
-            ? (gapUnit * 1).clamp(4.0, 12.0)
-            : 4.0;
-        final double gapMiddle = remainingHeight > 0
-            ? (gapUnit * 1.5).clamp(8.0, 20.0)
-            : 8.0;
-        final double gapBottom = remainingHeight > 0
-            ? (gapUnit * 2.5).clamp(10.0, 30.0)
-            : 10.0;
+        final double gapTop = (gapUnit * 0.8).clamp(4.0, 10.0);
+        final double gapMiddle = (gapUnit * 1.0).clamp(6.0, 14.0);
+        final double gapBottom = (gapUnit * 1.2).clamp(8.0, 18.0);
 
         final reduceMotion =
             MediaQuery.maybeOf(context)?.disableAnimations ?? false;
@@ -338,35 +354,28 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
         return Column(
           children: [
             SizedBox(height: gapTop),
-            isCompact
-                ? SizedBox(
-                    height: 35.h,
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: ContextCluesCaseHeader(
-                        level: widget.level,
-                        questIndex: questIndex,
-                        color: color,
-                      ),
-                    ),
-                  )
-                : ContextCluesCaseHeader(
-                    level: widget.level,
-                    questIndex: questIndex,
-                    color: color,
-                  ),
-            SizedBox(height: 4.h),
+            ContextCluesCaseHeader(
+              level: widget.level,
+              questIndex: questIndex,
+              color: color,
+            ),
+            SizedBox(height: 6.h),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Text(
-                InstructionHelper.getInstruction(quest).toUpperCase(),
+                "Read the sentence and find the missing word from the clues.",
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 9.sp,
-                  color: color.withValues(alpha: 0.4),
-                  letterSpacing: 1,
+                  fontSize: 13.sp,
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onSurface
+                      .withValues(alpha: 0.7),
+                  fontWeight: FontWeight.w500,
+                  height: 1.3,
                 ),
                 textAlign: TextAlign.center,
+                softWrap: true,
               ),
             ),
             SizedBox(height: gapMiddle),
@@ -377,8 +386,10 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                     alignment: Alignment.center,
                     clipBehavior: Clip.none,
                     children: [
-                      const Positioned.fill(
-                        child: ContextCluesCaseFileBackground(),
+                      Positioned.fill(
+                        child: ContextCluesCaseFileBackground(
+                          accentColor: color,
+                        ),
                       ),
                       // BLURRED BACKGROUND (The mystery)
                       TweenAnimationBuilder<double>(
@@ -419,7 +430,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                         ValueListenableBuilder<Offset>(
                           valueListenable: _lensPosition,
                           builder: (context, pos, _) {
-                            final lensSize = isCompact ? 100.r : 160.r;
+                            final lensSize = isCompact ? 110.r : 150.r;
                             final lensRadius = lensSize / 2;
                             final centerPos = Offset(
                               (innerConstraints.maxWidth / 2) + pos.dx,
@@ -452,6 +463,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                                     top: centerPos.dy - lensRadius,
                                     child: GestureDetector(
                                       behavior: HitTestBehavior.opaque,
+                                      onPanStart: (_) {},
                                       onPanUpdate: (d) => _onLensMove(
                                         d,
                                         innerConstraints,

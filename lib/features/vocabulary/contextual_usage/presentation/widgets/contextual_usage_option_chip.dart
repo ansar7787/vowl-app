@@ -9,6 +9,7 @@ class ContextualUsageOptionChip extends StatelessWidget {
   final bool isSelected;
   final bool? isCorrect;
   final VoidCallback onTap;
+  final double? width;
 
   const ContextualUsageOptionChip({
     super.key,
@@ -18,57 +19,86 @@ class ContextualUsageOptionChip extends StatelessWidget {
     required this.isSelected,
     required this.isCorrect,
     required this.onTap,
+    this.width,
   });
+
+  String get _displayWord {
+    if (text.isEmpty) return text;
+    if (text == text.toUpperCase() && text.length > 1) {
+      return '${text[0].toUpperCase()}${text.substring(1).toLowerCase()}';
+    }
+    return text;
+  }
 
   @override
   Widget build(BuildContext context) {
-    Color tileColor = isDark ? color.withValues(alpha: 0.1) : Colors.white;
-    Color borderColor = color.withValues(alpha: 0.3);
-    Color textColor = isDark ? Colors.white70 : Colors.black87;
+    Color tileColor = isDark
+        ? color.withValues(alpha: 0.08)
+        : Colors.white;
+    Color borderColor = isDark
+        ? Colors.white.withValues(alpha: 0.12)
+        : color.withValues(alpha: 0.2);
+    Color textColor = isDark
+        ? Colors.white.withValues(alpha: 0.9)
+        : const Color(0xFF0F172A);
 
     if (isSelected) {
       if (isCorrect == true) {
-        tileColor = Colors.green.withValues(alpha: 0.2);
+        tileColor = Colors.green.withValues(alpha: isDark ? 0.2 : 0.12);
         borderColor = Colors.green;
-        textColor = isDark ? Colors.white : Colors.green.shade700;
+        textColor = isDark ? Colors.green.shade200 : Colors.green.shade700;
       } else if (isCorrect == false) {
-        tileColor = Colors.red.withValues(alpha: 0.2);
+        tileColor = Colors.red.withValues(alpha: isDark ? 0.2 : 0.12);
         borderColor = Colors.red;
-        textColor = isDark ? Colors.white : Colors.red.shade700;
+        textColor = isDark ? Colors.red.shade200 : Colors.red.shade700;
       } else {
-        tileColor = color.withValues(alpha: 0.3);
+        tileColor = color.withValues(alpha: isDark ? 0.2 : 0.12);
         borderColor = color;
         textColor = isDark ? Colors.white : color;
       }
     }
 
-    return ScaleButton(
-      onTap: onTap,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 300),
-        constraints: BoxConstraints(minWidth: 140.w),
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
-        decoration: BoxDecoration(
-          color: tileColor,
-          borderRadius: BorderRadius.circular(8.r),
-          border: Border.all(color: borderColor, width: 1.5),
-          boxShadow: [
-            if (isSelected)
+    return SizedBox(
+      width: width,
+      child: ScaleButton(
+        onTap: onTap,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          constraints: width == null
+              ? BoxConstraints(minWidth: 120.w, maxWidth: 165.w)
+              : null,
+          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 14.h),
+          decoration: BoxDecoration(
+            color: tileColor,
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: borderColor,
+              width: isSelected ? 2.0 : 1.2,
+            ),
+            boxShadow: [
               BoxShadow(
-                color: borderColor.withValues(alpha: 0.3),
-                blurRadius: 15,
+                color: isSelected
+                    ? borderColor.withValues(alpha: 0.25)
+                    : (isDark
+                        ? Colors.black.withValues(alpha: 0.2)
+                        : Colors.black.withValues(alpha: 0.03)),
+                blurRadius: isSelected ? 12 : 6,
+                offset: const Offset(0, 2),
               ),
-          ],
-        ),
-        child: Text(
-          text.toUpperCase(),
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w800,
-            color: textColor,
-            letterSpacing: 1,
+            ],
+          ),
+          alignment: Alignment.center,
+          child: Text(
+            _displayWord,
+            textAlign: TextAlign.center,
+            softWrap: true,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 15.sp,
+              fontWeight: isSelected ? FontWeight.w700 : FontWeight.w600,
+              color: textColor,
+              letterSpacing: 0.2,
+            ),
           ),
         ),
       ),
