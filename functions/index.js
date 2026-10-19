@@ -537,7 +537,7 @@ exports.checkPremiumExpiry = onSchedule('0 3 * * *', async (event) => {
   console.log(`Revoked premium for ${expiredUsers.size} users.`);
 });
 
-// ðŸ† THE ULTIMATE WEEKLY RECAP (v2)
+// 🏆 THE WEEKLY RECAP
 // Runs every Sunday at 11:59 PM (Final Results)
 exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
   const db = admin.firestore();
@@ -552,6 +552,8 @@ exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
   if (snapshot.empty) return;
 
   const messages = [];
+  const seenTokens = new Set();
+  const duplicateCleanups = [];
   let rank = 1;
 
   snapshot.forEach((doc) => {
@@ -559,21 +561,27 @@ exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
     const token = user.fcmToken;
 
     if (token) {
-      let body = '';
-      let title = 'Weekly Recap ðŸ“Š';
+      if (seenTokens.has(token)) {
+        // Device token already claimed by a higher-ranked / active user
+        duplicateCleanups.push(
+          doc.ref.update({ fcmToken: admin.firestore.FieldValue.delete() }),
+        );
+        return;
+      }
+      seenTokens.add(token);
+
+      let title = 'Weekly Recap \u{1F4CA}';
+      let body = `You placed #${rank} in the global rankings this week. Keep up the strong consistency!`;
 
       if (rank === 1) {
-        title = 'The Crown is Yours! ðŸ‘‘';
-        body =
-          'UNBELIEVABLE! You are the #1 Vowl player in the world this week! ðŸ¥‡ Defend your throne!';
+        title = '1st place this week! \u{1F451}';
+        body = 'Outstanding achievement — you finished #1 on the global leaderboard!';
       } else if (rank === 2) {
-        title = 'Silver Medalist! ðŸ¥ˆ';
-        body = `Incredible! You finished #2 in the world! Can you hit #1 next week?`;
+        title = '2nd place this week! \u{1F948}';
+        body = 'Incredible performance! You earned the silver podium spot this week.';
       } else if (rank === 3) {
-        title = 'Podium Finish! ðŸ¥‰';
-        body = `Amazing! You finished #3 in the world! You're on the podium!`;
-      } else {
-        body = `Great job! You finished #${rank} in the Global Rankings! ðŸ† Keep climbing!`;
+        title = '3rd place this week! \u{1F949}';
+        body = 'Podium finish! You earned bronze on the global leaderboard.';
       }
 
       messages.push({
@@ -584,6 +592,7 @@ exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
         },
         data: {
           path: '/leaderboard',
+          targetUserId: doc.id,
         },
         android: {
           priority: 'high',
@@ -596,6 +605,14 @@ exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
     }
     rank++;
   });
+
+  if (duplicateCleanups.length > 0) {
+    try {
+      await Promise.all(duplicateCleanups);
+    } catch (e) {
+      console.warn('Stale token cleanup error:', e);
+    }
+  }
 
   // 2. Efficient Batch Sending (sendEach)
   if (messages.length > 0) {
@@ -610,7 +627,7 @@ exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
   }
 });
 
-// ðŸ”¥ STREAK-AT-RISK REMINDER (v2)
+// 🔥 STREAK REMINDER
 // Runs daily at 8:00 PM — nudges users who haven't logged in today
 exports.sendStreakReminders = onSchedule('0 20 * * *', async (event) => {
   const db = admin.firestore();
@@ -632,20 +649,50 @@ exports.sendStreakReminders = onSchedule('0 20 * * *', async (event) => {
     return;
   }
 
+  // Production-grade deduplication: If a device token is linked to multiple accounts
+  // (e.g. user switched accounts on the same phone without clean logout),
+  // prioritize the account that logged in most recently and prune duplicate associations.
+  const sortedDocs = [...usersAtRisk.docs].sort((a, b) => {
+    const timeA = a.data().lastLoginDate?.toMillis ? a.data().lastLoginDate.toMillis() : 0;
+    const timeB = b.data().lastLoginDate?.toMillis ? b.data().lastLoginDate.toMillis() : 0;
+    return timeB - timeA;
+  });
+
   const messages = [];
-  usersAtRisk.forEach((doc) => {
+  const seenTokens = new Set();
+  const duplicateCleanups = [];
+
+  sortedDocs.forEach((doc) => {
     const user = doc.data();
     const token = user.fcmToken;
     if (token) {
+      if (seenTokens.has(token)) {
+        // Device token already used by a more recently active user.
+        // Clean up the stale token from this older account to prevent future duplicates.
+        duplicateCleanups.push(
+          doc.ref.update({
+            fcmToken: admin.firestore.FieldValue.delete(),
+          })
+        );
+        return;
+      }
+      seenTokens.add(token);
+
       const streak = user.currentStreak || 0;
+      const title = streak === 1
+        ? 'Keep your momentum going \u{1F525}'
+        : `Keep your ${streak}-day streak going \u{1F525}`;
+      const body = 'A quick 2-minute practice will protect your daily streak.';
+
       messages.push({
         token: token,
         notification: {
-          title: 'Your Streak is in Danger! ðŸ”¥',
-          body: `Don't lose your ${streak}-day streak! Open Vowl and play a quick quest.`,
+          title: title,
+          body: body,
         },
         data: {
           path: '/streak',
+          targetUserId: doc.id,
         },
         android: {
           priority: 'high',
@@ -657,6 +704,15 @@ exports.sendStreakReminders = onSchedule('0 20 * * *', async (event) => {
       });
     }
   });
+
+  if (duplicateCleanups.length > 0) {
+    try {
+      await Promise.all(duplicateCleanups);
+      console.log(`Cleaned up ${duplicateCleanups.length} stale duplicate tokens.`);
+    } catch (e) {
+      console.warn('Error cleaning up duplicate tokens:', e);
+    }
+  }
 
   if (messages.length > 0) {
     try {
@@ -681,8 +737,8 @@ exports.sendStreakReminders = onSchedule('0 20 * * *', async (event) => {
               .get()
               .then((snapshot) => {
                 const deletes = [];
-                snapshot.forEach((doc) => {
-                  deletes.push(doc.ref.update({
+                snapshot.forEach((d) => {
+                  deletes.push(d.ref.update({
                     fcmToken: admin.firestore.FieldValue.delete(),
                   }));
                 });

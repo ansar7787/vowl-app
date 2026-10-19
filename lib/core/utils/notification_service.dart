@@ -224,6 +224,19 @@ class NotificationService {
       if (message.notification != null) {
         final enabled = await _areNotificationsEnabled;
         if (!enabled) return;
+
+        // Discard notification if it was targeted to a different user account
+        final targetUserId = message.data['targetUserId'] as String?;
+        final currentUserId = FirebaseAuth.instance.currentUser?.uid;
+        if (targetUserId != null && currentUserId != null && targetUserId != currentUserId) {
+          if (kDebugMode) {
+            debugPrint(
+              'NotificationService: Dropping message intended for user $targetUserId (active: $currentUserId)',
+            );
+          }
+          return;
+        }
+
         showNotification(
           message.notification!.title ??
               _t('notifications.fcm_default_title', fallback: 'Vowl Update'),
@@ -267,6 +280,16 @@ class NotificationService {
           if (kDebugMode) {
             debugPrint('Notification clicked! Path: ${message.data['path']}');
           }
+          final targetUserId = message.data['targetUserId'] as String?;
+          final currentUserId = FirebaseAuth.instance.currentUser?.uid;
+          if (targetUserId != null && currentUserId != null && targetUserId != currentUserId) {
+            if (kDebugMode) {
+              debugPrint(
+                'NotificationService: Tap ignored — message targeted user $targetUserId but current user is $currentUserId',
+              );
+            }
+            return;
+          }
           _handleNotificationTap(message.data['path'] as String?);
         });
 
@@ -277,9 +300,17 @@ class NotificationService {
       if (kDebugMode) {
         debugPrint('App opened from terminated state by notification');
       }
-      final path = initialMessage.data['path'] as String?;
-      if (path != null && path.isNotEmpty && _isSafeInternalPath(path)) {
-        AppRouter.pendingDeepLink = path;
+      final targetUserId = initialMessage.data['targetUserId'] as String?;
+      final currentUserId = FirebaseAuth.instance.currentUser?.uid;
+      if (targetUserId == null || currentUserId == null || targetUserId == currentUserId) {
+        final path = initialMessage.data['path'] as String?;
+        if (path != null && path.isNotEmpty && _isSafeInternalPath(path)) {
+          AppRouter.pendingDeepLink = path;
+        }
+      } else if (kDebugMode) {
+        debugPrint(
+          'NotificationService: Cold start notification ignored — targeted user $targetUserId but current is $currentUserId',
+        );
       }
     }
 
@@ -412,8 +443,9 @@ class NotificationService {
         return;
       }
 
-      await FirebaseFirestore.instance.collection('users').doc(user.uid).update(
+      await FirebaseFirestore.instance.collection('users').doc(user.uid).set(
         {'fcmToken': token},
+        SetOptions(merge: true),
       );
 
       if (kDebugMode) {
@@ -604,18 +636,29 @@ class NotificationService {
     // Streak-aware notification copy — personalised, encouraging, never annoying.
     // Messages adapt based on streak milestones to feel like genuine progress.
     final streakMessages = _getStreakNotificationCopy(currentStreak);
+    final String resolvedTitle;
+    final String resolvedBody;
 
-    await _localNotifications.zonedSchedule(
-      id: streakReminderNotificationId,
-      title: _t(
+    // Use localized strings for non-English locales; for English, use our tailored milestone copy.
+    if (_localeService != null && _localeService.currentLocale.languageCode != 'en') {
+      resolvedTitle = _t(
         'notifications.streak_reminder_title',
         fallback: streakMessages.title,
-      ),
-      body: _t(
+      );
+      resolvedBody = _t(
         'notifications.streak_reminder_body',
         args: [currentStreak.toString()],
         fallback: streakMessages.body,
-      ),
+      );
+    } else {
+      resolvedTitle = streakMessages.title;
+      resolvedBody = streakMessages.body;
+    }
+
+    await _localNotifications.zonedSchedule(
+      id: streakReminderNotificationId,
+      title: resolvedTitle,
+      body: resolvedBody,
       scheduledDate: scheduledDate,
       notificationDetails: platformDetails,
       androidScheduleMode: useExact
@@ -632,91 +675,86 @@ class NotificationService {
     }
   }
 
-  /// Returns personalised, premium notification copy based on streak count.
-  /// Messages feel like a supportive coach, not a nagging alarm.
+  /// Returns personalised, clean notification copy based on streak count.
+  /// Clear, human, encouraging, and respectful — avoiding hype, anxiety, or buzzwords.
   ({String title, String body}) _getStreakNotificationCopy(int streak) {
     if (streak >= 30) {
-      // Legendary status — celebrate mastery
       final options = [
         (
-          title: '$streak days — you\'re legendary \u{1F451}',
-          body: 'Most people quit by day 7. You\'re built different.',
+          title: '$streak days of consistency \u{1F3C6}',
+          body: 'Over a month of daily learning. Keep your streak active with a quick lesson.',
         ),
         (
-          title: 'One month strong \u{1F3C6}',
-          body: 'Your consistency is paying off. Keep that crown.',
+          title: '$streak-day milestone reached \u{1F525}',
+          body: 'Your commitment is paying off. Complete today\'s practice in just 2 minutes.',
         ),
         (
-          title: '$streak-day streak \u{1F525}',
-          body: 'You\'re in the top 1% of learners. Quick round tonight?',
+          title: '$streak days and counting \u{2728}',
+          body: 'Exceptional consistency. Take a few minutes tonight to keep your streak going.',
         ),
       ];
       return options[_idRandom.nextInt(options.length)];
     } else if (streak >= 14) {
-      // Strong habit — reinforce confidence
       final options = [
         (
-          title: 'Two weeks and counting \u{2728}',
-          body: '$streak days of growth. Tonight\'s round takes 2 minutes.',
+          title: 'Two weeks of steady progress \u{2728}',
+          body: '$streak days in a row. Take 2 minutes tonight to stay on track.',
         ),
         (
-          title: 'You\'ve built a real habit \u{1F4AA}',
-          body: '$streak days in. Don\'t let tomorrow be day zero.',
+          title: 'Solid habit forming \u{1F4AA}',
+          body: '$streak consecutive days of practice. Keep the momentum alive tonight.',
         ),
         (
-          title: 'Halfway to legendary \u{1F680}',
-          body: '$streak consecutive days — you\'re almost there.',
+          title: '$streak-day streak active \u{1F525}',
+          body: 'Great rhythm. A quick practice completes today\'s goal.',
         ),
       ];
       return options[_idRandom.nextInt(options.length)];
     } else if (streak >= 7) {
-      // One week — first major milestone
       final options = [
         (
-          title: 'A full week \u{1F3AF}',
-          body: '$streak days! Most people never make it this far.',
+          title: 'One full week completed \u{1F3AF}',
+          body: '$streak days of practice! Take 2 minutes to keep your progress going.',
         ),
         (
-          title: 'Week ${streak ~/ 7} complete \u{1F389}',
-          body: 'Your future self will thank you. 2-minute round?',
+          title: 'Week ${streak ~/ 7} complete \u{2728}',
+          body: 'Consistency leads to fluency. Ready for a quick round tonight?',
         ),
         (
           title: 'Building momentum \u{26A1}',
-          body: '$streak days of practice. Keep the rhythm going tonight.',
+          body: '$streak days in a row. Take a moment for tonight\'s practice.',
         ),
       ];
       return options[_idRandom.nextInt(options.length)];
     } else if (streak >= 3) {
-      // Early commitment — encourage consistency
       final options = [
         (
           title: '$streak days in a row \u{1F525}',
-          body: 'You\'re building something great. Quick round tonight?',
+          body: 'You are building a strong habit. A quick round completes today.',
         ),
         (
-          title: 'Streak protected so far \u{1F6E1}\u{FE0F}',
-          body: 'Don\'t let $streak days of effort go to waste.',
+          title: 'Keep your streak going \u{1F6E1}\u{FE0F}',
+          body: '$streak days completed. Take 2 minutes to protect your progress.',
         ),
         (
-          title: 'Your streak is growing \u{1F331}',
-          body: '$streak days! Just one more round to keep it alive.',
+          title: 'Daily progress check \u{1F331}',
+          body: 'Just one short lesson keeps your $streak-day streak alive.',
         ),
       ];
       return options[_idRandom.nextInt(options.length)];
     } else {
-      // Just starting — gentle, inviting
       final options = [
         (
-          title: 'Your evening learning window \u{1F319}',
-          body: 'A quick 2-minute round before bed makes all the difference.',
+          title: 'Time for today\'s practice \u{1F319}',
+          body: 'A quick 2-minute session before bed makes a lasting difference.',
         ),
         (
-          title: 'Ready for tonight\'s round? \u{1F3AE}',
-          body: 'Small steps, big results. Let\'s keep the streak alive.',
+          title: 'Ready for today\'s lesson? \u{1F4D6}',
+          body: 'Small daily steps build real fluency. Let\'s practice tonight.',
         ),
         (
-          title: 'Winding down? Perfect time to learn \u{1F4D6}',
-          body: 'One round takes less time than scrolling. Give it a try.',
+          title: 'Daily English practice \u{2728}',
+          body: 'Take 2 minutes to practice speaking and listening today.',
         ),
       ];
       return options[_idRandom.nextInt(options.length)];
@@ -1084,6 +1122,50 @@ class NotificationService {
       if (kDebugMode) debugPrint('Error getting FCM token: $e');
       return null;
     }
+  }
+
+  /// Disassociates the device from the current user account on logout.
+  ///
+  /// Clears `fcmToken` from the user's Firestore document while the user is still
+  /// authenticated, unregisters the local FCM token on the device so the next user
+  /// receives a clean token, and cancels all scheduled local reminders.
+  Future<void> unregisterUserOnLogout() async {
+    try {
+      final user = FirebaseAuth.instance.currentUser;
+      if (user != null) {
+        // 1. Remove fcmToken from Firestore while still authenticated
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(user.uid)
+            .update({'fcmToken': FieldValue.delete()});
+        if (kDebugMode) {
+          debugPrint(
+            'NotificationService: FCM token cleared from Firestore for ${user.uid}',
+          );
+        }
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint(
+          'NotificationService: Error removing FCM token from Firestore: $e',
+        );
+      }
+    }
+
+    // 2. Invalidate local device FCM token on Firebase servers
+    try {
+      await _fcm.deleteToken();
+      if (kDebugMode) {
+        debugPrint('NotificationService: Local FCM token deleted from device.');
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('NotificationService: Error deleting local FCM token: $e');
+      }
+    }
+
+    // 3. Cancel all local scheduled notifications
+    await cancelAllReminders();
   }
 
   /// CANCELS ALL SCHEDULED NOTIFICATIONS

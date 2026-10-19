@@ -66,6 +66,7 @@ void main() {
     SharedPreferences.setMockInitialValues({});
     mockNotificationService = MockNotificationService();
     when(() => mockNotificationService.cancelAllReminders()).thenAnswer((_) async {});
+    when(() => mockNotificationService.unregisterUserOnLogout()).thenAnswer((_) async {});
     if (di.sl.isRegistered<NotificationService>()) {
       di.sl.unregister<NotificationService>();
     }
