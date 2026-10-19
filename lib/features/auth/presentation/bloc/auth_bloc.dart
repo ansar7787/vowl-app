@@ -234,10 +234,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   /// Shared between [_onLogoutRequested] and [_onDeleteAccountRequested]
   /// to guarantee identical cleanup for both flows.
   Future<void> _clearAllLocalData() async {
-    // Cancel all scheduled local notifications so they don't fire for the
-    // NEXT user who logs in on this device.
+    // Unbind the device push token from Firestore and cancel all scheduled local
+    // notifications so notifications from this account never fire for the NEXT user.
     try {
-      await di.sl<NotificationService>().cancelAllReminders();
+      await di.sl<NotificationService>().unregisterUserOnLogout();
     } catch (e) {
       if (kDebugMode) debugPrint('AuthBloc: notification cleanup failed: $e');
     }
