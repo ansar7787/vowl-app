@@ -4,7 +4,7 @@
         {
             "id": "VOC_PREFIXSUFFIX_L11_Q1",
             "hint": "Constructing a bridge again after a storm knocked it down.",
-            "explanation": "RE- means 'again.' Added to BUILD, it forms REBUILD \u2014 to construct something a second time after damage or failure.",
+            "explanation": "RE- means 'again.' Added to BUILD, it forms REBUILD — to construct something a second time after damage or failure.",
             "interactionType": "choice",
             "correctAnswer": "RE-",
             "rootWord": "BUILD",
@@ -22,21 +22,22 @@
             "hint": "A shop turning its lights back on and unlocking the doors after being closed for repairs.",
             "explanation": "REOPEN is RE- + OPEN, meaning to open something again after it was closed.",
             "interactionType": "choice",
-            "correctAnswer": "REOPEN",
+            "correctAnswer": "RE-",
             "rootWord": "OPEN",
             "options": [
-                "REWRITE",
-                "REOPEN",
-                "REFILL",
-                "REBUILD"
+                "PRE-",
+                "POST-",
+                "DE-",
+                "RE-"
             ],
             "meaningBreakdown": "RE (prefix, 'again') + OPEN (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "REOPEN"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L11_Q3",
             "hint": "Asking a waiter to top up your glass once it's empty.",
-            "explanation": "RE- ('again') builds REFILL, to fill something again. UN- would instead suggest removing what's inside \u2014 the opposite idea \u2014 so 'unfill' isn't how English expresses this.",
+            "explanation": "RE- ('again') builds REFILL, to fill something again. UN- would instead suggest removing what's inside — the opposite idea — so 'unfill' isn't how English expresses this.",
             "interactionType": "choice",
             "correctAnswer": "RE-",
             "rootWord": "FILL",
@@ -70,16 +71,17 @@
             "hint": "Pressing Ctrl+Z to erase your last edit and return the document to how it was before.",
             "explanation": "UNDO reverses a previous action entirely, unlike REDO, which repeats an action. Ctrl+Z famously performs UNDO in most software.",
             "interactionType": "choice",
-            "correctAnswer": "UNDO",
+            "correctAnswer": "UN-",
             "rootWord": "DO",
             "options": [
-                "REDO",
-                "UNCOVER",
-                "UNFOLD",
-                "UNDO"
+                "NON-",
+                "DIS-",
+                "MIS-",
+                "UN-"
             ],
             "meaningBreakdown": "UN (prefix, reverses the action) + DO (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "UNDO"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L12_Q3",
@@ -118,16 +120,17 @@
             "hint": "Someone training for a marathon, logging miles every morning.",
             "explanation": "RUNNER is RUN + -ER (with the N doubled before adding the suffix), naming a person who runs, such as someone training for a race.",
             "interactionType": "choice",
-            "correctAnswer": "RUNNER",
+            "correctAnswer": "-ER",
             "rootWord": "RUN",
             "options": [
-                "RUNNER",
-                "PLAYER",
-                "WORKER",
-                "TEACHER"
+                "-EE",
+                "-OR",
+                "-IST",
+                "-ER"
             ],
             "meaningBreakdown": "RUN (root, n doubled) + ER (suffix, 'person who does')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "RUNNER"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L13_Q3",
@@ -166,21 +169,22 @@
             "hint": "How you feel toward a stranger who returns your lost wallet.",
             "explanation": "THANKFUL is THANK + -FUL, full of gratitude toward someone.",
             "interactionType": "choice",
-            "correctAnswer": "THANKFUL",
+            "correctAnswer": "-FUL",
             "rootWord": "THANK",
             "options": [
-                "COLORFUL",
-                "POWERFUL",
-                "CAREFUL",
-                "THANKFUL"
+                "-IBLE",
+                "-LESS",
+                "-ABLE",
+                "-FUL"
             ],
             "meaningBreakdown": "THANK (root) + FUL (suffix, 'full of')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "THANKFUL"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L14_Q3",
             "hint": "Describing a garden bursting with red, yellow, and purple flowers.",
-            "explanation": "-FUL builds COLORFUL from COLOR, full of color. -LESS would create the opposite word, COLORLESS, describing something with no color at all \u2014 like plain water.",
+            "explanation": "-FUL builds COLORFUL from COLOR, full of color. -LESS would create the opposite word, COLORLESS, describing something with no color at all — like plain water.",
             "interactionType": "choice",
             "correctAnswer": "-FUL",
             "rootWord": "COLOR",
@@ -214,21 +218,22 @@
             "hint": "Being so shocked by surprising news that you can't find any words to say.",
             "explanation": "SPEECHLESS combines SPEECH with -LESS, describing someone temporarily without words, usually from shock.",
             "interactionType": "choice",
-            "correctAnswer": "SPEECHLESS",
+            "correctAnswer": "-LESS",
             "rootWord": "SPEECH",
             "options": [
-                "HELPLESS",
-                "HOMELESS",
-                "SPEECHLESS",
-                "ENDLESS"
+                "-IBLE",
+                "-LESS",
+                "-FUL",
+                "-ABLE"
             ],
             "meaningBreakdown": "SPEECH (root) + LESS (suffix, 'without')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "SPEECHLESS"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L15_Q3",
             "hint": "A kitten stuck at the top of a tree, unable to get down on its own.",
-            "explanation": "-LESS forms HELPLESS from HELP, meaning without the ability to help oneself. -FUL would flip this to HELPFUL, meaning full of help toward others \u2014 a very different idea.",
+            "explanation": "-LESS forms HELPLESS from HELP, meaning without the ability to help oneself. -FUL would flip this to HELPFUL, meaning full of help toward others — a very different idea.",
             "interactionType": "choice",
             "correctAnswer": "-LESS",
             "rootWord": "HELP",
@@ -244,7 +249,7 @@
         {
             "id": "VOC_PREFIXSUFFIX_L16_Q1",
             "hint": "Telling your boss the real reason a deadline was missed, even though it's uncomfortable.",
-            "explanation": "-LY turns HONEST into an adverb, HONESTLY, describing how something is done \u2014 truthfully, without hiding facts.",
+            "explanation": "-LY turns HONEST into an adverb, HONESTLY, describing how something is done — truthfully, without hiding facts.",
             "interactionType": "choice",
             "correctAnswer": "-LY",
             "rootWord": "HONEST",
@@ -262,16 +267,17 @@
             "hint": "Describing how a firefighter runs into a burning building to save someone.",
             "explanation": "BRAVELY is BRAVE + -LY, an adverb describing an action done with courage.",
             "interactionType": "choice",
-            "correctAnswer": "BRAVELY",
+            "correctAnswer": "-LY",
             "rootWord": "BRAVE",
             "options": [
-                "HONESTLY",
-                "QUIETLY",
-                "CAREFULLY",
-                "BRAVELY"
+                "-ER",
+                "-WISE",
+                "-LY",
+                "-WARD"
             ],
             "meaningBreakdown": "BRAVE (root) + LY (suffix, forms an adverb)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "BRAVELY"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L16_Q3",
@@ -310,21 +316,22 @@
             "hint": "The reason someone stays home from work with a fever and a cough.",
             "explanation": "ILLNESS is ILL + -NESS, the state of being sick.",
             "interactionType": "choice",
-            "correctAnswer": "ILLNESS",
+            "correctAnswer": "-NESS",
             "rootWord": "ILL",
             "options": [
-                "SADNESS",
-                "ILLNESS",
-                "DARKNESS",
-                "WEAKNESS"
+                "-TION",
+                "-SION",
+                "-NESS",
+                "-MENT"
             ],
             "meaningBreakdown": "ILL (root) + NESS (suffix, forms a noun of state)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "ILLNESS"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L17_Q3",
             "hint": "The feeling of joy on your favorite holiday morning.",
-            "explanation": "-NESS forms HAPPINESS from HAPPY \u2014 notice the spelling: the Y changes to I before -NESS is added. -FUL wouldn't work here at all, since 'happyful' isn't a real word.",
+            "explanation": "-NESS forms HAPPINESS from HAPPY — notice the spelling: the Y changes to I before -NESS is added. -FUL wouldn't work here at all, since 'happyful' isn't a real word.",
             "interactionType": "choice",
             "correctAnswer": "-NESS",
             "rootWord": "HAPPY",
@@ -356,23 +363,24 @@
         {
             "id": "VOC_PREFIXSUFFIX_L18_Q2",
             "hint": "A magician's assistant seeming to vanish from the stage in a puff of smoke.",
-            "explanation": "DISAPPEAR combines DIS- with APPEAR, meaning to stop being visible \u2014 the opposite of appearing.",
+            "explanation": "DISAPPEAR combines DIS- with APPEAR, meaning to stop being visible — the opposite of appearing.",
             "interactionType": "choice",
-            "correctAnswer": "DISAPPEAR",
+            "correctAnswer": "DIS-",
             "rootWord": "APPEAR",
             "options": [
-                "DISCONNECT",
-                "DISCONTINUE",
-                "DISOBEY",
-                "DISAPPEAR"
+                "DIS-",
+                "NON-",
+                "MIS-",
+                "UN-"
             ],
             "meaningBreakdown": "DIS (prefix, 'the opposite of') + APPEAR (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "DISAPPEAR"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L18_Q3",
             "hint": "A company announcing it will stop making an older phone model.",
-            "explanation": "DIS- + CONTINUE = DISCONTINUE, to stop something that was ongoing. MIS- would instead suggest doing something incorrectly, not stopping it \u2014 'miscontinue' isn't how English expresses this idea.",
+            "explanation": "DIS- + CONTINUE = DISCONTINUE, to stop something that was ongoing. MIS- would instead suggest doing something incorrectly, not stopping it — 'miscontinue' isn't how English expresses this idea.",
             "interactionType": "choice",
             "correctAnswer": "DIS-",
             "rootWord": "CONTINUE",
@@ -406,21 +414,22 @@
             "hint": "Describing a used car priced within a tight monthly budget.",
             "explanation": "AFFORDABLE is AFFORD + -ABLE, meaning capable of being paid for without financial strain.",
             "interactionType": "choice",
-            "correctAnswer": "AFFORDABLE",
+            "correctAnswer": "-ABLE",
             "rootWord": "AFFORD",
             "options": [
-                "WASHABLE",
-                "AFFORDABLE",
-                "COMFORTABLE",
-                "LOVABLE"
+                "-LESS",
+                "-ABLE",
+                "-FUL",
+                "-IBLE"
             ],
             "meaningBreakdown": "AFFORD (root) + ABLE (suffix, 'capable of being')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "AFFORDABLE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L19_Q3",
             "hint": "Describing a puppy so sweet and affectionate that everyone wants to hug it.",
-            "explanation": "-ABLE attaches to LOVE to form LOVABLE \u2014 notice the silent E is dropped before adding the suffix. -LESS would instead build LOVELESS, meaning without love, the opposite feeling entirely.",
+            "explanation": "-ABLE attaches to LOVE to form LOVABLE — notice the silent E is dropped before adding the suffix. -LESS would instead build LOVELESS, meaning without love, the opposite feeling entirely.",
             "interactionType": "choice",
             "correctAnswer": "-ABLE",
             "rootWord": "LOVE",
@@ -454,21 +463,22 @@
             "hint": "Reserving a copy of a video game weeks before it officially goes on sale.",
             "explanation": "PREORDER is PRE- + ORDER, to place an order before a product is available.",
             "interactionType": "choice",
-            "correctAnswer": "PREORDER",
+            "correctAnswer": "PRE-",
             "rootWord": "ORDER",
             "options": [
-                "PREORDER",
-                "PRESET",
-                "PREHEAT",
-                "PREVIEW"
+                "RE-",
+                "POST-",
+                "DE-",
+                "PRE-"
             ],
             "meaningBreakdown": "PRE (prefix, 'before') + ORDER (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "PREORDER"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L20_Q3",
             "hint": "The classroom young children attend before starting regular elementary school.",
-            "explanation": "PRE- + SCHOOL = PRESCHOOL, school that comes before regular school. Across this unit, RE- has meant 'again,' UN- has reversed an action, and DIS- has meant 'not' \u2014 PRE- is the one that always points to 'before,' worth locking in before new prefixes appear.",
+            "explanation": "PRE- + SCHOOL = PRESCHOOL, school that comes before regular school. Across this unit, RE- has meant 'again,' UN- has reversed an action, and DIS- has meant 'not' — PRE- is the one that always points to 'before,' worth locking in before new prefixes appear.",
             "interactionType": "choice",
             "correctAnswer": "PRE-",
             "rootWord": "SCHOOL",

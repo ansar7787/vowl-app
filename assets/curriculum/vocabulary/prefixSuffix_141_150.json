@@ -20,23 +20,24 @@
         {
             "id": "VOC_PREFIXSUFFIX_L141_Q2",
             "hint": "A toddler's mood that could shift from giggling to crying within the same minute, with no warning at all.",
-            "explanation": "UNPREDICTABLE layers UN- ('not') onto PREDICTABLE, which is itself PRE- + DICT + -ABLE. That's two prefixes and one suffix wrapped around a single root \u2014 DICT ('say') \u2014 each contributing a distinct piece of meaning.",
+            "explanation": "UNPREDICTABLE layers UN- ('not') onto PREDICTABLE, which is itself PRE- + DICT + -ABLE. That's two prefixes and one suffix wrapped around a single root — DICT ('say') — each contributing a distinct piece of meaning.",
             "interactionType": "choice",
-            "correctAnswer": "UNPREDICTABLE",
+            "correctAnswer": "UN-",
             "rootWord": "PREDICT",
             "options": [
-                "IRREPLACEABLE",
-                "UNBELIEVABLE",
-                "UNPREDICTABLE",
-                "UNCOMFORTABLE"
+                "MIS-",
+                "NON-",
+                "DIS-",
+                "UN-"
             ],
             "meaningBreakdown": "UN (prefix, 'not') + PRE (prefix, 'before') + DICT (root, 'say') + ABLE (suffix, 'capable of being')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "UNPREDICTABLE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L141_Q3",
             "hint": "A company ships its products to customers on six different continents, not just within its home country.",
-            "explanation": "INTERNATIONALLY stacks four parts: INTER- ('between') + NATION + -AL (noun \u2192 adjective) + -LY (adjective \u2192 adverb). Each piece adds one layer: between nations, relating to nations, and finally, describing how something is done.",
+            "explanation": "INTERNATIONALLY stacks four parts: INTER- ('between') + NATION + -AL (noun → adjective) + -LY (adjective → adverb). Each piece adds one layer: between nations, relating to nations, and finally, describing how something is done.",
             "interactionType": "choice",
             "correctAnswer": "-LY",
             "rootWord": "NATION",
@@ -46,7 +47,7 @@
                 "-ISM",
                 "-MENT"
             ],
-            "meaningBreakdown": "INTER (prefix, 'between') + NATION (root) + AL (suffix, noun \u2192 adjective) + LY (suffix, adjective \u2192 adverb)",
+            "meaningBreakdown": "INTER (prefix, 'between') + NATION (root) + AL (suffix, noun → adjective) + LY (suffix, adjective → adverb)",
             "instruction": "Which suffix completes the final layer of this four-part word?"
         },
         {
@@ -62,24 +63,25 @@
                 "-IVE",
                 "-ANCE"
             ],
-            "meaningBreakdown": "RE (prefix, 'again') + CONSTRUCT (root) + TION (suffix, verb \u2192 noun)",
+            "meaningBreakdown": "RE (prefix, 'again') + CONSTRUCT (root) + TION (suffix, verb → noun)",
             "instruction": "Which suffix completes this three-part word?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L142_Q2",
             "hint": "A student rolls their eyes and talks back to a teacher who's simply trying to explain the homework.",
-            "explanation": "DISRESPECTFUL combines DIS- ('not') with RESPECT and -FUL ('characterized by' \u2014 here, ironically, describing behavior that shows a lack of it), meaning showing no respect.",
+            "explanation": "DISRESPECTFUL combines DIS- ('not') with RESPECT and -FUL ('characterized by' — here, ironically, describing behavior that shows a lack of it), meaning showing no respect.",
             "interactionType": "choice",
-            "correctAnswer": "DISRESPECTFUL",
+            "correctAnswer": "DIS-",
             "rootWord": "RESPECT",
             "options": [
-                "IRRESPONSIBLE",
-                "DISRESPECTFUL",
-                "UNGRATEFUL",
-                "DISHONEST"
+                "MIS-",
+                "NON-",
+                "UN-",
+                "DIS-"
             ],
             "meaningBreakdown": "DIS (prefix, 'not') + RESPECT (root) + FUL (suffix, 'characterized by')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "DISRESPECTFUL"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L142_Q3",
@@ -94,7 +96,7 @@
                 "-ITY",
                 "-ATION"
             ],
-            "meaningBreakdown": "DIS (prefix, 'not') + QUALIFIC (root) + ATION (suffix, verb \u2192 noun)",
+            "meaningBreakdown": "DIS (prefix, 'not') + QUALIFIC (root) + ATION (suffix, verb → noun)",
             "instruction": "Which suffix completes this three-part word?"
         },
         {
@@ -118,21 +120,22 @@
             "hint": "A pair of stiff new shoes that pinch your toes with every single step.",
             "explanation": "UNCOMFORTABLE combines UN- ('not') with COMFORT and -ABLE, meaning not providing comfort, or feeling physically or socially uneasy.",
             "interactionType": "choice",
-            "correctAnswer": "UNCOMFORTABLE",
+            "correctAnswer": "UN-",
             "rootWord": "COMFORT",
             "options": [
-                "INDESTRUCTIBLE",
-                "IRRESISTIBLE",
-                "UNCOMFORTABLE",
-                "UNBELIEVABLE"
+                "NON-",
+                "MIS-",
+                "UN-",
+                "DIS-"
             ],
             "meaningBreakdown": "UN (prefix, 'not') + COMFORT (root) + ABLE (suffix, 'capable of being')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "UNCOMFORTABLE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L143_Q3",
             "hint": "A display of freshly baked chocolate chip cookies that makes it impossible to walk past without taking one.",
-            "explanation": "IRRESISTIBLE combines IR- ('not,' shifting before R) with RESIST and -IBLE, meaning too tempting to resist. UN- wouldn't fit here \u2014 'unresistible' isn't standard English, since RESIST specifically takes IR-.",
+            "explanation": "IRRESISTIBLE combines IR- ('not,' shifting before R) with RESIST and -IBLE, meaning too tempting to resist. UN- wouldn't fit here — 'unresistible' isn't standard English, since RESIST specifically takes IR-.",
             "interactionType": "choice",
             "correctAnswer": "IR-",
             "rootWord": "RESIST",
@@ -158,29 +161,30 @@
                 "-ITY",
                 "-MENT"
             ],
-            "meaningBreakdown": "MIS (prefix, 'wrongly') + MANAGE (root) + MENT (suffix, verb \u2192 noun)",
+            "meaningBreakdown": "MIS (prefix, 'wrongly') + MANAGE (root) + MENT (suffix, verb → noun)",
             "instruction": "Which suffix completes this three-part word?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L144_Q2",
-            "hint": "One coworker thought the meeting was cancelled, and the other assumed it was moved \u2014 so nobody showed up at all.",
+            "hint": "One coworker thought the meeting was cancelled, and the other assumed it was moved — so nobody showed up at all.",
             "explanation": "MISCOMMUNICATION combines MIS- ('wrongly') with COMMUNICATE and -TION, spelled -ATION, a failure to convey information clearly, leading to confusion.",
             "interactionType": "choice",
-            "correctAnswer": "MISCOMMUNICATION",
+            "correctAnswer": "MIS-",
             "rootWord": "COMMUNICATE",
             "options": [
-                "MISMANAGEMENT",
-                "MISCOMMUNICATION",
-                "DISQUALIFICATION",
-                "MISINFORMATION"
+                "DIS-",
+                "NON-",
+                "MIS-",
+                "UN-"
             ],
-            "meaningBreakdown": "MIS (prefix, 'wrongly') + COMMUNICAT (root) + ION (suffix, verb \u2192 noun)",
-            "instruction": "Which word matches this situation?"
+            "meaningBreakdown": "MIS (prefix, 'wrongly') + COMMUNICAT (root) + ION (suffix, verb → noun)",
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "MISCOMMUNICATION"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L144_Q3",
             "hint": "A messy office where files are scattered across three different cabinets with no labeling system at all.",
-            "explanation": "DISORGANIZATION combines DIS- ('not') with ORGANIZE and -ATION, a lack of order or structure. MIS- wouldn't fit here \u2014 this describes an absence of organization altogether, not simply organizing something incorrectly.",
+            "explanation": "DISORGANIZATION combines DIS- ('not') with ORGANIZE and -ATION, a lack of order or structure. MIS- wouldn't fit here — this describes an absence of organization altogether, not simply organizing something incorrectly.",
             "interactionType": "choice",
             "correctAnswer": "DIS-",
             "rootWord": "ORGANIZE",
@@ -190,7 +194,7 @@
                 "NON-",
                 "DIS-"
             ],
-            "meaningBreakdown": "DIS (prefix, 'not') + ORGANIZ (root) + ATION (suffix, verb \u2192 noun)",
+            "meaningBreakdown": "DIS (prefix, 'not') + ORGANIZ (root) + ATION (suffix, verb → noun)",
             "instruction": "Which prefix completes this three-part word?"
         },
         {
@@ -206,7 +210,7 @@
                 "-MENT",
                 "-TION"
             ],
-            "meaningBreakdown": "PREDICT (root) + TION (suffix, verb \u2192 noun)",
+            "meaningBreakdown": "PREDICT (root) + TION (suffix, verb → noun)",
             "instruction": "This word family starts with the verb PREDICT. Which suffix builds its noun form?"
         },
         {
@@ -222,13 +226,13 @@
                 "-IVE",
                 "-MENT"
             ],
-            "meaningBreakdown": "PREDICT (root) + ABLE (suffix, verb \u2192 adjective)",
+            "meaningBreakdown": "PREDICT (root) + ABLE (suffix, verb → adjective)",
             "instruction": "Same family, new suffix: which one builds the adjective form?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L145_Q3",
             "hint": "A stock whose price could soar or crash overnight, with no way to reliably guess which.",
-            "explanation": "UN- negates PREDICTABLE, giving UNPREDICTABLE \u2014 not capable of being foreseen. This word family now spans PREDICT (verb), PREDICTION (noun), PREDICTABLE (adjective), and UNPREDICTABLE (negated adjective) \u2014 four forms built from one small, useful root.",
+            "explanation": "UN- negates PREDICTABLE, giving UNPREDICTABLE — not capable of being foreseen. This word family now spans PREDICT (verb), PREDICTION (noun), PREDICTABLE (adjective), and UNPREDICTABLE (negated adjective) — four forms built from one small, useful root.",
             "interactionType": "choice",
             "correctAnswer": "UN-",
             "rootWord": "PREDICTABLE",
@@ -246,16 +250,17 @@
             "hint": "A quick reply typed back the moment a text message comes in.",
             "explanation": "RESPONSE is RESPOND, with a spelling shift from D to S, naming an answer or reaction to something. This starts a family that will grow more complex.",
             "interactionType": "choice",
-            "correctAnswer": "RESPONSE",
+            "correctAnswer": "-SE",
             "rootWord": "RESPOND",
             "options": [
-                "RESPONSIBILITY",
-                "RESPONSE",
-                "RESPONSIBLE",
-                "IRRESPONSIBLE"
+                "-SE",
+                "-SION",
+                "-TION",
+                "-MENT"
             ],
             "meaningBreakdown": "RESPON (root, d shifts to s) + SE (forms a noun of result)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "RESPONSE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L146_Q2",
@@ -270,13 +275,13 @@
                 "-IBLE",
                 "-ANCE"
             ],
-            "meaningBreakdown": "RESPONS (root) + IBLE (suffix, noun \u2192 adjective)",
+            "meaningBreakdown": "RESPONS (root) + IBLE (suffix, noun → adjective)",
             "instruction": "Same family, new suffix: which one builds this adjective?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L146_Q3",
             "hint": "The weight a new manager feels the day she's finally in charge of the whole department's budget.",
-            "explanation": "-ITY forms RESPONSIBILITY from RESPONSIBLE, the quality or state of being responsible, or the specific duty itself. This closes the family: RESPOND (verb), RESPONSE (noun), RESPONSIBLE (adjective), RESPONSIBILITY (noun of quality) \u2014 and don't forget IRRESPONSIBLE, its negated twin, from earlier in the course.",
+            "explanation": "-ITY forms RESPONSIBILITY from RESPONSIBLE, the quality or state of being responsible, or the specific duty itself. This closes the family: RESPOND (verb), RESPONSE (noun), RESPONSIBLE (adjective), RESPONSIBILITY (noun of quality) — and don't forget IRRESPONSIBLE, its negated twin, from earlier in the course.",
             "interactionType": "choice",
             "correctAnswer": "-ITY",
             "rootWord": "RESPONSIBLE",
@@ -286,104 +291,110 @@
                 "-MENT",
                 "-ANCE"
             ],
-            "meaningBreakdown": "RESPONSIBIL (root) + ITY (suffix, adjective \u2192 noun of quality)",
+            "meaningBreakdown": "RESPONSIBIL (root) + ITY (suffix, adjective → noun of quality)",
             "instruction": "Which suffix completes this family's noun-of-quality form?"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L147_Q1",
             "hint": "A government report analyzes how interest rates affect jobs, prices, and overall national growth.",
-            "explanation": "ECONOMIC relates to the economy as a system \u2014 jobs, trade, money at a national or global scale. ECONOMICAL, built with -ICAL instead, means thrifty or cost-effective, a different and more personal sense entirely.",
+            "explanation": "ECONOMIC relates to the economy as a system — jobs, trade, money at a national or global scale. ECONOMICAL, built with -ICAL instead, means thrifty or cost-effective, a different and more personal sense entirely.",
             "interactionType": "choice",
-            "correctAnswer": "ECONOMIC",
+            "correctAnswer": "-ICAL",
             "rootWord": "ECONOMY",
             "options": [
-                "ECONOMICAL",
-                "ECONOMIC",
-                "ECONOMY",
-                "ECONOMIST"
+                "-SION",
+                "-ICAL",
+                "-TION",
+                "-MENT"
             ],
             "meaningBreakdown": "ECONOM (root) + IC (suffix, 'relating to the system')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "ECONOMIC"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L147_Q2",
             "hint": "A shopper compares prices at three stores before buying groceries, determined to stretch every dollar.",
-            "explanation": "ECONOMICAL is ECONOMY + -ICAL, describing careful, cost-effective spending \u2014 a personal habit, not a description of the whole economic system the way ECONOMIC is.",
+            "explanation": "ECONOMICAL is ECONOMY + -ICAL, describing careful, cost-effective spending — a personal habit, not a description of the whole economic system the way ECONOMIC is.",
             "interactionType": "choice",
-            "correctAnswer": "ECONOMICAL",
+            "correctAnswer": "-ICAL",
             "rootWord": "ECONOMY",
             "options": [
-                "ECONOMICAL",
-                "ECONOMIC",
-                "ECONOMIST",
-                "ECONOMY"
+                "-TION",
+                "-ICAL",
+                "-SION",
+                "-MENT"
             ],
             "meaningBreakdown": "ECONOM (root) + ICAL (suffix, 'characterized by thriftiness')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "ECONOMICAL"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L147_Q3",
             "hint": "A museum plaque explains general facts and timelines about clothing styles across the last three centuries.",
-            "explanation": "HISTORICAL simply means 'relating to history' in general, while HISTORIC (no -AL) is reserved for something significant enough to be remembered by history \u2014 like a historic treaty or a historic championship. A museum's general facts about the past are HISTORICAL, not necessarily HISTORIC.",
+            "explanation": "HISTORICAL simply means 'relating to history' in general, while HISTORIC (no -AL) is reserved for something significant enough to be remembered by history — like a historic treaty or a historic championship. A museum's general facts about the past are HISTORICAL, not necessarily HISTORIC.",
             "interactionType": "choice",
-            "correctAnswer": "HISTORICAL",
+            "correctAnswer": "-AL",
             "rootWord": "HISTORY",
             "options": [
-                "HISTORIC",
-                "HISTORY",
-                "HISTORIAN",
-                "HISTORICAL"
+                "-IBLE",
+                "-AL",
+                "-FUL",
+                "-ABLE"
             ],
             "meaningBreakdown": "HISTOR (root) + ICAL (suffix, 'relating to, in general')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "HISTORICAL"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L148_Q1",
-            "hint": "A leather jacket and white sneakers \u2014 a combination that's been stylish for decades, never really going out of fashion.",
-            "explanation": "CLASSIC describes something of enduring quality or timeless appeal in a general sense. CLASSICAL, with -ICAL, specifically refers to a particular tradition or era \u2014 most often classical music, art, or the ancient Greek and Roman world.",
+            "hint": "A leather jacket and white sneakers — a combination that's been stylish for decades, never really going out of fashion.",
+            "explanation": "CLASSIC describes something of enduring quality or timeless appeal in a general sense. CLASSICAL, with -ICAL, specifically refers to a particular tradition or era — most often classical music, art, or the ancient Greek and Roman world.",
             "interactionType": "choice",
-            "correctAnswer": "CLASSIC",
+            "correctAnswer": "-ICAL",
             "rootWord": "CLASS",
             "options": [
-                "CLASSICAL",
-                "CLASS",
-                "CLASSIC",
-                "CLASSY"
+                "-TION",
+                "-ICAL",
+                "-SION",
+                "-MENT"
             ],
             "meaningBreakdown": "CLASS (root) + IC (suffix, 'of enduring quality')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "CLASSIC"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L148_Q2",
             "hint": "An orchestra performs a symphony written by Beethoven over two hundred years ago, using traditional instruments.",
-            "explanation": "CLASSICAL specifically refers to a traditional style or era \u2014 here, the classical music tradition \u2014 while CLASSIC more broadly means simply 'timeless' or 'iconic' without pointing to one specific tradition.",
+            "explanation": "CLASSICAL specifically refers to a traditional style or era — here, the classical music tradition — while CLASSIC more broadly means simply 'timeless' or 'iconic' without pointing to one specific tradition.",
             "interactionType": "choice",
-            "correctAnswer": "CLASSICAL",
+            "correctAnswer": "-ICAL",
             "rootWord": "CLASS",
             "options": [
-                "CLASSIC",
-                "MUSICAL",
-                "CLASSICAL",
-                "HISTORICAL"
+                "-TION",
+                "-ICAL",
+                "-SION",
+                "-MENT"
             ],
             "meaningBreakdown": "CLASS (root) + ICAL (suffix, 'relating to a specific tradition')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "CLASSICAL"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L148_Q3",
             "hint": "A cartoonist publishes a monthly issue featuring superheroes, printed in full color and sold at newsstands.",
-            "explanation": "COMIC (no -AL) most often refers to the publication itself, or to something intentionally designed to be funny. COMICAL, with -ICAL, describes something that happens to be funny or ridiculous, even if that wasn't the intention \u2014 like tripping over your own shoelaces.",
+            "explanation": "COMIC (no -AL) most often refers to the publication itself, or to something intentionally designed to be funny. COMICAL, with -ICAL, describes something that happens to be funny or ridiculous, even if that wasn't the intention — like tripping over your own shoelaces.",
             "interactionType": "choice",
-            "correctAnswer": "COMIC",
+            "correctAnswer": "-AL",
             "rootWord": "COMIC",
             "options": [
-                "COMICAL",
-                "COMIC",
-                "COMEDY",
-                "COMEDIAN"
+                "-IBLE",
+                "-FUL",
+                "-AL",
+                "-ABLE"
             ],
             "meaningBreakdown": "COM (root) + IC (suffix, 'designed to amuse, or the publication itself')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "COMIC"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L149_Q1",
@@ -406,16 +417,17 @@
             "hint": "After the merger, the whole company was restructured into new departments with different names and reporting lines.",
             "explanation": "REORGANIZATION combines RE- ('again') with ORGANIZE and -ATION, the process of restructuring something that already existed.",
             "interactionType": "choice",
-            "correctAnswer": "REORGANIZATION",
+            "correctAnswer": "RE-",
             "rootWord": "ORGANIZE",
             "options": [
-                "DISORGANIZATION",
-                "REORGANIZATION",
-                "MISORGANIZATION",
-                "ORGANIZATION"
+                "POST-",
+                "DE-",
+                "RE-",
+                "PRE-"
             ],
-            "meaningBreakdown": "RE (prefix, 'again') + ORGANIZ (root) + ATION (suffix, verb \u2192 noun)",
-            "instruction": "Which word matches this situation?"
+            "meaningBreakdown": "RE (prefix, 'again') + ORGANIZ (root) + ATION (suffix, verb → noun)",
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "REORGANIZATION"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L149_Q3",
@@ -430,7 +442,7 @@
                 "UN-",
                 "NON-"
             ],
-            "meaningBreakdown": "UN (prefix, 'not') + CONVENTION (root) + AL (suffix, noun \u2192 adjective)",
+            "meaningBreakdown": "UN (prefix, 'not') + CONVENTION (root) + AL (suffix, noun → adjective)",
             "instruction": "Which prefix completes this three-part word?"
         },
         {
@@ -452,18 +464,19 @@
         {
             "id": "VOC_PREFIXSUFFIX_L150_Q2",
             "hint": "A journalist writes that yesterday's peace agreement, ending a decades-long conflict, will be remembered as a turning point for the entire region.",
-            "explanation": "HISTORIC (no -AL) describes something significant enough to be remembered by history \u2014 unlike HISTORICAL, which simply means 'relating to history' in general. This milestone reviews that nuance.",
+            "explanation": "HISTORIC (no -AL) describes something significant enough to be remembered by history — unlike HISTORICAL, which simply means 'relating to history' in general. This milestone reviews that nuance.",
             "interactionType": "choice",
-            "correctAnswer": "HISTORIC",
+            "correctAnswer": "-AL",
             "rootWord": "HISTORY",
             "options": [
-                "HISTORIC",
-                "HISTORICAL",
-                "HISTORY",
-                "HISTORIAN"
+                "-IBLE",
+                "-FUL",
+                "-ABLE",
+                "-AL"
             ],
             "meaningBreakdown": "HISTOR (root) + IC (suffix, 'significant enough to be remembered')",
-            "instruction": "Milestone check: which word fits an event significant enough to be remembered by history?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "HISTORIC"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L150_Q3",

@@ -22,21 +22,22 @@
             "hint": "The pilot's partner in the cockpit, sharing control of the plane.",
             "explanation": "COPILOT combines CO- with PILOT, naming a second pilot who shares flying duties with the main pilot.",
             "interactionType": "choice",
-            "correctAnswer": "COPILOT",
+            "correctAnswer": "CO-",
             "rootWord": "PILOT",
             "options": [
-                "COAUTHOR",
-                "COPILOT",
-                "COWORKER",
-                "COHOST"
+                "MIS-",
+                "UN-",
+                "DIS-",
+                "CO-"
             ],
             "meaningBreakdown": "CO (prefix, 'together') + PILOT (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "COPILOT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L31_Q3",
             "hint": "The person sitting at the next desk in your office, doing a related job.",
-            "explanation": "CO- + WORKER = COWORKER, someone who works together with you. EX- would instead mean a former worker, someone who no longer holds that role \u2014 a very different relationship.",
+            "explanation": "CO- + WORKER = COWORKER, someone who works together with you. EX- would instead mean a former worker, someone who no longer holds that role — a very different relationship.",
             "interactionType": "choice",
             "correctAnswer": "CO-",
             "rootWord": "WORKER",
@@ -70,16 +71,17 @@
             "hint": "The team's previous coach, who left the club at the end of last season.",
             "explanation": "EX-COACH is EX- + COACH, referring to someone who used to hold that position but no longer does.",
             "interactionType": "choice",
-            "correctAnswer": "EX-COACH",
+            "correctAnswer": "EX-",
             "rootWord": "COACH",
             "options": [
-                "COWORKER",
-                "EX-COACH",
-                "EX-PRESIDENT",
-                "COPILOT"
+                "DIS-",
+                "MIS-",
+                "UN-",
+                "EX-"
             ],
             "meaningBreakdown": "EX (prefix, 'former') + COACH (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "EX-COACH"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L32_Q3",
@@ -118,16 +120,17 @@
             "hint": "The power a public speaker has to hold an audience's attention without using notes.",
             "explanation": "ABILITY is formed from ABLE + -ITY (the E drops before the suffix), naming the quality or power to do something.",
             "interactionType": "choice",
-            "correctAnswer": "ABILITY",
+            "correctAnswer": "-ITY",
             "rootWord": "ABLE",
             "options": [
-                "ORIGINALITY",
-                "ACTIVITY",
-                "ABILITY",
-                "FORMALITY"
+                "-TION",
+                "-ITY",
+                "-SION",
+                "-MENT"
             ],
             "meaningBreakdown": "ABIL (root, silent e dropped) + ITY (suffix, forms a noun of quality)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "ABILITY"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L33_Q3",
@@ -166,16 +169,17 @@
             "hint": "Someone whose entire career is spent studying rocks and the layers of the Earth.",
             "explanation": "GEOLOGIST is GEOLOGY + -IST (the Y drops before the suffix), a person who specializes in the science of the Earth.",
             "interactionType": "choice",
-            "correctAnswer": "GEOLOGIST",
+            "correctAnswer": "-IST",
             "rootWord": "GEOLOGY",
             "options": [
-                "GEOLOGIST",
-                "VIOLINIST",
-                "ARTIST",
-                "TOURIST"
+                "-EE",
+                "-OR",
+                "-IST",
+                "-ER"
             ],
             "meaningBreakdown": "GEOLOG (root) + IST (suffix, 'person associated with')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "GEOLOGIST"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L34_Q3",
@@ -212,18 +216,19 @@
         {
             "id": "VOC_PREFIXSUFFIX_L35_Q2",
             "hint": "Describing a grown adult who throws a tantrum when they don't get their way.",
-            "explanation": "CHILDISH is built from CHILD + -ISH, describing behavior that resembles a child's \u2014 usually meant as criticism when an adult acts that way.",
+            "explanation": "CHILDISH is built from CHILD + -ISH, describing behavior that resembles a child's — usually meant as criticism when an adult acts that way.",
             "interactionType": "choice",
-            "correctAnswer": "CHILDISH",
+            "correctAnswer": "-ISH",
             "rootWord": "CHILD",
             "options": [
-                "BLUISH",
-                "CHILDISH",
-                "SELFISH",
-                "FOOLISH"
+                "-IBLE",
+                "-FUL",
+                "-ISH",
+                "-ABLE"
             ],
             "meaningBreakdown": "CHILD (root) + ISH (suffix, 'resembling')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "CHILDISH"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L35_Q3",
@@ -262,16 +267,17 @@
             "hint": "What a gardener does to loosen packed soil before planting seeds.",
             "explanation": "LOOSEN is LOOSE + -EN, meaning to make something loose or to release tension.",
             "interactionType": "choice",
-            "correctAnswer": "LOOSEN",
+            "correctAnswer": "-EN",
             "rootWord": "LOOSE",
             "options": [
-                "SOFTEN",
-                "SHARPEN",
-                "WIDEN",
-                "LOOSEN"
+                "-EN",
+                "-ATE",
+                "-IFY",
+                "-IZE"
             ],
             "meaningBreakdown": "LOOSE (root) + EN (suffix, 'to make/become')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "LOOSEN"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L36_Q3",
@@ -310,16 +316,17 @@
             "hint": "A beach where your feet sink into the ground with every step.",
             "explanation": "SANDY is SAND + -Y, describing a surface covered in or made up of sand.",
             "interactionType": "choice",
-            "correctAnswer": "SANDY",
+            "correctAnswer": "-Y",
             "rootWord": "SAND",
             "options": [
-                "CHUNKY",
-                "SANDY",
-                "ROCKY",
-                "CLOUDY"
+                "-FUL",
+                "-Y",
+                "-IBLE",
+                "-ABLE"
             ],
             "meaningBreakdown": "SAND (root) + Y (suffix, 'full of/characterized by')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "SANDY"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L37_Q3",
@@ -358,21 +365,22 @@
             "hint": "A billionaire's mansion, complete with a private movie theater and indoor pool.",
             "explanation": "LUXURIOUS is LUXURY + -OUS (with a spelling shift), describing something full of luxury and comfort.",
             "interactionType": "choice",
-            "correctAnswer": "LUXURIOUS",
+            "correctAnswer": "-OUS",
             "rootWord": "LUXURY",
             "options": [
-                "DANGEROUS",
-                "LUXURIOUS",
-                "FAMOUS",
-                "NERVOUS"
+                "-IBLE",
+                "-OUS",
+                "-FUL",
+                "-ABLE"
             ],
             "meaningBreakdown": "LUXURI (root) + OUS (suffix, 'full of')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "LUXURIOUS"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L38_Q3",
             "hint": "Describing a singer so widely known that strangers recognize her on the street.",
-            "explanation": "-OUS builds FAMOUS from FAME (with the silent E dropped), full of fame. -Y wouldn't work here \u2014 'famy' isn't an English word, showing that not every noun accepts every adjective-forming suffix.",
+            "explanation": "-OUS builds FAMOUS from FAME (with the silent E dropped), full of fame. -Y wouldn't work here — 'famy' isn't an English word, showing that not every noun accepts every adjective-forming suffix.",
             "interactionType": "choice",
             "correctAnswer": "-OUS",
             "rootWord": "FAME",
@@ -406,16 +414,17 @@
             "hint": "A problem with your bank account balance, not with your health or your car.",
             "explanation": "FINANCIAL is FINANCE + -AL (with a spelling shift), meaning relating to money matters.",
             "interactionType": "choice",
-            "correctAnswer": "FINANCIAL",
+            "correctAnswer": "-AL",
             "rootWord": "FINANCE",
             "options": [
-                "FINANCIAL",
-                "ANNUAL",
-                "NATIONAL",
-                "SEASONAL"
+                "-FUL",
+                "-AL",
+                "-ABLE",
+                "-IBLE"
             ],
             "meaningBreakdown": "FINANCI (root) + AL (suffix, 'relating to')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "FINANCIAL"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L39_Q3",
@@ -452,23 +461,24 @@
         {
             "id": "VOC_PREFIXSUFFIX_L40_Q2",
             "hint": "A teacher's former student who now runs a successful company across town.",
-            "explanation": "EX-STUDENT combines EX- ('former') with STUDENT, someone who used to study there but has since moved on \u2014 a useful review of EX- alongside this unit's new -AL and -OUS words.",
+            "explanation": "EX-STUDENT combines EX- ('former') with STUDENT, someone who used to study there but has since moved on — a useful review of EX- alongside this unit's new -AL and -OUS words.",
             "interactionType": "choice",
-            "correctAnswer": "EX-STUDENT",
+            "correctAnswer": "EX-",
             "rootWord": "STUDENT",
             "options": [
-                "COWORKER",
-                "EX-COACH",
-                "COPILOT",
-                "EX-STUDENT"
+                "MIS-",
+                "UN-",
+                "DIS-",
+                "EX-"
             ],
             "meaningBreakdown": "EX (prefix, 'former') + STUDENT (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "EX-STUDENT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L40_Q3",
             "hint": "Describing a chemistry teacher who specializes in and has deep training in the subject.",
-            "explanation": "-IST forms CHEMIST from CHEMISTRY (with the -ISTRY shortened to the root), a person devoted to that field of science \u2014 closing out the unit's review of person-naming and quality-naming suffixes together.",
+            "explanation": "-IST forms CHEMIST from CHEMISTRY (with the -ISTRY shortened to the root), a person devoted to that field of science — closing out the unit's review of person-naming and quality-naming suffixes together.",
             "interactionType": "choice",
             "correctAnswer": "-IST",
             "rootWord": "CHEM",

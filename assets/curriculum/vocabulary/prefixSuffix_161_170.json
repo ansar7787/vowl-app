@@ -20,23 +20,24 @@
         {
             "id": "VOC_PREFIXSUFFIX_L161_Q2",
             "hint": "A cartoon villain who takes pleasure in causing others harm and plots against the hero at every turn.",
-            "explanation": "MALEVOLENT is MALE- ('bad') + VOL ('will') + -ENT, describing someone who wishes harm on others \u2014 the direct opposite of BENEVOLENT.",
+            "explanation": "MALEVOLENT is MALE- ('bad') + VOL ('will') + -ENT, describing someone who wishes harm on others — the direct opposite of BENEVOLENT.",
             "interactionType": "choice",
-            "correctAnswer": "MALEVOLENT",
+            "correctAnswer": "MALE-",
             "rootWord": "VOL",
             "options": [
-                "MALEVOLENT",
-                "BENEVOLENT",
-                "VOLUNTARY",
-                "INVOLUNTARY"
+                "MIS-",
+                "DIS-",
+                "MALE-",
+                "UN-"
             ],
             "meaningBreakdown": "MALE (prefix, 'bad') + VOL (root, 'will') + ENT (suffix, forms an adjective)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "MALEVOLENT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L161_Q3",
-            "hint": "A sudden sneeze or a knee-jerk reflex \u2014 something your body does without you consciously choosing it.",
-            "explanation": "IN- ('not') + VOLUNT ('will/choice') + -ARY = INVOLUNTARY, happening without conscious control or choice. You already know VOLUNTARY (done by free will) from earlier \u2014 this is its logical opposite.",
+            "hint": "A sudden sneeze or a knee-jerk reflex — something your body does without you consciously choosing it.",
+            "explanation": "IN- ('not') + VOLUNT ('will/choice') + -ARY = INVOLUNTARY, happening without conscious control or choice. You already know VOLUNTARY (done by free will) from earlier — this is its logical opposite.",
             "interactionType": "choice",
             "correctAnswer": "IN-",
             "rootWord": "VOLUNT",
@@ -54,32 +55,34 @@
             "hint": "BENE- means 'good.' FIC relates to 'making' or 'doing.' Which word describes vitamins that genuinely improve your health?",
             "explanation": "BENEFICIAL is BENE- ('good') + FIC ('doing/making') + -IAL, producing good effects or results.",
             "interactionType": "choice",
-            "correctAnswer": "BENEFICIAL",
+            "correctAnswer": "BENE-",
             "rootWord": "FIC",
             "options": [
-                "BENEFICIAL",
-                "MALICIOUS",
-                "EFFICIENT",
-                "SUFFICIENT"
+                "MIS-",
+                "DIS-",
+                "BENE-",
+                "UN-"
             ],
             "meaningBreakdown": "BENE (prefix, 'good') + FIC (root, 'doing/making') + IAL (suffix, 'having the quality of')",
-            "instruction": "Which word matches this situation, using what BENE- means?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "BENEFICIAL"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L162_Q2",
             "hint": "A smoke detector that suddenly stops beeping during a fire because a wire came loose inside.",
             "explanation": "MALFUNCTION is MAL- ('bad') + FUNCTION, to fail to work correctly or as intended.",
             "interactionType": "choice",
-            "correctAnswer": "MALFUNCTION",
+            "correctAnswer": "MAL-",
             "rootWord": "FUNCTION",
             "options": [
-                "BENEFICIAL",
-                "DYSFUNCTION",
-                "REFUNCTION",
-                "MALFUNCTION"
+                "DIS-",
+                "MIS-",
+                "MAL-",
+                "UN-"
             ],
             "meaningBreakdown": "MAL (prefix, 'bad') + FUNCTION (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "MALFUNCTION"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L162_Q3",
@@ -102,32 +105,34 @@
             "hint": "INTRO- means 'inward.' VERT means 'turn.' Which word describes someone who recharges by spending quiet time alone rather than at a big party?",
             "explanation": "INTROVERT is INTRO- ('inward') + VERT ('turn'), someone whose energy and focus turn inward, toward their own thoughts.",
             "interactionType": "choice",
-            "correctAnswer": "INTROVERT",
+            "correctAnswer": "INTRO-",
             "rootWord": "VERT",
             "options": [
-                "EXTROVERT",
-                "CONVERT",
-                "INTROVERT",
-                "REVERT"
+                "DIS-",
+                "MIS-",
+                "INTRO-",
+                "UN-"
             ],
             "meaningBreakdown": "INTRO (prefix, 'inward') + VERT (root, 'turn')",
-            "instruction": "Use the pieces you know: INTRO- means 'inward.' Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "INTROVERT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L163_Q2",
             "hint": "Someone who feels energized after a night out talking to dozens of new people at a crowded party.",
-            "explanation": "EXTROVERT is EXTRO- ('outward') + VERT ('turn'), someone whose energy and focus turn outward, toward other people \u2014 the opposite of an INTROVERT.",
+            "explanation": "EXTROVERT is EXTRO- ('outward') + VERT ('turn'), someone whose energy and focus turn outward, toward other people — the opposite of an INTROVERT.",
             "interactionType": "choice",
-            "correctAnswer": "EXTROVERT",
+            "correctAnswer": "EXTRO-",
             "rootWord": "VERT",
             "options": [
-                "EXTROVERT",
-                "INTROVERT",
-                "CONVERT",
-                "DIVERT"
+                "EXTRO-",
+                "MIS-",
+                "DIS-",
+                "UN-"
             ],
             "meaningBreakdown": "EXTRO (prefix, 'outward') + VERT (root, 'turn')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "EXTROVERT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L163_Q3",
@@ -150,37 +155,39 @@
             "hint": "INTRO- means 'inward, into.' DUCE means 'lead.' Which word describes bringing a new coworker into the office and telling everyone their name for the first time?",
             "explanation": "INTRODUCE is INTRO- ('into') + DUCE ('lead'), to lead or bring someone or something into a new situation.",
             "interactionType": "choice",
-            "correctAnswer": "INTRODUCE",
+            "correctAnswer": "INTRO-",
             "rootWord": "DUCE",
             "options": [
-                "INTRODUCE",
-                "REDUCE",
-                "CONDUCT",
-                "PRODUCE"
+                "INTRO-",
+                "MIS-",
+                "DIS-",
+                "UN-"
             ],
             "meaningBreakdown": "INTRO (prefix, 'into') + DUCE (root, 'lead')",
-            "instruction": "Use the pieces you know: INTRO- means 'into.' Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "INTRODUCE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L164_Q2",
             "hint": "An orchestra leader stands at the front, waving a baton to guide dozens of musicians playing together in time.",
             "explanation": "CONDUCT is CON- ('together') + DUCT ('lead'), to lead or guide a group, as in leading an orchestra.",
             "interactionType": "choice",
-            "correctAnswer": "CONDUCT",
+            "correctAnswer": "CON-",
             "rootWord": "DUCT",
             "options": [
-                "INTRODUCE",
-                "CONDUCT",
-                "REDUCE",
-                "ABDUCT"
+                "MIS-",
+                "CON-",
+                "DIS-",
+                "UN-"
             ],
             "meaningBreakdown": "CON (prefix, 'together') + DUCT (root, 'lead')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "CONDUCT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L164_Q3",
             "hint": "A company cuts its workforce from 500 employees down to 350 to save money during a slow year.",
-            "explanation": "RE- ('back') + DUCE ('lead') = REDUCE, to lead something back to a smaller size or amount. INTRO- would instead mean bringing something in, not shrinking it \u2014 a completely different direction.",
+            "explanation": "RE- ('back') + DUCE ('lead') = REDUCE, to lead something back to a smaller size or amount. INTRO- would instead mean bringing something in, not shrinking it — a completely different direction.",
             "interactionType": "choice",
             "correctAnswer": "RE-",
             "rootWord": "DUCE",
@@ -196,39 +203,41 @@
         {
             "id": "VOC_PREFIXSUFFIX_L165_Q1",
             "hint": "PRO- means 'forward.' SPECT means 'look.' Which word describes the likely future outcome a business plan is aiming for?",
-            "explanation": "PROSPECT is PRO- ('forward') + SPECT ('look'), a possibility or expectation for the future \u2014 literally, a look ahead.",
+            "explanation": "PROSPECT is PRO- ('forward') + SPECT ('look'), a possibility or expectation for the future — literally, a look ahead.",
             "interactionType": "choice",
-            "correctAnswer": "PROSPECT",
+            "correctAnswer": "PRO-",
             "rootWord": "SPECT",
             "options": [
-                "RESPECT",
-                "PROSPECT",
-                "INSPECT",
-                "SUSPECT"
+                "CONTRA-",
+                "PRO-",
+                "COUNTER-",
+                "ANTI-"
             ],
             "meaningBreakdown": "PRO (prefix, 'forward') + SPECT (root, 'look')",
-            "instruction": "Use the pieces you know: PRO- means 'forward.' Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "PROSPECT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L165_Q2",
             "hint": "A building safety officer walks through every floor, checking wiring, fire exits, and smoke detectors before approving the site.",
             "explanation": "INSPECT is IN- ('into') + SPECT ('look'), to look closely into something to check its condition or quality.",
             "interactionType": "choice",
-            "correctAnswer": "INSPECT",
+            "correctAnswer": "IN-",
             "rootWord": "SPECT",
             "options": [
-                "PROSPECT",
-                "INSPECT",
-                "RESPECT",
-                "SUSPECT"
+                "DIS-",
+                "IN-",
+                "MIS-",
+                "UN-"
             ],
             "meaningBreakdown": "IN (prefix, 'into') + SPECT (root, 'look')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "INSPECT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L165_Q3",
             "hint": "After a difficult year, someone spends a quiet weekend alone journaling and reflecting on their own choices and values.",
-            "explanation": "INTRO- ('inward') + SPECT ('look') = INTROSPECT, to look inward and examine one's own thoughts and feelings. PRO- would instead mean looking forward, toward the future \u2014 a different direction of attention entirely.",
+            "explanation": "INTRO- ('inward') + SPECT ('look') = INTROSPECT, to look inward and examine one's own thoughts and feelings. PRO- would instead mean looking forward, toward the future — a different direction of attention entirely.",
             "interactionType": "choice",
             "correctAnswer": "INTRO-",
             "rootWord": "SPECT",
@@ -246,37 +255,39 @@
             "hint": "DE- means 'away, down.' PORT means 'carry.' Which word describes a government forcibly sending someone out of the country?",
             "explanation": "DEPORT is DE- ('away') + PORT ('carry'), to carry or send someone away from a country, usually by legal order.",
             "interactionType": "choice",
-            "correctAnswer": "DEPORT",
+            "correctAnswer": "DE-",
             "rootWord": "PORT",
             "options": [
-                "IMPORT",
-                "EXPORT",
-                "TRANSPORT",
-                "DEPORT"
+                "DIS-",
+                "DE-",
+                "MIS-",
+                "UN-"
             ],
             "meaningBreakdown": "DE (prefix, 'away') + PORT (root, 'carry')",
-            "instruction": "Use the pieces you know: DE- means 'away.' Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "DEPORT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L166_Q2",
             "hint": "A grocery store sells bananas, coffee, and mangoes that were all grown in other countries and shipped in.",
             "explanation": "IMPORT is IM- ('into') + PORT ('carry'), to carry goods into a country from somewhere else.",
             "interactionType": "choice",
-            "correctAnswer": "IMPORT",
+            "correctAnswer": "IM-",
             "rootWord": "PORT",
             "options": [
-                "DEPORT",
-                "EXPORT",
-                "REPORT",
-                "IMPORT"
+                "DIS-",
+                "IM-",
+                "MIS-",
+                "UN-"
             ],
             "meaningBreakdown": "IM (prefix, 'into') + PORT (root, 'carry')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "IMPORT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L166_Q3",
             "hint": "A charity raises funds to help pay a struggling family's rent and groceries during a hard year.",
-            "explanation": "SUP- (a form of SUB-, 'under') + PORT ('carry') = SUPPORT, to carry or hold something up from underneath \u2014 literally or figuratively, as in providing help. IM- would instead mean bringing goods into a country, a totally different context.",
+            "explanation": "SUP- (a form of SUB-, 'under') + PORT ('carry') = SUPPORT, to carry or hold something up from underneath — literally or figuratively, as in providing help. IM- would instead mean bringing goods into a country, a totally different context.",
             "interactionType": "choice",
             "correctAnswer": "SUP-",
             "rootWord": "PORT",
@@ -294,32 +305,34 @@
             "hint": "DE- here means 'down, fully.' SCRIBE means 'write.' Which word describes putting into words exactly what a suspect looked like for a police sketch?",
             "explanation": "DESCRIBE is DE- ('fully/down') + SCRIBE ('write'), to give a detailed account of something in words.",
             "interactionType": "choice",
-            "correctAnswer": "DESCRIBE",
+            "correctAnswer": "DE-",
             "rootWord": "SCRIBE",
             "options": [
-                "INSCRIBE",
-                "DESCRIBE",
-                "PRESCRIBE",
-                "SUBSCRIBE"
+                "DIS-",
+                "DE-",
+                "MIS-",
+                "UN-"
             ],
             "meaningBreakdown": "DE (prefix, 'fully') + SCRIBE (root, 'write')",
-            "instruction": "Use the pieces you know: SCRIBE means 'write.' Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "DESCRIBE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L167_Q2",
             "hint": "A jeweler carefully engraves the couple's wedding date directly into the inside of a gold ring.",
             "explanation": "INSCRIBE is IN- ('into') + SCRIBE ('write'), to write or carve words directly onto or into a surface.",
             "interactionType": "choice",
-            "correctAnswer": "INSCRIBE",
+            "correctAnswer": "IN-",
             "rootWord": "SCRIBE",
             "options": [
-                "INSCRIBE",
-                "DESCRIBE",
-                "PRESCRIBE",
-                "SUBSCRIBE"
+                "DIS-",
+                "MIS-",
+                "IN-",
+                "UN-"
             ],
             "meaningBreakdown": "IN (prefix, 'into') + SCRIBE (root, 'write')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "INSCRIBE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L167_Q3",
@@ -342,85 +355,90 @@
             "hint": "IN- here means 'upon, into action.' VOKE means 'call.' Which word describes a judge calling upon an old law to justify a ruling?",
             "explanation": "INVOKE is IN- ('upon') + VOKE ('call'), to call upon or appeal to something, like a law, rule, or higher power.",
             "interactionType": "choice",
-            "correctAnswer": "INVOKE",
+            "correctAnswer": "IN-",
             "rootWord": "VOKE",
             "options": [
-                "REVOKE",
-                "INVOKE",
-                "PROVOKE",
-                "EVOKE"
+                "DIS-",
+                "MIS-",
+                "IN-",
+                "UN-"
             ],
             "meaningBreakdown": "IN (prefix, 'upon') + VOKE (root, 'call')",
-            "instruction": "Use the pieces you know: VOKE means 'call.' Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "INVOKE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L168_Q2",
             "hint": "After too many speeding tickets, the DMV takes away a driver's license entirely.",
             "explanation": "REVOKE is RE- ('back') + VOKE ('call'), to call something back, canceling a right or privilege that was previously granted.",
             "interactionType": "choice",
-            "correctAnswer": "REVOKE",
+            "correctAnswer": "RE-",
             "rootWord": "VOKE",
             "options": [
-                "INVOKE",
-                "PROVOKE",
-                "EVOKE",
-                "REVOKE"
+                "DE-",
+                "PRE-",
+                "RE-",
+                "POST-"
             ],
             "meaningBreakdown": "RE (prefix, 'back') + VOKE (root, 'call')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "REVOKE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L168_Q3",
             "hint": "A nurse describes her career not just as a paycheck, but as something she felt genuinely called to do since childhood.",
-            "explanation": "VOCATION comes from the same root as INVOKE and REVOKE \u2014 VOC/VOKE, meaning 'call.' A VOCATION is literally a 'calling,' a profession someone feels deeply drawn to. Recognizing the shared root across INVOKE, REVOKE, and VOCATION is exactly the inference skill this phase is building.",
+            "explanation": "VOCATION comes from the same root as INVOKE and REVOKE — VOC/VOKE, meaning 'call.' A VOCATION is literally a 'calling,' a profession someone feels deeply drawn to. Recognizing the shared root across INVOKE, REVOKE, and VOCATION is exactly the inference skill this phase is building.",
             "interactionType": "choice",
-            "correctAnswer": "VOCATION",
+            "correctAnswer": "-ATION",
             "rootWord": "VOC",
             "options": [
-                "PROVOCATION",
-                "EVOCATION",
-                "VOCATION",
-                "INVOCATION"
+                "-MENT",
+                "-ATION",
+                "-SION",
+                "-TION"
             ],
             "meaningBreakdown": "VOC (root, 'call') + ATION (suffix, forms a noun)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "VOCATION"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L169_Q1",
             "hint": "RE- means 'back.' PORT means 'carry.' Which word describes carrying information back to your boss after finishing an assignment?",
             "explanation": "REPORT is RE- ('back') + PORT ('carry'), to carry information back to someone, or to give an account of something.",
             "interactionType": "choice",
-            "correctAnswer": "REPORT",
+            "correctAnswer": "RE-",
             "rootWord": "PORT",
             "options": [
-                "REPORT",
-                "IMPORT",
-                "EXPORT",
-                "DEPORT"
+                "DE-",
+                "PRE-",
+                "RE-",
+                "POST-"
             ],
             "meaningBreakdown": "RE (prefix, 'back') + PORT (root, 'carry')",
-            "instruction": "Use the pieces you know: RE- means 'back.' Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "REPORT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L169_Q2",
             "hint": "A doctor writes out exactly which medication and dosage a patient should take, before they even leave the office.",
             "explanation": "PRESCRIBE is PRE- ('before') + SCRIBE ('write'), to write out instructions or recommendations in advance, especially for medicine.",
             "interactionType": "choice",
-            "correctAnswer": "PRESCRIBE",
+            "correctAnswer": "PRE-",
             "rootWord": "SCRIBE",
             "options": [
-                "DESCRIBE",
-                "INSCRIBE",
-                "SUBSCRIBE",
-                "PRESCRIBE"
+                "RE-",
+                "PRE-",
+                "DE-",
+                "POST-"
             ],
             "meaningBreakdown": "PRE (prefix, 'before') + SCRIBE (root, 'write')",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "PRESCRIBE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L169_Q3",
             "hint": "A heckler in the crowd keeps shouting insults, clearly trying to get a reaction out of the performer on stage.",
-            "explanation": "PRO- ('forth') + VOKE ('call') = PROVOKE, to call forth a reaction, usually anger or irritation, deliberately. IN- would instead mean calling upon something formally, like a law \u2014 a much calmer, more official action.",
+            "explanation": "PRO- ('forth') + VOKE ('call') = PROVOKE, to call forth a reaction, usually anger or irritation, deliberately. IN- would instead mean calling upon something formally, like a law — a much calmer, more official action.",
             "interactionType": "choice",
             "correctAnswer": "PRO-",
             "rootWord": "VOKE",
@@ -436,7 +454,7 @@
         {
             "id": "VOC_PREFIXSUFFIX_L170_Q1",
             "hint": "A priest offers a closing blessing at the end of a wedding ceremony, wishing the couple well.",
-            "explanation": "BENEDICTION is BENE- ('good') + DICT ('say') + -ION, literally 'a good saying' \u2014 a blessing. This checkpoint reviews BENE-/MAL- alongside DICT, the same root you met all the way back in PREDICT.",
+            "explanation": "BENEDICTION is BENE- ('good') + DICT ('say') + -ION, literally 'a good saying' — a blessing. This checkpoint reviews BENE-/MAL- alongside DICT, the same root you met all the way back in PREDICT.",
             "interactionType": "choice",
             "correctAnswer": "BENE-",
             "rootWord": "DICT",
@@ -452,7 +470,7 @@
         {
             "id": "VOC_PREFIXSUFFIX_L170_Q2",
             "hint": "A detour sign sends traffic away from the closed highway and onto a side road instead.",
-            "explanation": "DIVERT uses a form of DIS- ('away/apart') combined with VERT ('turn'), to turn something away from its original path. This checkpoint reviews the VERT family: INTROVERT, EXTROVERT, CONVERT, and now DIVERT \u2014 all built from the same 'turn' root.",
+            "explanation": "DIVERT uses a form of DIS- ('away/apart') combined with VERT ('turn'), to turn something away from its original path. This checkpoint reviews the VERT family: INTROVERT, EXTROVERT, CONVERT, and now DIVERT — all built from the same 'turn' root.",
             "interactionType": "choice",
             "correctAnswer": "DIS-",
             "rootWord": "VERT",

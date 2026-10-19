@@ -22,21 +22,22 @@
             "hint": "Thinking a text message meant something it didn't, and reacting the wrong way.",
             "explanation": "MISUNDERSTAND combines MIS- with UNDERSTAND, meaning to understand something incorrectly.",
             "interactionType": "choice",
-            "correctAnswer": "MISUNDERSTAND",
+            "correctAnswer": "MIS-",
             "rootWord": "UNDERSTAND",
             "options": [
-                "MISREAD",
-                "MISPLACE",
-                "MISUNDERSTAND",
-                "MISSPELL"
+                "NON-",
+                "UN-",
+                "DIS-",
+                "MIS-"
             ],
             "meaningBreakdown": "MIS (prefix, 'wrongly') + UNDERSTAND (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "MISUNDERSTAND"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L21_Q3",
             "hint": "Setting your keys down somewhere and then not remembering where.",
-            "explanation": "MIS- + PLACE = MISPLACE, to put something in the wrong place, usually by accident. DIS- would instead mean removing or opposing something entirely, not simply making an error \u2014 so it doesn't fit an honest mistake.",
+            "explanation": "MIS- + PLACE = MISPLACE, to put something in the wrong place, usually by accident. DIS- would instead mean removing or opposing something entirely, not simply making an error — so it doesn't fit an honest mistake.",
             "interactionType": "choice",
             "correctAnswer": "MIS-",
             "rootWord": "PLACE",
@@ -68,18 +69,19 @@
         {
             "id": "VOC_PREFIXSUFFIX_L22_Q2",
             "hint": "Taking the wrapping paper off a birthday present.",
-            "explanation": "DEWRAP would technically follow the pattern, but English actually favors UNWRAP for this exact action \u2014 a good reminder that DE- and UN- overlap in meaning yet aren't always interchangeable in real words.",
+            "explanation": "DEWRAP would technically follow the pattern, but English actually favors UNWRAP for this exact action — a good reminder that DE- and UN- overlap in meaning yet aren't always interchangeable in real words.",
             "interactionType": "choice",
-            "correctAnswer": "UNWRAP",
+            "correctAnswer": "DE-",
             "rootWord": "WRAP",
             "options": [
-                "DEFROST",
-                "DEACTIVATE",
-                "UNWRAP",
-                "UNLOAD"
+                "MIS-",
+                "UN-",
+                "DIS-",
+                "DE-"
             ],
             "meaningBreakdown": "UN (prefix, reverses the action) + WRAP (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "UNWRAP"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L22_Q3",
@@ -118,21 +120,22 @@
             "hint": "A charity that exists to help people, not to earn money for owners or shareholders.",
             "explanation": "NONPROFIT is NON- + PROFIT, describing an organization that does not operate to make money.",
             "interactionType": "choice",
-            "correctAnswer": "NONPROFIT",
+            "correctAnswer": "NON-",
             "rootWord": "PROFIT",
             "options": [
-                "NONPROFIT",
-                "NONSTOP",
-                "NONFICTION",
-                "NONSENSE"
+                "DIS-",
+                "MIS-",
+                "UN-",
+                "NON-"
             ],
             "meaningBreakdown": "NON (prefix, 'not') + PROFIT (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "NONPROFIT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L23_Q3",
             "hint": "A red-eye flight from New York to London that doesn't land anywhere in between.",
-            "explanation": "NON- + STOP = NONSTOP, without any stops along the way. UN- doesn't attach to STOP in this sense \u2014 'unstop' actually means to clear a blockage, a completely different meaning.",
+            "explanation": "NON- + STOP = NONSTOP, without any stops along the way. UN- doesn't attach to STOP in this sense — 'unstop' actually means to clear a blockage, a completely different meaning.",
             "interactionType": "choice",
             "correctAnswer": "NON-",
             "rootWord": "STOP",
@@ -166,16 +169,17 @@
             "hint": "Eating three servings at dinner and then feeling uncomfortably full afterward.",
             "explanation": "OVEREAT combines OVER- with EAT, meaning to eat more than the body needs.",
             "interactionType": "choice",
-            "correctAnswer": "OVEREAT",
+            "correctAnswer": "OVER-",
             "rootWord": "EAT",
             "options": [
-                "OVEREAT",
-                "OVERPACK",
-                "OVERSLEEP",
-                "OVERWORK"
+                "OUT-",
+                "OVER-",
+                "SUB-",
+                "UNDER-"
             ],
             "meaningBreakdown": "OVER (prefix, 'too much') + EAT (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "OVEREAT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L24_Q3",
@@ -214,16 +218,17 @@
             "hint": "A restaurant that doesn't have enough kitchen staff for how busy it gets on weekends.",
             "explanation": "UNDERSTAFFED is UNDER- + STAFFED, meaning not having enough workers for the amount of work required.",
             "interactionType": "choice",
-            "correctAnswer": "UNDERSTAFFED",
+            "correctAnswer": "UNDER-",
             "rootWord": "STAFFED",
             "options": [
-                "OVERWORKED",
-                "UNDERACHIEVE",
-                "UNDERPAID",
-                "UNDERSTAFFED"
+                "SUB-",
+                "OUT-",
+                "UNDER-",
+                "OVER-"
             ],
             "meaningBreakdown": "UNDER (prefix, 'too little') + STAFFED (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "UNDERSTAFFED"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L25_Q3",
@@ -260,18 +265,19 @@
         {
             "id": "VOC_PREFIXSUFFIX_L26_Q2",
             "hint": "The formal deal two companies sign before starting a joint project.",
-            "explanation": "AGREEMENT is AGREE + -MENT, the result of two or more people agreeing \u2014 often a formal, written understanding.",
+            "explanation": "AGREEMENT is AGREE + -MENT, the result of two or more people agreeing — often a formal, written understanding.",
             "interactionType": "choice",
-            "correctAnswer": "AGREEMENT",
+            "correctAnswer": "-MENT",
             "rootWord": "AGREE",
             "options": [
-                "AGREEMENT",
-                "ENJOYMENT",
-                "PAYMENT",
-                "MOVEMENT"
+                "-SION",
+                "-NESS",
+                "-MENT",
+                "-TION"
             ],
             "meaningBreakdown": "AGREE (root) + MENT (suffix, forms a noun of result/state)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "AGREEMENT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L26_Q3",
@@ -310,16 +316,17 @@
             "hint": "The process a factory follows to turn raw materials into finished products.",
             "explanation": "PRODUCTION is PRODUCE + -TION (with a spelling shift from CE to T), naming the process of making or manufacturing something.",
             "interactionType": "choice",
-            "correctAnswer": "PRODUCTION",
+            "correctAnswer": "-TION",
             "rootWord": "PRODUCE",
             "options": [
-                "ELECTION",
-                "PRODUCTION",
-                "CONNECTION",
-                "INVENTION"
+                "-TION",
+                "-NESS",
+                "-SION",
+                "-MENT"
             ],
             "meaningBreakdown": "PRODUC (root) + TION (suffix, forms a noun of action/process)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "PRODUCTION"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L27_Q3",
@@ -358,16 +365,17 @@
             "hint": "The strong, positive effect a candidate's confident answers leave on a hiring manager.",
             "explanation": "IMPRESSION is IMPRESS + -SION, naming the effect something or someone has on the way people think or feel about it.",
             "interactionType": "choice",
-            "correctAnswer": "IMPRESSION",
+            "correctAnswer": "-SION",
             "rootWord": "IMPRESS",
             "options": [
-                "IMPRESSION",
-                "DECISION",
-                "TELEVISION",
-                "EXPLOSION"
+                "-NESS",
+                "-SION",
+                "-TION",
+                "-MENT"
             ],
             "meaningBreakdown": "IMPRESS (root) + SION (suffix, forms a noun of action/result)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the suffix that completes the word for this meaning.",
+            "word": "IMPRESSION"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L28_Q3",
@@ -406,16 +414,17 @@
             "hint": "A hallway kept completely clear of boxes, so it never becomes a fire hazard.",
             "explanation": "NONFLAMMABLE combines NON- ('not') with FLAMMABLE (which already contains -ABLE, 'capable of'), describing material that cannot easily catch fire.",
             "interactionType": "choice",
-            "correctAnswer": "NONFLAMMABLE",
+            "correctAnswer": "NON-",
             "rootWord": "FLAMMABLE",
             "options": [
-                "NONSTOP",
-                "NONPROFIT",
-                "NONSMOKING",
-                "NONFLAMMABLE"
+                "DIS-",
+                "NON-",
+                "MIS-",
+                "UN-"
             ],
             "meaningBreakdown": "NON (prefix, 'not') + FLAMMABLE (root, itself FLAME + ABLE)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "NONFLAMMABLE"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L29_Q3",
@@ -436,7 +445,7 @@
         {
             "id": "VOC_PREFIXSUFFIX_L30_Q1",
             "hint": "Think back over this unit: which prefix signals that something was done incorrectly, not simply undone or removed?",
-            "explanation": "MIS- consistently signals an error \u2014 doing something wrongly. UN- reverses an action, DE- removes or undoes a state, and NON- simply negates. Telling these apart is what lets you guess an unfamiliar word's meaning on sight.",
+            "explanation": "MIS- consistently signals an error — doing something wrongly. UN- reverses an action, DE- removes or undoes a state, and NON- simply negates. Telling these apart is what lets you guess an unfamiliar word's meaning on sight.",
             "interactionType": "choice",
             "correctAnswer": "MIS-",
             "rootWord": "SPELL",
@@ -452,18 +461,19 @@
         {
             "id": "VOC_PREFIXSUFFIX_L30_Q2",
             "hint": "A recipe that ends up with double the amount of salt the dish actually needed.",
-            "explanation": "OVER- and UNDER- form a natural opposite pair you've now seen with SLEEP, PACK, ACHIEVE, and PAID. Here, OVERSALT means adding too much salt \u2014 well beyond what's needed.",
+            "explanation": "OVER- and UNDER- form a natural opposite pair you've now seen with SLEEP, PACK, ACHIEVE, and PAID. Here, OVERSALT means adding too much salt — well beyond what's needed.",
             "interactionType": "choice",
-            "correctAnswer": "OVERSALT",
+            "correctAnswer": "OVER-",
             "rootWord": "SALT",
             "options": [
-                "UNDERCOOK",
-                "OVERSALT",
-                "UNDERPAID",
-                "OVERPACK"
+                "SUB-",
+                "UNDER-",
+                "OUT-",
+                "OVER-"
             ],
             "meaningBreakdown": "OVER (prefix, 'too much') + SALT (root)",
-            "instruction": "Which word matches this situation?"
+            "instruction": "Pick the prefix that completes the word for this meaning.",
+            "word": "OVERSALT"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L30_Q3",

@@ -15,6 +15,7 @@ import 'package:vowl/core/presentation/game_mechanics/typing/smart_typo_controll
 class TypeToConfirmOverlay extends StatefulWidget {
   final String expectedText;
   final String? displayText;
+  final String? hintText;
   final Color primaryColor;
   final VoidCallback onConfirmed;
   final VoidCallback onSkipped;
@@ -31,6 +32,7 @@ class TypeToConfirmOverlay extends StatefulWidget {
     super.key,
     required this.expectedText,
     this.displayText,
+    this.hintText,
     required this.primaryColor,
     required this.onConfirmed,
     required this.onSkipped,
@@ -316,17 +318,34 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                       color: widget.primaryColor.withValues(alpha: 0.15),
                     ),
                   ),
-                  child: Text(
-                    widget.displayText ?? widget.expectedText,
-                    textAlign: widget.displayTextAlign ?? TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: widget.displayFontSize ?? 20.sp,
-                      fontWeight: widget.displayFontWeight ?? FontWeight.w800,
-                      color: textColor,
-                      letterSpacing: 0.5,
-                      height: 1.4,
-                    ),
+                  child: Builder(
+                    builder: (context) {
+                      final rawText = widget.displayText ?? widget.expectedText;
+                      final isSingleWord = !rawText.trim().contains(' ');
+
+                      Widget textWidget = Text(
+                        rawText,
+                        textAlign: widget.displayTextAlign ?? TextAlign.center,
+                        softWrap: true,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: widget.displayFontSize ?? 20.sp,
+                          fontWeight: widget.displayFontWeight ?? FontWeight.w700,
+                          color: textColor,
+                          letterSpacing: 0.5,
+                          height: 1.4,
+                        ),
+                      );
+
+                      if (isSingleWord) {
+                        textWidget = FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: textWidget,
+                        );
+                      }
+
+                      return textWidget;
+                    },
                   ),
                 ),
                 SizedBox(height: 20.h),
@@ -418,7 +437,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                               fontWeight: FontWeight.w600,
                             ),
                             decoration: InputDecoration(
-                              hintText: 'Type exactly...',
+                              hintText: widget.hintText ?? 'Type your answer',
                               hintStyle: TextStyle(
                                 color: subtitleColor.withValues(alpha: 0.5),
                                 fontWeight: FontWeight.w400,
