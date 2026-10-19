@@ -11,6 +11,8 @@ class WordFormationController extends ChangeNotifier {
   final void Function(bool isCorrect, {GameQuest? quest, String? userAnswer})
   onSubmitAnswer;
 
+  bool _isDisposed = false;
+
   bool isAnswered = false;
   bool? isCorrect;
   bool showConfetti = false;
@@ -28,7 +30,21 @@ class WordFormationController extends ChangeNotifier {
   }) : _hapticService = hapticService,
        _soundService = soundService;
 
+  @override
+  void notifyListeners() {
+    if (!_isDisposed) {
+      super.notifyListeners();
+    }
+  }
+
+  @override
+  void dispose() {
+    _isDisposed = true;
+    super.dispose();
+  }
+
   void reset(VocabularyQuest quest, int index) {
+    if (_isDisposed) return;
     lastQuest = quest;
     lastProcessedIndex = index;
     isAnswered = false;

@@ -3,6 +3,7 @@ import 'package:google_mlkit_digital_ink_recognition/google_mlkit_digital_ink_re
 
 /// A zero-allocation notifier for real-time stroke drawing updates.
 class StrokeNotifier extends ChangeNotifier {
+  bool _isDisposed = false;
   final List<Stroke> _strokes = [];
   final Ink _ink = Ink();
   Stroke? _activeStroke;
@@ -14,7 +15,21 @@ class StrokeNotifier extends ChangeNotifier {
   bool get hasStrokes => _strokes.isNotEmpty || _activeStroke != null;
   int get strokeCount => _strokes.length + (_activeStroke != null ? 1 : 0);
 
+  @override
+  void notifyListeners() {
+    if (!_isDisposed) {
+      super.notifyListeners();
+    }
+  }
+
+  @override
+  void dispose() {
+    _isDisposed = true;
+    super.dispose();
+  }
+
   void startStroke(Offset point) {
+    if (_isDisposed) return;
     _activeStroke = Stroke();
     _activeStroke!.points.add(
       StrokePoint(

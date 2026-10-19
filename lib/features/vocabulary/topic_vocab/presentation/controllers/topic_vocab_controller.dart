@@ -39,6 +39,13 @@ class TopicVocabController extends ChangeNotifier {
        _soundService = soundService;
 
   @override
+  void notifyListeners() {
+    if (!_isDisposed) {
+      super.notifyListeners();
+    }
+  }
+
+  @override
   void dispose() {
     _isDisposed = true;
     _flickTimer?.cancel();
@@ -46,6 +53,7 @@ class TopicVocabController extends ChangeNotifier {
   }
 
   void reset(VocabularyQuest? quest) {
+    if (_isDisposed) return;
     _flickTimer?.cancel();
     currentQuest = quest;
     isAnswered = false;
@@ -77,11 +85,13 @@ class TopicVocabController extends ChangeNotifier {
   }
 
   void activateHint() {
+    if (isHintActive || _isDisposed) return;
     isHintActive = true;
     notifyListeners();
   }
 
   void completeGame() {
+    if (showConfetti || _isDisposed) return;
     showConfetti = true;
     notifyListeners();
   }
