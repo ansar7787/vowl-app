@@ -300,23 +300,23 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                   AutoSizeText(
                     ContextSentenceStrings.headerTitle(context),
                     maxLines: 1,
-                    minFontSize: 8,
+                    minFontSize: 9,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 13.sp,
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w700,
                       color: widget.primaryColor,
-                      letterSpacing: 1.5,
+                      letterSpacing: 1.0,
                     ),
                   ),
-                  SizedBox(height: 2.h),
+                  SizedBox(height: 3.h),
                   AutoSizeText(
                     ContextSentenceStrings.headerSubtitle(context),
-                    maxLines: 1,
-                    minFontSize: 6,
+                    maxLines: 2,
+                    minFontSize: 9,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 11.sp,
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.w500,
                       color: subtitleColor,
                     ),
@@ -337,14 +337,14 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                         ),
                       ),
                       child: AutoSizeText(
-                        '${ContextSentenceStrings.examplePrefix(context)}"${widget.exampleSentence!}"',
-                        maxLines: 2,
-                        minFontSize: 8,
+                        '${ContextSentenceStrings.examplePrefix(context)} "${widget.exampleSentence!}"',
+                        maxLines: 3,
+                        minFontSize: 9,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 10.sp,
+                          fontSize: 11.sp,
                           fontStyle: FontStyle.italic,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w500,
                           color: isDark ? Colors.white70 : Colors.black87,
                         ),
                       ),
@@ -353,11 +353,6 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                 ],
               ),
             ),
-            if (widget.allowSkip)
-              Padding(
-                padding: EdgeInsets.only(left: 8.w),
-                child: _buildSkipButton(subtitleColor),
-              ),
           ],
         ),
         SizedBox(height: 12.h),
@@ -387,10 +382,10 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                 minFontSize: 10,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w900,
+                  fontSize: 13.5.sp,
+                  fontWeight: FontWeight.w700,
                   color: widget.primaryColor,
-                  letterSpacing: 1.5,
+                  letterSpacing: 1.0,
                 ),
               ),
             ],
@@ -512,7 +507,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                         fontSize: 10.sp,
                                         fontWeight: FontWeight.w600,
                                         color: subtitleColor.withValues(
-                                          alpha: 0.6,
+                                          alpha: 0.85,
                                         ),
                                       ),
                                     );
@@ -599,10 +594,10 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                               ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 15.sp,
+                                fontSize: 14.sp,
                                 fontWeight: FontWeight.w700,
                                 color: Colors.white,
-                                letterSpacing: 1.5,
+                                letterSpacing: 1.0,
                               ),
                             ),
                           ),
@@ -611,6 +606,12 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                     );
                   },
                 ),
+                if (widget.allowSkip) ...[
+                  SizedBox(height: 12.h),
+                  Center(
+                    child: _buildSkipButton(subtitleColor),
+                  ),
+                ],
               ],
             );
           },
@@ -642,9 +643,9 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w700,
                     color: AppColors.gameCorrect,
-                    letterSpacing: 2,
+                    letterSpacing: 1.0,
                   ),
                 ).animate().fadeIn(delay: 200.ms),
               ],
@@ -749,11 +750,11 @@ class ContextSentenceStrings {
   static String errorCopiedExample(BuildContext context) => context.tr(
     'game.sentence_builder.error_copied_example',
     fallback:
-        'Nice try! You must write your own original sentence, not copy the example.',
+        'Please write your own sentence instead of copying the example.',
   );
   static String errorGibberish(BuildContext context) => context.tr(
     'game.sentence_builder.error_gibberish',
-    fallback: 'Write a proper, meaningful sentence.',
+    fallback: 'Please enter a complete and meaningful sentence.',
   );
   static String successMessage(BuildContext context) => context.tr(
     'game.sentence_builder.success_message',

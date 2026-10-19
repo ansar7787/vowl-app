@@ -19,6 +19,7 @@ import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_chat
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_option_chip.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_origin_card.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
+import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
 class IdiomsScreen extends StatefulWidget {
   final int level;
@@ -47,6 +48,7 @@ class _IdiomsScreenState extends State<IdiomsScreen>
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
+  final ValueNotifier<bool> _showHint = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
   Timer? _submitTimer;
   Timer? _scrollTimer;
@@ -58,6 +60,7 @@ class _IdiomsScreenState extends State<IdiomsScreen>
     _submitTimer?.cancel();
     _scrollTimer?.cancel();
     _selectedOption.dispose();
+    _showHint.dispose();
     _scrollController.dispose();
     disposeVocabularyGame();
     super.dispose();
@@ -129,6 +132,7 @@ class _IdiomsScreenState extends State<IdiomsScreen>
     _submitTimer?.cancel();
     _scrollTimer?.cancel();
     _selectedOption.value = null;
+    _showHint.value = false;
   }
 
   @override
@@ -143,6 +147,9 @@ class _IdiomsScreenState extends State<IdiomsScreen>
         );
         if (state is VocabularyLoaded) {
           _lastQuest = state.currentQuestOrNull ?? _lastQuest;
+          if (state.hintUsed) {
+            _showHint.value = true;
+          }
         }
 
         final quest = (state is VocabularyLoaded)
@@ -158,6 +165,7 @@ class _IdiomsScreenState extends State<IdiomsScreen>
             showConfettiNotifier,
             isFirstStagePassedNotifier,
             _selectedOption,
+            _showHint,
           ]),
           builder: (context, _) {
             return VocabularyBaseLayout(
@@ -190,7 +198,10 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                   context.read<VocabularyBloc>().add(NextQuestion());
                 }
               },
-              onHint: () {},
+              onHint: () {
+                _showHint.value = true;
+              },
+              customHintText: quest?.hint,
               useScrolling: false,
               disablePadding: true,
               child: quest == null
@@ -215,96 +226,90 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                                   SliverToBoxAdapter(
                                     child: ConstrainedBox(
                                       constraints: BoxConstraints(
-                                          minHeight: isFirstStagePassedNotifier.value
-                                              ? 0
-                                              : constraints.maxHeight,
-                                        ),
-                                        child: Stack(
-                                          children: [
-                                            Positioned.fill(
-                                              child: CustomPaint(
-                                                painter: GridPainter(
-                                                  theme.primaryColor.withValues(
-                                                    alpha: isDarkMode
-                                                        ? 0.05
-                                                        : 0.03,
+                                        minHeight: isFirstStagePassedNotifier.value
+                                            ? 0
+                                            : constraints.maxHeight,
+                                      ),
+                                      child: Stack(
+                                        children: [
+                                          Positioned.fill(
+                                            child: CustomPaint(
+                                              painter: GridPainter(
+                                                theme.primaryColor.withValues(
+                                                  alpha: isDarkMode
+                                                      ? 0.05
+                                                      : 0.03,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Center(
+                                            child: ConstrainedBox(
+                                              constraints:
+                                                  const BoxConstraints(
+                                                    maxWidth: 600,
                                                   ),
-                                                ),
-                                              ),
-                                            ),
-                                            Center(
-                                              child: ConstrainedBox(
-                                                constraints:
-                                                    const BoxConstraints(
-                                                      maxWidth: 600,
+                                              child: Column(
+                                                children: [
+                                                  IgnorePointer(
+                                                    ignoring:
+                                                        isFirstStagePassedNotifier.value,
+                                                    child: _buildChatInterface(
+                                                      quest,
+                                                      theme.primaryColor,
+                                                      isDarkMode,
+                                                      constraints.maxHeight,
                                                     ),
-                                                child: Column(
-                                                  children: [
-                                                    IgnorePointer(
-                                                      ignoring:
-                                                          isFirstStagePassedNotifier.value,
-                                                      child: _buildChatInterface(
-                                                        quest,
-                                                        theme.primaryColor,
-                                                        isDarkMode,
-                                                        constraints.maxHeight,
-                                                      ),
-                                                    ),
-                                                    if (isFirstStagePassedNotifier
-                                                        .value)
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsets.symmetric(
-                                                              horizontal: 20.w,
+                                                  ),
+                                                  if (isFirstStagePassedNotifier
+                                                      .value)
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 20.w,
+                                                          ),
+                                                      child: Column(
+                                                        children: [
+                                                          if ((quest.origin !=
+                                                                      null &&
+                                                                  quest
+                                                                      .origin!
+                                                                      .isNotEmpty) ||
+                                                              quest.literalVsFigurative !=
+                                                                  null ||
+                                                              quest.contextSentence !=
+                                                                  null ||
+                                                              quest.example !=
+                                                                  null)
+                                                            IdiomsOriginCard(
+                                                              origin: quest
+                                                                  .origin,
+                                                              literalVsFigurative:
+                                                                  quest
+                                                                      .literalVsFigurative,
+                                                              contextSentence:
+                                                                  quest
+                                                                      .contextSentence ??
+                                                                  quest
+                                                                      .example,
+                                                              color: theme
+                                                                  .primaryColor,
                                                             ),
-                                                        child: Column(
-                                                          children: [
-                                                            if ((quest.origin !=
-                                                                        null &&
-                                                                    quest
-                                                                        .origin!
-                                                                        .isNotEmpty) ||
-                                                                quest.literalVsFigurative !=
-                                                                    null ||
-                                                                quest.contextSentence !=
-                                                                    null ||
-                                                                quest.example !=
-                                                                    null)
-                                                              IdiomsOriginCard(
-                                                                origin: quest
-                                                                    .origin,
-                                                                literalVsFigurative:
-                                                                    quest
-                                                                        .literalVsFigurative,
-                                                                contextSentence:
-                                                                    quest
-                                                                        .contextSentence ??
-                                                                    quest
-                                                                        .example,
-                                                                color: theme
-                                                                    .primaryColor,
-                                                              ),
-                                                          ],
-                                                        ),
+                                                        ],
                                                       ),
-                                                    SizedBox(
-                                                      height:
-                                                          (isAnsweredNotifier
-                                                                  .value ||
-                                                              isFirstStagePassedNotifier
-                                                                  .value)
-                                                          ? 40.h
-                                                          : 40.h,
                                                     ),
-                                                  ],
-                                                ),
+                                                  SizedBox(
+                                                    height: 30.h,
+                                                  ),
+                                                ],
                                               ),
                                             ),
-                                          ],
-                                        ),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                    if (isFirstStagePassedNotifier.value &&
+                                  ),
+                                  if (isFirstStagePassedNotifier.value &&
                                       (!isAnsweredNotifier.value ||
                                           isCorrectNotifier.value == null))
                                     SliverToBoxAdapter(
@@ -313,27 +318,32 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                                           constraints: const BoxConstraints(
                                             maxWidth: 600,
                                           ),
-                                          child: Column(
-                                            children: [
-                                              SpeakToConfirmOverlay(
-                                                expectedText:
-                                                    quest.correctAnswer ?? '',
-                                                primaryColor:
-                                                    theme.primaryColor,
-                                                onConfirmed: () =>
-                                                    _submitFinalAnswer(
-                                                      true,
-                                                      quest: quest,
-                                                    ),
-                                                onSkipped: () =>
-                                                    _submitFinalAnswer(
-                                                      false,
-                                                      quest: quest,
-                                                    ),
-                                                isPositioned: false,
-                                              ),
-                                              SizedBox(height: 60.h),
-                                            ],
+                                          child: Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 20.w,
+                                            ),
+                                            child: Column(
+                                              children: [
+                                                SpeakToConfirmOverlay(
+                                                  expectedText:
+                                                      quest.correctAnswer ?? '',
+                                                  primaryColor:
+                                                      theme.primaryColor,
+                                                  onConfirmed: () =>
+                                                      _submitFinalAnswer(
+                                                        true,
+                                                        quest: quest,
+                                                      ),
+                                                  onSkipped: () =>
+                                                      _submitFinalAnswer(
+                                                        false,
+                                                        quest: quest,
+                                                      ),
+                                                  isPositioned: false,
+                                                ),
+                                                SizedBox(height: 60.h),
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -369,45 +379,47 @@ class _IdiomsScreenState extends State<IdiomsScreen>
 
     final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
     final double gapTop = remainingHeight > 0
-        ? (gapUnit * 1).clamp(10.0, 30.0)
+        ? (gapUnit * 1).clamp(10.0, 24.0)
         : 10.0;
     final double gapMiddle = remainingHeight > 0
-        ? (gapUnit * 1.5).clamp(10.0, 24.0)
+        ? (gapUnit * 1.5).clamp(10.0, 20.0)
         : 10.0;
     final double gapBottom = remainingHeight > 0
-        ? (gapUnit * 2.5).clamp(15.0, 40.0)
+        ? (gapUnit * 2.5).clamp(15.0, 36.0)
         : 15.0;
 
     return Column(
       children: [
         SizedBox(height: gapTop),
-        isCompact
-            ? SizedBox(
-                height: 30.h,
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: _buildHeaderBadge(color, isCompact: true),
-                ),
-              )
-            : _buildHeaderBadge(color, isCompact: false),
+        _buildHeaderBadge(color, isCompact: isCompact),
+        SizedBox(height: isCompact ? 6.h : 10.h),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Text(
+            "Guess the idiom that matches the emoji clues",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: isCompact ? 13.sp : 15.sp,
+              fontWeight: FontWeight.w600,
+              color: isDark ? Colors.white.withValues(alpha: 0.9) : AppColors.slate800,
+              height: 1.35,
+            ),
+          ),
+        ),
         SizedBox(height: gapMiddle),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 4.h),
           child: Column(
             children: [
-              IdiomsSystemMessage(
-                text: "INCOMING TRANSMISSION...",
-                color: color,
-              ),
-              SizedBox(height: isCompact ? 10.h : 20.h),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   CircleAvatar(
                     radius: isCompact ? 14.r : 18.r,
-                    backgroundColor: color.withValues(alpha: 0.2),
+                    backgroundColor: color.withValues(alpha: 0.15),
                     child: Icon(
-                      Icons.psychology_alt_rounded,
+                      Icons.help_outline_rounded,
                       size: isCompact ? 16.r : 20.r,
                       color: color,
                     ),
@@ -421,26 +433,81 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                 ],
               ),
               if (quest.hint != null && quest.hint!.isNotEmpty) ...[
-                SizedBox(height: isCompact ? 8.h : 12.h),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    SizedBox(
-                      width: (isCompact ? 28.r : 36.r) + 10.w,
-                    ), // alignment with above
-                    Flexible(
-                      child: IdiomsStrangerTextMessage(
-                        text: quest.hint!,
-                        color: color,
-                        isDark: isDark,
+                if (_showHint.value) ...[
+                  SizedBox(height: isCompact ? 8.h : 12.h),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      SizedBox(
+                        width: (isCompact ? 28.r : 36.r) + 10.w,
                       ),
-                    ),
-                  ],
-                ),
+                      Flexible(
+                        child: IdiomsStrangerTextMessage(
+                          text: quest.hint!,
+                          color: color,
+                          isDark: isDark,
+                        ),
+                      ),
+                    ],
+                  ),
+                ] else if (!isAnsweredNotifier.value) ...[
+                  SizedBox(height: 6.h),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: (isCompact ? 28.r : 36.r) + 10.w,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          _showHint.value = true;
+                          context
+                              .read<VocabularyBloc>()
+                              .add(const VocabularyHintUsed());
+                          context
+                              .read<EconomyBloc>()
+                              .add(const EconomyConsumeHintRequested());
+                        },
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 10.w,
+                            vertical: 4.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: color.withValues(alpha: 0.08),
+                            borderRadius: BorderRadius.circular(12.r),
+                            border: Border.all(
+                              color: color.withValues(alpha: 0.2),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.lightbulb_outline_rounded,
+                                size: 13.r,
+                                color: color,
+                              ),
+                              SizedBox(width: 4.w),
+                              Text(
+                                "Need a clue?",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: color,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ],
 
               if (_selectedOption.value != null) ...[
-                SizedBox(height: isCompact ? 14.h : 24.h),
+                SizedBox(height: isCompact ? 14.h : 20.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -458,7 +525,7 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                       radius: isCompact ? 14.r : 18.r,
                       backgroundColor: color.withValues(alpha: 0.1),
                       child: Icon(
-                        Icons.face_retouching_natural_rounded,
+                        Icons.person_rounded,
                         size: isCompact ? 16.r : 20.r,
                         color: color,
                       ),
@@ -469,10 +536,11 @@ class _IdiomsScreenState extends State<IdiomsScreen>
 
               if (isAnsweredNotifier.value &&
                   isCorrectNotifier.value == false) ...[
-                SizedBox(height: 10.h),
+                SizedBox(height: 12.h),
                 IdiomsSystemMessage(
-                  text: "DECRYPTION FAILED. RE-EVALUATE SEQUENCE.",
+                  text: "Not quite right. Try again!",
                   color: AppColors.gameIncorrect,
+                  icon: Icons.info_outline_rounded,
                 ),
               ],
             ],
@@ -513,8 +581,8 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                 ? optionsBox
                 : optionsBox
                     .animate()
-                    .fadeIn(delay: 800.ms)
-                    .slideY(begin: 0.3, curve: Curves.easeOutCubic);
+                    .fadeIn(delay: 500.ms)
+                    .slideY(begin: 0.2, curve: Curves.easeOutCubic);
           },
         ),
         SizedBox(height: gapBottom),
@@ -523,52 +591,35 @@ class _IdiomsScreenState extends State<IdiomsScreen>
   }
 
   Widget _buildHeaderBadge(Color color, {bool isCompact = false}) {
-    final reduceMotion =
-        (MediaQuery.maybeOf(context)?.disableAnimations ?? false) ||
-        VowlMotion.lowAnimationModeOverride.value;
-
-    final dot = Container(
-      width: 8.r,
-      height: 8.r,
-      decoration: const BoxDecoration(
-        color: AppColors.gameCorrect,
-        shape: BoxShape.circle,
-      ),
-    );
-
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 20.w),
-      margin: EdgeInsets.symmetric(horizontal: 20.w),
+      padding: EdgeInsets.symmetric(
+        vertical: isCompact ? 4.h : 6.h,
+        horizontal: isCompact ? 12.w : 16.w,
+      ),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(15.r),
-        border: Border.all(color: color.withValues(alpha: 0.1)),
+        color: color.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Row(
-        mainAxisSize: isCompact ? MainAxisSize.min : MainAxisSize.max,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          reduceMotion
-              ? dot
-              : dot.animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
-          SizedBox(width: 10.w),
-          Flexible(
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "EMOJIFY: SECURE CHANNEL",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: color,
-                  letterSpacing: 2,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+          Icon(
+            Icons.extension_rounded,
+            size: isCompact ? 12.r : 14.r,
+            color: color,
+          ),
+          SizedBox(width: 6.w),
+          Text(
+            "IDIOM PUZZLE",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: isCompact ? 10.sp : 11.sp,
+              color: color,
+              letterSpacing: 1.0,
+              fontWeight: FontWeight.w700,
             ),
           ),
-          isCompact ? SizedBox(width: 15.w) : const Spacer(),
-          Icon(Icons.lock_outline_rounded, size: 14.r, color: color),
         ],
       ),
     );

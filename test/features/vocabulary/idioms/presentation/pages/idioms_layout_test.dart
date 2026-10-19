@@ -440,8 +440,8 @@ void main() {
       await pumpScreen(tester);
 
       expect(find.byType(IdiomsScreen), findsOneWidget);
-      expect(find.text('EMOJIFY: SECURE CHANNEL'), findsOneWidget);
-      expect(find.byIcon(Icons.lock_outline_rounded), findsOneWidget);
+      expect(find.text('IDIOM PUZZLE'), findsOneWidget);
+      expect(find.byIcon(Icons.extension_rounded), findsOneWidget);
 
       verify(
         () => mockVocabularyBloc.add(
@@ -453,22 +453,32 @@ void main() {
       ).called(1);
     });
 
-    testWidgets('displays incoming transmission and sender avatar', (
+    testWidgets('displays instruction text and sender avatar', (
       tester,
     ) async {
       await pumpScreen(tester);
 
-      expect(find.text('INCOMING TRANSMISSION...'), findsOneWidget);
-      expect(find.byIcon(Icons.psychology_alt_rounded), findsOneWidget);
+      expect(
+        find.text('Guess the idiom that matches the emoji clues'),
+        findsOneWidget,
+      );
+      expect(find.byIcon(Icons.help_outline_rounded), findsOneWidget);
     });
 
-    testWidgets('displays emoji clues and hint text message in chat', (
+    testWidgets('displays emoji clues and reveals hint on demand in chat', (
       tester,
     ) async {
       await pumpScreen(tester);
 
       expect(find.byType(IdiomsStrangerMessage), findsOneWidget);
       expect(find.text('🤐 🔫'), findsOneWidget);
+
+      // Hint is initially hidden so the answer isn't spoiled
+      expect(find.byType(IdiomsStrangerTextMessage), findsNothing);
+
+      // Tap on-screen "Need a clue?" chip
+      await tester.tap(find.text('Need a clue?'));
+      await tester.pump();
 
       expect(find.byType(IdiomsStrangerTextMessage), findsOneWidget);
       expect(
@@ -524,7 +534,7 @@ void main() {
 
       // Shows failure transmission
       expect(
-        find.text('DECRYPTION FAILED. RE-EVALUATE SEQUENCE.'),
+        find.text('Not quite right. Try again!'),
         findsOneWidget,
       );
       // Phase 2 remains hidden
@@ -672,6 +682,7 @@ void main() {
       await tester.pump();
 
       verify(() => mockVocabularyBloc.add(const VocabularyHintUsed())).called(1);
+      expect(find.byType(IdiomsStrangerTextMessage), findsOneWidget);
     });
   });
 
@@ -791,7 +802,7 @@ void main() {
       await pumpScreen(tester, size: const Size(320, 568));
 
       expect(find.byType(IdiomsScreen), findsOneWidget);
-      expect(find.text('EMOJIFY: SECURE CHANNEL'), findsOneWidget);
+      expect(find.text('IDIOM PUZZLE'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
@@ -801,7 +812,7 @@ void main() {
       await pumpScreen(tester, size: const Size(768, 1024));
 
       expect(find.byType(IdiomsScreen), findsOneWidget);
-      expect(find.text('EMOJIFY: SECURE CHANNEL'), findsOneWidget);
+      expect(find.text('IDIOM PUZZLE'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 

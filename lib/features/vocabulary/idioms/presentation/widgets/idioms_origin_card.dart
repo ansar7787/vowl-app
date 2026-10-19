@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class IdiomsOriginCard extends StatelessWidget {
   final String? origin;
@@ -27,13 +28,13 @@ class IdiomsOriginCard extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final container = Container(
       width: double.infinity,
-      padding: EdgeInsets.all(16.r),
+      padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
         color: isDark
             ? Colors.white.withValues(alpha: 0.05)
             : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        borderRadius: BorderRadius.circular(18.r),
+        border: Border.all(color: color.withValues(alpha: 0.25), width: 1.2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +42,7 @@ class IdiomsOriginCard extends StatelessWidget {
           if (origin != null && origin!.isNotEmpty) ...[
             Row(
               children: [
-                Icon(Icons.history_edu_rounded, color: color, size: 20.r),
+                Icon(Icons.history_edu_rounded, color: color, size: 18.r),
                 SizedBox(width: 8.w),
                 AutoSizeText(
                   "IDIOM ORIGIN",
@@ -49,38 +50,38 @@ class IdiomsOriginCard extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w700,
                     color: color,
-                    letterSpacing: 1.5,
+                    letterSpacing: 1.0,
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 12.h),
+            SizedBox(height: 10.h),
             Text(
               origin!,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
-                fontWeight: FontWeight.w500,
-                color: isDark ? Colors.white70 : Colors.black87,
-                height: 1.4,
-                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.w400,
+                color: isDark ? Colors.white.withValues(alpha: 0.8) : AppColors.slate800,
+                height: 1.45,
               ),
             ),
           ],
 
           if (literalVsFigurative != null) ...[
-            SizedBox(height: 16.h),
+            SizedBox(height: 14.h),
             Container(
+              width: double.infinity,
               padding: EdgeInsets.symmetric(
-                horizontal: 12.w,
-                vertical: 8.h,
+                horizontal: 14.w,
+                vertical: 10.h,
               ),
               decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.1),
+                color: color.withValues(alpha: 0.08),
                 borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(color: color.withValues(alpha: 0.2)),
+                border: Border.all(color: color.withValues(alpha: 0.15)),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,10 +90,10 @@ class IdiomsOriginCard extends StatelessWidget {
                     "LITERAL VS FIGURATIVE",
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w700,
                       color: color,
-                      letterSpacing: 1.2,
+                      letterSpacing: 0.8,
                     ),
                   ),
                   SizedBox(height: 4.h),
@@ -101,9 +102,9 @@ class IdiomsOriginCard extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 13.sp,
-                      fontWeight: FontWeight.w500,
-                      color: isDark ? Colors.white70 : Colors.black87,
-                      height: 1.3,
+                      fontWeight: FontWeight.w400,
+                      color: isDark ? Colors.white.withValues(alpha: 0.75) : AppColors.slate700,
+                      height: 1.4,
                     ),
                   ),
                 ],
@@ -112,14 +113,14 @@ class IdiomsOriginCard extends StatelessWidget {
           ],
 
           if (contextSentence != null) ...[
-            SizedBox(height: 16.h),
+            SizedBox(height: 14.h),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Icon(
                   Icons.lightbulb_outline_rounded,
                   color: color,
-                  size: 20.r,
+                  size: 18.r,
                 ),
                 SizedBox(width: 8.w),
                 Expanded(
@@ -128,8 +129,8 @@ class IdiomsOriginCard extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 14.sp,
-                      fontWeight: FontWeight.w600,
-                      color: isDark ? Colors.white : Colors.black,
+                      fontWeight: FontWeight.w500,
+                      color: isDark ? Colors.white : AppColors.slate900,
                       height: 1.4,
                     ),
                   ),
@@ -144,7 +145,7 @@ class IdiomsOriginCard extends StatelessWidget {
     if (reduceMotion) return container;
     return container
         .animate()
-        .fadeIn(duration: 400.ms)
-        .slideY(begin: 0.2, end: 0, curve: Curves.easeOut);
+        .fadeIn(duration: 350.ms)
+        .slideY(begin: 0.15, end: 0, curve: Curves.easeOutCubic);
   }
 }

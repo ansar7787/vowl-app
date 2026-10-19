@@ -507,7 +507,7 @@ void main() {
       );
     });
 
-    testWidgets('3.4 displays pending slot text THRUST_PENDING when unanswered',
+    testWidgets('3.4 displays pending slot text when unanswered',
         (tester) async {
       await pumpScreen(tester);
       expect(

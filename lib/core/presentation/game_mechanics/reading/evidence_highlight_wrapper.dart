@@ -277,10 +277,13 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                 valueListenable: _isComplete,
                 builder: (context, isComplete, _) {
                   return Container(
-                    padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 20.h),
+                    margin: widget.isPositioned
+                        ? EdgeInsets.zero
+                        : EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                    padding: EdgeInsets.fromLTRB(20.w, 18.h, 20.w, 20.h),
                     decoration: BoxDecoration(
                       color: bgColor,
-                      borderRadius: BorderRadius.circular(32.r),
+                      borderRadius: BorderRadius.circular(24.r),
                       border: Border.all(
                         color: isComplete
                             ? tokens.gameCorrect.withValues(alpha: 0.5)
@@ -289,9 +292,9 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: widget.primaryColor.withValues(alpha: 0.15),
-                          blurRadius: 30,
-                          offset: const Offset(0, -8),
+                          color: widget.primaryColor.withValues(alpha: 0.12),
+                          blurRadius: 24,
+                          offset: const Offset(0, -6),
                         ),
                       ],
                     ),
@@ -302,30 +305,30 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                         children: [
                           // Handle bar
                           Container(
-                            width: 48.w,
+                            width: 44.w,
                             height: 4.h,
                             decoration: BoxDecoration(
                               color: subtitleColor.withValues(alpha: 0.3),
                               borderRadius: BorderRadius.circular(2.r),
                             ),
                           ),
-                          SizedBox(height: 16.h),
+                          SizedBox(height: 14.h),
 
                           // Header
                           Row(
                             children: [
                               Container(
-                                padding: EdgeInsets.all(10.r),
+                                padding: EdgeInsets.all(9.r),
                                 decoration: BoxDecoration(
                                   color: widget.primaryColor.withValues(
                                     alpha: 0.12,
                                   ),
-                                  borderRadius: BorderRadius.circular(14.r),
+                                  borderRadius: BorderRadius.circular(12.r),
                                 ),
                                 child: Icon(
                                   Icons.highlight_alt_rounded,
                                   color: widget.primaryColor,
-                                  size: 22.r,
+                                  size: 20.r,
                                 ),
                               ),
                               SizedBox(width: 12.w),
@@ -333,29 +336,28 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    AutoSizeText(
-                                      'FIND THE KEY WORDS',
-                                      maxLines: 1,
-                                      minFontSize: 8,
+                                    Text(
+                                      'Find the Clue Words',
+                                      softWrap: true,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
-                                        fontSize: 13.sp,
-                                        fontWeight: FontWeight.w800,
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w700,
                                         color: widget.primaryColor,
-                                        letterSpacing: 1.5,
+                                        letterSpacing: 0.4,
                                       ),
                                     ),
-                                    SizedBox(height: 2.h),
-                                    AutoSizeText(
+                                    SizedBox(height: 3.h),
+                                    Text(
                                       widget.instruction ??
                                           'Tap the word(s) that support the answer',
-                                      maxLines: 2,
-                                      minFontSize: 6,
+                                      softWrap: true,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
-                                        fontSize: 11.sp,
+                                        fontSize: 12.sp,
                                         fontWeight: FontWeight.w500,
                                         color: subtitleColor,
+                                        height: 1.3,
                                       ),
                                     ),
                                   ],
@@ -550,19 +552,18 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                             size: 24.r,
                                           ),
                                           SizedBox(width: 8.w),
-                                          AutoSizeText(
+                                          Text(
                                             context.tr(
                                               'game.evidence_found',
-                                              fallback: 'CORRECT!',
+                                              fallback: 'Clue Found!',
                                             ),
-                                            maxLines: 1,
-                                            minFontSize: 8,
+                                            softWrap: true,
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
                                               fontSize: 14.sp,
-                                              fontWeight: FontWeight.w800,
+                                              fontWeight: FontWeight.w700,
                                               color: tokens.gameCorrect,
-                                              letterSpacing: 1.5,
+                                              letterSpacing: 0.5,
                                             ),
                                           ),
                                         ],

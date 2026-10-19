@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color1a1a1a = Color(0xFF1A1A1A);
-}
+import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ContextCluesEvidenceSentence extends StatelessWidget {
   final String sentence;
@@ -27,106 +24,129 @@ class ContextCluesEvidenceSentence extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>();
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final textColor = tokens?.textPrimary ?? (isDark ? Colors.white : AppColors.slate900);
     final parts = sentence.split("[TARGET]");
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final double horizontalPadding = isCompact ? 15.w : 30.w;
-        final double availableWidth =
-            constraints.maxWidth - (horizontalPadding * 2);
+    final fontSize = isCompact ? 15.sp : 17.sp;
 
-        return Container(
-          padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
-          child: Center(
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: SizedBox(
-                width: availableWidth > 0 ? availableWidth : 100,
-                child: RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    children: [
-                      _buildTextSpan(parts[0]),
-                      WidgetSpan(
-                        child: _buildRedactedBlock(context),
-                        alignment: PlaceholderAlignment.middle,
-                      ),
-                      if (parts.length > 1) _buildTextSpan(parts[1]),
-                    ],
-                  ),
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: isCompact ? 28.w : 36.w,
+        vertical: isCompact ? 12.h : 20.h,
+      ),
+      child: Center(
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Text.rich(
+            TextSpan(
+              children: [
+                _buildTextSpan(parts[0], textColor, fontSize),
+                WidgetSpan(
+                  alignment: PlaceholderAlignment.middle,
+                  child: _buildTargetSlot(context, tokens, isDark, fontSize),
                 ),
-              ),
+                if (parts.length > 1)
+                  _buildTextSpan(parts[1], textColor, fontSize),
+              ],
             ),
+            textAlign: TextAlign.center,
+            softWrap: true,
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 
-  TextSpan _buildTextSpan(String text) {
-    final words = text.split(" ");
+  TextSpan _buildTextSpan(String text, Color textColor, double fontSize) {
     return TextSpan(
-      children: words.map((word) {
-        return TextSpan(
-          text: "$word ",
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: isCompact ? 14.sp : 20.sp,
-            height: isCompact ? 1.3 : 1.6,
-            color: Colors.black.withValues(alpha: 0.8),
-            fontWeight: FontWeight.w500,
-          ),
-        );
-      }).toList(),
+      text: text,
+      style: TextStyle(
+        fontFamily: 'Outfit',
+        fontSize: fontSize,
+        height: 1.6,
+        color: textColor,
+        fontWeight: FontWeight.w500,
+      ),
     );
   }
 
-  Widget _buildRedactedBlock(BuildContext context) {
+  Widget _buildTargetSlot(
+    BuildContext context,
+    AppColorTokens? tokens,
+    bool isDark,
+    double fontSize,
+  ) {
     final reduceMotion =
         MediaQuery.maybeOf(context)?.disableAnimations ?? false;
 
     if (isAnswered) {
+      final successColor = tokens?.gameCorrect ?? Colors.green;
+      final errorColor = tokens?.gameIncorrect ?? Colors.red;
+      final slotColor = isCorrect == true ? successColor : errorColor;
+
       final answeredBlock = Container(
-        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
+        margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
         decoration: BoxDecoration(
-          color: isCorrect == true
-              ? Colors.green.withValues(alpha: 0.1)
-              : Colors.red.withValues(alpha: 0.1),
+          color: slotColor.withValues(alpha: 0.12),
+          borderRadius: BorderRadius.circular(8.r),
           border: Border.all(
-            color: isCorrect == true ? Colors.green : Colors.red,
-            width: 1,
+            color: slotColor,
+            width: 1.5,
           ),
         ),
         child: Text(
-          selectedOption?.toUpperCase() ?? "???",
+          selectedOption ?? "???",
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: isCompact ? 14.sp : 20.sp,
-            fontWeight: FontWeight.bold,
-            color: isCorrect == true ? Colors.green : Colors.red,
+            fontSize: fontSize,
+            fontWeight: FontWeight.w700,
+            color: slotColor,
           ),
         ),
       );
+
       if (reduceMotion) return answeredBlock;
       return answeredBlock.animate().scale(
-        duration: 400.ms,
-        curve: Curves.elasticOut,
+        duration: 350.ms,
+        curve: Curves.easeOutBack,
       );
     }
 
-    final redactedContainer = Container(
-      width: isCompact ? 70.w : 100.w,
-      height: isCompact ? 18.h : 24.h,
+    final slotPlaceholder = Container(
+      margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+      padding: EdgeInsets.symmetric(
+        horizontal: isCompact ? 12.w : 18.w,
+        vertical: 3.h,
+      ),
       decoration: BoxDecoration(
-        color: _LocalPalette.color1a1a1a,
-        borderRadius: BorderRadius.circular(2.r),
+        color: color.withValues(alpha: isDark ? 0.15 : 0.08),
+        borderRadius: BorderRadius.circular(8.r),
+        border: Border.all(
+          color: color.withValues(alpha: 0.4),
+          width: 1.5,
+        ),
+      ),
+      child: Text(
+        "______",
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: fontSize,
+          fontWeight: FontWeight.w700,
+          color: color.withValues(alpha: 0.6),
+        ),
       ),
     );
 
-    if (reduceMotion) return redactedContainer;
+    if (reduceMotion) return slotPlaceholder;
 
-    return redactedContainer
+    return slotPlaceholder
         .animate(onPlay: (c) => c.repeat(reverse: true))
-        .shimmer(duration: 2.seconds, color: Colors.white10);
+        .shimmer(
+          duration: 2.seconds,
+          color: color.withValues(alpha: 0.2),
+        );
   }
 }

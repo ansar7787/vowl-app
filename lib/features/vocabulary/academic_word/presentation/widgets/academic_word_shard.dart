@@ -41,14 +41,14 @@ class AcademicWordShard extends StatelessWidget {
 
   /// Responsive shard height — used by both this widget and the parent screen.
   static double resolveHeight(double maxHeight) =>
-      (70.h).clamp(44.0, (maxHeight * 0.10).clamp(44.0, 72.0));
+      (60.h).clamp(44.0, (maxHeight * 0.10).clamp(44.0, 72.0));
 
   static TextStyle _textStyle(Color textColor) => TextStyle(
     fontFamily: 'Outfit',
-    fontSize: 15,
-    fontWeight: FontWeight.w900,
+    fontSize: 14.5.sp,
+    fontWeight: FontWeight.w700,
     color: textColor,
-    letterSpacing: 1,
+    letterSpacing: 0.5,
   );
 
   @override
@@ -60,9 +60,9 @@ class AcademicWordShard extends StatelessWidget {
 
     final shadows = [
       BoxShadow(
-        color: Colors.black.withValues(alpha: isDragging ? 0.3 : 0.1),
-        blurRadius: isDragging ? 20 : 10,
-        offset: Offset(0, isDragging ? 10 : 5),
+        color: Colors.black.withValues(alpha: isDragging ? 0.25 : 0.08),
+        blurRadius: isDragging ? 18 : 8,
+        offset: Offset(0, isDragging ? 8 : 4),
       ),
     ];
 
@@ -84,18 +84,20 @@ class AcademicWordShard extends StatelessWidget {
             height: sh,
             decoration: BoxDecoration(
               color: isDark ? AcademicWordColors.shardDark : Colors.white,
-              borderRadius: BorderRadius.circular(12.r),
+              borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: isDragging ? color : color.withValues(alpha: 0.3),
-                width: 2,
+                color: isDragging
+                    ? color
+                    : color.withValues(alpha: isDark ? 0.35 : 0.25),
+                width: isDragging ? 2.0 : 1.5,
               ),
               boxShadow: shadows,
             ),
             child: Center(
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12.w),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
                   child: Text(
                     text.toUpperCase(),
                     key: Key('academic_word_shard_text_$index'),

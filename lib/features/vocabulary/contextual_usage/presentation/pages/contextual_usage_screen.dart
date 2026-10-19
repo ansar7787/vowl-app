@@ -215,9 +215,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
                               thickness: 4.w,
                               child: CustomScrollView(
                                 controller: _scrollController,
-                                physics: (!isFirstStagePassedNotifier.value)
-                                    ? const NeverScrollableScrollPhysics()
-                                    : const BouncingScrollPhysics(),
+                                physics: const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverToBoxAdapter(
                                     child: IgnorePointer(
@@ -246,6 +244,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
                                                   constraints: BoxConstraints(
                                                     minHeight: trueMaxHeight,
                                                   ),
+                                                  alignment: Alignment.center,
                                                   child: _buildUnfoldContent(
                                                     quest,
                                                     theme.primaryColor,
@@ -318,28 +317,33 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
                                       (!isAnsweredNotifier.value ||
                                           isCorrectNotifier.value == null))
                                     SliverToBoxAdapter(
-                                      child: Column(
-                                        children: [
-                                          SpeakToConfirmOverlay(
-                                            expectedText: (quest.prompt ?? "")
-                                                .replaceAll(
-                                                  RegExp(r'_+'),
-                                                  quest.correctAnswer ?? "",
-                                                ),
-                                            primaryColor: theme.primaryColor,
-                                            onConfirmed: () =>
-                                                _submitFinalAnswer(
-                                                  true,
-                                                  quest: quest,
-                                                ),
-                                            onSkipped: () => _submitFinalAnswer(
-                                              false,
-                                              quest: quest,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 20.w,
+                                        ),
+                                        child: Column(
+                                          children: [
+                                            SpeakToConfirmOverlay(
+                                              expectedText: (quest.prompt ?? "")
+                                                  .replaceAll(
+                                                    RegExp(r'_+'),
+                                                    quest.correctAnswer ?? "",
+                                                  ),
+                                              primaryColor: theme.primaryColor,
+                                              onConfirmed: () =>
+                                                  _submitFinalAnswer(
+                                                    true,
+                                                    quest: quest,
+                                                  ),
+                                              onSkipped: () => _submitFinalAnswer(
+                                                false,
+                                                quest: quest,
+                                              ),
+                                              isPositioned: false,
                                             ),
-                                            isPositioned: false,
-                                          ),
-                                          SizedBox(height: 60.h),
-                                        ],
+                                            SizedBox(height: 60.h),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                 ],
@@ -356,6 +360,44 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
     );
   }
 
+  Widget _buildInstruction(
+    VocabularyQuest quest,
+    Color color,
+    bool isDark,
+  ) {
+    final rawInstruction = InstructionHelper.getInstruction(quest);
+    final instructionText = rawInstruction.isNotEmpty
+        ? rawInstruction
+        : 'Select the word that best completes the sentence.';
+    final reduceMotion =
+        MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+
+    final widget = Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: 310.w),
+        child: Text(
+          instructionText,
+          textAlign: TextAlign.center,
+          softWrap: true,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 14.5.sp,
+            fontWeight: FontWeight.w600,
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.9)
+                : const Color(0xFF1E293B),
+            height: 1.4,
+            letterSpacing: 0.2,
+          ),
+        ),
+      ),
+    );
+
+    if (reduceMotion) return widget;
+    return widget.animate().fadeIn(duration: 400.ms);
+  }
+
   Widget _buildUnfoldContent(
     VocabularyQuest quest,
     Color color,
@@ -364,133 +406,31 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
     double maxHeight,
     bool? currentOptionCorrect,
   ) {
-    final isCompact = maxHeight < 580;
-
-    final double estimatedContentHeight =
-        (isCompact ? 40.h : 60.h) +
-        (isCompact ? 100.h : 150.h) +
-        (isCompact ? 80.h : 120.h) +
-        20.h;
-    final remainingHeight = maxHeight - estimatedContentHeight;
-
-    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
-    final double gapTop = remainingHeight > 0
-        ? (gapUnit * 1).clamp(10.0, 40.0)
-        : 10.0;
-    final double gapMiddle = remainingHeight > 0
-        ? (gapUnit * 1.5).clamp(15.0, 40.0)
-        : 15.0;
-    final double gapBottom = remainingHeight > 0
-        ? (gapUnit * 2.5).clamp(20.0, 60.0)
-        : 20.0;
-
-    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
-
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        SizedBox(height: gapTop),
-        isCompact
-            ? SizedBox(
-                height: 25.h,
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    InstructionHelper.getInstruction(quest).toUpperCase(),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      color: color,
-                      letterSpacing: 2,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              )
-            : (reduceMotion
-                ? Text(
-                    InstructionHelper.getInstruction(quest).toUpperCase(),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      color: color,
-                      letterSpacing: 2,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )
-                : Text(
-                    InstructionHelper.getInstruction(quest).toUpperCase(),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      color: color,
-                      letterSpacing: 2,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ).animate().fadeIn(duration: 800.ms).shimmer(duration: 2.seconds)),
-
-        SizedBox(height: gapMiddle),
-
-        isCompact
-            ? SizedBox(
-                height: 120.h,
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: SizedBox(
-                    width: maxWidth - 40.w,
-                    child: ContextualUsageCard(
-                      question: quest.prompt ?? "",
-                      color: color,
-                      isDark: isDark,
-                      isAnswered: isAnsweredNotifier.value,
-                      isCorrect:
-                          isCorrectNotifier.value ?? currentOptionCorrect,
-                      selectedOption: _selectedOption.value,
-                    ),
-                  ),
-                ),
-              )
-            : Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: ContextualUsageCard(
-                  question: quest.prompt ?? "",
-                  color: color,
-                  isDark: isDark,
-                  isAnswered: isAnsweredNotifier.value,
-                  isCorrect: isCorrectNotifier.value ?? currentOptionCorrect,
-                  selectedOption: _selectedOption.value,
-                ),
-              ),
-
-        SizedBox(height: gapMiddle),
-
-        (isCompact
-            ? SizedBox(
-                height: 100.h,
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: SizedBox(
-                    width: maxWidth,
-                    child: _buildChipsWrap(
-                      quest,
-                      color,
-                      isDark,
-                      isCompact,
-                      currentOptionCorrect,
-                    ),
-                  ),
-                ),
-              )
-            : _buildChipsWrap(
-                quest,
-                color,
-                isDark,
-                isCompact,
-                currentOptionCorrect,
-              )),
-        SizedBox(height: gapBottom),
+        SizedBox(height: 20.h),
+        _buildInstruction(quest, color, isDark),
+        SizedBox(height: 24.h),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          child: ContextualUsageCard(
+            question: quest.prompt ?? quest.question ?? "",
+            color: color,
+            isDark: isDark,
+            isAnswered: isAnsweredNotifier.value,
+            isCorrect: isCorrectNotifier.value ?? currentOptionCorrect,
+            selectedOption: _selectedOption.value,
+          ),
+        ),
+        SizedBox(height: 24.h),
+        _buildChipsWrap(
+          quest,
+          color,
+          isDark,
+          currentOptionCorrect,
+        ),
+        SizedBox(height: 20.h),
       ],
     );
   }
@@ -499,32 +439,43 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
     VocabularyQuest quest,
     Color color,
     bool isDark,
-    bool isCompact,
     bool? currentOptionCorrect,
   ) {
-    final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
-    final wrap = Wrap(
-      spacing: 16.w,
-      runSpacing: isCompact ? 10.h : 16.h,
-      alignment: WrapAlignment.center,
-      children: (quest.options ?? []).map((o) {
-        return ContextualUsageOptionChip(
-          text: o,
-          color: color,
-          isDark: isDark,
-          isSelected: _selectedOption.value == o,
-          isCorrect: _selectedOption.value == o
-              ? currentOptionCorrect
-              : null,
-          onTap: () => _submitAnswer(o, quest.correctAnswer ?? "", quest),
-        );
-      }).toList(),
-    );
+    final reduceMotion =
+        MediaQuery.maybeOf(context)?.disableAnimations ?? false;
 
-    if (reduceMotion) return wrap;
-    return wrap
-        .animate()
-        .fadeIn(delay: 600.ms)
-        .slideY(begin: 0.2, curve: Curves.easeOutCubic);
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final double chipWidth = (constraints.maxWidth - 12.w) / 2;
+
+          final wrap = Wrap(
+            spacing: 12.w,
+            runSpacing: 12.h,
+            alignment: WrapAlignment.center,
+            children: (quest.options ?? []).map((o) {
+              return ContextualUsageOptionChip(
+                width: chipWidth,
+                text: o,
+                color: color,
+                isDark: isDark,
+                isSelected: _selectedOption.value == o,
+                isCorrect: _selectedOption.value == o
+                    ? currentOptionCorrect
+                    : null,
+                onTap: () => _submitAnswer(o, quest.correctAnswer ?? "", quest),
+              );
+            }).toList(),
+          );
+
+          if (reduceMotion) return wrap;
+          return wrap
+              .animate()
+              .fadeIn(delay: 200.ms, duration: 400.ms)
+              .slideY(begin: 0.1, curve: Curves.easeOutCubic);
+        },
+      ),
+    );
   }
 }

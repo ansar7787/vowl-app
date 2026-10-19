@@ -327,17 +327,17 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                                                     decoration: BoxDecoration(
                                                                       borderRadius:
                                                                           BorderRadius.circular(
-                                                                            40.r,
+                                                                            24.r,
                                                                           ),
                                                                       boxShadow:
                                                                           isHovered
                                                                           ? [
                                                                               BoxShadow(
                                                                                 color: theme.primaryColor.withValues(
-                                                                                  alpha: 0.8,
+                                                                                  alpha: 0.45,
                                                                                 ),
-                                                                                blurRadius: 40,
-                                                                                spreadRadius: 10,
+                                                                                blurRadius: 24,
+                                                                                spreadRadius: 3,
                                                                               ),
                                                                             ]
                                                                           : [],
@@ -482,7 +482,8 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                     SliverToBoxAdapter(
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
-                                          vertical: 20.h,
+                                          horizontal: 20.w,
+                                          vertical: 16.h,
                                         ),
                                         child: ContextSentenceBuilder(
                                           targetKeyword:
@@ -597,23 +598,25 @@ class _CollocationsScreenState extends State<CollocationsScreen>
   Widget _buildInstruction(Color color, bool isDark, String instruction) {
     final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
     final container = Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: isDark
             ? color.withValues(alpha: 0.1)
             : color.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: color.withValues(alpha: 0.25)),
       ),
       child: Text(
         instruction.toUpperCase(),
         textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 12.sp,
-          fontWeight: FontWeight.bold,
+          fontSize: 13.sp,
+          fontWeight: FontWeight.w700,
           color: color,
-          letterSpacing: 1.5,
+          letterSpacing: 0.8,
+          height: 1.35,
         ),
       ),
     );

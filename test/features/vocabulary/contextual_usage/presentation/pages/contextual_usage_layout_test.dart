@@ -344,10 +344,10 @@ void main() {
       expect(find.textContaining('Could I'), findsOneWidget);
     });
 
-    testWidgets('1.2 renders instruction banner in uppercase', (tester) async {
+    testWidgets('1.2 renders instruction banner', (tester) async {
       await pumpScreen(tester);
       expect(
-        find.text('SELECT THE WORD THAT BEST COMPLETES THE SENTENCE.'),
+        find.text('Select the word that best completes the sentence.'),
         findsOneWidget,
       );
     });
@@ -357,10 +357,10 @@ void main() {
     ) async {
       await pumpScreen(tester);
       expect(find.byType(ContextualUsageOptionChip), findsNWidgets(4));
-      expect(find.text('LEND'), findsWidgets);
-      expect(find.text('RENT'), findsWidgets);
-      expect(find.text('BORROW'), findsWidgets);
-      expect(find.text('LOAN'), findsWidgets);
+      expect(find.text('Lend'), findsWidgets);
+      expect(find.text('Rent'), findsWidgets);
+      expect(find.text('Borrow'), findsWidgets);
+      expect(find.text('Loan'), findsWidgets);
     });
 
     testWidgets('1.4 renders minimal quest with 2 options cleanly', (
@@ -374,8 +374,8 @@ void main() {
       expect(find.byType(ContextualUsageCard), findsOneWidget);
       expect(find.textContaining('Species must'), findsOneWidget);
       expect(find.byType(ContextualUsageOptionChip), findsNWidgets(2));
-      expect(find.text('ADAPT'), findsWidgets);
-      expect(find.text('ADOPT'), findsWidgets);
+      expect(find.text('Adapt'), findsWidgets);
+      expect(find.text('Adopt'), findsWidgets);
     });
 
     testWidgets('1.5 dispatches FetchVocabularyQuests on mount', (tester) async {
@@ -414,13 +414,13 @@ void main() {
       tester,
     ) async {
       await pumpScreen(tester);
-      final chip = find.text('BORROW').first;
+      final chip = find.text('Borrow').first;
       await tester.tap(chip);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 100));
 
       final chipWidget = tester.widget<ContextualUsageOptionChip>(
-        find.widgetWithText(ContextualUsageOptionChip, 'BORROW'),
+        find.widgetWithText(ContextualUsageOptionChip, 'Borrow'),
       );
       expect(chipWidget.isSelected, isTrue);
 
@@ -435,7 +435,7 @@ void main() {
       (tester) async {
         await pumpScreen(tester);
 
-        await tester.tap(find.text('BORROW').first);
+        await tester.tap(find.text('Borrow').first);
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 650));
         await tester.pump();
@@ -453,7 +453,7 @@ void main() {
       (tester) async {
         await pumpScreen(tester);
 
-        await tester.tap(find.text('LEND').first);
+        await tester.tap(find.text('Lend').first);
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 650));
         await tester.pump();
@@ -474,12 +474,12 @@ void main() {
     ) async {
       await pumpScreen(tester);
 
-      await tester.tap(find.text('BORROW').first);
+      await tester.tap(find.text('Borrow').first);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 100));
 
       // Attempt second tap during evaluation
-      await tester.tap(find.text('RENT').first, warnIfMissed: false);
+      await tester.tap(find.text('Rent').first, warnIfMissed: false);
       await tester.pump();
 
       // Drain timers
@@ -488,7 +488,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       final chipWidget = tester.widget<ContextualUsageOptionChip>(
-        find.widgetWithText(ContextualUsageOptionChip, 'RENT'),
+        find.widgetWithText(ContextualUsageOptionChip, 'Rent'),
       );
       expect(chipWidget.isSelected, isFalse);
     });
@@ -497,7 +497,7 @@ void main() {
   group('3. Phase 2: ContextualUsageRegisterMeter & SpeakToConfirmOverlay', () {
     Future<void> advanceToPhase2(WidgetTester tester) async {
       await pumpScreen(tester);
-      await tester.tap(find.text('BORROW').first);
+      await tester.tap(find.text('Borrow').first);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 650));
       await tester.pump();
@@ -506,12 +506,12 @@ void main() {
     }
 
     testWidgets(
-      '3.1 renders ContextualUsageRegisterMeter with FORMALITY METER and CASUAL tag',
+      '3.1 renders ContextualUsageRegisterMeter with Formality Level and Casual tag',
       (tester) async {
         await advanceToPhase2(tester);
         expect(find.byType(ContextualUsageRegisterMeter), findsOneWidget);
-        expect(find.text('FORMALITY METER'), findsOneWidget);
-        expect(find.text('CASUAL'), findsOneWidget);
+        expect(find.text('Formality Level'), findsOneWidget);
+        expect(find.text('Casual'), findsWidgets);
       },
     );
 
@@ -519,16 +519,16 @@ void main() {
       '3.2 renders 10-step level bar reflecting registerLevel in RegisterMeter',
       (tester) async {
         await advanceToPhase2(tester);
-        expect(find.text('Informal'), findsOneWidget);
-        expect(find.text('Highly Formal'), findsOneWidget);
+        expect(find.text('Casual'), findsWidgets);
+        expect(find.text('Formal'), findsOneWidget);
       },
     );
 
     testWidgets(
-      '3.3 renders NUANCE card when nuanceDifference is provided',
+      '3.3 renders Context & Nuance card when nuanceDifference is provided',
       (tester) async {
         await advanceToPhase2(tester);
-        expect(find.text('NUANCE'), findsOneWidget);
+        expect(find.text('Context & Nuance'), findsOneWidget);
         expect(
           find.text('Borrow means to take temporarily; lend means to give temporarily.'),
           findsOneWidget,
@@ -566,7 +566,7 @@ void main() {
   group('4. Phase 2: Final Evaluation Submission (Success & Failure)', () {
     Future<void> advanceToPhase2(WidgetTester tester) async {
       await pumpScreen(tester);
-      await tester.tap(find.text('BORROW').first);
+      await tester.tap(find.text('Borrow').first);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 650));
       await tester.pump();
@@ -637,7 +637,7 @@ void main() {
     ) async {
       await pumpScreen(tester);
       // Advance to Phase 2
-      await tester.tap(find.text('BORROW').first);
+      await tester.tap(find.text('Borrow').first);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 650));
       await tester.pump();
@@ -656,7 +656,7 @@ void main() {
       clearInteractions(mockHapticService);
 
       // Verify tapping option chip does nothing
-      final chip = find.text('RENT').first;
+      final chip = find.text('Rent').first;
       await tester.tap(chip, warnIfMissed: false);
       await tester.pump(const Duration(milliseconds: 100));
 
@@ -668,7 +668,7 @@ void main() {
       tester,
     ) async {
       await pumpScreen(tester);
-      await tester.tap(find.text('BORROW').first);
+      await tester.tap(find.text('Borrow').first);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 650));
       await tester.pump();
@@ -690,7 +690,7 @@ void main() {
       tester,
     ) async {
       await pumpScreen(tester);
-      await tester.tap(find.text('BORROW').first);
+      await tester.tap(find.text('Borrow').first);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 650));
       await tester.pump();
@@ -715,7 +715,7 @@ void main() {
       '5.4 tapping TRY AGAIN on wrong answer (non-final failure) resets for retry',
       (tester) async {
         await pumpScreen(tester);
-        await tester.tap(find.text('LEND').first);
+        await tester.tap(find.text('Lend').first);
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 650));
         await tester.pump();
@@ -741,7 +741,7 @@ void main() {
       (tester) async {
         await pumpScreen(tester);
         // Tap wrong answer
-        await tester.tap(find.text('LEND').first);
+        await tester.tap(find.text('Lend').first);
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 650));
         await tester.pump();

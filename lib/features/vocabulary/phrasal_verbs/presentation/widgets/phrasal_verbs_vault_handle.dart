@@ -1,13 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color151e2e = Color(0xFF151E2E);
-}
 
 class PhrasalVerbsVaultHandle extends StatelessWidget {
   final String verb;
@@ -28,7 +22,7 @@ class PhrasalVerbsVaultHandle extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        // The Outer Rotating Vault Gear
+        // The Outer Accent Ring
         AnimatedBuilder(
           animation: vaultController,
           builder: (context, child) {
@@ -36,22 +30,17 @@ class PhrasalVerbsVaultHandle extends StatelessWidget {
             return Transform.rotate(
               angle: unlockRotation,
               child: Container(
-                width: 150.r,
-                height: 150.r,
+                width: 140.r,
+                height: 140.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: isDark ? _LocalPalette.color151e2e : Colors.white,
+                  color: isDark
+                      ? color.withValues(alpha: 0.05)
+                      : color.withValues(alpha: 0.03),
                   border: Border.all(
-                    color: color.withValues(alpha: 0.4),
-                    width: 2,
+                    color: color.withValues(alpha: 0.25),
+                    width: 1.5,
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: color.withValues(alpha: 0.15),
-                      blurRadius: 20,
-                      spreadRadius: 2,
-                    ),
-                  ],
                 ),
                 child: Stack(
                   alignment: Alignment.center,
@@ -61,51 +50,54 @@ class PhrasalVerbsVaultHandle extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.topCenter,
                         child: Container(
-                          width: 10.r,
-                          height: 15.r,
+                          width: 4.r,
+                          height: 10.r,
                           decoration: BoxDecoration(
-                            color: color.withValues(alpha: 0.3),
-                            borderRadius: BorderRadius.circular(3),
+                            color: color.withValues(alpha: 0.4),
+                            borderRadius: BorderRadius.circular(2.r),
                           ),
                         ),
                       ),
                     );
                   }),
                 ),
-              ).animate(onPlay: (c) => c.repeat()).rotate(duration: 25.seconds),
+              ),
             );
           },
         ),
 
-        // The Stationary Verb Core
+        // The Stationary Verb Core Card
         Container(
-          width: 90.r,
-          height: 90.r,
+          width: 96.r,
+          height: 96.r,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: isDark ? Colors.black : Colors.white,
-            border: Border.all(color: color, width: 3),
+            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+            border: Border.all(color: color, width: 2.2),
             boxShadow: [
               BoxShadow(
-                color: isDark ? Colors.black54 : Colors.grey.shade300,
-                blurRadius: 10,
-                offset: const Offset(3, 3),
+                color: color.withValues(alpha: 0.15),
+                blurRadius: 16,
+                offset: const Offset(0, 4),
               ),
             ],
           ),
           child: Center(
-            child: AutoSizeText(
-              verb.toUpperCase(),
-              maxLines: 1,
-              minFontSize: 4,
-              stepGranularity: 0.5,
-              overflow: TextOverflow.visible,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w900,
-                color: Theme.of(context).colorScheme.onSurface,
-                letterSpacing: 1.5,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8.w),
+              child: AutoSizeText(
+                verb.toUpperCase(),
+                maxLines: 1,
+                minFontSize: 12,
+                stepGranularity: 0.5,
+                overflow: TextOverflow.visible,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w700,
+                  color: Theme.of(context).colorScheme.onSurface,
+                  letterSpacing: 1.0,
+                ),
               ),
             ),
           ),

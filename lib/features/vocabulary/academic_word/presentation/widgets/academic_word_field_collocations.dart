@@ -45,13 +45,14 @@ class AcademicWordFieldCollocations extends StatelessWidget {
                   child: AutoSizeText(
                     "ACADEMIC FIELD: ${academicField!.toUpperCase()}",
                     key: const Key('academic_word_field_text'),
-                    maxLines: 1,
+                    maxLines: 2,
+                    minFontSize: 10,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w800,
+                      fontSize: 12.5.sp,
+                      fontWeight: FontWeight.w700,
                       color: color,
-                      letterSpacing: 1.5,
+                      letterSpacing: 0.8,
                     ),
                   ),
                 ),
@@ -66,10 +67,10 @@ class AcademicWordFieldCollocations extends StatelessWidget {
               key: const Key('academic_word_collocations_label'),
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w700,
-                color: isDark ? Colors.white54 : Colors.black54,
-                letterSpacing: 1.2,
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w600,
+                color: isDark ? Colors.white60 : Colors.black54,
+                letterSpacing: 0.3,
               ),
             ),
             SizedBox(height: 8.h),
@@ -83,11 +84,11 @@ class AcademicWordFieldCollocations extends StatelessWidget {
                 return Container(
                   key: Key('academic_word_collocation_chip_$index'),
                   padding: EdgeInsets.symmetric(
-                    horizontal: 10.w,
+                    horizontal: 12.w,
                     vertical: 6.h,
                   ),
                   decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
+                    color: color.withValues(alpha: isDark ? 0.12 : 0.08),
                     borderRadius: BorderRadius.circular(10.r),
                     border: Border.all(color: color.withValues(alpha: 0.2)),
                   ),
@@ -96,7 +97,7 @@ class AcademicWordFieldCollocations extends StatelessWidget {
                     key: Key('academic_word_collocation_text_$index'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 12.sp,
+                      fontSize: 12.5.sp,
                       fontWeight: FontWeight.w600,
                       color: isDark ? Colors.white70 : Colors.black87,
                     ),
@@ -111,6 +112,7 @@ class AcademicWordFieldCollocations extends StatelessWidget {
               SizedBox(height: 16.h),
             Row(
               key: const Key('academic_word_context_sentence_row'),
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Icon(Icons.lightbulb_rounded, color: color, size: 20.r),
                 SizedBox(width: 8.w),
@@ -120,10 +122,12 @@ class AcademicWordFieldCollocations extends StatelessWidget {
                     key: const Key('academic_word_context_sentence_text'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w600,
-                      color: isDark ? Colors.white : Colors.black,
-                      height: 1.4,
+                      fontSize: 13.5.sp,
+                      fontWeight: FontWeight.w500,
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.95)
+                          : Colors.black87,
+                      height: 1.45,
                       fontStyle: FontStyle.italic,
                     ),
                   ),

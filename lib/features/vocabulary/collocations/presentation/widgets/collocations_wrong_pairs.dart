@@ -48,57 +48,66 @@ class CollocationsWrongPairs extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,
-                        fontWeight: FontWeight.w800,
+                        fontWeight: FontWeight.w700,
                         color: warningColor,
-                        letterSpacing: 1.5,
+                        letterSpacing: 1.0,
                       ),
                     ),
                   ),
                 ],
               ),
               SizedBox(height: 12.h),
-              Wrap(
-                spacing: 8.w,
-                runSpacing: 8.h,
-                children: wrongCollocations.map((word) {
-                  return Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 10.w,
-                      vertical: 6.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: warningColor.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(10.r),
-                      border: Border.all(
-                        color: warningColor.withValues(alpha: 0.2),
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.close_rounded,
-                          color: warningColor,
-                          size: 12.r,
+              LayoutBuilder(
+                builder: (context, constraints) {
+                  return Wrap(
+                    spacing: 8.w,
+                    runSpacing: 8.h,
+                    children: wrongCollocations.map((word) {
+                      return Container(
+                        constraints: BoxConstraints(
+                          maxWidth: constraints.maxWidth,
                         ),
-                        SizedBox(width: 4.w),
-                        Text(
-                          word,
-                          style: TextStyle(
-                            decoration: TextDecoration.lineThrough,
-                            decorationColor: warningColor.withValues(
-                              alpha: 0.5,
-                            ),
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w600,
-                            color: isDark ? Colors.white70 : Colors.black87,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10.w,
+                          vertical: 6.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: warningColor.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(10.r),
+                          border: Border.all(
+                            color: warningColor.withValues(alpha: 0.2),
                           ),
                         ),
-                      ],
-                    ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.close_rounded,
+                              color: warningColor,
+                              size: 12.r,
+                            ),
+                            SizedBox(width: 4.w),
+                            Flexible(
+                              child: Text(
+                                word,
+                                style: TextStyle(
+                                  decoration: TextDecoration.lineThrough,
+                                  decorationColor: warningColor.withValues(
+                                    alpha: 0.5,
+                                  ),
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.5.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: isDark ? Colors.white70 : Colors.black87,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }).toList(),
                   );
-                }).toList(),
+                },
               ),
             ],
           ),

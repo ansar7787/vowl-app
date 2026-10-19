@@ -19,16 +19,16 @@ class CollocationAnchorBubble extends StatelessWidget {
     final reduceMotion = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
 
     return Container(
-          padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 25.h),
+          padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 18.h),
           decoration: BoxDecoration(
             color: color,
-            borderRadius: BorderRadius.circular(40.r),
+            borderRadius: BorderRadius.circular(24.r),
             boxShadow: [
               BoxShadow(
-                color: color.withValues(alpha: 0.4),
-                blurRadius: 25,
-                spreadRadius: 2,
-                offset: const Offset(0, 10),
+                color: color.withValues(alpha: 0.25),
+                blurRadius: 18,
+                spreadRadius: 1,
+                offset: const Offset(0, 6),
               ),
             ],
           ),
@@ -39,10 +39,10 @@ class CollocationAnchorBubble extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 28.sp,
-                fontWeight: FontWeight.w900,
+                fontSize: 22.sp,
+                fontWeight: FontWeight.w700,
                 color: Colors.white,
-                letterSpacing: 2,
+                letterSpacing: 1.0,
               ),
             ),
           ),

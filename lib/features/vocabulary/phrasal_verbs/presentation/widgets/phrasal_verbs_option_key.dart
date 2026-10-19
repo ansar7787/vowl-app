@@ -44,16 +44,16 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
     final showCorrect = isExploding || isGlowingHint;
     final isWrong = isAnswered && isSelected && isCorrect == false;
 
-    Color cardBg = isDark ? color.withValues(alpha: 0.1) : Colors.white;
-    Color cardBorder = color.withValues(alpha: 0.3);
+    Color cardBg = isDark ? color.withValues(alpha: 0.08) : Colors.white;
+    Color cardBorder = color.withValues(alpha: isDark ? 0.25 : 0.2);
     Color textColor = Theme.of(context).colorScheme.onSurface;
 
     if (showCorrect) {
-      cardBg = Colors.green;
+      cardBg = tokens.gameCorrect;
       cardBorder = tokens.gameCorrect;
       textColor = Colors.white;
     } else if (isWrong) {
-      cardBg = Colors.red;
+      cardBg = tokens.gameIncorrect;
       cardBorder = tokens.gameIncorrect;
       textColor = Colors.white;
     } else if (isSelected) {
@@ -65,21 +65,25 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
     Widget keyCard = ScaleButton(
       onTap: onTap,
       child: Container(
-        width: 150.w,
-        padding: EdgeInsets.symmetric(vertical: 20.h),
+        width: 148.w,
+        padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 12.w),
         decoration: BoxDecoration(
           color: cardBg,
-          borderRadius: BorderRadius.circular(15.r),
-          border: Border.all(color: cardBorder, width: 2),
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: cardBorder, width: 1.5),
           boxShadow: [
             BoxShadow(
               color: showCorrect
-                  ? Colors.green.withValues(alpha: 0.5)
+                  ? tokens.gameCorrect.withValues(alpha: 0.4)
                   : (isWrong
-                        ? Colors.red.withValues(alpha: 0.5)
-                        : color.withValues(alpha: 0.1)),
-              blurRadius: showCorrect || isSelected ? 15 : 8,
-              offset: const Offset(0, 4),
+                        ? tokens.gameIncorrect.withValues(alpha: 0.4)
+                        : (isSelected
+                              ? color.withValues(alpha: 0.3)
+                              : (isDark
+                                    ? Colors.black.withValues(alpha: 0.2)
+                                    : color.withValues(alpha: 0.06)))),
+              blurRadius: showCorrect || isSelected ? 12 : 8,
+              offset: const Offset(0, 3),
             ),
           ],
         ),
@@ -88,15 +92,15 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
             text.toUpperCase(),
             textAlign: TextAlign.center,
             maxLines: 2,
-            minFontSize: 4,
+            minFontSize: 12,
             stepGranularity: 0.5,
             overflow: TextOverflow.visible,
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 15.sp,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w600,
               color: textColor,
-              letterSpacing: 1,
+              letterSpacing: 0.5,
             ),
           ),
         ),
@@ -105,7 +109,7 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
 
     if (isExploding) {
       keyCard = keyCard.animate().scale(
-        end: const Offset(1.1, 1.1),
+        end: const Offset(1.08, 1.08),
         duration: 300.ms,
         curve: Curves.easeOutCubic,
       );
@@ -122,13 +126,6 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
           );
     }
 
-    return keyCard
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .moveY(
-          begin: -3.h,
-          end: 3.h,
-          duration: (1200 + (index * 200)).ms,
-          curve: Curves.easeInOut,
-        );
+    return keyCard;
   }
 }

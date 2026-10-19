@@ -4,8 +4,6 @@ import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:auto_size_text/auto_size_text.dart';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -15,7 +13,6 @@ import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_scr
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_painters.dart';
-import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_lcd.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_vault_handle.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_option_key.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_literal_comparison.dart';
@@ -289,26 +286,29 @@ class _PhrasalVerbsStageLayout extends StatelessWidget {
         final isCompact = maxHeight < 580;
 
         final double estimatedContentHeight =
-            (isCompact ? 30.h : 40.h) +
+            (isCompact ? 28.h : 36.h) +
             (InstructionHelper.getInstruction(quest).isNotEmpty
-                ? (isCompact ? 60.h : 80.h)
+                ? (isCompact ? 48.h : 58.h)
                 : 0) +
-            (isCompact ? 70.h : 90.h) +
-            (isCompact ? 110.h : 160.h) +
-            (isCompact ? 90.h : 130.h) +
-            20.h;
+            (isCompact ? 110.h : 140.h) +
+            (isCompact ? 80.h : 110.h) +
+            (isCompact ? 50.h : 80.h);
         final remainingHeight = maxHeight - estimatedContentHeight;
 
-        final double gapUnit = remainingHeight > 0 ? remainingHeight / 6 : 0;
+        final double gapUnit = remainingHeight > 0 ? remainingHeight / 7 : 0;
         final double gapTop = remainingHeight > 0
-            ? (gapUnit * 1).clamp(6.0, 24.0)
-            : 6.0;
-        final double gapMiddle = remainingHeight > 0
-            ? (gapUnit * 1.5).clamp(10.0, 30.0)
-            : 10.0;
-        final double gapBottom = remainingHeight > 0
-            ? (gapUnit * 2).clamp(12.0, 40.0)
+            ? (gapUnit * 0.8).clamp(8.0, 16.0)
+            : 8.0;
+        final double gapInstruction = isCompact ? 6.h : 8.h;
+        final double gapHandle = remainingHeight > 0
+            ? (gapUnit * 1.5).clamp(16.0, 28.0)
+            : 14.0;
+        final double gapOptions = remainingHeight > 0
+            ? (gapUnit * 1.2).clamp(14.0, 24.0)
             : 12.0;
+        final double gapBottom = remainingHeight > 0
+            ? (gapUnit * 1.5).clamp(16.0, 32.0)
+            : 14.0;
 
         return Stack(
           children: [
@@ -323,9 +323,11 @@ class _PhrasalVerbsStageLayout extends StatelessWidget {
                 slivers: [
                   SliverToBoxAdapter(
                     child: ConstrainedBox(
-                      constraints: BoxConstraints(minHeight: maxHeight),
+                      constraints: BoxConstraints(
+                        minHeight: isFirstStagePassed ? 0 : maxHeight,
+                      ),
                       child: Stack(
-                        alignment: Alignment.center,
+                        alignment: Alignment.topCenter,
                         children: [
                           Positioned.fill(
                             child: CustomPaint(
@@ -341,57 +343,35 @@ class _PhrasalVerbsStageLayout extends StatelessWidget {
                               IgnorePointer(
                                 ignoring: isFirstStagePassed,
                                 child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        SizedBox(height: gapTop),
-                                        isCompact
-                                            ? SizedBox(
-                                                height: 30.h,
-                                                child: FittedBox(
-                                                  fit: BoxFit.scaleDown,
-                                                  child: _buildVaultStatus(
-                                                    theme.primaryColor,
-                                                    isDark,
-                                                  ),
-                                                ),
-                                              )
-                                            : _buildVaultStatus(
+                                    SizedBox(height: gapTop),
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 30.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: _buildVaultStatus(
                                                 theme.primaryColor,
                                                 isDark,
                                               ),
-                                        if (quest.instruction.isNotEmpty) ...[
-                                          SizedBox(height: gapTop / 2),
-                                          _buildInstruction(
-                                            InstructionHelper.getInstruction(
-                                              quest,
                                             ),
+                                          )
+                                        : _buildVaultStatus(
                                             theme.primaryColor,
-                                            isCompact,
+                                            isDark,
                                           ),
-                                        ],
-                                        SizedBox(height: gapMiddle),
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 20.w,
-                                          ),
-                                          child: PhrasalVerbsLcd(
-                                            text:
-                                                quest.hint?.replaceFirst(
-                                                  "DEFINITION: ",
-                                                  "",
-                                                ) ??
-                                                "ANALYZING VAULT...",
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                          ),
+                                    if (quest.instruction.isNotEmpty) ...[
+                                      SizedBox(height: gapInstruction),
+                                      _buildInstruction(
+                                        InstructionHelper.getInstruction(
+                                          quest,
                                         ),
-                                      ],
-                                    ),
-
+                                        theme.primaryColor,
+                                        isCompact,
+                                      ),
+                                    ],
+                                    SizedBox(height: gapHandle),
                                     // The Central Vault Handle
                                     isCompact
                                         ? SizedBox(
@@ -413,41 +393,35 @@ class _PhrasalVerbsStageLayout extends StatelessWidget {
                                             isDark: isDark,
                                             vaultController: vaultController,
                                           ),
-
-                                    Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        SizedBox(height: gapMiddle),
-                                        // Key Options (Particles)
-                                        isCompact
-                                            ? SizedBox(
-                                                height: 90.h,
-                                                child: FittedBox(
-                                                  fit: BoxFit.scaleDown,
-                                                  child: SizedBox(
-                                                    width: constraints.maxWidth,
-                                                    child: _buildOptionsWrap(
-                                                      quest,
-                                                      theme.primaryColor,
-                                                      isDark,
-                                                      isFinalFailure,
-                                                      isCompact,
-                                                      hintUsed,
-                                                    ),
-                                                  ),
+                                    SizedBox(height: gapOptions),
+                                    // Key Options (Particles)
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 90.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width: constraints.maxWidth,
+                                                child: _buildOptionsWrap(
+                                                  quest,
+                                                  theme.primaryColor,
+                                                  isDark,
+                                                  isFinalFailure,
+                                                  isCompact,
+                                                  hintUsed,
                                                 ),
-                                              )
-                                            : _buildOptionsWrap(
-                                                quest,
-                                                theme.primaryColor,
-                                                isDark,
-                                                isFinalFailure,
-                                                isCompact,
-                                                hintUsed,
                                               ),
-                                        SizedBox(height: gapBottom),
-                                      ],
-                                    ),
+                                            ),
+                                          )
+                                        : _buildOptionsWrap(
+                                            quest,
+                                            theme.primaryColor,
+                                            isDark,
+                                            isFinalFailure,
+                                            isCompact,
+                                            hintUsed,
+                                          ),
+                                    SizedBox(height: gapBottom),
                                   ],
                                 ),
                               ),
@@ -482,19 +456,22 @@ class _PhrasalVerbsStageLayout extends StatelessWidget {
                   ),
                   if (isFirstStagePassed && !isAnswered)
                     SliverToBoxAdapter(
-                      child: Column(
-                        children: [
-                          ContextSentenceBuilder(
-                            targetKeyword:
-                                "${quest.word} ${quest.correctAnswer}".trim(),
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => onFinalSubmit(true),
-                            onSkipped: () => onFinalSubmit(false),
-                            isPositioned: false,
-                            exampleSentence: formattedExampleSentence,
-                          ),
-                          SizedBox(height: 60.h),
-                        ],
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                        child: Column(
+                          children: [
+                            ContextSentenceBuilder(
+                              targetKeyword:
+                                  "${quest.word} ${quest.correctAnswer}".trim(),
+                              primaryColor: theme.primaryColor,
+                              onConfirmed: () => onFinalSubmit(true),
+                              onSkipped: () => onFinalSubmit(false),
+                              isPositioned: false,
+                              exampleSentence: formattedExampleSentence,
+                            ),
+                            SizedBox(height: 60.h),
+                          ],
+                        ),
                       ),
                     ),
                 ],
@@ -507,60 +484,54 @@ class _PhrasalVerbsStageLayout extends StatelessWidget {
   }
 
   Widget _buildVaultStatus(Color color, bool isDark) {
-    return FittedBox(
-      fit: BoxFit.scaleDown,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-        decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(30.r),
-          border: Border.all(color: color.withValues(alpha: 0.3)),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(Icons.vpn_key_rounded, size: 16.r, color: color),
-            SizedBox(width: 10.w),
-            AutoSizeText(
-              "VAULT SECURITY: L-$level",
-              maxLines: 1,
-              minFontSize: 4,
-              stepGranularity: 0.5,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 12.sp,
-                fontWeight: FontWeight.bold,
-                color: color,
-                letterSpacing: 2,
-              ),
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: isDark ? 0.12 : 0.08),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.stars_rounded, size: 16.r, color: color),
+          SizedBox(width: 6.w),
+          Text(
+            "Level $level",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w600,
+              color: color,
+              letterSpacing: 0.5,
             ),
-          ],
-        ),
-      ).animate().shimmer(duration: 2.seconds),
+          ),
+        ],
+      ),
     );
   }
 
   Widget _buildInstruction(String text, Color color, bool isCompact) {
     if (text.isEmpty) return const SizedBox.shrink();
-    return Container(
-      width: double.infinity,
-      constraints: BoxConstraints(minHeight: isCompact ? 60.h : 80.h),
-      margin: EdgeInsets.symmetric(horizontal: 24.w),
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
-      ),
-      child: Center(
+    return Center(
+      child: Container(
+        constraints: BoxConstraints(maxWidth: 290.w),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.08),
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: color.withValues(alpha: 0.2)),
+        ),
         child: Text(
           text,
           textAlign: TextAlign.center,
+          softWrap: true,
           style: TextStyle(
-            fontSize: 16.sp,
-            fontWeight: FontWeight.w600,
-            color: color.withValues(alpha: 0.9),
-            height: 1.4,
+            fontFamily: 'Outfit',
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w500,
+            color: color.withValues(alpha: 0.95),
+            height: 1.35,
           ),
         ),
       ),
@@ -575,25 +546,28 @@ class _PhrasalVerbsStageLayout extends StatelessWidget {
     bool isCompact,
     bool hintUsed,
   ) {
-    return Wrap(
-      spacing: 15.w,
-      runSpacing: isCompact ? 10.h : 15.h,
-      alignment: WrapAlignment.center,
-      children: (quest.options ?? []).asMap().entries.map((entry) {
-        return PhrasalVerbsOptionKey(
-          text: entry.value,
-          correct: quest.correctAnswer ?? "",
-          color: color,
-          isDark: isDark,
-          isAnswered: isAnswered && (isCorrect != null || !isFirstStagePassed),
-          isCorrect: isCorrect,
-          selectedOption: selectedOption,
-          isFinalFailure: isFinalFailure,
-          index: entry.key,
-          isHintUsed: hintUsed,
-          onTap: () => onChoiceSubmit(entry.value, quest.correctAnswer ?? ""),
-        );
-      }).toList(),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      child: Wrap(
+        spacing: 12.w,
+        runSpacing: isCompact ? 10.h : 14.h,
+        alignment: WrapAlignment.center,
+        children: (quest.options ?? []).asMap().entries.map((entry) {
+          return PhrasalVerbsOptionKey(
+            text: entry.value,
+            correct: quest.correctAnswer ?? "",
+            color: color,
+            isDark: isDark,
+            isAnswered: isAnswered && (isCorrect != null || !isFirstStagePassed),
+            isCorrect: isCorrect,
+            selectedOption: selectedOption,
+            isFinalFailure: isFinalFailure,
+            index: entry.key,
+            isHintUsed: hintUsed,
+            onTap: () => onChoiceSubmit(entry.value, quest.correctAnswer ?? ""),
+          );
+        }).toList(),
+      ),
     );
   }
 }

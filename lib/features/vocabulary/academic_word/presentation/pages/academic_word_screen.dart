@@ -310,34 +310,39 @@ class _AcademicWordScreenState extends State<AcademicWordScreen>
                                               ),
                                             if (_isDragPassed.value &&
                                                 !isAnsweredNotifier.value)
-                                              Column(
-                                                children: [
-                                                  SizedBox(height: 24.h),
-                                                  TypeToConfirmOverlay(
-                                                    key: const Key('academic_word_type_confirm_overlay'),
-                                                    expectedText:
-                                                        quest.correctAnswer ??
-                                                        '',
-                                                    primaryColor: _cachedTheme
-                                                        .primaryColor,
-                                                    onConfirmed: () =>
-                                                        _submitFinalAnswer(
-                                                          true,
-                                                          quest: quest,
-                                                        ),
-                                                    onSkipped: () =>
-                                                        _submitFinalAnswer(
-                                                          false,
-                                                          quest: quest,
-                                                        ),
-                                                    onBypassed: () =>
-                                                        _submitFinalAnswer(
-                                                          true,
-                                                          quest: quest,
-                                                        ),
-                                                    isPositioned: false,
-                                                  ),
-                                                ],
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 20.w,
+                                                ),
+                                                child: Column(
+                                                  children: [
+                                                    SizedBox(height: 24.h),
+                                                    TypeToConfirmOverlay(
+                                                      key: const Key('academic_word_type_confirm_overlay'),
+                                                      expectedText:
+                                                          quest.correctAnswer ??
+                                                          '',
+                                                      primaryColor: _cachedTheme
+                                                          .primaryColor,
+                                                      onConfirmed: () =>
+                                                          _submitFinalAnswer(
+                                                            true,
+                                                            quest: quest,
+                                                          ),
+                                                      onSkipped: () =>
+                                                          _submitFinalAnswer(
+                                                            false,
+                                                            quest: quest,
+                                                          ),
+                                                      onBypassed: () =>
+                                                          _submitFinalAnswer(
+                                                            true,
+                                                            quest: quest,
+                                                          ),
+                                                      isPositioned: false,
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
                                             SizedBox(
                                               height: 80.h + keyboardHeight,
@@ -700,21 +705,15 @@ class _AcademicWordGameBody extends StatelessWidget {
         ? 0.01
         : isAnyCompact
         ? 0.015
-        : 0.04;
+        : 0.035;
     return Positioned(
       top: maxHeight * topFraction,
-      left: 0,
-      right: 0,
+      left: 16.w,
+      right: 16.w,
       child: Center(
-        child: SizedBox(
-          height: isAnyCompact ? (maxHeight * 0.07).clamp(28.0, 40.0) : null,
-          child: FittedBox(
-            fit: isAnyCompact ? BoxFit.scaleDown : BoxFit.none,
-            child: AcademicWordInstruction(
-              color: themeColor,
-              label: InstructionHelper.getInstruction(quest),
-            ),
-          ),
+        child: AcademicWordInstruction(
+          color: themeColor,
+          label: InstructionHelper.getInstruction(quest),
         ),
       ),
     );
@@ -727,19 +726,24 @@ class _AcademicWordGameBody extends StatelessWidget {
     required bool isAnyCompact,
   }) {
     final topFraction = isUltraCompact
-        ? 0.08
+        ? 0.075
         : isAnyCompact
-        ? 0.10
-        : 0.14;
+        ? 0.095
+        : 0.13;
     return Positioned(
       top: maxHeight * topFraction,
-      left: 0,
-      right: 0,
-      child: SizedBox(
-        height: isAnyCompact ? maxHeight * 0.36 : null,
-        child: FittedBox(
-          fit: isAnyCompact ? BoxFit.scaleDown : BoxFit.none,
-          alignment: Alignment.topCenter,
+      left: 20.w,
+      right: 20.w,
+      child: Center(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: 420.w,
+            maxHeight: isUltraCompact
+                ? maxHeight * 0.32
+                : isAnyCompact
+                ? maxHeight * 0.36
+                : maxHeight * 0.42,
+          ),
           child: AcademicWordThesisPaper(
             passage: quest.passage ?? '',
             color: themeColor,
