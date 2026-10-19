@@ -39,6 +39,13 @@ class PrefixSuffixController extends ChangeNotifier {
        _ttsService = ttsService;
 
   @override
+  void notifyListeners() {
+    if (!_isDisposed) {
+      super.notifyListeners();
+    }
+  }
+
+  @override
   void dispose() {
     _isDisposed = true;
     _stageTimer?.cancel();
@@ -47,6 +54,7 @@ class PrefixSuffixController extends ChangeNotifier {
   }
 
   void reset(VocabularyQuest? quest, int index) {
+    if (_isDisposed) return;
     _stageTimer?.cancel();
     _hintTimer?.cancel();
     lastQuest = quest;
@@ -60,13 +68,14 @@ class PrefixSuffixController extends ChangeNotifier {
   }
 
   void setAnswered(bool correct) {
+    if (_isDisposed) return;
     isAnswered = true;
     isCorrect = correct;
     notifyListeners();
   }
 
   void completeGame() {
-    if (showConfetti) return;
+    if (showConfetti || _isDisposed) return;
     showConfetti = true;
     notifyListeners();
   }

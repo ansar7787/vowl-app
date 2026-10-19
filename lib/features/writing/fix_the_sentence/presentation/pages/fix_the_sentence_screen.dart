@@ -403,14 +403,30 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
 }
 
 class _ErasePointsNotifier extends ChangeNotifier {
+  bool _isDisposed = false;
   final List<Offset> points = [];
 
+  @override
+  void notifyListeners() {
+    if (!_isDisposed) {
+      super.notifyListeners();
+    }
+  }
+
+  @override
+  void dispose() {
+    _isDisposed = true;
+    super.dispose();
+  }
+
   void add(Offset offset) {
+    if (_isDisposed) return;
     points.add(offset);
     notifyListeners();
   }
 
   void clear() {
+    if (_isDisposed) return;
     points.clear();
     notifyListeners();
   }
