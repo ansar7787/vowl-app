@@ -42,7 +42,8 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => 'VOCAB MASTERY!';
+  String getCompletionTitle(BuildContext context) =>
+      context.tr('instructions.flashcards.completed', fallback: 'Practice Complete!');
 
   late final FlashcardController _controller;
   late ThemeResult _theme;

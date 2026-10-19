@@ -41,20 +41,34 @@ class _CardLayout {
     final isTablet = w >= 600;
     final isSmallHeight = h < 640;
 
-    final hPad = isTablet ? 24.w : 12.w;
-    final maxW = isTablet ? min(w * 0.80, 600.0) : w - (hPad * 2);
+    final hPad = isTablet ? 32.w : 16.w;
+    final maxW = isTablet ? min(w * 0.70, 440.0) : min(w - (hPad * 2), 400.0);
     final double cardW = maxW;
-    final double cardH = isLandscape ? h * 0.85 : h * 0.72;
+
+    final topSpacing = isSmallHeight ? 4.h : 8.h;
+    final instructionToCard = isSmallHeight ? 8.h : 12.h;
+    final cardToActions = isSmallHeight ? 10.h : 14.h;
+    final actionsToBottom = isSmallHeight ? 6.h : 10.h;
+
+    // Remaining height allocated to card with chrome deduction
+    final totalSpacing =
+        topSpacing + instructionToCard + cardToActions + actionsToBottom;
+    final chromeHeight = totalSpacing + (isSmallHeight ? 96.h : 116.h);
+    final availableH = h - chromeHeight;
+
+    final double cardH = isLandscape
+        ? min(h * 0.82, 380.0)
+        : availableH.clamp(270.0, 460.0);
 
     return _CardLayout._(
       horizontalPadding: hPad,
       cardWidth: cardW,
       cardHeight: cardH,
-      swipeThreshold: max(90.0, min(150.0, cardW * 0.38)),
-      topSpacing: isSmallHeight ? 4.h : 8.h,
-      instructionToCard: isSmallHeight ? 8.h : 12.h,
-      cardToActions: isSmallHeight ? 12.h : 16.h,
-      actionsToBottom: isSmallHeight ? 8.h : 12.h,
+      swipeThreshold: max(80.0, min(140.0, cardW * 0.35)),
+      topSpacing: topSpacing,
+      instructionToCard: instructionToCard,
+      cardToActions: cardToActions,
+      actionsToBottom: actionsToBottom,
     );
   }
 }
@@ -186,7 +200,7 @@ class FlashcardGameBody extends StatelessWidget {
       builder: (context, flipped, child) {
         return Semantics(
           label:
-              '${quest.word ?? ""}. ${flipped ? context.tr('instructions.flashcards.definition_revealed', fallback: 'DID YOU GET IT RIGHT?') : context.tr('instructions.flashcards.tap_to_reveal', fallback: 'TAP TO REVEAL')}',
+              '${quest.word ?? ""}. ${flipped ? context.tr('instructions.flashcards.definition_revealed', fallback: 'Check your answer') : context.tr('instructions.flashcards.tap_to_reveal', fallback: 'Tap card to flip')}',
           child: GestureDetector(
             onHorizontalDragUpdate: flipped ? onHorizontalDragUpdate : null,
             onHorizontalDragEnd: flipped
@@ -291,47 +305,66 @@ class _InstructionBanner extends StatelessWidget {
     required this.quest,
   });
 
+  String _formatInstruction(String raw) {
+    final trimmed = raw.trim();
+    if (trimmed.isEmpty) return 'Tap card to check meaning';
+    if (trimmed == trimmed.toUpperCase() && trimmed.length > 2) {
+      return trimmed[0].toUpperCase() + trimmed.substring(1).toLowerCase();
+    }
+    return trimmed;
+  }
+
   @override
   Widget build(BuildContext context) {
     final reduceMotion =
         (MediaQuery.maybeOf(context)?.disableAnimations ?? false) ||
         VowlMotion.lowAnimationModeOverride.value;
 
+    final instructionText = isFlipped
+        ? context.tr(
+            'instructions.flashcards.swipe_instruction',
+            fallback: 'Swipe left to review, right if you got it',
+          )
+        : _formatInstruction(InstructionHelper.getInstruction(quest));
+
     final bannerContent = Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.10),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.20)),
+        color: primaryColor.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.18),
+          width: 1.2,
+        ),
       ),
       child: AnimatedSwitcher(
         duration: 300.ms,
-        child: FittedBox(
+        child: KeyedSubtree(
           key: ValueKey<bool>(isFlipped),
-          fit: BoxFit.scaleDown,
           child: Row(
             mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Icon(
                 isFlipped ? Icons.swipe_rounded : Icons.touch_app_rounded,
-                size: 14.r,
+                size: 16.r,
                 color: primaryColor,
               ),
               SizedBox(width: 8.w),
-              Text(
-                isFlipped
-                    ? context.tr(
-                        'instructions.flashcards.swipe_instruction',
-                        fallback: 'SWIPE LEFT (AGAIN) OR RIGHT (GOT IT)',
-                      )
-                    : InstructionHelper.getInstruction(quest),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.w900,
-                  color: primaryColor,
-                  letterSpacing: 1.1,
+              Flexible(
+                child: Text(
+                  instructionText,
+                  textAlign: TextAlign.center,
+                  softWrap: true,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w600,
+                    color: primaryColor,
+                    height: 1.35,
+                    letterSpacing: 0.2,
+                  ),
                 ),
               ),
             ],
@@ -341,10 +374,13 @@ class _InstructionBanner extends StatelessWidget {
     );
 
     return ConstrainedBox(
-      constraints: BoxConstraints(maxWidth: 430.w),
+      constraints: BoxConstraints(maxWidth: 380.w),
       child: reduceMotion
           ? bannerContent
-          : bannerContent.animate().fadeIn(duration: 600.ms).slideY(begin: -0.2, end: 0),
+          : bannerContent
+              .animate()
+              .fadeIn(duration: 400.ms)
+              .slideY(begin: -0.2, end: 0),
     );
   }
 }

@@ -96,32 +96,31 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
               final compact = widget.height < 280 || widget.width < 280;
               final dividerInset = (widget.width * 0.12).clamp(16.0, 40.0);
 
-              final maxWordFontSize = compact ? 24.sp : 28.sp;
-              final iconSize = compact ? 24.r : 28.r;
+              final maxWordFontSize = compact ? 22.sp : 26.sp;
+              final iconSize = compact ? 22.r : 26.r;
 
               return Stack(
                 children: [
                   if (widget.quest.topicEmoji != null &&
                       widget.quest.topicEmoji!.isNotEmpty)
                     Positioned(
-                      right: -40.w,
-                      bottom: -40.h,
+                      right: -30.w,
+                      bottom: -30.h,
                       child: Opacity(
-                        opacity: widget.isDark ? 0.08 : 0.12,
+                        opacity: widget.isDark ? 0.06 : 0.08,
                         child: Text(
                           widget.quest.topicEmoji!,
-                          style: TextStyle(fontSize: 220.sp),
+                          style: TextStyle(fontSize: 180.sp),
                         ),
                       ),
                     ),
                   Positioned.fill(
                     child: RawScrollbar(
                       controller: _scrollController,
-                      thumbColor: widget.color.withValues(alpha: 0.4),
+                      thumbColor: widget.color.withValues(alpha: 0.35),
                       radius: Radius.circular(8.r),
-                      thickness: 4.w,
-                      crossAxisMargin:
-                          2.w, // close to edge but padded by ClipRRect
+                      thickness: 3.w,
+                      crossAxisMargin: 2.w,
                       mainAxisMargin: 8.h,
                       child: NotificationListener<ScrollNotification>(
                         onNotification: (notification) {
@@ -153,7 +152,7 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                             SliverPadding(
                               padding: EdgeInsets.symmetric(
                                 horizontal: 16.w,
-                                vertical: 16.h,
+                                vertical: 14.h,
                               ),
                               sliver: SliverFillRemaining(
                                 hasScrollBody: false,
@@ -170,13 +169,13 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                           fontSize: maxWordFontSize,
                                           color: widget.isDark
                                               ? Colors.white
-                                              : Colors.black87,
-                                          fontWeight: FontWeight.w800,
-                                          letterSpacing: 2,
+                                              : AppColors.slate900,
+                                          fontWeight: FontWeight.w700,
+                                          letterSpacing: 1.0,
                                         ),
                                       ),
                                     ),
-                                    SizedBox(height: 8.h),
+                                    SizedBox(height: 6.h),
                                     Container(
                                       decoration: BoxDecoration(
                                         color: widget.color.withValues(
@@ -202,40 +201,50 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                         splashRadius: 24.r,
                                       ),
                                     ),
-                                    SizedBox(height: compact ? 12.h : 16.h),
-                                    Text(
-                                      'DEFINITION',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 10.sp,
-                                        color: widget.color,
-                                        fontWeight: FontWeight.w900,
-                                        letterSpacing: 2,
+                                    SizedBox(height: compact ? 10.h : 14.h),
+                                    Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 10.w,
+                                        vertical: 3.h,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: widget.color.withValues(alpha: 0.08),
+                                        borderRadius: BorderRadius.circular(8.r),
+                                      ),
+                                      child: Text(
+                                        'Definition',
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 11.sp,
+                                          color: widget.color,
+                                          fontWeight: FontWeight.w600,
+                                          letterSpacing: 0.5,
+                                        ),
                                       ),
                                     ),
-                                    SizedBox(height: compact ? 8.h : 12.h),
+                                    SizedBox(height: compact ? 6.h : 8.h),
                                     Text(
                                       widget.quest.definition ?? '',
                                       textAlign: TextAlign.center,
+                                      softWrap: true,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
-                                        fontSize: compact ? 17.sp : 19.sp,
+                                        fontSize: compact ? 15.sp : 17.sp,
                                         color: widget.isHintActive
                                             ? widget.color
                                             : (widget.isDark
                                                   ? Colors.white
-                                                  : Colors.black87),
-                                        height: 1.4,
+                                                  : AppColors.slate900),
+                                        height: 1.45,
                                         fontWeight: widget.isHintActive
-                                            ? FontWeight.w900
+                                            ? FontWeight.w700
                                             : FontWeight.w500,
                                         shadows: widget.isHintActive
                                             ? [
                                                 Shadow(
                                                   color: widget.color
-                                                      .withValues(alpha: 0.5),
-                                                  blurRadius: 10,
+                                                      .withValues(alpha: 0.4),
+                                                  blurRadius: 8,
                                                 ),
                                               ]
                                             : null,
@@ -246,20 +255,24 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                             .quest
                                             .explanation!
                                             .isNotEmpty) ...[
-                                      SizedBox(height: compact ? 12.h : 16.h),
+                                      SizedBox(height: compact ? 10.h : 14.h),
                                       Container(
-                                        padding: EdgeInsets.all(12.r),
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 14.w,
+                                          vertical: 10.h,
+                                        ),
                                         decoration: BoxDecoration(
                                           color: widget.color.withValues(
                                             alpha: 0.05,
                                           ),
                                           borderRadius: BorderRadius.circular(
-                                            12.r,
+                                            14.r,
                                           ),
                                           border: Border.all(
                                             color: widget.color.withValues(
-                                              alpha: 0.2,
+                                              alpha: 0.15,
                                             ),
+                                            width: 1.2,
                                           ),
                                         ),
                                         child: Column(
@@ -272,35 +285,36 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                                   Icons
                                                       .lightbulb_outline_rounded,
                                                   color: widget.color,
-                                                  size: 14.r,
+                                                  size: 15.r,
                                                 ),
                                                 SizedBox(width: 6.w),
                                                 Text(
-                                                  'DID YOU KNOW?',
+                                                  'Note',
                                                   style: TextStyle(
                                                     fontFamily: 'Outfit',
-                                                    fontSize: 10.sp,
+                                                    fontSize: 11.sp,
                                                     color: widget.color,
-                                                    fontWeight: FontWeight.w900,
-                                                    letterSpacing: 1.5,
+                                                    fontWeight: FontWeight.w600,
+                                                    letterSpacing: 0.5,
                                                   ),
                                                 ),
                                               ],
                                             ),
-                                            SizedBox(height: 8.h),
+                                            SizedBox(height: 6.h),
                                             Text(
                                               widget.quest.explanation!,
                                               textAlign: TextAlign.center,
+                                              softWrap: true,
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
                                                 fontSize: compact
                                                     ? 13.sp
                                                     : 14.sp,
                                                 color: widget.isDark
-                                                    ? Colors.white70
-                                                    : Colors.black87,
-                                                height: 1.4,
-                                                fontWeight: FontWeight.w500,
+                                                    ? AppColors.slate200
+                                                    : AppColors.slate800,
+                                                height: 1.45,
+                                                fontWeight: FontWeight.w400,
                                               ),
                                             ),
                                           ],
@@ -309,7 +323,7 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                     ],
                                     if (widget.quest.example != null &&
                                         widget.quest.example!.isNotEmpty) ...[
-                                      SizedBox(height: compact ? 12.h : 16.h),
+                                      SizedBox(height: compact ? 10.h : 14.h),
                                       Divider(
                                         color: widget.color.withValues(
                                           alpha: 0.1,
@@ -318,33 +332,40 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                         indent: dividerInset,
                                         endIndent: dividerInset,
                                       ),
-                                      SizedBox(height: compact ? 12.h : 16.h),
-                                    ],
-                                    if (widget.quest.example != null &&
-                                        widget.quest.example!.isNotEmpty) ...[
-                                      Text(
-                                        'EXAMPLE',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 10.sp,
-                                          color: widget.color,
-                                          fontWeight: FontWeight.w900,
-                                          letterSpacing: 2,
+                                      SizedBox(height: compact ? 8.h : 12.h),
+                                      Container(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 10.w,
+                                          vertical: 3.h,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: widget.color.withValues(alpha: 0.08),
+                                          borderRadius: BorderRadius.circular(8.r),
+                                        ),
+                                        child: Text(
+                                          'Example',
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 11.sp,
+                                            color: widget.color,
+                                            fontWeight: FontWeight.w600,
+                                            letterSpacing: 0.5,
+                                          ),
                                         ),
                                       ),
-                                      SizedBox(height: 12.h),
+                                      SizedBox(height: 8.h),
                                       Text(
                                         widget.quest.example!,
                                         textAlign: TextAlign.center,
+                                        softWrap: true,
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
-                                          fontSize: compact ? 14.sp : 15.sp,
+                                          fontSize: compact ? 13.sp : 14.sp,
                                           color: widget.isDark
-                                              ? Colors.white70
-                                              : Colors.black54,
-                                          fontStyle: FontStyle.italic,
-                                          height: 1.5,
+                                              ? AppColors.slate200
+                                              : AppColors.slate700,
+                                          height: 1.45,
+                                          fontWeight: FontWeight.w400,
                                         ),
                                       ),
                                       if (widget.quest.usageExample != null &&
@@ -352,18 +373,19 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                               .quest
                                               .usageExample!
                                               .isNotEmpty) ...[
-                                        SizedBox(height: compact ? 8.h : 12.h),
+                                        SizedBox(height: compact ? 6.h : 8.h),
                                         Text(
                                           widget.quest.usageExample!,
                                           textAlign: TextAlign.center,
+                                          softWrap: true,
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
-                                            fontSize: compact ? 14.sp : 15.sp,
+                                            fontSize: compact ? 12.sp : 13.sp,
                                             color: widget.isDark
-                                                ? Colors.white70
-                                                : Colors.black54,
+                                                ? AppColors.slate400
+                                                : AppColors.slate600,
                                             fontStyle: FontStyle.italic,
-                                            height: 1.5,
+                                            height: 1.4,
                                           ),
                                         ),
                                       ],
