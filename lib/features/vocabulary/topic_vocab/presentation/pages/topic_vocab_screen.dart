@@ -152,13 +152,13 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                   final isCompact = maxHeight < 580.h;
 
                   // Define relative positions as percentages of the actual available height or absolute sizes
-                  final counterTop = isCompact ? 15.h : maxHeight * 0.05;
-                  final instructionTop = isCompact ? 45.h : maxHeight * 0.12;
-                  final machineTop = isCompact ? 95.h : maxHeight * 0.22;
+                  final counterTop = isCompact ? 10.h : maxHeight * 0.04;
+                  final instructionTop = isCompact ? 44.h : maxHeight * 0.10;
+                  final machineTop = isCompact ? 100.h : maxHeight * 0.22;
 
                   // Word is positioned relative to bottom to work nicely with flicking physics
-                  final wordBottom = isCompact ? 145.h : maxHeight * 0.42;
-                  final flyingWordBottom = isCompact ? 145.h : maxHeight * 0.42;
+                  final wordBottom = isCompact ? 135.h : maxHeight * 0.38;
+                  final flyingWordBottom = isCompact ? 135.h : maxHeight * 0.38;
                   final binBottom = isCompact ? 10.h : maxHeight * 0.04;
 
                   return RawScrollbar(
@@ -195,10 +195,14 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                                 if (quest != null)
                                   Positioned(
                                     top: instructionTop,
+                                    left: 16.w,
+                                    right: 16.w,
                                     child: RepaintBoundary(
-                                      child: _TopicInstructionBanner(
-                                        primaryColor: theme.primaryColor,
-                                        quest: quest,
+                                      child: Center(
+                                        child: _TopicInstructionBanner(
+                                          primaryColor: theme.primaryColor,
+                                          quest: quest,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -370,19 +374,26 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                                     child: IgnorePointer(
                                       child: Builder(
                                         builder: (context) {
+                                          final arrowColor = isDark
+                                              ? Colors.white.withValues(alpha: 0.5)
+                                              : theme.primaryColor.withValues(alpha: 0.5);
+                                          final handIconColor = isDark
+                                              ? Colors.white.withValues(alpha: 0.9)
+                                              : theme.primaryColor;
+
                                           final leftArrow = Icon(
                                             Icons.keyboard_double_arrow_left_rounded,
-                                            color: Colors.white.withValues(alpha: 0.5),
+                                            color: arrowColor,
                                             size: 24.r,
                                           );
                                           final handIcon = Icon(
                                             Icons.touch_app_rounded,
-                                            color: Colors.white.withValues(alpha: 0.9),
+                                            color: handIconColor,
                                             size: 32.r,
                                           );
                                           final rightArrow = Icon(
                                             Icons.keyboard_double_arrow_right_rounded,
-                                            color: Colors.white.withValues(alpha: 0.5),
+                                            color: arrowColor,
                                             size: 24.r,
                                           );
 
@@ -509,49 +520,48 @@ class _TopicInstructionBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
+
+    final rawInstruction = InstructionHelper.getInstruction(quest).trim();
+    final instruction = rawInstruction.isNotEmpty
+        ? rawInstruction
+        : 'Sort each word into the correct category.';
 
     final bannerContent = Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.10),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.20)),
+        color: isDark
+            ? primaryColor.withValues(alpha: 0.12)
+            : primaryColor.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.22),
+          width: 1,
+        ),
       ),
-      child: FittedBox(
-        fit: BoxFit.scaleDown,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(Icons.touch_app_rounded, size: 14.r, color: primaryColor),
-            SizedBox(width: 8.w),
-            Text(
-              '${InstructionHelper.getInstruction(quest).toUpperCase()} (OR TAP)',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w900,
-                color: primaryColor,
-                letterSpacing: 1.1,
-              ),
-            ),
-          ],
+      child: Text(
+        instruction,
+        textAlign: TextAlign.center,
+        softWrap: true,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 13.sp,
+          fontWeight: FontWeight.w600,
+          color: isDark ? Colors.white : primaryColor,
+          height: 1.35,
+          letterSpacing: 0.2,
         ),
       ),
     );
 
-    return ConstrainedBox(
-      constraints: BoxConstraints(maxWidth: screenWidth - 32.w),
-      child: reduceMotion
-          ? bannerContent
-          : bannerContent
-              .animate()
-              .fadeIn(duration: 600.ms)
-              .slideY(begin: -0.2, end: 0),
-    );
+    return reduceMotion
+        ? bannerContent
+        : bannerContent
+            .animate()
+            .fadeIn(duration: 400.ms)
+            .slideY(begin: -0.15, end: 0, curve: Curves.easeOut);
   }
 }
 

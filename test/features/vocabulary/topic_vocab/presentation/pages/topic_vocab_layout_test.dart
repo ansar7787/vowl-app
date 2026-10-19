@@ -331,9 +331,9 @@ void main() {
       expect(find.textContaining('0 / 2'), findsOneWidget);
     });
 
-    testWidgets('displays instruction banner with uppercase instruction and (OR TAP)', (tester) async {
+    testWidgets('displays instruction banner with instruction text', (tester) async {
       await pumpTopicScreen(tester);
-      expect(find.textContaining('SORT WORDS INTO CORRECT TOPIC (OR TAP)'), findsOneWidget);
+      expect(find.textContaining('SORT WORDS INTO CORRECT TOPIC'), findsOneWidget);
     });
 
     testWidgets('displays TopicMachineHead with topic emoji', (tester) async {

@@ -45,8 +45,8 @@ class TopicMachineHead extends StatelessWidget {
     }
 
     return SizedBox(
-      width: 180.w,
-      height: 120.h,
+      width: 160.w,
+      height: 76.h,
       child: Stack(
         alignment: Alignment.topCenter,
         children: [

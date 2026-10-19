@@ -37,15 +37,15 @@ class TopicVocabMindMap extends StatelessWidget {
                   AutoSizeText(
                     context.tr(
                       'instructions.topicVocab.topic_dictionary',
-                      fallback: 'TOPIC DICTIONARY',
+                      fallback: 'Word Meanings',
                     ),
                     maxLines: 1,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w800,
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w700,
                       color: color,
-                      letterSpacing: 1.5,
+                      letterSpacing: 0.4,
                     ),
                   ),
                 ],

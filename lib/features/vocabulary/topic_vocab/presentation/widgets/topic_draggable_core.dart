@@ -66,41 +66,44 @@ class _TopicDraggableWordState extends State<TopicDraggableWord> {
                 child: Transform.rotate(
                   angle: _dragOffset.value / 500,
                   child: Container(
-                    width: 140.w, // Extra Small
-                    height: 70.h, // Extra Small
+                    width: 156.w,
+                    height: 64.h,
                     decoration: BoxDecoration(
                       color: widget.isDark ? AppColors.slate800 : Colors.white,
-                      borderRadius: BorderRadius.circular(12.r),
+                      borderRadius: BorderRadius.circular(16.r),
                       border: Border.all(
-                        color: widget.primaryColor.withValues(alpha: 0.5),
+                        color: widget.primaryColor.withValues(
+                          alpha: _isDragging.value ? 0.8 : 0.4,
+                        ),
                         width: 1.5,
                       ),
                       boxShadow: [
                         BoxShadow(
                           color: widget.primaryColor.withValues(
-                            alpha: _isDragging.value ? 0.4 : 0.2,
+                            alpha: _isDragging.value ? 0.35 : 0.15,
                           ),
-                          blurRadius: _isDragging.value ? 20 : 10,
+                          blurRadius: _isDragging.value ? 16 : 8,
                           spreadRadius: _isDragging.value ? 2 : 0,
+                          offset: const Offset(0, 2),
                         ),
                       ],
                     ),
                     child: Center(
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 8.w),
+                        padding: EdgeInsets.symmetric(horizontal: 10.w),
                         child: FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Text(
-                            widget.word.toUpperCase(),
+                            _formatWord(widget.word),
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.bold,
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w700,
                               color: widget.isDark
                                   ? Colors.white
-                                  : Colors.black87,
-                              letterSpacing: 1,
+                                  : const Color(0xFF0F172A),
+                              letterSpacing: 0.3,
                             ),
                           ),
                         ),
@@ -114,5 +117,13 @@ class _TopicDraggableWordState extends State<TopicDraggableWord> {
         },
       ),
     );
+  }
+
+  String _formatWord(String input) {
+    if (input.isEmpty) return input;
+    return input.split(' ').map((segment) {
+      if (segment.isEmpty) return segment;
+      return '${segment[0].toUpperCase()}${segment.substring(1).toLowerCase()}';
+    }).join(' ');
   }
 }
