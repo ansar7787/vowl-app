@@ -33,16 +33,19 @@ class EmotionRecognitionEmitter extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              padding: EdgeInsets.all(20.r),
+              padding: EdgeInsets.all(18.r),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: color.withValues(alpha: 0.1),
-                border: Border.all(color: color.withValues(alpha: 0.3)),
+                border: Border.all(
+                  color: color.withValues(alpha: 0.28),
+                  width: 1.5,
+                ),
                 boxShadow: [
                   BoxShadow(
-                    color: color.withValues(alpha: 0.1),
-                    blurRadius: 20,
-                    spreadRadius: 5,
+                    color: color.withValues(alpha: 0.08),
+                    blurRadius: 16,
+                    offset: const Offset(0, 4),
                   ),
                 ],
               ),
@@ -51,12 +54,12 @@ class EmotionRecognitionEmitter extends StatelessWidget {
                       ? Text(
                           emoji!,
                           key: const Key('emotion_recognition_emoji'),
-                          style: TextStyle(fontSize: 40.r),
+                          style: TextStyle(fontSize: 38.sp),
                         )
                       : Text(
                           emoji!,
                           key: const Key('emotion_recognition_emoji'),
-                          style: TextStyle(fontSize: 40.r),
+                          style: TextStyle(fontSize: 38.sp),
                         )
                           .animate()
                           .scale(duration: 400.ms, curve: Curves.easeOutCubic))
@@ -64,12 +67,12 @@ class EmotionRecognitionEmitter extends StatelessWidget {
                       ? Icon(
                           Icons.volume_up_rounded,
                           color: color,
-                          size: 40.r,
+                          size: 38.r,
                         )
                       : Icon(
                           Icons.volume_up_rounded,
                           color: color,
-                          size: 40.r,
+                          size: 38.r,
                         )
                           .animate(
                             onPlay: (controller) =>
@@ -77,38 +80,44 @@ class EmotionRecognitionEmitter extends StatelessWidget {
                           )
                           .scale(
                             begin: const Offset(1, 1),
-                            end: const Offset(1.1, 1.1),
+                            end: const Offset(1.08, 1.08),
                             duration: 1.seconds,
                           )),
             ),
             if (isCorrectState != true) ...[
-              SizedBox(height: 12.h),
+              SizedBox(height: 10.h),
               reduceMotion
                   ? Text(
-                      "TAP TO LISTEN",
+                      'Tap to listen',
+                      textAlign: TextAlign.center,
+                      softWrap: true,
+                      overflow: TextOverflow.visible,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w900,
-                        color: color.withValues(alpha: 0.8),
-                        letterSpacing: 1.5,
+                        fontSize: 13.5.sp,
+                        fontWeight: FontWeight.w600,
+                        color: color.withValues(alpha: 0.85),
+                        letterSpacing: 0.2,
                       ),
                     )
                   : Text(
-                      "TAP TO LISTEN",
+                      'Tap to listen',
+                      textAlign: TextAlign.center,
+                      softWrap: true,
+                      overflow: TextOverflow.visible,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w900,
-                        color: color.withValues(alpha: 0.8),
-                        letterSpacing: 1.5,
+                        fontSize: 13.5.sp,
+                        fontWeight: FontWeight.w600,
+                        color: color.withValues(alpha: 0.85),
+                        letterSpacing: 0.2,
                       ),
                     )
                       .animate(
                         onPlay: (controller) =>
                             controller.repeat(reverse: true),
                       )
-                      .fade(begin: 0.6, end: 1.0, duration: 1.seconds),
+                      .fade(begin: 0.65, end: 1.0, duration: 1.seconds),
             ],
           ],
         ),

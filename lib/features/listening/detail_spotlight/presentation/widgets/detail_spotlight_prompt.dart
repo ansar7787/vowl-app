@@ -16,23 +16,25 @@ class DetailSpotlightPrompt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      constraints: BoxConstraints(maxWidth: 320.w),
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: color.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: color.withValues(alpha: 0.25)),
       ),
-      child: Text(
-        isAnswered
-            ? "TARGET: ${detail.toUpperCase()}"
-            : "SCAN FOR AUDITORY TARGET",
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 12.sp,
-          fontWeight: FontWeight.w800,
-          color: color,
-          letterSpacing: 1.2,
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Text(
+          isAnswered ? "Answer: $detail" : "Drag the spotlight to find the answer",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 13.sp,
+            fontWeight: FontWeight.w600,
+            color: color,
+            letterSpacing: 0.3,
+          ),
         ),
       ),
     );

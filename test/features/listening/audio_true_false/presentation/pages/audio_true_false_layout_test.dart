@@ -848,8 +848,8 @@ void main() {
 
       await pumpAudioTrueFalseScreen(tester, state: emptyState);
 
-      expect(find.text('IS THIS STATEMENT TRUE OR FALSE?'), findsOneWidget);
-      expect(find.text('LISTEN CAREFULLY.'), findsOneWidget);
+      expect(find.text('Is this statement True or False?'), findsOneWidget);
+      expect(find.text('Listen carefully.'), findsOneWidget);
     });
 
     testWidgets('30. Accessibility semantics are present on Tuner and Verdict buttons', (tester) async {
@@ -863,6 +863,90 @@ void main() {
 
       final trueSemantics = find.bySemanticsLabel('TRUE');
       expect(trueSemantics, findsOneWidget);
+    });
+
+    testWidgets('31. Instruction text centers, wraps cleanly without ellipsis or FittedBox, and sanitizes AI buzzwords', (tester) async {
+      const buzzwordQuest = ListeningQuest(
+        id: 'atf_buzzword',
+        instruction: 'Is this statement True or False? You make the call.',
+        difficulty: 1,
+        subtype: GameSubtype.audioTrueFalse,
+        textToSpeak: 'The quick brown fox jumps over the lazy dog.',
+        statement: 'A fox jumped over a dog.',
+        correctAnswer: 'true',
+      );
+      final state = const ListeningLoaded(
+        quests: [buzzwordQuest],
+        currentIndex: 0,
+        livesRemaining: 3,
+      );
+
+      await pumpAudioTrueFalseScreen(tester, state: state);
+
+      // Verify buzzword "You make the call." was replaced with natural guidance
+      expect(find.text('Is this statement True or False?'), findsOneWidget);
+      expect(find.text('Listen carefully.'), findsOneWidget);
+      expect(find.textContaining('You make the call'), findsNothing);
+
+      final mainTextFinder = find.byKey(const Key('audio_true_false_instruction_main'));
+      final Text mainTextWidget = tester.widget(mainTextFinder);
+      expect(mainTextWidget.textAlign, TextAlign.center);
+      expect(mainTextWidget.overflow, isNull);
+    });
+
+    testWidgets('32. Long statement wraps gracefully in screen display card without overflow or ellipsis', (tester) async {
+      const longQuest = ListeningQuest(
+        id: 'atf_long',
+        instruction: 'Listen carefully and decide if the statement is true or false.',
+        difficulty: 2,
+        subtype: GameSubtype.audioTrueFalse,
+        textToSpeak: 'Long speech paragraph about weather patterns across continents.',
+        statement: 'This is an exceptionally long statement intended to test whether multi-line wrapping functions without any clipping, text truncation, or overflow across small and large displays.',
+        correctAnswer: 'true',
+      );
+      final state = const ListeningLoaded(
+        quests: [longQuest],
+        currentIndex: 0,
+        livesRemaining: 3,
+      );
+
+      await pumpAudioTrueFalseScreen(tester, state: state, size: const Size(320, 568));
+
+      final stmtFinder = find.byKey(const Key('audio_true_false_statement'));
+      expect(stmtFinder, findsOneWidget);
+      final Text stmtWidget = tester.widget(stmtFinder);
+      expect(stmtWidget.textAlign, TextAlign.center);
+      expect(stmtWidget.overflow, isNull);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('33. Question transition during AnimatedSwitcher does not throw ScrollController multiple positions assertion', (tester) async {
+      VowlMotion.lowAnimationModeOverride.value = false;
+      addTearDown(() {
+        VowlMotion.lowAnimationModeOverride.value = true;
+      });
+
+      await pumpAudioTrueFalseScreen(tester);
+
+      final nextState = const ListeningLoaded(
+        quests: [sampleQuestTrue, sampleQuestFalse],
+        currentIndex: 1,
+        livesRemaining: 3,
+      );
+      when(() => mockListeningBloc.state).thenReturn(nextState);
+      listeningStreamController.add(nextState);
+
+      // Pump 1 frame to initiate AnimatedSwitcher transition
+      await tester.pump();
+      // Pump halfway into 400ms transition so both old and new children exist simultaneously
+      await tester.pump(const Duration(milliseconds: 200));
+
+      // Must not throw "ScrollController is attached to more than one ScrollPosition"
+      expect(tester.takeException(), isNull);
+
+      // Complete transition
+      await tester.pump(const Duration(milliseconds: 300));
+      expect(tester.takeException(), isNull);
     });
   });
 }

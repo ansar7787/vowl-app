@@ -279,13 +279,13 @@ class _AudioFillBlanksContent extends StatelessWidget {
                         instruction: InstructionHelper.getInstruction(quest),
                         color: theme.primaryColor,
                       ),
-                      SizedBox(height: 24.h),
+                      SizedBox(height: 18.h),
                       AudioFillBlanksJar(
                         key: const ValueKey('audio_fill_blanks_jar'),
                         color: theme.primaryColor,
                         onTap: onPlayAudio,
                       ),
-                      SizedBox(height: 32.h),
+                      SizedBox(height: 22.h),
                       ValueListenableBuilder<double>(
                         valueListenable: revealProgressNotifier,
                         builder: (context, progress, _) {
@@ -414,26 +414,39 @@ class _AudioFillBlanksContent extends StatelessWidget {
                     },
               child: Container(
                 width: double.infinity,
-                height: 60.h,
+                constraints: BoxConstraints(minHeight: 54.h),
+                padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 12.h),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.r),
+                  borderRadius: BorderRadius.circular(16.r),
                   color: isDark
-                      ? theme.primaryColor.withValues(alpha: 0.2)
+                      ? theme.primaryColor.withValues(alpha: 0.16)
                       : Colors.white,
-                  border: Border.all(color: theme.primaryColor, width: 2.w),
+                  border: Border.all(
+                    color: theme.primaryColor.withValues(alpha: isDark ? 0.45 : 0.35),
+                    width: 1.5.w,
+                  ),
+                  boxShadow: isDark
+                      ? null
+                      : [
+                          BoxShadow(
+                            color: theme.primaryColor.withValues(alpha: 0.08),
+                            blurRadius: 10,
+                            offset: const Offset(0, 3),
+                          ),
+                        ],
                 ),
                 child: Center(
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      option.toUpperCase(),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w900,
-                        color: theme.primaryColor,
-                        letterSpacing: 2,
-                      ),
+                  child: Text(
+                    option.toUpperCase(),
+                    textAlign: TextAlign.center,
+                    softWrap: true,
+                    overflow: TextOverflow.visible,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.5.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isDark ? Colors.white : theme.primaryColor,
+                      letterSpacing: 0.8,
                     ),
                   ),
                 ),

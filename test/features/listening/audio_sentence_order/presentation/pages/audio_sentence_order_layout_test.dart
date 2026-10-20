@@ -285,7 +285,7 @@ void main() {
 
       expect(find.byType(AudioSentenceOrderInstruction), findsOneWidget);
       expect(find.byKey(const Key('audio_sentence_order_instruction')), findsOneWidget);
-      expect(find.text('LISTEN CAREFULLY AND ARRANGE THE WORDS IN ORDER.'), findsOneWidget);
+      expect(find.text('Listen carefully and arrange the words in order.'), findsOneWidget);
 
       expect(find.byType(SpeedChallengeTimer), findsOneWidget);
 
@@ -293,8 +293,8 @@ void main() {
       expect(find.byKey(const Key('audio_sentence_order_oscilloscope')), findsOneWidget);
 
       expect(find.byType(DynamicJigsawWrapper), findsOneWidget);
-      expect(find.text('ARRANGE THE WORDS'), findsOneWidget);
-      expect(find.text('Tap the words in the right order'), findsOneWidget);
+      expect(find.text('Arrange the words'), findsOneWidget);
+      expect(find.text('Tap or drag words to build the sentence'), findsOneWidget);
       expect(find.text('4 words'), findsOneWidget);
     });
 
@@ -393,8 +393,8 @@ void main() {
 
       // 'the' is now in placed slot
       expect(find.byKey(const ValueKey('placed_1')), findsOneWidget);
-      // 'CLEAR ALL' button now visible
-      expect(find.text('CLEAR ALL'), findsOneWidget);
+      // 'Clear all' button now visible
+      expect(find.text('Clear all'), findsOneWidget);
     });
 
     testWidgets('8. Tapping a placed tile returns it to the word bank and clears the slot', (tester) async {
@@ -414,7 +414,7 @@ void main() {
 
       // No placed tiles
       expect(find.byKey(const ValueKey('placed_1')), findsNothing);
-      expect(find.text('CLEAR ALL'), findsNothing);
+      expect(find.text('Clear all'), findsNothing);
     });
 
     testWidgets('9. Placing all tiles in correct order dispatches SubmitAnswer(true) with success audio & haptics', (tester) async {
@@ -471,15 +471,15 @@ void main() {
       await tester.tap(find.text('dog'));
       await tester.pump(const Duration(milliseconds: 100));
 
-      expect(find.text('CLEAR ALL'), findsOneWidget);
+      expect(find.text('Clear all'), findsOneWidget);
 
-      // Tap CLEAR ALL
-      await tester.tap(find.text('CLEAR ALL'));
+      // Tap Clear all
+      await tester.tap(find.text('Clear all'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 200));
 
-      // CLEAR ALL hidden and all 4 empty slots restored
-      expect(find.text('CLEAR ALL'), findsNothing);
+      // Clear all hidden and all 4 empty slots restored
+      expect(find.text('Clear all'), findsNothing);
       expect(find.byKey(const ValueKey('empty_0')), findsOneWidget);
       expect(find.byKey(const ValueKey('empty_1')), findsOneWidget);
       expect(find.byKey(const ValueKey('empty_2')), findsOneWidget);
@@ -598,7 +598,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('SEQUENCE MASTER!'), findsOneWidget);
+      expect(find.text('Sentence Order'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
@@ -722,7 +722,7 @@ void main() {
       await pumpAudioSentenceOrderScreen(tester, state: emptyInstrState);
 
       expect(
-        find.text('LISTEN AND ARRANGE THE WORDS IN THE CORRECT ORDER'),
+        find.text('Listen and arrange the words in order.'),
         findsOneWidget,
       );
     });

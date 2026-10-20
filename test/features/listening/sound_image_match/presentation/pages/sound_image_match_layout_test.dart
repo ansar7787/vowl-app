@@ -316,11 +316,11 @@ void main() {
       expect(find.byType(SoundImageMatchScreen), findsOneWidget);
     });
 
-    testWidgets('2. Initial instruction displays formatted text (LISTEN & MATCH or uppercase)', (tester) async {
+    testWidgets('2. Initial instruction displays natural, centered instruction text', (tester) async {
       await pumpSoundImageMatchScreen(tester);
 
       expect(find.byKey(const Key('sound_image_match_instruction_text')), findsOneWidget);
-      expect(find.text('LISTEN & MATCH'), findsOneWidget);
+      expect(find.text('Tap the picture that matches the sound.'), findsOneWidget);
     });
 
     testWidgets('3. Emitter button tap triggers TTS playback and selection haptics', (tester) async {
@@ -691,7 +691,7 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('26. Level 1 briefing dialog displays THEMATIC LINKER and dismisses on CONFIRM LINK tap', (tester) async {
+    testWidgets('26. Level 1 briefing dialog displays SOUND IMAGE MATCH and dismisses on LET\'S PLAY tap', (tester) async {
       SharedPreferences.setMockInitialValues({
         'has_seen_briefing_soundImageMatch': false,
       });
@@ -703,9 +703,9 @@ void main() {
       );
 
       expect(find.byType(GameBriefingLayer), findsOneWidget);
-      expect(find.text('THEMATIC LINKER'), findsOneWidget);
+      expect(find.text('SOUND IMAGE MATCH'), findsOneWidget);
 
-      final actionBtn = find.text('CONFIRM LINK');
+      final actionBtn = find.text("LET'S PLAY");
       expect(actionBtn, findsOneWidget);
 
       await tester.tap(actionBtn);

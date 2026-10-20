@@ -1,9 +1,9 @@
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/app_color_tokens.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class EmotionRecognitionQuadrant extends StatelessWidget {
   final List<String> options;
@@ -31,6 +31,13 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
     required this.onSubmitAnswer,
   });
 
+  String _formatOptionText(String raw) {
+    if (raw.isEmpty) return raw;
+    final trimmed = raw.trim();
+    if (trimmed.isEmpty) return trimmed;
+    return trimmed[0].toUpperCase() + trimmed.substring(1).toLowerCase();
+  }
+
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>();
@@ -41,45 +48,47 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
         return ValueListenableBuilder<Offset>(
           valueListenable: coreOffset,
           builder: (context, offset, _) {
-            return OverflowBox(
-              alignment: Alignment.center,
-              maxWidth: constraints.maxWidth * 2.0,
-              maxHeight: constraints.maxHeight * 2.0,
+            final double xDist = 88.w;
+            final double yDist = 95.h;
+
+            return SizedBox(
+              width: constraints.maxWidth,
+              height: constraints.maxHeight,
               child: Stack(
                 alignment: Alignment.center,
                 clipBehavior: Clip.none,
                 children: [
-                  // Neural Grid Background Lines
+                  // Subtle guide ring
                   CustomPaint(
                     size: Size(constraints.maxWidth, constraints.maxHeight),
-                    painter: NeuralGridPainter(color.withValues(alpha: 0.1)),
+                    painter: EmotionGuidePainter(color.withValues(alpha: 0.15)),
                   ),
 
-                  // The Neural Grid Targets
+                  // Option Cards (4 Quadrants)
                   ...List.generate(options.length, (index) {
-                    double xDist = 115.w;
-                    double yDist = 135.h;
-                    double x = (index % 2 == 0) ? -xDist : xDist;
-                    double y = (index < 2) ? -yDist : yDist;
+                    final double x = (index % 2 == 0) ? -xDist : xDist;
+                    final double y = (index < 2) ? -yDist : yDist;
 
                     return Transform.translate(
                       offset: Offset(x, y),
-                      child: _buildReservoir(
-                        context,
-                        index,
-                        options[index],
-                        index < optionEmojis.length
+                      child: _buildOptionCard(
+                        context: context,
+                        index: index,
+                        text: _formatOptionText(options[index]),
+                        rawText: options[index],
+                        emoji: index < optionEmojis.length
                             ? optionEmojis[index]
                             : '🎭',
-                        correctAnswerIndex,
-                        color,
-                        tokens,
-                        reduceMotion,
+                        correct: correctAnswerIndex,
+                        color: color,
+                        tokens: tokens,
+                        reduceMotion: reduceMotion,
+                        targetOffset: Offset(x, y),
                       ),
                     );
                   }),
 
-                  // The Psychology Core (Draggable Orb)
+                  // Central Draggable Emotion Selector
                   Transform.translate(
                     offset: offset,
                     child: Semantics(
@@ -92,48 +101,46 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
                         onPanUpdate: (details) =>
                             onCoreMove(details.delta, constraints),
                         onPanEnd: (_) {
+                          int closestIndex = -1;
+                          double closestDist = double.infinity;
                           for (int i = 0; i < options.length; i++) {
-                            double xDist = 115.w;
-                            double yDist = 135.h;
-                            double x = (i % 2 == 0) ? -xDist : xDist;
-                            double y = (i < 2) ? -yDist : yDist;
-                            if ((offset - Offset(x, y)).distance < 65.r) {
-                              onSubmitAnswer(i);
-                              return;
+                            final double x = (i % 2 == 0) ? -xDist : xDist;
+                            final double y = (i < 2) ? -yDist : yDist;
+                            final double dist =
+                                (coreOffset.value - Offset(x, y)).distance;
+                            if (dist < 65.r && dist < closestDist) {
+                              closestDist = dist;
+                              closestIndex = i;
                             }
+                          }
+                          if (closestIndex != -1) {
+                            onSubmitAnswer(closestIndex);
+                            return;
                           }
                           coreOffset.value = Offset.zero;
                         },
                         child: Container(
-                          width: 70.r,
-                          height: 70.r,
+                          width: 58.r,
+                          height: 58.r,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            gradient: RadialGradient(
-                              colors: [
-                                Colors.white,
-                                color,
-                                color.withValues(alpha: 0.8),
-                              ],
-                              stops: const [0.1, 0.4, 1.0],
+                            color: color,
+                            border: Border.all(
+                              color: Colors.white.withValues(alpha: 0.9),
+                              width: 2.2,
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: color.withValues(alpha: 0.6),
-                                blurRadius: 20,
-                                spreadRadius: 5,
-                              ),
-                              BoxShadow(
-                                color: Colors.white.withValues(alpha: 0.4),
-                                blurRadius: 10,
-                                spreadRadius: 2,
+                                color: color.withValues(alpha: 0.35),
+                                blurRadius: 14,
+                                offset: const Offset(0, 4),
                               ),
                             ],
                           ),
                           child: Icon(
-                            Icons.blur_on_rounded,
-                            color: Colors.white.withValues(alpha: 0.9),
-                            size: 35.r,
+                            Icons.sentiment_satisfied_alt_rounded,
+                            color: Colors.white,
+                            size: 30.r,
                           ),
                         ),
                       ),
@@ -148,96 +155,132 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
     );
   }
 
-  Widget _buildReservoir(
-    BuildContext context,
-    int index,
-    String text,
-    String emoji,
-    int correct,
-    Color color,
-    AppColorTokens? tokens,
-    bool reduceMotion,
-  ) {
-    bool isSelected = selectedIndex == index;
-    bool isCorrect = isAnswered && index == correct && isCorrectState == true;
-    bool isWrong = isAnswered && isSelected && isCorrectState == false;
+  Widget _buildOptionCard({
+    required BuildContext context,
+    required int index,
+    required String text,
+    required String rawText,
+    required String emoji,
+    required int correct,
+    required Color color,
+    required AppColorTokens? tokens,
+    required bool reduceMotion,
+    required Offset targetOffset,
+  }) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isSelected = selectedIndex == index;
+    final isCorrect = isAnswered && index == correct && isCorrectState == true;
+    final isWrong = isAnswered && isSelected && isCorrectState == false;
 
-    Color tileColor = isCorrect
-        ? (tokens?.gameCorrect ?? AppColors.gameCorrect)
-        : (isWrong
-            ? (tokens?.gameIncorrect ?? AppColors.gameIncorrect)
-            : color);
+    Color cardBgColor;
+    Color borderColor;
+    Color textColor;
+
+    if (isCorrect) {
+      final success = tokens?.gameCorrect ?? AppColors.gameCorrect;
+      cardBgColor = success.withValues(alpha: isDark ? 0.22 : 0.12);
+      borderColor = success;
+      textColor = success;
+    } else if (isWrong) {
+      final failure = tokens?.gameIncorrect ?? AppColors.gameIncorrect;
+      cardBgColor = failure.withValues(alpha: isDark ? 0.22 : 0.12);
+      borderColor = failure;
+      textColor = failure;
+    } else if (isSelected) {
+      cardBgColor = color.withValues(alpha: isDark ? 0.24 : 0.14);
+      borderColor = color;
+      textColor = color;
+    } else {
+      cardBgColor = isDark
+          ? Theme.of(context).colorScheme.surface
+          : Colors.white;
+      borderColor = color.withValues(alpha: 0.2);
+      textColor = Theme.of(context).colorScheme.onSurface;
+    }
 
     return Semantics(
-      label: text,
+      label: rawText,
       button: true,
       excludeSemantics: true,
       child: GestureDetector(
         key: Key('emotion_recognition_reservoir_$index'),
         onTap: () {
           if (isAnswered) return;
-          double xDist = 115.w;
-          double yDist = 135.h;
-          double x = (index % 2 == 0) ? -xDist : xDist;
-          double y = (index < 2) ? -yDist : yDist;
-          coreOffset.value = Offset(x, y);
+          coreOffset.value = targetOffset;
           onSubmitAnswer(index);
         },
         child: AnimatedContainer(
-          duration: 300.ms,
-          width: 100.r,
-          height: 100.r,
-          padding: EdgeInsets.all(6.r),
+          duration: reduceMotion ? Duration.zero : 250.ms,
+          curve: Curves.easeOutCubic,
+          width: 138.w,
+          height: 76.h,
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
           decoration: BoxDecoration(
-            color: tileColor.withValues(alpha: 0.05),
-            shape: BoxShape.circle,
+            color: cardBgColor,
+            borderRadius: BorderRadius.circular(18.r),
             border: Border.all(
-              color: tileColor.withValues(
-                alpha: (isCorrect || isWrong) ? 0.8 : 0.2,
-              ),
-              width: (isCorrect || isWrong) ? 3 : 1.5,
+              color: borderColor,
+              width: (isCorrect || isWrong || isSelected) ? 2.2 : 1.2,
             ),
-            boxShadow: (isCorrect || isWrong)
-                ? [
-                    BoxShadow(
-                      color: tileColor.withValues(alpha: 0.3),
-                      blurRadius: 15,
-                      spreadRadius: 2,
-                    ),
-                  ]
-                : [],
+            boxShadow: [
+              BoxShadow(
+                color: (isCorrect || isWrong || isSelected)
+                    ? borderColor.withValues(alpha: 0.25)
+                    : Colors.black.withValues(alpha: isDark ? 0.2 : 0.05),
+                blurRadius: (isCorrect || isWrong || isSelected) ? 14 : 8,
+                offset: const Offset(0, 3),
+              ),
+            ],
           ),
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                reduceMotion
-                    ? Text(emoji, style: TextStyle(fontSize: 22.sp))
-                    : Text(emoji, style: TextStyle(fontSize: 22.sp))
-                        .animate(target: (isCorrect || isWrong) ? 1 : 0)
-                        .scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(1.2, 1.2),
-                          curve: Curves.elasticOut,
-                        ),
-                SizedBox(height: 2.h),
-                Flexible(
-                  child: Text(
-                    text.toUpperCase(),
-                    textAlign: TextAlign.center,
-                    maxLines: 3,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 9.sp,
-                      fontWeight: FontWeight.w900,
-                      color: tileColor,
-                      letterSpacing: 0.5,
-                      height: 1.1,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              reduceMotion
+                  ? Text(
+                      emoji,
+                      style: TextStyle(fontSize: 24.sp),
+                    )
+                  : Text(
+                      emoji,
+                      style: TextStyle(fontSize: 24.sp),
+                    )
+                      .animate(target: (isCorrect || isWrong) ? 1 : 0)
+                      .scale(
+                        begin: const Offset(1, 1),
+                        end: const Offset(1.15, 1.15),
+                        curve: Curves.easeOutBack,
+                      ),
+              SizedBox(height: 4.h),
+              Flexible(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.center,
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxWidth: 120.w,
+                    ),
+                    child: Text(
+                      text,
+                      textAlign: TextAlign.center,
+                      softWrap: true,
+                      overflow: TextOverflow.visible,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: (isCorrect || isWrong || isSelected)
+                            ? FontWeight.w700
+                            : FontWeight.w600,
+                        color: textColor,
+                        height: 1.25,
+                        letterSpacing: 0.1,
+                      ),
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -245,52 +288,29 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
   }
 }
 
-class NeuralGridPainter extends CustomPainter {
+class EmotionGuidePainter extends CustomPainter {
   final Color color;
-  NeuralGridPainter(this.color);
+  EmotionGuidePainter(this.color);
 
   @override
   void paint(Canvas canvas, Size size) {
+    final double centerX = size.width / 2;
+    final double centerY = size.height / 2;
+
     final paint = Paint()
       ..color = color
-      ..strokeWidth = 1.5
+      ..strokeWidth = 1.2
       ..style = PaintingStyle.stroke;
 
-    double centerX = size.width / 2;
-    double centerY = size.height / 2;
-
-    final lineGradient = RadialGradient(
-      colors: [color.withValues(alpha: 0.5), color.withValues(alpha: 0.0)],
-      stops: const [0.5, 1.0],
-    ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
-
-    final linePaint = Paint()
-      ..shader = lineGradient
-      ..strokeWidth = 1;
-
-    canvas.drawLine(
-      Offset(centerX, 0),
-      Offset(centerX, size.height),
-      linePaint,
-    );
-    canvas.drawLine(Offset(0, centerY), Offset(size.width, centerY), linePaint);
-
-    canvas.drawCircle(Offset(centerX, centerY), 50.r, paint);
+    // Subtle guide circle connecting quadrants
+    canvas.drawCircle(Offset(centerX, centerY), 90.r, paint);
     canvas.drawCircle(
       Offset(centerX, centerY),
-      100.r,
+      40.r,
       Paint()
-        ..color = color.withAlpha(40)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.5,
-    );
-    canvas.drawCircle(
-      Offset(centerX, centerY),
-      150.r,
-      Paint()
-        ..color = color.withAlpha(20)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.5,
+        ..color = color.withValues(alpha: 0.4)
+        ..strokeWidth = 1
+        ..style = PaintingStyle.stroke,
     );
   }
 

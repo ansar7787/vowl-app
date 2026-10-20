@@ -1,22 +1,22 @@
-import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/features/listening/domain/entities/listening_quest.dart';
+import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_instruction.dart';
+import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_screen_display.dart';
+import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_tuner.dart';
+import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_verdict_buttons.dart';
+import 'package:vowl/features/listening/domain/entities/listening_quest.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
-import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
-import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_instruction.dart';
-import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_tuner.dart';
-import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_screen_display.dart';
-import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_verdict_buttons.dart';
-import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
+import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
 
 class AudioTrueFalseScreen extends StatefulWidget {
   final int level;
@@ -46,7 +46,6 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
   String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
 
   final ValueNotifier<bool?> _selectedVerdict = ValueNotifier(null);
-  final ScrollController _scrollController = ScrollController();
 
   late AnimationController _audioController;
 
@@ -54,7 +53,6 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
   void dispose() {
     _audioController.dispose();
     _selectedVerdict.dispose();
-    _scrollController.dispose();
     disposeListeningGame();
     super.dispose();
   }
@@ -68,23 +66,6 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
       duration: const Duration(seconds: 3),
     );
     initListeningGame();
-  }
-
-  void _scrollToBottom() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (_scrollController.hasClients) {
-        final reduceMotion = VowlMotion.shouldReduceMotion(context);
-        if (reduceMotion) {
-          _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
-        } else {
-          _scrollController.animateTo(
-            _scrollController.position.maxScrollExtent,
-            duration: const Duration(milliseconds: 300),
-            curve: Curves.easeOut,
-          );
-        }
-      }
-    });
   }
 
   void _submitFinalAnswer(ListeningQuest quest) {
@@ -183,112 +164,181 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
               onHint: () => hapticService.selection(),
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : Stack(
-                      children: [
-                        RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverPadding(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 24.w,
-                                  vertical: 24.h,
-                                ),
-                                sliver: SliverToBoxAdapter(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SizedBox(height: 6.h),
-                                      Padding(
-                                        padding: EdgeInsets.only(bottom: 16.h),
-                                        child: SpeedChallengeTimer(
-                                          key: timerKey,
-                                          durationSeconds: 15,
-                                          primaryColor: theme.primaryColor,
-                                          onTimeUp: () =>
-                                              _submitWrongAnswer(quest),
-                                        ),
-                                      ),
-                                      AudioTrueFalseInstruction(
-                                        key: const Key(
-                                          'audio_true_false_instruction',
-                                        ),
-                                        color: theme.primaryColor,
-                                        instruction: context.tr(
-                                          'games.audioTrueFalse_instruction',
-                                          fallback:
-                                              quest.instruction.isNotEmpty
-                                                  ? quest.instruction
-                                                  : 'IS THIS STATEMENT TRUE OR FALSE? LISTEN CAREFULLY.',
-                                        ),
-                                      ),
-                                      SizedBox(height: 32.h),
-                                      AudioTrueFalseTuner(
-                                        key: const Key('audio_true_false_tuner'),
-                                        onTap: () => _playAudio(quest),
-                                        color: theme.primaryColor,
-                                        audioController: _audioController,
-                                      ),
-                                      SizedBox(height: 32.h),
-                                      AudioTrueFalseScreenDisplay(
-                                        key: const Key(
-                                          'audio_true_false_screen_display',
-                                        ),
-                                        statement: statementText,
-                                        color: theme.primaryColor,
-                                        emoji: quest.emoji,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SliverToBoxAdapter(
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                    vertical: 16.h,
-                                  ),
-                                  child: AudioTrueFalseVerdictButtons(
-                                    key: const Key(
-                                      'audio_true_false_verdict_buttons',
-                                    ),
-                                    selectedVerdict: _selectedVerdict.value,
-                                    isAnswered: isAnsweredNotifier.value,
-                                    isCorrectState: isCorrectNotifier.value,
-                                    onVerdictSelected: (v) {
-                                      if (isAnsweredNotifier.value ||
-                                          _selectedVerdict.value != null) {
-                                        return;
-                                      }
-                                      hapticService.selection();
-                                      _selectedVerdict.value = v;
-                                      _submitFinalAnswer(quest);
-                                      _scrollToBottom();
-                                    },
-                                  ),
-                                ),
-                              ),
-                              SliverToBoxAdapter(
-                                child: SizedBox(
-                                  height: isAnsweredNotifier.value
-                                      ? 200.h
-                                      : 60.h,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+                  : _AudioTrueFalseContent(
+                      key: ValueKey(quest.id),
+                      quest: quest,
+                      statementText: statementText,
+                      primaryColor: theme.primaryColor,
+                      audioController: _audioController,
+                      isAnswered: isAnsweredNotifier.value,
+                      isCorrectState: isCorrectNotifier.value,
+                      selectedVerdict: _selectedVerdict.value,
+                      onPlayAudio: () => _playAudio(quest),
+                      onVerdictSelected: (v) {
+                        if (isAnsweredNotifier.value ||
+                            _selectedVerdict.value != null) {
+                          return;
+                        }
+                        hapticService.selection();
+                        _selectedVerdict.value = v;
+                        _submitFinalAnswer(quest);
+                      },
+                      onTimeUp: () => _submitWrongAnswer(quest),
+                      timerKey: timerKey,
                     ),
             );
           },
         );
       },
+    );
+  }
+}
+
+class _AudioTrueFalseContent extends StatefulWidget {
+  final ListeningQuest quest;
+  final String statementText;
+  final Color primaryColor;
+  final AnimationController audioController;
+  final bool isAnswered;
+  final bool? isCorrectState;
+  final bool? selectedVerdict;
+  final VoidCallback onPlayAudio;
+  final ValueChanged<bool> onVerdictSelected;
+  final VoidCallback onTimeUp;
+  final GlobalKey<SpeedChallengeTimerState>? timerKey;
+
+  const _AudioTrueFalseContent({
+    super.key,
+    required this.quest,
+    required this.statementText,
+    required this.primaryColor,
+    required this.audioController,
+    required this.isAnswered,
+    required this.isCorrectState,
+    required this.selectedVerdict,
+    required this.onPlayAudio,
+    required this.onVerdictSelected,
+    required this.onTimeUp,
+    required this.timerKey,
+  });
+
+  @override
+  State<_AudioTrueFalseContent> createState() => _AudioTrueFalseContentState();
+}
+
+class _AudioTrueFalseContentState extends State<_AudioTrueFalseContent> {
+  final ScrollController _scrollController = ScrollController();
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  void _scrollToBottom() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scrollController.hasClients) {
+        final reduceMotion = VowlMotion.shouldReduceMotion(context);
+        if (reduceMotion) {
+          _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+        } else {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeOut,
+          );
+        }
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        RawScrollbar(
+          controller: _scrollController,
+          thumbColor: widget.primaryColor.withValues(alpha: 0.5),
+          radius: Radius.circular(8.r),
+          thickness: 4.w,
+          child: CustomScrollView(
+            controller: _scrollController,
+            physics: const BouncingScrollPhysics(),
+            slivers: [
+              SliverPadding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 24.w,
+                  vertical: 24.h,
+                ),
+                sliver: SliverToBoxAdapter(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SizedBox(height: 6.h),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 16.h),
+                        child: SpeedChallengeTimer(
+                          key: widget.timerKey,
+                          durationSeconds: 15,
+                          primaryColor: widget.primaryColor,
+                          onTimeUp: widget.onTimeUp,
+                        ),
+                      ),
+                      AudioTrueFalseInstruction(
+                        key: const Key('audio_true_false_instruction'),
+                        color: widget.primaryColor,
+                        instruction: context.tr(
+                          'games.audioTrueFalse_instruction',
+                          fallback: widget.quest.instruction.isNotEmpty
+                              ? widget.quest.instruction
+                              : 'Is this statement True or False? Listen carefully.',
+                        ),
+                      ),
+                      SizedBox(height: 24.h),
+                      AudioTrueFalseTuner(
+                        key: const Key('audio_true_false_tuner'),
+                        onTap: widget.onPlayAudio,
+                        color: widget.primaryColor,
+                        audioController: widget.audioController,
+                      ),
+                      SizedBox(height: 24.h),
+                      AudioTrueFalseScreenDisplay(
+                        key: const Key('audio_true_false_screen_display'),
+                        statement: widget.statementText,
+                        color: widget.primaryColor,
+                        emoji: widget.quest.emoji,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 24.w,
+                    vertical: 16.h,
+                  ),
+                  child: AudioTrueFalseVerdictButtons(
+                    key: const Key('audio_true_false_verdict_buttons'),
+                    selectedVerdict: widget.selectedVerdict,
+                    isAnswered: widget.isAnswered,
+                    isCorrectState: widget.isCorrectState,
+                    onVerdictSelected: (v) {
+                      widget.onVerdictSelected(v);
+                      _scrollToBottom();
+                    },
+                  ),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: widget.isAnswered ? 200.h : 60.h,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

@@ -44,7 +44,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
   @override
   String getCompletionTitle(BuildContext context) => context.tr(
     'listening.games.ambient_id_title',
-    fallback: 'CONTEXT ANCHOR!',
+    fallback: 'Sound Detective!',
   );
 
   late AnimationController _radarController;
@@ -185,10 +185,10 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                             : context.tr(
                                                 'games.ambientId_instruction',
                                                 fallback:
-                                                    'Listen and tap the location.',
+                                                    'Listen to the sounds and choose the location.',
                                               ),
                                       ),
-                                      SizedBox(height: 24.h),
+                                      SizedBox(height: 20.h),
                                       AmbientIdSonarField(
                                         key: const ValueKey('ambient_sonar_field'),
                                         options: quest.options ?? [],
@@ -208,19 +208,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                         },
                                         imageUrl: null,
                                       ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SliverToBoxAdapter(
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
-                                    vertical: 16.h,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
+                                      SizedBox(height: 20.h),
                                       AmbientIdEmitterNode(
                                         key: const ValueKey('ambient_emitter_node'),
                                         onTap: () {
@@ -234,7 +222,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                         },
                                         color: theme.primaryColor,
                                       ),
-                                      SizedBox(height: 100.h),
+                                      SizedBox(height: 80.h),
                                     ],
                                   ),
                                 ),

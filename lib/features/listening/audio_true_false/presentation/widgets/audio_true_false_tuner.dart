@@ -37,8 +37,8 @@ class AudioTrueFalseTuner extends StatelessWidget {
                     return const SizedBox.shrink();
                   }
                   return SizedBox(
-                    width: 80.r,
-                    height: 80.r,
+                    width: 76.r,
+                    height: 76.r,
                     child: CircularProgressIndicator(
                       value: audioController.value,
                       strokeWidth: 3,
@@ -49,23 +49,23 @@ class AudioTrueFalseTuner extends StatelessWidget {
                 },
               ),
             Container(
-              width: 64.r,
-              height: 64.r,
+              width: 60.r,
+              height: 60.r,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: color,
                 boxShadow: [
                   BoxShadow(
                     color: color.withValues(alpha: 0.3),
-                    blurRadius: 16,
-                    offset: const Offset(0, 6),
+                    blurRadius: 14,
+                    offset: const Offset(0, 4),
                   ),
                 ],
               ),
               child: Icon(
                 Icons.volume_up_rounded,
                 color: Colors.white,
-                size: 32.r,
+                size: 28.r,
               ),
             ),
           ],

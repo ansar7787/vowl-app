@@ -19,50 +19,62 @@ class AudioTrueFalseInstruction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    String mainText = instruction;
+    String mainText = instruction.trim();
     String subText = '';
 
-    if (instruction.trim().isEmpty) {
-      mainText = 'IS THIS STATEMENT TRUE OR FALSE?';
+    if (mainText.isEmpty) {
+      mainText = 'Is this statement True or False?';
+      subText = 'Listen carefully.';
     } else {
-      final match = RegExp(r'([.?!])\s+(.*)').firstMatch(instruction);
+      // Replace AI buzzwords with natural, human-friendly guidance
+      final sanitized = mainText.replaceAll(
+        RegExp(r'\bYou make the call\.?', caseSensitive: false),
+        'Listen carefully.',
+      );
+
+      final match = RegExp(r'([.?!])\s+(.*)').firstMatch(sanitized);
       if (match != null) {
-        mainText = instruction.substring(0, match.start + 1);
+        mainText = sanitized.substring(0, match.start + 1);
         subText = match.group(2) ?? '';
+      } else {
+        mainText = sanitized;
       }
     }
 
     return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
-            mainText,
-            key: const Key('audio_true_false_instruction_main'),
-            textAlign: TextAlign.center,
-            maxLines: 1,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 24.sp,
-              fontWeight: FontWeight.w800,
-              color: isDark ? Colors.white : _LocalPalette.color1a1a1a,
-              letterSpacing: 0.2,
-              height: 1.2,
-            ),
+        Text(
+          mainText,
+          key: const Key('audio_true_false_instruction_main'),
+          textAlign: TextAlign.center,
+          softWrap: true,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 20.sp,
+            fontWeight: FontWeight.w700,
+            color: isDark ? Colors.white : _LocalPalette.color1a1a1a,
+            letterSpacing: -0.2,
+            height: 1.3,
           ),
         ),
         if (subText.isNotEmpty) ...[
-          SizedBox(height: 8.h),
+          SizedBox(height: 6.h),
           Text(
             subText,
             key: const Key('audio_true_false_instruction_sub'),
             textAlign: TextAlign.center,
+            softWrap: true,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 16.sp,
+              fontSize: 15.sp,
               fontWeight: FontWeight.w500,
-              color: isDark ? Colors.white54 : Colors.black54,
-              height: 1.3,
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.75)
+                  : const Color(0xFF475569),
+              letterSpacing: 0.1,
+              height: 1.35,
             ),
           ),
         ],

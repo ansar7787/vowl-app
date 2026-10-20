@@ -14,17 +14,23 @@ class AudioMultipleChoiceQuestion extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (text.trim().isEmpty) return const SizedBox.shrink();
+
     return GlassTile(
-      padding: EdgeInsets.all(24.r),
-      borderRadius: BorderRadius.circular(20.r),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+      borderRadius: BorderRadius.circular(16.r),
       child: Text(
         text,
         textAlign: TextAlign.center,
+        softWrap: true,
+        overflow: TextOverflow.visible,
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 18.sp,
-          fontWeight: FontWeight.w700,
+          fontSize: 17.sp,
+          fontWeight: FontWeight.w600,
           color: Theme.of(context).colorScheme.onSurface,
+          height: 1.4,
+          letterSpacing: 0.1,
         ),
       ),
     );

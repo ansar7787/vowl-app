@@ -311,10 +311,10 @@ void main() {
       expect(find.byKey(const Key('emotion_recognition_quadrant')), findsOneWidget);
     });
 
-    testWidgets('2. Initial instruction displays uppercase instruction', (tester) async {
+    testWidgets('2. Initial instruction displays clean centered instruction', (tester) async {
       await pumpEmotionRecognitionScreen(tester);
 
-      expect(find.text('DETECT THE EMOTION CONVEYED IN THE VOICE.'), findsOneWidget);
+      expect(find.text('Detect the emotion conveyed in the voice.'), findsOneWidget);
     });
 
     testWidgets('3. Emitter button tap triggers TTS playback and selection haptic', (tester) async {
@@ -390,10 +390,10 @@ void main() {
       expect(find.byKey(const Key('emotion_recognition_reservoir_2')), findsOneWidget);
       expect(find.byKey(const Key('emotion_recognition_reservoir_3')), findsOneWidget);
 
-      expect(find.text('ANGER'), findsOneWidget);
-      expect(find.text('JOY'), findsOneWidget);
-      expect(find.text('SADNESS'), findsOneWidget);
-      expect(find.text('FEAR'), findsOneWidget);
+      expect(find.text('Anger'), findsOneWidget);
+      expect(find.text('Joy'), findsOneWidget);
+      expect(find.text('Sadness'), findsOneWidget);
+      expect(find.text('Fear'), findsOneWidget);
 
       expect(find.text('😠'), findsOneWidget);
       expect(find.text('😄'), findsOneWidget);
@@ -423,6 +423,8 @@ void main() {
       final reservoir1 = find.byKey(const Key('emotion_recognition_reservoir_1'));
 
       final gesture = await tester.startGesture(tester.getCenter(coreFinder));
+      await gesture.moveBy(const Offset(40, -40));
+      await tester.pump();
       await gesture.moveTo(tester.getCenter(reservoir1));
       await tester.pump();
       await gesture.up();
@@ -541,14 +543,14 @@ void main() {
       verify(() => mockHapticService.error()).called(1);
     });
 
-    testWidgets('18. In answered state, instruction updates to ANALYSIS COMPLETE', (tester) async {
+    testWidgets('18. In answered state, instruction remains clearly visible', (tester) async {
       await pumpEmotionRecognitionScreen(tester);
 
       await tester.tap(find.byKey(const Key('emotion_recognition_reservoir_1')));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('ANALYSIS COMPLETE'), findsOneWidget);
+      expect(find.text('Detect the emotion conveyed in the voice.'), findsOneWidget);
     });
 
     testWidgets('19. In answered state, correct option reservoir shows highlighted border', (tester) async {
@@ -609,9 +611,9 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('CALM'), findsOneWidget);
-      expect(find.text('BOREDOM'), findsOneWidget);
-      expect(find.text('URGENCY'), findsOneWidget);
+      expect(find.text('Calm'), findsOneWidget);
+      expect(find.text('Boredom'), findsOneWidget);
+      expect(find.text('Urgency'), findsOneWidget);
 
       await tester.pump(const Duration(milliseconds: 500));
     });
@@ -665,7 +667,7 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('27. Level 1 briefing dialog displays SENTIMENT PROBER and dismisses on PROBE SENTIMENT tap', (tester) async {
+    testWidgets('27. Level 1 briefing dialog displays EMOTION RECOGNITION and dismisses on START tap', (tester) async {
       SharedPreferences.setMockInitialValues({
         'has_seen_briefing_emotionRecognition': false,
       });
@@ -677,9 +679,9 @@ void main() {
       );
 
       expect(find.byType(GameBriefingLayer), findsOneWidget);
-      expect(find.text('SENTIMENT PROBER'), findsOneWidget);
+      expect(find.text('EMOTION RECOGNITION'), findsOneWidget);
 
-      final actionBtn = find.text('PROBE SENTIMENT');
+      final actionBtn = find.text('START');
       expect(actionBtn, findsOneWidget);
 
       await tester.tap(actionBtn);

@@ -1,8 +1,8 @@
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class AudioTrueFalseVerdictButtons extends StatelessWidget {
   final bool? selectedVerdict;
@@ -22,7 +22,6 @@ class AudioTrueFalseVerdictButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Expanded(
           child: _buildButton(
@@ -34,7 +33,7 @@ class AudioTrueFalseVerdictButtons extends StatelessWidget {
             const Key('audio_true_false_btn_false'),
           ),
         ),
-        SizedBox(width: 16.w),
+        SizedBox(width: 14.w),
         Expanded(
           child: _buildButton(
             context,
@@ -57,17 +56,22 @@ class AudioTrueFalseVerdictButtons extends StatelessWidget {
     Color baseColor,
     Key key,
   ) {
-    bool isSelected = selectedVerdict == value;
-    bool isCorrect = isAnswered && isSelected && isCorrectState == true;
-    bool isWrong = isAnswered && isSelected && isCorrectState == false;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isSelected = selectedVerdict == value;
+    final isCorrect = isAnswered && isSelected && isCorrectState == true;
+    final isWrong = isAnswered && isSelected && isCorrectState == false;
 
-    Color buttonColor = isCorrect
+    final Color buttonColor = isCorrect
         ? AppColors.gameCorrect
         : (isWrong
               ? AppColors.gameIncorrect
-              : (isSelected ? baseColor : baseColor.withValues(alpha: 0.1)));
+              : (isSelected
+                    ? baseColor
+                    : (isDark
+                          ? baseColor.withValues(alpha: 0.12)
+                          : baseColor.withValues(alpha: 0.08))));
 
-    Color textColor = isSelected ? Colors.white : baseColor;
+    final Color contentColor = isSelected ? Colors.white : baseColor;
 
     return Semantics(
       label: label,
@@ -80,36 +84,52 @@ class AudioTrueFalseVerdictButtons extends StatelessWidget {
             ? null
             : () => onVerdictSelected(value),
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 300),
+          duration: const Duration(milliseconds: 250),
+          curve: Curves.easeInOut,
           width: double.infinity,
-          height: 96.h,
+          constraints: BoxConstraints(minHeight: 80.h),
+          padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 8.w),
           decoration: BoxDecoration(
             color: buttonColor,
             borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(color: baseColor, width: 2),
+            border: Border.all(
+              color: isSelected
+                  ? baseColor
+                  : baseColor.withValues(alpha: isDark ? 0.4 : 0.3),
+              width: 1.5,
+            ),
             boxShadow: isSelected
                 ? [
                     BoxShadow(
-                      color: baseColor.withValues(alpha: 0.3),
+                      color: baseColor.withValues(alpha: 0.35),
                       blurRadius: 12,
                       offset: const Offset(0, 4),
                     ),
                   ]
-                : [],
+                : [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: isDark ? 0.15 : 0.04),
+                      blurRadius: 6,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
           ),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(icon, color: textColor, size: 32.r),
-              SizedBox(height: 4.h),
+              Icon(icon, color: contentColor, size: 28.r),
+              SizedBox(height: 6.h),
               Text(
                 label,
+                textAlign: TextAlign.center,
+                softWrap: false,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w900,
-                  color: textColor,
-                  letterSpacing: 2,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w700,
+                  color: contentColor,
+                  letterSpacing: 1.0,
                 ),
               ),
             ],

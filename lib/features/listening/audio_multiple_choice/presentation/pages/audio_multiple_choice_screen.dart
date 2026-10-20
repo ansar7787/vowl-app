@@ -1,4 +1,4 @@
-import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
+﻿import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,6 +14,7 @@ import 'package:vowl/features/listening/audio_multiple_choice/presentation/widge
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_spinner.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/instruction_helper.dart';
 
 class AudioMultipleChoiceScreen extends StatefulWidget {
   final int level;
@@ -40,7 +41,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
   @override
   String getCompletionTitle(BuildContext context) => context.tr(
     'listening.games.audio_multiple_choice_title',
-    fallback: 'SONIC RADAR!',
+    fallback: 'Listen & Choose',
   );
 
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
@@ -193,13 +194,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
                                           'audio_multiple_choice_instruction',
                                         ),
                                         color: theme.primaryColor,
-                                        instruction: quest.instruction.isNotEmpty
-                                            ? quest.instruction
-                                            : context.tr(
-                                                'listening.games.audio_multiple_choice_instruction',
-                                                fallback:
-                                                    'LISTEN AND CHOOSE THE BEST MATCH',
-                                              ),
+                                        instruction: InstructionHelper.getInstruction(quest),
                                       ),
                                       SizedBox(height: 24.h),
                                       AudioMultipleChoiceQuestion(
@@ -220,7 +215,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen>
                                     vertical: 16.h,
                                   ),
                                   child: SizedBox(
-                                    height: 340.r,
+                                    height: 350.h,
                                     child: ListenableBuilder(
                                       listenable: Listenable.merge([
                                         _rotation,

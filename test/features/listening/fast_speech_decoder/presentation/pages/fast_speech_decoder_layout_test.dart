@@ -324,10 +324,10 @@ void main() {
       expect(find.byKey(const Key('fast_speech_decoder_steam_vents')), findsOneWidget);
     });
 
-    testWidgets('2. Initial instruction displays uppercase instruction', (tester) async {
+    testWidgets('2. Initial instruction displays instruction', (tester) async {
       await pumpFastSpeechDecoderScreen(tester);
 
-      expect(find.text('DECODE THE FAST SPEECH AND SELECT THE CORRECT PHRASE.'), findsOneWidget);
+      expect(find.text('Decode the fast speech and select the correct phrase.'), findsOneWidget);
     });
 
     testWidgets('3. Core play button tap triggers TTS playback with current speed and selection haptic', (tester) async {
@@ -400,10 +400,10 @@ void main() {
       expect(find.text('⚡'), findsOneWidget);
     });
 
-    testWidgets('7. Velocity sensor gauge displays speed readout', (tester) async {
+    testWidgets('7. Speed gauge displays speed readout', (tester) async {
       await pumpFastSpeechDecoderScreen(tester);
 
-      expect(find.text('VELOCITY SENSOR'), findsOneWidget);
+      expect(find.text('PLAYBACK SPEED'), findsOneWidget);
       expect(find.textContaining('X'), findsOneWidget);
     });
 
@@ -630,7 +630,7 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('24. Level 1 briefing dialog displays NUANCE CALIBRATOR and dismisses on CALIBRATE GEARS tap', (tester) async {
+    testWidgets('24. Level 1 briefing dialog displays FAST SPEECH DECODER and dismisses on START PRACTICE tap', (tester) async {
       SharedPreferences.setMockInitialValues({
         'has_seen_briefing_fastSpeechDecoder': false,
       });
@@ -642,9 +642,9 @@ void main() {
       );
 
       expect(find.byType(GameBriefingLayer), findsOneWidget);
-      expect(find.text('NUANCE CALIBRATOR'), findsOneWidget);
+      expect(find.text('FAST SPEECH DECODER'), findsOneWidget);
 
-      final actionBtn = find.text('CALIBRATE GEARS');
+      final actionBtn = find.text('START PRACTICE');
       expect(actionBtn, findsOneWidget);
 
       await tester.tap(actionBtn);

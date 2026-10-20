@@ -313,8 +313,8 @@ void main() {
     testWidgets('2. Initial prompt displays scan text before answered', (tester) async {
       await pumpDetailSpotlightScreen(tester);
 
-      expect(find.text('SCAN FOR AUDITORY TARGET'), findsOneWidget);
-      expect(find.textContaining('TARGET:'), findsNothing);
+      expect(find.text('Drag the spotlight to find the answer'), findsOneWidget);
+      expect(find.textContaining('Answer:'), findsNothing);
     });
 
     testWidgets('3. Emitter button tap triggers TTS playback and selection haptic', (tester) async {
@@ -521,7 +521,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('TARGET: GOLDEN KEY'), findsOneWidget);
+      expect(find.text('Answer: golden key'), findsOneWidget);
     });
 
     testWidgets('17. In answered state, correct option tile is highlighted', (tester) async {
@@ -585,7 +585,7 @@ void main() {
 
       expect(find.text('compass'), findsOneWidget);
       expect(find.text('secret map'), findsOneWidget);
-      expect(find.text('SCAN FOR AUDITORY TARGET'), findsOneWidget);
+      expect(find.text('Drag the spotlight to find the answer'), findsOneWidget);
 
       await tester.pump(const Duration(milliseconds: 500));
     });
@@ -710,6 +710,70 @@ void main() {
 
       final option1Semantics = find.bySemanticsLabel('golden key');
       expect(option1Semantics, findsOneWidget);
+    });
+
+    testWidgets('31. Multi-line instruction centers cleanly and does not overflow', (tester) async {
+      const longInstructionQuest = ListeningQuest(
+        id: 'ds_long_instruction',
+        instruction: 'Clear the glass carefully, search through the dark field, and tap the exact place where they eat lunch together.',
+        difficulty: 1,
+        subtype: GameSubtype.detailSpotlight,
+        prompt: 'garden',
+        targetDetail: 'garden',
+        options: ['kitchen', 'garden', 'balcony', 'bedroom'],
+        correctAnswerIndex: 1,
+        correctAnswer: 'garden',
+      );
+
+      final longInstructionState = ListeningLoaded(
+        quests: const [longInstructionQuest],
+        currentIndex: 0,
+        livesRemaining: 3,
+      );
+
+      await pumpDetailSpotlightScreen(tester, state: longInstructionState, size: const Size(320, 568));
+
+      final instructionFinder = find.byKey(const Key('detail_spotlight_instruction'));
+      expect(instructionFinder, findsOneWidget);
+
+      final textWidget = tester.widget<Text>(
+        find.descendant(of: instructionFinder, matching: find.byType(Text)),
+      );
+      expect(textWidget.textAlign, TextAlign.center);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('32. Long card option texts scale cleanly without overflow or ellipses', (tester) async {
+      const longOptionsQuest = ListeningQuest(
+        id: 'ds_long_options',
+        instruction: 'Identify the object.',
+        difficulty: 1,
+        subtype: GameSubtype.detailSpotlight,
+        prompt: 'inside the vintage wooden chest',
+        targetDetail: 'inside the vintage wooden chest',
+        options: [
+          'underneath the ancient stone staircase',
+          'inside the vintage wooden chest',
+          'behind the tall velvet curtains',
+          'above the crackling stone fireplace',
+        ],
+        correctAnswerIndex: 1,
+        correctAnswer: 'inside the vintage wooden chest',
+      );
+
+      final longOptionsState = ListeningLoaded(
+        quests: const [longOptionsQuest],
+        currentIndex: 0,
+        livesRemaining: 3,
+      );
+
+      await pumpDetailSpotlightScreen(tester, state: longOptionsState, size: const Size(320, 568));
+
+      expect(find.textContaining('underneath the ancient'), findsOneWidget);
+      expect(find.textContaining('inside the vintage'), findsOneWidget);
+      expect(find.text('...'), findsNothing);
+      expect(find.textContaining('...'), findsNothing);
+      expect(tester.takeException(), isNull);
     });
   });
 }

@@ -41,7 +41,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+  String getCompletionTitle(BuildContext context) => 'Level Complete!';
 
   final ValueNotifier<Offset> _coreOffset = ValueNotifier(Offset.zero);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
@@ -209,7 +209,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen>
                                           fallback:
                                               quest.instruction.isNotEmpty
                                                   ? quest.instruction
-                                                  : "DETECT EMOTION",
+                                                  : "How is the speaker feeling?",
                                         ),
                                       ),
                                       SizedBox(height: 24.h),
