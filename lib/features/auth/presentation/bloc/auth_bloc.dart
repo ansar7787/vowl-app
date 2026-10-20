@@ -1,9 +1,11 @@
 import 'package:vowl/core/error/failures.dart';
 import 'dart:async';
+import 'dart:math' as math;
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/domain/usecases/delete_account.dart';
@@ -54,6 +56,22 @@ class AuthReloadUser extends AuthEvent {
 /// for post-change refreshes.
 class AuthRefreshUser extends AuthEvent {
   const AuthRefreshUser();
+}
+
+/// Optimistically marks a level as completed and unlocks the next level
+/// in local memory before or while the backend Firestore transaction executes.
+/// Guarantees that map navigation never suffers from network ping or transaction latency.
+class AuthLevelCompletedOptimistic extends AuthEvent {
+  final String gameType;
+  final int level;
+
+  const AuthLevelCompletedOptimistic({
+    required this.gameType,
+    required this.level,
+  });
+
+  @override
+  List<Object?> get props => [gameType, level];
 }
 
 /// Permanently deletes the authenticated user's account, Firestore document,
@@ -183,6 +201,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<AuthLogoutRequested>(_onLogoutRequested);
     on<AuthReloadUser>(_onReloadUser);
     on<AuthRefreshUser>(_onRefreshUser);
+    on<AuthLevelCompletedOptimistic>(_onLevelCompletedOptimistic);
     on<AuthDeleteAccountRequested>(_onDeleteAccountRequested);
     on<AuthPasswordResetRequested>(_onPasswordResetRequested);
     on<AuthSendEmailVerificationRequested>(_onSendEmailVerification);
@@ -211,7 +230,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     _networkInfo.setPremiumOverride(event.user?.isPremium ?? false);
 
     if (event.user != null) {
-      emit(AuthState.authenticated(event.user!));
+      final user = event.user!;
+      final current = state.user;
+      if (current != null && current.id == user.id) {
+        final reconciledUser = _reconcileUserProgression(
+          remoteUser: user,
+          currentUser: current,
+        );
+        emit(AuthState.authenticated(reconciledUser));
+        return;
+      }
+      emit(AuthState.authenticated(user));
     } else {
       emit(const AuthState.unauthenticated());
     }
@@ -342,23 +371,94 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     AuthRefreshUser event,
     Emitter<AuthState> emit,
   ) async {
-    if (!(await _networkInfo.isConnected)) {
-      emit(
-        state.copyWith(
-          message: () => AuthErrorHandler.getKey('network-unreachable'),
-        ),
-      );
-      return;
-    }
     final result = await _getCurrentUser(const NoParams());
     result.fold(
       (failure) => emit(
         state.copyWith(message: () => AuthErrorHandler.getKey(failure.message)),
       ),
       (user) {
-        if (user != null) emit(AuthState.authenticated(user));
+        if (user != null) {
+          final current = state.user;
+          if (current != null && current.id == user.id) {
+            final reconciledUser = _reconcileUserProgression(
+              remoteUser: user,
+              currentUser: current,
+            );
+            emit(AuthState.authenticated(reconciledUser));
+            return;
+          }
+          emit(AuthState.authenticated(user));
+        }
       },
     );
+  }
+
+  /// Harmonizes a fresh remote user snapshot with any optimistic in-memory progression.
+  /// Guarantees that in-flight or lagging Firestore snapshots can NEVER revert or relock
+  /// completed levels or active progression nodes.
+  UserEntity _reconcileUserProgression({
+    required UserEntity remoteUser,
+    required UserEntity currentUser,
+  }) {
+    final mergedCompleted = Map<String, List<int>>.from(
+      remoteUser.completedLevels.map(
+        (k, v) => MapEntry(k, List<int>.from(v)),
+      ),
+    );
+    currentUser.completedLevels.forEach((k, v) {
+      final existing = mergedCompleted[k] ?? <int>[];
+      final combined = {...existing, ...v}.toList()..sort();
+      mergedCompleted[k] = combined;
+    });
+
+    final mergedUnlocked = Map<String, int>.from(remoteUser.unlockedLevels);
+    currentUser.unlockedLevels.forEach((k, v) {
+      final existing = mergedUnlocked[k] ?? 1;
+      mergedUnlocked[k] = math.max(existing, v);
+    });
+
+    return remoteUser.copyWith(
+      completedLevels: mergedCompleted,
+      unlockedLevels: mergedUnlocked,
+    );
+  }
+
+  void _onLevelCompletedOptimistic(
+    AuthLevelCompletedOptimistic event,
+    Emitter<AuthState> emit,
+  ) {
+    final currentUser = state.user;
+    if (currentUser == null) return;
+
+    final completedLevels = Map<String, List<int>>.from(
+      currentUser.completedLevels.map(
+        (k, v) => MapEntry(k, List<int>.from(v)),
+      ),
+    );
+    final categoryCompleted = List<int>.from(
+      completedLevels[event.gameType] ?? <int>[],
+    );
+    if (!categoryCompleted.contains(event.level)) {
+      categoryCompleted.add(event.level);
+      categoryCompleted.sort();
+      completedLevels[event.gameType] = categoryCompleted;
+    }
+
+    final unlockedLevels = Map<String, int>.from(currentUser.unlockedLevels);
+    final currentUnlocked = unlockedLevels[event.gameType] ?? 1;
+    if (event.level >= currentUnlocked) {
+      if (event.level < 10 || currentUser.isPremium) {
+        final maxLevels = CurriculumManifest.getLevels(event.gameType);
+        unlockedLevels[event.gameType] = math.min(maxLevels, event.level + 1);
+      }
+    }
+
+    final updatedUser = currentUser.copyWith(
+      completedLevels: completedLevels,
+      unlockedLevels: unlockedLevels,
+    );
+
+    emit(AuthState.authenticated(updatedUser));
   }
 
   Future<void> _onDeleteAccountRequested(

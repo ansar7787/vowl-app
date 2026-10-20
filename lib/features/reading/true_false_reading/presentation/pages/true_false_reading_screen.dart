@@ -239,6 +239,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
                                       instruction:
                                           'Tap the words that prove your answer',
                                       isPositioned: false,
+                                      margin: EdgeInsets.zero,
                                     ),
                                   ],
                                   SizedBox(

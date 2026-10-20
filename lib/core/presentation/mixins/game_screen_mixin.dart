@@ -66,12 +66,27 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
   }) {
     showConfettiNotifier.value = true;
 
+    // Optimistically unlock the next level in AuthBloc so map state reflects
+    // the completion immediately upon navigation, before or while Firestore transactions run.
+    try {
+      context.read<AuthBloc>().add(
+        AuthLevelCompletedOptimistic(
+          gameType: gameType.name,
+          level: level,
+        ),
+      );
+    } catch (_) {
+      // Defensive fallback in case AuthBloc is not provided in isolated widget tests
+    }
+
     GameDialogHelper.showCompletion(
       context,
       xp: xpEarned,
       coins: coinsEarned,
       title: getCompletionTitle(context),
       enableDoubleUp: true,
+      gameType: gameType.name,
+      level: level,
     );
   }
 

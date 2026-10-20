@@ -715,7 +715,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
     );
   }
 
-  void _navigateToGame(BuildContext context, int level) {
+  Future<void> _navigateToGame(BuildContext context, int level) async {
     final routeMap = {
       'alphabet': AppRouter.kidsAlphabetRoute,
       'numbers': AppRouter.kidsNumbersRoute,
@@ -747,7 +747,10 @@ class _KidsMapNodeState extends State<KidsMapNode> {
     final route = routeMap[widget.gameType];
 
     if (route != null) {
-      context.push(route, extra: level);
+      await context.push(route, extra: level);
+      if (context.mounted) {
+        context.read<AuthBloc>().add(const AuthRefreshUser());
+      }
     } else {
       CustomSnackBar.show(
         context: context,

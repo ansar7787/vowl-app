@@ -128,6 +128,33 @@ void main() {
       act: (bloc) => userStreamController.add(tUser),
       expect: () => [AuthState.authenticated(tUser)],
     );
+
+    blocTest<AuthBloc, AuthState>(
+      'should preserve optimistic level progress when user stream emits update',
+      build: () => bloc,
+      seed: () => AuthState.authenticated(
+        tUser.copyWith(
+          completedLevels: {
+            'trueFalseReading': [1],
+          },
+          unlockedLevels: {
+            'trueFalseReading': 2,
+          },
+        ),
+      ),
+      act: (bloc) => userStreamController.add(tUser),
+      expect: () => [
+        isA<AuthState>().having(
+          (s) => s.user?.unlockedLevels['trueFalseReading'],
+          'unlockedLevels',
+          2,
+        ).having(
+          (s) => s.user?.completedLevels['trueFalseReading'],
+          'completedLevels',
+          [1],
+        ),
+      ],
+    );
   });
 
   group('AuthLogoutRequested', () {
@@ -155,6 +182,64 @@ void main() {
       verify: (_) {
         verify(() => mockLogOut(any())).called(1);
       },
+    );
+  });
+
+  group('AuthLevelCompletedOptimistic', () {
+    blocTest<AuthBloc, AuthState>(
+      'should optimistically add level to completedLevels and increment unlockedLevels',
+      build: () => bloc,
+      seed: () => AuthState.authenticated(tUser),
+      act: (bloc) => bloc.add(
+        const AuthLevelCompletedOptimistic(
+          gameType: 'trueFalseReading',
+          level: 1,
+        ),
+      ),
+      expect: () => [
+        isA<AuthState>().having(
+          (s) => s.user?.completedLevels['trueFalseReading'],
+          'completedLevels',
+          [1],
+        ).having(
+          (s) => s.user?.unlockedLevels['trueFalseReading'],
+          'unlockedLevels',
+          2,
+        ),
+      ],
+    );
+  });
+
+  group('AuthRefreshUser', () {
+    blocTest<AuthBloc, AuthState>(
+      'should refresh user and preserve optimistic level unlocks',
+      build: () {
+        when(() => mockGetCurrentUser(any()))
+            .thenAnswer((_) async => Right(tUser));
+        return bloc;
+      },
+      seed: () => AuthState.authenticated(
+        tUser.copyWith(
+          completedLevels: {
+            'trueFalseReading': [1],
+          },
+          unlockedLevels: {
+            'trueFalseReading': 2,
+          },
+        ),
+      ),
+      act: (bloc) => bloc.add(const AuthRefreshUser()),
+      expect: () => [
+        isA<AuthState>().having(
+          (s) => s.user?.unlockedLevels['trueFalseReading'],
+          'unlockedLevels',
+          2,
+        ).having(
+          (s) => s.user?.completedLevels['trueFalseReading'],
+          'completedLevels',
+          [1],
+        ),
+      ],
     );
   });
 }

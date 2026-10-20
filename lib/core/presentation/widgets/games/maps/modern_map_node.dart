@@ -659,7 +659,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                         fallback: 'Level ${widget.levelNumber}',
                       ),
                       child: ScaleButton(
-                        onTap: () {
+                        onTap: () async {
                           if (isTollGateSegment) {
                             if (widget.levelNumber >
                                 widget.completedLevels + 1) {
@@ -682,9 +682,12 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             return;
                           }
 
-                          context.push(
+                          await context.push(
                             '/game?category=${Uri.encodeQueryComponent(widget.categoryId)}&gameType=${Uri.encodeQueryComponent(widget.gameType)}&level=${widget.levelNumber}',
                           );
+                          if (context.mounted) {
+                            context.read<AuthBloc>().add(const AuthRefreshUser());
+                          }
                         },
                         child: ExcludeSemantics(
                           child: Stack(
