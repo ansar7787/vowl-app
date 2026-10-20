@@ -277,7 +277,7 @@ void main() {
       await pumpAmbientIdScreen(tester);
 
       expect(find.byType(AmbientIdInstruction), findsOneWidget);
-      expect(find.text('IDENTIFY THE AMBIENT ENVIRONMENT.'), findsOneWidget);
+      expect(find.text('Identify the ambient environment.'), findsOneWidget);
       expect(find.byType(SpeedChallengeTimer), findsOneWidget);
       expect(find.byType(AmbientIdSonarField), findsOneWidget);
       expect(find.byType(AmbientIdEmitterNode), findsOneWidget);
@@ -289,10 +289,10 @@ void main() {
       for (int i = 0; i < sampleQuest.options!.length; i++) {
         expect(find.byKey(ValueKey('ambient_hub_$i')), findsOneWidget);
       }
-      expect(find.text('FOREST'), findsOneWidget);
-      expect(find.text('SPACE STATION'), findsOneWidget);
-      expect(find.text('CYBER CITY'), findsOneWidget);
-      expect(find.text('OCEAN BASE'), findsOneWidget);
+      expect(find.text('Forest'), findsOneWidget);
+      expect(find.text('Space Station'), findsOneWidget);
+      expect(find.text('Cyber City'), findsOneWidget);
+      expect(find.text('Ocean Base'), findsOneWidget);
     });
 
     testWidgets('3. Location hubs render appropriate icons for categories', (tester) async {
@@ -404,9 +404,9 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('LOCATE THE SOURCE OF THE SONAR PING.'), findsOneWidget);
-      expect(find.text('DEEP OCEAN'), findsOneWidget);
-      expect(find.text('DESERT DUNES'), findsOneWidget);
+      expect(find.text('Locate the source of the sonar ping.'), findsOneWidget);
+      expect(find.text('Deep Ocean'), findsOneWidget);
+      expect(find.text('Desert Dunes'), findsOneWidget);
 
       await tester.pump(const Duration(milliseconds: 500));
     });
@@ -465,7 +465,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('CONTEXT ANCHOR!'), findsOneWidget);
+      expect(find.text('Sound Detective!'), findsOneWidget);
     });
 
     testWidgets('15. Game over state renders with zero lives', (tester) async {
@@ -499,14 +499,14 @@ void main() {
       await pumpAmbientIdScreen(tester, themeMode: ThemeMode.dark);
 
       expect(find.byType(AmbientIdScreen), findsOneWidget);
-      expect(find.text('IDENTIFY THE AMBIENT ENVIRONMENT.'), findsOneWidget);
+      expect(find.text('Identify the ambient environment.'), findsOneWidget);
     });
 
     testWidgets('18. Light mode renders correctly with light theme styling', (tester) async {
       await pumpAmbientIdScreen(tester, themeMode: ThemeMode.light);
 
       expect(find.byType(AmbientIdScreen), findsOneWidget);
-      expect(find.text('IDENTIFY THE AMBIENT ENVIRONMENT.'), findsOneWidget);
+      expect(find.text('Identify the ambient environment.'), findsOneWidget);
     });
 
     testWidgets('19. Compact mobile viewport (320x568) passes with zero overflow', (tester) async {
@@ -548,7 +548,7 @@ void main() {
 
       await pumpAmbientIdScreen(tester, state: fallbackState);
 
-      expect(find.text('LISTEN AND TAP THE LOCATION.'), findsOneWidget);
+      expect(find.text('Listen to the sounds and choose the location.'), findsOneWidget);
     });
 
     testWidgets('23. Missing textToSpeak falls back to prompt or question for TTS', (tester) async {

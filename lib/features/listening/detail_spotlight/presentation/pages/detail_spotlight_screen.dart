@@ -201,10 +201,10 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
                                           fallback:
                                               quest.instruction.isNotEmpty
                                                   ? quest.instruction
-                                                  : 'WIPE AND TAP WHAT YOU HEAR',
+                                                  : 'Listen closely and tap the matching detail',
                                         ),
                                       ),
-                                      SizedBox(height: 24.h),
+                                      SizedBox(height: 20.h),
                                       DetailSpotlightEmitter(
                                         key: const Key(
                                           'detail_spotlight_emitter',
@@ -214,7 +214,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
                                         emoji: quest.emoji,
                                         isCorrectState: isCorrectNotifier.value,
                                       ),
-                                      SizedBox(height: 32.h),
+                                      SizedBox(height: 20.h),
                                       DetailSpotlightPrompt(
                                         key: const Key(
                                           'detail_spotlight_prompt',

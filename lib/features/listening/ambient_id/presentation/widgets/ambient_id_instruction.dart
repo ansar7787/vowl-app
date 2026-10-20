@@ -13,32 +13,36 @@ class AmbientIdInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.radar_rounded, size: 14.r, color: color),
-          SizedBox(width: 12.w),
-          Flexible(
-            child: Text(
-              instruction.toUpperCase(),
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
-                color: color,
-                letterSpacing: 1.5,
-              ),
+    return Semantics(
+      container: true,
+      label: instruction,
+      child: Center(
+        child: Container(
+          constraints: BoxConstraints(maxWidth: 340.w),
+          padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 10.h),
+          decoration: BoxDecoration(
+            color: color.withValues(alpha: 0.08),
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: color.withValues(alpha: 0.2),
+              width: 1.2,
             ),
           ),
-        ],
+          child: Text(
+            instruction,
+            textAlign: TextAlign.center,
+            softWrap: true,
+            overflow: TextOverflow.visible,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w600,
+              color: color,
+              height: 1.35,
+              letterSpacing: 0.1,
+            ),
+          ),
+        ),
       ),
     );
   }

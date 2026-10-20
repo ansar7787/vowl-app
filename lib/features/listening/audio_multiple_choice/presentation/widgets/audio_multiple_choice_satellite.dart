@@ -1,8 +1,8 @@
-import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 class AudioMultipleChoiceSatellite extends StatelessWidget {
@@ -40,7 +40,7 @@ class AudioMultipleChoiceSatellite extends StatelessWidget {
       if (isCorrect) return tokens.gameCorrect;
       if (isWrong) return tokens.gameIncorrect;
       if (isSelected) return color;
-      return isDark ? Colors.grey[900]! : Colors.white;
+      return isDark ? Theme.of(context).colorScheme.surface : Colors.white;
     }
 
     Color getBorderColor() {
@@ -53,58 +53,74 @@ class AudioMultipleChoiceSatellite extends StatelessWidget {
     }
 
     Color getTextColor() {
-      if (isCorrect) return Colors.black87;
-      if (isWrong) return Colors.white;
-      if (isSelected) return Colors.white;
-      return isDark ? Colors.white : color;
+      if (isCorrect || isWrong || isSelected) return Colors.white;
+      return isDark ? Colors.white : const Color(0xFF1E293B);
     }
+
+    final cardWidth = isSelected ? 136.w : 128.w;
+    final cardMinHeight = isSelected ? 62.h : 56.h;
+    final cardMaxHeight = isSelected ? 80.h : 74.h;
 
     final button = ScaleButton(
       key: Key('satellite_option_$index'),
       onTap: isAnswered ? null : onTap,
       child: AnimatedContainer(
-        duration: reduceMotion ? Duration.zero : 300.ms,
+        duration: reduceMotion ? Duration.zero : 250.ms,
         curve: Curves.easeOutCubic,
         constraints: BoxConstraints(
-          minWidth: isSelected ? 90.r : 80.r,
-          maxWidth: 130.r,
-          minHeight: isSelected ? 90.h : 80.h,
-          maxHeight: isSelected ? 90.h : 80.h,
+          minWidth: isSelected ? 92.w : 84.w,
+          maxWidth: cardWidth,
+          minHeight: cardMinHeight,
+          maxHeight: cardMaxHeight,
         ),
-        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: getBgColor(),
-          borderRadius: BorderRadius.circular(50.r),
+          borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
             color: getBorderColor(),
-            width: isSelected ? 4 : 2,
+            width: isSelected ? 2.5 : 1.5,
           ),
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: getBgColor().withValues(alpha: 0.6),
-                    blurRadius: 20,
-                    offset: const Offset(0, 8),
+                    color: getBgColor().withValues(alpha: 0.4),
+                    blurRadius: 16,
+                    offset: const Offset(0, 6),
                   ),
                 ]
               : [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.05),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
+                    color: Colors.black.withValues(alpha: 0.06),
+                    blurRadius: 8,
+                    offset: const Offset(0, 3),
                   ),
                 ],
         ),
-        child: Text(
-          text,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: isSelected ? 14.sp : 12.sp,
-            fontWeight: isSelected ? FontWeight.w900 : FontWeight.w700,
-            color: getTextColor(),
-            height: 1.1,
+        child: Center(
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.center,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth: cardWidth - 18.w,
+              ),
+              child: Text(
+                text,
+                textAlign: TextAlign.center,
+                softWrap: true,
+                overflow: TextOverflow.visible,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: isSelected ? 13.5.sp : 12.5.sp,
+                  fontWeight: isSelected ? FontWeight.w700 : FontWeight.w600,
+                  color: getTextColor(),
+                  height: 1.25,
+                  letterSpacing: 0.1,
+                ),
+              ),
+            ),
           ),
         ),
       ),
@@ -118,9 +134,10 @@ class AudioMultipleChoiceSatellite extends StatelessWidget {
         .animate()
         .fadeIn(duration: 400.ms, delay: (100 * index).ms)
         .slideY(
-          begin: 0.2,
+          begin: 0.15,
           end: 0,
           duration: 400.ms,
+          delay: (100 * index).ms,
           curve: Curves.easeOutCubic,
         );
   }

@@ -1,13 +1,10 @@
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color1e1e24 = Color(0xFF1E1E24);
-}
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
 class ListeningInferenceGrid extends StatelessWidget {
   final List<String> options;
@@ -31,111 +28,175 @@ class ListeningInferenceGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
-      child: options.length == 2
-          ? Row(
-              children: [
-                Expanded(child: _buildOptionItem(context, 0)),
-                SizedBox(width: 16.w),
-                Expanded(child: _buildOptionItem(context, 1)),
-              ],
-            )
-          : Wrap(
-              spacing: 16.w,
-              runSpacing: 16.h,
-              alignment: WrapAlignment.center,
-              children: List.generate(
-                options.length,
-                (index) => SizedBox(
-                  width: (MediaQuery.of(context).size.width - 32.w - 16.w) / 2,
-                  child: _buildOptionItem(context, index),
-                ),
-              ),
-            ),
-    );
-  }
-
-  Widget _buildOptionItem(BuildContext context, int index) {
     final tokens = Theme.of(context).extension<AppColorTokens>();
-    bool isSelected = selectedIndex == index;
-    bool isChoiceCorrect =
-        isAnswered && index == correctAnswerIndex && isCorrectState == true;
-    bool isChoiceWrong = isAnswered && isSelected && isCorrectState == false;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
-    Color tileColor = isChoiceCorrect
-        ? (tokens?.gameCorrect ?? AppColors.gameCorrect)
-        : (isChoiceWrong
-            ? (tokens?.gameIncorrect ?? AppColors.gameIncorrect)
-            : (isSelected ? color : _LocalPalette.color1e1e24));
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: List.generate(options.length, (index) {
+        final isSelected = selectedIndex == index;
+        final isChoiceCorrect =
+            isAnswered && index == correctAnswerIndex && isCorrectState == true;
+        final isChoiceWrong =
+            isAnswered && isSelected && isCorrectState == false;
 
-    return Semantics(
-      label: options[index],
-      button: true,
-      excludeSemantics: true,
-      child: ScaleButton(
-        key: Key('listening_inference_option_$index'),
-        onTap: () => onSubmitAnswer(index),
-        child: Container(
-          padding: EdgeInsets.all(12.r),
-          decoration: BoxDecoration(
-            color: tileColor,
-            borderRadius: BorderRadius.circular(12.r),
-            border: Border.all(
-              color: isChoiceCorrect || isChoiceWrong || isSelected
-                  ? Colors.white.withValues(alpha: 0.5)
-                  : color.withValues(alpha: 0.2),
-              width: 1.5,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.4),
-                offset: Offset(0, 4.h),
-                blurRadius: 8,
-              ),
-              if (isSelected || isChoiceCorrect || isChoiceWrong)
-                BoxShadow(
-                  color:
-                      (isChoiceCorrect
-                              ? (tokens?.gameCorrect ?? AppColors.gameCorrect)
-                              : (isChoiceWrong
+        Color getBgColor() {
+          if (isChoiceCorrect) {
+            return tokens?.gameCorrect ?? AppColors.gameCorrect;
+          }
+          if (isChoiceWrong) {
+            return tokens?.gameIncorrect ?? AppColors.gameIncorrect;
+          }
+          if (isSelected) {
+            return color.withValues(alpha: isDark ? 0.28 : 0.12);
+          }
+          return isDark ? const Color(0xFF1E293B) : Colors.white;
+        }
+
+        Color getBorderColor() {
+          if (isChoiceCorrect) {
+            return tokens?.gameCorrect ?? AppColors.gameCorrect;
+          }
+          if (isChoiceWrong) {
+            return tokens?.gameIncorrect ?? AppColors.gameIncorrect;
+          }
+          if (isSelected) {
+            return color;
+          }
+          return isDark
+              ? color.withValues(alpha: 0.28)
+              : color.withValues(alpha: 0.18);
+        }
+
+        Color getTextColor() {
+          if (isChoiceCorrect || isChoiceWrong) {
+            return Colors.white;
+          }
+          if (isSelected) {
+            return isDark ? Colors.white : color;
+          }
+          return isDark ? Colors.white : const Color(0xFF1E293B);
+        }
+
+        final letterLabel = String.fromCharCode(65 + index);
+
+        final cardWidget = Padding(
+          padding: EdgeInsets.only(bottom: 12.h),
+          child: Semantics(
+            label: options[index],
+            button: true,
+            excludeSemantics: true,
+            child: ScaleButton(
+              key: Key('listening_inference_option_$index'),
+              onTap: isAnswered ? null : () => onSubmitAnswer(index),
+              child: AnimatedContainer(
+                duration: reduceMotion ? Duration.zero : const Duration(milliseconds: 200),
+                curve: Curves.easeOutCubic,
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+                decoration: BoxDecoration(
+                  color: getBgColor(),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: getBorderColor(),
+                    width: isSelected || isChoiceCorrect || isChoiceWrong ? 2.0 : 1.2,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: isDark ? 0.22 : 0.04),
+                      offset: Offset(0, 3.h),
+                      blurRadius: 8,
+                    ),
+                    if (isSelected || isChoiceCorrect || isChoiceWrong)
+                      BoxShadow(
+                        color: (isChoiceCorrect
+                                ? (tokens?.gameCorrect ?? AppColors.gameCorrect)
+                                : (isChoiceWrong
                                     ? (tokens?.gameIncorrect ??
-                                          AppColors.gameIncorrect)
+                                        AppColors.gameIncorrect)
                                     : color))
-                          .withValues(alpha: 0.3),
-                  blurRadius: 15,
-                  spreadRadius: 2,
+                            .withValues(alpha: 0.25),
+                        blurRadius: 14,
+                        spreadRadius: 1,
+                      ),
+                  ],
                 ),
-            ],
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(
-                isChoiceCorrect
-                    ? Icons.verified_user_rounded
-                    : (isChoiceWrong
-                          ? Icons.report_problem_rounded
-                          : Icons.bubble_chart_rounded),
-                color: Colors.white,
-                size: 18.r,
-              ),
-              SizedBox(height: 6.h),
-              Text(
-                options[index].toUpperCase(),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.white,
-                  letterSpacing: 0.5,
+                child: Row(
+                  children: [
+                    // Status / Letter indicator
+                    Container(
+                      width: 28.r,
+                      height: 28.r,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: isChoiceCorrect || isChoiceWrong
+                            ? Colors.white.withValues(alpha: 0.2)
+                            : (isSelected
+                                ? color.withValues(alpha: 0.18)
+                                : color.withValues(alpha: 0.08)),
+                        shape: BoxShape.circle,
+                      ),
+                      child: isChoiceCorrect
+                          ? Icon(
+                              Icons.verified_user_rounded,
+                              color: Colors.white,
+                              size: 18.r,
+                            )
+                          : (isChoiceWrong
+                              ? Icon(
+                                  Icons.report_problem_rounded,
+                                  color: Colors.white,
+                                  size: 18.r,
+                                )
+                              : Text(
+                                  letterLabel,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: isSelected ? color : (isDark ? Colors.white70 : color),
+                                  ),
+                                )),
+                    ),
+                    SizedBox(width: 14.w),
+                    // Option Text
+                    Expanded(
+                      child: Text(
+                        options[index],
+                        softWrap: true,
+                        overflow: TextOverflow.visible,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 15.sp,
+                          fontWeight: isSelected ? FontWeight.w700 : FontWeight.w600,
+                          color: getTextColor(),
+                          height: 1.35,
+                          letterSpacing: 0.1,
+                        ),
+                      ),
+                    ),
+                    if (isSelected && !isAnswered)
+                      Icon(
+                        Icons.radio_button_checked,
+                        color: color,
+                        size: 18.r,
+                      ),
+                  ],
                 ),
               ),
-            ],
+            ),
           ),
-        ),
-      ),
+        );
+
+        if (reduceMotion) {
+          return cardWidget;
+        }
+
+        return cardWidget
+            .animate(target: isChoiceWrong ? 1 : 0)
+            .shake(duration: 400.ms);
+      }),
     );
   }
 }

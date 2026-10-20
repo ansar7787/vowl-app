@@ -1,7 +1,9 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -12,7 +14,7 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 const int _kBlobCount = 5;
 
 /// Diameter of each ink blob in logical pixels (r-scaled).
-const double _kBlobSize = 60.0;
+const double _kBlobSize = 52.0;
 
 /// Divisor used to normalise the raw pan-delta into a reveal increment.
 /// Lower = more sensitive; higher = requires longer smear.
@@ -41,11 +43,9 @@ class AudioFillBlanksCanvas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: 'Ink canvas. Drag across the surface to reveal the transcription.',
-      // Provide a tap-based alternative so users who cannot perform a pan
-      // gesture can still access the content (e.g. switch-access users).
+      label: 'Sentence card. Drag across the surface or tap to reveal the sentence.',
       onTap: () => onSmear(0.5),
-      onTapHint: 'partially reveal transcription',
+      onTapHint: 'reveal sentence',
       child: GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTap: () => onSmear(0.5),
@@ -58,8 +58,8 @@ class AudioFillBlanksCanvas extends StatelessWidget {
           onSmear(delta);
         },
         child: GlassTile(
-          padding: EdgeInsets.all(32.r),
-          borderRadius: BorderRadius.circular(24.r),
+          padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 24.h),
+          borderRadius: BorderRadius.circular(20.r),
           child: Stack(
             alignment: Alignment.center,
             children: [
@@ -70,7 +70,7 @@ class AudioFillBlanksCanvas extends StatelessWidget {
                     opacity: isCorrectState == true ? 0.4 : 0.0,
                     duration: const Duration(milliseconds: 600),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(24.r),
+                      borderRadius: BorderRadius.circular(20.r),
                       child: Image.network(imageUrl!, fit: BoxFit.cover),
                     ),
                   ),
@@ -88,16 +88,23 @@ class AudioFillBlanksCanvas extends StatelessWidget {
                   text,
                   key: ValueKey<String>(text),
                   textAlign: TextAlign.center,
+                  softWrap: true,
+                  overflow: TextOverflow.visible,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 20.sp,
-                    color: (isDark ? Colors.white70 : Colors.black87)
-                        .withValues(alpha: revealProgress.clamp(0.0, 1.0)),
+                    fontSize: 18.5.sp,
+                    fontWeight: FontWeight.w600,
+                    height: 1.45,
+                    letterSpacing: 0.3,
+                    color: (isDark ? Colors.white : AppColors.slate900)
+                        .withValues(
+                          alpha: math.max(0.0, math.min(1.0, revealProgress)),
+                        ),
                   ),
                 ),
               ),
 
-              // ── Ink blobs (shown while hidden) ────────────────────────────
+              // ── Ink blobs (shown while hidden) ────────────────────
               if (revealProgress < 1.0)
                 Positioned.fill(
                   child: Stack(

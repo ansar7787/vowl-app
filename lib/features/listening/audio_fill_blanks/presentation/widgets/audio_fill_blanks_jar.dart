@@ -20,25 +20,27 @@ class AudioFillBlanksJar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: 'Play audio clip',
-      hint: 'Tap to hear the phrase you need to transcribe',
+      label: 'Play audio',
+      hint: 'Tap to hear the sentence',
       child: ScaleButton(
         onTap: onTap,
         child: Container(
-          width: 100.r,
-          height: 100.r,
+          width: 82.r,
+          height: 82.r,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: color.withValues(alpha: 0.15),
-            border: Border.all(color: color.withValues(alpha: 0.3), width: 3),
+            color: color.withValues(alpha: 0.12),
+            border: Border.all(color: color.withValues(alpha: 0.32), width: 2.w),
             boxShadow: [
-              BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 20),
+              BoxShadow(
+                color: color.withValues(alpha: 0.18),
+                blurRadius: 16,
+                offset: const Offset(0, 4),
+              ),
             ],
           ),
-          // Icon sized at 40 % of the 100.r container diameter so it
-          // scales correctly in both standard and FittedBox-compact modes.
           child: Center(
-            child: Icon(Icons.graphic_eq_rounded, size: 40.r, color: color),
+            child: Icon(Icons.graphic_eq_rounded, size: 36.r, color: color),
           ),
         ),
       ),

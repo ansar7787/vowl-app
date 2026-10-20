@@ -44,7 +44,10 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+  String getCompletionTitle(BuildContext context) => context.tr(
+        'listening.games.listening_inference_title',
+        fallback: 'Level Complete!',
+      );
 
   late AnimationController _pulseController;
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
@@ -131,9 +134,10 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     String text,
     dynamic theme,
   ) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     showModalBottomSheet(
       context: context,
-      backgroundColor: Colors.white,
+      backgroundColor: isDark ? const Color(0xFF1E293B) : Colors.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
       ),
@@ -150,16 +154,17 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                     Icon(
                       Icons.closed_caption_rounded,
                       color: theme.primaryColor,
+                      size: 22.r,
                     ),
-                    SizedBox(width: 12.w),
+                    SizedBox(width: 10.w),
                     Text(
-                      "AUDIO TRANSCRIPT",
+                      "Audio Transcript",
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w700,
                         color: theme.primaryColor,
-                        letterSpacing: 1.2,
+                        letterSpacing: 0.3,
                       ),
                     ),
                   ],
@@ -167,12 +172,16 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                 SizedBox(height: 16.h),
                 Text(
                   text,
+                  softWrap: true,
+                  overflow: TextOverflow.visible,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w500,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w400,
                     height: 1.5,
-                    color: Colors.black87,
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.9)
+                        : const Color(0xFF1E293B),
                   ),
                 ),
                 SizedBox(height: 24.h),
@@ -183,15 +192,15 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.r),
                     ),
-                    padding: EdgeInsets.symmetric(vertical: 16.h),
+                    padding: EdgeInsets.symmetric(vertical: 14.h),
                     elevation: 0,
                   ),
                   child: Text(
-                    "CLOSE",
+                    "Close",
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w800,
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w600,
                       color: Colors.white,
                     ),
                   ),
@@ -216,7 +225,12 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
 
   @override
   Widget build(BuildContext context) {
-    final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final theme = LevelThemeHelper.getTheme(
+      'listening',
+      level: widget.level,
+      isDark: isDark,
+    );
 
     return BlocConsumer<ListeningBloc, ListeningState>(
       listenWhen: listeningListenWhen,
@@ -261,16 +275,16 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                             slivers: [
                               SliverPadding(
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: 16.w,
-                                  vertical: 16.h,
+                                  horizontal: 20.w,
+                                  vertical: 12.h,
                                 ),
                                 sliver: SliverToBoxAdapter(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      SizedBox(height: 6.h),
+                                      SizedBox(height: 4.h),
                                       Padding(
-                                        padding: EdgeInsets.only(bottom: 16.h),
+                                        padding: EdgeInsets.only(bottom: 14.h),
                                         child: SpeedChallengeTimer(
                                           key: timerKey,
                                           durationSeconds: 30,
@@ -286,13 +300,12 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                         color: theme.primaryColor,
                                         instruction: context.tr(
                                           'games.listeningInference_instruction',
-                                          fallback:
-                                              quest.instruction.isNotEmpty
-                                                  ? quest.instruction
-                                                  : 'INFER THE MEANING',
+                                          fallback: quest.instruction.isNotEmpty
+                                              ? quest.instruction
+                                              : 'Listen carefully and deduce what is implied.',
                                         ),
                                       ),
-                                      SizedBox(height: 24.h),
+                                      SizedBox(height: 18.h),
                                       ListeningInferenceRadarCore(
                                         key: const Key(
                                           'listening_inference_radar_core',
@@ -303,85 +316,87 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                         emoji: quest.emoji,
                                         isCorrectState: isCorrectNotifier.value,
                                       ),
-                                      SizedBox(height: 16.h),
-                                      GestureDetector(
-                                        key: const Key(
-                                          'listening_inference_show_text_btn',
-                                        ),
-                                        onTap: () {
-                                          hapticService.selection();
-                                          _showTranscriptBottomSheet(
-                                            context,
-                                            quest.textToSpeak ?? '',
-                                            theme,
-                                          );
-                                        },
-                                        child: Container(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 16.w,
-                                            vertical: 8.h,
+                                      SizedBox(height: 14.h),
+                                      Semantics(
+                                        button: true,
+                                        label: 'Show audio transcript',
+                                        child: GestureDetector(
+                                          key: const Key(
+                                            'listening_inference_show_text_btn',
                                           ),
-                                          decoration: BoxDecoration(
-                                            color: theme.primaryColor
-                                                .withValues(alpha: 0.1),
-                                            borderRadius: BorderRadius.circular(
-                                              30.r,
+                                          onTap: () {
+                                            hapticService.selection();
+                                            _showTranscriptBottomSheet(
+                                              context,
+                                              quest.textToSpeak ?? '',
+                                              theme,
+                                            );
+                                          },
+                                          child: Container(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 14.w,
+                                              vertical: 7.h,
+                                            ),
+                                            decoration: BoxDecoration(
+                                              color: theme.primaryColor
+                                                  .withValues(alpha: 0.08),
+                                              borderRadius:
+                                                  BorderRadius.circular(20.r),
+                                              border: Border.all(
+                                                color: theme.primaryColor
+                                                    .withValues(alpha: 0.2),
+                                                width: 1.0,
+                                              ),
+                                            ),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                Icon(
+                                                  Icons.closed_caption_rounded,
+                                                  size: 16.r,
+                                                  color: theme.primaryColor,
+                                                ),
+                                                SizedBox(width: 6.w),
+                                                Text(
+                                                  'Show Transcript',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 12.5.sp,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: theme.primaryColor,
+                                                    letterSpacing: 0.2,
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              Icon(
-                                                Icons.closed_caption_rounded,
-                                                size: 16.r,
-                                                color: theme.primaryColor,
-                                              ),
-                                              SizedBox(width: 6.w),
-                                              Text(
-                                                'SHOW TEXT',
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 12.sp,
-                                                  fontWeight: FontWeight.w800,
-                                                  color: theme.primaryColor,
-                                                  letterSpacing: 1.0,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
                                         ),
                                       ),
-                                      SizedBox(height: 16.h),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 16.w,
-                                        ),
-                                        child: Text(
-                                          quest.question?.toUpperCase() ??
-                                              "INFER THE MEANING",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 16.sp,
-                                            fontWeight: FontWeight.w900,
-                                            color: theme.primaryColor,
-                                            letterSpacing: 1.2,
+                                      SizedBox(height: 18.h),
+                                      if (quest.question != null &&
+                                          quest.question!.trim().isNotEmpty)
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 8.w,
+                                          ),
+                                          child: Text(
+                                            quest.question!,
+                                            textAlign: TextAlign.center,
+                                            softWrap: true,
+                                            overflow: TextOverflow.visible,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 17.5.sp,
+                                              fontWeight: FontWeight.w700,
+                                              color: isDark
+                                                  ? Colors.white
+                                                  : const Color(0xFF0F172A),
+                                              height: 1.35,
+                                              letterSpacing: 0.1,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SliverToBoxAdapter(
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
-                                    vertical: 16.h,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
+                                      SizedBox(height: 18.h),
                                       ListeningInferenceGrid(
                                         key: const Key(
                                           'listening_inference_grid',
@@ -406,24 +421,18 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                           quest.explanation != null)
                                         AnimatedSize(
                                           duration: const Duration(
-                                            milliseconds: 400,
+                                            milliseconds: 350,
                                           ),
                                           curve: Curves.easeOutCubic,
-                                          child: Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 16.w,
+                                          child: ListeningInferenceExplanation(
+                                            key: const Key(
+                                              'listening_inference_explanation',
                                             ),
-                                            child:
-                                                ListeningInferenceExplanation(
-                                                  key: const Key(
-                                                    'listening_inference_explanation',
-                                                  ),
-                                                  explanation:
-                                                      quest.explanation!,
-                                                  color: theme.primaryColor,
-                                                ),
+                                            explanation: quest.explanation!,
+                                            color: theme.primaryColor,
                                           ),
                                         ),
+                                      SizedBox(height: 24.h),
                                     ],
                                   ),
                                 ),

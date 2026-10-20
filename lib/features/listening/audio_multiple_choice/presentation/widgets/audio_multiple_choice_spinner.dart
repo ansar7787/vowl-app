@@ -1,9 +1,9 @@
-import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'audio_multiple_choice_satellite.dart';
 
@@ -39,6 +39,7 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
     return GestureDetector(
       onPanUpdate: (details) => onSpin(details.delta.dx),
       child: Container(
@@ -48,24 +49,24 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            // Orbital Ring
+            // Orbital Guide Ring
             Container(
               width: 230.r,
               height: 230.r,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: color.withValues(alpha: 0.1),
-                  width: 2,
+                  color: color.withValues(alpha: 0.15),
+                  width: 1.5,
                 ),
               ),
             ),
 
             // Satellite Options
             ...List.generate(options.length, (index) {
-              double angle =
+              final double angle =
                   (index * (2 * math.pi / options.length)) + rotation;
-              double radius = 115.r;
+              final double radius = 115.r;
               return Align(
                 alignment: Alignment.center,
                 child: Transform.translate(
@@ -92,24 +93,23 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
               key: const Key('satellite_core_btn'),
               onTap: onTapCore,
               child: Container(
-                width: 80.r,
-                height: 80.r,
+                width: 78.r,
+                height: 78.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: isCorrectState == true ? tokens.gameCorrect : color,
                   border: Border.all(
-                    color: isCorrectState == true
-                        ? Colors.white
-                        : Colors.white.withValues(alpha: 0.5),
-                    width: 4,
+                    color: Colors.white,
+                    width: 3.5,
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: isCorrectState == true
-                          ? tokens.gameCorrect.withValues(alpha: 0.6)
-                          : color.withValues(alpha: 0.6),
-                      blurRadius: 24,
-                      offset: const Offset(0, 8),
+                      color: (isCorrectState == true
+                              ? tokens.gameCorrect
+                              : color)
+                          .withValues(alpha: 0.35),
+                      blurRadius: 18,
+                      offset: const Offset(0, 6),
                     ),
                   ],
                 ),
@@ -117,11 +117,11 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
                     ? (reduceMotion
                         ? Center(
                             child:
-                                Text(emoji!, style: TextStyle(fontSize: 36.r)),
+                                Text(emoji!, style: TextStyle(fontSize: 34.r)),
                           )
                         : Center(
                             child:
-                                Text(emoji!, style: TextStyle(fontSize: 36.r)),
+                                Text(emoji!, style: TextStyle(fontSize: 34.r)),
                           ).animate().scale(
                             duration: 400.ms,
                             curve: Curves.easeOutCubic,
@@ -131,11 +131,9 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
-                            Icons.graphic_eq_rounded,
-                            color: isCorrectState == true
-                                ? Colors.black87
-                                : Colors.white,
-                            size: 30.r,
+                            Icons.volume_up_rounded,
+                            color: Colors.white,
+                            size: 28.r,
                           ),
                           SizedBox(height: 2.h),
                           FittedBox(
@@ -143,15 +141,14 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
                             child: Padding(
                               padding: EdgeInsets.symmetric(horizontal: 4.w),
                               child: Text(
-                                "LISTEN",
+                                "Listen",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: isCorrectState == true
-                                      ? Colors.black87
-                                      : Colors.white,
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.white,
+                                  letterSpacing: 0.3,
                                 ),
                               ),
                             ),

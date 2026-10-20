@@ -31,71 +31,77 @@ class ListeningInferenceRadarCore extends StatelessWidget {
       child: ScaleButton(
         key: const Key('listening_inference_radar_btn'),
         onTap: onTap,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            // Pulse Rings
-            if (!reduceMotion)
-              ...List.generate(3, (i) {
-                return AnimatedBuilder(
-                  animation: pulseController,
-                  builder: (context, child) {
-                    double progress =
-                        (pulseController.value + (i * 0.33)) % 1.0;
-                    return Container(
-                      width: (100 + (progress * 150)).r,
-                      height: (100 + (progress * 150)).r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: color.withValues(
-                            alpha: (1.0 - progress) * 0.3,
+        child: SizedBox(
+          width: 140.r,
+          height: 140.r,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              // Pulse Rings
+              if (!reduceMotion)
+                ...List.generate(3, (i) {
+                  return AnimatedBuilder(
+                    animation: pulseController,
+                    builder: (context, child) {
+                      double progress =
+                          (pulseController.value + (i * 0.33)) % 1.0;
+                      return Container(
+                        width: (72 + (progress * 60)).r,
+                        height: (72 + (progress * 60)).r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: color.withValues(
+                              alpha: (1.0 - progress) * 0.28,
+                            ),
+                            width: 1.5.r,
                           ),
-                          width: 2.r,
                         ),
-                      ),
-                    );
-                  },
-                );
-              }),
+                      );
+                    },
+                  );
+                }),
 
-            // Central Core
-            Container(
-              padding: EdgeInsets.all(32.r),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: RadialGradient(
-                  colors: [color, color.withValues(alpha: 0.7)],
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.3),
-                    blurRadius: 30,
-                    spreadRadius: 5,
+              // Central Core
+              Container(
+                width: 78.r,
+                height: 78.r,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: RadialGradient(
+                    colors: [color, color.withValues(alpha: 0.85)],
                   ),
-                ],
-              ),
-              child: isCorrectState == true && emoji != null
-                  ? (reduceMotion
-                      ? Text(
-                          emoji!,
-                          key: const Key('listening_inference_emoji'),
-                          style: TextStyle(fontSize: 64.r),
-                        )
-                      : Text(
-                          emoji!,
-                          key: const Key('listening_inference_emoji'),
-                          style: TextStyle(fontSize: 64.r),
-                        )
-                          .animate()
-                          .scale(duration: 400.ms, curve: Curves.easeOutCubic))
-                  : Icon(
-                      Icons.psychology_rounded,
-                      size: 64.r,
-                      color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: color.withValues(alpha: 0.3),
+                      blurRadius: 18,
+                      offset: const Offset(0, 4),
                     ),
-            ),
-          ],
+                  ],
+                ),
+                child: isCorrectState == true && emoji != null
+                    ? (reduceMotion
+                        ? Text(
+                            emoji!,
+                            key: const Key('listening_inference_emoji'),
+                            style: TextStyle(fontSize: 38.sp),
+                          )
+                        : Text(
+                            emoji!,
+                            key: const Key('listening_inference_emoji'),
+                            style: TextStyle(fontSize: 38.sp),
+                          )
+                            .animate()
+                            .scale(duration: 400.ms, curve: Curves.easeOutCubic))
+                    : Icon(
+                        Icons.psychology_rounded,
+                        size: 38.r,
+                        color: Colors.white,
+                      ),
+              ),
+            ],
+          ),
         ),
       ),
     );

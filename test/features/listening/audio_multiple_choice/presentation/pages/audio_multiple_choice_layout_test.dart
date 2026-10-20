@@ -297,7 +297,7 @@ void main() {
       expect(find.byType(AudioMultipleChoiceQuestion), findsOneWidget);
       expect(find.byType(AudioMultipleChoiceSpinner), findsOneWidget);
       expect(find.byKey(const Key('satellite_core_btn')), findsOneWidget);
-      expect(find.text('LISTEN'), findsOneWidget);
+      expect(find.text('Listen'), findsOneWidget);
 
       expect(find.byType(AudioMultipleChoiceSatellite), findsNWidgets(4));
       expect(find.text('Thunderstorm'), findsOneWidget);
@@ -531,7 +531,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('SONIC RADAR!'), findsOneWidget);
+      expect(find.text('Listen & Choose'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
@@ -558,9 +558,9 @@ void main() {
       );
 
       expect(find.byType(GameBriefingLayer), findsOneWidget);
-      expect(find.text("LET'S GO!"), findsOneWidget);
+      expect(find.text("START"), findsOneWidget);
 
-      await tester.tap(find.text("LET'S GO!"));
+      await tester.tap(find.text("START"));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
@@ -685,7 +685,7 @@ void main() {
 
       await pumpAudioMultipleChoiceScreen(tester, state: state);
 
-      expect(find.text('LISTEN AND CHOOSE THE BEST MATCH'), findsOneWidget);
+      expect(find.text('Listen and choose the correct answer.'), findsOneWidget);
     });
 
     testWidgets('26. Emoji displays in central core on correct answer', (tester) async {

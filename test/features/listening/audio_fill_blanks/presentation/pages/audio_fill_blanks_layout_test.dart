@@ -28,6 +28,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/pages/audio_fill_blanks_screen.dart';
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_canvas.dart';
+import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_instruction.dart';
 import 'package:vowl/features/listening/domain/entities/listening_quest.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
@@ -620,6 +621,90 @@ void main() {
         ),
         findsOneWidget,
       );
+    });
+
+    testWidgets('30. Instruction widget renders centered text with standard typography and clean human copy', (tester) async {
+      await pumpAudioFillBlanksScreen(tester);
+
+      final instructionWidget = find.byType(AudioFillBlanksInstruction);
+      expect(instructionWidget, findsOneWidget);
+
+      final textWidgets = tester.widgetList<Text>(
+        find.descendant(of: instructionWidget, matching: find.byType(Text)),
+      ).toList();
+
+      expect(textWidgets.length, 2);
+      // Main instruction should be centered and semi-bold
+      expect(textWidgets[0].textAlign, TextAlign.center);
+      expect(textWidgets[0].style?.fontWeight, FontWeight.w600);
+      expect(textWidgets[0].style?.fontFamily, 'Outfit');
+
+      // Helper subtext should be centered, human, and not screaming in buzzwords
+      expect(textWidgets[1].textAlign, TextAlign.center);
+      expect(textWidgets[1].data, 'Swipe or tap to uncover the sentence');
+      expect(textWidgets[1].style?.fontWeight, FontWeight.w500);
+    });
+
+    testWidgets('31. Long option text wraps cleanly with zero overflow and without ellipses', (tester) async {
+      const longQuest = ListeningQuest(
+        id: 'afb_long',
+        instruction: 'Listen carefully to the passage and select the appropriate term.',
+        difficulty: 1,
+        subtype: GameSubtype.audioFillBlanks,
+        textToSpeak: 'The extraordinary atmospheric condition caused severe disruptions.',
+        textWithBlanks: 'The ___ condition caused severe disruptions.',
+        correctAnswer: 'extraordinary atmospheric',
+        distractorWords: [
+          'unexpected meteorological',
+          'unprecedented stratospheric',
+        ],
+      );
+      final longState = testLoadedState.copyWith(
+        quests: [longQuest],
+        currentIndex: 0,
+      );
+
+      await pumpAudioFillBlanksScreen(
+        tester,
+        state: longState,
+        size: const Size(320, 568),
+      );
+
+      // Verify no ellipses in options, canvas, and instruction
+      final optionTexts = tester.widgetList<Text>(
+        find.descendant(
+          of: find.byKey(const ValueKey('options_list')),
+          matching: find.byType(Text),
+        ),
+      );
+      for (final t in optionTexts) {
+        expect(t.overflow, isNot(TextOverflow.ellipsis));
+        expect(t.data?.contains('...'), isFalse);
+      }
+
+      final canvasTexts = tester.widgetList<Text>(
+        find.descendant(
+          of: find.byKey(const ValueKey('audio_fill_blanks_canvas')),
+          matching: find.byType(Text),
+        ),
+      );
+      for (final t in canvasTexts) {
+        expect(t.overflow, isNot(TextOverflow.ellipsis));
+        expect(t.data?.contains('...'), isFalse);
+      }
+
+      final instructionTexts = tester.widgetList<Text>(
+        find.descendant(
+          of: find.byKey(const ValueKey('audio_fill_blanks_instruction')),
+          matching: find.byType(Text),
+        ),
+      );
+      for (final t in instructionTexts) {
+        expect(t.overflow, isNot(TextOverflow.ellipsis));
+        expect(t.data?.contains('...'), isFalse);
+      }
+
+      expect(tester.takeException(), isNull);
     });
   });
 }

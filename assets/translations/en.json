@@ -504,47 +504,53 @@
     "accent_shadowing_title": "ACCENT SHADOWING",
     "ad_not_ready": "Ad not ready yet. Please try again in a few seconds!",
     "ambientId": {
-      "actionText": "Investigate",
-      "objective": "Where are you? Close your eyes, listen to the background noises, and tap the correct location.",
-      "rule_0": "Listen to the background",
-      "rule_1": "Visualize the scene",
-      "rule_2": "Tap the location",
-      "tip": "Listen for footsteps, echoes, wind, or machinery. The background tells the whole story!",
+      "actionText": "Listen & Guess",
+      "objective": "Listen to the background sounds and choose the place where they are happening.",
+      "rule_0": "Listen to the background sounds",
+      "rule_1": "Picture the setting",
+      "rule_2": "Choose the matching location",
+      "tip": "Focus on clues like footsteps, echoes, wind, or traffic to help you identify the place.",
       "title": "Sound Detective"
     },
-    "ambientId_instruction": "Close your eyes. Where are these sounds coming from?",
+    "ambientId_instruction": "Listen to the sounds and choose the location.",
     "american": "American",
     "antonym_search_instruction": "Snap the exact opposite word into the center core.",
     "article_insertion_instruction": "Pop the correct article orb",
     "assemble_sentence": "Build the Sentence",
+    "audioFillBlanks_instruction": "Listen and choose the missing word.",
+    "audio_fill_blanks_instruction": "Listen and choose the missing word.",
+    "audioMultipleChoice_instruction": "Listen and choose the correct answer.",
+    "audio_multiple_choice_instruction": "Listen and choose the correct answer.",
+    "soundImageMatch_instruction": "Listen carefully, then tap the matching picture.",
+    "sound_image_match_instruction": "Listen carefully, then tap the matching picture.",
     "audioFillBlanks": {
       "actionText": "Fix Sentence",
-      "objective": "Smear the ink to uncover the sentence. Listen closely to the audio, catch the missing word, and fill in the blank.",
-      "rule_0": "Smear the ink",
-      "rule_1": "Listen to the sentence",
+      "objective": "Listen closely to the audio, uncover the sentence, and choose the missing word to complete it.",
+      "rule_0": "Listen to the audio",
+      "rule_1": "Tap or swipe to uncover sentence",
       "rule_2": "Choose or type the missing word",
       "tip": "Context is everything! Reading the sentence first can help you predict the missing word before you even press play.",
       "title": "Fill the Gap"
     },
-    "audioMultipleChoice": {
-      "actionText": "Let's Spin",
-      "objective": "Let's train your ears to catch every word! Tap the center to listen to the sentence, then spin the radar to find the missing word that fills in the blank.",
-      "rule_0": "Tap the core to listen",
-      "rule_1": "Spin the radar options",
-      "rule_2": "Tap the missing word",
-      "tip": "PRO TIP: If you miss the word the first time, you can always tap the center to listen again!",
-      "title": "Audio Radar"
+        "audioMultipleChoice": {
+      "actionText": "Start",
+      "objective": "Listen carefully to the audio and choose the correct answer from the options.",
+      "rule_0": "Tap the center to listen",
+      "rule_1": "Browse the options",
+      "rule_2": "Select the correct answer",
+      "tip": "Tip: Tap the center button anytime to listen to the audio again.",
+      "title": "Listen & Choose"
     },
     "audioSentenceOrder": {
       "actionText": "Build Sentence",
-      "objective": "Listen to the audio and snap the scrambled words back into the exact order you heard them.",
+      "objective": "Listen to the audio and arrange the words in the order you hear them.",
       "rule_0": "Listen to the audio",
       "rule_1": "Find the first word",
       "rule_2": "Drag them into order",
       "tip": "Try dragging the words into place as the audio plays, instead of waiting for it to finish!",
       "title": "Sentence Train"
     },
-    "audioSentenceOrder_instruction": "Listen and snap the words in order.",
+    "audioSentenceOrder_instruction": "Listen and arrange the words in order.",
     "audioTrueFalse": {
       "actionText": "Play Game",
       "objective": "Listen carefully to the clip. Is the statement True or False? You have seconds to decide.",
@@ -622,13 +628,13 @@
       "title": "Elite Mastery"
     },
     "emotionRecognition": {
-      "actionText": "Check Vibes",
+      "actionText": "Start",
       "objective": "Listen to the speaker's voice. How are they feeling? Tap the matching emotion to lock in your answer.",
       "rule_0": "Listen to the tone",
       "rule_1": "Choose the emotion",
       "rule_2": "Lock in your answer",
-      "tip": "Pay attention to how they sound, not just the words. Sighs, pitch, and speed give it away!",
-      "title": "Vibe Check"
+      "tip": "Pay attention to how they sound, not just the words. Tone, pitch, and speed give it away!",
+      "title": "Emotion Recognition"
     },
     "env_azure_peaks": "AZURE PEAKS",
     "env_celestial_citadel": "CELESTIAL CITADEL",
@@ -867,12 +873,12 @@
     "slow": "Too slow",
     "soundImageMatch": {
       "actionText": "Let's Play",
-      "objective": "Tap the speaker to hear the sentence, then quickly pick the matching picture before the -second timer runs out!",
+      "objective": "Tap the speaker to hear the sentence, then pick the matching picture before the timer runs out.",
       "rule_0": "Tap to listen",
       "rule_1": "Catch the main idea",
       "rule_2": "Beat the clock",
-      "tip": "PRO TIP: Don't translate everything in your head! Just listen for the main object or action.",
-      "title": "Listen & Match"
+      "tip": "Listen for key words like objects, animals, or actions to find the right match.",
+      "title": "Sound Image Match"
     },
     "speak_word_correct_stress": "Speak the word with the correct stress:",
     "speaking": {
@@ -1169,13 +1175,13 @@
       "title": "Alphabet Game"
     },
     "ambientId": {
-      "actionText": "Anchor Location",
-      "objective": "Sharpen your situational awareness by identifying environments solely through their ambient soundscape, essential for real-world immersion. Practicing this trains your ears to understand native speakers effortlessly.",
-      "rule_0": "Listen to background noise",
-      "rule_1": "Scan the radar options",
-      "rule_2": "Anchor the correct location",
-      "tip": "PRO TIP: Close your eyes and visualize the scene! Focus on ambient sounds like footsteps, echoes, wind, or humming machinery.",
-      "title": "Spatial Anchor"
+      "actionText": "Listen & Guess",
+      "objective": "Listen closely to the background sounds and identify where they take place.",
+      "rule_0": "Listen to the background sounds",
+      "rule_1": "Review the location options",
+      "rule_2": "Choose the correct location",
+      "tip": "Focus on sounds like footsteps, echoes, wind, or machinery to identify the place.",
+      "title": "Sound Detective"
     },
     "animals": {
       "actionText": "Start Safari",
@@ -1213,14 +1219,14 @@
       "tip": "PRO TIP: Listen carefully to short helper words like 'a', 'the', 'in', or 'at'!",
       "title": "Ink Decoder"
     },
-    "audioMultipleChoice": {
-      "actionText": "Let's Spin",
-      "objective": "Let's train your ears to catch every word! Tap the center to listen to the sentence, then spin the radar to find the missing word that fills in the blank.",
-      "rule_0": "Tap the core to listen",
-      "rule_1": "Spin the radar options",
-      "rule_2": "Tap the missing word",
-      "tip": "PRO TIP: If you miss the word the first time, you can always tap the center to listen again!",
-      "title": "Audio Radar"
+        "audioMultipleChoice": {
+      "actionText": "Start",
+      "objective": "Listen carefully to the audio and choose the correct answer from the options.",
+      "rule_0": "Tap the center to listen",
+      "rule_1": "Browse the options",
+      "rule_2": "Select the correct answer",
+      "tip": "Tip: Tap the center button anytime to listen to the audio again.",
+      "title": "Listen & Choose"
     },
     "audioSentenceOrder": {
       "actionText": "Let's Build!",
@@ -1481,13 +1487,13 @@
       "title": "Emergency Hub"
     },
     "emotionRecognition": {
-      "actionText": "Probe Sentiment",
-      "objective": "Identify the speaker's emotional state from their pitch and tone. Practicing this trains your ears to understand native speakers effortlessly.",
-      "rule_0": "Navigate core",
-      "rule_1": "Analyze pitch & rhythm",
-      "rule_2": "Match exact sentiment",
-      "tip": "PRO TIP: Rhythm, volume spikes, and sighing express more than literal words.",
-      "title": "Sentiment Prober"
+      "actionText": "Start",
+      "objective": "Listen to the speaker's tone of voice and identify how they are feeling. Recognizing emotions helps you understand conversations naturally.",
+      "rule_0": "Listen to the audio",
+      "rule_1": "Pay attention to tone of voice",
+      "rule_2": "Choose the matching emotion",
+      "tip": "Tip: Rhythm, volume changes, and pauses often express more than the literal words.",
+      "title": "Emotion Recognition"
     },
     "emotions": {
       "actionText": "Play Now",
@@ -2088,12 +2094,12 @@
     },
     "soundImageMatch": {
       "actionText": "Let's Play",
-      "objective": "Tap the speaker to hear the sentence, then quickly pick the matching picture before the -second timer runs out!",
+      "objective": "Tap the speaker to hear the sentence, then pick the matching picture before the timer runs out.",
       "rule_0": "Tap to listen",
       "rule_1": "Catch the main idea",
       "rule_2": "Beat the clock",
-      "tip": "PRO TIP: Don't translate everything in your head! Just listen for the main object or action.",
-      "title": "Listen & Match"
+      "tip": "Listen for key words like objects, animals, or actions to find the right match.",
+      "title": "Sound Image Match"
     },
     "speakMissingWord": {
       "actionText": "Start Playing",
@@ -2495,12 +2501,13 @@
   },
   "listening": {
     "games": {
-      "ambient_id_title": "CONTEXT ANCHOR!",
+      "ambient_id_title": "Sound Detective!",
       "audio_fill_blanks_title": "AUDITORY ACE!",
-      "audio_multiple_choice_title": "SONIC RADAR!",
-      "audio_sentence_order_title": "SEQUENCE MASTER!",
+      "audio_multiple_choice_title": "Listen & Choose",
+      "audio_sentence_order_title": "Sentence Order",
       "failed_dictation": "[Failed Dictation]",
-      "sound_image_match_title": "SOUND IMAGE MATCH!",
+      "listening_inference_title": "Listening Inference",
+      "sound_image_match_title": "Sound Image Match",
       "transcript": "LISTENING TRANSCRIPT"
     }
   },
@@ -3124,11 +3131,11 @@
     "alphabet_beat_3": "Halfway to 100! You've learned so many new letters and words today. 🌟",
     "alphabet_beat_4": "Level 100! That's incredible. You know your alphabet so well now! 👑",
     "alphabet_beat_5": "You finished all the levels! Now you can read so many new words all on your own. 📖",
-    "ambientid_beat_1": "Nice work! Conquering ambient sounds is a huge step forward.",
-    "ambientid_beat_2": "You are navigating ambient sounds with increasing confidence.",
-    "ambientid_beat_3": "Level 50! Your command of ambient sounds is exceptional.",
-    "ambientid_beat_4": "Level 100! Your execution of ambient sounds is flawless.",
-    "ambientid_beat_5": "Double Centurion! No one knows ambient sounds better than you.",
+    "ambientid_beat_1": "Great job! You identified the sounds correctly.",
+    "ambientid_beat_2": "You are identifying different environments with ease.",
+    "ambientid_beat_3": "Level 50! Your listening skills are impressive.",
+    "ambientid_beat_4": "Level 100! Amazing ear for detail.",
+    "ambientid_beat_5": "All levels complete! You're a true Sound Detective.",
     "animals": "Welcome to the Great Safari! Can you help me find the king of the jungle?",
     "animals_beat_0": "Welcome to the Great Safari! Can you help me find the king of the jungle? 🦁",
     "animals_beat_1": "The Jungle is cheering for you! You're a kind friend to every animal we meet! 🐾",

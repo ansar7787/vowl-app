@@ -207,7 +207,7 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen>
                                           fallback:
                                               quest.instruction.isNotEmpty
                                                   ? quest.instruction
-                                                  : 'DECODE RAPID SPEECH',
+                                                  : 'Listen to the fast speech and choose the correct sentence.',
                                         ),
                                       ),
                                       SizedBox(height: 24.h),

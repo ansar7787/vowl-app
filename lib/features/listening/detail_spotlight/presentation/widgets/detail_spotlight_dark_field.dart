@@ -163,11 +163,19 @@ class _DetailSpotlightDarkFieldState extends State<DetailSpotlightDarkField> {
                     width: double.infinity,
                     height: constraints.maxHeight,
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: const Color(0xFF0C0E14),
                       borderRadius: BorderRadius.circular(24.r),
                       border: Border.all(
-                        color: widget.color.withValues(alpha: 0.1),
+                        color: widget.color.withValues(alpha: 0.2),
+                        width: 1.5,
                       ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.35),
+                          blurRadius: 16.r,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -204,79 +212,102 @@ class _DetailSpotlightDarkFieldState extends State<DetailSpotlightDarkField> {
                         key: Key('detail_spotlight_tile_$index'),
                         onTap: () => widget.onSelect(index),
                         child: Builder(
-                        builder: (context) {
-                          bool isSelected = widget.selectedIndex == index;
-                          bool isActuallyCorrect =
-                              index == widget.correctAnswerIndex;
+                          builder: (context) {
+                            bool isSelected = widget.selectedIndex == index;
+                            bool isActuallyCorrect =
+                                index == widget.correctAnswerIndex;
 
-                          bool isCorrectStateUI =
-                              widget.isAnswered &&
-                              isActuallyCorrect &&
-                              widget.selectedIndex == index;
+                            bool isCorrectStateUI =
+                                widget.isAnswered &&
+                                isActuallyCorrect &&
+                                widget.selectedIndex == index;
 
-                          bool isWrongStateUI =
-                              widget.isAnswered &&
-                              isSelected &&
-                              widget.isCorrectState == false;
+                            bool isWrongStateUI =
+                                widget.isAnswered &&
+                                isSelected &&
+                                widget.isCorrectState == false;
 
-                          Color tileColor = isCorrectStateUI
-                              ? tokens.gameCorrect
-                              : (isWrongStateUI
+                            Color tileColor = isCorrectStateUI
+                                ? tokens.gameCorrect
+                                : (isWrongStateUI
                                     ? tokens.gameIncorrect
                                     : Colors.white);
 
-                          bool shouldReveal =
-                              isLit ||
-                              isCorrectStateUI ||
-                              isWrongStateUI ||
-                              (widget.isAnswered && isActuallyCorrect);
+                            bool shouldReveal =
+                                isLit ||
+                                isCorrectStateUI ||
+                                isWrongStateUI ||
+                                (widget.isAnswered && isActuallyCorrect);
 
-                          return Opacity(
-                            opacity: shouldReveal ? 1.0 : 0.05,
-                            child: AnimatedContainer(
-                              duration: 300.ms,
-                              width: tileW,
-                              height: tileH,
-                              decoration: BoxDecoration(
-                                color: shouldReveal
-                                    ? tileColor.withValues(alpha: 0.1)
-                                    : Colors.transparent,
-                                borderRadius: BorderRadius.circular(20.r),
-                                border: Border.all(
+                            return Opacity(
+                              opacity: shouldReveal ? 1.0 : 0.12,
+                              child: AnimatedContainer(
+                                duration: 300.ms,
+                                width: tileW,
+                                height: tileH,
+                                decoration: BoxDecoration(
                                   color: shouldReveal
-                                      ? tileColor.withValues(alpha: 0.4)
-                                      : Colors.transparent,
-                                  width:
-                                      (isCorrectStateUI ||
-                                          isWrongStateUI ||
-                                          (widget.isAnswered &&
-                                              isActuallyCorrect))
-                                      ? 2
-                                      : 1,
+                                      ? tileColor.withValues(alpha: 0.12)
+                                      : Colors.white.withValues(alpha: 0.03),
+                                  borderRadius: BorderRadius.circular(16.r),
+                                  border: Border.all(
+                                    color: shouldReveal
+                                        ? tileColor.withValues(alpha: 0.5)
+                                        : Colors.white.withValues(alpha: 0.08),
+                                    width: (isCorrectStateUI ||
+                                            isWrongStateUI ||
+                                            (widget.isAnswered &&
+                                                isActuallyCorrect))
+                                        ? 2
+                                        : 1.2,
+                                  ),
+                                  boxShadow: shouldReveal
+                                      ? [
+                                          BoxShadow(
+                                            color: tileColor.withValues(alpha: 0.18),
+                                            blurRadius: 12.r,
+                                            offset: const Offset(0, 3),
+                                          ),
+                                        ]
+                                      : null,
                                 ),
-                              ),
-                              child: Center(
-                                child: Padding(
-                                  padding: EdgeInsets.all(8.r),
-                                  child: Text(
-                                    widget.options[index],
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w700,
-                                      color: tileColor,
+                                child: Center(
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 10.w,
+                                      vertical: 8.h,
+                                    ),
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: ConstrainedBox(
+                                        constraints: BoxConstraints(
+                                          maxWidth: tileW - 20.w,
+                                        ),
+                                        child: Text(
+                                          widget.options[index],
+                                          textAlign: TextAlign.center,
+                                          maxLines: 2,
+                                          softWrap: true,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 15.sp,
+                                            fontWeight: FontWeight.w600,
+                                            color: tileColor,
+                                            height: 1.25,
+                                            letterSpacing: 0.2,
+                                          ),
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                          );
-                        },
+                            );
+                          },
+                        ),
                       ),
                     ),
-                  ),
-                );
+                  );
                 }),
 
                 AnimatedPositioned(

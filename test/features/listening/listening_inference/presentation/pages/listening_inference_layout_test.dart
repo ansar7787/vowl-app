@@ -322,14 +322,14 @@ void main() {
       expect(find.byKey(const Key('listening_inference_instruction')), findsOneWidget);
       expect(find.byKey(const Key('listening_inference_radar_core')), findsOneWidget);
       expect(find.byKey(const Key('listening_inference_show_text_btn')), findsOneWidget);
-      expect(find.text('WHAT IS ABOUT TO HAPPEN?'), findsOneWidget);
+      expect(find.text('What is about to happen?'), findsOneWidget);
       expect(find.byKey(const Key('listening_inference_grid')), findsOneWidget);
     });
 
-    testWidgets('2. Initial instruction displays uppercase instruction', (tester) async {
+    testWidgets('2. Initial instruction displays formatted instruction', (tester) async {
       await pumpListeningInferenceScreen(tester);
 
-      expect(find.text('LISTEN CAREFULLY AND DEDUCE WHAT IS IMPLIED.'), findsOneWidget);
+      expect(find.text('Listen carefully and deduce what is implied.'), findsOneWidget);
     });
 
     testWidgets('3. Radar core button tap triggers TTS playback and selection haptic', (tester) async {
@@ -410,9 +410,9 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('AUDIO TRANSCRIPT'), findsOneWidget);
+      expect(find.text('Audio Transcript'), findsOneWidget);
       expect(find.text('I left my umbrella at home, and the sky turned pitch black.'), findsOneWidget);
-      expect(find.text('CLOSE'), findsOneWidget);
+      expect(find.text('Close'), findsOneWidget);
     });
 
     testWidgets('8. Closing audio transcript bottom sheet dismisses the sheet', (tester) async {
@@ -422,16 +422,16 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('AUDIO TRANSCRIPT'), findsOneWidget);
+      expect(find.text('Audio Transcript'), findsOneWidget);
 
-      await tester.tap(find.text('CLOSE'));
+      await tester.tap(find.text('Close'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('AUDIO TRANSCRIPT'), findsNothing);
+      expect(find.text('Audio Transcript'), findsNothing);
     });
 
-    testWidgets('9. Inference grid displays all option choices in uppercase with icons', (tester) async {
+    testWidgets('9. Inference grid displays all option choices with indicators', (tester) async {
       await pumpListeningInferenceScreen(tester);
 
       expect(find.byKey(const Key('listening_inference_option_0')), findsOneWidget);
@@ -439,13 +439,13 @@ void main() {
       expect(find.byKey(const Key('listening_inference_option_2')), findsOneWidget);
       expect(find.byKey(const Key('listening_inference_option_3')), findsOneWidget);
 
-      expect(find.text('IT IS GOING TO RAIN'), findsOneWidget);
-      expect(find.text('A SUNNY AFTERNOON'), findsOneWidget);
-      expect(find.text('THE BUS HAS ARRIVED'), findsOneWidget);
-      expect(find.text('HE LOST HIS KEYS'), findsOneWidget);
+      expect(find.text('It is going to rain'), findsOneWidget);
+      expect(find.text('A sunny afternoon'), findsOneWidget);
+      expect(find.text('The bus has arrived'), findsOneWidget);
+      expect(find.text('He lost his keys'), findsOneWidget);
     });
 
-    testWidgets('10. Two-option quest renders options in a Row', (tester) async {
+    testWidgets('10. Two-option quest renders options in grid', (tester) async {
       final twoOptionState = ListeningLoaded(
         quests: const [sampleQuest2],
         currentIndex: 0,
@@ -456,8 +456,8 @@ void main() {
 
       expect(find.byKey(const Key('listening_inference_option_0')), findsOneWidget);
       expect(find.byKey(const Key('listening_inference_option_1')), findsOneWidget);
-      expect(find.text('IMPATIENT'), findsOneWidget);
-      expect(find.text('EXCITED'), findsOneWidget);
+      expect(find.text('Impatient'), findsOneWidget);
+      expect(find.text('Excited'), findsOneWidget);
     });
 
     testWidgets('11. Tapping correct option submits SubmitAnswer(true), plays sound, and triggers haptic', (tester) async {
@@ -571,7 +571,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
 
       expect(find.byType(ListeningInferenceExplanation), findsOneWidget);
-      expect(find.text('WHY?'), findsOneWidget);
+      expect(find.text('Explanation'), findsOneWidget);
       expect(
         find.descendant(
           of: find.byType(ListeningInferenceExplanation),
@@ -618,8 +618,8 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('IMPATIENT'), findsOneWidget);
-      expect(find.text('EXCITED'), findsOneWidget);
+      expect(find.text('Impatient'), findsOneWidget);
+      expect(find.text('Excited'), findsOneWidget);
 
       await tester.pump(const Duration(milliseconds: 500));
     });

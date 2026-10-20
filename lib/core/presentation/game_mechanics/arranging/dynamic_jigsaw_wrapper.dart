@@ -274,11 +274,11 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
         valueListenable: _hasError,
         builder: (context, hasError, child) {
           return Container(
-            padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
+            padding: EdgeInsets.fromLTRB(20.w, 18.h, 20.w, 24.h),
             decoration: BoxDecoration(
               color: bgColor,
               borderRadius: widget.isPositioned
-                  ? BorderRadius.vertical(top: Radius.circular(32.r))
+                  ? BorderRadius.vertical(top: Radius.circular(28.r))
                   : BorderRadius.circular(24.r),
               border: Border.all(
                 color: hasError
@@ -290,9 +290,9 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                 BoxShadow(
                   color: hasError
                       ? errorColor.withValues(alpha: 0.15)
-                      : widget.primaryColor.withValues(alpha: 0.15),
-                  blurRadius: 30,
-                  offset: const Offset(0, -8),
+                      : widget.primaryColor.withValues(alpha: 0.12),
+                  blurRadius: 24,
+                  offset: const Offset(0, -6),
                 ),
               ],
             ),
@@ -309,14 +309,14 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                 // Handle bar
                 if (widget.isPositioned) ...[
                   Container(
-                    width: 48.w,
+                    width: 44.w,
                     height: 4.h,
                     decoration: BoxDecoration(
                       color: subtitleColor.withValues(alpha: 0.3),
                       borderRadius: BorderRadius.circular(2.r),
                     ),
                   ),
-                  SizedBox(height: 16.h),
+                  SizedBox(height: 14.h),
                 ],
 
                 // Header
@@ -326,12 +326,12 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                       padding: EdgeInsets.all(10.r),
                       decoration: BoxDecoration(
                         color: widget.primaryColor.withValues(alpha: 0.12),
-                        borderRadius: BorderRadius.circular(14.r),
+                        borderRadius: BorderRadius.circular(12.r),
                       ),
                       child: Icon(
                         Icons.extension_rounded,
                         color: widget.primaryColor,
-                        size: 22.r,
+                        size: 20.r,
                       ),
                     ),
                     SizedBox(width: 12.w),
@@ -340,28 +340,28 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           AutoSizeText(
-                            'ARRANGE THE WORDS',
+                            'Arrange the words',
                             maxLines: 1,
-                            minFontSize: 8,
+                            minFontSize: 10,
                             overflow: TextOverflow.visible,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w800,
-                              color: widget.primaryColor,
-                              letterSpacing: 1.5,
+                              fontSize: 14.5.sp,
+                              fontWeight: FontWeight.w600,
+                              color: textColor,
+                              letterSpacing: 0.2,
                             ),
                           ),
                           SizedBox(height: 2.h),
                           AutoSizeText(
-                            'Tap the words in the right order',
+                            'Tap or drag words to build the sentence',
                             maxLines: 2,
-                            minFontSize: 8,
+                            minFontSize: 9,
                             overflow: TextOverflow.visible,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w500,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w400,
                               color: subtitleColor,
                             ),
                           ),
@@ -376,7 +376,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                       ),
                       decoration: BoxDecoration(
                         color: widget.primaryColor.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(20.r),
+                        borderRadius: BorderRadius.circular(16.r),
                       ),
                       child: ValueListenableBuilder<List<_WordTile?>>(
                         valueListenable: _placedTiles,
@@ -384,14 +384,14 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                           return AutoSizeText(
                             '${placedTiles.length} words',
                             maxLines: 1,
-                            minFontSize: 6,
+                            minFontSize: 8,
                             overflow: TextOverflow.visible,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w700,
+                              fontSize: 11.5.sp,
+                              fontWeight: FontWeight.w500,
                               color: widget.primaryColor,
-                              letterSpacing: 0.5,
+                              letterSpacing: 0.2,
                             ),
                           );
                         },
@@ -400,7 +400,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                   ],
                 ),
 
-                // Clear All button
+                // Clear all button
                 ValueListenableBuilder<bool>(
                   valueListenable: _isSubmitting,
                   builder: (context, isSubmitting, _) {
@@ -414,16 +414,16 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                             child: GestureDetector(
                               onTap: _clearAll,
                               child: AutoSizeText(
-                                'CLEAR ALL',
+                                'Clear all',
                                 maxLines: 1,
-                                minFontSize: 6,
+                                minFontSize: 8,
                                 overflow: TextOverflow.visible,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w700,
+                                  fontSize: 11.5.sp,
+                                  fontWeight: FontWeight.w500,
                                   color: subtitleColor,
-                                  letterSpacing: 1.5,
+                                  letterSpacing: 0.2,
                                 ),
                               ),
                             ),
@@ -434,7 +434,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                     );
                   },
                 ),
-                SizedBox(height: 24.h),
+                SizedBox(height: 20.h),
 
                 // Placed Tiles (Sentence Builder Area)
                 ValueListenableBuilder<bool>(
@@ -454,7 +454,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                 color: isDark
                                     ? Colors.white.withValues(alpha: 0.05)
                                     : Colors.black.withValues(alpha: 0.02),
-                                borderRadius: BorderRadius.circular(12.r),
+                                borderRadius: BorderRadius.circular(16.r),
                                 border: Border.all(
                                   color: hasError
                                       ? errorColor.withValues(alpha: 0.5)
@@ -479,24 +479,24 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                       if (tile == null) {
                                         return Container(
                                           key: ValueKey('empty_$index'),
-                                          height: 36.h,
-                                          width: isHovering ? 80.w : 50.w,
+                                          height: 38.h,
+                                          width: isHovering ? 70.w : 48.w,
                                           decoration: BoxDecoration(
                                             color: widget.primaryColor
                                                 .withValues(
                                                   alpha: isHovering
-                                                      ? 0.2
+                                                      ? 0.18
                                                       : 0.05,
                                                 ),
                                             borderRadius: BorderRadius.circular(
-                                              18.r,
+                                              14.r,
                                             ),
                                             border: Border.all(
                                               color: widget.primaryColor
                                                   .withValues(
                                                     alpha: isHovering
-                                                        ? 0.8
-                                                        : 0.2,
+                                                        ? 0.7
+                                                        : 0.25,
                                                   ),
                                               style: BorderStyle.solid,
                                             ),
@@ -531,7 +531,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                             isDark,
                                             subtitleColor,
                                             textColor,
-                                            scale: 1.1,
+                                            scale: 1.05,
                                           ),
                                         ),
                                         child: GestureDetector(
@@ -542,27 +542,28 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                               Container(
                                                     padding:
                                                         EdgeInsets.symmetric(
-                                                          horizontal: 16.w,
+                                                          horizontal: 14.w,
                                                           vertical: 8.h,
                                                         ),
                                                     decoration: BoxDecoration(
                                                       color: tileColor
                                                           .withValues(
                                                             alpha: isHovering
-                                                                ? 0.3
-                                                                : 0.15,
+                                                                ? 0.25
+                                                                : 0.12,
                                                           ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                            18.r,
+                                                            14.r,
                                                           ),
                                                       border: Border.all(
                                                         color: tileColor
                                                             .withValues(
                                                               alpha: isHovering
-                                                                  ? 1.0
-                                                                  : 0.5,
+                                                                  ? 0.9
+                                                                  : 0.45,
                                                             ),
+                                                        width: 1.2,
                                                       ),
                                                     ),
                                                     child: Row(
@@ -572,15 +573,16 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                                         AutoSizeText(
                                                           tile.word,
                                                           maxLines: 1,
-                                                          minFontSize: 8,
+                                                          minFontSize: 10,
                                                           overflow: TextOverflow.visible,
                                                           style: TextStyle(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            fontSize: 16.sp,
+                                                            fontSize: 14.5.sp,
                                                             fontWeight:
-                                                                FontWeight.w700,
+                                                                FontWeight.w600,
                                                             color: textColor,
+                                                            letterSpacing: 0.2,
                                                           ),
                                                         ),
                                                         if (isCorrectPos !=
@@ -589,8 +591,8 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                                           Icon(
                                                             isCorrectPos
                                                                 ? Icons
-                                                                      .check_circle
-                                                                : Icons.cancel,
+                                                                      .check_circle_rounded
+                                                                : Icons.cancel_rounded,
                                                             color: tileColor,
                                                             size: 16.r,
                                                             semanticLabel:
@@ -608,10 +610,10 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                                     ),
                                                   )
                                                   .scaleXY(
-                                                    begin: 0.8,
+                                                    begin: 0.85,
                                                     end: 1.0,
                                                     curve: Curves.easeOutCubic,
-                                                    duration: 250.ms,
+                                                    duration: 220.ms,
                                                   ),
                                         ),
                                       );
@@ -627,7 +629,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                   },
                 ),
 
-                SizedBox(height: 24.h),
+                SizedBox(height: 20.h),
 
                 // Available Tiles (Word Bank)
                 ValueListenableBuilder<List<_WordTile>>(
@@ -646,7 +648,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                       },
                       builder: (context, candidateData, rejectedData) {
                         return Container(
-                          constraints: BoxConstraints(minHeight: 100.h),
+                          constraints: BoxConstraints(minHeight: 90.h),
                           width: double.infinity,
                           decoration: BoxDecoration(
                             color: candidateData.isNotEmpty
@@ -656,7 +658,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                           ),
                           child: Wrap(
                             spacing: 8.w,
-                            runSpacing: 12.h,
+                            runSpacing: 10.h,
                             alignment: WrapAlignment.center,
                             children: availableTiles.map((tile) {
                               return Draggable<_WordTile>(
@@ -668,7 +670,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                     isDark,
                                     subtitleColor,
                                     textColor,
-                                    scale: 1.1,
+                                    scale: 1.05,
                                   ),
                                 ),
                                 childWhenDragging: Opacity(
@@ -711,7 +713,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                   },
                 ),
 
-                SizedBox(height: 32.h),
+                SizedBox(height: 24.h),
 
                 // Controls
                 ValueListenableBuilder<bool>(
@@ -737,12 +739,12 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                           ? errorColor
                                           : widget.primaryColor,
                                       padding: EdgeInsets.symmetric(
-                                        vertical: 16.h,
+                                        vertical: 14.h,
                                       ),
                                       elevation: 0,
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(
-                                          16.r,
+                                          14.r,
                                         ),
                                       ),
                                     ),
@@ -757,9 +759,9 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 15.sp,
-                                        fontWeight: FontWeight.w700,
+                                        fontWeight: FontWeight.w600,
                                         color: Colors.white,
-                                        letterSpacing: 1.5,
+                                        letterSpacing: 0.3,
                                       ),
                                     ),
                                   ),
@@ -776,7 +778,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                 // Skip button
                 if (widget.allowSkip)
                   Padding(
-                    padding: EdgeInsets.only(top: 16.h),
+                    padding: EdgeInsets.only(top: 14.h),
                     child: GameSkipBypassButton(
                       subtitleColor: subtitleColor,
                       isSubmitting: _isSubmitting,
@@ -829,15 +831,20 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
     return Transform.scale(
       scale: scale,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
         decoration: BoxDecoration(
           color: isDark ? _LocalPalette.color1e1e2c : Colors.white,
-          borderRadius: BorderRadius.circular(18.r),
-          border: Border.all(color: subtitleColor.withValues(alpha: 0.2)),
+          borderRadius: BorderRadius.circular(14.r),
+          border: Border.all(
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.12)
+                : subtitleColor.withValues(alpha: 0.2),
+            width: 1.2,
+          ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.05),
-              blurRadius: 4,
+              color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
+              blurRadius: 6,
               offset: const Offset(0, 2),
             ),
           ],
@@ -845,13 +852,14 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
         child: AutoSizeText(
           tile.word,
           maxLines: 1,
-          minFontSize: 8,
+          minFontSize: 10,
           overflow: TextOverflow.visible,
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 16.sp,
+            fontSize: 14.5.sp,
             fontWeight: FontWeight.w600,
             color: textColor,
+            letterSpacing: 0.2,
           ),
         ),
       ),

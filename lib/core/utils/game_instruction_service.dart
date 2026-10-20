@@ -507,18 +507,18 @@ class GameInstructionService {
           "PRO TIP: Listen carefully to short helper words like 'a', 'the', 'in', or 'at'!",
     ),
     GameSubtype.audioMultipleChoice: GameBriefing(
-      title: "Missing Word Spinner",
-      icon: Icons.track_changes_rounded,
+      title: "Listen & Choose",
+      icon: Icons.headphones_rounded,
       objective:
-          "Listen carefully to the audio and find the word that belongs in the blank. Picking out missing words trains your ears to naturally separate fast, native speech.",
+          "Listen carefully to the audio and choose the correct answer from the options.",
       rules: [
-        "Tap the center to listen",
-        "Spin to pick the missing word",
-        "Tap the word in the text to prove it",
+        "Tap the center button to listen",
+        "Spin or browse the answer options",
+        "Tap the correct answer to submit",
       ],
-      actionText: "Let's Go!",
+      actionText: "Start",
       tip:
-          "PRO TIP: Don't just guess! After picking your answer, you'll need to tap that exact word in the transcript to prove you heard it.",
+          "Tip: You can tap the center button again anytime if you need to re-listen to the audio.",
     ),
     GameSubtype.audioSentenceOrder: GameBriefing(
       title: "Sentence Builder",
@@ -549,42 +549,46 @@ class GameInstructionService {
           "Be careful of exact details—names, numbers, and dates must match perfectly.",
     ),
     GameSubtype.soundImageMatch: GameBriefing(
-      title: "Thematic Linker",
-      icon: Icons.category_rounded,
+      title: "Sound Image Match",
+      icon: Icons.headphones_rounded,
       objective:
-          "Listen to the audio sound and match it with the correct visual image. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
-      rules: ["Scan tiles", "Match sound to symbol", "Confirm thematic link"],
-      actionText: "Confirm Link",
+          "Listen to the audio clip and tap the picture that matches what you hear.",
+      rules: [
+        "Tap the speaker to listen",
+        "Focus on the key words",
+        "Choose the matching picture",
+      ],
+      actionText: "Let's Play",
       tip:
-          "Try to describe the sound in one word before selecting your choice.",
+          "Listen for key words like objects, animals, or actions before making your choice.",
     ),
     GameSubtype.fastSpeechDecoder: GameBriefing(
-      title: "Nuance Calibrator",
-      icon: Icons.settings_input_composite_rounded,
+      title: "Fast Speech Decoder",
+      icon: Icons.speed_rounded,
       objective:
-          "Decode rapid native speech by picking out word boundaries. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
+          "Listen to natural fast English speech and understand connected words. Use the speed dial to slow down audio if needed.",
       rules: [
-        "Rotate gears",
-        "Listen for speed transitions",
-        "Unfold the meaning",
+        "Turn the dial to adjust speed",
+        "Listen closely to the audio",
+        "Select the matching sentence",
       ],
-      actionText: "Calibrate Gears",
+      actionText: "Start Practice",
       tip:
           "Focus on stressed syllables—they carry the core meaning in fast speech.",
     ),
     GameSubtype.emotionRecognition: GameBriefing(
-      title: "Sentiment Prober",
-      icon: Icons.psychology_rounded,
+      title: "Emotion Recognition",
+      icon: Icons.sentiment_satisfied_alt_rounded,
       objective:
-          "Identify the speaker's emotional state from their pitch and tone. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
+          "Listen to the speaker's tone of voice and identify how they are feeling. Recognizing emotions helps you understand conversations naturally.",
       rules: [
-        "Navigate core",
-        "Analyze pitch & rhythm",
-        "Match exact sentiment",
+        "Listen to the audio",
+        "Pay attention to tone of voice",
+        "Choose the matching emotion",
       ],
-      actionText: "Probe Sentiment",
+      actionText: "Start",
       tip:
-          "Rhythm, volume spikes, and sighing express more than literal words.",
+          "Rhythm, volume changes, and pauses often express more than the literal words.",
     ),
     GameSubtype.detailSpotlight: GameBriefing(
       title: "Spotlight Search",

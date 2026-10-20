@@ -43,7 +43,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
   @override
   String getCompletionTitle(BuildContext context) => context.tr(
     'listening.games.audio_sentence_order_title',
-    fallback: 'SEQUENCE MASTER!',
+    fallback: 'Sentence Order',
   );
 
   final ScrollController _scrollController = ScrollController();
@@ -154,7 +154,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
                                       fallback:
                                           quest.instruction.isNotEmpty
                                               ? quest.instruction
-                                              : 'LISTEN AND ARRANGE THE WORDS IN THE CORRECT ORDER',
+                                              : 'Listen and arrange the words in order.',
                                     ),
                                   ),
                                   SizedBox(height: 24.h),

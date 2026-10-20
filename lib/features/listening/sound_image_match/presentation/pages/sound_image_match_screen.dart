@@ -46,7 +46,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
   @override
   String getCompletionTitle(BuildContext context) => context.tr(
     'listening.games.sound_image_match_title',
-    fallback: 'SOUND IMAGE MATCH!',
+    fallback: 'Sound Image Match',
   );
 
   @override
@@ -201,7 +201,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
                                                       .getInstruction(quest),
                                             ),
                                       ),
-                                      SizedBox(height: 24.h),
+                                      SizedBox(height: 18.h),
                                       SoundImageMatchEmitter(
                                         key: const Key(
                                           'sound_image_match_emitter',
@@ -211,7 +211,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
                                         emoji: quest.emoji,
                                         isCorrectState: isCorrectNotifier.value,
                                       ),
-                                      SizedBox(height: 32.h),
+                                      SizedBox(height: 18.h),
                                     ],
                                   ),
                                 ),
@@ -220,7 +220,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 16.w,
-                                    vertical: 16.h,
+                                    vertical: 8.h,
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.end,
@@ -254,8 +254,8 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
                                       ),
                                       SizedBox(
                                         height: isAnsweredNotifier.value
-                                            ? 200.h
-                                            : 60.h,
+                                            ? 180.h
+                                            : 40.h,
                                       ),
                                     ],
                                   ),

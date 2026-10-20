@@ -129,34 +129,41 @@ class FastSpeechDecoderCore extends StatelessWidget {
                             ? Text(
                                 emoji!,
                                 key: const Key('fast_speech_decoder_emoji'),
-                                style: TextStyle(fontSize: 48.r),
+                                style: TextStyle(fontSize: 44.r),
                               )
                             : Text(
                                 emoji!,
                                 key: const Key('fast_speech_decoder_emoji'),
-                                style: TextStyle(fontSize: 48.r),
+                                style: TextStyle(fontSize: 44.r),
                               )
                                 .animate()
                                 .scale(duration: 400.ms, curve: Curves.easeOutCubic)
-                      else ...[
-                        Icon(
-                          Icons.play_arrow_rounded,
-                          color: Colors.white,
-                          size: 60.r,
-                        ),
-                        Positioned(
-                          bottom: 20.r,
-                          child: Text(
-                            "LISTEN",
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 7.sp,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.white70,
+                      else
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.play_arrow_rounded,
+                              color: Colors.white,
+                              size: 42.r,
                             ),
-                          ),
+                            SizedBox(height: 2.h),
+                            Text(
+                              "LISTEN",
+                              textAlign: TextAlign.center,
+                              softWrap: false,
+                              overflow: TextOverflow.visible,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.5.sp,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white.withValues(alpha: 0.95),
+                                letterSpacing: 1.2,
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
                     ],
                   ),
                 ),

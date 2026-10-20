@@ -24,22 +24,22 @@ class AudioTrueFalseScreenDisplay extends StatelessWidget {
     return Container(
       key: const Key('audio_true_false_screen_display_container'),
       width: double.infinity,
-      constraints: BoxConstraints(minHeight: 120.h),
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 32.h),
+      constraints: BoxConstraints(minHeight: 110.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
       decoration: BoxDecoration(
         color: isDark ? _LocalPalette.color1a1a1a : Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: isDark
-              ? color.withValues(alpha: 0.2)
-              : color.withValues(alpha: 0.15),
+              ? color.withValues(alpha: 0.25)
+              : color.withValues(alpha: 0.18),
           width: 1.5,
         ),
         boxShadow: [
           BoxShadow(
-            color: color.withValues(alpha: isDark ? 0.05 : 0.1),
-            blurRadius: 30,
-            spreadRadius: 0,
+            color: color.withValues(alpha: isDark ? 0.06 : 0.08),
+            blurRadius: 20,
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -51,21 +51,22 @@ class AudioTrueFalseScreenDisplay extends StatelessWidget {
             Text(
               emoji!,
               key: const Key('audio_true_false_emoji'),
-              style: TextStyle(fontSize: 48.sp),
+              style: TextStyle(fontSize: 38.sp),
             ),
-            SizedBox(height: 16.h),
+            SizedBox(height: 12.h),
           ],
           Text(
             statement,
             key: const Key('audio_true_false_statement'),
             textAlign: TextAlign.center,
+            softWrap: true,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 22.sp,
-              fontWeight: FontWeight.w700,
+              fontSize: 19.sp,
+              fontWeight: FontWeight.w600,
               color: Theme.of(context).colorScheme.onSurface,
-              letterSpacing: 0.5,
-              height: 1.3,
+              letterSpacing: 0.2,
+              height: 1.4,
             ),
           ),
         ],
