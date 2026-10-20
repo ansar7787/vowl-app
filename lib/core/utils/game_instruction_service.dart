@@ -268,18 +268,18 @@ class GameInstructionService {
           "PRO TIP: If you missed the word, tap the replay button to hear it again!",
     ),
     GameSubtype.idiomMatch: GameBriefing(
-      title: "Idiom Master",
+      title: "Idiom Match",
       icon: Icons.lightbulb_rounded,
       objective:
-          "Match the idiom to its real meaning. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
+          "Match each idiom with what it actually means in daily conversation.",
       rules: [
-        "Analyze the context clue",
-        "Identify the core meaning",
-        "Match the perfect idiom",
+        "Read the sentence and context",
+        "Choose the idiom that fits best",
+        "Say it aloud to practice speaking",
       ],
       actionText: "Match Idiom",
       tip:
-          "PRO TIP: Idioms rarely mean what the individual words mean literally. Think about the feeling or situation they describe!",
+          "PRO TIP: Idioms aren't literal. Focus on what the speaker is really trying to express!",
     ),
     GameSubtype.minimalPairs: GameBriefing(
       title: "Minimal Pairs",

@@ -438,8 +438,8 @@ void main() {
           find.byKey(const Key('story_builder_narrative_arc')),
           findsOneWidget,
         );
-        expect(find.text('NARRATIVE ARC'), findsOneWidget);
-        expect(find.byIcon(Icons.timeline_rounded), findsOneWidget);
+        expect(find.text('STORY FLOW'), findsOneWidget);
+        expect(find.byIcon(Icons.auto_stories_rounded), findsOneWidget);
         expect(
           find.text('Setup ➔ Conflict ➔ Climax ➔ Resolution'),
           findsOneWidget,
@@ -465,7 +465,7 @@ void main() {
         find.byKey(const Key('story_builder_narrative_arc')),
         findsNothing,
       );
-      expect(find.text('NARRATIVE ARC'), findsNothing);
+      expect(find.text('STORY FLOW'), findsNothing);
     });
 
     testWidgets(
@@ -474,7 +474,7 @@ void main() {
         await pumpScreen(tester);
 
         expect(
-          find.text('CAUSE AND EFFECT PROGRESSION'),
+          find.text('Cause & effect'),
           findsOneWidget,
         );
       },
@@ -527,7 +527,7 @@ void main() {
     );
 
     testWidgets(
-      'renders FINALIZE STORY button with correct styling, key, and semantics',
+      'renders CHECK STORY button with correct styling, key, and semantics',
       (tester) async {
         await pumpScreen(tester);
 
@@ -535,13 +535,13 @@ void main() {
           const Key('story_builder_finalize_button'),
         );
         expect(finalizeBtn, findsOneWidget);
-        expect(find.text('FINALIZE STORY'), findsOneWidget);
+        expect(find.text('CHECK STORY'), findsOneWidget);
 
         final semanticsFinder = find.byWidgetPredicate(
           (w) =>
               w is Semantics &&
               w.properties.button == true &&
-              w.properties.label == 'FINALIZE STORY',
+              w.properties.label == 'CHECK STORY',
         );
         expect(semanticsFinder, findsOneWidget);
       },
@@ -851,7 +851,7 @@ void main() {
   // ═══════════════════════════════════════════════════════════════════════════
   group('StoryBuilderScreen - 4. Stage 2 Verbal Confirmation & Feedback', () {
     testWidgets(
-      'SpeakToConfirmOverlay displays expected story text and NARRATE THE STORY title',
+      'SpeakToConfirmOverlay displays expected story text and READ THE STORY title',
       (tester) async {
         await pumpScreen(tester);
 
@@ -865,7 +865,7 @@ void main() {
         );
         await tester.pumpAndSettle();
 
-        expect(find.text('NARRATE THE STORY'), findsOneWidget);
+        expect(find.text('READ THE STORY'), findsOneWidget);
         expect(
           find.text('Read your completed story aloud'),
           findsOneWidget,

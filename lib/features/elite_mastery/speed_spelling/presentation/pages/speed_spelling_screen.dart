@@ -314,13 +314,14 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                       child: Text(
                                         quest.instruction,
                                         textAlign: TextAlign.start,
+                                        softWrap: true,
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
-                                          fontSize: isCompact ? 16.sp : 18.sp,
-                                          fontWeight: FontWeight.bold,
+                                          fontSize: isCompact ? 15.sp : 17.sp,
+                                          fontWeight: FontWeight.w600,
                                           color: isDark
-                                              ? Colors.white70
-                                              : AppColors.slate700,
+                                              ? Colors.white
+                                              : AppColors.slate900,
                                         ),
                                       ),
                                     ),
@@ -368,8 +369,8 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                 'speed_spelling_difficulty_badge',
                               ),
                               padding: EdgeInsets.symmetric(
-                                horizontal: 12.w,
-                                vertical: 6.h,
+                                horizontal: 10.w,
+                                vertical: 4.h,
                               ),
                               decoration: BoxDecoration(
                                 color: quest.difficultyTier == 'Rare'
@@ -379,7 +380,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                           : Colors.green.withValues(
                                               alpha: 0.1,
                                             )),
-                                borderRadius: BorderRadius.circular(12.r),
+                                borderRadius: BorderRadius.circular(8.r),
                                 border: Border.all(
                                   color: quest.difficultyTier == 'Rare'
                                       ? AppColors.gameIncorrect.withValues(
@@ -408,21 +409,21 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                         : (quest.difficultyTier == 'Advanced'
                                               ? Colors.orangeAccent
                                               : AppColors.gameCorrect),
-                                    size: 14.r,
+                                    size: 13.r,
                                   ),
                                   SizedBox(width: 4.w),
                                   Text(
                                     quest.difficultyTier!.toUpperCase(),
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
-                                      fontSize: 10.sp,
-                                      fontWeight: FontWeight.w900,
+                                      fontSize: 11.sp,
+                                      fontWeight: FontWeight.w600,
                                       color: quest.difficultyTier == 'Rare'
                                           ? AppColors.gameIncorrect
                                           : (quest.difficultyTier == 'Advanced'
                                                 ? Colors.orangeAccent
                                                 : AppColors.gameCorrect),
-                                      letterSpacing: 1.5,
+                                      letterSpacing: 0.5,
                                     ),
                                   ),
                                 ],
@@ -462,12 +463,12 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                       ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
-                                        fontSize: 10.sp,
-                                        fontWeight: FontWeight.bold,
+                                        fontSize: 11.sp,
+                                        fontWeight: FontWeight.w600,
                                         color: isDark
-                                            ? Colors.white54
-                                            : Colors.black54,
-                                        letterSpacing: 1.5,
+                                            ? Colors.white70
+                                            : AppColors.slate600,
+                                        letterSpacing: 0.5,
                                       ),
                                     ),
                                     Text(
@@ -475,7 +476,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 12.sp,
-                                        fontWeight: FontWeight.w900,
+                                        fontWeight: FontWeight.w700,
                                         color: color,
                                       ),
                                     ),
@@ -565,20 +566,20 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                       minHeight: 48,
                                     ),
                                     padding: EdgeInsets.symmetric(
-                                      vertical: isCompact ? 14.h : 20.h,
+                                      vertical: isCompact ? 14.h : 16.h,
                                     ),
                                     decoration: BoxDecoration(
                                       color: theme.primaryColor,
                                       borderRadius: BorderRadius.circular(
-                                        isCompact ? 16.r : 24.r,
+                                        16.r,
                                       ),
                                       boxShadow: [
                                         BoxShadow(
                                           color: theme.primaryColor.withValues(
-                                            alpha: 0.3,
+                                            alpha: 0.25,
                                           ),
-                                          blurRadius: isCompact ? 10 : 20,
-                                          offset: Offset(0, isCompact ? 5 : 10),
+                                          blurRadius: isCompact ? 8 : 12,
+                                          offset: Offset(0, isCompact ? 3 : 5),
                                         ),
                                       ],
                                     ),
@@ -590,10 +591,10 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                                         ),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
-                                          fontSize: isCompact ? 16.sp : 18.sp,
-                                          fontWeight: FontWeight.w900,
+                                          fontSize: isCompact ? 15.sp : 16.sp,
+                                          fontWeight: FontWeight.w600,
                                           color: Colors.white,
-                                          letterSpacing: isCompact ? 1.5 : 2,
+                                          letterSpacing: 0.8,
                                         ),
                                       ),
                                     ),

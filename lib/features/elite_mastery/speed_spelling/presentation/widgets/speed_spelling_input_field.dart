@@ -35,10 +35,11 @@ class SpeedSpellingInputField extends StatelessWidget {
     final correctColor = tokens?.gameCorrect ?? AppColors.gameCorrect;
     final incorrectColor = tokens?.gameIncorrect ?? AppColors.gameIncorrect;
     final showCorrectGlow = isCorrect == true;
+    final isCompact = MediaQuery.sizeOf(context).height < 650;
 
     return Container(
       key: const Key('speed_spelling_input_field'),
-      height: 100.h,
+      height: isCompact ? 76.h : 84.h,
       width: double.infinity,
       decoration: BoxDecoration(
         gradient: showCorrectGlow
@@ -54,15 +55,15 @@ class SpeedSpellingInputField extends StatelessWidget {
                 colors: [
                   isDark
                       ? Colors.white.withValues(alpha: 0.08)
-                      : Colors.black.withValues(alpha: 0.05),
+                      : Colors.black.withValues(alpha: 0.04),
                   isDark
                       ? Colors.white.withValues(alpha: 0.03)
-                      : Colors.black.withValues(alpha: 0.02),
+                      : Colors.black.withValues(alpha: 0.015),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
-        borderRadius: BorderRadius.circular(28.r),
+        borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
           color: (isAnswered || (isCorrect == false && attempts > 0))
               ? (isCorrect == true
@@ -70,24 +71,24 @@ class SpeedSpellingInputField extends StatelessWidget {
                     : incorrectColor.withValues(alpha: 0.6))
               : (isDark
                     ? Colors.white.withValues(alpha: 0.15)
-                    : Colors.black.withValues(alpha: 0.1)),
-          width: 2.5,
+                    : Colors.black.withValues(alpha: 0.08)),
+          width: 1.5,
         ),
         boxShadow: showCorrectGlow
             ? [
                 BoxShadow(
                   color: correctColor.withValues(alpha: 0.2),
-                  blurRadius: 30,
-                  spreadRadius: -5,
+                  blurRadius: 20,
+                  spreadRadius: -4,
                 ),
               ]
             : [
                 BoxShadow(
                   color: isDark
                       ? Colors.black.withValues(alpha: 0.2)
-                      : Colors.black.withValues(alpha: 0.05),
-                  blurRadius: 20,
-                  offset: const Offset(0, 10),
+                      : Colors.black.withValues(alpha: 0.04),
+                  blurRadius: 12,
+                  offset: const Offset(0, 4),
                 ),
               ],
       ),
@@ -95,37 +96,12 @@ class SpeedSpellingInputField extends StatelessWidget {
         children: [
           Center(
             child: Padding(
-              // FIX: was `EdgeInsets.only(left: 20.w, right: 90.w)` —
-              // asymmetric padding that deliberately reserves space for the
-              // trailing backspace/clear controls. Because it's asymmetric,
-              // it does NOT correctly mirror for RTL locales on its own;
-              // `EdgeInsetsDirectional` (paired with the matching
-              // `PositionedDirectional` fix below) keeps the reserved space
-              // on the correct (trailing/"end") side regardless of text
-              // direction.
               padding: EdgeInsetsDirectional.only(
-                start: 20.w,
-                // FIX: was `90.w` alone. The backspace/clear buttons below
-                // now floor at 48dp each for touch-target compliance
-                // (48 + 8 gap + 48 = 104 logical px minimum), which the
-                // original 90.w reservation is too narrow for — the
-                // buttons could visually crowd the spelled-word text.
-                // `math.max` keeps the original, larger reservation on
-                // bigger screens while guaranteeing enough room for the
-                // now-larger buttons everywhere else.
-                end: math.max(
-                  90.w,
-                  120.0,
-                ), // Safe space for Backspace + Clear buttons
+                start: 16.w,
+                end: math.max(90.w, 116.0),
               ),
               child: FittedBox(
                 fit: BoxFit.scaleDown,
-                // FIX: nothing here previously told a screen-reader user
-                // what they'd spelled so far — the only feedback was visual.
-                // `liveRegion: true` announces the running input every time
-                // it changes, which matters more for this game than most:
-                // there's no other way to know what's been typed without
-                // sight, since the deck shows letters, not the built word.
                 child: Semantics(
                   liveRegion: true,
                   label: currentInput.isEmpty
@@ -143,19 +119,17 @@ class SpeedSpellingInputField extends StatelessWidget {
                     currentInput,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 36.sp,
-                      fontWeight: FontWeight.w900,
+                      fontSize: 26.sp,
+                      fontWeight: FontWeight.w700,
                       color: showCorrectGlow
                           ? correctColor
                           : (isDark ? primaryColor : AppColors.slate900),
-                      letterSpacing: 6,
+                      letterSpacing: 4,
                       shadows: showCorrectGlow
                           ? [
                               Shadow(
-                                color: correctColor.withValues(
-                                  alpha: 0.5,
-                                ),
-                                blurRadius: 20,
+                                color: correctColor.withValues(alpha: 0.4),
+                                blurRadius: 12,
                               ),
                             ]
                           : [],
@@ -185,11 +159,6 @@ class SpeedSpellingInputField extends StatelessWidget {
                         key: const Key('speed_spelling_backspace_button'),
                         onTap: onBackspace,
                         debounceDuration: Duration.zero,
-                        // FIX: 8.r padding + 18.r icon ≈ 34 logical px,
-                        // under the 48dp touch-target minimum. Growing only
-                        // the invisible tappable area, not the visible
-                        // circle, via the same ConstrainedBox+Center
-                        // pattern used elsewhere in this review.
                         child: ConstrainedBox(
                           constraints: const BoxConstraints(
                             minWidth: 48,
@@ -199,14 +168,16 @@ class SpeedSpellingInputField extends StatelessWidget {
                             child: Container(
                               padding: EdgeInsets.all(8.r),
                               decoration: BoxDecoration(
-                                color: Colors.white.withValues(alpha: 0.15),
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.12)
+                                    : AppColors.slate100,
                                 shape: BoxShape.circle,
                               ),
                               child: Icon(
                                 Icons.backspace_rounded,
                                 color: isDark
                                     ? Colors.white
-                                    : AppColors.slate900,
+                                    : AppColors.slate800,
                                 size: 18.r,
                               ),
                             ),
@@ -235,14 +206,16 @@ class SpeedSpellingInputField extends StatelessWidget {
                             child: Container(
                               padding: EdgeInsets.all(8.r),
                               decoration: BoxDecoration(
-                                color: Colors.white.withValues(alpha: 0.15),
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.12)
+                                    : AppColors.slate100,
                                 shape: BoxShape.circle,
                               ),
                               child: Icon(
                                 Icons.refresh_rounded,
                                 color: isDark
                                     ? Colors.white
-                                    : AppColors.slate900,
+                                    : AppColors.slate800,
                                 size: 18.r,
                               ),
                             ),

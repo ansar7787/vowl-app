@@ -30,16 +30,15 @@ class AccentSelfEvaluationPanel extends StatelessWidget {
           runSpacing: 4.h,
           children: [
             Text(
-              "PHASE 2: SPEAKING",
+              "YOUR TURN TO SPEAK",
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1.5,
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w700,
+                letterSpacing: 1.2,
                 color: primaryColor,
               ),
             ),
-            
           ],
         ),
         if (textToSpeak.trim().isNotEmpty) ...[
@@ -47,18 +46,19 @@ class AccentSelfEvaluationPanel extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
             decoration: BoxDecoration(
-              color: primaryColor.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(12.r),
-              border: Border.all(color: primaryColor.withValues(alpha: 0.3)),
+              color: primaryColor.withValues(alpha: 0.08),
+              borderRadius: BorderRadius.circular(14.r),
+              border: Border.all(color: primaryColor.withValues(alpha: 0.25)),
             ),
             child: Text(
               '"$textToSpeak"',
               textAlign: TextAlign.center,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: textToSpeak.length > 30 ? 16.sp : 18.sp,
+                fontSize: textToSpeak.length > 30 ? 15.sp : 17.sp,
                 fontWeight: FontWeight.w600,
-                height: 1.3,
+                height: 1.35,
               ),
             ),
           ),

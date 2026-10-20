@@ -22,8 +22,8 @@ class SpeedSpellingCharacterDeck extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      spacing: 12.w,
-      runSpacing: 12.h,
+      spacing: 10.w,
+      runSpacing: 10.h,
       alignment: WrapAlignment.center,
       children: List.generate(shuffledChars.length, (index) {
         final char = shuffledChars[index];
@@ -50,36 +50,36 @@ class SpeedSpellingCharacterDeck extends StatelessWidget {
             onTap: char == "" ? null : () => onCharTap(char, index),
             child:
                 Container(
-                      width: math.max(54.r, 48.0),
-                      height: math.max(54.r, 48.0),
+                      width: math.max(50.r, 48.0),
+                      height: math.max(50.r, 48.0),
                       decoration: BoxDecoration(
                         color: char == ""
                             ? (isDark
-                                  ? Colors.white.withValues(alpha: 0.02)
-                                  : Colors.black.withValues(alpha: 0.02))
+                                  ? Colors.white.withValues(alpha: 0.03)
+                                  : AppColors.slate100.withValues(alpha: 0.6))
                             : (isDark
                                   ? Colors.white.withValues(alpha: 0.12)
                                   : Colors.white),
-                        borderRadius: BorderRadius.circular(18.r),
+                        borderRadius: BorderRadius.circular(12.r),
                         border: Border.all(
                           color: char == ""
                               ? (isDark
-                                    ? Colors.white.withValues(alpha: 0.05)
-                                    : Colors.black.withValues(alpha: 0.05))
+                                    ? Colors.white.withValues(alpha: 0.06)
+                                    : AppColors.slate200)
                               : (isDark
-                                    ? Colors.white.withValues(alpha: 0.2)
-                                    : Colors.black.withValues(alpha: 0.08)),
-                          width: 1.5,
+                                    ? Colors.white.withValues(alpha: 0.18)
+                                    : AppColors.slate200),
+                          width: 1.2,
                         ),
                         boxShadow: char == ""
                             ? []
                             : [
                                 BoxShadow(
                                   color: isDark
-                                      ? Colors.black.withValues(alpha: 0.3)
-                                      : Colors.black.withValues(alpha: 0.08),
-                                  blurRadius: 12,
-                                  offset: const Offset(0, 6),
+                                      ? Colors.black.withValues(alpha: 0.25)
+                                      : Colors.black.withValues(alpha: 0.06),
+                                  blurRadius: 6,
+                                  offset: const Offset(0, 2),
                                 ),
                               ],
                       ),
@@ -88,8 +88,8 @@ class SpeedSpellingCharacterDeck extends StatelessWidget {
                           char,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 22.sp,
-                            fontWeight: FontWeight.w900,
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w700,
                             color: isDark ? Colors.white : AppColors.slate800,
                           ),
                         ),
@@ -98,11 +98,11 @@ class SpeedSpellingCharacterDeck extends StatelessWidget {
                     .animate(target: char == "" ? 1 : 0)
                     .scaleXY(
                       begin: 1.0,
-                      end: 0.8,
-                      duration: 250.ms,
+                      end: 0.85,
+                      duration: 200.ms,
                       curve: Curves.easeOutBack,
                     )
-                    .fade(begin: 1.0, end: 0.3, duration: 200.ms),
+                    .fade(begin: 1.0, end: 0.35, duration: 200.ms),
           ),
         );
       }),

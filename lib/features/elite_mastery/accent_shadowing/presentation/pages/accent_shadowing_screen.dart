@@ -339,10 +339,10 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                                 key: const Key('accent_shadowing_instruction_banner'),
                                 width: double.infinity,
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: 20.w,
-                                  vertical: 16.h,
+                                  horizontal: 18.w,
+                                  vertical: 12.h,
                                 ),
-                                margin: EdgeInsets.only(bottom: 24.h),
+                                margin: EdgeInsets.only(bottom: 16.h),
                                 decoration: BoxDecoration(
                                   color: isDark
                                       ? AppColors.slate800
@@ -351,49 +351,38 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                                   border: Border.all(
                                     color: isDark
                                         ? theme.primaryColor.withValues(
-                                            alpha: 0.3,
+                                            alpha: 0.25,
                                           )
                                         : theme.primaryColor.withValues(
-                                            alpha: 0.2,
+                                            alpha: 0.15,
                                           ),
                                     width: 1.5,
                                   ),
                                   boxShadow: [
                                     BoxShadow(
                                       color: isDark
-                                          ? Colors.black.withValues(alpha: 0.2)
+                                          ? Colors.black.withValues(alpha: 0.15)
                                           : theme.primaryColor.withValues(
-                                              alpha: 0.05,
+                                              alpha: 0.04,
                                             ),
-                                      blurRadius: 10,
-                                      offset: const Offset(0, 4),
+                                      blurRadius: 8,
+                                      offset: const Offset(0, 3),
                                     ),
                                   ],
                                 ),
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.lightbulb_outline_rounded,
-                                      color: theme.primaryColor,
-                                      size: 24.r,
-                                    ),
-                                    SizedBox(width: 12.w),
-                                    Expanded(
-                                      child: Text(
-                                        quest.instruction,
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 16.sp,
-                                          fontWeight: FontWeight.w700,
-                                          color: isDark
-                                              ? Colors.white
-                                              : AppColors.slate800,
-                                          height: 1.4,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                                child: Text(
+                                  quest.instruction,
+                                  textAlign: TextAlign.center,
+                                  softWrap: true,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: isCompact ? 13.sp : 14.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: isDark
+                                        ? Colors.white.withValues(alpha: 0.95)
+                                        : AppColors.slate800,
+                                    height: 1.4,
+                                  ),
                                 ),
                               ),
                             ],
@@ -484,14 +473,17 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
               if (isFirstStagePassedNotifier.value && !isAnsweredNotifier.value)
                 SliverToBoxAdapter(
                   child: Padding(
-                    padding: EdgeInsets.only(top: 24.h, bottom: 24.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 16.h,
+                    ),
                     child: SpeakToConfirmOverlay(
                       expectedText: targetText ?? "",
                       displayText: targetText ?? "",
                       title: 'SPEAK TO SHADOW',
-                      subtitle: 'Shadow the native pronunciation',
+                      subtitle: 'Speak naturally and match what you heard',
                       displayFontSize: 16.sp,
-                      displayFontWeight: FontWeight.w500,
+                      displayFontWeight: FontWeight.w600,
                       displayTextAlign: TextAlign.center,
                       primaryColor: theme.primaryColor,
                       isPositioned: false,
@@ -539,13 +531,13 @@ class AccentShadowingInsightsPanel extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(20.w),
+      padding: EdgeInsets.all(18.w),
       margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: isDark ? AppColors.slate800 : Colors.white,
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
-          color: primaryColor.withValues(alpha: 0.3),
+          color: primaryColor.withValues(alpha: 0.25),
           width: 1.5,
         ),
         boxShadow: [
@@ -564,25 +556,25 @@ class AccentShadowingInsightsPanel extends StatelessWidget {
           Row(
             children: [
               Icon(
-                Icons.tips_and_updates_rounded,
+                Icons.lightbulb_outline_rounded,
                 color: primaryColor,
-                size: 24.r,
+                size: 22.r,
               ),
               SizedBox(width: 8.w),
               Expanded(
                 child: Text(
-                  'Pedagogical Insights',
+                  'Pronunciation Notes',
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w800,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w700,
                     color: isDark ? Colors.white : AppColors.slate800,
                   ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 16.h),
+          SizedBox(height: 14.h),
           if (quest.targetAccent != null)
             _buildInsightRow(
               context,
@@ -594,28 +586,28 @@ class AccentShadowingInsightsPanel extends StatelessWidget {
             _buildInsightRow(
               context,
               icon: Icons.rule_rounded,
-              label: 'Phonetic Rule',
+              label: 'Sound Pattern',
               value: quest.shadowingFocus!,
             ),
           if (quest.usageContext != null)
             _buildInsightRow(
               context,
               icon: Icons.chat_bubble_outline_rounded,
-              label: 'Usage Context',
+              label: 'Everyday Context',
               value: quest.usageContext!,
             ),
           if (quest.spellingRule != null)
             _buildInsightRow(
               context,
               icon: Icons.spellcheck_rounded,
-              label: 'Spelling Pattern',
+              label: 'Spelling Note',
               value: quest.spellingRule!,
             ),
           if (quest.sequenceLogic != null)
             _buildInsightRow(
               context,
               icon: Icons.low_priority_rounded,
-              label: 'Sequence Logic',
+              label: 'Speech Flow',
               value: quest.sequenceLogic!,
             ),
           if (quest.explanation != null)
@@ -641,8 +633,8 @@ class AccentShadowingInsightsPanel extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, color: primaryColor.withValues(alpha: 0.7), size: 20.r),
-          SizedBox(width: 12.w),
+          Icon(icon, color: primaryColor.withValues(alpha: 0.7), size: 18.r),
+          SizedBox(width: 10.w),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -651,20 +643,21 @@ class AccentShadowingInsightsPanel extends StatelessWidget {
                   label,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w700,
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w600,
                     color: primaryColor,
-                    letterSpacing: 0.5,
+                    letterSpacing: 0.4,
                   ),
                 ),
-                SizedBox(height: 4.h),
+                SizedBox(height: 3.h),
                 Text(
                   value,
+                  softWrap: true,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w500,
-                    color: isDark ? Colors.white70 : AppColors.slate600,
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w400,
+                    color: isDark ? Colors.white.withValues(alpha: 0.85) : AppColors.slate700,
                     height: 1.4,
                   ),
                 ),

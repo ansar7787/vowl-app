@@ -2,6 +2,7 @@ import '../../../domain/entities/elite_mastery_quest.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -187,6 +188,19 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
     }
   }
 
+  String _formatSequenceLogic(String logic) {
+    final lower = logic.toLowerCase().trim();
+    if (lower.contains('prerequisite')) return 'Step-by-step order';
+    if (lower.contains('chronological')) return 'Time order';
+    if (lower.contains('problem')) return 'Problem & solution';
+    if (lower.contains('preparation')) return 'Step-by-step';
+    if (lower.contains('attempt')) return 'Action & outcome';
+    if (lower.contains('information')) return 'Action & outcome';
+    if (lower.contains('discovery')) return 'Cause & effect';
+    if (lower.contains('cause and effect')) return 'Cause & effect';
+    return logic.replaceAll('->', '➔').replaceAll('→', '➔').trim();
+  }
+
   void _submitVerbalEvaluation(bool nailedIt, EliteMasteryQuest quest) {
     if (isAnsweredNotifier.value) return;
 
@@ -202,7 +216,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
               quest.sentences!.isNotEmpty &&
               quest.correctOrder != null)
           ? quest.correctOrder!.map((i) => quest.sentences![i]).join(' ')
-          : "Narrate the story";
+          : "Read the story aloud";
 
       submitWrongAnswer(
         quest: quest.copyWith(
@@ -420,8 +434,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                   ),
                                   width: double.infinity,
                                   padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
-                                    vertical: 12.h,
+                                    horizontal: 20.w,
+                                    vertical: 14.h,
                                   ),
                                   decoration: BoxDecoration(
                                     color: isDark
@@ -448,18 +462,19 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                   child: Text(
                                     quest.instruction,
                                     textAlign: TextAlign.center,
+                                    softWrap: true,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
-                                      fontSize: isCompact ? 12.sp : 13.sp,
-                                      fontWeight: FontWeight.w400,
+                                      fontSize: isCompact ? 13.sp : 14.sp,
+                                      fontWeight: FontWeight.w500,
                                       color: isDark
-                                          ? Colors.white70
-                                          : Colors.black87,
-                                      height: 1.4,
+                                          ? Colors.white
+                                          : AppColors.slate900,
+                                      height: 1.45,
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: isCompact ? 12.h : 20.h),
+                                SizedBox(height: isCompact ? 12.h : 16.h),
                               ],
                               if (quest.plotStructure != null) ...[
                                 Container(
@@ -473,10 +488,10 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                     color: isDark
                                         ? Colors.white.withValues(alpha: 0.04)
                                         : Colors.black.withValues(alpha: 0.02),
-                                    borderRadius: BorderRadius.circular(12.r),
+                                    borderRadius: BorderRadius.circular(14.r),
                                     border: Border.all(
                                       color: theme.primaryColor.withValues(
-                                        alpha: 0.15,
+                                        alpha: 0.2,
                                       ),
                                     ),
                                   ),
@@ -487,19 +502,19 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                             MainAxisAlignment.center,
                                         children: [
                                           Icon(
-                                            Icons.timeline_rounded,
+                                            Icons.auto_stories_rounded,
                                             color: theme.primaryColor,
-                                            size: 14.r,
+                                            size: 16.r,
                                           ),
                                           SizedBox(width: 8.w),
                                           Text(
-                                            "NARRATIVE ARC",
+                                            "STORY FLOW",
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
-                                              fontSize: 10.sp,
-                                              fontWeight: FontWeight.bold,
+                                              fontSize: 12.sp,
+                                              fontWeight: FontWeight.w600,
                                               color: theme.primaryColor,
-                                              letterSpacing: 1.5,
+                                              letterSpacing: 0.8,
                                             ),
                                           ),
                                         ],
@@ -510,34 +525,48 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                             .split(RegExp(r',\s*'))
                                             .join(' ➔ '),
                                         textAlign: TextAlign.center,
+                                        softWrap: true,
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13.sp,
+                                          fontWeight: FontWeight.w600,
                                           color: isDark
-                                              ? Colors.white70
-                                              : Colors.black87,
+                                              ? Colors.white
+                                              : AppColors.slate900,
+                                          height: 1.4,
                                         ),
                                       ),
                                       if (quest.sequenceLogic != null) ...[
-                                        SizedBox(height: 6.h),
-                                        Text(
-                                          quest.sequenceLogic!.toUpperCase(),
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 9.sp,
-                                            fontWeight: FontWeight.bold,
+                                        SizedBox(height: 8.h),
+                                        Container(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 10.w,
+                                            vertical: 4.h,
+                                          ),
+                                          decoration: BoxDecoration(
                                             color: theme.primaryColor
-                                                .withValues(alpha: 0.7),
-                                            letterSpacing: 1.2,
+                                                .withValues(alpha: 0.1),
+                                            borderRadius:
+                                                BorderRadius.circular(8.r),
+                                          ),
+                                          child: Text(
+                                            _formatSequenceLogic(
+                                              quest.sequenceLogic!,
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 11.sp,
+                                              fontWeight: FontWeight.w600,
+                                              color: theme.primaryColor,
+                                            ),
                                           ),
                                         ),
                                       ],
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: isCompact ? 12.h : 20.h),
+                                SizedBox(height: isCompact ? 12.h : 16.h),
                               ],
                             ],
                           ),
@@ -632,7 +661,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                       button: true,
                                       label: context.tr(
                                         'games.finalize_story_caps',
-                                        fallback: 'FINALIZE STORY',
+                                        fallback: 'CHECK STORY',
                                       ),
                                       excludeSemantics: true,
                                       child: ScaleButton(
@@ -653,23 +682,23 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                               colors: [
                                                 theme.primaryColor,
                                                 theme.primaryColor.withValues(
-                                                  alpha: 0.8,
+                                                  alpha: 0.85,
                                                 ),
                                               ],
                                               begin: Alignment.topLeft,
                                               end: Alignment.bottomRight,
                                             ),
                                             borderRadius: BorderRadius.circular(
-                                              isCompact ? 14.r : 18.r,
+                                              isCompact ? 14.r : 16.r,
                                             ),
                                             boxShadow: [
                                               BoxShadow(
                                                 color: theme.primaryColor
-                                                    .withValues(alpha: 0.4),
-                                                blurRadius: isCompact ? 8 : 15,
+                                                    .withValues(alpha: 0.3),
+                                                blurRadius: isCompact ? 8 : 12,
                                                 offset: Offset(
                                                   0,
-                                                  isCompact ? 4 : 8,
+                                                  isCompact ? 3 : 6,
                                                 ),
                                               ),
                                             ],
@@ -678,18 +707,16 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                                             child: Text(
                                               context.tr(
                                                 'games.finalize_story_caps',
-                                                fallback: 'FINALIZE STORY',
+                                                fallback: 'CHECK STORY',
                                               ),
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
                                                 fontSize: isCompact
                                                     ? 15.sp
                                                     : 16.sp,
-                                                fontWeight: FontWeight.w800,
+                                                fontWeight: FontWeight.w700,
                                                 color: Colors.white,
-                                                letterSpacing: isCompact
-                                                    ? 1.5
-                                                    : 2.0,
+                                                letterSpacing: 0.8,
                                               ),
                                             ),
                                           ),
@@ -712,40 +739,43 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
                   if (isFirstStagePassedNotifier.value &&
                       !isAnsweredNotifier.value)
                     SliverToBoxAdapter(
-                      child: Column(
-                        children: [
-                          SpeakToConfirmOverlay(
-                            key: const Key('story_builder_speak_overlay'),
-                            expectedText:
-                                (quest.sentences != null &&
-                                    quest.sentences!.isNotEmpty &&
-                                    quest.correctOrder != null)
-                                ? quest.correctOrder!
-                                      .map((i) => quest.sentences![i])
-                                      .join(' ')
-                                : "Narrate the story",
-                            displayText:
-                                (quest.sentences != null &&
-                                    quest.sentences!.isNotEmpty &&
-                                    quest.correctOrder != null)
-                                ? quest.correctOrder!
-                                      .map((i) => quest.sentences![i])
-                                      .join(' ')
-                                : "Narrate the story",
-                            title: 'NARRATE THE STORY',
-                            subtitle: 'Read your completed story aloud',
-                            displayFontSize: 14.sp,
-                            displayFontWeight: FontWeight.w400,
-                            displayTextAlign: TextAlign.center,
-                            primaryColor: theme.primaryColor,
-                            isPositioned: false,
-                            onConfirmed: () =>
-                                _submitVerbalEvaluation(true, quest),
-                            onSkipped: () =>
-                                _submitVerbalEvaluation(false, quest),
-                          ),
-                          SizedBox(height: 60.h),
-                        ],
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: Column(
+                          children: [
+                            SpeakToConfirmOverlay(
+                              key: const Key('story_builder_speak_overlay'),
+                              expectedText:
+                                  (quest.sentences != null &&
+                                      quest.sentences!.isNotEmpty &&
+                                      quest.correctOrder != null)
+                                  ? quest.correctOrder!
+                                        .map((i) => quest.sentences![i])
+                                        .join(' ')
+                                  : "Read the story aloud",
+                              displayText:
+                                  (quest.sentences != null &&
+                                      quest.sentences!.isNotEmpty &&
+                                      quest.correctOrder != null)
+                                  ? quest.correctOrder!
+                                        .map((i) => quest.sentences![i])
+                                        .join(' ')
+                                  : "Read the story aloud",
+                              title: 'READ THE STORY',
+                              subtitle: 'Read your completed story aloud',
+                              displayFontSize: 15.sp,
+                              displayFontWeight: FontWeight.w500,
+                              displayTextAlign: TextAlign.center,
+                              primaryColor: theme.primaryColor,
+                              isPositioned: false,
+                              onConfirmed: () =>
+                                  _submitVerbalEvaluation(true, quest),
+                              onSkipped: () =>
+                                  _submitVerbalEvaluation(false, quest),
+                            ),
+                            SizedBox(height: 60.h),
+                          ],
+                        ),
                       ),
                     ),
                 ],

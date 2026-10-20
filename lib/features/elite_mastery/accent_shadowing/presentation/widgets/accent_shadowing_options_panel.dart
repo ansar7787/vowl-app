@@ -62,7 +62,7 @@ class AccentShadowingOptionsPanel extends StatelessWidget {
         );
 
         final optionWidget = Padding(
-          padding: EdgeInsets.only(bottom: 16.h),
+          padding: EdgeInsets.only(bottom: 12.h),
           child: Semantics(
             button: true,
             enabled: !isAnswered,
@@ -73,8 +73,8 @@ class AccentShadowingOptionsPanel extends StatelessWidget {
               key: Key('accent_shadowing_option_$index'),
               onTap: isAnswered ? null : () => onOptionSelected(index),
               child: GlassTile(
-                borderRadius: BorderRadius.circular(20.r),
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+                borderRadius: BorderRadius.circular(16.r),
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
                 usePremiumStyle: true,
                 showShadow: true,
                 color: isDark ? Colors.black.withValues(alpha: 0.3) : null,
@@ -118,16 +118,17 @@ class AccentShadowingOptionsPanel extends StatelessWidget {
                         size: 18.r,
                       ),
                     ),
-                    SizedBox(width: 16.w),
+                    SizedBox(width: 14.w),
                     Expanded(
                       child: Text(
                         option,
+                        softWrap: true,
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 15.sp,
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w600,
                           color: textColor,
-                          height: 1.3,
+                          height: 1.35,
                         ),
                       ),
                     ),

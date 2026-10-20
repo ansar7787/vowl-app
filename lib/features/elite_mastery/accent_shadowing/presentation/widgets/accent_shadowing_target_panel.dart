@@ -39,8 +39,8 @@ class AccentShadowingTargetPanel extends StatelessWidget {
         .toList();
 
     return GlassTile(
-      borderRadius: BorderRadius.circular(32.r),
-      padding: EdgeInsets.all(32.r),
+      borderRadius: BorderRadius.circular(20.r),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       border: (isAnswered || isErrorState)
           ? Border.all(
               color: isCorrect == true
@@ -68,13 +68,13 @@ class AccentShadowingTargetPanel extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(12.r),
                     decoration: BoxDecoration(
-                      color: primaryColor.withValues(alpha: 0.1),
+                      color: primaryColor.withValues(alpha: 0.12),
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
                       Icons.volume_up_rounded,
                       color: isDark ? primaryColor : AppColors.slate900,
-                      size: 32.r,
+                      size: 28.r,
                     ),
                   ),
                 ),
@@ -108,14 +108,15 @@ class AccentShadowingTargetPanel extends StatelessWidget {
           final isMatched = matchedIndices.contains(index);
           final wordText = Text(
             words[index],
+            softWrap: true,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 24.sp,
-              fontWeight: FontWeight.w900,
+              fontSize: 20.sp,
+              fontWeight: FontWeight.w700,
               color: isMatched
                   ? AppColors.gameCorrect
                   : (isDark ? Colors.white : AppColors.slate800),
-              height: 1.4,
+              height: 1.35,
             ),
           );
 
