@@ -24,6 +24,7 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/pages/find_word_meaning_screen.dart';
+import 'package:vowl/core/presentation/game_mechanics/arranging/context_sentence_builder.dart';
 
 class MockReadingBloc extends MockBloc<ReadingEvent, ReadingState>
     implements ReadingBloc {}
@@ -265,14 +266,17 @@ void main() {
       );
 
       // Verify Question Header
-      expect(find.text('TARGET MEANING'), findsOneWidget);
+      expect(find.text('DEFINITION'), findsOneWidget);
       expect(
         find.text('Showing great courage or determination in the face of danger.'),
         findsOneWidget,
       );
 
       // Verify Interactive Passage prompt
-      expect(find.text('Tap the matching word below:'), findsOneWidget);
+      expect(
+        find.text('Tap the word that matches the definition:'),
+        findsOneWidget,
+      );
 
       // Verify words in the passage
       expect(find.text('The'), findsWidgets);
@@ -440,7 +444,7 @@ void main() {
         (tester) async {
       await pumpFindWordMeaning(tester, themeMode: ThemeMode.dark);
 
-      expect(find.text('TARGET MEANING'), findsOneWidget);
+      expect(find.text('DEFINITION'), findsOneWidget);
       expect(find.text('valiant'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
@@ -453,8 +457,33 @@ void main() {
         height: 568,
       );
 
-      expect(find.text('TARGET MEANING'), findsOneWidget);
-      expect(find.text('Tap the matching word below:'), findsOneWidget);
+      expect(find.text('DEFINITION'), findsOneWidget);
+      expect(
+        find.text('Tap the word that matches the definition:'),
+        findsOneWidget,
+      );
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets(
+        '12. SentenceBuilder has proper standard padding and does not touch screen edges',
+        (tester) async {
+      await pumpFindWordMeaning(tester, width: 390, height: 844);
+
+      // Tap on correct target word
+      await tester.tap(find.text('valiant'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 600));
+
+      final sentenceBuilderFinder = find.byType(ContextSentenceBuilder);
+      expect(sentenceBuilderFinder, findsOneWidget);
+
+      final builderRect = tester.getRect(sentenceBuilderFinder);
+      // Verify standard padding: builder must not touch left (0) or right (390)
+      expect(builderRect.left, greaterThan(0));
+      expect(builderRect.right, lessThan(390));
+      expect(builderRect.left, closeTo(24, 2));
+      expect(390 - builderRect.right, closeTo(24, 2));
       expect(tester.takeException(), isNull);
     });
   });

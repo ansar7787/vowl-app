@@ -108,6 +108,10 @@ class InstructionHelper {
         gameTypeName == 'audio_sentence_order') {
       return 'Listen and arrange the words in order.';
     }
+    if (gameTypeName == 'sentenceOrderReading' ||
+        gameTypeName == 'sentence_order_reading') {
+      return 'Put the sentences in the correct order.';
+    }
     if (gameTypeName == 'soundImageMatch' ||
         gameTypeName == 'sound_image_match') {
       return 'Listen and choose the matching picture.';

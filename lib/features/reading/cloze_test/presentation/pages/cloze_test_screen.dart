@@ -159,7 +159,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen>
                         physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [
@@ -168,7 +168,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen>
                                     primaryColor: theme.primaryColor,
                                     instruction: quest.instruction,
                                   ),
-                                  SizedBox(height: 32.h),
+                                  SizedBox(height: 20.h),
 
                                   ClozeTestPneumaticPort(
                                     text: quest.passage ?? "",
@@ -188,11 +188,11 @@ class _ClozeTestScreenState extends State<ClozeTestScreen>
                           ),
                           SliverToBoxAdapter(
                             child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              padding: EdgeInsets.symmetric(horizontal: 20.w),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  SizedBox(height: 40.h),
+                                  SizedBox(height: 28.h),
                                   ClozeTestFuelCells(
                                     options: quest.options ?? [],
                                     color: theme.primaryColor,
@@ -206,8 +206,8 @@ class _ClozeTestScreenState extends State<ClozeTestScreen>
                                     height:
                                         (_pendingDockedOption.value != null &&
                                             !isAnsweredNotifier.value)
-                                        ? 24.h
-                                        : 60.h,
+                                        ? 20.h
+                                        : 48.h,
                                   ),
                                 ],
                               ),
@@ -218,7 +218,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen>
                               !isAnsweredNotifier.value)
                             SliverToBoxAdapter(
                               child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                padding: EdgeInsets.symmetric(horizontal: 20.w),
                                 child: DynamicAnagramWrapper(
                                   expectedText:
                                       _pendingDockedOption.value ?? "",
@@ -234,10 +234,10 @@ class _ClozeTestScreenState extends State<ClozeTestScreen>
                           SliverToBoxAdapter(
                             child: SizedBox(
                               height:
-                                  MediaQuery.of(context).viewInsets.bottom > 0
-                                  ? MediaQuery.of(context).viewInsets.bottom +
+                                  MediaQuery.viewInsetsOf(context).bottom > 0
+                                  ? MediaQuery.viewInsetsOf(context).bottom +
                                         40.h
-                                  : 120.h,
+                                  : 100.h,
                             ),
                           ),
                         ],

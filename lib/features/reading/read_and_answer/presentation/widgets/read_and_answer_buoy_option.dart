@@ -7,11 +7,9 @@ class _LocalPalette {
   _LocalPalette._();
   static const Color color064e3b = Color(0xFF064E3B);
   static const Color colord1fae5 = Color(0xFFD1FAE5);
-  static const Color color34d399 = Color(0xFF34D399);
   static const Color color059669 = Color(0xFF059669);
   static const Color color7f1d1d = Color(0xFF7F1D1D);
   static const Color colorfee2e2 = Color(0xFFFEE2E2);
-  static const Color colorf87171 = Color(0xFFF87171);
   static const Color colordc2626 = Color(0xFFDC2626);
 }
 
@@ -58,33 +56,35 @@ class ReadAndAnswerBuoyOption extends StatelessWidget {
     // ---------------------------------------------------------------------------
     final Color cardBg;
     final Color borderCol;
-    final Color iconCol;
-    final IconData iconData;
+    final Color badgeBg;
+    final Color badgeTextColor;
 
     if (showAsCorrect) {
       cardBg = isDark ? _LocalPalette.color064e3b : _LocalPalette.colord1fae5;
       borderCol = AppColors.emerald500;
-      iconCol = isDark ? _LocalPalette.color34d399 : _LocalPalette.color059669;
-      iconData = Icons.check_circle_rounded;
+      badgeBg = isDark ? _LocalPalette.color059669 : AppColors.emerald500;
+      badgeTextColor = Colors.white;
     } else if (showAsWrong) {
       cardBg = isDark ? _LocalPalette.color7f1d1d : _LocalPalette.colorfee2e2;
       borderCol = AppColors.red500;
-      iconCol = isDark ? _LocalPalette.colorf87171 : _LocalPalette.colordc2626;
-      iconData = Icons.cancel_rounded;
+      badgeBg = isDark ? _LocalPalette.colordc2626 : AppColors.red500;
+      badgeTextColor = Colors.white;
     } else if (isSelected) {
       cardBg = isDark
           ? color.withValues(alpha: 0.15)
           : color.withValues(alpha: 0.08);
       borderCol = color;
-      iconCol = color;
-      iconData = Icons.radio_button_checked_rounded;
+      badgeBg = color;
+      badgeTextColor = Colors.white;
     } else {
-      cardBg = isDark ? Colors.white.withValues(alpha: 0.03) : Colors.white;
+      cardBg = isDark ? Colors.white.withValues(alpha: 0.04) : Colors.white;
       borderCol = isDark
           ? Colors.white.withValues(alpha: 0.08)
-          : Colors.black.withValues(alpha: 0.05);
-      iconCol = isDark ? Colors.white30 : Colors.black26;
-      iconData = Icons.radio_button_off_rounded;
+          : Colors.black.withValues(alpha: 0.06);
+      badgeBg = isDark
+          ? Colors.white.withValues(alpha: 0.08)
+          : color.withValues(alpha: 0.08);
+      badgeTextColor = isDark ? Colors.white70 : color;
     }
 
     // ---------------------------------------------------------------------------
@@ -109,59 +109,87 @@ class ReadAndAnswerBuoyOption extends StatelessWidget {
       return AnimatedContainer(
         duration: animDuration,
         padding: EdgeInsets.symmetric(
-          horizontal: isDraggingFeedback ? 16.w : 20.w,
-          vertical: isDraggingFeedback ? 14.h : 18.h,
+          horizontal: isDraggingFeedback ? 16.w : 16.w,
+          vertical: isDraggingFeedback ? 12.h : 14.h,
         ),
         decoration: BoxDecoration(
           color: isDraggingFeedback
               ? (isDark ? const Color(0xFF1E293B) : Colors.white)
               : cardBg,
-          borderRadius: BorderRadius.circular(20.r),
+          borderRadius: BorderRadius.circular(16.r),
           border: Border.all(
             color: isDraggingFeedback ? color : borderCol,
-            width: isDraggingFeedback ? 2.5 : 2,
+            width: (isSelected || isDraggingFeedback) ? 2.0 : 1.5,
           ),
           boxShadow: (isSelected && !isAnswered) || isDraggingFeedback
               ? [
                   BoxShadow(
-                    color: color.withValues(alpha: isDraggingFeedback ? 0.35 : 0.15),
-                    blurRadius: isDraggingFeedback ? 18 : 10,
-                    offset: Offset(0, isDraggingFeedback ? 6 : 4),
+                    color: color.withValues(
+                      alpha: isDraggingFeedback ? 0.35 : 0.15,
+                    ),
+                    blurRadius: isDraggingFeedback ? 16 : 8,
+                    offset: Offset(0, isDraggingFeedback ? 4 : 2),
                   ),
                 ]
               : [
                   BoxShadow(
                     color: isDark
-                        ? Colors.black.withValues(alpha: 0.1)
-                        : Colors.black.withValues(alpha: 0.02),
-                    blurRadius: 5,
+                        ? Colors.black.withValues(alpha: 0.15)
+                        : Colors.black.withValues(alpha: 0.03),
+                    blurRadius: 6,
                     offset: const Offset(0, 2),
                   ),
                 ],
         ),
         child: Row(
-          mainAxisSize: isDraggingFeedback ? MainAxisSize.min : MainAxisSize.max,
+          mainAxisSize:
+              isDraggingFeedback ? MainAxisSize.min : MainAxisSize.max,
           children: [
-            AnimatedSwitcher(
-              duration: animDuration,
-              child: ExcludeSemantics(
-                child: Icon(
-                  iconData,
-                  color: isDraggingFeedback ? color : iconCol,
-                  size: 22.r,
-                  key: ValueKey<IconData>(iconData),
+            // Letter badge or status icon
+            ExcludeSemantics(
+              child: AnimatedContainer(
+                duration: animDuration,
+                width: 28.r,
+                height: 28.r,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: badgeBg,
+                  shape: BoxShape.circle,
                 ),
+                child: showAsCorrect
+                    ? Icon(
+                        Icons.check_rounded,
+                        color: Colors.white,
+                        size: 16.r,
+                      )
+                    : showAsWrong
+                    ? Icon(
+                        Icons.close_rounded,
+                        color: Colors.white,
+                        size: 16.r,
+                      )
+                    : Text(
+                        _letter,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w600,
+                          color: badgeTextColor,
+                        ),
+                      ),
               ),
             ),
             SizedBox(width: 14.w),
-            Flexible(
+            Expanded(
               child: Text(
                 text,
+                softWrap: true,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+                  fontSize: 15.sp,
+                  fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
                   color: isDark ? Colors.white : AppColors.slate800,
+                  height: 1.35,
                 ),
               ),
             ),
@@ -171,7 +199,7 @@ class ReadAndAnswerBuoyOption extends StatelessWidget {
     }
 
     return Padding(
-      padding: EdgeInsets.only(bottom: 14.h),
+      padding: EdgeInsets.only(bottom: 10.h),
       child: Semantics(
         label: semanticLabel,
         button: !isAnswered, // Not interactive once answered

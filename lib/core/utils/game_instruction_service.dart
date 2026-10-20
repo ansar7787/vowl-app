@@ -693,14 +693,17 @@ class GameInstructionService {
           "PRO TIP: Don't get tricked by a word that only appeared once. A good title summarizes the entire text!",
     ),
     GameSubtype.readAndMatch: GameBriefing(
-      title: "Semantic Bridge",
-      icon: Icons.bolt_rounded,
+      title: "Read & Match",
+      icon: Icons.extension_rounded,
       objective:
-          "Connect related facts and concepts from the reading passage. Mastering reading comprehension allows you to quickly extract key information in the real world.",
-      rules: ["Bridge the gaps", "Use lasers to link", "Confirm relationships"],
-      actionText: "Bridge Gaps",
-      tip:
-          "Think about how concepts relate—is it cause and effect, or part and whole?",
+          "Connect the words on the left to their correct meanings on the right. Match all pairs to complete the level.",
+      rules: [
+        "Tap a word on the left",
+        "Tap its meaning on the right",
+        "Clear all matches to win",
+      ],
+      actionText: "Match Items",
+      tip: "Read each meaning carefully before tapping your match.",
     ),
     GameSubtype.paragraphSummary: GameBriefing(
       title: "Summary Sieve",

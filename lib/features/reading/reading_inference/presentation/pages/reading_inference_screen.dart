@@ -174,7 +174,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                         physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [
@@ -184,7 +184,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                                     instruction:
                                         InstructionHelper.getInstruction(quest),
                                   ),
-                                  SizedBox(height: 32.h),
+                                  SizedBox(height: 20.h),
 
                                   ListenableBuilder(
                                     listenable: Listenable.merge([
@@ -221,6 +221,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                                                     instruction:
                                                         'Highlight the clue words that gave you the answer!',
                                                     isPositioned: false,
+                                                    margin: EdgeInsets.zero,
                                                   )
                                                 : ReadingInferenceFoggyMirror(
                                                     key: const ValueKey(
@@ -254,11 +255,10 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                                                     _clarity.value = 1.0;
                                                   },
                                                   icon: Icon(
-                                                    Icons
-                                                        .accessibility_new_rounded,
-                                                    size: 14.sp,
+                                                    Icons.blur_off_rounded,
+                                                    size: 15.r,
                                                     color: theme.primaryColor
-                                                        .withValues(alpha: 0.7),
+                                                        .withValues(alpha: 0.8),
                                                   ),
                                                   label: Text(
                                                     'Auto-Clear Fog',
@@ -266,18 +266,18 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                                                       fontFamily: 'Outfit',
                                                       fontSize: 12.sp,
                                                       fontWeight:
-                                                          FontWeight.w700,
+                                                          FontWeight.w600,
                                                       color: theme.primaryColor
                                                           .withValues(
-                                                            alpha: 0.7,
+                                                            alpha: 0.8,
                                                           ),
                                                     ),
                                                   ),
                                                   style: TextButton.styleFrom(
                                                     padding:
                                                         EdgeInsets.symmetric(
-                                                          horizontal: 12.w,
-                                                          vertical: 8.h,
+                                                          horizontal: 10.w,
+                                                          vertical: 6.h,
                                                         ),
                                                     minimumSize: Size.zero,
                                                     tapTargetSize:
@@ -291,7 +291,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                                       );
                                     },
                                   ),
-                                  SizedBox(height: 24.h),
+                                  SizedBox(height: 20.h),
 
                                   ListenableBuilder(
                                     listenable: Listenable.merge([
@@ -305,12 +305,14 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                                       }
                                       return Text(
                                         quest.question ??
-                                            "Infer the hidden truth:",
+                                            "What can you infer from the passage?",
                                         textAlign: TextAlign.center,
+                                        softWrap: true,
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
-                                          fontSize: 18.sp,
+                                          fontSize: 17.sp,
                                           fontWeight: FontWeight.w700,
+                                          height: 1.35,
                                           color: Theme.of(
                                             context,
                                           ).colorScheme.onSurface,
@@ -322,13 +324,13 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                               ),
                             ),
                           ),
-                          SliverToBoxAdapter(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
+                            sliver: SliverToBoxAdapter(
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  SizedBox(height: 24.h),
+                                  SizedBox(height: 18.h),
                                   ListenableBuilder(
                                     listenable: Listenable.merge([
                                       _showEvidence,
@@ -387,7 +389,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
                                   MediaQuery.of(context).viewInsets.bottom > 0
                                   ? MediaQuery.of(context).viewInsets.bottom +
                                         40.h
-                                  : 240.h,
+                                  : 180.h,
                             ),
                           ),
                         ],

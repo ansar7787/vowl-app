@@ -23,27 +23,49 @@ class TrueFalseReadingStatement extends StatelessWidget {
       excludeSemantics: true,
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+        padding: EdgeInsets.all(18.r),
         decoration: BoxDecoration(
-          color: color.withValues(alpha: isDark ? 0.15 : 0.08),
+          color: color.withValues(alpha: isDark ? 0.12 : 0.05),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
-            color: color.withValues(alpha: isDark ? 0.4 : 0.2),
-            width: 2,
+            color: color.withValues(alpha: isDark ? 0.3 : 0.2),
+            width: 1.5,
           ),
+          boxShadow: [
+            BoxShadow(
+              color: color.withValues(alpha: isDark ? 0.04 : 0.05),
+              blurRadius: 16,
+              offset: const Offset(0, 4),
+            ),
+          ],
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(
-                  Icons.format_quote_rounded,
-                  color: color.withValues(alpha: 0.5),
-                  size: 28.r,
+                Row(
+                  children: [
+                    Icon(
+                      Icons.help_outline_rounded,
+                      size: 16.r,
+                      color: color.withValues(alpha: 0.8),
+                    ),
+                    SizedBox(width: 6.w),
+                    Text(
+                      'STATEMENT',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.5.sp,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 1.0,
+                        color: color.withValues(alpha: 0.85),
+                      ),
+                    ),
+                  ],
                 ),
-                if (onPlayAudio != null) ...[
-                  SizedBox(width: 8.w),
+                if (onPlayAudio != null)
                   GestureDetector(
                     key: const ValueKey('statement_audio_button'),
                     onTap: onPlayAudio,
@@ -56,19 +78,19 @@ class TrueFalseReadingStatement extends StatelessWidget {
                       ),
                     ),
                   ),
-                ],
               ],
             ),
-            SizedBox(height: 8.h),
+            SizedBox(height: 12.h),
             Text(
               statement,
               textAlign: TextAlign.center,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 20.sp,
-                height: 1.4,
-                fontWeight: FontWeight.w800,
-                color: isDark ? Colors.white : const Color(0xFF1E1E2C),
+                fontSize: 16.5.sp,
+                height: 1.45,
+                fontWeight: FontWeight.w600,
+                color: isDark ? Colors.white : const Color(0xFF1B1E2B),
               ),
             ),
           ],

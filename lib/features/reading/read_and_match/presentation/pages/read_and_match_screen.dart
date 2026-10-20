@@ -51,9 +51,31 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
   String? _currentQuestId;
   List<String> _shuffledKeys = [];
   List<String> _shuffledValues = [];
-  Map<String, Color> _colorMap = {};
+  final Map<String, int> _colorIndexMap = {};
 
   late final AnimationController _laserController;
+
+  static const List<Color> _lightMatchColors = [
+    Color(0xFF4F46E5), // Indigo
+    Color(0xFF0D9488), // Teal
+    Color(0xFFD97706), // Amber / Warm Orange
+    Color(0xFFE11D48), // Rose
+    Color(0xFF7C3AED), // Violet
+    Color(0xFF0284C7), // Sky Blue
+    Color(0xFF16A34A), // Emerald
+    Color(0xFFC026D3), // Fuchsia
+  ];
+
+  static const List<Color> _darkMatchColors = [
+    Color(0xFF818CF8), // Luminous Indigo
+    Color(0xFF2DD4BF), // Luminous Teal
+    Color(0xFFFBBF24), // Luminous Amber
+    Color(0xFFFB7185), // Luminous Rose
+    Color(0xFFA78BFA), // Luminous Violet
+    Color(0xFF38BDF8), // Luminous Sky Blue
+    Color(0xFF4ADE80), // Luminous Emerald
+    Color(0xFFE879F9), // Luminous Fuchsia
+  ];
 
   @override
   void dispose() {
@@ -64,17 +86,6 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
     disposeReadingGame();
     super.dispose();
   }
-
-  final List<Color> _matchColors = [
-    Colors.purpleAccent,
-    Colors.orangeAccent,
-    Colors.tealAccent,
-    Colors.pinkAccent,
-    Colors.cyanAccent,
-    Colors.amberAccent,
-    Colors.lightGreenAccent,
-    Colors.indigoAccent,
-  ];
 
   @override
   void initState() {
@@ -192,6 +203,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
+    final matchColors = isDark ? _darkMatchColors : _lightMatchColors;
 
     return BlocConsumer<ReadingBloc, ReadingState>(
       listenWhen: readingListenWhen,
@@ -207,9 +219,9 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
           _shuffledKeys = pairs.map((p) => p['key']!).toList()..shuffle();
           _shuffledValues = pairs.map((p) => p['value']!).toList()..shuffle();
 
-          _colorMap = {};
+          _colorIndexMap.clear();
           for (int i = 0; i < pairs.length; i++) {
-            _colorMap[pairs[i]['key']!] = _matchColors[i % _matchColors.length];
+            _colorIndexMap[pairs[i]['key']!] = i % matchColors.length;
           }
         }
 
@@ -221,7 +233,8 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
             : _shuffledValues;
 
         Color getColorForKey(String k) {
-          return _colorMap[k] ?? theme.primaryColor;
+          final idx = _colorIndexMap[k];
+          return idx != null ? matchColors[idx] : theme.primaryColor;
         }
 
         Color getColorForValue(String v) {
@@ -229,10 +242,24 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
             final key = _matches.value.entries
                 .firstWhere((e) => e.value == v)
                 .key;
-            return _colorMap[key] ?? theme.primaryColor;
+            final idx = _colorIndexMap[key];
+            return idx != null ? matchColors[idx] : theme.primaryColor;
           }
           return theme.primaryColor;
         }
+
+        final Map<String, Color> activeColorMap = {
+          for (final entry in _colorIndexMap.entries)
+            entry.key: matchColors[entry.value % matchColors.length],
+        };
+
+        // Determine column flex based on whether keys contain long text/sentences
+        final bool hasLongKeys = keys.any((k) {
+          final clean = k.replaceFirst(RegExp(r'^\[.*?\]\s*'), '');
+          return clean.length > 25;
+        });
+        final int leftFlex = hasLongKeys ? 1 : 4;
+        final int rightFlex = hasLongKeys ? 1 : 5;
 
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -268,17 +295,18 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                         physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 20.w),
+                            padding: EdgeInsets.symmetric(horizontal: 16.w),
                             sliver: SliverToBoxAdapter(
                               child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  SizedBox(height: 16.h),
+                                  SizedBox(height: 12.h),
                                   ReadAndMatchInstruction(
                                     primaryColor: theme.primaryColor,
                                     instruction:
                                         InstructionHelper.getInstruction(quest),
                                   ),
-                                  SizedBox(height: 32.h),
+                                  SizedBox(height: 20.h),
 
                                   // Interactive Canvas
                                   SizedBox(
@@ -290,7 +318,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                         getRect: _getRectOf,
                                         getKey: _getKeyFor,
                                         color: theme.primaryColor,
-                                        colorMap: _colorMap,
+                                        colorMap: activeColorMap,
                                         animationValue: _laserController.value,
                                       ),
                                       child: Row(
@@ -299,7 +327,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                         children: [
                                           // Left Keys Column
                                           Expanded(
-                                            flex: 2,
+                                            flex: leftFlex,
                                             child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
@@ -308,7 +336,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                                     (k) => Padding(
                                                       padding:
                                                           EdgeInsets.symmetric(
-                                                            vertical: 8.h,
+                                                            vertical: 6.h,
                                                           ),
                                                       child: ReadAndMatchTerminal(
                                                         key: _getKeyFor(k),
@@ -337,10 +365,10 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                                   .toList(),
                                             ),
                                           ),
-                                          SizedBox(width: 24.w),
+                                          SizedBox(width: 20.w),
                                           // Right Values Column
                                           Expanded(
-                                            flex: 3,
+                                            flex: rightFlex,
                                             child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
@@ -349,7 +377,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                                     (v) => Padding(
                                                       padding:
                                                           EdgeInsets.symmetric(
-                                                            vertical: 8.h,
+                                                            vertical: 6.h,
                                                           ),
                                                       child: ReadAndMatchTerminal(
                                                         key: _getKeyFor(v),
@@ -397,7 +425,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
                                   MediaQuery.of(context).viewInsets.bottom > 0
                                   ? MediaQuery.of(context).viewInsets.bottom +
                                         40.h
-                                  : 120.h,
+                                  : 100.h,
                             ),
                           ),
                         ],

@@ -132,22 +132,24 @@ class _FindWordMeaningInteractivePassageState
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+      padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 18.h),
       decoration: BoxDecoration(
         color: widget.isDark
-            ? Colors.black.withValues(alpha: 0.2)
-            : Colors.white.withValues(alpha: 0.8),
-        borderRadius: BorderRadius.circular(24.r),
+            ? Colors.white.withValues(alpha: 0.04)
+            : Colors.white.withValues(alpha: 0.9),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: widget.isDark
-              ? Colors.white.withValues(alpha: 0.1)
-              : widget.primaryColor.withValues(alpha: 0.15),
-          width: 1.5,
+              ? Colors.white.withValues(alpha: 0.08)
+              : widget.primaryColor.withValues(alpha: 0.16),
+          width: 1.2,
         ),
         boxShadow: [
           BoxShadow(
-            color: widget.primaryColor.withValues(alpha: 0.05),
-            blurRadius: 10,
+            color: widget.isDark
+                ? Colors.black.withValues(alpha: 0.2)
+                : widget.primaryColor.withValues(alpha: 0.05),
+            blurRadius: 12,
             offset: const Offset(0, 4),
           ),
         ],
@@ -160,18 +162,19 @@ class _FindWordMeaningInteractivePassageState
               Icon(
                 Icons.touch_app_rounded,
                 color: widget.primaryColor,
-                size: 24.sp,
+                size: 18.r,
               ),
               SizedBox(width: 8.w),
               Expanded(
                 child: Text(
-                  'Tap the matching word below:',
+                  'Tap the word that matches the definition:',
+                  softWrap: true,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 12.sp,
+                    fontSize: 13.sp,
                     fontWeight: FontWeight.w600,
                     color: widget.primaryColor,
-                    letterSpacing: 0.5,
+                    letterSpacing: 0.3,
                   ),
                 ),
               ),
@@ -179,8 +182,9 @@ class _FindWordMeaningInteractivePassageState
           ),
           SizedBox(height: 16.h),
           Wrap(
-            spacing: 6.w,
+            spacing: 5.w,
             runSpacing: 8.h,
+            crossAxisAlignment: WrapCrossAlignment.center,
             children: List.generate(_tokens.length, (index) {
               final token = _tokens[index];
               final isSelected = widget.selectedIndex == index;
@@ -198,17 +202,17 @@ class _FindWordMeaningInteractivePassageState
 
               final baseTextStyle = TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w400,
+                fontSize: 17.5.sp,
+                fontWeight: FontWeight.w500,
                 color: widget.isDark
-                    ? Colors.white.withValues(alpha: 0.9)
+                    ? Colors.white.withValues(alpha: 0.92)
                     : AppColors.slate800,
-                height: 1.4,
+                height: 1.45,
               );
 
               if (token.word.isEmpty) {
                 return Padding(
-                  padding: EdgeInsets.symmetric(vertical: 2.h),
+                  padding: EdgeInsets.symmetric(vertical: 3.5.h),
                   child: Text(
                     token.prefix + token.suffix,
                     style: baseTextStyle,
@@ -221,20 +225,25 @@ class _FindWordMeaningInteractivePassageState
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   if (token.prefix.isNotEmpty)
-                    Text(token.prefix, style: baseTextStyle),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 3.5.h),
+                      child: Text(token.prefix, style: baseTextStyle),
+                    ),
                   GestureDetector(
                     onTap: () => _onWordTap(index),
                     child: AnimatedContainer(
                       duration: const Duration(milliseconds: 200),
                       padding: EdgeInsets.symmetric(
-                        horizontal: 2.w,
-                        vertical: 2.h,
+                        horizontal: 6.w,
+                        vertical: 3.5.h,
                       ),
                       decoration: BoxDecoration(
                         color: isSelected
-                            ? activeColor.withValues(alpha: 0.2)
-                            : Colors.transparent,
-                        borderRadius: BorderRadius.circular(6.r),
+                            ? activeColor.withValues(alpha: 0.18)
+                            : (widget.isDark
+                                ? Colors.white.withValues(alpha: 0.04)
+                                : widget.primaryColor.withValues(alpha: 0.04)),
+                        borderRadius: BorderRadius.circular(8.r),
                         border: Border.all(
                           color: isSelected ? activeColor : Colors.transparent,
                           width: 1.5,
@@ -244,22 +253,25 @@ class _FindWordMeaningInteractivePassageState
                         token.word,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 18.sp,
+                          fontSize: 17.5.sp,
                           fontWeight: isSelected
-                              ? FontWeight.w600
-                              : FontWeight.w400,
+                              ? FontWeight.w700
+                              : FontWeight.w500,
                           color: isSelected
                               ? activeColor
                               : (widget.isDark
-                                    ? Colors.white.withValues(alpha: 0.9)
+                                    ? Colors.white.withValues(alpha: 0.92)
                                     : AppColors.slate800),
-                          height: 1.4,
+                          height: 1.45,
                         ),
                       ),
                     ),
                   ),
                   if (token.suffix.isNotEmpty)
-                    Text(token.suffix, style: baseTextStyle),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 3.5.h),
+                      child: Text(token.suffix, style: baseTextStyle),
+                    ),
                 ],
               );
             }),

@@ -542,6 +542,63 @@ void main() {
         findsOneWidget,
       );
     });
+
+    testWidgets(
+        '13. Instruction text has TextAlign.center and wraps cleanly',
+        (tester) async {
+      const longInstructionQuest = ReadingQuest(
+        id: 'RDG_READINGCONCLUSION_L1_Q_LONG',
+        instruction:
+            'Carefully analyze the short reading passage and select the single most logical conclusion supported by the text.',
+        difficulty: 1,
+        subtype: GameSubtype.readingConclusion,
+        passage: 'Sample passage text for testing instruction alignment.',
+        options: ['Option 1', 'Option 2'],
+        correctAnswer: 'Option 1',
+      );
+
+      await pumpReadingConclusion(
+        tester,
+        state: const ReadingLoaded(
+          quests: [longInstructionQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+        ),
+      );
+
+      final instructionTextFinder = find.descendant(
+        of: find.byType(ReadingConclusionInstruction),
+        matching: find.byType(Text),
+      );
+      expect(instructionTextFinder, findsOneWidget);
+
+      final textWidget = tester.widget<Text>(instructionTextFinder);
+      expect(textWidget.textAlign, TextAlign.center);
+      expect(textWidget.overflow, isNot(TextOverflow.ellipsis));
+    });
+
+    testWidgets(
+        '14. Option cards render clean letter indicators (A, B, C, D) without text truncation',
+        (tester) async {
+      await pumpReadingConclusion(tester);
+
+      expect(find.text('A'), findsOneWidget);
+      expect(find.text('B'), findsOneWidget);
+      expect(find.text('C'), findsOneWidget);
+      expect(find.text('D'), findsOneWidget);
+
+      // Verify no Text has ellipsis overflow in option cards
+      final optionTexts = tester.widgetList<Text>(
+        find.descendant(
+          of: find.byType(ReadingConclusionOptions),
+          matching: find.byType(Text),
+        ),
+      );
+      for (final text in optionTexts) {
+        expect(text.overflow, isNot(TextOverflow.ellipsis));
+      }
+    });
   });
 }
 

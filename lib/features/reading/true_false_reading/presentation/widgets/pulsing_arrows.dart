@@ -49,9 +49,9 @@ class _PulsingArrowsState extends State<PulsingArrows>
       animation: _controller,
       builder: (context, child) {
         return Opacity(
-          opacity: 0.3 + (_controller.value * 0.5),
+          opacity: 0.35 + (_controller.value * 0.45),
           child: Transform.translate(
-            offset: Offset((widget.isLeft ? -5.w : 5.w) * _controller.value, 0),
+            offset: Offset((widget.isLeft ? -4.w : 4.w) * _controller.value, 0),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -59,23 +59,23 @@ class _PulsingArrowsState extends State<PulsingArrows>
                   Icon(
                     Icons.chevron_left_rounded,
                     color: widget.color,
-                    size: 28.r,
+                    size: 22.r,
                   ),
                   Icon(
                     Icons.chevron_left_rounded,
                     color: widget.color,
-                    size: 28.r,
+                    size: 22.r,
                   ),
                 ] else ...[
                   Icon(
                     Icons.chevron_right_rounded,
                     color: widget.color,
-                    size: 28.r,
+                    size: 22.r,
                   ),
                   Icon(
                     Icons.chevron_right_rounded,
                     color: widget.color,
-                    size: 28.r,
+                    size: 22.r,
                   ),
                 ],
               ],

@@ -21,26 +21,27 @@ class ReadAndAnswerFloatingPassage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: 'Reading passage: $text. ${onPlayAudio != null ? "Double tap audio button to listen." : ""}',
+      label:
+          'Reading passage: $text. ${onPlayAudio != null ? "Double tap audio button to listen." : ""}',
       excludeSemantics: true,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 16.h),
         decoration: BoxDecoration(
-          color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.white,
-          borderRadius: BorderRadius.circular(24.r),
+          color: isDark ? Colors.white.withValues(alpha: 0.04) : Colors.white,
+          borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
             color: isDark
                 ? Colors.white.withValues(alpha: 0.08)
-                : Colors.black.withValues(alpha: 0.05),
+                : color.withValues(alpha: 0.12),
             width: 1.5,
           ),
           boxShadow: [
             BoxShadow(
               color: isDark
-                  ? Colors.black.withValues(alpha: 0.2)
+                  ? Colors.black.withValues(alpha: 0.25)
                   : Colors.black.withValues(alpha: 0.04),
-              blurRadius: 20,
-              offset: const Offset(0, 8),
+              blurRadius: 16,
+              offset: const Offset(0, 4),
             ),
           ],
         ),
@@ -54,19 +55,19 @@ class ReadAndAnswerFloatingPassage extends StatelessWidget {
                   Row(
                     children: [
                       Icon(
-                        Icons.menu_book_rounded,
+                        Icons.auto_stories_rounded,
                         size: 16.r,
-                        color: color.withValues(alpha: 0.7),
+                        color: color.withValues(alpha: 0.85),
                       ),
                       SizedBox(width: 6.w),
                       Text(
-                        'PASSAGE',
+                        'Passage',
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1.2,
-                          color: color.withValues(alpha: 0.8),
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: 0.5,
+                          color: color.withValues(alpha: 0.9),
                         ),
                       ),
                     ],
@@ -77,27 +78,36 @@ class ReadAndAnswerFloatingPassage extends StatelessWidget {
                     child: Material(
                       color: Colors.transparent,
                       child: InkWell(
-                        key: const ValueKey('read_and_answer_tts_passage_button'),
-                        borderRadius: BorderRadius.circular(20.r),
+                        key: const ValueKey(
+                          'read_and_answer_tts_passage_button',
+                        ),
+                        borderRadius: BorderRadius.circular(12.r),
                         onTap: onPlayAudio,
-                        child: Padding(
-                          padding: EdgeInsets.all(4.r),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8.w,
+                            vertical: 4.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: color.withValues(alpha: 0.08),
+                            borderRadius: BorderRadius.circular(12.r),
+                          ),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Icon(
                                 Icons.volume_up_rounded,
                                 color: color,
-                                size: 18.r,
+                                size: 16.r,
                               ),
                               SizedBox(width: 4.w),
                               Text(
-                                'LISTEN',
+                                'Listen',
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w700,
-                                  letterSpacing: 1,
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 0.3,
                                   color: color,
                                 ),
                               ),
@@ -109,7 +119,7 @@ class ReadAndAnswerFloatingPassage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h),
+              SizedBox(height: 12.h),
             ],
             if (activeWordNotifier != null)
               ValueListenableBuilder<String?>(
@@ -121,12 +131,13 @@ class ReadAndAnswerFloatingPassage extends StatelessWidget {
             else
               Text(
                 text,
+                softWrap: true,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 17.sp,
-                  height: 1.65,
+                  fontSize: 16.sp,
+                  height: 1.6,
                   color: isDark
-                      ? Colors.white.withValues(alpha: 0.9)
+                      ? Colors.white.withValues(alpha: 0.92)
                       : AppColors.slate800,
                   fontWeight: FontWeight.w400,
                 ),
@@ -136,16 +147,18 @@ class ReadAndAnswerFloatingPassage extends StatelessWidget {
       ),
     );
   }
+
   Widget _buildKaraokeText(String text, String? activeWord, bool isDark) {
     if (activeWord == null || activeWord.trim().isEmpty) {
       return Text(
         text,
+        softWrap: true,
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 17.sp,
-          height: 1.65,
+          fontSize: 16.sp,
+          height: 1.6,
           color: isDark
-              ? Colors.white.withValues(alpha: 0.9)
+              ? Colors.white.withValues(alpha: 0.92)
               : AppColors.slate800,
           fontWeight: FontWeight.w400,
         ),
@@ -159,10 +172,10 @@ class ReadAndAnswerFloatingPassage extends StatelessWidget {
       text: TextSpan(
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 17.sp,
-          height: 1.65,
+          fontSize: 16.sp,
+          height: 1.6,
           color: isDark
-              ? Colors.white.withValues(alpha: 0.9)
+              ? Colors.white.withValues(alpha: 0.92)
               : AppColors.slate800,
           fontWeight: FontWeight.w400,
         ),
@@ -176,9 +189,9 @@ class ReadAndAnswerFloatingPassage extends StatelessWidget {
             text: isLast ? token : '$token ',
             style: isMatch
                 ? TextStyle(
-                    backgroundColor: color.withValues(alpha: 0.28),
+                    backgroundColor: color.withValues(alpha: 0.25),
                     color: color,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                   )
                 : null,
           );

@@ -254,9 +254,9 @@ void main() {
         (tester) async {
       await pumpClozeTest(tester);
 
-      // Verify instruction pill (rendered uppercase)
+      // Verify instruction pill
       expect(
-        find.textContaining('FITS THE CONTEXT'),
+        find.textContaining('fits the context'),
         findsOneWidget,
       );
 

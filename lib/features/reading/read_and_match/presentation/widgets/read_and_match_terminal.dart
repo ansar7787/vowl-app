@@ -27,64 +27,107 @@ class ReadAndMatchTerminal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child:
-          AnimatedContainer(
-                duration: 300.milliseconds,
-                width: double.infinity,
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-                decoration: BoxDecoration(
-                  color: isMatched
-                      ? color.withValues(alpha: isDark ? 0.15 : 0.08)
-                      : (isActive
-                            ? color.withValues(alpha: isDark ? 0.3 : 0.15)
-                            : (isDark
-                                  ? Colors.white.withValues(alpha: 0.05)
-                                  : Colors.black.withValues(alpha: 0.04))),
-                  borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(
-                    color: isMatched || isActive
-                        ? color
-                        : (isDark ? Colors.white10 : Colors.black12),
-                    width: 2,
-                  ),
-                  boxShadow: [
-                    if (isMatched || isActive)
-                      BoxShadow(
-                        color: color.withValues(alpha: 0.25),
-                        blurRadius: 12,
-                        offset: const Offset(0, 4),
-                      ),
-                  ],
+    final cleanText = text.replaceFirst(RegExp(r'^\[.*?\]\s*'), '');
+    final isLong = cleanText.length > 32;
+    final isMedium = cleanText.length > 18;
+
+    final double fontSize = isLong
+        ? 13.sp
+        : (isMedium ? 13.5.sp : 14.5.sp);
+
+    final FontWeight fontWeight = isSource
+        ? (isLong ? FontWeight.w500 : FontWeight.w600)
+        : (isLong ? FontWeight.w400 : FontWeight.w500);
+
+    // Background color
+    final Color bgColor = isMatched
+        ? color.withValues(alpha: isDark ? 0.16 : 0.08)
+        : (isActive
+            ? color.withValues(alpha: isDark ? 0.22 : 0.12)
+            : (isDark
+                ? const Color(0xFF1E202E)
+                : Colors.white));
+
+    // Border color and width
+    final Color borderColor = isMatched || isActive
+        ? color
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.12)
+            : const Color(0xFFE2E8F0));
+
+    final double borderWidth = (isMatched || isActive) ? 2.0 : 1.5;
+
+    // Text color
+    final Color textColor = isMatched || isActive
+        ? (isDark ? Colors.white : color)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.92)
+            : const Color(0xFF1E293B));
+
+    return Semantics(
+      button: true,
+      label: cleanText,
+      selected: isActive,
+      child: GestureDetector(
+        onTap: onTap,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 250),
+          width: double.infinity,
+          constraints: BoxConstraints(minHeight: 52.h),
+          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
+          decoration: BoxDecoration(
+            color: bgColor,
+            borderRadius: BorderRadius.circular(14.r),
+            border: Border.all(
+              color: borderColor,
+              width: borderWidth,
+            ),
+            boxShadow: [
+              if (isMatched || isActive)
+                BoxShadow(
+                  color: color.withValues(alpha: isDark ? 0.35 : 0.2),
+                  blurRadius: 8,
+                  offset: const Offset(0, 3),
+                )
+              else
+                BoxShadow(
+                  color: isDark
+                      ? Colors.black.withValues(alpha: 0.25)
+                      : Colors.black.withValues(alpha: 0.04),
+                  blurRadius: 4,
+                  offset: const Offset(0, 2),
                 ),
-                child: Text(
-                  text.replaceFirst(RegExp(r'^\[.*?\]\s*'), ''),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 15.sp,
-                    color: isMatched || isActive
-                        ? (isDark ? Colors.white : color)
-                        : (isDark ? Colors.white70 : Colors.black87),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              )
-              .animate(
-                target: shouldPulse ? 1 : 0,
-                onPlay: (controller) {
-                  if (!VowlMotion.shouldReduceMotion(context)) {
-                    controller.repeat(reverse: true);
-                  }
-                },
-              )
-              .scaleXY(
-                begin: 1.0,
-                end: 1.015,
-                duration: 1.2.seconds,
-                curve: Curves.easeInOutSine,
-              ),
+            ],
+          ),
+          alignment: Alignment.center,
+          child: Text(
+            cleanText,
+            textAlign: TextAlign.center,
+            softWrap: true,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: fontSize,
+              height: 1.35,
+              color: textColor,
+              fontWeight: fontWeight,
+            ),
+          ),
+        )
+            .animate(
+              target: shouldPulse ? 1 : 0,
+              onPlay: (controller) {
+                if (!VowlMotion.shouldReduceMotion(context)) {
+                  controller.repeat(reverse: true);
+                }
+              },
+            )
+            .scaleXY(
+              begin: 1.0,
+              end: 1.015,
+              duration: 1.2.seconds,
+              curve: Curves.easeInOutSine,
+            ),
+      ),
     );
   }
 }

@@ -111,6 +111,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return BlocConsumer<ReadingBloc, ReadingState>(
       listenWhen: readingListenWhen,
@@ -158,9 +159,11 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : RawScrollbar(
                       controller: _mainScrollController,
-                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      thumbColor: theme.primaryColor.withValues(
+                        alpha: isDark ? 0.4 : 0.3,
+                      ),
                       radius: Radius.circular(8.r),
-                      thickness: 4.w,
+                      thickness: 3.w,
                       child: CustomScrollView(
                         controller: _mainScrollController,
                         physics: const BouncingScrollPhysics(),
@@ -170,7 +173,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [
-                                  SizedBox(height: 16.h),
+                                  SizedBox(height: 12.h),
                                   SkimmingScanningTargetBadge(
                                     item:
                                         quest.targetInfo ??
@@ -178,7 +181,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                         "",
                                     color: theme.primaryColor,
                                   ),
-                                  SizedBox(height: 16.h),
+                                  SizedBox(height: 12.h),
 
                                   if (!isAnsweredNotifier.value)
                                     SpeedChallengeTimer(
@@ -189,24 +192,33 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                           _submitIncorrectAnswer(quest),
                                     ),
 
-                                  SizedBox(height: 16.h),
+                                  if (!isAnsweredNotifier.value)
+                                    SizedBox(height: 12.h),
 
                                   // Instruction Card
                                   Container(
                                     width: double.infinity,
                                     padding: EdgeInsets.symmetric(
                                       horizontal: 16.w,
-                                      vertical: 12.h,
+                                      vertical: 11.h,
                                     ),
                                     decoration: BoxDecoration(
-                                      color: theme.primaryColor.withValues(
-                                        alpha: 0.1,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.r),
+                                      color: isAnsweredNotifier.value
+                                          ? tokens.gameCorrect.withValues(
+                                              alpha: isDark ? 0.15 : 0.08,
+                                            )
+                                          : theme.primaryColor.withValues(
+                                              alpha: isDark ? 0.12 : 0.06,
+                                            ),
+                                      borderRadius: BorderRadius.circular(16.r),
                                       border: Border.all(
-                                        color: theme.primaryColor.withValues(
-                                          alpha: 0.3,
-                                        ),
+                                        color: (isAnsweredNotifier.value
+                                                ? tokens.gameCorrect
+                                                : theme.primaryColor)
+                                            .withValues(
+                                              alpha: isDark ? 0.35 : 0.2,
+                                            ),
+                                        width: 1.2,
                                       ),
                                     ),
                                     child: Text(
@@ -216,17 +228,24 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                               quest,
                                             ),
                                       textAlign: TextAlign.center,
+                                      softWrap: true,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         color: isAnsweredNotifier.value
                                             ? tokens.gameCorrect
-                                            : theme.primaryColor,
-                                        fontSize: 13.sp,
+                                            : (isDark
+                                                ? Colors.white.withValues(
+                                                    alpha: 0.95,
+                                                  )
+                                                : theme.primaryColor),
+                                        fontSize: 13.5.sp,
                                         fontWeight: FontWeight.w600,
+                                        height: 1.4,
+                                        letterSpacing: 0.3,
                                       ),
                                     ),
                                   ),
-                                  SizedBox(height: 16.h),
+                                  SizedBox(height: 10.h),
 
                                   // Interaction Prompt
                                   if (!isAnsweredNotifier.value)
@@ -238,23 +257,28 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Icon(
-                                            Icons.touch_app,
-                                            color: Colors.grey,
-                                            size: 16.r,
+                                            Icons.touch_app_rounded,
+                                            color: isDark
+                                                ? Colors.white60
+                                                : const Color(0xFF64748B),
+                                            size: 15.r,
                                           ),
                                           SizedBox(width: 6.w),
                                           Flexible(
                                             child: Text(
                                               "Tap the target in the text below",
+                                              textAlign: TextAlign.center,
+                                              softWrap: true,
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
-                                                color: Colors.grey,
-                                                fontSize: 12.sp,
-                                                fontWeight: FontWeight.bold,
-                                                letterSpacing: 0.5,
+                                                color: isDark
+                                                    ? Colors.white60
+                                                    : const Color(0xFF64748B),
+                                                fontSize: 12.5.sp,
+                                                fontWeight: FontWeight.w500,
+                                                letterSpacing: 0.2,
+                                                height: 1.35,
                                               ),
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
                                             ),
                                           ),
                                         ],

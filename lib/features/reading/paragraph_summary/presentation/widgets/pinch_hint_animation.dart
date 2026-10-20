@@ -11,83 +11,61 @@ class PinchHintAnimation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return IgnorePointer(
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-                width: 48.r,
-                height: 48.r,
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.3),
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: color.withValues(alpha: 0.8),
-                    width: 2,
-                  ),
-                ),
-                child: Icon(
-                  Icons.arrow_forward_rounded,
-                  color: color,
-                  size: 24.r,
-                ),
-              )
-              .animate(
-                onPlay: (controller) {
-                  if (!reduceMotion) controller.repeat();
-                },
-              )
-              .fadeIn(duration: 400.ms)
-              .moveX(
-                begin: -80.w,
-                end: -10.w,
-                duration: 1200.ms,
-                curve: Curves.easeInOutCubic,
-              )
-              .scale(
-                begin: const Offset(1.2, 1.2),
-                end: const Offset(0.8, 0.8),
-                duration: 1200.ms,
-                curve: Curves.easeInOutCubic,
-              )
-              .fadeOut(delay: 800.ms, duration: 400.ms),
-          SizedBox(width: 40.w),
-          Container(
-                width: 48.r,
-                height: 48.r,
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.3),
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: color.withValues(alpha: 0.8),
-                    width: 2,
-                  ),
-                ),
-                child: Icon(Icons.arrow_back_rounded, color: color, size: 24.r),
-              )
-              .animate(
-                onPlay: (controller) {
-                  if (!reduceMotion) controller.repeat();
-                },
-              )
-              .fadeIn(duration: 400.ms)
-              .moveX(
-                begin: 80.w,
-                end: 10.w,
-                duration: 1200.ms,
-                curve: Curves.easeInOutCubic,
-              )
-              .scale(
-                begin: const Offset(1.2, 1.2),
-                end: const Offset(0.8, 0.8),
-                duration: 1200.ms,
-                curve: Curves.easeInOutCubic,
-              )
-              .fadeOut(delay: 800.ms, duration: 400.ms),
-        ],
-      ),
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+        decoration: BoxDecoration(
+          color: (isDark ? const Color(0xFF1E293B) : Colors.white)
+              .withValues(alpha: 0.92),
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(
+            color: color.withValues(alpha: 0.4),
+            width: 1.2,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.1),
+              blurRadius: 10,
+              offset: const Offset(0, 3),
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.pinch_rounded,
+              color: color,
+              size: 18.r,
+            ),
+            SizedBox(width: 8.w),
+            Text(
+              'Pinch or tap to reveal',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w600,
+                color: color,
+                letterSpacing: 0.3,
+              ),
+            ),
+          ],
+        ),
+      )
+          .animate(
+            onPlay: (controller) {
+              if (!reduceMotion) controller.repeat(reverse: true);
+            },
+          )
+          .scale(
+            begin: const Offset(0.96, 0.96),
+            end: const Offset(1.03, 1.03),
+            duration: 900.ms,
+            curve: Curves.easeInOut,
+          ),
     );
   }
 }

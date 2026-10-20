@@ -288,7 +288,7 @@ void main() {
       // Verify instruction pill
       expect(find.byType(ParagraphSummaryInstruction), findsOneWidget);
       expect(
-        find.textContaining('SUMMARY FOR THE PARAGRAPH'),
+        find.textContaining('summary for the paragraph'),
         findsOneWidget,
       );
 
@@ -302,7 +302,7 @@ void main() {
       // Verify pinch hint animation and instruction
       expect(find.byType(PinchHintAnimation), findsOneWidget);
       expect(
-        find.text('PINCH/SQUEEZE THE TUBE TO DISTILL CORE CONCEPTS'),
+        find.text('Pinch or tap the card to reveal key ideas'),
         findsOneWidget,
       );
 
@@ -331,7 +331,7 @@ void main() {
 
       // Verify distillation complete message
       expect(
-        find.text('DISTILLATION COMPLETE! CHOOSE THE BEST SUMMARY:'),
+        find.text('Choose the best summary below:'),
         findsOneWidget,
       );
 
@@ -379,7 +379,7 @@ void main() {
       // Verify heavy haptic and distillation
       verify(() => mockHapticService.heavy()).called(1);
       expect(
-        find.text('DISTILLATION COMPLETE! CHOOSE THE BEST SUMMARY:'),
+        find.text('Choose the best summary below:'),
         findsOneWidget,
       );
       expect(find.byType(ParagraphSummaryOptionRack), findsOneWidget);

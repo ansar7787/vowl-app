@@ -18,51 +18,52 @@ class FindWordMeaningQuestionHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GlassTile(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+      padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 16.h),
       borderRadius: BorderRadius.circular(20.r),
-      // Neutral glass tile
       color: null,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.all(10.r),
+            padding: EdgeInsets.all(9.r),
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.15),
-              shape: BoxShape.circle,
+              color: color.withValues(alpha: 0.14),
+              borderRadius: BorderRadius.circular(12.r),
             ),
             child: Icon(
-              Icons.lightbulb_outline_rounded,
+              Icons.menu_book_rounded,
               color: color,
               size: 20.r,
             ),
           ),
-          SizedBox(width: 16.w),
+          SizedBox(width: 14.w),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "TARGET MEANING",
+                  "DEFINITION",
+                  softWrap: true,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w800,
+                    fontSize: 11.5.sp,
+                    fontWeight: FontWeight.w700,
                     color: color,
-                    letterSpacing: 1.5,
+                    letterSpacing: 0.8,
                   ),
                 ),
                 SizedBox(height: 6.h),
                 Text(
                   text,
+                  softWrap: true,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 16.sp,
+                    fontSize: 16.5.sp,
                     fontWeight: FontWeight.w600,
                     color: isDark
-                        ? Colors.white.withValues(alpha: 0.9)
+                        ? Colors.white.withValues(alpha: 0.92)
                         : AppColors.slate800,
-                    height: 1.4,
+                    height: 1.42,
                   ),
                 ),
               ],

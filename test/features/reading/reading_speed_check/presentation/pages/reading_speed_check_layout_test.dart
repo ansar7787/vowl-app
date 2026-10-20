@@ -282,8 +282,8 @@ void main() {
       expect(find.byType(SpeedChallengeTimer), findsOneWidget);
 
       expect(find.textContaining('Community pool: open Monday to Friday'), findsOneWidget);
-      expect(find.text('TAP TO STOP TIMER & ANSWER'), findsOneWidget);
-      expect(find.text('TARGET: 90 WPM'), findsOneWidget);
+      expect(find.text('Tap Stop when finished reading'), findsOneWidget);
+      expect(find.text('Target: 90 WPM'), findsOneWidget);
       expect(find.byIcon(Icons.stop_circle_rounded), findsOneWidget);
       expect(find.byIcon(Icons.format_size_rounded), findsOneWidget);
 
@@ -324,7 +324,7 @@ void main() {
       expect(find.byType(ReadingSpeedQuestionArea), findsOneWidget);
       expect(find.text('On which days is the pool closed?'), findsOneWidget);
       expect(find.byType(ReadingSpeedOption), findsNWidgets(4));
-      expect(find.text('ANSWER THE COMPREHENSION QUESTION'), findsOneWidget);
+      expect(find.text('ANSWER THE QUESTION'), findsOneWidget);
 
       // Passage zone and timer are no longer in the tree
       expect(find.byType(ReadingSpeedPulseZone), findsNothing);
@@ -411,7 +411,7 @@ void main() {
 
       expect(find.byType(ReadingSpeedQuestionArea), findsOneWidget);
       expect(find.byType(ReadingSpeedOption), findsNWidgets(4));
-      expect(find.text('ANSWER THE COMPREHENSION QUESTION'), findsOneWidget);
+      expect(find.text('ANSWER THE QUESTION'), findsOneWidget);
     });
 
     testWidgets('9. Question reset resets revealed status and clears selected index', (tester) async {

@@ -28,25 +28,70 @@ class GuessTitleCargoCrate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+
     return Container(
-      padding: EdgeInsets.all(24.r),
+      width: double.infinity,
+      padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.04)
+            : Colors.white,
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: color.withValues(alpha: isDark ? 0.22 : 0.16),
+          width: 1.5,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black38
+                : color.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 3),
+          ),
+        ],
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Subtle reading passage section indicator
+          Row(
+            children: [
+              Icon(
+                Icons.menu_book_rounded,
+                size: 14.r,
+                color: color,
+              ),
+              SizedBox(width: 6.w),
+              Text(
+                'PASSAGE',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 1.0,
+                  color: color,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 12.h),
+          // Passage body text
           Text(
             passage,
+            softWrap: true,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 16.sp,
-              height: 1.5,
-              color: isDark ? Colors.white70 : Colors.black87,
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w400,
+              height: 1.6,
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.92)
+                  : const Color(0xFF1E293B),
             ),
           ),
-          SizedBox(height: 32.h),
+          SizedBox(height: 20.h),
+          // Title drop slot
           DragTarget<String>(
             onWillAcceptWithDetails: (details) => !isAnswered,
             onAcceptWithDetails: (details) {
@@ -58,18 +103,29 @@ class GuessTitleCargoCrate extends StatelessWidget {
                   ? (isCorrect == true
                         ? tokens.gameCorrect
                         : tokens.gameIncorrect)
-                  : (isHovered ? color : color.withValues(alpha: 0.4));
+                  : (isHovered ? color : color.withValues(alpha: 0.35));
+
+              final Color bgClr = isAnswered
+                  ? (isCorrect == true
+                        ? tokens.gameCorrect.withValues(alpha: 0.12)
+                        : tokens.gameIncorrect.withValues(alpha: 0.12))
+                  : (isHovered
+                        ? color.withValues(alpha: 0.12)
+                        : color.withValues(alpha: isDark ? 0.05 : 0.03));
 
               return Container(
-                constraints: BoxConstraints(minHeight: 70.h),
+                constraints: BoxConstraints(minHeight: 62.h),
                 width: double.infinity,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 16.w,
+                  vertical: 12.h,
+                ),
                 decoration: BoxDecoration(
-                  color: borderClr.withValues(alpha: isHovered ? 0.15 : 0.05),
+                  color: bgClr,
                   borderRadius: BorderRadius.circular(16.r),
                   border: Border.all(
                     color: borderClr,
-                    width: 2,
-                    style: BorderStyle.solid,
+                    width: 1.8,
                   ),
                 ),
                 child: ClipRRect(
@@ -77,52 +133,70 @@ class GuessTitleCargoCrate extends StatelessWidget {
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
-                      // Subtle crate vector in the background
+                      // Subtle watermark quote icon
                       Positioned(
-                        right: -10.w,
-                        bottom: -15.h,
+                        right: 4.w,
+                        bottom: -6.h,
                         child: Icon(
-                          Icons.inventory_2_rounded,
-                          size: 90.r,
-                          color: borderClr.withValues(alpha: 0.12),
+                          Icons.format_quote_rounded,
+                          size: 48.r,
+                          color: borderClr.withValues(alpha: 0.08),
                         ),
                       ),
                       // Text content
                       Center(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 8.h,
-                          ),
-                          child: AnimatedSwitcher(
-                            duration: 300.milliseconds,
-                            child: selectedTitle != null
-                                ? Text(
-                                    selectedTitle!.toUpperCase(),
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 13.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: isCorrect == true
-                                          ? tokens.gameCorrect
-                                          : (isCorrect == false
-                                                ? tokens.gameIncorrect
-                                                : color),
-                                    ),
-                                  )
-                                : Text(
-                                    "DRAG & DROP TITLE HERE",
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      color: color.withValues(
-                                        alpha: isHovered ? 0.8 : 0.4,
-                                      ),
-                                      fontSize: 13.sp,
-                                      letterSpacing: 1.5,
-                                    ),
+                        child: AnimatedSwitcher(
+                          duration: 250.milliseconds,
+                          child: selectedTitle != null
+                              ? Text(
+                                  selectedTitle!,
+                                  key: ValueKey(selectedTitle),
+                                  textAlign: TextAlign.center,
+                                  softWrap: true,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 15.sp,
+                                    fontWeight: FontWeight.w700,
+                                    height: 1.35,
+                                    color: isCorrect == true
+                                        ? tokens.gameCorrect
+                                        : (isCorrect == false
+                                              ? tokens.gameIncorrect
+                                              : (isDark
+                                                    ? Colors.white
+                                                    : const Color(0xFF1E293B))),
                                   ),
-                          ),
+                                )
+                              : Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.touch_app_outlined,
+                                      size: 16.r,
+                                      color: color.withValues(
+                                        alpha: isHovered ? 0.85 : 0.5,
+                                      ),
+                                    ),
+                                    SizedBox(width: 8.w),
+                                    Flexible(
+                                      child: Text(
+                                        "DRAG & DROP TITLE HERE",
+                                        textAlign: TextAlign.center,
+                                        softWrap: true,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          color: color.withValues(
+                                            alpha: isHovered ? 0.85 : 0.5,
+                                          ),
+                                          fontSize: 12.sp,
+                                          fontWeight: FontWeight.w600,
+                                          letterSpacing: 0.8,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                         ),
                       ),
                     ],

@@ -89,7 +89,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
     } else {
       submitWrongAnswer(
         quest: quest,
-        userAnswer: word ?? 'Incorrect meaning selected',
+        userAnswer: word ?? 'Incorrect selection',
       );
     }
   }
@@ -102,7 +102,6 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
   @override
   void onQuestionReset() {
     _showSentenceBuilder.value = false;
-
     _pendingSelectedIndex.value = null;
   }
 
@@ -173,19 +172,19 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [
-                                  SizedBox(height: 16.h),
+                                  SizedBox(height: 12.h),
                                   FindWordMeaningInstruction(
                                     primaryColor: theme.primaryColor,
                                     instruction:
                                         InstructionHelper.getInstruction(quest),
                                   ),
-                                  SizedBox(height: 24.h),
+                                  SizedBox(height: 16.h),
                                   FindWordMeaningQuestionHeader(
                                     text: quest.question ?? "",
                                     color: theme.primaryColor,
                                     isDark: isDark,
                                   ),
-                                  SizedBox(height: 32.h),
+                                  SizedBox(height: 16.h),
                                   FindWordMeaningInteractivePassage(
                                     passage: quest.passage ?? "",
                                     targetWord: quest.targetWord ?? "",
@@ -208,31 +207,15 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
                               ),
                             ),
                           ),
-                          if (!_showSentenceBuilder.value)
-                            SliverToBoxAdapter(
-                              child: Center(
-                                child: Padding(
-                                  padding: EdgeInsets.only(
-                                    top: 40.h,
-                                    bottom: 20.h,
-                                  ),
-                                  child: Icon(
-                                    Icons.menu_book_rounded,
-                                    size: 140.r,
-                                    color: isDark
-                                        ? Colors.white.withValues(alpha: 0.02)
-                                        : theme.primaryColor.withValues(
-                                            alpha: 0.05,
-                                          ),
-                                  ),
-                                ),
-                              ),
-                            ),
-
                           if (_showSentenceBuilder.value)
-                            SliverToBoxAdapter(
-                              child: Padding(
-                                padding: EdgeInsets.only(top: 24.h),
+                            SliverPadding(
+                              padding: EdgeInsets.fromLTRB(
+                                24.w,
+                                20.h,
+                                24.w,
+                                16.h,
+                              ),
+                              sliver: SliverToBoxAdapter(
                                 child: ContextSentenceBuilder(
                                   targetKeyword:
                                       quest.targetWord ?? quest.word ?? '',
@@ -251,7 +234,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
                                   MediaQuery.of(context).viewInsets.bottom > 0
                                   ? MediaQuery.of(context).viewInsets.bottom +
                                         40.h
-                                  : 120.h,
+                                  : 100.h,
                             ),
                           ),
                         ],

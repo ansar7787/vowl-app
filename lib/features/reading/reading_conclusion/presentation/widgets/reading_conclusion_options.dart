@@ -1,6 +1,6 @@
-import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 
 class ReadingConclusionOptions extends StatelessWidget {
   final List<String> options;
@@ -36,10 +36,9 @@ class ReadingConclusionOptions extends StatelessWidget {
         final isWrong = isAnswered && isSelected && !isCorrect;
 
         return _OptionCard(
-          key: ValueKey(
-            optionText,
-          ), // ensure unique state reset per option text
+          key: ValueKey(optionText),
           optionText: optionText,
+          index: index,
           isSelected: isSelected,
           isCorrect: isCorrect,
           isWrong: isWrong,
@@ -60,6 +59,7 @@ class ReadingConclusionOptions extends StatelessWidget {
 
 class _OptionCard extends StatefulWidget {
   final String optionText;
+  final int index;
   final bool isSelected;
   final bool isCorrect;
   final bool isWrong;
@@ -72,6 +72,7 @@ class _OptionCard extends StatefulWidget {
   const _OptionCard({
     super.key,
     required this.optionText,
+    required this.index,
     required this.isSelected,
     required this.isCorrect,
     required this.isWrong,
@@ -93,71 +94,153 @@ class _OptionCardState extends State<_OptionCard> {
   Widget build(BuildContext context) {
     Color bgColor;
     Color borderColor;
+    Color badgeBgColor;
+    Color badgeTextColor;
+    Color textColor;
+
+    final optionLetter = String.fromCharCode(65 + widget.index);
 
     if (widget.isCorrect) {
-      bgColor = widget.tokens.gameCorrect.withValues(alpha: 0.15);
+      bgColor = widget.tokens.gameCorrect
+          .withValues(alpha: widget.isDark ? 0.16 : 0.10);
       borderColor = widget.tokens.gameCorrect;
+      badgeBgColor = widget.tokens.gameCorrect;
+      badgeTextColor = Colors.white;
+      textColor = widget.isDark ? Colors.white : const Color(0xFF1E293B);
     } else if (widget.isWrong) {
-      bgColor = widget.tokens.gameIncorrect.withValues(alpha: 0.15);
+      bgColor = widget.tokens.gameIncorrect
+          .withValues(alpha: widget.isDark ? 0.16 : 0.10);
       borderColor = widget.tokens.gameIncorrect;
+      badgeBgColor = widget.tokens.gameIncorrect;
+      badgeTextColor = Colors.white;
+      textColor = widget.isDark ? Colors.white : const Color(0xFF1E293B);
     } else if (widget.isSelected) {
-      bgColor = widget.primaryColor.withValues(alpha: 0.15);
+      bgColor = widget.primaryColor
+          .withValues(alpha: widget.isDark ? 0.14 : 0.08);
       borderColor = widget.primaryColor;
+      badgeBgColor = widget.primaryColor;
+      badgeTextColor = Colors.white;
+      textColor = widget.isDark ? Colors.white : const Color(0xFF1E293B);
     } else {
       bgColor = widget.isDark
-          ? Colors.white.withValues(alpha: 0.05)
-          : Colors.black.withValues(alpha: 0.03);
+          ? Colors.white.withValues(alpha: 0.04)
+          : Colors.white;
       borderColor = widget.isDark
-          ? Colors.white.withValues(alpha: 0.15)
-          : Colors.black.withValues(alpha: 0.1);
+          ? Colors.white.withValues(alpha: 0.12)
+          : const Color(0xFFE2E8F0);
+      badgeBgColor = widget.isDark
+          ? Colors.white.withValues(alpha: 0.08)
+          : const Color(0xFFF1F5F9);
+      badgeTextColor = widget.isDark
+          ? Colors.white70
+          : const Color(0xFF64748B);
+      textColor = widget.isDark
+          ? Colors.white.withValues(alpha: 0.90)
+          : const Color(0xFF1E293B);
     }
+
+    final opacity = (widget.isAnswered && !widget.isCorrect && !widget.isWrong)
+        ? 0.65
+        : 1.0;
 
     return Padding(
       padding: EdgeInsets.only(bottom: 12.h),
-      child: GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onTapDown: (_) {
-          if (!widget.isAnswered) {
-            setState(() => _isPressed = true);
-          }
-        },
-        onTapUp: (_) {
-          setState(() => _isPressed = false);
-        },
-        onTapCancel: () {
-          setState(() => _isPressed = false);
-        },
-        onTap: widget.onTap,
-        child: AnimatedScale(
-          scale: _isPressed ? 0.97 : 1.0,
-          duration: const Duration(milliseconds: 100),
-          curve: Curves.easeOutQuad,
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 300),
-            width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-            decoration: BoxDecoration(
-              color: bgColor,
-              borderRadius: BorderRadius.circular(16.r),
-              border: Border.all(color: borderColor, width: 2),
-              boxShadow: [
-                if (widget.isCorrect || widget.isWrong || widget.isSelected)
+      child: AnimatedOpacity(
+        duration: const Duration(milliseconds: 250),
+        opacity: opacity,
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTapDown: (_) {
+            if (!widget.isAnswered) {
+              setState(() => _isPressed = true);
+            }
+          },
+          onTapUp: (_) {
+            setState(() => _isPressed = false);
+          },
+          onTapCancel: () {
+            setState(() => _isPressed = false);
+          },
+          onTap: widget.onTap,
+          child: AnimatedScale(
+            scale: _isPressed ? 0.98 : 1.0,
+            duration: const Duration(milliseconds: 100),
+            curve: Curves.easeOutQuad,
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 250),
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+              decoration: BoxDecoration(
+                color: bgColor,
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(color: borderColor, width: 1.5),
+                boxShadow: [
                   BoxShadow(
-                    color: borderColor.withValues(alpha: 0.1),
+                    color: (widget.isCorrect ||
+                            widget.isWrong ||
+                            widget.isSelected)
+                        ? borderColor.withValues(alpha: 0.12)
+                        : (widget.isDark
+                            ? Colors.black.withValues(alpha: 0.15)
+                            : Colors.black.withValues(alpha: 0.03)),
                     blurRadius: 8,
-                    offset: const Offset(0, 4),
+                    offset: const Offset(0, 2),
                   ),
-              ],
-            ),
-            child: Text(
-              widget.optionText,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w600,
-                height: 1.4,
-                color: Theme.of(context).colorScheme.onSurface,
+                ],
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 28.r,
+                    height: 28.r,
+                    margin: EdgeInsets.only(top: 1.h),
+                    decoration: BoxDecoration(
+                      color: badgeBgColor,
+                      shape: BoxShape.circle,
+                    ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      optionLetter,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w700,
+                        color: badgeTextColor,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 12.w),
+                  Expanded(
+                    child: Text(
+                      widget.optionText,
+                      textAlign: TextAlign.start,
+                      softWrap: true,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.5.sp,
+                        fontWeight: FontWeight.w500,
+                        height: 1.42,
+                        color: textColor,
+                      ),
+                    ),
+                  ),
+                  if (widget.isCorrect || widget.isWrong) ...[
+                    SizedBox(width: 8.w),
+                    Padding(
+                      padding: EdgeInsets.only(top: 3.h),
+                      child: Icon(
+                        widget.isCorrect
+                            ? Icons.check_circle_rounded
+                            : Icons.cancel_rounded,
+                        color: widget.isCorrect
+                            ? widget.tokens.gameCorrect
+                            : widget.tokens.gameIncorrect,
+                        size: 20.r,
+                      ),
+                    ),
+                  ],
+                ],
               ),
             ),
           ),

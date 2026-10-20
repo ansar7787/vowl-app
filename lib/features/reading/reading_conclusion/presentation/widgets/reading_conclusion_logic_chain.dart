@@ -32,35 +32,56 @@ class ReadingConclusionLogicChain extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(20.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
       decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
+        color: isDark
+            ? primaryColor.withValues(alpha: 0.08)
+            : Colors.white,
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: primaryColor.withValues(alpha: 0.3),
+          color: isDark
+              ? primaryColor.withValues(alpha: 0.3)
+              : primaryColor.withValues(alpha: 0.2),
           width: 1.5,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.2)
+                : primaryColor.withValues(alpha: 0.06),
+            blurRadius: 10,
+            offset: const Offset(0, 3),
+          ),
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              Icon(
-                Icons.psychology_alt_rounded,
-                color: primaryColor,
-                size: 24.r,
+              Container(
+                padding: EdgeInsets.all(5.r),
+                decoration: BoxDecoration(
+                  color: primaryColor.withValues(alpha: 0.12),
+                  borderRadius: BorderRadius.circular(8.r),
+                ),
+                child: Icon(
+                  Icons.psychology_alt_rounded,
+                  color: primaryColor,
+                  size: 16.r,
+                ),
               ),
               SizedBox(width: 8.w),
               Expanded(
                 child: Text(
                   "LOGICAL DEDUCTION",
+                  softWrap: true,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w700,
                     color: primaryColor,
-                    letterSpacing: 1.2,
+                    letterSpacing: 1.1,
                   ),
                 ),
               ),
@@ -68,6 +89,7 @@ class ReadingConclusionLogicChain extends StatelessWidget {
           ),
           SizedBox(height: 16.h),
           ...List.generate(steps.length, (index) {
+            final isLast = index == steps.length - 1;
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -88,7 +110,7 @@ class ReadingConclusionLogicChain extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w700,
                           color: Colors.white,
                         ),
                       ),
@@ -97,24 +119,28 @@ class ReadingConclusionLogicChain extends StatelessWidget {
                     Expanded(
                       child: Text(
                         steps[index],
+                        softWrap: true,
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 14.sp,
-                          fontWeight: FontWeight.w600,
-                          height: 1.4,
-                          color: isDark ? Colors.white70 : Colors.black87,
+                          fontWeight: FontWeight.w500,
+                          height: 1.45,
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.88)
+                              : const Color(0xFF334155),
                         ),
                       ),
                     ),
                   ],
                 ),
-                if (index < steps.length - 1)
+                if (!isLast)
                   Padding(
-                    padding: EdgeInsets.only(left: 11.r, top: 4.h, bottom: 4.h),
+                    padding:
+                        EdgeInsets.only(left: 11.r, top: 3.h, bottom: 3.h),
                     child: Container(
                       width: 2.w,
                       height: 16.h,
-                      color: primaryColor.withValues(alpha: 0.3),
+                      color: primaryColor.withValues(alpha: 0.25),
                     ),
                   ),
               ],
