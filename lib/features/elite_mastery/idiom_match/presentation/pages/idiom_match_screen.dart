@@ -356,7 +356,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                 ),
                                 width: double.infinity,
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: 16.w,
+                                  horizontal: 18.w,
                                   vertical: 12.h,
                                 ),
                                 decoration: BoxDecoration(
@@ -396,15 +396,16 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                 child: Text(
                                   quest.instruction,
                                   textAlign: TextAlign.center,
+                                  softWrap: true,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: isCompact
-                                        ? 12.sp
-                                        : 13.sp,
-                                    fontWeight: FontWeight.w400,
+                                        ? 13.sp
+                                        : 14.sp,
+                                    fontWeight: FontWeight.w500,
                                     color: isDark
-                                        ? Colors.white70
-                                        : Colors.black87,
+                                        ? Colors.white.withValues(alpha: 0.9)
+                                        : AppColors.slate700,
                                     height: 1.4,
                                   ),
                                 ),
@@ -418,10 +419,13 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                   'idiom_match_prompt_card',
                                 ),
                                 width: double.infinity,
-                                padding: EdgeInsets.all(24.r),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20.w,
+                                  vertical: isCompact ? 16.h : 20.h,
+                                ),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(
-                                    24.r,
+                                    20.r,
                                   ),
                                   gradient: LinearGradient(
                                     begin: Alignment.topLeft,
@@ -467,23 +471,24 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                                       Icons.format_quote_rounded,
                                       color: theme.primaryColor
                                           .withValues(alpha: 0.6),
-                                      size: 24.r,
+                                      size: 22.r,
                                     ),
                                     SizedBox(height: 8.h),
                                     Text(
                                       quest.question!,
                                       textAlign: TextAlign.center,
+                                      softWrap: true,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: isCompact
                                             ? 15.sp
-                                            : 16.sp,
-                                        fontWeight: FontWeight.w500,
+                                            : 17.sp,
+                                        fontWeight: FontWeight.w600,
                                         color: isDark
                                             ? Colors.white
                                             : AppColors.slate900,
-                                        height: 1.4,
-                                        letterSpacing: 0.3,
+                                        height: 1.45,
+                                        letterSpacing: 0.1,
                                       ),
                                     ),
                                   ],
@@ -562,7 +567,10 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                   !isAnsweredNotifier.value)
                 SliverToBoxAdapter(
                   child: Padding(
-                    padding: EdgeInsets.only(top: 24.h, bottom: 24.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 20.h,
+                    ),
                     child: ListenableBuilder(
                       listenable: Listenable.merge([
                         _selectedIndex,
@@ -710,12 +718,13 @@ class IdiomMatchInsightsPanel extends StatelessWidget {
               Expanded(
                 child: Text(
                   title,
+                  softWrap: true,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w700,
                     color: color,
-                    letterSpacing: 1.5,
+                    letterSpacing: 1.0,
                   ),
                 ),
               ),
@@ -724,11 +733,15 @@ class IdiomMatchInsightsPanel extends StatelessWidget {
           SizedBox(height: 8.h),
           Text(
             content,
+            softWrap: true,
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 14.sp,
-              color: isDark ? Colors.white70 : Colors.black87,
-              height: 1.4,
+              fontWeight: FontWeight.w400,
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.85)
+                  : AppColors.slate800,
+              height: 1.45,
             ),
           ),
         ],

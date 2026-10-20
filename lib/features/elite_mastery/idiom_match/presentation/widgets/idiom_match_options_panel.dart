@@ -58,7 +58,7 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
         );
 
         return Padding(
-          padding: EdgeInsets.only(bottom: 16.h),
+          padding: EdgeInsets.only(bottom: 12.h),
           child: Semantics(
             button: true,
             enabled: !isAnswered,
@@ -70,7 +70,7 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
               onTap: isAnswered ? null : () => onOptionSelected(index),
               child: GlassTile(
                 borderRadius: BorderRadius.circular(20.r),
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+                padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 14.h),
                 usePremiumStyle: true,
                 showShadow: true,
                 color: isDark ? Colors.black.withValues(alpha: 0.3) : null,
@@ -114,16 +114,17 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
                         size: 18.r,
                       ),
                     ),
-                    SizedBox(width: 16.w),
+                    SizedBox(width: 14.w),
                     Expanded(
                       child: Text(
                         option,
+                        softWrap: true,
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 15.sp,
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w500,
                           color: textColor,
-                          height: 1.3,
+                          height: 1.35,
                         ),
                       ),
                     ),

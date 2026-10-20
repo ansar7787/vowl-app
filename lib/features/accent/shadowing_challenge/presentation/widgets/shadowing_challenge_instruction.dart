@@ -14,35 +14,26 @@ class ShadowingChallengeInstruction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+      padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.auto_awesome_rounded, size: 14.r, color: color),
-          SizedBox(width: 12.w),
-          Flexible(
-            child: Text(
-              instruction.trim().isEmpty
-                  ? "IDENTIFY THE PRONUNCIATION"
-                  : instruction.toUpperCase(),
-              textAlign: TextAlign.center,
-              maxLines: null,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w800,
-                color: color,
-                letterSpacing: 1.2,
-                height: 1.3,
-              ),
-            ),
-          ),
-        ],
+      child: Text(
+        instruction.trim().isEmpty
+            ? "IDENTIFY THE PRONUNCIATION"
+            : instruction.toUpperCase(),
+        textAlign: TextAlign.center,
+        softWrap: true,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 12.sp,
+          fontWeight: FontWeight.w700,
+          color: color,
+          letterSpacing: 1.0,
+          height: 1.35,
+        ),
       ),
     );
   }

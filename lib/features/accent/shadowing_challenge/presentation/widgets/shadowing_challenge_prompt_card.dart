@@ -19,14 +19,14 @@ class ShadowingChallengePromptCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 342.w,
-      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 24.w),
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 20.w),
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: isDark ? Colors.white12 : Colors.black12,
-          width: 2,
+          width: 1.5,
         ),
       ),
       child: Stack(
@@ -36,26 +36,27 @@ class ShadowingChallengePromptCard extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "TARGET SENTENCE",
+                  "TARGET PHRASE",
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 8.sp,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w700,
                     color: color,
-                    letterSpacing: 2,
+                    letterSpacing: 1.2,
                   ),
                 ),
                 SizedBox(height: 8.h),
                 Text(
                   word,
                   textAlign: TextAlign.center,
+                  softWrap: true,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 20.sp,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w700,
                     color: Theme.of(context).colorScheme.onSurface,
-                    letterSpacing: 1,
-                    height: 1.3,
+                    letterSpacing: 0.5,
+                    height: 1.35,
                   ),
                 ),
                 if (ipa.isNotEmpty) ...[
@@ -75,8 +76,8 @@ class ShadowingChallengePromptCard extends StatelessWidget {
                       ipa,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w600,
                         color: color,
                       ),
                     ),

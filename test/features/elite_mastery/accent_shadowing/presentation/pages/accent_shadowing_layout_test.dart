@@ -494,7 +494,7 @@ void main() {
 
       expect(find.byType(AccentShadowingOptionsPanel), findsNothing);
       expect(find.byType(AccentSelfEvaluationPanel), findsOneWidget);
-      expect(find.text('PHASE 2: SPEAKING'), findsOneWidget);
+      expect(find.text('YOUR TURN TO SPEAK'), findsOneWidget);
     });
 
     testWidgets('renders ShimmerLoading when EliteMasteryLoading is active', (
@@ -673,16 +673,16 @@ void main() {
       );
       await tester.scrollUntilVisible(insightsFinder, 200);
 
-      expect(find.text('Pedagogical Insights'), findsOneWidget);
+      expect(find.text('Pronunciation Notes'), findsOneWidget);
       expect(find.text('Target Sound'), findsOneWidget);
       expect(find.text(sampleQuestModeA.targetAccent!), findsOneWidget);
-      expect(find.text('Phonetic Rule'), findsOneWidget);
+      expect(find.text('Sound Pattern'), findsOneWidget);
       expect(find.text(sampleQuestModeA.shadowingFocus!), findsOneWidget);
-      expect(find.text('Usage Context'), findsOneWidget);
+      expect(find.text('Everyday Context'), findsOneWidget);
       expect(find.text(sampleQuestModeA.usageContext!), findsOneWidget);
-      expect(find.text('Spelling Pattern'), findsOneWidget);
+      expect(find.text('Spelling Note'), findsOneWidget);
       expect(find.text(sampleQuestModeA.spellingRule!), findsOneWidget);
-      expect(find.text('Sequence Logic'), findsOneWidget);
+      expect(find.text('Speech Flow'), findsOneWidget);
       expect(find.text(sampleQuestModeA.sequenceLogic!), findsOneWidget);
       expect(find.text('Explanation'), findsOneWidget);
       expect(find.text(sampleQuestModeA.explanation!), findsOneWidget);

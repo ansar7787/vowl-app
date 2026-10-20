@@ -77,18 +77,18 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            width: 28.r,
-            height: 28.r,
+            width: 32.r,
+            height: 32.r,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  theme.primaryColor.withValues(alpha: 0.2),
-                  theme.primaryColor.withValues(alpha: 0.05),
+                  theme.primaryColor.withValues(alpha: 0.18),
+                  theme.primaryColor.withValues(alpha: 0.06),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(10.r),
               border: Border.all(
                 color: theme.primaryColor.withValues(alpha: 0.3),
               ),
@@ -98,8 +98,8 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
                 "${index + 1}",
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w600,
                   color: isDark ? theme.primaryColor : AppColors.slate900,
                 ),
               ),
@@ -109,12 +109,13 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
           Expanded(
             child: Text(
               sentence,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 15.sp,
                 fontWeight: FontWeight.w500,
                 height: 1.4,
-                color: Theme.of(context).colorScheme.onSurface,
+                color: isDark ? Colors.white : AppColors.slate900,
               ),
             ),
           ),
@@ -149,7 +150,7 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w700,
                       color: Colors.white,
                     ),
                   ),
