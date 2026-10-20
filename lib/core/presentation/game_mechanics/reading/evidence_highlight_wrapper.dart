@@ -55,6 +55,9 @@ class EvidenceHighlightWrapper extends StatefulWidget {
   /// Optional instruction text override.
   final String? instruction;
 
+  /// Optional custom margin override (defaults to 16.w horizontal if not positioned).
+  final EdgeInsetsGeometry? margin;
+
   const EvidenceHighlightWrapper({
     super.key,
     required this.passage,
@@ -65,6 +68,7 @@ class EvidenceHighlightWrapper extends StatefulWidget {
     this.requiredHighlights,
     this.isPositioned = true,
     this.instruction,
+    this.margin,
   });
 
   @override
@@ -277,13 +281,17 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                 valueListenable: _isComplete,
                 builder: (context, isComplete, _) {
                   return Container(
-                    margin: widget.isPositioned
-                        ? EdgeInsets.zero
-                        : EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                    margin: widget.margin ??
+                        (widget.isPositioned
+                            ? EdgeInsets.zero
+                            : EdgeInsets.symmetric(
+                                horizontal: 16.w,
+                                vertical: 8.h,
+                              )),
                     padding: EdgeInsets.fromLTRB(20.w, 18.h, 20.w, 20.h),
                     decoration: BoxDecoration(
                       color: bgColor,
-                      borderRadius: BorderRadius.circular(24.r),
+                      borderRadius: BorderRadius.circular(20.r),
                       border: Border.all(
                         color: isComplete
                             ? tokens.gameCorrect.withValues(alpha: 0.5)
@@ -342,9 +350,9 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 14.sp,
-                                        fontWeight: FontWeight.w700,
+                                        fontWeight: FontWeight.w600,
                                         color: widget.primaryColor,
-                                        letterSpacing: 0.4,
+                                        letterSpacing: 0.3,
                                       ),
                                     ),
                                     SizedBox(height: 3.h),
@@ -355,9 +363,9 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 12.sp,
-                                        fontWeight: FontWeight.w500,
+                                        fontWeight: FontWeight.w400,
                                         color: subtitleColor,
-                                        height: 1.3,
+                                        height: 1.35,
                                       ),
                                     ),
                                   ],

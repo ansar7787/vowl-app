@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,87 +30,152 @@ class ReadAndAnswerAnchorPoint extends StatelessWidget {
         final isHovering = candidateData.isNotEmpty && !isAnswered;
 
         return Semantics(
-          label: 'Question: $question. ${onPlayAudio != null ? "Double tap audio button to listen." : ""}',
+          label:
+              'Question: $question. ${onPlayAudio != null ? "Double tap audio button to listen." : ""}',
           excludeSemantics: true,
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 200),
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+            padding: EdgeInsets.all(16.r),
             decoration: BoxDecoration(
               color: isHovering
-                  ? color.withValues(alpha: isDark ? 0.2 : 0.12)
+                  ? color.withValues(alpha: isDark ? 0.2 : 0.1)
                   : (isDark
-                      ? Colors.white.withValues(alpha: 0.03)
-                      : Colors.white.withValues(alpha: 0.85)),
-              borderRadius: BorderRadius.circular(24.r),
+                      ? Colors.white.withValues(alpha: 0.04)
+                      : Colors.white),
+              borderRadius: BorderRadius.circular(20.r),
               border: Border.all(
                 color: isHovering
                     ? color
-                    : color.withValues(alpha: isDark ? 0.15 : 0.1),
-                width: isHovering ? 2.5 : 1.5,
+                    : (isDark
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : color.withValues(alpha: 0.15)),
+                width: isHovering ? 2.0 : 1.5,
               ),
               boxShadow: [
                 BoxShadow(
                   color: isHovering
-                      ? color.withValues(alpha: 0.25)
-                      : color.withValues(alpha: isDark ? 0.05 : 0.03),
-                  blurRadius: isHovering ? 20 : 15,
-                  offset: const Offset(0, 4),
+                      ? color.withValues(alpha: 0.2)
+                      : (isDark
+                          ? Colors.black.withValues(alpha: 0.2)
+                          : Colors.black.withValues(alpha: 0.03)),
+                  blurRadius: isHovering ? 16 : 10,
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                ExcludeSemantics(
-                  child: Container(
-                    padding: EdgeInsets.all(8.r),
-                    decoration: BoxDecoration(
-                      color: color.withValues(alpha: 0.1),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(
-                      isHovering
-                          ? Icons.file_download_outlined
-                          : Icons.help_outline_rounded,
-                      color: color,
-                      size: 20.r,
-                    ),
-                  ),
-                ),
-                SizedBox(width: 12.w),
-                Expanded(
-                  child: Text(
-                    question,
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w700,
-                      color: Theme.of(context).colorScheme.onSurface,
-                      height: 1.35,
-                    ),
-                  ),
-                ),
-                if (onPlayAudio != null) ...[
-                  SizedBox(width: 8.w),
-                  Semantics(
-                    label: 'Listen to question',
-                    button: true,
-                    child: Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        key: const ValueKey('read_and_answer_tts_question_button'),
-                        borderRadius: BorderRadius.circular(20.r),
-                        onTap: onPlayAudio,
-                        child: Padding(
-                          padding: EdgeInsets.all(6.r),
-                          child: Icon(
-                            Icons.volume_up_rounded,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.help_outline_rounded,
+                          size: 16.r,
+                          color: color,
+                        ),
+                        SizedBox(width: 6.w),
+                        Text(
+                          'Question',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 0.5,
                             color: color,
-                            size: 22.r,
+                          ),
+                        ),
+                      ],
+                    ),
+                    if (onPlayAudio != null)
+                      Semantics(
+                        label: 'Listen to question',
+                        button: true,
+                        child: Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            key: const ValueKey(
+                              'read_and_answer_tts_question_button',
+                            ),
+                            borderRadius: BorderRadius.circular(12.r),
+                            onTap: onPlayAudio,
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 8.w,
+                                vertical: 4.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: color.withValues(alpha: 0.08),
+                                borderRadius: BorderRadius.circular(12.r),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Icons.volume_up_rounded,
+                                    color: color,
+                                    size: 16.r,
+                                  ),
+                                  SizedBox(width: 4.w),
+                                  Text(
+                                    'Listen',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 0.3,
+                                      color: color,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
                       ),
+                  ],
+                ),
+                SizedBox(height: 10.h),
+                Text(
+                  question,
+                  softWrap: true,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                    color: isDark ? Colors.white : AppColors.slate900,
+                    height: 1.45,
+                  ),
+                ),
+                if (isHovering) ...[
+                  SizedBox(height: 10.h),
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 6.h),
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(10.r),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.file_download_outlined,
+                          size: 16.r,
+                          color: color,
+                        ),
+                        SizedBox(width: 6.w),
+                        Text(
+                          'Drop answer here',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w600,
+                            color: color,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],

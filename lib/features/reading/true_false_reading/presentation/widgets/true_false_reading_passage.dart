@@ -23,49 +23,49 @@ class TrueFalseReadingPassage extends StatelessWidget {
       excludeSemantics: true,
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.all(24.r),
+        padding: EdgeInsets.all(18.r),
         decoration: BoxDecoration(
           color: isDark ? const Color(0xFF1E1E2C) : Colors.white,
-          borderRadius: BorderRadius.circular(24.r),
+          borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
             color: color.withValues(alpha: isDark ? 0.2 : 0.15),
             width: 1.5,
           ),
           boxShadow: [
             BoxShadow(
-              color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-              blurRadius: 20,
-              offset: const Offset(0, 8),
+              color: color.withValues(alpha: isDark ? 0.05 : 0.06),
+              blurRadius: 16,
+              offset: const Offset(0, 4),
             ),
           ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            if (onPlayAudio != null) ...[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.menu_book_rounded,
-                        size: 16.r,
-                        color: color.withValues(alpha: 0.7),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Icon(
+                      Icons.menu_book_rounded,
+                      size: 16.r,
+                      color: color.withValues(alpha: 0.8),
+                    ),
+                    SizedBox(width: 6.w),
+                    Text(
+                      'PASSAGE',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.5.sp,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 1.0,
+                        color: color.withValues(alpha: 0.85),
                       ),
-                      SizedBox(width: 6.w),
-                      Text(
-                        'PASSAGE',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1.2,
-                          color: color.withValues(alpha: 0.8),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
+                ),
+                if (onPlayAudio != null)
                   GestureDetector(
                     key: const ValueKey('passage_audio_button'),
                     onTap: onPlayAudio,
@@ -78,20 +78,20 @@ class TrueFalseReadingPassage extends StatelessWidget {
                       ),
                     ),
                   ),
-                ],
-              ),
-              SizedBox(height: 12.h),
-            ],
+              ],
+            ),
+            SizedBox(height: 12.h),
             Text(
               passage,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 18.sp,
-                height: 1.6,
-                fontWeight: FontWeight.w500,
+                fontSize: 15.5.sp,
+                height: 1.55,
+                fontWeight: FontWeight.w400,
                 color: isDark
-                    ? Colors.white.withValues(alpha: 0.9)
-                    : const Color(0xFF2D3142),
+                    ? Colors.white.withValues(alpha: 0.92)
+                    : const Color(0xFF242838),
               ),
             ),
           ],

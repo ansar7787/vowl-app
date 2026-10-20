@@ -195,21 +195,35 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
         ? '$readTimeSec sec read'
         : '${(readTimeSec / 60).round()} min read';
 
-    return Row(
-      children: [
-        Icon(Icons.timer_outlined, size: 14.sp, color: primaryColor),
-        SizedBox(width: 4.w),
-        Text(
-          timeStr.toUpperCase(),
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 10.sp,
-            fontWeight: FontWeight.w800,
-            color: primaryColor,
-            letterSpacing: 1,
-          ),
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+      decoration: BoxDecoration(
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.05)
+            : primaryColor.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.18),
+          width: 1.2,
         ),
-      ],
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.schedule_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 5.w),
+          Text(
+            timeStr,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w600,
+              color: primaryColor,
+              letterSpacing: 0.3,
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -283,12 +297,13 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
                         physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
-                                  SizedBox(height: 16.h),
+                                  SizedBox(height: 14.h),
+                                  // Category / Topic chip and Reading time badge
                                   Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -301,7 +316,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
                                           instruction: displayTopic,
                                         ),
                                       ),
-                                      SizedBox(width: 16.w),
+                                      SizedBox(width: 12.w),
                                       _buildReadTimeBadge(
                                         theme.primaryColor,
                                         isDark,
@@ -311,8 +326,25 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
                                     ],
                                   ),
                                   SizedBox(height: 16.h),
+
+                                  // 1. Passage Card (Read first)
+                                  ReadAndAnswerFloatingPassage(
+                                    key: const ValueKey(
+                                      'read_and_answer_floating_passage',
+                                    ),
+                                    text: displayPassage,
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                    onPlayAudio: () =>
+                                        _playTts(displayPassage),
+                                  ),
+                                  SizedBox(height: 16.h),
+
+                                  // 2. Question Card / Anchor Point (Read second)
                                   ReadAndAnswerAnchorPoint(
-                                    key: const ValueKey('read_and_answer_anchor_point'),
+                                    key: const ValueKey(
+                                      'read_and_answer_anchor_point',
+                                    ),
                                     question: quest.question ?? '',
                                     color: theme.primaryColor,
                                     isDark: isDark,
@@ -341,15 +373,9 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
                                       }
                                     },
                                   ),
-                                  SizedBox(height: 24.h),
-                                  ReadAndAnswerFloatingPassage(
-                                    key: const ValueKey('read_and_answer_floating_passage'),
-                                    text: displayPassage,
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                    onPlayAudio: () => _playTts(displayPassage),
-                                  ),
-                                  SizedBox(height: 24.h),
+                                  SizedBox(height: 16.h),
+
+                                  // 3. Options (Directly underneath Question for quick tap or short-distance drag)
                                   if (quest.options != null)
                                     ...quest.options!.asMap().entries.map((e) {
                                       final isOptionCorrect =
@@ -361,7 +387,9 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
                                                   '');
 
                                       return ReadAndAnswerBuoyOption(
-                                        key: ValueKey('read_and_answer_buoy_${e.key}'),
+                                        key: ValueKey(
+                                          'read_and_answer_buoy_${e.key}',
+                                        ),
                                         index: e.key,
                                         text: e.value,
                                         isCorrectOption: isOptionCorrect,
@@ -388,17 +416,18 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
 
                                   if (_showEvidenceStep.value &&
                                       !isAnsweredNotifier.value)
-                                    SizedBox(height: 32.h),
+                                    SizedBox(height: 20.h),
                                 ],
                               ),
                             ),
                           ),
 
+                          // Phase 2: Evidence Highlight Game Mechanism with pixel-perfect matching padding
                           if (_showEvidenceStep.value &&
                               !isAnsweredNotifier.value)
                             SliverToBoxAdapter(
                               child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                padding: EdgeInsets.symmetric(horizontal: 20.w),
                                 child:
                                     EvidenceHighlightWrapper(
                                       passage: displayPassage,
@@ -408,6 +437,9 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
                                             '',
                                       ],
                                       primaryColor: theme.primaryColor,
+                                      margin: EdgeInsets.symmetric(
+                                        vertical: 8.h,
+                                      ),
                                       onCorrectHighlight: () =>
                                           _submitFinalAnswer(true, quest),
                                       instruction:

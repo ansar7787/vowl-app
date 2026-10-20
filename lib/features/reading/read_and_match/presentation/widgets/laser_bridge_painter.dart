@@ -21,7 +21,6 @@ class LaserBridgePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    // Draw lines for established matches
     final entries = matches.entries.toList();
     for (int i = 0; i < entries.length; i++) {
       final k = entries[i].key;
@@ -35,14 +34,14 @@ class LaserBridgePainter extends CustomPainter {
 
       final matchPaint = Paint()
         ..color = matchColor
-        ..strokeWidth = 3
+        ..strokeWidth = 2.5
         ..strokeCap = StrokeCap.round;
 
       final matchGlow = Paint()
-        ..color = matchColor.withValues(alpha: 0.35)
-        ..strokeWidth = 10
+        ..color = matchColor.withValues(alpha: 0.25)
+        ..strokeWidth = 6.0
         ..strokeCap = StrokeCap.round
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6);
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4);
 
       if (keyRect != null && valRect != null) {
         final start = Offset(keyRect.right, keyRect.center.dy);
@@ -54,9 +53,13 @@ class LaserBridgePainter extends CustomPainter {
 
         canvas.drawLine(start, end, matchGlow);
         canvas.drawLine(start, end, matchPaint);
-        canvas.drawCircle(start, 5, matchPaint);
-        // Only draw the end circle if the laser has reached the target (or if it's animating, at the tip)
-        canvas.drawCircle(end, 5, matchPaint);
+
+        // Terminal connection nodes
+        canvas.drawCircle(start, 4.0, matchPaint);
+        canvas.drawCircle(start, 1.8, Paint()..color = Colors.white);
+
+        canvas.drawCircle(end, 4.0, matchPaint);
+        canvas.drawCircle(end, 1.8, Paint()..color = Colors.white);
       }
     }
   }

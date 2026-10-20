@@ -241,7 +241,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
                                         ),
                                     ],
                                   ),
-                                  SizedBox(height: 32.h),
+                                  SizedBox(height: 20.h),
                                   AnimatedSwitcher(
                                     duration: const Duration(milliseconds: 400),
                                     switchInCurve: Curves.easeOut,
@@ -264,6 +264,8 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
                                             question: quest.question ?? "",
                                             color: theme.primaryColor,
                                             isDark: isDark,
+                                            onPlayAudio: () => soundService
+                                                .playTts(quest.question ?? ""),
                                           )
                                         : Padding(
                                             key: const ValueKey('timer'),
@@ -327,7 +329,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
                                         : Column(
                                             key: const ValueKey('options'),
                                             children: [
-                                              SizedBox(height: 32.h),
+                                              SizedBox(height: 20.h),
                                               ...options.asMap().entries.map((
                                                 entry,
                                               ) {

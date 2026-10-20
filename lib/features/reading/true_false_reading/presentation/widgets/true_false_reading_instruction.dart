@@ -13,43 +13,42 @@ class TrueFalseReadingInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final text = (instruction != null && instruction!.trim().isNotEmpty)
+        ? instruction!.toUpperCase()
+        : 'READ AND DECIDE TRUE OR FALSE';
+
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+        color: primaryColor.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.18)),
       ),
-      child: Text.rich(
-        TextSpan(
-          children: [
-            WidgetSpan(
-              alignment: PlaceholderAlignment.middle,
-              child: Padding(
-                padding: EdgeInsets.only(right: 8.w),
-                child: Icon(
-                  Icons.published_with_changes_rounded,
-                  size: 14.r,
-                  color: primaryColor,
-                ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            Icons.fact_check_outlined,
+            size: 15.r,
+            color: primaryColor,
+          ),
+          SizedBox(width: 8.w),
+          Flexible(
+            child: Text(
+              text,
+              textAlign: TextAlign.center,
+              softWrap: true,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w600,
+                color: primaryColor,
+                letterSpacing: 0.8,
+                height: 1.35,
               ),
             ),
-            TextSpan(
-              text:
-                  instruction?.toUpperCase() ??
-                  "FLICK THE TRUTH COIN TO VALIDATE",
-            ),
-          ],
-        ),
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 10.sp,
-          fontWeight: FontWeight.w700,
-          color: primaryColor,
-          letterSpacing: 1.2,
-          height: 1.4,
-        ),
+          ),
+        ],
       ),
     );
   }

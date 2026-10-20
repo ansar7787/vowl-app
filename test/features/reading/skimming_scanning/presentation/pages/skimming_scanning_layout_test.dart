@@ -475,6 +475,60 @@ void main() {
 
       await stateController.close();
     });
+
+    testWidgets('14. Multi-line instruction and interaction prompt wrap with centered text and no ellipses', (
+      tester,
+    ) async {
+      const longInstructionQuest = ReadingQuest(
+        id: 'RDG_SKIMSCAN_LONG_Q',
+        instruction:
+            'Carefully scan through the scientific journal passage below to identify and tap the precise name of the rare atmospheric phenomenon observed during the expedition.',
+        difficulty: 1,
+        subtype: GameSubtype.skimmingScanning,
+        targetItem: 'auroral arc display',
+        correctAnswer: 'auroral arc display',
+        passage:
+            'The arctic research team recorded a distinct auroral arc display expanding across the northern sky at midnight.',
+        timeLimit: 30,
+      );
+
+      await pumpSkimmingScanning(
+        tester,
+        state: const ReadingLoaded(
+          quests: [longInstructionQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+        ),
+        width: 320,
+        height: 640,
+      );
+
+      // Verify no overflow exception was thrown
+      expect(tester.takeException(), isNull);
+
+      // Verify instruction text exists and has TextAlign.center
+      final instructionFinder = find.text(
+        'Carefully scan through the scientific journal passage below to identify and tap the precise name of the rare atmospheric phenomenon observed during the expedition.',
+      );
+      expect(instructionFinder, findsOneWidget);
+      final instructionWidget = tester.widget<Text>(instructionFinder);
+      expect(instructionWidget.textAlign, TextAlign.center);
+      expect(instructionWidget.overflow, isNot(TextOverflow.ellipsis));
+
+      // Verify interaction prompt text exists and has TextAlign.center with no ellipsis
+      final promptFinder = find.text('Tap the target in the text below');
+      expect(promptFinder, findsOneWidget);
+      final promptWidget = tester.widget<Text>(promptFinder);
+      expect(promptWidget.textAlign, TextAlign.center);
+      expect(promptWidget.overflow, isNot(TextOverflow.ellipsis));
+
+      // Verify target badge text has TextAlign.center with no ellipsis
+      final targetBadgeTextFinder = find.text('FIND: AURORAL ARC DISPLAY');
+      expect(targetBadgeTextFinder, findsOneWidget);
+      final targetBadgeTextWidget = tester.widget<Text>(targetBadgeTextFinder);
+      expect(targetBadgeTextWidget.textAlign, TextAlign.center);
+      expect(targetBadgeTextWidget.overflow, isNot(TextOverflow.ellipsis));
+    });
   });
 }
 

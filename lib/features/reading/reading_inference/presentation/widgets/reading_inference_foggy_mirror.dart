@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 class ReadingInferenceFoggyMirror extends StatelessWidget {
@@ -30,26 +31,100 @@ class ReadingInferenceFoggyMirror extends StatelessWidget {
       onTapDown: (details) => onRub(details.localPosition),
       child: Stack(
         children: [
-          // Clear Passage Text
+          // Clear Passage Container
           Container(
-            padding: EdgeInsets.all(26.r),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
             decoration: BoxDecoration(
               color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-              borderRadius: BorderRadius.circular(24.r),
+              borderRadius: BorderRadius.circular(20.r),
               border: Border.all(
-                color: Theme.of(context).dividerColor.withValues(alpha: 0.1),
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.1)
+                    : color.withValues(alpha: 0.18),
+                width: 1.5,
               ),
+              boxShadow: [
+                BoxShadow(
+                  color: isDark
+                      ? Colors.black.withValues(alpha: 0.2)
+                      : color.withValues(alpha: 0.06),
+                  blurRadius: 16,
+                  offset: const Offset(0, 4),
+                ),
+              ],
             ),
-            child: Text(
-              passage,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                height: 1.4,
-                color: Theme.of(context).colorScheme.onSurface,
-                fontWeight: FontWeight.w500,
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // Header inside the passage card
+                Row(
+                  children: [
+                    Icon(
+                      Icons.auto_stories_rounded,
+                      size: 15.r,
+                      color: color.withValues(alpha: 0.9),
+                    ),
+                    SizedBox(width: 6.w),
+                    Text(
+                      'Passage',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 0.5,
+                        color: color.withValues(alpha: 0.9),
+                      ),
+                    ),
+                    const Spacer(),
+                    if (!isAnswered && clarity < 1.0)
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 8.w,
+                          vertical: 3.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: color.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.touch_app_rounded,
+                              size: 11.r,
+                              color: color,
+                            ),
+                            SizedBox(width: 4.w),
+                            Text(
+                              '${(clarity * 100).toInt()}% clear',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w700,
+                                color: color,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                  ],
+                ),
+                SizedBox(height: 12.h),
+                Text(
+                  passage,
+                  softWrap: true,
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    height: 1.55,
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.92)
+                        : AppColors.slate800,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ],
             ),
           ),
 
@@ -57,29 +132,31 @@ class ReadingInferenceFoggyMirror extends StatelessWidget {
           if (!isAnswered && clarity < 1.0)
             Positioned.fill(
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(24.r),
+                borderRadius: BorderRadius.circular(20.r),
                 child: CustomPaint(
                   painter: FogPainter(
                     points: rubPoints,
                     clarity: clarity,
                     color: isDark
-                        ? Colors.grey.shade800
-                        : Colors.blueGrey.shade100,
+                        ? const Color(0xFF242A38)
+                        : const Color(0xFFE2E8F0),
                   ),
                 ),
               ),
             ),
 
-          // Hand Instruction Animation
+          // Interactive Swipe Prompt
           if (rubPoints.isEmpty && !isAnswered)
             Positioned.fill(
               child: Center(
-                child:
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
                     Icon(
-                          Icons.touch_app_rounded,
-                          size: 48.r,
-                          color: isDark ? Colors.white70 : Colors.black54,
-                        )
+                      Icons.touch_app_rounded,
+                      size: 38.r,
+                      color: isDark ? Colors.white70 : Colors.black54,
+                    )
                         .animate(
                           onPlay: (c) {
                             if (!VowlMotion.shouldReduceMotion(context)) {
@@ -88,41 +165,33 @@ class ReadingInferenceFoggyMirror extends StatelessWidget {
                           },
                         )
                         .moveX(
-                          begin: -40.w,
-                          end: 40.w,
+                          begin: -30.w,
+                          end: 30.w,
                           duration: 1.seconds,
                           curve: Curves.easeInOut,
                         )
-                        .fade(begin: 0.2, end: 1.0)
+                        .fade(begin: 0.3, end: 1.0)
                         .then()
                         .moveX(
-                          begin: 40.w,
-                          end: -40.w,
+                          begin: 30.w,
+                          end: -30.w,
                           duration: 1.seconds,
                           curve: Curves.easeInOut,
                         )
-                        .fade(begin: 1.0, end: 0.2),
-              ),
-            ),
-
-          // Glowing clues overlay
-          if (clarity > 0.5 && !isAnswered)
-            Positioned.fill(
-              child: Center(
-                child:
-                    Icon(
-                          Icons.lightbulb_outline_rounded,
-                          color: Colors.amber.withValues(alpha: 0.35),
-                          size: 80.r,
-                        )
-                        .animate(
-                          onPlay: (c) {
-                            if (!VowlMotion.shouldReduceMotion(context)) {
-                              c.repeat();
-                            }
-                          },
-                        )
-                        .shimmer(duration: 2.seconds),
+                        .fade(begin: 1.0, end: 0.3),
+                    SizedBox(height: 6.h),
+                    Text(
+                      'Swipe to reveal the passage',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w600,
+                        color: isDark ? Colors.white70 : Colors.black54,
+                        letterSpacing: 0.3,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
         ],
@@ -151,13 +220,13 @@ class FogPainter extends CustomPainter {
 
     final clearPaint = Paint()
       ..blendMode = BlendMode.clear
-      ..strokeWidth = 35.r
+      ..strokeWidth = 36.r
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12);
 
     for (int i = 0; i < points.length; i++) {
-      canvas.drawCircle(points[i], 17.5.r, clearPaint);
+      canvas.drawCircle(points[i], 18.r, clearPaint);
       if (i < points.length - 1) {
         final dist = (points[i] - points[i + 1]).distance;
         if (dist < 80.r) {

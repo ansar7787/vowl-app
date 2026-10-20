@@ -197,7 +197,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
                                     instruction:
                                         InstructionHelper.getInstruction(quest),
                                   ),
-                                  SizedBox(height: 24.h),
+                                  SizedBox(height: 16.h),
                                   TrueFalseReadingPassage(
                                     passage: quest.passage ?? "",
                                     color: theme.primaryColor,
@@ -205,7 +205,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
                                     onPlayAudio: () => soundService
                                         .playTts(quest.passage ?? ""),
                                   ),
-                                  SizedBox(height: 32.h),
+                                  SizedBox(height: 16.h),
                                   TrueFalseReadingStatement(
                                     statement: quest.question ?? "",
                                     color: theme.primaryColor,
@@ -213,62 +213,47 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
                                     onPlayAudio: () => soundService
                                         .playTts(quest.question ?? ""),
                                   ),
+                                  SizedBox(height: 24.h),
+                                  TrueFalseReadingCoinZone(
+                                    key: ValueKey(quest.id),
+                                    onAnswerSelected: _onAnswerSelected,
+                                    isDisabled:
+                                        isAnsweredNotifier.value ||
+                                        _pendingAnswer.value != null,
+                                    pendingAnswer: _pendingAnswer.value,
+                                    isDark: isDark,
+                                  ),
+                                  if (_pendingAnswer.value != null &&
+                                      !isAnsweredNotifier.value) ...[
+                                    SizedBox(height: 24.h),
+                                    EvidenceHighlightWrapper(
+                                      passage: quest.passage ?? "",
+                                      evidenceWords: [
+                                        quest.evidenceLine ??
+                                            quest.passage ??
+                                            "",
+                                      ],
+                                      primaryColor: theme.primaryColor,
+                                      onCorrectHighlight: () =>
+                                          _submitFinalAnswer(true, quest),
+                                      instruction:
+                                          'Tap the words that prove your answer',
+                                      isPositioned: false,
+                                    ),
+                                  ],
+                                  SizedBox(
+                                    height: MediaQuery.of(context)
+                                                .viewInsets
+                                                .bottom >
+                                            0
+                                        ? MediaQuery.of(context)
+                                                .viewInsets
+                                                .bottom +
+                                            40.h
+                                        : 120.h,
+                                  ),
                                 ],
                               ),
-                            ),
-                          ),
-                          SliverToBoxAdapter(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                SizedBox(height: 40.h),
-                                TrueFalseReadingCoinZone(
-                                  key: ValueKey(quest.id),
-                                  onAnswerSelected: _onAnswerSelected,
-                                  isDisabled:
-                                      isAnsweredNotifier.value ||
-                                      _pendingAnswer.value != null,
-                                  pendingAnswer: _pendingAnswer.value,
-                                  isDark: isDark,
-                                ),
-
-                                SizedBox(
-                                  height:
-                                      (_pendingAnswer.value != null &&
-                                          !isAnsweredNotifier.value)
-                                      ? 380.h
-                                      : 60.h,
-                                ),
-                              ],
-                            ),
-                          ),
-
-                          if (_pendingAnswer.value != null &&
-                              !isAnsweredNotifier.value)
-                            SliverToBoxAdapter(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: EvidenceHighlightWrapper(
-                                  passage: quest.passage ?? "",
-                                  evidenceWords: [
-                                    quest.evidenceLine ?? quest.passage ?? "",
-                                  ],
-                                  primaryColor: theme.primaryColor,
-                                  onCorrectHighlight: () =>
-                                      _submitFinalAnswer(true, quest),
-                                  instruction:
-                                      'Tap the words that prove your answer',
-                                  isPositioned: false,
-                                ),
-                              ),
-                            ),
-                          SliverToBoxAdapter(
-                            child: SizedBox(
-                              height:
-                                  MediaQuery.of(context).viewInsets.bottom > 0
-                                  ? MediaQuery.of(context).viewInsets.bottom +
-                                        40.h
-                                  : 120.h,
                             ),
                           ),
                         ],

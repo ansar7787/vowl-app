@@ -298,20 +298,20 @@ void main() {
   }
 
   group('SentenceOrderReadingScreen Layout & Interactions', () {
-    testWidgets('1. Initial layout renders instruction, stone slabs, and lock capstone', (
+    testWidgets('1. Initial layout renders instruction, stone slabs, and check order button', (
       tester,
     ) async {
       await pumpSentenceOrder(tester);
 
       expect(find.byType(SentenceOrderReadingInstruction), findsOneWidget);
       expect(
-        find.text('RECONSTRUCT THE LOGICAL TIMELINE OF THE INVENTION.'),
+        find.text('Reconstruct the logical timeline of the invention.'),
         findsOneWidget,
       );
 
       expect(find.byType(SentenceOrderReadingStoneSlab), findsNWidgets(3));
       expect(find.byType(SentenceOrderReadingCapstone), findsOneWidget);
-      expect(find.text('LOCK CAPSTONE'), findsOneWidget);
+      expect(find.text('Check Order'), findsOneWidget);
       expect(find.byIcon(Icons.drag_handle_rounded), findsNWidgets(3));
     });
 

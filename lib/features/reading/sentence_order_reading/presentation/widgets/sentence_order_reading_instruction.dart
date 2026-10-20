@@ -13,23 +13,39 @@ class SentenceOrderReadingInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
-      ),
-      child: Text(
-        instruction?.toUpperCase() ?? "RESTORE THE LOGICAL STRUCTURE",
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 11.sp,
-          fontWeight: FontWeight.w800,
-          color: primaryColor,
-          letterSpacing: 1.2,
-          height: 1.4,
+    final text = (instruction != null && instruction!.trim().isNotEmpty)
+        ? instruction!.trim()
+        : 'Put the sentences in the correct order.';
+
+    return Semantics(
+      header: true,
+      label: text,
+      child: Center(
+        child: Container(
+          constraints: BoxConstraints(maxWidth: 340.w),
+          padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 10.h),
+          decoration: BoxDecoration(
+            color: primaryColor.withValues(alpha: 0.08),
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: primaryColor.withValues(alpha: 0.2),
+              width: 1.2,
+            ),
+          ),
+          child: Text(
+            text,
+            textAlign: TextAlign.center,
+            softWrap: true,
+            overflow: TextOverflow.visible,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w600,
+              color: primaryColor,
+              letterSpacing: 0.1,
+              height: 1.35,
+            ),
+          ),
         ),
       ),
     );

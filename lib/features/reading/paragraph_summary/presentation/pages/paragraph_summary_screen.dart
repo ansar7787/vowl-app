@@ -228,21 +228,24 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
                                   SizedBox(height: 16.h),
                                   Text(
                                     _isDistilled.value
-                                        ? "DISTILLATION COMPLETE! CHOOSE THE BEST SUMMARY:"
-                                        : "PINCH/SQUEEZE THE TUBE TO DISTILL CORE CONCEPTS",
+                                        ? "Choose the best summary below:"
+                                        : "Pinch or tap the card to reveal key ideas",
                                     textAlign: TextAlign.center,
+                                    softWrap: true,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       color: _isDistilled.value
                                           ? tokens.gameCorrect
-                                          : theme.primaryColor.withValues(
-                                              alpha: 0.6,
-                                            ),
-                                      fontSize: 11.sp,
-                                      letterSpacing: 1.5,
+                                          : (isDark
+                                              ? Colors.white
+                                                  .withValues(alpha: 0.7)
+                                              : const Color(0xFF64748B)),
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 0.2,
                                     ),
                                   ),
-                                  SizedBox(height: 24.h),
+                                  SizedBox(height: 20.h),
                                 ],
                               ),
                             ),

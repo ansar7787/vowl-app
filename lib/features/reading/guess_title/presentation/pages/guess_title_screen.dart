@@ -28,9 +28,9 @@ class GuessTitleScreen extends StatefulWidget {
 }
 
 class _GuessTitleScreenState extends State<GuessTitleScreen>
-    with
-        GameScreenMixin<GuessTitleScreen>,
-        ReadingGameScreenMixin<GuessTitleScreen> {
+  with
+    GameScreenMixin<GuessTitleScreen>,
+    ReadingGameScreenMixin<GuessTitleScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -130,7 +130,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
                                     instruction:
                                         InstructionHelper.getInstruction(quest),
                                   ),
-                                  SizedBox(height: 24.h),
+                                  SizedBox(height: 20.h),
                                   ValueListenableBuilder<String?>(
                                     valueListenable: _selectedTitle,
                                     builder: (context, selectedTitle, _) {
@@ -159,7 +159,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
                                               );
                                             },
                                           ),
-                                          SizedBox(height: 32.h),
+                                          SizedBox(height: 20.h),
                                           if (!isAnsweredNotifier.value ||
                                               isCorrectNotifier.value == false)
                                             GuessTitleLabelRack(
@@ -190,7 +190,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
                                     },
                                   ),
                                   if (isAnsweredNotifier.value) ...[
-                                    SizedBox(height: 24.h),
+                                    SizedBox(height: 20.h),
                                     _buildExplanationCard(
                                       quest,
                                       theme.primaryColor,
@@ -234,9 +234,12 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
       width: double.infinity,
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
+        color: primaryColor.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.3)),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.25),
+          width: 1.5,
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -246,15 +249,16 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
               Icon(
                 Icons.lightbulb_outline_rounded,
                 color: primaryColor,
-                size: 24.sp,
+                size: 22.sp,
               ),
               SizedBox(width: 8.w),
               Expanded(
                 child: Text(
                   'Why this title?',
+                  softWrap: true,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 18.sp,
+                    fontSize: 17.sp,
                     fontWeight: FontWeight.w700,
                     color: primaryColor,
                   ),
@@ -266,23 +270,27 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
           if (quest.whyThisTitle != null) ...[
             Text(
               quest.whyThisTitle!,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 16.sp,
+                fontSize: 15.sp,
                 fontWeight: FontWeight.w600,
-                color: isDark ? Colors.white : Colors.black87,
+                color: isDark ? Colors.white : const Color(0xFF1E293B),
                 height: 1.5,
               ),
             ),
-            SizedBox(height: 12.h),
+            SizedBox(height: 10.h),
           ],
           if (quest.explanation != null)
             Text(
               quest.explanation!,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 15.sp,
-                color: isDark ? Colors.white70 : Colors.black54,
+                fontSize: 14.sp,
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.75)
+                    : Colors.black.withValues(alpha: 0.7),
                 height: 1.5,
               ),
             ),

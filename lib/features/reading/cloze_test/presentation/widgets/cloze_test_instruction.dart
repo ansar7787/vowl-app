@@ -13,40 +13,61 @@ class ClozeTestInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            Icons.settings_input_component_rounded,
-            size: 14.r,
-            color: primaryColor,
-          ),
-          SizedBox(width: 12.w),
-          Flexible(
-            child: Text(
-              instruction?.toUpperCase() ??
-                  "INJECT FUEL CELLS TO POWER THE PASSAGE",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
-                color: primaryColor,
-                height: 1.4,
-                letterSpacing: 1.5,
-              ),
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final raw = (instruction ?? '').trim();
+    final displayText = raw.isNotEmpty
+        ? raw
+        : 'Choose the correct word to complete the sentence.';
+
+    return Semantics(
+      header: true,
+      label: displayText,
+      child: Center(
+        child: Container(
+          constraints: BoxConstraints(maxWidth: 340.w),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 9.h),
+          decoration: BoxDecoration(
+            color: primaryColor.withValues(alpha: isDark ? 0.12 : 0.08),
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: primaryColor.withValues(alpha: isDark ? 0.25 : 0.18),
+              width: 1.2,
             ),
           ),
-          // Balances the icon on the left to perfectly center the text visually
-          SizedBox(width: 14.r + 12.w),
-        ],
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.menu_book_rounded,
+                size: 16.r,
+                color: primaryColor,
+              ),
+              SizedBox(width: 8.w),
+              Flexible(
+                child: Text(
+                  displayText,
+                  textAlign: TextAlign.center,
+                  softWrap: true,
+                  overflow: TextOverflow.visible,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w600,
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.95)
+                        : (primaryColor == Colors.white
+                            ? const Color(0xFF1E293B)
+                            : primaryColor),
+                    height: 1.35,
+                    letterSpacing: 0.15,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

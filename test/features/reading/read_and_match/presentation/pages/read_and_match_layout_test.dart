@@ -265,7 +265,7 @@ void main() {
 
       expect(find.byType(ReadAndMatchScreen), findsOneWidget);
       expect(find.byType(ReadAndMatchInstruction), findsOneWidget);
-      expect(find.text('MATCH EACH ENERGY SOURCE WITH ITS DESCRIPTION.'), findsOneWidget);
+      expect(find.text('Match each energy source with its description.'), findsOneWidget);
 
       // Verify 3 keys and 3 values terminals are present
       expect(find.byType(ReadAndMatchTerminal), findsNWidgets(6));
@@ -515,12 +515,12 @@ void main() {
       expect(find.byType(ReadAndMatchTerminal), findsNothing);
     });
 
-    testWidgets('13. Game briefing layer displays Semantic Bridge briefing and dismisses on action', (tester) async {
+    testWidgets('13. Game briefing layer displays Read & Match briefing and dismisses on action', (tester) async {
       await pumpReadAndMatch(tester, level: 1);
 
       expect(find.byType(GameBriefingLayer), findsOneWidget);
-      expect(find.text('SEMANTIC BRIDGE'), findsOneWidget);
-      final startBtn = find.text('BRIDGE GAPS');
+      expect(find.text('READ & MATCH'), findsOneWidget);
+      final startBtn = find.text('MATCH ITEMS');
       expect(startBtn, findsOneWidget);
 
       await tester.ensureVisible(startBtn);

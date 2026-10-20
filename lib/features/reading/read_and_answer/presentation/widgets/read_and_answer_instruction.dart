@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ReadAndAnswerInstruction extends StatelessWidget {
   final Color primaryColor;
-
   final String? instruction;
 
   const ReadAndAnswerInstruction({
@@ -14,44 +13,44 @@ class ReadAndAnswerInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final displayText = (instruction ?? 'READING PASSAGE').toUpperCase();
+
     return Semantics(
-      // 'header' signals to TalkBack/VoiceOver that this is a labelled
-      // section header — players hear it once on arrival, not on every focus.
       header: true,
-      label: instruction ?? 'READ & ANSWER',
+      label: instruction ?? 'Reading Passage',
       excludeSemantics: true,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
         decoration: BoxDecoration(
           color: primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(30.r),
-          border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+          borderRadius: BorderRadius.circular(12.r),
+          border: Border.all(
+            color: primaryColor.withValues(alpha: 0.2),
+            width: 1.2,
+          ),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Decorative icon — excluded from semantics by parent wrapper.
             ExcludeSemantics(
               child: Icon(
-                Icons.menu_book_rounded,
+                Icons.auto_stories_rounded,
                 size: 14.r,
                 color: primaryColor,
               ),
             ),
-            SizedBox(width: 12.w),
+            SizedBox(width: 8.w),
             Flexible(
-              // FlexFit.loose: the text shrinks to its content width
-              // without forcing the Row to expand to fill available space.
               fit: FlexFit.loose,
               child: Text(
-                (instruction ?? 'READ & ANSWER').toUpperCase(),
-                textAlign: TextAlign.center,
+                displayText,
+                softWrap: true,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w900,
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w600,
                   color: primaryColor,
-                  letterSpacing: 1.5,
+                  letterSpacing: 0.5,
                 ),
               ),
             ),

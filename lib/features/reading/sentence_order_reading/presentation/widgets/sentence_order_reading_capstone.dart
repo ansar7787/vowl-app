@@ -5,11 +5,13 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 class SentenceOrderReadingCapstone extends StatelessWidget {
   final Color color;
   final VoidCallback onTap;
+  final String label;
 
   const SentenceOrderReadingCapstone({
     super.key,
     required this.color,
     required this.onTap,
+    this.label = 'Check Order',
   });
 
   @override
@@ -18,15 +20,15 @@ class SentenceOrderReadingCapstone extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.infinity,
-        height: 70.h,
+        height: 54.h,
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(20.r),
+          borderRadius: BorderRadius.circular(16.r),
           boxShadow: [
             BoxShadow(
-              color: color.withValues(alpha: 0.3),
-              blurRadius: 12,
-              offset: const Offset(0, 4),
+              color: color.withValues(alpha: 0.28),
+              blurRadius: 8,
+              offset: const Offset(0, 3),
             ),
           ],
         ),
@@ -34,16 +36,16 @@ class SentenceOrderReadingCapstone extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.lock_clock_rounded, color: Colors.white, size: 24.r),
-              SizedBox(width: 16.w),
+              Icon(Icons.check_rounded, color: Colors.white, size: 22.r),
+              SizedBox(width: 10.w),
               Text(
-                "LOCK CAPSTONE",
+                label,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                   color: Colors.white,
-                  letterSpacing: 2,
+                  letterSpacing: 0.5,
                 ),
               ),
             ],

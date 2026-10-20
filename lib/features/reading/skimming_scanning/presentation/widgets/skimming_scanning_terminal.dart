@@ -1,8 +1,6 @@
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
 class SkimmingScanningTerminal extends StatelessWidget {
   final String text;
@@ -67,102 +65,99 @@ class SkimmingScanningTerminal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final List<String> chunks = _getChunks(text, correct);
 
+    final cardBg = isDark ? const Color(0xFF141824) : Colors.white;
+    final cardBorder = isDark
+        ? Colors.white.withValues(alpha: 0.12)
+        : color.withValues(alpha: 0.18);
+    final cardShadow = isDark
+        ? Colors.black.withValues(alpha: 0.35)
+        : color.withValues(alpha: 0.06);
+
+    final Color wordTextNormal = isDark
+        ? Colors.white.withValues(alpha: 0.92)
+        : const Color(0xFF1E293B);
+    final Color wordBgNormal = isDark
+        ? Colors.white.withValues(alpha: 0.05)
+        : color.withValues(alpha: 0.04);
+    final Color wordBorderNormal = isDark
+        ? Colors.white.withValues(alpha: 0.08)
+        : color.withValues(alpha: 0.1);
+
     return Container(
-      constraints: BoxConstraints(minHeight: 150.h, maxHeight: 260.h),
+      constraints: BoxConstraints(minHeight: 140.h, maxHeight: 260.h),
       decoration: BoxDecoration(
-        color: Colors.black,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: Colors.white10, width: 4),
+        color: cardBg,
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: cardBorder, width: 1.5),
         boxShadow: [
           BoxShadow(
-            color: color.withValues(alpha: 0.15),
-            blurRadius: 30,
-            spreadRadius: 2,
+            color: cardShadow,
+            blurRadius: 18,
+            offset: const Offset(0, 4),
           ),
         ],
       ),
-      child: Stack(
-        children: [
-          // Scrolling Content
-          Positioned.fill(
-            child: SingleChildScrollView(
-              controller: scrollController,
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
-              child: Wrap(
-                spacing: 8.w,
-                runSpacing: 12.h,
-                children: chunks.map((word) {
-                  final clean = _cleanWord(word);
-                  final isCorrectTarget =
-                      clean.toLowerCase() == _cleanWord(correct).toLowerCase();
-                  final bool isTapped = isAnswered && isCorrectTarget;
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(18.r),
+        child: SingleChildScrollView(
+          controller: scrollController,
+          physics: const BouncingScrollPhysics(),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
+          child: Wrap(
+            spacing: 6.w,
+            runSpacing: 8.h,
+            children: chunks.map((word) {
+              final clean = _cleanWord(word);
+              final isCorrectTarget =
+                  clean.toLowerCase() == _cleanWord(correct).toLowerCase();
+              final bool isTapped = isAnswered && isCorrectTarget;
 
-                  return GestureDetector(
-                    onTap: isAnswered ? null : () => onTapWord(clean, isCorrectTarget),
-                    child: AnimatedContainer(
-                      duration: 300.milliseconds,
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 10.w,
-                        vertical: 6.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: isTapped
-                            ? tokens.gameCorrect.withValues(alpha: 0.25)
-                            : Colors.transparent,
-                        borderRadius: BorderRadius.circular(8.r),
-                        border: Border.all(
-                          color: isTapped
-                              ? tokens.gameCorrect
-                              : Colors.transparent,
-                          width: 1.5,
-                        ),
-                      ),
-                      child: Text(
-                        word,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 18.sp,
-                          color: isTapped
-                              ? tokens.gameCorrect
-                              : tokens.gameCorrect.withValues(alpha: 0.8),
-                          fontWeight: isTapped
-                              ? FontWeight.bold
-                              : FontWeight.normal,
-                          letterSpacing: 1,
-                        ),
-                      ),
+              return GestureDetector(
+                onTap: isAnswered
+                    ? null
+                    : () => onTapWord(clean, isCorrectTarget),
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 9.w,
+                    vertical: 5.5.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: isTapped
+                        ? tokens.gameCorrect.withValues(
+                            alpha: isDark ? 0.22 : 0.15,
+                          )
+                        : wordBgNormal,
+                    borderRadius: BorderRadius.circular(8.r),
+                    border: Border.all(
+                      color: isTapped
+                          ? tokens.gameCorrect
+                          : wordBorderNormal,
+                      width: 1.2,
                     ),
-                  );
-                }).toList(),
-              ),
-            ),
-          ),
-
-          // CRT Overlay
-          IgnorePointer(
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.r),
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.black.withValues(alpha: 0.3),
-                    Colors.transparent,
-                    Colors.black.withValues(alpha: 0.3),
-                  ],
-                  stops: const [0, 0.5, 1],
+                  ),
+                  child: Text(
+                    word,
+                    softWrap: true,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      color: isTapped ? tokens.gameCorrect : wordTextNormal,
+                      fontWeight: isTapped ? FontWeight.w700 : FontWeight.w500,
+                      letterSpacing: 0.3,
+                      height: 1.35,
+                    ),
+                  ),
                 ),
-              ),
-            ),
+              );
+            }).toList(),
           ),
-
-          // Scanline
-          const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
-        ],
+        ),
       ),
     );
   }
 }
+

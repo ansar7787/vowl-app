@@ -75,7 +75,7 @@ void main() {
     await tester.pump(const Duration(milliseconds: 500));
 
     // Verify natural non-buzzword instruction text and no coin badge
-    expect(find.text('FIND THE KEY WORDS'), findsOneWidget);
+    expect(find.text('Find the Clue Words'), findsOneWidget);
     expect(find.text('Tap the word(s) that support the answer'), findsOneWidget);
     expect(find.text('+5 coins'), findsNothing);
   });

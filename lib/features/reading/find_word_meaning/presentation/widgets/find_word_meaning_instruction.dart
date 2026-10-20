@@ -13,39 +13,46 @@ class FindWordMeaningInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final text = (instruction != null && instruction!.trim().isNotEmpty)
+        ? instruction!.trim()
+        : 'Find Word Meaning';
+
     return Semantics(
       header: true,
-      label: instruction ?? 'FIND WORD MEANING',
+      label: text,
       excludeSemantics: true,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 7.h),
         decoration: BoxDecoration(
           color: primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(30.r),
-          border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: primaryColor.withValues(alpha: 0.22),
+            width: 1.2,
+          ),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             ExcludeSemantics(
               child: Icon(
-                Icons.zoom_in_rounded,
-                size: 14.r,
+                Icons.search_rounded,
+                size: 15.r,
                 color: primaryColor,
               ),
             ),
-            SizedBox(width: 12.w),
+            SizedBox(width: 8.w),
             Flexible(
               fit: FlexFit.loose,
               child: Text(
-                instruction ?? 'Find word meaning',
-                textAlign: TextAlign.center,
+                text,
+                softWrap: true,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w600,
                   color: primaryColor,
-                  letterSpacing: 0.5,
+                  letterSpacing: 0.4,
                 ),
               ),
             ),

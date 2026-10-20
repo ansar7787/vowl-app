@@ -505,7 +505,7 @@ void main() {
         verifyNever(() => mockReadingBloc.add(const SubmitAnswer(true)));
 
         // Scroll down to bring EvidenceHighlightWrapper into the viewport
-        await tester.drag(find.byType(CustomScrollView), const Offset(0, -500));
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
 
@@ -524,6 +524,7 @@ void main() {
 
         final heartsWord = find.text('hearts');
         expect(heartsWord, findsWidgets);
+        await tester.ensureVisible(heartsWord.first);
         await tester.tap(heartsWord.first);
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 1000));

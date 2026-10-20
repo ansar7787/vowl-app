@@ -28,7 +28,7 @@ class ClozeTestFuelCells extends StatelessWidget {
         final bool isAlreadyDocked = dockedOption == o;
         final bool isAnyDocked = dockedOption != null;
         return Opacity(
-          opacity: isAnyDocked ? (isAlreadyDocked ? 0.2 : 0.5) : 1.0,
+          opacity: isAnyDocked ? (isAlreadyDocked ? 0.2 : 0.45) : 1.0,
           child: IgnorePointer(
             ignoring: isAnyDocked,
             child: GestureDetector(
@@ -58,39 +58,49 @@ class ClozeTestFuelCells extends StatelessWidget {
     bool isDark,
     bool isFeedback,
   ) {
+    final bgColor = isDark ? const Color(0xFF1E212D) : Colors.white;
+    final borderColor = isFeedback
+        ? color
+        : color.withValues(alpha: isDark ? 0.45 : 0.25);
+    final textColor = isDark ? Colors.white : const Color(0xFF1E293B);
+
     return Container(
+      constraints: BoxConstraints(
+        minWidth: 88.w,
+        maxWidth: 160.w,
+        minHeight: 48.h,
+      ),
       padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 12.h),
       decoration: BoxDecoration(
-        color: isDark ? Colors.black87 : Colors.white,
-        borderRadius: BorderRadius.circular(14.r),
-        border: Border.all(color: color, width: 2),
+        color: bgColor,
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(color: borderColor, width: 1.5),
         boxShadow: [
           BoxShadow(
-            color: color.withValues(alpha: isDark ? 0.4 : 0.15),
-            blurRadius: isFeedback ? 20 : 10,
-          ),
-          if (isFeedback)
-            BoxShadow(
-              color: Colors.white.withValues(alpha: 0.25),
-              blurRadius: 40,
+            color: (isDark ? Colors.black : color).withValues(
+              alpha: isFeedback ? 0.35 : (isDark ? 0.2 : 0.08),
             ),
+            blurRadius: isFeedback ? 18 : 8,
+            offset: const Offset(0, 3),
+          ),
         ],
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.bolt_rounded, size: 16.r, color: color),
-          SizedBox(width: 8.w),
-          Text(
-            text.toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.bold,
-              color: isDark ? Colors.white : Colors.black87,
-            ),
+      alignment: Alignment.center,
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Text(
+          text.toUpperCase(),
+          textAlign: TextAlign.center,
+          softWrap: false,
+          overflow: TextOverflow.visible,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 15.sp,
+            fontWeight: FontWeight.w600,
+            color: textColor,
+            letterSpacing: 0.5,
           ),
-        ],
+        ),
       ),
     );
   }

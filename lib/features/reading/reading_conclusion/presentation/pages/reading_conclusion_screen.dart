@@ -130,29 +130,29 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen>
                         physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [
-                                  SizedBox(height: 16.h),
+                                  SizedBox(height: 12.h),
                                   ReadingConclusionInstruction(
                                     primaryColor: theme.primaryColor,
                                     instruction:
                                         InstructionHelper.getInstruction(quest),
                                   ),
-                                  SizedBox(height: 32.h),
+                                  SizedBox(height: 16.h),
                                   ReadingConclusionPassage(
                                     passage: quest.passage ?? "",
                                     color: theme.primaryColor,
                                     isDark: isDark,
                                   ),
-                                  SizedBox(height: 32.h),
+                                  SizedBox(height: 20.h),
                                 ],
                               ),
                             ),
                           ),
                           SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
                             sliver: SliverToBoxAdapter(
                               child: ReadingConclusionOptions(
                                 options: quest.options ?? [],
@@ -171,9 +171,9 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen>
                               quest.logicChain!.isNotEmpty)
                             SliverPadding(
                               padding: EdgeInsets.only(
-                                left: 24.w,
-                                right: 24.w,
-                                top: 8.h,
+                                left: 20.w,
+                                right: 20.w,
+                                top: 4.h,
                               ),
                               sliver: SliverToBoxAdapter(
                                 child: ReadingConclusionLogicChain(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
 class GuessTitleLabelRack extends StatelessWidget {
@@ -25,14 +26,27 @@ class GuessTitleLabelRack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>();
+    final correctColor = tokens?.gameCorrect ?? AppColors.gameCorrect;
+
+    final screenWidth = MediaQuery.of(context).size.width;
+    final totalPadding = 48.w;
+    final spacing = 10.w;
+    final availableWidth = screenWidth - totalPadding;
+    // Standard uniform 2-column card width so every card is identical in size:
+    final cardWidth = labels.length <= 1
+        ? availableWidth
+        : (availableWidth - spacing) / 2;
+
     return Wrap(
-      spacing: 12.w,
-      runSpacing: 12.h,
+      spacing: spacing,
+      runSpacing: 10.h,
       alignment: WrapAlignment.center,
       children: List.generate(labels.length, (index) {
         final label = labels[index];
         final isSelected = selectedTitle == label;
-        final isCorrectOption = label == correct;
+        final isCorrectOption =
+            label.trim().toLowerCase() == correct.trim().toLowerCase();
 
         if (isAnswered) {
           if (isSelected) {
@@ -41,37 +55,73 @@ class GuessTitleLabelRack extends StatelessWidget {
               maintainAnimation: true,
               maintainState: true,
               visible: false,
-              child: _buildLabelCard(label, color, isDark, enabled: false),
+              child: SizedBox(
+                width: cardWidth,
+                child: _buildLabelCard(
+                  label,
+                  color,
+                  isDark,
+                  correctColor: correctColor,
+                  enabled: false,
+                ),
+              ),
             );
           }
           if (!isCorrectOption) {
             return Opacity(
-              opacity: 0.2,
-              child: _buildLabelCard(label, color, isDark, enabled: false),
+              opacity: 0.3,
+              child: SizedBox(
+                width: cardWidth,
+                child: _buildLabelCard(
+                  label,
+                  color,
+                  isDark,
+                  correctColor: correctColor,
+                  enabled: false,
+                ),
+              ),
             );
           }
         }
 
-        return Draggable<String>(
-          data: label,
-          maxSimultaneousDrags: isAnswered ? 0 : 1,
-          feedback: Material(
-            color: Colors.transparent,
-            child: _buildLabelCard(label, color, isDark, isFeedback: true),
-          ),
-          childWhenDragging: Opacity(
-            opacity: 0.4,
-            child: _buildLabelCard(label, color, isDark),
-          ),
-          child: GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTap: isAnswered ? null : () => onSelect?.call(label),
-            child: _buildLabelCard(
-              label,
-              color,
-              isDark,
-              isAnswered: isAnswered,
-              isCorrectOption: isCorrectOption,
+        return SizedBox(
+          width: cardWidth,
+          child: Draggable<String>(
+            data: label,
+            maxSimultaneousDrags: isAnswered ? 0 : 1,
+            feedback: Material(
+              color: Colors.transparent,
+              child: SizedBox(
+                width: cardWidth,
+                child: _buildLabelCard(
+                  label,
+                  color,
+                  isDark,
+                  correctColor: correctColor,
+                  isFeedback: true,
+                ),
+              ),
+            ),
+            childWhenDragging: Opacity(
+              opacity: 0.35,
+              child: _buildLabelCard(
+                label,
+                color,
+                isDark,
+                correctColor: correctColor,
+              ),
+            ),
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: isAnswered ? null : () => onSelect?.call(label),
+              child: _buildLabelCard(
+                label,
+                color,
+                isDark,
+                correctColor: correctColor,
+                isAnswered: isAnswered,
+                isCorrectOption: isCorrectOption,
+              ),
             ),
           ),
         );
@@ -83,6 +133,7 @@ class GuessTitleLabelRack extends StatelessWidget {
     String label,
     Color color,
     bool isDark, {
+    required Color correctColor,
     bool isFeedback = false,
     bool enabled = true,
     bool isAnswered = false,
@@ -90,41 +141,60 @@ class GuessTitleLabelRack extends StatelessWidget {
   }) {
     final showCorrect = isAnswered && isCorrectOption;
 
+    Color bgColor;
+    Color borderColor;
+
+    if (showCorrect) {
+      bgColor = correctColor.withValues(alpha: 0.12);
+      borderColor = correctColor;
+    } else if (isFeedback) {
+      bgColor = isDark ? const Color(0xFF252A34) : Colors.white;
+      borderColor = color;
+    } else {
+      bgColor = isDark ? const Color(0xFF1E222A) : Colors.white;
+      borderColor = isDark
+          ? Colors.white.withValues(alpha: 0.12)
+          : Colors.black.withValues(alpha: 0.08);
+    }
+
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+      width: double.infinity,
+      constraints: BoxConstraints(minHeight: 56.h),
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
       decoration: BoxDecoration(
-        color: showCorrect
-            ? AppColors.gameCorrect.withValues(alpha: 0.15)
-            : (isDark ? Colors.grey.shade900 : Colors.white),
-        borderRadius: BorderRadius.circular(12.r),
+        color: bgColor,
+        borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
             color: showCorrect
-                ? AppColors.gameCorrect.withValues(alpha: 0.3)
-                : (isDark ? Colors.black45 : Colors.black12),
-            blurRadius: isFeedback ? 15 : 6,
+                ? correctColor.withValues(alpha: 0.2)
+                : (isDark
+                      ? Colors.black45
+                      : Colors.black.withValues(alpha: 0.04)),
+            blurRadius: isFeedback ? 16 : 6,
             offset: Offset(0, isFeedback ? 8 : 2),
           ),
         ],
         border: Border.all(
-          color: showCorrect
-              ? AppColors.gameCorrect
-              : (isFeedback
-                    ? color
-                    : (isDark ? Colors.white10 : Colors.grey.shade300)),
-          width: showCorrect ? 2 : (isFeedback ? 2 : 1.5),
+          color: borderColor,
+          width: showCorrect || isFeedback ? 2 : 1.5,
         ),
       ),
+      alignment: Alignment.center,
       child: Text(
-        label.toUpperCase(),
+        label,
         textAlign: TextAlign.center,
+        softWrap: true,
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 12.sp,
-          fontWeight: FontWeight.w900,
+          fontSize: 13.5.sp,
+          fontWeight: FontWeight.w600,
+          height: 1.3,
           color: showCorrect
-              ? AppColors.gameCorrect
-              : (isDark ? Colors.white70 : Colors.black87),
+              ? correctColor
+              : (isDark
+                    ? Colors.white.withValues(alpha: 0.9)
+                    : const Color(0xFF1E293B)),
         ),
       ),
     );

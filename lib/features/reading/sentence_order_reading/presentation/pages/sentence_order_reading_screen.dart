@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/mixins/reading_game_screen_mixin.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
@@ -240,12 +241,12 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [
-                                  SizedBox(height: 24.h),
+                                  SizedBox(height: 18.h),
                                   SentenceOrderReadingInstruction(
                                     primaryColor: theme.primaryColor,
-                                    instruction: quest.instruction,
+                                    instruction: InstructionHelper.getInstruction(quest),
                                   ),
-                                  SizedBox(height: 32.h),
+                                  SizedBox(height: 20.h),
                                 ],
                               ),
                             ),
@@ -331,8 +332,11 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
     return AnimatedBuilder(
       animation: animation,
       builder: (context, child) {
-        final double scale = lerpDouble(1, 1.05, animation.value)!;
-        return Transform.scale(scale: scale, child: child);
+        final double scale = lerpDouble(1, 1.03, animation.value)!;
+        return Material(
+          color: Colors.transparent,
+          child: Transform.scale(scale: scale, child: child),
+        );
       },
       child: child,
     );

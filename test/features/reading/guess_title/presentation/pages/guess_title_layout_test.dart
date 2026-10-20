@@ -291,12 +291,12 @@ void main() {
       );
       expect(find.text('DRAG & DROP TITLE HERE'), findsOneWidget);
 
-      // Verify label cards rack with 4 options (rendered uppercase)
+      // Verify label cards rack with 4 options (rendered Title Case)
       expect(find.byType(GuessTitleLabelRack), findsOneWidget);
-      expect(find.text('A GUIDE TO CHOOSING FRESH FRUIT'), findsOneWidget);
-      expect(find.text('CLEANING THE KITCHEN'), findsOneWidget);
-      expect(find.text('SHOPPING WITH A LIST'), findsOneWidget);
-      expect(find.text('COOKING DINNER FOR FRIENDS'), findsOneWidget);
+      expect(find.text('A Guide to Choosing Fresh Fruit'), findsOneWidget);
+      expect(find.text('Cleaning the Kitchen'), findsOneWidget);
+      expect(find.text('Shopping With a List'), findsOneWidget);
+      expect(find.text('Cooking Dinner for Friends'), findsOneWidget);
     });
 
     testWidgets(
@@ -304,7 +304,7 @@ void main() {
         (tester) async {
       await pumpGuessTitle(tester);
 
-      final source = find.text('SHOPPING WITH A LIST');
+      final source = find.text('Shopping With a List');
       final target = find.text('DRAG & DROP TITLE HERE');
 
       final firstLocation = tester.getCenter(source);
@@ -329,7 +329,7 @@ void main() {
         (tester) async {
       await pumpGuessTitle(tester);
 
-      final source = find.text('CLEANING THE KITCHEN');
+      final source = find.text('Cleaning the Kitchen');
       final target = find.text('DRAG & DROP TITLE HERE');
 
       final firstLocation = tester.getCenter(source);
@@ -354,7 +354,7 @@ void main() {
         (tester) async {
       await pumpGuessTitle(tester);
 
-      final correctOption = find.text('SHOPPING WITH A LIST');
+      final correctOption = find.text('Shopping With a List');
       expect(correctOption, findsOneWidget);
 
       await tester.tap(correctOption);
@@ -372,7 +372,7 @@ void main() {
         (tester) async {
       await pumpGuessTitle(tester);
 
-      final wrongOption = find.text('CLEANING THE KITCHEN');
+      final wrongOption = find.text('Cleaning the Kitchen');
       expect(wrongOption, findsOneWidget);
 
       await tester.tap(wrongOption);
@@ -438,7 +438,7 @@ void main() {
 
       // Verify label rack remains visible to show correct answer
       expect(find.byType(GuessTitleLabelRack), findsOneWidget);
-      expect(find.text('SHOPPING WITH A LIST'), findsOneWidget);
+      expect(find.text('Shopping With a List'), findsOneWidget);
 
       // Verify explanation card is also shown
       expect(find.text('Why this title?'), findsOneWidget);
@@ -532,4 +532,3 @@ void main() {
     });
   });
 }
-
