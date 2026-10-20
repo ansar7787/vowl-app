@@ -182,4 +182,39 @@ void main() {
       ],
     );
   });
+
+  group('NextQuestion', () {
+    blocTest<ReadingBloc, ReadingState>(
+      'emits ReadingGameComplete and triggers updateUserRewards immediately on last question',
+      build: () {
+        when(() => mockUpdateUserRewards(any()))
+            .thenAnswer((_) async => const Right(null));
+        when(() => mockUpdateCategoryStats(any()))
+            .thenAnswer((_) async => const Right(null));
+        when(() => mockAwardBadge(any()))
+            .thenAnswer((_) async => const Right(null));
+
+        bloc.currentGameType = 'trueFalseReading';
+        bloc.currentLevel = 1;
+        return bloc;
+      },
+      seed: () => ReadingLoaded(
+        quests: tQuests,
+        currentIndex: tQuests.length - 1,
+        livesRemaining: 3,
+        answerStatus: AnswerStatus.correct,
+      ),
+      act: (bloc) => bloc.add(const NextQuestion()),
+      expect: () => [
+        isA<ReadingGameComplete>().having(
+          (s) => s.questCount,
+          'questCount',
+          tQuests.length,
+        ),
+      ],
+      verify: (_) {
+        verify(() => mockUpdateUserRewards(any())).called(1);
+      },
+    );
+  });
 }

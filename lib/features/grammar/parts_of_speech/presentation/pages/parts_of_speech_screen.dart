@@ -11,7 +11,6 @@ import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speech_instruction.dart';
 import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speech_context_card.dart';
@@ -291,13 +290,10 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
     }
 
     if (state is GrammarGameComplete) {
-      showConfettiNotifier.value = true;
-      GameDialogHelper.showCompletion(
+      handleGameComplete(
         context,
-        xp: state.xpEarned,
-        coins: state.coinsEarned,
-        title: 'POS PRO!',
-        enableDoubleUp: true,
+        xpEarned: state.xpEarned,
+        coinsEarned: state.coinsEarned,
       );
     }
   }

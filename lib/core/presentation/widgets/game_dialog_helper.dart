@@ -52,8 +52,21 @@ class GameDialogHelper {
     Object? popResult = true,
     bool enableDoubleUp = false,
     int mistakesMade = 0,
+    String? gameType,
+    int? level,
   }) {
     if (!context.mounted) return;
+
+    if (gameType != null && level != null) {
+      try {
+        context.read<AuthBloc>().add(
+          AuthLevelCompletedOptimistic(
+            gameType: gameType,
+            level: level,
+          ),
+        );
+      } catch (_) {}
+    }
 
     _sound.playLevelComplete();
     _haptic.success();

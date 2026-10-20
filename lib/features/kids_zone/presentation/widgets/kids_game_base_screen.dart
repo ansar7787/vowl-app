@@ -127,6 +127,14 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
         if (state is KidsGameComplete) {
           if (!_completionDialogShown) {
             _completionDialogShown = true;
+            try {
+              context.read<AuthBloc>().add(
+                AuthLevelCompletedOptimistic(
+                  gameType: widget.gameType,
+                  level: widget.level,
+                ),
+              );
+            } catch (_) {}
             audio.playLevelCompleteSFX();
             KidsGameDialogs.showCompletionDialog(
               context: context,

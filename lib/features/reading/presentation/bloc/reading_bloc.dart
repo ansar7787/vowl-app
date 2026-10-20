@@ -243,7 +243,7 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
         ),
       );
 
-      // 2. Background persistence (fire-and-forget)
+      // 2. Background persistence (fire-and-forget, parallelized, 0ms lag)
       _persistLevelCompletion(s.livesRemaining);
     } else {
       emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
@@ -286,36 +286,36 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
   /// Persists XP, coins, stats, and badge after a successful level completion.
   ///
   /// Called AFTER [ReadingGameComplete] is emitted — a failure here never
-  /// affects the UI. Offline guard prevents pointless requests.
+  /// affects the UI. Persistence is executed immediately in parallel via
+  /// [Future.wait] without gating on network pings; Firestore and repository
+  /// layers handle offline caching and retry transparently.
   void _persistLevelCompletion(int starsEarned) {
-    if (currentGameType == null || currentLevel == null) return;
+    final gameType = currentGameType ??
+        (state is ReadingLoaded && (state as ReadingLoaded).quests.isNotEmpty
+            ? (state as ReadingLoaded).quests.first.subtype?.name
+            : null);
+    final level = currentLevel;
+    if (gameType == null || level == null) return;
 
-    networkInfo.isConnected.then((isOnline) {
-      if (!isOnline) {
-        //  Enqueue for offline retry via a PendingRewardsQueue service.
-        return;
-      }
-
+    Future.wait([
       updateUserRewards(
         UpdateUserRewardsParams(
-          gameType: currentGameType!,
-          level: currentLevel!,
+          gameType: gameType,
+          level: level,
           xpIncrease: ReadingGameConfig.xpPerLevel,
           coinIncrease: ReadingGameConfig.coinsPerLevel,
           starsEarned: starsEarned,
         ),
-      ).catchError((_) => const Right<Failure, void>(null)).then((_) {
-        updateCategoryStats(
-          UpdateCategoryStatsParams(
-            categoryId: currentGameType!,
-            isCorrect: true,
-          ),
-        ).catchError((_) => const Right<Failure, void>(null)).then((_) {
-          awardBadge(
-            'reading_master',
-          ).catchError((_) => const Right<Failure, void>(null));
-        });
-      });
-    });
+      ).catchError((_) => const Right<Failure, void>(null)),
+      updateCategoryStats(
+        UpdateCategoryStatsParams(
+          categoryId: gameType,
+          isCorrect: true,
+        ),
+      ).catchError((_) => const Right<Failure, void>(null)),
+      awardBadge(
+        'reading_master',
+      ).catchError((_) => const Right<Failure, void>(null)),
+    ], eagerError: false);
   }
 }
