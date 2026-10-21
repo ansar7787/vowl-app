@@ -282,7 +282,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: showConfettiNotifier.value,
               onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
-              onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
+              onHint: () {},
               useScrolling: false,
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)

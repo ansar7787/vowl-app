@@ -154,8 +154,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
               disablePadding: true,
               onContinue: () =>
                   context.read<ReadingBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<ReadingBloc>().add(const ReadingHintUsed()),
+              onHint: () {},
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : RawScrollbar(

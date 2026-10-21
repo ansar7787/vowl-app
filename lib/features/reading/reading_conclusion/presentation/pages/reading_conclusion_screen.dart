@@ -116,8 +116,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen>
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<ReadingBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<ReadingBloc>().add(const ReadingHintUsed()),
+              onHint: () {},
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : RawScrollbar(

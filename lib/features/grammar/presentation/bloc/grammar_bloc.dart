@@ -287,19 +287,22 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
     Emitter<GrammarState> emit,
   ) async {
     if (state is! GrammarLoaded) return;
-    if ((state as GrammarLoaded).hintUsed) return;
+    final currentState = state as GrammarLoaded;
+    if (currentState.hintUsed) return;
+    emit(currentState.copyWith(hintUsed: true));
+    hapticService.selection();
 
     final result = await useHint(NoParams());
 
     // Re-read state after the async boundary to avoid applying a stale snapshot.
     result.fold(
-      (_) => null, // Failure: silently ignored; use-case layer handles logging.
       (_) {
         if (state is GrammarLoaded) {
-          emit((state as GrammarLoaded).copyWith(hintUsed: true));
-          hapticService.selection();
+          emit((state as GrammarLoaded).copyWith(hintUsed: false));
         }
+        hapticService.error();
       },
+      (_) {},
     );
   }
 

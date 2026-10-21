@@ -9,7 +9,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
@@ -150,7 +150,7 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
       soundService: _soundService,
       onTap: () {
         context.read<VocabularyBloc>().add(const VocabularyHintUsed());
-        context.read<EconomyBloc>().add(const EconomyConsumeHintRequested());
+
         widget.onHint?.call();
       },
     );

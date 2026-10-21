@@ -188,9 +188,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                   context.read<VocabularyBloc>().add(const NextQuestion());
                 }
               },
-              onHint: () => context.read<VocabularyBloc>().add(
-                const VocabularyHintUsed(),
-              ),
+              onHint: () {},
               customHintText: quest?.hint,
               useScrolling: false,
               disablePadding: true,

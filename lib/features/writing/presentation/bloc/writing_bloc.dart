@@ -232,10 +232,16 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
     final s = state;
     if (s is! WritingLoaded || s.hintUsed) return;
 
+    // Optimistic latch: prevent duplicate deductions from concurrent calls
+    emit(s.copyWith(hintUsed: true));
+    hapticService.selection();
+
     final result = await useHint(NoParams());
-    if (result.isRight()) {
-      emit(s.copyWith(hintUsed: true));
-      hapticService.selection();
+    if (result.isLeft()) {
+      if (state is WritingLoaded) {
+        emit((state as WritingLoaded).copyWith(hintUsed: false));
+      }
+      hapticService.error();
     }
   }
 

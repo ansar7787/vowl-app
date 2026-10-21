@@ -280,8 +280,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
               disablePadding: true,
               onContinue: () =>
                   context.read<ReadingBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<ReadingBloc>().add(const ReadingHintUsed()),
+              onHint: () {},
               child: quest == null
                   ? Semantics(
                       label: 'Loading question…',

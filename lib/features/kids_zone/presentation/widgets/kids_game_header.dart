@@ -9,7 +9,7 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart'
     as import_dialogs;
 
-class KidsGameHeader extends StatelessWidget {
+class KidsGameHeader extends StatefulWidget {
   final String title;
   final int level;
   final Color primaryColor;
@@ -26,20 +26,39 @@ class KidsGameHeader extends StatelessWidget {
   });
 
   @override
+  State<KidsGameHeader> createState() => _KidsGameHeaderState();
+}
+
+class _KidsGameHeaderState extends State<KidsGameHeader> {
+  DateTime? _lastHintTap;
+  bool _isProcessingHint = false;
+
+  @override
+  void didUpdateWidget(covariant KidsGameHeader oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.state is KidsLoaded && oldWidget.state is KidsLoaded) {
+      if ((widget.state as KidsLoaded).hintUsed !=
+          (oldWidget.state as KidsLoaded).hintUsed) {
+        _isProcessingHint = false;
+      }
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     int currentIndex = 0;
     int totalQuests = 1;
     int lives = 3;
 
-    if (state is KidsLoaded) {
-      final s = state as KidsLoaded;
+    if (widget.state is KidsLoaded) {
+      final s = widget.state as KidsLoaded;
       int correctlyAnswered =
           s.currentIndex - (s.quests.length - s.originalTotalQuests);
       currentIndex = correctlyAnswered.clamp(0, s.originalTotalQuests);
       totalQuests = s.originalTotalQuests;
       lives = s.livesRemaining;
-    } else if (state is KidsGameOver) {
-      final s = state as KidsGameOver;
+    } else if (widget.state is KidsGameOver) {
+      final s = widget.state as KidsGameOver;
       int correctlyAnswered =
           s.currentIndex - (s.quests.length - s.originalTotalQuests);
       currentIndex = correctlyAnswered.clamp(0, s.originalTotalQuests);
@@ -125,7 +144,7 @@ class KidsGameHeader extends StatelessWidget {
                 width: targetWidth > 0 ? targetWidth : 0.0,
                 height: double.infinity,
                 decoration: BoxDecoration(
-                  color: primaryColor,
+                  color: widget.primaryColor,
                   borderRadius: BorderRadius.circular(18.r),
                 ),
               );
@@ -183,8 +202,8 @@ class KidsGameHeader extends StatelessWidget {
   }
 
   Widget _buildHintButton(BuildContext context) {
-    if (state is! KidsLoaded) return const SizedBox.shrink();
-    final s = state as KidsLoaded;
+    if (widget.state is! KidsLoaded) return const SizedBox.shrink();
+    final s = widget.state as KidsLoaded;
 
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, authState) {
@@ -193,14 +212,27 @@ class KidsGameHeader extends StatelessWidget {
 
         return ScaleButton(
           onTap: () {
-            if (isUsed) return;
+            if (isUsed || _isProcessingHint) return;
+
+            final now = DateTime.now();
+            if (_lastHintTap != null &&
+                now.difference(_lastHintTap!) < const Duration(milliseconds: 1000)) {
+              return;
+            }
+            _lastHintTap = now;
+
             if (hints > 0) {
+              setState(() => _isProcessingHint = true);
               context.read<KidsBloc>().add(const UseKidsHint());
+              Future.delayed(const Duration(milliseconds: 1200), () {
+                if (mounted) setState(() => _isProcessingHint = false);
+              });
             } else {
               import_dialogs.GameDialogHelper.showHintAdDialog(
                 context,
                 persistToAccount: false,
                 onHintEarned: () {
+                  if (!mounted) return;
                   context.read<KidsBloc>().add(const UseKidsHint(isFree: true));
                 },
               );

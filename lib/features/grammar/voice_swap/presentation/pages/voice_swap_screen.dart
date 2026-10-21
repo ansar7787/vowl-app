@@ -206,7 +206,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
               showConfetti: showConfettiNotifier.value,
               useScrolling: false,
               onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
-              onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
+              onHint: () {},
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(

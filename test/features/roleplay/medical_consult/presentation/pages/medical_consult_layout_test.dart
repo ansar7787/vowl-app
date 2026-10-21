@@ -1078,7 +1078,7 @@ void main() {
       await tester.tap(hintButton);
       await tester.pump();
 
-      verify(() => mockRoleplayBloc.add(const RoleplayHintUsed())).called(2);
+      verify(() => mockRoleplayBloc.add(const RoleplayHintUsed())).called(1);
     });
 
     testWidgets('45. Level 1 displays GameBriefingLayer overlay with Medical briefing',

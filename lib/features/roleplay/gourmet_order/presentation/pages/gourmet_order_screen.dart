@@ -239,8 +239,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
-              onHint: () =>
-                  context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+              onHint: () {},
               useScrolling: false,
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)

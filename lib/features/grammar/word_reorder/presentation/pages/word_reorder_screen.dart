@@ -229,8 +229,7 @@ class _WordReorderScreenState extends State<WordReorderScreen>
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              onHint: () {},
               useScrolling: false,
               disablePadding: true,
               child: quest == null

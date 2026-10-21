@@ -974,7 +974,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockRoleplayBloc.add(any(that: isA<RoleplayHintUsed>()))).called(2);
+      verify(() => mockRoleplayBloc.add(any(that: isA<RoleplayHintUsed>()))).called(1);
     });
 
     testWidgets('52. Level 1 displays QuestBriefingOverlay with "GLOBAL TRAVELER"',

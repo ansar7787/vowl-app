@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/offline_play_gate_service.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/features/auth/domain/usecases/purchase_hint.dart';
 import 'package:vowl/core/presentation/widgets/victory_flight_overlay.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -564,22 +565,32 @@ class GameDialogHelper {
           adService.showHintRewardedAd(
             context: context,
             isPremium: isPremium,
-            onHintEarned: () {
+            onHintEarned: () async {
               if (!context.mounted) return;
               if (persistToAccount) {
-                context.read<EconomyBloc>().add(
-                  const EconomyPurchaseHintRequested(0, hintAmount: 1),
+                try {
+                  await di.sl<PurchaseHint>()(
+                    const PurchaseHintParams(cost: 0, hintAmount: 1),
+                  );
+                  if (context.mounted) {
+                    context.read<AuthBloc>().add(const AuthRefreshUser());
+                  }
+                } catch (e) {
+                  debugPrint('GameDialogHelper: Failed to credit rewarded hint: $e');
+                }
+              }
+              if (context.mounted) {
+                showPremiumSnackBar(
+                  context,
+                  context.tr(
+                    'games.hint_reward_earned',
+                    fallback: 'REWARD EARNED: +1 Strategic Hint!',
+                  ),
+                  icon: Icons.lightbulb_rounded,
+                  color: AppColors.amber500,
                 );
               }
-              showPremiumSnackBar(
-                context,
-                context.tr(
-                  'games.hint_reward_earned',
-                  fallback: 'REWARD EARNED: +1 Strategic Hint!',
-                ),
-                icon: Icons.lightbulb_rounded,
-                color: AppColors.amber500,
-              );
+              onHintEarned?.call();
             },
             onDismissed: () {},
           );

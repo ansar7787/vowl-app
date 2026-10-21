@@ -138,7 +138,10 @@ class EliteBaseLayout extends StatelessWidget {
             context,
             onQuit: () => Navigator.pop(context),
           ),
-          onHint: onHint,
+          onHint: () {
+            context.read<EliteMasteryBloc>().add(const MarkEliteHintUsed());
+            onHint();
+          },
           onBriefing: () {}, // GameBaseLayout handles briefing internally
         );
       },

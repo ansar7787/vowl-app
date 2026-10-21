@@ -186,8 +186,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                   false, // Stack needs finite space to anchor to bottom
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              onHint: () {},
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(

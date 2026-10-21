@@ -162,9 +162,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
               hasStage2: true,
               onContinue: () =>
                   context.read<VocabularyBloc>().add(const NextQuestion()),
-              onHint: () => context.read<VocabularyBloc>().add(
-                const VocabularyHintUsed(),
-              ),
+              onHint: () {},
               useScrolling: false,
               disablePadding: true,
               child: quest == null

@@ -324,15 +324,20 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     if (state is! VocabularyLoaded) return;
     final s = state as VocabularyLoaded;
     if (s.hintUsed) return;
+
+    // Optimistic latch: prevent duplicate deductions from concurrent calls
+    emit(s.copyWith(hintUsed: true));
+    hapticService.selection();
+
     (await useHint(NoParams())).fold(
       (_) {
-        // Hint economy rejected the request (e.g. 0 hints remaining).
+        // Rollback on failure
+        if (state is VocabularyLoaded) {
+          emit((state as VocabularyLoaded).copyWith(hintUsed: false));
+        }
         hapticService.error();
       },
-      (_) {
-        emit(s.copyWith(hintUsed: true));
-        hapticService.selection();
-      },
+      (_) {},
     );
   }
 

@@ -224,7 +224,7 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
-              onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
+              onHint: () {},
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : RawScrollbar(

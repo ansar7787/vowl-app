@@ -1031,7 +1031,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockRoleplayBloc.add(any(that: isA<RoleplayHintUsed>()))).called(2);
+      verify(() => mockRoleplayBloc.add(any(that: isA<RoleplayHintUsed>()))).called(1);
     });
 
     testWidgets('50. Connection monitor renders hint banner with lightbulb icon when hintUsed is true',

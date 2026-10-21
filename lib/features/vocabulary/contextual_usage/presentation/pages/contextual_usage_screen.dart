@@ -190,8 +190,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
                   context.read<VocabularyBloc>().add(NextQuestion());
                 }
               },
-              onHint: () =>
-                  context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+              onHint: () {},
               useScrolling: false,
               disablePadding: true,
               child: quest == null
