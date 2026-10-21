@@ -62,10 +62,14 @@ class VocabularyPeekingMascot extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
       constraints: BoxConstraints(maxWidth: 220.w),
       decoration: BoxDecoration(
-        color: isDark ? Colors.grey.shade900 : Colors.white,
+        color: isDark ? const Color(0xFF1E293B) : Colors.white,
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
-          BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10),
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.08),
+            blurRadius: 8,
+            offset: const Offset(0, 2),
+          ),
         ],
       ),
       child: Text(
@@ -75,7 +79,7 @@ class VocabularyPeekingMascot extends StatelessWidget {
           fontFamily: 'Outfit',
           fontSize: 11.sp,
           fontWeight: FontWeight.bold,
-          color: isDark ? Colors.indigo.shade200 : Colors.indigo,
+          color: isDark ? const Color(0xFF818CF8) : const Color(0xFF4F46E5),
         ),
       ),
     );

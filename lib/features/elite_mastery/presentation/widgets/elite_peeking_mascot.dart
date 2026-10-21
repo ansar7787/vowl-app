@@ -1,4 +1,3 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -106,31 +105,30 @@ class _SpeechBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
-    final maxBubbleWidth = MediaQuery.sizeOf(context).width * 0.6;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    Widget bubble = ConstrainedBox(
-      constraints: BoxConstraints(maxWidth: maxBubbleWidth),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(12.r),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.1),
-              blurRadius: 10,
-            ),
-          ],
-        ),
-        child: Text(
-          message,
-          maxLines: 3,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 11.sp,
-            fontWeight: FontWeight.bold,
-            color: AppColors.amber500,
+    Widget bubble = Container(
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+      constraints: BoxConstraints(maxWidth: 220.w),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        borderRadius: BorderRadius.circular(12.r),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.08),
+            blurRadius: 8,
+            offset: const Offset(0, 2),
           ),
+        ],
+      ),
+      child: Text(
+        message,
+        maxLines: 3,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 11.sp,
+          fontWeight: FontWeight.bold,
+          color: isDark ? const Color(0xFFFDE68A) : const Color(0xFFD97706),
         ),
       ),
     );
