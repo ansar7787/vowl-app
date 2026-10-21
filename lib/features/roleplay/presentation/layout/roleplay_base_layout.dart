@@ -19,6 +19,9 @@ import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/roleplay/presentation/widgets/roleplay_peeking_mascot.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
+import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
 class RoleplayBaseLayout extends StatelessWidget {
@@ -191,6 +194,33 @@ class RoleplayBaseLayout extends StatelessWidget {
             ),
           ),
           if (quest != null && !isAnswered) ...[
+            SizedBox(width: 8.w),
+            Semantics(
+              label: context.tr(
+                'roleplay.view_instructions',
+                fallback: 'View level instructions',
+              ),
+              button: true,
+              child: ScaleButton(
+                onTap: () => GameBriefingScope.show(context),
+                child: Container(
+                  padding: EdgeInsets.all(6.r),
+                  decoration: BoxDecoration(
+                    color: (theme.primaryColor as Color).withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color:
+                          (theme.primaryColor as Color).withValues(alpha: 0.2),
+                    ),
+                  ),
+                  child: Icon(
+                    Icons.info_outline_rounded,
+                    size: 16.r,
+                    color: theme.primaryColor,
+                  ),
+                ),
+              ),
+            ),
             Padding(
               padding: EdgeInsets.only(left: 8.w),
               child: Row(

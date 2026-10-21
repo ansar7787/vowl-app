@@ -10,6 +10,7 @@ import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_peeking
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/vocabulary/presentation/themes/vocab_level_theme.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
+import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_vocab_mind_map.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_family_tree.dart';
@@ -91,7 +92,7 @@ class VocabularyBaseLayout extends StatelessWidget {
             context,
             onQuit: () => Navigator.of(context).pop(),
           ),
-          onBriefingShow: () {}, // Handled by GameBaseLayout internally
+          onBriefingShow: () => GameBriefingScope.show(context),
           onHint: onHint,
           customHintText: customHintText,
         );

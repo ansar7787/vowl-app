@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// Top bar for grammar quiz screens.
@@ -41,6 +42,9 @@ class GrammarGameHeader extends StatelessWidget {
   /// event which is dispatched internally.
   final VoidCallback onHint;
 
+  /// Optional back button handler. If omitted, shows standard exit confirmation.
+  final VoidCallback? onBack;
+
   const GrammarGameHeader({
     super.key,
     required this.state,
@@ -54,6 +58,7 @@ class GrammarGameHeader extends StatelessWidget {
     required this.soundService,
     required this.onShowBriefing,
     required this.onHint,
+    this.onBack,
   });
 
   @override
@@ -76,7 +81,11 @@ class GrammarGameHeader extends StatelessWidget {
               lives: lives,
               theme: theme,
               isDark: Theme.of(context).brightness == Brightness.dark,
-              onBack: onShowBriefing,
+              onBack: onBack ??
+                  () => GameDialogHelper.showExitConfirmation(
+                        context,
+                        onQuit: () => Navigator.of(context).pop(),
+                      ),
             ),
           ),
           if (showActions) ...[

@@ -106,16 +106,6 @@ class _SpeechBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
-    // FIX: this bubble is placed (by EliteBaseLayout) inside a `Positioned`
-    // with only a `left` offset and no `right` constraint, so nothing
-    // previously stopped it from growing as wide as `message` needed. A
-    // longer curriculum message, a longer-translation locale (many run
-    // 30-100%+ longer than English), or a larger accessibility text-scale
-    // setting could grow this bubble wide enough to overflow off the right
-    // edge of the screen on narrower devices. Bounding the width to a
-    // proportion of the actual screen width and letting the text wrap (with
-    // a graceful truncation past 3 lines) keeps it safely on-screen on every
-    // device without needing to touch the parent's positioning.
     final maxBubbleWidth = MediaQuery.sizeOf(context).width * 0.6;
 
     Widget bubble = ConstrainedBox(
@@ -135,7 +125,6 @@ class _SpeechBubble extends StatelessWidget {
         child: Text(
           message,
           maxLines: 3,
-          overflow: TextOverflow.ellipsis,
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 11.sp,

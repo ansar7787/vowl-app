@@ -82,7 +82,7 @@ class _HintAdCardState extends State<HintAdCard> {
                 context: context,
                 message: context.tr(
                   'games.hint_earned_snack',
-                  fallback: 'Hint Earned! +1 Strategic Hint',
+                  fallback: 'Hint Earned! +1 Hint',
                 ),
                 type: CustomSnackBarType.success,
               );
@@ -161,7 +161,7 @@ class _HintAdCardState extends State<HintAdCard> {
                             widget.subtitle ??
                                 context.tr(
                                   'games.one_strategic_hint',
-                                  fallback: '1 STRATEGIC HINT',
+                                  fallback: '1 HINT',
                                 ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
@@ -192,7 +192,7 @@ class _HintAdCardState extends State<HintAdCard> {
                         label: isPremium
                             ? context.tr(
                                 'games.hint_semantic_claim_label',
-                                fallback: 'Claim a free strategic hint',
+                                fallback: 'Claim a free hint',
                               )
                             : (isLimitReached
                                   ? context.tr(
@@ -202,7 +202,7 @@ class _HintAdCardState extends State<HintAdCard> {
                                   : context.tr(
                                       'games.hint_semantic_label',
                                       fallback:
-                                          'Watch ad to earn a strategic hint',
+                                          'Watch ad to earn a hint',
                                     )),
                         child: ScaleButton(
                           onTap: isDisabled ? null : _showHintAd,

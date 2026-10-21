@@ -57,7 +57,6 @@ class WritingPeekingMascot extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         _SpeechBubble(message: message, theme: theme),
-        // FIX: Removed SizedBox(height: 0.h) — was dead code.
         _MascotAvatar(mascotId: mascotId, mascotState: mascotState),
       ],
     );
@@ -66,8 +65,6 @@ class WritingPeekingMascot extends StatelessWidget {
       column = column.animate().fadeIn().slideX(begin: 0.1, end: 0);
     }
 
-    // ACCESSIBILITY: The mascot is a decorative animated element.
-    // Excluding it prevents screen readers from announcing animation updates.
     return Semantics(
       liveRegion: true,
       label: message,
@@ -76,10 +73,6 @@ class WritingPeekingMascot extends StatelessWidget {
     );
   }
 }
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
 
 // ---------------------------------------------------------------------------
 // Private sub-widgets
@@ -93,18 +86,21 @@ class _SpeechBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
-    Widget bubble = Container(
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Container(
+      constraints: BoxConstraints(maxWidth: 220.w),
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: isDark ? const Color(0xFF1E293B) : Colors.white,
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
-          BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10),
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.08),
+            blurRadius: 8,
+            offset: const Offset(0, 2),
+          ),
         ],
       ),
-      // ACCESSIBILITY: clamp text scaling so the bubble doesn't overflow at
-      // extreme accessibility font sizes (the mascot is decorative context).
       child: MediaQuery(
         data: MediaQuery.of(context).copyWith(
           textScaler: TextScaler.linear(
@@ -113,28 +109,16 @@ class _SpeechBubble extends StatelessWidget {
         ),
         child: Text(
           message,
+          maxLines: 3,
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 11.sp,
             fontWeight: FontWeight.bold,
-            // FIX: was Colors.blueAccent — now theme-aware.
-            color: theme.primaryColor,
+            color: isDark ? Colors.white70 : (theme.primaryColor ?? const Color(0xFF2563EB)),
           ),
         ),
       ),
     );
-
-    if (!reduceMotion) {
-      bubble = bubble
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .scale(
-            begin: const Offset(1, 1),
-            end: const Offset(1.05, 1.05),
-            duration: 2.seconds,
-          );
-    }
-
-    return bubble;
   }
 }
 
@@ -146,19 +130,10 @@ class _MascotAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context);
-    Widget mascot = VowlMascot(
+    return VowlMascot(
       state: mascotState,
       size: 45.r,
       mascotId: mascotId,
     );
-
-    if (!reduceMotion) {
-      mascot = mascot
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(begin: 0, end: 5, duration: 1500.ms, curve: Curves.easeInOut);
-    }
-
-    return mascot;
   }
 }

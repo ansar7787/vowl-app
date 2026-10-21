@@ -22,7 +22,7 @@ class GameBriefingLayer extends StatelessWidget {
     final briefing = GameInstructionService.getBriefing(
       context,
       gameType,
-      'Vocabulary',
+      gameType.name,
       level: level,
     );
     return QuestBriefingOverlay(

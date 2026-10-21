@@ -156,10 +156,15 @@ class _HintButton extends StatelessWidget {
         : false;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
+    final String? hintText =
+        (quest?.hint != null && (quest!.hint as String).trim().isNotEmpty)
+            ? (quest!.hint as String).trim()
+            : null;
+
     Widget button = QuestHintButton(
       used: used,
       primaryColor: theme.primaryColor,
-      hintText: null,
+      hintText: hintText,
       soundService: soundService,
       onTap: onHint,
     );
@@ -184,10 +189,10 @@ class _HintButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           button,
-          if (quest.hint != null && used) ...[
+          if (hintText != null && used) ...[
             SizedBox(width: 8.w),
             TranslateButtonWidget(
-              originalText: quest.hint,
+              originalText: hintText,
               onTranslationComplete: (translated) {
                 CustomSnackBar.show(
                   context: context,

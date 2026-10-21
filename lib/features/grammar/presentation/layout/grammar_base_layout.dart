@@ -12,6 +12,8 @@ import 'package:vowl/features/grammar/presentation/widgets/grammar_game_header.d
 import 'package:vowl/features/grammar/presentation/widgets/grammar_peeking_mascot.dart';
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
+import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
 class GrammarBaseLayout extends StatelessWidget {
@@ -87,7 +89,11 @@ class GrammarBaseLayout extends StatelessWidget {
           isFinalFailure: isFinalFailure,
           soundService: di.sl<SoundService>(),
           onShowBriefing:
-              () {}, // GameBaseLayout handles briefing internally now
+              () => GameBriefingScope.show(context),
+          onBack: () => GameDialogHelper.showExitConfirmation(
+            context,
+            onQuit: () => Navigator.of(context).pop(),
+          ),
           onHint: onHint,
         );
       },

@@ -724,6 +724,9 @@ void main() {
       await tester.tap(hintButton);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
+      // Dismiss the hint snackbar to prevent it from obstructing bottom containment bins
+      ScaffoldMessenger.of(tester.element(find.byType(TopicVocabScreen))).removeCurrentSnackBar();
+      await tester.pump();
 
       // Sort word into Science
       await tester.tap(findLeftBin());

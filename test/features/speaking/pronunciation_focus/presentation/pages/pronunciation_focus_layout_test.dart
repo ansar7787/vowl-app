@@ -1011,7 +1011,7 @@ void main() {
 
         verify(
           () => mockSpeakingBloc.add(const SpeakingHintUsed()),
-        ).called(greaterThanOrEqualTo(2));
+        ).called(1);
       });
 
       testWidgets('8.4 hint button displays available hint count badge', (

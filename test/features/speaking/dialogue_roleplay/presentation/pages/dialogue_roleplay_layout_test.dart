@@ -1020,7 +1020,7 @@ void main() {
 
         verify(
           () => mockSpeakingBloc.add(const SpeakingHintUsed()),
-        ).called(greaterThanOrEqualTo(2));
+        ).called(1);
       });
 
       testWidgets('8.4 renders hint button with proper icon', (

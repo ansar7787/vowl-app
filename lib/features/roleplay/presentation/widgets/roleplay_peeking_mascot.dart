@@ -101,22 +101,30 @@ class _SpeechBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     Widget bubble = Container(
+      constraints: BoxConstraints(maxWidth: 220.w),
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: isDark ? const Color(0xFF1E293B) : Colors.white,
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
-          BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10),
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.08),
+            blurRadius: 8,
+            offset: const Offset(0, 2),
+          ),
         ],
       ),
       child: Text(
         message,
+        maxLines: 3,
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 11.sp,
           fontWeight: FontWeight.bold,
-          color: Colors.orangeAccent,
+          color: isDark ? const Color(0xFFDDD6FE) : const Color(0xFF7C3AED),
         ),
       ),
     );

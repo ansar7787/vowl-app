@@ -19,6 +19,10 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/auth/data/repositories/gamification_repository_impl.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
+import 'package:vowl/core/presentation/widgets/game_briefing_layer.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════
 //  GameDialogHelper — Shared completion & game-over dialogs for ALL games.
@@ -471,6 +475,46 @@ class GameDialogHelper {
     );
   }
 
+  // ─── Mission Briefing ─────────────────────────────────────────────────
+
+  /// Shows the mission briefing overlay for the given game level.
+  /// If inside [GameBriefingScope], activates the integrated overlay layer;
+  /// otherwise opens the briefing in a modal dialog.
+  static void showMissionBriefing(
+    BuildContext context, {
+    required GameSubtype gameType,
+    required int level,
+    dynamic theme,
+  }) {
+    final scopeCallback = GameBriefingScope.of(context);
+    if (scopeCallback != null) {
+      scopeCallback();
+      return;
+    }
+
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final resolvedTheme = theme ??
+        LevelThemeHelper.getTheme(
+          gameType.name,
+          isDark: isDark,
+          level: level,
+        );
+
+    showGeneralDialog(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: 'Mission Briefing',
+      pageBuilder: (dialogCtx, anim1, anim2) {
+        return GameBriefingLayer(
+          gameType: gameType,
+          level: level,
+          theme: resolvedTheme,
+          onStart: () => Navigator.of(dialogCtx).pop(),
+        );
+      },
+    );
+  }
+
   // ─── Premium SnackBar ─────────────────────────────────────────────────
 
   /// Displays a floating app-wide snack bar notification.
@@ -523,7 +567,7 @@ class GameDialogHelper {
 
   // ─── Hint Ad Dialog ───────────────────────────────────────────────────
 
-  /// Prompts the user to watch an ad to earn a free strategic hint.
+  /// Prompts the user to watch an ad to earn a free hint.
   static void showHintAdDialog(
     BuildContext context, {
     VoidCallback? onHintEarned,
@@ -532,7 +576,7 @@ class GameDialogHelper {
     showDialog(
       context: context,
       builder: (dialogCtx) => ModernGameDialog(
-        title: context.tr('games.hint_needed_title', fallback: 'Get a Hint'),
+        title: context.tr('games.hint_needed_title', fallback: 'NEED A HINT?'),
         description: context.tr(
           'games.hint_needed_desc',
           fallback:

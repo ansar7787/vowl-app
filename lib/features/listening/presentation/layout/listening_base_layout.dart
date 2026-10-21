@@ -20,6 +20,7 @@ import 'package:vowl/features/listening/presentation/widgets/listening_peeking_m
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
+import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
@@ -255,7 +256,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
               isAnswered: widget.isAnswered,
               soundService: _soundService,
               onHint: () => _dispatchHint(context, currentQuest?.hint),
-              onShowBriefing: () {}, // GameBaseLayout handles briefing
+              onShowBriefing: () => GameBriefingScope.show(context),
               onBack: () => GameDialogHelper.showExitConfirmation(
                 context,
                 onQuit: () => Navigator.of(context).pop(),
@@ -332,19 +333,20 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
     context.read<ListeningBloc>().add(const ListeningHintUsed());
     widget.onHint();
 
-    // ── OUTSTANDING VISUAL HINT (No JSON required) ──
-    // Show a custom UI snackbar without clashing with the audio playback
-    CustomSnackBar.show(
-      context: context,
-      message:
-          (customHint ??
-                  context.tr(
-                    'game.audio_clue_activated',
-                    fallback: 'AUDIO CLUE ACTIVATED',
-                  ))
-              .toUpperCase(),
-      type: CustomSnackBarType.info,
-    );
+    // If there is no custom textual hint, QuestHintButton plays chime only.
+    // In that case, show the audio clue snackbar so the user knows audio was re-triggered.
+    if (customHint == null || customHint.trim().isEmpty) {
+      CustomSnackBar.show(
+        context: context,
+        message: context
+            .tr(
+              'game.audio_clue_activated',
+              fallback: 'AUDIO CLUE ACTIVATED',
+            )
+            .toUpperCase(),
+        type: CustomSnackBarType.info,
+      );
+    }
 
     // Wait 1 second so the "hint.mp3" sound finishes playing
     // before we automatically replay the main game audio clip.

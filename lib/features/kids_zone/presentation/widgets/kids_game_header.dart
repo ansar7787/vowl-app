@@ -7,6 +7,9 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart'
     as import_dialogs;
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/hint_utility.dart';
+import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 
 class KidsGameHeader extends StatelessWidget {
   final String title;
@@ -194,7 +197,17 @@ class KidsGameHeader extends StatelessWidget {
         return ScaleButton(
           debounceDuration: const Duration(milliseconds: 1000),
           onTap: () {
-            if (isUsed) return;
+            if (isUsed) {
+              final hint = s.currentQuest.hint;
+              final isGeneric = HintUtility.isGenericHint(hint);
+              final displayHint = isGeneric
+                  ? "Tip: look closely at the pictures."
+                  : hint;
+              if (di.sl.isRegistered<KidsTTSService>()) {
+                di.sl<KidsTTSService>().speak(displayHint);
+              }
+              return;
+            }
 
             if (hints > 0 || isPremium) {
               context.read<KidsBloc>().add(const UseKidsHint());
