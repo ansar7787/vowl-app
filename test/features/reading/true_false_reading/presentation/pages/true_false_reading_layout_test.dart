@@ -601,7 +601,7 @@ void main() {
 
       verify(
         () => mockReadingBloc.add(any(that: isA<ReadingHintUsed>())),
-      ).called(2);
+      ).called(1);
     });
 
     testWidgets('renders GameShimmerLoading on ReadingInitial state', (

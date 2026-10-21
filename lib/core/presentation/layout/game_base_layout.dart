@@ -171,6 +171,8 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
   }
 
   void _onExitPressed(BuildContext ctx) {
+    _ttsService.stop();
+    _soundService.stopTts();
     GameDialogHelper.showExitConfirmation(
       ctx,
       onQuit: () => Navigator.of(ctx).pop(),

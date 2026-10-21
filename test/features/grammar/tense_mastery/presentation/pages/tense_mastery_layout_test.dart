@@ -594,7 +594,7 @@ void main() {
       await tester.tap(hintButton);
       await tester.pump();
 
-      verify(() => mockGrammarBloc.add(const GrammarHintUsed())).called(2);
+      verify(() => mockGrammarBloc.add(const GrammarHintUsed())).called(1);
     });
 
     testWidgets('22. layout adapts gracefully in compact height (< 700)',

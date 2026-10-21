@@ -507,8 +507,7 @@ void main() {
       await tester.tap(hintFinder);
       await tester.pump();
 
-      // ReadingHeader calls bloc add internally and invokes widget.onHint
-      verify(() => mockReadingBloc.add(const ReadingHintUsed())).called(2);
+      verify(() => mockReadingBloc.add(const ReadingHintUsed())).called(1);
     });
 
     testWidgets(

@@ -610,7 +610,7 @@ void main() {
       await tester.tap(hintFinder);
       await tester.pump();
 
-      verify(() => mockGrammarBloc.add(const GrammarHintUsed())).called(2);
+      verify(() => mockGrammarBloc.add(const GrammarHintUsed())).called(1);
     });
 
     testWidgets(

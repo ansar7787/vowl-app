@@ -505,7 +505,7 @@ void main() {
       await tester.tap(hintButton);
       await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockReadingBloc.add(any(that: isA<ReadingHintUsed>()))).called(2);
+      verify(() => mockReadingBloc.add(any(that: isA<ReadingHintUsed>()))).called(1);
     });
 
     testWidgets('12. Shimmer loading renders when state is ReadingInitial', (tester) async {

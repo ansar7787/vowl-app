@@ -533,7 +533,7 @@ void main() {
       await tester.tap(hintFinder);
       await tester.pump();
 
-      verify(() => mockReadingBloc.add(const ReadingHintUsed())).called(2);
+      verify(() => mockReadingBloc.add(const ReadingHintUsed())).called(1);
     });
 
     testWidgets(

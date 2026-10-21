@@ -299,9 +299,14 @@ class ShopRepositoryImpl
           return Left(ServerFailure('user-data-not-found'));
         }
 
-        final hintCount = (snapshot.data()?['hintCount'] as num?)?.toInt() ?? 0;
+        final data = snapshot.data();
+        final isPremium = (data?['isPremium'] as bool?) ?? false;
+        final hintCount = (data?['hintCount'] as num?)?.toInt() ?? 0;
         if (hintCount > 0) {
           transaction.update(docRef, {'hintCount': FieldValue.increment(-1)});
+          return const Right<Failure, void>(null);
+        } else if (isPremium) {
+          // Premium subscribers enjoy unlimited hint access even when token balance is 0.
           return const Right<Failure, void>(null);
         } else {
           _log('ShopRepository: useHint failed — no hints available.');

@@ -143,6 +143,7 @@ void main() {
     when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
     when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
     when(() => mockSoundService.playClick()).thenAnswer((_) async {});
+    when(() => mockSoundService.playHint()).thenAnswer((_) async {});
 
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
     when(

@@ -5,11 +5,10 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart'
     as import_dialogs;
 
-class KidsGameHeader extends StatefulWidget {
+class KidsGameHeader extends StatelessWidget {
   final String title;
   final int level;
   final Color primaryColor;
@@ -26,39 +25,20 @@ class KidsGameHeader extends StatefulWidget {
   });
 
   @override
-  State<KidsGameHeader> createState() => _KidsGameHeaderState();
-}
-
-class _KidsGameHeaderState extends State<KidsGameHeader> {
-  DateTime? _lastHintTap;
-  bool _isProcessingHint = false;
-
-  @override
-  void didUpdateWidget(covariant KidsGameHeader oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (widget.state is KidsLoaded && oldWidget.state is KidsLoaded) {
-      if ((widget.state as KidsLoaded).hintUsed !=
-          (oldWidget.state as KidsLoaded).hintUsed) {
-        _isProcessingHint = false;
-      }
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
     int currentIndex = 0;
     int totalQuests = 1;
     int lives = 3;
 
-    if (widget.state is KidsLoaded) {
-      final s = widget.state as KidsLoaded;
+    if (state is KidsLoaded) {
+      final s = state as KidsLoaded;
       int correctlyAnswered =
           s.currentIndex - (s.quests.length - s.originalTotalQuests);
       currentIndex = correctlyAnswered.clamp(0, s.originalTotalQuests);
       totalQuests = s.originalTotalQuests;
       lives = s.livesRemaining;
-    } else if (widget.state is KidsGameOver) {
-      final s = widget.state as KidsGameOver;
+    } else if (state is KidsGameOver) {
+      final s = state as KidsGameOver;
       int correctlyAnswered =
           s.currentIndex - (s.quests.length - s.originalTotalQuests);
       currentIndex = correctlyAnswered.clamp(0, s.originalTotalQuests);
@@ -78,7 +58,7 @@ class _KidsGameHeaderState extends State<KidsGameHeader> {
         children: [
           // Back Button
           ScaleButton(
-            onTap: () => context.pop(),
+            onTap: () => Navigator.of(context).maybePop(),
             child: Container(
               padding: EdgeInsets.all(10.r),
               decoration: BoxDecoration(
@@ -111,7 +91,7 @@ class _KidsGameHeaderState extends State<KidsGameHeader> {
 
           SizedBox(width: 8.w),
 
-          // Lives
+          // Lives (3 hearts)
           _buildLives(lives),
         ],
       ),
@@ -144,7 +124,7 @@ class _KidsGameHeaderState extends State<KidsGameHeader> {
                 width: targetWidth > 0 ? targetWidth : 0.0,
                 height: double.infinity,
                 decoration: BoxDecoration(
-                  color: widget.primaryColor,
+                  color: primaryColor,
                   borderRadius: BorderRadius.circular(18.r),
                 ),
               );
@@ -202,37 +182,28 @@ class _KidsGameHeaderState extends State<KidsGameHeader> {
   }
 
   Widget _buildHintButton(BuildContext context) {
-    if (widget.state is! KidsLoaded) return const SizedBox.shrink();
-    final s = widget.state as KidsLoaded;
+    if (state is! KidsLoaded) return const SizedBox.shrink();
+    final s = state as KidsLoaded;
 
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, authState) {
         final hints = authState.user?.hintCount ?? 0;
+        final isPremium = authState.user?.isPremium ?? false;
         final isUsed = s.hintUsed;
 
         return ScaleButton(
+          debounceDuration: const Duration(milliseconds: 1000),
           onTap: () {
-            if (isUsed || _isProcessingHint) return;
+            if (isUsed) return;
 
-            final now = DateTime.now();
-            if (_lastHintTap != null &&
-                now.difference(_lastHintTap!) < const Duration(milliseconds: 1000)) {
-              return;
-            }
-            _lastHintTap = now;
-
-            if (hints > 0) {
-              setState(() => _isProcessingHint = true);
+            if (hints > 0 || isPremium) {
               context.read<KidsBloc>().add(const UseKidsHint());
-              Future.delayed(const Duration(milliseconds: 1200), () {
-                if (mounted) setState(() => _isProcessingHint = false);
-              });
             } else {
               import_dialogs.GameDialogHelper.showHintAdDialog(
                 context,
                 persistToAccount: false,
                 onHintEarned: () {
-                  if (!mounted) return;
+                  if (!context.mounted) return;
                   context.read<KidsBloc>().add(const UseKidsHint(isFree: true));
                 },
               );
@@ -264,7 +235,7 @@ class _KidsGameHeaderState extends State<KidsGameHeader> {
                 ),
                 SizedBox(width: 4.w),
                 Text(
-                  hints.toString(),
+                  isUsed ? '✓' : '$hints',
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,
