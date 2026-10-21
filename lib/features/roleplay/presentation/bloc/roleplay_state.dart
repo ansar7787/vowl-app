@@ -124,6 +124,7 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
     required this.level,
     this.wrongCount = 0,
     this.isFinalFailure = false,
+    this.bonusCoinsEarned = 0,
   });
 
   final List<RoleplayQuest> quests;
@@ -148,6 +149,11 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
   final int wrongCount;
   @override
   final bool isFinalFailure;
+
+  /// Bonus coins accumulated from verbal confirmations (e.g., SpeakToConfirmOverlay).
+  /// Bundled into [updateUserRewards] at level completion to prevent Firestore
+  /// security rule rate-limit collisions (2s minimum interval).
+  final int bonusCoinsEarned;
 
   RoleplayQuest get currentQuest => quests[currentIndex];
 
@@ -176,6 +182,7 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
     level,
     wrongCount,
     isFinalFailure,
+    bonusCoinsEarned,
   ];
 
   RoleplayLoaded copyWith({
@@ -190,6 +197,7 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
     int? level,
     int? wrongCount,
     bool? isFinalFailure,
+    int? bonusCoinsEarned,
   }) => RoleplayLoaded(
     quests: quests ?? this.quests,
     currentIndex: currentIndex ?? this.currentIndex,
@@ -202,6 +210,7 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
     level: level ?? this.level,
     wrongCount: wrongCount ?? this.wrongCount,
     isFinalFailure: isFinalFailure ?? this.isFinalFailure,
+    bonusCoinsEarned: bonusCoinsEarned ?? this.bonusCoinsEarned,
   );
 }
 

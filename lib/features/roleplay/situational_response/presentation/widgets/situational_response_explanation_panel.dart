@@ -30,10 +30,10 @@ class SituationalResponseExplanationPanel extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(20.r),
+      padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
         color: isDark ? _LocalPalette.color131326 : Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: cardColor.withValues(alpha: 0.25),
           width: 1.5,
@@ -52,7 +52,7 @@ class SituationalResponseExplanationPanel extends StatelessWidget {
                     ? Icons.verified_rounded
                     : Icons.info_rounded,
                 color: cardColor,
-                size: 24.r,
+                size: 22.r,
               ),
               SizedBox(width: 8.w),
               Expanded(
@@ -60,23 +60,26 @@ class SituationalResponseExplanationPanel extends StatelessWidget {
                   (isCorrect ?? false) ? "Great response!" : "Not quite right!",
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w700,
                     color: Theme.of(context).colorScheme.onSurface,
                   ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 12.h),
+          SizedBox(height: 10.h),
           Text(
             quest.explanation ??
-                "Understanding situational contexts key elements boosts communication fluency.",
+                "Different situations call for different tones. Choosing the right words makes your response natural and polite.",
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 14.sp,
-              color: isDark ? Colors.white70 : Colors.black54,
-              height: 1.3,
+              fontWeight: FontWeight.w400,
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.85)
+                  : Colors.black87,
+              height: 1.45,
             ),
           ),
         ],

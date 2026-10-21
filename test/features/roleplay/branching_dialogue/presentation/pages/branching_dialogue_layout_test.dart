@@ -386,10 +386,10 @@ void main() {
       expect(find.byType(BranchingDialogueScreen), findsOneWidget);
     });
 
-    testWidgets('2. Initial instruction displays formatted text ("FLICK DECISION PROBE CHANNELS" and custom instruction)', (tester) async {
+    testWidgets('2. Initial instruction displays formatted text ("BRANCHING DIALOGUE" and custom instruction)', (tester) async {
       await pumpBranchingDialogueScreen(tester);
 
-      expect(find.text('FLICK DECISION PROBE CHANNELS'), findsOneWidget);
+      expect(find.text('BRANCHING DIALOGUE'), findsOneWidget);
       expect(find.text('Choose the most polite and appropriate response.'), findsOneWidget);
     });
 
@@ -397,7 +397,7 @@ void main() {
       await pumpBranchingDialogueScreen(tester);
 
       expect(find.text('PROJECT MANAGER'), findsOneWidget);
-      expect(find.text('BRANCH COMMS COMMITTED'), findsOneWidget);
+      expect(find.text('ROLEPLAY SCENARIO'), findsOneWidget);
       expect(find.text('Your colleague asks: "Could you review my presentation before tomorrow?"'), findsOneWidget);
     });
 

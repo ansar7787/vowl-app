@@ -355,20 +355,12 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
 
   // ── AccentSpeakConfirmed ─────────────────────────────────────────────────
 
-  Future<void> _onSpeakConfirmed(
+  void _onSpeakConfirmed(
     AccentSpeakConfirmed event,
     Emitter<AccentState> emit,
-  ) async {
-    try {
-      await updateUserCoins(
-        UpdateUserCoinsParams(
-          amountChange: event.bonusCoins,
-          title: 'coin_history.speaking_bonus',
-          isEarned: true,
-        ),
-      );
-    } catch (e, stack) {
-      errorReporter?.call(e, stack);
-    }
+  ) {
+    // Per strict app architecture: verbal confirmations verify speech accuracy only
+    // and never award mid-game coins. Rewards (5 XP + 10 Coins) are awarded strictly
+    // upon level completion via updateUserRewards.
   }
 }

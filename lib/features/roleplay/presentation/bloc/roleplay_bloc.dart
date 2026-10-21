@@ -258,7 +258,9 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
       ),
     );
 
-    // 2. Background persistence — Fire-and-forget.
+    // 2. Background persistence — Single atomic transaction for rewards + progress.
+    // Strictly awards standard level completion rewards (5 XP + 10 Coins).
+    // Zero mid-game coins awarded, preventing Firestore rate-limit collisions.
     updateUserRewards(
           UpdateUserRewardsParams(
             gameType: s.gameType.name,
@@ -268,18 +270,31 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
             starsEarned: s.livesRemaining,
           ),
         )
-        .then((_) {
-          updateCategoryStats(
-            UpdateCategoryStatsParams(
-              categoryId: s.gameType.name,
-              isCorrect: true,
-            ),
-          ).catchError((_) => const Right<Failure, void>(null));
-          awardBadge(
-            kRoleplayBadgeId,
-          ).catchError((_) => const Right<Failure, void>(null));
+        .then((result) {
+          result.fold(
+            (failure) {
+              if (kDebugMode) {
+                debugPrint('[RoleplayBloc] updateUserRewards failed: $failure');
+              }
+            },
+            (_) {
+              updateCategoryStats(
+                UpdateCategoryStatsParams(
+                  categoryId: s.gameType.name,
+                  isCorrect: true,
+                ),
+              ).catchError((_) => const Right<Failure, void>(null));
+              awardBadge(
+                kRoleplayBadgeId,
+              ).catchError((_) => const Right<Failure, void>(null));
+            },
+          );
         })
-        .catchError((_) {});
+        .catchError((e) {
+          if (kDebugMode) {
+            debugPrint('[RoleplayBloc] updateUserRewards uncaught error: $e');
+          }
+        });
   }
 
   // ── ─────────────────────────────────────────────────────────────────────
@@ -354,20 +369,12 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
     }
   }
 
-  Future<void> _onSpeakConfirmed(
+  void _onSpeakConfirmed(
     RoleplaySpeakConfirmed event,
     Emitter<RoleplayState> emit,
-  ) async {
-    try {
-      await updateUserCoins(
-        UpdateUserCoinsParams(
-          amountChange: event.bonusCoins,
-          title: 'coin_history.speaking_bonus',
-          isEarned: true,
-        ),
-      );
-    } catch (e) {
-      if (kDebugMode) debugPrint('[RoleplayBloc] SpeakConfirmed failed: $e');
-    }
+  ) {
+    // Per strict app architecture: verbal confirmations verify speech accuracy only
+    // and never award mid-game coins. Rewards (5 XP + 10 Coins) are awarded strictly
+    // upon level completion via updateUserRewards.
   }
 }

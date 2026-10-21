@@ -65,21 +65,13 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
   // Handlers
   // ---------------------------------------------------------------------------
 
-  Future<void> _onSpeakConfirmed(
+  void _onSpeakConfirmed(
     ReadingSpeakConfirmed event,
     Emitter<ReadingState> emit,
-  ) async {
-    try {
-      await updateUserCoins(
-        UpdateUserCoinsParams(
-          amountChange: event.bonusCoins,
-          title: 'coin_history.speaking_bonus',
-          isEarned: true,
-        ),
-      );
-    } catch (e) {
-      // logger?.error('Failed to add speaking bonus', error: e);
-    }
+  ) {
+    // Per strict app architecture: verbal confirmations verify speech accuracy only
+    // and never award mid-game coins. Rewards (5 XP + 10 Coins) are awarded strictly
+    // upon level completion via updateUserRewards.
   }
 
   void _onRetryCurrentQuestion(

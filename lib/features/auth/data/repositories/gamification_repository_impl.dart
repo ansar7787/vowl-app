@@ -137,7 +137,9 @@ class GamificationRepositoryImpl
       return result;
     } catch (e) {
       if (e is FirebaseException &&
-          (e.code == 'unavailable' || e.code == 'network-request-failed')) {
+          (e.code == 'unavailable' ||
+              e.code == 'network-request-failed' ||
+              e.code == 'failed-precondition')) {
         return _offlineFallbackUpdateUserRewards(
           docRef: _firestore
               .collection('users')

@@ -386,21 +386,13 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
     }
   }
 
-  Future<void> _onSpeakConfirmed(
+  void _onSpeakConfirmed(
     EliteSpeakConfirmed event,
     Emitter<EliteMasteryState> emit,
-  ) async {
-    try {
-      await updateUserCoins(
-        UpdateUserCoinsParams(
-          amountChange: event.bonusCoins,
-          title: 'coin_history.speaking_bonus',
-          isEarned: true,
-        ),
-      );
-    } catch (e) {
-      dev.log('Failed to add speak confirmed coins', error: e);
-    }
+  ) {
+    // Per strict app architecture: verbal confirmations verify speech accuracy only
+    // and never award mid-game coins. Rewards (5 XP + 10 Coins) are awarded strictly
+    // upon level completion via updateUserRewards.
   }
 
   // ── Helpers ─────────────────────────────────────────────────────────────────
