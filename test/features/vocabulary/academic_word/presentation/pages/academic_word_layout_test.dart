@@ -1232,7 +1232,7 @@ void main() {
       if (hintButton.evaluate().isNotEmpty) {
         await tester.tap(hintButton);
         await tester.pump(const Duration(milliseconds: 300));
-        verify(() => mockVocabularyBloc.add(const VocabularyHintUsed())).called(2);
+        verify(() => mockVocabularyBloc.add(const VocabularyHintUsed())).called(1);
       }
     });
 

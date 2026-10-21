@@ -409,7 +409,7 @@ void main() {
       await tester.tap(hintBtn);
       await tester.pump();
 
-      verify(() => mockReadingBloc.add(const ReadingHintUsed())).called(2);
+      verify(() => mockReadingBloc.add(const ReadingHintUsed())).called(1);
     });
 
     testWidgets('9. Displays GameShimmerLoading when quest is null or uninitialized',

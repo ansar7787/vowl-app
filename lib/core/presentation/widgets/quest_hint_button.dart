@@ -1,5 +1,3 @@
-import 'dart:async';
-import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/utils/hint_utility.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -16,9 +14,15 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
-/// Interactive hint button providing TTS-enabled hints, ad-backed rewarded
-/// hints, and visual status badges with UI-level debouncing and race condition guards.
-class QuestHintButton extends StatefulWidget {
+/// Clean, stateless interactive hint button providing TTS-enabled hints,
+/// ad-backed rewarded hints, and visual status badges.
+///
+/// Features:
+/// - Re-reviewable: Tapping an already-used hint button replays the hint
+///   (sound, TTS, and snackbar) without deducting extra hints.
+/// - Premium-ready: Premium users receive instant hint access without ad paywalls.
+/// - Race-condition safe: Debounced via [ScaleButton] and synchronized with Firestore.
+class QuestHintButton extends StatelessWidget {
   final bool used;
   final Color primaryColor;
   final String? hintText;
@@ -34,35 +38,21 @@ class QuestHintButton extends StatefulWidget {
     required this.soundService,
   });
 
-  @override
-  State<QuestHintButton> createState() => _QuestHintButtonState();
-}
+  static void _showHintFeedback({
+    required BuildContext context,
+    required String? hintText,
+    required SoundService soundService,
+  }) {
+    soundService.playHint();
 
-class _QuestHintButtonState extends State<QuestHintButton> {
-  DateTime? _lastTapTime;
-  bool _isProcessing = false;
-  Timer? _debounceTimer;
-
-  @override
-  void dispose() {
-    _debounceTimer?.cancel();
-    super.dispose();
-  }
-
-  void _activateHint(BuildContext context) {
-    setState(() => _isProcessing = true);
-    widget.soundService.playHint();
-    widget.onTap();
-
-    if (widget.hintText != null) {
-      final isDynamic = HintUtility.isGenericHint(widget.hintText);
+    if (hintText != null && hintText.trim().isNotEmpty) {
+      final isDynamic = HintUtility.isGenericHint(hintText);
       final displayText = isDynamic
           ? context.tr(
               'hint.pro_tip_generic',
-              fallback:
-                  'PRO TIP: Look for context clues! Eliminating unlikely options often reveals the truth.',
+              fallback: 'Look for context clues to help find the right answer.',
             )
-          : widget.hintText!;
+          : hintText.trim();
 
       try {
         di.sl<TtsService>().stop();
@@ -70,9 +60,9 @@ class _QuestHintButtonState extends State<QuestHintButton> {
           isDynamic
               ? context.tr(
                   'hint.pro_tip_tts',
-                  fallback: 'Pro tip: Look for context clues.',
+                  fallback: 'Look for context clues.',
                 )
-              : widget.hintText!,
+              : hintText.trim(),
         );
       } catch (_) {}
 
@@ -83,98 +73,108 @@ class _QuestHintButtonState extends State<QuestHintButton> {
         duration: const Duration(seconds: 8),
       );
     }
-
-    _debounceTimer?.cancel();
-    _debounceTimer = Timer(const Duration(milliseconds: 1200), () {
-      if (mounted) setState(() => _isProcessing = false);
-    });
   }
 
-  void _handleTap(BuildContext context, int hintCount) {
-    if (widget.used || _isProcessing) return;
-
-    final now = DateTime.now();
-    if (_lastTapTime != null &&
-        now.difference(_lastTapTime!) < const Duration(milliseconds: 1000)) {
+  void _handleTap(
+    BuildContext context, {
+    required int hintCount,
+    required bool isPremium,
+  }) {
+    if (used) {
+      // Re-review the hint for the current question without consuming any hint
+      _showHintFeedback(
+        context: context,
+        hintText: hintText,
+        soundService: soundService,
+      );
       return;
     }
-    _lastTapTime = now;
 
-    final canUseHint = !widget.used && hintCount > 0;
+    final canUseHint = hintCount > 0 || isPremium;
     if (canUseHint) {
-      _activateHint(context);
-    } else if (!widget.used) {
+      onTap();
+      _showHintFeedback(
+        context: context,
+        hintText: hintText,
+        soundService: soundService,
+      );
+    } else {
       GameDialogHelper.showHintAdDialog(
         context,
         onHintEarned: () {
-          if (!mounted) return;
-          _activateHint(context);
+          if (!context.mounted) return;
+          onTap();
+          _showHintFeedback(
+            context: context,
+            hintText: hintText,
+            soundService: soundService,
+          );
         },
       );
     }
   }
 
   @override
-  void didUpdateWidget(covariant QuestHintButton oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (widget.used != oldWidget.used) {
-      _isProcessing = false;
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         final hintCount = state.user?.hintCount ?? 0;
         final isPremium = state.user?.isPremium ?? false;
-        final canUseHint = !widget.used && hintCount > 0;
+        final canUseHint = hintCount > 0 || isPremium;
 
         return Semantics(
           button: true,
-          enabled: !widget.used,
-          label: widget.used
+          enabled: true,
+          label: used
               ? context.tr(
-                  'hint.already_used_semantic',
-                  fallback: 'Hint already used',
+                  'hint.review_hint_semantic',
+                  fallback: 'Review hint',
                 )
               : canUseHint
-              ? context.tr(
-                  'hint.use_hint_semantic',
-                  args: ['$hintCount'],
-                  fallback: 'Use hint ($hintCount remaining)',
-                )
-              : isPremium
-              ? context.tr(
-                  'hint.get_free_hint_semantic',
-                  fallback: 'Get a free hint',
-                )
+              ? (isPremium && hintCount == 0
+                    ? context.tr(
+                        'hint.use_hint_premium_semantic',
+                        fallback: 'Use hint',
+                      )
+                    : context.tr(
+                        'hint.use_hint_semantic',
+                        args: ['$hintCount'],
+                        fallback: 'Use hint ($hintCount remaining)',
+                      ))
               : context.tr(
                   'hint.watch_ad_semantic',
-                  fallback: 'Watch ad to earn a hint',
+                  fallback: 'Watch video to unlock a hint',
                 ),
           child: ScaleButton(
-            onTap: () => _handleTap(context, hintCount),
+            debounceDuration: const Duration(milliseconds: 1000),
+            onTap: () => _handleTap(
+              context,
+              hintCount: hintCount,
+              isPremium: isPremium,
+            ),
             child: RepaintBoundary(
               child: Container(
                 width: 48.r,
                 height: 48.r,
                 decoration: BoxDecoration(
-                  color: canUseHint
-                      ? widget.primaryColor.withValues(alpha: 0.1)
+                  color: used
+                      ? Colors.grey.withValues(alpha: 0.08)
+                      : canUseHint
+                      ? primaryColor.withValues(alpha: 0.1)
                       : Colors.grey.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(14.r),
                   border: Border.all(
-                    color: canUseHint
-                        ? widget.primaryColor.withValues(alpha: 0.4)
+                    color: used
+                        ? Colors.grey.withValues(alpha: 0.3)
+                        : canUseHint
+                        ? primaryColor.withValues(alpha: 0.4)
                         : Colors.grey.withValues(alpha: 0.2),
                     width: 2,
                   ),
                   boxShadow: [
-                    if (canUseHint)
+                    if (!used && canUseHint)
                       BoxShadow(
-                        color: widget.primaryColor.withValues(alpha: 0.2),
+                        color: primaryColor.withValues(alpha: 0.2),
                         blurRadius: 10,
                         spreadRadius: 1,
                       ),
@@ -185,43 +185,37 @@ class _QuestHintButtonState extends State<QuestHintButton> {
                   children: [
                     // Main icon
                     Icon(
-                          widget.used
+                          used
                               ? Icons.psychology_outlined
-                              : (hintCount > 0
+                              : (canUseHint
                                     ? Icons.lightbulb_rounded
-                                    : (isPremium
-                                          ? Icons.add_circle_outline_rounded
-                                          : Icons.video_collection_rounded)),
-                          color: widget.used
+                                    : Icons.video_collection_rounded),
+                          color: used
                               ? Colors.grey
-                              : (hintCount > 0
-                                    ? widget.primaryColor
-                                    : (isPremium
-                                          ? tokens.gameCorrect
-                                          : Colors.amber[700])),
+                              : (canUseHint ? primaryColor : Colors.amber[700]),
                           size: 26.r,
                         )
                         .animate(
-                          target: VowlMotion.shouldReduceMotion(context)
+                          target: VowlMotion.shouldReduceMotion(context) || used
                               ? 0
                               : 1,
                           onPlay: (c) =>
-                              widget.used ? c.stop() : c.repeat(reverse: true),
+                              used ? c.stop() : c.repeat(reverse: true),
                         )
                         .shimmer(
                           duration: 2.seconds,
-                          color: widget.primaryColor.withValues(alpha: 0.3),
+                          color: primaryColor.withValues(alpha: 0.3),
                         ),
 
-                    // Hint count badge (when hints available)
-                    if (!widget.used && hintCount > 0)
+                    // Hint count badge (when hints available and not yet used)
+                    if (!used && hintCount > 0)
                       Positioned(
                         top: 2.r,
                         right: 2.r,
                         child: Container(
                           padding: EdgeInsets.all(4.r),
                           decoration: BoxDecoration(
-                            color: widget.primaryColor,
+                            color: primaryColor,
                             shape: BoxShape.circle,
                             border: Border.all(color: Colors.white, width: 1),
                           ),
@@ -235,7 +229,7 @@ class _QuestHintButtonState extends State<QuestHintButton> {
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 9.sp,
-                                fontWeight: FontWeight.w900,
+                                fontWeight: FontWeight.w800,
                                 color: Colors.white,
                               ),
                             ),
@@ -243,22 +237,20 @@ class _QuestHintButtonState extends State<QuestHintButton> {
                         ),
                       ),
 
-                    // Ad badge (when 0 hints)
-                    if (!widget.used && hintCount == 0)
+                    // Ad badge (when 0 hints and free user)
+                    if (!used && hintCount == 0 && !isPremium)
                       Positioned(
                         bottom: 4.r,
                         right: 4.r,
                         child: Container(
                           padding: EdgeInsets.all(2.r),
                           decoration: BoxDecoration(
-                            color: isPremium
-                                ? Colors.green
-                                : AppColors.amber500,
+                            color: AppColors.amber500,
                             shape: BoxShape.circle,
                             border: Border.all(color: Colors.white, width: 1),
                           ),
                           child: Icon(
-                            isPremium ? Icons.add : Icons.play_arrow_rounded,
+                            Icons.play_arrow_rounded,
                             color: Colors.white,
                             size: 10.r,
                           ),

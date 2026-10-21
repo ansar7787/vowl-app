@@ -532,11 +532,11 @@ class GameDialogHelper {
     showDialog(
       context: context,
       builder: (dialogCtx) => ModernGameDialog(
-        title: context.tr('games.hint_needed_title', fallback: 'NEED A HINT?'),
+        title: context.tr('games.hint_needed_title', fallback: 'Get a Hint'),
         description: context.tr(
           'games.hint_needed_desc',
           fallback:
-              'You are out of hints! Watch a quick ad to get 1 Strategic Hint for free.',
+              'You have no hints left. Watch a short video to unlock a hint for this question.',
         ),
         buttonText: context
             .tr('notification_card.not_now', fallback: 'Not Now')
@@ -562,10 +562,15 @@ class GameDialogHelper {
           }
 
           Navigator.of(dialogCtx).pop();
+          bool rewardEarned = false;
           adService.showHintRewardedAd(
             context: context,
             isPremium: isPremium,
-            onHintEarned: () async {
+            onHintEarned: () {
+              rewardEarned = true;
+            },
+            onDismissed: () async {
+              if (!rewardEarned) return;
               if (!context.mounted) return;
               if (persistToAccount) {
                 try {
@@ -579,27 +584,27 @@ class GameDialogHelper {
                   debugPrint('GameDialogHelper: Failed to credit rewarded hint: $e');
                 }
               }
-              if (context.mounted) {
+              if (onHintEarned != null) {
+                onHintEarned();
+              } else if (context.mounted) {
                 showPremiumSnackBar(
                   context,
                   context.tr(
                     'games.hint_reward_earned',
-                    fallback: 'REWARD EARNED: +1 Strategic Hint!',
+                    fallback: '1 hint added to your inventory.',
                   ),
                   icon: Icons.lightbulb_rounded,
                   color: AppColors.amber500,
                 );
               }
-              onHintEarned?.call();
             },
-            onDismissed: () {},
           );
         },
         adButtonText: context.tr(
           'games.watch_ad_for_hint_button',
           fallback: (context.read<AuthBloc>().state.user?.isPremium ?? false)
-              ? 'GET FREE HINT'
-              : 'WATCH AD FOR HINT',
+              ? 'Get Free Hint'
+              : 'Watch Video',
         ),
         isRescueLife: true,
         customIcon: Icon(
