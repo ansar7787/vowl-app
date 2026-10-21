@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
@@ -196,25 +195,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
                 _shuffledChars.value = [];
                 context.read<EliteMasteryBloc>().add(NextEliteQuestion());
               },
-              onHint: () {
-                final bloc = context.read<EliteMasteryBloc>();
-                final s = bloc.state;
-                if (s is EliteMasteryLoaded) {
-                  if (s.currentQuest.hint != null &&
-                      s.currentQuest.hint!.isNotEmpty) {
-                    if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
-                    bloc.add(ShowEliteHint());
-                  } else {
-                    GameDialogHelper.showHintAdDialog(
-                      context,
-                      onHintEarned: () {
-                        if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
-                        bloc.add(ShowEliteHint());
-                      },
-                    );
-                  }
-                }
-              },
+              onHint: () {},
               child: _buildBody(context, state, isDark, theme),
             );
           },

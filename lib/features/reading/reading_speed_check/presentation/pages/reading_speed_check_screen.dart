@@ -172,7 +172,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,
               onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
-              onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
+              onHint: () {},
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : RawScrollbar(

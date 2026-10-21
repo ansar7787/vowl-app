@@ -227,9 +227,17 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState>
     final s = state as ListeningLoaded;
     if (s.hintUsed) return;
 
+    // Optimistic latch: prevent duplicate deductions from concurrent calls
+    emit(s.copyWith(hintUsed: true));
+    hapticService.selection();
+
     final result = await useHint(NoParams());
     result.fold(
       (failure) {
+        if (state is ListeningLoaded) {
+          emit((state as ListeningLoaded).copyWith(hintUsed: false));
+        }
+        hapticService.error();
         if (kDebugMode) {
           debugPrint('[ListeningBloc] UseHint failed: ${failure.message}');
         }
@@ -240,8 +248,6 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState>
           level: _currentLevel ?? 0,
           questionIndex: s.currentIndex,
         );
-        emit(s.copyWith(hintUsed: true));
-        hapticService.selection();
       },
     );
   }

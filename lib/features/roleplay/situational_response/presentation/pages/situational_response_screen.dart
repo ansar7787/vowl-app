@@ -240,8 +240,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
-              onHint: () =>
-                  context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+              onHint: () {},
               useScrolling: false,
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)

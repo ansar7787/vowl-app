@@ -248,10 +248,18 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
   ) async {
     final s = state;
     if (s is! ReadingLoaded || s.hintUsed) return;
+
+    // Optimistic latch: prevent duplicate deductions from concurrent calls
+    emit(s.copyWith(hintUsed: true));
+    hapticService.selection();
+
     final result = await useHint(NoParams());
-    if (result.isRight()) {
-      emit(s.copyWith(hintUsed: true));
-      hapticService.selection();
+    if (result.isLeft()) {
+      // Rollback on failure
+      if (state is ReadingLoaded) {
+        emit((state as ReadingLoaded).copyWith(hintUsed: false));
+      }
+      hapticService.error();
     }
   }
 

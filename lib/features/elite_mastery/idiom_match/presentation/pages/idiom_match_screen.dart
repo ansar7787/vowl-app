@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import '../../../domain/entities/elite_mastery_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
@@ -253,25 +252,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
                 onQuestionReset();
                 context.read<EliteMasteryBloc>().add(NextEliteQuestion());
               },
-              onHint: () {
-                final bloc = context.read<EliteMasteryBloc>();
-                final s = bloc.state;
-                if (s is EliteMasteryLoaded) {
-                  if (s.currentQuest.hint != null &&
-                      s.currentQuest.hint!.isNotEmpty) {
-                    if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
-                    bloc.add(ShowEliteHint());
-                  } else {
-                    GameDialogHelper.showHintAdDialog(
-                      context,
-                      onHintEarned: () {
-                        if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
-                        bloc.add(ShowEliteHint());
-                      },
-                    );
-                  }
-                }
-              },
+              onHint: () {},
               child: _buildBody(context, state, isDark, theme),
             );
           },

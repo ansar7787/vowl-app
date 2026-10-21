@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/utils/hint_utility.dart';
 import 'package:vowl/core/utils/tts_service.dart';
@@ -16,11 +17,8 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
 /// Interactive hint button providing TTS-enabled hints, ad-backed rewarded
-/// hints, and visual status badges.
-///
-/// Uses [BlocSelector] to rebuild only when [hintCount] changes — not on
-/// every [AuthState] update.
-class QuestHintButton extends StatelessWidget {
+/// hints, and visual status badges with UI-level debouncing and race condition guards.
+class QuestHintButton extends StatefulWidget {
   final bool used;
   final Color primaryColor;
   final String? hintText;
@@ -36,43 +34,91 @@ class QuestHintButton extends StatelessWidget {
     required this.soundService,
   });
 
-  void _handleTap(BuildContext context, int hintCount) {
-    final canUseHint = !used && hintCount > 0;
-    if (canUseHint) {
-      soundService.playHint();
-      onTap();
+  @override
+  State<QuestHintButton> createState() => _QuestHintButtonState();
+}
 
-      if (hintText != null) {
-        final isDynamic = HintUtility.isGenericHint(hintText);
-        final displayText = isDynamic
-            ? context.tr(
-                'hint.pro_tip_generic',
-                fallback:
-                    'PRO TIP: Look for context clues! Eliminating unlikely options often reveals the truth.',
-              )
-            : hintText!;
+class _QuestHintButtonState extends State<QuestHintButton> {
+  DateTime? _lastTapTime;
+  bool _isProcessing = false;
+  Timer? _debounceTimer;
 
-        try {
-          di.sl<TtsService>().stop();
-          di.sl<TtsService>().speak(
-            isDynamic
-                ? context.tr(
-                    'hint.pro_tip_tts',
-                    fallback: 'Pro tip: Look for context clues.',
-                  )
-                : hintText!,
-          );
-        } catch (_) {}
+  @override
+  void dispose() {
+    _debounceTimer?.cancel();
+    super.dispose();
+  }
 
-        CustomSnackBar.show(
-          context: context,
-          message: displayText,
-          type: CustomSnackBarType.info,
-          duration: const Duration(seconds: 8),
+  void _activateHint(BuildContext context) {
+    setState(() => _isProcessing = true);
+    widget.soundService.playHint();
+    widget.onTap();
+
+    if (widget.hintText != null) {
+      final isDynamic = HintUtility.isGenericHint(widget.hintText);
+      final displayText = isDynamic
+          ? context.tr(
+              'hint.pro_tip_generic',
+              fallback:
+                  'PRO TIP: Look for context clues! Eliminating unlikely options often reveals the truth.',
+            )
+          : widget.hintText!;
+
+      try {
+        di.sl<TtsService>().stop();
+        di.sl<TtsService>().speak(
+          isDynamic
+              ? context.tr(
+                  'hint.pro_tip_tts',
+                  fallback: 'Pro tip: Look for context clues.',
+                )
+              : widget.hintText!,
         );
-      }
-    } else if (!used) {
-      GameDialogHelper.showHintAdDialog(context, onHintEarned: onTap);
+      } catch (_) {}
+
+      CustomSnackBar.show(
+        context: context,
+        message: displayText,
+        type: CustomSnackBarType.info,
+        duration: const Duration(seconds: 8),
+      );
+    }
+
+    _debounceTimer?.cancel();
+    _debounceTimer = Timer(const Duration(milliseconds: 1200), () {
+      if (mounted) setState(() => _isProcessing = false);
+    });
+  }
+
+  void _handleTap(BuildContext context, int hintCount) {
+    if (widget.used || _isProcessing) return;
+
+    final now = DateTime.now();
+    if (_lastTapTime != null &&
+        now.difference(_lastTapTime!) < const Duration(milliseconds: 1000)) {
+      return;
+    }
+    _lastTapTime = now;
+
+    final canUseHint = !widget.used && hintCount > 0;
+    if (canUseHint) {
+      _activateHint(context);
+    } else if (!widget.used) {
+      GameDialogHelper.showHintAdDialog(
+        context,
+        onHintEarned: () {
+          if (!mounted) return;
+          _activateHint(context);
+        },
+      );
+    }
+  }
+
+  @override
+  void didUpdateWidget(covariant QuestHintButton oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.used != oldWidget.used) {
+      _isProcessing = false;
     }
   }
 
@@ -83,12 +129,12 @@ class QuestHintButton extends StatelessWidget {
       builder: (context, state) {
         final hintCount = state.user?.hintCount ?? 0;
         final isPremium = state.user?.isPremium ?? false;
-        final canUseHint = !used && hintCount > 0;
+        final canUseHint = !widget.used && hintCount > 0;
 
         return Semantics(
           button: true,
-          enabled: !used,
-          label: used
+          enabled: !widget.used,
+          label: widget.used
               ? context.tr(
                   'hint.already_used_semantic',
                   fallback: 'Hint already used',
@@ -116,19 +162,19 @@ class QuestHintButton extends StatelessWidget {
                 height: 48.r,
                 decoration: BoxDecoration(
                   color: canUseHint
-                      ? primaryColor.withValues(alpha: 0.1)
+                      ? widget.primaryColor.withValues(alpha: 0.1)
                       : Colors.grey.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(14.r),
                   border: Border.all(
                     color: canUseHint
-                        ? primaryColor.withValues(alpha: 0.4)
+                        ? widget.primaryColor.withValues(alpha: 0.4)
                         : Colors.grey.withValues(alpha: 0.2),
                     width: 2,
                   ),
                   boxShadow: [
                     if (canUseHint)
                       BoxShadow(
-                        color: primaryColor.withValues(alpha: 0.2),
+                        color: widget.primaryColor.withValues(alpha: 0.2),
                         blurRadius: 10,
                         spreadRadius: 1,
                       ),
@@ -139,17 +185,17 @@ class QuestHintButton extends StatelessWidget {
                   children: [
                     // Main icon
                     Icon(
-                          used
+                          widget.used
                               ? Icons.psychology_outlined
                               : (hintCount > 0
                                     ? Icons.lightbulb_rounded
                                     : (isPremium
                                           ? Icons.add_circle_outline_rounded
                                           : Icons.video_collection_rounded)),
-                          color: used
+                          color: widget.used
                               ? Colors.grey
                               : (hintCount > 0
-                                    ? primaryColor
+                                    ? widget.primaryColor
                                     : (isPremium
                                           ? tokens.gameCorrect
                                           : Colors.amber[700])),
@@ -160,22 +206,22 @@ class QuestHintButton extends StatelessWidget {
                               ? 0
                               : 1,
                           onPlay: (c) =>
-                              used ? c.stop() : c.repeat(reverse: true),
+                              widget.used ? c.stop() : c.repeat(reverse: true),
                         )
                         .shimmer(
                           duration: 2.seconds,
-                          color: primaryColor.withValues(alpha: 0.3),
+                          color: widget.primaryColor.withValues(alpha: 0.3),
                         ),
 
                     // Hint count badge (when hints available)
-                    if (!used && hintCount > 0)
+                    if (!widget.used && hintCount > 0)
                       Positioned(
                         top: 2.r,
                         right: 2.r,
                         child: Container(
                           padding: EdgeInsets.all(4.r),
                           decoration: BoxDecoration(
-                            color: primaryColor,
+                            color: widget.primaryColor,
                             shape: BoxShape.circle,
                             border: Border.all(color: Colors.white, width: 1),
                           ),
@@ -198,7 +244,7 @@ class QuestHintButton extends StatelessWidget {
                       ),
 
                     // Ad badge (when 0 hints)
-                    if (!used && hintCount == 0)
+                    if (!widget.used && hintCount == 0)
                       Positioned(
                         bottom: 4.r,
                         right: 4.r,

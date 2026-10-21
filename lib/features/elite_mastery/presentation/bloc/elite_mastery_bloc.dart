@@ -329,6 +329,12 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
   ) async {
     if (state is! EliteMasteryLoaded) return;
     final currentState = state as EliteMasteryLoaded;
+    if (currentState.isHintUsed) return;
+
+    // Optimistic latch: prevent duplicate deductions
+    emit(currentState.copyWith(isHintUsed: true));
+    hapticService.selection();
+
     final result = await useHint(NoParams());
     if (result.isRight()) {
       List<int> removedIndices = [];
@@ -358,6 +364,12 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
           isLetterRevealed: isLetterRevealed,
         ),
       );
+    } else {
+      // Rollback on failure
+      if (state is EliteMasteryLoaded) {
+        emit((state as EliteMasteryLoaded).copyWith(isHintUsed: false));
+      }
+      hapticService.error();
     }
   }
 

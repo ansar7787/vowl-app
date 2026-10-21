@@ -1075,7 +1075,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockRoleplayBloc.add(any(that: isA<RoleplayHintUsed>()))).called(2);
+      verify(() => mockRoleplayBloc.add(any(that: isA<RoleplayHintUsed>()))).called(1);
     });
 
     testWidgets('44. Level 1 displays GameBriefingLayer with Career Closer',

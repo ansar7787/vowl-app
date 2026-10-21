@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
@@ -225,24 +224,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
                 _matchedIndices.value = {};
                 context.read<EliteMasteryBloc>().add(NextEliteQuestion());
               },
-              onHint: () {
-                final bloc = context.read<EliteMasteryBloc>();
-                final s = bloc.state;
-                if (s is EliteMasteryLoaded) {
-                  if (s.currentQuest.hint != null &&
-                      s.currentQuest.hint!.isNotEmpty) {
-                    if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
-                    bloc.add(ShowEliteHint());
-                  } else {
-                    GameDialogHelper.showHintAdDialog(
-                      context,
-                      onHintEarned: () {
-                        bloc.add(ShowEliteHint());
-                      },
-                    );
-                  }
-                }
-              },
+              onHint: () {},
               child: _buildBody(context, state, isDark, theme),
             );
           },

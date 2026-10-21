@@ -19,7 +19,7 @@ import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_chat
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_option_chip.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_origin_card.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
-import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+
 
 class IdiomsScreen extends StatefulWidget {
   final int level;
@@ -463,9 +463,7 @@ class _IdiomsScreenState extends State<IdiomsScreen>
                           context
                               .read<VocabularyBloc>()
                               .add(const VocabularyHintUsed());
-                          context
-                              .read<EconomyBloc>()
-                              .add(const EconomyConsumeHintRequested());
+                          // Only VocabularyBloc consumes the hint — avoids double decrement
                         },
                         child: Container(
                           padding: EdgeInsets.symmetric(

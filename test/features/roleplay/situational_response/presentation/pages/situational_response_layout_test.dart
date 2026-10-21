@@ -998,7 +998,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockRoleplayBloc.add(any(that: isA<RoleplayHintUsed>()))).called(2);
+      verify(() => mockRoleplayBloc.add(any(that: isA<RoleplayHintUsed>()))).called(1);
     });
 
     testWidgets('46. Instruction renders hint banner when hintUsed is true',

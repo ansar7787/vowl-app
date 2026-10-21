@@ -239,8 +239,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
               showConfetti: showConfettiNotifier.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<RoleplayBloc>().add(const RoleplayHintUsed()),
+              onHint: () {},
               useScrolling: false,
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)

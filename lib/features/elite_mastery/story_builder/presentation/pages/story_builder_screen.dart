@@ -7,7 +7,6 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc.dart';
@@ -304,25 +303,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
               onContinue: () {
                 context.read<EliteMasteryBloc>().add(NextEliteQuestion());
               },
-              onHint: () {
-                final bloc = context.read<EliteMasteryBloc>();
-                final s = bloc.state;
-                if (s is EliteMasteryLoaded) {
-                  if (s.currentQuest.hint != null &&
-                      s.currentQuest.hint!.isNotEmpty) {
-                    if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
-                    bloc.add(ShowEliteHint());
-                  } else {
-                    GameDialogHelper.showHintAdDialog(
-                      context,
-                      onHintEarned: () {
-                        if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
-                        bloc.add(ShowEliteHint());
-                      },
-                    );
-                  }
-                }
-              },
+              onHint: () {},
               child: _buildBody(context, state, isDark, theme),
             );
           },

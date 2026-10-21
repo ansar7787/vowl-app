@@ -296,8 +296,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                 disablePadding: true,
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
-                onHint: () =>
-                    context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
+                onHint: () {},
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
                     : RawScrollbar(

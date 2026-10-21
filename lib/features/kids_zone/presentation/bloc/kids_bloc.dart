@@ -499,19 +499,14 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
       // If hint already used for this question, don't consume again
       if (s.hintUsed) return;
 
+      // Optimistic latch: immediately lock hintUsed so concurrent events are rejected
+      emit(s.copyWith(hintUsed: true));
+
       if (event.isFree) {
-        emit(s.copyWith(hintUsed: true));
         return;
       }
 
-      final result = await useHint(NoParams());
-      if (result.isRight()) {
-        emit(s.copyWith(hintUsed: true));
-      } else {
-        // If hint deduction failed on backend but they had local hints,
-        // we still allow them to use the hint in-game so the session doesn't crash.
-        emit(s.copyWith(hintUsed: true));
-      }
+      await useHint(NoParams());
     }
   }
 }
