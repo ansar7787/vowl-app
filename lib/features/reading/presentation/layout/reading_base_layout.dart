@@ -15,6 +15,7 @@ import 'package:vowl/features/reading/presentation/widgets/reading_passage_area.
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
+import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
 class ReadingBaseLayout extends StatelessWidget {
@@ -138,7 +139,7 @@ class ReadingBaseLayout extends StatelessWidget {
                   hintUsed: hintUsed,
                   lives: lvs,
                   soundService: di.sl<SoundService>(),
-                  onInfoTap: () {}, // GameBaseLayout handles briefing
+                  onInfoTap: () => GameBriefingScope.show(context),
                   onHint: () {
                     context.read<ReadingBloc>().add(const ReadingHintUsed());
                     onHint();

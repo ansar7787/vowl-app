@@ -14,6 +14,7 @@ import 'package:vowl/features/accent/presentation/widgets/accent_header.dart';
 import 'package:vowl/features/accent/presentation/widgets/accent_peeking_mascot.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
+import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
 // ---------------------------------------------------------------------------
@@ -105,7 +106,7 @@ class AccentBaseLayout extends StatelessWidget {
             context,
             onQuit: () => Navigator.pop(context),
           ),
-          onShowBriefing: () {}, // GameBaseLayout handles briefing
+          onShowBriefing: () => GameBriefingScope.show(context),
           onHintTap: () {
             context.read<AccentBloc>().add(const AccentHintUsed());
             onHint();

@@ -15,6 +15,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/speaking/presentation/widgets/speaking_peeking_mascot.dart';
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
+import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
 // =============================================================================
@@ -121,7 +122,7 @@ class SpeakingBaseLayout extends StatelessWidget {
             onQuit: () => Navigator.of(context).pop(),
           ),
           onHintTap: onHint,
-          onInfoTap: () {}, // GameBaseLayout handles briefing
+          onInfoTap: () => GameBriefingScope.show(context),
         );
       },
       mascotBuilder: (context, state, lives) {

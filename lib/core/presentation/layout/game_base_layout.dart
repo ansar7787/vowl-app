@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 import 'package:vowl/core/presentation/widgets/game_scaffold.dart';
+import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 
 /// Levels on which the briefing overlay is shown automatically.
 const Set<int> _kBriefingLevels = {1, 100};
@@ -227,25 +228,32 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
               child: ValueListenableBuilder<int>(
                 valueListenable: _stateHash,
                 builder: (context, _, child) {
-                  return GameScaffold<S>(
-                    state: state,
-                    baseState: baseState,
-                    config: widget.config,
-                    headerBuilder: widget.headerBuilder,
-                    feedbackBuilder: widget.feedbackBuilder,
-                    mascotBuilder: widget.mascotBuilder,
-                    backgroundOverlay: widget.backgroundOverlay,
-                    showBriefing: _showBriefing,
-                    onBriefingDismiss: () {
-                      _showBriefing = false;
-                      _updateState();
-                    },
-                    onBriefingShow: () {
-                      _showBriefing = true;
-                      _updateState();
-                    },
-                    onExitPressed: () => _onExitPressed(context),
-                    onRetry: widget.onRetry,
+                  void triggerBriefing() {
+                    _ttsService.stop();
+                    _soundService.stopTts();
+                    _showBriefing = true;
+                    _updateState();
+                  }
+
+                  return GameBriefingScope(
+                    showBriefing: triggerBriefing,
+                    child: GameScaffold<S>(
+                      state: state,
+                      baseState: baseState,
+                      config: widget.config,
+                      headerBuilder: widget.headerBuilder,
+                      feedbackBuilder: widget.feedbackBuilder,
+                      mascotBuilder: widget.mascotBuilder,
+                      backgroundOverlay: widget.backgroundOverlay,
+                      showBriefing: _showBriefing,
+                      onBriefingDismiss: () {
+                        _showBriefing = false;
+                        _updateState();
+                      },
+                      onBriefingShow: triggerBriefing,
+                      onExitPressed: () => _onExitPressed(context),
+                      onRetry: widget.onRetry,
+                    ),
                   );
                 },
               ),

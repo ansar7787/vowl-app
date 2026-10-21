@@ -17,6 +17,7 @@ import 'package:vowl/features/elite_mastery/presentation/widgets/elite_peeking_m
 import '../bloc/elite_mastery_bloc.dart';
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
+import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
 class EliteBaseLayout extends StatelessWidget {
@@ -139,10 +140,30 @@ class EliteBaseLayout extends StatelessWidget {
             onQuit: () => Navigator.pop(context),
           ),
           onHint: () {
-            context.read<EliteMasteryBloc>().add(const MarkEliteHintUsed());
+            final bloc = context.read<EliteMasteryBloc>();
+            final s = bloc.state;
+            if (s is EliteMasteryLoaded) {
+              if (s.currentQuest.hint != null &&
+                  s.currentQuest.hint!.isNotEmpty) {
+                if (!s.isHintUsed) {
+                  bloc.add(const MarkEliteHintUsed());
+                }
+                bloc.add(const ShowEliteHint());
+              } else {
+                GameDialogHelper.showHintAdDialog(
+                  context,
+                  onHintEarned: () {
+                    if (!s.isHintUsed) {
+                      bloc.add(const MarkEliteHintUsed());
+                    }
+                    bloc.add(const ShowEliteHint());
+                  },
+                );
+              }
+            }
             onHint();
           },
-          onBriefing: () {}, // GameBaseLayout handles briefing internally
+          onBriefing: () => GameBriefingScope.show(context),
         );
       },
       mascotBuilder: (context, dynamicState, lives) {

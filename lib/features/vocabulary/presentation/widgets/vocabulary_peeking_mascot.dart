@@ -60,7 +60,7 @@ class VocabularyPeekingMascot extends StatelessWidget {
     // current game message (was previously invisible to assistive tech).
     Widget bubble = Container(
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-      constraints: BoxConstraints(maxWidth: 200.w),
+      constraints: BoxConstraints(maxWidth: 220.w),
       decoration: BoxDecoration(
         color: isDark ? Colors.grey.shade900 : Colors.white,
         borderRadius: BorderRadius.circular(12.r),
@@ -70,8 +70,7 @@ class VocabularyPeekingMascot extends StatelessWidget {
       ),
       child: Text(
         message,
-        maxLines: 2,
-        overflow: TextOverflow.ellipsis,
+        maxLines: 3,
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 11.sp,

@@ -1,26 +1,17 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
-import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
-
-import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
-import 'package:vowl/core/utils/custom_snack_bar.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
+import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
+import 'package:vowl/features/writing/presentation/widgets/writing_game_header.dart';
+import 'package:vowl/features/writing/presentation/widgets/writing_peeking_mascot.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
 class WritingBaseLayout extends StatelessWidget {
@@ -54,14 +45,6 @@ class WritingBaseLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mascotId = context.select<AuthBloc, String>(
-      (bloc) => bloc.state.user?.vowlMascot ?? 'vowl_prime',
-    );
-    final mascotName = mascotId
-        .split('_')
-        .map((e) => '${e[0].toUpperCase()}${e.substring(1)}')
-        .join(' ');
-
     final config = GameScaffoldConfig(
       gameType: gameType,
       level: level,
@@ -96,19 +79,33 @@ class WritingBaseLayout extends StatelessWidget {
             ? state.currentQuestOrNull
             : null;
 
-        return _buildHeader(
-          context,
-          state,
-          level,
-          progress,
-          lives,
-          theme,
-          isDark,
-          currentQuest,
+        return WritingGameHeader(
+          state: state,
+          level: level,
+          progress: progress,
+          lives: lives,
+          isAnswered: isAnswered,
+          quest: currentQuest,
+          theme: theme,
+          isDark: isDark,
+          soundService: di.sl<SoundService>(),
+          onInfoTap: () => GameBriefingScope.show(context),
+          onHint: onHint,
         );
       },
       mascotBuilder: (context, state, lives) {
-        return _buildPeekingMascot(context, state, lives, mascotId, mascotName);
+        final theme = LevelThemeHelper.getTheme(
+          'writing',
+          isDark: Theme.of(context).brightness == Brightness.dark,
+          level: level,
+        );
+        return WritingPeekingMascot(
+          state: state,
+          lives: lives,
+          isCorrect: isCorrect,
+          isAnswered: isAnswered,
+          theme: theme,
+        );
       },
       feedbackBuilder: (context, state) {
         if (state is! WritingLoaded) return const SizedBox.shrink();
@@ -141,167 +138,5 @@ class WritingBaseLayout extends StatelessWidget {
         );
       },
     );
-  }
-
-  Widget _buildHeader(
-    BuildContext context,
-    WritingState state,
-    int level,
-    double progress,
-    int lives,
-    dynamic theme,
-    bool isDark,
-    dynamic quest,
-  ) {
-    final hintShouldGlow = lives < 3 && !isAnswered;
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
-      child: Row(
-        children: [
-          Expanded(
-            child: GameProgressHeader(
-              level: level,
-              progress: progress,
-              lives: lives,
-              theme: theme,
-              isDark: isDark,
-              onBack: () => GameDialogHelper.showExitConfirmation(
-                context,
-                onQuit: () => Navigator.pop(context),
-              ),
-            ),
-          ),
-          if (quest != null && !isAnswered) ...[
-            Padding(
-              padding: EdgeInsets.only(left: 8.w),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Builder(
-                    builder: (context) {
-                      final hintBtn = QuestHintButton(
-                        used: (state is WritingLoaded) ? state.hintUsed : false,
-                        primaryColor: theme.primaryColor,
-                        hintText: quest.hint,
-                        soundService: di.sl<SoundService>(),
-                        onTap: () {
-                          context.read<WritingBloc>().add(
-                            const WritingHintUsed(),
-                          );
-                          onHint();
-                        },
-                      );
-
-                      if (hintShouldGlow &&
-                          !VowlMotion.shouldReduceMotion(context)) {
-                        return hintBtn
-                            .animate(
-                              onPlay: (c) => c.repeat(reverse: true),
-                            )
-                            .shimmer(
-                              color: Colors.white.withValues(alpha: 0.5),
-                              duration: 1.seconds,
-                            )
-                            .scale(
-                              begin: const Offset(1, 1),
-                              end: const Offset(1.1, 1.1),
-                            );
-                      }
-                      return hintBtn;
-                    },
-                  ),
-                  if (quest.hint != null &&
-                      ((state is WritingLoaded) ? state.hintUsed : false)) ...[
-                    SizedBox(width: 8.w),
-                    TranslateButtonWidget(
-                      originalText: quest.hint,
-                      onTranslationComplete: (translated) {
-                        CustomSnackBar.show(
-                          context: context,
-                          message: translated,
-                          type: CustomSnackBarType.info,
-                          duration: const Duration(seconds: 8),
-                        );
-                      },
-                    ),
-                  ],
-                ],
-              ),
-            ),
-          ],
-        ],
-      ),
-    );
-  }
-
-  Widget _buildPeekingMascot(
-    BuildContext context,
-    WritingState state,
-    int lives,
-    String mascotId,
-    String mascotName,
-  ) {
-    final mascotState = _getMascotState(state, lives);
-    String message = "Write your answer";
-    if (isCorrect == true) {
-      message = "Well written!";
-    } else if (lives < 3 && !isAnswered) {
-      message = "Try rephrasing";
-    } else if (isCorrect == false) {
-      message = "Review and revise";
-    } else if (state is WritingGameComplete) {
-      message = "Section complete";
-    } else {
-      message = "Ready when you are";
-    }
-
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    final col = Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-          decoration: BoxDecoration(
-            color: isDark ? AppColors.slate800 : Colors.white,
-            borderRadius: BorderRadius.circular(12.r),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.1),
-                blurRadius: 10,
-              ),
-            ],
-          ),
-          child: Text(
-            message,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 11.sp,
-              fontWeight: FontWeight.bold,
-              color: isDark ? Colors.white70 : Colors.blueAccent,
-            ),
-          ),
-        ),
-        SizedBox(height: 0.h),
-        VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId),
-      ],
-    );
-
-    if (VowlMotion.shouldReduceMotion(context)) {
-      return col;
-    }
-
-    return col.animate().fadeIn().slideX(begin: 0.1, end: 0);
-  }
-
-  VowlMascotState _getMascotState(WritingState state, int lives) {
-    if (state is WritingGameComplete) return VowlMascotState.happy;
-    if (state is WritingGameOver) return VowlMascotState.worried;
-    if (state is WritingLoaded) {
-      if (isCorrect == true) return VowlMascotState.happy;
-      if (lives < 3 && !isAnswered) return VowlMascotState.worried;
-      if (isCorrect == false) return VowlMascotState.thinking;
-    }
-    return VowlMascotState.neutral;
   }
 }

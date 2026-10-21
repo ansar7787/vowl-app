@@ -968,7 +968,7 @@ class AdventureLevelScreen extends StatelessWidget {
             )
           : context.tr(
               'adventure.hint_pack_strategic',
-              fallback: 'STRATEGIC HINT PACK',
+              fallback: 'HINT PACK',
             ),
       bodyBuilder: (cost, amount) => context.tr(
         'adventure.hint_pack_exchange_body',

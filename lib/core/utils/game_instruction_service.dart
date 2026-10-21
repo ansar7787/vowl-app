@@ -133,7 +133,7 @@ class GameInstructionService {
           ],
           actionText: "Record Now",
           tip:
-              "PRO TIP: Record yourself! Comparing your pitch to the model helps master the natural rhythm.",
+              "Record yourself! Comparing your pitch to the model helps master the natural rhythm.",
         );
       case QuestType.listening:
         return const GameBriefing(
@@ -144,7 +144,7 @@ class GameInstructionService {
           rules: ["Use headphones", "Focus on intonation", "Identify keywords"],
           actionText: "Initialize Feed",
           tip:
-              "PRO TIP: Close your eyes! Focusing on pure sound helps catch subtle phoneme changes.",
+              "Close your eyes! Focusing on pure sound helps catch subtle phoneme changes.",
         );
       case QuestType.reading:
         return const GameBriefing(
@@ -159,7 +159,7 @@ class GameInstructionService {
           ],
           actionText: "Analyze Text",
           tip:
-              "PRO TIP: Scan for keywords first! Don't get stuck on one word; focus on the overall message.",
+              "Scan for keywords first! Don't get stuck on one word; focus on the overall message.",
         );
       case QuestType.writing:
         return const GameBriefing(
@@ -174,7 +174,7 @@ class GameInstructionService {
           ],
           actionText: "Build Sentence",
           tip:
-              "PRO TIP: Start with the verb! Finding the action helps the rest of the sentence fall into place.",
+              "Start with the verb! Finding the action helps the rest of the sentence fall into place.",
         );
       case QuestType.grammar:
         return const GameBriefing(
@@ -189,7 +189,7 @@ class GameInstructionService {
           ],
           actionText: "Fix Structure",
           tip:
-              "PRO TIP: Read the sentence out loud in your head! Often, you can 'hear' if a rule is being broken.",
+              "Read the sentence out loud in your head! Often, you can 'hear' if a rule is being broken.",
         );
       case QuestType.vocabulary:
         return const GameBriefing(
@@ -204,7 +204,7 @@ class GameInstructionService {
           ],
           actionText: "Acquire Lexicon",
           tip:
-              "PRO TIP: Visual associations help! Try to link the word to a picture in your mind.",
+              "Visual associations help! Try to link the word to a picture in your mind.",
         );
       case QuestType.accent:
         return const GameBriefing(
@@ -219,7 +219,7 @@ class GameInstructionService {
           ],
           actionText: "Start Drill",
           tip:
-              "PRO TIP: Over-enunciate! Emphasizing the vowels helps clear up minimal pair confusion.",
+              "Over-enunciate! Emphasizing the vowels helps clear up minimal pair confusion.",
         );
       case QuestType.roleplay:
         return const GameBriefing(
@@ -230,7 +230,7 @@ class GameInstructionService {
           rules: ["Stay in character", "Think of the goal", "React naturally"],
           actionText: "Enter Scenario",
           tip:
-              "PRO TIP: Be expressive! The tone is just as important as the words in social interactions.",
+              "Be expressive! The tone is just as important as the words in social interactions.",
         );
       default:
         return getDefaultBriefing(fallbackTitle ?? "Quest");
@@ -251,7 +251,7 @@ class GameInstructionService {
       ],
       actionText: "Start Challenge",
       tip:
-          "PRO TIP: Pay close attention to the surrounding words and prepositions—they naturally pull the correct answer towards them!",
+          "Pay close attention to the surrounding words and prepositions—they naturally pull the correct answer towards them!",
     ),
     GameSubtype.speedSpelling: GameBriefing(
       title: "Speed Spelling",
@@ -265,7 +265,7 @@ class GameInstructionService {
       ],
       actionText: "Start Spelling",
       tip:
-          "PRO TIP: If you missed the word, tap the replay button to hear it again!",
+          "If you missed the word, tap the replay button to hear it again!",
     ),
     GameSubtype.idiomMatch: GameBriefing(
       title: "Idiom Match",
@@ -279,7 +279,7 @@ class GameInstructionService {
       ],
       actionText: "Match Idiom",
       tip:
-          "PRO TIP: Idioms aren't literal. Focus on what the speaker is really trying to express!",
+          "Idioms aren't literal. Focus on what the speaker is really trying to express!",
     ),
     GameSubtype.minimalPairs: GameBriefing(
       title: "Minimal Pairs",
@@ -293,7 +293,7 @@ class GameInstructionService {
       ],
       actionText: "Start Listening",
       tip:
-          "PRO TIP: Pay close attention to the vowels! Notice if they sound quick and relaxed, or long and stretched out.",
+          "Pay close attention to the vowels! Notice if they sound quick and relaxed, or long and stretched out.",
     ),
     GameSubtype.consonantClarity: GameBriefing(
       title: "Consonant Clarity",
@@ -307,7 +307,7 @@ class GameInstructionService {
       ],
       actionText: "Start Playing",
       tip:
-          "PRO TIP: Pay attention to whether your throat vibrates (voiced) or stays still (voiceless) when you make the sound!",
+          "Pay attention to whether your throat vibrates (voiced) or stays still (voiceless) when you make the sound!",
     ),
     GameSubtype.pitchModulation: GameBriefing(
       title: "Pitch Modulation",
@@ -321,7 +321,7 @@ class GameInstructionService {
       ],
       actionText: "Identify Pitch",
       tip:
-          "PRO TIP: Pay attention to whether the voice rises or falls at the end of the phrase to determine its exact meaning!",
+          "Pay attention to whether the voice rises or falls at the end of the phrase to determine its exact meaning!",
     ),
     GameSubtype.pitchPatternMatch: GameBriefing(
       title: "Pitch Pattern Match",
@@ -335,7 +335,7 @@ class GameInstructionService {
       ],
       actionText: "Identify Pattern",
       tip:
-          "PRO TIP: Pay attention to which word is stressed—it completely changes the sentence's meaning!",
+          "Pay attention to which word is stressed—it completely changes the sentence's meaning!",
     ),
     GameSubtype.shadowingChallenge: GameBriefing(
       title: "Shadowing Challenge",
@@ -349,7 +349,7 @@ class GameInstructionService {
       ],
       actionText: "Identify Pattern",
       tip:
-          "PRO TIP: Try saying the sentence aloud exactly as you hear it. Feeling the sounds connect in your mouth will reveal the answer!",
+          "Try saying the sentence aloud exactly as you hear it. Feeling the sounds connect in your mouth will reveal the answer!",
     ),
     GameSubtype.wordLinking: GameBriefing(
       title: "Word Linking",
@@ -363,7 +363,7 @@ class GameInstructionService {
       ],
       actionText: "Find the Link",
       tip:
-          "PRO TIP: If a word ends in a consonant and the next starts with a vowel, they usually merge into one smooth sound.",
+          "If a word ends in a consonant and the next starts with a vowel, they usually merge into one smooth sound.",
     ),
 
     // 2. Speaking
@@ -375,7 +375,7 @@ class GameInstructionService {
       rules: ["Hold mic to record", "Trace sound wave", "Master the cadence"],
       actionText: "Start Echo",
       tip:
-          "PRO TIP: Match the stress rhythm—English flows in stressed clusters!",
+          "Match the stress rhythm—English flows in stressed clusters!",
     ),
     GameSubtype.speakMissingWord: GameBriefing(
       title: "Vocal Decoder",
@@ -389,7 +389,7 @@ class GameInstructionService {
       ],
       actionText: "Speak Word",
       tip:
-          "PRO TIP: Look at surrounding nouns and verbs to match singular vs plural context.",
+          "Look at surrounding nouns and verbs to match singular vs plural context.",
     ),
     GameSubtype.situationSpeaking: GameBriefing(
       title: "Situation Speaking",
@@ -403,7 +403,7 @@ class GameInstructionService {
       ],
       actionText: "Start Situation",
       tip:
-          "PRO TIP: Don't stress about being perfect. Focus on being polite and clear, just like you would with a real person!",
+          "Don't stress about being perfect. Focus on being polite and clear, just like you would with a real person!",
     ),
     GameSubtype.sceneDescriptionSpeaking: GameBriefing(
       title: "Visual Narrator",
@@ -417,7 +417,7 @@ class GameInstructionService {
       ],
       actionText: "Describe Scene",
       tip:
-          "PRO TIP: Start with foreground actions, then move to background details.",
+          "Start with foreground actions, then move to background details.",
     ),
     GameSubtype.yesNoSpeaking: GameBriefing(
       title: "Voice Validator",
@@ -431,7 +431,7 @@ class GameInstructionService {
       ],
       actionText: "Validate Voice",
       tip:
-          "PRO TIP: Speak with confident, clear pronunciation directly into the mic.",
+          "Speak with confident, clear pronunciation directly into the mic.",
     ),
     GameSubtype.speakSynonym: GameBriefing(
       title: "Synonym Challenge",
@@ -441,7 +441,7 @@ class GameInstructionService {
       rules: ["Think of a similar word", "Say it out loud", "Speak clearly"],
       actionText: "Start Speaking",
       tip:
-          "PRO TIP: Keep it simple! You don't need to use big fancy words—everyday words work perfectly.",
+          "Keep it simple! You don't need to use big fancy words—everyday words work perfectly.",
     ),
     GameSubtype.dialogueRoleplay: GameBriefing(
       title: "Scene Architect",
@@ -451,7 +451,7 @@ class GameInstructionService {
       rules: ["Follow the script", "Speak with feeling", "Keep the flow going"],
       actionText: "Enter Scene",
       tip:
-          "PRO TIP: Match your voice acting to the simulated character's mood!",
+          "Match your voice acting to the simulated character's mood!",
     ),
     GameSubtype.pronunciationFocus: GameBriefing(
       title: "Phonetic Precision",
@@ -465,7 +465,7 @@ class GameInstructionService {
       ],
       actionText: "Practice Sound",
       tip:
-          "PRO TIP: Pay attention to where your tongue touches the roof of your mouth.",
+          "Pay attention to where your tongue touches the roof of your mouth.",
     ),
     GameSubtype.speakOpposite: GameBriefing(
       title: "Antonym Orator",
@@ -475,7 +475,7 @@ class GameInstructionService {
       rules: ["Think of the opposite", "Speak clearly", "Avoid synonyms"],
       actionText: "Speak Opposite",
       tip:
-          "PRO TIP: Think magnetically: What is the polar opposite of the given word?",
+          "Think magnetically: What is the polar opposite of the given word?",
     ),
     GameSubtype.dailyExpression: GameBriefing(
       title: "Social Fluent",
@@ -489,7 +489,7 @@ class GameInstructionService {
       ],
       actionText: "Speak Now",
       tip:
-          "PRO TIP: Emphasize the keywords that carry the main emotional meaning.",
+          "Emphasize the keywords that carry the main emotional meaning.",
     ),
     // 2. Listening
     GameSubtype.audioFillBlanks: GameBriefing(
@@ -504,7 +504,7 @@ class GameInstructionService {
       ],
       actionText: "Start Decoding",
       tip:
-          "PRO TIP: Listen carefully to short helper words like 'a', 'the', 'in', or 'at'!",
+          "Listen carefully to short helper words like 'a', 'the', 'in', or 'at'!",
     ),
     GameSubtype.audioMultipleChoice: GameBriefing(
       title: "Listen & Choose",
@@ -532,7 +532,7 @@ class GameInstructionService {
       ],
       actionText: "Let's Build!",
       tip:
-          "PRO TIP: Don't just guess the grammar! Listen closely to the rhythm and how the speaker links words together.",
+          "Don't just guess the grammar! Listen closely to the rhythm and how the speaker links words together.",
     ),
     GameSubtype.audioTrueFalse: GameBriefing(
       title: "Signal Validator",
@@ -626,7 +626,7 @@ class GameInstructionService {
       ],
       actionText: "Anchor Location",
       tip:
-          "PRO TIP: Close your eyes and visualize the scene! Focus on ambient sounds like footsteps, echoes, wind, or humming machinery.",
+          "Close your eyes and visualize the scene! Focus on ambient sounds like footsteps, echoes, wind, or humming machinery.",
     ),
     // 3. Reading
     GameSubtype.readAndAnswer: GameBriefing(
@@ -690,7 +690,7 @@ class GameInstructionService {
       ],
       actionText: "Play Now",
       tip:
-          "PRO TIP: Don't get tricked by a word that only appeared once. A good title summarizes the entire text!",
+          "Don't get tricked by a word that only appeared once. A good title summarizes the entire text!",
     ),
     GameSubtype.readAndMatch: GameBriefing(
       title: "Read & Match",
@@ -746,7 +746,7 @@ class GameInstructionService {
       ],
       actionText: "Fill Gaps",
       tip:
-          "PRO TIP: Reading the surrounding words is crucial. Context gives away the required part of speech!",
+          "Reading the surrounding words is crucial. Context gives away the required part of speech!",
     ),
     GameSubtype.skimmingScanning: GameBriefing(
       title: "Skim & Scan",
@@ -760,7 +760,7 @@ class GameInstructionService {
       ],
       actionText: "Start Scanning",
       tip:
-          "PRO TIP: Use your eyes like a radar! Hunt for capital letters or numbers first.",
+          "Use your eyes like a radar! Hunt for capital letters or numbers first.",
     ),
     // 4. Writing
     GameSubtype.sentenceBuilder: GameBriefing(
@@ -775,7 +775,7 @@ class GameInstructionService {
       ],
       actionText: "Build Sentence",
       tip:
-          "PRO TIP: Start with 'who' or 'what' the sentence is about, then look for the action word!",
+          "Start with 'who' or 'what' the sentence is about, then look for the action word!",
     ),
     GameSubtype.completeSentence: GameBriefing(
       title: "Fill in the Blank",
@@ -789,7 +789,7 @@ class GameInstructionService {
       ],
       actionText: "Let's Go!",
       tip:
-          "PRO TIP: Read the sentence out loud in your head. Usually, your brain will naturally guess the missing word before you even look at the options!",
+          "Read the sentence out loud in your head. Usually, your brain will naturally guess the missing word before you even look at the options!",
     ),
     GameSubtype.describeSituationWriting: GameBriefing(
       title: "Context Scribe",
@@ -802,7 +802,7 @@ class GameInstructionService {
         "Be specific & clear",
       ],
       actionText: "Scribe Scene",
-      tip: "PRO TIP: Use sensory words! Describe what is seen, heard, or felt.",
+      tip: "Use sensory words! Describe what is seen, heard, or felt.",
     ),
     GameSubtype.fixTheSentence: GameBriefing(
       title: "Clarity Editor",
@@ -812,7 +812,7 @@ class GameInstructionService {
       rules: ["Locate the error", "Scrub to erase it", "Type the correct word"],
       actionText: "Fix the Sentence",
       tip:
-          "PRO TIP: Read the sentence out loud! If something sounds a little weird, that's probably the word you need to scrub.",
+          "Read the sentence out loud! If something sounds a little weird, that's probably the word you need to scrub.",
     ),
     GameSubtype.shortAnswerWriting: GameBriefing(
       title: "Briefing Pro",
@@ -826,7 +826,7 @@ class GameInstructionService {
       ],
       actionText: "Submit Answer",
       tip:
-          "PRO TIP: Don't overcomplicate it! Simple, direct sentences are the best.",
+          "Don't overcomplicate it! Simple, direct sentences are the best.",
     ),
     GameSubtype.clauseConnector: GameBriefing(
       title: "Clause Connector",
@@ -840,7 +840,7 @@ class GameInstructionService {
       ],
       actionText: "Link Clauses",
       tip:
-          "PRO TIP: Think about the relationship. Is it showing a result (so), a contrast (but), or adding info (and)?",
+          "Think about the relationship. Is it showing a result (so), a contrast (but), or adding info (and)?",
     ),
     GameSubtype.opinionWriting: GameBriefing(
       title: "Vocal Pen",
@@ -850,7 +850,7 @@ class GameInstructionService {
       rules: ["Read the prompt", "Weigh the arguments", "Balance the scale"],
       actionText: "Balance Scale",
       tip:
-          "PRO TIP: A 'Pro' always supports the prompt's opinion, while a 'Con' highlights a drawback or opposing view.",
+          "A 'Pro' always supports the prompt's opinion, while a 'Con' highlights a drawback or opposing view.",
     ),
     GameSubtype.dailyJournal: GameBriefing(
       title: "Daily Chronicler",
@@ -864,7 +864,7 @@ class GameInstructionService {
       ],
       actionText: "Log Entry",
       tip:
-          "PRO TIP: Use sequential markers like 'First', 'Later', and 'Eventually' to organize your thoughts.",
+          "Use sequential markers like 'First', 'Later', and 'Eventually' to organize your thoughts.",
     ),
     GameSubtype.summarizeStoryWriting: GameBriefing(
       title: "Essence Extractor",
@@ -878,7 +878,7 @@ class GameInstructionService {
       ],
       actionText: "Summarize Now",
       tip:
-          "PRO TIP: A good summary only includes events that actually happened in the story!",
+          "A good summary only includes events that actually happened in the story!",
     ),
     GameSubtype.writingEmail: GameBriefing(
       title: "Email Expert",
@@ -892,7 +892,7 @@ class GameInstructionService {
       ],
       actionText: "Send Mail",
       tip:
-          "PRO TIP: Clear subject lines and direct greetings set the professional tone.",
+          "Clear subject lines and direct greetings set the professional tone.",
     ),
     GameSubtype.correctionWriting: GameBriefing(
       title: "Syntax Auditor",
@@ -906,7 +906,7 @@ class GameInstructionService {
       ],
       actionText: "Audit Syntax",
       tip:
-          "PRO TIP: Read the sentence out loud in your head! Clunky phrasing often reveals the grammatical flaw.",
+          "Read the sentence out loud in your head! Clunky phrasing often reveals the grammatical flaw.",
     ),
     GameSubtype.essayDrafting: GameBriefing(
       title: "Essay Drafting",
@@ -920,7 +920,7 @@ class GameInstructionService {
       ],
       actionText: "Start Drafting",
       tip:
-          "PRO TIP: Pay attention to the labels on the hex slots—they tell you exactly what kind of sentence belongs there!",
+          "Pay attention to the labels on the hex slots—they tell you exactly what kind of sentence belongs there!",
     ),
     // 5. Grammar
     GameSubtype.grammarQuest: GameBriefing(
@@ -931,7 +931,7 @@ class GameInstructionService {
       rules: ["Identify errors", "Choose the correction", "Master the rules"],
       actionText: "Fix Structure",
       tip:
-          "PRO TIP: Read the sentence out loud in your head! Often, you can 'hear' if a rule is broken.",
+          "Read the sentence out loud in your head! Often, you can 'hear' if a rule is broken.",
     ),
     GameSubtype.sentenceCorrection: GameBriefing(
       title: "Error Auditor",
@@ -941,7 +941,7 @@ class GameInstructionService {
       rules: ["Find the glitch", "Apply the fix", "Type to confirm answer"],
       actionText: "Audit Text",
       tip:
-          "PRO TIP: Focus on subject-verb agreement first—it's the most common source of errors!",
+          "Focus on subject-verb agreement first—it's the most common source of errors!",
     ),
     GameSubtype.wordReorder: GameBriefing(
       title: "Sentence Builder",
@@ -955,7 +955,7 @@ class GameInstructionService {
       ],
       actionText: "Start Building",
       tip:
-          "PRO TIP: Look for capital letters to find the first word, and punctuation for the last!",
+          "Look for capital letters to find the first word, and punctuation for the last!",
     ),
     GameSubtype.tenseMastery: GameBriefing(
       title: "Tense Mastery",
@@ -969,7 +969,7 @@ class GameInstructionService {
       ],
       actionText: "Master Tenses",
       tip:
-          "PRO TIP: Look for 'Signal Words'! 'Since' often needs Perfect, while 'Usually' needs Present.",
+          "Look for 'Signal Words'! 'Since' often needs Perfect, while 'Usually' needs Present.",
     ),
     GameSubtype.partsOfSpeech: GameBriefing(
       title: "Lexical Anatomy",
@@ -983,7 +983,7 @@ class GameInstructionService {
       ],
       actionText: "Identify Role",
       tip:
-          "PRO TIP: If it's an action, it's a verb. If it's a person/place/thing, it's a noun.",
+          "If it's an action, it's a verb. If it's a person/place/thing, it's a noun.",
     ),
     GameSubtype.subjectVerbAgreement: GameBriefing(
       title: "Agreement Sync",
@@ -997,7 +997,7 @@ class GameInstructionService {
       ],
       actionText: "Sync Agreement",
       tip:
-          "PRO TIP: Watch out for 'distractors'—prepositional phrases that sit between subject and verb!",
+          "Watch out for 'distractors'—prepositional phrases that sit between subject and verb!",
     ),
     GameSubtype.voiceSwap: GameBriefing(
       title: "Voice Swap",
@@ -1011,7 +1011,7 @@ class GameInstructionService {
       ],
       actionText: "Swap Voice",
       tip:
-          "PRO TIP: In Passive voice, the object becomes the star! Use 'by [someone]' only if needed.",
+          "In Passive voice, the object becomes the star! Use 'by [someone]' only if needed.",
     ),
     GameSubtype.questionFormatter: GameBriefing(
       title: "Question Formatter",
@@ -1025,7 +1025,7 @@ class GameInstructionService {
       ],
       actionText: "Start Formatting",
       tip:
-          "PRO TIP: Pay attention to the helping verb! If the sentence uses 'is' or 'can', the question usually starts with it.",
+          "Pay attention to the helping verb! If the sentence uses 'is' or 'can', the question usually starts with it.",
     ),
     GameSubtype.articleInsertion: GameBriefing(
       title: "Article Orb",
@@ -1039,7 +1039,7 @@ class GameInstructionService {
       ],
       actionText: "Pop Orb",
       tip:
-          "PRO TIP: Use 'the' for specific items, 'a/an' for general ones, and listen for vowel sounds!",
+          "Use 'the' for specific items, 'a/an' for general ones, and listen for vowel sounds!",
     ),
     GameSubtype.modifierPlacement: GameBriefing(
       title: "Modifier Map",
@@ -1053,7 +1053,7 @@ class GameInstructionService {
       ],
       actionText: "Map Modifiers",
       tip:
-          "PRO TIP: Place the modifier as close as possible to the word it's describing!",
+          "Place the modifier as close as possible to the word it's describing!",
     ),
     GameSubtype.modalsSelection: GameBriefing(
       title: "Modal Matrix",
@@ -1067,7 +1067,7 @@ class GameInstructionService {
       ],
       actionText: "Select Modal",
       tip:
-          "PRO TIP: 'Must' is for strong obligation, while 'Should' is for friendly advice.",
+          "'Must' is for strong obligation, while 'Should' is for friendly advice.",
     ),
     GameSubtype.prepositionChoice: GameBriefing(
       title: "Position Pro",
@@ -1081,7 +1081,7 @@ class GameInstructionService {
       ],
       actionText: "Choose Position",
       tip:
-          "PRO TIP: Use 'In' for large spaces, 'On' for surfaces, and 'At' for specific points.",
+          "Use 'In' for large spaces, 'On' for surfaces, and 'At' for specific points.",
     ),
     GameSubtype.pronounResolution: GameBriefing(
       title: "Pronoun Gravity",
@@ -1095,7 +1095,7 @@ class GameInstructionService {
       ],
       actionText: "Align Gravity",
       tip:
-          "PRO TIP: If you're not sure, try swapping the words! If 'the dog' fits perfectly where 'it' was, you've found your match.",
+          "If you're not sure, try swapping the words! If 'the dog' fits perfectly where 'it' was, you've found your match.",
     ),
     GameSubtype.punctuationMastery: GameBriefing(
       title: "Symbol Scribe",
@@ -1109,7 +1109,7 @@ class GameInstructionService {
       ],
       actionText: "Scribe Symbols",
       tip:
-          "PRO TIP: Use a comma before 'and' only in long lists or between independent clauses!",
+          "Use a comma before 'and' only in long lists or between independent clauses!",
     ),
     GameSubtype.relativeClauses: GameBriefing(
       title: "Relative Rail",
@@ -1119,7 +1119,7 @@ class GameInstructionService {
       rules: ["Identify the noun", "Choose the pronoun", "Link the detail"],
       actionText: "Link Relative",
       tip:
-          "PRO TIP: Use 'Who' for people and 'Which' or 'That' for things and animals.",
+          "Use 'Who' for people and 'Which' or 'That' for things and animals.",
     ),
     GameSubtype.conditionals: GameBriefing(
       title: "If-Logic",
@@ -1133,7 +1133,7 @@ class GameInstructionService {
       ],
       actionText: "Solve Logic",
       tip:
-          "PRO TIP: In 'Second Conditional' (imaginary), use 'If I WERE' even for singular subjects!",
+          "In 'Second Conditional' (imaginary), use 'If I WERE' even for singular subjects!",
     ),
     GameSubtype.conjunctions: GameBriefing(
       title: "Logic Junction",
@@ -1146,7 +1146,7 @@ class GameInstructionService {
         "Connect the flow",
       ],
       actionText: "Join Junction",
-      tip: "PRO TIP: Remember 'FANBOYS': For, And, Nor, But, Or, Yet, So!",
+      tip: "Remember 'FANBOYS': For, And, Nor, But, Or, Yet, So!",
     ),
     GameSubtype.directIndirectSpeech: GameBriefing(
       title: "Speech Shift",
@@ -1160,7 +1160,7 @@ class GameInstructionService {
       ],
       actionText: "Report Speech",
       tip:
-          "PRO TIP: 'Present' becomes 'Past'! If someone said 'I am here', report 'they were there'.",
+          "'Present' becomes 'Past'! If someone said 'I am here', report 'they were there'.",
     ),
 
     // 6. Vocabulary
@@ -1176,7 +1176,7 @@ class GameInstructionService {
       ],
       actionText: "Start Review",
       tip:
-          "PRO TIP: Be honest with yourself! Swiping left ensures you'll get another chance to really lock the word into your memory.",
+          "Be honest with yourself! Swiping left ensures you'll get another chance to really lock the word into your memory.",
     ),
     GameSubtype.synonymSearch: GameBriefing(
       title: "Synonym Match",
@@ -1190,7 +1190,7 @@ class GameInstructionService {
       ],
       actionText: "Start Practice",
       tip:
-          "PRO TIP: Don't get tricked by words that just look similar. Focus entirely on the core meaning!",
+          "Don't get tricked by words that just look similar. Focus entirely on the core meaning!",
     ),
     GameSubtype.antonymSearch: GameBriefing(
       title: "Antonym Search",
@@ -1204,7 +1204,7 @@ class GameInstructionService {
       ],
       actionText: "Begin Search",
       tip:
-          "PRO TIP: Antonyms are completely opposite concepts. If the core says 'hot', you're looking for 'cold' to neutralize it!",
+          "Antonyms are completely opposite concepts. If the core says 'hot', you're looking for 'cold' to neutralize it!",
     ),
     GameSubtype.contextClues: GameBriefing(
       title: "Context Clues",
@@ -1218,7 +1218,7 @@ class GameInstructionService {
       ],
       actionText: "Investigate Case",
       tip:
-          "PRO TIP: Look for synonyms, antonyms, or cause-and-effect relationships hidden in the surrounding words!",
+          "Look for synonyms, antonyms, or cause-and-effect relationships hidden in the surrounding words!",
     ),
     GameSubtype.phrasalVerbs: GameBriefing(
       title: "Verb Vault",
@@ -1232,7 +1232,7 @@ class GameInstructionService {
       ],
       actionText: "Crack Vault",
       tip:
-          "PRO TIP: The second word changes everything! 'Turn up' (increase) means something totally different than 'turn down' (refuse).",
+          "The second word changes everything! 'Turn up' (increase) means something totally different than 'turn down' (refuse).",
     ),
     GameSubtype.idioms: GameBriefing(
       title: "Emojify",
@@ -1246,7 +1246,7 @@ class GameInstructionService {
       ],
       actionText: "Decrypt Message",
       tip:
-          "PRO TIP: Idioms are colorful cultural keys! Don't translate them literally word-for-word.",
+          "Idioms are colorful cultural keys! Don't translate them literally word-for-word.",
     ),
     GameSubtype.topicVocab: GameBriefing(
       title: "Topic Sorter",
@@ -1260,7 +1260,7 @@ class GameInstructionService {
       ],
       actionText: "Start Sorting",
       tip:
-          "PRO TIP: Try to picture the word in your mind before flicking it into the category!",
+          "Try to picture the word in your mind before flicking it into the category!",
     ),
     GameSubtype.wordFormation: GameBriefing(
       title: "Word Morph",
@@ -1274,7 +1274,7 @@ class GameInstructionService {
       ],
       actionText: "Start Morphing",
       tip:
-          "PRO TIP: Ask yourself what kind of word you need. Are you turning a noun into an adjective, or a verb into a person?",
+          "Ask yourself what kind of word you need. Are you turning a noun into an adjective, or a verb into a person?",
     ),
     GameSubtype.prefixSuffix: GameBriefing(
       title: "Affix Synthesizer",
@@ -1288,7 +1288,7 @@ class GameInstructionService {
       ],
       actionText: "Start Synthesizing",
       tip:
-          "PRO TIP: If the target meaning says 'again', look for 're-'. If it says 'without', look for '-less'.",
+          "If the target meaning says 'again', look for 're-'. If it says 'without', look for '-less'.",
     ),
     GameSubtype.collocations: GameBriefing(
       title: "Natural Word Pairs",
@@ -1302,7 +1302,7 @@ class GameInstructionService {
       ],
       actionText: "Start Pairing",
       tip:
-          "PRO TIP: Try not to translate word-for-word. Just trust your ear and choose the pair that sounds right to you.",
+          "Try not to translate word-for-word. Just trust your ear and choose the pair that sounds right to you.",
     ),
     GameSubtype.contextualUsage: GameBriefing(
       title: "Contextual Usage",
@@ -1316,7 +1316,7 @@ class GameInstructionService {
       ],
       actionText: "Analyze Context",
       tip:
-          "PRO TIP: Pay close attention to the register meter. Sometimes two words mean the same thing, but one is much more formal than the other!",
+          "Pay close attention to the register meter. Sometimes two words mean the same thing, but one is much more formal than the other!",
     ),
 
     // 7. Accent
@@ -1332,7 +1332,7 @@ class GameInstructionService {
       ],
       actionText: "Start Mimicking",
       tip:
-          "PRO TIP: Questions often rise at the end, while statements usually fall. Listen closely to the final word!",
+          "Questions often rise at the end, while statements usually fall. Listen closely to the final word!",
     ),
     GameSubtype.syllableStress: GameBriefing(
       title: "Stress Spotter",
@@ -1346,7 +1346,7 @@ class GameInstructionService {
       ],
       actionText: "Find Stress",
       tip:
-          "PRO TIP: The stressed part of a word is always louder and slightly longer.",
+          "The stressed part of a word is always louder and slightly longer.",
     ),
 
     GameSubtype.vowelDistinction: GameBriefing(
@@ -1361,7 +1361,7 @@ class GameInstructionService {
       ],
       actionText: "Start Playing",
       tip:
-          "PRO TIP: Don't just listen—pay attention to the mouth shape in the chart! It'll help you pronounce it perfectly.",
+          "Don't just listen—pay attention to the mouth shape in the chart! It'll help you pronounce it perfectly.",
     ),
 
     GameSubtype.speedVariance: GameBriefing(
@@ -1376,7 +1376,7 @@ class GameInstructionService {
       ],
       actionText: "Identify Speed",
       tip:
-          "PRO TIP: Pay attention to whether the speaker is rushing or speaking carefully to emphasize a point!",
+          "Pay attention to whether the speaker is rushing or speaking carefully to emphasize a point!",
     ),
     GameSubtype.dialectDrill: GameBriefing(
       title: "Dialect Drill",
@@ -1390,7 +1390,7 @@ class GameInstructionService {
       ],
       actionText: "Start Drill",
       tip:
-          "PRO TIP: Pay attention to the vowels! American English often flattens them, while British English rounds them out.",
+          "Pay attention to the vowels! American English often flattens them, while British English rounds them out.",
     ),
     GameSubtype.connectedSpeech: GameBriefing(
       title: "Connected Speech",
@@ -1404,7 +1404,7 @@ class GameInstructionService {
       ],
       actionText: "Connect Words",
       tip:
-          "PRO TIP: Try saying the words fast yourself! If you force every single letter, it feels unnatural. Real speech takes shortcuts.",
+          "Try saying the words fast yourself! If you force every single letter, it feels unnatural. Real speech takes shortcuts.",
     ),
     // 8. Roleplay
     GameSubtype.branchingDialogue: GameBriefing(
@@ -1415,7 +1415,7 @@ class GameInstructionService {
       rules: ["Analyze the scene", "Select your response", "Speak to confirm"],
       actionText: "Enter Simulation",
       tip:
-          "PRO TIP: Pay attention to the subtle social cues! Being polite and direct often opens the right doors.",
+          "Pay attention to the subtle social cues! Being polite and direct often opens the right doors.",
     ),
     GameSubtype.situationalResponse: GameBriefing(
       title: "Reflex Responder",
@@ -1429,7 +1429,7 @@ class GameInstructionService {
       ],
       actionText: "Respond Now",
       tip:
-          "PRO TIP: Use expressions like 'I would appreciate it' or 'Would you mind'!",
+          "Use expressions like 'I would appreciate it' or 'Would you mind'!",
     ),
     GameSubtype.jobInterview: GameBriefing(
       title: "Career Closer",
@@ -1439,7 +1439,7 @@ class GameInstructionService {
       rules: ["Be professional", "Select the best answer", "Speak to confirm"],
       actionText: "Start Interview",
       tip:
-          "PRO TIP: Frame replies to show how your experience solves their business needs.",
+          "Frame replies to show how your experience solves their business needs.",
     ),
     GameSubtype.medicalConsult: GameBriefing(
       title: "Health Liaison",
@@ -1453,7 +1453,7 @@ class GameInstructionService {
       ],
       actionText: "Start Consult",
       tip:
-          "PRO TIP: Use specific descriptors like 'throbbing', 'sharp', or 'dull ache'.",
+          "Use specific descriptors like 'throbbing', 'sharp', or 'dull ache'.",
     ),
     GameSubtype.gourmetOrder: GameBriefing(
       title: "Order Master",
@@ -1467,7 +1467,7 @@ class GameInstructionService {
       ],
       actionText: "Place Order",
       tip:
-          "PRO TIP: Using 'Could I get...' is the preferred way to place polite orders.",
+          "Using 'Could I get...' is the preferred way to place polite orders.",
     ),
     GameSubtype.travelDesk: GameBriefing(
       title: "Global Traveler",
@@ -1477,7 +1477,7 @@ class GameInstructionService {
       rules: ["Check travel tickets", "Follow directions", "Ask for support"],
       actionText: "Start Journey",
       tip:
-          "PRO TIP: Confirm directions by repeating them back to check understanding.",
+          "Confirm directions by repeating them back to check understanding.",
     ),
     GameSubtype.conflictResolver: GameBriefing(
       title: "Peace Maker",
@@ -1491,7 +1491,7 @@ class GameInstructionService {
       ],
       actionText: "Resolve Conflict",
       tip:
-          "PRO TIP: De-escalate early by validating their perspective before replying.",
+          "De-escalate early by validating their perspective before replying.",
     ),
     GameSubtype.elevatorPitch: GameBriefing(
       title: "Pitch Perfect",
@@ -1501,7 +1501,7 @@ class GameInstructionService {
       rules: ["Be concise", "High emotional impact", "Deliver with confidence"],
       actionText: "Start Pitch",
       tip:
-          "PRO TIP: Lead with a massive hook that frames a relatable daily problem.",
+          "Lead with a massive hook that frames a relatable daily problem.",
     ),
     GameSubtype.socialSpark: GameBriefing(
       title: "Charisma Core",
@@ -1515,7 +1515,7 @@ class GameInstructionService {
       ],
       actionText: "Spark Talk",
       tip:
-          "PRO TIP: Ask 'what' or 'how' to keep the conversational partner sharing.",
+          "Ask 'what' or 'how' to keep the conversational partner sharing.",
     ),
     GameSubtype.emergencyHub: GameBriefing(
       title: "Emergency Voice",
@@ -1525,7 +1525,7 @@ class GameInstructionService {
       rules: ["Stay highly calm", "State location first", "Be exact & concise"],
       actionText: "Help Now",
       tip:
-          "PRO TIP: Clear, slow, and specific directions save lives in critical moments.",
+          "Clear, slow, and specific directions save lives in critical moments.",
     ),
     // 9. Elite Mastery
     GameSubtype.storyBuilder: GameBriefing(
@@ -1540,7 +1540,7 @@ class GameInstructionService {
       ],
       actionText: "Build Story",
       tip:
-          "PRO TIP: Look for transition words like 'However' or 'Therefore' to link sentences!",
+          "Look for transition words like 'However' or 'Therefore' to link sentences!",
     ),
 
     GameSubtype.accentShadowing: GameBriefing(
@@ -1551,7 +1551,7 @@ class GameInstructionService {
       rules: ["Listen to the example", "Record your voice", "Match the accent"],
       actionText: "Start Shadowing",
       tip:
-          "PRO TIP: Pay close attention to which syllables are stressed—it makes a huge difference!",
+          "Pay close attention to which syllables are stressed—it makes a huge difference!",
     ),
   };
 
@@ -1570,7 +1570,7 @@ class GameInstructionService {
           ],
           actionText: "Start Playing",
           tip:
-              "Pro tip: If you get stuck, tap the chalkboard question mark again to hear the instruction as many times as you need!",
+              "If you get stuck, tap the chalkboard question mark again to hear the instruction as many times as you need!",
         );
       case 'animals':
         return const GameBriefing(
@@ -1585,7 +1585,7 @@ class GameInstructionService {
           ],
           actionText: "Go Safari",
           tip:
-              "PRO TIP: Think about the sound the animal makes or where it lives! 🦁",
+              "Think about the sound the animal makes or where it lives! 🦁",
         );
       case 'numbers':
         return const GameBriefing(
@@ -1629,7 +1629,7 @@ class GameInstructionService {
           ],
           actionText: "Play Now",
           tip:
-              "PRO TIP: Fruits can be sweet or sour. Think about how they taste! 🍎",
+              "Fruits can be sweet or sour. Think about how they taste! 🍎",
         );
       case 'shapes':
         return const GameBriefing(
@@ -1674,7 +1674,7 @@ class GameInstructionService {
           ],
           actionText: "Start",
           tip:
-              "PRO TIP: Pay attention to key relationship words like 'parent' or 'sibling'.",
+              "Pay attention to key relationship words like 'parent' or 'sibling'.",
         );
       case 'food':
         return const GameBriefing(
@@ -1689,7 +1689,7 @@ class GameInstructionService {
           ],
           actionText: "Eat Up",
           tip:
-              "PRO TIP: Think about what you eat for breakfast, lunch, or dinner! 🥛",
+              "Think about what you eat for breakfast, lunch, or dinner! 🥛",
         );
       case 'clothing':
         return const GameBriefing(
@@ -1704,7 +1704,7 @@ class GameInstructionService {
           ],
           actionText: "Play Now",
           tip:
-              "PRO TIP: If you missed the clue, just tap the glowing closet to hear the riddle again! 👕",
+              "If you missed the clue, just tap the glowing closet to hear the riddle again! 👕",
         );
       case 'nature':
         return const GameBriefing(
@@ -1765,7 +1765,7 @@ class GameInstructionService {
           ],
           actionText: "Play Now",
           tip:
-              "PRO TIP: Think about how you would feel in that exact situation.",
+              "Think about how you would feel in that exact situation.",
         );
       case 'school':
         return const GameBriefing(
@@ -1871,7 +1871,7 @@ class GameInstructionService {
           ],
           actionText: "Let's Write",
           tip:
-              "PRO TIP: Take your time. Drawing strokes from top to bottom and left to right makes writing so much easier!",
+              "Take your time. Drawing strokes from top to bottom and left to right makes writing so much easier!",
         );
       case 'routine':
         return const GameBriefing(
@@ -1931,7 +1931,7 @@ class GameInstructionService {
           ],
           actionText: "Play",
           tip:
-              "PRO TIP: Think about whether the sun is up or the stars are out! ☀️🌙",
+              "Think about whether the sun is up or the stars are out! ☀️🌙",
         );
       case 'weather':
         return const GameBriefing(
@@ -1981,7 +1981,7 @@ class GameInstructionService {
       ],
       actionText: "Start Quest",
       tip:
-          "PRO TIP: Stay focused and listen to your buddy! They have the answers you need.",
+          "Stay focused and listen to your buddy! They have the answers you need.",
     );
   }
 }

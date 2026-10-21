@@ -136,17 +136,18 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
     required VocabularyQuest currentQuest,
   }) {
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final effectiveHint = widget.customHintText ??
+        ((widget.gameType == GameSubtype.flashcards ||
+                widget.gameType == GameSubtype.wordFormation)
+            ? null
+            : (widget.gameType == GameSubtype.prefixSuffix
+                ? "Base word: ${currentQuest.rootWord ?? currentQuest.word}. Find the matching affix!"
+                : currentQuest.hint));
+
     final button = QuestHintButton(
       used: hintUsed,
       primaryColor: primaryColor,
-      hintText:
-          widget.customHintText ??
-          ((widget.gameType == GameSubtype.flashcards ||
-                  widget.gameType == GameSubtype.wordFormation)
-              ? null
-              : (widget.gameType == GameSubtype.prefixSuffix
-                    ? "Base word: ${currentQuest.rootWord ?? currentQuest.word}. Find the matching affix!"
-                    : currentQuest.hint)),
+      hintText: effectiveHint,
       soundService: _soundService,
       onTap: () {
         context.read<VocabularyBloc>().add(const VocabularyHintUsed());
@@ -174,12 +175,10 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
       mainAxisSize: MainAxisSize.min,
       children: [
         animatedButton,
-        if (currentQuest.hint != null &&
-            widget.gameType != GameSubtype.topicVocab &&
-            hintUsed) ...[
+        if (effectiveHint != null && hintUsed) ...[
           SizedBox(width: 8.w),
           TranslateButtonWidget(
-            originalText: currentQuest.hint!,
+            originalText: effectiveHint,
             onTranslationComplete: (translated) {
               CustomSnackBar.show(
                 context: context,

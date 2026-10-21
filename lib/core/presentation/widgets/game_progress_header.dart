@@ -205,7 +205,8 @@ class _LivesBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final tokens = Theme.of(context).extension<AppColorTokens>();
+    final heartColor = tokens?.gameIncorrect ?? AppColors.gameIncorrect;
     return Semantics(
       label: context.tr(
         'game_progress.lives_label',
@@ -225,7 +226,7 @@ class _LivesBadge extends StatelessWidget {
           children: [
             Icon(
               Icons.favorite_rounded,
-              color: tokens.gameIncorrect,
+              color: heartColor,
               size: 16.r,
             ),
             SizedBox(width: 4.w),
@@ -235,7 +236,7 @@ class _LivesBadge extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w900,
-                color: tokens.gameIncorrect,
+                color: heartColor,
               ),
             ),
           ],
