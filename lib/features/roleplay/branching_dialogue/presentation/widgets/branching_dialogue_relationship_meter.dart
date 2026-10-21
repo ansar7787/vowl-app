@@ -44,11 +44,18 @@ class BranchingDialogueRelationshipMeter extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         decoration: BoxDecoration(
           color: isDark ? AppColors.deepDark : Colors.white,
-          borderRadius: BorderRadius.circular(16.r),
+          borderRadius: BorderRadius.circular(18.r),
           border: Border.all(
             color: primaryColor.withValues(alpha: 0.15),
             width: 1.5,
           ),
+          boxShadow: [
+            BoxShadow(
+              color: primaryColor.withValues(alpha: 0.06),
+              blurRadius: 10,
+              offset: const Offset(0, 3),
+            ),
+          ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,10 +68,10 @@ class BranchingDialogueRelationshipMeter extends StatelessWidget {
                   key: const Key('branching_dialogue_relationship_status_text'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w700,
                     color: primaryColor,
-                    letterSpacing: 1,
+                    letterSpacing: 1.0,
                   ),
                 ),
                 Icon(
@@ -75,7 +82,7 @@ class BranchingDialogueRelationshipMeter extends StatelessWidget {
                             : Icons.thumbs_up_down_rounded),
                   key: const Key('branching_dialogue_relationship_icon'),
                   color: activeColor,
-                  size: 14.r,
+                  size: 16.r,
                 ),
               ],
             ),
@@ -104,7 +111,7 @@ class BranchingDialogueRelationshipMeter extends StatelessWidget {
                         borderRadius: BorderRadius.circular(4.r),
                         boxShadow: [
                           BoxShadow(
-                            color: activeColor.withValues(alpha: 0.5),
+                            color: activeColor.withValues(alpha: 0.4),
                             blurRadius: 6,
                             spreadRadius: 1,
                           ),
@@ -115,7 +122,7 @@ class BranchingDialogueRelationshipMeter extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 4.h),
+            SizedBox(height: 6.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -123,18 +130,18 @@ class BranchingDialogueRelationshipMeter extends StatelessWidget {
                   "Rude",
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 9.sp,
-                    color: Colors.grey.shade500,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 11.sp,
+                    color: isDark ? Colors.white60 : Colors.black54,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
                 Text(
                   "Polite",
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 9.sp,
-                    color: Colors.grey.shade500,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 11.sp,
+                    color: isDark ? Colors.white60 : Colors.black54,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ],

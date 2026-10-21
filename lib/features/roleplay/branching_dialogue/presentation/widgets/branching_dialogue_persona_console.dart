@@ -26,17 +26,17 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
 
     Widget avatarWidget = Container(
       key: const Key('branching_dialogue_persona_avatar'),
-      width: 54.r,
-      height: 54.r,
+      width: 48.r,
+      height: 48.r,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: color.withValues(alpha: 0.15),
+        color: color.withValues(alpha: 0.12),
         border: Border.all(color: color, width: 2),
       ),
       child: Icon(
         Icons.person_pin_rounded,
         color: color,
-        size: 32.r,
+        size: 28.r,
       ),
     );
 
@@ -45,19 +45,23 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
           .animate(onPlay: (c) => c.repeat(reverse: true))
           .scale(
             begin: const Offset(1, 1),
-            end: const Offset(1.12, 1.12),
+            end: const Offset(1.08, 1.08),
             duration: 1.seconds,
           );
     }
 
     Widget content = Container(
-      padding: EdgeInsets.all(20.r),
+      padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 16.h),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(30.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: color.withValues(alpha: 0.15), width: 1.5),
         boxShadow: [
-          BoxShadow(color: color.withValues(alpha: 0.1), blurRadius: 15),
+          BoxShadow(
+            color: color.withValues(alpha: 0.08),
+            blurRadius: 14,
+            offset: const Offset(0, 4),
+          ),
         ],
       ),
       child: Column(
@@ -65,30 +69,31 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
           Row(
             children: [
               avatarWidget,
-              SizedBox(width: 14.w),
+              SizedBox(width: 12.w),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      quest.roleName?.toUpperCase() ?? "TELEMETRY AGENT",
+                      quest.roleName?.toUpperCase() ?? "CONVERSATION PARTNER",
                       key: const Key('branching_dialogue_persona_name'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 14.sp,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w700,
                         color: color,
-                        letterSpacing: 1.2,
+                        letterSpacing: 1.0,
                       ),
                     ),
-                    SizedBox(height: 4.h),
+                    SizedBox(height: 3.h),
                     Text(
-                      "BRANCH COMMS COMMITTED",
+                      "ROLEPLAY SCENARIO",
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        color: Colors.grey.shade500,
+                        fontSize: 11.sp,
+                        color: isDark ? Colors.white60 : Colors.black54,
                         fontWeight: FontWeight.w500,
+                        letterSpacing: 0.5,
                       ),
                     ),
                   ],
@@ -105,21 +110,22 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: 10.w,
-                      vertical: 4.h,
+                      vertical: 6.h,
                     ),
                     decoration: BoxDecoration(
                       color: color.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12.r),
                     ),
                     child: Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(Icons.volume_up_rounded, size: 16.r, color: color),
                         SizedBox(width: 4.w),
                         Text(
-                          "REPLAY",
+                          "Replay",
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 10.sp,
+                            fontSize: 11.sp,
                             fontWeight: FontWeight.w600,
                             color: color,
                           ),
@@ -131,16 +137,18 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 16.h),
+          SizedBox(height: 14.h),
           Text(
             quest.scene ?? "",
             key: const Key('branching_dialogue_scene_text'),
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 16.sp,
+              fontSize: 15.sp,
               fontWeight: FontWeight.w500,
-              color: isDark ? Colors.white70 : Colors.black87,
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.9)
+                  : Colors.black87,
               height: 1.4,
             ),
           ),

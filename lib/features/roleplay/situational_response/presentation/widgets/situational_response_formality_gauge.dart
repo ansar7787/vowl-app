@@ -26,10 +26,10 @@ class SituationalResponseFormalityGauge extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(16.r),
+      padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(16.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: primaryColor.withValues(alpha: 0.15),
           width: 1.5,
@@ -46,10 +46,10 @@ class SituationalResponseFormalityGauge extends StatelessWidget {
                 "CULTURAL NOTE",
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w700,
                   color: primaryColor,
-                  letterSpacing: 1,
+                  letterSpacing: 1.2,
                 ),
               ),
             ],
@@ -60,9 +60,12 @@ class SituationalResponseFormalityGauge extends StatelessWidget {
               quest.culturalNote!,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 12.sp,
-                color: isDark ? Colors.white70 : Colors.black87,
-                height: 1.4,
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w400,
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.85)
+                    : Colors.black87,
+                height: 1.45,
               ),
             ),
           ],
@@ -74,23 +77,23 @@ class SituationalResponseFormalityGauge extends StatelessWidget {
                 "Casual",
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 9.sp,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey.shade500,
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.grey.shade400 : Colors.grey.shade700,
                 ),
               ),
               Text(
                 "Formal",
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 9.sp,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey.shade500,
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.grey.shade400 : Colors.grey.shade700,
                 ),
               ),
             ],
           ),
-          SizedBox(height: 4.h),
+          SizedBox(height: 6.h),
           LayoutBuilder(
             builder: (context, constraints) {
               final trackWidth = constraints.maxWidth;
@@ -98,23 +101,23 @@ class SituationalResponseFormalityGauge extends StatelessWidget {
               return Stack(
                 children: [
                   Container(
-                    height: 6.h,
+                    height: 8.h,
                     width: trackWidth,
                     decoration: BoxDecoration(
                       color: primaryColor.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(3.r),
+                      borderRadius: BorderRadius.circular(4.r),
                     ),
                   ),
                   AnimatedContainer(
                     duration: const Duration(milliseconds: 800),
                     curve: Curves.easeOutCubic,
-                    height: 6.h,
+                    height: 8.h,
                     width: fillWidth,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [Colors.blueAccent, primaryColor],
                       ),
-                      borderRadius: BorderRadius.circular(3.r),
+                      borderRadius: BorderRadius.circular(4.r),
                       boxShadow: [
                         BoxShadow(
                           color: primaryColor.withValues(alpha: 0.4),

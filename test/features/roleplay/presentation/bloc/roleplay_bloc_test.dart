@@ -16,6 +16,7 @@ import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/domain/usecases/get_roleplay_quest.dart';
 import 'package:vowl/features/roleplay/domain/usecases/preload_roleplay_quests.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
+import 'package:vowl/features/roleplay/presentation/constants/roleplay_constants.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 
@@ -198,6 +199,49 @@ void main() {
           quests: [...tQuests, tQuests[0]],
         ),
       ],
+    );
+
+    blocTest<RoleplayBloc, RoleplayState>(
+      'should not award mid-game coins when RoleplaySpeakConfirmed is received',
+      build: () => bloc,
+      seed: () => tLoadedState,
+      act: (bloc) => bloc.add(const RoleplaySpeakConfirmed(5)),
+      expect: () => [],
+    );
+
+    blocTest<RoleplayBloc, RoleplayState>(
+      'should award strictly 5 XP + 10 Coins on level complete',
+      build: () {
+        when(() => mockUpdateUserRewards(any()))
+            .thenAnswer((_) async => const Right(null));
+        when(() => mockUpdateCategoryStats(any()))
+            .thenAnswer((_) async => const Right(null));
+        when(() => mockAwardBadge(any()))
+            .thenAnswer((_) async => const Right(null));
+        return bloc;
+      },
+      seed: () => tLoadedState.copyWith(
+        answerStatus: AnswerStatus.correct,
+      ),
+      act: (bloc) => bloc.add(const NextQuestion()),
+      expect: () => [
+        isA<RoleplayGameComplete>()
+            .having((s) => s.xpEarned, 'xpEarned', kRoleplayLevelCompleteXp)
+            .having((s) => s.coinsEarned, 'coinsEarned', kRoleplayLevelCompleteCoins),
+      ],
+      verify: (_) {
+        verify(
+          () => mockUpdateUserRewards(
+            const UpdateUserRewardsParams(
+              gameType: 'socialSpark',
+              level: tLevel,
+              xpIncrease: kRoleplayLevelCompleteXp,
+              coinIncrease: kRoleplayLevelCompleteCoins,
+              starsEarned: 3,
+            ),
+          ),
+        ).called(1);
+      },
     );
   });
 }

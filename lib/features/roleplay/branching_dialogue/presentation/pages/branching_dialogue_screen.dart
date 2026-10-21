@@ -142,7 +142,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     int? activeHoverIndex;
 
     for (int i = 0; i < terminalCenters.length; i++) {
-      final Offset nodeCenter = terminalCenters[i] - Offset(0, 30.h);
+      final Offset nodeCenter = terminalCenters[i] - Offset(0, 24.h);
       final double distToAnchor =
           (currentProbePos - terminalCenters[i]).distance;
       final double distToNode = (currentProbePos - nodeCenter).distance;
@@ -272,10 +272,10 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                   : LayoutBuilder(
                       builder: (context, constraints) {
                         final double availableHeight = constraints.maxHeight;
-                        // Estimate top content height (padding + instruction + persona) ~340.h
+                        // Estimate top content height (padding + instruction + persona) ~320.h
                         final double boardHeight = math.max(
-                          320.h,
-                          availableHeight - 340.h,
+                          340.h,
+                          availableHeight - 320.h,
                         );
 
                         return RawScrollbar(
@@ -311,6 +311,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                           'branching_dialogue_instruction',
                                         ),
                                         primaryColor: theme.primaryColor,
+                                        isDark: isDark,
                                         instruction:
                                             InstructionHelper.getInstruction(
                                               quest,
@@ -403,9 +404,9 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                   _selectedIndex.value != null)
                                 SliverToBoxAdapter(
                                   child: Padding(
-                                    padding: EdgeInsets.only(
-                                      top: 24.h,
-                                      bottom: 16.h,
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: 16.h,
                                     ),
                                     child: SpeakToConfirmOverlay(
                                       key: const Key(

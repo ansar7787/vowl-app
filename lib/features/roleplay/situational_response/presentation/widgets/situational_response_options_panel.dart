@@ -85,8 +85,8 @@ class SituationalResponseOptionsPanel extends StatelessWidget {
             child: ScaleButton(
               onTap: isAnswered ? null : () => onOptionTap(index, correctIndex),
               child: GlassTile(
-                borderRadius: BorderRadius.circular(20.r),
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+                borderRadius: BorderRadius.circular(18.r),
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
                 usePremiumStyle: true,
                 showShadow: true,
                 color: isDark
@@ -101,14 +101,14 @@ class SituationalResponseOptionsPanel extends StatelessWidget {
                 child: Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(6.r),
+                      padding: EdgeInsets.all(7.r),
                       decoration: BoxDecoration(
                         color: iconBgColor,
                         shape: BoxShape.circle,
                       ),
                       child: Icon(iconData, color: iconColor, size: 18.r),
                     ),
-                    SizedBox(width: 16.w),
+                    SizedBox(width: 14.w),
                     Expanded(
                       child: Text(
                         option,
@@ -117,7 +117,7 @@ class SituationalResponseOptionsPanel extends StatelessWidget {
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w500,
                           color: isDark ? Colors.white : Colors.black87,
-                          height: 1.3,
+                          height: 1.35,
                         ),
                       ),
                     ),

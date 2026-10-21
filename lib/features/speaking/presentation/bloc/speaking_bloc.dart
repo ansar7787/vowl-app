@@ -34,7 +34,7 @@ const int _kMaxQuestsPerLevel = 3;
 const int _kMaxQueueLength = _kMaxQuestsPerLevel * 2;
 
 const int _kWrongCountThreshold = 2;
-const int _kDefaultXp = 10;
+const int _kDefaultXp = 5;
 const int _kDefaultCoins = 10;
 
 // : Move badge IDs to a shared BadgeConstants class.

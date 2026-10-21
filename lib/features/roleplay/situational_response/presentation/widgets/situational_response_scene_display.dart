@@ -116,7 +116,7 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(30.r),
+        borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: color.withValues(alpha: 0.15), width: 1.5),
         boxShadow: [
           BoxShadow(color: glowColor, blurRadius: 15, spreadRadius: -3),
@@ -139,7 +139,7 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
 
           // Foreground Content
           Padding(
-            padding: EdgeInsets.all(24.r),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
             child: Column(
               children: [
                 Row(
@@ -147,20 +147,18 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
                     Icon(
                       Icons.theater_comedy_rounded,
                       color: color,
-                      size: 22.r,
+                      size: 20.r,
                     ),
                     SizedBox(width: 8.w),
                     Expanded(
                       child: Text(
-                        "ACTIVE SCENARIO",
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
+                        "SCENARIO",
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w700,
                           color: color,
-                          letterSpacing: 1.5,
+                          letterSpacing: 1.2,
                         ),
                       ),
                     ),
@@ -174,17 +172,18 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
                         child: Container(
                           padding: EdgeInsets.symmetric(
                             horizontal: 10.w,
-                            vertical: 4.h,
+                            vertical: 5.h,
                           ),
                           decoration: BoxDecoration(
                             color: color.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(12.r),
+                            borderRadius: BorderRadius.circular(10.r),
                           ),
                           child: Row(
+                            mainAxisSize: MainAxisSize.min,
                             children: [
                               Icon(
                                 Icons.volume_up_rounded,
-                                size: 16.r,
+                                size: 15.r,
                                 color: color,
                               ),
                               SizedBox(width: 4.w),
@@ -192,8 +191,8 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
                                 "LISTEN",
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w700,
                                   color: color,
                                 ),
                               ),
@@ -210,9 +209,10 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 20.sp,
+                    fontSize: 17.sp,
+                    fontWeight: FontWeight.w500,
                     color: Theme.of(context).colorScheme.onSurface,
-                    height: 1.3,
+                    height: 1.45,
                   ),
                 ),
               ],

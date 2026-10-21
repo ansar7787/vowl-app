@@ -435,7 +435,7 @@ void main() {
         (tester) async {
       await pumpSituationalResponseScreen(tester);
       expect(find.byType(SituationalResponseSceneDisplay), findsOneWidget);
-      expect(find.text('ACTIVE SCENARIO'), findsOneWidget);
+      expect(find.text('SCENARIO'), findsOneWidget);
       expect(find.byIcon(Icons.theater_comedy_rounded), findsOneWidget);
     });
 
@@ -1042,7 +1042,7 @@ void main() {
         (tester) async {
       await pumpSituationalResponseScreen(tester, themeMode: ThemeMode.light);
       expect(find.byType(SituationalResponseScreen), findsOneWidget);
-      expect(find.text('ACTIVE SCENARIO'), findsOneWidget);
+      expect(find.text('SCENARIO'), findsOneWidget);
     });
 
     testWidgets('51. Compact mobile screen (320x568) renders with zero overflow',

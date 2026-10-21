@@ -316,11 +316,11 @@ void main() {
           isFinalFailure: false,
         ),
         const ListeningGameComplete(
-          xpEarned: 10,
+          xpEarned: 5,
           coinsEarned: 10,
           questCount: 3,
         ),
-        const ListeningRewardSaveFailed(xpEarned: 10, coinsEarned: 10),
+        const ListeningRewardSaveFailed(xpEarned: 5, coinsEarned: 10),
       ],
     );
   });

@@ -20,34 +20,41 @@ class SituationalResponseInstruction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
           padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
           decoration: BoxDecoration(
             color: primaryColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(30.r),
+            borderRadius: BorderRadius.circular(20.r),
             border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
           ),
           child: Text(
             "SITUATIONAL RESPONSE",
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
+              fontSize: 11.sp,
+              fontWeight: FontWeight.w700,
               color: primaryColor,
-              letterSpacing: 2.5,
+              letterSpacing: 1.2,
             ),
           ),
         ),
         SizedBox(height: 10.h),
-        Text(
-          instruction ?? "Choose the most natural reaction for this scenario",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 16.sp,
-            fontWeight: FontWeight.w500,
-            color: isDark ? Colors.grey.shade400 : Colors.black54,
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          child: Text(
+            instruction ?? "Choose the most natural reaction for this scenario",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w500,
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.85)
+                  : Colors.black87,
+              height: 1.35,
+            ),
           ),
         ),
         if (hintUsed && hint != null && hint!.isNotEmpty) ...[

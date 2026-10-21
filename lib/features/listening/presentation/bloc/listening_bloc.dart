@@ -22,7 +22,7 @@ import '../../../../core/presentation/bloc/reward_retry_mixin.dart';
 
 const int _kMaxLives = 3;
 const int _kQuestionsPerLevel = 3;
-const int _kXpReward = 10;
+const int _kXpReward = 5;
 const int _kCoinReward = 10;
 const int _kWrongBeforeFinal = 2;
 const int _kMaxSaveRetries = 3;
@@ -275,25 +275,13 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState>
 
   // ── ListeningSpeakConfirmed ───────────────────────────────────────────────
 
-  Future<void> _onSpeakConfirmed(
+  void _onSpeakConfirmed(
     ListeningSpeakConfirmed event,
     Emitter<ListeningState> emit,
-  ) async {
-    try {
-      if (updateUserCoins != null) {
-        await updateUserCoins!(
-          UpdateUserCoinsParams(
-            amountChange: event.bonusCoins,
-            title: 'coin_history.speaking_bonus',
-            isEarned: true,
-          ),
-        );
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        debugPrint('[ListeningBloc] _onSpeakConfirmed failed: $e');
-      }
-    }
+  ) {
+    // Per strict app architecture: verbal confirmations verify speech accuracy only
+    // and never award mid-game coins. Rewards (5 XP + 10 Coins) are awarded strictly
+    // upon level completion via updateUserRewards.
   }
 
   // ── Private helpers ───────────────────────────────────────────────────────
