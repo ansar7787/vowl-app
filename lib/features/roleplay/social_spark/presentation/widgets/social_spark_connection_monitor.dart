@@ -44,18 +44,19 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
     return Container(
       key: const Key('social_spark_connection_monitor'),
       width: double.infinity,
-      padding: EdgeInsets.all(24.r),
+      padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 18.h),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(30.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: outlineColor.withValues(alpha: 0.2),
+          color: outlineColor.withValues(alpha: 0.25),
           width: 1.5,
         ),
         boxShadow: [
           BoxShadow(
             color: outlineColor.withValues(alpha: 0.08),
             blurRadius: 15,
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -65,37 +66,38 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.hub_rounded, color: outlineColor, size: 20.r),
+              Icon(Icons.forum_rounded, color: outlineColor, size: 20.r),
               SizedBox(width: 8.w),
               Flexible(
                 child: Text(
                   isAnswered
                       ? ((isCorrect ?? false)
-                            ? "ALIGNMENT STABLE"
-                            : "SIGNAL COLLAPSED")
-                      : "CONSTELLATION HARMONICS",
+                            ? "PERFECT RESPONSE"
+                            : "LET'S TRY AGAIN")
+                      : "CONVERSATION BUILDER",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w700,
                     color: outlineColor,
-                    letterSpacing: 1.5,
+                    letterSpacing: 0.8,
                   ),
                 ),
               ),
             ],
           ),
           if (instruction != null) ...[
-            SizedBox(height: 14.h),
+            SizedBox(height: 12.h),
             Text(
               instruction!,
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 16.sp,
+                fontSize: 15.sp,
                 fontWeight: FontWeight.w500,
-                color: isDark ? Colors.grey.shade300 : Colors.grey.shade700,
+                color: isDark ? Colors.grey.shade200 : AppColors.slate800,
+                height: 1.35,
               ),
             ),
           ],
@@ -104,7 +106,7 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
             Container(
               key: const Key('social_spark_hint_banner'),
               width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
               decoration: BoxDecoration(
                 color: Colors.amber.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12.r),
@@ -124,8 +126,9 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,
-                        color: Colors.amber.shade700,
+                        color: isDark ? Colors.amber.shade300 : Colors.amber.shade800,
                         fontWeight: FontWeight.w600,
+                        height: 1.3,
                       ),
                     ),
                   ),
@@ -134,13 +137,13 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
             ),
           ],
           if (socialContext != null) ...[
-            SizedBox(height: 14.h),
+            SizedBox(height: 12.h),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
               decoration: BoxDecoration(
-                color: outlineColor.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(color: outlineColor.withValues(alpha: 0.3)),
+                color: outlineColor.withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(10.r),
+                border: Border.all(color: outlineColor.withValues(alpha: 0.25)),
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -158,9 +161,9 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w700,
                         color: outlineColor,
-                        letterSpacing: 1.0,
+                        letterSpacing: 0.8,
                       ),
                     ),
                   ),
@@ -168,30 +171,34 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
               ),
             ),
           ],
-          SizedBox(height: 20.h),
+          SizedBox(height: 16.h),
           AnimatedSize(
             duration: const Duration(milliseconds: 250),
             curve: Curves.easeOut,
             child: Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
               decoration: BoxDecoration(
                 color: isDark
                     ? Colors.black.withValues(alpha: 0.25)
                     : Colors.black.withValues(alpha: 0.03),
-                borderRadius: BorderRadius.circular(16.r),
+                borderRadius: BorderRadius.circular(14.r),
+                border: Border.all(
+                  color: outlineColor.withValues(alpha: text.isEmpty ? 0.1 : 0.3),
+                  width: 1.0,
+                ),
               ),
               child: Text(
                 text.isEmpty ? "Tap words to build your response" : text,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: text.isEmpty ? 16.sp : 18.sp,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 16.sp,
+                  fontWeight: text.isEmpty ? FontWeight.w400 : FontWeight.w600,
                   color: text.isEmpty
-                      ? Colors.grey.shade600
+                      ? (isDark ? Colors.grey.shade400 : Colors.grey.shade600)
                       : (Theme.of(context).colorScheme.onSurface),
-                  height: 1.3,
+                  height: 1.35,
                 ),
               ),
             ),
@@ -204,7 +211,7 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
               padding: EdgeInsets.all(14.r),
               decoration: BoxDecoration(
                 color: outlineColor.withValues(alpha: 0.08),
-                borderRadius: BorderRadius.circular(16.r),
+                borderRadius: BorderRadius.circular(14.r),
                 border: Border.all(color: outlineColor.withValues(alpha: 0.2)),
               ),
               child: Column(
@@ -215,7 +222,7 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                       Icon(
                         (isCorrect ?? false)
                             ? Icons.verified_rounded
-                            : Icons.info_outline_rounded,
+                            : Icons.lightbulb_outline_rounded,
                         color: outlineColor,
                         size: 16.r,
                       ),
@@ -223,28 +230,29 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                       Expanded(
                         child: Text(
                           (isCorrect ?? false)
-                              ? "CONSTELLATION HARMONIZED"
-                              : "COMMUNICATION INSIGHT",
+                              ? "WHY THIS WORKS"
+                              : "HELPFUL EXPLANATION",
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.bold,
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w700,
                             color: outlineColor,
-                            letterSpacing: 1.0,
+                            letterSpacing: 0.8,
                           ),
                         ),
                       ),
                     ],
                   ),
                   if (explanation != null) ...[
-                    SizedBox(height: 6.h),
+                    SizedBox(height: 8.h),
                     Text(
                       explanation!,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        color: isDark ? Colors.grey.shade300 : Colors.grey.shade800,
-                        height: 1.3,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w400,
+                        color: isDark ? Colors.grey.shade200 : AppColors.slate800,
+                        height: 1.35,
                       ),
                     ),
                   ],
@@ -254,10 +262,10 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                       "Note: $culturalNote",
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontStyle: FontStyle.italic,
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w500,
                         color: isDark ? Colors.grey.shade400 : Colors.grey.shade600,
-                        height: 1.2,
+                        height: 1.3,
                       ),
                     ),
                   ],

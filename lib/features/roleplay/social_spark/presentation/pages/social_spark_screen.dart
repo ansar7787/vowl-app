@@ -356,19 +356,19 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                         EdgeInsets.symmetric(
                                                           vertical: isCompact
                                                               ? 12.h
-                                                              : 16.h,
+                                                              : 14.h,
                                                         ),
                                                     decoration: BoxDecoration(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                            30.r,
+                                                            16.r,
                                                           ),
                                                       gradient: LinearGradient(
                                                         colors: [
                                                           theme.primaryColor,
                                                           theme.primaryColor
                                                               .withValues(
-                                                                alpha: 0.8,
+                                                                alpha: 0.85,
                                                               ),
                                                         ],
                                                       ),
@@ -377,11 +377,12 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                           color: theme
                                                               .primaryColor
                                                               .withValues(
-                                                                alpha: 0.35,
+                                                                alpha: 0.3,
                                                               ),
                                                           blurRadius: isCompact
-                                                              ? 10
-                                                              : 15,
+                                                              ? 8
+                                                              : 12,
+                                                          offset: const Offset(0, 3),
                                                         ),
                                                       ],
                                                     ),
@@ -391,7 +392,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                               .center,
                                                       children: [
                                                         Icon(
-                                                          Icons.bolt_rounded,
+                                                          Icons.check_rounded,
                                                           color: Colors.white,
                                                           size: isCompact
                                                               ? 18.r
@@ -399,17 +400,17 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                         ),
                                                         SizedBox(width: 8.w),
                                                         Text(
-                                                          "IGNITE SPARK",
+                                                          "CHECK ANSWER",
                                                           style: TextStyle(
                                                             fontFamily:
                                                                 'Outfit',
                                                             fontSize: isCompact
                                                                 ? 14.sp
-                                                                : 16.sp,
+                                                                : 15.sp,
                                                             fontWeight:
-                                                                FontWeight.bold,
+                                                                FontWeight.w700,
                                                             color: Colors.white,
-                                                            letterSpacing: 1.5,
+                                                            letterSpacing: 0.8,
                                                           ),
                                                         ),
                                                       ],
@@ -418,8 +419,8 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                 ),
                                                 SizedBox(
                                                   height: isCompact
-                                                      ? 12.h
-                                                      : 16.h,
+                                                      ? 10.h
+                                                      : 12.h,
                                                 ),
                                                 ScaleButton(
                                                   key: const Key('social_spark_clear_button'),
@@ -430,7 +431,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                         EdgeInsets.symmetric(
                                                           vertical: isCompact
                                                               ? 10.h
-                                                              : 14.h,
+                                                              : 12.h,
                                                         ),
                                                     child: Row(
                                                       mainAxisAlignment:
@@ -442,7 +443,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                           color: theme
                                                               .primaryColor
                                                               .withValues(
-                                                                alpha: 0.7,
+                                                                alpha: 0.75,
                                                               ),
                                                           size: isCompact
                                                               ? 16.r
@@ -450,21 +451,21 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                         ),
                                                         SizedBox(width: 6.w),
                                                         Text(
-                                                          "CLEAR PATH",
+                                                          "CLEAR SELECTION",
                                                           style: TextStyle(
                                                             fontFamily:
                                                                 'Outfit',
                                                             fontSize: isCompact
-                                                                ? 12.sp
+                                                                ? 13.sp
                                                                 : 14.sp,
                                                             fontWeight:
-                                                                FontWeight.bold,
+                                                                FontWeight.w600,
                                                             color: theme
                                                                 .primaryColor
                                                                 .withValues(
-                                                                  alpha: 0.7,
+                                                                  alpha: 0.8,
                                                                 ),
-                                                            letterSpacing: 1.5,
+                                                            letterSpacing: 0.5,
                                                           ),
                                                         ),
                                                       ],
@@ -488,26 +489,34 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                               if (isFirstStagePassedNotifier.value &&
                                   !isAnsweredNotifier.value)
                                 SliverToBoxAdapter(
-                                  child: SpeakToConfirmOverlay(
-                                    expectedText: _formatSentence(
-                                      quest.correctAnswer ?? currentText,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: 12.h,
                                     ),
-                                    primaryColor: theme.primaryColor,
-                                    isPositioned: false,
-                                    onConfirmed: () {
-                                      context.read<RoleplayBloc>().add(
-                                        const RoleplaySpeakConfirmed(5),
-                                      );
-                                      _submitVerbalEvaluation(
-                                        true,
+                                    child: SpeakToConfirmOverlay(
+                                      expectedText: _formatSentence(
+                                        quest.correctAnswer ?? currentText,
+                                      ),
+                                      title: 'PRACTICE SPEAKING',
+                                      subtitle: 'Say your response aloud to confirm',
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      onConfirmed: () {
+                                        context.read<RoleplayBloc>().add(
+                                          const RoleplaySpeakConfirmed(5),
+                                        );
+                                        _submitVerbalEvaluation(
+                                          true,
+                                          quest,
+                                          currentText,
+                                        );
+                                      },
+                                      onSkipped: () => _submitVerbalEvaluation(
+                                        false,
                                         quest,
                                         currentText,
-                                      );
-                                    },
-                                    onSkipped: () => _submitVerbalEvaluation(
-                                      false,
-                                      quest,
-                                      currentText,
+                                      ),
                                     ),
                                   ),
                                 ),

@@ -366,11 +366,11 @@ void main() {
       expect(find.byType(SocialSparkConnectionMonitor), findsOneWidget);
     });
 
-    testWidgets('3. Connection monitor renders default "CONSTELLATION HARMONICS" header and hub icon',
+    testWidgets('3. Connection monitor renders default "CONVERSATION BUILDER" header and forum icon',
         (tester) async {
       await pumpSocialSparkScreen(tester);
-      expect(find.text('CONSTELLATION HARMONICS'), findsOneWidget);
-      expect(find.byIcon(Icons.hub_rounded), findsOneWidget);
+      expect(find.text('CONVERSATION BUILDER'), findsOneWidget);
+      expect(find.byIcon(Icons.forum_rounded), findsOneWidget);
     });
 
     testWidgets('4. Connection monitor renders custom instruction text',
@@ -535,27 +535,27 @@ void main() {
       expect(find.byKey(const Key('social_spark_clear_button')), findsOneWidget);
     });
 
-    testWidgets('21. "IGNITE SPARK" button renders with bolt icon and styled label',
+    testWidgets('21. "CHECK ANSWER" button renders with check icon and styled label',
         (tester) async {
       await pumpSocialSparkScreen(tester);
       await tester.tap(find.byKey(const Key('social_spark_star_0')));
       await tester.pump(const Duration(milliseconds: 350));
 
-      expect(find.text('IGNITE SPARK'), findsOneWidget);
-      expect(find.byIcon(Icons.bolt_rounded), findsOneWidget);
+      expect(find.text('CHECK ANSWER'), findsOneWidget);
+      expect(find.byIcon(Icons.check_rounded), findsOneWidget);
     });
 
-    testWidgets('22. "CLEAR PATH" button renders with refresh icon and styled label',
+    testWidgets('22. "CLEAR SELECTION" button renders with refresh icon and styled label',
         (tester) async {
       await pumpSocialSparkScreen(tester);
       await tester.tap(find.byKey(const Key('social_spark_star_0')));
       await tester.pump(const Duration(milliseconds: 350));
 
-      expect(find.text('CLEAR PATH'), findsOneWidget);
+      expect(find.text('CLEAR SELECTION'), findsOneWidget);
       expect(find.byIcon(Icons.refresh_rounded), findsOneWidget);
     });
 
-    testWidgets('23. Tapping "CLEAR PATH" clears all selected indices and dispatches selection haptic',
+    testWidgets('23. Tapping "CLEAR SELECTION" clears all selected indices and dispatches selection haptic',
         (tester) async {
       await pumpSocialSparkScreen(tester);
       await tester.tap(find.byKey(const Key('social_spark_star_0')));
@@ -570,7 +570,7 @@ void main() {
       expect(find.text('Tap words to build your response'), findsOneWidget);
     });
 
-    testWidgets('24. Tapping "CLEAR PATH" hides action buttons',
+    testWidgets('24. Tapping "CLEAR SELECTION" hides action buttons',
         (tester) async {
       await pumpSocialSparkScreen(tester);
       await tester.tap(find.byKey(const Key('social_spark_star_0')));
@@ -633,7 +633,7 @@ void main() {
       expect(find.byType(SpeakToConfirmOverlay), findsNothing);
     });
 
-    testWidgets('28. Answered wrong state updates monitor title to "SIGNAL COLLAPSED"',
+    testWidgets('28. Answered wrong state updates monitor title to "LET\'S TRY AGAIN"',
         (tester) async {
       await pumpSocialSparkScreen(tester);
       await tester.tap(find.byKey(const Key('social_spark_star_0')));
@@ -644,10 +644,10 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 600));
 
-      expect(find.text('SIGNAL COLLAPSED'), findsOneWidget);
+      expect(find.text("LET'S TRY AGAIN"), findsOneWidget);
     });
 
-    testWidgets('29. Answered wrong state reveals explanation card with "COMMUNICATION INSIGHT"',
+    testWidgets('29. Answered wrong state reveals explanation card with "HELPFUL EXPLANATION"',
         (tester) async {
       await pumpSocialSparkScreen(tester);
       await tester.tap(find.byKey(const Key('social_spark_star_0')));
@@ -659,7 +659,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 600));
 
       expect(find.byKey(const Key('social_spark_explanation_card')), findsOneWidget);
-      expect(find.text('COMMUNICATION INSIGHT'), findsOneWidget);
+      expect(find.text('HELPFUL EXPLANATION'), findsOneWidget);
       expect(find.text(sampleQuest1.explanation!), findsOneWidget);
     });
 
@@ -675,7 +675,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 600));
 
       clearInteractions(mockHapticService);
-      await tester.tap(find.byKey(const Key('social_spark_star_2')));
+      await tester.tap(find.byKey(const Key('social_spark_star_2')), warnIfMissed: false);
       await tester.pump(const Duration(milliseconds: 300));
 
       verifyNever(() => mockHapticService.selection());
@@ -849,7 +849,7 @@ void main() {
     // 6. Post-Answer Review & Bottom Sheet Feedback (Tests 39-44)
     // -------------------------------------------------------------------------
 
-    testWidgets('39. Answered correct state updates monitor title to "ALIGNMENT STABLE"',
+    testWidgets('39. Answered correct state updates monitor title to "PERFECT RESPONSE"',
         (tester) async {
       await pumpSocialSparkScreen(tester);
       for (int i = 0; i < 5; i++) {
@@ -867,10 +867,10 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 600));
 
-      expect(find.text('ALIGNMENT STABLE'), findsOneWidget);
+      expect(find.text('PERFECT RESPONSE'), findsOneWidget);
     });
 
-    testWidgets('40. Answered correct state reveals explanation card with "CONSTELLATION HARMONIZED" and verified icon',
+    testWidgets('40. Answered correct state reveals explanation card with "WHY THIS WORKS" and verified icon',
         (tester) async {
       await pumpSocialSparkScreen(tester);
       for (int i = 0; i < 5; i++) {
@@ -889,7 +889,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 600));
 
       expect(find.byKey(const Key('social_spark_explanation_card')), findsOneWidget);
-      expect(find.text('CONSTELLATION HARMONIZED'), findsOneWidget);
+      expect(find.text('WHY THIS WORKS'), findsOneWidget);
       expect(find.byIcon(Icons.verified_rounded), findsOneWidget);
     });
 
@@ -1072,7 +1072,7 @@ void main() {
         (tester) async {
       await pumpSocialSparkScreen(tester, themeMode: ThemeMode.light);
       expect(find.byType(SocialSparkScreen), findsOneWidget);
-      expect(find.text('CONSTELLATION HARMONICS'), findsOneWidget);
+      expect(find.text('CONVERSATION BUILDER'), findsOneWidget);
     });
 
     testWidgets('55. Compact mobile (320x568) and tablet (768x1024) render with zero overflow',
