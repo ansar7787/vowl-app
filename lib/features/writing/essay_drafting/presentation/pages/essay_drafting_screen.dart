@@ -98,6 +98,17 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
     _blueprintSlots.value = newSlots;
   }
 
+  void _onOptionTapped(String item, bool isAnswered) {
+    if (isAnswered) return;
+    final currentSlots = _blueprintSlots.value;
+    for (final entry in currentSlots.entries) {
+      if (entry.value == null) {
+        _onSlot(entry.key, item, isAnswered);
+        return;
+      }
+    }
+  }
+
   void _submitAnswer(bool isAnswered, WritingQuest quest) {
     if (isAnswered) return;
 
@@ -329,6 +340,8 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                           color: theme.primaryColor,
                                           isDark: isDark,
                                           onDragUpdate: _handleAutoScroll,
+                                          onItemTap: (item) =>
+                                              _onOptionTapped(item, isAnswered),
                                         ),
                                         SizedBox(height: 16.h),
                                       ],
@@ -348,10 +361,15 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                           : null,
                                       child: Container(
                                         width: double.infinity,
-                                        height: 60.h,
+                                        constraints: BoxConstraints(
+                                          minHeight: 56.h,
+                                        ),
+                                        padding: EdgeInsets.symmetric(
+                                          vertical: 16.h,
+                                        ),
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(
-                                            20.r,
+                                            16.r,
                                           ),
                                           color: slotsFilled
                                               ? theme.primaryColor
@@ -366,6 +384,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                                 color: theme.primaryColor
                                                     .withValues(alpha: 0.3),
                                                 blurRadius: 15,
+                                                offset: const Offset(0, 4),
                                               ),
                                           ],
                                         ),
@@ -381,7 +400,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                                   : (isDark
                                                         ? Colors.white30
                                                         : Colors.black26),
-                                              letterSpacing: 1.5,
+                                              letterSpacing: 1.2,
                                             ),
                                           ),
                                         ),
@@ -393,35 +412,29 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen>
                                           .where((v) => v != null)
                                           .join(' '),
                                       primaryColor: theme.primaryColor,
+                                      title: "Confirm Draft",
+                                      subtitle:
+                                          "Type the completed paragraph to confirm",
+                                      hintText: "Type paragraph here...",
                                       onConfirmed: () =>
                                           _submitFinalAnswer(true),
                                       onSkipped: () =>
                                           _submitFinalAnswer(false),
                                       allowSkip: true,
                                       isPositioned: false,
-                                      displayFontSize: 16.sp,
+                                      displayFontSize: 15.sp,
                                       displayFontWeight: FontWeight.w500,
                                       displayTextAlign: TextAlign.left,
                                     ),
                                   SizedBox(
-                                    height: !isAnswered
-                                        ? (_pendingSubmit.value
+                                    height: isAnswered
+                                        ? 160.h
+                                        : (_pendingSubmit.value
                                               ? MediaQuery.viewInsetsOf(
                                                       context,
                                                     ).bottom +
                                                     40.h
-                                              : 60.h)
-                                        : 160.h,
-                                  ),
-                                  SizedBox(
-                                    height:
-                                        MediaQuery.of(context).viewInsets.bottom >
-                                            0
-                                        ? MediaQuery.of(
-                                                context,
-                                              ).viewInsets.bottom +
-                                              40.h
-                                        : 120.h,
+                                              : 120.h),
                                   ),
                                 ],
                               ),

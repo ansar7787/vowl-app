@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class SentenceBuilderKeyboardInput extends StatefulWidget {
   final TextEditingController controller;
@@ -24,6 +24,14 @@ class _SentenceBuilderKeyboardInputState
   final _focusNode = FocusNode();
 
   @override
+  void initState() {
+    super.initState();
+    _focusNode.addListener(() {
+      if (mounted) setState(() {});
+    });
+  }
+
+  @override
   void dispose() {
     _focusNode.dispose();
     super.dispose();
@@ -31,40 +39,66 @@ class _SentenceBuilderKeyboardInputState
 
   @override
   Widget build(BuildContext context) {
+    final textColor = widget.isDark ? Colors.white : AppColors.slate900;
+    final hintColor = widget.isDark ? Colors.white38 : Colors.black38;
+    final isFocused = _focusNode.hasFocus;
+
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      width: double.infinity,
       decoration: BoxDecoration(
-        color: widget.isDark ? Colors.grey[850] : Colors.white,
-        borderRadius: BorderRadius.circular(16.r),
+        color: widget.isDark
+            ? Colors.black.withValues(alpha: 0.25)
+            : Colors.white,
+        borderRadius: BorderRadius.circular(18.r),
         border: Border.all(
-          color: widget.color.withValues(alpha: 0.3),
-          width: 1.5,
+          color: isFocused
+              ? widget.color
+              : widget.color.withValues(alpha: 0.25),
+          width: isFocused ? 2.0 : 1.5,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: widget.color.withValues(
+              alpha: widget.isDark ? (isFocused ? 0.15 : 0.05) : (isFocused ? 0.12 : 0.05),
+            ),
+            blurRadius: isFocused ? 16 : 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
       child: TextField(
         key: const Key('sentence_builder_text_field'),
         controller: widget.controller,
         focusNode: _focusNode,
-        onTap: () {
-          if (_focusNode.hasFocus) {
-            SystemChannels.textInput.invokeMethod('TextInput.show');
-          }
-        },
-        onTapOutside: (_) => FocusManager.instance.primaryFocus?.unfocus(),
+        minLines: 3,
+        maxLines: 5,
+        keyboardType: TextInputType.multiline,
+        textInputAction: TextInputAction.done,
         textCapitalization: TextCapitalization.sentences,
+        cursorColor: widget.color,
+        cursorWidth: 2.0,
+        cursorRadius: Radius.circular(2.r),
+        onTapOutside: (_) => FocusManager.instance.primaryFocus?.unfocus(),
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 16.sp,
-          color: Theme.of(context).colorScheme.onSurface,
+          fontWeight: FontWeight.w600,
+          color: textColor,
+          height: 1.4,
         ),
-        maxLines: 3,
-        minLines: 1,
         decoration: InputDecoration(
           border: InputBorder.none,
           hintText: "Type the complete sentence here...",
           hintStyle: TextStyle(
             fontFamily: 'Outfit',
-            color: widget.isDark ? Colors.white38 : Colors.black38,
+            fontSize: 15.sp,
+            fontWeight: FontWeight.w400,
+            color: hintColor,
+            height: 1.4,
+          ),
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: 18.w,
+            vertical: 18.h,
           ),
         ),
       ),

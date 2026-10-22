@@ -778,18 +778,18 @@ class GameInstructionService {
           "Start with 'who' or 'what' the sentence is about, then look for the action word!",
     ),
     GameSubtype.completeSentence: GameBriefing(
-      title: "Fill in the Blank",
+      title: "Complete Sentence",
       icon: Icons.edit_note_rounded,
       objective:
-          "Read the sentence and figure out what word is missing. Once you pick the right word, you'll need to spell it out to prove you know it!",
+          "Read the sentence and find the missing word. Select the word that fits grammatically, then spell it to lock in your answer.",
       rules: [
         "Read the whole sentence",
-        "Pick the missing word",
+        "Select the missing word",
         "Spell it correctly",
       ],
       actionText: "Let's Go!",
       tip:
-          "Read the sentence out loud in your head. Usually, your brain will naturally guess the missing word before you even look at the options!",
+          "Read the sentence out loud in your head. Your intuition will often tell you which word belongs before you look at the options!",
     ),
     GameSubtype.describeSituationWriting: GameBriefing(
       title: "Context Scribe",
@@ -843,14 +843,18 @@ class GameInstructionService {
           "Think about the relationship. Is it showing a result (so), a contrast (but), or adding info (and)?",
     ),
     GameSubtype.opinionWriting: GameBriefing(
-      title: "Vocal Pen",
+      title: "Opinion Writing",
       icon: Icons.rate_review_rounded,
       objective:
-          "Analyze the statements and categorize them as supporting or opposing the given opinion. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      rules: ["Read the prompt", "Weigh the arguments", "Balance the scale"],
-      actionText: "Balance Scale",
+          "Read each prompt carefully, then choose the statements that express personal opinions or facts as requested.",
+      rules: [
+        "Read the prompt carefully",
+        "Choose the best statements",
+        "Check your answer",
+      ],
+      actionText: "Start Practice",
       tip:
-          "A 'Pro' always supports the prompt's opinion, while a 'Con' highlights a drawback or opposing view.",
+          "Facts can be proven with evidence. Opinions express personal feelings, beliefs, or judgements.",
     ),
     GameSubtype.dailyJournal: GameBriefing(
       title: "Daily Chronicler",

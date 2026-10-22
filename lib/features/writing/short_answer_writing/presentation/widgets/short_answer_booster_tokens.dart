@@ -1,8 +1,9 @@
-import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
-import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 
 class ShortAnswerBoosterTokens extends StatelessWidget {
   final List<String> keywords;
@@ -21,27 +22,29 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final successColor = isDark ? tokens.gameCorrect : KidsColors.safeGreen;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
             Icon(
-              Icons.radar_rounded,
-              size: 14.r,
-              color: isDark ? Colors.white54 : Colors.black54,
+              Icons.bookmark_border_rounded,
+              size: 16.r,
+              color: isDark ? AppColors.slate400 : AppColors.slate600,
             ),
             SizedBox(width: 8.w),
             Expanded(
               child: Text(
                 "REQUIRED KEYWORDS (USE ALL)",
-                overflow: TextOverflow.ellipsis,
+                softWrap: true,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: isDark ? Colors.white54 : Colors.black54,
+                  fontSize: 12.sp,
+                  color: isDark ? AppColors.slate400 : AppColors.slate600,
                   fontWeight: FontWeight.w600,
-                  letterSpacing: 1.2,
+                  letterSpacing: 0.8,
                 ),
               ),
             ),
@@ -49,7 +52,7 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
         ),
         SizedBox(height: 12.h),
         Wrap(
-          spacing: 12.w,
+          spacing: 10.w,
           runSpacing: 8.h,
           alignment: WrapAlignment.start,
           children: keywords.map((k) {
@@ -58,23 +61,29 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
               r'\b' + RegExp.escape(kwLower) + r'\b',
               caseSensitive: false,
             ).hasMatch(text);
-            final successColor = isDark
-                ? tokens.gameCorrect
-                : KidsColors.safeGreen;
-            final displayColor = isUsed
-                ? successColor
-                : (isDark ? Colors.white24 : Colors.black26);
 
             return AnimatedContainer(
               key: Key('short_answer_booster_token_$k'),
-              duration: 300.milliseconds,
+              duration: 250.milliseconds,
               padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
               decoration: BoxDecoration(
                 color: isUsed
-                    ? successColor.withValues(alpha: 0.15)
-                    : Colors.transparent,
-                borderRadius: BorderRadius.circular(20.r),
-                border: Border.all(color: displayColor, width: 2),
+                    ? successColor.withValues(alpha: isDark ? 0.18 : 0.1)
+                    : (isDark ? AppColors.slate800 : Colors.white),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(
+                  color: isUsed
+                      ? successColor
+                      : (isDark ? AppColors.slate700 : AppColors.slate300),
+                  width: 1.2,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: isDark ? 0.15 : 0.03),
+                    blurRadius: 4,
+                    offset: const Offset(0, 1),
+                  ),
+                ],
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -83,10 +92,10 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
                     isUsed
                         ? Icons.check_circle_rounded
                         : Icons.radio_button_unchecked_rounded,
-                    size: 14.r,
+                    size: 16.r,
                     color: isUsed
                         ? successColor
-                        : (isDark ? Colors.white30 : Colors.black38),
+                        : (isDark ? AppColors.slate500 : AppColors.slate400),
                   ),
                   SizedBox(width: 8.w),
                   Text(
@@ -95,9 +104,10 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
                       fontFamily: 'Outfit',
                       color: isUsed
                           ? successColor
-                          : (isDark ? Colors.white60 : Colors.black54),
-                      fontSize: 11.sp,
+                          : (isDark ? AppColors.slate300 : AppColors.slate700),
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w600,
+                      letterSpacing: 0.5,
                     ),
                   ),
                 ],

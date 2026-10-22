@@ -18,41 +18,73 @@ class EssayDraftingTopicBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final onSurfaceColor = Theme.of(context).colorScheme.onSurface;
+
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(20.r),
+      padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-        borderRadius: BorderRadius.circular(24.r),
+        color: color.withValues(alpha: isDark ? 0.08 : 0.06),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: isDark ? Colors.white12 : Colors.black12,
-          width: 2,
+          width: 1.5,
         ),
       ),
       child: Stack(
         children: [
-          const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
+          const Positioned.fill(child: TechPatternOverlay(opacity: 0.04)),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 10.w,
+                  vertical: 4.h,
+                ),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: isDark ? 0.18 : 0.12),
+                  borderRadius: BorderRadius.circular(8.r),
+                ),
+                child: Text(
+                  "ESSAY TOPIC",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w700,
+                    color: color,
+                    letterSpacing: 1.1,
+                  ),
+                ),
+              ),
+              SizedBox(height: 10.h),
               Text(
                 topic,
                 textAlign: TextAlign.center,
+                softWrap: true,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 15.sp,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
-                  color: Theme.of(context).colorScheme.onSurface,
+                  color: onSurfaceColor,
                   height: 1.4,
                 ),
               ),
               if (thesisStatement != null) ...[
-                SizedBox(height: 16.h),
+                SizedBox(height: 14.h),
                 Container(
-                  padding: EdgeInsets.all(12.r),
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 14.w,
+                    vertical: 12.h,
+                  ),
                   decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
+                    color: color.withValues(alpha: isDark ? 0.12 : 0.08),
                     borderRadius: BorderRadius.circular(12.r),
+                    border: Border.all(
+                      color: color.withValues(alpha: isDark ? 0.25 : 0.15),
+                      width: 1,
+                    ),
                   ),
                   child: Column(
                     children: [
@@ -64,30 +96,32 @@ class EssayDraftingTopicBanner extends StatelessWidget {
                             color: color,
                             size: 16.sp,
                           ),
-                          SizedBox(width: 8.w),
+                          SizedBox(width: 6.w),
                           Text(
                             "THESIS STATEMENT",
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 10.sp,
+                              fontSize: 11.sp,
                               fontWeight: FontWeight.w700,
                               color: color,
-                              letterSpacing: 1.5,
+                              letterSpacing: 1.0,
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(height: 8.h),
+                      SizedBox(height: 6.h),
                       Text(
                         thesisStatement!,
                         textAlign: TextAlign.center,
+                        softWrap: true,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w600,
-                          color: isDark ? Colors.white70 : Colors.black87,
-                          fontStyle: FontStyle.italic,
-                          height: 1.3,
+                          fontSize: 13.5.sp,
+                          fontWeight: FontWeight.w500,
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.85)
+                              : Colors.black87,
+                          height: 1.4,
                         ),
                       ),
                     ],

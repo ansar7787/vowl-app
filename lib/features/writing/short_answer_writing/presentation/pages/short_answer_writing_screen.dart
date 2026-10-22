@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -270,20 +271,20 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [
-                                  SizedBox(height: 16.h),
+                                  SizedBox(height: 14.h),
                                   ShortAnswerInstruction(
                                     primaryColor: theme.primaryColor,
                                     instruction:
                                         InstructionHelper.getInstruction(quest),
                                   ),
-                                  SizedBox(height: 24.h),
+                                  SizedBox(height: 18.h),
 
                                   ShortAnswerQuillPrompt(
                                     prompt: quest.prompt ?? "",
                                     color: theme.primaryColor,
                                     isDark: isDark,
                                   ),
-                                  SizedBox(height: 24.h),
+                                  SizedBox(height: 18.h),
 
                                   ShortAnswerBoosterTokens(
                                     keywords: targetKeywords,
@@ -291,7 +292,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                     color: theme.primaryColor,
                                     isDark: isDark,
                                   ),
-                                  SizedBox(height: 24.h),
+                                  SizedBox(height: 18.h),
 
                                   ShortAnswerInkwell(
                                     controller: _answerController,
@@ -302,24 +303,25 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                     color: theme.primaryColor,
                                     isDark: isDark,
                                   ),
-                                  SizedBox(height: 36.h),
+                                  SizedBox(height: 24.h),
 
                                   if ((isCorrect == true || isFinalFailure) &&
                                       quest.sampleAnswer != null)
                                     Container(
-                                      margin: EdgeInsets.only(bottom: 36.h),
-                                      padding: EdgeInsets.all(16.r),
+                                      margin: EdgeInsets.only(bottom: 24.h),
+                                      padding: EdgeInsets.all(18.r),
                                       decoration: BoxDecoration(
                                         color: theme.primaryColor.withValues(
-                                          alpha: 0.1,
+                                          alpha: isDark ? 0.12 : 0.06,
                                         ),
                                         borderRadius: BorderRadius.circular(
                                           16.r,
                                         ),
                                         border: Border.all(
                                           color: theme.primaryColor.withValues(
-                                            alpha: 0.3,
+                                            alpha: 0.25,
                                           ),
+                                          width: 1.2,
                                         ),
                                       ),
                                       child: Column(
@@ -329,7 +331,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                           Row(
                                             children: [
                                               Icon(
-                                                Icons.lightbulb_rounded,
+                                                Icons.lightbulb_outline_rounded,
                                                 color: theme.primaryColor,
                                                 size: 18.r,
                                               ),
@@ -339,22 +341,23 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
                                                   fontSize: 12.sp,
-                                                  fontWeight: FontWeight.w700,
+                                                  fontWeight: FontWeight.w600,
                                                   color: theme.primaryColor,
-                                                  letterSpacing: 1.2,
+                                                  letterSpacing: 1.0,
                                                 ),
                                               ),
                                             ],
                                           ),
-                                          SizedBox(height: 8.h),
+                                          SizedBox(height: 10.h),
                                           Text(
                                             quest.sampleAnswer!,
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
-                                              fontSize: 14.sp,
+                                              fontSize: 14.5.sp,
+                                              fontWeight: FontWeight.w400,
                                               color: isDark
-                                                  ? Colors.white
-                                                  : Colors.black87,
+                                                  ? AppColors.white
+                                                  : AppColors.slate900,
                                               height: 1.5,
                                             ),
                                           ),
@@ -362,15 +365,14 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                               quest
                                                   .explanation!
                                                   .isNotEmpty) ...[
-                                            SizedBox(height: 12.h),
+                                            SizedBox(height: 14.h),
                                             Container(
                                               padding: EdgeInsets.all(12.r),
                                               decoration: BoxDecoration(
                                                 color: isDark
-                                                    ? Colors.black26
-                                                    : Colors.black.withValues(
-                                                        alpha: 0.03,
-                                                      ),
+                                                    ? AppColors.slate900
+                                                        .withValues(alpha: 0.4)
+                                                    : AppColors.slate100,
                                                 borderRadius:
                                                     BorderRadius.circular(12.r),
                                               ),
@@ -391,11 +393,10 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                                         fontFamily: 'Outfit',
                                                         fontSize: 13.sp,
                                                         color: isDark
-                                                            ? Colors.white70
-                                                            : Colors.black87,
-                                                        height: 1.4,
-                                                        fontStyle:
-                                                            FontStyle.italic,
+                                                            ? AppColors.slate300
+                                                            : AppColors.slate700,
+                                                        height: 1.45,
+                                                        fontWeight: FontWeight.w400,
                                                       ),
                                                     ),
                                                   ),
@@ -417,20 +418,31 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                       ),
                                       child: Container(
                                         width: double.infinity,
-                                        height: 60.h,
+                                        height: 52.h,
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(
-                                            30.r,
+                                            16.r,
                                           ),
                                           color: _wordCount.value >= 4
                                               ? theme.primaryColor
-                                              : Colors.grey,
+                                              : (isDark
+                                                  ? AppColors.slate800
+                                                  : AppColors.slate200),
+                                          border: _wordCount.value >= 4
+                                              ? null
+                                              : Border.all(
+                                                  color: isDark
+                                                      ? AppColors.slate700
+                                                      : AppColors.slate300,
+                                                  width: 1.2,
+                                                ),
                                           boxShadow: [
                                             if (_wordCount.value >= 4)
                                               BoxShadow(
                                                 color: theme.primaryColor
-                                                    .withValues(alpha: 0.3),
-                                                blurRadius: 15,
+                                                    .withValues(alpha: 0.35),
+                                                blurRadius: 12,
+                                                offset: const Offset(0, 4),
                                               ),
                                           ],
                                         ),
@@ -440,19 +452,27 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                                 MainAxisAlignment.center,
                                             children: [
                                               Icon(
-                                                Icons.approval_rounded,
-                                                color: Colors.white,
-                                                size: 24.r,
+                                                Icons.check_rounded,
+                                                color: _wordCount.value >= 4
+                                                    ? Colors.white
+                                                    : (isDark
+                                                        ? Colors.white38
+                                                        : AppColors.slate400),
+                                                size: 20.r,
                                               ),
                                               SizedBox(width: 8.w),
                                               Text(
                                                 "SUBMIT",
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
-                                                  fontSize: 16.sp,
-                                                  fontWeight: FontWeight.w700,
-                                                  color: Colors.white,
-                                                  letterSpacing: 2,
+                                                  fontSize: 15.sp,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: _wordCount.value >= 4
+                                                      ? Colors.white
+                                                      : (isDark
+                                                          ? Colors.white38
+                                                          : AppColors.slate400),
+                                                  letterSpacing: 1.0,
                                                 ),
                                               ),
                                             ],
@@ -461,7 +481,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                                       ),
                                     ),
                                   ],
-                                  SizedBox(height: 40.h),
+                                  SizedBox(height: 32.h),
                                 ],
                               ),
                             ),

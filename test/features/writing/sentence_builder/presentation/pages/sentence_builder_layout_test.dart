@@ -295,7 +295,7 @@ void main() {
       expect(find.byType(SentenceBuilderWorkbench), findsOneWidget);
       expect(find.byType(SentenceBuilderPiecePool), findsOneWidget);
       expect(find.byKey(const Key('sentence_builder_submit_button')), findsOneWidget);
-      expect(find.text('POLISH SENTENCE'), findsOneWidget);
+      expect(find.text('CHECK SENTENCE'), findsOneWidget);
       expect(find.text('Drop pieces here'), findsOneWidget);
       expect(find.textContaining('DECLARATIVE'), findsOneWidget);
 
@@ -321,7 +321,7 @@ void main() {
       expect(find.byType(SentenceBuilderKeyboardInput), findsOneWidget);
       expect(find.byKey(const Key('sentence_builder_text_field')), findsOneWidget);
       expect(find.byType(SentenceBuilderWorkbench), findsNothing);
-      expect(find.text('POLISH SENTENCE'), findsOneWidget);
+      expect(find.text('CHECK SENTENCE'), findsOneWidget);
     });
 
     testWidgets('renders empty shrink when quest is null', (tester) async {
@@ -406,7 +406,7 @@ void main() {
   });
 
   group('SentenceBuilderScreen - 3. Submission & Validation (Normal Mode)', () {
-    testWidgets('tapping POLISH SENTENCE with empty workbench shows warning and does not submit', (tester) async {
+    testWidgets('tapping CHECK SENTENCE with empty workbench shows warning and does not submit', (tester) async {
       await pumpScreen(tester, level: 2);
 
       await scrollAndTapSubmitButton(tester);

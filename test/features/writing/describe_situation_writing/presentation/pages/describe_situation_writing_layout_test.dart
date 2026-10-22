@@ -425,7 +425,7 @@ void main() {
         find.byKey(const Key('describe_situation_scroll_view')),
         findsOneWidget,
       );
-      expect(find.text('SEAL NARRATIVE'), findsOneWidget);
+      expect(find.text('SUBMIT DESCRIPTION'), findsOneWidget);
       expect(find.text('SITUATION PROMPT'), findsOneWidget);
       expect(
         find.text(
@@ -478,7 +478,7 @@ void main() {
       await pumpScreen(tester, level: 2);
 
       // Initially, no keyword chips are rendered
-      expect(find.text('TAP TO INJECT:'), findsNothing);
+      expect(find.text('TAP A KEYWORD TO ADD:'), findsNothing);
 
       // Tap first emoji (index 0)
       final emoji0 = find.byKey(const Key('describe_situation_emoji_0'));
@@ -486,7 +486,7 @@ void main() {
       await tester.pumpAndSettle();
 
       verify(() => mockHapticService.selection()).called(1);
-      expect(find.text('TAP TO INJECT:'), findsOneWidget);
+      expect(find.text('TAP A KEYWORD TO ADD:'), findsOneWidget);
       expect(find.text('VENTING'), findsOneWidget);
       expect(find.text('MAGMA'), findsOneWidget);
       expect(find.text('PLUME'), findsOneWidget);
@@ -500,11 +500,11 @@ void main() {
       final emoji0 = find.byKey(const Key('describe_situation_emoji_0'));
       await tester.tap(emoji0);
       await tester.pumpAndSettle();
-      expect(find.text('TAP TO INJECT:'), findsOneWidget);
+      expect(find.text('TAP A KEYWORD TO ADD:'), findsOneWidget);
 
       await tester.tap(emoji0);
       await tester.pumpAndSettle();
-      expect(find.text('TAP TO INJECT:'), findsNothing);
+      expect(find.text('TAP A KEYWORD TO ADD:'), findsNothing);
     });
 
     testWidgets('tapping a keyword injects it into text field and updates booster count', (
@@ -512,7 +512,7 @@ void main() {
     ) async {
       await pumpScreen(tester, level: 2);
 
-      expect(find.text('Booster words used: 0'), findsOneWidget);
+      expect(find.text('Keywords used: 0'), findsOneWidget);
 
       // Expand emoji 0
       final emoji0 = find.byKey(const Key('describe_situation_emoji_0'));
@@ -526,7 +526,7 @@ void main() {
 
       verify(() => mockHapticService.selection()).called(2);
       expect(find.text('Venting'), findsOneWidget);
-      expect(find.text('Booster words used: 1'), findsOneWidget);
+      expect(find.text('Keywords used: 1'), findsOneWidget);
     });
   });
 
@@ -649,7 +649,7 @@ void main() {
 
       expect(
         find.text(
-          'Inject at least 2 narrative keywords from the emojis! (2 tries left)',
+          'Please include at least 2 keywords from the emojis! (2 tries left)',
         ),
         findsOneWidget,
       );
@@ -941,7 +941,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('0 / 12 words'), findsOneWidget);
-      expect(find.text('Booster words used: 0'), findsOneWidget);
+      expect(find.text('Keywords used: 0'), findsOneWidget);
     });
   });
 
@@ -1072,7 +1072,7 @@ void main() {
       );
 
       expect(find.byType(DescribeSituationScreen), findsOneWidget);
-      expect(find.text('SEAL NARRATIVE'), findsOneWidget);
+      expect(find.text('SUBMIT DESCRIPTION'), findsOneWidget);
     });
 
     testWidgets('briefing overlay shows at level 1 and dismisses on tap', (

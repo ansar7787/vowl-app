@@ -81,14 +81,14 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                       : 0,
                 ),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(32.r),
+                  borderRadius: BorderRadius.circular(24.r),
                   child: Container(
-                    padding: EdgeInsets.fromLTRB(24.w, 28.h, 24.w, 28.h),
+                    padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 22.h),
                     decoration: BoxDecoration(
                       color: isDark
                           ? Colors.black.withValues(alpha: 0.85)
                           : Colors.white.withValues(alpha: 0.95),
-                      borderRadius: BorderRadius.circular(32.r),
+                      borderRadius: BorderRadius.circular(24.r),
                       border: Border.all(
                         color: widget.primaryColor.withValues(alpha: 0.3),
                         width: 1.5,
@@ -195,8 +195,8 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                             Container(
                               width: double.infinity,
                               padding: EdgeInsets.symmetric(
-                                horizontal: 20.w,
-                                vertical: 16.h,
+                                horizontal: 16.w,
+                                vertical: 14.h,
                               ),
                               decoration: BoxDecoration(
                                 color: isDark
@@ -212,15 +212,16 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                               child: Text(
                                 widget.displayText ?? widget.expectedText,
                                 textAlign: widget.displayTextAlign,
+                                softWrap: true,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: widget.displayFontSize ?? 20.sp,
+                                  fontSize: widget.displayFontSize ?? 18.sp,
                                   fontWeight:
                                       widget.displayFontWeight ??
-                                      FontWeight.w800,
+                                      FontWeight.w700,
                                   color: textColor,
-                                  letterSpacing: 0.5,
-                                  height: 1.3,
+                                  letterSpacing: 0.3,
+                                  height: 1.4,
                                 ),
                               ),
                             ),

@@ -13,46 +13,30 @@ class EssayDraftingInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
       decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
+        color: primaryColor.withValues(alpha: isDark ? 0.12 : 0.08),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: isDark ? 0.3 : 0.2),
+          width: 1.5,
+        ),
       ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(top: 2.h),
-            child: Icon(
-              Icons.architecture_rounded,
-              size: 20.r,
-              color: primaryColor,
-            ),
-          ),
-          SizedBox(width: 12.w),
-          Expanded(
-            child: Text(
-              instruction,
-              textAlign: TextAlign.center,
-              maxLines: null,
-              style: TextStyle(
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w400,
-                height: 1.4,
-                color: primaryColor,
-              ),
-            ),
-          ),
-          SizedBox(width: 12.w),
-          Icon(
-            Icons.architecture_rounded,
-            size: 20.r,
-            color: Colors.transparent,
-          ),
-        ],
+      child: Text(
+        instruction,
+        textAlign: TextAlign.center,
+        softWrap: true,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 14.5.sp,
+          fontWeight: FontWeight.w500,
+          height: 1.4,
+          color: isDark ? Colors.white.withValues(alpha: 0.95) : primaryColor,
+        ),
       ),
     );
   }

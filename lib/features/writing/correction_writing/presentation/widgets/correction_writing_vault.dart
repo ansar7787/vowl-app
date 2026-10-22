@@ -28,12 +28,15 @@ class CorrectionWritingVault extends StatelessWidget {
             'games.correctionWriting.select_word',
             fallback: "Select the correct word",
           ),
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 12.sp,
-            color: isDark ? Colors.white54 : Colors.black54,
+            fontSize: 14.sp,
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.75)
+                : Colors.black87.withValues(alpha: 0.7),
             fontWeight: FontWeight.w600,
-            letterSpacing: 1.2,
+            letterSpacing: 0.2,
           ),
         ),
         SizedBox(height: 16.h),
@@ -43,9 +46,6 @@ class CorrectionWritingVault extends StatelessWidget {
           alignment: WrapAlignment.center,
           children: options.map((opt) {
             final bool isSelected = selectedCorrection == opt;
-            final displayColor = isSelected
-                ? color
-                : (isDark ? Colors.white24 : Colors.black26);
 
             return Semantics(
               button: true,
@@ -57,32 +57,49 @@ class CorrectionWritingVault extends StatelessWidget {
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 200),
                   padding: EdgeInsets.symmetric(
-                    horizontal: 20.w,
-                    vertical: 12.h,
+                    horizontal: 22.w,
+                    vertical: 13.h,
                   ),
                   decoration: BoxDecoration(
                     color: isSelected
-                        ? color.withValues(alpha: 0.15)
-                        : (isDark ? Colors.black45 : Colors.white),
+                        ? color.withValues(alpha: 0.12)
+                        : (isDark
+                            ? Colors.white.withValues(alpha: 0.06)
+                            : Colors.white),
                     borderRadius: BorderRadius.circular(16.r),
-                    border: Border.all(color: displayColor, width: 1.5),
+                    border: Border.all(
+                      color: isSelected
+                          ? color
+                          : (isDark
+                              ? Colors.white.withValues(alpha: 0.14)
+                              : Colors.black.withValues(alpha: 0.12)),
+                      width: isSelected ? 2.0 : 1.2,
+                    ),
                     boxShadow: [
-                      BoxShadow(
-                        color: color.withValues(
-                          alpha: isSelected ? 0.35 : 0.08,
+                      if (isSelected)
+                        BoxShadow(
+                          color: color.withValues(alpha: 0.22),
+                          blurRadius: 8,
+                          offset: const Offset(0, 2),
+                        )
+                      else if (!isDark)
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.04),
+                          blurRadius: 4,
+                          offset: const Offset(0, 2),
                         ),
-                        blurRadius: 8,
-                      ),
                     ],
                   ),
                   child: Text(
                     opt,
+                    textAlign: TextAlign.center,
+                    softWrap: true,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       color: isSelected
                           ? color
-                          : (isDark ? Colors.white70 : Colors.black87),
-                      fontSize: 15.sp,
+                          : (isDark ? Colors.white : Colors.black87),
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -95,3 +112,4 @@ class CorrectionWritingVault extends StatelessWidget {
     );
   }
 }
+

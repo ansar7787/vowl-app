@@ -348,7 +348,7 @@ class _SentenceBuilderBody extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       slivers: [
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           sliver: SliverToBoxAdapter(
             child: Column(
               children: [
@@ -362,7 +362,7 @@ class _SentenceBuilderBody extends StatelessWidget {
                         instruction: InstructionHelper.getInstruction(quest),
                         sentenceType: quest.sentenceType,
                       ),
-                      SizedBox(height: 32.h),
+                      SizedBox(height: 28.h),
 
                       if (level >= 6) ...[
                         GestureDetector(
@@ -389,7 +389,7 @@ class _SentenceBuilderBody extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 16.h),
+                        SizedBox(height: 24.h),
                         SentenceBuilderKeyboardInput(
                           controller: textController,
                           color: theme.primaryColor,
@@ -403,7 +403,7 @@ class _SentenceBuilderBody extends StatelessWidget {
                           onSnap: onSnap,
                           onRemovePiece: onRemovePiece,
                         ),
-                        SizedBox(height: 32.h),
+                        SizedBox(height: 28.h),
                         SentenceBuilderPiecePool(
                           pool: pool,
                           assembledPieces: assembledPieces,
@@ -415,7 +415,7 @@ class _SentenceBuilderBody extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 32.h),
+                SizedBox(height: 28.h),
                 if (!isAnswered && !showTypeToConfirm)
                   _SubmitButton(theme: theme, onTap: onSubmit),
                 if (showTypeToConfirm && !isAnswered)
@@ -466,7 +466,7 @@ class _SubmitButton extends StatelessWidget {
         onTap: onTap,
         child: Container(
           width: double.infinity,
-          height: 56.h,
+          height: 54.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.r),
             color: theme.primaryColor,
@@ -474,18 +474,19 @@ class _SubmitButton extends StatelessWidget {
               BoxShadow(
                 color: theme.primaryColor.withValues(alpha: 0.3),
                 blurRadius: 15,
+                offset: const Offset(0, 4),
               ),
             ],
           ),
           child: Center(
             child: Text(
-              'POLISH SENTENCE',
+              'CHECK SENTENCE',
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w900,
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w700,
                 color: Colors.white,
-                letterSpacing: 2,
+                letterSpacing: 0.8,
               ),
             ),
           ),

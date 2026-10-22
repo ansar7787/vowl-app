@@ -29,14 +29,12 @@ class DailyJournalScratchArea extends StatelessWidget {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(24.r),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       decoration: BoxDecoration(
         color: isDark
             ? Colors.grey.shade900
             : const Color(0xFFFDF8EE), // Warm paper tint
-        borderRadius: BorderRadius.circular(
-          16.r,
-        ), // Slightly sharper corners like a book
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: isDark
               ? Colors.white10
@@ -72,15 +70,16 @@ class DailyJournalScratchArea extends StatelessWidget {
             },
             style: TextStyle(
               fontFamily: 'Spectral',
-              fontSize: 16.sp,
+              fontSize: 15.sp,
               color: Theme.of(context).colorScheme.onSurface,
               height: 1.5,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w400,
             ),
             decoration: InputDecoration(
               hintText: "Start writing here...",
               hintStyle: TextStyle(
                 fontFamily: 'Spectral',
+                fontSize: 15.sp,
                 color: isDark ? Colors.white30 : Colors.black38,
               ),
               border: InputBorder.none,
@@ -94,24 +93,32 @@ class DailyJournalScratchArea extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Word count:",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      color: color,
-                      fontWeight: FontWeight.w600,
+                  Flexible(
+                    child: Text(
+                      "Word count:",
+                      softWrap: true,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 13.sp,
+                        color: color,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
-                  Text(
-                    "$wordCount words",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      color: wordCount >= 10
-                          ? tokens.gameCorrect
-                          : tokens.gameIncorrect,
-                      fontWeight: FontWeight.w600,
+                  SizedBox(width: 8.w),
+                  Flexible(
+                    child: Text(
+                      "$wordCount words",
+                      textAlign: TextAlign.end,
+                      softWrap: true,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 13.sp,
+                        color: wordCount >= 10
+                            ? tokens.gameCorrect
+                            : tokens.gameIncorrect,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ],

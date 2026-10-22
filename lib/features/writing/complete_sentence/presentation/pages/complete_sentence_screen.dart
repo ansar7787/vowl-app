@@ -276,7 +276,7 @@ class _CompleteSentenceBody extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       slivers: [
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           sliver: SliverToBoxAdapter(
             child: AbsorbPointer(
               absorbing: showAnagram,
@@ -290,7 +290,7 @@ class _CompleteSentenceBody extends StatelessWidget {
                       text: quest.instruction,
                       grammarFocus: quest.grammarFocus,
                     ),
-                    SizedBox(height: 32.h),
+                    SizedBox(height: 20.h),
                     CompleteSentenceTargetWall(
                       text: quest.partialSentence ?? '',
                       injected: selectedProjectile,
@@ -300,7 +300,7 @@ class _CompleteSentenceBody extends StatelessWidget {
                       // correctAnswer comparison is handled in the screen.
                       onFire: onFire,
                     ),
-                    SizedBox(height: 32.h),
+                    SizedBox(height: 24.h),
                     if (level >= 6) ...[
                       GestureDetector(
                         key: const Key('complete_sentence_disabled_ammo_touch_zone'),
@@ -346,7 +346,7 @@ class _CompleteSentenceBody extends StatelessWidget {
         ),
         if (showAnagram && !isAnswered)
           SliverPadding(
-            padding: EdgeInsets.only(top: 32.h, left: 24.w, right: 24.w),
+            padding: EdgeInsets.only(top: 24.h, left: 20.w, right: 20.w),
             sliver: SliverToBoxAdapter(
               child: DynamicAnagramWrapper(
                 expectedText: quest.correctAnswer ?? '',

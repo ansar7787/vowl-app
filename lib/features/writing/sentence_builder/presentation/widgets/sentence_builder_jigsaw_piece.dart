@@ -60,8 +60,9 @@ class SentenceBuilderJigsawPiece extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 15.sp,
-                        fontWeight: FontWeight.w800,
-                        height: 1.2,
+                        fontWeight: FontWeight.w600,
+                        height: 1.25,
+                        letterSpacing: 0.2,
                         color: Theme.of(context).colorScheme.onSurface,
                       ),
                     ),

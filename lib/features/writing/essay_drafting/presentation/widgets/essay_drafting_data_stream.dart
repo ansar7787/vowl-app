@@ -7,6 +7,7 @@ class EssayDraftingDataStream extends StatelessWidget {
   final Color color;
   final bool isDark;
   final void Function(DragUpdateDetails)? onDragUpdate;
+  final void Function(String item)? onItemTap;
 
   const EssayDraftingDataStream({
     super.key,
@@ -15,6 +16,7 @@ class EssayDraftingDataStream extends StatelessWidget {
     required this.color,
     required this.isDark,
     this.onDragUpdate,
+    this.onItemTap,
   });
 
   Widget _buildItem(
@@ -22,44 +24,60 @@ class EssayDraftingDataStream extends StatelessWidget {
     String text, {
     bool isFeedback = false,
   }) {
+    final screenWidth = MediaQuery.sizeOf(context).width;
+
     return Container(
-      width: isFeedback
-          ? MediaQuery.of(context).size.width - 48.w
-          : double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      width: isFeedback ? (screenWidth - 48.w) : double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
       decoration: BoxDecoration(
-        color: isFeedback ? color : (isDark ? Colors.black87 : Colors.white),
+        color: isFeedback
+            ? color
+            : (isDark ? Colors.white.withValues(alpha: 0.06) : Colors.white),
         borderRadius: BorderRadius.circular(16.r),
         border: isFeedback
             ? null
-            : Border.all(color: color.withValues(alpha: 0.3), width: 2),
+            : Border.all(
+                color: color.withValues(alpha: isDark ? 0.35 : 0.25),
+                width: 1.5,
+              ),
         boxShadow: [
           BoxShadow(
             color: color.withValues(
-              alpha: isFeedback ? 0.4 : (isDark ? 0.35 : 0.15),
+              alpha: isFeedback ? 0.4 : (isDark ? 0.2 : 0.06),
             ),
-            blurRadius: isFeedback ? 20 : 6,
+            blurRadius: isFeedback ? 18 : 8,
+            offset: Offset(0, isFeedback ? 6 : 2),
           ),
         ],
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(
-            Icons.drag_indicator,
-            color: isFeedback ? Colors.white70 : color.withValues(alpha: 0.6),
-            size: 24.sp,
+          Padding(
+            padding: EdgeInsets.only(top: 2.h),
+            child: Icon(
+              Icons.drag_indicator_rounded,
+              color: isFeedback
+                  ? Colors.white.withValues(alpha: 0.8)
+                  : color.withValues(alpha: 0.7),
+              size: 22.sp,
+            ),
           ),
           SizedBox(width: 12.w),
           Expanded(
             child: Text(
               text,
               textAlign: TextAlign.left,
+              softWrap: true,
               style: TextStyle(
+                fontFamily: 'Outfit',
                 color: isFeedback
                     ? Colors.white
-                    : (isDark ? Colors.white70 : Colors.black87),
-                fontSize: 14.sp,
-                fontWeight: isFeedback ? FontWeight.w500 : FontWeight.w400,
+                    : (isDark
+                        ? Colors.white.withValues(alpha: 0.95)
+                        : Colors.black87),
+                fontSize: 14.5.sp,
+                fontWeight: FontWeight.w500,
                 height: 1.4,
               ),
             ),
@@ -91,7 +109,11 @@ class EssayDraftingDataStream extends StatelessWidget {
                   opacity: 0.3,
                   child: _buildItem(context, i),
                 ),
-                child: _buildItem(context, i),
+                child: GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () => onItemTap?.call(i),
+                  child: _buildItem(context, i),
+                ),
               ),
             ),
           )

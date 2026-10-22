@@ -317,7 +317,7 @@ void main() {
       expect(find.text(sampleQuest1.story!), findsOneWidget);
 
       // Verify initial empty film strip slots
-      expect(find.text('Drop event here...'), findsNWidgets(3));
+      expect(find.text('Tap or drag an event here'), findsNWidgets(3));
       for (int i = 0; i < 3; i++) {
         expect(find.byKey(Key('summarize_story_slot_$i')), findsOneWidget);
       }
@@ -395,7 +395,7 @@ void main() {
       // Slot 0 is now empty again
       expect(find.descendant(
         of: slot0,
-        matching: find.text('Drop event here...'),
+        matching: find.text('Tap or drag an event here'),
       ), findsOneWidget);
 
       // Option returns to frame vault
@@ -712,7 +712,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       // All slots cleared back to default
-      expect(find.text('Drop event here...'), findsNWidgets(3));
+      expect(find.text('Tap or drag an event here'), findsNWidgets(3));
     });
 
     testWidgets('quest progression resets slots for new quest', (tester) async {
@@ -737,7 +737,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       expect(find.text(sampleQuest2.story!), findsOneWidget);
-      expect(find.text('Drop event here...'), findsNWidgets(3));
+      expect(find.text('Tap or drag an event here'), findsNWidgets(3));
     });
 
     testWidgets('tapping hint button dispatches WritingHintUsed', (tester) async {

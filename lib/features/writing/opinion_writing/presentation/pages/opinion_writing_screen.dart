@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
@@ -88,6 +89,57 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
     }
   }
 
+  Widget _buildInstructionBanner({
+    required String instruction,
+    required Color primaryColor,
+    required bool isDark,
+  }) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(14.r),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.18),
+          width: 1.0,
+        ),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.task_alt_rounded,
+            color: primaryColor,
+            size: 20.r,
+          ),
+          SizedBox(width: 10.w),
+          Expanded(
+            child: Text(
+              instruction,
+              textAlign: TextAlign.center,
+              softWrap: true,
+              maxLines: null,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w600,
+                height: 1.4,
+                color: isDark ? Colors.white : const Color(0xFF0F172A),
+              ),
+            ),
+          ),
+          SizedBox(width: 10.w),
+          Icon(
+            Icons.task_alt_rounded,
+            color: Colors.transparent,
+            size: 20.r,
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -152,6 +204,11 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                 .toSet() ??
                             {};
 
+                        final rawInstruction = InstructionHelper.getInstruction(quest);
+                        final displayInstruction = rawInstruction.isNotEmpty
+                            ? rawInstruction
+                            : quest.instruction;
+
                         return RawScrollbar(
                           controller: _scrollController,
                           thumbColor: theme.primaryColor.withValues(alpha: 0.5),
@@ -164,7 +221,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                             slivers: [
                               SliverPadding(
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: 24.w,
+                                  horizontal: 20.w,
                                   vertical: 16.h,
                                 ),
                                 sliver: SliverToBoxAdapter(
@@ -172,443 +229,504 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen>
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                    if (quest.prompt != null ||
-                                        quest.instruction.isNotEmpty) ...[
-                                      Container(
-                                        width: double.infinity,
-                                        decoration: BoxDecoration(
-                                          color: isDark
-                                              ? const Color(0xFF1E293B)
-                                              : Colors.white,
-                                          borderRadius: BorderRadius.circular(
-                                            16.r,
-                                          ),
-                                          border: Border.all(
-                                            color: isDark
-                                                ? Colors.white12
-                                                : Colors.black.withValues(
-                                                    alpha: 0.05,
-                                                  ),
-                                          ),
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color: Colors.black.withValues(
-                                                alpha: 0.02,
-                                              ),
-                                              blurRadius: 8,
-                                              offset: const Offset(0, 2),
-                                            ),
-                                          ],
+                                      // 1. Centered balanced instruction banner
+                                      if (displayInstruction.isNotEmpty) ...[
+                                        _buildInstructionBanner(
+                                          instruction: displayInstruction,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
                                         ),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            if (quest.prompt != null)
-                                              Padding(
-                                                padding: EdgeInsets.all(20.w),
-                                                child: Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    if (quest.structureGuide !=
-                                                        null) ...[
-                                                      Text(
-                                                        quest.structureGuide!
-                                                            .toUpperCase(),
-                                                        style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: 11.sp,
-                                                          fontWeight:
-                                                              FontWeight.w700,
-                                                          letterSpacing: 0.8,
-                                                          color: theme
-                                                              .primaryColor,
-                                                        ),
-                                                      ),
-                                                      SizedBox(height: 8.h),
-                                                    ],
-                                                    Text(
-                                                      quest.prompt!,
-                                                      style: TextStyle(
-                                                        fontFamily: 'Outfit',
-                                                        fontSize: 16.sp,
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        color: isDark
-                                                            ? Colors.white
-                                                                  .withValues(
-                                                                    alpha: 0.8,
-                                                                  )
-                                                            : const Color(
-                                                                0xFF334155,
-                                                              ),
-                                                        height: 1.5,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            if (quest.instruction.isNotEmpty)
-                                              Container(
-                                                width: double.infinity,
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 20.w,
-                                                  vertical: 16.h,
-                                                ),
-                                                decoration: BoxDecoration(
-                                                  color: theme.primaryColor
-                                                      .withValues(alpha: 0.05),
-                                                  border: Border(
-                                                    top: BorderSide(
-                                                      color: theme.primaryColor
-                                                          .withValues(
-                                                            alpha: 0.1,
-                                                          ),
-                                                    ),
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.only(
-                                                        bottomLeft:
-                                                            Radius.circular(
-                                                              16.r,
-                                                            ),
-                                                        bottomRight:
-                                                            Radius.circular(
-                                                              16.r,
-                                                            ),
-                                                      ),
-                                                ),
-                                                child: Row(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Padding(
-                                                      padding: EdgeInsets.only(
-                                                        top: 1.h,
-                                                      ),
-                                                      child: Icon(
-                                                        Icons.task_alt_rounded,
-                                                        color:
-                                                            theme.primaryColor,
-                                                        size: 20.w,
-                                                      ),
-                                                    ),
-                                                    SizedBox(width: 12.w),
-                                                    Expanded(
-                                                      child: Text(
-                                                        quest.instruction,
-                                                        style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: 15.sp,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          color: isDark
-                                                              ? Colors.white
-                                                              : const Color(
-                                                                  0xFF0F172A,
-                                                                ),
-                                                          height: 1.4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                          ],
-                                        ),
-                                      ),
-                                      SizedBox(height: 24.h),
-                                    ],
-                                    DragTarget<String>(
-                                      onWillAcceptWithDetails: (details) {
-                                        return !isAnswered &&
-                                            draftedOptions.length <
-                                                requiredCount &&
-                                            !draftedOptions.contains(
-                                              details.data,
-                                            );
-                                      },
-                                      onAcceptWithDetails: (details) {
-                                        hapticService.selection();
-                                        _draftedOptions.value = [
-                                          ...draftedOptions,
-                                          details.data,
-                                        ];
-                                      },
-                                      builder: (context, candidateData, rejectedData) {
-                                        return Container(
-                                          key: const Key('opinion_drafting_pad_target'),
+                                        SizedBox(height: 14.h),
+                                      ],
+
+                                      // 2. Scenario / Context Prompt Card
+                                      if (quest.prompt != null) ...[
+                                        Container(
                                           width: double.infinity,
-                                          padding: EdgeInsets.all(20.w),
+                                          padding: EdgeInsets.all(18.w),
                                           decoration: BoxDecoration(
                                             color: isDark
                                                 ? const Color(0xFF1E293B)
-                                                : const Color(0xFFF8FAFC),
-                                            borderRadius: BorderRadius.circular(
-                                              16.r,
-                                            ),
+                                                : Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(16.r),
                                             border: Border.all(
-                                              color: candidateData.isNotEmpty
-                                                  ? theme.primaryColor
-                                                  : (isDark
-                                                        ? Colors.white12
-                                                        : Colors.black12),
-                                              width: candidateData.isNotEmpty
-                                                  ? 2
-                                                  : 1,
+                                              color: isDark
+                                                  ? Colors.white12
+                                                  : const Color(0xFFE2E8F0),
+                                              width: 1.0,
                                             ),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: Colors.black.withValues(
+                                                  alpha: 0.03,
+                                                ),
+                                                blurRadius: 8,
+                                                offset: const Offset(0, 2),
+                                              ),
+                                            ],
                                           ),
                                           child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              Row(
-                                                children: [
-                                                  Icon(
-                                                    Icons.edit_document,
-                                                    color: theme.primaryColor,
-                                                    size: 20.w,
+                                              if (quest.structureGuide !=
+                                                      null &&
+                                                  quest.structureGuide!
+                                                      .trim()
+                                                      .isNotEmpty) ...[
+                                                Container(
+                                                  padding: EdgeInsets.symmetric(
+                                                    horizontal: 10.w,
+                                                    vertical: 4.h,
                                                   ),
-                                                  SizedBox(width: 8.w),
-                                                  Text(
-                                                    "Drafting Pad",
+                                                  decoration: BoxDecoration(
+                                                    color: theme.primaryColor
+                                                        .withValues(alpha: 0.1),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                          8.r,
+                                                        ),
+                                                  ),
+                                                  child: Text(
+                                                    quest.structureGuide!
+                                                        .toUpperCase(),
+                                                    softWrap: true,
+                                                    maxLines: null,
                                                     style: TextStyle(
                                                       fontFamily: 'Outfit',
-                                                      fontSize: 14.sp,
+                                                      fontSize: 11.5.sp,
                                                       fontWeight:
-                                                          FontWeight.w700,
-                                                      color: theme.primaryColor,
+                                                          FontWeight.w600,
+                                                      letterSpacing: 0.6,
+                                                      color:
+                                                          theme.primaryColor,
                                                     ),
                                                   ),
-                                                ],
+                                                ),
+                                                SizedBox(height: 10.h),
+                                              ],
+                                              Text(
+                                                quest.prompt!,
+                                                softWrap: true,
+                                                maxLines: null,
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 15.5.sp,
+                                                  fontWeight:
+                                                      FontWeight.w500,
+                                                  color: isDark
+                                                      ? Colors.white.withValues(
+                                                          alpha: 0.9,
+                                                        )
+                                                      : const Color(
+                                                          0xFF1E293B,
+                                                        ),
+                                                  height: 1.45,
+                                                ),
                                               ),
-                                              SizedBox(height: 16.h),
-                                              ...List.generate(requiredCount, (
-                                                index,
-                                              ) {
-                                                if (index <
-                                                    draftedOptions.length) {
-                                                  final option =
-                                                      draftedOptions[index];
-                                                  return OpinionWritingDraftedCard(
-                                                    key: Key('opinion_drafted_card_$option'),
-                                                    text: option,
-                                                    isDark: isDark,
-                                                    primaryColor:
-                                                        theme.primaryColor,
-                                                    isAnswered: isAnswered,
-                                                    isCorrectOption:
-                                                        correctOptionsSet
-                                                            .contains(option),
-                                                    onRemove: isAnswered
-                                                        ? null
-                                                        : () {
-                                                            hapticService
-                                                                .selection();
-                                                            final current =
-                                                                List<
-                                                                  String
-                                                                >.from(
-                                                                  _draftedOptions
-                                                                      .value,
-                                                                );
-                                                            current.remove(
-                                                              option,
-                                                            );
-                                                            _draftedOptions
-                                                                    .value =
-                                                                current;
-                                                          },
-                                                  );
-                                                } else {
-                                                  return Padding(
-                                                    padding: EdgeInsets.only(
-                                                      bottom: 12.h,
-                                                    ),
-                                                    child: Container(
-                                                      width: double.infinity,
-                                                      padding:
-                                                          EdgeInsets.symmetric(
-                                                            vertical: 20.h,
-                                                          ),
-                                                      decoration: BoxDecoration(
-                                                        color: isDark
-                                                            ? Colors.white
-                                                                  .withValues(
-                                                                    alpha: 0.02,
-                                                                  )
-                                                            : Colors.black
-                                                                  .withValues(
-                                                                    alpha: 0.02,
-                                                                  ),
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                              12.r,
-                                                            ),
-                                                        border: Border.all(
-                                                          color: isDark
-                                                              ? Colors.white24
-                                                              : Colors.black26,
-                                                        ),
-                                                      ),
-                                                      child: Center(
-                                                        child: Text(
-                                                          "Drag option here...",
-                                                          style: TextStyle(
-                                                            fontFamily:
-                                                                'Outfit',
-                                                            fontSize: 14.sp,
-                                                            color: isDark
-                                                                ? Colors.white38
-                                                                : Colors
-                                                                      .black38,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                              }),
                                             ],
                                           ),
-                                        );
-                                      },
-                                    ),
-                                    SizedBox(height: 24.h),
-                                    if (availableOptions.isNotEmpty) ...[
-                                      Text(
-                                        "Idea Board",
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.w600,
-                                          color: isDark
-                                              ? Colors.white70
-                                              : Colors.black54,
                                         ),
-                                      ),
-                                      SizedBox(height: 12.h),
-                                      ...availableOptions.map((option) {
-                                        if (isAnswered) {
-                                          return OpinionWritingIdeaCard(
-                                            key: Key('opinion_idea_card_$option'),
-                                            text: option,
-                                            isDark: isDark,
-                                            primaryColor: theme.primaryColor,
-                                          );
-                                        }
+                                        SizedBox(height: 18.h),
+                                      ],
 
-                                        void handleTap() {
-                                          if (draftedOptions.length <
+                                      // 3. Selection Drop Target ("Your Selection" / "Your Answer")
+                                      DragTarget<String>(
+                                        onWillAcceptWithDetails: (details) {
+                                          return !isAnswered &&
+                                              draftedOptions.length <
                                                   requiredCount &&
                                               !draftedOptions.contains(
-                                                option,
-                                              )) {
-                                            hapticService.selection();
-                                            _draftedOptions.value = [
-                                              ...draftedOptions,
-                                              option,
-                                            ];
-                                          }
-                                        }
+                                                details.data,
+                                              );
+                                        },
+                                        onAcceptWithDetails: (details) {
+                                          hapticService.selection();
+                                          _draftedOptions.value = [
+                                            ...draftedOptions,
+                                            details.data,
+                                          ];
+                                        },
+                                        builder: (
+                                          context,
+                                          candidateData,
+                                          rejectedData,
+                                        ) {
+                                          final isHovering =
+                                              candidateData.isNotEmpty;
+                                          return Container(
+                                            key: const Key(
+                                              'opinion_drafting_pad_target',
+                                            ),
+                                            width: double.infinity,
+                                            padding: EdgeInsets.all(16.w),
+                                            decoration: BoxDecoration(
+                                              color: isDark
+                                                  ? const Color(0xFF1E293B)
+                                                  : const Color(0xFFF8FAFC),
+                                              borderRadius:
+                                                  BorderRadius.circular(16.r),
+                                              border: Border.all(
+                                                color: isHovering
+                                                    ? theme.primaryColor
+                                                    : (isDark
+                                                        ? Colors.white12
+                                                        : const Color(
+                                                            0xFFE2E8F0,
+                                                          )),
+                                                width: isHovering ? 2.0 : 1.0,
+                                              ),
+                                            ),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    Icon(
+                                                      Icons
+                                                          .assignment_turned_in_rounded,
+                                                      color:
+                                                          theme.primaryColor,
+                                                      size: 18.r,
+                                                    ),
+                                                    SizedBox(width: 8.w),
+                                                    Expanded(
+                                                      child: Text(
+                                                        requiredCount > 1
+                                                            ? "Your Selection"
+                                                            : "Your Answer",
+                                                        maxLines: 1,
+                                                        overflow: TextOverflow.ellipsis,
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 14.sp,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          color:
+                                                              theme.primaryColor,
+                                                          letterSpacing: 0.2,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    SizedBox(width: 8.w),
+                                                    Container(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 8.w,
+                                                            vertical: 3.h,
+                                                          ),
+                                                      decoration: BoxDecoration(
+                                                        color: theme
+                                                            .primaryColor
+                                                            .withValues(
+                                                              alpha: 0.1,
+                                                            ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              10.r,
+                                                            ),
+                                                      ),
+                                                      child: Text(
+                                                        "${draftedOptions.length}/$requiredCount",
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 12.sp,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          color: theme
+                                                              .primaryColor,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                SizedBox(height: 14.h),
+                                                ...List.generate(
+                                                  requiredCount,
+                                                  (index) {
+                                                    if (index <
+                                                        draftedOptions.length) {
+                                                      final option =
+                                                          draftedOptions[index];
+                                                      return OpinionWritingDraftedCard(
+                                                        key: Key(
+                                                          'opinion_drafted_card_$option',
+                                                        ),
+                                                        text: option,
+                                                        isDark: isDark,
+                                                        primaryColor:
+                                                            theme.primaryColor,
+                                                        isAnswered: isAnswered,
+                                                        isCorrectOption:
+                                                            correctOptionsSet
+                                                                .contains(
+                                                                  option,
+                                                                ),
+                                                        onRemove: isAnswered
+                                                            ? null
+                                                            : () {
+                                                                hapticService
+                                                                    .selection();
+                                                                final current =
+                                                                    List<
+                                                                      String
+                                                                    >.from(
+                                                                      _draftedOptions
+                                                                          .value,
+                                                                    );
+                                                                current.remove(
+                                                                  option,
+                                                                );
+                                                                _draftedOptions
+                                                                        .value =
+                                                                    current;
+                                                              },
+                                                      );
+                                                    } else {
+                                                      return Padding(
+                                                        padding:
+                                                            EdgeInsets.only(
+                                                              bottom: 12.h,
+                                                            ),
+                                                        child: Container(
+                                                          width:
+                                                              double.infinity,
+                                                          padding:
+                                                              EdgeInsets.symmetric(
+                                                                horizontal:
+                                                                    16.w,
+                                                                vertical: 16.h,
+                                                              ),
+                                                          decoration:
+                                                              BoxDecoration(
+                                                                color: isDark
+                                                                    ? Colors
+                                                                          .white
+                                                                          .withValues(
+                                                                            alpha:
+                                                                                0.03,
+                                                                          )
+                                                                    : Colors
+                                                                          .black
+                                                                          .withValues(
+                                                                            alpha:
+                                                                                0.02,
+                                                                          ),
+                                                                borderRadius:
+                                                                    BorderRadius.circular(
+                                                                      14.r,
+                                                                    ),
+                                                                border:
+                                                                    Border.all(
+                                                                      color: isDark
+                                                                          ? Colors
+                                                                                .white12
+                                                                          : theme
+                                                                                .primaryColor
+                                                                                .withValues(
+                                                                                  alpha:
+                                                                                      0.2,
+                                                                                ),
+                                                                      width:
+                                                                          1.0,
+                                                                    ),
+                                                              ),
+                                                          child: Center(
+                                                            child: Text(
+                                                              "Tap or drag an option here",
+                                                              softWrap: true,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                fontSize:
+                                                                    14.sp,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                color: isDark
+                                                                    ? Colors
+                                                                          .white38
+                                                                    : const Color(
+                                                                        0xFF94A3B8,
+                                                                      ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }
+                                                  },
+                                                ),
+                                              ],
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                      SizedBox(height: 20.h),
 
-                                        return Draggable<String>(
-                                          key: Key('opinion_draggable_$option'),
-                                          data: option,
-                                          feedback: Material(
-                                            color: Colors.transparent,
-                                            child: SizedBox(
-                                              width:
-                                                  MediaQuery.of(
-                                                    context,
-                                                  ).size.width -
-                                                  48.w,
+                                      // 4. Options List
+                                      if (availableOptions.isNotEmpty) ...[
+                                        Text(
+                                          "Options",
+                                          softWrap: true,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 14.sp,
+                                            fontWeight: FontWeight.w600,
+                                            color: isDark
+                                                ? Colors.white70
+                                                : const Color(0xFF64748B),
+                                            letterSpacing: 0.2,
+                                          ),
+                                        ),
+                                        SizedBox(height: 12.h),
+                                        ...availableOptions.map((option) {
+                                          if (isAnswered) {
+                                            return OpinionWritingIdeaCard(
+                                              key: Key(
+                                                'opinion_idea_card_$option',
+                                              ),
+                                              text: option,
+                                              isDark: isDark,
+                                              primaryColor: theme.primaryColor,
+                                            );
+                                          }
+
+                                          void handleTap() {
+                                            if (draftedOptions.length <
+                                                    requiredCount &&
+                                                !draftedOptions.contains(
+                                                  option,
+                                                )) {
+                                              hapticService.selection();
+                                              _draftedOptions.value = [
+                                                ...draftedOptions,
+                                                option,
+                                              ];
+                                            }
+                                          }
+
+                                          return Draggable<String>(
+                                            key: Key(
+                                              'opinion_draggable_$option',
+                                            ),
+                                            data: option,
+                                            feedback: Material(
+                                              color: Colors.transparent,
+                                              child: SizedBox(
+                                                width:
+                                                    MediaQuery.of(
+                                                          context,
+                                                        ).size.width -
+                                                    40.w,
+                                                child: OpinionWritingIdeaCard(
+                                                  text: option,
+                                                  isDark: isDark,
+                                                  primaryColor:
+                                                      theme.primaryColor,
+                                                  isDragging: true,
+                                                ),
+                                              ),
+                                            ),
+                                            childWhenDragging: Opacity(
+                                              opacity: 0.35,
                                               child: OpinionWritingIdeaCard(
                                                 text: option,
                                                 isDark: isDark,
                                                 primaryColor:
                                                     theme.primaryColor,
-                                                isDragging: true,
                                               ),
                                             ),
-                                          ),
-                                          childWhenDragging: Opacity(
-                                            opacity: 0.3,
                                             child: OpinionWritingIdeaCard(
+                                              key: Key(
+                                                'opinion_idea_card_$option',
+                                              ),
                                               text: option,
                                               isDark: isDark,
                                               primaryColor: theme.primaryColor,
+                                              onTap: handleTap,
                                             ),
+                                          );
+                                        }),
+                                      ],
+                                      SizedBox(height: 24.h),
+
+                                      // 5. Submit Button ("Check Answer")
+                                      if (!isAnswered)
+                                        ScaleButton(
+                                          key: const Key(
+                                            'opinion_writing_submit_button',
                                           ),
-                                          child: OpinionWritingIdeaCard(
-                                            key: Key('opinion_idea_card_$option'),
-                                            text: option,
-                                            isDark: isDark,
-                                            primaryColor: theme.primaryColor,
-                                            onTap: handleTap,
-                                          ),
-                                        );
-                                      }),
-                                    ],
-                                    SizedBox(height: 24.h),
-                                    if (!isAnswered)
-                                      ScaleButton(
-                                        key: const Key('opinion_writing_submit_button'),
-                                        onTap: canSubmit
-                                            ? () => _submitAnswer(quest)
-                                            : null,
-                                        child: AnimatedContainer(
-                                          duration: const Duration(
-                                            milliseconds: 200,
-                                          ),
-                                          width: double.infinity,
-                                          height: 60.h,
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(20.r),
-                                            color: canSubmit
-                                                ? theme.primaryColor
-                                                : Colors.grey.withValues(
-                                                    alpha: 0.5,
-                                                  ),
-                                            boxShadow: canSubmit
-                                                ? [
-                                                    BoxShadow(
-                                                      color: theme
-                                                          .primaryColor
-                                                          .withValues(
-                                                            alpha: 0.3,
-                                                          ),
-                                                      blurRadius: 15,
-                                                      offset: const Offset(
-                                                        0,
-                                                        4,
+                                          onTap: canSubmit
+                                              ? () => _submitAnswer(quest)
+                                              : null,
+                                          child: AnimatedContainer(
+                                            duration: const Duration(
+                                              milliseconds: 200,
+                                            ),
+                                            width: double.infinity,
+                                            height: 54.h,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(16.r),
+                                              color: canSubmit
+                                                  ? theme.primaryColor
+                                                  : (isDark
+                                                      ? Colors.white.withValues(
+                                                          alpha: 0.08,
+                                                        )
+                                                      : const Color(
+                                                          0xFFE2E8F0,
+                                                        )),
+                                              boxShadow: canSubmit
+                                                  ? [
+                                                      BoxShadow(
+                                                        color: theme
+                                                            .primaryColor
+                                                            .withValues(
+                                                              alpha: 0.28,
+                                                            ),
+                                                        blurRadius: 14,
+                                                        offset: const Offset(
+                                                          0,
+                                                          4,
+                                                        ),
                                                       ),
-                                                    ),
-                                                  ]
-                                                : [],
-                                          ),
-                                          child: Center(
-                                            child: Text(
-                                              "SUBMIT",
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 16.sp,
-                                                fontWeight: FontWeight.w700,
-                                                color: Colors.white,
-                                                letterSpacing: 1.2,
+                                                    ]
+                                                  : const [],
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                "Check Answer",
+                                                softWrap: true,
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 16.sp,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: canSubmit
+                                                      ? Colors.white
+                                                      : (isDark
+                                                          ? Colors.white38
+                                                          : const Color(
+                                                              0xFF94A3B8,
+                                                            )),
+                                                  letterSpacing: 0.4,
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    SizedBox(height: 120.h),
-                                  ],
+                                      SizedBox(height: 120.h),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
                           ),
                         );
                       },

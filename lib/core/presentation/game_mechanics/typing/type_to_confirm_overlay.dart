@@ -27,6 +27,8 @@ class TypeToConfirmOverlay extends StatefulWidget {
   final double? displayFontSize;
   final FontWeight? displayFontWeight;
   final TextAlign? displayTextAlign;
+  final String? title;
+  final String? subtitle;
 
   const TypeToConfirmOverlay({
     super.key,
@@ -44,6 +46,8 @@ class TypeToConfirmOverlay extends StatefulWidget {
     this.displayFontSize,
     this.displayFontWeight,
     this.displayTextAlign,
+    this.title,
+    this.subtitle,
   });
 
   @override
@@ -256,29 +260,30 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           AutoSizeText(
-                            'NOW TYPE IT',
+                            widget.title ?? 'Type to confirm',
                             maxLines: 1,
                             minFontSize: 8,
                             overflow: TextOverflow.visible,
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 13.sp,
-                              fontWeight: FontWeight.w800,
+                              fontWeight: FontWeight.w700,
                               color: widget.primaryColor,
-                              letterSpacing: 1.5,
+                              letterSpacing: 0.5,
                             ),
                           ),
                           SizedBox(height: 2.h),
                           AutoSizeText(
-                            'Type the answer to confirm',
+                            widget.subtitle ?? 'Type the answer to confirm',
                             maxLines: 1,
                             minFontSize: 8,
                             overflow: TextOverflow.visible,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 11.sp,
+                              fontSize: 11.5.sp,
                               fontWeight: FontWeight.w500,
                               color: subtitleColor,
+                              letterSpacing: 0.2,
                             ),
                           ),
                         ],

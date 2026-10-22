@@ -28,17 +28,20 @@ class DailyJournalBoosterTokens extends StatelessWidget {
       children: [
         Text(
           "Target words (use at least 2)",
+          textAlign: TextAlign.center,
+          softWrap: true,
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 10.sp,
-            color: isDark ? Colors.white54 : Colors.black54,
+            fontSize: 13.sp,
+            color: isDark ? Colors.white70 : Colors.black87,
             fontWeight: FontWeight.w600,
+            letterSpacing: 0.3,
           ),
         ),
         SizedBox(height: 12.h),
         Wrap(
-          spacing: 12.w,
-          runSpacing: 8.h,
+          spacing: 10.w,
+          runSpacing: 10.h,
           alignment: WrapAlignment.center,
           children: keywords.map((k) {
             final bool isUsed = RegExp(
@@ -58,26 +61,26 @@ class DailyJournalBoosterTokens extends StatelessWidget {
                   CustomSnackBar.show(
                     context: context,
                     message:
-                        "Type '$k' in your journal entry to activate this token!",
+                        "Type '$k' in your journal entry to include this word.",
                     type: CustomSnackBarType.info,
                   );
                 } else {
                   CustomSnackBar.show(
                     context: context,
-                    message: "'$k' is already activated! Great job.",
+                    message: "'$k' is already included! Great job.",
                     type: CustomSnackBarType.success,
                   );
                 }
               },
               child: AnimatedContainer(
                 duration: 300.milliseconds,
-                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
                 decoration: BoxDecoration(
                   color: isUsed
-                      ? tokens.gameCorrect.withValues(alpha: 0.15)
+                      ? tokens.gameCorrect.withValues(alpha: 0.12)
                       : Colors.transparent,
-                  borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(color: displayColor, width: 2),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(color: displayColor, width: 1.5),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -86,21 +89,24 @@ class DailyJournalBoosterTokens extends StatelessWidget {
                       isUsed
                           ? Icons.check_circle_rounded
                           : Icons.radio_button_unchecked_rounded,
-                      size: 14.r,
+                      size: 16.r,
                       color: isUsed
                           ? tokens.gameCorrect
-                          : (isDark ? Colors.white30 : Colors.black38),
+                          : (isDark ? Colors.white38 : Colors.black38),
                     ),
                     SizedBox(width: 8.w),
-                    Text(
-                      k,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        color: isUsed
-                            ? tokens.gameCorrect
-                            : (isDark ? Colors.white60 : Colors.black54),
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w500,
+                    Flexible(
+                      child: Text(
+                        k,
+                        softWrap: true,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          color: isUsed
+                              ? tokens.gameCorrect
+                              : (isDark ? Colors.white.withValues(alpha: 0.8) : Colors.black87),
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ],

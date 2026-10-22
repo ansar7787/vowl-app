@@ -17,6 +17,10 @@ class InstructionHelper {
     'snap the scrambled words back into the order you hear.',
     'listen and snap the words in order.',
     'listen and arrange the words in the correct order',
+    'tap or scrub the incorrect word to restore the sentence.',
+    'spot the mistake, scrub it out, and pick the right word to fix the sentence.',
+    'describe the unfolding situation using the keyword boosters.',
+    'expand emojis to inject narrative keywords',
     '',
   ];
 

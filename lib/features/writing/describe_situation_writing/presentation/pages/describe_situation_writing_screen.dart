@@ -267,7 +267,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
 
     if (matchedCount < 2) {
       _handleValidationFailure(
-        "Inject at least 2 narrative keywords from the emojis!",
+        "Please include at least 2 keywords from the emojis!",
       );
       return;
     }
@@ -438,7 +438,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
                         physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [
@@ -481,15 +481,15 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
                                   ),
                                   if (activeQuest.modelAnswer != null &&
                                       isAnswered) ...[
-                                    SizedBox(height: 32.h),
+                                    SizedBox(height: 24.h),
                                     Container(
-                                      padding: EdgeInsets.all(20.r),
+                                      padding: EdgeInsets.all(18.r),
                                       decoration: BoxDecoration(
                                         color: theme.primaryColor.withValues(
                                           alpha: 0.1,
                                         ),
                                         borderRadius: BorderRadius.circular(
-                                          20.r,
+                                          16.r,
                                         ),
                                         border: Border.all(
                                           color: theme.primaryColor.withValues(
@@ -506,21 +506,22 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
                                               fontSize: 12.sp,
-                                              fontWeight: FontWeight.w800,
+                                              fontWeight: FontWeight.w700,
                                               color: theme.primaryColor,
-                                              letterSpacing: 2,
+                                              letterSpacing: 1.0,
                                             ),
                                           ),
-                                          SizedBox(height: 12.h),
+                                          SizedBox(height: 10.h),
                                           Text(
                                             activeQuest.modelAnswer!,
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
-                                              fontSize: 14.sp,
+                                              fontSize: 14.5.sp,
+                                              fontWeight: FontWeight.w500,
                                               color: isDark
                                                   ? Colors.white70
                                                   : Colors.black87,
-                                              height: 1.5,
+                                              height: 1.45,
                                             ),
                                           ),
                                         ],
@@ -541,7 +542,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
                                         height: 60.h,
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(
-                                            20.r,
+                                            16.r,
                                           ),
                                           color: _wordCount.value >= minWords
                                               ? theme.primaryColor
@@ -557,13 +558,13 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
                                         ),
                                         child: Center(
                                           child: Text(
-                                            "SEAL NARRATIVE",
+                                            "SUBMIT DESCRIPTION",
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
-                                              fontSize: 16.sp,
-                                              fontWeight: FontWeight.w900,
+                                              fontSize: 15.sp,
+                                              fontWeight: FontWeight.w700,
                                               color: Colors.white,
-                                              letterSpacing: 2,
+                                              letterSpacing: 1.0,
                                             ),
                                           ),
                                         ),
@@ -574,8 +575,8 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
                                       expectedText: _textController.text.trim(),
                                       primaryColor: theme.primaryColor,
                                       isPositioned: false,
-                                      displayFontSize: 14.sp,
-                                      displayFontWeight: FontWeight.w400,
+                                      displayFontSize: 15.sp,
+                                      displayFontWeight: FontWeight.w500,
                                       displayTextAlign: TextAlign.left,
                                       onConfirmed: _onSpeakConfirmed,
                                       onSkipped: () {

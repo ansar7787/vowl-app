@@ -21,6 +21,9 @@ class FixTheSentenceCorrectionOptions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final cardBg = isDark ? const Color(0xFF1E293B) : Colors.white;
+    final textColor = isDark ? Colors.white : const Color(0xFF0F172A);
+
     return Wrap(
       spacing: 12.w,
       runSpacing: 12.h,
@@ -31,38 +34,37 @@ class FixTheSentenceCorrectionOptions extends StatelessWidget {
           onTap: () => onSelect(o, correct),
           child: ConstrainedBox(
             constraints: BoxConstraints(
-              maxWidth: MediaQuery.of(context).size.width - 48.w,
+              maxWidth: MediaQuery.of(context).size.width - 64.w,
             ),
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+              padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 14.h),
               decoration: BoxDecoration(
-                color: isDark ? Colors.black87 : Colors.white,
+                color: cardBg,
                 borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(color: color, width: 2),
+                border: Border.all(
+                  color: color.withValues(alpha: isDark ? 0.35 : 0.25),
+                  width: 1.5,
+                ),
                 boxShadow: [
                   BoxShadow(
-                    color: color.withValues(alpha: isDark ? 0.35 : 0.15),
-                    blurRadius: 8,
+                    color: Colors.black.withValues(alpha: isDark ? 0.25 : 0.06),
+                    blurRadius: 10,
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(Icons.bolt_rounded, size: 14.r, color: color),
-                  SizedBox(width: 8.w),
-                  Flexible(
-                    child: Text(
-                      o.toUpperCase(),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).colorScheme.onSurface,
-                      ),
-                    ),
-                  ),
-                ],
+              child: Text(
+                o,
+                textAlign: TextAlign.center,
+                softWrap: true,
+                maxLines: 2,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
+                  color: textColor,
+                  letterSpacing: 0.2,
+                ),
               ),
             ),
           ),

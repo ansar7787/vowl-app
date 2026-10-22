@@ -22,7 +22,7 @@ class DailyJournalPrompt extends StatelessWidget {
     Widget iconWidget = Icon(
       Icons.edit_note_rounded,
       color: Colors.amberAccent,
-      size: 28.r,
+      size: 26.r,
     );
     if (!reduceMotion) {
       iconWidget = iconWidget
@@ -32,26 +32,26 @@ class DailyJournalPrompt extends StatelessWidget {
 
     return Container(
       key: const Key('daily_journal_prompt'),
-      padding: EdgeInsets.all(20.r),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(20.r),
         gradient: LinearGradient(
           colors: [
-            primaryColor.withValues(alpha: isDark ? 0.2 : 0.15),
-            primaryColor.withValues(alpha: isDark ? 0.05 : 0.05),
+            primaryColor.withValues(alpha: isDark ? 0.18 : 0.12),
+            primaryColor.withValues(alpha: isDark ? 0.05 : 0.03),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         border: Border.all(
-          color: primaryColor.withValues(alpha: 0.3),
+          color: primaryColor.withValues(alpha: 0.28),
           width: 1.5,
         ),
         boxShadow: [
           BoxShadow(
-            color: primaryColor.withValues(alpha: 0.1),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
+            color: primaryColor.withValues(alpha: 0.08),
+            blurRadius: 16,
+            offset: const Offset(0, 6),
           ),
         ],
       ),
@@ -59,18 +59,23 @@ class DailyJournalPrompt extends StatelessWidget {
         children: [
           const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              iconWidget,
-              SizedBox(width: 16.w),
+              Padding(
+                padding: EdgeInsets.only(top: 2.h),
+                child: iconWidget,
+              ),
+              SizedBox(width: 14.w),
               Expanded(
                 child: Text(
                   text,
+                  softWrap: true,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w500,
-                    color: isDark ? Colors.white70 : Colors.black87,
-                    height: 1.4,
+                    color: isDark ? Colors.white.withValues(alpha: 0.88) : const Color(0xFF1E293B),
+                    height: 1.45,
                   ),
                 ),
               ),

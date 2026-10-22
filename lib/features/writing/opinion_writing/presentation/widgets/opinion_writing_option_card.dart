@@ -24,60 +24,59 @@ class OpinionWritingIdeaCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         margin: EdgeInsets.only(bottom: 12.h),
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
         decoration: BoxDecoration(
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(color: isDark ? Colors.white24 : Colors.black12),
+          borderRadius: BorderRadius.circular(14.r),
+          border: Border.all(
+            color: isDark ? Colors.white12 : const Color(0xFFE2E8F0),
+            width: 1.0,
+          ),
           boxShadow: isDragging
               ? [
                   BoxShadow(
-                    color: primaryColor.withValues(alpha: 0.2),
-                    blurRadius: 15,
-                    spreadRadius: 2,
+                    color: primaryColor.withValues(alpha: 0.25),
+                    blurRadius: 16,
+                    offset: const Offset(0, 4),
                   ),
                 ]
               : [
                   BoxShadow(
                     color: Colors.black.withValues(alpha: 0.03),
-                    blurRadius: 5,
+                    blurRadius: 6,
                     offset: const Offset(0, 2),
                   ),
                 ],
         ),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: EdgeInsets.only(top: 2.h),
-              child: Icon(
-                Icons.drag_indicator_rounded,
-                color: isDark ? Colors.white38 : Colors.black26,
-                size: 20.w,
-              ),
+            Icon(
+              Icons.drag_indicator_rounded,
+              color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
+              size: 20.r,
             ),
             SizedBox(width: 12.w),
             Expanded(
               child: Text(
                 text,
+                softWrap: true,
+                maxLines: null,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 16.sp,
+                  fontSize: 15.sp,
                   fontWeight: FontWeight.w500,
                   color: isDark ? Colors.white : const Color(0xFF1E293B),
-                  height: 1.5,
+                  height: 1.45,
                 ),
               ),
             ),
             if (onTap != null && !isDragging) ...[
               SizedBox(width: 12.w),
-              Padding(
-                padding: EdgeInsets.only(top: 2.h),
-                child: Icon(
-                  Icons.add_circle_outline,
-                  color: primaryColor.withValues(alpha: 0.6),
-                  size: 20.w,
-                ),
+              Icon(
+                Icons.add_circle_outline_rounded,
+                color: primaryColor.withValues(alpha: 0.7),
+                size: 20.r,
               ),
             ],
           ],
@@ -108,24 +107,24 @@ class OpinionWritingDraftedCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color bgColor = isDark
-        ? Colors.white.withValues(alpha: 0.05)
-        : primaryColor.withValues(alpha: 0.05);
-    Color borderColor = primaryColor.withValues(alpha: 0.3);
+        ? primaryColor.withValues(alpha: 0.08)
+        : primaryColor.withValues(alpha: 0.06);
+    Color borderColor = primaryColor.withValues(alpha: 0.35);
     Color textColor = isDark ? Colors.white : const Color(0xFF1E293B);
-    IconData iconData = Icons.remove_circle_outline;
+    IconData iconData = Icons.remove_circle_outline_rounded;
     Color iconColor = primaryColor;
 
     if (isAnswered) {
       if (isCorrectOption) {
-        bgColor = Colors.green.withValues(alpha: 0.1);
-        borderColor = Colors.green;
-        iconData = Icons.check_circle;
-        iconColor = Colors.green;
+        bgColor = const Color(0xFF22C55E).withValues(alpha: 0.1);
+        borderColor = const Color(0xFF22C55E);
+        iconData = Icons.check_circle_rounded;
+        iconColor = const Color(0xFF22C55E);
       } else {
-        bgColor = Colors.red.withValues(alpha: 0.1);
-        borderColor = Colors.red;
-        iconData = Icons.cancel;
-        iconColor = Colors.red;
+        bgColor = const Color(0xFFEF4444).withValues(alpha: 0.1);
+        borderColor = const Color(0xFFEF4444);
+        iconData = Icons.cancel_rounded;
+        iconColor = const Color(0xFFEF4444);
       }
     }
 
@@ -134,31 +133,44 @@ class OpinionWritingDraftedCard extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
         margin: EdgeInsets.only(bottom: 12.h),
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
         decoration: BoxDecoration(
           color: bgColor,
-          borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(color: borderColor, width: isAnswered ? 2 : 1),
+          borderRadius: BorderRadius.circular(14.r),
+          border: Border.all(
+            color: borderColor,
+            width: isAnswered ? 1.5 : 1.0,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.02),
+              blurRadius: 4,
+              offset: const Offset(0, 1),
+            ),
+          ],
         ),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
               child: Text(
                 text,
+                softWrap: true,
+                maxLines: null,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 15.sp,
                   fontWeight: FontWeight.w500,
                   color: textColor,
-                  height: 1.5,
+                  height: 1.45,
                 ),
               ),
             ),
             SizedBox(width: 12.w),
-            Padding(
-              padding: EdgeInsets.only(top: 2.h),
-              child: Icon(iconData, color: iconColor, size: 22.w),
+            Icon(
+              iconData,
+              color: iconColor,
+              size: 20.r,
             ),
           ],
         ),

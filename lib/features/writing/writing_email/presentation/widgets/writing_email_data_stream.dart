@@ -26,6 +26,8 @@ class WritingEmailDataStream extends StatelessWidget {
       }
     }
 
+    final screenWidth = MediaQuery.sizeOf(context).width;
+
     return Container(
       constraints: BoxConstraints(minHeight: 80.h),
       child: Column(
@@ -45,56 +47,78 @@ class WritingEmailDataStream extends StatelessWidget {
                       data: i,
                       feedback: Material(
                         color: Colors.transparent,
-                        child: Container(
-                          width: 280.w,
-                          padding: EdgeInsets.all(16.r),
-                          decoration: BoxDecoration(
-                            color: color,
-                            borderRadius: BorderRadius.circular(12.r),
-                            boxShadow: [
-                              BoxShadow(
-                                color: color.withValues(alpha: 0.4),
-                                blurRadius: 20,
-                              ),
-                            ],
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            maxWidth: screenWidth - 48.w,
                           ),
-                          child: Text(
-                            i,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              color: Colors.white,
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w500,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 16.w,
+                              vertical: 14.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: color,
+                              borderRadius: BorderRadius.circular(14.r),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: color.withValues(alpha: 0.35),
+                                  blurRadius: 16,
+                                  offset: const Offset(0, 4),
+                                ),
+                              ],
+                            ),
+                            child: Text(
+                              i,
+                              textAlign: TextAlign.center,
+                              softWrap: true,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                color: Colors.white,
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w500,
+                                height: 1.4,
+                              ),
                             ),
                           ),
                         ),
                       ),
                       child: Container(
-                        padding: EdgeInsets.all(16.r),
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: 14.h,
+                        ),
                         decoration: BoxDecoration(
-                          color: isDark ? Colors.black87 : Colors.white,
-                          borderRadius: BorderRadius.circular(16.r),
+                          color: isDark ? const Color(0xFF1E2230) : Colors.white,
+                          borderRadius: BorderRadius.circular(14.r),
                           border: Border.all(
-                            color: color.withValues(alpha: 0.3),
-                            width: 2,
+                            color: color.withValues(
+                              alpha: isDark ? 0.35 : 0.25,
+                            ),
+                            width: 1.5,
                           ),
                           boxShadow: [
                             BoxShadow(
                               color: color.withValues(
-                                alpha: isDark ? 0.35 : 0.15,
+                                alpha: isDark ? 0.2 : 0.06,
                               ),
-                              blurRadius: 6,
+                              blurRadius: 8,
+                              offset: const Offset(0, 2),
                             ),
                           ],
                         ),
                         child: Text(
                           i,
                           textAlign: TextAlign.center,
+                          softWrap: true,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            color: isDark ? Colors.white70 : Colors.black87,
-                            fontSize: 13.sp,
+                            color: isDark
+                                ? Colors.white.withValues(alpha: 0.95)
+                                : const Color(0xFF1E293B),
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w500,
+                            height: 1.4,
                           ),
                         ),
                       ),

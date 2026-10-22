@@ -27,21 +27,24 @@ class SentenceBuilderInstruction extends StatelessWidget {
         : baseText;
 
     return Semantics(
-      label: 'Instruction: Assemble the jigsaw of logic',
+      label: 'Instruction: $fullText',
       child: Container(
         width: double.infinity,
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         decoration: BoxDecoration(
           color: primaryColor.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+          border: Border.all(
+            color: primaryColor.withValues(alpha: 0.2),
+            width: 1.0,
+          ),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ExcludeSemantics(
               child: Icon(
-                Icons.carpenter_rounded,
+                Icons.sort_by_alpha_rounded,
                 size: 20.r,
                 color: primaryColor,
               ),
@@ -57,10 +60,14 @@ class SentenceBuilderInstruction extends StatelessWidget {
                 child: Text(
                   fullText,
                   textAlign: TextAlign.center,
+                  softWrap: true,
                   maxLines: null,
                   style: TextStyle(
-                    fontSize: 15.sp,
+                    fontFamily: 'Outfit',
+                    fontSize: 14.5.sp,
                     fontWeight: FontWeight.w600,
+                    height: 1.35,
+                    letterSpacing: 0.2,
                     color: primaryColor,
                   ),
                 ),
@@ -70,7 +77,7 @@ class SentenceBuilderInstruction extends StatelessWidget {
             // Transparent icon for perfect centering balance
             ExcludeSemantics(
               child: Icon(
-                Icons.carpenter_rounded,
+                Icons.sort_by_alpha_rounded,
                 size: 20.r,
                 color: Colors.transparent,
               ),

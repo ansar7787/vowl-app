@@ -37,15 +37,15 @@ class SummarizeStoryFrameVault extends StatelessWidget {
             feedback: Material(
               color: Colors.transparent,
               child: Container(
-                width: MediaQuery.of(context).size.width - 48.w,
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+                width: MediaQuery.of(context).size.width - 40.w,
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
                 decoration: BoxDecoration(
                   color: color,
                   borderRadius: BorderRadius.circular(16.r),
                   boxShadow: [
                     BoxShadow(
-                      color: color.withValues(alpha: 0.4),
-                      blurRadius: 10,
+                      color: color.withValues(alpha: 0.35),
+                      blurRadius: 12,
                       offset: const Offset(0, 4),
                     ),
                   ],
@@ -53,11 +53,12 @@ class SummarizeStoryFrameVault extends StatelessWidget {
                 child: Text(
                   o,
                   textAlign: TextAlign.start,
+                  softWrap: true,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     color: Colors.white,
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w600,
+                    fontSize: 14.5.sp,
+                    fontWeight: FontWeight.w500,
                     height: 1.4,
                   ),
                 ),
@@ -81,20 +82,24 @@ class SummarizeStoryFrameVault extends StatelessWidget {
   Widget _buildOptionCard(String text, BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.15 : 0.05),
+        color: color.withValues(alpha: isDark ? 0.12 : 0.05),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
+        border: Border.all(
+          color: color.withValues(alpha: 0.35),
+          width: 1.5,
+        ),
       ),
       child: Text(
         text,
         textAlign: TextAlign.start,
+        softWrap: true,
         style: TextStyle(
           fontFamily: 'Outfit',
           color: Theme.of(context).colorScheme.onSurface,
-          fontSize: 13.sp,
-          fontWeight: FontWeight.w600,
+          fontSize: 14.5.sp,
+          fontWeight: FontWeight.w500,
           height: 1.4,
         ),
       ),

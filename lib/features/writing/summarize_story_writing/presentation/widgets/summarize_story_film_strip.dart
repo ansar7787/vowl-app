@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/models/summarize_story_frame_slot.dart';
 
@@ -25,25 +26,28 @@ class SummarizeStoryFilmStrip extends StatelessWidget {
     return Column(
       children: slots.map((slot) {
         return Padding(
-          padding: EdgeInsets.only(bottom: 16.h),
+          padding: EdgeInsets.only(bottom: 14.h),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                width: 32.r,
-                height: 32.r,
+                width: 30.r,
+                height: 30.r,
                 decoration: BoxDecoration(
                   color: color.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
-                  border: Border.all(color: color.withValues(alpha: 0.3)),
+                  border: Border.all(
+                    color: color.withValues(alpha: 0.35),
+                    width: 1.5,
+                  ),
                 ),
                 child: Center(
                   child: Text(
                     "${slot.index + 1}",
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w900,
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w700,
                       color: color,
                     ),
                   ),
@@ -59,21 +63,19 @@ class SummarizeStoryFilmStrip extends StatelessWidget {
                     final isHovering = candidateData.isNotEmpty;
 
                     final slotContainer = Container(
-                      constraints: BoxConstraints(minHeight: 60.h),
+                      constraints: BoxConstraints(minHeight: 56.h),
                       padding: EdgeInsets.symmetric(
                         horizontal: 16.w,
-                        vertical: 12.h,
+                        vertical: 14.h,
                       ),
                       decoration: BoxDecoration(
                         color: text != null
-                            ? color.withValues(alpha: 0.15)
+                            ? color.withValues(alpha: 0.12)
                             : (isHovering
-                                  ? color.withValues(alpha: 0.05)
+                                  ? color.withValues(alpha: 0.06)
                                   : (isDark
-                                        ? Colors.black12
-                                        : Colors.black.withValues(
-                                            alpha: 0.02,
-                                          ))),
+                                        ? Colors.white.withValues(alpha: 0.04)
+                                        : Colors.black.withValues(alpha: 0.02))),
                         borderRadius: BorderRadius.circular(16.r),
                         border: Border.all(
                           color: text != null
@@ -83,26 +85,26 @@ class SummarizeStoryFilmStrip extends StatelessWidget {
                                     : (isDark
                                           ? Colors.white24
                                           : Colors.black12)),
-                          width: 2,
+                          width: 1.5,
                         ),
                       ),
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          text ?? "Drop event here...",
+                          text ?? "Tap or drag an event here",
                           textAlign: TextAlign.start,
+                          softWrap: true,
+                          maxLines: null,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 13.sp,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 14.5.sp,
+                            fontWeight: FontWeight.w500,
                             height: 1.4,
                             color: text != null
-                                ? (isDark
-                                      ? Colors.white
-                                      : Colors.black87)
+                                ? (isDark ? Colors.white : AppColors.slate800)
                                 : (isDark
-                                      ? Colors.white30
-                                      : Colors.black38),
+                                      ? Colors.white38
+                                      : AppColors.slate400),
                           ),
                         ),
                       ),
@@ -123,9 +125,9 @@ class SummarizeStoryFilmStrip extends StatelessWidget {
                           .animate(target: text != null ? 1 : 0)
                           .scale(
                             begin: const Offset(1, 1),
-                            end: const Offset(1.02, 1.02),
+                            end: const Offset(1.01, 1.01),
                           )
-                          .tint(color: color.withValues(alpha: 0.1)),
+                          .tint(color: color.withValues(alpha: 0.06)),
                     );
                   },
                 ),
