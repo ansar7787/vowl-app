@@ -322,7 +322,7 @@ void main() {
       expect(find.text('Where are you going?'), findsOneWidget);
       expect(find.text('CURIOUS / INQUIRING'), findsOneWidget);
       expect(find.byType(PitchPatternMatchPulseSpeaker), findsOneWidget);
-      expect(find.text('HEAR\nPATTERN'), findsOneWidget);
+      expect(find.text('LISTEN'), findsOneWidget);
       expect(find.byType(PitchPatternMatchVerticalFader), findsOneWidget);
       expect(find.text('Rising pitch (Question)'), findsOneWidget);
       expect(find.text('Falling pitch (Statement)'), findsOneWidget);
@@ -684,6 +684,88 @@ void main() {
       await tester.pump();
 
       verify(() => mockSoundService.playTts('Where are you going?')).called(1);
+    });
+
+    testWidgets('instruction text has centered text alignment and wraps cleanly without ellipsis', (tester) async {
+      const longInstructionQuest = AccentQuest(
+        id: 'ACC_PPM_LONG_INST',
+        instruction: 'Listen carefully and select the pitch pattern contour that best matches what you hear.',
+        difficulty: 1,
+        subtype: GameSubtype.pitchPatternMatch,
+        word: 'Are we almost there yet or should we stop?',
+        textToSpeak: 'Are we almost there yet or should we stop?',
+        emotionContext: 'Curious / Inquiring',
+        options: ['Rising pitch (Question)', 'Falling pitch (Statement)'],
+        correctAnswerIndex: 0,
+        pitchPatterns: [0, 1, 2, 3, 4],
+      );
+
+      await pumpPitchPatternMatch(
+        tester,
+        state: testLoadedState.copyWith(quests: [longInstructionQuest]),
+      );
+
+      final instructionWidget = tester.widget<Text>(
+        find.descendant(
+          of: find.byType(PitchPatternMatchInstruction),
+          matching: find.byType(Text),
+        ),
+      );
+      expect(instructionWidget.textAlign, equals(TextAlign.center));
+      expect(instructionWidget.maxLines, isNull);
+      expect(instructionWidget.overflow, isNot(TextOverflow.ellipsis));
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('prompt card word wraps cleanly without ellipsis or overflow', (tester) async {
+      const longSentenceQuest = AccentQuest(
+        id: 'ACC_PPM_LONG_SENT',
+        instruction: 'Listen and select the pitch pattern.',
+        difficulty: 1,
+        subtype: GameSubtype.pitchPatternMatch,
+        word: 'Could you please explain why the schedule was postponed without any prior announcement?',
+        textToSpeak: 'Could you please explain why the schedule was postponed without any prior announcement?',
+        emotionContext: 'Concerned / Questioning',
+        options: ['Rising pitch', 'Falling pitch'],
+        correctAnswerIndex: 0,
+        pitchPatterns: [0, 1, 2, 3, 4],
+      );
+
+      await pumpPitchPatternMatch(
+        tester,
+        state: testLoadedState.copyWith(quests: [longSentenceQuest]),
+      );
+
+      final wordFinder = find.text('Could you please explain why the schedule was postponed without any prior announcement?');
+      expect(wordFinder, findsOneWidget);
+      final wordWidget = tester.widget<Text>(wordFinder);
+      expect(wordWidget.maxLines, isNull);
+      expect(wordWidget.overflow, isNot(TextOverflow.ellipsis));
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('cards have standard horizontal padding and do not touch screen edges', (tester) async {
+      await pumpPitchPatternMatch(tester, width: 390);
+
+      // Verify prompt card does not touch screen edges (left >= 20, right <= 370)
+      final promptRect = tester.getRect(find.byType(PitchPatternMatchPromptCard));
+      expect(promptRect.left, greaterThanOrEqualTo(20.0));
+      expect(promptRect.right, lessThanOrEqualTo(370.0));
+
+      // Advance stage 1 to Phase 2
+      await tester.tap(find.byKey(const ValueKey('pitch_pattern_option_0')));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 600));
+
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+
+      // Verify SpeakToConfirmOverlay does not touch screen edges
+      final speakOverlayRect = tester.getRect(find.byType(SpeakToConfirmOverlay));
+      expect(speakOverlayRect.left, greaterThanOrEqualTo(20.0));
+      expect(speakOverlayRect.right, lessThanOrEqualTo(370.0));
+      expect(tester.takeException(), isNull);
     });
   });
 }

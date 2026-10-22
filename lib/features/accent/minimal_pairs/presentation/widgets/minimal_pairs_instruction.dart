@@ -13,34 +13,47 @@ class MinimalPairsInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final String text = (instruction?.trim().isNotEmpty == true)
+        ? instruction!.toUpperCase()
+        : "LISTEN AND CHOOSE WHAT YOU HEAR";
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
+        color: color.withValues(alpha: isDark ? 0.12 : 0.08),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(
+          color: color.withValues(alpha: isDark ? 0.25 : 0.18),
+          width: 1.2,
+        ),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(Icons.hearing_rounded, size: 14.r, color: color),
-          SizedBox(width: 12.w),
+          Icon(Icons.hearing_rounded, size: 16.r, color: color),
+          SizedBox(width: 8.w),
           Flexible(
             child: Text(
-              (instruction?.trim().isEmpty ?? true)
-                  ? "SELECT THE CORRECT SOUND"
-                  : instruction!.toUpperCase(),
+              text,
               textAlign: TextAlign.center,
+              softWrap: true,
               maxLines: null,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w900,
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w700,
                 color: color,
-                letterSpacing: 1.5,
+                letterSpacing: 0.8,
+                height: 1.25,
               ),
             ),
           ),
+          SizedBox(width: 8.w),
+          // Symmetrical invisible icon to guarantee true visual centering even when text wraps onto 2 lines
+          Icon(Icons.hearing_rounded, size: 16.r, color: Colors.transparent),
         ],
       ),
     );

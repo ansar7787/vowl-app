@@ -25,7 +25,7 @@ class ConsonantClarityThroatIndicator extends StatelessWidget {
     Widget waveIcon = Icon(
       Icons.graphic_eq_rounded,
       color: isVoiced ? color : Colors.grey,
-      size: 28.r,
+      size: 26.r,
     );
 
     if (!reduceMotion && isVoiced) {
@@ -40,25 +40,27 @@ class ConsonantClarityThroatIndicator extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+      constraints: BoxConstraints(maxWidth: 340.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
       decoration: BoxDecoration(
-        color: isDark
-            ? color.withValues(alpha: 0.05)
-            : color.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
+        color: color.withValues(alpha: isDark ? 0.06 : 0.05),
+        borderRadius: BorderRadius.circular(18.r),
+        border: Border.all(
+          color: color.withValues(alpha: 0.18),
+          width: 1.2,
+        ),
       ),
       child: Row(
         children: [
           // Throat / Vocal Cords Icon
           Container(
-            width: 56.r,
-            height: 56.r,
+            width: 52.r,
+            height: 52.r,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: isVoiced
-                  ? color.withValues(alpha: 0.2)
-                  : Colors.grey.withValues(alpha: 0.2),
+                  ? color.withValues(alpha: 0.18)
+                  : Colors.grey.withValues(alpha: 0.18),
             ),
             child: Stack(
               alignment: Alignment.center,
@@ -68,43 +70,57 @@ class ConsonantClarityThroatIndicator extends StatelessWidget {
                   Icon(
                     Icons.do_not_disturb_alt_rounded,
                     color: Colors.grey.withValues(alpha: 0.5),
-                    size: 40.r,
+                    size: 36.r,
                   ),
               ],
             ),
           ),
-          SizedBox(width: 16.w),
+          SizedBox(width: 14.w),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
-                  "VOCAL CORDS",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w800,
-                    color: color,
-                    letterSpacing: 1.5,
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "VOCAL CORDS",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w700,
+                      color: color,
+                      letterSpacing: 1.2,
+                    ),
                   ),
                 ),
-                SizedBox(height: 4.h),
-                Text(
-                  isVoiced ? "Vibrating (Voiced)" : "Still (Voiceless)",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onSurface,
+                SizedBox(height: 3.h),
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    isVoiced ? "Vibrating (Voiced)" : "Still (Voiceless)",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w700,
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
                   ),
                 ),
                 SizedBox(height: 2.h),
-                Text(
-                  "Airflow: ${airflow.toUpperCase()}",
-                  style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontSize: 12.sp,
-                    color: isDark ? Colors.white70 : Colors.black54,
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Airflow: ${airflow.toUpperCase()}",
+                    style: TextStyle(
+                      fontFamily: 'Inter',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w500,
+                      color: isDark ? Colors.white70 : Colors.black54,
+                    ),
                   ),
                 ),
               ],

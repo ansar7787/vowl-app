@@ -13,28 +13,32 @@ class ShadowingChallengeInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final displayText = instruction.trim().isEmpty
+        ? "Listen carefully and shadow the speaker phrase."
+        : instruction.trim();
+
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 8.h),
+      constraints: BoxConstraints(maxWidth: 360.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
+        color: color.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(color: color.withValues(alpha: 0.2), width: 1),
       ),
       child: Text(
-        instruction.trim().isEmpty
-            ? "IDENTIFY THE PRONUNCIATION"
-            : instruction.toUpperCase(),
+        displayText,
         textAlign: TextAlign.center,
         softWrap: true,
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 12.sp,
-          fontWeight: FontWeight.w700,
+          fontSize: 13.sp,
+          fontWeight: FontWeight.w600,
           color: color,
-          letterSpacing: 1.0,
-          height: 1.35,
+          letterSpacing: 0.2,
+          height: 1.4,
         ),
       ),
     );
   }
 }
+

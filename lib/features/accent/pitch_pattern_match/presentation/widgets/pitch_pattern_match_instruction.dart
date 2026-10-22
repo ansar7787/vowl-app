@@ -13,31 +13,36 @@ class PitchPatternMatchInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final text = instruction.trim().isEmpty
+        ? "MATCH THE PITCH PATTERN"
+        : instruction.toUpperCase();
+
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: color.withValues(alpha: 0.25), width: 1.2),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(Icons.music_note_rounded, size: 14.r, color: color),
-          SizedBox(width: 12.w),
+          Icon(Icons.graphic_eq_rounded, size: 16.r, color: color),
+          SizedBox(width: 8.w),
           Flexible(
             child: Text(
-              instruction.trim().isEmpty
-                  ? "IDENTIFY THE EMPHASIS"
-                  : instruction.toUpperCase(),
+              text,
               textAlign: TextAlign.center,
               maxLines: null,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 8.sp,
-                fontWeight: FontWeight.w900,
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w700,
                 color: color,
-                letterSpacing: 1.5,
+                letterSpacing: 0.5,
+                height: 1.3,
               ),
             ),
           ),

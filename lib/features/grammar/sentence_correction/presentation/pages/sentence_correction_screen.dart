@@ -191,10 +191,6 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
       _scrollToBottom();
       // Wait for Phase 2
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
       submitWrongAnswer(quest: quest, userAnswer: '');
     }
   }
@@ -202,16 +198,9 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
   void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<GrammarBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
       submitWrongAnswer(quest: quest, userAnswer: '');
     }
   }
@@ -220,12 +209,12 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
   void onQuestionReset() {
     _scrollTimer?.cancel();
     _selectedWordIndex.value = null;
-
     _selectedOption.value = null;
-
     _wordSelectionCorrect.value = null;
-
     _optionSelectionCorrect.value = null;
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0.0);
+    }
   }
 
   @override

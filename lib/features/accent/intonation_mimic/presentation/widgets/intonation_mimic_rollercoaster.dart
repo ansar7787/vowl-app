@@ -25,15 +25,19 @@ class IntonationMimicRollercoaster extends StatelessWidget {
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     return Container(
-      width: 342.w,
-      height: 70.h,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+      width: double.infinity,
+      constraints: BoxConstraints(maxWidth: 400.w),
+      height: 74.h,
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: isDark
-            ? Colors.white.withValues(alpha: 0.02)
-            : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
+            ? Colors.white.withValues(alpha: 0.04)
+            : color.withValues(alpha: 0.04),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: color.withValues(alpha: isDark ? 0.2 : 0.15),
+          width: 1.2,
+        ),
       ),
       child: LayoutBuilder(
         builder: (context, constraints) {

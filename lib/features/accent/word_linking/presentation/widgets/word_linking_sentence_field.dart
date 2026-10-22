@@ -1,8 +1,8 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 class WordLinkingSentenceField extends StatefulWidget {
@@ -68,31 +68,48 @@ class _WordLinkingSentenceFieldState extends State<WordLinkingSentenceField> {
     return Container(
       key: const ValueKey('word_linking_sentence_field'),
       width: double.infinity,
-      clipBehavior: Clip.hardEdge,
+      constraints: BoxConstraints(maxWidth: 500.w),
       decoration: BoxDecoration(
         color: widget.isDark
-            ? Colors.white.withValues(alpha: 0.02)
-            : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(24.r),
+            ? AppColors.slate800.withValues(alpha: 0.5)
+            : AppColors.white,
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: widget.isDark ? Colors.white10 : Colors.black12,
+          color: widget.isDark
+              ? AppColors.slate700.withValues(alpha: 0.8)
+              : AppColors.slate200,
+          width: 1.5,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: widget.isDark
+                ? Colors.black.withValues(alpha: 0.2)
+                : Colors.black.withValues(alpha: 0.04),
+            blurRadius: 10,
+            offset: const Offset(0, 3),
+          ),
+        ],
       ),
-      child: RawScrollbar(
-        controller: _scrollController,
-        thumbVisibility: true,
-        thumbColor: widget.color.withValues(alpha: 0.4),
-        radius: Radius.circular(8.r),
-        thickness: 4.h,
-        child: SingleChildScrollView(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.r),
+        child: RawScrollbar(
           controller: _scrollController,
-          scrollDirection: Axis.horizontal,
-          physics: const BouncingScrollPhysics(),
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: children,
+          thumbVisibility: true,
+          thumbColor: widget.color.withValues(alpha: 0.35),
+          radius: Radius.circular(8.r),
+          thickness: 3.h,
+          child: Center(
+            child: SingleChildScrollView(
+              controller: _scrollController,
+              scrollDirection: Axis.horizontal,
+              physics: const BouncingScrollPhysics(),
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: children,
+              ),
+            ),
           ),
         ),
       ),
@@ -101,20 +118,27 @@ class _WordLinkingSentenceFieldState extends State<WordLinkingSentenceField> {
 
   Widget _buildWordChip(String word, Color color, bool isDark) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       decoration: BoxDecoration(
         color: isDark
-            ? Colors.white.withValues(alpha: 0.05)
-            : Colors.black.withValues(alpha: 0.03),
-        borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(color: color.withValues(alpha: 0.15)),
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate50,
+        borderRadius: BorderRadius.circular(14.r),
+        border: Border.all(
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.12)
+              : AppColors.slate200,
+          width: 1.5,
+        ),
       ),
       child: Text(
         word.toUpperCase(),
+        softWrap: false,
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 18.sp,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w600,
+          letterSpacing: 0.5,
           color: Theme.of(context).colorScheme.onSurface,
         ),
       ),
@@ -194,22 +218,25 @@ class _WordLinkingSentenceFieldState extends State<WordLinkingSentenceField> {
                           final badge = Container(
                             padding: EdgeInsets.symmetric(
                               horizontal: 8.w,
-                              vertical: 4.h,
+                              vertical: 3.h,
                             ),
                             decoration: BoxDecoration(
                               color: nodeColor.withValues(alpha: 0.15),
-                              borderRadius: BorderRadius.circular(8.r),
+                              borderRadius: BorderRadius.circular(6.r),
                               border: Border.all(
-                                color: nodeColor.withValues(alpha: 0.3),
+                                color: nodeColor.withValues(alpha: 0.35),
+                                width: 1.2,
                               ),
                             ),
                             child: Text(
                               _formatLinkingType(widget.linkingType!),
+                              softWrap: false,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w800,
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w600,
                                 color: nodeColor,
+                                letterSpacing: 0.3,
                               ),
                             ),
                           );
@@ -243,7 +270,7 @@ class _WordLinkingSentenceFieldState extends State<WordLinkingSentenceField> {
           )
           .scale(
             begin: const Offset(1, 1),
-            end: const Offset(1.1, 1.1),
+            end: const Offset(1.08, 1.08),
             duration: 1.seconds,
             curve: Curves.easeInOut,
           );
@@ -267,7 +294,7 @@ class _WordLinkingSentenceFieldState extends State<WordLinkingSentenceField> {
       case 'consonant_to_consonant':
         return 'C → C';
       default:
-        return 'LINK';
+        return 'Link';
     }
   }
 }

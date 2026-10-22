@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
 class ShadowingChallengePromptCard extends StatelessWidget {
   final String word;
@@ -20,74 +19,74 @@ class ShadowingChallengePromptCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 20.w),
+      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 18.w),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-        borderRadius: BorderRadius.circular(20.r),
+        color: isDark
+            ? color.withValues(alpha: 0.06)
+            : color.withValues(alpha: 0.04),
+        borderRadius: BorderRadius.circular(18.r),
         border: Border.all(
-          color: isDark ? Colors.white12 : Colors.black12,
-          width: 1.5,
+          color: color.withValues(alpha: 0.18),
+          width: 1,
         ),
       ),
-      child: Stack(
-        children: [
-          const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
-          Center(
-            child: Column(
-              children: [
-                Text(
-                  "TARGET PHRASE",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w700,
-                    color: color,
-                    letterSpacing: 1.2,
-                  ),
-                ),
-                SizedBox(height: 8.h),
-                Text(
-                  word,
-                  textAlign: TextAlign.center,
-                  softWrap: true,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.w700,
-                    color: Theme.of(context).colorScheme.onSurface,
-                    letterSpacing: 0.5,
-                    height: 1.35,
-                  ),
-                ),
-                if (ipa.isNotEmpty) ...[
-                  SizedBox(height: 8.h),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 12.w,
-                      vertical: 4.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: isDark
-                          ? Colors.white10
-                          : Colors.black.withValues(alpha: 0.05),
-                      borderRadius: BorderRadius.circular(10.r),
-                    ),
-                    child: Text(
-                      ipa,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w600,
-                        color: color,
-                      ),
-                    ),
-                  ),
-                ],
-              ],
+      child: Center(
+        child: Column(
+          children: [
+            Text(
+              "Practice Phrase",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w600,
+                color: color,
+                letterSpacing: 0.3,
+              ),
             ),
-          ),
-        ],
+            SizedBox(height: 8.h),
+            Text(
+              word,
+              textAlign: TextAlign.center,
+              softWrap: true,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w600,
+                color: Theme.of(context).colorScheme.onSurface,
+                height: 1.4,
+              ),
+            ),
+            if (ipa.isNotEmpty) ...[
+              SizedBox(height: 8.h),
+              Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 12.w,
+                  vertical: 4.h,
+                ),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: isDark ? 0.12 : 0.08),
+                  borderRadius: BorderRadius.circular(10.r),
+                  border: Border.all(
+                    color: color.withValues(alpha: 0.15),
+                    width: 1,
+                  ),
+                ),
+                child: Text(
+                  ipa,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w500,
+                    color: color,
+                    letterSpacing: 0.3,
+                  ),
+                ),
+              ),
+            ],
+          ],
+        ),
       ),
     );
   }
 }
+

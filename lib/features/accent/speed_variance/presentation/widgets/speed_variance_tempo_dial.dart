@@ -1,8 +1,8 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 class SpeedVarianceTempoDial extends StatelessWidget {
@@ -36,23 +36,32 @@ class SpeedVarianceTempoDial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         _buildChromeDial(correctIndex, color, isDark),
-        SizedBox(height: 24.h),
+        SizedBox(height: 18.h),
         Text(
-          isDragging ? "MAINTAINING SPEED..." : "ROTATE DIAL OR TAP PREFERENCE",
+          isDragging ? "Release to select" : "Turn dial or tap your answer",
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 10.sp,
-            fontWeight: FontWeight.bold,
-            color: color.withValues(alpha: 0.8),
-            letterSpacing: 1,
+            fontSize: 12.sp,
+            fontWeight: FontWeight.w600,
+            color: color.withValues(alpha: 0.85),
+            letterSpacing: 0.3,
           ),
         ),
-        SizedBox(height: 24.h),
-        _buildConnectedSpeechOrb(context, options[0], 0, correctIndex, color, isDark),
+        SizedBox(height: 16.h),
+        _buildOptionCard(
+          context,
+          options.isNotEmpty ? options[0] : '',
+          0,
+          correctIndex,
+          color,
+          isDark,
+        ),
         SizedBox(height: 12.h),
-        _buildConnectedSpeechOrb(
+        _buildOptionCard(
           context,
           options.length > 1 ? options[1] : '',
           1,
@@ -74,8 +83,8 @@ class SpeedVarianceTempoDial extends StatelessWidget {
         child: Transform.rotate(
           angle: dialRotation,
           child: Container(
-            width: 100.r,
-            height: 100.r,
+            width: 96.r,
+            height: 96.r,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               gradient: RadialGradient(
@@ -84,23 +93,26 @@ class SpeedVarianceTempoDial extends StatelessWidget {
                   isDark ? Colors.black : Colors.grey.shade400,
                 ],
               ),
-              boxShadow: const [
+              boxShadow: [
                 BoxShadow(
-                  color: Colors.black54,
+                  color: Colors.black.withValues(alpha: 0.35),
                   blurRadius: 10,
-                  offset: Offset(3, 3),
+                  offset: const Offset(0, 4),
                 ),
               ],
-              border: Border.all(color: color.withValues(alpha: 0.3), width: 3),
+              border: Border.all(
+                color: color.withValues(alpha: 0.3),
+                width: 2.5,
+              ),
             ),
             child: Center(
               child: Container(
-                width: 10.r,
-                height: 45.r,
-                margin: EdgeInsets.only(bottom: 45.r),
+                width: 8.r,
+                height: 42.r,
+                margin: EdgeInsets.only(bottom: 42.r),
                 decoration: BoxDecoration(
                   color: color,
-                  borderRadius: BorderRadius.circular(5.r),
+                  borderRadius: BorderRadius.circular(4.r),
                   boxShadow: [
                     BoxShadow(
                       color: color.withValues(alpha: 0.4),
@@ -116,7 +128,7 @@ class SpeedVarianceTempoDial extends StatelessWidget {
     );
   }
 
-  Widget _buildConnectedSpeechOrb(
+  Widget _buildOptionCard(
     BuildContext context,
     String text,
     int index,
@@ -129,20 +141,23 @@ class SpeedVarianceTempoDial extends StatelessWidget {
     final bool isSelected = selectedIndex == index;
     final bool correct = index == correctIndex;
 
-    Color orbColor = color.withValues(alpha: 0.1);
+    Color cardBg = color.withValues(alpha: isDark ? 0.06 : 0.08);
     Color textColor = color;
     Color descColor = isDark ? Colors.white70 : Colors.black87;
+    Color borderColor = color.withValues(alpha: isSelected ? 1.0 : (isDark ? 0.2 : 0.25));
 
     if (isAnswered && isSelected) {
-      orbColor = correct
-          ? AppColors.gameCorrect.withValues(alpha: 0.2)
-          : AppColors.gameIncorrect.withValues(alpha: 0.2);
+      cardBg = correct
+          ? AppColors.gameCorrect.withValues(alpha: 0.16)
+          : AppColors.gameIncorrect.withValues(alpha: 0.16);
       textColor = correct ? AppColors.gameCorrect : AppColors.gameIncorrect;
+      borderColor = textColor;
       descColor = textColor.withValues(alpha: 0.9);
     } else if (isSelected) {
-      orbColor = color;
+      cardBg = color;
       textColor = Colors.white;
       descColor = Colors.white.withValues(alpha: 0.9);
+      borderColor = color;
     }
 
     String title = text;
@@ -157,87 +172,94 @@ class SpeedVarianceTempoDial extends StatelessWidget {
     }
 
     final shouldReduce = VowlMotion.shouldReduceMotion(context);
-    Widget orbContent = AnimatedContainer(
-      duration: const Duration(milliseconds: 200),
-      alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+    Widget cardContent = Container(
+      width: double.infinity,
+      constraints: BoxConstraints(maxWidth: 420.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
       decoration: BoxDecoration(
-        color: orbColor,
-        borderRadius: BorderRadius.circular(20.r),
+        color: cardBg,
+        borderRadius: BorderRadius.circular(18.r),
         border: Border.all(
-          color: isAnswered && isSelected
-              ? textColor
-              : color.withValues(alpha: isSelected ? 1.0 : 0.3),
-          width: 3,
+          color: borderColor,
+          width: isSelected ? 2.0 : 1.5,
         ),
         boxShadow: [
-          BoxShadow(
-            color: isSelected
-                ? (correct
-                      ? AppColors.gameCorrect.withValues(alpha: 0.3)
-                      : color.withValues(alpha: 0.3))
-                : Colors.transparent,
-            blurRadius: 15,
-          ),
+          if (isSelected)
+            BoxShadow(
+              color: correct
+                  ? AppColors.gameCorrect.withValues(alpha: 0.25)
+                  : color.withValues(alpha: 0.25),
+              blurRadius: 14,
+              offset: const Offset(0, 3),
+            ),
         ],
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          if (index == 0) ...[
-            Icon(Icons.rotate_left, color: textColor, size: 28.r),
-            SizedBox(width: 16.w),
-          ],
+          Container(
+            width: 38.r,
+            height: 38.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: isSelected
+                  ? Colors.white.withValues(alpha: 0.2)
+                  : color.withValues(alpha: 0.12),
+            ),
+            child: Icon(
+              index == 0 ? Icons.rotate_left_rounded : Icons.rotate_right_rounded,
+              color: textColor,
+              size: 22.r,
+            ),
+          ),
+          SizedBox(width: 14.w),
           Expanded(
             child: Column(
-              crossAxisAlignment: index == 0
-                  ? CrossAxisAlignment.start
-                  : CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   title,
-                  textAlign: index == 0
-                      ? TextAlign.left
-                      : TextAlign.right,
+                  softWrap: true,
+                  maxLines: null,
+                  overflow: TextOverflow.clip,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w600,
                     color: textColor,
+                    letterSpacing: 0.2,
                   ),
                 ),
                 if (description.isNotEmpty) ...[
-                  SizedBox(height: 6.h),
+                  SizedBox(height: 4.h),
                   Text(
                     description,
-                    textAlign: index == 0
-                        ? TextAlign.left
-                        : TextAlign.right,
+                    softWrap: true,
+                    maxLines: null,
+                    overflow: TextOverflow.clip,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w500,
+                      fontSize: 12.5.sp,
+                      fontWeight: FontWeight.w400,
                       color: descColor,
-                      height: 1.4,
+                      height: 1.35,
                     ),
                   ),
                 ],
               ],
             ),
           ),
-          if (index == 1) ...[
-            SizedBox(width: 16.w),
-            Icon(Icons.rotate_right, color: textColor, size: 28.r),
-          ],
         ],
       ),
     );
 
     if (!shouldReduce) {
-      orbContent = orbContent
+      cardContent = cardContent
           .animate(onPlay: (c) => c.repeat(reverse: true))
           .scale(
             begin: const Offset(1, 1),
-            end: const Offset(1.02, 1.02),
+            end: const Offset(1.015, 1.015),
             duration: (2 + index).seconds,
           );
     }
@@ -245,7 +267,7 @@ class SpeedVarianceTempoDial extends StatelessWidget {
     return ScaleButton(
       key: ValueKey('speed_variance_option_$index'),
       onTap: () => onSubmitChoice(index, correctIndex),
-      child: orbContent,
+      child: cardContent,
     );
   }
 }

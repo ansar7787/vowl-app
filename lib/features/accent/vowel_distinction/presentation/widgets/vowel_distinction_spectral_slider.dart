@@ -43,7 +43,7 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
             _buildVowelOrb(context, options[1], 1, correctIndex, color, isDark),
           ],
         ),
-        SizedBox(height: 32.h),
+        SizedBox(height: 28.h),
         _buildSliderBar(correctIndex, color),
       ],
     );
@@ -61,7 +61,7 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
     final bool correct = index == correctIndex;
     final bool reduceMotion = VowlMotion.shouldReduceMotion(context);
 
-    Color orbColor = color.withValues(alpha: 0.1);
+    Color orbColor = color.withValues(alpha: 0.08);
     Color textColor = color;
     if (isAnswered && isSelected) {
       orbColor = correct
@@ -74,8 +74,8 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
     }
 
     final orbWidget = Container(
-      width: 100.r,
-      height: 100.r,
+      width: 96.r,
+      height: 96.r,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: orbColor,
@@ -83,27 +83,34 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
           color: isAnswered && isSelected
               ? textColor
               : color.withValues(alpha: isSelected ? 1.0 : 0.3),
-          width: 3,
+          width: 2.5,
         ),
         boxShadow: [
           BoxShadow(
             color: isSelected
                 ? (correct
-                      ? AppColors.gameCorrect.withValues(alpha: 0.3)
-                      : color.withValues(alpha: 0.3))
+                      ? AppColors.gameCorrect.withValues(alpha: 0.25)
+                      : color.withValues(alpha: 0.25))
                 : Colors.transparent,
-            blurRadius: 15,
+            blurRadius: 14,
           ),
         ],
       ),
       child: Center(
-        child: Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 20.sp,
-            fontWeight: FontWeight.bold,
-            color: textColor,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8.w),
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              text,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 22.sp,
+                fontWeight: FontWeight.w600,
+                color: textColor,
+              ),
+            ),
           ),
         ),
       ),
@@ -132,17 +139,17 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
   Widget _buildSliderBar(int correct, Color color) {
     return Semantics(
       label:
-          'Spectral Slider to select vowel. Slide left for ${options[0]}, right for ${options[1]}',
+          'Slider to select vowel. Slide left for ${options[0]}, right for ${options[1]}',
       slider: true,
       value: (sliderValue * 100).round().toString(),
       child: SliderTheme(
         data: SliderThemeData(
           activeTrackColor: color,
-          inactiveTrackColor: color.withValues(alpha: 0.1),
+          inactiveTrackColor: color.withValues(alpha: 0.15),
           thumbColor: color,
           overlayColor: color.withValues(alpha: 0.2),
-          trackHeight: 10.h,
-          thumbShape: RoundSliderThumbShape(enabledThumbRadius: 16.r),
+          trackHeight: 8.h,
+          thumbShape: RoundSliderThumbShape(enabledThumbRadius: 14.r),
         ),
         child: Slider(
           key: const ValueKey('vowel_spectral_slider'),

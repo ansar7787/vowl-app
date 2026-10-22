@@ -19,23 +19,28 @@ class WordLinkingPulseSpeaker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
-    final icon = Icon(Icons.graphic_eq_rounded, color: color, size: 32.r);
+    final icon = Icon(Icons.volume_up_rounded, color: color, size: 28.r);
 
     return ScaleButton(
       key: const ValueKey('word_linking_pulse_speaker_btn'),
       onTap: () => onPlayTts(text),
       child: Column(
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            width: 72.r,
-            height: 72.r,
+            width: 64.r,
+            height: 64.r,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: color.withValues(alpha: 0.1),
-              border: Border.all(color: color, width: 3),
+              border: Border.all(color: color.withValues(alpha: 0.4), width: 2),
               boxShadow: [
-                BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 20),
+                BoxShadow(
+                  color: color.withValues(alpha: 0.15),
+                  blurRadius: 12,
+                  offset: const Offset(0, 3),
+                ),
               ],
             ),
             child: Center(
@@ -45,20 +50,22 @@ class WordLinkingPulseSpeaker extends StatelessWidget {
                         .animate(onPlay: (c) => c.repeat(reverse: true))
                         .scale(
                           begin: const Offset(1, 1),
-                          end: const Offset(1.2, 1.2),
+                          end: const Offset(1.1, 1.1),
+                          duration: const Duration(milliseconds: 900),
                         ),
             ),
           ),
-          SizedBox(height: 12.h),
+          SizedBox(height: 8.h),
           Text(
-            "HEAR LINKING",
+            "Tap to listen",
             textAlign: TextAlign.center,
+            softWrap: true,
             style: TextStyle(
               fontFamily: 'Outfit',
               color: color,
-              fontSize: 11.sp,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 1.5,
+              fontSize: 13.sp,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 0.2,
             ),
           ),
         ],

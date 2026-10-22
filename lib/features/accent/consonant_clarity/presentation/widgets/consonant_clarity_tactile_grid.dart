@@ -27,7 +27,7 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // If only 2 options, we can put them in a row. If more, wrap them.
+    // If 2 or fewer options, arrange in a balanced row; otherwise wrap
     final bool useRow = options.length <= 2;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
@@ -37,14 +37,14 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 _buildKeycap(options[0], 0, reduceMotion),
-                SizedBox(width: 40.w),
+                SizedBox(width: 24.w),
                 _buildKeycap(options[1], 1, reduceMotion),
               ],
             )
           : Wrap(
               alignment: WrapAlignment.center,
-              spacing: 24.w,
-              runSpacing: 24.h,
+              spacing: 20.w,
+              runSpacing: 20.h,
               children: List.generate(
                 options.length,
                 (index) => _buildKeycap(options[index], index, reduceMotion),
@@ -60,10 +60,10 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
 
     // Default neutral styling for glassmorphic keycap
     Color capColor = isDark
-        ? AppColors.slate800.withValues(alpha: 0.8)
-        : Colors.white.withValues(alpha: 0.9);
-    Color borderColor = color.withValues(alpha: 0.3);
-    Color textColor = isDark ? Colors.white70 : Colors.black87;
+        ? AppColors.slate800.withValues(alpha: 0.85)
+        : Colors.white.withValues(alpha: 0.95);
+    Color borderColor = color.withValues(alpha: 0.25);
+    Color textColor = isDark ? Colors.white.withValues(alpha: 0.9) : AppColors.slate900;
 
     // Styling when selected / locked in
     if (showResult) {
@@ -73,7 +73,7 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
       borderColor = isCorrect ? AppColors.emerald500 : AppColors.rose700;
       textColor = isCorrect ? AppColors.emerald500 : AppColors.rose700;
     } else if (isSelected) {
-      capColor = color.withValues(alpha: 0.2);
+      capColor = color.withValues(alpha: 0.18);
       borderColor = color;
       textColor = color;
     }
@@ -86,38 +86,48 @@ class ConsonantClarityTactileGrid extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 150),
         curve: Curves.easeOutCubic,
-        width: 100.r,
-        height: 100.r,
+        width: 92.r,
+        height: 92.r,
         margin: EdgeInsets.only(
-          top: isSelected ? 6.r : 0.r,
-        ), // Physical push down effect
+          top: isSelected ? 4.r : 0.r,
+        ), // Tactile press displacement
         decoration: BoxDecoration(
           color: capColor,
-          borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(color: borderColor, width: isSelected ? 3.0 : 1.5),
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: borderColor,
+            width: isSelected ? 2.5 : 1.5,
+          ),
           boxShadow: [
             if (!isSelected)
               BoxShadow(
                 color: isDark ? Colors.black45 : Colors.black12,
-                offset: const Offset(0, 8),
-                blurRadius: 10,
+                offset: const Offset(0, 6),
+                blurRadius: 8,
               ),
             if (showResult)
               BoxShadow(
                 color: borderColor.withValues(alpha: 0.3),
-                blurRadius: 20,
-                spreadRadius: 2,
+                blurRadius: 16,
+                spreadRadius: 1,
               ),
           ],
         ),
         child: Center(
-          child: Text(
-            text,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 32.sp,
-              fontWeight: FontWeight.w900,
-              color: textColor,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                text,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 28.sp,
+                  fontWeight: FontWeight.w700,
+                  color: textColor,
+                ),
+              ),
             ),
           ),
         ),

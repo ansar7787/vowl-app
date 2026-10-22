@@ -13,32 +13,44 @@ class PitchModulationInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final text = instruction.trim().isEmpty
+        ? "Listen and choose the meaning that matches the pitch."
+        : instruction.trim();
+
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
+        color: color.withValues(alpha: isDark ? 0.12 : 0.08),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: color.withValues(alpha: isDark ? 0.25 : 0.18),
+          width: 1.5,
+        ),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(Icons.settings_voice_rounded, size: 14.r, color: color),
-          SizedBox(width: 12.w),
-          Flexible(
+          Icon(
+            Icons.record_voice_over_rounded,
+            size: 18.r,
+            color: color,
+          ),
+          SizedBox(width: 10.w),
+          Expanded(
             child: Text(
-              instruction.trim().isEmpty
-                  ? "IDENTIFY THE PITCH"
-                  : instruction.toUpperCase(),
+              text,
               textAlign: TextAlign.center,
-              maxLines: null,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w800,
-                color: color,
-                letterSpacing: 1.0,
-                height: 1.2,
+                fontSize: 13.5.sp,
+                fontWeight: FontWeight.w600,
+                color: isDark ? Colors.white : color,
+                letterSpacing: 0.2,
+                height: 1.35,
               ),
             ),
           ),

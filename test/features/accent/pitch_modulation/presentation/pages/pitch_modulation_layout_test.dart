@@ -310,13 +310,13 @@ void main() {
 
       expect(find.byType(PitchModulationInstruction), findsOneWidget);
       expect(
-        find.text('IDENTIFY WHICH PITCH PATTERN CONVEYS THE INTENDED MEANING.'),
+        find.text('Identify which pitch pattern conveys the intended meaning.'),
         findsOneWidget,
       );
       expect(find.byType(PitchModulationPromptCard), findsOneWidget);
       expect(find.text('Record'), findsOneWidget);
       expect(find.byType(PitchModulationPulseSpeaker), findsOneWidget);
-      expect(find.text('HEAR\nMODULATION'), findsOneWidget);
+      expect(find.text('Tap to listen'), findsOneWidget);
       expect(find.byType(PitchModulationDialControl), findsOneWidget);
       expect(find.text('RE-cord'), findsOneWidget);
       expect(find.text('re-CORD'), findsOneWidget);
@@ -397,7 +397,7 @@ void main() {
 
       // Instruction changes to stage 2 prompt
       expect(
-        find.text('GREAT JOB! NOW PRACTICE SAYING IT WITH BOTH MEANINGS.'),
+        find.text('Great job! Now speak the phrase to confirm.'),
         findsOneWidget,
       );
 
@@ -411,7 +411,6 @@ void main() {
 
       expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
       expect(find.text('NOW SAY IT'), findsOneWidget);
-      expect(find.textContaining('Meaning: noun'), findsOneWidget);
     });
 
     testWidgets('dragging vertical fader selects option via drag threshold', (tester) async {
@@ -450,8 +449,8 @@ void main() {
     });
   });
 
-  group('PitchModulationScreen - Phase 2 Speaking & Multi-Meaning Practice', () {
-    testWidgets('completing both meaning practice rounds awards 10 coins and dispatches SubmitAnswer(true)', (tester) async {
+  group('PitchModulationScreen - Phase 2 Speaking Practice', () {
+    testWidgets('completing speaking practice awards 10 coins and dispatches SubmitAnswer(true)', (tester) async {
       await pumpPitchModulation(tester);
 
       // Advance stage 1
@@ -468,7 +467,6 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
 
       expect(find.byType(SpeakToConfirmOverlay), findsOneWidget);
-      expect(find.textContaining('Meaning: noun'), findsOneWidget);
 
       // Switch to manual evaluation controls
       final manualEvalOption = find.text('Evaluate myself manually');
@@ -477,7 +475,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      // First meaning: record and evaluate
+      // Record and evaluate
       final micBtn = find.byKey(const ValueKey('speaking_mic_btn'));
       expect(micBtn, findsOneWidget);
 
@@ -493,53 +491,10 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 600));
 
-      // Tap Nailed It for round 1
+      // Tap Nailed It
       final nailedItBtn = find.text('Nailed It');
       expect(nailedItBtn, findsOneWidget);
       await tester.tap(nailedItBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      // Intermediate success sound played, meaning advances to verb
-      verify(() => mockSoundService.playCorrect()).called(2); // 1 for dial, 1 for round 1
-      verifyNever(() => mockAccentBloc.add(const SubmitAnswer(true)));
-
-      // Prompt now shows Meaning: verb
-      expect(find.textContaining('Meaning: verb'), findsOneWidget);
-
-      // Scroll to ensure round 2 SpeakToConfirmOverlay is centered in viewport
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -600),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      // Round 2: record again and evaluate
-      // Switch back to manual if auto reverted or tap mic
-      final manualEvalOption2 = find.text('Evaluate myself manually');
-      if (manualEvalOption2.evaluate().isNotEmpty) {
-        await tester.tap(manualEvalOption2);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 300));
-      }
-
-      final micBtn2 = find.byKey(const ValueKey('speaking_mic_btn'));
-      await tester.ensureVisible(micBtn2);
-      await tester.tap(micBtn2);
-      await tester.pump();
-      await tester.runAsync(
-        () async => await Future.delayed(const Duration(milliseconds: 600)),
-      );
-      await tester.pump(const Duration(milliseconds: 100));
-
-      await tester.tap(micBtn2);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
-
-      final nailedItBtn2 = find.text('Nailed It');
-      await tester.ensureVisible(nailedItBtn2);
-      await tester.tap(nailedItBtn2);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 

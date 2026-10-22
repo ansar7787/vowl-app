@@ -61,7 +61,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
     _scrollTimer?.cancel();
     _scrollController.dispose();
     _selectedIndex.dispose();
-        try {
+    try {
       soundService.stopTts();
     } catch (_) {}
     disposeAccentGame();
@@ -154,7 +154,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
 
         return MediaQuery(
           data: mediaQuery.copyWith(
-            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
+            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.15),
           ),
           child: ListenableBuilder(
             listenable: Listenable.merge([
@@ -180,36 +180,36 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                     : LayoutBuilder(
                         builder: (context, constraints) {
                           final maxHeight = constraints.maxHeight;
-                          final bool isCompact = maxHeight < 580;
+                          final bool isCompact = maxHeight < 600;
 
                           // Estimated content height in ScreenUtil units
                           final double estimatedContentHeight =
-                              24.h +
-                              (isCompact ? 90.h : 120.h) +
-                              100.h +
-                              (isCompact ? 130.h : 172.h);
+                              (isCompact ? 34.h : 40.h) +
+                              (isCompact ? 95.h : 115.h) +
+                              (isCompact ? 72.r : 80.r) +
+                              (isCompact ? 115.h : 135.h);
                           final remainingHeight =
                               maxHeight - estimatedContentHeight;
 
                           // Dynamic layout spacers based on remaining height
                           final double gapUnit = remainingHeight > 0
-                              ? remainingHeight / 8
+                              ? remainingHeight / 7
                               : 0;
                           final double gapTop = remainingHeight > 0
-                              ? (gapUnit * 1).clamp(8.0, 24.0)
+                              ? (gapUnit * 0.7).clamp(8.0, 16.0)
                               : 8.0;
                           final double gapInstruction = remainingHeight > 0
-                              ? (gapUnit * 1).clamp(8.0, 24.0)
+                              ? (gapUnit * 0.7).clamp(8.0, 16.0)
                               : 8.0;
                           final double gapPrompt = remainingHeight > 0
-                              ? (gapUnit * 1.5).clamp(12.0, 32.0)
-                              : 12.0;
+                              ? (gapUnit * 0.9).clamp(10.0, 20.0)
+                              : 10.0;
                           final double gapSpeaker = remainingHeight > 0
-                              ? (gapUnit * 2).clamp(16.0, 48.0)
-                              : 16.0;
+                              ? (gapUnit * 0.9).clamp(10.0, 20.0)
+                              : 10.0;
                           final double gapBottom = remainingHeight > 0
-                              ? (gapUnit * 1).clamp(12.0, 40.0)
-                              : 12.0;
+                              ? (gapUnit * 0.8).clamp(8.0, 18.0)
+                              : 8.0;
 
                           return RawScrollbar(
                             controller: _scrollController,
@@ -220,24 +220,23 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                             thickness: 4.w,
                             child: CustomScrollView(
                               controller: _scrollController,
-                              physics:
-                                  (!isFirstStagePassedNotifier.value &&
-                                      remainingHeight >= 0)
-                                  ? const NeverScrollableScrollPhysics()
-                                  : const BouncingScrollPhysics(),
+                              physics: const BouncingScrollPhysics(),
                               slivers: [
                                 SliverToBoxAdapter(
                                   child: IgnorePointer(
                                     ignoring: isFirstStagePassedNotifier.value,
                                     child: ConstrainedBox(
                                       constraints: BoxConstraints(
-                                        minHeight: constraints.maxHeight,
+                                        minHeight:
+                                            isFirstStagePassedNotifier.value
+                                                ? 0
+                                                : constraints.maxHeight,
                                       ),
                                       child: Column(
                                         children: [
                                           Padding(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
+                                              horizontal: 20.w,
                                             ),
                                             child: Column(
                                               mainAxisAlignment:
@@ -253,9 +252,11 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                                                           theme.primaryColor,
                                                       instruction:
                                                           isFirstStagePassedNotifier
-                                                              .value
-                                                          ? "Great job! Now confirm by speaking the phrase."
-                                                          : quest.instruction,
+                                                                  .value
+                                                              ? "Now say the phrase aloud to practice"
+                                                              : (quest.instruction.trim().isNotEmpty
+                                                                  ? quest.instruction
+                                                                  : "Select how the sounds link together"),
                                                       isCompact: isCompact,
                                                     ),
                                                     SizedBox(
@@ -270,9 +271,9 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                                                           quest.phenomenonType,
                                                       isAnswered:
                                                           isFirstStagePassedNotifier
-                                                              .value ||
-                                                          isAnsweredNotifier
-                                                              .value,
+                                                                  .value ||
+                                                              isAnsweredNotifier
+                                                                  .value,
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isCompact: isCompact,
@@ -282,9 +283,10 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                                                     ConnectedSpeechPulseSpeaker(
                                                       text:
                                                           quest.textToSpeak ??
-                                                          "",
+                                                              "",
                                                       color: theme.primaryColor,
                                                       onPlayTts: _playTts,
+                                                      isCompact: isCompact,
                                                     ),
                                                   ],
                                                 ),
@@ -305,9 +307,9 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                                                       isDark: isDark,
                                                       isAnswered:
                                                           isAnsweredNotifier
-                                                              .value ||
-                                                          isFirstStagePassedNotifier
-                                                              .value,
+                                                                  .value ||
+                                                              isFirstStagePassedNotifier
+                                                                  .value,
                                                       selectedIndex:
                                                           _selectedIndex.value,
                                                       onSubmitChoice:
@@ -323,10 +325,10 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                                           SizedBox(
                                             height:
                                                 (isAnsweredNotifier.value ||
-                                                    isFirstStagePassedNotifier
-                                                        .value)
-                                                ? 10.h
-                                                : 60.h,
+                                                        isFirstStagePassedNotifier
+                                                            .value)
+                                                    ? 10.h
+                                                    : 40.h,
                                           ),
                                         ],
                                       ),
@@ -339,24 +341,24 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                                   SliverToBoxAdapter(
                                     child: Column(
                                       children: [
-                                        SizedBox(height: 32.h),
+                                        SizedBox(height: 24.h),
                                         ShadowPlaybackCompare(
                                           expectedText:
                                               quest.textToSpeak ??
-                                              quest.word ??
-                                              "",
+                                                  quest.word ??
+                                                  "",
                                           primaryColor: theme.primaryColor,
                                           isPositioned: false,
                                           onConfirmed: () {
                                             context.read<AccentBloc>().add(
-                                              const AccentSpeakConfirmed(5),
-                                            );
+                                                  const AccentSpeakConfirmed(5),
+                                                );
                                             _submitVerbalEvaluation(true);
                                           },
                                           onSkipped: () =>
                                               _submitVerbalEvaluation(false),
                                         ),
-                                        SizedBox(height: 60.h),
+                                        SizedBox(height: 50.h),
                                       ],
                                     ),
                                   ),

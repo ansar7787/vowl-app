@@ -23,7 +23,7 @@ class ConsonantClarityPulseSpeaker extends StatelessWidget {
     Widget speakerIcon = Icon(
       Icons.graphic_eq_rounded,
       color: color,
-      size: 32.r,
+      size: 30.r,
     );
 
     if (!reduceMotion) {
@@ -31,7 +31,7 @@ class ConsonantClarityPulseSpeaker extends StatelessWidget {
           .animate(onPlay: (c) => c.repeat(reverse: true))
           .scale(
             begin: const Offset(1, 1),
-            end: const Offset(1.2, 1.2),
+            end: const Offset(1.15, 1.15),
           );
     }
 
@@ -39,35 +39,46 @@ class ConsonantClarityPulseSpeaker extends StatelessWidget {
       key: const ValueKey('consonant_clarity_speaker'),
       onTap: () => onPlayTts(text),
       child: Container(
-        width: 100.r,
-        height: 100.r,
+        width: 96.r,
+        height: 96.r,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: color.withValues(alpha: 0.1),
-          border: Border.all(color: color, width: 3),
+          border: Border.all(color: color, width: 2.5),
           boxShadow: [
-            BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 20),
+            BoxShadow(
+              color: color.withValues(alpha: 0.15),
+              blurRadius: 16,
+              offset: const Offset(0, 4),
+            ),
           ],
         ),
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              speakerIcon,
-              SizedBox(height: 6.h),
-              Text(
-                "HEAR\nCONSONANT",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: color,
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1,
-                  height: 1.1,
-                ),
+          child: Padding(
+            padding: EdgeInsets.all(8.r),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  speakerIcon,
+                  SizedBox(height: 4.h),
+                  Text(
+                    "HEAR\nCONSONANT",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: color,
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 0.8,
+                      height: 1.15,
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

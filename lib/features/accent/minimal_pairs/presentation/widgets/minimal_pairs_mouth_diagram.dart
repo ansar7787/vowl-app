@@ -22,32 +22,40 @@ class MinimalPairsMouthDiagram extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
       decoration: BoxDecoration(
         color: isDark
-            ? color.withValues(alpha: 0.05)
+            ? color.withValues(alpha: 0.08)
             : color.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
+        border: Border.all(
+          color: color.withValues(alpha: isDark ? 0.25 : 0.15),
+          width: 1.5,
+        ),
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            padding: EdgeInsets.all(12.r),
+            width: 44.r,
+            height: 44.r,
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
+              color: color.withValues(alpha: 0.12),
               shape: BoxShape.circle,
             ),
-            child: Icon(
-              Icons.face_retouching_natural_rounded,
-              color: color,
-              size: 28.r,
+            child: Center(
+              child: Icon(
+                Icons.face_retouching_natural_rounded,
+                color: color,
+                size: 24.r,
+              ),
             ),
           ),
-          SizedBox(width: 16.w),
+          SizedBox(width: 14.w),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   context.tr(
@@ -56,21 +64,24 @@ class MinimalPairsMouthDiagram extends StatelessWidget {
                   ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w800,
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w700,
                     color: color,
-                    letterSpacing: 1.5,
+                    letterSpacing: 1.0,
                   ),
                 ),
                 SizedBox(height: 4.h),
                 Text(
                   mouthPosition!,
+                  softWrap: true,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white70 : Colors.black87,
-                    height: 1.3,
+                    fontSize: 13.5.sp,
+                    fontWeight: FontWeight.w500,
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.85)
+                        : const Color(0xFF334155),
+                    height: 1.35,
                   ),
                 ),
               ],

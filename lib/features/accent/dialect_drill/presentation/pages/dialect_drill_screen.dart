@@ -257,7 +257,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen>
                                                       instruction:
                                                           isFirstStagePassedNotifier
                                                               .value
-                                                          ? "Great job! Now record yourself saying the word."
+                                                          ? "Great! Now say the word aloud to practice."
                                                           : instructionText,
                                                       accentColor:
                                                           theme.primaryColor,

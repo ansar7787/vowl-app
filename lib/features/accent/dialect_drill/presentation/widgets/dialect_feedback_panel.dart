@@ -11,6 +11,8 @@ class _LocalPalette {
   _LocalPalette._();
   static const Color color4285f4 = Color(0xFF4285F4);
   static const Color colore94335 = Color(0xFFE94335);
+  static const Color colorBlueDark = Color(0xFF64B5F6);
+  static const Color colorRedDark = Color(0xFFFF7A6E);
 }
 
 class DialectFeedbackPanel extends StatelessWidget {
@@ -45,33 +47,41 @@ class DialectFeedbackPanel extends StatelessWidget {
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final color = isCorrect ? tokens.gameCorrect : Colors.orangeAccent;
 
+    final brColor = isDark
+        ? _LocalPalette.colorRedDark
+        : _LocalPalette.colore94335;
+    final amColor = isDark
+        ? _LocalPalette.colorBlueDark
+        : _LocalPalette.color4285f4;
+
     Widget iconWidget = Icon(
       isCorrect ? Icons.check_circle_rounded : Icons.info_rounded,
       color: color,
-      size: 32.r,
+      size: 28.r,
     );
     if (!reduceMotion) {
-      iconWidget = iconWidget.animate().scale(delay: 200.ms);
+      iconWidget = iconWidget.animate().scale(delay: 150.ms);
     }
 
     Widget content = GlassTile(
-      padding: EdgeInsets.all(24.r),
-      borderRadius: BorderRadius.circular(30.r),
-      borderColor: color.withValues(alpha: 0.3),
+      padding: EdgeInsets.all(18.r),
+      borderRadius: BorderRadius.circular(24.r),
+      borderColor: color.withValues(alpha: isDark ? 0.35 : 0.25),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.min,
         children: [
           Row(
             children: [
               Container(
-                padding: EdgeInsets.all(12.r),
+                padding: EdgeInsets.all(10.r),
                 decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.1),
+                  color: color.withValues(alpha: isDark ? 0.16 : 0.1),
                   shape: BoxShape.circle,
                 ),
                 child: iconWidget,
               ),
-              SizedBox(width: 16.w),
+              SizedBox(width: 14.w),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,15 +91,16 @@ class DialectFeedbackPanel extends StatelessWidget {
                           ? context.tr('games.correct', fallback: 'Correct!')
                           : context.tr(
                               'games.lets_review',
-                              fallback: 'Let\'s Review',
+                              fallback: "Let's Review",
                             ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.w700,
                         color: Theme.of(context).colorScheme.onSurface,
                       ),
                     ),
+                    SizedBox(height: 2.h),
                     Text(
                       context.tr(
                         'games.accent_comparison',
@@ -97,7 +108,7 @@ class DialectFeedbackPanel extends StatelessWidget {
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 16.sp,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
                         color: isDark ? Colors.white70 : Colors.black54,
                       ),
@@ -107,92 +118,142 @@ class DialectFeedbackPanel extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 24.h),
+          SizedBox(height: 16.h),
 
           // Transcription Text Visualization
           Container(
-            padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 16.w),
+            padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 14.w),
             decoration: BoxDecoration(
               color: isDark
                   ? Colors.white.withValues(alpha: 0.05)
-                  : Colors.black.withValues(alpha: 0.02),
-              borderRadius: BorderRadius.circular(20.r),
+                  : Colors.black.withValues(alpha: 0.03),
+              borderRadius: BorderRadius.circular(16.r),
+              border: Border.all(
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : Colors.black.withValues(alpha: 0.05),
+              ),
             ),
             child: Column(
               children: [
-                Text(
-                  word,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 2,
-                    color: isDark ? Colors.white70 : Colors.black54,
-                  ),
-                ),
-                SizedBox(height: 16.h),
-
-                Wrap(
-                  alignment: WrapAlignment.center,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: [
-                    Text(
-                      "${context.tr('games.british', fallback: 'British')}: ",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                        color: isDark ? Colors.white60 : Colors.black45,
-                      ),
-                    ),
-                    Text(
-                      britishPronunciation,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w800,
-                        color: const Color(
-                          0xFFE94335,
-                        ), // Theme generic red/crimson
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 8.h),
-                Wrap(
-                  alignment: WrapAlignment.center,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: [
-                    Text(
-                      "${context.tr('games.american', fallback: 'American')}: ",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                        color: isDark ? Colors.white60 : Colors.black45,
-                      ),
-                    ),
-                    Text(
-                      americanPronunciation,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w800,
-                        color: _LocalPalette.color4285f4, // Theme generic blue
-                      ),
-                    ),
-                  ],
-                ).animate().shimmer(delay: 500.ms, duration: 1.5.seconds),
-
-                if (hint != null) ...[
-                  SizedBox(height: 20.h),
-                  Text(
-                    hint!,
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    word,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 16.sp,
+                      fontSize: 22.sp,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 0.8,
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 12.h),
+
+                // British Pronunciation Badge
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 14.w,
+                    vertical: 8.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: brColor.withValues(alpha: isDark ? 0.12 : 0.08),
+                    borderRadius: BorderRadius.circular(12.r),
+                    border: Border.all(
+                      color: brColor.withValues(alpha: isDark ? 0.25 : 0.18),
+                      width: 1,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "${context.tr('games.british', fallback: 'British')}: ",
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500,
+                          color: isDark ? Colors.white70 : Colors.black87,
+                        ),
+                      ),
+                      Flexible(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            britishPronunciation,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w700,
+                              letterSpacing: 0.4,
+                              color: brColor,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 8.h),
+
+                // American Pronunciation Badge
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 14.w,
+                    vertical: 8.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: amColor.withValues(alpha: isDark ? 0.12 : 0.08),
+                    borderRadius: BorderRadius.circular(12.r),
+                    border: Border.all(
+                      color: amColor.withValues(alpha: isDark ? 0.25 : 0.18),
+                      width: 1,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "${context.tr('games.american', fallback: 'American')}: ",
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500,
+                          color: isDark ? Colors.white70 : Colors.black87,
+                        ),
+                      ),
+                      Flexible(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            americanPronunciation,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w700,
+                              letterSpacing: 0.4,
+                              color: amColor,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                if (hint != null) ...[
+                  SizedBox(height: 14.h),
+                  Text(
+                    hint!,
+                    textAlign: TextAlign.center,
+                    softWrap: true,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
                       fontStyle: FontStyle.italic,
                       color: isDark ? Colors.white70 : Colors.black87,
                     ),
@@ -201,7 +262,7 @@ class DialectFeedbackPanel extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 24.h),
+          SizedBox(height: 18.h),
 
           // Dialect Audio Playback Buttons
           Row(
@@ -215,14 +276,16 @@ class DialectFeedbackPanel extends StatelessWidget {
                   icon: Icons.record_voice_over_rounded,
                   textToPlay: word,
                   locale: "en-GB",
-                  bgColor: _LocalPalette.colore94335.withValues(alpha: 0.1),
-                  textColor: isDark
-                      ? tokens.gameIncorrect.withValues(alpha: 0.2)
-                      : _LocalPalette.colore94335,
-                  borderColor: _LocalPalette.colore94335.withValues(alpha: 0.3),
+                  bgColor: brColor.withValues(
+                    alpha: isDark ? 0.15 : 0.08,
+                  ),
+                  textColor: brColor,
+                  borderColor: brColor.withValues(
+                    alpha: isDark ? 0.35 : 0.25,
+                  ),
                 ),
               ),
-              SizedBox(width: 16.w),
+              SizedBox(width: 12.w),
               Expanded(
                 child: _buildAudioButton(
                   key: const ValueKey('feedback_audio_american'),
@@ -232,17 +295,19 @@ class DialectFeedbackPanel extends StatelessWidget {
                   icon: Icons.record_voice_over_rounded,
                   textToPlay: word,
                   locale: "en-US",
-                  bgColor: _LocalPalette.color4285f4.withValues(alpha: 0.1),
-                  textColor: isDark
-                      ? Colors.blueAccent.withValues(alpha: 0.2)
-                      : _LocalPalette.color4285f4,
-                  borderColor: _LocalPalette.color4285f4.withValues(alpha: 0.3),
+                  bgColor: amColor.withValues(
+                    alpha: isDark ? 0.15 : 0.08,
+                  ),
+                  textColor: amColor,
+                  borderColor: amColor.withValues(
+                    alpha: isDark ? 0.35 : 0.25,
+                  ),
                 ),
               ),
             ],
           ),
           if (explanation != null) ...[
-            SizedBox(height: 24.h),
+            SizedBox(height: 16.h),
             PedagogicalRuleBox(
               icon: Icons.lightbulb_outline_rounded,
               capsKey: 'games.explanation_caps',
@@ -255,7 +320,7 @@ class DialectFeedbackPanel extends StatelessWidget {
             ),
           ],
           if (dialectNote != null) ...[
-            SizedBox(height: 16.h),
+            SizedBox(height: 14.h),
             PedagogicalRuleBox(
               icon: Icons.public_rounded,
               capsKey: 'games.dialect_note_caps',
@@ -272,7 +337,7 @@ class DialectFeedbackPanel extends StatelessWidget {
     );
 
     if (!reduceMotion) {
-      content = content.animate().fadeIn(duration: 400.ms).slideY(begin: 0.1);
+      content = content.animate().fadeIn(duration: 350.ms).slideY(begin: 0.1);
     }
 
     return content;
@@ -291,24 +356,27 @@ class DialectFeedbackPanel extends StatelessWidget {
     return ElevatedButton.icon(
       key: key,
       onPressed: () => onPlayAudio(textToPlay, locale),
-      icon: Icon(icon, size: 20.r, color: textColor),
-      label: Text(
-        title,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 14.sp,
-          fontWeight: FontWeight.bold,
-          letterSpacing: 1,
-          color: textColor,
+      icon: Icon(icon, size: 18.r, color: textColor),
+      label: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Text(
+          title,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 13.5.sp,
+            fontWeight: FontWeight.w700,
+            letterSpacing: 0.6,
+            color: textColor,
+          ),
         ),
       ),
       style: ElevatedButton.styleFrom(
         backgroundColor: bgColor,
-        padding: EdgeInsets.symmetric(vertical: 16.h),
+        padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 8.w),
         elevation: 0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.r),
-          side: BorderSide(color: borderColor, width: 1.5),
+          borderRadius: BorderRadius.circular(14.r),
+          side: BorderSide(color: borderColor, width: 1.2),
         ),
       ),
     );

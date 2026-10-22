@@ -11,41 +11,46 @@ class VowelDistinctionInstruction extends StatelessWidget {
     required this.instruction,
   });
 
+  String _cleanInstruction(String raw) {
+    final trimmed = raw.trim();
+    if (trimmed.isEmpty) {
+      return "Slide or tap to match the vowel sound";
+    }
+    // If incoming text is shouting ALL CAPS, format into natural, human sentence case
+    if (trimmed == trimmed.toUpperCase() && trimmed.length > 3) {
+      final lower = trimmed.toLowerCase();
+      return lower[0].toUpperCase() + lower.substring(1);
+    }
+    return trimmed;
+  }
+
   @override
   Widget build(BuildContext context) {
+    final displayText = _cleanInstruction(instruction);
+
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      constraints: BoxConstraints(maxWidth: 340.w),
+      padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 10.h),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
+        color: color.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: color.withValues(alpha: 0.2),
+          width: 1,
+        ),
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Icon(Icons.tune_rounded, size: 14.r, color: color),
-          SizedBox(width: 8.w),
-          Flexible(
-            child: Text(
-              instruction.trim().isEmpty
-                  ? "SLIDE TO MATCH THE VOWEL SOUND"
-                  : instruction.toUpperCase(),
-              textAlign: TextAlign.center,
-              maxLines: null,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
-                color: color,
-                letterSpacing: 1.5,
-              ),
-            ),
-          ),
-          SizedBox(width: 8.w),
-          Icon(Icons.tune_rounded, size: 14.r, color: Colors.transparent),
-        ],
+      child: Text(
+        displayText,
+        textAlign: TextAlign.center,
+        softWrap: true,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 13.sp,
+          fontWeight: FontWeight.w600,
+          color: color,
+          height: 1.35,
+          letterSpacing: 0.2,
+        ),
       ),
     );
   }

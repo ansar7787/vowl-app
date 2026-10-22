@@ -230,12 +230,14 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
                                         children: [
                                           Padding(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
-                                              vertical: 24.h,
+                                              horizontal: 18.w,
+                                              vertical: 14.h,
                                             ),
                                             child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
                                               children: [
                                                 ShadowingChallengeInstruction(
                                                   color: theme.primaryColor,
@@ -245,20 +247,20 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
                                                       ? "Great job! Now record yourself saying the phrase."
                                                       : quest.instruction,
                                                 ),
-                                                SizedBox(height: 16.h),
+                                                SizedBox(height: 12.h),
                                                 ShadowingChallengePromptCard(
                                                   word: quest.word ?? "",
                                                   ipa: quest.phonetic ?? "",
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
                                                 ),
-                                                SizedBox(height: 24.h),
+                                                SizedBox(height: 14.h),
                                                 ShadowingChallengePulseSpeaker(
                                                   text: quest.textToSpeak ?? "",
                                                   color: theme.primaryColor,
                                                   onPlayTts: _playTts,
                                                 ),
-                                                SizedBox(height: 16.h),
+                                                SizedBox(height: 14.h),
                                                 ShadowingChallengeSpeedSlider(
                                                   speed: _currentSpeed.value,
                                                   onChanged: (val) {
@@ -267,7 +269,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
                                                 ),
-                                                SizedBox(height: 32.h),
+                                                SizedBox(height: 18.h),
                                                 ShadowingChallengeDialogueList(
                                                   options: options,
                                                   correctIndex: correctIndex,
@@ -282,7 +284,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
                                                       _selectedIndex.value,
                                                   onSubmitChoice: _submitChoice,
                                                 ),
-                                                SizedBox(height: 24.h),
+                                                SizedBox(height: 16.h),
                                               ],
                                             ),
                                           ),
@@ -293,7 +295,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
                                                     isFirstStagePassedNotifier
                                                         .value)
                                                 ? 10.h
-                                                : 60.h,
+                                                : 40.h,
                                           ),
                                         ],
                                       ),

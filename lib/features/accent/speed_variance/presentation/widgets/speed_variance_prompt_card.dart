@@ -17,42 +17,55 @@ class SpeedVariancePromptCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 342.w,
-      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 24.w),
+      width: double.infinity,
+      constraints: BoxConstraints(maxWidth: 420.w),
+      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 20.w),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-        borderRadius: BorderRadius.circular(24.r),
+        color: color.withValues(alpha: isDark ? 0.06 : 0.08),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: isDark ? Colors.white12 : Colors.black12,
-          width: 2,
+          color: color.withValues(alpha: isDark ? 0.22 : 0.18),
+          width: 1.5,
         ),
       ),
       child: Stack(
         children: [
-          const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
+          const Positioned.fill(child: TechPatternOverlay(opacity: 0.04)),
           Center(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
-                  "TARGET SENTENCE",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 8.sp,
-                    fontWeight: FontWeight.bold,
-                    color: color,
-                    letterSpacing: 2,
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
+                  decoration: BoxDecoration(
+                    color: color.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(12.r),
+                  ),
+                  child: Text(
+                    "Sentence",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.5.sp,
+                      fontWeight: FontWeight.w600,
+                      color: color,
+                      letterSpacing: 0.3,
+                    ),
                   ),
                 ),
-                SizedBox(height: 8.h),
+                SizedBox(height: 10.h),
                 Text(
                   word,
                   textAlign: TextAlign.center,
+                  softWrap: true,
+                  maxLines: null,
+                  overflow: TextOverflow.clip,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 18.sp,
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w600,
                     color: Theme.of(context).colorScheme.onSurface,
-                    letterSpacing: 1,
+                    letterSpacing: 0.3,
+                    height: 1.35,
                   ),
                 ),
               ],

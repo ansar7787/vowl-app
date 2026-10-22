@@ -306,14 +306,14 @@ void main() {
 
       expect(find.byType(ShadowingChallengeInstruction), findsOneWidget);
       expect(
-        find.text('LISTEN CAREFULLY AND SHADOW THE SPEAKER PHRASE.'),
+        find.text('Listen carefully and shadow the speaker phrase.'),
         findsOneWidget,
       );
       expect(find.byType(ShadowingChallengePromptCard), findsOneWidget);
       expect(find.text('Could you pass the salt please?'), findsWidgets);
       expect(find.text('/kʊd juː pɑːs ðə sɒlt pliːz/'), findsOneWidget);
       expect(find.byType(ShadowingChallengePulseSpeaker), findsOneWidget);
-      expect(find.text('HEAR\nTARGET'), findsOneWidget);
+      expect(find.text('Listen'), findsOneWidget);
       expect(find.byType(ShadowingChallengeSpeedSlider), findsOneWidget);
       expect(find.text('1.00x'), findsOneWidget);
       expect(find.byType(ShadowingChallengeDialogueList), findsOneWidget);
@@ -426,7 +426,7 @@ void main() {
 
       // Instruction changes to stage 2 recording prompt
       expect(
-        find.text('GREAT JOB! NOW RECORD YOURSELF SAYING THE PHRASE.'),
+        find.text('Great job! Now record yourself saying the phrase.'),
         findsOneWidget,
       );
 
@@ -632,6 +632,45 @@ void main() {
       expect(find.byType(GameBriefingLayer), findsNothing);
     });
 
+    testWidgets('instruction text has centered alignment and wraps properly without ellipsis', (tester) async {
+      const longInstructionQuest = AccentQuest(
+        id: 'ACC_SC_LONG',
+        instruction: 'Listen carefully to the full sentence and shadow every word with natural linking.',
+        difficulty: 1,
+        subtype: GameSubtype.shadowingChallenge,
+        word: 'Could you pass the salt please?',
+        textToSpeak: 'Could you pass the salt please?',
+        options: ['Could you pass the salt please?', 'Could you pass the soup please?'],
+        correctAnswerIndex: 0,
+      );
+
+      const longState = AccentLoaded(
+        quests: [longInstructionQuest],
+        currentIndex: 0,
+        livesRemaining: 3,
+        answerStatus: AnswerStatus.unanswered,
+        gameType: GameSubtype.shadowingChallenge,
+        level: 2,
+        hintUsed: false,
+        wrongCount: 0,
+        isFinalFailure: false,
+      );
+
+      await pumpShadowingChallenge(tester, state: longState);
+
+      final instructionFinder = find.descendant(
+        of: find.byType(ShadowingChallengeInstruction),
+        matching: find.byType(Text),
+      );
+      expect(instructionFinder, findsOneWidget);
+
+      final instructionText = tester.widget<Text>(instructionFinder);
+      expect(instructionText.textAlign, TextAlign.center);
+      expect(instructionText.overflow, isNot(TextOverflow.ellipsis));
+      expect(instructionText.softWrap, isTrue);
+      expect(tester.takeException(), isNull);
+    });
+
     testWidgets('renders cleanly on small device (320x568) in dark theme without overflow', (tester) async {
       await pumpShadowingChallenge(
         tester,
@@ -643,6 +682,15 @@ void main() {
       expect(tester.takeException(), isNull);
       expect(find.byType(ShadowingChallengePromptCard), findsOneWidget);
       expect(find.byType(ShadowingChallengeDialogueList), findsOneWidget);
+
+      // Verify prompt card and dialogue options do not have ellipsis
+      final promptTextFinder = find.descendant(
+        of: find.byType(ShadowingChallengePromptCard),
+        matching: find.text('Could you pass the salt please?'),
+      );
+      final promptText = tester.widget<Text>(promptTextFinder);
+      expect(promptText.overflow, isNot(TextOverflow.ellipsis));
+      expect(promptText.softWrap, isTrue);
     });
 
     testWidgets('respects reduced motion when lowAnimationModeOverride is enabled', (tester) async {

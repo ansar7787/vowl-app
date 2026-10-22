@@ -10,6 +10,7 @@ class DialectDrillDataProbePin extends StatelessWidget {
   final bool isAnswered;
   final bool? isCorrect;
   final bool hasTargetGlow;
+
   const DialectDrillDataProbePin({
     super.key,
     required this.color,
@@ -22,6 +23,7 @@ class DialectDrillDataProbePin extends StatelessWidget {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     Color pinColor = color;
     if (isAnswered) {
@@ -31,14 +33,13 @@ class DialectDrillDataProbePin extends StatelessWidget {
     }
 
     Widget glowWidget = Container(
-      width: 72.r,
-      height: 72.r,
+      width: 62.r,
+      height: 62.r,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
-          color: tokens.gameCorrect.withValues(alpha: 0.6),
+          color: tokens.gameCorrect.withValues(alpha: 0.5),
           width: 1.5,
-          style: BorderStyle.solid,
         ),
       ),
     );
@@ -47,29 +48,34 @@ class DialectDrillDataProbePin extends StatelessWidget {
       glowWidget = glowWidget
           .animate(onPlay: (c) => c.repeat(reverse: true))
           .scale(
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.2, 1.2),
+            begin: const Offset(0.92, 0.92),
+            end: const Offset(1.15, 1.15),
             duration: 600.ms,
           );
     }
 
+    IconData pinIcon;
+    if (isAnswered) {
+      pinIcon = (isCorrect ?? false)
+          ? Icons.check_circle_rounded
+          : Icons.cancel_rounded;
+    } else {
+      pinIcon = Icons.touch_app_rounded;
+    }
+
     Widget iconWidget = Icon(
-      isAnswered
-          ? ((isCorrect ?? false)
-                ? Icons.verified_rounded
-                : Icons.warning_amber_rounded)
-          : Icons.gps_fixed_rounded,
-      size: 32.r,
+      pinIcon,
+      size: 24.r,
       color: pinColor,
     );
 
-    if (!reduceMotion) {
+    if (!reduceMotion && !isAnswered) {
       iconWidget = iconWidget
           .animate(onPlay: (c) => c.repeat(reverse: true))
           .scale(
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.1, 1.1),
-            duration: 800.ms,
+            begin: const Offset(0.95, 0.95),
+            end: const Offset(1.08, 1.08),
+            duration: 900.ms,
           );
     }
 
@@ -80,21 +86,21 @@ class DialectDrillDataProbePin extends StatelessWidget {
         children: [
           if (hasTargetGlow && !isAnswered) glowWidget,
           Container(
-            width: 64.r,
-            height: 64.r,
+            width: 52.r,
+            height: 52.r,
             decoration: BoxDecoration(
-              color: pinColor.withValues(alpha: 0.15),
+              color: pinColor.withValues(alpha: isDark ? 0.2 : 0.12),
               shape: BoxShape.circle,
-              border: Border.all(color: pinColor, width: 2.5),
+              border: Border.all(color: pinColor, width: 2.0),
               boxShadow: [
                 BoxShadow(
-                  color: pinColor.withValues(alpha: 0.3),
-                  blurRadius: 10,
-                  spreadRadius: 2,
+                  color: pinColor.withValues(alpha: 0.25),
+                  blurRadius: 8,
+                  offset: const Offset(0, 2),
                 ),
               ],
             ),
-            child: iconWidget,
+            child: Center(child: iconWidget),
           ),
         ],
       ),

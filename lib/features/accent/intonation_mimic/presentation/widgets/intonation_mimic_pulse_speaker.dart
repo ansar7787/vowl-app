@@ -23,7 +23,7 @@ class IntonationMimicPulseSpeaker extends StatelessWidget {
     Widget speakerIcon = Icon(
       Icons.graphic_eq_rounded,
       color: color,
-      size: 28.r,
+      size: 26.r,
     );
 
     if (!reduceMotion) {
@@ -31,7 +31,7 @@ class IntonationMimicPulseSpeaker extends StatelessWidget {
           .animate(onPlay: (c) => c.repeat(reverse: true))
           .scale(
             begin: const Offset(1, 1),
-            end: const Offset(1.2, 1.2),
+            end: const Offset(1.12, 1.12),
           );
     }
 
@@ -44,29 +44,40 @@ class IntonationMimicPulseSpeaker extends StatelessWidget {
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: color.withValues(alpha: 0.1),
-          border: Border.all(color: color, width: 3),
+          border: Border.all(color: color, width: 2.0),
           boxShadow: [
-            BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 20),
+            BoxShadow(
+              color: color.withValues(alpha: 0.16),
+              blurRadius: 14,
+              offset: const Offset(0, 3),
+            ),
           ],
         ),
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              speakerIcon,
-              SizedBox(height: 6.h),
-              Text(
-                "HEAR\nRIDE",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: color,
-                  fontSize: 8.sp,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1,
-                ),
+          child: Padding(
+            padding: EdgeInsets.all(6.r),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  speakerIcon,
+                  SizedBox(height: 3.h),
+                  Text(
+                    "Listen",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: color,
+                      fontSize: 11.5.sp,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 0.3,
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

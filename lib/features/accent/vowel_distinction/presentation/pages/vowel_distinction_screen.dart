@@ -48,6 +48,8 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
   final ValueNotifier<double> _sliderValue = ValueNotifier(0.5);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
 
+  AccentQuest? _lastQuest;
+
   Timer? _mismatchResetTimer;
   Timer? _autoplayTimer;
 
@@ -91,22 +93,15 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
   void _submitVerbalEvaluation(bool nailedIt) {
     if (isAnsweredNotifier.value) return;
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = nailedIt;
-
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      final state = context.read<AccentBloc>().state;
-      if (state is AccentLoaded) {
-        submitWrongAnswer(
-          quest: state.currentQuest,
-          userAnswer: '',
-        );
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
       }
     }
   }
@@ -137,16 +132,12 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
       _scrollToBottom();
       // Do NOT submit yet. Wait for Phase 2.
     } else {
-      hapticService.error();
-      soundService.playWrong();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = false;
-      final state = context.read<AccentBloc>().state;
-      if (state is AccentLoaded) {
-        submitWrongAnswer(
-          quest: state.currentQuest,
-          userAnswer: '',
-        );
+      final currentQuest = _lastQuest ??
+          ((context.read<AccentBloc>().state is AccentLoaded)
+              ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
+              : null);
+      if (currentQuest != null) {
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
       }
     }
   }
@@ -154,8 +145,18 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
   @override
   void onQuestionReset() {
     _sliderValue.value = 0.5;
-
     _selectedIndex.value = null;
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(0.0);
+    }
+  }
+
+  @override
+  void onAccentStateChanged(BuildContext context, AccentState state) {
+    if (state is AccentLoaded) {
+      _lastQuest = state.currentQuest;
+    }
+    super.onAccentStateChanged(context, state);
   }
 
   @override
@@ -170,6 +171,9 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest as AccentQuest?
             : null;
+        if (quest != null) {
+          _lastQuest = quest;
+        }
         final options = quest?.options ?? ["A", "B"];
         final mediaQuery = MediaQuery.of(context);
 
@@ -266,7 +270,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
 
                           String getInstruction() {
                             if (isFirstStagePassedNotifier.value) {
-                              return "Great job! Now confirm by speaking the word.";
+                              return "Now speak the word to confirm";
                             }
                             return quest.instruction;
                           }
@@ -291,7 +295,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
                                         children: [
                                           Padding(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
+                                              horizontal: 20.w,
                                             ),
                                             child: Column(
                                               mainAxisAlignment:
@@ -380,6 +384,8 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
                                     child: Column(
                                       children: [
                                         SpeakToConfirmOverlay(
+                                          title: "Speak to confirm",
+                                          subtitle: "Say the word clearly to confirm",
                                           expectedText:
                                               quest.textToSpeak ??
                                               quest.word ??

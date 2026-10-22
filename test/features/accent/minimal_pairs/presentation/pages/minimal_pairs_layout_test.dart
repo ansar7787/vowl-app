@@ -402,7 +402,7 @@ void main() {
 
       // Instruction changes to stage 2 prompt
       expect(
-        find.text('GREAT JOB! NOW CONFIRM BY SPEAKING THE WORD.'),
+        find.text('GREAT JOB! NOW SAY THE WORD TO PRACTICE.'),
         findsOneWidget,
       );
 

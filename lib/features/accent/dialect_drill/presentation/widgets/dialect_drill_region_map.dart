@@ -21,71 +21,87 @@ class DialectDrillRegionMap extends StatelessWidget {
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
     IconData iconData = Icons.public;
     if (region.contains('United Kingdom')) {
-      iconData = Icons.map_outlined;
+      iconData = Icons.location_on_outlined;
     } else if (region.contains('United States')) {
-      iconData = Icons.map;
+      iconData = Icons.location_on_outlined;
     }
 
+    final cardBg = isDark
+        ? Color.alphaBlend(color.withValues(alpha: 0.08), const Color(0xFF1E2230))
+        : Color.alphaBlend(color.withValues(alpha: 0.04), Colors.white);
+
     Widget card = Container(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+      constraints: BoxConstraints(maxWidth: 300.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       decoration: BoxDecoration(
-        color: isDark
-            ? color.withValues(alpha: 0.1)
-            : color.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
+        color: cardBg,
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: color.withValues(alpha: isDark ? 0.3 : 0.2),
+          width: 1.2,
+        ),
         boxShadow: [
           BoxShadow(
-            color: color.withValues(alpha: 0.15),
-            blurRadius: 16,
-            spreadRadius: -4,
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.2)
+                : color.withValues(alpha: 0.08),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
           ),
         ],
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            padding: EdgeInsets.all(8.r),
+            padding: EdgeInsets.all(7.r),
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.2),
+              color: color.withValues(alpha: isDark ? 0.16 : 0.1),
               shape: BoxShape.circle,
             ),
-            child: Icon(iconData, color: color, size: 24.r),
+            child: Icon(iconData, color: color, size: 20.r),
           ),
-          SizedBox(width: 12.w),
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "TARGET REGION",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.bold,
-                  color: color.withValues(alpha: 0.8),
-                  letterSpacing: 1.5,
+          SizedBox(width: 10.w),
+          Flexible(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "TARGET REGION",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w600,
+                    color: color,
+                    letterSpacing: 0.8,
+                  ),
                 ),
-              ),
-              Text(
-                region.toUpperCase(),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w900,
-                  color: Theme.of(context).colorScheme.onSurface,
-                  letterSpacing: 1,
+                SizedBox(height: 2.h),
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    region.toUpperCase(),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w700,
+                      color: Theme.of(context).colorScheme.onSurface,
+                      letterSpacing: 0.4,
+                    ),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
     );
 
     if (!reduceMotion) {
-      card = card.animate().fadeIn(duration: 400.ms).slideY(begin: 0.2);
+      card = card.animate().fadeIn(duration: 350.ms).slideY(begin: 0.15);
     }
 
     return card;

@@ -22,38 +22,50 @@ class PitchPatternMatchMelodicCanvas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 342.w,
+      width: double.infinity,
+      constraints: BoxConstraints(maxWidth: 420.w),
       height: 80.h,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: isDark
-            ? Colors.white.withValues(alpha: 0.02)
-            : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
+            ? Colors.white.withValues(alpha: 0.04)
+            : Colors.black.withValues(alpha: 0.03),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: color.withValues(alpha: isDark ? 0.2 : 0.15),
+          width: 1.2,
+        ),
       ),
-      child: Stack(
-        children: [
-          // Blueprint
-          Center(
-            child: CustomPaint(
-              size: Size(0.7.sw, 100.h),
-              painter: _BlueprintPainter(pattern, color.withValues(alpha: 0.2)),
-            ),
-          ),
-          // User Ink/Glow Progress
-          if (isPreviewing || isAnswered)
-            Center(
-              child: CustomPaint(
-                size: Size(0.7.sw, 100.h),
-                painter: _BlueprintPainter(
-                  pattern,
-                  color,
-                  progress: isPreviewing ? previewProgress : 1.0,
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final canvasSize = Size(constraints.maxWidth, constraints.maxHeight);
+          return Stack(
+            children: [
+              // Baseline contour
+              Center(
+                child: CustomPaint(
+                  size: canvasSize,
+                  painter: _BlueprintPainter(
+                    pattern,
+                    color.withValues(alpha: 0.2),
+                  ),
                 ),
               ),
-            ),
-        ],
+              // User / Audio Wave Progress
+              if (isPreviewing || isAnswered)
+                Center(
+                  child: CustomPaint(
+                    size: canvasSize,
+                    painter: _BlueprintPainter(
+                      pattern,
+                      color,
+                      progress: isPreviewing ? previewProgress : 1.0,
+                    ),
+                  ),
+                ),
+            ],
+          );
+        },
       ),
     );
   }
@@ -69,7 +81,7 @@ class _BlueprintPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
       ..color = color
-      ..strokeWidth = 6
+      ..strokeWidth = 5
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
