@@ -250,14 +250,14 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen>
                                       ),
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
-                                          horizontal: 24.w,
+                                          horizontal: 20.w,
                                         ),
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
                                             SizedBox(
-                                              height: isCompact ? 8.h : 16.h,
+                                              height: isCompact ? 8.h : 14.h,
                                             ),
                                             Semantics(
                                               liveRegion: true,
@@ -268,12 +268,12 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen>
                                                 instruction:
                                                     isFirstStagePassedNotifier
                                                             .value
-                                                        ? "Great job! Now confirm by speaking the word."
+                                                        ? "Now speak the word out loud."
                                                         : quest.instruction,
                                               ),
                                             ),
                                             SizedBox(
-                                              height: isCompact ? 12.h : 24.h,
+                                              height: isCompact ? 12.h : 18.h,
                                             ),
                                             ConsonantClarityPromptCard(
                                               word: quest.word ?? "",
@@ -285,7 +285,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen>
                                                       .value,
                                             ),
                                             SizedBox(
-                                              height: isCompact ? 12.h : 24.h,
+                                              height: isCompact ? 12.h : 18.h,
                                             ),
                                             if (isFirstStagePassedNotifier
                                                     .value &&
@@ -304,7 +304,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen>
                                                 onPlayTts: _playTts,
                                               ),
                                             SizedBox(
-                                              height: isCompact ? 16.h : 32.h,
+                                              height: isCompact ? 16.h : 22.h,
                                             ),
                                             ConsonantClarityTactileGrid(
                                               options: options,
@@ -324,8 +324,8 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen>
                                                   (isAnsweredNotifier.value ||
                                                       isFirstStagePassedNotifier
                                                           .value)
-                                                  ? 10.h
-                                                  : 40.h,
+                                                  ? 12.h
+                                                  : (isCompact ? 20.h : 32.h),
                                             ),
                                           ],
                                         ),

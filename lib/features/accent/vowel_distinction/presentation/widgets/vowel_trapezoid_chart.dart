@@ -22,24 +22,23 @@ class VowelTrapezoidChart extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
       decoration: BoxDecoration(
-        color: isDark
-            ? color.withValues(alpha: 0.05)
-            : color.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
+        color: color.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: color.withValues(alpha: 0.2), width: 1.5),
       ),
       child: Column(
         children: [
           Text(
-            "VOWEL POSITION",
+            "Vowel sound position",
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w800,
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w600,
               color: color,
-              letterSpacing: 1.5,
+              letterSpacing: 0.8,
             ),
           ),
           SizedBox(height: 12.h),

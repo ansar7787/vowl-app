@@ -26,43 +26,64 @@ class ConnectedSpeechPromptCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 342.w,
-      padding: EdgeInsets.all(isCompact ? 16.r : 24.r),
+      width: double.infinity,
+      constraints: BoxConstraints(maxWidth: 420.w),
+      padding: EdgeInsets.symmetric(
+        horizontal: 20.w,
+        vertical: isCompact ? 14.h : 18.h,
+      ),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-        borderRadius: BorderRadius.circular(24.r),
+        color: color.withValues(alpha: isDark ? 0.06 : 0.08),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: isDark ? Colors.white12 : Colors.black12,
-          width: 2,
+          color: color.withValues(alpha: isDark ? 0.22 : 0.18),
+          width: 1.5,
         ),
       ),
       child: Stack(
         children: [
-          const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
+          const Positioned.fill(child: TechPatternOverlay(opacity: 0.04)),
           Center(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
-                  context.tr('games.target_phrase', fallback: 'TARGET PHRASE'),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: isCompact ? 8.sp : 10.sp,
-                    fontWeight: FontWeight.bold,
-                    color: color,
-                    letterSpacing: 2,
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 3.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: color.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(12.r),
+                  ),
+                  child: Text(
+                    context.tr('games.target_phrase', fallback: 'TARGET PHRASE'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: isCompact ? 10.sp : 11.sp,
+                      fontWeight: FontWeight.w700,
+                      color: color,
+                      letterSpacing: 0.8,
+                    ),
                   ),
                 ),
-                SizedBox(height: isCompact ? 4.h : 8.h),
+                SizedBox(height: isCompact ? 8.h : 12.h),
                 if (isAnswered && spokenForm != null) ...[
-                  SizedBox(height: 16.h),
                   Container(
+                    width: double.infinity,
                     padding: EdgeInsets.symmetric(
-                      horizontal: 16.w,
-                      vertical: 8.h,
+                      horizontal: 14.w,
+                      vertical: 10.h,
                     ),
                     decoration: BoxDecoration(
-                      color: color.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12.r),
+                      color: isDark
+                          ? Colors.black.withValues(alpha: 0.2)
+                          : Colors.white.withValues(alpha: 0.6),
+                      borderRadius: BorderRadius.circular(14.r),
+                      border: Border.all(
+                        color: color.withValues(alpha: 0.15),
+                        width: 1,
+                      ),
                     ),
                     child: Row(
                       children: [
@@ -74,15 +95,20 @@ class ConnectedSpeechPromptCard extends StatelessWidget {
                                 "WRITTEN",
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 8.sp,
-                                  fontWeight: FontWeight.bold,
-                                  color: color.withValues(alpha: 0.7),
-                                  letterSpacing: 1,
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: isDark
+                                      ? Colors.white60
+                                      : Colors.black54,
+                                  letterSpacing: 0.6,
                                 ),
                               ),
+                              SizedBox(height: 2.h),
                               Text(
                                 word.toUpperCase(),
                                 textAlign: TextAlign.center,
+                                softWrap: true,
+                                maxLines: null,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: isCompact ? 14.sp : 16.sp,
@@ -101,7 +127,7 @@ class ConnectedSpeechPromptCard extends StatelessWidget {
                           child: Icon(
                             Icons.arrow_forward_rounded,
                             color: color,
-                            size: 20.r,
+                            size: 18.r,
                           ),
                         ),
                         Expanded(
@@ -112,19 +138,22 @@ class ConnectedSpeechPromptCard extends StatelessWidget {
                                 "SPOKEN",
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 8.sp,
-                                  fontWeight: FontWeight.bold,
-                                  color: color.withValues(alpha: 0.7),
-                                  letterSpacing: 1,
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: color,
+                                  letterSpacing: 0.6,
                                 ),
                               ),
+                              SizedBox(height: 2.h),
                               Text(
                                 spokenForm!.toUpperCase(),
                                 textAlign: TextAlign.center,
+                                softWrap: true,
+                                maxLines: null,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: isCompact ? 16.sp : 18.sp,
-                                  fontWeight: FontWeight.w900,
+                                  fontWeight: FontWeight.w700,
                                   color: color,
                                 ),
                               ),
@@ -134,16 +163,33 @@ class ConnectedSpeechPromptCard extends StatelessWidget {
                       ],
                     ),
                   ),
-                  if (phenomenonType != null) ...[
-                    SizedBox(height: 8.h),
-                    Text(
-                      phenomenonType!.toUpperCase(),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.bold,
-                        color: color,
-                        letterSpacing: 2,
+                  if (phenomenonType != null &&
+                      phenomenonType!.trim().isNotEmpty) ...[
+                    SizedBox(height: 10.h),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 12.w,
+                        vertical: 3.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: color.withValues(alpha: isDark ? 0.16 : 0.1),
+                        borderRadius: BorderRadius.circular(10.r),
+                        border: Border.all(
+                          color: color.withValues(alpha: 0.25),
+                          width: 1,
+                        ),
+                      ),
+                      child: Text(
+                        phenomenonType!.toUpperCase(),
+                        textAlign: TextAlign.center,
+                        softWrap: true,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w700,
+                          color: color,
+                          letterSpacing: 0.6,
+                        ),
                       ),
                     ),
                   ],
@@ -151,12 +197,15 @@ class ConnectedSpeechPromptCard extends StatelessWidget {
                   Text(
                     word.toUpperCase(),
                     textAlign: TextAlign.center,
+                    softWrap: true,
+                    maxLines: null,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: isCompact ? 22.sp : 28.sp,
-                      fontWeight: FontWeight.w900,
+                      fontSize: isCompact ? 22.sp : 26.sp,
+                      fontWeight: FontWeight.w700,
                       color: Theme.of(context).colorScheme.onSurface,
-                      letterSpacing: 4,
+                      letterSpacing: 0.8,
+                      height: 1.25,
                     ),
                   ),
                 ],

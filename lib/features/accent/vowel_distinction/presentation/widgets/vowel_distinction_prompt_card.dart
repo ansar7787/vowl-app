@@ -16,32 +16,37 @@ class VowelDistinctionPromptCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final onSurface = Theme.of(context).colorScheme.onSurface;
+
     return Container(
-      width: 342.w,
-      padding: EdgeInsets.all(24.r),
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: isDark ? Colors.white12 : Colors.black12,
-          width: 2,
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.12)
+              : color.withValues(alpha: 0.18),
+          width: 1.5,
         ),
       ),
       child: Stack(
         children: [
-          const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
+          const Positioned.fill(child: TechPatternOverlay(opacity: 0.04)),
           Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  "TARGET WORD",
+                  "Word to identify",
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w600,
                     color: color,
-                    letterSpacing: 2,
+                    letterSpacing: 0.8,
                   ),
                 ),
                 SizedBox(height: 8.h),
@@ -49,12 +54,13 @@ class VowelDistinctionPromptCard extends StatelessWidget {
                   fit: BoxFit.scaleDown,
                   child: Text(
                     word.toUpperCase(),
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 28.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Theme.of(context).colorScheme.onSurface,
-                      letterSpacing: 4,
+                      fontSize: 26.sp,
+                      fontWeight: FontWeight.w700,
+                      color: onSurface,
+                      letterSpacing: 1.5,
                     ),
                   ),
                 ),

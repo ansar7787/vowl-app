@@ -728,6 +728,50 @@ void main() {
         expect(find.text('Airflow: FRICATIVE'), findsOneWidget);
       },
     );
+
+    testWidgets(
+      'renders multi-line instruction centered without text overflow or ellipses',
+      (tester) async {
+        const longInstructionQuest = AccentQuest(
+          id: 'ACC_CC_L1_LONG',
+          instruction:
+              'Listen carefully and distinguish between voiced and voiceless consonant sounds in the pair.',
+          difficulty: 1,
+          subtype: GameSubtype.consonantClarity,
+          word: 'congratulations',
+          textToSpeak: 'g',
+          options: ['/g/', '/k/'],
+          correctAnswerIndex: 0,
+          voicing: 'Voiced',
+          airflow: 'Velar Plosive',
+        );
+
+        const longState = AccentLoaded(
+          quests: [longInstructionQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.consonantClarity,
+          level: 2,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
+
+        await pumpConsonantClarity(tester, state: longState, width: 320, height: 568);
+
+        expect(tester.takeException(), isNull);
+        final instructionFinder = find.byType(ConsonantClarityInstruction);
+        expect(instructionFinder, findsOneWidget);
+
+        final textWidget = tester.widget<Text>(
+          find.descendant(of: instructionFinder, matching: find.byType(Text)),
+        );
+        expect(textWidget.textAlign, equals(TextAlign.center));
+        expect(textWidget.overflow, isNot(equals(TextOverflow.ellipsis)));
+        expect(textWidget.data?.contains('...'), isFalse);
+      },
+    );
   });
 }
 

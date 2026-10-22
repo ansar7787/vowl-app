@@ -29,8 +29,8 @@ class SyllableStressDrumConsole extends StatelessWidget {
   Widget build(BuildContext context) {
     return Wrap(
       key: const ValueKey('syllable_stress_drum_console'),
-      spacing: 16.w,
-      runSpacing: 16.h,
+      spacing: 12.w,
+      runSpacing: 12.h,
       alignment: WrapAlignment.center,
       children: List.generate(
         syllables.length,
@@ -71,7 +71,7 @@ class SyllableStressDrumConsole extends StatelessWidget {
     final boltIcon = Icon(
       Icons.bolt_rounded,
       color: AppColors.gameCorrect,
-      size: 18.r,
+      size: 16.r,
     );
 
     return Semantics(
@@ -82,26 +82,27 @@ class SyllableStressDrumConsole extends StatelessWidget {
         onTap: isAnswered ? () {} : () => onPadTap(index, correct),
         child: AnimatedContainer(
           duration: 150.milliseconds,
-          width: 90.r,
-          height: 90.r,
+          width: 82.r,
+          height: 82.r,
           decoration: BoxDecoration(
             color: isSelected
-                ? padColor.withValues(alpha: 0.2)
+                ? padColor.withValues(alpha: 0.18)
                 : (isDark
                       ? Colors.white.withValues(alpha: 0.05)
                       : Colors.black.withValues(alpha: 0.03)),
-            borderRadius: BorderRadius.circular(20.r),
+            borderRadius: BorderRadius.circular(18.r),
             border: Border.all(
               color: isSelected || (isAnswered && index == correct)
                   ? padColor
-                  : color.withValues(alpha: 0.3),
-              width: 3,
+                  : color.withValues(alpha: 0.28),
+              width: 2.2,
             ),
             boxShadow: isSelected
                 ? [
                     BoxShadow(
-                      color: padColor.withValues(alpha: 0.3),
-                      blurRadius: 15,
+                      color: padColor.withValues(alpha: 0.25),
+                      blurRadius: 14,
+                      offset: const Offset(0, 3),
                     ),
                   ]
                 : [],
@@ -111,15 +112,18 @@ class SyllableStressDrumConsole extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4.w),
+                  padding: EdgeInsets.symmetric(horizontal: 6.w),
                   child: FittedBox(
                     fit: BoxFit.scaleDown,
                     child: Text(
                       text.toUpperCase(),
+                      maxLines: 1,
+                      overflow: TextOverflow.clip,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 18.sp,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 1.0,
                         color: isSelected || (isAnswered && index == correct)
                             ? contentColor
                             : (Theme.of(context).colorScheme.onSurface),
@@ -128,7 +132,7 @@ class SyllableStressDrumConsole extends StatelessWidget {
                   ),
                 ),
                 if (index == correct && isAnswered) ...[
-                  SizedBox(height: 4.h),
+                  SizedBox(height: 3.h),
                   reduceMotion ? boltIcon : boltIcon.animate().scale(),
                 ],
               ],

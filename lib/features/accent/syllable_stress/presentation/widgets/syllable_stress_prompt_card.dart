@@ -17,43 +17,57 @@ class SyllableStressPromptCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 342.w,
-      padding: EdgeInsets.all(24.r),
+      width: double.infinity,
+      constraints: BoxConstraints(maxWidth: 420.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-        borderRadius: BorderRadius.circular(24.r),
+        color: color.withValues(alpha: isDark ? 0.06 : 0.08),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: isDark ? Colors.white12 : Colors.black12,
-          width: 2,
+          color: color.withValues(alpha: isDark ? 0.22 : 0.18),
+          width: 1.5,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: color.withValues(alpha: isDark ? 0.06 : 0.05),
+            blurRadius: 16,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
       child: Stack(
         children: [
-          const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
+          const Positioned.fill(child: TechPatternOverlay(opacity: 0.04)),
           Center(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  "TARGET WORD",
+                  "WORD",
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w600,
                     color: color,
-                    letterSpacing: 2,
+                    letterSpacing: 1.5,
                   ),
                 ),
-                SizedBox(height: 8.h),
-                FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    word.toUpperCase(),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 28.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Theme.of(context).colorScheme.onSurface,
-                      letterSpacing: 4,
+                SizedBox(height: 6.h),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w),
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      word.toUpperCase(),
+                      maxLines: 1,
+                      overflow: TextOverflow.clip,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 26.sp,
+                        fontWeight: FontWeight.w700,
+                        color: Theme.of(context).colorScheme.onSurface,
+                        letterSpacing: 2.0,
+                      ),
                     ),
                   ),
                 ),

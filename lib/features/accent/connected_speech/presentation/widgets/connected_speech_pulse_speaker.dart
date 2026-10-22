@@ -8,17 +8,20 @@ class ConnectedSpeechPulseSpeaker extends StatelessWidget {
   final String text;
   final Color color;
   final Function(String) onPlayTts;
+  final bool isCompact;
+
   const ConnectedSpeechPulseSpeaker({
     super.key,
     required this.text,
     required this.color,
     required this.onPlayTts,
+    this.isCompact = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    final double buttonSize = 100.r;
-    final double iconSize = 32.r;
+    final double buttonSize = isCompact ? 76.r : 84.r;
+    final double iconSize = isCompact ? 26.r : 28.r;
     final bool reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     Widget icon = Icon(Icons.graphic_eq_rounded, color: color, size: iconSize);
@@ -27,7 +30,8 @@ class ConnectedSpeechPulseSpeaker extends StatelessWidget {
           .animate(onPlay: (c) => c.repeat(reverse: true))
           .scale(
             begin: const Offset(1, 1),
-            end: const Offset(1.2, 1.2),
+            end: const Offset(1.15, 1.15),
+            duration: 800.ms,
           );
     }
 
@@ -43,9 +47,12 @@ class ConnectedSpeechPulseSpeaker extends StatelessWidget {
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: color.withValues(alpha: 0.1),
-            border: Border.all(color: color, width: 3),
+            border: Border.all(color: color, width: 2),
             boxShadow: [
-              BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 20),
+              BoxShadow(
+                color: color.withValues(alpha: 0.15),
+                blurRadius: 16,
+              ),
             ],
           ),
           child: Center(
@@ -53,15 +60,15 @@ class ConnectedSpeechPulseSpeaker extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 icon,
-                SizedBox(height: 6.h),
+                SizedBox(height: 4.h),
                 Text(
                   "HEAR PHRASE",
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     color: color,
-                    fontSize: 8.sp,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1,
+                    fontSize: isCompact ? 9.sp : 10.sp,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 0.6,
                   ),
                 ),
               ],

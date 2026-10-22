@@ -19,13 +19,16 @@ class ShadowingChallengeSpeedSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       decoration: BoxDecoration(
         color: isDark
             ? color.withValues(alpha: 0.05)
-            : color.withValues(alpha: 0.05),
+            : color.withValues(alpha: 0.04),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
+        border: Border.all(
+          color: color.withValues(alpha: 0.18),
+          width: 1,
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,37 +36,55 @@ class ShadowingChallengeSpeedSlider extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "PLAYBACK SPEED",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w800,
-                  color: color,
-                  letterSpacing: 1.2,
-                ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.speed_rounded,
+                    size: 16.r,
+                    color: color,
+                  ),
+                  SizedBox(width: 6.w),
+                  Text(
+                    "Playback Speed",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w600,
+                      color: color,
+                      letterSpacing: 0.2,
+                    ),
+                  ),
+                ],
               ),
-              Text(
-                "${speed.toStringAsFixed(2)}x",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).colorScheme.onSurface,
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: isDark ? 0.12 : 0.08),
+                  borderRadius: BorderRadius.circular(8.r),
+                ),
+                child: Text(
+                  "${speed.toStringAsFixed(2)}x",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w600,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 8.h),
+          SizedBox(height: 6.h),
           SliderTheme(
             data: SliderThemeData(
               activeTrackColor: color,
               inactiveTrackColor: color.withValues(alpha: 0.2),
               thumbColor: color,
-              overlayColor: color.withValues(alpha: 0.2),
-              trackHeight: 4.h,
-              thumbShape: RoundSliderThumbShape(enabledThumbRadius: 8.r),
-              overlayShape: RoundSliderOverlayShape(overlayRadius: 16.r),
+              overlayColor: color.withValues(alpha: 0.15),
+              trackHeight: 3.5.h,
+              thumbShape: RoundSliderThumbShape(enabledThumbRadius: 7.r),
+              overlayShape: RoundSliderOverlayShape(overlayRadius: 14.r),
             ),
             child: Slider(
               key: const ValueKey('shadowing_speed_slider'),

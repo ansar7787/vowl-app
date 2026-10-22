@@ -20,28 +20,33 @@ class SpeedVarianceSpeedToggle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 280.w,
+      width: 290.w,
       height: 44.h,
+      padding: EdgeInsets.all(3.r),
       decoration: BoxDecoration(
         color: isDark
             ? primaryColor.withValues(alpha: 0.1)
             : primaryColor.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(22.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.2),
+          width: 1.2,
+        ),
       ),
       child: Stack(
         children: [
-          AnimatedPositioned(
-            duration: const Duration(milliseconds: 300),
+          AnimatedAlign(
+            duration: const Duration(milliseconds: 250),
             curve: Curves.easeOutCubic,
-            left: isNatural ? 2.w : 138.w,
-            top: 2.h,
-            bottom: 2.h,
-            width: 136.w,
-            child: Container(
-              decoration: BoxDecoration(
-                color: primaryColor.withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(20.r),
+            alignment: isNatural ? Alignment.centerLeft : Alignment.centerRight,
+            child: FractionallySizedBox(
+              widthFactor: 0.5,
+              heightFactor: 1.0,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: primaryColor.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(19.r),
+                ),
               ),
             ),
           ),
@@ -51,7 +56,9 @@ class SpeedVarianceSpeedToggle extends StatelessWidget {
                 child: ScaleButton(
                   key: const ValueKey('speed_toggle_natural'),
                   onTap: () => onChanged(true),
-                  child: Center(
+                  child: Container(
+                    color: Colors.transparent,
+                    alignment: Alignment.center,
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -60,19 +67,20 @@ class SpeedVarianceSpeedToggle extends StatelessWidget {
                           size: 16.r,
                           color: isNatural
                               ? primaryColor
-                              : (isDark ? Colors.white54 : Colors.black54),
+                              : (isDark ? Colors.white60 : Colors.black54),
                         ),
-                        SizedBox(width: 8.w),
+                        SizedBox(width: 6.w),
                         Text(
-                          "NATURAL",
+                          "Natural",
+                          softWrap: false,
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w600,
                             color: isNatural
                                 ? primaryColor
-                                : (isDark ? Colors.white54 : Colors.black54),
-                            letterSpacing: 1,
+                                : (isDark ? Colors.white60 : Colors.black54),
+                            letterSpacing: 0.3,
                           ),
                         ),
                       ],
@@ -84,7 +92,9 @@ class SpeedVarianceSpeedToggle extends StatelessWidget {
                 child: ScaleButton(
                   key: const ValueKey('speed_toggle_clear'),
                   onTap: () => onChanged(false),
-                  child: Center(
+                  child: Container(
+                    color: Colors.transparent,
+                    alignment: Alignment.center,
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -93,19 +103,20 @@ class SpeedVarianceSpeedToggle extends StatelessWidget {
                           size: 16.r,
                           color: !isNatural
                               ? primaryColor
-                              : (isDark ? Colors.white54 : Colors.black54),
+                              : (isDark ? Colors.white60 : Colors.black54),
                         ),
-                        SizedBox(width: 8.w),
+                        SizedBox(width: 6.w),
                         Text(
-                          "CLEAR",
+                          "Clear",
+                          softWrap: false,
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w600,
                             color: !isNatural
                                 ? primaryColor
-                                : (isDark ? Colors.white54 : Colors.black54),
-                            letterSpacing: 1,
+                                : (isDark ? Colors.white60 : Colors.black54),
+                            letterSpacing: 0.3,
                           ),
                         ),
                       ],
@@ -117,6 +128,6 @@ class SpeedVarianceSpeedToggle extends StatelessWidget {
           ),
         ],
       ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2);
+    ).animate().fadeIn(duration: 350.ms).slideY(begin: 0.15);
   }
 }

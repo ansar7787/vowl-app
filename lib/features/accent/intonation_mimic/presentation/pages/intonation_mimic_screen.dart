@@ -71,7 +71,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
     _isRiding.dispose();
     _selectedIndex.dispose();
     _sliderValue.dispose();
-        try {
+    try {
       soundService.stopTts();
     } catch (_) {}
     disposeAccentGame();
@@ -255,8 +255,6 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                     : LayoutBuilder(
                         builder: (context, constraints) {
                           final maxHeight = constraints.maxHeight;
-                          final maxWidth = constraints.maxWidth;
-                          final bool isCompact = maxHeight < 580;
 
                           final double estimatedContentHeight =
                               24.h + 70.h + 80.h + 140.h;
@@ -267,20 +265,20 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                               ? remainingHeight / 8
                               : 0;
                           final double gapTop = remainingHeight > 0
-                              ? (gapUnit * 1).clamp(8.0, 24.0)
+                              ? (gapUnit * 1).clamp(8.0, 20.0)
                               : 8.0;
                           final double gapInstruction = remainingHeight > 0
-                              ? (gapUnit * 1).clamp(8.0, 24.0)
+                              ? (gapUnit * 1).clamp(8.0, 18.0)
                               : 8.0;
                           final double gapPrompt = remainingHeight > 0
-                              ? (gapUnit * 1.5).clamp(12.0, 32.0)
-                              : 12.0;
+                              ? (gapUnit * 1.2).clamp(10.0, 22.0)
+                              : 10.0;
                           final double gapSpeaker = remainingHeight > 0
-                              ? (gapUnit * 2).clamp(16.0, 48.0)
-                              : 16.0;
-                          final double gapBottom = remainingHeight > 0
-                              ? (gapUnit * 1).clamp(12.0, 40.0)
+                              ? (gapUnit * 1.5).clamp(12.0, 28.0)
                               : 12.0;
+                          final double gapBottom = remainingHeight > 0
+                              ? (gapUnit * 1).clamp(10.0, 24.0)
+                              : 10.0;
 
                           return RawScrollbar(
                             controller: _scrollController,
@@ -308,7 +306,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                         children: [
                                           Padding(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
+                                              horizontal: 20.w,
                                             ),
                                             child: Column(
                                               mainAxisAlignment:
@@ -324,49 +322,22 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                                       instruction:
                                                           isFirstStagePassedNotifier
                                                               .value
-                                                          ? "Great job! Now record yourself saying the word."
+                                                          ? "Now speak the sentence with the matching intonation."
                                                           : quest.instruction,
                                                     ),
                                                     SizedBox(
                                                       height: gapInstruction,
                                                     ),
-
-                                                    isCompact
-                                                        ? SizedBox(
-                                                            height: 90.h,
-                                                            child: FittedBox(
-                                                              fit: BoxFit
-                                                                  .scaleDown,
-                                                              child: SizedBox(
-                                                                width:
-                                                                    maxWidth -
-                                                                    48.w,
-                                                                child: IntonationMimicPromptCard(
-                                                                  word:
-                                                                      quest
-                                                                          .word ??
-                                                                      "",
-                                                                  color: theme
-                                                                      .primaryColor,
-                                                                  isDark:
-                                                                      isDark,
-                                                                  emotionContext:
-                                                                      quest
-                                                                          .emotionContext,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          )
-                                                        : IntonationMimicPromptCard(
-                                                            word:
-                                                                quest.word ??
-                                                                "",
-                                                            color: theme
-                                                                .primaryColor,
-                                                            isDark: isDark,
-                                                            emotionContext: quest
-                                                                .emotionContext,
-                                                          ),
+                                                    IntonationMimicPromptCard(
+                                                      word:
+                                                          quest.word ?? "",
+                                                      color: theme
+                                                          .primaryColor,
+                                                      isDark: isDark,
+                                                      emotionContext:
+                                                          quest
+                                                              .emotionContext,
+                                                    ),
                                                     SizedBox(height: gapPrompt),
 
                                                     if (isAnsweredNotifier
@@ -499,11 +470,16 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                 if (isFirstStagePassedNotifier.value &&
                                     !isAnsweredNotifier.value)
                                   SliverToBoxAdapter(
-                                    child: Column(
-                                      children: [
-                                        if (isFirstStagePassedNotifier.value &&
-                                            !isAnsweredNotifier.value)
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 20.w,
+                                      ),
+                                      child: Column(
+                                        children: [
                                           SpeakToConfirmOverlay(
+                                            key: const ValueKey(
+                                              'intonation_speak_overlay',
+                                            ),
                                             expectedText: quest.word ?? "",
                                             displayText:
                                                 "Speak the sentence with the correct intonation:\n${quest.word ?? ""}",
@@ -514,9 +490,9 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                                 _submitVerbalEvaluation(false),
                                             isPositioned: false,
                                           ),
-
-                                        SizedBox(height: 60.h),
-                                      ],
+                                          SizedBox(height: 60.h),
+                                        ],
+                                      ),
                                     ),
                                   ),
                               ],

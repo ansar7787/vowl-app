@@ -317,6 +317,13 @@ void main() {
       expect(find.text('IT'), findsOneWidget);
       expect(find.text('UP'), findsOneWidget);
 
+      // Verify instruction and speaker text
+      expect(
+        find.text('Tap the link where words connect smoothly.'),
+        findsOneWidget,
+      );
+      expect(find.text('Tap to listen'), findsOneWidget);
+
       // Verify link nodes
       expect(find.byKey(const ValueKey('word_link_node_0')), findsOneWidget);
       expect(find.byKey(const ValueKey('word_link_node_1')), findsOneWidget);
@@ -397,7 +404,7 @@ void main() {
 
         expect(find.byType(ShadowPlaybackCompare), findsOneWidget);
         expect(
-          find.text('GREAT JOB! NOW RECORD YOURSELF SAYING THE PHRASE.'),
+          find.text('Great job! Now record yourself saying the phrase.'),
           findsOneWidget,
         );
         expect(find.text('C → V'), findsOneWidget);

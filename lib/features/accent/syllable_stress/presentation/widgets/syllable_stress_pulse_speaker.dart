@@ -19,46 +19,61 @@ class SyllableStressPulseSpeaker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
-    final icon = Icon(Icons.graphic_eq_rounded, color: color, size: 32.r);
+    final icon = Icon(Icons.graphic_eq_rounded, color: color, size: 28.r);
 
-    return ScaleButton(
-      key: const ValueKey('syllable_stress_pulse_speaker_btn'),
-      onTap: () => onPlayTts(text),
-      child: Container(
-        width: 100.r,
-        height: 100.r,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: color.withValues(alpha: 0.1),
-          border: Border.all(color: color, width: 3),
-          boxShadow: [
-            BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 20),
-          ],
-        ),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              reduceMotion
-                  ? icon
-                  : icon
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.2, 1.2),
-                      ),
-              SizedBox(height: 6.h),
-              Text(
-                "HEAR STRESS",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: color,
-                  fontSize: 8.sp,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1,
-                ),
+    return Semantics(
+      button: true,
+      label: 'Listen to syllable stress',
+      child: ScaleButton(
+        key: const ValueKey('syllable_stress_pulse_speaker_btn'),
+        onTap: () => onPlayTts(text),
+        child: Container(
+          width: 92.r,
+          height: 92.r,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: color.withValues(alpha: 0.1),
+            border: Border.all(color: color, width: 2.5),
+            boxShadow: [
+              BoxShadow(
+                color: color.withValues(alpha: 0.15),
+                blurRadius: 16,
+                offset: const Offset(0, 4),
               ),
             ],
+          ),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                reduceMotion
+                    ? icon
+                    : icon
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .scale(
+                          begin: const Offset(1, 1),
+                          end: const Offset(1.15, 1.15),
+                          duration: 1.seconds,
+                        ),
+                SizedBox(height: 4.h),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 6.w),
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      "HEAR STRESS",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: color,
+                        fontSize: 10.5.sp,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 0.8,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

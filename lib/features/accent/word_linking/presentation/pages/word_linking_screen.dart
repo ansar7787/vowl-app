@@ -178,7 +178,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen>
                               hasScrollBody: false,
                               child: Padding(
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: 24.w,
+                                  horizontal: 20.w,
                                   vertical: 16.h,
                                 ),
                                 child: Column(
@@ -191,13 +191,13 @@ class _WordLinkingScreenState extends State<WordLinkingScreen>
                                           ? "Great job! Now record yourself saying the phrase."
                                           : quest.instruction,
                                     ),
-                                    SizedBox(height: 32.h),
+                                    SizedBox(height: 20.h),
                                     WordLinkingPulseSpeaker(
                                       text: quest.textToSpeak ?? "",
                                       color: theme.primaryColor,
                                       onPlayTts: _playTts,
                                     ),
-                                    SizedBox(height: 48.h),
+                                    SizedBox(height: 24.h),
                                     IgnorePointer(
                                       ignoring:
                                           isAnsweredNotifier.value ||

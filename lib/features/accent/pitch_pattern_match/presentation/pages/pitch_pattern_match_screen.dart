@@ -226,7 +226,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
                           final maxHeight = constraints.maxHeight;
 
                           final double estimatedContentHeight =
-                              24.h + 70.h + 80.h + 140.h;
+                              28.h + 80.h + 80.h + 140.h;
                           final remainingHeight =
                               maxHeight - estimatedContentHeight;
 
@@ -235,18 +235,18 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
                               : 0;
 
                           final double gapInstruction = remainingHeight > 0
-                              ? (gapUnit * 1).clamp(8.0, 24.0)
+                              ? (gapUnit * 1).clamp(8.0, 18.0)
                               : 8.0;
                           final double gapPrompt = remainingHeight > 0
-                              ? (gapUnit * 1.5).clamp(12.0, 32.0)
-                              : 12.0;
+                              ? (gapUnit * 1.2).clamp(10.0, 22.0)
+                              : 10.0;
                           final double gapSpeaker = remainingHeight > 0
-                              ? (gapUnit * 2).clamp(16.0, 48.0)
-                              : 16.0;
+                              ? (gapUnit * 1.5).clamp(12.0, 26.0)
+                              : 12.0;
 
                           final double gapBottom = remainingHeight > 0
-                              ? (gapUnit * 1).clamp(12.0, 40.0)
-                              : 12.0;
+                              ? (gapUnit * 1).clamp(10.0, 28.0)
+                              : 10.0;
 
                           return RawScrollbar(
                             controller: _scrollController,
@@ -272,7 +272,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
                                         children: [
                                           Padding(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
+                                              horizontal: 20.w,
                                             ),
                                             child: Column(
                                               mainAxisAlignment:
@@ -420,8 +420,8 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
                                                 (isFirstStagePassedNotifier
                                                         .value &&
                                                     !isAnsweredNotifier.value)
-                                                ? 40.h
-                                                : 160.h,
+                                                ? 32.h
+                                                : 120.h,
                                           ),
                                         ],
                                       ),
@@ -432,10 +432,12 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
                                 if (isFirstStagePassedNotifier.value &&
                                     !isAnsweredNotifier.value)
                                   SliverToBoxAdapter(
-                                    child: Column(
-                                      children: [
-                                        if (isFirstStagePassedNotifier.value &&
-                                            !isAnsweredNotifier.value)
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 20.w,
+                                      ),
+                                      child: Column(
+                                        children: [
                                           SpeakToConfirmOverlay(
                                             key: const ValueKey(
                                               'pitch_pattern_speak_overlay',
@@ -465,9 +467,9 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
                                               );
                                             },
                                           ),
-
-                                        SizedBox(height: 60.h),
-                                      ],
+                                          SizedBox(height: 60.h),
+                                        ],
+                                      ),
                                     ),
                                   ),
                               ],

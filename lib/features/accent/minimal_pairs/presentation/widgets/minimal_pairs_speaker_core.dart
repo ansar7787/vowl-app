@@ -20,19 +20,20 @@ class MinimalPairsSpeakerCore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     Widget coreContainer = Container(
-      width: 80.r,
-      height: 80.r,
+      width: 84.r,
+      height: 84.r,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: color.withValues(alpha: 0.1),
-        border: Border.all(color: color, width: 3),
+        color: color.withValues(alpha: isDark ? 0.15 : 0.08),
+        border: Border.all(color: color, width: 2.0),
         boxShadow: [
           BoxShadow(
-            color: color.withValues(alpha: 0.2),
-            blurRadius: 30,
-            spreadRadius: 2,
+            color: color.withValues(alpha: isDark ? 0.25 : 0.18),
+            blurRadius: 20,
+            spreadRadius: 1,
           ),
         ],
       ),
@@ -41,22 +42,27 @@ class MinimalPairsSpeakerCore extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
-              Icons.record_voice_over_rounded,
+              Icons.volume_up_rounded,
               color: color,
               size: 28.r,
             ),
-            SizedBox(height: 6.h),
-            Text(
-              context
-                  .tr('games.tap_to_play', fallback: "TAP TO\nPLAY")
-                  .toUpperCase(),
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                color: color,
-                fontSize: 9.sp,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1,
+            SizedBox(height: 4.h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 6.w),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  context.tr('games.tap_to_listen', fallback: 'Tap to listen'),
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    color: color,
+                    fontSize: 10.5.sp,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 0.3,
+                  ),
+                ),
               ),
             ),
           ],
@@ -69,7 +75,7 @@ class MinimalPairsSpeakerCore extends StatelessWidget {
           .animate(onPlay: (c) => c.repeat(reverse: true))
           .scale(
             begin: const Offset(1.0, 1.0),
-            end: const Offset(1.06, 1.06),
+            end: const Offset(1.05, 1.05),
             duration: 1.5.seconds,
           );
     }

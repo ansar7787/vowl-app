@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class WordLinkingInstruction extends StatelessWidget {
   final Color color;
@@ -13,33 +14,56 @@ class WordLinkingInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final text = instruction.trim().isEmpty
+        ? "Tap where two words link together"
+        : instruction.trim();
+
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      width: double.infinity,
+      constraints: BoxConstraints(maxWidth: 420.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
+        color: color.withValues(alpha: isDark ? 0.12 : 0.08),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: color.withValues(alpha: isDark ? 0.25 : 0.2),
+          width: 1.2,
+        ),
       ),
-      child: Row(
+      child: Column(
         mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(Icons.link_rounded, size: 14.r, color: color),
-          SizedBox(width: 8.w),
-          Flexible(
-            child: Text(
-              instruction.trim().isEmpty
-                  ? "IDENTIFY THE LINKING"
-                  : instruction.toUpperCase(),
-              textAlign: TextAlign.center,
-              maxLines: null,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w900,
-                color: color,
-                letterSpacing: 1.5,
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.link_rounded, size: 15.r, color: color),
+              SizedBox(width: 6.w),
+              Text(
+                "Word Linking",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w600,
+                  color: color,
+                  letterSpacing: 0.3,
+                ),
               ),
+            ],
+          ),
+          SizedBox(height: 6.h),
+          Text(
+            text,
+            textAlign: TextAlign.center,
+            softWrap: true,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w500,
+              height: 1.35,
+              color: isDark ? AppColors.slate200 : AppColors.slate800,
             ),
           ),
         ],

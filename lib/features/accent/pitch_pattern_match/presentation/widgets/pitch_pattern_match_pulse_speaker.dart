@@ -26,7 +26,7 @@ class PitchPatternMatchPulseSpeaker extends StatelessWidget {
           .animate(onPlay: (c) => c.repeat(reverse: true))
           .scale(
             begin: const Offset(1, 1),
-            end: const Offset(1.2, 1.2),
+            end: const Offset(1.15, 1.15),
           );
     }
 
@@ -34,34 +34,45 @@ class PitchPatternMatchPulseSpeaker extends StatelessWidget {
       key: const ValueKey('pitch_pattern_speaker_btn'),
       onTap: () => onPlayTts(text),
       child: Container(
-        width: 80.r,
-        height: 80.r,
+        width: 88.r,
+        height: 88.r,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: color.withValues(alpha: 0.1),
-          border: Border.all(color: color, width: 3),
+          border: Border.all(color: color, width: 2.5),
           boxShadow: [
-            BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 20),
+            BoxShadow(
+              color: color.withValues(alpha: 0.15),
+              blurRadius: 16,
+              offset: const Offset(0, 4),
+            ),
           ],
         ),
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              icon,
-              SizedBox(height: 6.h),
-              Text(
-                "HEAR\nPATTERN",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: color,
-                  fontSize: 8.sp,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1,
-                ),
+          child: Padding(
+            padding: EdgeInsets.all(6.r),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  icon,
+                  SizedBox(height: 4.h),
+                  Text(
+                    "LISTEN",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: color,
+                      fontSize: 10.5.sp,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 0.8,
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

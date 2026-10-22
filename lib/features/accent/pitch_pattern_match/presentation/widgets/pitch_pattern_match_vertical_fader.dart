@@ -32,6 +32,7 @@ class PitchPatternMatchVerticalFader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Expanded(
           child: Column(
@@ -40,13 +41,13 @@ class PitchPatternMatchVerticalFader extends StatelessWidget {
               if (options.isNotEmpty)
                 _buildPitchOption(options[0], 0, Icons.arrow_upward_rounded),
               if (options.length > 1) ...[
-                SizedBox(height: 16.h),
+                SizedBox(height: 14.h),
                 _buildPitchOption(options[1], 1, Icons.arrow_downward_rounded),
               ],
             ],
           ),
         ),
-        SizedBox(width: 32.w),
+        SizedBox(width: 20.w),
         _buildVerticalSliderBar(correctIndex, color),
       ],
     );
@@ -58,10 +59,10 @@ class PitchPatternMatchVerticalFader extends StatelessWidget {
     final bool showResult = isAnswered && isSelected;
 
     Color cardColor = isDark
-        ? AppColors.slate800.withValues(alpha: 0.7)
-        : Colors.white.withValues(alpha: 0.8);
-    Color borderColor = color.withValues(alpha: 0.3);
-    Color textColor = isDark ? Colors.white70 : Colors.black87;
+        ? AppColors.slate800.withValues(alpha: 0.75)
+        : Colors.white;
+    Color borderColor = color.withValues(alpha: isDark ? 0.25 : 0.18);
+    Color textColor = isDark ? Colors.white : AppColors.slate800;
 
     if (showResult) {
       cardColor = correct
@@ -70,7 +71,7 @@ class PitchPatternMatchVerticalFader extends StatelessWidget {
       borderColor = correct ? AppColors.emerald500 : AppColors.rose700;
       textColor = correct ? AppColors.emerald500 : AppColors.rose700;
     } else if (isSelected) {
-      cardColor = color.withValues(alpha: 0.2);
+      cardColor = color.withValues(alpha: 0.15);
       borderColor = color;
       textColor = color;
     }
@@ -82,33 +83,53 @@ class PitchPatternMatchVerticalFader extends StatelessWidget {
         duration: const Duration(milliseconds: 200),
         curve: Curves.easeOutCubic,
         alignment: Alignment.center,
-        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
+        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 14.h),
         decoration: BoxDecoration(
           color: cardColor,
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(color: borderColor, width: isSelected ? 2.5 : 1.5),
+          borderRadius: BorderRadius.circular(18.r),
+          border: Border.all(
+            color: borderColor,
+            width: isSelected ? 2.0 : 1.2,
+          ),
           boxShadow: [
-            if (showResult)
-              BoxShadow(
-                color: borderColor.withValues(alpha: 0.3),
-                blurRadius: 15,
-                spreadRadius: 2,
-              ),
+            BoxShadow(
+              color: showResult
+                  ? borderColor.withValues(alpha: 0.3)
+                  : Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
+              blurRadius: showResult ? 12 : 8,
+              offset: const Offset(0, 2),
+            ),
           ],
         ),
         child: Row(
           children: [
-            Icon(iconData, color: textColor.withValues(alpha: 0.8), size: 24.r),
-            SizedBox(width: 16.w),
+            Container(
+              padding: EdgeInsets.all(7.r),
+              decoration: BoxDecoration(
+                color: (isSelected || showResult)
+                    ? textColor.withValues(alpha: 0.15)
+                    : (isDark
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : color.withValues(alpha: 0.08)),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                iconData,
+                color: textColor,
+                size: 20.r,
+              ),
+            ),
+            SizedBox(width: 14.w),
             Expanded(
               child: Text(
                 text,
+                softWrap: true,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 11.sp,
+                  fontSize: 13.5.sp,
                   fontWeight: FontWeight.w600,
                   color: textColor,
-                  height: 1.3,
+                  height: 1.35,
                 ),
               ),
             ),
@@ -121,9 +142,10 @@ class PitchPatternMatchVerticalFader extends StatelessWidget {
   Widget _buildVerticalSliderBar(int correct, Color color) {
     return Container(
       height: 140.h,
+      width: 52.w,
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(30.r),
+        color: color.withValues(alpha: isDark ? 0.08 : 0.05),
+        borderRadius: BorderRadius.circular(26.r),
         border: Border.all(color: color.withValues(alpha: 0.2), width: 1.5),
       ),
       child: RotatedBox(
@@ -134,8 +156,8 @@ class PitchPatternMatchVerticalFader extends StatelessWidget {
             inactiveTrackColor: Colors.transparent,
             thumbColor: color,
             overlayColor: color.withValues(alpha: 0.2),
-            trackHeight: 24.h,
-            thumbShape: RoundSliderThumbShape(enabledThumbRadius: 16.r),
+            trackHeight: 20.h,
+            thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15.r),
           ),
           child: IgnorePointer(
             ignoring: isAnswered,

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
@@ -17,6 +16,8 @@ class MinimalPairsDroneOption extends StatelessWidget {
   final bool isAnswered;
   final int? selectedDroneIndex;
   final Function(int, int) onShoot;
+  final double? cardWidth;
+  final double? cardHeight;
 
   const MinimalPairsDroneOption({
     super.key,
@@ -29,6 +30,8 @@ class MinimalPairsDroneOption extends StatelessWidget {
     required this.isAnswered,
     required this.selectedDroneIndex,
     required this.onShoot,
+    this.cardWidth,
+    this.cardHeight,
   });
 
   @override
@@ -38,9 +41,18 @@ class MinimalPairsDroneOption extends StatelessWidget {
     final bool isSelected = selectedDroneIndex == index;
     final bool correct = index == correctIndex;
 
-    Color borderColor = color.withValues(alpha: isDark ? 0.4 : 0.3);
+    Color borderColor = color.withValues(alpha: isDark ? 0.35 : 0.25);
+    Color cardBg = isDark ? const Color(0xFF1E2230) : Colors.white;
+
     if (isAnswered && isSelected) {
       borderColor = correct ? tokens.gameCorrect : tokens.gameIncorrect;
+      cardBg = isDark
+          ? (correct
+              ? tokens.gameCorrect.withValues(alpha: 0.15)
+              : tokens.gameIncorrect.withValues(alpha: 0.15))
+          : (correct
+              ? tokens.gameCorrect.withValues(alpha: 0.08)
+              : tokens.gameIncorrect.withValues(alpha: 0.08));
     } else if (isSelected) {
       borderColor = color;
     }
@@ -48,6 +60,9 @@ class MinimalPairsDroneOption extends StatelessWidget {
     final String semanticLabel = isAnswered && isSelected
         ? "$word, ${correct ? context.tr('games.correct', fallback: 'Correct!') : context.tr('games.incorrect', fallback: 'Incorrect!')}"
         : word;
+
+    final effectiveWidth = cardWidth ?? 136.w;
+    final effectiveHeight = cardHeight ?? 112.h;
 
     return Semantics(
       label: semanticLabel,
@@ -58,109 +73,120 @@ class MinimalPairsDroneOption extends StatelessWidget {
         key: ValueKey('minimal_pairs_drone_$index'),
         onTap: () => onShoot(index, correctIndex),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Builder(
               builder: (context) {
-                Widget droneCard = AnimatedContainer(
+                Widget card = AnimatedContainer(
                   duration: 250.milliseconds,
-                  width: 130.w,
-                  height: 110.h,
+                  width: effectiveWidth,
+                  height: effectiveHeight,
                   decoration: BoxDecoration(
-                    color: isDark ? Colors.black45 : Colors.white,
-                    borderRadius: BorderRadius.circular(20.r),
-                    border: Border.all(color: borderColor, width: 3),
+                    color: cardBg,
+                    borderRadius: BorderRadius.circular(18.r),
+                    border: Border.all(
+                      color: borderColor,
+                      width: isSelected ? 2.5 : 1.5,
+                    ),
                     boxShadow: [
                       BoxShadow(
                         color: (isSelected && isAnswered)
                             ? (correct
-                                  ? tokens.gameCorrect.withValues(alpha: 0.3)
-                                  : tokens.gameIncorrect.withValues(alpha: 0.3))
-                            : color.withValues(alpha: isDark ? 0.25 : 0.08),
-                        blurRadius: 10,
+                                ? tokens.gameCorrect.withValues(alpha: 0.25)
+                                : tokens.gameIncorrect.withValues(alpha: 0.25))
+                            : (isDark
+                                ? Colors.black.withValues(alpha: 0.3)
+                                : color.withValues(alpha: 0.08)),
+                        blurRadius: isSelected ? 12 : 8,
+                        offset: const Offset(0, 3),
                       ),
                     ],
                   ),
-                  child: Stack(
-                    children: [
-                      const Positioned.fill(
-                        child: TechPatternOverlay(opacity: 0.05),
+                  child: Center(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10.w,
+                        vertical: 8.h,
                       ),
-                      Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Flexible(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 8.w),
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: Text(
-                                    word.toUpperCase(),
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 18.sp,
-                                      fontWeight: FontWeight.bold,
-                                      color: isDark
-                                          ? Colors.white
-                                          : Colors.black87,
-                                    ),
-                                  ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Flexible(
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                word.toUpperCase(),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 19.sp,
+                                  fontWeight: FontWeight.w700,
+                                  letterSpacing: 0.5,
+                                  color: isDark
+                                      ? Colors.white
+                                      : const Color(0xFF0F172A),
                                 ),
                               ),
                             ),
-                            SizedBox(height: 6.h),
-                            Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 8.w,
-                                vertical: 3.h,
+                          ),
+                          SizedBox(height: 8.h),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.w,
+                              vertical: 4.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: color.withValues(
+                                alpha: isDark ? 0.15 : 0.08,
                               ),
-                              decoration: BoxDecoration(
-                                color: color.withValues(alpha: 0.1),
-                                borderRadius: BorderRadius.circular(6.r),
+                              borderRadius: BorderRadius.circular(8.r),
+                              border: Border.all(
+                                color: color.withValues(alpha: 0.2),
+                                width: 1,
                               ),
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  ipa,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 11.sp,
-                                    fontWeight: FontWeight.bold,
-                                    color: color,
-                                  ),
+                            ),
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                ipa,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.5.sp,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 0.3,
+                                  color: color,
                                 ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 );
 
                 if (!reduceMotion) {
-                  droneCard = droneCard
+                  card = card
                       .animate(onPlay: (c) => c.repeat(reverse: true))
                       .moveY(
                         begin: 0,
-                        end: index == 0 ? 8.h : -8.h,
+                        end: index == 0 ? 5.h : -5.h,
                         duration: (2 + index).seconds,
                       );
                 }
 
-                return droneCard;
+                return card;
               },
             ),
-
-            SizedBox(height: 10.h),
+            SizedBox(height: 8.h),
             AnimatedOpacity(
               duration: const Duration(milliseconds: 200),
               opacity: (isAnswered && isSelected) ? 1.0 : 0.0,
               child: Icon(
                 correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
                 color: correct ? tokens.gameCorrect : tokens.gameIncorrect,
-                size: 20.r,
+                size: 22.r,
               ).animate(target: (isAnswered && isSelected) ? 1 : 0).scale(),
             ),
           ],

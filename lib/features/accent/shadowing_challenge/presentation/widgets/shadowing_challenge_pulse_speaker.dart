@@ -20,13 +20,14 @@ class ShadowingChallengePulseSpeaker extends StatelessWidget {
   Widget build(BuildContext context) {
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
-    Widget icon = Icon(Icons.graphic_eq_rounded, color: color, size: 28.r);
+    Widget icon = Icon(Icons.volume_up_rounded, color: color, size: 26.r);
     if (!reduceMotion) {
       icon = icon
           .animate(onPlay: (c) => c.repeat(reverse: true))
           .scale(
             begin: const Offset(1, 1),
-            end: const Offset(1.2, 1.2),
+            end: const Offset(1.15, 1.15),
+            duration: const Duration(milliseconds: 700),
           );
     }
 
@@ -34,31 +35,37 @@ class ShadowingChallengePulseSpeaker extends StatelessWidget {
       key: const ValueKey('shadowing_speaker_btn'),
       onTap: () => onPlayTts(text),
       child: Container(
-        width: 80.r,
-        height: 80.r,
+        width: 76.r,
+        height: 76.r,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: color.withValues(alpha: 0.1),
-          border: Border.all(color: color, width: 3),
+          color: color.withValues(alpha: 0.08),
+          border: Border.all(color: color, width: 2),
           boxShadow: [
-            BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 20),
+            BoxShadow(
+              color: color.withValues(alpha: 0.12),
+              blurRadius: 16,
+              offset: const Offset(0, 2),
+            ),
           ],
         ),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
               icon,
-              SizedBox(height: 6.h),
+              SizedBox(height: 4.h),
               Text(
-                "HEAR\nTARGET",
+                "Listen",
                 textAlign: TextAlign.center,
+                softWrap: false,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   color: color,
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1,
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 0.3,
                 ),
               ),
             ],

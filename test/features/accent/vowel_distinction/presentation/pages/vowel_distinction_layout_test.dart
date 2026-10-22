@@ -615,6 +615,43 @@ void main() {
 
       verify(() => mockAccentBloc.add(const NextQuestion())).called(1);
     });
+
+    testWidgets(
+      'tapping TRY AGAIN on feedback card resets state and dismisses feedback card when bloc retries',
+      (tester) async {
+        final stateController = StreamController<AccentState>.broadcast();
+        addTearDown(stateController.close);
+
+        when(() => mockAccentBloc.stream)
+            .thenAnswer((_) => stateController.stream);
+
+        await pumpVowelDistinction(tester);
+
+        // Tap wrong answer
+        final wrongOrb = find.byKey(const ValueKey('vowel_orb_1'));
+        await tester.tap(wrongOrb);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(find.text('TRY AGAIN'), findsOneWidget);
+
+        // Simulate bloc emitting retry state (unanswered, 2 lives)
+        final retryState = testLoadedState.copyWith(
+          livesRemaining: 2,
+          answerStatus: AnswerStatus.unanswered,
+        );
+        when(() => mockAccentBloc.state).thenReturn(retryState);
+        stateController.add(retryState);
+
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // Feedback card is dismissed
+        expect(find.text('TRY AGAIN'), findsNothing);
+
+        await tester.pump(const Duration(seconds: 2));
+      },
+    );
   });
 
   group('VowelDistinctionScreen - Briefing, Hint & Motion Settings', () {

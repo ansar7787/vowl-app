@@ -37,32 +37,53 @@ class IntonationMimicVerticalFader extends StatelessWidget {
   Widget build(BuildContext context) {
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Expanded(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _buildPitchOption(
-                options[topIndex],
-                topIndex,
-                Icons.arrow_upward_rounded,
-                reduceMotion,
-              ),
-              SizedBox(height: 12.h),
-              _buildPitchOption(
-                options[bottomIndex],
-                bottomIndex,
-                Icons.arrow_downward_rounded,
-                reduceMotion,
-              ),
-            ],
-          ),
+    return Container(
+      width: double.infinity,
+      constraints: BoxConstraints(maxWidth: 400.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: isDark ? 0.06 : 0.05),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: color.withValues(alpha: isDark ? 0.22 : 0.16),
+          width: 1.2,
         ),
-        SizedBox(width: 32.w),
-        _buildVerticalSliderBar(correctIndex, color, reduceMotion),
-      ],
+        boxShadow: [
+          BoxShadow(
+            color: color.withValues(alpha: isDark ? 0.05 : 0.03),
+            blurRadius: 14,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _buildPitchOption(
+                  options[topIndex],
+                  topIndex,
+                  Icons.arrow_upward_rounded,
+                  reduceMotion,
+                ),
+                SizedBox(height: 12.h),
+                _buildPitchOption(
+                  options[bottomIndex],
+                  bottomIndex,
+                  Icons.arrow_downward_rounded,
+                  reduceMotion,
+                ),
+              ],
+            ),
+          ),
+          SizedBox(width: 16.w),
+          _buildVerticalSliderBar(correctIndex, color, reduceMotion),
+        ],
+      ),
     );
   }
 
@@ -77,9 +98,9 @@ class IntonationMimicVerticalFader extends StatelessWidget {
     final bool showResult = isAnswered && isSelected;
 
     Color cardColor = isDark
-        ? AppColors.slate800.withValues(alpha: 0.7)
-        : Colors.white.withValues(alpha: 0.8);
-    Color borderColor = color.withValues(alpha: 0.3);
+        ? AppColors.slate800.withValues(alpha: 0.75)
+        : Colors.white.withValues(alpha: 0.9);
+    Color borderColor = color.withValues(alpha: 0.25);
     Color textColor = isDark ? Colors.white70 : Colors.black87;
 
     if (showResult) {
@@ -89,7 +110,7 @@ class IntonationMimicVerticalFader extends StatelessWidget {
       borderColor = correct ? AppColors.emerald500 : AppColors.rose700;
       textColor = correct ? AppColors.emerald500 : AppColors.rose700;
     } else if (isSelected) {
-      cardColor = color.withValues(alpha: 0.2);
+      cardColor = color.withValues(alpha: 0.18);
       borderColor = color;
       textColor = color;
     }
@@ -100,33 +121,35 @@ class IntonationMimicVerticalFader extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
         curve: Curves.easeOutCubic,
-        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
+        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
         decoration: BoxDecoration(
           color: cardColor,
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(color: borderColor, width: isSelected ? 2.5 : 1.5),
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: borderColor, width: isSelected ? 1.8 : 1.2),
           boxShadow: [
             if (showResult)
               BoxShadow(
                 color: borderColor.withValues(alpha: 0.3),
-                blurRadius: 15,
-                spreadRadius: 2,
+                blurRadius: 14,
+                spreadRadius: 1,
               ),
           ],
         ),
         child: Row(
           children: [
-            Icon(iconData, color: textColor.withValues(alpha: 0.8), size: 24.r),
-            SizedBox(width: 16.w),
+            Icon(iconData, color: textColor.withValues(alpha: 0.85), size: 22.r),
+            SizedBox(width: 12.w),
             Expanded(
               child: Text(
                 text,
+                softWrap: true,
+                maxLines: null,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 11.sp,
+                  fontSize: 13.5.sp,
                   fontWeight: FontWeight.w600,
                   color: textColor,
-                  height: 1.2,
+                  height: 1.3,
                 ),
               ),
             ),
@@ -151,11 +174,12 @@ class IntonationMimicVerticalFader extends StatelessWidget {
     bool reduceMotion,
   ) {
     Widget sliderBar = Container(
-      height: 140.h,
+      height: 136.h,
+      width: 50.w,
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.2), width: 1.5),
+        color: color.withValues(alpha: isDark ? 0.08 : 0.05),
+        borderRadius: BorderRadius.circular(25.r),
+        border: Border.all(color: color.withValues(alpha: 0.2), width: 1.2),
       ),
       child: RotatedBox(
         quarterTurns: 3,
@@ -165,8 +189,8 @@ class IntonationMimicVerticalFader extends StatelessWidget {
             inactiveTrackColor: Colors.transparent,
             thumbColor: color,
             overlayColor: color.withValues(alpha: 0.2),
-            trackHeight: 24.h,
-            thumbShape: RoundSliderThumbShape(enabledThumbRadius: 16.r),
+            trackHeight: 18.h,
+            thumbShape: RoundSliderThumbShape(enabledThumbRadius: 14.r),
           ),
           child: IgnorePointer(
             ignoring: isAnswered,

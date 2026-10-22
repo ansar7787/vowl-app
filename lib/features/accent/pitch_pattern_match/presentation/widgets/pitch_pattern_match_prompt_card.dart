@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class PitchPatternMatchPromptCard extends StatelessWidget {
   final String word;
@@ -19,71 +19,80 @@ class PitchPatternMatchPromptCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 342.w,
-      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 24.w),
+      width: double.infinity,
+      constraints: BoxConstraints(maxWidth: 420.w),
+      padding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 20.w),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-        borderRadius: BorderRadius.circular(24.r),
+        color: isDark
+            ? AppColors.slate800.withValues(alpha: 0.6)
+            : Colors.white,
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: isDark ? Colors.white12 : Colors.black12,
-          width: 2,
+          color: color.withValues(alpha: isDark ? 0.25 : 0.18),
+          width: 1.5,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: isDark ? 0.25 : 0.04),
+            blurRadius: 12,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
-      child: Stack(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
-          Center(
-            child: Column(
-              children: [
-                Text(
-                  "TARGET SENTENCE",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 8.sp,
-                    fontWeight: FontWeight.bold,
-                    color: color,
-                    letterSpacing: 2,
-                  ),
-                ),
-                SizedBox(height: 8.h),
-                Text(
-                  word,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Theme.of(context).colorScheme.onSurface,
-                    letterSpacing: 1,
-                  ),
-                ),
-                if (emotionContext != null) ...[
-                  SizedBox(height: 12.h),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 12.w,
-                      vertical: 4.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: color.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(color: color.withValues(alpha: 0.3)),
-                    ),
-                    child: Text(
-                      emotionContext!.toUpperCase(),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.bold,
-                        color: color,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                  ),
-                ],
-              ],
+          Text(
+            "SENTENCE",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 11.5.sp,
+              fontWeight: FontWeight.w600,
+              color: color,
+              letterSpacing: 1.0,
             ),
           ),
+          SizedBox(height: 10.h),
+          Text(
+            word,
+            textAlign: TextAlign.center,
+            softWrap: true,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 19.sp,
+              fontWeight: FontWeight.w700,
+              color: Theme.of(context).colorScheme.onSurface,
+              height: 1.35,
+            ),
+          ),
+          if (emotionContext != null && emotionContext!.trim().isNotEmpty) ...[
+            SizedBox(height: 12.h),
+            Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: 14.w,
+                vertical: 5.h,
+              ),
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(
+                  color: color.withValues(alpha: 0.25),
+                  width: 1.0,
+                ),
+              ),
+              child: Text(
+                emotionContext!.toUpperCase(),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w600,
+                  color: color,
+                  letterSpacing: 0.6,
+                ),
+              ),
+            ),
+          ],
         ],
       ),
     );

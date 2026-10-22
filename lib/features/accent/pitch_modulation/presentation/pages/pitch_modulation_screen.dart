@@ -24,7 +24,6 @@ class PitchModulationState {
   final bool isDragging;
   final int? selectedIndex;
   final bool isFirstStagePassed;
-  final int spokenMeaningsCount;
 
   const PitchModulationState({
     this.isAnswered = false,
@@ -34,7 +33,6 @@ class PitchModulationState {
     this.isDragging = false,
     this.selectedIndex,
     this.isFirstStagePassed = false,
-    this.spokenMeaningsCount = 0,
   });
 
   PitchModulationState copyWith({
@@ -45,7 +43,6 @@ class PitchModulationState {
     bool? isDragging,
     int? selectedIndex,
     bool? isFirstStagePassed,
-    int? spokenMeaningsCount,
     bool clearCorrect = false,
     bool clearSelectedIndex = false,
   }) {
@@ -59,7 +56,6 @@ class PitchModulationState {
           ? null
           : (selectedIndex ?? this.selectedIndex),
       isFirstStagePassed: isFirstStagePassed ?? this.isFirstStagePassed,
-      spokenMeaningsCount: spokenMeaningsCount ?? this.spokenMeaningsCount,
     );
   }
 }
@@ -338,7 +334,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
                                         children: [
                                           Padding(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
+                                              horizontal: 20.w,
                                             ),
                                             child: Column(
                                               mainAxisAlignment:
@@ -353,9 +349,9 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
                                                       color: theme.primaryColor,
                                                       instruction:
                                                           uiState
-                                                              .isFirstStagePassed
-                                                          ? "Great job! Now practice saying it with both meanings."
-                                                          : quest.instruction,
+                                                                  .isFirstStagePassed
+                                                              ? "Great job! Now speak the phrase to confirm."
+                                                              : quest.instruction,
                                                     ),
                                                     SizedBox(
                                                       height: gapInstruction,
@@ -433,85 +429,55 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
                                 if (uiState.isFirstStagePassed &&
                                     !uiState.isAnswered)
                                   SliverToBoxAdapter(
-                                    child: Column(
-                                      children: [
-                                        if (uiState.isFirstStagePassed &&
-                                            !uiState.isAnswered) ...[
-                                          Builder(
-                                            builder: (context) {
-                                              String currentOption =
-                                                  options[uiState
-                                                      .spokenMeaningsCount];
-                                              String currentMeaning =
-                                                  currentOption;
-                                              if (currentOption.contains(
-                                                    " (",
-                                                  ) &&
-                                                  currentOption.endsWith(")")) {
-                                                currentMeaning = currentOption
-                                                    .split(" (")[1];
-                                                currentMeaning = currentMeaning
-                                                    .substring(
-                                                      0,
-                                                      currentMeaning.length - 1,
-                                                    );
-                                              }
-
-                                              return SpeakToConfirmOverlay(
-                                                key: ValueKey(
-                                                  'speak_overlay_${uiState.spokenMeaningsCount}',
-                                                ),
-                                                expectedText:
-                                                    quest.textToSpeak ?? "",
-                                                displayText:
-                                                    '${quest.textToSpeak ?? ""}\n\n(Meaning: $currentMeaning)',
-                                                primaryColor:
-                                                    theme.primaryColor,
-                                                isPositioned: false,
-                                                onBypassed: () {
-                                                  context
-                                                      .read<AccentBloc>()
-                                                      .add(
-                                                        const AccentSpeakConfirmed(
-                                                          10,
-                                                        ),
-                                                      );
-                                                  _submitVerbalEvaluation(true);
-                                                },
-                                                onConfirmed: () {
-                                                  if (uiState
-                                                          .spokenMeaningsCount ==
-                                                      0) {
-                                                    _state.value = _state.value
-                                                        .copyWith(
-                                                          spokenMeaningsCount:
-                                                              1,
-                                                        );
-                                                    soundService.playCorrect();
-                                                  } else {
-                                                    context
-                                                        .read<AccentBloc>()
-                                                        .add(
-                                                          const AccentSpeakConfirmed(
-                                                            10,
-                                                          ),
-                                                        );
-                                                    _submitVerbalEvaluation(
-                                                      true,
-                                                    );
-                                                  }
-                                                },
-                                                onSkipped: () =>
-                                                    _submitVerbalEvaluation(
-                                                      false,
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 20.w,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          SpeakToConfirmOverlay(
+                                            key: const ValueKey(
+                                              'pitch_modulation_speak_overlay',
+                                            ),
+                                            expectedText:
+                                                quest.textToSpeak ??
+                                                quest.word ??
+                                                "",
+                                            displayText:
+                                                quest.textToSpeak ??
+                                                quest.word ??
+                                                "",
+                                            primaryColor:
+                                                theme.primaryColor,
+                                            isPositioned: false,
+                                            onBypassed: () {
+                                              context
+                                                  .read<AccentBloc>()
+                                                  .add(
+                                                    const AccentSpeakConfirmed(
+                                                      10,
                                                     ),
-                                              );
+                                                  );
+                                              _submitVerbalEvaluation(true);
                                             },
+                                            onConfirmed: () {
+                                              context
+                                                  .read<AccentBloc>()
+                                                  .add(
+                                                    const AccentSpeakConfirmed(
+                                                      10,
+                                                    ),
+                                                  );
+                                              _submitVerbalEvaluation(true);
+                                            },
+                                            onSkipped: () =>
+                                                _submitVerbalEvaluation(
+                                                  false,
+                                                ),
                                           ),
+                                          SizedBox(height: 60.h),
                                         ],
-
-                                        SizedBox(height: 60.h),
-                                      ],
+                                      ),
                                     ),
                                   ),
                               ],

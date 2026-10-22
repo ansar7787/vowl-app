@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
 class PitchModulationPromptCard extends StatelessWidget {
   final String word;
@@ -17,45 +16,49 @@ class PitchModulationPromptCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 342.w,
-      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 24.w),
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 20.w),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-        borderRadius: BorderRadius.circular(24.r),
+        color: color.withValues(alpha: isDark ? 0.08 : 0.05),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: isDark ? Colors.white12 : Colors.black12,
-          width: 2,
+          color: color.withValues(alpha: isDark ? 0.25 : 0.18),
+          width: 1.5,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.03),
+            blurRadius: 10,
+            offset: const Offset(0, 3),
+          ),
+        ],
       ),
-      child: Stack(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
-          Center(
-            child: Column(
-              children: [
-                Text(
-                  "TARGET PHRASE",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.bold,
-                    color: color,
-                    letterSpacing: 2,
-                  ),
-                ),
-                SizedBox(height: 8.h),
-                Text(
-                  word,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Theme.of(context).colorScheme.onSurface,
-                    letterSpacing: 1,
-                  ),
-                ),
-              ],
+          Text(
+            "Word to practice",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 12.5.sp,
+              fontWeight: FontWeight.w600,
+              color: color,
+              letterSpacing: 0.5,
+            ),
+          ),
+          SizedBox(height: 6.h),
+          Text(
+            word,
+            textAlign: TextAlign.center,
+            softWrap: true,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 22.sp,
+              fontWeight: FontWeight.w700,
+              color: Theme.of(context).colorScheme.onSurface,
+              letterSpacing: 0.3,
+              height: 1.25,
             ),
           ),
         ],

@@ -317,12 +317,12 @@ void main() {
 
       expect(find.byType(IntonationMimicInstruction), findsOneWidget);
       expect(
-        find.text('IDENTIFY THE INTONATION PATTERN OF THIS SENTENCE.'),
+        find.text('Identify the intonation pattern of this sentence.'),
         findsOneWidget,
       );
       expect(find.byType(IntonationMimicPromptCard), findsOneWidget);
       expect(find.text('Really?'), findsOneWidget);
-      expect(find.text('SURPRISE / DISBELIEF'), findsOneWidget);
+      expect(find.text('Surprise / Disbelief'), findsOneWidget);
 
       expect(find.byType(IntonationMimicPulseSpeaker), findsOneWidget);
       expect(find.byKey(const ValueKey('intonation_speaker_btn')), findsOneWidget);
@@ -369,7 +369,7 @@ void main() {
       // Advances to Stage 2: Rollercoaster is visible at the top before scrolling
       expect(find.byType(IntonationMimicRollercoaster), findsOneWidget);
       expect(
-        find.text('GREAT JOB! NOW RECORD YOURSELF SAYING THE WORD.'),
+        find.text('Now speak the sentence with the matching intonation.'),
         findsOneWidget,
       );
 
@@ -738,6 +738,145 @@ void main() {
       expect(find.byType(IntonationMimicVerticalFader), findsOneWidget);
       expect(find.byKey(const ValueKey('intonation_option_0')), findsOneWidget);
       expect(find.byKey(const ValueKey('intonation_option_1')), findsOneWidget);
+    });
+
+    testWidgets('18. instruction card has symmetric internal padding and centers multi-line text', (
+      tester,
+    ) async {
+      const longInstructionQuest = AccentQuest(
+        id: 'ACC_IM_LONG_TEST',
+        instruction:
+            'A classmate wants to borrow something from you. Which pattern fits this sentence?',
+        difficulty: 1,
+        subtype: GameSubtype.intonationMimic,
+        word: 'Do you have a pen?',
+        textToSpeak: 'Do you have a pen?',
+        options: [
+          'Narrow pitch, low start — neutral report',
+          'Wide pitch, high start — happy and friendly',
+        ],
+        correctAnswerIndex: 0,
+        intonationMap: [1, 2, 3, 4],
+        emotionContext: 'Friendly Inquiry',
+        hint: 'Listen closely.',
+        explanation: 'Friendly questions rise.',
+      );
+
+      await pumpIntonationMimic(
+        tester,
+        state: const AccentLoaded(
+          quests: [longInstructionQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.intonationMimic,
+          level: 2,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        ),
+      );
+
+      final instructionFinder = find.byType(IntonationMimicInstruction);
+      expect(instructionFinder, findsOneWidget);
+
+      final containerWidget = tester.widget<Container>(
+        find
+            .descendant(
+              of: instructionFinder,
+              matching: find.byType(Container),
+            )
+            .first,
+      );
+      final padding = containerWidget.padding as EdgeInsets;
+      expect(padding.left, equals(padding.right));
+
+      final textWidget = tester.widget<Text>(
+        find.descendant(of: instructionFinder, matching: find.byType(Text)),
+      );
+      expect(textWidget.textAlign, equals(TextAlign.center));
+      expect(textWidget.overflow, isNot(TextOverflow.ellipsis));
+    });
+
+    testWidgets('19. stage 2 SpeakToConfirmOverlay mechanism card has standard horizontal padding from screen edges', (
+      tester,
+    ) async {
+      await pumpIntonationMimic(tester);
+
+      final correctOption = find.byKey(const ValueKey('intonation_option_0'));
+      await tester.tap(correctOption);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 50));
+
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+
+      final overlayFinder = find.byType(SpeakToConfirmOverlay);
+      expect(overlayFinder, findsOneWidget);
+
+      final parentPadding = tester.widget<Padding>(
+        find.ancestor(of: overlayFinder, matching: find.byType(Padding)).first,
+      );
+      final overlayInsets = parentPadding.padding as EdgeInsets;
+      expect(overlayInsets.left, greaterThanOrEqualTo(16.0));
+      expect(overlayInsets.right, greaterThanOrEqualTo(16.0));
+    });
+
+    testWidgets('20. long sentences and long options never show ellipses', (
+      tester,
+    ) async {
+      const longQuest = AccentQuest(
+        id: 'ACC_IM_LONG_TEST_2',
+        instruction: 'Identify the intonation pattern of this sentence.',
+        difficulty: 1,
+        subtype: GameSubtype.intonationMimic,
+        word:
+            'Could you please let me know if this meeting is still scheduled for this afternoon?',
+        textToSpeak:
+            'Could you please let me know if this meeting is still scheduled for this afternoon?',
+        options: [
+          'Rising energy, mild lift at the end — invites more conversation',
+          'Low, flat fall at the end — closes the topic politely and firmly',
+        ],
+        correctAnswerIndex: 0,
+        intonationMap: [1, 2, 3, 4],
+        emotionContext: 'Polite Formal Request',
+        hint: 'Listen closely.',
+        explanation: 'Polite requests rise.',
+      );
+
+      await pumpIntonationMimic(
+        tester,
+        state: const AccentLoaded(
+          quests: [longQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          gameType: GameSubtype.intonationMimic,
+          level: 2,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        ),
+      );
+
+      // Verify prompt card text
+      final wordFinder = find.text(longQuest.word!);
+      expect(wordFinder, findsOneWidget);
+      final wordWidget = tester.widget<Text>(wordFinder);
+      expect(wordWidget.overflow, isNot(TextOverflow.ellipsis));
+      expect(wordWidget.maxLines, isNull);
+
+      // Verify options
+      for (final option in longQuest.options!) {
+        final optFinder = find.text(option);
+        expect(optFinder, findsOneWidget);
+        final optWidget = tester.widget<Text>(optFinder);
+        expect(optWidget.overflow, isNot(TextOverflow.ellipsis));
+        expect(optWidget.maxLines, isNull);
+      }
+      expect(tester.takeException(), isNull);
     });
   });
 }

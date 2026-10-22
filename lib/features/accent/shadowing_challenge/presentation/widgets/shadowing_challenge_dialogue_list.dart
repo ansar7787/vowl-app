@@ -30,7 +30,7 @@ class ShadowingChallengeDialogueList extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: List.generate(options.length, (index) {
         return Padding(
-          padding: EdgeInsets.only(bottom: 16.h),
+          padding: EdgeInsets.only(bottom: 12.h),
           child: _buildDialogueBubble(options[index], index),
         );
       }),
@@ -43,25 +43,27 @@ class ShadowingChallengeDialogueList extends StatelessWidget {
     final bool showResult = isAnswered && isSelected;
 
     Color bubbleColor = isDark
-        ? AppColors.slate800.withValues(alpha: 0.6)
-        : Colors.white.withValues(alpha: 0.7);
-    Color borderColor = color.withValues(alpha: 0.2);
-    Color textColor = isDark ? Colors.white70 : Colors.black87;
+        ? AppColors.slate800.withValues(alpha: 0.7)
+        : AppColors.white;
+    Color borderColor = isDark ? AppColors.slate700 : AppColors.slate200;
+    Color textColor = isDark ? AppColors.slate100 : AppColors.slate900;
+    Color iconColor = isDark ? AppColors.slate400 : AppColors.slate500;
     IconData iconData = Icons.chat_bubble_outline_rounded;
 
     if (showResult) {
-      bubbleColor = correct
-          ? AppColors.emerald500.withValues(alpha: 0.15)
-          : AppColors.rose700.withValues(alpha: 0.15);
-      borderColor = correct ? AppColors.emerald500 : AppColors.rose700;
-      textColor = correct ? AppColors.emerald500 : AppColors.rose700;
+      final feedbackColor = correct ? AppColors.emerald500 : AppColors.rose700;
+      bubbleColor = feedbackColor.withValues(alpha: 0.12);
+      borderColor = feedbackColor;
+      textColor = feedbackColor;
+      iconColor = feedbackColor;
       iconData = correct
           ? Icons.check_circle_outline_rounded
           : Icons.cancel_outlined;
     } else if (isSelected) {
-      bubbleColor = color.withValues(alpha: 0.15);
+      bubbleColor = color.withValues(alpha: 0.1);
       borderColor = color;
       textColor = color;
+      iconColor = color;
       iconData = Icons.record_voice_over_rounded;
     }
 
@@ -69,48 +71,46 @@ class ShadowingChallengeDialogueList extends StatelessWidget {
       key: ValueKey('shadowing_option_$index'),
       onTap: isAnswered ? null : () => onSubmitChoice(index, correctIndex),
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 250),
         curve: Curves.easeOutCubic,
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
         decoration: BoxDecoration(
           color: bubbleColor,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(24.r),
-            topRight: Radius.circular(24.r),
-            bottomLeft: Radius.circular(index % 2 == 0 ? 8.r : 24.r),
-            bottomRight: Radius.circular(index % 2 == 0 ? 24.r : 8.r),
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(
+            color: borderColor,
+            width: isSelected || showResult ? 2 : 1,
           ),
-          border: Border.all(color: borderColor, width: isSelected ? 2.5 : 1.5),
           boxShadow: [
-            if (!isSelected)
+            if (!isSelected && !showResult)
               BoxShadow(
-                color: isDark ? Colors.black26 : Colors.black12,
-                offset: const Offset(0, 4),
-                blurRadius: 10,
+                color: isDark
+                    ? Colors.black26
+                    : Colors.black.withValues(alpha: 0.04),
+                offset: const Offset(0, 2),
+                blurRadius: 8,
               ),
             if (showResult)
               BoxShadow(
-                color: borderColor.withValues(alpha: 0.3),
-                blurRadius: 15,
-                spreadRadius: 2,
+                color: borderColor.withValues(alpha: 0.2),
+                blurRadius: 12,
+                spreadRadius: 1,
               ),
           ],
         ),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: EdgeInsets.only(top: 2.h),
-              child: Icon(
-                iconData,
-                color: textColor.withValues(alpha: 0.8),
-                size: 22.r,
-              ),
+            Icon(
+              iconData,
+              color: iconColor,
+              size: 20.r,
             ),
-            SizedBox(width: 14.w),
+            SizedBox(width: 12.w),
             Expanded(
               child: Text(
                 text,
+                softWrap: true,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
@@ -123,6 +123,6 @@ class ShadowingChallengeDialogueList extends StatelessWidget {
           ],
         ),
       ),
-    ).animate().fadeIn(delay: (150 * index).ms).slideY(begin: 0.2);
+    ).animate().fadeIn(delay: (120 * index).ms).slideY(begin: 0.15);
   }
 }

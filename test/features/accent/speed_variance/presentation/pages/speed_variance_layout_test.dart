@@ -333,17 +333,17 @@ void main() {
       await pumpSpeedVariance(tester);
 
       expect(find.byType(SpeedVarianceInstruction), findsOneWidget);
-      expect(find.text('ADJUST THE SPEED'), findsOneWidget);
+      expect(find.text('Adjust the speed'), findsOneWidget);
 
       expect(find.byType(SpeedVariancePromptCard), findsOneWidget);
       expect(find.text("Sorry, I talk a lot when I'm nervous, I'll stop, sorry, where was I?"), findsOneWidget);
 
       expect(find.byType(SpeedChallengeTimer), findsOneWidget);
       expect(find.byKey(const ValueKey('speed_variance_pulse_speaker')), findsOneWidget);
-      expect(find.text("HEAR\nSPEED"), findsOneWidget);
+      expect(find.text("Listen"), findsOneWidget);
 
       expect(find.byKey(const ValueKey('speed_variance_chrome_dial')), findsOneWidget);
-      expect(find.text("ROTATE DIAL OR TAP PREFERENCE"), findsOneWidget);
+      expect(find.text("Turn dial or tap your answer"), findsOneWidget);
 
       expect(find.byKey(const ValueKey('speed_variance_option_0')), findsOneWidget);
       expect(find.byKey(const ValueKey('speed_variance_option_1')), findsOneWidget);
@@ -478,7 +478,7 @@ void main() {
 
       // Speed toggle and instruction update visible
       expect(find.byType(SpeedVarianceSpeedToggle), findsOneWidget);
-      expect(find.text("GREAT JOB! NOW RECORD YOURSELF SAYING THE WORD."), findsOneWidget);
+      expect(find.text("Great job! Now record yourself saying the sentence."), findsOneWidget);
     });
 
     testWidgets('interaction lockout prevents duplicate taps once answered', (tester) async {
