@@ -22,22 +22,23 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GlassTile(
-      padding: EdgeInsets.all(22.r),
-      borderRadius: BorderRadius.circular(32.r),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+      borderRadius: BorderRadius.circular(24.r),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
                 child: Text(
-                  "TARGET STATEMENT TO REPEAT",
+                  "SENTENCE TO REPEAT",
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
+                    fontSize: 11.sp,
                     color: primaryColor,
-                    letterSpacing: 1.5,
-                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.2,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
               ),
@@ -50,8 +51,8 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
                   onTap: onPlayTts,
                   child: Container(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 12.w,
-                      vertical: 6.h,
+                      horizontal: 14.w,
+                      vertical: 7.h,
                     ),
                     decoration: BoxDecoration(
                       color: primaryColor.withValues(alpha: 0.15),
@@ -70,9 +71,9 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
                           "LISTEN",
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 10.sp,
+                            fontSize: 11.sp,
                             color: primaryColor,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
                       ],
@@ -82,7 +83,7 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 16.h),
+          SizedBox(height: 18.h),
           Text(
             quest.textToSpeak ?? quest.correctAnswer ?? "",
             key: const Key('repeat_sentence_target_text'),
@@ -90,21 +91,22 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 20.sp,
+              fontWeight: FontWeight.w600,
               color: Theme.of(context).colorScheme.onSurface,
-              height: 1.35,
+              height: 1.4,
             ),
           ),
           if (quest is SpeakingQuest &&
               (quest as SpeakingQuest).pronunciationTips != null) ...[
-            SizedBox(height: 16.h),
+            SizedBox(height: 18.h),
             Container(
               key: const Key('repeat_sentence_pronunciation_tips'),
-              padding: EdgeInsets.all(12.r),
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
               decoration: BoxDecoration(
-                color: primaryColor.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(12.r),
+                color: primaryColor.withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(14.r),
                 border: Border.all(
-                  color: primaryColor.withValues(alpha: 0.3),
+                  color: primaryColor.withValues(alpha: 0.25),
                   width: 1,
                 ),
               ),
@@ -113,9 +115,9 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
                   Icon(
                     Icons.tips_and_updates_rounded,
                     color: primaryColor,
-                    size: 20.sp,
+                    size: 18.sp,
                   ),
-                  SizedBox(width: 8.w),
+                  SizedBox(width: 10.w),
                   Expanded(
                     child: Text(
                       (quest as SpeakingQuest).pronunciationTips!
@@ -123,8 +125,11 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
                           .trim(),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        color: isDark ? Colors.white70 : Colors.black87,
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w500,
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.85)
+                            : const Color(0xFF334155),
                         height: 1.4,
                       ),
                     ),

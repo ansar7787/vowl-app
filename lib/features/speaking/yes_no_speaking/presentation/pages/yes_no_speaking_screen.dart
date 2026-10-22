@@ -327,7 +327,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
                                               quest,
                                             ),
                                       ),
-                                      SizedBox(height: 24.h),
+                                      SizedBox(height: 20.h),
                                       YesNoSpeakingAuditionCard(
                                         key: const Key(
                                           'yes_no_speaking_audition_card',
@@ -346,7 +346,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
                                           );
                                         },
                                       ),
-                                      SizedBox(height: 32.h),
+                                      SizedBox(height: 24.h),
                                       ValueListenableBuilder<double>(
                                         valueListenable: _tiltValue,
                                         builder: (context, tiltValue, _) {
@@ -375,21 +375,24 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
                             ),
                             if (_isSnapped.value && !isAnsweredNotifier.value)
                               SliverToBoxAdapter(
-                                child: ShadowPlaybackCompare(
-                                  key: const Key(
-                                    'yes_no_speaking_shadow_compare',
-                                  ),
-                                  expectedText: quest.sampleAnswer ?? "",
-                                  primaryColor: theme.primaryColor,
-                                  isPositioned: false,
-                                  showExpectedText: false,
-                                  onConfirmed: () => _submitVerbalEvaluation(
-                                    true,
-                                    quest.sampleAnswer ?? "",
-                                  ),
-                                  onSkipped: () => _submitVerbalEvaluation(
-                                    false,
-                                    quest.sampleAnswer ?? "",
+                                child: Padding(
+                                  padding: EdgeInsets.only(top: 8.h),
+                                  child: ShadowPlaybackCompare(
+                                    key: const Key(
+                                      'yes_no_speaking_shadow_compare',
+                                    ),
+                                    expectedText: quest.sampleAnswer ?? "",
+                                    primaryColor: theme.primaryColor,
+                                    isPositioned: false,
+                                    showExpectedText: false,
+                                    onConfirmed: () => _submitVerbalEvaluation(
+                                      true,
+                                      quest.sampleAnswer ?? "",
+                                    ),
+                                    onSkipped: () => _submitVerbalEvaluation(
+                                      false,
+                                      quest.sampleAnswer ?? "",
+                                    ),
                                   ),
                                 ),
                               ),

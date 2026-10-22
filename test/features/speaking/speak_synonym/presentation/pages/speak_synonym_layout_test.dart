@@ -328,6 +328,8 @@ void main() {
       await pumpScreen(tester);
       expect(find.byKey(const Key('speak_synonym_instruction_text')), findsOneWidget);
       expect(find.text('Say a synonym for the highlighted word.'), findsOneWidget);
+      final textWidget = tester.widget<Text>(find.byKey(const Key('speak_synonym_instruction_text')));
+      expect(textWidget.textAlign, TextAlign.center);
     });
 
     testWidgets('1.5 renders SpeakSynonymSentencePanel with key speak_synonym_sentence_panel', (tester) async {
@@ -349,6 +351,12 @@ void main() {
     testWidgets('1.8 renders SpeakToConfirmOverlay with key speak_synonym_speak_to_confirm_overlay', (tester) async {
       await pumpScreen(tester);
       expect(find.byKey(const Key('speak_synonym_speak_to_confirm_overlay')), findsOneWidget);
+      final sliverPaddings = tester.widgetList<SliverPadding>(find.byType(SliverPadding)).toList();
+      final confirmSliverPadding = sliverPaddings.last;
+      final padding = confirmSliverPadding.padding.resolve(TextDirection.ltr);
+      expect(padding.left, greaterThan(0));
+      expect(padding.right, greaterThan(0));
+      expect(padding.left, equals(padding.right));
     });
   });
 
@@ -359,6 +367,9 @@ void main() {
     testWidgets('2.1 renders RichText with key speak_synonym_rich_text', (tester) async {
       await pumpScreen(tester);
       expect(find.byKey(const Key('speak_synonym_rich_text')), findsOneWidget);
+      final richText = tester.widget<RichText>(find.byKey(const Key('speak_synonym_rich_text')));
+      expect(richText.textAlign, TextAlign.center);
+      expect(richText.softWrap, isTrue);
     });
 
     testWidgets('2.2 splits text with asterisks into highlighted target chip', (tester) async {

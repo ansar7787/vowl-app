@@ -411,14 +411,14 @@ void main() {
         expect(screen.gameType, GameSubtype.repeatSentence);
       });
 
-      testWidgets('1.8 getCompletionTitle returns SOUND WAVE TRANSCRIBER!', (
+      testWidgets('1.8 getCompletionTitle returns REPEAT SENTENCE COMPLETED!', (
         tester,
       ) async {
         await pumpRepeatSentenceScreen(tester);
         final state = tester.state(find.byType(RepeatSentenceScreen))
             as dynamic;
         final title = state.getCompletionTitle(tester.element(find.byType(RepeatSentenceScreen)));
-        expect(title, 'SOUND WAVE TRANSCRIBER!');
+        expect(title, 'REPEAT SENTENCE COMPLETED!');
       });
     });
 
@@ -497,11 +497,11 @@ void main() {
         );
       });
 
-      testWidgets('3.2 displays "TAP TO RECORD SOUND WAVE" badge text', (
+      testWidgets('3.2 displays "LISTEN & REPEAT" badge text', (
         tester,
       ) async {
         await pumpRepeatSentenceScreen(tester);
-        expect(find.text('TAP TO RECORD SOUND WAVE'), findsOneWidget);
+        expect(find.text('LISTEN & REPEAT'), findsOneWidget);
       });
 
       testWidgets('3.3 displays Icons.graphic_eq_rounded in badge', (
@@ -532,11 +532,11 @@ void main() {
         expect(semanticsFinder, findsWidgets);
       });
 
-      testWidgets('3.6 handles long instruction text with ellipsis without overflow', (
+      testWidgets('3.6 handles long instruction text centered across lines without overflow or ellipses', (
         tester,
       ) async {
         final longQuest = createQuest(
-          instruction: 'This is an exceedingly detailed instruction designed to test the ellipsis and text overflow handling on compact viewports without generating any layout RenderFlex errors.',
+          instruction: 'This is an exceedingly detailed instruction designed to test centered text wrapping on compact viewports without generating any layout RenderFlex errors or ellipsis truncation.',
         );
         final state = testLoadedState.copyWith(quests: [longQuest]);
         await pumpRepeatSentenceScreen(tester, state: state);
@@ -558,11 +558,11 @@ void main() {
         );
       });
 
-      testWidgets('4.2 displays "TARGET STATEMENT TO REPEAT" header', (
+      testWidgets('4.2 displays "SENTENCE TO REPEAT" header', (
         tester,
       ) async {
         await pumpRepeatSentenceScreen(tester);
-        expect(find.text('TARGET STATEMENT TO REPEAT'), findsOneWidget);
+        expect(find.text('SENTENCE TO REPEAT'), findsOneWidget);
       });
 
       testWidgets('4.3 renders listen button with key repeat_sentence_listen_button', (

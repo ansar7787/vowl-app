@@ -17,6 +17,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
 
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_header.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_parser.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_positive_pole_panel.dart';
 
@@ -261,7 +262,13 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    SizedBox(height: 24.h),
+                                    SizedBox(height: 8.h),
+                                    SpeakOppositeHeader(
+                                      key: const Key('speak_opposite_header'),
+                                      primaryColor: theme.primaryColor,
+                                      instruction: quest.instruction,
+                                    ),
+                                    SizedBox(height: 20.h),
                                     SpeakOppositePositivePolePanel(
                                       targetWord: targetWord,
                                       contextText: contextText,
@@ -276,52 +283,48 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                         soundService.playTts(targetWord);
                                       },
                                     ),
-                                    SizedBox(height: 48.h),
+                                    SizedBox(height: 24.h),
                                   ],
                                 ),
                               ),
                             ),
                             if (!isAnsweredNotifier.value)
-                              SliverToBoxAdapter(
-                                child: AnimatedOpacity(
-                                  opacity: _ttsFinished.value ? 1.0 : 0.4,
-                                  duration: const Duration(milliseconds: 300),
-                                  child: AbsorbPointer(
-                                    absorbing: !_ttsFinished.value,
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 16.w,
-                                        vertical: 16.h,
-                                      ),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          SpeakToConfirmOverlay(
-                                            key: const Key(
-                                              'speak_opposite_speak_to_confirm_overlay',
+                              SliverPadding(
+                                padding: EdgeInsets.fromLTRB(
+                                  20.w,
+                                  0,
+                                  20.w,
+                                  16.h,
+                                ),
+                                sliver: SliverToBoxAdapter(
+                                  child: AnimatedOpacity(
+                                    opacity: _ttsFinished.value ? 1.0 : 0.4,
+                                    duration: const Duration(milliseconds: 300),
+                                    child: AbsorbPointer(
+                                      absorbing: !_ttsFinished.value,
+                                      child: SpeakToConfirmOverlay(
+                                        key: const Key(
+                                          'speak_opposite_speak_to_confirm_overlay',
+                                        ),
+                                        expectedText: expectedText,
+                                        acceptedSynonyms: _acceptedAntonyms,
+                                        primaryColor: theme.primaryColor,
+                                        isPositioned: false,
+                                        hideExpectedText: true,
+                                        allowSkip: false,
+                                        title: 'SAY THE OPPOSITE',
+                                        subtitle:
+                                            'Hold the mic and speak aloud',
+                                        onConfirmed: () =>
+                                            _submitVerbalEvaluation(
+                                              true,
+                                              expectedText,
                                             ),
-                                            expectedText: expectedText,
-                                            acceptedSynonyms: _acceptedAntonyms,
-                                            primaryColor: theme.primaryColor,
-                                            isPositioned: false,
-                                            hideExpectedText: true,
-                                            allowSkip: false,
-                                            title: 'SAY THE OPPOSITE',
-                                            subtitle:
-                                                'Hold the mic and speak aloud',
-                                            onConfirmed: () =>
-                                                _submitVerbalEvaluation(
-                                                  true,
-                                                  expectedText,
-                                                ),
-                                            onSkipped: () =>
-                                                _submitVerbalEvaluation(
-                                                  false,
-                                                  expectedText,
-                                                ),
-                                          ),
-                                        ],
+                                        onSkipped: () =>
+                                            _submitVerbalEvaluation(
+                                              false,
+                                              expectedText,
+                                            ),
                                       ),
                                     ),
                                   ),

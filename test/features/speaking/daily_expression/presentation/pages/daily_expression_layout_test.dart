@@ -523,9 +523,9 @@ void main() {
         expect(find.byType(DailyExpressionHeader), findsOneWidget);
       });
 
-      testWidgets('3.2 displays fallback instruction text in uppercase', (tester) async {
+      testWidgets('3.2 displays fallback instruction text in natural case', (tester) async {
         await pumpDailyExpressionScreen(tester);
-        expect(find.text('SPEAK THE DAILY IDIOM'), findsOneWidget);
+        expect(find.text('Speak the daily idiom'), findsOneWidget);
       });
 
       testWidgets('3.3 displays auto_awesome_rounded icon in header', (
@@ -536,12 +536,12 @@ void main() {
       });
 
       testWidgets(
-        '3.4 handles long instruction text with Flexible ellipsis without overflow',
+        '3.4 handles long instruction text with centered wrapping without overflow',
         (tester) async {
           when(
             () => mockLocaleService.tr(any(), fallback: any(named: 'fallback')),
           ).thenReturn(
-            'This is a very long instruction to test text wrapping and ellipsis handling in daily expression header widget without overflowing',
+            'This is a very long instruction to test text wrapping and center alignment in daily expression header widget without overflowing',
           );
           await pumpDailyExpressionScreen(tester);
           expect(tester.takeException(), isNull);
@@ -587,26 +587,26 @@ void main() {
       );
 
       testWidgets(
-        '4.4 displays SWIPE TO REVEAL IDIOM when reduceComplexGestures is false',
+        '4.4 displays Swipe to reveal idiom when reduceComplexGestures is false',
         (tester) async {
           SharedPreferences.setMockInitialValues({
             'has_seen_briefing_dailyExpression': true,
             'reduce_complex_gestures': false,
           });
           await pumpDailyExpressionScreen(tester);
-          expect(find.text('SWIPE TO REVEAL IDIOM'), findsOneWidget);
+          expect(find.text('Swipe to reveal idiom'), findsOneWidget);
         },
       );
 
       testWidgets(
-        '4.5 displays TAP TO REVEAL IDIOM when reduceComplexGestures is true',
+        '4.5 displays Tap to reveal idiom when reduceComplexGestures is true',
         (tester) async {
           SharedPreferences.setMockInitialValues({
             'has_seen_briefing_dailyExpression': true,
             'reduce_complex_gestures': true,
           });
           await pumpDailyExpressionScreen(tester);
-          expect(find.text('TAP TO REVEAL IDIOM'), findsOneWidget);
+          expect(find.text('Tap to reveal idiom'), findsOneWidget);
         },
       );
 
@@ -841,11 +841,11 @@ void main() {
     // 7. Revealed Idiom Card Details (5 tests)
     // -------------------------------------------------------------------------
     group('7. Revealed Idiom Card Details', () {
-      testWidgets('7.1 displays uppercase DAILY IDIOM category label', (
+      testWidgets('7.1 displays category label', (
         tester,
       ) async {
         await pumpDailyExpressionScreen(tester);
-        expect(find.text('DAILY IDIOM'), findsOneWidget);
+        expect(find.text('Daily Idiom'), findsOneWidget);
       });
 
       testWidgets('7.2 displays idiom expression text', (tester) async {
@@ -853,18 +853,18 @@ void main() {
         expect(find.text('Bite the bullet'), findsOneWidget);
       });
 
-      testWidgets('7.3 displays idiom meaning in uppercase', (tester) async {
+      testWidgets('7.3 displays idiom meaning in readable case', (tester) async {
         await pumpDailyExpressionScreen(tester);
         expect(
           find.text(
-            'TO ENDURE A PAINFUL SITUATION THAT CANNOT BE AVOIDED',
+            'To endure a painful situation that cannot be avoided',
           ),
           findsOneWidget,
         );
       });
 
       testWidgets(
-        '7.4 displays SPEAK THIS badge with mic icon when scratchProgress is 1.0',
+        '7.4 displays speak badge with mic icon when scratchProgress is 1.0',
         (tester) async {
           await pumpDailyExpressionScreen(tester);
           expect(
@@ -882,7 +882,7 @@ void main() {
             find.byKey(const Key('daily_expression_speak_badge')),
             findsOneWidget,
           );
-          expect(find.text('SPEAK THIS'), findsOneWidget);
+          expect(find.text('Speak this'), findsOneWidget);
         },
       );
 
@@ -930,7 +930,7 @@ void main() {
       );
 
       testWidgets(
-        '8.2 displays ORIGIN / EXPLANATION header with history_edu_rounded icon',
+        '8.2 displays Origin header with history_edu_rounded icon',
         (tester) async {
           await pumpDailyExpressionScreen(tester);
           await tester.tap(
@@ -939,7 +939,7 @@ void main() {
           await tester.pump();
           await tester.pump(const Duration(milliseconds: 400));
 
-          expect(find.text('ORIGIN / EXPLANATION'), findsOneWidget);
+          expect(find.text('Origin'), findsOneWidget);
           expect(find.byIcon(Icons.history_edu_rounded), findsOneWidget);
           expect(
             find.text(
@@ -951,7 +951,7 @@ void main() {
       );
 
       testWidgets(
-        '8.3 displays CONTEXTUAL SAMPLE USAGE with format_quote_rounded icon',
+        '8.3 displays Example sentence with format_quote_rounded icon',
         (tester) async {
           await pumpDailyExpressionScreen(tester);
           await tester.tap(
@@ -960,7 +960,7 @@ void main() {
           await tester.pump();
           await tester.pump(const Duration(milliseconds: 400));
 
-          expect(find.text('CONTEXTUAL SAMPLE USAGE'), findsOneWidget);
+          expect(find.text('Example sentence'), findsOneWidget);
           expect(find.byIcon(Icons.format_quote_rounded), findsOneWidget);
           expect(
             find.text('"I had to bite the bullet and pay the fine."'),
@@ -983,9 +983,9 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 400));
 
-        expect(find.text('ORIGIN / EXPLANATION'), findsNothing);
+        expect(find.text('Origin'), findsNothing);
         expect(find.byIcon(Icons.history_edu_rounded), findsNothing);
-        expect(find.text('CONTEXTUAL SAMPLE USAGE'), findsOneWidget);
+        expect(find.text('Example sentence'), findsOneWidget);
       });
 
       testWidgets(

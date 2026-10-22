@@ -26,17 +26,22 @@ class PronunciationFocusThermalGrid extends StatelessWidget {
     return Semantics(
       label: "Accent heat visualization grid",
       child: Container(
-        width: 1.sw,
-        height: 120.h,
+        width: double.infinity,
+        height: 110.h,
         decoration: BoxDecoration(
           color: isDark
               ? _LocalPalette.color0c0c16
               : Colors.black.withValues(alpha: 0.02),
-          borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(color: Colors.white10),
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: isDark
+                ? Colors.white10
+                : Colors.black.withValues(alpha: 0.06),
+            width: 1.0,
+          ),
         ),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(24.r),
+          borderRadius: BorderRadius.circular(20.r),
           child: CustomPaint(
             painter: ThermalGridPainter(
               heatLevel: heatLevel,

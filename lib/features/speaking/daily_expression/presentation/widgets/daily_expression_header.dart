@@ -15,27 +15,29 @@ class DailyExpressionHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       key: const Key('daily_expression_header'),
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.auto_awesome_rounded, size: 14.r, color: primaryColor),
+          Icon(Icons.auto_awesome_rounded, size: 16.r, color: primaryColor),
           SizedBox(width: 8.w),
           Flexible(
             child: Text(
-              instruction.toUpperCase(),
-              overflow: TextOverflow.ellipsis,
+              instruction,
+              textAlign: TextAlign.center,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.bold,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
                 color: primaryColor,
-                letterSpacing: 1.5,
+                height: 1.35,
               ),
             ),
           ),

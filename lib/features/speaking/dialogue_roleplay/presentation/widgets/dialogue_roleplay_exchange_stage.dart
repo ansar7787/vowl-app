@@ -114,13 +114,19 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
               ? color.withValues(alpha: 0.4)
               : color.withValues(alpha: 0.6));
 
+    final placeholderText = context.tr(
+      'speaking_games.pick_a_reply',
+      fallback: 'Pick a response to speak!',
+    );
+    final bool isPlaceholder = isUser && !isAnswered && (content == placeholderText);
+
     return Container(
       key: cardKey,
-      width: 1.sw,
-      padding: EdgeInsets.all(18.r),
+      width: double.infinity,
+      padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
         color: isDark ? _LocalPalette.color131326 : Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: borderCol, width: highlight ? 2 : 1),
         boxShadow: highlight
             ? [
@@ -131,8 +137,9 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
               ]
             : [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.1),
+                  color: Colors.black.withValues(alpha: 0.08),
                   blurRadius: 8.r,
+                  offset: const Offset(0, 2),
                 ),
               ],
       ),
@@ -161,14 +168,12 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
                     Flexible(
                       child: Text(
                         title,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 9.sp,
+                          fontSize: 12.sp,
                           color: highlight ? AppColors.gameCorrect : color,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 1.0,
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: 0.5,
                         ),
                       ),
                     ),
@@ -211,11 +216,11 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
                           },
                           child: Container(
                             color: Colors.transparent,
-                            padding: EdgeInsets.all(12.r),
+                            padding: EdgeInsets.all(8.r),
                             child: Icon(
                               Icons.volume_up_rounded,
                               color: color,
-                              size: 16.r,
+                              size: 18.r,
                             ),
                           ),
                         ),
@@ -227,11 +232,15 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
                   content,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.9)
-                        : Colors.black87,
-                    height: 1.35,
+                    fontSize: 15.5.sp,
+                    fontWeight: isPlaceholder ? FontWeight.w400 : FontWeight.w500,
+                    fontStyle: isPlaceholder ? FontStyle.italic : FontStyle.normal,
+                    color: isPlaceholder
+                        ? (isDark ? Colors.white54 : Colors.black45)
+                        : (isDark
+                            ? Colors.white.withValues(alpha: 0.95)
+                            : const Color(0xFF1E293B)),
+                    height: 1.4,
                   ),
                 ),
               ],

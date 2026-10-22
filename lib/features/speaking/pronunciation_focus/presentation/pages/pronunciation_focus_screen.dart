@@ -250,7 +250,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                               quest,
                                             ),
                                       ),
-                                      SizedBox(height: 24.h),
+                                      SizedBox(height: 20.h),
                                       PronunciationFocusPhonemeCrucible(
                                         key: const Key(
                                           'pronunciation_focus_phoneme_crucible',
@@ -265,7 +265,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                           _showGuide.value = !_showGuide.value;
                                         },
                                       ),
-                                      SizedBox(height: 32.h),
+                                      SizedBox(height: 20.h),
                                       ValueListenableBuilder<bool>(
                                         valueListenable: _isUserRecording,
                                         builder: (context, isRecording, _) {
@@ -285,7 +285,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                           );
                                         },
                                       ),
-                                      SizedBox(height: 32.h),
+                                      SizedBox(height: 20.h),
                                       PronunciationFocusHighlightedSentence(
                                         key: const Key(
                                           'pronunciation_focus_highlighted_sentence',

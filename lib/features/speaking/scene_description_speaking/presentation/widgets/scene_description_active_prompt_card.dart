@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -24,17 +25,20 @@ class SceneDescriptionActivePromptCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       container: true,
-      label: 'Describe Component: $activePrompt',
+      label: 'Describe this item: $activePrompt',
       child: Container(
         key: const Key('scene_description_active_prompt_card'),
         width: 1.sw,
-        padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 16.h),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
         decoration: BoxDecoration(
           color: isDark
               ? _LocalPalette.color0f0f1a
-              : Colors.black.withValues(alpha: 0.02),
-          borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(color: primaryColor.withValues(alpha: 0.25)),
+              : primaryColor.withValues(alpha: 0.04),
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: primaryColor.withValues(alpha: 0.25),
+            width: 1.2,
+          ),
         ),
         child: Column(
           children: [
@@ -42,18 +46,19 @@ class SceneDescriptionActivePromptCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.spatial_audio_off_rounded,
+                  Icons.record_voice_over_rounded,
                   color: primaryColor,
-                  size: 14.r,
+                  size: 16.r,
                 ),
                 SizedBox(width: 8.w),
                 Text(
-                  "DESCRIBE COMPONENT",
+                  "DESCRIBE THIS ITEM",
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w600,
                     color: primaryColor,
-                    letterSpacing: 1.0,
+                    letterSpacing: 0.5,
                   ),
                 ),
               ],
@@ -63,11 +68,13 @@ class SceneDescriptionActivePromptCard extends StatelessWidget {
               activePrompt,
               key: const Key('scene_description_active_prompt_text'),
               textAlign: TextAlign.center,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 15.sp,
-                color: isDark ? Colors.white70 : Colors.black87,
-                height: 1.35,
+                fontWeight: FontWeight.w500,
+                color: isDark ? Colors.white : AppColors.slate900,
+                height: 1.4,
               ),
             ),
           ],

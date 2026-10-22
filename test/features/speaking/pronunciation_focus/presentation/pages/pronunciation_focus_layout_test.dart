@@ -504,21 +504,21 @@ void main() {
       });
 
       testWidgets(
-        '3.2 displays THERMOGRAPHIC ACCENT CALIBRATOR title in header',
+        '3.2 displays PRONUNCIATION FOCUS title in header',
         (tester) async {
           await pumpPronunciationFocusScreen(tester);
           expect(
-            find.text('THERMOGRAPHIC ACCENT CALIBRATOR'),
+            find.text('PRONUNCIATION FOCUS'),
             findsOneWidget,
           );
         },
       );
 
       testWidgets(
-        '3.3 displays Icons.whatshot_rounded icon in header badge',
+        '3.3 displays Icons.graphic_eq_rounded icon in header badge',
         (tester) async {
           await pumpPronunciationFocusScreen(tester);
-          expect(find.byIcon(Icons.whatshot_rounded), findsOneWidget);
+          expect(find.byIcon(Icons.graphic_eq_rounded), findsOneWidget);
         },
       );
 
@@ -572,11 +572,11 @@ void main() {
         },
       );
 
-      testWidgets('4.2 displays TARGET PHONETIC CORE label', (
+      testWidgets('4.2 displays TARGET SOUND label', (
         tester,
       ) async {
         await pumpPronunciationFocusScreen(tester);
-        expect(find.text('TARGET PHONETIC CORE'), findsOneWidget);
+        expect(find.text('TARGET SOUND'), findsOneWidget);
       });
 
       testWidgets(

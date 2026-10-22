@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
@@ -71,10 +70,8 @@ class _SituationSpeakingBriefingCardState
 
   @override
   Widget build(BuildContext context) {
-    final bool reduceMotion = VowlMotion.lowAnimationModeOverride.value;
-
     return ClipRRect(
-      borderRadius: BorderRadius.circular(28.r),
+      borderRadius: BorderRadius.circular(24.r),
       child: GestureDetector(
         key: const Key('situation_speaking_briefing_card_gesture'),
         onTap: () {
@@ -84,23 +81,25 @@ class _SituationSpeakingBriefingCardState
         },
         child: Container(
           width: 1.sw,
-          constraints: BoxConstraints(minHeight: 200.h),
+          constraints: BoxConstraints(minHeight: 180.h),
           decoration: BoxDecoration(
             color: widget.isDark ? _LocalPalette.color131326 : Colors.white,
-            borderRadius: BorderRadius.circular(28.r),
+            borderRadius: BorderRadius.circular(24.r),
             border: Border.all(
               color: _isFinishedTyping || widget.isAnswered
-                  ? widget.primaryColor.withValues(alpha: 0.5)
-                  : Colors.white10,
-              width: _isFinishedTyping || widget.isAnswered ? 2.0 : 1.0,
+                  ? widget.primaryColor.withValues(alpha: 0.35)
+                  : widget.isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : const Color(0xFFE2E8F0),
+              width: 1.5,
             ),
             boxShadow: [
               BoxShadow(
-                color: _isFinishedTyping || widget.isAnswered
-                    ? widget.primaryColor.withValues(alpha: 0.2)
-                    : Colors.black26,
-                blurRadius: 15.r,
-                spreadRadius: _isFinishedTyping || widget.isAnswered ? 2.r : 0,
+                color: widget.isDark
+                    ? Colors.black.withValues(alpha: 0.25)
+                    : widget.primaryColor.withValues(alpha: 0.06),
+                blurRadius: 16.r,
+                offset: const Offset(0, 4),
               ),
             ],
           ),
@@ -108,21 +107,21 @@ class _SituationSpeakingBriefingCardState
             children: [
               // Background Pattern/Gradient
               Container(
-                constraints: BoxConstraints(minHeight: 200.h),
+                constraints: BoxConstraints(minHeight: 180.h),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: widget.isDark
                         ? [_LocalPalette.color1b1b33, _LocalPalette.color0f0f1d]
                         : [
-                            widget.primaryColor.withValues(alpha: 0.05),
+                            widget.primaryColor.withValues(alpha: 0.04),
                             Colors.white,
                           ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
-                  borderRadius: BorderRadius.circular(28.r),
+                  borderRadius: BorderRadius.circular(24.r),
                 ),
-                padding: EdgeInsets.all(22.r),
+                padding: EdgeInsets.all(20.r),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
@@ -130,42 +129,30 @@ class _SituationSpeakingBriefingCardState
                     // Header Row
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Expanded(
                           child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Padding(
-                                padding: EdgeInsets.only(top: 2.h),
-                                child: reduceMotion
-                                    ? Icon(
-                                        Icons.assignment_late_rounded,
-                                        color: widget.primaryColor,
-                                        size: 16.r,
-                                      )
-                                    : Icon(
-                                        Icons.assignment_late_rounded,
-                                        color: widget.primaryColor,
-                                        size: 16.r,
-                                      )
-                                        .animate(onPlay: (c) => c.repeat())
-                                        .shake(hz: 2, curve: Curves.easeInOut)
-                                        .then(delay: 2.seconds),
+                              Icon(
+                                Icons.forum_rounded,
+                                color: widget.primaryColor,
+                                size: 16.r,
                               ),
                               SizedBox(width: 8.w),
                               Expanded(
                                 child: Text(
-                                  "SCENARIO BRIEFING",
+                                  "THE SITUATION",
                                   key: const Key(
                                     'situation_speaking_briefing_title',
                                   ),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
-                                    fontSize: 10.sp,
-                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w700,
                                     color: widget.primaryColor,
-                                    letterSpacing: 1.5,
+                                    letterSpacing: 0.8,
                                   ),
                                 ),
                               ),
@@ -175,23 +162,23 @@ class _SituationSpeakingBriefingCardState
                         if (_isFinishedTyping || widget.isAnswered)
                           Semantics(
                             button: true,
-                            label: 'Listen to scenario briefing audio',
+                            label: 'Listen to situation audio',
                             child: ScaleButton(
                               key: const Key('situation_speaking_tts_button'),
                               onTap: widget.onPlayTts,
                               child: Padding(
-                                padding: EdgeInsets.all(8.r),
+                                padding: EdgeInsets.all(6.r),
                                 child: Icon(
                                   Icons.volume_up_rounded,
                                   color: widget.primaryColor,
-                                  size: 24.r,
+                                  size: 22.r,
                                 ),
                               ),
                             ),
                           ),
                       ],
                     ),
-                    SizedBox(height: 24.h),
+                    SizedBox(height: 20.h),
 
                     // Body Text
                     SizedBox(
@@ -204,12 +191,12 @@ class _SituationSpeakingBriefingCardState
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w600,
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w500,
                                 color: widget.isDark
-                                    ? Colors.white
-                                    : Colors.black87,
-                                height: 1.35,
+                                    ? Colors.white.withValues(alpha: 0.95)
+                                    : const Color(0xFF1E293B),
+                                height: 1.48,
                               ),
                             )
                           : _TypewriterText(
@@ -221,12 +208,12 @@ class _SituationSpeakingBriefingCardState
                                   "Situation description.",
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w600,
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w500,
                                 color: widget.isDark
-                                    ? Colors.white
-                                    : Colors.black87,
-                                height: 1.35,
+                                    ? Colors.white.withValues(alpha: 0.95)
+                                    : const Color(0xFF1E293B),
+                                height: 1.48,
                               ),
                               speed: const Duration(milliseconds: 35),
                               onFinished: _finishTyping,
@@ -242,7 +229,7 @@ class _SituationSpeakingBriefingCardState
                         curve: Curves.easeOutCubic,
                         child: (_isFinishedTyping || widget.isAnswered)
                             ? Padding(
-                                padding: EdgeInsets.only(top: 24.h),
+                                padding: EdgeInsets.only(top: 20.h),
                                 child: Semantics(
                                   container: true,
                                   label:
@@ -251,10 +238,10 @@ class _SituationSpeakingBriefingCardState
                                     key: const Key(
                                       'situation_speaking_hint_container',
                                     ),
-                                    padding: EdgeInsets.all(16.r),
+                                    padding: EdgeInsets.all(14.r),
                                     decoration: BoxDecoration(
                                       color: widget.primaryColor
-                                          .withValues(alpha: 0.1),
+                                          .withValues(alpha: 0.08),
                                       borderRadius: BorderRadius.circular(
                                         16.r,
                                       ),
@@ -269,31 +256,25 @@ class _SituationSpeakingBriefingCardState
                                       children: [
                                         Row(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                              CrossAxisAlignment.center,
                                           children: [
-                                            Padding(
-                                              padding: EdgeInsets.only(
-                                                top: 1.h,
-                                              ),
-                                              child: Icon(
-                                                Icons
-                                                    .lightbulb_outline_rounded,
-                                                color: widget.primaryColor,
-                                                size: 16.r,
-                                              ),
+                                            Icon(
+                                              Icons.lightbulb_outline_rounded,
+                                              color: widget.primaryColor,
+                                              size: 16.r,
                                             ),
                                             SizedBox(width: 6.w),
                                             Expanded(
                                               child: Text(
-                                                "SPEAKING GUIDE",
+                                                "SPEAKING TIP",
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
-                                                  fontSize: 10.sp,
+                                                  fontSize: 11.5.sp,
                                                   fontWeight:
-                                                      FontWeight.bold,
+                                                      FontWeight.w700,
                                                   color:
                                                       widget.primaryColor,
-                                                  letterSpacing: 1.2,
+                                                  letterSpacing: 0.8,
                                                 ),
                                               ),
                                             ),
@@ -307,12 +288,12 @@ class _SituationSpeakingBriefingCardState
                                           ),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
-                                            fontSize: 14.sp,
-                                            fontWeight: FontWeight.w500,
+                                            fontSize: 13.5.sp,
+                                            fontWeight: FontWeight.w400,
                                             color: widget.isDark
                                                 ? Colors.white70
-                                                : Colors.black87,
-                                            height: 1.4,
+                                                : const Color(0xFF475569),
+                                            height: 1.45,
                                           ),
                                         ),
                                       ],

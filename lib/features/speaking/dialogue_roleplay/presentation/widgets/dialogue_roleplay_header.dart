@@ -13,37 +13,46 @@ class DialogueRoleplayHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
-      decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            Icons.record_voice_over_rounded,
-            size: 14.r,
-            color: primaryColor,
+    return Semantics(
+      header: true,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+        decoration: BoxDecoration(
+          color: primaryColor.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(
+            color: primaryColor.withValues(alpha: 0.25),
+            width: 1.0,
           ),
-          SizedBox(width: 8.w),
-          Flexible(
-            child: Text(
-              instruction.toUpperCase(),
-              overflow: TextOverflow.ellipsis,
-              maxLines: 1,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.bold,
-                color: primaryColor,
-                letterSpacing: 1.5,
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.record_voice_over_rounded,
+              size: 16.r,
+              color: primaryColor,
+            ),
+            SizedBox(width: 8.w),
+            Flexible(
+              child: Text(
+                instruction.toUpperCase(),
+                textAlign: TextAlign.center,
+                softWrap: true,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w600,
+                  color: primaryColor,
+                  letterSpacing: 0.6,
+                  height: 1.35,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

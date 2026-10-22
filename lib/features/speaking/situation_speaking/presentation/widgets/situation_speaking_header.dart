@@ -17,18 +17,23 @@ class SituationSpeakingHeader extends StatelessWidget {
       header: true,
       child: Container(
         key: const Key('situation_speaking_header'),
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         decoration: BoxDecoration(
           color: primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(30.r),
-          border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(
+            color: primaryColor.withValues(alpha: 0.25),
+            width: 1.0,
+          ),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Icon(
               Icons.record_voice_over_rounded,
-              size: 14.r,
+              size: 15.r,
               color: primaryColor,
             ),
             SizedBox(width: 8.w),
@@ -38,13 +43,12 @@ class SituationSpeakingHeader extends StatelessWidget {
                 key: const Key('situation_speaking_header_text'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 11.5.sp,
+                  fontWeight: FontWeight.w700,
                   color: primaryColor,
-                  letterSpacing: 1.5,
+                  letterSpacing: 0.8,
+                  height: 1.35,
                 ),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
               ),
             ),

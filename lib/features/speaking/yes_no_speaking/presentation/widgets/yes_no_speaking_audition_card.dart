@@ -28,43 +28,45 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
     final sampleAnswerText = quest.sampleAnswer ?? "";
 
     return Container(
-      padding: EdgeInsets.all(24.r),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       decoration: BoxDecoration(
         color: isDark ? _LocalPalette.color1e1e2c : Colors.white,
-        borderRadius: BorderRadius.circular(32.r),
+        borderRadius: BorderRadius.circular(24.r),
         boxShadow: [
           BoxShadow(
             color: isDark
-                ? Colors.black45
-                : Colors.black.withValues(alpha: 0.05),
-            blurRadius: 20,
-            offset: const Offset(0, 8),
+                ? Colors.black.withValues(alpha: 0.35)
+                : Colors.black.withValues(alpha: 0.04),
+            blurRadius: 16,
+            offset: const Offset(0, 6),
           ),
           BoxShadow(
-            color: primaryColor.withValues(alpha: isDark ? 0.15 : 0.05),
-            blurRadius: 30,
-            spreadRadius: -5,
+            color: primaryColor.withValues(alpha: isDark ? 0.12 : 0.05),
+            blurRadius: 24,
+            spreadRadius: -4,
           ),
         ],
         border: Border.all(
-          color: primaryColor.withValues(alpha: isDark ? 0.3 : 0.15),
+          color: primaryColor.withValues(alpha: isDark ? 0.25 : 0.15),
           width: 1.5,
         ),
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
                 child: Text(
-                  "COMPARE PHRASE STRUCTURES",
+                  "LISTEN & MATCH",
+                  softWrap: true,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
+                    fontSize: 12.sp,
                     color: primaryColor,
-                    letterSpacing: 1.5,
-                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.8,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
               ),
@@ -81,10 +83,14 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
                       vertical: 6.h,
                     ),
                     decoration: BoxDecoration(
-                      color: primaryColor.withValues(alpha: 0.15),
+                      color: primaryColor.withValues(alpha: 0.12),
                       borderRadius: BorderRadius.circular(20.r),
+                      border: Border.all(
+                        color: primaryColor.withValues(alpha: 0.2),
+                      ),
                     ),
                     child: Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
                           Icons.volume_up_rounded,
@@ -93,12 +99,12 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
                         ),
                         SizedBox(width: 6.w),
                         Text(
-                          "REPLAY AUDIO",
+                          "LISTEN AGAIN",
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 10.sp,
+                            fontSize: 11.sp,
                             color: primaryColor,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
                       ],
@@ -110,15 +116,17 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
           ),
           SizedBox(height: 16.h),
           Text(
-            "WRITTEN TARGET CARD:",
+            "WRITTEN SENTENCE",
             key: const Key('yes_no_speaking_target_card_label'),
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              color: Colors.grey,
+              fontSize: 11.sp,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 0.6,
+              color: isDark ? Colors.white54 : AppColors.slate500,
             ),
           ),
-          SizedBox(height: 4.h),
+          SizedBox(height: 6.h),
           Semantics(
             container: true,
             label: 'Target sentence: $sampleAnswerText',
@@ -126,13 +134,14 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
               sampleAnswerText,
               key: const Key('yes_no_speaking_target_text'),
               textAlign: TextAlign.center,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 22.sp,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.w600,
-                color: isDark ? Colors.white : AppColors.slate800,
-                height: 1.35,
-                letterSpacing: 0.5,
+                color: isDark ? Colors.white : AppColors.slate900,
+                height: 1.4,
+                letterSpacing: 0.3,
               ),
             ),
           ),

@@ -498,7 +498,7 @@ void main() {
       await tester.tap(find.byKey(const Key('speak_missing_word_option_0')));
       await tester.pumpAndSettle();
 
-      expect(find.text('LOCKED OPTION: ROBOT'), findsOneWidget);
+      expect(find.text('SELECTED WORD: ROBOT'), findsOneWidget);
     });
 
     testWidgets('4.7 has accessible Semantics container with full sentence label', (tester) async {

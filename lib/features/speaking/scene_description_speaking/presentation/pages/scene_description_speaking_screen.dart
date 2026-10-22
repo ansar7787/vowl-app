@@ -6,6 +6,7 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
@@ -50,7 +51,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => 'VISUAL NARRATOR!';
+  String getCompletionTitle(BuildContext context) => 'WELL DONE!';
 
   final ValueNotifier<Set<int>> _inspectedHotspots = ValueNotifier({});
   final ValueNotifier<int> _activeHotspot = ValueNotifier(-1);
@@ -200,7 +201,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
     _hotspotPrompts = [];
     for (int i = 1; i <= count; i++) {
       _hotspotPrompts.add(
-        parts.length > i ? parts[i] : "Describe this scenic component.",
+        parts.length > i ? parts[i] : "Describe this item.",
       );
     }
 
@@ -288,7 +289,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                             quest,
                                           ),
                                     ),
-                                    SizedBox(height: 24.h),
+                                    SizedBox(height: 20.h),
                                     SceneDescriptionScenicRadarMap(
                                       sceneTitle: _sceneTitle,
                                       inspectedHotspots:
@@ -300,7 +301,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                       isDark: isDark,
                                       onHotspotTap: _onHotspotTap,
                                     ),
-                                    SizedBox(height: 32.h),
+                                    SizedBox(height: 20.h),
                                     AnimatedSwitcher(
                                       duration: const Duration(
                                         milliseconds: 300,
@@ -331,11 +332,11 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                           ),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
-                                            fontSize: 12.sp,
+                                            fontSize: 13.sp,
                                             fontWeight: FontWeight.w600,
                                             color: isDark
-                                                ? Colors.white54
-                                                : Colors.black54,
+                                                ? Colors.white70
+                                                : AppColors.slate700,
                                           ),
                                         ),
                                       ),
@@ -355,25 +356,25 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                               'scene_description_vocab_$index',
                                             ),
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 12.w,
-                                              vertical: 6.h,
+                                              horizontal: 14.w,
+                                              vertical: 8.h,
                                             ),
                                             decoration: BoxDecoration(
                                               color: theme.primaryColor
                                                   .withValues(alpha: 0.1),
                                               borderRadius:
-                                                  BorderRadius.circular(12.r),
+                                                  BorderRadius.circular(16.r),
                                               border: Border.all(
                                                 color: theme.primaryColor
-                                                    .withValues(alpha: 0.3),
+                                                    .withValues(alpha: 0.25),
                                               ),
                                             ),
                                             child: Text(
                                               word,
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
-                                                fontSize: 12.sp,
-                                                fontWeight: FontWeight.w600,
+                                                fontSize: 13.sp,
+                                                fontWeight: FontWeight.w500,
                                                 color: theme.primaryColor,
                                               ),
                                             ),
@@ -387,33 +388,39 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                             ),
                             if (!isAnsweredNotifier.value &&
                                 _activeHotspot.value != -1)
-                              SliverToBoxAdapter(
-                                child: SpeakToConfirmOverlay(
-                                  key: ValueKey(
-                                    'scene_description_speak_confirm_overlay_${_activeHotspot.value}',
-                                  ),
-                                  expectedText:
-                                      _hotspotKeywords[_activeHotspot.value]
-                                          .join(" "),
-                                  ttsText:
-                                      _hotspotKeywords[_activeHotspot.value]
-                                          .join(" "),
-                                  acceptedSynonyms: [
-                                    _hotspotKeywords[_activeHotspot.value].join(
-                                      " ",
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20.w,
+                                  vertical: 12.h,
+                                ),
+                                sliver: SliverToBoxAdapter(
+                                  child: SpeakToConfirmOverlay(
+                                    key: ValueKey(
+                                      'scene_description_speak_confirm_overlay_${_activeHotspot.value}',
                                     ),
-                                    _hotspotLabels[_activeHotspot.value],
-                                  ],
-                                  primaryColor: theme.primaryColor,
-                                  isPositioned: false,
-                                  hideExpectedText: true,
-                                  allowSkip: false,
-                                  title: 'DESCRIBE THE SCENE',
-                                  subtitle: 'Speak your description aloud',
-                                  onConfirmed: () =>
-                                      _submitVerbalEvaluation(true),
-                                  onSkipped: () =>
-                                      _submitVerbalEvaluation(false),
+                                    expectedText:
+                                        _hotspotKeywords[_activeHotspot.value]
+                                            .join(" "),
+                                    ttsText:
+                                        _hotspotKeywords[_activeHotspot.value]
+                                            .join(" "),
+                                    acceptedSynonyms: [
+                                      _hotspotKeywords[_activeHotspot.value].join(
+                                        " ",
+                                      ),
+                                      _hotspotLabels[_activeHotspot.value],
+                                    ],
+                                    primaryColor: theme.primaryColor,
+                                    isPositioned: false,
+                                    hideExpectedText: true,
+                                    allowSkip: false,
+                                    title: 'Describe The Scene',
+                                    subtitle: 'Speak your description aloud',
+                                    onConfirmed: () =>
+                                        _submitVerbalEvaluation(true),
+                                    onSkipped: () =>
+                                        _submitVerbalEvaluation(false),
+                                  ),
                                 ),
                               ),
                             if (isAnsweredNotifier.value &&
@@ -432,12 +439,12 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                     padding: EdgeInsets.all(20.r),
                                     decoration: BoxDecoration(
                                       color: theme.primaryColor.withValues(
-                                        alpha: 0.1,
+                                        alpha: 0.08,
                                       ),
-                                      borderRadius: BorderRadius.circular(24.r),
+                                      borderRadius: BorderRadius.circular(20.r),
                                       border: Border.all(
                                         color: theme.primaryColor.withValues(
-                                          alpha: 0.3,
+                                          alpha: 0.25,
                                         ),
                                       ),
                                     ),
@@ -456,13 +463,13 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                               ),
                                               SizedBox(width: 8.w),
                                               Text(
-                                                "FULL SCENE DESCRIPTION",
+                                                "Example Description",
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
-                                                  fontSize: 12.sp,
-                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 13.sp,
+                                                  fontWeight: FontWeight.w600,
                                                   color: theme.primaryColor,
-                                                  letterSpacing: 1.0,
+                                                  letterSpacing: 0.5,
                                                 ),
                                               ),
                                             ],
@@ -475,14 +482,15 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                             'scene_description_sample_answer_text',
                                           ),
                                           textAlign: TextAlign.center,
+                                          softWrap: true,
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
-                                            fontSize: 16.sp,
-                                            height: 1.4,
+                                            fontSize: 15.sp,
+                                            height: 1.45,
                                             fontWeight: FontWeight.w500,
                                             color: isDark
                                                 ? Colors.white
-                                                : Colors.black87,
+                                                : AppColors.slate900,
                                           ),
                                         ),
                                         SizedBox(height: 16.h),
@@ -500,8 +508,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                           },
                                           child: Container(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 16.w,
-                                              vertical: 8.h,
+                                              horizontal: 18.w,
+                                              vertical: 10.h,
                                             ),
                                             decoration: BoxDecoration(
                                               color: theme.primaryColor
@@ -515,15 +523,15 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                                 Icon(
                                                   Icons.volume_up_rounded,
                                                   color: theme.primaryColor,
-                                                  size: 16.r,
+                                                  size: 18.r,
                                                 ),
-                                                SizedBox(width: 6.w),
+                                                SizedBox(width: 8.w),
                                                 Text(
-                                                  "LISTEN",
+                                                  "Listen",
                                                   style: TextStyle(
                                                     fontFamily: 'Outfit',
-                                                    fontSize: 12.sp,
-                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 13.sp,
+                                                    fontWeight: FontWeight.w600,
                                                     color: theme.primaryColor,
                                                   ),
                                                 ),

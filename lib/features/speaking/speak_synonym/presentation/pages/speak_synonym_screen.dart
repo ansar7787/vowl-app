@@ -295,7 +295,10 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                       SizedBox(height: 16.h),
                                       Container(
                                         key: const Key('speak_synonym_hint_card'),
-                                        padding: EdgeInsets.all(16.r),
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 16.w,
+                                          vertical: 14.h,
+                                        ),
                                         decoration: BoxDecoration(
                                           color: theme.primaryColor.withValues(
                                             alpha: 0.1,
@@ -323,13 +326,15 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                               child: Text(
                                                 quest.hint!,
                                                 key: const Key('speak_synonym_hint_text'),
+                                                softWrap: true,
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
                                                   fontSize: 14.sp,
+                                                  fontWeight: FontWeight.w500,
                                                   color: isDark
-                                                      ? Colors.white70
-                                                      : Colors.black87,
-                                                  height: 1.4,
+                                                      ? Colors.white.withValues(alpha: 0.88)
+                                                      : const Color(0xFF334155),
+                                                  height: 1.45,
                                                 ),
                                               ),
                                             ),
@@ -344,7 +349,12 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                             ),
                             if (!isAnsweredNotifier.value)
                               SliverPadding(
-                                padding: EdgeInsets.only(bottom: 120.h),
+                                padding: EdgeInsets.fromLTRB(
+                                  20.w,
+                                  0,
+                                  20.w,
+                                  120.h,
+                                ),
                                 sliver: SliverToBoxAdapter(
                                   child: AnimatedOpacity(
                                     opacity: _ttsFinished.value ? 1.0 : 0.4,

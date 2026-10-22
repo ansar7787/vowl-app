@@ -42,7 +42,7 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
 
     return GlassTile(
       padding: EdgeInsets.all(20.r),
-      borderRadius: BorderRadius.circular(28.r),
+      borderRadius: BorderRadius.circular(24.r),
       child: Column(
         children: [
           Row(
@@ -50,14 +50,14 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  "TARGET PHONETIC CORE",
+                  "TARGET SOUND",
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    color: Colors.grey.shade400,
-                    letterSpacing: 1.0,
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w600,
+                    color: isDark ? Colors.white70 : const Color(0xFF475569),
+                    letterSpacing: 0.8,
                   ),
-                  overflow: TextOverflow.ellipsis,
                 ),
               ),
               SizedBox(width: 8.w),
@@ -66,12 +66,16 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                 onTap: onToggleGuide,
                 child: Container(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 10.w,
-                    vertical: 4.h,
+                    horizontal: 12.w,
+                    vertical: 6.h,
                   ),
                   decoration: BoxDecoration(
                     color: Colors.orangeAccent.withValues(alpha: 0.15),
-                    borderRadius: BorderRadius.circular(20.r),
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color: Colors.orangeAccent.withValues(alpha: 0.3),
+                      width: 1.0,
+                    ),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -79,16 +83,16 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                       Icon(
                         Icons.help_outline_rounded,
                         color: Colors.orangeAccent,
-                        size: 12.r,
+                        size: 14.r,
                       ),
-                      SizedBox(width: 4.w),
+                      SizedBox(width: 5.w),
                       Text(
-                        "POSITION GUIDE",
+                        "Sound Guide",
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 9.sp,
+                          fontSize: 11.sp,
                           color: Colors.orangeAccent,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ],
@@ -99,7 +103,7 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
           ),
           SizedBox(height: 16.h),
 
-          // Glowing liquid metal sphere capsule with comparison pronunciation
+          // Core phoneme badge with comparison pronunciation
           ScaleButton(
             key: const Key('pronunciation_focus_target_phoneme_badge_btn'),
             onTap: () {
@@ -112,7 +116,7 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
               button: true,
               child: Container(
                 key: const Key('pronunciation_focus_target_phoneme_badge'),
-                padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 14.h),
+                padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 12.h),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -128,15 +132,16 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                       )!,
                     ],
                   ),
-                  borderRadius: BorderRadius.circular(24.r),
+                  borderRadius: BorderRadius.circular(20.r),
                   boxShadow: [
                     BoxShadow(
                       color: Color.lerp(
-                        Colors.blue,
+                        primaryColor,
                         Colors.orangeAccent,
                         heatLevel,
-                      )!.withValues(alpha: 0.35 + heatLevel * 0.25),
-                      blurRadius: 15.r + heatLevel * 10.r,
+                      )!.withValues(alpha: 0.3 + heatLevel * 0.2),
+                      blurRadius: 12.r + heatLevel * 8.r,
+                      offset: const Offset(0, 4),
                     ),
                   ],
                 ),
@@ -144,8 +149,8 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                   targetSound,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 32.sp,
-                    fontWeight: FontWeight.w900,
+                    fontSize: 26.sp,
+                    fontWeight: FontWeight.w700,
                     color: Colors.white,
                     letterSpacing: 1.0,
                   ),
@@ -157,19 +162,19 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                         reduceMotion ? c.stop() : c.repeat(reverse: true),
                   )
                   .slideY(
-                    begin: -0.05,
-                    end: 0.05,
+                    begin: -0.04,
+                    end: 0.04,
                     duration: const Duration(milliseconds: 1500),
                   ),
             ),
           ),
           SizedBox(height: 8.h),
           Text(
-            "Tap sound to compare (1.0x → 0.4x)",
+            "Tap sound to hear normal & slow speeds",
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              color: isDark ? Colors.white54 : Colors.black45,
+              fontSize: 12.sp,
+              color: isDark ? Colors.white60 : const Color(0xFF64748B),
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -180,37 +185,42 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
               padding: EdgeInsets.only(top: 14.h),
               child: Column(
                 children: [
-                  const Divider(color: Colors.white12),
-                  SizedBox(height: 8.h),
+                  Divider(
+                    color: isDark ? Colors.white12 : Colors.black12,
+                    height: 20.h,
+                  ),
                   InkWell(
                     onTap: () {
                       if (di.sl<AudioRecordingService>().isRecording) return;
                       final word = quest.targetWord ?? quest.textToSpeak ?? targetSound;
                       di.sl<SoundService>().playTts(word, speed: 0.28);
                     },
-                    borderRadius: BorderRadius.circular(8.r),
+                    borderRadius: BorderRadius.circular(10.r),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
                             Icons.volume_up_rounded,
                             color: Colors.orangeAccent,
-                            size: 14.r,
+                            size: 16.r,
                           ),
-                          SizedBox(width: 6.w),
+                          SizedBox(width: 8.w),
                           Flexible(
                             child: Text(
                               quest.phoneticHint ??
-                                  "Accentuate the critical sound matching the crucible target.",
+                                  "Listen closely and focus on how this sound is pronounced.",
                               textAlign: TextAlign.center,
+                              softWrap: true,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 13.sp,
-                                color: isDark ? Colors.white70 : Colors.black87,
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.9)
+                                    : const Color(0xFF1E293B),
                                 height: 1.4,
-                                fontStyle: FontStyle.italic,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           ),
@@ -227,16 +237,19 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                         Icon(
                           Icons.lightbulb_outline_rounded,
                           color: Colors.amberAccent,
-                          size: 14.r,
+                          size: 15.r,
                         ),
-                        SizedBox(width: 6.w),
+                        SizedBox(width: 8.w),
                         Expanded(
                           child: Text(
                             quest.pronunciationTips!,
+                            softWrap: true,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              color: isDark ? Colors.white70 : Colors.black87,
+                              fontSize: 12.5.sp,
+                              color: isDark
+                                  ? Colors.white70
+                                  : const Color(0xFF334155),
                               height: 1.35,
                             ),
                           ),
@@ -253,16 +266,21 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                         Icon(
                           Icons.warning_amber_rounded,
                           color: Colors.orangeAccent,
-                          size: 14.r,
+                          size: 15.r,
                         ),
-                        SizedBox(width: 6.w),
+                        SizedBox(width: 8.w),
                         Expanded(
                           child: Text(
                             "Watch out: ${quest.commonMistakes!.join(', ')}",
+                            softWrap: true,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              color: Colors.orangeAccent.withValues(alpha: 0.9),
+                              fontSize: 12.5.sp,
+                              fontWeight: FontWeight.w500,
+                              color: isDark
+                                  ? Colors.orangeAccent
+                                  : const Color(0xFFD97706),
+                              height: 1.35,
                             ),
                           ),
                         ),
