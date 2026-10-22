@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
@@ -6,7 +7,6 @@ import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/co
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color color07070f = Color(0xFF07070F);
   static const Color color2a2a3e = Color(0xFF2A2A3E);
   static const Color color131326 = Color(0xFF131326);
 }
@@ -63,18 +63,26 @@ class ConflictResolverDialConsole extends StatelessWidget {
     final bool isSignalTuned = focusedText != null;
 
     return Container(
-      width: 1.sw,
-      padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 16.w),
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 18.w),
       decoration: BoxDecoration(
-        color: isDark
-            ? _LocalPalette.color07070f
-            : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(30.r),
+        color: isDark ? AppColors.deepDark : Colors.white,
+        borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: isDark
-              ? Colors.white.withValues(alpha: 0.03)
-              : Colors.black.withValues(alpha: 0.03),
+              ? Colors.white.withValues(alpha: 0.08)
+              : Colors.black.withValues(alpha: 0.06),
+          width: 1.5,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.25)
+                : Colors.black.withValues(alpha: 0.04),
+            blurRadius: 16,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
       child: Column(
         children: [
@@ -131,7 +139,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
                                   _LocalPalette.color2a2a3e,
                                   _LocalPalette.color131326,
                                 ]
-                              : [Colors.white, Colors.grey.shade300],
+                              : [Colors.white, const Color(0xFFF1F5F9)],
                         ),
                         boxShadow: [
                           BoxShadow(
@@ -227,15 +235,15 @@ class ConflictResolverDialConsole extends StatelessWidget {
             child: focusedText == null
                 ? Container(
                     key: const Key('conflict_resolver_static_noise'),
-                    constraints: BoxConstraints(minHeight: 80.h),
-                    padding: EdgeInsets.symmetric(vertical: 12.h),
+                    constraints: BoxConstraints(minHeight: 76.h),
+                    padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 16.w),
                     alignment: Alignment.center,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
                           Icons.blur_on_rounded,
-                          color: Colors.grey.withValues(alpha: 0.5),
+                          color: isDark ? Colors.white38 : Colors.black38,
                           size: 24.r,
                         ),
                         SizedBox(height: 8.h),
@@ -243,9 +251,10 @@ class ConflictResolverDialConsole extends StatelessWidget {
                           "TUNING... STATIC NOISE",
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            color: Colors.grey,
-                            letterSpacing: 2.0,
+                            fontSize: 11.5.sp,
+                            fontWeight: FontWeight.w500,
+                            color: isDark ? Colors.white38 : Colors.black45,
+                            letterSpacing: 1.5,
                           ),
                         ),
                       ],
@@ -253,17 +262,20 @@ class ConflictResolverDialConsole extends StatelessWidget {
                   )
                 : Container(
                     key: const Key('conflict_resolver_focused_response'),
-                    constraints: BoxConstraints(minHeight: 80.h),
+                    constraints: BoxConstraints(minHeight: 76.h),
                     width: double.infinity,
                     padding: EdgeInsets.symmetric(
                       horizontal: 16.w,
-                      vertical: 12.h,
+                      vertical: 14.h,
                     ),
                     decoration: BoxDecoration(
-                      color: currentColor.withValues(alpha: 0.08),
+                      color: currentColor.withValues(
+                        alpha: isDark ? 0.12 : 0.06,
+                      ),
                       borderRadius: BorderRadius.circular(16.r),
                       border: Border.all(
-                        color: currentColor.withValues(alpha: 0.3),
+                        color: currentColor.withValues(alpha: 0.25),
+                        width: 1.2,
                       ),
                     ),
                     alignment: Alignment.center,
@@ -274,9 +286,9 @@ class ConflictResolverDialConsole extends StatelessWidget {
                           "PROPOSED RESPONSE:",
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 10.sp,
+                            fontSize: 11.sp,
                             color: currentColor,
-                            letterSpacing: 1.2,
+                            letterSpacing: 1.0,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -284,10 +296,12 @@ class ConflictResolverDialConsole extends StatelessWidget {
                         Text(
                           focusedText!,
                           textAlign: TextAlign.center,
+                          softWrap: true,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            height: 1.3,
+                            fontSize: 14.5.sp,
+                            fontWeight: FontWeight.w500,
+                            height: 1.35,
                             color: Theme.of(context).colorScheme.onSurface,
                           ),
                         ),

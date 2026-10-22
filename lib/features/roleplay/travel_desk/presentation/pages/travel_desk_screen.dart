@@ -243,42 +243,47 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                           ),
                                           SizedBox(height: 16.h),
 
-                                          // Biometric Passport Book (Full Width)
-                                          TravelDeskPassportBook(
-                                            options: options,
-                                            color: theme.primaryColor,
-                                            correctIndex:
-                                                quest.correctAnswerIndex ?? 0,
-                                            isDark: isDark,
-                                            travelDocument:
-                                                quest.travelDocuments,
-                                            selectedIndex: _selectedIndex.value,
-                                            hoveredIndex: _hoveredIndex.value,
-                                            isAnswered:
-                                                isAnsweredNotifier.value ||
-                                                isFirstStagePassedNotifier
-                                                    .value,
-                                            isCorrect: isCorrectNotifier.value,
-                                            rippleAnimation: _rippleController,
-                                            onSubmitStamp:
-                                                (index, correctIndex) =>
-                                                    _submitStamp(
-                                                      index,
-                                                      correctIndex,
-                                                      quest,
-                                                    ),
-                                            onHoverChanged: (index) {
-                                              hapticService.selection();
-                                              _hoveredIndex.value = index;
-                                            },
-                                            onHoverEnded: () {
-                                              _hoveredIndex.value = null;
-                                            },
-                                            onDragStarted: () {},
+                                          // Passport Book & Destination Pages (Standard Horizontal Padding)
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 16.w,
+                                            ),
+                                            child: TravelDeskPassportBook(
+                                              options: options,
+                                              color: theme.primaryColor,
+                                              correctIndex:
+                                                  quest.correctAnswerIndex ?? 0,
+                                              isDark: isDark,
+                                              travelDocument:
+                                                  quest.travelDocuments,
+                                              selectedIndex: _selectedIndex.value,
+                                              hoveredIndex: _hoveredIndex.value,
+                                              isAnswered:
+                                                  isAnsweredNotifier.value ||
+                                                  isFirstStagePassedNotifier
+                                                      .value,
+                                              isCorrect: isCorrectNotifier.value,
+                                              rippleAnimation: _rippleController,
+                                              onSubmitStamp:
+                                                  (index, correctIndex) =>
+                                                      _submitStamp(
+                                                        index,
+                                                        correctIndex,
+                                                        quest,
+                                                      ),
+                                              onHoverChanged: (index) {
+                                                hapticService.selection();
+                                                _hoveredIndex.value = index;
+                                              },
+                                              onHoverEnded: () {
+                                                _hoveredIndex.value = null;
+                                              },
+                                              onDragStarted: () {},
+                                            ),
                                           ),
                                           SizedBox(height: 16.h),
 
-                                          // Stamp slammed terminal console
+                                          // Stamp station console
                                           AnimatedSwitcher(
                                             duration: const Duration(
                                               milliseconds: 300,
@@ -339,23 +344,38 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                   !isAnsweredNotifier.value &&
                                   _selectedIndex.value != null)
                                 SliverToBoxAdapter(
-                                  child: SpeakToConfirmOverlay(
-                                    expectedText: (_selectedIndex.value !=
-                                                null &&
-                                            _selectedIndex.value! <
-                                                options.length)
-                                        ? options[_selectedIndex.value!]
-                                        : (quest.correctAnswer ?? ""),
-                                    primaryColor: theme.primaryColor,
-                                    isPositioned: false,
-                                    onConfirmed: () {
-                                      context.read<RoleplayBloc>().add(
-                                        const RoleplaySpeakConfirmed(5),
-                                      );
-                                      _submitVerbalEvaluation(true, quest);
-                                    },
-                                    onSkipped: () =>
-                                        _submitVerbalEvaluation(false, quest),
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: 12.h,
+                                    ),
+                                    child: SpeakToConfirmOverlay(
+                                      key: const Key(
+                                        'travel_desk_speak_overlay',
+                                      ),
+                                      title: "CONFIRM DESTINATION",
+                                      subtitle:
+                                          "Say the destination aloud to confirm",
+                                      expectedText: (_selectedIndex.value !=
+                                                  null &&
+                                              _selectedIndex.value! <
+                                                  options.length)
+                                          ? options[_selectedIndex.value!]
+                                          : (quest.correctAnswer ?? ""),
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      displayFontSize: 16.sp,
+                                      displayFontWeight: FontWeight.w600,
+                                      displayTextAlign: TextAlign.center,
+                                      onConfirmed: () {
+                                        context.read<RoleplayBloc>().add(
+                                          const RoleplaySpeakConfirmed(5),
+                                        );
+                                        _submitVerbalEvaluation(true, quest);
+                                      },
+                                      onSkipped: () =>
+                                          _submitVerbalEvaluation(false, quest),
+                                    ),
                                   ),
                                 ),
                               SliverToBoxAdapter(

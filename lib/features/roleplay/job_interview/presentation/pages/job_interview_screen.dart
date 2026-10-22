@@ -330,23 +330,30 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                                   !isAnsweredNotifier.value &&
                                   _selectedIndex.value != null)
                                 SliverToBoxAdapter(
-                                  child: SpeakToConfirmOverlay(
-                                    key: const Key('job_interview_speak_overlay'),
-                                    expectedText: _shuffledOptions
-                                        .value[_selectedIndex.value!],
-                                    primaryColor: theme.primaryColor,
-                                    isPositioned: false,
-                                    displayFontSize: 16.sp,
-                                    displayFontWeight: FontWeight.w400,
-                                    displayTextAlign: TextAlign.left,
-                                    onConfirmed: () {
-                                      context.read<RoleplayBloc>().add(
-                                        const RoleplaySpeakConfirmed(5),
-                                      );
-                                      _submitVerbalEvaluation(true, quest);
-                                    },
-                                    onSkipped: () =>
-                                        _submitVerbalEvaluation(false, quest),
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                    ),
+                                    child: SpeakToConfirmOverlay(
+                                      key: const Key(
+                                        'job_interview_speak_overlay',
+                                      ),
+                                      expectedText: _shuffledOptions
+                                          .value[_selectedIndex.value!],
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      displayFontSize: 15.sp,
+                                      displayFontWeight: FontWeight.w500,
+                                      displayTextAlign: TextAlign.center,
+                                      onConfirmed: () {
+                                        context.read<RoleplayBloc>().add(
+                                          const RoleplaySpeakConfirmed(5),
+                                        );
+                                        _submitVerbalEvaluation(true, quest);
+                                      },
+                                      onSkipped: () =>
+                                          _submitVerbalEvaluation(false, quest),
+                                    ),
                                   ),
                                 ),
                               SliverToBoxAdapter(

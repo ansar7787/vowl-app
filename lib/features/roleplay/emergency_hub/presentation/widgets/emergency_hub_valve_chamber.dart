@@ -39,17 +39,27 @@ class EmergencyHubValveChamber extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(vertical: 24.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 22.h),
       decoration: BoxDecoration(
         color: isDark
             ? _LocalPalette.color07070f
-            : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(36.r),
+            : Colors.white,
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: isDark
-              ? Colors.white.withValues(alpha: 0.03)
-              : Colors.black.withValues(alpha: 0.03),
+              ? Colors.white.withValues(alpha: 0.08)
+              : Colors.black.withValues(alpha: 0.08),
+          width: 1.5,
         ),
+        boxShadow: isDark
+            ? []
+            : [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.04),
+                  blurRadius: 12,
+                  offset: const Offset(0, 4),
+                ),
+              ],
       ),
       child: Column(
         children: [
@@ -203,9 +213,10 @@ class EmergencyHubValveChamber extends StatelessWidget {
                 "VALVE LEVEL: ",
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: Colors.grey,
-                  letterSpacing: 1.5,
+                  fontSize: 12.sp,
+                  color: isDark ? Colors.white60 : Colors.grey.shade700,
+                  letterSpacing: 0.8,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               AnimatedDefaultTextStyle(
@@ -213,11 +224,12 @@ class EmergencyHubValveChamber extends StatelessWidget {
                 duration: const Duration(milliseconds: 300),
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 11.sp,
+                  fontSize: 12.sp,
                   color: isValveAligned
                       ? tokens.gameCorrect
                       : tokens.gameIncorrect,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 0.5,
                 ),
                 child: Text(
                   isValveAligned

@@ -431,7 +431,7 @@ void main() {
       );
 
       expect(
-        find.text('Drag the scan lens to locate active patient glitches'),
+        find.text('Examine the patient and identify the matching symptoms.'),
         findsOneWidget,
       );
     });
@@ -596,7 +596,7 @@ void main() {
 
       verify(() => mockHapticService.error()).called(1);
       expect(
-        find.text('Drag the scanner lens over the patient to unlock diagnostics!'),
+        find.text('Examine the patient with the scanner to identify symptoms first.'),
         findsOneWidget,
       );
     });

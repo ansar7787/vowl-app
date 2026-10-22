@@ -49,18 +49,18 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
     Widget content = Container(
       key: const Key('job_interview_interviewer_panel'),
       width: double.infinity,
-      padding: EdgeInsets.all(22.r),
+      padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
         color: isDark
             ? _LocalPalette.color07070f
             : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(32.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: reaction != null
               ? activeColor.withValues(alpha: 0.3)
               : (isDark
-                    ? Colors.white.withValues(alpha: 0.03)
-                    : Colors.black.withValues(alpha: 0.03)),
+                    ? Colors.white.withValues(alpha: 0.06)
+                    : Colors.black.withValues(alpha: 0.06)),
         ),
       ),
       child: Column(
@@ -72,7 +72,7 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
                 key: const Key('job_interview_interviewer_icon_container'),
                 padding: EdgeInsets.all(8.r),
                 decoration: BoxDecoration(
-                  color: activeColor.withValues(alpha: 0.1),
+                  color: activeColor.withValues(alpha: 0.12),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
@@ -90,25 +90,27 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
                     Text(
                       reaction != null
                           ? reaction!.toUpperCase()
-                          : "CHIEF EXECUTIVE V-407",
+                          : "HIRING MANAGER",
                       key: const Key('job_interview_interviewer_title'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 10.sp,
+                        fontSize: 13.sp,
                         color: activeColor,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 1.2,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 0.5,
                       ),
                     ),
+                    SizedBox(height: 2.h),
                     Text(
                       reaction != null
                           ? "INTERVIEWER REACTION"
-                          : "ACTIVE BIO-TRANSCEIVER",
+                          : "INTERVIEW QUESTION",
                       key: const Key('job_interview_interviewer_subtitle'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 7.sp,
-                        color: activeColor.withValues(alpha: 0.5),
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w400,
+                        color: activeColor.withValues(alpha: 0.7),
                       ),
                     ),
                   ],
@@ -116,28 +118,29 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 18.h),
+          SizedBox(height: 14.h),
           Container(
             key: const Key('job_interview_interviewer_text_container'),
             width: double.infinity,
-            padding: EdgeInsets.all(16.r),
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
             decoration: BoxDecoration(
               color: isDark
                   ? Colors.black.withValues(alpha: 0.25)
-                  : Colors.black.withValues(alpha: 0.02),
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(color: activeColor.withValues(alpha: 0.05)),
+                  : Colors.black.withValues(alpha: 0.03),
+              borderRadius: BorderRadius.circular(16.r),
+              border: Border.all(color: activeColor.withValues(alpha: 0.08)),
             ),
             child: Text(
               text,
               key: const Key('job_interview_interviewer_question_text'),
               textAlign: TextAlign.center,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 15.sp,
                 fontWeight: FontWeight.w500,
                 color: Theme.of(context).colorScheme.onSurface,
-                height: 1.35,
+                height: 1.45,
               ),
             ),
           ),
@@ -146,6 +149,6 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
     );
 
     if (reduceMotion) return content;
-    return content.animate().fadeIn(duration: 400.ms).slideY(begin: 0.05);
+    return content.animate().fadeIn(duration: 350.ms).slideY(begin: 0.03);
   }
 }

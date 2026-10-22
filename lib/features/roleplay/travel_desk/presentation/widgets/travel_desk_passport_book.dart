@@ -5,11 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_stamp_painter.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color06060e = Color(0xFF06060E);
-}
-
 class TravelDeskPassportBook extends StatefulWidget {
   final List<String> options;
   final Color color;
@@ -67,12 +62,23 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
   Widget build(BuildContext context) {
     return Container(
       key: const Key('travel_desk_passport_book'),
-      width: 1.sw,
+      width: double.infinity,
+      clipBehavior: Clip.antiAlias,
       padding: EdgeInsets.symmetric(vertical: 16.h),
       decoration: BoxDecoration(
-        color: widget.isDark
-            ? _LocalPalette.color06060e
-            : Colors.black.withValues(alpha: 0.02),
+        color: widget.isDark ? AppColors.deepDark : Colors.white,
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: widget.color.withValues(alpha: 0.2),
+          width: 1.0,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: widget.color.withValues(alpha: 0.08),
+            blurRadius: 10,
+            offset: const Offset(0, 3),
+          ),
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -81,29 +87,47 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Row(
               children: [
-                Expanded(
-                  child: Text(
-                    (widget.travelDocument ?? "BIOMETRIC PASSPORT BOOKLET")
-                        .toUpperCase(),
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      color: widget.color.withValues(alpha: 0.7),
-                      letterSpacing: 1.5,
-                    ),
+                Container(
+                  padding: EdgeInsets.all(6.r),
+                  decoration: BoxDecoration(
+                    color: widget.color.withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.menu_book_rounded,
+                    color: widget.color,
+                    size: 16.r,
                   ),
                 ),
-                SizedBox(width: 8.w),
-                Icon(
-                  Icons.menu_book_rounded,
-                  color: widget.color.withValues(alpha: 0.5),
-                  size: 16.r,
+                SizedBox(width: 10.w),
+                Expanded(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      (widget.travelDocument ?? "PASSPORT BOOKLET")
+                          .toUpperCase(),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w600,
+                        color: widget.color,
+                        letterSpacing: 1.0,
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
           ),
-          SizedBox(height: 16.h),
+          Padding(
+            padding: EdgeInsets.fromLTRB(16.w, 8.h, 16.w, 12.h),
+            child: Divider(
+              height: 1,
+              thickness: 1,
+              color: widget.color.withValues(alpha: 0.1),
+            ),
+          ),
 
           // Horizontal scroll layout matching booklet pages without overflow crash
           ShaderMask(
@@ -125,8 +149,8 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
               controller: _scrollController,
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              clipBehavior: Clip.none,
+              padding: EdgeInsets.symmetric(horizontal: 14.w),
+              clipBehavior: Clip.hardEdge,
               child: IntrinsicHeight(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -183,7 +207,7 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
           builder: (context, candidateData, rejectedData) {
             final pageContainer = AnimatedContainer(
               duration: const Duration(milliseconds: 200),
-              width: 120.w,
+              width: 132.w,
               constraints: BoxConstraints(minHeight: 165.h),
               margin: EdgeInsets.symmetric(horizontal: 6.w, vertical: 8.h),
               decoration: BoxDecoration(
@@ -239,8 +263,8 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                   // Page contents
                   Padding(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 8.w,
-                      vertical: 14.h,
+                      horizontal: 10.w,
+                      vertical: 12.h,
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -248,30 +272,47 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                         Icon(
                           Icons.public_rounded,
                           color: widget.color.withValues(
-                            alpha: isHovered ? 0.35 : 0.12,
+                            alpha: isHovered ? 0.45 : 0.2,
                           ),
-                          size: 28.r,
+                          size: 24.r,
                         ),
-                        SizedBox(height: 12.h),
-                        Text(
-                          text.toUpperCase(),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            color: widget.isDark
-                                ? Colors.white.withValues(alpha: 0.9)
-                                : Colors.black87,
-                            fontWeight: FontWeight.bold,
+                        SizedBox(height: 8.h),
+                        Expanded(
+                          child: Center(
+                            child: Text(
+                              text.toUpperCase(),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                color: widget.isDark
+                                    ? Colors.white.withValues(alpha: 0.95)
+                                    : Colors.black87,
+                                fontWeight: FontWeight.w600,
+                                height: 1.3,
+                              ),
+                            ),
                           ),
                         ),
-                        SizedBox(height: 12.h),
-                        Text(
-                          "PAGE 0${index + 1}",
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 8.sp,
-                            color: widget.color.withValues(alpha: 0.4),
+                        SizedBox(height: 8.h),
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8.w,
+                            vertical: 2.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: widget.color.withValues(alpha: 0.08),
+                            borderRadius: BorderRadius.circular(8.r),
+                          ),
+                          child: Text(
+                            "PAGE 0${index + 1}",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 0.5,
+                              color: widget.color.withValues(alpha: 0.7),
+                            ),
                           ),
                         ),
                       ],
@@ -286,7 +327,7 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                         builder: (context, child) {
                           return CustomPaint(
                             painter: StampRipplePainter(
-                              impactOffset: Offset(55.w, 82.h),
+                              impactOffset: Offset(66.w, 82.h),
                               animationValue: widget.rippleAnimation.value,
                               themeColor: (index == widget.correctIndex)
                                   ? AppColors.gameCorrect
@@ -305,7 +346,7 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                               angle: -0.22,
                               child: Container(
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: 6.w,
+                                  horizontal: 8.w,
                                   vertical: 4.h,
                                 ),
                                 decoration: BoxDecoration(
@@ -313,10 +354,13 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                                     color: (index == widget.correctIndex)
                                         ? AppColors.gameCorrect
                                         : AppColors.gameIncorrect,
-                                    width: 2.5,
+                                    width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.r),
-                                  color: Colors.black.withValues(alpha: 0.1),
+                                  color: (index == widget.correctIndex
+                                          ? AppColors.gameCorrect
+                                          : AppColors.gameIncorrect)
+                                      .withValues(alpha: 0.12),
                                 ),
                                 child: Text(
                                   (index == widget.correctIndex)
@@ -327,8 +371,9 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                                   overflow: TextOverflow.visible,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
-                                    fontSize: 11.sp,
-                                    fontWeight: FontWeight.w900,
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w800,
+                                    letterSpacing: 1.0,
                                     color: (index == widget.correctIndex)
                                         ? AppColors.gameCorrect
                                         : AppColors.gameIncorrect,
@@ -340,7 +385,7 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                               angle: -0.22,
                               child: Container(
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: 6.w,
+                                  horizontal: 8.w,
                                   vertical: 4.h,
                                 ),
                                 decoration: BoxDecoration(
@@ -348,10 +393,13 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                                     color: (index == widget.correctIndex)
                                         ? AppColors.gameCorrect
                                         : AppColors.gameIncorrect,
-                                    width: 2.5,
+                                    width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.r),
-                                  color: Colors.black.withValues(alpha: 0.1),
+                                  color: (index == widget.correctIndex
+                                          ? AppColors.gameCorrect
+                                          : AppColors.gameIncorrect)
+                                      .withValues(alpha: 0.12),
                                 ),
                                 child: Text(
                                   (index == widget.correctIndex)
@@ -362,8 +410,9 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
                                   overflow: TextOverflow.visible,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
-                                    fontSize: 11.sp,
-                                    fontWeight: FontWeight.w900,
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w800,
+                                    letterSpacing: 1.0,
                                     color: (index == widget.correctIndex)
                                         ? AppColors.gameCorrect
                                         : AppColors.gameIncorrect,

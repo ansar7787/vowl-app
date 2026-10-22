@@ -22,10 +22,21 @@ class MedicalConsultPatientRecord extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: color.withValues(alpha: 0.1), width: 1.0),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.08)
+              : color.withValues(alpha: 0.16),
+          width: 1.0,
+        ),
         boxShadow: [
-          BoxShadow(color: color.withValues(alpha: 0.05), blurRadius: 10),
+          BoxShadow(
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.25)
+                : color.withValues(alpha: 0.06),
+            blurRadius: 12,
+            offset: const Offset(0, 3),
+          ),
         ],
       ),
       child: Column(
@@ -33,17 +44,17 @@ class MedicalConsultPatientRecord extends StatelessWidget {
         children: [
           Icon(
             Icons.person_outline_rounded,
-            color: color.withValues(alpha: 0.7),
-            size: 28.r,
+            color: color.withValues(alpha: 0.85),
+            size: 26.r,
           ),
           SizedBox(height: 8.h),
           Text(
             "PATIENT COMPLAINT",
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 11.sp,
+              fontSize: 12.sp,
               color: color,
-              letterSpacing: 1.2,
+              letterSpacing: 1.1,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -51,12 +62,13 @@ class MedicalConsultPatientRecord extends StatelessWidget {
           Text(
             prompt,
             textAlign: TextAlign.center,
+            softWrap: true,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 16.sp,
+              fontSize: 15.sp,
               fontWeight: FontWeight.w500,
               color: Theme.of(context).colorScheme.onSurface,
-              height: 1.4,
+              height: 1.45,
             ),
           ),
         ],

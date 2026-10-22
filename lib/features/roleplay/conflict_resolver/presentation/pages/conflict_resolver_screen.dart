@@ -13,6 +13,7 @@ import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
+import 'package:vowl/features/roleplay/presentation/constants/roleplay_constants.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
@@ -299,190 +300,211 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                               SliverToBoxAdapter(child: SizedBox(height: 24.h)),
                               SliverFillRemaining(
                                 hasScrollBody: false,
-                                child: Builder(
-                                  builder: (context) {
-                                    final isCompact =
-                                        MediaQuery.sizeOf(context).height < 600;
-                                    return Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 16.w,
-                                        vertical: isCompact ? 5.h : 10.h,
-                                      ),
-                                      child: Column(
-                                        children: [
-                                          ConflictResolverInstruction(
-                                            key: const Key(
-                                              'conflict_resolver_instruction',
-                                            ),
-                                            primaryColor: theme.primaryColor,
-                                            instruction:
-                                                InstructionHelper.getInstruction(
-                                                  quest,
+                                child: Center(
+                                  child: ConstrainedBox(
+                                    constraints: const BoxConstraints(
+                                      maxWidth: kRoleplayMaxContentWidth,
+                                    ),
+                                    child: Builder(
+                                      builder: (context) {
+                                        final isCompact =
+                                            MediaQuery.sizeOf(context).height < 600;
+                                        return Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 20.w,
+                                            vertical: isCompact ? 6.h : 12.h,
+                                          ),
+                                          child: Column(
+                                            children: [
+                                              ConflictResolverInstruction(
+                                                key: const Key(
+                                                  'conflict_resolver_instruction',
                                                 ),
-                                          ),
-                                          SizedBox(
-                                            height: isCompact ? 10.h : 16.h,
-                                          ),
-                                          ConflictResolverConflictCard(
-                                            key: const Key(
-                                              'conflict_resolver_conflict_card',
-                                            ),
-                                            scene: quest.scene ?? "",
-                                            escalationLevel:
-                                                quest.escalationLevel ?? 5,
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                          ),
-                                          SizedBox(
-                                            height: isCompact ? 16.h : 24.h,
-                                          ),
-
-                                          // Circular audio dials
-                                          ConflictResolverDialConsole(
-                                            key: const Key(
-                                              'conflict_resolver_dial_console',
-                                            ),
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            rotation: _rotation.value,
-                                            waveAnimation: _waveController,
-                                            onDialDragStart: _onDialDragStart,
-                                            onDialDragged: _onDialDragged,
-                                            onDialDragEnd: _onDialDragEnd,
-                                            onStepLeft: _stepLeft,
-                                            onStepRight: _stepRight,
-                                            focusedText:
-                                                _focusedIndex != null &&
-                                                    _currentOptions
-                                                        .isNotEmpty &&
-                                                    _focusedIndex! <
-                                                        _currentOptions.length
-                                                ? _currentOptions[_focusedIndex!]
-                                                      .correctAnswer
-                                                : null,
-                                            isAnswered:
-                                                isAnsweredNotifier.value,
-                                            isCorrect: isCorrectNotifier.value,
-                                            isFirstStagePassed:
-                                                isFirstStagePassedNotifier
-                                                    .value,
-                                          ),
-                                          SizedBox(
-                                            height: isCompact ? 20.h : 28.h,
-                                          ),
-
-                                          // Submit control button
-                                          if (!isAnsweredNotifier.value &&
-                                              !isFirstStagePassedNotifier.value)
-                                            Builder(
-                                              builder: (context) {
-                                                Widget btn = ScaleButton(
-                                                  key: const Key(
-                                                    'conflict_resolver_confirm_button',
-                                                  ),
-                                                  onTap: () => _submitAnswer(quest),
-                                                  child: Container(
-                                                    padding: EdgeInsets.symmetric(
-                                                      horizontal: 24.w,
-                                                      vertical: isCompact
-                                                          ? 10.h
-                                                          : 14.h,
+                                                primaryColor: theme.primaryColor,
+                                                instruction:
+                                                    InstructionHelper.getInstruction(
+                                                      quest,
                                                     ),
-                                                    decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                            30.r,
-                                                          ),
-                                                      gradient: LinearGradient(
-                                                        colors: [
-                                                          theme.primaryColor,
-                                                          theme.primaryColor
-                                                              .withValues(
-                                                                alpha: 0.8,
-                                                              ),
-                                                        ],
+                                              ),
+                                              SizedBox(
+                                                height: isCompact ? 10.h : 16.h,
+                                              ),
+                                              ConflictResolverConflictCard(
+                                                key: const Key(
+                                                  'conflict_resolver_conflict_card',
+                                                ),
+                                                scene: quest.scene ?? "",
+                                                escalationLevel:
+                                                    quest.escalationLevel ?? 5,
+                                                color: theme.primaryColor,
+                                                isDark: isDark,
+                                              ),
+                                              SizedBox(
+                                                height: isCompact ? 16.h : 22.h,
+                                              ),
+
+                                              // Circular audio dials
+                                              ConflictResolverDialConsole(
+                                                key: const Key(
+                                                  'conflict_resolver_dial_console',
+                                                ),
+                                                color: theme.primaryColor,
+                                                isDark: isDark,
+                                                rotation: _rotation.value,
+                                                waveAnimation: _waveController,
+                                                onDialDragStart: _onDialDragStart,
+                                                onDialDragged: _onDialDragged,
+                                                onDialDragEnd: _onDialDragEnd,
+                                                onStepLeft: _stepLeft,
+                                                onStepRight: _stepRight,
+                                                focusedText:
+                                                    _focusedIndex != null &&
+                                                        _currentOptions
+                                                            .isNotEmpty &&
+                                                        _focusedIndex! <
+                                                            _currentOptions.length
+                                                    ? _currentOptions[_focusedIndex!]
+                                                          .correctAnswer
+                                                    : null,
+                                                isAnswered:
+                                                    isAnsweredNotifier.value,
+                                                isCorrect: isCorrectNotifier.value,
+                                                isFirstStagePassed:
+                                                    isFirstStagePassedNotifier
+                                                        .value,
+                                              ),
+                                              SizedBox(
+                                                height: isCompact ? 20.h : 28.h,
+                                              ),
+
+                                              // Submit control button
+                                              if (!isAnsweredNotifier.value &&
+                                                  !isFirstStagePassedNotifier.value)
+                                                Builder(
+                                                  builder: (context) {
+                                                    Widget btn = ScaleButton(
+                                                      key: const Key(
+                                                        'conflict_resolver_confirm_button',
                                                       ),
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                          color: theme.primaryColor
-                                                              .withValues(
-                                                                alpha: 0.35,
+                                                      onTap: () => _submitAnswer(quest),
+                                                      child: Container(
+                                                        padding: EdgeInsets.symmetric(
+                                                          horizontal: 28.w,
+                                                          vertical: isCompact
+                                                              ? 12.h
+                                                              : 14.h,
+                                                        ),
+                                                        decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                24.r,
                                                               ),
-                                                          blurRadius: isCompact
-                                                              ? 10
-                                                              : 15,
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    child: Wrap(
-                                                      alignment:
-                                                          WrapAlignment.center,
-                                                      crossAxisAlignment:
-                                                          WrapCrossAlignment.center,
-                                                      spacing: 8.w,
-                                                      children: [
-                                                        Icon(
-                                                          Icons.security_rounded,
-                                                          color: Colors.white,
-                                                          size: isCompact
-                                                              ? 16.r
-                                                              : 18.r,
-                                                        ),
-                                                        Text(
-                                                          "CONFIRM RESPONSE",
-                                                          textAlign:
-                                                              TextAlign.center,
-                                                          style: TextStyle(
-                                                            fontFamily: 'Outfit',
-                                                            fontSize: isCompact
-                                                                ? 12.sp
-                                                                : 14.sp,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            color: Colors.white,
-                                                            letterSpacing: 1.5,
+                                                          gradient: LinearGradient(
+                                                            colors: [
+                                                              theme.primaryColor,
+                                                              theme.primaryColor
+                                                                  .withValues(
+                                                                    alpha: 0.85,
+                                                                  ),
+                                                            ],
                                                           ),
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              color: theme.primaryColor
+                                                                  .withValues(
+                                                                    alpha: 0.35,
+                                                                  ),
+                                                              blurRadius: isCompact
+                                                                  ? 10
+                                                                  : 16,
+                                                              offset: const Offset(0, 4),
+                                                            ),
+                                                          ],
                                                         ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                );
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.min,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment.center,
+                                                          children: [
+                                                            Icon(
+                                                              Icons.security_rounded,
+                                                              color: Colors.white,
+                                                              size: isCompact
+                                                                  ? 16.r
+                                                                  : 18.r,
+                                                            ),
+                                                            SizedBox(width: 8.w),
+                                                            Text(
+                                                              "CONFIRM RESPONSE",
+                                                              textAlign:
+                                                                  TextAlign.center,
+                                                              style: TextStyle(
+                                                                fontFamily: 'Outfit',
+                                                                fontSize: isCompact
+                                                                    ? 13.sp
+                                                                    : 14.sp,
+                                                                fontWeight:
+                                                                    FontWeight.w600,
+                                                                color: Colors.white,
+                                                                letterSpacing: 0.8,
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    );
 
-                                                if (!MediaQuery.disableAnimationsOf(context)) {
-                                                  btn = btn.animate().fadeIn(duration: 300.ms);
-                                                }
-                                                return btn;
-                                              },
-                                            ),
+                                                    if (!MediaQuery.disableAnimationsOf(context)) {
+                                                      btn = btn.animate().fadeIn(duration: 300.ms);
+                                                    }
+                                                    return btn;
+                                                  },
+                                                ),
 
-                                          // Post-answer review cards
-                                          SizedBox(
-                                            height: isCompact ? 20.h : 40.h,
+                                              // Post-answer review cards
+                                              SizedBox(
+                                                height: isCompact ? 20.h : 36.h,
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
-                                    );
-                                  },
+                                        );
+                                      },
+                                    ),
+                                  ),
                                 ),
                               ),
 
                               if (isFirstStagePassedNotifier.value &&
                                   !isAnsweredNotifier.value)
                                 SliverToBoxAdapter(
-                                  child: SpeakToConfirmOverlay(
-                                    expectedText:
-                                        quest.correctAnswer ??
-                                        "De-escalating conflict",
-                                    primaryColor: theme.primaryColor,
-                                    isPositioned: false,
-                                    onConfirmed: () {
-                                      context.read<RoleplayBloc>().add(
-                                        const RoleplaySpeakConfirmed(5),
-                                      );
-                                      _submitVerbalEvaluation(true, quest);
-                                    },
-                                    onSkipped: () =>
-                                        _submitVerbalEvaluation(false, quest),
+                                  child: Center(
+                                    child: ConstrainedBox(
+                                      constraints: const BoxConstraints(
+                                        maxWidth: kRoleplayMaxContentWidth,
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 20.w,
+                                          vertical: 12.h,
+                                        ),
+                                        child: SpeakToConfirmOverlay(
+                                          expectedText:
+                                              quest.correctAnswer ??
+                                              "Speak the response clearly",
+                                          primaryColor: theme.primaryColor,
+                                          isPositioned: false,
+                                          onConfirmed: () {
+                                            context.read<RoleplayBloc>().add(
+                                              const RoleplaySpeakConfirmed(5),
+                                            );
+                                            _submitVerbalEvaluation(true, quest);
+                                          },
+                                          onSkipped: () =>
+                                              _submitVerbalEvaluation(false, quest),
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                 ),
                               SliverToBoxAdapter(

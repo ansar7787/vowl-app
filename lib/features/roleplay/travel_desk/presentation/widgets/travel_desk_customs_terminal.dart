@@ -22,8 +22,8 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       key: const Key('travel_desk_customs_terminal'),
-      elevation: 6,
-      shadowColor: color.withValues(alpha: 0.2),
+      elevation: 4,
+      shadowColor: color.withValues(alpha: 0.12),
       color: isDark ? AppColors.deepDark : Colors.white,
       surfaceTintColor: color.withValues(alpha: 0.05),
       margin: EdgeInsets.zero,
@@ -32,7 +32,7 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
         side: BorderSide(color: color.withValues(alpha: 0.2), width: 1.0),
       ),
       child: Padding(
-        padding: EdgeInsets.all(20.r),
+        padding: EdgeInsets.all(18.r),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -42,7 +42,7 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
               children: [
                 Icon(
                   Icons.help_outline_rounded,
-                  size: 14.r,
+                  size: 16.r,
                   color: isDark ? Colors.grey.shade400 : Colors.grey.shade600,
                 ),
                 SizedBox(width: 8.w),
@@ -51,11 +51,12 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
                     instruction,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 12.sp,
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w500,
+                      height: 1.35,
                       color: isDark
-                          ? Colors.grey.shade400
-                          : Colors.grey.shade600,
+                          ? Colors.grey.shade300
+                          : Colors.grey.shade700,
                     ),
                   ),
                 ),
@@ -63,7 +64,7 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
             ),
 
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 14.h),
+              padding: EdgeInsets.symmetric(vertical: 12.h),
               child: Divider(
                 height: 1,
                 thickness: 1,
@@ -115,10 +116,10 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
                         "TRAVELER REQUEST",
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 10.sp,
+                          fontSize: 11.sp,
                           color: color,
-                          letterSpacing: 2,
-                          fontWeight: FontWeight.w800,
+                          letterSpacing: 1.0,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                       SizedBox(height: 6.h),
@@ -127,11 +128,11 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 15.sp,
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w500,
                           color: isDark
-                              ? Colors.white.withValues(alpha: 0.9)
+                              ? Colors.white.withValues(alpha: 0.95)
                               : Colors.black87,
-                          height: 1.4,
+                          height: 1.45,
                         ),
                       ),
                     ],

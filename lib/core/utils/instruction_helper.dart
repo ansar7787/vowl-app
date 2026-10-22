@@ -120,6 +120,10 @@ class InstructionHelper {
         gameTypeName == 'ambient_id') {
       return 'Listen to the sounds and choose the location.';
     }
+    if (gameTypeName == 'medicalConsult' ||
+        gameTypeName == 'medical_consult') {
+      return 'Examine the patient and identify the matching symptoms.';
+    }
     if (rawInstruction != null && rawInstruction.isNotEmpty) {
       return rawInstruction;
     }

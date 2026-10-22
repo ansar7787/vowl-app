@@ -129,12 +129,22 @@ class MedicalConsultScanBay extends StatelessWidget {
         color: isDark
             ? _LocalPalette.color07070f
             : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(36.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: isDark
-              ? Colors.white.withValues(alpha: 0.03)
-              : Colors.black.withValues(alpha: 0.03),
+              ? Colors.white.withValues(alpha: 0.08)
+              : color.withValues(alpha: 0.16),
+          width: 1.0,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.25)
+                : color.withValues(alpha: 0.05),
+            blurRadius: 12,
+            offset: const Offset(0, 3),
+          ),
+        ],
       ),
       child: LayoutBuilder(
         builder: (context, constraints) {
@@ -148,7 +158,7 @@ class MedicalConsultScanBay extends StatelessWidget {
           // Cybernetic scan matrix background grids
           Positioned.fill(
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(36.r),
+              borderRadius: BorderRadius.circular(20.r),
               child: AnimatedBuilder(
                 animation: sweepAnimation,
                 builder: (context, child) {
@@ -169,12 +179,12 @@ class MedicalConsultScanBay extends StatelessWidget {
                 ? Icon(
                     Icons.accessibility_new_rounded,
                     size: 260.r,
-                    color: color.withValues(alpha: 0.1),
+                    color: color.withValues(alpha: isDark ? 0.18 : 0.12),
                   )
                 : Icon(
                     Icons.accessibility_new_rounded,
                     size: 260.r,
-                    color: color.withValues(alpha: 0.1),
+                    color: color.withValues(alpha: isDark ? 0.18 : 0.12),
                   )
                     .animate(onPlay: (c) => c.repeat(reverse: true))
                     .shimmer(
@@ -234,11 +244,11 @@ class MedicalConsultScanBay extends StatelessWidget {
             );
 
             return Positioned(
-              left: (centerX - 16.r + pos.dx).clamp(12.w, constraints.maxWidth - 44.w),
-              top: (centerY - 16.r + pos.dy).clamp(12.h, constraints.maxHeight - 44.h),
+              left: (centerX - 16.r + pos.dx).clamp(16.w, constraints.maxWidth - 48.w),
+              top: (centerY - 16.r + pos.dy).clamp(16.h, constraints.maxHeight - 48.h),
               child: Semantics(
-                label: "Scan anomaly: $s",
-                hint: isResolved ? "Already scanned" : "Double tap to scan",
+                label: "Examine symptom: $s",
+                hint: isResolved ? "Already examined" : "Double tap to examine",
                 button: true,
                 child: GestureDetector(
                   onTap: () => onSymptomScannedDirectly(s),
@@ -259,8 +269,8 @@ class MedicalConsultScanBay extends StatelessWidget {
 
           // Interactive Drag-to-Scan lens
           Positioned(
-            left: (1.sw / 2) - 50.w,
-            top: (330.h / 2) - 50.h,
+            left: centerX - 48.r,
+            top: centerY - 48.r,
             child: ValueListenableBuilder<Offset>(
               valueListenable: scanOffsetNotifier,
               builder: (context, offset, child) {
@@ -274,11 +284,11 @@ class MedicalConsultScanBay extends StatelessWidget {
                       onPanUpdate: (d) => onScanUpdate(d, symptoms),
                       child: Container(
                         key: const Key('medical_consult_scan_lens'),
-                        width: 100.r,
-                        height: 100.r,
+                        width: 96.r,
+                        height: 96.r,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          border: Border.all(color: color, width: 3.0),
+                          border: Border.all(color: color, width: 2.5),
                           boxShadow: [
                             BoxShadow(
                               color: color.withValues(alpha: 0.25),
@@ -291,7 +301,7 @@ class MedicalConsultScanBay extends StatelessWidget {
                           child: Icon(
                             Icons.center_focus_strong_rounded,
                             color: color,
-                            size: 36.r,
+                            size: 32.r,
                           ),
                         ),
                       ),

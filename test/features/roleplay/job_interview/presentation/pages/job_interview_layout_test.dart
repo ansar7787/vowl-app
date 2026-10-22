@@ -456,24 +456,24 @@ void main() {
   });
 
   group('Telemetry Dashboard Tests', () {
-    testWidgets('9. initial dashboard displays PROFESSIONAL HARMONICS label',
+    testWidgets('9. initial dashboard displays INTERVIEW SCORE label',
         (tester) async {
       await pumpJobInterviewScreen(tester);
       expect(
         find.byKey(const Key('job_interview_telemetry_harmonics_label')),
         findsOneWidget,
       );
-      expect(find.text('PROFESSIONAL HARMONICS:'), findsOneWidget);
+      expect(find.text('INTERVIEW SCORE'), findsOneWidget);
     });
 
-    testWidgets('10. initial compatibility percentage is 50% COMPATIBLE',
+    testWidgets('10. initial compatibility percentage is 50% SCORE',
         (tester) async {
       await pumpJobInterviewScreen(tester);
       expect(
         find.byKey(const Key('job_interview_telemetry_percentage_text')),
         findsOneWidget,
       );
-      expect(find.text('50% COMPATIBLE'), findsOneWidget);
+      expect(find.text('50% SCORE'), findsOneWidget);
     });
 
     testWidgets('11. renders CustomPaint with ProfessionalismFusionPainter',
@@ -530,24 +530,24 @@ void main() {
       );
     });
 
-    testWidgets('16. initial title is CHIEF EXECUTIVE V-407 when reaction is null',
+    testWidgets('16. initial title is HIRING MANAGER when reaction is null',
         (tester) async {
       await pumpJobInterviewScreen(tester);
       expect(
         find.byKey(const Key('job_interview_interviewer_title')),
         findsOneWidget,
       );
-      expect(find.text('CHIEF EXECUTIVE V-407'), findsOneWidget);
+      expect(find.text('HIRING MANAGER'), findsOneWidget);
     });
 
-    testWidgets('17. initial subtitle is ACTIVE BIO-TRANSCEIVER when reaction is null',
+    testWidgets('17. initial subtitle is INTERVIEW QUESTION when reaction is null',
         (tester) async {
       await pumpJobInterviewScreen(tester);
       expect(
         find.byKey(const Key('job_interview_interviewer_subtitle')),
         findsOneWidget,
       );
-      expect(find.text('ACTIVE BIO-TRANSCEIVER'), findsOneWidget);
+      expect(find.text('INTERVIEW QUESTION'), findsOneWidget);
     });
 
     testWidgets('18. initial interviewer icon is business_center_rounded',
@@ -704,7 +704,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('30% COMPATIBLE'), findsOneWidget);
+      expect(find.text('30% SCORE'), findsOneWidget);
     });
 
     testWidgets('29. incorrect selection renders cancel_rounded icon on selected stone',
@@ -876,7 +876,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       // sampleQuest1 has professionalismRating 5 -> (5 / 5.0) * 0.3 = 0.3 boost -> 50% + 30% = 80%
-      expect(find.text('80% COMPATIBLE'), findsOneWidget);
+      expect(find.text('80% SCORE'), findsOneWidget);
     });
 
     testWidgets('37. tapping Needs Work calls submitWrongAnswer and drops mercuryLevel',
@@ -929,7 +929,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('30% COMPATIBLE'), findsOneWidget);
+      expect(find.text('30% SCORE'), findsOneWidget);
     });
 
     testWidgets('38. fallback boost (0.25) is used when professionalismRating is null',
@@ -985,7 +985,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       // 50% + 25% fallback = 75%
-      expect(find.text('75% COMPATIBLE'), findsOneWidget);
+      expect(find.text('75% SCORE'), findsOneWidget);
     });
   });
 
@@ -1001,7 +1001,7 @@ void main() {
       clearInteractions(mockRoleplayBloc);
 
       // Attempt to tap another option
-      final anotherOption = sampleQuest1.options![2];
+      final anotherOption = sampleQuest1.options![0];
       await tester.tap(findOptionByText(anotherOption), warnIfMissed: false);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
@@ -1056,7 +1056,7 @@ void main() {
       await tester.tap(findOptionByText(wrongOptionText));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
-      expect(find.text('30% COMPATIBLE'), findsOneWidget);
+      expect(find.text('30% SCORE'), findsOneWidget);
 
       // Transition to next quest
       final nextQuestState = testLoadedState.copyWith(currentIndex: 1);
@@ -1065,7 +1065,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('50% COMPATIBLE'), findsOneWidget);
+      expect(find.text('50% SCORE'), findsOneWidget);
     });
 
     testWidgets('43. tapping hint button dispatches RoleplayHintUsed',

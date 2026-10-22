@@ -49,7 +49,8 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
 
     Color ringColor = widget.color;
@@ -85,8 +86,8 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
             Widget containerWidget = AnimatedContainer(
               key: const Key('gourmet_order_table_container'),
               duration: const Duration(milliseconds: 250),
-              width: 210.r,
-              height: 210.r,
+              width: 195.r,
+              height: 195.r,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: widget.isDark
@@ -94,9 +95,9 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
                     : Colors.black.withValues(alpha: 0.02),
                 border: Border.all(
                   color: ringColor.withValues(
-                    alpha: isActiveGlow ? 0.75 : 0.2,
+                    alpha: isActiveGlow ? 0.75 : 0.25,
                   ),
-                  width: isActiveGlow ? 4.5 : 2.5,
+                  width: isActiveGlow ? 3.5 : 2.0,
                 ),
                 boxShadow: [
                   BoxShadow(
@@ -130,6 +131,7 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
 
                   // Cloche cover icon/platter details
                   Column(
+                    mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
@@ -140,26 +142,28 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
                             : Icons.room_service_outlined,
                         key: const Key('gourmet_order_table_cloche_icon'),
                         color: ringColor.withValues(
-                          alpha: isActiveGlow ? 0.9 : 0.25,
+                          alpha: isActiveGlow ? 0.95 : 0.70,
                         ),
-                        size: 72.r,
+                        size: 54.r,
                       ),
                       SizedBox(height: 8.h),
                       Text(
                         widget.isAnswered
                             ? ((widget.isCorrect ?? false)
-                                  ? "SERVED PERFECTLY"
-                                  : "WRONG DISHES")
-                            : "SERVING PLATTER",
+                                  ? "ORDER COMPLETE"
+                                  : "INCORRECT ORDER")
+                            : "ORDER PLATTER",
                         key: const Key('gourmet_order_table_status_text'),
+                        textAlign: TextAlign.center,
+                        softWrap: true,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 10.sp,
+                          fontSize: 13.sp,
                           color: ringColor.withValues(
-                            alpha: isActiveGlow ? 0.9 : 0.35,
+                            alpha: isActiveGlow ? 0.95 : 0.70,
                           ),
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 1.5,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 1.0,
                         ),
                       ),
                       if (widget.selectedItems.isNotEmpty) ...[
@@ -167,19 +171,20 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
                         Container(
                           key: const Key('gourmet_order_table_loaded_badge'),
                           padding: EdgeInsets.symmetric(
-                            horizontal: 10.w,
+                            horizontal: 12.w,
                             vertical: 4.h,
                           ),
                           decoration: BoxDecoration(
                             color: ringColor.withValues(alpha: 0.15),
-                            borderRadius: BorderRadius.circular(12.r),
+                            borderRadius: BorderRadius.circular(10.r),
                           ),
                           child: Text(
-                            "${widget.selectedItems.length} PLATES LOADED",
+                            "${widget.selectedItems.length} ${widget.selectedItems.length == 1 ? 'DISH SELECTED' : 'DISHES SELECTED'}",
+                            softWrap: true,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 9.sp,
-                              fontWeight: FontWeight.bold,
+                              fontSize: 11.5.sp,
+                              fontWeight: FontWeight.w700,
                               color: ringColor,
                             ),
                           ),

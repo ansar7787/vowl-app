@@ -32,11 +32,22 @@ class MedicalConsultBodyDiagram extends StatelessWidget {
         color: isDark
             ? AppColors.slate900.withValues(alpha: 0.5)
             : primaryColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: primaryColor.withValues(alpha: 0.2),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.08)
+              : primaryColor.withValues(alpha: 0.16),
           width: 1,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.2)
+                : primaryColor.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,45 +64,45 @@ class MedicalConsultBodyDiagram extends StatelessWidget {
                 "MEDICAL VOCABULARY",
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 11.sp,
+                  fontSize: 12.sp,
                   color: primaryColor,
                   fontWeight: FontWeight.w600,
-                  letterSpacing: 1.2,
+                  letterSpacing: 1.1,
                 ),
               ),
             ],
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: 18.h),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                height: 100.r,
-                width: 100.r,
+                height: 90.r,
+                width: 90.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: primaryColor.withValues(alpha: 0.1),
                   border: Border.all(
-                    color: primaryColor.withValues(alpha: 0.3),
+                    color: primaryColor.withValues(alpha: 0.25),
                   ),
                 ),
                 child: Center(
                   child: reduceMotion
                       ? Icon(
                           Icons.accessibility_new_rounded,
-                          size: 60.r,
+                          size: 54.r,
                           color: primaryColor.withValues(alpha: 0.7),
                         )
                       : Icon(
                           Icons.accessibility_new_rounded,
-                          size: 60.r,
+                          size: 54.r,
                           color: primaryColor.withValues(alpha: 0.7),
                         )
                           .animate(onPlay: (c) => c.repeat(reverse: true))
                           .fadeIn(duration: 1000.ms),
                 ),
               ),
-              SizedBox(width: 20.w),
+              SizedBox(width: 18.w),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -112,9 +123,10 @@ class MedicalConsultBodyDiagram extends StatelessWidget {
                           Expanded(
                             child: Text(
                               word.toUpperCase(),
+                              softWrap: true,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 14.sp,
+                                fontSize: 13.sp,
                                 color: Theme.of(context).colorScheme.onSurface,
                                 fontWeight: FontWeight.w600,
                                 letterSpacing: 0.5,

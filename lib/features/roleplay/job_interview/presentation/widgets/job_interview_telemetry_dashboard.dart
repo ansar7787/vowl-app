@@ -31,11 +31,22 @@ class JobInterviewTelemetryDashboard extends StatelessWidget {
     return Container(
       key: const Key('job_interview_telemetry_dashboard'),
       width: double.infinity,
-      padding: EdgeInsets.all(18.r),
+      padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(28.r),
-        border: Border.all(color: color.withValues(alpha: 0.1)),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.06)
+              : color.withValues(alpha: 0.12),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
       child: Semantics(
         label:
@@ -43,7 +54,7 @@ class JobInterviewTelemetryDashboard extends StatelessWidget {
         excludeSemantics: true,
         child: Row(
           children: [
-            // Circular Fusion Reactor
+            // Circular Score Ring
             SizedBox(
               key: const Key('job_interview_reactor_box'),
               width: 72.r,
@@ -66,41 +77,44 @@ class JobInterviewTelemetryDashboard extends StatelessWidget {
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    "PROFESSIONAL HARMONICS:",
+                    "INTERVIEW SCORE",
                     key: const Key('job_interview_telemetry_harmonics_label'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 9.sp,
+                      fontSize: 11.sp,
                       color: ringColor,
-                      letterSpacing: 1.5,
-                      fontWeight: FontWeight.bold,
+                      letterSpacing: 0.8,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   SizedBox(height: 4.h),
                   Text(
-                    "${(mercuryLevel * 100).round()}% COMPATIBLE",
+                    "${(mercuryLevel * 100).round()}% SCORE",
                     key: const Key('job_interview_telemetry_percentage_text'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 18.sp,
                       color: Theme.of(context).colorScheme.onSurface,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                   SizedBox(height: 6.h),
-                  // Horizontal tracking bar indicator
+                  // Horizontal progress indicator bar
                   Container(
                     key: const Key('job_interview_telemetry_progress_bar'),
                     height: 6.h,
                     decoration: BoxDecoration(
-                      color: Colors.black.withValues(alpha: 0.15),
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.1)
+                          : Colors.black.withValues(alpha: 0.08),
                       borderRadius: BorderRadius.circular(4.r),
                     ),
                     child: FractionallySizedBox(
                       alignment: Alignment.centerLeft,
-                      widthFactor: mercuryLevel,
+                      widthFactor: mercuryLevel.clamp(0.0, 1.0),
                       child: AnimatedContainer(
                         duration: const Duration(milliseconds: 300),
                         decoration: BoxDecoration(

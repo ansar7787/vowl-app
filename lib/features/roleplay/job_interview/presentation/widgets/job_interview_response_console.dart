@@ -62,39 +62,40 @@ class JobInterviewResponseConsole extends StatelessWidget {
         onTap: () => onOptionSelected(index, correctIndex),
         child: Container(
           key: Key('job_interview_option_$index'),
-          padding: EdgeInsets.all(18.r),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
           decoration: BoxDecoration(
             color: isSelected
                 ? stoneColor
                 : (isDark ? AppColors.deepDark : Colors.white),
-            borderRadius: BorderRadius.circular(22.r),
+            borderRadius: BorderRadius.circular(18.r),
             border: Border.all(
               color: isSelected
                   ? Colors.white
                   : (isAnswered && index == correctIndex)
                   ? AppColors.gameCorrect
-                  : color.withValues(alpha: 0.35),
+                  : color.withValues(alpha: 0.25),
               width: (isSelected || (isAnswered && index == correctIndex))
-                  ? 2.5
-                  : 1.5,
+                  ? 2.0
+                  : 1.2,
             ),
             boxShadow: [
               BoxShadow(
-                color: (isSelected ? stoneColor : color).withValues(
-                  alpha: isSelected ? 0.35 : 0.06,
+                color: (isSelected ? stoneColor : Colors.black).withValues(
+                  alpha: isSelected ? 0.25 : (isDark ? 0.15 : 0.04),
                 ),
-                blurRadius: isSelected ? 12 : 6,
+                blurRadius: isSelected ? 10 : 5,
+                offset: const Offset(0, 2),
               ),
             ],
           ),
           child: Row(
             children: [
               Container(
-                padding: EdgeInsets.all(8.r),
+                padding: EdgeInsets.all(7.r),
                 decoration: BoxDecoration(
                   color: isSelected
-                      ? Colors.white.withValues(alpha: 0.25)
-                      : color.withValues(alpha: 0.1),
+                      ? Colors.white.withValues(alpha: 0.22)
+                      : color.withValues(alpha: 0.08),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
@@ -108,16 +109,18 @@ class JobInterviewResponseConsole extends StatelessWidget {
                   size: 16.r,
                 ),
               ),
-              SizedBox(width: 14.w),
+              SizedBox(width: 12.w),
               Expanded(
                 child: Text(
                   text,
                   key: Key('job_interview_option_text_$index'),
                   textAlign: TextAlign.center,
+                  softWrap: true,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 13.sp,
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w500,
+                    height: 1.4,
                     color: isSelected
                         ? Colors.white
                         : (isAnswered && index == correctIndex)

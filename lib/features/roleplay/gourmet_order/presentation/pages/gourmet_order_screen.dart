@@ -57,7 +57,8 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
 
   void _scrollToBottom() {
     _scrollTimer?.cancel();
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) {
       if (_scrollController.hasClients) {
@@ -96,7 +97,8 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
     if (reduceMotion) {
       if (_steamController.isAnimating) _steamController.stop();
@@ -207,14 +209,17 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
 
     return BlocConsumer<RoleplayBloc, RoleplayState>(
       listenWhen: roleplayListenWhen,
       listener: onRoleplayStateChanged,
       builder: (context, state) {
-        final quest = (state is RoleplayLoaded) ? state.currentQuestOrNull : null;
+        final quest = (state is RoleplayLoaded)
+            ? state.currentQuestOrNull
+            : null;
         final options = quest?.options ?? [];
         final prices = quest?.menuPrices ?? [];
 
@@ -276,7 +281,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                           child: Column(
                                             children: [
                                               GourmetOrderBanquetHeader(
-                                                key: const Key('gourmet_order_banquet_header'),
+                                                key: const Key(
+                                                  'gourmet_order_banquet_header',
+                                                ),
                                                 prompt: quest.prompt ?? "",
                                                 instruction:
                                                     InstructionHelper.getInstruction(
@@ -291,7 +298,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
 
                                               // Floating Cloche Platter
                                               GourmetOrderTableSetting(
-                                                key: const Key('gourmet_order_table_setting'),
+                                                key: const Key(
+                                                  'gourmet_order_table_setting',
+                                                ),
                                                 color: theme.primaryColor,
                                                 isDark: isDark,
                                                 isAnswered:
@@ -316,7 +325,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
 
                                               // Tray of plate choices
                                               GourmetOrderPlateTray(
-                                                key: const Key('gourmet_order_plate_tray'),
+                                                key: const Key(
+                                                  'gourmet_order_plate_tray',
+                                                ),
                                                 options: options,
                                                 prices: prices,
                                                 color: theme.primaryColor,
@@ -352,47 +363,55 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                 Builder(
                                                   builder: (context) {
                                                     Widget buttons = Column(
-                                                      key: const Key('gourmet_order_action_buttons'),
+                                                      key: const Key(
+                                                        'gourmet_order_action_buttons',
+                                                      ),
                                                       crossAxisAlignment:
                                                           CrossAxisAlignment
                                                               .stretch,
                                                       children: [
                                                         ScaleButton(
-                                                          key: const Key('gourmet_order_serve_button'),
-                                                          onTap: () => _submitAnswer(
-                                                            quest.correctAnswer ??
-                                                                "",
-                                                            quest,
+                                                          key: const Key(
+                                                            'gourmet_order_serve_button',
                                                           ),
+                                                          onTap: () =>
+                                                              _submitAnswer(
+                                                                quest.correctAnswer ??
+                                                                    "",
+                                                                quest,
+                                                              ),
                                                           child: Container(
                                                             padding:
                                                                 EdgeInsets.symmetric(
                                                                   vertical:
                                                                       isCompact
-                                                                      ? 12.h
-                                                                      : 14.h,
+                                                                      ? 13.h
+                                                                      : 15.h,
                                                                 ),
                                                             decoration: BoxDecoration(
                                                               borderRadius:
                                                                   BorderRadius.circular(
-                                                                    30.r,
+                                                                    16.r,
                                                                   ),
                                                               gradient: LinearGradient(
                                                                 colors: [
                                                                   theme
                                                                       .primaryColor,
-                                                                  theme.primaryColor
+                                                                  theme
+                                                                      .primaryColor
                                                                       .withValues(
-                                                                        alpha: 0.8,
+                                                                        alpha:
+                                                                            0.8,
                                                                       ),
                                                                 ],
-                                                             ),
+                                                              ),
                                                               boxShadow: [
                                                                 BoxShadow(
                                                                   color: theme
                                                                       .primaryColor
                                                                       .withValues(
-                                                                        alpha: 0.35,
+                                                                        alpha:
+                                                                            0.35,
                                                                       ),
                                                                   blurRadius:
                                                                       isCompact
@@ -409,9 +428,10 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                                 Icon(
                                                                   Icons
                                                                       .restaurant_menu_rounded,
-                                                                  color:
-                                                                      Colors.white,
-                                                                  size: isCompact
+                                                                  color: Colors
+                                                                      .white,
+                                                                  size:
+                                                                      isCompact
                                                                       ? 16.r
                                                                       : 18.r,
                                                                 ),
@@ -419,21 +439,23 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                                   width: 8.w,
                                                                 ),
                                                                 Text(
-                                                                  "SERVE PLATTER",
+                                                                  "SERVE ORDER",
+                                                                  softWrap:
+                                                                      true,
                                                                   style: TextStyle(
                                                                     fontFamily:
                                                                         'Outfit',
                                                                     fontSize:
                                                                         isCompact
-                                                                        ? 12.sp
+                                                                        ? 13.sp
                                                                         : 14.sp,
                                                                     fontWeight:
                                                                         FontWeight
-                                                                            .bold,
+                                                                            .w700,
                                                                     color: Colors
                                                                         .white,
                                                                     letterSpacing:
-                                                                        1.5,
+                                                                        0.8,
                                                                   ),
                                                                 ),
                                                               ],
@@ -446,7 +468,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                               : 16.h,
                                                         ),
                                                         ScaleButton(
-                                                          key: const Key('gourmet_order_clear_button'),
+                                                          key: const Key(
+                                                            'gourmet_order_clear_button',
+                                                          ),
                                                           onTap: _clearItems,
                                                           child: Container(
                                                             padding:
@@ -464,13 +488,14 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                                   ),
                                                               borderRadius:
                                                                   BorderRadius.circular(
-                                                                    30.r,
+                                                                    16.r,
                                                                   ),
                                                               border: Border.all(
                                                                 color: theme
                                                                     .primaryColor
                                                                     .withValues(
-                                                                      alpha: 0.3,
+                                                                      alpha:
+                                                                          0.3,
                                                                     ),
                                                               ),
                                                             ),
@@ -484,7 +509,8 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                                       .refresh_rounded,
                                                                   color: theme
                                                                       .primaryColor,
-                                                                  size: isCompact
+                                                                  size:
+                                                                      isCompact
                                                                       ? 16.r
                                                                       : 18.r,
                                                                 ),
@@ -492,21 +518,23 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                                   width: 8.w,
                                                                 ),
                                                                 Text(
-                                                                  "CLEAR PLATTER",
+                                                                  "CLEAR SELECTION",
+                                                                  softWrap:
+                                                                      true,
                                                                   style: TextStyle(
                                                                     fontFamily:
                                                                         'Outfit',
                                                                     fontSize:
                                                                         isCompact
-                                                                        ? 11.sp
+                                                                        ? 12.sp
                                                                         : 13.sp,
                                                                     fontWeight:
                                                                         FontWeight
-                                                                            .bold,
+                                                                            .w600,
                                                                     color: theme
                                                                         .primaryColor,
                                                                     letterSpacing:
-                                                                        1.0,
+                                                                        0.6,
                                                                   ),
                                                                 ),
                                                               ],
@@ -516,9 +544,11 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                       ],
                                                     );
                                                     if (!reduceMotion) {
-                                                      buttons = buttons.animate().fadeIn(
-                                                        duration: 300.ms,
-                                                      );
+                                                      buttons = buttons
+                                                          .animate()
+                                                          .fadeIn(
+                                                            duration: 300.ms,
+                                                          );
                                                     }
                                                     return buttons;
                                                   },
@@ -538,24 +568,37 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                   if (isFirstStagePassedNotifier.value &&
                                       !isAnsweredNotifier.value)
                                     SliverToBoxAdapter(
-                                      child: SpeakToConfirmOverlay(
-                                        key: const Key('gourmet_order_speak_overlay'),
-                                        expectedText:
-                                            quest.correctAnswer ??
-                                            _selectedItems.value.join(', '),
-                                        primaryColor: theme.primaryColor,
-                                        isPositioned: false,
-                                        onConfirmed: () {
-                                          context.read<RoleplayBloc>().add(
-                                            const RoleplaySpeakConfirmed(5),
-                                          );
-                                          _submitVerbalEvaluation(true, quest);
-                                        },
-                                        onSkipped: () =>
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 16.w,
+                                        ),
+                                        child: SpeakToConfirmOverlay(
+                                          key: const Key(
+                                            'gourmet_order_speak_overlay',
+                                          ),
+                                          title: "CONFIRM THE ORDER",
+                                          subtitle:
+                                              "Say the dishes aloud to confirm",
+                                          expectedText:
+                                              quest.correctAnswer ??
+                                              _selectedItems.value.join(', '),
+                                          primaryColor: theme.primaryColor,
+                                          isPositioned: false,
+                                          onConfirmed: () {
+                                            context.read<RoleplayBloc>().add(
+                                              const RoleplaySpeakConfirmed(5),
+                                            );
                                             _submitVerbalEvaluation(
-                                              false,
+                                              true,
                                               quest,
-                                            ),
+                                            );
+                                          },
+                                          onSkipped: () =>
+                                              _submitVerbalEvaluation(
+                                                false,
+                                                quest,
+                                              ),
+                                        ),
                                       ),
                                     ),
                                   SliverToBoxAdapter(
