@@ -20,22 +20,22 @@ class SpeakMissingWordVortexSentence extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       container: true,
-      label: 'Sentence constructor: $text',
+      label: 'Sentence: $text',
       child: GlassTile(
         key: const Key('speak_missing_word_vortex_sentence'),
-        padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 28.h),
-        borderRadius: BorderRadius.circular(32.r),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 22.h),
+        borderRadius: BorderRadius.circular(24.r),
         child: Column(
           children: [
             Text(
-              "VOCAL SENTENCE CONSTRUCTOR",
+              "COMPLETE THE SENTENCE",
               key: const Key('speak_missing_word_vortex_header'),
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 10.sp,
+                fontSize: 11.sp,
                 color: primaryColor,
-                letterSpacing: 1.5,
-                fontWeight: FontWeight.bold,
+                letterSpacing: 1.2,
+                fontWeight: FontWeight.w700,
               ),
             ),
             SizedBox(height: 16.h),
@@ -45,7 +45,8 @@ class SpeakMissingWordVortexSentence extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 20.sp,
+                fontSize: 19.sp,
+                fontWeight: FontWeight.w600,
                 color: Theme.of(context).colorScheme.onSurface,
                 height: 1.45,
               ),
@@ -54,22 +55,39 @@ class SpeakMissingWordVortexSentence extends StatelessWidget {
               SizedBox(height: 14.h),
               Container(
                 key: const Key('speak_missing_word_locked_option'),
-                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 4.h),
+                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 5.h),
                 decoration: BoxDecoration(
-                  color: primaryColor.withValues(alpha: 0.15),
+                  color: primaryColor.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(color: primaryColor.withValues(alpha: 0.4)),
-                ),
-                child: Text(
-                  "LOCKED OPTION: ${insertedWord.toUpperCase()}",
-                  key: const Key('speak_missing_word_locked_option_text'),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    color: primaryColor,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1,
+                  border: Border.all(
+                    color: primaryColor.withValues(alpha: 0.35),
+                    width: 1.2,
                   ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.check_circle_rounded,
+                      size: 13.r,
+                      color: primaryColor,
+                    ),
+                    SizedBox(width: 6.w),
+                    Flexible(
+                      child: Text(
+                        "SELECTED WORD: ${insertedWord.toUpperCase()}",
+                        key: const Key('speak_missing_word_locked_option_text'),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          color: primaryColor,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 0.8,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

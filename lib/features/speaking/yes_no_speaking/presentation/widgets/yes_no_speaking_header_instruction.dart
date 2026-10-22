@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class YesNoSpeakingHeaderInstruction extends StatelessWidget {
   final Color primaryColor;
@@ -15,9 +16,12 @@ class YesNoSpeakingHeaderInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Semantics(
       header: true,
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Container(
             key: const Key('yes_no_speaking_instruction_badge'),
@@ -25,48 +29,58 @@ class YesNoSpeakingHeaderInstruction extends StatelessWidget {
             decoration: BoxDecoration(
               color: primaryColor.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(30.r),
-              border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+              border: Border.all(
+                color: primaryColor.withValues(alpha: 0.25),
+                width: 1.2,
+              ),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Icon(
-                  Icons.edgesensor_high_rounded,
-                  size: 12.r,
+                  isSnapped ? Icons.mic_rounded : Icons.swap_horiz_rounded,
+                  size: 14.r,
                   color: primaryColor,
                 ),
-                SizedBox(width: 8.w),
+                SizedBox(width: 6.w),
                 Flexible(
                   child: Text(
-                    isSnapped
-                        ? "NOW SPEAK THE TARGET SENTENCE"
-                        : "TILT THE CORE SPHERE TO ALIGN",
+                    isSnapped ? "SPEAK THE SENTENCE" : "SLIDE TO YES OR NO",
                     key: const Key('yes_no_speaking_badge_text'),
+                    softWrap: true,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w900,
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w700,
                       color: primaryColor,
-                      letterSpacing: 2.0,
+                      letterSpacing: 0.6,
                     ),
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(height: 10.h),
-          Text(
-            isSnapped
-                ? "Alignment locked! Hold the recording lens and read the target sentence aloud!"
-                : instruction ??
-                    "Compare the spoken audio prompt with the written card below and slide to YES or NO!",
-            key: const Key('yes_no_speaking_instruction_text'),
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey.shade400,
+          SizedBox(height: 12.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.w),
+            child: Text(
+              isSnapped
+                  ? "Great! Tap the microphone below and read the sentence aloud."
+                  : (instruction != null && instruction!.trim().isNotEmpty
+                      ? instruction!
+                      : "Listen to the audio. Does it match the sentence below? Choose Yes or No."),
+              key: const Key('yes_no_speaking_instruction_text'),
+              textAlign: TextAlign.center,
+              softWrap: true,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w500,
+                height: 1.45,
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.85)
+                    : AppColors.slate700,
+              ),
             ),
           ),
         ],

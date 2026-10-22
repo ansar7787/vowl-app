@@ -24,13 +24,15 @@ class DailyExpressionUsagePanel extends StatelessWidget {
     return Container(
       key: const Key('daily_expression_usage_panel'),
       width: 1.sw,
-      padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 16.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       decoration: BoxDecoration(
         color: isDark
             ? _LocalPalette.color0f0f1a
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(
+          color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.08),
+        ),
       ),
       child: AnimatedOpacity(
         opacity: 1.0, // Reverted dimming
@@ -49,13 +51,14 @@ class DailyExpressionUsagePanel extends StatelessWidget {
                   SizedBox(width: 8.w),
                   Flexible(
                     child: Text(
-                      "ORIGIN / EXPLANATION",
-                      overflow: TextOverflow.ellipsis,
+                      "Origin",
+                      softWrap: true,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        color: Colors.grey,
-                        letterSpacing: 1.0,
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w600,
+                        color: isDark ? Colors.white60 : Colors.black54,
+                        letterSpacing: 0.5,
                       ),
                     ),
                   ),
@@ -69,12 +72,15 @@ class DailyExpressionUsagePanel extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   color: isDark ? Colors.white70 : Colors.black87,
-                  height: 1.35,
+                  height: 1.45,
                 ),
               ),
-              SizedBox(height: 20.h),
-              Divider(color: Colors.white10, height: 1.h),
-              SizedBox(height: 20.h),
+              SizedBox(height: 14.h),
+              Divider(
+                color: isDark ? Colors.white10 : Colors.black12,
+                height: 28.h,
+              ),
+              SizedBox(height: 14.h),
             ],
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -87,13 +93,14 @@ class DailyExpressionUsagePanel extends StatelessWidget {
                 SizedBox(width: 8.w),
                 Flexible(
                   child: Text(
-                    "CONTEXTUAL SAMPLE USAGE",
-                    overflow: TextOverflow.ellipsis,
+                    "Example sentence",
+                    softWrap: true,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      color: Colors.grey,
-                      letterSpacing: 1.0,
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isDark ? Colors.white60 : Colors.black54,
+                      letterSpacing: 0.5,
                     ),
                   ),
                 ),
@@ -105,9 +112,11 @@ class DailyExpressionUsagePanel extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                color: isDark ? Colors.white70 : Colors.black87,
-                height: 1.35,
+                fontSize: 15.sp,
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.w500,
+                color: isDark ? Colors.white : Colors.black87,
+                height: 1.4,
               ),
             ),
           ],

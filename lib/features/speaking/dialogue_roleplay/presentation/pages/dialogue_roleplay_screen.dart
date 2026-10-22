@@ -149,7 +149,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     if (quest.partnerDialogue != null) {
       soundService.playTts(quest.partnerDialogue!);
 
-      // Fetch AI Smart Replies based on the NPC's dialogue
+      // Fetch suggestions based on the partner's dialogue
       final smartReplyService = di.sl<SmartReplyService>();
       smartReplyService.addMessage(quest.partnerDialogue!, isLocalUser: false);
 
@@ -165,7 +165,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
           finalReplies.addAll(availableSynonyms);
         }
 
-        // 2. Append the ML Smart Replies (up to 3) at the end
+        // 2. Append suggested replies (up to 3) at the end
         final List<String> mlReplies = suggestions
             .where(
               (s) => s.trim().length > 1 && RegExp(r'[a-zA-Z]').hasMatch(s),
@@ -360,7 +360,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                 child: Padding(
                                   padding: EdgeInsets.only(bottom: 16.h),
                                   child: SizedBox(
-                                    height: 54.h,
+                                    height: 58.h,
                                     child: ListView.builder(
                                       key: const Key(
                                         'dialogue_roleplay_smart_replies_list',
@@ -374,12 +374,16 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                       itemBuilder: (context, index) {
                                         final reply =
                                             _smartReplies.value[index];
+                                        final isSelected =
+                                            reply == _chosenReply.value;
                                         return SmartReplyChip(
                                           key: Key(
                                             'dialogue_roleplay_smart_reply_$index',
                                           ),
                                           text: reply,
                                           isPremium: true,
+                                          isSelected: isSelected,
+                                          primaryColor: theme.primaryColor,
                                           onTap: () {
                                             _chosenReply.value = reply;
                                           },
@@ -391,43 +395,48 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                               ),
                             if (!isAnsweredNotifier.value)
                               SliverToBoxAdapter(
-                                child: AnimatedOpacity(
-                                  opacity: _ttsFinished.value ? 1.0 : 0.4,
-                                  duration: const Duration(milliseconds: 300),
-                                  child: AbsorbPointer(
-                                    absorbing: !_ttsFinished.value,
-                                    child: Builder(
-                                      builder: (context) {
-                                        final currentSynonyms = {
-                                          ..._acceptedSynonyms,
-                                          ..._smartReplies.value,
-                                        }.toList();
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 20.w,
+                                  ),
+                                  child: AnimatedOpacity(
+                                    opacity: _ttsFinished.value ? 1.0 : 0.4,
+                                    duration: const Duration(milliseconds: 300),
+                                    child: AbsorbPointer(
+                                      absorbing: !_ttsFinished.value,
+                                      child: Builder(
+                                        builder: (context) {
+                                          final currentSynonyms = {
+                                            ..._acceptedSynonyms,
+                                            ..._smartReplies.value,
+                                          }.toList();
 
-                                        return SpeakToConfirmOverlay(
-                                          key: const Key(
-                                            'dialogue_roleplay_speak_confirm_overlay',
-                                          ),
-                                          expectedText: expectedText,
-                                          acceptedSynonyms: currentSynonyms,
-                                          primaryColor: theme.primaryColor,
-                                          isPositioned: false,
-                                          hideExpectedText: true,
-                                          allowSkip: false,
-                                          title: 'SPEAK YOUR LINE',
-                                          subtitle:
-                                              'Say the selected option aloud',
-                                          onConfirmed: () =>
-                                              _submitVerbalEvaluation(
-                                                true,
-                                                quest,
-                                              ),
-                                          onSkipped: () =>
-                                              _submitVerbalEvaluation(
-                                                false,
-                                                quest,
-                                              ),
-                                        );
-                                      },
+                                          return SpeakToConfirmOverlay(
+                                            key: const Key(
+                                              'dialogue_roleplay_speak_confirm_overlay',
+                                            ),
+                                            expectedText: expectedText,
+                                            acceptedSynonyms: currentSynonyms,
+                                            primaryColor: theme.primaryColor,
+                                            isPositioned: false,
+                                            hideExpectedText: true,
+                                            allowSkip: false,
+                                            title: 'SPEAK YOUR LINE',
+                                            subtitle:
+                                                'Say the selected option aloud',
+                                            onConfirmed: () =>
+                                                _submitVerbalEvaluation(
+                                                  true,
+                                                  quest,
+                                                ),
+                                            onSkipped: () =>
+                                                _submitVerbalEvaluation(
+                                                  false,
+                                                  quest,
+                                                ),
+                                          );
+                                        },
+                                      ),
                                     ),
                                   ),
                                 ),

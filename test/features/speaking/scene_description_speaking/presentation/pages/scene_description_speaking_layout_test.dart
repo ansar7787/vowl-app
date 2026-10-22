@@ -429,7 +429,7 @@ void main() {
 
       expect(find.byType(SceneDescriptionHeader), findsOneWidget);
       expect(
-        find.text('INSPECT AND DESCRIBE ALL FEATURES IN THE SCENE.'),
+        find.text('Inspect and describe all features in the scene.'),
         findsOneWidget,
       );
       expect(find.byIcon(Icons.gps_fixed_rounded), findsOneWidget);
@@ -485,7 +485,7 @@ void main() {
         find.byKey(const Key('scene_description_progress_text')),
         findsOneWidget,
       );
-      expect(find.text('0 OF 3 FEATURES STABILIZED'), findsOneWidget);
+      expect(find.text('0 of 3 items described'), findsOneWidget);
     });
 
     testWidgets('renders dynamic beacons with labels', (tester) async {
@@ -504,9 +504,9 @@ void main() {
         findsOneWidget,
       );
 
-      expect(find.text('SOLAR ARRAY'), findsOneWidget);
-      expect(find.text('NUTRIENT TANK'), findsOneWidget);
-      expect(find.text('GLOWING FLORA'), findsOneWidget);
+      expect(find.text('Solar Array'), findsOneWidget);
+      expect(find.text('Nutrient Tank'), findsOneWidget);
+      expect(find.text('Glowing Flora'), findsOneWidget);
     });
 
     testWidgets('beacons have Semantics with button trait and labels', (
@@ -638,7 +638,7 @@ void main() {
       final guideSemantics = find.byWidgetPredicate(
         (widget) =>
             widget is Semantics &&
-            (widget.properties.label ?? '').contains('pulsing sonar hotspots'),
+            (widget.properties.label ?? '').contains('describe it aloud'),
       );
       expect(guideSemantics, findsOneWidget);
     });
@@ -701,7 +701,7 @@ void main() {
       final promptSemantics = find.byWidgetPredicate(
         (widget) =>
             widget is Semantics &&
-            (widget.properties.label ?? '').contains('Describe Component:'),
+            (widget.properties.label ?? '').contains('Describe this item:'),
       );
       expect(promptSemantics, findsOneWidget);
     });
@@ -776,7 +776,7 @@ void main() {
       verify(() => mockSoundService.playCorrect()).called(1);
 
       // Now 1 feature stabilized
-      expect(find.text('1 OF 3 FEATURES STABILIZED'), findsOneWidget);
+      expect(find.text('1 of 3 items described'), findsOneWidget);
       expect(find.byType(SceneDescriptionExplorerGuideCard), findsOneWidget);
       expect(find.byType(SpeakToConfirmOverlay), findsNothing);
     });
@@ -875,7 +875,7 @@ void main() {
       tester.widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay)).onConfirmed();
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
-      expect(find.text('1 OF 3 FEATURES STABILIZED'), findsOneWidget);
+      expect(find.text('1 of 3 items described'), findsOneWidget);
 
       // Beacon 1
       await tester.tap(find.byKey(const Key('scene_description_beacon_1')));
@@ -884,7 +884,7 @@ void main() {
       tester.widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay)).onConfirmed();
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
-      expect(find.text('2 OF 3 FEATURES STABILIZED'), findsOneWidget);
+      expect(find.text('2 of 3 items described'), findsOneWidget);
 
       // Beacon 2
       await tester.tap(find.byKey(const Key('scene_description_beacon_2')));
@@ -893,7 +893,7 @@ void main() {
       tester.widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay)).onConfirmed();
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
-      expect(find.text('3 OF 3 FEATURES STABILIZED'), findsOneWidget);
+      expect(find.text('3 of 3 items described'), findsOneWidget);
 
       verify(() => mockSpeakingBloc.add(const SubmitAnswer(true))).called(1);
     });
@@ -918,7 +918,7 @@ void main() {
         find.byKey(const Key('scene_description_sample_answer_card')),
         findsOneWidget,
       );
-      expect(find.text('FULL SCENE DESCRIPTION'), findsOneWidget);
+      expect(find.text('Example Description'), findsOneWidget);
       expect(
         find.byKey(const Key('scene_description_sample_answer_text')),
         findsOneWidget,
@@ -1110,9 +1110,9 @@ void main() {
 
       await pumpSceneDescriptionScreen(tester, state: fallbackState);
 
-      expect(find.text('OBJECT A'), findsOneWidget);
-      expect(find.text('OBJECT B'), findsOneWidget);
-      expect(find.text('OBJECT C'), findsOneWidget);
+      expect(find.text('Object A'), findsOneWidget);
+      expect(find.text('Object B'), findsOneWidget);
+      expect(find.text('Object C'), findsOneWidget);
     });
 
     testWidgets('handles quest with empty options by falling back to default 3 objects', (
@@ -1132,9 +1132,9 @@ void main() {
 
       await pumpSceneDescriptionScreen(tester, state: fallbackState);
 
-      expect(find.text('OBJECT A'), findsOneWidget);
-      expect(find.text('OBJECT B'), findsOneWidget);
-      expect(find.text('OBJECT C'), findsOneWidget);
+      expect(find.text('Object A'), findsOneWidget);
+      expect(find.text('Object B'), findsOneWidget);
+      expect(find.text('Object C'), findsOneWidget);
     });
 
     testWidgets('handles quest with null sceneText gracefully', (
@@ -1154,7 +1154,7 @@ void main() {
 
       await pumpSceneDescriptionScreen(tester, state: fallbackState);
 
-      expect(find.text('VISUAL SPACE CABIN'), findsOneWidget);
+      expect(find.text('Visual Space Cabin'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
@@ -1196,7 +1196,7 @@ void main() {
       tester.widget<SpeakToConfirmOverlay>(find.byType(SpeakToConfirmOverlay)).onConfirmed();
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
-      expect(find.text('1 OF 3 FEATURES STABILIZED'), findsOneWidget);
+      expect(find.text('1 of 3 items described'), findsOneWidget);
 
       // Emit new question state for quest 2
       final newState = SpeakingLoaded(
@@ -1215,7 +1215,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       // New quest resets count to 0 of 3
-      expect(find.text('0 OF 3 FEATURES STABILIZED'), findsOneWidget);
+      expect(find.text('0 of 3 items described'), findsOneWidget);
       expect(find.text('ANCIENT LIBRARY ARCHIVE'), findsOneWidget);
     });
   });

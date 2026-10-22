@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/track_painter.dart';
@@ -35,18 +36,19 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
     final double trackWidth = 280.w;
 
     return Container(
-      width: 1.sw,
-      height: 150.h,
+      width: double.infinity,
+      height: 140.h,
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       decoration: BoxDecoration(
         color: isDark
             ? _LocalPalette.color07070f
             : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(32.r),
+        borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: isDark
-              ? Colors.white.withValues(alpha: 0.03)
-              : Colors.black.withValues(alpha: 0.03),
+              ? Colors.white.withValues(alpha: 0.06)
+              : AppColors.slate200,
+          width: 1.2,
         ),
       ),
       child: Stack(
@@ -91,11 +93,13 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
               child: Transform.translate(
                 offset: Offset(tiltValue * (trackWidth / 2 - 40.w), 0),
                 child: Semantics(
-                  label: isSnapped ? 'Alignment locked' : 'Tilt sphere',
+                  label: isSnapped
+                      ? 'Selection locked'
+                      : 'Slide sphere to Yes or No',
                   child: Container(
                     key: const Key('yes_no_speaking_sphere'),
-                    width: 66.r,
-                    height: 66.r,
+                    width: 62.r,
+                    height: 62.r,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       gradient: RadialGradient(
@@ -116,8 +120,8 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
                                       : (tiltValue > 0
                                             ? tokens.gameCorrect
                                             : primaryColor))
-                                  .withValues(alpha: 0.45),
-                          blurRadius: 18,
+                                  .withValues(alpha: 0.4),
+                          blurRadius: 16,
                         ),
                       ],
                     ),
@@ -136,7 +140,12 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
     );
   }
 
-  Widget _buildGateZone(String label, Color color, bool isActive, VoidCallback? onTap) {
+  Widget _buildGateZone(
+    String label,
+    Color color,
+    bool isActive,
+    VoidCallback? onTap,
+  ) {
     return ScaleButton(
       key: Key('yes_no_speaking_gate_${label.toLowerCase()}'),
       onTap: onTap ?? () {},
@@ -147,22 +156,27 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
           decoration: BoxDecoration(
             color: isActive ? color : color.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(20.r),
+            borderRadius: BorderRadius.circular(18.r),
             border: Border.all(
               color: isActive ? Colors.white24 : color.withValues(alpha: 0.3),
               width: 1.5,
             ),
             boxShadow: isActive
-                ? [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 12)]
+                ? [
+                    BoxShadow(
+                      color: color.withValues(alpha: 0.4),
+                      blurRadius: 12,
+                    ),
+                  ]
                 : [],
           ),
           child: Text(
             label,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w800,
-              letterSpacing: 1.5,
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 1.0,
               color: isActive ? Colors.white : color,
             ),
           ),

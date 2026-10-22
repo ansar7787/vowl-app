@@ -52,9 +52,21 @@ class DailyExpressionScratchPanel extends StatelessWidget {
           constraints: BoxConstraints(minHeight: 190.h),
           decoration: BoxDecoration(
             color: isDark ? _LocalPalette.color131326 : Colors.white,
-            borderRadius: BorderRadius.circular(28.r),
-            border: Border.all(color: Colors.white10),
-            boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 15.r)],
+            borderRadius: BorderRadius.circular(24.r),
+            border: Border.all(
+              color: isDark
+                  ? Colors.white10
+                  : Colors.black.withValues(alpha: 0.08),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: isDark
+                    ? Colors.black38
+                    : Colors.black.withValues(alpha: 0.06),
+                blurRadius: 16.r,
+                offset: const Offset(0, 4),
+              ),
+            ],
           ),
           child: ValueListenableBuilder<double>(
             valueListenable: scratchProgressNotifier,
@@ -75,7 +87,10 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                         end: Alignment.bottomRight,
                       ),
                     ),
-                    padding: EdgeInsets.all(22.r),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20.w,
+                      vertical: 20.h,
+                    ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -84,12 +99,13 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "DAILY IDIOM",
+                              "Daily Idiom",
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 10.sp,
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w600,
                                 color: primaryColor,
-                                letterSpacing: 1.5,
+                                letterSpacing: 0.5,
                               ),
                             ),
                             Semantics(
@@ -101,7 +117,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                                 child: Icon(
                                   Icons.volume_up_rounded,
                                   color: primaryColor,
-                                  size: 18.r,
+                                  size: 20.r,
                                 ),
                               ),
                             ),
@@ -113,8 +129,8 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                             final speakBadge = Container(
                               key: const Key('daily_expression_speak_badge'),
                               padding: EdgeInsets.symmetric(
-                                horizontal: 10.w,
-                                vertical: 4.h,
+                                horizontal: 12.w,
+                                vertical: 5.h,
                               ),
                               margin: EdgeInsets.only(bottom: 8.h),
                               decoration: BoxDecoration(
@@ -130,12 +146,12 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                                   reduceMotion
                                       ? Icon(
                                           Icons.mic_rounded,
-                                          size: 12.r,
+                                          size: 14.r,
                                           color: primaryColor,
                                         )
                                       : Icon(
                                           Icons.mic_rounded,
-                                          size: 12.r,
+                                          size: 14.r,
                                           color: primaryColor,
                                         )
                                           .animate(
@@ -144,17 +160,17 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                                           )
                                           .scale(
                                             begin: const Offset(1, 1),
-                                            end: const Offset(1.2, 1.2),
+                                            end: const Offset(1.15, 1.15),
                                           ),
-                                  SizedBox(width: 4.w),
+                                  SizedBox(width: 6.w),
                                   Text(
-                                    "SPEAK THIS",
+                                    "Speak this",
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
-                                      fontSize: 9.sp,
-                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w600,
                                       color: primaryColor,
-                                      letterSpacing: 1.0,
+                                      letterSpacing: 0.3,
                                     ),
                                   ),
                                 ],
@@ -172,13 +188,14 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 26.sp,
-                            fontWeight: FontWeight.w900,
+                            fontSize: 22.sp,
+                            fontWeight: FontWeight.w700,
                             color: primaryColor,
+                            height: 1.25,
                             shadows: [
                               Shadow(
-                                color: primaryColor.withValues(alpha: 0.3),
-                                blurRadius: 10.r,
+                                color: primaryColor.withValues(alpha: 0.25),
+                                blurRadius: 8.r,
                               ),
                             ],
                           ),
@@ -188,14 +205,14 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                           opacity: 1.0,
                           duration: const Duration(milliseconds: 300),
                           child: Text(
-                            (quest.meaning ?? "Meaning").toUpperCase(),
+                            quest.meaning ?? "Meaning",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.bold,
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w500,
                               color: isDark ? Colors.white70 : Colors.black87,
-                              height: 1.3,
+                              height: 1.4,
                             ),
                           ),
                         ),
@@ -271,14 +288,15 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                                 SizedBox(height: 8.h),
                                 Text(
                                   reduceComplexGestures
-                                      ? "TAP TO REVEAL IDIOM"
-                                      : "SWIPE TO REVEAL IDIOM",
+                                      ? "Tap to reveal idiom"
+                                      : "Swipe to reveal idiom",
+                                  textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
-                                    fontSize: 10.sp,
+                                    fontSize: 13.sp,
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 1.0,
+                                    fontWeight: FontWeight.w600,
+                                    letterSpacing: 0.3,
                                   ),
                                 ),
                               ],

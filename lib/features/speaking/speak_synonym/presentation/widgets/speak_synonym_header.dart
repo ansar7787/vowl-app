@@ -20,6 +20,7 @@ class SpeakSynonymHeader extends StatelessWidget {
     return Semantics(
       header: true,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             key: const Key('speak_synonym_challenge_badge'),
@@ -39,10 +40,10 @@ class SpeakSynonymHeader extends StatelessWidget {
                     "SYNONYM CHALLENGE",
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w600,
                       color: safeCorrectColor,
-                      letterSpacing: 1.5,
+                      letterSpacing: 1.0,
                     ),
                   ),
                 ),
@@ -50,16 +51,21 @@ class SpeakSynonymHeader extends StatelessWidget {
             ),
           ),
           if (instruction != null) ...[
-            SizedBox(height: 10.h),
-            Text(
-              instruction!,
-              key: const Key('speak_synonym_instruction_text'),
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w500,
-                color: Colors.grey.shade400,
+            SizedBox(height: 12.h),
+            SizedBox(
+              width: double.infinity,
+              child: Text(
+                instruction!,
+                key: const Key('speak_synonym_instruction_text'),
+                textAlign: TextAlign.center,
+                softWrap: true,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w500,
+                  color: tokens.textSecondary,
+                  height: 1.45,
+                ),
               ),
             ),
           ],

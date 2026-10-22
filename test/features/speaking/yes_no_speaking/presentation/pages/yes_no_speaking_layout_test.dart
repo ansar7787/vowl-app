@@ -324,10 +324,10 @@ void main() {
       expect(find.byKey(const Key('yes_no_speaking_instruction_badge')), findsOneWidget);
     });
 
-    testWidgets('1.4 renders badge text with key yes_no_speaking_badge_text displaying TILT THE CORE SPHERE TO ALIGN', (tester) async {
+    testWidgets('1.4 renders badge text with key yes_no_speaking_badge_text displaying SLIDE TO YES OR NO', (tester) async {
       await pumpScreen(tester);
       expect(find.byKey(const Key('yes_no_speaking_badge_text')), findsOneWidget);
-      expect(find.text('TILT THE CORE SPHERE TO ALIGN'), findsOneWidget);
+      expect(find.text('SLIDE TO YES OR NO'), findsOneWidget);
     });
 
     testWidgets('1.5 renders instruction text with key yes_no_speaking_instruction_text', (tester) async {
@@ -358,15 +358,15 @@ void main() {
   // 2. Audition Card, Target Text & TTS Playback (8 tests)
   // ---------------------------------------------------------------------------
   group('2. Audition Card, Target Text & TTS Playback', () {
-    testWidgets('2.1 renders COMPARE PHRASE STRUCTURES header in audition card', (tester) async {
+    testWidgets('2.1 renders LISTEN & MATCH header in audition card', (tester) async {
       await pumpScreen(tester);
-      expect(find.text('COMPARE PHRASE STRUCTURES'), findsOneWidget);
+      expect(find.text('LISTEN & MATCH'), findsOneWidget);
     });
 
-    testWidgets('2.2 renders WRITTEN TARGET CARD: label with key yes_no_speaking_target_card_label', (tester) async {
+    testWidgets('2.2 renders WRITTEN SENTENCE label with key yes_no_speaking_target_card_label', (tester) async {
       await pumpScreen(tester);
       expect(find.byKey(const Key('yes_no_speaking_target_card_label')), findsOneWidget);
-      expect(find.text('WRITTEN TARGET CARD:'), findsOneWidget);
+      expect(find.text('WRITTEN SENTENCE'), findsOneWidget);
     });
 
     testWidgets('2.3 renders target sentence text with key yes_no_speaking_target_text', (tester) async {
@@ -637,12 +637,12 @@ void main() {
       expect(find.byIcon(Icons.lock_rounded), findsOneWidget);
     });
 
-    testWidgets('5.8 when snapped, header updates badge text to NOW SPEAK THE TARGET SENTENCE', (tester) async {
+    testWidgets('5.8 when snapped, header updates badge text to SPEAK THE SENTENCE', (tester) async {
       await pumpScreen(tester);
       await tester.tap(find.byKey(const Key('yes_no_speaking_gate_no')));
       await tester.pumpAndSettle();
 
-      expect(find.text('NOW SPEAK THE TARGET SENTENCE'), findsOneWidget);
+      expect(find.text('SPEAK THE SENTENCE'), findsOneWidget);
     });
   });
 

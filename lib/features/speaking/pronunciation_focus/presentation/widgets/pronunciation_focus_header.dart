@@ -13,6 +13,11 @@ class PronunciationFocusHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final instructionColor = isDark
+        ? Colors.white.withValues(alpha: 0.88)
+        : const Color(0xFF334155);
+
     return Semantics(
       header: true,
       label: "Pronunciation Focus: $instruction",
@@ -22,46 +27,50 @@ class PronunciationFocusHeader extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
             decoration: BoxDecoration(
               color: primaryColor.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(30.r),
-              border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+              borderRadius: BorderRadius.circular(24.r),
+              border: Border.all(
+                color: primaryColor.withValues(alpha: 0.25),
+                width: 1.2,
+              ),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Icon(
-                  Icons.whatshot_rounded,
-                  size: 14.r,
-                  color: Colors.orangeAccent,
+                  Icons.graphic_eq_rounded,
+                  size: 15.r,
+                  color: primaryColor,
                 ),
                 SizedBox(width: 8.w),
                 Flexible(
                   child: Text(
-                    "THERMOGRAPHIC ACCENT CALIBRATOR",
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
+                    "PRONUNCIATION FOCUS",
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.orangeAccent,
-                      letterSpacing: 1.5,
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w700,
+                      color: primaryColor,
+                      letterSpacing: 1.2,
                     ),
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(height: 10.h),
-          Text(
-            instruction,
-            textAlign: TextAlign.center,
-            maxLines: 3,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey.shade400,
+          SizedBox(height: 12.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.w),
+            child: Text(
+              instruction,
+              textAlign: TextAlign.center,
+              softWrap: true,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w500,
+                color: instructionColor,
+                height: 1.45,
+              ),
             ),
           ),
         ],

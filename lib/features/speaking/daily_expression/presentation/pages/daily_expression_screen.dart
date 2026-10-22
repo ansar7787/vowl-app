@@ -236,7 +236,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                             fallback: 'Speak the daily idiom',
                                           ),
                                         ),
-                                        SizedBox(height: 24.h),
+                                        SizedBox(height: 20.h),
                                         if (hintUsed && quest.hint != null)
                                           () {
                                             final hintWidget = Container(
@@ -249,7 +249,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                 vertical: 12.h,
                                               ),
                                               margin: EdgeInsets.only(
-                                                bottom: 24.h,
+                                                bottom: 20.h,
                                               ),
                                               decoration: BoxDecoration(
                                                 color: theme.primaryColor
@@ -315,7 +315,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                           },
                                           onScratchUpdate: _handleScratchUpdate,
                                         ),
-                                        SizedBox(height: 32.h),
+                                        SizedBox(height: 20.h),
                                         if (scratchProgress > 0.3)
                                           () {
                                             final usagePanel =

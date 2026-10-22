@@ -42,12 +42,20 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
     return Container(
       key: const Key('scene_description_scenic_radar_map'),
       width: 1.sw,
-      height: 230.h,
+      height: 240.h,
       decoration: BoxDecoration(
         color: isDark ? _LocalPalette.color131326 : Colors.white,
-        borderRadius: BorderRadius.circular(28.r),
-        border: Border.all(color: Colors.white10),
-        boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 15.r)],
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: isDark ? Colors.white12 : Colors.black12),
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black38
+                : Colors.black.withValues(alpha: 0.06),
+            blurRadius: 16.r,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
       child: Stack(
         children: [
@@ -69,10 +77,10 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
               ),
             ),
 
-          // Central Scene Title
+          // Central Scene Title & Progress
           Center(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.w),
+              padding: EdgeInsets.symmetric(horizontal: 44.w),
               child: FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Column(
@@ -81,34 +89,35 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
                     Icon(
                       Icons.photo_size_select_large_rounded,
                       color: primaryColor,
-                      size: 36.r,
+                      size: 34.r,
                     ),
                     SizedBox(height: 8.h),
                     Text(
-                      sceneTitle.toUpperCase(),
+                      sceneTitle,
                       key: const Key('scene_description_title_text'),
                       textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
+                      softWrap: true,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 18.sp,
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w700,
                         color: Theme.of(context).colorScheme.onSurface,
-                        letterSpacing: 1.0,
+                        letterSpacing: 0.5,
+                        height: 1.3,
                       ),
                     ),
                     SizedBox(height: 6.h),
                     Text(
-                      "${inspectedHotspots.length} OF ${hotspotLabels.length} FEATURES STABILIZED",
+                      "${inspectedHotspots.length} of ${hotspotLabels.length} items described",
                       key: const Key('scene_description_progress_text'),
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 10.sp,
+                        fontSize: 12.sp,
                         color: inspectedHotspots.length == hotspotLabels.length
                             ? tokens.gameCorrect
-                            : Colors.grey,
-                        fontWeight: FontWeight.bold,
+                            : (isDark ? Colors.white60 : Colors.black54),
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],
@@ -117,7 +126,7 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
             ),
           ),
 
-          // 3 Dynamic Sonar Hotspots in top-left, top-right, bottom-center
+          // 3 Dynamic Beacons in top-left, top-right, bottom-center
           _buildPulsingBeacon(0, Alignment.topLeft, disableAnimations),
           _buildPulsingBeacon(1, Alignment.topRight, disableAnimations),
           _buildPulsingBeacon(2, Alignment.bottomCenter, disableAnimations),
@@ -140,7 +149,7 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
     return Align(
       alignment: alignment,
       child: Padding(
-        padding: EdgeInsets.all(22.r),
+        padding: EdgeInsets.all(16.r),
         child: Semantics(
           button: true,
           label: 'Beacon ${index + 1}: $label',
@@ -175,8 +184,8 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
                       ),
                     // Icon indicator
                     Container(
-                      width: 32.r,
-                      height: 32.r,
+                      width: 36.r,
+                      height: 36.r,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: isInspected
@@ -191,23 +200,31 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
                                   ? Icons.spatial_tracking_rounded
                                   : Icons.radar_rounded),
                         color: Colors.white,
-                        size: 14.r,
+                        size: 16.r,
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 4.h),
-              Text(
-                label.toUpperCase(),
-                key: Key('scene_description_beacon_label_$index'),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 8.sp,
-                  color: isInspected
-                      ? AppColors.gameCorrect
-                      : (isActive ? primaryColor : Colors.grey),
-                  fontWeight: FontWeight.bold,
+              SizedBox(height: 6.h),
+              Container(
+                constraints: BoxConstraints(maxWidth: 96.w),
+                child: Text(
+                  label,
+                  key: Key('scene_description_beacon_label_$index'),
+                  textAlign: TextAlign.center,
+                  softWrap: true,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    color: isInspected
+                        ? AppColors.gameCorrect
+                        : (isActive
+                              ? primaryColor
+                              : (isDark ? Colors.white70 : AppColors.slate700)),
+                    fontWeight: FontWeight.w600,
+                    height: 1.2,
+                  ),
                 ),
               ),
             ],

@@ -54,24 +54,28 @@ class SpeakMissingWordMagnetArena extends StatelessWidget {
 
           Widget centerVortex = Container(
             key: const Key('speak_missing_word_vortex_center'),
-            width: 80.r,
-            height: 80.r,
+            width: 76.r,
+            height: 76.r,
             alignment: Alignment.center,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.grey.shade900,
-              border: Border.all(color: primaryColor, width: 2.5),
+              color: isDark ? const Color(0xFF131326) : Colors.white,
+              border: Border.all(
+                color: primaryColor.withValues(alpha: 0.8),
+                width: 2.w,
+              ),
               boxShadow: [
                 BoxShadow(
-                  color: primaryColor.withValues(alpha: 0.3),
-                  blurRadius: 15,
+                  color: primaryColor.withValues(alpha: 0.25),
+                  blurRadius: 16,
+                  spreadRadius: 1,
                 ),
               ],
             ),
             child: Icon(
               Icons.blur_circular_rounded,
-              color: Colors.white70,
-              size: 40.r,
+              color: isDark ? Colors.white70 : primaryColor,
+              size: 38.r,
             ),
           );
 
@@ -84,7 +88,7 @@ class SpeakMissingWordMagnetArena extends StatelessWidget {
           return Stack(
             alignment: Alignment.center,
             children: [
-              // 1. Spinning cybernetic vortex custom painter background
+              // 1. Spinning vortex custom painter background
               Positioned.fill(
                 child: AnimatedBuilder(
                   animation: vortexController,
@@ -153,24 +157,29 @@ class SpeakMissingWordMagnetArena extends StatelessWidget {
                         onTap: () => onTap(word),
                         child: Container(
                           padding: EdgeInsets.symmetric(
-                            horizontal: 14.w,
-                            vertical: 8.h,
+                            horizontal: 16.w,
+                            vertical: 9.h,
                           ),
                           decoration: BoxDecoration(
                             color: isPulled
-                                ? primaryColor.withValues(alpha: 0.25)
+                                ? primaryColor
                                 : (isDark ? AppColors.deepDark : Colors.white),
                             borderRadius: BorderRadius.circular(16.r),
                             border: Border.all(
                               color: isPulled
                                   ? primaryColor
-                                  : primaryColor.withValues(alpha: 0.15),
+                                  : primaryColor.withValues(
+                                      alpha: isDark ? 0.3 : 0.2,
+                                    ),
                               width: 1.5,
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: primaryColor.withValues(alpha: 0.05),
-                                blurRadius: 8,
+                                color: primaryColor.withValues(
+                                  alpha: isPulled ? 0.3 : 0.06,
+                                ),
+                                blurRadius: isPulled ? 12 : 8,
+                                offset: const Offset(0, 2),
                               ),
                             ],
                           ),
@@ -179,11 +188,12 @@ class SpeakMissingWordMagnetArena extends StatelessWidget {
                             key: Key('speak_missing_word_option_text_$index'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.bold,
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w600,
                               color: isPulled
                                   ? Colors.white
-                                  : (isDark ? Colors.white70 : Colors.black87),
+                                  : (isDark ? Colors.white : AppColors.slate900),
+                              letterSpacing: 0.5,
                             ),
                           ),
                         ),

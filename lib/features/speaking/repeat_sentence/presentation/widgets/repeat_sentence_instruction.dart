@@ -13,6 +13,8 @@ class RepeatSentenceInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Semantics(
       header: true,
       label: "Instruction: $instruction",
@@ -22,44 +24,44 @@ class RepeatSentenceInstruction extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
             decoration: BoxDecoration(
               color: primaryColor.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(30.r),
+              borderRadius: BorderRadius.circular(20.r),
               border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(Icons.graphic_eq_rounded, size: 12.r, color: primaryColor),
+                Icon(Icons.graphic_eq_rounded, size: 14.r, color: primaryColor),
                 SizedBox(width: 8.w),
                 Flexible(
                   child: Text(
-                    "TAP TO RECORD SOUND WAVE",
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                    "LISTEN & REPEAT",
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w900,
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w700,
                       color: primaryColor,
-                      letterSpacing: 2.0,
+                      letterSpacing: 1.2,
                     ),
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(height: 10.h),
-          Text(
-            instruction,
-            textAlign: TextAlign.center,
-            maxLines: 3,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w500,
-              color: Theme.of(context).brightness == Brightness.dark
-                  ? Colors.white70
-                  : Colors.black54,
+          SizedBox(height: 12.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.w),
+            child: Text(
+              instruction,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w500,
+                height: 1.45,
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.88)
+                    : const Color(0xFF334155),
+              ),
             ),
           ),
         ],

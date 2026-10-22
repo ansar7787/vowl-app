@@ -228,41 +228,46 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                             ),
                             if (!isAnsweredNotifier.value &&
                                 _isBriefingComplete.value)
-                              SliverToBoxAdapter(
-                                child: SpeakToConfirmOverlay(
-                                  key: const Key(
-                                    'situation_speaking_confirm_overlay',
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20.w,
+                                ),
+                                sliver: SliverToBoxAdapter(
+                                  child: SpeakToConfirmOverlay(
+                                    key: const Key(
+                                      'situation_speaking_confirm_overlay',
+                                    ),
+                                    expectedText:
+                                        quest.correctAnswer ??
+                                        quest.textToSpeak ??
+                                        "",
+                                    ttsText:
+                                        quest.textToSpeak ?? quest.correctAnswer,
+                                    acceptedSynonyms:
+                                        quest.acceptedSynonyms ?? [],
+                                    primaryColor: theme.primaryColor,
+                                    isPositioned: false,
+                                    hideExpectedText: true,
+                                    allowSkip: false,
+                                    title: 'SPEAK YOUR RESPONSE',
+                                    subtitle: 'Hold the microphone to answer',
+                                    onConfirmed: () {
+                                      _submitVerbalEvaluation(
+                                        true,
+                                        quest.correctAnswer ??
+                                            quest.textToSpeak ??
+                                            "",
+                                      );
+                                    },
+                                    onSkipped: () {
+                                      _submitVerbalEvaluation(
+                                        false,
+                                        quest.correctAnswer ??
+                                            quest.textToSpeak ??
+                                            "",
+                                      );
+                                    },
                                   ),
-                                  expectedText:
-                                      quest.correctAnswer ??
-                                      quest.textToSpeak ??
-                                      "",
-                                  ttsText:
-                                      quest.textToSpeak ?? quest.correctAnswer,
-                                  acceptedSynonyms:
-                                      quest.acceptedSynonyms ?? [],
-                                  primaryColor: theme.primaryColor,
-                                  isPositioned: false,
-                                  hideExpectedText: true,
-                                  allowSkip: false,
-                                  title: 'SPEAK THE SITUATION',
-                                  subtitle: 'Hold the microphone to answer',
-                                  onConfirmed: () {
-                                    _submitVerbalEvaluation(
-                                      true,
-                                      quest.correctAnswer ??
-                                          quest.textToSpeak ??
-                                          "",
-                                    );
-                                  },
-                                  onSkipped: () {
-                                    _submitVerbalEvaluation(
-                                      false,
-                                      quest.correctAnswer ??
-                                          quest.textToSpeak ??
-                                          "",
-                                    );
-                                  },
                                 ),
                               ),
                             SliverToBoxAdapter(child: SizedBox(height: 120.h)),

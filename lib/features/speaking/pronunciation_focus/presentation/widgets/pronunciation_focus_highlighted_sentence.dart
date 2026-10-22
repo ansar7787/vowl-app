@@ -50,39 +50,43 @@ class PronunciationFocusHighlightedSentence extends StatelessWidget {
             soundService.playTts(word);
           },
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
-            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+            margin: EdgeInsets.symmetric(horizontal: 2.w, vertical: 3.h),
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
             decoration: BoxDecoration(
               color: hasPhoneme
                   ? (isDark
-                      ? Colors.orange[900]!.withValues(alpha: 0.25)
+                      ? Colors.orange[900]!.withValues(alpha: 0.3)
                       : Colors.orange[100]!)
                   : Colors.transparent,
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(10.r),
               border: Border.all(
                 color: hasPhoneme
-                    ? Colors.orangeAccent.withValues(alpha: 0.6)
+                    ? Colors.orangeAccent.withValues(alpha: 0.7)
                     : Colors.transparent,
                 width: 1.5,
               ),
               boxShadow: hasPhoneme
                   ? [
                       BoxShadow(
-                        color: Colors.orangeAccent.withValues(alpha: 0.1),
+                        color: Colors.orangeAccent.withValues(alpha: 0.12),
                         blurRadius: 6,
+                        offset: const Offset(0, 2),
                       ),
                     ]
                   : [],
             ),
             child: Text(
               word,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 18.sp,
-                fontWeight: hasPhoneme ? FontWeight.bold : FontWeight.w500,
+                fontSize: 16.sp,
+                fontWeight: hasPhoneme ? FontWeight.w700 : FontWeight.w500,
                 color: hasPhoneme
-                    ? Colors.orangeAccent
-                    : (isDark ? Colors.white70 : Colors.black87),
+                    ? (isDark ? Colors.orangeAccent : const Color(0xFFC2410C))
+                    : (isDark
+                        ? Colors.white.withValues(alpha: 0.9)
+                        : const Color(0xFF1E293B)),
               ),
             ),
           ),
@@ -96,23 +100,38 @@ class PronunciationFocusHighlightedSentence extends StatelessWidget {
     final soundService = di.sl<SoundService>();
 
     return GlassTile(
-      padding: EdgeInsets.all(22.r),
+      padding: EdgeInsets.all(20.r),
       borderRadius: BorderRadius.circular(24.r),
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Flexible(
-                child: Text(
-                  "HEATMAP SENTENCE (TAP TO LISTEN)",
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    color: Colors.grey,
-                  ),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "PRACTICE SENTENCE",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w600,
+                        color: isDark ? Colors.white70 : const Color(0xFF475569),
+                        letterSpacing: 0.8,
+                      ),
+                    ),
+                    SizedBox(height: 2.h),
+                    Text(
+                      "Tap any word to hear pronunciation",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w500,
+                        color: isDark ? Colors.white54 : const Color(0xFF64748B),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(width: 8.w),
@@ -122,19 +141,26 @@ class PronunciationFocusHighlightedSentence extends StatelessWidget {
                   if (di.sl<AudioRecordingService>().isRecording) return;
                   soundService.playTts(quest.textToSpeak ?? "");
                 },
-                child: Icon(
-                  Icons.volume_up_rounded,
-                  color: primaryColor,
-                  size: 18.r,
+                child: Container(
+                  padding: EdgeInsets.all(8.r),
+                  decoration: BoxDecoration(
+                    color: primaryColor.withValues(alpha: 0.12),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.volume_up_rounded,
+                    color: primaryColor,
+                    size: 18.r,
+                  ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 14.h),
+          SizedBox(height: 16.h),
           Wrap(
             alignment: WrapAlignment.center,
-            spacing: 4.w,
-            runSpacing: 4.h,
+            spacing: 6.w,
+            runSpacing: 6.h,
             children: _buildHighlightedSentence(
               quest.textToSpeak ?? "",
               quest.targetPhoneme ?? "",

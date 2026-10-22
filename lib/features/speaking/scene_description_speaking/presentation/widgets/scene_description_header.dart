@@ -18,29 +18,31 @@ class SceneDescriptionHeader extends StatelessWidget {
       label: instruction,
       child: Container(
         key: const Key('scene_description_header'),
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
         decoration: BoxDecoration(
           color: primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(30.r),
+          borderRadius: BorderRadius.circular(20.r),
           border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(Icons.gps_fixed_rounded, size: 14.r, color: primaryColor),
+            Icon(Icons.gps_fixed_rounded, size: 16.r, color: primaryColor),
             SizedBox(width: 8.w),
             Flexible(
               child: Text(
-                instruction.toUpperCase(),
+                instruction,
                 key: const Key('scene_description_header_text'),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+                softWrap: true,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w600,
                   color: primaryColor,
-                  letterSpacing: 1.5,
+                  height: 1.35,
                 ),
               ),
             ),

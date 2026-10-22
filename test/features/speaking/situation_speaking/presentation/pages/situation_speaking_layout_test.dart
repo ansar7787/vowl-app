@@ -504,8 +504,8 @@ void main() {
 
       final textWidget = tester.widget<Text>(textFinder);
       expect(textWidget.data, 'LISTEN TO THE SITUATION AND SPEAK YOUR RESPONSE.');
-      expect(textWidget.maxLines, 2);
-      expect(textWidget.overflow, TextOverflow.ellipsis);
+      expect(textWidget.textAlign, TextAlign.center);
+      expect(textWidget.overflow, isNot(TextOverflow.ellipsis));
     });
 
     testWidgets('has Semantics header set to true', (tester) async {
@@ -567,8 +567,8 @@ void main() {
         find.byKey(const Key('situation_speaking_briefing_title')),
         findsOneWidget,
       );
-      expect(find.text('SCENARIO BRIEFING'), findsOneWidget);
-      expect(find.byIcon(Icons.assignment_late_rounded), findsOneWidget);
+      expect(find.text('THE SITUATION'), findsOneWidget);
+      expect(find.byIcon(Icons.forum_rounded), findsOneWidget);
     });
 
     testWidgets('displays situation text inside briefing card body', (
@@ -707,7 +707,7 @@ void main() {
         (widget) =>
             widget is Semantics &&
             widget.properties.button == true &&
-            widget.properties.label == 'Listen to scenario briefing audio',
+            widget.properties.label == 'Listen to situation audio',
       );
       expect(ttsSemantics, findsOneWidget);
     });
@@ -803,7 +803,7 @@ void main() {
         );
         expect(hintTextFinder, findsOneWidget);
 
-        expect(find.text('SPEAKING GUIDE'), findsOneWidget);
+        expect(find.text('SPEAKING TIP'), findsOneWidget);
         expect(
           find.text(
             'Use a polite opener like "Excuse me" and clarify the milk preference.',
@@ -879,7 +879,7 @@ void main() {
         final overlayWidget = tester.widget<SpeakToConfirmOverlay>(
           overlayFinder,
         );
-        expect(overlayWidget.title, 'SPEAK THE SITUATION');
+        expect(overlayWidget.title, 'SPEAK YOUR RESPONSE');
         expect(overlayWidget.subtitle, 'Hold the microphone to answer');
         expect(overlayWidget.hideExpectedText, isTrue);
         expect(overlayWidget.allowSkip, isFalse);
