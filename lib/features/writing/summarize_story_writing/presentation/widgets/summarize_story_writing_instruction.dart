@@ -13,34 +13,57 @@ class SummarizeStoryWritingInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-      decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Icon(Icons.videocam_rounded, size: 20.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Expanded(
-            child: Text(
-              instruction,
-              textAlign: TextAlign.center,
-              maxLines: null,
-              style: TextStyle(
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w600,
+    return Semantics(
+      label: 'Instruction: $instruction',
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          color: primaryColor.withValues(alpha: 0.08),
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(
+            color: primaryColor.withValues(alpha: 0.2),
+            width: 1.0,
+          ),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            ExcludeSemantics(
+              child: Icon(
+                Icons.auto_stories_rounded,
+                size: 20.r,
                 color: primaryColor,
               ),
             ),
-          ),
-          SizedBox(width: 12.w),
-          Icon(Icons.videocam_rounded, size: 20.r, color: Colors.transparent),
-        ],
+            SizedBox(width: 12.w),
+            Expanded(
+              child: Text(
+                instruction,
+                textAlign: TextAlign.center,
+                softWrap: true,
+                maxLines: null,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.5.sp,
+                  fontWeight: FontWeight.w600,
+                  height: 1.35,
+                  letterSpacing: 0.1,
+                  color: primaryColor,
+                ),
+              ),
+            ),
+            SizedBox(width: 12.w),
+            // Symmetrical balance icon for centered multi-line alignment
+            ExcludeSemantics(
+              child: Icon(
+                Icons.auto_stories_rounded,
+                size: 20.r,
+                color: Colors.transparent,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

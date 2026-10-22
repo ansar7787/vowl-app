@@ -404,7 +404,7 @@ void main() {
       expect(find.text('COUNTERARGUMENT'), findsOneWidget);
       expect(find.text('CONCLUSION'), findsOneWidget);
 
-      expect(find.text('Drop paragraph block here...'), findsNWidgets(4));
+      expect(find.text('Place sentence here...'), findsNWidgets(4));
     });
 
     testWidgets('slotting an item updates hex slot and removes it from available stream', (
@@ -430,7 +430,7 @@ void main() {
         find.text('Cities consume 78% of global energy, necessitating self-sufficient buildings.'),
         findsOneWidget,
       );
-      expect(find.text('Drop paragraph block here...'), findsNWidgets(3));
+      expect(find.text('Place sentence here...'), findsNWidgets(3));
     });
 
     testWidgets('slotting same item into another slot moves it to the new slot', (
@@ -452,7 +452,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('Drop paragraph block here...'), findsNWidgets(3));
+      expect(find.text('Place sentence here...'), findsNWidgets(3));
     });
 
     testWidgets('tapping a filled hex slot clears it and returns item to stream', (
@@ -467,7 +467,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('Drop paragraph block here...'), findsNWidgets(3));
+      expect(find.text('Place sentence here...'), findsNWidgets(3));
 
       // Tap slot to clear
       await tester.tap(find.byKey(const Key('essay_drafting_slot_INTRODUCTION')));
@@ -475,7 +475,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       verify(() => mockHapticService.selection()).called(1);
-      expect(find.text('Drop paragraph block here...'), findsNWidgets(4));
+      expect(find.text('Place sentence here...'), findsNWidgets(4));
     });
 
     testWidgets('tapping an empty hex slot does nothing', (tester) async {
@@ -485,7 +485,7 @@ void main() {
       await tester.pump();
 
       verifyNever(() => mockHapticService.selection());
-      expect(find.text('Drop paragraph block here...'), findsNWidgets(4));
+      expect(find.text('Place sentence here...'), findsNWidgets(4));
     });
   });
 
@@ -749,7 +749,7 @@ void main() {
       introSlot.onSlot('INTRODUCTION', sampleQuest1.options![0]);
       await tester.pump();
 
-      expect(find.text('Drop paragraph block here...'), findsNWidgets(3));
+      expect(find.text('Place sentence here...'), findsNWidgets(3));
 
       // Emit new question
       final nextQuestionState = WritingLoaded(
@@ -769,7 +769,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 100));
 
       expect(find.text('Autonomous Transit in Smart Metropolises'), findsOneWidget);
-      expect(find.text('Drop paragraph block here...'), findsNWidgets(4));
+      expect(find.text('Place sentence here...'), findsNWidgets(4));
     });
   });
 

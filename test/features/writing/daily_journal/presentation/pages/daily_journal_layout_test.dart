@@ -521,7 +521,7 @@ void main() {
       verify(() => mockTtsService.speak('submersible')).called(1);
       expect(
         find.text(
-          "Type 'submersible' in your journal entry to activate this token!",
+          "Type 'submersible' in your journal entry to include this word.",
         ),
         findsOneWidget,
       );
@@ -550,7 +550,7 @@ void main() {
 
       verify(() => mockTtsService.speak('submersible')).called(1);
       expect(
-        find.text("'submersible' is already activated! Great job."),
+        find.text("'submersible' is already included! Great job."),
         findsOneWidget,
       );
     });
@@ -1048,6 +1048,71 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byType(QuestBriefingOverlay), findsNothing);
+    });
+  });
+
+  group('DailyJournalScreen - 9. Visual Polish & Standard Typography Verification', () {
+    testWidgets('instruction has TextAlign.center and standard padding', (
+      tester,
+    ) async {
+      await pumpScreen(tester, level: 2);
+
+      final instructionWidget = tester.widget<DailyJournalInstruction>(
+        find.byType(DailyJournalInstruction),
+      );
+      expect(instructionWidget, isNotNull);
+
+      final instructionFinder = find.descendant(
+        of: find.byType(DailyJournalInstruction),
+        matching: find.byType(Text),
+      );
+      expect(instructionFinder, findsOneWidget);
+      final textWidget = tester.widget<Text>(instructionFinder);
+      expect(textWidget.textAlign, equals(TextAlign.center));
+      expect(textWidget.overflow, isNot(equals(TextOverflow.ellipsis)));
+    });
+
+    testWidgets('booster tokens and scratch area use standard professional font sizes', (
+      tester,
+    ) async {
+      await pumpScreen(tester, level: 2);
+
+      // Target words header
+      final targetWordsFinder = find.text('Target words (use at least 2)');
+      expect(targetWordsFinder, findsOneWidget);
+      final targetWordsText = tester.widget<Text>(targetWordsFinder);
+      expect(targetWordsText.style?.fontSize, greaterThanOrEqualTo(12.sp));
+
+      // Word count text
+      final wordCountFinder = find.text('Word count:');
+      expect(wordCountFinder, findsOneWidget);
+      final wordCountText = tester.widget<Text>(wordCountFinder);
+      expect(wordCountText.style?.fontSize, greaterThanOrEqualTo(12.sp));
+    });
+
+    testWidgets('SpeakToConfirmOverlay uses balanced font size and has proper padding', (
+      tester,
+    ) async {
+      await pumpScreen(tester, level: 2);
+
+      final inputField = find.byKey(
+        const Key('daily_journal_input_field'),
+      );
+      await tester.enterText(
+        inputField,
+        'The submersible descended deep into the dark mariana trench to explore the ocean.',
+      );
+      await tester.pump();
+
+      await scrollAndTapSaveButton(tester);
+      await tester.pump(const Duration(milliseconds: 500));
+      await tester.pumpAndSettle();
+
+      final overlayFinder = find.byType(SpeakToConfirmOverlay);
+      expect(overlayFinder, findsOneWidget);
+      final overlay = tester.widget<SpeakToConfirmOverlay>(overlayFinder);
+      expect(overlay.displayFontSize, equals(15.sp));
+      expect(overlay.displayTextAlign, equals(TextAlign.center));
     });
   });
 }

@@ -228,8 +228,12 @@ void main() {
     double textScaleFactor = 1.0,
     ThemeMode themeMode = ThemeMode.dark,
   }) async {
-    tester.view.physicalSize = surfaceSize * tester.view.devicePixelRatio;
-    addTearDown(() => tester.view.resetPhysicalSize());
+    tester.view.physicalSize = surfaceSize;
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(() {
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+    });
 
     if (state != null) {
       when(() => mockWritingBloc.state).thenReturn(state);
@@ -282,13 +286,13 @@ void main() {
       expect(find.byKey(const Key('opinion_writing_scroll_view')), findsOneWidget);
       expect(find.byKey(const Key('opinion_drafting_pad_target')), findsOneWidget);
       expect(find.byKey(const Key('opinion_writing_submit_button')), findsOneWidget);
-      expect(find.text('Drafting Pad'), findsOneWidget);
-      expect(find.text('Idea Board'), findsOneWidget);
-      expect(find.text('SUBMIT'), findsOneWidget);
+      expect(find.text('Your Selection'), findsOneWidget);
+      expect(find.text('Options'), findsOneWidget);
+      expect(find.text('Check Answer'), findsOneWidget);
       expect(find.text('Should cities invest more in cycling infrastructure?'), findsOneWidget);
       expect(find.text('SUPPORT YOUR POSITION WITH DATA AND CIVIC BENEFITS'), findsOneWidget);
       expect(find.text('Select the two most compelling arguments.'), findsOneWidget);
-      expect(find.text('Drag option here...'), findsNWidgets(2));
+      expect(find.text('Tap or drag an option here'), findsNWidgets(2));
     });
 
     testWidgets('renders without structureGuide if null', (tester) async {
@@ -306,7 +310,7 @@ void main() {
 
       expect(find.text('Remote work reduces team collaboration.'), findsOneWidget);
       expect(find.text('Choose the best counter-argument rebuttal.'), findsOneWidget);
-      expect(find.text('Drag option here...'), findsOneWidget);
+      expect(find.text('Tap or drag an option here'), findsOneWidget);
     });
 
     testWidgets('renders shimmer loading when in initial state', (tester) async {
@@ -344,7 +348,7 @@ void main() {
       // Now it appears in Drafting Pad as a drafted card
       expect(find.byKey(Key('opinion_drafted_card_$firstOption')), findsOneWidget);
       // And only 1 empty slot remains
-      expect(find.text('Drag option here...'), findsOneWidget);
+      expect(find.text('Tap or drag an option here'), findsOneWidget);
     });
 
     testWidgets('dragging an idea card drops it into the Drafting Pad', (tester) async {
@@ -354,13 +358,11 @@ void main() {
       final cardFinder = find.byKey(Key('opinion_idea_card_$secondOption'));
       final dropTarget = find.byKey(const Key('opinion_drafting_pad_target'));
 
-      // Drag onto drafting pad
       final start = tester.getCenter(cardFinder);
       final target = tester.getCenter(dropTarget);
+
       final gesture = await tester.startGesture(start);
       await tester.pump(const Duration(milliseconds: 100));
-      await gesture.moveBy(const Offset(0, -20));
-      await tester.pump(const Duration(milliseconds: 50));
       await gesture.moveTo(target);
       await tester.pump(const Duration(milliseconds: 100));
       await gesture.up();
@@ -392,7 +394,7 @@ void main() {
       verify(() => mockHapticService.selection()).called(2);
       expect(find.byKey(Key('opinion_drafted_card_$firstOption')), findsNothing);
       expect(find.byKey(Key('opinion_idea_card_$firstOption')), findsOneWidget);
-      expect(find.text('Drag option here...'), findsNWidgets(2));
+      expect(find.text('Tap or drag an option here'), findsNWidgets(2));
     });
 
     testWidgets('cannot draft more than requiredCount items', (tester) async {
@@ -413,7 +415,7 @@ void main() {
       await tester.tap(find.byKey(Key('opinion_idea_card_$opt1')));
       await tester.pumpAndSettle();
 
-      expect(find.text('Drag option here...'), findsNothing);
+      expect(find.text('Tap or drag an option here'), findsNothing);
 
       // Try adding a third item
       final opt2Finder = find.byKey(Key('opinion_idea_card_$opt2'));
@@ -564,7 +566,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Remote work reduces team collaboration.'), findsOneWidget);
-      expect(find.text('Drag option here...'), findsOneWidget);
+      expect(find.text('Tap or drag an option here'), findsOneWidget);
       expect(find.byType(OpinionWritingDraftedCard), findsNothing);
     });
   });

@@ -29,9 +29,12 @@ class DescribeSituationConstellationMap extends StatelessWidget {
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.03 : 0.05),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
+        border: Border.all(
+          color: isDark ? Colors.white10 : Colors.black12,
+          width: 1.0,
+        ),
       ),
-      padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 16.w),
+      padding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 16.w),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -41,17 +44,17 @@ class DescribeSituationConstellationMap extends StatelessWidget {
               final isExpanded = expandedEmojiIndex == index;
               return Semantics(
                 button: true,
-                label: 'Category emoji ${emojis[index]}',
+                label: 'Emoji ${emojis[index]}',
                 hint: isExpanded
                     ? 'Double tap to close keyword list'
-                    : 'Double tap to open keywords for this category',
+                    : 'Double tap to open keyword list',
                 child: GestureDetector(
                   key: Key('describe_situation_emoji_$index'),
                   onTap: () => onEmojiTap(index),
                   child:
                       Container(
-                            width: 48.r,
-                            height: 48.r,
+                            width: 50.r,
+                            height: 50.r,
                             decoration: BoxDecoration(
                               color: isExpanded
                                   ? color
@@ -62,14 +65,14 @@ class DescribeSituationConstellationMap extends StatelessWidget {
                               boxShadow: [
                                 if (isExpanded)
                                   BoxShadow(
-                                    color: color.withValues(alpha: 0.5),
-                                    blurRadius: 15,
+                                    color: color.withValues(alpha: 0.4),
+                                    blurRadius: 12,
                                   )
                                 else if (!isDark)
                                   BoxShadow(
                                     color: Colors.black.withValues(alpha: 0.05),
-                                    blurRadius: 10,
-                                    offset: const Offset(0, 4),
+                                    blurRadius: 8,
+                                    offset: const Offset(0, 3),
                                   ),
                               ],
                             ),
@@ -83,7 +86,7 @@ class DescribeSituationConstellationMap extends StatelessWidget {
                           .animate(target: isExpanded ? 1 : 0)
                           .scale(
                             begin: const Offset(1, 1),
-                            end: const Offset(1.1, 1.1),
+                            end: const Offset(1.08, 1.08),
                           ),
                 ),
               );
@@ -95,48 +98,52 @@ class DescribeSituationConstellationMap extends StatelessWidget {
             curve: Curves.easeOutCubic,
             child: expandedEmojiIndex != null
                 ? Padding(
-                    padding: EdgeInsets.only(top: 20.h),
+                    padding: EdgeInsets.only(top: 16.h),
                     child: Container(
                       width: double.infinity,
-                      padding: EdgeInsets.all(12.r),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 14.w,
+                        vertical: 14.h,
+                      ),
                       decoration: BoxDecoration(
                         color: isDark ? Colors.black87 : Colors.white,
                         borderRadius: BorderRadius.circular(16.r),
-                        border: Border.all(color: color.withValues(alpha: 0.3)),
+                        border: Border.all(
+                          color: color.withValues(alpha: 0.3),
+                          width: 1.0,
+                        ),
                         boxShadow: [
                           BoxShadow(
-                            color: color.withValues(alpha: 0.1),
-                            blurRadius: 20,
-                            offset: const Offset(0, 5),
+                            color: color.withValues(alpha: 0.08),
+                            blurRadius: 16,
+                            offset: const Offset(0, 4),
                           ),
                         ],
                       ),
                       child: Column(
                         children: [
                           Text(
-                            "TAP TO INJECT:",
+                            "TAP A KEYWORD TO ADD:",
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w600,
-                              color: color.withValues(alpha: 0.8),
-                              letterSpacing: 1.5,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w700,
+                              color: color,
+                              letterSpacing: 0.8,
                             ),
                           ),
                           SizedBox(height: 12.h),
                           Wrap(
-                            spacing: 12.w,
-                            runSpacing: 12.h,
+                            spacing: 10.w,
+                            runSpacing: 10.h,
                             alignment: WrapAlignment.center,
                             children:
                                 (keywords[expandedEmojiIndex.toString()] ?? [])
                                     .map(
                                       (k) => Semantics(
                                         button: true,
-                                        label:
-                                            'Keyword booster ${k.toLowerCase()}',
-                                        hint:
-                                            'Double tap to inject into your text',
+                                        label: 'Keyword ${k.toLowerCase()}',
+                                        hint: 'Double tap to add to description',
                                         child: InkWell(
                                           key: Key('describe_situation_keyword_$k'),
                                           onTap: () => onInjectKeyword(k),
@@ -145,7 +152,7 @@ class DescribeSituationConstellationMap extends StatelessWidget {
                                           ),
                                           child: Container(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 12.w,
+                                              horizontal: 14.w,
                                               vertical: 8.h,
                                             ),
                                             decoration: BoxDecoration(
@@ -168,7 +175,7 @@ class DescribeSituationConstellationMap extends StatelessWidget {
                                                     ? Colors.white
                                                     : Colors.black87,
                                                 fontSize: 13.sp,
-                                                fontWeight: FontWeight.w500,
+                                                fontWeight: FontWeight.w600,
                                               ),
                                             ),
                                           ),
@@ -179,7 +186,7 @@ class DescribeSituationConstellationMap extends StatelessWidget {
                           ),
                         ],
                       ),
-                    ).animate().fadeIn().slideY(begin: 0.2, end: 0),
+                    ).animate().fadeIn().slideY(begin: 0.15, end: 0),
                   )
                 : const SizedBox(width: double.infinity, height: 0),
           ),

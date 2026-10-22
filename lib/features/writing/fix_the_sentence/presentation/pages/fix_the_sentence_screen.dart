@@ -279,7 +279,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
                                         InstructionHelper.getInstruction(quest),
                                     errorType: quest.errorType,
                                   ),
-                                  SizedBox(height: 32.h),
+                                  SizedBox(height: 24.h),
 
                                   FixTheSentenceDigitalBlackboard(
                                     fullText: quest.passage ?? "",
@@ -302,7 +302,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
                                     color: theme.primaryColor,
                                     isDark: isDark,
                                   ),
-                                  SizedBox(height: 32.h),
+                                  SizedBox(height: 28.h),
 
                                   if (_isWiped.value)
                                     FixTheSentenceCorrectionOptions(
@@ -357,38 +357,41 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
                               children: [
                                 if (_pendingSelectedOption.value != null &&
                                     !isAnswered) ...[
-                                  SizedBox(height: 32.h),
-                                  TypeToConfirmOverlay(
-                                    expectedText: _pendingSelectedOption.value!,
-                                    primaryColor: theme.primaryColor,
-                                    onConfirmed: () =>
-                                        _submitFinalAnswer(true, quest),
-                                    onSkipped: () =>
-                                        _submitFinalAnswer(false, quest),
-                                    allowSkip: true,
-                                    isPositioned: false,
+                                  SizedBox(height: 28.h),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 24.w,
+                                    ),
+                                    child: TypeToConfirmOverlay(
+                                      expectedText:
+                                          _pendingSelectedOption.value!,
+                                      title: 'Type to confirm',
+                                      subtitle:
+                                          'Spell the word to complete the sentence',
+                                      hintText: 'Type here...',
+                                      primaryColor: theme.primaryColor,
+                                      onConfirmed: () =>
+                                          _submitFinalAnswer(true, quest),
+                                      onSkipped: () =>
+                                          _submitFinalAnswer(false, quest),
+                                      allowSkip: true,
+                                      isPositioned: false,
+                                    ),
                                   ),
                                 ],
-                                SizedBox(
-                                  height: !isAnswered
-                                      ? (_pendingSelectedOption.value != null
-                                            ? MediaQuery.viewInsetsOf(
-                                                    context,
-                                                  ).bottom +
-                                                  40.h
-                                            : 60.h)
-                                      : 160.h,
-                                ),
                               ],
                             ),
                           ),
                           SliverToBoxAdapter(
                             child: SizedBox(
-                              height:
-                                  MediaQuery.of(context).viewInsets.bottom > 0
-                                  ? MediaQuery.of(context).viewInsets.bottom +
-                                        40.h
-                                  : 120.h,
+                              height: isAnswered
+                                  ? 160.h
+                                  : (_pendingSelectedOption.value != null
+                                      ? MediaQuery.viewInsetsOf(
+                                            context,
+                                          ).bottom +
+                                          48.h
+                                      : 80.h),
                             ),
                           ),
                         ],

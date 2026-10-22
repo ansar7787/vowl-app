@@ -283,13 +283,13 @@ void main() {
       expect(find.byType(FixTheSentenceDigitalBlackboard), findsOneWidget);
       expect(find.byKey(const Key('fix_the_sentence_scroll_view')), findsOneWidget);
       expect(find.byKey(const Key('fix_the_sentence_scratch_target')), findsOneWidget);
-      expect(find.text("DON'T"), findsOneWidget);
+      expect(find.text("don't"), findsOneWidget);
     });
 
     testWidgets('renders DigitalBlackboard with full passage and highlighted error word', (tester) async {
       await pumpScreen(tester, level: 2);
 
-      expect(find.text("DON'T"), findsOneWidget);
+      expect(find.text("don't"), findsOneWidget);
       expect(find.byType(RichText), findsWidgets);
       final richTexts = tester.widgetList<RichText>(find.byType(RichText));
       final hasPassageText = richTexts.any(
@@ -314,7 +314,7 @@ void main() {
       await pumpScreen(tester, state: state, level: 2);
 
       expect(find.byType(FixTheSentenceDigitalBlackboard), findsOneWidget);
-      expect(find.text('NOTFOUND'), findsOneWidget);
+      expect(find.text('notfound'), findsOneWidget);
     });
 
     testWidgets('renders shimmer loading when in initial state', (tester) async {
@@ -339,7 +339,8 @@ void main() {
       await pumpScreen(tester, level: 2);
 
       expect(find.byType(FixTheSentenceInstruction), findsOneWidget);
-      expect(find.text('Fix the error in the sentence. (GRAMMAR)'), findsOneWidget);
+      expect(find.text('Fix the error in the sentence.'), findsOneWidget);
+      expect(find.text('Grammar'), findsOneWidget);
     });
 
     testWidgets('displays instruction without error type if errorType is null', (tester) async {
@@ -366,7 +367,8 @@ void main() {
       await tester.tap(scratchTarget);
       await tester.pumpAndSettle();
 
-      expect(find.text('Select the correct replacement word (GRAMMAR)'), findsOneWidget);
+      expect(find.text('Choose the correct word to complete the sentence'), findsOneWidget);
+      expect(find.text('Grammar'), findsOneWidget);
     });
   });
 
@@ -439,7 +441,7 @@ void main() {
       expect(find.byType(FixTheSentenceCorrectionOptions), findsOneWidget);
       for (final opt in sampleQuest1.options!) {
         expect(find.byKey(Key('fix_the_sentence_option_$opt')), findsOneWidget);
-        expect(find.text(opt.toUpperCase()), findsOneWidget);
+        expect(find.text(opt), findsOneWidget);
       }
     });
 
@@ -470,7 +472,7 @@ void main() {
 
       verify(() => mockHapticService.success()).called(greaterThanOrEqualTo(2));
       expect(find.byType(TypeToConfirmOverlay), findsOneWidget);
-      expect(find.text("DOESN'T"), findsAtLeastNWidgets(1));
+      expect(find.text("doesn't"), findsAtLeastNWidgets(1));
     });
 
     testWidgets('tapping option when already answered does nothing', (tester) async {
@@ -628,7 +630,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byKey(const Key('fix_the_sentence_scratch_target')), findsOneWidget);
-      expect(find.text('LIBRARI'), findsOneWidget);
+      expect(find.text('librari'), findsOneWidget);
     });
   });
 

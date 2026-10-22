@@ -1305,11 +1305,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'opinionwriting': [
       "",
-      "Excellent start! Your understanding of opinion writing is growing.",
-      "Your progress in opinion writing is genuinely impressive.",
-      "50 levels cleared! Your opinion writing skills are rock solid.",
-      "Level 100! Your execution of opinion writing is flawless.",
-      "Level 200! You are a supreme grandmaster of opinion writing.",
+      "Great start! You're learning how to identify facts and opinions clearly.",
+      "Nice work! Your ability to spot opinions and evidence is getting sharp.",
+      "50 levels cleared! You're choosing clear, well-supported statements.",
+      "Level 100! You have a great eye for distinguishing facts from opinions.",
+      "Level 200! You've mastered opinion writing! Outstanding achievement!",
     ],
     'shortanswerwriting': [
       "",

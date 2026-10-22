@@ -17,20 +17,29 @@ class DailyJournalInstruction extends StatelessWidget {
     return Container(
       key: const Key('daily_journal_instruction'),
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
       decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
+        color: primaryColor.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.2),
+          width: 1.0,
+        ),
       ),
-      child: Text(
-        context.tr('games.dailyJournal_instruction', fallback: instruction),
-        textAlign: TextAlign.center,
-        maxLines: null,
-        style: TextStyle(
-          fontSize: 15.sp,
-          fontWeight: FontWeight.w500,
-          color: primaryColor,
+      child: Center(
+        child: Text(
+          context.tr('games.dailyJournal_instruction', fallback: instruction),
+          textAlign: TextAlign.center,
+          softWrap: true,
+          maxLines: null,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w500,
+            color: primaryColor,
+            height: 1.45,
+            letterSpacing: 0.2,
+          ),
         ),
       ),
     );

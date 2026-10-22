@@ -284,7 +284,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                                     color: theme.primaryColor,
                                     isDark: isDark,
                                   ),
-                                  SizedBox(height: 24.h),
+                                  SizedBox(height: 20.h),
 
                                   ..._slots.value.keys.map(
                                     (k) => WritingEmailHexSlot(
@@ -299,7 +299,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                                     ),
                                   ),
                                   if (!slotsFilled && !isAnswered) ...[
-                                    SizedBox(height: 24.h),
+                                    SizedBox(height: 16.h),
                                     WritingEmailDataStream(
                                       items: _shuffledOptions.value.isNotEmpty
                                           ? _shuffledOptions.value
@@ -310,9 +310,9 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                                       onTapItem: (data) =>
                                           _onTapOption(data, isAnswered),
                                     ),
-                                    SizedBox(height: 32.h),
+                                    SizedBox(height: 24.h),
                                   ] else ...[
-                                    SizedBox(height: 48.h),
+                                    SizedBox(height: 32.h),
                                   ],
                                 ],
                               ),
@@ -332,34 +332,61 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                                           : null,
                                       child: Container(
                                         width: double.infinity,
-                                        height: 60.h,
+                                        height: 52.h,
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(
-                                            20.r,
+                                            16.r,
                                           ),
                                           color: slotsFilled
                                               ? theme.primaryColor
-                                              : Colors.grey,
+                                              : (isDark
+                                                  ? Colors.white.withValues(
+                                                      alpha: 0.08,
+                                                    )
+                                                  : const Color(0xFFE2E8F0)),
                                           boxShadow: [
                                             if (slotsFilled)
                                               BoxShadow(
                                                 color: theme.primaryColor
                                                     .withValues(alpha: 0.3),
-                                                blurRadius: 15,
+                                                blurRadius: 12,
+                                                offset: const Offset(0, 4),
                                               ),
                                           ],
                                         ),
-                                        child: Center(
-                                          child: Text(
-                                            "Send",
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 16.sp,
-                                              fontWeight: FontWeight.w700,
-                                              color: Colors.white,
-                                              letterSpacing: 1,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              Icons.send_rounded,
+                                              size: 18.r,
+                                              color: slotsFilled
+                                                  ? Colors.white
+                                                  : (isDark
+                                                      ? Colors.white38
+                                                      : const Color(
+                                                          0xFF94A3B8,
+                                                        )),
                                             ),
-                                          ),
+                                            SizedBox(width: 8.w),
+                                            Text(
+                                              "Send",
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 16.sp,
+                                                fontWeight: FontWeight.w600,
+                                                color: slotsFilled
+                                                    ? Colors.white
+                                                    : (isDark
+                                                        ? Colors.white38
+                                                        : const Color(
+                                                            0xFF94A3B8,
+                                                          )),
+                                                letterSpacing: 0.5,
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ),

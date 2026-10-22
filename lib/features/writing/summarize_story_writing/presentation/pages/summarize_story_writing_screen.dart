@@ -1,27 +1,26 @@
-import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
+import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/utils/instruction_helper.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
-import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-
-import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
+import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/models/summarize_story_frame_slot.dart';
-import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_writing_instruction.dart';
-import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_manuscript.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_film_strip.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_frame_vault.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
-import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
+import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_manuscript.dart';
+import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_writing_instruction.dart';
 
 class SummarizeStoryWritingScreen extends StatefulWidget {
   final int level;
@@ -222,7 +221,6 @@ class _SummarizeStoryWritingScreenState
         }
 
         final WritingQuest? quest = _lastQuest;
-
         final options = quest?.options ?? [];
 
         final bool isAnswered =
@@ -256,6 +254,17 @@ class _SummarizeStoryWritingScreenState
                   _slots.value.isNotEmpty &&
                   _slots.value.every((s) => s.sentence != null);
 
+              final rawInstruction = quest != null
+                  ? InstructionHelper.getInstruction(quest)
+                  : '';
+              final instruction = (rawInstruction.isNotEmpty &&
+                      rawInstruction != 'Sequence the key events.')
+                  ? rawInstruction
+                  : context.tr(
+                      'games.summarizeStoryWriting_instruction',
+                      fallback: 'Put the events in the order they happened.',
+                    );
+
               return quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : RawScrollbar(
@@ -269,7 +278,7 @@ class _SummarizeStoryWritingScreenState
                         physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
                             sliver: SliverToBoxAdapter(
                               child: AbsorbPointer(
                                 absorbing: _pendingSubmit.value && !isAnswered,
@@ -277,23 +286,17 @@ class _SummarizeStoryWritingScreenState
                                   children: [
                                     SizedBox(height: 16.h),
                                     SummarizeStoryWritingInstruction(
-                                      instruction: context.tr(
-                                        'games.summarizeStoryWriting_instruction',
-                                        fallback:
-                                            InstructionHelper.getInstruction(
-                                              quest,
-                                            ),
-                                      ),
+                                      instruction: instruction,
                                       primaryColor: theme.primaryColor,
                                     ),
-                                    SizedBox(height: 24.h),
+                                    SizedBox(height: 20.h),
 
                                     SummarizeStoryManuscript(
                                       story: quest.story ?? "",
                                       color: theme.primaryColor,
                                       isDark: isDark,
                                     ),
-                                    SizedBox(height: 24.h),
+                                    SizedBox(height: 20.h),
 
                                     SummarizeStoryFilmStrip(
                                       slots: _slots.value,
@@ -308,7 +311,7 @@ class _SummarizeStoryWritingScreenState
                                       onRemoveFrame: (idx) =>
                                           _removeFrame(idx, isAnswered),
                                     ),
-                                    SizedBox(height: 24.h),
+                                    SizedBox(height: 20.h),
 
                                     SummarizeStoryFrameVault(
                                       options: options,
@@ -318,14 +321,14 @@ class _SummarizeStoryWritingScreenState
                                       onTapOption: (text) =>
                                           _onTapOption(text, isAnswered),
                                     ),
-                                    SizedBox(height: 32.h),
+                                    SizedBox(height: 24.h),
                                     if (!isAnswered && !_pendingSubmit.value)
                                       SpeedChallengeTimer(
                                         durationSeconds: 90,
                                         primaryColor: theme.primaryColor,
                                         onTimeUp: _onTimerExpired,
                                       ),
-                                    SizedBox(height: 32.h),
+                                    SizedBox(height: 24.h),
                                   ],
                                 ),
                               ),
@@ -333,7 +336,7 @@ class _SummarizeStoryWritingScreenState
                           ),
                           SliverToBoxAdapter(
                             child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              padding: EdgeInsets.symmetric(horizontal: 20.w),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
@@ -347,19 +350,19 @@ class _SummarizeStoryWritingScreenState
                                       child: Container(
                                         width: double.infinity,
                                         padding: EdgeInsets.symmetric(
-                                          vertical: 18.h,
+                                          vertical: 16.h,
                                         ),
                                         decoration: BoxDecoration(
                                           color: theme.primaryColor,
                                           borderRadius: BorderRadius.circular(
-                                            20.r,
+                                            18.r,
                                           ),
                                           boxShadow: [
                                             BoxShadow(
                                               color: theme.primaryColor
-                                                  .withValues(alpha: 0.4),
-                                              blurRadius: 15,
-                                              offset: const Offset(0, 5),
+                                                  .withValues(alpha: 0.35),
+                                              blurRadius: 14,
+                                              offset: const Offset(0, 4),
                                             ),
                                           ],
                                         ),
@@ -371,10 +374,10 @@ class _SummarizeStoryWritingScreenState
                                             ),
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
-                                              fontSize: 18.sp,
-                                              fontWeight: FontWeight.w900,
+                                              fontSize: 16.sp,
+                                              fontWeight: FontWeight.w700,
                                               color: Colors.white,
-                                              letterSpacing: 2,
+                                              letterSpacing: 1.2,
                                             ),
                                           ),
                                         ),
@@ -382,7 +385,7 @@ class _SummarizeStoryWritingScreenState
                                     ),
                                   if (_pendingSubmit.value && !isAnswered)
                                     Padding(
-                                      padding: EdgeInsets.only(top: 48.h),
+                                      padding: EdgeInsets.only(top: 24.h),
                                       child: TypeToConfirmOverlay(
                                         expectedText: _slots.value.isNotEmpty
                                             ? (_slots.value
@@ -411,8 +414,8 @@ class _SummarizeStoryWritingScreenState
                                             _submitFinalAnswer(false),
                                         allowSkip: true,
                                         isPositioned: false,
-                                        displayFontSize: 16.sp,
-                                        displayFontWeight: FontWeight.w600,
+                                        displayFontSize: 15.sp,
+                                        displayFontWeight: FontWeight.w500,
                                         displayTextAlign: TextAlign.start,
                                       ),
                                     ),

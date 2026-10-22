@@ -343,20 +343,21 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                                   if (activeQuest.promptQuestions != null)
                                     Container(
                                       padding: EdgeInsets.symmetric(
-                                        horizontal: 16.w,
-                                        vertical: 12.h,
+                                        horizontal: 18.w,
+                                        vertical: 14.h,
                                       ),
                                       decoration: BoxDecoration(
                                         color: theme.primaryColor.withValues(
-                                          alpha: 0.1,
+                                          alpha: 0.08,
                                         ),
                                         borderRadius: BorderRadius.circular(
                                           16.r,
                                         ),
                                         border: Border.all(
                                           color: theme.primaryColor.withValues(
-                                            alpha: 0.3,
+                                            alpha: 0.25,
                                           ),
+                                          width: 1.0,
                                         ),
                                       ),
                                       child: Column(
@@ -368,24 +369,25 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                                               Icon(
                                                 Icons.help_outline,
                                                 color: theme.primaryColor,
-                                                size: 16.sp,
+                                                size: 18.sp,
                                               ),
                                               SizedBox(width: 8.w),
                                               Expanded(
                                                 child: Text(
                                                   "Guiding Questions",
+                                                  softWrap: true,
                                                   style: TextStyle(
                                                     fontFamily: 'Outfit',
-                                                    fontSize: 13.sp,
+                                                    fontSize: 14.sp,
                                                     fontWeight: FontWeight.w600,
                                                     color: theme.primaryColor,
-                                                    letterSpacing: 0.5,
+                                                    letterSpacing: 0.3,
                                                   ),
                                                 ),
                                               ),
                                             ],
                                           ),
-                                          SizedBox(height: 8.h),
+                                          SizedBox(height: 10.h),
                                           ...activeQuest.promptQuestions!.map(
                                             (q) => Padding(
                                               padding: EdgeInsets.only(
@@ -393,13 +395,15 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                                               ),
                                               child: Text(
                                                 "• $q",
+                                                softWrap: true,
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
-                                                  fontSize: 13.sp,
+                                                  fontSize: 14.sp,
                                                   fontWeight: FontWeight.w400,
                                                   color: isDark
-                                                      ? Colors.white70
-                                                      : Colors.black87,
+                                                      ? Colors.white.withValues(alpha: 0.85)
+                                                      : const Color(0xFF334155),
+                                                  height: 1.4,
                                                 ),
                                               ),
                                             ),
@@ -473,6 +477,9 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                                     SpeakToConfirmOverlay(
                                       isPositioned: false,
                                       expectedText: _controller.text.trim(),
+                                      displayFontSize: 15.sp,
+                                      displayFontWeight: FontWeight.w600,
+                                      displayTextAlign: TextAlign.center,
                                       primaryColor: theme.primaryColor,
                                       onConfirmed: _onSpeakConfirmed,
                                       onSkipped: () {

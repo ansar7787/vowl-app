@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,9 @@ class DescribeSituationWritingArea extends StatelessWidget {
         color: isDark ? Colors.black87 : Colors.white,
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
-          color: isDark ? Colors.white10 : Colors.black12,
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.12)
+              : Colors.black12,
           width: 1,
         ),
       ),
@@ -60,33 +63,38 @@ class DescribeSituationWritingArea extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Outfit',
               color: Theme.of(context).colorScheme.onSurface,
-              fontSize: 14.sp,
+              fontSize: 14.5.sp,
+              height: 1.45,
             ),
             decoration: InputDecoration(
               hintText:
-                  "Type description here... (Tap floating emoji cells to inject keyword boosters directly!)",
+                  "Write your description here... (Tap any emoji below to view and add keywords)",
               hintStyle: TextStyle(
                 fontFamily: 'Outfit',
-                color: isDark ? Colors.white30 : Colors.black38,
-                fontSize: 12.sp,
+                color: isDark ? Colors.white38 : AppColors.slate400,
+                fontSize: 13.5.sp,
+                height: 1.4,
               ),
               border: InputBorder.none,
             ),
           ),
-          const Divider(color: Colors.white10),
+          Divider(
+            color: isDark ? Colors.white10 : Colors.black12,
+            height: 20.h,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Expanded(
+              Flexible(
                 child: Text(
-                  "Booster words used: ${usedKeywords.length}",
+                  "Keywords used: ${usedKeywords.length}",
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 11.sp,
+                    fontSize: 12.sp,
                     color: color,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                   ),
-                  overflow: TextOverflow.ellipsis,
                 ),
               ),
               SizedBox(width: 8.w),
@@ -110,7 +118,7 @@ class DescribeSituationWritingArea extends StatelessWidget {
                       "$wordCount / $minWords words",
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 11.sp,
+                        fontSize: 11.5.sp,
                         color: displayColor,
                         fontWeight: FontWeight.w600,
                       ),

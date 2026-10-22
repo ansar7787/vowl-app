@@ -6,8 +6,8 @@ class SentenceBuilderWorkbench extends StatelessWidget {
   final List<String> assembledPieces;
   final Color color;
   final bool isDark;
-  final ValueChanged<String> onSnap; // FIX: was Function(String)
-  final ValueChanged<int> onRemovePiece; // FIX: was Function(int)
+  final ValueChanged<String> onSnap;
+  final ValueChanged<int> onRemovePiece;
 
   const SentenceBuilderWorkbench({
     super.key,
@@ -35,22 +35,22 @@ class SentenceBuilderWorkbench extends StatelessWidget {
             duration: const Duration(milliseconds: 200),
             width: double.infinity,
             constraints: BoxConstraints(minHeight: 110.h),
-            padding: EdgeInsets.all(20.r),
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
             decoration: BoxDecoration(
               color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-              borderRadius: BorderRadius.circular(24.r),
+              borderRadius: BorderRadius.circular(20.r),
               border: Border.all(
                 color: isHovered
                     ? color
-                    : (isDark ? Colors.white10 : Colors.black12),
-                width: isHovered ? 2.5 : 2,
+                    : (isDark ? Colors.white12 : color.withValues(alpha: 0.18)),
+                width: isHovered ? 2.0 : 1.5,
               ),
             ),
             child: assembledPieces.isEmpty
                 ? _EmptyPlaceholder(color: color, isDark: isDark)
                 : Wrap(
-                    spacing: -12.w,
-                    runSpacing: 8.h,
+                    spacing: -10.w,
+                    runSpacing: 10.h,
                     children: assembledPieces.asMap().entries.map((e) {
                       return Semantics(
                         label:
@@ -93,7 +93,7 @@ class _EmptyPlaceholder extends StatelessWidget {
             child: Icon(
               Icons.extension_outlined,
               size: 28.r,
-              color: isDark ? Colors.white24 : color.withValues(alpha: 0.3),
+              color: isDark ? Colors.white24 : color.withValues(alpha: 0.35),
             ),
           ),
           SizedBox(height: 8.h),
@@ -101,9 +101,10 @@ class _EmptyPlaceholder extends StatelessWidget {
             'Drop pieces here',
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 13.sp,
-              fontWeight: FontWeight.w600,
-              color: isDark ? Colors.white30 : color.withValues(alpha: 0.4),
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w500,
+              letterSpacing: 0.2,
+              color: isDark ? Colors.white38 : color.withValues(alpha: 0.55),
             ),
           ),
         ],

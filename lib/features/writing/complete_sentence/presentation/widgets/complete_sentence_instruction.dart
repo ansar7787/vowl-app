@@ -17,12 +17,13 @@ class CompleteSentenceInstruction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final baseText =
-        text ??
-        context.tr(
-          'games.completeSentence_instruction',
-          fallback: 'Launch the correct fragment to complete the sentence!',
-        );
-    final fullText = grammarFocus != null
+        (text != null && text!.trim().isNotEmpty)
+            ? text!
+            : context.tr(
+                'games.completeSentence_instruction',
+                fallback: 'Select the missing word to complete the sentence',
+              );
+    final fullText = grammarFocus != null && grammarFocus!.trim().isNotEmpty
         ? '$baseText (${grammarFocus!.toUpperCase()})'
         : baseText;
 
@@ -30,46 +31,53 @@ class CompleteSentenceInstruction extends StatelessWidget {
       label: 'Instruction: $fullText',
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
         decoration: BoxDecoration(
           color: primaryColor.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+          border: Border.all(
+            color: primaryColor.withValues(alpha: 0.2),
+            width: 1.0,
+          ),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ExcludeSemantics(
               child: Icon(
-                Icons.gps_fixed_rounded,
+                Icons.edit_note_rounded,
                 size: 20.r,
                 color: primaryColor,
               ),
             ),
-            SizedBox(width: 12.w),
+            SizedBox(width: 8.w),
             Expanded(
               child: MediaQuery(
                 data: MediaQuery.of(context).copyWith(
                   textScaler: TextScaler.linear(
-                    MediaQuery.of(context).textScaler.scale(1).clamp(0.8, 1.3),
+                    MediaQuery.of(context).textScaler.scale(1).clamp(0.85, 1.25),
                   ),
                 ),
                 child: Text(
                   fullText,
                   textAlign: TextAlign.center,
+                  softWrap: true,
                   maxLines: null,
                   style: TextStyle(
-                    fontSize: 15.sp,
+                    fontFamily: 'Outfit',
+                    fontSize: 14.5.sp,
                     fontWeight: FontWeight.w600,
+                    height: 1.4,
+                    letterSpacing: 0.15,
                     color: primaryColor,
                   ),
                 ),
               ),
             ),
-            SizedBox(width: 12.w),
+            SizedBox(width: 8.w),
             ExcludeSemantics(
               child: Icon(
-                Icons.gps_fixed_rounded,
+                Icons.edit_note_rounded,
                 size: 20.r,
                 color: Colors.transparent,
               ),

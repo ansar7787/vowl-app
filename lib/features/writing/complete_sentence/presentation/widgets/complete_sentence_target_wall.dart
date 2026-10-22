@@ -28,17 +28,19 @@ class CompleteSentenceTargetWall extends StatelessWidget {
     final parts = text.split(RegExp(r'_+'));
     final normalStyle = TextStyle(
       fontFamily: 'Outfit',
-      fontSize: 22.sp,
-      color: isDark ? Colors.white70 : Colors.black87,
-      fontWeight: FontWeight.w600,
-      height: 1.5,
+      fontSize: 18.5.sp,
+      color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B),
+      fontWeight: FontWeight.w500,
+      height: 1.55,
+      letterSpacing: 0.2,
     );
     final highlightStyle = TextStyle(
       fontFamily: 'Outfit',
-      fontSize: 22.sp,
+      fontSize: 18.5.sp,
       color: color,
-      fontWeight: FontWeight.w800,
-      height: 1.5,
+      fontWeight: FontWeight.w700,
+      height: 1.55,
+      letterSpacing: 0.2,
     );
 
     final List<InlineSpan> spans = [];
@@ -53,25 +55,29 @@ class CompleteSentenceTargetWall extends StatelessWidget {
 
     return Semantics(
       label: injected != null
-          ? 'Target sentence with answer filled: $fullText'
-          : 'Target sentence with blank: $fullText. Fire the correct word.',
+          ? 'Completed sentence: $fullText'
+          : 'Sentence with blank: $fullText. Choose the missing word.',
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 32.h),
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 26.h),
         decoration: BoxDecoration(
           color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-          borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: color.withValues(alpha: 0.25),
+            width: 1.5,
+          ),
           boxShadow: [
             BoxShadow(
-              color: color.withValues(alpha: 0.05),
-              blurRadius: 20,
-              spreadRadius: 2,
+              color: color.withValues(alpha: 0.04),
+              blurRadius: 16,
+              spreadRadius: 1,
             ),
           ],
         ),
         child: Stack(
           children: [
-            const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
+            const Positioned.fill(child: TechPatternOverlay(opacity: 0.04)),
             DragTarget<String>(
               key: const Key('complete_sentence_target_wall_drop_zone'),
               onWillAcceptWithDetails: (details) {
@@ -86,16 +92,26 @@ class CompleteSentenceTargetWall extends StatelessWidget {
                 return Center(
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 200),
-                    padding: isHovered ? EdgeInsets.all(8.r) : EdgeInsets.zero,
+                    padding: isHovered
+                        ? EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h)
+                        : EdgeInsets.zero,
                     decoration: BoxDecoration(
                       color: isHovered
-                          ? color.withValues(alpha: 0.1)
+                          ? color.withValues(alpha: 0.12)
                           : Colors.transparent,
                       borderRadius: BorderRadius.circular(12.r),
                     ),
-                    child: RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(children: spans),
+                    child: MediaQuery(
+                      data: MediaQuery.of(context).copyWith(
+                        textScaler: TextScaler.linear(
+                          MediaQuery.of(context).textScaler.scale(1).clamp(0.85, 1.25),
+                        ),
+                      ),
+                      child: RichText(
+                        textAlign: TextAlign.center,
+                        softWrap: true,
+                        text: TextSpan(children: spans),
+                      ),
                     ),
                   ),
                 );

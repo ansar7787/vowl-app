@@ -295,51 +295,66 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen>
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  if (!isAnswered && widget.level < 6)
-                                    ScaleButton(
-                                      key: const Key(
-                                        'correction_writing_check_button',
-                                      ),
-                                      onTap: _selectedCorrection.value != null
-                                          ? () => _submitAnswer(isAnswered)
-                                          : null,
-                                      child: Container(
-                                        width: double.infinity,
-                                        height: 60.h,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(
-                                            20.r,
+                                  if (!isAnswered && widget.level < 6) ...[
+                                    Builder(
+                                      builder: (context) {
+                                        final bool hasSelection =
+                                            _selectedCorrection.value != null;
+                                        return ScaleButton(
+                                          key: const Key(
+                                            'correction_writing_check_button',
                                           ),
-                                          color:
-                                              _selectedCorrection.value != null
-                                              ? theme.primaryColor
-                                              : Colors.grey,
-                                          boxShadow: [
-                                            if (_selectedCorrection.value !=
-                                                null)
-                                              BoxShadow(
-                                                color: theme.primaryColor
-                                                    .withValues(alpha: 0.3),
-                                                blurRadius: 15,
+                                          onTap: hasSelection
+                                              ? () => _submitAnswer(isAnswered)
+                                              : null,
+                                          child: Container(
+                                            width: double.infinity,
+                                            height: 56.h,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(18.r),
+                                              color: hasSelection
+                                                  ? theme.primaryColor
+                                                  : (isDark
+                                                      ? Colors.white.withValues(
+                                                          alpha: 0.1,
+                                                        )
+                                                      : Colors.black.withValues(
+                                                          alpha: 0.08,
+                                                        )),
+                                              boxShadow: [
+                                                if (hasSelection)
+                                                  BoxShadow(
+                                                    color: theme.primaryColor
+                                                        .withValues(alpha: 0.3),
+                                                    blurRadius: 12,
+                                                    offset: const Offset(0, 4),
+                                                  ),
+                                              ],
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                context.tr(
+                                                  'games.correctionWriting.actionText',
+                                                  fallback: "Check Answer",
+                                                ),
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 16.sp,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: hasSelection
+                                                      ? Colors.white
+                                                      : (isDark
+                                                          ? Colors.white38
+                                                          : Colors.black38),
+                                                ),
                                               ),
-                                          ],
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            context.tr(
-                                              'games.correctionWriting.actionText',
-                                              fallback: "Check Answer",
-                                            ),
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 16.sp,
-                                              fontWeight: FontWeight.w600,
-                                              color: Colors.white,
                                             ),
                                           ),
-                                        ),
-                                      ),
+                                        );
+                                      },
                                     ),
+                                  ],
                                   SizedBox(height: !isAnswered ? 60.h : 160.h),
                                 ],
                               ),

@@ -54,21 +54,25 @@ class _CorrectionWritingKeyboardInputState
           ),
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 12.sp,
-            fontWeight: FontWeight.w700,
-            color: widget.isDark ? Colors.white70 : Colors.black54,
-            letterSpacing: 1.2,
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w600,
+            color: widget.isDark
+                ? Colors.white.withValues(alpha: 0.75)
+                : Colors.black87.withValues(alpha: 0.7),
+            letterSpacing: 0.2,
           ),
         ),
         SizedBox(height: 12.h),
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 4.h),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
           decoration: BoxDecoration(
-            color: widget.isDark ? Colors.grey[850] : Colors.grey[200],
+            color: widget.isDark
+                ? Colors.white.withValues(alpha: 0.06)
+                : Colors.black.withValues(alpha: 0.04),
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
-              color: widget.color.withValues(alpha: 0.3),
-              width: 1.5,
+              color: widget.color.withValues(alpha: 0.25),
+              width: 1.2,
             ),
           ),
           child: Row(
@@ -88,6 +92,7 @@ class _CorrectionWritingKeyboardInputState
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
+                    fontWeight: FontWeight.w500,
                     color: widget.isDark ? Colors.white : Colors.black87,
                   ),
                   maxLines: 3,
@@ -100,12 +105,14 @@ class _CorrectionWritingKeyboardInputState
                     ),
                     hintStyle: TextStyle(
                       fontFamily: 'Outfit',
+                      fontSize: 15.sp,
                       color: widget.isDark ? Colors.white38 : Colors.black38,
                     ),
                   ),
                   onSubmitted: (_) => _submitInput(),
                 ),
               ),
+              SizedBox(width: 8.w),
               ScaleButton(
                 key: const Key('correction_keyboard_submit_button'),
                 onTap: _submitInput,
@@ -114,11 +121,18 @@ class _CorrectionWritingKeyboardInputState
                   decoration: BoxDecoration(
                     color: widget.color,
                     shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: widget.color.withValues(alpha: 0.3),
+                        blurRadius: 8,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
                   ),
                   child: Icon(
                     Icons.arrow_upward_rounded,
                     color: Colors.white,
-                    size: 24.sp,
+                    size: 22.sp,
                   ),
                 ),
               ),
@@ -129,3 +143,4 @@ class _CorrectionWritingKeyboardInputState
     );
   }
 }
+

@@ -16,47 +16,90 @@ class FixTheSentenceInstruction extends StatelessWidget {
     this.errorType,
   });
 
+  String _cleanInstruction(BuildContext context) {
+    if (isWiped) {
+      return context.tr(
+        'games.fixTheSentence_wiped_instruction',
+        fallback: 'Choose the correct word to complete the sentence',
+      );
+    }
+
+    final raw = context.tr('games.fixTheSentence_instruction', fallback: instruction);
+    final lower = raw.trim().toLowerCase();
+    if (lower.contains('scrub') ||
+        lower.contains('restore the sentence') ||
+        lower.isEmpty) {
+      return 'Tap the mistake in the sentence to fix it';
+    }
+    return raw;
+  }
+
+  String? _formatCategory(String? raw) {
+    if (raw == null || raw.trim().isEmpty) return null;
+    final cleaned = raw
+        .replaceAll('_', ' ')
+        .replaceAll(RegExp(r'\s+Error$', caseSensitive: false), '')
+        .trim();
+    if (cleaned.isEmpty) return null;
+    return cleaned[0].toUpperCase() + cleaned.substring(1);
+  }
+
   @override
   Widget build(BuildContext context) {
-    final baseText = isWiped
-        ? "Select the correct replacement word"
-        : context.tr('games.fixTheSentence_instruction', fallback: instruction);
-
-    final fullText = errorType != null
-        ? '$baseText (${errorType!.toUpperCase()})'
-        : baseText;
+    final displayText = _cleanInstruction(context);
+    final category = _formatCategory(errorType);
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 14.h),
       decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
+        color: primaryColor.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.2),
+          width: 1.2,
+        ),
       ),
-      child: Row(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(Icons.auto_fix_normal_rounded, size: 20.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Expanded(
-            child: Text(
-              fullText,
-              textAlign: TextAlign.center,
-              maxLines: null,
-              style: TextStyle(
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w600,
-                color: primaryColor,
-              ),
+          Text(
+            displayText,
+            textAlign: TextAlign.center,
+            softWrap: true,
+            maxLines: null,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w600,
+              height: 1.4,
+              letterSpacing: 0.1,
+              color: primaryColor,
             ),
           ),
-          SizedBox(width: 12.w),
-          Icon(
-            Icons.auto_fix_normal_rounded,
-            size: 20.r,
-            color: Colors.transparent,
-          ),
+          if (category != null) ...[
+            SizedBox(height: 6.h),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
+              decoration: BoxDecoration(
+                color: primaryColor.withValues(alpha: 0.12),
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: Text(
+                category,
+                textAlign: TextAlign.center,
+                softWrap: true,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 11.5.sp,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 0.3,
+                  color: primaryColor,
+                ),
+              ),
+            ),
+          ],
         ],
       ),
     );

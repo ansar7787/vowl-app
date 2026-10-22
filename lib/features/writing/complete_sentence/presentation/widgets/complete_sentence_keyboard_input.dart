@@ -50,17 +50,17 @@ class _CompleteSentenceKeyboardInputState
           "TYPE THE MISSING WORD:",
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 14.sp,
-            fontWeight: FontWeight.bold,
-            color: widget.isDark ? Colors.white70 : Colors.black54,
-            letterSpacing: 1.5,
+            fontSize: 12.5.sp,
+            fontWeight: FontWeight.w600,
+            color: widget.isDark ? Colors.white60 : Colors.black54,
+            letterSpacing: 0.8,
           ),
         ),
-        SizedBox(height: 12.h),
+        SizedBox(height: 10.h),
         Container(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 4.h),
           decoration: BoxDecoration(
-            color: widget.isDark ? Colors.grey[850] : Colors.grey[200],
+            color: widget.isDark ? Colors.grey[850] : Colors.grey[100],
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
               color: widget.color.withValues(alpha: 0.3),
@@ -83,14 +83,16 @@ class _CompleteSentenceKeyboardInputState
                       FocusManager.instance.primaryFocus?.unfocus(),
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 16.sp,
+                    fontSize: 15.5.sp,
+                    fontWeight: FontWeight.w500,
                     color: widget.isDark ? Colors.white : Colors.black87,
                   ),
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: "Type the word here...",
+                    hintText: "Type your answer here...",
                     hintStyle: TextStyle(
                       fontFamily: 'Outfit',
+                      fontSize: 15.sp,
                       color: widget.isDark ? Colors.white38 : Colors.black38,
                     ),
                   ),
@@ -112,7 +114,7 @@ class _CompleteSentenceKeyboardInputState
                     child: Icon(
                       Icons.arrow_upward_rounded,
                       color: Colors.white,
-                      size: 24.sp,
+                      size: 22.sp,
                     ),
                   ),
                 ),
