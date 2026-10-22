@@ -114,18 +114,19 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
                     ? (widget.isDark ? Colors.white12 : Colors.black12)
                     : (widget.isDark
                           ? Colors.grey.shade800
-                          : Colors.white),
-                borderRadius: BorderRadius.circular(12.r),
+                          : Colors.grey.shade100),
+                borderRadius: BorderRadius.circular(14.r),
                 border: Border.all(
                   color: isSelected
                       ? Colors.transparent
-                      : (widget.isDark ? Colors.white24 : Colors.black26),
+                      : (widget.isDark ? Colors.white24 : Colors.black12),
+                  width: 1.2,
                 ),
                 boxShadow: isSelected
                     ? []
                     : [
                         BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.05),
+                          color: Colors.black.withValues(alpha: 0.04),
                           blurRadius: 4,
                           offset: const Offset(0, 2),
                         ),
@@ -137,11 +138,11 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                   color: isSelected
                       ? (widget.isDark ? Colors.white38 : Colors.black38)
                       : (widget.isDark ? Colors.white : Colors.black87),
-                  letterSpacing: 1.0,
+                  letterSpacing: 0.3,
                 ),
               ),
             ),
@@ -157,19 +158,32 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
       );
     }
 
+    final accentColor =
+        widget.isDark ? Colors.amberAccent : Colors.amber.shade900;
+
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(18.r),
+      padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         color: widget.isDark
             ? _LocalPalette.color07070f
-            : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(28.r),
+            : Colors.white,
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: widget.isDark
-              ? Colors.white.withValues(alpha: 0.03)
-              : Colors.black.withValues(alpha: 0.03),
+              ? Colors.white.withValues(alpha: 0.08)
+              : Colors.black.withValues(alpha: 0.08),
+          width: 1.5,
         ),
+        boxShadow: widget.isDark
+            ? []
+            : [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.04),
+                  blurRadius: 12,
+                  offset: const Offset(0, 4),
+                ),
+              ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -181,16 +195,16 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
                 "INPUT TERMINAL",
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: Colors.amberAccent,
-                  letterSpacing: 1.5,
+                  fontSize: 12.sp,
+                  color: accentColor,
+                  letterSpacing: 1.0,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               Icon(
                 Icons.keyboard_rounded,
-                color: Colors.amberAccent,
-                size: 16.r,
+                color: accentColor,
+                size: 18.r,
               ),
             ],
           ),
@@ -201,12 +215,15 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
             controller: widget.controller,
             readOnly:
                 true, // Prevent manual typing to force using the jumbled chips
+            maxLines: null,
+            minLines: 1,
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 16.sp,
               color: widget.isDark ? Colors.white : Colors.black87,
               fontWeight: FontWeight.w600,
-              letterSpacing: 1.5,
+              letterSpacing: 0.5,
+              height: 1.4,
             ),
             decoration: InputDecoration(
               hintText: "Select words to build broadcast",
@@ -214,27 +231,36 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
                 color: widget.isDark ? Colors.white38 : Colors.black38,
-                letterSpacing: 1.0,
+                letterSpacing: 0.3,
               ),
               filled: true,
-              fillColor: widget.isDark ? AppColors.deepDark : Colors.white,
+              fillColor: widget.isDark
+                  ? AppColors.deepDark
+                  : const Color(0xFFF8F9FA),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16.r),
                 borderSide: BorderSide(
                   color: widget.isDark ? Colors.white12 : Colors.black12,
-                  width: 2,
+                  width: 1.5,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16.r),
+                borderSide: BorderSide(
+                  color: widget.isDark ? Colors.white12 : Colors.black12,
+                  width: 1.5,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16.r),
                 borderSide: BorderSide(
-                  color: Colors.amberAccent.withValues(alpha: 0.5),
-                  width: 2,
+                  color: accentColor.withValues(alpha: 0.5),
+                  width: 1.5,
                 ),
               ),
               prefixIcon: Icon(
                 Icons.terminal_rounded,
-                color: Colors.amberAccent,
+                color: accentColor,
                 size: 20.r,
               ),
               suffixIcon: _selectedIndices.isNotEmpty
@@ -242,7 +268,9 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
                       key: const Key('emergency_hub_backspace_button'),
                       icon: Icon(
                         Icons.backspace_rounded,
-                        color: Colors.grey,
+                        color: widget.isDark
+                            ? Colors.grey.shade400
+                            : Colors.grey.shade700,
                         size: 20.r,
                       ),
                       onPressed: () {

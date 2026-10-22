@@ -1445,15 +1445,15 @@ class GameInstructionService {
       title: "Health Liaison",
       icon: Icons.medical_services_rounded,
       objective:
-          "Clearly explain symptoms or follow a doctor's detailed instructions. Mastering situational responses ensures you can navigate social interactions with confidence.",
+          "Review the patient's symptoms carefully, examine the affected areas, and select the correct medical diagnosis.",
       rules: [
-        "Be accurate",
-        "Describe physical feelings",
-        "Be precise and clear",
+        "Listen carefully to symptoms",
+        "Scan the body to locate findings",
+        "Select the matching diagnosis",
       ],
       actionText: "Start Consult",
       tip:
-          "Use specific descriptors like 'throbbing', 'sharp', or 'dull ache'.",
+          "Look for specific symptom descriptors like throbbing, sharp pain, or swelling.",
     ),
     GameSubtype.gourmetOrder: GameBriefing(
       title: "Order Master",
@@ -1521,11 +1521,15 @@ class GameInstructionService {
       title: "Emergency Voice",
       icon: Icons.emergency_share_rounded,
       objective:
-          "Communicate clearly and stay calm under pressure in crisis scenarios. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      rules: ["Stay highly calm", "State location first", "Be exact & concise"],
+          "Relay critical information clearly and calmly during emergency situations. Clear, direct communication ensures fast and accurate response.",
+      rules: [
+        "Stay calm and speak clearly",
+        "State the location and issue",
+        "Transmit the required override",
+      ],
       actionText: "Help Now",
       tip:
-          "Clear, slow, and specific directions save lives in critical moments.",
+          "Take a breath and speak at a steady pace. Clear phrases prevent confusion.",
     ),
     // 9. Elite Mastery
     GameSubtype.storyBuilder: GameBriefing(

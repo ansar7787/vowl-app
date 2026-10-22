@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -228,17 +229,17 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1A1A1A) : Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
+        color: isDark ? AppColors.deepDark : Colors.white,
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: widget.primaryColor.withValues(alpha: 0.2),
-          width: 2,
+          color: widget.primaryColor.withValues(alpha: isDark ? 0.22 : 0.15),
+          width: 1.5,
         ),
         boxShadow: [
           BoxShadow(
-            color: widget.primaryColor.withValues(alpha: 0.1),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
+            color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
+            blurRadius: 12,
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -246,7 +247,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
         valueListenable: _state,
         builder: (context, state, _) {
           return AnimatedSwitcher(
-            duration: const Duration(milliseconds: 400),
+            duration: const Duration(milliseconds: 300),
             child: _buildStateContent(context, state, isDark),
           );
         },
@@ -261,51 +262,65 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
   ) {
     switch (state) {
       case PitchState.ready:
-        return _buildReadyState();
+        return _buildReadyState(context, isDark);
       case PitchState.pitching:
-        return _buildPitchingState(context);
+        return _buildPitchingState(context, isDark);
       case PitchState.failed:
-        return _buildFailedState();
+        return _buildFailedState(context, isDark);
       case PitchState.evaluating:
         return _buildEvaluatingState(context, isDark);
     }
   }
 
-  Widget _buildReadyState() {
+  Widget _buildReadyState(BuildContext context, bool isDark) {
     return Column(
       key: const ValueKey('ready'),
       children: [
-        Icon(Icons.mic_none_rounded, size: 48.sp, color: widget.primaryColor),
-        SizedBox(height: 16.h),
+        Container(
+          padding: EdgeInsets.all(12.r),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: widget.primaryColor.withValues(alpha: 0.1),
+          ),
+          child: Icon(
+            Icons.mic_none_rounded,
+            size: 32.r,
+            color: widget.primaryColor,
+          ),
+        ),
+        SizedBox(height: 14.h),
         Text(
           "GET READY",
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 14.sp,
+            fontSize: 15.sp,
             fontWeight: FontWeight.w700,
-            letterSpacing: 2,
+            letterSpacing: 1.2,
             color: widget.primaryColor,
           ),
         ),
         SizedBox(height: 8.h),
         Text(
-          "Read the reference below to learn, then pitch it in your own words. The listener will grade your fluency.",
+          "Review the example pitch below, then speak your version clearly out loud in your own words.",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 14.sp,
-            color: Colors.grey,
+            color: isDark ? AppColors.slate400 : AppColors.slate600,
             fontWeight: FontWeight.w400,
+            height: 1.45,
           ),
         ),
         SizedBox(height: 16.h),
         Container(
-          padding: EdgeInsets.all(16.w),
+          width: double.infinity,
+          padding: EdgeInsets.all(16.r),
           decoration: BoxDecoration(
-            color: widget.primaryColor.withValues(alpha: 0.05),
-            borderRadius: BorderRadius.circular(12.r),
+            color: widget.primaryColor.withValues(alpha: isDark ? 0.08 : 0.04),
+            borderRadius: BorderRadius.circular(14.r),
             border: Border.all(
-              color: widget.primaryColor.withValues(alpha: 0.2),
+              color: widget.primaryColor.withValues(alpha: isDark ? 0.2 : 0.15),
+              width: 1.2,
             ),
           ),
           child: Column(
@@ -315,9 +330,9 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
                 "REFERENCE PITCH",
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 1.5,
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 1.1,
                   color: widget.primaryColor,
                 ),
               ),
@@ -327,34 +342,34 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
-                  color: Theme.of(context).brightness == Brightness.dark
-                      ? Colors.white70
-                      : Colors.black87,
-                  fontStyle: FontStyle.italic,
+                  color: isDark ? AppColors.slate200 : AppColors.slate800,
+                  fontWeight: FontWeight.w400,
+                  height: 1.5,
                 ),
               ),
             ],
           ),
         ),
-        SizedBox(height: 24.h),
+        SizedBox(height: 20.h),
         ElevatedButton(
           key: const Key('elevator_pitch_start_button'),
           onPressed: _startPitch,
           style: ElevatedButton.styleFrom(
             backgroundColor: widget.primaryColor,
             foregroundColor: Colors.white,
-            padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 16.h),
+            padding: EdgeInsets.symmetric(horizontal: 36.w, vertical: 14.h),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100.r),
             ),
+            elevation: 0,
           ),
           child: Text(
             "START PITCH",
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 14.sp,
-              fontWeight: FontWeight.w800,
-              letterSpacing: 1,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.8,
             ),
           ),
         ),
@@ -362,7 +377,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
     );
   }
 
-  Widget _buildPitchingState(BuildContext context) {
+  Widget _buildPitchingState(BuildContext context, bool isDark) {
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
 
     Widget dot = Container(
@@ -370,7 +385,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
       width: 10.r,
       height: 10.r,
       decoration: const BoxDecoration(
-        color: Colors.redAccent,
+        color: AppColors.gameIncorrect,
         shape: BoxShape.circle,
       ),
     );
@@ -398,15 +413,15 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
               "RECORDING...",
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w800,
-                letterSpacing: 2,
-                color: Colors.redAccent,
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w700,
+                letterSpacing: 1.2,
+                color: AppColors.gameIncorrect,
               ),
             ),
           ],
         ),
-        SizedBox(height: 8.h),
+        SizedBox(height: 6.h),
         ValueListenableBuilder<int>(
           valueListenable: _secondsLeft,
           builder: (context, seconds, _) {
@@ -415,25 +430,25 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
               key: const Key('elevator_pitch_countdown_timer'),
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 48.sp,
-                fontWeight: FontWeight.w900,
-                color: seconds <= 5 ? Colors.redAccent : widget.primaryColor,
+                fontSize: 36.sp,
+                fontWeight: FontWeight.w700,
+                color: seconds <= 5 ? AppColors.gameIncorrect : widget.primaryColor,
               ),
             );
           },
         ),
-        SizedBox(height: 24.h),
+        SizedBox(height: 20.h),
         GestureDetector(
           key: const Key('elevator_pitch_mic_button'),
           onTap: _finishPitch,
           child: Container(
-            height: 120.r,
-            width: 120.r,
+            height: 110.r,
+            width: 110.r,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: widget.primaryColor.withValues(alpha: 0.05),
               border: Border.all(
-                color: widget.primaryColor.withValues(alpha: 0.3),
+                color: widget.primaryColor.withValues(alpha: 0.25),
                 width: 2,
               ),
             ),
@@ -455,8 +470,8 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
                       Transform.scale(
                         scale: outerScale,
                         child: Container(
-                          width: 80.r,
-                          height: 80.r,
+                          width: 76.r,
+                          height: 76.r,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: widget.primaryColor.withValues(
@@ -468,8 +483,8 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
                       Transform.scale(
                         scale: innerScale,
                         child: Container(
-                          width: 60.r,
-                          height: 60.r,
+                          width: 58.r,
+                          height: 58.r,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: widget.primaryColor.withValues(alpha: 0.1),
@@ -477,7 +492,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
                           child: Icon(
                             Icons.mic,
                             color: widget.primaryColor,
-                            size: 32.sp,
+                            size: 30.sp,
                           ),
                         ),
                       ),
@@ -488,50 +503,62 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
             ),
           ),
         ),
-        SizedBox(height: 24.h),
+        SizedBox(height: 20.h),
         ValueListenableBuilder<int>(
           valueListenable: _secondsLeft,
           builder: (context, seconds, _) {
             final progress = 1.0 - (seconds / widget.timeLimit);
             return ClipRRect(
-              borderRadius: BorderRadius.circular(10.r),
+              borderRadius: BorderRadius.circular(100.r),
               child: LinearProgressIndicator(
                 key: const Key('elevator_pitch_progress_bar'),
                 value: progress,
-                minHeight: 12.h,
+                minHeight: 8.h,
                 backgroundColor: widget.primaryColor.withValues(alpha: 0.1),
                 valueColor: AlwaysStoppedAnimation(widget.primaryColor),
               ),
             );
           },
         ),
-        SizedBox(height: 16.h),
+        SizedBox(height: 12.h),
         Text(
           "Tap the mic to finish early",
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 11.sp,
-            color: Colors.grey,
+            fontSize: 13.sp,
+            fontWeight: FontWeight.w400,
+            color: isDark ? AppColors.slate400 : AppColors.slate500,
           ),
         ),
       ],
     );
   }
 
-  Widget _buildFailedState() {
+  Widget _buildFailedState(BuildContext context, bool isDark) {
     return Column(
       key: const ValueKey('failed'),
       children: [
-        Icon(Icons.sensor_door_outlined, size: 64.sp, color: Colors.redAccent),
-        SizedBox(height: 16.h),
+        Container(
+          padding: EdgeInsets.all(14.r),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: AppColors.gameIncorrect.withValues(alpha: 0.1),
+          ),
+          child: Icon(
+            Icons.sensor_door_outlined,
+            size: 40.r,
+            color: AppColors.gameIncorrect,
+          ),
+        ),
+        SizedBox(height: 14.h),
         Text(
           "THE DOORS OPENED",
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 16.sp,
-            fontWeight: FontWeight.w900,
-            letterSpacing: 2,
-            color: Colors.redAccent,
+            fontWeight: FontWeight.w700,
+            letterSpacing: 1.2,
+            color: AppColors.gameIncorrect,
           ),
         ),
         SizedBox(height: 8.h),
@@ -541,30 +568,33 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 14.sp,
-            color: Colors.grey,
+            fontWeight: FontWeight.w400,
+            height: 1.45,
+            color: isDark ? AppColors.slate400 : AppColors.slate600,
           ),
         ),
-        SizedBox(height: 24.h),
+        SizedBox(height: 20.h),
         ElevatedButton(
           key: const Key('elevator_pitch_failed_continue_button'),
           onPressed: () {
             widget.onFailed();
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.redAccent,
+            backgroundColor: AppColors.gameIncorrect,
             foregroundColor: Colors.white,
-            padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 16.h),
+            padding: EdgeInsets.symmetric(horizontal: 36.w, vertical: 14.h),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100.r),
             ),
+            elevation: 0,
           ),
           child: Text(
             "CONTINUE",
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 14.sp,
-              fontWeight: FontWeight.w800,
-              letterSpacing: 1,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.8,
             ),
           ),
         ),
@@ -573,6 +603,9 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
   }
 
   Widget _buildEvaluatingState(BuildContext context, bool isDark) {
+    final statusColor =
+        _passedAutoGrade ? AppColors.gameCorrect : AppColors.gameIncorrect;
+
     return Column(
       key: const ValueKey('evaluating'),
       children: [
@@ -581,38 +614,37 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 16.sp,
-            fontWeight: FontWeight.w900,
-            letterSpacing: 2,
-            color: _passedAutoGrade ? Colors.green : Colors.redAccent,
+            fontWeight: FontWeight.w700,
+            letterSpacing: 1.2,
+            color: statusColor,
           ),
         ),
         SizedBox(height: 16.h),
 
-        // AI Grade Card
+        // Performance review card
         Container(
           key: const Key('elevator_pitch_ai_analysis_card'),
           width: double.infinity,
-          padding: EdgeInsets.all(16.w),
+          padding: EdgeInsets.all(16.r),
           decoration: BoxDecoration(
-            color: (_passedAutoGrade ? Colors.green : Colors.redAccent)
-                .withValues(alpha: 0.05),
-            borderRadius: BorderRadius.circular(16.r),
+            color: statusColor.withValues(alpha: isDark ? 0.08 : 0.04),
+            borderRadius: BorderRadius.circular(14.r),
             border: Border.all(
-              color: (_passedAutoGrade ? Colors.green : Colors.redAccent)
-                  .withValues(alpha: 0.2),
+              color: statusColor.withValues(alpha: isDark ? 0.25 : 0.18),
+              width: 1.2,
             ),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "AI ANALYSIS",
+                "PITCH REVIEW",
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 1.5,
-                  color: _passedAutoGrade ? Colors.green : Colors.redAccent,
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 1.2,
+                  color: statusColor,
                 ),
               ),
               SizedBox(height: 12.h),
@@ -623,7 +655,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
                 passed: _wordCount >= 15,
                 isDark: isDark,
               ),
-              SizedBox(height: 8.h),
+              SizedBox(height: 10.h),
               _buildGradeRow(
                 icon: Icons.key_rounded,
                 title: "Vocabulary (Keywords)",
@@ -635,7 +667,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
           ),
         ),
 
-        SizedBox(height: 24.h),
+        SizedBox(height: 20.h),
 
         // Native example fallback
         Wrap(
@@ -648,8 +680,9 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
               "Want to hear a perfect pitch?",
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 12.sp,
-                color: Colors.grey,
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w400,
+                color: isDark ? AppColors.slate400 : AppColors.slate600,
               ),
             ),
             GestureDetector(
@@ -660,8 +693,8 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
                 builder: (context, isPlaying, _) {
                   return Container(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 16.w,
-                      vertical: 8.h,
+                      horizontal: 14.w,
+                      vertical: 6.h,
                     ),
                     decoration: BoxDecoration(
                       color: widget.primaryColor.withValues(alpha: 0.1),
@@ -682,8 +715,9 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
                           "LISTEN",
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.bold,
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 0.5,
                             color: widget.primaryColor,
                           ),
                         ),
@@ -696,7 +730,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
           ],
         ),
 
-        SizedBox(height: 24.h),
+        SizedBox(height: 20.h),
 
         // Action buttons
         ElevatedButton(
@@ -712,18 +746,19 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
           style: ElevatedButton.styleFrom(
             backgroundColor: widget.primaryColor,
             foregroundColor: Colors.white,
-            padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 16.h),
+            padding: EdgeInsets.symmetric(horizontal: 36.w, vertical: 14.h),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100.r),
             ),
+            elevation: 0,
           ),
           child: Text(
             "CONTINUE",
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 14.sp,
-              fontWeight: FontWeight.w800,
-              letterSpacing: 1,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.8,
             ),
           ),
         ),
@@ -738,19 +773,26 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
     required bool passed,
     required bool isDark,
   }) {
+    final statusColor =
+        passed ? AppColors.gameCorrect : AppColors.gameIncorrect;
+
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Icon(icon, size: 16.r, color: isDark ? Colors.white70 : Colors.black87),
+        Icon(
+          icon,
+          size: 16.r,
+          color: isDark ? AppColors.slate400 : AppColors.slate600,
+        ),
         SizedBox(width: 8.w),
         Expanded(
           child: Text(
             title,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              color: isDark ? Colors.white70 : Colors.black87,
+              fontSize: 13.sp,
+              fontWeight: FontWeight.w500,
+              color: isDark ? AppColors.slate200 : AppColors.slate800,
             ),
           ),
         ),
@@ -759,16 +801,16 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
           value,
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 12.sp,
-            fontWeight: FontWeight.bold,
-            color: passed ? Colors.green : Colors.redAccent,
+            fontSize: 13.sp,
+            fontWeight: FontWeight.w600,
+            color: statusColor,
           ),
         ),
         SizedBox(width: 8.w),
         Icon(
           passed ? Icons.check_circle_rounded : Icons.cancel_rounded,
           size: 16.r,
-          color: passed ? Colors.green : Colors.redAccent,
+          color: statusColor,
         ),
       ],
     );

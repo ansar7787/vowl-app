@@ -1,6 +1,6 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ElevatorPitchPromptCard extends StatelessWidget {
   final String? instruction;
@@ -22,15 +22,18 @@ class ElevatorPitchPromptCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: color.withValues(alpha: 0.15), width: 1.5),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: color.withValues(alpha: isDark ? 0.22 : 0.15),
+          width: 1.5,
+        ),
         boxShadow: [
           BoxShadow(
-            color: color.withValues(alpha: 0.05),
-            blurRadius: 10,
+            color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
+            blurRadius: 12,
             offset: const Offset(0, 4),
           ),
         ],
@@ -42,41 +45,41 @@ class ElevatorPitchPromptCard extends StatelessWidget {
             key: const Key('elevator_pitch_card_icon'),
             padding: EdgeInsets.all(12.r),
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
+              color: color.withValues(alpha: 0.12),
               shape: BoxShape.circle,
             ),
             child: Icon(Icons.rocket_launch_rounded, color: color, size: 24.r),
           ),
-          SizedBox(height: 16.h),
+          SizedBox(height: 14.h),
           Text(
             (instruction ?? "Elevator Pitch").toUpperCase(),
             key: const Key('elevator_pitch_instruction_text'),
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 11.sp,
+              fontSize: 12.sp,
               color: color,
-              letterSpacing: 1.5,
+              letterSpacing: 1.2,
               fontWeight: FontWeight.w600,
             ),
             textAlign: TextAlign.center,
           ),
-          SizedBox(height: 12.h),
+          SizedBox(height: 10.h),
           Text(
             prompt,
             key: const Key('elevator_pitch_prompt_text'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 16.sp,
-              color: Theme.of(context).colorScheme.onSurface,
+              color: isDark ? AppColors.white : AppColors.slate900,
               fontWeight: FontWeight.w500,
-              height: 1.4,
+              height: 1.45,
             ),
             textAlign: TextAlign.center,
           ),
-          SizedBox(height: 24.h),
+          SizedBox(height: 20.h),
           Container(
             key: const Key('elevator_pitch_timer_badge'),
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
             decoration: BoxDecoration(
               color: color.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(100.r),
@@ -85,12 +88,10 @@ class ElevatorPitchPromptCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Icon(Icons.timer_outlined, color: color, size: 16.r),
-                SizedBox(width: 8.w),
+                SizedBox(width: 6.w),
                 Flexible(
                   child: Text(
                     "$timeLimit SECONDS LIMIT",
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
@@ -107,3 +108,4 @@ class ElevatorPitchPromptCard extends StatelessWidget {
     );
   }
 }
+

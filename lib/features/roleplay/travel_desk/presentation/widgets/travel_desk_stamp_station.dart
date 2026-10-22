@@ -25,12 +25,19 @@ class TravelDeskStampStation extends StatelessWidget {
 
     final content = Container(
       key: const Key('travel_desk_stamp_station'),
-      width: 1.sw,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(28.r),
-        border: Border.all(color: color.withValues(alpha: 0.1)),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: color.withValues(alpha: 0.2), width: 1.0),
+        boxShadow: [
+          BoxShadow(
+            color: color.withValues(alpha: 0.08),
+            blurRadius: 10,
+            offset: const Offset(0, 3),
+          ),
+        ],
       ),
       child: Column(
         children: [
@@ -41,22 +48,23 @@ class TravelDeskStampStation extends StatelessWidget {
               Icon(Icons.touch_app_rounded, color: color, size: 16.r),
               SizedBox(width: 8.w),
               Flexible(
-                child: Text(
-                  "STAMP SLAM TERMINAL",
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    color: color,
-                    letterSpacing: 1.5,
-                    fontWeight: FontWeight.bold,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    "TRAVEL DESK STAMP",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      color: color,
+                      letterSpacing: 1.0,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 18.h),
+          SizedBox(height: 16.h),
 
           // Metallic mechanical stamp draggable
           Semantics(
@@ -81,14 +89,15 @@ class TravelDeskStampStation extends StatelessWidget {
 
           SizedBox(height: 14.h),
           Text(
-            "DRAG STAMP UPWARDS TO SLAM ON TARGET",
+            "DRAG STAMP TO MATCHING DESTINATION",
             textAlign: TextAlign.center,
+            softWrap: true,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 11.sp,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey.shade500,
-              letterSpacing: 1.2,
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w500,
+              color: isDark ? Colors.grey.shade400 : Colors.grey.shade600,
+              letterSpacing: 0.6,
             ),
           ),
         ],

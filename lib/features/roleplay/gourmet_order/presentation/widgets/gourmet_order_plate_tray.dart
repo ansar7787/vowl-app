@@ -35,16 +35,24 @@ class GourmetOrderPlateTray extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reduceMotion = MediaQuery.disableAnimationsOf(context) ||
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
 
     Widget content = Container(
       width: double.infinity,
-      padding: EdgeInsets.all(16.r),
+      padding: EdgeInsets.all(18.w),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.1)),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: color.withValues(alpha: 0.16)),
+        boxShadow: [
+          BoxShadow(
+            color: color.withValues(alpha: 0.05),
+            blurRadius: 16,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -53,25 +61,25 @@ class GourmetOrderPlateTray extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "BANQUET PLATE TRAY",
+                "MENU OPTIONS",
                 key: const Key('gourmet_order_plate_tray_title'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
+                  fontSize: 12.sp,
                   color: color,
-                  letterSpacing: 2,
-                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.0,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               Icon(
-                Icons.kitchen_rounded,
+                Icons.restaurant_rounded,
                 key: const Key('gourmet_order_plate_tray_icon'),
-                color: color.withValues(alpha: 0.5),
+                color: color.withValues(alpha: 0.7),
                 size: 16.r,
               ),
             ],
           ),
-          SizedBox(height: 18.h),
+          SizedBox(height: 16.h),
 
           // Plate grid (Wrap) containing Draggables.
           // Using Wrap instead of horizontal scroll prevents drag-vs-scroll gesture conflicts.
@@ -163,15 +171,18 @@ class GourmetOrderPlateTray extends StatelessWidget {
         button: true,
         excludeSemantics: true,
         child: Container(
-          width: 140.w,
+          width: 142.w,
+          constraints: BoxConstraints(minHeight: 82.h),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16.r),
             color: isSelected
                 ? color
                 : (isDark ? _LocalPalette.color131326 : Colors.white),
             border: Border.all(
-              color: isSelected ? Colors.white : color.withValues(alpha: 0.4),
-              width: isSelected ? 3.0 : 1.5,
+              color: isSelected
+                  ? Colors.white
+                  : color.withValues(alpha: isDark ? 0.35 : 0.25),
+              width: isSelected ? 2.5 : 1.5,
             ),
             boxShadow: [
               BoxShadow(
@@ -187,7 +198,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.all(10.r),
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -195,34 +206,39 @@ class GourmetOrderPlateTray extends StatelessWidget {
                       item.toUpperCase(),
                       key: Key('gourmet_order_plate_text_$item'),
                       textAlign: TextAlign.center,
+                      softWrap: true,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w900,
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 0.3,
                         color: isSelected
                             ? Colors.white
-                            : (isDark ? Colors.white70 : Colors.black87),
+                            : (isDark
+                                  ? Colors.white.withValues(alpha: 0.95)
+                                  : const Color(0xFF1E293B)),
                       ),
                     ),
                     SizedBox(height: 8.h),
                     Container(
                       padding: EdgeInsets.symmetric(
-                        horizontal: 8.w,
-                        vertical: 4.h,
+                        horizontal: 10.w,
+                        vertical: 3.h,
                       ),
                       decoration: BoxDecoration(
                         color: isSelected
-                            ? Colors.white.withValues(alpha: 0.2)
-                            : color.withValues(alpha: 0.1),
+                            ? Colors.white.withValues(alpha: 0.22)
+                            : color.withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(8.r),
                       ),
                       child: Text(
                         price,
                         key: Key('gourmet_order_plate_price_$item'),
+                        softWrap: true,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 11.5.sp,
+                          fontWeight: FontWeight.w600,
                           color: isSelected ? Colors.white : color,
                         ),
                       ),
@@ -232,10 +248,10 @@ class GourmetOrderPlateTray extends StatelessWidget {
               ),
               if (isSelected)
                 Positioned(
-                  top: 4.h,
-                  right: 4.w,
+                  top: 6.h,
+                  right: 6.w,
                   child: Container(
-                    padding: EdgeInsets.all(2.r),
+                    padding: EdgeInsets.all(3.r),
                     decoration: const BoxDecoration(
                       color: Colors.white,
                       shape: BoxShape.circle,
@@ -244,7 +260,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
                       Icons.check_rounded,
                       key: Key('gourmet_order_plate_check_$item'),
                       color: color,
-                      size: 10.r,
+                      size: 12.r,
                     ),
                   ),
                 ),

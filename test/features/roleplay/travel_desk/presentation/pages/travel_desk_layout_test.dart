@@ -499,17 +499,17 @@ void main() {
       expect(find.byKey(const Key('travel_desk_stamp_station')), findsOneWidget);
     });
 
-    testWidgets('17. Stamp station renders "STAMP SLAM TERMINAL" header and touch icon',
+    testWidgets('17. Stamp station renders "TRAVEL DESK STAMP" header and touch icon',
         (tester) async {
       await pumpTravelDeskScreen(tester);
-      expect(find.text('STAMP SLAM TERMINAL'), findsOneWidget);
+      expect(find.text('TRAVEL DESK STAMP'), findsOneWidget);
       expect(find.byIcon(Icons.touch_app_rounded), findsOneWidget);
     });
 
     testWidgets('18. Stamp station renders drag prompt instruction label',
         (tester) async {
       await pumpTravelDeskScreen(tester);
-      expect(find.text('DRAG STAMP UPWARDS TO SLAM ON TARGET'), findsOneWidget);
+      expect(find.text('DRAG STAMP TO MATCHING DESTINATION'), findsOneWidget);
     });
 
     testWidgets('19. Stamp station renders Draggable<int> widget with payload 99',

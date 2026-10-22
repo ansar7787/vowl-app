@@ -51,19 +51,22 @@ class ConflictResolverConflictCard extends StatelessWidget {
     }
 
     return Container(
-      width: 1.sw,
-      padding: EdgeInsets.all(22.r),
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(30.r),
+        borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
-          color: emotionalColor.withValues(alpha: 0.25),
+          color: emotionalColor.withValues(alpha: isDark ? 0.22 : 0.16),
           width: 1.5,
         ),
         boxShadow: [
           BoxShadow(
-            color: emotionalColor.withValues(alpha: 0.08),
-            blurRadius: 15,
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.25)
+                : emotionalColor.withValues(alpha: 0.08),
+            blurRadius: 16,
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -72,20 +75,21 @@ class ConflictResolverConflictCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           iconWidget,
-          SizedBox(height: 16.h),
+          SizedBox(height: 14.h),
           Text(
             scene,
             key: const Key('conflict_resolver_scene_text'),
             textAlign: TextAlign.center,
+            softWrap: true,
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 15.sp,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w500,
               color: Theme.of(context).colorScheme.onSurface,
-              height: 1.5,
+              height: 1.45,
             ),
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: 18.h),
           // Tension Meter
           Wrap(
             key: const Key('conflict_resolver_tension_meter'),
@@ -98,8 +102,8 @@ class ConflictResolverConflictCard extends StatelessWidget {
                 "TENSION",
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: isDark ? Colors.white54 : Colors.black54,
+                  fontSize: 11.sp,
+                  color: isDark ? Colors.white70 : Colors.black54,
                   fontWeight: FontWeight.w600,
                   letterSpacing: 1.0,
                 ),
@@ -120,12 +124,12 @@ class ConflictResolverConflictCard extends StatelessWidget {
                     return Expanded(
                       child: Container(
                         key: Key('conflict_resolver_tension_bar_$index'),
-                        height: 4.h,
+                        height: 5.h,
                         margin: EdgeInsets.symmetric(horizontal: 2.w),
                         decoration: BoxDecoration(
                           color: isActive
                               ? levelColor
-                              : (isDark ? Colors.white10 : Colors.black12),
+                              : (isDark ? Colors.white12 : Colors.black12),
                           borderRadius: BorderRadius.circular(4.r),
                         ),
                       ),

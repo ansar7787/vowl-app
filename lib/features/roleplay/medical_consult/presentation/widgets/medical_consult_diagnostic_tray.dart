@@ -40,29 +40,46 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: color.withValues(alpha: 0.1)),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.08)
+              : color.withValues(alpha: 0.16),
+          width: 1.0,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.25)
+                : color.withValues(alpha: 0.05),
+            blurRadius: 12,
+            offset: const Offset(0, 3),
+          ),
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Icon(
                 Icons.health_and_safety_rounded,
-                color: color.withValues(alpha: 0.6),
+                color: color.withValues(alpha: 0.8),
                 size: 16.r,
               ),
               SizedBox(width: 6.w),
-              Text(
-                "DIAGNOSTIC OPTIONS",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 11.sp,
-                  color: color,
-                  letterSpacing: 1.5,
-                  fontWeight: FontWeight.w600,
+              Flexible(
+                child: Text(
+                  "DIAGNOSTIC OPTIONS",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    color: color,
+                    letterSpacing: 1.2,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
             ],
@@ -89,10 +106,10 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
                 onTap: () => onSymptomTapped(s),
                 child: Container(
                   key: Key('medical_consult_symptom_chip_${s.replaceAll(' ', '_')}'),
-                  constraints: BoxConstraints(maxWidth: 1.sw - 60.w),
+                  constraints: BoxConstraints(maxWidth: 1.sw - 68.w),
                   padding: EdgeInsets.symmetric(
-                    horizontal: 14.w,
-                    vertical: 10.h,
+                    horizontal: 12.w,
+                    vertical: 9.h,
                   ),
                   decoration: BoxDecoration(
                     color: isChecked
@@ -100,7 +117,7 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
                         : (isDark
                               ? _LocalPalette.color131326
                               : Colors.grey.shade100),
-                    borderRadius: BorderRadius.circular(14.r),
+                    borderRadius: BorderRadius.circular(12.r),
                     border: Border.all(
                       color: isChecked
                           ? Colors.white
@@ -134,15 +151,17 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
                             : (isDark ? Colors.white24 : Colors.black26),
                         size: 14.r,
                       ),
-                      SizedBox(width: 8.w),
+                      SizedBox(width: 6.w),
                       Flexible(
                         child: Text(
                           s.toUpperCase(),
                           textAlign: TextAlign.center,
+                          softWrap: true,
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w600,
+                            letterSpacing: 0.4,
                             color: isChecked
                                 ? Colors.white
                                 : isScanned

@@ -28,18 +28,20 @@ class ProfessionalismFusionPainter extends CustomPainter {
 
     // Draw background dim tracker circle
     final Paint trackPaint = Paint()
-      ..color = fusionColor.withValues(alpha: 0.1)
-      ..strokeWidth = 4.0
+      ..color = fusionColor.withValues(alpha: 0.12)
+      ..strokeWidth = 4.5
       ..style = PaintingStyle.stroke;
     canvas.drawCircle(center, radius - 6, trackPaint);
 
-    // Draw glowing professional level arc
+    // Draw professional score arc
     final Paint arcPaint = Paint()
       ..color = fusionColor
-      ..strokeWidth = 6.0
-      ..strokeCap = StrokeCap.round;
+      ..strokeWidth = 5.5
+      ..strokeCap = StrokeCap.round
+      ..style = PaintingStyle.stroke;
 
-    final double sweepAngle = 2 * math.pi * professionalismLevel;
+    final double sweepAngle =
+        2 * math.pi * professionalismLevel.clamp(0.01, 1.0);
     canvas.drawArc(
       Rect.fromCircle(center: center, radius: radius - 6),
       -math.pi / 2,
@@ -48,18 +50,14 @@ class ProfessionalismFusionPainter extends CustomPainter {
       arcPaint,
     );
 
-    // Draw three revolving telemetry sparks inside the ring
-    final Paint sparkPaint = Paint()
-      ..color = fusionColor.withValues(alpha: 0.8)
+    // Subtle sleek progress tip indicator
+    final double endAngle = (-math.pi / 2) + sweepAngle;
+    final double px = center.dx + (radius - 6) * math.cos(endAngle);
+    final double py = center.dy + (radius - 6) * math.sin(endAngle);
+    final Paint headPaint = Paint()
+      ..color = Colors.white
       ..style = PaintingStyle.fill;
-
-    for (int i = 0; i < 3; i++) {
-      double sparkAngle =
-          (animationValue * 2 * math.pi) + (i * 2 * math.pi / 3);
-      double sx = center.dx + (radius - 6) * math.cos(sparkAngle);
-      double sy = center.dy + (radius - 6) * math.sin(sparkAngle);
-      canvas.drawCircle(Offset(sx, sy), 3.r, sparkPaint);
-    }
+    canvas.drawCircle(Offset(px, py), 2.5.r, headPaint);
   }
 
   @override

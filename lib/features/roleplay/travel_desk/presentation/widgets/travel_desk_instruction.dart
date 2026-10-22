@@ -23,24 +23,24 @@ class TravelDeskInstruction extends StatelessWidget {
             border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
           ),
           child: Text(
-            "CUSTOMS BIOMETRIC OFFICE",
+            "TRAVEL DESK",
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
+              fontSize: 11.sp,
+              fontWeight: FontWeight.w600,
               color: primaryColor,
-              letterSpacing: 2.5,
+              letterSpacing: 1.0,
             ),
           ),
         ),
         SizedBox(height: 10.h),
         Text(
           instruction ??
-              "Drag the mechanical visa stamp onto the matching destination page",
+              "Select or stamp the traveler's matching destination",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 14.sp,
+            fontSize: 13.sp,
             fontWeight: FontWeight.w500,
             color: Colors.grey.shade400,
           ),

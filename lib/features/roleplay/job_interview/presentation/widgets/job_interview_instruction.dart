@@ -26,11 +26,13 @@ class JobInterviewInstruction extends StatelessWidget {
             "Choose the best answer to show off your professional skills.",
         key: const Key('job_interview_instruction_text'),
         textAlign: TextAlign.center,
+        softWrap: true,
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 14.sp,
           fontWeight: FontWeight.w600,
           color: primaryColor,
+          height: 1.4,
         ),
       ),
     );

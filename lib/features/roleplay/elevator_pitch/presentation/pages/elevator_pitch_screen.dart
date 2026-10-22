@@ -142,7 +142,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
                                   color: theme.primaryColor,
                                   isDark: isDark,
                                 ),
-                                SizedBox(height: 24.h),
+                                SizedBox(height: 16.h),
                                 if (!isAnsweredNotifier.value)
                                   ElevatorPitchRecorder(
                                     key: const Key('elevator_pitch_recorder'),

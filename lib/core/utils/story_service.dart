@@ -1055,11 +1055,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'emergencyhub': [
       "",
-      "Well done! You are building a strong foundation in emergency communication.",
-      "Your progress in emergency communication is genuinely impressive.",
-      "Halfway to 100! You are handling emergency communication effortlessly.",
-      "100 levels beat! You truly dominate emergency communication.",
-      "Level 200! You are a supreme grandmaster of emergency communication.",
+      "Great start! You are learning how to stay calm and relay critical information.",
+      "Impressive work! Your emergency transmissions are becoming quick and clear.",
+      "Halfway to 100! You handle high-pressure situations with steady confidence.",
+      "100 levels cleared! Your clarity and precision during emergencies are outstanding.",
+      "Level 200 reached! You have mastered calm, crystal-clear communication under pressure.",
     ],
     'gourmetorder': [
       "",

@@ -56,10 +56,10 @@ class EmergencyHubTelexCard extends StatelessWidget {
       key: const Key('emergency_hub_telex_broadcast_title'),
       style: TextStyle(
         fontFamily: 'Outfit',
-        fontSize: 12.sp,
+        fontSize: 13.sp,
         color: tokens.gameIncorrect,
-        letterSpacing: 2.0,
-        fontWeight: FontWeight.w800,
+        letterSpacing: 1.0,
+        fontWeight: FontWeight.w700,
       ),
       softWrap: true,
     );
@@ -72,14 +72,23 @@ class EmergencyHubTelexCard extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(22.r),
+      padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         color: isDark ? AppColors.deepDark : Colors.white,
-        borderRadius: BorderRadius.circular(16.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: tokens.gameIncorrect,
-          width: 2.0,
+          color: tokens.gameIncorrect.withValues(alpha: isDark ? 0.4 : 0.25),
+          width: 1.5,
         ),
+        boxShadow: isDark
+            ? []
+            : [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.04),
+                  blurRadius: 12,
+                  offset: const Offset(0, 4),
+                ),
+              ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,7 +101,7 @@ class EmergencyHubTelexCard extends StatelessWidget {
               Expanded(child: broadcastText),
             ],
           ),
-          SizedBox(height: 16.h),
+          SizedBox(height: 14.h),
 
           // Instruction Field (First)
           Text(
@@ -101,13 +110,13 @@ class EmergencyHubTelexCard extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 14.sp,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
               color: isDark ? Colors.white70 : Colors.black87,
-              height: 1.3,
+              height: 1.4,
             ),
             softWrap: true,
           ),
-          SizedBox(height: 12.h),
+          SizedBox(height: 10.h),
 
           // Dispatcher Question Field (Second)
           if (dispatcherQuestion.isNotEmpty)
@@ -116,21 +125,21 @@ class EmergencyHubTelexCard extends StatelessWidget {
               key: const Key('emergency_hub_telex_question_text'),
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w700,
-                color: isDark ? Colors.white : Colors.black,
-                height: 1.4,
+                fontSize: 17.sp,
+                fontWeight: FontWeight.w600,
+                color: isDark ? Colors.white : Colors.black87,
+                height: 1.45,
               ),
               softWrap: true,
             ),
 
-          SizedBox(height: 20.h),
+          SizedBox(height: 18.h),
           Divider(
-            color: tokens.gameIncorrect.withValues(alpha: 0.3),
-            thickness: 2,
+            color: tokens.gameIncorrect.withValues(alpha: 0.2),
+            thickness: 1.5,
             height: 1,
           ),
-          SizedBox(height: 16.h),
+          SizedBox(height: 14.h),
           Row(
             children: [
               Text(
@@ -138,10 +147,10 @@ class EmergencyHubTelexCard extends StatelessWidget {
                 key: const Key('emergency_hub_telex_urgency_label'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: isDark ? Colors.white54 : Colors.black54,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.0,
+                  fontSize: 12.sp,
+                  color: isDark ? Colors.white70 : Colors.black54,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 0.8,
                 ),
               ),
               SizedBox(width: 12.w),
@@ -160,9 +169,9 @@ class EmergencyHubTelexCard extends StatelessWidget {
                                     ? tokens.gameIncorrect
                                     : (urgencyLevel >= 3
                                           ? Colors.orange
-                                          : Colors.yellow))
-                              : (isDark ? Colors.white10 : Colors.black12),
-                          borderRadius: BorderRadius.circular(2.r),
+                                          : Colors.amber))
+                              : (isDark ? Colors.white12 : Colors.black12),
+                          borderRadius: BorderRadius.circular(4.r),
                         ),
                       ),
                     );

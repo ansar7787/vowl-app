@@ -205,10 +205,11 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
 
     final Offset newOffset = _scanOffset.value + details.delta;
 
-    // Calculate dynamic boundaries (ScanBay is 1.sw x 330.h, lens is 100.r)
+    // Calculate dynamic boundaries (ScanBay is (1.sw - 32.w) x 330.h, lens is 96.r)
     // Origin is center, so max travel is half width/height minus half lens size
-    final double maxX = (1.sw / 2) - 50.w;
-    final double maxY = (330.h / 2) - 50.h;
+    final double bayWidth = 1.sw - 32.w;
+    final double maxX = (bayWidth / 2) - 50.r;
+    final double maxY = (330.h / 2) - 50.r;
 
     _scanOffset.value = Offset(
       newOffset.dx.clamp(-maxX, maxX),
@@ -260,7 +261,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
         context: context,
         type: CustomSnackBarType.warning,
         message:
-            "Drag the scanner lens over the patient to unlock diagnostics!",
+            "Examine the patient with the scanner to identify symptoms first.",
       );
       return;
     }
@@ -494,20 +495,20 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                                     padding:
                                                         EdgeInsets.symmetric(
                                                           vertical: isCompact
-                                                              ? 14.h
-                                                              : 16.h,
+                                                              ? 13.h
+                                                              : 15.h,
                                                         ),
                                                     decoration: BoxDecoration(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                            30.r,
+                                                            24.r,
                                                           ),
                                                       gradient: LinearGradient(
                                                         colors: [
                                                           theme.primaryColor,
                                                           theme.primaryColor
                                                               .withValues(
-                                                                alpha: 0.8,
+                                                                alpha: 0.85,
                                                               ),
                                                         ],
                                                       ),
@@ -516,11 +517,15 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                                           color: theme
                                                               .primaryColor
                                                               .withValues(
-                                                                alpha: 0.35,
+                                                                alpha: 0.28,
                                                               ),
                                                           blurRadius: isCompact
-                                                              ? 10
-                                                              : 15,
+                                                              ? 8
+                                                              : 12,
+                                                          offset: const Offset(
+                                                            0,
+                                                            3,
+                                                          ),
                                                         ),
                                                       ],
                                                     ),
@@ -534,7 +539,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                                                 'Outfit',
                                                             fontSize: isCompact
                                                                 ? 14.sp
-                                                                : 16.sp,
+                                                                : 15.sp,
                                                             fontWeight:
                                                                 FontWeight.w600,
                                                             color: Colors.white,
@@ -554,23 +559,23 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                                     padding:
                                                         EdgeInsets.symmetric(
                                                           vertical: isCompact
-                                                              ? 14.h
-                                                              : 16.h,
+                                                              ? 13.h
+                                                              : 15.h,
                                                         ),
                                                     decoration: BoxDecoration(
                                                       color: theme.primaryColor
                                                           .withValues(
-                                                            alpha: 0.1,
+                                                            alpha: isDark ? 0.12 : 0.08,
                                                           ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                            30.r,
+                                                            24.r,
                                                           ),
                                                       border: Border.all(
                                                         color: theme
                                                             .primaryColor
                                                             .withValues(
-                                                              alpha: 0.3,
+                                                              alpha: 0.35,
                                                             ),
                                                       ),
                                                     ),
@@ -584,7 +589,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                                                 'Outfit',
                                                             fontSize: isCompact
                                                                 ? 14.sp
-                                                                : 16.sp,
+                                                                : 15.sp,
                                                             fontWeight:
                                                                 FontWeight.w600,
                                                             color: theme
@@ -624,21 +629,33 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                               if (isFirstStagePassedNotifier.value &&
                                   !isAnsweredNotifier.value)
                                 SliverToBoxAdapter(
-                                  child: SpeakToConfirmOverlay(
-                                    key: const Key('medical_consult_speak_overlay'),
-                                    expectedText:
-                                        quest.correctAnswer ??
-                                        _diagnosedSymptoms.value.join(', '),
-                                    primaryColor: theme.primaryColor,
-                                    isPositioned: false,
-                                    onConfirmed: () {
-                                      context.read<RoleplayBloc>().add(
-                                        const RoleplaySpeakConfirmed(5),
-                                      );
-                                      _submitVerbalEvaluation(true, quest);
-                                    },
-                                    onSkipped: () =>
-                                        _submitVerbalEvaluation(false, quest),
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                    ),
+                                    child: SpeakToConfirmOverlay(
+                                      key: const Key(
+                                        'medical_consult_speak_overlay',
+                                      ),
+                                      title: "Confirm Diagnosis",
+                                      subtitle:
+                                          "Say the symptom aloud to confirm",
+                                      displayFontSize: 18.sp,
+                                      displayFontWeight: FontWeight.w600,
+                                      expectedText:
+                                          quest.correctAnswer ??
+                                          _diagnosedSymptoms.value.join(', '),
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      onConfirmed: () {
+                                        context.read<RoleplayBloc>().add(
+                                          const RoleplaySpeakConfirmed(5),
+                                        );
+                                        _submitVerbalEvaluation(true, quest);
+                                      },
+                                      onSkipped: () =>
+                                          _submitVerbalEvaluation(false, quest),
+                                    ),
                                   ),
                                 ),
                               SliverToBoxAdapter(

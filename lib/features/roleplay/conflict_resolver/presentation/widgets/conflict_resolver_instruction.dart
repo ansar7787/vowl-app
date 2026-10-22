@@ -17,7 +17,7 @@ class ConflictResolverInstruction extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
       decoration: BoxDecoration(
         color: isDark
             ? primaryColor.withValues(alpha: 0.12)
@@ -30,40 +30,46 @@ class ConflictResolverInstruction extends StatelessWidget {
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Icon(
                 Icons.track_changes_rounded,
                 key: const Key('conflict_resolver_instruction_icon'),
                 color: primaryColor,
-                size: 16.r,
+                size: 15.r,
               ),
               SizedBox(width: 6.w),
               Text(
                 "OBJECTIVE",
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w700,
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w600,
                   color: primaryColor,
-                  letterSpacing: 2.0,
+                  letterSpacing: 1.2,
                 ),
               ),
             ],
           ),
-          SizedBox(height: 10.h),
-          Text(
-            instruction ?? "Choose the best response.",
-            key: const Key('conflict_resolver_instruction_text'),
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w500,
-              color: Theme.of(context).colorScheme.onSurface,
-              height: 1.4,
+          SizedBox(height: 8.h),
+          ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 300.w),
+            child: Text(
+              instruction ?? "Choose the best response.",
+              key: const Key('conflict_resolver_instruction_text'),
+              textAlign: TextAlign.center,
+              softWrap: true,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.5.sp,
+                fontWeight: FontWeight.w500,
+                color: Theme.of(context).colorScheme.onSurface,
+                height: 1.4,
+              ),
             ),
           ),
         ],
