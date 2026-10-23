@@ -1,14 +1,32 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-enum TrophyFilter { standard, legendary }
+/// Filter categories for badges in the trophy room.
+enum TrophyFilter {
+  /// Standard progression badges.
+  standard,
 
+  /// Rare and prestigious mastery achievements.
+  legendary,
+}
+
+/// State representing badges and filters in the trophy room.
 class TrophyRoomState {
+  /// Master list of all earned badge identifiers.
   final List<String> allEarnedBadges;
+
+  /// Subset of earned badges matching the active [currentFilter].
   final List<String> filteredEarnedBadges;
+
+  /// Subset of locked badges matching the active [currentFilter].
   final List<String> filteredLockedBadges;
+
+  /// Currently selected category filter.
   final TrophyFilter currentFilter;
+
+  /// Total count of badges achievable across the application.
   final int totalPossibleBadges;
 
+  /// Creates a [TrophyRoomState] snapshot.
   const TrophyRoomState({
     required this.allEarnedBadges,
     required this.filteredEarnedBadges,
@@ -17,6 +35,7 @@ class TrophyRoomState {
     required this.totalPossibleBadges,
   });
 
+  /// Factory constructing the initial trophy state from earned badge IDs.
   factory TrophyRoomState.initial(List<String> earnedBadges) {
     return TrophyRoomState(
       allEarnedBadges: earnedBadges,
@@ -62,11 +81,13 @@ class TrophyRoomState {
   }
 }
 
+/// Cubit managing trophy room badge categorization and filtering.
 class TrophyRoomCubit extends Cubit<TrophyRoomState> {
+  /// Creates a [TrophyRoomCubit] initialized with [initialBadges].
   TrophyRoomCubit(List<String> initialBadges)
     : super(TrophyRoomState.initial(initialBadges));
 
-  // The real master list of 50 possible achievements in VOWL
+  /// Master registry of all 50 possible achievements in VOWL.
   static const List<String> allAppBadges = [
     // Standard Badges (40)
     'novice_speaking', 'scholar_speaking', 'expert_speaking',
@@ -93,6 +114,7 @@ class TrophyRoomCubit extends Cubit<TrophyRoomState> {
     'streak_100',
   ];
 
+  /// Updates the active [filter] and recalculates earned and locked badges.
   void updateFilter(TrophyFilter filter) {
     List<String> earnedFiltered;
     switch (filter) {
@@ -122,6 +144,7 @@ class TrophyRoomCubit extends Cubit<TrophyRoomState> {
     );
   }
 
+  /// Returns whether a given [badgeId] corresponds to a legendary badge.
   static bool isLegendary(String badgeId) {
     return badgeId.contains('master') ||
         badgeId.contains('legend') ||

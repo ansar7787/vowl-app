@@ -17,14 +17,28 @@ import 'package:flutter_animate/flutter_animate.dart';
 /// - Uses [ListenableBuilder] on focus nodes — zero setState.
 /// - [SpeechBubblePainter] properly repaints when theme colors change.
 class VowlyAuthCompanion extends StatefulWidget {
+  /// Focus node attached to the user name text field.
   final FocusNode? nameFocus;
+
+  /// Current text typed into the name input.
   final String nameValue;
+
+  /// Focus node attached to the email address text field.
   final FocusNode? emailFocus;
+
+  /// Focus node attached to the password text field.
   final FocusNode? passwordFocus;
+
+  /// Physical dimensions of the mascot companion.
   final double size;
+
+  /// Whether rendering in sign-up flow context.
   final bool isSignup;
+
+  /// Whether rendering in password-reset flow context.
   final bool isForgotPassword;
 
+  /// Creates a [VowlyAuthCompanion] widget.
   const VowlyAuthCompanion({
     super.key,
     this.nameFocus,

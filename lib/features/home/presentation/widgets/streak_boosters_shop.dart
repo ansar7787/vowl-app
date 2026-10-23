@@ -21,9 +21,12 @@ class _LocalPalette {
   static const Color colorfcd34d = Color(0xFFFCD34D);
 }
 
+/// Streak shop section providing streak freezes, emergency repairs, and VIP perks.
 class StreakBoostersShop extends StatefulWidget {
+  /// Current authenticated [user] entity.
   final UserEntity user;
 
+  /// Creates a [StreakBoostersShop] for [user].
   const StreakBoostersShop({super.key, required this.user});
 
   @override

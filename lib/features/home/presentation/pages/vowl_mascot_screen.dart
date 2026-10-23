@@ -27,7 +27,9 @@ class _LocalPalette {
   static const Color color020617 = Color(0xFF020617);
 }
 
+/// Companion mascot screen for equipping skins, backgrounds, and styling avatars.
 class VowlMascotScreen extends StatefulWidget {
+  /// Creates a [VowlMascotScreen].
   const VowlMascotScreen({super.key});
 
   @override

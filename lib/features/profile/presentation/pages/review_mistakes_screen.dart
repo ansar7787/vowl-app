@@ -22,7 +22,9 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 import 'package:vowl/core/utils/tts_service.dart';
 
+/// Screen providing smart mistake review and practice flashcards from past errors.
 class ReviewMistakesScreen extends StatefulWidget {
+  /// Creates a [ReviewMistakesScreen].
   const ReviewMistakesScreen({super.key});
 
   @override

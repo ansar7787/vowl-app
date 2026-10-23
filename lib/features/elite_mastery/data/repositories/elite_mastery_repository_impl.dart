@@ -10,9 +10,12 @@ import '../../domain/repositories/elite_mastery_repository.dart';
 
 import '../datasources/elite_mastery_data_source.dart';
 
+/// Repository implementation responsible for loading and mapping elite mastery quests.
 class EliteMasteryRepositoryImpl implements EliteMasteryRepository {
+  /// Data source providing parsed quest records.
   final EliteMasteryDataSource dataSource;
 
+  /// Creates an [EliteMasteryRepositoryImpl] backed by [dataSource].
   EliteMasteryRepositoryImpl({required this.dataSource});
 
   @override

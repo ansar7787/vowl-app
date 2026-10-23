@@ -12,9 +12,12 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Adventure store carousel presenting streak freezes, XP boosts, and item purchases.
 class AdventureStoreSection extends StatelessWidget {
+  /// Current authenticated [user] entity.
   final UserEntity user;
 
+  /// Creates an [AdventureStoreSection] for [user].
   const AdventureStoreSection({super.key, required this.user});
 
   @override

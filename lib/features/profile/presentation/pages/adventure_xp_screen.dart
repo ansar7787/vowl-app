@@ -21,7 +21,9 @@ import 'package:vowl/features/profile/presentation/widgets/adventure_mastery_gri
 import 'package:vowl/features/profile/presentation/widgets/adventure_store_section.dart';
 import 'package:vowl/features/profile/presentation/widgets/adventure_recent_activities.dart';
 
+/// Screen presenting experience points breakdown, daily charts, and mastery grid.
 class AdventureXPScreen extends StatelessWidget {
+  /// Creates an [AdventureXPScreen].
   const AdventureXPScreen({super.key});
 
   @override

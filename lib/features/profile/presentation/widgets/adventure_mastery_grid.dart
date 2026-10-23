@@ -37,9 +37,12 @@ class _MasteryCategory {
   });
 }
 
+/// Interactive grid summarizing the user's mastery progress across learning skills.
 class AdventureMasteryGrid extends StatelessWidget {
+  /// Current authenticated [user] entity containing mastery levels.
   final UserEntity user;
 
+  /// Creates an [AdventureMasteryGrid] for [user].
   const AdventureMasteryGrid({super.key, required this.user});
 
   @override

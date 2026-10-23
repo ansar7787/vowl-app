@@ -35,6 +35,7 @@ class _LocalPalette {
 /// 6. **Responsive card width** adapts to screen size (SE → Pro Max).
 /// 7. **Long-press tooltip** on every card for discoverability.
 class ToolsStrip extends StatelessWidget {
+  /// Creates a [ToolsStrip] widget.
   const ToolsStrip({super.key});
 
   @override

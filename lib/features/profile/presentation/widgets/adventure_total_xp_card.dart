@@ -8,9 +8,12 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
+/// Highlight card displaying cumulative experience points and progress toward the next level.
 class AdventureTotalXpCard extends StatelessWidget {
+  /// Current authenticated [user] entity.
   final UserEntity user;
 
+  /// Creates an [AdventureTotalXpCard] for [user].
   const AdventureTotalXpCard({super.key, required this.user});
 
   @override

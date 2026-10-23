@@ -17,9 +17,12 @@ class _LocalPalette {
   static const Color color60a5fa = Color(0xFF60A5FA);
 }
 
+/// Bento grid layout presenting key profile statistics like streak, level, and gems.
 class ProfileBentoStats extends StatelessWidget {
+  /// Current authenticated [user] entity.
   final UserEntity user;
 
+  /// Creates a [ProfileBentoStats] grid for [user].
   const ProfileBentoStats({super.key, required this.user});
 
   @override

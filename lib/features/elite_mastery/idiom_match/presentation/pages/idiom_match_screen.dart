@@ -19,9 +19,15 @@ class _LocalPalette {
   static const Color color1a1a2e = Color(0xFF1A1A2E);
 }
 
+/// Gameplay screen for the Idiom Match challenge testing cultural and figurative fluency.
 class IdiomMatchScreen extends StatefulWidget {
+  /// Target curriculum difficulty level.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates an [IdiomMatchScreen] for [level] and [gameType].
   const IdiomMatchScreen({
     super.key,
     required this.level,

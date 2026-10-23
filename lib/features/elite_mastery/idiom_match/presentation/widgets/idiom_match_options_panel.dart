@@ -7,18 +7,39 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Options list panel rendering idiom interpretation choices.
 class IdiomMatchOptionsPanel extends StatelessWidget {
+  /// Shuffled list of potential idiom definitions.
   final List<String> shuffledOptions;
+
+  /// Original indexing mapping permuted choices back to canonical indices.
   final List<int> originalIndices;
+
+  /// Currently selected option index in shuffled coordinates, if any.
   final int? selectedIndex;
+
+  /// Indices of candidate options evaluated as incorrect.
   final List<int> wrongIndices;
+
+  /// Whether an answer has been locked in and evaluated.
   final bool isAnswered;
+
+  /// Whether the solution should be illuminated.
   final bool showCorrectAnswer;
+
+  /// Canonical index of the correct answer.
   final int correctAnswerIndex;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Primary accent color.
   final Color primaryColor;
+
+  /// Callback triggered when an option tile is tapped.
   final ValueChanged<int> onOptionSelected;
 
+  /// Creates an [IdiomMatchOptionsPanel].
   const IdiomMatchOptionsPanel({
     super.key,
     required this.shuffledOptions,

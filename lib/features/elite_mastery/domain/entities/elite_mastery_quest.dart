@@ -1,22 +1,53 @@
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
+/// Domain entity representing an advanced challenge in the Elite Mastery arena.
 class EliteMasteryQuest extends GameQuest {
+  /// Ordered list of narrative sentences used in story builder quests.
   final List<String>? sentences;
+
+  /// Target permutation indices representing the correct sequence order.
   final List<int>? correctOrder;
+
+  /// Target phrase or idiom for idiom matching exercises.
   final String? idiom;
+
+  /// Word or lexical token to be decoded in speed spelling.
   final String? word;
+
+  /// Playback or timer speed multiplier factor.
   final double? speedMultiplier;
+
+  /// Passage or speech excerpt for accent shadowing exercises.
   final String? text;
+
+  /// Phonetic emphasis or focus element for shadowing.
   final String? shadowingFocus;
+
+  /// Example conversational context showing real-world usage.
   final String? usageContext;
+
+  /// Orthographic rule or pedagogical tip for spelling exercises.
   final String? spellingRule;
+
+  /// Explanatory rationale behind the correct sentence sequence.
   final String? sequenceLogic;
+
+  /// Narrative arc role (e.g., exposition, climax, resolution).
   final String? plotStructure;
+
+  /// Historical etymology or origin story of the idiom.
   final String? idiomOrigin;
+
+  /// Metaphorical imagery illustrating the expression.
   final String? visualMetaphor;
+
+  /// Qualitative challenge level (e.g. Master, Grandmaster).
   final String? difficultyTier;
+
+  /// Dialect or accent variant targeted in the exercise.
   final String? targetAccent;
 
+  /// Creates an [EliteMasteryQuest] domain entity.
   const EliteMasteryQuest({
     required super.id,
     super.type,

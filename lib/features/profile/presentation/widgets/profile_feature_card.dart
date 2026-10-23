@@ -4,15 +4,30 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// Stylized card component highlighting profile actions and auxiliary modules.
 class ProfileFeatureCard extends StatelessWidget {
+  /// Icon or decorative widget rendered inside the leading badge.
   final Widget iconContent;
+
+  /// Primary theme color for background accents.
   final Color color;
+
+  /// Shadow color providing depth under the card.
   final Color shadowColor;
+
+  /// Primary header label.
   final String title;
+
+  /// Secondary description or category label.
   final String subtitle;
+
+  /// Callback executed when the card is pressed.
   final VoidCallback onTap;
+
+  /// Optional widget displayed beneath the main content.
   final Widget? bottomContent;
 
+  /// Creates a [ProfileFeatureCard].
   const ProfileFeatureCard({
     super.key,
     required this.iconContent,

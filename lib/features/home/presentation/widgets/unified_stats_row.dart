@@ -17,9 +17,13 @@ import 'package:vowl/core/theme/app_colors.dart';
 /// Shows: 🔥 Streak | 💰 Coins | 🏆 Badges | ⭐ Level
 /// Each tile is tappable to navigate to its detail screen.
 class UnifiedStatsRow extends StatelessWidget {
+  /// Current authenticated [user] entity.
   final UserEntity user;
+
+  /// Current global leaderboard rank position, or `null`.
   final int? globalRank;
 
+  /// Creates a [UnifiedStatsRow] for [user] with optional [globalRank].
   const UnifiedStatsRow({super.key, required this.user, this.globalRank});
 
   @override

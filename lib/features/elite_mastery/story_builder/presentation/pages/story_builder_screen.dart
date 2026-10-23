@@ -17,9 +17,15 @@ import 'package:vowl/features/elite_mastery/presentation/widgets/elite_hint_card
 import '../widgets/story_builder_narrative_tile.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Story Builder game screen challenging players to arrange narrative segments into logical discourse sequence.
 class StoryBuilderScreen extends StatefulWidget {
+  /// Target curriculum difficulty level.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [StoryBuilderScreen] for [level] and [gameType].
   const StoryBuilderScreen({
     super.key,
     required this.level,

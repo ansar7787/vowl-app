@@ -7,16 +7,33 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Styled input field container displaying selected characters with backspace and clear buttons.
 class SpeedSpellingInputField extends StatelessWidget {
+  /// Current text string assembled from tapped character tiles.
   final String currentInput;
+
+  /// Whether an answer has been locked in and evaluated.
   final bool isAnswered;
+
+  /// Whether the submitted input was evaluated as correct.
   final bool? isCorrect;
+
+  /// Number of incorrect attempts made.
   final int attempts;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Primary accent color.
   final Color primaryColor;
+
+  /// Callback executed when the backspace button is tapped.
   final VoidCallback onBackspace;
+
+  /// Callback executed when the clear button is tapped.
   final VoidCallback onClear;
 
+  /// Creates a [SpeedSpellingInputField].
   const SpeedSpellingInputField({
     super.key,
     required this.currentInput,

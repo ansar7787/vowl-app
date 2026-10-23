@@ -10,11 +10,16 @@ import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Bento grid component showcasing core language arenas and curriculum progression.
 class BentoArena extends StatefulWidget {
-  const BentoArena({super.key, required this.user, this.collapsed = false});
-
+  /// Current authenticated [user] entity.
   final UserEntity user;
+
+  /// Whether the arena displays in compact/collapsed mode.
   final bool collapsed;
+
+  /// Creates a [BentoArena] for [user].
+  const BentoArena({super.key, required this.user, this.collapsed = false});
 
   static const List<QuestType> _journeySteps = [
     QuestType.vocabulary, // Step 1: Words

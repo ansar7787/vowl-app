@@ -25,9 +25,13 @@ import 'package:vowl/core/utils/pedagogical_blueprint.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// Category-specific hub screen displaying games, radar metrics, and level roadmaps.
 class CategoryGamesPage extends StatefulWidget {
-  const CategoryGamesPage({super.key, required this.categoryId});
+  /// Category identifier (e.g., 'speaking', 'vocabulary', 'grammar').
   final String categoryId;
+
+  /// Creates a [CategoryGamesPage] for [categoryId].
+  const CategoryGamesPage({super.key, required this.categoryId});
 
   @override
   State<CategoryGamesPage> createState() => _CategoryGamesPageState();

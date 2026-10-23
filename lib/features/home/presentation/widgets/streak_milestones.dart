@@ -14,8 +14,13 @@ import 'package:auto_size_text/auto_size_text.dart';
 
 /// A single streak milestone: the day count it unlocks at, and its reward.
 class StreakMilestone {
+  /// Number of consecutive days required to reach this milestone.
   final int days;
+
+  /// Coin reward amount granted upon unlocking this milestone.
   final int reward;
+
+  /// Creates a [StreakMilestone] record.
   const StreakMilestone({required this.days, required this.reward});
 }
 
@@ -25,6 +30,7 @@ class StreakMilestone {
 class StreakMilestoneCalculator {
   StreakMilestoneCalculator._();
 
+  /// Computes the sorted list of streak milestones for the user.
   static List<StreakMilestone> compute(UserEntity user) {
     // Single Source of Truth: UI now precisely matches the backend rewards.
     // This prevents the bug where UI displayed "350 coins" but backend awarded 100.
@@ -38,9 +44,12 @@ class StreakMilestoneCalculator {
   }
 }
 
+/// Milestone progress list showing upcoming and claimed streak achievements.
 class StreakMilestones extends StatefulWidget {
+  /// Current authenticated [user] entity.
   final UserEntity user;
 
+  /// Creates a [StreakMilestones] widget for [user].
   const StreakMilestones({super.key, required this.user});
 
   @override

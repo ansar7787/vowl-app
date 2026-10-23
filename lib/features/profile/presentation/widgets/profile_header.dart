@@ -11,9 +11,15 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// User avatar, username, and level badge header section of the profile screen.
 class ProfileHeader extends StatelessWidget {
+  /// Current authenticated [user] entity.
   final UserEntity user;
+
+  /// Callback executed when tapping the name to edit.
   final VoidCallback onEditName;
+
+  /// Callback executed when tapping the avatar to change photo.
   final VoidCallback onEditPhoto;
 
   /// When non-null, takes priority over [user.photoUrl] — used to display the
@@ -21,6 +27,7 @@ class ProfileHeader extends StatelessWidget {
   /// before the Firestore user-stream round-trip completes.
   final String? immediatePhotoUrl;
 
+  /// Creates a [ProfileHeader].
   const ProfileHeader({
     super.key,
     required this.user,

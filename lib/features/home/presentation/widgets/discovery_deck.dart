@@ -17,15 +17,20 @@ class _LocalPalette {
   static const Color color06b6d4 = Color(0xFF06B6D4);
 }
 
+/// Carousel deck featuring promotional banners, novel challenges, and discovery paths.
 class DiscoveryDeck extends StatefulWidget {
+  /// Current authenticated [user] entity.
+  final UserEntity user;
+
+  /// Callback executed when tapping to launch a discovered quest.
+  final ValueChanged<String> onLaunchQuest;
+
+  /// Creates a [DiscoveryDeck] for [user].
   const DiscoveryDeck({
     super.key,
     required this.user,
     required this.onLaunchQuest,
   });
-
-  final UserEntity user;
-  final Function(String) onLaunchQuest;
 
   @override
   State<DiscoveryDeck> createState() => _DiscoveryDeckState();

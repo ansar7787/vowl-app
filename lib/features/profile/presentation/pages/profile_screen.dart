@@ -40,7 +40,9 @@ class _LocalPalette {
   static const Color colordc2626 = Color(0xFFDC2626);
 }
 
+/// Main user profile screen displaying stats, achievements, preferences, and avatars.
 class ProfileScreen extends StatefulWidget {
+  /// Creates a [ProfileScreen].
   const ProfileScreen({super.key});
 
   @override
@@ -1050,7 +1052,9 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
   }
 }
 
+/// Loading placeholder screen displayed while user profile data is being loaded.
 class ProfileShimmerLoading extends StatelessWidget {
+  /// Creates a [ProfileShimmerLoading] placeholder.
   const ProfileShimmerLoading({super.key});
 
   @override

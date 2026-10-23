@@ -9,7 +9,9 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/home/presentation/widgets/mystery_chest_overlay.dart';
 
+/// Dialog presenting the daily mystery chest unlock ceremony with celebratory animations.
 class MysteryChestDialog extends StatefulWidget {
+  /// Creates a [MysteryChestDialog].
   const MysteryChestDialog({super.key});
 
   @override

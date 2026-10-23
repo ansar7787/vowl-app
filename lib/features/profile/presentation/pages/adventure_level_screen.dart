@@ -28,7 +28,9 @@ class _LocalPalette {
   static const Color color1d4ed8 = Color(0xFF1D4ED8);
 }
 
+/// Screen displaying adventure level milestones, progression tiers, and rewards.
 class AdventureLevelScreen extends StatelessWidget {
+  /// Creates an [AdventureLevelScreen].
   const AdventureLevelScreen({super.key});
 
   @override

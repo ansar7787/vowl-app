@@ -16,15 +16,20 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/pedagogical_blueprint.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
+/// Adaptive smart mix widget assembling a personalized pedagogical session based on user gaps.
 class AdaptiveSmartMixWidget extends StatefulWidget {
+  /// Current authenticated [user] entity.
+  final UserEntity user;
+
+  /// Target learning category identifier.
+  final String categoryId;
+
+  /// Creates an [AdaptiveSmartMixWidget] for [user] and [categoryId].
   const AdaptiveSmartMixWidget({
     super.key,
     required this.user,
     required this.categoryId,
   });
-
-  final UserEntity user;
-  final String categoryId;
 
   @override
   State<AdaptiveSmartMixWidget> createState() => _AdaptiveSmartMixWidgetState();

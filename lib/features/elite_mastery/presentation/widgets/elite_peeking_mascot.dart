@@ -20,6 +20,7 @@ import '../bloc/elite_mastery_bloc.dart';
 /// the player's mascot identifier changes (account switch), not on every
 /// auth-state update.
 class ElitePeekingMascot extends StatelessWidget {
+  /// Current state of the elite mastery game.
   final EliteMasteryState state;
 
   /// Lives remaining — controls which motivational message is shown.
@@ -31,6 +32,7 @@ class ElitePeekingMascot extends StatelessWidget {
   /// Result of the last answer, or `null` if no answer submitted yet.
   final bool? isCorrect;
 
+  /// Creates an [ElitePeekingMascot].
   const ElitePeekingMascot({
     super.key,
     required this.state,

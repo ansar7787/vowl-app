@@ -64,9 +64,12 @@ class _VowlCardPalette {
   }
 }
 
+/// Daily motivation card presenting linguistic tips, calendar trivia, and streak affirmations.
 class DailyMotivationCard extends StatefulWidget {
+  /// Current consecutive day streak tally.
   final int streakCount;
 
+  /// Creates a [DailyMotivationCard] for [streakCount].
   const DailyMotivationCard({super.key, required this.streakCount});
 
   @override

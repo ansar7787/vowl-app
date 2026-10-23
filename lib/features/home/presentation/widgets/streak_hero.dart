@@ -10,9 +10,12 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// Hero banner widget featuring an animated flame icon and streak countdown timer.
 class StreakHero extends StatelessWidget {
+  /// Current authenticated [user] entity.
   final UserEntity user;
 
+  /// Creates a [StreakHero] banner for [user].
   const StreakHero({super.key, required this.user});
 
   static String _getTimeRemaining(BuildContext context) {

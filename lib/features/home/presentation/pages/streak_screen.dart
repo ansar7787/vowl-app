@@ -24,7 +24,9 @@ class _LocalPalette {
   static const Color color38bdf8 = Color(0xFF38BDF8);
 }
 
+/// Streak hub screen tracking continuous learning habits, freezes, and milestone rewards.
 class StreakScreen extends StatefulWidget {
+  /// Creates a [StreakScreen].
   const StreakScreen({super.key});
 
   @override

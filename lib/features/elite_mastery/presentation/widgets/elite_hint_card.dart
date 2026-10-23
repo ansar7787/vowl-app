@@ -6,12 +6,21 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/hint_utility.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Expandable card component displaying pedagogical hints and clue reveals.
 class EliteHintCard extends StatelessWidget {
+  /// Pedagogical hint content to display.
   final String? hintText;
+
+  /// Whether the card has been expanded to reveal the hint text.
   final bool isVisible;
+
+  /// Callback executed when tapping to unlock or show the hint.
   final VoidCallback onShowHint;
+
+  /// Primary accent color applied to icons and card borders.
   final Color primaryColor;
 
+  /// Creates an [EliteHintCard].
   const EliteHintCard({
     super.key,
     required this.hintText,

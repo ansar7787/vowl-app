@@ -6,11 +6,16 @@ import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
+/// Circular avatar component enclosed in a ring indicating mastery progress.
 class MasteryAvatar extends StatelessWidget {
-  const MasteryAvatar({super.key, required this.user, required this.progress});
-
+  /// Current authenticated [user] entity.
   final UserEntity user;
+
+  /// Progress fraction (0.0 to 1.0) shown by the indicator ring.
   final double progress;
+
+  /// Creates a [MasteryAvatar] for [user] with [progress].
+  const MasteryAvatar({super.key, required this.user, required this.progress});
 
   @override
   Widget build(BuildContext context) {
