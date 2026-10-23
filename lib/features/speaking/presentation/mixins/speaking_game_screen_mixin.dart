@@ -4,8 +4,10 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 
+/// Mixin managing lifecycle, state subscriptions, and game updates for speaking screens.
 mixin SpeakingGameScreenMixin<T extends StatefulWidget>
     on State<T>, GameScreenMixin<T> {
+  /// Initializes the speaking game session and dispatches quest fetch.
   void initSpeakingGame() {
     final current = context.read<SpeakingBloc>().state;
     if (current is SpeakingLoaded) {
@@ -21,10 +23,12 @@ mixin SpeakingGameScreenMixin<T extends StatefulWidget>
     );
   }
 
+  /// Cleans up state variables and game controllers upon screen disposal.
   void disposeSpeakingGame() {
     disposeGame();
   }
 
+  /// Determines whether incoming [SpeakingBloc] state transitions require a UI rebuild.
   bool speakingListenWhen(SpeakingState prev, SpeakingState curr) {
     if (curr is SpeakingGameComplete && prev is! SpeakingGameComplete) {
       return true;
@@ -49,6 +53,7 @@ mixin SpeakingGameScreenMixin<T extends StatefulWidget>
     return false;
   }
 
+  /// Handles incoming [state] emissions from [SpeakingBloc].
   void onSpeakingStateChanged(BuildContext context, SpeakingState state) {
     if (state is SpeakingLoaded) {
       handleStateUpdate(
@@ -67,6 +72,7 @@ mixin SpeakingGameScreenMixin<T extends StatefulWidget>
     }
   }
 
+  /// Submits an incorrect spoken evaluation and records error telemetry.
   void submitWrongAnswer({required GameQuest quest, String? userAnswer}) {
     if (isAnsweredNotifier.value) return;
     submitSharedWrongAnswer(quest: quest, userAnswer: userAnswer);

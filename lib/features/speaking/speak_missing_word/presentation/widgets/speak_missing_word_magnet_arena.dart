@@ -7,17 +7,36 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/vortex_painter.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Interactive magnet arena arranging floating candidate word tokens around an attractor center.
 class SpeakMissingWordMagnetArena extends StatelessWidget {
+  /// Candidate option tokens.
   final List<String> dynamicOptions;
+
+  /// Currently selected word, if any.
   final String? selectedWord;
+
+  /// Gravitational pull force fraction.
   final double pullForce;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Animation controller driving the rotating vortex particles.
   final AnimationController vortexController;
+
+  /// Callback executed when dragging/pulling a word token starts.
   final Function(String) onPullStart;
+
+  /// Callback executed when releasing a dragged token.
   final VoidCallback onPullEnd;
+
+  /// Callback executed when tapping a candidate word token.
   final Function(String) onTap;
 
+  /// Creates a [SpeakMissingWordMagnetArena].
   const SpeakMissingWordMagnetArena({
     super.key,
     required this.dynamicOptions,

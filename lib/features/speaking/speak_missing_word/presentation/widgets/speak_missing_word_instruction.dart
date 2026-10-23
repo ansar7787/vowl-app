@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Header instruction pill and prompt text for missing word speaking exercises.
 class SpeakMissingWordInstruction extends StatelessWidget {
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether the missing word candidate has been chosen and slotted.
   final bool isWordPlaced;
+
+  /// Pedagogical instruction prompt text.
   final String instruction;
 
+  /// Creates a [SpeakMissingWordInstruction].
   const SpeakMissingWordInstruction({
     super.key,
     required this.primaryColor,

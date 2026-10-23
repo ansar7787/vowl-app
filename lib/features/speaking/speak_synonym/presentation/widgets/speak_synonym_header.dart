@@ -2,10 +2,15 @@ import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Header instruction banner and challenge pill for speak synonym exercises.
 class SpeakSynonymHeader extends StatelessWidget {
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Specific pedagogical instruction text.
   final String? instruction;
 
+  /// Creates a [SpeakSynonymHeader].
   const SpeakSynonymHeader({
     super.key,
     required this.primaryColor,

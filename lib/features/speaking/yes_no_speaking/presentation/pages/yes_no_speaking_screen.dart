@@ -22,10 +22,15 @@ import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/yes_
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/yes_no_speaking_audition_card.dart';
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/yes_no_speaking_tilt_arena.dart';
 
+/// Rapid auditory judgment screen where users respond aloud with 'Yes' or 'No' to questions.
 class YesNoSpeakingScreen extends StatefulWidget {
+  /// Target curriculum difficulty level.
   final int level;
+
+  /// Speaking subgame variant identifier.
   final GameSubtype gameType;
 
+  /// Creates a [YesNoSpeakingScreen] for [level] and [gameType].
   const YesNoSpeakingScreen({
     super.key,
     required this.level,

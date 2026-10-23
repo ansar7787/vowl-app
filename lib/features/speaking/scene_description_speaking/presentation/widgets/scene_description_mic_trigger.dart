@@ -10,16 +10,33 @@ class _LocalPalette {
   static const Color color928dab = Color(0xFF928DAB);
 }
 
+/// Push-to-talk microphone trigger button for scene description spoken recordings.
 class SceneDescriptionMicTrigger extends StatelessWidget {
+  /// Whether microphone recording is actively listening.
   final bool isListening;
+
+  /// Index of the currently focused scenic hotspot.
   final int activeHotspot;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Callback executed when press gesture begins.
   final VoidCallback onLongPressStart;
+
+  /// Callback executed when press gesture releases.
   final VoidCallback onLongPressEnd;
+
+  /// Number of incorrect recording attempts made.
   final int attempts;
+
+  /// Whether user submission has been locked in.
   final bool isAnswered;
 
+  /// Creates a [SceneDescriptionMicTrigger].
   const SceneDescriptionMicTrigger({
     super.key,
     required this.isListening,

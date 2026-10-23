@@ -10,13 +10,25 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 /// Displays a contextual speech bubble + animated mascot character.
 /// The speech bubble text is exposed to screen readers via [Semantics].
 class SpeakingPeekingMascot extends StatelessWidget {
+  /// Current state of the speaking game.
   final SpeakingState state;
+
+  /// Remaining lives count.
   final int lives;
+
+  /// Whether the submitted response was evaluated as correct.
   final bool? isCorrect;
+
+  /// Whether the user has submitted their answer.
   final bool isAnswered;
+
+  /// Companion mascot identifier.
   final String mascotId;
+
+  /// Display name of the active companion mascot.
   final String mascotName;
 
+  /// Creates a [SpeakingPeekingMascot] widget.
   const SpeakingPeekingMascot({
     super.key,
     required this.state,

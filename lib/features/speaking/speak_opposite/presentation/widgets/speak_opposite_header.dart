@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction header pill and badge for speak opposite challenges.
 class SpeakOppositeHeader extends StatelessWidget {
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Specific pedagogical instruction text.
   final String? instruction;
 
+  /// Creates a [SpeakOppositeHeader].
   const SpeakOppositeHeader({
     super.key,
     required this.primaryColor,

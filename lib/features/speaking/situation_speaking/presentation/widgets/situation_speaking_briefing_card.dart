@@ -13,15 +13,30 @@ class _LocalPalette {
   static const Color color0f0f1d = Color(0xFF0F0F1D);
 }
 
+/// Contextual mission briefing card rendering situational dialogue and objectives.
 class SituationSpeakingBriefingCard extends StatefulWidget {
+  /// Active speaking quest containing the situation scenario.
   final SpeakingQuest quest;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether user submission has been locked in.
   final bool isAnswered;
+
+  /// Whether a pedagogical hint has been unlocked.
   final bool hintUsed;
+
+  /// Callback invoked when typing/reading briefing finishes.
   final VoidCallback onBriefingComplete;
+
+  /// Callback executed to play pronunciation TTS audio.
   final VoidCallback onPlayTts;
 
+  /// Creates a [SituationSpeakingBriefingCard].
   const SituationSpeakingBriefingCard({
     super.key,
     required this.quest,

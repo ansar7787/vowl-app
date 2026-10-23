@@ -44,18 +44,37 @@ const String _kSpeakingMasterBadge = 'speaking_master';
 // SpeakingBloc
 // =============================================================================
 
+/// BLoC managing oral challenge progression, pronunciation evaluation, lives, and rewards.
 class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
+  /// Use case fetching speaking quests for a subgame mode and level.
   final GetSpeakingQuest getQuest;
+
+  /// Use case modifying user coin balances.
   final UpdateUserCoins updateUserCoins;
+
+  /// Use case persisting rewards (XP, gems) upon session completion.
   final UpdateUserRewards updateUserRewards;
+
+  /// Use case updating category mastery statistics.
   final UpdateCategoryStats updateCategoryStats;
+
+  /// Use case unlocking progression levels upon success.
   final UpdateUnlockedLevel updateUnlockedLevel;
+
+  /// Use case granting achievement badges.
   final AwardBadge awardBadge;
+
+  /// Sound playback service for acoustic cues.
   final SoundService soundService;
+
+  /// Haptic feedback service.
   final HapticService hapticService;
+
+  /// Use case verifying and consuming hints.
   final UseHint useHint;
   final AppLogger _logger;
 
+  /// Creates a [SpeakingBloc] with required services and use cases.
   SpeakingBloc({
     required this.getQuest,
     required this.updateUserCoins,

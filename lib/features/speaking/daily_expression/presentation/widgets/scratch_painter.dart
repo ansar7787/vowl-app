@@ -2,11 +2,18 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter rendering a metallic scratch-off foil coating with dynamic erase masks.
 class ScratchPainter extends CustomPainter {
+  /// Completion progress fraction (0.0 to 1.0) of the scratch effect.
   final double progress;
+
+  /// Shimmer animation timeline value.
   final double time;
+
+  /// Primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [ScratchPainter].
   ScratchPainter({
     required this.progress,
     required this.time,

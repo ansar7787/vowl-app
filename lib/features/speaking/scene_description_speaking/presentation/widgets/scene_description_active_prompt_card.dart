@@ -7,12 +7,21 @@ class _LocalPalette {
   static const Color color0f0f1a = Color(0xFF0F0F1A);
 }
 
+/// Prompt card displaying the focused scenic hotspot item to describe orally.
 class SceneDescriptionActivePromptCard extends StatelessWidget {
+  /// Index of the active environmental hotspot.
   final int activeHotspot;
+
+  /// Prompt text describing the element to verbalize.
   final String activePrompt;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [SceneDescriptionActivePromptCard].
   const SceneDescriptionActivePromptCard({
     super.key,
     required this.activeHotspot,

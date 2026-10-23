@@ -7,10 +7,15 @@ import 'package:vowl/features/speaking/data/datasources/speaking_remote_data_sou
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/features/speaking/domain/repositories/speaking_repository.dart';
 
+/// Implementation of [SpeakingRepository] handling quest data coordination and offline failures.
 class SpeakingRepositoryImpl implements SpeakingRepository {
+  /// Remote data source providing speaking quests.
   final SpeakingRemoteDataSource remoteDataSource;
+
+  /// Network connectivity status monitor.
   final NetworkInfo networkInfo;
 
+  /// Creates a [SpeakingRepositoryImpl] with [remoteDataSource] and [networkInfo].
   SpeakingRepositoryImpl({
     required this.remoteDataSource,
     required this.networkInfo,

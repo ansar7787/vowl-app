@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Header pill and instruction block for repeat sentence exercises.
 class RepeatSentenceInstruction extends StatelessWidget {
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Specific pedagogical instruction text.
   final String instruction;
 
+  /// Creates a [RepeatSentenceInstruction].
   const RepeatSentenceInstruction({
     super.key,
     required this.primaryColor,

@@ -4,10 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
+/// Telemetry card rendering speech transcription feedback and acoustic analysis.
 class SceneDescriptionTelemetryCard extends StatelessWidget {
+  /// Transcribed speech feedback string.
   final String spokenText;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [SceneDescriptionTelemetryCard].
   const SceneDescriptionTelemetryCard({
     super.key,
     required this.spokenText,

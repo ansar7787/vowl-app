@@ -7,9 +7,12 @@ class _LocalPalette {
   static const Color color131326 = Color(0xFF131326);
 }
 
+/// Guide banner instructing users how to select scenic items to describe.
 class SceneDescriptionExplorerGuideCard extends StatelessWidget {
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [SceneDescriptionExplorerGuideCard].
   const SceneDescriptionExplorerGuideCard({super.key, required this.isDark});
 
   @override

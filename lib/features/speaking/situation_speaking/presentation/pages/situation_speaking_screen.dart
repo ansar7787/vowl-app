@@ -20,10 +20,15 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_header.dart';
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_briefing_card.dart';
 
+/// Situational speaking screen placing users into contextual roleplay scenarios requiring spoken responses.
 class SituationSpeakingScreen extends StatefulWidget {
+  /// Target curriculum difficulty level.
   final int level;
+
+  /// Speaking subgame variant identifier.
   final GameSubtype gameType;
 
+  /// Creates a [SituationSpeakingScreen] for [level] and [gameType].
   const SituationSpeakingScreen({
     super.key,
     required this.level,

@@ -7,11 +7,18 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/audio_recording_service.dart';
 
+/// Sentence card highlighting target phonemes with interactive word-level pronunciation.
 class PronunciationFocusHighlightedSentence extends StatelessWidget {
+  /// Active speaking quest entity.
   final SpeakingQuest quest;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [PronunciationFocusHighlightedSentence].
   const PronunciationFocusHighlightedSentence({
     super.key,
     required this.quest,

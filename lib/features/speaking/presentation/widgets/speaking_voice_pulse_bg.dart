@@ -7,8 +7,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 /// Purely decorative — wrapped in [ExcludeSemantics] so screen readers
 /// skip it entirely.
 class SpeakingVoicePulseBg extends StatelessWidget {
+  /// Theme color applied to the ambient radiant glow.
   final Color color;
 
+  /// Creates a [SpeakingVoicePulseBg] with [color].
   const SpeakingVoicePulseBg({super.key, required this.color});
 
   @override

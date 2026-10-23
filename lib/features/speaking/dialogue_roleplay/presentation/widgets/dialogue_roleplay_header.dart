@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction header pill at the top of the dialogue roleplay game screen.
 class DialogueRoleplayHeader extends StatelessWidget {
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Instruction text describing the conversational role.
   final String instruction;
 
+  /// Creates a [DialogueRoleplayHeader].
   const DialogueRoleplayHeader({
     super.key,
     required this.primaryColor,

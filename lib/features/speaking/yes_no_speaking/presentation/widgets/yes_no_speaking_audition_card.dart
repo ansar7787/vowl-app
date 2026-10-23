@@ -9,12 +9,21 @@ class _LocalPalette {
   static const Color color1e1e2c = Color(0xFF1E1E2C);
 }
 
+/// Audition question card presenting the statement or query for yes/no evaluation.
 class YesNoSpeakingAuditionCard extends StatelessWidget {
+  /// Active speaking quest entity.
   final SpeakingQuest quest;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Callback executed to trigger question speech audio.
   final VoidCallback onPlayTts;
 
+  /// Creates a [YesNoSpeakingAuditionCard].
   const YesNoSpeakingAuditionCard({
     super.key,
     required this.quest,
