@@ -295,15 +295,12 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
     final result = await useHint(NoParams());
 
     // Re-read state after the async boundary to avoid applying a stale snapshot.
-    result.fold(
-      (_) {
-        if (state is GrammarLoaded) {
-          emit((state as GrammarLoaded).copyWith(hintUsed: false));
-        }
-        hapticService.error();
-      },
-      (_) {},
-    );
+    result.fold((_) {
+      if (state is GrammarLoaded) {
+        emit((state as GrammarLoaded).copyWith(hintUsed: false));
+      }
+      hapticService.error();
+    }, (_) {});
   }
 
   void _onRestoreLife(RestoreLife event, Emitter<GrammarState> emit) {

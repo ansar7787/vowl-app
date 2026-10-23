@@ -293,13 +293,22 @@ void main() {
         await pumpPartsOfSpeech(tester);
 
         expect(find.byType(SpeechInstruction), findsOneWidget);
-        expect(find.byKey(const ValueKey('speech_instruction')), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('speech_instruction')),
+          findsOneWidget,
+        );
         expect(find.text('CLASSIFY THE PART OF SPEECH'), findsOneWidget);
 
         expect(find.byType(SpeechContextCard), findsOneWidget);
-        expect(find.byKey(const ValueKey('speech_context_card')), findsOneWidget);
         expect(
-          find.text('The quick brown fox jumps over the lazy dog.', findRichText: true),
+          find.byKey(const ValueKey('speech_context_card')),
+          findsOneWidget,
+        );
+        expect(
+          find.text(
+            'The quick brown fox jumps over the lazy dog.',
+            findRichText: true,
+          ),
           findsWidgets,
         );
 
@@ -315,31 +324,36 @@ void main() {
         expect(find.text('ADVERB'), findsOneWidget);
 
         expect(find.byType(SpeechDraggableWord), findsOneWidget);
-        expect(find.byKey(const ValueKey('speech_draggable_word')), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('speech_draggable_word')),
+          findsOneWidget,
+        );
         expect(find.text('quick'), findsOneWidget);
       },
     );
 
-    testWidgets(
-      '2. hides grammar rule box when quest.grammarRule is null',
-      (tester) async {
-        final stateWithoutRule = GrammarLoaded(
-          quests: const [testQuestNoun],
-          currentIndex: 0,
-          livesRemaining: 3,
-          answerStatus: AnswerStatus.unanswered,
-          hintUsed: false,
-          wrongCount: 0,
-          isFinalFailure: false,
-        );
+    testWidgets('2. hides grammar rule box when quest.grammarRule is null', (
+      tester,
+    ) async {
+      final stateWithoutRule = GrammarLoaded(
+        quests: const [testQuestNoun],
+        currentIndex: 0,
+        livesRemaining: 3,
+        answerStatus: AnswerStatus.unanswered,
+        hintUsed: false,
+        wrongCount: 0,
+        isFinalFailure: false,
+      );
 
-        await pumpPartsOfSpeech(tester, state: stateWithoutRule);
+      await pumpPartsOfSpeech(tester, state: stateWithoutRule);
 
-        expect(find.byKey(const ValueKey('grammar_rule_box')), findsNothing);
-        expect(find.byKey(const ValueKey('speech_context_card')), findsOneWidget);
-        expect(find.text('Honesty is the best policy.', findRichText: true), findsWidgets);
-      },
-    );
+      expect(find.byKey(const ValueKey('grammar_rule_box')), findsNothing);
+      expect(find.byKey(const ValueKey('speech_context_card')), findsOneWidget);
+      expect(
+        find.text('Honesty is the best policy.', findRichText: true),
+        findsWidgets,
+      );
+    });
 
     testWidgets(
       '3. renders quest transformations wrap inside context card when present',
@@ -384,29 +398,26 @@ void main() {
       },
     );
 
-    testWidgets(
-      '5. tapping word chip toggles selection state',
-      (tester) async {
-        await pumpPartsOfSpeech(tester);
+    testWidgets('5. tapping word chip toggles selection state', (tester) async {
+      await pumpPartsOfSpeech(tester);
 
-        final wordChip = find.byKey(const ValueKey('speech_draggable_word'));
-        expect(wordChip, findsOneWidget);
+      final wordChip = find.byKey(const ValueKey('speech_draggable_word'));
+      expect(wordChip, findsOneWidget);
 
-        // Tap once to select
-        await tester.tap(wordChip);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 200));
+      // Tap once to select
+      await tester.tap(wordChip);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 200));
 
-        verify(() => mockHapticService.selection()).called(1);
+      verify(() => mockHapticService.selection()).called(1);
 
-        // Tap again to unselect
-        await tester.tap(wordChip);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 200));
+      // Tap again to unselect
+      await tester.tap(wordChip);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 200));
 
-        verify(() => mockHapticService.selection()).called(1);
-      },
-    );
+      verify(() => mockHapticService.selection()).called(1);
+    });
 
     testWidgets(
       '6. direct tap: tapping word then tapping correct vortex dispatches SubmitAnswer(true)',
@@ -574,7 +585,10 @@ void main() {
 
         await pumpPartsOfSpeech(tester, state: answeredState);
 
-        expect(find.byKey(const ValueKey('speech_draggable_word')), findsNothing);
+        expect(
+          find.byKey(const ValueKey('speech_draggable_word')),
+          findsNothing,
+        );
       },
     );
 
@@ -584,7 +598,10 @@ void main() {
         await pumpPartsOfSpeech(tester, state: const GrammarInitial());
 
         expect(find.byType(GameShimmerLoading), findsOneWidget);
-        expect(find.byKey(const ValueKey('speech_draggable_word')), findsNothing);
+        expect(
+          find.byKey(const ValueKey('speech_draggable_word')),
+          findsNothing,
+        );
       },
     );
 
@@ -606,18 +623,17 @@ void main() {
       },
     );
 
-    testWidgets(
-      '15. level 1 briefing dialog displays for first-time user',
-      (tester) async {
-        SharedPreferences.setMockInitialValues({
-          'has_seen_briefing_partsOfSpeech': false,
-        });
+    testWidgets('15. level 1 briefing dialog displays for first-time user', (
+      tester,
+    ) async {
+      SharedPreferences.setMockInitialValues({
+        'has_seen_briefing_partsOfSpeech': false,
+      });
 
-        await pumpPartsOfSpeech(tester, level: 1);
+      await pumpPartsOfSpeech(tester, level: 1);
 
-        expect(find.byType(GameBriefingLayer), findsOneWidget);
-      },
-    );
+      expect(find.byType(GameBriefingLayer), findsOneWidget);
+    });
 
     testWidgets(
       '16. reduced motion: lowAnimationModeOverride gates infinite vortex rotation and draggable scale animation',
@@ -626,7 +642,10 @@ void main() {
         await pumpPartsOfSpeech(tester);
 
         expect(find.byType(PartsOfSpeechScreen), findsOneWidget);
-        expect(find.byKey(const ValueKey('speech_draggable_word')), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('speech_draggable_word')),
+          findsOneWidget,
+        );
         expect(tester.takeException(), isNull);
       },
     );
@@ -651,35 +670,112 @@ void main() {
       },
     );
 
-    testWidgets(
-      '19. dark mode renders correctly with dark theme styling',
-      (tester) async {
-        await pumpPartsOfSpeech(tester, themeMode: ThemeMode.dark);
+    testWidgets('19. dark mode renders correctly with dark theme styling', (
+      tester,
+    ) async {
+      await pumpPartsOfSpeech(tester, themeMode: ThemeMode.dark);
 
-        expect(find.byType(PartsOfSpeechScreen), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
+      expect(find.byType(PartsOfSpeechScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('20. final failure state displays game over layout cleanly', (
+      tester,
+    ) async {
+      final failedState = GrammarLoaded(
+        quests: const [testQuest1],
+        currentIndex: 0,
+        livesRemaining: 0,
+        answerStatus: AnswerStatus.incorrect,
+        hintUsed: false,
+        wrongCount: 3,
+        isFinalFailure: true,
+      );
+
+      await pumpPartsOfSpeech(tester, state: failedState);
+
+      expect(find.byType(PartsOfSpeechScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
 
     testWidgets(
-      '20. final failure state displays game over layout cleanly',
+      '21. instruction text is center aligned, wraps without ellipses, and replaces robotic text',
       (tester) async {
-        final failedState = GrammarLoaded(
-          quests: const [testQuest1],
-          currentIndex: 0,
-          livesRemaining: 0,
-          answerStatus: AnswerStatus.incorrect,
-          hintUsed: false,
-          wrongCount: 3,
-          isFinalFailure: true,
+        const roboticQuest = GrammarQuest(
+          id: 'pos_robotic',
+          instruction: 'IDENTIFY THE FUNCTION',
+          difficulty: 1,
+          subtype: GameSubtype.partsOfSpeech,
+          sentence: 'The dog barked loudly.',
+          targetWord: 'loudly',
+          options: ['Noun', 'Verb', 'Adj', 'Adv'],
+          correctAnswerIndex: 3,
         );
 
-        await pumpPartsOfSpeech(tester, state: failedState);
+        final roboticState = GrammarLoaded(
+          quests: const [roboticQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
 
-        expect(find.byType(PartsOfSpeechScreen), findsOneWidget);
-        expect(tester.takeException(), isNull);
+        await pumpPartsOfSpeech(tester, state: roboticState);
+
+        // Buzzword/robotic instruction replaced with natural text
+        expect(find.text('Choose the correct part of speech'), findsOneWidget);
+
+        // Verify Text widget properties: center aligned and no ellipsis
+        final instructionTextFinder = find.descendant(
+          of: find.byType(SpeechInstruction),
+          matching: find.byType(Text),
+        );
+        expect(instructionTextFinder, findsOneWidget);
+        final instructionText = tester.widget<Text>(instructionTextFinder);
+        expect(instructionText.textAlign, TextAlign.center);
+        expect(instructionText.overflow, isNot(TextOverflow.ellipsis));
       },
     );
+
+    testWidgets('22. grammar rule displays without ellipses and wraps cleanly', (
+      tester,
+    ) async {
+      const longRuleQuest = GrammarQuest(
+        id: 'pos_long_rule',
+        instruction: 'CLASSIFY THE PART OF SPEECH',
+        difficulty: 1,
+        subtype: GameSubtype.partsOfSpeech,
+        sentence: 'She sings every morning.',
+        targetWord: 'sings',
+        options: ['Noun', 'Verb', 'Adj', 'Adv'],
+        correctAnswerIndex: 1,
+        grammarRule:
+            'Action verbs express physical or mental actions taken by the subject of a clause.',
+      );
+
+      final longRuleState = GrammarLoaded(
+        quests: const [longRuleQuest],
+        currentIndex: 0,
+        livesRemaining: 3,
+        answerStatus: AnswerStatus.unanswered,
+        hintUsed: false,
+        wrongCount: 0,
+        isFinalFailure: false,
+      );
+
+      await pumpPartsOfSpeech(tester, state: longRuleState);
+
+      final ruleTextFinder = find.descendant(
+        of: find.byKey(const ValueKey('grammar_rule_box')),
+        matching: find.byType(Text),
+      );
+      expect(ruleTextFinder, findsOneWidget);
+      final ruleText = tester.widget<Text>(ruleTextFinder);
+      expect(ruleText.textAlign, TextAlign.center);
+      expect(ruleText.overflow, isNot(TextOverflow.ellipsis));
+      expect(ruleText.maxLines, isNull);
+    });
   });
 }
-

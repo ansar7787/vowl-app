@@ -39,10 +39,12 @@ class GrammarInstruction extends StatelessWidget {
             Flexible(
               child: Text(
                 instruction,
+                textAlign: TextAlign.center,
+                softWrap: true,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
-                  fontWeight: FontWeight.w700,
+                  fontWeight: FontWeight.w600,
                   color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),

@@ -101,10 +101,7 @@ void main() {
     explanation:
         "'Walk' backshifts to 'walked', and 'I' becomes 'she' because Maria is the speaker being reported.",
     grammarRule: 'Tense Backshift',
-    changesList: [
-      "'walk' → 'walked'",
-      "'I' → 'she'",
-    ],
+    changesList: ["'walk' → 'walked'", "'I' → 'she'"],
   );
 
   const testQuestNoRules = GrammarQuest(
@@ -131,16 +128,11 @@ void main() {
     question: 'Convert to reported speech: Sara said, "I can swim."',
     sentence: 'Sara said, "I can swim."',
     sentenceWithBlank: 'Sara said, "I can swim."',
-    options: [
-      'Sara said that she could swim.',
-      'Sara said that she can swim.',
-    ],
+    options: ['Sara said that she could swim.', 'Sara said that she can swim.'],
     correctAnswerIndex: 0,
     correctAnswer: 'Sara said that she could swim.',
     grammarRule: 'Modal Shift',
-    changesList: [
-      'can -> could',
-    ],
+    changesList: ['can -> could'],
   );
 
   const testQuestSentenceFallback = GrammarQuest(
@@ -149,10 +141,7 @@ void main() {
     difficulty: 1,
     subtype: GameSubtype.directIndirectSpeech,
     prompt: 'Direct speech: He shouted, "Help me!"',
-    options: [
-      'He shouted to help him.',
-      'He shouted to help me.',
-    ],
+    options: ['He shouted to help him.', 'He shouted to help me.'],
     correctAnswerIndex: 0,
     correctAnswer: 'He shouted to help him.',
   );
@@ -316,241 +305,278 @@ void main() {
   }
 
   group('DirectIndirectSpeechScreen Layout & Mechanics', () {
-    testWidgets('1. renders initial quest with instruction, mirror, rule box, and reflection chips', (tester) async {
-      await pumpDirectIndirectSpeech(tester);
+    testWidgets(
+      '1. renders initial quest with instruction, mirror, rule box, and reflection chips',
+      (tester) async {
+        await pumpDirectIndirectSpeech(tester);
 
-      expect(find.byType(DirectIndirectSpeechInstruction), findsOneWidget);
-      expect(find.text('TRANSFORM THE SPEECH'), findsOneWidget);
+        expect(find.byType(DirectIndirectSpeechInstruction), findsOneWidget);
+        expect(find.text('Transform the speech'), findsOneWidget);
 
-      expect(find.byType(DirectIndirectSpeechMirror), findsOneWidget);
-      expect(find.byKey(const ValueKey('speech_mirror')), findsOneWidget);
-      expect(find.text('DIRECT SPEECH'), findsOneWidget);
-      expect(find.text('Maria said, "I walk to school every day."'), findsOneWidget);
+        expect(find.byType(DirectIndirectSpeechMirror), findsOneWidget);
+        expect(find.byKey(const ValueKey('speech_mirror')), findsOneWidget);
+        expect(find.text('Direct Speech'), findsOneWidget);
+        expect(
+          find.text('Maria said, "I walk to school every day."'),
+          findsOneWidget,
+        );
 
-      expect(find.byKey(const ValueKey('rule_and_changes_box')), findsOneWidget);
-      expect(find.text('TENSE BACKSHIFT'), findsOneWidget);
-      expect(find.text("'walk'"), findsOneWidget);
-      expect(find.text("'walked'"), findsOneWidget);
-      expect(find.text("'I'"), findsOneWidget);
-      expect(find.text("'she'"), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('rule_and_changes_box')),
+          findsOneWidget,
+        );
+        expect(find.text('Tense Backshift'), findsOneWidget);
+        expect(find.text("'walk'"), findsOneWidget);
+        expect(find.text("'walked'"), findsOneWidget);
+        expect(find.text("'I'"), findsOneWidget);
+        expect(find.text("'she'"), findsOneWidget);
 
-      expect(find.byKey(const ValueKey('reflection_chip_0')), findsOneWidget);
-      expect(find.byKey(const ValueKey('reflection_chip_1')), findsOneWidget);
-      expect(find.byKey(const ValueKey('reflection_chip_2')), findsOneWidget);
-      expect(
-        find.text('Maria said that she walked to school every day.'),
-        findsOneWidget,
-      );
-    });
+        expect(find.byKey(const ValueKey('reflection_chip_0')), findsOneWidget);
+        expect(find.byKey(const ValueKey('reflection_chip_1')), findsOneWidget);
+        expect(find.byKey(const ValueKey('reflection_chip_2')), findsOneWidget);
+        expect(
+          find.text('Maria said that she walked to school every day.'),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('2. hides rule and changes box when both grammarRule and changesList are null', (tester) async {
-      final stateNoRules = GrammarLoaded(
-        quests: const [testQuestNoRules],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
+    testWidgets(
+      '2. hides rule and changes box when both grammarRule and changesList are null',
+      (tester) async {
+        final stateNoRules = GrammarLoaded(
+          quests: const [testQuestNoRules],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
 
-      await pumpDirectIndirectSpeech(tester, state: stateNoRules);
+        await pumpDirectIndirectSpeech(tester, state: stateNoRules);
 
-      expect(find.byKey(const ValueKey('rule_and_changes_box')), findsNothing);
-      expect(find.text('Tom said, "I like ice cream."'), findsOneWidget);
-      expect(find.text('Tom said that he liked ice cream.'), findsOneWidget);
-    });
+        expect(
+          find.byKey(const ValueKey('rule_and_changes_box')),
+          findsNothing,
+        );
+        expect(find.text('Tom said, "I like ice cream."'), findsOneWidget);
+        expect(find.text('Tom said that he liked ice cream.'), findsOneWidget);
+      },
+    );
 
-    testWidgets('3. correctly splits and renders changes using ascii arrow (->)', (tester) async {
-      final stateAscii = GrammarLoaded(
-        quests: const [testQuestAsciiArrow],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
+    testWidgets(
+      '3. correctly splits and renders changes using ascii arrow (->)',
+      (tester) async {
+        final stateAscii = GrammarLoaded(
+          quests: const [testQuestAsciiArrow],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
 
-      await pumpDirectIndirectSpeech(tester, state: stateAscii);
+        await pumpDirectIndirectSpeech(tester, state: stateAscii);
 
-      expect(find.byKey(const ValueKey('rule_and_changes_box')), findsOneWidget);
-      expect(find.text('MODAL SHIFT'), findsOneWidget);
-      expect(find.text('can'), findsOneWidget);
-      expect(find.text('could'), findsOneWidget);
-    });
+        expect(
+          find.byKey(const ValueKey('rule_and_changes_box')),
+          findsOneWidget,
+        );
+        expect(find.text('Modal Shift'), findsOneWidget);
+        expect(find.text('can'), findsOneWidget);
+        expect(find.text('could'), findsOneWidget);
+      },
+    );
 
-    testWidgets('4. renders shimmer loading when state is GrammarLoading', (tester) async {
+    testWidgets('4. renders shimmer loading when state is GrammarLoading', (
+      tester,
+    ) async {
       await pumpDirectIndirectSpeech(tester, state: const GrammarLoading());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
       expect(find.byType(DirectIndirectSpeechMirror), findsNothing);
     });
 
-    testWidgets('5. tapping incorrect reflection flips mirror and submits wrong answer', (tester) async {
-      await pumpDirectIndirectSpeech(tester);
+    testWidgets(
+      '5. tapping incorrect reflection flips mirror and submits wrong answer',
+      (tester) async {
+        await pumpDirectIndirectSpeech(tester);
 
-      final wrongChip = find.byKey(const ValueKey('reflection_chip_0'));
-      expect(wrongChip, findsOneWidget);
+        final wrongChip = find.byKey(const ValueKey('reflection_chip_0'));
+        expect(wrongChip, findsOneWidget);
 
-      await tester.tap(wrongChip);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 400));
+        await tester.tap(wrongChip);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 400));
 
-      verify(
-        () => mockGrammarBloc.add(
-          any(
-            that: isA<SubmitAnswer>().having(
-              (e) => e.isCorrect,
-              'isCorrect',
-              false,
+        verify(
+          () => mockGrammarBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
             ),
           ),
-        ),
-      ).called(1);
-    });
+        ).called(1);
+      },
+    );
 
-    testWidgets('6. tapping correct reflection flips mirror to REPORTED SPEECH and reveals TypeToConfirmOverlay', (tester) async {
-      await pumpDirectIndirectSpeech(tester);
+    testWidgets(
+      '6. tapping correct reflection flips mirror to REPORTED SPEECH and reveals TypeToConfirmOverlay',
+      (tester) async {
+        await pumpDirectIndirectSpeech(tester);
 
-      final correctChip = find.byKey(const ValueKey('reflection_chip_2'));
-      expect(correctChip, findsOneWidget);
+        final correctChip = find.byKey(const ValueKey('reflection_chip_2'));
+        expect(correctChip, findsOneWidget);
 
-      await tester.ensureVisible(correctChip);
-      await tester.pumpAndSettle();
+        await tester.ensureVisible(correctChip);
+        await tester.pumpAndSettle();
 
-      await tester.tap(correctChip);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(correctChip);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
 
-      expect(
-        find.byType(TypeToConfirmOverlay, skipOffstage: false),
-        findsOneWidget,
-      );
-    });
+        expect(
+          find.byType(TypeToConfirmOverlay, skipOffstage: false),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('7. Phase 2: typing correct indirect speech confirms and submits answer', (tester) async {
-      await pumpDirectIndirectSpeech(tester);
+    testWidgets(
+      '7. Phase 2: typing correct indirect speech confirms and submits answer',
+      (tester) async {
+        await pumpDirectIndirectSpeech(tester);
 
-      final correctChip = find.byKey(const ValueKey('reflection_chip_2'));
-      await tester.ensureVisible(correctChip);
-      await tester.pumpAndSettle();
+        final correctChip = find.byKey(const ValueKey('reflection_chip_2'));
+        await tester.ensureVisible(correctChip);
+        await tester.pumpAndSettle();
 
-      await tester.tap(correctChip);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(correctChip);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 600));
 
-      final textFieldFinder = find.byType(TextField);
-      await tester.ensureVisible(textFieldFinder);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
-      expect(textFieldFinder, findsOneWidget);
+        final textFieldFinder = find.byType(TextField);
+        await tester.ensureVisible(textFieldFinder);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+        expect(textFieldFinder, findsOneWidget);
 
-      await tester.enterText(
-        textFieldFinder,
-        'Maria said that she walked to school every day.',
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.enterText(
+          textFieldFinder,
+          'Maria said that she walked to school every day.',
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      final submitBtn = find.text('SUBMIT');
-      await tester.ensureVisible(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
-      expect(submitBtn, findsOneWidget);
+        final submitBtn = find.text('SUBMIT');
+        await tester.ensureVisible(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+        expect(submitBtn, findsOneWidget);
 
-      await tester.tap(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(
-        () => mockGrammarBloc.add(
-          any(
-            that: isA<SubmitAnswer>().having(
-              (e) => e.isCorrect,
-              'isCorrect',
-              true,
+        verify(
+          () => mockGrammarBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                true,
+              ),
             ),
           ),
-        ),
-      ).called(1);
-    });
+        ).called(1);
+      },
+    );
 
-    testWidgets('8. Phase 2: skipping confirm (after 3 failed attempts) dispatches wrong answer', (tester) async {
-      await pumpDirectIndirectSpeech(tester);
+    testWidgets(
+      '8. Phase 2: skipping confirm (after 3 failed attempts) dispatches wrong answer',
+      (tester) async {
+        await pumpDirectIndirectSpeech(tester);
 
-      final correctChip = find.byKey(const ValueKey('reflection_chip_2'));
-      await tester.ensureVisible(correctChip);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        final correctChip = find.byKey(const ValueKey('reflection_chip_2'));
+        await tester.ensureVisible(correctChip);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      await tester.tap(correctChip);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(correctChip);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 600));
 
-      final textFieldFinder = find.byType(TextField);
-      await tester.ensureVisible(textFieldFinder);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
-      expect(textFieldFinder, findsOneWidget);
+        final textFieldFinder = find.byType(TextField);
+        await tester.ensureVisible(textFieldFinder);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+        expect(textFieldFinder, findsOneWidget);
 
-      await tester.enterText(textFieldFinder, 'Wrong typed sentence');
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.enterText(textFieldFinder, 'Wrong typed sentence');
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      final submitBtn = find.text('SUBMIT');
-      await tester.ensureVisible(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        final submitBtn = find.text('SUBMIT');
+        await tester.ensureVisible(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Attempt 1 (ScaleButton 500ms debounce)
-      await tester.tap(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Attempt 1 (ScaleButton 500ms debounce)
+        await tester.tap(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Attempt 2
-      await tester.tap(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Attempt 2
+        await tester.tap(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Attempt 3
-      await tester.tap(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Attempt 3
+        await tester.tap(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      final continueBtn = find.text('CONTINUE').last;
-      await tester.ensureVisible(continueBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
-      expect(continueBtn, findsOneWidget);
+        final continueBtn = find.text('CONTINUE').last;
+        await tester.ensureVisible(continueBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+        expect(continueBtn, findsOneWidget);
 
-      await tester.tap(continueBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 400));
+        await tester.tap(continueBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 400));
 
-      verify(
-        () => mockGrammarBloc.add(
-          any(
-            that: isA<SubmitAnswer>().having(
-              (e) => e.isCorrect,
-              'isCorrect',
-              false,
+        verify(
+          () => mockGrammarBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
             ),
           ),
-        ),
-      ).called(1);
-    });
+        ).called(1);
+      },
+    );
 
-    testWidgets('9. interacting when already answered does nothing', (tester) async {
+    testWidgets('9. interacting when already answered does nothing', (
+      tester,
+    ) async {
       final answeredState = GrammarLoaded(
         quests: const [testQuest1, testQuestNoRules],
         currentIndex: 0,
@@ -573,52 +599,69 @@ void main() {
       verifyNever(() => mockGrammarBloc.add(any(that: isA<SubmitAnswer>())));
     });
 
-    testWidgets('10. tapping hint button dispatches GrammarHintUsed without double dispatch', (tester) async {
-      await pumpDirectIndirectSpeech(tester);
+    testWidgets(
+      '10. tapping hint button dispatches GrammarHintUsed without double dispatch',
+      (tester) async {
+        await pumpDirectIndirectSpeech(tester);
 
-      final hintButton = find.byType(QuestHintButton);
-      expect(hintButton, findsOneWidget);
+        final hintButton = find.byType(QuestHintButton);
+        expect(hintButton, findsOneWidget);
 
-      await tester.tap(hintButton);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(hintButton);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockGrammarBloc.add(const GrammarHintUsed())).called(1);
-    });
+        verify(() => mockGrammarBloc.add(const GrammarHintUsed())).called(1);
+      },
+    );
 
-    testWidgets('11. shows level 1 briefing dialog when not yet seen and dismisses', (tester) async {
-      SharedPreferences.setMockInitialValues({});
+    testWidgets(
+      '11. shows level 1 briefing dialog when not yet seen and dismisses',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({});
 
-      await pumpDirectIndirectSpeech(tester, level: 1);
+        await pumpDirectIndirectSpeech(tester, level: 1);
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
 
-      final commenceButton = find.text('COMMENCE QUEST');
-      if (commenceButton.evaluate().isNotEmpty) {
-        await tester.tap(commenceButton);
-      } else {
-        await tester.tap(find.byType(GameBriefingLayer));
-      }
-      await tester.pumpAndSettle();
+        final commenceButton = find.text('COMMENCE QUEST');
+        if (commenceButton.evaluate().isNotEmpty) {
+          await tester.tap(commenceButton);
+        } else {
+          await tester.tap(find.byType(GameBriefingLayer));
+        }
+        await tester.pumpAndSettle();
 
-      expect(find.text('Maria said, "I walk to school every day."'), findsOneWidget);
-    });
+        expect(
+          find.text('Maria said, "I walk to school every day."'),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('12. respects reduced motion when lowAnimationModeOverride is enabled', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = true;
-      await pumpDirectIndirectSpeech(tester);
-      expect(find.byType(DirectIndirectSpeechScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '12. respects reduced motion when lowAnimationModeOverride is enabled',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = true;
+        await pumpDirectIndirectSpeech(tester);
+        expect(find.byType(DirectIndirectSpeechScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('13. handles compact mobile layout (320x568) without overflow', (tester) async {
-      await pumpDirectIndirectSpeech(tester, width: 320, height: 568);
+    testWidgets(
+      '13. handles compact mobile layout (320x568) without overflow',
+      (tester) async {
+        await pumpDirectIndirectSpeech(tester, width: 320, height: 568);
 
-      expect(find.byType(DirectIndirectSpeechScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(DirectIndirectSpeechScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('14. handles tablet viewport (768x1024) without overflow', (tester) async {
+    testWidgets('14. handles tablet viewport (768x1024) without overflow', (
+      tester,
+    ) async {
       await pumpDirectIndirectSpeech(tester, width: 768, height: 1024);
 
       expect(find.byType(DirectIndirectSpeechScreen), findsOneWidget);
@@ -629,42 +672,50 @@ void main() {
       await pumpDirectIndirectSpeech(tester, themeMode: ThemeMode.dark);
 
       expect(find.byType(DirectIndirectSpeechScreen), findsOneWidget);
-      expect(find.text('Maria said, "I walk to school every day."'), findsOneWidget);
+      expect(
+        find.text('Maria said, "I walk to school every day."'),
+        findsOneWidget,
+      );
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('16. uses rawQuestion colon-split fallback when sentence is omitted', (tester) async {
-      final stateFallback = GrammarLoaded(
-        quests: const [testQuestSentenceFallback],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
+    testWidgets(
+      '16. uses rawQuestion colon-split fallback when sentence is omitted',
+      (tester) async {
+        final stateFallback = GrammarLoaded(
+          quests: const [testQuestSentenceFallback],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
 
-      await pumpDirectIndirectSpeech(tester, state: stateFallback);
+        await pumpDirectIndirectSpeech(tester, state: stateFallback);
 
-      expect(find.text('He shouted, Help me!'), findsOneWidget);
-    });
+        expect(find.text('He shouted, Help me!'), findsOneWidget);
+      },
+    );
 
-    testWidgets('17. renders final failure state with explanation and continue', (tester) async {
-      final failureState = GrammarLoaded(
-        quests: const [testQuest1, testQuestNoRules],
-        currentIndex: 0,
-        livesRemaining: 0,
-        answerStatus: AnswerStatus.incorrect,
-        hintUsed: false,
-        wrongCount: 3,
-        isFinalFailure: true,
-      );
+    testWidgets(
+      '17. renders final failure state with explanation and continue',
+      (tester) async {
+        final failureState = GrammarLoaded(
+          quests: const [testQuest1, testQuestNoRules],
+          currentIndex: 0,
+          livesRemaining: 0,
+          answerStatus: AnswerStatus.incorrect,
+          hintUsed: false,
+          wrongCount: 3,
+          isFinalFailure: true,
+        );
 
-      await pumpDirectIndirectSpeech(tester, state: failureState);
+        await pumpDirectIndirectSpeech(tester, state: failureState);
 
-      expect(find.byType(DirectIndirectSpeechScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(DirectIndirectSpeechScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }
-

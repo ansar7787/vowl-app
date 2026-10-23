@@ -23,57 +23,61 @@ class SentenceCorrectionFeedback extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    String feedbackTitle = "GLITCH RESOLUTION";
+    String feedbackTitle = "CORRECTION";
     String feedbackMessage = "Correction: $correction";
 
     if (!wasWordSelectionCorrect) {
-      feedbackTitle = "WRONG DIAGNOSIS";
+      feedbackTitle = "INCORRECT WORD";
       if (incorrectPart != null) {
         feedbackMessage =
-            "The incorrect word was '$incorrectPart'. It should be '$correction'.";
+            "The incorrect word is '$incorrectPart'. The correct word is '$correction'.";
       } else {
         feedbackMessage =
-            "You selected the wrong word to repair. The correct repair is '$correction'.";
+            "That word is correct. The correct word is '$correction'.";
       }
     } else if (!wasOptionSelectionCorrect) {
-      feedbackTitle = "WRONG REPAIR OPTION";
+      feedbackTitle = "INCORRECT REPLACEMENT";
       feedbackMessage =
-          "You found the glitch, but chose the wrong repair! It should be '$correction'.";
+          "You found the incorrect word, but the right correction is '$correction'.";
     } else {
-      feedbackTitle = "TYPING ERROR";
+      feedbackTitle = "SPELLING ERROR";
       feedbackMessage =
-          "You missed the confirmation spelling! The exact repair is '$correction'.";
+          "Check your spelling. The correct word is '$correction'.";
     }
 
     final feedback = Container(
       margin: EdgeInsets.symmetric(horizontal: 24.w),
-      padding: EdgeInsets.all(20.r),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
       decoration: BoxDecoration(
         color: tokens.gameIncorrect.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: tokens.gameIncorrect.withValues(alpha: 0.2)),
       ),
       child: Column(
         children: [
           Text(
             feedbackTitle,
+            textAlign: TextAlign.center,
+            softWrap: true,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w700,
               color: tokens.gameIncorrect,
-              letterSpacing: 1.5,
+              letterSpacing: 0.5,
             ),
           ),
           SizedBox(height: 8.h),
           Text(
             feedbackMessage,
             textAlign: TextAlign.center,
+            softWrap: true,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 16.sp,
+              fontSize: 14.5.sp,
               color: tokens.gameIncorrect,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
+              height: 1.4,
             ),
           ),
         ],

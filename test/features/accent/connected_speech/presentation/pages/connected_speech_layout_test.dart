@@ -166,8 +166,9 @@ void main() {
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
 
     when(() => mockAccentBloc.state).thenReturn(testLoadedState);
-    when(() => mockAccentBloc.stream)
-        .thenAnswer((_) => const Stream<AccentState>.empty());
+    when(
+      () => mockAccentBloc.stream,
+    ).thenAnswer((_) => const Stream<AccentState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -179,12 +180,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -214,7 +217,9 @@ void main() {
     ).thenAnswer((_) async {});
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/tmp/audio_test.m4a');
@@ -312,24 +317,25 @@ void main() {
       expect(find.byType(ShadowPlaybackCompare), findsNothing);
     });
 
-    testWidgets('tapping pulse speaker triggers TTS audio and selection haptics', (
-      tester,
-    ) async {
-      await pumpConnectedSpeech(tester);
+    testWidgets(
+      'tapping pulse speaker triggers TTS audio and selection haptics',
+      (tester) async {
+        await pumpConnectedSpeech(tester);
 
-      final speakerBtn = find.byKey(
-        const ValueKey('connected_speech_speaker'),
-      );
-      expect(speakerBtn, findsOneWidget);
+        final speakerBtn = find.byKey(
+          const ValueKey('connected_speech_speaker'),
+        );
+        expect(speakerBtn, findsOneWidget);
 
-      await tester.tap(speakerBtn);
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(speakerBtn);
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.selection()).called(1);
-      verify(
-        () => mockSoundService.playTts('The black cat crossed the street.'),
-      ).called(1);
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        verify(
+          () => mockSoundService.playTts('The black cat crossed the street.'),
+        ).called(1);
+      },
+    );
   });
 
   group('ConnectedSpeechScreen - Stage 1 Selection Flow', () {
@@ -367,10 +373,7 @@ void main() {
         verifyNever(() => mockAccentBloc.add(const SubmitAnswer(true)));
 
         // Scroll down to bring ShadowPlaybackCompare into viewport
-        await tester.drag(
-          find.byType(CustomScrollView),
-          const Offset(0, -600),
-        );
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
 
@@ -392,10 +395,7 @@ void main() {
         await tester.pump(const Duration(milliseconds: 600));
 
         // Scroll down to reveal ShadowPlaybackCompare
-        await tester.drag(
-          find.byType(CustomScrollView),
-          const Offset(0, -600),
-        );
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
 
@@ -423,10 +423,7 @@ void main() {
         await tester.pump(const Duration(milliseconds: 600));
 
         // Scroll down slightly more so comparison controls are centered
-        await tester.drag(
-          find.byType(CustomScrollView),
-          const Offset(0, -300),
-        );
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -300));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
 
@@ -459,10 +456,7 @@ void main() {
         await tester.pump(const Duration(milliseconds: 600));
 
         // Scroll down to reveal ShadowPlaybackCompare
-        await tester.drag(
-          find.byType(CustomScrollView),
-          const Offset(0, -600),
-        );
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
 
@@ -483,10 +477,7 @@ void main() {
         await tester.pump(const Duration(milliseconds: 600));
 
         // Scroll down slightly more so comparison controls are centered
-        await tester.drag(
-          find.byType(CustomScrollView),
-          const Offset(0, -300),
-        );
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -300));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
 
@@ -541,10 +532,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 600));
 
       // Scroll to ShadowPlaybackCompare
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -600),
-      );
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
@@ -563,10 +551,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 600));
 
       // Scroll down to center comparison buttons
-      await tester.drag(
-        find.byType(CustomScrollView),
-        const Offset(0, -300),
-      );
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -300));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
@@ -712,4 +697,3 @@ void main() {
     );
   });
 }
-

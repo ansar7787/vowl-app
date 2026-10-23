@@ -144,7 +144,9 @@ class SpeedVarianceTempoDial extends StatelessWidget {
     Color cardBg = color.withValues(alpha: isDark ? 0.06 : 0.08);
     Color textColor = color;
     Color descColor = isDark ? Colors.white70 : Colors.black87;
-    Color borderColor = color.withValues(alpha: isSelected ? 1.0 : (isDark ? 0.2 : 0.25));
+    Color borderColor = color.withValues(
+      alpha: isSelected ? 1.0 : (isDark ? 0.2 : 0.25),
+    );
 
     if (isAnswered && isSelected) {
       cardBg = correct
@@ -179,10 +181,7 @@ class SpeedVarianceTempoDial extends StatelessWidget {
       decoration: BoxDecoration(
         color: cardBg,
         borderRadius: BorderRadius.circular(18.r),
-        border: Border.all(
-          color: borderColor,
-          width: isSelected ? 2.0 : 1.5,
-        ),
+        border: Border.all(color: borderColor, width: isSelected ? 2.0 : 1.5),
         boxShadow: [
           if (isSelected)
             BoxShadow(
@@ -207,7 +206,9 @@ class SpeedVarianceTempoDial extends StatelessWidget {
                   : color.withValues(alpha: 0.12),
             ),
             child: Icon(
-              index == 0 ? Icons.rotate_left_rounded : Icons.rotate_right_rounded,
+              index == 0
+                  ? Icons.rotate_left_rounded
+                  : Icons.rotate_right_rounded,
               color: textColor,
               size: 22.r,
             ),

@@ -21,20 +21,21 @@ class ClauseCard extends StatelessWidget {
     if (text.isEmpty) return const SizedBox.shrink();
 
     return GlassTile(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-      borderRadius: BorderRadius.circular(20.r),
+      padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 14.h),
+      borderRadius: BorderRadius.circular(18.r),
       borderColor: primaryColor.withValues(alpha: 0.2),
       color: isDark
           ? Colors.white.withValues(alpha: 0.08)
           : Colors.black.withValues(alpha: 0.04),
       child: Text(
-        text,
+        text.trim(),
+        softWrap: true,
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 18.sp,
+          fontSize: 16.sp,
           fontWeight: FontWeight.w600,
           color: Theme.of(context).colorScheme.onSurface,
-          height: 1.4,
+          height: 1.45,
         ),
         textAlign: TextAlign.center,
       ),

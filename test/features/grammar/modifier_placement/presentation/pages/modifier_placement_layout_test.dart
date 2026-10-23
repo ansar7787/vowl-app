@@ -87,7 +87,16 @@ void main() {
     subtype: GameSubtype.modifierPlacement,
     sentence: "Insert the modifier 'red' into the correct position.",
     correctAnswer: 'She picked a red apple from the basket.',
-    shuffledWords: ['basket.', 'picked', 'a', 'She', 'red', 'from', 'apple', 'the'],
+    shuffledWords: [
+      'basket.',
+      'picked',
+      'a',
+      'She',
+      'red',
+      'from',
+      'apple',
+      'the',
+    ],
     modifierType: 'Adjective',
     grammarRule: 'Adjective Placement (Attributive)',
     ruleExplanation: 'Use adjectives directly before the noun.',
@@ -100,7 +109,15 @@ void main() {
     subtype: GameSubtype.modifierPlacement,
     sentence: "Insert the modifier 'quickly' into the correct position.",
     correctAnswer: 'The rabbit ran quickly into the burrow.',
-    shuffledWords: ['burrow.', 'ran', 'The', 'quickly', 'into', 'rabbit', 'the'],
+    shuffledWords: [
+      'burrow.',
+      'ran',
+      'The',
+      'quickly',
+      'into',
+      'rabbit',
+      'the',
+    ],
   );
 
   const testQuestExplanationOnly = GrammarQuest(
@@ -276,25 +293,37 @@ void main() {
         await pumpModifierPlacement(tester);
 
         expect(find.byType(ModifierPlacementInstruction), findsOneWidget);
-        expect(find.text('PLACE THE MODIFIER'), findsOneWidget);
+        expect(find.text('Place the modifier'), findsOneWidget);
 
         expect(find.byKey(const ValueKey('grammar_rule_box')), findsOneWidget);
-        expect(find.text('GRAMMAR RULE'), findsOneWidget);
+        expect(find.text('Grammar Rule'), findsOneWidget);
         expect(find.text('Adjective Placement (Attributive)'), findsOneWidget);
 
-        expect(find.byKey(const ValueKey('modifier_type_chip')), findsOneWidget);
-        expect(find.text('MODIFIER: ADJECTIVE'), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('modifier_type_chip')),
+          findsOneWidget,
+        );
+        expect(find.text('Modifier: Adjective'), findsOneWidget);
 
-        expect(find.byKey(const ValueKey('modifier_context_card')), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('modifier_context_card')),
+          findsOneWidget,
+        );
         expect(find.byType(ModifierMagneticArena), findsOneWidget);
-        expect(find.byKey(const ValueKey('modifier_magnetic_arena')), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('modifier_magnetic_arena')),
+          findsOneWidget,
+        );
 
         expect(
           find.byKey(const ValueKey('draggable_modifier_magnet')),
           findsOneWidget,
         );
         expect(find.text('red'), findsWidgets);
-        expect(find.byKey(const ValueKey('finalize_syntax_button')), findsNothing);
+        expect(
+          find.byKey(const ValueKey('finalize_syntax_button')),
+          findsNothing,
+        );
       },
     );
 
@@ -315,7 +344,10 @@ void main() {
 
         expect(find.byKey(const ValueKey('grammar_rule_box')), findsNothing);
         expect(find.byKey(const ValueKey('modifier_type_chip')), findsNothing);
-        expect(find.byKey(const ValueKey('modifier_context_card')), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('modifier_context_card')),
+          findsOneWidget,
+        );
       },
     );
 
@@ -339,20 +371,25 @@ void main() {
           find.text('Adverbs often sit right before the action verb.'),
           findsOneWidget,
         );
-        expect(find.byKey(const ValueKey('modifier_type_chip')), findsOneWidget);
-        expect(find.text('MODIFIER: ADVERB'), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('modifier_type_chip')),
+          findsOneWidget,
+        );
+        expect(find.text('Modifier: Adverb'), findsOneWidget);
       },
     );
 
-    testWidgets(
-      '4. renders shimmer loading when state is GrammarLoading',
-      (tester) async {
-        await pumpModifierPlacement(tester, state: const GrammarLoading());
+    testWidgets('4. renders shimmer loading when state is GrammarLoading', (
+      tester,
+    ) async {
+      await pumpModifierPlacement(tester, state: const GrammarLoading());
 
-        expect(find.byType(GameShimmerLoading), findsOneWidget);
-        expect(find.byKey(const ValueKey('modifier_magnetic_arena')), findsNothing);
-      },
-    );
+      expect(find.byType(GameShimmerLoading), findsOneWidget);
+      expect(
+        find.byKey(const ValueKey('modifier_magnetic_arena')),
+        findsNothing,
+      );
+    });
 
     testWidgets(
       '5. dragging modifier magnet onto slot drops modifier and displays finalize syntax button',
@@ -667,36 +704,34 @@ void main() {
       },
     );
 
-    testWidgets(
-      '13. hint button triggers hint without double dispatch',
-      (tester) async {
-        await pumpModifierPlacement(tester);
+    testWidgets('13. hint button triggers hint without double dispatch', (
+      tester,
+    ) async {
+      await pumpModifierPlacement(tester);
 
-        final hintFinder = find.byType(QuestHintButton);
-        expect(hintFinder, findsOneWidget);
+      final hintFinder = find.byType(QuestHintButton);
+      expect(hintFinder, findsOneWidget);
 
-        await tester.tap(hintFinder);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 200));
+      await tester.tap(hintFinder);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 200));
 
-        verify(
-          () => mockGrammarBloc.add(any(that: isA<GrammarHintUsed>())),
-        ).called(1);
-      },
-    );
+      verify(
+        () => mockGrammarBloc.add(any(that: isA<GrammarHintUsed>())),
+      ).called(1);
+    });
 
-    testWidgets(
-      '14. level 1 briefing dialog displays for first-time user',
-      (tester) async {
-        SharedPreferences.setMockInitialValues({
-          'has_seen_briefing_modifierPlacement': false,
-        });
+    testWidgets('14. level 1 briefing dialog displays for first-time user', (
+      tester,
+    ) async {
+      SharedPreferences.setMockInitialValues({
+        'has_seen_briefing_modifierPlacement': false,
+      });
 
-        await pumpModifierPlacement(tester, level: 1);
+      await pumpModifierPlacement(tester, level: 1);
 
-        expect(find.byType(GameBriefingLayer), findsOneWidget);
-      },
-    );
+      expect(find.byType(GameBriefingLayer), findsOneWidget);
+    });
 
     testWidgets(
       '15. respects reduced motion when lowAnimationModeOverride is enabled',
@@ -705,58 +740,178 @@ void main() {
         await pumpModifierPlacement(tester);
 
         expect(find.byType(ModifierPlacementScreen), findsOneWidget);
-        expect(find.byKey(const ValueKey('modifier_magnetic_arena')), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('modifier_magnetic_arena')),
+          findsOneWidget,
+        );
         expect(tester.takeException(), isNull);
       },
     );
 
-    testWidgets(
-      '16. compact viewport (320x568) renders without overflow',
-      (tester) async {
-        await pumpModifierPlacement(tester, width: 320, height: 568);
+    testWidgets('16. compact viewport (320x568) renders without overflow', (
+      tester,
+    ) async {
+      await pumpModifierPlacement(tester, width: 320, height: 568);
 
-        expect(find.byType(ModifierPlacementScreen), findsOneWidget);
-        expect(tester.takeException(), isNull);
+      expect(find.byType(ModifierPlacementScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('17. tablet viewport (768x1024) renders with proper layout', (
+      tester,
+    ) async {
+      await pumpModifierPlacement(tester, width: 768, height: 1024);
+
+      expect(find.byType(ModifierPlacementScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('18. dark mode renders correctly with dark theme styling', (
+      tester,
+    ) async {
+      await pumpModifierPlacement(tester, themeMode: ThemeMode.dark);
+
+      expect(find.byType(ModifierPlacementScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('19. final failure state displays game over layout', (
+      tester,
+    ) async {
+      final failedState = GrammarLoaded(
+        quests: const [testQuest1],
+        currentIndex: 0,
+        livesRemaining: 0,
+        answerStatus: AnswerStatus.incorrect,
+        hintUsed: false,
+        wrongCount: 3,
+        isFinalFailure: true,
+      );
+
+      await pumpModifierPlacement(tester, state: failedState);
+
+      expect(find.byType(ModifierPlacementScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets(
+      '20. renders Confirm Placement action button with standard text without buzzwords',
+      (tester) async {
+        await pumpModifierPlacement(tester);
+
+        final slot3 = find.byKey(const ValueKey('modifier_slot_3'));
+        await tester.tap(slot3);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final confirmBtn = find.text('Confirm Placement');
+        expect(confirmBtn, findsOneWidget);
+        expect(find.text('FINALIZE SYNTAX'), findsNothing);
       },
     );
 
     testWidgets(
-      '17. tablet viewport (768x1024) renders with proper layout',
+      '21. instruction centers text properly and does not truncate with ellipses',
       (tester) async {
-        await pumpModifierPlacement(tester, width: 768, height: 1024);
-
-        expect(find.byType(ModifierPlacementScreen), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
-
-    testWidgets(
-      '18. dark mode renders correctly with dark theme styling',
-      (tester) async {
-        await pumpModifierPlacement(tester, themeMode: ThemeMode.dark);
-
-        expect(find.byType(ModifierPlacementScreen), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
-
-    testWidgets(
-      '19. final failure state displays game over layout',
-      (tester) async {
-        final failedState = GrammarLoaded(
-          quests: const [testQuest1],
+        const longInstructionQuest = GrammarQuest(
+          id: 'mp_long_instruction',
+          instruction:
+              'Place the descriptive adjective into its natural grammatical position',
+          difficulty: 1,
+          subtype: GameSubtype.modifierPlacement,
+          sentence: "Insert the modifier 'red' into the correct position.",
+          correctAnswer: 'She picked a red apple from the basket.',
+          shuffledWords: [
+            'basket.',
+            'picked',
+            'a',
+            'She',
+            'red',
+            'from',
+            'apple',
+            'the',
+          ],
+        );
+        final longState = GrammarLoaded(
+          quests: const [longInstructionQuest],
           currentIndex: 0,
-          livesRemaining: 0,
-          answerStatus: AnswerStatus.incorrect,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
           hintUsed: false,
-          wrongCount: 3,
-          isFinalFailure: true,
+          wrongCount: 0,
+          isFinalFailure: false,
         );
 
-        await pumpModifierPlacement(tester, state: failedState);
+        await pumpModifierPlacement(tester, state: longState);
+        final textFinder = find.byKey(
+          const ValueKey('modifier_placement_instruction_text'),
+        );
+        expect(textFinder, findsOneWidget);
 
-        expect(find.byType(ModifierPlacementScreen), findsOneWidget);
-        expect(tester.takeException(), isNull);
+        final textWidget = tester.widget<Text>(textFinder);
+        expect(textWidget.textAlign, equals(TextAlign.center));
+        expect(textWidget.overflow, isNot(equals(TextOverflow.ellipsis)));
+      },
+    );
+
+    testWidgets(
+      '22. TypeToConfirmOverlay has standard horizontal padding and does not touch screen edges',
+      (tester) async {
+        await pumpModifierPlacement(tester);
+
+        // Place into slot 3 and confirm
+        final slot3 = find.byKey(const ValueKey('modifier_slot_3'));
+        await tester.tap(slot3);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final finalizeBtn = find.byKey(
+          const ValueKey('finalize_syntax_button'),
+        );
+        await tester.tap(finalizeBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final overlayFinder = find.byKey(
+          const ValueKey('modifier_type_overlay'),
+          skipOffstage: false,
+        );
+        expect(overlayFinder, findsOneWidget);
+
+        final paddingFinder = find.ancestor(
+          of: overlayFinder,
+          matching: find.byType(Padding),
+        );
+        expect(paddingFinder, findsWidgets);
+
+        final directPadding = tester.widget<Padding>(paddingFinder.first);
+        final edgeInsets = directPadding.padding.resolve(TextDirection.ltr);
+        expect(edgeInsets.left, greaterThanOrEqualTo(16));
+        expect(edgeInsets.right, greaterThanOrEqualTo(16));
+      },
+    );
+
+    testWidgets(
+      '23. Level 1 game completion does not render GameBriefingLayer behind completion dialog',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({
+          'has_seen_briefing_modifierPlacement': false,
+        });
+
+        const completeState = GrammarGameComplete(
+          xpEarned: 50,
+          coinsEarned: 10,
+          questCount: 5,
+        );
+
+        await pumpModifierPlacement(
+          tester,
+          level: 1,
+          state: completeState,
+        );
+
+        expect(find.byType(GameBriefingLayer), findsNothing);
       },
     );
   });

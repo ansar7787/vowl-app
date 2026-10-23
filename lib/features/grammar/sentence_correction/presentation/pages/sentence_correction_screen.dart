@@ -298,6 +298,10 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                                       SizedBox(height: 10.h),
                                       SentenceCorrectionInstruction(
                                         primaryColor: theme.primaryColor,
+                                        instruction:
+                                            quest.instruction.trim().isNotEmpty
+                                                ? quest.instruction.trim()
+                                                : "Sentence Correction",
                                       ),
                                       SizedBox(height: 12.h),
                                       Padding(
@@ -305,15 +309,17 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                                           horizontal: 24.w,
                                         ),
                                         child: Text(
-                                          "Tap the incorrect word to diagnose, then choose the repair option.",
+                                          "Tap the incorrect word, then choose the correct replacement.",
                                           textAlign: TextAlign.center,
+                                          softWrap: true,
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
-                                            fontSize: 13.sp,
-                                            fontWeight: FontWeight.w600,
+                                            fontSize: 13.5.sp,
+                                            fontWeight: FontWeight.w500,
                                             color: isDark
-                                                ? Colors.white60
-                                                : Colors.black54,
+                                                ? Colors.white70
+                                                : Colors.black87,
+                                            height: 1.35,
                                           ),
                                         ),
                                       ),
@@ -331,7 +337,10 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                                             ),
                                             child: Container(
                                               width: double.infinity,
-                                              padding: EdgeInsets.all(24.r),
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20.w,
+                                                vertical: 22.h,
+                                              ),
                                               decoration: BoxDecoration(
                                                 color: isDark
                                                     ? Colors.white.withValues(
@@ -341,27 +350,27 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                                                         alpha: 0.03,
                                                       ),
                                                 borderRadius:
-                                                    BorderRadius.circular(32.r),
+                                                    BorderRadius.circular(24.r),
                                                 border: Border.all(
                                                   color: theme.primaryColor
-                                                      .withValues(alpha: 0.2),
-                                                  width: 1.5,
+                                                      .withValues(alpha: 0.18),
+                                                  width: 1.2,
                                                 ),
                                                 boxShadow: [
                                                   BoxShadow(
                                                     color: theme.primaryColor
                                                         .withValues(
-                                                          alpha: 0.05,
+                                                          alpha: 0.04,
                                                         ),
-                                                    blurRadius: 40,
-                                                    spreadRadius: 5,
+                                                    blurRadius: 24,
+                                                    spreadRadius: 2,
                                                   ),
                                                 ],
                                               ),
                                               child: Wrap(
                                                 alignment: WrapAlignment.center,
-                                                spacing: 10.w,
-                                                runSpacing: 16.h,
+                                                spacing: 8.w,
+                                                runSpacing: 12.h,
                                                 children: List.generate(
                                                   words.length,
                                                   (i) {
@@ -433,56 +442,60 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
 
                                       SizedBox(height: 20.h),
 
-                                      // Scanner Status
+                                      // Status Hint
                                       Padding(
                                         padding: EdgeInsets.symmetric(
-                                          horizontal: 16.w,
+                                          horizontal: 24.w,
                                         ),
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Builder(
-                                                builder: (context) {
-                                                  final dot = Container(
-                                                    width: 10.r,
-                                                    height: 10.r,
-                                                    decoration: BoxDecoration(
-                                                      color: theme.primaryColor,
-                                                      shape: BoxShape.circle,
-                                                    ),
-                                                  );
-                                                  if (reduceMotion) return dot;
-                                                  return dot
-                                                      .animate(
-                                                        onPlay: (c) =>
-                                                            c.repeat(reverse: true),
-                                                      )
-                                                      .scale(
-                                                        begin: const Offset(1, 1),
-                                                        end: const Offset(1.8, 1.8),
-                                                        duration: 1.seconds,
-                                                      )
-                                                      .shimmer(
-                                                        color: theme.primaryColor,
-                                                      );
-                                                },
-                                              ),
-                                              SizedBox(width: 14.w),
-                                              Text(
-                                                "SCANNER ARMED: SEEKING GLITCHES",
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Builder(
+                                              builder: (context) {
+                                                final dot = Container(
+                                                  width: 8.r,
+                                                  height: 8.r,
+                                                  decoration: BoxDecoration(
+                                                    color: theme.primaryColor,
+                                                    shape: BoxShape.circle,
+                                                  ),
+                                                );
+                                                if (reduceMotion) return dot;
+                                                return dot
+                                                    .animate(
+                                                      onPlay: (c) => c.repeat(
+                                                        reverse: true,
+                                                      ),
+                                                    )
+                                                    .scale(
+                                                      begin: const Offset(1, 1),
+                                                      end: const Offset(
+                                                        1.3,
+                                                        1.3,
+                                                      ),
+                                                      duration: 1.seconds,
+                                                    );
+                                              },
+                                            ),
+                                            SizedBox(width: 8.w),
+                                            Flexible(
+                                              child: Text(
+                                                _selectedWordIndex.value == null
+                                                    ? "Tap the word with the mistake"
+                                                    : "Choose the correct replacement below",
+                                                textAlign: TextAlign.center,
+                                                softWrap: true,
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
-                                                  fontSize: 10.sp,
-                                                  fontWeight: FontWeight.w900,
+                                                  fontSize: 12.5.sp,
+                                                  fontWeight: FontWeight.w600,
                                                   color: theme.primaryColor,
-                                                  letterSpacing: 2,
+                                                  letterSpacing: 0.3,
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
 
@@ -490,7 +503,9 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                                       if (_selectedWordIndex.value != null) ...[
                                         SizedBox(height: 24.h),
                                         SentenceCorrectionOptionsPanel(
-                                          key: const ValueKey('sentence_correction_options_panel'),
+                                          key: const ValueKey(
+                                            'sentence_correction_options_panel',
+                                          ),
                                           options: _shuffledOptions ?? [],
                                           selectedOption: _selectedOption.value,
                                           isAnswered:
@@ -518,7 +533,9 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                                           isCorrectNotifier.value == false) ...[
                                         SizedBox(height: 24.h),
                                         SentenceCorrectionFeedback(
-                                          key: const ValueKey('sentence_correction_feedback'),
+                                          key: const ValueKey(
+                                            'sentence_correction_feedback',
+                                          ),
                                           correction: quest.correctedPart ?? "",
                                           incorrectPart: quest.incorrectPart,
                                           wasWordSelectionCorrect:
@@ -548,17 +565,22 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                               if (isFirstStagePassedNotifier.value &&
                                   !isAnsweredNotifier.value)
                                 SliverToBoxAdapter(
-                                  child: TypeToConfirmOverlay(
-                                    expectedText:
-                                        quest.correctAnswer ??
-                                        _selectedOption.value ??
-                                        '',
-                                    primaryColor: theme.primaryColor,
-                                    onConfirmed: () =>
-                                        _submitVerbalEvaluation(true, quest),
-                                    onSkipped: () =>
-                                        _submitVerbalEvaluation(false, quest),
-                                    isPositioned: false,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 24.w,
+                                    ),
+                                    child: TypeToConfirmOverlay(
+                                      expectedText:
+                                          quest.correctAnswer ??
+                                          _selectedOption.value ??
+                                          '',
+                                      primaryColor: theme.primaryColor,
+                                      onConfirmed: () =>
+                                          _submitVerbalEvaluation(true, quest),
+                                      onSkipped: () =>
+                                          _submitVerbalEvaluation(false, quest),
+                                      isPositioned: false,
+                                    ),
                                   ),
                                 ),
                               // Buffer to accommodate the keyboard popping up seamlessly without obscuring the typing card.

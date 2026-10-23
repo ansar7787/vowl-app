@@ -64,9 +64,11 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
 
   void _onPop(String article, String correctAnswer, GameQuest quest) {
     final bloc = context.read<GrammarBloc>();
-    final isStateAnswered = bloc.state is GrammarLoaded &&
+    final isStateAnswered =
+        bloc.state is GrammarLoaded &&
         (bloc.state as GrammarLoaded).answerStatus.isAnswered;
-    if (isAnsweredNotifier.value || _pendingJigsaw.value || isStateAnswered) return;
+    if (isAnsweredNotifier.value || _pendingJigsaw.value || isStateAnswered)
+      return;
 
     hapticService.selection();
     bool isCorrect = article.toLowerCase() == correctAnswer.toLowerCase();
@@ -119,17 +121,17 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
       spans.add(TextSpan(text: parts[i]));
       if (i < parts.length - 1) {
         Widget placeholder = Container(
-          margin: EdgeInsets.symmetric(horizontal: 8.w),
+          margin: EdgeInsets.symmetric(horizontal: 4.w),
           padding: EdgeInsets.symmetric(
-            horizontal: isCompact ? 8.w : 12.w,
-            vertical: isCompact ? 2.h : 4.h,
+            horizontal: isCompact ? 6.w : 10.w,
+            vertical: isCompact ? 1.h : 2.h,
           ),
           decoration: BoxDecoration(
             border: Border(
               bottom: BorderSide(
                 color: selected != null
                     ? primaryColor
-                    : (isDark ? Colors.white38 : Colors.black38),
+                    : (isDark ? Colors.white38 : Colors.black26),
                 width: 2,
               ),
             ),
@@ -137,13 +139,11 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
           child: Text(
             selected == null
                 ? "      "
-                : (selected.toLowerCase() == "(no article)"
-                      ? "Ø"
-                      : selected),
+                : (selected.toLowerCase() == "(no article)" ? "Ø" : selected),
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: isCompact ? 18.sp : 22.sp,
-              fontWeight: FontWeight.bold,
+              fontSize: isCompact ? 15.sp : 18.sp,
+              fontWeight: FontWeight.w700,
               color: primaryColor,
             ),
           ),
@@ -207,7 +207,8 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
               if (quest != null) {
                 final sentence = quest.sentence ?? quest.question ?? "";
                 String fullSentence = sentence;
-                if (sentence.contains("___") && _selectedArticle.value != null) {
+                if (sentence.contains("___") &&
+                    _selectedArticle.value != null) {
                   String replaceWith =
                       _selectedArticle.value!.toLowerCase() == "(no article)"
                       ? ""
@@ -242,277 +243,377 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
                     : LayoutBuilder(
-                      builder: (context, constraints) {
-                        return Stack(
-                          children: [
-                            RawScrollbar(
-                              controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(
-                                alpha: 0.5,
-                              ),
-                              radius: Radius.circular(8.r),
-                              thickness: 4.w,
-                              crossAxisMargin: 2,
-                              child: CustomScrollView(
+                        builder: (context, constraints) {
+                          return Stack(
+                            children: [
+                              RawScrollbar(
                                 controller: _scrollController,
-                                physics: const BouncingScrollPhysics(),
-                                slivers: [
-                                  SliverToBoxAdapter(
-                                    child: SizedBox(
-                                      height: constraints.maxHeight,
-                                      child: Builder(
-                                        builder: (context) {
-                                              final maxHeight =
-                                                  constraints.maxHeight;
-                                              final isCompact = maxHeight < 580;
+                                thumbColor: theme.primaryColor.withValues(
+                                  alpha: 0.5,
+                                ),
+                                radius: Radius.circular(8.r),
+                                thickness: 4.w,
+                                crossAxisMargin: 2,
+                                child: CustomScrollView(
+                                  controller: _scrollController,
+                                  physics: const BouncingScrollPhysics(),
+                                  slivers: [
+                                    SliverToBoxAdapter(
+                                      child: SizedBox(
+                                        height: constraints.maxHeight,
+                                        child: Builder(
+                                          builder: (context) {
+                                            final maxHeight =
+                                                constraints.maxHeight;
+                                            final isCompact = maxHeight < 580;
 
-                                              final double
-                                              estimatedContentHeight =
-                                                  (isCompact ? 30.h : 40.h) +
-                                                  (isCompact ? 90.h : 130.h) +
-                                                  40.h;
-                                              final remainingHeight =
-                                                  maxHeight -
-                                                  estimatedContentHeight;
+                                            final double
+                                            estimatedContentHeight =
+                                                (isCompact ? 30.h : 40.h) +
+                                                (isCompact ? 90.h : 130.h) +
+                                                40.h;
+                                            final remainingHeight =
+                                                maxHeight -
+                                                estimatedContentHeight;
 
-                                              final double gapUnit =
-                                                  remainingHeight > 0
-                                                  ? remainingHeight / 5
-                                                  : 0;
-                                              final double gapTop =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 1).clamp(
-                                                      6.0,
-                                                      20.0,
-                                                    )
-                                                  : 6.0;
-                                              final double gapMiddle =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 1.5).clamp(
-                                                      10.0,
-                                                      25.0,
-                                                    )
-                                                  : 10.0;
-                                              final double gapBottom =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 2.5).clamp(
-                                                      15.0,
-                                                      40.0,
-                                                    )
-                                                  : 15.0;
+                                            final double gapUnit =
+                                                remainingHeight > 0
+                                                ? remainingHeight / 5
+                                                : 0;
+                                            final double gapTop =
+                                                remainingHeight > 0
+                                                ? (gapUnit * 1).clamp(6.0, 20.0)
+                                                : 6.0;
+                                            final double gapMiddle =
+                                                remainingHeight > 0
+                                                ? (gapUnit * 1.5).clamp(
+                                                    10.0,
+                                                    25.0,
+                                                  )
+                                                : 10.0;
+                                            final double gapBottom =
+                                                remainingHeight > 0
+                                                ? (gapUnit * 2.5).clamp(
+                                                    15.0,
+                                                    40.0,
+                                                  )
+                                                : 15.0;
 
-                                              final reduceMotion =
-                                                  VowlMotion.shouldReduceMotion(
-                                                    context,
-                                                  );
-                                              final isStateAnswered =
-                                                  (state is GrammarLoaded) &&
-                                                  state.answerStatus.isAnswered;
-                                              final isAlreadyAnswered =
-                                                  isAnsweredNotifier.value ||
-                                                  _pendingJigsaw.value ||
-                                                  isStateAnswered;
+                                            final reduceMotion =
+                                                VowlMotion.shouldReduceMotion(
+                                                  context,
+                                                );
+                                            final isStateAnswered =
+                                                (state is GrammarLoaded) &&
+                                                state.answerStatus.isAnswered;
+                                            final isAlreadyAnswered =
+                                                isAnsweredNotifier.value ||
+                                                _pendingJigsaw.value ||
+                                                isStateAnswered;
 
-                                              return Column(
-                                                children: [
-                                                  SizedBox(height: gapTop),
-                                                  isCompact
-                                                      ? SizedBox(
-                                                          height: 25.h,
-                                                          child: FittedBox(
-                                                            fit: BoxFit
-                                                                .scaleDown,
-                                                            child: ArticleInsertionInstruction(
-                                                              primaryColor: theme
-                                                                  .primaryColor,
-                                                              instruction: context.tr(
-                                                                'games.article_insertion_instruction',
-                                                                fallback:
-                                                                    "Pop the correct article orb",
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        )
-                                                      : ArticleInsertionInstruction(
-                                                          primaryColor: theme
-                                                              .primaryColor,
-                                                          instruction: context.tr(
-                                                            'games.article_insertion_instruction',
-                                                            fallback:
-                                                                "Pop the correct article orb",
-                                                          ),
-                                                        ),
-                                                  SizedBox(height: gapMiddle),
-
-                                                  if (quest.articleRule !=
-                                                      null) ...[
-                                                    Builder(
-                                                      builder: (context) {
-                                                        Widget ruleChip = Container(
-                                                          padding:
-                                                              EdgeInsets.symmetric(
-                                                                horizontal: 16.w,
-                                                                vertical: 6.h,
-                                                              ),
-                                                          decoration: BoxDecoration(
-                                                            color: theme
-                                                                .primaryColor
-                                                                .withValues(
-                                                                  alpha: 0.1,
-                                                                ),
-                                                            borderRadius:
-                                                                BorderRadius.circular(
-                                                                  12.r,
-                                                                ),
-                                                            border: Border.all(
-                                                              color: theme
-                                                                  .primaryColor
-                                                                  .withValues(
-                                                                    alpha: 0.3,
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                          child: Text(
-                                                            quest.articleRule!,
-                                                            style: TextStyle(
-                                                              fontFamily: 'Outfit',
-                                                              fontSize: 12.sp,
-                                                              color: theme
-                                                                  .primaryColor,
-                                                              fontWeight:
-                                                                  FontWeight.bold,
-                                                            ),
-                                                          ),
-                                                        );
-                                                        if (!reduceMotion) {
-                                                          ruleChip = ruleChip
-                                                              .animate()
-                                                              .fadeIn(
-                                                                duration: 400.ms,
-                                                              );
-                                                        }
-                                                        return ruleChip;
-                                                      },
+                                            return Column(
+                                              children: [
+                                                SizedBox(height: gapTop),
+                                                Padding(
+                                                  padding: EdgeInsets.symmetric(
+                                                    horizontal: 20.w,
+                                                  ),
+                                                  child: ArticleInsertionInstruction(
+                                                    primaryColor:
+                                                        theme.primaryColor,
+                                                    instruction: context.tr(
+                                                      'games.article_insertion_instruction',
+                                                      fallback:
+                                                          "Select the correct article to complete the sentence",
                                                     ),
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 12.h
-                                                          : 20.h,
-                                                    ),
-                                                  ],
+                                                  ),
+                                                ),
+                                                SizedBox(height: gapMiddle),
 
-                                                  // Context Card
+                                                if (quest.articleRule !=
+                                                    null) ...[
                                                   Builder(
                                                     builder: (context) {
-                                                      Widget card = Padding(
+                                                      Widget ruleChip = Padding(
                                                         padding:
                                                             EdgeInsets.symmetric(
                                                               horizontal: 24.w,
                                                             ),
                                                         child: Container(
                                                           padding:
-                                                              EdgeInsets.all(
-                                                                isCompact
-                                                                    ? 14.r
-                                                                    : 22.r,
+                                                              EdgeInsets.symmetric(
+                                                                horizontal:
+                                                                    14.w,
+                                                                vertical: 6.h,
                                                               ),
                                                           decoration: BoxDecoration(
-                                                            color: isDark
-                                                                ? Colors.white
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.05,
-                                                                      )
-                                                                : Colors.black
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.03,
-                                                                      ),
+                                                            color: theme
+                                                                .primaryColor
+                                                                .withValues(
+                                                                  alpha: 0.08,
+                                                                ),
                                                             borderRadius:
                                                                 BorderRadius.circular(
-                                                                  28.r,
+                                                                  16.r,
                                                                 ),
                                                             border: Border.all(
                                                               color: theme
                                                                   .primaryColor
                                                                   .withValues(
-                                                                    alpha: 0.15,
+                                                                    alpha: 0.25,
                                                                   ),
-                                                              width: 1.5,
+                                                              width: 1,
                                                             ),
                                                           ),
-                                                          child: RichText(
+                                                          child: Text(
+                                                            quest.articleRule!,
                                                             textAlign: TextAlign
                                                                 .center,
-                                                            text: TextSpan(
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                fontSize:
-                                                                    isCompact
-                                                                    ? 16.sp
-                                                                    : 20.sp,
-                                                                color: isDark
-                                                                    ? Colors
-                                                                          .white
-                                                                    : Colors
-                                                                          .black87,
-                                                                height: 1.5,
-                                                             ),
-                                                              children: _buildSentenceWithBlank(
-                                                                quest.sentence ??
-                                                                    quest
-                                                                        .question ??
-                                                                    "___ sentence.",
-                                                                _selectedArticle
-                                                                    .value,
-                                                                theme
-                                                                    .primaryColor,
-                                                                isDark,
-                                                                isCompact,
-                                                              ),
+                                                            softWrap: true,
+                                                            style: TextStyle(
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              fontSize: 12.sp,
+                                                              color: theme
+                                                                  .primaryColor,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              height: 1.3,
                                                             ),
                                                           ),
                                                         ),
                                                       );
                                                       if (!reduceMotion) {
-                                                        card = card
+                                                        ruleChip = ruleChip
                                                             .animate()
                                                             .fadeIn(
-                                                              duration: 600.ms,
-                                                            )
-                                                            .slideY(
-                                                              begin: 0.2,
-                                                              end: 0,
+                                                              duration: 400.ms,
                                                             );
                                                       }
-                                                      return card;
+                                                      return ruleChip;
                                                     },
                                                   ),
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 12.h
+                                                        : 20.h,
+                                                  ),
+                                                ],
 
-                                                  // Floating Orb Bubble Area
-                                                  Expanded(
-                                                    child: Center(
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.min,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Column(
+                                                // Context Card
+                                                Builder(
+                                                  builder: (context) {
+                                                    Widget card = Padding(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 20.w,
+                                                          ),
+                                                      child: Container(
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              horizontal: 18.w,
+                                                              vertical:
+                                                                  isCompact
+                                                                  ? 14.h
+                                                                  : 20.h,
+                                                            ),
+                                                        decoration: BoxDecoration(
+                                                          color: isDark
+                                                              ? Colors.white
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.05,
+                                                                    )
+                                                              : Colors.black
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.03,
+                                                                    ),
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                20.r,
+                                                              ),
+                                                          border: Border.all(
+                                                            color: theme
+                                                                .primaryColor
+                                                                .withValues(
+                                                                  alpha: 0.18,
+                                                                ),
+                                                            width: 1.2,
+                                                          ),
+                                                        ),
+                                                        child: RichText(
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          softWrap: true,
+                                                          text: TextSpan(
+                                                            style: TextStyle(
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              fontSize:
+                                                                  isCompact
+                                                                  ? 15.sp
+                                                                  : 18.sp,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              color: isDark
+                                                                  ? Colors.white
+                                                                  : const Color(
+                                                                      0xFF1E293B,
+                                                                    ),
+                                                              letterSpacing:
+                                                                  0.2,
+                                                              height: 1.6,
+                                                            ),
+                                                            children: _buildSentenceWithBlank(
+                                                              quest.sentence ??
+                                                                  quest
+                                                                      .question ??
+                                                                  "___ sentence.",
+                                                              _selectedArticle
+                                                                  .value,
+                                                              theme
+                                                                  .primaryColor,
+                                                              isDark,
+                                                              isCompact,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                    if (!reduceMotion) {
+                                                      card = card
+                                                          .animate()
+                                                          .fadeIn(
+                                                            duration: 600.ms,
+                                                          )
+                                                          .slideY(
+                                                            begin: 0.2,
+                                                            end: 0,
+                                                          );
+                                                    }
+                                                    return card;
+                                                  },
+                                                ),
+
+                                                // Floating Orb Bubble Area
+                                                Expanded(
+                                                  child: Center(
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.min,
+                                                          children: [
+                                                            if (options
+                                                                .isNotEmpty)
+                                                              ArticleFloatingOrb(
+                                                                article:
+                                                                    options[0],
+                                                                index: 0,
+                                                                onTap: () => _onPop(
+                                                                  options[0],
+                                                                  correctAnswer,
+                                                                  quest,
+                                                                ),
+                                                                primaryColor: theme
+                                                                    .primaryColor,
+                                                                isDark: isDark,
+                                                                isAnswered:
+                                                                    isAlreadyAnswered,
+                                                                isSelected:
+                                                                    _selectedArticle
+                                                                        .value ==
+                                                                    options[0],
+                                                                isCorrectAnswer:
+                                                                    options[0]
+                                                                        .toLowerCase() ==
+                                                                    correctAnswer
+                                                                        .toLowerCase(),
+                                                                isFinalFailure:
+                                                                    state
+                                                                        is GrammarLoaded &&
+                                                                    state
+                                                                        .isFinalFailure,
+                                                                isCompact:
+                                                                    isCompact,
+                                                              ),
+                                                            if (options.length >
+                                                                2)
+                                                              SizedBox(
+                                                                height:
+                                                                    isCompact
+                                                                    ? 10.h
+                                                                    : 20.h,
+                                                              ),
+                                                            if (options.length >
+                                                                2)
+                                                              ArticleFloatingOrb(
+                                                                article:
+                                                                    options[2],
+                                                                index: 2,
+                                                                onTap: () => _onPop(
+                                                                  options[2],
+                                                                  correctAnswer,
+                                                                  quest,
+                                                                ),
+                                                                primaryColor: theme
+                                                                    .primaryColor,
+                                                                isDark: isDark,
+                                                                isAnswered:
+                                                                    isAlreadyAnswered,
+                                                                isSelected:
+                                                                    _selectedArticle
+                                                                        .value ==
+                                                                    options[2],
+                                                                isCorrectAnswer:
+                                                                    options[2]
+                                                                        .toLowerCase() ==
+                                                                    correctAnswer
+                                                                        .toLowerCase(),
+                                                                isFinalFailure:
+                                                                    state
+                                                                        is GrammarLoaded &&
+                                                                    state
+                                                                        .isFinalFailure,
+                                                                isCompact:
+                                                                    isCompact,
+                                                              ),
+                                                          ],
+                                                        ),
+                                                        SizedBox(
+                                                          width: isCompact
+                                                              ? 20.w
+                                                              : 40.w,
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                top: isCompact
+                                                                    ? 30.h
+                                                                    : 50.h,
+                                                              ),
+                                                          child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
                                                                     .min,
                                                             children: [
                                                               if (options
-                                                                  .isNotEmpty)
+                                                                      .length >
+                                                                  1)
                                                                 ArticleFloatingOrb(
                                                                   article:
-                                                                      options[0],
-                                                                  index: 0,
+                                                                      options[1],
+                                                                  index: 1,
                                                                   onTap: () => _onPop(
-                                                                    options[0],
+                                                                    options[1],
                                                                     correctAnswer,
                                                                     quest,
                                                                   ),
@@ -526,9 +627,9 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                                   isSelected:
                                                                       _selectedArticle
                                                                           .value ==
-                                                                      options[0],
+                                                                      options[1],
                                                                   isCorrectAnswer:
-                                                                      options[0]
+                                                                      options[1]
                                                                           .toLowerCase() ==
                                                                       correctAnswer
                                                                           .toLowerCase(),
@@ -542,7 +643,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                                 ),
                                                               if (options
                                                                       .length >
-                                                                  2)
+                                                                  3)
                                                                 SizedBox(
                                                                   height:
                                                                       isCompact
@@ -551,13 +652,13 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                                 ),
                                                               if (options
                                                                       .length >
-                                                                  2)
+                                                                  3)
                                                                 ArticleFloatingOrb(
                                                                   article:
-                                                                      options[2],
-                                                                  index: 2,
+                                                                      options[3],
+                                                                  index: 3,
                                                                   onTap: () => _onPop(
-                                                                    options[2],
+                                                                    options[3],
                                                                     correctAnswer,
                                                                     quest,
                                                                   ),
@@ -571,9 +672,9 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                                   isSelected:
                                                                       _selectedArticle
                                                                           .value ==
-                                                                      options[2],
+                                                                      options[3],
                                                                   isCorrectAnswer:
-                                                                      options[2]
+                                                                      options[3]
                                                                           .toLowerCase() ==
                                                                       correctAnswer
                                                                           .toLowerCase(),
@@ -587,161 +688,68 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                                 ),
                                                             ],
                                                           ),
-                                                          SizedBox(
-                                                            width: isCompact
-                                                                ? 20.w
-                                                                : 40.w,
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsets.only(
-                                                                  top: isCompact
-                                                                      ? 30.h
-                                                                      : 50.h,
-                                                                ),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .min,
-                                                              children: [
-                                                                if (options
-                                                                        .length >
-                                                                    1)
-                                                                  ArticleFloatingOrb(
-                                                                    article:
-                                                                        options[1],
-                                                                    index: 1,
-                                                                    onTap: () => _onPop(
-                                                                      options[1],
-                                                                      correctAnswer,
-                                                                      quest,
-                                                                    ),
-                                                                    primaryColor:
-                                                                        theme
-                                                                            .primaryColor,
-                                                                    isDark:
-                                                                        isDark,
-                                                                    isAnswered:
-                                                                        isAlreadyAnswered,
-                                                                    isSelected:
-                                                                        _selectedArticle
-                                                                            .value ==
-                                                                        options[1],
-                                                                    isCorrectAnswer:
-                                                                        options[1]
-                                                                            .toLowerCase() ==
-                                                                        correctAnswer
-                                                                            .toLowerCase(),
-                                                                    isFinalFailure:
-                                                                        state
-                                                                            is GrammarLoaded &&
-                                                                        state
-                                                                            .isFinalFailure,
-                                                                    isCompact:
-                                                                        isCompact,
-                                                                  ),
-                                                                if (options
-                                                                        .length >
-                                                                    3)
-                                                                  SizedBox(
-                                                                    height:
-                                                                        isCompact
-                                                                        ? 10.h
-                                                                        : 20.h,
-                                                                  ),
-                                                                if (options
-                                                                        .length >
-                                                                    3)
-                                                                  ArticleFloatingOrb(
-                                                                    article:
-                                                                        options[3],
-                                                                    index: 3,
-                                                                    onTap: () => _onPop(
-                                                                      options[3],
-                                                                      correctAnswer,
-                                                                      quest,
-                                                                    ),
-                                                                    primaryColor:
-                                                                        theme
-                                                                            .primaryColor,
-                                                                    isDark:
-                                                                        isDark,
-                                                                    isAnswered:
-                                                                        isAlreadyAnswered,
-                                                                    isSelected:
-                                                                        _selectedArticle
-                                                                            .value ==
-                                                                        options[3],
-                                                                    isCorrectAnswer:
-                                                                        options[3]
-                                                                            .toLowerCase() ==
-                                                                        correctAnswer
-                                                                            .toLowerCase(),
-                                                                    isFinalFailure:
-                                                                        state
-                                                                            is GrammarLoaded &&
-                                                                        state
-                                                                            .isFinalFailure,
-                                                                    isCompact:
-                                                                        isCompact,
-                                                                  ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
+                                                        ),
+                                                      ],
                                                     ),
                                                   ),
+                                                ),
 
-                                                  SizedBox(height: gapBottom),
-                                                ],
-                                              );
-                                            },
+                                                SizedBox(height: gapBottom),
+                                              ],
+                                            );
+                                          },
+                                        ),
+                                      ),
+                                    ),
+                                    if (_pendingJigsaw.value &&
+                                        !isAnsweredNotifier.value &&
+                                        cleanTargetSentence.isNotEmpty)
+                                      SliverToBoxAdapter(
+                                        child: Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 16.w,
+                                          ),
+                                          child: TypeToConfirmOverlay(
+                                            expectedText: cleanTargetSentence,
+                                            primaryColor: theme.primaryColor,
+                                            onConfirmed: () =>
+                                                _submitFinalAnswer(true, quest),
+                                            onSkipped: () => _submitFinalAnswer(
+                                              false,
+                                              quest,
+                                            ),
+                                            isPositioned: false,
+                                            displayText:
+                                                "Type the complete sentence to confirm your answer",
                                           ),
                                         ),
                                       ),
-                                  if (_pendingJigsaw.value &&
-                                      !isAnsweredNotifier.value &&
-                                      cleanTargetSentence.isNotEmpty)
                                     SliverToBoxAdapter(
-                                      child: TypeToConfirmOverlay(
-                                        expectedText: cleanTargetSentence,
-                                        primaryColor: theme.primaryColor,
-                                        onConfirmed: () =>
-                                            _submitFinalAnswer(true, quest),
-                                        onSkipped: () =>
-                                            _submitFinalAnswer(false, quest),
-                                        isPositioned: false,
-                                        displayText:
-                                            "Type the full sentence with the article to lock it in",
+                                      child: SizedBox(
+                                        height:
+                                            MediaQuery.of(
+                                                  context,
+                                                ).viewInsets.bottom >
+                                                0
+                                            ? MediaQuery.of(
+                                                    context,
+                                                  ).viewInsets.bottom +
+                                                  40.h
+                                            : 60.h,
                                       ),
                                     ),
-                                  SliverToBoxAdapter(
-                                    child: SizedBox(
-                                      height:
-                                          MediaQuery.of(
-                                                context,
-                                              ).viewInsets.bottom >
-                                              0
-                                          ? MediaQuery.of(
-                                                  context,
-                                                ).viewInsets.bottom +
-                                                40.h
-                                          : 60.h,
-                                    ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
-                        );
-                      },
-                    ),
-            );
-          },
-        );
-      },
-    ),
+                            ],
+                          );
+                        },
+                      ),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }

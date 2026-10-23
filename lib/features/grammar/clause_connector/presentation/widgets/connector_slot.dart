@@ -20,33 +20,35 @@ class ConnectorSlot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-          constraints: BoxConstraints(minWidth: 120.w),
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+          constraints: BoxConstraints(minWidth: 140.w, minHeight: 48.h),
+          padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 10.h),
           decoration: BoxDecoration(
             color: _getBgColor(),
-            borderRadius: BorderRadius.circular(15.r),
+            borderRadius: BorderRadius.circular(24.r),
             border: Border.all(
               color: _getBorderColor(),
-              width: 2,
-              style: connector == null ? BorderStyle.solid : BorderStyle.solid,
+              width: 1.5,
+              style: BorderStyle.solid,
             ),
             boxShadow: [
               if (connector == null)
                 BoxShadow(
-                  color: primaryColor.withValues(alpha: 0.1),
-                  blurRadius: 10,
+                  color: primaryColor.withValues(alpha: 0.08),
+                  blurRadius: 12,
                   spreadRadius: 1,
                 ),
             ],
           ),
           child: Center(
             child: Text(
-              connector ?? "?",
+              connector ?? "Choose connector",
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w800,
+                fontSize: connector == null ? 13.sp : 15.sp,
+                fontWeight: FontWeight.w600,
                 color: _getTextColor(),
+                letterSpacing: 0.3,
               ),
             ),
           ),
@@ -54,30 +56,30 @@ class ConnectorSlot extends StatelessWidget {
         .animate(target: connector != null ? 1 : 0)
         .scale(
           begin: const Offset(1, 1),
-          end: const Offset(1.1, 1.1),
+          end: const Offset(1.05, 1.05),
           duration: 200.ms,
         )
         .then()
-        .scale(begin: const Offset(1.1, 1.1), end: const Offset(1, 1));
+        .scale(begin: const Offset(1.05, 1.05), end: const Offset(1, 1));
   }
 
   Color _getBgColor() {
-    if (isCorrect) return AppColors.emerald500.withValues(alpha: 0.2);
-    if (isWrong) return AppColors.rose500.withValues(alpha: 0.2);
-    return primaryColor.withValues(alpha: 0.05);
+    if (isCorrect) return AppColors.emerald500.withValues(alpha: 0.15);
+    if (isWrong) return AppColors.rose500.withValues(alpha: 0.15);
+    return primaryColor.withValues(alpha: 0.06);
   }
 
   Color _getBorderColor() {
     if (isCorrect) return AppColors.emerald500;
     if (isWrong) return AppColors.rose500;
-    return primaryColor.withValues(alpha: connector == null ? 0.3 : 0.6);
+    return primaryColor.withValues(alpha: connector == null ? 0.3 : 0.5);
   }
 
   Color _getTextColor() {
     if (isCorrect) return AppColors.emerald500;
     if (isWrong) return AppColors.rose500;
     return connector == null
-        ? primaryColor.withValues(alpha: 0.5)
+        ? primaryColor.withValues(alpha: 0.6)
         : primaryColor;
   }
 }

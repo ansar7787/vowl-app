@@ -324,25 +324,24 @@ void main() {
       },
     );
 
-    testWidgets(
-      '3. displays prepositionCategory when grammarRule is null',
-      (tester) async {
-        final stateCategory = GrammarLoaded(
-          quests: const [testQuestCategoryOnly],
-          currentIndex: 0,
-          livesRemaining: 3,
-          answerStatus: AnswerStatus.unanswered,
-          hintUsed: false,
-          wrongCount: 0,
-          isFinalFailure: false,
-        );
+    testWidgets('3. displays prepositionCategory when grammarRule is null', (
+      tester,
+    ) async {
+      final stateCategory = GrammarLoaded(
+        quests: const [testQuestCategoryOnly],
+        currentIndex: 0,
+        livesRemaining: 3,
+        answerStatus: AnswerStatus.unanswered,
+        hintUsed: false,
+        wrongCount: 0,
+        isFinalFailure: false,
+      );
 
-        await pumpPrepositionChoice(tester, state: stateCategory);
+      await pumpPrepositionChoice(tester, state: stateCategory);
 
-        expect(find.byKey(const ValueKey('grammar_rule_box')), findsOneWidget);
-        expect(find.text('RULE: PLACE'), findsOneWidget);
-      },
-    );
+      expect(find.byKey(const ValueKey('grammar_rule_box')), findsOneWidget);
+      expect(find.text('RULE: PLACE'), findsOneWidget);
+    });
 
     testWidgets(
       '4. displays quest hint inside grammar rule box when hintUsed is true',
@@ -542,7 +541,9 @@ void main() {
         final node0Center = tester.getCenter(node0);
 
         // Pan into node 0 from canvas center
-        final gesture = await tester.startGesture(tester.getCenter(canvasFinder));
+        final gesture = await tester.startGesture(
+          tester.getCenter(canvasFinder),
+        );
         await gesture.moveBy(const Offset(0, 20));
         await tester.pump();
         await gesture.moveTo(node0Center);
@@ -580,7 +581,9 @@ void main() {
         final node1Center = tester.getCenter(node1);
 
         // Pan into node 1 from canvas center
-        final gesture = await tester.startGesture(tester.getCenter(canvasFinder));
+        final gesture = await tester.startGesture(
+          tester.getCenter(canvasFinder),
+        );
         await gesture.moveBy(const Offset(0, 20));
         await tester.pump();
         await gesture.moveTo(node1Center);
@@ -676,18 +679,17 @@ void main() {
       },
     );
 
-    testWidgets(
-      '15. level 1 briefing dialog displays for first-time user',
-      (tester) async {
-        SharedPreferences.setMockInitialValues({
-          'has_seen_briefing_prepositionChoice': false,
-        });
+    testWidgets('15. level 1 briefing dialog displays for first-time user', (
+      tester,
+    ) async {
+      SharedPreferences.setMockInitialValues({
+        'has_seen_briefing_prepositionChoice': false,
+      });
 
-        await pumpPrepositionChoice(tester, level: 1);
+      await pumpPrepositionChoice(tester, level: 1);
 
-        expect(find.byType(GameBriefingLayer), findsOneWidget);
-      },
-    );
+      expect(find.byType(GameBriefingLayer), findsOneWidget);
+    });
 
     testWidgets(
       '16. reduced motion: lowAnimationModeOverride gates shimmer and entrance animations',
@@ -724,35 +726,102 @@ void main() {
       },
     );
 
-    testWidgets(
-      '19. dark mode renders correctly with dark theme styling',
-      (tester) async {
-        await pumpPrepositionChoice(tester, themeMode: ThemeMode.dark);
+    testWidgets('19. dark mode renders correctly with dark theme styling', (
+      tester,
+    ) async {
+      await pumpPrepositionChoice(tester, themeMode: ThemeMode.dark);
 
-        expect(find.byType(PrepositionChoiceScreen), findsOneWidget);
-        expect(tester.takeException(), isNull);
+      expect(find.byType(PrepositionChoiceScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('20. final failure state renders game over layout cleanly', (
+      tester,
+    ) async {
+      final failedState = GrammarLoaded(
+        quests: const [testQuest1],
+        currentIndex: 0,
+        livesRemaining: 0,
+        answerStatus: AnswerStatus.incorrect,
+        hintUsed: false,
+        wrongCount: 3,
+        isFinalFailure: true,
+      );
+
+      await pumpPrepositionChoice(tester, state: failedState);
+
+      expect(find.byType(PrepositionChoiceScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets(
+      '21. instruction text is center aligned, does not truncate with ellipsis, and replaces buzzword',
+      (tester) async {
+        const questWithBuzzword = GrammarQuest(
+          id: 'buzz_q',
+          instruction: 'TRACE OR TAP A NODE',
+          difficulty: 1,
+          subtype: GameSubtype.prepositionChoice,
+          sentenceWithBlank: 'The keys are ____ the counter.',
+          correctAnswer: 'The keys are on the counter.',
+          options: ['ON', 'IN', 'AT', 'UNDER'],
+          correctAnswerIndex: 0,
+        );
+
+        final buzzState = GrammarLoaded(
+          quests: const [questWithBuzzword],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
+
+        await pumpPrepositionChoice(tester, state: buzzState);
+
+        final textFinder = find.descendant(
+          of: find.byType(PrepositionChoiceInstruction),
+          matching: find.byType(Text),
+        );
+        expect(textFinder, findsOneWidget);
+        final textWidget = tester.widget<Text>(textFinder);
+
+        expect(textWidget.textAlign, TextAlign.center);
+        expect(textWidget.overflow, isNot(TextOverflow.ellipsis));
+        expect(textWidget.data, 'Trace or tap the correct preposition');
       },
     );
 
     testWidgets(
-      '20. final failure state renders game over layout cleanly',
+      '22. Phase 2 TypeToConfirmOverlay card has standard side padding and does not touch screen edges',
       (tester) async {
-        final failedState = GrammarLoaded(
-          quests: const [testQuest1],
-          currentIndex: 0,
-          livesRemaining: 0,
-          answerStatus: AnswerStatus.incorrect,
-          hintUsed: false,
-          wrongCount: 3,
-          isFinalFailure: true,
-        );
+        await pumpPrepositionChoice(tester, width: 390, height: 844);
 
-        await pumpPrepositionChoice(tester, state: failedState);
+        // Tap correct node (node 1 is OVER)
+        final node1 = find.byKey(const ValueKey('preposition_node_1'));
+        await tester.tap(node1);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 300));
 
-        expect(find.byType(PrepositionChoiceScreen), findsOneWidget);
-        expect(tester.takeException(), isNull);
+        final overlayFinder = find.byType(TypeToConfirmOverlay);
+        expect(overlayFinder, findsOneWidget);
+
+        final paddingFinder = find
+            .ancestor(of: overlayFinder, matching: find.byType(Padding))
+            .first;
+
+        final paddingWidget = tester.widget<Padding>(paddingFinder);
+        final insets = paddingWidget.padding.resolve(TextDirection.ltr);
+
+        expect(insets.left, greaterThanOrEqualTo(16));
+        expect(insets.right, greaterThanOrEqualTo(16));
+
+        final overlayRect = tester.getRect(overlayFinder);
+        expect(overlayRect.left, greaterThan(0));
+        expect(overlayRect.right, lessThan(390));
       },
     );
   });
 }
-

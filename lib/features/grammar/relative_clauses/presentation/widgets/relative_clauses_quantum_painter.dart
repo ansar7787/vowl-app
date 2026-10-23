@@ -32,20 +32,20 @@ class RelativeClausesQuantumPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final glowRadius = isCompact ? 38.r : 58.r;
-    final bodyRadius = isCompact ? 34.r : 52.r;
-    final labelFontSize = isCompact ? 11.sp : 14.sp;
-    final labelMaxWidth = isCompact ? 75.w : 100.w;
+    final bodyRadius = isCompact ? 36.r : 44.r;
+    final glowRadius = bodyRadius + (isCompact ? 6.r : 10.r);
+    final baseFontSize = isCompact ? 11.5.sp : 13.5.sp;
+    final labelMaxWidth = bodyRadius * 1.68;
 
     final linePaint = Paint()
       ..color = primaryColor.withValues(alpha: 0.6)
-      ..strokeWidth = isCompact ? 2.r : 3.r
+      ..strokeWidth = isCompact ? 2.r : 2.5.r
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
     final nodePaint = Paint()..style = PaintingStyle.fill;
 
-    // Draw Holographic Node Bubbles
+    // Draw Option Node Bubbles
     for (int i = 0; i < nodePoints.length; i++) {
       final isCaught = isAnswered && targetNode == i;
       final isWrong = isAnswered && isCorrect == false && targetNode == i;
@@ -55,18 +55,18 @@ class RelativeClausesQuantumPainter extends CustomPainter {
                 : AppColors.gameIncorrect)
           : (isWrong ? AppColors.gameIncorrect : primaryColor);
 
-      // Outer Plasma Glow
+      // Outer Glow
       canvas.drawCircle(
         nodePoints[i],
         glowRadius,
         Paint()
-          ..color = nodeColor.withValues(alpha: 0.1)
-          ..maskFilter = MaskFilter.blur(BlurStyle.normal, isCompact ? 8 : 12),
+          ..color = nodeColor.withValues(alpha: isCaught ? 0.25 : 0.08)
+          ..maskFilter = MaskFilter.blur(BlurStyle.normal, isCompact ? 6 : 10),
       );
 
       // Particle Burst
       if (isCaught && isCorrect == true && particleValue > 0) {
-        final maxRadius = bodyRadius * 2.5;
+        final maxRadius = bodyRadius * 2.2;
         final currentRadius =
             bodyRadius + (maxRadius - bodyRadius) * particleValue;
         canvas.drawCircle(
@@ -77,7 +77,7 @@ class RelativeClausesQuantumPainter extends CustomPainter {
               alpha: 1.0 - particleValue,
             )
             ..style = PaintingStyle.stroke
-            ..strokeWidth = 3.r,
+            ..strokeWidth = 2.5.r,
         );
 
         for (int p = 0; p < 8; p++) {
@@ -88,7 +88,7 @@ class RelativeClausesQuantumPainter extends CustomPainter {
           final dy = nodePoints[i].dy + distance * sin(angle);
           canvas.drawCircle(
             Offset(dx, dy),
-            4.r * (1.0 - particleValue),
+            3.5.r * (1.0 - particleValue),
             Paint()
               ..color = AppColors.gameCorrect.withValues(
                 alpha: 1.0 - particleValue,
@@ -97,10 +97,10 @@ class RelativeClausesQuantumPainter extends CustomPainter {
         }
       }
 
-      // Glass Body
+      // Card Body
       nodePaint.color = isDark
-          ? Colors.white.withValues(alpha: 0.15)
-          : Colors.black.withValues(alpha: 0.08);
+          ? Colors.white.withValues(alpha: 0.12)
+          : Colors.white.withValues(alpha: 0.95);
       canvas.drawCircle(nodePoints[i], bodyRadius, nodePaint);
 
       // Border
@@ -108,36 +108,52 @@ class RelativeClausesQuantumPainter extends CustomPainter {
         nodePoints[i],
         bodyRadius,
         Paint()
-          ..color = nodeColor.withValues(alpha: 0.8)
+          ..color = nodeColor.withValues(alpha: isCaught ? 0.95 : 0.55)
           ..style = PaintingStyle.stroke
-          ..strokeWidth = 3,
+          ..strokeWidth = isCaught ? 2.5.r : 1.8.r,
       );
 
-      // Label
-      final textPainter = TextPainter(
-        text: TextSpan(
-          text: nodeLabels[i].toUpperCase(),
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: labelFontSize,
-            fontWeight: FontWeight.w900,
-            color: isCaught
-                ? (isCorrect == true
-                      ? AppColors.gameCorrect
-                      : AppColors.gameIncorrect)
-                : (isDark ? Colors.white : Colors.black),
-            letterSpacing: isCompact ? 1.0 : 1.5,
+      // Label - Auto-fit text to bubble so it never overflows
+      double currentFontSize = baseFontSize;
+      TextPainter textPainter;
+      final nodeTextColor = isCaught
+          ? (isCorrect == true
+                ? AppColors.gameCorrect
+                : AppColors.gameIncorrect)
+          : (isDark ? Colors.white : AppColors.slate900);
+
+      while (true) {
+        textPainter = TextPainter(
+          text: TextSpan(
+            text: nodeLabels[i],
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: currentFontSize,
+              fontWeight: FontWeight.w600,
+              color: nodeTextColor,
+              letterSpacing: 0.2,
+              height: 1.25,
+            ),
           ),
-        ),
-        textDirection: TextDirection.ltr,
-      )..layout(maxWidth: labelMaxWidth);
+          textAlign: TextAlign.center,
+          textDirection: TextDirection.ltr,
+        )..layout(maxWidth: labelMaxWidth);
+
+        if ((textPainter.height <= bodyRadius * 1.5 &&
+                textPainter.width <= labelMaxWidth) ||
+            currentFontSize <= 8.5.sp) {
+          break;
+        }
+        currentFontSize -= 0.5;
+      }
+
       textPainter.paint(
         canvas,
         nodePoints[i] - Offset(textPainter.width / 2, textPainter.height / 2),
       );
     }
     // Draw Emitter Source
-    final emitterRadius = isCompact ? 12.0 : 18.0;
+    final emitterRadius = isCompact ? 12.0 : 16.0;
 
     canvas.drawCircle(
       startPoint,

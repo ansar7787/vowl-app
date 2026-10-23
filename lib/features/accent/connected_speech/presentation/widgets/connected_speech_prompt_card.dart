@@ -57,7 +57,10 @@ class ConnectedSpeechPromptCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12.r),
                   ),
                   child: Text(
-                    context.tr('games.target_phrase', fallback: 'TARGET PHRASE'),
+                    context.tr(
+                      'games.target_phrase',
+                      fallback: 'TARGET PHRASE',
+                    ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: isCompact ? 10.sp : 11.sp,

@@ -84,7 +84,8 @@ class _WordReorderScreenState extends State<WordReorderScreen>
     super.onGrammarStateChanged(context, state);
     if (state is GrammarLoaded) {
       if (_lastProcessedIndex != state.currentIndex ||
-          (_availableIndices.value.isEmpty && _assembledIndices.value.isEmpty)) {
+          (_availableIndices.value.isEmpty &&
+              _assembledIndices.value.isEmpty)) {
         _lastProcessedIndex = state.currentIndex;
         _initForQuest(state.currentQuestOrNull);
       }
@@ -196,10 +197,13 @@ class _WordReorderScreenState extends State<WordReorderScreen>
       listenWhen: grammarListenWhen,
       listener: onGrammarStateChanged,
       builder: (context, state) {
-        final quest = (state is GrammarLoaded) ? state.currentQuestOrNull : null;
+        final quest = (state is GrammarLoaded)
+            ? state.currentQuestOrNull
+            : null;
         if (state is GrammarLoaded &&
             (_lastProcessedIndex != state.currentIndex ||
-             (_availableIndices.value.isEmpty && _assembledIndices.value.isEmpty))) {
+                (_availableIndices.value.isEmpty &&
+                    _assembledIndices.value.isEmpty))) {
           _lastProcessedIndex = state.currentIndex;
           _initForQuest(quest);
         }
@@ -264,7 +268,9 @@ class _WordReorderScreenState extends State<WordReorderScreen>
                                         ),
                                         sliver: SliverList(
                                           delegate: SliverChildListDelegate([
-                                            SizedBox(height: isCompact ? 6.h : 10.h),
+                                            SizedBox(
+                                              height: isCompact ? 6.h : 10.h,
+                                            ),
                                             Center(
                                               child: WordReorderInstruction(
                                                 primaryColor:
@@ -272,58 +278,79 @@ class _WordReorderScreenState extends State<WordReorderScreen>
                                                 instruction: quest.instruction,
                                               ),
                                             ),
-                                            SizedBox(height: isCompact ? 10.h : 16.h),
+                                            SizedBox(
+                                              height: isCompact ? 10.h : 14.h,
+                                            ),
                                             if (quest.structureType != null)
-                                              Container(
-                                                key: const ValueKey('word_target_structure'),
-                                                margin: EdgeInsets.only(
-                                                  bottom: isCompact ? 10.h : 16.h,
-                                                  left: 8.w,
-                                                  right: 8.w,
-                                                ),
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 16.w,
-                                                  vertical: isCompact ? 8.h : 12.h,
-                                                ),
-                                                decoration: BoxDecoration(
-                                                  color: theme.primaryColor
-                                                      .withValues(alpha: 0.1),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                        16.r,
-                                                      ),
-                                                  border: Border.all(
-                                                    color: theme.primaryColor
-                                                        .withValues(alpha: 0.3),
+                                              Center(
+                                                child: Container(
+                                                  key: const ValueKey(
+                                                    'word_target_structure',
                                                   ),
-                                                ),
-                                                child: Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons
-                                                          .account_tree_outlined,
-                                                      color: theme.primaryColor,
-                                                      size: 16.sp,
-                                                    ),
-                                                    SizedBox(width: 8.w),
-                                                    Flexible(
-                                                      child: Text(
-                                                        "TARGET STRUCTURE: ${quest.structureType!.toUpperCase()}",
-                                                        style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: isCompact ? 11.sp : 12.sp,
-                                                          fontWeight:
-                                                              FontWeight.w800,
-                                                          color:
-                                                              theme.primaryColor,
-                                                          letterSpacing: 1.5,
+                                                  margin: EdgeInsets.only(
+                                                    bottom: isCompact
+                                                        ? 10.h
+                                                        : 14.h,
+                                                  ),
+                                                  padding: EdgeInsets.symmetric(
+                                                    horizontal: 14.w,
+                                                    vertical: isCompact
+                                                        ? 6.h
+                                                        : 8.h,
+                                                  ),
+                                                  decoration: BoxDecoration(
+                                                    color: theme.primaryColor
+                                                        .withValues(
+                                                          alpha: 0.08,
                                                         ),
-                                                        overflow: TextOverflow.ellipsis,
-                                                      ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                          14.r,
+                                                        ),
+                                                    border: Border.all(
+                                                      color: theme.primaryColor
+                                                          .withValues(
+                                                            alpha: 0.2,
+                                                          ),
+                                                      width: 1.2,
                                                     ),
-                                                  ],
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Icon(
+                                                        Icons.schema_rounded,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        size: 15.sp,
+                                                      ),
+                                                      SizedBox(width: 8.w),
+                                                      Flexible(
+                                                        child: Text(
+                                                          "Sentence pattern: ${quest.structureType}",
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          softWrap: true,
+                                                          style: TextStyle(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            fontSize: isCompact
+                                                                ? 12.sp
+                                                                : 13.sp,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            color: theme
+                                                                .primaryColor,
+                                                            letterSpacing: 0.3,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 ),
                                               ),
                                             SizedBox(height: 8.h),
@@ -338,7 +365,9 @@ class _WordReorderScreenState extends State<WordReorderScreen>
                                                   _pendingTypeSubmit.value,
                                               onWordRemove: _onWordRemove,
                                             ),
-                                            SizedBox(height: isCompact ? 16.h : 32.h),
+                                            SizedBox(
+                                              height: isCompact ? 16.h : 32.h,
+                                            ),
                                             Wrap(
                                               spacing: 12.w,
                                               runSpacing: 16.h,
@@ -346,7 +375,9 @@ class _WordReorderScreenState extends State<WordReorderScreen>
                                               children: _availableIndices.value
                                                   .map((idx) {
                                                     return WordReorderFloatingTile(
-                                                      key: ValueKey('word_tile_$idx'),
+                                                      key: ValueKey(
+                                                        'word_tile_$idx',
+                                                      ),
                                                       word: shuffledWords[idx],
                                                       index: idx,
                                                       onTap: () =>
@@ -361,7 +392,9 @@ class _WordReorderScreenState extends State<WordReorderScreen>
                                                   })
                                                   .toList(),
                                             ),
-                                            SizedBox(height: isCompact ? 16.h : 32.h),
+                                            SizedBox(
+                                              height: isCompact ? 16.h : 32.h,
+                                            ),
                                             if (!isAnsweredNotifier.value &&
                                                 !_pendingTypeSubmit.value)
                                               WordReorderCheckButton(
@@ -384,12 +417,16 @@ class _WordReorderScreenState extends State<WordReorderScreen>
                                           !isAnsweredNotifier.value)
                                         SliverToBoxAdapter(
                                           child: Padding(
-                                            padding: EdgeInsets.only(
-                                              top: 16.h,
-                                              bottom: 24.h,
+                                            padding: EdgeInsets.fromLTRB(
+                                              16.w,
+                                              16.h,
+                                              16.w,
+                                              24.h,
                                             ),
                                             child: TypeToConfirmOverlay(
-                                              key: const ValueKey('word_type_overlay'),
+                                              key: const ValueKey(
+                                                'word_type_overlay',
+                                              ),
                                               expectedText:
                                                   quest.sentence ??
                                                   correctOrder
@@ -398,6 +435,12 @@ class _WordReorderScreenState extends State<WordReorderScreen>
                                                             shuffledWords[idx],
                                                       )
                                                       .join(" "),
+                                              title: "Type the sentence",
+                                              subtitle:
+                                                  "Type what you built to confirm your answer",
+                                              displayFontSize: 18.sp,
+                                              displayFontWeight:
+                                                  FontWeight.w600,
                                               primaryColor: theme.primaryColor,
                                               onConfirmed: () =>
                                                   _submitFinalAnswer(true),

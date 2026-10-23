@@ -74,7 +74,8 @@ void main() {
     instruction: 'Map the timeline.',
     difficulty: 1,
     subtype: GameSubtype.tenseMastery,
-    sentence: 'The barista wiped down the espresso machine before closing last night.',
+    sentence:
+        'The barista wiped down the espresso machine before closing last night.',
     correctAnswer: 'Past',
     hint: 'This cleaning happened at a specific moment in the past.',
     explanation: 'Wiped is simple past tense.',
@@ -96,7 +97,8 @@ void main() {
     instruction: 'Map the timeline.',
     difficulty: 1,
     subtype: GameSubtype.tenseMastery,
-    sentence: 'Every morning, the barista opens the shop and grinds fresh coffee beans.',
+    sentence:
+        'Every morning, the barista opens the shop and grinds fresh coffee beans.',
     correctAnswer: 'Present',
     hint: 'This is a daily routine.',
     explanation: 'Opens and grinds are simple present forms.',
@@ -156,7 +158,9 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
     when(() => mockEconomyBloc.stream).thenAnswer((_) => const Stream.empty());
@@ -262,9 +266,7 @@ void main() {
                 viewInsets: EdgeInsets.zero,
                 disableAnimations: true,
               ),
-              child: Scaffold(
-                body: TenseMasteryScreen(level: level),
-              ),
+              child: Scaffold(body: TenseMasteryScreen(level: level)),
             ),
           ),
         ),
@@ -275,24 +277,28 @@ void main() {
   }
 
   group('TenseMasteryScreen Layout & Hardening Tests', () {
-    testWidgets('1. displays shimmer loading when state is GrammarInitial',
-        (tester) async {
+    testWidgets('1. displays shimmer loading when state is GrammarInitial', (
+      tester,
+    ) async {
       await pumpTenseMasteryScreen(tester, state: const GrammarInitial());
       expect(find.byType(GameShimmerLoading), findsOneWidget);
     });
 
-    testWidgets('2. displays shimmer loading when state is GrammarLoading',
-        (tester) async {
+    testWidgets('2. displays shimmer loading when state is GrammarLoading', (
+      tester,
+    ) async {
       await pumpTenseMasteryScreen(tester, state: const GrammarLoading());
       expect(find.byType(GameShimmerLoading), findsOneWidget);
     });
 
-    testWidgets('3. renders TenseMasteryInstruction ("SHIFT THROUGH TIME")',
-        (tester) async {
-      await pumpTenseMasteryScreen(tester);
-      expect(find.byType(TenseMasteryInstruction), findsOneWidget);
-      expect(find.text('SHIFT THROUGH TIME'), findsOneWidget);
-    });
+    testWidgets(
+      '3. renders TenseMasteryInstruction ("Select the correct tense")',
+      (tester) async {
+        await pumpTenseMasteryScreen(tester);
+        expect(find.byType(TenseMasteryInstruction), findsOneWidget);
+        expect(find.text('Select the correct tense'), findsOneWidget);
+      },
+    );
 
     testWidgets('4. renders context card with sentence text', (tester) async {
       await pumpTenseMasteryScreen(tester);
@@ -306,10 +312,14 @@ void main() {
       );
     });
 
-    testWidgets('5. renders timeline slider and all three tense nodes',
-        (tester) async {
+    testWidgets('5. renders timeline slider and all three tense nodes', (
+      tester,
+    ) async {
       await pumpTenseMasteryScreen(tester);
-      expect(find.byKey(const ValueKey('tense_timeline_slider')), findsOneWidget);
+      expect(
+        find.byKey(const ValueKey('tense_timeline_slider')),
+        findsOneWidget,
+      );
       expect(find.byKey(const ValueKey('tense_node_past')), findsOneWidget);
       expect(find.byKey(const ValueKey('tense_node_present')), findsOneWidget);
       expect(find.byKey(const ValueKey('tense_node_future')), findsOneWidget);
@@ -318,15 +328,17 @@ void main() {
       expect(find.text('FUTURE'), findsOneWidget);
     });
 
-    testWidgets('6. renders draggable chrono-sphere in initial position',
-        (tester) async {
+    testWidgets('6. renders draggable chrono-sphere in initial position', (
+      tester,
+    ) async {
       await pumpTenseMasteryScreen(tester);
       expect(find.byKey(const ValueKey('tense_chrono_sphere')), findsOneWidget);
       expect(find.byIcon(Icons.timer_rounded), findsOneWidget);
     });
 
-    testWidgets('7. tapping past node updates selection and triggers haptic',
-        (tester) async {
+    testWidgets('7. tapping past node updates selection and triggers haptic', (
+      tester,
+    ) async {
       await pumpTenseMasteryScreen(tester);
       final pastNode = find.byKey(const ValueKey('tense_node_past'));
       await tester.tap(pastNode);
@@ -335,68 +347,79 @@ void main() {
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('8. tapping future node updates selection and triggers haptic',
-        (tester) async {
-      await pumpTenseMasteryScreen(tester);
-      final futureNode = find.byKey(const ValueKey('tense_node_future'));
-      await tester.tap(futureNode);
-      await tester.pump();
+    testWidgets(
+      '8. tapping future node updates selection and triggers haptic',
+      (tester) async {
+        await pumpTenseMasteryScreen(tester);
+        final futureNode = find.byKey(const ValueKey('tense_node_future'));
+        await tester.tap(futureNode);
+        await tester.pump();
 
-      verify(() => mockHapticService.selection()).called(1);
-    });
-
-    testWidgets('9. tapping present node keeps present selection and triggers haptic',
-        (tester) async {
-      await pumpTenseMasteryScreen(tester);
-      // Move sphere to past first so present node is not occluded by the sphere
-      await tester.tap(find.byKey(const ValueKey('tense_node_past')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-      clearInteractions(mockHapticService);
-
-      final presentNode = find.byKey(const ValueKey('tense_node_present'));
-      await tester.tap(presentNode);
-      await tester.pump();
-
-      verify(() => mockHapticService.selection()).called(1);
-    });
-
-    testWidgets('10. freezing with incorrect tense triggers error haptic and submits false',
-        (tester) async {
-      // Default is Present (0.5), but samplePastQuest requires Past
-      await pumpTenseMasteryScreen(tester);
-      final freezeBtn = find.byKey(const ValueKey('tense_freeze_button'));
-      expect(freezeBtn, findsOneWidget);
-
-      await tester.tap(freezeBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockGrammarBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
 
     testWidgets(
-        '11. selecting correct past tense and freezing triggers heavy haptic and opens Phase 2 overlay',
-        (tester) async {
-      await pumpTenseMasteryScreen(tester);
+      '9. tapping present node keeps present selection and triggers haptic',
+      (tester) async {
+        await pumpTenseMasteryScreen(tester);
+        // Move sphere to past first so present node is not occluded by the sphere
+        await tester.tap(find.byKey(const ValueKey('tense_node_past')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+        clearInteractions(mockHapticService);
 
-      // Select Past
-      await tester.tap(find.byKey(const ValueKey('tense_node_past')));
-      await tester.pump();
+        final presentNode = find.byKey(const ValueKey('tense_node_present'));
+        await tester.tap(presentNode);
+        await tester.pump();
 
-      // Tap freeze timeline
-      await tester.tap(find.byKey(const ValueKey('tense_freeze_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        verify(() => mockHapticService.selection()).called(1);
+      },
+    );
 
-      verify(() => mockHapticService.heavy()).called(1);
-      expect(find.byKey(const ValueKey('tense_type_overlay'), skipOffstage: false), findsOneWidget);
-    });
+    testWidgets(
+      '10. freezing with incorrect tense triggers error haptic and submits false',
+      (tester) async {
+        // Default is Present (0.5), but samplePastQuest requires Past
+        await pumpTenseMasteryScreen(tester);
+        final freezeBtn = find.byKey(const ValueKey('tense_freeze_button'));
+        expect(freezeBtn, findsOneWidget);
 
-    testWidgets('12. dragging chrono sphere left shifts to Past tense',
-        (tester) async {
+        await tester.tap(freezeBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockGrammarBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
+
+    testWidgets(
+      '11. selecting correct past tense and freezing triggers heavy haptic and opens Phase 2 overlay',
+      (tester) async {
+        await pumpTenseMasteryScreen(tester);
+
+        // Select Past
+        await tester.tap(find.byKey(const ValueKey('tense_node_past')));
+        await tester.pump();
+
+        // Tap freeze timeline
+        await tester.tap(find.byKey(const ValueKey('tense_freeze_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        verify(() => mockHapticService.heavy()).called(1);
+        expect(
+          find.byKey(const ValueKey('tense_type_overlay'), skipOffstage: false),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets('12. dragging chrono sphere left shifts to Past tense', (
+      tester,
+    ) async {
       await pumpTenseMasteryScreen(tester);
       final sphere = find.byKey(const ValueKey('tense_chrono_sphere'));
 
@@ -411,11 +434,15 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       verify(() => mockHapticService.heavy()).called(2);
-      expect(find.byKey(const ValueKey('tense_type_overlay'), skipOffstage: false), findsOneWidget);
+      expect(
+        find.byKey(const ValueKey('tense_type_overlay'), skipOffstage: false),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('13. dragging chrono sphere right shifts to Future tense',
-        (tester) async {
+    testWidgets('13. dragging chrono sphere right shifts to Future tense', (
+      tester,
+    ) async {
       final futureState = GrammarLoaded(
         quests: const [sampleFutureQuest],
         currentIndex: 0,
@@ -440,96 +467,117 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       verify(() => mockHapticService.heavy()).called(2);
-      expect(find.byKey(const ValueKey('tense_type_overlay'), skipOffstage: false), findsOneWidget);
-    });
-
-    testWidgets('14. present quest succeeds directly with default present slider',
-        (tester) async {
-      final presentState = GrammarLoaded(
-        quests: const [samplePresentQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
+      expect(
+        find.byKey(const ValueKey('tense_type_overlay'), skipOffstage: false),
+        findsOneWidget,
       );
-
-      await pumpTenseMasteryScreen(tester, state: presentState);
-      // Freeze with default Present selection
-      await tester.tap(find.byKey(const ValueKey('tense_freeze_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      verify(() => mockHapticService.heavy()).called(1);
-      expect(find.byKey(const ValueKey('tense_type_overlay'), skipOffstage: false), findsOneWidget);
     });
 
-    testWidgets('15. Phase 2 TypeToConfirmOverlay accepts correct typing and dispatches success',
-        (tester) async {
-      await pumpTenseMasteryScreen(tester);
+    testWidgets(
+      '14. present quest succeeds directly with default present slider',
+      (tester) async {
+        final presentState = GrammarLoaded(
+          quests: const [samplePresentQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
 
-      // Select Past and freeze
-      await tester.tap(find.byKey(const ValueKey('tense_node_past')));
-      await tester.pump();
-      await tester.tap(find.byKey(const ValueKey('tense_freeze_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await pumpTenseMasteryScreen(tester, state: presentState);
+        // Freeze with default Present selection
+        await tester.tap(find.byKey(const ValueKey('tense_freeze_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final overlayFinder = find.byKey(const ValueKey('tense_type_overlay'), skipOffstage: false);
-      expect(overlayFinder, findsOneWidget);
+        verify(() => mockHapticService.heavy()).called(1);
+        expect(
+          find.byKey(const ValueKey('tense_type_overlay'), skipOffstage: false),
+          findsOneWidget,
+        );
+      },
+    );
 
-      final overlayState = tester.widget<TypeToConfirmOverlay>(overlayFinder);
-      overlayState.onConfirmed();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+    testWidgets(
+      '15. Phase 2 TypeToConfirmOverlay accepts correct typing and dispatches success',
+      (tester) async {
+        await pumpTenseMasteryScreen(tester);
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockGrammarBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        // Select Past and freeze
+        await tester.tap(find.byKey(const ValueKey('tense_node_past')));
+        await tester.pump();
+        await tester.tap(find.byKey(const ValueKey('tense_freeze_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-    testWidgets('16. Phase 2 TypeToConfirmOverlay skipping dispatches wrong and false submit',
-        (tester) async {
-      await pumpTenseMasteryScreen(tester);
+        final overlayFinder = find.byKey(
+          const ValueKey('tense_type_overlay'),
+          skipOffstage: false,
+        );
+        expect(overlayFinder, findsOneWidget);
 
-      // Select Past and freeze
-      await tester.tap(find.byKey(const ValueKey('tense_node_past')));
-      await tester.pump();
-      await tester.tap(find.byKey(const ValueKey('tense_freeze_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final overlayState = tester.widget<TypeToConfirmOverlay>(overlayFinder);
+        overlayState.onConfirmed();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final overlayFinder = find.byKey(const ValueKey('tense_type_overlay'), skipOffstage: false);
-      expect(overlayFinder, findsOneWidget);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockGrammarBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
-      final overlayState = tester.widget<TypeToConfirmOverlay>(overlayFinder);
-      overlayState.onSkipped();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+    testWidgets(
+      '16. Phase 2 TypeToConfirmOverlay skipping dispatches wrong and false submit',
+      (tester) async {
+        await pumpTenseMasteryScreen(tester);
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockGrammarBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        // Select Past and freeze
+        await tester.tap(find.byKey(const ValueKey('tense_node_past')));
+        await tester.pump();
+        await tester.tap(find.byKey(const ValueKey('tense_freeze_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-    testWidgets('17. freeze button is hidden once answered or in phase 2 pending submit',
-        (tester) async {
-      await pumpTenseMasteryScreen(tester);
+        final overlayFinder = find.byKey(
+          const ValueKey('tense_type_overlay'),
+          skipOffstage: false,
+        );
+        expect(overlayFinder, findsOneWidget);
 
-      // Select Past and freeze
-      await tester.tap(find.byKey(const ValueKey('tense_node_past')));
-      await tester.pump();
-      await tester.tap(find.byKey(const ValueKey('tense_freeze_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final overlayState = tester.widget<TypeToConfirmOverlay>(overlayFinder);
+        overlayState.onSkipped();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      // In phase 2, freeze button is hidden
-      expect(find.byKey(const ValueKey('tense_freeze_button')), findsNothing);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockGrammarBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('18. timeline nodes tap is locked out once answered',
-        (tester) async {
+    testWidgets(
+      '17. freeze button is hidden once answered or in phase 2 pending submit',
+      (tester) async {
+        await pumpTenseMasteryScreen(tester);
+
+        // Select Past and freeze
+        await tester.tap(find.byKey(const ValueKey('tense_node_past')));
+        await tester.pump();
+        await tester.tap(find.byKey(const ValueKey('tense_freeze_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // In phase 2, freeze button is hidden
+        expect(find.byKey(const ValueKey('tense_freeze_button')), findsNothing);
+      },
+    );
+
+    testWidgets('18. timeline nodes tap is locked out once answered', (
+      tester,
+    ) async {
       await pumpTenseMasteryScreen(tester);
 
       // Wrong answer
@@ -541,14 +589,18 @@ void main() {
       clearInteractions(mockHapticService);
 
       // Tapping node should be locked out
-      await tester.tap(find.byKey(const ValueKey('tense_node_future')), warnIfMissed: false);
+      await tester.tap(
+        find.byKey(const ValueKey('tense_node_future')),
+        warnIfMissed: false,
+      );
       await tester.pump();
 
       verifyNever(() => mockHapticService.selection());
     });
 
-    testWidgets('19. dragging slider is locked out once answered',
-        (tester) async {
+    testWidgets('19. dragging slider is locked out once answered', (
+      tester,
+    ) async {
       await pumpTenseMasteryScreen(tester);
 
       // Wrong answer
@@ -566,8 +618,9 @@ void main() {
       verifyNever(() => mockHapticService.heavy());
     });
 
-    testWidgets('20. onContinue callback triggers NextQuestion event',
-        (tester) async {
+    testWidgets('20. onContinue callback triggers NextQuestion event', (
+      tester,
+    ) async {
       await pumpTenseMasteryScreen(tester);
 
       // Fail to show continue
@@ -584,8 +637,9 @@ void main() {
       }
     });
 
-    testWidgets('21. onHint callback triggers GrammarHintUsed event',
-        (tester) async {
+    testWidgets('21. onHint callback triggers GrammarHintUsed event', (
+      tester,
+    ) async {
       await pumpTenseMasteryScreen(tester);
 
       final hintButton = find.byType(QuestHintButton);
@@ -597,24 +651,31 @@ void main() {
       verify(() => mockGrammarBloc.add(const GrammarHintUsed())).called(1);
     });
 
-    testWidgets('22. layout adapts gracefully in compact height (< 700)',
-        (tester) async {
+    testWidgets('22. layout adapts gracefully in compact height (< 700)', (
+      tester,
+    ) async {
       await pumpTenseMasteryScreen(tester, size: const Size(390, 640));
       expect(find.byType(TenseMasteryInstruction), findsOneWidget);
       expect(find.byKey(const ValueKey('tense_sentence_card')), findsOneWidget);
-      expect(find.byKey(const ValueKey('tense_timeline_slider')), findsOneWidget);
+      expect(
+        find.byKey(const ValueKey('tense_timeline_slider')),
+        findsOneWidget,
+      );
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('23. renders correctly in light theme without layout overflow',
-        (tester) async {
-      await pumpTenseMasteryScreen(tester, themeMode: ThemeMode.light);
-      expect(find.byType(TenseMasteryInstruction), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '23. renders correctly in light theme without layout overflow',
+      (tester) async {
+        await pumpTenseMasteryScreen(tester, themeMode: ThemeMode.light);
+        expect(find.byType(TenseMasteryInstruction), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('24. renders correctly in dark theme without layout overflow',
-        (tester) async {
+    testWidgets('24. renders correctly in dark theme without layout overflow', (
+      tester,
+    ) async {
       await pumpTenseMasteryScreen(tester, themeMode: ThemeMode.dark);
       expect(find.byType(TenseMasteryInstruction), findsOneWidget);
       expect(tester.takeException(), isNull);
@@ -627,8 +688,9 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('26. respects level 1 game briefing dialog on first run',
-        (tester) async {
+    testWidgets('26. respects level 1 game briefing dialog on first run', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({
         'has_seen_briefing_tenseMastery': false,
       });
@@ -636,6 +698,80 @@ void main() {
       await pumpTenseMasteryScreen(tester, level: 1);
       expect(find.byType(GameBriefingLayer), findsOneWidget);
     });
+
+    testWidgets(
+      '27. renders CONFIRM TENSE action button with standard text without buzzwords',
+      (tester) async {
+        await pumpTenseMasteryScreen(tester);
+        final confirmBtn = find.text('CONFIRM TENSE');
+        expect(confirmBtn, findsOneWidget);
+        expect(find.text('FREEZE TIMELINE'), findsNothing);
+      },
+    );
+
+    testWidgets(
+      '28. instruction centers text properly and does not truncate with ellipses',
+      (tester) async {
+        const longInstructionQuest = GrammarQuest(
+          id: 'tm_long_instruction',
+          instruction:
+              'Identify whether the action occurred in the past or will happen in the future.',
+          difficulty: 1,
+          subtype: GameSubtype.tenseMastery,
+          sentence: 'She will submit the final draft tomorrow morning.',
+          correctAnswer: 'Future',
+        );
+        final longState = GrammarLoaded(
+          quests: const [longInstructionQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
+
+        await pumpTenseMasteryScreen(tester, state: longState);
+        final textFinder = find.text(
+          'Identify whether the action occurred in the past or will happen in the future.',
+        );
+        expect(textFinder, findsOneWidget);
+
+        final textWidget = tester.widget<Text>(textFinder);
+        expect(textWidget.textAlign, equals(TextAlign.center));
+        expect(textWidget.overflow, isNot(equals(TextOverflow.ellipsis)));
+      },
+    );
+
+    testWidgets(
+      '29. TypeToConfirmOverlay has standard horizontal padding and does not touch screen edges',
+      (tester) async {
+        await pumpTenseMasteryScreen(tester);
+
+        // Select Past and confirm
+        await tester.tap(find.byKey(const ValueKey('tense_node_past')));
+        await tester.pump();
+        await tester.tap(find.byKey(const ValueKey('tense_freeze_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final overlayFinder = find.byKey(
+          const ValueKey('tense_type_overlay'),
+          skipOffstage: false,
+        );
+        expect(overlayFinder, findsOneWidget);
+
+        final paddingFinder = find.byKey(
+          const ValueKey('tense_overlay_padding'),
+          skipOffstage: false,
+        );
+        expect(paddingFinder, findsOneWidget);
+
+        final paddingWidget = tester.widget<Padding>(paddingFinder);
+        final edgeInsets = paddingWidget.padding.resolve(TextDirection.ltr);
+        expect(edgeInsets.left, greaterThanOrEqualTo(16));
+        expect(edgeInsets.right, greaterThanOrEqualTo(16));
+      },
+    );
   });
 }
-

@@ -63,8 +63,12 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
   }
 
   String get _currentTense {
-    if (_sliderValue.value < 0.25) return "Past";
-    if (_sliderValue.value > 0.75) return "Future";
+    if (_sliderValue.value < 0.25) {
+      return "Past";
+    }
+    if (_sliderValue.value > 0.75) {
+      return "Future";
+    }
     return "Present";
   }
 
@@ -92,7 +96,9 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
   }
 
   void _onFreezeTimeline() {
-    if (isAnsweredNotifier.value) return;
+    if (isAnsweredNotifier.value) {
+      return;
+    }
 
     final state = context.read<GrammarBloc>().state;
     if (state is GrammarLoaded) {
@@ -228,46 +234,48 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
                                               children: [
                                                 SizedBox(
                                                   height: isCompact
-                                                      ? 4.h
-                                                      : 10.h,
+                                                      ? 6.h
+                                                      : 12.h,
                                                 ),
-                                                isCompact
-                                                    ? SizedBox(
-                                                        height: 25.h,
-                                                        child: FittedBox(
-                                                          fit: BoxFit.scaleDown,
-                                                          child: TenseMasteryInstruction(
-                                                            primaryColor: theme
-                                                                .primaryColor,
-                                                          ),
-                                                        ),
-                                                      )
-                                                    : TenseMasteryInstruction(
-                                                        primaryColor:
-                                                            theme.primaryColor,
-                                                      ),
+                                                TenseMasteryInstruction(
+                                                  primaryColor:
+                                                      theme.primaryColor,
+                                                  instruction:
+                                                      quest.instruction,
+                                                ),
                                                 SizedBox(
                                                   height: isCompact
-                                                      ? 8.h
-                                                      : 20.h,
+                                                      ? 10.h
+                                                      : 16.h,
                                                 ),
 
                                                 // Context Card
                                                 Builder(
                                                   builder: (context) {
-                                                    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+                                                    final reduceMotion =
+                                                        VowlMotion.shouldReduceMotion(
+                                                          context,
+                                                        );
                                                     final card = Padding(
-                                                      key: const ValueKey('tense_sentence_card'),
+                                                      key: const ValueKey(
+                                                        'tense_sentence_card',
+                                                      ),
                                                       padding:
                                                           EdgeInsets.symmetric(
-                                                            horizontal: 24.w,
+                                                            horizontal: 20.w,
                                                           ),
                                                       child: Container(
-                                                        padding: EdgeInsets.all(
-                                                          isCompact
-                                                              ? 14.r
-                                                              : 22.r,
-                                                        ),
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              horizontal:
+                                                                  isCompact
+                                                                  ? 16.w
+                                                                  : 22.w,
+                                                              vertical:
+                                                                  isCompact
+                                                                  ? 14.h
+                                                                  : 18.h,
+                                                            ),
                                                         decoration: BoxDecoration(
                                                           color: isDark
                                                               ? Colors.white
@@ -284,50 +292,80 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
                                                               BorderRadius.circular(
                                                                 isCompact
                                                                     ? 16.r
-                                                                    : 24.r,
+                                                                    : 20.r,
                                                               ),
                                                           border: Border.all(
                                                             color: theme
                                                                 .primaryColor
                                                                 .withValues(
-                                                                  alpha: 0.15,
+                                                                  alpha: 0.2,
                                                                 ),
                                                             width: 1.5,
                                                           ),
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              color: isDark
+                                                                  ? Colors.black
+                                                                        .withValues(
+                                                                          alpha:
+                                                                              0.2,
+                                                                        )
+                                                                  : theme
+                                                                        .primaryColor
+                                                                        .withValues(
+                                                                          alpha:
+                                                                              0.05,
+                                                                        ),
+                                                              blurRadius: 16,
+                                                              offset:
+                                                                  const Offset(
+                                                                    0,
+                                                                    4,
+                                                                  ),
+                                                            ),
+                                                          ],
                                                         ),
                                                         child: Text(
                                                           quest.sentence ?? "",
                                                           textAlign:
                                                               TextAlign.center,
+                                                          softWrap: true,
                                                           style: TextStyle(
                                                             fontFamily:
                                                                 'Outfit',
                                                             fontSize: isCompact
-                                                                ? 14.sp
-                                                                : 18.sp,
+                                                                ? 15.sp
+                                                                : 17.sp,
                                                             color: isDark
                                                                 ? Colors.white
                                                                 : Colors
                                                                       .black87,
-                                                            height: 1.5,
+                                                            height: 1.45,
                                                             fontWeight:
-                                                                FontWeight.w500,
+                                                                FontWeight.w600,
                                                           ),
                                                         ),
                                                       ),
                                                     );
-                                                    if (reduceMotion) return card;
+                                                    if (reduceMotion) {
+                                                      return card;
+                                                    }
                                                     return card
                                                         .animate()
-                                                        .fadeIn(duration: 600.ms)
-                                                        .slideY(begin: 0.2, end: 0);
+                                                        .fadeIn(
+                                                          duration: 600.ms,
+                                                        )
+                                                        .slideY(
+                                                          begin: 0.2,
+                                                          end: 0,
+                                                        );
                                                   },
                                                 ),
 
                                                 SizedBox(
                                                   height: isCompact
-                                                      ? 20.h
-                                                      : 60.h,
+                                                      ? 14.h
+                                                      : 24.h,
                                                 ),
 
                                                 // Timeline Slider
@@ -339,7 +377,9 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
                                                   ]),
                                                   builder: (context, _) {
                                                     return TenseMasteryTimelineSlider(
-                                                        key: const ValueKey('tense_timeline_slider'),
+                                                      key: const ValueKey(
+                                                        'tense_timeline_slider',
+                                                      ),
                                                       sliderValue:
                                                           _sliderValue.value,
                                                       currentTense:
@@ -380,29 +420,32 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
                                                     !_pendingSubmit.value)
                                                   Builder(
                                                     builder: (context) {
-                                                      final reduceMotion = VowlMotion.shouldReduceMotion(context);
+                                                      final reduceMotion =
+                                                          VowlMotion.shouldReduceMotion(
+                                                            context,
+                                                          );
                                                       final button = ScaleButton(
-                                                        key: const ValueKey('tense_freeze_button'),
+                                                        key: const ValueKey(
+                                                          'tense_freeze_button',
+                                                        ),
                                                         onTap:
                                                             _onFreezeTimeline,
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsets.symmetric(
                                                                 horizontal:
-                                                                    24.w,
+                                                                    20.w,
                                                               ),
                                                           child: Container(
                                                             width:
                                                                 double.infinity,
                                                             height: isCompact
                                                                 ? 48.h
-                                                                : 65.h,
+                                                                : 54.h,
                                                             decoration: BoxDecoration(
                                                               borderRadius:
                                                                   BorderRadius.circular(
-                                                                    isCompact
-                                                                        ? 14.r
-                                                                        : 20.r,
+                                                                    16.r,
                                                                   ),
                                                               gradient: LinearGradient(
                                                                 begin: Alignment
@@ -416,7 +459,7 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
                                                                       .primaryColor
                                                                       .withValues(
                                                                         alpha:
-                                                                            0.8,
+                                                                            0.85,
                                                                       ),
                                                                 ],
                                                               ),
@@ -426,63 +469,62 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
                                                                       .primaryColor
                                                                       .withValues(
                                                                         alpha:
-                                                                            0.4,
+                                                                            0.3,
                                                                       ),
                                                                   blurRadius:
-                                                                      isCompact
-                                                                      ? 12
-                                                                      : 20,
-                                                                  offset: Offset(
-                                                                    0,
-                                                                    isCompact
-                                                                        ? 4
-                                                                        : 8,
-                                                                  ),
+                                                                      14,
+                                                                  offset:
+                                                                      const Offset(
+                                                                        0,
+                                                                        6,
+                                                                      ),
                                                                 ),
                                                               ],
                                                             ),
                                                             child: Center(
                                                               child: Text(
-                                                                "FREEZE TIMELINE",
+                                                                "CONFIRM TENSE",
                                                                 style: TextStyle(
                                                                   fontFamily:
                                                                       'Outfit',
                                                                   fontSize:
                                                                       isCompact
-                                                                      ? 13.sp
-                                                                      : 16.sp,
+                                                                      ? 14.sp
+                                                                      : 15.sp,
                                                                   fontWeight:
                                                                       FontWeight
-                                                                          .w900,
+                                                                          .w700,
                                                                   color: Colors
                                                                       .white,
                                                                   letterSpacing:
-                                                                      isCompact
-                                                                      ? 2
-                                                                      : 3,
+                                                                      0.8,
                                                                 ),
                                                               ),
                                                             ),
                                                           ),
                                                         ),
                                                       );
-                                                      if (reduceMotion) return button;
+                                                      if (reduceMotion) {
+                                                        return button;
+                                                      }
                                                       return button
                                                           .animate(
-                                                            onPlay: (c) => c.repeat(
-                                                              reverse: true,
-                                                            ),
+                                                            onPlay: (c) =>
+                                                                c.repeat(
+                                                                  reverse: true,
+                                                                ),
                                                           )
                                                           .shimmer(
                                                             duration: 2.seconds,
-                                                            color: Colors.white24,
+                                                            color:
+                                                                Colors.white24,
                                                           );
                                                     },
                                                   ),
                                                 SizedBox(
                                                   height: isCompact
                                                       ? 12.h
-                                                      : 40.h,
+                                                      : 24.h,
                                                 ),
                                               ],
                                             ),
@@ -494,17 +536,28 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
                                   if (_pendingSubmit.value &&
                                       !isAnsweredNotifier.value)
                                     SliverToBoxAdapter(
-                                      child: TypeToConfirmOverlay(
-                                        key: const ValueKey('tense_type_overlay'),
-                                        expectedText: quest.sentence ?? '',
-                                        displayText: null,
-                                        primaryColor: theme.primaryColor,
-                                        onConfirmed: () =>
-                                            _submitFinalAnswer(quest, true),
-                                        onSkipped: () =>
-                                            _submitFinalAnswer(quest, false),
-                                        isPositioned: false,
-                                        allowSkip: true,
+                                      child: Padding(
+                                        key: const ValueKey(
+                                          'tense_overlay_padding',
+                                        ),
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 20.w,
+                                          vertical: 8.h,
+                                        ),
+                                        child: TypeToConfirmOverlay(
+                                          key: const ValueKey(
+                                            'tense_type_overlay',
+                                          ),
+                                          expectedText: quest.sentence ?? '',
+                                          displayText: null,
+                                          primaryColor: theme.primaryColor,
+                                          onConfirmed: () =>
+                                              _submitFinalAnswer(quest, true),
+                                          onSkipped: () =>
+                                              _submitFinalAnswer(quest, false),
+                                          isPositioned: false,
+                                          allowSkip: true,
+                                        ),
                                       ),
                                     ),
                                   SliverToBoxAdapter(

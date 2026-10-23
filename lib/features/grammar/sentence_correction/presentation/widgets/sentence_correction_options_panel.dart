@@ -32,33 +32,35 @@ class SentenceCorrectionOptionsPanel extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.all(22.r),
+        padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
           color: isDark
               ? Colors.white.withValues(alpha: 0.03)
               : Colors.black.withValues(alpha: 0.02),
-          borderRadius: BorderRadius.circular(28.r),
+          borderRadius: BorderRadius.circular(24.r),
           border: Border.all(
             color: primaryColor.withValues(alpha: 0.15),
-            width: 1.5,
+            width: 1.2,
           ),
         ),
         child: Column(
           children: [
             Text(
-              "GLITCH IDENTIFIED: CHOOSE THE CORRECTION",
+              "Choose the correction",
+              textAlign: TextAlign.center,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w900,
+                fontSize: 13.5.sp,
+                fontWeight: FontWeight.w600,
                 color: primaryColor,
-                letterSpacing: 1,
+                letterSpacing: 0.3,
               ),
             ),
-            SizedBox(height: 20.h),
+            SizedBox(height: 16.h),
             Wrap(
-              spacing: 12.w,
-              runSpacing: 12.h,
+              spacing: 10.w,
+              runSpacing: 10.h,
               alignment: WrapAlignment.center,
               children: options.map((option) {
                 final isThisSelected = selectedOption == option;
@@ -66,8 +68,8 @@ class SentenceCorrectionOptionsPanel extends StatelessWidget {
                   onTap: isAnswered ? null : () => onOptionSelect(option),
                   child: Container(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 18.w,
-                      vertical: 12.h,
+                      horizontal: 16.w,
+                      vertical: 10.h,
                     ),
                     decoration: BoxDecoration(
                       color: isThisSelected
@@ -75,28 +77,30 @@ class SentenceCorrectionOptionsPanel extends StatelessWidget {
                           : (isDark
                                 ? Colors.white.withValues(alpha: 0.05)
                                 : Colors.black.withValues(alpha: 0.03)),
-                      borderRadius: BorderRadius.circular(18.r),
+                      borderRadius: BorderRadius.circular(14.r),
                       border: Border.all(
                         color: isThisSelected
                             ? primaryColor
                             : primaryColor.withValues(alpha: 0.1),
-                        width: isThisSelected ? 2 : 1,
+                        width: isThisSelected ? 1.5 : 1,
                       ),
                       boxShadow: isThisSelected
                           ? [
                               BoxShadow(
-                                color: primaryColor.withValues(alpha: 0.2),
-                                blurRadius: 10,
+                                color: primaryColor.withValues(alpha: 0.15),
+                                blurRadius: 8,
                               ),
                             ]
                           : [],
                     ),
                     child: Text(
                       option,
+                      textAlign: TextAlign.center,
+                      softWrap: true,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w700,
+                        fontSize: 15.5.sp,
+                        fontWeight: FontWeight.w600,
                         color: isThisSelected
                             ? primaryColor
                             : (isDark ? Colors.white70 : Colors.black87),
@@ -106,44 +110,47 @@ class SentenceCorrectionOptionsPanel extends StatelessWidget {
                 );
               }).toList(),
             ),
-            SizedBox(height: 28.h),
+            SizedBox(height: 24.h),
             if (!isAnswered)
               ScaleButton(
                 onTap: isOptionSelected ? onConfirm : null,
                 child: Container(
                   width: double.infinity,
-                  height: 58.h,
+                  height: 52.h,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.r),
+                    borderRadius: BorderRadius.circular(16.r),
                     gradient: LinearGradient(
                       colors: !isOptionSelected
                           ? [
                               Colors.grey.withValues(alpha: 0.3),
                               Colors.grey.withValues(alpha: 0.4),
                             ]
-                          : [primaryColor, primaryColor.withValues(alpha: 0.8)],
+                          : [
+                              primaryColor,
+                              primaryColor.withValues(alpha: 0.85),
+                            ],
                     ),
                     boxShadow: !isOptionSelected
                         ? []
                         : [
                             BoxShadow(
-                              color: primaryColor.withValues(alpha: 0.3),
-                              blurRadius: 15,
-                              offset: const Offset(0, 8),
+                              color: primaryColor.withValues(alpha: 0.25),
+                              blurRadius: 12,
+                              offset: const Offset(0, 4),
                             ),
                           ],
                   ),
                   child: Center(
                     child: Text(
-                      "EXECUTE REPAIR",
+                      "Confirm Correction",
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w900,
+                        fontSize: 15.5.sp,
+                        fontWeight: FontWeight.w700,
                         color: !isOptionSelected
                             ? (isDark ? Colors.white30 : Colors.black26)
                             : Colors.white,
-                        letterSpacing: 1.5,
+                        letterSpacing: 0.5,
                       ),
                     ),
                   ),

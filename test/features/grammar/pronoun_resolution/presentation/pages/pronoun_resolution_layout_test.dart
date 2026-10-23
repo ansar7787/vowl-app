@@ -226,6 +226,13 @@ void main() {
       when(() => mockGrammarBloc.state).thenReturn(state);
     }
 
+    tester.view.physicalSize = Size(size.width, size.height);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(() {
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+    });
+
     await tester.pumpWidget(
       MultiBlocProvider(
         providers: [
@@ -270,27 +277,35 @@ void main() {
 
       expect(find.byType(PronounResolutionInstruction), findsOneWidget);
       expect(find.byKey(const ValueKey('grammar_rule_box')), findsOneWidget);
-      expect(find.byKey(const ValueKey('pronoun_context_card')), findsOneWidget);
-      expect(find.byKey(const ValueKey('pronoun_gravity_canvas')), findsOneWidget);
+      expect(
+        find.byKey(const ValueKey('pronoun_context_card')),
+        findsOneWidget,
+      );
+      expect(
+        find.byKey(const ValueKey('pronoun_gravity_canvas')),
+        findsOneWidget,
+      );
       expect(find.byKey(const ValueKey('pronoun_node_0')), findsOneWidget);
       expect(find.byKey(const ValueKey('pronoun_node_1')), findsOneWidget);
       expect(find.byKey(const ValueKey('pronoun_node_2')), findsOneWidget);
-      expect(find.textContaining('scientist analyzed the sample'), findsOneWidget);
-    },
-  );
-
-  testWidgets(
-    '2. hides grammar rule box when referentHighlight is null',
-    (tester) async {
-      await pumpPronounResolution(
-        tester,
-        state: testLoadedState.copyWith(currentIndex: 1),
+      expect(
+        find.textContaining('scientist analyzed the sample'),
+        findsOneWidget,
       );
-
-      expect(find.byKey(const ValueKey('grammar_rule_box')), findsNothing);
-      expect(find.byKey(const ValueKey('pronoun_context_card')), findsOneWidget);
     },
   );
+
+  testWidgets('2. hides grammar rule box when referentHighlight is null', (
+    tester,
+  ) async {
+    await pumpPronounResolution(
+      tester,
+      state: testLoadedState.copyWith(currentIndex: 1),
+    );
+
+    expect(find.byKey(const ValueKey('grammar_rule_box')), findsNothing);
+    expect(find.byKey(const ValueKey('pronoun_context_card')), findsOneWidget);
+  });
 
   testWidgets(
     '3. renders custom instruction text in PronounResolutionInstruction',
@@ -329,29 +344,28 @@ void main() {
     },
   );
 
-  testWidgets(
-    '5. tapping incorrect node submits wrong answer to GrammarBloc',
-    (tester) async {
-      await pumpPronounResolution(tester);
+  testWidgets('5. tapping incorrect node submits wrong answer to GrammarBloc', (
+    tester,
+  ) async {
+    await pumpPronounResolution(tester);
 
-      final node0 = find.byKey(const ValueKey('pronoun_node_0'));
-      await tester.tap(node0);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+    final node0 = find.byKey(const ValueKey('pronoun_node_0'));
+    await tester.tap(node0);
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 200));
 
-      verify(
-        () => mockGrammarBloc.add(
-          any(
-            that: isA<SubmitAnswer>().having(
-              (e) => e.isCorrect,
-              'isCorrect',
-              false,
-            ),
+    verify(
+      () => mockGrammarBloc.add(
+        any(
+          that: isA<SubmitAnswer>().having(
+            (e) => e.isCorrect,
+            'isCorrect',
+            false,
           ),
         ),
-      ).called(1);
-    },
-  );
+      ),
+    ).called(1);
+  });
 
   testWidgets(
     '6. tapping correct node triggers success haptic and reveals TypeToConfirmOverlay (Phase 2)',
@@ -513,7 +527,9 @@ void main() {
       final node1 = find.byKey(const ValueKey('pronoun_node_1'));
       final target = tester.getCenter(node1);
 
-      final gesture = await tester.startGesture(target + const Offset(-10, -10));
+      final gesture = await tester.startGesture(
+        target + const Offset(-10, -10),
+      );
       await gesture.moveBy(const Offset(2, 2));
       await tester.pump();
       await gesture.moveTo(target);
@@ -599,14 +615,13 @@ void main() {
     },
   );
 
-  testWidgets(
-    '15. level 1 briefing dialog displays for first-time user',
-    (tester) async {
-      await pumpPronounResolution(tester, level: 1);
+  testWidgets('15. level 1 briefing dialog displays for first-time user', (
+    tester,
+  ) async {
+    await pumpPronounResolution(tester, level: 1);
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
-    },
-  );
+    expect(find.byType(GameBriefingLayer), findsOneWidget);
+  });
 
   testWidgets(
     '16. reduced motion: lowAnimationModeOverride gates shimmer and entrance animations',
@@ -648,24 +663,21 @@ void main() {
     },
   );
 
-  testWidgets(
-    '19. dark mode renders correctly with dark theme styling',
-    (tester) async {
-      await pumpPronounResolution(tester, themeMode: ThemeMode.dark);
+  testWidgets('19. dark mode renders correctly with dark theme styling', (
+    tester,
+  ) async {
+    await pumpPronounResolution(tester, themeMode: ThemeMode.dark);
 
-      expect(find.byType(PronounResolutionScreen), findsOneWidget);
-      expect(find.byKey(const ValueKey('pronoun_context_card')), findsOneWidget);
-    },
-  );
+    expect(find.byType(PronounResolutionScreen), findsOneWidget);
+    expect(find.byKey(const ValueKey('pronoun_context_card')), findsOneWidget);
+  });
 
-  testWidgets(
-    '20. light mode renders correctly with light theme styling',
-    (tester) async {
-      await pumpPronounResolution(tester, themeMode: ThemeMode.light);
+  testWidgets('20. light mode renders correctly with light theme styling', (
+    tester,
+  ) async {
+    await pumpPronounResolution(tester, themeMode: ThemeMode.light);
 
-      expect(find.byType(PronounResolutionScreen), findsOneWidget);
-      expect(find.byKey(const ValueKey('pronoun_context_card')), findsOneWidget);
-    },
-  );
+    expect(find.byType(PronounResolutionScreen), findsOneWidget);
+    expect(find.byKey(const ValueKey('pronoun_context_card')), findsOneWidget);
+  });
 }
-

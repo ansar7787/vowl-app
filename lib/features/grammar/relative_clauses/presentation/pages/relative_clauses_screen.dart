@@ -41,7 +41,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
   int get level => widget.level;
 
   @override
-  String getCompletionTitle(BuildContext context) => 'LEVEL COMPLETE!';
+  String getCompletionTitle(BuildContext context) => 'Level Complete!';
 
   final ValueNotifier<Offset?> _hookPoint = ValueNotifier(null);
   final ValueNotifier<int> _targetFish = ValueNotifier(-1);
@@ -213,169 +213,149 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
                                             return Column(
                                               children: [
                                                 SizedBox(
-                                                  height: isCompact
-                                                      ? 4.h
-                                                      : 10.h,
+                                                  height: isCompact ? 4.h : 8.h,
                                                 ),
-                                                isCompact
-                                                    ? SizedBox(
-                                                        height: 25.h,
-                                                        child: FittedBox(
-                                                          fit: BoxFit.scaleDown,
-                                                          child: RelativeClausesInstruction(
-                                                            instruction:
-                                                                "TAP OR DRAG TO CONNECT",
-                                                            primaryColor: theme
-                                                                .primaryColor,
-                                                          ),
-                                                        ),
-                                                      )
-                                                    : RelativeClausesInstruction(
+                                                Padding(
+                                                  padding: EdgeInsets.symmetric(
+                                                    horizontal: 20.w,
+                                                  ),
+                                                  child:
+                                                      RelativeClausesInstruction(
                                                         instruction:
-                                                            "TAP OR DRAG TO CONNECT",
+                                                            quest.instruction,
                                                         primaryColor:
                                                             theme.primaryColor,
                                                       ),
+                                                ),
                                                 SizedBox(
                                                   height: isCompact
                                                       ? 8.h
-                                                      : 20.h,
+                                                      : 14.h,
                                                 ),
 
                                                 if (quest.clauseType !=
                                                     null) ...[
-                                                  Container(
-                                                    key: const ValueKey('clause_box'),
+                                                  Padding(
                                                     padding:
                                                         EdgeInsets.symmetric(
-                                                          horizontal: 16.w,
-                                                          vertical: 8.h,
+                                                          horizontal: 20.w,
                                                         ),
-                                                    decoration: BoxDecoration(
-                                                      color: theme.primaryColor
-                                                          .withValues(
-                                                            alpha: 0.1,
+                                                    child: Container(
+                                                      key: const ValueKey(
+                                                        'clause_box',
+                                                      ),
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 14.w,
+                                                            vertical: 8.h,
                                                           ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                            16.r,
-                                                          ),
-                                                      border: Border.all(
+                                                      decoration: BoxDecoration(
                                                         color: theme
                                                             .primaryColor
                                                             .withValues(
-                                                              alpha: 0.3,
+                                                              alpha: isDark
+                                                                  ? 0.12
+                                                                  : 0.08,
                                                             ),
-                                                      ),
-                                                    ),
-                                                    child: Column(
-                                                      children: [
-                                                        Text(
-                                                          "CLAUSE: ${quest.clauseType!.toUpperCase()}",
-                                                          style: TextStyle(
-                                                            fontFamily:
-                                                                'Outfit',
-                                                            fontSize: 12.sp,
-                                                            color: theme
-                                                                .primaryColor,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            letterSpacing: 1.2,
-                                                          ),
-                                                        ),
-                                                        SizedBox(height: 4.h),
-                                                        FittedBox(
-                                                          fit: BoxFit.scaleDown,
-                                                          child: Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.min,
-                                                          children: [
-                                                            Text(
-                                                              "Defining (No Commas) ",
-                                                              style: TextStyle(
-                                                                fontSize: 10.sp,
-                                                                color:
-                                                                    quest
-                                                                        .clauseType!
-                                                                        .toLowerCase()
-                                                                        .contains(
-                                                                          'non',
-                                                                        )
-                                                                    ? theme
-                                                                          .primaryColor
-                                                                          .withValues(
-                                                                            alpha:
-                                                                                0.4,
-                                                                          )
-                                                                    : theme
-                                                                          .primaryColor,
-                                                                fontWeight:
-                                                                    quest
-                                                                        .clauseType!
-                                                                        .toLowerCase()
-                                                                        .contains(
-                                                                          'non',
-                                                                        )
-                                                                    ? FontWeight
-                                                                          .normal
-                                                                    : FontWeight
-                                                                          .bold,
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              16.r,
+                                                            ),
+                                                        border: Border.all(
+                                                          color: theme
+                                                              .primaryColor
+                                                              .withValues(
+                                                                alpha: isDark
+                                                                    ? 0.25
+                                                                    : 0.18,
                                                               ),
-                                                            ),
-                                                            Icon(
-                                                              Icons
-                                                                  .compare_arrows_rounded,
-                                                              color: theme
-                                                                  .primaryColor
-                                                                  .withValues(
-                                                                    alpha: 0.5,
+                                                        ),
+                                                      ),
+                                                      child: Builder(
+                                                        builder: (context) {
+                                                          final isNonDefining =
+                                                              quest.clauseType!
+                                                                  .toLowerCase()
+                                                                  .contains(
+                                                                    'non',
+                                                                  );
+                                                          return Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
+                                                            children: [
+                                                              Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .min,
+                                                                children: [
+                                                                  Icon(
+                                                                    Icons
+                                                                        .info_outline_rounded,
+                                                                    size: 14.r,
+                                                                    color: theme
+                                                                        .primaryColor,
                                                                   ),
-                                                              size: 16.sp,
-                                                            ),
-                                                            Text(
-                                                              " Non-Defining (Commas)",
-                                                              style: TextStyle(
-                                                                fontSize: 10.sp,
-                                                                color:
-                                                                    quest
-                                                                        .clauseType!
-                                                                        .toLowerCase()
-                                                                        .contains(
-                                                                          'non',
-                                                                        )
-                                                                    ? theme
-                                                                          .primaryColor
-                                                                    : theme
-                                                                          .primaryColor
-                                                                          .withValues(
-                                                                            alpha:
-                                                                                0.4,
-                                                                          ),
-                                                                fontWeight:
-                                                                    quest
-                                                                        .clauseType!
-                                                                        .toLowerCase()
-                                                                        .contains(
-                                                                          'non',
-                                                                        )
-                                                                    ? FontWeight
-                                                                          .bold
-                                                                    : FontWeight
-                                                                          .normal,
+                                                                  SizedBox(
+                                                                    width: 6.w,
+                                                                  ),
+                                                                  Text(
+                                                                    isNonDefining
+                                                                        ? 'Non-defining Clause'
+                                                                        : 'Defining Clause',
+                                                                    style: TextStyle(
+                                                                      fontFamily:
+                                                                          'Outfit',
+                                                                      fontSize:
+                                                                          12.5.sp,
+                                                                      color: theme
+                                                                          .primaryColor,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w700,
+                                                                      letterSpacing:
+                                                                          0.3,
+                                                                    ),
+                                                                  ),
+                                                                ],
                                                               ),
-                                                            ),
-                                                          ],
-                                                        ),
+                                                              SizedBox(
+                                                                height: 3.h,
+                                                              ),
+                                                              Text(
+                                                                isNonDefining
+                                                                    ? 'Adds extra information • Separated by commas'
+                                                                    : 'Essential information • No commas needed',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: TextStyle(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  fontSize:
+                                                                      11.sp,
+                                                                  color: isDark
+                                                                      ? Colors
+                                                                            .white70
+                                                                      : Colors
+                                                                            .black87,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          );
+                                                        },
                                                       ),
-                                                      ],
                                                     ),
                                                   ).animate().fadeIn(
                                                     duration: 400.ms,
                                                   ),
                                                   SizedBox(
                                                     height: isCompact
-                                                        ? 12.h
-                                                        : 20.h,
+                                                        ? 8.h
+                                                        : 14.h,
                                                   ),
                                                 ],
 
@@ -383,16 +363,24 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
                                                 Padding(
                                                       padding:
                                                           EdgeInsets.symmetric(
-                                                            horizontal: 24.w,
+                                                            horizontal: 20.w,
                                                           ),
                                                       child: Container(
-                                                        key: const ValueKey('relative_clauses_context_card'),
-                                                        width: double.infinity,
-                                                        padding: EdgeInsets.all(
-                                                          isCompact
-                                                              ? 14.r
-                                                              : 22.r,
+                                                        key: const ValueKey(
+                                                          'relative_clauses_context_card',
                                                         ),
+                                                        width: double.infinity,
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              horizontal:
+                                                                  isCompact
+                                                                  ? 16.w
+                                                                  : 20.w,
+                                                              vertical:
+                                                                  isCompact
+                                                                  ? 12.h
+                                                                  : 18.h,
+                                                            ),
                                                         decoration: BoxDecoration(
                                                           color: isDark
                                                               ? Colors.white
@@ -408,14 +396,14 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
                                                           borderRadius:
                                                               BorderRadius.circular(
                                                                 isCompact
-                                                                    ? 18.r
-                                                                    : 28.r,
+                                                                    ? 16.r
+                                                                    : 20.r,
                                                               ),
                                                           border: Border.all(
                                                             color: theme
                                                                 .primaryColor
                                                                 .withValues(
-                                                                  alpha: 0.15,
+                                                                  alpha: 0.18,
                                                                 ),
                                                             width: 1.5,
                                                           ),
@@ -433,20 +421,21 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
                                                                           .value]
                                                                     : '_____',
                                                               ) ??
-                                                              "The data ____",
+                                                              "Loading sentence...",
                                                           textAlign:
                                                               TextAlign.center,
+                                                          softWrap: true,
                                                           style: TextStyle(
                                                             fontFamily:
                                                                 'Outfit',
                                                             fontSize: isCompact
                                                                 ? 15.sp
-                                                                : 20.sp,
+                                                                : 18.sp,
                                                             color: isDark
                                                                 ? Colors.white
                                                                 : Colors
                                                                       .black87,
-                                                            height: 1.5,
+                                                            height: 1.45,
                                                             fontWeight:
                                                                 FontWeight.w600,
                                                           ),
@@ -478,8 +467,8 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
 
                                                 SizedBox(
                                                   height: isCompact
-                                                      ? 12.h
-                                                      : 40.h,
+                                                      ? 8.h
+                                                      : 20.h,
                                                 ),
                                               ],
                                             );
@@ -494,14 +483,22 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
                                   !isAnsweredNotifier.value &&
                                   cleanTargetSentence.isNotEmpty)
                                 SliverToBoxAdapter(
-                                  child: TypeToConfirmOverlay(
-                                    expectedText: cleanTargetSentence,
-                                    primaryColor: theme.primaryColor,
-                                    onConfirmed: () => _submitFinalAnswer(true),
-                                    onSkipped: () => _submitFinalAnswer(false),
-                                    isPositioned: false,
-                                    displayText:
-                                        "Type the complete sentence to lock it in",
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 20.w,
+                                      vertical: 14.h,
+                                    ),
+                                    child: TypeToConfirmOverlay(
+                                      expectedText: cleanTargetSentence,
+                                      primaryColor: theme.primaryColor,
+                                      onConfirmed: () =>
+                                          _submitFinalAnswer(true),
+                                      onSkipped: () =>
+                                          _submitFinalAnswer(false),
+                                      isPositioned: false,
+                                      subtitle: "Type the completed sentence",
+                                      hintText: "Type the sentence here...",
+                                    ),
                                   ),
                                 ),
                               SliverToBoxAdapter(
@@ -537,19 +534,31 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen>
   ) {
     return LayoutBuilder(
       builder: (context, constraints) {
+        final nodeRadius = isCompact ? 36.r : 44.r;
+        final sideMargin = nodeRadius + 16.w;
         final startPoint = Offset(
           constraints.maxWidth / 2,
-          isCompact ? 20.h : 40.h,
+          isCompact ? 16.h : 24.h,
         );
-        final nodeY = constraints.maxHeight - (isCompact ? 80.h : 140.h);
+        final bottomMargin = nodeRadius + 14.h;
+        final staggerOffset = isCompact ? 12.h : 20.h;
+        final baseY = (constraints.maxHeight - bottomMargin - staggerOffset)
+            .clamp(
+              startPoint.dy + nodeRadius + 30.h,
+              constraints.maxHeight - bottomMargin,
+            );
+
         final nodePoints = List.generate(nodes.length, (i) {
           final xOffset = nodes.length > 1
-              ? 50.w + (i * (constraints.maxWidth - 100.w) / (nodes.length - 1))
+              ? sideMargin +
+                    (i *
+                        (constraints.maxWidth - (sideMargin * 2)) /
+                        (nodes.length - 1))
               : constraints.maxWidth / 2;
-          final yOffset = nodeY + (i % 2 == 0 ? 0 : 30.h);
+          final yOffset = baseY + (i.isOdd ? staggerOffset : 0);
           return Offset(xOffset, yOffset);
         });
-        final hitRadius = isCompact ? 40.r : 55.r;
+        final hitRadius = nodeRadius + 14.r;
 
         return GestureDetector(
           key: const ValueKey('relative_clauses_arena'),

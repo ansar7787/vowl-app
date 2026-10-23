@@ -100,8 +100,10 @@ void main() {
     instruction: 'Adjust the speed',
     difficulty: 1,
     subtype: GameSubtype.speedVariance,
-    word: "Sorry, I talk a lot when I'm nervous, I'll stop, sorry, where was I?",
-    textToSpeak: "Sorry, I talk a lot when I'm nervous, I'll stop, sorry, where was I?",
+    word:
+        "Sorry, I talk a lot when I'm nervous, I'll stop, sorry, where was I?",
+    textToSpeak:
+        "Sorry, I talk a lot when I'm nervous, I'll stop, sorry, where was I?",
     options: [
       'Decelerating (careful, slow speech)',
       'Accelerating (nervous chatter runs fast)',
@@ -126,7 +128,8 @@ void main() {
       'Decelerating (controlled frustration is delivered slowly and firmly)',
       'Accelerating (frustration makes the speaker hurry)',
     ],
-    correctAnswer: 'Decelerating (controlled frustration is delivered slowly and firmly)',
+    correctAnswer:
+        'Decelerating (controlled frustration is delivered slowly and firmly)',
     correctAnswerIndex: 0,
     targetSpeed: 0.73,
     naturalSpeed: 1.0,
@@ -182,8 +185,9 @@ void main() {
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
 
     when(() => mockAccentBloc.state).thenReturn(testLoadedState);
-    when(() => mockAccentBloc.stream)
-        .thenAnswer((_) => const Stream<AccentState>.empty());
+    when(
+      () => mockAccentBloc.stream,
+    ).thenAnswer((_) => const Stream<AccentState>.empty());
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
@@ -195,12 +199,14 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
@@ -216,10 +222,7 @@ void main() {
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
     when(
-      () => mockSoundService.playTts(
-        any(),
-        speed: any(named: 'speed'),
-      ),
+      () => mockSoundService.playTts(any(), speed: any(named: 'speed')),
     ).thenAnswer((_) async {});
     when(() => mockSoundService.playFile(any())).thenAnswer((_) async {});
 
@@ -242,7 +245,9 @@ void main() {
     when(() => mockSpeechService.isPlaying).thenReturn(false);
 
     when(() => mockAudioRecorder.hasPermission()).thenAnswer((_) async => true);
-    when(() => mockAudioRecorder.startRecording()).thenAnswer((_) async => true);
+    when(
+      () => mockAudioRecorder.startRecording(),
+    ).thenAnswer((_) async => true);
     when(
       () => mockAudioRecorder.stopRecording(),
     ).thenAnswer((_) async => '/tmp/audio_speed_variance.m4a');
@@ -252,8 +257,12 @@ void main() {
     ).thenAnswer((_) => Stream.value(Amplitude(current: -10, max: -5)));
     when(() => mockAudioRecorder.dispose()).thenAnswer((_) async {});
 
-    when(() => mockAnalyticsService.logSelfEvaluation(any())).thenAnswer((_) async {});
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logSelfEvaluation(any()),
+    ).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
 
     when(
       () => mockAdService.showRewardedAd(
@@ -336,64 +345,95 @@ void main() {
       expect(find.text('Adjust the speed'), findsOneWidget);
 
       expect(find.byType(SpeedVariancePromptCard), findsOneWidget);
-      expect(find.text("Sorry, I talk a lot when I'm nervous, I'll stop, sorry, where was I?"), findsOneWidget);
+      expect(
+        find.text(
+          "Sorry, I talk a lot when I'm nervous, I'll stop, sorry, where was I?",
+        ),
+        findsOneWidget,
+      );
 
       expect(find.byType(SpeedChallengeTimer), findsOneWidget);
-      expect(find.byKey(const ValueKey('speed_variance_pulse_speaker')), findsOneWidget);
+      expect(
+        find.byKey(const ValueKey('speed_variance_pulse_speaker')),
+        findsOneWidget,
+      );
       expect(find.text("Listen"), findsOneWidget);
 
-      expect(find.byKey(const ValueKey('speed_variance_chrome_dial')), findsOneWidget);
+      expect(
+        find.byKey(const ValueKey('speed_variance_chrome_dial')),
+        findsOneWidget,
+      );
       expect(find.text("Turn dial or tap your answer"), findsOneWidget);
 
-      expect(find.byKey(const ValueKey('speed_variance_option_0')), findsOneWidget);
-      expect(find.byKey(const ValueKey('speed_variance_option_1')), findsOneWidget);
+      expect(
+        find.byKey(const ValueKey('speed_variance_option_0')),
+        findsOneWidget,
+      );
+      expect(
+        find.byKey(const ValueKey('speed_variance_option_1')),
+        findsOneWidget,
+      );
       expect(find.text('Decelerating'), findsOneWidget);
       expect(find.text('Accelerating'), findsOneWidget);
 
       // Phase 2 components are not mounted initially
-      expect(find.byKey(const ValueKey('speak_to_confirm_overlay')), findsNothing);
+      expect(
+        find.byKey(const ValueKey('speak_to_confirm_overlay')),
+        findsNothing,
+      );
       expect(find.byType(SpeedVarianceSpeedToggle), findsNothing);
     });
 
-    testWidgets('tapping pulse speaker triggers TTS audio at target speed and selection haptics', (tester) async {
-      await pumpSpeedVariance(tester);
+    testWidgets(
+      'tapping pulse speaker triggers TTS audio at target speed and selection haptics',
+      (tester) async {
+        await pumpSpeedVariance(tester);
 
-      final speaker = find.byKey(const ValueKey('speed_variance_pulse_speaker'));
-      await tester.tap(speaker);
-      await tester.pump();
+        final speaker = find.byKey(
+          const ValueKey('speed_variance_pulse_speaker'),
+        );
+        await tester.tap(speaker);
+        await tester.pump();
 
-      verify(() => mockHapticService.selection()).called(1);
-      verify(() => mockSoundService.playTts(
-        "Sorry, I talk a lot when I'm nervous, I'll stop, sorry, where was I?",
-        speed: 1.37,
-      )).called(1);
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        verify(
+          () => mockSoundService.playTts(
+            "Sorry, I talk a lot when I'm nervous, I'll stop, sorry, where was I?",
+            speed: 1.37,
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('renders GameShimmerLoading when in AccentInitial state', (tester) async {
-      await pumpSpeedVariance(
-        tester,
-        state: const AccentInitial(),
-      );
+    testWidgets('renders GameShimmerLoading when in AccentInitial state', (
+      tester,
+    ) async {
+      await pumpSpeedVariance(tester, state: const AccentInitial());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
       expect(find.byType(SpeedVarianceTempoDial), findsNothing);
     });
 
-    testWidgets('tapping hint button dispatches AccentHintUsed without duplicates', (tester) async {
-      await pumpSpeedVariance(tester);
+    testWidgets(
+      'tapping hint button dispatches AccentHintUsed without duplicates',
+      (tester) async {
+        await pumpSpeedVariance(tester);
 
-      final hintBtn = find.byType(QuestHintButton);
-      expect(hintBtn, findsOneWidget);
+        final hintBtn = find.byType(QuestHintButton);
+        expect(hintBtn, findsOneWidget);
 
-      await tester.tap(hintBtn);
-      await tester.pump();
+        await tester.tap(hintBtn);
+        await tester.pump();
 
-      verify(() => mockAccentBloc.add(const AccentHintUsed())).called(1);
-    });
+        verify(() => mockAccentBloc.add(const AccentHintUsed())).called(1);
+      },
+    );
   });
 
   group('SpeedVarianceScreen - Phase 1 Dial & Tap Flow', () {
-    testWidgets('tapping wrong option submits wrong answer and stops timer', (tester) async {
+    testWidgets('tapping wrong option submits wrong answer and stops timer', (
+      tester,
+    ) async {
       await pumpSpeedVariance(tester);
 
       // testQuest1 correctAnswerIndex is 1. Option 0 is wrong.
@@ -407,81 +447,100 @@ void main() {
       verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
     });
 
-    testWidgets('dragging chrome dial left past threshold selects option 0 (wrong)', (tester) async {
-      await pumpSpeedVariance(tester);
+    testWidgets(
+      'dragging chrome dial left past threshold selects option 0 (wrong)',
+      (tester) async {
+        await pumpSpeedVariance(tester);
 
-      final dial = find.byKey(const ValueKey('speed_variance_chrome_dial'));
-      expect(dial, findsOneWidget);
+        final dial = find.byKey(const ValueKey('speed_variance_chrome_dial'));
+        expect(dial, findsOneWidget);
 
-      final gesture = await tester.startGesture(tester.getCenter(dial));
-      await gesture.moveBy(const Offset(-80, 0));
-      await tester.pump();
-      await gesture.moveBy(const Offset(-80, 0));
-      await tester.pump();
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final gesture = await tester.startGesture(tester.getCenter(dial));
+        await gesture.moveBy(const Offset(-80, 0));
+        await tester.pump();
+        await gesture.moveBy(const Offset(-80, 0));
+        await tester.pump();
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('dragging chrome dial right past threshold selects option 1 (correct)', (tester) async {
-      await pumpSpeedVariance(tester);
+    testWidgets(
+      'dragging chrome dial right past threshold selects option 1 (correct)',
+      (tester) async {
+        await pumpSpeedVariance(tester);
 
-      final dial = find.byKey(const ValueKey('speed_variance_chrome_dial'));
-      expect(dial, findsOneWidget);
+        final dial = find.byKey(const ValueKey('speed_variance_chrome_dial'));
+        expect(dial, findsOneWidget);
 
-      final gesture = await tester.startGesture(tester.getCenter(dial));
-      await gesture.moveBy(const Offset(80, 0));
-      await tester.pump();
-      await gesture.moveBy(const Offset(80, 0));
-      await tester.pump();
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        final gesture = await tester.startGesture(tester.getCenter(dial));
+        await gesture.moveBy(const Offset(80, 0));
+        await tester.pump();
+        await gesture.moveBy(const Offset(80, 0));
+        await tester.pump();
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
 
-      // Should advance to Stage 2 without early SubmitAnswer
-      verifyNever(() => mockAccentBloc.add(const SubmitAnswer(true)));
-      expect(find.byType(SpeedVarianceSpeedToggle), findsOneWidget);
-    });
+        // Should advance to Stage 2 without early SubmitAnswer
+        verifyNever(() => mockAccentBloc.add(const SubmitAnswer(true)));
+        expect(find.byType(SpeedVarianceSpeedToggle), findsOneWidget);
+      },
+    );
 
-    testWidgets('timer expiration via onTimeUp triggers wrong answer submission', (tester) async {
-      await pumpSpeedVariance(tester);
+    testWidgets(
+      'timer expiration via onTimeUp triggers wrong answer submission',
+      (tester) async {
+        await pumpSpeedVariance(tester);
 
-      final timerState = tester.state<SpeedChallengeTimerState>(
-        find.byType(SpeedChallengeTimer),
-      );
-      timerState.widget.onTimeUp();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final timerState = tester.state<SpeedChallengeTimerState>(
+          find.byType(SpeedChallengeTimer),
+        );
+        timerState.widget.onTimeUp();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('tapping correct option advances to Stage 2 without submitting answer prematurely', (tester) async {
-      await pumpSpeedVariance(tester);
+    testWidgets(
+      'tapping correct option advances to Stage 2 without submitting answer prematurely',
+      (tester) async {
+        await pumpSpeedVariance(tester);
 
-      final correctOption = find.byKey(const ValueKey('speed_variance_option_1'));
-      await tester.tap(correctOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        final correctOption = find.byKey(
+          const ValueKey('speed_variance_option_1'),
+        );
+        await tester.tap(correctOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verifyNever(() => mockAccentBloc.add(const SubmitAnswer(true)));
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verifyNever(() => mockAccentBloc.add(const SubmitAnswer(true)));
 
-      // Speed toggle and instruction update visible
-      expect(find.byType(SpeedVarianceSpeedToggle), findsOneWidget);
-      expect(find.text("Great job! Now record yourself saying the sentence."), findsOneWidget);
-    });
+        // Speed toggle and instruction update visible
+        expect(find.byType(SpeedVarianceSpeedToggle), findsOneWidget);
+        expect(
+          find.text("Great job! Now record yourself saying the sentence."),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('interaction lockout prevents duplicate taps once answered', (tester) async {
+    testWidgets('interaction lockout prevents duplicate taps once answered', (
+      tester,
+    ) async {
       await pumpSpeedVariance(tester);
 
       // Submit wrong answer
@@ -493,7 +552,9 @@ void main() {
       verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
 
       // Secondary tap on another option must be locked
-      final correctOption = find.byKey(const ValueKey('speed_variance_option_1'));
+      final correctOption = find.byKey(
+        const ValueKey('speed_variance_option_1'),
+      );
       await tester.ensureVisible(correctOption);
       await tester.pumpAndSettle();
       await tester.tap(correctOption, warnIfMissed: false);
@@ -505,174 +566,202 @@ void main() {
   });
 
   group('SpeedVarianceScreen - Phase 2 Speaking & Speed Toggle Flow', () {
-    testWidgets('in Stage 2, tapping speed toggle buttons switches speed and plays audio', (tester) async {
-      await pumpSpeedVariance(tester);
+    testWidgets(
+      'in Stage 2, tapping speed toggle buttons switches speed and plays audio',
+      (tester) async {
+        await pumpSpeedVariance(tester);
 
-      // Advance to Stage 2
-      await tester.tap(find.byKey(const ValueKey('speed_variance_option_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Advance to Stage 2
+        await tester.tap(find.byKey(const ValueKey('speed_variance_option_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Tap CLEAR speed toggle
-      final clearToggle = find.byKey(const ValueKey('speed_toggle_clear'));
-      expect(clearToggle, findsOneWidget);
-      await tester.ensureVisible(clearToggle);
-      await tester.pumpAndSettle();
-      await tester.tap(clearToggle);
-      await tester.pump();
+        // Tap CLEAR speed toggle
+        final clearToggle = find.byKey(const ValueKey('speed_toggle_clear'));
+        expect(clearToggle, findsOneWidget);
+        await tester.ensureVisible(clearToggle);
+        await tester.pumpAndSettle();
+        await tester.tap(clearToggle);
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts(
-        "Sorry, I talk a lot when I'm nervous, I'll stop, sorry, where was I?",
-        speed: 0.75, // clearSpeed
-      )).called(1);
+        verify(
+          () => mockSoundService.playTts(
+            "Sorry, I talk a lot when I'm nervous, I'll stop, sorry, where was I?",
+            speed: 0.75, // clearSpeed
+          ),
+        ).called(1);
 
-      // Tap NATURAL speed toggle
-      final naturalToggle = find.byKey(const ValueKey('speed_toggle_natural'));
-      expect(naturalToggle, findsOneWidget);
-      await tester.ensureVisible(naturalToggle);
-      await tester.pumpAndSettle();
-      await tester.tap(naturalToggle);
-      await tester.pump();
+        // Tap NATURAL speed toggle
+        final naturalToggle = find.byKey(
+          const ValueKey('speed_toggle_natural'),
+        );
+        expect(naturalToggle, findsOneWidget);
+        await tester.ensureVisible(naturalToggle);
+        await tester.pumpAndSettle();
+        await tester.tap(naturalToggle);
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts(
-        "Sorry, I talk a lot when I'm nervous, I'll stop, sorry, where was I?",
-        speed: 1.0, // naturalSpeed
-      )).called(1);
-    });
+        verify(
+          () => mockSoundService.playTts(
+            "Sorry, I talk a lot when I'm nervous, I'll stop, sorry, where was I?",
+            speed: 1.0, // naturalSpeed
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('in Stage 2, tapping pulse speaker plays TTS at currently toggled speed', (tester) async {
-      await pumpSpeedVariance(tester);
+    testWidgets(
+      'in Stage 2, tapping pulse speaker plays TTS at currently toggled speed',
+      (tester) async {
+        await pumpSpeedVariance(tester);
 
-      // Advance to Stage 2
-      await tester.tap(find.byKey(const ValueKey('speed_variance_option_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Advance to Stage 2
+        await tester.tap(find.byKey(const ValueKey('speed_variance_option_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Toggle to CLEAR
-      final clearToggle = find.byKey(const ValueKey('speed_toggle_clear'));
-      await tester.ensureVisible(clearToggle);
-      await tester.pumpAndSettle();
-      await tester.tap(clearToggle);
-      await tester.pump();
+        // Toggle to CLEAR
+        final clearToggle = find.byKey(const ValueKey('speed_toggle_clear'));
+        await tester.ensureVisible(clearToggle);
+        await tester.pumpAndSettle();
+        await tester.tap(clearToggle);
+        await tester.pump();
 
-      // Tap pulse speaker
-      final speaker = find.byKey(const ValueKey('speed_variance_pulse_speaker'));
-      await tester.ensureVisible(speaker);
-      await tester.pumpAndSettle();
-      await tester.tap(speaker);
-      await tester.pump();
+        // Tap pulse speaker
+        final speaker = find.byKey(
+          const ValueKey('speed_variance_pulse_speaker'),
+        );
+        await tester.ensureVisible(speaker);
+        await tester.pumpAndSettle();
+        await tester.tap(speaker);
+        await tester.pump();
 
-      verify(() => mockSoundService.playTts(
-        "Sorry, I talk a lot when I'm nervous, I'll stop, sorry, where was I?",
-        speed: 0.75, // clearSpeed
-      )).called(2); // 1 from toggle, 1 from speaker
-    });
+        verify(
+          () => mockSoundService.playTts(
+            "Sorry, I talk a lot when I'm nervous, I'll stop, sorry, where was I?",
+            speed: 0.75, // clearSpeed
+          ),
+        ).called(2); // 1 from toggle, 1 from speaker
+      },
+    );
 
-    testWidgets('recording audio and confirming "Nailed It" dispatches AccentSpeakConfirmed(5) and SubmitAnswer(true)', (tester) async {
-      await pumpSpeedVariance(tester);
+    testWidgets(
+      'recording audio and confirming "Nailed It" dispatches AccentSpeakConfirmed(5) and SubmitAnswer(true)',
+      (tester) async {
+        await pumpSpeedVariance(tester);
 
-      // Advance to Stage 2
-      await tester.tap(find.byKey(const ValueKey('speed_variance_option_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Advance to Stage 2
+        await tester.tap(find.byKey(const ValueKey('speed_variance_option_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      await tester.dragFrom(const Offset(20, 600), const Offset(0, -700));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.dragFrom(const Offset(20, 600), const Offset(0, -700));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final overlay = find.byKey(const ValueKey('speak_to_confirm_overlay'));
-      expect(overlay, findsOneWidget);
+        final overlay = find.byKey(const ValueKey('speak_to_confirm_overlay'));
+        expect(overlay, findsOneWidget);
 
-      // Switch to manual evaluation mode
-      final switchModeBtn = find.text('Evaluate myself manually');
-      await tester.ensureVisible(switchModeBtn);
-      await tester.pumpAndSettle();
-      expect(switchModeBtn, findsOneWidget);
-      await tester.tap(switchModeBtn);
-      await tester.pumpAndSettle();
+        // Switch to manual evaluation mode
+        final switchModeBtn = find.text('Evaluate myself manually');
+        await tester.ensureVisible(switchModeBtn);
+        await tester.pumpAndSettle();
+        expect(switchModeBtn, findsOneWidget);
+        await tester.tap(switchModeBtn);
+        await tester.pumpAndSettle();
 
-      final micBtn = find.byKey(const ValueKey('speaking_mic_btn'));
-      await tester.ensureVisible(micBtn);
-      await tester.pumpAndSettle();
-      expect(micBtn, findsOneWidget);
+        final micBtn = find.byKey(const ValueKey('speaking_mic_btn'));
+        await tester.ensureVisible(micBtn);
+        await tester.pumpAndSettle();
+        expect(micBtn, findsOneWidget);
 
-      // Start recording
-      await tester.tap(micBtn);
-      await tester.pump();
-      await tester.runAsync(
-        () async => await Future.delayed(const Duration(milliseconds: 600)),
-      );
-      await tester.pump(const Duration(milliseconds: 100));
+        // Start recording
+        await tester.tap(micBtn);
+        await tester.pump();
+        await tester.runAsync(
+          () async => await Future.delayed(const Duration(milliseconds: 600)),
+        );
+        await tester.pump(const Duration(milliseconds: 100));
 
-      // Stop recording
-      await tester.tap(micBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Stop recording
+        await tester.tap(micBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      final nailedItBtn = find.text('Nailed It');
-      await tester.ensureVisible(nailedItBtn);
-      await tester.pumpAndSettle();
-      expect(nailedItBtn, findsOneWidget);
-      await tester.tap(nailedItBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        final nailedItBtn = find.text('Nailed It');
+        await tester.ensureVisible(nailedItBtn);
+        await tester.pumpAndSettle();
+        expect(nailedItBtn, findsOneWidget);
+        await tester.tap(nailedItBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockHapticService.success()).called(2); // 1 for option, 1 for speak
-      verify(() => mockSoundService.playCorrect()).called(2);
-      verify(() => mockAccentBloc.add(const AccentSpeakConfirmed(5))).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        verify(
+          () => mockHapticService.success(),
+        ).called(2); // 1 for option, 1 for speak
+        verify(() => mockSoundService.playCorrect()).called(2);
+        verify(
+          () => mockAccentBloc.add(const AccentSpeakConfirmed(5)),
+        ).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
 
-    testWidgets('evaluating "Needs Work" triggers error feedback and SubmitAnswer(false)', (tester) async {
-      await pumpSpeedVariance(tester);
+    testWidgets(
+      'evaluating "Needs Work" triggers error feedback and SubmitAnswer(false)',
+      (tester) async {
+        await pumpSpeedVariance(tester);
 
-      // Advance to Stage 2
-      await tester.tap(find.byKey(const ValueKey('speed_variance_option_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Advance to Stage 2
+        await tester.tap(find.byKey(const ValueKey('speed_variance_option_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      await tester.dragFrom(const Offset(20, 600), const Offset(0, -700));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.dragFrom(const Offset(20, 600), const Offset(0, -700));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      final overlay = find.byKey(const ValueKey('speak_to_confirm_overlay'));
-      expect(overlay, findsOneWidget);
+        final overlay = find.byKey(const ValueKey('speak_to_confirm_overlay'));
+        expect(overlay, findsOneWidget);
 
-      final switchModeBtn = find.text('Evaluate myself manually');
-      await tester.ensureVisible(switchModeBtn);
-      await tester.pumpAndSettle();
-      await tester.tap(switchModeBtn);
-      await tester.pumpAndSettle();
+        final switchModeBtn = find.text('Evaluate myself manually');
+        await tester.ensureVisible(switchModeBtn);
+        await tester.pumpAndSettle();
+        await tester.tap(switchModeBtn);
+        await tester.pumpAndSettle();
 
-      final micBtn = find.byKey(const ValueKey('speaking_mic_btn'));
-      await tester.ensureVisible(micBtn);
-      await tester.pumpAndSettle();
+        final micBtn = find.byKey(const ValueKey('speaking_mic_btn'));
+        await tester.ensureVisible(micBtn);
+        await tester.pumpAndSettle();
 
-      await tester.tap(micBtn);
-      await tester.pump();
-      await tester.runAsync(
-        () async => await Future.delayed(const Duration(milliseconds: 600)),
-      );
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(micBtn);
+        await tester.pump();
+        await tester.runAsync(
+          () async => await Future.delayed(const Duration(milliseconds: 600)),
+        );
+        await tester.pump(const Duration(milliseconds: 100));
 
-      await tester.tap(micBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(micBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      final needsWorkBtn = find.text('Needs Work');
-      await tester.ensureVisible(needsWorkBtn);
-      await tester.pumpAndSettle();
-      expect(needsWorkBtn, findsOneWidget);
-      await tester.tap(needsWorkBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        final needsWorkBtn = find.text('Needs Work');
+        await tester.ensureVisible(needsWorkBtn);
+        await tester.pumpAndSettle();
+        expect(needsWorkBtn, findsOneWidget);
+        await tester.tap(needsWorkBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockAccentBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('rewarded ad bypass button triggers ad and submits answer', (tester) async {
+    testWidgets('rewarded ad bypass button triggers ad and submits answer', (
+      tester,
+    ) async {
       await pumpSpeedVariance(tester);
 
       // Advance to Stage 2
@@ -693,38 +782,47 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockAdService.showRewardedAd(
-        context: any(named: 'context'),
-        isPremium: any(named: 'isPremium'),
-        onUserEarnedReward: any(named: 'onUserEarnedReward'),
-        onDismissed: any(named: 'onDismissed'),
-      )).called(1);
+      verify(
+        () => mockAdService.showRewardedAd(
+          context: any(named: 'context'),
+          isPremium: any(named: 'isPremium'),
+          onUserEarnedReward: any(named: 'onUserEarnedReward'),
+          onDismissed: any(named: 'onDismissed'),
+        ),
+      ).called(1);
       verify(() => mockAccentBloc.add(const SubmitAnswer(true))).called(1);
     });
 
-    testWidgets('tapping continue button when answered dispatches NextQuestion', (tester) async {
-      await pumpSpeedVariance(tester);
+    testWidgets(
+      'tapping continue button when answered dispatches NextQuestion',
+      (tester) async {
+        await pumpSpeedVariance(tester);
 
-      // Submit wrong answer
-      final wrongOption = find.byKey(const ValueKey('speed_variance_option_0'));
-      await tester.tap(wrongOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Submit wrong answer
+        final wrongOption = find.byKey(
+          const ValueKey('speed_variance_option_0'),
+        );
+        await tester.tap(wrongOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final continueBtn = find.text('TRY AGAIN');
-      await tester.ensureVisible(continueBtn);
-      await tester.pumpAndSettle();
-      expect(continueBtn, findsOneWidget);
-      await tester.tap(continueBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final continueBtn = find.text('TRY AGAIN');
+        await tester.ensureVisible(continueBtn);
+        await tester.pumpAndSettle();
+        expect(continueBtn, findsOneWidget);
+        await tester.tap(continueBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockAccentBloc.add(const NextQuestion())).called(1);
-    });
+        verify(() => mockAccentBloc.add(const NextQuestion())).called(1);
+      },
+    );
   });
 
   group('SpeedVarianceScreen - Briefing, Small Screens & Accessibility', () {
-    testWidgets('renders and dismisses GameBriefingLayer on Level 1', (tester) async {
+    testWidgets('renders and dismisses GameBriefingLayer on Level 1', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({
         'has_seen_briefing_speedVariance': false,
       });
@@ -746,27 +844,35 @@ void main() {
       expect(find.byType(GameBriefingLayer), findsNothing);
     });
 
-    testWidgets('renders cleanly on small device (320x568) in dark theme without overflow', (tester) async {
-      await pumpSpeedVariance(
-        tester,
-        themeMode: ThemeMode.dark,
-        width: 320,
-        height: 568,
-      );
+    testWidgets(
+      'renders cleanly on small device (320x568) in dark theme without overflow',
+      (tester) async {
+        await pumpSpeedVariance(
+          tester,
+          themeMode: ThemeMode.dark,
+          width: 320,
+          height: 568,
+        );
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(SpeedVariancePromptCard), findsOneWidget);
-      expect(find.byKey(const ValueKey('speed_variance_chrome_dial')), findsOneWidget);
-    });
+        expect(tester.takeException(), isNull);
+        expect(find.byType(SpeedVariancePromptCard), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('speed_variance_chrome_dial')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('respects reduced motion when lowAnimationModeOverride is enabled', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = true;
+    testWidgets(
+      'respects reduced motion when lowAnimationModeOverride is enabled',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = true;
 
-      await pumpSpeedVariance(tester);
+        await pumpSpeedVariance(tester);
 
-      expect(tester.takeException(), isNull);
-      expect(find.byType(SpeedVariancePromptCard), findsOneWidget);
-    });
+        expect(tester.takeException(), isNull);
+        expect(find.byType(SpeedVariancePromptCard), findsOneWidget);
+      },
+    );
   });
 }
-

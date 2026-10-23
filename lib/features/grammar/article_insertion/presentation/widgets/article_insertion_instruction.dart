@@ -16,25 +16,31 @@ class ArticleInsertionInstruction extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.25),
+          width: 1,
+        ),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.bubble_chart_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
+          Icon(Icons.touch_app_rounded, size: 16.r, color: primaryColor),
+          SizedBox(width: 8.w),
           Flexible(
             child: Text(
-              instruction.toUpperCase(),
+              instruction,
+              textAlign: TextAlign.center,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w600,
                 color: primaryColor,
-                letterSpacing: 1.5,
+                letterSpacing: 0.2,
+                height: 1.3,
               ),
-              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],

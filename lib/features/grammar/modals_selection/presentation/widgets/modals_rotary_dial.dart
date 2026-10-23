@@ -121,9 +121,9 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
   @override
   Widget build(BuildContext context) {
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
-    final outerSize = 280.r;
-    final physicalDialSize = 170.r;
-    final dialOffset = 125.r;
+    final outerSize = 250.r;
+    final physicalDialSize = 150.r;
+    final dialOffset = 110.r;
     final gestureCenter = Offset(physicalDialSize / 2, physicalDialSize / 2);
 
     return ListenableBuilder(
@@ -148,12 +148,12 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: widget.primaryColor.withValues(alpha: 0.05),
-                  width: 2.r,
+                  color: widget.primaryColor.withValues(alpha: 0.08),
+                  width: 1.5.r,
                 ),
               ),
             ),
-            // Dial Words (Holographic Ring)
+            // Dial Words (Options Ring)
             ...List.generate(widget.options.length, (i) {
               final angle = (i * (2 * pi / widget.options.length)) - (pi / 2);
               final isSelected = widget.selectedIndexNotifier.value == i;
@@ -173,23 +173,37 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
                       _snapToCurrentIndex();
                     }
                   },
-                  child: AnimatedScale(
-                    duration: reduceMotion ? Duration.zero : 300.ms,
-                    scale: isSelected ? 1.25 : 0.9,
-                    child: AnimatedDefaultTextStyle(
-                      duration: reduceMotion ? Duration.zero : 300.ms,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: isSelected
-                            ? FontWeight.w900
-                            : FontWeight.w600,
-                        color: isSelected
-                            ? widget.primaryColor
-                            : (widget.isDark ? Colors.white30 : Colors.black26),
-                        letterSpacing: 1,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.w,
+                      vertical: 6.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: isSelected
+                          ? widget.primaryColor.withValues(alpha: 0.12)
+                          : Colors.transparent,
+                      borderRadius: BorderRadius.circular(16.r),
+                    ),
+                    child: AnimatedScale(
+                      duration: reduceMotion ? Duration.zero : 250.ms,
+                      scale: isSelected ? 1.12 : 0.95,
+                      child: AnimatedDefaultTextStyle(
+                        duration: reduceMotion ? Duration.zero : 250.ms,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 15.sp,
+                          fontWeight: isSelected
+                              ? FontWeight.w700
+                              : FontWeight.w600,
+                          color: isSelected
+                              ? widget.primaryColor
+                              : (widget.isDark
+                                  ? Colors.white.withValues(alpha: 0.65)
+                                  : Colors.black.withValues(alpha: 0.60)),
+                          letterSpacing: 0.5,
+                        ),
+                        child: Text(widget.options[i]),
                       ),
-                      child: Text(widget.options[i]),
                     ),
                   ),
                 ),
@@ -256,26 +270,26 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
                             ],
                     ),
                     border: Border.all(
-                      color: widget.primaryColor.withValues(alpha: 0.2),
+                      color: widget.primaryColor.withValues(alpha: 0.22),
                       width: 1.5,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.2),
-                        blurRadius: 20,
-                        offset: const Offset(5, 5),
+                        color: Colors.black.withValues(alpha: 0.15),
+                        blurRadius: 16,
+                        offset: const Offset(4, 4),
                       ),
                       BoxShadow(
                         color: widget.primaryColor.withValues(alpha: 0.1),
                         blurRadius: 10,
-                        spreadRadius: 2,
+                        spreadRadius: 1,
                       ),
                     ],
                   ),
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
-                      // Indicators (Glass Etchings)
+                      // Indicators (Etchings)
                       ...List.generate(
                         24,
                         (i) => Transform.rotate(
@@ -284,10 +298,23 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
                             alignment: Alignment.topCenter,
                             child: Container(
                               width: 2.r,
-                              height: 8.r,
-                              margin: EdgeInsets.only(top: 10.r),
-                              color: widget.primaryColor.withValues(alpha: 0.2),
+                              height: 7.r,
+                              margin: EdgeInsets.only(top: 8.r),
+                              color: widget.primaryColor.withValues(alpha: 0.25),
                             ),
+                          ),
+                        ),
+                      ),
+                      // Center Pivot Knob
+                      Container(
+                        width: 24.r,
+                        height: 24.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: widget.primaryColor.withValues(alpha: 0.15),
+                          border: Border.all(
+                            color: widget.primaryColor.withValues(alpha: 0.35),
+                            width: 1.5,
                           ),
                         ),
                       ),
@@ -297,25 +324,25 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
                         child: isCorrectSelected
                             ? (reduceMotion
                                 ? Container(
-                                    width: 6.r,
-                                    height: 35.r,
-                                    margin: EdgeInsets.only(top: 15.r),
+                                    width: 5.r,
+                                    height: 30.r,
+                                    margin: EdgeInsets.only(top: 12.r),
                                     decoration: BoxDecoration(
                                       color: widget.primaryColor,
                                       borderRadius: BorderRadius.circular(3.r),
                                       boxShadow: [
                                         BoxShadow(
                                           color: widget.primaryColor,
-                                          blurRadius: 20,
+                                          blurRadius: 15,
                                           spreadRadius: 2,
                                         ),
                                       ],
                                     ),
                                   )
                                 : Container(
-                                        width: 6.r,
-                                        height: 35.r,
-                                        margin: EdgeInsets.only(top: 15.r),
+                                        width: 5.r,
+                                        height: 30.r,
+                                        margin: EdgeInsets.only(top: 12.r),
                                         decoration: BoxDecoration(
                                           color: widget.primaryColor,
                                           borderRadius:
@@ -323,7 +350,7 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
                                           boxShadow: [
                                             BoxShadow(
                                               color: widget.primaryColor,
-                                              blurRadius: 15,
+                                              blurRadius: 12,
                                               spreadRadius: 1,
                                             ),
                                           ],
@@ -335,37 +362,37 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
                                       )
                                       .scale(
                                         begin: const Offset(1.0, 1.0),
-                                        end: const Offset(1.2, 1.1),
+                                        end: const Offset(1.15, 1.05),
                                         duration: 600.ms,
                                         curve: Curves.easeInOut,
                                       )
                                       .boxShadow(
                                         begin: BoxShadow(
                                           color: widget.primaryColor,
-                                          blurRadius: 15,
+                                          blurRadius: 12,
                                           spreadRadius: 1,
                                         ),
                                         end: BoxShadow(
                                           color: Colors.white.withValues(
-                                            alpha: 0.5,
+                                            alpha: 0.4,
                                           ),
-                                          blurRadius: 25,
-                                          spreadRadius: 4,
+                                          blurRadius: 20,
+                                          spreadRadius: 3,
                                         ),
                                         duration: 600.ms,
                                         curve: Curves.easeInOut,
                                       ))
                             : Container(
-                                width: 6.r,
-                                height: 35.r,
-                                margin: EdgeInsets.only(top: 15.r),
+                                width: 5.r,
+                                height: 30.r,
+                                margin: EdgeInsets.only(top: 12.r),
                                 decoration: BoxDecoration(
                                   color: widget.primaryColor,
                                   borderRadius: BorderRadius.circular(3.r),
                                   boxShadow: [
                                     BoxShadow(
                                       color: widget.primaryColor,
-                                      blurRadius: 15,
+                                      blurRadius: 12,
                                       spreadRadius: 1,
                                     ),
                                   ],

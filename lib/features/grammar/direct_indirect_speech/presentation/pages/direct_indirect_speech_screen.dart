@@ -1,23 +1,22 @@
 import 'dart:async';
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
-import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
-import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
-import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/grammar/direct_indirect_speech/presentation/widgets/direct_indirect_speech_instruction.dart';
 import 'package:vowl/features/grammar/direct_indirect_speech/presentation/widgets/direct_indirect_speech_mirror.dart';
-import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
+import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
+import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
+import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 
 class DirectIndirectSpeechScreen extends StatefulWidget {
   final int level;
@@ -92,13 +91,13 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
   void initState() {
     super.initState();
     isFirstStagePassedNotifier.addListener(_onStagePassedScroll);
-
     initGrammarGame();
   }
 
   void _onReflectionSelect(int index, int correctIndex, GameQuest quest) {
     final grammarState = context.read<GrammarBloc>().state;
-    final isAlreadyAnswered = isAnsweredNotifier.value ||
+    final isAlreadyAnswered =
+        isAnsweredNotifier.value ||
         isFirstStagePassedNotifier.value ||
         (grammarState is GrammarLoaded &&
             grammarState.answerStatus != AnswerStatus.unanswered);
@@ -112,9 +111,9 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
       soundService.playCorrect();
       isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
-      _rotation.value = 3.14;
+      _rotation.value = 3.14159265359;
     } else {
-      _rotation.value = 3.14;
+      _rotation.value = 3.14159265359;
       String? userAnswer =
           (quest.options != null && index < quest.options!.length)
           ? quest.options![index]
@@ -176,7 +175,8 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
         final GrammarQuest? quest = (state is GrammarLoaded)
             ? state.currentQuest as GrammarQuest?
             : null;
-        final rawQuestion = quest?.question ?? "DIRECT SPEECH";
+        final rawQuestion =
+            quest?.question ?? quest?.prompt ?? "Direct Speech";
         String displayDirect = quest?.sentence ?? "";
         if (displayDirect.isEmpty) {
           if (rawQuestion.contains(':')) {
@@ -197,9 +197,9 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
             (quest.correctAnswerIndex ?? 0) < quest.options!.length) {
           displayIndirect = quest.options![quest.correctAnswerIndex!];
         }
-        if (displayIndirect.isEmpty) displayIndirect = "INDIRECT SPEECH";
+        if (displayIndirect.isEmpty) displayIndirect = "Indirect Speech";
 
-        final options = quest?.options ?? ["REF A", "REF B", "REF C"];
+        final options = quest?.options ?? const <String>[];
 
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -211,12 +211,14 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
             _rotation,
           ]),
           builder: (context, _) {
-            final isAnswered = (isAnsweredNotifier.value &&
+            final isAnswered =
+                (isAnsweredNotifier.value &&
                     (isCorrectNotifier.value != null ||
                         !isFirstStagePassedNotifier.value)) ||
                 (state is GrammarLoaded &&
                     state.answerStatus != AnswerStatus.unanswered);
-            final isCorrect = isCorrectNotifier.value ??
+            final isCorrect =
+                isCorrectNotifier.value ??
                 (state is GrammarLoaded &&
                     state.answerStatus == AnswerStatus.correct);
 
@@ -241,6 +243,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                         final shouldReduceMotion =
                             VowlMotion.shouldReduceMotion(context);
                         final isNarrow = constraints.maxWidth < 360;
+                        final standardHorizontalMargin = isNarrow ? 12.w : 20.w;
 
                         return RawScrollbar(
                           controller: _scrollController,
@@ -257,26 +260,13 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                               SliverToBoxAdapter(
                                 child: Column(
                                   children: [
-                                    SizedBox(height: isCompact ? 16.h : 24.h),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 25.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child:
-                                                  DirectIndirectSpeechInstruction(
-                                                    primaryColor:
-                                                        theme.primaryColor,
-                                                    instruction:
-                                                        quest.instruction,
-                                                  ),
-                                            ),
-                                          )
-                                        : DirectIndirectSpeechInstruction(
-                                            primaryColor: theme.primaryColor,
-                                            instruction: quest.instruction,
-                                          ),
-                                    SizedBox(height: isCompact ? 12.h : 20.h),
+                                    SizedBox(height: isCompact ? 14.h : 20.h),
+                                    DirectIndirectSpeechInstruction(
+                                      primaryColor: theme.primaryColor,
+                                      instruction: quest.instruction,
+                                      isCompact: isCompact,
+                                    ),
+                                    SizedBox(height: isCompact ? 12.h : 18.h),
                                     if (quest.grammarRule != null ||
                                         (quest.changesList != null &&
                                             quest.changesList!.isNotEmpty)) ...[
@@ -286,8 +276,10 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                                         isCompact,
                                         shouldReduceMotion,
                                         isNarrow,
+                                        isDark,
+                                        standardHorizontalMargin,
                                       ),
-                                      SizedBox(height: isCompact ? 12.h : 20.h),
+                                      SizedBox(height: isCompact ? 12.h : 18.h),
                                     ],
                                     DirectIndirectSpeechMirror(
                                       rotation: _rotation.value,
@@ -298,25 +290,40 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                                       primaryColor: theme.primaryColor,
                                       isCompact: isCompact,
                                     ),
-                                    SizedBox(height: isCompact ? 16.h : 30.h),
-                                    Wrap(
-                                      alignment: WrapAlignment.center,
-                                      spacing: isCompact ? 8.w : 12.w,
-                                      runSpacing: isCompact ? 8.h : 12.h,
-                                      children: List.generate(
-                                        options.length,
-                                        (i) => _buildReflectionChip(
-                                          quest,
-                                          options[i],
-                                          i,
-                                          quest.correctAnswerIndex ?? 0,
-                                          theme.primaryColor,
-                                          isDark,
-                                          isCompact,
-                                          isNarrow,
+                                    SizedBox(height: isCompact ? 14.h : 22.h),
+                                    if (options.isNotEmpty)
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: standardHorizontalMargin,
+                                        ),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.stretch,
+                                          children: [
+                                            for (
+                                              int i = 0;
+                                              i < options.length;
+                                              i++
+                                            ) ...[
+                                              if (i > 0)
+                                                SizedBox(
+                                                  height: isCompact
+                                                      ? 8.h
+                                                      : 10.h,
+                                                ),
+                                              _buildReflectionChip(
+                                                quest,
+                                                options[i],
+                                                i,
+                                                quest.correctAnswerIndex ?? 0,
+                                                theme.primaryColor,
+                                                isDark,
+                                                isCompact,
+                                              ),
+                                            ],
+                                          ],
                                         ),
                                       ),
-                                    ),
                                   ],
                                 ),
                               ),
@@ -325,24 +332,34 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                                   height:
                                       (isFirstStagePassedNotifier.value &&
                                           !isAnsweredNotifier.value)
-                                      ? 32.h
-                                      : 60.h,
+                                      ? 24.h
+                                      : 48.h,
                                 ),
                               ),
                               if (isFirstStagePassedNotifier.value &&
-                                  !isAnsweredNotifier.value)
+                                  !isAnsweredNotifier.value &&
+                                  _selectedReflection.value >= 0 &&
+                                  _selectedReflection.value < options.length)
                                 SliverToBoxAdapter(
-                                  child: TypeToConfirmOverlay(
-                                    expectedText:
-                                        options[_selectedReflection.value],
-                                    primaryColor: theme.primaryColor,
-                                    onConfirmed: () =>
-                                        _submitVerbalEvaluation(true, quest),
-                                    onSkipped: () =>
-                                        _submitVerbalEvaluation(false, quest),
-                                    isPositioned: false,
-                                    displayText:
-                                        "Type the indirect speech to lock it in",
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: standardHorizontalMargin,
+                                    ),
+                                    child: TypeToConfirmOverlay(
+                                      expectedText:
+                                          options[_selectedReflection.value],
+                                      primaryColor: theme.primaryColor,
+                                      onConfirmed: () =>
+                                          _submitVerbalEvaluation(true, quest),
+                                      onSkipped: () =>
+                                          _submitVerbalEvaluation(false, quest),
+                                      isPositioned: false,
+                                      title: "Confirm Your Answer",
+                                      subtitle:
+                                          "Type the indirect sentence to practice",
+                                      displayText:
+                                          "Type the indirect speech sentence below",
+                                    ),
                                   ),
                                 ),
                               SliverToBoxAdapter(
@@ -353,8 +370,8 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                                       ? MediaQuery.of(
                                               context,
                                             ).viewInsets.bottom +
-                                            40.h
-                                      : 120.h,
+                                            32.h
+                                      : 96.h,
                                 ),
                               ),
                             ],
@@ -375,29 +392,51 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
     bool isCompact,
     bool shouldReduceMotion,
     bool isNarrow,
+    bool isDark,
+    double horizontalMargin,
   ) {
     return Container(
       key: const ValueKey('rule_and_changes_box'),
-      margin: EdgeInsets.symmetric(horizontal: isNarrow ? 12.w : 24.w),
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
+      padding: EdgeInsets.symmetric(
+        horizontal: isCompact ? 14.w : 16.w,
+        vertical: isCompact ? 10.h : 12.h,
+      ),
       decoration: BoxDecoration(
-        color: theme.primaryColor.withValues(alpha: 0.1),
+        color: theme.primaryColor.withValues(alpha: isDark ? 0.08 : 0.06),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+        border: Border.all(
+          color: theme.primaryColor.withValues(alpha: isDark ? 0.22 : 0.18),
+          width: 1.2,
+        ),
       ),
       child: Column(
         children: [
           if (quest.grammarRule != null)
-            Text(
-              quest.grammarRule!.toUpperCase(),
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: isCompact ? 10.sp : 12.sp,
-                color: theme.primaryColor,
-                fontWeight: FontWeight.w900,
-                letterSpacing: 1.2,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.lightbulb_outline_rounded,
+                  size: isCompact ? 13.r : 15.r,
+                  color: theme.primaryColor,
+                ),
+                SizedBox(width: 6.w),
+                Flexible(
+                  child: Text(
+                    quest.grammarRule!,
+                    textAlign: TextAlign.center,
+                    softWrap: true,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: isCompact ? 11.5.sp : 12.5.sp,
+                      color: theme.primaryColor,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 0.3,
+                    ),
+                  ),
+                ),
+              ],
             ),
           if (quest.grammarRule != null &&
               quest.changesList != null &&
@@ -410,53 +449,64 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                 final delimiter = change.contains('→')
                     ? '→'
                     : (change.contains('->') ? '->' : null);
-                final parts =
-                    delimiter != null ? change.split(delimiter) : <String>[];
+                final parts = delimiter != null
+                    ? change.split(delimiter)
+                    : <String>[];
                 if (parts.length != 2) {
                   return Padding(
                     padding: EdgeInsets.only(bottom: 4.h),
                     child: Text(
                       change,
                       textAlign: TextAlign.center,
+                      softWrap: true,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: isCompact ? 9.sp : 11.sp,
+                        fontSize: isCompact ? 11.sp : 12.sp,
                         color: theme.primaryColor,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   );
                 }
                 return Padding(
                   padding: EdgeInsets.only(bottom: 4.h),
-                  child: Wrap(
-                    alignment: WrapAlignment.center,
-                    crossAxisAlignment: WrapCrossAlignment.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        parts[0].trim(),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: isCompact ? 9.sp : 11.sp,
-                          color: theme.primaryColor,
-                          fontWeight: FontWeight.w700,
+                      Flexible(
+                        child: Text(
+                          parts[0].trim(),
+                          textAlign: TextAlign.right,
+                          softWrap: true,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: isCompact ? 11.5.sp : 12.5.sp,
+                            color: isDark
+                                ? Colors.white.withValues(alpha: 0.9)
+                                : const Color(0xFF334155),
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 4.w),
+                        padding: EdgeInsets.symmetric(horizontal: 8.w),
                         child: Icon(
                           Icons.arrow_forward_rounded,
-                          size: isCompact ? 10.sp : 12.sp,
-                          color: theme.primaryColor.withValues(alpha: 0.6),
+                          size: isCompact ? 12.sp : 14.sp,
+                          color: theme.primaryColor,
                         ),
                       ),
-                      Text(
-                        parts[1].trim(),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: isCompact ? 9.sp : 11.sp,
-                          color: theme.primaryColor,
-                          fontWeight: FontWeight.w700,
+                      Flexible(
+                        child: Text(
+                          parts[1].trim(),
+                          textAlign: TextAlign.left,
+                          softWrap: true,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: isCompact ? 11.5.sp : 12.5.sp,
+                            color: theme.primaryColor,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ],
@@ -466,7 +516,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
             ),
         ],
       ),
-    ).animate(target: shouldReduceMotion ? 0 : 1).fadeIn(duration: 400.ms);
+    ).animate(target: shouldReduceMotion ? 0 : 1).fadeIn(duration: 300.ms);
   }
 
   Widget _buildReflectionChip(
@@ -477,7 +527,6 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
     Color primaryColor,
     bool isDark,
     bool isCompact,
-    bool isNarrow,
   ) {
     final isSelected = _selectedReflection.value == index;
     final isCorrect =
@@ -492,13 +541,17 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
               ? AppColors.gameIncorrect
               : (isSelected
                     ? primaryColor
-                    : (isDark ? Colors.white : Colors.black87)));
+                    : (isDark ? Colors.white : const Color(0xFF0F172A))));
 
     final bgColor = isCorrect
-        ? AppColors.gameCorrect.withValues(alpha: 0.2)
+        ? AppColors.gameCorrect.withValues(alpha: isDark ? 0.14 : 0.09)
         : (isWrong
-              ? AppColors.gameIncorrect.withValues(alpha: 0.2)
-              : (isSelected ? primaryColor.withValues(alpha: 0.2) : null));
+              ? AppColors.gameIncorrect.withValues(alpha: isDark ? 0.14 : 0.09)
+              : (isSelected
+                    ? primaryColor.withValues(alpha: isDark ? 0.12 : 0.08)
+                    : (isDark
+                          ? const Color(0xFF1E293B).withValues(alpha: 0.6)
+                          : Colors.white)));
 
     final borderColor = isCorrect
         ? AppColors.gameCorrect
@@ -506,53 +559,100 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
               ? AppColors.gameIncorrect
               : (isSelected
                     ? primaryColor
-                    : Colors.white.withValues(alpha: 0.1)));
+                    : (isDark
+                          ? Colors.white.withValues(alpha: 0.12)
+                          : const Color(0xFFE2E8F0))));
+
+    final optionLabel = String.fromCharCode(65 + index); // 'A', 'B', 'C'
 
     return ScaleButton(
       key: ValueKey('reflection_chip_$index'),
       onTap: () => _onReflectionSelect(index, correctIndex, quest),
       child: Container(
         width: double.infinity,
-        margin: EdgeInsets.symmetric(horizontal: isNarrow ? 12.w : 24.w),
-        child: GlassTile(
-          padding: EdgeInsets.symmetric(
-            horizontal: isCompact ? 16.w : 24.w,
-            vertical: isCompact ? 12.h : 20.h,
-          ),
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(isCompact ? 16.r : 24.r),
-            topRight: Radius.circular(isCompact ? 16.r : 24.r),
-            bottomLeft: Radius.circular(isCompact ? 16.r : 24.r),
-            bottomRight: Radius.circular(4.r), // Speech bubble tail
-          ),
+        padding: EdgeInsets.symmetric(
+          horizontal: isCompact ? 14.w : 18.w,
+          vertical: isCompact ? 12.h : 15.h,
+        ),
+        decoration: BoxDecoration(
           color: bgColor,
-          border: Border.all(color: borderColor, width: isSelected ? 2.5 : 1.5),
-          child: Row(
-            children: [
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(
+            color: borderColor,
+            width: isSelected || isCorrect || isWrong ? 1.8 : 1.2,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: isDark ? 0.15 : 0.03),
+              blurRadius: 8,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            // Option indicator badge
+            if (isCorrect)
               Icon(
-                isCorrect
-                    ? Icons.check_circle_rounded
-                    : (isWrong
-                          ? Icons.cancel_rounded
-                          : Icons.chat_bubble_outline_rounded),
-                size: isCompact ? 18.r : 24.r,
-                color: displayColor.withValues(alpha: 0.8),
-              ),
-              SizedBox(width: 12.w),
-              Expanded(
-                child: Text(
-                  text,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: isCompact ? 14.sp : 16.sp,
-                    fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
-                    color: displayColor,
-                    height: 1.4,
+                Icons.check_circle_rounded,
+                size: isCompact ? 20.r : 22.r,
+                color: AppColors.gameCorrect,
+              )
+            else if (isWrong)
+              Icon(
+                Icons.cancel_rounded,
+                size: isCompact ? 20.r : 22.r,
+                color: AppColors.gameIncorrect,
+              )
+            else
+              Container(
+                width: isCompact ? 24.r : 28.r,
+                height: isCompact ? 24.r : 28.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: isSelected
+                      ? primaryColor.withValues(alpha: isDark ? 0.22 : 0.14)
+                      : (isDark
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : const Color(0xFFF1F5F9)),
+                  border: Border.all(
+                    color: isSelected
+                        ? primaryColor
+                        : (isDark
+                              ? Colors.white.withValues(alpha: 0.2)
+                              : const Color(0xFFCBD5E1)),
+                    width: 1.2,
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    optionLabel,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: isCompact ? 11.sp : 12.5.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isSelected
+                          ? primaryColor
+                          : (isDark ? Colors.white70 : const Color(0xFF64748B)),
+                    ),
                   ),
                 ),
               ),
-            ],
-          ),
+            SizedBox(width: 12.w),
+            Expanded(
+              child: Text(
+                text,
+                softWrap: true,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: isCompact ? 14.sp : 15.sp,
+                  fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
+                  color: displayColor,
+                  height: 1.4,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

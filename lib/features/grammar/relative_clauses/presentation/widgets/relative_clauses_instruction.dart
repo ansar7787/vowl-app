@@ -12,29 +12,37 @@ class RelativeClausesInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final text = instruction ?? "Tap or drag to connect the clause";
+
     return Container(
       key: const ValueKey('relative_clauses_instruction'),
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+        color: primaryColor.withValues(alpha: isDark ? 0.12 : 0.08),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: isDark ? 0.25 : 0.18),
+        ),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.hub_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
+          Icon(Icons.link_rounded, size: 15.r, color: primaryColor),
+          SizedBox(width: 8.w),
           Flexible(
             child: Text(
-              (instruction ?? "TAP OR DRAG TO CONNECT").toUpperCase(),
-              overflow: TextOverflow.ellipsis,
+              text,
+              textAlign: TextAlign.center,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w600,
                 color: primaryColor,
-                letterSpacing: 1.5,
+                letterSpacing: 0.2,
+                height: 1.3,
               ),
             ),
           ),

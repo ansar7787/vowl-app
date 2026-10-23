@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class ConjunctionsBrickSheet extends StatelessWidget {
   final List<String> options;
@@ -24,8 +25,8 @@ class ConjunctionsBrickSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      spacing: isCompact ? 10.w : 16.w,
-      runSpacing: isCompact ? 10.h : 16.h,
+      spacing: isCompact ? 10.w : 14.w,
+      runSpacing: isCompact ? 10.h : 12.h,
       alignment: WrapAlignment.center,
       children: options.map((opt) => _buildBrick(opt)).toList(),
     );
@@ -44,13 +45,13 @@ class ConjunctionsBrickSheet extends StatelessWidget {
         data: text,
         feedback: _buildTactileBrick(text, isDragging: true),
         childWhenDragging: Opacity(
-          opacity: 0.2,
+          opacity: 0.25,
           child: _buildTactileBrick(text),
         ),
         child: isPlaced
             ? SizedBox(
-                width: isCompact ? 60.w : 80.w,
-                height: isCompact ? 35.h : 50.h,
+                width: isCompact ? 64.w : 78.w,
+                height: isCompact ? 38.h : 44.h,
               )
             : _buildTactileBrick(text),
       ),
@@ -62,31 +63,32 @@ class ConjunctionsBrickSheet extends StatelessWidget {
       color: Colors.transparent,
       child: Container(
         padding: EdgeInsets.symmetric(
-          horizontal: isCompact ? 14.w : 20.w,
-          vertical: isCompact ? 6.h : 12.h,
+          horizontal: isCompact ? 16.w : 20.w,
+          vertical: isCompact ? 8.h : 11.h,
         ),
         decoration: BoxDecoration(
-          color: isDark ? Colors.grey[900] : Colors.white,
-          borderRadius: BorderRadius.circular(isCompact ? 8.r : 12.r),
+          color: isDark ? const Color(0xFF1E222B) : Colors.white,
+          borderRadius: BorderRadius.circular(12.r),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.3),
-              blurRadius: isDragging ? 15 : 5,
-              offset: isDragging ? const Offset(5, 5) : const Offset(2, 2),
+              color: Colors.black.withValues(alpha: isDragging ? 0.2 : 0.06),
+              blurRadius: isDragging ? 12 : 6,
+              offset: isDragging ? const Offset(0, 6) : const Offset(0, 2),
             ),
           ],
           border: Border.all(
-            color: primaryColor.withValues(alpha: 0.5),
-            width: 2,
+            color: primaryColor.withValues(alpha: isDragging ? 0.7 : 0.25),
+            width: 1.5,
           ),
         ),
         child: Text(
-          text.toUpperCase(),
+          text,
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: isCompact ? 12.sp : 16.sp,
-            fontWeight: FontWeight.w900,
-            color: primaryColor,
+            fontSize: isCompact ? 13.5.sp : 15.sp,
+            fontWeight: FontWeight.w600,
+            color: isDark ? Colors.white : AppColors.slate900,
+            letterSpacing: 0.3,
           ),
         ),
       ),

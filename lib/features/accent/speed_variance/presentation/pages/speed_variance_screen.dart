@@ -70,7 +70,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
     _isDragging.dispose();
     _selectedIndex.dispose();
     _isNaturalSpeed.dispose();
-        try {
+    try {
       soundService.stopTts();
     } catch (_) {}
     disposeAccentGame();
@@ -135,7 +135,8 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
       return;
     }
     _isDragging.value = false;
-    final currentQuest = _lastQuest ??
+    final currentQuest =
+        _lastQuest ??
         ((context.read<AccentBloc>().state is AccentLoaded)
             ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
             : null);
@@ -167,7 +168,8 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
       // Wait for Phase 2
     } else {
       _timerKey.currentState?.stop();
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
@@ -190,15 +192,13 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
 
   void _handleTimeExpired() {
     if (isAnsweredNotifier.value || isFirstStagePassedNotifier.value) return;
-    final currentQuest = _lastQuest ??
+    final currentQuest =
+        _lastQuest ??
         ((context.read<AccentBloc>().state is AccentLoaded)
             ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
             : null);
     if (currentQuest != null) {
-      submitWrongAnswer(
-        quest: currentQuest,
-        userAnswer: '[Timeout]',
-      );
+      submitWrongAnswer(quest: currentQuest, userAnswer: '[Timeout]');
     } else {
       soundService.playWrong();
       isAnsweredNotifier.value = true;
@@ -216,15 +216,13 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
       submitCorrectAnswer();
       _scrollToBottom();
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
       if (currentQuest != null) {
-        submitWrongAnswer(
-          quest: currentQuest,
-          userAnswer: '',
-        );
+        submitWrongAnswer(quest: currentQuest, userAnswer: '');
       } else {
         hapticService.error();
         soundService.playWrong();
@@ -263,18 +261,8 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
             ? state.currentQuest
             : _lastQuest;
 
-        if (quest == null) {
-          return AccentBaseLayout(
-            gameType: widget.gameType,
-            level: widget.level,
-            isAnswered: false,
-            onContinue: () {},
-            onHint: () {},
-            child: GameShimmerLoading(primaryColor: theme.primaryColor),
-          );
-        }
-        final options = quest.options ?? [];
-        if (options.length < 2) return const SizedBox();
+        final options = quest?.options ?? [];
+        final hasValidQuest = quest != null && options.length >= 2;
 
         final mediaQuery = MediaQuery.of(context);
 
@@ -300,258 +288,262 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
                     context.read<AccentBloc>().add(const NextQuestion()),
                 onHint: () {},
                 useScrolling: false,
-                child: LayoutBuilder(
+                child: !hasValidQuest
+                    ? GameShimmerLoading(primaryColor: theme.primaryColor)
+                    : LayoutBuilder(
                   builder: (context, constraints) {
                     final bool isFirstStagePassed =
                         isFirstStagePassedNotifier.value;
                     final bool isAnswered = isAnsweredNotifier.value;
                     final maxHeight = constraints.maxHeight;
-                        final double estimatedContentHeight =
-                            24.h + 90.h + 80.h + 140.h;
-                        final remainingHeight =
-                            maxHeight - estimatedContentHeight;
+                    final double estimatedContentHeight =
+                        24.h + 90.h + 80.h + 140.h;
+                    final remainingHeight = maxHeight - estimatedContentHeight;
 
-                        final double gapUnit = remainingHeight > 0
-                            ? remainingHeight / 8
-                            : 0;
-                        final double gapTop = remainingHeight > 0
-                            ? (gapUnit * 1).clamp(8.0, 24.0)
-                            : 8.0;
-                        final double gapInstruction = remainingHeight > 0
-                            ? (gapUnit * 1).clamp(12.0, 24.0)
-                            : 12.0;
-                        final double gapPrompt = remainingHeight > 0
-                            ? (gapUnit * 1.5).clamp(12.0, 32.0)
-                            : 12.0;
-                        final double gapSpeaker = remainingHeight > 0
-                            ? (gapUnit * 2).clamp(16.0, 48.0)
-                            : 16.0;
+                    final double gapUnit = remainingHeight > 0
+                        ? remainingHeight / 8
+                        : 0;
+                    final double gapTop = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(8.0, 24.0)
+                        : 8.0;
+                    final double gapInstruction = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(12.0, 24.0)
+                        : 12.0;
+                    final double gapPrompt = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(12.0, 32.0)
+                        : 12.0;
+                    final double gapSpeaker = remainingHeight > 0
+                        ? (gapUnit * 2).clamp(16.0, 48.0)
+                        : 16.0;
 
-                        final double gapBottom = remainingHeight > 0
-                            ? (gapUnit * 1).clamp(12.0, 40.0)
-                            : 12.0;
+                    final double gapBottom = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(12.0, 40.0)
+                        : 12.0;
 
-                        return RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(
-                              parent: AlwaysScrollableScrollPhysics(),
-                            ),
-                            slivers: [
-                              SliverToBoxAdapter(
-                                child: ConstrainedBox(
-                                  constraints: BoxConstraints(
-                                    minHeight: constraints.maxHeight,
-                                  ),
-                                  child: Column(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 20.w,
-                                          ),
-                                          child: Center(
-                                            child: ConstrainedBox(
-                                              constraints: BoxConstraints(maxWidth: 420.w),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: [
-                                                  Column(
-                                                    mainAxisSize: MainAxisSize.min,
-                                                    children: [
-                                                      SizedBox(height: gapTop),
-                                                      if (!isFirstStagePassed &&
-                                                          !isAnswered)
-                                                        Padding(
-                                                          padding: EdgeInsets.only(
-                                                            bottom: 16.h,
-                                                          ),
-                                                          child: SpeedChallengeTimer(
-                                                            key: _timerKey,
-                                                            durationSeconds: 15,
-                                                            primaryColor:
-                                                                theme.primaryColor,
-                                                            onTimeUp:
-                                                                _handleTimeExpired,
-                                                          ),
-                                                        ),
-                                                      SpeedVarianceInstruction(
-                                                        color: theme.primaryColor,
-                                                        instruction:
-                                                            isFirstStagePassed
-                                                            ? "Great job! Now record yourself saying the sentence."
-                                                            : quest.instruction,
-                                                      ),
-                                                      SizedBox(
-                                                        height: gapInstruction,
-                                                      ),
-                                                      SpeedVariancePromptCard(
-                                                        word: quest.word ?? "",
-                                                        color: theme.primaryColor,
-                                                        isDark: isDark,
-                                                      ),
-                                                      SizedBox(height: gapPrompt),
-                                                      if (isFirstStagePassed &&
-                                                          !isAnswered)
-                                                        Padding(
-                                                          padding: EdgeInsets.only(
-                                                            bottom: 16.h,
-                                                          ),
-                                                          child: ValueListenableBuilder<bool>(
-                                                            valueListenable:
-                                                                _isNaturalSpeed,
-                                                            builder: (context, isNatural, _) {
-                                                              return SpeedVarianceSpeedToggle(
-                                                                isNatural:
-                                                                    isNatural,
-                                                                onChanged: (val) {
-                                                                  _isNaturalSpeed
-                                                                          .value =
-                                                                      val;
-                                                                  _playTts(
-                                                                    quest.textToSpeak ??
-                                                                        "",
-                                                                    speed: val
-                                                                        ? (quest.naturalSpeed ??
-                                                                              1.0)
-                                                                        : (quest.clearSpeed ??
-                                                                              0.75),
-                                                                  );
-                                                                },
-                                                                primaryColor: theme
-                                                                    .primaryColor,
-                                                                isDark: isDark,
-                                                              );
-                                                            },
-                                                          ),
-                                                        ),
-                                                      ValueListenableBuilder<bool>(
-                                                        valueListenable:
-                                                            _isNaturalSpeed,
-                                                        builder: (context, isNatural, _) {
-                                                          return SpeedVariancePulseSpeaker(
-                                                            text:
-                                                                quest.textToSpeak ??
-                                                                "",
-                                                            color:
-                                                                theme.primaryColor,
-                                                            onPlayTts: (text) => _playTts(
-                                                              text,
-                                                              speed:
-                                                                  isFirstStagePassed
-                                                                  ? (isNatural
-                                                                        ? (quest.naturalSpeed ??
-                                                                              1.0)
-                                                                        : (quest.clearSpeed ??
-                                                                              0.75))
-                                                                  : quest
-                                                                        .targetSpeed,
-                                                            ),
-                                                          );
-                                                        },
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  Column(
-                                                    mainAxisSize: MainAxisSize.min,
-                                                    children: [
-                                                      SizedBox(height: gapSpeaker),
-                                                      ListenableBuilder(
-                                                        listenable:
-                                                            Listenable.merge([
-                                                              _dialRotation,
-                                                              _isDragging,
-                                                              _selectedIndex,
-                                                            ]),
-                                                        builder: (context, _) {
-                                                          return IgnorePointer(
-                                                            ignoring:
-                                                                isFirstStagePassed ||
-                                                                isAnswered,
-                                                            child: SpeedVarianceTempoDial(
-                                                              options: options,
-                                                              correctIndex: quest
-                                                                      .correctAnswerIndex ??
-                                                                  0,
-                                                              color: theme.primaryColor,
-                                                              isDark: isDark,
-                                                              isAnswered:
-                                                                  isAnswered ||
-                                                                  isFirstStagePassed,
-                                                              isDragging:
-                                                                  _isDragging.value,
-                                                              dialRotation:
-                                                                  _dialRotation.value,
-                                                              selectedIndex:
-                                                                  _selectedIndex.value,
-                                                              onDialRotate:
-                                                                  _onDialRotate,
-                                                              onDialRelease:
-                                                                  _onDialRelease,
-                                                              onSubmitChoice:
-                                                                  _submitChoice,
-                                                            ),
-                                                          );
-                                                        },
-                                                      ),
-                                                      SizedBox(height: gapBottom),
-                                                    ],
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                    return RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(
+                          parent: AlwaysScrollableScrollPhysics(),
+                        ),
+                        slivers: [
+                          SliverToBoxAdapter(
+                            child: ConstrainedBox(
+                              constraints: BoxConstraints(
+                                minHeight: constraints.maxHeight,
+                              ),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 20.w,
                                     ),
-                                  ),
-                                ),
-                              if (isFirstStagePassed && !isAnswered)
-                                SliverToBoxAdapter(
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 20.w),
                                     child: Center(
                                       child: ConstrainedBox(
-                                        constraints: BoxConstraints(maxWidth: 420.w),
+                                        constraints: BoxConstraints(
+                                          maxWidth: 420.w,
+                                        ),
                                         child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
                                           children: [
-                                            SizedBox(height: 24.h),
-                                            SpeakToConfirmOverlay(
-                                              key: const ValueKey(
-                                                'speak_to_confirm_overlay',
-                                              ),
-                                              expectedText:
-                                                  quest.textToSpeak ??
-                                                  quest.word ??
-                                                  "",
-                                              primaryColor: theme.primaryColor,
-                                              isPositioned: false,
-                                              onConfirmed: () =>
-                                                  _submitVerbalEvaluation(true),
-                                              onSkipped: () =>
-                                                  _submitVerbalEvaluation(false),
+                                            Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                SizedBox(height: gapTop),
+                                                if (!isFirstStagePassed &&
+                                                    !isAnswered)
+                                                  Padding(
+                                                    padding: EdgeInsets.only(
+                                                      bottom: 16.h,
+                                                    ),
+                                                    child: SpeedChallengeTimer(
+                                                      key: _timerKey,
+                                                      durationSeconds: 15,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      onTimeUp:
+                                                          _handleTimeExpired,
+                                                    ),
+                                                  ),
+                                                SpeedVarianceInstruction(
+                                                  color: theme.primaryColor,
+                                                  instruction:
+                                                      isFirstStagePassed
+                                                      ? "Great job! Now record yourself saying the sentence."
+                                                      : quest.instruction,
+                                                ),
+                                                SizedBox(
+                                                  height: gapInstruction,
+                                                ),
+                                                SpeedVariancePromptCard(
+                                                  word: quest.word ?? "",
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                ),
+                                                SizedBox(height: gapPrompt),
+                                                if (isFirstStagePassed &&
+                                                    !isAnswered)
+                                                  Padding(
+                                                    padding: EdgeInsets.only(
+                                                      bottom: 16.h,
+                                                    ),
+                                                    child: ValueListenableBuilder<bool>(
+                                                      valueListenable:
+                                                          _isNaturalSpeed,
+                                                      builder: (context, isNatural, _) {
+                                                        return SpeedVarianceSpeedToggle(
+                                                          isNatural: isNatural,
+                                                          onChanged: (val) {
+                                                            _isNaturalSpeed
+                                                                    .value =
+                                                                val;
+                                                            _playTts(
+                                                              quest.textToSpeak ??
+                                                                  "",
+                                                              speed: val
+                                                                  ? (quest.naturalSpeed ??
+                                                                        1.0)
+                                                                  : (quest.clearSpeed ??
+                                                                        0.75),
+                                                            );
+                                                          },
+                                                          primaryColor: theme
+                                                              .primaryColor,
+                                                          isDark: isDark,
+                                                        );
+                                                      },
+                                                    ),
+                                                  ),
+                                                ValueListenableBuilder<bool>(
+                                                  valueListenable:
+                                                      _isNaturalSpeed,
+                                                  builder: (context, isNatural, _) {
+                                                    return SpeedVariancePulseSpeaker(
+                                                      text:
+                                                          quest.textToSpeak ??
+                                                          "",
+                                                      color: theme.primaryColor,
+                                                      onPlayTts: (text) => _playTts(
+                                                        text,
+                                                        speed:
+                                                            isFirstStagePassed
+                                                            ? (isNatural
+                                                                  ? (quest.naturalSpeed ??
+                                                                        1.0)
+                                                                  : (quest.clearSpeed ??
+                                                                        0.75))
+                                                            : quest.targetSpeed,
+                                                      ),
+                                                    );
+                                                  },
+                                                ),
+                                              ],
                                             ),
-                                            SizedBox(height: 48.h),
+                                            Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                SizedBox(height: gapSpeaker),
+                                                ListenableBuilder(
+                                                  listenable: Listenable.merge([
+                                                    _dialRotation,
+                                                    _isDragging,
+                                                    _selectedIndex,
+                                                  ]),
+                                                  builder: (context, _) {
+                                                    return IgnorePointer(
+                                                      ignoring:
+                                                          isFirstStagePassed ||
+                                                          isAnswered,
+                                                      child: SpeedVarianceTempoDial(
+                                                        options: options,
+                                                        correctIndex:
+                                                            quest
+                                                                .correctAnswerIndex ??
+                                                            0,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                        isAnswered:
+                                                            isAnswered ||
+                                                            isFirstStagePassed,
+                                                        isDragging:
+                                                            _isDragging.value,
+                                                        dialRotation:
+                                                            _dialRotation.value,
+                                                        selectedIndex:
+                                                            _selectedIndex
+                                                                .value,
+                                                        onDialRotate:
+                                                            _onDialRotate,
+                                                        onDialRelease:
+                                                            _onDialRelease,
+                                                        onSubmitChoice:
+                                                            _submitChoice,
+                                                      ),
+                                                    );
+                                                  },
+                                                ),
+                                                SizedBox(height: gapBottom),
+                                              ],
+                                            ),
                                           ],
                                         ),
                                       ),
                                     ),
                                   ),
-                                ),
-                            ],
+                                ],
+                              ),
+                            ),
                           ),
-                        );
-                      },
-                    ),
-                  );
-                },
-              ),
-            );
-          },
+                          if (isFirstStagePassed && !isAnswered)
+                            SliverToBoxAdapter(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                child: Center(
+                                  child: ConstrainedBox(
+                                    constraints: BoxConstraints(
+                                      maxWidth: 420.w,
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(height: 24.h),
+                                        SpeakToConfirmOverlay(
+                                          key: const ValueKey(
+                                            'speak_to_confirm_overlay',
+                                          ),
+                                          expectedText:
+                                              quest.textToSpeak ??
+                                              quest.word ??
+                                              "",
+                                          primaryColor: theme.primaryColor,
+                                          isPositioned: false,
+                                          onConfirmed: () =>
+                                              _submitVerbalEvaluation(true),
+                                          onSkipped: () =>
+                                              _submitVerbalEvaluation(false),
+                                        ),
+                                        SizedBox(height: 48.h),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              );
+            },
+          ),
         );
+      },
+    );
   }
 }

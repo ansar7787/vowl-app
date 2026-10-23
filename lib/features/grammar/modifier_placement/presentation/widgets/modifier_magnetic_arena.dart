@@ -36,25 +36,27 @@ class ModifierMagneticArena extends StatelessWidget {
 
     return SingleChildScrollView(
       key: const ValueKey('modifier_magnetic_arena'),
+      physics: const NeverScrollableScrollPhysics(),
       child: Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: 24.w,
-          vertical: isCompact ? 8.h : 16.h,
+          horizontal: 20.w,
+          vertical: isCompact ? 8.h : 14.h,
         ),
         child: Wrap(
           alignment: WrapAlignment.center,
           crossAxisAlignment: WrapCrossAlignment.center,
-          spacing: isCompact ? 4.w : 8.w,
-          runSpacing: isCompact ? 8.h : 16.h,
+          spacing: isCompact ? 6.w : 8.w,
+          runSpacing: isCompact ? 10.h : 14.h,
           children: List.generate(words.length * 2 + 1, (index) {
             if (index % 2 == 1) {
               return Text(
                 words[index ~/ 2],
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: isCompact ? 16.sp : 22.sp,
+                  fontSize: isCompact ? 15.sp : 17.5.sp,
                   fontWeight: FontWeight.w500,
-                  color: Theme.of(context).colorScheme.onSurface,
+                  color: isDark ? Colors.white : Colors.black87,
+                  height: 1.3,
                 ),
               );
             } else {
@@ -71,14 +73,14 @@ class ModifierMagneticArena extends StatelessWidget {
                   final isHighlight = candidateData.isNotEmpty;
                   final borderCol = isHighlight
                       ? primaryColor
-                      : primaryColor.withValues(alpha: 0.15);
+                      : primaryColor.withValues(alpha: 0.2);
 
                   final double? slotWidth = isOccupied
                       ? null
-                      : (isCompact ? 36.r : 50.r);
+                      : (isCompact ? 34.r : 44.r);
                   final double? slotHeight = isOccupied
                       ? null
-                      : (isCompact ? 30.r : 40.r);
+                      : (isCompact ? 28.r : 36.r);
 
                   return GestureDetector(
                     key: ValueKey('modifier_slot_$slotIndex'),
@@ -91,22 +93,23 @@ class ModifierMagneticArena extends StatelessWidget {
                     child: Semantics(
                       label: isOccupied
                           ? "Slot occupied by $modifier"
-                          : "Empty slot to drop modifier",
-                      child: Container(
+                          : "Empty slot for modifier",
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 200),
                         width: slotWidth,
                         height: slotHeight,
                         decoration: BoxDecoration(
                           color: isOccupied
-                              ? primaryColor.withValues(alpha: 0.1)
+                              ? primaryColor.withValues(alpha: 0.12)
                               : (isHighlight
                                     ? primaryColor.withValues(alpha: 0.2)
-                                    : Colors.transparent),
+                                    : primaryColor.withValues(alpha: 0.04)),
                           borderRadius: BorderRadius.circular(
-                            isCompact ? 13.r : 18.r,
+                            isCompact ? 10.r : 14.r,
                           ),
                           border: Border.all(
                             color: isOccupied ? primaryColor : borderCol,
-                            width: isHighlight || isOccupied ? 2 : 1.5,
+                            width: isHighlight || isOccupied ? 1.8 : 1.2,
                           ),
                         ),
                         child: Center(
@@ -114,7 +117,9 @@ class ModifierMagneticArena extends StatelessWidget {
                           heightFactor: 1.0,
                           child: isOccupied
                               ? GestureDetector(
-                                  key: ValueKey('modifier_occupied_chip_$slotIndex'),
+                                  key: ValueKey(
+                                    'modifier_occupied_chip_$slotIndex',
+                                  ),
                                   onTap: () {
                                     if (isAnswered) return;
                                     hapticService.selection();
@@ -123,52 +128,46 @@ class ModifierMagneticArena extends StatelessWidget {
                                   child: reduceMotion
                                       ? Container(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: isCompact
-                                                ? 6.w
-                                                : 10.w,
-                                            vertical: isCompact ? 2.h : 4.h,
+                                            horizontal: isCompact ? 8.w : 12.w,
+                                            vertical: isCompact ? 3.h : 5.h,
                                           ),
                                           decoration: BoxDecoration(
                                             color: primaryColor,
-                                            borderRadius:
-                                                BorderRadius.circular(
-                                                  isCompact ? 8.r : 12.r,
-                                                ),
+                                            borderRadius: BorderRadius.circular(
+                                              isCompact ? 8.r : 10.r,
+                                            ),
                                           ),
                                           child: Text(
                                             modifier,
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
                                               fontSize: isCompact
-                                                  ? 10.sp
-                                                  : 14.sp,
-                                              fontWeight: FontWeight.w900,
+                                                  ? 14.sp
+                                                  : 16.5.sp,
+                                              fontWeight: FontWeight.w700,
                                               color: Colors.white,
                                             ),
                                           ),
                                         )
                                       : Container(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: isCompact
-                                                ? 6.w
-                                                : 10.w,
-                                            vertical: isCompact ? 2.h : 4.h,
+                                            horizontal: isCompact ? 8.w : 12.w,
+                                            vertical: isCompact ? 3.h : 5.h,
                                           ),
                                           decoration: BoxDecoration(
                                             color: primaryColor,
-                                            borderRadius:
-                                                BorderRadius.circular(
-                                                  isCompact ? 8.r : 12.r,
-                                                ),
+                                            borderRadius: BorderRadius.circular(
+                                              isCompact ? 8.r : 10.r,
+                                            ),
                                           ),
                                           child: Text(
                                             modifier,
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
                                               fontSize: isCompact
-                                                  ? 10.sp
-                                                  : 14.sp,
-                                              fontWeight: FontWeight.w900,
+                                                  ? 14.sp
+                                                  : 16.5.sp,
+                                              fontWeight: FontWeight.w700,
                                               color: Colors.white,
                                             ),
                                           ),
@@ -178,9 +177,9 @@ class ModifierMagneticArena extends StatelessWidget {
                                 )
                               : (isHighlight
                                     ? Icon(
-                                        Icons.add,
+                                        Icons.add_rounded,
                                         color: primaryColor,
-                                        size: isCompact ? 12.r : 18.r,
+                                        size: isCompact ? 14.r : 18.r,
                                       )
                                     : null),
                         ),

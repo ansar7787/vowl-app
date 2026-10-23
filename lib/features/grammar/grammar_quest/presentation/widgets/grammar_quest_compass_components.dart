@@ -127,7 +127,10 @@ class CompassQuadrant extends StatelessWidget {
                 duration: const Duration(milliseconds: 300),
                 scale: isSelected ? 1.1 : 1.0,
                 child: Container(
-                  constraints: BoxConstraints(maxWidth: size * 0.35),
+                  constraints: BoxConstraints(
+                    maxWidth: size * 0.40,
+                    minWidth: size * 0.20,
+                  ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(isCompact ? 8.r : 12.r),
                     child: BackdropFilter(
@@ -156,16 +159,16 @@ class CompassQuadrant extends StatelessWidget {
                         child: Text(
                           optionText,
                           textAlign: TextAlign.center,
-                          maxLines: 2,
+                          softWrap: true,
                           overflow: TextOverflow.visible,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: isCompact ? 8.sp : 10.sp,
-                            fontWeight: FontWeight.w900,
+                            fontSize: isCompact ? 11.sp : 13.sp,
+                            fontWeight: FontWeight.w600,
                             color: isSelected
                                 ? Colors.white
                                 : (Theme.of(context).colorScheme.onSurface),
-                            letterSpacing: 0.5,
+                            letterSpacing: 0.2,
                           ),
                         ),
                       ),
@@ -246,8 +249,11 @@ class CompassPhotonNeedle extends StatelessWidget {
                             ),
                           )
                           .animate(
-                            target: VowlMotion.shouldReduceMotion(context) ? 0 : 1,
-                            onPlay: (c) => VowlMotion.shouldReduceMotion(context)
+                            target: VowlMotion.shouldReduceMotion(context)
+                                ? 0
+                                : 1,
+                            onPlay: (c) =>
+                                VowlMotion.shouldReduceMotion(context)
                                 ? null
                                 : c.repeat(),
                           )

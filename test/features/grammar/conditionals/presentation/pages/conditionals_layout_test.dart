@@ -106,11 +106,7 @@ void main() {
     subtype: GameSubtype.conditionals,
     question: 'If you heat ice,',
     prompt: 'If you heat ice,',
-    options: [
-      'it would melt.',
-      'it will melt.',
-      'it melts.',
-    ],
+    options: ['it would melt.', 'it will melt.', 'it melts.'],
     correctAnswerIndex: 2,
     correctAnswer: 'If you heat ice, it melts.',
     conditionalType: '0',
@@ -124,10 +120,7 @@ void main() {
     subtype: GameSubtype.conditionals,
     question: 'If I won the lottery,',
     prompt: 'If I won the lottery,',
-    options: [
-      'I will travel.',
-      'I would travel the world.',
-    ],
+    options: ['I will travel.', 'I would travel the world.'],
     correctAnswerIndex: 1,
     correctAnswer: 'If I won the lottery, I would travel the world.',
   );
@@ -286,144 +279,169 @@ void main() {
   }
 
   group('ConditionalsScreen Layout & Mechanics', () {
-    testWidgets('1. renders initial quest with condition card, type chip, and options list', (tester) async {
-      await pumpConditionals(tester);
+    testWidgets(
+      '1. renders initial quest with condition card, type chip, and options list',
+      (tester) async {
+        await pumpConditionals(tester);
 
-      expect(find.byType(ConditionalsInstruction), findsOneWidget);
-      expect(
-        find.text('COMPLETE THE CONDITIONAL SENTENCE.'),
-        findsOneWidget,
-      );
-      expect(find.text('TYPE: 1'), findsOneWidget);
-      expect(find.text('IF CONDITION'), findsOneWidget);
-      expect(find.text('If it rains tomorrow,'), findsOneWidget);
+        expect(find.byType(ConditionalsInstruction), findsOneWidget);
+        expect(find.text('Complete the conditional sentence.'), findsOneWidget);
+        expect(find.text('First Conditional'), findsOneWidget);
+        expect(find.text('IF CLAUSE'), findsOneWidget);
+        expect(find.text('If it rains tomorrow,'), findsOneWidget);
 
-      expect(find.text('we will stay inside.'), findsOneWidget);
-      expect(find.text('we stayed inside.'), findsOneWidget);
-      expect(find.text('we would stay inside.'), findsOneWidget);
-    });
+        expect(find.text('we will stay inside.'), findsOneWidget);
+        expect(find.text('we stayed inside.'), findsOneWidget);
+        expect(find.text('we would stay inside.'), findsOneWidget);
+      },
+    );
 
-    testWidgets('2. hides conditionalType chip when quest conditionalType is null', (tester) async {
-      final stateWithoutType = GrammarLoaded(
-        quests: const [testQuestWithoutType],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
+    testWidgets(
+      '2. hides conditionalType chip when quest conditionalType is null',
+      (tester) async {
+        final stateWithoutType = GrammarLoaded(
+          quests: const [testQuestWithoutType],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
 
-      await pumpConditionals(tester, state: stateWithoutType);
+        await pumpConditionals(tester, state: stateWithoutType);
 
-      expect(find.textContaining('TYPE:'), findsNothing);
-      expect(find.text('If I won the lottery,'), findsOneWidget);
-      expect(find.text('I would travel the world.'), findsOneWidget);
-    });
+        expect(find.textContaining('TYPE:'), findsNothing);
+        expect(find.text('If I won the lottery,'), findsOneWidget);
+        expect(find.text('I would travel the world.'), findsOneWidget);
+      },
+    );
 
-    testWidgets('3. renders shimmer loading when state is GrammarLoading', (tester) async {
+    testWidgets('3. renders shimmer loading when state is GrammarLoading', (
+      tester,
+    ) async {
       await pumpConditionals(tester, state: const GrammarLoading());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
       expect(find.byType(ConditionalsInstruction), findsNothing);
     });
 
-    testWidgets('4. tapping incorrect option submits wrong answer to GrammarBloc', (tester) async {
-      await pumpConditionals(tester);
+    testWidgets(
+      '4. tapping incorrect option submits wrong answer to GrammarBloc',
+      (tester) async {
+        await pumpConditionals(tester);
 
-      final wrongOption = find.byKey(const ValueKey('conditional_option_1')); // 'we stayed inside.'
-      expect(wrongOption, findsOneWidget);
+        final wrongOption = find.byKey(
+          const ValueKey('conditional_option_1'),
+        ); // 'we stayed inside.'
+        expect(wrongOption, findsOneWidget);
 
-      await tester.tap(wrongOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(wrongOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(
-        () => mockGrammarBloc.add(
-          any(
-            that: isA<SubmitAnswer>().having(
-              (e) => e.isCorrect,
-              'isCorrect',
-              false,
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(
+          () => mockGrammarBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
             ),
           ),
-        ),
-      ).called(1);
-    });
+        ).called(1);
+      },
+    );
 
-    testWidgets('5. tapping correct option transitions to Phase 2 TypeToConfirmOverlay', (tester) async {
-      await pumpConditionals(tester);
+    testWidgets(
+      '5. tapping correct option transitions to Phase 2 TypeToConfirmOverlay',
+      (tester) async {
+        await pumpConditionals(tester);
 
-      final correctOption = find.byKey(const ValueKey('conditional_option_0')); // 'we will stay inside.'
-      expect(correctOption, findsOneWidget);
+        final correctOption = find.byKey(
+          const ValueKey('conditional_option_0'),
+        ); // 'we will stay inside.'
+        expect(correctOption, findsOneWidget);
 
-      await tester.tap(correctOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(correctOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockHapticService.heavy()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.heavy()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
 
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(TypeToConfirmOverlay, skipOffstage: false), findsOneWidget);
-      expect(
-        find.text(
-          'Type the full sentence to lock it in',
-          skipOffstage: false,
-        ),
-        findsOneWidget,
-      );
-    });
+        expect(
+          find.byType(TypeToConfirmOverlay, skipOffstage: false),
+          findsOneWidget,
+        );
+        expect(
+          find.text(
+            'Type the answer to confirm',
+            skipOffstage: false,
+          ),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('6. Phase 2: typing correct sentence confirms and submits answer', (tester) async {
-      await pumpConditionals(tester);
+    testWidgets(
+      '6. Phase 2: typing correct sentence confirms and submits answer',
+      (tester) async {
+        await pumpConditionals(tester);
 
-      final correctOption = find.byKey(const ValueKey('conditional_option_0'));
-      await tester.tap(correctOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        final correctOption = find.byKey(
+          const ValueKey('conditional_option_0'),
+        );
+        await tester.tap(correctOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final textField = find.byType(TextField);
-      expect(textField, findsOneWidget);
+        final textField = find.byType(TextField);
+        expect(textField, findsOneWidget);
 
-      await tester.enterText(
-        textField,
-        'If it rains tomorrow, we will stay inside.',
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.enterText(
+          textField,
+          'If it rains tomorrow, we will stay inside.',
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      final submitBtn = find.text('SUBMIT');
-      expect(submitBtn, findsOneWidget);
+        final submitBtn = find.text('SUBMIT');
+        expect(submitBtn, findsOneWidget);
 
-      await tester.tap(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(
-        () => mockGrammarBloc.add(
-          any(
-            that: isA<SubmitAnswer>().having(
-              (e) => e.isCorrect,
-              'isCorrect',
-              true,
+        verify(
+          () => mockGrammarBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                true,
+              ),
             ),
           ),
-        ),
-      ).called(1);
-    });
+        ).called(1);
+      },
+    );
 
-    testWidgets('7. Phase 2: skipping confirm dispatches wrong answer', (tester) async {
+    testWidgets('7. Phase 2: skipping confirm dispatches wrong answer', (
+      tester,
+    ) async {
       await pumpConditionals(tester);
 
       final correctOption = find.byKey(const ValueKey('conditional_option_0'));
@@ -481,7 +499,9 @@ void main() {
       ).called(1);
     });
 
-    testWidgets('8. tapping options when already answered does nothing', (tester) async {
+    testWidgets('8. tapping options when already answered does nothing', (
+      tester,
+    ) async {
       final answeredState = GrammarLoaded(
         quests: const [testQuest1, testQuest2],
         currentIndex: 0,
@@ -501,7 +521,9 @@ void main() {
       verifyNever(() => mockGrammarBloc.add(any(that: isA<SubmitAnswer>())));
     });
 
-    testWidgets('9. tapping hint button dispatches GrammarHintUsed', (tester) async {
+    testWidgets('9. tapping hint button dispatches GrammarHintUsed', (
+      tester,
+    ) async {
       await pumpConditionals(tester);
 
       final hintButton = find.byType(QuestHintButton);
@@ -514,7 +536,9 @@ void main() {
       verify(() => mockGrammarBloc.add(const GrammarHintUsed())).called(1);
     });
 
-    testWidgets('10. shows level 1 briefing dialog when not yet seen', (tester) async {
+    testWidgets('10. shows level 1 briefing dialog when not yet seen', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({});
 
       await pumpConditionals(tester, level: 1);
@@ -532,21 +556,29 @@ void main() {
       expect(find.text('If it rains tomorrow,'), findsOneWidget);
     });
 
-    testWidgets('11. respects reduced motion when lowAnimationModeOverride is enabled', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = true;
-      await pumpConditionals(tester);
-      expect(find.byType(ConditionalsScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '11. respects reduced motion when lowAnimationModeOverride is enabled',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = true;
+        await pumpConditionals(tester);
+        expect(find.byType(ConditionalsScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('12. handles compact mobile layout (320x568) without overflow', (tester) async {
-      await pumpConditionals(tester, width: 320, height: 568);
+    testWidgets(
+      '12. handles compact mobile layout (320x568) without overflow',
+      (tester) async {
+        await pumpConditionals(tester, width: 320, height: 568);
 
-      expect(find.byType(ConditionalsScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(ConditionalsScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('13. handles tablet viewport (768x1024) without overflow', (tester) async {
+    testWidgets('13. handles tablet viewport (768x1024) without overflow', (
+      tester,
+    ) async {
       await pumpConditionals(tester, width: 768, height: 1024);
 
       expect(find.byType(ConditionalsScreen), findsOneWidget);
@@ -561,7 +593,9 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('15. renders zero/fact conditional type correctly', (tester) async {
+    testWidgets('15. renders zero/fact conditional type correctly', (
+      tester,
+    ) async {
       final stateZero = GrammarLoaded(
         quests: const [testQuest2],
         currentIndex: 0,
@@ -574,27 +608,29 @@ void main() {
 
       await pumpConditionals(tester, state: stateZero);
 
-      expect(find.text('TYPE: 0'), findsOneWidget);
+      expect(find.text('Zero Conditional'), findsOneWidget);
       expect(find.text('If you heat ice,'), findsOneWidget);
       expect(find.text('it melts.'), findsOneWidget);
     });
 
-    testWidgets('16. renders final failure state with explanation and continue', (tester) async {
-      final failureState = GrammarLoaded(
-        quests: const [testQuest1, testQuest2],
-        currentIndex: 0,
-        livesRemaining: 0,
-        answerStatus: AnswerStatus.incorrect,
-        hintUsed: false,
-        wrongCount: 3,
-        isFinalFailure: true,
-      );
+    testWidgets(
+      '16. renders final failure state with explanation and continue',
+      (tester) async {
+        final failureState = GrammarLoaded(
+          quests: const [testQuest1, testQuest2],
+          currentIndex: 0,
+          livesRemaining: 0,
+          answerStatus: AnswerStatus.incorrect,
+          hintUsed: false,
+          wrongCount: 3,
+          isFinalFailure: true,
+        );
 
-      await pumpConditionals(tester, state: failureState);
+        await pumpConditionals(tester, state: failureState);
 
-      expect(find.byType(ConditionalsScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(ConditionalsScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }
-

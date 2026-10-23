@@ -44,10 +44,7 @@ class SpeedVariancePulseSpeaker extends StatelessWidget {
             color: color.withValues(alpha: 0.1),
             border: Border.all(color: color, width: 2),
             boxShadow: [
-              BoxShadow(
-                color: color.withValues(alpha: 0.15),
-                blurRadius: 16,
-              ),
+              BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 16),
             ],
           ),
           child: Center(

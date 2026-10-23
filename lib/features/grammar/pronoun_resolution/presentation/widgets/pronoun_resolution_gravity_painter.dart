@@ -29,15 +29,12 @@ class PronounResolutionGravityPainter extends CustomPainter {
   }) : super(repaint: rotationNotifier);
 
   static Offset getCenterPoint(Size size, bool isCompact) {
-    return Offset(
-      size.width / 2,
-      size.height / 2 + (isCompact ? 10.h : 20.h),
-    );
+    return Offset(size.width / 2, size.height / 2 + (isCompact ? 10.h : 20.h));
   }
 
   static List<Offset> getNodePoints(Size size, int count, bool isCompact) {
     final centerPoint = getCenterPoint(size, isCompact);
-    final double orbitRadius = isCompact ? 80.r : 130.r;
+    final double orbitRadius = isCompact ? 80.r : 120.r;
 
     return List.generate(count, (i) {
       final angle = (i * (2 * pi / count)) - (pi / 2);
@@ -51,24 +48,24 @@ class PronounResolutionGravityPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final centerPoint = getCenterPoint(size, isCompact);
-    final double orbitRadius = isCompact ? 80.r : 130.r;
+    final double orbitRadius = isCompact ? 80.r : 120.r;
     final nodes = getNodePoints(size, options.length, isCompact);
 
-    final double nodeW = isCompact ? 75.w : 110.w;
-    final double nodeH = isCompact ? 32.h : 45.h;
-    final double nodeRadius = isCompact ? 8.r : 12.r;
-    final double labelSize = isCompact ? 10.sp : 14.sp;
-    final double coreOuter = isCompact ? 25.r : 40.r;
-    final double coreInner = isCompact ? 22.r : 35.r;
+    final double nodeW = isCompact ? 80.w : 112.w;
+    final double nodeH = isCompact ? 34.h : 44.h;
+    final double nodeRadius = isCompact ? 10.r : 14.r;
+    final double labelSize = isCompact ? 11.sp : 13.5.sp;
+    final double coreOuter = isCompact ? 26.r : 38.r;
+    final double coreInner = isCompact ? 22.r : 32.r;
     final double beamWidth = isCompact ? 8.r : 12.r;
-    final double beamExtend = isCompact ? 100.r : 160.r;
+    final double beamExtend = isCompact ? 100.r : 150.r;
 
     // Draw Orbital Rings
     canvas.drawCircle(
       centerPoint,
       orbitRadius,
       Paint()
-        ..color = primaryColor.withValues(alpha: 0.05)
+        ..color = primaryColor.withValues(alpha: 0.08)
         ..style = PaintingStyle.stroke
         ..strokeWidth = 1.5.r,
     );
@@ -81,7 +78,7 @@ class PronounResolutionGravityPainter extends CustomPainter {
           ? AppColors.gameCorrect
           : (isWrong ? AppColors.gameIncorrect : primaryColor);
 
-      // Node Container (Glass Morph)
+      // Node Container
       final rect = Rect.fromCenter(
         center: nodes[i],
         width: nodeW,
@@ -90,37 +87,55 @@ class PronounResolutionGravityPainter extends CustomPainter {
       canvas.drawRRect(
         RRect.fromRectAndRadius(rect, Radius.circular(nodeRadius)),
         Paint()
-          ..color = nodeColor.withValues(alpha: 0.1)
+          ..color = isDark
+              ? nodeColor.withValues(alpha: 0.12)
+              : (isActuallyCorrect || isWrong
+                    ? nodeColor.withValues(alpha: 0.12)
+                    : Colors.white.withValues(alpha: 0.95))
           ..style = PaintingStyle.fill,
       );
       canvas.drawRRect(
         RRect.fromRectAndRadius(rect, Radius.circular(nodeRadius)),
         Paint()
-          ..color = nodeColor.withValues(alpha: 0.3)
+          ..color = nodeColor.withValues(alpha: isDark ? 0.35 : 0.3)
           ..style = PaintingStyle.stroke
-          ..strokeWidth = 1,
+          ..strokeWidth = 1.2,
       );
 
       final textPainter = TextPainter(
         text: TextSpan(
-          text: options[i].toUpperCase(),
+          text: options[i],
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: labelSize,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w600,
             color: isActuallyCorrect
                 ? AppColors.gameCorrect
                 : (isWrong
                       ? AppColors.gameIncorrect
-                      : (isDark ? Colors.white : Colors.black87)),
+                      : (isDark ? Colors.white : AppColors.slate900)),
           ),
         ),
         textDirection: TextDirection.ltr,
       )..layout();
+
+      // Ensure text never overflows node box and never shows ellipses
+      final double availableWidth = nodeW - 14.w;
+      double scale = 1.0;
+      if (textPainter.width > availableWidth) {
+        scale = availableWidth / textPainter.width;
+      }
+
+      canvas.save();
+      canvas.translate(nodes[i].dx, nodes[i].dy);
+      if (scale < 1.0) {
+        canvas.scale(scale, scale);
+      }
       textPainter.paint(
         canvas,
-        nodes[i] - Offset(textPainter.width / 2, textPainter.height / 2),
+        Offset(-textPainter.width / 2, -textPainter.height / 2),
       );
+      canvas.restore();
     }
 
     // Draw Focal Beam
@@ -149,7 +164,7 @@ class PronounResolutionGravityPainter extends CustomPainter {
       canvas.drawLine(centerPoint, beamEnd, beamCore);
     }
 
-    // Draw Gravity Core (The Pronoun)
+    // Draw Central Core (The Pronoun)
     final coreColor = isAnswered
         ? (isCorrect ? AppColors.gameCorrect : AppColors.gameIncorrect)
         : primaryColor;
@@ -164,20 +179,34 @@ class PronounResolutionGravityPainter extends CustomPainter {
 
     final pronounPainter = TextPainter(
       text: TextSpan(
-        text: pronoun.toUpperCase(),
+        text: pronoun,
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: labelSize,
-          fontWeight: FontWeight.w900,
+          fontWeight: FontWeight.w700,
           color: Colors.white,
         ),
       ),
       textDirection: TextDirection.ltr,
     )..layout();
+
+    // Ensure core text never overflows circle
+    final double maxCoreWidth = coreInner * 1.6;
+    double coreScale = 1.0;
+    if (pronounPainter.width > maxCoreWidth) {
+      coreScale = maxCoreWidth / pronounPainter.width;
+    }
+
+    canvas.save();
+    canvas.translate(centerPoint.dx, centerPoint.dy);
+    if (coreScale < 1.0) {
+      canvas.scale(coreScale, coreScale);
+    }
     pronounPainter.paint(
       canvas,
-      centerPoint - Offset(pronounPainter.width / 2, pronounPainter.height / 2),
+      Offset(-pronounPainter.width / 2, -pronounPainter.height / 2),
     );
+    canvas.restore();
   }
 
   @override
