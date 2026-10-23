@@ -10,6 +10,7 @@ class _LocalPalette {
   static const Color colorea580c = Color(0xFFEA580C);
 }
 
+/// Top navigation bar for the premium screen containing the back button and VIP badge.
 class PremiumHeader extends StatelessWidget {
   const PremiumHeader({super.key});
 

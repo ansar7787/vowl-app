@@ -56,8 +56,12 @@ class _IndiaPhoneInputFormatter extends TextInputFormatter {
   }
 }
 
+/// Available payment billing gateways supported by the application.
 enum PaymentMethod { razorpay, googlePlay }
 
+/// Monetization subscription paywall screen showcasing VIP benefits,
+/// tiered subscription plans (Weekly, Monthly, Yearly), localized pricing,
+/// and payment gateways (Razorpay in India, Google Play Billing internationally).
 class PremiumScreen extends StatefulWidget {
   const PremiumScreen({super.key});
 

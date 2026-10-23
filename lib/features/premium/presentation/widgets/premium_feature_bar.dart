@@ -12,6 +12,7 @@ class _LocalPalette {
   static const Color coloreab308 = Color(0xFFEAB308);
 }
 
+/// Grid/list section presenting all VIP perks (offline play, unlimited hearts, custom TTS voices).
 class ModernFeatureBar extends StatelessWidget {
   const ModernFeatureBar({super.key});
 

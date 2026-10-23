@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
+/// Animated hero banner featuring floating VIP badges, glowing typography, and value proposition.
 class PremiumHero extends StatelessWidget {
   const PremiumHero({super.key});
 
