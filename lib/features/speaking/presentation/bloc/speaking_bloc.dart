@@ -166,11 +166,21 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
       final isFinal = newWrong >= _kWrongCountThreshold;
 
       final updated = List<SpeakingQuest>.from(s.quests);
-      // Only re-queue for mastery loop if:
+      // Production Guard: Only re-queue for mastery loop if:
       //   • student has failed twice (isFinal)
       //   • lives will remain (game not over)
+      //   • not already the last question in the queue
+      //   • not already queued after currentIndex
       //   • hard cap not yet reached (prevents unbounded growth)
-      if (isFinal && newLives > 0 && updated.length < _kMaxQueueLength) {
+      final isNotLastQuestion = s.currentIndex < s.quests.length - 1;
+      final notAlreadyAppended = !s.quests
+          .sublist(s.currentIndex + 1)
+          .any((q) => q.id == s.currentQuest.id);
+      if (isFinal &&
+          newLives > 0 &&
+          isNotLastQuestion &&
+          notAlreadyAppended &&
+          updated.length < _kMaxQueueLength) {
         updated.add(s.currentQuest);
       }
 
@@ -396,9 +406,22 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
   void _onRestoreLife(RestoreLife event, Emitter<SpeakingState> emit) {
     final s = state;
     if (s is! SpeakingGameOver) return;
+
+    // Production Defense: Prune duplicate copies of the revived question
+    // that may have been appended after currentIndex, preventing duplicate replays.
+    final sanitizedQuests = List<SpeakingQuest>.from(s.quests);
+    if (s.currentIndex < sanitizedQuests.length) {
+      final currentQuestId = sanitizedQuests[s.currentIndex].id;
+      for (int i = sanitizedQuests.length - 1; i > s.currentIndex; i--) {
+        if (sanitizedQuests[i].id == currentQuestId) {
+          sanitizedQuests.removeAt(i);
+        }
+      }
+    }
+
     emit(
       SpeakingLoaded(
-        quests: s.quests,
+        quests: sanitizedQuests,
         currentIndex: s.currentIndex,
         livesRemaining: 1,
         gameType: s.gameType,

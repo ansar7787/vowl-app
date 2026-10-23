@@ -142,7 +142,17 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       final newWrongCount = currentState.wrongCount + 1;
       final isFinal = newWrongCount >= _maxWrongAttempts;
 
-      final updatedQuests = isFinal
+      // Production Guard: Only re-queue if player has lives remaining,
+      // is not already at the last question, and hasn't already queued it.
+      final isNotLastQuestion =
+          currentState.currentIndex < currentState.quests.length - 1;
+      final notAlreadyAppended = !currentState.quests
+          .sublist(currentState.currentIndex + 1)
+          .any((q) => q.id == currentState.currentQuest.id);
+      final shouldAppend =
+          isFinal && newLives > 0 && isNotLastQuestion && notAlreadyAppended;
+
+      final updatedQuests = shouldAppend
           ? (List<EliteMasteryQuest>.from(currentState.quests)
               ..add(currentState.currentQuest))
           : currentState.quests;
@@ -413,10 +423,22 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
   /// one life remaining.  Shared by [_onAddLifeFromAd] and [_onRestoreEliteLife]
   /// to keep construction logic in one place.
   EliteMasteryLoaded _restoreFromGameOver(EliteMasteryGameOver s) {
+    // Production Defense: Prune duplicate copies of the revived question
+    // that may have been appended after currentIndex, preventing duplicate replays.
+    final sanitizedQuests = List<EliteMasteryQuest>.from(s.quests);
+    if (s.currentIndex < sanitizedQuests.length) {
+      final currentQuestId = sanitizedQuests[s.currentIndex].id;
+      for (int i = sanitizedQuests.length - 1; i > s.currentIndex; i--) {
+        if (sanitizedQuests[i].id == currentQuestId) {
+          sanitizedQuests.removeAt(i);
+        }
+      }
+    }
+
     return EliteMasteryLoaded(
       gameType: s.gameType,
       level: s.level,
-      quests: s.quests,
+      quests: sanitizedQuests,
       currentIndex: s.currentIndex,
       livesRemaining: 1,
     );

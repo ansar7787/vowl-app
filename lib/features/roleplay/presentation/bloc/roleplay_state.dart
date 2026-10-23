@@ -45,11 +45,19 @@ WrongAnswerResult processWrongAnswer(RoleplayLoaded state) {
   final isFinalDueToWrongCount = newWrongCount >= kRoleplayMaxWrongAttempts;
   final isFinalFailure = isFinalDueToWrongCount || newLives <= 0;
 
-  // Re-queue the current quest only when the wrong-count cap is reached
-  // *and* the player still has lives. If lives hit zero the game ends
-  // anyway, so re-queueing would be wasted work.
+  // Only append the Mastery Loop quest when the player still has lives,
+  // is not already at the last question, and hasn't already queued it.
+  final isNotLastQuestion = state.currentIndex < state.quests.length - 1;
+  final notAlreadyAppended = !state.quests
+      .sublist(state.currentIndex + 1)
+      .any((q) => q.id == state.currentQuest.id);
+  final shouldAppend = isFinalDueToWrongCount &&
+      newLives > 0 &&
+      isNotLastQuestion &&
+      notAlreadyAppended;
+
   var updatedQuests = state.quests;
-  if (isFinalDueToWrongCount && newLives > 0) {
+  if (shouldAppend) {
     updatedQuests = List<RoleplayQuest>.from(state.quests)
       ..add(state.currentQuest);
   }

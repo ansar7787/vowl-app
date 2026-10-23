@@ -144,9 +144,18 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
       final newWrongCount = s.wrongCount + 1;
       final bool isFinal = newWrongCount >= _wrongAnswerThreshold;
 
+      // Production Guard: Only re-queue if player has lives remaining,
+      // is not already at the last question, and hasn't already queued it.
+      final isNotLastQuestion = s.currentIndex < s.quests.length - 1;
+      final notAlreadyAppended = !s.quests
+          .sublist(s.currentIndex + 1)
+          .any((q) => q.id == s.currentQuest.id);
+      final shouldAppend =
+          isFinal && newLives > 0 && isNotLastQuestion && notAlreadyAppended;
+
       // Mastery Loop: re-queue the question so the learner must ultimately
       // answer it correctly before the level ends.
-      final updatedQuests = isFinal
+      final updatedQuests = shouldAppend
           ? (List<WritingQuest>.from(s.quests)..add(s.currentQuest))
           : s.quests;
 
@@ -249,9 +258,21 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
     final s = state;
     if (s is! WritingGameOver) return;
 
+    // Production Defense: Prune duplicate copies of the revived question
+    // that may have been appended after currentIndex, preventing duplicate replays.
+    final sanitizedQuests = List<WritingQuest>.from(s.quests);
+    if (s.currentIndex < sanitizedQuests.length) {
+      final currentQuestId = sanitizedQuests[s.currentIndex].id;
+      for (int i = sanitizedQuests.length - 1; i > s.currentIndex; i--) {
+        if (sanitizedQuests[i].id == currentQuestId) {
+          sanitizedQuests.removeAt(i);
+        }
+      }
+    }
+
     emit(
       WritingLoaded(
-        quests: s.quests,
+        quests: sanitizedQuests,
         currentIndex: s.currentIndex,
         livesRemaining: 1,
         gameType: s.gameType,

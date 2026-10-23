@@ -204,6 +204,7 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
           if (prevBase.runtimeType != currBase.runtimeType) return true;
           if (currBase is GameLoadedState && prevBase is GameLoadedState) {
             return prevBase.currentIndex != currBase.currentIndex ||
+                prevBase.livesRemaining != currBase.livesRemaining ||
                 prevBase.lastAnswerCorrect != currBase.lastAnswerCorrect ||
                 prevBase.hintUsed != currBase.hintUsed ||
                 prevBase.isFinalFailure != currBase.isFinalFailure;

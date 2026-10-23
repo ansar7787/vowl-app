@@ -338,7 +338,19 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
     int newLives = event.isCorrect ? s.livesRemaining : s.livesRemaining - 1;
     bool isFinal = s.wrongCount >= 1;
 
-    if (!event.isCorrect && isFinal) {
+    // Production Guard: Only re-queue if child has lives remaining,
+    // is not already at the last question, and hasn't already queued it.
+    final isNotLastQuestion = s.currentIndex < s.quests.length - 1;
+    final notAlreadyAppended = !s.quests
+        .sublist(s.currentIndex + 1)
+        .any((q) => q.id == s.quests[s.currentIndex].id);
+    final shouldAppend = !event.isCorrect &&
+        isFinal &&
+        newLives > 0 &&
+        isNotLastQuestion &&
+        notAlreadyAppended;
+
+    if (shouldAppend) {
       // RE-QUEUE: Move failed quest to the end of the list for reinforcement
       final updatedQuests = List<KidsQuest>.from(s.quests);
       final failedQuest = updatedQuests[s.currentIndex];
@@ -473,10 +485,21 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
   void _onRestoreLife(RestoreKidsLife event, Emitter<KidsState> emit) {
     if (state is KidsGameOver) {
       final s = state as KidsGameOver;
+      // Production Defense: Prune duplicate copies of the revived question
+      // that may have been appended after currentIndex, preventing duplicate replays.
+      final sanitizedQuests = List<KidsQuest>.from(s.quests);
+      if (s.currentIndex < sanitizedQuests.length) {
+        final currentQuestId = sanitizedQuests[s.currentIndex].id;
+        for (int i = sanitizedQuests.length - 1; i > s.currentIndex; i--) {
+          if (sanitizedQuests[i].id == currentQuestId) {
+            sanitizedQuests.removeAt(i);
+          }
+        }
+      }
       // Resume game from where they died with 1 heart
       emit(
         KidsLoaded(
-          quests: s.quests,
+          quests: sanitizedQuests,
           originalTotalQuests: s.originalTotalQuests,
           currentIndex: s.currentIndex,
           gameType: s.gameType,

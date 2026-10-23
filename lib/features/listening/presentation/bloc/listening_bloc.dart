@@ -148,9 +148,19 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState>
       final newLives = s.livesRemaining - 1;
       final newWrongCount = s.wrongCount + 1;
       final isFinal = newWrongCount >= _kWrongBeforeFinal;
+
+      // Production Guard: Only re-queue if player has lives remaining,
+      // is not already at the last question, and hasn't already queued it.
+      final isNotLastQuestion = s.currentIndex < s.quests.length - 1;
+      final notAlreadyAppended = !s.quests
+          .sublist(s.currentIndex + 1)
+          .any((q) => q.id == s.currentQuest.id);
+      final shouldAppend =
+          isFinal && newLives > 0 && isNotLastQuestion && notAlreadyAppended;
+
       emit(
         s.copyWith(
-          quests: isFinal
+          quests: shouldAppend
               ? (List<ListeningQuest>.from(s.quests)..add(s.currentQuest))
               : null,
           livesRemaining: newLives,
@@ -261,9 +271,22 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState>
       gameType: _currentGameType ?? '',
       level: _currentLevel ?? 0,
     );
+
+    // Production Defense: Prune duplicate copies of the revived question
+    // that may have been appended after currentIndex, preventing duplicate replays.
+    final sanitizedQuests = List<ListeningQuest>.from(s.quests);
+    if (s.currentIndex < sanitizedQuests.length) {
+      final currentQuestId = sanitizedQuests[s.currentIndex].id;
+      for (int i = sanitizedQuests.length - 1; i > s.currentIndex; i--) {
+        if (sanitizedQuests[i].id == currentQuestId) {
+          sanitizedQuests.removeAt(i);
+        }
+      }
+    }
+
     emit(
       ListeningLoaded(
-        quests: s.quests,
+        quests: sanitizedQuests,
         currentIndex: s.currentIndex,
         livesRemaining: 1,
         answerStatus: AnswerStatus.unanswered,

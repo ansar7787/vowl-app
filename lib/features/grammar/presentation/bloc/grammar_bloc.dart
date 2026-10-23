@@ -129,8 +129,18 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
       final isFinal =
           newWrongCount >= GrammarConstants.wrongAnswersBeforeMasteryLoop;
 
+      // Production Guard: Only re-queue if player has lives remaining,
+      // is not already at the last question, and hasn't already queued it.
+      final isNotLastQuestion =
+          currentState.currentIndex < currentState.quests.length - 1;
+      final notAlreadyAppended = !currentState.quests
+          .sublist(currentState.currentIndex + 1)
+          .any((q) => q.id == currentState.currentQuest.id);
+      final shouldAppend =
+          isFinal && newLives > 0 && isNotLastQuestion && notAlreadyAppended;
+
       final updatedQuests = List<GrammarQuest>.from(currentState.quests);
-      if (isFinal) {
+      if (shouldAppend) {
         // Mastery loop: re-queue the failed question at the end.
         updatedQuests.add(currentState.currentQuest);
       }
@@ -306,9 +316,22 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
   void _onRestoreLife(RestoreLife event, Emitter<GrammarState> emit) {
     if (state is! GrammarGameOver) return;
     final s = state as GrammarGameOver;
+
+    // Production Defense: Prune any duplicate copies of the revived question
+    // that may have been appended after currentIndex, preventing duplicate replays.
+    final sanitizedQuests = List<GrammarQuest>.from(s.quests);
+    if (s.currentIndex < sanitizedQuests.length) {
+      final currentQuestId = sanitizedQuests[s.currentIndex].id;
+      for (int i = sanitizedQuests.length - 1; i > s.currentIndex; i--) {
+        if (sanitizedQuests[i].id == currentQuestId) {
+          sanitizedQuests.removeAt(i);
+        }
+      }
+    }
+
     emit(
       GrammarLoaded(
-        quests: s.quests,
+        quests: sanitizedQuests,
         currentIndex: s.currentIndex,
         livesRemaining: 1,
         answerStatus: AnswerStatus.unanswered,
