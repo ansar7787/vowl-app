@@ -23,6 +23,8 @@ import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/translation/presentation/bloc/translation_bloc.dart';
 
+/// Main AI translation interface featuring real-time on-device translation,
+/// voice speech-to-text input, TTS audio playback, and offline model management.
 class TranslateScreen extends StatefulWidget {
   const TranslateScreen({super.key});
 

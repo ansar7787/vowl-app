@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/translation_service.dart';
 // EVENTS
 // ═══════════════════════════════════════════════════════════════════════════════
 
+/// Base event class for the [TranslationBloc].
 abstract class TranslationEvent extends Equatable {
   const TranslationEvent();
   @override
@@ -77,8 +78,11 @@ class TranslationRetryRequested extends TranslationEvent {
 // STATE
 // ═══════════════════════════════════════════════════════════════════════════════
 
+/// High-level lifecycle status of the translation state machine.
 enum TranslationStatus { initial, loading, loaded, error }
 
+/// Immutable state snapshot for translation requests, language pairings,
+/// and offline language model availability.
 class TranslationState extends Equatable {
   final TranslationStatus status;
   final String sourceText;
@@ -157,6 +161,8 @@ class TranslationState extends Equatable {
 // BLOC
 // ═══════════════════════════════════════════════════════════════════════════════
 
+/// BLoC component managing real-time on-device text translation, free quota tracking,
+/// language pack downloads, and bidirectional source/target language swapping.
 class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
   final TranslationService _service;
   DateTime? _lastTokenDeductionTime;
