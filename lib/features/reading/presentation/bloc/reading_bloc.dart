@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:vowl/features/reading/presentation/constants/reading_constants.dart';
+import '../../domain/entities/reading_quest.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 import '../../../../core/network/network_info.dart';
 import '../../../../core/utils/sound_service.dart';
@@ -180,9 +181,18 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
       final isFinal =
           newWrongCount >= ReadingGameConfig.wrongAnswersBeforeFinal;
 
+      // Production Guard: Only re-queue if player has lives remaining,
+      // is not already at the last question, and hasn't already queued it.
+      final isNotLastQuestion = s.currentIndex < s.quests.length - 1;
+      final notAlreadyAppended = !s.quests
+          .sublist(s.currentIndex + 1)
+          .any((q) => q.id == s.currentQuest.id);
+      final shouldAppend =
+          isFinal && newLives > 0 && isNotLastQuestion && notAlreadyAppended;
+
       emit(
         s.copyWith(
-          quests: isFinal ? [...s.quests, s.currentQuest] : s.quests,
+          quests: shouldAppend ? [...s.quests, s.currentQuest] : s.quests,
           livesRemaining: newLives,
           answerStatus: AnswerStatus.incorrect,
           wrongCount: isFinal ? 0 : newWrongCount,
@@ -266,9 +276,22 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
   void _onRestoreLife(RestoreLife event, Emitter<ReadingState> emit) {
     final s = state;
     if (s is! ReadingGameOver) return;
+
+    // Production Defense: Prune duplicate copies of the revived question
+    // that may have been appended after currentIndex, preventing duplicate replays.
+    final sanitizedQuests = List<ReadingQuest>.from(s.quests);
+    if (s.currentIndex < sanitizedQuests.length) {
+      final currentQuestId = sanitizedQuests[s.currentIndex].id;
+      for (int i = sanitizedQuests.length - 1; i > s.currentIndex; i--) {
+        if (sanitizedQuests[i].id == currentQuestId) {
+          sanitizedQuests.removeAt(i);
+        }
+      }
+    }
+
     emit(
       ReadingLoaded(
-        quests: s.quests,
+        quests: sanitizedQuests,
         currentIndex: s.currentIndex,
         livesRemaining: 1,
       ),

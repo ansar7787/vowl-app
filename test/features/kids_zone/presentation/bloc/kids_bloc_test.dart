@@ -1,4 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -10,6 +11,9 @@ import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
 import 'package:vowl/features/kids_zone/domain/entities/kids_quest.dart';
 import 'package:vowl/features/kids_zone/domain/usecases/get_kids_quests.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
+
+class FakeUpdateUserRewardsParams extends Fake
+    implements UpdateUserRewardsParams {}
 
 class MockGetKidsQuests extends Mock implements GetKidsQuests {}
 
@@ -34,6 +38,10 @@ void main() {
   late MockUseHint mockUseHint;
   late MockSoundService mockSoundService;
   late MockHapticService mockHapticService;
+
+  setUpAll(() {
+    registerFallbackValue(FakeUpdateUserRewardsParams());
+  });
 
   setUp(() {
     mockGetQuests = MockGetKidsQuests();
@@ -152,6 +160,90 @@ void main() {
           answerStatus: AnswerStatus.incorrect,
           wrongCount: 1,
           isFinalFailure: false,
+        ),
+      ],
+    );
+
+    blocTest<KidsBloc, KidsState>(
+      'should NOT re-queue quest on final question even on strike 2',
+      build: () {
+        when(() => mockSoundService.playWrong()).thenAnswer((_) async => {});
+        when(() => mockHapticService.error()).thenAnswer((_) async => {});
+        return bloc;
+      },
+      seed: () => tLoadedState.copyWith(
+        currentIndex: 1, // Last question (length is 2)
+        wrongCount: 1,
+        livesRemaining: 2,
+      ),
+      act: (bloc) => bloc.add(const SubmitKidsAnswer(false)),
+      expect: () => [
+        tLoadedState.copyWith(
+          currentIndex: 1,
+          wrongCount: 1,
+          livesRemaining: 2,
+          answerStatus: AnswerStatus.incorrect,
+        ),
+        tLoadedState.copyWith(
+          currentIndex: 1,
+          livesRemaining: 1,
+          answerStatus: AnswerStatus.incorrect,
+          wrongCount: 2,
+          isFinalFailure: true,
+          quests: tQuests, // Untouched!
+        ),
+      ],
+    );
+  });
+
+  group('RestoreKidsLife and Level Completion Flow', () {
+    blocTest<KidsBloc, KidsState>(
+      'should prune duplicate quest and complete level when final question is answered correctly',
+      build: () {
+        when(() => mockSoundService.playCorrect()).thenAnswer((_) async => {});
+        when(() => mockHapticService.success()).thenAnswer((_) async => {});
+        when(() => mockUpdateUserRewards(any()))
+            .thenAnswer((_) async => const Right(null));
+        return bloc;
+      },
+      seed: () => KidsGameOver(
+        quests: [...tQuests, tQuests[1]], // Simulating duplicate of last quest
+        originalTotalQuests: 2,
+        currentIndex: 1,
+        gameType: 'day_night',
+        level: 1,
+      ),
+      act: (bloc) {
+        bloc.add(RestoreKidsLife());
+        bloc.add(const SubmitKidsAnswer(true));
+        bloc.add(NextKidsQuestion());
+      },
+      expect: () => [
+        // 1. Restored: duplicate pruned, lives = 1, unanswered
+        KidsLoaded(
+          quests: tQuests,
+          originalTotalQuests: 2,
+          currentIndex: 1,
+          gameType: 'day_night',
+          level: 1,
+          livesRemaining: 1,
+          answerStatus: AnswerStatus.unanswered,
+        ),
+        // 2. Answered correctly
+        KidsLoaded(
+          quests: tQuests,
+          originalTotalQuests: 2,
+          currentIndex: 1,
+          gameType: 'day_night',
+          level: 1,
+          livesRemaining: 1,
+          answerStatus: AnswerStatus.correct,
+        ),
+        // 3. Level complete immediately!
+        const KidsGameComplete(
+          xpEarned: 5,
+          coinsEarned: 10,
+          stickerAwarded: null,
         ),
       ],
     );

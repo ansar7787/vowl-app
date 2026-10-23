@@ -116,6 +116,7 @@ void main() {
   const tLevel = 1;
   final tQuests = [
     RoleplayQuest(id: '1', instruction: 'i1', difficulty: 1, livesAllowed: 3),
+    RoleplayQuest(id: '2', instruction: 'i2', difficulty: 1, livesAllowed: 3),
   ];
 
   group('FetchRoleplayQuests', () {
@@ -221,6 +222,7 @@ void main() {
         return bloc;
       },
       seed: () => tLoadedState.copyWith(
+        currentIndex: 1,
         answerStatus: AnswerStatus.correct,
       ),
       act: (bloc) => bloc.add(const NextQuestion()),
@@ -242,6 +244,87 @@ void main() {
           ),
         ).called(1);
       },
+    );
+
+    blocTest<RoleplayBloc, RoleplayState>(
+      'should NOT re-queue quest on final question even on second strike',
+      build: () {
+        when(() => mockSoundService.playWrong()).thenAnswer((_) async => {});
+        when(() => mockHapticService.error()).thenAnswer((_) async => {});
+        return bloc;
+      },
+      seed: () => tLoadedState.copyWith(
+        currentIndex: 1, // Final quest of 2
+        wrongCount: 1,
+        livesRemaining: 2,
+      ),
+      act: (bloc) => bloc.add(const SubmitAnswer(false)),
+      expect: () => [
+        tLoadedState.copyWith(
+          currentIndex: 1,
+          livesRemaining: 1,
+          answerStatus: AnswerStatus.incorrect,
+          wrongCount: 0,
+          isFinalFailure: true,
+          quests: tQuests, // Untouched!
+        ),
+      ],
+    );
+  });
+
+  group('RestoreLife and Level Completion Flow', () {
+    final tLoadedState = RoleplayLoaded(
+      quests: tQuests,
+      currentIndex: 1,
+      livesRemaining: 1,
+      gameType: tGameType,
+      level: tLevel,
+    );
+
+    blocTest<RoleplayBloc, RoleplayState>(
+      'should prune duplicate copies on RestoreLife and complete level when final question is answered correctly',
+      build: () {
+        when(() => mockSoundService.playCorrect()).thenAnswer((_) async => {});
+        when(() => mockHapticService.success()).thenAnswer((_) async => {});
+        when(() => mockUpdateUserRewards(any()))
+            .thenAnswer((_) async => const Right(null));
+        when(() => mockUpdateCategoryStats(any()))
+            .thenAnswer((_) async => const Right(null));
+        when(() => mockAwardBadge(any()))
+            .thenAnswer((_) async => const Right(null));
+        return bloc;
+      },
+      seed: () => RoleplayGameOver(
+        quests: [...tQuests, tQuests[1]], // Duplicate of final quest
+        currentIndex: 1,
+        gameType: tGameType,
+        level: tLevel,
+      ),
+      act: (bloc) {
+        bloc.add(const RestoreLife());
+        bloc.add(const SubmitAnswer(true));
+        bloc.add(const NextQuestion());
+      },
+      expect: () => [
+        // 1. Restored: duplicate pruned
+        RoleplayLoaded(
+          quests: tQuests,
+          currentIndex: 1,
+          livesRemaining: 1,
+          gameType: tGameType,
+          level: tLevel,
+          currentNodeId: 'start',
+        ),
+        // 2. Answered correctly
+        tLoadedState.copyWith(
+          currentNodeId: 'start',
+          answerStatus: AnswerStatus.correct,
+        ),
+        // 3. Level complete immediately!
+        isA<RoleplayGameComplete>()
+            .having((s) => s.xpEarned, 'xpEarned', kRoleplayLevelCompleteXp)
+            .having((s) => s.coinsEarned, 'coinsEarned', kRoleplayLevelCompleteCoins),
+      ],
     );
   });
 }

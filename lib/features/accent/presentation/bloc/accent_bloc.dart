@@ -176,9 +176,14 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
       final newWrongCount = s.wrongCount + 1;
       final isFinal = newWrongCount >= 2;
 
-      // Only append the Mastery Loop quest when the player still has lives.
-      // If newLives == 0 the game is heading to GameOver; the extra entry is wasted.
-      final shouldAppend = isFinal && newLives > 0;
+      // Only append the Mastery Loop quest when the player still has lives,
+      // is not already at the last question, and hasn't already queued it.
+      final isNotLastQuestion = s.currentIndex < s.quests.length - 1;
+      final notAlreadyAppended = !s.quests
+          .sublist(s.currentIndex + 1)
+          .any((q) => q.id == s.currentQuest.id);
+      final shouldAppend =
+          isFinal && newLives > 0 && isNotLastQuestion && notAlreadyAppended;
       final updatedQuests = shouldAppend
           ? (List<AccentQuest>.from(s.quests)..add(s.currentQuest))
           : s.quests;
@@ -338,9 +343,22 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
   void _onRestoreLife(RestoreLife event, Emitter<AccentState> emit) {
     if (state is AccentGameOver) {
       final s = state as AccentGameOver;
+
+      // Production Defense: Prune duplicate copies of the revived question
+      // that may have been appended after currentIndex, preventing duplicate replays.
+      final sanitizedQuests = List<AccentQuest>.from(s.quests);
+      if (s.currentIndex < sanitizedQuests.length) {
+        final currentQuestId = sanitizedQuests[s.currentIndex].id;
+        for (int i = sanitizedQuests.length - 1; i > s.currentIndex; i--) {
+          if (sanitizedQuests[i].id == currentQuestId) {
+            sanitizedQuests.removeAt(i);
+          }
+        }
+      }
+
       emit(
         AccentLoaded(
-          quests: s.quests,
+          quests: sanitizedQuests,
           currentIndex: s.currentIndex,
           livesRemaining: 1,
           gameType: s.gameType,

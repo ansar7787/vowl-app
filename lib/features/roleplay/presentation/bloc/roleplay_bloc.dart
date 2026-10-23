@@ -14,6 +14,7 @@ import '../../../../features/auth/domain/usecases/update_user_rewards.dart';
 import '../../../../features/auth/domain/usecases/update_user_coins.dart';
 import '../../../../features/auth/domain/usecases/use_hint.dart';
 import '../../domain/usecases/get_roleplay_quest.dart';
+import '../../domain/entities/roleplay_quest.dart';
 import '../../domain/usecases/preload_roleplay_quests.dart';
 import 'roleplay_event.dart';
 import 'roleplay_state.dart';
@@ -330,9 +331,22 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
   void _onRestoreLife(RestoreLife event, Emitter<RoleplayState> emit) {
     if (state is! RoleplayGameOver) return;
     final s = state as RoleplayGameOver;
+
+    // Production Defense: Prune duplicate copies of the revived question
+    // that may have been appended after currentIndex, preventing duplicate replays.
+    final sanitizedQuests = List<RoleplayQuest>.from(s.quests);
+    if (s.currentIndex < sanitizedQuests.length) {
+      final currentQuestId = sanitizedQuests[s.currentIndex].id;
+      for (int i = sanitizedQuests.length - 1; i > s.currentIndex; i--) {
+        if (sanitizedQuests[i].id == currentQuestId) {
+          sanitizedQuests.removeAt(i);
+        }
+      }
+    }
+
     emit(
       RoleplayLoaded(
-        quests: s.quests,
+        quests: sanitizedQuests,
         currentIndex: s.currentIndex,
         livesRemaining: 1,
         gameType: s.gameType,

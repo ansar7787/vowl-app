@@ -55,7 +55,7 @@ class GameScaffold<S> extends StatelessWidget {
     if (baseState is GameLoadedState) {
       final s = baseState as GameLoadedState;
       if (s.totalQuests == 0) return 0.0;
-      return (s.currentIndex + 1) / s.totalQuests;
+      return ((s.currentIndex + 1) / s.totalQuests).clamp(0.0, 1.0);
     }
     return baseState is GameCompleteState ? 1.0 : 0.0;
   }

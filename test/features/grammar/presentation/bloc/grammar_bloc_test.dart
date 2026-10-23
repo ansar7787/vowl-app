@@ -14,6 +14,7 @@ import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/domain/usecases/preload_grammar_quest.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/constants/grammar_constants.dart';
 
 class MockGetGrammarQuest extends Mock implements GetGrammarQuest {}
 
@@ -171,6 +172,100 @@ void main() {
           wrongCount: 0,
           isFinalFailure: true,
           quests: [...tQuests, tQuests[0]],
+        ),
+      ],
+    );
+
+    blocTest<GrammarBloc, GrammarState>(
+      'should NOT re-queue quest on final question even on second strike',
+      build: () {
+        when(() => mockSoundService.playWrong()).thenAnswer((_) async => {});
+        when(() => mockHapticService.error()).thenAnswer((_) async => {});
+        return bloc;
+      },
+      seed: () => tLoadedState.copyWith(
+        currentIndex: 2,
+        wrongCount: 1,
+        livesRemaining: 2,
+      ),
+      act: (bloc) => bloc.add(const SubmitAnswer(false)),
+      expect: () => [
+        tLoadedState.copyWith(
+          currentIndex: 2,
+          livesRemaining: 1,
+          answerStatus: AnswerStatus.incorrect,
+          wrongCount: 0,
+          isFinalFailure: true,
+          quests: tQuests,
+        ),
+      ],
+    );
+
+    blocTest<GrammarBloc, GrammarState>(
+      'should NOT re-queue quest when lives drop to 0',
+      build: () {
+        when(() => mockSoundService.playWrong()).thenAnswer((_) async => {});
+        when(() => mockHapticService.error()).thenAnswer((_) async => {});
+        return bloc;
+      },
+      seed: () => tLoadedState.copyWith(wrongCount: 1, livesRemaining: 1),
+      act: (bloc) => bloc.add(const SubmitAnswer(false)),
+      expect: () => [
+        tLoadedState.copyWith(
+          livesRemaining: 0,
+          answerStatus: AnswerStatus.incorrect,
+          wrongCount: 0,
+          isFinalFailure: true,
+          quests: tQuests,
+        ),
+      ],
+    );
+  });
+
+  group('RestoreLife and Level Completion Flow', () {
+    blocTest<GrammarBloc, GrammarState>(
+      'should prune duplicate quests on RestoreLife and complete level when last question is answered correctly',
+      build: () {
+        when(() => mockSoundService.playCorrect()).thenAnswer((_) async => {});
+        when(() => mockHapticService.success()).thenAnswer((_) async => {});
+        when(() => mockUpdateUserRewards(any()))
+            .thenAnswer((_) async => const Right(null));
+        when(() => mockUpdateCategoryStats(any()))
+            .thenAnswer((_) async => const Right(null));
+        when(() => mockUpdateUnlockedLevel(any()))
+            .thenAnswer((_) async => const Right(null));
+        when(() => mockAwardBadge(any()))
+            .thenAnswer((_) async => const Right(null));
+        return bloc;
+      },
+      seed: () => GrammarGameOver(
+        quests: [...tQuests, tQuests[2]],
+        currentIndex: 2,
+      ),
+      act: (bloc) {
+        bloc.add(const RestoreLife());
+        bloc.add(const SubmitAnswer(true));
+        bloc.add(const NextQuestion());
+      },
+      expect: () => [
+        GrammarLoaded(
+          quests: tQuests,
+          currentIndex: 2,
+          livesRemaining: 1,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+        ),
+        GrammarLoaded(
+          quests: tQuests,
+          currentIndex: 2,
+          livesRemaining: 1,
+          answerStatus: AnswerStatus.correct,
+          hintUsed: false,
+        ),
+        const GrammarGameComplete(
+          xpEarned: GrammarConstants.xpPerLevel,
+          coinsEarned: GrammarConstants.coinsPerLevel,
+          questCount: GrammarConstants.questsPerLevel,
         ),
       ],
     );

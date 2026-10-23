@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -182,9 +183,19 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
       final isFinal =
           newWrong >= VocabularyRewardConstants.wrongCountBeforeMasteryLoop;
 
+      // Production Guard: Only re-queue if player has lives remaining,
+      // is not already at the last question, and hasn't already queued it.
+      final isNotLastQuestion = s.currentIndex < s.quests.length - 1;
+      final notAlreadyAppended = !s.quests
+          .sublist(s.currentIndex + 1)
+          .any((q) => q.id == s.currentQuest.id);
+      final shouldAppend =
+          isFinal && newLives > 0 && isNotLastQuestion && notAlreadyAppended;
+
       // Mastery loop: append failed quest so the player must answer it
       // correctly before the level ends.
-      final updatedQuests = isFinal ? [...s.quests, s.currentQuest] : s.quests;
+      final updatedQuests =
+          shouldAppend ? [...s.quests, s.currentQuest] : s.quests;
 
       await soundService.playWrong();
       await hapticService.error();
@@ -346,9 +357,22 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
   void _onRestoreLife(RestoreLife _, Emitter<VocabularyState> emit) {
     if (state is! VocabularyGameOver) return;
     final s = state as VocabularyGameOver;
+
+    // Production Defense: Prune duplicate copies of the revived question
+    // that may have been appended after currentIndex, preventing duplicate replays.
+    final sanitizedQuests = List<VocabularyQuest>.from(s.quests);
+    if (s.currentIndex < sanitizedQuests.length) {
+      final currentQuestId = sanitizedQuests[s.currentIndex].id;
+      for (int i = sanitizedQuests.length - 1; i > s.currentIndex; i--) {
+        if (sanitizedQuests[i].id == currentQuestId) {
+          sanitizedQuests.removeAt(i);
+        }
+      }
+    }
+
     emit(
       VocabularyLoaded(
-        quests: s.quests,
+        quests: sanitizedQuests,
         currentIndex: s.currentIndex,
         livesRemaining: VocabularyRewardConstants.reviveLives,
       ),
