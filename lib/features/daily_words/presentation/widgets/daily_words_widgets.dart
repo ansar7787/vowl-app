@@ -10,6 +10,8 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
+/// Interactive front side of a daily flashcard displaying word text, phonetics,
+/// audio pronunciation controls, and translation actions.
 class WordCardFront extends StatelessWidget {
   final DailyWord word;
   final bool isDark;
@@ -212,6 +214,8 @@ class WordCardFront extends StatelessWidget {
   }
 }
 
+/// Reverse side of the daily flashcard showing definitions, contextual examples,
+/// and mastery quiz prompts.
 class WordCardBack extends StatelessWidget {
   final DailyWord word;
   final bool isDark;
@@ -573,6 +577,7 @@ class _PulsingIconState extends State<PulsingIcon>
   }
 }
 
+/// Action icon button with haptic feedback and optional tooltip.
 class DailyWordsIconButton extends StatelessWidget {
   final IconData icon;
   final VoidCallback onTap;
@@ -695,6 +700,7 @@ class ActionButton extends StatelessWidget {
   }
 }
 
+/// Centered error placeholder view shown when daily words fails to load.
 class DailyWordsErrorView extends StatelessWidget {
   final String message;
 
@@ -735,6 +741,7 @@ class DailyWordsErrorView extends StatelessWidget {
   }
 }
 
+/// Completion celebration summary screen displayed when all 10 daily words are finished.
 class SessionCompleteView extends StatelessWidget {
   final int streak;
   final int totalLearned;

@@ -29,6 +29,8 @@ import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Daily vocabulary flashcard screen that guides learners through curated daily words,
+/// audio pronunciation, native translations, and spaced-repetition mastery tracking.
 class DailyWordsScreen extends StatefulWidget {
   const DailyWordsScreen({super.key});
 
