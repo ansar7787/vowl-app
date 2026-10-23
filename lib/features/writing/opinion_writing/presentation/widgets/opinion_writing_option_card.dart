@@ -2,13 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Card widget presenting an available argument or premise candidate for opinion writing.
 class OpinionWritingIdeaCard extends StatelessWidget {
+  /// The text content of the candidate argument or premise.
   final String text;
+
+  /// The primary theme accent color for borders and icons.
   final Color primaryColor;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Whether the card is currently being dragged.
   final bool isDragging;
+
+  /// Optional callback invoked when the card is tapped.
   final VoidCallback? onTap;
 
+  /// Creates an [OpinionWritingIdeaCard] widget.
   const OpinionWritingIdeaCard({
     super.key,
     required this.text,
@@ -86,14 +97,27 @@ class OpinionWritingIdeaCard extends StatelessWidget {
   }
 }
 
+/// Card widget displaying an argument selected and drafted into the user's opinion structure.
 class OpinionWritingDraftedCard extends StatelessWidget {
+  /// The text content of the drafted argument.
   final String text;
+
+  /// The primary theme accent color for card background and borders.
   final Color primaryColor;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Whether the response has been evaluated.
   final bool isAnswered;
+
+  /// Whether this specific drafted card is an accurate argument.
   final bool isCorrectOption;
+
+  /// Optional callback invoked to remove the argument from drafted collection.
   final VoidCallback? onRemove;
 
+  /// Creates an [OpinionWritingDraftedCard] widget.
   const OpinionWritingDraftedCard({
     super.key,
     required this.text,

@@ -2,13 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Word vault grid displaying available grammatical replacements for sentence correction.
 class CorrectionWritingVault extends StatelessWidget {
+  /// Available correction choice strings.
   final List<String> options;
+
+  /// Currently selected correction option, if any.
   final String? selectedCorrection;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Callback when a correction chip is tapped.
   final Function(String) onSelectCorrection;
 
+  /// Creates a [CorrectionWritingVault] options layout.
   const CorrectionWritingVault({
     super.key,
     required this.options,

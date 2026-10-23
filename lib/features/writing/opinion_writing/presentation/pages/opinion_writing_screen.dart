@@ -15,9 +15,15 @@ import 'package:vowl/features/writing/presentation/layout/writing_base_layout.da
 import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_option_card.dart';
 
+/// Interactive writing game screen prompting users to formulate reasoned opinions by selecting arguments.
 class OpinionWritingScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the writing quest.
   final int level;
+
+  /// The specific writing game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates an [OpinionWritingScreen] instance.
   const OpinionWritingScreen({
     super.key,
     required this.level,

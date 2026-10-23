@@ -19,9 +19,15 @@ import 'package:vowl/features/writing/essay_drafting/presentation/widgets/essay_
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 
+/// Interactive writing game screen guiding users through structural drafting of argumentative essays.
 class EssayDraftingScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the writing quest.
   final int level;
+
+  /// The specific writing game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates an [EssayDraftingScreen] instance.
   const EssayDraftingScreen({
     super.key,
     required this.level,

@@ -23,15 +23,33 @@ import 'writing_state.dart';
 // Pure event-handler logic. No UI dependencies. No mutable instance fields.
 // ---------------------------------------------------------------------------
 
+/// Business logic component managing writing quests, user inputs, lives, and rewards.
 class WritingBloc extends Bloc<WritingEvent, WritingState> {
+  /// Use case for loading writing quests.
   final GetWritingQuest getQuest;
+
+  /// Use case for updating the user's coin balance.
   final UpdateUserCoins updateUserCoins;
+
+  /// Use case for persisting XP, coins, and level progress.
   final UpdateUserRewards updateUserRewards;
+
+  /// Use case for updating learning domain statistics.
   final UpdateCategoryStats updateCategoryStats;
+
+  /// Use case for unlocking higher progression levels.
   final UpdateUnlockedLevel updateUnlockedLevel;
+
+  /// Use case for evaluating and unlocking achievement badges.
   final AwardBadge awardBadge;
+
+  /// Sound and audio playback service.
   final SoundService soundService;
+
+  /// Haptic feedback service.
   final HapticService hapticService;
+
+  /// Shop hint consumption use case.
   final UseHint useHint;
 
   // ---------------------------------------------------------------------------
@@ -48,6 +66,7 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
   static const int _wrongAnswerThreshold = 2;
   static const int _initialLives = 3;
 
+  /// Creates a [WritingBloc] with all required domain dependencies.
   WritingBloc({
     required this.soundService,
     required this.hapticService,

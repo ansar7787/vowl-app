@@ -3,11 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
+/// Card widget presenting the scenario prompt text for situation description.
 class DescribeSituationPromptCard extends StatelessWidget {
+  /// The situation description or prompt text.
   final String prompt;
+
+  /// Theme accent color applied to labels and borders.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [DescribeSituationPromptCard] widget.
   const DescribeSituationPromptCard({
     super.key,
     required this.prompt,

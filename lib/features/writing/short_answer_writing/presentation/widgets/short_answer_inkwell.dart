@@ -6,15 +6,30 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 
+/// Interactive text entry container featuring an ink gauge level and word counter metrics.
 class ShortAnswerInkwell extends StatelessWidget {
+  /// Text editing controller managing typed short answer text.
   final TextEditingController controller;
+
+  /// Focus node controlling input focus for the writing area.
   final FocusNode focusNode;
+
+  /// Whether the quest has been submitted or evaluated.
   final bool isAnswered;
+
+  /// Current number of completed words in the input text.
   final int wordCount;
+
+  /// Normalized ink gauge fill level representing answer completeness.
   final double inkLevel;
+
+  /// Theme accent color applied to indicators and borders.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [ShortAnswerInkwell] widget.
   const ShortAnswerInkwell({
     super.key,
     required this.controller,

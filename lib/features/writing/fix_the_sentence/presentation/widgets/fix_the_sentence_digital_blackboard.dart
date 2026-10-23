@@ -12,18 +12,39 @@ class _LocalPalette {
   static const Color colordc2626 = Color(0xFFDC2626);
 }
 
+/// Digital blackboard displaying the flawed sentence with interactive erase and fix overlays.
 class FixTheSentenceDigitalBlackboard extends StatelessWidget {
+  /// Full text of the sentence containing the error.
   final String fullText;
+
+  /// The target erroneous word to be erased and replaced.
   final String targetWord;
+
+  /// The replacement option chosen by the user, if any.
   final String? selectedReplacement;
+
+  /// Whether the erroneous word has been wiped or scrubbed away.
   final bool isWiped;
+
+  /// Listenable triggering repaints during eraser drag gestures.
   final Listenable eraseListenable;
+
+  /// Getter providing the list of recorded erase touch offsets.
   final List<Offset> Function() getErasePoints;
+
+  /// Callback invoked when a touch position is registered during an erase gesture.
   final Function(Offset) onErase;
+
+  /// Callback invoked when the target word region is tapped.
   final VoidCallback onTap;
+
+  /// Theme accent color applied to board borders and accents.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [FixTheSentenceDigitalBlackboard] widget.
   const FixTheSentenceDigitalBlackboard({
     super.key,
     required this.fullText,

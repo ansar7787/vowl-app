@@ -2,12 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
+/// Banner presenting the prompt essay topic and optional thesis statement.
 class EssayDraftingTopicBanner extends StatelessWidget {
+  /// The primary topic title or question for the essay.
   final String topic;
+
+  /// Optional thesis statement clarifying the argumentative stance.
   final String? thesisStatement;
+
+  /// Theme accent color applied to labels and borders.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates an [EssayDraftingTopicBanner] widget.
   const EssayDraftingTopicBanner({
     super.key,
     required this.topic,

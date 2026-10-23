@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Instruction header displaying gameplay rules and target sentence structures.
 class SentenceBuilderInstruction extends StatelessWidget {
+  /// The primary theme accent color for badges and text.
   final Color primaryColor;
+
+  /// Fallback instruction prompt describing the sentence task.
   final String? instruction;
+
+  /// Optional linguistic type or mood of the target sentence.
   final String? sentenceType;
 
+  /// Creates a [SentenceBuilderInstruction] widget.
   const SentenceBuilderInstruction({
     super.key,
     required this.primaryColor,

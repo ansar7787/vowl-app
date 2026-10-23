@@ -22,9 +22,15 @@ import 'package:vowl/features/writing/summarize_story_writing/presentation/widge
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_manuscript.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_writing_instruction.dart';
 
+/// Interactive writing game screen prompting users to chronologically summarize short stories.
 class SummarizeStoryWritingScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the writing quest.
   final int level;
+
+  /// The specific writing game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [SummarizeStoryWritingScreen] instance.
   const SummarizeStoryWritingScreen({
     super.key,
     required this.level,

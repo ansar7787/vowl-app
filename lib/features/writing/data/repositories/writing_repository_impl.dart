@@ -4,9 +4,15 @@ import 'package:dartz/dartz.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 import '../../domain/repositories/writing_repository.dart';
 
+/// Concrete implementation of [WritingRepository] coordinating remote and local data sources.
 class WritingRepositoryImpl implements WritingRepository {
+  /// Remote data source instance.
   final dynamic remoteDataSource;
+
+  /// Network connectivity service.
   final dynamic networkInfo;
+
+  /// Creates a [WritingRepositoryImpl] instance.
   WritingRepositoryImpl({this.remoteDataSource, this.networkInfo});
 
   @override

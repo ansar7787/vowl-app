@@ -19,9 +19,18 @@ import 'package:vowl/features/writing/correction_writing/presentation/widgets/co
 import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_vault.dart';
 import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_keyboard_input.dart';
 
+/// Screen for the Correction Writing game quest.
+///
+/// Prompts the user to spot an error in a displayed sentence passage and fix it,
+/// choosing among replacement options or re-typing the corrected sentence in hard mode.
 class CorrectionWritingScreen extends StatefulWidget {
+  /// Progression level index.
   final int level;
+
+  /// Specific game subtype variant.
   final GameSubtype gameType;
+
+  /// Creates a [CorrectionWritingScreen] instance.
   const CorrectionWritingScreen({
     super.key,
     required this.level,

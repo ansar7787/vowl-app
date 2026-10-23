@@ -23,9 +23,15 @@ import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/
 import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_booster_tokens.dart';
 import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_inkwell.dart';
 
+/// Interactive writing game screen prompting users to craft concise, natural responses to open prompts.
 class ShortAnswerScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the writing quest.
   final int level;
+
+  /// The specific writing game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [ShortAnswerScreen] instance.
   const ShortAnswerScreen({
     super.key,
     required this.level,

@@ -2,12 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Instruction banner dynamically adapting directions depending on whether the error has been erased.
 class FixTheSentenceInstruction extends StatelessWidget {
+  /// Whether the flawed section has already been wiped clean.
   final bool isWiped;
+
+  /// The primary theme accent color for badges and text.
   final Color primaryColor;
+
+  /// Fallback instruction text for sentence correction.
   final String instruction;
+
+  /// Optional classification of the grammatical error.
   final String? errorType;
 
+  /// Creates a [FixTheSentenceInstruction] widget.
   const FixTheSentenceInstruction({
     super.key,
     required this.isWiped,

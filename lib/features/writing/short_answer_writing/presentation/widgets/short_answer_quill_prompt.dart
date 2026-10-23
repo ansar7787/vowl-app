@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Card widget displaying the question or topic prompt for the short answer.
 class ShortAnswerQuillPrompt extends StatelessWidget {
+  /// The prompt or question text requiring a short answer.
   final String prompt;
+
+  /// Theme accent color applied to icons and borders.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [ShortAnswerQuillPrompt] widget.
   const ShortAnswerQuillPrompt({
     super.key,
     required this.prompt,

@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Instruction banner presenting prompt guidelines for short answer writing.
 class ShortAnswerInstruction extends StatelessWidget {
+  /// The primary theme accent color for borders and text highlights.
   final Color primaryColor;
+
+  /// Optional fallback instruction text describing the exercise.
   final String? instruction;
 
+  /// Creates a [ShortAnswerInstruction] widget.
   const ShortAnswerInstruction({
     super.key,
     required this.primaryColor,

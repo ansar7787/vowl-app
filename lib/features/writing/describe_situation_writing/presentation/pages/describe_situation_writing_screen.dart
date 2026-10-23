@@ -22,9 +22,15 @@ import 'package:vowl/features/writing/describe_situation_writing/presentation/wi
 import 'package:vowl/features/writing/describe_situation_writing/presentation/widgets/describe_situation_constellation_map.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Interactive writing game screen prompting users to describe scenarios using suggested keywords and emojis.
 class DescribeSituationScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the writing quest.
   final int level;
+
+  /// The specific writing game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [DescribeSituationScreen] instance.
   const DescribeSituationScreen({
     super.key,
     required this.level,

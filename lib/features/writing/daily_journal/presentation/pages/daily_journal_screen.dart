@@ -22,9 +22,15 @@ import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_j
 import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_journal_scratch_area.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Interactive writing game screen prompting users to craft daily reflective journal entries.
 class DailyJournalScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the writing quest.
   final int level;
+
+  /// The specific writing game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [DailyJournalScreen] instance.
   const DailyJournalScreen({
     super.key,
     required this.level,

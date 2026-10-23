@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Stream list containing draggable candidates for email section slots.
 class WritingEmailDataStream extends StatelessWidget {
+  /// Complete list of email candidate segments.
   final List<String> items;
+
+  /// Mapping of current slot positions to assigned sentence fragments.
   final Map<String, String?> slots;
+
+  /// Theme accent color applied to chips and drag shadows.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Callback invoked when an item is tapped for fast placement.
   final Function(String) onTapItem;
 
+  /// Creates a [WritingEmailDataStream] widget.
   const WritingEmailDataStream({
     super.key,
     required this.items,

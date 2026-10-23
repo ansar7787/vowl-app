@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Instruction badge displayed at the top of the Complete Sentence screen.
 class CompleteSentenceInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Custom instruction text override.
   final String? text;
+
+  /// Optional grammar rule focus label.
   final String? grammarFocus;
 
+  /// Creates a [CompleteSentenceInstruction] badge.
   const CompleteSentenceInstruction({
     super.key,
     required this.primaryColor,

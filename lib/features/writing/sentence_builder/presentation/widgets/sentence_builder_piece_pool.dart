@@ -2,16 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_jigsaw_piece.dart';
 
+/// Interactive pool holding available draggable word jigsaw pieces.
 class SentenceBuilderPiecePool extends StatelessWidget {
+  /// Complete list of available word tokens.
   final List<String> pool;
+
+  /// Words currently slotted onto the workbench.
   final List<String> assembledPieces;
+
+  /// Theme accent color applied to piece highlights.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
-  /// Called when a piece is tapped or dropped into the workbench.
-  /// FIX: new required parameter — wire to screen's _onSnap for tap-to-add.
+  /// Callback invoked when a piece is tapped or snapped into the workbench.
   final ValueChanged<String> onSnap;
 
+  /// Creates a [SentenceBuilderPiecePool] widget.
   const SentenceBuilderPiecePool({
     super.key,
     required this.pool,

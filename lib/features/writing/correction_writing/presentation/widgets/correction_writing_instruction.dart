@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Instruction badge displayed at the top of the Correction Writing challenge.
 class CorrectionWritingInstruction extends StatelessWidget {
+  /// Raw instruction prompt text.
   final String instruction;
+
+  /// Theme accent color.
   final Color primaryColor;
 
+  /// Creates a [CorrectionWritingInstruction] badge.
   const CorrectionWritingInstruction({
     super.key,
     required this.instruction,

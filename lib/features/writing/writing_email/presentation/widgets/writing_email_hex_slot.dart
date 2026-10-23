@@ -6,14 +6,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Drop target receiving email sections into designated positions such as Subject or Greeting.
 class WritingEmailHexSlot extends StatelessWidget {
+  /// Key identifying the section role (e.g. SUBJECT, GREETING, BODY, SIGN-OFF).
   final String slotKey;
+
+  /// The currently assigned text for this email slot, or null if empty.
   final String? slotValue;
+
+  /// Theme accent color applied to highlight borders.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Callback invoked when a fragment is dropped or assigned to this slot.
   final Function(String, String) onSlot;
+
+  /// Callback invoked when an assigned slot is tapped to remove its fragment.
   final Function(String) onClearSlot;
 
+  /// Creates a [WritingEmailHexSlot] widget.
   const WritingEmailHexSlot({
     super.key,
     required this.slotKey,

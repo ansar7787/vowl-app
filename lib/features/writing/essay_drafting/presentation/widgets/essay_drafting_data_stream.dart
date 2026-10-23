@@ -1,14 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Draggable item tray presenting candidate draft sentences for structural essay placement.
 class EssayDraftingDataStream extends StatelessWidget {
+  /// The candidate essay sentence segments available for placement.
   final List<String> items;
+
+  /// Current blueprint slot assignments mapping slot keys to sentence strings.
   final Map<String, String?> slots;
+
+  /// Theme accent color applied to cards and highlight borders.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Optional callback fired during card drag movements.
   final void Function(DragUpdateDetails)? onDragUpdate;
+
+  /// Optional callback fired when an item card is tapped.
   final void Function(String item)? onItemTap;
 
+  /// Creates an [EssayDraftingDataStream] widget.
   const EssayDraftingDataStream({
     super.key,
     required this.items,

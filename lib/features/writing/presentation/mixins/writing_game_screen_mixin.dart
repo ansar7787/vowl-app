@@ -6,18 +6,22 @@ import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 
+/// Mixin providing common writing gameplay lifecycle methods and BLoC integration.
 mixin WritingGameScreenMixin<T extends StatefulWidget>
     on State<T>, GameScreenMixin<T> {
+  /// Initializes the writing game by dispatching [FetchWritingQuests].
   void initWritingGame() {
     context.read<WritingBloc>().add(
       FetchWritingQuests(gameType: gameType, level: level),
     );
   }
 
+  /// Cleans up game listeners and controllers.
   void disposeWritingGame() {
     disposeGame();
   }
 
+  /// Evaluates whether state transitions in [WritingBloc] warrant a UI notification.
   bool writingListenWhen(WritingState prev, WritingState curr) {
     if (curr is WritingGameComplete && prev is! WritingGameComplete) {
       return true;

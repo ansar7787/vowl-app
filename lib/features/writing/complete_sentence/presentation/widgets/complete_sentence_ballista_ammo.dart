@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Row of draggable word chips acting as ammo to fire into target sentence blanks.
 class CompleteSentenceBallistaAmmo extends StatelessWidget {
+  /// Available word option strings.
   final List<String> options;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Callback receiving the word chosen or dragged into the target.
   final ValueChanged<String> onFire;
 
+  /// Creates a [CompleteSentenceBallistaAmmo] selector.
   const CompleteSentenceBallistaAmmo({
     super.key,
     required this.options,

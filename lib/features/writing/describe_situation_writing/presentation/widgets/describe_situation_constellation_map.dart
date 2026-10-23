@@ -2,15 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Visual interactive map displaying emoji nodes and expandable keyword constellation chips.
 class DescribeSituationConstellationMap extends StatelessWidget {
+  /// The list of emoji visual anchors for the scenario.
   final List<String> emojis;
+
+  /// The mapped keywords associated with each emoji key.
   final Map<String, List<String>> keywords;
+
+  /// Theme accent color applied to node highlights and borders.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// The index of the currently expanded emoji node, or null if none is selected.
   final int? expandedEmojiIndex;
+
+  /// Callback invoked when an emoji node is tapped.
   final Function(int) onEmojiTap;
+
+  /// Callback invoked when a keyword chip is tapped for insertion into the text field.
   final Function(String) onInjectKeyword;
 
+  /// Creates a [DescribeSituationConstellationMap] widget.
   const DescribeSituationConstellationMap({
     super.key,
     required this.emojis,

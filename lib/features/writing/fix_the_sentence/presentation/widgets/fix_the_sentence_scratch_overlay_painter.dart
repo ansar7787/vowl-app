@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+/// Custom painter rendering eraser stroke paths and kinetic particle effects over blackboard errors.
 class FixTheSentenceScratchOverlayPainter extends CustomPainter {
+  /// Sequence of touch offsets tracing the eraser stroke path.
   final List<Offset> points;
 
+  /// Creates a [FixTheSentenceScratchOverlayPainter] instance.
   FixTheSentenceScratchOverlayPainter({required this.points});
 
   @override

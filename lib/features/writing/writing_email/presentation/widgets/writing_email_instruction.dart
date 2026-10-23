@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Instruction header displaying gameplay rules and formality context for email writing.
 class WritingEmailInstruction extends StatelessWidget {
+  /// The primary theme accent color for borders and highlights.
   final Color primaryColor;
+
+  /// Optional fallback instruction text describing the email assembly task.
   final String? instruction;
+
+  /// Optional formality descriptor for email context.
   final String? formalityLevel;
 
+  /// Creates a [WritingEmailInstruction] widget.
   const WritingEmailInstruction({
     super.key,
     required this.primaryColor,

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner presenting the drafting task requirements.
 class EssayDraftingInstruction extends StatelessWidget {
+  /// The primary theme accent color for borders and text highlights.
   final Color primaryColor;
+
+  /// Instruction text guiding the essay drafting activity.
   final String instruction;
 
+  /// Creates an [EssayDraftingInstruction] widget.
   const EssayDraftingInstruction({
     super.key,
     required this.primaryColor,
