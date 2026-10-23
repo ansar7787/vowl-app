@@ -24,9 +24,10 @@ class _LocalPalette {
   static const Color color60a5fa = Color(0xFF60A5FA);
 }
 
-/// HatchingPage: introductory onboarding companion hatching animation.
-/// Guides the user through hatching their Vowl companion using a stylised egg.
+/// Introductory onboarding screen that guides the user through hatching
+/// their Vowl companion using a stylized animated egg.
 class HatchingPage extends StatefulWidget {
+  /// The display name of the user being onboarded.
   final String userName;
   const HatchingPage({super.key, required this.userName});
 

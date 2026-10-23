@@ -7,6 +7,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
+/// Initial routing gatekeeper that holds the native splash screen until
+/// authentication state resolves, routing seamlessly to either the home dashboard
+/// or login screen without visual flashing.
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
 
