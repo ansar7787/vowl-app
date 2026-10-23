@@ -10,6 +10,8 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/app_lifecycle_handler.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
+/// Shared stateful screen mixin coordinating game lifecycle, answer evaluation,
+/// optimistic level unlocking, timer management, and victory confetti.
 mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
   GameSubtype get gameType;
   int get level;

@@ -16,7 +16,10 @@ import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Modal dialog presenting a milestone toll-gate requirement to unlock subsequent levels.
 class TollGateBottomSheet {
+  const TollGateBottomSheet._();
+
   static void show({
     required BuildContext context,
     required int level,

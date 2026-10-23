@@ -6,6 +6,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// Standardized in-game error display view presenting a retry action button.
 class GameErrorView extends StatelessWidget {
   final String message;
   final VoidCallback onRetry;

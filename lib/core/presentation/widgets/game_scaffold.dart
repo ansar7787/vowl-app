@@ -12,6 +12,8 @@ import 'package:vowl/core/presentation/widgets/game_briefing_layer.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 
+/// Comprehensive game scaffold orchestrating animated backdrops, progress headers,
+/// activity content, briefing overlays, and feedback cards.
 class GameScaffold<S> extends StatelessWidget {
   final S state;
   final GameStateBase baseState;

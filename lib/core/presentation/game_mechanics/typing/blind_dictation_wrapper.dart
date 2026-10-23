@@ -17,6 +17,7 @@ class _LocalPalette {
   static const Color color0c0c1a = Color(0xFF0C0C1A);
 }
 
+/// Audio dictation mechanic where text is hidden and the user types what they hear.
 class BlindDictationWrapper extends StatefulWidget {
   final String expectedText;
   final Color primaryColor;

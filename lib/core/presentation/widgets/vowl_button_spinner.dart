@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Pulsating triple-dot spinner indicator used inside interactive buttons during async actions.
 class VowlButtonSpinner extends StatelessWidget {
   final Color color;
   final double size;

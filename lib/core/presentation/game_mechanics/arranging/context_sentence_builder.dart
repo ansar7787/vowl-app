@@ -12,6 +12,8 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 
+/// Interactive sentence builder prompting users to compose an original sentence
+/// utilizing a specified target keyword.
 class ContextSentenceBuilder extends StatefulWidget {
   final String targetKeyword;
   final Color primaryColor;

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Animated pagination indicator displaying active and inactive dots with color transitions.
 class AnimatedPageIndicator extends StatelessWidget {
   final int itemCount;
   final int currentIndex;

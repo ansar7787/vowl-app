@@ -14,6 +14,8 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/game_mechanics/speaking/stt_auto_pass_wrapper.dart';
 import 'package:vowl/core/utils/analytics_service.dart';
 
+/// Self-evaluation control panel allowing users to record, listen, compare,
+/// and score their spoken response.
 class SpeakingSelfEvaluationControls extends StatefulWidget {
   final String expectedText;
   final String? ttsText;

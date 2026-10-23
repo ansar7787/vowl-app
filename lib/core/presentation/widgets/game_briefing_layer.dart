@@ -3,6 +3,7 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/quest_briefing_overlay.dart';
 import 'package:vowl/core/utils/game_instruction_service.dart';
 
+/// Mission briefing overlay layer that resolves localized activity instructions.
 class GameBriefingLayer extends StatelessWidget {
   final GameSubtype gameType;
   final int level;

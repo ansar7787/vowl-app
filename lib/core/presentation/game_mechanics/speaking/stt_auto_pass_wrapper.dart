@@ -12,6 +12,8 @@ import 'package:vowl/core/utils/text_similarity_helper.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:speech_to_text/speech_to_text.dart' show ListenMode;
 
+/// Speech-to-text auto-pass wrapper that continuously listens and automatically
+/// advances when the user speaks the expected utterance accurately.
 class SttAutoPassWrapper extends StatefulWidget {
   final Widget child;
   final String expectedText;

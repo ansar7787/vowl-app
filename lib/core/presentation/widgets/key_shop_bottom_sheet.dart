@@ -22,7 +22,10 @@ import 'package:vowl/core/utils/reward_limit_service.dart';
 
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 
+/// Modal bottom sheet allowing users to purchase or earn Golden Keys to unlock levels.
 class KeyShopBottomSheet {
+  const KeyShopBottomSheet._();
+
   static void show({
     required BuildContext context,
     required bool isKidsMode,

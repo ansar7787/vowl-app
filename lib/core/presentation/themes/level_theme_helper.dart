@@ -38,6 +38,7 @@ enum GameCategory {
   eliteMastery,
 }
 
+/// Resolved theme styling parameters for a game category or subtype.
 class ThemeResult {
   final Color primaryColor;
   final Color accentColor;
@@ -56,7 +57,10 @@ class ThemeResult {
   });
 }
 
+/// Helper resolving visual themes, palette colors, icons, and titles for curriculum activities.
 class LevelThemeHelper {
+  const LevelThemeHelper._();
+
   /// Known category names mapped for fast set operations
   static const _categoryNames = {
     'vocabulary',
