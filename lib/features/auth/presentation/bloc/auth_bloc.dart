@@ -108,8 +108,22 @@ class AuthStreamErrorOccurred extends AuthEvent {
 // STATE
 // ============================================================================
 
-enum AuthStatus { authenticated, unauthenticated, unknown, loggingOut }
+/// Authentication status reflecting user session state.
+enum AuthStatus {
+  /// User is signed in with a valid session.
+  authenticated,
 
+  /// User is not signed in or session has expired.
+  unauthenticated,
+
+  /// Initial undetermined authentication state.
+  unknown,
+
+  /// User logout in progress.
+  loggingOut,
+}
+
+/// State encapsulating active user authentication status and profile entity.
 class AuthState extends Equatable {
   final AuthStatus status;
   final UserEntity? user;

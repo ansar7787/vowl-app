@@ -604,11 +604,18 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
   }
 }
 
+/// Renders pedagogical explanations, idiom origins, and metaphorical insights.
 class IdiomMatchInsightsPanel extends StatelessWidget {
+  /// The active quest data furnishing the pedagogical feedback.
   final EliteMasteryQuest quest;
+
+  /// Whether dark mode styling is active.
   final bool isDark;
+
+  /// The primary thematic accent color.
   final Color primaryColor;
 
+  /// Creates an [IdiomMatchInsightsPanel] widget.
   const IdiomMatchInsightsPanel({
     super.key,
     required this.quest,

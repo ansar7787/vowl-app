@@ -359,11 +359,18 @@ class CompassPhotonNeedle extends StatelessWidget {
   }
 }
 
+/// Renders the central decorative brass pivot hub of the navigation compass.
 class CompassCentralHub extends StatelessWidget {
+  /// The base diameter of the central hub.
   final double size;
+
+  /// The primary thematic accent color.
   final Color primaryColor;
+
+  /// Whether the hub renders in a reduced compact form factor.
   final bool isCompact;
 
+  /// Creates a [CompassCentralHub] widget.
   const CompassCentralHub({
     super.key,
     required this.size,

@@ -32,6 +32,7 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 //    GameDialogHelper.showGameOver(context, onRestore: () => bloc.add(...));
 // ═══════════════════════════════════════════════════════════════════════════
 
+/// Utility providing standard dialogs for level completion, game over, and stage transitions.
 class GameDialogHelper {
   GameDialogHelper._();
 

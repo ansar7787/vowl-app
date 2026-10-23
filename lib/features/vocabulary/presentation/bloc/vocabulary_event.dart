@@ -22,6 +22,7 @@ class VocabularyRewardConstants {
 
 // ─── Base event ───────────────────────────────────────────────────────────────
 
+/// Base event class for the [VocabularyBloc].
 abstract class VocabularyEvent extends Equatable {
   const VocabularyEvent();
 

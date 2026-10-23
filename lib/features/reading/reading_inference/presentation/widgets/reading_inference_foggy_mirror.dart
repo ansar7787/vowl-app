@@ -215,11 +215,18 @@ class ReadingInferenceFoggyMirror extends StatelessWidget {
   }
 }
 
+/// Paints atmospheric condensation and translucent fog wiped by touch points.
 class FogPainter extends CustomPainter {
+  /// The trail of touch points cleared by the player.
   final List<Offset> points;
+
+  /// The level of clarity or fog dissipation.
   final double clarity;
+
+  /// The base tint color of the ambient condensation layer.
   final Color color;
 
+  /// Creates a [FogPainter] instance.
   FogPainter({
     required this.points,
     required this.clarity,

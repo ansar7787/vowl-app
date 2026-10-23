@@ -195,13 +195,24 @@ class MascotSelectionScreen extends StatelessWidget {
   }
 }
 
+/// Renders an interactive card allowing children to preview and select a companion mascot.
 class KidsMascotCard extends StatefulWidget {
+  /// The unique identifier of the mascot.
   final String id;
+
+  /// The display name of the mascot.
   final String name;
+
+  /// The characteristic personality trait or description.
   final String trait;
+
+  /// The primary theme color of the mascot.
   final Color color;
+
+  /// The index position in the mascot carousel.
   final int index;
 
+  /// Creates a [KidsMascotCard] widget.
   const KidsMascotCard({
     super.key,
     required this.id,

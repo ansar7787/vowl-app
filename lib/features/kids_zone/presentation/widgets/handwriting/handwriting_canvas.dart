@@ -77,6 +77,7 @@ class HandwritingCanvas extends StatefulWidget {
   State<HandwritingCanvas> createState() => HandwritingCanvasState();
 }
 
+/// State managing touch stroke sampling, chalk dust animations, and stroke validation for [HandwritingCanvas].
 class HandwritingCanvasState extends State<HandwritingCanvas>
     with TickerProviderStateMixin {
   final StrokeNotifier _notifier = StrokeNotifier();

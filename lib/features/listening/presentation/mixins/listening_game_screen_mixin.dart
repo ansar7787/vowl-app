@@ -73,9 +73,11 @@ mixin ListeningGameScreenMixin<T extends StatefulWidget>
 
   // ── Convenience accessors ──────────────────────────────────────────────
 
+  /// Dispatches a request to proceed to the next listening quest.
   void dispatchNextQuestion() =>
       context.read<ListeningBloc>().add(const NextQuestion());
 
+  /// Dispatches a hint consumption event to [ListeningBloc].
   void dispatchHintUsed() =>
       context.read<ListeningBloc>().add(const ListeningHintUsed());
 }

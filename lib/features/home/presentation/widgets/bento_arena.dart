@@ -448,12 +448,21 @@ class _BentoCategoryTile extends StatelessWidget {
   }
 }
 
+/// Paints the curved learning journey path linking sequential bento quest arena nodes.
 class JourneyPathPainter extends CustomPainter {
+  /// Whether dark theme styling is active.
   final bool isDark;
+
+  /// Whether the interface direction is right-to-left.
   final bool isRtl;
+
+  /// The total count of curriculum step nodes along the path.
   final int stepsCount;
+
+  /// The sequence of quest types positioned along the journey.
   final List<QuestType> types;
 
+  /// Creates a [JourneyPathPainter] instance.
   JourneyPathPainter({
     required this.isDark,
     required this.isRtl,

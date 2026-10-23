@@ -661,13 +661,23 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
 
 enum _BuilderStatus { idle, error, success }
 
+/// Represents the result of validating a sentence input attempt.
 class ValidationResult {
+  /// Whether the sentence meets all pedagogical and grammatical requirements.
   final bool isValid;
+
+  /// An optional localized error message explaining validation failure.
   final String? errorMessage;
+
+  /// Creates a [ValidationResult] with the given [isValid] flag and optional [errorMessage].
   const ValidationResult(this.isValid, [this.errorMessage]);
 }
 
+/// Provides heuristic and rule-based validation logic for sentence builder input.
 class ContextSentenceValidator {
+  ContextSentenceValidator._();
+
+  /// Validates [text] against length, keyword presence, and plagiarism constraints.
   static ValidationResult validate({
     required BuildContext context,
     required String text,
@@ -731,7 +741,9 @@ class ContextSentenceValidator {
   }
 }
 
+/// Localized error strings and formatting utilities for sentence construction.
 class ContextSentenceStrings {
+  ContextSentenceStrings._();
   static String errorEmpty(BuildContext context) => context.tr(
     'game.sentence_builder.error_empty',
     fallback: 'Please write a sentence.',

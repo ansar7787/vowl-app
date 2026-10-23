@@ -518,10 +518,15 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
   }
 }
 
+/// Clips a circular reveal aperture focused around a specific focal [center] and [radius].
 class CircleClipper extends CustomClipper<Path> {
+  /// The center point of the circular aperture.
   final Offset center;
+
+  /// The radius of the circular aperture.
   final double radius;
 
+  /// Creates a [CircleClipper] with the given [center] and [radius].
   CircleClipper(this.center, this.radius);
 
   @override

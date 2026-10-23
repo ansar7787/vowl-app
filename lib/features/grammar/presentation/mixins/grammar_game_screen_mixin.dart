@@ -62,20 +62,25 @@ mixin GrammarGameScreenMixin<T extends StatefulWidget>
     }
   }
 
+  /// Handles an incorrect answer submission, playing haptics/audio and notifying [GrammarBloc].
   void submitWrongAnswer({required GameQuest quest, String? userAnswer}) {
     if (isAnsweredNotifier.value) return;
     submitSharedWrongAnswer(quest: quest, userAnswer: userAnswer);
     context.read<GrammarBloc>().add(const SubmitAnswer(false));
   }
 
+  /// Handles a correct answer submission, celebrating and notifying [GrammarBloc].
   void submitCorrectAnswer() {
     if (isAnsweredNotifier.value) return;
     submitSharedCorrectAnswer();
     context.read<GrammarBloc>().add(SubmitAnswer(true));
   }
 
+  /// Dispatches a request to proceed to the next grammar quest.
   void dispatchNextQuestion() =>
       context.read<GrammarBloc>().add(const NextQuestion());
+
+  /// Dispatches a hint consumption event to [GrammarBloc].
   void dispatchHintUsed() =>
       context.read<GrammarBloc>().add(const GrammarHintUsed());
 }

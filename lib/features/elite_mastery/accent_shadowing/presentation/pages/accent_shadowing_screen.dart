@@ -493,11 +493,18 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
   }
 }
 
+/// Renders pedagogical explanations, shadowing focal points, and accent nuances.
 class AccentShadowingInsightsPanel extends StatelessWidget {
+  /// The active quest data furnishing the pedagogical feedback.
   final EliteMasteryQuest quest;
+
+  /// Whether dark mode styling is active.
   final bool isDark;
+
+  /// The primary thematic accent color.
   final Color primaryColor;
 
+  /// Creates an [AccentShadowingInsightsPanel] widget.
   const AccentShadowingInsightsPanel({
     super.key,
     required this.quest,

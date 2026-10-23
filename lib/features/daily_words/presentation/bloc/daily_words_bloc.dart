@@ -11,6 +11,7 @@ import 'package:vowl/core/utils/notification_service.dart';
 // EVENTS
 // ═══════════════════════════════════════════════════════════════════════════════
 
+/// Base event class for the [DailyWordsBloc].
 abstract class DailyWordsEvent extends Equatable {
   const DailyWordsEvent();
   @override
@@ -94,8 +95,25 @@ class DailyWordsResetRequested extends DailyWordsEvent {
 // STATE
 // ═══════════════════════════════════════════════════════════════════════════════
 
-enum DailyWordsStatus { initial, loading, loaded, sessionComplete, error }
+/// Status values representing the lifecycle of daily word flashcard sessions.
+enum DailyWordsStatus {
+  /// Initial idle state before word fetching begins.
+  initial,
 
+  /// In-flight state while loading daily words from cache or local asset bundles.
+  loading,
+
+  /// Active state with daily words loaded and ready for interaction.
+  loaded,
+
+  /// Completion state reached when all words for the current day are reviewed.
+  sessionComplete,
+
+  /// Failure state when words cannot be loaded.
+  error,
+}
+
+/// State encapsulating active daily flashcards, mastery statistics, and review queues.
 class DailyWordsState extends Equatable {
   final DailyWordsStatus status;
   final DailyWordSet? wordSet;

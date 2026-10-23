@@ -59,6 +59,7 @@ class SpeedChallengeTimer extends StatefulWidget {
   State<SpeedChallengeTimer> createState() => SpeedChallengeTimerState();
 }
 
+/// State managing timer countdown animation and expiration callbacks for [SpeedChallengeTimer].
 class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
     with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();

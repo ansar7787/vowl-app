@@ -79,14 +79,18 @@ mixin SpeakingGameScreenMixin<T extends StatefulWidget>
     context.read<SpeakingBloc>().add(const SubmitAnswer(false));
   }
 
+  /// Submits a correct spoken evaluation and notifies [SpeakingBloc].
   void submitCorrectAnswer() {
     if (isAnsweredNotifier.value) return;
     submitSharedCorrectAnswer();
     context.read<SpeakingBloc>().add(SubmitAnswer(true));
   }
 
+  /// Dispatches a request to proceed to the next speaking quest.
   void dispatchNextQuestion() =>
       context.read<SpeakingBloc>().add(const NextQuestion());
+
+  /// Dispatches a hint consumption event to [SpeakingBloc].
   void dispatchHintUsed() =>
       context.read<SpeakingBloc>().add(const SpeakingHintUsed());
 }

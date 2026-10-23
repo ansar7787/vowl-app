@@ -475,9 +475,12 @@ class _TravelDeskPassportBookState extends State<TravelDeskPassportBook> {
   }
 }
 
-// Background Grid custom painter for authentic passport passport book
+/// Paints an authentic grid pattern on passport stamp pages.
 class PassportBackgroundGrid extends CustomPainter {
+  /// The tint color of the passport grid line rules.
   final Color color;
+
+  /// Creates a [PassportBackgroundGrid] painter.
   PassportBackgroundGrid({required this.color});
 
   @override

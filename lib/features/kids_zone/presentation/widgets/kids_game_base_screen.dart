@@ -78,6 +78,7 @@ class KidsGameBaseScreen extends StatefulWidget {
   State<KidsGameBaseScreen> createState() => KidsGameBaseScreenState();
 }
 
+/// State managing dialogs, briefing overlays, and audio cues for [KidsGameBaseScreen].
 class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
   final ValueNotifier<bool> _showBriefing = ValueNotifier(true);
   final ValueNotifier<String?> _hintText = ValueNotifier(null);

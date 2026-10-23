@@ -68,20 +68,25 @@ mixin EliteMasteryGameScreenMixin<T extends StatefulWidget>
     }
   }
 
+  /// Handles an incorrect answer submission, playing haptics/audio and notifying [EliteMasteryBloc].
   void submitWrongAnswer({required GameQuest quest, String? userAnswer}) {
     if (isAnsweredNotifier.value) return;
     submitSharedWrongAnswer(quest: quest, userAnswer: userAnswer);
     context.read<EliteMasteryBloc>().add(const SubmitEliteAnswer(false));
   }
 
+  /// Handles a correct answer submission, celebrating and notifying [EliteMasteryBloc].
   void submitCorrectAnswer() {
     if (isAnsweredNotifier.value) return;
     submitSharedCorrectAnswer();
     context.read<EliteMasteryBloc>().add(const SubmitEliteAnswer(true));
   }
 
+  /// Dispatches a request to proceed to the next elite mastery quest.
   void dispatchNextQuestion() =>
       context.read<EliteMasteryBloc>().add(const NextEliteQuestion());
+
+  /// Dispatches a hint consumption event to [EliteMasteryBloc].
   void dispatchHintUsed() =>
       context.read<EliteMasteryBloc>().add(const MarkEliteHintUsed());
 }

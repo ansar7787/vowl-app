@@ -68,20 +68,25 @@ mixin ReadingGameScreenMixin<T extends StatefulWidget>
     }
   }
 
+  /// Handles an incorrect answer submission, playing haptics/audio and notifying [ReadingBloc].
   void submitWrongAnswer({required GameQuest quest, String? userAnswer}) {
     if (isAnsweredNotifier.value) return;
     submitSharedWrongAnswer(quest: quest, userAnswer: userAnswer);
     context.read<ReadingBloc>().add(const SubmitAnswer(false));
   }
 
+  /// Handles a correct answer submission, celebrating and notifying [ReadingBloc].
   void submitCorrectAnswer() {
     if (isAnsweredNotifier.value) return;
     submitSharedCorrectAnswer();
     context.read<ReadingBloc>().add(SubmitAnswer(true));
   }
 
+  /// Dispatches a request to proceed to the next reading quest.
   void dispatchNextQuestion() =>
       context.read<ReadingBloc>().add(const NextQuestion());
+
+  /// Dispatches a hint consumption event to [ReadingBloc].
   void dispatchHintUsed() =>
       context.read<ReadingBloc>().add(const ReadingHintUsed());
 }

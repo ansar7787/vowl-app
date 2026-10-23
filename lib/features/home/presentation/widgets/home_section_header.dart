@@ -155,12 +155,21 @@ class HomeSectionHeader extends StatelessWidget {
   }
 }
 
+/// Renders a sliver wrapper around [HomeSectionHeader] for custom scroll views.
 class HomeSliverSectionHeader extends StatelessWidget {
+  /// The section header title text.
   final String title;
+
+  /// The descriptive subtitle text.
   final String subtitle;
+
+  /// The category theme color for the accent bar and icon.
   final Color categoryColor;
+
+  /// Optional callback invoked when tapping the see-all action.
   final VoidCallback? onSeeAll;
 
+  /// Creates a [HomeSliverSectionHeader] widget.
   const HomeSliverSectionHeader({
     super.key,
     required this.title,

@@ -230,9 +230,15 @@ class _VowlyAuthCompanionState extends State<VowlyAuthCompanion> {
   }
 }
 
+/// Paints a speech bubble pointer tail pointing toward the companion mascot.
 class SpeechBubblePainter extends CustomPainter {
+  /// The fill background color of the bubble tail.
   final Color color;
+
+  /// The stroke border color of the bubble tail.
   final Color borderColor;
+
+  /// Creates a [SpeechBubblePainter] instance.
   SpeechBubblePainter({required this.color, required this.borderColor});
 
   @override

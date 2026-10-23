@@ -16,7 +16,26 @@ class _LocalPalette {
   static const Color color60a5fa = Color(0xFF60A5FA);
 }
 
-enum VowlMascotState { neutral, happy, worried, thinking, studying, sleeping }
+/// Emotional and pedagogical states expressed by the [VowlMascot].
+enum VowlMascotState {
+  /// Default idle resting pose.
+  neutral,
+
+  /// Celebratory pose for successful answers and milestone achievements.
+  happy,
+
+  /// Concerned expression when player lives are low.
+  worried,
+
+  /// Inquisitive contemplation state while pondering instructions.
+  thinking,
+
+  /// Active learning pose holding curriculum materials.
+  studying,
+
+  /// Resting night-time state when app is idle.
+  sleeping,
+}
 
 // ---------------------------------------------------------------------------
 // Selector data class — targeted BlocSelector payload, rebuilt only when

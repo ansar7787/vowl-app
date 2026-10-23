@@ -3,7 +3,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
-enum CustomSnackBarType { success, error, info, warning }
+/// Categorizes the styling, iconography, and semantic severity of a [CustomSnackBar].
+enum CustomSnackBarType {
+  /// Confirms a successful user action or reward claim.
+  success,
+
+  /// Alerts the user to a network failure, validation issue, or critical error.
+  error,
+
+  /// Provides general contextual information or informational updates.
+  info,
+
+  /// Cautions the user regarding an impending action, timeout, or resource warning.
+  warning,
+}
 
 /// Floating premium snackbar that renders in the user's language.
 ///

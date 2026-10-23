@@ -70,12 +70,21 @@ class HarmonicWaves extends StatelessWidget {
   }
 }
 
+/// Custom painter rendering animated sinusoidal pitch and audio waveforms.
 class WavePainter extends CustomPainter {
+  /// The stroke tint color of the waveform curve.
   final Color color;
+
+  /// The horizontal phase progression offset in radians.
   final double phase;
+
+  /// The spatial frequency of the waveform cycles.
   final double frequency;
+
+  /// The peak vertical amplitude of the wave displacement.
   final double waveHeight;
 
+  /// Creates a [WavePainter] instance.
   WavePainter({
     required this.color,
     required this.phase,
