@@ -28,6 +28,8 @@ const _kCompletionKeyPrefix = 'word_mixer_completed_';
 /// Brand primary color for Word Mixer.
 const _kPrimaryColor = IllustrationColors.richPurple;
 
+/// Daily challenge screen for Word Mixer anagram puzzles with letter-tile manipulation,
+/// phonetic hints, audio playback, and streak rewards.
 class WordMixerScreen extends StatefulWidget {
   const WordMixerScreen({super.key});
 
