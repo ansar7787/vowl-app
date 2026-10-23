@@ -80,7 +80,7 @@ void main() {
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 500));
 
-    expect(find.text('NOW TYPE IT'), findsOneWidget);
+    expect(find.text('Type to confirm'), findsOneWidget);
     expect(find.text('+5 coins'), findsNothing);
     expect(find.text('apple'), findsOneWidget);
   });

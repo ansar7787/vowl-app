@@ -222,6 +222,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
                                         Positioned(
                                           right: 0,
                                           child: GestureDetector(
+                                            behavior: HitTestBehavior.opaque,
                                             onTap: () {
                                               hapticService.selection();
                                               _isLargeText.value =

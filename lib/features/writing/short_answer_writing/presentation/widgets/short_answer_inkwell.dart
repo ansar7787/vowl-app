@@ -76,23 +76,27 @@ class ShortAnswerInkwell extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(Icons.edit_note_rounded, size: 20.r, color: color),
-                    SizedBox(width: 8.w),
-                    Text(
-                      "YOUR RESPONSE",
-                      softWrap: true,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        color: color,
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: 0.8,
+                Flexible(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.edit_note_rounded, size: 20.r, color: color),
+                      SizedBox(width: 8.w),
+                      Flexible(
+                        child: Text(
+                          "YOUR RESPONSE",
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            color: color,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 0.8,
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 Semantics(
                   label: "Word count: $wordCount out of 4 minimum",

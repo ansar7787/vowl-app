@@ -107,15 +107,17 @@ class ReadingContentArea extends StatelessWidget {
         Positioned(
           top: -20.h,
           right: 20.w,
-          child: RepaintBoundary(
-            child: ReadingPeekingMascot(
-              lives: lives,
-              isCorrect: isCorrect,
-              isAnswered: isAnswered,
-              isGameComplete: isGameComplete,
-              isGameOver: isGameOver,
-              mascotId: mascotId,
-              mascotName: mascotName,
+          child: IgnorePointer(
+            child: RepaintBoundary(
+              child: ReadingPeekingMascot(
+                lives: lives,
+                isCorrect: isCorrect,
+                isAnswered: isAnswered,
+                isGameComplete: isGameComplete,
+                isGameOver: isGameOver,
+                mascotId: mascotId,
+                mascotName: mascotName,
+              ),
             ),
           ),
         ),
