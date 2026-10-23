@@ -13,6 +13,7 @@ class _LocalPalette {
   static const Color color60a5fa = Color(0xFF60A5FA);
 }
 
+/// List row tile representing a single ranked user with badge styling and score breakdown.
 class LeaderboardRankTile extends StatelessWidget {
   final UserEntity user;
   final int rank;

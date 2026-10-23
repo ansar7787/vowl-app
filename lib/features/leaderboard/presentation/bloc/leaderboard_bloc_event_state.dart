@@ -6,6 +6,7 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 // Events
 // ---------------------------------------------------------------------------
 
+/// Base event class for the [LeaderboardBloc].
 abstract class LeaderboardEvent extends Equatable {
   const LeaderboardEvent();
 
@@ -35,6 +36,7 @@ class LoadLeaderboard extends LeaderboardEvent {
 // States
 // ---------------------------------------------------------------------------
 
+/// Base state class for the [LeaderboardBloc].
 abstract class LeaderboardState extends Equatable {
   const LeaderboardState();
 
