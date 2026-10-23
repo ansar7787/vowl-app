@@ -1,5 +1,7 @@
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
+/// Pedagogical progression blueprint defining tier groupings and radar chart axes
+/// for curriculum categories.
 class PedagogicalBlueprint {
   final List<String> radarAxes;
   final List<GameSubtype> tier1;
@@ -20,7 +22,10 @@ class PedagogicalBlueprint {
   });
 }
 
+/// Static map mapping curriculum categories to their respective [PedagogicalBlueprint].
 class PedagogicalBlueprintMap {
+  const PedagogicalBlueprintMap._();
+
   static const Map<String, PedagogicalBlueprint> blueprints = {
     'grammar': PedagogicalBlueprint(
       radarAxes: ['Syntax', 'Mechanics', 'Logic', 'Application'],

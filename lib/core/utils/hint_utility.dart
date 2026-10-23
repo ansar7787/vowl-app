@@ -1,4 +1,8 @@
+/// Evaluates whether an activity hint is a generic parser boilerplate
+/// rather than actionable, level-specific guidance.
 class HintUtility {
+  const HintUtility._();
+
   /// NOTE ON LOCALIZATION: this matches against canonical English template
   /// phrases. It must be called against the *original/canonical* hint text
   /// (e.g. the value stored in quest content) and not against a string

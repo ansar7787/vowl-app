@@ -4,7 +4,11 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
+/// Startup guard that asserts production environment variable integrity,
+/// ensuring secret keys and API credentials match release builds.
 class ProductionGuard {
+  const ProductionGuard._();
+
   static void checkConfiguration() {
     final logger = di.sl<AppLogger>();
     final razorpayKey = dotenv.env['RAZORPAY_KEY_ID'];

@@ -46,6 +46,8 @@ void onDidReceiveBackgroundNotificationResponse(NotificationResponse response) {
   }
 }
 
+/// Manages local push notifications, FCM messaging, scheduled streak alerts,
+/// and re-engagement campaigns.
 class NotificationService {
   NotificationService({LocaleService? localeService})
     : _localeService = localeService;

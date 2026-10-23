@@ -5,6 +5,7 @@ import 'package:record/record.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/injection_container.dart';
 
+/// Abstract contract for recording microphone audio input and monitoring amplitude levels.
 abstract class AudioRecordingService {
   factory AudioRecordingService() = AudioRecordingServiceImpl;
 
@@ -16,6 +17,7 @@ abstract class AudioRecordingService {
   Stream<Amplitude> onAmplitudeChanged(Duration interval);
 }
 
+/// Concrete implementation of [AudioRecordingService] using the record audio package.
 class AudioRecordingServiceImpl implements AudioRecordingService {
   final AudioRecorder _audioRecorder = AudioRecorder();
   bool _isRecording = false;

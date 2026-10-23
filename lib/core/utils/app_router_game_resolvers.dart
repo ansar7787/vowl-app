@@ -287,6 +287,7 @@ class AppRouterGameResolvers {
 
   // ── Speaking ────────────────────────────────────────────────────────────────
 
+  /// Returns the appropriate speaking activity screen wrapped with [SpeakingBloc].
   static Widget getSpeakingScreen(GameSubtype gameType, int level) {
     return BlocProvider<SpeakingBloc>(
       create: (_) => di.sl<SpeakingBloc>(),
@@ -339,6 +340,7 @@ class AppRouterGameResolvers {
 
   // ── Reading ─────────────────────────────────────────────────────────────────
 
+  /// Returns the appropriate reading activity screen wrapped with [ReadingBloc].
   static Widget getReadingScreen(GameSubtype gameType, int level) {
     return BlocProvider<ReadingBloc>(
       create: (_) => di.sl<ReadingBloc>(),
@@ -398,6 +400,7 @@ class AppRouterGameResolvers {
 
   // ── Writing ─────────────────────────────────────────────────────────────────
 
+  /// Returns the appropriate writing activity screen wrapped with [WritingBloc].
   static Widget getWritingScreen(GameSubtype gameType, int level) {
     return BlocProvider<WritingBloc>(
       create: (_) => di.sl<WritingBloc>(),
@@ -449,6 +452,7 @@ class AppRouterGameResolvers {
 
   // ── Grammar ─────────────────────────────────────────────────────────────────
 
+  /// Returns the appropriate grammar activity screen wrapped with [GrammarBloc].
   static Widget getGrammarScreen(GameSubtype gameType, int level) {
     return BlocProvider<GrammarBloc>(
       create: (_) => di.sl<GrammarBloc>(),
@@ -543,6 +547,7 @@ class AppRouterGameResolvers {
 
   // ── Listening ────────────────────────────────────────────────────────────────
 
+  /// Returns the appropriate listening activity screen wrapped with [ListeningBloc].
   static Widget getListeningScreen(GameSubtype gameType, int level) {
     return BlocProvider<ListeningBloc>(
       create: (_) => di.sl<ListeningBloc>(),
@@ -610,6 +615,7 @@ class AppRouterGameResolvers {
 
   // ── Accent ───────────────────────────────────────────────────────────────────
 
+  /// Returns the appropriate accent training activity screen wrapped with [AccentBloc].
   static Widget getAccentScreen(GameSubtype gameType, int level) {
     return BlocProvider<AccentBloc>(
       create: (_) => di.sl<AccentBloc>(),
@@ -675,6 +681,7 @@ class AppRouterGameResolvers {
 
   // ── Roleplay ─────────────────────────────────────────────────────────────────
 
+  /// Returns the appropriate roleplay activity screen wrapped with [RoleplayBloc].
   static Widget getRoleplayScreen(GameSubtype gameType, int level) {
     return BlocProvider<RoleplayBloc>(
       create: (_) => di.sl<RoleplayBloc>(),
@@ -724,6 +731,7 @@ class AppRouterGameResolvers {
 
   // ── Vocabulary ────────────────────────────────────────────────────────────────
 
+  /// Returns the appropriate vocabulary activity screen wrapped with [vocab.VocabularyBloc].
   static Widget getVocabularyScreen(GameSubtype gameType, int level) {
     return BlocProvider<vocab.VocabularyBloc>(
       create: (_) => di.sl<vocab.VocabularyBloc>(),
@@ -771,6 +779,7 @@ class AppRouterGameResolvers {
 
   // ── Elite Mastery ─────────────────────────────────────────────────────────────
 
+  /// Returns the appropriate elite mastery activity screen wrapped with [EliteMasteryBloc].
   static Widget getEliteMasteryScreen(GameSubtype gameType, int level) {
     return BlocProvider<EliteMasteryBloc>(
       create: (_) => di.sl<EliteMasteryBloc>(),

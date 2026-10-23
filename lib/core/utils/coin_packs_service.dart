@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/injection_container.dart';
 
+/// Purchasable currency pack configuration containing coin and key rewards.
 class CoinPack {
   final String id;
   final String titleKey;

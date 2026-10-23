@@ -2,7 +2,10 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
+/// Resolves dynamic, localized instruction headers and fallbacks for game activities.
 class InstructionHelper {
+  const InstructionHelper._();
+
   static const List<String> _genericFallbacks = [
     'drag the correct word to complete the sentence.',
     'choose the correct answer.',
