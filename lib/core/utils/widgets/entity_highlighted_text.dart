@@ -6,6 +6,7 @@ import 'package:google_mlkit_entity_extraction/google_mlkit_entity_extraction.da
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/ml_services/entity_extraction_service.dart';
 
+/// Renders rich text with tappable highlight badges for entities extracted by Google ML Kit.
 class EntityHighlightedText extends StatelessWidget {
   final String text;
   final List<EntityAnnotation> annotations;

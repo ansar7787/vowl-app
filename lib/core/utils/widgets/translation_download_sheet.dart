@@ -12,6 +12,7 @@ import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
+/// Modal bottom sheet tracking and displaying progress for offline language pack downloads.
 class TranslationDownloadSheet extends StatefulWidget {
   /// The future that represents the actual download task.
   final Future<void> downloadTask;

@@ -2,6 +2,7 @@ import 'package:google_mlkit_image_labeling/google_mlkit_image_labeling.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
+/// Service providing on-device image object classification and labeling using Google ML Kit.
 class ImageLabelingService {
   late final ImageLabeler _labeler;
 
