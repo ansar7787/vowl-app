@@ -42,15 +42,25 @@ import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
 /// via [config] instead of the three boolean flags; if both are provided
 /// [config] takes precedence.
 class ListeningBaseLayout extends StatefulWidget {
+  /// Listening subgame variant identifier.
   final GameSubtype gameType;
+
+  /// Target progression difficulty level.
   final int level;
 
   /// The game-specific question UI (multiple-choice grid, fill-the-blank, …).
   final Widget child;
 
+  /// Whether the user has submitted their response.
   final bool isAnswered;
+
+  /// Whether the submitted response was evaluated as correct.
   final bool? isCorrect;
+
+  /// Callback executed when tapping the action button to advance.
   final VoidCallback onContinue;
+
+  /// Callback executed when the hint action is triggered.
   final VoidCallback onHint;
 
   // ── Backward-compatible direct flags ───────────────────────────────────────
@@ -77,12 +87,14 @@ class ListeningBaseLayout extends StatefulWidget {
   /// Audio URL (http) or plain text (spoken via TTS).
   final String? audioUrl;
 
+  /// Whether all retry lives have been exhausted.
   final bool isFinalFailure;
 
   /// Alternative to the three boolean flags above. If provided, its values
   /// override [showConfetti], [useScrolling], and [disablePadding].
   final ListeningBaseLayoutConfig? config;
 
+  /// Creates a [ListeningBaseLayout] scaffold.
   const ListeningBaseLayout({
     super.key,
     required this.gameType,

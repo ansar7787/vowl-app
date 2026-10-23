@@ -17,9 +17,18 @@ import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/de
 import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_dark_field.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 
+/// Screen for the Detail Spotlight listening game quest.
+///
+/// Darkens the interaction area so learners search with a movable spotlight beam
+/// across option tiles to locate specific details heard in the audio snippet.
 class DetailSpotlightScreen extends StatefulWidget {
+  /// Progression level index.
   final int level;
+
+  /// Specific game subtype variant.
   final GameSubtype gameType;
+
+  /// Creates a [DetailSpotlightScreen] instance.
   const DetailSpotlightScreen({
     super.key,
     required this.level,

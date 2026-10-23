@@ -4,17 +4,24 @@ import '../../../../core/domain/entities/game_quest.dart';
 import '../../../../core/error/exceptions.dart';
 import '../models/listening_quest_model.dart';
 
+/// Contract for retrieving listening quests from local assets or remote Firestore collections.
 abstract class ListeningRemoteDataSource {
+  /// Fetches listening quests for [gameType] and difficulty [level].
   Future<List<ListeningQuestModel>> getListeningQuest({
     required GameSubtype gameType,
     required int level,
   });
 }
 
+/// Implementation of [ListeningRemoteDataSource] reading local JSON assets with remote Firestore fallback.
 class ListeningRemoteDataSourceImpl implements ListeningRemoteDataSource {
+  /// Firestore instance for remote quest retrieval.
   final FirebaseFirestore firestore;
+
+  /// Bundled JSON quest service.
   final AssetQuestService assetQuestService;
 
+  /// Creates a [ListeningRemoteDataSourceImpl] with [firestore] and [assetQuestService].
   ListeningRemoteDataSourceImpl({
     required this.firestore,
     required this.assetQuestService,

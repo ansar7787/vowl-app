@@ -31,10 +31,18 @@ const double _kCompactHeightThreshold = 580.0;
 // AudioFillBlanksScreen
 // =============================================================================
 
+/// Screen for the Audio Fill in the Blanks listening game quest.
+///
+/// Plays an audio snippet and prompts the learner to uncover smeared text
+/// or complete missing words via options or blind dictation input.
 class AudioFillBlanksScreen extends StatefulWidget {
+  /// Progression level index.
   final int level;
+
+  /// Specific game subtype variant.
   final GameSubtype gameType;
 
+  /// Creates an [AudioFillBlanksScreen] instance.
   const AudioFillBlanksScreen({
     super.key,
     required this.level,

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction badge displayed at the top of the Listening Inference quest screen.
 class ListeningInferenceInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Instruction prompt text.
   final String instruction;
 
+  /// Creates a [ListeningInferenceInstruction] badge.
   const ListeningInferenceInstruction({
     super.key,
     required this.color,

@@ -4,12 +4,21 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Row of dual verdict action buttons ("TRUE" / "FALSE") for statement verification.
 class AudioTrueFalseVerdictButtons extends StatelessWidget {
+  /// Currently chosen verdict (`true` for True, `false` for False, `null` if unselected).
   final bool? selectedVerdict;
+
+  /// Whether the answer has been locked in and evaluated.
   final bool isAnswered;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrectState;
+
+  /// Callback receiving the chosen boolean verdict.
   final Function(bool) onVerdictSelected;
 
+  /// Creates an [AudioTrueFalseVerdictButtons] selector row.
   const AudioTrueFalseVerdictButtons({
     super.key,
     required this.selectedVerdict,

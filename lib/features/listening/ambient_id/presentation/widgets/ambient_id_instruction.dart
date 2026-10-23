@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction badge widget for ambient sound identification games.
 class AmbientIdInstruction extends StatelessWidget {
+  /// Theme accent color applied to the badge border and text.
   final Color color;
+
+  /// Instruction prompt text shown to the learner.
   final String instruction;
 
+  /// Creates an [AmbientIdInstruction] badge.
   const AmbientIdInstruction({
     super.key,
     required this.color,

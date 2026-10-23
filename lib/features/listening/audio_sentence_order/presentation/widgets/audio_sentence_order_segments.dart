@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Draggable word segment chips container for sentence ordering challenges.
 class AudioSentenceOrderSegments extends StatelessWidget {
+  /// Pool of available word segment tokens.
   final List<String> segments;
+
+  /// Ordered target slots representing the current sentence state.
   final List<String> slots;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether the challenge has already been answered.
   final bool isAnswered;
+
+  /// Callback invoked when a segment is snapped into a target slot index.
   final Function(String, int) onSnap;
 
+  /// Creates an [AudioSentenceOrderSegments] container.
   const AudioSentenceOrderSegments({
     super.key,
     required this.segments,

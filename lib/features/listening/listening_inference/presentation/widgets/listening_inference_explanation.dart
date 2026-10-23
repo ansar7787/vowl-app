@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Card providing a detailed pedagogical explanation of the listening inference.
 class ListeningInferenceExplanation extends StatelessWidget {
+  /// Explanation text describing the logic behind the correct deduction.
   final String explanation;
+
+  /// Theme accent color.
   final Color color;
 
+  /// Creates a [ListeningInferenceExplanation] card.
   const ListeningInferenceExplanation({
     super.key,
     required this.explanation,

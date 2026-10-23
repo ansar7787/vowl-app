@@ -4,16 +4,33 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Rotatable speed dial controller with center audio listen trigger.
 class FastSpeechDecoderCore extends StatelessWidget {
+  /// Spoken text sentence.
   final String textToSpeak;
+
+  /// Effective playback rate multiplier.
   final double speed;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Rotational value in range `[0.0, 1.0]`.
   final double rotation;
+
+  /// Callback when the dial is rotated by a delta amount.
   final Function(double) onRotate;
+
+  /// Callback to play text-to-speech at current speed.
   final VoidCallback onTapTts;
+
+  /// Optional emoji displayed upon correct resolution.
   final String? emoji;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrectState;
 
+  /// Creates a [FastSpeechDecoderCore] dial widget.
   const FastSpeechDecoderCore({
     super.key,
     required this.textToSpeak,

@@ -25,6 +25,7 @@ mixin ListeningGameScreenMixin<T extends StatefulWidget>
 
   // ── Core Bloc Listener Logic ──────────────────────────────────────────
 
+  /// Determines whether incoming [ListeningBloc] state changes require a rebuild.
   bool listeningListenWhen(ListeningState prev, ListeningState curr) {
     if (prev is ListeningLoaded && curr is ListeningLoaded) {
       return prev.currentIndex != curr.currentIndex ||
@@ -56,12 +57,14 @@ mixin ListeningGameScreenMixin<T extends StatefulWidget>
 
   // ── Shared wrong answer / timeout handler ──────────────────────────────
 
+  /// Records an incorrect answer and dispatches a failed evaluation.
   void submitWrongAnswer({required GameQuest quest, String? userAnswer}) {
     if (isAnsweredNotifier.value) return;
     submitSharedWrongAnswer(quest: quest, userAnswer: userAnswer);
     context.read<ListeningBloc>().add(const SubmitAnswer(false));
   }
 
+  /// Records a correct answer and dispatches a successful evaluation.
   void submitCorrectAnswer() {
     if (isAnsweredNotifier.value) return;
     submitSharedCorrectAnswer();

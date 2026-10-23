@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Target drop slots timeline where word segment chips are arranged in sequence.
 class AudioSentenceOrderTimeline extends StatelessWidget {
+  /// Sequence of slot strings containing either word values or empty strings.
   final List<String> slots;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Callback when a word segment is dropped into a slot index.
   final Function(String, int) onSnap;
+
+  /// Callback when a word segment is tapped to remove it from a slot index.
   final Function(int) onUnsnap;
 
+  /// Creates an [AudioSentenceOrderTimeline] drop target row.
   const AudioSentenceOrderTimeline({
     super.key,
     required this.slots,

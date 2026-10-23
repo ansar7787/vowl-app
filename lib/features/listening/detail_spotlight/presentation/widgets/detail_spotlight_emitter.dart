@@ -4,12 +4,21 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Central sound emitter button node for the detail spotlight challenge.
 class DetailSpotlightEmitter extends StatelessWidget {
+  /// Callback triggered when the emitter button is tapped.
   final VoidCallback onTap;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Optional celebratory emoji revealed upon correct choice.
   final String? emoji;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrectState;
 
+  /// Creates a [DetailSpotlightEmitter] button.
   const DetailSpotlightEmitter({
     super.key,
     required this.onTap,

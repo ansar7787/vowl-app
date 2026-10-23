@@ -18,9 +18,18 @@ import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
 import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
 
+/// Screen for the Audio True/False listening quest.
+///
+/// Prompts the learner to listen to an audio statement and evaluate whether
+/// the displayed factual claim or assertion is True or False.
 class AudioTrueFalseScreen extends StatefulWidget {
+  /// Progression level index.
   final int level;
+
+  /// Specific game subtype variant.
   final GameSubtype gameType;
+
+  /// Creates an [AudioTrueFalseScreen] instance.
   const AudioTrueFalseScreen({
     super.key,
     required this.level,

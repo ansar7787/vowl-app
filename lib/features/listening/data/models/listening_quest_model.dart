@@ -1,7 +1,9 @@
 import '../../domain/entities/listening_quest.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 
+/// Data model for listening quests supporting JSON serialization.
 class ListeningQuestModel extends ListeningQuest {
+  /// Creates a [ListeningQuestModel] instance.
   const ListeningQuestModel({
     required super.id,
     super.type,
@@ -43,6 +45,7 @@ class ListeningQuestModel extends ListeningQuest {
     super.vocabularyWords,
   });
 
+  /// Deserializes JSON [map] and document [id] into a [ListeningQuestModel].
   factory ListeningQuestModel.fromJson(Map<String, dynamic> map, String id) {
     // Optimized O(1) constant-time enum parsing
     final subtype = GameSubtype.fromString(
@@ -137,6 +140,7 @@ class ListeningQuestModel extends ListeningQuest {
     );
   }
 
+  /// Converts this quest model into a JSON-compatible map.
   Map<String, dynamic> toMap() {
     return {
       'instruction': instruction,

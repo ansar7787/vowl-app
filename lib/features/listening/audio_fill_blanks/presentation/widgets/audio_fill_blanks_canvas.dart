@@ -20,15 +20,32 @@ const double _kBlobSize = 52.0;
 /// Lower = more sensitive; higher = requires longer smear.
 const double _kSmearSensitivity = 160.0;
 
+/// Interactive scratch/smear canvas revealing obscured text underneath ink blobs.
+///
+/// Converts drag strokes into normalized reveal progress to reveal the prompt sentence.
 class AudioFillBlanksCanvas extends StatelessWidget {
+  /// Prompt sentence text obscured by ink blobs.
   final String text;
+
+  /// Progress fraction in range `[0.0, 1.0]` representing how much text is revealed.
   final double revealProgress;
+
+  /// Callback receiving delta progress when the user swipes or smears the surface.
   final void Function(double delta) onSmear;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Optional background image URL.
   final String? imageUrl;
+
+  /// Verification state of the question answer.
   final bool? isCorrectState;
 
+  /// Creates an [AudioFillBlanksCanvas] instance.
   const AudioFillBlanksCanvas({
     super.key,
     required this.text,

@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Flashlight badge displaying user instructions for finding target details.
 class DetailSpotlightInstruction extends StatelessWidget {
+  /// Whether the question has been answered.
   final bool isAnswered;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Instruction text prompt.
   final String instruction;
 
+  /// Creates a [DetailSpotlightInstruction] badge.
   const DetailSpotlightInstruction({
     super.key,
     required this.isAnswered,

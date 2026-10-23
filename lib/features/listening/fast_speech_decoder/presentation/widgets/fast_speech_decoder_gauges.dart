@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Speed gauge indicator showing the current playback rate multiplier.
 class FastSpeechDecoderGauges extends StatelessWidget {
+  /// Playback speed multiplier (e.g. 1.0x, 1.5x).
   final double speed;
+
+  /// Theme accent color.
   final Color color;
 
+  /// Creates a [FastSpeechDecoderGauges] readout.
   const FastSpeechDecoderGauges({
     super.key,
     required this.speed,

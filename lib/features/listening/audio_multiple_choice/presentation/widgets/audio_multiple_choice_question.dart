@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
+/// Glass card displaying the question sentence or cloze prompt with blanks.
 class AudioMultipleChoiceQuestion extends StatelessWidget {
+  /// Question text to display.
   final String text;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
 
+  /// Creates an [AudioMultipleChoiceQuestion] card.
   const AudioMultipleChoiceQuestion({
     super.key,
     required this.text,

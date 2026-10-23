@@ -4,12 +4,21 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Speaker node triggering audio playback of emotionally colored spoken dialogue.
 class EmotionRecognitionEmitter extends StatelessWidget {
+  /// Callback triggered when the emitter is tapped.
   final VoidCallback onTap;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Optional celebratory emoji revealed upon correct emotion classification.
   final String? emoji;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrectState;
 
+  /// Creates an [EmotionRecognitionEmitter] widget.
   const EmotionRecognitionEmitter({
     super.key,
     required this.onTap,

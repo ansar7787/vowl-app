@@ -4,16 +4,33 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 
+/// Two-by-two grid of illustrated image and word tiles for matching sounds.
 class SoundImageMatchGrid extends StatelessWidget {
+  /// Option word labels.
   final List<String> options;
+
+  /// Option emoji graphics.
   final List<String> optionEmojis;
+
+  /// Index of the correct option.
   final int correctAnswerIndex;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether the answer has been locked in and evaluated.
   final bool isAnswered;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrectState;
+
+  /// Currently selected option index, if any.
   final int? selectedIndex;
+
+  /// Callback when an image tile is tapped.
   final Function(int) onSelect;
 
+  /// Creates a [SoundImageMatchGrid] options layout.
   const SoundImageMatchGrid({
     super.key,
     required this.options,

@@ -6,10 +6,15 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 // AudioFillBlanksJar
 // =============================================================================
 
+/// Audio playback sound button for the fill-in-the-blanks listening challenge.
 class AudioFillBlanksJar extends StatelessWidget {
+  /// Callback triggered when the playback button is tapped.
   final VoidCallback onTap;
+
+  /// Theme accent color applied to the icon and halo border.
   final Color color;
 
+  /// Creates an [AudioFillBlanksJar] button.
   const AudioFillBlanksJar({
     super.key,
     required this.onTap,

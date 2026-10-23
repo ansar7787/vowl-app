@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction badge displayed at the top of the sentence order screen.
 class AudioSentenceOrderInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Instruction prompt text describing the ordering task.
   final String instruction;
 
+  /// Creates an [AudioSentenceOrderInstruction] badge.
   const AudioSentenceOrderInstruction({
     super.key,
     required this.color,

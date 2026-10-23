@@ -8,17 +8,39 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Radar sonar circular field displaying ambient sound location options.
+///
+/// Sweeps an animated radar beam around concentric rings and positions
+/// selectable location hubs radially for the user to choose the ambient source.
 class AmbientIdSonarField extends StatelessWidget {
+  /// Available location option labels.
   final List<String> options;
+
+  /// Index of the correct location option.
   final int correctAnswerIndex;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Animation controller driving the 360-degree radar sweep.
   final AnimationController radarController;
+
+  /// Whether the user has submitted an answer for this question.
   final bool isAnswered;
+
+  /// Whether the submitted answer was correct (`null` if pending evaluation).
   final bool? isCorrectState;
+
+  /// Currently selected option index, if any.
   final int? selectedIndex;
+
+  /// Callback invoked when an option hub is tapped.
   final Function(int) onSubmitAnswer;
+
+  /// Optional background image URL.
   final String? imageUrl;
 
+  /// Creates an [AmbientIdSonarField] instance.
   const AmbientIdSonarField({
     super.key,
     required this.options,

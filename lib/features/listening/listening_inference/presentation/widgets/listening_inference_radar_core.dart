@@ -4,13 +4,24 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Radar core widget featuring animated pulse rings that trigger speech audio playback when tapped.
 class ListeningInferenceRadarCore extends StatelessWidget {
+  /// Callback triggered when the core button is tapped.
   final VoidCallback onTap;
+
+  /// Animation controller driving the expanding pulse wave rings.
   final AnimationController pulseController;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Optional celebratory emoji revealed upon correct choice.
   final String? emoji;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrectState;
 
+  /// Creates a [ListeningInferenceRadarCore] instance.
   const ListeningInferenceRadarCore({
     super.key,
     required this.onTap,

@@ -7,6 +7,7 @@ import 'package:flutter/gestures.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
 
+/// Eager pan gesture recognizer that immediately claims pointer gesture priority.
 class EagerPanGestureRecognizer extends PanGestureRecognizer {
   @override
   void addAllowedPointer(PointerDownEvent event) {
@@ -18,17 +19,36 @@ class EagerPanGestureRecognizer extends PanGestureRecognizer {
   String get debugDescription => 'eagerPan';
 }
 
+/// Darkened exploration surface widget with a draggable spotlight revealing hidden answers.
 class DetailSpotlightDarkField extends StatefulWidget {
+  /// Available detail options obscured in darkness.
   final List<String> options;
+
+  /// Index of the correct target detail option.
   final int correctAnswerIndex;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether the answer has been locked in and evaluated.
   final bool isAnswered;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrectState;
+
+  /// Selected option index, if any.
   final int? selectedIndex;
+
+  /// Notifier tracking the current offset coordinates of the spotlight beam center.
   final ValueNotifier<Offset> spotlightPos;
+
+  /// Callback when the spotlight is dragged to a new position.
   final Function(Offset) onSearch;
+
+  /// Callback when a detail option tile is tapped.
   final Function(int) onSelect;
 
+  /// Creates a [DetailSpotlightDarkField] widget.
   const DetailSpotlightDarkField({
     super.key,
     required this.options,
