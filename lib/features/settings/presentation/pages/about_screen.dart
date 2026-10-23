@@ -7,6 +7,8 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Informational screen presenting application version details, legal terms,
+/// privacy policies, and developer contact channels.
 class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
 

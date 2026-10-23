@@ -38,6 +38,11 @@ class _LocalPalette {
   static const Color coloreab308 = Color(0xFFEAB308);
 }
 
+/// Central settings and user preferences configuration screen.
+///
+/// Manages user profile customization, theme modes (Light, Dark, Midnight),
+/// audio & TTS voice preferences, notification toggles, accessibility settings
+/// (low animation mode), account data deletion, and session sign-out.
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
 
