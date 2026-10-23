@@ -3,19 +3,42 @@ import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Card displaying social context, instructions, cultural notes, and current dialogue prompt.
 class SocialSparkConnectionMonitor extends StatelessWidget {
+  /// Prompt text describing the social scene.
   final String text;
+
+  /// Optional social context summary.
   final String? socialContext;
+
+  /// Custom instruction text.
   final String? instruction;
+
+  /// Optional hint text.
   final String? hint;
+
+  /// Whether the hint has been unlocked.
   final bool hintUsed;
+
+  /// Detailed linguistic explanation.
   final String? explanation;
+
+  /// Cultural etiquette note.
   final String? culturalNote;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Whether an answer has been submitted for this stage.
   final bool isAnswered;
+
+  /// Whether the submitted response was evaluated as correct.
   final bool? isCorrect;
 
+  /// Creates a [SocialSparkConnectionMonitor] widget.
   const SocialSparkConnectionMonitor({
     super.key,
     required this.text,

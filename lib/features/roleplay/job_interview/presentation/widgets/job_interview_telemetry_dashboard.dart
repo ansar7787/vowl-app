@@ -4,12 +4,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_fusion_painter.dart';
 
+/// Telemetry dashboard widget displaying professionalism gauge and reactor status.
 class JobInterviewTelemetryDashboard extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Normalized professionalism level (0.0 to 1.0).
   final double mercuryLevel;
+
+  /// Animation driving telemetry pulsation effects.
   final Animation<double> reactorAnimation;
 
+  /// Creates a [JobInterviewTelemetryDashboard] widget.
   const JobInterviewTelemetryDashboard({
     super.key,
     required this.color,

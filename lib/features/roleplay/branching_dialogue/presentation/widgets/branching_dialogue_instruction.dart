@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Instruction banner widget for the Branching Dialogue minigame.
 class BranchingDialogueInstruction extends StatelessWidget {
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Custom instruction text or fallback.
   final String? instruction;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
 
+  /// Creates a [BranchingDialogueInstruction] widget.
   const BranchingDialogueInstruction({
     super.key,
     required this.primaryColor,

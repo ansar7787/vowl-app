@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 /// IDE support, null safety, and refactor safety.
 @immutable
 class ChatMessage {
+  /// Creates a [ChatMessage] instance.
   const ChatMessage({required this.text, required this.isUser});
 
   /// Creates a message bubble attributed to the player.
@@ -16,10 +17,10 @@ class ChatMessage {
   factory ChatMessage.system(String text) =>
       ChatMessage(text: text, isUser: false);
 
+  /// Text content of the chat message.
   final String text;
 
-  /// `true` → player bubble (right-aligned).
-  /// `false` → character bubble (left-aligned).
+  /// Whether this message originated from the user (`true`) or the character (`false`).
   final bool isUser;
 
   @override

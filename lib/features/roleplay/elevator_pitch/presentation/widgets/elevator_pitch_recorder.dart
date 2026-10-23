@@ -8,15 +8,39 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
-enum PitchState { ready, pitching, evaluating, failed }
+/// Represents the operating state of the elevator pitch speech recorder.
+enum PitchState {
+  /// Recorder is ready to begin listening.
+  ready,
 
+  /// Speech recording and real-time transcription are active.
+  pitching,
+
+  /// Recording has ended and accuracy evaluation is processing.
+  evaluating,
+
+  /// Pitch failed to satisfy required keywords or criteria.
+  failed,
+}
+
+/// Interactive microphone recorder component for elevator pitch gameplay.
 class ElevatorPitchRecorder extends StatefulWidget {
+  /// Time limit in seconds for the pitch.
   final int timeLimit;
+
+  /// Target pitch script or expected keywords.
   final String expectedText;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Callback invoked when the pitch is confirmed as passing.
   final VoidCallback onConfirmed;
+
+  /// Callback invoked when the pitch fails evaluation.
   final VoidCallback onFailed;
 
+  /// Creates an [ElevatorPitchRecorder] widget.
   const ElevatorPitchRecorder({
     super.key,
     required this.timeLimit,

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Objective instruction card for the Medical Consult minigame.
 class MedicalConsultInstruction extends StatelessWidget {
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Custom instruction text or fallback.
   final String? instruction;
 
+  /// Creates a [MedicalConsultInstruction] widget.
   const MedicalConsultInstruction({
     super.key,
     required this.primaryColor,

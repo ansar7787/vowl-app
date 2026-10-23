@@ -4,11 +4,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 
+/// Cultural note card and formality rating gauge widget.
 class SituationalResponseFormalityGauge extends StatelessWidget {
+  /// Active roleplay quest containing formality scores and cultural notes.
   final RoleplayQuest quest;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
 
+  /// Creates a [SituationalResponseFormalityGauge] widget.
   const SituationalResponseFormalityGauge({
     super.key,
     required this.quest,

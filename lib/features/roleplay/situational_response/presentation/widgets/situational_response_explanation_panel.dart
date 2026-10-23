@@ -9,11 +9,18 @@ class _LocalPalette {
   static const Color color131326 = Color(0xFF131326);
 }
 
+/// Panel providing detailed cultural, linguistic, and contextual feedback.
 class SituationalResponseExplanationPanel extends StatelessWidget {
+  /// Active roleplay quest data.
   final RoleplayQuest quest;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Whether the submitted response was correct.
   final bool? isCorrect;
 
+  /// Creates a [SituationalResponseExplanationPanel] widget.
   const SituationalResponseExplanationPanel({
     super.key,
     required this.quest,

@@ -4,12 +4,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Customs terminal screen card displaying traveler prompt and inspector instructions.
 class TravelDeskCustomsTerminal extends StatelessWidget {
+  /// Customs inspector instruction text.
   final String instruction;
+
+  /// Traveler dialogue prompt or statement.
   final String prompt;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
 
+  /// Creates a [TravelDeskCustomsTerminal] widget.
   const TravelDeskCustomsTerminal({
     super.key,
     required this.instruction,

@@ -1,7 +1,9 @@
 import '../../domain/entities/roleplay_quest.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 
+/// Data model representing a roleplay simulation quest with JSON deserialization.
 class RoleplayQuestModel extends RoleplayQuest {
+  /// Creates a [RoleplayQuestModel] instance.
   const RoleplayQuestModel({
     required super.id,
     super.type,
@@ -57,6 +59,7 @@ class RoleplayQuestModel extends RoleplayQuest {
     return [value.toString()];
   }
 
+  /// Creates a [RoleplayQuestModel] instance deserialized from [map].
   factory RoleplayQuestModel.fromJson(Map<String, dynamic> map, String id) {
     final subtype = GameSubtype.fromString(
       map['subtype'],

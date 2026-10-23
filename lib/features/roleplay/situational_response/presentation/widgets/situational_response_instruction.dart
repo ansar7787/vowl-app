@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Objective instruction header for the Situational Response minigame.
 class SituationalResponseInstruction extends StatelessWidget {
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Custom instruction text or fallback.
   final String? instruction;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Optional revealed hint text.
   final String? hint;
+
+  /// Whether the hint has been unlocked.
   final bool hintUsed;
 
+  /// Creates a [SituationalResponseInstruction] widget.
   const SituationalResponseInstruction({
     super.key,
     required this.primaryColor,

@@ -19,9 +19,18 @@ import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/b
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_relationship_meter.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Screen presenting the Branching Dialogue roleplay game mechanic.
+///
+/// Players navigate multi-branching conversational scenarios, dragging probes
+/// and selecting narrative choices to build relationship scores and solve objectives.
 class BranchingDialogueScreen extends StatefulWidget {
+  /// Current game level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [BranchingDialogueScreen] widget.
   const BranchingDialogueScreen({
     super.key,
     required this.level,

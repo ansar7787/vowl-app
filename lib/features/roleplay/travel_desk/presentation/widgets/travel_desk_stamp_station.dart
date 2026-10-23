@@ -4,12 +4,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Bottom station dock containing the draggable customs visa stamp.
 class TravelDeskStampStation extends StatelessWidget {
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Callback fired when stamp dragging begins.
   final Function() onDragStarted;
+
+  /// Callback fired when stamp dragging ends.
   final Function() onDragEnded;
 
+  /// Creates a [TravelDeskStampStation] widget.
   const TravelDeskStampStation({
     super.key,
     required this.color,

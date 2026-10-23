@@ -2,13 +2,24 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter rendering the emergency pressure valve wheel and hazard track.
 class EmergencyValvePainter extends CustomPainter {
+  /// Normalized rotation value of the valve wheel.
   final double rotationValue;
+
+  /// Whether the valve wheel is sufficiently aligned to the unlock threshold.
   final bool isValveAligned;
+
+  /// Progress tick driving warning animations.
   final double animationTime;
+
+  /// Theme error accent color.
   final Color errorColor;
+
+  /// Theme success accent color.
   final Color correctColor;
 
+  /// Creates an [EmergencyValvePainter] instance.
   EmergencyValvePainter({
     required this.rotationValue,
     required this.isValveAligned,

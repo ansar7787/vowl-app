@@ -9,16 +9,33 @@ class _LocalPalette {
   static const Color color131326 = Color(0xFF131326);
 }
 
+/// Tray displaying potential clinical symptoms and diagnostic choices.
 class MedicalConsultDiagnosticTray extends StatelessWidget {
+  /// Available clinical symptoms.
   final List<String> symptoms;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Symptoms detected by the scanner.
   final List<String> scannedGlitches;
+
+  /// Currently selected or diagnosed symptoms.
   final List<String> diagnosedSymptoms;
+
+  /// Whether an answer has been submitted for this stage.
   final bool isAnswered;
+
+  /// Whether the submitted diagnosis was correct.
   final bool? isCorrect;
+
+  /// Callback fired when a symptom tile is tapped.
   final Function(String) onSymptomTapped;
 
+  /// Creates a [MedicalConsultDiagnosticTray] widget.
   const MedicalConsultDiagnosticTray({
     super.key,
     required this.symptoms,

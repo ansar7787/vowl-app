@@ -6,12 +6,21 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 
+/// Persona header console widget displaying character avatar, speech bubble, and audio trigger.
 class BranchingDialoguePersonaConsole extends StatelessWidget {
+  /// Active roleplay quest data.
   final RoleplayQuest quest;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Callback to play speech audio for the persona dialogue.
   final VoidCallback onListen;
 
+  /// Creates a [BranchingDialoguePersonaConsole] widget.
   const BranchingDialoguePersonaConsole({
     super.key,
     required this.quest,

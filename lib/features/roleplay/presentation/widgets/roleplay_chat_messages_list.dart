@@ -13,6 +13,7 @@ import 'chat_message.dart';
 /// - Each real bubble is announced as a live region so screen readers
 ///   notify the user when a new response arrives.
 class RoleplayChatMessagesList extends StatelessWidget {
+  /// Creates a [RoleplayChatMessagesList] widget.
   const RoleplayChatMessagesList({
     super.key,
     required this.messages,
@@ -23,14 +24,22 @@ class RoleplayChatMessagesList extends StatelessWidget {
     required this.scrollController,
   });
 
+  /// Ordered list of chat messages to display.
   final List<ChatMessage> messages;
+
+  /// Whether the AI character is actively generating a response.
   final bool isProcessing;
 
   /// Non-null when the player has revealed the hint for the current quest.
   final String? hint;
 
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Scroll controller governing the conversation scroll offset.
   final ScrollController scrollController;
 
   @override

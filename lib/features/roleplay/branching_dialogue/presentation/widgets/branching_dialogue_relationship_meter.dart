@@ -5,11 +5,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Relationship meter widget displaying impact on conversational affinity.
 class BranchingDialogueRelationshipMeter extends StatelessWidget {
+  /// Consequence score delta (-1 for rude, +1 for polite, 0/null for neutral).
   final int? consequenceScore;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
 
+  /// Creates a [BranchingDialogueRelationshipMeter] widget.
   const BranchingDialogueRelationshipMeter({
     super.key,
     required this.consequenceScore,

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Objective instruction header for the Travel Desk minigame.
 class TravelDeskInstruction extends StatelessWidget {
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Custom instruction text or fallback.
   final String? instruction;
 
+  /// Creates a [TravelDeskInstruction] widget.
   const TravelDeskInstruction({
     super.key,
     required this.primaryColor,

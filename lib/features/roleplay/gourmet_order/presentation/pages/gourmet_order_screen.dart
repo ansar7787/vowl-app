@@ -21,9 +21,18 @@ import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourme
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_plate_tray.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Screen presenting the Gourmet Order culinary roleplay minigame.
+///
+/// Players act as fine-dining servers, receiving complex patron orders and plating
+/// correct courses, culinary combinations, and etiquette responses.
 class GourmetOrderScreen extends StatefulWidget {
+  /// Current game level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [GourmetOrderScreen] widget.
   const GourmetOrderScreen({
     super.key,
     required this.level,

@@ -2,12 +2,21 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Header widget displaying patron order requests and dining instructions.
 class GourmetOrderBanquetHeader extends StatelessWidget {
+  /// Prompt text describing the patron's request.
   final String prompt;
+
+  /// Custom gameplay instructions or objective text.
   final String? instruction;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
 
+  /// Creates a [GourmetOrderBanquetHeader] widget.
   const GourmetOrderBanquetHeader({
     super.key,
     required this.prompt,

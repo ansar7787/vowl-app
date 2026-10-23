@@ -10,12 +10,21 @@ class _LocalPalette {
   static const Color color07070f = Color(0xFF07070F);
 }
 
+/// Panel displaying the interviewer's question, demeanor, and real-time reaction.
 class JobInterviewInterviewerPanel extends StatelessWidget {
+  /// Question text delivered by the interviewer.
   final String text;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Interviewer's visual emotional reaction (e.g., 'impressed', 'disappointed').
   final String? reaction;
 
+  /// Creates a [JobInterviewInterviewerPanel] widget.
   const JobInterviewInterviewerPanel({
     super.key,
     required this.text,

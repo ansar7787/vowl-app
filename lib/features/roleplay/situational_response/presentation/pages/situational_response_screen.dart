@@ -19,9 +19,18 @@ import 'package:vowl/features/roleplay/situational_response/presentation/widgets
 import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_formality_gauge.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Screen presenting the Situational Response roleplay communication minigame.
+///
+/// Players navigate daily contextual scenarios, matching tone, formality levels,
+/// and social etiquette to the environment and characters.
 class SituationalResponseScreen extends StatefulWidget {
+  /// Current game level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [SituationalResponseScreen] widget.
   const SituationalResponseScreen({
     super.key,
     required this.level,

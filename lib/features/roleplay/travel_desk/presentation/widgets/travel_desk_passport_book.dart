@@ -5,22 +5,51 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_stamp_painter.dart';
 
+/// Interactive passport book widget containing destination visas and stamp targets.
 class TravelDeskPassportBook extends StatefulWidget {
+  /// Available passport visa destinations.
   final List<String> options;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Index of the correct destination visa.
   final int correctIndex;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Index of the selected visa, if any.
   final int? selectedIndex;
+
+  /// Index of the visa currently hovered over by the stamp.
   final int? hoveredIndex;
+
+  /// Identifier or summary of the traveler document.
   final String? travelDocument;
+
+  /// Whether an answer has been submitted for this stage.
   final bool isAnswered;
+
+  /// Whether the submitted stamp was evaluated as correct.
   final bool? isCorrect;
+
+  /// Animation driving stamp ripple shockwaves.
   final Animation<double> rippleAnimation;
+
+  /// Callback fired when the stamp is pressed with tapped and correct index.
   final Function(int, int) onSubmitStamp;
+
+  /// Callback fired when hover changes to a new visa index.
   final Function(int) onHoverChanged;
+
+  /// Callback fired when hover over a visa ends.
   final Function() onHoverEnded;
+
+  /// Callback fired when dragging a stamp commences.
   final Function() onDragStarted;
 
+  /// Creates a [TravelDeskPassportBook] widget.
   const TravelDeskPassportBook({
     super.key,
     required this.options,

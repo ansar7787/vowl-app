@@ -6,21 +6,51 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_path_painter.dart';
 
+/// Interactive console board widget for the Branching Dialogue minigame.
+///
+/// Renders terminal decision nodes, dynamic path lines, and an interactive draggable
+/// probe allowing players to physically connect and select conversation choices.
 class BranchingDialogueConsoleBoard extends StatelessWidget {
+  /// Available response dialogue options.
   final List<String> options;
+
+  /// Preview descriptions of consequences for each option.
   final List<String> consequencePreviews;
+
+  /// Index of the correct dialogue option.
   final int correctIndex;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Current visual drag offset of the interactive probe.
   final Offset probeOffset;
+
+  /// Index of the node currently hovered over by the probe, if any.
   final int? hoveredIndex;
+
+  /// Index of the node currently selected, if any.
   final int? selectedIndex;
+
+  /// Whether an answer has been submitted for the current question.
   final bool isAnswered;
+
+  /// Callback fired when probe dragging begins.
   final Function(DragStartDetails) onProbeDragStart;
+
+  /// Callback fired as probe is dragged across the board.
   final Function(DragUpdateDetails, Offset, List<Offset>) onProbeDragUpdate;
+
+  /// Callback fired when probe dragging ends over a valid node.
   final Function(int) onProbeDragEnd;
+
+  /// Callback fired when a node is directly tapped.
   final Function(int) onOptionTapped;
 
+  /// Creates a [BranchingDialogueConsoleBoard] widget.
   const BranchingDialogueConsoleBoard({
     super.key,
     required this.options,

@@ -5,11 +5,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 
+/// Anatomical diagram widget highlighting clinical vocabulary and body areas.
 class MedicalConsultBodyDiagram extends StatelessWidget {
+  /// Roleplay quest containing medical vocabulary.
   final RoleplayQuest quest;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
 
+  /// Creates a [MedicalConsultBodyDiagram] widget.
   const MedicalConsultBodyDiagram({
     super.key,
     required this.quest,

@@ -22,9 +22,18 @@ import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/co
 import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_dial_console.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Screen presenting the Conflict Resolver roleplay minigame.
+///
+/// Players evaluate interpersonal or professional disputes, adjusting emotional
+/// equalizer dials to choose the most de-escalating and empathetic resolution.
 class ConflictResolverScreen extends StatefulWidget {
+  /// Current game level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [ConflictResolverScreen] widget.
   const ConflictResolverScreen({
     super.key,
     required this.level,

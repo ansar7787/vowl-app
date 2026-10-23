@@ -9,6 +9,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 /// Each option is wrapped in [MergeSemantics] so the index badge and the
 /// option text are read as a single label by screen readers.
 class RoleplayOptionsSection extends StatelessWidget {
+  /// Creates a [RoleplayOptionsSection] widget.
   const RoleplayOptionsSection({
     super.key,
     required this.options,
@@ -18,12 +19,19 @@ class RoleplayOptionsSection extends StatelessWidget {
     required this.onOptionSelected,
   });
 
+  /// Available dialogue or response options.
   final List<String> options;
+
+  /// Index of the correct response within [options].
   final int correctIndex;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
 
-  /// Called with (tappedIndex, correctIndex, optionText).
+  /// Callback fired when an option is selected with index, correct index, and text.
   final void Function(int index, int correctIndex, String text)
   onOptionSelected;
 

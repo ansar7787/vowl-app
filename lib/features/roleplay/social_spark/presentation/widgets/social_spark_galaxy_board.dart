@@ -12,16 +12,33 @@ class _LocalPalette {
   static const Color color07070f = Color(0xFF07070F);
 }
 
+/// Interactive starry constellation board for chaining words into conversation sparks.
 class SocialSparkGalaxyBoard extends StatelessWidget {
+  /// Available words or phrases placed as stars in the galaxy.
   final List<String> words;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Ordered indices of currently linked stars.
   final List<int> selectedIndices;
+
+  /// Whether an answer has been submitted for this stage.
   final bool isAnswered;
+
+  /// Whether the submitted sequence was evaluated as correct.
   final bool? isCorrect;
+
+  /// Pulse animation value for twinkling stars.
   final double pulseValue;
+
+  /// Callback fired when a star node is tapped.
   final Function(int) onStarTap;
 
+  /// Creates a [SocialSparkGalaxyBoard] widget.
   const SocialSparkGalaxyBoard({
     super.key,
     required this.words,

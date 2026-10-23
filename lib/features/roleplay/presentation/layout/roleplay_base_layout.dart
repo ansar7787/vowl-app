@@ -24,23 +24,54 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
+/// Standard base layout scaffold for all roleplay minigames.
+///
+/// Wraps gameplay screens with a unified header, lives/progress indicator,
+/// peeking mascot, hints, and feedback cards.
 class RoleplayBaseLayout extends StatelessWidget {
+  /// Game subtype for this session.
   final GameSubtype gameType;
+
+  /// Current level index.
   final int level;
+
+  /// Minigame content widget.
   final Widget child;
+
+  /// Whether the player has submitted an answer for the current question.
   final bool isAnswered;
+
+  /// Whether the submitted answer was correct, or `null` if unanswered.
   final bool? isCorrect;
+
+  /// Whether the current question reached final failure after exhausting attempts.
   final bool isFinalFailure;
+
+  /// Callback invoked when continuing to the next question.
   final VoidCallback onContinue;
+
+  /// Callback invoked when a hint is requested.
   final VoidCallback onHint;
 
+  /// Whether confetti animation should be displayed.
   final bool showConfetti;
+
+  /// Optional scroll controller for the content area.
   final ScrollController? scrollController;
+
+  /// Whether the layout should wrap content in a scrollable view.
   final bool useScrolling;
+
+  /// Whether default padding around the child should be disabled.
   final bool disablePadding;
+
+  /// Identifier for the mascot asset.
   final String mascotId;
+
+  /// Whether the content should span full screen width without constraint.
   final bool fullScreenContent;
 
+  /// Creates a [RoleplayBaseLayout] widget.
   const RoleplayBaseLayout({
     super.key,
     required this.gameType,

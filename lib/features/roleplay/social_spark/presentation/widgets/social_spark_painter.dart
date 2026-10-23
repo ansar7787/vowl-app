@@ -2,14 +2,27 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter rendering glowing constellation lines between selected stars.
 class ConstellationPainter extends CustomPainter {
+  /// Ordered indices of currently selected star vertices.
   final List<int> selectedIndices;
+
+  /// Absolute center coordinates of all stars on the board.
   final List<Offset> starOffsets;
+
+  /// Theme accent color.
   final Color themeColor;
+
+  /// Whether an answer has been submitted for this stage.
   final bool isAnswered;
+
+  /// Whether the submitted sequence was evaluated as correct.
   final bool? isCorrect;
+
+  /// Pulse value driving line glow intensities.
   final double pulseValue;
 
+  /// Creates a [ConstellationPainter] instance.
   ConstellationPainter({
     required this.selectedIndices,
     required this.starOffsets,

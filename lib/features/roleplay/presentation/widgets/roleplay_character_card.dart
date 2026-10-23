@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 ///
 /// Stateless and const-constructible — safe to use in any rebuild context.
 class RoleplayCharacterCard extends StatelessWidget {
+  /// Creates a [RoleplayCharacterCard] widget.
   const RoleplayCharacterCard({
     super.key,
     required this.roleName,
@@ -13,8 +14,13 @@ class RoleplayCharacterCard extends StatelessWidget {
     required this.primaryColor,
   });
 
+  /// Name of the role being portrayed by the AI.
   final String roleName;
+
+  /// Icon representing the character persona.
   final IconData icon;
+
+  /// Theme primary accent color.
   final Color primaryColor;
 
   @override

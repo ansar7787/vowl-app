@@ -11,21 +11,48 @@ class _LocalPalette {
   static const Color color131326 = Color(0xFF131326);
 }
 
+/// Interactive rotary equalizer console allowing players to dial into response strategies.
 class ConflictResolverDialConsole extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Current normalized rotation progress (0.0 to 1.0).
   final double rotation;
+
+  /// Animation driving the equalizer wave vibration.
   final Animation<double> waveAnimation;
+
+  /// Callback fired when dragging on the dial starts.
   final GestureDragStartCallback? onDialDragStart;
+
+  /// Callback fired as the dial is rotated.
   final Function(DragUpdateDetails, Offset) onDialDragged;
+
+  /// Callback fired when dragging on the dial ends.
   final GestureDragEndCallback? onDialDragEnd;
+
+  /// Callback to step one notch counter-clockwise.
   final VoidCallback? onStepLeft;
+
+  /// Callback to step one notch clockwise.
   final VoidCallback? onStepRight;
+
+  /// Text content of the currently focused response strategy.
   final String? focusedText;
+
+  /// Whether an answer has been submitted for this stage.
   final bool isAnswered;
+
+  /// Whether the submitted answer was correct.
   final bool? isCorrect;
+
+  /// Whether the initial dial selection phase passed.
   final bool isFirstStagePassed;
 
+  /// Creates a [ConflictResolverDialConsole] widget.
   const ConflictResolverDialConsole({
     super.key,
     required this.color,
