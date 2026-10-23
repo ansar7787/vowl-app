@@ -29,6 +29,7 @@ final class _Absent {
 /// Inherits the sentinel-based nullable override from [UserEntity.copyWith],
 /// extended here to preserve the concrete [UserModel] return type.
 class UserModel extends UserEntity {
+  /// Creates a [UserModel] instance.
   const UserModel({
     required super.id,
     required super.email,

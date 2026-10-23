@@ -46,70 +46,187 @@ class UserEntity {
   static const _listEq = ListEquality<dynamic>();
   static const _deepEq = DeepCollectionEquality();
 
+  /// Unique Firebase authentication identifier.
   final String id;
+
+  /// User's email address.
   final String email;
+
+  /// Optional display name.
   final String? displayName;
+
+  /// Optional avatar URL.
   final String? photoUrl;
+
+  /// Cloud Messaging device registration token.
   final String? fcmToken;
+
+  /// Available coin balance.
   final int coins;
+
+  /// Lifetime accumulated experience points.
   final int totalExp;
+
+  /// Whether the user possesses administrative privileges.
   final bool isAdmin;
+
+  /// Current active daily login streak in days.
   final int currentStreak;
+
+  /// Timestamp of the user's most recent login.
   final DateTime? lastLoginDate;
+
+  /// Whether the user has an active premium subscription.
   final bool isPremium;
+
+  /// Whether the user's email address has been verified.
   final bool isEmailVerified;
+
+  /// Timestamp when the premium subscription expires.
   final DateTime? premiumExpiryDate;
+
+  /// Category mastery percentages keyed by category identifier.
   final Map<String, int> categoryStats;
+
+  /// Highest unlocked level index keyed by game type.
   final Map<String, int> unlockedLevels;
+
+  /// Completed level indices keyed by game type.
   final Map<String, List<int>> completedLevels;
+
+  /// Star ratings earned keyed by game type and level string.
   final Map<String, Map<String, int>> starRatings;
+
+  /// Identifiers of all badges unlocked by the user.
   final List<String> badges;
+
+  /// Count of available streak freeze tokens.
   final int streakFreezes;
+
+  /// Count of individual hint tokens.
   final int hintCount;
+
+  /// Count of bulk hint packs available.
   final int hintPacks;
+
+  /// Count of available double XP tokens.
   final int doubleXP;
+
+  /// Timestamp when active double XP multiplier expires.
   final DateTime? doubleXPExpiry;
+
+  /// Daily XP earnings history keyed by date string.
   final Map<String, int> dailyXpHistory;
+
+  /// Recent activity event logs.
   final List<Map<String, dynamic>> recentActivities;
+
+  /// Timestamp of the last VIP gift redemption.
   final DateTime? lastVipGiftDate;
+
+  /// Timestamp of the last daily reward claim.
   final DateTime? lastDailyRewardDate;
+
+  /// Timestamp of the last kids daily reward claim.
   final DateTime? lastKidsDailyRewardDate;
+
+  /// Kids-specific coin balance.
   final int kidsCoins;
+
+  /// List of sticker asset identifiers collected in kids zone.
   final List<String> kidsStickers;
+
+  /// Currently selected mascot identifier for kids zone.
   final String? kidsMascot;
+
+  /// Currently equipped sticker badge in kids zone.
   final String? kidsEquippedSticker;
+
+  /// List of accessory identifiers unlocked in kids zone.
   final List<String> kidsOwnedAccessories;
+
+  /// Identifier of the currently equipped accessory in kids zone.
   final String? kidsEquippedAccessory;
+
+  /// Identifier of the primary Vowl mascot chosen by user.
   final String? vowlMascot;
+
+  /// Identifier of the equipped Vowl mascot accessory.
   final String? vowlEquippedAccessory;
+
+  /// List of Vowl mascot accessories unlocked.
   final List<String> vowlOwnedAccessories;
+
+  /// List of Vowl mascot characters unlocked.
   final List<String> vowlOwnedMascots;
+
+  /// Streak milestone day counts already claimed.
   final List<int> claimedStreakMilestones;
+
+  /// Level milestones already claimed.
   final List<int> claimedLevelMilestones;
+
+  /// Audit history log of coin transactions.
   final List<Map<String, dynamic>> coinHistory;
+
+  /// Whether the user owns a permanent XP boost.
   final bool hasPermanentXPBoost;
+
+  /// Timestamp of the last free wheel spin.
   final DateTime? lastFreeSpinDate;
+
+  /// Timestamp of the last rewarded ad wheel spin.
   final DateTime? lastAdSpinDate;
+
+  /// Number of rewarded ad spins used today.
   final int adSpinsUsedToday;
+
+  /// List of furniture item IDs owned in kids room.
   final List<String> kidsOwnedFurniture;
+
+  /// Equipped furniture mapping in kids room.
   final Map<String, String> kidsEquippedFurniture;
+
+  /// Count of golden keys owned.
   final int keys;
+
+  /// Previous leaderboard rank.
   final int? previousRank;
 
   // ---------------------------------------------------------------------------
   // Kids Room — Buddy Lifecycle (persisted)
   // ---------------------------------------------------------------------------
+  /// Current emotional state of the kids buddy companion.
   final String kidsBuddyMood; // happy, hungry, sleepy, bored
+
+  /// Energy percentage of the kids buddy companion (0-100).
   final int kidsBuddyEnergy; // 0-100
+
+  /// Hunger percentage of the kids buddy companion (0-100).
   final int kidsBuddyHunger; // 0-100
+
+  /// Timestamp of the last care interaction with the kids buddy.
   final DateTime? kidsLastCareDate;
+
+  /// Consecutive day streak of caring for the kids buddy.
   final int kidsCareStreak;
+
+  /// Room progression level in kids zone.
   final int kidsRoomLevel;
+
+  /// Theme key for the kids room environment.
   final String kidsRoomTheme; // nature, space, ocean, sweet
+
+  /// Timestamp when the kids buddy was last fed.
   final DateTime? kidsLastFeedTime;
+
+  /// Number of minigames played in kids zone today.
   final int kidsGamesPlayedToday;
+
+  /// Timestamp of the most recent kids game played.
   final DateTime? kidsLastGameDate;
 
+  /// Creates a [UserEntity] instance.
   const UserEntity({
     required this.id,
     required this.email,

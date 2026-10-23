@@ -20,7 +20,9 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 // EVENTS
 // ============================================================================
 
+/// Base class for all profile BLoC events.
 abstract class ProfileEvent extends Equatable {
+  /// Const constructor for sub-classes.
   const ProfileEvent();
   @override
   List<Object?> get props => [];
@@ -247,6 +249,7 @@ class ProfileState extends Equatable {
 // BLOC
 // ============================================================================
 
+/// BLoC managing user profile settings, avatars, cosmetics, and accessories.
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   final UpdateDisplayName updateDisplayName;
   final UpdateProfilePicture updateProfilePicture;
@@ -266,6 +269,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   final PurchaseGoldenKey purchaseGoldenKey;
   final AddGoldenKey addGoldenKey;
 
+  /// Creates a [ProfileBloc] instance with all required profile and customization use cases.
   ProfileBloc({
     required this.updateDisplayName,
     required this.updateProfilePicture,

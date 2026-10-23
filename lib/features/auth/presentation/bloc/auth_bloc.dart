@@ -26,7 +26,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 // EVENTS
 // ============================================================================
 
+/// Base class for all authentication BLoC events.
 abstract class AuthEvent extends Equatable {
+  /// Const constructor for sub-classes.
   const AuthEvent();
   @override
   List<Object?> get props => [];
@@ -167,6 +169,7 @@ class AuthState extends Equatable {
 // BLOC
 // ============================================================================
 
+/// BLoC managing user authentication lifecycle, session state, and account events.
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final GetUserStream _getUserStream;
   final LogOut _logOut;
@@ -179,6 +182,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   StreamSubscription<UserEntity?>? _userSubscription;
 
+  /// Creates an [AuthBloc] instance with all required use cases and network services.
   AuthBloc({
     required GetUserStream getUserStream,
     required LogOut logOut,

@@ -19,7 +19,9 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 // EVENTS
 // ============================================================================
 
+/// Base class for all economy BLoC events.
 abstract class EconomyEvent extends Equatable {
+  /// Const constructor for sub-classes.
   const EconomyEvent();
   @override
   List<Object?> get props => [];
@@ -165,6 +167,7 @@ class EconomyState extends Equatable {
 // BLOC
 // ============================================================================
 
+/// BLoC managing virtual currency balances, reward transactions, and store purchases.
 class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   final UpdateUserCoins updateUserCoins;
   final PurchaseHint purchaseHint;
@@ -182,6 +185,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   final AuthBloc authBloc;
   final NetworkInfo _networkInfo;
 
+  /// Creates an [EconomyBloc] instance with all required use cases.
   EconomyBloc({
     required this.updateUserCoins,
     required this.purchaseHint,

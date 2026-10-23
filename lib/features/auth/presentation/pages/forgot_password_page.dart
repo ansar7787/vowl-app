@@ -20,7 +20,9 @@ import 'package:vowl/core/utils/app_router.dart';
 // Page — provides the dedicated [ForgotPasswordCubit]
 // ---------------------------------------------------------------------------
 
+/// Screen allowing users to request a password recovery email.
 class ForgotPasswordPage extends StatelessWidget {
+  /// Creates a [ForgotPasswordPage] widget.
   const ForgotPasswordPage({super.key});
 
   @override
@@ -36,7 +38,9 @@ class ForgotPasswordPage extends StatelessWidget {
 // View
 // ---------------------------------------------------------------------------
 
+/// Main form view for the [ForgotPasswordPage].
 class ForgotPasswordView extends StatefulWidget {
+  /// Creates a [ForgotPasswordView] widget.
   const ForgotPasswordView({super.key});
 
   @override

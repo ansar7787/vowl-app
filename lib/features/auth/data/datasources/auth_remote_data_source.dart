@@ -45,6 +45,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   final gsignin.GoogleSignIn _googleSignIn;
   final FirebaseFirestore _firestore;
 
+  /// Creates an [AuthRemoteDataSourceImpl] instance.
   AuthRemoteDataSourceImpl({
     FirebaseAuth? firebaseAuth,
     gsignin.GoogleSignIn? googleSignIn,
