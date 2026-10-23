@@ -24,7 +24,9 @@ class _LocalPalette {
   static const Color colorff5722 = Color(0xFFFF5722);
 }
 
+/// Screen presenting the collection sticker book of pedagogical rewards.
 class StickerBookScreen extends StatefulWidget {
+  /// Creates a [StickerBookScreen] widget.
   const StickerBookScreen({super.key});
 
   @override

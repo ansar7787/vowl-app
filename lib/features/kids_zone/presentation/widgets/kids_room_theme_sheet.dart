@@ -4,11 +4,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
+/// Bottom sheet modal enabling the child to switch the buddy room's visual backdrop.
 class KidsRoomThemeSheet extends StatelessWidget {
+  /// The active user entity.
   final UserEntity user;
+
+  /// Identifier of the currently selected room theme.
   final String currentTheme;
+
+  /// Callback invoked when a theme is chosen.
   final Function(String theme) onThemeSelected;
 
+  /// Creates a [KidsRoomThemeSheet] widget.
   const KidsRoomThemeSheet({
     super.key,
     required this.user,

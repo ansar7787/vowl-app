@@ -14,15 +14,30 @@ class _LocalPalette {
   static const Color color15803d = Color(0xFF15803D);
 }
 
+/// Composed structural layout positioning the background, furniture, mascot, and HUD controls.
 class KidsRoomLayout extends StatelessWidget {
+  /// Room environmental theme identifier.
   final String theme;
-  final Map<String, String> equippedFurniture;
-  final Map<String, List<Map<String, dynamic>>> furnitureStore;
-  final Widget mascotWidget;
-  final Widget topBarWidget;
-  final Widget actionPanelWidget;
-  final Widget? overlayWidget; // For dialogs, feeding, etc.
 
+  /// Map of currently equipped furniture identifiers.
+  final Map<String, String> equippedFurniture;
+
+  /// Catalog of furniture items.
+  final Map<String, List<Map<String, dynamic>>> furnitureStore;
+
+  /// Mascot companion widget.
+  final Widget mascotWidget;
+
+  /// Top status bar widget.
+  final Widget topBarWidget;
+
+  /// Bottom action dock widget.
+  final Widget actionPanelWidget;
+
+  /// Optional overlay modal widget.
+  final Widget? overlayWidget;
+
+  /// Creates a [KidsRoomLayout] widget.
   const KidsRoomLayout({
     super.key,
     required this.theme,

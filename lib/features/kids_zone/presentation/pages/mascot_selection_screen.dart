@@ -25,7 +25,9 @@ class _LocalPalette {
   static const Color colorfff7ed = Color(0xFFFFF7ED);
 }
 
+/// Screen allowing children to select or change their active learning companion mascot.
 class MascotSelectionScreen extends StatelessWidget {
+  /// Creates a [MascotSelectionScreen] widget.
   const MascotSelectionScreen({super.key});
 
   @override

@@ -13,7 +13,9 @@ class _LocalPalette {
   static const Color color60a5fa = Color(0xFF60A5FA);
 }
 
+/// Static catalog of assets, stickers, accessories, and boutique catalog items for Kids Zone.
 class KidsAssets {
+  /// Map of sticker emojis grouped by curriculum game domain.
   static const Map<String, List<String>> stickerMap = {
     'alphabet': ['🔠', '🅰️', '🔡', '🎓'],
     'numbers': ['🔢', '1️⃣', '💯', '🏆'],
@@ -42,6 +44,7 @@ class KidsAssets {
     'professions': ['👨‍⚕️', '👩‍🏫', '👮', '👨‍🚒'],
   };
 
+  /// Map of accessory emojis mapped by unique accessory identifier.
   static const Map<String, String> accessoryMap = {
     'cape_red': '🦸',
     'shades_cool': '🕶️',
@@ -67,6 +70,7 @@ class KidsAssets {
     'shoes_neon': '👟',
   };
 
+  /// Catalog of boutique shop items available for purchase with in-game currency.
   static final List<Map<String, dynamic>> shopItems = [
     {
       'id': 'cape_red',

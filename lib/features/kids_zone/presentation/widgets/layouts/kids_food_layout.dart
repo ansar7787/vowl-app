@@ -21,14 +21,18 @@ class _LocalPalette {
   static const Color colore4e4e7 = Color(0xFFE4E4E7);
 }
 
-/// Chef's Kitchen Theme for Food Game
-/// Space Complexity: O(1)
-/// Time Complexity: O(N) where N is the number of options (max 4)
+/// Chef's kitchen pedagogical layout for the Kids Food vocabulary game.
 class KidsFoodLayout extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The title of the game.
   final String title;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsFoodLayout] widget.
   const KidsFoodLayout({
     super.key,
     required this.level,

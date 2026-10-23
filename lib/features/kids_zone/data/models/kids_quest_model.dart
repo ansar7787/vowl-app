@@ -1,6 +1,8 @@
 import 'package:vowl/features/kids_zone/domain/entities/kids_quest.dart';
 
+/// Data transfer model for Kids Zone learning quests, supporting JSON serialization.
 class KidsQuestModel extends KidsQuest {
+  /// Creates a [KidsQuestModel] instance.
   const KidsQuestModel({
     required super.id,
     required super.gameType,
@@ -23,6 +25,7 @@ class KidsQuestModel extends KidsQuest {
     super.animalSound,
   });
 
+  /// Creates a [KidsQuestModel] deserialized from a [json] map.
   factory KidsQuestModel.fromJson(Map<String, dynamic> json) {
     // Helper to parse lists safely and prevent TypeErrors
     List<String>? parseStringList(dynamic value) {
@@ -68,6 +71,7 @@ class KidsQuestModel extends KidsQuest {
     );
   }
 
+  /// Converts this [KidsQuestModel] into a serialized JSON map.
   Map<String, dynamic> toJson() {
     return {
       'id': id,

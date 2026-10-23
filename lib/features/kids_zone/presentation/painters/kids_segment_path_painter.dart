@@ -1,21 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter rendering connection lines and bouncy curves between level nodes on the Kids Level Map.
 class SegmentPathPainter extends CustomPainter {
+  /// Theme color of the incoming path from the preceding level node.
   final Color incomingColor;
-  final Color outgoingColor;
-  final double currentOffset;
-  final double nextOffset;
-  final double
-  prevOffset; // Added to calculate incoming curve from previous node
-  final bool isLast;
-  final int level;
-  final double incomingPathProgress;
-  final double outgoingPathProgress;
-  final bool isCurrent;
-  final Animation<double>?
-  glowAnimation; // 0.0 → 1.0: glow pulse for current node path
 
+  /// Theme color of the outgoing path leading to the next level node.
+  final Color outgoingColor;
+
+  /// Horizontal center offset of the current level node.
+  final double currentOffset;
+
+  /// Horizontal center offset of the next level node.
+  final double nextOffset;
+
+  /// Horizontal center offset of the preceding level node.
+  final double prevOffset;
+
+  /// Whether this is the final level node on the map.
+  final bool isLast;
+
+  /// Progression level number of the current node.
+  final int level;
+
+  /// Drawing completion progress for the incoming curve (0.0 to 1.0).
+  final double incomingPathProgress;
+
+  /// Drawing completion progress for the outgoing curve (0.0 to 1.0).
+  final double outgoingPathProgress;
+
+  /// Whether the node is the user's currently active level.
+  final bool isCurrent;
+
+  /// Optional pulse animation controller for the active node path.
+  final Animation<double>? glowAnimation;
+
+  /// Creates a [SegmentPathPainter] instance.
   SegmentPathPainter({
     required this.incomingColor,
     required this.outgoingColor,

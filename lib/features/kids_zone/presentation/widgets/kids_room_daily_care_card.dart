@@ -6,13 +6,24 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Daily care checklist card tracking feeding, playing, and cleaning tasks for streak rewards.
 class KidsRoomDailyCareCard extends StatelessWidget {
+  /// The active user entity.
   final UserEntity user;
+
+  /// Whether the play activity was completed today.
   final bool hasPlayed;
+
+  /// Whether the cleaning activity was completed today.
   final bool hasCleaned;
+
+  /// Whether today's daily care bonus has been claimed.
   final bool isClaimed;
+
+  /// Callback invoked when claiming the streak reward.
   final VoidCallback onClaim;
 
+  /// Creates a [KidsRoomDailyCareCard] widget.
   const KidsRoomDailyCareCard({
     super.key,
     required this.user,

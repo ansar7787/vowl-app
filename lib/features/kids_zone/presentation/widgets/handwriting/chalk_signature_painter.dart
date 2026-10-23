@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart' hide Ink;
 import 'package:google_mlkit_digital_ink_recognition/google_mlkit_digital_ink_recognition.dart';
 
-/// Paints handwritten strokes with quadratic bezier curve smoothing and single-dot point rendering.
+/// Custom painter rendering handwritten digital ink strokes with Bezier smoothing.
 class ChalkSignaturePainter extends CustomPainter {
+  /// The collection of ink strokes to render.
   final List<Stroke> strokes;
+
+  /// The color used to render chalk strokes.
   final Color strokeColor;
+
+  /// Revision counter used to detect incremental stroke updates.
   final int revision;
 
+  /// Creates a [ChalkSignaturePainter] instance.
   const ChalkSignaturePainter(this.strokes, this.strokeColor, this.revision);
 
   @override

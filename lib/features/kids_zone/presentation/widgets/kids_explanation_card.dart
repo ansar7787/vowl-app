@@ -10,11 +10,18 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 
+/// Bottom sheet card displaying pedagogical explanations and phonetic audio when an answer is missed.
 class KidsExplanationCard extends StatefulWidget {
+  /// The quest entity whose explanation is displayed.
   final KidsQuest quest;
+
+  /// The primary accent color for buttons and highlights.
   final Color primaryColor;
+
+  /// Callback invoked to dismiss the card and try the question again.
   final VoidCallback onTryAgain;
 
+  /// Creates a [KidsExplanationCard] widget.
   const KidsExplanationCard({
     super.key,
     required this.quest,

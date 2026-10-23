@@ -3,12 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
+/// Resilient image renderer supporting network URLs, local asset paths, and emojis with fallbacks.
 class KidsImage extends StatelessWidget {
+  /// Image source string (URL, asset path, or emoji).
   final String? imageUrl;
+
+  /// Fallback icon if the image cannot be loaded.
   final IconData fallbackIcon;
+
+  /// Optional explicit display size.
   final double? size;
+
+  /// Optional icon color tint.
   final Color? iconColor;
 
+  /// Creates a [KidsImage] widget.
   const KidsImage({
     super.key,
     this.imageUrl,

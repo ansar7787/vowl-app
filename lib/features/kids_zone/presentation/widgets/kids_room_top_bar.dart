@@ -6,10 +6,15 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_mood_indicator.dart'
     as import_indicator;
 
+/// Top bar HUD inside the virtual buddy room with back navigation and mood badges.
 class KidsRoomTopBar extends StatelessWidget {
+  /// The active user entity.
   final UserEntity user;
+
+  /// Callback invoked when pressing back.
   final VoidCallback onBack;
 
+  /// Creates a [KidsRoomTopBar] widget.
   const KidsRoomTopBar({super.key, required this.user, required this.onBack});
 
   @override

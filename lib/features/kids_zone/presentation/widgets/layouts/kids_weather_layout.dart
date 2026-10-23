@@ -75,10 +75,16 @@ class _WeatherPalette {
 /// - Time Complexity: O(N) where N is options count (typically 3 or 4)
 /// - Space Complexity: O(1) auxiliary space
 class KidsWeatherLayout extends StatefulWidget {
+  /// The current game level or world index.
   final int level;
+
+  /// The display title of the game.
   final String title;
+
+  /// The primary theme color for accents and badges.
   final Color primaryColor;
 
+  /// Creates a [KidsWeatherLayout] widget.
   const KidsWeatherLayout({
     super.key,
     required this.level,

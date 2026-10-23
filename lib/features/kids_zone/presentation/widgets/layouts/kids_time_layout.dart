@@ -39,14 +39,28 @@ class _TimePalette {
 /// Analyzes curriculum instruction, options, and metadata to extract
 /// pedagogical subtypes, time badges, and exact analog clock hands positions.
 class TimeQuestData {
+  /// The raw unparsed instruction prompt.
   final String rawInstruction;
+
+  /// The internal pedagogical subtype identifier.
   final String subtype;
+
+  /// The display title for the pedagogical badge.
   final String subtypeBadge;
+
+  /// The emoji icon corresponding to the subtype.
   final String subtypeIcon;
+
+  /// The target hour and minute represented on the analog clock.
   final (int hour, int minute) targetTime;
+
+  /// The interaction pattern used for answering.
   final String interactionType;
+
+  /// An optional decorative emoji parsed from the question context.
   final String? emoji;
 
+  /// Creates a [TimeQuestData] instance.
   const TimeQuestData({
     required this.rawInstruction,
     required this.subtype,
@@ -57,6 +71,7 @@ class TimeQuestData {
     this.emoji,
   });
 
+  /// Parses a [KidsQuest] into a structured [TimeQuestData] instance.
   factory TimeQuestData.parse(KidsQuest quest) {
     final rawInstruction = InstructionHelper.getInstruction(quest);
     final subtype =
@@ -287,10 +302,16 @@ class TimeQuestData {
 /// - Adaptive chronometer option cards that accommodate both short terms and long word problem sentences without microscopic scaling.
 /// - Zero RenderFlex overflow guarantee across 320dp - 430dp+ screens and short display heights.
 class KidsTimeLayout extends StatefulWidget {
+  /// The current game level or world index.
   final int level;
+
+  /// The display title of the game.
   final String title;
+
+  /// The primary theme color for accents and badges.
   final Color primaryColor;
 
+  /// Creates a [KidsTimeLayout] widget.
   const KidsTimeLayout({
     super.key,
     required this.level,

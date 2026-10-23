@@ -11,13 +11,24 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/hint_utility.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 
+/// Header widget displaying progression progress bar, heart lives, sound toggles, and quit button.
 class KidsGameHeader extends StatelessWidget {
+  /// Display title of the current game.
   final String title;
+
+  /// Current level number.
   final int level;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// The current kids game state.
   final KidsState state;
+
+  /// Optional callback invoked when tapping the info button.
   final VoidCallback? onInfoTap;
 
+  /// Creates a [KidsGameHeader] widget.
   const KidsGameHeader({
     super.key,
     required this.title,

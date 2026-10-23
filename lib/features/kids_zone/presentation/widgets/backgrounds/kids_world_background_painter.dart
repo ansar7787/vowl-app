@@ -4,8 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Clean notebook-style background painter with subtle dots and floating pedagogical emojis.
 class KidsWorldBackgroundPainter extends StatelessWidget {
+  /// The game type identifier used to determine floating decorative emojis.
   final String gameType;
+
+  /// Creates a [KidsWorldBackgroundPainter] widget.
   const KidsWorldBackgroundPainter({super.key, required this.gameType});
 
   @override

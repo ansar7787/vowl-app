@@ -6,10 +6,15 @@ import 'package:vowl/features/kids_zone/data/datasources/kids_local_data_source.
 import 'package:vowl/features/kids_zone/domain/entities/kids_quest.dart';
 import 'package:vowl/features/kids_zone/domain/repositories/kids_repository.dart';
 
+/// Concrete repository coordinating local asset and remote Firestore quest fetching.
 class KidsRepositoryImpl implements KidsRepository {
+  /// The remote Cloud Firestore data source.
   final KidsRemoteDataSource remoteDataSource;
+
+  /// The local asset bundle data source.
   final KidsLocalDataSource localDataSource;
 
+  /// Creates a [KidsRepositoryImpl] with the required data sources.
   KidsRepositoryImpl({
     required this.remoteDataSource,
     required this.localDataSource,

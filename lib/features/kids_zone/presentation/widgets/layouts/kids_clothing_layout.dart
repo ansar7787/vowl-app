@@ -63,10 +63,16 @@ class _WardrobePalette {
 ///   small phone compatibility.
 /// - Haptic feedback on selection, correct, and error pathways.
 class KidsClothingLayout extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The title of the game.
   final String title;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsClothingLayout] widget.
   const KidsClothingLayout({
     super.key,
     required this.level,

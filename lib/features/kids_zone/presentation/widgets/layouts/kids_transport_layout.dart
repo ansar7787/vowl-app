@@ -225,6 +225,7 @@ class TransportVocabularyHelper {
     '🔨': 'Hammer',
   };
 
+  /// Returns the human-readable English label for a given vehicle emoji or [text].
   static String getLabel(String text) {
     final label = _vocab[text.trim()];
     if (label != null) return label;
@@ -235,6 +236,7 @@ class TransportVocabularyHelper {
     return '';
   }
 
+  /// Returns the text suitable for TTS pronunciation given an emoji or [text].
   static String getSpeechText(String text) {
     final label = getLabel(text);
     if (label.isNotEmpty) return label;
@@ -264,10 +266,16 @@ class TransportVocabularyHelper {
 /// - Time Complexity: O(N) where N is options count (typically 3)
 /// - Space Complexity: O(1) auxiliary space
 class KidsTransportLayout extends StatefulWidget {
+  /// The current game level or world index.
   final int level;
+
+  /// The display title of the game.
   final String title;
+
+  /// The primary theme color for accents and badges.
   final Color primaryColor;
 
+  /// Creates a [KidsTransportLayout] widget.
   const KidsTransportLayout({
     super.key,
     required this.level,

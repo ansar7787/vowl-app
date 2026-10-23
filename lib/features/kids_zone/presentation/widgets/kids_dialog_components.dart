@@ -13,9 +13,12 @@ class _LocalPalette {
   static const Color color8b4513 = Color(0xFF8B4513);
 }
 
-/// AAA Rotating Sunburst Background for Victory Screens
+/// Rotating sunburst background for victory screens and celebration overlays.
 class KidsSunburstBackground extends StatelessWidget {
+  /// Theme color for the radiating sunburst rays.
   final Color color;
+
+  /// Creates a [KidsSunburstBackground] widget.
   const KidsSunburstBackground({super.key, required this.color});
 
   @override
@@ -42,15 +45,27 @@ class KidsSunburstBackground extends StatelessWidget {
   }
 }
 
-/// AAA 3D Button with Shine and Solid Shadows
+/// Three-dimensional stylized push button with solid depth shadows.
 class Kids3DButton extends StatelessWidget {
+  /// Button label text.
   final String text;
+
+  /// Background theme color.
   final Color color;
+
+  /// Callback invoked when the button is pressed.
   final VoidCallback onTap;
+
+  /// Optional leading icon.
   final IconData? icon;
+
+  /// Whether golden celebratory styling should be applied.
   final bool isGolden;
+
+  /// Custom text color override.
   final Color? textColor;
 
+  /// Creates a [Kids3DButton] widget.
   const Kids3DButton({
     super.key,
     required this.text,
@@ -149,14 +164,24 @@ class Kids3DButton extends StatelessWidget {
   }
 }
 
-/// AAA Dialog Frame with Ribbon Header and Chunky Borders
+/// Chunky framed dialog container with an overlapping ribbon header banner.
 class KidsDialogContainer extends StatelessWidget {
+  /// Primary theme accent color for borders.
   final Color primaryColor;
+
+  /// Dialog body content.
   final Widget child;
+
+  /// Header title text displayed on the banner.
   final String title;
+
+  /// Optional background color for the ribbon banner.
   final Color? ribbonColor;
+
+  /// Optional text color for the ribbon banner title.
   final Color? ribbonTextColor;
 
+  /// Creates a [KidsDialogContainer] widget.
   const KidsDialogContainer({
     super.key,
     required this.primaryColor,

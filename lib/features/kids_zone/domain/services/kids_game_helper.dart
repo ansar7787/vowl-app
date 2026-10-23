@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:vowl/features/kids_zone/kids_routes.dart';
 
+/// Metadata describing a Kids Zone mini-game's presentation and routing attributes.
 class KidsGameMetadata {
+  /// The unique game type identifier.
   final String gameType;
+
+  /// Title displayed on grid cards.
   final String gridTitle;
+
+  /// Subtitle or summary description.
   final String subtitle;
+
+  /// Associated icon data.
   final IconData icon;
 
+  /// Creates a [KidsGameMetadata] descriptor.
   const KidsGameMetadata({
     required this.gameType,
     required this.gridTitle,
@@ -14,11 +23,16 @@ class KidsGameMetadata {
     required this.icon,
   });
 
+  /// Full localized display title of the game.
   String get fullTitle => KidsRoutes.getKidsGameTitle(gameType);
+
+  /// Theme accent color of the game.
   Color get color => KidsRoutes.getKidsGameColor(gameType);
 }
 
+/// Helper utility organizing game catalog metadata and level lookups.
 class KidsGameHelper {
+  /// Comprehensive catalog of all available Kids Zone games.
   static const List<KidsGameMetadata> allGames = [
     KidsGameMetadata(
       gameType: 'handwriting',

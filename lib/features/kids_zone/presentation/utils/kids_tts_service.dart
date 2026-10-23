@@ -5,12 +5,14 @@ import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/tts_text_cleaner.dart';
 import 'package:vowl/core/utils/tts_voice_helper.dart';
 
+/// Service handling text-to-speech narration and phonetic pronunciation for Kids Zone.
 class KidsTTSService {
   final TtsService _ttsService;
   static const String _narrationKey = "is_kids_narration_enabled";
 
   SharedPreferences? _prefs;
 
+  /// Creates a [KidsTTSService] instance.
   KidsTTSService({TtsService? ttsService})
       : _ttsService = ttsService ?? di.sl<TtsService>();
 
@@ -27,8 +29,10 @@ class KidsTTSService {
     }
   }
 
+  /// Whether the TTS engine is actively speaking.
   bool get isSpeaking => _ttsService.isSpeaking;
 
+  /// Whether narration voiceover is enabled.
   Future<bool> isNarrationEnabled() async {
     final prefs = await _getPrefs();
     final globalEnabled = prefs.getBool('sound_enabled') ?? true;
@@ -36,11 +40,13 @@ class KidsTTSService {
     return prefs.getBool(_narrationKey) ?? true;
   }
 
+  /// Sets whether narration voiceover should be enabled.
   Future<void> setNarrationEnabled(bool enabled) async {
     final prefs = await _getPrefs();
     await prefs.setBool(_narrationKey, enabled);
   }
 
+  /// Speaks the provided [text] using kid-friendly speech cadence.
   Future<bool> speak(String text, {bool force = false}) async {
     if (text.isEmpty) return false;
     if (!force && !(await isNarrationEnabled())) return false;

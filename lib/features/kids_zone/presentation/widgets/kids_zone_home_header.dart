@@ -8,11 +8,18 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Header component on the Kids Zone home screen greeting the child with mascot companions.
 class KidsZoneHomeHeader extends StatelessWidget {
+  /// Identifier of the user's active mascot.
   final String mascot;
+
+  /// Optional customized name of the child.
   final String? childName;
+
+  /// Whether dark theme styling is active.
   final bool isDark;
 
+  /// Creates a [KidsZoneHomeHeader] widget.
   const KidsZoneHomeHeader({
     super.key,
     required this.mascot,

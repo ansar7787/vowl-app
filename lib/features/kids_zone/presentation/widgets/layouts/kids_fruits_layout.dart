@@ -21,14 +21,18 @@ class _LocalPalette {
   static const Color color451a03 = Color(0xFF451A03);
 }
 
-/// Farmer's Market Theme for Fruits Game
-/// Space Complexity: O(1)
-/// Time Complexity: O(N) where N is the number of options (max 4)
+/// Farmer's market pedagogical layout for the Kids Fruits vocabulary game.
 class KidsFruitsLayout extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The title of the game.
   final String title;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsFruitsLayout] widget.
   const KidsFruitsLayout({
     super.key,
     required this.level,

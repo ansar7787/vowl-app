@@ -5,17 +5,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Action control dock for the virtual buddy room offering decor, feeding, playing, and care routines.
 class KidsRoomActionPanel extends StatelessWidget {
+  /// Whether the mascot is currently sleeping.
   final bool isSleeping;
+
+  /// Count of mini-games played today.
   final int gamesPlayedToday;
+
+  /// Callback to open the room decoration bottom sheet.
   final VoidCallback onDecor;
+
+  /// Callback to open the feeding bottom sheet.
   final VoidCallback onFeed;
+
+  /// Callback to launch a playful mini-game.
   final VoidCallback onPlay;
+
+  /// Callback to trigger the room cleaning interactive activity.
   final VoidCallback onClean;
+
+  /// Callback to toggle sleeping light and posture.
   final VoidCallback onSleepToggle;
+
+  /// Callback to speak with the mascot companion.
   final VoidCallback onTalk;
+
+  /// Callback to switch room environmental themes.
   final VoidCallback onThemeTap;
 
+  /// Creates a [KidsRoomActionPanel] widget.
   const KidsRoomActionPanel({
     super.key,
     required this.isSleeping,

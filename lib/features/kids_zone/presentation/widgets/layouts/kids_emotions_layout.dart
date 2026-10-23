@@ -24,14 +24,18 @@ class _LocalPalette {
   static const Color color0284c7 = Color(0xFF0284C7);
 }
 
-/// Puppet Theater Theme for Emotions Game
-/// Space Complexity: O(1)
-/// Time Complexity: O(N) where N is the number of options (max 4)
+/// Puppet theater pedagogical layout for the Kids Emotions recognition game.
 class KidsEmotionsLayout extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The title of the game.
   final String title;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsEmotionsLayout] widget.
   const KidsEmotionsLayout({
     super.key,
     required this.level,

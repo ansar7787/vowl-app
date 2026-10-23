@@ -27,10 +27,15 @@ import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_clothi
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_handwriting_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_picker_template.dart';
 
+/// Unified routing dispatcher selecting the appropriate pedagogical layout widget for [gameType].
 class UnifiedKidsGameScreen extends StatelessWidget {
+  /// The game type identifier.
   final String gameType;
+
+  /// The curriculum level number.
   final int level;
 
+  /// Creates a [UnifiedKidsGameScreen] widget.
   const UnifiedKidsGameScreen({
     super.key,
     required this.gameType,

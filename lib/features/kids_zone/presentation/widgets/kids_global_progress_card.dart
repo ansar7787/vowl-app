@@ -17,12 +17,15 @@ class _LocalPalette {
   static const Color colora3713b = Color(0xFFA3713B);
 }
 
-/// A compact card showing the user's total quest progress across all 8 categories
-/// and their current global leaderboard rank.
+/// Card showing total quest completion count, mastered categories, and leaderboard ranking.
 class KidsGlobalProgressCard extends StatelessWidget {
+  /// The active user entity.
   final UserEntity user;
+
+  /// Optional leaderboard rank position.
   final int? globalRank;
 
+  /// Creates a [KidsGlobalProgressCard] widget.
   const KidsGlobalProgressCard({
     super.key,
     required this.user,

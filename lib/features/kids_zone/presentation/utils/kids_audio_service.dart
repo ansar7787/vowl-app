@@ -4,11 +4,13 @@ import 'package:audioplayers/audioplayers.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
+/// Service providing sound effects and audio playback controls tailored for kids games.
 class KidsAudioService {
   final AudioPlayer _sfxPlayer = AudioPlayer();
 
   static const String _sfxKey = "is_kids_sfx_enabled";
 
+  /// Creates a [KidsAudioService] instance.
   KidsAudioService() {
     _initAudio();
   }
@@ -17,6 +19,7 @@ class KidsAudioService {
     // SFX init if needed
   }
 
+  /// Whether sound effects are currently enabled.
   Future<bool> isSfxEnabled() async {
     final prefs = await SharedPreferences.getInstance();
     final globalEnabled = prefs.getBool('sound_enabled') ?? true;
@@ -25,11 +28,13 @@ class KidsAudioService {
     return prefs.getBool(_sfxKey) ?? true;
   }
 
+  /// Sets whether kids sound effects should be enabled.
   Future<void> setSfxEnabled(bool enabled) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(_sfxKey, enabled);
   }
 
+  /// Plays the celebration success sound effect.
   Future<void> playSuccessSFX() async {
     if (!(await isSfxEnabled())) return;
     try {
@@ -40,6 +45,7 @@ class KidsAudioService {
     }
   }
 
+  /// Plays the failure sound effect.
   Future<void> playFailureSFX() async {
     if (!(await isSfxEnabled())) return;
     try {
@@ -50,6 +56,7 @@ class KidsAudioService {
     }
   }
 
+  /// Plays the level completion fanfare sound effect.
   Future<void> playLevelCompleteSFX() async {
     if (!(await isSfxEnabled())) return;
     try {
@@ -67,6 +74,7 @@ class KidsAudioService {
     }
   }
 
+  /// Disposes of the underlying audio player.
   void dispose() {
     _sfxPlayer.dispose();
   }

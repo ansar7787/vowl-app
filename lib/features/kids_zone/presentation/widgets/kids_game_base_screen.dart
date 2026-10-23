@@ -27,14 +27,30 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
+/// Base game screen scaffold providing header, hearts, background shaders, and audio services for Kids mini-games.
 class KidsGameBaseScreen extends StatefulWidget {
+  /// The title of the game.
   final String title;
+
+  /// The game type identifier.
   final String gameType;
+
+  /// The curriculum level number.
   final int level;
+
+  /// The primary theme accent color.
   final Color primaryColor;
+
+  /// Background gradient colors.
   final List<Color> backgroundColors;
+
+  /// Optional painter identifier.
   final String? painterName;
+
+  /// Optional shader identifier.
   final String? shaderName;
+
+  /// Builder callback rendering the game UI content.
   final Widget Function(
     BuildContext context,
     KidsLoaded state,
@@ -42,6 +58,7 @@ class KidsGameBaseScreen extends StatefulWidget {
   )
   buildGameUI;
 
+  /// Creates a [KidsGameBaseScreen] widget.
   const KidsGameBaseScreen({
     super.key,
     required this.title,

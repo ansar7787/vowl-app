@@ -57,16 +57,23 @@ class _VerbsPalette {
 /// Isolates the action verb string from the trailing emoji icon while
 /// keeping the original raw text for exact answer verification.
 class VerbOptionData {
+  /// The raw unparsed text of the verb option.
   final String raw;
+
+  /// The cleaned verb text without trailing emojis.
   final String verbText;
+
+  /// An optional emoji character parsed from the option.
   final String? emoji;
 
+  /// Creates a [VerbOptionData] instance.
   const VerbOptionData({
     required this.raw,
     required this.verbText,
     this.emoji,
   });
 
+  /// Parses raw option [text] into a structured [VerbOptionData] instance.
   factory VerbOptionData.parse(String text) {
     final trimmed = text.trim();
     if (trimmed.isEmpty) {
@@ -124,10 +131,16 @@ class VerbOptionData {
 /// - Time Complexity: O(N) where N is options count (typically 3..4).
 /// - Space Complexity: O(1) auxiliary space.
 class KidsVerbsLayout extends StatefulWidget {
+  /// The current game level or world index.
   final int level;
+
+  /// The display title of the game.
   final String title;
+
+  /// The primary theme color for accents and badges.
   final Color primaryColor;
 
+  /// Creates a [KidsVerbsLayout] widget.
   const KidsVerbsLayout({
     super.key,
     required this.level,

@@ -3,12 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Background renderer painting gradient backdrops with floating playful emojis and icons.
 class GenericKidsBackgroundPainter extends StatelessWidget {
+  /// Gradient colors for the background container.
   final List<Color> gradientColors;
+
+  /// Floating emoji strings to decorate the background.
   final List<String> emojis;
+
+  /// Optional icon to render as floating background elements.
   final IconData? icon;
+
+  /// Count of floating decorative items to generate.
   final int itemCount;
 
+  /// Creates a [GenericKidsBackgroundPainter] widget.
   const GenericKidsBackgroundPainter({
     super.key,
     required this.gradientColors,

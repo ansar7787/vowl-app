@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Visual renderer for placed room furniture items with perspective shadows.
 class KidsRoomFurnitureRenderer extends StatelessWidget {
+  /// Furniture item metadata map.
   final Map<String, dynamic>? item;
+
+  /// Category classification of the furniture item.
   final String category;
 
+  /// Creates a [KidsRoomFurnitureRenderer] widget.
   const KidsRoomFurnitureRenderer({
     super.key,
     required this.item,

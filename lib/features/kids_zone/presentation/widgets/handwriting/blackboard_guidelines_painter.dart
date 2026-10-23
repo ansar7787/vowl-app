@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
-/// Paints primary elementary school guidelines and optional faint ghost trace guide.
+/// Custom painter rendering elementary school blackboard guidelines and ghost tracing guides.
 class BlackboardGuidelinesPainter extends CustomPainter {
+  /// Whether horizontal writing guidelines are rendered.
   final bool showGuidelines;
+
+  /// Optional faint ghost text displayed on the board for letter tracing.
   final String? ghostText;
 
+  /// Creates a [BlackboardGuidelinesPainter] instance.
   const BlackboardGuidelinesPainter({
     required this.showGuidelines,
     this.ghostText,

@@ -4,10 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
+/// Bottom sheet modal offering food snacks to feed and nourish the buddy companion.
 class KidsRoomFoodSheet extends StatelessWidget {
+  /// The active user entity.
   final UserEntity user;
+
+  /// Callback invoked when a food snack is selected for feeding.
   final Function(Map<String, dynamic> food) onFoodSelected;
 
+  /// Creates a [KidsRoomFoodSheet] widget.
   const KidsRoomFoodSheet({
     super.key,
     required this.user,

@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
 
-/// A robust, zero-ellipsis text widget specifically designed for the Kids Zone.
-/// It uses a LayoutBuilder to capture the parent's constraints, forces text wrapping
-/// up to [maxLines], and then uses a FittedBox to infinitely scale the entire text
-/// block down without ever truncating or using ellipses.
+/// Text widget that scales dynamically to fit parent constraints without ellipsis truncation.
 class KidsFittedText extends StatelessWidget {
+  /// The text content to display.
   final String text;
+
+  /// Optional text style.
   final TextStyle? style;
+
+  /// Horizontal text alignment.
   final TextAlign? textAlign;
+
+  /// Maximum number of lines permitted before scaling occurs.
   final int? maxLines;
+
+  /// Visual overflow handling.
   final TextOverflow? overflow;
+
+  /// Alignment geometry within the fitted box.
   final AlignmentGeometry? alignment;
 
+  /// Creates a [KidsFittedText] widget.
   const KidsFittedText(
     this.text, {
     super.key,

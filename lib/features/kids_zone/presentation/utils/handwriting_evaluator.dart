@@ -1,13 +1,9 @@
 import 'dart:math' as math;
 import 'package:google_mlkit_digital_ink_recognition/google_mlkit_digital_ink_recognition.dart';
 
-/// Comprehensive, strictly calibrated handwriting evaluator for Kids Zone Handwriting game.
-/// Evaluates learner ink strokes against curriculum targets using:
-/// 1. Top-2 candidate ML Kit recognition with strict casing and whitespace normalization.
-/// 2. Canonical glyph mapping for English ML Kit recognizer representations.
-/// 3. Strict Levenshtein tolerance exclusively for full multi-word sentences (>= 88% similarity).
-/// 4. Direct geometric stroke analysis with strict stroke count and topological validation.
+/// Evaluates learner ink strokes against curriculum targets using ML Kit and geometric heuristics.
 class HandwritingEvaluator {
+  /// Creates a [HandwritingEvaluator] instance.
   const HandwritingEvaluator();
 
   /// Evaluates whether the user's drawn [ink] matches the [target].

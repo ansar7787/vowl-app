@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
 
-/// Represents an individual floating chalk dust particle.
+/// Model representing an individual floating chalk dust particle.
 class ChalkParticle {
-  final double x; // relative X 0..1
-  final double y; // relative Y 0..1
-  final double vx; // drift velocity x
-  final double vy; // drift velocity y
+  /// Normalized horizontal position (0.0 to 1.0).
+  final double x;
+
+  /// Normalized vertical position (0.0 to 1.0).
+  final double y;
+
+  /// Horizontal drift velocity.
+  final double vx;
+
+  /// Vertical drift velocity.
+  final double vy;
+
+  /// Particle radius in logical pixels.
   final double radius;
+
+  /// Opacity multiplier (0.0 to 1.0).
   final double alpha;
 
+  /// Creates a [ChalkParticle] descriptor.
   const ChalkParticle({
     required this.x,
     required this.y,
@@ -19,11 +31,15 @@ class ChalkParticle {
   });
 }
 
-/// Paints playful chalk dust particle puff effect drifting outward when clearing.
+/// Custom painter rendering chalk dust particle puff effect drifting outward on board erasing.
 class ChalkDustPainter extends CustomPainter {
+  /// The collection of active dust particles.
   final List<ChalkParticle> particles;
+
+  /// Animation progress of the dust dissipation effect (0.0 to 1.0).
   final double progress;
 
+  /// Creates a [ChalkDustPainter] instance.
   const ChalkDustPainter({required this.particles, required this.progress});
 
   @override

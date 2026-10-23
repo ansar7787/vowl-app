@@ -7,9 +7,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
+/// Pill-shaped badge displaying the buddy's current mood, energy level, and hunger state.
 class KidsRoomMoodIndicator extends StatelessWidget {
+  /// The active user entity.
   final UserEntity user;
 
+  /// Creates a [KidsRoomMoodIndicator] widget.
   const KidsRoomMoodIndicator({super.key, required this.user});
 
   @override

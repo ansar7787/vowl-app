@@ -70,10 +70,16 @@ class _SafariPalette {
 /// - Responsive & scroll-safe: LayoutBuilder + SingleChildScrollView guarantees zero
 ///   RenderFlex overflows across 320dp to tablet dimensions.
 class KidsAnimalsLayout extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The title of the game.
   final String title;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsAnimalsLayout] widget.
   const KidsAnimalsLayout({
     super.key,
     required this.level,

@@ -7,9 +7,12 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'dart:math';
 import 'dart:async';
 
+/// Quick bubble popping mini-game activity played inside the buddy room to boost happiness.
 class KidsRoomPlayGame extends StatefulWidget {
+  /// Callback invoked when the game concludes, passing the final score achieved.
   final void Function(int score) onComplete;
 
+  /// Creates a [KidsRoomPlayGame] widget.
   const KidsRoomPlayGame({super.key, required this.onComplete});
 
   @override

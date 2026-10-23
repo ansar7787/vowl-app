@@ -12,17 +12,36 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// Reusable game template providing interactive card selection and drop targets.
 class KidsPickerTemplate extends StatefulWidget {
+  /// The display title of the game.
   final String title;
+
+  /// The game type identifier.
   final String gameType;
+
+  /// The curriculum level number.
   final int level;
+
+  /// The primary theme accent color.
   final Color primaryColor;
+
+  /// Background gradient colors.
   final List<Color> backgroundColors;
+
+  /// Fallback icon for visual cards.
   final IconData fallbackIcon;
+
+  /// Optional override text for the center prompt.
   final String? centerTextOverride;
+
+  /// Optional painter identifier.
   final String? painterName;
+
+  /// Optional shader identifier.
   final String? shaderName;
 
+  /// Creates a [KidsPickerTemplate] widget.
   const KidsPickerTemplate({
     super.key,
     required this.title,
