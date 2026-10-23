@@ -25,6 +25,8 @@ class _LocalPalette {
   static const Color colorffa000 = Color(0xFFFFA000);
 }
 
+/// Main game hub screen providing access to all syllabus learning categories,
+/// interactive mini-games, and the Kids Zone carousel.
 class GamesScreen extends StatelessWidget {
   const GamesScreen({super.key});
 

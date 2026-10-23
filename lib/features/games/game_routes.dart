@@ -30,13 +30,27 @@ class _CategoryConfig {
   final _ScreenFactory factory;
 }
 
+/// Central routing configuration and game screen resolvers for all curriculum games.
+///
+/// Provides declarative [GoRoute] definitions and O(1) map-based screen
+/// resolution across reading, writing, listening, speaking, grammar, vocabulary,
+/// accent, roleplay, and elite mastery.
 class GameRoutes {
   GameRoutes._(); // Non-instantiable utility class.
 
+  /// Route path for category-specific game list screens.
   static const String categoryGamesRoute = '/category-games';
+
+  /// Route path for level detail dialogs and views.
   static const String levelRoute = '/level-details';
+
+  /// Route path for adventure XP breakdown views.
   static const String adventureXPRoute = '/xp-details';
+
+  /// Route path for quest coins details and shop navigation.
   static const String questCoinsRoute = '/coins-details';
+
+  /// Route path for multi-step quest sequence runners.
   static const String questSequenceRoute = '/quest-sequence';
 
   // ---------------------------------------------------------------------------
@@ -116,6 +130,7 @@ class GameRoutes {
   // ---------------------------------------------------------------------------
   // Route definitions
   // ---------------------------------------------------------------------------
+  /// Declarative [RouteBase] definitions registered with GoRouter.
   static final List<RouteBase> routes = [
     GoRoute(
       path: '/game',
