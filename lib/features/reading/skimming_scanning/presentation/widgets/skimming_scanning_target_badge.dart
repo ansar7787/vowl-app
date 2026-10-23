@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Badge displaying the target word or data item to scan for within the passage.
 class SkimmingScanningTargetBadge extends StatelessWidget {
+  /// Target word or phrase to locate.
   final String item;
+
+  /// Theme accent color applied to badge borders and text.
   final Color color;
 
+  /// Creates a [SkimmingScanningTargetBadge] widget.
   const SkimmingScanningTargetBadge({
     super.key,
     required this.item,

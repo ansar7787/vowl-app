@@ -3,16 +3,33 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Interactive card presenting the passage sentence with a pneumatic slot target for missing words.
 class ClozeTestPneumaticPort extends StatelessWidget {
+  /// The sentence text containing the '____' blank placeholder.
   final String text;
+
+  /// The authoritative correct word string.
   final String correct;
+
+  /// Theme accent color applied to ports and highlights.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// The word option currently placed into the blank, or null if unoccupied.
   final String? dockedOption;
+
+  /// Optional part-of-speech or grammatical category of the target word.
   final String? wordCategory;
+
+  /// Whether the answer has been evaluated.
   final bool isAnswered;
+
+  /// Callback invoked when a word option is dropped or selected into the port.
   final Function(String) onDock;
 
+  /// Creates a [ClozeTestPneumaticPort] widget.
   const ClozeTestPneumaticPort({
     super.key,
     required this.text,

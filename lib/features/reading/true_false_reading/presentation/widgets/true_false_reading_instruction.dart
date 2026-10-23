@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner for the true or false reading evaluation exercise.
 class TrueFalseReadingInstruction extends StatelessWidget {
+  /// The primary theme accent color for borders and icons.
   final Color primaryColor;
+
+  /// Optional fallback instruction text describing the exercise.
   final String? instruction;
 
+  /// Creates a [TrueFalseReadingInstruction] widget.
   const TrueFalseReadingInstruction({
     super.key,
     required this.primaryColor,

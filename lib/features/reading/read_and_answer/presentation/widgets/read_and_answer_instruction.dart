@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner presenting guidelines for the read and answer exercise.
 class ReadAndAnswerInstruction extends StatelessWidget {
+  /// The primary theme accent color for borders and icons.
   final Color primaryColor;
+
+  /// Optional fallback instruction text describing the exercise.
   final String? instruction;
 
+  /// Creates a [ReadAndAnswerInstruction] widget.
   const ReadAndAnswerInstruction({
     super.key,
     required this.primaryColor,

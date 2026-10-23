@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
 
+/// Custom painter rendering glowing laser connections between matched word and definition terminals.
 class LaserBridgePainter extends CustomPainter {
+  /// Mapping of connected source-terminal keys to target-terminal keys.
   final Map<String, String> matches;
+
+  /// The currently highlighted source-terminal key waiting for a match.
   final String? activeKey;
+
+  /// Function returning the bounding screen rectangle of a given widget key.
   final Rect? Function(GlobalKey) getRect;
+
+  /// Function resolving the [GlobalKey] associated with a terminal identifier.
   final GlobalKey Function(String) getKey;
+
+  /// Default laser stroke color.
   final Color color;
+
+  /// Optional mapping assigning unique colors to individual matched pairs.
   final Map<String, Color>? colorMap;
+
+  /// Animated progress ratio for newly established laser bridges.
   final double animationValue;
 
+  /// Creates a [LaserBridgePainter] instance.
   LaserBridgePainter({
     required this.matches,
     required this.activeKey,

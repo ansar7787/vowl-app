@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction header displaying gameplay rules dynamically adapting for speed reading versus questions.
 class ReadingSpeedInstruction extends StatelessWidget {
+  /// The primary theme accent color for borders and icons.
   final Color primaryColor;
+
+  /// Whether the timed passage has concluded and comprehension questions are revealed.
   final bool isRevealed;
+
+  /// Optional fallback instruction text describing the exercise.
   final String? instruction;
 
+  /// Creates a [ReadingSpeedInstruction] widget.
   const ReadingSpeedInstruction({
     super.key,
     required this.primaryColor,

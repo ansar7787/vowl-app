@@ -17,9 +17,15 @@ import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/ski
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Interactive reading game screen measuring skimming and scanning proficiency under time constraints.
 class SkimmingScanningScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the reading quest.
   final int level;
+
+  /// The specific reading game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [SkimmingScanningScreen] instance.
   const SkimmingScanningScreen({
     super.key,
     required this.level,

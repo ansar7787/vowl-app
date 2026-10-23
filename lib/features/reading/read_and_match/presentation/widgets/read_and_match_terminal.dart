@@ -3,16 +3,33 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Terminal card representing a word or definition connection node.
 class ReadAndMatchTerminal extends StatelessWidget {
+  /// Terminal label text.
   final String text;
+
+  /// Whether this terminal is a source word node on the left.
   final bool isSource;
+
+  /// Theme accent color applied to active borders and glows.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Whether this terminal has been successfully paired.
   final bool isMatched;
+
+  /// Whether this terminal is currently highlighted waiting for a match.
   final bool isActive;
+
+  /// Whether the terminal should pulse to draw attention.
   final bool shouldPulse;
+
+  /// Callback invoked when this terminal is tapped.
   final VoidCallback onTap;
 
+  /// Creates a [ReadAndMatchTerminal] widget.
   const ReadAndMatchTerminal({
     super.key,
     required this.text,

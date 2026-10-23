@@ -3,16 +3,33 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Magnifying lens field uncovering blurred manuscript text during word search.
 class FindWordMeaningMagnifierField extends StatelessWidget {
+  /// The full manuscript text.
   final String passage;
+
+  /// The target word text.
   final String correct;
+
+  /// Theme accent color applied to lens frame and focus highlights.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Current position offset of the magnifying lens.
   final Offset lensPos;
+
+  /// Whether the answer has been evaluated.
   final bool isAnswered;
+
+  /// Callback invoked when the lens is moved across the manuscript.
   final Function(Offset) onLensMove;
+
+  /// Callback invoked when an uncovered word is tapped.
   final Function(String) onWordTap;
 
+  /// Creates a [FindWordMeaningMagnifierField] widget.
   const FindWordMeaningMagnifierField({
     super.key,
     required this.passage,

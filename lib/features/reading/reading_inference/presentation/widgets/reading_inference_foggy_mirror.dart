@@ -4,15 +4,30 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Foggy interactive mirror obscuring passage text until cleared by rubbing gestures.
 class ReadingInferenceFoggyMirror extends StatelessWidget {
+  /// The full text of the obscured reading passage.
   final String passage;
+
+  /// Theme accent color applied to mirror borders and highlights.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Whether the question has been answered.
   final bool isAnswered;
+
+  /// Recorded gesture touch points clearing the fog.
   final List<Offset> rubPoints;
+
+  /// Normalized clarity ratio between 0.0 (opaque) and 1.0 (clear).
   final double clarity;
+
+  /// Callback invoked when a pan or touch gesture rubs the mirror surface.
   final Function(Offset) onRub;
 
+  /// Creates a [ReadingInferenceFoggyMirror] widget.
   const ReadingInferenceFoggyMirror({
     super.key,
     required this.passage,

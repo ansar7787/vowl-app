@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner for the sentence order reading activity.
 class SentenceOrderReadingInstruction extends StatelessWidget {
+  /// The primary theme accent color for borders and text.
   final Color primaryColor;
+
+  /// Optional fallback instruction text describing how to order sentences.
   final String? instruction;
 
+  /// Creates a [SentenceOrderReadingInstruction] widget.
   const SentenceOrderReadingInstruction({
     super.key,
     required this.primaryColor,

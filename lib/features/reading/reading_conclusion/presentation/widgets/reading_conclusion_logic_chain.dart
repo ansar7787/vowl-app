@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Visual chain card diagramming premise-to-conclusion logical flow steps.
 class ReadingConclusionLogicChain extends StatelessWidget {
+  /// List of sequential deduction logic strings connected by arrows.
   final List<String> logicChain;
+
+  /// Theme accent color applied to step indicators and connectors.
   final Color primaryColor;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [ReadingConclusionLogicChain] widget.
   const ReadingConclusionLogicChain({
     super.key,
     required this.logicChain,

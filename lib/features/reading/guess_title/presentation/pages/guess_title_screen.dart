@@ -14,9 +14,15 @@ import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_tit
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_cargo_crate.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_label_rack.dart';
 
+/// Interactive reading game screen prompting users to deduce the most accurate title for a passage.
 class GuessTitleScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the reading quest.
   final int level;
+
+  /// The specific reading game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [GuessTitleScreen] instance.
   const GuessTitleScreen({
     super.key,
     required this.level,

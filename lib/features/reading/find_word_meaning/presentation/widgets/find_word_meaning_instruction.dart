@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner for the find word meaning comprehension activity.
 class FindWordMeaningInstruction extends StatelessWidget {
+  /// The primary theme accent color for borders and icons.
   final Color primaryColor;
+
+  /// Optional fallback instruction text describing the exercise.
   final String? instruction;
 
+  /// Creates a [FindWordMeaningInstruction] widget.
   const FindWordMeaningInstruction({
     super.key,
     required this.primaryColor,

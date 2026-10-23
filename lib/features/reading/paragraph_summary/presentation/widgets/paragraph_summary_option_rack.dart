@@ -2,15 +2,30 @@ import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Column rack presenting multiple-choice summary candidate cards.
 class ParagraphSummaryOptionRack extends StatelessWidget {
+  /// Candidate summary choices.
   final List<String> options;
+
+  /// The authoritative correct summary text.
   final String correctAnswer;
+
+  /// Theme accent color applied to option cards.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Currently selected summary option, or null if none.
   final String? selectedOption;
+
+  /// Whether the answer has been evaluated.
   final bool isAnswered;
+
+  /// Callback invoked when a summary option is tapped.
   final Function(String) onTapOption;
 
+  /// Creates a [ParagraphSummaryOptionRack] widget.
   const ParagraphSummaryOptionRack({
     super.key,
     required this.options,

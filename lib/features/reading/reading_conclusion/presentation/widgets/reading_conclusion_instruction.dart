@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction header displaying gameplay rules for deductive conclusion exercises.
 class ReadingConclusionInstruction extends StatelessWidget {
+  /// The primary theme accent color for borders and icons.
   final Color primaryColor;
+
+  /// Optional fallback instruction text describing conclusion deduction.
   final String? instruction;
 
+  /// Creates a [ReadingConclusionInstruction] widget.
   const ReadingConclusionInstruction({
     super.key,
     required this.primaryColor,

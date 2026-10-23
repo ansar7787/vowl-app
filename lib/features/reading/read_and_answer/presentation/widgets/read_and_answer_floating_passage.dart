@@ -2,13 +2,24 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Card widget presenting the reading passage with optional audio and karaoke sync.
 class ReadAndAnswerFloatingPassage extends StatelessWidget {
+  /// The full text of the reading passage.
   final String text;
+
+  /// Theme accent color applied to borders and controls.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Optional callback invoked to read the passage aloud.
   final VoidCallback? onPlayAudio;
+
+  /// Optional notifier broadcasting the currently spoken karaoke word.
   final ValueNotifier<String?>? activeWordNotifier;
 
+  /// Creates a [ReadAndAnswerFloatingPassage] widget.
   const ReadAndAnswerFloatingPassage({
     super.key,
     required this.text,

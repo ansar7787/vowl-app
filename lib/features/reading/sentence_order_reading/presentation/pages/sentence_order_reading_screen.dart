@@ -16,9 +16,15 @@ import 'package:vowl/features/reading/sentence_order_reading/presentation/widget
 import 'package:vowl/features/reading/sentence_order_reading/presentation/widgets/sentence_order_reading_stone_slab.dart';
 import 'package:vowl/features/reading/sentence_order_reading/presentation/widgets/sentence_order_reading_capstone.dart';
 
+/// Interactive reading game screen prompting users to arrange sentences in logical or chronological sequence.
 class SentenceOrderReadingScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the reading quest.
   final int level;
+
+  /// The specific reading game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [SentenceOrderReadingScreen] instance.
   const SentenceOrderReadingScreen({
     super.key,
     required this.level,

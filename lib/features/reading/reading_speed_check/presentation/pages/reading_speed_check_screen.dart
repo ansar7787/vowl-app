@@ -17,9 +17,15 @@ import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/r
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_option.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 
+/// Interactive reading game screen measuring reading speed and comprehension under timed conditions.
 class ReadingSpeedCheckScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the reading quest.
   final int level;
+
+  /// The specific reading game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [ReadingSpeedCheckScreen] instance.
   const ReadingSpeedCheckScreen({
     super.key,
     required this.level,

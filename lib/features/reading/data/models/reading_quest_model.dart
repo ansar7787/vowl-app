@@ -1,7 +1,9 @@
 import '../../domain/entities/reading_quest.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 
+/// Data model representing a reading quest with JSON serialization logic.
 class ReadingQuestModel extends ReadingQuest {
+  /// Creates a [ReadingQuestModel] instance.
   const ReadingQuestModel({
     required super.id,
     super.type,
@@ -46,6 +48,7 @@ class ReadingQuestModel extends ReadingQuest {
     super.targetInfo,
   });
 
+  /// Creates a [ReadingQuestModel] instance deserialized from [map].
   factory ReadingQuestModel.fromJson(Map<String, dynamic> map, String id) {
     // Optimized O(1) constant-time enum parsing
     final subtype = GameSubtype.fromString(

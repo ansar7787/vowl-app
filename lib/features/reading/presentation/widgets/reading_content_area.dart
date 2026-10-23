@@ -18,17 +18,37 @@ import 'reading_peeking_mascot.dart';
 /// - The opacity animation duration is set to zero when the system
 ///   "reduce motion" flag is active.
 class ReadingContentArea extends StatelessWidget {
+  /// Main content widget hosted within this area.
   final Widget child;
+
+  /// Whether the quest has been evaluated.
   final bool isAnswered;
+
+  /// Whether content should scroll vertically when overflowing.
   final bool useScrolling;
+
+  /// Whether outer margins and padding should be removed.
   final bool disablePadding;
+
+  /// Number of remaining lives.
   final int lives;
+
+  /// Whether the answer was evaluated as correct.
   final bool? isCorrect;
+
+  /// Whether the active level has been completed.
   final bool isGameComplete;
+
+  /// Whether the player ran out of lives.
   final bool isGameOver;
+
+  /// Identifier of the selected companion mascot.
   final String mascotId;
+
+  /// Display name of the companion mascot.
   final String mascotName;
 
+  /// Creates a [ReadingContentArea] widget.
   const ReadingContentArea({
     super.key,
     required this.child,

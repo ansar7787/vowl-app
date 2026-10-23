@@ -15,9 +15,15 @@ import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/re
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_options.dart';
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_logic_chain.dart';
 
+/// Interactive reading game screen prompting users to deduce logically sound conclusions from passages.
 class ReadingConclusionScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the reading quest.
   final int level;
+
+  /// The specific reading game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [ReadingConclusionScreen] instance.
   const ReadingConclusionScreen({
     super.key,
     required this.level,

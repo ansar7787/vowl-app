@@ -5,14 +5,27 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Interactive passage widget enabling sentence-level highlighting and selection for reading tasks.
 class ReadingHighlightablePassage extends StatefulWidget {
+  /// The full text of the reading passage.
   final String passage;
+
+  /// The target sentence string expected as the answer.
   final String correctAnswer;
+
+  /// Theme accent color applied to sentence selection borders.
   final Color primaryColor;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Whether the question has been answered.
   final bool isAnswered;
+
+  /// Callback invoked when a sentence is selected with correctness status.
   final Function(bool isCorrect, String selectedSentence) onSentenceSelected;
 
+  /// Creates a [ReadingHighlightablePassage] widget.
   const ReadingHighlightablePassage({
     super.key,
     required this.passage,

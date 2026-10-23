@@ -9,14 +9,20 @@ import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 // ---------------------------------------------------------------------------
 
 /// Represents the status of the current question's answer submission.
-/// Replaces the previous `bool? lastAnswerCorrect` tri-state.
 enum AnswerStatus {
+  /// Question has not yet received an evaluated answer.
   unanswered,
+
+  /// User provided a correct answer.
   correct,
+
+  /// User provided an incorrect answer.
   incorrect;
 
+  /// Whether an answer has been submitted and evaluated.
   bool get isAnswered => this != AnswerStatus.unanswered;
 
+  /// Converts this status to a boolean or null for backward compatibility.
   bool? get asBoolOrNull {
     switch (this) {
       case AnswerStatus.unanswered:
@@ -33,7 +39,9 @@ enum AnswerStatus {
 // Base
 // ---------------------------------------------------------------------------
 
+/// Base state for all reading bloc states.
 abstract class ReadingState extends Equatable implements GameStateBase {
+  /// Abstract const constructor for [ReadingState] subclasses.
   const ReadingState();
 
   /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
@@ -50,19 +58,24 @@ abstract class ReadingState extends Equatable implements GameStateBase {
 
 /// Initial state before any quests are loaded.
 class ReadingInitial extends ReadingState implements GameInitialState {
+  /// Creates a [ReadingInitial] state.
   const ReadingInitial();
 }
 
 /// Quests are being fetched from the repository.
 class ReadingLoading extends ReadingState implements GameLoadingState {
+  /// Creates a [ReadingLoading] state.
   const ReadingLoading();
 }
 
 /// Quests loaded; the game loop is active.
 class ReadingLoaded extends ReadingState implements GameLoadedState {
+  /// Loaded reading quests for the active level.
   final List<ReadingQuest> quests;
+
   @override
   final int currentIndex;
+
   @override
   final int livesRemaining;
 
@@ -81,7 +94,7 @@ class ReadingLoaded extends ReadingState implements GameLoadedState {
   final int wrongCount;
 
   /// True when the correct answer has been revealed and the player
-  /// must tap context.tr('common.continue_text', fallback: 'Continue') to move on (question re-queued at the end).
+  /// must tap continue to move on.
   @override
   final bool isFinalFailure;
 
@@ -97,6 +110,7 @@ class ReadingLoaded extends ReadingState implements GameLoadedState {
   @override
   int get totalQuests => quests.length;
 
+  /// Creates a [ReadingLoaded] state.
   const ReadingLoaded({
     required this.quests,
     required this.currentIndex,
@@ -158,6 +172,7 @@ class ReadingError extends ReadingState implements GameErrorState {
   @visibleForTesting
   final String? technicalError;
 
+  /// Creates a [ReadingError] state.
   const ReadingError(this.message, {this.technicalError});
 
   @override
@@ -166,12 +181,18 @@ class ReadingError extends ReadingState implements GameErrorState {
 
 /// All quests answered successfully — level complete.
 class ReadingGameComplete extends ReadingState implements GameCompleteState {
+  /// Total XP earned upon level completion.
   @override
   final int xpEarned;
+
+  /// Total coins earned upon level completion.
   @override
   final int coinsEarned;
+
+  /// Total number of completed quests.
   final int questCount;
 
+  /// Creates a [ReadingGameComplete] state.
   const ReadingGameComplete({
     required this.xpEarned,
     required this.coinsEarned,
@@ -184,12 +205,16 @@ class ReadingGameComplete extends ReadingState implements GameCompleteState {
 
 /// Player ran out of lives before completing all quests.
 class ReadingGameOver extends ReadingState implements GameOverState {
+  /// List of quests at the point of game over.
   final List<ReadingQuest> quests;
+
+  /// Index reached before game over occurred.
   final int currentIndex;
 
   @override
   int get livesRemaining => 0;
 
+  /// Creates a [ReadingGameOver] state.
   const ReadingGameOver({required this.quests, required this.currentIndex});
 
   @override

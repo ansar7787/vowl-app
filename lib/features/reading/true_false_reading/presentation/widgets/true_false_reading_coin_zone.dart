@@ -5,13 +5,24 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/pulsing_arrows.dart';
 
+/// Interactive sliding or draggable coin zone allowing users to flick towards True or False.
 class TrueFalseReadingCoinZone extends StatefulWidget {
+  /// Callback invoked when an answer is registered.
   final Function(bool) onAnswerSelected;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Whether user interaction with the coin zone is blocked.
   final bool isDisabled;
+
+  /// Currently selected boolean value awaiting submission, or null.
   final bool? pendingAnswer;
+
+  /// Outer horizontal margin padding around the coin zone.
   final double horizontalPadding;
 
+  /// Creates a [TrueFalseReadingCoinZone] widget.
   const TrueFalseReadingCoinZone({
     super.key,
     required this.onAnswerSelected,

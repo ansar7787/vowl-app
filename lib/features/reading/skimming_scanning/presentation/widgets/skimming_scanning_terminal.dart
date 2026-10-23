@@ -2,14 +2,27 @@ import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Scrollable terminal view presenting passage text where words can be tapped during scanning.
 class SkimmingScanningTerminal extends StatelessWidget {
+  /// The full text of the reading passage.
   final String text;
+
+  /// The authoritative target word or phrase to locate.
   final String correct;
+
+  /// Theme accent color applied to terminal borders and scrollbar.
   final Color color;
+
+  /// Controller managing terminal auto-scroll and user scrolling.
   final ScrollController scrollController;
+
+  /// Whether the quest has been evaluated.
   final bool isAnswered;
+
+  /// Callback invoked when a word is tapped, receiving the word and match flag.
   final Function(String, bool) onTapWord;
 
+  /// Creates a [SkimmingScanningTerminal] widget.
   const SkimmingScanningTerminal({
     super.key,
     required this.text,

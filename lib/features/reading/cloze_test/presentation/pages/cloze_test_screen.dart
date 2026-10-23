@@ -14,9 +14,15 @@ import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_fuel_cells.dart';
 import 'package:vowl/core/presentation/game_mechanics/arranging/dynamic_anagram_wrapper.dart';
 
+/// Interactive reading game screen prompting users to fill in passage blanks with fuel cells.
 class ClozeTestScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the reading quest.
   final int level;
+
+  /// The specific reading game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [ClozeTestScreen] instance.
   const ClozeTestScreen({
     super.key,
     required this.level,

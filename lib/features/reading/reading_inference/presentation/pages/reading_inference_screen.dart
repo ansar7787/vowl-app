@@ -15,9 +15,15 @@ import 'package:vowl/features/reading/reading_inference/presentation/widgets/rea
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_option.dart';
 import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
 
+/// Interactive reading game screen prompting users to draw inferences from clouded passages.
 class ReadingInferenceScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the reading quest.
   final int level;
+
+  /// The specific reading game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [ReadingInferenceScreen] instance.
   const ReadingInferenceScreen({
     super.key,
     required this.level,

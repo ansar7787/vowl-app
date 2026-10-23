@@ -24,16 +24,33 @@ class _PassageToken {
   });
 }
 
+/// Interactive passage splitting text into selectable word tokens with highlight feedback.
 class FindWordMeaningInteractivePassage extends StatefulWidget {
+  /// The full text of the reading passage.
   final String passage;
+
+  /// The authoritative target word representing the definition.
   final String targetWord;
+
+  /// Theme accent color applied to selections and borders.
   final Color primaryColor;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Whether the answer has been evaluated.
   final bool isAnswered;
+
+  /// Index of the currently selected word token, or null if none is selected.
   final int? selectedIndex;
+
+  /// Whether the current selection is correct, or null if unverified.
   final bool? isCorrectSelection;
+
+  /// Callback invoked when a word token is tapped.
   final Function(bool isCorrect, String selectedWord, int index) onWordSelected;
 
+  /// Creates a [FindWordMeaningInteractivePassage] widget.
   const FindWordMeaningInteractivePassage({
     super.key,
     required this.passage,

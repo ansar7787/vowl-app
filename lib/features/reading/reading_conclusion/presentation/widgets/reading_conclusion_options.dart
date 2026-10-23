@@ -2,15 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 
+/// Column containing conclusion choice cards with evaluation feedback.
 class ReadingConclusionOptions extends StatelessWidget {
+  /// Candidate conclusion statements.
   final List<String> options;
+
+  /// The authoritative correct conclusion.
   final String correct;
+
+  /// Theme accent color applied to options.
   final Color primaryColor;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Index of the chosen conclusion card, or null if unselected.
   final int? selectedIndex;
+
+  /// Whether the answer has been evaluated.
   final bool isAnswered;
+
+  /// Callback invoked when a conclusion choice is tapped.
   final Function(int, String) onOptionTap;
 
+  /// Creates a [ReadingConclusionOptions] widget.
   const ReadingConclusionOptions({
     super.key,
     required this.options,

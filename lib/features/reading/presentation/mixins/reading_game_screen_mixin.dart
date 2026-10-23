@@ -4,8 +4,10 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 
+/// Mixin providing standardized lifecycle hooks and state listeners for reading game screens.
 mixin ReadingGameScreenMixin<T extends StatefulWidget>
     on State<T>, GameScreenMixin<T> {
+  /// Initializes the reading game, synchronizing initial answer states and fetching quests.
   void initReadingGame() {
     final state = context.read<ReadingBloc>().state;
     if (state is ReadingLoaded && state.answerStatus.isAnswered) {
@@ -17,10 +19,12 @@ mixin ReadingGameScreenMixin<T extends StatefulWidget>
     );
   }
 
+  /// Cleans up reading game screen resources and timers.
   void disposeReadingGame() {
     disposeGame();
   }
 
+  /// Filter predicate determining whether [ReadingBloc] state transitions trigger listeners.
   bool readingListenWhen(ReadingState prev, ReadingState curr) {
     if (curr is ReadingGameComplete && prev is! ReadingGameComplete) {
       return true;
@@ -45,6 +49,7 @@ mixin ReadingGameScreenMixin<T extends StatefulWidget>
     return false;
   }
 
+  /// Dispatches state changes to game mixin handlers for dialogs and progression.
   void onReadingStateChanged(BuildContext context, ReadingState state) {
     if (state is ReadingLoaded) {
       handleStateUpdate(

@@ -11,10 +11,16 @@ import 'package:flutter_animate/flutter_animate.dart';
 ///
 /// Screen readers access the full passage text via the Semantics label.
 class ReadingPassageArea extends StatelessWidget {
+  /// The text of the reading passage.
   final String passage;
+
+  /// The theme accent color applied to borders and shadows.
   final Color primaryColor;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [ReadingPassageArea] widget.
   const ReadingPassageArea({
     super.key,
     required this.passage,

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction header displaying gameplay rules for the paragraph summary activity.
 class ParagraphSummaryInstruction extends StatelessWidget {
+  /// The primary theme accent color for borders and icons.
   final Color primaryColor;
+
+  /// Optional fallback instruction text describing summary goals.
   final String? instruction;
 
+  /// Creates a [ParagraphSummaryInstruction] widget.
   const ParagraphSummaryInstruction({
     super.key,
     required this.primaryColor,

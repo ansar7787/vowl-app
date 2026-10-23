@@ -2,15 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Compressible tube container showing paragraph text distilling into essential keywords upon pinching.
 class ParagraphSummaryTube extends StatelessWidget {
+  /// The full text of the paragraph.
   final String passage;
+
+  /// Key summary points and keywords revealed upon distillation.
   final List<String> keywords;
+
+  /// Theme accent color applied to tube borders and highlights.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Current width factor controlled by pinch gesture or animation.
   final double pinchWidth;
+
+  /// Whether the tube has been fully compressed into distilled keywords.
   final bool isDistilled;
+
+  /// Whether the user is actively pinching the container.
   final bool isPinching;
 
+  /// Creates a [ParagraphSummaryTube] widget.
   const ParagraphSummaryTube({
     super.key,
     required this.passage,

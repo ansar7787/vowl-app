@@ -17,9 +17,15 @@ import 'package:vowl/features/reading/true_false_reading/presentation/widgets/tr
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_coin_zone.dart';
 import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
 
+/// Interactive reading game screen prompting users to evaluate statements against passages as true or false.
 class TrueFalseReadingScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the reading quest.
   final int level;
+
+  /// The specific reading game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [TrueFalseReadingScreen] instance.
   const TrueFalseReadingScreen({
     super.key,
     required this.level,
