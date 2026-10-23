@@ -1,10 +1,10 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
+/// Standard, professional card displaying Direct Speech on the front
+/// and flipping cleanly to Indirect Speech when answered.
 class DirectIndirectSpeechMirror extends StatelessWidget {
   final double rotation;
   final String directText;
@@ -34,138 +34,124 @@ class DirectIndirectSpeechMirror extends StatelessWidget {
     final shouldReduceMotion = VowlMotion.shouldReduceMotion(context);
     final isNarrow = MediaQuery.of(context).size.width < 360;
 
-    return TweenAnimationBuilder(
+    return TweenAnimationBuilder<double>(
       tween: Tween<double>(begin: 0, end: rotation),
-      duration: shouldReduceMotion ? Duration.zero : 1000.ms,
-      curve: Curves.elasticOut,
-      builder: (context, double value, child) {
-        final isFront = value < 1.57;
+      duration: shouldReduceMotion
+          ? Duration.zero
+          : const Duration(milliseconds: 500),
+      curve: Curves.easeInOutCubic,
+      builder: (context, double value, _) {
+        final isFront = value < 1.57079632679; // pi / 2
         final currentColor = isFront ? primaryColor : backColor;
 
-        return Transform(
-          transform: Matrix4.identity()
-            ..setEntry(3, 2, 0.001) // Perspective
-            ..rotateY(value),
-          alignment: Alignment.center,
-          child:
-              Container(
-                    key: const ValueKey('speech_mirror'),
-                    width: isNarrow ? 270.w : (isCompact ? 290.w : 330.w),
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: currentColor.withValues(alpha: 0.2),
-                          blurRadius: 30,
-                          spreadRadius: 2,
-                          offset: const Offset(0, 10),
-                        ),
-                      ],
+        return Center(
+          child: Container(
+            key: const ValueKey('speech_mirror'),
+            width: double.infinity,
+            constraints: BoxConstraints(maxWidth: 440.w),
+            margin: EdgeInsets.symmetric(horizontal: isNarrow ? 12.w : 20.w),
+            child: Transform(
+              transform: Matrix4.identity()
+                ..setEntry(3, 2, 0.001) // Realistic perspective
+                ..rotateY(value),
+              alignment: Alignment.center,
+              child: Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: isCompact ? 16.w : 22.w,
+                  vertical: isCompact ? 16.h : 22.h,
+                ),
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? const Color(0xFF1E293B).withValues(alpha: 0.85)
+                      : Colors.white,
+                  borderRadius: BorderRadius.circular(20.r),
+                  border: Border.all(
+                    color: currentColor.withValues(alpha: isDark ? 0.35 : 0.25),
+                    width: 1.4,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(
+                        alpha: isDark ? 0.25 : 0.05,
+                      ),
+                      blurRadius: 14,
+                      offset: const Offset(0, 4),
                     ),
-                    child: GlassTile(
-                      padding: EdgeInsets.all(isCompact ? 20.r : 32.r),
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(isCompact ? 24.r : 32.r),
-                        topRight: Radius.circular(isCompact ? 24.r : 32.r),
-                        bottomLeft: Radius.circular(
-                          isFront ? 4.r : (isCompact ? 24.r : 32.r),
+                  ],
+                ),
+                child: Transform(
+                  // Counter-rotate text on the back so it reads left-to-right
+                  transform: Matrix4.identity()
+                    ..rotateY(isFront ? 0 : 3.14159265359),
+                  alignment: Alignment.center,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // Speech Mode Badge
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12.w,
+                          vertical: 5.h,
                         ),
-                        bottomRight: Radius.circular(
-                          isFront ? (isCompact ? 24.r : 32.r) : 4.r,
-                        ),
-                      ),
-                      color: currentColor.withValues(alpha: 0.15),
-                      border: Border.all(
-                        color: currentColor.withValues(alpha: 0.4),
-                        width: 2,
-                      ),
-                      child: Transform(
-                        transform: Matrix4.identity()
-                          ..rotateY(isFront ? 0 : 3.14),
-                        alignment: Alignment.center,
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            // Watermark
-                            Positioned(
-                              right: isFront ? 0 : null,
-                              left: isFront ? null : 0,
-                              bottom: 0,
-                              child: Icon(
-                                Icons.format_quote_rounded,
-                                size: 80.r,
-                                color: currentColor.withValues(alpha: 0.1),
-                              ),
+                        decoration: BoxDecoration(
+                          color: currentColor.withValues(
+                            alpha: isDark ? 0.12 : 0.08,
+                          ),
+                          borderRadius: BorderRadius.circular(16.r),
+                          border: Border.all(
+                            color: currentColor.withValues(
+                              alpha: isDark ? 0.25 : 0.2,
                             ),
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 14.w,
-                                    vertical: 6.h,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: currentColor.withValues(alpha: 0.2),
-                                    borderRadius: BorderRadius.circular(20.r),
-                                    border: Border.all(
-                                      color: currentColor.withValues(
-                                        alpha: 0.3,
-                                      ),
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Icon(
-                                        isFront
-                                            ? Icons.record_voice_over_rounded
-                                            : Icons.mark_chat_read_rounded,
-                                        size: 12.r,
-                                        color: currentColor,
-                                      ),
-                                      SizedBox(width: 6.w),
-                                      Text(
-                                        isFront
-                                            ? "DIRECT SPEECH"
-                                            : "REPORTED SPEECH",
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: isCompact ? 9.sp : 11.sp,
-                                          fontWeight: FontWeight.w900,
-                                          color: currentColor,
-                                          letterSpacing: 1.5,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(height: isCompact ? 16.h : 24.h),
-                                Text(
-                                  isFront ? directText : indirectText,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: isCompact ? 18.sp : 24.sp,
-                                    color: isDark
-                                        ? Colors.white
-                                        : Colors.black87,
-                                    fontWeight: FontWeight.w800,
-                                    height: 1.4,
-                                  ),
-                                ),
-                                SizedBox(height: 8.h),
-                              ],
+                            width: 1,
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              isFront
+                                  ? Icons.record_voice_over_outlined
+                                  : Icons.forum_outlined,
+                              size: isCompact ? 13.r : 15.r,
+                              color: currentColor,
+                            ),
+                            SizedBox(width: 6.w),
+                            Text(
+                              isFront ? "Direct Speech" : "Indirect Speech",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: isCompact ? 11.sp : 12.sp,
+                                fontWeight: FontWeight.w600,
+                                color: currentColor,
+                                letterSpacing: 0.4,
+                              ),
                             ),
                           ],
                         ),
                       ),
-                    ),
-                  )
-                  .animate(
-                    key: ValueKey(isFront),
-                    target: shouldReduceMotion ? 0 : 1,
-                  )
-                  .shimmer(duration: 2.seconds, color: Colors.white10),
+                      SizedBox(height: isCompact ? 14.h : 18.h),
+
+                      // Main Sentence
+                      Text(
+                        isFront ? directText : indirectText,
+                        textAlign: TextAlign.center,
+                        softWrap: true,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: isCompact ? 16.sp : 18.sp,
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF0F172A),
+                          fontWeight: FontWeight.w600,
+                          height: 1.45,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
         );
       },
     );

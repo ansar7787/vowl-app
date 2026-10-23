@@ -38,10 +38,7 @@ class SpeedVarianceInstruction extends StatelessWidget {
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: color.withValues(alpha: 0.22),
-          width: 1.2,
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.22), width: 1.2),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,

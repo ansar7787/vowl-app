@@ -990,18 +990,18 @@ class GameInstructionService {
           "If it's an action, it's a verb. If it's a person/place/thing, it's a noun.",
     ),
     GameSubtype.subjectVerbAgreement: GameBriefing(
-      title: "Agreement Sync",
+      title: "Subject-Verb Agreement",
       icon: Icons.sync_rounded,
       objective:
-          "Choose the correct verb form to match the subject. Mastering structural rules ensures your English is accurate and easily understood.",
+          "Choose the correct verb to match the subject. Correct agreement makes your sentences clear and natural.",
       rules: [
-        "Identify subject",
+        "Identify the subject",
         "Check singular vs plural",
-        "Match verb form",
+        "Select the matching verb",
       ],
-      actionText: "Sync Agreement",
+      actionText: "Match the Verb",
       tip:
-          "Watch out for 'distractors'—prepositional phrases that sit between subject and verb!",
+          "Watch out for words that sit between the subject and the verb!",
     ),
     GameSubtype.voiceSwap: GameBriefing(
       title: "Voice Swap",
@@ -1077,43 +1077,43 @@ class GameInstructionService {
       title: "Position Pro",
       icon: Icons.directions_rounded,
       objective:
-          "Choose the correct preposition to complete the sentence. Mastering structural rules ensures your English is accurate and easily understood.",
+          "Choose the correct preposition to complete each sentence accurately.",
       rules: [
-        "Analyze spatial data",
-        "Check time markers",
-        "Verify collocations",
+        "Read the sentence clue",
+        "Tap or trace to the matching preposition",
+        "Confirm your answer to finish the sentence",
       ],
-      actionText: "Choose Position",
+      actionText: "Start Practice",
       tip:
-          "Use 'In' for large spaces, 'On' for surfaces, and 'At' for specific points.",
+          "Use 'In' for enclosed spaces, 'On' for surfaces, and 'At' for specific points.",
     ),
     GameSubtype.pronounResolution: GameBriefing(
-      title: "Pronoun Gravity",
-      icon: Icons.gps_fixed_rounded,
+      title: "Pronoun Match",
+      icon: Icons.person_search_rounded,
       objective:
-          "Words like 'he', 'she', or 'it' only make sense if we know who they belong to. Align the gravity well to the matching word, then type it out to lock it in.",
+          "Words like 'he', 'she', or 'it' refer back to someone or something. Point to the matching word, then type it to confirm your answer.",
       rules: [
         "Read the sentence carefully",
-        "Align beam to the match",
-        "Type the word to lock it in",
+        "Point to the matching word",
+        "Type the word to confirm",
       ],
-      actionText: "Align Gravity",
+      actionText: "Start Playing",
       tip:
           "If you're not sure, try swapping the words! If 'the dog' fits perfectly where 'it' was, you've found your match.",
     ),
     GameSubtype.punctuationMastery: GameBriefing(
-      title: "Symbol Scribe",
+      title: "Punctuation Mastery",
       icon: Icons.short_text_rounded,
       objective:
-          "Place commas, periods, or semi-colons in the correct locations. Mastering structural rules ensures your English is accurate and easily understood.",
+          "Place commas, periods, question marks, and other punctuation marks in the correct locations to make each sentence clear and accurate.",
       rules: [
         "Separate list items",
         "Connect related ideas",
-        "Define boundaries",
+        "Add terminal punctuation",
       ],
-      actionText: "Scribe Symbols",
+      actionText: "Place Punctuation",
       tip:
-          "Use a comma before 'and' only in long lists or between independent clauses!",
+          "Use a comma before 'and' in lists or between independent clauses!",
     ),
     GameSubtype.relativeClauses: GameBriefing(
       title: "Relative Rail",

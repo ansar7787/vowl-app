@@ -17,8 +17,8 @@ class PunctuationStickerSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Wrap(
       alignment: WrapAlignment.center,
-      spacing: 24.w,
-      runSpacing: 24.h,
+      spacing: 16.w,
+      runSpacing: 14.h,
       children: marks.map((m) => _buildSticker(context, m)).toList(),
     );
   }
@@ -46,31 +46,26 @@ class PunctuationStickerSheet extends StatelessWidget {
     Widget sticker = Material(
       color: Colors.transparent,
       child: Container(
-        width: 54.r,
-        height: 54.r,
+        width: 48.r,
+        height: 48.r,
         decoration: BoxDecoration(
           color: Colors.white,
           shape: BoxShape.circle,
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [
-              Colors.white,
-              primaryColor.withValues(alpha: 0.1),
-            ],
+            colors: [Colors.white, primaryColor.withValues(alpha: 0.1)],
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.15),
-              blurRadius: isDragging ? 20 : 8,
-              offset: isDragging
-                  ? const Offset(0, 10)
-                  : const Offset(0, 4),
+              color: Colors.black.withValues(alpha: 0.12),
+              blurRadius: isDragging ? 16 : 6,
+              offset: isDragging ? const Offset(0, 8) : const Offset(0, 3),
             ),
           ],
           border: Border.all(
-            color: primaryColor.withValues(alpha: 0.4),
-            width: 2,
+            color: primaryColor.withValues(alpha: 0.35),
+            width: 1.5,
           ),
         ),
         child: Center(
@@ -78,8 +73,8 @@ class PunctuationStickerSheet extends StatelessWidget {
             mark,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 26.sp,
-              fontWeight: FontWeight.w900,
+              fontSize: 22.sp,
+              fontWeight: FontWeight.w700,
               color: primaryColor,
             ),
           ),

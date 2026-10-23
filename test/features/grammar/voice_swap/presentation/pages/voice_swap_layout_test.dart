@@ -157,7 +157,9 @@ void main() {
         ),
       ),
     );
-    when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
     when(() => mockEconomyBloc.stream).thenAnswer((_) => const Stream.empty());
@@ -186,14 +188,17 @@ void main() {
       ),
     ).thenAnswer((_) async {});
 
-    when(() => mockAnalyticsService.logGameSkipped(any())).thenAnswer((_) async {});
+    when(
+      () => mockAnalyticsService.logGameSkipped(any()),
+    ).thenAnswer((_) async {});
 
     if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
     if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
     if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
     if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
     if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<AnalyticsService>()) di.sl.unregister<AnalyticsService>();
+    if (di.sl.isRegistered<AnalyticsService>())
+      di.sl.unregister<AnalyticsService>();
     if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
 
     di.sl.registerSingleton<HapticService>(mockHapticService);
@@ -249,9 +254,7 @@ void main() {
                 viewInsets: EdgeInsets.zero,
                 disableAnimations: reduceMotion,
               ),
-              child: Scaffold(
-                body: VoiceSwapScreen(level: level),
-              ),
+              child: Scaffold(body: VoiceSwapScreen(level: level)),
             ),
           ),
         ),
@@ -262,23 +265,24 @@ void main() {
   }
 
   group('VoiceSwapScreen Layout & Hardening Tests', () {
-    testWidgets('1. Renders shimmer loading state when state is GrammarInitial',
-        (tester) async {
-      await pumpVoiceSwapScreen(
-        tester,
-        state: const GrammarInitial(),
-      );
-      expect(find.byType(GameShimmerLoading), findsOneWidget);
-    });
+    testWidgets(
+      '1. Renders shimmer loading state when state is GrammarInitial',
+      (tester) async {
+        await pumpVoiceSwapScreen(tester, state: const GrammarInitial());
+        expect(find.byType(GameShimmerLoading), findsOneWidget);
+      },
+    );
 
-    testWidgets('2. respects level 1 game briefing dialog on first run',
-        (tester) async {
+    testWidgets('2. respects level 1 game briefing dialog on first run', (
+      tester,
+    ) async {
       await pumpVoiceSwapScreen(tester, level: 1);
       expect(find.byType(GameBriefingLayer), findsOneWidget);
-          });
+    });
 
-    testWidgets('3. Renders core game elements after briefing dismissal',
-        (tester) async {
+    testWidgets('3. Renders core game elements after briefing dismissal', (
+      tester,
+    ) async {
       await pumpVoiceSwapScreen(tester);
 
       expect(find.byKey(const ValueKey('voice_sentence_card')), findsOneWidget);
@@ -287,11 +291,12 @@ void main() {
       expect(find.byKey(const ValueKey('voice_label_active')), findsOneWidget);
       expect(find.byKey(const ValueKey('voice_label_passive')), findsOneWidget);
       expect(find.byKey(const ValueKey('voice_engage_button')), findsOneWidget);
-      expect(find.text("ENGAGE TRANSMUTER"), findsOneWidget);
+      expect(find.text("CHECK ANSWER"), findsOneWidget);
     });
 
-    testWidgets('4. Context sentence card renders quest sentence text',
-        (tester) async {
+    testWidgets('4. Context sentence card renders quest sentence text', (
+      tester,
+    ) async {
       await pumpVoiceSwapScreen(tester);
 
       expect(
@@ -300,31 +305,35 @@ void main() {
       );
     });
 
-    testWidgets('5. Default mode indicator displays MODE: ACTIVE initially',
-        (tester) async {
+    testWidgets('5. Default mode indicator displays MODE: ACTIVE initially', (
+      tester,
+    ) async {
       await pumpVoiceSwapScreen(tester);
 
       expect(find.text('MODE: ACTIVE'), findsOneWidget);
     });
 
-    testWidgets('6. Tapping toggle switch toggles mode to PASSIVE and plays audio & haptic',
-        (tester) async {
-      await pumpVoiceSwapScreen(tester);
+    testWidgets(
+      '6. Tapping toggle switch toggles mode to PASSIVE and plays audio & haptic',
+      (tester) async {
+        await pumpVoiceSwapScreen(tester);
 
-      final toggleSwitch = find.byKey(const ValueKey('voice_toggle_switch'));
-      expect(toggleSwitch, findsOneWidget);
+        final toggleSwitch = find.byKey(const ValueKey('voice_toggle_switch'));
+        expect(toggleSwitch, findsOneWidget);
 
-      await tester.tap(toggleSwitch);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.tap(toggleSwitch);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      verify(() => mockSoundService.playClick()).called(1);
-      verify(() => mockHapticService.heavy()).called(1);
-      expect(find.text('MODE: PASSIVE'), findsOneWidget);
-    });
+        verify(() => mockSoundService.playClick()).called(1);
+        verify(() => mockHapticService.heavy()).called(1);
+        expect(find.text('MODE: PASSIVE'), findsOneWidget);
+      },
+    );
 
-    testWidgets('7. Double-tapping toggle switch toggles mode back to ACTIVE',
-        (tester) async {
+    testWidgets('7. Double-tapping toggle switch toggles mode back to ACTIVE', (
+      tester,
+    ) async {
       await pumpVoiceSwapScreen(tester);
 
       final toggleSwitch = find.byKey(const ValueKey('voice_toggle_switch'));
@@ -338,36 +347,47 @@ void main() {
       expect(find.text('MODE: ACTIVE'), findsOneWidget);
     });
 
-    testWidgets('8. Active and Passive labels are displayed with correct text',
-        (tester) async {
-      await pumpVoiceSwapScreen(tester);
+    testWidgets(
+      '8. Active and Passive labels are displayed with correct text',
+      (tester) async {
+        await pumpVoiceSwapScreen(tester);
 
-      expect(find.byKey(const ValueKey('voice_label_active')), findsOneWidget);
-      expect(find.byKey(const ValueKey('voice_label_passive')), findsOneWidget);
-      expect(find.text('ACTIVE'), findsOneWidget);
-      expect(find.text('PASSIVE'), findsOneWidget);
-    });
+        expect(
+          find.byKey(const ValueKey('voice_label_active')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('voice_label_passive')),
+          findsOneWidget,
+        );
+        expect(find.text('ACTIVE'), findsOneWidget);
+        expect(find.text('PASSIVE'), findsOneWidget);
+      },
+    );
 
-    testWidgets('9. Submitting incorrect answer triggers error feedback and wrong status',
-        (tester) async {
-      await pumpVoiceSwapScreen(tester);
+    testWidgets(
+      '9. Submitting incorrect answer triggers error feedback and wrong status',
+      (tester) async {
+        await pumpVoiceSwapScreen(tester);
 
-      // Quest 0 is Active. Toggle to Passive (wrong).
-      await tester.tap(find.byKey(const ValueKey('voice_toggle_switch')));
-      await tester.pump(const Duration(milliseconds: 100));
+        // Quest 0 is Active. Toggle to Passive (wrong).
+        await tester.tap(find.byKey(const ValueKey('voice_toggle_switch')));
+        await tester.pump(const Duration(milliseconds: 100));
 
-      // Engage Transmuter
-      await tester.tap(find.byKey(const ValueKey('voice_engage_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Engage Transmuter
+        await tester.tap(find.byKey(const ValueKey('voice_engage_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(() => mockGrammarBloc.add(const SubmitAnswer(false))).called(1);
-    });
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockGrammarBloc.add(const SubmitAnswer(false))).called(1);
+      },
+    );
 
-    testWidgets('10. Engage button disappears after wrong submission',
-        (tester) async {
+    testWidgets('10. Engage button disappears after wrong submission', (
+      tester,
+    ) async {
       await pumpVoiceSwapScreen(tester);
 
       // Submit wrong answer
@@ -381,8 +401,9 @@ void main() {
       expect(find.byKey(const ValueKey('voice_engage_button')), findsNothing);
     });
 
-    testWidgets('11. Toggle is disabled after wrong answer submission',
-        (tester) async {
+    testWidgets('11. Toggle is disabled after wrong answer submission', (
+      tester,
+    ) async {
       await pumpVoiceSwapScreen(tester);
 
       // Submit wrong answer
@@ -396,95 +417,126 @@ void main() {
       clearInteractions(mockSoundService);
 
       // Tap toggle again; should be ignored because isAnswered is true
-      await tester.tap(find.byKey(const ValueKey('voice_toggle_switch')), warnIfMissed: false);
+      await tester.tap(
+        find.byKey(const ValueKey('voice_toggle_switch')),
+        warnIfMissed: false,
+      );
       await tester.pump();
 
       verifyNever(() => mockSoundService.playClick());
     });
 
-    testWidgets('12. Submitting correct answer on quest without conversion completes directly',
-        (tester) async {
-      final directState = GrammarLoaded(
-        quests: const [sampleDirectQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
+    testWidgets(
+      '12. Submitting correct answer on quest without conversion completes directly',
+      (tester) async {
+        final directState = GrammarLoaded(
+          quests: const [sampleDirectQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
+
+        await pumpVoiceSwapScreen(tester, state: directState);
+
+        // Default is Active. SampleDirectQuest is Active without 'flip to:'.
+        await tester.tap(find.byKey(const ValueKey('voice_engage_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockGrammarBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
+
+    testWidgets(
+      '13. Submitting correct voice on quest with conversion advances to Phase 2',
+      (tester) async {
+        await pumpVoiceSwapScreen(tester);
+
+        // Default is Active. Quest 0 is Active with conversion phrase.
+        await tester.tap(find.byKey(const ValueKey('voice_engage_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
+
+        // In Phase 2, TypeToConfirmOverlay is displayed
+        expect(
+          find.byKey(const ValueKey('voice_type_overlay'), skipOffstage: false),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets(
+      '14. Phase 2 TypeToConfirmOverlay displays expected conversion guidance',
+      (tester) async {
+        await pumpVoiceSwapScreen(tester);
+
+        await tester.tap(find.byKey(const ValueKey('voice_engage_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+
+        final overlayFinder = find.byKey(
+          const ValueKey('voice_type_overlay'),
+          skipOffstage: false,
+        );
+        expect(overlayFinder, findsOneWidget);
+
+        final overlayWidget = tester.widget<TypeToConfirmOverlay>(
+          overlayFinder,
+        );
+        expect(
+          overlayWidget.expectedText,
+          contains('artisan sourdough loaf was baked'),
+        );
+      },
+    );
+
+    testWidgets(
+      '15. Confirming typing in Phase 2 completes successfully with SubmitAnswer(true)',
+      (tester) async {
+        await pumpVoiceSwapScreen(tester);
+
+        await tester.tap(find.byKey(const ValueKey('voice_engage_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+
+        final overlayFinder = find.byKey(
+          const ValueKey('voice_type_overlay'),
+          skipOffstage: false,
+        );
+        final overlayWidget = tester.widget<TypeToConfirmOverlay>(
+          overlayFinder,
+        );
+
+        // Invoke onConfirmed
+        overlayWidget.onConfirmed();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(() => mockGrammarBloc.add(const SubmitAnswer(true))).called(1);
+      },
+    );
+
+    testWidgets('16. Skipping typing in Phase 2 submits wrong answer', (
+      tester,
+    ) async {
+      await pumpVoiceSwapScreen(tester);
+
+      await tester.tap(find.byKey(const ValueKey('voice_engage_button')));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 350));
+
+      final overlayFinder = find.byKey(
+        const ValueKey('voice_type_overlay'),
+        skipOffstage: false,
       );
-
-      await pumpVoiceSwapScreen(tester, state: directState);
-
-      // Default is Active. SampleDirectQuest is Active without 'flip to:'.
-      await tester.tap(find.byKey(const ValueKey('voice_engage_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-      verify(() => mockGrammarBloc.add(const SubmitAnswer(true))).called(1);
-    });
-
-    testWidgets('13. Submitting correct voice on quest with conversion advances to Phase 2',
-        (tester) async {
-      await pumpVoiceSwapScreen(tester);
-
-      // Default is Active. Quest 0 is Active with conversion phrase.
-      await tester.tap(find.byKey(const ValueKey('voice_engage_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
-
-      // In Phase 2, TypeToConfirmOverlay is displayed
-      expect(find.byKey(const ValueKey('voice_type_overlay'), skipOffstage: false), findsOneWidget);
-    });
-
-    testWidgets('14. Phase 2 TypeToConfirmOverlay displays expected conversion guidance',
-        (tester) async {
-      await pumpVoiceSwapScreen(tester);
-
-      await tester.tap(find.byKey(const ValueKey('voice_engage_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-
-      final overlayFinder = find.byKey(const ValueKey('voice_type_overlay'), skipOffstage: false);
-      expect(overlayFinder, findsOneWidget);
-
-      final overlayWidget = tester.widget<TypeToConfirmOverlay>(overlayFinder);
-      expect(overlayWidget.expectedText, contains('artisan sourdough loaf was baked'));
-    });
-
-    testWidgets('15. Confirming typing in Phase 2 completes successfully with SubmitAnswer(true)',
-        (tester) async {
-      await pumpVoiceSwapScreen(tester);
-
-      await tester.tap(find.byKey(const ValueKey('voice_engage_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-
-      final overlayFinder = find.byKey(const ValueKey('voice_type_overlay'), skipOffstage: false);
-      final overlayWidget = tester.widget<TypeToConfirmOverlay>(overlayFinder);
-
-      // Invoke onConfirmed
-      overlayWidget.onConfirmed();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(() => mockGrammarBloc.add(const SubmitAnswer(true))).called(1);
-    });
-
-    testWidgets('16. Skipping typing in Phase 2 submits wrong answer',
-        (tester) async {
-      await pumpVoiceSwapScreen(tester);
-
-      await tester.tap(find.byKey(const ValueKey('voice_engage_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
-
-      final overlayFinder = find.byKey(const ValueKey('voice_type_overlay'), skipOffstage: false);
       final overlayWidget = tester.widget<TypeToConfirmOverlay>(overlayFinder);
 
       // Invoke onSkipped
@@ -497,8 +549,9 @@ void main() {
       verify(() => mockGrammarBloc.add(const SubmitAnswer(false))).called(1);
     });
 
-    testWidgets('17. Phase 1 controls are ignored after Phase 2 is activated',
-        (tester) async {
+    testWidgets('17. Phase 1 controls are ignored after Phase 2 is activated', (
+      tester,
+    ) async {
       await pumpVoiceSwapScreen(tester);
 
       await tester.tap(find.byKey(const ValueKey('voice_engage_button')));
@@ -508,41 +561,50 @@ void main() {
       clearInteractions(mockSoundService);
 
       // Tapping toggle switch now does nothing because ignore pointer is active
-      await tester.tap(find.byKey(const ValueKey('voice_toggle_switch')), warnIfMissed: false);
+      await tester.tap(
+        find.byKey(const ValueKey('voice_toggle_switch')),
+        warnIfMissed: false,
+      );
       await tester.pump();
 
       verifyNever(() => mockSoundService.playClick());
     });
 
-    testWidgets('18. Passive quest requires switching to Passive before engagement',
-        (tester) async {
-      final passiveState = GrammarLoaded(
-        quests: const [samplePassiveQuest],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
+    testWidgets(
+      '18. Passive quest requires switching to Passive before engagement',
+      (tester) async {
+        final passiveState = GrammarLoaded(
+          quests: const [samplePassiveQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
 
-      await pumpVoiceSwapScreen(tester, state: passiveState);
+        await pumpVoiceSwapScreen(tester, state: passiveState);
 
-      // Switch to Passive
-      await tester.tap(find.byKey(const ValueKey('voice_toggle_switch')));
-      await tester.pump(const Duration(milliseconds: 100));
+        // Switch to Passive
+        await tester.tap(find.byKey(const ValueKey('voice_toggle_switch')));
+        await tester.pump(const Duration(milliseconds: 100));
 
-      // Engage
-      await tester.tap(find.byKey(const ValueKey('voice_engage_button')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 350));
+        // Engage
+        await tester.tap(find.byKey(const ValueKey('voice_engage_button')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
 
-      // Correctly advances to conversion phase
-      expect(find.byKey(const ValueKey('voice_type_overlay'), skipOffstage: false), findsOneWidget);
-    });
+        // Correctly advances to conversion phase
+        expect(
+          find.byKey(const ValueKey('voice_type_overlay'), skipOffstage: false),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('19. Tapping continue button dispatches NextQuestion event',
-        (tester) async {
+    testWidgets('19. Tapping continue button dispatches NextQuestion event', (
+      tester,
+    ) async {
       await pumpVoiceSwapScreen(tester);
 
       // Engage wrong answer to surface feedback card with continue button
@@ -561,8 +623,9 @@ void main() {
       }
     });
 
-    testWidgets('20. Tapping hint button dispatches GrammarHintUsed event',
-        (tester) async {
+    testWidgets('20. Tapping hint button dispatches GrammarHintUsed event', (
+      tester,
+    ) async {
       await pumpVoiceSwapScreen(tester);
 
       final hintButton = find.byType(QuestHintButton);
@@ -570,81 +633,100 @@ void main() {
 
       await tester.tap(hintButton);
       await tester.pump();
-      verify(() => mockGrammarBloc.add(const GrammarHintUsed())).called(greaterThanOrEqualTo(1));
+      verify(
+        () => mockGrammarBloc.add(const GrammarHintUsed()),
+      ).called(greaterThanOrEqualTo(1));
     });
 
-    testWidgets('21. Hint used state reflects in GrammarLoaded state and widget builds properly',
-        (tester) async {
-      final hintState = testLoadedState.copyWith(hintUsed: true);
+    testWidgets(
+      '21. Hint used state reflects in GrammarLoaded state and widget builds properly',
+      (tester) async {
+        final hintState = testLoadedState.copyWith(hintUsed: true);
 
-      await pumpVoiceSwapScreen(tester, state: hintState);
+        await pumpVoiceSwapScreen(tester, state: hintState);
 
-      expect(find.byKey(const ValueKey('voice_sentence_card')), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(
+          find.byKey(const ValueKey('voice_sentence_card')),
+          findsOneWidget,
+        );
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('22. Compact mobile layout renders cleanly without layout overflow',
-        (tester) async {
-      await pumpVoiceSwapScreen(
-        tester,
-        size: const Size(320, 568),
-      );
+    testWidgets(
+      '22. Compact mobile layout renders cleanly without layout overflow',
+      (tester) async {
+        await pumpVoiceSwapScreen(tester, size: const Size(320, 568));
 
-      expect(tester.takeException(), isNull);
-      expect(find.byKey(const ValueKey('voice_sentence_card')), findsOneWidget);
-      expect(find.byKey(const ValueKey('voice_engage_button')), findsOneWidget);
-    });
+        expect(tester.takeException(), isNull);
+        expect(
+          find.byKey(const ValueKey('voice_sentence_card')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('voice_engage_button')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('23. Tablet layout renders with spacious proportions and no overflow',
-        (tester) async {
-      await pumpVoiceSwapScreen(
-        tester,
-        size: const Size(800, 1200),
-      );
+    testWidgets(
+      '23. Tablet layout renders with spacious proportions and no overflow',
+      (tester) async {
+        await pumpVoiceSwapScreen(tester, size: const Size(800, 1200));
 
-      expect(tester.takeException(), isNull);
-      expect(find.byKey(const ValueKey('voice_sentence_card')), findsOneWidget);
-      expect(find.byKey(const ValueKey('voice_engage_button')), findsOneWidget);
-    });
+        expect(tester.takeException(), isNull);
+        expect(
+          find.byKey(const ValueKey('voice_sentence_card')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('voice_engage_button')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('24. Light theme renders successfully without exception',
-        (tester) async {
-      await pumpVoiceSwapScreen(
-        tester,
-        themeMode: ThemeMode.light,
-      );
+    testWidgets('24. Light theme renders successfully without exception', (
+      tester,
+    ) async {
+      await pumpVoiceSwapScreen(tester, themeMode: ThemeMode.light);
 
       expect(tester.takeException(), isNull);
       expect(find.byKey(const ValueKey('voice_sentence_card')), findsOneWidget);
       expect(find.byKey(const ValueKey('voice_swap_toggle')), findsOneWidget);
     });
 
-    testWidgets('25. Motion gating (reduceMotion: true) runs without unmounted timers',
-        (tester) async {
-      await pumpVoiceSwapScreen(
-        tester,
-        reduceMotion: true,
-      );
+    testWidgets(
+      '25. Motion gating (reduceMotion: true) runs without unmounted timers',
+      (tester) async {
+        await pumpVoiceSwapScreen(tester, reduceMotion: true);
 
-      expect(find.byKey(const ValueKey('voice_toggle_switch')), findsOneWidget);
-      await tester.tap(find.byKey(const ValueKey('voice_toggle_switch')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        expect(
+          find.byKey(const ValueKey('voice_toggle_switch')),
+          findsOneWidget,
+        );
+        await tester.tap(find.byKey(const ValueKey('voice_toggle_switch')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('26. Widget unmount cleanly disposes all timers and controllers',
-        (tester) async {
-      await pumpVoiceSwapScreen(tester);
-      await tester.pump(const Duration(milliseconds: 100));
+    testWidgets(
+      '26. Widget unmount cleanly disposes all timers and controllers',
+      (tester) async {
+        await pumpVoiceSwapScreen(tester);
+        await tester.pump(const Duration(milliseconds: 100));
 
-      // Immediately unmount by pumping empty container
-      await tester.pumpWidget(const SizedBox.shrink());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        // Immediately unmount by pumping empty container
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      expect(tester.takeException(), isNull);
-    });
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }

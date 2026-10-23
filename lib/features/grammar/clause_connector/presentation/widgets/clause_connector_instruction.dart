@@ -11,35 +11,53 @@ class ClauseConnectorInstruction extends StatelessWidget {
     this.instructionText,
   });
 
+  String _formatInstruction(String? raw) {
+    if (raw == null || raw.trim().isEmpty) {
+      return "Select the connector that best completes the sentence.";
+    }
+    final trimmed = raw.trim();
+    if (trimmed == trimmed.toUpperCase() && trimmed.length > 3) {
+      return trimmed[0].toUpperCase() + trimmed.substring(1).toLowerCase();
+    }
+    return trimmed;
+  }
+
   @override
   Widget build(BuildContext context) {
+    final text = _formatInstruction(instructionText);
+
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+      constraints: BoxConstraints(maxWidth: 340.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.25),
+          width: 1.2,
+        ),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
-            Icons.settings_input_component_rounded,
-            size: 14.r,
+            Icons.link_rounded,
+            size: 16.r,
             color: primaryColor,
           ),
           SizedBox(width: 8.w),
           Flexible(
             child: Text(
-              instructionText?.toUpperCase() ?? "CHOOSE THE CORRECT CONNECTOR",
-              overflow: TextOverflow.ellipsis,
-              maxLines: 2,
+              text,
+              textAlign: TextAlign.center,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w600,
                 color: primaryColor,
-                letterSpacing: 1.0,
+                height: 1.35,
               ),
             ),
           ),

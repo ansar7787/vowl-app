@@ -1,39 +1,71 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 class VoiceSwapInstruction extends StatelessWidget {
   final Color primaryColor;
-  const VoiceSwapInstruction({super.key, required this.primaryColor});
+  final String? instruction;
+
+  const VoiceSwapInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
+
+  String _cleanInstruction() {
+    final raw = instruction?.trim();
+    if (raw == null || raw.isEmpty) {
+      return "Choose whether the sentence is in Active or Passive voice";
+    }
+    final upper = raw.toUpperCase();
+    if (upper.contains("TRANSMUTER") || upper.contains("FLIP THE VOICE")) {
+      return "Choose whether the sentence is in Active or Passive voice";
+    }
+    return raw;
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            Icons.settings_input_component_rounded,
-            size: 14.r,
-            color: primaryColor,
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final text = _cleanInstruction();
+
+    return Semantics(
+      label: 'Instruction: $text',
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 9.h),
+        decoration: BoxDecoration(
+          color: primaryColor.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: primaryColor.withValues(alpha: 0.22),
+            width: 1.2,
           ),
-          SizedBox(width: 12.w),
-          Text(
-            "FLIP THE VOICE TRANSMUTER",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.5,
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(Icons.swap_horiz_rounded, size: 18.r, color: primaryColor),
+            SizedBox(width: 8.w),
+            Flexible(
+              child: Text(
+                text,
+                textAlign: TextAlign.center,
+                softWrap: true,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.95)
+                      : AppColors.slate800,
+                  height: 1.35,
+                ),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

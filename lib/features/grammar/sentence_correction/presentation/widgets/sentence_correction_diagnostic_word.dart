@@ -32,8 +32,10 @@ class SentenceCorrectionDiagnosticWord extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    Color itemColor = Colors.transparent;
-    Color borderColor = primaryColor.withValues(alpha: 0.1);
+    Color itemColor = isDark
+        ? Colors.white.withValues(alpha: 0.04)
+        : Colors.black.withValues(alpha: 0.03);
+    Color borderColor = primaryColor.withValues(alpha: 0.12);
     double borderWidth = 1;
     Color textColor = Theme.of(context).colorScheme.onSurface;
     List<BoxShadow> shadows = [];
@@ -49,85 +51,82 @@ class SentenceCorrectionDiagnosticWord extends StatelessWidget {
     if (isCorrectZap) {
       itemColor = tokens.gameCorrect.withValues(alpha: 0.15);
       borderColor = tokens.gameCorrect;
-      borderWidth = 2;
+      borderWidth = 1.5;
       textColor = tokens.gameCorrect;
       shadows = [
         BoxShadow(
-          color: tokens.gameCorrect.withValues(alpha: 0.3),
-          blurRadius: 15,
+          color: tokens.gameCorrect.withValues(alpha: 0.25),
+          blurRadius: 10,
         ),
       ];
     } else if (isWrongZap) {
       itemColor = tokens.gameIncorrect.withValues(alpha: 0.15);
       borderColor = tokens.gameIncorrect;
-      borderWidth = 2;
+      borderWidth = 1.5;
       textColor = tokens.gameIncorrect;
       shadows = [
         BoxShadow(
-          color: tokens.gameIncorrect.withValues(alpha: 0.3),
-          blurRadius: 15,
+          color: tokens.gameIncorrect.withValues(alpha: 0.25),
+          blurRadius: 10,
         ),
       ];
       textDecoration = TextDecoration.lineThrough;
     } else if (isSuspected) {
-      itemColor = Colors.orangeAccent.withValues(alpha: 0.15);
-      borderColor = Colors.orangeAccent;
-      borderWidth = 2;
-      textColor = Colors.orangeAccent;
+      itemColor = primaryColor.withValues(alpha: 0.15);
+      borderColor = primaryColor;
+      borderWidth = 1.5;
+      textColor = primaryColor;
       shadows = [
-        BoxShadow(
-          color: Colors.orangeAccent.withValues(alpha: 0.3),
-          blurRadius: 10,
-        ),
+        BoxShadow(color: primaryColor.withValues(alpha: 0.25), blurRadius: 8),
       ];
     }
 
     final wordWidget = ScaleButton(
-          onTap: onTap,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-            decoration: BoxDecoration(
-              color: itemColor,
-              borderRadius: BorderRadius.circular(16.r),
-              border: Border.all(color: borderColor, width: borderWidth),
-              boxShadow: shadows,
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+        decoration: BoxDecoration(
+          color: itemColor,
+          borderRadius: BorderRadius.circular(14.r),
+          border: Border.all(color: borderColor, width: borderWidth),
+          boxShadow: shadows,
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (isCorrectZap) ...[
+              Icon(
+                Icons.check_circle_rounded,
+                color: tokens.gameCorrect,
+                size: 18.sp,
+              ),
+              SizedBox(width: 6.w),
+            ] else if (isWrongZap) ...[
+              Icon(
+                Icons.cancel_rounded,
+                color: tokens.gameIncorrect,
+                size: 18.sp,
+              ),
+              SizedBox(width: 6.w),
+            ],
+            Text(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 18.sp,
+                fontWeight: isCorrectZap || isWrongZap || isSuspected
+                    ? FontWeight.w700
+                    : FontWeight.w500,
+                color: textColor,
+                decoration: textDecoration,
+                decorationColor: decorationColor,
+                decorationThickness: textDecoration != null ? 2 : null,
+              ),
             ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (isCorrectZap) ...[
-                  Icon(
-                    Icons.check_circle_rounded,
-                    color: tokens.gameCorrect,
-                    size: 20.sp,
-                  ),
-                  SizedBox(width: 6.w),
-                ] else if (isWrongZap) ...[
-                  Icon(
-                    Icons.cancel_rounded,
-                    color: tokens.gameIncorrect,
-                    size: 20.sp,
-                  ),
-                  SizedBox(width: 6.w),
-                ],
-                Text(
-                  text,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 22.sp,
-                    fontWeight: isCorrectZap || isWrongZap || isSuspected
-                        ? FontWeight.bold
-                        : FontWeight.normal,
-                    color: textColor,
-                    decoration: textDecoration,
-                    decorationColor: decorationColor,
-                    decorationThickness: textDecoration != null ? 2 : null,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
+          ],
+        ),
+      ),
+    );
 
     if (VowlMotion.shouldReduceMotion(context)) {
       return wordWidget;
@@ -139,12 +138,12 @@ class SentenceCorrectionDiagnosticWord extends StatelessWidget {
           duration: 400.ms,
           color: isCorrectZap
               ? tokens.gameCorrect
-              : (isWrongZap ? tokens.gameIncorrect : Colors.orangeAccent),
+              : (isWrongZap ? tokens.gameIncorrect : primaryColor),
         )
         .shake(duration: 300.ms, hz: isWrongZap ? 10 : 0)
         .scale(
           begin: const Offset(1, 1),
-          end: const Offset(1.05, 1.05),
+          end: const Offset(1.04, 1.04),
           duration: 200.ms,
           curve: Curves.easeOutCubic,
         );

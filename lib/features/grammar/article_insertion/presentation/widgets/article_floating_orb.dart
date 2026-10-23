@@ -183,8 +183,8 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
               : widget.article.toUpperCase(),
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: widget.isCompact ? 14.sp : 18.sp,
-            fontWeight: FontWeight.w900,
+            fontSize: widget.isCompact ? 15.sp : 18.sp,
+            fontWeight: FontWeight.w700,
             color: textColor,
           ),
         ),

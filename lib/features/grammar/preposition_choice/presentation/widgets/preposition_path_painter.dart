@@ -58,63 +58,83 @@ class PrepositionPathPainter extends CustomPainter {
     final startPoint = getStartPoint(size, isCompact);
     final nodes = getNodePoints(size, options.length, isCompact);
 
-    // Draw Nodes (Holographic Power Cells)
+    // Draw Preposition Choice Nodes
     for (int i = 0; i < nodes.length; i++) {
       final isTarget = isAnswered && targetNode == i;
       final nodeColor = isTarget ? AppColors.gameCorrect : primaryColor;
 
-      // Node Aura
+      // Node Outer Glow
       canvas.drawCircle(
         nodes[i],
-        45.r,
+        44.r,
         Paint()
-          ..color = nodeColor.withValues(alpha: 0.08)
+          ..color = nodeColor.withValues(alpha: isTarget ? 0.2 : 0.08)
           ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10),
       );
 
-      // Node Ring
+      // Node Background Fill for contrast & readability
       canvas.drawCircle(
         nodes[i],
-        40.r,
+        38.r,
         Paint()
-          ..color = nodeColor.withValues(alpha: 0.3)
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 2,
+          ..color = isDark
+              ? (isTarget
+                    ? AppColors.gameCorrect.withValues(alpha: 0.25)
+                    : const Color(0xFF1E2230))
+              : (isTarget
+                    ? AppColors.gameCorrect.withValues(alpha: 0.15)
+                    : Colors.white),
       );
+
+      // Node Ring Border
+      canvas.drawCircle(
+        nodes[i],
+        38.r,
+        Paint()
+          ..color = nodeColor.withValues(alpha: isTarget ? 0.9 : 0.35)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = isTarget ? 2.5 : 1.5,
+      );
+
+      final optionText = options[i % options.length];
+      final double fontSize = optionText.length > 5
+          ? (isCompact ? 11.5.sp : 12.5.sp)
+          : (isCompact ? 13.sp : 14.5.sp);
 
       final textPainter = TextPainter(
         text: TextSpan(
-          text: options[i % options.length],
+          text: optionText,
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w900,
+            fontSize: fontSize,
+            fontWeight: FontWeight.w700,
             color: isTarget
                 ? AppColors.gameCorrect
                 : (isDark ? Colors.white : Colors.black87),
+            letterSpacing: 0.3,
             height: 1.1,
           ),
         ),
         textAlign: TextAlign.center,
         textDirection: TextDirection.ltr,
-      )..layout(maxWidth: 80.r);
+      )..layout(maxWidth: 72.r);
       textPainter.paint(
         canvas,
         nodes[i] - Offset(textPainter.width / 2, textPainter.height / 2),
       );
     }
 
-    // Draw Socket
+    // Draw Anchor Socket
     canvas.drawCircle(
       startPoint,
-      18.r,
+      16.r,
       Paint()
         ..color = primaryColor
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 5),
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4),
     );
-    canvas.drawCircle(startPoint, 8.r, Paint()..color = Colors.white);
+    canvas.drawCircle(startPoint, 7.r, Paint()..color = Colors.white);
 
-    // Draw Energy Path (Cinematic Laser)
+    // Draw Connection Path
     if (points.isNotEmpty || isAnswered) {
       final path = Path()..moveTo(startPoint.dx, startPoint.dy);
       if (isAnswered && targetNode != -1) {
@@ -133,25 +153,25 @@ class PrepositionPathPainter extends CustomPainter {
       canvas.drawPath(
         path,
         Paint()
-          ..color = pathColor.withValues(alpha: 0.4)
-          ..strokeWidth = 10.r
+          ..color = pathColor.withValues(alpha: 0.35)
+          ..strokeWidth = 9.r
           ..style = PaintingStyle.stroke
           ..strokeCap = StrokeCap.round
-          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12),
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10),
       );
 
-      // Inner Glow
+      // Inner Line
       canvas.drawPath(
         path,
         Paint()
           ..color = pathColor
-          ..strokeWidth = 4.r
+          ..strokeWidth = 3.5.r
           ..style = PaintingStyle.stroke
           ..strokeCap = StrokeCap.round
-          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4),
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 3),
       );
 
-      // Core Beam
+      // Core Highlight
       canvas.drawPath(
         path,
         Paint()

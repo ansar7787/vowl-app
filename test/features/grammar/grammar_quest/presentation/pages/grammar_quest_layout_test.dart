@@ -93,9 +93,11 @@ void main() {
     correctAnswerIndex: 0,
     correctAnswer: 'steered',
     hint: 'Use past simple tense for a completed past action.',
-    explanation: 'The verb must be in the past tense to match the completed action.',
+    explanation:
+        'The verb must be in the past tense to match the completed action.',
     grammarRule: 'Past Simple Consistency',
-    ruleExplanation: 'Actions that finished in the past require past tense verbs.',
+    ruleExplanation:
+        'Actions that finished in the past require past tense verbs.',
   );
 
   const testQuestNoRules = GrammarQuest(
@@ -280,32 +282,52 @@ void main() {
   }
 
   group('GrammarQuestScreen Layout & Mechanics', () {
-    testWidgets('1. renders initial quest with instruction, grammar rule box, sentence, and compass', (tester) async {
-      await pumpGrammarQuest(tester);
+    testWidgets(
+      '1. renders initial quest with instruction, grammar rule box, sentence, and compass',
+      (tester) async {
+        await pumpGrammarQuest(tester);
 
-      expect(find.byType(GrammarQuestInstruction), findsOneWidget);
-      expect(find.text('STEER TO THE CORRECT RULE'), findsOneWidget);
+        expect(find.byType(GrammarQuestInstruction), findsOneWidget);
+        expect(find.text('STEER TO THE CORRECT RULE'), findsOneWidget);
 
-      expect(find.byKey(const ValueKey('grammar_rule_box')), findsOneWidget);
-      expect(find.text('GRAMMAR RULE'), findsOneWidget);
-      expect(find.text('Past Simple Consistency'), findsOneWidget);
+        expect(find.byKey(const ValueKey('grammar_rule_box')), findsOneWidget);
+        expect(find.text('GRAMMAR RULE'), findsOneWidget);
+        expect(find.text('Past Simple Consistency'), findsOneWidget);
 
-      expect(find.byType(GrammarQuestSentence), findsOneWidget);
-      expect(find.text('The captain ___ the ship through the storm.'), findsOneWidget);
+        expect(find.byType(GrammarQuestSentence), findsOneWidget);
+        expect(
+          find.text('The captain ___ the ship through the storm.'),
+          findsOneWidget,
+        );
 
-      expect(find.byType(GrammarQuestCompass), findsOneWidget);
-      expect(find.byKey(const ValueKey('compass_quadrant_0')), findsOneWidget);
-      expect(find.byKey(const ValueKey('compass_quadrant_1')), findsOneWidget);
-      expect(find.byKey(const ValueKey('compass_quadrant_2')), findsOneWidget);
-      expect(find.byKey(const ValueKey('compass_quadrant_3')), findsOneWidget);
+        expect(find.byType(GrammarQuestCompass), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('compass_quadrant_0')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('compass_quadrant_1')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('compass_quadrant_2')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('compass_quadrant_3')),
+          findsOneWidget,
+        );
 
-      expect(find.text('steered'), findsOneWidget);
-      expect(find.text('steer'), findsOneWidget);
-      expect(find.text('steering'), findsOneWidget);
-      expect(find.text('steers'), findsOneWidget);
-    });
+        expect(find.text('steered'), findsOneWidget);
+        expect(find.text('steer'), findsOneWidget);
+        expect(find.text('steering'), findsOneWidget);
+        expect(find.text('steers'), findsOneWidget);
+      },
+    );
 
-    testWidgets('2. hides grammar rule box when quest grammarRule is null', (tester) async {
+    testWidgets('2. hides grammar rule box when quest grammarRule is null', (
+      tester,
+    ) async {
       final stateNoRule = GrammarLoaded(
         quests: const [testQuestNoRules],
         currentIndex: 0,
@@ -322,207 +344,241 @@ void main() {
       expect(find.text('They ___ ready for the voyage.'), findsOneWidget);
     });
 
-    testWidgets('3. renders ruleExplanation when provided in grammar rule box', (tester) async {
-      await pumpGrammarQuest(tester);
+    testWidgets(
+      '3. renders ruleExplanation when provided in grammar rule box',
+      (tester) async {
+        await pumpGrammarQuest(tester);
 
-      expect(
-        find.text('Actions that finished in the past require past tense verbs.'),
-        findsOneWidget,
-      );
-    });
+        expect(
+          find.text(
+            'Actions that finished in the past require past tense verbs.',
+          ),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('4. renders shimmer loading when state is GrammarLoading', (tester) async {
+    testWidgets('4. renders shimmer loading when state is GrammarLoading', (
+      tester,
+    ) async {
       await pumpGrammarQuest(tester, state: const GrammarLoading());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
       expect(find.byType(GrammarQuestCompass), findsNothing);
     });
 
-    testWidgets('5. tapping incorrect quadrant steers compass and submits wrong answer', (tester) async {
-      await pumpGrammarQuest(tester);
+    testWidgets(
+      '5. tapping incorrect quadrant steers compass and submits wrong answer',
+      (tester) async {
+        await pumpGrammarQuest(tester);
 
-      final compassFinder = find.byKey(const ValueKey('grammar_quest_compass_gesture'));
-      expect(compassFinder, findsOneWidget);
+        final compassFinder = find.byKey(
+          const ValueKey('grammar_quest_compass_gesture'),
+        );
+        expect(compassFinder, findsOneWidget);
 
-      final compassCenter = tester.getCenter(compassFinder);
-      // Quadrant 1 (East: dx > 0, dy = 0) is index 1 ('steer', wrong)
-      await tester.tapAt(compassCenter + const Offset(60, 0));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final compassCenter = tester.getCenter(compassFinder);
+        // Quadrant 1 (East: dx > 0, dy = 0) is index 1 ('steer', wrong)
+        await tester.tapAt(compassCenter + const Offset(60, 0));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
 
-      verify(
-        () => mockGrammarBloc.add(
-          any(
-            that: isA<SubmitAnswer>().having(
-              (e) => e.isCorrect,
-              'isCorrect',
-              false,
+        verify(
+          () => mockGrammarBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
             ),
           ),
-        ),
-      ).called(1);
-    });
+        ).called(1);
+      },
+    );
 
-    testWidgets('6. tapping correct quadrant steers compass to target and reveals TypeToConfirmOverlay', (tester) async {
-      await pumpGrammarQuest(tester);
+    testWidgets(
+      '6. tapping correct quadrant steers compass to target and reveals TypeToConfirmOverlay',
+      (tester) async {
+        await pumpGrammarQuest(tester);
 
-      final compassFinder = find.byKey(const ValueKey('grammar_quest_compass_gesture'));
-      final compassCenter = tester.getCenter(compassFinder);
-      // Quadrant 0 (North: dx = 0, dy < 0) is index 0 ('steered', correct)
-      await tester.tapAt(compassCenter + const Offset(0, -60));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 300));
+        final compassFinder = find.byKey(
+          const ValueKey('grammar_quest_compass_gesture'),
+        );
+        final compassCenter = tester.getCenter(compassFinder);
+        // Quadrant 0 (North: dx = 0, dy < 0) is index 0 ('steered', correct)
+        await tester.tapAt(compassCenter + const Offset(0, -60));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
 
-      expect(
-        find.byType(TypeToConfirmOverlay, skipOffstage: false),
-        findsOneWidget,
-      );
-    });
+        expect(
+          find.byType(TypeToConfirmOverlay, skipOffstage: false),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('7. Phase 2: typing full sentence confirms and submits answer', (tester) async {
-      await pumpGrammarQuest(tester);
+    testWidgets(
+      '7. Phase 2: typing full sentence confirms and submits answer',
+      (tester) async {
+        await pumpGrammarQuest(tester);
 
-      final compassFinder = find.byKey(const ValueKey('grammar_quest_compass_gesture'));
-      final compassCenter = tester.getCenter(compassFinder);
-      await tester.tapAt(compassCenter + const Offset(0, -60));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 600));
+        final compassFinder = find.byKey(
+          const ValueKey('grammar_quest_compass_gesture'),
+        );
+        final compassCenter = tester.getCenter(compassFinder);
+        await tester.tapAt(compassCenter + const Offset(0, -60));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 600));
 
-      final textFieldFinder = find.byType(TextField);
-      await tester.ensureVisible(textFieldFinder);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
-      expect(textFieldFinder, findsOneWidget);
+        final textFieldFinder = find.byType(TextField);
+        await tester.ensureVisible(textFieldFinder);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+        expect(textFieldFinder, findsOneWidget);
 
-      await tester.enterText(
-        textFieldFinder,
-        'The captain steered the ship through the storm.',
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.enterText(
+          textFieldFinder,
+          'The captain steered the ship through the storm.',
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      final submitBtn = find.text('SUBMIT');
-      await tester.ensureVisible(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
-      expect(submitBtn, findsOneWidget);
+        final submitBtn = find.text('SUBMIT');
+        await tester.ensureVisible(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+        expect(submitBtn, findsOneWidget);
 
-      await tester.tap(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(
-        () => mockGrammarBloc.add(
-          any(
-            that: isA<SubmitAnswer>().having(
-              (e) => e.isCorrect,
-              'isCorrect',
-              true,
+        verify(
+          () => mockGrammarBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                true,
+              ),
             ),
           ),
-        ),
-      ).called(1);
-    });
+        ).called(1);
+      },
+    );
 
-    testWidgets('8. Phase 2: skipping confirm (after 3 failed attempts) dispatches wrong answer', (tester) async {
-      await pumpGrammarQuest(tester);
+    testWidgets(
+      '8. Phase 2: skipping confirm (after 3 failed attempts) dispatches wrong answer',
+      (tester) async {
+        await pumpGrammarQuest(tester);
 
-      final compassFinder = find.byKey(const ValueKey('grammar_quest_compass_gesture'));
-      final compassCenter = tester.getCenter(compassFinder);
-      await tester.tapAt(compassCenter + const Offset(0, -60));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 600));
+        final compassFinder = find.byKey(
+          const ValueKey('grammar_quest_compass_gesture'),
+        );
+        final compassCenter = tester.getCenter(compassFinder);
+        await tester.tapAt(compassCenter + const Offset(0, -60));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 600));
 
-      final textFieldFinder = find.byType(TextField);
-      await tester.ensureVisible(textFieldFinder);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
-      expect(textFieldFinder, findsOneWidget);
+        final textFieldFinder = find.byType(TextField);
+        await tester.ensureVisible(textFieldFinder);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+        expect(textFieldFinder, findsOneWidget);
 
-      await tester.enterText(textFieldFinder, 'Wrong typed sentence');
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.enterText(textFieldFinder, 'Wrong typed sentence');
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      final submitBtn = find.text('SUBMIT');
-      await tester.ensureVisible(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        final submitBtn = find.text('SUBMIT');
+        await tester.ensureVisible(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Attempt 1 (ScaleButton 500ms debounce guard)
-      await tester.tap(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Attempt 1 (ScaleButton 500ms debounce guard)
+        await tester.tap(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Attempt 2
-      await tester.tap(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Attempt 2
+        await tester.tap(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Attempt 3
-      await tester.tap(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Attempt 3
+        await tester.tap(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      final continueBtn = find.text('CONTINUE').last;
-      await tester.ensureVisible(continueBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
-      expect(continueBtn, findsOneWidget);
+        final continueBtn = find.text('CONTINUE').last;
+        await tester.ensureVisible(continueBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+        expect(continueBtn, findsOneWidget);
 
-      await tester.tap(continueBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 400));
+        await tester.tap(continueBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 400));
 
-      verify(
-        () => mockGrammarBloc.add(
-          any(
-            that: isA<SubmitAnswer>().having(
-              (e) => e.isCorrect,
-              'isCorrect',
-              false,
+        verify(
+          () => mockGrammarBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
             ),
           ),
-        ),
-      ).called(1);
-    });
+        ).called(1);
+      },
+    );
 
-    testWidgets('9. dragging compass needle selects quadrant and triggers Phase 2', (tester) async {
-      await pumpGrammarQuest(tester);
+    testWidgets(
+      '9. dragging compass needle selects quadrant and triggers Phase 2',
+      (tester) async {
+        await pumpGrammarQuest(tester);
 
-      final compassFinder = find.byKey(const ValueKey('grammar_quest_compass_gesture'));
-      final compassCenter = tester.getCenter(compassFinder);
+        final compassFinder = find.byKey(
+          const ValueKey('grammar_quest_compass_gesture'),
+        );
+        final compassCenter = tester.getCenter(compassFinder);
 
-      // Pan from center to North (quadrant 0: correct)
-      final gesture = await tester.startGesture(compassCenter);
-      await gesture.moveBy(const Offset(0, -70));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
-      await gesture.up();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 300));
+        // Pan from center to North (quadrant 0: correct)
+        final gesture = await tester.startGesture(compassCenter);
+        await gesture.moveBy(const Offset(0, -70));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
+        await gesture.up();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.success()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
 
-      expect(
-        find.byType(TypeToConfirmOverlay, skipOffstage: false),
-        findsOneWidget,
-      );
-    });
+        expect(
+          find.byType(TypeToConfirmOverlay, skipOffstage: false),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('10. interacting when already answered does nothing', (tester) async {
+    testWidgets('10. interacting when already answered does nothing', (
+      tester,
+    ) async {
       final answeredState = GrammarLoaded(
         quests: const [testQuest1, testQuestNoRules],
         currentIndex: 0,
@@ -535,7 +591,9 @@ void main() {
 
       await pumpGrammarQuest(tester, state: answeredState);
 
-      final compassFinder = find.byKey(const ValueKey('grammar_quest_compass_gesture'));
+      final compassFinder = find.byKey(
+        const ValueKey('grammar_quest_compass_gesture'),
+      );
       final compassCenter = tester.getCenter(compassFinder);
       await tester.tapAt(compassCenter + const Offset(0, -60));
       await tester.pump();
@@ -544,53 +602,70 @@ void main() {
       verifyNever(() => mockGrammarBloc.add(any(that: isA<SubmitAnswer>())));
     });
 
-    testWidgets('11. tapping hint button dispatches GrammarHintUsed without double dispatch', (tester) async {
-      await pumpGrammarQuest(tester);
+    testWidgets(
+      '11. tapping hint button dispatches GrammarHintUsed without double dispatch',
+      (tester) async {
+        await pumpGrammarQuest(tester);
 
-      final hintButton = find.byType(QuestHintButton);
-      expect(hintButton, findsOneWidget);
+        final hintButton = find.byType(QuestHintButton);
+        expect(hintButton, findsOneWidget);
 
-      await tester.tap(hintButton);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(hintButton);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockGrammarBloc.add(const GrammarHintUsed())).called(1);
-    });
+        verify(() => mockGrammarBloc.add(const GrammarHintUsed())).called(1);
+      },
+    );
 
-    testWidgets('12. shows level 1 briefing dialog when not yet seen and dismisses', (tester) async {
-      SharedPreferences.setMockInitialValues({});
+    testWidgets(
+      '12. shows level 1 briefing dialog when not yet seen and dismisses',
+      (tester) async {
+        SharedPreferences.setMockInitialValues({});
 
-      await pumpGrammarQuest(tester, level: 1);
+        await pumpGrammarQuest(tester, level: 1);
 
-      expect(find.byType(GameBriefingLayer), findsOneWidget);
+        expect(find.byType(GameBriefingLayer), findsOneWidget);
 
-      final commenceButton = find.text('COMMENCE QUEST');
-      if (commenceButton.evaluate().isNotEmpty) {
-        await tester.tap(commenceButton);
-      } else {
-        await tester.tap(find.byType(GameBriefingLayer));
-      }
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        final commenceButton = find.text('COMMENCE QUEST');
+        if (commenceButton.evaluate().isNotEmpty) {
+          await tester.tap(commenceButton);
+        } else {
+          await tester.tap(find.byType(GameBriefingLayer));
+        }
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('The captain ___ the ship through the storm.'), findsOneWidget);
-    });
+        expect(
+          find.text('The captain ___ the ship through the storm.'),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('13. respects reduced motion when lowAnimationModeOverride is enabled', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = true;
-      await pumpGrammarQuest(tester);
-      expect(find.byType(GrammarQuestScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '13. respects reduced motion when lowAnimationModeOverride is enabled',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = true;
+        await pumpGrammarQuest(tester);
+        expect(find.byType(GrammarQuestScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('14. handles compact mobile layout (320x568) without overflow', (tester) async {
-      await pumpGrammarQuest(tester, width: 320, height: 568);
+    testWidgets(
+      '14. handles compact mobile layout (320x568) without overflow',
+      (tester) async {
+        await pumpGrammarQuest(tester, width: 320, height: 568);
 
-      expect(find.byType(GrammarQuestScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(GrammarQuestScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('15. handles tablet viewport (768x1024) without overflow', (tester) async {
+    testWidgets('15. handles tablet viewport (768x1024) without overflow', (
+      tester,
+    ) async {
       await pumpGrammarQuest(tester, width: 768, height: 1024);
 
       expect(find.byType(GrammarQuestScreen), findsOneWidget);
@@ -601,42 +676,98 @@ void main() {
       await pumpGrammarQuest(tester, themeMode: ThemeMode.dark);
 
       expect(find.byType(GrammarQuestScreen), findsOneWidget);
-      expect(find.text('The captain ___ the ship through the storm.'), findsOneWidget);
+      expect(
+        find.text('The captain ___ the ship through the storm.'),
+        findsOneWidget,
+      );
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('17. handles question sentence without blanks by using sentence directly', (tester) async {
-      final stateNoBlank = GrammarLoaded(
-        quests: const [testQuestNoBlankInQuestion],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
+    testWidgets(
+      '17. handles question sentence without blanks by using sentence directly',
+      (tester) async {
+        final stateNoBlank = GrammarLoaded(
+          quests: const [testQuestNoBlankInQuestion],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
 
-      await pumpGrammarQuest(tester, state: stateNoBlank);
+        await pumpGrammarQuest(tester, state: stateNoBlank);
 
-      expect(find.text('The crew navigated by the stars.'), findsOneWidget);
-    });
+        expect(find.text('The crew navigated by the stars.'), findsOneWidget);
+      },
+    );
 
-    testWidgets('18. renders final failure state with explanation and continue', (tester) async {
-      final failureState = GrammarLoaded(
-        quests: const [testQuest1, testQuestNoRules],
-        currentIndex: 0,
-        livesRemaining: 0,
-        answerStatus: AnswerStatus.incorrect,
-        hintUsed: false,
-        wrongCount: 3,
-        isFinalFailure: true,
-      );
+    testWidgets(
+      '18. renders final failure state with explanation and continue',
+      (tester) async {
+        final failureState = GrammarLoaded(
+          quests: const [testQuest1, testQuestNoRules],
+          currentIndex: 0,
+          livesRemaining: 0,
+          answerStatus: AnswerStatus.incorrect,
+          hintUsed: false,
+          wrongCount: 3,
+          isFinalFailure: true,
+        );
 
-      await pumpGrammarQuest(tester, state: failureState);
+        await pumpGrammarQuest(tester, state: failureState);
 
-      expect(find.byType(GrammarQuestScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(GrammarQuestScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      '19. instruction text is centered and TypeToConfirmOverlay has standard side padding',
+      (tester) async {
+        await pumpGrammarQuest(tester);
+
+        // Verify instruction text alignment and no ellipsis
+        final instructionFinder = find.descendant(
+          of: find.byType(GrammarQuestInstruction),
+          matching: find.byType(Text),
+        );
+        expect(instructionFinder, findsOneWidget);
+        final instructionText = tester.widget<Text>(instructionFinder);
+        expect(instructionText.textAlign, TextAlign.center);
+        expect(instructionText.overflow, isNot(TextOverflow.ellipsis));
+
+        // Trigger phase 2
+        final compassFinder = find.byKey(
+          const ValueKey('grammar_quest_compass_gesture'),
+        );
+        final compassCenter = tester.getCenter(compassFinder);
+        await tester.tapAt(compassCenter + const Offset(0, -60));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final typeOverlay = find.byType(
+          TypeToConfirmOverlay,
+          skipOffstage: false,
+        );
+        expect(typeOverlay, findsOneWidget);
+
+        // Ensure TypeToConfirm is inside a SliverPadding that has horizontal padding > 0
+        final sliverPaddingFinder = find.ancestor(
+          of: typeOverlay,
+          matching: find.byType(SliverPadding),
+        );
+        expect(sliverPaddingFinder, findsWidgets);
+        final sliverPadding = tester.widget<SliverPadding>(
+          sliverPaddingFinder.first,
+        );
+        final resolvedPadding = sliverPadding.padding.resolve(
+          TextDirection.ltr,
+        );
+        expect(resolvedPadding.left, greaterThan(0));
+        expect(resolvedPadding.right, greaterThan(0));
+      },
+    );
   });
 }
-

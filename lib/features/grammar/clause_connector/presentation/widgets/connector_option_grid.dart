@@ -33,8 +33,8 @@ class ConnectorOptionGrid extends StatelessWidget {
       itemCount: options.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        crossAxisSpacing: 16.w,
-        mainAxisSpacing: 16.h,
+        crossAxisSpacing: 14.w,
+        mainAxisSpacing: 14.h,
         childAspectRatio: 2.2,
       ),
       itemBuilder: (context, index) {
@@ -55,21 +55,23 @@ class ConnectorOptionGrid extends StatelessWidget {
           onTap: () => onSelected(index),
           child: GlassTile(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-            borderRadius: BorderRadius.circular(20.r),
+            borderRadius: BorderRadius.circular(18.r),
             color: cardColor?.withValues(alpha: 0.8),
             borderColor: isSelected && showResult
                 ? Colors.white54
-                : primaryColor.withValues(alpha: 0.1),
+                : primaryColor.withValues(alpha: 0.15),
             child: Center(
               child: Text(
                 options[index],
+                softWrap: true,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w800,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
                   color: (isSelected || showResult)
                       ? Colors.white
                       : (isDark ? Colors.white70 : Colors.black87),
+                  letterSpacing: 0.3,
                 ),
               ),
             ),

@@ -1,21 +1,22 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
-import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
-import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
-import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
+import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
+import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/voice_swap/presentation/widgets/voice_swap_instruction.dart';
 import 'package:vowl/features/grammar/voice_swap/presentation/widgets/voice_swap_toggle.dart';
-import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
 class VoiceSwapScreen extends StatefulWidget {
   final int level;
@@ -45,6 +46,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
 
   final ValueNotifier<bool> _isPassive = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
+  Timer? _scrollTimer;
 
   @override
   void dispose() {
@@ -54,8 +56,6 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
     disposeGrammarGame();
     super.dispose();
   }
-
-  Timer? _scrollTimer;
 
   void _scrollToBottom() {
     _scrollTimer?.cancel();
@@ -87,11 +87,10 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
   void initState() {
     super.initState();
     isFirstStagePassedNotifier.addListener(_onStagePassedScroll);
-
     initGrammarGame();
   }
 
-  void _submitAnswer(GameQuest? quest) {
+  void _submitAnswer(GrammarQuest? quest) {
     if (isAnsweredNotifier.value ||
         isFirstStagePassedNotifier.value ||
         quest == null) {
@@ -99,8 +98,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
     }
 
     final selectedVoice = _isPassive.value ? "Passive" : "Active";
-    bool isCorrect =
-        selectedVoice.toLowerCase() ==
+    final isCorrect = selectedVoice.toLowerCase() ==
         (quest.correctAnswerCategory?.toLowerCase() ??
             quest.correctAnswer?.toLowerCase());
 
@@ -111,12 +109,21 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
       final match = RegExp(
         r'flip to:\s*(.*?)(?:\.|\s)*$',
       ).firstMatch(quest.explanation ?? '');
-      final expectedConversion = match?.group(1) ?? "";
+      String expectedConversion = match?.group(1) ?? "";
+
+      if (expectedConversion.isEmpty) {
+        final isCurrentPassive = (quest.correctAnswerCategory?.toLowerCase() ??
+                quest.correctAnswer?.toLowerCase()) ==
+            'passive';
+        expectedConversion = isCurrentPassive
+            ? (quest.activeVoice ?? "")
+            : (quest.passiveVoice ?? "");
+      }
 
       if (expectedConversion.isEmpty) {
         isAnsweredNotifier.value = true;
         isCorrectNotifier.value = true;
-        context.read<GrammarBloc>().add(SubmitAnswer(true));
+        context.read<GrammarBloc>().add(const SubmitAnswer(true));
       } else {
         isFirstStagePassedNotifier.value = true;
         _scrollToBottom();
@@ -171,16 +178,23 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
         String targetVoiceStr = "";
         String expectedConversion = "";
         if (quest != null) {
-          if (_isPassive.value) {
-            targetVoiceStr = "Active";
-          } else {
-            targetVoiceStr = "Passive";
-          }
+          targetVoiceStr = _isPassive.value ? "Active" : "Passive";
+
           final match = RegExp(
             r'flip to:\s*(.*?)(?:\.|\s)*$',
           ).firstMatch(quest.explanation ?? '');
           if (match != null && match.group(1) != null) {
             expectedConversion = match.group(1)!;
+          }
+
+          if (expectedConversion.isEmpty) {
+            final isCurrentPassive =
+                (quest.correctAnswerCategory?.toLowerCase() ??
+                        quest.correctAnswer?.toLowerCase()) ==
+                    'passive';
+            expectedConversion = isCurrentPassive
+                ? (quest.activeVoice ?? "")
+                : (quest.passiveVoice ?? "");
           }
         }
 
@@ -197,331 +211,286 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen>
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered:
-                  isAnsweredNotifier.value &&
+              isAnswered: isAnsweredNotifier.value &&
                   (isCorrectNotifier.value != null ||
                       !isFirstStagePassedNotifier.value),
               isCorrect: isCorrectNotifier.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: showConfettiNotifier.value,
               useScrolling: false,
-              onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
+              onContinue: () =>
+                  context.read<GrammarBloc>().add(const NextQuestion()),
               onHint: () {},
               child: quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        return Stack(
-                          children: [
-                            AnimatedPadding(
-                              duration: const Duration(milliseconds: 150),
-                              curve: Curves.easeOut,
-                              padding: EdgeInsets.only(
-                                bottom: MediaQuery.of(
-                                  context,
-                                ).viewInsets.bottom,
-                              ),
-                              child: RawScrollbar(
-                                controller: _scrollController,
-                                thumbColor: theme.primaryColor.withValues(
-                                  alpha: 0.5,
-                                ),
-                                radius: Radius.circular(8.r),
-                                thickness: 4.w,
-                                crossAxisMargin: 2,
-                                child: CustomScrollView(
-                                  controller: _scrollController,
-                                  physics: (!isFirstStagePassedNotifier.value)
-                                      ? const NeverScrollableScrollPhysics()
-                                      : const BouncingScrollPhysics(),
-                                  slivers: [
-                                    SliverFillRemaining(
-                                      hasScrollBody: false,
-                                      child: IgnorePointer(
-                                        ignoring:
-                                            isFirstStagePassedNotifier.value,
-                                        child: Builder(
-                                          builder: (context) {
-                                            final maxHeight = MediaQuery.of(
-                                              context,
-                                            ).size.height;
-                                            final isCompact = maxHeight < 700;
+                        final maxHeight = constraints.maxHeight;
+                        final isCompact = maxHeight < 680;
+                        final reduceMotion =
+                            VowlMotion.shouldReduceMotion(context);
 
-                                            return Column(
-                                              children: [
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 4.h
-                                                      : 10.h,
+                        return AnimatedPadding(
+                          duration: const Duration(milliseconds: 150),
+                          curve: Curves.easeOut,
+                          padding: EdgeInsets.only(
+                            bottom: MediaQuery.of(context).viewInsets.bottom,
+                          ),
+                          child: RawScrollbar(
+                            controller: _scrollController,
+                            thumbColor: theme.primaryColor.withValues(
+                              alpha: 0.5,
+                            ),
+                            radius: Radius.circular(8.r),
+                            thickness: 4.w,
+                            crossAxisMargin: 2,
+                            child: CustomScrollView(
+                              controller: _scrollController,
+                              physics: const BouncingScrollPhysics(
+                                parent: AlwaysScrollableScrollPhysics(),
+                              ),
+                              slivers: [
+                                SliverFillRemaining(
+                                  hasScrollBody: false,
+                                  child: IgnorePointer(
+                                    ignoring:
+                                        isFirstStagePassedNotifier.value,
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 20.w,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          SizedBox(
+                                            height: isCompact ? 8.h : 14.h,
+                                          ),
+                                          VoiceSwapInstruction(
+                                            primaryColor: theme.primaryColor,
+                                            instruction: quest.instruction,
+                                          ),
+                                          SizedBox(
+                                            height: isCompact ? 14.h : 22.h,
+                                          ),
+
+                                          // Sentence Card
+                                          Builder(
+                                            builder: (context) {
+                                              final card = Container(
+                                                key: const ValueKey(
+                                                  'voice_sentence_card',
                                                 ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 25.h
-                                                      : 35.h,
-                                                  child: FittedBox(
-                                                    fit: BoxFit.scaleDown,
-                                                    child: VoiceSwapInstruction(
-                                                      primaryColor:
-                                                          theme.primaryColor,
+                                                width: double.infinity,
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: isCompact
+                                                      ? 16.w
+                                                      : 20.w,
+                                                  vertical: isCompact
+                                                      ? 16.h
+                                                      : 22.h,
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: isDark
+                                                      ? AppColors.slate800
+                                                          .withValues(alpha: 0.9)
+                                                      : Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                    isCompact ? 16.r : 20.r,
+                                                  ),
+                                                  border: Border.all(
+                                                    color: theme.primaryColor
+                                                        .withValues(
+                                                      alpha: 0.18,
+                                                    ),
+                                                    width: 1.5,
+                                                  ),
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color: isDark
+                                                          ? Colors.black
+                                                              .withValues(
+                                                              alpha: 0.25,
+                                                            )
+                                                          : Colors.black
+                                                              .withValues(
+                                                              alpha: 0.05,
+                                                            ),
+                                                      blurRadius: 10,
+                                                      offset: const Offset(
+                                                        0,
+                                                        3,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                child: Text(
+                                                  quest.sentence ?? "",
+                                                  textAlign: TextAlign.center,
+                                                  softWrap: true,
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: isCompact
+                                                        ? 16.sp
+                                                        : 18.sp,
+                                                    color: isDark
+                                                        ? Colors.white
+                                                        : AppColors.slate900,
+                                                    height: 1.45,
+                                                    fontWeight:
+                                                        FontWeight.w600,
+                                                  ),
+                                                ),
+                                              );
+                                              if (reduceMotion) return card;
+                                              return card
+                                                  .animate()
+                                                  .fadeIn(duration: 400.ms)
+                                                  .slideY(begin: 0.15, end: 0);
+                                            },
+                                          ),
+
+                                          SizedBox(
+                                            height: isCompact ? 18.h : 30.h,
+                                          ),
+
+                                          // Voice Toggle Mechanism
+                                          VoiceSwapToggle(
+                                            key: const ValueKey(
+                                              'voice_swap_toggle',
+                                            ),
+                                            isPassive: _isPassive.value,
+                                            isAnswered: isAnsweredNotifier
+                                                    .value &&
+                                                (isCorrectNotifier.value !=
+                                                        null ||
+                                                    !isFirstStagePassedNotifier
+                                                        .value),
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            onToggle: (val) =>
+                                                _isPassive.value = val,
+                                          ),
+
+                                          SizedBox(
+                                            height: isCompact ? 22.h : 36.h,
+                                          ),
+
+                                          // Check Answer Button (comfortably positioned below mechanism)
+                                          if (!isAnsweredNotifier.value)
+                                            ScaleButton(
+                                              key: const ValueKey(
+                                                'voice_engage_button',
+                                              ),
+                                              onTap: () => _submitAnswer(quest),
+                                              child: Container(
+                                                width: double.infinity,
+                                                height: isCompact ? 48.h : 54.h,
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                    16.r,
+                                                  ),
+                                                  gradient: LinearGradient(
+                                                    begin: Alignment.topLeft,
+                                                    end: Alignment.bottomRight,
+                                                    colors: [
+                                                      theme.primaryColor,
+                                                      theme.primaryColor
+                                                          .withValues(
+                                                        alpha: 0.85,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color: theme.primaryColor
+                                                          .withValues(
+                                                        alpha: 0.35,
+                                                      ),
+                                                      blurRadius: 14,
+                                                      offset: const Offset(
+                                                        0,
+                                                        4,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                child: Center(
+                                                  child: Text(
+                                                    "CHECK ANSWER",
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: isCompact
+                                                          ? 14.sp
+                                                          : 16.sp,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color: Colors.white,
+                                                      letterSpacing: 0.8,
                                                     ),
                                                   ),
                                                 ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 8.h
-                                                      : 20.h,
-                                                ),
-
-                                                // Context Card
-                                                Builder(
-                                                  builder: (context) {
-                                                    final reduceMotion = VowlMotion.shouldReduceMotion(context);
-                                                    final card = Padding(
-                                                      key: const ValueKey('voice_sentence_card'),
-                                                      padding:
-                                                          EdgeInsets.symmetric(
-                                                            horizontal: 24.w,
-                                                          ),
-                                                      child: Container(
-                                                        padding: EdgeInsets.all(
-                                                          isCompact
-                                                              ? 14.r
-                                                              : 22.r,
-                                                        ),
-                                                        decoration: BoxDecoration(
-                                                          color: isDark
-                                                              ? Colors.white
-                                                                    .withValues(
-                                                                      alpha:
-                                                                          0.05,
-                                                                    )
-                                                              : Colors.black
-                                                                    .withValues(
-                                                                      alpha:
-                                                                          0.03,
-                                                                    ),
-                                                          borderRadius:
-                                                              BorderRadius.circular(
-                                                                isCompact
-                                                                    ? 16.r
-                                                                    : 24.r,
-                                                              ),
-                                                          border: Border.all(
-                                                            color: theme
-                                                                .primaryColor
-                                                                .withValues(
-                                                                  alpha: 0.15,
-                                                                ),
-                                                            width: 1.5,
-                                                          ),
-                                                        ),
-                                                        child: Text(
-                                                          quest.sentence ?? "",
-                                                          textAlign:
-                                                              TextAlign.center,
-                                                          style: TextStyle(
-                                                            fontFamily:
-                                                                'Outfit',
-                                                            fontSize: isCompact
-                                                                ? 15.sp
-                                                                : 20.sp,
-                                                            color: isDark
-                                                                ? Colors.white
-                                                                : Colors
-                                                                      .black87,
-                                                            height: 1.5,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    );
-                                                    if (reduceMotion) return card;
-                                                    return card
-                                                        .animate()
-                                                        .fadeIn(duration: 600.ms)
-                                                        .slideY(begin: 0.2, end: 0);
-                                                  },
-                                                ),
-
-                                                SizedBox(height: 60.h),
-
-                                                // Voice Toggle
-                                                VoiceSwapToggle(
-                                                  key: const ValueKey('voice_swap_toggle'),
-                                                  isPassive: _isPassive.value,
-                                                  isAnswered:
-                                                      isAnsweredNotifier
-                                                          .value &&
-                                                      (isCorrectNotifier
-                                                                  .value !=
-                                                              null ||
-                                                          !isFirstStagePassedNotifier
-                                                              .value),
-                                                  primaryColor:
-                                                      theme.primaryColor,
-                                                  isDark: isDark,
-                                                  onToggle: (val) =>
-                                                      _isPassive.value = val,
-                                                ),
-
-                                                const Spacer(),
-
-                                                if (!isAnsweredNotifier.value)
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                          horizontal: 24.w,
-                                                        ),
-                                                    child:
-                                                        ScaleButton(
-                                                              key: const ValueKey('voice_engage_button'),
-                                                              onTap: () => _submitAnswer(quest),
-                                                              child: Container(
-                                                                width: double
-                                                                    .infinity,
-                                                                height:
-                                                                    isCompact
-                                                                    ? 48.h
-                                                                    : 65.h,
-                                                                decoration: BoxDecoration(
-                                                                  borderRadius:
-                                                                      BorderRadius.circular(
-                                                                        isCompact
-                                                                            ? 14.r
-                                                                            : 20.r,
-                                                                      ),
-                                                                  gradient: LinearGradient(
-                                                                    begin: Alignment
-                                                                        .topCenter,
-                                                                    end: Alignment
-                                                                        .bottomCenter,
-                                                                    colors: [
-                                                                      theme
-                                                                          .primaryColor,
-                                                                      theme
-                                                                          .primaryColor
-                                                                          .withValues(
-                                                                            alpha:
-                                                                                0.8,
-                                                                          ),
-                                                                    ],
-                                                                  ),
-                                                                  boxShadow: [
-                                                                    BoxShadow(
-                                                                      color: theme
-                                                                          .primaryColor
-                                                                          .withValues(
-                                                                            alpha:
-                                                                                0.4,
-                                                                          ),
-                                                                      blurRadius:
-                                                                          isCompact
-                                                                          ? 12
-                                                                          : 20,
-                                                                      offset: Offset(
-                                                                        0,
-                                                                        isCompact
-                                                                            ? 4
-                                                                            : 8,
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                                child: Center(
-                                                                  child: FittedBox(
-                                                                    fit: BoxFit
-                                                                        .scaleDown,
-                                                                    child: Text(
-                                                                      "ENGAGE TRANSMUTER",
-                                                                      style: TextStyle(
-                                                                        fontFamily:
-                                                                            'Outfit',
-                                                                        fontSize:
-                                                                            isCompact
-                                                                            ? 13.sp
-                                                                            : 16.sp,
-                                                                        fontWeight:
-                                                                            FontWeight.w900,
-                                                                        color: Colors
-                                                                            .white,
-                                                                        letterSpacing:
-                                                                            isCompact
-                                                                            ? 2
-                                                                            : 3,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            )
-                                                            .animate(
-                                                              onPlay: (c) =>
-                                                                  c.repeat(
-                                                                    reverse:
-                                                                        true,
-                                                                  ),
-                                                            )
-                                                            .shimmer(
-                                                              duration:
-                                                                  2.seconds,
-                                                              color: Colors
-                                                                  .white24,
-                                                            ),
-                                                  ),
-
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 12.h
-                                                      : 40.h,
-                                                ),
-                                              ],
-                                            );
-                                          },
-                                        ),
-                                      ),
-                                    ),
-                                    SliverToBoxAdapter(
-                                      child: SizedBox(
-                                        height:
-                                            (isFirstStagePassedNotifier.value &&
-                                                !isAnsweredNotifier.value)
-                                            ? 180.h
-                                            : 60.h,
-                                      ),
-                                    ),
-                                    if (isFirstStagePassedNotifier.value &&
-                                        !isAnsweredNotifier.value)
-                                      SliverToBoxAdapter(
-                                        child: Column(
-                                          children: [
-                                            TypeToConfirmOverlay(
-                                              key: const ValueKey('voice_type_overlay'),
-                                              expectedText: expectedConversion,
-                                              displayText:
-                                                  "Type the $targetVoiceStr conversion to lock it in",
-                                              primaryColor: theme.primaryColor,
-                                              onConfirmed: () =>
-                                                  _submitVerbalEvaluation(
-                                                    true,
-                                                    quest,
-                                                  ),
-                                              onSkipped: () =>
-                                                  _submitVerbalEvaluation(
-                                                    false,
-                                                    quest,
-                                                  ),
-                                              isPositioned: false,
+                                              ),
                                             ),
-                                            SizedBox(height: 60.h),
-                                          ],
-                                        ),
+
+                                          SizedBox(
+                                            height: isCompact ? 16.h : 28.h,
+                                          ),
+                                        ],
                                       ),
-                                  ],
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                // Game Mechanism Confirmation Card (with proper standard horizontal padding)
+                                if (isFirstStagePassedNotifier.value &&
+                                    !isAnsweredNotifier.value)
+                                  SliverToBoxAdapter(
+                                    child: Padding(
+                                      key: const ValueKey(
+                                        'voice_overlay_padding',
+                                      ),
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 20.w,
+                                        vertical: 8.h,
+                                      ),
+                                      child: TypeToConfirmOverlay(
+                                        key: const ValueKey(
+                                          'voice_type_overlay',
+                                        ),
+                                        expectedText: expectedConversion,
+                                        displayText:
+                                            "Rewrite the sentence in $targetVoiceStr voice",
+                                        primaryColor: theme.primaryColor,
+                                        onConfirmed: () =>
+                                            _submitVerbalEvaluation(
+                                          true,
+                                          quest,
+                                        ),
+                                        onSkipped: () =>
+                                            _submitVerbalEvaluation(
+                                          false,
+                                          quest,
+                                        ),
+                                        isPositioned: false,
+                                      ),
+                                    ),
+                                  ),
+                                SliverToBoxAdapter(
+                                  child: SizedBox(
+                                    height: MediaQuery.of(context)
+                                                .viewInsets
+                                                .bottom >
+                                            0
+                                        ? MediaQuery.of(context)
+                                                .viewInsets
+                                                .bottom +
+                                            200.h
+                                        : 60.h,
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
+                          ),
                         );
                       },
                     ),

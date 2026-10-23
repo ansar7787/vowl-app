@@ -17,16 +17,22 @@ class GrammarQuestSentence extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GlassTile(
-      padding: EdgeInsets.all(isCompact ? 14.r : 24.r),
-      borderRadius: BorderRadius.circular(isCompact ? 18.r : 28.r),
+      padding: EdgeInsets.symmetric(
+        horizontal: isCompact ? 16.w : 20.w,
+        vertical: isCompact ? 14.h : 20.h,
+      ),
+      borderRadius: BorderRadius.circular(isCompact ? 16.r : 20.r),
       child: Text(
         text,
         textAlign: TextAlign.center,
+        softWrap: true,
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: isCompact ? 15.sp : 20.sp,
+          fontSize: isCompact ? 16.sp : 18.sp,
+          fontWeight: FontWeight.w600,
           color: Theme.of(context).colorScheme.onSurface,
-          height: 1.4,
+          height: 1.45,
+          letterSpacing: 0.2,
         ),
       ),
     );

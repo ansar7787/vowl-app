@@ -135,10 +135,12 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
             _pendingTypeSubmit,
           ]),
           builder: (context, _) {
-            final isAnswered = isAnsweredNotifier.value ||
+            final isAnswered =
+                isAnsweredNotifier.value ||
                 (state is GrammarLoaded &&
                     state.answerStatus != AnswerStatus.unanswered);
-            final isCorrect = isCorrectNotifier.value ??
+            final isCorrect =
+                isCorrectNotifier.value ??
                 (state is GrammarLoaded &&
                     state.answerStatus == AnswerStatus.correct);
 
@@ -166,8 +168,9 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor:
-                                  theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               crossAxisMargin: 0,
@@ -178,25 +181,33 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
                                 slivers: [
                                   SliverPadding(
                                     padding: EdgeInsets.symmetric(
-                                      horizontal: isNarrow ? 12.w : 24.w,
+                                      horizontal: isNarrow ? 16.w : 20.w,
                                     ),
                                     sliver: SliverToBoxAdapter(
                                       child: Column(
                                         children: [
-                                          SizedBox(height: 24.h),
+                                          SizedBox(
+                                            height: isCompact ? 16.h : 20.h,
+                                          ),
                                           GrammarQuestInstruction(
                                             primaryColor: theme.primaryColor,
                                             instruction: quest.instruction,
                                           ),
-                                          SizedBox(height: 16.h),
+                                          SizedBox(
+                                            height: isCompact ? 12.h : 16.h,
+                                          ),
                                           if (quest.grammarRule != null)
                                             Container(
                                               key: const ValueKey(
                                                 'grammar_rule_box',
                                               ),
-                                              margin:
-                                                  EdgeInsets.only(bottom: 24.h),
-                                              padding: EdgeInsets.all(16.r),
+                                              margin: EdgeInsets.only(
+                                                bottom: isCompact ? 16.h : 20.h,
+                                              ),
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 16.w,
+                                                vertical: 14.h,
+                                              ),
                                               decoration: BoxDecoration(
                                                 color: theme.primaryColor
                                                     .withValues(alpha: 0.1),
@@ -204,7 +215,8 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
                                                     BorderRadius.circular(16.r),
                                                 border: Border.all(
                                                   color: theme.primaryColor
-                                                      .withValues(alpha: 0.3),
+                                                      .withValues(alpha: 0.25),
+                                                  width: 1.2,
                                                 ),
                                               ),
                                               child: Column(
@@ -217,10 +229,10 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
                                                             .center,
                                                     children: [
                                                       Icon(
-                                                        Icons.rule,
+                                                        Icons.rule_rounded,
                                                         color:
                                                             theme.primaryColor,
-                                                        size: 16.sp,
+                                                        size: 16.r,
                                                       ),
                                                       SizedBox(width: 8.w),
                                                       Text(
@@ -229,11 +241,10 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
                                                           fontFamily: 'Outfit',
                                                           fontSize: 12.sp,
                                                           fontWeight:
-                                                              FontWeight.w800,
-                                                          color:
-                                                              theme
-                                                                  .primaryColor,
-                                                          letterSpacing: 2,
+                                                              FontWeight.w600,
+                                                          color: theme
+                                                              .primaryColor,
+                                                          letterSpacing: 1.2,
                                                         ),
                                                       ),
                                                     ],
@@ -242,41 +253,53 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
                                                   Text(
                                                     quest.grammarRule!,
                                                     textAlign: TextAlign.center,
+                                                    softWrap: true,
+                                                    overflow:
+                                                        TextOverflow.visible,
                                                     style: TextStyle(
                                                       fontFamily: 'Outfit',
-                                                      fontSize: 16.sp,
+                                                      fontSize: 15.sp,
                                                       fontWeight:
-                                                          FontWeight.w700,
+                                                          FontWeight.w600,
                                                       color:
                                                           Theme.of(
-                                                                    context,
-                                                                  ).brightness ==
-                                                                  Brightness
-                                                                      .dark
-                                                              ? Colors.white
-                                                              : Colors.black87,
+                                                                context,
+                                                              ).brightness ==
+                                                              Brightness.dark
+                                                          ? Colors.white
+                                                          : Colors.black87,
+                                                      height: 1.35,
                                                     ),
                                                   ),
                                                   if (quest.ruleExplanation !=
                                                       null) ...[
-                                                    SizedBox(height: 8.h),
+                                                    SizedBox(height: 6.h),
                                                     Text(
                                                       quest.ruleExplanation!,
                                                       textAlign:
                                                           TextAlign.center,
+                                                      softWrap: true,
+                                                      overflow:
+                                                          TextOverflow.visible,
                                                       style: TextStyle(
                                                         fontFamily: 'Outfit',
-                                                        fontSize: 14.sp,
+                                                        fontSize: 13.5.sp,
+                                                        fontWeight:
+                                                            FontWeight.w400,
                                                         color:
                                                             Theme.of(
-                                                                      context,
-                                                                    ).brightness ==
-                                                                    Brightness
-                                                                        .dark
-                                                                ? Colors.white70
-                                                                : Colors
-                                                                    .black54,
-                                                        height: 1.4,
+                                                                  context,
+                                                                ).brightness ==
+                                                                Brightness.dark
+                                                            ? Colors.white
+                                                                  .withValues(
+                                                                    alpha: 0.8,
+                                                                  )
+                                                            : Colors.black87
+                                                                  .withValues(
+                                                                    alpha: 0.75,
+                                                                  ),
+                                                        height: 1.45,
                                                       ),
                                                     ),
                                                   ],
@@ -287,20 +310,20 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
                                               quest.question != null)
                                             Padding(
                                               padding: EdgeInsets.only(
-                                                bottom: 24.h,
+                                                bottom: isCompact ? 16.h : 20.h,
                                               ),
                                               child: GrammarQuestSentence(
                                                 text:
                                                     (isAnsweredNotifier.value ||
-                                                            _pendingTypeSubmit
-                                                                .value)
-                                                        ? fullSentence
-                                                        : (quest.sentenceWithBlank ??
-                                                            quest.question!),
+                                                        _pendingTypeSubmit
+                                                            .value)
+                                                    ? fullSentence
+                                                    : (quest.sentenceWithBlank ??
+                                                          quest.question!),
                                                 isDark:
                                                     Theme.of(
-                                                          context,
-                                                        ).brightness ==
+                                                      context,
+                                                    ).brightness ==
                                                     Brightness.dark,
                                                 isCompact: isCompact,
                                               ),
@@ -312,13 +335,15 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
                                   SliverToBoxAdapter(
                                     child: Padding(
                                       padding: EdgeInsets.symmetric(
-                                        horizontal: 0.w,
+                                        horizontal: isNarrow ? 16.w : 20.w,
                                       ),
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          SizedBox(height: 16.h),
+                                          SizedBox(
+                                            height: isCompact ? 8.h : 16.h,
+                                          ),
                                           GrammarQuestCompass(
                                             options: quest.options ?? [],
                                             correctAnswerIndex:
@@ -350,20 +375,22 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
                                   if (_pendingTypeSubmit.value &&
                                       !isAnsweredNotifier.value &&
                                       targetText.isNotEmpty)
-                                    SliverToBoxAdapter(
-                                      child: Padding(
-                                        padding: EdgeInsets.only(top: 32.h),
+                                    SliverPadding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: isNarrow ? 16.w : 20.w,
+                                      ).copyWith(top: 24.h),
+                                      sliver: SliverToBoxAdapter(
                                         child: TypeToConfirmOverlay(
                                           expectedText: fullSentence,
                                           primaryColor: theme.primaryColor,
-                                          onConfirmed: () => _submitFinalAnswer(
-                                            true,
-                                            quest,
-                                          ),
-                                          onSkipped: () => _submitFinalAnswer(
-                                            false,
-                                            quest,
-                                          ),
+                                          title: 'Confirm Sentence',
+                                          subtitle:
+                                              'Type the completed sentence to finish',
+                                          hintText: 'Type the sentence here...',
+                                          onConfirmed: () =>
+                                              _submitFinalAnswer(true, quest),
+                                          onSkipped: () =>
+                                              _submitFinalAnswer(false, quest),
                                           allowSkip: true,
                                           isPositioned: false,
                                         ),
@@ -373,13 +400,13 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
                                     child: SizedBox(
                                       height:
                                           (_pendingTypeSubmit.value &&
-                                                  !isAnsweredNotifier.value &&
-                                                  targetText.isNotEmpty)
-                                              ? MediaQuery.of(
-                                                      context,
-                                                    ).viewInsets.bottom +
-                                                  60.h
-                                              : 60.h,
+                                              !isAnsweredNotifier.value &&
+                                              targetText.isNotEmpty)
+                                          ? MediaQuery.of(
+                                                  context,
+                                                ).viewInsets.bottom +
+                                                60.h
+                                          : 60.h,
                                     ),
                                   ),
                                 ],

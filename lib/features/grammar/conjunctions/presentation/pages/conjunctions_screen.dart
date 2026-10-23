@@ -78,6 +78,34 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
     });
   }
 
+  String _formatInstruction(String? raw) {
+    if (raw == null || raw.trim().isEmpty) {
+      return 'Choose the conjunction to connect the sentence';
+    }
+    final trimmed = raw.trim();
+    final upper = trimmed.toUpperCase();
+    if (upper == 'JOIN THE JUNCTION' ||
+        upper == 'COMPLETE THE SENTENCE' ||
+        upper.contains('JUNCTION')) {
+      return 'Choose the conjunction to connect the sentence';
+    }
+    if (trimmed == upper && trimmed.length > 2) {
+      return trimmed[0].toUpperCase() + trimmed.substring(1).toLowerCase();
+    }
+    return trimmed;
+  }
+
+  String _formatRule(String? rule, String? purpose) {
+    if (rule == null && purpose == null) return '';
+    if (rule != null && purpose != null) {
+      if (rule.toLowerCase().contains(purpose.toLowerCase())) {
+        return rule;
+      }
+      return '$rule • $purpose';
+    }
+    return rule ?? purpose ?? '';
+  }
+
   void _onBridge(
     String conj,
     int correctIndex,
@@ -154,7 +182,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
         final GrammarQuest? quest = (state is GrammarLoaded)
             ? state.currentQuest as GrammarQuest?
             : null;
-        final options = quest?.options ?? ["AND", "BUT", "OR"];
+        final options = quest?.options ?? ["and", "but", "or"];
         final question = quest?.question ?? "I like apples... I like oranges.";
         final parts = question.contains("...")
             ? question.split("...")
@@ -208,8 +236,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
               isCorrect: isCorrect,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: showConfettiNotifier.value,
-              useScrolling:
-                  false, // Stack needs finite space to anchor to bottom
+              useScrolling: false,
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
               onHint: () {},
@@ -219,6 +246,9 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                       builder: (context, constraints) {
                         final shouldReduceMotion =
                             VowlMotion.shouldReduceMotion(context);
+                        final isCompact = constraints.maxHeight < 600;
+                        final isNarrow = constraints.maxWidth < 360;
+
                         return Stack(
                           children: [
                             RawScrollbar(
@@ -237,309 +267,120 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                     hasScrollBody: true,
                                     child: Padding(
                                       padding: EdgeInsets.symmetric(
-                                        horizontal: constraints.maxWidth < 360
-                                            ? 12.w
-                                            : 16.w,
+                                        horizontal: isNarrow ? 12.w : 18.w,
+                                        vertical: isCompact ? 8.h : 14.h,
                                       ),
                                       child: Column(
                                         children: [
+                                          // 1. Top-anchored Instruction Pill
+                                          Center(
+                                            child: ConjunctionsInstruction(
+                                              primaryColor: theme.primaryColor,
+                                              instruction: _formatInstruction(
+                                                quest.instruction,
+                                              ),
+                                            ),
+                                          ),
+
+                                          // Optional Rule / Category Box (anchored right below instruction)
+                                          if (quest.grammarRule != null ||
+                                              quest.conjunctionPurpose !=
+                                                  null) ...[
+                                            SizedBox(
+                                              height: isCompact ? 6.h : 10.h,
+                                            ),
+                                            _buildRuleBox(
+                                              quest,
+                                              theme.primaryColor,
+                                              isDark,
+                                              isCompact,
+                                              shouldReduceMotion,
+                                            ),
+                                          ],
+
+                                          // 2. Main Game Stage (Sentence Board + Bricks grouped together)
                                           Expanded(
-                                            child: Builder(
-                                              builder: (context) {
-                                                final maxHeight =
-                                                    constraints.maxHeight;
-                                                final isCompact =
-                                                    maxHeight < 580;
-
-                                                final double
-                                                estimatedContentHeight =
-                                                    (isCompact ? 30.h : 40.h) +
-                                                    (isCompact ? 50.h : 80.h) *
-                                                        2 +
-                                                    (isCompact ? 50.h : 70.h) +
-                                                    (isCompact ? 50.h : 80.h) +
-                                                    40.h;
-                                                final remainingHeight =
-                                                    maxHeight -
-                                                    estimatedContentHeight;
-
-                                                final double gapUnit =
-                                                    remainingHeight > 0
-                                                    ? remainingHeight / 5
-                                                    : 0;
-                                                final double gapTop =
-                                                    remainingHeight > 0
-                                                    ? (gapUnit * 1).clamp(
-                                                        4.0,
-                                                        15.0,
-                                                      )
-                                                    : 4.0;
-                                                final double gapMiddle =
-                                                    remainingHeight > 0
-                                                    ? (gapUnit * 1.5).clamp(
-                                                        6.0,
-                                                        20.0,
-                                                      )
-                                                    : 6.0;
-                                                final double gapBottom =
-                                                    remainingHeight > 0
-                                                    ? (gapUnit * 2.5).clamp(
-                                                        10.0,
-                                                        30.0,
-                                                      )
-                                                    : 10.0;
-
-                                                return Column(
-                                                  children: [
-                                                    SizedBox(height: gapTop),
-                                                    isCompact
-                                                        ? SizedBox(
-                                                            height: 25.h,
-                                                            child: FittedBox(
-                                                              fit: BoxFit
-                                                                  .scaleDown,
-                                                              child: ConjunctionsInstruction(
-                                                                primaryColor: theme
-                                                                    .primaryColor,
-                                                                instruction: quest
-                                                                    .instruction,
-                                                              ),
-                                                            ),
-                                                          )
-                                                        : ConjunctionsInstruction(
-                                                            primaryColor: theme
-                                                                .primaryColor,
-                                                            instruction: quest
-                                                                .instruction,
-                                                          ),
-                                                    SizedBox(height: gapMiddle),
-
-                                                    if (quest.grammarRule !=
-                                                            null ||
-                                                        quest.conjunctionPurpose !=
-                                                            null) ...[
-                                                      Container(
-                                                        key: const ValueKey('conjunction_rule_box'),
-                                                        padding:
-                                                            EdgeInsets.symmetric(
-                                                              horizontal: 16.w,
-                                                              vertical: 8.h,
-                                                            ),
-                                                        decoration: BoxDecoration(
-                                                          color: theme
-                                                              .primaryColor
-                                                              .withValues(
-                                                                alpha: 0.1,
-                                                              ),
-                                                          borderRadius:
-                                                              BorderRadius.circular(
-                                                                16.r,
-                                                              ),
-                                                          border: Border.all(
-                                                            color: theme
-                                                                .primaryColor
-                                                                .withValues(
-                                                                  alpha: 0.3,
-                                                                ),
-                                                          ),
+                                            child: LayoutBuilder(
+                                              builder:
+                                                  (context, stageConstraints) {
+                                                return SingleChildScrollView(
+                                                  physics:
+                                                      const BouncingScrollPhysics(),
+                                                  child: ConstrainedBox(
+                                                    constraints: BoxConstraints(
+                                                      minHeight: stageConstraints
+                                                          .maxHeight,
+                                                    ),
+                                                    child: Column(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        SizedBox(
+                                                          height: isCompact
+                                                              ? 8.h
+                                                              : 12.h,
                                                         ),
-                                                        child: Column(
-                                                          children: [
-                                                            Text(
-                                                              [
-                                                                if (quest
-                                                                        .grammarRule !=
-                                                                    null)
-                                                                  quest
-                                                                      .grammarRule!
-                                                                      .toUpperCase(),
-                                                                if (quest
-                                                                        .conjunctionPurpose !=
-                                                                    null)
-                                                                  quest
-                                                                      .conjunctionPurpose!
-                                                                      .toUpperCase(),
-                                                              ].join(" - "),
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                fontSize: 10.sp,
-                                                                color: theme
-                                                                    .primaryColor,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                letterSpacing:
-                                                                    1.2,
-                                                              ),
-                                                            ),
-                                                            if (quest
-                                                                    .grammarRule ==
-                                                                "Coordinating Conjunctions") ...[
-                                                              SizedBox(
-                                                                height: 4.h,
-                                                              ),
-                                                              Wrap(
-                                                                alignment:
-                                                                    WrapAlignment
-                                                                        .center,
-                                                                spacing: 8.w,
-                                                                children:
-                                                                    [
-                                                                          "For",
-                                                                          "And",
-                                                                          "Nor",
-                                                                          "But",
-                                                                          "Or",
-                                                                          "Yet",
-                                                                          "So",
-                                                                        ]
-                                                                        .map(
-                                                                          (
-                                                                            word,
-                                                                          ) => Text(
-                                                                            "${word[0]} = $word",
-                                                                            style: TextStyle(
-                                                                              fontSize: 10.sp,
-                                                                              color: theme.primaryColor.withValues(
-                                                                                alpha: 0.6,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        )
-                                                                        .toList(),
-                                                              ),
-                                                            ],
-                                                          ],
-                                                        ),
-                                                      ).animate(target: shouldReduceMotion ? 0 : 1).fadeIn(
-                                                        duration: 400.ms,
-                                                      ),
-                                                      SizedBox(
-                                                        height: isCompact
-                                                            ? 12.h
-                                                            : 20.h,
-                                                      ),
-                                                    ],
 
-                                                    // Magnetic Junction Bridge
-                                                    Expanded(
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsets.symmetric(
-                                                              horizontal: constraints.maxWidth < 360
-                                                                  ? 10.w
-                                                                  : 24.w,
-                                                            ),
-                                                        child: LayoutBuilder(
-                                                          builder: (context, constraints) {
-                                                            return SingleChildScrollView(
-                                                              physics:
-                                                                  const BouncingScrollPhysics(),
-                                                              child: ConstrainedBox(
-                                                                constraints:
-                                                                    BoxConstraints(
-                                                                      minHeight:
-                                                                          constraints
-                                                                              .maxHeight,
-                                                                    ),
-                                                                child: Column(
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .center,
-                                                                  children: [
-                                                                    if (parts
-                                                                        .first
-                                                                        .trim()
-                                                                        .isNotEmpty) ...[
-                                                                      _buildIslandPiece(
-                                                                        parts
-                                                                            .first,
-                                                                        isDark,
-                                                                        theme
-                                                                            .primaryColor,
-                                                                        isCompact,
-                                                                      ),
-                                                                      SizedBox(
-                                                                        height:
-                                                                            isCompact
-                                                                            ? 12.h
-                                                                            : 24.h,
-                                                                      ),
-                                                                    ],
-                                                                    _buildMagneticJunction(
-                                                                      quest,
-                                                                      options,
-                                                                      quest.correctAnswerIndex ??
-                                                                          0,
-                                                                      theme
-                                                                          .primaryColor,
-                                                                      isDark,
-                                                                      isCompact,
-                                                                      shouldReduceMotion,
-                                                                      constraints.maxWidth < 360,
-                                                                    ),
-                                                                    SizedBox(
-                                                                      height:
-                                                                          isCompact
-                                                                          ? 12.h
-                                                                          : 24.h,
-                                                                    ),
-                                                                    if (parts.length >
-                                                                            1 &&
-                                                                        parts
-                                                                            .last
-                                                                            .trim()
-                                                                            .isNotEmpty)
-                                                                      _buildIslandPiece(
-                                                                        parts
-                                                                            .last,
-                                                                        isDark,
-                                                                        theme
-                                                                            .primaryColor,
-                                                                        isCompact,
-                                                                      ).animate(target: shouldReduceMotion ? 0 : 1).fadeIn(
-                                                                        delay: 400
-                                                                            .ms,
-                                                                      ),
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                            );
+                                                        // Unified Production-Grade Sentence Board
+                                                        _buildSentenceBoard(
+                                                          context: context,
+                                                          parts: parts,
+                                                          quest: quest,
+                                                          options: options,
+                                                          theme: theme,
+                                                          isDark: isDark,
+                                                          isCompact: isCompact,
+                                                          shouldReduceMotion:
+                                                              shouldReduceMotion,
+                                                          isNarrow: isNarrow,
+                                                        ),
+
+                                                        SizedBox(
+                                                          height: isCompact
+                                                              ? 16.h
+                                                              : 24.h,
+                                                        ),
+
+                                                        // Conjunction Option Cards (Bricks)
+                                                        ConjunctionsBrickSheet(
+                                                          options: options,
+                                                          placedBrick:
+                                                              _placedBrick
+                                                                  .value,
+                                                          primaryColor: theme
+                                                              .primaryColor,
+                                                          isDark: isDark,
+                                                          isCompact: isCompact,
+                                                          isAnswered:
+                                                              isAnswered ||
+                                                                  _pendingJigsaw
+                                                                      .value,
+                                                          onBrickTapped:
+                                                              (brickText) {
+                                                            final index =
+                                                                options.indexOf(
+                                                                    brickText);
+                                                            if (index != -1) {
+                                                              _onBridge(
+                                                                brickText,
+                                                                quest.correctAnswerIndex ??
+                                                                    0,
+                                                                options,
+                                                                quest,
+                                                              );
+                                                            }
                                                           },
                                                         ),
-                                                      ),
-                                                    ),
-                                                    SizedBox(height: gapMiddle),
 
-                                                    ConjunctionsBrickSheet(
-                                                      options: options,
-                                                      placedBrick:
-                                                          _placedBrick.value,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isCompact: isCompact,
-                                                      isAnswered: isAnswered || _pendingJigsaw.value,
-                                                      onBrickTapped: (brickText) {
-                                                        final index = options
-                                                            .indexOf(brickText);
-                                                        if (index != -1) {
-                                                          _onBridge(
-                                                            brickText,
-                                                            quest.correctAnswerIndex ??
-                                                                0,
-                                                            options,
-                                                            quest,
-                                                          );
-                                                        }
-                                                      },
+                                                        SizedBox(
+                                                          height: isCompact
+                                                              ? 8.h
+                                                              : 12.h,
+                                                        ),
+                                                      ],
                                                     ),
-                                                    SizedBox(height: gapBottom),
-                                                  ],
+                                                  ),
                                                 );
                                               },
                                             ),
@@ -548,37 +389,48 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                       ),
                                     ),
                                   ),
-                                  SliverToBoxAdapter(
-                                    child: SizedBox(height: 60.h),
-                                  ),
+
+                                  // Type-to-confirm mechanism card
                                   if (_pendingJigsaw.value &&
                                       !isAnsweredNotifier.value &&
                                       cleanTargetSentence.isNotEmpty)
                                     SliverToBoxAdapter(
-                                      child: TypeToConfirmOverlay(
-                                        expectedText: cleanTargetSentence,
-                                        primaryColor: theme.primaryColor,
-                                        onConfirmed: () =>
-                                            _submitFinalAnswer(true, quest),
-                                        onSkipped: () =>
-                                            _submitFinalAnswer(false, quest),
-                                        isPositioned: false,
-                                        displayText:
-                                            "Type the full sentence to lock it in",
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: isNarrow ? 12.w : 18.w,
+                                          vertical: 10.h,
+                                        ),
+                                        child: TypeToConfirmOverlay(
+                                          expectedText: cleanTargetSentence,
+                                          primaryColor: theme.primaryColor,
+                                          onConfirmed: () =>
+                                              _submitFinalAnswer(true, quest),
+                                          onSkipped: () =>
+                                              _submitFinalAnswer(false, quest),
+                                          isPositioned: false,
+                                          title: "Type to confirm",
+                                          subtitle:
+                                              "Type the completed sentence below",
+                                          displayFontSize: isCompact
+                                              ? 16.sp
+                                              : 18.sp,
+                                          displayFontWeight: FontWeight.w600,
+                                          displayTextAlign: TextAlign.center,
+                                        ),
                                       ),
                                     ),
+
                                   SliverToBoxAdapter(
                                     child: SizedBox(
-                                      height:
-                                          MediaQuery.of(
+                                      height: MediaQuery.of(
                                                 context,
                                               ).viewInsets.bottom >
                                               0
                                           ? MediaQuery.of(
                                                   context,
                                                 ).viewInsets.bottom +
-                                                40.h
-                                          : 60.h,
+                                              30.h
+                                          : 40.h,
                                     ),
                                   ),
                                 ],
@@ -593,6 +445,232 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
         );
       },
     );
+  }
+
+  Widget _buildSentenceBoard({
+    required BuildContext context,
+    required List<String> parts,
+    required GameQuest quest,
+    required List<String> options,
+    required dynamic theme,
+    required bool isDark,
+    required bool isCompact,
+    required bool shouldReduceMotion,
+    required bool isNarrow,
+  }) {
+    final primaryColor = theme.primaryColor as Color;
+    return Container(
+      key: const ValueKey('conjunction_sentence_board'),
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(
+        horizontal: isCompact ? 16.w : 22.w,
+        vertical: isCompact ? 16.h : 22.h,
+      ),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1E222B) : Colors.white,
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: primaryColor.withValues(
+            alpha: isDark ? 0.22 : 0.16,
+          ),
+          width: 1.5,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.35)
+                : primaryColor.withValues(alpha: 0.06),
+            blurRadius: 18,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // Clause 1
+          if (parts.first.trim().isNotEmpty)
+            Text(
+              parts.first.trim(),
+              textAlign: TextAlign.center,
+              softWrap: true,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: isCompact ? 15.sp : 17.sp,
+                fontWeight: FontWeight.w600,
+                color: isDark ? Colors.white : AppColors.slate900,
+                height: 1.45,
+                letterSpacing: 0.2,
+              ),
+            ),
+
+          SizedBox(height: isCompact ? 12.h : 16.h),
+
+          // Visual Connector Bridge with Magnetic Junction Slot
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Left gradient guide rail
+              Expanded(
+                child: Container(
+                  height: 1.5,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        primaryColor.withValues(alpha: 0.0),
+                        primaryColor.withValues(
+                          alpha: isDark ? 0.35 : 0.22,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                child: _buildMagneticJunction(
+                  quest,
+                  options,
+                  quest.correctAnswerIndex ?? 0,
+                  primaryColor,
+                  isDark,
+                  isCompact,
+                  shouldReduceMotion,
+                  isNarrow,
+                ),
+              ),
+              // Right gradient guide rail
+              Expanded(
+                child: Container(
+                  height: 1.5,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        primaryColor.withValues(
+                          alpha: isDark ? 0.35 : 0.22,
+                        ),
+                        primaryColor.withValues(alpha: 0.0),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          SizedBox(height: isCompact ? 12.h : 16.h),
+
+          // Clause 2
+          if (parts.length > 1 && parts.last.trim().isNotEmpty)
+            Builder(
+              builder: (context) {
+                final textWidget = Text(
+                  parts.last.trim(),
+                  textAlign: TextAlign.center,
+                  softWrap: true,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: isCompact ? 15.sp : 17.sp,
+                    fontWeight: FontWeight.w600,
+                    color: isDark ? Colors.white : AppColors.slate900,
+                    height: 1.45,
+                    letterSpacing: 0.2,
+                  ),
+                );
+                return shouldReduceMotion
+                    ? textWidget
+                    : textWidget.animate().fadeIn(delay: 200.ms);
+              },
+            ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildRuleBox(
+    GrammarQuest quest,
+    Color primaryColor,
+    bool isDark,
+    bool isCompact,
+    shouldReduceMotion,
+  ) {
+    return Container(
+      key: const ValueKey('conjunction_rule_box'),
+      padding: EdgeInsets.symmetric(
+        horizontal: 14.w,
+        vertical: 8.h,
+      ),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(
+          alpha: isDark ? 0.12 : 0.08,
+        ),
+        borderRadius: BorderRadius.circular(14.r),
+        border: Border.all(
+          color: primaryColor.withValues(
+            alpha: isDark ? 0.25 : 0.18,
+          ),
+          width: 1.0,
+        ),
+      ),
+      child: Column(
+        children: [
+          Text(
+            _formatRule(
+              quest.grammarRule,
+              quest.conjunctionPurpose,
+            ),
+            textAlign: TextAlign.center,
+            softWrap: true,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: isCompact ? 11.sp : 12.sp,
+              color: primaryColor,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 0.3,
+            ),
+          ),
+          if (quest.grammarRule == "Coordinating Conjunctions") ...[
+            SizedBox(height: 6.h),
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 6.w,
+              runSpacing: 4.h,
+              children: [
+                "For",
+                "And",
+                "Nor",
+                "But",
+                "Or",
+                "Yet",
+                "So",
+              ]
+                  .map(
+                    (word) => Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 6.w,
+                        vertical: 2.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: primaryColor.withValues(alpha: 0.08),
+                        borderRadius: BorderRadius.circular(6.r),
+                      ),
+                      child: Text(
+                        "${word[0]} = $word",
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.5.sp,
+                          fontWeight: FontWeight.w600,
+                          color: primaryColor.withValues(alpha: 0.85),
+                        ),
+                      ),
+                    ),
+                  )
+                  .toList(),
+            ),
+          ],
+        ],
+      ),
+    ).animate(target: shouldReduceMotion ? 0 : 1).fadeIn(duration: 400.ms);
   }
 
   Widget _buildMagneticJunction(
@@ -611,99 +689,98 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
           _onBridge(details.data, correctIndex, options, quest),
       builder: (context, candidateData, rejectedData) {
         final isHighlight = candidateData.isNotEmpty;
-        final nodeColor = _placedBrick.value != null
+        final isPlaced = _placedBrick.value != null;
+        final nodeColor = isPlaced
             ? ((isAnsweredNotifier.value || _pendingJigsaw.value) &&
                       isCorrectNotifier.value != false
                   ? AppColors.gameCorrect
                   : AppColors.gameIncorrect)
             : (isHighlight
-                  ? primaryColor
-                  : primaryColor.withValues(alpha: 0.3));
+                ? primaryColor
+                : primaryColor.withValues(alpha: 0.45));
 
         return Container(
-          width: isCompact ? (isNarrow ? 120.w : 140.w) : 180.w,
-          height: isCompact ? 48.h : 70.h,
+          constraints: BoxConstraints(
+            minWidth: isCompact ? (isNarrow ? 120.w : 135.w) : 155.w,
+            maxWidth: 220.w,
+            minHeight: isCompact ? 42.h : 48.h,
+          ),
+          padding: EdgeInsets.symmetric(
+            horizontal: 14.w,
+            vertical: isCompact ? 6.h : 8.h,
+          ),
           decoration: BoxDecoration(
-            color: nodeColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(isCompact ? 14.r : 20.r),
+            color: nodeColor.withValues(
+              alpha: isPlaced ? 0.12 : (isHighlight ? 0.16 : 0.06),
+            ),
+            borderRadius: BorderRadius.circular(14.r),
             border: Border.all(
-              color: nodeColor.withValues(alpha: 0.4),
-              width: 2,
-              style: _placedBrick.value != null
-                  ? BorderStyle.none
-                  : BorderStyle.solid,
+              color: nodeColor.withValues(
+                alpha: isPlaced ? 0.65 : (isHighlight ? 0.75 : 0.35),
+              ),
+              width: 1.5,
             ),
             boxShadow: [
-              if (isHighlight || _placedBrick.value != null)
+              if (isHighlight || isPlaced)
                 BoxShadow(
-                  color: nodeColor.withValues(alpha: 0.2),
-                  blurRadius: 20,
-                  spreadRadius: 2,
+                  color: nodeColor.withValues(alpha: 0.15),
+                  blurRadius: 12,
+                  spreadRadius: 1,
                 ),
             ],
           ),
           child: Center(
-            child: _placedBrick.value != null
+            child: isPlaced
                 ? Text(
-                    _placedBrick.value!.toUpperCase(),
+                    _placedBrick.value!,
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: isCompact ? 14.sp : 20.sp,
-                      fontWeight: FontWeight.w900,
+                      fontSize: isCompact ? 16.sp : 18.sp,
+                      fontWeight: FontWeight.w700,
                       color: nodeColor,
                     ),
-                  ).animate(target: shouldReduceMotion ? 0 : 1).scale(duration: 400.ms, curve: Curves.elasticOut)
-                : (isHighlight
-                      ? Icon(
-                          Icons.bolt_rounded,
-                          color: primaryColor,
-                          size: isCompact ? 20.r : 28.r,
-                        ).animate(target: shouldReduceMotion ? 0 : 1).scale().shimmer()
-                      : Text(
-                          "JUNCTION",
+                  )
+                    .animate(target: shouldReduceMotion ? 0 : 1)
+                    .scale(
+                      duration: 300.ms,
+                      curve: Curves.easeOutBack,
+                    )
+                : Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        isHighlight
+                            ? Icons.download_rounded
+                            : Icons.add_rounded,
+                        color: primaryColor.withValues(
+                          alpha: isHighlight ? 0.95 : 0.65,
+                        ),
+                        size: isCompact ? 15.r : 17.r,
+                      ),
+                      SizedBox(width: 5.w),
+                      Flexible(
+                        child: Text(
+                          "Choose conjunction",
+                          textAlign: TextAlign.center,
+                          softWrap: true,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: isCompact ? 8.sp : 10.sp,
-                            fontWeight: FontWeight.w900,
-                            color: primaryColor.withValues(alpha: 0.4),
-                            letterSpacing: 2,
+                            fontSize: isCompact ? 12.sp : 13.sp,
+                            fontWeight: FontWeight.w600,
+                            color: primaryColor.withValues(
+                              alpha: isHighlight ? 0.95 : 0.7,
+                            ),
+                            letterSpacing: 0.2,
                           ),
-                        )),
+                        ),
+                      ),
+                    ],
+                  ),
           ),
         );
       },
-    );
-  }
-
-  Widget _buildIslandPiece(
-    String text,
-    bool isDark,
-    Color primaryColor,
-    bool isCompact,
-  ) {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(isCompact ? 12.r : 22.r),
-      decoration: BoxDecoration(
-        color: isDark
-            ? Colors.white.withValues(alpha: 0.05)
-            : Colors.black.withValues(alpha: 0.03),
-        borderRadius: BorderRadius.circular(isCompact ? 14.r : 24.r),
-        border: Border.all(
-          color: primaryColor.withValues(alpha: 0.1),
-          width: 1.5,
-        ),
-      ),
-      child: Text(
-        text.trim(),
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: isCompact ? 14.sp : 18.sp,
-          color: isDark ? Colors.white : Colors.black87,
-          height: 1.4,
-        ),
-      ),
     );
   }
 }

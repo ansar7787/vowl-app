@@ -88,8 +88,7 @@ class GrammarBaseLayout extends StatelessWidget {
           isAnswered: isAnswered,
           isFinalFailure: isFinalFailure,
           soundService: di.sl<SoundService>(),
-          onShowBriefing:
-              () => GameBriefingScope.show(context),
+          onShowBriefing: () => GameBriefingScope.show(context),
           onBack: () => GameDialogHelper.showExitConfirmation(
             context,
             onQuit: () => Navigator.of(context).pop(),

@@ -13,30 +13,44 @@ class PronounResolutionInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final rawInstruction = instruction?.trim() ?? '';
+    final isSciFiBuzzword =
+        rawInstruction.toUpperCase() == 'ALIGN THE GRAVITY WELL' ||
+        rawInstruction.toUpperCase() == 'ALIGN THE GRAVITY';
+    final cleanInstruction = (rawInstruction.isEmpty || isSciFiBuzzword)
+        ? 'Find what the pronoun refers to'
+        : rawInstruction;
+
     return Container(
       key: const ValueKey('pronoun_resolution_instruction'),
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.25),
+          width: 1.2,
+        ),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.gps_fixed_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
+          Icon(Icons.person_search_rounded, size: 16.r, color: primaryColor),
+          SizedBox(width: 8.w),
           Flexible(
             child: Text(
-              instruction ?? "ALIGN THE GRAVITY WELL",
+              cleanInstruction,
+              textAlign: TextAlign.center,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
+                fontSize: 12.5.sp,
+                fontWeight: FontWeight.w600,
                 color: primaryColor,
-                letterSpacing: 1.5,
+                letterSpacing: 0.3,
+                height: 1.3,
               ),
-              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],

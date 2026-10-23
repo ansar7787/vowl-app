@@ -146,32 +146,52 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
         ? template.split("____")
         : template.split("___");
     List<InlineSpan> spans = [];
+    final double targetFontSize = isCompact ? 16.sp : 19.sp;
+
     for (int i = 0; i < parts.length; i++) {
-      spans.add(TextSpan(text: parts[i]));
+      spans.add(
+        TextSpan(
+          text: parts[i],
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: targetFontSize,
+            fontWeight: FontWeight.w500,
+            color: isDark ? Colors.white : Colors.black87,
+            height: 1.5,
+          ),
+        ),
+      );
       if (i < parts.length - 1) {
         final blankContainer = Container(
-          margin: EdgeInsets.symmetric(horizontal: 8.w),
+          margin: EdgeInsets.symmetric(horizontal: 6.w),
           padding: EdgeInsets.symmetric(
             horizontal: isCompact ? 8.w : 12.w,
             vertical: isCompact ? 2.h : 4.h,
           ),
           decoration: BoxDecoration(
+            color: primaryColor.withValues(
+              alpha: selected != null ? 0.12 : 0.05,
+            ),
+            borderRadius: BorderRadius.circular(8.r),
             border: Border(
               bottom: BorderSide(
                 color: selected != null
                     ? primaryColor
                     : (isDark ? Colors.white38 : Colors.black38),
-                width: 2,
+                width: 2.5,
               ),
             ),
           ),
           child: Text(
             selected ?? "      ",
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: isCompact ? 16.sp : 22.sp,
-              fontWeight: FontWeight.bold,
-              color: primaryColor,
+              fontSize: targetFontSize,
+              fontWeight: FontWeight.w700,
+              color: selected != null
+                  ? primaryColor
+                  : (isDark ? Colors.white60 : Colors.black45),
             ),
           ),
         );
@@ -182,8 +202,8 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
             child: reduceMotion
                 ? blankContainer
                 : blankContainer
-                    .animate(target: selected != null ? 1 : 0)
-                    .shimmer(duration: 2.seconds),
+                      .animate(target: selected != null ? 1 : 0)
+                      .shimmer(duration: 2.seconds),
           ),
         );
       }
@@ -194,9 +214,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
   @override
   void onQuestionReset() {
     _points.value = [];
-
     _targetNode.value = -1;
-
     _pendingJigsaw.value = false;
   }
 
@@ -239,10 +257,14 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
                   .trim();
             }
 
-            final isAnswered = isAnsweredNotifier.value ||
+            final isAnswered =
+                isAnsweredNotifier.value ||
                 (state is GrammarLoaded && state.answerStatus.isAnswered);
-            final isCorrect = isCorrectNotifier.value ??
-                (state is GrammarLoaded ? state.answerStatus.asBoolOrNull : null);
+            final isCorrect =
+                isCorrectNotifier.value ??
+                (state is GrammarLoaded
+                    ? state.answerStatus.asBoolOrNull
+                    : null);
 
             return GrammarBaseLayout(
               disablePadding: true,
@@ -314,7 +336,9 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
                                                   color: theme.primaryColor
                                                       .withValues(alpha: 0.1),
                                                   borderRadius:
-                                                      BorderRadius.circular(16.r),
+                                                      BorderRadius.circular(
+                                                        16.r,
+                                                      ),
                                                   border: Border.all(
                                                     color: theme.primaryColor
                                                         .withValues(alpha: 0.3),
@@ -326,25 +350,27 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
                                                       "RULE: ${(quest.grammarRule ?? quest.prepositionCategory!).toUpperCase()}",
                                                       textAlign:
                                                           TextAlign.center,
+                                                      softWrap: true,
                                                       style: TextStyle(
                                                         fontFamily: 'Outfit',
                                                         fontSize: 12.sp,
-                                                        color: theme
-                                                            .primaryColor,
+                                                        color:
+                                                            theme.primaryColor,
                                                         fontWeight:
-                                                            FontWeight.bold,
-                                                        letterSpacing: 1.2,
+                                                            FontWeight.w700,
+                                                        letterSpacing: 0.8,
                                                       ),
                                                     ),
-                                                    if (state is GrammarLoaded &&
+                                                    if (state
+                                                            is GrammarLoaded &&
                                                         state.hintUsed &&
-                                                        quest.hint !=
-                                                            null) ...[
+                                                        quest.hint != null) ...[
                                                       SizedBox(height: 8.h),
                                                       Text(
                                                         quest.hint!,
                                                         textAlign:
                                                             TextAlign.center,
+                                                        softWrap: true,
                                                         style: TextStyle(
                                                           fontFamily: 'Outfit',
                                                           fontSize: 13.sp,
@@ -353,7 +379,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
                                                               : Colors.black87,
                                                           fontWeight:
                                                               FontWeight.w500,
-                                                          height: 1.3,
+                                                          height: 1.35,
                                                         ),
                                                       ).animate().fadeIn(),
                                                     ],
@@ -361,9 +387,9 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
                                                 ),
                                               );
                                               if (reduceMotion) return ruleBox;
-                                              return ruleBox
-                                                  .animate()
-                                                  .fadeIn(duration: 400.ms);
+                                              return ruleBox.animate().fadeIn(
+                                                duration: 400.ms,
+                                              );
                                             },
                                           ),
                                           SizedBox(
@@ -400,9 +426,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
                                                         ),
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                        isCompact
-                                                            ? 18.r
-                                                            : 28.r,
+                                                        isCompact ? 18.r : 28.r,
                                                       ),
                                                   border: Border.all(
                                                     color: theme.primaryColor
@@ -414,42 +438,46 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
                                                 ),
                                                 child: RichText(
                                                   textAlign: TextAlign.center,
+                                                  softWrap: true,
                                                   text: TextSpan(
                                                     style: TextStyle(
                                                       fontFamily: 'Outfit',
                                                       fontSize: isCompact
                                                           ? 16.sp
-                                                          : 20.sp,
+                                                          : 19.sp,
+                                                      fontWeight:
+                                                          FontWeight.w500,
                                                       color: isDark
                                                           ? Colors.white
                                                           : Colors.black87,
                                                       height: 1.5,
                                                     ),
-                                                    children:
-                                                        _buildSentenceWithBlank(
-                                                          context,
-                                                          quest.sentenceWithBlank ??
-                                                              quest.question ??
-                                                              "____ sentence.",
-                                                          (isAnsweredNotifier
-                                                                          .value ||
-                                                                      _pendingJigsaw
-                                                                          .value) &&
-                                                                  _targetNode
-                                                                          .value !=
-                                                                      -1
-                                                              ? options[_targetNode
-                                                                    .value]
-                                                              : null,
-                                                          theme.primaryColor,
-                                                          isDark,
-                                                          isCompact,
-                                                        ),
+                                                    children: _buildSentenceWithBlank(
+                                                      context,
+                                                      quest.sentenceWithBlank ??
+                                                          quest.question ??
+                                                          "____ sentence.",
+                                                      (isAnsweredNotifier
+                                                                      .value ||
+                                                                  _pendingJigsaw
+                                                                      .value) &&
+                                                              _targetNode
+                                                                      .value !=
+                                                                  -1
+                                                          ? options[_targetNode
+                                                                .value]
+                                                          : null,
+                                                      theme.primaryColor,
+                                                      isDark,
+                                                      isCompact,
+                                                    ),
                                                   ),
                                                 ),
                                               ),
                                             );
-                                            if (reduceMotion) return contextCard;
+                                            if (reduceMotion) {
+                                              return contextCard;
+                                            }
                                             return contextCard
                                                 .animate()
                                                 .fadeIn(duration: 600.ms)
@@ -482,17 +510,25 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
                                       cleanTargetSentence.isNotEmpty)
                                     SliverToBoxAdapter(
                                       child: Padding(
-                                        padding: EdgeInsets.only(top: 16.h),
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 20.w,
+                                          vertical: 12.h,
+                                        ),
                                         child: TypeToConfirmOverlay(
+                                          key: const ValueKey(
+                                            'preposition_type_overlay',
+                                          ),
                                           expectedText: cleanTargetSentence,
+                                          title: 'Confirm your answer',
+                                          subtitle:
+                                              'Type the completed sentence below to practice writing',
                                           primaryColor: theme.primaryColor,
                                           onConfirmed: () =>
                                               _submitFinalAnswer(true, quest),
                                           onSkipped: () =>
                                               _submitFinalAnswer(false, quest),
                                           isPositioned: false,
-                                          displayText:
-                                              "Type the full sentence to lock it in",
+                                          allowSkip: true,
                                         ),
                                       ),
                                     ),
@@ -588,10 +624,10 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
             ),
             for (int i = 0; i < nodePoints.length; i++)
               Positioned(
-                left: nodePoints[i].dx - 35.r,
-                top: nodePoints[i].dy - 35.r,
-                width: 70.r,
-                height: 70.r,
+                left: nodePoints[i].dx - 40.r,
+                top: nodePoints[i].dy - 40.r,
+                width: 80.r,
+                height: 80.r,
                 child: GestureDetector(
                   key: ValueKey('preposition_node_$i'),
                   behavior: HitTestBehavior.translucent,

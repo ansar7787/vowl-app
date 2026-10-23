@@ -90,7 +90,8 @@ void main() {
     correctAnswerIndex: 1,
     correctAnswer: 'and',
     connectorCategory: 'Addition',
-    hint: 'Think about whether the second action simply follows the first as another step.',
+    hint:
+        'Think about whether the second action simply follows the first as another step.',
     explanation: "'And' links two ordinary steps in getting ready.",
   );
 
@@ -261,27 +262,32 @@ void main() {
   }
 
   group('ClauseConnectorScreen Layout & Mechanics', () {
-    testWidgets('1. renders initial quest with clauses, magnetic port and connector palette', (tester) async {
-      await pumpClauseConnector(tester);
+    testWidgets(
+      '1. renders initial quest with clauses, magnetic port and connector palette',
+      (tester) async {
+        await pumpClauseConnector(tester);
 
-      expect(find.byType(ClauseConnectorInstruction), findsOneWidget);
-      expect(
-        find.text('SELECT THE CONNECTOR THAT BEST COMPLETES THE SENTENCE.'),
-        findsOneWidget,
-      );
-      expect(find.text('TYPE: ADDITION'), findsOneWidget);
+        expect(find.byType(ClauseConnectorInstruction), findsOneWidget);
+        expect(
+          find.text('Select the connector that best completes the sentence.'),
+          findsOneWidget,
+        );
+        expect(find.text('Addition Connector'), findsOneWidget);
 
-      expect(find.text('Maria packed her backpack'), findsOneWidget);
-      expect(find.text('she put on her hiking boots.'), findsOneWidget);
-      expect(find.text('TAP OR DRAG'), findsOneWidget);
+        expect(find.text('Maria packed her backpack'), findsOneWidget);
+        expect(find.text('she put on her hiking boots.'), findsOneWidget);
+        expect(find.text('Choose connector'), findsOneWidget);
 
-      expect(find.text('SO'), findsOneWidget);
-      expect(find.text('AND'), findsOneWidget);
-      expect(find.text('BUT'), findsOneWidget);
-      expect(find.text('OR'), findsOneWidget);
-    });
+        expect(find.text('so'), findsOneWidget);
+        expect(find.text('and'), findsOneWidget);
+        expect(find.text('but'), findsOneWidget);
+        expect(find.text('or'), findsOneWidget);
+      },
+    );
 
-    testWidgets('2. hides category chip when quest connectorCategory is null', (tester) async {
+    testWidgets('2. hides category chip when quest connectorCategory is null', (
+      tester,
+    ) async {
       final stateWithoutCategory = GrammarLoaded(
         quests: const [testQuest2],
         currentIndex: 0,
@@ -294,116 +300,136 @@ void main() {
 
       await pumpClauseConnector(tester, state: stateWithoutCategory);
 
-      expect(find.textContaining('TYPE:'), findsNothing);
+      expect(find.textContaining('Connector'), findsNothing);
       expect(find.text('Ben packed his suitcase'), findsOneWidget);
       expect(find.text('he checked his passport twice.'), findsOneWidget);
     });
 
-    testWidgets('3. renders shimmer loading when state is GrammarLoading', (tester) async {
+    testWidgets('3. renders shimmer loading when state is GrammarLoading', (
+      tester,
+    ) async {
       await pumpClauseConnector(tester, state: const GrammarLoading());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
       expect(find.byType(ClauseConnectorInstruction), findsNothing);
     });
 
-    testWidgets('4. tapping incorrect connector submits wrong answer to GrammarBloc', (tester) async {
-      await pumpClauseConnector(tester);
+    testWidgets(
+      '4. tapping incorrect connector submits wrong answer to GrammarBloc',
+      (tester) async {
+        await pumpClauseConnector(tester);
 
-      final wrongOption = find.byKey(const ValueKey('connector_option_2')); // 'but'
-      expect(wrongOption, findsOneWidget);
+        final wrongOption = find.byKey(
+          const ValueKey('connector_option_2'),
+        ); // 'but'
+        expect(wrongOption, findsOneWidget);
 
-      await tester.tap(wrongOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(wrongOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockHapticService.error()).called(1);
-      verify(() => mockSoundService.playWrong()).called(1);
-      verify(
-        () => mockGrammarBloc.add(
-          any(
-            that: isA<SubmitAnswer>().having(
-              (e) => e.isCorrect,
-              'isCorrect',
-              false,
+        verify(() => mockHapticService.error()).called(1);
+        verify(() => mockSoundService.playWrong()).called(1);
+        verify(
+          () => mockGrammarBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
             ),
           ),
-        ),
-      ).called(1);
-    });
+        ).called(1);
+      },
+    );
 
-    testWidgets('5. tapping correct connector transitions to Phase 2 TypeToConfirmOverlay', (tester) async {
-      await pumpClauseConnector(tester);
+    testWidgets(
+      '5. tapping correct connector transitions to Phase 2 TypeToConfirmOverlay',
+      (tester) async {
+        await pumpClauseConnector(tester);
 
-      final correctOption = find.byKey(const ValueKey('connector_option_1')); // 'and'
-      expect(correctOption, findsOneWidget);
+        final correctOption = find.byKey(
+          const ValueKey('connector_option_1'),
+        ); // 'and'
+        expect(correctOption, findsOneWidget);
 
-      await tester.tap(correctOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(correctOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(() => mockHapticService.heavy()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.heavy()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
 
-      expect(find.byKey(const ValueKey('connector_option_1')), findsNothing);
+        expect(find.byKey(const ValueKey('connector_option_1')), findsNothing);
 
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(TypeToConfirmOverlay, skipOffstage: false), findsOneWidget);
-      expect(
-        find.text(
-          'Type the complete sentence to lock in the clause structure',
-          skipOffstage: false,
-        ),
-        findsOneWidget,
-      );
-    });
+        expect(
+          find.byType(TypeToConfirmOverlay, skipOffstage: false),
+          findsOneWidget,
+        );
+        expect(
+          find.text(
+            'Type the complete sentence to confirm your answer',
+            skipOffstage: false,
+          ),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('6. Phase 2: typing correct sentence confirms and submits answer', (tester) async {
-      await pumpClauseConnector(tester);
+    testWidgets(
+      '6. Phase 2: typing correct sentence confirms and submits answer',
+      (tester) async {
+        await pumpClauseConnector(tester);
 
-      final correctOption = find.byKey(const ValueKey('connector_option_1'));
-      await tester.tap(correctOption);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+        final correctOption = find.byKey(const ValueKey('connector_option_1'));
+        await tester.tap(correctOption);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
 
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final textField = find.byType(TextField);
-      expect(textField, findsOneWidget);
+        final textField = find.byType(TextField);
+        expect(textField, findsOneWidget);
 
-      await tester.enterText(
-        textField,
-        'Maria packed her backpack and she put on her hiking boots.',
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.enterText(
+          textField,
+          'Maria packed her backpack and she put on her hiking boots.',
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      final submitBtn = find.text('SUBMIT');
-      expect(submitBtn, findsOneWidget);
+        final submitBtn = find.text('SUBMIT');
+        expect(submitBtn, findsOneWidget);
 
-      await tester.tap(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(
-        () => mockGrammarBloc.add(
-          any(
-            that: isA<SubmitAnswer>().having(
-              (e) => e.isCorrect,
-              'isCorrect',
-              true,
+        verify(
+          () => mockGrammarBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                true,
+              ),
             ),
           ),
-        ),
-      ).called(1);
-    });
+        ).called(1);
+      },
+    );
 
-    testWidgets('7. Phase 2: skipping confirm dispatches wrong answer', (tester) async {
+    testWidgets('7. Phase 2: skipping confirm dispatches wrong answer', (
+      tester,
+    ) async {
       await pumpClauseConnector(tester);
 
       final correctOption = find.byKey(const ValueKey('connector_option_1'));
@@ -460,13 +486,17 @@ void main() {
       ).called(1);
     });
 
-    testWidgets('8. dragging connector onto magnetic port triggers phase 2', (tester) async {
+    testWidgets('8. dragging connector onto magnetic port triggers phase 2', (
+      tester,
+    ) async {
       await pumpClauseConnector(tester);
 
       final correctOption = find.byKey(const ValueKey('connector_option_1'));
       final target = find.byType(DragTarget<String>);
 
-      final gesture = await tester.startGesture(tester.getCenter(correctOption));
+      final gesture = await tester.startGesture(
+        tester.getCenter(correctOption),
+      );
       await tester.pump(const Duration(milliseconds: 100));
       await gesture.moveTo(tester.getCenter(target));
       await tester.pump(const Duration(milliseconds: 100));
@@ -480,10 +510,15 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.byType(TypeToConfirmOverlay, skipOffstage: false), findsOneWidget);
+      expect(
+        find.byType(TypeToConfirmOverlay, skipOffstage: false),
+        findsOneWidget,
+      );
     });
 
-    testWidgets('9. tapping options when already answered does nothing', (tester) async {
+    testWidgets('9. tapping options when already answered does nothing', (
+      tester,
+    ) async {
       final answeredState = GrammarLoaded(
         quests: const [testQuest1, testQuest2],
         currentIndex: 0,
@@ -500,7 +535,9 @@ void main() {
       verifyNever(() => mockGrammarBloc.add(any(that: isA<SubmitAnswer>())));
     });
 
-    testWidgets('10. tapping hint button dispatches GrammarHintUsed', (tester) async {
+    testWidgets('10. tapping hint button dispatches GrammarHintUsed', (
+      tester,
+    ) async {
       await pumpClauseConnector(tester);
 
       final hintButton = find.byType(QuestHintButton);
@@ -513,7 +550,9 @@ void main() {
       verify(() => mockGrammarBloc.add(const GrammarHintUsed())).called(1);
     });
 
-    testWidgets('11. shows level 1 briefing dialog when not yet seen', (tester) async {
+    testWidgets('11. shows level 1 briefing dialog when not yet seen', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({});
 
       await pumpClauseConnector(tester, level: 1);
@@ -532,21 +571,29 @@ void main() {
       expect(find.text('Maria packed her backpack'), findsOneWidget);
     });
 
-    testWidgets('12. respects reduced motion when lowAnimationModeOverride is enabled', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = true;
-      await pumpClauseConnector(tester);
-      expect(find.byType(ClauseConnectorScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '12. respects reduced motion when lowAnimationModeOverride is enabled',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = true;
+        await pumpClauseConnector(tester);
+        expect(find.byType(ClauseConnectorScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('13. handles compact mobile layout (320x568) without overflow', (tester) async {
-      await pumpClauseConnector(tester, width: 320, height: 568);
+    testWidgets(
+      '13. handles compact mobile layout (320x568) without overflow',
+      (tester) async {
+        await pumpClauseConnector(tester, width: 320, height: 568);
 
-      expect(find.byType(ClauseConnectorScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(ClauseConnectorScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('14. handles tablet viewport (768x1024) without overflow', (tester) async {
+    testWidgets('14. handles tablet viewport (768x1024) without overflow', (
+      tester,
+    ) async {
       await pumpClauseConnector(tester, width: 768, height: 1024);
 
       expect(find.byType(ClauseConnectorScreen), findsOneWidget);
@@ -561,21 +608,24 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('16. renders final failure state with explanation and continue', (tester) async {
-      final failureState = GrammarLoaded(
-        quests: const [testQuest1, testQuest2],
-        currentIndex: 0,
-        livesRemaining: 0,
-        answerStatus: AnswerStatus.incorrect,
-        hintUsed: false,
-        wrongCount: 3,
-        isFinalFailure: true,
-      );
+    testWidgets(
+      '16. renders final failure state with explanation and continue',
+      (tester) async {
+        final failureState = GrammarLoaded(
+          quests: const [testQuest1, testQuest2],
+          currentIndex: 0,
+          livesRemaining: 0,
+          answerStatus: AnswerStatus.incorrect,
+          hintUsed: false,
+          wrongCount: 3,
+          isFinalFailure: true,
+        );
 
-      await pumpClauseConnector(tester, state: failureState);
+        await pumpClauseConnector(tester, state: failureState);
 
-      expect(find.byType(ClauseConnectorScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(ClauseConnectorScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }

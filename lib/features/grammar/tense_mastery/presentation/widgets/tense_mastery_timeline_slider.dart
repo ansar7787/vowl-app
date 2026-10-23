@@ -54,14 +54,14 @@ class _TenseMasteryTimelineSliderState
 
   @override
   Widget build(BuildContext context) {
-    final sphereWidth = 60.r;
+    final sphereWidth = 54.r;
     final tenses = ["Past", "Present", "Future"];
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     return Container(
-      height: 120.h,
+      height: 110.h,
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 30.w),
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: LayoutBuilder(
         builder: (context, constraints) {
           final trackWidth = constraints.maxWidth;
@@ -74,16 +74,16 @@ class _TenseMasteryTimelineSliderState
             children: [
               // The Track
               Positioned(
-                top: (sphereWidth / 2) - 3.h,
-                left: 0,
-                right: 0,
+                top: (sphereWidth / 2) - 2.5.h,
+                left: 10.w,
+                right: 10.w,
                 child: Container(
-                  height: 6.h,
+                  height: 5.h,
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: widget.isDark
-                        ? Colors.white.withValues(alpha: 0.05)
-                        : Colors.black.withValues(alpha: 0.05),
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : Colors.black.withValues(alpha: 0.06),
                     borderRadius: BorderRadius.circular(3.r),
                   ),
                 ),
@@ -106,7 +106,9 @@ class _TenseMasteryTimelineSliderState
                       key: ValueKey('tense_node_${tense.toLowerCase()}'),
                       behavior: HitTestBehavior.opaque,
                       onTap: () {
-                        if (widget.isAnswered) return;
+                        if (widget.isAnswered) {
+                          return;
+                        }
                         widget.onHapticFeedback();
                         widget.onDraggingChanged(false);
                         if (tense == "Past") {
@@ -121,59 +123,53 @@ class _TenseMasteryTimelineSliderState
                         }
                       },
                       child: SizedBox(
-                        width: sphereWidth,
+                        width: 72.w,
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Container(
                               height: sphereWidth,
                               alignment: Alignment.center,
-                              child: Container(
-                                width: 14.r,
-                                height: 14.r,
+                              child: AnimatedContainer(
+                                duration: const Duration(milliseconds: 200),
+                                width: isCurrent ? 14.r : 10.r,
+                                height: isCurrent ? 14.r : 10.r,
                                 decoration: BoxDecoration(
                                   color: isCurrent
                                       ? widget.primaryColor
                                       : (widget.isDark
-                                            ? Colors.white10
-                                            : Colors.black12),
+                                            ? Colors.white24
+                                            : Colors.black26),
                                   shape: BoxShape.circle,
                                   boxShadow: isCurrent
                                       ? [
                                           BoxShadow(
-                                            color: widget.primaryColor.withValues(
-                                              alpha: 0.4,
-                                            ),
-                                            blurRadius: 15,
-                                            spreadRadius: 4,
+                                            color: widget.primaryColor
+                                                .withValues(alpha: 0.35),
+                                            blurRadius: 12,
+                                            spreadRadius: 2,
                                           ),
                                         ]
                                       : [],
                                 ),
                               ),
                             ),
-                            SizedBox(height: 8.h),
-                            SizedBox(
-                              width: sphereWidth,
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  tense.toUpperCase(),
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 12.sp,
-                                    fontWeight: isCurrent
-                                        ? FontWeight.w900
-                                        : FontWeight.w600,
-                                    color: isCurrent
-                                        ? widget.primaryColor
-                                        : (widget.isDark
-                                              ? Colors.white24
-                                              : Colors.black26),
-                                    letterSpacing: 1.5,
-                                  ),
-                                ),
+                            SizedBox(height: 6.h),
+                            Text(
+                              tense.toUpperCase(),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: isCurrent
+                                    ? FontWeight.w700
+                                    : FontWeight.w500,
+                                color: isCurrent
+                                    ? widget.primaryColor
+                                    : (widget.isDark
+                                          ? Colors.white70
+                                          : Colors.black54),
+                                letterSpacing: 0.8,
                               ),
                             ),
                           ],
@@ -184,7 +180,7 @@ class _TenseMasteryTimelineSliderState
                 }).toList(),
               ),
 
-              // The Draggable Chrono-Sphere
+              // The Draggable Slider Handle
               AnimatedPositioned(
                 duration: widget.isDragging
                     ? Duration.zero
@@ -200,18 +196,19 @@ class _TenseMasteryTimelineSliderState
                   slider: true,
                   child: GestureDetector(
                     onHorizontalDragStart: (_) {
-                      if (widget.isAnswered) return;
+                      if (widget.isAnswered) {
+                        return;
+                      }
                       _dragValue = widget.sliderValue;
                       widget.onDraggingChanged(true);
                     },
                     onHorizontalDragUpdate: (details) {
-                      if (widget.isAnswered) return;
+                      if (widget.isAnswered) {
+                        return;
+                      }
                       widget.onDraggingChanged(true);
-                      _dragValue =
-                          (_dragValue + details.delta.dx / maxLeft).clamp(
-                            0.0,
-                            1.0,
-                          );
+                      _dragValue = (_dragValue + details.delta.dx / maxLeft)
+                          .clamp(0.0, 1.0);
                       widget.onSliderChanged(_dragValue);
 
                       if ((_dragValue - 0.0).abs() < 0.02 ||
@@ -221,7 +218,9 @@ class _TenseMasteryTimelineSliderState
                       }
                     },
                     onHorizontalDragEnd: (details) {
-                      if (widget.isAnswered) return;
+                      if (widget.isAnswered) {
+                        return;
+                      }
                       widget.onDraggingChanged(false);
                       if (_dragValue < 0.25) {
                         _dragValue = 0.0;
@@ -242,37 +241,44 @@ class _TenseMasteryTimelineSliderState
                           width: sphereWidth,
                           height: sphereWidth,
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: widget.isDark
+                                ? const Color(0xFF1E1E24)
+                                : Colors.white,
                             shape: BoxShape.circle,
                             boxShadow: [
                               BoxShadow(
                                 color: widget.primaryColor.withValues(
-                                  alpha: 0.4,
+                                  alpha: 0.3,
                                 ),
-                                blurRadius: 25,
-                                spreadRadius: 5,
+                                blurRadius: 16,
+                                spreadRadius: 1,
+                                offset: const Offset(0, 3),
                               ),
                             ],
                             border: Border.all(
                               color: widget.primaryColor,
-                              width: 6.r,
+                              width: 3.5.r,
                             ),
                           ),
                           child: Center(
                             child: Icon(
                               Icons.timer_rounded,
                               color: widget.primaryColor,
-                              size: 28.r,
+                              size: 24.r,
                             ),
                           ),
                         );
 
-                        if (reduceMotion) return sphere;
+                        if (reduceMotion) {
+                          return sphere;
+                        }
                         return sphere
                             .animate(onPlay: (c) => c.repeat(reverse: true))
                             .shimmer(
-                              duration: 1500.ms,
-                              color: widget.primaryColor.withValues(alpha: 0.2),
+                              duration: 1800.ms,
+                              color: widget.primaryColor.withValues(
+                                alpha: 0.15,
+                              ),
                             );
                       },
                     ),

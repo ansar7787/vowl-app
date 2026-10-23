@@ -82,7 +82,7 @@ void main() {
 
   const testQuest1 = GrammarQuest(
     id: 'GRAM_ART_L1_Q1',
-    instruction: 'Pop the correct article orb to complete the sentence.',
+    instruction: 'Select the correct article to complete the sentence.',
     difficulty: 1,
     subtype: GameSubtype.articleInsertion,
     sentence: 'She ate ___ apple in the morning.',
@@ -94,7 +94,7 @@ void main() {
 
   const testQuest2 = GrammarQuest(
     id: 'GRAM_ART_L1_Q2',
-    instruction: 'Pop the correct article orb to complete the sentence.',
+    instruction: 'Select the correct article to complete the sentence.',
     difficulty: 1,
     subtype: GameSubtype.articleInsertion,
     sentence: 'I saw ___ moon last night.',
@@ -257,17 +257,27 @@ void main() {
   }
 
   group('ArticleInsertionScreen Layout & Mechanics', () {
-    testWidgets('1. renders initial quest with sentence and orbs', (tester) async {
+    testWidgets('1. renders initial quest with sentence and orbs', (
+      tester,
+    ) async {
       await pumpArticleInsertion(tester);
 
       expect(find.byType(ArticleInsertionInstruction), findsOneWidget);
-      expect(find.textContaining('POP THE CORRECT ARTICLE ORB'), findsOneWidget);
+      expect(
+        find.textContaining(
+          'Select the correct article to complete the sentence',
+        ),
+        findsOneWidget,
+      );
       expect(find.byType(ArticleFloatingOrb), findsNWidgets(4));
       expect(find.text('A'), findsOneWidget);
       expect(find.text('AN'), findsOneWidget);
       expect(find.text('THE'), findsOneWidget);
       expect(find.text('Ø'), findsOneWidget);
-      expect(find.textContaining('She ate', findRichText: true), findsOneWidget);
+      expect(
+        find.textContaining('She ate', findRichText: true),
+        findsOneWidget,
+      );
       expect(
         find.textContaining('apple in the morning.', findRichText: true),
         findsOneWidget,
@@ -283,32 +293,45 @@ void main() {
       );
     });
 
-    testWidgets('3. renders shimmer loading when state is GrammarLoading', (tester) async {
+    testWidgets('3. renders shimmer loading when state is GrammarLoading', (
+      tester,
+    ) async {
       await pumpArticleInsertion(tester, state: const GrammarLoading());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
       expect(find.byType(ArticleFloatingOrb), findsNothing);
     });
 
-    testWidgets('4. tapping incorrect orb submits wrong answer to GrammarBloc', (tester) async {
-      await pumpArticleInsertion(tester);
+    testWidgets(
+      '4. tapping incorrect orb submits wrong answer to GrammarBloc',
+      (tester) async {
+        await pumpArticleInsertion(tester);
 
-      final orbFinder = find.byKey(const ValueKey('article_orb_0'));
-      expect(orbFinder, findsOneWidget);
+        final orbFinder = find.byKey(const ValueKey('article_orb_0'));
+        expect(orbFinder, findsOneWidget);
 
-      await tester.tap(orbFinder);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(orbFinder);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockHapticService.selection()).called(1);
-      verify(
-        () => mockGrammarBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', false)),
-        ),
-      ).called(1);
-    });
+        verify(() => mockHapticService.selection()).called(1);
+        verify(
+          () => mockGrammarBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
+            ),
+          ),
+        ).called(1);
+      },
+    );
 
-    testWidgets('5. tapping correct orb opens Phase 2 TypeToConfirmOverlay', (tester) async {
+    testWidgets('5. tapping correct orb opens Phase 2 TypeToConfirmOverlay', (
+      tester,
+    ) async {
       await pumpArticleInsertion(tester);
 
       final orbFinder = find.byKey(const ValueKey('article_orb_1')); // 'an'
@@ -321,14 +344,76 @@ void main() {
       verify(() => mockHapticService.success()).called(1);
       verify(() => mockSoundService.playCorrect()).called(1);
 
-      expect(find.byType(TypeToConfirmOverlay, skipOffstage: false), findsOneWidget);
       expect(
-        find.text('Type the full sentence with the article to lock it in', skipOffstage: false),
+        find.byType(TypeToConfirmOverlay, skipOffstage: false),
+        findsOneWidget,
+      );
+      expect(
+        find.text(
+          'Type the complete sentence to confirm your answer',
+          skipOffstage: false,
+        ),
         findsOneWidget,
       );
     });
 
-    testWidgets('6. Phase 2: typing correct sentence confirms and submits answer', (tester) async {
+    testWidgets(
+      '6. Phase 2: typing correct sentence confirms and submits answer',
+      (tester) async {
+        await pumpArticleInsertion(tester);
+
+        // Tap orb 1 ('an')
+        await tester.tap(find.byKey(const ValueKey('article_orb_1')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
+
+        expect(
+          find.byType(TypeToConfirmOverlay, skipOffstage: false),
+          findsOneWidget,
+        );
+
+        // Scroll down to bring TypeToConfirmOverlay fully onstage
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+
+        final textFieldFinder = find.byType(TextField);
+        expect(textFieldFinder, findsOneWidget);
+
+        await tester.enterText(
+          textFieldFinder,
+          'She ate an apple in the morning.',
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+
+        final submitBtn = find.text('SUBMIT');
+        expect(submitBtn, findsOneWidget);
+
+        await tester.tap(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
+        await tester.pump(const Duration(milliseconds: 500));
+
+        verify(
+          () => mockGrammarBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                true,
+              ),
+            ),
+          ),
+        ).called(1);
+
+        await tester.pump(const Duration(milliseconds: 500));
+      },
+    );
+
+    testWidgets('7. Phase 2: skipping confirm dispatches wrong answer', (
+      tester,
+    ) async {
       await pumpArticleInsertion(tester);
 
       // Tap orb 1 ('an')
@@ -336,46 +421,10 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 400));
 
-      expect(find.byType(TypeToConfirmOverlay, skipOffstage: false), findsOneWidget);
-
-      // Scroll down to bring TypeToConfirmOverlay fully onstage
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
-
-      final textFieldFinder = find.byType(TextField);
-      expect(textFieldFinder, findsOneWidget);
-
-      await tester.enterText(textFieldFinder, 'She ate an apple in the morning.');
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
-
-      final submitBtn = find.text('SUBMIT');
-      expect(submitBtn, findsOneWidget);
-
-      await tester.tap(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
-      await tester.pump(const Duration(milliseconds: 500));
-
-      verify(
-        () => mockGrammarBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', true)),
-        ),
-      ).called(1);
-
-      await tester.pump(const Duration(milliseconds: 500));
-    });
-
-    testWidgets('7. Phase 2: skipping confirm dispatches wrong answer', (tester) async {
-      await pumpArticleInsertion(tester);
-
-      // Tap orb 1 ('an')
-      await tester.tap(find.byKey(const ValueKey('article_orb_1')));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
-
-      expect(find.byType(TypeToConfirmOverlay, skipOffstage: false), findsOneWidget);
+      expect(
+        find.byType(TypeToConfirmOverlay, skipOffstage: false),
+        findsOneWidget,
+      );
 
       // Scroll down to bring TypeToConfirmOverlay fully onstage
       await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
@@ -416,12 +465,20 @@ void main() {
 
       verify(
         () => mockGrammarBloc.add(
-          any(that: isA<SubmitAnswer>().having((e) => e.isCorrect, 'isCorrect', false)),
+          any(
+            that: isA<SubmitAnswer>().having(
+              (e) => e.isCorrect,
+              'isCorrect',
+              false,
+            ),
+          ),
         ),
       ).called(1);
     });
 
-    testWidgets('8. tapping orbs when already answered does nothing', (tester) async {
+    testWidgets('8. tapping orbs when already answered does nothing', (
+      tester,
+    ) async {
       final answeredState = GrammarLoaded(
         quests: const [testQuest1, testQuest2],
         currentIndex: 0,
@@ -445,7 +502,9 @@ void main() {
       verifyNever(() => mockGrammarBloc.add(any()));
     });
 
-    testWidgets('9. tapping hint button dispatches GrammarHintUsed', (tester) async {
+    testWidgets('9. tapping hint button dispatches GrammarHintUsed', (
+      tester,
+    ) async {
       await pumpArticleInsertion(tester);
 
       final hintButtonFinder = find.byType(QuestHintButton);
@@ -458,7 +517,9 @@ void main() {
       verify(() => mockGrammarBloc.add(const GrammarHintUsed())).called(1);
     });
 
-    testWidgets('10. shows level 1 briefing dialog when not yet seen', (tester) async {
+    testWidgets('10. shows level 1 briefing dialog when not yet seen', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({
         'has_seen_briefing_articleInsertion': false,
       });
@@ -478,7 +539,9 @@ void main() {
       expect(find.byType(GameBriefingLayer), findsNothing);
     });
 
-    testWidgets('11. supports reduced motion without continuous tickers', (tester) async {
+    testWidgets('11. supports reduced motion without continuous tickers', (
+      tester,
+    ) async {
       VowlMotion.lowAnimationModeOverride.value = true;
 
       await pumpArticleInsertion(tester);
@@ -489,14 +552,19 @@ void main() {
       expect(tester.binding.hasScheduledFrame, isFalse);
     });
 
-    testWidgets('12. handles compact mobile layout (320x568) without overflow', (tester) async {
-      await pumpArticleInsertion(tester, width: 320, height: 568);
+    testWidgets(
+      '12. handles compact mobile layout (320x568) without overflow',
+      (tester) async {
+        await pumpArticleInsertion(tester, width: 320, height: 568);
 
-      expect(find.byType(ArticleInsertionScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(ArticleInsertionScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('13. handles tablet viewport (768x1024) without overflow', (tester) async {
+    testWidgets('13. handles tablet viewport (768x1024) without overflow', (
+      tester,
+    ) async {
       await pumpArticleInsertion(tester, width: 768, height: 1024);
 
       expect(find.byType(ArticleInsertionScreen), findsOneWidget);
@@ -510,7 +578,9 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('15. displays no-article Ø properly when option is Ø', (tester) async {
+    testWidgets('15. displays no-article Ø properly when option is Ø', (
+      tester,
+    ) async {
       final stateQuest2 = GrammarLoaded(
         quests: const [testQuest2],
         currentIndex: 0,
@@ -532,22 +602,24 @@ void main() {
       );
     });
 
-    testWidgets('16. renders final failure state with correct answer highlighted', (tester) async {
-      final failState = GrammarLoaded(
-        quests: const [testQuest1],
-        currentIndex: 0,
-        livesRemaining: 0,
-        answerStatus: AnswerStatus.incorrect,
-        hintUsed: false,
-        wrongCount: 3,
-        isFinalFailure: true,
-      );
+    testWidgets(
+      '16. renders final failure state with correct answer highlighted',
+      (tester) async {
+        final failState = GrammarLoaded(
+          quests: const [testQuest1],
+          currentIndex: 0,
+          livesRemaining: 0,
+          answerStatus: AnswerStatus.incorrect,
+          hintUsed: false,
+          wrongCount: 3,
+          isFinalFailure: true,
+        );
 
-      await pumpArticleInsertion(tester, state: failState);
+        await pumpArticleInsertion(tester, state: failState);
 
-      expect(find.byType(ArticleFloatingOrb), findsNWidgets(4));
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(ArticleFloatingOrb), findsNWidgets(4));
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }
-

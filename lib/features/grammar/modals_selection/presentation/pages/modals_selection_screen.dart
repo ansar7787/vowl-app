@@ -120,7 +120,15 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
     String? selected,
     Color primaryColor,
     bool isDark,
+    double baseFontSize,
   ) {
+    final blankTextStyle = TextStyle(
+      fontFamily: 'Outfit',
+      fontSize: baseFontSize,
+      fontWeight: FontWeight.w700,
+      color: primaryColor,
+    );
+
     if (!template.contains(RegExp(r'_{3,}'))) {
       return [
         TextSpan(text: template),
@@ -128,21 +136,16 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
           WidgetSpan(
             alignment: PlaceholderAlignment.middle,
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 8.w),
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+              margin: EdgeInsets.symmetric(horizontal: 6.w),
+              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
               decoration: BoxDecoration(
                 border: Border(
-                  bottom: BorderSide(color: primaryColor, width: 2),
+                  bottom: BorderSide(color: primaryColor, width: 2.5),
                 ),
               ),
               child: Text(
                 selected,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 22.sp,
-                  fontWeight: FontWeight.bold,
-                  color: primaryColor,
-                ),
+                style: blankTextStyle,
               ),
             ),
           ),
@@ -157,10 +160,10 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
           WidgetSpan(
             alignment: PlaceholderAlignment.middle,
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 8.w),
+              margin: EdgeInsets.symmetric(horizontal: 6.w),
               padding: EdgeInsets.symmetric(
-                horizontal: 12.w,
-                vertical: 4.h,
+                horizontal: 10.w,
+                vertical: 2.h,
               ),
               decoration: BoxDecoration(
                 border: Border(
@@ -168,18 +171,13 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
                     color: selected != null
                         ? primaryColor
                         : (isDark ? Colors.white38 : Colors.black38),
-                    width: 2,
+                    width: 2.5,
                   ),
                 ),
               ),
               child: Text(
-                selected ?? "      ",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 22.sp,
-                  fontWeight: FontWeight.bold,
-                  color: primaryColor,
-                ),
+                selected ?? "       ",
+                style: blankTextStyle,
               ),
             ),
           ),
@@ -192,32 +190,43 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
   Widget _buildGrammarRule(
     String rule,
     Color primaryColor,
+    bool isDark,
     double horizontalMargin,
   ) {
     return Container(
       key: const ValueKey('grammar_rule_box'),
       margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.3)),
+        color: primaryColor.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.22),
+          width: 1.2,
+        ),
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.lightbulb_outline, color: primaryColor, size: 18.sp),
-              SizedBox(width: 8.w),
+              Icon(
+                Icons.lightbulb_outline_rounded,
+                color: primaryColor,
+                size: 16.sp,
+              ),
+              SizedBox(width: 6.w),
               Text(
-                "GRAMMAR RULE",
+                "Grammar Rule",
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 12.sp,
                   color: primaryColor,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.2,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 0.5,
                 ),
               ),
             ],
@@ -226,11 +235,15 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
           Text(
             rule,
             textAlign: TextAlign.center,
+            softWrap: true,
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 14.sp,
-              color: primaryColor.withValues(alpha: 0.8),
-              fontWeight: FontWeight.w500,
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.9)
+                  : primaryColor.withValues(alpha: 0.95),
+              fontWeight: FontWeight.w600,
+              height: 1.35,
             ),
           ),
         ],
@@ -244,11 +257,13 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
     Color primaryColor,
     bool isDark,
     double horizontalMargin,
+    bool isNarrow,
   ) {
     final template = quest.sentenceWithBlank ??
         quest.question ??
         quest.sentence ??
         "___ sentence.";
+    final baseFontSize = isNarrow ? 17.sp : 19.sp;
 
     return ListenableBuilder(
       listenable: _selectedIndex,
@@ -261,34 +276,40 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
         return Container(
           key: const ValueKey('modal_context_card'),
           width: double.infinity,
-          padding: EdgeInsets.all(22.r),
+          padding: EdgeInsets.symmetric(
+            horizontal: 20.w,
+            vertical: 20.h,
+          ),
           margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
           decoration: BoxDecoration(
             color: isDark
                 ? Colors.white.withValues(alpha: 0.05)
                 : Colors.black.withValues(alpha: 0.03),
-            borderRadius: BorderRadius.circular(28.r),
+            borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
-              color: primaryColor.withValues(alpha: 0.15),
+              color: primaryColor.withValues(alpha: 0.18),
               width: 1.5,
             ),
           ),
-          child: RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
+          child: Text.rich(
+            TextSpan(
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 20.sp,
+                fontSize: baseFontSize,
+                fontWeight: FontWeight.w500,
                 color: isDark ? Colors.white : Colors.black87,
-                height: 1.5,
+                height: 1.55,
               ),
               children: _buildSentenceWithBlank(
                 template,
                 selectedText,
                 primaryColor,
                 isDark,
+                baseFontSize,
               ),
             ),
+            textAlign: TextAlign.center,
+            softWrap: true,
           ),
         );
       },
@@ -307,31 +328,40 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
         onTap: () => _submitAnswer(quest.correctAnswerIndex ?? 0, quest),
         child: Container(
           width: double.infinity,
-          height: 65.h,
+          height: 54.h,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(22.r),
+            borderRadius: BorderRadius.circular(18.r),
             gradient: LinearGradient(
-              colors: [primaryColor, primaryColor.withValues(alpha: 0.8)],
+              colors: [primaryColor, primaryColor.withValues(alpha: 0.85)],
             ),
             boxShadow: [
               BoxShadow(
-                color: primaryColor.withValues(alpha: 0.3),
-                blurRadius: 15,
-                offset: const Offset(0, 5),
+                color: primaryColor.withValues(alpha: 0.28),
+                blurRadius: 12,
+                offset: const Offset(0, 4),
               ),
             ],
           ),
-          child: Center(
-            child: Text(
-              "LOCK CONFIGURATION",
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w900,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.check_circle_outline_rounded,
                 color: Colors.white,
-                letterSpacing: 2,
+                size: 19.sp,
               ),
-            ),
+              SizedBox(width: 8.w),
+              Text(
+                "Confirm Selection",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                  letterSpacing: 0.5,
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -364,7 +394,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
           builder: (context, constraints) {
             final isNarrow = constraints.maxWidth < 360;
             final isCompact = constraints.maxHeight < 650;
-            final horizontalMargin = isNarrow ? 12.w : 24.w;
+            final horizontalMargin = isNarrow ? 14.w : 22.w;
 
             return ListenableBuilder(
               listenable: Listenable.merge([
@@ -420,7 +450,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
                                           horizontalMargin: horizontalMargin,
                                         ),
                                         SizedBox(
-                                          height: isCompact ? 14.h : 24.h,
+                                          height: isCompact ? 12.h : 20.h,
                                         ),
 
                                         if (ruleText != null &&
@@ -428,10 +458,11 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
                                           _buildGrammarRule(
                                             ruleText,
                                             theme.primaryColor,
+                                            isDark,
                                             horizontalMargin,
                                           ),
                                           SizedBox(
-                                            height: isCompact ? 14.h : 24.h,
+                                            height: isCompact ? 12.h : 20.h,
                                           ),
                                         ],
 
@@ -441,10 +472,11 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
                                           theme.primaryColor,
                                           isDark,
                                           horizontalMargin,
+                                          isNarrow,
                                         ),
 
                                         SizedBox(
-                                          height: isCompact ? 20.h : 32.h,
+                                          height: isCompact ? 18.h : 28.h,
                                         ),
 
                                         Center(
@@ -464,7 +496,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
                                         ),
 
                                         SizedBox(
-                                          height: isCompact ? 20.h : 32.h,
+                                          height: isCompact ? 18.h : 28.h,
                                         ),
 
                                         ListenableBuilder(
@@ -520,22 +552,33 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
 
                                         if (cleanTargetSentence.isNotEmpty) {
                                           return SliverToBoxAdapter(
-                                            child: TypeToConfirmOverlay(
-                                              expectedText: cleanTargetSentence,
-                                              primaryColor: theme.primaryColor,
-                                              onConfirmed: () =>
-                                                  _submitFinalAnswer(
-                                                    true,
-                                                    quest,
-                                                  ),
-                                              onSkipped: () =>
-                                                  _submitFinalAnswer(
-                                                    false,
-                                                    quest,
-                                                  ),
-                                              isPositioned: false,
-                                              displayText:
-                                                  "Type the full sentence to lock it in",
+                                            child: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: horizontalMargin,
+                                                vertical: 12.h,
+                                              ),
+                                              child: TypeToConfirmOverlay(
+                                                expectedText:
+                                                    cleanTargetSentence,
+                                                displayText:
+                                                    cleanTargetSentence,
+                                                title: "Type to confirm",
+                                                subtitle:
+                                                    "Type the complete sentence to finish",
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                onConfirmed: () =>
+                                                    _submitFinalAnswer(
+                                                      true,
+                                                      quest,
+                                                    ),
+                                                onSkipped: () =>
+                                                    _submitFinalAnswer(
+                                                      false,
+                                                      quest,
+                                                    ),
+                                                isPositioned: false,
+                                              ),
                                             ),
                                           );
                                         }

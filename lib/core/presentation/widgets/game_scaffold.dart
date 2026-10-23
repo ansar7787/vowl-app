@@ -166,7 +166,9 @@ class GameScaffold<S> extends StatelessWidget {
             ),
 
           // ── Layer 4: Briefing Overlay ───────────────────────────────────
-          if (showBriefing)
+          if (showBriefing &&
+              baseState is! GameCompleteState &&
+              baseState is! GameOverState)
             GameBriefingLayer(
               gameType: config.gameType,
               level: config.level,

@@ -31,8 +31,8 @@ class SpeechVortex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final rotationMs = 2600 + index * 400;
-    final size = isCompact ? 85.r : 120.r;
-    final margin = isCompact ? 4.r : 10.r;
+    final size = isCompact ? 85.r : 115.r;
+    final margin = isCompact ? 6.r : 12.r;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     final circle = Container(
@@ -40,8 +40,8 @@ class SpeechVortex extends StatelessWidget {
         shape: BoxShape.circle,
         gradient: RadialGradient(
           colors: [
-            color.withValues(alpha: 0.6),
-            color.withValues(alpha: 0.1),
+            color.withValues(alpha: 0.55),
+            color.withValues(alpha: 0.12),
             Colors.transparent,
           ],
         ),
@@ -55,7 +55,7 @@ class SpeechVortex extends StatelessWidget {
         behavior: HitTestBehavior.opaque,
         onTap: onTap,
         child: Semantics(
-          label: '${label.toUpperCase()} drop zone',
+          label: '${label.toUpperCase()} category',
           child: Container(
             width: size,
             height: size,
@@ -69,14 +69,21 @@ class SpeechVortex extends StatelessWidget {
                   circle
                       .animate(onPlay: (c) => c.repeat())
                       .rotate(duration: Duration(milliseconds: rotationMs)),
-                Text(
-                  label.toUpperCase(),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: isCompact ? 8.sp : 10.sp,
-                    fontWeight: FontWeight.w900,
-                    color: color,
-                    letterSpacing: 1,
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w),
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      label.toUpperCase(),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: isCompact ? 11.sp : 13.sp,
+                        fontWeight: FontWeight.w700,
+                        color: color,
+                        letterSpacing: 0.8,
+                      ),
+                    ),
                   ),
                 ),
               ],

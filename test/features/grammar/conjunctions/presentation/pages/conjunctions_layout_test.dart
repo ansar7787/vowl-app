@@ -91,12 +91,7 @@ void main() {
         'She packed her laptop, her charger, ___ a notebook before the conference.',
     question:
         'She packed her laptop, her charger, ___ a notebook before the conference.',
-    options: [
-      'but',
-      'so',
-      'and',
-      'because',
-    ],
+    options: ['but', 'so', 'and', 'because'],
     correctAnswerIndex: 2,
     correctAnswer: 'and',
     hint:
@@ -118,12 +113,7 @@ void main() {
         'My neighbor waters his plants every morning ___ walks his dog right after.',
     question:
         'My neighbor waters his plants every morning ___ walks his dog right after.',
-    options: [
-      'and',
-      'but',
-      'until',
-      'although',
-    ],
+    options: ['and', 'but', 'until', 'although'],
     correctAnswerIndex: 0,
     correctAnswer: 'and',
     hint: 'Both actions are simply part of the same morning routine.',
@@ -139,11 +129,7 @@ void main() {
     sentenceWithBlank: 'I like coffee... I like tea.',
     sentence: 'I like coffee... I like tea.',
     question: 'I like coffee... I like tea.',
-    options: [
-      'or',
-      'and',
-      'so',
-    ],
+    options: ['or', 'and', 'so'],
     correctAnswerIndex: 1,
     correctAnswer: 'and',
     grammarRule: 'Coordinating Conjunctions',
@@ -304,238 +290,290 @@ void main() {
   }
 
   group('ConjunctionsScreen Layout & Mechanics', () {
-    testWidgets('1. renders initial quest with island pieces, magnetic junction, and brick sheet', (tester) async {
-      await pumpConjunctions(tester);
+    testWidgets(
+      '1. renders initial quest with island pieces, magnetic junction, and brick sheet',
+      (tester) async {
+        await pumpConjunctions(tester);
 
-      expect(find.byType(ConjunctionsInstruction), findsOneWidget);
-      expect(find.text('JOIN THE JUNCTION'), findsOneWidget);
+        expect(find.byType(ConjunctionsInstruction), findsOneWidget);
+        expect(
+          find.text('Choose the conjunction to connect the sentence'),
+          findsOneWidget,
+        );
 
-      expect(find.byKey(const ValueKey('conjunction_rule_box')), findsOneWidget);
-      expect(
-        find.text('COORDINATING CONJUNCTIONS — ADDITION - ADDITION'),
-        findsOneWidget,
-      );
+        expect(
+          find.byKey(const ValueKey('conjunction_rule_box')),
+          findsOneWidget,
+        );
+        expect(
+          find.text('Coordinating Conjunctions — Addition'),
+          findsOneWidget,
+        );
 
-      expect(
-        find.text('She packed her laptop, her charger,'),
-        findsOneWidget,
-      );
-      expect(find.text('JUNCTION'), findsOneWidget);
-      expect(
-        find.text('a notebook before the conference.'),
-        findsOneWidget,
-      );
+        expect(
+          find.text('She packed her laptop, her charger,'),
+          findsOneWidget,
+        );
+        expect(find.text('Choose conjunction'), findsOneWidget);
+        expect(find.text('a notebook before the conference.'), findsOneWidget);
 
-      expect(find.byType(ConjunctionsBrickSheet), findsOneWidget);
-      expect(find.byKey(const ValueKey('conjunction_brick_but')), findsOneWidget);
-      expect(find.byKey(const ValueKey('conjunction_brick_so')), findsOneWidget);
-      expect(find.byKey(const ValueKey('conjunction_brick_and')), findsOneWidget);
-      expect(find.byKey(const ValueKey('conjunction_brick_because')), findsOneWidget);
-    });
+        expect(find.byType(ConjunctionsBrickSheet), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('conjunction_brick_but')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('conjunction_brick_so')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('conjunction_brick_and')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('conjunction_brick_because')),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('2. renders FANBOYS mnemonic when grammarRule is Coordinating Conjunctions', (tester) async {
-      final stateFanboys = GrammarLoaded(
-        quests: const [testQuestFanboys],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
+    testWidgets(
+      '2. renders FANBOYS mnemonic when grammarRule is Coordinating Conjunctions',
+      (tester) async {
+        final stateFanboys = GrammarLoaded(
+          quests: const [testQuestFanboys],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
 
-      await pumpConjunctions(tester, state: stateFanboys);
+        await pumpConjunctions(tester, state: stateFanboys);
 
-      expect(find.byKey(const ValueKey('conjunction_rule_box')), findsOneWidget);
-      expect(find.text('F = For'), findsOneWidget);
-      expect(find.text('A = And'), findsOneWidget);
-      expect(find.text('N = Nor'), findsOneWidget);
-      expect(find.text('B = But'), findsOneWidget);
-      expect(find.text('O = Or'), findsOneWidget);
-      expect(find.text('Y = Yet'), findsOneWidget);
-      expect(find.text('S = So'), findsOneWidget);
-    });
+        expect(
+          find.byKey(const ValueKey('conjunction_rule_box')),
+          findsOneWidget,
+        );
+        expect(find.text('F = For'), findsOneWidget);
+        expect(find.text('A = And'), findsOneWidget);
+        expect(find.text('N = Nor'), findsOneWidget);
+        expect(find.text('B = But'), findsOneWidget);
+        expect(find.text('O = Or'), findsOneWidget);
+        expect(find.text('Y = Yet'), findsOneWidget);
+        expect(find.text('S = So'), findsOneWidget);
+      },
+    );
 
-    testWidgets('3. hides rule box when grammarRule and conjunctionPurpose are null', (tester) async {
-      final stateWithoutRules = GrammarLoaded(
-        quests: const [testQuest2],
-        currentIndex: 0,
-        livesRemaining: 3,
-        answerStatus: AnswerStatus.unanswered,
-        hintUsed: false,
-        wrongCount: 0,
-        isFinalFailure: false,
-      );
+    testWidgets(
+      '3. hides rule box when grammarRule and conjunctionPurpose are null',
+      (tester) async {
+        final stateWithoutRules = GrammarLoaded(
+          quests: const [testQuest2],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
 
-      await pumpConjunctions(tester, state: stateWithoutRules);
+        await pumpConjunctions(tester, state: stateWithoutRules);
 
-      expect(find.byKey(const ValueKey('conjunction_rule_box')), findsNothing);
-      expect(
-        find.text('My neighbor waters his plants every morning'),
-        findsOneWidget,
-      );
-      expect(find.text('walks his dog right after.'), findsOneWidget);
-    });
+        expect(
+          find.byKey(const ValueKey('conjunction_rule_box')),
+          findsNothing,
+        );
+        expect(
+          find.text('My neighbor waters his plants every morning'),
+          findsOneWidget,
+        );
+        expect(find.text('walks his dog right after.'), findsOneWidget);
+      },
+    );
 
-    testWidgets('4. renders shimmer loading when state is GrammarLoading', (tester) async {
+    testWidgets('4. renders shimmer loading when state is GrammarLoading', (
+      tester,
+    ) async {
       await pumpConjunctions(tester, state: const GrammarLoading());
 
       expect(find.byType(GameShimmerLoading), findsOneWidget);
       expect(find.byType(ConjunctionsInstruction), findsNothing);
     });
 
-    testWidgets('5. tapping incorrect brick places it and submits wrong answer to GrammarBloc', (tester) async {
-      await pumpConjunctions(tester);
+    testWidgets(
+      '5. tapping incorrect brick places it and submits wrong answer to GrammarBloc',
+      (tester) async {
+        await pumpConjunctions(tester);
 
-      final wrongBrick = find.byKey(const ValueKey('conjunction_brick_but'));
-      expect(wrongBrick, findsOneWidget);
+        final wrongBrick = find.byKey(const ValueKey('conjunction_brick_but'));
+        expect(wrongBrick, findsOneWidget);
 
-      await tester.tap(wrongBrick);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 400));
+        await tester.tap(wrongBrick);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 400));
 
-      verify(
-        () => mockGrammarBloc.add(
-          any(
-            that: isA<SubmitAnswer>().having(
-              (e) => e.isCorrect,
-              'isCorrect',
-              false,
+        verify(
+          () => mockGrammarBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
             ),
           ),
-        ),
-      ).called(1);
-    });
+        ).called(1);
+      },
+    );
 
-    testWidgets('6. tapping correct brick places it and transitions to Phase 2 TypeToConfirmOverlay', (tester) async {
-      await pumpConjunctions(tester);
+    testWidgets(
+      '6. tapping correct brick places it and transitions to Phase 2 TypeToConfirmOverlay',
+      (tester) async {
+        await pumpConjunctions(tester);
 
-      final correctBrick = find.byKey(const ValueKey('conjunction_brick_and'));
-      expect(correctBrick, findsOneWidget);
+        final correctBrick = find.byKey(
+          const ValueKey('conjunction_brick_and'),
+        );
+        expect(correctBrick, findsOneWidget);
 
-      await tester.tap(correctBrick);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 400));
+        await tester.tap(correctBrick);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 400));
 
-      verify(() => mockHapticService.heavy()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockHapticService.heavy()).called(1);
+        verify(() => mockSoundService.playCorrect()).called(1);
 
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      expect(
-        find.byType(TypeToConfirmOverlay, skipOffstage: false),
-        findsOneWidget,
-      );
-    });
+        expect(
+          find.byType(TypeToConfirmOverlay, skipOffstage: false),
+          findsOneWidget,
+        );
+      },
+    );
 
-    testWidgets('7. Phase 2: typing correct sentence confirms and submits answer', (tester) async {
-      await pumpConjunctions(tester);
+    testWidgets(
+      '7. Phase 2: typing correct sentence confirms and submits answer',
+      (tester) async {
+        await pumpConjunctions(tester);
 
-      final correctBrick = find.byKey(const ValueKey('conjunction_brick_and'));
-      await tester.tap(correctBrick);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 400));
+        final correctBrick = find.byKey(
+          const ValueKey('conjunction_brick_and'),
+        );
+        await tester.tap(correctBrick);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 400));
 
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      final textFieldFinder = find.byType(TextField);
-      expect(textFieldFinder, findsOneWidget);
+        final textFieldFinder = find.byType(TextField);
+        expect(textFieldFinder, findsOneWidget);
 
-      await tester.enterText(
-        textFieldFinder,
-        'She packed her laptop, her charger, and a notebook before the conference.',
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.enterText(
+          textFieldFinder,
+          'She packed her laptop, her charger, and a notebook before the conference.',
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      final submitBtn = find.text('SUBMIT');
-      expect(submitBtn, findsOneWidget);
+        final submitBtn = find.text('SUBMIT');
+        expect(submitBtn, findsOneWidget);
 
-      await tester.tap(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 1000));
-      await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 1000));
+        await tester.pump(const Duration(milliseconds: 500));
 
-      verify(
-        () => mockGrammarBloc.add(
-          any(
-            that: isA<SubmitAnswer>().having(
-              (e) => e.isCorrect,
-              'isCorrect',
-              true,
+        verify(
+          () => mockGrammarBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                true,
+              ),
             ),
           ),
-        ),
-      ).called(1);
-    });
+        ).called(1);
+      },
+    );
 
-    testWidgets('8. Phase 2: skipping confirm (after 3 failed attempts) dispatches wrong answer', (tester) async {
-      await pumpConjunctions(tester);
+    testWidgets(
+      '8. Phase 2: skipping confirm (after 3 failed attempts) dispatches wrong answer',
+      (tester) async {
+        await pumpConjunctions(tester);
 
-      final correctBrick = find.byKey(const ValueKey('conjunction_brick_and'));
-      await tester.tap(correctBrick);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 400));
+        final correctBrick = find.byKey(
+          const ValueKey('conjunction_brick_and'),
+        );
+        await tester.tap(correctBrick);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 400));
 
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.drag(find.byType(CustomScrollView), const Offset(0, -800));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      final textFieldFinder = find.byType(TextField);
-      expect(textFieldFinder, findsOneWidget);
+        final textFieldFinder = find.byType(TextField);
+        expect(textFieldFinder, findsOneWidget);
 
-      await tester.enterText(textFieldFinder, 'Wrong typed sentence');
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 200));
+        await tester.enterText(textFieldFinder, 'Wrong typed sentence');
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      final submitBtn = find.text('SUBMIT');
+        final submitBtn = find.text('SUBMIT');
 
-      // Attempt 1 (ScaleButton 500ms debounce guard)
-      await tester.tap(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Attempt 1 (ScaleButton 500ms debounce guard)
+        await tester.tap(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Attempt 2
-      await tester.tap(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Attempt 2
+        await tester.tap(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Attempt 3
-      await tester.tap(submitBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 600));
+        // Attempt 3
+        await tester.tap(submitBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
 
-      // Button converts to CONTINUE
-      final continueBtn = find.text('CONTINUE').last;
-      expect(continueBtn, findsOneWidget);
+        // Button converts to CONTINUE
+        final continueBtn = find.text('CONTINUE').last;
+        expect(continueBtn, findsOneWidget);
 
-      await tester.tap(continueBtn);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 400));
+        await tester.tap(continueBtn);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 400));
 
-      verify(
-        () => mockGrammarBloc.add(
-          any(
-            that: isA<SubmitAnswer>().having(
-              (e) => e.isCorrect,
-              'isCorrect',
-              false,
+        verify(
+          () => mockGrammarBloc.add(
+            any(
+              that: isA<SubmitAnswer>().having(
+                (e) => e.isCorrect,
+                'isCorrect',
+                false,
+              ),
             ),
           ),
-        ),
-      ).called(1);
-    });
+        ).called(1);
+      },
+    );
 
-    testWidgets('9. dragging brick onto magnetic junction triggers Phase 2', (tester) async {
+    testWidgets('9. dragging brick onto magnetic junction triggers Phase 2', (
+      tester,
+    ) async {
       await pumpConjunctions(tester);
 
       final correctBrick = find.byKey(const ValueKey('conjunction_brick_and'));
@@ -562,7 +600,9 @@ void main() {
       );
     });
 
-    testWidgets('10. interacting when already answered does nothing', (tester) async {
+    testWidgets('10. interacting when already answered does nothing', (
+      tester,
+    ) async {
       final answeredState = GrammarLoaded(
         quests: const [testQuest1, testQuest2],
         currentIndex: 0,
@@ -585,20 +625,25 @@ void main() {
       verifyNever(() => mockGrammarBloc.add(any(that: isA<SubmitAnswer>())));
     });
 
-    testWidgets('11. tapping hint button dispatches GrammarHintUsed without double dispatch', (tester) async {
-      await pumpConjunctions(tester);
+    testWidgets(
+      '11. tapping hint button dispatches GrammarHintUsed without double dispatch',
+      (tester) async {
+        await pumpConjunctions(tester);
 
-      final hintButton = find.byType(QuestHintButton);
-      expect(hintButton, findsOneWidget);
+        final hintButton = find.byType(QuestHintButton);
+        expect(hintButton, findsOneWidget);
 
-      await tester.tap(hintButton);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+        await tester.tap(hintButton);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
 
-      verify(() => mockGrammarBloc.add(const GrammarHintUsed())).called(1);
-    });
+        verify(() => mockGrammarBloc.add(const GrammarHintUsed())).called(1);
+      },
+    );
 
-    testWidgets('12. shows level 1 briefing dialog when not yet seen', (tester) async {
+    testWidgets('12. shows level 1 briefing dialog when not yet seen', (
+      tester,
+    ) async {
       SharedPreferences.setMockInitialValues({});
 
       await pumpConjunctions(tester, level: 1);
@@ -613,27 +658,32 @@ void main() {
       }
       await tester.pumpAndSettle();
 
-      expect(
-        find.text('She packed her laptop, her charger,'),
-        findsOneWidget,
-      );
+      expect(find.text('She packed her laptop, her charger,'), findsOneWidget);
     });
 
-    testWidgets('13. respects reduced motion when lowAnimationModeOverride is enabled', (tester) async {
-      VowlMotion.lowAnimationModeOverride.value = true;
-      await pumpConjunctions(tester);
-      expect(find.byType(ConjunctionsScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+    testWidgets(
+      '13. respects reduced motion when lowAnimationModeOverride is enabled',
+      (tester) async {
+        VowlMotion.lowAnimationModeOverride.value = true;
+        await pumpConjunctions(tester);
+        expect(find.byType(ConjunctionsScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('14. handles compact mobile layout (320x568) without overflow', (tester) async {
-      await pumpConjunctions(tester, width: 320, height: 568);
+    testWidgets(
+      '14. handles compact mobile layout (320x568) without overflow',
+      (tester) async {
+        await pumpConjunctions(tester, width: 320, height: 568);
 
-      expect(find.byType(ConjunctionsScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(ConjunctionsScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
 
-    testWidgets('15. handles tablet viewport (768x1024) without overflow', (tester) async {
+    testWidgets('15. handles tablet viewport (768x1024) without overflow', (
+      tester,
+    ) async {
       await pumpConjunctions(tester, width: 768, height: 1024);
 
       expect(find.byType(ConjunctionsScreen), findsOneWidget);
@@ -644,29 +694,28 @@ void main() {
       await pumpConjunctions(tester, themeMode: ThemeMode.dark);
 
       expect(find.byType(ConjunctionsScreen), findsOneWidget);
-      expect(
-        find.text('She packed her laptop, her charger,'),
-        findsOneWidget,
-      );
+      expect(find.text('She packed her laptop, her charger,'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('17. renders final failure state with explanation and continue', (tester) async {
-      final failureState = GrammarLoaded(
-        quests: const [testQuest1, testQuest2],
-        currentIndex: 0,
-        livesRemaining: 0,
-        answerStatus: AnswerStatus.incorrect,
-        hintUsed: false,
-        wrongCount: 3,
-        isFinalFailure: true,
-      );
+    testWidgets(
+      '17. renders final failure state with explanation and continue',
+      (tester) async {
+        final failureState = GrammarLoaded(
+          quests: const [testQuest1, testQuest2],
+          currentIndex: 0,
+          livesRemaining: 0,
+          answerStatus: AnswerStatus.incorrect,
+          hintUsed: false,
+          wrongCount: 3,
+          isFinalFailure: true,
+        );
 
-      await pumpConjunctions(tester, state: failureState);
+        await pumpConjunctions(tester, state: failureState);
 
-      expect(find.byType(ConjunctionsScreen), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    });
+        expect(find.byType(ConjunctionsScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }
-

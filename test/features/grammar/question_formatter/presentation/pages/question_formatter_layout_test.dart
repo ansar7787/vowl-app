@@ -663,5 +663,72 @@ void main() {
 
       expect(find.byType(GameBriefingLayer), findsOneWidget);
     });
+
+    testWidgets(
+      '22. instruction text uses center alignment and does not truncate with ellipsis',
+      (tester) async {
+        const longInstructionQuest = GrammarQuest(
+          id: 'qf_long_instruction',
+          instruction:
+              'Read the sentence carefully and transform it into a polite question',
+          difficulty: 1,
+          subtype: GameSubtype.questionFormatter,
+          sentence: 'She is reading a book.',
+          question: 'Is she reading a book?',
+          correctAnswer: 'Is she reading a book?',
+          options: ['Is she reading a book?'],
+          correctAnswerIndex: 0,
+        );
+
+        final longInstructionState = GrammarLoaded(
+          quests: const [longInstructionQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        );
+
+        await pumpQuestionFormatter(tester, state: longInstructionState);
+
+        final textFinder = find.text(
+          'Read the sentence carefully and transform it into a polite question',
+        );
+        expect(textFinder, findsOneWidget);
+        final textWidget = tester.widget<Text>(textFinder);
+        expect(textWidget.textAlign, TextAlign.center);
+        expect(textWidget.overflow, isNot(TextOverflow.ellipsis));
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      '23. Phase 2: TypeToConfirmOverlay card has side margins and does not touch screen edges',
+      (tester) async {
+        await pumpQuestionFormatter(tester);
+
+        await tester.tap(
+          find.byKey(const ValueKey('question_formatter_crank_bolt')),
+        );
+        for (int i = 0; i < 20; i++) {
+          await tester.pump(const Duration(milliseconds: 100));
+        }
+
+        await tester.tap(
+          find.byKey(const ValueKey('question_formatter_option_0')),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        final overlayFinder = find.byType(TypeToConfirmOverlay);
+        expect(overlayFinder, findsOneWidget);
+
+        final overlayRect = tester.getRect(overlayFinder);
+        expect(overlayRect.left, greaterThan(0));
+        expect(overlayRect.right, lessThan(390));
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }

@@ -102,7 +102,9 @@ class ConnectedSpeechLinkerCards extends StatelessWidget {
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
               color: borderColor,
-              width: isSelected || (showResult && (isSelected || correct)) ? 2.0 : 1.2,
+              width: isSelected || (showResult && (isSelected || correct))
+                  ? 2.0
+                  : 1.2,
             ),
             boxShadow: [
               if (!isSelected && !showResult)
@@ -132,8 +134,8 @@ class ConnectedSpeechLinkerCards extends StatelessWidget {
                   color: isSelected || (showResult && correct)
                       ? borderColor.withValues(alpha: 0.2)
                       : (isDark
-                          ? Colors.white.withValues(alpha: 0.08)
-                          : Colors.black.withValues(alpha: 0.05)),
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : Colors.black.withValues(alpha: 0.05)),
                   border: Border.all(
                     color: isSelected || (showResult && correct)
                         ? borderColor
@@ -173,16 +175,16 @@ class ConnectedSpeechLinkerCards extends StatelessWidget {
               Icon(
                 showResult
                     ? (correct
-                        ? Icons.check_circle_rounded
-                        : Icons.cancel_rounded)
+                          ? Icons.check_circle_rounded
+                          : Icons.cancel_rounded)
                     : (isSelected
-                        ? Icons.check_circle_outline_rounded
-                        : Icons.radio_button_unchecked_rounded),
+                          ? Icons.check_circle_outline_rounded
+                          : Icons.radio_button_unchecked_rounded),
                 color: showResult
                     ? borderColor
                     : (isSelected
-                        ? color
-                        : (isDark ? Colors.white24 : Colors.black26)),
+                          ? color
+                          : (isDark ? Colors.white24 : Colors.black26)),
                 size: isCompact ? 18.r : 20.r,
               ),
             ],

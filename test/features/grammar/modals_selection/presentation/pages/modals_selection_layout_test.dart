@@ -86,8 +86,7 @@ void main() {
     subtype: GameSubtype.modalsSelection,
     question: 'My brother ___ swim across the pool without stopping.',
     sentence: 'My brother can swim across the pool without stopping.',
-    sentenceWithBlank:
-        'My brother ___ swim across the pool without stopping.',
+    sentenceWithBlank: 'My brother ___ swim across the pool without stopping.',
     options: ['might', 'can', 'would', 'should'],
     correctAnswerIndex: 1,
     correctAnswer: 'can',
@@ -287,19 +286,25 @@ void main() {
         await pumpModalsSelection(tester);
 
         expect(find.byType(ModalsSelectionInstruction), findsOneWidget);
-        expect(find.text('CALIBRATE THE MODAL DIAL'), findsOneWidget);
+        expect(find.text('Choose the correct modal verb'), findsOneWidget);
 
         expect(find.byKey(const ValueKey('grammar_rule_box')), findsOneWidget);
-        expect(find.text('GRAMMAR RULE'), findsOneWidget);
+        expect(find.text('Grammar Rule'), findsOneWidget);
         expect(find.text('Ability (can)'), findsOneWidget);
 
-        expect(find.byKey(const ValueKey('modal_context_card')), findsOneWidget);
-        expect(find.byKey(const ValueKey('modals_rotary_dial')), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('modal_context_card')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('modals_rotary_dial')),
+          findsOneWidget,
+        );
         expect(
           find.byKey(const ValueKey('lock_configuration_button')),
           findsOneWidget,
         );
-        expect(find.text('LOCK CONFIGURATION'), findsOneWidget);
+        expect(find.text('Confirm Selection'), findsOneWidget);
       },
     );
 
@@ -319,8 +324,14 @@ void main() {
         await pumpModalsSelection(tester, state: stateWithoutRule);
 
         expect(find.byKey(const ValueKey('grammar_rule_box')), findsNothing);
-        expect(find.byKey(const ValueKey('modal_context_card')), findsOneWidget);
-        expect(find.byKey(const ValueKey('modals_rotary_dial')), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('modal_context_card')),
+          findsOneWidget,
+        );
+        expect(
+          find.byKey(const ValueKey('modals_rotary_dial')),
+          findsOneWidget,
+        );
       },
     );
 
@@ -347,15 +358,14 @@ void main() {
       },
     );
 
-    testWidgets(
-      '4. renders shimmer loading when state is GrammarLoading',
-      (tester) async {
-        await pumpModalsSelection(tester, state: const GrammarLoading());
+    testWidgets('4. renders shimmer loading when state is GrammarLoading', (
+      tester,
+    ) async {
+      await pumpModalsSelection(tester, state: const GrammarLoading());
 
-        expect(find.byType(GameShimmerLoading), findsOneWidget);
-        expect(find.byKey(const ValueKey('modals_rotary_dial')), findsNothing);
-      },
-    );
+      expect(find.byType(GameShimmerLoading), findsOneWidget);
+      expect(find.byKey(const ValueKey('modals_rotary_dial')), findsNothing);
+    });
 
     testWidgets(
       '5. selecting wrong option and pressing lock configuration triggers wrong answer feedback',
@@ -568,7 +578,9 @@ void main() {
         await gesture.up();
         await tester.pump(const Duration(milliseconds: 350));
 
-        verify(() => mockHapticService.selection()).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockHapticService.selection(),
+        ).called(greaterThanOrEqualTo(1));
       },
     );
 
@@ -611,36 +623,34 @@ void main() {
       },
     );
 
-    testWidgets(
-      '12. hint button triggers hint without double dispatch',
-      (tester) async {
-        await pumpModalsSelection(tester);
+    testWidgets('12. hint button triggers hint without double dispatch', (
+      tester,
+    ) async {
+      await pumpModalsSelection(tester);
 
-        final hintFinder = find.byType(QuestHintButton);
-        expect(hintFinder, findsOneWidget);
+      final hintFinder = find.byType(QuestHintButton);
+      expect(hintFinder, findsOneWidget);
 
-        await tester.tap(hintFinder);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 200));
+      await tester.tap(hintFinder);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 200));
 
-        verify(
-          () => mockGrammarBloc.add(any(that: isA<GrammarHintUsed>())),
-        ).called(1);
-      },
-    );
+      verify(
+        () => mockGrammarBloc.add(any(that: isA<GrammarHintUsed>())),
+      ).called(1);
+    });
 
-    testWidgets(
-      '13. level 1 briefing dialog displays for first-time user',
-      (tester) async {
-        SharedPreferences.setMockInitialValues({
-          'has_seen_briefing_modalsSelection': false,
-        });
+    testWidgets('13. level 1 briefing dialog displays for first-time user', (
+      tester,
+    ) async {
+      SharedPreferences.setMockInitialValues({
+        'has_seen_briefing_modalsSelection': false,
+      });
 
-        await pumpModalsSelection(tester, level: 1);
+      await pumpModalsSelection(tester, level: 1);
 
-        expect(find.byType(GameBriefingLayer), findsOneWidget);
-      },
-    );
+      expect(find.byType(GameBriefingLayer), findsOneWidget);
+    });
 
     testWidgets(
       '14. respects reduced motion when lowAnimationModeOverride is enabled',
@@ -649,59 +659,58 @@ void main() {
         await pumpModalsSelection(tester);
 
         expect(find.byType(ModalsSelectionScreen), findsOneWidget);
-        expect(find.byKey(const ValueKey('modals_rotary_dial')), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
-
-    testWidgets(
-      '15. compact viewport (320x568) renders without overflow',
-      (tester) async {
-        await pumpModalsSelection(tester, width: 320, height: 568);
-
-        expect(find.byType(ModalsSelectionScreen), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
-
-    testWidgets(
-      '16. tablet viewport (768x1024) renders with proper layout',
-      (tester) async {
-        await pumpModalsSelection(tester, width: 768, height: 1024);
-
-        expect(find.byType(ModalsSelectionScreen), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
-
-    testWidgets(
-      '17. dark mode renders correctly with dark theme styling',
-      (tester) async {
-        await pumpModalsSelection(tester, themeMode: ThemeMode.dark);
-
-        expect(find.byType(ModalsSelectionScreen), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
-
-    testWidgets(
-      '18. final failure state displays game over layout',
-      (tester) async {
-        final failedState = GrammarLoaded(
-          quests: const [testQuest1],
-          currentIndex: 0,
-          livesRemaining: 0,
-          answerStatus: AnswerStatus.incorrect,
-          hintUsed: false,
-          wrongCount: 3,
-          isFinalFailure: true,
+        expect(
+          find.byKey(const ValueKey('modals_rotary_dial')),
+          findsOneWidget,
         );
-
-        await pumpModalsSelection(tester, state: failedState);
-
-        expect(find.byType(ModalsSelectionScreen), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
     );
+
+    testWidgets('15. compact viewport (320x568) renders without overflow', (
+      tester,
+    ) async {
+      await pumpModalsSelection(tester, width: 320, height: 568);
+
+      expect(find.byType(ModalsSelectionScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('16. tablet viewport (768x1024) renders with proper layout', (
+      tester,
+    ) async {
+      await pumpModalsSelection(tester, width: 768, height: 1024);
+
+      expect(find.byType(ModalsSelectionScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('17. dark mode renders correctly with dark theme styling', (
+      tester,
+    ) async {
+      await pumpModalsSelection(tester, themeMode: ThemeMode.dark);
+
+      expect(find.byType(ModalsSelectionScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('18. final failure state displays game over layout', (
+      tester,
+    ) async {
+      final failedState = GrammarLoaded(
+        quests: const [testQuest1],
+        currentIndex: 0,
+        livesRemaining: 0,
+        answerStatus: AnswerStatus.incorrect,
+        hintUsed: false,
+        wrongCount: 3,
+        isFinalFailure: true,
+      );
+
+      await pumpModalsSelection(tester, state: failedState);
+
+      expect(find.byType(ModalsSelectionScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
   });
 }

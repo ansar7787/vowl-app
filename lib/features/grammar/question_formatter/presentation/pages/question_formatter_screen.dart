@@ -177,11 +177,8 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
   @override
   void onQuestionReset() {
     _crankRotation.value = 0.0;
-
     _isCrankComplete.value = false;
-
     _pendingJigsaw.value = false;
-
     _selectedOptionText.value = null;
   }
 
@@ -274,30 +271,23 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                           return Column(
                                             children: [
                                               SizedBox(
-                                                height: isCompact ? 4.h : 10.h,
+                                                height: isCompact ? 6.h : 12.h,
                                               ),
-                                              isCompact
-                                                  ? SizedBox(
-                                                      height: 25.h,
-                                                      child: FittedBox(
-                                                        fit: BoxFit.scaleDown,
-                                                        child:
-                                                            QuestionFormatterInstruction(
-                                                              primaryColor: theme
-                                                                  .primaryColor,
-                                                              instruction: quest
-                                                                  .instruction,
-                                                            ),
-                                                      ),
-                                                    )
-                                                  : QuestionFormatterInstruction(
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 24.w,
+                                                ),
+                                                child:
+                                                    QuestionFormatterInstruction(
                                                       primaryColor:
                                                           theme.primaryColor,
                                                       instruction:
                                                           quest.instruction,
+                                                      isCompact: isCompact,
                                                     ),
+                                              ),
                                               SizedBox(
-                                                height: isCompact ? 8.h : 20.h,
+                                                height: isCompact ? 10.h : 16.h,
                                               ),
 
                                               if (quest.questionType != null ||
@@ -313,24 +303,26 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                           ),
                                                       padding:
                                                           EdgeInsets.symmetric(
-                                                            horizontal: 16.w,
-                                                            vertical: 6.h,
+                                                            horizontal: 14.w,
+                                                            vertical: isCompact
+                                                                ? 5.h
+                                                                : 7.h,
                                                           ),
                                                       decoration: BoxDecoration(
                                                         color: theme
                                                             .primaryColor
                                                             .withValues(
-                                                              alpha: 0.1,
+                                                              alpha: 0.08,
                                                             ),
                                                         borderRadius:
                                                             BorderRadius.circular(
-                                                              12.r,
+                                                              10.r,
                                                             ),
                                                         border: Border.all(
                                                           color: theme
                                                               .primaryColor
                                                               .withValues(
-                                                                alpha: 0.3,
+                                                                alpha: 0.22,
                                                               ),
                                                         ),
                                                       ),
@@ -341,14 +333,17 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                             : "TYPE: ${quest.questionType?.toUpperCase() ?? 'QUESTION'}",
                                                         textAlign:
                                                             TextAlign.center,
+                                                        softWrap: true,
                                                         style: TextStyle(
                                                           fontFamily: 'Outfit',
-                                                          fontSize: 12.sp,
+                                                          fontSize: isCompact
+                                                              ? 11.sp
+                                                              : 12.sp,
                                                           color: theme
                                                               .primaryColor,
                                                           fontWeight:
-                                                              FontWeight.bold,
-                                                          letterSpacing: 1.2,
+                                                              FontWeight.w600,
+                                                          letterSpacing: 0.8,
                                                         ),
                                                       ),
                                                     )
@@ -362,11 +357,11 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                 SizedBox(
                                                   height: isCompact
                                                       ? 12.h
-                                                      : 24.h,
+                                                      : 18.h,
                                                 ),
                                               ],
 
-                                              // 3D Inverter Context Card
+                                              // Context Card
                                               Padding(
                                                     padding:
                                                         EdgeInsets.symmetric(
@@ -403,11 +398,14 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                           'question_formatter_sentence_card',
                                                         ),
                                                         width: double.infinity,
-                                                        padding: EdgeInsets.all(
-                                                          isCompact
-                                                              ? 16.r
-                                                              : 28.r,
-                                                        ),
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              horizontal: 20.w,
+                                                              vertical:
+                                                                  isCompact
+                                                                  ? 16.h
+                                                                  : 22.h,
+                                                            ),
                                                         decoration: BoxDecoration(
                                                           color: isDark
                                                               ? Colors.white
@@ -423,8 +421,8 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                           borderRadius:
                                                               BorderRadius.circular(
                                                                 isCompact
-                                                                    ? 18.r
-                                                                    : 28.r,
+                                                                    ? 16.r
+                                                                    : 20.r,
                                                               ),
                                                           border: Border.all(
                                                             color: theme
@@ -441,28 +439,35 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                                   .withValues(
                                                                     alpha: 0.05,
                                                                   ),
-                                                              blurRadius: 30,
-                                                              spreadRadius: 5,
+                                                              blurRadius: 24,
+                                                              spreadRadius: 2,
                                                             ),
                                                           ],
                                                         ),
                                                         child: Text(
-                                                          quest.sentence ??
-                                                              "Missing statement.",
+                                                          quest
+                                                                      .sentence
+                                                                      ?.isNotEmpty ==
+                                                                  true
+                                                              ? quest.sentence!
+                                                              : "No statement available.",
                                                           textAlign:
                                                               TextAlign.center,
+                                                          softWrap: true,
                                                           style: TextStyle(
                                                             fontFamily:
                                                                 'Outfit',
                                                             fontSize: isCompact
-                                                                ? 16.sp
-                                                                : 22.sp,
+                                                                ? 15.sp
+                                                                : 18.sp,
                                                             fontWeight:
                                                                 FontWeight.w600,
+                                                            height: 1.45,
                                                             color: isDark
                                                                 ? Colors.white
-                                                                : Colors
-                                                                      .black87,
+                                                                : const Color(
+                                                                    0xFF1E293B,
+                                                                  ),
                                                           ),
                                                         ),
                                                       ),
@@ -474,17 +479,17 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                           context,
                                                         ),
                                                   )
-                                                  .fadeIn(duration: 600.ms)
+                                                  .fadeIn(duration: 500.ms)
                                                   .scale(
                                                     begin: const Offset(
-                                                      0.9,
-                                                      0.9,
+                                                      0.95,
+                                                      0.95,
                                                     ),
                                                     end: const Offset(1, 1),
                                                   ),
 
                                               SizedBox(
-                                                height: isCompact ? 16.h : 48.h,
+                                                height: isCompact ? 16.h : 28.h,
                                               ),
 
                                               // Game Mechanic Area
@@ -530,27 +535,33 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                       !isGameAnswered &&
                                                       cleanTargetSentence
                                                           .isNotEmpty)
-                                                    TypeToConfirmOverlay(
-                                                      expectedText:
-                                                          cleanTargetSentence,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      onConfirmed: () =>
-                                                          _submitFinalAnswer(
-                                                            true,
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 24.w,
                                                           ),
-                                                      onSkipped: () =>
-                                                          _submitFinalAnswer(
-                                                            false,
-                                                          ),
-                                                      isPositioned: false,
-                                                      displayText:
-                                                          "Type the full question to lock it in",
+                                                      child: TypeToConfirmOverlay(
+                                                        expectedText:
+                                                            cleanTargetSentence,
+                                                        primaryColor:
+                                                            theme.primaryColor,
+                                                        onConfirmed: () =>
+                                                            _submitFinalAnswer(
+                                                              true,
+                                                            ),
+                                                        onSkipped: () =>
+                                                            _submitFinalAnswer(
+                                                              false,
+                                                            ),
+                                                        isPositioned: false,
+                                                        displayText:
+                                                            "Type the full question to lock it in",
+                                                      ),
                                                     ),
                                                 ],
                                               ),
                                               SizedBox(
-                                                height: isCompact ? 12.h : 40.h,
+                                                height: isCompact ? 16.h : 24.h,
                                               ),
                                             ],
                                           );
@@ -597,7 +608,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
           children: options.asMap().entries.map((entry) {
             return Padding(
               padding: EdgeInsets.only(
-                bottom: isCompact ? 8.h : 16.h,
+                bottom: isCompact ? 10.h : 14.h,
                 left: 24.w,
                 right: 24.w,
               ),
@@ -607,16 +618,17 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                     _onOptionSelect(entry.key, correctIndex, entry.value),
                 child: Container(
                   width: double.infinity,
-                  padding: EdgeInsets.all(isCompact ? 12.r : 20.r),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 18.w,
+                    vertical: isCompact ? 13.h : 16.h,
+                  ),
                   decoration: BoxDecoration(
                     color: isDark
                         ? Colors.white.withValues(alpha: 0.05)
                         : Colors.black.withValues(alpha: 0.03),
-                    borderRadius: BorderRadius.circular(
-                      isCompact ? 14.r : 20.r,
-                    ),
+                    borderRadius: BorderRadius.circular(16.r),
                     border: Border.all(
-                      color: primaryColor.withValues(alpha: 0.2),
+                      color: primaryColor.withValues(alpha: 0.22),
                       width: 1.5,
                     ),
                   ),
@@ -624,11 +636,13 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                     child: Text(
                       entry.value,
                       textAlign: TextAlign.center,
+                      softWrap: true,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: isCompact ? 14.sp : 18.sp,
-                        fontWeight: FontWeight.bold,
+                        fontSize: isCompact ? 14.sp : 16.sp,
+                        fontWeight: FontWeight.w600,
                         color: primaryColor,
+                        height: 1.35,
                       ),
                     ),
                   ),
@@ -639,6 +653,6 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
         )
         .animate(autoPlay: !VowlMotion.shouldReduceMotion(context))
         .fadeIn(duration: 400.ms)
-        .slideY(begin: 0.1, end: 0);
+        .slideY(begin: 0.08, end: 0);
   }
 }

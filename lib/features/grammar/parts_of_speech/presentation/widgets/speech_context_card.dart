@@ -34,21 +34,21 @@ class SpeechContextCard extends StatelessWidget {
     final isSentencePresent = sentenceText != null && sentenceText.isNotEmpty;
     final isQuestionPresent = questionText != null && questionText.isNotEmpty;
 
-    final mainFontSize = isCompact ? 15.sp : 18.sp;
-    final questionFontSize = isCompact ? 13.sp : 15.sp;
+    final mainFontSize = isCompact ? 14.sp : 16.sp;
+    final questionFontSize = isCompact ? 12.sp : 14.sp;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     final cardContent = Container(
       key: ValueKey(quest.hashCode),
-      padding: EdgeInsets.all(isCompact ? 14.r : 22.r),
+      padding: EdgeInsets.all(isCompact ? 12.r : 18.r),
       decoration: BoxDecoration(
         color: isDark
             ? Colors.white.withValues(alpha: 0.05)
             : Colors.black.withValues(alpha: 0.03),
-        borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
+        borderRadius: BorderRadius.circular(isCompact ? 16.r : 20.r),
         border: Border.all(
-          color: primaryColor.withValues(alpha: 0.15),
-          width: 1.5,
+          color: primaryColor.withValues(alpha: 0.18),
+          width: 1.2,
         ),
       ),
       child: Column(
@@ -56,30 +56,27 @@ class SpeechContextCard extends StatelessWidget {
         children: [
           if (isQuestionPresent)
             Padding(
-              padding: EdgeInsets.only(
-                bottom: isSentencePresent ? 12.h : 0,
-              ),
+              padding: EdgeInsets.only(bottom: isSentencePresent ? 10.h : 0),
               child: Text(
                 questionText,
                 textAlign: TextAlign.center,
+                softWrap: true,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: questionFontSize,
-                  color: isDark ? Colors.white70 : Colors.black54,
-                  height: 1.4,
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.8)
+                      : const Color(0xFF4A5568),
+                  height: 1.35,
                   fontWeight: FontWeight.w500,
                 ),
               ),
             ),
           if (isSentencePresent)
-            _buildHighlightedSentence(
-              sentenceText,
-              targetWord,
-              mainFontSize,
-            ),
+            _buildHighlightedSentence(sentenceText, targetWord, mainFontSize),
           if (quest.transformations != null &&
               quest.transformations!.isNotEmpty) ...[
-            SizedBox(height: 16.h),
+            SizedBox(height: 12.h),
             Wrap(
               alignment: WrapAlignment.center,
               spacing: 8.w,
@@ -88,21 +85,22 @@ class SpeechContextCard extends StatelessWidget {
                   .map(
                     (word) => Container(
                       padding: EdgeInsets.symmetric(
-                        horizontal: 12.w,
-                        vertical: 6.h,
+                        horizontal: 10.w,
+                        vertical: 5.h,
                       ),
                       decoration: BoxDecoration(
-                        color: primaryColor.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(12.r),
+                        color: primaryColor.withValues(alpha: 0.08),
+                        borderRadius: BorderRadius.circular(10.r),
                         border: Border.all(
-                          color: primaryColor.withValues(alpha: 0.3),
+                          color: primaryColor.withValues(alpha: 0.25),
+                          width: 1.0,
                         ),
                       ),
                       child: Text(
                         word,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 12.sp,
+                          fontSize: isCompact ? 11.sp : 12.sp,
                           color: primaryColor,
                           fontWeight: FontWeight.w600,
                         ),
@@ -123,7 +121,10 @@ class SpeechContextCard extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: horizontalMargin ?? 24.w),
         child: reduceMotion
             ? cardContent
-            : cardContent.animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+            : cardContent
+                  .animate()
+                  .fadeIn(duration: 600.ms)
+                  .slideY(begin: 0.2, end: 0),
       ),
     );
   }
@@ -170,13 +171,14 @@ class SpeechContextCard extends StatelessWidget {
 
     return RichText(
       textAlign: TextAlign.center,
+      softWrap: true,
       text: TextSpan(
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: fontSize,
-          color: isDark ? Colors.white : Colors.black87,
-          height: 1.5,
-          fontWeight: FontWeight.w600,
+          color: isDark ? Colors.white : const Color(0xFF1A202C),
+          height: 1.45,
+          fontWeight: FontWeight.w500,
         ),
         children: [
           TextSpan(text: before),
@@ -184,9 +186,10 @@ class SpeechContextCard extends StatelessWidget {
             text: highlighted,
             style: TextStyle(
               color: primaryColor,
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w700,
               decoration: TextDecoration.underline,
-              decorationColor: primaryColor.withValues(alpha: 0.5),
+              decorationColor: primaryColor.withValues(alpha: 0.6),
+              decorationThickness: 2.0,
             ),
           ),
           TextSpan(text: after),
@@ -199,12 +202,13 @@ class SpeechContextCard extends StatelessWidget {
     return Text(
       sentence,
       textAlign: TextAlign.center,
+      softWrap: true,
       style: TextStyle(
         fontFamily: 'Outfit',
         fontSize: fontSize,
-        color: isDark ? Colors.white : Colors.black87,
-        height: 1.5,
-        fontWeight: FontWeight.w600,
+        color: isDark ? Colors.white : const Color(0xFF1A202C),
+        height: 1.45,
+        fontWeight: FontWeight.w500,
       ),
     );
   }

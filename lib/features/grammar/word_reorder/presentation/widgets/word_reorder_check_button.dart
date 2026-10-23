@@ -27,38 +27,38 @@ class WordReorderCheckButton extends StatelessWidget {
       onTap: hasWords ? onCheck : null,
       child: Container(
         width: double.infinity,
-        height: 58.h,
+        height: 52.h,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.r),
+          borderRadius: BorderRadius.circular(16.r),
           gradient: LinearGradient(
             colors: hasWords
-                ? [primaryColor, primaryColor.withValues(alpha: 0.8)]
+                ? [primaryColor, primaryColor.withValues(alpha: 0.85)]
                 : [
-                    Colors.grey.withValues(alpha: 0.3),
-                    Colors.grey.withValues(alpha: 0.4),
+                    Colors.grey.withValues(alpha: 0.25),
+                    Colors.grey.withValues(alpha: 0.35),
                   ],
           ),
           boxShadow: hasWords
               ? [
                   BoxShadow(
                     color: primaryColor.withValues(alpha: 0.3),
-                    blurRadius: 15,
-                    offset: const Offset(0, 8),
+                    blurRadius: 12,
+                    offset: const Offset(0, 6),
                   ),
                 ]
               : [],
         ),
         child: Center(
           child: Text(
-            "CHECK SENTENCE",
+            "Check Sentence",
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w700,
               color: hasWords
                   ? Colors.white
-                  : (isDark ? Colors.white30 : Colors.black26),
-              letterSpacing: 1.5,
+                  : (isDark ? Colors.white38 : Colors.black38),
+              letterSpacing: 0.5,
             ),
           ),
         ),

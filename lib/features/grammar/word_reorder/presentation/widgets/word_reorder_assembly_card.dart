@@ -29,16 +29,16 @@ class WordReorderAssemblyCard extends StatelessWidget {
     final card = Container(
       key: const ValueKey('word_assembly_card'),
       width: double.infinity,
-      constraints: BoxConstraints(minHeight: 120.h),
-      padding: EdgeInsets.all(22.r),
+      constraints: BoxConstraints(minHeight: 110.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       decoration: BoxDecoration(
         color: isDark
             ? Colors.white.withValues(alpha: 0.05)
             : Colors.black.withValues(alpha: 0.03),
-        borderRadius: BorderRadius.circular(28.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: primaryColor.withValues(alpha: 0.15),
-          width: 1.5,
+          color: primaryColor.withValues(alpha: 0.18),
+          width: 1.2,
         ),
       ),
       child: Center(
@@ -51,15 +51,17 @@ class WordReorderAssemblyCard extends StatelessWidget {
                   Builder(
                     builder: (context) {
                       final text = Text(
-                        "TAP WORDS TO BUILD SENTENCE",
+                        "Tap words below to build your sentence",
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 14.sp,
-                          fontWeight: FontWeight.w700,
-                          color: primaryColor.withValues(alpha: 0.5),
-                          letterSpacing: 1.5,
+                          fontWeight: FontWeight.w500,
+                          color: primaryColor.withValues(alpha: 0.6),
+                          letterSpacing: 0.2,
+                          height: 1.3,
                         ),
                         textAlign: TextAlign.center,
+                        softWrap: true,
                       );
                       if (reduceMotion) return text;
                       return text
@@ -79,17 +81,19 @@ class WordReorderAssemblyCard extends StatelessWidget {
                         vertical: 8.h,
                       ),
                       decoration: BoxDecoration(
-                        color: primaryColor.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(14.r),
+                        color: primaryColor.withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(12.r),
                         border: Border.all(
-                          color: primaryColor.withValues(alpha: 0.3),
+                          color: primaryColor.withValues(alpha: 0.35),
+                          width: 1.2,
                         ),
                       ),
                       child: Text(
                         word,
+                        softWrap: true,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 18.sp,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
                           color: primaryColor,
                         ),
@@ -97,15 +101,16 @@ class WordReorderAssemblyCard extends StatelessWidget {
                     ),
                   );
                   if (reduceMotion) return wordButton;
-                  return wordButton
-                      .animate()
-                      .scale(duration: 400.ms, curve: Curves.elasticOut);
+                  return wordButton.animate().scale(
+                    duration: 400.ms,
+                    curve: Curves.elasticOut,
+                  );
                 }).toList(),
         ),
       ),
     );
 
     if (reduceMotion) return card;
-    return card.animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0);
+    return card.animate().fadeIn(duration: 500.ms).slideY(begin: 0.15, end: 0);
   }
 }

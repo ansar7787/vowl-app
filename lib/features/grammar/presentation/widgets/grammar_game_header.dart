@@ -81,11 +81,12 @@ class GrammarGameHeader extends StatelessWidget {
               lives: lives,
               theme: theme,
               isDark: Theme.of(context).brightness == Brightness.dark,
-              onBack: onBack ??
+              onBack:
+                  onBack ??
                   () => GameDialogHelper.showExitConfirmation(
-                        context,
-                        onQuit: () => Navigator.of(context).pop(),
-                      ),
+                    context,
+                    onQuit: () => Navigator.of(context).pop(),
+                  ),
             ),
           ),
           if (showActions) ...[

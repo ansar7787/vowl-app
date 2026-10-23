@@ -11,37 +11,50 @@ class PrepositionChoiceInstruction extends StatelessWidget {
     this.instruction,
   });
 
-  static const _label = "TRACE OR TAP A NODE";
+  static const _defaultLabel = "Trace or tap the correct preposition";
+
+  String _cleanInstruction(String? raw) {
+    if (raw == null || raw.trim().isEmpty) return _defaultLabel;
+    final trimmed = raw.trim();
+    if (trimmed.toUpperCase() == 'TRACE OR TAP A NODE') {
+      return 'Trace or tap the correct preposition';
+    }
+    return trimmed;
+  }
 
   @override
   Widget build(BuildContext context) {
-    final text = instruction ?? _label;
+    final text = _cleanInstruction(instruction);
     return Semantics(
       label: text,
       child: Container(
         key: const ValueKey('preposition_choice_instruction'),
+        margin: EdgeInsets.symmetric(horizontal: 24.w),
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         decoration: BoxDecoration(
           color: primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(30.r),
+          borderRadius: BorderRadius.circular(20.r),
           border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(Icons.touch_app_rounded, size: 14.r, color: primaryColor),
-            SizedBox(width: 12.w),
+            Icon(Icons.touch_app_rounded, size: 16.r, color: primaryColor),
+            SizedBox(width: 8.w),
             Flexible(
               child: Text(
                 text,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+                softWrap: true,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w900,
+                  fontSize: 12.5.sp,
+                  fontWeight: FontWeight.w600,
                   color: primaryColor,
-                  letterSpacing: 1.5,
+                  letterSpacing: 0.4,
+                  height: 1.3,
                 ),
               ),
             ),

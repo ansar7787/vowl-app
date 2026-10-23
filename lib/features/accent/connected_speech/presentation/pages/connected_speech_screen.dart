@@ -97,7 +97,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
       isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
@@ -113,7 +114,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
     if (nailedIt) {
       submitCorrectAnswer();
     } else {
-      final currentQuest = _lastQuest ??
+      final currentQuest =
+          _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)
               ? (context.read<AccentBloc>().state as AccentLoaded).currentQuest
               : null);
@@ -218,6 +220,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                             ),
                             radius: Radius.circular(8.r),
                             thickness: 4.w,
+                            padding: EdgeInsets.zero,
                             child: CustomScrollView(
                               controller: _scrollController,
                               physics: const BouncingScrollPhysics(),
@@ -229,8 +232,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                                       constraints: BoxConstraints(
                                         minHeight:
                                             isFirstStagePassedNotifier.value
-                                                ? 0
-                                                : constraints.maxHeight,
+                                            ? 0
+                                            : constraints.maxHeight,
                                       ),
                                       child: Column(
                                         children: [
@@ -252,11 +255,14 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                                                           theme.primaryColor,
                                                       instruction:
                                                           isFirstStagePassedNotifier
-                                                                  .value
-                                                              ? "Now say the phrase aloud to practice"
-                                                              : (quest.instruction.trim().isNotEmpty
-                                                                  ? quest.instruction
-                                                                  : "Select how the sounds link together"),
+                                                              .value
+                                                          ? "Now say the phrase aloud to practice"
+                                                          : (quest.instruction
+                                                                    .trim()
+                                                                    .isNotEmpty
+                                                                ? quest
+                                                                      .instruction
+                                                                : "Select how the sounds link together"),
                                                       isCompact: isCompact,
                                                     ),
                                                     SizedBox(
@@ -271,9 +277,9 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                                                           quest.phenomenonType,
                                                       isAnswered:
                                                           isFirstStagePassedNotifier
-                                                                  .value ||
-                                                              isAnsweredNotifier
-                                                                  .value,
+                                                              .value ||
+                                                          isAnsweredNotifier
+                                                              .value,
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isCompact: isCompact,
@@ -283,7 +289,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                                                     ConnectedSpeechPulseSpeaker(
                                                       text:
                                                           quest.textToSpeak ??
-                                                              "",
+                                                          "",
                                                       color: theme.primaryColor,
                                                       onPlayTts: _playTts,
                                                       isCompact: isCompact,
@@ -301,15 +307,16 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                                                       key: ValueKey(quest.id),
                                                       options: options,
                                                       correctIndex:
-                                                          quest.correctAnswerIndex ??
-                                                              0,
+                                                          quest
+                                                              .correctAnswerIndex ??
+                                                          0,
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
                                                           isAnsweredNotifier
-                                                                  .value ||
-                                                              isFirstStagePassedNotifier
-                                                                  .value,
+                                                              .value ||
+                                                          isFirstStagePassedNotifier
+                                                              .value,
                                                       selectedIndex:
                                                           _selectedIndex.value,
                                                       onSubmitChoice:
@@ -325,10 +332,10 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                                           SizedBox(
                                             height:
                                                 (isAnsweredNotifier.value ||
-                                                        isFirstStagePassedNotifier
-                                                            .value)
-                                                    ? 10.h
-                                                    : 40.h,
+                                                    isFirstStagePassedNotifier
+                                                        .value)
+                                                ? 10.h
+                                                : 40.h,
                                           ),
                                         ],
                                       ),
@@ -345,14 +352,14 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen>
                                         ShadowPlaybackCompare(
                                           expectedText:
                                               quest.textToSpeak ??
-                                                  quest.word ??
-                                                  "",
+                                              quest.word ??
+                                              "",
                                           primaryColor: theme.primaryColor,
                                           isPositioned: false,
                                           onConfirmed: () {
                                             context.read<AccentBloc>().add(
-                                                  const AccentSpeakConfirmed(5),
-                                                );
+                                              const AccentSpeakConfirmed(5),
+                                            );
                                             _submitVerbalEvaluation(true);
                                           },
                                           onSkipped: () =>

@@ -162,6 +162,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: showConfettiNotifier.value,
               useScrolling: false, // Stack layout constraint
+              disablePadding: true,
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
               onHint: () {},
@@ -178,6 +179,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen>
                               ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
+                              padding: EdgeInsets.zero,
                               child: CustomScrollView(
                                 controller: _scrollController,
                                 physics: const BouncingScrollPhysics(),
@@ -346,16 +348,16 @@ class _PosQuestLayout extends StatelessWidget {
 
   ({double top, double middle, double bottom}) _computeGaps() {
     final estimated =
-        (isCompact ? 30.h : 40.h) +
-        (isCompact ? 50.h : 80.h) +
-        (isCompact ? 160.h : 260.h) +
-        40.h;
+        (isCompact ? 32.h : 42.h) +
+        (isCompact ? 60.h : 85.h) +
+        (isCompact ? 170.h : 240.h) +
+        24.h;
     final remaining = (maxHeight - estimated).clamp(0.0, double.infinity);
     final unit = remaining / 5;
     return (
-      top: (unit * 1.0).clamp(4.0, 15.0),
-      middle: (unit * 1.5).clamp(6.0, 20.0),
-      bottom: (unit * 2.5).clamp(10.0, 30.0),
+      top: (unit * 1.0).clamp(4.0, 14.0),
+      middle: (unit * 1.5).clamp(6.0, 18.0),
+      bottom: (unit * 2.5).clamp(8.0, 24.0),
     );
   }
 
@@ -417,9 +419,10 @@ class _PosQuestLayout extends StatelessWidget {
                     if (reduceMotion) {
                       return draggable;
                     }
-                    return draggable
-                        .animate()
-                        .scale(duration: 400.ms, curve: Curves.easeOutCubic);
+                    return draggable.animate().scale(
+                      duration: 400.ms,
+                      curve: Curves.easeOutCubic,
+                    );
                   },
                 ),
             ],
@@ -434,30 +437,38 @@ class _PosQuestLayout extends StatelessWidget {
     return Container(
       key: const ValueKey('grammar_rule_box'),
       margin: EdgeInsets.symmetric(horizontal: 24.w),
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 7.h),
       decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
+        color: primaryColor.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.3)),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.22),
+          width: 1.2,
+        ),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(Icons.lightbulb_outline, color: primaryColor, size: 16.sp),
+          Icon(
+            Icons.lightbulb_outline_rounded,
+            color: primaryColor,
+            size: isCompact ? 14.r : 16.r,
+          ),
           SizedBox(width: 8.w),
           Flexible(
             child: Text(
               rule,
               textAlign: TextAlign.center,
+              softWrap: true,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 12.sp,
+                fontSize: isCompact ? 11.sp : 12.sp,
                 color: primaryColor,
                 fontWeight: FontWeight.w600,
+                height: 1.3,
               ),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],
@@ -466,16 +477,10 @@ class _PosQuestLayout extends StatelessWidget {
   }
 
   Widget _buildInstruction() {
-    final instruction = SpeechInstruction(
+    return SpeechInstruction(
       primaryColor: theme.primaryColor as Color,
       instruction: quest.instruction,
-    );
-    if (!isCompact) {
-      return instruction;
-    }
-    return SizedBox(
-      height: 25.h,
-      child: FittedBox(fit: BoxFit.scaleDown, child: instruction),
+      isCompact: isCompact,
     );
   }
 }
