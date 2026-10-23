@@ -67,8 +67,9 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
     final isStateAnswered =
         bloc.state is GrammarLoaded &&
         (bloc.state as GrammarLoaded).answerStatus.isAnswered;
-    if (isAnsweredNotifier.value || _pendingJigsaw.value || isStateAnswered)
+    if (isAnsweredNotifier.value || _pendingJigsaw.value || isStateAnswered) {
       return;
+    }
 
     hapticService.selection();
     bool isCorrect = article.toLowerCase() == correctAnswer.toLowerCase();

@@ -428,8 +428,9 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                                                               VowlMotion.shouldReduceMotion(
                                                                 context,
                                                               );
-                                                          if (reduceMotion)
+                                                          if (reduceMotion) {
                                                             return coreWidget;
+                                                          }
                                                           return coreWidget
                                                               .animate()
                                                               .scale(
