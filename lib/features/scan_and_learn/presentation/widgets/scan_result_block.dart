@@ -18,6 +18,8 @@ class _LocalPalette {
   static const Color color4f46e5 = Color(0xFF4F46E5);
 }
 
+/// Interactive card widget rendering a single detected OCR [TextBlock] with
+/// one-tap translation, audio pronunciation, and dictionary definitions.
 class ScanResultBlock extends StatelessWidget {
   final TextBlock block;
   final int index;

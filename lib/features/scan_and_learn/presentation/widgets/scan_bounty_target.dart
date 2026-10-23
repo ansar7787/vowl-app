@@ -16,6 +16,8 @@ class _LocalPalette {
   static const Color color818cf8 = Color(0xFF818CF8);
 }
 
+/// Card widget highlighting the daily vocabulary hunting objective (bounty)
+/// and tracking claim state with animated celebration triggers.
 class ScanBountyTarget extends StatelessWidget {
   final String currentBounty;
   final bool bountyFound;
