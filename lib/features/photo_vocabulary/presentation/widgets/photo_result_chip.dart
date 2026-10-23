@@ -16,6 +16,8 @@ class _LocalPalette {
   static const Color color0d9488 = Color(0xFF0D9488);
 }
 
+/// Tappable badge widget rendering a detected image label with pronunciation
+/// playback, translation support, and vocabulary notebook bookmarking.
 class PhotoResultChip extends StatelessWidget {
   final ImageLabel label;
   final int index;

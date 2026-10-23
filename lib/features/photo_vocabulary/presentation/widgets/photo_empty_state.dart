@@ -14,6 +14,7 @@ class _LocalPalette {
   static const Color color2dd4bf = Color(0xFF2DD4BF);
 }
 
+/// Placeholder view displayed before a photo has been selected or captured for classification.
 class PhotoEmptyState extends StatelessWidget {
   final Future<void> Function(ImageSource) onPickImage;
 

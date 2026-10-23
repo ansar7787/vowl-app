@@ -17,6 +17,7 @@ class _LocalPalette {
   static const Color color0d9488 = Color(0xFF0D9488);
 }
 
+/// Target bounty objective card displaying the object to find via photo recognition.
 class PhotoBountyTarget extends StatelessWidget {
   final String currentBounty;
   final bool bountyFound;
