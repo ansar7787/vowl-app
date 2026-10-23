@@ -4,14 +4,27 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Interactive rotary crank component for transforming sentence structures.
 class QuestionFormatterCrank extends StatelessWidget {
+  /// The current rotation angle of the crank in radians.
   final double crankRotation;
+
+  /// Whether the user has answered the current question.
   final bool isAnswered;
+
+  /// Whether dark theme styling is active.
   final bool isDark;
+
+  /// The primary accent color for crank borders and glows.
   final Color primaryColor;
+
+  /// Callback invoked when a user drags or pans the crank.
   final ValueChanged<double> onPanUpdate;
+
+  /// Callback invoked to automatically spin the crank to completion.
   final VoidCallback onAutoSpin;
 
+  /// Creates a [QuestionFormatterCrank] widget.
   const QuestionFormatterCrank({
     super.key,
     required this.crankRotation,

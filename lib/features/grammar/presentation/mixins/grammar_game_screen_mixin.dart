@@ -4,18 +4,22 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 
+/// Shared gameplay state and lifecycle orchestration mixin for all grammar game screens.
 mixin GrammarGameScreenMixin<T extends StatefulWidget>
     on State<T>, GameScreenMixin<T> {
+  /// Initializes the grammar game session by dispatching [FetchGrammarQuests].
   void initGrammarGame() {
     context.read<GrammarBloc>().add(
       FetchGrammarQuests(gameType: gameType, level: level),
     );
   }
 
+  /// Cleans up resources when leaving the grammar game screen.
   void disposeGrammarGame() {
     disposeGame();
   }
 
+  /// Evaluates whether the BLoC listener should react to state transitions.
   bool grammarListenWhen(GrammarState prev, GrammarState curr) {
     if (curr is GrammarGameComplete && prev is! GrammarGameComplete) {
       return true;

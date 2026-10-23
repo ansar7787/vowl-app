@@ -45,7 +45,9 @@ enum AnswerStatus {
 // States
 // ---------------------------------------------------------------------------
 
+/// Base class for all grammar BLoC states.
 abstract class GrammarState extends Equatable implements GameStateBase {
+  /// Base const constructor for [GrammarState].
   const GrammarState();
 
   /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
@@ -56,23 +58,30 @@ abstract class GrammarState extends Equatable implements GameStateBase {
   List<Object?> get props => [];
 }
 
+/// Initial state emitted when the grammar session is launched or reset.
 class GrammarInitial extends GrammarState implements GameInitialState {
+  /// Creates a [GrammarInitial] state.
   const GrammarInitial();
 }
 
+/// Loading state emitted while fetching grammar quests from cache or cloud storage.
 class GrammarLoading extends GrammarState implements GameLoadingState {
+  /// Creates a [GrammarLoading] state.
   const GrammarLoading();
 }
 
+/// Active gameplay state containing loaded grammar quests and player session progress.
 class GrammarLoaded extends GrammarState implements GameLoadedState {
+  /// Immutable list of grammar quests for this session.
   final List<GrammarQuest> quests;
+
   @override
   final int currentIndex;
+
   @override
   final int livesRemaining;
 
   /// Status of the most recently submitted answer for the current question.
-  /// Resets to [AnswerStatus.unanswered] when advancing to the next question.
   final AnswerStatus answerStatus;
 
   @override
@@ -80,10 +89,14 @@ class GrammarLoaded extends GrammarState implements GameLoadedState {
 
   @override
   final bool hintUsed;
+
+  /// Number of incorrect attempts on the current question.
   final int wrongCount;
+
   @override
   final bool isFinalFailure;
 
+  /// Creates a [GrammarLoaded] state instance.
   GrammarLoaded({
     required List<GrammarQuest> quests,
     required this.currentIndex,
@@ -128,6 +141,7 @@ class GrammarLoaded extends GrammarState implements GameLoadedState {
     isFinalFailure,
   ];
 
+  /// Returns a new [GrammarLoaded] state with updated properties.
   GrammarLoaded copyWith({
     List<GrammarQuest>? quests,
     int? currentIndex,
@@ -149,27 +163,33 @@ class GrammarLoaded extends GrammarState implements GameLoadedState {
   }
 }
 
+/// Error state emitted when a failure occurs during grammar gameplay or data fetching.
 class GrammarError extends GrammarState implements GameErrorState {
   @override
   final String message;
 
-  /// Internal diagnostic detail. Must never be rendered directly in production
-  /// UI; only use in debug/dev overlays or crash reporters.
+  /// Internal diagnostic detail for debugging.
   final String? technicalError;
 
+  /// Creates a [GrammarError] state.
   const GrammarError(this.message, {this.technicalError});
 
   @override
   List<Object?> get props => [message, technicalError];
 }
 
+/// Completion state emitted when the learner successfully finishes all quests in a grammar level.
 class GrammarGameComplete extends GrammarState implements GameCompleteState {
   @override
   final int xpEarned;
+
   @override
   final int coinsEarned;
+
+  /// Total number of questions completed in this session.
   final int questCount;
 
+  /// Creates a [GrammarGameComplete] state with earned rewards.
   const GrammarGameComplete({
     required this.xpEarned,
     required this.coinsEarned,
@@ -180,13 +200,18 @@ class GrammarGameComplete extends GrammarState implements GameCompleteState {
   List<Object?> get props => [xpEarned, coinsEarned, questCount];
 }
 
+/// Game over state emitted when the learner runs out of lives in a grammar level.
 class GrammarGameOver extends GrammarState implements GameOverState {
+  /// Quests that were loaded when game over occurred.
   final List<GrammarQuest> quests;
+
+  /// Index of the question at which the game was lost.
   final int currentIndex;
 
   @override
   int get livesRemaining => 0;
 
+  /// Creates a [GrammarGameOver] state.
   GrammarGameOver({
     required List<GrammarQuest> quests,
     required this.currentIndex,

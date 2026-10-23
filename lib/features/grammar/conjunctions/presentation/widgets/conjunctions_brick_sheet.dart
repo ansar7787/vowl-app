@@ -2,15 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Tactile draggable brick sheet providing conjunction tokens to link sentence segments.
 class ConjunctionsBrickSheet extends StatelessWidget {
+  /// Available conjunction word options.
   final List<String> options;
+
+  /// Currently placed brick word, or `null`.
   final String? placedBrick;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether a compact visual style should be rendered.
   final bool isCompact;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Optional callback executed when tapping a conjunction brick.
   final Function(String)? onBrickTapped;
 
+  /// Creates a [ConjunctionsBrickSheet] widget.
   const ConjunctionsBrickSheet({
     super.key,
     required this.options,

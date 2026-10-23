@@ -5,18 +5,39 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Floating orb widget representing an article candidate ('a', 'an', 'the', or 'Ø') in article insertion exercises.
 class ArticleFloatingOrb extends StatefulWidget {
+  /// The article string or zero-article symbol.
   final String article;
+
+  /// Index of the orb.
   final int index;
+
+  /// Callback executed when tapping the orb.
   final VoidCallback onTap;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Whether this orb is the selected candidate.
   final bool isSelected;
+
+  /// Whether this orb corresponds to the correct answer.
   final bool isCorrectAnswer;
+
+  /// Whether this trial ended in a final failure.
   final bool isFinalFailure;
+
+  /// Whether compact visual styling should be applied.
   final bool isCompact;
 
+  /// Creates an [ArticleFloatingOrb] widget.
   const ArticleFloatingOrb({
     super.key,
     required this.article,

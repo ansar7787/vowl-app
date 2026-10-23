@@ -23,15 +23,33 @@ import 'grammar_state.dart';
 export 'grammar_event.dart';
 export 'grammar_state.dart';
 
+/// Business logic component managing gameplay state, lives, reward allocation, and sound effects for grammar exercises.
 class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
+  /// Use case for fetching grammar quests.
   final GetGrammarQuest getQuest;
+
+  /// Use case for preloading upcoming grammar batches.
   final PreloadGrammarQuest preloadQuest;
+
+  /// Use case for recording XP, coin, and streak rewards.
   final UpdateUserRewards updateUserRewards;
+
+  /// Use case for updating grammar category performance statistics.
   final UpdateCategoryStats updateCategoryStats;
+
+  /// Use case for unlocking progressive curriculum levels.
   final UpdateUnlockedLevel updateUnlockedLevel;
+
+  /// Use case for awarding grammar mastery badges.
   final AwardBadge awardBadge;
+
+  /// Service managing audio and sound playback.
   final SoundService soundService;
+
+  /// Service managing tactile vibration feedback.
   final HapticService hapticService;
+
+  /// Use case managing hint consumption.
   final UseHint useHint;
 
   // Session-scoped context for persistence. Set once per game session in
@@ -39,6 +57,7 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
   GameSubtype? _currentGameType;
   int? _currentLevel;
 
+  /// Creates a [GrammarBloc] instance with all required domain use cases and services.
   GrammarBloc({
     required this.getQuest,
     required this.preloadQuest,

@@ -17,9 +17,15 @@ import 'package:vowl/features/grammar/conjunctions/presentation/widgets/conjunct
 import 'package:vowl/features/grammar/conjunctions/presentation/widgets/conjunctions_brick_sheet.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
+/// Screen host for Conjunctions exercises, training conjunction types and rhetorical relationships between clauses.
 class ConjunctionsScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [ConjunctionsScreen] widget.
   const ConjunctionsScreen({
     super.key,
     required this.level,

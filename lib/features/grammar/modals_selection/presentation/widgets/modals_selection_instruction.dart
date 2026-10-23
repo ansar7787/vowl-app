@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction badge for modal verb selection exercises.
 class ModalsSelectionInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Custom instruction text, or `null` for default copy.
   final String? instruction;
+
+  /// Optional custom horizontal margin.
   final double? horizontalMargin;
 
+  /// Creates a [ModalsSelectionInstruction] widget.
   const ModalsSelectionInstruction({
     super.key,
     required this.primaryColor,

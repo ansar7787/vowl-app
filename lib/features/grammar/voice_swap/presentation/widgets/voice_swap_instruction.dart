@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Instruction banner guiding users to identify or toggle active and passive voice.
 class VoiceSwapInstruction extends StatelessWidget {
+  /// The primary theme accent color.
   final Color primaryColor;
+
+  /// The instruction text describing the objective.
   final String? instruction;
 
+  /// Creates a [VoiceSwapInstruction] widget.
   const VoiceSwapInstruction({
     super.key,
     required this.primaryColor,

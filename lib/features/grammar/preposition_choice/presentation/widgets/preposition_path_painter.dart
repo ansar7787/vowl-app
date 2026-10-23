@@ -2,16 +2,33 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter rendering connection lines and node sockets for preposition selection.
 class PrepositionPathPainter extends CustomPainter {
+  /// The collection of trace points representing the user gesture path.
   final List<Offset> points;
+
+  /// The preposition option labels displayed on each node.
   final List<String> options;
+
+  /// The primary accent color for active paths and sockets.
   final Color primaryColor;
+
+  /// Whether the user has submitted an answer for the current turn.
   final bool isAnswered;
+
+  /// Whether the selected answer is correct.
   final bool isCorrect;
+
+  /// The index of the selected target node.
   final int targetNode;
+
+  /// Whether dark theme styling is active.
   final bool isDark;
+
+  /// Whether compact layout spacing should be used.
   final bool isCompact;
 
+  /// Creates a [PrepositionPathPainter] instance.
   PrepositionPathPainter({
     required this.points,
     required this.options,
@@ -23,10 +40,12 @@ class PrepositionPathPainter extends CustomPainter {
     required this.isCompact,
   });
 
+  /// Calculates the starting socket point for the path given [size] and [isCompact].
   static Offset getStartPoint(Size size, bool isCompact) {
     return Offset(size.width / 2, isCompact ? 20.h : 40.h);
   }
 
+  /// Calculates the positions for candidate option nodes given [size], [count], and [isCompact].
   static List<Offset> getNodePoints(Size size, int count, bool isCompact) {
     final List<Offset> nodes = [];
     final double bottomY = size.height - (isCompact ? 40.h : 100.h);

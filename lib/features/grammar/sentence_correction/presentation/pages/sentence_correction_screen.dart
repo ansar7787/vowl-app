@@ -18,9 +18,15 @@ import 'package:vowl/features/grammar/sentence_correction/presentation/widgets/s
 import 'package:vowl/features/grammar/sentence_correction/presentation/widgets/sentence_correction_feedback.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
+/// Screen presenting the sentence error diagnosis and correction exercise.
 class SentenceCorrectionScreen extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The game subtype for tracking and analytics.
   final GameSubtype gameType;
+
+  /// Creates a [SentenceCorrectionScreen] widget.
   const SentenceCorrectionScreen({
     super.key,
     required this.level,

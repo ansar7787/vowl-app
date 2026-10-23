@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner guiding users to diagnose and correct sentence errors.
 class SentenceCorrectionInstruction extends StatelessWidget {
+  /// The primary theme accent color.
   final Color primaryColor;
+
+  /// The instruction text describing the objective.
   final String instruction;
 
+  /// Creates a [SentenceCorrectionInstruction] widget.
   const SentenceCorrectionInstruction({
     super.key,
     required this.primaryColor,

@@ -5,17 +5,36 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Interactive word token that can be inspected and selected for grammatical correction.
 class SentenceCorrectionDiagnosticWord extends StatelessWidget {
+  /// The word token text.
   final String text;
+
+  /// The index position of this word token in the sentence.
   final int index;
+
+  /// Whether the user has marked this word as suspected erroneous.
   final bool isSuspected;
+
+  /// Whether this word was correctly diagnosed as the error.
   final bool isCorrectZap;
+
+  /// Whether this word was incorrectly diagnosed as the error.
   final bool isWrongZap;
+
+  /// Whether error highlight styling should be applied.
   final bool isErrorHighlight;
+
+  /// Whether dark theme styling is active.
   final bool isDark;
+
+  /// The primary accent color for active borders and glows.
   final Color primaryColor;
+
+  /// Callback invoked when the word token is tapped.
   final VoidCallback onTap;
 
+  /// Creates a [SentenceCorrectionDiagnosticWord] widget.
   const SentenceCorrectionDiagnosticWord({
     super.key,
     required this.text,

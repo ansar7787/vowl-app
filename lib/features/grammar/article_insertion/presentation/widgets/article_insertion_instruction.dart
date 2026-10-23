@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction chip for article insertion exercises.
 class ArticleInsertionInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Raw instruction prompt.
   final String instruction;
+
+  /// Creates an [ArticleInsertionInstruction] widget.
   const ArticleInsertionInstruction({
     super.key,
     required this.primaryColor,

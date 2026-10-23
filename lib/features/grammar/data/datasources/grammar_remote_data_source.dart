@@ -4,22 +4,30 @@ import '../../../../core/error/exceptions.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 import '../models/grammar_quest_model.dart';
 
+/// Contract defining remote and local data operations for grammar quests.
 abstract class GrammarRemoteDataSource {
+  /// Fetches a list of [GrammarQuestModel] for the specified [gameType] and [level].
   Future<List<GrammarQuestModel>> getGrammarQuest({
     required GameSubtype gameType,
     required int level,
   });
 
+  /// Preloads a batch of grammar quests in the background for [gameType] near [level].
   Future<void> preloadBatch({
     required GameSubtype gameType,
     required int level,
   });
 }
 
+/// Production implementation of [GrammarRemoteDataSource] utilizing local asset files with [FirebaseFirestore] fallback.
 class GrammarRemoteDataSourceImpl implements GrammarRemoteDataSource {
+  /// Firestore client used as cloud fallback.
   final FirebaseFirestore firestore;
+
+  /// Asset quest service used as primary offline source.
   final AssetQuestService assetQuestService;
 
+  /// Creates a [GrammarRemoteDataSourceImpl] with [firestore] and [assetQuestService].
   GrammarRemoteDataSourceImpl(this.firestore, this.assetQuestService);
 
   @override

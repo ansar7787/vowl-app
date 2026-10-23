@@ -4,14 +4,27 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Surface displaying assembled word tokens in sequence for sentence construction.
 class WordReorderAssemblyCard extends StatelessWidget {
+  /// The ordered indices of words assembled by the user.
   final List<int> assembledIndices;
+
+  /// The original shuffled pool of words.
   final List<String> shuffledWords;
+
+  /// The primary accent color for styling and borders.
   final Color primaryColor;
+
+  /// Whether dark theme styling is active.
   final bool isDark;
+
+  /// Whether the sentence assembly has been submitted.
   final bool isAnswered;
+
+  /// Callback invoked when an assembled word token is tapped to remove it.
   final ValueChanged<int> onWordRemove;
 
+  /// Creates a [WordReorderAssemblyCard] widget.
   const WordReorderAssemblyCard({
     super.key,
     required this.assembledIndices,

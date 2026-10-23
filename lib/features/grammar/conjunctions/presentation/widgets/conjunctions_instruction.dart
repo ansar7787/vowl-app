@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Instruction banner guiding coordinating, subordinating, and correlative conjunction exercises.
 class ConjunctionsInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Raw instruction prompt.
   final String instruction;
 
+  /// Creates a [ConjunctionsInstruction] widget.
   const ConjunctionsInstruction({
     super.key,
     required this.primaryColor,

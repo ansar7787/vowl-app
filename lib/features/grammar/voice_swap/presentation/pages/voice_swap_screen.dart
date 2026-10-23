@@ -18,9 +18,15 @@ import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mi
 import 'package:vowl/features/grammar/voice_swap/presentation/widgets/voice_swap_instruction.dart';
 import 'package:vowl/features/grammar/voice_swap/presentation/widgets/voice_swap_toggle.dart';
 
+/// Screen presenting the active and passive voice identification grammar exercise.
 class VoiceSwapScreen extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The game subtype for tracking and analytics.
   final GameSubtype gameType;
+
+  /// Creates a [VoiceSwapScreen] widget.
   const VoiceSwapScreen({
     super.key,
     required this.level,

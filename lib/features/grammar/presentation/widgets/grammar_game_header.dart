@@ -13,38 +13,46 @@ import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
-/// Top bar for grammar quiz screens.
-///
-/// Renders the level progress header ([GameProgressHeader]) and, when there is
-/// an active unanswered quest, appends the info-toggle and hint buttons.
+/// Top bar for grammar quiz screens, displaying progress, remaining lives, briefing modal, and hints.
 class GrammarGameHeader extends StatelessWidget {
+  /// Current state from [GrammarBloc].
   final GrammarState state;
+
+  /// Current level index.
   final int level;
+
+  /// Progress fraction (0.0 to 1.0).
   final double progress;
+
+  /// Remaining lives count.
   final int lives;
 
-  /// : Replace `dynamic` with the concrete return type of
-  /// `LevelThemeHelper.getTheme()` once that file is in scope.
+  /// The level visual theme configuration.
   final dynamic theme;
 
   /// The current quest, if any. When null (loading / complete), action
   /// buttons are hidden.
   final GrammarQuest? quest;
 
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Whether this is the final failure on the trial.
   final bool isFinalFailure;
+
+  /// Service managing audio playback.
   final SoundService soundService;
 
   /// Called when the user taps the ℹ info button to show the level briefing.
   final VoidCallback onShowBriefing;
 
-  /// Called when the user activates the hint. Parallel to [GrammarHintUsed]
-  /// event which is dispatched internally.
+  /// Called when the user activates the hint.
   final VoidCallback onHint;
 
   /// Optional back button handler. If omitted, shows standard exit confirmation.
   final VoidCallback? onBack;
 
+  /// Creates a [GrammarGameHeader] widget.
   const GrammarGameHeader({
     super.key,
     required this.state,

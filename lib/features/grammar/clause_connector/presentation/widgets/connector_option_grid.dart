@@ -5,15 +5,30 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Grid of candidate connectors for selection in clause linking exercises.
 class ConnectorOptionGrid extends StatelessWidget {
+  /// Available connector option words.
   final List<String> options;
+
+  /// Index of the selected option, or `null`.
   final int? selectedIndex;
+
+  /// Index of the correct connector option, or `null`.
   final int? correctIndex;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether midnight contrast mode is enabled.
   final bool isMidnight;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Callback executed when the learner selects an option.
   final Function(int) onSelected;
 
+  /// Creates a [ConnectorOptionGrid] widget.
   const ConnectorOptionGrid({
     super.key,
     required this.options,

@@ -15,9 +15,15 @@ import 'package:vowl/features/grammar/punctuation_mastery/presentation/widgets/p
 import 'package:vowl/features/grammar/punctuation_mastery/presentation/widgets/punctuation_sticker_sheet.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
+/// Screen presenting the punctuation mastery grammar exercise.
 class PunctuationMasteryScreen extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The game subtype for tracking and analytics.
   final GameSubtype gameType;
+
+  /// Creates a [PunctuationMasteryScreen] widget.
   const PunctuationMasteryScreen({
     super.key,
     required this.level,

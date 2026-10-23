@@ -4,10 +4,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 /// Pill-shaped instruction label guiding the user to sort or match the word
 /// with its part of speech.
 class SpeechInstruction extends StatelessWidget {
+  /// The primary brand or theme color.
   final Color primaryColor;
+
+  /// The instruction text describing the objective.
   final String? instruction;
+
+  /// Whether compact typography and padding should be applied.
   final bool isCompact;
 
+  /// Creates a [SpeechInstruction] widget.
   const SpeechInstruction({
     super.key,
     required this.primaryColor,

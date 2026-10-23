@@ -3,18 +3,39 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter rendering orbital nodes and gravitational alignment vectors for pronoun resolution.
 class PronounResolutionGravityPainter extends CustomPainter {
+  /// Repaint notifier driving orbital rotation angles.
   final ValueNotifier<double> rotationNotifier;
+
+  /// The list of antecedent candidate options.
   final List<String> options;
+
+  /// The primary accent color for active paths and rings.
   final Color primaryColor;
+
+  /// Whether the user has submitted an answer for the current turn.
   final bool isAnswered;
+
+  /// Whether the selected answer is correct.
   final bool isCorrect;
+
+  /// The index of the selected target node.
   final int targetNode;
+
+  /// The index of the correct antecedent node.
   final int correctNode;
+
+  /// The pronoun string under examination.
   final String pronoun;
+
+  /// Whether dark theme styling is active.
   final bool isDark;
+
+  /// Whether compact layout constraints should be used.
   final bool isCompact;
 
+  /// Creates a [PronounResolutionGravityPainter] instance.
   PronounResolutionGravityPainter({
     required this.rotationNotifier,
     required this.options,
@@ -28,10 +49,12 @@ class PronounResolutionGravityPainter extends CustomPainter {
     this.isCompact = false,
   }) : super(repaint: rotationNotifier);
 
+  /// Calculates the central orbit point given [size] and [isCompact].
   static Offset getCenterPoint(Size size, bool isCompact) {
     return Offset(size.width / 2, size.height / 2 + (isCompact ? 10.h : 20.h));
   }
 
+  /// Calculates the orbital positions of candidate nodes given [size], [count], and [isCompact].
   static List<Offset> getNodePoints(Size size, int count, bool isCompact) {
     final centerPoint = getCenterPoint(size, isCompact);
     final double orbitRadius = isCompact ? 80.r : 120.r;

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Centered instruction chip for the grammar quest compass challenge.
 class GrammarQuestInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Custom instruction text, or `null` for fallback copy.
   final String? instruction;
 
+  /// Creates a [GrammarQuestInstruction] widget.
   const GrammarQuestInstruction({
     super.key,
     required this.primaryColor,

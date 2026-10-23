@@ -11,13 +11,25 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 ///
 /// Accessibility: labeled as a drop zone so screen readers can identify it.
 class SpeechVortex extends StatelessWidget {
+  /// The index position of this vortex (0–3).
   final int index;
+
+  /// The category label for the part of speech.
   final String label;
+
+  /// The accent color associated with this vortex category.
   final Color color;
+
+  /// The alignment position of the vortex on screen.
   final Alignment alignment;
+
+  /// Whether compact dimensions should be used for small screens.
   final bool isCompact;
+
+  /// Optional callback invoked when the vortex is tapped.
   final VoidCallback? onTap;
 
+  /// Creates a [SpeechVortex] widget.
   const SpeechVortex({
     super.key,
     required this.index,

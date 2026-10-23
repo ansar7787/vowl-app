@@ -7,13 +7,24 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 
+/// Interactive toggle switch component for toggling between active and passive voice.
 class VoiceSwapToggle extends StatelessWidget {
+  /// Whether passive voice mode is currently selected.
   final bool isPassive;
+
+  /// Whether the user has answered the current question.
   final bool isAnswered;
+
+  /// The primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling is active.
   final bool isDark;
+
+  /// Callback invoked when the voice mode toggle is changed.
   final ValueChanged<bool> onToggle;
 
+  /// Creates a [VoiceSwapToggle] widget.
   const VoiceSwapToggle({
     super.key,
     required this.isPassive,

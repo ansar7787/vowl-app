@@ -4,12 +4,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Action button used to submit and evaluate assembled sentences.
 class WordReorderCheckButton extends StatelessWidget {
+  /// Whether any words have been placed into the assembly area.
   final bool hasWords;
+
+  /// Whether dark theme styling is active.
   final bool isDark;
+
+  /// The primary theme accent color.
   final Color primaryColor;
+
+  /// Callback invoked when the check button is pressed.
   final VoidCallback onCheck;
 
+  /// Creates a [WordReorderCheckButton] widget.
   const WordReorderCheckButton({
     super.key,
     required this.hasWords,

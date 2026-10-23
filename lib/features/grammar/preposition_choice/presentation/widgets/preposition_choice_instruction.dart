@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner guiding users to trace or tap preposition paths.
 class PrepositionChoiceInstruction extends StatelessWidget {
+  /// The primary theme accent color.
   final Color primaryColor;
+
+  /// The instruction text describing the objective.
   final String? instruction;
 
+  /// Creates a [PrepositionChoiceInstruction] widget.
   const PrepositionChoiceInstruction({
     super.key,
     required this.primaryColor,

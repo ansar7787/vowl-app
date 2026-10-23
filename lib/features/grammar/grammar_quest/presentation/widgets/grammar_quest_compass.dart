@@ -6,16 +6,33 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_compass_components.dart';
 
+/// Interactive grammar compass enabling quadrant-based option selection with needle tracking.
 class GrammarQuestCompass extends StatefulWidget {
+  /// Quadrant options displayed around the compass dial.
   final List<String> options;
+
+  /// Index of the correct quadrant choice.
   final int correctAnswerIndex;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Evaluation outcome of the answer (`null` if pending).
   final bool? isCorrect;
+
+  /// Callback executed when a quadrant is selected.
   final Function(int index) onQuadrantSelect;
+
+  /// Whether compact visual styling should be applied.
   final bool isCompact;
 
+  /// Creates a [GrammarQuestCompass] widget.
   const GrammarQuestCompass({
     super.key,
     required this.options,

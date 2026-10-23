@@ -7,12 +7,22 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 /// Constrained to [maxWidth] so words fit comfortably without overflowing.
 /// Scaled dynamically via [FittedBox] so text never clips or shows ellipses.
 class SpeechDraggableWord extends StatelessWidget {
+  /// The word text to be displayed and dragged.
   final String word;
+
+  /// The primary accent color for styling.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Whether compact sizing should be used.
   final bool isCompact;
+
+  /// Whether the word chip is currently selected.
   final bool isSelected;
 
+  /// Creates a [SpeechDraggableWord] widget.
   const SpeechDraggableWord({
     super.key,
     required this.word,

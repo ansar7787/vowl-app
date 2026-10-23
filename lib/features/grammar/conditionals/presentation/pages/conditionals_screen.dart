@@ -16,9 +16,15 @@ import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 
+/// Screen host for Conditionals exercises, training zero, first, second, third, and mixed conditional structures.
 class ConditionalsScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [ConditionalsScreen] widget.
   const ConditionalsScreen({
     super.key,
     required this.level,

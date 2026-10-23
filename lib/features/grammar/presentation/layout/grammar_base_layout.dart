@@ -16,19 +16,42 @@ import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
+/// Scaffold shell providing background styling, header HUD, peeking mascot, and feedback drawers for grammar subgames.
 class GrammarBaseLayout extends StatelessWidget {
+  /// The specific grammar subtype.
   final GameSubtype gameType;
+
+  /// The active level index.
   final int level;
+
+  /// The question-specific child widget tree.
   final Widget child;
+
+  /// Whether the trial has been submitted.
   final bool isAnswered;
+
+  /// Evaluation outcome of the answer (`null` if unanswered).
   final bool? isCorrect;
+
+  /// Callback executed when tapping continue on the feedback drawer.
   final VoidCallback onContinue;
+
+  /// Callback executed when the hint button is pressed.
   final VoidCallback onHint;
+
+  /// Whether victory confetti should be displayed.
   final bool showConfetti;
+
+  /// Whether this is the final failure on the question (triggering mastery loop).
   final bool isFinalFailure;
+
+  /// Whether the content area should be wrapped in a scroll view.
   final bool useScrolling;
+
+  /// Whether default layout padding should be suppressed.
   final bool disablePadding;
 
+  /// Creates a [GrammarBaseLayout] widget.
   const GrammarBaseLayout({
     super.key,
     required this.gameType,

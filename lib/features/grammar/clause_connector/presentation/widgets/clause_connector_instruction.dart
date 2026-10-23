@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction chip orienting the learner to connect dependent or independent clauses.
 class ClauseConnectorInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Custom instruction text, or `null` for fallback copy.
   final String? instructionText;
 
+  /// Creates a [ClauseConnectorInstruction] widget.
   const ClauseConnectorInstruction({
     super.key,
     required this.primaryColor,

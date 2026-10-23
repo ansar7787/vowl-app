@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter rendering a futuristic pointer needle with crystalline energy core.
 class SentinelNeedlePainter extends CustomPainter {
+  /// Theme accent color.
   final Color color;
+
+  /// Whether glassmorphic and glowing shader effects should be drawn.
   final bool isGlass;
 
+  /// Creates a [SentinelNeedlePainter] with [color] and [isGlass] settings.
   SentinelNeedlePainter({required this.color, required this.isGlass});
 
   @override

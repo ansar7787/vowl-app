@@ -6,14 +6,28 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 /// Standard, professional card displaying Direct Speech on the front
 /// and flipping cleanly to Indirect Speech when answered.
 class DirectIndirectSpeechMirror extends StatelessWidget {
+  /// Flip animation rotation angle in radians.
   final double rotation;
+
+  /// Quoted direct speech sentence.
   final String directText;
+
+  /// Converted indirect reported speech sentence.
   final String indirectText;
+
+  /// Evaluation outcome of the answer (`null` if pending).
   final bool? isCorrect;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Whether compact visual styling should be applied.
   final bool isCompact;
 
+  /// Creates a [DirectIndirectSpeechMirror] widget.
   const DirectIndirectSpeechMirror({
     super.key,
     required this.rotation,

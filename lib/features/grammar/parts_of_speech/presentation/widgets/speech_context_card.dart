@@ -10,12 +10,22 @@ import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 /// the quest changes — without a key the animation only plays once on first
 /// build and is skipped for subsequent quests.
 class SpeechContextCard extends StatelessWidget {
+  /// The active grammar quest entity.
   final GrammarQuest quest;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether compact visual styling should be applied.
   final bool isCompact;
+
+  /// Optional horizontal layout margin override.
   final double? horizontalMargin;
 
+  /// Creates a [SpeechContextCard] widget.
   const SpeechContextCard({
     super.key,
     required this.quest,

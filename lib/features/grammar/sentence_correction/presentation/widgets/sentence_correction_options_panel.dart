@@ -4,15 +4,30 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Selection panel providing candidate corrections for a diagnosed sentence error.
 class SentenceCorrectionOptionsPanel extends StatelessWidget {
+  /// The list of candidate correction options.
   final List<String> options;
+
+  /// The currently selected correction option.
   final String? selectedOption;
+
+  /// Whether the question has already been answered.
   final bool isAnswered;
+
+  /// Whether dark theme styling is active.
   final bool isDark;
+
+  /// The primary accent color for buttons and borders.
   final Color primaryColor;
+
+  /// Callback invoked when a correction option is selected.
   final ValueChanged<String> onOptionSelect;
+
+  /// Callback invoked to confirm and submit the selection.
   final VoidCallback onConfirm;
 
+  /// Creates a [SentenceCorrectionOptionsPanel] widget.
   const SentenceCorrectionOptionsPanel({
     super.key,
     required this.options,

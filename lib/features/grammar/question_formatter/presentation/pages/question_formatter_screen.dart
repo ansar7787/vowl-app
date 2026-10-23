@@ -17,9 +17,15 @@ import 'package:vowl/features/grammar/question_formatter/presentation/widgets/qu
 import 'package:vowl/features/grammar/question_formatter/presentation/widgets/question_formatter_crank.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
+/// Screen presenting the question formatting grammar exercise.
 class QuestionFormatterScreen extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The game subtype for tracking and analytics.
   final GameSubtype gameType;
+
+  /// Creates a [QuestionFormatterScreen] widget.
   const QuestionFormatterScreen({
     super.key,
     required this.level,
