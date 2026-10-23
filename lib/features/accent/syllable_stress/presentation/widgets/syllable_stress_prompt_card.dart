@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
+/// Prompt card presenting the full vocabulary word under lexical stress analysis.
 class SyllableStressPromptCard extends StatelessWidget {
+  /// The target vocabulary word.
   final String word;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [SyllableStressPromptCard] widget.
   const SyllableStressPromptCard({
     super.key,
     required this.word,

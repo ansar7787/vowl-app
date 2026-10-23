@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Articulatory anatomical callout explaining tongue, lip, and teeth position for phoneme production.
 class MinimalPairsMouthDiagram extends StatelessWidget {
+  /// Articulation description note.
   final String? mouthPosition;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [MinimalPairsMouthDiagram] widget.
   const MinimalPairsMouthDiagram({
     super.key,
     required this.mouthPosition,

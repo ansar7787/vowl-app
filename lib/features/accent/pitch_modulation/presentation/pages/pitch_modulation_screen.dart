@@ -16,15 +16,30 @@ import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch
 import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch_modulation_dial_control.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Internal UI view state model for [PitchModulationScreen].
 class PitchModulationState {
+  /// Whether an option has been submitted for the active trial.
   final bool isAnswered;
+
+  /// Evaluation outcome of the answer (`null` if pending).
   final bool? isCorrect;
+
+  /// Whether victory confetti should be displayed.
   final bool showConfetti;
+
+  /// Angular rotation of the pitch fader dial.
   final double dialRotation;
+
+  /// Whether the user is dragging the dial.
   final bool isDragging;
+
+  /// Selected option index.
   final int? selectedIndex;
+
+  /// Whether the initial discrimination phase was passed.
   final bool isFirstStagePassed;
 
+  /// Creates a [PitchModulationState] instance.
   const PitchModulationState({
     this.isAnswered = false,
     this.isCorrect,
@@ -35,6 +50,7 @@ class PitchModulationState {
     this.isFirstStagePassed = false,
   });
 
+  /// Returns a copy of this state with updated fields.
   PitchModulationState copyWith({
     bool? isAnswered,
     bool? isCorrect,
@@ -60,9 +76,15 @@ class PitchModulationState {
   }
 }
 
+/// Screen host for Pitch Modulation exercises, exploring pitch changes and attitudinal nuances.
 class PitchModulationScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [PitchModulationScreen] widget.
   const PitchModulationScreen({
     super.key,
     required this.level,

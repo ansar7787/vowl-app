@@ -16,9 +16,15 @@ import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/cons
 import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_throat_indicator.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 
+/// Screen host for Consonant Clarity exercises, isolating voiced/unvoiced consonant contrasts.
 class ConsonantClarityScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [ConsonantClarityScreen] widget.
   const ConsonantClarityScreen({
     super.key,
     required this.level,

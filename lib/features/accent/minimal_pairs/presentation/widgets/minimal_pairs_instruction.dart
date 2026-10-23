@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner directing auditory discrimination between phonetically close minimal pair targets.
 class MinimalPairsInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Custom instruction text, or `null` for fallback copy.
   final String? instruction;
 
+  /// Creates a [MinimalPairsInstruction] widget.
   const MinimalPairsInstruction({
     super.key,
     required this.color,

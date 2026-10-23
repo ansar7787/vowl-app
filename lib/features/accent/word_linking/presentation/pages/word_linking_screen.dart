@@ -14,9 +14,15 @@ import 'package:vowl/features/accent/word_linking/presentation/widgets/word_link
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_sentence_field.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 
+/// Screen host for Word Linking exercises, discovering how fluent speakers link word boundaries.
 class WordLinkingScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [WordLinkingScreen] widget.
   const WordLinkingScreen({
     super.key,
     required this.level,

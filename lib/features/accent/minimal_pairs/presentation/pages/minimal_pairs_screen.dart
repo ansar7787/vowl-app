@@ -16,9 +16,15 @@ import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_
 import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_mouth_diagram.dart';
 
+/// Screen host for Minimal Pairs exercises, developing auditory discrimination between vowel and consonant contrasts.
 class MinimalPairsScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [MinimalPairsScreen] widget.
   const MinimalPairsScreen({
     super.key,
     required this.level,

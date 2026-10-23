@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner directing auditory shadowing and real-time echo repetition.
 class ShadowingChallengeInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Raw instruction prompt.
   final String instruction;
 
+  /// Creates a [ShadowingChallengeInstruction] widget.
   const ShadowingChallengeInstruction({
     super.key,
     required this.color,

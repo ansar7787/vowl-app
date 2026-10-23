@@ -46,31 +46,55 @@ typedef AccentErrorReporter =
 // AccentBloc
 // ---------------------------------------------------------------------------
 
+/// Business logic component managing gameplay state, life tracking, rewards, and audio cues for accent exercises.
 class AccentBloc extends Bloc<AccentEvent, AccentState> {
+  /// Use case for fetching accent quest data.
   final GetAccentQuest getQuest;
+
+  /// Use case for preloading upcoming accent quest batches.
   final PreloadAccentQuest preloadQuest;
+
+  /// Use case for clearing local quest cache.
   final ClearAccentQuestCache clearCache;
+
+  /// Use case for persisting user coin changes.
   final UpdateUserCoins updateUserCoins;
+
+  /// Use case for updating XP, streak, and progress metrics.
   final UpdateUserRewards updateUserRewards;
+
+  /// Use case for recording category-specific performance metrics.
   final UpdateCategoryStats updateCategoryStats;
+
+  /// Use case for unlocking progressive curriculum levels.
   final UpdateUnlockedLevel updateUnlockedLevel;
+
+  /// Use case for evaluating and unlocking achievement badges.
   final AwardBadge awardBadge;
+
+  /// Service managing sound effects and text-to-speech audio.
   final SoundService soundService;
+
+  /// Service managing physical tactile vibration feedback.
   final HapticService hapticService;
+
+  /// Use case handling hint deduction and validation.
   final UseHint useHint;
+
+  /// Network connectivity evaluator.
   final NetworkInfo networkInfo;
 
-  /// Optional: plug in your analytics SDK at the DI call-site.
+  /// Optional analytics telemetry callback dispatched upon key game lifecycle events.
   final AccentAnalyticsCallback? onAnalyticsEvent;
 
-  /// Optional: plug in your crash reporter at the DI call-site.
-  /// Named [errorReporter] (not `onError`) to avoid shadowing [BlocBase.onError].
+  /// Optional error reporter callback for logging non-fatal failures.
   final AccentErrorReporter? errorReporter;
 
   // Stored to pass into reward calls after level completion.
   String? _currentGameType;
   int? _currentLevel;
 
+  /// Creates an [AccentBloc] instance with all required domain use cases and device services.
   AccentBloc({
     required this.getQuest,
     required this.preloadQuest,

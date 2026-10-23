@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Prompt card displaying the target word undergoing intonational modulation.
 class PitchModulationPromptCard extends StatelessWidget {
+  /// Target vocabulary word.
   final String word;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [PitchModulationPromptCard] widget.
   const PitchModulationPromptCard({
     super.key,
     required this.word,

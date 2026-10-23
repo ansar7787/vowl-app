@@ -4,11 +4,18 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Pulsating audio speaker button enabling spoken phrase playback for melody analysis.
 class PitchPatternMatchPulseSpeaker extends StatelessWidget {
+  /// Spoken text to vocalize via TTS.
   final String text;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Callback executed when the speaker button is pressed.
   final Function(String) onPlayTts;
 
+  /// Creates a [PitchPatternMatchPulseSpeaker] widget.
   const PitchPatternMatchPulseSpeaker({
     super.key,
     required this.text,

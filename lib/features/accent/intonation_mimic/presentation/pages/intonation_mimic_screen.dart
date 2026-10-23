@@ -17,9 +17,15 @@ import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/inton
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_vertical_fader.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Screen host for Intonation Mimic exercises, training pitch trajectory awareness and tonal expression.
 class IntonationMimicScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates an [IntonationMimicScreen] widget.
   const IntonationMimicScreen({
     super.key,
     required this.level,

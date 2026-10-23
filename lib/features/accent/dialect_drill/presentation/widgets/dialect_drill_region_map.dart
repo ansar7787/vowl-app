@@ -4,11 +4,18 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Regional map badge showcasing the geographic dialect territory under study.
 class DialectDrillRegionMap extends StatelessWidget {
+  /// Name or country code of the dialect region.
   final String region;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [DialectDrillRegionMap] widget.
   const DialectDrillRegionMap({
     super.key,
     required this.region,

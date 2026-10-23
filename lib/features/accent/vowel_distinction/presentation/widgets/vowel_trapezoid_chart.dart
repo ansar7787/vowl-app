@@ -3,11 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// IPA vowel quadrilateral diagram plotting tongue height (high/mid/low) and backness (front/central/back).
 class VowelTrapezoidChart extends StatelessWidget {
+  /// Map specifying normalized tongue coordinate positions (e.g. `{'x': 0.2, 'y': 0.8}`).
   final Map<String, dynamic> vowelChart;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [VowelTrapezoidChart] widget.
   const VowelTrapezoidChart({
     super.key,
     required this.vowelChart,

@@ -16,9 +16,15 @@ import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllab
 import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_stress_drum_console.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Screen host for Syllable Stress exercises, identifying metrical beats and prominence in polysyllabic words.
 class SyllableStressScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [SyllableStressScreen] widget.
   const SyllableStressScreen({
     super.key,
     required this.level,

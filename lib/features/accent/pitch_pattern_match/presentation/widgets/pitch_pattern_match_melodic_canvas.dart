@@ -1,14 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Blueprint canvas rendering visual wave representations of target melodic pitch contours.
 class PitchPatternMatchMelodicCanvas extends StatelessWidget {
+  /// Sequence of pitch level points representing melody elevation.
   final List<int> pattern;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the animated audio wave preview is actively rendering.
   final bool isPreviewing;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Normalized audio wave progress (0.0 to 1.0).
   final double previewProgress;
 
+  /// Creates a [PitchPatternMatchMelodicCanvas] widget.
   const PitchPatternMatchMelodicCanvas({
     super.key,
     required this.pattern,

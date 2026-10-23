@@ -4,11 +4,18 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Pulsating audio speaker synthesizing acoustic vowel targets via TTS.
 class VowelDistinctionPulseSpeaker extends StatelessWidget {
+  /// Target word or vowel phoneme to vocalize.
   final String text;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Callback executed when the speaker button is pressed.
   final Function(String) onPlayTts;
 
+  /// Creates a [VowelDistinctionPulseSpeaker] widget.
   const VowelDistinctionPulseSpeaker({
     super.key,
     required this.text,

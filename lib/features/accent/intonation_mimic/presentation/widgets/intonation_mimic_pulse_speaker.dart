@@ -4,11 +4,18 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Animated pulsing audio button for previewing expressive pitch contours.
 class IntonationMimicPulseSpeaker extends StatelessWidget {
+  /// The phrase to vocalize with intonation.
   final String text;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Callback executed when the speaker button is pressed.
   final Function(String) onPlayTts;
 
+  /// Creates an [IntonationMimicPulseSpeaker] widget.
   const IntonationMimicPulseSpeaker({
     super.key,
     required this.text,

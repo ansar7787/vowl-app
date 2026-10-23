@@ -3,12 +3,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Anatomical indicator visualizing vocal cord vibration (voicing) and pulmonary airflow dynamics.
 class ConsonantClarityThroatIndicator extends StatelessWidget {
+  /// Vocal fold vibration classification (e.g., 'voiced' or 'unvoiced').
   final String voicing;
+
+  /// Manner of pulmonary airflow articulation (e.g., 'plosive', 'fricative').
   final String airflow;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [ConsonantClarityThroatIndicator] widget.
   const ConsonantClarityThroatIndicator({
     super.key,
     required this.voicing,

@@ -2,12 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Prompt card displaying the target utterance alongside pragmatic emotional nuance.
 class PitchPatternMatchPromptCard extends StatelessWidget {
+  /// Target sentence or utterance.
   final String word;
+
+  /// Optional emotion or communicative context cue.
   final String? emotionContext;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [PitchPatternMatchPromptCard] widget.
   const PitchPatternMatchPromptCard({
     super.key,
     required this.word,

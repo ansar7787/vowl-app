@@ -10,16 +10,31 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 import 'dialect_drill_transmission_tower.dart';
 import 'dialect_drill_data_probe_pin.dart';
 
+/// Interactive holographic console hosting audio sample playback and transmission tower options.
 class DialectDrillHologramConsole extends StatefulWidget {
+  /// The active accent quest entity.
   final AccentQuest quest;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Evaluation outcome of the answer (`null` if unanswered).
   final bool? isCorrect;
+
+  /// Callback executed to trigger target pronunciation audio playback.
   final VoidCallback onPlayTargetAudio;
+
+  /// Callback executed when the learner selects a dialect tower.
   final Function(int selectedIndex, int correctIndex, double maxWidth)
   onSubmitAnswer;
 
+  /// Creates a [DialectDrillHologramConsole] widget.
   const DialectDrillHologramConsole({
     super.key,
     required this.quest,

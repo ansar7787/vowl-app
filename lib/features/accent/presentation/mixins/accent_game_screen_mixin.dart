@@ -4,14 +4,17 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 
+/// Shared lifecycle and BLoC integration mixin for all accent subgame screens.
 mixin AccentGameScreenMixin<T extends StatefulWidget>
     on State<T>, GameScreenMixin<T> {
+  /// Initializes the accent game session by dispatching [FetchAccentQuests].
   void initAccentGame() {
     context.read<AccentBloc>().add(
       FetchAccentQuests(gameType: gameType, level: level),
     );
   }
 
+  /// Cleans up audio playback and releases resources upon screen disposal.
   void disposeAccentGame() {
     try {
       soundService.stopTts();
@@ -20,6 +23,7 @@ mixin AccentGameScreenMixin<T extends StatefulWidget>
     disposeGame();
   }
 
+  /// Condition filter determining when the BLoC listener should react to state transitions.
   bool accentListenWhen(AccentState prev, AccentState curr) {
     if (curr is AccentGameComplete && prev is! AccentGameComplete) return true;
     if (curr is AccentGameOver && prev is! AccentGameOver) return true;
@@ -42,6 +46,7 @@ mixin AccentGameScreenMixin<T extends StatefulWidget>
     return false;
   }
 
+  /// Handles incoming state transitions from [AccentBloc], updating HUD metrics and handling game completion.
   void onAccentStateChanged(BuildContext context, AccentState state) {
     if (state is AccentLoaded) {
       handleStateUpdate(

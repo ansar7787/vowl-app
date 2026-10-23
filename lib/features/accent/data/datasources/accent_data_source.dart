@@ -4,24 +4,33 @@ import 'package:vowl/core/error/exceptions.dart';
 import '../models/accent_quest_model.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 
+/// Contract defining remote and local data operations for accent quests.
 abstract class AccentDataSource {
+  /// Fetches a list of [AccentQuestModel] for the specified [gameType] and [level].
   Future<List<AccentQuestModel>> getAccentQuest({
     required GameSubtype gameType,
     required int level,
   });
 
+  /// Preloads the next batch of quests in the background for [gameType] starting near [currentLevel].
   Future<void> preloadNextBatch({
     required GameSubtype gameType,
     required int currentLevel,
   });
 
+  /// Clears in-memory and local caches of accent quests.
   Future<void> clearQuestCache();
 }
 
+/// Production implementation of [AccentDataSource] backed by local assets and [FirebaseFirestore].
 class AccentDataSourceImpl implements AccentDataSource {
+  /// Firestore instance used as fallback when local assets do not contain requested quests.
   final FirebaseFirestore firestore;
+
+  /// Asset quest service used as primary offline-first source.
   final AssetQuestService assetQuestService;
 
+  /// Creates an [AccentDataSourceImpl] with the required [firestore] and [assetQuestService].
   AccentDataSourceImpl({
     required this.firestore,
     required this.assetQuestService,

@@ -6,19 +6,42 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Interactive drone target card representing a single minimal pair phonetic choice.
 class MinimalPairsDroneOption extends StatelessWidget {
+  /// Option index.
   final int index;
+
+  /// Written word representation.
   final String word;
+
+  /// International Phonetic Alphabet (IPA) representation.
   final String ipa;
+
+  /// Index of the correct minimal pair option.
   final int correctIndex;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Selected drone option index, or `null`.
   final int? selectedDroneIndex;
+
+  /// Callback executed when the learner shoots/selects this drone target.
   final Function(int, int) onShoot;
+
+  /// Explicit card width constraint override.
   final double? cardWidth;
+
+  /// Explicit card height constraint override.
   final double? cardHeight;
 
+  /// Creates a [MinimalPairsDroneOption] widget.
   const MinimalPairsDroneOption({
     super.key,
     required this.index,

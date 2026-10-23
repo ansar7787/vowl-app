@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Instruction chip guiding the learner through consonant enunciation and articulation tasks.
 class ConsonantClarityInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Custom instruction text, or `null` to use default localization.
   final String? instruction;
 
+  /// Creates a [ConsonantClarityInstruction] widget.
   const ConsonantClarityInstruction({
     super.key,
     required this.primaryColor,

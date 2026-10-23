@@ -5,19 +5,42 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Vertical pitch fader slider allowing learners to manually modulate pitch elevation.
 class IntonationMimicVerticalFader extends StatelessWidget {
+  /// Option labels for intonation states.
   final List<String> options;
+
+  /// Index of the correct option.
   final int correctIndex;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Selected option index, or `null`.
   final int? selectedIndex;
+
+  /// Normalized vertical slider thumb height (0.0 to 1.0).
   final double sliderValue;
+
+  /// Index associated with the highest pitch register.
   final int topIndex;
+
+  /// Index associated with the lowest pitch register.
   final int bottomIndex;
+
+  /// Callback executed when an option choice is finalized.
   final Function(int, int) onSubmitChoice;
+
+  /// Callback executed while moving the fader slider.
   final Function(double, int) onSliderUpdate;
 
+  /// Creates an [IntonationMimicVerticalFader] widget.
   const IntonationMimicVerticalFader({
     super.key,
     required this.options,

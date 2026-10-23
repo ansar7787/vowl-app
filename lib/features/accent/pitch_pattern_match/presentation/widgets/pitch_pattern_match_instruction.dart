@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction pill directing learners to match spoken pitch contours.
 class PitchPatternMatchInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Raw instruction prompt.
   final String instruction;
 
+  /// Creates a [PitchPatternMatchInstruction] widget.
   const PitchPatternMatchInstruction({
     super.key,
     required this.color,

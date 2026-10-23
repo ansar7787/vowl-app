@@ -5,12 +5,21 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Animated data probe pin indicating target audio status and trial assessment feedback.
 class DialectDrillDataProbePin extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Evaluation outcome of the answer (`null` if unanswered).
   final bool? isCorrect;
+
+  /// Whether a pulsating highlight ring should be displayed.
   final bool hasTargetGlow;
 
+  /// Creates a [DialectDrillDataProbePin] widget.
   const DialectDrillDataProbePin({
     super.key,
     required this.color,

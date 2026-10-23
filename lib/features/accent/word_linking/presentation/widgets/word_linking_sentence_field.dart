@@ -5,16 +5,33 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Interactive sentence field presenting tappable linking nodes between neighboring words.
 class WordLinkingSentenceField extends StatefulWidget {
+  /// Words making up the sentence.
   final List<String> words;
+
+  /// String descriptor of the correct adjacent word pair that links.
   final String correctPair;
+
+  /// Phonological category of linking (e.g. consonant-to-vowel, intrusive 'r').
   final String? linkingType;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Index of the selected linking node between words.
   final int? selectedNodeIndex;
+
+  /// Callback executed when tapping a link node between words.
   final Function(int, String, List<String>) onNodeTap;
 
+  /// Creates a [WordLinkingSentenceField] widget.
   const WordLinkingSentenceField({
     super.key,
     required this.words,

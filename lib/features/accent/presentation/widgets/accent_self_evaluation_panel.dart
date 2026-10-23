@@ -3,12 +3,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speaking_self_evaluation_controls.dart';
 
+/// Interactive evaluation panel for oral repetition, comparing recorded speech against reference text.
 class AccentSelfEvaluationPanel extends StatelessWidget {
+  /// The target text the learner must speak.
   final String textToSpeak;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Whether a compact visual style should be rendered.
   final bool isCompact;
+
+  /// Callback executed when the learner evaluates their pronunciation.
   final void Function(bool isCorrect) onEvaluate;
 
+  /// Creates an [AccentSelfEvaluationPanel] widget.
   const AccentSelfEvaluationPanel({
     super.key,
     required this.textToSpeak,

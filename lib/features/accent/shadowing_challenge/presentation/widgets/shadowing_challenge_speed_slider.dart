@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Interactive slider adjusting the audio playback rate for comfortable shadowing practice.
 class ShadowingChallengeSpeedSlider extends StatelessWidget {
+  /// Current playback rate multiplier (e.g. 0.75x to 1.25x).
   final double speed;
+
+  /// Callback executed when the learner drags the speed slider.
   final ValueChanged<double> onChanged;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [ShadowingChallengeSpeedSlider] widget.
   const ShadowingChallengeSpeedSlider({
     super.key,
     required this.speed,

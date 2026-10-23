@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction pill guiding the learner through formant-based vowel discrimination.
 class VowelDistinctionInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Raw instruction prompt.
   final String instruction;
 
+  /// Creates a [VowelDistinctionInstruction] widget.
   const VowelDistinctionInstruction({
     super.key,
     required this.color,

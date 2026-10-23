@@ -3,12 +3,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Toggle pill allowing switching between natural conversational and enunciated clear speed.
 class SpeedVarianceSpeedToggle extends StatelessWidget {
+  /// Whether natural conversational speed is currently active (false for clear speed).
   final bool isNatural;
+
+  /// Callback executed when the learner toggles the speed mode.
   final ValueChanged<bool> onChanged;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [SpeedVarianceSpeedToggle] widget.
   const SpeedVarianceSpeedToggle({
     super.key,
     required this.isNatural,

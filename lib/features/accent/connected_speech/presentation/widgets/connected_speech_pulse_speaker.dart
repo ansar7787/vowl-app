@@ -4,12 +4,21 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Interactive pulsating speaker button to hear connected speech phrases aloud.
 class ConnectedSpeechPulseSpeaker extends StatelessWidget {
+  /// The sentence or phrase to synthesize via TTS.
   final String text;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Callback executed to trigger TTS playback.
   final Function(String) onPlayTts;
+
+  /// Whether a compact visual style should be rendered.
   final bool isCompact;
 
+  /// Creates a [ConnectedSpeechPulseSpeaker] widget.
   const ConnectedSpeechPulseSpeaker({
     super.key,
     required this.text,

@@ -5,15 +5,30 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Drum pad console allowing learners to tap the syllable possessing primary stress.
 class SyllableStressDrumConsole extends StatelessWidget {
+  /// Syllable tokens of the target word.
   final List<String> syllables;
+
+  /// Index of the syllable with primary lexical stress.
   final int correctIndex;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Selected drum pad index, or `null`.
   final int? selectedIndex;
+
+  /// Callback executed when the learner taps a drum pad.
   final Function(int, int) onPadTap;
 
+  /// Creates a [SyllableStressDrumConsole] widget.
   const SyllableStressDrumConsole({
     super.key,
     required this.syllables,

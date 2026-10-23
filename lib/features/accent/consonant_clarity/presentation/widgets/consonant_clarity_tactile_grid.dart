@@ -5,15 +5,30 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Tactile keycap grid for selecting among candidate consonant phonemes.
 class ConsonantClarityTactileGrid extends StatelessWidget {
+  /// Available consonant phoneme or word options.
   final List<String> options;
+
+  /// Index of the correct option.
   final int correctIndex;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Currently selected option index, or `null`.
   final int? selectedIndex;
+
+  /// Callback executed when the learner selects a keycap.
   final Function(int, int) onSubmitChoice;
 
+  /// Creates a [ConsonantClarityTactileGrid] widget.
   const ConsonantClarityTactileGrid({
     super.key,
     required this.options,

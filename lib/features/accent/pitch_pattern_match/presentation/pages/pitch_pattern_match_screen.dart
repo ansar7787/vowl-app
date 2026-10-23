@@ -17,9 +17,15 @@ import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pi
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_vertical_fader.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Screen host for Pitch Pattern Match exercises, aligning visual intonation curves with spoken audio.
 class PitchPatternMatchScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [PitchPatternMatchScreen] widget.
   const PitchPatternMatchScreen({
     super.key,
     required this.level,

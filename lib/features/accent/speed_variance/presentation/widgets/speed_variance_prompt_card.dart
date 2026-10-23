@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
+/// Prompt card displaying the target sentence tested across differing tempos.
 class SpeedVariancePromptCard extends StatelessWidget {
+  /// Target sentence or utterance.
   final String word;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [SpeedVariancePromptCard] widget.
   const SpeedVariancePromptCard({
     super.key,
     required this.word,

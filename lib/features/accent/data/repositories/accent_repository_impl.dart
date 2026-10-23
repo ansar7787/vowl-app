@@ -7,10 +7,15 @@ import '../../domain/entities/accent_quest.dart';
 import '../../domain/repositories/accent_repository.dart';
 import '../datasources/accent_data_source.dart';
 
+/// Production implementation of [AccentRepository] coordinating remote data access and network validation.
 class AccentRepositoryImpl implements AccentRepository {
+  /// Remote data source providing accent quests.
   final AccentDataSource remoteDataSource;
+
+  /// Network connectivity evaluator.
   final NetworkInfo networkInfo;
 
+  /// Creates an [AccentRepositoryImpl] with [remoteDataSource] and [networkInfo].
   AccentRepositoryImpl({
     required this.remoteDataSource,
     required this.networkInfo,

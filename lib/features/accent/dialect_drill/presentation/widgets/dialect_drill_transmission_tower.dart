@@ -5,19 +5,42 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Transmission tower card representing an individual dialect option choice.
 class DialectDrillTransmissionTower extends StatelessWidget {
+  /// Option index.
   final int index;
+
+  /// Option display label.
   final String label;
+
+  /// Maximum container layout width constraint.
   final double maxWidth;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether this tower is currently hovered or pressed.
   final bool isHovered;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Evaluation outcome of the answer (`null` if unanswered).
   final bool? isCorrect;
+
+  /// Index of the actively hovered tower, if any.
   final int? hoveredTowerIndex;
+
+  /// Explicit card width override.
   final double? cardWidth;
+
+  /// Explicit card height override.
   final double? cardHeight;
 
+  /// Creates a [DialectDrillTransmissionTower] widget.
   const DialectDrillTransmissionTower({
     super.key,
     required this.index,

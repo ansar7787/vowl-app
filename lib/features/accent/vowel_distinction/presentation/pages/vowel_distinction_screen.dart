@@ -17,9 +17,15 @@ import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowe
 import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_trapezoid_chart.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Screen host for Vowel Distinction exercises, refining acoustic awareness of subtle vowel formants.
 class VowelDistinctionScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [VowelDistinctionScreen] widget.
   const VowelDistinctionScreen({
     super.key,
     required this.level,

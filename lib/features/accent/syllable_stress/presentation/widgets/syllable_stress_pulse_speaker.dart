@@ -4,11 +4,18 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Pulsating audio speaker synthesizing acoustic prominence on stressed syllables.
 class SyllableStressPulseSpeaker extends StatelessWidget {
+  /// Word text to vocalize with stress via TTS.
   final String text;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Callback executed when tapping the speaker button.
   final Function(String) onPlayTts;
 
+  /// Creates a [SyllableStressPulseSpeaker] widget.
   const SyllableStressPulseSpeaker({
     super.key,
     required this.text,
