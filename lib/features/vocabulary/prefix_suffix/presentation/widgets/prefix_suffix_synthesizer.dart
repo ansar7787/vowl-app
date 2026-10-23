@@ -5,18 +5,39 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Interactive affix synthesis laboratory widget allowing dragging or tapping affixes into root word tracks.
 class PrefixSuffixSynthesizer extends StatefulWidget {
+  /// The base morphological root word.
   final String rootWord;
+
+  /// Candidate affix options available for attachment.
   final List<String> options;
+
+  /// The correct affix string expected by the quest.
   final String correctAnswer;
+
+  /// The synthesized full target word.
   final String? targetWord;
+
+  /// The currently selected or attached affix.
   final String? selectedAffix;
+
+  /// Affix currently highlighted by hint assistance.
   final String? hintedAffix;
+
+  /// Whether stage 1 (affix attachment) has been completed.
   final bool isFirstStagePassed;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// Callback executed when an affix option is selected or dropped into a slot.
   final Function(String, bool?) onAffixSelected;
 
+  /// Creates a [PrefixSuffixSynthesizer] widget.
   const PrefixSuffixSynthesizer({
     super.key,
     required this.rootWord,

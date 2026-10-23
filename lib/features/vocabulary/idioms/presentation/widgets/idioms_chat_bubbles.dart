@@ -4,11 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Pill-shaped system notification bubble displayed in the simulated chat conversation.
 class IdiomsSystemMessage extends StatelessWidget {
+  /// The informational system message text.
   final String text;
+
+  /// Theme accent color for text, border, and background tint.
   final Color color;
+
+  /// Optional leading icon preceding the message.
   final IconData? icon;
 
+  /// Creates an [IdiomsSystemMessage] badge.
   const IdiomsSystemMessage({
     super.key,
     required this.text,
@@ -60,11 +67,18 @@ class IdiomsSystemMessage extends StatelessWidget {
   }
 }
 
+/// Incoming chat message from the conversation partner presenting visual emoji clues for the idiom.
 class IdiomsStrangerMessage extends StatelessWidget {
+  /// Emoji sequence depicting the idiom.
   final String emojis;
+
+  /// Theme accent color for bubble borders and shadows.
   final Color color;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
 
+  /// Creates an [IdiomsStrangerMessage] bubble.
   const IdiomsStrangerMessage({
     super.key,
     required this.emojis,
@@ -120,11 +134,18 @@ class IdiomsStrangerMessage extends StatelessWidget {
   }
 }
 
+/// Text message from the dialogue partner providing a semantic hint or definition.
 class IdiomsStrangerTextMessage extends StatelessWidget {
+  /// Clue text content delivered by the partner.
   final String text;
+
+  /// Theme accent color for icons and borders.
   final Color color;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
 
+  /// Creates an [IdiomsStrangerTextMessage] bubble.
   const IdiomsStrangerTextMessage({
     super.key,
     required this.text,
@@ -202,12 +223,21 @@ class IdiomsStrangerTextMessage extends StatelessWidget {
   }
 }
 
+/// Outgoing chat message bubble reflecting the user's selected idiom answer.
 class IdiomsUserMessage extends StatelessWidget {
+  /// The user's submitted idiom response.
   final String text;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether the user's answer was validated as correct, or `null` if pending.
   final bool? isCorrect;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
 
+  /// Creates an [IdiomsUserMessage] bubble.
   const IdiomsUserMessage({
     super.key,
     required this.text,

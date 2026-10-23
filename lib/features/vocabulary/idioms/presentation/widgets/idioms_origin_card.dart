@@ -5,12 +5,21 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Pedagogical card revealing the cultural history, etymology, and literal vs figurative meaning of an idiom.
 class IdiomsOriginCard extends StatelessWidget {
+  /// Historical genesis or cultural background story of the idiom.
   final String? origin;
+
+  /// Comparison highlighting figurative usage against literal interpretations.
   final String? literalVsFigurative;
+
+  /// Example sentence contextualizing the idiom.
   final String? contextSentence;
+
+  /// Theme accent color for cards, icons, and borders.
   final Color color;
 
+  /// Creates an [IdiomsOriginCard] widget.
   const IdiomsOriginCard({
     super.key,
     this.origin,

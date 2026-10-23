@@ -16,21 +16,48 @@ import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_family_tree.dart';
 import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
 
+/// Standard layout wrapper for vocabulary game screens providing uniform header, mascot, and feedback mechanics.
 class VocabularyBaseLayout extends StatelessWidget {
+  /// The active vocabulary game subtype.
   final GameSubtype gameType;
+
+  /// The current 1-based difficulty level.
   final int level;
+
+  /// The interactive core gameplay body widget.
   final Widget child;
+
+  /// Whether the current question has been answered.
   final bool isAnswered;
+
+  /// Whether the user's submitted answer was correct, or `null` if unanswered.
   final bool? isCorrect;
+
+  /// Whether the user has exhausted all retry attempts for the current quest.
   final bool isFinalFailure;
+
+  /// Callback executed when tapping the continue button in the feedback card.
   final VoidCallback onContinue;
+
+  /// Optional callback invoked when requesting a pedagogical hint.
   final VoidCallback? onHint;
+
+  /// Whether to trigger celebratory particle confetti.
   final bool showConfetti;
+
+  /// Whether the gameplay body should scroll vertically.
   final bool useScrolling;
+
+  /// Whether to omit default screen-edge padding for custom canvas widgets.
   final bool disablePadding;
+
+  /// Custom hint override string for specific game modes.
   final String? customHintText;
+
+  /// Whether this game follows a two-stage interactive cycle.
   final bool hasStage2;
 
+  /// Creates a [VocabularyBaseLayout] instance.
   const VocabularyBaseLayout({
     super.key,
     required this.gameType,

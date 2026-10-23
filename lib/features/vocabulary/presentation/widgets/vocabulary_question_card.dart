@@ -5,11 +5,18 @@ import 'package:vowl/features/vocabulary/presentation/themes/vocab_level_theme.d
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 
+/// Prominent card displaying the vocabulary question, instruction, target word, and context sentence.
 class VocabularyQuestionCard extends StatelessWidget {
+  /// The active vocabulary quest data entity.
   final VocabularyQuest quest;
+
+  /// Optional active theme configuration.
   final VocabLevelTheme? theme;
+
+  /// Whether dark mode is enabled.
   final bool isDark;
 
+  /// Creates a [VocabularyQuestionCard].
   const VocabularyQuestionCard({
     super.key,
     required this.quest,

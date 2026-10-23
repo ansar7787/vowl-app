@@ -1,7 +1,9 @@
 import '../../domain/entities/vocabulary_quest.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 
+/// Data transfer model for vocabulary quests supporting serialization and deserialization.
 class VocabularyQuestModel extends VocabularyQuest {
+  /// Creates a [VocabularyQuestModel] instance with full curriculum properties.
   const VocabularyQuestModel({
     required super.id,
     super.type,
@@ -50,6 +52,7 @@ class VocabularyQuestModel extends VocabularyQuest {
     super.registerLevel,
   });
 
+  /// Deserializes a [VocabularyQuestModel] from raw [map] data and assigned [id].
   factory VocabularyQuestModel.fromJson(Map<String, dynamic> map, String id) {
     final subtype = GameSubtype.values.firstWhere(
       (s) => s.name == map['subtype'],
@@ -185,6 +188,7 @@ class VocabularyQuestModel extends VocabularyQuest {
     return null;
   }
 
+  /// Serializes this quest instance into a map representation.
   Map<String, dynamic> toMap() {
     return {
       'type': type?.name,

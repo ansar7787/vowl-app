@@ -21,9 +21,15 @@ import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_orig
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
 
+/// Interactive chat-style idioms game screen where learners decipher figurative idioms from emoji and dialogue clues.
 class IdiomsScreen extends StatefulWidget {
+  /// The active curriculum difficulty level.
   final int level;
+
+  /// The active game subtype.
   final GameSubtype gameType;
+
+  /// Creates an [IdiomsScreen] instance.
   const IdiomsScreen({
     super.key,
     required this.level,

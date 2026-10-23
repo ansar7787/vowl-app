@@ -3,14 +3,27 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Visual containment bin into which topical words are categorized with plasma fluid fill animations.
 class TopicContainmentBin extends StatelessWidget {
+  /// Index position of this containment bin.
   final int index;
+
+  /// Category label displayed on the bin header tag.
   final String label;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// List of sorted words currently held in this bin.
   final List<String> words;
+
+  /// Whether hint assistance is currently illuminating this bin.
   final bool isHinted;
 
+  /// Creates a [TopicContainmentBin] widget.
   const TopicContainmentBin({
     super.key,
     required this.index,

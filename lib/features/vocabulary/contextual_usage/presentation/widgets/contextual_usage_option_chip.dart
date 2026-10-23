@@ -2,15 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Selectable option chip representing a candidate vocabulary choice for the contextual sentence.
 class ContextualUsageOptionChip extends StatelessWidget {
+  /// Word text rendered on the option chip.
   final String text;
+
+  /// Theme accent color for chip styling and border highlights.
   final Color color;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// Whether this chip is currently selected by the learner.
   final bool isSelected;
+
+  /// Whether the selection was validated as correct, or `null` if pending.
   final bool? isCorrect;
+
+  /// Callback executed when the chip is tapped.
   final VoidCallback onTap;
+
+  /// Optional fixed width constraint.
   final double? width;
 
+  /// Creates a [ContextualUsageOptionChip] widget.
   const ContextualUsageOptionChip({
     super.key,
     required this.text,

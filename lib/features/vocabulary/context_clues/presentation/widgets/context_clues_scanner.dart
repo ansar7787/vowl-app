@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/vocabulary/context_clues/presentation/widgets/context_clues_painters.dart';
 
+/// Detective magnifying UV scanner lens widget with rotating glass overlays and crosshairs.
 class ContextCluesScanner extends StatelessWidget {
+  /// Theme accent color for the lens rim, glow, and crosshairs.
   final Color color;
 
+  /// Creates a [ContextCluesScanner] widget.
   const ContextCluesScanner({super.key, required this.color});
 
   @override

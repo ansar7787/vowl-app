@@ -21,9 +21,15 @@ import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/syn
 import 'package:vowl/core/presentation/game_mechanics/arranging/context_sentence_builder.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Interactive cosmic warp gate game screen where learners slingshot synonym word shards into the portal.
 class SynonymSearchScreen extends StatefulWidget {
+  /// The active curriculum difficulty level.
   final int level;
+
+  /// The active game subtype.
   final GameSubtype gameType;
+
+  /// Creates a [SynonymSearchScreen] instance.
   const SynonymSearchScreen({
     super.key,
     required this.level,

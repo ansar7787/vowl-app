@@ -3,12 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Draggable and flickable vocabulary word chip styled with dynamic gesture physics.
 class TopicDraggableWord extends StatefulWidget {
+  /// Word text rendered on the card.
   final String word;
+
+  /// Callback executed when the user flicks or drags the word toward a bin.
   final Function(double velocity, double dropOffset) onFlick;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
 
+  /// Creates a [TopicDraggableWord] widget.
   const TopicDraggableWord({
     super.key,
     required this.word,

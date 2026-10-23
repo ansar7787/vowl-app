@@ -2,21 +2,48 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Circular interactive bubble representing candidate collocate choices with floating and explosion animations.
 class CollocationOptionBubble extends StatelessWidget {
+  /// Candidate collocate word string.
   final String text;
+
+  /// The correct collocate partner string.
   final String correct;
+
+  /// Theme accent color for bubble borders and glow highlights.
   final Color color;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// Whether the quest trial has been answered.
   final bool isAnswered;
+
+  /// Whether the user's selected choice was correct, or `null` if unanswered.
   final bool? isCorrect;
+
+  /// Currently selected option string, if any.
   final String? selectedOption;
+
+  /// Whether the trial has concluded in a final failure.
   final bool isFinalFailure;
+
+  /// Whether stage 1 (collocate identification) has been successfully passed.
   final bool isFirstStagePassed;
+
+  /// Whether the user has activated a hint for this question.
   final bool isHintUsed;
+
+  /// Position index of this option bubble for staggered floating effects.
   final int index;
+
+  /// Whether compact geometry is enforced for small devices.
   final bool isCompact;
+
+  /// Callback executed when the user taps this option bubble.
   final VoidCallback onTap;
 
+  /// Creates a [CollocationOptionBubble] widget.
   const CollocationOptionBubble({
     super.key,
     required this.text,

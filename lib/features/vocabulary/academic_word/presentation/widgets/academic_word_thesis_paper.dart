@@ -6,16 +6,34 @@ import 'package:vowl/features/vocabulary/academic_word/academic_word_constants.d
 
 /// The thesis paper card displaying the fill-in-the-blank passage.
 class AcademicWordThesisPaper extends StatelessWidget {
+  /// The thesis passage text containing the blank drop marker.
   final String passage;
+
+  /// Theme accent color for card borders and glowing highlights.
   final Color color;
+
+  /// GlobalKey used to calculate the drop target slot geometry in global coordinates.
   final GlobalKey slotKey;
+
+  /// Whether the player has submitted an answer for this trial.
   final bool isAnswered;
+
+  /// Whether the submitted answer was correct, or `null` if pending.
   final bool? isCorrect;
+
+  /// The correct vocabulary term expected in the passage slot.
   final String? correctAnswer;
+
+  /// The user's typed or dropped response attempt.
   final String? userSpelledWord;
+
+  /// Whether the answer slot is currently focused or selected.
   final bool isSlotSelected;
+
+  /// Callback invoked when tapping the drop slot directly to trigger typing mode.
   final VoidCallback onSlotTap;
 
+  /// Creates an [AcademicWordThesisPaper] widget.
   const AcademicWordThesisPaper({
     super.key,
     required this.passage,

@@ -23,9 +23,15 @@ class _LocalPalette {
   static const Color color00e5ff = Color(0xFF00E5FF);
 }
 
+/// Interactive antonym search game screen where learners match target words with polar opposites.
 class AntonymSearchScreen extends StatefulWidget {
+  /// The active curriculum difficulty level.
   final int level;
+
+  /// The active game subtype.
   final GameSubtype gameType;
+
+  /// Creates an [AntonymSearchScreen] instance.
   const AntonymSearchScreen({
     super.key,
     required this.level,

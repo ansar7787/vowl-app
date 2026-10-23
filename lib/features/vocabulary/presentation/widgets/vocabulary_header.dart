@@ -20,19 +20,43 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 ///
 /// [SoundService] is resolved once in [initState] — not on every [build] call.
 class VocabularyHeader extends StatefulWidget {
+  /// The current state emitted by the [VocabularyBloc].
   final VocabularyState state;
+
+  /// The active 1-based difficulty level.
   final int level;
+
+  /// Fractional completion ratio between 0.0 and 1.0.
   final double progress;
+
+  /// Remaining user hearts or lives.
   final int lives;
+
+  /// Active theme styling for the level.
   final VocabLevelTheme theme;
+
+  /// Whether the user interface is rendering in dark mode.
   final bool isDark;
+
+  /// Whether the active question has been answered.
   final bool isAnswered;
+
+  /// The active vocabulary game subtype.
   final GameSubtype gameType;
+
+  /// Callback invoked when exiting the session.
   final VoidCallback onExit;
+
+  /// Callback invoked when opening the briefing dialog.
   final VoidCallback onBriefingShow;
+
+  /// Optional callback invoked when requesting a pedagogical hint.
   final VoidCallback? onHint;
+
+  /// Optional custom hint text override.
   final String? customHintText;
 
+  /// Creates a [VocabularyHeader] widget.
   const VocabularyHeader({
     super.key,
     required this.state,

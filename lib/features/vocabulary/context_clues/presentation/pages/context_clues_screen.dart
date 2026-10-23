@@ -22,9 +22,15 @@ import '../widgets/context_clues_evidence_sentence.dart';
 import '../widgets/context_clues_scanner.dart';
 import '../widgets/context_clues_evidence_tags.dart';
 
+/// Interactive detective-style vocabulary game screen where learners scan sentences for context clues.
 class ContextCluesScreen extends StatefulWidget {
+  /// The active curriculum difficulty level.
   final int level;
+
+  /// The active game subtype.
   final GameSubtype gameType;
+
+  /// Creates a [ContextCluesScreen] instance.
   const ContextCluesScreen({
     super.key,
     required this.level,

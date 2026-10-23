@@ -2,8 +2,12 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Background grid painter with low opacity lines calibrated for dark/light themes.
 class FluxGridPainter extends CustomPainter {
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// Creates a [FluxGridPainter] with theme brightness indicator.
   FluxGridPainter(this.isDark);
   @override
   void paint(Canvas canvas, Size size) {
@@ -22,8 +26,12 @@ class FluxGridPainter extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
+/// Custom painter that draws concentric circular orbital rings around the core word.
 class CorePainter extends CustomPainter {
+  /// Ring stroke color.
   final Color color;
+
+  /// Creates a [CorePainter] with the specified ring [color].
   CorePainter(this.color);
   @override
   void paint(Canvas canvas, Size size) {
@@ -43,10 +51,18 @@ class CorePainter extends CustomPainter {
   }
 }
 
+/// Custom painter rendering animated plasma lightning arcs between fused shards and the core.
 class PlasmaArcPainter extends CustomPainter {
+  /// The origin point of the arc.
   final Offset start;
+
+  /// The destination point of the arc.
   final Offset end;
+
+  /// Lightning bolt color.
   final Color color;
+
+  /// Creates a [PlasmaArcPainter] from [start] to [end] with [color].
   PlasmaArcPainter(this.start, this.end, this.color);
   @override
   void paint(Canvas canvas, Size size) {

@@ -40,6 +40,7 @@ class FlashcardController extends ChangeNotifier {
     }
   }
 
+  /// Resets controller state for a new flashcard trial or retry attempt.
   void reset(bool retry) {
     _hintTimer?.cancel();
     isAnswered = false;
@@ -52,12 +53,14 @@ class FlashcardController extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Triggers level-complete celebration confetti.
   void completeGame() {
     if (showConfetti || _isDisposed) return;
     showConfetti = true;
     notifyListeners();
   }
 
+  /// Handles horizontal card dragging gestures and updates card orientation.
   void onHorizontalDragUpdate(DragUpdateDetails details) {
     if (isAnswered || _isDisposed) return;
     if (isRetrying) {
@@ -74,6 +77,7 @@ class FlashcardController extends ChangeNotifier {
     }
   }
 
+  /// Evaluates swipe velocity and displacement upon release against the drag [threshold].
   void onHorizontalDragEnd(DragEndDetails details, double threshold) {
     if (isAnswered || _isDisposed) return;
     if (dragOffset.value.dx.abs() > threshold) {
@@ -84,6 +88,7 @@ class FlashcardController extends ChangeNotifier {
     }
   }
 
+  /// Submits whether the learner mastered or missed the vocabulary card.
   void submitAnswer(bool mastered) {
     if (isAnswered || _isDisposed) return;
     _hintTimer?.cancel();
@@ -96,6 +101,7 @@ class FlashcardController extends ChangeNotifier {
     onSubmitAnswer(mastered);
   }
 
+  /// Reveals the definition card face temporarily as a pedagogical hint.
   void requestHint() {
     if (isFlipped.value || isAnswered || _isDisposed) return;
     isFlipped.value = true;
@@ -111,6 +117,7 @@ class FlashcardController extends ChangeNotifier {
     });
   }
 
+  /// Flips the card between prompt and definition faces.
   void flipCard() {
     if (isAnswered || _isDisposed) return;
     _hapticService.light();

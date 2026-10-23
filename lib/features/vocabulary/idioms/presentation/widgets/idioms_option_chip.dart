@@ -3,16 +3,33 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Tappable idiom option choice chip styled with dynamic correctness state feedback.
 class IdiomsOptionChip extends StatelessWidget {
+  /// Candidate idiom text string.
   final String text;
+
+  /// The correct idiom expected for this puzzle.
   final String correct;
+
+  /// Theme accent color for borders and selection tints.
   final Color color;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// Whether the user has answered the question.
   final bool isAnswered;
+
+  /// Whether the selected option was correct, or `null` if pending.
   final bool? isCorrect;
+
+  /// The candidate option string selected by the user.
   final String? selectedOption;
+
+  /// Callback invoked when tapping the chip.
   final VoidCallback onTap;
 
+  /// Creates an [IdiomsOptionChip] widget.
   const IdiomsOptionChip({
     super.key,
     required this.text,

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+/// Painter rendering a subtle graph paper grid pattern across case file folders.
 class PaperGridPainter extends CustomPainter {
+  /// Whether dark theme is enabled.
   final bool isDark;
 
+  /// Creates a [PaperGridPainter] with theme brightness indicator.
   PaperGridPainter({this.isDark = false});
 
   @override
@@ -25,8 +28,12 @@ class PaperGridPainter extends CustomPainter {
       oldDelegate.isDark != isDark;
 }
 
+/// Painter drawing forensic scanner corner brackets and a center crosshair target dot.
 class ScannerCrosshairPainter extends CustomPainter {
+  /// Color of the crosshair brackets and center dot.
   final Color color;
+
+  /// Creates a [ScannerCrosshairPainter] with the specified line [color].
   ScannerCrosshairPainter(this.color);
 
   @override

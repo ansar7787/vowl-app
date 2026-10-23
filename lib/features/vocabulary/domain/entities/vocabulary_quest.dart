@@ -1,30 +1,95 @@
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
+/// Domain entity representing a vocabulary quest or challenge within the vocabulary learning system.
 class VocabularyQuest extends GameQuest {
+  /// The target vocabulary word or lexical item.
   final String? word;
+
+  /// The definition or semantic explanation of the target word.
   final String? definition;
+
+  /// Primary synonym for the target word.
   final String? synonym;
+
+  /// Primary antonym for the target word.
   final String? antonym;
+
+  /// Contextual sentence illustrating proper grammatical and semantic usage.
   final String? contextSentence;
+
+  /// Prompt or instructional query posed to the learner.
   final String? prompt;
+
+  /// Reading passage containing the lexical item in rich context.
   final String? passage;
+
+  /// Collection of valid synonyms for the target word.
   final List<String>? synonyms;
+
+  /// Collection of valid antonyms for the target word.
   final List<String>? antonyms;
+
+  /// Concrete usage example highlighting collocation or register.
   final String? usageExample;
+
+  /// Explicit explanation detailing subtle nuances between near-synonyms.
   final String? nuanceDifference;
+
+  /// Ordered scale representing intensity, formality, or connotation spectrum.
   final List<String>? gradientScale;
+
+  /// Semantic classification of context clues (e.g., contrast, definition, example).
   final String? clueType;
+
+  /// Specific words within the passage serving as contextual clues.
   final List<String>? evidenceWords;
+
+  /// Comparison elucidating figurative idiom versus literal interpretation.
   final String? literalVsFigurative;
+
+  /// Etymological history, cultural genesis, or figurative origin of an idiom.
   final String? origin;
+
+  /// Scholarly domain or academic discipline where this lexical item predominates.
   final String? academicField;
+
+  /// Common word partnerships or habitual co-occurrences.
   final List<String>? collocations;
+
+  /// Semantically or thematically related lexical items.
   final List<String>? relatedWords;
+
+  /// Morphological variants forming the derivational word family.
   final List<String>? familyTree;
+
+  /// Detailed analysis dissecting morphemic, grammatical, or semantic roots.
   final String? meaningBreakdown;
+
+  /// Erroneous or unnatural collocations presented as distractors.
   final List<String>? wrongCollocations;
+
+  /// Formality rating or register classification index.
   final int? registerLevel;
 
+  /// Morphological root word upon which affixes are applied.
+  final String? rootWord;
+
+  /// Bound morpheme prefixed to the base word.
+  final String? prefix;
+
+  /// Bound morpheme suffixed to the base word.
+  final String? suffix;
+
+  /// Thematic containment categories or categorical classification bins.
+  final List<String>? topicBuckets;
+
+  /// Graphical emoji symbol visually representing the topic domain.
+  final String? topicEmoji;
+
+  /// Informational fact or trivia pertaining to the vocabulary topic.
+  final String? topicFact;
+
+  /// Creates a [VocabularyQuest] entity.
   const VocabularyQuest({
     required super.id,
     super.type,
@@ -73,20 +138,17 @@ class VocabularyQuest extends GameQuest {
     this.registerLevel,
   });
 
-  final String? rootWord;
-  final String? prefix;
-  final String? suffix;
-  final List<String>? topicBuckets;
-  final String? topicEmoji;
-  final String? topicFact;
-
   @override
   String? get sentence => contextSentence ?? passage;
   @override
   String? get question => instruction;
   @override
   String? get targetWord => word;
+
+  /// Illustrative contextual sentence or instructional explanation.
   String? get example => contextSentence ?? explanation;
+
+  /// Lexical definition of the quest's target word.
   String? get meaning => definition;
 
   @override

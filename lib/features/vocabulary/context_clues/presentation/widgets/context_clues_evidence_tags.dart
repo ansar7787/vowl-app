@@ -4,16 +4,33 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 
+/// Grid of selectable candidate option cards presented as evidence tags.
 class ContextCluesEvidenceTags extends StatelessWidget {
+  /// List of candidate word choices.
   final List<String> options;
+
+  /// The correct target word expected by the trial.
   final String correct;
+
+  /// Theme accent color for cards and borders.
   final Color color;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Whether the selected option was correct, or `null` if pending.
   final bool? isCorrect;
+
+  /// The option string selected by the user.
   final String? selectedOption;
+
+  /// Whether the user has exhausted all retry attempts.
   final bool isFinalFailure;
+
+  /// Callback invoked when an option tag is tapped.
   final Function(String) onOptionSelected;
 
+  /// Creates a [ContextCluesEvidenceTags] widget.
   const ContextCluesEvidenceTags({
     super.key,
     required this.options,

@@ -13,11 +13,19 @@ import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart'
 /// Reacts to game state: happy on correct / completion, worried on low lives,
 /// thinking on wrong answers, neutral otherwise.
 class VocabularyPeekingMascot extends StatelessWidget {
+  /// Current state of the vocabulary bloc.
   final VocabularyState state;
+
+  /// Remaining lives count for emotion computation.
   final int lives;
+
+  /// Whether the user answered correctly, or `null` if unanswered.
   final bool? isCorrect;
+
+  /// Whether an answer has been submitted for the active quest.
   final bool isAnswered;
 
+  /// Creates a [VocabularyPeekingMascot] widget.
   const VocabularyPeekingMascot({
     super.key,
     required this.state,

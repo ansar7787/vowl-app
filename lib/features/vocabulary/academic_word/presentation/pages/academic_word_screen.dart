@@ -25,10 +25,15 @@ import 'package:vowl/core/utils/instruction_helper.dart';
 // Public screen widget
 // ─────────────────────────────────────────────────────────────────────────────
 
+/// Interactive academic vocabulary screen where learners drag academic word shards into scholarly passages.
 class AcademicWordScreen extends StatefulWidget {
+  /// The active curriculum difficulty level.
   final int level;
+
+  /// The active game subtype.
   final GameSubtype gameType;
 
+  /// Creates an [AcademicWordScreen] instance.
   const AcademicWordScreen({
     super.key,
     required this.level,

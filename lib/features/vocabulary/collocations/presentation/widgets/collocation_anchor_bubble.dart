@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Centered floating anchor bubble displaying the base word in collocation challenges.
 class CollocationAnchorBubble extends StatelessWidget {
+  /// Anchor word string rendered prominently in the bubble.
   final String text;
+
+  /// Background color styling the anchor bubble.
   final Color color;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
 
+  /// Creates a [CollocationAnchorBubble] widget.
   const CollocationAnchorBubble({
     super.key,
     required this.text,

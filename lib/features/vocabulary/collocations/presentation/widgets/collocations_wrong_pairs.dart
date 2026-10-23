@@ -4,10 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// Warning panel highlighting unnatural or incorrect collocations to prevent negative language transfer.
 class CollocationsWrongPairs extends StatelessWidget {
+  /// Unnatural or incorrect collocation partnerships presented as counter-examples.
   final List<String> wrongCollocations;
+
+  /// Theme accent color for card borders and warning icons.
   final Color color;
 
+  /// Creates a [CollocationsWrongPairs] widget.
   const CollocationsWrongPairs({
     super.key,
     required this.wrongCollocations,

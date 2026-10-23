@@ -3,10 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// Side-by-side pedagogical card contrasting the literal verb meaning with its idiomatic phrasal meaning.
 class PhrasalVerbsLiteralComparison extends StatelessWidget {
+  /// Multiline explanation contrasting literal versus figurative semantics.
   final String literalVsFigurative;
+
+  /// Theme accent color for borders and figurative chips.
   final Color color;
 
+  /// Creates a [PhrasalVerbsLiteralComparison] widget.
   const PhrasalVerbsLiteralComparison({
     super.key,
     required this.literalVsFigurative,

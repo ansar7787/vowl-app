@@ -2,8 +2,12 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Cosmic grid canvas painter for the cosmic warp background.
 class CosmicGridPainter extends CustomPainter {
+  /// Grid line stroke color.
   final Color color;
+
+  /// Creates a [CosmicGridPainter] with the specified [color].
   CosmicGridPainter(this.color);
   @override
   void paint(Canvas canvas, Size size) {
@@ -23,9 +27,15 @@ class CosmicGridPainter extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
+/// Particle trail painter illustrating trajectory lines behind dragged shards.
 class TrailPainter extends CustomPainter {
+  /// Ordered point history of the drag gesture.
   final List<Offset> points;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Creates a [TrailPainter] tracking [points] with [color].
   TrailPainter(this.points, this.color);
   @override
   void paint(Canvas canvas, Size size) {
@@ -55,8 +65,12 @@ class TrailPainter extends CustomPainter {
   }
 }
 
+/// Rotating circular vortex painter depicting the warp portal core.
 class VortexPainter extends CustomPainter {
+  /// Portal line stroke color.
   final Color color;
+
+  /// Creates a [VortexPainter] with the specified line [color].
   VortexPainter(this.color);
   @override
   void paint(Canvas canvas, Size size) {
@@ -85,8 +99,12 @@ class VortexPainter extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
+/// Geometric circuit and constellation pattern painter for sci-fi card borders.
 class TechPatternPainter extends CustomPainter {
+  /// Line stroke color.
   final Color color;
+
+  /// Creates a [TechPatternPainter] with the specified line [color].
   TechPatternPainter(this.color);
   @override
   void paint(Canvas canvas, Size size) {

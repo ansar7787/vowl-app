@@ -17,10 +17,15 @@ import 'package:vowl/core/utils/locale_service.dart';
 
 import '../controllers/flashcard_controller.dart';
 
+/// Interactive flashcard review screen supporting 3D card flips, swipes, and TTS pronunciation.
 class FlashcardsScreen extends StatefulWidget {
+  /// The active curriculum difficulty level.
   final int level;
+
+  /// The active game subtype.
   final GameSubtype gameType;
 
+  /// Creates a [FlashcardsScreen] instance.
   const FlashcardsScreen({
     super.key,
     required this.level,

@@ -5,12 +5,21 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Card displaying a comparison nuance spectrum between the target word and matched synonym.
 class SynonymNuanceScale extends StatelessWidget {
+  /// The base target vocabulary word.
   final String targetWord;
+
+  /// The matched synonym candidate word.
   final String synonymWord;
+
+  /// Pedagogical explanation detailing subtle semantic nuance differences.
   final String explanation;
+
+  /// Primary theme accent color for borders, badges, and glows.
   final Color primaryColor;
 
+  /// Creates a [SynonymNuanceScale] widget.
   const SynonymNuanceScale({
     super.key,
     required this.targetWord,

@@ -22,9 +22,15 @@ import '../widgets/topic_batch_counter.dart';
 import '../widgets/topic_draggable_core.dart';
 import '../controllers/topic_vocab_controller.dart';
 
+/// Interactive topic categorization game screen where learners flick words into matching categorical containment bins.
 class TopicVocabScreen extends StatefulWidget {
+  /// The active curriculum difficulty level.
   final int level;
+
+  /// The active game subtype.
   final GameSubtype gameType;
+
+  /// Creates a [TopicVocabScreen] instance.
   const TopicVocabScreen({
     super.key,
     required this.level,

@@ -1,16 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Interactive slide track along which affixes are dragged to inject into base roots.
 class MorphInjectionRail extends StatefulWidget {
+  /// Index position of this injection rail.
   final int index;
+
+  /// Affix text string rendered on the slider handle.
   final String suffix;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// Whether user interaction on this rail is currently blocked.
   final bool isBlocked;
+
+  /// Callback executed when the affix reaches the reaction threshold.
   final Function(String) onMorph;
+
+  /// Callback executed when hovering over the active injection zone.
   final Function(int?) onHover;
+
+  /// Whether this rail represents a prefix rather than a suffix.
   final bool? isPrefix;
 
+  /// Creates a [MorphInjectionRail] widget.
   const MorphInjectionRail({
     super.key,
     required this.index,

@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 /// Always wrapped in a [RepaintBoundary] by the parent.
 /// [shouldRepaint] compares color so dark/light mode toggles repaint correctly.
 class GridPainter extends CustomPainter {
+  /// Color of the grid lines.
   final Color color;
+
+  /// Creates a [GridPainter] with the specified line [color].
   const GridPainter(this.color);
 
   static const double _step = 40.0;

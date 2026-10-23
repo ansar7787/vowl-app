@@ -5,32 +5,58 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
+/// Controller coordinating topic categorization gestures, batch sorting queues, and bin containment state.
 class TopicVocabController extends ChangeNotifier {
   final HapticService _hapticService;
   final SoundService _soundService;
+
+  /// Callback executed to report trial answers to the parent game.
   final void Function(bool isCorrect, {GameQuest? quest, String? userAnswer})
   onSubmitAnswer;
 
+  /// Current word index within the active sorting batch.
   int currentWordIndex = 0;
+
+  /// Whether the batch sorting trial has been evaluated.
   bool isAnswered = false;
+
+  /// Whether the user passed the batch trial correctly.
   bool? isCorrect;
+
+  /// Whether celebration confetti is currently enabled.
   bool showConfetti = false;
+
+  /// Whether phase 1 sorting has concluded.
   bool isFirstStagePassed = false;
+
+  /// Whether a pedagogical hint peek is active.
   bool isHintActive = false;
 
+  /// Shuffled word queue for the current sorting trial.
   List<String> shuffledOptions = [];
+
+  /// User choice history records.
   final List<Map<String, String>> userChoices = [];
+
+  /// Map recording which words currently occupy each topic containment bin.
   Map<int, List<String>> wordsInBins = {};
   final Map<String, String> _expectedAnswers = {};
 
+  /// The word currently animating across the screen towards a bin.
   String? flickedWord;
+
+  /// Target bin index receiving the flicked word.
   int? flickTarget;
+
+  /// Starting pixel offset of the flick animation.
   double? flickStartOffset;
 
+  /// The active vocabulary quest item.
   VocabularyQuest? currentQuest;
   bool _isDisposed = false;
   Timer? _flickTimer;
 
+  /// Creates a [TopicVocabController] instance with [hapticService] and [soundService].
   TopicVocabController({
     required HapticService hapticService,
     required SoundService soundService,

@@ -9,13 +9,24 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
+/// Front-facing flashcard view displaying prompt clues, category icons, and flip affordances.
 class FlashcardSwipeFront extends StatefulWidget {
+  /// The active vocabulary quest item.
   final VocabularyQuest quest;
+
+  /// Theme accent color for cards and glow effects.
   final Color color;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// Card layout width constraint.
   final double width;
+
+  /// Card layout height constraint.
   final double height;
 
+  /// Creates a [FlashcardSwipeFront] widget.
   const FlashcardSwipeFront({
     super.key,
     required this.quest,
