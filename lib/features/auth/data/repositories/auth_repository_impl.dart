@@ -242,31 +242,37 @@ class AuthRepositoryImpl
       final firebaseUser = _firebaseAuth.currentUser;
       if (firebaseUser == null) return const Right(null);
 
-      // 1. Try local cache first for instant offline response
+      // 1. Online-first with fast timeout: fetch authoritative fresh profile from Firestore
+      try {
+        final doc = await _firestore
+            .collection('users')
+            .doc(firebaseUser.uid)
+            .get()
+            .timeout(const Duration(seconds: 3));
+
+        if (doc.exists && doc.data() != null) {
+          try {
+            final user = UserModel.fromMap(
+              doc.data()!,
+            ).copyWith(isEmailVerified: firebaseUser.emailVerified);
+            await _localDataSource.cacheUser(user);
+            return Right(user);
+          } catch (e, stack) {
+            _log('AuthRepository: getCurrentUser parse error: $e\n$stack');
+          }
+        }
+      } catch (e) {
+        _log('AuthRepository: Remote getCurrentUser failed or timed out: $e');
+      }
+
+      // 2. Offline fallback: load cached user profile from persistent disk storage
       final cached = await _localDataSource.getCachedUser();
       if (cached != null && cached.id == firebaseUser.uid) {
         return Right(
-          cached.copyWith(isEmailVerified: firebaseUser.emailVerified || cached.isEmailVerified),
+          cached.copyWith(
+            isEmailVerified: firebaseUser.emailVerified || cached.isEmailVerified,
+          ),
         );
-      }
-
-      // 2. Fetch from Firestore (cache-or-server)
-      final doc = await _firestore
-          .collection('users')
-          .doc(firebaseUser.uid)
-          .get();
-
-      if (doc.exists && doc.data() != null) {
-        try {
-          final user = UserModel.fromMap(
-            doc.data()!,
-          ).copyWith(isEmailVerified: firebaseUser.emailVerified);
-          await _localDataSource.cacheUser(user);
-          return Right(user);
-        } catch (e, stack) {
-          _log('AuthRepository: getCurrentUser parse error: $e\n$stack');
-          return Right(_minimalUserFrom(firebaseUser));
-        }
       }
 
       // Firestore document missing — provision it and return the new entity.

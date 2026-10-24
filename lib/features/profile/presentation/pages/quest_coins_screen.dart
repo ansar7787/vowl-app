@@ -225,8 +225,10 @@ class VowlCoinsScreen extends StatelessWidget {
                                         context.push(AppRouter.streakRoute),
                                   ),
                                 ),
-                                const AdRewardCard(margin: EdgeInsets.zero),
-                                const HintAdCard(margin: EdgeInsets.zero),
+                                if (!user.isPremium) ...[
+                                  const AdRewardCard(margin: EdgeInsets.zero),
+                                  const HintAdCard(margin: EdgeInsets.zero),
+                                ],
                               ],
                             ),
                             SizedBox(height: 32.h),
