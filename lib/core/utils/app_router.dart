@@ -236,7 +236,7 @@ class AppRouter {
                   .difference(currentUser.metadata.lastSignInTime!)
                   .inSeconds
                   .abs() <
-              5;
+              60;
 
       if (isNewUser) {
         final name = currentUser.displayName ?? 'Traveler';

@@ -15,6 +15,7 @@ import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
 import 'package:vowl/features/vocabulary/domain/usecases/get_vocabulary_quests.dart';
+import 'package:vowl/features/profile/presentation/bloc/trophy_room_cubit.dart';
 
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_event.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_state.dart';
@@ -309,9 +310,10 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
         updateCategoryStats(
           UpdateCategoryStatsParams(categoryId: gameType, isCorrect: true),
         ).catchError(_swallow),
-        awardBadge(
-          VocabularyRewardConstants.masteryBadgeId,
-        ).catchError(_swallow),
+        if (TrophyRoomCubit.getMilestoneBadge('vocabulary', level) != null)
+          awardBadge(
+            TrophyRoomCubit.getMilestoneBadge('vocabulary', level)!,
+          ).catchError(_swallow),
       ], eagerError: false);
     }
   }

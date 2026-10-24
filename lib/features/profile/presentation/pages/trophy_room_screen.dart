@@ -688,7 +688,8 @@ class _TrophyRoomView extends StatelessWidget {
     required bool isLocked,
     required bool isLegendary,
   }) {
-    final parts = badgeId.split('_');
+    final canonical = TrophyRoomCubit.canonicalizeBadgeId(badgeId);
+    final parts = canonical.split('_');
     if (parts.length >= 2) {
       final tier = parts[0].toUpperCase();
       final category = parts.sublist(1).join(' ').toUpperCase();

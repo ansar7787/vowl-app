@@ -17,6 +17,7 @@ import 'listening_event.dart';
 import 'listening_state.dart';
 import 'listening_analytics.dart';
 import '../../../../core/presentation/bloc/reward_retry_mixin.dart';
+import 'package:vowl/features/profile/presentation/bloc/trophy_room_cubit.dart';
 
 // ── Tuneable constants ────────────────────────────────────────────────────────
 
@@ -26,7 +27,6 @@ const int _kXpReward = 5;
 const int _kCoinReward = 10;
 const int _kWrongBeforeFinal = 2;
 const int _kMaxSaveRetries = 3;
-const String _kListeningBadge = 'listening_master';
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -370,12 +370,18 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState>
           }
           return const Right<Failure, void>(null);
         });
-        awardBadge(_kListeningBadge).catchError((e, stack) {
-          if (kDebugMode) {
-            debugPrint('[ListeningBloc] Badge failed: $e\n$stack');
-          }
-          return const Right<Failure, void>(null);
-        });
+        final milestoneBadge = TrophyRoomCubit.getMilestoneBadge(
+          'listening',
+          level,
+        );
+        if (milestoneBadge != null) {
+          awardBadge(milestoneBadge).catchError((e, stack) {
+            if (kDebugMode) {
+              debugPrint('[ListeningBloc] Badge failed: $e\n$stack');
+            }
+            return const Right<Failure, void>(null);
+          });
+        }
       });
     }
   }

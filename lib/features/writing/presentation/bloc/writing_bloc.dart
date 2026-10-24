@@ -17,6 +17,7 @@ import '../../../../features/auth/domain/usecases/award_badge.dart';
 import '../../../../features/writing/domain/usecases/get_writing_quest.dart';
 import 'writing_event.dart';
 import 'writing_state.dart';
+import 'package:vowl/features/profile/presentation/bloc/trophy_room_cubit.dart';
 
 // ---------------------------------------------------------------------------
 // Writing Feature — BLoC
@@ -60,7 +61,6 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
   // ---------------------------------------------------------------------------
   static const int _rewardXp = 5;
   static const int _rewardCoins = 10;
-  static const String _writingBadgeId = 'writing_master';
   static const int _maxQuestsPerLevel = 3;
   bool _isCompletingLevel = false;
   static const int _wrongAnswerThreshold = 2;
@@ -363,9 +363,15 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
             ),
           ).catchError((_) => const Right<Failure, void>(null));
 
-          awardBadge(
-            _writingBadgeId,
-          ).catchError((_) => const Right<Failure, void>(null));
+          final milestoneBadge = TrophyRoomCubit.getMilestoneBadge(
+            'writing',
+            s.level,
+          );
+          if (milestoneBadge != null) {
+            awardBadge(
+              milestoneBadge,
+            ).catchError((_) => const Right<Failure, void>(null));
+          }
         })
         .catchError((_) {})
         .whenComplete(() {

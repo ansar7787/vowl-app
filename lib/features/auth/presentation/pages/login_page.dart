@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -89,10 +90,15 @@ class _LoginViewState extends State<LoginView> {
           listener: (context, state) {
             if (state.isSuccess) {
               context.read<AuthBloc>().add(const AuthReloadUser());
-              // Do nothing. We rely on GoRouter's automatic redirect (refreshListenable)
-              // which evaluates _redirect in app_router.dart when AuthBloc completes its
-              // backend synchronization. This ensures the LoadingOverlay remains perfectly
-              // visible without flashing the login form during the transition.
+              if (state.isNewUser) {
+                final user = sl.isRegistered<FirebaseAuth>()
+                    ? sl<FirebaseAuth>().currentUser
+                    : null;
+                final name = user?.displayName ?? 'Traveler';
+                context.go(
+                  '${AppRouter.hatchingRoute}?name=${Uri.encodeComponent(name)}',
+                );
+              }
             }
             if (state.errorMessage != null) {
               // 10/10 UX: Intentionally mute the error if the user cancelled the flow.

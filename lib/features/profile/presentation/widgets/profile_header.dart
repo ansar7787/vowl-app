@@ -27,6 +27,9 @@ class ProfileHeader extends StatelessWidget {
   /// before the Firestore user-stream round-trip completes.
   final String? immediatePhotoUrl;
 
+  /// Whether an avatar upload is currently in progress.
+  final bool isUploading;
+
   /// Creates a [ProfileHeader].
   const ProfileHeader({
     super.key,
@@ -34,6 +37,7 @@ class ProfileHeader extends StatelessWidget {
     required this.onEditName,
     required this.onEditPhoto,
     this.immediatePhotoUrl,
+    this.isUploading = false,
   });
 
   /// Returns a human-readable rank title based on the user's level.
@@ -149,28 +153,57 @@ class ProfileHeader extends StatelessWidget {
                                 : AppColors.slate100,
                           ),
                           child: ClipOval(
-                            child: (immediatePhotoUrl ?? user.photoUrl) != null
-                                ? ((immediatePhotoUrl ?? user.photoUrl)!
-                                          .startsWith('http')
-                                      ? ShimmerImage(
-                                          imageUrl:
-                                              (immediatePhotoUrl ??
-                                              user.photoUrl)!,
-                                        )
-                                      : Image.file(
-                                          File(
-                                            (immediatePhotoUrl ??
-                                                user.photoUrl)!,
+                            child: SizedBox(
+                              width: 118.r,
+                              height: 118.r,
+                              child: Stack(
+                                fit: StackFit.expand,
+                                children: [
+                                  (immediatePhotoUrl ?? user.photoUrl) != null
+                                      ? ((immediatePhotoUrl ?? user.photoUrl)!
+                                                .startsWith('http')
+                                            ? ShimmerImage(
+                                                imageUrl:
+                                                    (immediatePhotoUrl ??
+                                                    user.photoUrl)!,
+                                                width: 118.r,
+                                                height: 118.r,
+                                                fit: BoxFit.cover,
+                                              )
+                                            : Image.file(
+                                                File(
+                                                  (immediatePhotoUrl ??
+                                                      user.photoUrl)!,
+                                                ),
+                                                fit: BoxFit.cover,
+                                                width: 118.r,
+                                                height: 118.r,
+                                              ))
+                                      : Center(
+                                          child: Icon(
+                                            Icons.person_rounded,
+                                            color: AppColors.slate400,
+                                            size: 60.r,
                                           ),
-                                          fit: BoxFit.cover,
-                                          width: 118.r,
-                                          height: 118.r,
-                                        ))
-                                : Icon(
-                                    Icons.person_rounded,
-                                    color: AppColors.slate400,
-                                    size: 60.r,
-                                  ),
+                                        ),
+                                  if (isUploading)
+                                    Container(
+                                      color: Colors.black.withValues(
+                                        alpha: 0.55,
+                                      ),
+                                      child: const Center(
+                                        child: CircularProgressIndicator(
+                                          strokeWidth: 3.0,
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                                Colors.white,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -344,65 +377,55 @@ class ProfileHeader extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 8.h),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: Row(
+        // Premium User Pill (Line 1)
+        if (isPremium) ...[
+          SizedBox(height: 6.h),
+          Row(
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              if (isPremium) ...[
-                Icon(
-                  Icons.verified_rounded,
+              Icon(
+                Icons.verified_rounded,
+                color: AppColors.amber500,
+                size: 15.r,
+              ),
+              SizedBox(width: 4.w),
+              Text(
+                context.tr(
+                  'profile.premium_member_badge',
+                  fallback: 'PREMIUM MEMBER',
+                ),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
                   color: AppColors.amber500,
-                  size: 16.r,
-                ),
-                SizedBox(width: 4.w),
-                AutoSizeText(
-                  context.tr(
-                    'profile.premium_member_badge',
-                    fallback: 'PREMIUM MEMBER',
-                  ),
-                  maxLines: 1,
-                  minFontSize: 6,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    color: AppColors.amber500,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: 1,
-                  ),
-                ),
-                SizedBox(width: 8.w),
-                Container(
-                  width: 4.r,
-                  height: 4.r,
-                  decoration: BoxDecoration(
-                    color: isDark ? Colors.white24 : AppColors.slate300,
-                    shape: BoxShape.circle,
-                  ),
-                ),
-                SizedBox(width: 8.w),
-              ],
-              // RESPONSIVENESS FIX: the email can be long; Flexible +
-              // ellipsis keeps this row from overflowing horizontally on
-              // small screens instead of clipping past the edge.
-              Flexible(
-                child: Text(
-                  user.email,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    color: isDark ? Colors.white60 : AppColors.slate500,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 1,
                 ),
               ),
             ],
           ),
-        ),
+        ],
+        // Email Text (Line 2) - Cleanly scaled, never clipped or ellipses
+        if (user.email.isNotEmpty) ...[
+          SizedBox(height: isPremium ? 4.h : 6.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                user.email,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 13.sp,
+                  color: isDark ? Colors.white60 : AppColors.slate500,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+        ],
       ],
     );
   }

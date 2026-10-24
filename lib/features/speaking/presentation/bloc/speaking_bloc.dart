@@ -18,6 +18,7 @@ import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/hint_utility.dart';
 import 'speaking_event.dart';
 import 'speaking_state.dart';
+import 'package:vowl/features/profile/presentation/bloc/trophy_room_cubit.dart';
 
 export 'speaking_event.dart';
 export 'speaking_state.dart';
@@ -36,9 +37,6 @@ const int _kMaxQueueLength = _kMaxQuestsPerLevel * 2;
 const int _kWrongCountThreshold = 2;
 const int _kDefaultXp = 5;
 const int _kDefaultCoins = 10;
-
-// : Move badge IDs to a shared BadgeConstants class.
-const String _kSpeakingMasterBadge = 'speaking_master';
 
 // =============================================================================
 // SpeakingBloc
@@ -338,18 +336,24 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
             );
             return const Right<Failure, void>(null);
           });
-          awardBadge(_kSpeakingMasterBadge).catchError((
-            Object e,
-            StackTrace st,
-          ) {
-            _logger.error(
-              'Secondary persistence (badge) failed',
-              error: e,
-              stackTrace: st,
-              tag: 'SpeakingBloc',
-            );
-            return const Right<Failure, void>(null);
-          });
+          final milestoneBadge = TrophyRoomCubit.getMilestoneBadge(
+            'speaking',
+            s.level,
+          );
+          if (milestoneBadge != null) {
+            awardBadge(milestoneBadge).catchError((
+              Object e,
+              StackTrace st,
+            ) {
+              _logger.error(
+                'Secondary persistence (badge) failed',
+                error: e,
+                stackTrace: st,
+                tag: 'SpeakingBloc',
+              );
+              return const Right<Failure, void>(null);
+            });
+          }
         })
         .catchError((Object e, StackTrace st) {
           _logger.error(
