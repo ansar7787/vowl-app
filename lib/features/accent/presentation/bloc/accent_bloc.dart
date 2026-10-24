@@ -19,6 +19,7 @@ import 'package:vowl/core/network/network_info.dart';
 
 import 'accent_event.dart';
 import 'accent_state.dart';
+import 'package:vowl/features/profile/presentation/bloc/trophy_room_cubit.dart';
 
 // Re-export so callers that `import accent_bloc.dart` get everything.
 export 'accent_event.dart';
@@ -323,13 +324,19 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
                 errorReporter?.call(e, stack);
                 return const Right<Failure, void>(null);
               });
-              awardBadge(AccentGameConstants.accentMasterBadge).catchError((
-                e,
-                stack,
-              ) {
-                errorReporter?.call(e, stack);
-                return const Right<Failure, void>(null);
-              });
+              final milestoneBadge = TrophyRoomCubit.getMilestoneBadge(
+                'accent',
+                _currentLevel!,
+              );
+              if (milestoneBadge != null) {
+                awardBadge(milestoneBadge).catchError((
+                  e,
+                  stack,
+                ) {
+                  errorReporter?.call(e, stack);
+                  return const Right<Failure, void>(null);
+                });
+              }
             })
             .catchError((e, stack) {
               errorReporter?.call(e, stack);

@@ -91,7 +91,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   slivers: [
                     SliverAppBar(
-                      expandedHeight: 250.h,
+                      expandedHeight: 260.h,
                       collapsedHeight: 80.h,
                       pinned: true,
                       backgroundColor: Colors.transparent,
@@ -101,7 +101,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       flexibleSpace: LayoutBuilder(
                         builder: (context, constraints) {
                           // Calculate collapse progress for smooth transition
-                          final expandedHeight = 250.h;
+                          final expandedHeight = 260.h;
                           final collapsedHeight = 80.h;
                           final currentHeight = constraints.biggest.height;
                           final collapseProgress =
@@ -137,12 +137,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             >(
                                               buildWhen: (prev, curr) =>
                                                   prev.photoUrl !=
-                                                  curr.photoUrl,
+                                                  curr.photoUrl ||
+                                                  prev.isLoading !=
+                                                  curr.isLoading,
                                               builder: (context, profileState) {
                                                 return ProfileHeader(
                                                   user: user,
                                                   immediatePhotoUrl:
                                                       profileState.photoUrl,
+                                                  isUploading:
+                                                      profileState.isLoading,
                                                   onEditName: () =>
                                                       _showEditNameSheet(
                                                         context,

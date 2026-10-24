@@ -18,6 +18,7 @@ import '../../domain/entities/roleplay_quest.dart';
 import '../../domain/usecases/preload_roleplay_quests.dart';
 import 'roleplay_event.dart';
 import 'roleplay_state.dart';
+import 'package:vowl/features/profile/presentation/bloc/trophy_room_cubit.dart';
 
 /// BLoC for the Roleplay feature.
 ///
@@ -307,9 +308,16 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
                   isCorrect: true,
                 ),
               ).catchError((_) => const Right<Failure, void>(null));
-              awardBadge(
-                kRoleplayBadgeId,
-              ).catchError((_) => const Right<Failure, void>(null));
+
+              final milestoneBadge = TrophyRoomCubit.getMilestoneBadge(
+                'roleplay',
+                s.level,
+              );
+              if (milestoneBadge != null) {
+                awardBadge(
+                  milestoneBadge,
+                ).catchError((_) => const Right<Failure, void>(null));
+              }
             },
           );
         })

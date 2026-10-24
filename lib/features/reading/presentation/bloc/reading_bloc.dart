@@ -18,6 +18,7 @@ import '../../../../features/auth/domain/usecases/update_user_coins.dart';
 import '../../../../features/auth/domain/usecases/award_badge.dart';
 import 'reading_event.dart';
 import 'reading_state.dart';
+import 'package:vowl/features/profile/presentation/bloc/trophy_room_cubit.dart';
 
 // Re-export so existing `import 'reading_bloc.dart'` call-sites resolve events
 // and states without any changes.
@@ -359,9 +360,10 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
           isCorrect: true,
         ),
       ).catchError((_) => const Right<Failure, void>(null)),
-      awardBadge(
-        'reading_master',
-      ).catchError((_) => const Right<Failure, void>(null)),
+      if (TrophyRoomCubit.getMilestoneBadge('reading', level) != null)
+        awardBadge(
+          TrophyRoomCubit.getMilestoneBadge('reading', level)!,
+        ).catchError((_) => const Right<Failure, void>(null)),
     ], eagerError: false);
   }
 }

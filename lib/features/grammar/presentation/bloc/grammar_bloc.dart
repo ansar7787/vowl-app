@@ -16,6 +16,7 @@ import '../../../auth/domain/usecases/award_badge.dart';
 import '../../../auth/domain/usecases/use_hint.dart';
 import '../../../../core/utils/haptic_service.dart';
 import '../constants/grammar_constants.dart';
+import 'package:vowl/features/profile/presentation/bloc/trophy_room_cubit.dart';
 
 import 'grammar_event.dart';
 import 'grammar_state.dart';
@@ -288,12 +289,18 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
                 return const Right<Failure, void>(null);
               })
               .then((_) {
-                awardBadge('grammar_master').catchError((e, st) {
-                  if (kDebugMode) {
-                    debugPrint('[GrammarBloc] Persistence error: $e\n$st');
-                  }
-                  return const Right<Failure, void>(null);
-                });
+                final milestoneBadge = TrophyRoomCubit.getMilestoneBadge(
+                  'grammar',
+                  _currentLevel!,
+                );
+                if (milestoneBadge != null) {
+                  awardBadge(milestoneBadge).catchError((e, st) {
+                    if (kDebugMode) {
+                      debugPrint('[GrammarBloc] Persistence error: $e\n$st');
+                    }
+                    return const Right<Failure, void>(null);
+                  });
+                }
               });
         });
   }

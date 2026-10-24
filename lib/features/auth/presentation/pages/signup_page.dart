@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/gestures.dart';
@@ -136,6 +137,15 @@ class _SignUpViewState extends State<SignUpView> {
           listener: (context, state) {
             if (state.isSuccess) {
               context.read<AuthBloc>().add(const AuthReloadUser());
+              if (state.isNewUser) {
+                final user = sl.isRegistered<FirebaseAuth>()
+                    ? sl<FirebaseAuth>().currentUser
+                    : null;
+                final name = user?.displayName ?? 'Traveler';
+                context.go(
+                  '${AppRouter.hatchingRoute}?name=${Uri.encodeComponent(name)}',
+                );
+              }
             }
             if (state.errorMessage != null) {
               // 10/10 UX: Intentionally mute the error if the user cancelled the flow.

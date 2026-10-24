@@ -37,13 +37,17 @@ class TrophyRoomState {
 
   /// Factory constructing the initial trophy state from earned badge IDs.
   factory TrophyRoomState.initial(List<String> earnedBadges) {
+    final canonicalEarned = earnedBadges
+        .map(TrophyRoomCubit.canonicalizeBadgeId)
+        .toList();
+
     return TrophyRoomState(
-      allEarnedBadges: earnedBadges,
-      filteredEarnedBadges: earnedBadges
+      allEarnedBadges: canonicalEarned,
+      filteredEarnedBadges: canonicalEarned
           .where((b) => !TrophyRoomCubit.isLegendary(b))
           .toList(),
       filteredLockedBadges: _calculateLocked(
-        earnedBadges,
+        canonicalEarned,
         TrophyFilter.standard,
       ),
       currentFilter: TrophyFilter.standard,
@@ -71,8 +75,11 @@ class TrophyRoomState {
     List<String> earned,
     TrophyFilter filter,
   ) {
+    final earnedCanonicalSet = earned
+        .map(TrophyRoomCubit.canonicalizeBadgeId)
+        .toSet();
     final unearned = TrophyRoomCubit.allAppBadges
-        .where((b) => !earned.contains(b))
+        .where((b) => !earnedCanonicalSet.contains(b))
         .toList();
     if (filter == TrophyFilter.legendary) {
       return unearned.where((b) => TrophyRoomCubit.isLegendary(b)).toList();
@@ -144,10 +151,45 @@ class TrophyRoomCubit extends Cubit<TrophyRoomState> {
     );
   }
 
+  /// Canonicalizes a badge ID to its primary registry key representation
+  /// (e.g. 'vocabulary_master' -> 'master_vocabulary').
+  static String canonicalizeBadgeId(String badgeId) {
+    final lower = badgeId.toLowerCase().trim();
+    final parts = lower.split('_');
+    if (parts.length == 2 && parts[1] == 'master') {
+      return 'master_${parts[0]}';
+    }
+    return lower;
+  }
+
   /// Returns whether a given [badgeId] corresponds to a legendary badge.
   static bool isLegendary(String badgeId) {
-    return badgeId.contains('master') ||
-        badgeId.contains('legend') ||
-        badgeId.contains('100');
+    final canonical = canonicalizeBadgeId(badgeId);
+    if (canonical.startsWith('novice_') ||
+        canonical.startsWith('scholar_') ||
+        canonical.startsWith('expert_')) {
+      return false;
+    }
+    return canonical.startsWith('master_') ||
+        canonical.contains('legend') ||
+        canonical.contains('100');
+  }
+
+  /// Returns the achievement badge ID earned for completing [level] in [category],
+  /// or null if the level does not trigger a milestone badge.
+  ///
+  /// Milestones:
+  /// - Level 1: `first_blood` (First level completion milestone)
+  /// - Level 5: `novice_<category>` (Novice rank)
+  /// - Level 25: `scholar_<category>` (Scholar rank)
+  /// - Level 100: `expert_<category>` (Expert rank)
+  /// - Level 200: `master_<category>` (Legendary Master grand milestone)
+  static String? getMilestoneBadge(String category, int level) {
+    if (level == 1) return 'first_blood';
+    if (level == 5) return 'novice_$category';
+    if (level == 25) return 'scholar_$category';
+    if (level == 100) return 'expert_$category';
+    if (level >= 200) return 'master_$category';
+    return null;
   }
 }
