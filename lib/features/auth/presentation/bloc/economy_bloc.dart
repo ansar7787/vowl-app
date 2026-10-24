@@ -620,8 +620,18 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     _log('EconomyBloc: Claiming daily chest (${event.amount} coins)…');
     final result = await claimDailyChest(event.amount);
     result.fold(
-      (failure) {
+      (failure) async {
         _log('EconomyBloc: Daily chest FAILED: ${failure.message}');
+        if (failure.message == 'daily-chest-already-claimed') {
+          emit(
+            state.copyWith(
+              isLoading: false,
+              isDailyRewardAvailable: false,
+            ),
+          );
+          await _markDailyMysteryClaimedToday(0);
+          return;
+        }
         emit(
           state.copyWith(
             isLoading: false,
@@ -681,16 +691,22 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   }
 
   Future<void> _markDailyMysteryClaimedToday(int bonusCoins) async {
+    final currentUser = authBloc.state.user;
     try {
       final prefs = await SharedPreferences.getInstance();
       final today = DateTime.now();
       final dateStr =
           '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
       await prefs.setString('last_daily_mystery_claimed_date', dateStr);
+      if (currentUser != null && currentUser.id.isNotEmpty) {
+        await prefs.setString(
+          'last_daily_mystery_claimed_date_${currentUser.id}',
+          dateStr,
+        );
+      }
     } catch (_) {}
 
     try {
-      final currentUser = authBloc.state.user;
       if (currentUser != null) {
         final updatedUser = currentUser.copyWith(
           lastDailyRewardDate: DateTime.now(),
@@ -715,27 +731,47 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       return;
     }
 
+    final today = DateTime.now();
+    final dateStr =
+        '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
+
     // 1. Fast local disk check: if already claimed today on this device, reject immediately
     try {
       final prefs = await SharedPreferences.getInstance();
-      final today = DateTime.now();
-      final dateStr =
-          '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
       final localClaimedDate =
           prefs.getString('last_daily_mystery_claimed_date');
-      if (localClaimedDate == dateStr) {
+      final userClaimedDate = user.id.isNotEmpty
+          ? prefs.getString('last_daily_mystery_claimed_date_${user.id}')
+          : null;
+      if (localClaimedDate == dateStr || userClaimedDate == dateStr) {
         emit(state.copyWith(isDailyRewardAvailable: false));
         return;
       }
     } catch (_) {}
 
+    // 2. Authoritative User profile check from Firestore / cache
     final lastReward = user.lastDailyRewardDate;
+    if (lastReward != null && _isSameCalendarDay(lastReward, today)) {
+      try {
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('last_daily_mystery_claimed_date', dateStr);
+        if (user.id.isNotEmpty) {
+          await prefs.setString(
+            'last_daily_mystery_claimed_date_${user.id}',
+            dateStr,
+          );
+        }
+      } catch (_) {}
+      emit(state.copyWith(isDailyRewardAvailable: false));
+      return;
+    }
+
     if (lastReward == null) {
       emit(state.copyWith(isDailyRewardAvailable: true));
       return;
     }
 
-    final isSameDay = _isSameCalendarDay(lastReward, DateTime.now());
+    final isSameDay = _isSameCalendarDay(lastReward, today);
     emit(state.copyWith(isDailyRewardAvailable: !isSameDay));
   }
 

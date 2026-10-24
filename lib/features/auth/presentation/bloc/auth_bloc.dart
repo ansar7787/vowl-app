@@ -106,6 +106,12 @@ class AuthStreamErrorOccurred extends AuthEvent {
   const AuthStreamErrorOccurred();
 }
 
+/// Clears the transient [AuthState.message] so subsequent notifications or errors
+/// are never suppressed by BlocListener equality checks.
+class AuthClearMessage extends AuthEvent {
+  const AuthClearMessage();
+}
+
 // ============================================================================
 // STATE
 // ============================================================================
@@ -229,6 +235,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<AuthPasswordResetRequested>(_onPasswordResetRequested);
     on<AuthSendEmailVerificationRequested>(_onSendEmailVerification);
     on<AuthStreamErrorOccurred>(_onStreamError);
+    on<AuthClearMessage>(_onClearMessage);
 
     _userSubscription = _getUserStream().listen(
       (user) => add(AuthUserChanged(user)),
@@ -294,6 +301,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       return;
     }
     emit(state.copyWith(message: () => 'auth.stream_error'));
+  }
+
+  void _onClearMessage(
+    AuthClearMessage event,
+    Emitter<AuthState> emit,
+  ) {
+    emit(state.copyWith(message: () => null));
   }
 
   /// Clears all local session data that must not survive a user change.

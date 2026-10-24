@@ -473,6 +473,7 @@ class AuthRepositoryImpl
       displayName: firebaseUser.displayName,
       photoUrl: firebaseUser.photoURL,
       isEmailVerified: firebaseUser.emailVerified,
+      lastDailyRewardDate: DateTime.now(), // Defensively prevents false startup daily reward triggers
       dailyXpHistory: const {},
       recentActivities: const [],
     );

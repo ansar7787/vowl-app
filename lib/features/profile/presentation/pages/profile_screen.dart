@@ -18,6 +18,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_dialogs.dart';
 
 // Decoupled sub-widgets
@@ -69,13 +70,43 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     return Scaffold(
       backgroundColor: bgColor,
-      body: BlocBuilder<AuthBloc, AuthState>(
-        builder: (context, state) {
-          final user = state.user;
-          if (user == null) {
-            return const ProfileShimmerLoading();
-          }
-          return RefreshIndicator(
+      body: BlocListener<AuthBloc, AuthState>(
+        listenWhen: (prev, curr) =>
+            curr.message != null && prev.message != curr.message,
+        listener: (context, authState) {
+          final msg = authState.message!;
+          final isWarning =
+              msg.contains('security') || msg.contains('cancelled');
+          final isSuccessMsg =
+              msg == 'auth.email_verification_sent' ||
+              msg == 'settings_dialogs.account_deleted_success';
+          final isErrorMsg =
+              msg.contains('error') ||
+              msg.contains('failed') ||
+              msg.contains('unreachable') ||
+              msg.contains('invalid');
+          CustomSnackBar.show(
+            context: context,
+            message: context.tr(msg),
+            type: isSuccessMsg
+                ? CustomSnackBarType.success
+                : (isErrorMsg ||
+                        (authState.status == AuthStatus.unauthenticated &&
+                            !isWarning))
+                ? CustomSnackBarType.error
+                : isWarning
+                ? CustomSnackBarType.warning
+                : CustomSnackBarType.info,
+          );
+          context.read<AuthBloc>().add(const AuthClearMessage());
+        },
+        child: BlocBuilder<AuthBloc, AuthState>(
+          builder: (context, state) {
+            final user = state.user;
+            if (user == null) {
+              return const ProfileShimmerLoading();
+            }
+            return RefreshIndicator(
             onRefresh: () async {
               context.read<AuthBloc>().add(const AuthReloadUser());
               await Future.delayed(const Duration(milliseconds: 500));
@@ -535,7 +566,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           );
         },
       ),
-    );
+    ),
+  );
   }
 
   Widget _buildSectionHeader(BuildContext context, String title) {
