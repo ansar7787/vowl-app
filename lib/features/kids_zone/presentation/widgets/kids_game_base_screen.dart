@@ -158,6 +158,8 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               context: context,
               state: state,
               primaryColor: widget.primaryColor,
+              gameType: widget.gameType,
+              level: widget.level,
             );
           }
         } else if (state is KidsGameOver) {
@@ -195,7 +197,8 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             _hasSpokenNudge = true;
             final nudgeMsg = context.tr(
               'games.kids_nudge',
-              fallback: 'Focus! Use a hint if you need help saving your last life.',
+              fallback:
+                  'Focus! Use a hint if you need help saving your last life.',
             );
             Future.delayed(const Duration(milliseconds: 1200), () async {
               if (mounted) {
@@ -334,8 +337,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                         state.isFinalFailure)
                     ? state.currentQuest.explanation
                     : null,
-                correctAnswer:
-                    state.isFinalFailure ? state.currentQuest.correctAnswer : null,
+                correctAnswer: state.isFinalFailure
+                    ? state.currentQuest.correctAnswer
+                    : null,
                 isKids: true,
                 onContinue: () {
                   di.sl<KidsTTSService>().stop();
@@ -523,41 +527,41 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
 
   Widget _buildSpeechBubble(BuildContext context, String text) {
     return Container(
-      key: ValueKey(text),
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(4.r),
-          topRight: Radius.circular(16.r),
-          bottomRight: Radius.circular(16.r),
-          bottomLeft: Radius.circular(16.r),
-        ),
-        border: Border.all(color: Colors.grey.shade300, width: 2.5.w),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.shade300,
-            offset: Offset(0, 3.h),
+          key: ValueKey(text),
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(4.r),
+              topRight: Radius.circular(16.r),
+              bottomRight: Radius.circular(16.r),
+              bottomLeft: Radius.circular(16.r),
+            ),
+            border: Border.all(color: Colors.grey.shade300, width: 2.5.w),
+            boxShadow: [
+              BoxShadow(color: Colors.grey.shade300, offset: Offset(0, 3.h)),
+            ],
           ),
-        ],
-      ),
-      child: KidsFittedText(
-        text,
-        textAlign: TextAlign.start,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 14.sp,
-          fontWeight: FontWeight.w600,
-          color: AppColors.slate900,
-          height: 1.3,
-        ),
-        maxLines: 4,
-      ),
-    ).animate().scale(
-      begin: const Offset(0.9, 0.9),
-      duration: 300.ms,
-      curve: Curves.easeOutCubic,
-    ).fadeIn(duration: 250.ms);
+          child: KidsFittedText(
+            text,
+            textAlign: TextAlign.start,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w600,
+              color: AppColors.slate900,
+              height: 1.3,
+            ),
+            maxLines: 4,
+          ),
+        )
+        .animate()
+        .scale(
+          begin: const Offset(0.9, 0.9),
+          duration: 300.ms,
+          curve: Curves.easeOutCubic,
+        )
+        .fadeIn(duration: 250.ms);
   }
 }

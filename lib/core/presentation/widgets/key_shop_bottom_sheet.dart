@@ -31,6 +31,9 @@ class KeyShopBottomSheet {
     required bool isKidsMode,
     Color primaryColor = Colors.amber,
   }) {
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+    if (isPremium) return;
+
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -417,10 +420,11 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                       },
                     ),
 
-                    SizedBox(height: 16.h),
+                    if (!isPremium) ...[
+                      SizedBox(height: 16.h),
 
-                    // Secondary Actions Row
-                    Row(
+                      // Secondary Actions Row
+                      Row(
                       children: [
                         Expanded(
                           child: ScaleButton(
@@ -800,8 +804,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                       ],
                     ),
 
-                    if (!isPremium) ...[
-                      SizedBox(height: 24.h),
+                    SizedBox(height: 24.h),
 
                       // Premium bypass info
                       ScaleButton(

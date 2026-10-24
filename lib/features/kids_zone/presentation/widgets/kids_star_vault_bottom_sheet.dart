@@ -976,8 +976,9 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
 
                                   SizedBox(height: 32.h),
 
-                                  // Magic Star Ad Button
-                                  if (claimedTier < _chestTiers.length &&
+                                  // Magic Star Ad Button (hidden for premium users)
+                                  if (!isPremium &&
+                                      claimedTier < _chestTiers.length &&
                                       totalStars < nextRequirement) ...[
                                     Padding(
                                       padding: EdgeInsets.symmetric(

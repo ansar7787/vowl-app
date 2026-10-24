@@ -452,6 +452,8 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
   Widget _buildKeyShopButton(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
+        final isPremium = state.user?.isPremium ?? false;
+        if (isPremium) return const SizedBox.shrink();
         final keys = state.user?.keys ?? 0;
 
         return ScaleButton(

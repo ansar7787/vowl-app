@@ -1,3 +1,4 @@
+import 'package:vowl/features/auth/data/datasources/auth_local_data_source.dart';
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -29,15 +30,18 @@ class UserRepositoryImpl
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
   final FirebaseStorage _storage;
+  final AuthLocalDataSource _localDataSource;
 
   /// Creates a [UserRepositoryImpl] instance with optional Firebase overrides.
   UserRepositoryImpl({
     firebase_auth.FirebaseAuth? firebaseAuth,
     FirebaseFirestore? firestore,
     FirebaseStorage? storage,
+    AuthLocalDataSource? localDataSource,
   }) : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance,
        _firestore = firestore ?? FirebaseFirestore.instance,
-       _storage = storage ?? FirebaseStorage.instance;
+       _storage = storage ?? FirebaseStorage.instance,
+       _localDataSource = localDataSource ?? AuthLocalDataSourceImpl();
 
   // ---------------------------------------------------------------------------
   // updateUser
@@ -55,6 +59,7 @@ class UserRepositoryImpl
       final userModel = UserModel.fromEntity(user);
 
       await docRef.set(userModel.toMap(), SetOptions(merge: true));
+      _localDataSource.cacheUser(userModel);
       return const Right(null);
     } catch (e) {
       _log('UserRepository: updateUser failed for ${user.id}: $e');

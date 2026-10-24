@@ -99,6 +99,7 @@ class _HintAdCardState extends State<HintAdCard> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isPremium = context.watch<AuthBloc>().state.user?.isPremium ?? false;
+    if (isPremium) return const SizedBox.shrink();
 
     return RepaintBoundary(
       child: Container(
@@ -201,8 +202,7 @@ class _HintAdCardState extends State<HintAdCard> {
                                     )
                                   : context.tr(
                                       'games.hint_semantic_label',
-                                      fallback:
-                                          'Watch ad to earn a hint',
+                                      fallback: 'Watch ad to earn a hint',
                                     )),
                         child: ScaleButton(
                           onTap: isDisabled ? null : _showHintAd,

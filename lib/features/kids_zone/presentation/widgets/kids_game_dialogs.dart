@@ -34,6 +34,8 @@ class KidsGameDialogs {
     required BuildContext context,
     required KidsGameComplete state,
     required Color primaryColor,
+    String? gameType,
+    int? level,
   }) {
     final adService = di.sl<AdService>();
     final authBloc = context.read<AuthBloc>();
@@ -41,7 +43,11 @@ class KidsGameDialogs {
     final navigator = Navigator.of(context);
     final user = authBloc.state.user;
     final isPremium = user?.isPremium ?? false;
-    bool rewardsDoubled = false;
+    bool rewardsDoubled = isPremium;
+
+    if (isPremium && gameType != null && level != null) {
+      kidsBloc.add(ClaimDoubleKidsRewards(gameType, level));
+    }
 
     return showDialog(
       context: context,
@@ -126,10 +132,11 @@ class KidsGameDialogs {
                                                   ),
                                                 )
                                                 .animate(
-                                                  delay: (200 * index).ms,
+                                                  delay: (60 * index).ms,
                                                 )
                                                 .scale(
-                                                  curve: Curves.elasticOut,
+                                                  duration: 250.ms,
+                                                  curve: Curves.easeOutBack,
                                                 ),
                                       );
                                     }),
@@ -257,14 +264,22 @@ class KidsGameDialogs {
                                           isPremium: isPremium,
                                           childSafe: true,
                                           onUserEarnedReward: (_) {
-                                            kidsBloc.add(
-                                              ClaimDoubleKidsRewards(
-                                                (kidsBloc.state as KidsLoaded)
-                                                    .gameType,
-                                                (kidsBloc.state as KidsLoaded)
-                                                    .level,
-                                              ),
-                                            );
+                                            final gType = gameType ??
+                                                (kidsBloc.state is KidsLoaded
+                                                    ? (kidsBloc.state as KidsLoaded).gameType
+                                                    : '');
+                                            final lvl = level ??
+                                                (kidsBloc.state is KidsLoaded
+                                                    ? (kidsBloc.state as KidsLoaded).level
+                                                    : 1);
+                                            if (gType.isNotEmpty) {
+                                              kidsBloc.add(
+                                                ClaimDoubleKidsRewards(
+                                                  gType,
+                                                  lvl,
+                                                ),
+                                              );
+                                            }
                                             setDialogState(
                                               () => rewardsDoubled = true,
                                             );
@@ -294,12 +309,16 @@ class KidsGameDialogs {
                                   width: double.infinity,
                                   height: 54.h,
                                   decoration: BoxDecoration(
-                                    color: Colors.green.withValues(alpha: 0.15),
+                                    color: isPremium
+                                        ? Colors.amber.withValues(alpha: 0.15)
+                                        : Colors.green.withValues(alpha: 0.15),
                                     borderRadius: BorderRadius.circular(30.r),
                                     border: Border.all(
-                                      color: Colors.green.withValues(
-                                        alpha: 0.4,
-                                      ),
+                                      color: isPremium
+                                          ? Colors.amber.shade600
+                                          : Colors.green.withValues(
+                                              alpha: 0.4,
+                                            ),
                                       width: 3.w,
                                     ),
                                   ),
@@ -308,24 +327,35 @@ class KidsGameDialogs {
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Icon(
-                                          Icons.check_circle_rounded,
-                                          color: Colors.green,
+                                          isPremium
+                                              ? Icons.auto_awesome_rounded
+                                              : Icons.check_circle_rounded,
+                                          color: isPremium
+                                              ? Colors.amber.shade700
+                                              : Colors.green,
                                           size: 24.sp,
                                         ),
                                         SizedBox(width: 8.w),
                                         Text(
-                                          "REWARDS TRIPLED!",
+                                          isPremium
+                                              ? "VIP 3X COINS APPLIED!"
+                                              : "REWARDS TRIPLED!",
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
                                             fontWeight: FontWeight.w900,
-                                            color: Colors.green,
+                                            color: isPremium
+                                                ? Colors.amber.shade700
+                                                : Colors.green,
                                             fontSize: 16.sp,
                                           ),
                                         ),
                                       ],
                                     ),
                                   ),
-                                ).animate().scale(curve: Curves.easeOutCubic),
+                                ).animate().scale(
+                                  duration: 200.ms,
+                                  curve: Curves.easeOutCubic,
+                                ),
 
                               SizedBox(height: 16.h),
 
@@ -346,7 +376,7 @@ class KidsGameDialogs {
                           ),
                         ),
                       ).animate().scale(
-                        duration: 500.ms,
+                        duration: 200.ms,
                         curve: Curves.easeOutCubic,
                       ),
                 ),
@@ -552,7 +582,10 @@ class KidsGameDialogs {
                   SizedBox(height: 20.h),
 
                   Text(
-                    context.tr('games.kids_quit_title', fallback: 'Leaving so soon?'),
+                    context.tr(
+                      'games.kids_quit_title',
+                      fallback: 'Leaving so soon?',
+                    ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontWeight: FontWeight.w900,
@@ -566,7 +599,8 @@ class KidsGameDialogs {
                   Text(
                     context.tr(
                       'games.kids_quit_subtitle',
-                      fallback: 'Your progress in this level will be lost! Are you sure you want to quit?',
+                      fallback:
+                          'Your progress in this level will be lost! Are you sure you want to quit?',
                     ),
                     textAlign: TextAlign.center,
                     style: TextStyle(

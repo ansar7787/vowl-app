@@ -66,10 +66,7 @@ class GameDialogHelper {
     if (gameType != null && level != null) {
       try {
         context.read<AuthBloc>().add(
-          AuthLevelCompletedOptimistic(
-            gameType: gameType,
-            level: level,
-          ),
+          AuthLevelCompletedOptimistic(gameType: gameType, level: level),
         );
       } catch (_) {}
     }
@@ -102,7 +99,15 @@ class GameDialogHelper {
     final authState = context.read<AuthBloc>().state;
     final userLevel = authState.user?.level ?? 1;
     final isPremium = authState.user?.isPremium ?? false;
-    final hasMultiplier = userLevel >= 100 || isPremium;
+
+    // Premium VIPs automatically receive the 3x coins multiplier with no ad required
+    if (isPremium && coins > 0) {
+      try {
+        context.read<EconomyBloc>().add(
+          EconomyTripleUpRewardsRequested(0, coins * 2),
+        );
+      } catch (_) {}
+    }
 
     final resolvedTitle =
         title ??
@@ -110,15 +115,19 @@ class GameDialogHelper {
     final resolvedButtonText =
         buttonText ?? context.tr('common.ok', fallback: 'OK').toUpperCase();
 
+    final int effectiveCoins = isPremium ? coins * 3 : coins;
     String coinDesc = context.tr(
       'games.reward_earned_title',
-      args: ['$xp', '$coins'],
-      fallback: 'You earned $xp XP and $coins Coins!',
+      args: ['$xp', '$effectiveCoins'],
+      fallback: 'You earned $xp XP and $effectiveCoins Coins!',
     );
-    if (hasMultiplier && coins > 0) {
+    if (isPremium && coins > 0) {
+      coinDesc +=
+          '\n${context.tr('games.vip_bonus_line', fallback: 'VIP Member Perk: 3x Coin Bonus Applied!')}';
+    } else if (userLevel >= 100 && coins > 0) {
       coinDesc +=
           '\n${context.tr('games.mastery_bonus_line', fallback: 'XP Level 100 Mastery: 2x Coin Bonus Applied!')}';
-    } else if (!hasMultiplier) {
+    } else if (enableDoubleUp && coins > 0) {
       coinDesc +=
           '\n${context.tr('games.triple_coins_line', args: ['${coins * 3}'], fallback: 'Watch an ad to TRIPLE your COINS to ${coins * 3}!')}';
     }
@@ -191,7 +200,7 @@ class GameDialogHelper {
                 );
               }
             },
-            onAdAction: enableDoubleUp
+            onAdAction: (enableDoubleUp && !isPremium)
                 ? () {
                     final adService = di.sl<AdService>();
                     if (!adService.isRewardedAdLoaded) {
@@ -494,12 +503,9 @@ class GameDialogHelper {
     }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final resolvedTheme = theme ??
-        LevelThemeHelper.getTheme(
-          gameType.name,
-          isDark: isDark,
-          level: level,
-        );
+    final resolvedTheme =
+        theme ??
+        LevelThemeHelper.getTheme(gameType.name, isDark: isDark, level: level);
 
     showGeneralDialog(
       context: context,
@@ -626,7 +632,9 @@ class GameDialogHelper {
                     context.read<AuthBloc>().add(const AuthRefreshUser());
                   }
                 } catch (e) {
-                  debugPrint('GameDialogHelper: Failed to credit rewarded hint: $e');
+                  debugPrint(
+                    'GameDialogHelper: Failed to credit rewarded hint: $e',
+                  );
                 }
               }
               if (onHintEarned != null) {

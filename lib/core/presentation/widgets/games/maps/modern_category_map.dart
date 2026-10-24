@@ -850,10 +850,16 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   }
 
   Widget _buildGoldenKeysButton(ThemeResult theme) {
-    // PERF: BlocSelector to only rebuild when key count changes.
-    return BlocSelector<AuthBloc, AuthState, int>(
-      selector: (state) => state.user?.keys ?? 0,
-      builder: (context, keys) {
+    // PERF: BlocSelector to only rebuild when keys or premium status changes.
+    // Premium users bypass toll gates automatically, so Golden Keys button is hidden.
+    return BlocSelector<AuthBloc, AuthState, ({int keys, bool isPremium})>(
+      selector: (state) => (
+        keys: state.user?.keys ?? 0,
+        isPremium: state.user?.isPremium ?? false,
+      ),
+      builder: (context, data) {
+        if (data.isPremium) return const SizedBox.shrink();
+        final keys = data.keys;
         return Semantics(
           button: true,
           label: context.tr(

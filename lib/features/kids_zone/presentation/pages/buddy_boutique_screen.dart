@@ -90,11 +90,21 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                   _buildCurrencyHeader(context, isDark),
                   _buildCategoryTabs(isDark),
                   _buildShopGrid(context, isDark),
-                  SliverToBoxAdapter(
-                    child: Padding(
-                      padding: EdgeInsets.fromLTRB(24.w, 16.h, 24.w, 40.h),
-                      child: _buildWatchAndEarn(context, isDark),
-                    ),
+                  BlocBuilder<AuthBloc, AuthState>(
+                    builder: (context, state) {
+                      final isPremium = state.user?.isPremium ?? false;
+                      if (isPremium) {
+                        return const SliverToBoxAdapter(
+                          child: SizedBox.shrink(),
+                        );
+                      }
+                      return SliverToBoxAdapter(
+                        child: Padding(
+                          padding: EdgeInsets.fromLTRB(24.w, 16.h, 24.w, 40.h),
+                          child: _buildWatchAndEarn(context, isDark),
+                        ),
+                      );
+                    },
                   ),
                 ],
               );
@@ -229,7 +239,9 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                                 fontFamily: 'Outfit',
                                 fontSize: 18.sp,
                                 fontWeight: FontWeight.w800,
-                                color: isDark ? Colors.white : AppColors.slate900,
+                                color: isDark
+                                    ? Colors.white
+                                    : AppColors.slate900,
                               ),
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -897,6 +909,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         final isPremium = state.user?.isPremium ?? false;
+        if (isPremium) return const SizedBox.shrink();
         final reduceMotion = VowlMotion.shouldReduceMotion(context);
         Widget button = ScaleButton(
           onTap: () {

@@ -1,3 +1,4 @@
+import 'package:vowl/features/auth/data/datasources/auth_local_data_source.dart';
 import 'package:get_it/get_it.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -78,6 +79,9 @@ void initAuthFeature(GetIt sl) {
   // ============================================================
   // DATA SOURCES
   // ============================================================
+  sl.registerLazySingleton<AuthLocalDataSource>(
+    () => AuthLocalDataSourceImpl(),
+  );
   sl.registerLazySingleton<AuthRemoteDataSource>(
     () => AuthRemoteDataSourceImpl(
       firebaseAuth: sl<FirebaseAuth>(),
@@ -91,6 +95,7 @@ void initAuthFeature(GetIt sl) {
   sl.registerLazySingleton<AuthRepository>(
     () => AuthRepositoryImpl(
       remoteDataSource: sl<AuthRemoteDataSource>(),
+      localDataSource: sl<AuthLocalDataSource>(),
       firebaseAuth: sl<FirebaseAuth>(),
       firestore: sl<FirebaseFirestore>(),
       firebaseMessaging: sl<FirebaseMessaging>(),
@@ -101,6 +106,7 @@ void initAuthFeature(GetIt sl) {
       firebaseAuth: sl<FirebaseAuth>(),
       firestore: sl<FirebaseFirestore>(),
       storage: sl<FirebaseStorage>(),
+      localDataSource: sl<AuthLocalDataSource>(),
     ),
   );
   sl.registerLazySingleton<GamificationRepository>(
@@ -271,6 +277,7 @@ void initAuthFeature(GetIt sl) {
       getCurrentUser: sl<GetCurrentUser>(),
       sendEmailVerification: sl<SendEmailVerification>(),
       networkInfo: sl<NetworkInfo>(),
+      localDataSource: sl<AuthLocalDataSource>(),
     ),
     dispose: (bloc) => bloc.close(),
   );

@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:vowl/core/error/failures.dart';
+import 'package:vowl/features/auth/data/datasources/auth_local_data_source.dart';
 import 'package:vowl/features/auth/data/datasources/auth_remote_data_source.dart';
 import 'package:vowl/features/auth/data/models/user_model.dart';
 import 'package:vowl/features/auth/data/repositories/firebase_failure_handler_mixin.dart';
@@ -13,36 +14,22 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
 
 /// Concrete implementation of [AuthRepository] orchestrating user sessions via
-/// Firebase Auth and Firestore.
+/// Firebase Auth, local persistent disk cache, and Firestore.
 ///
-/// ### User stream lifecycle
-/// [_userStreamController] is a single broadcast [StreamController] backed by
-/// two nested listeners:
-///   1. [_firebaseAuth.userChanges()] — outer auth state.
-///   2. Firestore `.snapshots()` — inner real-time profile, re-subscribed on
-///      every auth state change and cancelled immediately before each re-sub.
-///
-/// All emissions go through [_emit]/[_emitError], which guard against the
-/// controller having already been closed by [dispose] — the underlying
-/// Firebase subscriptions are cancelled in [dispose] but `cancel()` is not
-/// awaited (it can't be — [dispose] must stay synchronous to satisfy the
-/// [AuthRepository] interface), so a callback that was already in flight can
-/// still land after `close()`. Without the guard that throws
-/// `StateError: Cannot add event after closing`.
-///
-/// All subscriptions are cancelled and the controller is closed when [dispose]
-/// is called, making this safe for test environments that create/destroy
-/// repository instances repeatedly.
-///
-/// ### deleteAccount ordering
-/// We use the Firebase "Delete User Data" Extension to handle database cleanup.
-/// Therefore, this repository only needs to delete the Auth account. If the
-/// auth deletion fails (e.g. requires-recent-login), the user retains all their
-/// data safely. Once auth deletion succeeds, the Extension wipes Firestore and Storage.
+/// ### Offline-First Architecture
+/// When the app opens without internet:
+/// 1. Immediately checks [FirebaseAuth.currentUser] and local disk cache
+///    ([AuthLocalDataSource]). If authenticated, emits the cached [UserModel]
+///    immediately (in 0ms) so the splash screen dismisses and gameplay starts.
+/// 2. Firestore listeners use [includeMetadataChanges: true] so cached Firestore
+///    documents are emitted immediately without waiting for server network ping.
+/// 3. Offline errors from Firestore snapshots fall back gracefully to the
+///    cached user instead of emitting stream errors that hang the app.
 class AuthRepositoryImpl
     with FirebaseFailureHandlerMixin
     implements AuthRepository {
   final AuthRemoteDataSource _remoteDataSource;
+  final AuthLocalDataSource _localDataSource;
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
   final FirebaseMessaging _firebaseMessaging;
@@ -59,10 +46,12 @@ class AuthRepositoryImpl
   /// Creates an [AuthRepositoryImpl] instance with required data sources and Firebase services.
   AuthRepositoryImpl({
     required AuthRemoteDataSource remoteDataSource,
+    AuthLocalDataSource? localDataSource,
     firebase_auth.FirebaseAuth? firebaseAuth,
     FirebaseFirestore? firestore,
     FirebaseMessaging? firebaseMessaging,
   }) : _remoteDataSource = remoteDataSource,
+       _localDataSource = localDataSource ?? AuthLocalDataSourceImpl(),
        _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance,
        _firestore = firestore ?? FirebaseFirestore.instance,
        _firebaseMessaging = firebaseMessaging ?? FirebaseMessaging.instance {
@@ -81,13 +70,49 @@ class AuthRepositoryImpl
   }
 
   void _startFirebaseListeners() {
+    // 1. Emit cached/current user state immediately so the app never stalls on startup
+    _emitInitialUserState();
+
+    // 2. Listen for subsequent auth state changes
     _authSubscription = _firebaseAuth.userChanges().listen(
       _onAuthStateChanged,
       onError: (Object error, StackTrace stack) {
         _log('AuthRepository: auth stream error: $error');
-        _emitError(error, stack);
+        final current = _firebaseAuth.currentUser;
+        if (current != null) {
+          _fallbackToCachedOrMinimal(current);
+        } else {
+          _emit(null);
+        }
       },
     );
+  }
+
+  /// Instantly resolves the initial user state from local disk or FirebaseAuth credentials.
+  Future<void> _emitInitialUserState() async {
+    final firebaseUser = _firebaseAuth.currentUser;
+    if (firebaseUser == null) {
+      _emit(null);
+      return;
+    }
+
+    try {
+      final cached = await _localDataSource.getCachedUser();
+      if (cached != null && cached.id == firebaseUser.uid) {
+        _emit(
+          cached.copyWith(
+            isEmailVerified:
+                firebaseUser.emailVerified || cached.isEmailVerified,
+          ),
+        );
+      } else {
+        _emit(_minimalUserFrom(firebaseUser));
+      }
+    } catch (_) {
+      _emit(_minimalUserFrom(firebaseUser));
+    }
+
+    _subscribeToFirestore(firebaseUser);
   }
 
   void _stopAllSubscriptions() {
@@ -101,18 +126,10 @@ class AuthRepositoryImpl
   // Safe stream emission — guards against emitting after dispose()
   // ---------------------------------------------------------------------------
 
-  /// Adds [value] to [_userStreamController] unless it has already been
-  /// closed. See the class doc for why this guard is necessary.
+  /// Adds [value] to [_userStreamController] unless it has already been closed.
   void _emit(UserEntity? value) {
     if (_userStreamController.isClosed) return;
     _userStreamController.add(value);
-  }
-
-  /// Adds an error to [_userStreamController] unless it has already been
-  /// closed.
-  void _emitError(Object error, [StackTrace? stackTrace]) {
-    if (_userStreamController.isClosed) return;
-    _userStreamController.addError(error, stackTrace);
   }
 
   // ---------------------------------------------------------------------------
@@ -120,23 +137,27 @@ class AuthRepositoryImpl
   // ---------------------------------------------------------------------------
 
   void _onAuthStateChanged(firebase_auth.User? firebaseUser) {
-    // Cancel the previous Firestore subscription before starting a new one to
-    // prevent stale emissions from the previous user's document.
     _firestoreSubscription?.cancel();
     _firestoreSubscription = null;
 
     if (firebaseUser == null) {
+      _localDataSource.clearCachedUser();
       _emit(null);
       return;
     }
 
+    _subscribeToFirestore(firebaseUser);
+  }
+
+  void _subscribeToFirestore(firebase_auth.User firebaseUser) {
+    _firestoreSubscription?.cancel();
     _firestoreSubscription = _firestore
         .collection('users')
         .doc(firebaseUser.uid)
-        .snapshots()
+        .snapshots(includeMetadataChanges: true)
         .listen(
           (doc) => _onFirestoreSnapshot(doc, firebaseUser),
-          onError: (Object error) => _onFirestoreError(error),
+          onError: (Object error) => _onFirestoreError(error, firebaseUser),
         );
   }
 
@@ -151,15 +172,18 @@ class AuthRepositoryImpl
     try {
       if (doc.exists && doc.data() != null) {
         final userModel = UserModel.fromMap(doc.data()!);
-        _emit(userModel.copyWith(isEmailVerified: firebaseUser.emailVerified));
+        final resolvedUser = userModel.copyWith(
+          isEmailVerified:
+              firebaseUser.emailVerified || userModel.isEmailVerified,
+        );
+        _localDataSource.cacheUser(resolvedUser);
+        _emit(resolvedUser);
       } else {
-        // Document doesn't exist yet (e.g., Firestore write is in-flight).
-        // Emit a minimal entity derived from Firebase Auth credentials.
-        _emit(_minimalUserFrom(firebaseUser));
+        _fallbackToCachedOrMinimal(firebaseUser);
       }
     } catch (e, stack) {
       _log('AuthRepository: Firestore snapshot mapping error: $e\n$stack');
-      _emit(null);
+      _fallbackToCachedOrMinimal(firebaseUser);
     }
   }
 
@@ -167,20 +191,42 @@ class AuthRepositoryImpl
   // Firestore error handler
   // ---------------------------------------------------------------------------
 
-  void _onFirestoreError(Object error) {
+  void _onFirestoreError(Object error, firebase_auth.User firebaseUser) {
     final errStr = error.toString();
-    // PERMISSION_DENIED is expected immediately after logout — Firestore
-    // security rules revoke access before the Firebase Auth subscription fires
-    // the null event. Treat it as a normal sign-out signal.
     if (errStr.contains('PERMISSION_DENIED') ||
         errStr.contains('permission-denied')) {
       _log(
         'AuthRepository: Firestore permission denied (expected during logout).',
       );
+      _localDataSource.clearCachedUser();
       _emit(null);
       return;
     }
-    _emitError(error);
+
+    _log(
+      'AuthRepository: Firestore stream error (offline resilience triggered): $error',
+    );
+    // Offline resilience: NEVER let a network error deadlock the app in AuthStatus.unknown.
+    // Fall back to cached user so the user can play seamlessly offline.
+    _fallbackToCachedOrMinimal(firebaseUser);
+  }
+
+  Future<void> _fallbackToCachedOrMinimal(
+    firebase_auth.User firebaseUser,
+  ) async {
+    try {
+      final cached = await _localDataSource.getCachedUser();
+      if (cached != null && cached.id == firebaseUser.uid) {
+        _emit(
+          cached.copyWith(
+            isEmailVerified:
+                firebaseUser.emailVerified || cached.isEmailVerified,
+          ),
+        );
+        return;
+      }
+    } catch (_) {}
+    _emit(_minimalUserFrom(firebaseUser));
   }
 
   // ---------------------------------------------------------------------------
@@ -196,10 +242,15 @@ class AuthRepositoryImpl
       final firebaseUser = _firebaseAuth.currentUser;
       if (firebaseUser == null) return const Right(null);
 
-      // Use default Source (server-and-cache) so this works both online and
-      // offline. Source.server was previously used here, which caused
-      // getCurrentUser() to return null for every offline app start even when
-      // the user was logged in and data was cached.
+      // 1. Try local cache first for instant offline response
+      final cached = await _localDataSource.getCachedUser();
+      if (cached != null && cached.id == firebaseUser.uid) {
+        return Right(
+          cached.copyWith(isEmailVerified: firebaseUser.emailVerified || cached.isEmailVerified),
+        );
+      }
+
+      // 2. Fetch from Firestore (cache-or-server)
       final doc = await _firestore
           .collection('users')
           .doc(firebaseUser.uid)
@@ -210,14 +261,9 @@ class AuthRepositoryImpl
           final user = UserModel.fromMap(
             doc.data()!,
           ).copyWith(isEmailVerified: firebaseUser.emailVerified);
+          await _localDataSource.cacheUser(user);
           return Right(user);
         } catch (e, stack) {
-          // Malformed Firestore data (bad migration, manual console edit,
-          // etc). Don't block app entry over a parsing hiccup — degrade to
-          // a minimal entity built from Auth credentials, the same fallback
-          // AuthRemoteDataSource.logInWithEmail already uses. This is never
-          // written back to Firestore, so the next successful read still
-          // recovers the real profile.
           _log('AuthRepository: getCurrentUser parse error: $e\n$stack');
           return Right(_minimalUserFrom(firebaseUser));
         }
@@ -240,13 +286,22 @@ class AuthRepositoryImpl
             .collection('users')
             .doc(newUser.id)
             .set(newUser.toMap());
+        await _localDataSource.cacheUser(newUser);
       } catch (e) {
-        // Non-fatal: the caller still gets a fully-formed in-memory entity;
-        // the next getCurrentUser() or auth-state change retries provisioning.
         _log('AuthRepository: getCurrentUser provisioning write failed: $e');
       }
       return Right(newUser);
     } catch (e) {
+      final firebaseUser = _firebaseAuth.currentUser;
+      if (firebaseUser != null) {
+        final cached = await _localDataSource.getCachedUser();
+        if (cached != null && cached.id == firebaseUser.uid) {
+          return Right(
+            cached.copyWith(isEmailVerified: firebaseUser.emailVerified || cached.isEmailVerified),
+          );
+        }
+        return Right(_minimalUserFrom(firebaseUser));
+      }
       return Left(handleFirebaseException(e));
     }
   }
@@ -258,13 +313,12 @@ class AuthRepositoryImpl
     required String password,
   }) async {
     try {
-      // Delegate entirely to the data source, which handles:
-      // createUserWithEmailAndPassword → updateDisplayName → Firestore write.
       final userModel = await _remoteDataSource.signUp(
         name: name,
         email: email,
         password: password,
       );
+      await _localDataSource.cacheUser(userModel);
       return Right(userModel);
     } catch (e) {
       return Left(handleFirebaseException(e));
@@ -281,6 +335,7 @@ class AuthRepositoryImpl
         email: email,
         password: password,
       );
+      await _localDataSource.cacheUser(userModel);
       return Right(userModel);
     } catch (e) {
       return Left(handleFirebaseException(e));
@@ -300,6 +355,7 @@ class AuthRepositoryImpl
   @override
   Future<Either<Failure, void>> logOut() async {
     try {
+      await _localDataSource.clearCachedUser();
       await _remoteDataSource.logOut();
       return const Right(null);
     } catch (e) {
@@ -330,7 +386,27 @@ class AuthRepositoryImpl
   @override
   Future<Either<Failure, void>> reloadUser() async {
     try {
-      await _firebaseAuth.currentUser?.reload();
+      final user = _firebaseAuth.currentUser;
+      if (user != null) {
+        await user.reload();
+        final refreshedUser = _firebaseAuth.currentUser;
+        if (refreshedUser != null) {
+          final doc = await _firestore
+              .collection('users')
+              .doc(refreshedUser.uid)
+              .get();
+          if (doc.exists && doc.data() != null) {
+            final userModel = UserModel.fromMap(doc.data()!);
+            final resolvedUser = userModel.copyWith(
+              isEmailVerified: refreshedUser.emailVerified,
+            );
+            await _localDataSource.cacheUser(resolvedUser);
+            _emit(resolvedUser);
+          } else {
+            _emit(_minimalUserFrom(refreshedUser));
+          }
+        }
+      }
       return const Right(null);
     } catch (e) {
       return Left(handleFirebaseException(e));
@@ -342,40 +418,20 @@ class AuthRepositoryImpl
     try {
       final user = _firebaseAuth.currentUser;
       if (user == null) {
-        return Left(AuthFailure('user-not-logged-in'));
+        return Left(AuthFailure('No authenticated user to delete.'));
       }
 
-      // STOP LISTENING to Firestore before we delete the document.
-      // If we don't do this, the deletion triggers a snapshot event saying the
-      // doc doesn't exist, which causes the AuthBloc to briefly emit a "fresh account"
-      // state, hiding the loading overlay and flashing the Home Screen.
       _firestoreSubscription?.cancel();
       _firestoreSubscription = null;
+      await _localDataSource.clearCachedUser();
 
-      // Step 1 — Delete the Firebase Auth account
-      //
-      // Because we use the Firebase "Delete User Data" Extension on the server,
-      // we only need to delete the Auth account here. The extension will automatically
-      // detect the deletion and securely wipe the user's Firestore and Storage data
-      // using Admin privileges in the background.
-      //
-      // If this fails with `requires-recent-login`, the user is prompted to
-      // log in again to finalize the deletion. Since no data was deleted yet,
-      // the user experiences zero data loss or ghost-account bugs.
       await user.delete();
 
-      // Step 2 — Unregister the device from Firebase Cloud Messaging
-      // This ensures that even if they sign up again, the old device token
-      // is completely invalidated and disconnected from the server.
       try {
         await _firebaseMessaging.deleteToken();
       } catch (e) {
         _log('DeleteAccount: FCM token deletion failed: $e');
       }
-
-      // Step 3 — SharedPreferences cleanup is handled by the BLoC's
-      // _clearAllLocalData() which selectively preserves device-scoped
-      // preferences (theme, locale, age gate, etc.) before clearing.
 
       return const Right(null);
     } on firebase_auth.FirebaseAuthException catch (e) {
@@ -404,10 +460,6 @@ class AuthRepositoryImpl
   // Private helpers
   // ---------------------------------------------------------------------------
 
-  /// Builds a minimal [UserModel] from Firebase Auth credential fields alone
-  /// (no Firestore data). Used as a non-destructive fallback — never written
-  /// back to Firestore, so the real profile is recovered as soon as a
-  /// subsequent read succeeds.
   UserModel _minimalUserFrom(firebase_auth.User firebaseUser) {
     return UserModel(
       id: firebaseUser.uid,
@@ -420,7 +472,6 @@ class AuthRepositoryImpl
     );
   }
 
-  /// Debug-only log helper. Produces no output in release builds.
   void _log(String message) {
     if (kDebugMode) debugPrint(message);
   }

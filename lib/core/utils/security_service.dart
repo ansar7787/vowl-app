@@ -55,7 +55,7 @@ class SecurityServiceImpl implements SecurityService {
       final results = await Future.wait([
         SafeDevice.isJailBroken, // [0] Root/Jailbreak configuration check
         SafeDevice.isRealDevice, // [1] Simulated emulator signature check
-      ]);
+      ]).timeout(const Duration(seconds: 2), onTimeout: () => [false, true]);
       final bool jailbroken = results[0];
       final bool isEmulator = results[1] == false;
 

@@ -11,6 +11,7 @@ import 'package:vowl/features/auth/domain/usecases/update_unlocked_level.dart';
 import 'package:vowl/features/auth/domain/usecases/award_kids_sticker.dart';
 
 import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
+import 'package:vowl/features/auth/data/repositories/gamification_repository_impl.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 
 /// Base event for all [KidsBloc] state transitions.
@@ -443,7 +444,8 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
     final notAlreadyAppended = !s.quests
         .sublist(s.currentIndex + 1)
         .any((q) => q.id == s.quests[s.currentIndex].id);
-    final shouldAppend = !event.isCorrect &&
+    final shouldAppend =
+        !event.isCorrect &&
         isFinal &&
         newLives > 0 &&
         isNotLastQuestion &&
@@ -508,6 +510,12 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
           } else if (s.level == 50 || s.level == 100 || s.level == 200) {
             newSticker = "${s.gameType}_sticker_${s.level}";
           }
+
+          // 0. Synchronously update the reactive stars notifier BEFORE emitting
+          // completion so the dialog UI renders the stars instantly without waiting
+          // for the Firestore background transaction to complete.
+          GamificationRepositoryImpl.lastEarnedStars.value =
+              s.livesRemaining > 0 ? s.livesRemaining : 1;
 
           // 1. Instant UI feedback — emitted immediately to prevent double-taps on the
           // "Continue" button and eliminate UI delays.

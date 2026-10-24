@@ -773,6 +773,8 @@ class _KidsLevelMapState extends State<KidsLevelMap>
   Widget _buildGoldenKeysButton() {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
+        final isPremium = state.user?.isPremium ?? false;
+        if (isPremium) return const SizedBox.shrink();
         final keys = state.user?.keys ?? 0;
 
         return ScaleButton(
