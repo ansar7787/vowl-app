@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
@@ -145,8 +146,25 @@ class SettingsDialogs {
                       fallback: 'Sign Out',
                     ),
                     color: Colors.red,
-                    onPressed: () {
+                    onPressed: () async {
                       Navigator.pop(dialogContext);
+                      final networkInfo = di.sl.isRegistered<NetworkInfo>()
+                          ? di.sl<NetworkInfo>()
+                          : null;
+                      if (networkInfo != null && !await networkInfo.isConnected) {
+                        if (context.mounted) {
+                          CustomSnackBar.show(
+                            context: context,
+                            message: context.tr(
+                              'auth.error.network_unreachable',
+                              fallback:
+                                  'No internet connection. Please check your network and try again.',
+                            ),
+                            type: CustomSnackBarType.error,
+                          );
+                        }
+                        return;
+                      }
                       authBloc.add(const AuthLogoutRequested());
                     },
                   ),
@@ -1118,25 +1136,24 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
 
     return BlocListener<AuthBloc, AuthState>(
       bloc: widget.authBloc,
-      listenWhen: (prev, curr) => prev.message != curr.message,
+      listenWhen: (prev, curr) => curr.message != null && prev.message != curr.message,
       listener: (context, state) {
         if (_isDeleting.value && state.message != null) {
           final isSuccess = state.message!.contains('success');
-          // Show the snackbar using the root navigator context so it survives the route replacement
+          // Dismiss the dialog so the user is returned to the screen and can see feedback
+          Navigator.pop(context);
           final rootContext = Navigator.of(
             context,
             rootNavigator: true,
           ).context;
           CustomSnackBar.show(
             context: rootContext,
-            message: context.tr(state.message!),
+            message: rootContext.tr(state.message!),
             type: isSuccess
                 ? CustomSnackBarType.success
                 : CustomSnackBarType.error,
           );
-          if (!isSuccess && mounted) {
-            _isDeleting.value = false;
-          }
+          widget.authBloc.add(const AuthClearMessage());
         }
       },
       child: ListenableBuilder(
@@ -1218,7 +1235,27 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
                       ),
                       color: Colors.red,
                       onPressed: isConfirmed && !isDeleting
-                          ? () {
+                          ? () async {
+                              final networkInfo =
+                                  di.sl.isRegistered<NetworkInfo>()
+                                      ? di.sl<NetworkInfo>()
+                                      : null;
+                              if (networkInfo != null &&
+                                  !await networkInfo.isConnected) {
+                                if (context.mounted) {
+                                  Navigator.pop(context);
+                                  CustomSnackBar.show(
+                                    context: context,
+                                    message: context.tr(
+                                      'auth.error.network_unreachable',
+                                      fallback:
+                                          'No internet connection. Please check your network and try again.',
+                                    ),
+                                    type: CustomSnackBarType.error,
+                                  );
+                                }
+                                return;
+                              }
                               _isDeleting.value = true;
                               widget.authBloc.add(
                                 const AuthDeleteAccountRequested(),

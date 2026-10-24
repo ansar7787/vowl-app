@@ -311,7 +311,37 @@ class _SettingsScreenState extends State<SettingsScreen> {
       builder: (context, _, child) {
         return Scaffold(
           backgroundColor: bgColor,
-          body: BlocSelector<AuthBloc, AuthState, bool>(
+          body: BlocListener<AuthBloc, AuthState>(
+            listenWhen: (prev, curr) =>
+                curr.message != null && prev.message != curr.message,
+            listener: (context, authState) {
+              final msg = authState.message!;
+              final isWarning =
+                  msg.contains('security') || msg.contains('cancelled');
+              final isSuccessMsg =
+                  msg == 'auth.email_verification_sent' ||
+                  msg == 'settings_dialogs.account_deleted_success';
+              final isErrorMsg =
+                  msg.contains('error') ||
+                  msg.contains('failed') ||
+                  msg.contains('unreachable') ||
+                  msg.contains('invalid');
+              CustomSnackBar.show(
+                context: context,
+                message: context.tr(msg),
+                type: isSuccessMsg
+                    ? CustomSnackBarType.success
+                    : (isErrorMsg ||
+                            (authState.status == AuthStatus.unauthenticated &&
+                                !isWarning))
+                    ? CustomSnackBarType.error
+                    : isWarning
+                    ? CustomSnackBarType.warning
+                    : CustomSnackBarType.info,
+              );
+              context.read<AuthBloc>().add(const AuthClearMessage());
+            },
+            child: BlocSelector<AuthBloc, AuthState, bool>(
             selector: (state) => state.status == AuthStatus.loggingOut,
             builder: (context, isLoggingOut) {
               return LoadingOverlay(
@@ -527,8 +557,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
               );
             },
           ),
-        );
-      },
+        ),
+      );
+    },
     );
   }
 

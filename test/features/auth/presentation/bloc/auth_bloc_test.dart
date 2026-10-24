@@ -241,5 +241,17 @@ void main() {
         ),
       ],
     );
+
+    blocTest<AuthBloc, AuthState>(
+      'AuthClearMessage clears the transient message in AuthState',
+      build: () => bloc,
+      seed: () => AuthState.authenticated(tUser).copyWith(
+        message: () => 'auth.error.network_unreachable',
+      ),
+      act: (bloc) => bloc.add(const AuthClearMessage()),
+      expect: () => [
+        isA<AuthState>().having((s) => s.message, 'message', isNull),
+      ],
+    );
   });
 }

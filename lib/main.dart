@@ -457,19 +457,27 @@ class _AppShell extends StatelessWidget {
                   final isSuccessMsg =
                       msg == 'auth.email_verification_sent' ||
                       msg == 'settings_dialogs.account_deleted_success';
+                  final isErrorMsg =
+                      msg.contains('error') ||
+                      msg.contains('failed') ||
+                      msg.contains('unreachable') ||
+                      msg.contains('invalid');
                   CustomSnackBar.show(
                     context: context,
                     // Localize the message key
                     message: context.tr(msg),
                     type: isSuccessMsg
                         ? CustomSnackBarType.success
-                        : (authState.status == AuthStatus.unauthenticated &&
-                              !isWarning)
+                        : (isErrorMsg ||
+                                (authState.status ==
+                                        AuthStatus.unauthenticated &&
+                                    !isWarning))
                         ? CustomSnackBarType.error
                         : isWarning
                         ? CustomSnackBarType.warning
                         : CustomSnackBarType.info,
                   );
+                  context.read<AuthBloc>().add(const AuthClearMessage());
                 },
               ),
             ],

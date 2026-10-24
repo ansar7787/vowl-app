@@ -15,6 +15,8 @@ import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vowl/core/error/failures.dart';
 
 import 'package:vowl/core/network/network_info.dart';
 
@@ -64,6 +66,7 @@ void main() {
   late MockNetworkInfo mockNetworkInfo;
 
   setUp(() {
+    SharedPreferences.setMockInitialValues({});
     mockNetworkInfo = MockNetworkInfo();
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -118,6 +121,41 @@ void main() {
       verify: (_) {
         verify(() => mockUpdateUserCoins(any())).called(1);
       },
+    );
+
+    blocTest<EconomyBloc, EconomyState>(
+      'EconomyClaimDailyChestRequested emits isDailyRewardAvailable: false when already claimed in Firestore',
+      build: () {
+        when(
+          () => mockClaimDailyChest(any()),
+        ).thenAnswer((_) async => Left(AuthFailure('daily-chest-already-claimed')));
+        return bloc;
+      },
+      act: (bloc) => bloc.add(const EconomyClaimDailyChestRequested(25)),
+      expect: () => [
+        const EconomyState(isLoading: true),
+        const EconomyState(isLoading: false, isDailyRewardAvailable: false),
+      ],
+    );
+
+    blocTest<EconomyBloc, EconomyState>(
+      'EconomyCheckDailyRewardRequested emits isDailyRewardAvailable: false when user claimed today',
+      build: () {
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(
+            UserEntity(
+              id: '1',
+              email: 'test@vowl.com',
+              lastDailyRewardDate: DateTime.now(),
+            ),
+          ),
+        );
+        return bloc;
+      },
+      act: (bloc) => bloc.add(const EconomyCheckDailyRewardRequested()),
+      expect: () => [
+        const EconomyState(isDailyRewardAvailable: false),
+      ],
     );
   });
 }
