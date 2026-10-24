@@ -23,6 +23,9 @@ class KidsTollGateBottomSheet {
     required String gameType,
     required Color primaryColor,
   }) {
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+    if (isPremium) return;
+
     final parentContext = context;
     final maxLevels = CurriculumManifest.getLevels(gameType);
     final int remainingToMax = maxLevels - level + 1;
@@ -34,7 +37,8 @@ class KidsTollGateBottomSheet {
     if (levelsToUnlock == 1) {
       sheetDesc = context.tr(
         'games.magic_lock_desc_1',
-        fallback: 'Use 1 Key or watch a video to unlock the final Level $maxLevels!',
+        fallback:
+            'Use 1 Key or watch a video to unlock the final Level $maxLevels!',
       );
       successDesc = context.tr(
         'games.magic_lock_success_1',
@@ -261,7 +265,9 @@ class KidsTollGateBottomSheet {
                                 SizedBox(width: 8.w),
                                 Flexible(
                                   child: Text(
-                                    hasKey ? "USE 1 KEY TO UNLOCK" : "GET A KEY",
+                                    hasKey
+                                        ? "USE 1 KEY TO UNLOCK"
+                                        : "GET A KEY",
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: 16.sp,

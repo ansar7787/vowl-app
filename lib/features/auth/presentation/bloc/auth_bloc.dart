@@ -1,3 +1,5 @@
+import 'package:vowl/features/auth/data/models/user_model.dart';
+import 'package:vowl/features/auth/data/datasources/auth_local_data_source.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'dart:async';
 import 'dart:math' as math;
@@ -193,6 +195,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final GetCurrentUser _getCurrentUser;
   final SendEmailVerification _sendEmailVerification;
   final NetworkInfo _networkInfo;
+  final AuthLocalDataSource _localDataSource;
 
   StreamSubscription<UserEntity?>? _userSubscription;
 
@@ -206,6 +209,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     required GetCurrentUser getCurrentUser,
     required SendEmailVerification sendEmailVerification,
     required NetworkInfo networkInfo,
+    AuthLocalDataSource? localDataSource,
   }) : _getUserStream = getUserStream,
        _logOut = logOut,
        _reloadUser = reloadUser,
@@ -214,6 +218,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
        _getCurrentUser = getCurrentUser,
        _sendEmailVerification = sendEmailVerification,
        _networkInfo = networkInfo,
+       _localDataSource = localDataSource ?? AuthLocalDataSourceImpl(),
        super(const AuthState.unknown()) {
     on<AuthUserChanged>(_onUserChanged);
     on<AuthLogoutRequested>(_onLogoutRequested);
@@ -255,24 +260,39 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           remoteUser: user,
           currentUser: current,
         );
+        _localDataSource.cacheUser(
+          UserModel.fromEntity(reconciledUser),
+        );
         emit(AuthState.authenticated(reconciledUser));
         return;
       }
+      _localDataSource.cacheUser(UserModel.fromEntity(user));
       emit(AuthState.authenticated(user));
     } else {
       emit(const AuthState.unauthenticated());
     }
   }
 
-  void _onStreamError(AuthStreamErrorOccurred event, Emitter<AuthState> emit) {
+  void _onStreamError(
+    AuthStreamErrorOccurred event,
+    Emitter<AuthState> emit,
+  ) async {
     if (kDebugMode) {
       debugPrint('AuthBloc: unexpected user-stream error.');
     }
-    // Deliberately not forcing a logout or clearing `state.user` here — a
-    // stream error (e.g. a transient Firestore hiccup) is not the same
-    // signal as an explicit auth-state-changed(null) event, and treating it
-    // as one could log a still-valid session out from under the user over
-    // a blip that would have self-corrected on reconnection.
+    if (state.status == AuthStatus.unknown) {
+      final result = await _getCurrentUser(NoParams());
+      result.fold((_) => emit(const AuthState.unauthenticated()), (user) {
+        if (user != null) {
+          _networkInfo.setPremiumOverride(user.isPremium);
+          _localDataSource.cacheUser(UserModel.fromEntity(user));
+          emit(AuthState.authenticated(user));
+        } else {
+          emit(const AuthState.unauthenticated());
+        }
+      });
+      return;
+    }
     emit(state.copyWith(message: () => 'auth.stream_error'));
   }
 
@@ -402,9 +422,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               remoteUser: user,
               currentUser: current,
             );
+            _localDataSource.cacheUser(
+              UserModel.fromEntity(reconciledUser),
+            );
             emit(AuthState.authenticated(reconciledUser));
             return;
           }
+          _localDataSource.cacheUser(UserModel.fromEntity(user));
           emit(AuthState.authenticated(user));
         }
       },
@@ -419,9 +443,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     required UserEntity currentUser,
   }) {
     final mergedCompleted = Map<String, List<int>>.from(
-      remoteUser.completedLevels.map(
-        (k, v) => MapEntry(k, List<int>.from(v)),
-      ),
+      remoteUser.completedLevels.map((k, v) => MapEntry(k, List<int>.from(v))),
     );
     currentUser.completedLevels.forEach((k, v) {
       final existing = mergedCompleted[k] ?? <int>[];
@@ -449,9 +471,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     if (currentUser == null) return;
 
     final completedLevels = Map<String, List<int>>.from(
-      currentUser.completedLevels.map(
-        (k, v) => MapEntry(k, List<int>.from(v)),
-      ),
+      currentUser.completedLevels.map((k, v) => MapEntry(k, List<int>.from(v))),
     );
     final categoryCompleted = List<int>.from(
       completedLevels[event.gameType] ?? <int>[],
@@ -476,6 +496,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       unlockedLevels: unlockedLevels,
     );
 
+    _localDataSource.cacheUser(UserModel.fromEntity(updatedUser));
     emit(AuthState.authenticated(updatedUser));
   }
 

@@ -119,6 +119,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isPremium = context.watch<AuthBloc>().state.user?.isPremium ?? false;
+    if (isPremium) return const SizedBox.shrink();
 
     return Container(
       margin:

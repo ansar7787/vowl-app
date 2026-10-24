@@ -437,28 +437,26 @@ class VowlCoinsScreen extends StatelessWidget {
                         ),
                       )
                     : Container(
-                        width: 100.r,
-                        height: 100.r,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: color.withValues(alpha: 0.25),
-                              blurRadius: 30,
-                              spreadRadius: 5,
+                            width: 100.r,
+                            height: 100.r,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: color.withValues(alpha: 0.25),
+                                  blurRadius: 30,
+                                  spreadRadius: 5,
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                      )
-                        .animate(
-                          onPlay: (c) => c.repeat(reverse: true),
-                        )
-                        .scale(
-                          begin: const Offset(0.92, 0.92),
-                          end: const Offset(1.08, 1.08),
-                          duration: 3.seconds,
-                          curve: Curves.easeInOut,
-                        ),
+                          )
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .scale(
+                            begin: const Offset(0.92, 0.92),
+                            end: const Offset(1.08, 1.08),
+                            duration: 3.seconds,
+                            curve: Curves.easeInOut,
+                          ),
 
                 Container(
                   padding: EdgeInsets.all(28.r),
@@ -488,7 +486,10 @@ class VowlCoinsScreen extends StatelessWidget {
             SizedBox(height: 24.h),
             reduceMotion
                 ? Text(
-                    context.tr('economy.total_balance', fallback: 'TOTAL BALANCE'),
+                    context.tr(
+                      'economy.total_balance',
+                      fallback: 'TOTAL BALANCE',
+                    ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 11.sp,
@@ -498,7 +499,10 @@ class VowlCoinsScreen extends StatelessWidget {
                     ),
                   )
                 : Text(
-                    context.tr('economy.total_balance', fallback: 'TOTAL BALANCE'),
+                    context.tr(
+                      'economy.total_balance',
+                      fallback: 'TOTAL BALANCE',
+                    ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 11.sp,
@@ -540,14 +544,24 @@ class VowlCoinsScreen extends StatelessWidget {
             SizedBox(height: 8.h),
             _buildWeeklyEarnings(context, user, color),
             SizedBox(height: 20.h),
-            _buildInventoryGlance(context, coins, user.hintCount),
+            _buildInventoryGlance(
+              context,
+              coins,
+              user.hintCount,
+              isPremium: user.isPremium,
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildInventoryGlance(BuildContext context, int coins, int hints) {
+  Widget _buildInventoryGlance(
+    BuildContext context,
+    int coins,
+    int hints, {
+    bool isPremium = false,
+  }) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
@@ -568,11 +582,16 @@ class VowlCoinsScreen extends StatelessWidget {
           _glanceItem(
             context,
             Icons.lightbulb_rounded,
-            context.tr(
-              'economy.hints_available',
-              fallback: '$hints hints available',
-              args: [hints.toString()],
-            ),
+            isPremium
+                ? context.tr(
+                    'economy.hints_unlimited',
+                    fallback: 'Unlimited hints',
+                  )
+                : context.tr(
+                    'economy.hints_available',
+                    fallback: '$hints hints available',
+                    args: [hints.toString()],
+                  ),
             AppColors.amber500,
           ),
         ],
@@ -1123,118 +1142,117 @@ class VowlCoinsScreen extends StatelessWidget {
             final tile = GlassTile(
               blur: 0, // PERFORMANCE FIX: Disabled blur for list items
               padding: EdgeInsets.all(16.r),
-                borderRadius: BorderRadius.circular(24.r),
-                borderColor: isDark
-                    ? Colors.white.withValues(alpha: 0.15)
-                    : AppColors.slate300,
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.05)
-                    : Colors.white.withValues(alpha: 0.95),
-                borderWidth: 1,
-                child: Row(
-                  children: [
-                    // Status Icon with Neon Glow
-                    Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: color.withValues(alpha: 0.1),
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: color.withValues(alpha: 0.1),
-                            blurRadius: 8,
-                            spreadRadius: 2,
-                          ),
-                        ],
-                      ),
-                      child: Icon(
-                        isEarned ? Icons.add_rounded : Icons.remove_rounded,
-                        color: color,
-                        size: 20.r,
-                      ),
+              borderRadius: BorderRadius.circular(24.r),
+              borderColor: isDark
+                  ? Colors.white.withValues(alpha: 0.15)
+                  : AppColors.slate300,
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.05)
+                  : Colors.white.withValues(alpha: 0.95),
+              borderWidth: 1,
+              child: Row(
+                children: [
+                  // Status Icon with Neon Glow
+                  Container(
+                    padding: EdgeInsets.all(10.r),
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: 0.1),
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: color.withValues(alpha: 0.1),
+                          blurRadius: 8,
+                          spreadRadius: 2,
+                        ),
+                      ],
                     ),
-                    SizedBox(width: 16.w),
-                    // Title and Date
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          AutoSizeText(
-                            title,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 15.sp,
-                              fontWeight: FontWeight.w800,
-                              color: isDark ? Colors.white : AppColors.slate800,
-                              letterSpacing: 0.2,
-                            ),
-                            maxLines: 2,
-                            minFontSize: 10,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          if (formattedDate.isNotEmpty)
-                            Text(
-                              formattedDate,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 9.sp,
-                                fontWeight: FontWeight.w700,
-                                color: isDark
-                                    ? Colors.white38
-                                    : AppColors.slate400,
-                                letterSpacing: 1.2,
-                              ),
-                            ),
-                        ],
-                      ),
+                    child: Icon(
+                      isEarned ? Icons.add_rounded : Icons.remove_rounded,
+                      color: color,
+                      size: 20.r,
                     ),
-                    // Amount
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12.w,
-                        vertical: 6.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: color.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(12.r),
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.monetization_on_rounded,
-                            color: color,
-                            size: 14.r,
+                  ),
+                  SizedBox(width: 16.w),
+                  // Title and Date
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        AutoSizeText(
+                          title,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w800,
+                            color: isDark ? Colors.white : AppColors.slate800,
+                            letterSpacing: 0.2,
                           ),
-                          SizedBox(width: 6.w),
+                          maxLines: 2,
+                          minFontSize: 10,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        if (formattedDate.isNotEmpty)
                           Text(
-                            _formatCoins(amount.abs()),
+                            formattedDate,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w900,
-                              color: color,
+                              fontSize: 9.sp,
+                              fontWeight: FontWeight.w700,
+                              color: isDark
+                                  ? Colors.white38
+                                  : AppColors.slate400,
+                              letterSpacing: 1.2,
                             ),
                           ),
-                        ],
-                      ),
+                      ],
                     ),
-                  ],
-                ),
-              );
+                  ),
+                  // Amount
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 12.w,
+                      vertical: 6.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.monetization_on_rounded,
+                          color: color,
+                          size: 14.r,
+                        ),
+                        SizedBox(width: 6.w),
+                        Text(
+                          _formatCoins(amount.abs()),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w900,
+                            color: color,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            );
 
-              final animatedTile = VowlMotion.shouldReduceMotion(context)
-                  ? tile
-                  : tile
+            final animatedTile = VowlMotion.shouldReduceMotion(context)
+                ? tile
+                : tile
                       .animate(delay: (idx * 50).ms)
                       .fadeIn()
                       .slideX(begin: 0.05);
 
-              return Padding(
-                padding: EdgeInsets.only(bottom: 12.h),
-                child: animatedTile,
-              );
-            },
-          ),
+            return Padding(
+              padding: EdgeInsets.only(bottom: 12.h),
+              child: animatedTile,
+            );
+          }),
       ],
     );
   }

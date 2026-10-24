@@ -54,7 +54,9 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<InAppPurchaseService>(
     () => InAppPurchaseService.instance,
   );
-  await InAppPurchaseService.instance.initialize();
+  await InAppPurchaseService.instance.initialize().catchError((e) {
+    if (kDebugMode) debugPrint('IAP init error in DI: $e');
+  });
   sl.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
   sl.registerLazySingleton<FirebaseFirestore>(() => FirebaseFirestore.instance);
   sl.registerLazySingleton<FirebaseStorage>(() => FirebaseStorage.instance);

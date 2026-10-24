@@ -303,11 +303,11 @@ class ShopRepositoryImpl
         final data = snapshot.data();
         final isPremium = (data?['isPremium'] as bool?) ?? false;
         final hintCount = (data?['hintCount'] as num?)?.toInt() ?? 0;
-        if (hintCount > 0) {
-          transaction.update(docRef, {'hintCount': FieldValue.increment(-1)});
+        if (isPremium) {
+          // Premium subscribers enjoy unlimited hint access without consuming their stored hint tokens.
           return const Right<Failure, void>(null);
-        } else if (isPremium) {
-          // Premium subscribers enjoy unlimited hint access even when token balance is 0.
+        } else if (hintCount > 0) {
+          transaction.update(docRef, {'hintCount': FieldValue.increment(-1)});
           return const Right<Failure, void>(null);
         } else {
           _log('ShopRepository: useHint failed — no hints available.');

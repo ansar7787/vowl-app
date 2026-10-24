@@ -126,12 +126,9 @@ class QuestHintButton extends StatelessWidget {
           button: true,
           enabled: true,
           label: used
-              ? context.tr(
-                  'hint.review_hint_semantic',
-                  fallback: 'Review hint',
-                )
+              ? context.tr('hint.review_hint_semantic', fallback: 'Review hint')
               : canUseHint
-              ? (isPremium && hintCount == 0
+              ? (isPremium
                     ? context.tr(
                         'hint.use_hint_premium_semantic',
                         fallback: 'Use hint',
@@ -147,11 +144,8 @@ class QuestHintButton extends StatelessWidget {
                 ),
           child: ScaleButton(
             debounceDuration: const Duration(milliseconds: 1000),
-            onTap: () => _handleTap(
-              context,
-              hintCount: hintCount,
-              isPremium: isPremium,
-            ),
+            onTap: () =>
+                _handleTap(context, hintCount: hintCount, isPremium: isPremium),
             child: RepaintBoundary(
               child: Container(
                 width: 48.r,
@@ -208,7 +202,7 @@ class QuestHintButton extends StatelessWidget {
                         ),
 
                     // Hint count badge (when hints available and not yet used)
-                    if (!used && hintCount > 0)
+                    if (!used && !isPremium && hintCount > 0)
                       Positioned(
                         top: 2.r,
                         right: 2.r,

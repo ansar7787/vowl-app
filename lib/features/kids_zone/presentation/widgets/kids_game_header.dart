@@ -61,12 +61,7 @@ class KidsGameHeader extends StatelessWidget {
     }
 
     return Padding(
-      padding: EdgeInsets.only(
-        left: 16.w,
-        right: 16.w,
-        top: 6.h,
-        bottom: 2.h,
-      ),
+      padding: EdgeInsets.only(left: 16.w, right: 16.w, top: 6.h, bottom: 2.h),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -257,16 +252,18 @@ class KidsGameHeader extends StatelessWidget {
                   color: isUsed ? Colors.grey.shade400 : Colors.white,
                   size: 18.sp,
                 ),
-                SizedBox(width: 4.w),
-                Text(
-                  isUsed ? '✓' : '$hints',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w700,
-                    color: isUsed ? Colors.grey.shade400 : Colors.white,
+                if (isUsed || !isPremium) ...[
+                  SizedBox(width: 4.w),
+                  Text(
+                    isUsed ? '✓' : '$hints',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isUsed ? Colors.grey.shade400 : Colors.white,
+                    ),
                   ),
-                ),
+                ],
               ],
             ),
           ),

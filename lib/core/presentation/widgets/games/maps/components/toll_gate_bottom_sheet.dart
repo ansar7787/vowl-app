@@ -25,6 +25,9 @@ class TollGateBottomSheet {
     required int level,
     required String gameType,
   }) {
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+    if (isPremium) return;
+
     final parentContext = context;
     final maxLevels = CurriculumManifest.getLevels(gameType);
     final int remainingToMax = maxLevels - level + 1;

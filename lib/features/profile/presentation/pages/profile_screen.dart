@@ -131,7 +131,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.end,
                                           children: [
-                                            BlocBuilder<ProfileBloc, ProfileState>(
+                                            BlocBuilder<
+                                              ProfileBloc,
+                                              ProfileState
+                                            >(
                                               buildWhen: (prev, curr) =>
                                                   prev.photoUrl !=
                                                   curr.photoUrl,
@@ -184,7 +187,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.center,
                                               children: [
-                                                BlocBuilder<ProfileBloc, ProfileState>(
+                                                BlocBuilder<
+                                                  ProfileBloc,
+                                                  ProfileState
+                                                >(
                                                   buildWhen: (prev, curr) =>
                                                       prev.photoUrl !=
                                                       curr.photoUrl,
@@ -194,28 +200,40 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                         user.photoUrl;
                                                     final isLocalFile =
                                                         photoUrl != null &&
-                                                        !photoUrl.startsWith('http');
-                                                    ImageProvider? imageProvider;
+                                                        !photoUrl.startsWith(
+                                                          'http',
+                                                        );
+                                                    ImageProvider?
+                                                    imageProvider;
                                                     if (photoUrl != null) {
-                                                      imageProvider = isLocalFile
-                                                          ? FileImage(File(photoUrl))
-                                                          : CachedNetworkImageProvider(photoUrl);
+                                                      imageProvider =
+                                                          isLocalFile
+                                                          ? FileImage(
+                                                              File(photoUrl),
+                                                            )
+                                                          : CachedNetworkImageProvider(
+                                                              photoUrl,
+                                                            );
                                                     }
 
                                                     return CircleAvatar(
                                                       radius: 16.r,
                                                       backgroundColor: isDark
-                                                          ? Colors.white.withValues(
-                                                              alpha: 0.1,
-                                                            )
+                                                          ? Colors.white
+                                                                .withValues(
+                                                                  alpha: 0.1,
+                                                                )
                                                           : AppColors.slate100,
-                                                      backgroundImage: imageProvider,
+                                                      backgroundImage:
+                                                          imageProvider,
                                                       child: photoUrl == null
                                                           ? Icon(
-                                                              Icons.person_rounded,
-                                                              color: const Color(
-                                                                0xFF94A3B8,
-                                                              ),
+                                                              Icons
+                                                                  .person_rounded,
+                                                              color:
+                                                                  const Color(
+                                                                    0xFF94A3B8,
+                                                                  ),
                                                               size: 18.r,
                                                             )
                                                           : null,
@@ -225,13 +243,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                 SizedBox(width: 10.w),
                                                 Flexible(
                                                   child: Text(
-                                                    user.displayName ?? 'Explorer',
+                                                    user.displayName ??
+                                                        'Explorer',
                                                     maxLines: 1,
-                                                    overflow: TextOverflow.ellipsis,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
                                                     style: TextStyle(
                                                       fontFamily: 'Outfit',
                                                       fontSize: 16.sp,
-                                                      fontWeight: FontWeight.w800,
+                                                      fontWeight:
+                                                          FontWeight.w800,
                                                       color: isDark
                                                           ? Colors.white
                                                           : AppColors.slate900,
@@ -362,7 +383,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
 
                             // ── 2. Key Shop (inline, compact) ──
-                            Column(
+                            if (!user.isPremium)
+                              Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 SizedBox(height: 16.h),
@@ -589,6 +611,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget _buildKeyShopBanner(BuildContext context, dynamic user) {
+    if (user.isPremium == true) return const SizedBox.shrink();
     final keys = user.keys ?? 0;
 
     return ProfileFeatureCard(
@@ -709,96 +732,96 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 : Colors.black.withValues(alpha: 0.05),
           ),
         ),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  width: 40.w,
-                  height: 4.h,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withValues(alpha: 0.3),
-                    borderRadius: BorderRadius.circular(2.r),
-                  ),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                width: 40.w,
+                height: 4.h,
+                decoration: BoxDecoration(
+                  color: Colors.grey.withValues(alpha: 0.3),
+                  borderRadius: BorderRadius.circular(2.r),
                 ),
-                SizedBox(height: 32.h),
-                Text(
-                  context.tr(
-                    'profile.avatar_projection_title',
-                    fallback: 'Avatar Projection',
-                  ),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : AppColors.slate900,
-                    letterSpacing: -0.5,
-                  ),
+              ),
+              SizedBox(height: 32.h),
+              Text(
+                context.tr(
+                  'profile.avatar_projection_title',
+                  fallback: 'Avatar Projection',
                 ),
-                SizedBox(height: 12.h),
-                Text(
-                  context.tr(
-                    'profile.avatar_projection_subtitle',
-                    fallback: 'Select a new avatar style.',
-                  ),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    color: isDark ? Colors.white60 : Colors.black54,
-                  ),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w900,
+                  color: isDark ? Colors.white : AppColors.slate900,
+                  letterSpacing: -0.5,
                 ),
-                SizedBox(height: 40.h),
-                Row(
-                  children: [
-                    Expanded(
-                      child: _buildSourceOption(
-                        context: context,
-                        icon: Icons.camera_rounded,
-                        label: context.tr(
-                          'profile.source_reality_label',
-                          fallback: 'Reality',
-                        ),
-                        subtitle: context.tr(
-                          'profile.source_reality_subtitle',
-                          fallback: 'Camera',
-                        ),
-                        onTap: () {
-                          Navigator.pop(context);
-                          _pickImage(ImageSource.camera);
-                        },
+              ),
+              SizedBox(height: 12.h),
+              Text(
+                context.tr(
+                  'profile.avatar_projection_subtitle',
+                  fallback: 'Select a new avatar style.',
+                ),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  color: isDark ? Colors.white60 : Colors.black54,
+                ),
+              ),
+              SizedBox(height: 40.h),
+              Row(
+                children: [
+                  Expanded(
+                    child: _buildSourceOption(
+                      context: context,
+                      icon: Icons.camera_rounded,
+                      label: context.tr(
+                        'profile.source_reality_label',
+                        fallback: 'Reality',
                       ),
-                    ),
-                    SizedBox(width: 20.w),
-                    Expanded(
-                      child: _buildSourceOption(
-                        context: context,
-                        icon: Icons.image_search_rounded,
-                        label: context.tr(
-                          'profile.source_memory_label',
-                          fallback: 'Memory',
-                        ),
-                        subtitle: context.tr(
-                          'profile.source_memory_subtitle',
-                          fallback: 'Gallery',
-                        ),
-                        onTap: () {
-                          Navigator.pop(context);
-                          _pickImage(ImageSource.gallery);
-                        },
+                      subtitle: context.tr(
+                        'profile.source_reality_subtitle',
+                        fallback: 'Camera',
                       ),
+                      onTap: () {
+                        Navigator.pop(context);
+                        _pickImage(ImageSource.camera);
+                      },
                     ),
-                  ],
-                ),
-                SizedBox(height: 24.h),
-              ],
-            ),
+                  ),
+                  SizedBox(width: 20.w),
+                  Expanded(
+                    child: _buildSourceOption(
+                      context: context,
+                      icon: Icons.image_search_rounded,
+                      label: context.tr(
+                        'profile.source_memory_label',
+                        fallback: 'Memory',
+                      ),
+                      subtitle: context.tr(
+                        'profile.source_memory_subtitle',
+                        fallback: 'Gallery',
+                      ),
+                      onTap: () {
+                        Navigator.pop(context);
+                        _pickImage(ImageSource.gallery);
+                      },
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 24.h),
+            ],
           ),
         ),
-      );
-    }
+      ),
+    );
+  }
 
   Widget _buildSourceOption({
     required BuildContext context,

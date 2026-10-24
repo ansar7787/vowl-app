@@ -123,18 +123,29 @@ void main() async {
     try {
       // SECURITY: Initialize App Check immediately (not deferred) so no
       // backend calls can be made unprotected during app boot.
-      await FirebaseAppCheck.instance.activate(
-        // ignore: deprecated_member_use
-        appleProvider: kDebugMode
-            ? AppleProvider.debug
-            : AppleProvider.deviceCheck,
-        // ignore: deprecated_member_use
-        androidProvider: kDebugMode
-            ? AndroidProvider.debug
-            : AndroidProvider.playIntegrity,
-      );
+      await FirebaseAppCheck.instance
+          .activate(
+            // ignore: deprecated_member_use
+            appleProvider: kDebugMode
+                ? AppleProvider.debug
+                : AppleProvider.deviceCheck,
+            // ignore: deprecated_member_use
+            androidProvider: kDebugMode
+                ? AndroidProvider.debug
+                : AndroidProvider.playIntegrity,
+          )
+          .timeout(
+            const Duration(seconds: 2),
+            onTimeout: () {
+              if (kDebugMode) {
+                debugPrint('Warning: App Check timed out during activation');
+              }
+            },
+          );
     } catch (e) {
-      if (kDebugMode) debugPrint('Warning: App Check failed to init: $e');
+      if (kDebugMode) {
+        debugPrint('Warning: App Check failed to init: $e');
+      }
     }
 
     try {
@@ -271,19 +282,17 @@ Future<void> _initDeferredServices(FirebaseApp? firebaseApp) async {
     'RemoteConfigService',
     () => di.sl<RemoteConfigService>().init(),
   );
-  await runSafe(
-    'DailyWordsReminder',
-    () async {
-      final dailyWordsService = di.sl<DailyWordsService>();
-      await dailyWordsService.init();
-      final dueWords =
-          dailyWordsService.wordsForReview.map((w) => w.word).toList();
-      await di.sl<NotificationService>().scheduleDailyWordsReminder(
-        dueWords: dueWords,
-        streak: dailyWordsService.streak,
-      );
-    },
-  );
+  await runSafe('DailyWordsReminder', () async {
+    final dailyWordsService = di.sl<DailyWordsService>();
+    await dailyWordsService.init();
+    final dueWords = dailyWordsService.wordsForReview
+        .map((w) => w.word)
+        .toList();
+    await di.sl<NotificationService>().scheduleDailyWordsReminder(
+      dueWords: dueWords,
+      streak: dailyWordsService.streak,
+    );
+  });
   // NotificationService is now initialized in main() before runApp() to
   // ensure pendingDeepLink is set before the router's first redirect.
   // See the CRITICAL FIX comment in main() for details.

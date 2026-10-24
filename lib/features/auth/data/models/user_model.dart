@@ -351,6 +351,18 @@ class UserModel extends UserEntity {
     };
   }
 
+  /// Serializes this model to a JSON-compatible map for local offline caching.
+  /// Converts all [Timestamp] instances to ISO-8601 strings so [jsonEncode] succeeds.
+  Map<String, dynamic> toJsonMap() {
+    final map = toMap();
+    map.forEach((key, value) {
+      if (value is Timestamp) {
+        map[key] = value.toDate().toIso8601String();
+      }
+    });
+    return map;
+  }
+
   // ---------------------------------------------------------------------------
   // copyWith — returns concrete UserModel, supports nullable clearing
   // ---------------------------------------------------------------------------

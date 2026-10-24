@@ -63,19 +63,35 @@ class InAppPurchaseService {
     await _loadCachedCountryCode();
     _refreshGeoIpCountryInBackground(); // fire-and-forget HTTP refresh
 
-    isAvailable = await _iap.isAvailable();
-    if (!isAvailable) return;
+    try {
+      isAvailable = await _iap.isAvailable().timeout(
+        const Duration(seconds: 2),
+        onTimeout: () => false,
+      );
+      if (!isAvailable) return;
 
-    await _subscription?.cancel();
-    _subscription = _iap.purchaseStream.listen(
-      _handlePurchaseUpdates,
-      onDone: () => _subscription?.cancel(),
-      onError: (error) {
-        if (kDebugMode) debugPrint('IAP stream error: $error');
-      },
-    );
+      await _subscription?.cancel();
+      _subscription = _iap.purchaseStream.listen(
+        _handlePurchaseUpdates,
+        onDone: () => _subscription?.cancel(),
+        onError: (error) {
+          if (kDebugMode) debugPrint('IAP stream error: $error');
+        },
+      );
 
-    await loadProducts();
+      await loadProducts().timeout(
+        const Duration(seconds: 2),
+        onTimeout: () {
+          if (kDebugMode) {
+            debugPrint('IAP loadProducts timed out (likely offline)');
+          }
+        },
+      );
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('IAP initialize error: $e');
+      }
+    }
   }
 
   /// Synchronously loads the cached country code from SharedPreferences.
@@ -120,15 +136,28 @@ class InAppPurchaseService {
   }
 
   Future<void> loadProducts() async {
-    final response = await _iap.queryProductDetails(_productIds);
-    if (response.error != null) {
-      if (kDebugMode) debugPrint('IAP query error: ${response.error}');
-      return;
+    try {
+      final response = await _iap
+          .queryProductDetails(_productIds)
+          .timeout(
+            const Duration(seconds: 2),
+            onTimeout: () => ProductDetailsResponse(
+              productDetails: [],
+              notFoundIDs: _productIds.toList(),
+              error: null,
+            ),
+          );
+      if (response.error != null) {
+        if (kDebugMode) debugPrint('IAP query error: ${response.error}');
+        return;
+      }
+      if (response.notFoundIDs.isNotEmpty && kDebugMode) {
+        debugPrint('IAP: Products not found: ${response.notFoundIDs}');
+      }
+      products = response.productDetails;
+    } catch (e) {
+      if (kDebugMode) debugPrint('IAP loadProducts failed: $e');
     }
-    if (response.notFoundIDs.isNotEmpty) {
-      debugPrint('IAP: Products not found: ${response.notFoundIDs}');
-    }
-    products = response.productDetails;
   }
 
   Future<void> buyProduct(ProductDetails product) async {
