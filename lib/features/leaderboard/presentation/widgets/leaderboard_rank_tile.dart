@@ -197,13 +197,16 @@ class LeaderboardRankTile extends StatelessWidget {
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(
-                        '$score $scoreLabel · ${user.currentStreak}',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w600,
-                          color: isDark ? Colors.white38 : Colors.black54,
+                      Flexible(
+                        child: Text(
+                          '$score $scoreLabel · ${user.currentStreak}',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w600,
+                            color: isDark ? Colors.white38 : Colors.black54,
+                          ),
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                       SizedBox(width: 3.w),
