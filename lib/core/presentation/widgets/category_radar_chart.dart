@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/pedagogical_blueprint.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
+/// Multi-axis radar chart visualizing user skill mastery across pedagogical axes.
 class CategoryRadarChart extends StatefulWidget {
   const CategoryRadarChart({
     super.key,

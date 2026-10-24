@@ -4,15 +4,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Target drop slot receiving draft sentences into designated essay outline sections.
 class EssayDraftingHexSlot extends StatelessWidget {
+  /// Unique key identifier for this essay outline slot.
   final String slotKey;
+
+  /// The currently slotted sentence text, or null if unoccupied.
   final String? slotValue;
+
+  /// Theme accent color applied to slot borders and focus rings.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Callback invoked when a draft sentence is dropped or assigned to this slot.
   final Function(String, String) onSlot;
+
+  /// Callback invoked when a slotted sentence is tapped to clear or return it.
   final Function(String) onClearSlot;
+
+  /// Fallback placeholder text shown when the slot is empty.
   final String placeholder;
 
+  /// Creates an [EssayDraftingHexSlot] widget.
   const EssayDraftingHexSlot({
     super.key,
     required this.slotKey,

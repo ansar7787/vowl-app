@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Instruction banner presenting the writing objective for the daily journal exercise.
 class DailyJournalInstruction extends StatelessWidget {
+  /// The primary theme accent color for borders and highlights.
   final Color primaryColor;
+
+  /// The fallback prompt text explaining what the user should write.
   final String instruction;
 
+  /// Creates a [DailyJournalInstruction] widget.
   const DailyJournalInstruction({
     super.key,
     required this.primaryColor,

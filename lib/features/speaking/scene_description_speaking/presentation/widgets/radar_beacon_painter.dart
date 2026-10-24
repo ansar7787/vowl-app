@@ -3,12 +3,21 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter rendering a pulsating scenic radar beacon pinging exploration nodes.
 class RadarBeaconPainter extends CustomPainter {
+  /// Pulse expansion animation progress fraction (0.0 to 1.0).
   final double progress;
+
+  /// Whether the radar beacon is currently pinging and scanning.
   final bool isActive;
+
+  /// Whether the target scene node has been successfully identified.
   final bool isCompleted;
+
+  /// Primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [RadarBeaconPainter].
   RadarBeaconPainter({
     required this.progress,
     required this.isActive,

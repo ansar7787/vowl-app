@@ -16,9 +16,15 @@ import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/par
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_option_rack.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/pinch_hint_animation.dart';
 
+/// Interactive reading game screen prompting users to distill and summarize paragraph texts.
 class ParagraphSummaryScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the reading quest.
   final int level;
+
+  /// The specific reading game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [ParagraphSummaryScreen] instance.
   const ParagraphSummaryScreen({
     super.key,
     required this.level,

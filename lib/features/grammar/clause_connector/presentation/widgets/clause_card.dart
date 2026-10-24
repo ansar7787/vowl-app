@@ -2,12 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
+/// Glassmorphic card displaying an individual clause in connector exercises.
 class ClauseCard extends StatelessWidget {
+  /// The textual clause content.
   final String text;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether midnight contrast theme is enabled.
   final bool isMidnight;
+
+  /// Theme accent color.
   final Color primaryColor;
 
+  /// Creates a [ClauseCard] widget.
   const ClauseCard({
     super.key,
     required this.text,

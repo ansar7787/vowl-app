@@ -58,10 +58,16 @@ class _PhonicsClueHelper {
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (N <= 4)
 class KidsPhonicsLayout extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The title of the game.
   final String title;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsPhonicsLayout] widget.
   const KidsPhonicsLayout({
     super.key,
     required this.level,

@@ -16,9 +16,15 @@ import 'package:vowl/features/accent/connected_speech/presentation/widgets/conne
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_linker_cards.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 
+/// Screen host for the Connected Speech subgame, training natural phonetic linking and assimilation.
 class ConnectedSpeechScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [ConnectedSpeechScreen] widget.
   const ConnectedSpeechScreen({
     super.key,
     required this.level,

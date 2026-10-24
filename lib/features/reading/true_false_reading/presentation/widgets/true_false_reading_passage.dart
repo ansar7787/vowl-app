@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Card widget presenting the reading passage referenced in the true or false statement.
 class TrueFalseReadingPassage extends StatelessWidget {
+  /// The full text of the reading passage.
   final String passage;
+
+  /// Theme accent color applied to borders and headings.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Optional callback invoked to read the passage aloud.
   final VoidCallback? onPlayAudio;
 
+  /// Creates a [TrueFalseReadingPassage] widget.
   const TrueFalseReadingPassage({
     super.key,
     required this.passage,

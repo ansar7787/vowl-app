@@ -23,7 +23,9 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/premium_store_bottom_sheet.dart';
 
+/// Screen displaying user's coin wallet balance, transactions, and store purchases.
 class VowlCoinsScreen extends StatelessWidget {
+  /// Creates a [VowlCoinsScreen].
   const VowlCoinsScreen({super.key});
 
   static const int _hintPackCost = 750;

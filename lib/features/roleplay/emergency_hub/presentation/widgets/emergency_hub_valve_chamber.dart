@@ -9,15 +9,30 @@ class _LocalPalette {
   static const Color color07070f = Color(0xFF07070F);
 }
 
+/// Interactive emergency pressure valve chamber allowing players to manually align system pressure.
 class EmergencyHubValveChamber extends StatelessWidget {
+  /// Correct target answer phrase.
   final String correctAnswer;
+
+  /// Current composed input text.
   final String inputText;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Normalized rotational position of the emergency valve (0.0 to 1.0).
   final double rotation;
+
+  /// Animation driving the emergency warning pulse.
   final Animation<double> pulseAnimation;
+
+  /// Callback fired as the valve wheel is dragged.
   final Function(DragUpdateDetails, Offset) onValveDragged;
+
+  /// Callback for accessible alignment of the valve.
   final VoidCallback? onValveAccessibleAlign;
 
+  /// Creates an [EmergencyHubValveChamber] widget.
   const EmergencyHubValveChamber({
     super.key,
     required this.correctAnswer,

@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 
+/// Pedagogical explanation card rendering curriculum rules with on-demand TTS and translation.
 class PedagogicalRuleBox extends StatefulWidget {
   final IconData icon;
   final String capsKey;

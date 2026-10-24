@@ -5,18 +5,39 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Interactive four-quadrant container with draggable center selector and emotion option cards.
 class EmotionRecognitionQuadrant extends StatelessWidget {
+  /// Emotion option labels.
   final List<String> options;
+
+  /// Corresponding emoji icons for each quadrant option.
   final List<String> optionEmojis;
+
+  /// Index of the correct emotion option.
   final int correctAnswerIndex;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether the answer has been locked in and evaluated.
   final bool isAnswered;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrectState;
+
+  /// Currently selected option index, if any.
   final int? selectedIndex;
+
+  /// Center drag position offset of the interactive selector core.
   final ValueNotifier<Offset> coreOffset;
+
+  /// Callback when the core is dragged across the quadrant field.
   final Function(Offset, BoxConstraints) onCoreMove;
+
+  /// Callback when a quadrant option is selected.
   final Function(int) onSubmitAnswer;
 
+  /// Creates an [EmotionRecognitionQuadrant] interactive field.
   const EmotionRecognitionQuadrant({
     super.key,
     required this.options,
@@ -288,8 +309,12 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
   }
 }
 
+/// Custom painter rendering subtle concentric orbital rings connecting the four emotion quadrants.
 class EmotionGuidePainter extends CustomPainter {
+  /// Stroke color for the guide rings.
   final Color color;
+
+  /// Creates an [EmotionGuidePainter] instance.
   EmotionGuidePainter(this.color);
 
   @override

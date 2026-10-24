@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instructional header for dialect drill exercises, orienting the learner to regional pronunciation contrasts.
 class DialectDrillInstruction extends StatelessWidget {
+  /// The dialect instruction prompt.
   final String instruction;
+
+  /// Theme accent color.
   final Color accentColor;
 
+  /// Creates a [DialectDrillInstruction] widget.
   const DialectDrillInstruction({
     super.key,
     required this.instruction,

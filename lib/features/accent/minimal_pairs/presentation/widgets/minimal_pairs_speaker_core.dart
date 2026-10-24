@@ -5,11 +5,18 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Central speaker core allowing the learner to play the audio cue to differentiate phonemic contrasts.
 class MinimalPairsSpeakerCore extends StatelessWidget {
+  /// Word or sentence to vocalize via TTS.
   final String text;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Callback executed when tapping the speaker core.
   final Function(String) onPlayTts;
 
+  /// Creates a [MinimalPairsSpeakerCore] widget.
   const MinimalPairsSpeakerCore({
     super.key,
     required this.text,

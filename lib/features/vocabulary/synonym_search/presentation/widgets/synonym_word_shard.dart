@@ -6,21 +6,48 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_painters.dart';
 
+/// Slingshot word shard widget containing candidate synonyms with drag physics and absorption scaling.
 class SynonymWordShard extends StatelessWidget {
+  /// Index position of this candidate shard.
   final int index;
+
+  /// Candidate synonym word text.
   final String text;
+
+  /// Theme accent color for shard borders and glow highlights.
   final Color color;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// Original resting coordinate position of the shard.
   final Offset initialPos;
+
+  /// Real-time drag displacement offset notifier.
   final ValueNotifier<Offset> offsetNotifier;
+
+  /// Notifier signaling whether the shard is currently being warped into the gate.
   final ValueNotifier<bool> isWarpingNotifier;
+
+  /// Notifier tracking the currently active shard index.
   final ValueNotifier<int?> activeIndexNotifier;
+
+  /// Whether compact geometry is enforced for narrow viewports.
   final bool isCompact;
+
+  /// Drag start gesture callback.
   final Function(DragStartDetails) onPanStart;
+
+  /// Drag update gesture callback.
   final Function(DragUpdateDetails) onPanUpdate;
+
+  /// Drag completion gesture callback.
   final VoidCallback onPanEnd;
+
+  /// Optional tap selection callback.
   final VoidCallback? onTap;
 
+  /// Creates a [SynonymWordShard] widget.
   const SynonymWordShard({
     super.key,
     required this.index,

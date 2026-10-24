@@ -6,15 +6,30 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
+/// Interactive rotary dial widget enabling angular selection of modal verbs.
 class ModalsRotaryDial extends StatefulWidget {
+  /// Candidate modal verb options.
   final List<String> options;
+
+  /// Notifier signaling whether the question has been answered.
   final ValueNotifier<bool> isAnsweredNotifier;
+
+  /// Notifier signaling pending confirmation state.
   final ValueNotifier<bool> pendingJigsawNotifier;
+
+  /// Notifier tracking the selected modal verb index.
   final ValueNotifier<int> selectedIndexNotifier;
+
+  /// Index of the correct modal option.
   final int correctAnswerIndex;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Theme accent color.
   final Color primaryColor;
 
+  /// Creates a [ModalsRotaryDial] widget.
   const ModalsRotaryDial({
     super.key,
     required this.options,

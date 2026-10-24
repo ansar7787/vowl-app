@@ -18,9 +18,15 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/elite_mastery/presentation/mixins/elite_mastery_game_screen_mixin.dart';
 import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.dart';
 
+/// Interactive speech practice screen where users shadow native accent cadences and nuances.
 class AccentShadowingScreen extends StatefulWidget {
+  /// Target curriculum level number.
   final int level;
+
+  /// Subgame game type identifier.
   final GameSubtype gameType;
+
+  /// Creates an [AccentShadowingScreen] for [level] and [gameType].
   const AccentShadowingScreen({
     super.key,
     required this.level,
@@ -487,11 +493,18 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
   }
 }
 
+/// Renders pedagogical explanations, shadowing focal points, and accent nuances.
 class AccentShadowingInsightsPanel extends StatelessWidget {
+  /// The active quest data furnishing the pedagogical feedback.
   final EliteMasteryQuest quest;
+
+  /// Whether dark mode styling is active.
   final bool isDark;
+
+  /// The primary thematic accent color.
   final Color primaryColor;
 
+  /// Creates an [AccentShadowingInsightsPanel] widget.
   const AccentShadowingInsightsPanel({
     super.key,
     required this.quest,

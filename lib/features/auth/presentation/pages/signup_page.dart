@@ -22,7 +22,9 @@ import 'package:vowl/features/auth/presentation/widgets/login_widgets.dart';
 import 'package:vowl/features/home/presentation/widgets/vowly_auth_companion.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Screen providing user account registration options.
 class SignUpPage extends StatelessWidget {
+  /// Creates a [SignUpPage] widget.
   const SignUpPage({super.key});
 
   @override
@@ -37,7 +39,9 @@ class SignUpPage extends StatelessWidget {
   }
 }
 
+/// Main registration form view for the [SignUpPage].
 class SignUpView extends StatefulWidget {
+  /// Creates a [SignUpView] widget.
   const SignUpView({super.key});
 
   @override

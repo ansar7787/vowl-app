@@ -20,10 +20,15 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_header.dart';
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_sentence_panel.dart';
 
+/// Synonym speaking game screen prompting players to verbalize a lexical synonym for a highlighted word.
 class SpeakSynonymScreen extends StatefulWidget {
+  /// Target curriculum difficulty level.
   final int level;
+
+  /// Speaking subgame variant identifier.
   final GameSubtype gameType;
 
+  /// Creates a [SpeakSynonymScreen] for [level] and [gameType].
   const SpeakSynonymScreen({
     super.key,
     required this.level,

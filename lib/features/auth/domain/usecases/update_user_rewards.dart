@@ -23,8 +23,10 @@ import 'package:vowl/features/auth/domain/repositories/gamification_repository.d
 /// );
 /// ```
 class UpdateUserRewards extends UseCase<void, UpdateUserRewardsParams> {
+  /// Gamification repository instance.
   final GamificationRepository repository;
 
+  /// Creates an [UpdateUserRewards] use case.
   const UpdateUserRewards(this.repository);
 
   @override
@@ -45,16 +47,34 @@ class UpdateUserRewards extends UseCase<void, UpdateUserRewardsParams> {
 /// Immutable value object carrying the reward parameters for [UpdateUserRewards].
 @immutable
 class UpdateUserRewardsParams extends Equatable {
+  /// Game subtype identifier.
   final String gameType;
+
+  /// Level index completed.
   final int level;
+
+  /// Experience points gained.
   final int xpIncrease;
+
+  /// Coin reward earned.
   final int coinIncrease;
+
+  /// Whether rewards should be doubled (e.g. VIP bonus).
   final bool isDoubleReward;
+
+  /// Whether this is a vault reward.
   final bool isVaultReward;
+
+  /// Number of stars earned in this level attempt.
   final int? starsEarned;
+
+  /// Additional magic stars to award.
   final int? addMagicStars;
+
+  /// Chest tier claimed, if applicable.
   final int? claimChestTier;
 
+  /// Creates an [UpdateUserRewardsParams] instance.
   const UpdateUserRewardsParams({
     required this.gameType,
     required this.level,

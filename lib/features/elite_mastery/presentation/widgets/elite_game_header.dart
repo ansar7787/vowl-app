@@ -43,17 +43,26 @@ class EliteGameHeader extends StatelessWidget {
   /// When `null`, the hint button is not shown.
   final String? hintText;
 
+  /// Visual theme colors and gradients for the active level tier.
   final ThemeResult theme;
 
+  /// Whether dark mode is currently active.
   final bool isDark;
+
+  /// Callback executed when tapping the back navigation button.
   final VoidCallback onBack;
+
+  /// Callback executed when triggering the hint action.
   final VoidCallback onHint;
+
+  /// Callback executed when opening the pedagogical mission briefing.
   final VoidCallback onBriefing;
 
   // Mirror of EliteMasteryBloc._maxLives — kept in sync via constant review.
   // If the game design changes the max lives, update both values together.
   static const int _kMaxLives = 3;
 
+  /// Creates an [EliteGameHeader].
   const EliteGameHeader({
     super.key,
     required this.level,

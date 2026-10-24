@@ -10,16 +10,33 @@ class _LocalPalette {
   static const Color color131326 = Color(0xFF131326);
 }
 
+/// Interactive scenic radar canvas presenting hotspot beacons that users tap to describe.
 class SceneDescriptionScenicRadarMap extends StatelessWidget {
+  /// Environmental title of the active scene.
   final String sceneTitle;
+
+  /// Set of hotspot indices already successfully described.
   final Set<int> inspectedHotspots;
+
+  /// Index of the actively selected hotspot.
   final int activeHotspot;
+
+  /// Descriptive labels attached to each hotspot node.
   final List<String> hotspotLabels;
+
+  /// Animation controller driving the rotating radar sweep.
   final AnimationController radarController;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Callback triggered when a hotspot beacon is tapped.
   final Function(int) onHotspotTap;
 
+  /// Creates a [SceneDescriptionScenicRadarMap].
   const SceneDescriptionScenicRadarMap({
     super.key,
     required this.sceneTitle,

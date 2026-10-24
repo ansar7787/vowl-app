@@ -3,15 +3,30 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Central prompt card displaying written vs spoken connected forms and phonological rules.
 class ConnectedSpeechPromptCard extends StatelessWidget {
+  /// Written citation form of the phrase.
   final String word;
+
+  /// Spoken phonetic or assimilated form of the phrase.
   final String? spokenForm;
+
+  /// Connected speech classification (e.g., assimilation, intrusion).
   final String? phenomenonType;
+
+  /// Whether the user has submitted their answer.
   final bool isAnswered;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether a compact visual style should be rendered.
   final bool isCompact;
 
+  /// Creates a [ConnectedSpeechPromptCard] widget.
   const ConnectedSpeechPromptCard({
     super.key,
     required this.word,

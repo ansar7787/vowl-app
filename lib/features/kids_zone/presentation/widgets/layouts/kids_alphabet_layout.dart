@@ -73,10 +73,16 @@ class _AlphabetPalette {
 /// - Responsive & scroll-safe: LayoutBuilder + SingleChildScrollView guarantees zero
 ///   RenderFlex overflows across 320dp to tablet dimensions.
 class KidsAlphabetLayout extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The title of the game.
   final String title;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsAlphabetLayout] widget.
   const KidsAlphabetLayout({
     super.key,
     required this.level,

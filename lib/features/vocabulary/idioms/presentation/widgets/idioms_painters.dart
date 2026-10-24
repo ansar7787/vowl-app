@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
+/// Background painter rendering an ambient grid pattern for idioms activities.
 class GridPainter extends CustomPainter {
+  /// Grid line stroke color.
   final Color color;
+
+  /// Creates a [GridPainter] with the specified line [color].
   GridPainter(this.color);
 
   @override

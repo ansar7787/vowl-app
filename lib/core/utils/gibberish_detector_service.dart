@@ -3,7 +3,11 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
+/// Evaluates user-submitted sentences for gibberish, spam keyboard mashing,
+/// and low vowel density.
 class GibberishDetectorService {
+  const GibberishDetectorService._();
+
   /// Analyzes a string for keyboard mashing, repeated words, and vowel absence.
   /// Returns `true` if it passes as natural English, `false` if it is rejected.
   /// Automatically shows the appropriate CustomSnackBar and triggers haptics.

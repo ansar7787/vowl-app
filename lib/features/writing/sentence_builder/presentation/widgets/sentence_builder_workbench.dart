@@ -2,13 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_jigsaw_piece.dart';
 
+/// Assembly drop target area where word pieces form structured sentences.
 class SentenceBuilderWorkbench extends StatelessWidget {
+  /// Ordered list of word pieces currently assembled on the bench.
   final List<String> assembledPieces;
+
+  /// Theme accent color applied to drop borders and surface.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Callback invoked when a piece is dropped or tapped onto the workbench.
   final ValueChanged<String> onSnap;
+
+  /// Callback invoked with the index of the assembled piece to remove.
   final ValueChanged<int> onRemovePiece;
 
+  /// Creates a [SentenceBuilderWorkbench] widget.
   const SentenceBuilderWorkbench({
     super.key,
     required this.assembledPieces,

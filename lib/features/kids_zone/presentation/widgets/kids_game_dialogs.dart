@@ -21,6 +21,7 @@ class _LocalPalette {
   static const Color color6d28d9 = Color(0xFF6D28D9);
 }
 
+/// Helper class providing standardized victory, game over, and reward dialogs for Kids Zone games.
 class KidsGameDialogs {
   static String _safeTr(BuildContext context, String key, String fallback) {
     final translation = context.tr(key);
@@ -28,6 +29,7 @@ class KidsGameDialogs {
     return translation;
   }
 
+  /// Displays the level victory and rewards dialog.
   static Future<void> showCompletionDialog({
     required BuildContext context,
     required KidsGameComplete state,

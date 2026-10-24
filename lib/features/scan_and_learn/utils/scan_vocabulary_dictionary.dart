@@ -1,3 +1,4 @@
+/// Represents an annotated vocabulary definition entry tailored for scanned real-world signs.
 class ScanDictionaryEntry {
   final String signCategory;
   final String meaning;

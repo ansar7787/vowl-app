@@ -78,6 +78,7 @@ class ListeningLoaded extends ListeningState implements GameLoadedState {
   @override
   int get totalQuests => quests.length;
 
+  /// Creates a [ListeningLoaded] gameplay state.
   const ListeningLoaded({
     required this.quests,
     required this.currentIndex,
@@ -128,6 +129,7 @@ class ListeningError extends ListeningState implements GameErrorState {
   /// Raw exception text. **Never** display this to users — internal use only.
   final String? technicalError;
 
+  /// Creates a [ListeningError] state with [message] and optional [technicalError].
   const ListeningError(this.message, {this.technicalError});
 
   @override
@@ -145,6 +147,7 @@ class ListeningGameComplete extends ListeningState
   /// The canonical quest count for the level (not the retry-inflated total).
   final int questCount;
 
+  /// Creates a [ListeningGameComplete] state.
   const ListeningGameComplete({
     required this.xpEarned,
     required this.coinsEarned,
@@ -164,6 +167,7 @@ class ListeningGameOver extends ListeningState implements GameOverState {
   @override
   int get livesRemaining => 0;
 
+  /// Creates a [ListeningGameOver] state.
   const ListeningGameOver({required this.quests, required this.currentIndex});
 
   @override
@@ -174,9 +178,13 @@ class ListeningGameOver extends ListeningState implements GameOverState {
 /// background save attempts have failed. The UI should show a non-blocking
 /// snackbar so the player knows their progress may not have been saved.
 class ListeningRewardSaveFailed extends ListeningState {
+  /// XP points earned before save failure.
   final int xpEarned;
+
+  /// Coins earned before save failure.
   final int coinsEarned;
 
+  /// Creates a [ListeningRewardSaveFailed] state.
   const ListeningRewardSaveFailed({
     required this.xpEarned,
     required this.coinsEarned,

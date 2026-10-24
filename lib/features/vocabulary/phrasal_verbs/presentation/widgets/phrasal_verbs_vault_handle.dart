@@ -3,12 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// Circular animated vault handle widget rotating when the player unlocks the phrasal verb.
 class PhrasalVerbsVaultHandle extends StatelessWidget {
+  /// Base verb text rendered in the center of the vault dial.
   final String verb;
+
+  /// Theme accent color for dial rings and handle markings.
   final Color color;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// Controller driving vault dial rotation animations.
   final AnimationController vaultController;
 
+  /// Creates a [PhrasalVerbsVaultHandle] widget.
   const PhrasalVerbsVaultHandle({
     super.key,
     required this.verb,

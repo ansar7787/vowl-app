@@ -16,9 +16,12 @@ class _LocalPalette {
   static const Color colorcd7f32 = Color(0xFFCD7F32);
 }
 
+/// Horizontal carousel shelf widget displaying all available Kids Zone games
+/// with user progression, star ratings, and direct routing.
 class KidsCategoryShelf extends StatefulWidget {
   const KidsCategoryShelf({super.key, required this.user});
 
+  /// The active authenticated user session whose progression is displayed.
   final UserEntity user;
 
   @override

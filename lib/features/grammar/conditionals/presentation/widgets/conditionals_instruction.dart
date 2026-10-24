@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction badge directing learners to select the correct conditional sentence consequence.
 class ConditionalsInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Custom instruction prompt.
   final String instruction;
 
+  /// Creates a [ConditionalsInstruction] widget.
   const ConditionalsInstruction({
     super.key,
     required this.primaryColor,

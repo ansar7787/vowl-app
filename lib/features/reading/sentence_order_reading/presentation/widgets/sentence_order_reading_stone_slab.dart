@@ -1,15 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Interactive stone slab card displaying a movable sentence segment with highlighted discourse markers.
 class SentenceOrderReadingStoneSlab extends StatelessWidget {
+  /// The sentence text content.
   final String text;
+
+  /// Current position index of this stone slab in the list.
   final int index;
+
+  /// Theme accent color applied to transition words and active borders.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Optional regular expression detecting transition discourse markers to highlight.
   final RegExp? transitionRegex;
+
+  /// Whether this stone slab is currently tapped or selected for swapping.
   final bool isSelected;
+
+  /// Optional callback invoked when the stone slab is tapped.
   final VoidCallback? onTap;
 
+  /// Creates a [SentenceOrderReadingStoneSlab] widget.
   const SentenceOrderReadingStoneSlab({
     required Key key,
     required this.text,

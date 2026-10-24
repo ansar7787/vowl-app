@@ -16,9 +16,15 @@ import 'package:vowl/features/grammar/word_reorder/presentation/widgets/word_reo
 import 'package:vowl/features/grammar/word_reorder/presentation/widgets/word_reorder_check_button.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
+/// Screen presenting the word reordering and sentence assembly grammar exercise.
 class WordReorderScreen extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The game subtype for tracking and analytics.
   final GameSubtype gameType;
+
+  /// Creates a [WordReorderScreen] widget.
   const WordReorderScreen({
     super.key,
     required this.level,

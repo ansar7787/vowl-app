@@ -26,18 +26,37 @@ class _LocalPalette {
   static const Color color000000 = Color(0xFF000000);
 }
 
+/// Enumerates the primary curriculum learning categories across the application.
 enum GameCategory {
+  /// Spoken production and pronunciation training.
   speaking,
+
+  /// Auditory comprehension and discrimination tasks.
   listening,
+
+  /// Text comprehension, inference, and analysis.
   reading,
+
+  /// Written construction, syntax, and sentence building.
   writing,
+
+  /// Morphosyntactic structure and grammatical accuracy.
   grammar,
+
+  /// Lexical expansion, collocations, and contextual vocabulary.
   vocabulary,
+
+  /// Phonetics, intonation, cadence, and accent mastery.
   accent,
+
+  /// Conversational dialogue and real-world situational roleplay.
   roleplay,
+
+  /// Advanced elite mastery and speed challenges.
   eliteMastery,
 }
 
+/// Resolved theme styling parameters for a game category or subtype.
 class ThemeResult {
   final Color primaryColor;
   final Color accentColor;
@@ -56,7 +75,10 @@ class ThemeResult {
   });
 }
 
+/// Helper resolving visual themes, palette colors, icons, and titles for curriculum activities.
 class LevelThemeHelper {
+  const LevelThemeHelper._();
+
   /// Known category names mapped for fast set operations
   static const _categoryNames = {
     'vocabulary',

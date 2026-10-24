@@ -11,18 +11,39 @@ class _LocalPalette {
   static const Color color07070f = Color(0xFF07070F);
 }
 
+/// Interactive full-body diagnostic scan bay widget.
 class MedicalConsultScanBay extends StatelessWidget {
+  /// Available clinical symptoms to diagnose.
   final List<String> symptoms;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Notifier holding the current drag offset of the scanner reticle.
   final ValueNotifier<Offset> scanOffsetNotifier;
+
+  /// Symptoms detected by the scanner.
   final List<String> scannedGlitches;
+
+  /// Animation driving the sweeping laser scan effect.
   final Animation<double> sweepAnimation;
+
+  /// Callback fired as scanner reticle is dragged.
   final Function(DragUpdateDetails, List<String>) onScanUpdate;
+
+  /// Callback fired when scanning drag begins.
   final VoidCallback onScanStart;
+
+  /// Callback fired when scanning drag concludes.
   final VoidCallback onScanEnd;
+
+  /// Callback fired when an anatomical symptom zone is tapped directly.
   final Function(String) onSymptomScannedDirectly;
 
+  /// Creates a [MedicalConsultScanBay] widget.
   const MedicalConsultScanBay({
     super.key,
     required this.symptoms,

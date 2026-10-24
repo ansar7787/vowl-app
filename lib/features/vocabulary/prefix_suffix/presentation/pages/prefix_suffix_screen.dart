@@ -19,9 +19,15 @@ import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/pref
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_synthesizer.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
+/// Interactive word synthesis screen where learners attach prefixes and suffixes to base roots.
 class PrefixSuffixScreen extends StatefulWidget {
+  /// The active curriculum difficulty level.
   final int level;
+
+  /// The active game subtype.
   final GameSubtype gameType;
+
+  /// Creates a [PrefixSuffixScreen] instance.
   const PrefixSuffixScreen({
     super.key,
     required this.level,

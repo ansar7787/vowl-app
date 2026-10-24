@@ -15,9 +15,18 @@ import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/eleva
 import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_prompt_card.dart';
 import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 
+/// Screen presenting the Elevator Pitch roleplay speaking minigame.
+///
+/// Players deliver concise, timed verbal pitches under pressure, receiving real-time
+/// transcription feedback and keyword evaluation.
 class ElevatorPitchScreen extends StatefulWidget {
+  /// Current game level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates an [ElevatorPitchScreen] widget.
   const ElevatorPitchScreen({
     super.key,
     required this.level,

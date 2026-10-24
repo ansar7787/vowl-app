@@ -2,12 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
+/// Prompt card showcasing the sentence to practice alongside emotional pragmatics.
 class IntonationMimicPromptCard extends StatelessWidget {
+  /// Target phrase or question.
   final String word;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Emotional context cue (e.g. "Polite inquiry", "Surprise").
   final String? emotionContext;
 
+  /// Creates an [IntonationMimicPromptCard] widget.
   const IntonationMimicPromptCard({
     super.key,
     required this.word,

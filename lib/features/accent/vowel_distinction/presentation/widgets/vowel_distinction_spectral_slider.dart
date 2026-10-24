@@ -5,18 +5,39 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Spectral vowel slider bar allowing the learner to sweep between contrasting vowel orbs.
 class VowelDistinctionSpectralSlider extends StatelessWidget {
+  /// Vowel phoneme options.
   final List<String> options;
+
+  /// Index of the correct vowel sound.
   final int correctIndex;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Selected option index, or `null`.
   final int? selectedIndex;
+
+  /// Normalized horizontal slider progress (0.0 to 1.0).
   final double sliderValue;
+
+  /// Callback executed when an option choice is confirmed.
   final Function(int, int) onSubmitChoice;
+
+  /// Callback executed while moving the slider.
   final Function(double, int) onSliderUpdate;
+
+  /// Optional callback executed when dragging completes.
   final Function(double, int)? onSliderEnd;
 
+  /// Creates a [VowelDistinctionSpectralSlider] widget.
   const VowelDistinctionSpectralSlider({
     super.key,
     required this.options,

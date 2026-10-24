@@ -24,6 +24,7 @@ import 'roleplay_state.dart';
 /// Owns all game-state transitions and side-effect coordination
 /// (sounds, haptics, rewards, analytics). No Flutter widget imports.
 class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
+  /// Creates a [RoleplayBloc] instance with all required use cases and services.
   RoleplayBloc({
     required this.getQuest,
     required this.preloadQuests,
@@ -49,16 +50,37 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
     on<RoleplaySpeakConfirmed>(_onSpeakConfirmed);
   }
 
+  /// Use case to fetch roleplay quests.
   final GetRoleplayQuest getQuest;
+
+  /// Use case to preload upcoming roleplay quests.
   final PreloadRoleplayQuests preloadQuests;
+
+  /// Use case to update user coins.
   final UpdateUserCoins updateUserCoins;
+
+  /// Use case to update user rewards upon level completion.
   final UpdateUserRewards updateUserRewards;
+
+  /// Use case to update category statistics.
   final UpdateCategoryStats updateCategoryStats;
+
+  /// Use case to update the unlocked level.
   final UpdateUnlockedLevel updateUnlockedLevel;
+
+  /// Use case to award badges.
   final AwardBadge awardBadge;
+
+  /// Audio feedback service.
   final SoundService soundService;
+
+  /// Tactile haptic feedback service.
   final HapticService hapticService;
+
+  /// Use case to consume a hint.
   final UseHint useHint;
+
+  /// Network connectivity info service.
   final NetworkInfo networkInfo;
 
   // ── Handlers ──────────────────────────────────────────────────────────────

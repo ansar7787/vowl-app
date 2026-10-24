@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction badge banner at the top of the daily expression game screen.
 class DailyExpressionHeader extends StatelessWidget {
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Prompt instruction text.
   final String instruction;
 
+  /// Creates a [DailyExpressionHeader].
   const DailyExpressionHeader({
     super.key,
     required this.primaryColor,

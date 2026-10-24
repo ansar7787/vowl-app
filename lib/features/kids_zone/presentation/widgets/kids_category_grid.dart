@@ -71,9 +71,12 @@ const _kSections = [
   ]),
 ];
 
+/// Categorized grid displaying all available Kids Zone games grouped by pedagogical domain.
 class KidsCategoryGrid extends StatefulWidget {
+  /// Whether dark theme styling is active.
   final bool isDark;
 
+  /// Creates a [KidsCategoryGrid] widget.
   const KidsCategoryGrid({super.key, required this.isDark});
 
   @override

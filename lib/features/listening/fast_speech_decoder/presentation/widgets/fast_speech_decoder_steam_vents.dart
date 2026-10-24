@@ -5,15 +5,30 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// List of sentence options displayed as steam vents for answer selection.
 class FastSpeechDecoderSteamVents extends StatelessWidget {
+  /// Available sentence transcript options.
   final List<String> options;
+
+  /// Index of the correct transcription.
   final int correctAnswerIndex;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether the answer has been locked in and evaluated.
   final bool isAnswered;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrectState;
+
+  /// Currently selected option index, if any.
   final int? selectedIndex;
+
+  /// Callback when an option is selected.
   final Function(int) onSubmitAnswer;
 
+  /// Creates a [FastSpeechDecoderSteamVents] options list.
   const FastSpeechDecoderSteamVents({
     super.key,
     required this.options,

@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Selectable tier card displaying subscription duration, discount badges, and localized pricing.
 class PremiumPlanCard extends StatelessWidget {
   final SubscriptionPlan plan;
   final bool isSelected;

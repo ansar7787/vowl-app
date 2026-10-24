@@ -17,9 +17,18 @@ import 'package:vowl/features/listening/ambient_id/presentation/widgets/ambient_
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
 
+/// Screen for the Ambient Sound Identification listening game quest.
+///
+/// Presents ambient acoustic clips or background noises where the player
+/// identifies the corresponding location or environment using a sonar radar field.
 class AmbientIdScreen extends StatefulWidget {
+  /// Progression level index.
   final int level;
+
+  /// Specific game subtype variant.
   final GameSubtype gameType;
+
+  /// Creates an [AmbientIdScreen] instance.
   const AmbientIdScreen({
     super.key,
     required this.level,

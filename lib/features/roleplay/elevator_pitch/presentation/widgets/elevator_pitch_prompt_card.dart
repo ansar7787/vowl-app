@@ -2,13 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Card displaying the pitch prompt, scenario instructions, and time limit.
 class ElevatorPitchPromptCard extends StatelessWidget {
+  /// Custom instructions or objective text.
   final String? instruction;
+
+  /// Main prompt or scenario description for the elevator pitch.
   final String prompt;
+
+  /// Time limit in seconds allocated for this pitch.
   final int timeLimit;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
 
+  /// Creates an [ElevatorPitchPromptCard] widget.
   const ElevatorPitchPromptCard({
     super.key,
     this.instruction,

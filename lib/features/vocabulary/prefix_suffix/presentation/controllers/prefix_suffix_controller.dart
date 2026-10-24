@@ -8,10 +8,13 @@ import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
+/// Controller managing interactive state, affix snapping, and spelling validation for prefix/suffix synthesis.
 class PrefixSuffixController extends ChangeNotifier {
   final HapticService _hapticService;
   final SoundService _soundService;
   final TtsService _ttsService;
+
+  /// Callback dispatched to report answer correctness to the parent screen.
   final void Function(bool isCorrect, {GameQuest? quest, String? userAnswer})
   onSubmitAnswer;
 
@@ -19,16 +22,31 @@ class PrefixSuffixController extends ChangeNotifier {
   Timer? _stageTimer;
   Timer? _hintTimer;
 
+  /// Whether the user has answered the trial.
   bool isAnswered = false;
+
+  /// Whether the submitted response was correct, or `null` if pending.
   bool? isCorrect;
+
+  /// Whether celebratory confetti is currently active.
   bool showConfetti = false;
+
+  /// Whether stage 1 (affix attachment) has been completed.
   bool isFirstStagePassed = false;
+
+  /// Currently selected affix candidate string.
   String? selectedAffix;
+
+  /// Currently illuminated affix string from hint activation.
   String? hintedAffix;
 
+  /// Quest index of the last evaluated question.
   int lastProcessedIndex = -1;
+
+  /// The active vocabulary quest item.
   VocabularyQuest? lastQuest;
 
+  /// Creates a [PrefixSuffixController] with required audio, haptic, and submission services.
   PrefixSuffixController({
     required HapticService hapticService,
     required SoundService soundService,
@@ -53,6 +71,7 @@ class PrefixSuffixController extends ChangeNotifier {
     super.dispose();
   }
 
+  /// Resets controller state for a new quest or retry attempt.
   void reset(VocabularyQuest? quest, int index) {
     if (_isDisposed) return;
     _stageTimer?.cancel();
@@ -67,6 +86,7 @@ class PrefixSuffixController extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Explicitly marks the question answered status.
   void setAnswered(bool correct) {
     if (_isDisposed) return;
     isAnswered = true;
@@ -74,6 +94,7 @@ class PrefixSuffixController extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Activates the game complete confetti sequence.
   void completeGame() {
     if (showConfetti || _isDisposed) return;
     showConfetti = true;
@@ -177,6 +198,7 @@ class PrefixSuffixController extends ChangeNotifier {
     return cleanCorrect.isNotEmpty ? cleanCorrect : correct;
   }
 
+  /// Handles selection or drop of candidate [option] into affix slots.
   void onAffixSelected(
     String option,
     VocabularyQuest quest,
@@ -330,6 +352,7 @@ class PrefixSuffixController extends ChangeNotifier {
     }
   }
 
+  /// Submits the final stage evaluation result.
   void submitFinalAnswer(
     bool nailedIt,
     VocabularyQuest? quest, {
@@ -358,6 +381,7 @@ class PrefixSuffixController extends ChangeNotifier {
     }
   }
 
+  /// Triggers an audio and visual hint highlighting the correct affix option.
   void onHint(VocabularyQuest? quest) {
     if (quest == null) return;
     final targetWord = getTargetWord(quest).toLowerCase();

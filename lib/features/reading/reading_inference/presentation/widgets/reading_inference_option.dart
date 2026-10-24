@@ -3,17 +3,36 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 
+/// Interactive option card for selecting an inference deduction.
 class ReadingInferenceOption extends StatelessWidget {
+  /// Zero-based option index determining its letter label.
   final int index;
+
+  /// Inference option text.
   final String text;
+
+  /// The authoritative correct inference string.
   final String correct;
+
+  /// Theme accent color applied to cards.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// The currently chosen option index, or null if unselected.
   final int? selectedIndex;
+
+  /// Whether the quest has been evaluated.
   final bool isAnswered;
+
+  /// Current mirror clarity level required to enable options.
   final double clarity;
+
+  /// Callback invoked when this option card is tapped.
   final VoidCallback onTap;
 
+  /// Creates a [ReadingInferenceOption] widget.
   const ReadingInferenceOption({
     super.key,
     required this.index,

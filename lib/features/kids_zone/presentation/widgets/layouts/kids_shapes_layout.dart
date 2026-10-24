@@ -16,11 +16,19 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_scre
 /// Parsed metadata for an option card in the Shapes game.
 /// Pairs the English shape vocabulary with its geometric symbol and 2D/3D taxonomy.
 class ShapeOptionData {
+  /// The raw unparsed text of the option.
   final String raw;
+
+  /// The cleaned shape name or title.
   final String title;
+
+  /// The geometric symbol or emoji representing the shape.
   final String shapeSymbol;
+
+  /// Whether the shape is a three-dimensional solid.
   final bool is3D;
 
+  /// Creates a [ShapeOptionData] instance.
   const ShapeOptionData({
     required this.raw,
     required this.title,
@@ -49,6 +57,7 @@ class ShapeOptionData {
     'rectangular prism': (symbol: '📦', is3D: true),
   };
 
+  /// Parses raw option [text] into a structured [ShapeOptionData] instance.
   factory ShapeOptionData.parse(String text) {
     final trimmed = text.trim();
     if (trimmed.isEmpty) {
@@ -86,6 +95,7 @@ class ShapeOptionData {
 class ShapeSubtypeHelper {
   const ShapeSubtypeHelper._();
 
+  /// Resolves the human-readable label and emoji icon for a given curriculum [subtype].
   static ({String label, String icon}) resolve(String? subtype) {
     if (subtype == null || subtype.isEmpty) {
       return (label: 'Shapes', icon: '📐');
@@ -134,10 +144,16 @@ class ShapeSubtypeHelper {
 /// - Time Complexity: O(N) where N is the number of options (3..4)
 /// - Space Complexity: O(1) auxiliary space
 class KidsShapesLayout extends StatefulWidget {
+  /// The current game level or world index.
   final int level;
+
+  /// The display title of the game.
   final String title;
+
+  /// The primary theme color for accents and badges.
   final Color primaryColor;
 
+  /// Creates a [KidsShapesLayout] widget.
   const KidsShapesLayout({
     super.key,
     required this.level,

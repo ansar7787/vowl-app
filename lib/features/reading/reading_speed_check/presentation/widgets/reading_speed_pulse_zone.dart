@@ -5,17 +5,36 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Timed passage reading area displaying live WPM calculation and pulse action button.
 class ReadingSpeedPulseZone extends StatelessWidget {
+  /// The full text of the passage to be read.
   final String passage;
+
+  /// Theme accent color applied to metrics and pulse borders.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Remaining time in seconds.
   final int timerValue;
+
+  /// Total time allocation in seconds.
   final int timeLimit;
+
+  /// Total word count of the passage.
   final int wordCount;
+
+  /// Target words per minute goal.
   final int wpmTarget;
+
+  /// Callback invoked when the user finishes reading and taps stop.
   final VoidCallback onTapPulse;
+
+  /// Whether text should be enlarged for readability.
   final bool largeText;
 
+  /// Creates a [ReadingSpeedPulseZone] widget.
   const ReadingSpeedPulseZone({
     super.key,
     required this.passage,

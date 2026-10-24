@@ -17,21 +17,46 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 ///
 /// Every interactive element carries a [Semantics] label.
 class SpeakingGameHeader extends StatelessWidget {
+  /// Current difficulty level.
   final int level;
+
+  /// Normalized quest progression fraction (0.0 to 1.0).
   final double progress;
+
+  /// Remaining lives count.
   final int lives;
+
+  /// Current consecutive answer streak count.
   final int streak;
+
+  /// Active speaking quest entity.
   final SpeakingQuest? quest;
+
+  /// Whether user submission has been locked in.
   final bool isAnswered;
+
+  /// Whether a pedagogical hint has been unlocked.
   final bool hintUsed;
+
+  /// Acoustic cue sound service.
   final SoundService soundService;
 
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the hint action button is rendered.
   final bool showHintButton;
+
+  /// Callback executed when tapping the back button.
   final VoidCallback onBack;
+
+  /// Callback executed when triggering the hint action.
   final VoidCallback onHintTap;
+
+  /// Callback executed when opening the quest instruction briefing.
   final VoidCallback onInfoTap;
 
+  /// Creates a [SpeakingGameHeader].
   const SpeakingGameHeader({
     super.key,
     required this.level,

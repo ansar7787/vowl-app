@@ -10,11 +10,16 @@ import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Bento grid component showcasing core language arenas and curriculum progression.
 class BentoArena extends StatefulWidget {
-  const BentoArena({super.key, required this.user, this.collapsed = false});
-
+  /// Current authenticated [user] entity.
   final UserEntity user;
+
+  /// Whether the arena displays in compact/collapsed mode.
   final bool collapsed;
+
+  /// Creates a [BentoArena] for [user].
+  const BentoArena({super.key, required this.user, this.collapsed = false});
 
   static const List<QuestType> _journeySteps = [
     QuestType.vocabulary, // Step 1: Words
@@ -443,12 +448,21 @@ class _BentoCategoryTile extends StatelessWidget {
   }
 }
 
+/// Paints the curved learning journey path linking sequential bento quest arena nodes.
 class JourneyPathPainter extends CustomPainter {
+  /// Whether dark theme styling is active.
   final bool isDark;
+
+  /// Whether the interface direction is right-to-left.
   final bool isRtl;
+
+  /// The total count of curriculum step nodes along the path.
   final int stepsCount;
+
+  /// The sequence of quest types positioned along the journey.
   final List<QuestType> types;
 
+  /// Creates a [JourneyPathPainter] instance.
   JourneyPathPainter({
     required this.isDark,
     required this.isRtl,

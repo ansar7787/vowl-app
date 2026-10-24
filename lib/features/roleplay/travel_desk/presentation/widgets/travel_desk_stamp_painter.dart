@@ -2,11 +2,18 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter rendering circular ink ripples and flying shockwave specks on stamp impact.
 class StampRipplePainter extends CustomPainter {
+  /// Center coordinate of stamp impact.
   final Offset impactOffset;
+
+  /// Animation progress value (0.0 to 1.0).
   final double animationValue;
+
+  /// Theme accent color.
   final Color themeColor;
 
+  /// Creates a [StampRipplePainter] instance.
   StampRipplePainter({
     required this.impactOffset,
     required this.animationValue,

@@ -25,7 +25,9 @@ class _LocalPalette {
   static const Color color0284c7 = Color(0xFF0284C7);
 }
 
+/// Trophy room showcase displaying earned and locked achievements and badges.
 class TrophyRoomScreen extends StatelessWidget {
+  /// Creates a [TrophyRoomScreen].
   const TrophyRoomScreen({super.key});
 
   @override

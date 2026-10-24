@@ -27,6 +27,7 @@ enum AnswerStatus {
 
 // ─── Base state ───────────────────────────────────────────────────────────────
 
+/// Base state class for the [VocabularyBloc].
 abstract class VocabularyState extends Equatable implements GameStateBase {
   const VocabularyState();
 

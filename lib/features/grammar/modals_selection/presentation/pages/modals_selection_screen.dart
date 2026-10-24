@@ -15,9 +15,15 @@ import 'package:vowl/features/grammar/modals_selection/presentation/widgets/moda
 import 'package:vowl/features/grammar/modals_selection/presentation/widgets/modals_rotary_dial.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
+/// Screen host for Modal Selection exercises, exploring modal meanings of obligation, possibility, and permission.
 class ModalsSelectionScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [ModalsSelectionScreen] widget.
   const ModalsSelectionScreen({
     super.key,
     required this.level,

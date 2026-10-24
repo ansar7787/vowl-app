@@ -18,9 +18,15 @@ import 'package:vowl/features/vocabulary/collocations/presentation/widgets/collo
 import 'package:vowl/features/vocabulary/collocations/presentation/widgets/collocations_wrong_pairs.dart';
 import 'package:vowl/core/presentation/game_mechanics/arranging/context_sentence_builder.dart';
 
+/// Interactive collocations game screen where learners pair natural lexical partners.
 class CollocationsScreen extends StatefulWidget {
+  /// The active curriculum difficulty level.
   final int level;
+
+  /// The active game subtype.
   final GameSubtype gameType;
+
+  /// Creates a [CollocationsScreen] instance.
   const CollocationsScreen({
     super.key,
     required this.level,

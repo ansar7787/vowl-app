@@ -9,14 +9,20 @@ import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 // ---------------------------------------------------------------------------
 
 /// Represents the status of the current question's answer submission.
-/// Replaces the previous `bool? lastAnswerCorrect` tri-state.
 enum AnswerStatus {
+  /// No answer has been submitted for this trial yet.
   unanswered,
+
+  /// The submitted answer was evaluated as correct.
   correct,
+
+  /// The submitted answer was evaluated as incorrect.
   incorrect;
 
+  /// Whether an answer has been submitted (either correct or incorrect).
   bool get isAnswered => this != AnswerStatus.unanswered;
 
+  /// Returns `true` for correct, `false` for incorrect, and `null` for unanswered.
   bool? get asBoolOrNull {
     switch (this) {
       case AnswerStatus.unanswered:
@@ -29,7 +35,9 @@ enum AnswerStatus {
   }
 }
 
+/// Abstract base class for all accent training BLoC states.
 abstract class AccentState extends Equatable implements GameStateBase {
+  /// Base const constructor for [AccentState].
   const AccentState();
 
   @override
@@ -43,8 +51,9 @@ abstract class AccentState extends Equatable implements GameStateBase {
 // AccentInitial
 // ---------------------------------------------------------------------------
 
-/// Blank slate — emitted on launch and after [RestartLevel].
+/// Initial blank state emitted on launch and after level reset.
 class AccentInitial extends AccentState implements GameInitialState {
+  /// Creates an [AccentInitial] state.
   const AccentInitial();
 }
 
@@ -52,8 +61,9 @@ class AccentInitial extends AccentState implements GameInitialState {
 // AccentLoading
 // ---------------------------------------------------------------------------
 
-/// Quests are being fetched from the network or local cache.
+/// State indicating quests are being fetched from local cache or remote storage.
 class AccentLoading extends AccentState implements GameLoadingState {
+  /// Creates an [AccentLoading] state.
   const AccentLoading();
 }
 
@@ -63,13 +73,16 @@ class AccentLoading extends AccentState implements GameLoadingState {
 
 /// Active game session with at least one quest available.
 class AccentLoaded extends AccentState implements GameLoadedState {
+  /// The collection of quests for the active level.
   final List<AccentQuest> quests;
+
   @override
   final int currentIndex;
+
   @override
   final int livesRemaining;
 
-  /// Replaces `lastAnswerCorrect`. Defaults to `unanswered`.
+  /// Status of the active question's evaluation.
   final AnswerStatus answerStatus;
 
   /// Legacy accessor for backward compatibility in parts of the UI layer.
@@ -78,18 +91,21 @@ class AccentLoaded extends AccentState implements GameLoadedState {
 
   @override
   final bool hintUsed;
+
+  /// The active accent game subtype.
   final GameSubtype gameType;
+
+  /// The current level index.
   final int level;
 
   /// How many wrong answers the player has given for the current quest.
-  /// Resets to 0 when advancing to the next quest or when [isFinalFailure].
   final int wrongCount;
 
-  /// `true` when the player has failed this quest twice (Mastery Loop trigger)
-  /// or when lives have been exhausted.
+  /// Whether the player has failed this quest twice or exhausted lives.
   @override
   final bool isFinalFailure;
 
+  /// The currently active [AccentQuest].
   AccentQuest get currentQuest => quests[currentIndex];
 
   @override
@@ -101,6 +117,7 @@ class AccentLoaded extends AccentState implements GameLoadedState {
   @override
   int get totalQuests => quests.length;
 
+  /// Creates an [AccentLoaded] session state.
   const AccentLoaded({
     required this.quests,
     required this.currentIndex,
@@ -127,9 +144,6 @@ class AccentLoaded extends AccentState implements GameLoadedState {
   ];
 
   /// Returns a new [AccentLoaded] with the given fields overridden.
-  ///
-  /// [lastAnswerCorrect] is intentionally NOT null-coalesced: passing `null`
-  /// explicitly clears the answered state (e.g. moving to next question).
   AccentLoaded copyWith({
     List<AccentQuest>? quests,
     int? currentIndex,
@@ -160,15 +174,15 @@ class AccentLoaded extends AccentState implements GameLoadedState {
 // AccentError
 // ---------------------------------------------------------------------------
 
+/// State indicating an error occurred during accent session execution.
 class AccentError extends AccentState implements GameErrorState {
   @override
   final String message;
 
   /// Raw technical detail for debugging.
-  /// **Never display [technicalError] directly in production UI** — it may
-  /// contain internal stack information. Gate it behind `kDebugMode`.
   final String? technicalError;
 
+  /// Creates an [AccentError] state with a human-readable [message].
   const AccentError(this.message, {this.technicalError});
 
   @override
@@ -179,17 +193,21 @@ class AccentError extends AccentState implements GameErrorState {
 // AccentGameComplete
 // ---------------------------------------------------------------------------
 
+/// State emitted upon successfully clearing all quests in the level.
 class AccentGameComplete extends AccentState implements GameCompleteState {
   @override
   final int xpEarned;
+
   @override
   final int coinsEarned;
+
+  /// Total number of questions completed during the session.
   final int questCount;
 
   /// Snapshot of the game state at the moment of completion.
-  /// Allows the results screen to re-read lives, streak, etc.
   final AccentLoaded lastState;
 
+  /// Creates an [AccentGameComplete] state with reward and telemetry metrics.
   const AccentGameComplete({
     required this.xpEarned,
     required this.coinsEarned,
@@ -205,15 +223,24 @@ class AccentGameComplete extends AccentState implements GameCompleteState {
 // AccentGameOver
 // ---------------------------------------------------------------------------
 
+/// State emitted when the player runs out of lives before finishing the level.
 class AccentGameOver extends AccentState implements GameOverState {
+  /// The quest collection active when game over was reached.
   final List<AccentQuest> quests;
+
+  /// The quest index at failure.
   final int currentIndex;
+
+  /// The active game subtype.
   final GameSubtype gameType;
+
+  /// The current level index.
   final int level;
 
   @override
   int get livesRemaining => 0;
 
+  /// Creates an [AccentGameOver] terminal state.
   const AccentGameOver({
     required this.quests,
     required this.currentIndex,

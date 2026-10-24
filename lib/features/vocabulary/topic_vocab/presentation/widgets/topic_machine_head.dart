@@ -3,10 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Animated sci-fi machine head dispenser that dispenses new topical vocabulary chips.
 class TopicMachineHead extends StatelessWidget {
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Optional topic emoji icon.
   final String? emoji;
 
+  /// Creates a [TopicMachineHead] dispenser widget.
   const TopicMachineHead({super.key, required this.primaryColor, this.emoji});
 
   @override

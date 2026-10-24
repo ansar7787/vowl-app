@@ -11,15 +11,30 @@ import 'package:vowl/features/auth/domain/usecases/sign_up.dart';
 // STATE
 // ============================================================================
 
+/// State emitted by the [SignUpCubit] during user account registration.
 class SignUpState extends Equatable {
+  /// Entered display name.
   final String name;
+
+  /// Entered email address.
   final String email;
+
+  /// Entered password.
   final String password;
+
+  /// Whether registration is actively submitting.
   final bool isSubmitting;
+
+  /// Whether registration completed successfully.
   final bool isSuccess;
+
+  /// Optional error message translation key.
   final String? errorMessage;
+
+  /// Whether the password text should be revealed.
   final bool isPasswordVisible;
 
+  /// Creates a [SignUpState] instance.
   const SignUpState({
     this.name = '',
     this.email = '',
@@ -66,7 +81,8 @@ class SignUpState extends Equatable {
 // CUBIT
 // ============================================================================
 
-/// ### Error messages
+/// Cubit managing the user account registration flow.
+///
 /// Every error, client-side validation included, flows through
 /// [AuthErrorHandler.getKey] — see `ForgotPasswordCubit`'s class doc for why
 /// (the validation checks below previously set [SignUpState.errorMessage] to
@@ -76,6 +92,7 @@ class SignUpCubit extends Cubit<SignUpState> {
   final SendEmailVerification _sendEmailVerification;
   final NetworkInfo? _networkInfo;
 
+  /// Creates a [SignUpCubit] instance with required use cases.
   SignUpCubit({
     required SignUp signUp,
     required SendEmailVerification sendEmailVerification,

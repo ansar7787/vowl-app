@@ -30,6 +30,7 @@ class UserRepositoryImpl
   final FirebaseFirestore _firestore;
   final FirebaseStorage _storage;
 
+  /// Creates a [UserRepositoryImpl] instance with optional Firebase overrides.
   UserRepositoryImpl({
     firebase_auth.FirebaseAuth? firebaseAuth,
     FirebaseFirestore? firestore,

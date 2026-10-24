@@ -9,10 +9,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 /// method. If midnight-theme conditioning is needed in the future, add it back
 /// alongside the actual implementation.
 class GrammarInstruction extends StatelessWidget {
+  /// The instruction string displayed to the user.
   final String instruction;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [GrammarInstruction] widget.
   const GrammarInstruction({
     super.key,
     required this.instruction,

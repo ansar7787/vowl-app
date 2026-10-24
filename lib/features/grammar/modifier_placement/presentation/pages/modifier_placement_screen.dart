@@ -15,9 +15,15 @@ import 'package:vowl/features/grammar/modifier_placement/presentation/widgets/mo
 import 'package:vowl/features/grammar/modifier_placement/presentation/widgets/modifier_magnetic_arena.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
+/// Screen host for Modifier Placement exercises, avoiding dangling and misplaced modifiers.
 class ModifierPlacementScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [ModifierPlacementScreen] widget.
   const ModifierPlacementScreen({
     super.key,
     required this.level,

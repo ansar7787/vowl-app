@@ -10,15 +10,30 @@ class _LocalPalette {
   static const Color color07070f = Color(0xFF07070F);
 }
 
+/// Interactive tilt arena with physics-based sliding ball snapping toward Yes or No poles.
 class YesNoSpeakingTiltArena extends StatelessWidget {
+  /// Normalized tilt position value (-1.0 to 1.0).
   final double tiltValue;
+
+  /// Whether the sphere has locked into a pole gate.
   final bool isSnapped;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Callback executed during interactive dragging of the tilt ball.
   final Function(DragUpdateDetails, double) onTiltDragged;
+
+  /// Callback executed when the drag gesture ends.
   final VoidCallback onTiltDragEnd;
+
+  /// Optional callback invoked when a specific gate (true for Yes, false for No) is selected directly.
   final ValueChanged<bool>? onGateSelected;
 
+  /// Creates a [YesNoSpeakingTiltArena].
   const YesNoSpeakingTiltArena({
     super.key,
     required this.tiltValue,

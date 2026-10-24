@@ -10,10 +10,15 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Timed reward chest widget that unlocks daily bonus coins and gifts on cooldown.
 class KidsMagicChest extends StatefulWidget {
+  /// Callback invoked when the reward chest is claimed.
   final VoidCallback onClaimed;
+
+  /// Function used to display confirmation notifications.
   final Function(BuildContext, String, {bool isError}) showNotification;
 
+  /// Creates a [KidsMagicChest] widget.
   const KidsMagicChest({
     super.key,
     required this.onClaimed,

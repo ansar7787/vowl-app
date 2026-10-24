@@ -30,10 +30,18 @@ Either<Failure, void> _swallow(Object _) => const Right<Failure, void>(null);
 
 // ─── BLoC ─────────────────────────────────────────────────────────────────────
 
+/// State management component orchestrating game sessions, quests, answers, and rewards for vocabulary activities.
 class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
+  /// Use case for retrieving vocabulary quests.
   final GetVocabularyQuests getQuests;
+
+  /// Use case for updating the user's coin balance.
   final UpdateUserCoins updateUserCoins;
+
+  /// Use case for recording XP, coins, and level progress upon completion.
   final UpdateUserRewards updateUserRewards;
+
+  /// Use case for updating category-level accuracy statistics.
   final UpdateCategoryStats updateCategoryStats;
 
   /// Injected for API parity with other game blocs. Level unlock is handled
@@ -41,18 +49,32 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
   /// duplicate writes. Intentionally unused.
   // ignore: unused_field
   final UpdateUnlockedLevel updateUnlockedLevel;
+
+  /// Use case for awarding pedagogical badges and achievements.
   final AwardBadge awardBadge;
+
+  /// Service managing gameplay audio effects.
   final SoundService soundService;
+
+  /// Service managing tactile vibration feedback.
   final HapticService hapticService;
+
+  /// Use case deducting available hint currency.
   final UseHint useHint;
+
+  /// Service monitoring real-time network connectivity.
   final NetworkInfo networkInfo;
 
   String? _currentGameType;
   int? _currentLevel;
 
+  /// The active game sub-type identifier.
   String? get currentGameType => _currentGameType;
+
+  /// The active 1-based difficulty level.
   int? get currentLevel => _currentLevel;
 
+  /// Creates a [VocabularyBloc] with required services, repositories, and use cases.
   VocabularyBloc({
     required this.getQuests,
     required this.updateUserCoins,

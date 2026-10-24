@@ -4,11 +4,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Full-sentence keyboard input widget for rewriting sentences on hard mode.
 class CorrectionWritingKeyboardInput extends StatefulWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Callback receiving the submitted corrected sentence string.
   final ValueChanged<String> onSubmit;
 
+  /// Creates a [CorrectionWritingKeyboardInput] field.
   const CorrectionWritingKeyboardInput({
     super.key,
     required this.color,

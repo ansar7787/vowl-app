@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Custom interactive scrollbar with theme-adaptive styling.
 class GameScrollbar extends StatelessWidget {
   final Widget child;
   final ScrollController? controller;

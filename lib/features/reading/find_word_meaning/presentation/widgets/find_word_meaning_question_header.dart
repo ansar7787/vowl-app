@@ -3,11 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
+/// Header tile presenting the contextual definition for which the word must be found.
 class FindWordMeaningQuestionHeader extends StatelessWidget {
+  /// The dictionary or contextual definition prompt text.
   final String text;
+
+  /// Theme accent color applied to labels and badges.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [FindWordMeaningQuestionHeader] widget.
   const FindWordMeaningQuestionHeader({
     super.key,
     required this.text,

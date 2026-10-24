@@ -4,10 +4,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 /// Clean, centered instruction pill for Direct/Indirect Speech game.
 /// Formatted with standard typography, no truncation/ellipses, and centered alignment.
 class DirectIndirectSpeechInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Custom instruction text, or `null` for fallback copy.
   final String? instruction;
+
+  /// Whether compact visual styling should be applied.
   final bool isCompact;
 
+  /// Creates a [DirectIndirectSpeechInstruction] widget.
   const DirectIndirectSpeechInstruction({
     super.key,
     required this.primaryColor,

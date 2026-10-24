@@ -14,6 +14,7 @@ class _LocalPalette {
   static const Color color818cf8 = Color(0xFF818CF8);
 }
 
+/// Placeholder view shown prior to capturing or selecting an image for OCR scanning.
 class ScanEmptyState extends StatelessWidget {
   final Future<void> Function(ImageSource) onPickImage;
 

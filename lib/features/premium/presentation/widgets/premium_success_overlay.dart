@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// Celebration overlay shown when a subscription payment succeeds.
 class PremiumSuccessOverlay extends StatelessWidget {
   final VoidCallback onBeginAdventure;
   final String? transactionId;

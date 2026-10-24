@@ -7,12 +7,17 @@ import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dar
 import 'package:vowl/features/daily_words/presentation/pages/daily_words_screen.dart';
 import 'package:vowl/features/daily_words/presentation/pages/word_bank_screen.dart';
 
+/// Declarative routing definitions for daily vocabulary words and the personal word bank.
 class DailyWordsRoutes {
   DailyWordsRoutes._();
 
+  /// Route path for the daily vocabulary learning card interface.
   static const String dailyWordsRoute = '/daily-words';
+
+  /// Route path for the searchable personal word bank and mastery list.
   static const String wordBankRoute = '/word-bank';
 
+  /// Declarative [RouteBase] list registered with the application router.
   static final List<RouteBase> routes = [
     GoRoute(
       path: dailyWordsRoute,

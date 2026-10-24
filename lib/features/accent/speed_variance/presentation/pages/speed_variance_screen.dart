@@ -18,9 +18,15 @@ import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_tim
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
+/// Screen host for Speed Variance exercises, developing listening comprehension across different speech tempos.
 class SpeedVarianceScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [SpeedVarianceScreen] widget.
   const SpeedVarianceScreen({
     super.key,
     required this.level,

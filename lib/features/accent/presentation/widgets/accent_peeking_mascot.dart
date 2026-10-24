@@ -15,13 +15,19 @@ import 'package:vowl/features/accent/presentation/bloc/accent_state.dart';
 /// Marked [ExcludeSemantics] because the mascot is entirely decorative.
 /// Its speech-bubble message is accessible via the TTS nudge system.
 class AccentPeekingMascot extends StatelessWidget {
+  /// Current state from [AccentBloc].
   final AccentState state;
+
+  /// Remaining user lives count.
   final int lives;
+
+  /// Identifier of the selected user mascot.
   final String mascotId;
 
   /// Whether the last submitted answer was correct (drives speech-bubble copy).
   final bool? isCorrect;
 
+  /// Creates an [AccentPeekingMascot] widget.
   const AccentPeekingMascot({
     super.key,
     required this.state,

@@ -3,16 +3,33 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Cargo crate card displaying the reading passage and drop target for title labels.
 class GuessTitleCargoCrate extends StatelessWidget {
+  /// The full text of the reading passage.
   final String passage;
+
+  /// The authoritative correct title.
   final String correct;
+
+  /// Theme accent color applied to crate borders and highlights.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// The currently chosen title string, or null if none.
   final String? selectedTitle;
+
+  /// Whether the answer has been evaluated.
   final bool isAnswered;
+
+  /// Whether the evaluated title was correct.
   final bool? isCorrect;
+
+  /// Callback invoked when a title label is dropped onto the crate.
   final Function(String) onAccept;
 
+  /// Creates a [GuessTitleCargoCrate] widget.
   const GuessTitleCargoCrate({
     super.key,
     required this.passage,

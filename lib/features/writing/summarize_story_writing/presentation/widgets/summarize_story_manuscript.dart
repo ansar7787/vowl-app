@@ -3,11 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
+/// Card widget displaying the original story excerpt to be summarized.
 class SummarizeStoryManuscript extends StatelessWidget {
+  /// The full text of the story excerpt.
   final String story;
+
+  /// Theme accent color applied to borders and heading icons.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [SummarizeStoryManuscript] widget.
   const SummarizeStoryManuscript({
     super.key,
     required this.story,

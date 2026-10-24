@@ -22,10 +22,19 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 /// [GameProgressHeader] receives the raw inferred-type object directly, which
 /// satisfies its parameter without an explicit cast.
 class AccentHeader extends StatelessWidget {
+  /// Current level index.
   final int level;
+
+  /// Progress fraction from 0.0 to 1.0.
   final double progress;
+
+  /// Remaining user lives.
   final int lives;
+
+  /// Consecutive correct answers streak.
   final int streak;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
   /// Current quest, or `null` when the level is loading / complete.
@@ -34,13 +43,22 @@ class AccentHeader extends StatelessWidget {
   /// If `true`, the hint and briefing buttons are hidden (answer is locked).
   final bool isAnswered;
 
+  /// Whether a hint has already been revealed in this round.
   final bool hintUsed;
+
+  /// Sound playback service for interactive button effects.
   final SoundService soundService;
 
+  /// Callback invoked when the user taps the exit back button.
   final VoidCallback onBack;
+
+  /// Callback invoked to display the level pedagogical briefing.
   final VoidCallback onShowBriefing;
+
+  /// Callback invoked when the hint button is pressed.
   final VoidCallback onHintTap;
 
+  /// Creates an [AccentHeader] widget.
   const AccentHeader({
     super.key,
     required this.level,

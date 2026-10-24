@@ -10,15 +10,30 @@ class _LocalPalette {
   static const Color colordc2626 = Color(0xFFDC2626);
 }
 
+/// Multiline writing input area featuring live word count and keyword usage indicators.
 class DescribeSituationWritingArea extends StatelessWidget {
+  /// Text editing controller managing the situation input text.
   final TextEditingController textController;
+
+  /// Focus node attached to the text input field.
   final FocusNode focusNode;
+
+  /// The minimum number of words required for a valid submission.
   final int minWords;
+
+  /// Current word count of the typed description.
   final int wordCount;
+
+  /// List of target keywords successfully incorporated into the text.
   final List<String> usedKeywords;
+
+  /// Theme accent color applied to indicators and borders.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [DescribeSituationWritingArea] widget.
   const DescribeSituationWritingArea({
     super.key,
     required this.textController,

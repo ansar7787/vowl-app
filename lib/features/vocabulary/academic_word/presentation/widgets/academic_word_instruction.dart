@@ -5,9 +5,13 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// Animated pill-shaped instruction banner at the top of the game.
 class AcademicWordInstruction extends StatelessWidget {
+  /// Theme accent color for background tints and border highlights.
   final Color color;
+
+  /// Localized instructional text displayed to the learner.
   final String label;
 
+  /// Creates an [AcademicWordInstruction] banner.
   const AcademicWordInstruction({
     super.key,
     required this.color,

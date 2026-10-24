@@ -18,10 +18,19 @@ import 'package:vowl/features/writing/complete_sentence/presentation/widgets/com
 import 'package:vowl/core/presentation/game_mechanics/arranging/dynamic_anagram_wrapper.dart';
 
 // ---------------------------------------------------------------------------
+
+/// Screen for the Complete Sentence writing game quest.
+///
+/// Prompts the user to fill in missing sentence gaps using draggable ballista word ammo
+/// or typed keyboard input in advanced levels, followed by anagram reinforcement.
 class CompleteSentenceScreen extends StatefulWidget {
+  /// Progression level index.
   final int level;
+
+  /// Specific game subtype variant.
   final GameSubtype gameType;
 
+  /// Creates a [CompleteSentenceScreen] instance.
   const CompleteSentenceScreen({
     super.key,
     required this.level,

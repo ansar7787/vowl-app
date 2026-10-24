@@ -54,10 +54,16 @@ class _LocalPalette {
 /// Supports DUAL INTERACTION (tap-to-answer + drag-and-drop),
 /// TTS audio replay, zero 320dp small-screen overflow, and tactile haptics.
 class KidsColorsLayout extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The title of the game.
   final String title;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsColorsLayout] widget.
   const KidsColorsLayout({
     super.key,
     required this.level,

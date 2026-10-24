@@ -30,8 +30,10 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 /// 8. **Dark mode adaptive** — no hardcoded white assumptions.
 /// 9. **Haptic feedback** — physical "click" on tap.
 class ContinueLearningCard extends StatefulWidget {
+  /// Current authenticated [user] entity.
   final UserEntity user;
 
+  /// Creates a [ContinueLearningCard] for [user].
   const ContinueLearningCard({super.key, required this.user});
 
   @override

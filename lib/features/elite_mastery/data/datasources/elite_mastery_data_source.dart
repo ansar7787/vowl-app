@@ -4,16 +4,21 @@ import 'package:vowl/core/error/exceptions.dart';
 import 'package:vowl/core/data/services/asset_quest_service.dart';
 import '../models/elite_mastery_quest_model.dart';
 
+/// Contract for retrieving elite mastery quest models from local or remote assets.
 abstract class EliteMasteryDataSource {
+  /// Fetches a list of quests for a specific [gameType] and difficulty [level].
   Future<List<EliteMasteryQuestModel>> getQuests({
     required String gameType,
     required int level,
   });
 }
 
+/// Implementation of [EliteMasteryDataSource] reading from bundled curriculum assets.
 class EliteMasteryDataSourceImpl implements EliteMasteryDataSource {
+  /// Underlying quest asset loading service.
   final AssetQuestService assetQuestService;
 
+  /// Creates an [EliteMasteryDataSourceImpl] with [assetQuestService].
   const EliteMasteryDataSourceImpl({required this.assetQuestService});
 
   @override

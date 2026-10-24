@@ -16,9 +16,12 @@ class _LocalPalette {
   static const Color colorc084fc = Color(0xFFC084FC);
 }
 
+/// Horizontal badge carousel showcasing earned achievements and unlock criteria.
 class ProfileBadgesList extends StatefulWidget {
+  /// Current authenticated [user] entity.
   final UserEntity user;
 
+  /// Creates a [ProfileBadgesList] for [user].
   const ProfileBadgesList({super.key, required this.user});
 
   @override

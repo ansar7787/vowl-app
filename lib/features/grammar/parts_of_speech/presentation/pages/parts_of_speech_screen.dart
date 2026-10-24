@@ -17,10 +17,15 @@ import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speec
 import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speech_vortex.dart';
 import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speech_draggable_word.dart';
 
+/// Screen presenting the parts-of-speech categorization grammar exercise.
 class PartsOfSpeechScreen extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The game subtype for tracking and analytics.
   final GameSubtype gameType;
 
+  /// Creates a [PartsOfSpeechScreen] widget.
   const PartsOfSpeechScreen({
     super.key,
     required this.level,

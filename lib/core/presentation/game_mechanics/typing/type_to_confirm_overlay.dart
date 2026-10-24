@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/gibberish_detector_service.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/smart_typo_controller.dart';
 
+/// Type-to-confirm overlay requiring user text entry to solidify understanding.
 class TypeToConfirmOverlay extends StatefulWidget {
   final String expectedText;
   final String? displayText;

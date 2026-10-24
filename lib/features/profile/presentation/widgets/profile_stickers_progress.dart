@@ -7,9 +7,12 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_feature_card.dart';
 
+/// Profile feature card highlighting unlocked kids stickers and overall collection progress.
 class ProfileStickersProgress extends StatelessWidget {
+  /// Current authenticated [user] entity containing kids stickers.
   final UserEntity user;
 
+  /// Creates a [ProfileStickersProgress] card for [user].
   const ProfileStickersProgress({super.key, required this.user});
 
   @override

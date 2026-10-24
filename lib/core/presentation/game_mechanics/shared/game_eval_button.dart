@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// Interactive pressable feedback button used for self-evaluation actions.
 class GameEvalButton extends StatefulWidget {
   const GameEvalButton({
     super.key,

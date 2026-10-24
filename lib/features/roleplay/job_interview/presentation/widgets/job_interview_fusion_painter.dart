@@ -3,11 +3,18 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter rendering professionalism gauge arcs and telemetry fusion rings.
 class ProfessionalismFusionPainter extends CustomPainter {
+  /// Animation progress value driving rotation effects.
   final double animationValue;
+
+  /// Current professionalism rating (0.0 to 1.0).
   final double professionalismLevel;
+
+  /// Theme accent color.
   final Color themeColor;
 
+  /// Creates a [ProfessionalismFusionPainter] instance.
   ProfessionalismFusionPainter({
     required this.animationValue,
     required this.professionalismLevel,

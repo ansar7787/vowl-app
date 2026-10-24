@@ -5,17 +5,24 @@ import 'package:vowl/core/error/exceptions.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/writing/data/models/writing_quest_model.dart';
 
+/// Remote data source contract for loading writing curriculum quests.
 abstract class WritingRemoteDataSource {
+  /// Fetches a list of writing quests for the specified [gameType] and progression [level].
   Future<List<WritingQuestModel>> getWritingQuest({
     required GameSubtype gameType,
     required int level,
   });
 }
 
+/// Cloud Firestore and asset-backed implementation of [WritingRemoteDataSource].
 class WritingRemoteDataSourceImpl implements WritingRemoteDataSource {
+  /// Firestore client instance.
   final FirebaseFirestore firestore;
+
+  /// Service managing local JSON asset fallbacks.
   final AssetQuestService assetQuestService;
 
+  /// Creates a [WritingRemoteDataSourceImpl] instance.
   WritingRemoteDataSourceImpl(this.firestore, this.assetQuestService);
 
   @override

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner for the reading inference activity.
 class ReadingInferenceInstruction extends StatelessWidget {
+  /// The primary theme accent color for borders and icons.
   final Color primaryColor;
+
+  /// Optional fallback instruction text describing the inference task.
   final String? instruction;
 
+  /// Creates a [ReadingInferenceInstruction] widget.
   const ReadingInferenceInstruction({
     super.key,
     required this.primaryColor,

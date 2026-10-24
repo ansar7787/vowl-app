@@ -4,13 +4,24 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_painters.dart';
 
+/// Cosmic circular warp gate displaying the target word to which synonyms must be matched.
 class SynonymWarpGate extends StatelessWidget {
+  /// The target vocabulary word rendered within the portal core.
   final String word;
+
+  /// Theme accent color for concentric rings, vortex lines, and glowing halos.
   final Color color;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// Optional tap callback executed on gate tap.
   final VoidCallback? onTap;
+
+  /// Whether a candidate shard is actively selected or hovering over the portal.
   final bool hasActiveSelection;
 
+  /// Creates a [SynonymWarpGate] widget.
   const SynonymWarpGate({
     super.key,
     required this.word,

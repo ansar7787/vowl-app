@@ -6,11 +6,18 @@ class _LocalPalette {
   static const Color color1a1a1a = Color(0xFF1A1A1A);
 }
 
+/// Card component presenting the text statement and optional emoji to be evaluated.
 class AudioTrueFalseScreenDisplay extends StatelessWidget {
+  /// Statement or assertion text.
   final String statement;
+
+  /// Theme accent color applied to the card border and glow.
   final Color color;
+
+  /// Optional emoji reflecting the subject matter.
   final String? emoji;
 
+  /// Creates an [AudioTrueFalseScreenDisplay] card.
   const AudioTrueFalseScreenDisplay({
     super.key,
     required this.statement,

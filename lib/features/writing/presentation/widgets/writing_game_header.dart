@@ -15,19 +15,45 @@ import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Top navigation and status header for writing challenges.
+///
+/// Features progress bar, remaining lives indicators, exit dialog triggers,
+/// game instructions info modal button, and an animated hint activator.
 class WritingGameHeader extends StatelessWidget {
+  /// Active writing bloc state.
   final WritingState state;
+
+  /// Progression level index.
   final int level;
+
+  /// Normalized level progress in range `[0.0, 1.0]`.
   final double progress;
+
+  /// Remaining lives count.
   final int lives;
+
+  /// Whether the active question has been answered.
   final bool isAnswered;
+
+  /// Currently active writing quest.
   final WritingQuest? quest;
+
+  /// Level theme configuration.
   final dynamic theme;
+
+  /// Whether dark theme styling is active.
   final bool isDark;
+
+  /// Audio and sound playback service.
   final SoundService soundService;
+
+  /// Callback when the info modal button is tapped.
   final VoidCallback onInfoTap;
+
+  /// Callback when a hint is requested.
   final VoidCallback onHint;
 
+  /// Creates a [WritingGameHeader] instance.
   const WritingGameHeader({
     super.key,
     required this.state,

@@ -15,9 +15,15 @@ import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_region_map.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 
+/// Screen host for Regional Dialect Drill exercises, contrasting pronunciation across international speech varieties.
 class DialectDrillScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [DialectDrillScreen] widget.
   const DialectDrillScreen({
     super.key,
     required this.level,

@@ -4,19 +4,42 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Rotary dial and vertical fader console for selecting semantic interpretations of modulated pitch.
 class PitchModulationDialControl extends StatelessWidget {
+  /// Semantic meaning options.
   final List<String> options;
+
+  /// Index of the correct interpretation.
   final int correctIndex;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Whether the rotary dial is actively being dragged.
   final bool isDragging;
+
+  /// Current rotational angle of the dial in radians.
   final double dialRotation;
+
+  /// Selected option index, or `null`.
   final int? selectedIndex;
+
+  /// Callback executed when the rotary dial rotates.
   final Function(DragUpdateDetails, int) onDialRotate;
+
+  /// Callback executed when dragging the dial completes.
   final VoidCallback onDialRelease;
+
+  /// Callback executed when an option choice is confirmed.
   final Function(int, int) onSubmitChoice;
 
+  /// Creates a [PitchModulationDialControl] widget.
   const PitchModulationDialControl({
     super.key,
     required this.options,

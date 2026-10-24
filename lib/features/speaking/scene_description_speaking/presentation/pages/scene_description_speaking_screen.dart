@@ -25,10 +25,15 @@ import 'package:vowl/features/speaking/scene_description_speaking/presentation/w
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_header.dart';
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_scenic_radar_map.dart';
 
+/// Gameplay screen challenging players to describe environmental visual scenes orally.
 class SceneDescriptionScreen extends StatefulWidget {
+  /// Target curriculum difficulty level.
   final int level;
+
+  /// Speaking subgame variant identifier.
   final GameSubtype gameType;
 
+  /// Creates a [SceneDescriptionScreen] for [level] and [gameType].
   const SceneDescriptionScreen({
     super.key,
     required this.level,

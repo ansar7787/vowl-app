@@ -3,12 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Drop slot or target container displaying the currently inserted connector.
 class ConnectorSlot extends StatelessWidget {
+  /// The connector text inserted into this slot, or `null` if empty.
   final String? connector;
+
+  /// Whether the inserted connector was validated as correct.
   final bool isCorrect;
+
+  /// Whether the inserted connector was validated as wrong.
   final bool isWrong;
+
+  /// Theme accent color.
   final Color primaryColor;
 
+  /// Creates a [ConnectorSlot] widget.
   const ConnectorSlot({
     super.key,
     this.connector,

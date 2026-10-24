@@ -1,7 +1,9 @@
 import '../../domain/entities/writing_quest.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 
+/// Data transfer model for writing quests, serializing to and from JSON/Firestore maps.
 class WritingQuestModel extends WritingQuest {
+  /// Creates a [WritingQuestModel] instance.
   const WritingQuestModel({
     required super.id,
     super.type,
@@ -53,6 +55,7 @@ class WritingQuestModel extends WritingQuest {
     super.keywordsExpected,
   });
 
+  /// Creates a [WritingQuestModel] from a JSON map and document [id].
   factory WritingQuestModel.fromJson(Map<String, dynamic> map, String id) {
     final subtypeStr = map['subtype'] ?? map['gameType'] ?? '';
     final subtype = GameSubtype.values.firstWhere(
@@ -155,6 +158,7 @@ class WritingQuestModel extends WritingQuest {
     );
   }
 
+  /// Converts this quest model into a serializable map.
   Map<String, dynamic> toMap() {
     return {
       'instruction': instruction,

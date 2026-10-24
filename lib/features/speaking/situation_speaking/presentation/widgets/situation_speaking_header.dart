@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction header pill at the top of the situation speaking game screen.
 class SituationSpeakingHeader extends StatelessWidget {
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Specific pedagogical instruction text.
   final String instruction;
 
+  /// Creates a [SituationSpeakingHeader].
   const SituationSpeakingHeader({
     super.key,
     required this.primaryColor,

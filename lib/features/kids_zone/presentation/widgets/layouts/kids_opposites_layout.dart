@@ -174,10 +174,16 @@ class OppositesQuestHelper {
 /// - Time Complexity: O(N) where N is number of options (3..4)
 /// - Space Complexity: O(1) auxiliary space
 class KidsOppositesLayout extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The title of the game.
   final String title;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsOppositesLayout] widget.
   const KidsOppositesLayout({
     super.key,
     required this.level,

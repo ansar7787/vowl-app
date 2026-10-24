@@ -1,16 +1,33 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
+/// Custom painter rendering dynamic bezier lines connecting the probe to terminal options.
 class BranchingPathPainter extends CustomPainter {
+  /// Visual offset of the probe.
   final Offset probeOffset;
+
+  /// Center point of the launcher dock.
   final Offset launchCenter;
+
+  /// Center points of all terminal decision nodes.
   final List<Offset> terminalCenters;
+
+  /// Index of currently hovered terminal node.
   final int? hoveredIndex;
+
+  /// Theme accent color.
   final Color themeColor;
+
+  /// Whether the answer has been submitted.
   final bool isAnswered;
+
+  /// Index of the selected terminal node.
   final int? selectedIndex;
+
+  /// Index of the correct terminal node.
   final int correctIndex;
 
+  /// Creates a [BranchingPathPainter] instance.
   BranchingPathPainter({
     required this.probeOffset,
     required this.launchCenter,

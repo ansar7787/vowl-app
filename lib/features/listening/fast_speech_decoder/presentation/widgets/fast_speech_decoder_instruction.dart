@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction badge displayed at the top of the Fast Speech Decoder screen.
 class FastSpeechDecoderInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Instruction prompt text describing the fast speech decoding goal.
   final String instruction;
 
+  /// Creates a [FastSpeechDecoderInstruction] badge.
   const FastSpeechDecoderInstruction({
     super.key,
     required this.color,

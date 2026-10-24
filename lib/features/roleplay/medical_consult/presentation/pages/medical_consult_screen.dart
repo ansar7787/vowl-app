@@ -24,9 +24,18 @@ import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medi
 import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_body_diagram.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Screen presenting the Medical Consult roleplay clinical diagnosis minigame.
+///
+/// Players act as attending medical professionals, examining patient records,
+/// running anatomical scans, and identifying matching symptoms and terminology.
 class MedicalConsultScreen extends StatefulWidget {
+  /// Current game level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [MedicalConsultScreen] widget.
   const MedicalConsultScreen({
     super.key,
     required this.level,

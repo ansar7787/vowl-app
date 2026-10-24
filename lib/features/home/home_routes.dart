@@ -24,24 +24,53 @@ import 'package:vowl/features/photo_vocabulary/presentation/pages/photo_vocabula
 
 import 'package:vowl/core/utils/app_router.dart';
 
+/// Central route registry configuring root tabs, navigation shells, and deep links for Home.
 class HomeRoutes {
   HomeRoutes._(); // Prevent instantiation of utility class
 
+  /// Splash screen route path.
   static const String splashRoute = '/splash';
+
+  /// Home dashboard route path.
   static const String homeRoute = '/home';
+
+  /// Games hub route path.
   static const String gamesRoute = '/games';
+
+  /// Premium subscription paywall route path.
   static const String premiumRoute = '/premium';
+
+  /// User profile screen route path.
   static const String profileRoute = '/profile';
 
+  /// Settings and configuration route path.
   static const String settingsRoute = '/settings';
+
+  /// App info and legal screen route path.
   static const String aboutRoute = '/about';
+
+  /// Competitive leaderboard route path.
   static const String leaderboardRoute = '/leaderboard';
+
+  /// Curriculum quest library route path.
   static const String libraryRoute = '/library';
+
+  /// Streak calendar and stats route path.
   static const String streakRoute = '/streak';
+
+  /// Post-onboarding pet hatching route path.
   static const String hatchingRoute = '/hatching';
+
+  /// Companion mascot showcase and customization route path.
   static const String vowlMascotRoute = '/vowl-mascot';
+
+  /// Achievements and trophies route path.
   static const String trophyRoomRoute = '/trophy-room';
+
+  /// Vision-based ML scan-and-learn route path.
   static const String scanAndLearnRoute = '/scan-and-learn';
+
+  /// Visual photo vocabulary route path.
   static const String photoVocabularyRoute = '/photo-vocabulary';
 
   // Deep links (e.g. /hatching?name=...) carry untrusted, remotely/user
@@ -58,6 +87,7 @@ class HomeRoutes {
         : trimmed;
   }
 
+  /// Global list of route definitions for the main application shell and pages.
   static final List<RouteBase> routes = [
     GoRoute(path: splashRoute, builder: (context, state) => const SplashPage()),
     GoRoute(

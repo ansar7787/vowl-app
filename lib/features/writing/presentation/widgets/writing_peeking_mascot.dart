@@ -15,13 +15,24 @@ import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 // accessibility tree so screen readers aren't distracted by animation noise.
 // ---------------------------------------------------------------------------
 
+/// Animated mascot companion peeking onto the writing game screen with contextual cheer/encouragement.
 class WritingPeekingMascot extends StatelessWidget {
+  /// Active writing bloc state.
   final WritingState state;
+
+  /// Remaining lives count.
   final int lives;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrect;
+
+  /// Whether the active question has been answered.
   final bool isAnswered;
+
+  /// Level theme configuration.
   final dynamic theme;
 
+  /// Creates a [WritingPeekingMascot] widget.
   const WritingPeekingMascot({
     super.key,
     required this.state,

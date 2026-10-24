@@ -7,10 +7,15 @@ import '../../domain/entities/listening_quest.dart';
 import '../../domain/repositories/listening_repository.dart';
 import '../datasources/listening_remote_data_source.dart';
 
+/// Implementation of [ListeningRepository] loading listening quests with failure translation.
 class ListeningRepositoryImpl implements ListeningRepository {
+  /// Remote data source providing listening quests.
   final ListeningRemoteDataSource remoteDataSource;
+
+  /// Network connectivity service.
   final NetworkInfo networkInfo;
 
+  /// Creates a [ListeningRepositoryImpl] with [remoteDataSource] and [networkInfo].
   const ListeningRepositoryImpl({
     required this.remoteDataSource,
     required this.networkInfo,

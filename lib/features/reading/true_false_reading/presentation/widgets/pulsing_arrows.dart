@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Animated directional arrow indicators prompting coin flick or swipe gestures.
 class PulsingArrows extends StatefulWidget {
+  /// Theme accent color applied to arrows.
   final Color color;
+
+  /// Whether the arrows point left toward the False drop zone.
   final bool isLeft;
 
+  /// Creates a [PulsingArrows] widget.
   const PulsingArrows({super.key, required this.color, this.isLeft = false});
 
   @override

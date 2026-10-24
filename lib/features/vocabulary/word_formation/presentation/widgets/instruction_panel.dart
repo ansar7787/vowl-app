@@ -5,10 +5,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 
+/// Header panel presenting word formation instructions and contextual hints.
 class InstructionPanel extends StatelessWidget {
+  /// Theme accent color for borders and icons.
   final Color color;
+
+  /// The active game quest descriptor.
   final GameQuest? quest;
 
+  /// Creates an [InstructionPanel] widget.
   const InstructionPanel({super.key, required this.color, this.quest});
 
   @override

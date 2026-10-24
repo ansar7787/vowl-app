@@ -2,11 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Interactive audio emitter button node for ambient sound replay.
+///
+/// Triggers text-to-speech or ambient audio sample playback when tapped by the user.
 class AmbientIdEmitterNode extends StatelessWidget {
+  /// Callback triggered when the emitter node is tapped.
   final VoidCallback onTap;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Accessible label and caption text displayed below the node.
   final String? label;
 
+  /// Creates an [AmbientIdEmitterNode] instance.
   const AmbientIdEmitterNode({
     super.key,
     required this.onTap,

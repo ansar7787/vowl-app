@@ -14,9 +14,15 @@ import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_a
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_terminal.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/laser_bridge_painter.dart';
 
+/// Interactive reading game screen prompting users to connect word terminals to their meanings with laser bridges.
 class ReadAndMatchScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the reading quest.
   final int level;
+
+  /// The specific reading game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [ReadAndMatchScreen] instance.
   const ReadAndMatchScreen({
     super.key,
     required this.level,

@@ -13,16 +13,33 @@ class _LocalPalette {
   static const Color colordc2626 = Color(0xFFDC2626);
 }
 
+/// Interactive buoy card widget displaying a candidate answer option.
 class ReadAndAnswerBuoyOption extends StatelessWidget {
+  /// Zero-based option index determining option letter.
   final int index;
+
+  /// The candidate answer text.
   final String text;
+
+  /// Whether this option represents the correct answer.
   final bool isCorrectOption;
+
+  /// Theme accent color applied to cards.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Whether the quest has been evaluated.
   final bool isAnswered;
+
+  /// The currently chosen option index, or null if unselected.
   final int? selectedIndex;
+
+  /// Callback invoked when this buoy option is tapped.
   final VoidCallback onTap;
 
+  /// Creates a [ReadAndAnswerBuoyOption] widget.
   const ReadAndAnswerBuoyOption({
     super.key,
     required this.index,

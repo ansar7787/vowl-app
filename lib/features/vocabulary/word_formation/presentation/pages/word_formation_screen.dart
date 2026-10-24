@@ -22,9 +22,15 @@ import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/ins
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/controllers/word_formation_controller.dart';
 
+/// Interactive word formation screen where learners slide morphological affixes into root word reaction cores.
 class WordFormationScreen extends StatefulWidget {
+  /// The active curriculum difficulty level.
   final int level;
+
+  /// The active game subtype.
   final GameSubtype gameType;
+
+  /// Creates a [WordFormationScreen] instance.
   const WordFormationScreen({
     super.key,
     required this.level,

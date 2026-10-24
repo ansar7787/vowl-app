@@ -1,6 +1,8 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -13,6 +15,7 @@ class _LocalPalette {
   static const Color color60a5fa = Color(0xFF60A5FA);
 }
 
+/// List row tile representing a single ranked user with badge styling and score breakdown.
 class LeaderboardRankTile extends StatelessWidget {
   final UserEntity user;
   final int rank;
@@ -191,14 +194,28 @@ class LeaderboardRankTile extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 2.h),
-                  Text(
-                    '$score $scoreLabel · ${user.currentStreak}🔥',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w600,
-                      color: isDark ? Colors.white38 : Colors.black54,
-                    ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Flexible(
+                        child: Text(
+                          '$score $scoreLabel · ${user.currentStreak}',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w600,
+                            color: isDark ? Colors.white38 : Colors.black54,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      SizedBox(width: 3.w),
+                      Icon(
+                        LucideIcons.flame,
+                        size: 11.r,
+                        color: IllustrationColors.warmOrange,
+                      ),
+                    ],
                   ),
                 ],
               ),

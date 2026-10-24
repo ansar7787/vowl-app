@@ -3,16 +3,30 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Rack displaying draggable and tappable candidate title label cards.
 class GuessTitleLabelRack extends StatelessWidget {
+  /// List of candidate title strings.
   final List<String> labels;
+
+  /// The authoritative correct title string.
   final String correct;
+
+  /// Theme accent color applied to labels and cards.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Currently selected title string, or null if none.
   final String? selectedTitle;
+
+  /// Whether the answer has been evaluated.
   final bool isAnswered;
 
+  /// Optional callback invoked when a title card is tapped.
   final ValueChanged<String>? onSelect;
 
+  /// Creates a [GuessTitleLabelRack] widget.
   const GuessTitleLabelRack({
     super.key,
     required this.labels,

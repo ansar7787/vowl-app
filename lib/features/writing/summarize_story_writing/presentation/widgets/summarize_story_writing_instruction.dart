@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner presenting guidelines for story summarization.
 class SummarizeStoryWritingInstruction extends StatelessWidget {
+  /// Instruction text explaining how to sequence the story summary.
   final String instruction;
+
+  /// The primary theme accent color for borders and icons.
   final Color primaryColor;
 
+  /// Creates a [SummarizeStoryWritingInstruction] widget.
   const SummarizeStoryWritingInstruction({
     super.key,
     required this.instruction,

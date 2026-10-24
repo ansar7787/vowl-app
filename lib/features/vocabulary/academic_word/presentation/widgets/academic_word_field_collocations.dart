@@ -4,12 +4,21 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Card displaying academic domain metadata, associated field collocations, and contextual usage sentences.
 class AcademicWordFieldCollocations extends StatelessWidget {
+  /// The scholarly or disciplinary domain (e.g., Biology, Philosophy).
   final String? academicField;
+
+  /// High-frequency lexical collocations paired with the target academic word.
   final List<String>? collocations;
+
+  /// Example sentence demonstrating context and register.
   final String? contextSentence;
+
+  /// Dominant accent color for icons, borders, and badges.
   final Color color;
 
+  /// Creates an [AcademicWordFieldCollocations] widget.
   const AcademicWordFieldCollocations({
     super.key,
     this.academicField,

@@ -3,6 +3,8 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/leaderboard/domain/repositories/leaderboard_repository.dart';
 import 'package:vowl/features/leaderboard/presentation/bloc/leaderboard_bloc_event_state.dart';
 
+/// BLoC component managing global and Kids Zone leaderboard rankings,
+/// background caching, and pull-to-refresh completers.
 class LeaderboardBloc extends Bloc<LeaderboardEvent, LeaderboardState> {
   final LeaderboardRepository repository;
 

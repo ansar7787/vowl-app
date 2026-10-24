@@ -16,9 +16,15 @@ import 'package:vowl/features/grammar/tense_mastery/presentation/widgets/tense_m
 import 'package:vowl/features/grammar/tense_mastery/presentation/widgets/tense_mastery_timeline_slider.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
+/// Screen presenting the tense mastery timeline grammar exercise.
 class TenseMasteryScreen extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The game subtype for tracking and analytics.
   final GameSubtype gameType;
+
+  /// Creates a [TenseMasteryScreen] widget.
   const TenseMasteryScreen({
     super.key,
     required this.level,

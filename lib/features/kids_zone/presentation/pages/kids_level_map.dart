@@ -22,11 +22,18 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_star_vault_bot
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// Screen displaying the sequential level progression map for a specific kids game.
 class KidsLevelMap extends StatefulWidget {
+  /// The game type identifier for curriculum lookup.
   final String gameType;
+
+  /// The display title of the game.
   final String title;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsLevelMap] widget.
   const KidsLevelMap({
     super.key,
     required this.gameType,

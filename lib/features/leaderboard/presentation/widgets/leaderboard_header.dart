@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Animated header title displaying syllabus ranking descriptions and cache freshness timestamp.
 class LeaderboardHeader extends StatelessWidget {
   final DateTime lastUpdated;
   final bool isKids;

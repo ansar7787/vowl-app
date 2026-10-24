@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner guiding users to arrange words into correct sentence order.
 class WordReorderInstruction extends StatelessWidget {
+  /// The primary theme accent color.
   final Color primaryColor;
+
+  /// The instruction text describing the objective.
   final String instruction;
 
+  /// Creates a [WordReorderInstruction] widget.
   const WordReorderInstruction({
     super.key,
     required this.primaryColor,

@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
+/// Prompt card displaying the target word tested for vowel sound identification.
 class VowelDistinctionPromptCard extends StatelessWidget {
+  /// Target word under analysis.
   final String word;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [VowelDistinctionPromptCard] widget.
   const VowelDistinctionPromptCard({
     super.key,
     required this.word,

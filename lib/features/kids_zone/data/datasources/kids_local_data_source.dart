@@ -6,11 +6,15 @@ import 'package:flutter/services.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/features/kids_zone/data/models/kids_quest_model.dart';
 
+/// Local asset data source contract for loading Kids Zone quests from bundled JSON files.
 abstract class KidsLocalDataSource {
+  /// Retrieves kids quests for a given [gameType] and [level] from bundled asset files.
   Future<List<KidsQuestModel>> getQuestsByLevel(String gameType, int level);
 }
 
+/// Default implementation of [KidsLocalDataSource] reading from root asset bundles.
 class KidsLocalDataSourceImpl implements KidsLocalDataSource {
+  /// Creates a [KidsLocalDataSourceImpl] instance.
   const KidsLocalDataSourceImpl();
 
   @override

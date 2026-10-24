@@ -10,16 +10,33 @@ class _LocalPalette {
   static const Color color07070f = Color(0xFF07070F);
 }
 
+/// Interactive table setting destination where plated items are arranged.
 class GourmetOrderTableSetting extends StatefulWidget {
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Whether an answer has been submitted for this stage.
   final bool isAnswered;
+
+  /// Whether the submitted arrangement was correct.
   final bool? isCorrect;
+
+  /// Plated items currently placed on the table setting.
   final List<String> selectedItems;
+
+  /// Animation driving the rising steam effect.
   final Animation<double> steamAnimation;
+
+  /// Callback fired when an item is dropped onto the platter.
   final Function(String) onItemDropped;
+
+  /// Callback to trigger tactile haptic feedback.
   final VoidCallback onHapticFeedback;
 
+  /// Creates a [GourmetOrderTableSetting] widget.
   const GourmetOrderTableSetting({
     super.key,
     required this.color,

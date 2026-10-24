@@ -6,19 +6,43 @@ import 'package:vowl/features/vocabulary/academic_word/academic_word_constants.d
 
 /// Draggable / tappable word chip used in the thesis-thrust mechanic.
 class AcademicWordShard extends StatelessWidget {
+  /// Index identifier of this shard option.
   final int index;
+
+  /// The vocabulary option text rendered on the shard face.
   final String text;
+
+  /// Theme accent color for shard borders and glow highlights.
   final Color color;
+
+  /// Whether this shard is currently being dragged by the learner.
   final bool isDragging;
+
+  /// Active drag translation vector.
   final Offset offset;
+
+  /// Maximum layout width boundary constraints.
   final double maxWidth;
+
+  /// Maximum layout height boundary constraints.
   final double maxHeight;
+
+  /// Callback executed when tapping the shard directly.
   final VoidCallback onTap;
+
+  /// Drag start gesture callback.
   final GestureDragStartCallback onDragStart;
+
+  /// Drag update gesture callback.
   final GestureDragUpdateCallback onDragUpdate;
+
+  /// Drag completion gesture callback.
   final GestureDragEndCallback onDragEnd;
+
+  /// Resting coordinate position of this shard.
   final Offset initialPosition;
 
+  /// Creates an [AcademicWordShard] widget.
   const AcademicWordShard({
     super.key,
     required this.index,

@@ -7,11 +7,18 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Interactive wrap deck of character letter tiles for spelling construction.
 class SpeedSpellingCharacterDeck extends StatelessWidget {
+  /// Letter characters available in the deck.
   final List<String> shuffledChars;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// Callback executed when a character tile is tapped.
   final void Function(String char, int index) onCharTap;
 
+  /// Creates a [SpeedSpellingCharacterDeck].
   const SpeedSpellingCharacterDeck({
     super.key,
     required this.shuffledChars,

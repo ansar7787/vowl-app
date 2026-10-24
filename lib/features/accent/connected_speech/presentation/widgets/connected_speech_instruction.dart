@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction pill guiding the learner through connected speech and phonological linking exercises.
 class ConnectedSpeechInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Raw instruction prompt.
   final String instruction;
+
+  /// Whether a compact visual style should be rendered.
   final bool isCompact;
 
+  /// Creates a [ConnectedSpeechInstruction] widget.
   const ConnectedSpeechInstruction({
     super.key,
     required this.primaryColor,

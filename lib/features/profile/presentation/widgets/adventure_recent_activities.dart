@@ -12,9 +12,12 @@ class _LocalPalette {
   static const Color color059669 = Color(0xFF059669);
 }
 
+/// Feed component rendering the user's latest XP-yielding activities.
 class AdventureRecentActivities extends StatelessWidget {
+  /// Current authenticated [user] entity.
   final UserEntity user;
 
+  /// Creates an [AdventureRecentActivities] widget for [user].
   const AdventureRecentActivities({super.key, required this.user});
 
   @override

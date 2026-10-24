@@ -17,14 +17,27 @@ class _LocalPalette {
   static const Color colordd2476 = Color(0xFFDD2476);
 }
 
+/// Phoneme crucible card isolating specific phonemes with articulatory guide toggles.
 class PronunciationFocusPhonemeCrucible extends StatelessWidget {
+  /// Active speaking quest entity.
   final SpeakingQuest quest;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Acoustic heat intensity level (0.0 to 1.0).
   final double heatLevel;
+
+  /// Whether the articulatory mouth/tongue guide is expanded.
   final bool showGuide;
+
+  /// Callback executed when toggling the phoneme pronunciation guide.
   final VoidCallback onToggleGuide;
 
+  /// Creates a [PronunciationFocusPhonemeCrucible].
   const PronunciationFocusPhonemeCrucible({
     super.key,
     required this.quest,

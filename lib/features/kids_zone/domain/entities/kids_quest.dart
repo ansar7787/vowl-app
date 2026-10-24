@@ -1,28 +1,65 @@
 import 'package:equatable/equatable.dart';
 
+/// Domain entity representing an interactive pedagogical quest in Kids Zone.
 class KidsQuest extends Equatable {
+  /// Unique identifier of the quest.
   final String id;
-  final String gameType; // e.g., 'alphabet', 'colors'
+
+  /// Game subtype or curriculum domain (e.g., 'alphabet', 'colors').
+  final String gameType;
+
+  /// Progression level number.
   final int level;
+
+  /// Primary instruction text presented to the child.
   final String instruction;
+
+  /// Optional prompt or question text.
   final String? question;
+
+  /// Correct target answer or identifier.
   final String? correctAnswer;
+
+  /// List of candidate answer choices.
   final List<String>? options;
+
+  /// Dynamic pedagogical metadata parameters.
   final Map<String, dynamic>? metadata;
+
+  /// Custom painter identifier for visual asset generation.
   final String? painter;
+
+  /// Custom shader identifier for animation effects.
   final String? shader;
+
+  /// Associated emoji representation.
   final String? emoji;
+
+  /// Helpful hint text guiding the child.
   final String hint;
+
+  /// Educational explanation or learning takeaway.
   final String? explanation;
 
-  // Newly added fields for better learning
+  /// Example vocabulary word associated with the lesson.
   final String? wordExample;
+
+  /// Emoji representation corresponding to [wordExample].
   final String? wordEmoji;
+
+  /// Capital letter representation for alphabet exercises.
   final String? capitalLetter;
+
+  /// Phonetic pronunciation guide.
   final String? phonetic;
+
+  /// Fun educational trivia fact.
   final String? funFact;
+
+  /// Audio identifier or sound effect for animal games.
   final String? animalSound;
 
+  /// Creates a [KidsQuest] domain entity.
   const KidsQuest({
     required this.id,
     required this.gameType,
@@ -68,6 +105,7 @@ class KidsQuest extends Equatable {
     animalSound,
   ];
 
+  /// Creates a copy of this [KidsQuest] with the given fields replaced.
   KidsQuest copyWith({
     String? id,
     String? gameType,

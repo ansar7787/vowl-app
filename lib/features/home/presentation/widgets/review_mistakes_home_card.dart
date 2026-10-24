@@ -11,9 +11,12 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Home card badge tracking active error count and providing one-tap mistake review.
 class ReviewMistakesHomeCard extends StatefulWidget {
+  /// Current authenticated [user] entity.
   final UserEntity user;
 
+  /// Creates a [ReviewMistakesHomeCard] for [user].
   const ReviewMistakesHomeCard({super.key, required this.user});
 
   @override

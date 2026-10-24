@@ -18,9 +18,15 @@ import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phra
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_literal_comparison.dart';
 import 'package:vowl/core/presentation/game_mechanics/arranging/context_sentence_builder.dart';
 
+/// Interactive phrasal verbs game screen simulating a vault lock puzzle unlocked by matching particles to verbs.
 class PhrasalVerbsScreen extends StatefulWidget {
+  /// The active curriculum difficulty level.
   final int level;
+
+  /// The active game subtype.
   final GameSubtype gameType;
+
+  /// Creates a [PhrasalVerbsScreen] instance.
   const PhrasalVerbsScreen({
     super.key,
     required this.level,

@@ -8,11 +8,18 @@ class _LocalPalette {
   static const Color colorff5722 = Color(0xFFFF5722);
 }
 
+/// Custom painter drawing a pulsating 12x12 thermal spectrum grid responding to voice heat.
 class ThermalGridPainter extends CustomPainter {
+  /// Acoustic match intensity level (0.0 to 1.0).
   final double heatLevel;
+
+  /// Whether voice recording is currently active.
   final bool isListening;
+
+  /// Waveform animation time step.
   final double time;
 
+  /// Creates a [ThermalGridPainter].
   ThermalGridPainter({
     required this.heatLevel,
     required this.isListening,

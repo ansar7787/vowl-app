@@ -7,10 +7,15 @@ import '../../domain/entities/reading_quest.dart';
 import '../../domain/repositories/reading_repository.dart';
 import '../datasources/reading_remote_data_source.dart';
 
+/// Implementation of [ReadingRepository] coordinating remote data access and network checks.
 class ReadingRepositoryImpl implements ReadingRepository {
+  /// Remote and asset data source provider for reading quests.
   final ReadingRemoteDataSource remoteDataSource;
+
+  /// Network connectivity checker.
   final NetworkInfo networkInfo;
 
+  /// Creates a [ReadingRepositoryImpl] instance.
   ReadingRepositoryImpl({
     required this.remoteDataSource,
     required this.networkInfo,

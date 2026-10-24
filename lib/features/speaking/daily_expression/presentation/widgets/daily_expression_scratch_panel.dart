@@ -13,16 +13,33 @@ class _LocalPalette {
   static const Color color111124 = Color(0xFF111124);
 }
 
+/// Interactive scratch-card panel concealing an idiom until revealed by gesture or tap.
 class DailyExpressionScratchPanel extends StatelessWidget {
+  /// Active speaking quest entity containing expression and meaning.
   final SpeakingQuest quest;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Notifier tracking scratch reveal completion fraction (0.0 to 1.0).
   final ValueNotifier<double> scratchProgressNotifier;
+
+  /// Shimmer animation timeline notifier.
   final ValueNotifier<double> timeValNotifier;
+
+  /// Whether complex gesture animations are disabled for accessibility.
   final bool reduceComplexGestures;
+
+  /// Callback executed to play pronunciation TTS audio.
   final VoidCallback onPlayTts;
+
+  /// Callback invoked when scratch reveal fraction updates.
   final ValueChanged<double> onScratchUpdate;
 
+  /// Creates a [DailyExpressionScratchPanel].
   const DailyExpressionScratchPanel({
     super.key,
     required this.quest,

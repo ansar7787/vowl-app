@@ -23,16 +23,22 @@ class _LocalPalette {
   static const Color colorbe185d = Color(0xFFBE185D);
 }
 
+/// Star vault milestone bottom sheet celebrating mastery milestones and awarding surprise rewards.
 class KidsStarVaultBottomSheet extends StatefulWidget {
+  /// The game type identifier.
   final String gameType;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsStarVaultBottomSheet] widget.
   const KidsStarVaultBottomSheet({
     super.key,
     required this.gameType,
     required this.primaryColor,
   });
 
+  /// Displays the [KidsStarVaultBottomSheet] modal.
   static Future<void> show(
     BuildContext context,
     String gameType,

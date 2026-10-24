@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Objective instruction card for the Conflict Resolver minigame.
 class ConflictResolverInstruction extends StatelessWidget {
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Custom instruction text or fallback.
   final String? instruction;
 
+  /// Creates a [ConflictResolverInstruction] widget.
   const ConflictResolverInstruction({
     super.key,
     required this.primaryColor,

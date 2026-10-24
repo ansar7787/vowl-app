@@ -1,7 +1,9 @@
 import '../../domain/entities/accent_quest.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 
+/// Data model representing an accent quest with JSON serialization and deserialization.
 class AccentQuestModel extends AccentQuest {
+  /// Creates an [AccentQuestModel] instance with the specified accent parameters.
   const AccentQuestModel({
     required super.id,
     super.type,
@@ -63,6 +65,7 @@ class AccentQuestModel extends AccentQuest {
     super.meaningShift,
   });
 
+  /// Deserializes a raw JSON [map] and document [id] into an [AccentQuestModel].
   factory AccentQuestModel.fromJson(Map<String, dynamic> map, String id) {
     // Optimized O(1) constant-time enum parsing
     final subtype = GameSubtype.fromString(
@@ -175,6 +178,7 @@ class AccentQuestModel extends AccentQuest {
     );
   }
 
+  /// Serializes the model into a standard JSON-compatible map.
   Map<String, dynamic> toMap() {
     return {
       'instruction': instruction,

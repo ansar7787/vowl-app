@@ -15,9 +15,15 @@ import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/fin
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_interactive_passage.dart';
 import 'package:vowl/core/presentation/game_mechanics/arranging/context_sentence_builder.dart';
 
+/// Interactive reading game screen prompting users to identify words matching contextual definitions.
 class FindWordMeaningScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the reading quest.
   final int level;
+
+  /// The specific reading game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [FindWordMeaningScreen] instance.
   const FindWordMeaningScreen({
     super.key,
     required this.level,

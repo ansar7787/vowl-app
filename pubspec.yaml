@@ -10,57 +10,64 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # ===========================================================================
+  # State Management & Architectural Infrastructure
+  # ===========================================================================
   flutter_bloc: ^9.0.0
   equatable: ^2.0.7
+  dartz: ^0.10.1
+  get_it: ^9.2.1
+
+  # ===========================================================================
+  # Firebase Ecosystem & Cloud Backend
+  # ===========================================================================
   firebase_core: ^4.7.0
   firebase_auth: ^6.4.0
   cloud_firestore: ^6.3.0
-  firebase_app_check: ^0.4.3
-  google_sign_in: ^7.2.0
-  flutter_screenutil: ^5.9.3
-  dartz: ^0.10.1
-  get_it: ^9.2.1
-  internet_connection_checker_plus: ^3.1.1
-  shimmer: ^3.0.0
-  cached_network_image: ^3.4.1
-  audioplayers: ^6.5.1
-  shared_preferences: ^2.5.5
-  google_mobile_ads: ^9.1.0
-  razorpay_flutter: ^1.4.1
-  in_app_purchase: ^3.2.0
-  flutter_dotenv: ^6.0.0
-  confetti: ^0.8.0
-  haptic_feedback: ^0.6.4+3
-  go_router: ^17.1.0
-  firebase_analytics: ^12.3.0
-  flutter_tts: ^4.2.5
-  speech_to_text: ^7.1.0
-  permission_handler: ^12.0.1
-  flutter_animate: ^4.5.2
-  image_picker: ^1.2.1
+  cloud_functions: ^6.3.3
   firebase_storage: ^13.3.0
-  flutter_native_splash: ^2.3.1
-  intl: ^0.20.2
-  record: any
-  lucide_icons: ^0.257.0
-  url_launcher: ^6.3.1
-  flutter_svg: ^2.0.10
-  package_info_plus: ^10.2.1
-  path_provider: ^2.1.3
-  collection: ^1.19.0
+  firebase_messaging: ^16.2.0
+  firebase_analytics: ^12.3.0
   firebase_crashlytics: ^5.2.0
   firebase_remote_config: ^6.4.0
-  firebase_messaging: ^16.2.0
-  flutter_local_notifications: ^22.3.0
-  timezone: ^0.11.1
-  flutter_timezone: ^5.0.2
-  in_app_review: ^2.0.9
+  firebase_app_check: ^0.4.3
+
+  # ===========================================================================
+  # Authentication, Identity & Device Security
+  # ===========================================================================
+  google_sign_in: ^7.2.0
   safe_device: ^1.1.5
-  clock: ^1.1.2
-  flutter_localizations:
-    sdk: flutter
-  meta: ^1.17.0
-  cloud_functions: ^6.3.3
+
+  # ===========================================================================
+  # Navigation & Routing
+  # ===========================================================================
+  go_router: ^17.1.0
+
+  # ===========================================================================
+  # Responsive Layout, Typography & Visual Polish
+  # ===========================================================================
+  flutter_screenutil: ^5.9.3
+  auto_size_text: ^3.0.0
+  shimmer: ^3.0.0
+  cached_network_image: ^3.4.1
+  confetti: ^0.8.0
+  flutter_animate: ^4.5.2
+  flutter_svg: ^2.0.10
+  lucide_icons: ^0.257.0
+  cupertino_icons: ^1.0.8
+
+  # ===========================================================================
+  # Audio, Speech & Media Engines
+  # ===========================================================================
+  audioplayers: ^6.5.1
+  flutter_tts: ^4.2.5
+  speech_to_text: ^7.1.0
+  record: any
+  image_picker: ^1.2.1
+
+  # ===========================================================================
+  # Google ML Kit (On-Device Intelligence)
+  # ===========================================================================
   google_mlkit_translation: any
   google_mlkit_language_id: any
   google_mlkit_smart_reply: any
@@ -68,17 +75,61 @@ dependencies:
   google_mlkit_digital_ink_recognition: 0.14.0
   google_mlkit_entity_extraction: any
   google_mlkit_image_labeling: any
-  auto_size_text: ^3.0.0
+
+  # ===========================================================================
+  # Monetization, Subscriptions & Store Engagement
+  # ===========================================================================
+  google_mobile_ads: ^9.1.0
+  razorpay_flutter: ^1.4.1
+  in_app_purchase: ^3.2.0
+  in_app_review: ^2.0.9
+
+  # ===========================================================================
+  # Hardware, Network Connectivity & System Notifications
+  # ===========================================================================
+  haptic_feedback: ^0.6.4+3
+  permission_handler: ^12.0.1
+  url_launcher: ^6.3.1
+  package_info_plus: ^10.2.1
+  path_provider: ^2.1.3
+  internet_connection_checker_plus: ^3.1.1
+  flutter_native_splash: ^2.3.1
+  flutter_local_notifications: ^22.3.0
+  timezone: ^0.11.1
+  flutter_timezone: ^5.0.2
+
+  # ===========================================================================
+  # Persistence, Environment, Utilities & Localization
+  # ===========================================================================
+  shared_preferences: ^2.5.5
+  flutter_dotenv: ^6.0.0
+  intl: ^0.20.2
+  collection: ^1.19.0
+  clock: ^1.1.2
+  meta: ^1.17.0
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  # ===========================================================================
+  # Code Quality & Static Analysis
+  # ===========================================================================
   flutter_lints: ^6.0.0
-  flutter_launcher_icons: ^0.14.4
-  change_app_package_name: ^1.5.0
+
+  # ===========================================================================
+  # Automated Testing (Unit & State Management)
+  # ===========================================================================
   mocktail: ^1.0.4
   bloc_test: ^10.0.0
+
+  # ===========================================================================
+  # Asset Generation & Packaging Utilities
+  # ===========================================================================
+  flutter_launcher_icons: ^0.14.4
+  change_app_package_name: ^1.5.0
 
 flutter_launcher_icons:
   android: true
@@ -87,7 +138,7 @@ flutter_launcher_icons:
   image_path: "assets/images/vowl_logo.png"
   adaptive_icon_background: "#A8E063"
   adaptive_icon_foreground: "assets/images/vowl_icon_foreground.png"
-  min_sdk_android: 21 # android min sdk min:16, default 21
+  min_sdk_android: 26 # android min sdk min:16, aligned with production minSdk 26
   web:
     generate: false
     image_path: "assets/images/vowl_logo.png"
@@ -110,10 +161,6 @@ flutter_native_splash:
     image_dark: "assets/images/vowl_splash_logo.png"
     icon_background_color_dark: "#0F172A"
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-# The following section is specific to Flutter packages.
 flutter:
   uses-material-design: true
 
@@ -125,11 +172,7 @@ flutter:
     - assets/images/vowl_logo.webp
     - assets/icons/
     - assets/sounds/
-    - assets/sounds/correct.mp3
-    - assets/sounds/wrong.mp3
     - assets/translations/
-    - assets/sounds/hint.mp3
-    - assets/sounds/level_completed.mp3
     - assets/curriculum/accent/
     - assets/curriculum/grammar/
     - assets/curriculum/listening/

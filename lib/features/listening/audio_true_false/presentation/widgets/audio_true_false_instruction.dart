@@ -6,10 +6,15 @@ class _LocalPalette {
   static const Color color1a1a1a = Color(0xFF1A1A1A);
 }
 
+/// Header instruction component for True/False audio challenges.
 class AudioTrueFalseInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Instruction prompt text.
   final String instruction;
 
+  /// Creates an [AudioTrueFalseInstruction] badge.
   const AudioTrueFalseInstruction({
     super.key,
     required this.color,

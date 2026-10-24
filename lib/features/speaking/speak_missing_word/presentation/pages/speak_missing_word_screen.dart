@@ -20,9 +20,15 @@ import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/s
 import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/speak_missing_word_vortex_sentence.dart';
 import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/speak_missing_word_magnet_arena.dart';
 
+/// Gameplay screen prompting users to verbally supply the missing word in a contextual sentence.
 class SpeakMissingWordScreen extends StatefulWidget {
+  /// Target curriculum difficulty level.
   final int level;
+
+  /// Speaking subgame variant identifier.
   final GameSubtype gameType;
+
+  /// Creates a [SpeakMissingWordScreen] for [level] and [gameType].
   const SpeakMissingWordScreen({
     super.key,
     required this.level,

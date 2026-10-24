@@ -16,6 +16,7 @@ class _LocalPalette {
   static const Color color1e1e2c = Color(0xFF1E1E2C);
 }
 
+/// Sentence rearrangement jigsaw mechanic that presents shuffled word blocks.
 class DynamicJigsawWrapper extends StatefulWidget {
   final String expectedText;
   final Color primaryColor;

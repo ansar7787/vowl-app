@@ -3,10 +3,15 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter rendering a dynamic physics-based balance rail deflecting with voice tilt.
 class TrackPainter extends CustomPainter {
-  final double tiltValue; // -1.0 to 1.0
+  /// Normalized tilt deflection value (-1.0 to 1.0).
+  final double tiltValue;
+
+  /// Primary theme accent color.
   final Color themeColor;
 
+  /// Creates a [TrackPainter].
   TrackPainter({required this.tiltValue, required this.themeColor});
 
   @override

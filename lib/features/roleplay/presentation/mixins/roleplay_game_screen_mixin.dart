@@ -6,18 +6,23 @@ import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 
+/// Mixin providing boilerplate lifecycle and state-dispatch methods
+/// for roleplay minigame screens.
 mixin RoleplayGameScreenMixin<T extends StatefulWidget>
     on State<T>, GameScreenMixin<T> {
+  /// Initializes the roleplay game by requesting quests for [gameType] and [level].
   void initRoleplayGame() {
     context.read<RoleplayBloc>().add(
       FetchRoleplayQuests(gameType: gameType, level: level),
     );
   }
 
+  /// Disposes roleplay game resources.
   void disposeRoleplayGame() {
     disposeGame();
   }
 
+  /// Evaluates whether the BLoC listener should react to state transitions from [prev] to [curr].
   bool roleplayListenWhen(RoleplayState prev, RoleplayState curr) {
     if (curr is RoleplayGameComplete && prev is! RoleplayGameComplete) {
       return true;
@@ -42,6 +47,7 @@ mixin RoleplayGameScreenMixin<T extends StatefulWidget>
     return false;
   }
 
+  /// Handles roleplay BLoC state changes, dispatching UI updates and level completions.
   void onRoleplayStateChanged(BuildContext context, RoleplayState state) {
     if (state is RoleplayLoaded) {
       handleStateUpdate(
@@ -60,20 +66,25 @@ mixin RoleplayGameScreenMixin<T extends StatefulWidget>
     }
   }
 
+  /// Dispatches an incorrect answer submission to the BLoC.
   void submitWrongAnswer({required GameQuest quest, String? userAnswer}) {
     if (isAnsweredNotifier.value) return;
     submitSharedWrongAnswer(quest: quest, userAnswer: userAnswer);
     context.read<RoleplayBloc>().add(const SubmitAnswer(false));
   }
 
+  /// Dispatches a correct answer submission to the BLoC.
   void submitCorrectAnswer() {
     if (isAnsweredNotifier.value) return;
     submitSharedCorrectAnswer();
     context.read<RoleplayBloc>().add(SubmitAnswer(true));
   }
 
+  /// Dispatches an event to advance to the next question.
   void dispatchNextQuestion() =>
       context.read<RoleplayBloc>().add(const NextQuestion());
+
+  /// Dispatches an event recording that a hint was used.
   void dispatchHintUsed() =>
       context.read<RoleplayBloc>().add(const RoleplayHintUsed());
 }

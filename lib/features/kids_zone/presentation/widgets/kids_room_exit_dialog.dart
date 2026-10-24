@@ -13,10 +13,15 @@ class _LocalPalette {
   static const Color color047857 = Color(0xFF047857);
 }
 
+/// Confirmation dialog prompting the child before leaving their virtual buddy room.
 class KidsRoomExitDialog extends StatelessWidget {
+  /// Callback invoked when confirming departure from the room.
   final VoidCallback onExit;
+
+  /// The active user entity.
   final UserEntity user;
 
+  /// Creates a [KidsRoomExitDialog] widget.
   const KidsRoomExitDialog({
     super.key,
     required this.onExit,

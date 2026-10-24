@@ -36,7 +36,9 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_theme_she
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Screen presenting the interactive virtual buddy care room.
 class KidsRoomScreen extends StatefulWidget {
+  /// Creates a [KidsRoomScreen] widget.
   const KidsRoomScreen({super.key});
 
   @override

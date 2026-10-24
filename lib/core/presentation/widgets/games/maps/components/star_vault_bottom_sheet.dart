@@ -25,6 +25,7 @@ class _LocalPalette {
   static const Color color6d28d9 = Color(0xFF6D28D9);
 }
 
+/// Interactive bottom sheet representing the Star Vault reward chamber.
 class StarVaultBottomSheet extends StatefulWidget {
   final String gameType;
   final Color primaryColor;

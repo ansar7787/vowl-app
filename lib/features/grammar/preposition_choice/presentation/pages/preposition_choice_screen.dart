@@ -15,9 +15,15 @@ import 'package:vowl/features/grammar/preposition_choice/presentation/widgets/pr
 import 'package:vowl/features/grammar/preposition_choice/presentation/widgets/preposition_path_painter.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
+/// Screen presenting the preposition choice game exercise.
 class PrepositionChoiceScreen extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The game subtype for tracking and analytics.
   final GameSubtype gameType;
+
+  /// Creates a [PrepositionChoiceScreen] widget.
   const PrepositionChoiceScreen({
     super.key,
     required this.level,

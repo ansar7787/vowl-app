@@ -10,9 +10,13 @@ import '../../domain/entities/roleplay_quest.dart';
 
 /// Triggers a fresh load of quests for [gameType] at [level].
 class FetchRoleplayQuests extends RoleplayEvent {
+  /// Creates a [FetchRoleplayQuests] event.
   const FetchRoleplayQuests({required this.gameType, required this.level});
 
+  /// Roleplay game subtype to load.
   final GameSubtype gameType;
+
+  /// Level index to load.
   final int level;
 
   @override
@@ -21,6 +25,7 @@ class FetchRoleplayQuests extends RoleplayEvent {
 
 /// Resets the feature to its initial state (e.g. on screen re-entry).
 class RestartLevel extends RoleplayEvent {
+  /// Creates a [RestartLevel] event.
   const RestartLevel();
 }
 
@@ -28,8 +33,10 @@ class RestartLevel extends RoleplayEvent {
 
 /// The player chose a dialogue option in a branching-conversation quest.
 class SelectDialogueChoice extends RoleplayEvent {
+  /// Creates a [SelectDialogueChoice] event with the selected [choice].
   const SelectDialogueChoice(this.choice);
 
+  /// Selected dialogue choice node.
   final DialogueChoice choice;
 
   @override
@@ -43,8 +50,10 @@ class SelectDialogueChoice extends RoleplayEvent {
 /// Audio / haptic feedback is the bloc's responsibility — do not fire
 /// sound or haptics in the UI layer for this flow.
 class SubmitAnswer extends RoleplayEvent {
+  /// Creates a [SubmitAnswer] event indicating whether the answer [isCorrect].
   const SubmitAnswer(this.isCorrect);
 
+  /// Whether the submitted answer was correct.
   final bool isCorrect;
 
   @override
@@ -53,11 +62,13 @@ class SubmitAnswer extends RoleplayEvent {
 
 /// Advances the quest index, or completes the level if all quests are done.
 class NextQuestion extends RoleplayEvent {
+  /// Creates a [NextQuestion] event.
   const NextQuestion();
 }
 
 /// Clears the current answer so the player can retry without advancing.
 class RetryCurrentQuestion extends RoleplayEvent {
+  /// Creates a [RetryCurrentQuestion] event.
   const RetryCurrentQuestion();
 }
 
@@ -65,6 +76,7 @@ class RetryCurrentQuestion extends RoleplayEvent {
 
 /// The player spent a hint token to reveal the hint for the current quest.
 class RoleplayHintUsed extends RoleplayEvent {
+  /// Creates a [RoleplayHintUsed] event.
   const RoleplayHintUsed();
 }
 
@@ -72,16 +84,18 @@ class RoleplayHintUsed extends RoleplayEvent {
 
 /// The player used a life-restore to continue from a game-over state.
 class RestoreLife extends RoleplayEvent {
+  /// Creates a [RestoreLife] event.
   const RestoreLife();
 }
 
-// ── Tutor Pass ─────────────────────────────────────────────────────────────
-
-/// The player invoked the tutor pass (I spoke correctly).
 // ── Speaking Bonus ─────────────────────────────────────────────────────────
 
+/// Event dispatched when a user confirms speech practice.
 class RoleplaySpeakConfirmed extends RoleplayEvent {
+  /// Creates a [RoleplaySpeakConfirmed] event with [bonusCoins].
   const RoleplaySpeakConfirmed(this.bonusCoins);
+
+  /// Bonus coins to record.
   final int bonusCoins;
 
   @override
@@ -93,9 +107,13 @@ class RoleplaySpeakConfirmed extends RoleplayEvent {
 /// Fires a background preload for the next batch of quests.
 /// Should not modify UI state on its own.
 class PreloadNextBatch extends RoleplayEvent {
+  /// Creates a [PreloadNextBatch] event.
   const PreloadNextBatch({required this.gameType, required this.currentLevel});
 
+  /// Roleplay game subtype to preload.
   final GameSubtype gameType;
+
+  /// Current level index being played.
   final int currentLevel;
 
   @override
@@ -104,7 +122,9 @@ class PreloadNextBatch extends RoleplayEvent {
 
 // ── Base class ─────────────────────────────────────────────────────────────
 
+/// Base class for all roleplay BLoC events.
 abstract class RoleplayEvent extends Equatable {
+  /// Const constructor for sub-classes.
   const RoleplayEvent();
 
   @override

@@ -5,17 +5,24 @@ import 'package:vowl/core/error/exceptions.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/reading/data/models/reading_quest_model.dart';
 
+/// Contract defining remote and asset-backed data retrieval for reading quests.
 abstract class ReadingRemoteDataSource {
+  /// Fetches reading quest models matching [gameType] and difficulty [level].
   Future<List<ReadingQuestModel>> getReadingQuest({
     required GameSubtype gameType,
     required int level,
   });
 }
 
+/// Implementation of [ReadingRemoteDataSource] querying Firestore with local asset fallback.
 class ReadingRemoteDataSourceImpl implements ReadingRemoteDataSource {
+  /// Cloud Firestore client instance.
   final FirebaseFirestore firestore;
+
+  /// Local bundle asset quest service for offline fallback.
   final AssetQuestService assetQuestService;
 
+  /// Creates a [ReadingRemoteDataSourceImpl] instance.
   ReadingRemoteDataSourceImpl(this.firestore, this.assetQuestService);
 
   @override

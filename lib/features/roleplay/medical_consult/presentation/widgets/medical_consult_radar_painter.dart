@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter rendering medical laser scan radar grids and sweep lines.
 class BiometricRadarPainter extends CustomPainter {
+  /// Animation progress value (0.0 to 1.0).
   final double animationValue;
+
+  /// Theme accent color.
   final Color themeColor;
 
+  /// Creates a [BiometricRadarPainter] instance.
   BiometricRadarPainter({
     required this.animationValue,
     required this.themeColor,

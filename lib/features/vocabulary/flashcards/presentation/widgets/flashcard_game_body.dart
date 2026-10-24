@@ -85,26 +85,54 @@ class _CardLayout {
 /// source of truth for [isFlipped], [dragOffset], etc., making state
 /// transitions easy to test and reason about independently of the widget tree.
 class FlashcardGameBody extends StatelessWidget {
+  /// The active vocabulary quest item.
   final VocabularyQuest quest;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
 
   // ── Card visual state (owned by parent) ──────────────────────────────────
+
+  /// Notifier signaling whether the card face is flipped.
   final ValueNotifier<bool> isFlipped;
+
+  /// Whether an answer has been submitted.
   final bool isAnswered;
+
+  /// Whether this trial is currently in a retry state.
   final bool isRetrying;
+
+  /// Whether a pedagogical hint peek is active.
   final bool isHintActive;
+
+  /// Whether to suppress action buttons during transitions.
   final bool hideActions;
+
+  /// High-frequency drag displacement offset.
   final ValueNotifier<Offset> dragOffset;
+
+  /// High-frequency card tilt angle in radians.
   final ValueNotifier<double> dragAngle;
 
   // ── Interaction callbacks ─────────────────────────────────────────────────
+
+  /// Callback executed during horizontal card drag movement.
   final void Function(DragUpdateDetails) onHorizontalDragUpdate;
+
+  /// Callback executed when horizontal card drag completes.
   final void Function(DragEndDetails details, double threshold)
   onHorizontalDragEnd;
+
+  /// Callback executed when tapping the card to trigger a flip.
   final VoidCallback onCardTap;
+
+  /// Callback executed when submitting mastery or review.
   final void Function(bool mastered) onSubmitAnswer;
 
+  /// Creates a [FlashcardGameBody] widget.
   const FlashcardGameBody({
     super.key,
     required this.quest,

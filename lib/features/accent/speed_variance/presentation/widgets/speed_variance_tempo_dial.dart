@@ -5,19 +5,42 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Rotary tempo dial allowing the learner to dial in and select the matched speech tempo.
 class SpeedVarianceTempoDial extends StatelessWidget {
+  /// Tempo options (e.g., Natural vs Clear).
   final List<String> options;
+
+  /// Index of the correct tempo option.
   final int correctIndex;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Whether the dial is actively being dragged.
   final bool isDragging;
+
+  /// Rotational angle of the dial in radians.
   final double dialRotation;
+
+  /// Selected option index, or `null`.
   final int? selectedIndex;
+
+  /// Callback executed when the dial rotates.
   final Function(DragUpdateDetails, int) onDialRotate;
+
+  /// Callback executed when the dial is released.
   final VoidCallback onDialRelease;
+
+  /// Callback executed when an option choice is confirmed.
   final Function(int, int) onSubmitChoice;
 
+  /// Creates a [SpeedVarianceTempoDial] widget.
   const SpeedVarianceTempoDial({
     super.key,
     required this.options,

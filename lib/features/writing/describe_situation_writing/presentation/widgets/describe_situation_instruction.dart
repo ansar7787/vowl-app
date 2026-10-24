@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Instruction header displaying gameplay rules for the describe situation writing exercise.
 class DescribeSituationInstruction extends StatelessWidget {
+  /// The primary theme accent color for icons and accents.
   final Color primaryColor;
+
+  /// Optional fallback instruction text describing the exercise rules.
   final String? instruction;
 
+  /// Creates a [DescribeSituationInstruction] widget.
   const DescribeSituationInstruction({
     super.key,
     required this.primaryColor,

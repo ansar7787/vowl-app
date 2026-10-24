@@ -2,8 +2,12 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter rendering radial graduation tick marks on the compass ring.
 class CompassTicksPainter extends CustomPainter {
+  /// Stroke color for tick marks.
   final Color color;
+
+  /// Creates a [CompassTicksPainter] with the specified tick [color].
   CompassTicksPainter(this.color);
 
   @override

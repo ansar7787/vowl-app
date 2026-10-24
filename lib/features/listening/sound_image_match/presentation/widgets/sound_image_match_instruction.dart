@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction badge displayed at the top of the Sound Image Match screen.
 class SoundImageMatchInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Instruction prompt text describing the sound-matching task.
   final String instruction;
 
+  /// Creates a [SoundImageMatchInstruction] badge.
   const SoundImageMatchInstruction({
     super.key,
     required this.color,

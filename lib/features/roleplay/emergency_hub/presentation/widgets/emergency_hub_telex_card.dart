@@ -5,12 +5,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Card displaying incoming emergency telex dispatch notices and urgency ratings.
 class EmergencyHubTelexCard extends StatelessWidget {
+  /// Objective or situation instruction text.
   final String instruction;
+
+  /// Emergency dispatch incoming question or distress call.
   final String dispatcherQuestion;
+
+  /// Urgency rating of the situation (1-5).
   final int urgencyLevel;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
 
+  /// Creates an [EmergencyHubTelexCard] widget.
   const EmergencyHubTelexCard({
     super.key,
     required this.instruction,

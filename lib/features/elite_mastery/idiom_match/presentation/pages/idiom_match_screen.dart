@@ -19,9 +19,15 @@ class _LocalPalette {
   static const Color color1a1a2e = Color(0xFF1A1A2E);
 }
 
+/// Gameplay screen for the Idiom Match challenge testing cultural and figurative fluency.
 class IdiomMatchScreen extends StatefulWidget {
+  /// Target curriculum difficulty level.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates an [IdiomMatchScreen] for [level] and [gameType].
   const IdiomMatchScreen({
     super.key,
     required this.level,
@@ -598,11 +604,18 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
   }
 }
 
+/// Renders pedagogical explanations, idiom origins, and metaphorical insights.
 class IdiomMatchInsightsPanel extends StatelessWidget {
+  /// The active quest data furnishing the pedagogical feedback.
   final EliteMasteryQuest quest;
+
+  /// Whether dark mode styling is active.
   final bool isDark;
+
+  /// The primary thematic accent color.
   final Color primaryColor;
 
+  /// Creates an [IdiomMatchInsightsPanel] widget.
   const IdiomMatchInsightsPanel({
     super.key,
     required this.quest,

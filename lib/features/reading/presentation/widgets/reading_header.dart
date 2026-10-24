@@ -26,15 +26,31 @@ class ReadingHeader extends StatelessWidget {
   /// theme reference without this widget needing a `dynamic` type).
   final Widget gameProgressHeader;
 
+  /// The primary theme accent color.
   final Color primaryColor;
+
+  /// The currently active reading quest.
   final ReadingQuest? currentQuest;
+
+  /// Whether the quest has been answered.
   final bool isAnswered;
+
+  /// Whether the hint button has been used for this quest.
   final bool hintUsed;
+
+  /// Number of lives remaining.
   final int lives;
+
+  /// Sound effect service instance.
   final SoundService soundService;
+
+  /// Callback invoked when instructions info is tapped.
   final VoidCallback onInfoTap;
+
+  /// Callback invoked when hint button is tapped.
   final VoidCallback onHint;
 
+  /// Creates a [ReadingHeader] widget.
   const ReadingHeader({
     super.key,
     required this.gameProgressHeader,

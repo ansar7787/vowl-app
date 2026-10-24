@@ -5,12 +5,21 @@ import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Panel displaying contextual sentences with visually highlighted target synonym words.
 class SpeakSynonymSentencePanel extends StatelessWidget {
+  /// Active speaking quest entity.
   final SpeakingQuest quest;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Callback executed to play pronunciation audio.
   final VoidCallback onPlayTts;
 
+  /// Creates a [SpeakSynonymSentencePanel].
   const SpeakSynonymSentencePanel({
     super.key,
     required this.quest,

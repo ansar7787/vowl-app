@@ -4,15 +4,30 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Dialogue balloon list presenting conversational response options in shadowing exercises.
 class ShadowingChallengeDialogueList extends StatelessWidget {
+  /// Available dialogue options.
   final List<String> options;
+
+  /// Index of the correct option.
   final int correctIndex;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Selected option index, or `null`.
   final int? selectedIndex;
+
+  /// Callback executed when the learner selects a dialogue option.
   final Function(int, int) onSubmitChoice;
 
+  /// Creates a [ShadowingChallengeDialogueList] widget.
   const ShadowingChallengeDialogueList({
     super.key,
     required this.options,

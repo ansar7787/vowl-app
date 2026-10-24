@@ -27,7 +27,9 @@ class _LocalPalette {
   static const Color color34d399 = Color(0xFF34D399);
 }
 
+/// Comprehensive curriculum progress dashboard screen showing skill mastery and stats.
 class ProgressDashboardScreen extends StatelessWidget {
+  /// Creates a [ProgressDashboardScreen].
   const ProgressDashboardScreen({super.key});
 
   @override

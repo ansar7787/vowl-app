@@ -18,9 +18,15 @@ import '../widgets/speed_spelling_character_deck.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/elite_mastery/presentation/mixins/elite_mastery_game_screen_mixin.dart';
 
+/// Fast-paced orthographic gameplay screen challenging rapid auditory spelling.
 class SpeedSpellingScreen extends StatefulWidget {
+  /// Target curriculum difficulty level.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [SpeedSpellingScreen] for [level] and [gameType].
   const SpeedSpellingScreen({
     super.key,
     required this.level,

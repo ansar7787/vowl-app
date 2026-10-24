@@ -21,9 +21,18 @@ import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_in
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_response_console.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Screen presenting the Job Interview roleplay professional communication minigame.
+///
+/// Players participate in realistic corporate interviews, answering behavioral and
+/// situational questions while monitoring professionalism and telemetry metrics.
 class JobInterviewScreen extends StatefulWidget {
+  /// Current game level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [JobInterviewScreen] widget.
   const JobInterviewScreen({
     super.key,
     required this.level,

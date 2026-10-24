@@ -16,9 +16,15 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 import 'package:flutter/physics.dart';
 
+/// Screen presenting the subject-verb agreement grammar exercise.
 class SubjectVerbAgreementScreen extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The game subtype for tracking and analytics.
   final GameSubtype gameType;
+
+  /// Creates a [SubjectVerbAgreementScreen] widget.
   const SubjectVerbAgreementScreen({
     super.key,
     required this.level,

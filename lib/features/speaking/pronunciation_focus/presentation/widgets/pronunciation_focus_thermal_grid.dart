@@ -7,12 +7,21 @@ class _LocalPalette {
   static const Color color0c0c16 = Color(0xFF0C0C16);
 }
 
+/// Visualization container rendering acoustic thermal frequency lines for pronunciation.
 class PronunciationFocusThermalGrid extends StatelessWidget {
+  /// Heat level indicating acoustic match intensity.
   final double heatLevel;
+
+  /// Whether active microphone input is listening.
   final bool isListening;
+
+  /// Timeline animation value.
   final double timeVal;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [PronunciationFocusThermalGrid].
   const PronunciationFocusThermalGrid({
     super.key,
     required this.heatLevel,

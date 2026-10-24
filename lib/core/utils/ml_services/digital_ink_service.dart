@@ -2,6 +2,7 @@ import 'package:google_mlkit_digital_ink_recognition/google_mlkit_digital_ink_re
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
+/// Service providing on-device handwriting and stroke recognition using Google ML Kit Digital Ink.
 class DigitalInkService {
   final DigitalInkRecognizer _recognizer;
   final String _language = 'en'; // English model

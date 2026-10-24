@@ -30,25 +30,44 @@ const String _kListeningBadge = 'listening_master';
 
 // ─────────────────────────────────────────────────────────────────────────────
 
+/// BLoC managing auditory comprehension gameplay, audio playback states, lives, and rewards.
 class ListeningBloc extends Bloc<ListeningEvent, ListeningState>
     with RewardRetryMixin {
+  /// Use case for fetching listening quests.
   final GetListeningQuests getQuest;
+
+  /// Use case persisting rewards (XP, gems) upon session completion.
   final UpdateUserRewards updateUserRewards;
+
+  /// Use case updating category mastery statistics.
   final UpdateCategoryStats updateCategoryStats;
+
+  /// Use case granting achievement badges.
   final AwardBadge awardBadge;
+
+  /// Sound playback service for acoustic cues.
   final SoundService soundService;
+
+  /// Haptic feedback service.
   final HapticService hapticService;
+
+  /// Use case verifying and consuming hints.
   final UseHint useHint;
+
+  /// Network connectivity service.
   final NetworkInfo networkInfo;
 
   /// Analytics are optional — defaults to no-op so tests require no mocking.
   final ListeningAnalytics analytics;
+
+  /// Optional use case for coin rewards.
   final UpdateUserCoins? updateUserCoins;
 
   // Stored when FetchListeningQuests fires; used in background-save lambdas.
   String? _currentGameType;
   int? _currentLevel;
 
+  /// Creates a [ListeningBloc] with required use cases and services.
   ListeningBloc({
     required this.getQuest,
     required this.updateUserRewards,

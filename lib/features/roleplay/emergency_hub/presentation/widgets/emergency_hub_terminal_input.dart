@@ -9,12 +9,21 @@ class _LocalPalette {
   static const Color color07070f = Color(0xFF07070F);
 }
 
+/// Terminal text and tile response composer for emergency communications.
 class EmergencyHubTerminalInput extends StatefulWidget {
+  /// Editing controller holding the constructed response string.
   final TextEditingController controller;
+
+  /// Expected correct answer phrase.
   final String correctAnswer;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Callback fired when the input changes.
   final VoidCallback onChanged;
 
+  /// Creates an [EmergencyHubTerminalInput] widget.
   const EmergencyHubTerminalInput({
     super.key,
     required this.controller,

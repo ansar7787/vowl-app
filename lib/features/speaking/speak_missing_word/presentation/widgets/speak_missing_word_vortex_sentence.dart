@@ -2,12 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
+/// Sentence display card incorporating the slotted missing word into the reading flow.
 class SpeakMissingWordVortexSentence extends StatelessWidget {
+  /// Sentence text with slotted word integrated.
   final String text;
+
+  /// Word currently slotted into the blank.
   final String insertedWord;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [SpeakMissingWordVortexSentence].
   const SpeakMissingWordVortexSentence({
     super.key,
     required this.text,

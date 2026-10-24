@@ -6,15 +6,30 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Column of letter-labeled inference option cards.
 class ListeningInferenceGrid extends StatelessWidget {
+  /// Available deduction option strings.
   final List<String> options;
+
+  /// Index of the correct option.
   final int correctAnswerIndex;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether the answer has been locked in and evaluated.
   final bool isAnswered;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrectState;
+
+  /// Currently selected option index, if any.
   final int? selectedIndex;
+
+  /// Callback when an inference option is selected.
   final Function(int) onSubmitAnswer;
 
+  /// Creates a [ListeningInferenceGrid] options column.
   const ListeningInferenceGrid({
     super.key,
     required this.options,

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner orienting the learner to pragmatic meaning shifts caused by pitch modulation.
 class PitchModulationInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Raw instruction prompt.
   final String instruction;
 
+  /// Creates a [PitchModulationInstruction] widget.
   const PitchModulationInstruction({
     super.key,
     required this.color,

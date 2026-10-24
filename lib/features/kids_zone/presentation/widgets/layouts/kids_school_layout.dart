@@ -141,10 +141,16 @@ class SchoolOptionData {
 /// - Time Complexity: O(N) where N is options count (typically 3)
 /// - Space Complexity: O(1) auxiliary space
 class KidsSchoolLayout extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The title of the game.
   final String title;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsSchoolLayout] widget.
   const KidsSchoolLayout({
     super.key,
     required this.level,

@@ -18,7 +18,9 @@ import 'package:vowl/features/auth/presentation/widgets/login_widgets.dart';
 import 'package:vowl/features/home/presentation/widgets/vowly_auth_companion.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Screen providing user sign-in options via email/password and Google OAuth.
 class LoginPage extends StatelessWidget {
+  /// Creates a [LoginPage] widget.
   const LoginPage({super.key});
 
   @override
@@ -30,7 +32,9 @@ class LoginPage extends StatelessWidget {
   }
 }
 
+/// Main form view for the [LoginPage].
 class LoginView extends StatefulWidget {
+  /// Creates a [LoginView] widget.
   const LoginView({super.key});
 
   @override

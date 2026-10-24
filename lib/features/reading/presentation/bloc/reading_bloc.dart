@@ -24,22 +24,45 @@ import 'reading_state.dart';
 export 'reading_event.dart';
 export 'reading_state.dart';
 
+/// Business logic component managing reading gameplay state, user rewards, and progression.
 class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
+  /// Use case fetching reading quests.
   final GetReadingQuest getQuest;
+
+  /// Use case updating user coin balance.
   final UpdateUserCoins updateUserCoins;
+
+  /// Use case applying XP and quest completion rewards.
   final UpdateUserRewards updateUserRewards;
+
+  /// Use case tracking reading category progress metrics.
   final UpdateCategoryStats updateCategoryStats;
+
+  /// Use case unlocking progression levels.
   final UpdateUnlockedLevel updateUnlockedLevel;
+
+  /// Use case awarding milestone achievements.
   final AwardBadge awardBadge;
+
+  /// Audio feedback sound service.
   final SoundService soundService;
+
+  /// Haptic tactile feedback service.
   final HapticService hapticService;
+
+  /// Use case handling hint spending.
   final UseHint useHint;
+
+  /// Network connectivity checker.
   final NetworkInfo networkInfo;
 
   /// Set during [FetchReadingQuests]; consumed by the level-completion save.
   String? currentGameType;
+
+  /// The active difficulty or curriculum level.
   int? currentLevel;
 
+  /// Creates a [ReadingBloc] instance.
   ReadingBloc({
     required this.getQuest,
     required this.updateUserCoins,

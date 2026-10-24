@@ -4,8 +4,10 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 
+/// Mixin providing standardized lifecycle hooks and state listeners for reading game screens.
 mixin ReadingGameScreenMixin<T extends StatefulWidget>
     on State<T>, GameScreenMixin<T> {
+  /// Initializes the reading game, synchronizing initial answer states and fetching quests.
   void initReadingGame() {
     final state = context.read<ReadingBloc>().state;
     if (state is ReadingLoaded && state.answerStatus.isAnswered) {
@@ -17,10 +19,12 @@ mixin ReadingGameScreenMixin<T extends StatefulWidget>
     );
   }
 
+  /// Cleans up reading game screen resources and timers.
   void disposeReadingGame() {
     disposeGame();
   }
 
+  /// Filter predicate determining whether [ReadingBloc] state transitions trigger listeners.
   bool readingListenWhen(ReadingState prev, ReadingState curr) {
     if (curr is ReadingGameComplete && prev is! ReadingGameComplete) {
       return true;
@@ -45,6 +49,7 @@ mixin ReadingGameScreenMixin<T extends StatefulWidget>
     return false;
   }
 
+  /// Dispatches state changes to game mixin handlers for dialogs and progression.
   void onReadingStateChanged(BuildContext context, ReadingState state) {
     if (state is ReadingLoaded) {
       handleStateUpdate(
@@ -63,20 +68,25 @@ mixin ReadingGameScreenMixin<T extends StatefulWidget>
     }
   }
 
+  /// Handles an incorrect answer submission, playing haptics/audio and notifying [ReadingBloc].
   void submitWrongAnswer({required GameQuest quest, String? userAnswer}) {
     if (isAnsweredNotifier.value) return;
     submitSharedWrongAnswer(quest: quest, userAnswer: userAnswer);
     context.read<ReadingBloc>().add(const SubmitAnswer(false));
   }
 
+  /// Handles a correct answer submission, celebrating and notifying [ReadingBloc].
   void submitCorrectAnswer() {
     if (isAnsweredNotifier.value) return;
     submitSharedCorrectAnswer();
     context.read<ReadingBloc>().add(SubmitAnswer(true));
   }
 
+  /// Dispatches a request to proceed to the next reading quest.
   void dispatchNextQuestion() =>
       context.read<ReadingBloc>().add(const NextQuestion());
+
+  /// Dispatches a hint consumption event to [ReadingBloc].
   void dispatchHintUsed() =>
       context.read<ReadingBloc>().add(const ReadingHintUsed());
 }

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner for the read and match terminal exercise.
 class ReadAndMatchInstruction extends StatelessWidget {
+  /// The primary theme accent color for borders and icons.
   final Color primaryColor;
+
+  /// Optional fallback instruction text describing how to connect terminals.
   final String? instruction;
 
+  /// Creates a [ReadAndMatchInstruction] widget.
   const ReadAndMatchInstruction({
     super.key,
     required this.primaryColor,

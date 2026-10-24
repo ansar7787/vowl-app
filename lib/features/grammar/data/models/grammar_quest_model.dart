@@ -1,7 +1,9 @@
 import '../../domain/entities/grammar_quest.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 
+/// Data model representing a grammar quest with serialization and deserialization.
 class GrammarQuestModel extends GrammarQuest {
+  /// Creates a [GrammarQuestModel] instance with grammatical and syntactic metadata.
   const GrammarQuestModel({
     required super.id,
     super.type,
@@ -59,6 +61,7 @@ class GrammarQuestModel extends GrammarQuest {
     super.changesList,
   });
 
+  /// Deserializes a raw JSON [map] and document [id] into a [GrammarQuestModel].
   factory GrammarQuestModel.fromJson(Map<String, dynamic> map, String id) {
     // Optimized O(1) constant-time enum parsing
     final subtype = GameSubtype.fromString(
@@ -162,6 +165,7 @@ class GrammarQuestModel extends GrammarQuest {
     );
   }
 
+  /// Serializes the model into a standard JSON-compatible map.
   Map<String, dynamic> toMap() {
     return {
       'instruction': instruction,

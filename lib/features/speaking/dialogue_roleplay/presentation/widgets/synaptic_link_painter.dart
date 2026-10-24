@@ -2,11 +2,18 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter drawing an animated synaptic transmission curve between conversational cards.
 class SynapticLinkPainter extends CustomPainter {
+  /// Animation pulse timeline value.
   final double time;
+
+  /// Whether the user has successfully spoken and completed the link.
   final bool isConnected;
+
+  /// Primary theme accent color.
   final Color themeColor;
 
+  /// Creates a [SynapticLinkPainter].
   SynapticLinkPainter({
     required this.time,
     required this.isConnected,

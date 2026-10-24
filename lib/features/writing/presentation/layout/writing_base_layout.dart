@@ -14,20 +14,42 @@ import 'package:vowl/features/writing/presentation/widgets/writing_game_header.d
 import 'package:vowl/features/writing/presentation/widgets/writing_peeking_mascot.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
+/// Base layout container for writing games, providing standard headers, feedback cards, and mascot overlays.
 class WritingBaseLayout extends StatelessWidget {
+  /// The active writing game subtype.
   final GameSubtype gameType;
+
+  /// Progression level index.
   final int level;
+
+  /// Primary interaction child widget.
   final Widget child;
+
+  /// Whether the current question has been answered.
   final bool isAnswered;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrect;
+
+  /// Callback invoked when the user advances to the next question.
   final VoidCallback onContinue;
+
+  /// Callback invoked when a hint is requested.
   final VoidCallback onHint;
+
+  /// Whether celebration confetti should be triggered.
   final bool showConfetti;
 
+  /// Whether the user failed the question after all allowed retries.
   final bool isFinalFailure;
+
+  /// Whether the scaffold content should be scrollable.
   final bool useScrolling;
+
+  /// Whether standard edge insets should be omitted.
   final bool disablePadding;
 
+  /// Creates a [WritingBaseLayout] instance.
   const WritingBaseLayout({
     super.key,
     required this.gameType,

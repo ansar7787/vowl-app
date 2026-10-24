@@ -1,7 +1,9 @@
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 
+/// Data model representing a speaking challenge with JSON serialization.
 class SpeakingQuestModel extends SpeakingQuest {
+  /// Creates a [SpeakingQuestModel] instance.
   const SpeakingQuestModel({
     required super.id,
     super.type,
@@ -48,6 +50,7 @@ class SpeakingQuestModel extends SpeakingQuest {
     super.emotionContext,
   });
 
+  /// Deserializes JSON [map] and document [id] into a [SpeakingQuestModel].
   factory SpeakingQuestModel.fromJson(Map<String, dynamic> map, String id) {
     final subtype = GameSubtype.values.firstWhere(
       (s) => s.name == map['subtype'],
@@ -126,6 +129,7 @@ class SpeakingQuestModel extends SpeakingQuest {
     );
   }
 
+  /// Converts this quest model into a Firestore/JSON-compatible map.
   Map<String, dynamic> toMap() {
     return {
       'instruction': instruction,
@@ -172,6 +176,7 @@ class SpeakingQuestModel extends SpeakingQuest {
     };
   }
 
+  /// Returns a copy of this quest model with specified fields replaced.
   SpeakingQuestModel copyWith({
     String? id,
     QuestType? type,

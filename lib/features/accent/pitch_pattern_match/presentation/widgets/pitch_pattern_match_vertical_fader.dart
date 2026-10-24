@@ -4,17 +4,36 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Vertical slider controller allowing selection of candidate pitch patterns.
 class PitchPatternMatchVerticalFader extends StatelessWidget {
+  /// Option descriptions (e.g. rising vs falling intonation).
   final List<String> options;
+
+  /// Index of the correct pattern option.
   final int correctIndex;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Selected option index, or `null`.
   final int? selectedIndex;
+
+  /// Normalized vertical slider position (0.0 to 1.0).
   final double sliderValue;
+
+  /// Callback executed when the learner confirms their pattern choice.
   final Function(int, int) onSubmitChoice;
+
+  /// Callback executed while dragging the fader slider.
   final Function(double, int) onSliderUpdate;
 
+  /// Creates a [PitchPatternMatchVerticalFader] widget.
   const PitchPatternMatchVerticalFader({
     super.key,
     required this.options,

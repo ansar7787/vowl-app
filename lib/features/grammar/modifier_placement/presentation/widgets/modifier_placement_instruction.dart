@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Centered instruction chip for modifier placement trials.
 class ModifierPlacementInstruction extends StatelessWidget {
+  /// Raw instruction prompt.
   final String instructionText;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Optional horizontal margin override.
   final double? horizontalMargin;
 
+  /// Creates a [ModifierPlacementInstruction] widget.
   const ModifierPlacementInstruction({
     super.key,
     required this.primaryColor,

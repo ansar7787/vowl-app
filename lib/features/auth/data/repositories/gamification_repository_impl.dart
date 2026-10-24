@@ -56,8 +56,10 @@ class GamificationRepositoryImpl
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
 
+  /// Notifier holding the star rating earned in the most recently completed level.
   static final ValueNotifier<int> lastEarnedStars = ValueNotifier<int>(0);
 
+  /// Creates a [GamificationRepositoryImpl] instance with optional Firebase overrides.
   GamificationRepositoryImpl({
     firebase_auth.FirebaseAuth? firebaseAuth,
     FirebaseFirestore? firestore,

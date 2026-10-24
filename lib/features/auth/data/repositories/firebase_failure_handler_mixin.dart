@@ -46,6 +46,7 @@ mixin FirebaseFailureHandlerMixin {
   static const String _kUnexpectedErrorCode = 'unexpected-error';
   static const String _kNetworkUnreachableCode = 'network-unreachable';
 
+  /// Translates a raw Firebase exception or general error [e] into a typed [Failure].
   Failure handleFirebaseException(dynamic e) {
     if (e is firebase_auth.FirebaseAuthException) {
       if (_isNetworkErrorCode(e.code)) {

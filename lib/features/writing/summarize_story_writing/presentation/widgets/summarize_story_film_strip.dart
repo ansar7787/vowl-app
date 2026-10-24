@@ -5,13 +5,24 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/models/summarize_story_frame_slot.dart';
 
+/// Sequential filmstrip layout presenting numbered slots for narrative summary frames.
 class SummarizeStoryFilmStrip extends StatelessWidget {
+  /// List of summary frame slots defining the chronology.
   final List<SummarizeStoryFrameSlot> slots;
+
+  /// Theme accent color applied to numbers and border indicators.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Callback invoked when a sentence is dropped into a specific slot index.
   final Function(int, String) onDropFrame;
+
+  /// Callback invoked when a slotted sentence is removed from a slot index.
   final Function(int) onRemoveFrame;
 
+  /// Creates a [SummarizeStoryFilmStrip] widget.
   const SummarizeStoryFilmStrip({
     super.key,
     required this.slots,

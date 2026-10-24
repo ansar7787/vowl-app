@@ -20,7 +20,9 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 // EVENTS
 // ============================================================================
 
+/// Base class for all progression BLoC events.
 abstract class ProgressionEvent extends Equatable {
+  /// Const constructor for sub-classes.
   const ProgressionEvent();
   @override
   List<Object?> get props => [];
@@ -164,6 +166,7 @@ class ProgressionState extends Equatable {
 /// server-side validation for "how much XP is legitimate here" isn't a call
 /// this review can make blind) — its doc comment explains why it's flagged
 /// rather than changed.
+/// BLoC managing user XP, leveling, streaks, streak freezes, and milestone rewards.
 class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   final RepairStreak repairStreak;
   final PurchaseStreakFreeze purchaseStreakFreeze;
@@ -185,6 +188,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   // which performs deep equality across all fields.
   UserEntity? _lastProcessedUser;
 
+  /// Creates a [ProgressionBloc] instance with all required progression use cases.
   ProgressionBloc({
     required this.repairStreak,
     required this.purchaseStreakFreeze,

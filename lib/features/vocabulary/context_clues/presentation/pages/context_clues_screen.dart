@@ -22,9 +22,15 @@ import '../widgets/context_clues_evidence_sentence.dart';
 import '../widgets/context_clues_scanner.dart';
 import '../widgets/context_clues_evidence_tags.dart';
 
+/// Interactive detective-style vocabulary game screen where learners scan sentences for context clues.
 class ContextCluesScreen extends StatefulWidget {
+  /// The active curriculum difficulty level.
   final int level;
+
+  /// The active game subtype.
   final GameSubtype gameType;
+
+  /// Creates a [ContextCluesScreen] instance.
   const ContextCluesScreen({
     super.key,
     required this.level,
@@ -512,10 +518,15 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
   }
 }
 
+/// Clips a circular reveal aperture focused around a specific focal [center] and [radius].
 class CircleClipper extends CustomClipper<Path> {
+  /// The center point of the circular aperture.
   final Offset center;
+
+  /// The radius of the circular aperture.
   final double radius;
 
+  /// Creates a [CircleClipper] with the given [center] and [radius].
   CircleClipper(this.center, this.radius);
 
   @override

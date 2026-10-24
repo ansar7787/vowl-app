@@ -6,20 +6,28 @@ import '../../../../core/usecases/usecase.dart';
 import '../entities/roleplay_quest.dart';
 import '../repositories/roleplay_repository.dart';
 
+/// Parameters for [GetRoleplayQuest] specifying subtype and curriculum level.
 class GetRoleplayQuestParams extends Equatable {
+  /// Roleplay game subtype requested.
   final GameSubtype gameType;
+
+  /// Difficulty or curriculum level.
   final int level;
 
+  /// Creates a [GetRoleplayQuestParams] instance.
   const GetRoleplayQuestParams({required this.gameType, required this.level});
 
   @override
   List<Object?> get props => [gameType, level];
 }
 
+/// Use case fetching roleplay quests for a specified game type and level.
 class GetRoleplayQuest
     implements UseCase<List<RoleplayQuest>, GetRoleplayQuestParams> {
+  /// Roleplay repository dependency.
   final RoleplayRepository repository;
 
+  /// Creates a [GetRoleplayQuest] use case instance.
   GetRoleplayQuest(this.repository);
 
   @override

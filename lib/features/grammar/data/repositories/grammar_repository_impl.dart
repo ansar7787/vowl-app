@@ -7,10 +7,15 @@ import '../../domain/entities/grammar_quest.dart';
 import '../../domain/repositories/grammar_repository.dart';
 import '../datasources/grammar_remote_data_source.dart';
 
+/// Production implementation of [GrammarRepository] retrieving quests from [GrammarRemoteDataSource].
 class GrammarRepositoryImpl implements GrammarRepository {
+  /// Remote data source providing grammar quest models.
   final GrammarRemoteDataSource remoteDataSource;
+
+  /// Optional network info service.
   final NetworkInfo? networkInfo;
 
+  /// Creates a [GrammarRepositoryImpl] with [remoteDataSource] and optional [networkInfo].
   const GrammarRepositoryImpl({
     required this.remoteDataSource,
     this.networkInfo,

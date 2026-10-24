@@ -21,11 +21,19 @@ import 'package:vowl/features/auth/presentation/widgets/auth_decoration.dart';
 /// so [ForgotPasswordCubit.sendPasswordResetEmail] always has the latest
 /// value without requiring a [TextEditingController] on the parent.
 class ForgotPasswordEmailInput extends StatelessWidget {
+  /// Key assigned to the form field.
   final GlobalKey<FormFieldState>? fieldKey;
+
+  /// Focus node managing focus for this input.
   final FocusNode? focusNode;
+
+  /// Contrast color for text and icons.
   final Color contrastColor;
+
+  /// Callback invoked upon keyboard submit action.
   final VoidCallback? onSubmitted;
 
+  /// Creates a [ForgotPasswordEmailInput] widget.
   const ForgotPasswordEmailInput({
     super.key,
     this.fieldKey,
@@ -93,10 +101,15 @@ class ForgotPasswordEmailInput extends StatelessWidget {
 // Send Reset Link Button
 // ---------------------------------------------------------------------------
 
+/// Action button dispatching the password reset email.
 class SendResetLinkButton extends StatelessWidget {
+  /// Whether the reset request is actively processing.
   final bool isSubmitting;
+
+  /// Callback invoked when button is pressed.
   final VoidCallback onPressed;
 
+  /// Creates a [SendResetLinkButton] widget.
   const SendResetLinkButton({
     super.key,
     required this.isSubmitting,
@@ -141,9 +154,12 @@ class SendResetLinkButton extends StatelessWidget {
 // Footer
 // ---------------------------------------------------------------------------
 
+/// Footer row prompting users to log in if they remember credentials.
 class RememberPasswordFooter extends StatelessWidget {
+  /// Secondary theme color for helper text.
   final Color secondaryColor;
 
+  /// Creates a [RememberPasswordFooter] widget.
   const RememberPasswordFooter({super.key, required this.secondaryColor});
 
   @override

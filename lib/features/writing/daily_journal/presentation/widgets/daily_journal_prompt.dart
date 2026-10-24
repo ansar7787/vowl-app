@@ -4,11 +4,18 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Card widget displaying the scenario or topic prompt for the journal entry.
 class DailyJournalPrompt extends StatelessWidget {
+  /// The journal topic or scenario description.
   final String text;
+
+  /// The primary theme accent color for borders and gradients.
   final Color primaryColor;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [DailyJournalPrompt] widget.
   const DailyJournalPrompt({
     super.key,
     required this.text,

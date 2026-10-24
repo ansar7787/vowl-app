@@ -20,9 +20,18 @@ import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_d
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_stamp_station.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Screen presenting the Travel Desk international airport customs minigame.
+///
+/// Players act as border customs officials, examining traveler passports,
+/// questioning itineraries, and stamping approval or required destinations.
 class TravelDeskScreen extends StatefulWidget {
+  /// Current game level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [TravelDeskScreen] widget.
   const TravelDeskScreen({
     super.key,
     required this.level,

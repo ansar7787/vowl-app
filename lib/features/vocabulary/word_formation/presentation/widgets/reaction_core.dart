@@ -6,14 +6,27 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/controllers/word_formation_controller.dart';
 
+/// Central card displaying the base root word and synthesized morphological transformation.
 class ReactionCore extends StatelessWidget {
+  /// The active game quest descriptor.
   final GameQuest? quest;
+
+  /// Morphological root word text.
   final String root;
+
+  /// Currently selected or hovering affix text.
   final String? suffix;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// Active word formation controller instance.
   final WordFormationController controller;
 
+  /// Creates a [ReactionCore] widget.
   const ReactionCore({
     super.key,
     required this.quest,

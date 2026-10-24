@@ -21,6 +21,7 @@ import 'package:vowl/core/services/in_app_purchase_service.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+/// Bottom sheet presenting currency packs and subscription plans for in-app purchase.
 class PremiumStoreBottomSheet extends StatefulWidget {
   final bool isKidsMode;
 

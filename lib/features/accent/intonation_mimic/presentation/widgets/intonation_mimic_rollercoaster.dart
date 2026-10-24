@@ -4,13 +4,24 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Visual rollercoaster track displaying rising, falling, and undulating pitch contours.
 class IntonationMimicRollercoaster extends StatelessWidget {
+  /// Sequence of pitch levels (e.g. [1, 2, 4, 1]) forming the melody track.
   final List<int> contour;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the animated cart is actively riding the curve.
   final bool isRiding;
+
+  /// Normalized cart progress along the track (0.0 to 1.0).
   final double cartPosition;
 
+  /// Creates an [IntonationMimicRollercoaster] widget.
   const IntonationMimicRollercoaster({
     super.key,
     required this.contour,

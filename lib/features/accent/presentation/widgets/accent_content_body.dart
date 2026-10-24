@@ -8,16 +8,27 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 /// of padding + title + subtitle across the `useScrolling` branches.
 ///
 /// Callers only set [useScrolling] — all layout differences are internal.
+/// Content container rendering responsive layouts with adaptive scroll behaviour.
 class AccentContentBody extends StatelessWidget {
+  /// Whether internal content should be wrapped in a scrollable view.
   final bool useScrolling;
+
+  /// Whether outer vertical padding should be removed.
   final bool disablePadding;
+
+  /// Whether the user has submitted their answer.
   final bool isAnswered;
 
   /// The game's accent colour — used for the category label above the subtitle.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// The child content widget being displayed.
   final Widget child;
 
+  /// Creates an [AccentContentBody] widget.
   const AccentContentBody({
     super.key,
     required this.useScrolling,

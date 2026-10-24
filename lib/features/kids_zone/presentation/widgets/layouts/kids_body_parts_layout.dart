@@ -67,10 +67,16 @@ class _ClinicPalette {
 /// - Responsive & scroll-safe: LayoutBuilder + SingleChildScrollView guarantees zero
 ///   RenderFlex overflows across 320dp to tablet dimensions.
 class KidsBodyPartsLayout extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The title of the game.
   final String title;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsBodyPartsLayout] widget.
   const KidsBodyPartsLayout({
     super.key,
     required this.level,

@@ -16,9 +16,12 @@ class _LocalPalette {
   static const Color color38bdf8 = Color(0xFF38BDF8);
 }
 
+/// Monthly activity heatmap calendar visualizing completed learning days and freezes.
 class StreakCalendar extends StatelessWidget {
+  /// Current authenticated [user] entity.
   final UserEntity user;
 
+  /// Creates a [StreakCalendar] for [user].
   const StreakCalendar({super.key, required this.user});
 
   @override

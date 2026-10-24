@@ -19,9 +19,15 @@ import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/sh
 import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_speed_slider.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 
+/// Screen host for Shadowing Challenge exercises, promoting speech fluency via immediate oral replication.
 class ShadowingChallengeScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [ShadowingChallengeScreen] widget.
   const ShadowingChallengeScreen({
     super.key,
     required this.level,

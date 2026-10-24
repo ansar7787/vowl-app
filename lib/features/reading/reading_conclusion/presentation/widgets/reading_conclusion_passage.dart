@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Card widget presenting the passage text from which a conclusion is drawn.
 class ReadingConclusionPassage extends StatelessWidget {
+  /// The full text of the reading passage.
   final String passage;
+
+  /// Theme accent color applied to borders and section badges.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [ReadingConclusionPassage] widget.
   const ReadingConclusionPassage({
     super.key,
     required this.passage,

@@ -11,16 +11,33 @@ import 'package:vowl/features/auth/domain/usecases/log_in_with_google.dart';
 // STATE
 // ============================================================================
 
+/// State emitted by the [LoginCubit] during login authentication.
 class LoginState extends Equatable {
+  /// Entered email address.
   final String email;
+
+  /// Entered account password.
   final String password;
+
+  /// Whether authentication is actively being submitted.
   final bool isSubmitting;
+
+  /// Whether login succeeded.
   final bool isSuccess;
+
+  /// Optional error message translation key.
   final String? errorMessage;
+
+  /// Optional success message translation key.
   final String? successMessage;
+
+  /// Whether the password text should be revealed.
   final bool isPasswordVisible;
+
+  /// Whether the authenticated user is newly registered via OAuth.
   final bool isNewUser;
 
+  /// Creates a [LoginState] instance.
   const LoginState({
     this.email = '',
     this.password = '',
@@ -102,6 +119,7 @@ class LoginCubit extends Cubit<LoginState> {
   final LogInWithGoogle _logInWithGoogle;
   final NetworkInfo? _networkInfo;
 
+  /// Creates a [LoginCubit] instance with required authentication use cases.
   LoginCubit({
     required LogInWithEmail logInWithEmail,
     required LogInWithGoogle logInWithGoogle,

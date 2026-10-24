@@ -1,3 +1,6 @@
+/// Barrel export file for all reusable premium subscription UI widgets.
+library;
+
 export 'premium_glow.dart';
 export 'premium_header.dart';
 export 'premium_hero.dart';

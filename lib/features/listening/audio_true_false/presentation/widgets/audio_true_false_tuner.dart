@@ -3,11 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Audio tuner playback button with an animated circular progress indicator.
 class AudioTrueFalseTuner extends StatelessWidget {
+  /// Callback triggered when the tuner is tapped.
   final VoidCallback onTap;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Animation controller driving the circular audio progress ring.
   final AnimationController audioController;
 
+  /// Creates an [AudioTrueFalseTuner] instance.
   const AudioTrueFalseTuner({
     super.key,
     required this.onTap,

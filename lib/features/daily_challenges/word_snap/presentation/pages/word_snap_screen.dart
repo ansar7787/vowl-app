@@ -28,6 +28,8 @@ const _kCompletionKeyPrefix = 'word_snap_completed_';
 /// Brand primary color for Word Snap matching tools_strip vibrant pink.
 const _kPrimaryColor = IllustrationColors.vibrantPink;
 
+/// Daily challenge screen for Word Snap sentence assembly puzzles featuring
+/// tactile token snapping, contextual cloze hints, and CEFR metrics.
 class WordSnapScreen extends StatefulWidget {
   final int level;
 

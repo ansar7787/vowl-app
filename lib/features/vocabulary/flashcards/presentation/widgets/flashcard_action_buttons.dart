@@ -5,13 +5,24 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Bottom action controls for the flashcard game presenting flip prompts and mastery evaluation buttons.
 class FlashcardActionButtons extends StatelessWidget {
+  /// Whether the card is currently showing its back (definition) face.
   final bool isFlipped;
+
+  /// Whether an answer submission transition is actively animating.
   final bool isTransitioning;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// Callback executed when the user taps "Again" (missed).
   final VoidCallback onAgain;
+
+  /// Callback executed when the user taps "Got It" (mastered).
   final VoidCallback onGotIt;
 
+  /// Creates a [FlashcardActionButtons] widget.
   const FlashcardActionButtons({
     super.key,
     required this.isFlipped,

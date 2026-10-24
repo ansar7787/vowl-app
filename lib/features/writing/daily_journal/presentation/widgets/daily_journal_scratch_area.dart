@@ -4,15 +4,30 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Styled multiline text area equipped with word counters and dynamic progress tracking.
 class DailyJournalScratchArea extends StatelessWidget {
+  /// Controller managing the journal text entry.
   final TextEditingController controller;
+
+  /// Focus node controlling input focus for the writing field.
   final FocusNode focusNode;
+
+  /// Whether the quest has reached a completed or evaluated state.
   final bool isAnswered;
+
+  /// Current number of completed words within the entry.
   final int wordCount;
+
+  /// Normalized progress ratio representing length toward the target word threshold.
   final double journalProgress;
+
+  /// Theme accent color applied to metrics and indicators.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [DailyJournalScratchArea] widget.
   const DailyJournalScratchArea({
     super.key,
     required this.controller,

@@ -2,6 +2,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/utils/smart_typo_evaluator.dart';
 
+/// Custom [TextEditingController] that formats typed text with real-time diff styling.
 class SmartTypoController extends TextEditingController {
   final String expectedText;
   bool _showDiff = false;

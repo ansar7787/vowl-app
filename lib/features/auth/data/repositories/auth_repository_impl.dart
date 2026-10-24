@@ -56,6 +56,7 @@ class AuthRepositoryImpl
   StreamSubscription<DocumentSnapshot<Map<String, dynamic>>>?
   _firestoreSubscription;
 
+  /// Creates an [AuthRepositoryImpl] instance with required data sources and Firebase services.
   AuthRepositoryImpl({
     required AuthRemoteDataSource remoteDataSource,
     firebase_auth.FirebaseAuth? firebaseAuth,

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_eval_button.dart';
 
+/// Action control buttons presenting "Needs Work" and "Nailed It" evaluation options.
 class ShadowEvalControls extends StatelessWidget {
   final bool isSubmitting;
   final VoidCallback onNeedsWork;

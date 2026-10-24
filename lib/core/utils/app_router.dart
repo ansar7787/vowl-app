@@ -21,11 +21,14 @@ import 'package:vowl/features/translation/translation_routes.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/presentation/pages/word_mixer_screen.dart';
 import 'package:vowl/features/daily_challenges/word_snap/presentation/pages/word_snap_screen.dart';
 
+/// Central declarative application router configuring all modular feature routes,
+/// navigation redirects (auth gates, age gates), deep-linking, and analytics observers.
 class AppRouter {
   AppRouter._(); // Non-instantiable.
 
   // ── Route path constants ──────────────────────────────────────────────────
 
+  /// Pending deep-link destination URL to route to once initialization finishes.
   static String? pendingDeepLink;
 
   static const String initialRoute = '/splash';
@@ -112,6 +115,7 @@ class AppRouter {
 
   // ── Router instance ───────────────────────────────────────────────────────
 
+  /// The global [GoRouter] instance configured with observers, redirects, and routes.
   static final GoRouter router = GoRouter(
     initialLocation: initialRoute,
     observers: [

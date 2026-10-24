@@ -16,9 +16,18 @@ import 'package:vowl/features/listening/sound_image_match/presentation/widgets/s
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Screen for the Sound Image Match listening quest.
+///
+/// Prompts the learner to listen to an acoustic cue, voice clip, or sound effect
+/// and match it to one of multiple illustrated emoji/image option tiles.
 class SoundImageMatchScreen extends StatefulWidget {
+  /// Progression level index.
   final int level;
+
+  /// Specific game subtype variant.
   final GameSubtype gameType;
+
+  /// Creates a [SoundImageMatchScreen] instance.
   const SoundImageMatchScreen({
     super.key,
     required this.level,

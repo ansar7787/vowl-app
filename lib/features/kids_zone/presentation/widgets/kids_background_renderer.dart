@@ -22,12 +22,21 @@ class _LocalPalette {
   static const Color colorc8e6c9 = Color(0xFFC8E6C9);
 }
 
+/// Renders dynamic mesh and gradient backgrounds tailored to specific kids subgames.
 class KidsBackgroundRenderer extends StatelessWidget {
+  /// The painter shader or background design identifier.
   final String painterName;
+
+  /// The shader style identifier.
   final String shaderName;
+
+  /// The primary theme accent color.
   final Color primaryColor;
+
+  /// The game type identifier.
   final String gameType;
 
+  /// Creates a [KidsBackgroundRenderer] widget.
   const KidsBackgroundRenderer({
     super.key,
     required this.painterName,

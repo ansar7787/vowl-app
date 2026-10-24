@@ -28,6 +28,7 @@ class _LocalPalette {
   static const Color colorcd7f32 = Color(0xFFCD7F32);
 }
 
+/// Interactive level node on the category quest map showing status, rank, and connection paths.
 class ModernMapNode extends StatefulWidget {
   final int index;
   final int levelNumber;

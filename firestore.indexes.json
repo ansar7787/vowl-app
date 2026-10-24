@@ -7,6 +7,14 @@
         { "fieldPath": "currentStreak", "order": "ASCENDING" },
         { "fieldPath": "lastLoginDate", "order": "ASCENDING" }
       ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "totalExp", "order": "DESCENDING" },
+        { "fieldPath": "coins", "order": "DESCENDING" }
+      ]
     }
   ],
   "fieldOverrides": []

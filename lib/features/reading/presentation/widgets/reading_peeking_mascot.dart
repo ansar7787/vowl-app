@@ -12,14 +12,28 @@ import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 /// The speech bubble is a live ARIA region — screen readers announce its
 /// content whenever [message] changes.
 class ReadingPeekingMascot extends StatelessWidget {
+  /// Remaining player lives.
   final int lives;
+
+  /// Whether the evaluated answer was correct.
   final bool? isCorrect;
+
+  /// Whether the quest has been evaluated.
   final bool isAnswered;
+
+  /// Whether all quests in the level are complete.
   final bool isGameComplete;
+
+  /// Whether the level ended in defeat.
   final bool isGameOver;
+
+  /// Identifier of the mascot.
   final String mascotId;
+
+  /// Display name of the companion mascot.
   final String mascotName;
 
+  /// Creates a [ReadingPeekingMascot] widget.
   const ReadingPeekingMascot({
     super.key,
     required this.lives,

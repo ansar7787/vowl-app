@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Card displaying the practice phrase and phonetic IPA transcription for shadowing.
 class ShadowingChallengePromptCard extends StatelessWidget {
+  /// Target practice phrase.
   final String word;
+
+  /// International Phonetic Alphabet (IPA) representation.
   final String ipa;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [ShadowingChallengePromptCard] widget.
   const ShadowingChallengePromptCard({
     super.key,
     required this.word,

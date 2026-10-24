@@ -2,12 +2,21 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter rendering a swirling particle vortex and gravitational beam to dragged tokens.
 class VortexPainter extends CustomPainter {
+  /// Animation timeline value driving particle rotation.
   final double animationTime;
+
+  /// Center point attracting candidate tokens.
   final Offset? pullCenter;
+
+  /// Position of the actively dragged token.
   final Offset? optionPos;
+
+  /// Primary theme accent color.
   final Color themeColor;
 
+  /// Creates a [VortexPainter].
   VortexPainter({
     required this.animationTime,
     this.pullCenter,

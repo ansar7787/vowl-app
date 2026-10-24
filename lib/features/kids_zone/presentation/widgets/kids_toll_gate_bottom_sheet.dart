@@ -14,7 +14,9 @@ import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 
+/// Toll gate bottom sheet presented when approaching locked zone boundaries on the level map.
 class KidsTollGateBottomSheet {
+  /// Displays the toll gate unlock bottom sheet.
   static void show({
     required BuildContext context,
     required int level,

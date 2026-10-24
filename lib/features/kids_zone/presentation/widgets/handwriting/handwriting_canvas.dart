@@ -26,19 +26,39 @@ class _LocalPalette {
   static const Color woodLedge = Color(0xFF6B3611);
 }
 
-/// Classroom Blackboard Slate Canvas Widget for digital ink handwriting.
+/// Interactive blackboard canvas widget for handwriting practice and digital ink capture.
 class HandwritingCanvas extends StatefulWidget {
+  /// Callback invoked when ink strokes are updated.
   final Function(Ink ink) onInkUpdated;
+
+  /// Callback invoked when the canvas is cleared.
   final VoidCallback onClear;
+
+  /// Callback reporting changes to the stroke count.
   final ValueChanged<int>? onStrokeCountChanged;
+
+  /// Background color of the blackboard canvas.
   final Color canvasColor;
+
+  /// Color of drawn chalk strokes.
   final Color strokeColor;
+
+  /// Border color of the surrounding frame.
   final Color borderColor;
+
+  /// Border width of the wooden frame.
   final double borderWidth;
+
+  /// Whether horizontal writing guidelines are visible.
   final bool showGuidelines;
+
+  /// Optional faint ghost text displayed for tracing.
   final String? ghostText;
+
+  /// Whether the animated stroke guide is initially shown.
   final bool initialShowGuide;
 
+  /// Creates a [HandwritingCanvas] widget.
   const HandwritingCanvas({
     super.key,
     required this.onInkUpdated,
@@ -57,6 +77,7 @@ class HandwritingCanvas extends StatefulWidget {
   State<HandwritingCanvas> createState() => HandwritingCanvasState();
 }
 
+/// State managing touch stroke sampling, chalk dust animations, and stroke validation for [HandwritingCanvas].
 class HandwritingCanvasState extends State<HandwritingCanvas>
     with TickerProviderStateMixin {
   final StrokeNotifier _notifier = StrokeNotifier();

@@ -16,9 +16,18 @@ import 'package:vowl/core/presentation/game_mechanics/arranging/dynamic_jigsaw_w
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/features/listening/presentation/mixins/listening_game_screen_mixin.dart';
 
+/// Screen for the Audio Sentence Ordering listening game quest.
+///
+/// Learners listen to spoken sentences and reconstruct the word sequence
+/// into correct grammatical order using interactive jigsaw word tiles.
 class AudioSentenceOrderScreen extends StatefulWidget {
+  /// Progression level index.
   final int level;
+
+  /// Specific game subtype variant.
   final GameSubtype gameType;
+
+  /// Creates an [AudioSentenceOrderScreen] instance.
   const AudioSentenceOrderScreen({
     super.key,
     required this.level,

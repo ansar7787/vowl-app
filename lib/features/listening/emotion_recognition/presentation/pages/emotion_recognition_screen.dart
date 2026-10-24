@@ -16,9 +16,18 @@ import 'package:vowl/features/listening/emotion_recognition/presentation/widgets
 import 'package:vowl/features/listening/emotion_recognition/presentation/widgets/emotion_recognition_emitter.dart';
 import 'package:vowl/features/listening/emotion_recognition/presentation/widgets/emotion_recognition_quadrant.dart';
 
+/// Screen for the Emotion Recognition listening quest.
+///
+/// Prompts the user to listen to emotional tone and vocal cadence, then drag
+/// the psychology core or tap one of four emotion quadrant reservoir cards.
 class EmotionRecognitionScreen extends StatefulWidget {
+  /// Progression level index.
   final int level;
+
+  /// Specific game subtype variant.
   final GameSubtype gameType;
+
+  /// Creates an [EmotionRecognitionScreen] instance.
   const EmotionRecognitionScreen({
     super.key,
     required this.level,

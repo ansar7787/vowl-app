@@ -6,17 +6,24 @@ import 'package:vowl/features/speaking/data/models/speaking_quest_model.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
+/// Contract for fetching speaking quest models from bundled assets or Firestore.
 abstract class SpeakingRemoteDataSource {
+  /// Fetches a list of speaking quests for [gameType] and difficulty [level].
   Future<List<SpeakingQuestModel>> getSpeakingQuest({
     required GameSubtype gameType,
     required int level,
   });
 }
 
+/// Implementation of [SpeakingRemoteDataSource] prioritizing local assets with Firestore fallback.
 class SpeakingRemoteDataSourceImpl implements SpeakingRemoteDataSource {
+  /// Firestore client instance for remote quest retrieval.
   final FirebaseFirestore firestore;
+
+  /// Service loading bundled local JSON quest assets.
   final AssetQuestService assetQuestService;
 
+  /// Creates a [SpeakingRemoteDataSourceImpl] with [firestore] and [assetQuestService].
   SpeakingRemoteDataSourceImpl(this.firestore, this.assetQuestService);
 
   @override

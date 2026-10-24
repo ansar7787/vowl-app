@@ -40,7 +40,7 @@ class ErrorJournalCollector {
         final List<String> logs = prefs.getStringList(_localKey) ?? [];
 
         final entry = ErrorJournalEntry(
-          id: now.millisecondsSinceEpoch.toString(),
+          id: '${now.microsecondsSinceEpoch}_${logs.length}',
           gameType: gameType,
           question: question,
           userAnswer: userAnswer,

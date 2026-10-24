@@ -26,7 +26,9 @@ class _LocalPalette {
   static const Color color991b1b = Color(0xFF991B1B);
 }
 
+/// Screen presenting the buddy boutique shop where children customize their mascot.
 class BuddyBoutiqueScreen extends StatefulWidget {
+  /// Creates a [BuddyBoutiqueScreen] widget.
   const BuddyBoutiqueScreen({super.key});
 
   @override

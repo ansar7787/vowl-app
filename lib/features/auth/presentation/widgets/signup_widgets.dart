@@ -13,11 +13,13 @@ import 'package:vowl/features/auth/presentation/widgets/auth_decoration.dart';
 // Name Input
 // ---------------------------------------------------------------------------
 
+/// Name input text field for the registration form.
 class SignUpNameInput extends StatelessWidget {
   final GlobalKey<FormFieldState>? fieldKey;
   final FocusNode? focusNode;
   final VoidCallback? onSubmitted;
 
+  /// Creates a [SignUpNameInput] widget.
   const SignUpNameInput({
     super.key,
     this.fieldKey,
@@ -93,11 +95,13 @@ class SignUpNameInput extends StatelessWidget {
 // Email Input
 // ---------------------------------------------------------------------------
 
+/// Email input text field for the registration form.
 class SignUpEmailInput extends StatelessWidget {
   final GlobalKey<FormFieldState>? fieldKey;
   final FocusNode? focusNode;
   final VoidCallback? onSubmitted;
 
+  /// Creates a [SignUpEmailInput] widget.
   const SignUpEmailInput({
     super.key,
     this.fieldKey,
@@ -175,11 +179,13 @@ class SignUpEmailInput extends StatelessWidget {
 // Password Input
 // ---------------------------------------------------------------------------
 
+/// Password input text field with visibility toggle and strength meter for the registration form.
 class SignUpPasswordInput extends StatelessWidget {
   final GlobalKey<FormFieldState>? fieldKey;
   final FocusNode? focusNode;
   final VoidCallback? onSubmitted;
 
+  /// Creates a [SignUpPasswordInput] widget.
   const SignUpPasswordInput({
     super.key,
     this.fieldKey,
@@ -297,9 +303,11 @@ class SignUpPasswordInput extends StatelessWidget {
 // Sign Up Button
 // ---------------------------------------------------------------------------
 
+/// Action button dispatching user account registration.
 class SignUpButton extends StatelessWidget {
   final VoidCallback onPressed;
 
+  /// Creates a [SignUpButton] widget.
   const SignUpButton({super.key, required this.onPressed});
 
   @override

@@ -29,6 +29,7 @@ class _LocalPalette {
 /// - Resend cooldown → triggered when [AuthState.message] ==
 ///   `'auth.email_verification_sent'`
 class VerifyEmailPage extends StatefulWidget {
+  /// Creates a [VerifyEmailPage] widget.
   const VerifyEmailPage({super.key});
 
   @override

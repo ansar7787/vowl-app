@@ -21,6 +21,7 @@ class ShopRepositoryImpl
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
 
+  /// Creates a [ShopRepositoryImpl] instance with optional Firebase overrides.
   ShopRepositoryImpl({
     firebase_auth.FirebaseAuth? firebaseAuth,
     FirebaseFirestore? firestore,

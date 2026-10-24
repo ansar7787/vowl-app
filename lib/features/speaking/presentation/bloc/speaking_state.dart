@@ -29,7 +29,9 @@ enum AnswerStatus {
   }
 }
 
+/// Base class for all states emitted by [SpeakingBloc].
 abstract class SpeakingState extends Equatable implements GameStateBase {
+  /// Base const constructor for speaking states.
   const SpeakingState();
 
   @override
@@ -41,11 +43,13 @@ abstract class SpeakingState extends Equatable implements GameStateBase {
 
 /// No quests loaded yet; the screen is awaiting a [FetchSpeakingQuests] event.
 class SpeakingInitial extends SpeakingState implements GameInitialState {
+  /// Creates a [SpeakingInitial] state.
   const SpeakingInitial();
 }
 
 /// Quests are being fetched from the data layer.
 class SpeakingLoading extends SpeakingState implements GameLoadingState {
+  /// Creates a [SpeakingLoading] state.
   const SpeakingLoading();
 }
 
@@ -82,6 +86,7 @@ class SpeakingLoaded extends SpeakingState implements GameLoadedState {
   /// Session-immutable: the level number for reward persistence.
   final int level;
 
+  /// Returns the current active [SpeakingQuest].
   SpeakingQuest get currentQuest => quests[currentIndex];
 
   @override
@@ -93,6 +98,7 @@ class SpeakingLoaded extends SpeakingState implements GameLoadedState {
   @override
   int get totalQuests => quests.length;
 
+  /// Creates a [SpeakingLoaded] gameplay state.
   const SpeakingLoaded({
     required this.quests,
     required this.currentIndex,
@@ -159,6 +165,7 @@ class SpeakingError extends SpeakingState implements GameErrorState {
   /// Internal detail for logging only — never displayed in the UI.
   final String? technicalError;
 
+  /// Creates a [SpeakingError] state with [message] and optional [technicalError].
   const SpeakingError(this.message, {this.technicalError});
 
   @override
@@ -171,8 +178,10 @@ class SpeakingGameComplete extends SpeakingState implements GameCompleteState {
   final int xpEarned;
   @override
   final int coinsEarned;
+  /// Total count of completed quests.
   final int questCount;
 
+  /// Creates a [SpeakingGameComplete] state.
   const SpeakingGameComplete({
     required this.xpEarned,
     required this.coinsEarned,
@@ -197,6 +206,7 @@ class SpeakingGameOver extends SpeakingState implements GameOverState {
   @override
   int get livesRemaining => 0;
 
+  /// Creates a [SpeakingGameOver] state.
   const SpeakingGameOver({
     required this.quests,
     required this.currentIndex,

@@ -7,10 +7,15 @@ import '../../domain/entities/roleplay_quest.dart';
 import '../../domain/repositories/roleplay_repository.dart';
 import '../datasources/roleplay_remote_data_source.dart';
 
+/// Implementation of [RoleplayRepository] coordinating remote and asset roleplay quest queries.
 class RoleplayRepositoryImpl implements RoleplayRepository {
+  /// Remote and asset data source provider for roleplay quests.
   final RoleplayRemoteDataSource remoteDataSource;
+
+  /// Network connectivity checker.
   final NetworkInfo networkInfo;
 
+  /// Creates a [RoleplayRepositoryImpl] instance.
   RoleplayRepositoryImpl({
     required this.remoteDataSource,
     required this.networkInfo,

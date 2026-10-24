@@ -32,21 +32,48 @@ class _LocalPalette {
   static const Color color00f0ff = Color(0xFF00F0FF);
 }
 
+/// Level node rendered along the curved progression path in the Kids Level Map.
 class KidsMapNode extends StatefulWidget {
+  /// Progression level number.
   final int level;
+
+  /// Whether this level node is locked.
   final bool isLocked;
+
+  /// Whether this node is the active current level.
   final bool isCurrent;
+
+  /// Whether this is the final level node in the sequence.
   final bool isLast;
+
+  /// Horizontal center offset of this node.
   final double currentOffset;
+
+  /// Horizontal center offset of the next node.
   final double nextOffset;
+
+  /// Horizontal center offset of the preceding node.
   final double prevOffset;
+
+  /// Whether quest data is loading.
   final bool isLoading;
+
+  /// Whether this node functions as a star vault or toll gate barrier.
   final bool isTollGate;
+
+  /// Whether the player has completed this level.
   final bool isCompleted;
+
+  /// Whether this node can be tapped to begin gameplay.
   final bool isPlayable;
+
+  /// Whether this node marks the entrance to the next world zone.
   final bool isNextZone;
+
+  /// Whether the previous level was completed.
   final bool isPrevCompleted;
 
+  /// Game type identifier.
   final String gameType;
   final Color primaryColor;
 

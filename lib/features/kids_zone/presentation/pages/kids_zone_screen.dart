@@ -25,7 +25,9 @@ import 'package:vowl/features/leaderboard/domain/repositories/leaderboard_reposi
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Main landing screen and curriculum portal for the Kids Zone learning experience.
 class KidsZoneScreen extends StatefulWidget {
+  /// Creates a [KidsZoneScreen] widget.
   const KidsZoneScreen({super.key});
 
   @override

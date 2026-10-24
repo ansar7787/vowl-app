@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Dynamic audio amplitude waveform visualizer rendering pulsating frequency bars.
 class ShadowWaveformVisualizer extends StatelessWidget {
   final ValueNotifier<double> soundLevel;
   final Color color;

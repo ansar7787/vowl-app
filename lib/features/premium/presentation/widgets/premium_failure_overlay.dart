@@ -13,6 +13,7 @@ class _LocalPalette {
   static const Color color8b9cf7 = Color(0xFF8B9CF7);
 }
 
+/// Modal overlay presenting payment failure details, troubleshooting tips, and retry actions.
 class PremiumFailureOverlay extends StatelessWidget {
   final VoidCallback onRetry;
   final VoidCallback onClose;

@@ -6,6 +6,8 @@ import 'package:vowl/core/utils/remote_config_service.dart';
 /// to prevent Premium users (or free users) from spamming the "Claim" or
 /// "Watch Ad" buttons indefinitely and breaking the game economy.
 class RewardLimitService {
+  const RewardLimitService._();
+
   static int get maxClaimsPerDay {
     try {
       return di.sl<RemoteConfigService>().dailyRewardLimit;

@@ -15,9 +15,15 @@ import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_ove
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Screen host for Clause Connector exercises, practicing compound and complex sentence syntax.
 class ClauseConnectorScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [ClauseConnectorScreen] widget.
   const ClauseConnectorScreen({
     super.key,
     required this.level,

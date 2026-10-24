@@ -16,6 +16,7 @@ class _LocalPalette {
   static const Color color1e1e2c = Color(0xFF1E1E2C);
 }
 
+/// Anagram unscrambling mechanic that presents jumbled letter tiles for word reconstruction.
 class DynamicAnagramWrapper extends StatefulWidget {
   final String expectedText;
   final Color primaryColor;

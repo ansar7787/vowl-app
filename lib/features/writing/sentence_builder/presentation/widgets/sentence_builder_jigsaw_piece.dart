@@ -3,14 +3,27 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Interlocking puzzle piece widget containing an individual word token.
 class SentenceBuilderJigsawPiece extends StatelessWidget {
+  /// Word token displayed on this jigsaw piece.
   final String text;
+
+  /// Whether this piece is currently placed on the workbench.
   final bool isAssembled;
+
+  /// Optional callback invoked when the jigsaw piece is tapped.
   final VoidCallback? onTap;
+
+  /// Theme accent color applied to piece filling and highlights.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Whether this piece is currently in a dragged state.
   final bool isDragging;
 
+  /// Creates a [SentenceBuilderJigsawPiece] widget.
   const SentenceBuilderJigsawPiece({
     super.key,
     required this.text,

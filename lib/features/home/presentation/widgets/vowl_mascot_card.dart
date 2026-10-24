@@ -13,7 +13,9 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// Home card displaying the active companion mascot, equipped cosmetics, and customization trigger.
 class VowlMascotCard extends StatefulWidget {
+  /// Creates a [VowlMascotCard].
   const VowlMascotCard({super.key});
 
   @override

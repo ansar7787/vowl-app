@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner directing auditory identification of primary syllable stress.
 class SyllableStressInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Raw instruction prompt.
   final String instruction;
 
+  /// Creates a [SyllableStressInstruction] widget.
   const SyllableStressInstruction({
     super.key,
     required this.color,

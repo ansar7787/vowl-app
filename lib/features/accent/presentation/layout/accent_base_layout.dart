@@ -21,20 +21,39 @@ import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 // AccentBaseLayout
 // ---------------------------------------------------------------------------
 
-/// Scaffold shell for all Accent game variants.
+/// Scaffold shell providing common background styling, mascot peeking, feedback drawers, and progress bars for accent games.
 class AccentBaseLayout extends StatelessWidget {
+  /// The active accent subtype.
   final GameSubtype gameType;
+
+  /// The active level index.
   final int level;
+
+  /// The core question-specific widget tree.
   final Widget child;
+
+  /// Whether the user has submitted their trial answer.
   final bool isAnswered;
+
+  /// Evaluation outcome of the submitted trial (`null` if unanswered).
   final bool? isCorrect;
+
+  /// Callback executed when the user taps continue on the feedback drawer.
   final VoidCallback onContinue;
+
+  /// Callback executed when the hint button is pressed.
   final VoidCallback onHint;
 
+  /// Whether confetti particle animations should be active.
   final bool showConfetti;
+
+  /// Whether the content body should be wrapped in a scroll view.
   final bool useScrolling;
+
+  /// Whether layout padding around the content body should be suppressed.
   final bool disablePadding;
 
+  /// Creates an [AccentBaseLayout] widget.
   const AccentBaseLayout({
     super.key,
     required this.gameType,

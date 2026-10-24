@@ -5,12 +5,21 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 
+/// Scene display card visualizing context, environment icon, and dialogue prompt.
 class SituationalResponseSceneDisplay extends StatelessWidget {
+  /// Active roleplay quest data.
   final RoleplayQuest quest;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Callback to play speech audio for the prompt dialogue.
   final VoidCallback onListen;
 
+  /// Creates a [SituationalResponseSceneDisplay] widget.
   const SituationalResponseSceneDisplay({
     super.key,
     required this.quest,

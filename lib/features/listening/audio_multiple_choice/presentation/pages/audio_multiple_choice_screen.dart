@@ -1,4 +1,4 @@
-﻿import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,9 +16,18 @@ import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_tim
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 
+/// Screen for the Audio Multiple Choice listening challenge.
+///
+/// Features an interactive orbiting satellite wheel surrounding a central
+/// speaker node where learners listen to spoken cues and select the matching satellite option.
 class AudioMultipleChoiceScreen extends StatefulWidget {
+  /// Progression level index.
   final int level;
+
+  /// Specific game subtype variant.
   final GameSubtype gameType;
+
+  /// Creates an [AudioMultipleChoiceScreen] instance.
   const AudioMultipleChoiceScreen({
     super.key,
     required this.level,

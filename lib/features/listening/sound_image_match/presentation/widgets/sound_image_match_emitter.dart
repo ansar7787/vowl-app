@@ -4,12 +4,21 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Speaker node triggering audio or sound effect playback for image matching.
 class SoundImageMatchEmitter extends StatelessWidget {
+  /// Callback triggered when the emitter is tapped.
   final VoidCallback onTap;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Optional celebratory emoji revealed upon correct choice.
   final String? emoji;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrectState;
 
+  /// Creates a [SoundImageMatchEmitter] widget.
   const SoundImageMatchEmitter({
     super.key,
     required this.onTap,

@@ -7,14 +7,27 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
+/// Back-facing flashcard view revealing the target word, definition, TTS audio, and example sentences.
 class FlashcardSwipeBack extends StatefulWidget {
+  /// The active vocabulary quest item.
   final VocabularyQuest quest;
+
+  /// Theme accent color for cards, buttons, and glow shadows.
   final Color color;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// Card layout width constraint.
   final double width;
+
+  /// Card layout height constraint.
   final double height;
+
+  /// Whether a temporary hint peek is actively illuminating the definition.
   final bool isHintActive;
 
+  /// Creates a [FlashcardSwipeBack] widget.
   const FlashcardSwipeBack({
     super.key,
     required this.quest,

@@ -9,9 +9,12 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
+/// Contextual prompt card nudging users to grant notification permissions to protect streaks.
 class InlineNotificationCard extends StatefulWidget {
+  /// Current consecutive day streak count.
   final int streak;
 
+  /// Creates an [InlineNotificationCard] for [streak].
   const InlineNotificationCard({super.key, required this.streak});
 
   @override

@@ -21,10 +21,15 @@ import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_parser.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_positive_pole_panel.dart';
 
+/// Antonym speech game screen prompting players to verbalize the opposite of a prompt term.
 class SpeakOppositeScreen extends StatefulWidget {
+  /// Target curriculum difficulty level.
   final int level;
+
+  /// Speaking subgame variant identifier.
   final GameSubtype gameType;
 
+  /// Creates a [SpeakOppositeScreen] for [level] and [gameType].
   const SpeakOppositeScreen({
     super.key,
     required this.level,

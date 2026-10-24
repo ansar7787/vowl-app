@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Instruction pill guiding the learner to tap where connected words link in continuous speech.
 class WordLinkingInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Raw instruction prompt.
   final String instruction;
 
+  /// Creates a [WordLinkingInstruction] widget.
   const WordLinkingInstruction({
     super.key,
     required this.color,

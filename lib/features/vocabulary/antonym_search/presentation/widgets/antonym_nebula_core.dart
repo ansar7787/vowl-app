@@ -8,11 +8,18 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_painters.dart';
 
+/// Central circular core displaying the target vocabulary word with animated orbit rings and phonetic details.
 class AntonymNebulaCore extends StatelessWidget {
+  /// The target vocabulary word to find antonyms for.
   final String word;
+
+  /// Theme accent color for concentric rings, shadows, and labels.
   final Color color;
+
+  /// Whether the app is currently rendered in dark theme mode.
   final bool isDark;
 
+  /// Creates an [AntonymNebulaCore] widget.
   const AntonymNebulaCore({
     super.key,
     required this.word,

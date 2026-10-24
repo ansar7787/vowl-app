@@ -4,11 +4,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Glassmorphic banner displaying instructions at the top of the synonym search screen.
 class SynonymInstructionHeader extends StatelessWidget {
+  /// Theme accent color for background highlights and border glow.
   final Color color;
+
+  /// Instructional text prompt shown to the user.
   final String instruction;
+
+  /// Whether compact vertical padding is enforced for smaller viewports.
   final bool isCompact;
 
+  /// Creates a [SynonymInstructionHeader] widget.
   const SynonymInstructionHeader({
     super.key,
     required this.color,

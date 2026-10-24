@@ -7,12 +7,19 @@ import '../../domain/entities/roleplay_quest.dart';
 /// Represents the status of the current question's answer submission.
 /// Replaces the previous `bool? lastAnswerCorrect` tri-state.
 enum AnswerStatus {
+  /// Question has not yet received a response.
   unanswered,
+
+  /// Submitted response was evaluated as correct.
   correct,
+
+  /// Submitted response was evaluated as incorrect.
   incorrect;
 
+  /// Whether an answer has been submitted.
   bool get isAnswered => this != AnswerStatus.unanswered;
 
+  /// Tri-state boolean representation of the answer status.
   bool? get asBoolOrNull {
     switch (this) {
       case AnswerStatus.unanswered:
@@ -77,8 +84,9 @@ WrongAnswerResult processWrongAnswer(RoleplayLoaded state) {
 // versions. If your project targets Dart 3.0+ you can optionally add the
 // `sealed` modifier to RoleplayState for exhaustive switch checking.
 
-/// Root state class.
+/// Root state class for roleplay gameplay sessions.
 abstract class RoleplayState extends Equatable implements GameStateBase {
+  /// Const constructor for sub-classes.
   const RoleplayState();
 
   /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
@@ -91,19 +99,23 @@ abstract class RoleplayState extends Equatable implements GameStateBase {
 
 // ── Transient states ───────────────────────────────────────────────────────
 
+/// Initial state before quest data has been loaded.
 class RoleplayInitial extends RoleplayState implements GameInitialState {
+  /// Creates a [RoleplayInitial] state.
   const RoleplayInitial();
 }
 
+/// Loading state emitted while fetching quest data.
 class RoleplayLoading extends RoleplayState implements GameLoadingState {
+  /// Creates a [RoleplayLoading] state.
   const RoleplayLoading();
 }
 
 // ── Error state ────────────────────────────────────────────────────────────
 
-// ── Error state ────────────────────────────────────────────────────────────
-
+/// Error state emitted when quest fetching or processing fails.
 class RoleplayError extends RoleplayState implements GameErrorState {
+  /// Creates a [RoleplayError] state with a user-facing [message] and optional [technicalError].
   const RoleplayError(this.message, {this.technicalError});
 
   @override
@@ -119,7 +131,9 @@ class RoleplayError extends RoleplayState implements GameErrorState {
 
 // ── Active game state ──────────────────────────────────────────────────────
 
+/// Active playing state containing loaded quests and player progress.
 class RoleplayLoaded extends RoleplayState implements GameLoadedState {
+  /// Creates a [RoleplayLoaded] state.
   const RoleplayLoaded({
     required this.quests,
     required this.currentIndex,
@@ -135,10 +149,15 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
     this.bonusCoinsEarned = 0,
   });
 
+  /// All quests queued for the current level.
   final List<RoleplayQuest> quests;
+
   @override
   final int currentIndex;
+
+  /// Identifier of the active node in a branching dialogue tree.
   final String? currentNodeId;
+
   @override
   final int livesRemaining;
 
@@ -151,10 +170,19 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
 
   @override
   final bool hintUsed;
+
+  /// Optional error message to display in the UI.
   final String? errorMessage;
+
+  /// Subtype of the active roleplay game.
   final GameSubtype gameType;
+
+  /// Current game level index.
   final int level;
+
+  /// Consecutive wrong attempt count on the current quest.
   final int wrongCount;
+
   @override
   final bool isFinalFailure;
 
@@ -163,6 +191,7 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
   /// security rule rate-limit collisions (2s minimum interval).
   final int bonusCoinsEarned;
 
+  /// Active quest being attempted.
   RoleplayQuest get currentQuest => quests[currentIndex];
 
   @override
@@ -174,6 +203,7 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
   @override
   int get totalQuests => quests.length;
 
+  /// Active dialogue node resolved from [currentQuest] and [currentNodeId].
   DialogueNode? get currentNode =>
       currentQuest.dialogues?[currentNodeId ?? 'start'];
 
@@ -193,6 +223,7 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
     bonusCoinsEarned,
   ];
 
+  /// Creates a copy of this state with specified fields replaced.
   RoleplayLoaded copyWith({
     List<RoleplayQuest>? quests,
     int? currentIndex,
@@ -224,9 +255,9 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
 
 // ── Terminal states ────────────────────────────────────────────────────────
 
-// ── Terminal states ────────────────────────────────────────────────────────
-
+/// Terminal state emitted when all quests in the level have been completed successfully.
 class RoleplayGameComplete extends RoleplayState implements GameCompleteState {
+  /// Creates a [RoleplayGameComplete] state.
   const RoleplayGameComplete({
     required this.xpEarned,
     required this.coinsEarned,
@@ -238,6 +269,8 @@ class RoleplayGameComplete extends RoleplayState implements GameCompleteState {
   final int xpEarned;
   @override
   final int coinsEarned;
+
+  /// Total count of quests completed in this level.
   final int questCount;
 
   /// Snapshot of the loaded state at the moment of completion, used by
@@ -250,7 +283,9 @@ class RoleplayGameComplete extends RoleplayState implements GameCompleteState {
   List<Object?> get props => [xpEarned, coinsEarned, questCount];
 }
 
+/// Terminal state emitted when the player exhausts all remaining lives.
 class RoleplayGameOver extends RoleplayState implements GameOverState {
+  /// Creates a [RoleplayGameOver] state.
   const RoleplayGameOver({
     required this.quests,
     required this.currentIndex,
@@ -258,9 +293,16 @@ class RoleplayGameOver extends RoleplayState implements GameOverState {
     required this.level,
   });
 
+  /// List of quests at the point of game over.
   final List<RoleplayQuest> quests;
+
+  /// Index of the failing quest.
   final int currentIndex;
+
+  /// Subtype of the active game.
   final GameSubtype gameType;
+
+  /// Level index.
   final int level;
 
   @override

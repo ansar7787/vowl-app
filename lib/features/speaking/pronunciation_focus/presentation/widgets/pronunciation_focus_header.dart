@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Header banner presenting pronunciation focus title and instructions.
 class PronunciationFocusHeader extends StatelessWidget {
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Specific pedagogical instruction text.
   final String instruction;
 
+  /// Creates a [PronunciationFocusHeader].
   const PronunciationFocusHeader({
     super.key,
     required this.primaryColor,

@@ -9,17 +9,36 @@ class _LocalPalette {
   static const Color color131326 = Color(0xFF131326);
 }
 
+/// Tray displaying available menu items, ingredients, and course choices.
 class GourmetOrderPlateTray extends StatelessWidget {
+  /// Available dish or beverage options.
   final List<String> options;
+
+  /// Price labels corresponding to each option.
   final List<String> prices;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Whether the player has submitted an order.
   final bool isAnswered;
+
+  /// Whether the submitted order was correct.
   final bool? isCorrect;
+
+  /// Currently selected menu item names.
   final List<String> selectedItems;
+
+  /// Callback fired when an item is tapped.
   final Function(String) onItemTapped;
+
+  /// Callback fired when dragging of an item begins.
   final VoidCallback onDragStarted;
 
+  /// Creates a [GourmetOrderPlateTray] widget.
   const GourmetOrderPlateTray({
     super.key,
     required this.options,

@@ -4,16 +4,30 @@ import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Visual section header displaying a title, subtitle, indicator bar, and action CTA.
 class HomeSectionHeader extends StatelessWidget {
+  /// Primary header title text.
   final String title;
+
+  /// Secondary subtitle or context text.
   final String subtitle;
+
+  /// Accent color applied to the leading indicator bar.
   final Color categoryColor;
+
+  /// Callback executed when the "See All" button is pressed.
   final VoidCallback? onSeeAll;
+
+  /// Optional badge widget displayed adjacent to the title.
   final Widget? badge;
 
+  /// Localization key for the section title.
   final String? localizedTitleKey;
+
+  /// Localization key for the section subtitle.
   final String? localizedSubtitleKey;
 
+  /// Creates a [HomeSectionHeader].
   const HomeSectionHeader({
     super.key,
     required this.title,
@@ -141,12 +155,21 @@ class HomeSectionHeader extends StatelessWidget {
   }
 }
 
+/// Renders a sliver wrapper around [HomeSectionHeader] for custom scroll views.
 class HomeSliverSectionHeader extends StatelessWidget {
+  /// The section header title text.
   final String title;
+
+  /// The descriptive subtitle text.
   final String subtitle;
+
+  /// The category theme color for the accent bar and icon.
   final Color categoryColor;
+
+  /// Optional callback invoked when tapping the see-all action.
   final VoidCallback? onSeeAll;
 
+  /// Creates a [HomeSliverSectionHeader] widget.
   const HomeSliverSectionHeader({
     super.key,
     required this.title,

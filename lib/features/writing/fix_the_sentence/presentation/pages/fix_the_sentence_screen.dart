@@ -20,9 +20,15 @@ import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_
 import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_the_sentence_correction_options.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
+/// Interactive writing game screen prompting users to detect and correct grammatical errors in sentences.
 class FixTheSentenceScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the writing quest.
   final int level;
+
+  /// The specific writing game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [FixTheSentenceScreen] instance.
   const FixTheSentenceScreen({
     super.key,
     required this.level,

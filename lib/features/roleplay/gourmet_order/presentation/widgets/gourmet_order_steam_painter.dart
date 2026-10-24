@@ -2,10 +2,15 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter rendering rising steam waves above culinary platters.
 class SteamWavesPainter extends CustomPainter {
+  /// Animation progress value (0.0 to 1.0).
   final double animationValue;
+
+  /// Theme accent color.
   final Color themeColor;
 
+  /// Creates a [SteamWavesPainter] instance.
   SteamWavesPainter({required this.animationValue, required this.themeColor});
 
   @override

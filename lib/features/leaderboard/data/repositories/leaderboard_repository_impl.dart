@@ -7,6 +7,8 @@ import 'package:vowl/features/auth/data/models/user_model.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/leaderboard/domain/repositories/leaderboard_repository.dart';
 
+/// Concrete implementation of [LeaderboardRepository] querying Firestore
+/// cached leaderboards with client-side timeout guards and fallback queries.
 class LeaderboardRepositoryImpl implements LeaderboardRepository {
   final FirebaseFirestore firestore;
 

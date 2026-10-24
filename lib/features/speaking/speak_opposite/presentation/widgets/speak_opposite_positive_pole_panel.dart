@@ -3,13 +3,24 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Display panel presenting the given word pole and contextual example sentence.
 class SpeakOppositePositivePolePanel extends StatelessWidget {
+  /// Word whose opposite is sought.
   final String targetWord;
+
+  /// Example contextual sentence illustrating the word.
   final String contextText;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Callback executed to trigger word pronunciation TTS audio.
   final VoidCallback onPlayTts;
 
+  /// Creates a [SpeakOppositePositivePolePanel].
   const SpeakOppositePositivePolePanel({
     super.key,
     required this.targetWord,

@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Card widget presenting the contextual scenario prompt for the email exercise.
 class WritingEmailPromptCard extends StatelessWidget {
+  /// The contextual scenario or recipient prompt for writing the email.
   final String text;
+
+  /// Theme accent color applied to borders and subtle background tint.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [WritingEmailPromptCard] widget.
   const WritingEmailPromptCard({
     super.key,
     required this.text,

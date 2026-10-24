@@ -35,6 +35,8 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// OCR camera scanner screen that extracts real-world text using Google ML Kit,
+/// analyzes extracted vocabulary, and provides interactive translations and bounties.
 class ScanAndLearnScreen extends StatefulWidget {
   const ScanAndLearnScreen({super.key});
 

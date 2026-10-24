@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner guiding users to select or adjust the grammatical tense.
 class TenseMasteryInstruction extends StatelessWidget {
+  /// The primary theme accent color.
   final Color primaryColor;
+
+  /// The instruction text describing the objective.
   final String? instruction;
 
+  /// Creates a [TenseMasteryInstruction] widget.
   const TenseMasteryInstruction({
     super.key,
     required this.primaryColor,

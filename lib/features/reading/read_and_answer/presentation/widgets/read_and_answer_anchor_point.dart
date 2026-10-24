@@ -2,14 +2,27 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Question anchor card serving as a drop target or focal question area.
 class ReadAndAnswerAnchorPoint extends StatelessWidget {
+  /// The comprehension question text.
   final String question;
+
+  /// Theme accent color applied to borders and highlights.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Optional callback invoked to read the question aloud.
   final VoidCallback? onPlayAudio;
+
+  /// Optional callback invoked when an option index is dropped onto the anchor.
   final ValueChanged<int>? onOptionDropped;
+
+  /// Whether the answer has been evaluated.
   final bool isAnswered;
 
+  /// Creates a [ReadAndAnswerAnchorPoint] widget.
   const ReadAndAnswerAnchorPoint({
     super.key,
     required this.question,

@@ -4,11 +4,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
+/// Bottom sheet modal allowing children to browse and equip purchased furniture items.
 class KidsRoomDecorSheet extends StatelessWidget {
+  /// The active user entity.
   final UserEntity user;
+
+  /// Catalog mapping of available furniture items grouped by category.
   final Map<String, List<Map<String, dynamic>>> furnitureStore;
+
+  /// Callback invoked when a furniture item is selected.
   final Function(String category, Map<String, dynamic> item) onItemTap;
 
+  /// Creates a [KidsRoomDecorSheet] widget.
   const KidsRoomDecorSheet({
     super.key,
     required this.user,

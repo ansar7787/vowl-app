@@ -1,3 +1,4 @@
+/// Represents an annotated vocabulary entry with IPA, CEFR level, definition, and grammar tip.
 class PhotoDictionaryEntry {
   final String? ipa;
   final String? cefr;
@@ -14,6 +15,7 @@ class PhotoDictionaryEntry {
   });
 }
 
+/// Static repository of everyday vocabulary entries recognized by image labeling.
 class PhotoVocabularyDictionary {
   static const Map<String, PhotoDictionaryEntry> dictionary = {
     // ─── 1. Electronics & Tech ──────────────────────────────────────────

@@ -2,12 +2,18 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-// Holographic audio wave equalizer spectrum painter
+/// Holographic audio wave equalizer spectrum painter for the rotary dial console.
 class EqualizerArcPainter extends CustomPainter {
-  final double rotationValue; // Selected dial level (0.0 to 1.0)
-  final double timeAnimation; // Wave time tick
+  /// Selected dial rotation level (0.0 to 1.0).
+  final double rotationValue;
+
+  /// Wave time tick animation value.
+  final double timeAnimation;
+
+  /// Theme accent color.
   final Color themeColor;
 
+  /// Creates an [EqualizerArcPainter] instance.
   EqualizerArcPainter({
     required this.rotationValue,
     required this.timeAnimation,

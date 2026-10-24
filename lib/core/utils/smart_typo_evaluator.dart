@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
+/// Evaluates user typing differences character-by-character to provide
+/// rich inline diff spans with visual error highlighting.
 class SmartTypoEvaluator {
+  const SmartTypoEvaluator._();
+
   /// Compares two strings using a Levenshtein edit distance algorithm.
   /// Returns a TextSpan that highlights correct letters in green, and wrong characters in red.
   /// We cannot insert missing characters into the TextSpan because TextEditingController

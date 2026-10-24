@@ -15,18 +15,39 @@ class _LocalPalette {
   static const Color colorRedDark = Color(0xFFFF7A6E);
 }
 
+/// Pedagogical feedback sheet comparing regional variants (e.g. British vs American English pronunciations).
 class DialectFeedbackPanel extends StatelessWidget {
+  /// Whether the submitted response was correct.
   final bool isCorrect;
+
+  /// The vocabulary target word.
   final String word;
-  final String britishPronunciation; // "SHED-yool"
-  final String americanPronunciation; // "SKED-yool"
+
+  /// British English pronunciation respelling or transcription.
+  final String britishPronunciation;
+
+  /// American English pronunciation respelling or transcription.
+  final String americanPronunciation;
+
+  /// Pedagogical hint string.
   final String? hint;
+
+  /// Explanatory breakdown text.
   final String? explanation;
+
+  /// Sociolinguistic dialect note.
   final String? dialectNote;
+
+  /// Callback executed to play audio sample for a given text and locale.
   final Function(String text, String locale) onPlayAudio;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether deep midnight contrast theme is enabled.
   final bool isMidnight;
 
+  /// Creates a [DialectFeedbackPanel] widget.
   const DialectFeedbackPanel({
     super.key,
     required this.isCorrect,

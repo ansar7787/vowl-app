@@ -21,6 +21,8 @@ import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Main leaderboard rankings screen featuring podium top 3 positions,
+/// personal rank card, and toggleable standard/kids leaderboards.
 class LeaderboardScreen extends StatefulWidget {
   final bool isKids;
   const LeaderboardScreen({super.key, this.isKids = false});

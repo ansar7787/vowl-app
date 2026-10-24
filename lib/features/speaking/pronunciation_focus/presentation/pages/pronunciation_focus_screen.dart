@@ -20,10 +20,15 @@ import 'package:vowl/features/speaking/pronunciation_focus/presentation/widgets/
 import 'package:vowl/features/speaking/pronunciation_focus/presentation/widgets/pronunciation_focus_thermal_grid.dart';
 import 'package:vowl/features/speaking/pronunciation_focus/presentation/widgets/pronunciation_focus_highlighted_sentence.dart';
 
+/// Pronunciation Focus game screen isolating phonemes, stress accents, and articulatory precision.
 class PronunciationFocusScreen extends StatefulWidget {
+  /// Target curriculum difficulty level.
   final int level;
+
+  /// Speaking subgame variant identifier.
   final GameSubtype gameType;
 
+  /// Creates a [PronunciationFocusScreen] for [level] and [gameType].
   const PronunciationFocusScreen({
     super.key,
     required this.level,

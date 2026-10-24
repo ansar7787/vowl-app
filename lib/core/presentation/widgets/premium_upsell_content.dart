@@ -4,6 +4,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Reusable upsell content layout presenting premium benefits and rewarded-ad watch options.
 class PremiumUpsellContent extends StatelessWidget {
   final String titleKey;
   final String titleFallback;

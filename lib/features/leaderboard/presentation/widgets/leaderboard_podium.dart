@@ -16,6 +16,7 @@ class _LocalPalette {
   static const Color colora3713b = Color(0xFFA3713B);
 }
 
+/// Gamified podium widget highlighting the top 3 global ranking players with avatars and trophies.
 class LeaderboardPodium extends StatelessWidget {
   final List<UserEntity> top3;
   final bool isKids;

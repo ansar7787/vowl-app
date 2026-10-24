@@ -18,21 +18,48 @@ import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
+/// Base scaffolding layout providing standard header, peeking mascot, and footer for reading games.
 class ReadingBaseLayout extends StatelessWidget {
+  /// The active reading game subtype.
   final GameSubtype gameType;
+
+  /// The difficulty or curriculum level of the current game.
   final int level;
+
+  /// Main interactive game content widget.
   final Widget child;
+
+  /// Whether an answer has been evaluated.
   final bool isAnswered;
+
+  /// Whether the evaluated answer was correct, or null if unanswered.
   final bool? isCorrect;
+
+  /// Callback invoked when proceeding past an evaluated question.
   final VoidCallback onContinue;
+
+  /// Callback invoked when requesting a hint.
   final VoidCallback onHint;
+
+  /// Whether confetti celebration particles should be rendered.
   final bool showConfetti;
+
+  /// Whether the quest has ended in final failure.
   final bool isFinalFailure;
+
+  /// Optional reading passage displayed in the upper reading section.
   final String? passage;
+
+  /// Whether the main content area should wrap its children in a scroll view.
   final bool useScrolling;
+
+  /// Whether default content horizontal and vertical padding should be omitted.
   final bool disablePadding;
+
+  /// Whether this reading game features a secondary interaction stage.
   final bool hasStage2;
 
+  /// Creates a [ReadingBaseLayout] widget.
   const ReadingBaseLayout({
     super.key,
     required this.gameType,

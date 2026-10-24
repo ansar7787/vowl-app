@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction badge displayed at the top of the Emotion Recognition quest.
 class EmotionRecognitionInstruction extends StatelessWidget {
+  /// Whether the question has been answered.
   final bool isAnswered;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Instruction text prompting the user on which emotion to identify.
   final String instruction;
 
+  /// Creates an [EmotionRecognitionInstruction] badge.
   const EmotionRecognitionInstruction({
     super.key,
     required this.isAnswered,

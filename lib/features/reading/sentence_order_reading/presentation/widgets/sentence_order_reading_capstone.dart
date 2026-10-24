@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Capstone submission button allowing users to lock in their sentence order.
 class SentenceOrderReadingCapstone extends StatelessWidget {
+  /// Theme accent color applied to button background.
   final Color color;
+
+  /// Callback invoked when the capstone button is tapped.
   final VoidCallback onTap;
+
+  /// Button text label.
   final String label;
 
+  /// Creates a [SentenceOrderReadingCapstone] widget.
   const SentenceOrderReadingCapstone({
     super.key,
     required this.color,

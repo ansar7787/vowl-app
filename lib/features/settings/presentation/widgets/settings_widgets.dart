@@ -14,6 +14,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 // SettingsSectionTitle
 // ---------------------------------------------------------------------------
 
+/// Section title label with optional subtle accent color and divider spacing.
 class SettingsSectionTitle extends StatelessWidget {
   final String title;
   final bool isDark;
@@ -71,6 +72,7 @@ class SettingsSectionTitle extends StatelessWidget {
 // SettingsGroup
 // ---------------------------------------------------------------------------
 
+/// Card container grouping a list of settings tiles with subtle dividers.
 class SettingsGroup extends StatelessWidget {
   final List<Widget> children;
 
@@ -108,6 +110,7 @@ class SettingsGroup extends StatelessWidget {
 // SettingsTile
 // ---------------------------------------------------------------------------
 
+/// Standard interactive list row with an icon, title, subtitle, and trailing widget.
 class SettingsTile extends StatelessWidget {
   final String title;
   final String? subtitle;
@@ -217,6 +220,7 @@ class SettingsTile extends StatelessWidget {
 // SettingsSwitchTile
 // ---------------------------------------------------------------------------
 
+/// Toggle switch row item supporting asynchronous loading indicators.
 class SettingsSwitchTile extends StatelessWidget {
   final String title;
   final String subtitle;
@@ -340,6 +344,7 @@ class SettingsSwitchTile extends StatelessWidget {
 // SettingsLogoutButton
 // ---------------------------------------------------------------------------
 
+/// Styled action button that presents the account sign-out confirmation dialog.
 class SettingsLogoutButton extends StatelessWidget {
   const SettingsLogoutButton({super.key});
 
@@ -434,6 +439,7 @@ class SettingsLogoutButton extends StatelessWidget {
 // SettingsProfileSection
 // ---------------------------------------------------------------------------
 
+/// Header card displaying user profile information, avatar, and edit profile action.
 class SettingsProfileSection extends StatelessWidget {
   final UserEntity? user;
   final bool isDark;

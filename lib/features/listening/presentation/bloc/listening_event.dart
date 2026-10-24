@@ -62,9 +62,14 @@ class RestartLevel extends ListeningEvent {
   const RestartLevel();
 }
 
+/// Dispatched when speech confirmation awards bonus coins.
 class ListeningSpeakConfirmed extends ListeningEvent {
+  /// Bonus coins incentive awarded.
   final int bonusCoins;
+
+  /// Creates a [ListeningSpeakConfirmed] event.
   const ListeningSpeakConfirmed(this.bonusCoins);
+
   @override
   List<Object?> get props => [bonusCoins];
 }
@@ -72,12 +77,18 @@ class ListeningSpeakConfirmed extends ListeningEvent {
 /// Triggered when the primary background save fails repeatedly.
 /// Handled by the bloc to safely emit [ListeningRewardSaveFailed].
 class ListeningRewardSaveFailedEvent extends ListeningEvent {
+  /// XP points earned before failure.
   final int xpEarned;
+
+  /// Coins earned before failure.
   final int coinsEarned;
+
+  /// Creates a [ListeningRewardSaveFailedEvent].
   const ListeningRewardSaveFailedEvent({
     required this.xpEarned,
     required this.coinsEarned,
   });
+
   @override
   List<Object?> get props => [xpEarned, coinsEarned];
 }

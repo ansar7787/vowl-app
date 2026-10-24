@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Card widget presenting the comprehension question following timed passage reading.
 class ReadingSpeedQuestionArea extends StatelessWidget {
+  /// The comprehension question text.
   final String question;
+
+  /// Theme accent color applied to question card.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Optional callback invoked to read the question aloud.
   final VoidCallback? onPlayAudio;
 
+  /// Creates a [ReadingSpeedQuestionArea] widget.
   const ReadingSpeedQuestionArea({
     super.key,
     required this.question,

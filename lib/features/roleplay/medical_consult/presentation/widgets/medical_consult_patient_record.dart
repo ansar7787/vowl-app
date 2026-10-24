@@ -2,11 +2,18 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Patient chart card displaying medical history, chief complaint, and prompt.
 class MedicalConsultPatientRecord extends StatelessWidget {
+  /// Prompt text describing the patient's complaint.
   final String prompt;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
 
+  /// Creates a [MedicalConsultPatientRecord] widget.
   const MedicalConsultPatientRecord({
     super.key,
     required this.prompt,

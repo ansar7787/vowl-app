@@ -7,16 +7,33 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Speech target display panel showing the target shadowing sentence with word highlights.
 class AccentShadowingTargetPanel extends StatelessWidget {
+  /// Target sentence or phrase to shadow.
   final String text;
+
+  /// Indices of tokens successfully spoken and matched.
   final Set<int> matchedIndices;
+
+  /// Whether dark mode is enabled.
   final bool isDark;
+
+  /// Primary theme highlight color.
   final Color primaryColor;
+
+  /// Whether user submission has been locked in.
   final bool isAnswered;
+
+  /// Whether the last submission was evaluated as correct.
   final bool? isCorrect;
+
+  /// Number of voice evaluation attempts performed.
   final int attempts;
+
+  /// Optional callback to play native pronunciation audio.
   final VoidCallback? onListenTap;
 
+  /// Creates an [AccentShadowingTargetPanel].
   const AccentShadowingTargetPanel({
     super.key,
     required this.text,

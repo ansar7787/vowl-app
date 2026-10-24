@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Pill widget displaying the current count of remaining player lives.
 class GrammarHeartCount extends StatelessWidget {
+  /// Remaining lives count.
   final int lives;
 
+  /// Creates a [GrammarHeartCount] widget.
   const GrammarHeartCount({super.key, required this.lives});
 
   @override

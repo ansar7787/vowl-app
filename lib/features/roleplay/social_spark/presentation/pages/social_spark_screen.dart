@@ -19,9 +19,18 @@ import 'package:vowl/features/roleplay/social_spark/presentation/widgets/social_
 import 'package:vowl/features/roleplay/social_spark/presentation/widgets/social_spark_galaxy_board.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Screen presenting the Social Spark conversation-starting and icebreaker minigame.
+///
+/// Players connect words and social cues into celestial constellations to form
+/// engaging, witty, or polite opening dialogue and responses.
 class SocialSparkScreen extends StatefulWidget {
+  /// Current game level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [SocialSparkScreen] widget.
   const SocialSparkScreen({
     super.key,
     required this.level,

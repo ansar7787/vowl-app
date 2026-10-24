@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart' hide Ink;
 import 'package:google_mlkit_digital_ink_recognition/google_mlkit_digital_ink_recognition.dart';
 
-/// A zero-allocation notifier for real-time stroke drawing updates.
+/// Zero-allocation notifier for real-time stroke drawing updates.
 class StrokeNotifier extends ChangeNotifier {
   bool _isDisposed = false;
   final List<Stroke> _strokes = [];
@@ -9,10 +9,19 @@ class StrokeNotifier extends ChangeNotifier {
   Stroke? _activeStroke;
   int _revision = 0;
 
+  /// The collection of recorded strokes.
   List<Stroke> get strokes => _strokes;
+
+  /// The active ML Kit digital ink container.
   Ink get ink => _ink;
+
+  /// Revision counter indicating stroke point updates.
   int get revision => _revision;
+
+  /// Whether any strokes or active drawing points exist.
   bool get hasStrokes => _strokes.isNotEmpty || _activeStroke != null;
+
+  /// Total count of completed and active strokes.
   int get strokeCount => _strokes.length + (_activeStroke != null ? 1 : 0);
 
   @override

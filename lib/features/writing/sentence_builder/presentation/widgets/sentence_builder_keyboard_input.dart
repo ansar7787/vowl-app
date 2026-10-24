@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Text input alternative allowing users to type sentences directly.
 class SentenceBuilderKeyboardInput extends StatefulWidget {
+  /// Text editing controller managing typed sentence input.
   final TextEditingController controller;
+
+  /// Theme accent color applied to focus borders.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [SentenceBuilderKeyboardInput] widget.
   const SentenceBuilderKeyboardInput({
     super.key,
     required this.controller,

@@ -11,9 +11,12 @@ class _LocalPalette {
   static const Color color818cf8 = Color(0xFF818CF8);
 }
 
+/// Bar chart widget visualizing daily experience point gains over the active week.
 class AdventureDailyXpChart extends StatelessWidget {
+  /// Map of ISO date strings (`yyyy-MM-dd`) to experience points earned on that date.
   final Map<String, int> history;
 
+  /// Creates an [AdventureDailyXpChart] with [history].
   const AdventureDailyXpChart({super.key, required this.history});
 
   @override

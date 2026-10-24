@@ -27,10 +27,16 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_scre
 /// - Time Complexity: O(N) where N is the number of options (3..4)
 /// - Space Complexity: O(1) auxiliary space
 class KidsHomeLayout extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The title of the game.
   final String title;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsHomeLayout] widget.
   const KidsHomeLayout({
     super.key,
     required this.level,

@@ -34,6 +34,8 @@ typedef MascotBuilder<S> =
     Widget Function(BuildContext context, S state, int lives);
 typedef ErrorRetryCallback = VoidCallback;
 
+/// Base layout providing reactive headers, briefing overlays, audio triggers,
+/// and life-depletion alerts across game activities.
 class GameBaseLayout<B extends StateStreamableSource<S>, S>
     extends StatefulWidget {
   final GameScaffoldConfig config;

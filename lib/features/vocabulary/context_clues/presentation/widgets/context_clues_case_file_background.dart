@@ -3,9 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'context_clues_painters.dart';
 
+/// Detective case file folder card background with subtle grid overlay.
 class ContextCluesCaseFileBackground extends StatelessWidget {
+  /// Theme accent color for folder borders and ambient drop shadows.
   final Color? accentColor;
 
+  /// Creates a [ContextCluesCaseFileBackground] widget.
   const ContextCluesCaseFileBackground({
     super.key,
     this.accentColor,

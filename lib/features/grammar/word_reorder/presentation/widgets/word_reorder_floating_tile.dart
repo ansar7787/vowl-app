@@ -4,14 +4,27 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Selectable word tile chip that floats with gentle motion in word reordering exercises.
 class WordReorderFloatingTile extends StatelessWidget {
+  /// The word text represented by this tile.
   final String word;
+
+  /// The original index of the word for staggered animation timing.
   final int index;
+
+  /// Callback invoked when the tile is tapped.
   final VoidCallback onTap;
+
+  /// The primary accent color for active borders and glows.
   final Color primaryColor;
+
+  /// Whether dark theme styling is active.
   final bool isDark;
+
+  /// Whether the tile is highlighted as hint or active state.
   final bool isHighlighted;
 
+  /// Creates a [WordReorderFloatingTile] widget.
   const WordReorderFloatingTile({
     super.key,
     required this.word,

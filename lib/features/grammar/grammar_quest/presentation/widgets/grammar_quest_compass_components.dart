@@ -6,11 +6,18 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_compass_ticks_painter.dart';
 import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_sentinel_needle_painter.dart';
 
+/// Holographic outer ring component for the grammar quest compass.
 class CompassHolographicRing extends StatelessWidget {
+  /// Outer diameter of the ring.
   final double size;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Turn rotation animation.
   final Animation<double> turns;
 
+  /// Creates a [CompassHolographicRing] widget.
   const CompassHolographicRing({
     super.key,
     required this.size,
@@ -40,10 +47,15 @@ class CompassHolographicRing extends StatelessWidget {
   }
 }
 
+/// Static radial gradient dial base for the grammar quest compass.
 class CompassStaticDial extends StatelessWidget {
+  /// Diameter of the dial.
   final double size;
+
+  /// Theme accent color.
   final Color primaryColor;
 
+  /// Creates a [CompassStaticDial] widget.
   const CompassStaticDial({
     super.key,
     required this.size,
@@ -69,15 +81,30 @@ class CompassStaticDial extends StatelessWidget {
   }
 }
 
+/// Quadrant choice label positioned radially on the compass face.
 class CompassQuadrant extends StatelessWidget {
+  /// Radial angular orientation in radians.
   final double angle;
+
+  /// Option display text.
   final String optionText;
+
+  /// Whether this quadrant is actively selected.
   final bool isSelected;
+
+  /// Diameter size of the compass.
   final double size;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether compact visual styling should be applied.
   final bool isCompact;
 
+  /// Creates a [CompassQuadrant] widget.
   const CompassQuadrant({
     super.key,
     required this.angle,
@@ -184,13 +211,24 @@ class CompassQuadrant extends StatelessWidget {
   }
 }
 
+/// Rotatable HUD needle pointing toward selected grammar quadrants.
 class CompassPhotonNeedle extends StatelessWidget {
+  /// Needle angle in radians.
   final double needleRotation;
+
+  /// Whether the needle is being actively dragged by the user.
   final bool isDragging;
+
+  /// Height constraint of the needle.
   final double needleHeight;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Whether compact visual styling should be applied.
   final bool isCompact;
 
+  /// Creates a [CompassPhotonNeedle] widget.
   const CompassPhotonNeedle({
     super.key,
     required this.needleRotation,
@@ -321,11 +359,18 @@ class CompassPhotonNeedle extends StatelessWidget {
   }
 }
 
+/// Renders the central decorative brass pivot hub of the navigation compass.
 class CompassCentralHub extends StatelessWidget {
+  /// The base diameter of the central hub.
   final double size;
+
+  /// The primary thematic accent color.
   final Color primaryColor;
+
+  /// Whether the hub renders in a reduced compact form factor.
   final bool isCompact;
 
+  /// Creates a [CompassCentralHub] widget.
   const CompassCentralHub({
     super.key,
     required this.size,

@@ -8,6 +8,7 @@ export 'package:vowl/core/utils/di/di_core.dart';
 export 'package:vowl/core/utils/di/di_auth.dart';
 export 'package:vowl/core/utils/di/di_features.dart';
 
+/// Global service locator instance powered by [GetIt].
 final sl = GetIt.instance;
 
 /// Central Dependency Injection container coordinator for Vowl.

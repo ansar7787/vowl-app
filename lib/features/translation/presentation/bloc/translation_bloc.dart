@@ -7,68 +7,109 @@ import 'package:vowl/core/utils/translation_service.dart';
 // EVENTS
 // ═══════════════════════════════════════════════════════════════════════════════
 
+/// Base event class for the [TranslationBloc].
 abstract class TranslationEvent extends Equatable {
   const TranslationEvent();
   @override
   List<Object?> get props => [];
 }
 
+/// Dispatched to initialize language models and restore cached state.
 class TranslationInitRequested extends TranslationEvent {}
 
+/// Dispatched when the user alters the input source text for translation.
 class TranslationTextChanged extends TranslationEvent {
+  /// The updated source text string.
   final String text;
+
+  /// Whether the active user holds premium entitlement.
   final bool isPremium;
+
+  /// Whether the translation should execute immediately without debounce.
   final bool immediate;
+
+  /// Creates a [TranslationTextChanged] event.
   const TranslationTextChanged(
     this.text, {
     this.isPremium = false,
     this.immediate = false,
   });
+
   @override
   List<Object?> get props => [text, isPremium, immediate];
 }
 
+/// Dispatched when the target destination language is changed.
 class TranslationLanguageChanged extends TranslationEvent {
+  /// The localized or display name of the selected target language.
   final String targetLanguageName;
+
+  /// Whether the active user holds premium entitlement.
   final bool isPremium;
+
+  /// Creates a [TranslationLanguageChanged] event.
   const TranslationLanguageChanged(
     this.targetLanguageName, {
     this.isPremium = false,
   });
+
   @override
   List<Object?> get props => [targetLanguageName, isPremium];
 }
 
+/// Dispatched when the source origin language is changed.
 class TranslationSourceLanguageChanged extends TranslationEvent {
+  /// The localized or display name of the selected source language.
   final String sourceLanguageName;
+
+  /// Whether the active user holds premium entitlement.
   final bool isPremium;
+
+  /// Creates a [TranslationSourceLanguageChanged] event.
   const TranslationSourceLanguageChanged(
     this.sourceLanguageName, {
     this.isPremium = false,
   });
+
   @override
   List<Object?> get props => [sourceLanguageName, isPremium];
 }
 
+/// Dispatched to swap the current source and target languages.
 class TranslationSwapLanguages extends TranslationEvent {
+  /// Whether the active user holds premium entitlement.
   final bool isPremium;
+
+  /// Creates a [TranslationSwapLanguages] event.
   const TranslationSwapLanguages({this.isPremium = false});
+
   @override
   List<Object?> get props => [isPremium];
 }
 
+/// Dispatched to purge an offline on-device translation model from local storage.
 class TranslationModelDeleted extends TranslationEvent {
+  /// The display name of the target language model to delete.
   final String targetLanguageName;
+
+  /// Creates a [TranslationModelDeleted] event.
   const TranslationModelDeleted(this.targetLanguageName);
+
   @override
   List<Object?> get props => [targetLanguageName];
 }
 
+/// Dispatched when a rewarded video advertisement completes to unlock translations.
 class TranslationAdWatched extends TranslationEvent {}
 
+/// Dispatched to retry a previously failed translation attempt.
 class TranslationRetryRequested extends TranslationEvent {
+  /// Whether the active user holds premium entitlement.
   final bool isPremium;
+
+  /// Creates a [TranslationRetryRequested] event.
   const TranslationRetryRequested({this.isPremium = false});
+
   @override
   List<Object?> get props => [isPremium];
 }
@@ -77,8 +118,11 @@ class TranslationRetryRequested extends TranslationEvent {
 // STATE
 // ═══════════════════════════════════════════════════════════════════════════════
 
+/// High-level lifecycle status of the translation state machine.
 enum TranslationStatus { initial, loading, loaded, error }
 
+/// Immutable state snapshot for translation requests, language pairings,
+/// and offline language model availability.
 class TranslationState extends Equatable {
   final TranslationStatus status;
   final String sourceText;
@@ -157,6 +201,8 @@ class TranslationState extends Equatable {
 // BLOC
 // ═══════════════════════════════════════════════════════════════════════════════
 
+/// BLoC component managing real-time on-device text translation, free quota tracking,
+/// language pack downloads, and bidirectional source/target language swapping.
 class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
   final TranslationService _service;
   DateTime? _lastTokenDeductionTime;

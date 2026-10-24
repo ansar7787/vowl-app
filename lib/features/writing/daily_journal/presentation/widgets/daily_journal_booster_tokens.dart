@@ -6,12 +6,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Interactive chips displaying required target words that dynamically highlight upon usage in the entry.
 class DailyJournalBoosterTokens extends StatelessWidget {
+  /// The list of target vocabulary words the user is encouraged to incorporate.
   final List<String> keywords;
+
+  /// The current input text typed by the user, evaluated for keyword presence.
   final String text;
+
+  /// The theme accent color applied to chips and indicators.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [DailyJournalBoosterTokens] widget.
   const DailyJournalBoosterTokens({
     super.key,
     required this.keywords,

@@ -34,6 +34,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
+/// Visual object recognition screen that classifies camera and photo images
+/// using Google ML Kit Image Labeling to teach contextual vocabulary and rewards.
 class PhotoVocabularyScreen extends StatefulWidget {
   const PhotoVocabularyScreen({super.key});
 

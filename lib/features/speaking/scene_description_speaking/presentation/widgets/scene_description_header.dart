@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction pill header at the top of the scene description challenge.
 class SceneDescriptionHeader extends StatelessWidget {
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Specific pedagogical instruction text.
   final String instruction;
 
+  /// Creates a [SceneDescriptionHeader].
   const SceneDescriptionHeader({
     super.key,
     required this.primaryColor,

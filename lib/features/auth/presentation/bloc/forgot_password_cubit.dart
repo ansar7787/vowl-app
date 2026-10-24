@@ -9,13 +9,24 @@ import 'package:vowl/features/auth/domain/usecases/forgot_password.dart';
 // STATE
 // ============================================================================
 
+/// State emitted by the [ForgotPasswordCubit] during password recovery.
 class ForgotPasswordState extends Equatable {
+  /// Entered email address.
   final String email;
+
+  /// Whether the request is currently being submitted.
   final bool isSubmitting;
+
+  /// Whether the password reset email was dispatched successfully.
   final bool isSuccess;
+
+  /// Optional error message key.
   final String? errorMessage;
+
+  /// Optional success message key.
   final String? successMessage;
 
+  /// Creates a [ForgotPasswordState] instance.
   const ForgotPasswordState({
     this.email = '',
     this.isSubmitting = false,
@@ -79,6 +90,7 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
   /// Compiled once — avoids per-keystroke [RegExp] allocation.
   /// `{2,}` accepts modern long-form TLDs (.academy, .international, etc.).
 
+  /// Creates a [ForgotPasswordCubit] instance.
   ForgotPasswordCubit({
     required ForgotPassword forgotPassword,
     NetworkInfo? networkInfo,

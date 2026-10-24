@@ -76,7 +76,7 @@ class BuddyLifecycleService {
   // Feed cooldown
   // ---------------------------------------------------------------------------
 
-  /// Returns true if the buddy can be fed (30-minute cooldown has elapsed).
+  /// Whether the buddy can be fed (30-minute cooldown has elapsed).
   bool canFeed(UserEntity user) {
     final lastFeed = user.kidsLastFeedTime;
     if (lastFeed == null) return true;
@@ -95,7 +95,7 @@ class BuddyLifecycleService {
   // Care streak
   // ---------------------------------------------------------------------------
 
-  /// Returns true if the user has already cared for their buddy today.
+  /// Whether the user has already cared for their buddy today.
   bool hasCompletedCareToday(UserEntity user) {
     final lastCare = user.kidsLastCareDate;
     if (lastCare == null) return false;

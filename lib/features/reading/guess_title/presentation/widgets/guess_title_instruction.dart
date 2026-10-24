@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner presenting guidelines for title deduction.
 class GuessTitleInstruction extends StatelessWidget {
+  /// The primary theme accent color for borders and icons.
   final Color primaryColor;
+
+  /// Optional fallback instruction text describing the title guessing exercise.
   final String? instruction;
 
+  /// Creates a [GuessTitleInstruction] widget.
   const GuessTitleInstruction({
     super.key,
     required this.primaryColor,

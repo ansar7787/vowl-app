@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner guiding users to place correct punctuation marks.
 class PunctuationMasteryInstruction extends StatelessWidget {
+  /// The primary theme accent color.
   final Color primaryColor;
+
+  /// The instruction text describing the objective.
   final String? instruction;
 
+  /// Creates a [PunctuationMasteryInstruction] widget.
   const PunctuationMasteryInstruction({
     super.key,
     required this.primaryColor,

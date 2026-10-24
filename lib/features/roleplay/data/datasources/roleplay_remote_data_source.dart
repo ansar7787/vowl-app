@@ -4,22 +4,30 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/error/exceptions.dart';
 import 'package:vowl/features/roleplay/data/models/roleplay_quest_model.dart';
 
+/// Remote and asset data source contract for fetching and preloading roleplay quests.
 abstract class RoleplayRemoteDataSource {
+  /// Fetches roleplay quest models matching [gameType] and [level].
   Future<List<RoleplayQuestModel>> getRoleplayQuest({
     required GameSubtype gameType,
     required int level,
   });
 
+  /// Preloads upcoming quest levels into memory for zero-latency gameplay.
   Future<void> preloadNextBatch({
     required GameSubtype gameType,
     required int level,
   });
 }
 
+/// Implementation of [RoleplayRemoteDataSource] leveraging local assets and Firestore fallback.
 class RoleplayRemoteDataSourceImpl implements RoleplayRemoteDataSource {
+  /// Cloud Firestore client instance.
   final FirebaseFirestore firestore;
+
+  /// Local bundle quest service.
   final AssetQuestService assetQuestService;
 
+  /// Creates a [RoleplayRemoteDataSourceImpl] instance.
   RoleplayRemoteDataSourceImpl({
     required this.firestore,
     required this.assetQuestService,

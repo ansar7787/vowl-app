@@ -1,47 +1,125 @@
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
+/// Domain entity representing an accent training exercise quest item.
 class AccentQuest extends GameQuest {
+  /// The target vocabulary word being pronounced.
   final String? word;
+
+  /// International Phonetic Alphabet (IPA) hint for pronunciation.
   final String? phoneticHint;
+
+  /// User prompt or conversational context cue.
   final String? prompt;
+
+  /// Model audio or textual sample answer.
   final String? sampleAnswer;
+
+  /// Segmented word tokens in the challenge sequence.
   final List<String>? words;
+
+  /// Contour map indicating pitch/tone levels per syllable.
   final List<int>? intonationMap;
+
+  /// Syllable breakdown for rhythm training.
   final List<String>? syllables;
+
+  /// Expected speech rate in words per minute or relative scale.
   final double? targetSpeed;
+
+  /// Melodic pitch contour pattern indices.
   final List<int>? pitchPatterns;
+
+  /// Stress pattern indicator (e.g., primary vs secondary stress).
   final String? stressPattern;
+
+  /// First word of a minimal pair comparison.
   final String? word1;
+
+  /// Second word of a minimal pair comparison.
   final String? word2;
+
+  /// IPA transcription for [word1].
   final String? ipa1;
+
+  /// IPA transcription for [word2].
   final String? ipa2;
+
+  /// Articulation and mouth position guidance note.
   final String? mouthPosition;
+
+  /// Slow phonetic breakdown of the target phrase.
   final String? slowForm;
+
+  /// Descriptive dialect or accent label (e.g., "Received Pronunciation", "General American").
   final String? accentName;
+
+  /// Phonetic rule explanation governing the accent variation.
   final String? phoneticRule;
+
+  /// Sociolinguistic or geographic dialect notes.
   final String? dialectNote;
+
+  /// Pitch variation guidelines for speech inflection.
   final String? pitchRule;
+
+  /// Vocal tract and vowel tension instruction.
   final String? vowelTensionRule;
+
+  /// Prosody and modulation pattern description.
   final String? modulationPattern;
+
+  /// Sentence emphasis and focal stress instructions.
   final String? emphasisRule;
+
+  /// Connected speech flow and rhythm guidelines.
   final String? flowRule;
+
+  /// Speech tempo and pause cadence rules.
   final String? pacingRule;
 
+  /// Syllabic stress placement rules.
   final String? stressRule;
+
+  /// Emotional tone or pragmatic context.
   final String? emotionContext;
+
+  /// Zero-based index of the primary stressed syllable.
   final int? stressIndex;
+
+  /// Connected speech phonological linking classification.
   final String? linkingType;
+
+  /// Normalized speed rate coefficient.
   final double? speedLevel;
+
+  /// Acoustic formant vowel quadrilateral position map.
   final Map<String, dynamic>? vowelChart;
+
+  /// Consonant voicing characteristic (voiced vs unvoiced).
   final String? voicing;
+
+  /// Pulmonary airflow characteristic (e.g., plosive, fricative).
   final String? airflow;
+
+  /// Natural conversational playback speed.
   final double? naturalSpeed;
+
+  /// Enunciated slow playback speed for clarity.
   final double? clearSpeed;
+
+  /// Geographic or cultural dialect zone.
   final String? dialectRegion;
+
+  /// Phonological phenomenon classification (assimilation, elision, linking).
   final String? phenomenonType;
+
+  /// Colloquial or contracted spoken representation.
   final String? spokenForm;
+
+  /// Semantic shift or nuance imparted by intonation or dialect choice.
   final String? meaningShift;
 
+  /// Creates an [AccentQuest] entity with comprehensive phonological attributes.
   const AccentQuest({
     required super.id,
     super.type,
@@ -103,8 +181,10 @@ class AccentQuest extends GameQuest {
     super.sentence,
   });
 
+  /// Convenience getter returning [phoneticHint].
   String? get phonetic => phoneticHint;
 
+  /// Creates a copy of this [AccentQuest] with updated phonological properties.
   AccentQuest copyWith({
     String? id,
     QuestType? type,

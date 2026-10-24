@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Circular radial blurred glow backdrop used for high-contrast card accents.
 class StaticGlow extends StatelessWidget {
   final Color color;
   final double? radius;

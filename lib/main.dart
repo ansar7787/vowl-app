@@ -40,6 +40,14 @@ import 'package:vowl/features/daily_words/data/services/daily_words_service.dart
 
 import 'firebase_options.dart';
 
+/// Application entry point.
+///
+/// Orchestrates the boot sequence including:
+/// - System UI, status bar, and device orientation constraints.
+/// - Parallelized initialization of environment variables, device security checks, and Firebase.
+/// - Service locator registration via [di.init].
+/// - Global unhandled exception capture with Firebase Crashlytics.
+/// - Critical notification routing and locale initialization.
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
@@ -285,6 +293,8 @@ Future<void> _initDeferredServices(FirebaseApp? firebaseApp) async {
 // App widget
 // ============================================================================
 
+/// Root application widget that configures global theming, localization,
+/// ScreenUtil responsive scaling, and top-level BLoC state providers.
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 

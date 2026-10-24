@@ -18,9 +18,15 @@ import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_audition_card.dart';
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_instruction.dart';
 
+/// Auditory shadowing screen challenging users to listen and repeat native English sentences.
 class RepeatSentenceScreen extends StatefulWidget {
+  /// Target curriculum difficulty level.
   final int level;
+
+  /// Speaking subgame variant identifier.
   final GameSubtype gameType;
+
+  /// Creates a [RepeatSentenceScreen] for [level] and [gameType].
   const RepeatSentenceScreen({
     super.key,
     required this.level,

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction badge displayed above the audio multiple-choice satellite interface.
 class AudioMultipleChoiceInstruction extends StatelessWidget {
+  /// Theme accent color applied to the container border and text.
   final Color color;
+
+  /// Instruction prompt text describing the current task.
   final String instruction;
 
+  /// Creates an [AudioMultipleChoiceInstruction] badge.
   const AudioMultipleChoiceInstruction({
     super.key,
     required this.color,

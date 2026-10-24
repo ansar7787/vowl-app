@@ -19,14 +19,18 @@ class _LocalPalette {
   static const Color colorfef08a = Color(0xFFFEF08A);
 }
 
-/// Cozy Living Room Theme for Family Game
-/// Space Complexity: O(1)
-/// Time Complexity: O(N) where N is the number of options (max 4)
+/// Cozy living room pedagogical layout for the Kids Family relationships game.
 class KidsFamilyLayout extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The title of the game.
   final String title;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsFamilyLayout] widget.
   const KidsFamilyLayout({
     super.key,
     required this.level,

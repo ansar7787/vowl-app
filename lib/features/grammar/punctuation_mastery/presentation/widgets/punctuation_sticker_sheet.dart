@@ -3,10 +3,15 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Draggable sticker collection providing punctuation marks for sentence placement.
 class PunctuationStickerSheet extends StatelessWidget {
+  /// The collection of punctuation marks available to drag.
   final List<String> marks;
+
+  /// The primary accent color for stickers and borders.
   final Color primaryColor;
 
+  /// Creates a [PunctuationStickerSheet] widget.
   const PunctuationStickerSheet({
     super.key,
     required this.marks,

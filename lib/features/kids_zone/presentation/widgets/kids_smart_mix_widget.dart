@@ -6,10 +6,13 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/domain/services/kids_game_helper.dart';
 
+/// Daily smart mix recommendation card presenting rotating quick adventure games.
 class KidsSmartMixWidget extends StatelessWidget {
-  const KidsSmartMixWidget({super.key, required this.isDark});
-
+  /// Whether dark theme styling is active.
   final bool isDark;
+
+  /// Creates a [KidsSmartMixWidget] widget.
+  const KidsSmartMixWidget({super.key, required this.isDark});
 
   @override
   Widget build(BuildContext context) {

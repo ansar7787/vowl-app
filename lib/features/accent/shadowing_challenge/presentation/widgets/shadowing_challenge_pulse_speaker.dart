@@ -4,11 +4,18 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Animated pulse speaker button for listening to reference shadowing audio.
 class ShadowingChallengePulseSpeaker extends StatelessWidget {
+  /// Reference speech text to play via TTS.
   final String text;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Callback executed when tapping the speaker button.
   final Function(String) onPlayTts;
 
+  /// Creates a [ShadowingChallengePulseSpeaker] widget.
   const ShadowingChallengePulseSpeaker({
     super.key,
     required this.text,

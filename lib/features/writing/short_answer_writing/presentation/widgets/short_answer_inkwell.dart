@@ -6,15 +6,30 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 
+/// Interactive text entry container featuring an ink gauge level and word counter metrics.
 class ShortAnswerInkwell extends StatelessWidget {
+  /// Text editing controller managing typed short answer text.
   final TextEditingController controller;
+
+  /// Focus node controlling input focus for the writing area.
   final FocusNode focusNode;
+
+  /// Whether the quest has been submitted or evaluated.
   final bool isAnswered;
+
+  /// Current number of completed words in the input text.
   final int wordCount;
+
+  /// Normalized ink gauge fill level representing answer completeness.
   final double inkLevel;
+
+  /// Theme accent color applied to indicators and borders.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [ShortAnswerInkwell] widget.
   const ShortAnswerInkwell({
     super.key,
     required this.controller,
@@ -61,23 +76,27 @@ class ShortAnswerInkwell extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(Icons.edit_note_rounded, size: 20.r, color: color),
-                    SizedBox(width: 8.w),
-                    Text(
-                      "YOUR RESPONSE",
-                      softWrap: true,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        color: color,
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: 0.8,
+                Flexible(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.edit_note_rounded, size: 20.r, color: color),
+                      SizedBox(width: 8.w),
+                      Flexible(
+                        child: Text(
+                          "YOUR RESPONSE",
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            color: color,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 0.8,
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 Semantics(
                   label: "Word count: $wordCount out of 4 minimum",

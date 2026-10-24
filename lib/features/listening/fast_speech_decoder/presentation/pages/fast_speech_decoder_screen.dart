@@ -17,9 +17,18 @@ import 'package:vowl/features/listening/fast_speech_decoder/presentation/widgets
 import 'package:vowl/features/listening/fast_speech_decoder/presentation/widgets/fast_speech_decoder_steam_vents.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 
+/// Screen for the Fast Speech Decoder listening game quest.
+///
+/// Features an interactive rotatable speed dial allowing learners to decelerate
+/// or accelerate high-velocity speech audio and pick the matching transcribed sentence.
 class FastSpeechDecoderScreen extends StatefulWidget {
+  /// Progression level index.
   final int level;
+
+  /// Specific game subtype variant.
   final GameSubtype gameType;
+
+  /// Creates a [FastSpeechDecoderScreen] instance.
   const FastSpeechDecoderScreen({
     super.key,
     required this.level,

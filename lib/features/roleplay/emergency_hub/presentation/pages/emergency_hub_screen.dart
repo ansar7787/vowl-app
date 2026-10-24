@@ -23,9 +23,18 @@ import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emerge
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_valve_chamber.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Screen presenting the Emergency Hub roleplay crisis management minigame.
+///
+/// Players decode emergency telex transmissions, align pressure valves,
+/// and transmit appropriate responses under simulated urgent conditions.
 class EmergencyHubScreen extends StatefulWidget {
+  /// Current game level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates an [EmergencyHubScreen] widget.
   const EmergencyHubScreen({
     super.key,
     required this.level,

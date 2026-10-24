@@ -1,11 +1,15 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
-/// Paints animated stroke order trajectory with start dots, direction arrows, and gliding pointer tip.
+/// Custom painter rendering animated stroke order trajectories with start dots and directional guides.
 class StrokeOrderGuidePainter extends CustomPainter {
+  /// The target glyph or character being traced.
   final String target;
+
+  /// The animation progress of the stroke order guide (0.0 to 1.0).
   final double progress; // 0..1
 
+  /// Creates a [StrokeOrderGuidePainter] instance.
   const StrokeOrderGuidePainter({required this.target, required this.progress});
 
   @override

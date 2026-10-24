@@ -16,9 +16,15 @@ import 'package:vowl/features/grammar/relative_clauses/presentation/widgets/rela
 import 'package:vowl/features/grammar/relative_clauses/presentation/widgets/relative_clauses_quantum_painter.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
+/// Screen presenting the relative clauses connection grammar exercise.
 class RelativeClausesScreen extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The game subtype for tracking and analytics.
   final GameSubtype gameType;
+
+  /// Creates a [RelativeClausesScreen] widget.
   const RelativeClausesScreen({
     super.key,
     required this.level,

@@ -5,16 +5,33 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Interactive orbiting satellite option card for multiple-choice listening challenges.
 class AudioMultipleChoiceSatellite extends StatelessWidget {
+  /// Zero-based index of this satellite node among options.
   final int index;
+
+  /// Option label text.
   final String text;
+
+  /// Zero-based index of the correct answer.
   final int correct;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Currently selected option index, if any.
   final int? selectedIndex;
+
+  /// Whether the question has been answered.
   final bool isAnswered;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrectState;
+
+  /// Callback triggered when this satellite option is selected.
   final VoidCallback onTap;
 
+  /// Creates an [AudioMultipleChoiceSatellite] instance.
   const AudioMultipleChoiceSatellite({
     super.key,
     required this.index,

@@ -28,6 +28,7 @@ abstract final class AccentGameConstants {
   static const int rewardCoins = 10;
 
   // ── Badge identifiers ─────────────────────────────────────────────────────
+  /// Unique identifier for the accent master achievement badge.
   static const String accentMasterBadge = 'accent_master';
 
   // ── TTS nudge ─────────────────────────────────────────────────────────────

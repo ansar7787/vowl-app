@@ -20,14 +20,30 @@ import '../../../../features/auth/domain/usecases/update_user_coins.dart';
 part 'elite_mastery_event.dart';
 part 'elite_mastery_state.dart';
 
+/// BLoC managing game sessions, question progression, rewards, lives, and hints for Elite Mastery.
 class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
+  /// Use case fetching questions for a specific elite mastery game mode and level.
   final GetEliteMasteryQuests getQuests;
+
+  /// Use case for granting or deducting user coin balance.
   final UpdateUserCoins updateUserCoins;
+
+  /// Use case persisting rewards (XP, gems) upon session completion.
   final UpdateUserRewards updateUserRewards;
+
+  /// Use case tracking mastery category statistics.
   final UpdateCategoryStats updateCategoryStats;
+
+  /// Use case updating curriculum milestone unlocked level.
   final UpdateUnlockedLevel updateUnlockedLevel;
+
+  /// Use case validating and consuming a user hint.
   final UseHint useHint;
+
+  /// Sound effect playback service.
   final SoundService soundService;
+
+  /// Haptic feedback service.
   final HapticService hapticService;
 
   // ── Game constants ──────────────────────────────────────────────────────────
@@ -39,6 +55,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
 
   // ── Constructor ─────────────────────────────────────────────────────────────
 
+  /// Creates an [EliteMasteryBloc] with required services and use cases.
   EliteMasteryBloc({
     required this.getQuests,
     required this.updateUserCoins,

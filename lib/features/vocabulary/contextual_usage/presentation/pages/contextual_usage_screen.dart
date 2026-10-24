@@ -18,9 +18,15 @@ import 'package:vowl/features/vocabulary/contextual_usage/presentation/widgets/c
 import 'package:vowl/features/vocabulary/contextual_usage/presentation/widgets/contextual_usage_register_meter.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
+/// Interactive vocabulary screen evaluating appropriate word usage across differing conversational contexts.
 class ContextualUsageScreen extends StatefulWidget {
+  /// The active curriculum difficulty level.
   final int level;
+
+  /// The active game subtype.
   final GameSubtype gameType;
+
+  /// Creates a [ContextualUsageScreen] instance.
   const ContextualUsageScreen({
     super.key,
     required this.level,

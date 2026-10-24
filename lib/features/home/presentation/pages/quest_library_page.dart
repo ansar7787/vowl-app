@@ -22,7 +22,9 @@ class _LocalPalette {
   static const Color color020617 = Color(0xFF020617);
 }
 
+/// Comprehensive curriculum library page for exploring, filtering, and launching all games.
 class QuestLibraryPage extends StatefulWidget {
+  /// Creates a [QuestLibraryPage].
   const QuestLibraryPage({super.key});
 
   @override

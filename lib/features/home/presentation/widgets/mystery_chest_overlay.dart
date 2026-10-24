@@ -27,6 +27,25 @@ class _LocalPalette {
 /// is driven by explicit [AnimationController]s so the user sees a
 /// continuous, cinematic flow — not a jarring frame-skip.
 class MysteryChestOverlay extends StatefulWidget {
+  /// Whether the chest has been opened.
+  final bool isOpened;
+
+  /// Whether the reward is from a premium tier chest.
+  final bool isPremium;
+
+  /// Number of coins or rewards revealed.
+  final int rewardAmount;
+
+  /// Callback executed when the chest is tapped to open.
+  final VoidCallback onOpen;
+
+  /// Callback executed when dismissing the chest overlay.
+  final VoidCallback onClose;
+
+  /// Controller driving celebratory confetti showers.
+  final ConfettiController confettiController;
+
+  /// Creates a [MysteryChestOverlay].
   const MysteryChestOverlay({
     super.key,
     required this.isOpened,
@@ -36,13 +55,6 @@ class MysteryChestOverlay extends StatefulWidget {
     required this.onClose,
     required this.confettiController,
   });
-
-  final bool isOpened;
-  final bool isPremium;
-  final int rewardAmount;
-  final VoidCallback onOpen;
-  final VoidCallback onClose;
-  final ConfettiController confettiController;
 
   @override
   State<MysteryChestOverlay> createState() => _MysteryChestOverlayState();

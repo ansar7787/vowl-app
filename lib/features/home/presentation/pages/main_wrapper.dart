@@ -10,10 +10,13 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// Root application scaffold wrapping top-level tab destinations in a stateful shell.
 class MainWrapper extends StatelessWidget {
-  const MainWrapper({required this.navigationShell, super.key});
-
+  /// Navigation shell governing indexed stack tab routing.
   final StatefulNavigationShell navigationShell;
+
+  /// Creates a [MainWrapper] with [navigationShell].
+  const MainWrapper({required this.navigationShell, super.key});
 
   @override
   Widget build(BuildContext context) {

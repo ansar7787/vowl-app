@@ -26,14 +26,18 @@ class _LocalPalette {
   static const Color errorBorder = Color(0xFFDC2626);
 }
 
-/// Sky Observatory Theme for Kids Day & Night Game
-/// Supports DUAL INTERACTION (tap-to-answer + drag-and-drop),
-/// TTS audio replay, zero 320dp small-screen overflow, and tactile haptics.
+/// Sky observatory pedagogical layout for the Kids Day and Night exercise.
 class KidsDayNightLayout extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The title of the game.
   final String title;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsDayNightLayout] widget.
   const KidsDayNightLayout({
     super.key,
     required this.level,

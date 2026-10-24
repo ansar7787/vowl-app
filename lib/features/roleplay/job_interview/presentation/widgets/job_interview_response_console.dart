@@ -6,16 +6,33 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Interactive console listing interview response strategies and dialog choices.
 class JobInterviewResponseConsole extends StatelessWidget {
+  /// Available interview response options.
   final List<String> options;
+
+  /// Index of the most professional/correct response.
   final int correctIndex;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Index of the currently selected option, if any.
   final int? selectedIndex;
+
+  /// Whether an answer has been submitted for this stage.
   final bool isAnswered;
+
+  /// Whether the submitted response was evaluated as correct.
   final bool? isCorrect;
+
+  /// Callback fired when an option is selected with tapped and correct index.
   final Function(int, int) onOptionSelected;
 
+  /// Creates a [JobInterviewResponseConsole] widget.
   const JobInterviewResponseConsole({
     super.key,
     required this.options,

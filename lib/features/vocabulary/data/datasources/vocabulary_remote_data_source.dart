@@ -3,17 +3,24 @@ import 'package:flutter/foundation.dart';
 import 'package:vowl/core/data/services/asset_quest_service.dart';
 import 'package:vowl/features/vocabulary/data/models/vocabulary_quest_model.dart';
 
+/// Contract for remote and asset-backed retrieval of vocabulary quest models.
 abstract class VocabularyRemoteDataSource {
+  /// Fetches raw quest models for the specified [gameType] and difficulty [level].
   Future<List<VocabularyQuestModel>> getVocabularyQuests(
     String gameType,
     int level,
   );
 }
 
+/// Implementation of [VocabularyRemoteDataSource] supporting asset-first caching and Firestore fallbacks.
 class VocabularyRemoteDataSourceImpl implements VocabularyRemoteDataSource {
+  /// Firestore client instance for cloud retrieval.
   final FirebaseFirestore firestore;
+
+  /// Local asset loader for bundled offline-first quests.
   final AssetQuestService assetQuestService;
 
+  /// Creates a [VocabularyRemoteDataSourceImpl] with [firestore] and [assetQuestService].
   VocabularyRemoteDataSourceImpl(this.firestore, this.assetQuestService);
 
   @override

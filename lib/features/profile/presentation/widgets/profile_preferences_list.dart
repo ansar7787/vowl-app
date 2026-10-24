@@ -9,9 +9,12 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Card listing user preferences, application settings, and profile controls.
 class ProfilePreferencesList extends StatelessWidget {
+  /// Current authenticated [user] entity.
   final UserEntity user;
 
+  /// Creates a [ProfilePreferencesList] for [user].
   const ProfilePreferencesList({super.key, required this.user});
 
   @override

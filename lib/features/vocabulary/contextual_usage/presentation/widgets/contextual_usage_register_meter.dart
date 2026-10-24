@@ -2,12 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Formality register meter and nuance explanation card for contextual usage quests.
 class ContextualUsageRegisterMeter extends StatelessWidget {
+  /// Formality rating index ranging from 1 (Casual) to 10 (Formal).
   final int? registerLevel; // 1 to 10
+
+  /// Pedagogical explanation clarifying subtle semantic nuances.
   final String? nuanceDifference;
+
+  /// Full sentence demonstrating authentic usage in context.
   final String? usageExample;
+
+  /// Theme accent color for meter bars, icons, and highlights.
   final Color color;
 
+  /// Creates a [ContextualUsageRegisterMeter] widget.
   const ContextualUsageRegisterMeter({
     super.key,
     this.registerLevel,

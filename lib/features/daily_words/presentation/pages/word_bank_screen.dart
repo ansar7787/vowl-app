@@ -18,6 +18,7 @@ import 'package:vowl/features/daily_words/data/services/daily_words_service.dart
 import 'package:vowl/features/daily_words/domain/entities/word_progress.dart';
 import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dart';
 
+/// Filter categories for the user's personal vocabulary word bank.
 enum WordBankFilter {
   all,
   today,
@@ -26,6 +27,8 @@ enum WordBankFilter {
   mastered,
 }
 
+/// Searchable personal word bank screen showcasing learned vocabulary,
+/// mastery stages (learning, reviewing, mastered), and spaced repetition status.
 class WordBankScreen extends StatefulWidget {
   final String? initialFilter;
   const WordBankScreen({super.key, this.initialFilter});

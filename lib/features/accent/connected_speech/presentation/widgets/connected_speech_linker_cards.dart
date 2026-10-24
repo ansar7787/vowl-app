@@ -5,16 +5,33 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Selection cards presenting connected speech options for assimilation, elision, or linking.
 class ConnectedSpeechLinkerCards extends StatelessWidget {
+  /// Available connected speech phrase options.
   final List<String> options;
+
+  /// Index of the correct option.
   final int correctIndex;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the user has submitted an answer.
   final bool isAnswered;
+
+  /// Currently selected option index, or `null`.
   final int? selectedIndex;
+
+  /// Callback executed when the learner selects an option.
   final Function(int, int) onSubmitChoice;
+
+  /// Whether a compact visual style should be rendered.
   final bool isCompact;
 
+  /// Creates a [ConnectedSpeechLinkerCards] widget.
   const ConnectedSpeechLinkerCards({
     super.key,
     required this.options,

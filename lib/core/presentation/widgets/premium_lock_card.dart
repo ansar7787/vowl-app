@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 import 'package:vowl/core/presentation/widgets/premium_upsell_content.dart';
 
+/// Glassmorphic upsell card shown when free translation limits are reached.
 class PremiumLockCard extends StatelessWidget {
   final VoidCallback onTap;
   final VoidCallback onPremiumTap;

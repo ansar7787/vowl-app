@@ -20,10 +20,15 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 
+/// Conversational roleplay screen simulating live dialogue exchanges with an AI partner.
 class DialogueRoleplayScreen extends StatefulWidget {
+  /// Target curriculum difficulty level.
   final int level;
+
+  /// Speaking subgame variant identifier.
   final GameSubtype gameType;
 
+  /// Creates a [DialogueRoleplayScreen] for [level] and [gameType].
   const DialogueRoleplayScreen({
     super.key,
     required this.level,

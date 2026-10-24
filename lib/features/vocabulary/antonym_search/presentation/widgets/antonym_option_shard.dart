@@ -4,22 +4,51 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Draggable and selectable option card containing candidate antonym words.
 class AntonymOptionShard extends StatelessWidget {
+  /// Index position of this candidate shard.
   final int index;
+
+  /// Candidate word string rendered on the card.
   final String text;
+
+  /// Theme accent color for card borders and glowing state shadows.
   final Color color;
+
+  /// Whether dark mode is active.
   final bool isDark;
+
+  /// Resting position of this shard on the screen.
   final Offset initialPos;
+
+  /// Current gesture offset applied during user dragging.
   final Offset offset;
+
+  /// Whether the shard is actively being dragged.
   final bool isDragging;
+
+  /// Whether this shard has been fused to the core upon correct matching.
   final bool isFused;
+
+  /// Whether the shard is selected via tap interaction.
   final bool isSelected;
+
+  /// Whether compact geometry is enforced for narrow viewports.
   final bool isCompact;
+
+  /// Callback executed when pan drag begins.
   final Function() onPanStart;
+
+  /// Callback executed on continuous drag movement.
   final Function(DragUpdateDetails) onPanUpdate;
+
+  /// Callback executed when pan drag ends.
   final Function() onPanEnd;
+
+  /// Optional tap selection callback.
   final Function()? onTap;
 
+  /// Creates an [AntonymOptionShard] widget.
   const AntonymOptionShard({
     super.key,
     required this.index,

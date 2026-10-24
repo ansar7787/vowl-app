@@ -4,10 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Pedagogical card showcasing the morphological word family tree of related derivations.
 class WordFormationFamilyTree extends StatelessWidget {
+  /// Collection of derived words within the morphological family.
   final List<String> familyTree;
+
+  /// Theme accent color.
   final Color color;
 
+  /// Creates a [WordFormationFamilyTree] widget.
   const WordFormationFamilyTree({
     super.key,
     required this.familyTree,

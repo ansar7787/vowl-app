@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Header instruction pill indicating slider and speaking status for yes/no exercises.
 class YesNoSpeakingHeaderInstruction extends StatelessWidget {
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether the physics slider has snapped into Yes or No.
   final bool isSnapped;
+
+  /// Optional specific instruction text override.
   final String? instruction;
 
+  /// Creates a [YesNoSpeakingHeaderInstruction].
   const YesNoSpeakingHeaderInstruction({
     super.key,
     required this.primaryColor,

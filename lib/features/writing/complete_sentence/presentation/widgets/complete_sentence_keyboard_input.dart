@@ -3,11 +3,18 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Text field and submit button for typing in sentence completions on hard mode.
 class CompleteSentenceKeyboardInput extends StatefulWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Callback receiving the typed string submission.
   final ValueChanged<String> onFire;
 
+  /// Creates a [CompleteSentenceKeyboardInput] field.
   const CompleteSentenceKeyboardInput({
     super.key,
     required this.color,

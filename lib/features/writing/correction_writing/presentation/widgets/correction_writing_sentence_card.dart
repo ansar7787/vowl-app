@@ -3,14 +3,27 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 
+/// Sentence card rendering the flawed passage with an interactive highlighted replacement chip.
 class CorrectionWritingSentenceCard extends StatelessWidget {
+  /// Passage text containing the error token in brackets (e.g. `[flaw]`).
   final String passage;
+
+  /// Currently selected correction replacement string.
   final String? selectedCorrection;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Whether the answer has been locked in and evaluated.
   final bool isAnswered;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrect;
 
+  /// Creates a [CorrectionWritingSentenceCard] instance.
   const CorrectionWritingSentenceCard({
     super.key,
     required this.passage,

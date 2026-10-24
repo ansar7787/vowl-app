@@ -21,7 +21,9 @@ enum AnswerStatus {
   }
 }
 
+/// Base state for all states emitted by [EliteMasteryBloc].
 abstract class EliteMasteryState extends Equatable implements GameStateBase {
+  /// Base const constructor for elite mastery states.
   const EliteMasteryState();
 
   /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
@@ -32,16 +34,21 @@ abstract class EliteMasteryState extends Equatable implements GameStateBase {
   List<Object?> get props => [];
 }
 
+/// Initial state prior to loading quest records.
 class EliteMasteryInitial extends EliteMasteryState
     implements GameInitialState {
+  /// Creates an [EliteMasteryInitial] state.
   const EliteMasteryInitial();
 }
 
+/// State emitted while quest records are loading.
 class EliteMasteryLoading extends EliteMasteryState
     implements GameLoadingState {
+  /// Creates an [EliteMasteryLoading] state.
   const EliteMasteryLoading();
 }
 
+/// Active gameplay state containing quests, index, lives, and hints.
 class EliteMasteryLoaded extends EliteMasteryState implements GameLoadedState {
   /// The game sub-type for this session.
   ///
@@ -200,6 +207,7 @@ enum EliteMasteryErrorReason {
   noQuestsForLevel,
 }
 
+/// State emitted when an error occurs during quest retrieval or gameplay.
 class EliteMasteryError extends EliteMasteryState implements GameErrorState {
   @override
   final String message;
@@ -209,6 +217,7 @@ class EliteMasteryError extends EliteMasteryState implements GameErrorState {
   /// behavior unchanged.
   final EliteMasteryErrorReason reason;
 
+  /// Creates an [EliteMasteryError] with [message] and [reason].
   const EliteMasteryError(
     this.message, {
     this.reason = EliteMasteryErrorReason.unknown,
@@ -218,14 +227,17 @@ class EliteMasteryError extends EliteMasteryState implements GameErrorState {
   List<Object?> get props => [message, reason];
 }
 
+/// State emitted when all questions in the level have been successfully mastered.
 class EliteMasteryGameComplete extends EliteMasteryState
     implements GameCompleteState {
   @override
   final int xpEarned;
   @override
   final int coinsEarned;
+  /// Total count of completed quests in the finished level.
   final int questCount;
 
+  /// Creates an [EliteMasteryGameComplete] state.
   const EliteMasteryGameComplete({
     required this.xpEarned,
     required this.coinsEarned,
@@ -236,6 +248,7 @@ class EliteMasteryGameComplete extends EliteMasteryState
   List<Object?> get props => [xpEarned, coinsEarned, questCount];
 }
 
+/// State emitted when the player runs out of lives during an elite challenge.
 class EliteMasteryGameOver extends EliteMasteryState implements GameOverState {
   /// See [EliteMasteryLoaded.gameType] for nullability rationale.
   final GameSubtype? gameType;
@@ -243,12 +256,16 @@ class EliteMasteryGameOver extends EliteMasteryState implements GameOverState {
   /// See [EliteMasteryLoaded.level] for nullability rationale.
   final int? level;
 
+  /// Current quests list at the time of game over.
   final List<EliteMasteryQuest> quests;
+
+  /// Index of the question on which the failure occurred.
   final int currentIndex;
 
   @override
   int get livesRemaining => 0;
 
+  /// Creates an [EliteMasteryGameOver] state.
   const EliteMasteryGameOver({
     this.gameType,
     this.level,

@@ -6,16 +6,33 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Interactive panel presenting multiple conversational reaction options.
 class SituationalResponseOptionsPanel extends StatelessWidget {
+  /// Available response dialogue options.
   final List<String> options;
+
+  /// Index of the correct reaction within [options].
   final int correctIndex;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
+
+  /// Whether an answer has been submitted for this stage.
   final bool isAnswered;
+
+  /// Whether the submitted option was evaluated as correct.
   final bool? isCorrect;
+
+  /// Index of the selected option, if any.
   final int? selectedIndex;
+
+  /// Callback fired when an option is selected with tapped and correct index.
   final Function(int, int) onOptionTap;
 
+  /// Creates a [SituationalResponseOptionsPanel] widget.
   const SituationalResponseOptionsPanel({
     super.key,
     required this.options,

@@ -2,10 +2,15 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Mission control card displaying the target word definition and instruction prompt.
 class PrefixSuffixMissionControl extends StatelessWidget {
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Instructional text or target definition.
   final String instruction;
 
+  /// Creates a [PrefixSuffixMissionControl] widget.
   const PrefixSuffixMissionControl({
     super.key,
     required this.primaryColor,

@@ -3,16 +3,48 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
-enum KidsAssetAnimation { none, hover, pulse, shake, bounce, scale }
+/// Defines the animation motion pattern applied to an [AnimatedKidsAsset].
+enum KidsAssetAnimation {
+  /// No continuous animation applied.
+  none,
 
+  /// Gentle vertical hovering motion.
+  hover,
+
+  /// Subtle pulsating scale animation.
+  pulse,
+
+  /// Horizontal shaking animation.
+  shake,
+
+  /// Vertical bouncing animation.
+  bounce,
+
+  /// Scaling loop animation.
+  scale,
+}
+
+/// Animated graphic asset presenting either an emoji or an icon with cheerful physics.
 class AnimatedKidsAsset extends StatelessWidget {
+  /// Optional emoji string to display.
   final String? emoji;
+
+  /// Optional icon data to display.
   final IconData? icon;
+
+  /// Visual size in logical pixels.
   final double size;
+
+  /// Optional color tint applied to the icon.
   final Color? color;
+
+  /// The animation pattern to execute.
   final KidsAssetAnimation animation;
+
+  /// Optional initial delay before animation commences.
   final Duration? delay;
 
+  /// Creates an [AnimatedKidsAsset] widget.
   const AnimatedKidsAsset({
     super.key,
     this.emoji,

@@ -8,20 +8,45 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 
+/// Reorderable narrative card tile displaying a sentence segment in story building.
 class StoryBuilderNarrativeTile extends StatelessWidget {
+  /// Current slot position index of this tile in the arranged list.
   final int index;
+
+  /// Sentence content string.
   final String sentence;
+
+  /// Active quest entity providing correct order and logic.
   final EliteMasteryQuest quest;
+
+  /// Whether pedagogical hints are visible.
   final bool isHintVisible;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Visual theme colors.
   final ThemeResult theme;
+
+  /// Whether the user has submitted their arrangement.
   final bool isAnswered;
+
+  /// Whether the submitted arrangement was evaluated as correct.
   final bool? isCorrect;
+
+  /// Whether reordering drag interactions are currently enabled.
   final bool isReorderable;
+
+  /// Original indexing of this sentence prior to user reordering.
   final int originalIndex;
+
+  /// Whether this tile is actively focused or selected.
   final bool isSelected;
+
+  /// Callback executed when the tile is tapped.
   final VoidCallback? onTap;
 
+  /// Creates a [StoryBuilderNarrativeTile].
   const StoryBuilderNarrativeTile({
     super.key,
     required this.index,

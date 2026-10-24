@@ -32,7 +32,9 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/feature_catalog/feature_directory_bottom_sheet.dart';
 import 'package:vowl/core/presentation/feature_catalog/first_time_welcome_showcase.dart';
 
+/// Primary home dashboard screen presenting daily activities, streak stats, and arenas.
 class HomeScreen extends StatefulWidget {
+  /// Creates a [HomeScreen].
   const HomeScreen({super.key});
 
   @override

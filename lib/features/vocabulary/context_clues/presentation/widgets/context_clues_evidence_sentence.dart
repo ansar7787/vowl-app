@@ -4,14 +4,27 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
+/// Rich text widget displaying the evidence sentence with an inline target blank slot.
 class ContextCluesEvidenceSentence extends StatelessWidget {
+  /// The investigation sentence containing a `[TARGET]` placeholder tag.
   final String sentence;
+
+  /// Theme accent color for slot borders and placeholder indicators.
   final Color color;
+
+  /// Whether compact typography and padding should be applied.
   final bool isCompact;
+
+  /// Whether the user has answered the question.
   final bool isAnswered;
+
+  /// Whether the submitted response was correct, or `null` if pending.
   final bool? isCorrect;
+
+  /// Currently selected vocabulary candidate word.
   final String? selectedOption;
 
+  /// Creates a [ContextCluesEvidenceSentence] widget.
   const ContextCluesEvidenceSentence({
     super.key,
     required this.sentence,

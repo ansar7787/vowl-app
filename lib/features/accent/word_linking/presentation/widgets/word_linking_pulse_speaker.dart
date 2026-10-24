@@ -4,11 +4,18 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Animated audio speaker for listening to connected sentence liaison and catenation.
 class WordLinkingPulseSpeaker extends StatelessWidget {
+  /// Spoken sentence to play via TTS.
   final String text;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Callback executed when the speaker button is pressed.
   final Function(String) onPlayTts;
 
+  /// Creates a [WordLinkingPulseSpeaker] widget.
   const WordLinkingPulseSpeaker({
     super.key,
     required this.text,

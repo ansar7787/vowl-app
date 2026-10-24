@@ -7,9 +7,12 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'dart:math';
 import 'dart:ui';
 
+/// Interactive dust cleaning activity where children swipe to wipe away dust particles.
 class KidsRoomCleanActivity extends StatefulWidget {
+  /// Callback invoked when all dust particles have been cleared.
   final VoidCallback onComplete;
 
+  /// Creates a [KidsRoomCleanActivity] widget.
   const KidsRoomCleanActivity({super.key, required this.onComplete});
 
   @override

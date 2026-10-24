@@ -3,11 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 
+/// Case file header badge and level counter for the context clues investigation.
 class ContextCluesCaseHeader extends StatelessWidget {
+  /// The active difficulty level.
   final int level;
+
+  /// The active quest item index.
   final int questIndex;
+
+  /// Theme accent color for badge backgrounds and text.
   final Color color;
 
+  /// Creates a [ContextCluesCaseHeader] widget.
   const ContextCluesCaseHeader({
     super.key,
     required this.level,

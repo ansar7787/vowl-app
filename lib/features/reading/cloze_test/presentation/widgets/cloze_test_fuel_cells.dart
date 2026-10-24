@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Draggable word cells available to be slotted into the cloze passage blank.
 class ClozeTestFuelCells extends StatelessWidget {
+  /// Candidate word options for the cloze test.
   final List<String> options;
+
+  /// Theme accent color applied to cell borders and highlights.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// The currently slotted option text, or null if none.
   final String? dockedOption;
 
+  /// Optional callback invoked when a word cell is tapped for quick docking.
   final void Function(String)? onTap;
 
+  /// Creates a [ClozeTestFuelCells] widget.
   const ClozeTestFuelCells({
     super.key,
     required this.options,

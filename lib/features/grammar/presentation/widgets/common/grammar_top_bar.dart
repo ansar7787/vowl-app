@@ -13,19 +13,35 @@ import 'grammar_heart_count.dart';
 /// - If it manages its own safe area, pass
 ///   `MediaQuery.paddingOf(context).top` as [topInset].
 class GrammarTopBar extends StatelessWidget {
+  /// Current level index.
   final int level;
+
+  /// Current zero-based quest index.
   final int currentIndex;
+
+  /// Total number of quests in the level session.
   final int totalQuests;
+
+  /// Progress fraction (0.0 to 1.0).
   final double progress;
+
+  /// Remaining user lives count.
   final int livesRemaining;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether midnight dark mode styling should be applied.
   final bool isMidnight;
+
+  /// Theme accent color.
   final Color primaryColor;
 
   /// Additional top inset applied above the bar content.
   /// Defaults to 0 (safe-area is handled by an ancestor widget).
   final double topInset;
 
+  /// Creates a [GrammarTopBar] widget.
   const GrammarTopBar({
     super.key,
     required this.level,

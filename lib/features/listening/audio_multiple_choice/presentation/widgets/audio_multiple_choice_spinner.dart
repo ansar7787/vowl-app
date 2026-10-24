@@ -7,19 +7,42 @@ import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'audio_multiple_choice_satellite.dart';
 
+/// Rotatable orbital spinner arranging satellite options around a central listen speaker hub.
 class AudioMultipleChoiceSpinner extends StatelessWidget {
+  /// List of option labels positioned along the orbital guide ring.
   final List<String> options;
+
+  /// Index of the correct option.
   final int correct;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Optional celebratory emoji shown upon correct answer.
   final String? emoji;
+
+  /// Current rotational offset in radians.
   final double rotation;
+
+  /// Currently selected option index, if any.
   final int? selectedIndex;
+
+  /// Whether the question has been answered.
   final bool isAnswered;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrectState;
+
+  /// Callback receiving delta panning updates to spin the orbit ring.
   final Function(double) onSpin;
+
+  /// Callback receiving the selected satellite index.
   final Function(int) onSelectSatellite;
+
+  /// Callback triggered when the central core audio replay button is tapped.
   final VoidCallback onTapCore;
 
+  /// Creates an [AudioMultipleChoiceSpinner] widget.
   const AudioMultipleChoiceSpinner({
     super.key,
     required this.options,

@@ -4,12 +4,21 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Animated waveform oscilloscope card that triggers speech playback when tapped.
 class AudioSentenceOrderOscilloscope extends StatelessWidget {
+  /// Callback triggered when the oscilloscope card is tapped.
   final VoidCallback onTap;
+
+  /// Theme accent color applied to the waveform bars and borders.
   final Color color;
+
+  /// Optional emoji displayed upon correct resolution.
   final String? emoji;
+
+  /// Verification status (`true` if correct, `false` if wrong, `null` if pending).
   final bool? isCorrectState;
 
+  /// Creates an [AudioSentenceOrderOscilloscope] widget.
   const AudioSentenceOrderOscilloscope({
     super.key,
     required this.onTap,

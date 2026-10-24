@@ -18,9 +18,18 @@ import 'package:vowl/features/listening/listening_inference/presentation/widgets
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_explanation.dart';
 
+/// Screen for the Listening Inference quest.
+///
+/// Prompts the learner to deduce hidden meanings, contextual undertones,
+/// or implied settings from spoken dialogue using a radar pulse audio interface.
 class ListeningInferenceScreen extends StatefulWidget {
+  /// Progression level index.
   final int level;
+
+  /// Specific game subtype variant.
   final GameSubtype gameType;
+
+  /// Creates a [ListeningInferenceScreen] instance.
   const ListeningInferenceScreen({
     super.key,
     required this.level,

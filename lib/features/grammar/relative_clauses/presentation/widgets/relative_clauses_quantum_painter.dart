@@ -3,19 +3,42 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Custom painter rendering connection lines, orbital nodes, and particle bursts for relative clauses.
 class RelativeClausesQuantumPainter extends CustomPainter {
+  /// Current touch or hook offset point.
   final Offset? hookPoint;
+
+  /// The origin socket offset point for the connection line.
   final Offset startPoint;
+
+  /// The positions of candidate clause nodes.
   final List<Offset> nodePoints;
+
+  /// The text labels for candidate clause nodes.
   final List<String> nodeLabels;
+
+  /// The primary accent color for active paths and nodes.
   final Color primaryColor;
+
+  /// Whether the user has submitted an answer for the current turn.
   final bool isAnswered;
+
+  /// Whether the submitted answer is correct.
   final bool? isCorrect;
+
+  /// The index of the selected target node.
   final int targetNode;
+
+  /// Whether dark theme styling is active.
   final bool isDark;
+
+  /// Whether compact layout constraints should be used.
   final bool isCompact;
+
+  /// Animation progress value for particle bursts (0.0 to 1.0).
   final double particleValue;
 
+  /// Creates a [RelativeClausesQuantumPainter] instance.
   RelativeClausesQuantumPainter({
     required this.hookPoint,
     required this.startPoint,

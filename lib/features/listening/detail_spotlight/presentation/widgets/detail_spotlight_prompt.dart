@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Context prompt badge displaying the current target detail to locate or answer.
 class DetailSpotlightPrompt extends StatelessWidget {
+  /// Whether the question has already been answered.
   final bool isAnswered;
+
+  /// Target detail label or answer string.
   final String detail;
+
+  /// Theme accent color.
   final Color color;
 
+  /// Creates a [DetailSpotlightPrompt] badge.
   const DetailSpotlightPrompt({
     super.key,
     required this.isAnswered,

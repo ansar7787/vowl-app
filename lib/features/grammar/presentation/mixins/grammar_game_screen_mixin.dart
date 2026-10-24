@@ -4,18 +4,22 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 
+/// Shared gameplay state and lifecycle orchestration mixin for all grammar game screens.
 mixin GrammarGameScreenMixin<T extends StatefulWidget>
     on State<T>, GameScreenMixin<T> {
+  /// Initializes the grammar game session by dispatching [FetchGrammarQuests].
   void initGrammarGame() {
     context.read<GrammarBloc>().add(
       FetchGrammarQuests(gameType: gameType, level: level),
     );
   }
 
+  /// Cleans up resources when leaving the grammar game screen.
   void disposeGrammarGame() {
     disposeGame();
   }
 
+  /// Evaluates whether the BLoC listener should react to state transitions.
   bool grammarListenWhen(GrammarState prev, GrammarState curr) {
     if (curr is GrammarGameComplete && prev is! GrammarGameComplete) {
       return true;
@@ -58,20 +62,25 @@ mixin GrammarGameScreenMixin<T extends StatefulWidget>
     }
   }
 
+  /// Handles an incorrect answer submission, playing haptics/audio and notifying [GrammarBloc].
   void submitWrongAnswer({required GameQuest quest, String? userAnswer}) {
     if (isAnsweredNotifier.value) return;
     submitSharedWrongAnswer(quest: quest, userAnswer: userAnswer);
     context.read<GrammarBloc>().add(const SubmitAnswer(false));
   }
 
+  /// Handles a correct answer submission, celebrating and notifying [GrammarBloc].
   void submitCorrectAnswer() {
     if (isAnsweredNotifier.value) return;
     submitSharedCorrectAnswer();
     context.read<GrammarBloc>().add(SubmitAnswer(true));
   }
 
+  /// Dispatches a request to proceed to the next grammar quest.
   void dispatchNextQuestion() =>
       context.read<GrammarBloc>().add(const NextQuestion());
+
+  /// Dispatches a hint consumption event to [GrammarBloc].
   void dispatchHintUsed() =>
       context.read<GrammarBloc>().add(const GrammarHintUsed());
 }

@@ -13,9 +13,15 @@ import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_ove
 import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_compass.dart';
 import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_sentence.dart';
 
+/// Screen host for Grammar Quest compass exercises, identifying missing words through radial navigation.
 class GrammarQuestScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [GrammarQuestScreen] widget.
   const GrammarQuestScreen({
     super.key,
     required this.level,

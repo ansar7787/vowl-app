@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction banner guiding users to formulate questions from statements.
 class QuestionFormatterInstruction extends StatelessWidget {
+  /// The primary theme accent color.
   final Color primaryColor;
+
+  /// The instruction text describing the objective.
   final String? instruction;
+
+  /// Whether compact typography and padding should be applied.
   final bool isCompact;
 
+  /// Creates a [QuestionFormatterInstruction] widget.
   const QuestionFormatterInstruction({
     super.key,
     required this.primaryColor,

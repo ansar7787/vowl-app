@@ -5,10 +5,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // AudioFillBlanksInstruction
 // =============================================================================
 
+/// Instruction badge displayed at the top of the Audio Fill Blanks game screen.
 class AudioFillBlanksInstruction extends StatelessWidget {
+  /// Prompt text instructing the player what action to take.
   final String instruction;
+
+  /// Theme accent color applied to the badge border and text.
   final Color color;
 
+  /// Creates an [AudioFillBlanksInstruction] badge.
   const AudioFillBlanksInstruction({
     super.key,
     required this.instruction,

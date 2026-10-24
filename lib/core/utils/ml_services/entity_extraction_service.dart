@@ -3,6 +3,7 @@ import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:flutter/material.dart';
 
+/// Service providing on-device natural language entity extraction using Google ML Kit.
 class EntityExtractionService {
   final EntityExtractor _extractor;
 

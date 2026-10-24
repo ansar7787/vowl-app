@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Card widget presenting the statement that must be evaluated as true or false.
 class TrueFalseReadingStatement extends StatelessWidget {
+  /// The statement text to be evaluated.
   final String statement;
+
+  /// Theme accent color applied to statement card.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Optional callback invoked to read the statement aloud.
   final VoidCallback? onPlayAudio;
 
+  /// Creates a [TrueFalseReadingStatement] widget.
   const TrueFalseReadingStatement({
     super.key,
     required this.statement,

@@ -16,6 +16,7 @@ import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 /// Wrapped in [RepaintBoundary] to isolate the continuous float + scale
 /// animations from parent layer repaints.
 class RoleplayPeekingMascot extends StatelessWidget {
+  /// Creates a [RoleplayPeekingMascot] widget.
   const RoleplayPeekingMascot({
     super.key,
     required this.state,
@@ -25,9 +26,16 @@ class RoleplayPeekingMascot extends StatelessWidget {
     required this.mascotId,
   });
 
+  /// Current roleplay game state.
   final RoleplayState state;
+
+  /// Remaining life count.
   final int lives;
+
+  /// Whether the last submitted answer was correct.
   final bool? isCorrect;
+
+  /// Whether the current question has been answered.
   final bool isAnswered;
 
   /// Mascot asset identifier, e.g. `'vowl_prime'`.

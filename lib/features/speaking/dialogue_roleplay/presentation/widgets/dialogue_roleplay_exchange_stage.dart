@@ -16,15 +16,30 @@ class _LocalPalette {
   static const Color color131326 = Color(0xFF131326);
 }
 
+/// Interactive conversational exchange stage rendering partner cues and user speech cards.
 class DialogueRoleplayExchangeStage extends StatelessWidget {
+  /// Active speaking quest containing dialogue prompts.
   final SpeakingQuest quest;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Pulse wave animation value.
   final double timeVal;
+
+  /// Whether user submission has been locked in.
   final bool isAnswered;
+
+  /// Whether user response was evaluated as correct.
   final bool isCorrect;
+
+  /// Transcribed or selected response displayed for the user.
   final String userDisplayAnswer;
 
+  /// Creates a [DialogueRoleplayExchangeStage].
   const DialogueRoleplayExchangeStage({
     super.key,
     required this.quest,

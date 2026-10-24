@@ -3,10 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// Interactive gradient slider displaying a semantic intensity spectrum between polar antonyms.
 class AntonymGradientScale extends StatefulWidget {
+  /// Ordered list of semantic steps along the word intensity gradient.
   final List<String> gradientScale;
+
+  /// Primary theme accent color for slider tracks, chips, and icons.
   final Color primaryColor;
 
+  /// Creates an [AntonymGradientScale] widget.
   const AntonymGradientScale({
     super.key,
     required this.gradientScale,

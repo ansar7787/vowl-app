@@ -5,6 +5,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/translation/presentation/bloc/translation_bloc.dart';
 import 'package:vowl/features/translation/presentation/pages/translate_screen.dart';
 
+/// Declarative route definitions for the on-device AI translation feature.
 List<RouteBase> get translationRoutes => [
   GoRoute(
     path: AppRouter.translateRoute,

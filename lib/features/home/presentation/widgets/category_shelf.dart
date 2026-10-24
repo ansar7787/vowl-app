@@ -18,11 +18,16 @@ class _LocalPalette {
   static const Color colorcd7f32 = Color(0xFFCD7F32);
 }
 
+/// Horizontal shelf displaying available game subtypes within a curriculum domain.
 class CategoryShelf extends StatefulWidget {
-  const CategoryShelf({super.key, required this.user, required this.subtypes});
-
+  /// Current authenticated [user] entity.
   final UserEntity user;
+
+  /// List of game subtypes displayed on this shelf.
   final List<GameSubtype> subtypes;
+
+  /// Creates a [CategoryShelf] for [user] with [subtypes].
+  const CategoryShelf({super.key, required this.user, required this.subtypes});
 
   @override
   State<CategoryShelf> createState() => _CategoryShelfState();

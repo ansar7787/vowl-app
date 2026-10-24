@@ -18,9 +18,15 @@ import 'package:vowl/features/writing/writing_email/presentation/widgets/writing
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_hex_slot.dart';
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_data_stream.dart';
 
+/// Interactive writing game screen prompting users to reconstruct formal or informal emails.
 class WritingEmailScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the writing quest.
   final int level;
+
+  /// The specific writing game subtype represented by this screen.
   final GameSubtype gameType;
+
+  /// Creates a [WritingEmailScreen] instance.
   const WritingEmailScreen({
     super.key,
     required this.level,

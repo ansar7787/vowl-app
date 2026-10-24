@@ -6,18 +6,22 @@ import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 
+/// Mixin providing common writing gameplay lifecycle methods and BLoC integration.
 mixin WritingGameScreenMixin<T extends StatefulWidget>
     on State<T>, GameScreenMixin<T> {
+  /// Initializes the writing game by dispatching [FetchWritingQuests].
   void initWritingGame() {
     context.read<WritingBloc>().add(
       FetchWritingQuests(gameType: gameType, level: level),
     );
   }
 
+  /// Cleans up game listeners and controllers.
   void disposeWritingGame() {
     disposeGame();
   }
 
+  /// Evaluates whether state transitions in [WritingBloc] warrant a UI notification.
   bool writingListenWhen(WritingState prev, WritingState curr) {
     if (curr is WritingGameComplete && prev is! WritingGameComplete) {
       return true;
@@ -60,20 +64,25 @@ mixin WritingGameScreenMixin<T extends StatefulWidget>
     }
   }
 
+  /// Handles an incorrect answer submission, playing haptics/audio and notifying [WritingBloc].
   void submitWrongAnswer({required GameQuest quest, String? userAnswer}) {
     if (isAnsweredNotifier.value) return;
     submitSharedWrongAnswer(quest: quest, userAnswer: userAnswer);
     context.read<WritingBloc>().add(const SubmitAnswer(false));
   }
 
+  /// Handles a correct answer submission, celebrating and notifying [WritingBloc].
   void submitCorrectAnswer() {
     if (isAnsweredNotifier.value) return;
     submitSharedCorrectAnswer();
     context.read<WritingBloc>().add(SubmitAnswer(true));
   }
 
+  /// Dispatches a request to proceed to the next writing quest.
   void dispatchNextQuestion() =>
       context.read<WritingBloc>().add(const NextQuestion());
+
+  /// Dispatches a hint consumption event to [WritingBloc].
   void dispatchHintUsed() =>
       context.read<WritingBloc>().add(const WritingHintUsed());
 }

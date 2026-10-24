@@ -3,18 +3,39 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Interactive timeline slider component for toggling between past, present, and future tenses.
 class TenseMasteryTimelineSlider extends StatefulWidget {
+  /// The normalized position of the slider knob (0.0 to 1.0).
   final double sliderValue;
+
+  /// The label of the currently selected tense.
   final String currentTense;
+
+  /// Whether the user has answered the current question.
   final bool isAnswered;
+
+  /// Whether the slider knob is actively being dragged.
   final bool isDragging;
+
+  /// Whether dark theme styling is active.
   final bool isDark;
+
+  /// The primary accent color for active timeline tracks and nodes.
   final Color primaryColor;
+
+  /// Callback triggered to produce light haptic feedback.
   final VoidCallback onHapticFeedback;
+
+  /// Callback triggered to produce heavy haptic feedback on snap points.
   final VoidCallback onHeavyHapticFeedback;
+
+  /// Callback invoked when the slider position changes.
   final ValueChanged<double> onSliderChanged;
+
+  /// Callback invoked when dragging state transitions start or end.
   final ValueChanged<bool> onDraggingChanged;
 
+  /// Creates a [TenseMasteryTimelineSlider] widget.
   const TenseMasteryTimelineSlider({
     super.key,
     required this.sliderValue,

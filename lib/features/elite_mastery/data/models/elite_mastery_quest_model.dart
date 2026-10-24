@@ -1,7 +1,9 @@
 import '../../domain/entities/elite_mastery_quest.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 
+/// Data model for an elite mastery quest supporting serialization and deserialization.
 class EliteMasteryQuestModel extends EliteMasteryQuest {
+  /// Creates an [EliteMasteryQuestModel] instance.
   const EliteMasteryQuestModel({
     required super.id,
     super.type,
@@ -37,6 +39,7 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
     super.targetAccent,
   });
 
+  /// Deserializes JSON data into an [EliteMasteryQuestModel].
   factory EliteMasteryQuestModel.fromJson(Map<String, dynamic> json) {
     final subtype = GameSubtype.fromString(
       json['subtype'] as String?,
@@ -124,6 +127,7 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
     );
   }
 
+  /// Serializes this quest model into a JSON-compatible map.
   Map<String, dynamic> toJson() {
     return {
       'id': id,

@@ -16,6 +16,7 @@ class _LocalPalette {
   static const Color color60a5fa = Color(0xFF60A5FA);
 }
 
+/// Sticky bottom card showing the current logged-in user's rank position and completed levels.
 class LeaderboardRankCard extends StatelessWidget {
   final List<UserEntity> allUsers;
   final bool isKids;

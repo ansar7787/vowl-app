@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
+/// Configuration model specifying layout parameters, answer state, and callbacks
+/// for a [GameScaffold].
 class GameScaffoldConfig {
   final GameSubtype gameType;
   final int level;

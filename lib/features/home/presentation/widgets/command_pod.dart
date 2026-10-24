@@ -20,17 +20,35 @@ class _LocalPalette {
   static const Color color06b6d4 = Color(0xFF06B6D4);
 }
 
-enum CommandPodMode { headerOnly, kidsOnly, vaultOnly, full }
+/// Display modes determining which sections of the [CommandPod] are rendered.
+enum CommandPodMode {
+  /// Renders only the discovery hero header.
+  headerOnly,
 
+  /// Renders only the kids learning mode teaser card.
+  kidsOnly,
+
+  /// Renders only the mastery vault card.
+  vaultOnly,
+
+  /// Renders the complete hero section including all cards.
+  full,
+}
+
+/// Command pod hero banner highlighting learning accelerators and kids zone access.
 class CommandPod extends StatelessWidget {
+  /// Current authenticated [user] entity.
+  final UserEntity user;
+
+  /// Display presentation mode controlling section visibility.
+  final CommandPodMode mode;
+
+  /// Creates a [CommandPod] for [user] with [mode].
   const CommandPod({
     super.key,
     required this.user,
     this.mode = CommandPodMode.full,
   });
-
-  final UserEntity user;
-  final CommandPodMode mode;
 
   @override
   Widget build(BuildContext context) {

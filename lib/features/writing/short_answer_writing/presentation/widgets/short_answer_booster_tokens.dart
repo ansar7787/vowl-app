@@ -5,12 +5,21 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 
+/// Chip array displaying required vocabulary tokens that light up when detected in the answer.
 class ShortAnswerBoosterTokens extends StatelessWidget {
+  /// Target words that must be incorporated into the short answer.
   final List<String> keywords;
+
+  /// The current answer text typed by the user.
   final String text;
+
+  /// Theme accent color applied to chips and borders.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
 
+  /// Creates a [ShortAnswerBoosterTokens] widget.
   const ShortAnswerBoosterTokens({
     super.key,
     required this.keywords,

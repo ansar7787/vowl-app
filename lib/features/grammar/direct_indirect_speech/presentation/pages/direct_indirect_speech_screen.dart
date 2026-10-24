@@ -18,9 +18,15 @@ import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 
+/// Screen host for Direct/Indirect Speech exercises, training backshift, pronoun shifts, and reporting verbs.
 class DirectIndirectSpeechScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates a [DirectIndirectSpeechScreen] widget.
   const DirectIndirectSpeechScreen({
     super.key,
     required this.level,

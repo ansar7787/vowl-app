@@ -6,14 +6,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Card displaying the contextual usage question prompt and fill-in sentence with audio TTS playback.
 class ContextualUsageCard extends StatelessWidget {
+  /// The question prompt or fill-in sentence template.
   final String question;
+
+  /// Theme accent color for cards, borders, and audio triggers.
   final Color color;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// Whether the user has submitted an answer for this trial.
   final bool isAnswered;
+
+  /// Whether the submitted response was correct, or `null` if pending.
   final bool? isCorrect;
+
+  /// The candidate option word selected by the user.
   final String? selectedOption;
 
+  /// Creates a [ContextualUsageCard] widget.
   const ContextualUsageCard({
     super.key,
     required this.question,

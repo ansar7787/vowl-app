@@ -3,16 +3,26 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
+/// Target sentence wall widget with an embedded drop target zone for missing word tokens.
 class CompleteSentenceTargetWall extends StatelessWidget {
+  /// Prompt sentence template containing blanks (`______`).
   final String text;
+
+  /// Currently dropped or typed word token inserted into the blank.
   final String? injected;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
 
   // The wall only reports which word was dragged onto it.
   // The screen is responsible for comparing it against correctAnswer.
+  /// Callback receiving the word dropped onto the target wall.
   final ValueChanged<String> onFire;
 
+  /// Creates a [CompleteSentenceTargetWall] target surface.
   const CompleteSentenceTargetWall({
     super.key,
     required this.text,

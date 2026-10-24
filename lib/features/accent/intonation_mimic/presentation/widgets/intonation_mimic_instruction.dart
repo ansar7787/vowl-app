@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction chip orienting the learner to sentence melody and pitch rise/fall exercises.
 class IntonationMimicInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Raw instruction prompt.
   final String instruction;
 
+  /// Creates an [IntonationMimicInstruction] widget.
   const IntonationMimicInstruction({
     super.key,
     required this.color,

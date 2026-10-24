@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Instruction chip guiding the learner through speech tempo and cadence discrimination.
 class SpeedVarianceInstruction extends StatelessWidget {
+  /// Theme accent color.
   final Color color;
+
+  /// Raw instruction prompt.
   final String instruction;
 
+  /// Creates a [SpeedVarianceInstruction] widget.
   const SpeedVarianceInstruction({
     super.key,
     required this.color,

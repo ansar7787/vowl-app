@@ -9,6 +9,7 @@ abstract class PraiseStrategy {
   String get localizedPrefix;
 }
 
+/// Praise strategy delivering concise, adult-appropriate positive reinforcement.
 class StandardPraiseStrategy implements PraiseStrategy {
   @override
   List<String> get encouragements => const [
@@ -28,6 +29,7 @@ class StandardPraiseStrategy implements PraiseStrategy {
   String get localizedPrefix => 'praise.standard';
 }
 
+/// Praise strategy delivering cheerful, high-energy encouragement for young learners.
 class KidsPraiseStrategy implements PraiseStrategy {
   @override
   List<String> get encouragements => const [

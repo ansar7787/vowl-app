@@ -4,16 +4,33 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Multiple-choice option card answering the speed reading comprehension question.
 class ReadingSpeedOption extends StatelessWidget {
+  /// Zero-based option index determining option letter.
   final int index;
+
+  /// The option text content.
   final String text;
+
+  /// The authoritative correct answer string.
   final String correct;
+
+  /// Theme accent color applied to cards and borders.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// The currently chosen option index, or null if unselected.
   final int? selectedIndex;
+
+  /// Whether the quest has been evaluated.
   final bool isAnswered;
+
+  /// Callback invoked when this option is tapped.
   final VoidCallback onTap;
 
+  /// Creates a [ReadingSpeedOption] widget.
   const ReadingSpeedOption({
     super.key,
     required this.index,

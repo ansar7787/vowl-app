@@ -5,17 +5,36 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
+/// Magnetic word wrap arena displaying words interspersed with drop slots for modifier insertion.
 class ModifierMagneticArena extends StatelessWidget {
+  /// Base sentence words.
   final List<String> words;
+
+  /// The modifier word to place.
   final String modifier;
+
+  /// Target index of the selected placement slot.
   final int targetIndex;
+
+  /// Whether the trial has been answered.
   final bool isAnswered;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Theme accent color.
   final Color primaryColor;
+
+  /// Callback executed when a drop slot accepts the modifier.
   final ValueChanged<int> onSlotAccepted;
+
+  /// Callback executed when the placed modifier is reset or removed.
   final VoidCallback onSlotReset;
+
+  /// Whether compact visual styling should be applied.
   final bool isCompact;
 
+  /// Creates a [ModifierMagneticArena] widget.
   const ModifierMagneticArena({
     super.key,
     required this.words,

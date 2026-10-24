@@ -13,7 +13,9 @@ class _LocalPalette {
 // Icon Header
 // ---------------------------------------------------------------------------
 
+/// Visual header icon for the email verification screen displaying an unread mail badge.
 class VerifyEmailIconHeader extends StatelessWidget {
+  /// Creates a [VerifyEmailIconHeader].
   const VerifyEmailIconHeader({super.key});
 
   @override
@@ -44,9 +46,12 @@ class VerifyEmailIconHeader extends StatelessWidget {
 // Status Text
 // ---------------------------------------------------------------------------
 
+/// Instructional status text and recipient chip for the email verification screen.
 class VerifyEmailStatusText extends StatelessWidget {
+  /// The recipient email address to which the verification link was dispatched.
   final String? email;
 
+  /// Creates a [VerifyEmailStatusText] with an optional recipient [email].
   const VerifyEmailStatusText({super.key, this.email});
 
   @override
@@ -155,11 +160,18 @@ class VerifyEmailStatusText extends StatelessWidget {
 // Resend Email Button
 // ---------------------------------------------------------------------------
 
+/// Action button that initiates resending a verification email or reflects countdown cooldown.
 class ResendEmailButton extends StatelessWidget {
+  /// Whether the resend action is active or currently cooled down.
   final bool canResendEmail;
+
+  /// Remaining seconds before resending is permitted again.
   final int secondsRemaining;
+
+  /// Callback triggered when resending the verification email.
   final VoidCallback onPressed;
 
+  /// Creates a [ResendEmailButton].
   const ResendEmailButton({
     super.key,
     required this.canResendEmail,
@@ -219,9 +231,12 @@ class ResendEmailButton extends StatelessWidget {
 // Confirmation Button ("I've Verified")
 // ---------------------------------------------------------------------------
 
+/// Secondary outline button allowing user to manually trigger a verification status check.
 class VerifyConfirmationButton extends StatelessWidget {
+  /// Callback invoked to verify the user's current email status.
   final VoidCallback onPressed;
 
+  /// Creates a [VerifyConfirmationButton].
   const VerifyConfirmationButton({super.key, required this.onPressed});
 
   @override
@@ -269,9 +284,12 @@ class VerifyConfirmationButton extends StatelessWidget {
 // Logout Button
 // ---------------------------------------------------------------------------
 
+/// Cancel/logout text button enabling user to abandon email verification and log out.
 class VerifyLogoutButton extends StatelessWidget {
+  /// Callback invoked when the user elects to cancel and log out.
   final VoidCallback onPressed;
 
+  /// Creates a [VerifyLogoutButton].
   const VerifyLogoutButton({super.key, required this.onPressed});
 
   @override

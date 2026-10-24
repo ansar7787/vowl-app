@@ -24,9 +24,13 @@ class _LocalPalette {
 /// A compact card showing the user's total quest progress across all 8 categories
 /// and their current global leaderboard rank.
 class GlobalProgressCard extends StatelessWidget {
+  /// Current authenticated [user] entity.
   final UserEntity user;
+
+  /// Current global ranking position, or `null` if unranked.
   final int? globalRank;
 
+  /// Creates a [GlobalProgressCard] for [user] with optional [globalRank].
   const GlobalProgressCard({super.key, required this.user, this.globalRank});
 
   static const int totalLevels = AppConstants.totalCurriculumLevels;

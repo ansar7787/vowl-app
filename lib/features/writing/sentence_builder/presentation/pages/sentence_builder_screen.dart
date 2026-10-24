@@ -20,10 +20,15 @@ import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sent
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 import 'package:vowl/core/utils/text_similarity_helper.dart';
 
+/// Interactive writing game screen prompting users to assemble jigsaw word pieces into grammatically coherent sentences.
 class SentenceBuilderScreen extends StatefulWidget {
+  /// The difficulty or curriculum level of the writing quest.
   final int level;
+
+  /// The specific writing game subtype represented by this screen.
   final GameSubtype gameType;
 
+  /// Creates a [SentenceBuilderScreen] instance.
   const SentenceBuilderScreen({
     super.key,
     required this.level,

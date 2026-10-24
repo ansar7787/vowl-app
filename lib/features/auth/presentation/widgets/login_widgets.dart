@@ -14,11 +14,13 @@ import 'package:vowl/features/auth/presentation/widgets/auth_decoration.dart';
 // Email Input
 // ---------------------------------------------------------------------------
 
+/// Email input text field for the login form.
 class LoginEmailInput extends StatelessWidget {
   final GlobalKey<FormFieldState>? fieldKey;
   final FocusNode? focusNode;
   final VoidCallback? onSubmitted;
 
+  /// Creates a [LoginEmailInput] widget.
   const LoginEmailInput({
     super.key,
     this.fieldKey,
@@ -96,11 +98,13 @@ class LoginEmailInput extends StatelessWidget {
 // Password Input
 // ---------------------------------------------------------------------------
 
+/// Password input text field with visibility toggle for the login form.
 class LoginPasswordInput extends StatelessWidget {
   final GlobalKey<FormFieldState>? fieldKey;
   final FocusNode? focusNode;
   final VoidCallback? onSubmitted;
 
+  /// Creates a [LoginPasswordInput] widget.
   const LoginPasswordInput({
     super.key,
     this.fieldKey,
@@ -205,9 +209,11 @@ class LoginPasswordInput extends StatelessWidget {
 // Login Button
 // ---------------------------------------------------------------------------
 
+/// Action button dispatching credential login.
 class LoginButton extends StatelessWidget {
   final VoidCallback onPressed;
 
+  /// Creates a [LoginButton] widget.
   const LoginButton({super.key, required this.onPressed});
 
   @override
@@ -249,10 +255,12 @@ class LoginButton extends StatelessWidget {
 // Google Login Button
 // ---------------------------------------------------------------------------
 
+/// Action button initiating Google OAuth sign-in flow.
 class GoogleLoginButton extends StatelessWidget {
   final bool Function()? onValidate;
   final VoidCallback? onValidationError;
 
+  /// Creates a [GoogleLoginButton] widget.
   const GoogleLoginButton({super.key, this.onValidate, this.onValidationError});
 
   @override

@@ -25,11 +25,18 @@ class _LocalPalette {
   static const Color woodBrown = Color(0xFF8B4513);
 }
 
+/// Interactive blackboard pedagogical layout for the Kids Handwriting and letter tracing game.
 class KidsHandwritingLayout extends StatefulWidget {
+  /// The level number of the current session.
   final int level;
+
+  /// The title of the game.
   final String title;
+
+  /// The primary theme accent color.
   final Color primaryColor;
 
+  /// Creates a [KidsHandwritingLayout] widget.
   const KidsHandwritingLayout({
     super.key,
     required this.level,

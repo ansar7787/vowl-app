@@ -5,19 +5,42 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// Interactive particle key button representing a preposition or adverb candidate to complete the phrasal verb.
 class PhrasalVerbsOptionKey extends StatelessWidget {
+  /// Particle text string rendered on the key.
   final String text;
+
+  /// The correct particle expected to unlock the vault.
   final String correct;
+
+  /// Theme accent color for key borders and active highlights.
   final Color color;
+
+  /// Whether dark theme is enabled.
   final bool isDark;
+
+  /// Whether the user has answered the trial.
   final bool isAnswered;
+
+  /// Whether the selected option was correct, or `null` if pending.
   final bool? isCorrect;
+
+  /// Currently selected particle option string.
   final String? selectedOption;
+
+  /// Whether all lives or retry attempts have been exhausted.
   final bool isFinalFailure;
+
+  /// Whether the user requested a hint for this question.
   final bool isHintUsed;
+
+  /// Position index of this key card.
   final int index;
+
+  /// Callback executed when the key is tapped.
   final VoidCallback onTap;
 
+  /// Creates a [PhrasalVerbsOptionKey] widget.
   const PhrasalVerbsOptionKey({
     super.key,
     required this.text,

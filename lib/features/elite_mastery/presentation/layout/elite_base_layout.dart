@@ -20,24 +20,54 @@ import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
+/// Base scaffold and presentation wrapper for all Elite Mastery game screens.
 class EliteBaseLayout extends StatelessWidget {
+  /// Subtype variant of the active challenge.
   final GameSubtype gameType;
+
+  /// Current curriculum difficulty level.
   final int level;
+
+  /// Main question or interaction body widget.
   final Widget child;
+
+  /// Whether the user has submitted their response.
   final bool isAnswered;
+
+  /// Whether the submitted response was evaluated as correct.
   final bool? isCorrect;
+
+  /// Callback executed when tapping the action button to advance.
   final VoidCallback onContinue;
+
+  /// Callback executed when the hint action is triggered.
   final VoidCallback onHint;
+
+  /// Whether victory confetti should be showered upon success.
   final bool showConfetti;
+
+  /// Whether all retry chances have been exhausted.
   final bool isFinalFailure;
+
+  /// Optional visual styling overrides for headers and backgrounds.
   final VisualConfig? visualConfig;
+
+  /// Current snapshot of [EliteMasteryState].
   final EliteMasteryState state;
 
+  /// Whether the interior layout should enable scrolling.
   final bool useScrolling;
+
+  /// Scroll controller attached to the scrollable viewport.
   final ScrollController? scrollController;
+
+  /// Whether standard horizontal padding should be omitted.
   final bool disablePadding;
+
+  /// Whether content should fill the entire screen viewport.
   final bool fullScreenContent;
 
+  /// Creates an [EliteBaseLayout] scaffold.
   const EliteBaseLayout({
     super.key,
     required this.gameType,

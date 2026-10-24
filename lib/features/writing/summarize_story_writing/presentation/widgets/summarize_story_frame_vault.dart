@@ -2,13 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/models/summarize_story_frame_slot.dart';
 
+/// Card list vault containing candidate summary sentences available for selection.
 class SummarizeStoryFrameVault extends StatelessWidget {
+  /// Complete list of candidate summary sentences.
   final List<String> options;
+
+  /// Current collection of frame slots, used to filter out already-placed items.
   final List<SummarizeStoryFrameSlot> slots;
+
+  /// Theme accent color applied to cards and shadows.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Optional callback invoked when a candidate sentence is tapped.
   final void Function(String text)? onTapOption;
 
+  /// Creates a [SummarizeStoryFrameVault] widget.
   const SummarizeStoryFrameVault({
     super.key,
     required this.options,

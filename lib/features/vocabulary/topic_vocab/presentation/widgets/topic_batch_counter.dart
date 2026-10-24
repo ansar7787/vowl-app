@@ -4,11 +4,18 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Progress pill displaying current batch sorting progress and individual word pip indicators.
 class TopicBatchCounter extends StatelessWidget {
+  /// Number of sorted words in the current batch.
   final int count;
+
+  /// Total number of words to sort in the batch.
   final int total;
+
+  /// Theme accent color.
   final Color color;
 
+  /// Creates a [TopicBatchCounter] widget.
   const TopicBatchCounter({
     super.key,
     required this.count,

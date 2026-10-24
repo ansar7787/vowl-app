@@ -22,29 +22,58 @@ import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 // SpeakingBaseLayout
 // =============================================================================
 
+/// Common screen layout scaffold providing standard headers, feedback, and dialogs for speaking challenges.
 class SpeakingBaseLayout extends StatelessWidget {
+  /// Speaking subgame variant.
   final GameSubtype gameType;
+
+  /// Target progression difficulty level.
   final int level;
+
+  /// Main question or interaction body widget.
   final Widget child;
+
+  /// Whether the user has submitted their verbal attempt.
   final bool isAnswered;
+
+  /// Whether the submitted attempt was evaluated as correct.
   final bool? isCorrect;
+
+  /// Whether all retry lives have been exhausted.
   final bool isFinalFailure;
+
+  /// Callback executed when tapping continue to advance.
   final VoidCallback onContinue;
+
+  /// Callback executed when tapping the hint button.
   final VoidCallback onHint;
+
+  /// Whether victory confetti should be displayed.
   final bool showConfetti;
+
+  /// Whether internal body content should enable scrolling.
   final bool useScrolling;
+
+  /// Whether horizontal outer padding should be omitted.
   final bool disablePadding;
 
+  /// Whether the hint action button is rendered in the header.
   final bool showHintButton;
 
   /// Optional service overrides — inject mocks in widget tests to avoid
   /// requiring a live DI container. Production code leaves these null and
   /// the State falls back to [di.sl].
 
+  /// Optional text-to-speech engine override.
   final TtsService? ttsService;
+
+  /// Optional sound effects service override.
   final SoundService? soundService;
+
+  /// Optional haptic feedback service override.
   final HapticService? hapticService;
 
+  /// Creates a [SpeakingBaseLayout] scaffold.
   const SpeakingBaseLayout({
     super.key,
     required this.gameType,

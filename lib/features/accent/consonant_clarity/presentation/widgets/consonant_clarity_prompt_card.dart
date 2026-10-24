@@ -2,12 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
+/// Prompt card concealing or revealing the target word according to trial response status.
 class ConsonantClarityPromptCard extends StatelessWidget {
+  /// Target vocabulary word under study.
   final String word;
+
+  /// Theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
+
+  /// Whether the user has submitted their answer.
   final bool isAnswered;
 
+  /// Creates a [ConsonantClarityPromptCard] widget.
   const ConsonantClarityPromptCard({
     super.key,
     required this.word,

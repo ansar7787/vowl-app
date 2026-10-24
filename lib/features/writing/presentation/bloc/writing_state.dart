@@ -35,6 +35,7 @@ enum AnswerStatus {
   }
 }
 
+/// Base class for all states emitted by the [WritingBloc].
 abstract class WritingState extends Equatable implements GameStateBase {
   const WritingState();
 
@@ -80,6 +81,7 @@ class WritingLoaded extends WritingState implements GameLoadedState {
   final GameSubtype gameType;
   final int level;
 
+  /// Returns the current active [WritingQuest].
   WritingQuest get currentQuest => quests[currentIndex];
 
   @override
@@ -91,6 +93,7 @@ class WritingLoaded extends WritingState implements GameLoadedState {
   @override
   int get totalQuests => quests.length;
 
+  /// Creates a [WritingLoaded] gameplay state.
   const WritingLoaded({
     required this.quests,
     required this.currentIndex,
@@ -150,6 +153,7 @@ class WritingError extends WritingState implements GameErrorState {
   /// Internal detail for crash analytics only.
   final String? technicalError;
 
+  /// Creates a [WritingError] state.
   const WritingError(this.message, {this.technicalError});
 
   @override
@@ -167,6 +171,7 @@ class WritingGameComplete extends WritingState implements GameCompleteState {
   final GameSubtype gameType;
   final int level;
 
+  /// Creates a [WritingGameComplete] state.
   const WritingGameComplete({
     required this.xpEarned,
     required this.coinsEarned,
@@ -195,6 +200,7 @@ class WritingGameOver extends WritingState implements GameOverState {
   @override
   int get livesRemaining => 0;
 
+  /// Creates a [WritingGameOver] state.
   const WritingGameOver({
     required this.quests,
     required this.currentIndex,

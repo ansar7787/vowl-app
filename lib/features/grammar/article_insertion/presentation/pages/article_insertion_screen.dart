@@ -16,9 +16,15 @@ import 'package:vowl/features/grammar/article_insertion/presentation/widgets/art
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Screen host for Article Insertion exercises, testing definite, indefinite, and zero article placement.
 class ArticleInsertionScreen extends StatefulWidget {
+  /// Current level index.
   final int level;
+
+  /// Game subtype identifier.
   final GameSubtype gameType;
+
+  /// Creates an [ArticleInsertionScreen] widget.
   const ArticleInsertionScreen({
     super.key,
     required this.level,

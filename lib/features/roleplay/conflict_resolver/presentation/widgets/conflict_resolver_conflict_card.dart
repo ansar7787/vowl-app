@@ -4,12 +4,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// Card displaying the conflict scenario description and tension indicators.
 class ConflictResolverConflictCard extends StatelessWidget {
+  /// Description of the scenario or dispute.
   final String scene;
+
+  /// Numeric tension level of the conflict scenario.
   final int escalationLevel;
+
+  /// Primary theme accent color.
   final Color color;
+
+  /// Whether dark theme styling should be applied.
   final bool isDark;
 
+  /// Creates a [ConflictResolverConflictCard] widget.
   const ConflictResolverConflictCard({
     super.key,
     required this.scene,

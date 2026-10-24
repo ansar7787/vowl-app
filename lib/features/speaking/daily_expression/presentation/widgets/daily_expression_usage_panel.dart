@@ -7,11 +7,18 @@ class _LocalPalette {
   static const Color color0f0f1a = Color(0xFF0F0F1A);
 }
 
+/// Panel displaying contextual usage examples, origins, and explanations for the daily expression.
 class DailyExpressionUsagePanel extends StatelessWidget {
+  /// Active speaking quest entity.
   final SpeakingQuest quest;
+
+  /// Primary theme accent color.
   final Color primaryColor;
+
+  /// Whether dark theme styling should be rendered.
   final bool isDark;
 
+  /// Creates a [DailyExpressionUsagePanel].
   const DailyExpressionUsagePanel({
     super.key,
     required this.quest,

@@ -4,10 +4,15 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+/// Mind map dictionary card presenting semantic linkages and definitions for categorized topic terms.
 class TopicVocabMindMap extends StatelessWidget {
+  /// List of related topical terms with definitions or collocations.
   final List<String> relatedWords;
+
+  /// Theme accent color.
   final Color color;
 
+  /// Creates a [TopicVocabMindMap] widget.
   const TopicVocabMindMap({
     super.key,
     required this.relatedWords,

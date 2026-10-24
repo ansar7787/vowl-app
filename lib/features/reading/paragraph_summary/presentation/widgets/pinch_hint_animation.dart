@@ -3,9 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Animated badge displaying pinch gesture guidance to reveal distilled keywords.
 class PinchHintAnimation extends StatelessWidget {
+  /// Theme accent color applied to icon and text.
   final Color color;
 
+  /// Creates a [PinchHintAnimation] widget.
   const PinchHintAnimation({super.key, required this.color});
 
   @override

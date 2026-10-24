@@ -2,13 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// Options wrap containing candidate corrections to fix the identified sentence error.
 class FixTheSentenceCorrectionOptions extends StatelessWidget {
+  /// Candidate correction words or phrases.
   final List<String> options;
+
+  /// The authoritative correct word string.
   final String correct;
+
+  /// Theme accent color applied to option borders and cards.
   final Color color;
+
+  /// Whether the active theme is in dark mode.
   final bool isDark;
+
+  /// Callback invoked when an option is selected, passing chosen and target strings.
   final Function(String, String) onSelect;
 
+  /// Creates a [FixTheSentenceCorrectionOptions] widget.
   const FixTheSentenceCorrectionOptions({
     super.key,
     required this.options,

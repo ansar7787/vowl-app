@@ -21,10 +21,15 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/features/speaking/presentation/mixins/speaking_game_screen_mixin.dart';
 
+/// Daily Expression gameplay screen exploring conversational idioms and colloquial turns of phrase.
 class DailyExpressionScreen extends StatefulWidget {
+  /// Target curriculum difficulty level.
   final int level;
+
+  /// Speaking subgame variant identifier.
   final GameSubtype gameType;
 
+  /// Creates a [DailyExpressionScreen] for [level] and [gameType].
   const DailyExpressionScreen({
     super.key,
     required this.level,

@@ -4,13 +4,24 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
+/// Feedback card detailing error explanations and the correct sentence replacement.
 class SentenceCorrectionFeedback extends StatelessWidget {
+  /// The correct replacement word or phrase.
   final String correction;
+
+  /// The erroneous word identified in the sentence.
   final String? incorrectPart;
+
+  /// Whether the user correctly selected the error location.
   final bool wasWordSelectionCorrect;
+
+  /// Whether the user selected the proper replacement option.
   final bool wasOptionSelectionCorrect;
+
+  /// The primary accent color for styling.
   final Color primaryColor;
 
+  /// Creates a [SentenceCorrectionFeedback] widget.
   const SentenceCorrectionFeedback({
     super.key,
     required this.correction,

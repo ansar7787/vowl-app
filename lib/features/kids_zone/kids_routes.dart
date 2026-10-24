@@ -13,39 +13,102 @@ import 'package:vowl/features/kids_zone/presentation/widgets/unified_kids_game_s
 import 'package:vowl/features/kids_zone/presentation/pages/buddy_boutique_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/pages/kids_room_screen.dart';
 
+/// Defines the route paths and routing table for the Kids Zone feature module.
 class KidsRoutes {
+  /// Base route for the Kids Zone home dashboard.
   static const String kidsZoneRoute = '/kids-zone';
+
+  /// Route template for the kids level progression map.
   static const String kidsLevelMapRoute = '/kids/map/:gameType';
+
+  /// Route for the alphabet game.
   static const String kidsAlphabetRoute = '/kids-alphabet';
+
+  /// Route for the numbers game.
   static const String kidsNumbersRoute = '/kids-numbers';
+
+  /// Route for the colors game.
   static const String kidsColorsRoute = '/kids-colors';
+
+  /// Route for the shapes game.
   static const String kidsShapesRoute = '/kids-shapes';
+
+  /// Route for the animals game.
   static const String kidsAnimalsRoute = '/kids-animals';
+
+  /// Route for the fruits game.
   static const String kidsFruitsRoute = '/kids-fruits';
+
+  /// Route for the family game.
   static const String kidsFamilyRoute = '/kids-family';
+
+  /// Route for the school game.
   static const String kidsSchoolRoute = '/kids-school';
+
+  /// Route for the verbs game.
   static const String kidsVerbsRoute = '/kids-verbs';
+
+  /// Route for the sticker collection book.
   static const String kidsStickerBookRoute = '/kids-stickers';
+
+  /// Route for the mascot selection screen.
   static const String kidsMascotSelectionRoute = '/kids-mascot';
+
+  /// Route for the daily routine game.
   static const String kidsRoutineRoute = '/kids-routine';
+
+  /// Route for the emotions game.
   static const String kidsEmotionsRoute = '/kids-emotions';
+
+  /// Route for the prepositions game.
   static const String kidsPrepositionsRoute = '/kids-prepositions';
+
+  /// Route for the phonics game.
   static const String kidsPhonicsRoute = '/kids-phonics';
+
+  /// Route for the time and clock game.
   static const String kidsTimeRoute = '/kids-time';
+
+  /// Route for the opposites game.
   static const String kidsOppositesRoute = '/kids-opposites';
+
+  /// Route for the day and night game.
   static const String kidsDayNightRoute = '/kids-day-night';
+
+  /// Route for the nature game.
   static const String kidsNatureRoute = '/kids-nature';
+
+  /// Route for the home items game.
   static const String kidsHomeRoute = '/kids-home';
+
+  /// Route for the food items game.
   static const String kidsFoodRoute = '/kids-food';
+
+  /// Route for the transport game.
   static const String kidsTransportRoute = '/kids-transport';
+
+  /// Route for the body parts game.
   static const String kidsBodyPartsRoute = '/kids-body-parts';
+
+  /// Route for the clothing game.
   static const String kidsClothingRoute = '/kids-clothing';
+
+  /// Route for the mascot boutique shop.
   static const String kidsBuddyBoutiqueRoute = '/kids-zone/boutique';
+
+  /// Route for the virtual buddy room.
   static const String kidsRoomRoute = '/kids-room';
+
+  /// Route for the handwriting practice game.
   static const String kidsHandwritingRoute = '/kids-handwriting';
+
+  /// Route for the weather game.
   static const String kidsWeatherRoute = '/kids-weather';
+
+  /// Route for the professions game.
   static const String kidsProfessionsRoute = '/kids-professions';
 
+  /// Resolves the user-facing display title for the specified [gameType].
   static String getKidsGameTitle(String gameType) {
     switch (gameType) {
       case 'alphabet':
@@ -105,6 +168,7 @@ class KidsRoutes {
     }
   }
 
+  /// Resolves the theme accent color for the specified [gameType].
   static Color getKidsGameColor(String gameType) {
     return LevelThemeHelper.getKidsGameColor(gameType);
   }
@@ -116,6 +180,7 @@ class KidsRoutes {
     );
   }
 
+  /// The declarative routing hierarchy for Kids Zone navigation.
   static final List<RouteBase> routes = [
     GoRoute(
       path: kidsZoneRoute,
