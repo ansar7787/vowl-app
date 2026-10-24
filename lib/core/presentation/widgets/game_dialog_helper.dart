@@ -100,14 +100,9 @@ class GameDialogHelper {
     final userLevel = authState.user?.level ?? 1;
     final isPremium = authState.user?.isPremium ?? false;
 
-    // Premium VIPs automatically receive the 3x coins multiplier with no ad required
-    if (isPremium && coins > 0) {
-      try {
-        context.read<EconomyBloc>().add(
-          EconomyTripleUpRewardsRequested(0, coins * 2),
-        );
-      } catch (_) {}
-    }
+    // Premium VIPs automatically receive the 3x coins multiplier (30 coins) natively
+    // inside the authoritative updateUserRewards Firestore transaction. No secondary
+    // BLoC event is needed, eliminating race conditions and duplicate writes.
 
     final resolvedTitle =
         title ??

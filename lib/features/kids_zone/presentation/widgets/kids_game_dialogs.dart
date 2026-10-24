@@ -45,23 +45,18 @@ class KidsGameDialogs {
     final isPremium = user?.isPremium ?? false;
     bool rewardsDoubled = isPremium;
 
-    if (isPremium && gameType != null && level != null) {
-      kidsBloc.add(ClaimDoubleKidsRewards(gameType, level));
-    }
-
     return showDialog(
       context: context,
       barrierDismissible: false,
       builder: (context) => StatefulBuilder(
         builder: (context, setDialogState) {
-          return BackdropFilter(
-            filter: ui.ImageFilter.blur(sigmaX: 4, sigmaY: 4),
+          return Dialog(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            insetPadding: EdgeInsets.zero,
             child: Stack(
               alignment: Alignment.center,
               children: [
-                // Darken layer to maintain contrast
-                Container(color: Colors.black.withValues(alpha: 0.4)),
-
                 // Radiant Sunburst Background
                 KidsSunburstBackground(color: primaryColor),
 
@@ -404,17 +399,14 @@ class KidsGameDialogs {
     return showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (context) => BackdropFilter(
-        filter: ui.ImageFilter.blur(
-          sigmaX: 4,
-          sigmaY: 4,
-        ), // Reduced blur to fix GPU lag
-        child: Container(
-          color: Colors.black.withValues(alpha: 0.4), // Darken layer
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: KidsDialogContainer(
+      builder: (context) => Dialog(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        insetPadding: EdgeInsets.zero,
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: KidsDialogContainer(
                 primaryColor: AppColors.indigo500, // Moody purple/indigo
                 title: context.tr(
                   'games.kids_game_over',
@@ -524,9 +516,8 @@ class KidsGameDialogs {
             ),
           ),
         ),
-      ),
-    );
-  }
+      );
+    }
 
   static Future<bool> showExitConfirmation({
     required BuildContext context,

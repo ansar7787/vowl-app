@@ -336,8 +336,14 @@ class GamificationRepositoryImpl
     var finalCoinIncrease = (!isVaultReward && isReplay && !isDoubleReward)
         ? 0
         : coinIncrease;
-    if (!isReplay && (userData.isPremium || userData.level >= 100)) {
-      finalCoinIncrease = coinIncrease * 2;
+    if (!isReplay && !isVaultReward && !isDoubleReward) {
+      if (userData.isPremium) {
+        // VIP members receive the permanent 3X coin multiplier (e.g. 10 base -> 30 coins)
+        finalCoinIncrease = coinIncrease * 3;
+      } else if (userData.level >= 100) {
+        // XP Level 100 Mastery: 2X coin bonus
+        finalCoinIncrease = coinIncrease * 2;
+      }
     }
 
     // ---- Coin history ----
