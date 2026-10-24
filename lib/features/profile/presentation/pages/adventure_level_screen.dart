@@ -242,7 +242,8 @@ class AdventureLevelScreen extends StatelessWidget {
                           child: _buildMilestones(context, user),
                         ),
                       ),
-                      SliverToBoxAdapter(child: _buildHintStore(context, user)),
+                      if (!user.isPremium)
+                        SliverToBoxAdapter(child: _buildHintStore(context, user)),
                       if (!user.isPremium)
                         SliverToBoxAdapter(
                           child: Padding(
@@ -847,14 +848,16 @@ class AdventureLevelScreen extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 16.h),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: HintAdCard(
-            title: 'Quick Hint',
-            subtitle: 'Watch ad for +1 Hint',
+        if (!user.isPremium) ...[
+          SizedBox(height: 16.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: HintAdCard(
+              title: 'Quick Hint',
+              subtitle: 'Watch ad for +1 Hint',
+            ),
           ),
-        ),
+        ],
         SizedBox(height: 16.h),
         SizedBox(
           height: 100.h,
