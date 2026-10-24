@@ -1,9 +1,13 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/utils/auth_error_handler.dart'; // ignore: unused_import — false positive: used 10+ times in handlers below
 import 'package:vowl/core/usecases/usecase.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/auth/data/datasources/auth_local_data_source.dart';
+import 'package:vowl/features/auth/data/models/user_model.dart';
 import 'package:vowl/features/auth/domain/usecases/award_kids_coins.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_daily_chest.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_daily_gift.dart';
@@ -449,8 +453,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
           message: () => AuthErrorHandler.getKey(failure.message),
         ),
       ),
-      (_) {
-        emit(state.copyWith(isLoading: false));
+      (_) async {
+        emit(state.copyWith(
+          isLoading: false,
+          isDailyRewardAvailable: false,
+        ));
+        await _markDailyMysteryClaimedToday(0);
         authBloc.add(const AuthRefreshUser());
       },
     );
@@ -621,9 +629,13 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
           ),
         );
       },
-      (_) {
+      (_) async {
         _log('EconomyBloc: Daily chest SUCCESS');
-        emit(state.copyWith(isLoading: false));
+        emit(state.copyWith(
+          isLoading: false,
+          isDailyRewardAvailable: false,
+        ));
+        await _markDailyMysteryClaimedToday(event.amount);
         authBloc.add(const AuthRefreshUser());
       },
     );
@@ -668,6 +680,31 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     );
   }
 
+  Future<void> _markDailyMysteryClaimedToday(int bonusCoins) async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final today = DateTime.now();
+      final dateStr =
+          '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
+      await prefs.setString('last_daily_mystery_claimed_date', dateStr);
+    } catch (_) {}
+
+    try {
+      final currentUser = authBloc.state.user;
+      if (currentUser != null) {
+        final updatedUser = currentUser.copyWith(
+          lastDailyRewardDate: DateTime.now(),
+          coins: currentUser.coins + bonusCoins,
+        );
+        if (di.sl.isRegistered<AuthLocalDataSource>()) {
+          await di.sl<AuthLocalDataSource>().cacheUser(
+                UserModel.fromEntity(updatedUser),
+              );
+        }
+      }
+    } catch (_) {}
+  }
+
   Future<void> _onCheckDailyReward(
     EconomyCheckDailyRewardRequested event,
     Emitter<EconomyState> emit,
@@ -677,6 +714,20 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       emit(state.copyWith(isDailyRewardAvailable: false));
       return;
     }
+
+    // 1. Fast local disk check: if already claimed today on this device, reject immediately
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final today = DateTime.now();
+      final dateStr =
+          '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
+      final localClaimedDate =
+          prefs.getString('last_daily_mystery_claimed_date');
+      if (localClaimedDate == dateStr) {
+        emit(state.copyWith(isDailyRewardAvailable: false));
+        return;
+      }
+    } catch (_) {}
 
     final lastReward = user.lastDailyRewardDate;
     if (lastReward == null) {

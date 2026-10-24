@@ -243,12 +243,13 @@ class AdventureLevelScreen extends StatelessWidget {
                         ),
                       ),
                       SliverToBoxAdapter(child: _buildHintStore(context, user)),
-                      SliverToBoxAdapter(
-                        child: Padding(
-                          padding: EdgeInsets.fromLTRB(24.r, 24.h, 24.r, 48.h),
-                          child: const AdRewardCard(margin: EdgeInsets.zero),
+                      if (!user.isPremium)
+                        SliverToBoxAdapter(
+                          child: Padding(
+                            padding: EdgeInsets.fromLTRB(24.r, 24.h, 24.r, 48.h),
+                            child: const AdRewardCard(margin: EdgeInsets.zero),
+                          ),
                         ),
-                      ),
                     ],
                   ),
                 ),

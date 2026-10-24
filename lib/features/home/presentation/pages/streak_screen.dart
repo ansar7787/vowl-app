@@ -93,39 +93,41 @@ class _StreakScreenState extends State<StreakScreen> {
                         RepaintBoundary(child: StreakMilestones(user: user)),
                         SizedBox(height: 32.h),
                         RepaintBoundary(child: StreakBoostersShop(user: user)),
-                        SizedBox(height: 32.h),
-                        // Earn More Coins section — contextualizes the ad card
-                        // within the streak/booster economy
-                        Text(
-                          context.tr(
-                            'streak.earn_more_coins_title',
-                            fallback: 'EARN MORE COINS',
+                        if (!user.isPremium) ...[
+                          SizedBox(height: 32.h),
+                          // Earn More Coins section — contextualizes the ad card
+                          // within the streak/booster economy
+                          Text(
+                            context.tr(
+                              'streak.earn_more_coins_title',
+                              fallback: 'EARN MORE COINS',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: -0.5,
+                            ),
                           ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: -0.5,
+                          SizedBox(height: 4.h),
+                          Text(
+                            context.tr(
+                              'streak.earn_more_coins_subtitle',
+                              fallback:
+                                  'Fuel your boosters and protect your streak.',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w500,
+                              color: isDark ? Colors.white54 : AppColors.slate500,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 4.h),
-                        Text(
-                          context.tr(
-                            'streak.earn_more_coins_subtitle',
-                            fallback:
-                                'Fuel your boosters and protect your streak.',
+                          SizedBox(height: 16.h),
+                          const RepaintBoundary(
+                            child: AdRewardCard(margin: EdgeInsets.zero),
                           ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w500,
-                            color: isDark ? Colors.white54 : AppColors.slate500,
-                          ),
-                        ),
-                        SizedBox(height: 16.h),
-                        const RepaintBoundary(
-                          child: AdRewardCard(margin: EdgeInsets.zero),
-                        ),
+                        ],
                       ]),
                     ),
                   ),
