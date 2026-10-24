@@ -150,9 +150,11 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
   }
 
   void _grantRewards() {
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+    final int awardedCoins = isPremium ? 30 : 10;
     di.sl<UpdateUserCoins>().call(
-      const UpdateUserCoinsParams(
-        amountChange: 10,
+      UpdateUserCoinsParams(
+        amountChange: awardedCoins,
         title: 'Word Mixer Challenge',
         isEarned: true,
       ),
