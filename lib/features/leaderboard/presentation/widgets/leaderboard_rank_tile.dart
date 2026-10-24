@@ -1,6 +1,8 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -192,14 +194,25 @@ class LeaderboardRankTile extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 2.h),
-                  Text(
-                    '$score $scoreLabel · ${user.currentStreak}🔥',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w600,
-                      color: isDark ? Colors.white38 : Colors.black54,
-                    ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        '$score $scoreLabel · ${user.currentStreak}',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w600,
+                          color: isDark ? Colors.white38 : Colors.black54,
+                        ),
+                      ),
+                      SizedBox(width: 3.w),
+                      Icon(
+                        LucideIcons.flame,
+                        size: 11.r,
+                        color: IllustrationColors.warmOrange,
+                      ),
+                    ],
                   ),
                 ],
               ),
