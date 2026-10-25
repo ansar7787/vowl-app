@@ -450,6 +450,7 @@ void _initEliteMastery(GetIt sl) {
   );
   sl.registerFactory<EliteMasteryBloc>(
     () => EliteMasteryBloc(
+      awardBadge: sl<AwardBadge>(),
       getQuests: sl<GetEliteMasteryQuests>(),
       updateUserCoins: sl<UpdateUserCoins>(),
       updateUserRewards: sl<UpdateUserRewards>(),

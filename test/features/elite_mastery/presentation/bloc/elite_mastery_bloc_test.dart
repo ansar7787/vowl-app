@@ -10,6 +10,7 @@ import 'package:vowl/features/auth/domain/usecases/update_unlocked_level.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
+import 'package:vowl/features/auth/domain/usecases/award_badge.dart';
 import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.dart';
 import 'package:vowl/features/elite_mastery/domain/usecases/get_elite_mastery_quests.dart';
 import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc.dart';
@@ -29,6 +30,8 @@ class MockUseHint extends Mock implements UseHint {}
 class MockSoundService extends Mock implements SoundService {}
 
 class MockHapticService extends Mock implements HapticService {}
+
+class MockAwardBadge extends Mock implements AwardBadge {}
 
 class FakeGetEliteMasteryQuestParams extends Fake
     implements GetEliteMasteryQuestParams {}
@@ -176,6 +179,42 @@ void main() {
           isFinalFailure: true,
           quests: [...tQuests, tQuests[0]],
         ),
+      ],
+    );
+
+    blocTest<EliteMasteryBloc, EliteMasteryState>(
+      'awards milestone badge when level reaches milestone',
+      build: () {
+        final mockAwardBadge = MockAwardBadge();
+        when(() => mockAwardBadge(any())).thenAnswer((_) async => const Right(null));
+        when(() => mockSoundService.playCorrect()).thenAnswer((_) async => {});
+        when(() => mockHapticService.success()).thenAnswer((_) async => {});
+        when(() => mockUpdateUnlockedLevel(any())).thenAnswer((_) async => const Right(null));
+        when(() => mockUpdateUserRewards(any())).thenAnswer((_) async => const Right(null));
+        when(() => mockUpdateCategoryStats(any())).thenAnswer((_) async => const Right(null));
+        return EliteMasteryBloc(
+          getQuests: mockGetQuests,
+          updateUserCoins: mockUpdateUserCoins,
+          updateUserRewards: mockUpdateUserRewards,
+          updateCategoryStats: mockUpdateCategoryStats,
+          updateUnlockedLevel: mockUpdateUnlockedLevel,
+          useHint: mockUseHint,
+          soundService: mockSoundService,
+          hapticService: mockHapticService,
+          awardBadge: mockAwardBadge,
+        );
+      },
+      seed: () => tLoadedState.copyWith(
+        currentIndex: 2,
+        level: 5,
+      ),
+      act: (bloc) async {
+        bloc.add(const SubmitEliteAnswer(true));
+        bloc.add(NextEliteQuestion());
+      },
+      expect: () => [
+        isA<EliteMasteryLoaded>(),
+        isA<EliteMasteryGameComplete>(),
       ],
     );
   });
