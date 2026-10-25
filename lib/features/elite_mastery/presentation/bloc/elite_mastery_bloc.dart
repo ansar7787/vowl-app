@@ -16,6 +16,8 @@ import '../../../../features/auth/domain/usecases/use_hint.dart';
 import '../../../../core/utils/hint_utility.dart';
 import '../../../../core/presentation/bloc/game_state_base.dart';
 import '../../../../features/auth/domain/usecases/update_user_coins.dart';
+import '../../../../features/auth/domain/usecases/award_badge.dart';
+import '../../../../features/profile/presentation/bloc/trophy_room_cubit.dart';
 
 part 'elite_mastery_event.dart';
 part 'elite_mastery_state.dart';
@@ -46,6 +48,9 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
   /// Haptic feedback service.
   final HapticService hapticService;
 
+  /// Optional use case for awarding achievement and milestone badges.
+  final AwardBadge? awardBadge;
+
   // ── Game constants ──────────────────────────────────────────────────────────
   static const int _maxLives = 3;
   static const int _questsPerLevel = 3;
@@ -65,6 +70,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
     required this.useHint,
     required this.soundService,
     required this.hapticService,
+    this.awardBadge,
   }) : super(const EliteMasteryInitial()) {
     on<RetryEliteQuestion>(_onRetryEliteQuestion);
     on<FetchEliteMasteryQuests>(_onFetchEliteMasteryQuests);
@@ -307,6 +313,14 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
                   ),
                 ),
               );
+              final milestoneBadge =
+                  TrophyRoomCubit.getMilestoneBadge('elitemastery', level);
+              if (milestoneBadge != null && awardBadge != null) {
+                _persistRewardSafely(
+                  'awardBadge',
+                  () => awardBadge!(milestoneBadge),
+                );
+              }
               return null;
             }),
       );
