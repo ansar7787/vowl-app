@@ -75,7 +75,12 @@ void main() async {
     try {
       const env = String.fromEnvironment('ENV', defaultValue: 'development');
       final fileName = env == 'production' ? '.env.production' : '.env';
-      await dotenv.load(fileName: fileName);
+      try {
+        await dotenv.load(fileName: fileName);
+      } catch (_) {
+        // Fallback to default .env if environment-specific asset is not packaged
+        await dotenv.load(fileName: '.env');
+      }
       if (kDebugMode) debugPrint('Loaded environment: $fileName');
     } catch (e) {
       if (kDebugMode) debugPrint('Warning: dotenv failed to load: $e');
