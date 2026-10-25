@@ -481,9 +481,29 @@ class SettingsDialogs {
                       fallback: 'Delete Everything',
                     ),
                     color: Colors.red,
-                    onPressed: () {
-                      Navigator.pop(dialogContext);
-                      _showFinalDeleteConfirmation(context);
+                    onPressed: () async {
+                      final networkInfo = di.sl.isRegistered<NetworkInfo>()
+                          ? di.sl<NetworkInfo>()
+                          : null;
+                      if (networkInfo != null && !await networkInfo.isConnected) {
+                        if (context.mounted) {
+                          Navigator.pop(dialogContext);
+                          CustomSnackBar.show(
+                            context: context,
+                            message: context.tr(
+                              'auth.error.network_unreachable',
+                              fallback:
+                                  'No internet connection. Please check your network and try again.',
+                            ),
+                            type: CustomSnackBarType.error,
+                          );
+                        }
+                        return;
+                      }
+                      if (context.mounted) {
+                        Navigator.pop(dialogContext);
+                        _showFinalDeleteConfirmation(context);
+                      }
                     },
                   ),
                   SizedBox(height: 12.h),
@@ -607,7 +627,7 @@ class SettingsDialogs {
 
     showGeneralDialog(
       context: context,
-      barrierDismissible: true,
+      barrierDismissible: false,
       barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
       barrierColor: Colors.black54,
       transitionDuration: const Duration(milliseconds: 300),
@@ -1162,32 +1182,34 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
           final isConfirmed = _confirmController.text.trim() == deleteWord;
           final isDeleting = _isDeleting.value;
 
-          return LoadingOverlay(
-            isLoading: isDeleting,
-            message: context.tr(
-              'settings_dialogs.deleting_account',
-              fallback: 'Deleting account...',
-            ),
-            child: GlassTile(
-              width: widget.dialogWidth,
-              padding: EdgeInsets.all(32.r),
-              borderRadius: BorderRadius.circular(40.r),
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      context.tr(
-                        'settings_dialogs.final_warning',
-                        fallback: 'Final Warning',
+          return PopScope(
+            canPop: !isDeleting,
+            child: LoadingOverlay(
+              isLoading: isDeleting,
+              message: context.tr(
+                'settings_dialogs.deleting_account',
+                fallback: 'Deleting account...',
+              ),
+              child: GlassTile(
+                width: widget.dialogWidth,
+                padding: EdgeInsets.all(32.r),
+                borderRadius: BorderRadius.circular(40.r),
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        context.tr(
+                          'settings_dialogs.final_warning',
+                          fallback: 'Final Warning',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 24.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.red,
+                        ),
                       ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 24.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.red,
-                      ),
-                    ),
                     SizedBox(height: 16.h),
                     Text(
                       context.tr(
@@ -1270,14 +1292,15 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
                         fallback: 'Nevermind',
                       ),
                       isDark: isDark,
-                      onPressed: () => Navigator.pop(context),
+                      onPressed: isDeleting ? null : () => Navigator.pop(context),
                     ),
                   ],
                 ),
               ),
             ),
-          );
-        },
+          ),
+        );
+      },
       ),
     );
   }

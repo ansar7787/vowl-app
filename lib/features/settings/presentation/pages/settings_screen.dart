@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -1077,7 +1078,28 @@ class _SettingsDangerGroup extends StatelessWidget {
               ),
               icon: Icons.delete_forever_rounded,
               color: AppColors.red500,
-              onTap: () => SettingsDialogs.showDeleteAccount(context),
+              onTap: () async {
+                final networkInfo = di.sl.isRegistered<NetworkInfo>()
+                    ? di.sl<NetworkInfo>()
+                    : null;
+                if (networkInfo != null && !await networkInfo.isConnected) {
+                  if (context.mounted) {
+                    CustomSnackBar.show(
+                      context: context,
+                      message: context.tr(
+                        'auth.error.network_unreachable',
+                        fallback:
+                            'No internet connection. Please check your network and try again.',
+                      ),
+                      type: CustomSnackBarType.error,
+                    );
+                  }
+                  return;
+                }
+                if (context.mounted) {
+                  SettingsDialogs.showDeleteAccount(context);
+                }
+              },
               isDestructive: true,
             ),
           ],
