@@ -78,9 +78,20 @@ class TtsVoiceHelper {
   TtsVoiceHelper._();
 
   static const String prefsKeyVoicePreset = 'tts_voice_preset';
+  static TtsVoicePreset? _cachedPreset;
+
+  /// Invalidates the in-memory cached preset (forces re-reading from SharedPreferences).
+  static void invalidatePresetCache() {
+    _cachedPreset = null;
+  }
 
   /// Retrieves the saved voice preset or defaults to [TtsVoicePreset.clearGuide].
-  static Future<TtsVoicePreset> getSavedPreset() async {
+  /// Utilizes an in-memory cached preset to eliminate asynchronous disk I/O
+  /// and SharedPreferences serialization delays before speech synthesis.
+  static Future<TtsVoicePreset> getSavedPreset({bool force = false}) async {
+    if (!force && _cachedPreset != null) {
+      return _cachedPreset!;
+    }
     try {
       final prefs = await SharedPreferences.getInstance();
       final id = prefs.getString(prefsKeyVoicePreset);
@@ -93,23 +104,28 @@ class TtsVoiceHelper {
             final authState = di.sl<AuthBloc>().state;
             if (authState.status == AuthStatus.authenticated &&
                 !(authState.user?.isPremium ?? false)) {
+              _cachedPreset = TtsVoicePreset.clearGuide;
               return TtsVoicePreset.clearGuide;
             }
             if (authState.status == AuthStatus.unauthenticated) {
+              _cachedPreset = TtsVoicePreset.clearGuide;
               return TtsVoicePreset.clearGuide;
             }
           }
         } catch (_) {}
       }
 
+      _cachedPreset = preset;
       return preset;
     } catch (e) {
+      _cachedPreset = TtsVoicePreset.clearGuide;
       return TtsVoicePreset.clearGuide;
     }
   }
 
-  /// Persists the selected voice preset to local storage.
+  /// Persists the selected voice preset to local storage and updates the in-memory cache.
   static Future<void> savePreset(TtsVoicePreset preset) async {
+    _cachedPreset = preset;
     try {
       // Guard against saving premium presets for non-premium accounts
       if (preset.isPremium) {

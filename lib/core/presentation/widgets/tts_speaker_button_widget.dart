@@ -30,15 +30,10 @@ class TtsSpeakerButtonWidget extends StatefulWidget {
     this.locale,
   });
 
-  /// Globally stops all active TTS speech engines (Kids and standard TtsService)
-  /// and resets all active [TtsSpeakerButtonWidget] indicators to idle.
+  /// Globally stops active TTS speech synthesis and resets all active
+  /// [TtsSpeakerButtonWidget] indicators to idle.
   static Future<void> stopAll() async {
     _activeSessionNotifier.value = null;
-    try {
-      if (di.sl.isRegistered<KidsTTSService>()) {
-        await di.sl<KidsTTSService>().stop();
-      }
-    } catch (_) {}
     try {
       if (di.sl.isRegistered<TtsService>()) {
         await di.sl<TtsService>().stop();
@@ -140,8 +135,13 @@ class _TtsSpeakerButtonWidgetState extends State<TtsSpeakerButtonWidget> {
       return;
     }
 
-    // Stop any previous session before starting a new one
-    await TtsSpeakerButtonWidget.stopAll();
+    // Fast-path: Only wait for stop if an engine is actively speaking right now,
+    // avoiding redundant MethodChannel delays on cold/idle taps.
+    final bool isEngineActive = di.sl.isRegistered<TtsService>() &&
+        di.sl<TtsService>().isSpeaking;
+    if (isEngineActive) {
+      await TtsSpeakerButtonWidget.stopAll();
+    }
 
     final sessionId = ++TtsSpeakerButtonWidget._sessionCounter;
     _mySessionId = sessionId;
