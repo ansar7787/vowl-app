@@ -14,6 +14,8 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
+import 'package:vowl/core/presentation/widgets/user_avatar.dart';
+import 'package:vowl/core/utils/image_utils.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
 /// All settings-related dialogs in one place.
@@ -147,7 +149,6 @@ class SettingsDialogs {
                     ),
                     color: Colors.red,
                     onPressed: () async {
-                      Navigator.pop(dialogContext);
                       final networkInfo = di.sl.isRegistered<NetworkInfo>()
                           ? di.sl<NetworkInfo>()
                           : null;
@@ -164,6 +165,9 @@ class SettingsDialogs {
                           );
                         }
                         return;
+                      }
+                      if (dialogContext.mounted) {
+                        Navigator.pop(dialogContext);
                       }
                       authBloc.add(const AuthLogoutRequested());
                     },
@@ -909,12 +913,21 @@ class _EditProfileDialogContentState extends State<_EditProfileDialogContent> {
               onTap: () async {
                 final XFile? image = await _picker.pickImage(
                   source: ImageSource.gallery,
+                  maxWidth: 1024,
+                  maxHeight: 1024,
+                  imageQuality: 90,
                 );
                 if (image != null && context.mounted) {
-                  context.read<ProfileBloc>().add(
-                    ProfileUpdatePictureRequested(image.path),
+                  final croppedFile = await ImageUtils.cropToSquare(
+                    File(image.path),
+                    targetDimension: 512,
                   );
-                  if (context.mounted) Navigator.pop(context);
+                  if (context.mounted) {
+                    context.read<ProfileBloc>().add(
+                      ProfileUpdatePictureRequested(croppedFile.path),
+                    );
+                    Navigator.pop(context);
+                  }
                 }
               },
               child: Stack(
@@ -940,22 +953,9 @@ class _EditProfileDialogContentState extends State<_EditProfileDialogContent> {
                         end: Alignment.bottomRight,
                       ),
                     ),
-                    child: CircleAvatar(
-                      radius: 50.r,
-                      backgroundColor: Colors.white.withValues(alpha: 0.05),
-                      backgroundImage: widget.user.photoUrl?.isNotEmpty == true
-                          ? (widget.user.photoUrl!.startsWith('http')
-                                ? NetworkImage(widget.user.photoUrl!)
-                                : FileImage(File(widget.user.photoUrl!))
-                                      as ImageProvider)
-                          : null,
-                      child: widget.user.photoUrl?.isNotEmpty != true
-                          ? Icon(
-                              Icons.person_rounded,
-                              size: 50.r,
-                              color: Colors.white24,
-                            )
-                          : null,
+                    child: UserAvatar(
+                      photoUrl: widget.user.photoUrl,
+                      size: 100.r,
                     ),
                   ),
                   Positioned(

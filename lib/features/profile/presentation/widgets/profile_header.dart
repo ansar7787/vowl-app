@@ -1,12 +1,11 @@
 import 'package:vowl/core/theme/app_colors.dart';
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
+import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -135,77 +134,38 @@ class ProfileHeader extends StatelessWidget {
                         ),
                       ),
                       // Avatar
-                      Hero(
-                        tag: 'profile_pic',
-                        child: Container(
-                          width: 118.r,
-                          height: 118.r,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          UserAvatar(
+                            photoUrl: immediatePhotoUrl ?? user.photoUrl,
+                            size: 118.r,
                             border: Border.all(
                               color: (isPremium || user.level >= 200)
                                   ? AppColors.amber500
                                   : Colors.transparent,
                               width: 3.r,
                             ),
-                            color: isDark
-                                ? Colors.white.withValues(alpha: 0.1)
-                                : AppColors.slate100,
+                            heroTag: 'profile_pic',
                           ),
-                          child: ClipOval(
-                            child: SizedBox(
+                          if (isUploading)
+                            Container(
                               width: 118.r,
                               height: 118.r,
-                              child: Stack(
-                                fit: StackFit.expand,
-                                children: [
-                                  (immediatePhotoUrl ?? user.photoUrl) != null
-                                      ? ((immediatePhotoUrl ?? user.photoUrl)!
-                                                .startsWith('http')
-                                            ? ShimmerImage(
-                                                imageUrl:
-                                                    (immediatePhotoUrl ??
-                                                    user.photoUrl)!,
-                                                width: 118.r,
-                                                height: 118.r,
-                                                fit: BoxFit.cover,
-                                              )
-                                            : Image.file(
-                                                File(
-                                                  (immediatePhotoUrl ??
-                                                      user.photoUrl)!,
-                                                ),
-                                                fit: BoxFit.cover,
-                                                width: 118.r,
-                                                height: 118.r,
-                                              ))
-                                      : Center(
-                                          child: Icon(
-                                            Icons.person_rounded,
-                                            color: AppColors.slate400,
-                                            size: 60.r,
-                                          ),
-                                        ),
-                                  if (isUploading)
-                                    Container(
-                                      color: Colors.black.withValues(
-                                        alpha: 0.55,
-                                      ),
-                                      child: const Center(
-                                        child: CircularProgressIndicator(
-                                          strokeWidth: 3.0,
-                                          valueColor:
-                                              AlwaysStoppedAnimation<Color>(
-                                                Colors.white,
-                                              ),
-                                        ),
-                                      ),
-                                    ),
-                                ],
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.black54,
+                              ),
+                              child: const Center(
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 3.0,
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    Colors.white,
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
+                        ],
                       ),
                     ],
                   ),

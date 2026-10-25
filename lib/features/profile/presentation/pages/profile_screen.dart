@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -20,6 +19,9 @@ import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_dialogs.dart';
+import 'package:vowl/core/presentation/widgets/user_avatar.dart';
+import 'package:vowl/core/utils/image_utils.dart';
+import 'package:vowl/core/network/network_info.dart';
 
 // Decoupled sub-widgets
 import 'package:vowl/features/profile/presentation/widgets/profile_header.dart';
@@ -106,7 +108,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
             if (user == null) {
               return const ProfileShimmerLoading();
             }
-            return RefreshIndicator(
+            return BlocSelector<AuthBloc, AuthState, bool>(
+              selector: (state) => state.status == AuthStatus.loggingOut,
+              builder: (context, isLoggingOut) {
+                return LoadingOverlay(
+                  isLoading: isLoggingOut,
+                  message: context.tr(
+                    'settings.signing_out_overlay',
+                    fallback: 'Signing out...',
+                  ),
+                  child: RefreshIndicator(
             onRefresh: () async {
               context.read<AuthBloc>().add(const AuthReloadUser());
               await Future.delayed(const Duration(milliseconds: 500));
@@ -230,48 +241,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                       prev.photoUrl !=
                                                       curr.photoUrl,
                                                   builder: (context, profileState) {
-                                                    final photoUrl =
-                                                        profileState.photoUrl ??
-                                                        user.photoUrl;
-                                                    final isLocalFile =
-                                                        photoUrl != null &&
-                                                        !photoUrl.startsWith(
-                                                          'http',
-                                                        );
-                                                    ImageProvider?
-                                                    imageProvider;
-                                                    if (photoUrl != null) {
-                                                      imageProvider =
-                                                          isLocalFile
-                                                          ? FileImage(
-                                                              File(photoUrl),
-                                                            )
-                                                          : CachedNetworkImageProvider(
-                                                              photoUrl,
-                                                            );
-                                                    }
-
-                                                    return CircleAvatar(
-                                                      radius: 16.r,
-                                                      backgroundColor: isDark
-                                                          ? Colors.white
-                                                                .withValues(
-                                                                  alpha: 0.1,
-                                                                )
-                                                          : AppColors.slate100,
-                                                      backgroundImage:
-                                                          imageProvider,
-                                                      child: photoUrl == null
-                                                          ? Icon(
-                                                              Icons
-                                                                  .person_rounded,
-                                                              color:
-                                                                  const Color(
-                                                                    0xFF94A3B8,
-                                                                  ),
-                                                              size: 18.r,
-                                                            )
-                                                          : null,
+                                                    return UserAvatar(
+                                                      photoUrl:
+                                                          profileState.photoUrl ??
+                                                          user.photoUrl,
+                                                      size: 32.r,
                                                     );
                                                   },
                                                 ),
@@ -563,11 +537,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ],
             ),
-          );
-        },
-      ),
-    ),
-  );
+          ),
+        );
+      },
+    );
+  },
+),
+        ),
+      );
   }
 
   Widget _buildSectionHeader(BuildContext context, String title) {
@@ -683,9 +660,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Widget _buildSignOutButton(BuildContext context) {
     return ScaleButton(
-      onTap: () {
+      onTap: () async {
         di.sl<HapticService>().warning();
-        SettingsDialogs.showLogout(context);
+        final networkInfo = di.sl.isRegistered<NetworkInfo>()
+            ? di.sl<NetworkInfo>()
+            : null;
+        if (networkInfo != null && !await networkInfo.isConnected) {
+          if (context.mounted) {
+            CustomSnackBar.show(
+              context: context,
+              message: context.tr(
+                'auth.error.network_unreachable',
+                fallback:
+                    'No internet connection. Please check your network and try again.',
+              ),
+              type: CustomSnackBarType.error,
+            );
+          }
+          return;
+        }
+        if (context.mounted) {
+          SettingsDialogs.showLogout(context);
+        }
       },
       child: GlassTile(
         borderRadius: BorderRadius.circular(24.r),
@@ -733,15 +729,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
     try {
       final XFile? pickedFile = await _picker.pickImage(
         source: source,
-        maxWidth: 512,
-        maxHeight: 512,
-        imageQuality: 85,
+        maxWidth: 1024,
+        maxHeight: 1024,
+        imageQuality: 90,
       );
 
       if (pickedFile != null && mounted) {
-        context.read<ProfileBloc>().add(
-          ProfileUpdatePictureRequested(pickedFile.path),
+        // WhatsApp-style 1:1 circular center crop
+        final croppedFile = await ImageUtils.cropToSquare(
+          File(pickedFile.path),
+          targetDimension: 512,
         );
+
+        if (mounted) {
+          context.read<ProfileBloc>().add(
+            ProfileUpdatePictureRequested(croppedFile.path),
+          );
+        }
       }
     } catch (e) {
       if (kDebugMode) {

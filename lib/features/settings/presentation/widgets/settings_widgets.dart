@@ -1,5 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
-import 'dart:io';
+import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -503,22 +503,9 @@ class SettingsProfileSection extends StatelessWidget {
                         end: Alignment.bottomRight,
                       ),
                     ),
-                    child: CircleAvatar(
-                      radius: 36.r,
-                      backgroundColor: AppColors.slate800,
-                      backgroundImage: currentUser.photoUrl?.isNotEmpty == true
-                          ? (currentUser.photoUrl!.startsWith('http')
-                                ? NetworkImage(currentUser.photoUrl!)
-                                : FileImage(File(currentUser.photoUrl!))
-                                      as ImageProvider)
-                          : null,
-                      child: currentUser.photoUrl?.isNotEmpty != true
-                          ? Icon(
-                              Icons.person_rounded,
-                              size: 36.r,
-                              color: isDark ? Colors.white24 : Colors.grey[400],
-                            )
-                          : null,
+                    child: UserAvatar(
+                      photoUrl: currentUser.photoUrl,
+                      size: 72.r,
                     ),
                   ),
                   Positioned(

@@ -2,7 +2,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
+import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
@@ -61,14 +61,12 @@ class MasteryAvatar extends StatelessWidget {
                   ),
                 ],
               ),
-              child: ClipOval(
-                child: user.photoUrl != null
-                    ? ShimmerImage(imageUrl: user.photoUrl!)
-                    : Icon(
-                        Icons.face_retouching_natural_rounded,
-                        color: AppColors.indigo500,
-                        size: 32.r,
-                      ),
+              child: UserAvatar(
+                photoUrl: user.photoUrl,
+                size: 62.r,
+                fallbackIcon: Icons.face_retouching_natural_rounded,
+                iconColor: AppColors.indigo500,
+                iconSize: 32.r,
               ),
             ),
           ],

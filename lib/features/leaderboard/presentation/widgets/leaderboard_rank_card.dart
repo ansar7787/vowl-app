@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/constants/app_constants.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
+import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -125,24 +125,14 @@ class LeaderboardRankCard extends StatelessWidget {
                   ),
                   SizedBox(width: 14.w),
                   // Avatar
-                  Container(
-                    width: 40.r,
-                    height: 40.r,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: isDark
-                            ? Colors.white24
-                            : Colors.black.withValues(alpha: 0.05),
-                        width: 1.5,
-                      ),
-                    ),
-                    child: ClipOval(
-                      child: ShimmerImage(
-                        imageUrl: currentUser.photoUrl ?? '',
-                        width: 40.r,
-                        height: 40.r,
-                      ),
+                  UserAvatar(
+                    photoUrl: currentUser.photoUrl,
+                    size: 40.r,
+                    border: Border.all(
+                      color: isDark
+                          ? Colors.white24
+                          : Colors.black.withValues(alpha: 0.05),
+                      width: 1.5,
                     ),
                   ),
                   SizedBox(width: 12.w),

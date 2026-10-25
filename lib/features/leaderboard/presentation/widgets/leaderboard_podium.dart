@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
+import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -219,12 +219,9 @@ class _PodiumSlot extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(3.r),
-                  child: ClipOval(
-                    child: ShimmerImage(
-                      imageUrl: user.photoUrl ?? '',
-                      width: avatarSize - 8,
-                      height: avatarSize - 8,
-                    ),
+                  child: UserAvatar(
+                    photoUrl: user.photoUrl,
+                    size: avatarSize - 8,
                   ),
                 ),
               ),
