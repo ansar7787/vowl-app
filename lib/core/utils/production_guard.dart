@@ -11,7 +11,10 @@ class ProductionGuard {
 
   static void checkConfiguration() {
     final logger = di.sl<AppLogger>();
-    final razorpayKey = dotenv.env['RAZORPAY_KEY_ID'];
+    final razorpayKey = dotenv.env['RAZORPAY_KEY_ID'] ??
+        (const String.fromEnvironment('RAZORPAY_KEY_ID').isNotEmpty
+            ? const String.fromEnvironment('RAZORPAY_KEY_ID')
+            : null);
 
     if (kReleaseMode) {
       if (razorpayKey == null || razorpayKey.isEmpty) {
