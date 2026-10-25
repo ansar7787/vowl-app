@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
+import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -112,22 +112,12 @@ class LeaderboardRankTile extends StatelessWidget {
             ),
             SizedBox(width: 12.w),
             // Avatar
-            Container(
-              width: 40.r,
-              height: 40.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: tierColor.withValues(alpha: 0.25),
-                  width: 1.5,
-                ),
-              ),
-              child: ClipOval(
-                child: ShimmerImage(
-                  imageUrl: user.photoUrl ?? '',
-                  width: 40.r,
-                  height: 40.r,
-                ),
+            UserAvatar(
+              photoUrl: user.photoUrl,
+              size: 40.r,
+              border: Border.all(
+                color: tierColor.withValues(alpha: 0.25),
+                width: 1.5,
               ),
             ),
             SizedBox(width: 12.w),
