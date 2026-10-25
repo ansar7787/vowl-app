@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOWL - Learn English with Interactive Quests</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-dark: #3730A3;
+            --amber: #F59E0B;
+            --dark: #0F172A;
+            --slate: #475569;
+            --bg-light: #F8FAFC;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; background: var(--bg-light); color: var(--dark); line-height: 1.6; }
+        
+        /* Navbar */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 48px; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 1.75rem; font-weight: 900; color: var(--primary); letter-spacing: -0.5px; }
+        .logo span { color: var(--amber); }
+        .nav-links a { margin-left: 24px; text-decoration: none; color: var(--slate); font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero */
+        .hero { max-width: 1000px; margin: 40px auto; padding: 0 24px; text-align: center; }
+        .badge { display: inline-block; background: #EEF2FF; color: var(--primary); padding: 8px 18px; border-radius: 999px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; border: 1px solid #C7D2FE; }
+        h1 { font-size: 3.2rem; font-weight: 900; line-height: 1.15; margin-bottom: 20px; color: var(--dark); letter-spacing: -1px; }
+        h1 span { background: linear-gradient(135deg, var(--primary), #818CF8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.25rem; color: var(--slate); max-width: 700px; margin: 0 auto 32px; }
+        
+        /* Features */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1100px; margin: 60px auto; padding: 0 24px; }
+        .feature-card { background: white; padding: 32px; border-radius: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03); border: 1px solid #E2E8F0; text-align: left; }
+        .feature-icon { font-size: 2.2rem; margin-bottom: 16px; }
+        .feature-card h3 { font-size: 1.25rem; margin-bottom: 8px; font-weight: 800; color: var(--dark); }
+        .feature-card p { color: var(--slate); font-size: 0.95rem; }
+
+        /* Pricing & Digital Offerings */
+        .pricing-section { max-width: 1000px; margin: 80px auto; padding: 0 24px; text-align: center; }
+        .pricing-section h2 { font-size: 2.4rem; font-weight: 900; margin-bottom: 12px; }
+        .pricing-section .sub { color: var(--slate); margin-bottom: 40px; font-size: 1.1rem; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .pricing-card { background: white; border-radius: 24px; padding: 36px 28px; border: 1px solid #E2E8F0; position: relative; }
+        .pricing-card.featured { border: 2px solid var(--primary); box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.1); }
+        .pricing-card .tag { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 16px; border-radius: 999px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px; }
+        .pricing-card h4 { font-size: 1.2rem; font-weight: 800; margin-bottom: 12px; }
+        .price { font-size: 2.4rem; font-weight: 900; color: var(--dark); margin-bottom: 16px; }
+        .price span { font-size: 0.9rem; font-weight: 600; color: var(--slate); }
+        .pricing-card ul { list-style: none; text-align: left; margin: 24px 0; }
+        .pricing-card li { margin-bottom: 12px; font-size: 0.95rem; color: var(--slate); display: flex; align-items: center; }
+        .pricing-card li::before { content: "✓"; color: #10B981; font-weight: 900; margin-right: 10px; }
+
+        /* Footer & Compliance */
+        footer { background: var(--dark); color: #94A3B8; padding: 60px 24px 30px; margin-top: 100px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+        .footer-brand h3 { color: white; font-size: 1.6rem; font-weight: 900; margin-bottom: 12px; }
+        .footer-brand p { font-size: 0.95rem; line-height: 1.7; max-width: 400px; }
+        .footer-links h4 { color: white; font-size: 1rem; font-weight: 700; margin-bottom: 16px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #94A3B8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .footer-links a:hover { color: white; }
+        .bottom-bar { border-top: 1px solid #1E293B; margin-top: 48px; padding-top: 24px; text-align: center; font-size: 0.85rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            nav { padding: 16px 24px; }
+            .footer-content { grid-template-columns: 1fr; gap: 32px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">VOWL<span>.</span></div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="badge">🚀 GAMIFIED ENGLISH LEARNING APP</div>
+        <h1>Master English Fluency With <span>Interactive Quests</span></h1>
+        <p>Learn vocabulary, grammar, accent pronunciation, and listening with structured gamified lessons, voice speech recognition, and instant phonetic feedback.</p>
+    </section>
+
+    <section id="features" class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🎙️</div>
+            <h3>Speech & Accent Analysis</h3>
+            <p>Practice speaking and receive instantaneous on-device phonetic feedback to refine your accent and natural cadence.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏆</div>
+            <h3>9 Interactive Arenas</h3>
+            <p>Master vocabulary, grammar, reading comprehension, writing, and roleplay through bite-sized interactive quests.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Daily Streak & Trophies</h3>
+            <p>Maintain daily streaks, collect XP rewards, unlock achievement badges, and compete globally on leaderboards.</p>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing-section">
+        <h2>Transparent Pricing</h2>
+        <p class="sub">Choose the plan that suits your learning journey. All purchases deliver instant in-app digital access.</p>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h4>Starter Pack</h4>
+                <div class="price">₹49 <span>/ 100 Coins</span></div>
+                <p style="color: var(--slate); font-size: 0.85rem;">Virtual In-App Currency</p>
+                <ul>
+                    <li>100 Virtual Coins</li>
+                    <li>Unlock Hint Boosters</li>
+                    <li>Freeze Daily Streaks</li>
+                    <li>Instant Electronic Delivery</li>
+                </ul>
+            </div>
+
+            <div class="pricing-card featured">
+                <div class="tag">RECOMMENDED</div>
+                <h4>Monthly VIP</h4>
+                <div class="price">₹199 <span>/ Month</span></div>
+                <p style="color: var(--slate); font-size: 0.85rem;">1-Month Time-Limited Access</p>
+                <ul>
+                    <li>100% Ad-Free Experience</li>
+                    <li>Infinite Lives in all Quests</li>
+                    <li>3X Coin Multiplier on Levels</li>
+                    <li>Exclusive VIP Trophies</li>
+                </ul>
+            </div>
+
+            <div class="pricing-card">
+                <h4>Yearly VIP</h4>
+                <div class="price">₹999 <span>/ Year</span></div>
+                <p style="color: var(--slate); font-size: 0.85rem;">12-Months Time-Limited Access</p>
+                <ul>
+                    <li>Everything in Monthly VIP</li>
+                    <li>Full Access to all 9 Arenas</li>
+                    <li>Priority Speech Engine Voices</li>
+                    <li>Best Long-Term Value</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>VOWL</h3>
+                <p>An interactive, educational language learning application dedicated to making English fluency accessible, engaging, and rewarding for learners of all ages.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Legal Policies</h4>
+                <ul>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="refund.html">Cancellation & Refund</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="mailto:support.vowl.app@gmail.com">support.vowl.app@gmail.com</a></li>
+                    <li>Location: Kerala, India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            &copy; 2026 VOWL. All rights reserved. Payments for India are securely processed via Razorpay.
+        </div>
+    </footer>
+</body>
+</html>
+
