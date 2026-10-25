@@ -12,6 +12,13 @@ abstract class NetworkInfo {
   /// Resolves the current network connectivity status in a future.
   Future<bool> get isConnected;
 
+  /// Resolves true if the device has an actual physical internet connection,
+  /// bypassing any gameplay/tier overrides (like [setPremiumOverride]).
+  ///
+  /// Strictly used for mission-critical network flows:
+  /// Sign out, Delete account, Password reset, and In-App purchases.
+  Future<bool> get hasRealConnection;
+
   /// Emits real-time, deduped network connectivity status updates.
   Stream<AppNetworkStatus> get onStatusChange;
 
@@ -51,14 +58,32 @@ class NetworkInfoImpl implements NetworkInfo {
   Future<bool> get isConnected async {
     if (_isPremiumOverride) return true;
     try {
-      // Defensive timeout protection: increased to 10 seconds to gracefully handle
-      // slow 3G/Edge networks without prematurely punishing the user.
+      // Defensive timeout protection: 3 seconds to gracefully handle
+      // slow networks without freezing the UI.
       return await _connectionChecker.hasInternetAccess.timeout(
-        const Duration(seconds: 10),
+        const Duration(seconds: 3),
         onTimeout: () => false,
       );
     } catch (_) {
       return false; // Fail-safe fallback: treat any socket exception or timeout as offline
+    }
+  }
+
+  @override
+  Future<bool> get hasRealConnection async {
+    try {
+      // 1. Instant hardware-level interface check: if Wi-Fi / Cellular is off, return false immediately (0ms).
+      final status = await _connectionChecker.internetStatus;
+      if (status == InternetStatus.disconnected) {
+        return false;
+      }
+      // 2. Active network probe with a fast 2.5-second timeout, bypassing _isPremiumOverride.
+      return await _connectionChecker.hasInternetAccess.timeout(
+        const Duration(milliseconds: 2500),
+        onTimeout: () => false,
+      );
+    } catch (_) {
+      return false;
     }
   }
 

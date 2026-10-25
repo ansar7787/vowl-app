@@ -1162,11 +1162,12 @@ class NotificationService {
     try {
       final user = FirebaseAuth.instance.currentUser;
       if (user != null) {
-        // 1. Remove fcmToken from Firestore while still authenticated
+        // 1. Remove fcmToken from Firestore while still authenticated (max 2s)
         await FirebaseFirestore.instance
             .collection('users')
             .doc(user.uid)
-            .update({'fcmToken': FieldValue.delete()});
+            .update({'fcmToken': FieldValue.delete()})
+            .timeout(const Duration(seconds: 2), onTimeout: () {});
         if (kDebugMode) {
           debugPrint(
             'NotificationService: FCM token cleared from Firestore for ${user.uid}',
@@ -1181,9 +1182,12 @@ class NotificationService {
       }
     }
 
-    // 2. Invalidate local device FCM token on Firebase servers
+    // 2. Invalidate local device FCM token on Firebase servers (max 2s)
     try {
-      await _fcm.deleteToken();
+      await _fcm.deleteToken().timeout(
+        const Duration(seconds: 2),
+        onTimeout: () {},
+      );
       if (kDebugMode) {
         debugPrint('NotificationService: Local FCM token deleted from device.');
       }

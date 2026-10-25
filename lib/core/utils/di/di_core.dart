@@ -67,8 +67,12 @@ Future<void> initExternalAndCore(GetIt sl) async {
       checkInterval: const Duration(seconds: 5),
       customCheckOptions: [
         InternetCheckOption(
-          uri: Uri.parse('https://one.one.one.one'),
-          timeout: const Duration(seconds: 10),
+          uri: Uri.parse('https://1.1.1.1'),
+          timeout: const Duration(seconds: 3),
+        ),
+        InternetCheckOption(
+          uri: Uri.parse('https://8.8.8.8'),
+          timeout: const Duration(seconds: 3),
         ),
       ],
     ),

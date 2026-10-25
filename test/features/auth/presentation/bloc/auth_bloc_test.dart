@@ -74,6 +74,7 @@ void main() {
 
     mockNetworkInfo = MockNetworkInfo();
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
+    when(() => mockNetworkInfo.hasRealConnection).thenAnswer((_) async => true);
     mockGetUserStream = MockGetUserStream();
     mockLogOut = MockLogOut();
     mockReloadUser = MockReloadUser();
