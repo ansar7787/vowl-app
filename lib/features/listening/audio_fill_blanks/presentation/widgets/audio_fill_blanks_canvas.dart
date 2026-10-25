@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -88,7 +89,14 @@ class AudioFillBlanksCanvas extends StatelessWidget {
                     duration: const Duration(milliseconds: 600),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20.r),
-                      child: Image.network(imageUrl!, fit: BoxFit.cover),
+                      child: CachedNetworkImage(
+                        imageUrl: imageUrl!,
+                        fit: BoxFit.cover,
+                        memCacheWidth: 600,
+                        memCacheHeight: 600,
+                        placeholder: (context, url) => const SizedBox.shrink(),
+                        errorWidget: (context, url, error) => const SizedBox.shrink(),
+                      ),
                     ),
                   ),
                 ),
