@@ -1,6 +1,7 @@
 import 'package:vowl/features/auth/data/models/user_model.dart';
 import 'package:vowl/features/auth/data/datasources/auth_local_data_source.dart';
 import 'package:vowl/core/error/failures.dart';
+import 'package:dartz/dartz.dart';
 import 'dart:async';
 import 'dart:math' as math;
 
@@ -393,9 +394,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   ) async {
     if (state.status == AuthStatus.loggingOut) return;
 
-    // C-01: Network check — must be online to logout to prevent permanent data loss
-    // of any offline progress (since logout clears the local persistence cache).
-    if (!(await _networkInfo.isConnected)) {
+    // C-01: Network check — must have real physical internet connection to logout.
+    // Prevents permanent data loss of any offline progress and avoids hanging.
+    if (!(await _networkInfo.hasRealConnection)) {
       emit(
         state.copyWith(
           message: () => AuthErrorHandler.getKey('network-unreachable'),
@@ -405,9 +406,39 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }
 
     emit(state.copyWith(status: AuthStatus.loggingOut));
-    await _clearAllLocalData();
-    await _logOut(const NoParams());
-    emit(const AuthState.unauthenticated());
+
+    try {
+      // Defensive timeout on local data cleanup (max 3 seconds)
+      await _clearAllLocalData().timeout(
+        const Duration(seconds: 3),
+        onTimeout: () {
+          if (kDebugMode) debugPrint('AuthBloc: Local cleanup timed out on logout');
+        },
+      );
+
+      // Defensive timeout on auth logout (max 5 seconds)
+      final result = await _logOut(const NoParams()).timeout(
+        const Duration(seconds: 5),
+        onTimeout: () => Right(null), // Best-effort logout
+      );
+
+      result.fold(
+        (failure) {
+          emit(
+            state.copyWith(
+              status: AuthStatus.authenticated,
+              message: () => AuthErrorHandler.getKey(failure.message),
+            ),
+          );
+        },
+        (_) {
+          emit(const AuthState.unauthenticated());
+        },
+      );
+    } catch (e) {
+      if (kDebugMode) debugPrint('AuthBloc: Logout encountered error: $e');
+      emit(const AuthState.unauthenticated());
+    }
   }
 
   Future<void> _onReloadUser(
@@ -520,8 +551,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   ) async {
     if (state.status == AuthStatus.loggingOut) return;
 
-    // C-01: Network check — account deletion requires internet
-    if (!(await _networkInfo.isConnected)) {
+    // C-01: Network check — account deletion requires true internet connection
+    if (!(await _networkInfo.hasRealConnection)) {
       emit(
         state.copyWith(
           message: () => AuthErrorHandler.getKey('network-unreachable'),
@@ -532,39 +563,64 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     emit(state.copyWith(status: AuthStatus.loggingOut));
 
-    // C-03: Clear ALL local data (same cleanup as logout)
-    await _clearAllLocalData();
+    try {
+      // C-03: Clear ALL local data with defensive timeout (max 3 seconds)
+      await _clearAllLocalData().timeout(
+        const Duration(seconds: 3),
+        onTimeout: () {
+          if (kDebugMode) debugPrint('AuthBloc: Local cleanup timed out on delete');
+        },
+      );
 
-    final result = await _deleteAccount(const NoParams());
-    await result.fold(
-      (failure) async {
-        if (failure.message == 'requires-recent-login') {
-          await _logOut(const NoParams());
+      final result = await _deleteAccount(const NoParams()).timeout(
+        const Duration(seconds: 10),
+        onTimeout: () => Left(AuthFailure('network-unreachable')),
+      );
+
+      await result.fold(
+        (failure) async {
+          if (failure.message == 'requires-recent-login') {
+            await _logOut(const NoParams()).timeout(
+              const Duration(seconds: 4),
+              onTimeout: () => Right(null),
+            );
+            emit(
+              state.copyWith(
+                status: AuthStatus.unauthenticated,
+                message: () => 'settings_dialogs.requires_recent_login_delete',
+              ),
+            );
+          } else {
+            emit(
+              state.copyWith(
+                status: AuthStatus.authenticated,
+                message: () => AuthErrorHandler.getKey(failure.message),
+              ),
+            );
+          }
+        },
+        (_) async {
+          await _logOut(const NoParams()).timeout(
+            const Duration(seconds: 4),
+            onTimeout: () => Right(null),
+          );
           emit(
             state.copyWith(
               status: AuthStatus.unauthenticated,
-              message: () => 'settings_dialogs.requires_recent_login_delete',
+              message: () => 'settings_dialogs.account_deleted_success',
             ),
           );
-        } else {
-          emit(
-            state.copyWith(
-              status: AuthStatus.authenticated,
-              message: () => AuthErrorHandler.getKey(failure.message),
-            ),
-          );
-        }
-      },
-      (_) async {
-        await _logOut(const NoParams());
-        emit(
-          state.copyWith(
-            status: AuthStatus.unauthenticated,
-            message: () => 'settings_dialogs.account_deleted_success',
-          ),
-        );
-      },
-    );
+        },
+      );
+    } catch (e) {
+      if (kDebugMode) debugPrint('AuthBloc: Delete account error: $e');
+      emit(
+        state.copyWith(
+          status: AuthStatus.authenticated,
+          message: () => AuthErrorHandler.getKey('network-unreachable'),
+        ),
+      );
+    }
   }
 
   Future<void> _onPasswordResetRequested(

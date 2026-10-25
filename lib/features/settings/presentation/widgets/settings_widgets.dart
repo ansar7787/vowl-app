@@ -391,7 +391,7 @@ class SettingsLogoutButton extends StatelessWidget {
                   final networkInfo = di.sl.isRegistered<NetworkInfo>()
                       ? di.sl<NetworkInfo>()
                       : null;
-                  if (networkInfo != null && !await networkInfo.isConnected) {
+                  if (networkInfo != null && !await networkInfo.hasRealConnection) {
                     if (context.mounted) {
                       CustomSnackBar.show(
                         context: context,
