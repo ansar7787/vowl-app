@@ -68,7 +68,7 @@ class OfflineBanner extends StatelessWidget {
                                 'connectivity.offline_banner_with_count',
                                 args: [remaining.toString(), max.toString()],
                                 fallback:
-                                    'Playing offline \u2022 $remaining/$max plays left',
+                                    'Playing offline · $remaining/$max plays left',
                               ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
