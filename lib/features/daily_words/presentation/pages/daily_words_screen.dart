@@ -27,6 +27,7 @@ import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dar
 import 'package:vowl/features/daily_words/presentation/widgets/daily_words_widgets.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
 /// Daily vocabulary flashcard screen that guides learners through curated daily words,
@@ -332,75 +333,104 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                 ),
                 SizedBox(height: 32.h),
                 // Watch Ad Button (Primary)
-                Container(
-                  width: double.infinity,
-                  height: 56.h,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.r),
-                    gradient: const LinearGradient(
-                      colors: [AppColors.indigo500, AppColors.violet500],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppColors.indigo500.withValues(alpha: 0.3),
-                        blurRadius: 20,
-                        offset: const Offset(0, 8),
-                      ),
-                    ],
-                  ),
-                  child: Material(
-                    color: Colors.transparent,
-                    child: InkWell(
-                      borderRadius: BorderRadius.circular(20.r),
-                      onTap: () {
-                        if (isAdRequestInProgress) return;
-                        isAdRequestInProgress = true;
-                        final adService = di.sl<AdService>();
-                        adService.showRewardedAd(
-                          context: sheetContext,
-                          isPremium: false,
-                          childSafe: false,
-                          onUserEarnedReward: (_) {
-                            if (!completer.isCompleted) {
-                              completer.complete(true);
-                            }
-                          },
-                          onDismissed: () {
-                            isAdRequestInProgress = false;
-                            if (!completer.isCompleted) {
-                              completer.complete(false);
-                            }
-                            if (sheetContext.mounted) {
-                              Navigator.of(sheetContext).pop();
-                            }
-                          },
-                        );
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.play_circle_fill_rounded,
-                            color: Colors.white,
-                            size: 22.r,
-                          ),
-                          SizedBox(width: 10.w),
-                          Text(
-                            buttonText,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white,
-                              letterSpacing: 0.3,
-                            ),
+                StatefulBuilder(
+                  builder: (ctx, setBtnState) {
+                    return Container(
+                      width: double.infinity,
+                      height: 56.h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.r),
+                        gradient: const LinearGradient(
+                          colors: [AppColors.indigo500, AppColors.violet500],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.indigo500.withValues(alpha: 0.3),
+                            blurRadius: 20,
+                            offset: const Offset(0, 8),
                           ),
                         ],
                       ),
-                    ),
-                  ),
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(20.r),
+                          onTap: () {
+                            if (isAdRequestInProgress) return;
+                            setBtnState(() => isAdRequestInProgress = true);
+                            final adService = di.sl<AdService>();
+                            bool earned = false;
+                            adService.showRewardedAd(
+                              context: sheetContext,
+                              isPremium: false,
+                              childSafe: false,
+                              onUserEarnedReward: (_) {
+                                earned = true;
+                                if (!completer.isCompleted) {
+                                  completer.complete(true);
+                                }
+                              },
+                              onDismissed: () {
+                                setBtnState(() => isAdRequestInProgress = false);
+                                if (earned) {
+                                  if (sheetContext.mounted) {
+                                    Navigator.of(sheetContext).pop();
+                                  }
+                                }
+                              },
+                            );
+                          },
+                          child: isAdRequestInProgress
+                              ? Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const VowlButtonSpinner(
+                                      color: Colors.white,
+                                      size: 20,
+                                    ),
+                                    SizedBox(width: 10.w),
+                                    Text(
+                                      context.tr(
+                                        'store.loading_ad',
+                                        fallback: 'Loading Ad...',
+                                      ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white,
+                                        letterSpacing: 0.3,
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              : Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.play_circle_fill_rounded,
+                                      color: Colors.white,
+                                      size: 22.r,
+                                    ),
+                                    SizedBox(width: 10.w),
+                                    Text(
+                                      buttonText,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white,
+                                        letterSpacing: 0.3,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                        ),
+                      ),
+                    );
+                  },
                 ),
                 SizedBox(height: 14.h),
                 // Go Premium Button (Secondary)

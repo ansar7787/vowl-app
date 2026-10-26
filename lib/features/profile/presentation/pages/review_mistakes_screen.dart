@@ -1213,21 +1213,26 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
                     borderRadius: BorderRadius.circular(20.r),
                     onTap: () {
                       final adService = di.sl<AdService>();
+                      bool earned = false;
                       adService.showRewardedAd(
                         context: context,
                         isPremium: false,
                         childSafe: false,
                         onUserEarnedReward: (_) {
+                          earned = true;
                           if (!completer.isCompleted) {
                             completer.complete(true);
                           }
                         },
                         onDismissed: () {
-                          if (!completer.isCompleted) {
-                            completer.complete(false);
-                          }
-                          if (context.mounted) {
-                            context.pop();
+                          if (earned) {
+                            if (context.mounted) {
+                              context.pop();
+                            }
+                          } else {
+                            if (!completer.isCompleted) {
+                              // Keep dialog open for retry
+                            }
                           }
                         },
                       );

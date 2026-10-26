@@ -1,4 +1,3 @@
-import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -7,21 +6,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/utils/ad_service.dart';
-import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
-import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
-import 'package:vowl/core/utils/reward_limit_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color colorbe185d = Color(0xFFBE185D);
-}
 
 /// Star vault milestone bottom sheet celebrating mastery milestones and awarding surprise rewards.
 class KidsStarVaultBottomSheet extends StatefulWidget {
@@ -68,33 +57,11 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     return 150 + ((index - 9) * 30);
   });
   final ValueNotifier<bool> _isProcessing = ValueNotifier(false);
-  final ValueNotifier<int> _remainingClaims = ValueNotifier(
-    RewardLimitService.maxClaimsPerDay,
-  );
-  final ValueNotifier<bool> _isLoadingLimits = ValueNotifier(true);
-  final ValueNotifier<int> _outOfAdsShake = ValueNotifier(0);
 
   @override
   void dispose() {
     _isProcessing.dispose();
-    _remainingClaims.dispose();
-    _isLoadingLimits.dispose();
-    _outOfAdsShake.dispose();
     super.dispose();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _loadLimits();
-  }
-
-  Future<void> _loadLimits() async {
-    final remaining = await RewardLimitService.getRemainingClaims('stars');
-    if (mounted) {
-      _remainingClaims.value = remaining;
-      _isLoadingLimits.value = false;
-    }
   }
 
   ({int totalStars, int gameplayStars, int magicStars}) _calculateStars(
@@ -200,158 +167,6 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     );
   }
 
-  Future<void> _watchAdForMagicStars() async {
-    if (_isProcessing.value) return;
-    if (_remainingClaims.value <= 0) {
-      _outOfAdsShake.value++;
-      showDialog(
-        context: context,
-        builder: (ctx) => ModernGameDialog(
-          title: context.tr(
-            'store.daily_limit_reached',
-            fallback: 'Daily Limit Reached',
-          ),
-          description: context.tr(
-            'store.daily_limit_desc',
-            fallback:
-                'You have claimed all your free stars for today! Come back tomorrow or visit the Premium Store for unlimited access.',
-          ),
-          buttonText: context.tr('common.got_it', fallback: 'GOT IT!'),
-          isSuccess: false,
-          onButtonPressed: () => Navigator.of(ctx).pop(),
-          customIcon: Icon(
-            Icons.lock_clock_rounded,
-            color: Colors.orange,
-            size: 48.sp,
-          ),
-        ),
-      );
-      return;
-    }
-    _isProcessing.value = true;
-
-    final adService = di.sl<AdService>();
-    if (!adService.isRewardedAdLoaded) {
-      CustomSnackBar.show(
-        context: context,
-        message: context.tr(
-          'store.ad_not_ready',
-          fallback: "Ad not ready yet. Please wait a moment.",
-        ),
-        type: CustomSnackBarType.warning,
-      );
-      _isProcessing.value = false;
-      return;
-    }
-
-    final user = context.read<AuthBloc>().state.user;
-    final isPremium = user?.isPremium ?? false;
-
-    bool rewardEarned = false;
-
-    adService.showRewardedAd(
-      context: context,
-      isPremium: isPremium,
-      childSafe: true,
-      onUserEarnedReward: (_) {
-        rewardEarned = true;
-      },
-      onDismissed: () async {
-        if (!mounted) return;
-        _isProcessing.value = false;
-
-        if (!rewardEarned) return;
-
-        _isProcessing.value = true;
-
-        final updateUserRewards = di.sl<UpdateUserRewards>();
-        final result = await updateUserRewards(
-          UpdateUserRewardsParams(
-            gameType: widget.gameType,
-            level: 1,
-            xpIncrease: 0,
-            coinIncrease: 0,
-            addMagicStars: 2,
-            isVaultReward: true,
-          ),
-        );
-
-        if (result.isRight()) {
-          await RewardLimitService.incrementClaimCount('stars');
-        }
-
-        if (!mounted) return;
-        _isProcessing.value = false;
-
-        if (result.isLeft()) {
-          showDialog(
-            context: context,
-            builder: (ctx) => ModernGameDialog(
-              title: context.tr(
-                'store.reward_failed',
-                fallback: 'REWARD FAILED',
-              ),
-              description: context.tr(
-                'store.reward_failed_desc',
-                fallback:
-                    "We couldn't grant your reward. Please contact support if this keeps happening.",
-              ),
-              buttonText: context.tr('common.ok', fallback: 'OK'),
-              isSuccess: false,
-              onButtonPressed: () => Navigator.of(ctx).pop(),
-            ),
-          );
-          return;
-        }
-
-        if (mounted) await _loadLimits();
-
-        if (mounted) {
-          context.read<AuthBloc>().add(const AuthRefreshUser());
-          showDialog(
-            context: context,
-            builder: (ctx) => Material(
-              type: MaterialType.transparency,
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  ModernGameDialog(
-                    title: context.tr(
-                      'store.magic_stars_earned',
-                      fallback: 'MAGIC STARS EARNED!',
-                    ),
-                    description: context.tr(
-                      'store.magic_stars_earned_desc',
-                      fallback: 'You got +2 Magic Stars for watching the ad!',
-                    ),
-                    buttonText: context.tr(
-                      'common.awesome',
-                      fallback: 'AWESOME',
-                    ),
-                    isSuccess: true,
-                    onButtonPressed: () => Navigator.of(ctx).pop(),
-                    customIcon: Icon(
-                      Icons.auto_awesome_rounded,
-                      color: AppColors.emerald500,
-                      size: 48.sp,
-                    ),
-                  ),
-                  const Positioned.fill(
-                    child: IgnorePointer(child: GameConfetti()),
-                  ),
-                ],
-              ),
-            ),
-          );
-        }
-      },
-    );
-
-    Future.delayed(const Duration(seconds: 3), () {
-      if (mounted && _isProcessing.value) _isProcessing.value = false;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -367,7 +182,6 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
         final gameplayStars = starsData.gameplayStars;
         final magicStars = starsData.magicStars;
         final claimedTier = categoryStars['claimed_chests'] ?? 0;
-        final isPremium = user.isPremium;
 
         int nextTierIndex = claimedTier;
         if (nextTierIndex >= _chestTiers.length) {
@@ -376,12 +190,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
         final nextRequirement = _chestTiers[nextTierIndex];
 
         return ListenableBuilder(
-          listenable: Listenable.merge([
-            _isProcessing,
-            _remainingClaims,
-            _isLoadingLimits,
-            _outOfAdsShake,
-          ]),
+          listenable: _isProcessing,
           builder: (context, _) {
             return GestureDetector(
               behavior: HitTestBehavior.opaque,
@@ -973,190 +782,6 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                       },
                                     ),
                                   ),
-
-                                  SizedBox(height: 32.h),
-
-                                  // Magic Star Ad Button (hidden for premium users)
-                                  if (!isPremium &&
-                                      claimedTier < _chestTiers.length &&
-                                      totalStars < nextRequirement) ...[
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 24.w,
-                                      ),
-                                      child: ScaleButton(
-                                        onTap: _watchAdForMagicStars,
-                                        child: ShakeableWrapper(
-                                          shakeCount: _outOfAdsShake.value,
-                                          child: Container(
-                                            width: double.infinity,
-                                            padding: EdgeInsets.symmetric(
-                                              vertical: 18.h,
-                                            ),
-                                            decoration: BoxDecoration(
-                                              color: IllustrationColors
-                                                  .vibrantPink,
-                                              borderRadius:
-                                                  BorderRadius.circular(30.r),
-                                              border: Border.all(
-                                                color:
-                                                    _LocalPalette.colorbe185d,
-                                                width: 3.w,
-                                              ),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: const Color(
-                                                    0xFFBE185D,
-                                                  ),
-                                                  offset: Offset(0, 6.h),
-                                                ),
-                                              ],
-                                            ),
-                                            child:
-                                                _isProcessing.value ||
-                                                    _isLoadingLimits.value
-                                                ? Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      SizedBox(
-                                                        width: 24.sp,
-                                                        height: 24.sp,
-                                                        child:
-                                                            const VowlButtonSpinner(
-                                                              color:
-                                                                  Colors.white,
-                                                            ),
-                                                      ),
-                                                      SizedBox(width: 12.w),
-                                                      Flexible(
-                                                        child: Text(
-                                                          context.tr(
-                                                            'store.loading_ad',
-                                                            fallback:
-                                                                "Loading...",
-                                                          ),
-                                                          style: TextStyle(
-                                                            fontFamily:
-                                                                'Outfit',
-                                                            fontSize: 16.sp,
-                                                            fontWeight:
-                                                                FontWeight.w800,
-                                                            color:
-                                                                Colors.white70,
-                                                          ),
-                                                          maxLines: 1,
-                                                          overflow: TextOverflow
-                                                              .ellipsis,
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  )
-                                                : _remainingClaims.value <= 0
-                                                ? Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Icon(
-                                                        Icons
-                                                            .lock_clock_rounded,
-                                                        color: Colors.white70,
-                                                        size: 28.sp,
-                                                      ),
-                                                      SizedBox(width: 12.w),
-                                                      Flexible(
-                                                        child: Text(
-                                                          context.tr(
-                                                            'store.daily_limit_reached',
-                                                            fallback:
-                                                                "Daily Limit Reached",
-                                                          ),
-                                                          style: TextStyle(
-                                                            fontFamily:
-                                                                'Outfit',
-                                                            fontSize: 15.sp,
-                                                            fontWeight:
-                                                                FontWeight.w900,
-                                                            color:
-                                                                Colors.white70,
-                                                          ),
-                                                          maxLines: 1,
-                                                          overflow: TextOverflow
-                                                              .ellipsis,
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  )
-                                                : Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Icon(
-                                                        isPremium
-                                                            ? Icons
-                                                                  .auto_awesome_rounded
-                                                            : Icons
-                                                                  .play_circle_filled_rounded,
-                                                        color: Colors.white,
-                                                        size: 28.sp,
-                                                      ),
-                                                      SizedBox(width: 12.w),
-                                                      Flexible(
-                                                        child: Text(
-                                                          isPremium
-                                                              ? context.tr(
-                                                                  'store.claim_magic_stars',
-                                                                  fallback:
-                                                                      "Claim +2 Free Magic Stars",
-                                                                )
-                                                              : context.tr(
-                                                                  'store.watch_ad_magic_stars',
-                                                                  fallback:
-                                                                      "Watch Ad for +2 Magic Stars",
-                                                                ),
-                                                          style: TextStyle(
-                                                            fontFamily:
-                                                                'Outfit',
-                                                            fontSize: 15.sp,
-                                                            fontWeight:
-                                                                FontWeight.w900,
-                                                            color: Colors.white,
-                                                          ),
-                                                          maxLines: 1,
-                                                          overflow: TextOverflow
-                                                              .ellipsis,
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(height: 12.h),
-                                    Text(
-                                      _remainingClaims.value <= 0
-                                          ? context.tr(
-                                              'store.come_back_tomorrow',
-                                              fallback:
-                                                  "Come back tomorrow for more free stars!",
-                                            )
-                                          : context.tr(
-                                              'store.magic_stars_hint',
-                                              fallback:
-                                                  "Magic Stars permanently count towards your total! ($_remainingClaims left today)",
-                                            ),
-                                      style: TextStyle(
-                                        fontSize: 11.sp,
-                                        color: Colors.white70,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                    SizedBox(height: 16.h),
-                                  ],
 
                                   SizedBox(
                                     height:

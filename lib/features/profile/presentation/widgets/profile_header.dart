@@ -1,3 +1,4 @@
+import 'dart:ui' as ui;
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -149,21 +150,9 @@ class ProfileHeader extends StatelessWidget {
                             heroTag: 'profile_pic',
                           ),
                           if (isUploading)
-                            Container(
-                              width: 118.r,
-                              height: 118.r,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.black54,
-                              ),
-                              child: const Center(
-                                child: CircularProgressIndicator(
-                                  strokeWidth: 3.0,
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    Colors.white,
-                                  ),
-                                ),
-                              ),
+                            _AvatarUploadingOverlay(
+                              size: 118.r,
+                              isPremium: isPremium,
                             ),
                         ],
                       ),
@@ -388,5 +377,193 @@ class ProfileHeader extends StatelessWidget {
         ],
       ],
     );
+  }
+}
+
+/// Modern, high-polish 2026 avatar upload indicator featuring a frosted blur backdrop,
+/// an orbital radiant sweep gradient ring, and a pulsating cloud-upload badge.
+class _AvatarUploadingOverlay extends StatefulWidget {
+  final double size;
+  final bool isPremium;
+
+  const _AvatarUploadingOverlay({
+    required this.size,
+    required this.isPremium,
+  });
+
+  @override
+  State<_AvatarUploadingOverlay> createState() =>
+      _AvatarUploadingOverlayState();
+}
+
+class _AvatarUploadingOverlayState extends State<_AvatarUploadingOverlay>
+    with TickerProviderStateMixin {
+  late final AnimationController _spinController;
+  late final AnimationController _pulseController;
+
+  @override
+  void initState() {
+    super.initState();
+    _spinController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 2200),
+    )..repeat();
+
+    _pulseController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1200),
+    )..repeat(reverse: true);
+  }
+
+  @override
+  void dispose() {
+    _spinController.dispose();
+    _pulseController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final ringColors = widget.isPremium
+        ? const [
+            AppColors.amber500,
+            AppColors.orange500,
+            AppColors.amber400,
+            AppColors.amber500,
+          ]
+        : const [
+            AppColors.indigo500,
+            AppColors.violet500,
+            AppColors.cyan400,
+            AppColors.indigo500,
+          ];
+
+    return ClipOval(
+      child: SizedBox(
+        width: widget.size,
+        height: widget.size,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            // 1. Frosted blur over current image
+            Positioned.fill(
+              child: BackdropFilter(
+                filter: ui.ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                child: Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: RadialGradient(
+                      colors: [
+                        Colors.black.withValues(alpha: 0.65),
+                        Colors.black.withValues(alpha: 0.85),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            // 2. Continuous rotating radiant sweep gradient ring
+            Positioned.fill(
+              child: RotationTransition(
+                turns: _spinController,
+                child: CustomPaint(
+                  painter: _GradientBorderPainter(
+                    strokeWidth: 3.5.r,
+                    colors: ringColors,
+                  ),
+                ),
+              ),
+            ),
+
+            // 3. Central pulsing frosted glass badge + label
+            AnimatedBuilder(
+              animation: _pulseController,
+              builder: (context, _) {
+                final scale = 0.95 + (0.08 * _pulseController.value);
+                final glowAlpha = 0.3 + (0.3 * _pulseController.value);
+
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Transform.scale(
+                      scale: scale,
+                      child: Container(
+                        width: 38.r,
+                        height: 38.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white.withValues(alpha: 0.15),
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.35),
+                            width: 1.2.r,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: (widget.isPremium
+                                      ? AppColors.amber500
+                                      : AppColors.indigo500)
+                                  .withValues(alpha: glowAlpha),
+                              blurRadius: 14,
+                              spreadRadius: 2,
+                            ),
+                          ],
+                        ),
+                        child: Icon(
+                          Icons.cloud_upload_rounded,
+                          color: Colors.white,
+                          size: 20.r,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 6.h),
+                    Text(
+                      context.tr('profile.uploading', fallback: 'UPLOADING'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 8.5.sp,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: 1.4,
+                        color: Colors.white.withValues(alpha: 0.95),
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _GradientBorderPainter extends CustomPainter {
+  final double strokeWidth;
+  final List<Color> colors;
+
+  const _GradientBorderPainter({
+    required this.strokeWidth,
+    required this.colors,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final rect = Offset.zero & size;
+    final paint = Paint()
+      ..shader = ui.Gradient.sweep(
+        rect.center,
+        colors,
+      )
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = strokeWidth;
+
+    canvas.drawCircle(rect.center, (size.width - strokeWidth) / 2, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant _GradientBorderPainter oldDelegate) {
+    return oldDelegate.strokeWidth != strokeWidth ||
+        oldDelegate.colors != colors;
   }
 }

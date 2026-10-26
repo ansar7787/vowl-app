@@ -463,40 +463,6 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                 return;
                               }
                               final adService = di.sl<AdService>();
-                              // FIX: Read premium status from AuthBloc instead of
-                              // hardcoding `false`. Premium users who open the key
-                              // shop (e.g. via Kids Zone toll gate) should get the
-                              // premium bypass, not be forced to watch an ad.
-                              if (!isPremium && !adService.isRewardedAdLoaded) {
-                                showDialog(
-                                  context: context,
-                                  builder: (ctx) => ModernGameDialog(
-                                    title: context.tr(
-                                      'store.ad_not_ready_title',
-                                      fallback: 'AD NOT READY',
-                                    ),
-                                    description: context.tr(
-                                      'games.ad_not_ready',
-                                      fallback:
-                                          'Ad not ready yet, try again in a moment.',
-                                    ),
-                                    buttonText: context.tr(
-                                      'store.ok',
-                                      fallback: 'OK',
-                                    ),
-                                    isSuccess: false,
-                                    onButtonPressed: () =>
-                                        Navigator.of(ctx).pop(),
-                                    customIcon: Icon(
-                                      Icons.hourglass_empty_rounded,
-                                      color: Colors.orange,
-                                      size: 48.sp,
-                                    ),
-                                  ),
-                                );
-                                return;
-                              }
-
                               _isProcessing = true;
                               _updateState();
                               bool rewardEarned = false;

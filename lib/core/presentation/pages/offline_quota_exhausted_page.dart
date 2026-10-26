@@ -8,6 +8,7 @@ import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/offline_play_gate_service.dart';
@@ -113,8 +114,16 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
 
     final adService = di.sl<AdService>();
     if (!adService.isRewardedAdLoaded) {
-      // No cached ad available — user must reconnect
+      adService.loadRewardedAd();
       Haptics.vibrate(HapticsType.warning);
+      CustomSnackBar.show(
+        context: context,
+        message: context.tr(
+          'connectivity.no_ad_cached',
+          fallback: 'No ad available offline. Please reconnect to continue.',
+        ),
+        type: CustomSnackBarType.warning,
+      );
       return;
     }
 
@@ -131,6 +140,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
     });
 
     adService.showRewardedAd(
+      context: context,
       isPremium: false,
       onUserEarnedReward: (_) {
         OfflinePlayGateService.instance.grantBonusOfflinePlays();
