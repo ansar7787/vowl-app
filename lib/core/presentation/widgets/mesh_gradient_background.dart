@@ -13,11 +13,6 @@ class _Palette {
   // Pre-computed alpha variants — avoids .withValues() in build()
   // Dark blob alphas
   static const Color indigo900_30 = Color(0x4D312E81); // 0.3 alpha
-  static const Color emerald900_20 = Color(0x33064E3B); // 0.2 alpha
-  static const Color amber900_15 = Color(
-    0x26B45309,
-  ); // 0.15 alpha (AppColors.amber900)
-  static const Color slate900_05 = Color(0x0D0F172A); // 0.05 alpha
 
   // Light blob alphas
   static const Color skyBlue100_50 = Color(0x80E0F2FE); // 0.5 alpha
@@ -137,66 +132,77 @@ class MeshGradientBackground extends StatelessWidget {
               ),
             ] else ...[
               // Default palette path — all colors are pre-computed constants
-              _StaticBlob(
-                alignment: const Alignment(-1.5, -0.8),
-                color: isDark ? _Palette.indigo900_30 : _Palette.skyBlue100_50,
-                size: 700.w,
-              ),
-              _StaticBlob(
-                alignment: const Alignment(1.5, -0.4),
-                color: isDark ? _Palette.emerald900_20 : _Palette.pink100_40,
-                size: 800.w,
-              ),
-              _StaticBlob(
-                alignment: const Alignment(-0.8, 1.5),
-                color: isDark ? _Palette.amber900_15 : _Palette.green100_30,
-                size: 600.w,
-              ),
-              _StaticBlob(
-                alignment: Alignment.center,
-                color: isDark ? _Palette.slate900_05 : _Palette.white_10,
-                size: 1.sw,
-              ),
-              if (!isDark)
+              if (!isDark) ...[
+                _StaticBlob(
+                  alignment: const Alignment(-1.5, -0.8),
+                  color: _Palette.skyBlue100_50,
+                  size: 700.w,
+                ),
+                _StaticBlob(
+                  alignment: const Alignment(1.5, -0.4),
+                  color: _Palette.pink100_40,
+                  size: 800.w,
+                ),
+                _StaticBlob(
+                  alignment: const Alignment(-0.8, 1.5),
+                  color: _Palette.green100_30,
+                  size: 600.w,
+                ),
+                _StaticBlob(
+                  alignment: Alignment.center,
+                  color: _Palette.white_10,
+                  size: 1.sw,
+                ),
                 _StaticBlob(
                   alignment: const Alignment(0.8, 0.9),
                   color: _Palette.purple50_30,
                   size: 400.w,
                 ),
+              ] else ...[
+                // Dark mode default: Calm, cohesive ambient indigo wash at the top-center
+                // instead of competing rainbow blobs (emerald, amber, indigo) across the screen.
+                _StaticBlob(
+                  alignment: const Alignment(0.0, -1.2),
+                  color: _Palette.indigo900_30,
+                  size: 800.w,
+                ),
+              ],
             ],
           ],
 
-          // 4. Dot-grid pattern (uses cached Paint objects)
-          Positioned.fill(
-            child: IgnorePointer(
-              child: CustomPaint(painter: _DotGridPainter(isDark: isDark)),
+          // 4. Dot-grid pattern (Light mode only; disabled in dark/midnight to keep surfaces clean & standard)
+          if (!isDark)
+            Positioned.fill(
+              child: IgnorePointer(
+                child: const CustomPaint(painter: _DotGridPainter(isDark: false)),
+              ),
             ),
-          ),
 
-          // 5. Final contrast overlay (pre-computed colors)
-          Positioned.fill(
-            child: IgnorePointer(
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: isDark
-                        ? const [
-                            _Palette.blackOverlayTop,
-                            Colors.transparent,
-                            _Palette.blackOverlayBottom,
-                          ]
-                        : const [
-                            _Palette.whiteOverlayTop,
-                            Colors.transparent,
-                            _Palette.whiteOverlayBottom,
-                          ],
+          // 5. Final contrast overlay (pre-computed colors; skipped in midnight for pure AMOLED black)
+          if (!isMidnight)
+            Positioned.fill(
+              child: IgnorePointer(
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: isDark
+                          ? const [
+                              _Palette.blackOverlayTop,
+                              Colors.transparent,
+                              _Palette.blackOverlayBottom,
+                            ]
+                          : const [
+                              _Palette.whiteOverlayTop,
+                              Colors.transparent,
+                              _Palette.whiteOverlayBottom,
+                            ],
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
         ],
       ),
     );
