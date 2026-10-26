@@ -252,6 +252,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                   Widget subtitle = Text(
                     context.tr(
                       'connectivity.quota_subtitle',
+                      args: [gate.offlineLevelsPlayed.toString()],
                       fallback:
                           'You\'ve played ${gate.offlineLevelsPlayed} levels offline. Reconnect or watch an ad to keep playing!',
                     ),
