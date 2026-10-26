@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:vowl/core/data/services/asset_quest_service.dart';
@@ -29,17 +30,28 @@ class VocabularyRemoteDataSourceImpl implements VocabularyRemoteDataSource {
     int level,
   ) async {
     try {
-      // 1. Try to load from Local Assets (Free & Fast)
-      final localData = await assetQuestService.getQuests(gameType, level);
-      if (localData.isNotEmpty) {
-        return localData.asMap().entries.map((entry) {
-          final json = entry.value;
-          final index = entry.key;
-          return VocabularyQuestModel.fromJson(
-            json,
-            '${gameType}_L${level}_$index',
+      // 1. Try to load from Local Assets (Free, Instant & Offline-First)
+      try {
+        final localData = await assetQuestService.getQuests(gameType, level);
+        if (localData.isNotEmpty) {
+          // Preload next batch in background for seamless progression
+          unawaited(assetQuestService.preloadBatch(gameType, level));
+
+          return localData.asMap().entries.map((entry) {
+            final json = entry.value;
+            final index = entry.key;
+            return VocabularyQuestModel.fromJson(
+              json,
+              '${gameType}_L${level}_$index',
+            );
+          }).toList();
+        }
+      } catch (assetError) {
+        if (kDebugMode) {
+          debugPrint(
+            'VocabularyRemoteDataSource: Local asset fetch failed: $assetError',
           );
-        }).toList();
+        }
       }
 
       // 2. Fallback to Firestore (Cloud)
