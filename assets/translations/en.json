@@ -251,7 +251,9 @@
     "rank_beginner": "BEGINNER",
     "rank_novice": "NOVICE",
     "rank_scholar": "SCHOLAR",
-    "rank_virtuoso": "VIRTUOSO"
+    "rank_virtuoso": "VIRTUOSO",
+    "mastered": "MASTERED",
+    "perfect": "PERFECT"
   },
   "category_map": {
     "cheer_boom": "Level {}! Boom! Perfect progress!",
@@ -360,7 +362,8 @@
     "retry_label": "Retry internet connection",
     "subtitle": "The signal has been interrupted. Please re-establish the connection to continue.",
     "title": "CONNECTION LOST",
-    "watch_ad_continue": "WATCH AD FOR +3 LEVELS"
+    "watch_ad_continue": "WATCH AD FOR +3 LEVELS",
+    "no_internet_title": "Connection Interrupted"
   },
   "daily_words": {
     "come_back_tomorrow": "Great job! You finished Lesson {}.",
@@ -424,7 +427,8 @@
     "unlock_hints_plural": "Unlock {0} Hints",
     "watch_ad_button": "Watch ad to earn {} coins",
     "ways_to_earn": "Ways to Earn",
-    "where_to_spend": "Where to Spend"
+    "where_to_spend": "Where to Spend",
+    "hints_unlimited": "Unlimited hints"
   },
   "error": {
     "return_to_base": "RETURN TO BASE",
@@ -960,7 +964,40 @@
       "title": "Writing"
     },
     "writingEmail_instruction": "Drag the parts to put the email in the right order.",
-    "xp_earned": "+{} XP"
+    "xp_earned": "+{} XP",
+    "audioTrueFalse_instruction": "Is this statement True or False? Listen carefully.",
+    "detailSpotlight_instruction": "Listen closely and tap the matching detail",
+    "dialect_note": "Dialect Note",
+    "emotionRecognition_instruction": "How is the speaker feeling?",
+    "emphasis_rule": "Emphasis Rule",
+    "failed_to_show_ad": "Failed to show ad. Please check your internet and try again.",
+    "fastSpeechDecoder_instruction": "Listen to the fast speech and choose the correct sentence.",
+    "flow_rule": "Flow Rule",
+    "kids_animals_drag": "Drag the animal to the binoculars or tap to choose!",
+    "kids_family_done": "Perfect match! Family photo placed!",
+    "kids_food_done": "Delicious! Order served correctly!",
+    "kids_fruits_done": "Fresh pick! Correct fruit chosen!",
+    "level_unlocked_success_1": "Final Level Unlocked! Go for the Grand Finale!",
+    "level_unlocked_success_2": "Final 2 Levels Unlocked!",
+    "listeningInference_instruction": "Listen carefully and deduce what is implied.",
+    "magic_lock_desc_1": "Use 1 Key or watch a video to unlock the final Level {0}!",
+    "magic_lock_desc_2": "Use 1 Key or watch a video to unlock the final 2 levels!",
+    "magic_lock_success_1": "Final Level Unlocked! Have fun!",
+    "magic_lock_success_2": "Final 2 Levels Unlocked!",
+    "meaning_shift": "Meaning Shift",
+    "modulation_pattern": "Modulation Pattern",
+    "pacing_rule": "Pacing Rule",
+    "phonetic_rule": "Phonetic Rule",
+    "pitch_rule": "Pitch Rule",
+    "semantic_sequence_logic_title": "Sequence Logic",
+    "semantic_shadowing_focus_title": "Shadowing Focus",
+    "semantic_spelling_pattern_title": "Spelling Rule",
+    "semantic_target_sound_title": "Target Accent",
+    "semantic_usage_context_title": "Usage Context",
+    "stress_rule": "Stress Rule",
+    "unlock_final_2_levels": "Unlock Final 2 Levels!",
+    "unlock_final_level": "Unlock Final Level!",
+    "vip_bonus_line": "VIP Member Perk: 3x Coin Bonus Applied!"
   },
   "general": {
     "all": "All",
@@ -982,7 +1019,9 @@
     "pro_tip_generic": "PRO TIP: Look for context clues! Eliminating unlikely options often reveals the truth.",
     "pro_tip_tts": "Pro tip: Look for context clues.",
     "use_hint_semantic": "Use hint ({0} remaining)",
-    "watch_ad_semantic": "Watch ad to earn a hint"
+    "watch_ad_semantic": "Watch ad to earn a hint",
+    "review_hint_semantic": "Review hint",
+    "use_hint_premium_semantic": "Use hint"
   },
   "hints": {
     "dim_title": "Light is Dim...",
@@ -1572,7 +1611,8 @@
       "swipe_instruction": "Swipe left to review, right if you got it",
       "tap_to_reveal": "Tap card to flip",
       "tip": "Tip: If you are unsure of a word, review it again to help lock it into memory.",
-      "title": "Vocabulary Flashcards"
+      "title": "Vocabulary Flashcards",
+      "completed": "Practice Complete!"
     },
     "food": {
       "actionText": "Let's Cook",
@@ -2905,7 +2945,8 @@
     "hearts_remaining": "{} of {} lives remaining",
     "hint_used": "Hint already used",
     "speaker_with_emotion": "{}, feeling {}",
-    "typing_indicator": "Typing..."
+    "typing_indicator": "Typing...",
+    "view_instructions": "View level instructions"
   },
   "router": {
     "error": {
@@ -2961,7 +3002,8 @@
     "terms_url": "https://vowl-official.github.io/vowl-legal/terms.html",
     "title": "Settings",
     "translation_language": "Translation Language",
-    "translation_language_subtitle": "Used for hints and explanations in games"
+    "translation_language_subtitle": "Used for hints and explanations in games",
+    "language_selection_subtitle": "App interface language"
   },
   "settings_dialogs": {
     "account_deleted_success": "Your account has been successfully deleted.",
@@ -3017,7 +3059,9 @@
     "sound_wave_transcriber": "SOUND WAVE TRANSCRIBER!",
     "verbal_vortex": "VERBAL VORTEX DRIVER!",
     "visual_masterpiece": "VISUAL MASTERPIECE!",
-    "your_response": "YOUR RESPONSE"
+    "your_response": "YOUR RESPONSE",
+    "pronunciation_focus_complete": "PHONETIC MASTER!",
+    "repeat_sentence_completed": "REPEAT SENTENCE COMPLETED!"
   },
   "store": {
     "ad_free_unlimited": "Ad-Free & Unlimited",
@@ -3110,7 +3154,10 @@
     "watch_ad_for_key": "Watch Ad for Key",
     "watch_ad_key": "Watch Ad for Key",
     "watch_ad_magic_stars": "Watch Ad for +2 Magic Stars",
-    "your_stars": "Your Stars"
+    "your_stars": "Your Stars",
+    "toll_need_key_desc_1": "You need 1 Golden Key to unlock the final Level {0}.",
+    "toll_need_key_desc_2": "You need 1 Golden Key to unlock the final 2 levels.",
+    "vault_stars": "Vault Stars"
   },
   "story": {
     "adventure_log": "ADVENTURE LOG",
@@ -4046,7 +4093,10 @@
     "type_sentence_desc": "Type a short sentence in your native language, and ML Kit will automatically detect it.",
     "type_to_translate": "Type something to translate...",
     "watch_ad_button": "Watch Ad ( Translations)",
-    "words_count": "{} words"
+    "words_count": "{} words",
+    "download_ready_msg": "{0} is downloaded and ready for offline use.",
+    "fast_offline_desc": "Fast offline translation • One-time setup per language",
+    "pack_deleted": "{0} pack removed."
   },
   "vocabulary": {
     "analyzing": "Analyzing objects...",

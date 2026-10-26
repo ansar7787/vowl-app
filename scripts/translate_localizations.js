@@ -54,10 +54,10 @@ const TARGET_LANGUAGES = {
   zh: 'zh-Hans',  // Chinese (Simplified)
 };
 
-// Mask & protect placeholders like {0}, {name}, {}, %s
+// Mask & protect placeholders like {0}, {name}, {}, %s, $variable
 function maskPlaceholders(text) {
   const placeholders = [];
-  const masked = text.replace(/\{[^{}]*\}|%[sdf@]/g, (match) => {
+  const masked = text.replace(/\{[^{}]*\}|%[sdf@]|(\$[a-zA-Z0-9_]+)/g, (match) => {
     placeholders.push(match);
     return `___PH_${placeholders.length - 1}___`;
   });
@@ -148,14 +148,15 @@ function flattenObject(obj, prefix = '') {
 }
 
 // Unflatten dotted key paths back to nested object matching original key ordering
-function unflattenObject(flat, templateObj) {
+function unflattenObject(flat, templateObj, prefix = '') {
   const result = {};
   for (const key of Object.keys(templateObj)) {
     const val = templateObj[key];
+    const fullKey = prefix ? `${prefix}.${key}` : key;
     if (typeof val === 'object' && val !== null && !Array.isArray(val)) {
-      result[key] = unflattenObject(flat, val);
-    } else if (flat.hasOwnProperty(key)) {
-      result[key] = flat[key];
+      result[key] = unflattenObject(flat, val, fullKey);
+    } else if (flat.hasOwnProperty(fullKey)) {
+      result[key] = flat[fullKey];
     } else {
       result[key] = val;
     }
