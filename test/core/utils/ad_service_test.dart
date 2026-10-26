@@ -547,11 +547,13 @@ void main() {
 
       await tester.tap(find.text('Show Rewarded'));
       await tester.pump();
+      await tester.pump(const Duration(milliseconds: 3600));
+      await tester.pumpAndSettle();
 
       expect(earnedReward, isNull);
       expect(dismissed, isTrue);
       expect(
-        find.text('Ad is not ready yet. Please wait a few seconds and try again.'),
+        find.text('Ad is still loading. Please try again in a few moments.'),
         findsOneWidget,
       );
     });
