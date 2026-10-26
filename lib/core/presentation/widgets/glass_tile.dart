@@ -170,13 +170,19 @@ class _GlassOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final defaultDarkSurface = isMidnight
+        ? const Color(0xFF0B0F19)
+        : const Color(0xFF1E293B);
+
+    final isWhiteBased = color != null &&
+        (color == Colors.white ||
+            (color!.r > 0.85 && color!.g > 0.85 && color!.b > 0.85));
+
     if (!hasBlur) {
       final reduceMotion = VowlMotion.shouldReduceMotion(context);
-      final baseColor =
-          color ??
-          (isMidnight
-              ? const Color(0xFF0B0F19)
-              : (isDark ? const Color(0xFF1E293B) : Colors.white));
+      final baseColor = isDark
+          ? ((color == null || isWhiteBased) ? defaultDarkSurface : color!)
+          : (color ?? Colors.white);
 
       final opacity = reduceMotion
           ? 1.0
@@ -205,7 +211,7 @@ class _GlassOverlay extends StatelessWidget {
     }
 
     if (isDark) {
-      final c = color;
+      final c = (color != null && !isWhiteBased) ? color! : null;
       return Container(
         decoration: BoxDecoration(
           gradient: usePremiumStyle

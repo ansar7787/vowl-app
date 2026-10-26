@@ -71,16 +71,16 @@ class LeaderboardRankTile extends StatelessWidget {
         showShadow: false,
         borderColor: isMe
             ? (isDark
-                  ? AppColors.blue500.withValues(alpha: 0.4)
+                  ? AppColors.blue500.withValues(alpha: 0.5)
                   : AppColors.indigo500.withValues(alpha: 0.3))
             : (isDark
-                  ? Colors.white.withValues(alpha: 0.1)
+                  ? AppColors.slate700
                   : AppColors.slate300.withValues(alpha: 0.6)),
         color: isDark
-            ? Colors.white.withValues(alpha: 0.06)
-            : Colors.white.withValues(
-                alpha: 0.75,
-              ), // More translucent for frosty effect
+            ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
+                ? AppColors.midnightSurface
+                : AppColors.slate800)
+            : Colors.white,
         borderWidth: isMe ? 1.5 : 1,
         child: Row(
           children: [
@@ -194,7 +194,7 @@ class LeaderboardRankTile extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 10.sp,
                             fontWeight: FontWeight.w600,
-                            color: isDark ? Colors.white38 : Colors.black54,
+                            color: isDark ? AppColors.slate400 : Colors.black54,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),

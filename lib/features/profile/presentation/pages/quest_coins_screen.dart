@@ -409,11 +409,13 @@ class VowlCoinsScreen extends StatelessWidget {
       padding: EdgeInsets.all(32.r),
       borderRadius: BorderRadius.circular(28.r),
       borderColor: isDark
-          ? Colors.white.withValues(alpha: 0.15)
+          ? AppColors.slate700
           : AppColors.slate300,
       color: isDark
-          ? Colors.white.withValues(alpha: 0.05)
-          : Colors.white.withValues(alpha: 0.95),
+          ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
+              ? AppColors.midnightSurface
+              : AppColors.slate800)
+          : Colors.white,
       borderWidth: 1.5,
       child: SizedBox(
         width: double.infinity,
@@ -1146,11 +1148,13 @@ class VowlCoinsScreen extends StatelessWidget {
               padding: EdgeInsets.all(16.r),
               borderRadius: BorderRadius.circular(24.r),
               borderColor: isDark
-                  ? Colors.white.withValues(alpha: 0.15)
+                  ? AppColors.slate700
                   : AppColors.slate300,
               color: isDark
-                  ? Colors.white.withValues(alpha: 0.05)
-                  : Colors.white.withValues(alpha: 0.95),
+                  ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
+                      ? AppColors.midnightSurface
+                      : AppColors.slate800)
+                  : Colors.white,
               borderWidth: 1,
               child: Row(
                 children: [

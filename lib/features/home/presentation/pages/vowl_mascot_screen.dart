@@ -382,11 +382,11 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                           ),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
-                                            fontSize: 10.sp,
+                                            fontSize: 11.sp,
                                             fontWeight: FontWeight.w700,
-                                            color: primaryColor.withValues(
-                                              alpha: 0.8,
-                                            ),
+                                            color: isDark
+                                                ? AppColors.slate300
+                                                : primaryColor,
                                             letterSpacing: 1.0,
                                           ),
                                           textAlign: TextAlign.center,
@@ -555,8 +555,10 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w900,
                                 color: isSelected
-                                    ? primaryColor
-                                    : Colors.grey.withValues(alpha: 0.6),
+                                    ? (isDark ? AppColors.indigo400 : primaryColor)
+                                    : (isDark
+                                          ? AppColors.slate400
+                                          : AppColors.slate500),
                                 letterSpacing: 1.5,
                               ),
                               child: Text(
@@ -605,6 +607,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
               fallback: 'SYNCHRONIZED ELITES',
             ),
             textColor,
+            isDark,
           ),
           SizedBox(height: 20.h),
           MediaQuery.withClampedTextScaling(
@@ -690,6 +693,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
               fallback: 'CYBERNETIC AUGMENTS',
             ),
             textColor,
+            isDark,
           ),
           SizedBox(height: 20.h),
           MediaQuery.withClampedTextScaling(
@@ -902,9 +906,9 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                         fontSize: 11.sp,
                         fontWeight: FontWeight.w900,
                         color: isSelected
-                            ? primaryColor
+                            ? (isDark ? Colors.white : primaryColor)
                             : (!isOwned && !canAfford)
-                            ? textColor.withValues(alpha: 0.4)
+                            ? (isDark ? AppColors.slate400 : AppColors.slate500)
                             : textColor,
                         letterSpacing: 0.5,
                       ),
@@ -934,17 +938,17 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                       ),
                       decoration: BoxDecoration(
                         color: isOwned
-                            ? primaryColor.withValues(alpha: 0.15)
+                            ? (isDark ? AppColors.indigo500.withValues(alpha: 0.2) : primaryColor.withValues(alpha: 0.15))
                             : (canAfford
-                                  ? primaryColor.withValues(alpha: 0.05)
-                                  : Colors.grey.withValues(alpha: 0.05)),
+                                  ? (isDark ? AppColors.slate800 : primaryColor.withValues(alpha: 0.05))
+                                  : (isDark ? AppColors.slate800 : Colors.grey.withValues(alpha: 0.05))),
                         borderRadius: BorderRadius.circular(10.r),
                         border: Border.all(
                           color: isOwned
-                              ? primaryColor.withValues(alpha: 0.3)
+                              ? (isDark ? AppColors.indigo400.withValues(alpha: 0.4) : primaryColor.withValues(alpha: 0.3))
                               : (canAfford
-                                    ? primaryColor.withValues(alpha: 0.15)
-                                    : Colors.grey.withValues(alpha: 0.15)),
+                                    ? (isDark ? AppColors.slate700 : primaryColor.withValues(alpha: 0.15))
+                                    : (isDark ? AppColors.slate700 : Colors.grey.withValues(alpha: 0.15))),
                         ),
                       ),
                       child: isOwned
@@ -956,7 +960,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 8.sp,
-                                color: primaryColor,
+                                color: isDark ? AppColors.indigo400 : primaryColor,
                                 fontWeight: FontWeight.w900,
                               ),
                               maxLines: 1,
@@ -970,7 +974,9 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                   canAfford
                                       ? Icons.attach_money_rounded
                                       : Icons.lock_rounded,
-                                  color: canAfford ? primaryColor : Colors.grey,
+                                  color: canAfford
+                                      ? (isDark ? AppColors.indigo400 : primaryColor)
+                                      : (isDark ? AppColors.slate400 : Colors.grey),
                                   size: 10.r,
                                 ),
                                 SizedBox(width: 2.w),
@@ -981,8 +987,8 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                     fontSize: 9.sp,
                                     fontWeight: FontWeight.w900,
                                     color: canAfford
-                                        ? primaryColor
-                                        : Colors.grey.withValues(alpha: 0.8),
+                                        ? (isDark ? AppColors.indigo400 : primaryColor)
+                                        : (isDark ? AppColors.slate300 : AppColors.slate600),
                                   ),
                                 ),
                               ],
@@ -1030,6 +1036,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
               fallback: 'ELITE NEURAL LINK',
             ),
             textColor,
+            isDark,
           ),
           SizedBox(height: 20.h),
           ExcludeSemantics(
@@ -1104,9 +1111,9 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 9.sp,
+                              fontSize: 10.sp,
                               fontWeight: FontWeight.w900,
-                              color: primaryColor,
+                              color: isDark ? AppColors.indigo400 : primaryColor,
                               letterSpacing: 2,
                             ),
                             maxLines: 1,
@@ -1139,7 +1146,9 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                     fontFamily: 'Outfit',
                                     fontSize: 11.sp,
                                     fontWeight: FontWeight.w700,
-                                    color: textColor.withValues(alpha: 0.6),
+                                    color: isDark
+                                        ? AppColors.slate300
+                                        : AppColors.slate600,
                                   ),
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
@@ -1243,8 +1252,8 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 color: (!isOwned && !canAfford)
-                    ? textColor.withValues(alpha: 0.4)
-                    : (isDark ? textColor.withValues(alpha: 0.9) : textColor),
+                    ? (isDark ? AppColors.slate400 : AppColors.slate500)
+                    : (isDark ? Colors.white : textColor),
                 letterSpacing: 0.5,
               ),
               maxLines: 1,
@@ -1294,8 +1303,10 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                         label: NumberFormat.decimalPattern().format(price),
                         color: canAfford
                             ? primaryColor.withValues(alpha: 0.1)
-                            : Colors.grey.withValues(alpha: 0.1),
-                        textColor: canAfford ? primaryColor : Colors.grey,
+                            : (isDark ? AppColors.slate800 : Colors.grey.withValues(alpha: 0.1)),
+                        textColor: canAfford
+                            ? (isDark ? AppColors.indigo400 : primaryColor)
+                            : (isDark ? AppColors.slate400 : Colors.grey),
                         isLoading: isProcessing,
                         onTap: isProcessing
                             ? null
@@ -1399,7 +1410,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
   // Section Header
   // ===========================================================================
 
-  Widget _buildSectionHeader(String label, Color textColor) {
+  Widget _buildSectionHeader(String label, Color textColor, [bool isDark = false]) {
     return Semantics(
       header: true,
       child: Row(
@@ -1415,13 +1426,13 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
               label,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 10.sp,
+                fontSize: 11.sp,
                 fontWeight: FontWeight.w900,
-                color: textColor.withValues(alpha: 0.7),
-                letterSpacing: 2.5,
+                color: isDark ? Colors.white : textColor,
+                letterSpacing: 2.0,
               ),
               maxLines: 1,
-              minFontSize: 6,
+              minFontSize: 8,
               overflow: TextOverflow.ellipsis,
             ),
           ),
