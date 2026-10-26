@@ -591,12 +591,12 @@ class _TrophyRoomView extends StatelessWidget {
       key: ValueKey('${filter.name}_locked_$badgeId'),
       borderRadius: BorderRadius.circular(20.r),
       padding: EdgeInsets.all(2.r),
-      borderColor: Colors.white.withValues(alpha: 0.05),
+      borderColor: isDark ? AppColors.slate700 : AppColors.slate300,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18.r),
           color: isDark
-              ? Colors.white.withValues(alpha: 0.02)
+              ? AppColors.slate800
               : Colors.black.withValues(alpha: 0.02),
         ),
         child: Stack(

@@ -87,8 +87,10 @@ class LeaderboardRankCard extends StatelessWidget {
               ? AppColors.blue500.withValues(alpha: 0.5)
               : AppColors.indigo500.withValues(alpha: 0.3),
           color: isDark
-              ? AppColors.slate900.withValues(alpha: 0.75)
-              : Colors.white.withValues(alpha: 0.95),
+              ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
+                  ? AppColors.midnightSurface
+                  : AppColors.slate800)
+              : Colors.white,
           borderWidth: 1.5,
           child: Column(
             mainAxisSize: MainAxisSize.min,
