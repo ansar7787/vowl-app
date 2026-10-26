@@ -10,6 +10,8 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/widgets/verify_email_widgets.dart';
+import 'package:vowl/core/network/network_info.dart';
+import 'package:vowl/injection_container.dart' as di;
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class _LocalPalette {
@@ -168,6 +170,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
         // Other messages (errors) from the verification flow
         if (state.message != null &&
             state.message != 'auth.email_verification_sent') {
+          _isLoggingOut.value = false;
           _showSnackBar(
             context.tr(AuthErrorHandler.getKey(state.message!)),
             CustomSnackBarType.error,
@@ -232,7 +235,25 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                                 ),
                                 SizedBox(height: 16.h),
                                 VerifyLogoutButton(
-                                  onPressed: () {
+                                  onPressed: () async {
+                                    final networkInfo =
+                                        di.sl.isRegistered<NetworkInfo>()
+                                            ? di.sl<NetworkInfo>()
+                                            : null;
+                                    if (networkInfo != null &&
+                                        !await networkInfo.hasRealConnection) {
+                                      if (mounted) {
+                                        _showSnackBar(
+                                          context.tr(
+                                            'auth.error.network_unreachable',
+                                            fallback:
+                                                'No internet connection. Please check your network and try again.',
+                                          ),
+                                          CustomSnackBarType.error,
+                                        );
+                                      }
+                                      return;
+                                    }
                                     _isLoggingOut.value = true;
                                     _verificationTimer?.cancel();
                                     _resendCooldownTimer?.cancel();
