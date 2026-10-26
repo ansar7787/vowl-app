@@ -236,6 +236,12 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                                 SizedBox(height: 16.h),
                                 VerifyLogoutButton(
                                   onPressed: () async {
+                                    final authBloc = context.read<AuthBloc>();
+                                    final networkMsg = context.tr(
+                                      'auth.error.network_unreachable',
+                                      fallback:
+                                          'No internet connection. Please check your network and try again.',
+                                    );
                                     final networkInfo =
                                         di.sl.isRegistered<NetworkInfo>()
                                             ? di.sl<NetworkInfo>()
@@ -244,20 +250,17 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                                         !await networkInfo.hasRealConnection) {
                                       if (mounted) {
                                         _showSnackBar(
-                                          context.tr(
-                                            'auth.error.network_unreachable',
-                                            fallback:
-                                                'No internet connection. Please check your network and try again.',
-                                          ),
+                                          networkMsg,
                                           CustomSnackBarType.error,
                                         );
                                       }
                                       return;
                                     }
+                                    if (!mounted) return;
                                     _isLoggingOut.value = true;
                                     _verificationTimer?.cancel();
                                     _resendCooldownTimer?.cancel();
-                                    context.read<AuthBloc>().add(
+                                    authBloc.add(
                                       const AuthLogoutRequested(),
                                     );
                                   },
