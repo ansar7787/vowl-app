@@ -621,7 +621,14 @@ class _KidsLevelMapState extends State<KidsLevelMap>
               child: Center(
                 child: Text(
                   KidsAssets.stickerMap[widget.gameType]?[0] ?? '⭐',
-                  style: TextStyle(fontSize: 32.sp),
+                  style: TextStyle(
+                    fontSize: 32.sp,
+                    fontFamilyFallback: const [
+                      'Noto Color Emoji',
+                      'Apple Color Emoji',
+                      'Segoe UI Emoji',
+                    ],
+                  ),
                 ),
               ),
             ).animate().scale(delay: 200.ms, curve: Curves.elasticOut),

@@ -135,6 +135,11 @@ class StoryDialogueBox extends StatelessWidget {
                 beat.title,
                 style: TextStyle(
                   fontFamily: 'Outfit',
+                  fontFamilyFallback: const [
+                    'Noto Color Emoji',
+                    'Apple Color Emoji',
+                    'Segoe UI Emoji',
+                  ],
                   fontSize: 13.sp,
                   fontWeight: FontWeight.w900,
                   color: beat.themeColor,
