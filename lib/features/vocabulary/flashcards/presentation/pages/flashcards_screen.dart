@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vowl/core/presentation/widgets/game_error_view.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -108,14 +109,22 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
 
         // Error state — surfaces the message instead of hiding it in shimmer
         if (state is VocabularyError) {
-          return _ErrorScaffold(
-            message: state.message,
-            primaryColor: _theme.primaryColor,
-            onRetry: () => context.read<VocabularyBloc>().add(
-              FetchVocabularyQuests(
-                gameType: widget.gameType,
-                level: widget.level,
+          return Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              leading: const BackButton(),
+            ),
+            body: GameErrorView(
+              message: state.message,
+              primaryColor: _theme.primaryColor,
+              onRetry: () => context.read<VocabularyBloc>().add(
+                FetchVocabularyQuests(
+                  gameType: widget.gameType,
+                  level: widget.level,
+                ),
               ),
+              onExit: () => Navigator.of(context).maybePop(),
             ),
           );
         }
@@ -194,64 +203,5 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
       onVocabularyStateChanged(context, state);
       _controller.completeGame();
     }
-  }
-}
-
-// ─── Error scaffold ───────────────────────────────────────────────────────────
-
-class _ErrorScaffold extends StatelessWidget {
-  final String message;
-  final Color primaryColor;
-  final VoidCallback onRetry;
-
-  const _ErrorScaffold({
-    required this.message,
-    required this.primaryColor,
-    required this.onRetry,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: const BackButton(),
-      ),
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.all(32.r),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(
-                Icons.error_outline_rounded,
-                color: primaryColor,
-                size: 64.r,
-              ),
-              SizedBox(height: 16.h),
-              Text(
-                message,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  color: Colors.white70,
-                ),
-              ),
-              SizedBox(height: 24.h),
-              TextButton(
-                onPressed: onRetry,
-                child: Text(
-                  context
-                      .tr('games.try_again', fallback: 'Try Again')
-                      .toUpperCase(),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
   }
 }
