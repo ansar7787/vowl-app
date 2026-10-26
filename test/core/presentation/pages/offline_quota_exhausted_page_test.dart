@@ -158,10 +158,11 @@ void main() {
 
       when(() => mockAdService.isRewardedAdLoaded).thenReturn(true);
       when(() => mockAdService.showRewardedAd(
+        context: any(named: 'context'),
         isPremium: any(named: 'isPremium'),
         onUserEarnedReward: any(named: 'onUserEarnedReward'),
         onDismissed: any(named: 'onDismissed'),
-      )).thenAnswer((invocation) {
+      )).thenAnswer((invocation) async {
         final onReward = invocation.namedArguments[#onUserEarnedReward] as void Function(RewardItem);
         final onDismiss = invocation.namedArguments[#onDismissed] as VoidCallback?;
         onReward(RewardItem(3, 'offline_plays'));
@@ -181,6 +182,7 @@ void main() {
       await tester.pump();
 
       verify(() => mockAdService.showRewardedAd(
+        context: any(named: 'context'),
         isPremium: false,
         onUserEarnedReward: any(named: 'onUserEarnedReward'),
         onDismissed: any(named: 'onDismissed'),

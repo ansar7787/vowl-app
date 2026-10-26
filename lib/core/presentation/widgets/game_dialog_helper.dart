@@ -198,20 +198,6 @@ class GameDialogHelper {
             onAdAction: (enableDoubleUp && !isPremium)
                 ? () {
                     final adService = di.sl<AdService>();
-                    if (!adService.isRewardedAdLoaded) {
-                      showPremiumSnackBar(
-                        context,
-                        context.tr(
-                          'games.ad_not_ready',
-                          fallback:
-                              'Ad not ready yet. Please try again in a few seconds!',
-                        ),
-                        icon: Icons.hourglass_empty_rounded,
-                        color: Colors.orange,
-                      );
-                      return;
-                    }
-
                     Navigator.of(dialogCtx).pop();
                     final isPrem =
                         context.read<AuthBloc>().state.user?.isPremium ?? false;
@@ -349,21 +335,6 @@ class GameDialogHelper {
                   }
 
                   final adService = di.sl<AdService>();
-                  if (!adService.isRewardedAdLoaded) {
-                    isActionTaken = false; // Reset so they can try again
-                    showPremiumSnackBar(
-                      context,
-                      context.tr(
-                        'games.ad_not_ready',
-                        fallback:
-                            'Ad not ready yet. Please try again in a few seconds!',
-                      ),
-                      icon: Icons.hourglass_empty_rounded,
-                      color: Colors.orange,
-                    );
-                    return;
-                  }
-
                   bool rewardEarned = false;
                   adService.showRewardedAd(
                     context: context,
@@ -592,20 +563,6 @@ class GameDialogHelper {
           final isPremium =
               context.read<AuthBloc>().state.user?.isPremium ?? false;
           final adService = di.sl<AdService>();
-
-          if (!isPremium && !adService.isRewardedAdLoaded) {
-            showPremiumSnackBar(
-              context,
-              context.tr(
-                'games.ad_not_ready',
-                fallback:
-                    'Ad not ready yet. Please try again in a few seconds!',
-              ),
-              icon: Icons.hourglass_empty_rounded,
-              color: Colors.orange,
-            );
-            return;
-          }
 
           Navigator.of(dialogCtx).pop();
           bool rewardEarned = false;

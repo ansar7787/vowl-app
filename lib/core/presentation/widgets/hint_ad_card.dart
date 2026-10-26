@@ -69,6 +69,7 @@ class _HintAdCardState extends State<HintAdCard> {
           rewardEarned = true;
         },
         onDismissed: () async {
+          if (mounted) _isLoading.value = false;
           if (rewardEarned) {
             await RewardLimitService.incrementClaimCount('hints');
             if (mounted) await _loadLimits();
@@ -90,7 +91,7 @@ class _HintAdCardState extends State<HintAdCard> {
           }
         },
       );
-    } finally {
+    } catch (_) {
       if (mounted) _isLoading.value = false;
     }
   }

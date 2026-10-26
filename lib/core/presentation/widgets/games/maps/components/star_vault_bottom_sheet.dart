@@ -253,20 +253,6 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
     _updateState();
 
     final adService = di.sl<AdService>();
-    if (!adService.isRewardedAdLoaded) {
-      CustomSnackBar.show(
-        context: context,
-        message: context.tr(
-          'store.ad_not_ready_wait',
-          fallback: 'Ad not ready yet. Please wait a moment.',
-        ),
-        type: CustomSnackBarType.warning,
-      );
-      _isProcessing = false;
-      _updateState();
-      return;
-    }
-
     final user = context.read<AuthBloc>().state.user;
     final isPremium = user?.isPremium ?? false;
 

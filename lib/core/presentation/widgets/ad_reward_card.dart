@@ -83,6 +83,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
           rewardEarned = true;
         },
         onDismissed: () async {
+          if (mounted) _isLoading.value = false;
           if (!rewardEarned) return;
 
           await RewardLimitService.incrementClaimCount('coins');
@@ -109,8 +110,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
           }
         },
       );
-    } finally {
-      // Always release the loading gate, even if the ad errors out.
+    } catch (_) {
       if (mounted) _isLoading.value = false;
     }
   }

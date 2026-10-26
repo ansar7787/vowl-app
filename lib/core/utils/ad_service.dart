@@ -8,6 +8,12 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/remote_config_service.dart';
+import 'package:vowl/core/network/network_info.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'dart:async';
 
 /// Manages interstitial and rewarded ad lifecycles for Vowl.
@@ -381,9 +387,32 @@ class AdService {
   RewardedAd? _rewardedAd;
   int _numRewardedLoadAttempts = 0;
   bool _isRewardedLoadInFlight = false;
+  final List<void Function(bool success)> _adLoadListeners = [];
 
   /// Whether a rewarded ad is ready to show.
   bool get isRewardedAdLoaded => _rewardedAd != null;
+
+  /// Actively waits up to [timeout] for a rewarded ad to load if one is not already ready.
+  Future<bool> waitForRewardedAd({
+    Duration timeout = const Duration(milliseconds: 3500),
+  }) async {
+    if (_rewardedAd != null) return true;
+    loadRewardedAd();
+    final completer = Completer<bool>();
+    void listener(bool success) {
+      if (!completer.isCompleted) completer.complete(success);
+    }
+
+    _adLoadListeners.add(listener);
+    try {
+      return await completer.future.timeout(
+        timeout,
+        onTimeout: () => false,
+      );
+    } finally {
+      _adLoadListeners.remove(listener);
+    }
+  }
 
   void loadRewardedAd() {
     // FIX: Guard against concurrent loads — same pattern as
@@ -413,6 +442,11 @@ class AdService {
           if (kDebugMode) debugPrint('AdService: Rewarded ad loaded.');
           _rewardedAd = ad;
           _numRewardedLoadAttempts = 0;
+          final listeners = List<void Function(bool)>.from(_adLoadListeners);
+          _adLoadListeners.clear();
+          for (final l in listeners) {
+            l(true);
+          }
         },
         onAdFailedToLoad: (error) {
           _isRewardedLoadInFlight = false;
@@ -423,6 +457,11 @@ class AdService {
           }
           _numRewardedLoadAttempts++;
           _rewardedAd = null;
+          final listeners = List<void Function(bool)>.from(_adLoadListeners);
+          _adLoadListeners.clear();
+          for (final l in listeners) {
+            l(false);
+          }
           if (!_isDisposed &&
               _numRewardedLoadAttempts <= _maxFailedLoadAttempts) {
             final delay = Duration(seconds: 2 * _numRewardedLoadAttempts);
@@ -440,7 +479,7 @@ class AdService {
     );
   }
 
-  void showRewardedAd({
+  Future<void> showRewardedAd({
     BuildContext? context,
     required bool isPremium,
     required Function(RewardItem) onUserEarnedReward,
@@ -449,7 +488,7 @@ class AdService {
     /// When true, forces child-safe ad request parameters.
     /// All Kids Zone call sites should pass `childSafe: true`.
     bool childSafe = false,
-  }) {
+  }) async {
     if (isPremium) {
       onUserEarnedReward(RewardItem(1, 'Premium Reward'));
       onDismissed();
@@ -460,9 +499,11 @@ class AdService {
     // with personalized params (adult user in Kids Zone), dispose it and
     // reload with a forced child-safe request. This ensures COPPA compliance
     // regardless of the age gate result.
-    if (childSafe && AgeGateService.isAdultCached && _rewardedAd != null) {
-      _rewardedAd!.dispose();
-      _rewardedAd = null;
+    if (childSafe && (_rewardedAd == null || AgeGateService.isAdultCached)) {
+      if (_rewardedAd != null) {
+        _rewardedAd!.dispose();
+        _rewardedAd = null;
+      }
       _loadAndShowChildSafeRewarded(
         context: context,
         onUserEarnedReward: onUserEarnedReward,
@@ -472,19 +513,76 @@ class AdService {
     }
 
     if (_rewardedAd == null) {
-      if (kDebugMode) {
-        debugPrint('AdService: Rewarded ad not loaded yet.');
-      }
+      loadRewardedAd();
+
       if (context != null && context.mounted) {
-        CustomSnackBar.show(
+        final networkInfo = di.sl.isRegistered<NetworkInfo>()
+            ? di.sl<NetworkInfo>()
+            : null;
+        final hasRealConnection = networkInfo != null
+            ? await networkInfo.hasRealConnection
+            : true;
+
+        if (!hasRealConnection) {
+          if (context.mounted) {
+            CustomSnackBar.show(
+              context: context,
+              message: context.tr(
+                'connectivity.no_internet_for_ads',
+                fallback:
+                    'No internet connection. Please check your network to watch ads.',
+              ),
+              type: CustomSnackBarType.warning,
+            );
+          }
+          onDismissed();
+          return;
+        }
+
+        bool isCancelled = false;
+        showDialog<void>(
           context: context,
-          message:
-              'Ad is not ready yet. Please wait a few seconds and try again.',
-          type: CustomSnackBarType.error,
+          barrierDismissible: false,
+          builder: (dialogCtx) => _AdLoadingDialog(
+            onCancel: () {
+              isCancelled = true;
+              Navigator.of(dialogCtx).pop();
+            },
+          ),
         );
+
+        final isLoaded = await waitForRewardedAd(
+          timeout: const Duration(milliseconds: 3500),
+        );
+
+        if (context.mounted && !isCancelled) {
+          Navigator.of(context, rootNavigator: true).pop();
+        }
+
+        if (isCancelled) {
+          onDismissed();
+          return;
+        }
+
+        if (!isLoaded || _rewardedAd == null) {
+          if (context.mounted) {
+            CustomSnackBar.show(
+              context: context,
+              message: context.tr(
+                'games.ad_loading_retry',
+                fallback:
+                    'Ad is still loading. Please try again in a few moments.',
+              ),
+              type: CustomSnackBarType.warning,
+            );
+          }
+          onDismissed();
+          return;
+        }
+      } else {
+        onDismissed();
+        return;
       }
-      onDismissed();
-      return;
     }
 
     _rewardedAd!.fullScreenContentCallback = FullScreenContentCallback(
@@ -500,9 +598,12 @@ class AdService {
         if (context != null && context.mounted) {
           CustomSnackBar.show(
             context: context,
-            message:
-                'Failed to show ad. Please check your internet and try again.',
-            type: CustomSnackBarType.error,
+            message: context.tr(
+              'games.failed_to_show_ad',
+              fallback:
+                  'Failed to show ad. Please check your internet and try again.',
+            ),
+            type: CustomSnackBarType.warning,
           );
         }
         ad.dispose();
@@ -555,19 +656,40 @@ class AdService {
 
     Timer? timeoutTimer;
     bool hasCompleted = false;
+    bool isCancelled = false;
 
-    timeoutTimer = Timer(const Duration(seconds: 10), () {
+    if (context != null && context.mounted) {
+      showDialog<void>(
+        context: context,
+        barrierDismissible: false,
+        builder: (dialogCtx) => _AdLoadingDialog(
+          onCancel: () {
+            isCancelled = true;
+            hasCompleted = true;
+            timeoutTimer?.cancel();
+            Navigator.of(dialogCtx).pop();
+            onDismissed();
+          },
+        ),
+      );
+    }
+
+    timeoutTimer = Timer(const Duration(seconds: 5), () {
       if (hasCompleted) return;
       hasCompleted = true;
       if (kDebugMode) {
         debugPrint('AdService: Child-safe rewarded ad load timed out.');
       }
-      if (context != null && context.mounted) {
+      if (context != null && context.mounted && !isCancelled) {
+        Navigator.of(context, rootNavigator: true).pop();
         CustomSnackBar.show(
           context: context,
-          message:
-              'Ad is not ready yet. Please wait a few seconds and try again.',
-          type: CustomSnackBarType.error,
+          message: context.tr(
+            'games.ad_loading_retry',
+            fallback:
+                'Ad is still loading. Please try again in a few moments.',
+          ),
+          type: CustomSnackBarType.warning,
         );
       }
       onDismissed();
@@ -585,7 +707,11 @@ class AdService {
           hasCompleted = true;
           timeoutTimer?.cancel();
 
-          if (_isDisposed) {
+          if (context != null && context.mounted && !isCancelled) {
+            Navigator.of(context, rootNavigator: true).pop();
+          }
+
+          if (isCancelled || _isDisposed) {
             ad.dispose();
             onDismissed();
             return;
@@ -619,22 +745,156 @@ class AdService {
           hasCompleted = true;
           timeoutTimer?.cancel();
 
+          if (context != null && context.mounted && !isCancelled) {
+            Navigator.of(context, rootNavigator: true).pop();
+          }
+
           if (kDebugMode) {
             debugPrint(
               'AdService: Child-safe rewarded load failed (${error.code}): ${error.message}',
             );
           }
-          if (context != null && context.mounted) {
+          if (context != null && context.mounted && !isCancelled) {
             CustomSnackBar.show(
               context: context,
-              message:
-                  'Ad is not ready yet. Please wait a few seconds and try again.',
-              type: CustomSnackBarType.error,
+              message: context.tr(
+                'games.ad_loading_retry',
+                fallback:
+                    'Ad is still loading. Please try again in a few moments.',
+              ),
+              type: CustomSnackBarType.warning,
             );
           }
           loadRewardedAd(); // Reload normal ad for next time
           onDismissed();
         },
+      ),
+    );
+  }
+}
+
+/// Modern 2026 gaming ad preparation dialog shown while an ad prepares or buffers.
+class _AdLoadingDialog extends StatelessWidget {
+  final VoidCallback onCancel;
+
+  const _AdLoadingDialog({required this.onCancel});
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop) onCancel();
+      },
+      child: Center(
+        child: Material(
+          type: MaterialType.transparency,
+          child: Container(
+            width: 280.w,
+            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 28.h),
+            decoration: BoxDecoration(
+              color: isDark
+                  ? const Color(0xFF1E293B).withValues(alpha: 0.95)
+                  : Colors.white.withValues(alpha: 0.95),
+              borderRadius: BorderRadius.circular(28.r),
+              border: Border.all(
+                color: isDark ? Colors.white12 : Colors.black12,
+                width: 1.5.r,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: AppColors.indigo500.withValues(alpha: 0.25),
+                  blurRadius: 28,
+                  spreadRadius: 4,
+                  offset: const Offset(0, 8),
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 56.r,
+                  height: 56.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: const LinearGradient(
+                      colors: [AppColors.indigo500, AppColors.violet500],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.indigo500.withValues(alpha: 0.35),
+                        blurRadius: 16,
+                        spreadRadius: 2,
+                      ),
+                    ],
+                  ),
+                  child: const Center(
+                    child: VowlButtonSpinner(
+                      color: Colors.white,
+                      size: 26,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20.h),
+                Text(
+                  context.tr('store.loading_ad', fallback: 'Loading Ad...'),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w800,
+                    color: isDark ? Colors.white : AppColors.slate900,
+                  ),
+                ),
+                SizedBox(height: 6.h),
+                Text(
+                  context.tr(
+                    'games.preparing_reward',
+                    fallback: 'Preparing your reward...',
+                  ),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w500,
+                    color: isDark ? Colors.white60 : AppColors.slate500,
+                  ),
+                ),
+                SizedBox(height: 24.h),
+                ScaleButton(
+                  onTap: onCancel,
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(vertical: 12.h),
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : Colors.black.withValues(alpha: 0.06),
+                      borderRadius: BorderRadius.circular(16.r),
+                    ),
+                    child: Center(
+                      child: Text(
+                        context.tr('common.cancel', fallback: 'CANCEL'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w800,
+                          letterSpacing: 0.8,
+                          color: isDark ? Colors.white70 : AppColors.slate600,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
