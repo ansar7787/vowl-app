@@ -539,6 +539,11 @@ class AdService {
           return;
         }
 
+        if (!context.mounted) {
+          onDismissed();
+          return;
+        }
+
         bool isCancelled = false;
         showDialog<void>(
           context: context,
