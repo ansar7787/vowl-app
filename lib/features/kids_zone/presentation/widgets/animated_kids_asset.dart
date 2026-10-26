@@ -62,7 +62,17 @@ class AnimatedKidsAsset extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget child;
     if (emoji != null) {
-      child = Text(emoji!, style: TextStyle(fontSize: size));
+      child = Text(
+        emoji!,
+        style: TextStyle(
+          fontSize: size,
+          fontFamilyFallback: const [
+            'Noto Color Emoji',
+            'Apple Color Emoji',
+            'Segoe UI Emoji',
+          ],
+        ),
+      );
     } else {
       child = Icon(icon!, size: size, color: color);
     }

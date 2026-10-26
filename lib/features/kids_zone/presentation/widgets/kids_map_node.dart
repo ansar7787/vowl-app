@@ -247,6 +247,11 @@ class _KidsMapNodeState extends State<KidsMapNode> {
             text,
             style: TextStyle(
               fontFamily: 'Outfit',
+              fontFamilyFallback: const [
+                'Noto Color Emoji',
+                'Apple Color Emoji',
+                'Segoe UI Emoji',
+              ],
               fontSize: 14.sp,
               fontWeight: FontWeight.w900,
               color: AppColors.slate800,

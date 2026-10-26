@@ -64,13 +64,24 @@ class AppTheme {
   /// Dark border colour (Slate 700).
   static const Color borderDark = AppColors.slate700;
 
+  /// Primary font family used across the application.
+  static const String primaryFont = 'Outfit';
+
+  /// Standard font fallbacks for emoji and cross-platform symbol rendering.
+  static const List<String> emojiFontFallbacks = [
+    'Noto Color Emoji',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+  ];
+
   // ---------------------------------------------------------------------------
   // Light Theme
   // ---------------------------------------------------------------------------
 
   static final ThemeData lightTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: 'Outfit',
+    fontFamily: primaryFont,
+    fontFamilyFallback: emojiFontFallbacks,
     extensions: const <ThemeExtension>[AppColorTokens.light],
     colorScheme: ColorScheme.fromSeed(
       seedColor: primaryIndigo,
@@ -85,7 +96,8 @@ class AppTheme {
     cardColor: cardLight,
     dividerColor: borderLight,
     textTheme: const TextTheme().apply(
-      fontFamily: 'Outfit',
+      fontFamily: primaryFont,
+      fontFamilyFallback: emojiFontFallbacks,
       bodyColor: AppColors.slate900,
       displayColor: primaryIndigo,
     ),
@@ -150,7 +162,8 @@ class AppTheme {
   static final ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
-    fontFamily: 'Outfit',
+    fontFamily: primaryFont,
+    fontFamilyFallback: emojiFontFallbacks,
     extensions: const <ThemeExtension>[AppColorTokens.dark],
     colorScheme: ColorScheme.fromSeed(
       seedColor: primaryIndigo,
@@ -230,7 +243,8 @@ class AppTheme {
   static final ThemeData midnightTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
-    fontFamily: 'Outfit',
+    fontFamily: primaryFont,
+    fontFamilyFallback: emojiFontFallbacks,
     extensions: const <ThemeExtension>[AppColorTokens.midnight],
     colorScheme: ColorScheme.fromSeed(
       seedColor: primaryIndigo,
