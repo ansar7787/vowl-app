@@ -32,8 +32,8 @@ class AppTheme {
   /// Dark-surface indigo tint (Indigo 950).
   static const Color primaryIndigoTintDark = AppColors.indigo950;
 
-  /// Lighter indigo for dark-surface primary text/icons (Violet 500).
-  static const Color primaryIndigoDark = AppColors.violet500;
+  /// Lighter indigo for dark-surface primary text/icons (Indigo 400).
+  static const Color primaryIndigoDark = AppColors.indigo400;
 
   /// Near-black card base for midnight mode — high contrast surface.
   static const Color midnightCardBase = AppColors.midnightSurface;
@@ -218,7 +218,7 @@ class AppTheme {
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: cardDark.withValues(alpha: 0.5),
+      fillColor: cardDark,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
         borderSide: const BorderSide(color: borderDark),
@@ -302,7 +302,7 @@ class AppTheme {
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: midnightCardBase.withValues(alpha: 0.5),
+      fillColor: midnightCardBase,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
         borderSide: const BorderSide(color: cardDark),

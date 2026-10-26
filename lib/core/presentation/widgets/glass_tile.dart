@@ -73,13 +73,13 @@ class GlassTile extends StatelessWidget {
           color:
               borderColor ??
               (isDark
-                  ? Colors.white.withValues(
-                      alpha: borderOpacity ?? (isMidnight ? 0.08 : 0.15),
-                    )
+                  ? (isMidnight
+                      ? const Color(0x24FFFFFF)
+                      : const Color(0xFF334155)) // Crisp Slate 700 standard border
                   : const Color(
                       0xFF0F172A,
                     ).withValues(alpha: borderOpacity ?? 0.08)),
-          width: borderWidth ?? 1.4,
+          width: borderWidth ?? (isDark ? 1.0 : 1.4),
         );
 
     return Container(
@@ -92,17 +92,15 @@ class GlassTile extends StatelessWidget {
             ? [
                 BoxShadow(
                   color: Colors.black.withValues(
-                    alpha: isDark ? (isMidnight ? 0.8 : 0.4) : 0.06,
+                    alpha: isDark ? (isMidnight ? 0.7 : 0.25) : 0.06,
                   ),
-                  blurRadius: usePremiumStyle ? 25 : 15,
-                  spreadRadius: usePremiumStyle ? -3 : 0,
-                  offset: const Offset(0, 12),
+                  blurRadius: usePremiumStyle ? 20 : 12,
+                  spreadRadius: usePremiumStyle ? -2 : 0,
+                  offset: const Offset(0, 8),
                 ),
-                if (usePremiumStyle)
+                if (usePremiumStyle && !isDark)
                   BoxShadow(
-                    color: Colors.white.withValues(
-                      alpha: isDark ? (isMidnight ? 0.03 : 0.05) : 0.3,
-                    ),
+                    color: Colors.white.withValues(alpha: 0.3),
                     blurRadius: 8,
                     spreadRadius: -2,
                     offset: const Offset(-4, -4),
@@ -177,32 +175,22 @@ class _GlassOverlay extends StatelessWidget {
       final baseColor =
           color ??
           (isMidnight
-              ? Theme.of(context).scaffoldBackgroundColor
+              ? const Color(0xFF0B0F19)
               : (isDark ? const Color(0xFF1E293B) : Colors.white));
 
-      // 75% Perf / 25% Visual sweet spot:
-      // Lightweight specular tinted-glass gradient (zero BackdropFilter blur cost)
-      // allowing background aurora colors to softly glow through with zero GPU jank.
       final opacity = reduceMotion
           ? 1.0
-          : (glassOpacity ?? (isDark ? 0.82 : 0.88));
+          : (glassOpacity ?? (isDark ? (isMidnight ? 0.98 : 0.94) : 0.88));
 
       return Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: isDark
-                ? [
-                    baseColor.withValues(
-                      alpha: (opacity * 1.05).clamp(0.0, 1.0),
-                    ),
-                    baseColor.withValues(alpha: opacity),
-                    baseColor.withValues(
-                      alpha: (opacity * 0.92).clamp(0.0, 1.0),
-                    ),
-                  ]
-                : [
+          color: isDark ? baseColor.withValues(alpha: opacity) : null,
+          gradient: isDark
+              ? null
+              : LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
                     baseColor.withValues(
                       alpha: (opacity * 1.02).clamp(0.0, 1.0),
                     ),
@@ -211,7 +199,56 @@ class _GlassOverlay extends StatelessWidget {
                       alpha: (opacity * 0.95).clamp(0.0, 1.0),
                     ),
                   ],
-          ),
+                ),
+        ),
+      );
+    }
+
+    if (isDark) {
+      final c = color;
+      return Container(
+        decoration: BoxDecoration(
+          gradient: usePremiumStyle
+              ? LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: c != null
+                      ? [
+                          c.withValues(alpha: 0.35),
+                          c.withValues(alpha: 0.20),
+                          c.withValues(alpha: 0.10),
+                        ]
+                      : (isMidnight
+                          ? const [
+                              Color(0xFF141926),
+                              Color(0xFF0B0F19),
+                              Color(0xFF070A11),
+                            ]
+                          : const [
+                              Color(0xFF243044),
+                              Color(0xFF1E293B),
+                              Color(0xFF16202E),
+                            ]),
+                  stops: const [0.0, 0.5, 1.0],
+                )
+              : LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: c != null
+                      ? [
+                          c.withValues(alpha: 0.25),
+                          c.withValues(alpha: 0.12),
+                        ]
+                      : (isMidnight
+                          ? const [
+                              Color(0xFF101622),
+                              Color(0xFF0B0F19),
+                            ]
+                          : const [
+                              Color(0xFF222D3E),
+                              Color(0xFF1E293B),
+                            ]),
+                ),
         ),
       );
     }
@@ -222,37 +259,20 @@ class _GlassOverlay extends StatelessWidget {
             ? LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors: isDark
-                    ? [
-                        (color ?? (isMidnight ? Colors.black : Colors.white))
-                            .withValues(alpha: isMidnight ? 0.15 : 0.20),
-                        Colors.white.withValues(
-                          alpha: isMidnight ? 0.05 : 0.08,
-                        ),
-                        (isMidnight ? Colors.white : Colors.black).withValues(
-                          alpha: 0.05,
-                        ),
-                      ]
-                    : [
-                        (color ?? Colors.white).withValues(alpha: 0.80),
-                        Colors.white.withValues(alpha: 0.40),
-                        Colors.white.withValues(alpha: 0.20),
-                      ],
+                colors: [
+                  (color ?? Colors.white).withValues(alpha: 0.80),
+                  Colors.white.withValues(alpha: 0.40),
+                  Colors.white.withValues(alpha: 0.20),
+                ],
                 stops: const [0.0, 0.5, 1.0],
               )
             : LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors: isDark
-                    ? [
-                        (color ?? (isMidnight ? Colors.black : Colors.white))
-                            .withValues(alpha: isMidnight ? 0.10 : 0.12),
-                        Colors.white.withValues(alpha: 0.02),
-                      ]
-                    : [
-                        (color ?? Colors.white).withValues(alpha: 0.60),
-                        Colors.white.withValues(alpha: 0.20),
-                      ],
+                colors: [
+                  (color ?? Colors.white).withValues(alpha: 0.60),
+                  Colors.white.withValues(alpha: 0.20),
+                ],
               ),
       ),
     );
