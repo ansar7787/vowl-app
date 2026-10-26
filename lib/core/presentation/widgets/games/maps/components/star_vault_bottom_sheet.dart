@@ -340,14 +340,6 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
         );
       },
     );
-
-    // Safety timeout in case ad fails to load without dismissing
-    Future.delayed(const Duration(seconds: 3), () {
-      if (mounted && _isProcessing) {
-        _isProcessing = false;
-        _updateState();
-      }
-    });
   }
 
   @override
@@ -372,6 +364,9 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
         final magicStars = starsData.magicStars;
         final claimedTier = categoryStars['claimed_chests'] ?? 0;
         final isPremium = user.isPremium;
+        final isKidsMode = UserGameConstants.kKidsGameTypes.contains(
+          widget.gameType,
+        );
 
         // Find next target
         int nextTierIndex = claimedTier;
@@ -987,8 +982,9 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
 
                               SizedBox(height: 32.h),
 
-                              // Magic Star Ad Button (hidden for premium users)
-                              if (!isPremium &&
+                              // Magic Star Ad Button (hidden for kids games and premium users)
+                              if (!isKidsMode &&
+                                  !isPremium &&
                                   claimedTier < _chestTiers.length &&
                                   totalStars < nextRequirement) ...[
                                 Padding(

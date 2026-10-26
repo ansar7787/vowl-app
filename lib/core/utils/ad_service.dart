@@ -504,7 +504,7 @@ class AdService {
         _rewardedAd!.dispose();
         _rewardedAd = null;
       }
-      _loadAndShowChildSafeRewarded(
+      await _loadAndShowChildSafeRewarded(
         context: context,
         onUserEarnedReward: onUserEarnedReward,
         onDismissed: onDismissed,
@@ -646,15 +646,45 @@ class AdService {
   ///
   /// Used when an adult user enters Kids Zone — the pre-loaded ad was built
   /// with personalized params, so we must reload with COPPA-compliant settings.
-  void _loadAndShowChildSafeRewarded({
+  Future<void> _loadAndShowChildSafeRewarded({
     BuildContext? context,
     required Function(RewardItem) onUserEarnedReward,
     required VoidCallback onDismissed,
-  }) {
+  }) async {
     final adUnitId = _rewardedAdUnitId();
     if (adUnitId.isEmpty) {
       onDismissed();
       return;
+    }
+
+    if (context != null && context.mounted) {
+      final networkInfo = di.sl.isRegistered<NetworkInfo>()
+          ? di.sl<NetworkInfo>()
+          : null;
+      final hasRealConnection = networkInfo != null
+          ? await networkInfo.hasRealConnection
+          : true;
+
+      if (!hasRealConnection) {
+        if (context.mounted) {
+          CustomSnackBar.show(
+            context: context,
+            message: context.tr(
+              'connectivity.no_internet_for_ads',
+              fallback:
+                  'No internet connection. Please check your network to watch ads.',
+            ),
+            type: CustomSnackBarType.warning,
+          );
+        }
+        onDismissed();
+        return;
+      }
+
+      if (!context.mounted) {
+        onDismissed();
+        return;
+      }
     }
 
     final childSafeRequest = _buildAdRequest(forceChildSafe: true);
