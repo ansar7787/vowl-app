@@ -5,17 +5,20 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
-/// Standardized in-game error display view presenting a retry action button.
+/// Standardized in-game error display view presenting unified retry and exit actions across all games.
 class GameErrorView extends StatelessWidget {
   final String message;
   final VoidCallback onRetry;
+  final VoidCallback? onExit;
   final Color primaryColor;
 
   const GameErrorView({
     super.key,
     required this.message,
     required this.onRetry,
+    this.onExit,
     this.primaryColor = AppColors.indigo500,
   });
 
@@ -25,28 +28,47 @@ class GameErrorView extends StatelessWidget {
     final titleColor = isDark ? Colors.white : Colors.black87;
     final bodyColor = isDark ? Colors.white70 : Colors.black54;
 
+    final isOffline = message.toLowerCase().contains('internet') ||
+        message.toLowerCase().contains('network') ||
+        message.toLowerCase().contains('connection') ||
+        message.toLowerCase().contains('offline');
+
+    final title = isOffline
+        ? context.tr(
+            'connectivity.no_internet_title',
+            fallback: 'Connection Interrupted',
+          )
+        : context.tr(
+            'game_error.title',
+            fallback: 'Quest Unavailable',
+          );
+
     return Semantics(
       label: 'Error: $message',
       child: Center(
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
-          padding: EdgeInsets.all(32.r),
+          padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 24.h),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              _ErrorIcon(primaryColor: primaryColor),
+              _ErrorIcon(
+                primaryColor: primaryColor,
+                isOffline: isOffline,
+              ),
               SizedBox(height: 24.h),
               AutoSizeText(
-                'Connection Stalled',
+                title,
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 minFontSize: 16,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 24.sp,
+                  fontSize: 22.sp,
                   fontWeight: FontWeight.w900,
                   color: titleColor,
+                  letterSpacing: 0.5,
                 ),
               ),
               SizedBox(height: 12.h),
@@ -57,13 +79,18 @@ class GameErrorView extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 16.sp,
+                  fontSize: 15.sp,
                   color: bodyColor,
                   height: 1.5,
                 ),
               ),
               SizedBox(height: 32.h),
               _RetryButton(primaryColor: primaryColor, onRetry: onRetry),
+              SizedBox(height: 12.h),
+              _ExitButton(
+                onExit: onExit ?? () => Navigator.of(context).maybePop(),
+                isDark: isDark,
+              ),
             ],
           ),
         ),
@@ -76,19 +103,28 @@ class GameErrorView extends StatelessWidget {
 
 class _ErrorIcon extends StatelessWidget {
   final Color primaryColor;
+  final bool isOffline;
 
-  const _ErrorIcon({required this.primaryColor});
+  const _ErrorIcon({required this.primaryColor, required this.isOffline});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(24.r),
+      padding: EdgeInsets.all(22.r),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.1),
         shape: BoxShape.circle,
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.25),
+          width: 2,
+        ),
       ),
-      child: Icon(Icons.error_outline_rounded, color: primaryColor, size: 64.r),
-    ).animate().shake(duration: 500.ms);
+      child: Icon(
+        isOffline ? LucideIcons.wifiOff : Icons.error_outline_rounded,
+        color: primaryColor,
+        size: 54.r,
+      ),
+    ).animate().shake(duration: 400.ms);
   }
 }
 
@@ -106,7 +142,7 @@ class _RetryButton extends StatelessWidget {
       child: ScaleButton(
         onTap: onRetry,
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 16.h),
+          padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 15.h),
           decoration: BoxDecoration(
             color: primaryColor,
             borderRadius: BorderRadius.circular(16.r),
@@ -133,7 +169,7 @@ class _RetryButton extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 16.sp,
+                    fontSize: 15.sp,
                     fontWeight: FontWeight.w800,
                     color: Colors.white,
                     letterSpacing: 1,
@@ -142,6 +178,43 @@ class _RetryButton extends StatelessWidget {
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class _ExitButton extends StatelessWidget {
+  final VoidCallback onExit;
+  final bool isDark;
+
+  const _ExitButton({required this.onExit, required this.isDark});
+
+  @override
+  Widget build(BuildContext context) {
+    return ScaleButton(
+      onTap: onExit,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              Icons.arrow_back_rounded,
+              size: 16.r,
+              color: isDark ? Colors.white60 : Colors.black54,
+            ),
+            SizedBox(width: 6.w),
+            Text(
+              context.tr('common.back', fallback: 'Back to Menu'),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
         ),
       ),
     );

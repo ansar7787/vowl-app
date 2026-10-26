@@ -11,6 +11,7 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/offline_play_gate_service.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 
 class _LocalPalette {
@@ -317,7 +318,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                         .moveY(begin: 20, end: 0);
                   }
 
-                  Widget premiumBtn = GestureDetector(
+                  Widget premiumBtn = ScaleButton(
                     onTap: () {
                       Haptics.vibrate(HapticsType.light);
                       AppRouter.router.push(AppRouter.premiumRoute);
@@ -508,7 +509,7 @@ class _QuotaIcon extends StatelessWidget {
   }
 }
 
-class _ActionButton extends StatefulWidget {
+class _ActionButton extends StatelessWidget {
   final bool isDark;
   final bool isLoading;
   final VoidCallback onTap;
@@ -528,137 +529,85 @@ class _ActionButton extends StatefulWidget {
   });
 
   @override
-  State<_ActionButton> createState() => _ActionButtonState();
-}
-
-class _ActionButtonState extends State<_ActionButton> {
-  double _scale = 1.0;
-  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
-
-  void _updateState() {
-    if (mounted) _stateHash.value++;
-  }
-
-  @override
-  void didUpdateWidget(_ActionButton oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (oldWidget.isLoading != widget.isLoading) {
-      _updateState();
-    }
-  }
-
-  @override
-  void dispose() {
-    _stateHash.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<int>(
-      valueListenable: _stateHash,
-      builder: (context, _, child) {
-        return Listener(
-          onPointerDown: (_) {
-            _scale = 0.96;
-            _updateState();
-          },
-          onPointerUp: (_) {
-            _scale = 1.0;
-            _updateState();
-          },
-          onPointerCancel: (_) {
-            _scale = 1.0;
-            _updateState();
-          },
-          child: GestureDetector(
-            onTap: widget.isLoading ? null : widget.onTap,
-            child: AnimatedScale(
-              scale: _scale,
-              duration: const Duration(milliseconds: 100),
-              curve: Curves.easeOut,
-              child: Container(
-                height: 58.h,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(18.r),
-                  gradient: LinearGradient(
-                    colors: widget.isLoading
-                        ? widget.gradient
-                              .map((c) => c.withValues(alpha: 0.5))
-                              .toList()
-                        : widget.gradient,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: widget.glowColor.withValues(alpha: 0.3),
-                      blurRadius: 16,
-                      offset: const Offset(0, 6),
+    return ScaleButton(
+      onTap: isLoading ? () {} : onTap,
+      child: Container(
+        height: 56.h,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16.r),
+          gradient: LinearGradient(
+            colors: isLoading
+                ? gradient.map((c) => c.withValues(alpha: 0.5)).toList()
+                : gradient,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: glowColor.withValues(alpha: 0.25),
+              blurRadius: 14,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16.r),
+          child: Stack(
+            children: [
+              if (!isLoading)
+                Positioned.fill(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Colors.white.withValues(alpha: 0.1),
+                          Colors.transparent,
+                        ],
+                      ),
                     ),
-                  ],
+                  ),
                 ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(18.r),
-                  child: Stack(
-                    children: [
-                      if (!widget.isLoading)
-                        Positioned.fill(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                                colors: [
-                                  Colors.white.withValues(alpha: 0.1),
-                                  Colors.transparent,
-                                ],
+              Center(
+                child: isLoading
+                    ? SizedBox(
+                        width: 22.r,
+                        height: 22.r,
+                        child: const VowlButtonSpinner(
+                          color: Colors.white,
+                        ),
+                      )
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            icon,
+                            color: Colors.white,
+                            size: 20.r,
+                          ),
+                          SizedBox(width: 10.w),
+                          Flexible(
+                            child: Text(
+                              label,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                color: Colors.white,
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w800,
+                                letterSpacing: 0.8,
                               ),
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
-                        ),
-                      Center(
-                        child: widget.isLoading
-                            ? SizedBox(
-                                width: 22.r,
-                                height: 22.r,
-                                child: const VowlButtonSpinner(
-                                  color: Colors.white,
-                                ),
-                              )
-                            : Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Icon(
-                                    widget.icon,
-                                    color: Colors.white,
-                                    size: 20.r,
-                                  ),
-                                  SizedBox(width: 10.w),
-                                  Flexible(
-                                    child: Text(
-                                      widget.label,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        color: Colors.white,
-                                        fontSize: 13.sp,
-                                        fontWeight: FontWeight.w800,
-                                        letterSpacing: 1,
-                                      ),
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                        ],
                       ),
-                    ],
-                  ),
-                ),
               ),
-            ),
+            ],
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }
