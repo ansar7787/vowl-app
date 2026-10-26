@@ -1,3 +1,4 @@
+import 'package:vowl/core/error/failures.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -142,6 +143,43 @@ void main() {
       act: (bloc) =>
           bloc.add(FetchVocabularyQuests(gameType: tGameType, level: tLevel)),
       expect: () => [VocabularyLoading(), isA<VocabularyError>()],
+    );
+
+    blocTest<VocabularyBloc, VocabularyState>(
+      'should emit [Loading, Loaded] when offline but local asset quests are available',
+      build: () {
+        when(
+          () => mockGetQuests(any()),
+        ).thenAnswer((_) async => const Right(tQuests));
+        when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => false);
+        return bloc;
+      },
+      act: (bloc) =>
+          bloc.add(FetchVocabularyQuests(gameType: tGameType, level: tLevel)),
+      expect: () => [
+        VocabularyLoading(),
+        VocabularyLoaded(quests: tQuests, currentIndex: 0, livesRemaining: 3),
+      ],
+    );
+
+    blocTest<VocabularyBloc, VocabularyState>(
+      'should emit [Loading, Error] with offline message when data fetch fails offline',
+      build: () {
+        when(
+          () => mockGetQuests(any()),
+        ).thenAnswer((_) async => const Left(ServerFailure('Asset missing')));
+        when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => false);
+        return bloc;
+      },
+      act: (bloc) =>
+          bloc.add(FetchVocabularyQuests(gameType: tGameType, level: tLevel)),
+      expect: () => [
+        VocabularyLoading(),
+        const VocabularyError(
+          'No internet connection. Please check your network and try again.',
+          technicalError: 'Offline and quest not available in local cache',
+        ),
+      ],
     );
   });
 

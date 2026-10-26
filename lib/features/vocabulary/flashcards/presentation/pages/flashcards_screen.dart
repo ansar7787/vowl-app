@@ -213,6 +213,11 @@ class _ErrorScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: const BackButton(),
+      ),
       body: Center(
         child: Padding(
           padding: EdgeInsets.all(32.r),

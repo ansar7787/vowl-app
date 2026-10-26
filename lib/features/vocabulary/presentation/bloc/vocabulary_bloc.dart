@@ -108,16 +108,6 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     _currentLevel = event.level;
     emit(const VocabularyLoading());
 
-    if (!await networkInfo.isConnected) {
-      emit(
-        const VocabularyError(
-          'No internet connection. Please check your network and try again.',
-          technicalError: 'NetworkInfo.isConnected returned false',
-        ),
-      );
-      return;
-    }
-
     try {
       // FIX: typed params object replaces positional (String, int) arguments,
       // matching the UseCase<Output, Params> contract used project-wide.
@@ -128,16 +118,27 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
         ),
       );
 
-      result.fold(
-        (failure) {
-          emit(
-            VocabularyError(
-              'Failed to load quests. Please try again.',
-              technicalError: failure.message,
-            ),
-          );
+      await result.fold(
+        (failure) async {
+          final isConnected = await networkInfo.isConnected;
+          if (!isConnected) {
+            emit(
+              const VocabularyError(
+                'No internet connection. Please check your network and try again.',
+                technicalError:
+                    'Offline and quest not available in local cache',
+              ),
+            );
+          } else {
+            emit(
+              VocabularyError(
+                'Failed to load quests. Please try again.',
+                technicalError: failure.message,
+              ),
+            );
+          }
         },
-        (quests) {
+        (quests) async {
           if (quests.isEmpty) {
             emit(
               VocabularyError(
