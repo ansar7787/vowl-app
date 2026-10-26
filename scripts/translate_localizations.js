@@ -32,7 +32,32 @@ const COOLDOWN_MINUTES = 15;
 const COOLDOWN_MS = COOLDOWN_MINUTES * 60 * 1000;
 const DELAY_BETWEEN_BATCHES_MS = 600; // polite throttle between batches
 const BATCH_SIZE = 15;
+const SAVE_EVERY_N_BATCHES = 3; // Save every ~45 strings to prevent Windows file lock collisions
 const DELIM = '\n<<VOWL_CHUNK>>\n';
+
+// Windows-safe file writer with retry backoff to survive IDE/antivirus file locks
+async function safeWriteFile(filePath, content, retries = 6, baseDelay = 250) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      fs.writeFileSync(filePath, content, 'utf8');
+      return;
+    } catch (err) {
+      if (attempt === retries) {
+        try {
+          const tmpPath = `${filePath}.tmp_${Date.now()}`;
+          fs.writeFileSync(tmpPath, content, 'utf8');
+          fs.copyFileSync(tmpPath, filePath);
+          try { fs.unlinkSync(tmpPath); } catch (_) {}
+          return;
+        } catch (_) {
+          throw err;
+        }
+      }
+      // Wait before retrying to allow editor/file-watcher to release file handle
+      await new Promise((r) => setTimeout(r, baseDelay * attempt));
+    }
+  }
+}
 
 // Supported Target Languages mapping to Google/Bing language codes
 const TARGET_LANGUAGES = {
@@ -289,6 +314,7 @@ async function main() {
       continue;
     }
 
+    let batchCounter = 0;
     for (let i = 0; i < pendingKeys.length; i += BATCH_SIZE) {
       const batchKeys = pendingKeys.slice(i, i + BATCH_SIZE);
       const batchTexts = batchKeys.map(k => flatEn[k]);
@@ -312,13 +338,20 @@ async function main() {
 
       console.log(`\x1b[32mDone (${batchKeys.length} strings)\x1b[0m`);
 
-      // Autosave to disk after every batch
-      const reconstructed = unflattenObject(flatTarget, enData);
-      fs.writeFileSync(filePath, JSON.stringify(reconstructed, null, 2) + '\n', 'utf8');
+      batchCounter++;
+      // Periodic autosave to disk with Windows retry backoff
+      if (batchCounter % SAVE_EVERY_N_BATCHES === 0 || i + BATCH_SIZE >= pendingKeys.length) {
+        const reconstructed = unflattenObject(flatTarget, enData);
+        await safeWriteFile(filePath, JSON.stringify(reconstructed, null, 2) + '\n');
+      }
 
       // Small throttle between batches
       await new Promise((r) => setTimeout(r, DELAY_BETWEEN_BATCHES_MS));
     }
+
+    // Final guaranteed write for this language
+    const finalReconstructed = unflattenObject(flatTarget, enData);
+    await safeWriteFile(filePath, JSON.stringify(finalReconstructed, null, 2) + '\n');
 
     console.log(`\n🎉 [${lang.toUpperCase()}] successfully saved to assets/translations/${lang}.json!`);
   }
