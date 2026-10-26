@@ -11,7 +11,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/widgets/verify_email_widgets.dart';
 import 'package:vowl/core/network/network_info.dart';
-import 'package:vowl/injection_container.dart' as di;
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class _LocalPalette {
