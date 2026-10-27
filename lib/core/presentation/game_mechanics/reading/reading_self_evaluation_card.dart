@@ -111,7 +111,15 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
               );
 
         if (widget.isPositioned) {
-          return Positioned(bottom: 0, left: 0, right: 0, child: content);
+          return Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: SafeArea(
+              top: false,
+              child: content,
+            ),
+          );
         }
 
         return content;

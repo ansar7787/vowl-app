@@ -485,6 +485,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
         child: ValueListenableBuilder<int>(
           valueListenable: _stateHash,
           builder: (context, _, child) {
+            final bottomInset = MediaQuery.paddingOf(context).bottom;
             return AbsorbPointer(
               absorbing: _isSequenceAnimating,
               child: Scaffold(
@@ -627,7 +628,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                               ) {
                                 // Last item: bottom spacer
                                 if (index == _totalLevels) {
-                                  return SizedBox(height: 150.h);
+                                  return SizedBox(height: 150.h + bottomInset);
                                 }
                                 final levelNumber = index + 1;
                                 final point = points[index];
@@ -673,14 +674,14 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
 
                     // Star Vault FAB
                     Positioned(
-                      bottom: 32.h,
+                      bottom: 32.h + bottomInset,
                       right: 24.w,
                       child: _buildStarVaultButton(theme),
                     ),
 
                     // Golden Keys FAB
                     Positioned(
-                      bottom: 32.h,
+                      bottom: 32.h + bottomInset,
                       left: 24.w,
                       child: _buildGoldenKeysButton(theme),
                     ), // end of Positioned

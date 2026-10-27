@@ -605,7 +605,9 @@ class _TtsVoiceSelectionBottomSheetState
                                                 ),
                                                 SizedBox(width: 3.w),
                                                 Text(
-                                                  'PRO',
+                                                  isUserPremium
+                                                      ? 'UNLOCKED'
+                                                      : 'PRO',
                                                   style: TextStyle(
                                                     fontFamily: 'Outfit',
                                                     fontSize: 9.sp,

@@ -318,7 +318,9 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
                     begin: const Offset(1.05, 1.05),
                     end: const Offset(1, 1),
                   ),
-              SizedBox(height: 16.h),
+              SizedBox(
+                height: 16.h + MediaQuery.paddingOf(context).bottom,
+              ),
             ],
           ),
         ).animate().slideY(

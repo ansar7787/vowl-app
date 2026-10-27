@@ -63,7 +63,9 @@ class GamesScreen extends StatelessWidget {
                 slivers: [
                   _GamesAppBar(isDark: isDark, user: user),
                   SliverPadding(
-                    padding: EdgeInsets.only(bottom: 120.h),
+                    padding: EdgeInsets.only(
+                      bottom: 120.h + MediaQuery.paddingOf(context).bottom,
+                    ),
                     sliver: SliverList(
                       delegate: SliverChildBuilderDelegate(
                         (context, index) => sections[index],

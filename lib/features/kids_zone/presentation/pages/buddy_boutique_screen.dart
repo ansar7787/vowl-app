@@ -726,7 +726,12 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       isScrollControlled: true,
       builder: (sheetContext) {
         return Container(
-          padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, 40.h),
+          padding: EdgeInsets.fromLTRB(
+            24.w,
+            24.h,
+            24.w,
+            24.h + MediaQuery.paddingOf(sheetContext).bottom,
+          ),
           decoration: BoxDecoration(
             color: isDark ? AppColors.slate800 : Colors.white,
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),

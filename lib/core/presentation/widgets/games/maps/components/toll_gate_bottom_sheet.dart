@@ -44,6 +44,7 @@ class TollGateBottomSheet {
       );
       sheetDesc = context.tr(
         'store.toll_need_key_desc_1',
+        args: [maxLevels.toString()],
         fallback: 'You need 1 Golden Key to unlock the final Level $maxLevels.',
       );
       successDesc = context.tr(
@@ -438,7 +439,9 @@ class TollGateBottomSheet {
                         ),
                       ),
                     ),
-                    SizedBox(height: 16.h),
+                    SizedBox(
+                      height: 16.h + MediaQuery.paddingOf(context).bottom,
+                    ),
                   ],
                 ),
               ),

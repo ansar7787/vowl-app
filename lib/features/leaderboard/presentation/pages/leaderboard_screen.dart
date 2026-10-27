@@ -516,7 +516,11 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                   ),
                 ),
 
-              SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 120.h + MediaQuery.paddingOf(context).bottom,
+                ),
+              ),
             ],
           ),
         ),
@@ -524,7 +528,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         // "Find Me" FAB — only visible when user's rank is deep in the list
         if (showFindMe)
           Positioned(
-            bottom: 24.h,
+            bottom: 104.h + MediaQuery.paddingOf(context).bottom,
             right: 20.w,
             child: GestureDetector(
               onTap: _scrollToMe,

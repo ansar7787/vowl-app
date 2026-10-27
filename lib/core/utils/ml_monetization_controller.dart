@@ -113,7 +113,12 @@ class _MlFeatureGateDialog extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
         child: Container(
-          padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, 40.h),
+          padding: EdgeInsets.fromLTRB(
+            24.w,
+            24.h,
+            24.w,
+            24.h + MediaQuery.paddingOf(context).bottom,
+          ),
           decoration: BoxDecoration(
             color: isDark
                 ? Colors.black.withValues(alpha: 0.7)
