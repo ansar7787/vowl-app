@@ -364,6 +364,8 @@ class VowlCoinsScreen extends StatelessWidget {
                 children: [
                   Text(
                     context.tr('economy.buy_coins', fallback: 'Buy More Coins'),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
@@ -376,6 +378,8 @@ class VowlCoinsScreen extends StatelessWidget {
                       'economy.buy_coins_subtitle',
                       fallback: 'Get coin packs with real money',
                     ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
@@ -828,13 +832,17 @@ class VowlCoinsScreen extends StatelessWidget {
                 size: 18.r,
               ),
               SizedBox(width: 8.w),
-              Text(
-                context.tr('economy.hint_store', fallback: 'Hint Store'),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w700,
-                  color: isDark ? Colors.white : AppColors.slate800,
+              Expanded(
+                child: Text(
+                  context.tr('economy.hint_store', fallback: 'Hint Store'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w700,
+                    color: isDark ? Colors.white : AppColors.slate800,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ],
@@ -924,25 +932,31 @@ class VowlCoinsScreen extends StatelessWidget {
                                 ),
                                 if (pack.isBest) ...[
                                   SizedBox(width: 8.w),
-                                  Container(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 6.w,
-                                      vertical: 2.h,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: AppColors.emerald500,
-                                      borderRadius: BorderRadius.circular(6.r),
-                                    ),
-                                    child: Text(
-                                      context.tr(
-                                        'economy.best_value',
-                                        fallback: 'BEST VALUE',
+                                  Flexible(
+                                    child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 6.w,
+                                        vertical: 2.h,
                                       ),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 8.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: Colors.white,
+                                      decoration: BoxDecoration(
+                                        color: AppColors.emerald500,
+                                        borderRadius: BorderRadius.circular(6.r),
+                                      ),
+                                      child: FittedBox(
+                                        fit: BoxFit.scaleDown,
+                                        child: Text(
+                                          context.tr(
+                                            'economy.best_value',
+                                            fallback: 'BEST VALUE',
+                                          ),
+                                          maxLines: 1,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 8.sp,
+                                            fontWeight: FontWeight.w900,
+                                            color: Colors.white,
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -952,6 +966,8 @@ class VowlCoinsScreen extends StatelessWidget {
                             SizedBox(height: 2.h),
                             Text(
                               '${_formatCoins(perUnit)} ${context.tr('economy.coins_per_hint', fallback: 'coins/hint')}',
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 11.sp,
@@ -968,40 +984,49 @@ class VowlCoinsScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            _formatCoins(pack.cost),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w800,
-                              color: canAfford
-                                  ? pack.color
-                                  : (isDark
-                                        ? Colors.white.withValues(alpha: 0.2)
-                                        : Colors.black12),
-                            ),
-                          ),
-                          if (!canAfford)
+                      SizedBox(width: 8.w),
+                      ConstrainedBox(
+                        constraints: BoxConstraints(maxWidth: 105.w),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
                             Text(
-                              context.tr(
-                                'economy.need_x_more',
-                                fallback:
-                                    'Need ${_formatCoins(pack.cost - user.coins)} more',
-                                args: [_formatCoins(pack.cost - user.coins)],
-                              ),
+                              _formatCoins(pack.cost),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 9.sp,
-                                fontWeight: FontWeight.w600,
-                                color: const Color(
-                                  0xFFEF4444,
-                                ).withValues(alpha: 0.7),
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w800,
+                                color: canAfford
+                                    ? pack.color
+                                    : (isDark
+                                          ? Colors.white.withValues(alpha: 0.2)
+                                          : Colors.black12),
                               ),
                             ),
-                        ],
+                            if (!canAfford)
+                              Text(
+                                context.tr(
+                                  'economy.need_x_more',
+                                  fallback:
+                                      'Need ${_formatCoins(pack.cost - user.coins)} more',
+                                  args: [_formatCoins(pack.cost - user.coins)],
+                                ),
+                                maxLines: 2,
+                                textAlign: TextAlign.end,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 9.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: const Color(
+                                    0xFFEF4444,
+                                  ).withValues(alpha: 0.7),
+                                ),
+                              ),
+                          ],
+                        ),
                       ),
                     ],
                   ),

@@ -406,13 +406,16 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                     ),
                     child: Icon(icon, color: color, size: 32.sp),
                   ),
-                  _buildProgressBadge(
-                    context: context,
-                    color: color,
-                    currentLevel: currentLevel,
-                    completedCount: completedCount,
-                    totalLevels: totalLevels,
-                    isMastered: isMastered,
+                  SizedBox(width: 8.w),
+                  Flexible(
+                    child: _buildProgressBadge(
+                      context: context,
+                      color: color,
+                      currentLevel: currentLevel,
+                      completedCount: completedCount,
+                      totalLevels: totalLevels,
+                      isMastered: isMastered,
+                    ),
                   ),
                 ],
               ),
@@ -500,7 +503,7 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
 
     if (completedCount == 0) {
       return Container(
-        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+        padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 3.h),
         decoration: BoxDecoration(
           color: color.withValues(alpha: 0.12),
           borderRadius: BorderRadius.circular(10.r),
@@ -509,14 +512,17 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
             width: 1.5.w,
           ),
         ),
-        child: Text(
-          context.tr('quest_archive.new_badge', fallback: 'NEW'),
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 9.sp,
-            fontWeight: FontWeight.w900,
-            color: color,
-            letterSpacing: 0.5,
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            context.tr('quest_archive.new_badge', fallback: 'NEW'),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 9.sp,
+              fontWeight: FontWeight.w900,
+              color: color,
+              letterSpacing: 0.5,
+            ),
           ),
         ),
       );
