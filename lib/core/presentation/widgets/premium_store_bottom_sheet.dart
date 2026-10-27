@@ -654,7 +654,10 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 40.h),
+                                SizedBox(
+                                  height: 40.h +
+                                      MediaQuery.paddingOf(context).bottom,
+                                ),
                               ],
                             ),
                             if (_isProcessing)

@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math' as math;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -545,7 +546,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             user: user,
                                           ),
                                         ),
-                                        SizedBox(height: 100.h),
+                                        SizedBox(
+                                          height: 120.h +
+                                              MediaQuery.paddingOf(context).bottom,
+                                        ),
                                       ],
                                     ),
                                   ];
@@ -840,7 +844,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 24.h),
+              SizedBox(
+                height: 24.h + MediaQuery.paddingOf(context).bottom,
+              ),
             ],
           ),
         ),
@@ -949,7 +955,12 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
-      padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
+      padding: EdgeInsets.only(
+        bottom: math.max(
+          MediaQuery.viewInsetsOf(context).bottom,
+          MediaQuery.paddingOf(context).bottom,
+        ),
+      ),
       decoration: BoxDecoration(
         color: isDark ? AppColors.slate800 : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),

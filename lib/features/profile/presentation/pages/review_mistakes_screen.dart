@@ -1078,7 +1078,12 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
       enableDrag: false,
       builder: (context) {
         return Container(
-          padding: EdgeInsets.fromLTRB(24.w, 32.h, 24.w, 24.h),
+          padding: EdgeInsets.fromLTRB(
+            24.w,
+            32.h,
+            24.w,
+            24.h + MediaQuery.paddingOf(context).bottom,
+          ),
           decoration: BoxDecoration(
             color: isDark ? AppColors.slate900 : Colors.white,
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),

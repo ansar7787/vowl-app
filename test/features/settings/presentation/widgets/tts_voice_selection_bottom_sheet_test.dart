@@ -98,6 +98,7 @@ void main() {
       expect(find.text('Australian Accent'), findsOneWidget);
       expect(find.text('Indian English'), findsOneWidget);
       expect(find.text('Device Default'), findsOneWidget);
+      expect(find.text('UNLOCKED'), findsWidgets);
       expect(find.text('Done'), findsOneWidget);
 
       // Verify no RenderFlex overflow error was triggered
@@ -233,8 +234,9 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      // Check lock icons are rendered for locked presets
+      // Check lock icons and PRO badges are rendered for locked presets
       expect(find.byIcon(LucideIcons.lock), findsWidgets);
+      expect(find.text('PRO'), findsWidgets);
 
       // Verify that the sheet opens without error and clear guide is rendered
       expect(find.text('Pronunciation Voice'), findsOneWidget);

@@ -439,7 +439,9 @@ class TollGateBottomSheet {
                         ),
                       ),
                     ),
-                    SizedBox(height: 16.h),
+                    SizedBox(
+                      height: 16.h + MediaQuery.paddingOf(context).bottom,
+                    ),
                   ],
                 ),
               ),

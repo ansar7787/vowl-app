@@ -1128,7 +1128,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
           _buildSecureTag(),
           SizedBox(height: 8.h),
           _buildTermsAndPolicy(),
-          SizedBox(height: 16.h),
+          SizedBox(
+            height: 24.h + MediaQuery.paddingOf(context).bottom,
+          ),
         ],
       ),
     );

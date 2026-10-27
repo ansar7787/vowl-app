@@ -23,6 +23,7 @@ class MainWrapper extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight =
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final bottomInset = MediaQuery.paddingOf(context).bottom;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -31,7 +32,7 @@ class MainWrapper extends StatelessWidget {
       bottomNavigationBar: RepaintBoundary(
         child: Container(
           height: 82.h,
-          margin: EdgeInsets.fromLTRB(12.w, 0, 12.w, 12.h),
+          margin: EdgeInsets.fromLTRB(12.w, 0, 12.w, 12.h + bottomInset),
           child:
               Stack(
                 alignment: Alignment.bottomCenter,
