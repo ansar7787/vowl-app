@@ -687,7 +687,7 @@ void main() {
     });
   });
 
-  group('Group 11: Preferences & Sign Out', () {
+  group('Group 11: Preferences Navigation', () {
     testWidgets('renders Settings tile in preferences and tapping routes to settings',
         (tester) async {
       await pumpProfileScreen(tester);
@@ -701,32 +701,11 @@ void main() {
       verify(() => mockHapticService.light()).called(greaterThanOrEqualTo(1));
     });
 
-    testWidgets('tapping SIGN OUT ACCOUNT displays confirmation dialog',
+    testWidgets('omits redundant sign out button from profile screen',
         (tester) async {
       await pumpProfileScreen(tester);
 
-      final signOutBtn = find.text('SIGN OUT ACCOUNT');
-      expect(signOutBtn, findsOneWidget);
-
-      await scrollToAndTap(tester, signOutBtn);
-
-      expect(find.text('Sign Out?'), findsOneWidget);
-      verify(() => mockHapticService.warning()).called(greaterThanOrEqualTo(1));
-    });
-
-    testWidgets('confirming sign out dialog dispatches AuthLogoutRequested',
-        (tester) async {
-      await pumpProfileScreen(tester);
-
-      final signOutBtn = find.text('SIGN OUT ACCOUNT');
-      await scrollToAndTap(tester, signOutBtn);
-
-      expect(find.text('Sign Out?'), findsOneWidget);
-
-      await tester.tap(find.text('Sign Out'));
-      await tester.pumpAndSettle();
-
-      verify(() => mockAuthBloc.add(const AuthLogoutRequested())).called(1);
+      expect(find.text('SIGN OUT ACCOUNT'), findsNothing);
     });
   });
 

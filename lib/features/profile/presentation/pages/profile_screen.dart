@@ -18,7 +18,6 @@ import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
-import 'package:vowl/features/settings/presentation/widgets/settings_widgets.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/core/utils/image_utils.dart';
 
@@ -545,21 +544,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           child: ProfilePreferencesList(
                                             user: user,
                                           ),
-                                        ),
-                                      ],
-                                    ),
-
-                                    // ── 7. Sign Out ──
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        SizedBox(height: 24.h),
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 24.w,
-                                          ),
-                                          child: const SettingsLogoutButton(),
                                         ),
                                         SizedBox(height: 100.h),
                                       ],
