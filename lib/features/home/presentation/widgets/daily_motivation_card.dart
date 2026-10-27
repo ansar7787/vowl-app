@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'dart:convert';
@@ -475,7 +476,10 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
                         curve: Curves.easeOut,
                         child: Container(
                           width: double.infinity,
-                          padding: EdgeInsets.symmetric(vertical: 14.h),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: 14.h,
+                          ),
                           decoration: BoxDecoration(
                             // textSafeIndigo, not the lighter brand indigo:
                             // white text on this fill measures about 6.3:1,
@@ -494,19 +498,25 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
-                                context.tr(
-                                  'home.start_next_task',
-                                  fallback: 'Start Next Task',
-                                ),
-                                style: TextStyle(
-                                  // Pure white on the darker textSafeIndigo
-                                  // fill (see the decoration above).
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w800,
-                                  fontFamily: 'Outfit',
-                                  fontSize: 15.sp,
-                                  letterSpacing: 0.5,
+                              Flexible(
+                                child: AutoSizeText(
+                                  context.tr(
+                                    'home.start_next_task',
+                                    fallback: 'Start Next Task',
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  maxLines: 2,
+                                  minFontSize: 10,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    // Pure white on the darker textSafeIndigo
+                                    // fill (see the decoration above).
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w800,
+                                    fontFamily: 'Outfit',
+                                    fontSize: 15.sp,
+                                    letterSpacing: 0.5,
+                                  ),
                                 ),
                               ),
                               SizedBox(width: 8.w),
