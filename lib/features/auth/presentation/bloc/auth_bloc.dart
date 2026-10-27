@@ -258,6 +258,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   // ---------------------------------------------------------------------------
 
   void _onUserChanged(AuthUserChanged event, Emitter<AuthState> emit) {
+    // CRITICAL: When logout or account deletion is in progress, ignore incoming user stream
+    // events (e.g. Firestore update snapshots from FCM token deletion). This prevents
+    // premature dismissal of the LoadingOverlay before cleanup and sign-out finish.
+    if (state.status == AuthStatus.loggingOut) {
+      if (kDebugMode) {
+        debugPrint('AuthBloc: ignoring user stream emission during logout.');
+      }
+      return;
+    }
+
     _networkInfo.setPremiumOverride(event.user?.isPremium ?? false);
 
     if (event.user != null) {
@@ -285,6 +295,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     AuthStreamErrorOccurred event,
     Emitter<AuthState> emit,
   ) async {
+    if (state.status == AuthStatus.loggingOut) return;
     if (kDebugMode) {
       debugPrint('AuthBloc: unexpected user-stream error.');
     }
@@ -316,19 +327,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   /// Shared between [_onLogoutRequested] and [_onDeleteAccountRequested]
   /// to guarantee identical cleanup for both flows.
   Future<void> _clearAllLocalData() async {
-    // Unbind the device push token from Firestore and cancel all scheduled local
-    // notifications so notifications from this account never fire for the NEXT user.
-    try {
-      await di.sl<NotificationService>().unregisterUserOnLogout();
-    } catch (e) {
-      if (kDebugMode) debugPrint('AuthBloc: notification cleanup failed: $e');
-    }
-
-    // Clear the in-memory image cache so stale profile photos / avatars from
-    // the previous user don't flash on the next sign-in.
+    // 1. Clear in-memory image cache immediately so stale profile photos / avatars
+    // from the previous user don't flash on the next sign-in.
     imageCache.clear();
     imageCache.clearLiveImages();
 
+    // 2. Clear SharedPreferences immediately (in ~5ms) while preserving device-scoped settings.
     try {
       final prefs = await SharedPreferences.getInstance();
 
@@ -386,6 +390,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         debugPrint('AuthBloc: SharedPreferences cleanup failed: $e');
       }
     }
+
+    // 3. Unbind the device push token from Firestore and cancel scheduled local
+    // notifications so notifications from this account never fire for the NEXT user.
+    try {
+      await di.sl<NotificationService>().unregisterUserOnLogout();
+    } catch (e) {
+      if (kDebugMode) debugPrint('AuthBloc: notification cleanup failed: $e');
+    }
   }
 
   Future<void> _onLogoutRequested(
@@ -394,23 +406,26 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   ) async {
     if (state.status == AuthStatus.loggingOut) return;
 
+    // Immediately emit loggingOut status so LoadingOverlay renders instantly
+    // across all screens (Profile, Settings, and global app shell).
+    emit(state.copyWith(status: AuthStatus.loggingOut));
+
     // C-01: Network check — must have real physical internet connection to logout.
     // Prevents permanent data loss of any offline progress and avoids hanging.
     if (!(await _networkInfo.hasRealConnection)) {
       emit(
         state.copyWith(
+          status: AuthStatus.authenticated,
           message: () => AuthErrorHandler.getKey('network-unreachable'),
         ),
       );
       return; // Block logout entirely to protect offline data
     }
 
-    emit(state.copyWith(status: AuthStatus.loggingOut));
-
     try {
-      // Defensive timeout on local data cleanup (max 3 seconds)
+      // Defensive timeout on local data cleanup (max 4 seconds)
       await _clearAllLocalData().timeout(
-        const Duration(seconds: 3),
+        const Duration(seconds: 4),
         onTimeout: () {
           if (kDebugMode) debugPrint('AuthBloc: Local cleanup timed out on logout');
         },
@@ -445,6 +460,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     AuthReloadUser event,
     Emitter<AuthState> emit,
   ) async {
+    if (state.status == AuthStatus.loggingOut) return;
     await _reloadUser(const NoParams());
     // The user stream subscription receives the updated auth state
     // automatically — no explicit emit required here.
@@ -454,6 +470,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     AuthRefreshUser event,
     Emitter<AuthState> emit,
   ) async {
+    if (state.status == AuthStatus.loggingOut) return;
     final result = await _getCurrentUser(const NoParams());
     result.fold(
       (failure) => emit(
@@ -512,6 +529,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     AuthLevelCompletedOptimistic event,
     Emitter<AuthState> emit,
   ) {
+    if (state.status == AuthStatus.loggingOut) return;
     final currentUser = state.user;
     if (currentUser == null) return;
 
@@ -551,30 +569,35 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   ) async {
     if (state.status == AuthStatus.loggingOut) return;
 
+    // Immediately emit loggingOut status so LoadingOverlay renders instantly
+    // across all screens (Settings, dialogs, and global app shell).
+    emit(state.copyWith(status: AuthStatus.loggingOut));
+
     // C-01: Network check — account deletion requires true internet connection
     if (!(await _networkInfo.hasRealConnection)) {
       emit(
         state.copyWith(
+          status: AuthStatus.authenticated,
           message: () => AuthErrorHandler.getKey('network-unreachable'),
         ),
       );
       return;
     }
 
-    emit(state.copyWith(status: AuthStatus.loggingOut));
-
     try {
-      // C-03: Clear ALL local data with defensive timeout (max 3 seconds)
+      // C-03: Clear ALL local data with defensive timeout (max 4 seconds)
       await _clearAllLocalData().timeout(
-        const Duration(seconds: 3),
+        const Duration(seconds: 4),
         onTimeout: () {
           if (kDebugMode) debugPrint('AuthBloc: Local cleanup timed out on delete');
         },
       );
 
-      final result = await _deleteAccount(const NoParams()).timeout(
+      final Future<Either<Failure, void>> deleteFuture =
+          _deleteAccount(const NoParams());
+      final result = await deleteFuture.timeout(
         const Duration(seconds: 10),
-        onTimeout: () => Left(AuthFailure('network-unreachable')),
+        onTimeout: () => Left<Failure, void>(const AuthFailure('network-unreachable')),
       );
 
       await result.fold(

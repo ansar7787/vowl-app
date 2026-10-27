@@ -24,7 +24,19 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
   Future<void> cacheUser(UserModel user) async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final jsonString = jsonEncode(user.toJsonMap());
+      final jsonString = jsonEncode(
+        user.toJsonMap(),
+        toEncodable: (nonEncodable) {
+          if (nonEncodable is DateTime) {
+            return nonEncodable.toIso8601String();
+          }
+          try {
+            final dynamic d = nonEncodable;
+            return (d.toDate() as DateTime).toIso8601String();
+          } catch (_) {}
+          return nonEncodable.toString();
+        },
+      );
       await prefs.setString(_kCachedUserKey, jsonString);
     } catch (e) {
       if (kDebugMode) {

@@ -337,6 +337,22 @@ void main() {
       await tester.pumpWidget(const SizedBox());
     });
 
+    testWidgets('renders active LoadingOverlay when auth status is loggingOut',
+        (tester) async {
+      when(() => mockAuthBloc.state).thenReturn(
+        AuthState.authenticated(testUser).copyWith(status: AuthStatus.loggingOut),
+      );
+
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pump();
+
+      expect(find.byType(LoadingOverlay), findsOneWidget);
+      final overlay = tester.widget<LoadingOverlay>(find.byType(LoadingOverlay));
+      expect(overlay.isLoading, isTrue);
+
+      await tester.pumpWidget(const SizedBox());
+    });
+
     testWidgets('renders CustomScrollView and ProfileHeader when authenticated',
         (tester) async {
       await pumpProfileScreen(tester);
@@ -696,6 +712,21 @@ void main() {
 
       expect(find.text('Sign Out?'), findsOneWidget);
       verify(() => mockHapticService.warning()).called(greaterThanOrEqualTo(1));
+    });
+
+    testWidgets('confirming sign out dialog dispatches AuthLogoutRequested',
+        (tester) async {
+      await pumpProfileScreen(tester);
+
+      final signOutBtn = find.text('SIGN OUT ACCOUNT');
+      await scrollToAndTap(tester, signOutBtn);
+
+      expect(find.text('Sign Out?'), findsOneWidget);
+
+      await tester.tap(find.text('Sign Out'));
+      await tester.pumpAndSettle();
+
+      verify(() => mockAuthBloc.add(const AuthLogoutRequested())).called(1);
     });
   });
 

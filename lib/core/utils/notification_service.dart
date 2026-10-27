@@ -1182,23 +1182,27 @@ class NotificationService {
       }
     }
 
-    // 2. Invalidate local device FCM token on Firebase servers (max 2s)
-    try {
-      await _fcm.deleteToken().timeout(
-        const Duration(seconds: 2),
-        onTimeout: () {},
-      );
-      if (kDebugMode) {
-        debugPrint('NotificationService: Local FCM token deleted from device.');
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        debugPrint('NotificationService: Error deleting local FCM token: $e');
-      }
-    }
-
-    // 3. Cancel all local scheduled notifications
-    await cancelAllReminders();
+    // 2. Invalidate local device FCM token on Firebase servers and cancel reminders in parallel (max 2s)
+    await Future.wait([
+      _fcm
+          .deleteToken()
+          .timeout(const Duration(seconds: 2), onTimeout: () {})
+          .then((_) {
+            if (kDebugMode) {
+              debugPrint('NotificationService: Local FCM token deleted from device.');
+            }
+          })
+          .catchError((e) {
+            if (kDebugMode) {
+              debugPrint('NotificationService: Error deleting local FCM token: $e');
+            }
+          }),
+      cancelAllReminders().catchError((e) {
+        if (kDebugMode) {
+          debugPrint('NotificationService: Error cancelling reminders: $e');
+        }
+      }),
+    ]);
   }
 
   /// CANCELS ALL SCHEDULED NOTIFICATIONS

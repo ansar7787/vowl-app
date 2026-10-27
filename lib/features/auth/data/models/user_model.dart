@@ -352,15 +352,21 @@ class UserModel extends UserEntity {
   }
 
   /// Serializes this model to a JSON-compatible map for local offline caching.
-  /// Converts all [Timestamp] instances to ISO-8601 strings so [jsonEncode] succeeds.
+  /// Recursively converts all [Timestamp] instances to ISO-8601 strings so [jsonEncode] succeeds.
   Map<String, dynamic> toJsonMap() {
-    final map = toMap();
-    map.forEach((key, value) {
+    dynamic sanitize(dynamic value) {
       if (value is Timestamp) {
-        map[key] = value.toDate().toIso8601String();
+        return value.toDate().toIso8601String();
+      } else if (value is Map) {
+        return value.map((k, v) => MapEntry(k.toString(), sanitize(v)));
+      } else if (value is List) {
+        return value.map((e) => sanitize(e)).toList();
       }
-    });
-    return map;
+      return value;
+    }
+
+    final map = toMap();
+    return sanitize(map) as Map<String, dynamic>;
   }
 
   // ---------------------------------------------------------------------------
