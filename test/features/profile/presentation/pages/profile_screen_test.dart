@@ -359,10 +359,13 @@ void main() {
       expect(find.text('SCHOLAR'), findsOneWidget);
     });
 
-    testWidgets('displays immediate photo from ProfileState when present',
+    testWidgets('displays immediate photo from ProfileState when present for matching user',
         (tester) async {
       when(() => mockProfileBloc.state).thenReturn(
-        const ProfileState(photoUrl: 'https://example.com/fresh_avatar.jpg'),
+        const ProfileState(
+          photoUrl: 'https://example.com/fresh_avatar.jpg',
+          photoUserId: 'user_profile_123',
+        ),
       );
 
       await tester.pumpWidget(createWidgetUnderTest());
@@ -370,6 +373,24 @@ void main() {
 
       final header = tester.widget<ProfileHeader>(find.byType(ProfileHeader));
       expect(header.immediatePhotoUrl, 'https://example.com/fresh_avatar.jpg');
+
+      await tester.pumpWidget(const SizedBox());
+    });
+
+    testWidgets('does NOT display immediate photo if photo belongs to another user account',
+        (tester) async {
+      when(() => mockProfileBloc.state).thenReturn(
+        const ProfileState(
+          photoUrl: 'https://example.com/other_user_avatar.jpg',
+          photoUserId: 'other_user_999',
+        ),
+      );
+
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pump(const Duration(milliseconds: 700));
+
+      final header = tester.widget<ProfileHeader>(find.byType(ProfileHeader));
+      expect(header.immediatePhotoUrl, isNull);
 
       await tester.pumpWidget(const SizedBox());
     });

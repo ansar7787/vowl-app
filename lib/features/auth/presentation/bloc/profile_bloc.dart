@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:vowl/core/network/network_info.dart';
@@ -30,6 +31,11 @@ abstract class ProfileEvent extends Equatable {
 
 class ProfileClearPurchaseFeedback extends ProfileEvent {
   const ProfileClearPurchaseFeedback();
+}
+
+/// Clears immediate optimistic profile photo and its user association.
+class ProfileClearImmediatePhoto extends ProfileEvent {
+  const ProfileClearImmediatePhoto();
 }
 
 class ProfileUpdateDisplayNameRequested extends ProfileEvent {
@@ -198,14 +204,12 @@ class ProfileState extends Equatable {
 
   /// The freshly-uploaded profile picture's download URL, available
   /// immediately on a successful [ProfileUpdatePictureRequested] — before
-  /// [AuthBloc]'s reload round-trip completes. Previously
-  /// [UpdateProfilePicture]'s [Right] value (documented on that use case as
-  /// existing specifically so "the presentation layer can update the UI
-  /// immediately without waiting for [GetUserStream] to re-emit") was
-  /// discarded entirely in [_onUpdatePicture] — this state had nowhere to
-  /// put it. Purely additive: any existing UI that doesn't read this new
-  /// field behaves exactly as before.
+  /// [AuthBloc]'s reload round-trip completes.
   final String? photoUrl;
+
+  /// The user ID that owns [photoUrl]. Prevents another account on the same
+  /// device from displaying a previously-uploaded avatar.
+  final String? photoUserId;
 
   const ProfileState({
     this.message,
@@ -213,7 +217,15 @@ class ProfileState extends Equatable {
     this.lastPurchaseType,
     this.lastPurchaseSuccess,
     this.photoUrl,
+    this.photoUserId,
   });
+
+  /// Returns true only if [photoUrl] belongs to the currently active user with [userId].
+  bool isPhotoForUser(String? userId) =>
+      photoUrl != null &&
+      photoUserId != null &&
+      userId != null &&
+      photoUserId == userId;
 
   ProfileState copyWith({
     String? Function()? message,
@@ -221,6 +233,7 @@ class ProfileState extends Equatable {
     String? Function()? lastPurchaseType,
     bool? Function()? lastPurchaseSuccess,
     String? Function()? photoUrl,
+    String? Function()? photoUserId,
   }) {
     return ProfileState(
       message: message != null ? message() : this.message,
@@ -232,6 +245,7 @@ class ProfileState extends Equatable {
           ? lastPurchaseSuccess()
           : this.lastPurchaseSuccess,
       photoUrl: photoUrl != null ? photoUrl() : this.photoUrl,
+      photoUserId: photoUserId != null ? photoUserId() : this.photoUserId,
     );
   }
 
@@ -242,6 +256,7 @@ class ProfileState extends Equatable {
     lastPurchaseType,
     lastPurchaseSuccess,
     photoUrl,
+    photoUserId,
   ];
 }
 
@@ -269,6 +284,8 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   final PurchaseGoldenKey purchaseGoldenKey;
   final AddGoldenKey addGoldenKey;
 
+  StreamSubscription<AuthState>? _authSubscription;
+
   /// Creates a [ProfileBloc] instance with all required profile and customization use cases.
   ProfileBloc({
     required this.updateDisplayName,
@@ -288,6 +305,14 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
        super(const ProfileState()) {
     on<ProfileUpdateDisplayNameRequested>(_onUpdateDisplayName);
     on<ProfileUpdatePictureRequested>(_onUpdatePicture);
+    on<ProfileClearImmediatePhoto>(
+      (_, emit) => emit(
+        state.copyWith(
+          photoUrl: () => null,
+          photoUserId: () => null,
+        ),
+      ),
+    );
     on<ProfileUpdateMascotRequested>(_onUpdateMascot);
     on<ProfileBuyAccessoryRequested>(_onBuyAccessory);
     on<ProfileEquipAccessoryRequested>(_onEquipAccessory);
@@ -309,6 +334,20 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         ),
       ),
     );
+
+    // Watch auth state to prevent avatar bleed across multi-account sessions:
+    // 1. Clears cached immediate photo if user logs out or switches accounts.
+    // 2. Clears immediate override once backend round-trip sync completes.
+    _authSubscription = authBloc.stream.listen((authState) {
+      final currentUserId = authState.user?.id;
+      if (currentUserId == null ||
+          (state.photoUserId != null && state.photoUserId != currentUserId)) {
+        add(const ProfileClearImmediatePhoto());
+      } else if (state.photoUrl != null &&
+          authState.user?.photoUrl == state.photoUrl) {
+        add(const ProfileClearImmediatePhoto());
+      }
+    });
   }
 
   // ---------------------------------------------------------------------------
@@ -398,12 +437,16 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         // download URL entirely and relying solely on AuthReloadUser's
         // round trip. That throws away exactly the immediacy
         // UpdateProfilePicture's own doc comment says this Right value
-        // exists to provide. Now surfaced via ProfileState.photoUrl.
+        // exists to provide. Now surfaced via ProfileState.photoUrl,
+        // and tagged with the current active user ID to ensure other
+        // accounts on the same device never see it.
+        final currentUserId = authBloc.state.user?.id;
         emit(
           state.copyWith(
             isLoading: false,
             message: () => 'profile.picture_updated',
             photoUrl: () => downloadUrl,
+            photoUserId: () => currentUserId,
           ),
         );
         authBloc.add(const AuthReloadUser());
@@ -991,5 +1034,11 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         );
       }
     }
+  }
+
+  @override
+  Future<void> close() {
+    _authSubscription?.cancel();
+    return super.close();
   }
 }

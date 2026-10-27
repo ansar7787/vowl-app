@@ -180,13 +180,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               buildWhen: (prev, curr) =>
                                                   prev.photoUrl !=
                                                   curr.photoUrl ||
+                                                  prev.photoUserId !=
+                                                  curr.photoUserId ||
                                                   prev.isLoading !=
                                                   curr.isLoading,
                                               builder: (context, profileState) {
                                                 return ProfileHeader(
                                                   user: user,
                                                   immediatePhotoUrl:
-                                                      profileState.photoUrl,
+                                                      profileState.isPhotoForUser(user.id)
+                                                          ? profileState.photoUrl
+                                                          : null,
                                                   isUploading:
                                                       profileState.isLoading,
                                                   onEditName: () =>
@@ -239,11 +243,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                 >(
                                                   buildWhen: (prev, curr) =>
                                                       prev.photoUrl !=
-                                                      curr.photoUrl,
+                                                      curr.photoUrl ||
+                                                      prev.photoUserId !=
+                                                      curr.photoUserId,
                                                   builder: (context, profileState) {
+                                                    final immediatePhoto =
+                                                        profileState.isPhotoForUser(user.id)
+                                                            ? profileState.photoUrl
+                                                            : null;
                                                     return UserAvatar(
                                                       photoUrl:
-                                                          profileState.photoUrl ??
+                                                          immediatePhoto ??
                                                           user.photoUrl,
                                                       size: 32.r,
                                                     );

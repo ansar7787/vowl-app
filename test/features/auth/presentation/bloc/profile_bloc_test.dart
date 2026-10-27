@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -32,7 +33,7 @@ class MockEquipKidsAccessory extends Mock implements EquipKidsAccessory {}
 
 class MockUpdateUser extends Mock implements UpdateUser {}
 
-class MockAuthBloc extends Mock implements AuthBloc {}
+class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
 
 class MockBuyKidsFurniture extends Mock implements BuyKidsFurniture {}
 
@@ -59,10 +60,10 @@ void main() {
   late MockPurchaseGoldenKey mockPurchaseGoldenKey;
   late MockAddGoldenKey mockAddGoldenKey;
   late MockNetworkInfo mockNetworkInfo;
+  late StreamController<AuthState> authStateController;
 
   setUp(() {
     mockNetworkInfo = MockNetworkInfo();
-    when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
     when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
     mockUpdateProfilePicture = MockUpdateProfilePicture();
     mockUpdateDisplayName = MockUpdateDisplayName();
@@ -76,10 +77,12 @@ void main() {
     mockBuyVowlAccessory = MockBuyVowlAccessory();
     mockPurchaseGoldenKey = MockPurchaseGoldenKey();
     mockAddGoldenKey = MockAddGoldenKey();
+    authStateController = StreamController<AuthState>.broadcast();
 
     when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(UserEntity(id: '1', email: 'test@vowl.com')),
+      AuthState.authenticated(const UserEntity(id: '1', email: 'test@vowl.com')),
     );
+    when(() => mockAuthBloc.stream).thenAnswer((_) => authStateController.stream);
 
     bloc = ProfileBloc(
       updateProfilePicture: mockUpdateProfilePicture,
@@ -100,6 +103,31 @@ void main() {
 
   tearDown(() {
     bloc.close();
+    authStateController.close();
+  });
+
+  group('ProfileState and isPhotoForUser', () {
+    test('isPhotoForUser returns true only when userId matches photoUserId', () {
+      const stateWithPhoto = ProfileState(
+        photoUrl: 'https://vowl.app/avatar.jpg',
+        photoUserId: 'user_1',
+      );
+      expect(stateWithPhoto.isPhotoForUser('user_1'), isTrue);
+      expect(stateWithPhoto.isPhotoForUser('user_2'), isFalse);
+      expect(stateWithPhoto.isPhotoForUser(null), isFalse);
+
+      const stateWithoutPhoto = ProfileState(
+        photoUrl: null,
+        photoUserId: 'user_1',
+      );
+      expect(stateWithoutPhoto.isPhotoForUser('user_1'), isFalse);
+
+      const stateWithoutUserId = ProfileState(
+        photoUrl: 'https://vowl.app/avatar.jpg',
+        photoUserId: null,
+      );
+      expect(stateWithoutUserId.isPhotoForUser('user_1'), isFalse);
+    });
   });
 
   group('ProfileUpdateDisplayNameRequested', () {
@@ -134,6 +162,48 @@ void main() {
       verify: (_) {
         verify(() => mockUpdateDisplayName('New Name')).called(1);
       },
+    );
+  });
+
+  group('ProfileUpdatePictureRequested', () {
+    blocTest<ProfileBloc, ProfileState>(
+      'should set photoUrl and photoUserId on successful picture update',
+      build: () {
+        when(() => mockUpdateProfilePicture(any()))
+            .thenAnswer((_) async => const Right('https://vowl.app/avatar.jpg'));
+        return bloc;
+      },
+      act: (bloc) =>
+          bloc.add(const ProfileUpdatePictureRequested('/path/to/pic.png')),
+      expect: () => [
+        isA<ProfileState>().having((s) => s.isLoading, 'isLoading', true),
+        isA<ProfileState>()
+            .having((s) => s.isLoading, 'isLoading', false)
+            .having((s) => s.message, 'message', 'profile.picture_updated')
+            .having((s) => s.photoUrl, 'photoUrl', 'https://vowl.app/avatar.jpg')
+            .having((s) => s.photoUserId, 'photoUserId', '1'),
+      ],
+      verify: (_) {
+        verify(() => mockUpdateProfilePicture('/path/to/pic.png')).called(1);
+        verify(() => mockAuthBloc.add(const AuthReloadUser())).called(1);
+      },
+    );
+  });
+
+  group('ProfileClearImmediatePhoto', () {
+    blocTest<ProfileBloc, ProfileState>(
+      'should clear photoUrl and photoUserId when requested',
+      seed: () => const ProfileState(
+        photoUrl: 'https://vowl.app/avatar.jpg',
+        photoUserId: '1',
+      ),
+      build: () => bloc,
+      act: (bloc) => bloc.add(const ProfileClearImmediatePhoto()),
+      expect: () => [
+        isA<ProfileState>()
+            .having((s) => s.photoUrl, 'photoUrl', isNull)
+            .having((s) => s.photoUserId, 'photoUserId', isNull),
+      ],
     );
   });
 }
