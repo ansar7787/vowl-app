@@ -282,66 +282,81 @@ class _OnboardingScreenState extends State<OnboardingScreen>
 
   @override
   Widget build(BuildContext context) {
-    return PopScope(
-      canPop: false,
-      onPopInvokedWithResult: (didPop, _) {
-        if (didPop) return;
-        final currentPage = _pageNotifier.value;
-        if (currentPage > 0) {
-          _goTo(currentPage - 1); // back steps through slides first
-        } else {
-          _leave(widget.onSkip);
-        }
-      },
-      child: Scaffold(
-        body: SafeArea(
-          child: ValueListenableBuilder<int>(
-            valueListenable: _pageNotifier,
-            builder: (context, currentPage, _) {
-              final slide = _slides[currentPage];
-              final isLast = currentPage == _slides.length - 1;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final bg = isDark ? AppColors.slate900 : Colors.white;
 
-              return Column(
-                children: [
-                  _Header(
-                    page: currentPage,
-                    total: _slides.length,
-                    ink: slide.ink,
-                    onSkip: () => _leave(widget.onSkip),
-                  ),
-                  Expanded(
-                    child: PageView.builder(
-                      controller: _pages,
-                      itemCount: _slides.length,
-                      onPageChanged: _onPageChanged,
-                      itemBuilder: (context, i) {
-                        final active = i == currentPage;
-                        return _SlidePage(
-                          index: i,
-                          slide: _slides[i],
-                          entrance: _reduceMotion
-                              ? kAlwaysCompleteAnimation
-                              : (active
-                                    ? _entrance
-                                    : kAlwaysDismissedAnimation),
-                          // Inactive pages stay still → only one scene animates.
-                          ambient: active
-                              ? _ambient
-                              : kAlwaysDismissedAnimation,
-                        );
-                      },
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
+        statusBarBrightness: isDark ? Brightness.dark : Brightness.light,
+        systemNavigationBarColor: bg,
+        systemNavigationBarIconBrightness: isDark
+            ? Brightness.light
+            : Brightness.dark,
+      ),
+      child: PopScope(
+        canPop: false,
+        onPopInvokedWithResult: (didPop, _) {
+          if (didPop) return;
+          final currentPage = _pageNotifier.value;
+          if (currentPage > 0) {
+            _goTo(currentPage - 1); // back steps through slides first
+          } else {
+            _leave(widget.onSkip);
+          }
+        },
+        child: Scaffold(
+          backgroundColor: bg,
+          body: SafeArea(
+            child: ValueListenableBuilder<int>(
+              valueListenable: _pageNotifier,
+              builder: (context, currentPage, _) {
+                final slide = _slides[currentPage];
+                final isLast = currentPage == _slides.length - 1;
+
+                return Column(
+                  children: [
+                    _Header(
+                      page: currentPage,
+                      total: _slides.length,
+                      ink: slide.ink,
+                      onSkip: () => _leave(widget.onSkip),
                     ),
-                  ),
-                  _BottomBar(
-                    page: currentPage,
-                    total: _slides.length,
-                    slide: slide,
-                    isLast: isLast,
-                    onPrimary: _next,
-                  ),
-                ],
-              );
-            },
+                    Expanded(
+                      child: PageView.builder(
+                        controller: _pages,
+                        itemCount: _slides.length,
+                        onPageChanged: _onPageChanged,
+                        itemBuilder: (context, i) {
+                          final active = i == currentPage;
+                          return _SlidePage(
+                            index: i,
+                            slide: _slides[i],
+                            entrance: _reduceMotion
+                                ? kAlwaysCompleteAnimation
+                                : (active
+                                      ? _entrance
+                                      : kAlwaysDismissedAnimation),
+                            // Inactive pages stay still → only one scene animates.
+                            ambient: active
+                                ? _ambient
+                                : kAlwaysDismissedAnimation,
+                          );
+                        },
+                      ),
+                    ),
+                    _BottomBar(
+                      page: currentPage,
+                      total: _slides.length,
+                      slide: slide,
+                      isLast: isLast,
+                      onPrimary: _next,
+                    ),
+                  ],
+                );
+              },
+            ),
           ),
         ),
       ),
@@ -364,6 +379,9 @@ class _Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final effectiveInk = isDark ? AppColors.indigo400 : ink;
+
     return Padding(
       padding: const EdgeInsets.fromLTRB(24, 6, 12, 0),
       child: Row(
@@ -376,16 +394,19 @@ class _Header extends StatelessWidget {
               duration: const Duration(milliseconds: 250),
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
               decoration: BoxDecoration(
-                color: ink.withValues(alpha: .10),
+                color: effectiveInk.withValues(alpha: .10),
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: ink.withValues(alpha: .25), width: 1),
+                border: Border.all(
+                  color: effectiveInk.withValues(alpha: .25),
+                  width: 1,
+                ),
               ),
               child: Text(
                 '${page + 1} of $total',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 12.5,
-                  color: ink,
+                  color: effectiveInk,
                 ),
               ),
             ),
@@ -530,6 +551,9 @@ class _FeatureRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final effectiveInk = isDark ? AppColors.indigo400 : ink;
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -537,11 +561,14 @@ class _FeatureRow extends StatelessWidget {
           width: 32,
           height: 32,
           decoration: BoxDecoration(
-            color: ink.withValues(alpha: .10),
+            color: effectiveInk.withValues(alpha: .10),
             borderRadius: BorderRadius.circular(9),
-            border: Border.all(color: ink.withValues(alpha: .14), width: 1),
+            border: Border.all(
+              color: effectiveInk.withValues(alpha: .14),
+              width: 1,
+            ),
           ),
-          child: Icon(feature.icon, size: 17, color: ink),
+          child: Icon(feature.icon, size: 17, color: effectiveInk),
         ),
         const SizedBox(width: 12),
         Expanded(
@@ -580,6 +607,9 @@ class _BottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final effectiveInk = isDark ? AppColors.indigo400 : slide.ink;
+
     return Padding(
       padding: const EdgeInsets.fromLTRB(24, 12, 24, 20),
       child: Column(
@@ -598,8 +628,8 @@ class _BottomBar extends StatelessWidget {
                 height: 7,
                 decoration: BoxDecoration(
                   color: isSelected
-                      ? slide.ink
-                      : slide.ink.withValues(alpha: 0.22),
+                      ? effectiveInk
+                      : effectiveInk.withValues(alpha: 0.22),
                   borderRadius: BorderRadius.circular(4),
                 ),
               );
