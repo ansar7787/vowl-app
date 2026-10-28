@@ -86,7 +86,91 @@ void main() {
     );
 
     testWidgets(
-      'large phone (412x915) text scale 1.5 renders with no overflow',
+      'compact phone (320x568) text scale 1.0 (iPhone SE) renders all 4 slides with no overflow',
+      (tester) async {
+        tester.view.physicalSize = const Size(320 * 2, 568 * 2);
+        tester.view.devicePixelRatio = 2.0;
+        addTearDown(() => tester.view.resetPhysicalSize());
+
+        await tester.pumpWidget(
+          buildScreenHarness(
+            physicalSize: const Size(320, 568),
+            textScale: 1.0,
+            disableAnimations: true,
+          ),
+        );
+        await tester.pump();
+
+        // Slide 1
+        expect(find.text('Learn English Through Games'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        // Advance to Slide 2
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Learn From What You See'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        // Advance to Slide 3
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Stay Motivated Every Day'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        // Advance to Slide 4
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Track Progress & Accents'), findsOneWidget);
+        expect(find.text('Get Started'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      'standard iPhone (390x844) renders all 4 slides with no overflow',
+      (tester) async {
+        tester.view.physicalSize = const Size(390 * 3, 844 * 3);
+        tester.view.devicePixelRatio = 3.0;
+        addTearDown(() => tester.view.resetPhysicalSize());
+
+        await tester.pumpWidget(
+          buildScreenHarness(
+            physicalSize: const Size(390, 844),
+            textScale: 1.0,
+            disableAnimations: true,
+          ),
+        );
+        await tester.pump();
+
+        expect(find.text('Learn English Through Games'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Learn From What You See'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Stay Motivated Every Day'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Track Progress & Accents'), findsOneWidget);
+        expect(find.text('Get Started'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      'large phone (412x915) text scale 1.5 renders all 4 slides with no overflow',
       (tester) async {
         tester.view.physicalSize = const Size(412 * 3, 915 * 3);
         tester.view.devicePixelRatio = 3.0;
@@ -102,6 +186,105 @@ void main() {
         await tester.pump();
 
         expect(find.text('Learn English Through Games'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Learn From What You See'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Stay Motivated Every Day'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Track Progress & Accents'), findsOneWidget);
+        expect(find.text('Get Started'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      'tall flagship (430x932) text scale 1.25 renders all 4 slides with no overflow',
+      (tester) async {
+        tester.view.physicalSize = const Size(430 * 3, 932 * 3);
+        tester.view.devicePixelRatio = 3.0;
+        addTearDown(() => tester.view.resetPhysicalSize());
+
+        await tester.pumpWidget(
+          buildScreenHarness(
+            physicalSize: const Size(430, 932),
+            textScale: 1.25,
+            disableAnimations: true,
+          ),
+        );
+        await tester.pump();
+
+        expect(find.text('Learn English Through Games'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Learn From What You See'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Stay Motivated Every Day'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Track Progress & Accents'), findsOneWidget);
+        expect(find.text('Get Started'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets(
+      'tablet / foldable (600x960) text scale 1.0 renders all 4 slides with no overflow',
+      (tester) async {
+        tester.view.physicalSize = const Size(600 * 2, 960 * 2);
+        tester.view.devicePixelRatio = 2.0;
+        addTearDown(() => tester.view.resetPhysicalSize());
+
+        await tester.pumpWidget(
+          buildScreenHarness(
+            physicalSize: const Size(600, 960),
+            textScale: 1.0,
+            disableAnimations: true,
+          ),
+        );
+        await tester.pump();
+
+        expect(find.text('Learn English Through Games'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Learn From What You See'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Stay Motivated Every Day'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.tap(find.text('Continue'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        expect(find.text('Track Progress & Accents'), findsOneWidget);
+        expect(find.text('Get Started'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
     );
