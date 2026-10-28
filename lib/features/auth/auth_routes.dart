@@ -5,6 +5,7 @@ import 'package:vowl/features/auth/presentation/pages/login_page.dart';
 import 'package:vowl/features/auth/presentation/pages/signup_page.dart';
 import 'package:vowl/features/auth/presentation/pages/verify_email_page.dart';
 import 'package:vowl/features/auth/presentation/pages/age_gate_screen.dart';
+import 'package:vowl/features/onboarding/presentation/pages/onboarding_page.dart';
 
 /// Route definitions for the authentication feature module.
 ///
@@ -13,6 +14,9 @@ import 'package:vowl/features/auth/presentation/pages/age_gate_screen.dart';
 /// references these same strings to keep routing DRY. If routes need to change,
 /// update here and [AppRouter] together.
 abstract final class AuthRoutes {
+  /// Route path for the full-screen onboarding experience.
+  static const String onboardingRoute = '/onboarding';
+
   /// Route path for the login page.
   static const String loginRoute = '/login';
 
@@ -31,6 +35,10 @@ abstract final class AuthRoutes {
   /// List of go_router route specifications for authentication flows.
   static final List<RouteBase> routes = [
     GoRoute(path: '/', builder: (context, state) => const AuthGate()),
+    GoRoute(
+      path: onboardingRoute,
+      builder: (context, state) => const OnboardingPage(),
+    ),
     GoRoute(path: loginRoute, builder: (context, state) => const LoginPage()),
     GoRoute(path: signupRoute, builder: (context, state) => const SignUpPage()),
     GoRoute(

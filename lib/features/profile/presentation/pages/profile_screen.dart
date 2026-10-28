@@ -53,6 +53,7 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   final ImagePicker _picker = ImagePicker();
+  String? _pendingLocalPhotoPath;
 
   @override
   void initState() {
@@ -71,36 +72,83 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     return Scaffold(
       backgroundColor: bgColor,
-      body: BlocListener<AuthBloc, AuthState>(
-        listenWhen: (prev, curr) =>
-            curr.message != null && prev.message != curr.message,
-        listener: (context, authState) {
-          final msg = authState.message!;
-          final isWarning =
-              msg.contains('security') || msg.contains('cancelled');
-          final isSuccessMsg =
-              msg == 'auth.email_verification_sent' ||
-              msg == 'settings_dialogs.account_deleted_success';
-          final isErrorMsg =
-              msg.contains('error') ||
-              msg.contains('failed') ||
-              msg.contains('unreachable') ||
-              msg.contains('invalid');
-          CustomSnackBar.show(
-            context: context,
-            message: context.tr(msg),
-            type: isSuccessMsg
-                ? CustomSnackBarType.success
-                : (isErrorMsg ||
-                      (authState.status == AuthStatus.unauthenticated &&
-                          !isWarning))
-                ? CustomSnackBarType.error
-                : isWarning
-                ? CustomSnackBarType.warning
-                : CustomSnackBarType.info,
-          );
-          context.read<AuthBloc>().add(const AuthClearMessage());
-        },
+      body: MultiBlocListener(
+        listeners: [
+          BlocListener<AuthBloc, AuthState>(
+            listenWhen: (prev, curr) =>
+                curr.message != null && prev.message != curr.message,
+            listener: (context, authState) {
+              final msg = authState.message!;
+              final isWarning =
+                  msg.contains('security') || msg.contains('cancelled');
+              final isSuccessMsg =
+                  msg == 'auth.email_verification_sent' ||
+                  msg == 'settings_dialogs.account_deleted_success';
+              final isErrorMsg =
+                  msg.contains('error') ||
+                  msg.contains('failed') ||
+                  msg.contains('unreachable') ||
+                  msg.contains('invalid');
+              CustomSnackBar.show(
+                context: context,
+                message: context.tr(msg),
+                type: isSuccessMsg
+                    ? CustomSnackBarType.success
+                    : (isErrorMsg ||
+                          (authState.status == AuthStatus.unauthenticated &&
+                              !isWarning))
+                    ? CustomSnackBarType.error
+                    : isWarning
+                    ? CustomSnackBarType.warning
+                    : CustomSnackBarType.info,
+              );
+              context.read<AuthBloc>().add(const AuthClearMessage());
+            },
+          ),
+          BlocListener<ProfileBloc, ProfileState>(
+            listenWhen: (prev, curr) =>
+                prev.isLoading != curr.isLoading ||
+                (curr.message != null && prev.message != curr.message),
+            listener: (context, profileState) {
+              if (!profileState.isLoading && _pendingLocalPhotoPath != null) {
+                setState(() {
+                  _pendingLocalPhotoPath = null;
+                });
+              }
+
+              final msg = profileState.message;
+              if (msg != null && msg.isNotEmpty) {
+                final isSuccess = msg == 'profile.picture_updated';
+                final isError = msg.contains('error') ||
+                    msg.contains('failed') ||
+                    msg.contains('unreachable');
+
+                if (isSuccess) {
+                  try {
+                    di.sl<HapticService>().success();
+                  } catch (_) {}
+                } else if (isError) {
+                  try {
+                    di.sl<HapticService>().error();
+                  } catch (_) {}
+                }
+
+                CustomSnackBar.show(
+                  context: context,
+                  message: context.tr(
+                    msg,
+                    fallback: isSuccess
+                        ? 'Profile photo updated successfully!'
+                        : 'Failed to update photo.',
+                  ),
+                  type: isSuccess
+                      ? CustomSnackBarType.success
+                      : CustomSnackBarType.error,
+                );
+              }
+            },
+          ),
+        ],
         child: BlocSelector<AuthBloc, AuthState, bool>(
           selector: (state) => state.status == AuthStatus.loggingOut,
           builder: (context, isLoggingOut) {
@@ -185,19 +233,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                           prev.isLoading !=
                                                               curr.isLoading,
                                                       builder: (context, profileState) {
+                                                        final immediatePhoto =
+                                                            _pendingLocalPhotoPath ??
+                                                            (profileState
+                                                                    .isPhotoForUser(
+                                                                      user.id,
+                                                                    )
+                                                                ? profileState
+                                                                      .photoUrl
+                                                                : null);
+                                                        final isUploading =
+                                                            profileState.isLoading ||
+                                                            _pendingLocalPhotoPath != null;
                                                         return ProfileHeader(
                                                           user: user,
                                                           immediatePhotoUrl:
-                                                              profileState
-                                                                  .isPhotoForUser(
-                                                                    user.id,
-                                                                  )
-                                                              ? profileState
-                                                                    .photoUrl
-                                                              : null,
+                                                              immediatePhoto,
                                                           isUploading:
-                                                              profileState
-                                                                  .isLoading,
+                                                              isUploading,
                                                           onEditName: () =>
                                                               _showEditNameSheet(
                                                                 context,
@@ -256,21 +309,54 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                               prev.photoUrl !=
                                                                   curr.photoUrl ||
                                                               prev.photoUserId !=
-                                                                  curr.photoUserId,
+                                                                  curr.photoUserId ||
+                                                              prev.isLoading !=
+                                                                  curr.isLoading,
                                                           builder: (context, profileState) {
                                                             final immediatePhoto =
-                                                                profileState
-                                                                    .isPhotoForUser(
-                                                                      user.id,
-                                                                    )
-                                                                ? profileState
-                                                                      .photoUrl
-                                                                : null;
-                                                            return UserAvatar(
-                                                              photoUrl:
-                                                                  immediatePhoto ??
-                                                                  user.photoUrl,
-                                                              size: 32.r,
+                                                                _pendingLocalPhotoPath ??
+                                                                (profileState
+                                                                        .isPhotoForUser(
+                                                                          user.id,
+                                                                        )
+                                                                    ? profileState
+                                                                          .photoUrl
+                                                                    : null);
+                                                            final isUploading =
+                                                                profileState.isLoading ||
+                                                                _pendingLocalPhotoPath != null;
+                                                            return Stack(
+                                                              alignment: Alignment.center,
+                                                              children: [
+                                                                UserAvatar(
+                                                                  photoUrl:
+                                                                      immediatePhoto ??
+                                                                      user.photoUrl,
+                                                                  size: 32.r,
+                                                                ),
+                                                                if (isUploading)
+                                                                  Positioned.fill(
+                                                                    child: Container(
+                                                                      decoration: const BoxDecoration(
+                                                                        shape: BoxShape.circle,
+                                                                        color: Colors.black54,
+                                                                      ),
+                                                                      child: Center(
+                                                                        child: SizedBox(
+                                                                          width: 16.r,
+                                                                          height: 16.r,
+                                                                          child: CircularProgressIndicator(
+                                                                            strokeWidth: 2,
+                                                                            value: VowlMotion.lowAnimationModeOverride.value
+                                                                                ? 0.75
+                                                                                : null,
+                                                                            color: Colors.white,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                              ],
                                                             );
                                                           },
                                                         ),
@@ -724,6 +810,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
       );
 
       if (pickedFile != null && mounted) {
+        setState(() {
+          _pendingLocalPhotoPath = pickedFile.path;
+        });
         // WhatsApp-style 1:1 circular center crop
         final croppedFile = await ImageUtils.cropToSquare(
           File(pickedFile.path),
@@ -731,12 +820,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
         );
 
         if (mounted) {
+          setState(() {
+            _pendingLocalPhotoPath = croppedFile.path;
+          });
           context.read<ProfileBloc>().add(
             ProfileUpdatePictureRequested(croppedFile.path),
           );
         }
       }
     } catch (e) {
+      if (mounted) {
+        setState(() {
+          _pendingLocalPhotoPath = null;
+        });
+      }
       if (kDebugMode) {
         debugPrint('Error picking image: $e');
       }

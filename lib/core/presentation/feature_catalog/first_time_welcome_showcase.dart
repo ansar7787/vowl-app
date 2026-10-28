@@ -2,72 +2,35 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/onboarding_service.dart';
+import 'package:vowl/core/presentation/feature_catalog/vowl_showcase_catalog.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
-class _ShowcaseHighlight {
-  final IconData icon;
-  final String title;
-  final String subtitle;
-  final Color tint;
-
-  const _ShowcaseHighlight({
-    required this.icon,
-    required this.title,
-    required this.subtitle,
-    required this.tint,
-  });
-}
-
-class _ShowcaseSlide {
-  final String title;
-  final String subtitle;
-  final IconData heroIcon;
-  final String heroTag;
-  final List<Color> gradientColors;
-  final Color accentColor;
-  final List<_ShowcaseHighlight> highlights;
-
-  const _ShowcaseSlide({
-    required this.title,
-    required this.subtitle,
-    required this.heroIcon,
-    required this.heroTag,
-    required this.gradientColors,
-    required this.accentColor,
-    required this.highlights,
-  });
-}
-
-/// Ultra-modern full-screen onboarding modal showcasing Vowl's core ecosystem.
+/// Ultra-modern showcase modal for on-demand feature discovery (e.g. from Feature Directory).
 class FirstTimeWelcomeShowcase extends StatefulWidget {
   const FirstTimeWelcomeShowcase({super.key});
 
   static const String prefsKeyHasSeenShowcase =
-      'has_seen_vowl_welcome_showcase';
+      OnboardingService.prefsKeyHasSeenOnboarding;
 
   /// Evaluates if the user is seeing the app for the first time and presents showcase.
   static Future<void> checkAndShow(BuildContext context) async {
     try {
-      final prefs = await SharedPreferences.getInstance();
-      final hasSeen = prefs.getBool(prefsKeyHasSeenShowcase) ?? false;
-      if (hasSeen) return;
+      if (OnboardingService.isCompletedCached) return;
 
       if (context.mounted) {
-        // If existing user with progress, do not show beginner tour
         if (di.sl.isRegistered<AuthBloc>()) {
           final user = di.sl<AuthBloc>().state.user;
           if (user != null && user.totalLevelsCompleted > 0) {
-            await prefs.setBool(prefsKeyHasSeenShowcase, true);
+            await OnboardingService.completeOnboarding();
             return;
           }
         }
-        // Allow initial screen transition & daily reward check to settle smoothly
         await Future.delayed(const Duration(milliseconds: 600));
         if (context.mounted) {
           await show(context);
@@ -99,146 +62,13 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
   int _currentPage = 0;
   bool _isCompleting = false;
 
-  static const List<_ShowcaseSlide> _slides = [
-    _ShowcaseSlide(
-      title: '100+ Games Across 9 Pillars',
-      subtitle:
-          'Practice speaking, master daily grammar, and build confidence through real-world conversation practice.',
-      heroIcon: LucideIcons.gamepad2,
-      heroTag: '9 LEARNING PILLARS',
-      gradientColors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
-      accentColor: AppColors.indigo500,
-      highlights: [
-        _ShowcaseHighlight(
-          icon: LucideIcons.mic,
-          title: 'Live Speech Practice',
-          subtitle:
-              'Instant pronunciation guidance to help you speak clearly and naturally',
-          tint: Color(0xFF6366F1),
-        ),
-        _ShowcaseHighlight(
-          icon: LucideIcons.sparkles,
-          title: '19 Grammar Practice Games',
-          subtitle: 'Master verb tenses, sentence puzzles, and vocabulary',
-          tint: Color(0xFF8B5CF6),
-        ),
-        _ShowcaseHighlight(
-          icon: LucideIcons.messageSquare,
-          title: 'Everyday Conversations',
-          subtitle:
-              'Interactive dialogues for travel, dining, and daily situations',
-          tint: Color(0xFFA855F7),
-        ),
-      ],
-    ),
-    _ShowcaseSlide(
-      title: 'AI Vision & 50+ Languages',
-      subtitle:
-          'Point your camera at objects or text around you, and translate words offline whenever you need.',
-      heroIcon: LucideIcons.camera,
-      heroTag: 'CAMERA & OFFLINE TOOLS',
-      gradientColors: [Color(0xFF0EA5E9), Color(0xFF2563EB)],
-      accentColor: AppColors.blue500,
-      highlights: [
-        _ShowcaseHighlight(
-          icon: LucideIcons.camera,
-          title: 'Photo Vocab',
-          subtitle:
-              'Scan everyday objects to learn their English names instantly',
-          tint: Color(0xFF0EA5E9),
-        ),
-        _ShowcaseHighlight(
-          icon: LucideIcons.scan,
-          title: 'Scan & Learn',
-          subtitle:
-              'Turn book pages and printed text into interactive study lists',
-          tint: Color(0xFF2563EB),
-        ),
-        _ShowcaseHighlight(
-          icon: LucideIcons.languages,
-          title: '50+ Languages Offline',
-          subtitle:
-              'Translate words and full sentences without needing internet',
-          tint: Color(0xFF06B6D4),
-        ),
-      ],
-    ),
-    _ShowcaseSlide(
-      title: 'Buddy Boutique & Kids World',
-      subtitle:
-          'Dress up your companion mascot, care for your pet, and collect colorful stickers as you learn.',
-      heroIcon: LucideIcons.sparkles,
-      heroTag: 'MASCOT & KIDS ROOM',
-      gradientColors: [Color(0xFFF43F5E), Color(0xFFFB923C)],
-      accentColor: AppColors.rose500,
-      highlights: [
-        _ShowcaseHighlight(
-          icon: LucideIcons.shirt,
-          title: 'Buddy Boutique',
-          subtitle:
-              'Unlock cute outfits, hats, glasses, and accessories for your buddy',
-          tint: Color(0xFFF43F5E),
-        ),
-        _ShowcaseHighlight(
-          icon: LucideIcons.baby,
-          title: 'Kids Room',
-          subtitle:
-              'Gentle phonics games, pet care, and fun beginner activities',
-          tint: Color(0xFFFB923C),
-        ),
-        _ShowcaseHighlight(
-          icon: LucideIcons.penTool,
-          title: '100-Sticker Album',
-          subtitle: 'Learn letter handwriting and collect milestone stickers',
-          tint: Color(0xFFF59E0B),
-        ),
-      ],
-    ),
-    _ShowcaseSlide(
-      title: 'Reports, Accents & Error Journal',
-      subtitle:
-          'Track your weekly progress, review past mistakes at your own pace, and tune your ear to global accents.',
-      heroIcon: LucideIcons.barChart2,
-      heroTag: 'PROGRESS & ACCENTS',
-      gradientColors: [Color(0xFF10B981), Color(0xFF0D9488)],
-      accentColor: AppColors.emerald500,
-      highlights: [
-        _ShowcaseHighlight(
-          icon: LucideIcons.barChart2,
-          title: 'Weekly Learning Reports',
-          subtitle:
-              'Clear charts showing your daily accuracy, streak, and study time',
-          tint: Color(0xFF10B981),
-        ),
-        _ShowcaseHighlight(
-          icon: LucideIcons.refreshCw,
-          title: 'Review Mistake Journal',
-          subtitle:
-              'Replay and practice words and questions you missed earlier',
-          tint: Color(0xFF14B8A6),
-        ),
-        _ShowcaseHighlight(
-          icon: LucideIcons.globe,
-          title: '6 World Accents',
-          subtitle:
-              'Practice listening to American, British, Australian, and Indian voices',
-          tint: Color(0xFF059669),
-        ),
-      ],
-    ),
-  ];
+  static const List<ShowcaseSlide> _slides = VowlShowcaseCatalog.slides;
 
   Future<void> _completeShowcase() async {
     if (_isCompleting) return;
     _isCompleting = true;
     di.sl<HapticService>().light();
-    try {
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.setBool(
-        FirstTimeWelcomeShowcase.prefsKeyHasSeenShowcase,
-        true,
-      );
-    } catch (_) {}
+    await OnboardingService.completeOnboarding();
     if (mounted) {
       Navigator.of(context).pop();
     }

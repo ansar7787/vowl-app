@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 
 // ---------------------------------------------------------------------------
 // Core shimmer block
@@ -218,66 +220,200 @@ class LeaderboardShimmerLoading extends StatelessWidget {
 // Home Dashboard shimmer
 // ---------------------------------------------------------------------------
 
-/// Home dashboard skeleton loader.
+/// Home dashboard skeleton loader matching the true home screen hierarchy.
 class HomeShimmerLoading extends StatelessWidget {
   const HomeShimmerLoading({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final cardBg = isDark
+        ? AppColors.slate800.withValues(alpha: 0.6)
+        : Colors.white.withValues(alpha: 0.85);
+    final borderColor = isDark
+        ? Colors.white.withValues(alpha: 0.08)
+        : Colors.black.withValues(alpha: 0.05);
+
     return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.all(24.r),
-            child: Row(
+      physics: const NeverScrollableScrollPhysics(),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: MediaQuery.of(context).padding.top + 16.h),
+
+            // 1. Hero Header (CommandPod) Shimmer
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    ShimmerLoading.rounded(height: 12, width: 100),
+                    ShimmerLoading.rounded(height: 12.h, width: 110.w, borderRadius: 6),
                     SizedBox(height: 8.h),
-                    ShimmerLoading.rounded(height: 24, width: 180),
+                    ShimmerLoading.rounded(height: 24.h, width: 170.w, borderRadius: 8),
                   ],
                 ),
-                const ShimmerLoading.circular(width: 45, height: 45),
+                ShimmerLoading.circular(width: 48.r, height: 48.r),
               ],
             ),
-          ),
-          SizedBox(
-            height: 180.h,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 3,
-              padding: EdgeInsets.only(left: 24.w),
-              itemBuilder: (context, index) => Container(
-                width: 300.w,
-                margin: EdgeInsets.only(right: 16.w),
-                child: ShimmerLoading.rounded(height: 180, borderRadius: 24),
+            SizedBox(height: 24.h),
+
+            // 2. Continue Learning Card Shimmer
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(22.r),
+              decoration: BoxDecoration(
+                color: cardBg,
+                borderRadius: BorderRadius.circular(28.r),
+                border: Border.all(color: borderColor),
+                boxShadow: [
+                  BoxShadow(
+                    color: isDark
+                        ? Colors.black.withValues(alpha: 0.25)
+                        : AppColors.indigo500.withValues(alpha: 0.08),
+                    blurRadius: 24,
+                    offset: const Offset(0, 10),
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ShimmerLoading.circular(width: 40.r, height: 40.r),
+                      ShimmerLoading.rounded(
+                        width: 90.w,
+                        height: 24.h,
+                        borderRadius: 12.r,
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 20.h),
+                  ShimmerLoading.rounded(
+                    width: 175.w,
+                    height: 24.h,
+                    borderRadius: 8.r,
+                  ),
+                  SizedBox(height: 20.h),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ShimmerLoading.rounded(
+                              width: 110.w,
+                              height: 12.h,
+                              borderRadius: 4.r,
+                            ),
+                            SizedBox(height: 10.h),
+                            ShimmerLoading.rounded(
+                              width: double.infinity,
+                              height: 8.h,
+                              borderRadius: 4.r,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 16.w),
+                      ShimmerLoading.circular(width: 44.r, height: 44.r),
+                    ],
+                  ),
+                ],
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(24.r),
-            child: ShimmerLoading.rounded(height: 20, width: 150),
-          ),
-          GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 16.h,
-              crossAxisSpacing: 16.w,
-              childAspectRatio: 0.85,
+            SizedBox(height: 24.h),
+
+            // 3. 4-Card Unified Stats Row Shimmer (Streak | Coins | Badges | Rank)
+            Row(
+              children: [
+                Expanded(
+                  child: _buildStatTileSkeleton(
+                    valueWidth: 26.w,
+                    labelWidth: 36.w,
+                  ),
+                ),
+                SizedBox(width: 8.w),
+                Expanded(
+                  child: _buildStatTileSkeleton(
+                    valueWidth: 34.w,
+                    labelWidth: 30.w,
+                  ),
+                ),
+                SizedBox(width: 8.w),
+                Expanded(
+                  child: _buildStatTileSkeleton(
+                    valueWidth: 22.w,
+                    labelWidth: 38.w,
+                  ),
+                ),
+                SizedBox(width: 8.w),
+                Expanded(
+                  child: _buildStatTileSkeleton(
+                    valueWidth: 28.w,
+                    labelWidth: 26.w,
+                  ),
+                ),
+              ],
             ),
-            itemCount: 4,
-            itemBuilder: (context, index) =>
-                ShimmerLoading.rounded(height: 200, borderRadius: 24),
-          ),
-        ],
+            SizedBox(height: 28.h),
+
+            // 4. Quest Arena Header & Bento Skeleton
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ShimmerLoading.rounded(height: 18.h, width: 130.w, borderRadius: 6),
+                ShimmerLoading.rounded(height: 14.h, width: 56.w, borderRadius: 6),
+              ],
+            ),
+            SizedBox(height: 14.h),
+            ShimmerLoading.rounded(height: 130.h, borderRadius: 24),
+            SizedBox(height: 24.h),
+
+            // 5. Global Progress Card Shimmer
+            ShimmerLoading.rounded(height: 90.h, borderRadius: 20),
+            SizedBox(height: 40.h),
+          ],
+        ),
+      ),
+    );
+  }
+
+  static Widget _buildStatTileSkeleton({
+    required double valueWidth,
+    required double labelWidth,
+  }) {
+    return GlassTile(
+      borderRadius: BorderRadius.circular(20.r),
+      padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 4.w),
+      blur: 0,
+      child: SizedBox(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ShimmerLoading.circular(width: 28.r, height: 28.r),
+            SizedBox(height: 6.h),
+            ShimmerLoading.rounded(
+              width: valueWidth,
+              height: 14.h,
+              borderRadius: 4.r,
+            ),
+            SizedBox(height: 5.h),
+            ShimmerLoading.rounded(
+              width: labelWidth,
+              height: 8.h,
+              borderRadius: 3.r,
+            ),
+          ],
+        ),
       ),
     );
   }

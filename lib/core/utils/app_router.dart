@@ -9,6 +9,7 @@ import 'dart:async';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/age_gate_service.dart';
+import 'package:vowl/core/utils/onboarding_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 // Modular Feature Routes
@@ -33,6 +34,7 @@ class AppRouter {
 
   static const String initialRoute = '/splash';
   static const String splashRoute = '/splash';
+  static const String onboardingRoute = AuthRoutes.onboardingRoute;
   static const String homeRoute = '/home';
   static const String gamesRoute = '/games';
   static const String loginRoute = '/login';
@@ -158,13 +160,14 @@ class AppRouter {
     final isVerified = authState.user?.isEmailVerified ?? false;
 
     final path = state.uri.path;
+    final isOnboardingRoute = path == onboardingRoute;
     final isLoginRoute = path == loginRoute;
     final isSignupRoute = path == signupRoute;
     final isForgotPasswordRoute = path == forgotPasswordRoute;
     final isSplashRoute = path == splashRoute;
 
     final isAuthRoute = isLoginRoute || isSignupRoute || isForgotPasswordRoute;
-    final isAllowedUnauth = isAuthRoute || isSplashRoute;
+    final isAllowedUnauth = isAuthRoute || isSplashRoute || isOnboardingRoute;
 
     // Splash: always allowed while auth resolves.
     if (isSplashRoute) return null;
@@ -175,8 +178,11 @@ class AppRouter {
     // 2. Logout in progress — do not redirect mid-transition.
     if (authState.status == AuthStatus.loggingOut) return null;
 
-    // 3. Unauthenticated — must be on an allowed route.
+    // 3. Unauthenticated — check onboarding gate first.
     if (!isAuthenticated) {
+      if (!OnboardingService.isCompletedCached) {
+        return isOnboardingRoute ? null : onboardingRoute;
+      }
       return !isAllowedUnauth ? loginRoute : null;
     }
 
@@ -203,7 +209,8 @@ class AppRouter {
           path != splashRoute &&
           path != ageGateRoute &&
           path != settingsRoute &&
-          path != hatchingRoute) {
+          path != hatchingRoute &&
+          path != onboardingRoute) {
         return kidsZoneRoute; // Force into Kids Zone
       }
     }

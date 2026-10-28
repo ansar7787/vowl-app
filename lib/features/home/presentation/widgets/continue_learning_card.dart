@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -30,11 +32,24 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 /// 8. **Dark mode adaptive** — no hardcoded white assumptions.
 /// 9. **Haptic feedback** — physical "click" on tap.
 class ContinueLearningCard extends StatefulWidget {
-  /// Current authenticated [user] entity.
-  final UserEntity user;
+  /// Current authenticated [user] entity. May be null in shimmer/loading mode.
+  final UserEntity? user;
+
+  /// Whether the card is currently resolving logic or fetching data.
+  final bool isLoading;
 
   /// Creates a [ContinueLearningCard] for [user].
-  const ContinueLearningCard({super.key, required this.user});
+  const ContinueLearningCard({
+    super.key,
+    required UserEntity this.user,
+    this.isLoading = false,
+  });
+
+  /// Shimmer placeholder constructor for pre-load and loading states.
+  const ContinueLearningCard.shimmer({
+    super.key,
+  })  : user = null,
+        isLoading = true;
 
   @override
   State<ContinueLearningCard> createState() => _ContinueLearningCardState();
@@ -55,31 +70,36 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
   ];
 
   // ── Cached state ────────────────────────────────────────────────────────
-  late QuestType _nextType;
-  late int _cleared;
-  late int _max;
+  QuestType _nextType = QuestType.vocabulary;
+  int _cleared = 0;
+  int _max = 0;
 
   bool _hasAnimated = false;
 
   @override
   void initState() {
     super.initState();
-    _computeState();
+    if (widget.user != null && !widget.isLoading) {
+      _computeState();
+    }
   }
 
   @override
   void didUpdateWidget(covariant ContinueLearningCard oldWidget) {
     super.didUpdateWidget(oldWidget);
-    // Only recompute if the user entity actually changed.
-    if (oldWidget.user != widget.user) {
-      _computeState();
+    if (widget.user != null && !widget.isLoading) {
+      if (oldWidget.user != widget.user || oldWidget.isLoading != widget.isLoading) {
+        _computeState();
+      }
     }
   }
 
   void _computeState() {
-    _nextType = _resolveNextCategory();
-    _cleared = widget.user.getTotalCategoryLevelsCleared(_nextType);
-    _max = widget.user.getMaxCategoryLevels(_nextType);
+    final user = widget.user;
+    if (user == null) return;
+    _nextType = _resolveNextCategory(user);
+    _cleared = user.getTotalCategoryLevelsCleared(_nextType);
+    _max = user.getMaxCategoryLevels(_nextType);
   }
 
   /// Implements a "Hybrid" algorithm for the absolute best UX:
@@ -88,11 +108,11 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
   /// 2. "Skill Balancing": If they have no recent activities, or they just 100%
   ///    completed their last category, it falls back to recommending the category
   ///    where they have the LOWEST progress, forcing a well-rounded skillset.
-  QuestType _resolveNextCategory() {
-    if (widget.user.totalLevelsCompleted == 0) return QuestType.vocabulary;
+  QuestType _resolveNextCategory(UserEntity user) {
+    if (user.totalLevelsCompleted == 0) return QuestType.vocabulary;
 
     // 1. "True Resume": Check what they were literally just doing.
-    for (final activity in widget.user.recentActivities) {
+    for (final activity in user.recentActivities) {
       if (activity['type'] == 'quest') {
         final gameTypeStr = activity['gameType'] as String?;
         if (gameTypeStr != null) {
@@ -101,8 +121,8 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
           );
           if (subtype != null) {
             final type = subtype.category;
-            final cleared = widget.user.getTotalCategoryLevelsCleared(type);
-            final max = widget.user.getMaxCategoryLevels(type);
+            final cleared = user.getTotalCategoryLevelsCleared(type);
+            final max = user.getMaxCategoryLevels(type);
             if (max > 0 && cleared < max) {
               return type; // Perfect match: Pick up exactly where they left off.
             }
@@ -116,8 +136,8 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     int lowestCleared = 999999;
 
     for (final type in _journeyOrder) {
-      final cleared = widget.user.getTotalCategoryLevelsCleared(type);
-      final max = widget.user.getMaxCategoryLevels(type);
+      final cleared = user.getTotalCategoryLevelsCleared(type);
+      final max = user.getMaxCategoryLevels(type);
 
       // Only consider categories that actually have levels available
       if (max > 0) {
@@ -167,10 +187,15 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
 
   @override
   Widget build(BuildContext context) {
+    if (widget.isLoading || widget.user == null) {
+      return _buildShimmer(context);
+    }
+
+    final user = widget.user!;
     final color = GameHelper.getQuestTypeColor(_nextType);
     final darkColor = _getDarkerShade(color);
     final icon = GameHelper.getIconForCategory(_nextType);
-    final isNewUser = widget.user.totalLevelsCompleted == 0;
+    final isNewUser = user.totalLevelsCompleted == 0;
 
     final categoryLabel = _nextType.name.toUpperCase().replaceAllMapped(
       RegExp('(?<=[a-z])(?=[A-Z])'),
@@ -519,6 +544,92 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
         end: const Offset(1, 1),
         duration: 800.ms,
         curve: Curves.easeOutCubic,
+      ),
+    );
+  }
+
+  /// Shimmer skeleton matching the exact proportions of the loaded card.
+  Widget _buildShimmer(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final baseBg = isDark
+        ? AppColors.slate800.withValues(alpha: 0.6)
+        : Colors.white.withValues(alpha: 0.85);
+    final borderColor = isDark
+        ? Colors.white.withValues(alpha: 0.08)
+        : Colors.black.withValues(alpha: 0.05);
+
+    return RepaintBoundary(
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.all(22.r),
+        decoration: BoxDecoration(
+          color: baseBg,
+          borderRadius: BorderRadius.circular(28.r),
+          border: Border.all(color: borderColor),
+          boxShadow: [
+            BoxShadow(
+              color: isDark
+                  ? Colors.black.withValues(alpha: 0.25)
+                  : AppColors.indigo500.withValues(alpha: 0.08),
+              blurRadius: 24,
+              offset: const Offset(0, 10),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // Top row: Category icon in frosted circle + category eyebrow pill
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ShimmerLoading.circular(width: 40.r, height: 40.r),
+                ShimmerLoading.rounded(
+                  width: 90.w,
+                  height: 24.h,
+                  borderRadius: 12.r,
+                ),
+              ],
+            ),
+            SizedBox(height: 20.h),
+
+            // Title shimmer
+            ShimmerLoading.rounded(
+              width: 175.w,
+              height: 24.h,
+              borderRadius: 8.r,
+            ),
+            SizedBox(height: 20.h),
+
+            // Bottom section: Milestone & progress bar on left, play button on right
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ShimmerLoading.rounded(
+                        width: 110.w,
+                        height: 12.h,
+                        borderRadius: 4.r,
+                      ),
+                      SizedBox(height: 10.h),
+                      ShimmerLoading.rounded(
+                        width: double.infinity,
+                        height: 8.h,
+                        borderRadius: 4.r,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(width: 16.w),
+                ShimmerLoading.circular(width: 44.r, height: 44.r),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
