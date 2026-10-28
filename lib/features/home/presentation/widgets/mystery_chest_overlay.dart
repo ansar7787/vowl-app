@@ -15,17 +15,64 @@ class _LocalPalette {
   static const Color colorfde68a = Color(0xFFFDE68A);
 }
 
+/// Rotating sunburst rays painter creating celebratory god-ray beams.
+class _SunburstPainter extends CustomPainter {
+  final Color color;
+  final int rayCount;
+
+  const _SunburstPainter({
+    required this.color,
+    this.rayCount = 14,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final center = Offset(size.width / 2, size.height / 2);
+    final radius = math.max(size.width, size.height) / 2;
+    final angleStep = (2 * math.pi) / rayCount;
+    final halfRay = angleStep / 2;
+
+    final paint = Paint()
+      ..shader = ui.Gradient.radial(
+        center,
+        radius,
+        [
+          color.withValues(alpha: 0.35),
+          color.withValues(alpha: 0.12),
+          Colors.transparent,
+        ],
+        [0.0, 0.65, 1.0],
+      )
+      ..style = PaintingStyle.fill;
+
+    for (int i = 0; i < rayCount; i++) {
+      final startAngle = i * angleStep;
+      final path = Path()
+        ..moveTo(center.dx, center.dy)
+        ..arcTo(
+          Rect.fromCircle(center: center, radius: radius),
+          startAngle - halfRay * 0.45,
+          halfRay * 0.9,
+          false,
+        )
+        ..close();
+      canvas.drawPath(path, paint);
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant _SunburstPainter oldDelegate) =>
+      color != oldDelegate.color || rayCount != oldDelegate.rayCount;
+}
+
 /// A premium daily-chest overlay with AAA-grade staged transitions.
 ///
-/// Animation timeline (on tap → open):
-///   0–300ms : Violent shake intensifies + slight scale-up
-///   300–500ms: Blinding white flash explosion
-///   400–900ms: Closed chest fades/scales out, opened chest scales in (elasticOut)
-///   500ms+   : Confetti fires, glow pulses, reward card slides up
-///
-/// The key insight: we never do an instant image swap. Every visual change
-/// is driven by explicit [AnimationController]s so the user sees a
-/// continuous, cinematic flow — not a jarring frame-skip.
+/// Choreographed Timeline:
+///   0–380ms   : Anticipation & violent shake + squash tension coiling downward
+///   380–500ms : Blinding white-golden flash explosion masking the clean cutover
+///   380ms     : Instant cutover (no dual-ghosting overlap)
+///   380–700ms : Opened chest bursts out with elastic overshoot recoil & sunburst
+///   500ms+    : Confetti fires, continuous beam rotation, reward card slides up
 class MysteryChestOverlay extends StatefulWidget {
   /// Whether the chest has been opened.
   final bool isOpened;
@@ -67,6 +114,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
   late final AnimationController _idlePulseCtrl;
   late final AnimationController _openSequenceCtrl;
   late final AnimationController _glowPulseCtrl;
+  late final AnimationController _rayRotationCtrl;
 
   // ── Derived animations ───────────────────────────────────────────────
   late final Animation<double> _entranceFade;
@@ -74,10 +122,13 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
 
   // Opening sequence sub-animations (all driven by _openSequenceCtrl)
   late final Animation<double> _shakeIntensity;
+  late final Animation<double> _chestSquashX;
+  late final Animation<double> _chestSquashY;
   late final Animation<double> _flashOpacity;
-  late final Animation<double> _closedChestFade;
+  late final Animation<double> _sunburstFade;
+  late final Animation<double> _sunburstScale;
   late final Animation<double> _openedChestScale;
-  late final Animation<double> _openedChestFade;
+  late final Animation<double> _openedChestRecoilY;
   late final Animation<double> _rewardSlide;
   late final Animation<double> _rewardFade;
   late final Animation<double> _closeButtonFade;
@@ -88,7 +139,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
   void initState() {
     super.initState();
 
-    // 1) Entrance: backdrop + title fade-in (400ms)
+    // 1) Entrance: backdrop + title fade-in (600ms)
     _entranceCtrl = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 600),
@@ -107,73 +158,103 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
       duration: const Duration(milliseconds: 1800),
     );
 
-    // 3) Opening sequence (1200ms total, sub-intervals via Interval)
+    // 3) Opening sequence (1250ms total, choreographed sub-intervals)
     _openSequenceCtrl = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1200),
+      duration: const Duration(milliseconds: 1250),
     );
 
-    // 0.00–0.35: Shake intensifies
+    // 0.00–0.38: Shake intensifies as anticipation builds
     _shakeIntensity = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _openSequenceCtrl,
-        curve: const Interval(0.0, 0.35, curve: Curves.easeIn),
+        curve: const Interval(0.0, 0.38, curve: Curves.easeIn),
       ),
     );
 
-    // 0.25–0.50: White flash
-    _flashOpacity =
-        TweenSequence<double>([
-          TweenSequenceItem(tween: Tween(begin: 0.0, end: 1.0), weight: 40),
-          TweenSequenceItem(tween: Tween(begin: 1.0, end: 0.0), weight: 60),
-        ]).animate(
-          CurvedAnimation(
-            parent: _openSequenceCtrl,
-            curve: const Interval(0.25, 0.55, curve: Curves.easeOut),
-          ),
-        );
-
-    // 0.30–0.50: Closed chest fades out
-    _closedChestFade = Tween<double>(begin: 1.0, end: 0.0).animate(
+    // 0.18–0.38: Anticipation squash (coils tension downward at bottom anchor)
+    _chestSquashX = Tween<double>(begin: 1.0, end: 1.10).animate(
       CurvedAnimation(
         parent: _openSequenceCtrl,
-        curve: const Interval(0.30, 0.50, curve: Curves.easeIn),
+        curve: const Interval(0.18, 0.38, curve: Curves.easeInOutCubic),
+      ),
+    );
+    _chestSquashY = Tween<double>(begin: 1.0, end: 0.88).animate(
+      CurvedAnimation(
+        parent: _openSequenceCtrl,
+        curve: const Interval(0.18, 0.38, curve: Curves.easeInOutCubic),
       ),
     );
 
-    // 0.40–0.85: Opened chest scales & fades in
-    _openedChestScale = Tween<double>(begin: 0.3, end: 1.0).animate(
+    // 0.28–0.50: Blinding flash explosion centered on swap at 0.38
+    _flashOpacity = TweenSequence<double>([
+      TweenSequenceItem(tween: Tween(begin: 0.0, end: 1.0), weight: 45),
+      TweenSequenceItem(tween: Tween(begin: 1.0, end: 0.0), weight: 55),
+    ]).animate(
       CurvedAnimation(
         parent: _openSequenceCtrl,
-        curve: const Interval(0.40, 0.85, curve: Curves.elasticOut),
-      ),
-    );
-    _openedChestFade = Tween<double>(begin: 0.0, end: 1.0).animate(
-      CurvedAnimation(
-        parent: _openSequenceCtrl,
-        curve: const Interval(0.38, 0.55, curve: Curves.easeOut),
+        curve: const Interval(0.28, 0.50, curve: Curves.easeOut),
       ),
     );
 
-    // 0.60–1.00: Reward card slides up
-    _rewardSlide = Tween<double>(begin: 40.0, end: 0.0).animate(
+    // 0.38–0.62: Radiant sunburst rays emerge
+    _sunburstFade = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _openSequenceCtrl,
-        curve: const Interval(0.60, 1.0, curve: Curves.easeOutCubic),
+        curve: const Interval(0.38, 0.62, curve: Curves.easeOut),
+      ),
+    );
+    _sunburstScale = Tween<double>(begin: 0.4, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _openSequenceCtrl,
+        curve: const Interval(0.38, 0.75, curve: Curves.easeOutBack),
+      ),
+    );
+
+    // 0.38–0.70: Opened chest pops open with punchy elastic recoil
+    _openedChestScale = Tween<double>(begin: 0.88, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _openSequenceCtrl,
+        curve: const Interval(0.38, 0.70, curve: Curves.easeOutBack),
+      ),
+    );
+
+    // Recoil stretch on Y axis (lid swings open with upward momentum)
+    _openedChestRecoilY = TweenSequence<double>([
+      TweenSequenceItem(
+        tween: Tween<double>(begin: 1.0, end: 1.14),
+        weight: 35,
+      ),
+      TweenSequenceItem(
+        tween: Tween<double>(begin: 1.14, end: 1.0),
+        weight: 65,
+      ),
+    ]).animate(
+      CurvedAnimation(
+        parent: _openSequenceCtrl,
+        curve: const Interval(0.38, 0.70, curve: Curves.easeInOut),
+      ),
+    );
+
+    // 0.58–0.95: Reward card slides up
+    _rewardSlide = Tween<double>(begin: 45.0, end: 0.0).animate(
+      CurvedAnimation(
+        parent: _openSequenceCtrl,
+        curve: const Interval(0.58, 0.95, curve: Curves.easeOutCubic),
       ),
     );
     _rewardFade = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _openSequenceCtrl,
-        curve: const Interval(0.60, 0.85, curve: Curves.easeOut),
+        curve: const Interval(0.58, 0.85, curve: Curves.easeOut),
       ),
     );
 
-    // 0.80–1.00: Close button fades in
+    // 0.75–1.00: Close button fades in
     _closeButtonFade = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _openSequenceCtrl,
-        curve: const Interval(0.80, 1.0, curve: Curves.easeOut),
+        curve: const Interval(0.75, 1.0, curve: Curves.easeOut),
       ),
     );
 
@@ -181,6 +262,12 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
     _glowPulseCtrl = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 2000),
+    );
+
+    // 5) Continuous rotating sunburst rays (loops)
+    _rayRotationCtrl = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 14),
     );
 
     // Start entrance
@@ -191,6 +278,10 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
       _openSequenceCtrl.value = 1.0;
       _idlePulseCtrl.stop();
       _hasTriggeredOpen = true;
+      if (!VowlMotion.shouldReduceMotion(context)) {
+        _rayRotationCtrl.repeat();
+        _glowPulseCtrl.repeat(reverse: true);
+      }
     }
   }
 
@@ -217,8 +308,10 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
       }
     } else {
       if (!reduceMotion) {
+        if (!_rayRotationCtrl.isAnimating) _rayRotationCtrl.repeat();
         if (!_glowPulseCtrl.isAnimating) _glowPulseCtrl.repeat(reverse: true);
       } else {
+        _rayRotationCtrl.stop();
         _glowPulseCtrl.stop();
         _glowPulseCtrl.value = 0.5;
       }
@@ -226,19 +319,20 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
   }
 
   void _triggerOpenSequence() {
-    // Stop idle pulse
+    // Stop idle breathing pulse
     _idlePulseCtrl.stop();
 
-    // Fire confetti at the flash peak (~350ms into the sequence)
-    Future.delayed(const Duration(milliseconds: 420), () {
+    // Fire confetti at the flash/pop peak (~480ms into sequence)
+    Future.delayed(const Duration(milliseconds: 480), () {
       if (mounted) widget.confettiController.play();
     });
 
-    // Start glow pulse after chest appears
-    Future.delayed(const Duration(milliseconds: 700), () {
+    // Start sunburst rotation and ambient glow pulse
+    Future.delayed(const Duration(milliseconds: 520), () {
       if (mounted) {
         if (!VowlMotion.shouldReduceMotion(context)) {
-          _glowPulseCtrl.repeat(reverse: true);
+          if (!_rayRotationCtrl.isAnimating) _rayRotationCtrl.repeat();
+          if (!_glowPulseCtrl.isAnimating) _glowPulseCtrl.repeat(reverse: true);
         } else {
           _glowPulseCtrl.value = 0.5;
         }
@@ -254,6 +348,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
     _idlePulseCtrl.dispose();
     _openSequenceCtrl.dispose();
     _glowPulseCtrl.dispose();
+    _rayRotationCtrl.dispose();
     super.dispose();
   }
 
@@ -269,6 +364,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
           _idlePulseCtrl,
           _openSequenceCtrl,
           _glowPulseCtrl,
+          _rayRotationCtrl,
         ]),
         builder: (context, _) {
           return Stack(
@@ -342,20 +438,20 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
                         _buildTitle(context, chestColor),
                         SizedBox(height: 8.h),
                         _buildSubtitle(context, chestColor),
-                        SizedBox(height: 50.h),
+                        SizedBox(height: 40.h),
 
                         // ── Chest area ──
                         _buildChestArea(context, chestColor),
 
                         // ── Reward card (slides up after open) ──
                         if (_hasTriggeredOpen) ...[
-                          SizedBox(height: 40.h),
+                          SizedBox(height: 36.h),
                           _buildRewardCard(context),
                         ],
 
                         // ── "Tap to unveil" prompt ──
                         if (!_hasTriggeredOpen) ...[
-                          SizedBox(height: 60.h),
+                          SizedBox(height: 50.h),
                           _buildTapPrompt(context, chestColor),
                         ],
                       ],
@@ -444,6 +540,10 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
   // ── Chest area ─────────────────────────────────────────────────────────
 
   Widget _buildChestArea(BuildContext context, Color chestColor) {
+    // Clean cutover happens at the climax of the flash (0.38)
+    final isOpen = _openSequenceCtrl.value >= 0.38 ||
+        (widget.isOpened && !_openSequenceCtrl.isAnimating);
+
     return Semantics(
       button: true,
       enabled: !_hasTriggeredOpen,
@@ -452,43 +552,34 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
           : context.tr('home.chest_daily_mystery', fallback: 'DAILY MYSTERY'),
       child: GestureDetector(
         onTap: _hasTriggeredOpen ? null : widget.onOpen,
+        behavior: HitTestBehavior.opaque,
         child: SizedBox(
-          width: 320.r,
-          height: 320.r,
+          width: 330.r,
+          height: 330.r,
           child: Stack(
             alignment: Alignment.center,
             children: [
-              // ── Background glow ──
+              // ── Background ambient glow ──
               _buildBackgroundGlow(chestColor),
 
-              // ── Closed chest (with shake + idle pulse) ──
-              if (!_hasTriggeredOpen || _closedChestFade.value > 0.01)
-                _buildClosedChest(context),
+              // ── Sunburst rays (revealed when opened) ──
+              if (_hasTriggeredOpen && _sunburstFade.value > 0.01)
+                _buildSunburstRays(chestColor),
 
-              // ── Opened chest (scales in during sequence) ──
-              if (_hasTriggeredOpen && _openedChestFade.value > 0.01)
-                _buildOpenedChest(context),
-
-              // ── White flash explosion ──
-              if (_hasTriggeredOpen && _flashOpacity.value > 0.01)
-                IgnorePointer(
-                  child: Container(
-                    width: 400.r,
-                    height: 400.r,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      gradient: RadialGradient(
-                        colors: [
-                          Colors.white.withValues(alpha: _flashOpacity.value),
-                          Colors.white.withValues(
-                            alpha: _flashOpacity.value * 0.6,
-                          ),
-                          Colors.transparent,
-                        ],
-                      ),
-                    ),
-                  ),
+              // ── Chest Layer (bottom-anchored so floor line stays locked) ──
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 25.r),
+                  child: isOpen
+                      ? _buildOpenedChest(context)
+                      : _buildClosedChest(context),
                 ),
+              ),
+
+              // ── White & Golden Flash explosion ──
+              if (_hasTriggeredOpen && _flashOpacity.value > 0.01)
+                _buildFlashBurst(chestColor),
 
               // ── Confetti ──
               ExcludeSemantics(
@@ -521,7 +612,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
 
     if (_hasTriggeredOpen) {
       // After opening: gentle pulsing glow
-      glowScale = 0.9 + (_glowPulseCtrl.value * 0.3);
+      glowScale = 0.95 + (_glowPulseCtrl.value * 0.25);
       glowAlpha = widget.isPremium ? 0.35 : 0.25;
     } else {
       // Idle: subtle breathing
@@ -549,41 +640,89 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
     );
   }
 
-  Widget _buildClosedChest(BuildContext context) {
-    // Combine idle pulse + opening shake
-    final double idleScale = 1.0 + (_idlePulseCtrl.value * 0.04);
-    final double shakeAmount = _shakeIntensity.value * 6.0;
-    final double fadeOut = _closedChestFade.value;
-
-    // Shake offset uses a rapid sine pattern driven by time
-    final now = DateTime.now().millisecondsSinceEpoch;
-    final shakeX = math.sin(now * 0.05) * shakeAmount;
-    final shakeY = math.cos(now * 0.07) * shakeAmount * 0.3;
-    final shakeRot = math.sin(now * 0.04) * _shakeIntensity.value * 0.06;
+  Widget _buildSunburstRays(Color chestColor) {
+    final double rotation = _rayRotationCtrl.value * 2 * math.pi;
 
     return ExcludeSemantics(
       child: Opacity(
-        opacity: fadeOut,
-        child: Transform.translate(
-          offset: Offset(shakeX, shakeY),
+        opacity: _sunburstFade.value,
+        child: Transform.scale(
+          scale: _sunburstScale.value,
           child: Transform.rotate(
-            angle: shakeRot,
-            child: Transform.scale(
-              scale: idleScale,
-              child: Image.asset(
-                'assets/images/closed_chest_3d.webp',
-                key: const ValueKey('closed_chest'),
-                width: 240.r,
-                height: 240.r,
-                semanticLabel: context.tr(
-                  'home.chest_daily_mystery',
-                  fallback: 'DAILY MYSTERY',
-                ),
-                errorBuilder: (context, error, stackTrace) => Icon(
-                  Icons.card_giftcard_rounded,
-                  size: 150.r,
-                  color: Colors.amber,
-                ),
+            angle: rotation,
+            child: CustomPaint(
+              size: Size(330.r, 330.r),
+              painter: _SunburstPainter(
+                color: chestColor,
+                rayCount: 14,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFlashBurst(Color chestColor) {
+    return IgnorePointer(
+      child: Center(
+        child: Container(
+          width: 380.r,
+          height: 380.r,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: RadialGradient(
+              colors: [
+                Colors.white.withValues(alpha: _flashOpacity.value),
+                chestColor.withValues(alpha: _flashOpacity.value * 0.85),
+                Colors.amber.withValues(alpha: _flashOpacity.value * 0.45),
+                Colors.transparent,
+              ],
+              stops: const [0.0, 0.35, 0.70, 1.0],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildClosedChest(BuildContext context) {
+    // Combine idle pulse + opening shake + anticipation squash
+    final double idleScale = 1.0 + (_idlePulseCtrl.value * 0.035);
+    final double shakeAmount = _shakeIntensity.value * 7.0;
+
+    // Shake offset uses high-frequency sine pattern
+    final now = DateTime.now().millisecondsSinceEpoch;
+    final shakeX = math.sin(now * 0.06) * shakeAmount;
+    final shakeY = math.cos(now * 0.08) * shakeAmount * 0.35;
+    final shakeRot = math.sin(now * 0.05) * _shakeIntensity.value * 0.07;
+
+    return ExcludeSemantics(
+      child: Transform.translate(
+        offset: Offset(shakeX, shakeY),
+        child: Transform.rotate(
+          angle: shakeRot,
+          child: Transform(
+            alignment: Alignment.bottomCenter,
+            transform: Matrix4.diagonal3Values(
+              _chestSquashX.value * idleScale,
+              _chestSquashY.value * idleScale,
+              1.0,
+            ),
+            child: Image.asset(
+              'assets/images/closed_chest_3d.webp',
+              key: const ValueKey('closed_chest'),
+              width: 270.r,
+              height: 270.r,
+              fit: BoxFit.contain,
+              semanticLabel: context.tr(
+                'home.chest_daily_mystery',
+                fallback: 'DAILY MYSTERY',
+              ),
+              errorBuilder: (context, error, stackTrace) => Icon(
+                Icons.card_giftcard_rounded,
+                size: 150.r,
+                color: Colors.amber,
               ),
             ),
           ),
@@ -593,25 +732,30 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
   }
 
   Widget _buildOpenedChest(BuildContext context) {
+    final double idleGlowScale = 1.0 + (_glowPulseCtrl.value * 0.025);
+
     return ExcludeSemantics(
-      child: Opacity(
-        opacity: _openedChestFade.value,
-        child: Transform.scale(
-          scale: _openedChestScale.value,
-          child: Image.asset(
-            'assets/images/chest_3d.webp',
-            key: const ValueKey('opened_chest'),
-            width: 280.r,
-            height: 280.r,
-            semanticLabel: context.tr(
-              'home.chest_daily_mystery',
-              fallback: 'DAILY MYSTERY',
-            ),
-            errorBuilder: (context, error, stackTrace) => Icon(
-              Icons.card_giftcard_rounded,
-              size: 150.r,
-              color: Colors.amber,
-            ),
+      child: Transform(
+        alignment: Alignment.bottomCenter,
+        transform: Matrix4.diagonal3Values(
+          _openedChestScale.value * idleGlowScale,
+          _openedChestScale.value * _openedChestRecoilY.value * idleGlowScale,
+          1.0,
+        ),
+        child: Image.asset(
+          'assets/images/chest_3d.webp',
+          key: const ValueKey('opened_chest'),
+          width: 270.r,
+          height: 270.r,
+          fit: BoxFit.contain,
+          semanticLabel: context.tr(
+            'home.chest_daily_mystery',
+            fallback: 'DAILY MYSTERY',
+          ),
+          errorBuilder: (context, error, stackTrace) => Icon(
+            Icons.card_giftcard_rounded,
+            size: 150.r,
+            color: Colors.amber,
           ),
         ),
       ),
