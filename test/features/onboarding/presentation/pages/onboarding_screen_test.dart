@@ -370,5 +370,44 @@ void main() {
       await tester.pump(const Duration(milliseconds: 750));
       expect(getStartedFired, isTrue);
     });
+
+    testWidgets('renders punchy 1-line features across slides', (tester) async {
+      await tester.pumpWidget(
+        buildScreenHarness(
+          physicalSize: const Size(390, 844),
+          disableAnimations: true,
+        ),
+      );
+      await tester.pump();
+
+      // Slide 1 features
+      expect(find.text('Speech Practice'), findsOneWidget);
+      expect(find.text('Grammar Puzzles'), findsOneWidget);
+      expect(find.text('Roleplay Dialogues'), findsOneWidget);
+
+      // Slide 2 features
+      await tester.tap(find.text('Continue'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+      expect(find.text('Object Recognition'), findsOneWidget);
+      expect(find.text('Book & Text Scanner'), findsOneWidget);
+      expect(find.text('Offline Dictionary & Translator'), findsOneWidget);
+
+      // Slide 3 features
+      await tester.tap(find.text('Continue'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+      expect(find.text('Companion Outfits & Hats'), findsOneWidget);
+      expect(find.text('Sticker Rewards Album'), findsOneWidget);
+      expect(find.text('Safe, Ad-Free Learning'), findsOneWidget);
+
+      // Slide 4 features
+      await tester.tap(find.text('Continue'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+      expect(find.text('Daily Streaks & XP Analytics'), findsOneWidget);
+      expect(find.text('Smart Spaced Repetition'), findsOneWidget);
+      expect(find.text('Authentic Global Accents'), findsOneWidget);
+    });
   });
 }
