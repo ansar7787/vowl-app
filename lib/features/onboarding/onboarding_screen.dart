@@ -38,9 +38,9 @@ class OnboardingScreen extends StatefulWidget {
 // ── content ────────────────────────────────────────────────────────────────
 
 class _Feature {
-  const _Feature(this.icon, this.title, this.description);
+  const _Feature(this.icon, this.title);
   final IconData icon;
-  final String title, description;
+  final String title;
 }
 
 class _Slide {
@@ -68,21 +68,9 @@ const _slides = <_Slide>[
     subtitle:
         'Practice speaking into the mic and master grammar with 100+ fun games.',
     features: [
-      _Feature(
-        Icons.mic_rounded,
-        'Speech Practice',
-        'Speak into the mic and get instant pronunciation accuracy.',
-      ),
-      _Feature(
-        Icons.extension_rounded,
-        'Grammar Puzzles',
-        'Connect sentence builder tiles to master word order.',
-      ),
-      _Feature(
-        Icons.forum_rounded,
-        'Roleplay Dialogues',
-        'Practice everyday conversations for travel and daily life.',
-      ),
+      _Feature(Icons.mic_rounded, 'Speech Practice'),
+      _Feature(Icons.extension_rounded, 'Grammar Puzzles'),
+      _Feature(Icons.forum_rounded, 'Roleplay Dialogues'),
     ],
   ),
   _Slide(
@@ -90,21 +78,9 @@ const _slides = <_Slide>[
     subtitle:
         'Scan objects and book pages to build your vocabulary, even without internet.',
     features: [
-      _Feature(
-        Icons.photo_camera_rounded,
-        'Object Recognition',
-        'Point your camera at real-world items to see words.',
-      ),
-      _Feature(
-        Icons.document_scanner_rounded,
-        'Book & Text Scanner',
-        'Turn printed book pages and signs into study flashcards.',
-      ),
-      _Feature(
-        Icons.translate_rounded,
-        'Offline Translator',
-        'Use on-device dictionaries anytime without internet.',
-      ),
+      _Feature(Icons.photo_camera_rounded, 'Object Recognition'),
+      _Feature(Icons.document_scanner_rounded, 'Book & Text Scanner'),
+      _Feature(Icons.translate_rounded, 'Offline Dictionary & Translator'),
     ],
   ),
   _Slide(
@@ -112,21 +88,9 @@ const _slides = <_Slide>[
     subtitle:
         'Collect milestone stickers, dress up your companion, and celebrate daily streaks.',
     features: [
-      _Feature(
-        Icons.checkroom_rounded,
-        'Companion Outfits',
-        'Unlock stylish hats and glasses as you earn daily XP.',
-      ),
-      _Feature(
-        Icons.collections_bookmark_rounded,
-        'Sticker Album',
-        'Collect colorful rewards by handwriting letters and quests.',
-      ),
-      _Feature(
-        Icons.shield_rounded,
-        'Safe For All Ages',
-        'Ad-free, gentle phonics and beginner games for everyone.',
-      ),
+      _Feature(Icons.checkroom_rounded, 'Companion Outfits & Hats'),
+      _Feature(Icons.collections_bookmark_rounded, 'Sticker Rewards Album'),
+      _Feature(Icons.shield_rounded, 'Safe, Ad-Free Learning'),
     ],
   ),
   _Slide(
@@ -134,21 +98,9 @@ const _slides = <_Slide>[
     subtitle:
         'Follow your learning streak and train your ear with authentic world accents.',
     features: [
-      _Feature(
-        Icons.insights_rounded,
-        'Study Analytics',
-        'Follow daily streaks, accuracy percentages, and XP gained.',
-      ),
-      _Feature(
-        Icons.menu_book_rounded,
-        'Mistake Journal',
-        'Smart spaced repetition that replays words you missed.',
-      ),
-      _Feature(
-        Icons.public_rounded,
-        'Global Accents',
-        'Listen to authentic American, British, and world voices.',
-      ),
+      _Feature(Icons.insights_rounded, 'Daily Streaks & XP Analytics'),
+      _Feature(Icons.menu_book_rounded, 'Smart Spaced Repetition'),
+      _Feature(Icons.public_rounded, 'Authentic Global Accents'),
     ],
   ),
 ];
@@ -479,7 +431,7 @@ class _SlidePage extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, c) {
         // Dynamic illustration height: scales with viewport height
-        final illH = (c.maxHeight * 0.35).clamp(130.0, 220.0);
+        final illH = (c.maxHeight * 0.36).clamp(135.0, 230.0);
 
         return SingleChildScrollView(
           physics: const ClampingScrollPhysics(),
@@ -488,7 +440,7 @@ class _SlidePage extends StatelessWidget {
             constraints: BoxConstraints(minHeight: c.maxHeight),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
                   height: illH,
@@ -498,6 +450,7 @@ class _SlidePage extends StatelessWidget {
                     ambient: ambient,
                   ),
                 ),
+                const SizedBox(height: 18),
                 // Heading (1 line) + Subtitle (max 2 lines) lockup with standard 8dp spacing
                 Column(
                   mainAxisSize: MainAxisSize.min,
@@ -534,21 +487,25 @@ class _SlidePage extends StatelessWidget {
                     ),
                   ],
                 ),
-                // Clean, borderless feature items with branded icon badge (no heavy card containers)
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    for (var i = 0; i < slide.features.length; i++)
-                      Padding(
-                        padding: EdgeInsets.only(
-                          bottom: i < slide.features.length - 1 ? 6 : 0,
+                const SizedBox(height: 20),
+                // Clean, borderless 1-line feature items with branded icon badge
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      for (var i = 0; i < slide.features.length; i++)
+                        Padding(
+                          padding: EdgeInsets.only(
+                            bottom: i < slide.features.length - 1 ? 6 : 0,
+                          ),
+                          child: _FeatureRow(
+                            feature: slide.features[i],
+                            ink: slide.ink,
+                          ),
                         ),
-                        child: _FeatureRow(
-                          feature: slide.features[i],
-                          ink: slide.ink,
-                        ),
-                      ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -568,45 +525,35 @@ class _FeatureRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 3),
+      padding: const EdgeInsets.symmetric(vertical: 2),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            width: 36,
-            height: 36,
+            width: 32,
+            height: 32,
             decoration: BoxDecoration(
               color: ink.withValues(alpha: .10),
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(9),
+              border: Border.all(color: ink.withValues(alpha: .14), width: 1),
             ),
-            child: Icon(feature.icon, size: 18, color: ink),
+            child: Icon(feature.icon, size: 17, color: ink),
           ),
           const SizedBox(width: 12),
           Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  feature.title,
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: -0.1,
-                    color: scheme.onSurface,
-                  ),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: Alignment.centerLeft,
+              child: Text(
+                feature.title,
+                maxLines: 1,
+                style: TextStyle(
+                  fontSize: 14.5,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: -0.1,
+                  color: scheme.onSurface,
                 ),
-                const SizedBox(height: 1),
-                Text(
-                  feature.description,
-                  style: TextStyle(
-                    fontSize: 12.5,
-                    fontWeight: FontWeight.w400,
-                    height: 1.3,
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
         ],
