@@ -29,8 +29,8 @@ import 'package:vowl/features/home/presentation/widgets/home_section_header.dart
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
 import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/onboarding_service.dart';
 import 'package:vowl/core/presentation/feature_catalog/feature_directory_bottom_sheet.dart';
-import 'package:vowl/core/presentation/feature_catalog/first_time_welcome_showcase.dart';
 
 /// Primary home dashboard screen presenting daily activities, streak stats, and arenas.
 class HomeScreen extends StatefulWidget {
@@ -43,6 +43,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final ValueNotifier<int?> _globalRank = ValueNotifier(null);
+  final ValueNotifier<bool> _isRankLoading = ValueNotifier(true);
   bool _hasCheckedDailyChestThisSession = false;
 
   @override
@@ -52,16 +53,22 @@ class _HomeScreenState extends State<HomeScreen> {
     // Initial check for reward availability
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
-      if (context.read<AuthBloc>().state.status == AuthStatus.authenticated) {
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated) {
         context.read<EconomyBloc>().add(
           const EconomyCheckDailyRewardRequested(),
         );
-        FirstTimeWelcomeShowcase.checkAndShow(context);
+        if (authState.user != null) {
+          OnboardingService.evaluateUserProgress(
+            authState.user!.totalLevelsCompleted,
+          );
+        }
       }
     });
   }
 
   Future<void> _fetchGlobalRank() async {
+    _isRankLoading.value = true;
     try {
       final repo = di.sl<LeaderboardRepository>();
       final result = await repo.getTopUsers(limit: 100);
@@ -73,7 +80,9 @@ class _HomeScreenState extends State<HomeScreen> {
       // "Looking up a deactivated widget's ancestor is unsafe".
       if (!mounted) return;
 
-      result.fold((_) {}, (data) {
+      result.fold((_) {
+        if (mounted) _isRankLoading.value = false;
+      }, (data) {
         final sorted = List<UserEntity>.from(data.users)
           ..sort((a, b) {
             final aL = a.totalLevelsCompleted;
@@ -89,8 +98,10 @@ class _HomeScreenState extends State<HomeScreen> {
           final idx = sorted.indexWhere((u) => u.id == currentUser.id);
           _globalRank.value = idx >= 0 ? idx + 1 : null;
         }
+        if (mounted) _isRankLoading.value = false;
       });
     } catch (e) {
+      if (mounted) _isRankLoading.value = false;
       // Leaderboard rank is a "nice to have" enhancement on this screen —
       // never let it crash or block the home feed. Keep a debug-only trace
       // so a real regression doesn't go unnoticed during development.
@@ -103,6 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void dispose() {
     _globalRank.dispose();
+    _isRankLoading.dispose();
     super.dispose();
   }
 
@@ -128,7 +140,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 context.read<EconomyBloc>().add(
                   const EconomyCheckDailyRewardRequested(),
                 );
-                FirstTimeWelcomeShowcase.checkAndShow(context);
+                if (state.user != null) {
+                  OnboardingService.evaluateUserProgress(
+                    state.user!.totalLevelsCompleted,
+                  );
+                }
               } else if (state.status == AuthStatus.unauthenticated) {
                 context.read<EconomyBloc>().add(const EconomyResetRequested());
                 context.read<ProgressionBloc>().add(
@@ -136,6 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
                 _hasCheckedDailyChestThisSession = false;
                 _globalRank.value = null;
+                _isRankLoading.value = false;
               }
             },
           ),
@@ -207,6 +224,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     context.read<EconomyBloc>().add(
                       const EconomyCheckDailyRewardRequested(),
                     );
+                    _fetchGlobalRank();
                     await Future.delayed(const Duration(milliseconds: 600));
                   },
                   color: AppColors.indigo500,
@@ -270,12 +288,18 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             children: [
                               SizedBox(height: 24.h),
-                              ValueListenableBuilder<int?>(
-                                valueListenable: _globalRank,
-                                builder: (context, rank, child) {
-                                  return UnifiedStatsRow(
-                                    user: user,
-                                    globalRank: rank,
+                              ValueListenableBuilder<bool>(
+                                valueListenable: _isRankLoading,
+                                builder: (context, isRankLoading, _) {
+                                  return ValueListenableBuilder<int?>(
+                                    valueListenable: _globalRank,
+                                    builder: (context, rank, child) {
+                                      return UnifiedStatsRow(
+                                        user: user,
+                                        globalRank: rank,
+                                        isRankLoading: isRankLoading,
+                                      );
+                                    },
                                   );
                                 },
                               ),
