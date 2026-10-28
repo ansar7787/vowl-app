@@ -68,9 +68,9 @@ const _slides = <_Slide>[
     subtitle:
         'Play interactive games that train your pronunciation and real-time conversation.',
     features: [
-      _Feature(Icons.mic_rounded, 'Real-Time Voice Feedback'),
-      _Feature(Icons.extension_rounded, 'Sentence Building Puzzles'),
-      _Feature(Icons.forum_rounded, 'Everyday Travel & Life Dialogues'),
+      _Feature(Icons.mic_rounded, 'Real-Time Voice'),
+      _Feature(Icons.extension_rounded, 'Word Puzzles'),
+      _Feature(Icons.forum_rounded, 'Everyday Roleplay'),
     ],
   ),
   _Slide(
@@ -78,9 +78,9 @@ const _slides = <_Slide>[
     subtitle:
         'Point your camera at real-world items or book pages to learn words anywhere.',
     features: [
-      _Feature(Icons.photo_camera_rounded, 'Smart Camera Vocabulary Scan'),
-      _Feature(Icons.document_scanner_rounded, 'Instant Book Page Reader'),
-      _Feature(Icons.translate_rounded, '100% Offline Dictionaries'),
+      _Feature(Icons.photo_camera_rounded, 'Camera Scanner'),
+      _Feature(Icons.menu_book_rounded, 'Book Flashcards'),
+      _Feature(Icons.public_off_rounded, '100% Offline Mode'),
     ],
   ),
   _Slide(
@@ -88,9 +88,9 @@ const _slides = <_Slide>[
     subtitle:
         'Earn daily streaks, unlock outfits for your companion, and celebrate real progress.',
     features: [
-      _Feature(Icons.shield_rounded, 'Daily Streak Shields'),
-      _Feature(Icons.checkroom_rounded, 'Companion Outfits & Stickers'),
-      _Feature(Icons.verified_rounded, 'Safe, 100% Ad-Free Learning'),
+      _Feature(Icons.shield_rounded, 'Streak Shields'),
+      _Feature(Icons.checkroom_rounded, 'Companion Outfits'),
+      _Feature(Icons.auto_awesome_rounded, '100% Ad-Free'),
     ],
   ),
   _Slide(
@@ -98,9 +98,9 @@ const _slides = <_Slide>[
     subtitle:
         'Track your daily fluency growth and train your ear with authentic global voices.',
     features: [
-      _Feature(Icons.insights_rounded, 'Daily Fluency & XP Analytics'),
-      _Feature(Icons.menu_book_rounded, 'Smart Spaced Repetition'),
-      _Feature(Icons.public_rounded, 'Authentic US, UK & World Voices'),
+      _Feature(Icons.bolt_rounded, 'Daily XP & Streaks'),
+      _Feature(Icons.autorenew_rounded, 'Spaced Repetition'),
+      _Feature(Icons.public_rounded, 'US & UK Voices'),
     ],
   ),
 ];
@@ -510,24 +510,17 @@ class _SlidePage extends StatelessWidget {
                     ],
                   ),
                   const Spacer(flex: 3),
-                  // Clean, centered 1-line feature block (visually aligned with screen center)
+                  // Gamified Tag Cloud: centered interactive pill badges
                   Center(
-                    child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxWidth: 290),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Wrap(
+                        alignment: WrapAlignment.center,
+                        spacing: 8,
+                        runSpacing: 8,
                         children: [
-                          for (var i = 0; i < slide.features.length; i++)
-                            Padding(
-                              padding: EdgeInsets.only(
-                                bottom: i < slide.features.length - 1 ? 10 : 0,
-                              ),
-                              child: _FeatureRow(
-                                feature: slide.features[i],
-                                ink: slide.ink,
-                              ),
-                            ),
+                          for (final f in slide.features)
+                            _FeaturePill(feature: f, ink: slide.ink),
                         ],
                       ),
                     ),
@@ -594,51 +587,90 @@ class _TactileStageState extends State<_TactileStage>
   }
 }
 
-class _FeatureRow extends StatelessWidget {
-  const _FeatureRow({required this.feature, required this.ink});
+class _FeaturePill extends StatefulWidget {
+  const _FeaturePill({required this.feature, required this.ink});
   final _Feature feature;
   final Color ink;
 
   @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final effectiveInk = isDark ? AppColors.indigo400 : ink;
+  State<_FeaturePill> createState() => _FeaturePillState();
+}
 
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          width: 32,
-          height: 32,
+class _FeaturePillState extends State<_FeaturePill>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 110),
+  );
+  late final Animation<double> _scale = Tween<double>(
+    begin: 1.0,
+    end: 0.94,
+  ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic));
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _onTap() {
+    HapticFeedback.selectionClick();
+    _controller.forward().then((_) {
+      if (mounted) _controller.reverse();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+    final effectiveInk = isDark ? AppColors.indigo400 : widget.ink;
+    final scheme = theme.colorScheme;
+
+    return GestureDetector(
+      onTap: _onTap,
+      behavior: HitTestBehavior.opaque,
+      child: AnimatedBuilder(
+        animation: _scale,
+        builder: (context, child) =>
+            Transform.scale(scale: _scale.value, child: child),
+        child: Container(
+          constraints: BoxConstraints(
+            maxWidth: MediaQuery.sizeOf(context).width - 64,
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
           decoration: BoxDecoration(
-            color: effectiveInk.withValues(alpha: .10),
-            borderRadius: BorderRadius.circular(9),
+            color: effectiveInk.withValues(alpha: isDark ? .16 : .08),
+            borderRadius: BorderRadius.circular(20),
             border: Border.all(
-              color: effectiveInk.withValues(alpha: .14),
-              width: 1,
+              color: effectiveInk.withValues(alpha: isDark ? .30 : .18),
+              width: 1.2,
             ),
           ),
-          child: Icon(feature.icon, size: 17, color: effectiveInk),
-        ),
-        const SizedBox(width: 12),
-        Expanded(
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            alignment: Alignment.centerLeft,
-            child: Text(
-              feature.title,
-              maxLines: 1,
-              style: TextStyle(
-                fontSize: 14.5,
-                fontWeight: FontWeight.w600,
-                letterSpacing: -0.1,
-                color: scheme.onSurface,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(widget.feature.icon, size: 16, color: effectiveInk),
+              const SizedBox(width: 8),
+              Flexible(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    widget.feature.title,
+                    maxLines: 1,
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: -0.1,
+                      color: scheme.onSurface,
+                    ),
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
         ),
-      ],
+      ),
     );
   }
 }
