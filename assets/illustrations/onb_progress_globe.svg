@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 320" width="360" height="320" fill="none"><defs>
+<radialGradient id="gGlow"><stop stop-color="#6366F1" stop-opacity=".30"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
+<linearGradient id="gTop" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#E0E7FF"/></linearGradient>
+<linearGradient id="gSide" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#818CF8"/><stop offset="1" stop-color="#4F46E5"/></linearGradient>
+<radialGradient id="gShadow"><stop stop-color="#312E81" stop-opacity=".34"/><stop offset="1" stop-color="#312E81" stop-opacity="0"/></radialGradient>
+<radialGradient id="gOrb" cx=".35" cy=".3" r=".8"><stop stop-color="#fff"/><stop offset=".35" stop-color="#E0E7FF"/><stop offset="1" stop-color="#6366F1"/></radialGradient>
+<linearGradient id="gInd" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#818CF8"/><stop offset="1" stop-color="#4338CA"/></linearGradient>
+<linearGradient id="gIndV" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#A5B4FC"/><stop offset="1" stop-color="#4F46E5"/></linearGradient>
+<linearGradient id="gVio" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#C4B5FD"/><stop offset="1" stop-color="#7C3AED"/></linearGradient>
+<linearGradient id="gAmb" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FDE68A"/><stop offset="1" stop-color="#F59E0B"/></linearGradient>
+<linearGradient id="gAmbD" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FBBF24"/><stop offset="1" stop-color="#D97706"/></linearGradient>
+<linearGradient id="gMic" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#E0E7FF"/><stop offset=".3" stop-color="#818CF8"/><stop offset=".65" stop-color="#6366F1"/><stop offset="1" stop-color="#3730A3"/></linearGradient>
+<linearGradient id="gGlass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#F5F7FF"/></linearGradient>
+<linearGradient id="gPhone" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3B3F6B"/><stop offset=".5" stop-color="#1E1B4B"/><stop offset="1" stop-color="#312E81"/></linearGradient>
+<linearGradient id="gScreen" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#EEF2FF"/><stop offset="1" stop-color="#C7D2FE"/></linearGradient>
+<linearGradient id="gWave" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#A5B4FC"/><stop offset="1" stop-color="#6366F1"/></linearGradient>
+<linearGradient id="gBeam" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6366F1" stop-opacity="0"/><stop offset=".5" stop-color="#6366F1" stop-opacity=".32"/><stop offset="1" stop-color="#6366F1" stop-opacity="0"/></linearGradient>
+<radialGradient id="gGlobe" cx=".32" cy=".28" r=".95"><stop stop-color="#C7D2FE"/><stop offset=".45" stop-color="#6366F1"/><stop offset="1" stop-color="#312E81"/></radialGradient>
+<radialGradient id="gGlobeSh" cx=".35" cy=".3" r=".8"><stop offset=".55" stop-color="#1E1B4B" stop-opacity="0"/><stop offset="1" stop-color="#1E1B4B" stop-opacity=".4"/></radialGradient>
+<linearGradient id="gSpine" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#4F46E5" stop-opacity="0"/><stop offset=".5" stop-color="#4F46E5" stop-opacity=".22"/><stop offset="1" stop-color="#4F46E5" stop-opacity="0"/></linearGradient>
+<clipPath id="cScreen"><rect x="128" y="36" width="104" height="218" rx="18"/></clipPath>
+<clipPath id="cGlobe"><circle cx="292" cy="78" r="46"/></clipPath>
+<clipPath id="cAv"><circle cx="48" cy="92" r="15"/></clipPath>
+</defs><ellipse cx="292" cy="80" rx="64" ry="17" transform="rotate(-18 292 80)" stroke="#6366F1" stroke-opacity=".35" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round"/><circle cx="292" cy="78" r="46" fill="url(#gGlobe)"/><g clip-path="url(#cGlobe)"><path d="M259 63C266 53 281 51 287 59C291 64 285 71 279 73C275 82 266 80 263 74C258 71 257 67 259 63Z" fill="#EEF2FF" fill-opacity=".62"/><path d="M297 55C307 49 321 55 323 65C325 75 314 77 312 86C308 95 301 91 299 82C295 75 291 60 297 55Z" fill="#EEF2FF" fill-opacity=".62"/><path d="M283 93C290 90 297 96 295 105C293 112 286 112 284 105C282 100 279 95 283 93Z" fill="#EEF2FF" fill-opacity=".55"/><path d="M292 32V124M246 78H338" stroke="#fff" stroke-opacity=".16"/><ellipse cx="292" cy="78" rx="22" ry="46" stroke="#fff" stroke-opacity=".16"/></g><circle cx="292" cy="78" r="46" fill="url(#gGlobeSh)"/><circle cx="292" cy="78" r="45.5" stroke="#fff" stroke-opacity=".5" stroke-width="1.5"/><ellipse cx="276" cy="54" rx="14" ry="8" transform="rotate(-30 276 54)" fill="#fff" fill-opacity=".28"/></svg>
