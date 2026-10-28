@@ -448,7 +448,13 @@ class _ProgressScene extends StatelessWidget {
           height: 30,
           child: AnimatedBuilder(
             animation: entrance,
-            child: ClipOval(child: Image.asset(kVowlyHead, fit: BoxFit.cover)),
+            child: ClipOval(
+              child: Image.asset(
+                kVowlyHead,
+                fit: BoxFit.cover,
+                errorBuilder: (_, __, ___) => const SizedBox.shrink(),
+              ),
+            ),
             builder: (context, child) => _fade(_seg(entrance, 0, .25), child!),
           ),
         ),
