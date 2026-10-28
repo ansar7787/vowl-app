@@ -452,7 +452,7 @@ class _ProgressScene extends StatelessWidget {
               child: Image.asset(
                 kVowlyHead,
                 fit: BoxFit.cover,
-                errorBuilder: (_, __, ___) => const SizedBox.shrink(),
+                errorBuilder: (_, _, _) => const SizedBox.shrink(),
               ),
             ),
             builder: (context, child) => _fade(_seg(entrance, 0, .25), child!),

@@ -436,7 +436,6 @@ class _Header extends StatelessWidget {
 
 class _SlidePage extends StatefulWidget {
   const _SlidePage({
-    super.key,
     required this.index,
     required this.slide,
     required this.entrance,
