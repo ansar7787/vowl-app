@@ -82,8 +82,8 @@ class _MysteryChestDialogState extends State<MysteryChestDialog> {
     _rewardAmount.value = totalCoins;
     _chestOpened.value = true;
 
-    // Second haptic burst at the "flash" moment (~350ms into the animation)
-    Future.delayed(const Duration(milliseconds: 350), () {
+    // Second haptic burst at the exact lid-pop moment (~480ms into the animation)
+    Future.delayed(const Duration(milliseconds: 480), () {
       try {
         Haptics.vibrate(HapticsType.success);
       } catch (_) {}

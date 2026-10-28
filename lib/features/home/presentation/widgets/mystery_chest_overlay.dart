@@ -213,10 +213,6 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
       _lottieCtrl.value = 1.0;
       _idlePulseCtrl.stop();
       _hasTriggeredOpen = true;
-      if (!VowlMotion.shouldReduceMotion(context)) {
-        _rayRotationCtrl.repeat();
-        _glowPulseCtrl.repeat(reverse: true);
-      }
     }
   }
 
@@ -336,29 +332,32 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
                 PositionedDirectional(
                   top: MediaQuery.of(context).padding.top + 20.h,
                   end: 20.w,
-                  child: Opacity(
-                    opacity: _closeButtonFade.value,
-                    child: Semantics(
-                      button: true,
-                      label: context.tr('common.close', fallback: 'Close'),
-                      child: GestureDetector(
-                        onTap: widget.onClose,
-                        behavior: HitTestBehavior.opaque,
-                        child: Container(
-                          constraints: BoxConstraints(
-                            minWidth: 48.r,
-                            minHeight: 48.r,
-                          ),
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.1),
-                            shape: BoxShape.circle,
-                            border: Border.all(color: Colors.white24),
-                          ),
-                          child: Icon(
-                            Icons.close_rounded,
-                            color: Colors.white,
-                            size: 24.r,
+                  child: IgnorePointer(
+                    ignoring: _closeButtonFade.value < 0.5,
+                    child: Opacity(
+                      opacity: _closeButtonFade.value,
+                      child: Semantics(
+                        button: true,
+                        label: context.tr('common.close', fallback: 'Close'),
+                        child: GestureDetector(
+                          onTap: widget.onClose,
+                          behavior: HitTestBehavior.opaque,
+                          child: Container(
+                            constraints: BoxConstraints(
+                              minWidth: 48.r,
+                              minHeight: 48.r,
+                            ),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.1),
+                              shape: BoxShape.circle,
+                              border: Border.all(color: Colors.white24),
+                            ),
+                            child: Icon(
+                              Icons.close_rounded,
+                              color: Colors.white,
+                              size: 24.r,
+                            ),
                           ),
                         ),
                       ),
@@ -366,36 +365,43 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
                   ),
                 ),
 
-              // ── Main content ──
+              // ── Main content (scrollable on ultra-compact devices or large text scale) ──
               Center(
                 child: FadeTransition(
                   opacity: _entranceFade,
                   child: Material(
                     type: MaterialType.transparency,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        // ── Title (distinct for VIP vs Standard) ──
-                        _buildTitle(context, chestColor),
-                        SizedBox(height: 8.h),
-                        _buildSubtitle(context, chestColor),
-                        SizedBox(height: 35.h),
+                    child: SingleChildScrollView(
+                      physics: const ClampingScrollPhysics(),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 20.w,
+                        vertical: 24.h,
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          // ── Title (distinct for VIP vs Standard) ──
+                          _buildTitle(context, chestColor),
+                          SizedBox(height: 8.h),
+                          _buildSubtitle(context, chestColor),
+                          SizedBox(height: 25.h),
 
-                        // ── Chest area (Lottie vector animation) ──
-                        _buildChestArea(context, chestColor),
+                          // ── Chest area (Lottie vector animation) ──
+                          _buildChestArea(context, chestColor),
 
-                        // ── Reward card (slides up after open) ──
-                        if (_hasTriggeredOpen) ...[
-                          SizedBox(height: 30.h),
-                          _buildRewardCard(context),
+                          // ── Reward card (slides up after open) ──
+                          if (_hasTriggeredOpen) ...[
+                            SizedBox(height: 24.h),
+                            _buildRewardCard(context),
+                          ],
+
+                          // ── "Tap to unveil" prompt ──
+                          if (!_hasTriggeredOpen) ...[
+                            SizedBox(height: 35.h),
+                            _buildTapPrompt(context, chestColor),
+                          ],
                         ],
-
-                        // ── "Tap to unveil" prompt ──
-                        if (!_hasTriggeredOpen) ...[
-                          SizedBox(height: 45.h),
-                          _buildTapPrompt(context, chestColor),
-                        ],
-                      ],
+                      ),
                     ),
                   ),
                 ),
@@ -542,7 +548,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
               // ── Vector Lottie Chest with gentle idle breathing ──
               Transform.scale(
                 scale: _hasTriggeredOpen
-                    ? 1.0
+                    ? (1.0 + (_glowPulseCtrl.value * 0.02))
                     : (1.0 + (_idlePulseCtrl.value * 0.035)),
                 child: Lottie.asset(
                   'assets/lottie/chest.json',
