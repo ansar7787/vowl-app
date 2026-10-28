@@ -68,19 +68,29 @@ class _AboutScreenState extends State<AboutScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        width: 100.w,
-                        height: 100.w,
+                        width: 96.r,
+                        height: 96.r,
                         decoration: BoxDecoration(
-                          color: AppColors.indigo500.withValues(alpha: 0.1),
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: AppColors.indigo500.withValues(alpha: 0.3),
-                          ),
+                          borderRadius: BorderRadius.circular(24.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: isDark
+                                  ? Colors.black.withValues(alpha: 0.35)
+                                  : AppColors.indigo500.withValues(alpha: 0.2),
+                              blurRadius: 18.r,
+                              offset: Offset(0, 6.h),
+                            ),
+                          ],
                         ),
-                        child: Icon(
-                          Icons.school_rounded,
-                          size: 50.w,
-                          color: AppColors.indigo500,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(24.r),
+                          child: Image.asset(
+                            isDark
+                                ? 'assets/images/appstore/app_store_dark.png'
+                                : 'assets/images/appstore/app_store_light.png',
+                            fit: BoxFit.contain,
+                            semanticLabel: 'Vowl Logo',
+                          ),
                         ),
                       ),
                       SizedBox(height: 24.h),
@@ -140,10 +150,20 @@ class _AboutScreenState extends State<AboutScreen> {
                             context: context,
                             applicationName: 'Vowl',
                             applicationVersion: _appVersion,
-                            applicationIcon: Icon(
-                              Icons.school_rounded,
-                              size: 50.w,
-                              color: AppColors.indigo500,
+                            applicationIcon: Padding(
+                              padding: EdgeInsets.symmetric(vertical: 8.h),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(12.r),
+                                child: Image.asset(
+                                  isDark
+                                      ? 'assets/images/appstore/app_store_dark.png'
+                                      : 'assets/images/appstore/app_store_light.png',
+                                  width: 48.r,
+                                  height: 48.r,
+                                  fit: BoxFit.contain,
+                                  semanticLabel: 'Vowl Logo',
+                                ),
+                              ),
                             ),
                           );
                         },
