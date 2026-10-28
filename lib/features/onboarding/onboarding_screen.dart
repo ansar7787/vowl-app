@@ -64,43 +64,43 @@ class _Slide {
 
 const _slides = <_Slide>[
   _Slide(
-    headline: 'Learn English Through Games',
+    headline: 'Speak English With Confidence',
     subtitle:
-        'Practice speaking into the mic and master grammar with 100+ fun games.',
+        'Play interactive games that train your pronunciation and real-time conversation.',
     features: [
-      _Feature(Icons.mic_rounded, 'Speech Practice'),
-      _Feature(Icons.extension_rounded, 'Grammar Puzzles'),
-      _Feature(Icons.forum_rounded, 'Roleplay Dialogues'),
+      _Feature(Icons.mic_rounded, 'Real-Time Voice Feedback'),
+      _Feature(Icons.extension_rounded, 'Sentence Building Puzzles'),
+      _Feature(Icons.forum_rounded, 'Everyday Travel & Life Dialogues'),
     ],
   ),
   _Slide(
-    headline: 'Learn From What You See',
+    headline: 'Turn the World Into Flashcards',
     subtitle:
-        'Scan objects and book pages to build your vocabulary, even without internet.',
+        'Point your camera at real-world items or book pages to learn words anywhere.',
     features: [
-      _Feature(Icons.photo_camera_rounded, 'Object Recognition'),
-      _Feature(Icons.document_scanner_rounded, 'Book & Text Scanner'),
-      _Feature(Icons.translate_rounded, 'Offline Dictionary & Translator'),
+      _Feature(Icons.photo_camera_rounded, 'Smart Camera Vocabulary Scan'),
+      _Feature(Icons.document_scanner_rounded, 'Instant Book Page Reader'),
+      _Feature(Icons.translate_rounded, '100% Offline Dictionaries'),
     ],
   ),
   _Slide(
-    headline: 'Stay Motivated Every Day',
+    headline: 'Build an Unbreakable Habit',
     subtitle:
-        'Collect milestone stickers, dress up your companion, and celebrate daily streaks.',
+        'Earn daily streaks, unlock outfits for your companion, and celebrate real progress.',
     features: [
-      _Feature(Icons.checkroom_rounded, 'Companion Outfits & Hats'),
-      _Feature(Icons.collections_bookmark_rounded, 'Sticker Rewards Album'),
-      _Feature(Icons.shield_rounded, 'Safe, Ad-Free Learning'),
+      _Feature(Icons.shield_rounded, 'Daily Streak Shields'),
+      _Feature(Icons.checkroom_rounded, 'Companion Outfits & Stickers'),
+      _Feature(Icons.verified_rounded, 'Safe, 100% Ad-Free Learning'),
     ],
   ),
   _Slide(
-    headline: 'Track Progress & Accents',
+    headline: 'Master Natural World Accents',
     subtitle:
-        'Follow your learning streak and train your ear with authentic world accents.',
+        'Track your daily fluency growth and train your ear with authentic global voices.',
     features: [
-      _Feature(Icons.insights_rounded, 'Daily Streaks & XP Analytics'),
+      _Feature(Icons.insights_rounded, 'Daily Fluency & XP Analytics'),
       _Feature(Icons.menu_book_rounded, 'Smart Spaced Repetition'),
-      _Feature(Icons.public_rounded, 'Authentic Global Accents'),
+      _Feature(Icons.public_rounded, 'Authentic US, UK & World Voices'),
     ],
   ),
 ];
@@ -464,7 +464,7 @@ class _SlidePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const Spacer(flex: 2),
-                  SizedBox(
+                  _TactileStage(
                     height: illH,
                     child: OnboardingIllustration(
                       index: index,
@@ -539,6 +539,57 @@ class _SlidePage extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class _TactileStage extends StatefulWidget {
+  const _TactileStage({required this.height, required this.child});
+  final double height;
+  final Widget child;
+
+  @override
+  State<_TactileStage> createState() => _TactileStageState();
+}
+
+class _TactileStageState extends State<_TactileStage>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 140),
+  );
+  late final Animation<double> _scale = Tween<double>(
+    begin: 1.0,
+    end: 0.96,
+  ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic));
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _onTap() {
+    HapticFeedback.lightImpact();
+    _controller.forward().then((_) {
+      if (mounted) _controller.reverse();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: _onTap,
+      behavior: HitTestBehavior.opaque,
+      child: SizedBox(
+        height: widget.height,
+        child: AnimatedBuilder(
+          animation: _scale,
+          builder: (context, child) =>
+              Transform.scale(scale: _scale.value, child: child),
+          child: widget.child,
+        ),
+      ),
     );
   }
 }

@@ -67,7 +67,7 @@ void main() {
       await tester.pumpWidget(buildTestableWidget());
       await tester.pump();
 
-      expect(find.text('Learn English Through Games'), findsOneWidget);
+      expect(find.text('Speak English With Confidence'), findsOneWidget);
       expect(find.text('1 of 4'), findsOneWidget);
       expect(find.text('Skip'), findsOneWidget);
       expect(find.text('Continue'), findsOneWidget);
@@ -106,21 +106,21 @@ void main() {
 
         // Slide 2
         expect(find.text('2 of 4'), findsOneWidget);
-        expect(find.text('Learn From What You See'), findsOneWidget);
+        expect(find.text('Turn the World Into Flashcards'), findsOneWidget);
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
 
         // Slide 3
         expect(find.text('3 of 4'), findsOneWidget);
-        expect(find.text('Stay Motivated Every Day'), findsOneWidget);
+        expect(find.text('Build an Unbreakable Habit'), findsOneWidget);
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
 
         // Slide 4
         expect(find.text('4 of 4'), findsOneWidget);
-        expect(find.text('Track Progress & Accents'), findsOneWidget);
+        expect(find.text('Master Natural World Accents'), findsOneWidget);
         expect(find.text('Get Started'), findsOneWidget);
 
         // Tap Get Started

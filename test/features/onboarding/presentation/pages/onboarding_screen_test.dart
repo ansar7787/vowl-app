@@ -58,28 +58,28 @@ void main() {
         await tester.pump();
 
         // Slide 1
-        expect(find.text('Learn English Through Games'), findsOneWidget);
+        expect(find.text('Speak English With Confidence'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         // Advance to Slide 2
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Learn From What You See'), findsOneWidget);
+        expect(find.text('Turn the World Into Flashcards'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         // Advance to Slide 3
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Stay Motivated Every Day'), findsOneWidget);
+        expect(find.text('Build an Unbreakable Habit'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         // Advance to Slide 4
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Track Progress & Accents'), findsOneWidget);
+        expect(find.text('Master Natural World Accents'), findsOneWidget);
         expect(find.text('Get Started'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
@@ -102,28 +102,28 @@ void main() {
         await tester.pump();
 
         // Slide 1
-        expect(find.text('Learn English Through Games'), findsOneWidget);
+        expect(find.text('Speak English With Confidence'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         // Advance to Slide 2
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Learn From What You See'), findsOneWidget);
+        expect(find.text('Turn the World Into Flashcards'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         // Advance to Slide 3
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Stay Motivated Every Day'), findsOneWidget);
+        expect(find.text('Build an Unbreakable Habit'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         // Advance to Slide 4
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Track Progress & Accents'), findsOneWidget);
+        expect(find.text('Master Natural World Accents'), findsOneWidget);
         expect(find.text('Get Started'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
@@ -145,25 +145,25 @@ void main() {
         );
         await tester.pump();
 
-        expect(find.text('Learn English Through Games'), findsOneWidget);
+        expect(find.text('Speak English With Confidence'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Learn From What You See'), findsOneWidget);
+        expect(find.text('Turn the World Into Flashcards'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Stay Motivated Every Day'), findsOneWidget);
+        expect(find.text('Build an Unbreakable Habit'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Track Progress & Accents'), findsOneWidget);
+        expect(find.text('Master Natural World Accents'), findsOneWidget);
         expect(find.text('Get Started'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
@@ -185,25 +185,25 @@ void main() {
         );
         await tester.pump();
 
-        expect(find.text('Learn English Through Games'), findsOneWidget);
+        expect(find.text('Speak English With Confidence'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Learn From What You See'), findsOneWidget);
+        expect(find.text('Turn the World Into Flashcards'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Stay Motivated Every Day'), findsOneWidget);
+        expect(find.text('Build an Unbreakable Habit'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Track Progress & Accents'), findsOneWidget);
+        expect(find.text('Master Natural World Accents'), findsOneWidget);
         expect(find.text('Get Started'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
@@ -225,25 +225,25 @@ void main() {
         );
         await tester.pump();
 
-        expect(find.text('Learn English Through Games'), findsOneWidget);
+        expect(find.text('Speak English With Confidence'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Learn From What You See'), findsOneWidget);
+        expect(find.text('Turn the World Into Flashcards'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Stay Motivated Every Day'), findsOneWidget);
+        expect(find.text('Build an Unbreakable Habit'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Track Progress & Accents'), findsOneWidget);
+        expect(find.text('Master Natural World Accents'), findsOneWidget);
         expect(find.text('Get Started'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
@@ -265,25 +265,25 @@ void main() {
         );
         await tester.pump();
 
-        expect(find.text('Learn English Through Games'), findsOneWidget);
+        expect(find.text('Speak English With Confidence'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Learn From What You See'), findsOneWidget);
+        expect(find.text('Turn the World Into Flashcards'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Stay Motivated Every Day'), findsOneWidget);
+        expect(find.text('Build an Unbreakable Habit'), findsOneWidget);
         expect(tester.takeException(), isNull);
 
         await tester.tap(find.text('Continue'));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
-        expect(find.text('Track Progress & Accents'), findsOneWidget);
+        expect(find.text('Master Natural World Accents'), findsOneWidget);
         expect(find.text('Get Started'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
@@ -381,33 +381,54 @@ void main() {
       await tester.pump();
 
       // Slide 1 features
-      expect(find.text('Speech Practice'), findsOneWidget);
-      expect(find.text('Grammar Puzzles'), findsOneWidget);
-      expect(find.text('Roleplay Dialogues'), findsOneWidget);
+      expect(find.text('Real-Time Voice Feedback'), findsOneWidget);
+      expect(find.text('Sentence Building Puzzles'), findsOneWidget);
+      expect(find.text('Everyday Travel & Life Dialogues'), findsOneWidget);
 
       // Slide 2 features
       await tester.tap(find.text('Continue'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
-      expect(find.text('Object Recognition'), findsOneWidget);
-      expect(find.text('Book & Text Scanner'), findsOneWidget);
-      expect(find.text('Offline Dictionary & Translator'), findsOneWidget);
+      expect(find.text('Smart Camera Vocabulary Scan'), findsOneWidget);
+      expect(find.text('Instant Book Page Reader'), findsOneWidget);
+      expect(find.text('100% Offline Dictionaries'), findsOneWidget);
 
       // Slide 3 features
       await tester.tap(find.text('Continue'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
-      expect(find.text('Companion Outfits & Hats'), findsOneWidget);
-      expect(find.text('Sticker Rewards Album'), findsOneWidget);
-      expect(find.text('Safe, Ad-Free Learning'), findsOneWidget);
+      expect(find.text('Daily Streak Shields'), findsOneWidget);
+      expect(find.text('Companion Outfits & Stickers'), findsOneWidget);
+      expect(find.text('Safe, 100% Ad-Free Learning'), findsOneWidget);
 
       // Slide 4 features
       await tester.tap(find.text('Continue'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
-      expect(find.text('Daily Streaks & XP Analytics'), findsOneWidget);
+      expect(find.text('Daily Fluency & XP Analytics'), findsOneWidget);
       expect(find.text('Smart Spaced Repetition'), findsOneWidget);
-      expect(find.text('Authentic Global Accents'), findsOneWidget);
+      expect(find.text('Authentic US, UK & World Voices'), findsOneWidget);
+    });
+
+    testWidgets('tapping illustration stage triggers tactile scale reaction', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        buildScreenHarness(
+          physicalSize: const Size(390, 844),
+          disableAnimations: false,
+        ),
+      );
+      await tester.pump();
+
+      final illFinder = find.byType(OnboardingIllustration).first;
+      expect(illFinder, findsOneWidget);
+
+      // Tap stage
+      await tester.tap(illFinder);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 200));
+      expect(tester.takeException(), isNull);
     });
   });
 }
