@@ -430,84 +430,90 @@ class _SlidePage extends StatelessWidget {
 
     return LayoutBuilder(
       builder: (context, c) {
-        // Dynamic illustration height: scales with viewport height
-        final illH = (c.maxHeight * 0.36).clamp(135.0, 230.0);
+        // Dynamic illustration height: scales with viewport height (healthy hero proportion)
+        final illH = (c.maxHeight * 0.40).clamp(150.0, 260.0);
 
         return SingleChildScrollView(
           physics: const ClampingScrollPhysics(),
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: ConstrainedBox(
             constraints: BoxConstraints(minHeight: c.maxHeight),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: illH,
-                  child: OnboardingIllustration(
-                    index: index,
-                    entrance: entrance,
-                    ambient: ambient,
+            child: IntrinsicHeight(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const Spacer(flex: 2),
+                  SizedBox(
+                    height: illH,
+                    child: OnboardingIllustration(
+                      index: index,
+                      entrance: entrance,
+                      ambient: ambient,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 18),
-                // Heading (1 line) + Subtitle (max 2 lines) lockup with standard 8dp spacing
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Semantics(
-                      header: true,
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          slide.headline,
-                          textAlign: TextAlign.center,
-                          maxLines: 1,
-                          style: theme.textTheme.headlineSmall?.copyWith(
-                            fontSize: 21,
-                            fontWeight: FontWeight.w700,
-                            height: 1.2,
-                            letterSpacing: -0.3,
-                            color: scheme.onSurface,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      slide.subtitle,
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      style: theme.textTheme.bodyMedium?.copyWith(
-                        fontSize: 13.5,
-                        fontWeight: FontWeight.w400,
-                        height: 1.35,
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                // Clean, borderless 1-line feature items with branded icon badge
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Column(
+                  const Spacer(flex: 3),
+                  // Heading (1 line) + Subtitle (max 2 lines) lockup with standard 8dp spacing
+                  Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      for (var i = 0; i < slide.features.length; i++)
-                        Padding(
-                          padding: EdgeInsets.only(
-                            bottom: i < slide.features.length - 1 ? 6 : 0,
-                          ),
-                          child: _FeatureRow(
-                            feature: slide.features[i],
-                            ink: slide.ink,
+                      Semantics(
+                        header: true,
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            slide.headline,
+                            textAlign: TextAlign.center,
+                            maxLines: 1,
+                            style: theme.textTheme.headlineSmall?.copyWith(
+                              fontSize: 21,
+                              fontWeight: FontWeight.w700,
+                              height: 1.2,
+                              letterSpacing: -0.3,
+                              color: scheme.onSurface,
+                            ),
                           ),
                         ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        slide.subtitle,
+                        textAlign: TextAlign.center,
+                        maxLines: 2,
+                        style: theme.textTheme.bodyMedium?.copyWith(
+                          fontSize: 13.5,
+                          fontWeight: FontWeight.w400,
+                          height: 1.35,
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
                     ],
                   ),
-                ),
-              ],
+                  const Spacer(flex: 3),
+                  // Clean, centered 1-line feature block (visually aligned with screen center)
+                  Center(
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 290),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          for (var i = 0; i < slide.features.length; i++)
+                            Padding(
+                              padding: EdgeInsets.only(
+                                bottom: i < slide.features.length - 1 ? 10 : 0,
+                              ),
+                              child: _FeatureRow(
+                                feature: slide.features[i],
+                                ink: slide.ink,
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const Spacer(flex: 3),
+                ],
+              ),
             ),
           ),
         );
@@ -524,40 +530,37 @@ class _FeatureRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 2),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            width: 32,
-            height: 32,
-            decoration: BoxDecoration(
-              color: ink.withValues(alpha: .10),
-              borderRadius: BorderRadius.circular(9),
-              border: Border.all(color: ink.withValues(alpha: .14), width: 1),
-            ),
-            child: Icon(feature.icon, size: 17, color: ink),
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Container(
+          width: 32,
+          height: 32,
+          decoration: BoxDecoration(
+            color: ink.withValues(alpha: .10),
+            borderRadius: BorderRadius.circular(9),
+            border: Border.all(color: ink.withValues(alpha: .14), width: 1),
           ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              alignment: Alignment.centerLeft,
-              child: Text(
-                feature.title,
-                maxLines: 1,
-                style: TextStyle(
-                  fontSize: 14.5,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: -0.1,
-                  color: scheme.onSurface,
-                ),
+          child: Icon(feature.icon, size: 17, color: ink),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              feature.title,
+              maxLines: 1,
+              style: TextStyle(
+                fontSize: 14.5,
+                fontWeight: FontWeight.w600,
+                letterSpacing: -0.1,
+                color: scheme.onSurface,
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
