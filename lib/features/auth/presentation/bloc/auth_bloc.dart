@@ -24,6 +24,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/auth_error_handler.dart';
 import 'package:flutter/painting.dart' show imageCache;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vowl/core/utils/onboarding_service.dart';
 
 // ============================================================================
 // EVENTS
@@ -349,6 +350,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       // Age gate is device-scoped, not user-scoped — must survive logout/delete.
       final ageGateCompleted = prefs.getBool('age_gate_completed');
       final ageGateIsAdult = prefs.getBool('age_gate_is_adult');
+      // Onboarding is device-scoped — users should never re-see the intro
+      // carousel after sign-out; only after app uninstall/data wipe.
+      final onboardingComplete = prefs.getBool(
+        OnboardingService.prefsKeyHasSeenOnboarding,
+      );
+      // Accessibility & audio preferences are device-scoped, not user-scoped.
+      final lowAnimationMode = prefs.getBool('low_animation_mode');
+      final gameSoundsEnabled = prefs.getBool('game_sounds_enabled');
 
       await prefs.clear();
 
@@ -384,6 +393,21 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       }
       if (ageGateIsAdult != null) {
         await prefs.setBool('age_gate_is_adult', ageGateIsAdult);
+      }
+      if (onboardingComplete != null) {
+        await prefs.setBool(
+          OnboardingService.prefsKeyHasSeenOnboarding,
+          onboardingComplete,
+        );
+        // Keep the in-memory cache in sync so the router redirect never
+        // flickers to the onboarding page during this session either.
+        OnboardingService.refreshCacheFromValue(onboardingComplete);
+      }
+      if (lowAnimationMode != null) {
+        await prefs.setBool('low_animation_mode', lowAnimationMode);
+      }
+      if (gameSoundsEnabled != null) {
+        await prefs.setBool('game_sounds_enabled', gameSoundsEnabled);
       }
     } catch (e) {
       if (kDebugMode) {
