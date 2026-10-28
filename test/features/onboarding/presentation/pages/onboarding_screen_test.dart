@@ -461,5 +461,64 @@ void main() {
       await tester.pump(const Duration(milliseconds: 200));
       expect(tester.takeException(), isNull);
     });
+
+    testWidgets('tapping indicator dot navigates directly to target slide', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        buildScreenHarness(
+          physicalSize: const Size(390, 844),
+          disableAnimations: true,
+        ),
+      );
+      await tester.pump();
+
+      // On Slide 1
+      expect(find.text('Speak English With Confidence'), findsOneWidget);
+
+      // Tap dot 3 (index 2)
+      final dot3Finder = find.bySemanticsLabel('Go to slide 3');
+      expect(dot3Finder, findsOneWidget);
+      await tester.tap(dot3Finder);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+
+      expect(find.text('Build an Unbreakable Habit'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('pills retain active selection state across slide swiping', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        buildScreenHarness(
+          physicalSize: const Size(390, 844),
+          disableAnimations: false,
+        ),
+      );
+      await tester.pump();
+
+      // Select pill on Slide 1
+      final pillFinder = find.text('Voice Practice');
+      await tester.tap(pillFinder);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 250));
+      expect(find.byIcon(Icons.check_circle_rounded), findsOneWidget);
+
+      // Advance to Slide 2
+      await tester.tap(find.text('Continue'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+      expect(find.text('Camera Scan'), findsOneWidget);
+
+      // Swipe back to Slide 1
+      await tester.tap(find.bySemanticsLabel('Go to slide 1'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+
+      // Assert Slide 1 retained selection checkmark
+      expect(find.byIcon(Icons.check_circle_rounded), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
   });
 }

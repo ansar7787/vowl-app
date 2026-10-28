@@ -352,6 +352,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                       slide: slide,
                       isLast: isLast,
                       onPrimary: _next,
+                      onPageSelect: _goTo,
                     ),
                   ],
                 );
@@ -433,8 +434,9 @@ class _Header extends StatelessWidget {
   }
 }
 
-class _SlidePage extends StatelessWidget {
+class _SlidePage extends StatefulWidget {
   const _SlidePage({
+    super.key,
     required this.index,
     required this.slide,
     required this.entrance,
@@ -445,7 +447,17 @@ class _SlidePage extends StatelessWidget {
   final Animation<double> entrance, ambient;
 
   @override
+  State<_SlidePage> createState() => _SlidePageState();
+}
+
+class _SlidePageState extends State<_SlidePage>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
 
@@ -467,13 +479,13 @@ class _SlidePage extends StatelessWidget {
                   _TactileStage(
                     height: illH,
                     child: OnboardingIllustration(
-                      index: index,
-                      entrance: entrance,
-                      ambient: ambient,
+                      index: widget.index,
+                      entrance: widget.entrance,
+                      ambient: widget.ambient,
                     ),
                   ),
                   const Spacer(flex: 3),
-                  // Heading (1 line) + Subtitle (max 2 lines) lockup with standard 8dp spacing
+                  // Heading (1 line) + Subtitle lockup with standard 8dp spacing
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -482,7 +494,7 @@ class _SlidePage extends StatelessWidget {
                         child: FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Text(
-                            slide.headline,
+                            widget.slide.headline,
                             textAlign: TextAlign.center,
                             maxLines: 1,
                             style: theme.textTheme.headlineSmall?.copyWith(
@@ -497,9 +509,9 @@ class _SlidePage extends StatelessWidget {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        slide.subtitle,
+                        widget.slide.subtitle,
                         textAlign: TextAlign.center,
-                        maxLines: 2,
+                        maxLines: 3,
                         style: theme.textTheme.bodyMedium?.copyWith(
                           fontSize: 13.5,
                           fontWeight: FontWeight.w400,
@@ -509,7 +521,7 @@ class _SlidePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Spacer(flex: 3),
+                  const SizedBox(height: 18),
                   // Gamified Tag Cloud: symmetrical 2-and-1 pyramid layout across ALL 4 slides
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -521,15 +533,15 @@ class _SlidePage extends StatelessWidget {
                           children: [
                             Flexible(
                               child: _FeaturePill(
-                                feature: slide.features[0],
-                                ink: slide.ink,
+                                feature: widget.slide.features[0],
+                                ink: widget.slide.ink,
                               ),
                             ),
                             const SizedBox(width: 8),
                             Flexible(
                               child: _FeaturePill(
-                                feature: slide.features[1],
-                                ink: slide.ink,
+                                feature: widget.slide.features[1],
+                                ink: widget.slide.ink,
                               ),
                             ),
                           ],
@@ -540,8 +552,8 @@ class _SlidePage extends StatelessWidget {
                           children: [
                             Flexible(
                               child: _FeaturePill(
-                                feature: slide.features[2],
-                                ink: slide.ink,
+                                feature: widget.slide.features[2],
+                                ink: widget.slide.ink,
                               ),
                             ),
                           ],
@@ -659,76 +671,86 @@ class _FeaturePillState extends State<_FeaturePill>
     final unselectedBg = effectiveInk.withValues(alpha: isDark ? .16 : .08);
     final unselectedBorder = effectiveInk.withValues(alpha: isDark ? .30 : .18);
 
-    return GestureDetector(
-      onTap: _onTap,
-      behavior: HitTestBehavior.opaque,
-      child: AnimatedBuilder(
-        animation: _scale,
-        builder: (context, child) =>
-            Transform.scale(scale: _scale.value, child: child),
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 220),
-          curve: Curves.easeOutCubic,
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7.5),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: _selected
-                  ? const [AppColors.indigo600, AppColors.indigo500]
-                  : [unselectedBg, unselectedBg],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(
-              color: _selected ? Colors.transparent : unselectedBorder,
-              width: 1.2,
-            ),
-            boxShadow: _selected
-                ? [
-                    BoxShadow(
-                      color: AppColors.indigo600.withValues(alpha: 0.32),
-                      blurRadius: 8,
-                      offset: const Offset(0, 3),
-                    ),
-                  ]
-                : const [],
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              AnimatedSwitcher(
-                duration: const Duration(milliseconds: 180),
-                transitionBuilder: (child, anim) =>
-                    ScaleTransition(scale: anim, child: child),
-                child: Icon(
-                  _selected ? Icons.check_circle_rounded : widget.feature.icon,
-                  key: ValueKey<bool>(_selected),
-                  size: 15,
-                  color: _selected ? Colors.white : effectiveInk,
-                ),
+    return Semantics(
+      button: true,
+      selected: _selected,
+      label:
+          '${widget.feature.title}, ${_selected ? "selected" : "unselected"}',
+      child: GestureDetector(
+        onTap: _onTap,
+        behavior: HitTestBehavior.opaque,
+        child: AnimatedBuilder(
+          animation: _scale,
+          builder: (context, child) =>
+              Transform.scale(scale: _scale.value, child: child),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 220),
+            curve: Curves.easeOutCubic,
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7.5),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: _selected
+                    ? const [AppColors.indigo600, AppColors.indigo500]
+                    : [unselectedBg, unselectedBg],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
               ),
-              const SizedBox(width: 7),
-              Flexible(
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: AnimatedDefaultTextStyle(
-                    duration: const Duration(milliseconds: 180),
-                    style: TextStyle(
-                      fontFamily: theme.textTheme.bodyMedium?.fontFamily,
-                      fontSize: 12.5,
-                      fontWeight: _selected ? FontWeight.w700 : FontWeight.w600,
-                      letterSpacing: -0.1,
-                      color: _selected ? Colors.white : scheme.onSurface,
-                    ),
-                    child: Text(
-                      widget.feature.title,
-                      maxLines: 1,
-                      softWrap: false,
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(
+                color: _selected ? Colors.transparent : unselectedBorder,
+                width: 1.2,
+              ),
+              boxShadow: _selected
+                  ? [
+                      BoxShadow(
+                        color: AppColors.indigo600.withValues(alpha: 0.32),
+                        blurRadius: 8,
+                        offset: const Offset(0, 3),
+                      ),
+                    ]
+                  : const [],
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 180),
+                  transitionBuilder: (child, anim) =>
+                      ScaleTransition(scale: anim, child: child),
+                  child: Icon(
+                    _selected
+                        ? Icons.check_circle_rounded
+                        : widget.feature.icon,
+                    key: ValueKey<bool>(_selected),
+                    size: 15,
+                    color: _selected ? Colors.white : effectiveInk,
+                  ),
+                ),
+                const SizedBox(width: 7),
+                Flexible(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: AnimatedDefaultTextStyle(
+                      duration: const Duration(milliseconds: 180),
+                      style: TextStyle(
+                        fontFamily: theme.textTheme.bodyMedium?.fontFamily,
+                        fontSize: 12.5,
+                        fontWeight: _selected
+                            ? FontWeight.w700
+                            : FontWeight.w600,
+                        letterSpacing: -0.1,
+                        color: _selected ? Colors.white : scheme.onSurface,
+                      ),
+                      child: Text(
+                        widget.feature.title,
+                        maxLines: 1,
+                        softWrap: false,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -743,11 +765,13 @@ class _BottomBar extends StatelessWidget {
     required this.slide,
     required this.isLast,
     required this.onPrimary,
+    this.onPageSelect,
   });
   final int page, total;
   final _Slide slide;
   final bool isLast;
   final VoidCallback onPrimary;
+  final ValueChanged<int>? onPageSelect;
 
   @override
   Widget build(BuildContext context) {
@@ -759,22 +783,35 @@ class _BottomBar extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Smooth expanding pill page indicator
+          // Smooth expanding pill page indicator with interactive tap navigation
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(total, (i) {
               final isSelected = i == page;
-              return AnimatedContainer(
-                duration: const Duration(milliseconds: 280),
-                curve: Curves.easeOutCubic,
-                margin: const EdgeInsets.symmetric(horizontal: 4),
-                width: isSelected ? 26 : 7,
-                height: 7,
-                decoration: BoxDecoration(
-                  color: isSelected
-                      ? effectiveInk
-                      : effectiveInk.withValues(alpha: 0.22),
-                  borderRadius: BorderRadius.circular(4),
+              return GestureDetector(
+                onTap: onPageSelect != null ? () => onPageSelect!(i) : null,
+                behavior: HitTestBehavior.opaque,
+                child: Semantics(
+                  button: true,
+                  label: 'Go to slide ${i + 1}',
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 4,
+                      vertical: 8,
+                    ),
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 280),
+                      curve: Curves.easeOutCubic,
+                      width: isSelected ? 26 : 7,
+                      height: 7,
+                      decoration: BoxDecoration(
+                        color: isSelected
+                            ? effectiveInk
+                            : effectiveInk.withValues(alpha: 0.22),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                    ),
+                  ),
                 ),
               );
             }),
