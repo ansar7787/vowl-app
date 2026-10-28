@@ -86,7 +86,7 @@ const _slides = <_Slide>[
   _Slide(
     headline: 'Build an Unbreakable Habit',
     subtitle:
-        'Earn daily streaks, unlock outfits for your companion, and celebrate real progress.',
+        'Earn daily streaks, unlock outfits for your buddy, and celebrate real progress.',
     features: [
       _Feature(Icons.shield_rounded, 'Streak Shields'),
       _Feature(Icons.checkroom_rounded, 'Outfits & Badges'),
