@@ -381,33 +381,54 @@ void main() {
       await tester.pump();
 
       // Slide 1 features
-      expect(find.text('Real-Time Voice Feedback'), findsOneWidget);
-      expect(find.text('Sentence Building Puzzles'), findsOneWidget);
-      expect(find.text('Everyday Travel & Life Dialogues'), findsOneWidget);
+      expect(find.text('Real-Time Voice'), findsOneWidget);
+      expect(find.text('Word Puzzles'), findsOneWidget);
+      expect(find.text('Everyday Roleplay'), findsOneWidget);
 
       // Slide 2 features
       await tester.tap(find.text('Continue'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
-      expect(find.text('Smart Camera Vocabulary Scan'), findsOneWidget);
-      expect(find.text('Instant Book Page Reader'), findsOneWidget);
-      expect(find.text('100% Offline Dictionaries'), findsOneWidget);
+      expect(find.text('Camera Scanner'), findsOneWidget);
+      expect(find.text('Book Flashcards'), findsOneWidget);
+      expect(find.text('100% Offline Mode'), findsOneWidget);
 
       // Slide 3 features
       await tester.tap(find.text('Continue'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
-      expect(find.text('Daily Streak Shields'), findsOneWidget);
-      expect(find.text('Companion Outfits & Stickers'), findsOneWidget);
-      expect(find.text('Safe, 100% Ad-Free Learning'), findsOneWidget);
+      expect(find.text('Streak Shields'), findsOneWidget);
+      expect(find.text('Companion Outfits'), findsOneWidget);
+      expect(find.text('100% Ad-Free'), findsOneWidget);
 
       // Slide 4 features
       await tester.tap(find.text('Continue'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
-      expect(find.text('Daily Fluency & XP Analytics'), findsOneWidget);
-      expect(find.text('Smart Spaced Repetition'), findsOneWidget);
-      expect(find.text('Authentic US, UK & World Voices'), findsOneWidget);
+      expect(find.text('Daily XP & Streaks'), findsOneWidget);
+      expect(find.text('Spaced Repetition'), findsOneWidget);
+      expect(find.text('US & UK Voices'), findsOneWidget);
+    });
+
+    testWidgets('tapping feature pill triggers tactile scale reaction', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        buildScreenHarness(
+          physicalSize: const Size(390, 844),
+          disableAnimations: false,
+        ),
+      );
+      await tester.pump();
+
+      final pillFinder = find.text('Real-Time Voice');
+      expect(pillFinder, findsOneWidget);
+
+      // Tap pill
+      await tester.tap(pillFinder);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 150));
+      expect(tester.takeException(), isNull);
     });
 
     testWidgets('tapping illustration stage triggers tactile scale reaction', (
