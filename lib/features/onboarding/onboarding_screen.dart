@@ -68,9 +68,9 @@ const _slides = <_Slide>[
     subtitle:
         'Play interactive games that train your pronunciation and real-time conversation.',
     features: [
-      _Feature(Icons.mic_rounded, 'Real-Time Voice'),
+      _Feature(Icons.mic_rounded, 'Voice Practice'),
       _Feature(Icons.extension_rounded, 'Word Puzzles'),
-      _Feature(Icons.forum_rounded, 'Everyday Roleplay'),
+      _Feature(Icons.forum_rounded, 'Daily Roleplay'),
     ],
   ),
   _Slide(
@@ -78,9 +78,9 @@ const _slides = <_Slide>[
     subtitle:
         'Point your camera at real-world items or book pages to learn words anywhere.',
     features: [
-      _Feature(Icons.photo_camera_rounded, 'Camera Scanner'),
+      _Feature(Icons.photo_camera_rounded, 'Camera Scan'),
       _Feature(Icons.menu_book_rounded, 'Book Flashcards'),
-      _Feature(Icons.public_off_rounded, '100% Offline Mode'),
+      _Feature(Icons.public_off_rounded, 'Offline Mode'),
     ],
   ),
   _Slide(
@@ -89,7 +89,7 @@ const _slides = <_Slide>[
         'Earn daily streaks, unlock outfits for your companion, and celebrate real progress.',
     features: [
       _Feature(Icons.shield_rounded, 'Streak Shields'),
-      _Feature(Icons.checkroom_rounded, 'Companion Outfits'),
+      _Feature(Icons.checkroom_rounded, 'Outfits & Badges'),
       _Feature(Icons.auto_awesome_rounded, '100% Ad-Free'),
     ],
   ),
@@ -98,8 +98,8 @@ const _slides = <_Slide>[
     subtitle:
         'Track your daily fluency growth and train your ear with authentic global voices.',
     features: [
-      _Feature(Icons.bolt_rounded, 'Daily XP & Streaks'),
-      _Feature(Icons.autorenew_rounded, 'Spaced Repetition'),
+      _Feature(Icons.bolt_rounded, 'Daily Streaks'),
+      _Feature(Icons.autorenew_rounded, 'Spaced Memory'),
       _Feature(Icons.public_rounded, 'US & UK Voices'),
     ],
   ),
@@ -510,19 +510,43 @@ class _SlidePage extends StatelessWidget {
                     ],
                   ),
                   const Spacer(flex: 3),
-                  // Gamified Tag Cloud: centered interactive pill badges
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Wrap(
-                        alignment: WrapAlignment.center,
-                        spacing: 8,
-                        runSpacing: 8,
-                        children: [
-                          for (final f in slide.features)
-                            _FeaturePill(feature: f, ink: slide.ink),
-                        ],
-                      ),
+                  // Gamified Tag Cloud: symmetrical 2-and-1 pyramid layout across ALL 4 slides
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Flexible(
+                              child: _FeaturePill(
+                                feature: slide.features[0],
+                                ink: slide.ink,
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Flexible(
+                              child: _FeaturePill(
+                                feature: slide.features[1],
+                                ink: slide.ink,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 8),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Flexible(
+                              child: _FeaturePill(
+                                feature: slide.features[2],
+                                ink: slide.ink,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                   const Spacer(flex: 3),
@@ -600,12 +624,14 @@ class _FeaturePillState extends State<_FeaturePill>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     vsync: this,
-    duration: const Duration(milliseconds: 110),
+    duration: const Duration(milliseconds: 120),
   );
   late final Animation<double> _scale = Tween<double>(
     begin: 1.0,
-    end: 0.94,
+    end: 0.93,
   ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic));
+
+  bool _selected = false;
 
   @override
   void dispose() {
@@ -615,6 +641,9 @@ class _FeaturePillState extends State<_FeaturePill>
 
   void _onTap() {
     HapticFeedback.selectionClick();
+    setState(() {
+      _selected = !_selected;
+    });
     _controller.forward().then((_) {
       if (mounted) _controller.reverse();
     });
@@ -627,6 +656,9 @@ class _FeaturePillState extends State<_FeaturePill>
     final effectiveInk = isDark ? AppColors.indigo400 : widget.ink;
     final scheme = theme.colorScheme;
 
+    final unselectedBg = effectiveInk.withValues(alpha: isDark ? .16 : .08);
+    final unselectedBorder = effectiveInk.withValues(alpha: isDark ? .30 : .18);
+
     return GestureDetector(
       onTap: _onTap,
       behavior: HitTestBehavior.opaque,
@@ -634,35 +666,64 @@ class _FeaturePillState extends State<_FeaturePill>
         animation: _scale,
         builder: (context, child) =>
             Transform.scale(scale: _scale.value, child: child),
-        child: Container(
-          constraints: BoxConstraints(
-            maxWidth: MediaQuery.sizeOf(context).width - 64,
-          ),
-          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 220),
+          curve: Curves.easeOutCubic,
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7.5),
           decoration: BoxDecoration(
-            color: effectiveInk.withValues(alpha: isDark ? .16 : .08),
+            gradient: LinearGradient(
+              colors: _selected
+                  ? const [AppColors.indigo600, AppColors.indigo500]
+                  : [unselectedBg, unselectedBg],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
             borderRadius: BorderRadius.circular(20),
             border: Border.all(
-              color: effectiveInk.withValues(alpha: isDark ? .30 : .18),
+              color: _selected ? Colors.transparent : unselectedBorder,
               width: 1.2,
             ),
+            boxShadow: _selected
+                ? [
+                    BoxShadow(
+                      color: AppColors.indigo600.withValues(alpha: 0.32),
+                      blurRadius: 8,
+                      offset: const Offset(0, 3),
+                    ),
+                  ]
+                : const [],
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(widget.feature.icon, size: 16, color: effectiveInk),
-              const SizedBox(width: 8),
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 180),
+                transitionBuilder: (child, anim) =>
+                    ScaleTransition(scale: anim, child: child),
+                child: Icon(
+                  _selected ? Icons.check_circle_rounded : widget.feature.icon,
+                  key: ValueKey<bool>(_selected),
+                  size: 15,
+                  color: _selected ? Colors.white : effectiveInk,
+                ),
+              ),
+              const SizedBox(width: 7),
               Flexible(
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
-                  child: Text(
-                    widget.feature.title,
-                    maxLines: 1,
+                  child: AnimatedDefaultTextStyle(
+                    duration: const Duration(milliseconds: 180),
                     style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w600,
+                      fontFamily: theme.textTheme.bodyMedium?.fontFamily,
+                      fontSize: 12.5,
+                      fontWeight: _selected ? FontWeight.w700 : FontWeight.w600,
                       letterSpacing: -0.1,
-                      color: scheme.onSurface,
+                      color: _selected ? Colors.white : scheme.onSurface,
+                    ),
+                    child: Text(
+                      widget.feature.title,
+                      maxLines: 1,
+                      softWrap: false,
                     ),
                   ),
                 ),
