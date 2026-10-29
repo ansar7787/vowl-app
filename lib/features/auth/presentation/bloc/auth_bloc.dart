@@ -578,7 +578,19 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       currentUser.kidsCoins,
     );
 
+    // ---- Identity (Name & Photo): Never let a minimal/stale snapshot wipe them ----
+    final reconciledDisplayName = (remoteUser.displayName != null &&
+            remoteUser.displayName!.trim().isNotEmpty)
+        ? remoteUser.displayName
+        : currentUser.displayName;
+    final reconciledPhotoUrl = (remoteUser.photoUrl != null &&
+            remoteUser.photoUrl!.trim().isNotEmpty)
+        ? remoteUser.photoUrl
+        : currentUser.photoUrl;
+
     return remoteUser.copyWith(
+      displayName: reconciledDisplayName,
+      photoUrl: reconciledPhotoUrl,
       completedLevels: mergedCompleted,
       unlockedLevels: mergedUnlocked,
       starRatings: mergedStarRatings,
