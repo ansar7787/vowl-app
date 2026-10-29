@@ -182,31 +182,25 @@ void main() {
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 500));
 
-    // Find TextField and its parent input Container
-    final textField = find.byType(TextField);
-    expect(textField, findsOneWidget);
+    // Find TextField and verify its unified OutlineInputBorder and fill
+    final textFieldFinder = find.byType(TextField);
+    expect(textFieldFinder, findsOneWidget);
 
-    final inputContainerFinder = find.ancestor(
-      of: textField,
-      matching: find.byWidgetPredicate(
-        (w) => w is Container && w.clipBehavior == Clip.antiAlias,
-      ),
-    );
-    expect(inputContainerFinder, findsOneWidget);
+    final textField = tester.widget<TextField>(textFieldFinder);
+    final inputDec = textField.decoration!;
+    expect(inputDec.filled, isTrue);
 
-    final inputContainer = tester.widget<Container>(inputContainerFinder);
-    final dec = inputContainer.decoration as BoxDecoration;
-    // Verify 4-side curve
-    expect(dec.borderRadius, BorderRadius.circular(16.r));
-    // Verify anti-alias clip
-    expect(inputContainer.clipBehavior, Clip.antiAlias);
-    // Verify visible border styling
-    expect(dec.border, isNotNull);
-    final border = dec.border as Border;
-    expect(border.top.width, 1.5.w);
-    expect(border.bottom.width, 1.5.w);
-    expect(border.left.width, 1.5.w);
-    expect(border.right.width, 1.5.w);
+    // Verify 4-side curve on OutlineInputBorder
+    expect(inputDec.border, isA<OutlineInputBorder>());
+    final outlineBorder = inputDec.border as OutlineInputBorder;
+    expect(outlineBorder.borderRadius, BorderRadius.circular(16.r));
+    expect(outlineBorder.borderSide.width, 1.5.w);
+    expect(outlineBorder.borderSide.color, isNotNull);
+
+    // Verify enabled and focused borders share identical 16.r curves
+    final enabledBorder = inputDec.enabledBorder as OutlineInputBorder;
+    expect(enabledBorder.borderRadius, BorderRadius.circular(16.r));
+    expect(enabledBorder.borderSide.width, 1.5.w);
   });
 }
 
