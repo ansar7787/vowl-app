@@ -96,12 +96,12 @@ class _SunburstPainter extends CustomPainter {
 /// green + gold celebration confetti, fast-feel animations, rolling rewards, and
 /// instant tactile feedback.
 ///
-/// Choreographed Timeline (Total ~950ms — snappy, punchy, zero drag):
-///   0–215ms   : Fast anticipation rumble + tap reaction
-///   215ms     : Lid pops open! Green + Gold confetti eruption from chest mouth
-///   215–380ms : Radiant sunburst rays flare up and spin smoothly
-///   320–550ms : Reward card springs up with micro-bounce and coin count roll-up
-///   480ms+    : Prominent "COLLECT" CTA and close button ready for instant user agency
+/// Choreographed Timeline (Total ~650ms — snappy, punchy, zero drag):
+///   0–140ms   : Fast anticipation rumble + tap reaction
+///   140ms     : Lid pops open! Green + Gold confetti eruption from chest mouth
+///   150–320ms : Radiant sunburst rays flare up and spin smoothly
+///   240–420ms : Reward card springs up with micro-bounce and coin count roll-up
+///   300ms+    : Prominent "COLLECT" CTA and close button ready for instant user agency
 class MysteryChestOverlay extends StatefulWidget {
   /// Whether the chest has been opened.
   final bool isOpened;
