@@ -398,7 +398,25 @@ class AuthRepositoryImpl
   @override
   Future<Either<Failure, void>> sendEmailVerification() async {
     try {
-      await _firebaseAuth.currentUser?.sendEmailVerification();
+      var user = _firebaseAuth.currentUser;
+      if (user == null) {
+        // Platform channel sync guard: if called immediately following account creation,
+        // currentUser may be propagating across the native-to-Dart bridge.
+        try {
+          user = await _firebaseAuth
+              .authStateChanges()
+              .firstWhere((u) => u != null)
+              .timeout(const Duration(seconds: 3));
+        } catch (_) {
+          user = _firebaseAuth.currentUser;
+        }
+      }
+
+      if (user == null) {
+        return Left(AuthFailure('user-not-authenticated'));
+      }
+
+      await user.sendEmailVerification();
       return const Right(null);
     } catch (e) {
       return Left(handleFirebaseException(e));

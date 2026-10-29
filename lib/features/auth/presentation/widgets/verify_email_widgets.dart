@@ -85,71 +85,90 @@ class VerifyEmailStatusText extends StatelessWidget {
           ),
           textAlign: TextAlign.center,
         ),
-        if (email != null) ...[
-          SizedBox(height: 12.h),
+        if (email != null && email!.isNotEmpty) ...[
+          SizedBox(height: 16.h),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 9.h),
             decoration: BoxDecoration(
               color: AppColors.indigo500.withValues(alpha: 0.08),
-              borderRadius: BorderRadius.circular(12.r),
+              borderRadius: BorderRadius.circular(24.r),
               border: Border.all(
-                color: AppColors.indigo500.withValues(alpha: 0.15),
+                color: AppColors.indigo500.withValues(alpha: 0.18),
+                width: 1.2,
               ),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.email_rounded,
+                  Icons.email_outlined,
                   size: 16.r,
                   color: AppColors.indigo500,
                 ),
                 SizedBox(width: 8.w),
-                Flexible(
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      email!,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.indigo500,
-                      ),
-                      maxLines: 1,
+                ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: 240.w),
+                  child: Text(
+                    email!,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.indigo500,
+                      letterSpacing: 0.2,
                     ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ],
             ),
           ),
         ],
-        SizedBox(height: 12.h),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.info_outline_rounded,
-              size: 14.r,
-              color: isDark ? Colors.white38 : Colors.grey,
-            ),
-            SizedBox(width: 6.w),
-            Flexible(
-              child: Text(
-                context.tr(
-                  'auth.check_spam_hint',
-                  fallback: "Didn't receive it? Please check your spam folder.",
-                ),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  color: isDark ? Colors.white38 : Colors.grey,
-                  fontStyle: FontStyle.italic,
+        SizedBox(height: 14.h),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+          decoration: BoxDecoration(
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.04)
+                : Colors.grey.withValues(alpha: 0.08),
+            borderRadius: BorderRadius.circular(10.r),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(top: 1.5.h),
+                child: Icon(
+                  Icons.info_outline_rounded,
+                  size: 14.r,
+                  color: isDark ? Colors.white54 : _LocalPalette.color6b7280,
                 ),
               ),
-            ),
-          ],
+              SizedBox(width: 8.w),
+              Flexible(
+                child: Text(
+                  context.tr(
+                    'auth.check_spam_hint',
+                    fallback:
+                        "Didn't receive it? Please check your spam folder.",
+                  ),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    color: isDark ? Colors.white54 : _LocalPalette.color6b7280,
+                    height: 1.4,
+                  ),
+                  textAlign: TextAlign.start,
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     );
