@@ -115,7 +115,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
   /// one-shot entrance for the active slide + one shared ambient loop.
   late final _entrance = AnimationController(
     vsync: this,
-    duration: const Duration(milliseconds: 650),
+    duration: const Duration(milliseconds: 950),
   );
   late final _ambient = AnimationController(
     vsync: this,
@@ -252,8 +252,8 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     try {
       await _pages.animateToPage(
         page,
-        duration: const Duration(milliseconds: 320),
-        curve: Curves.easeOutCubic,
+        duration: const Duration(milliseconds: 460),
+        curve: Curves.easeInOutCubic,
       );
     } finally {
       _animating = false;
@@ -392,7 +392,8 @@ class _Header extends StatelessWidget {
             label: 'Step ${page + 1} of $total',
             excludeSemantics: true,
             child: AnimatedContainer(
-              duration: const Duration(milliseconds: 250),
+              duration: const Duration(milliseconds: 350),
+              curve: Curves.easeInOutCubic,
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
               decoration: BoxDecoration(
                 color: effectiveInk.withValues(alpha: .10),
@@ -799,10 +800,10 @@ class _BottomBar extends StatelessWidget {
                       vertical: 8,
                     ),
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 280),
-                      curve: Curves.easeOutCubic,
-                      width: isSelected ? 26 : 7,
-                      height: 7,
+                      duration: const Duration(milliseconds: 380),
+                      curve: Curves.easeInOutCubic,
+                      width: isSelected ? 28 : 8,
+                      height: 8,
                       decoration: BoxDecoration(
                         color: isSelected
                             ? effectiveInk
