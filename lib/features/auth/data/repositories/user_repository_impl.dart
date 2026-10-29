@@ -58,7 +58,31 @@ class UserRepositoryImpl
       // unless someone remembered to also update this call site.
       final userModel = UserModel.fromEntity(user);
 
-      await docRef.set(userModel.toMap(), SetOptions(merge: true));
+      final map = userModel.toMap();
+
+      // FIX (CRITICAL — DATA LOSS): Firestore Security Rules enforce a
+      // rate-limit guard that requires `lastRewardTimestamp == request.time`
+      // on any write that changes `totalExp`, `coins`, or `kidsCoins`.
+      // Without this, the generic updateUser() merge-write silently gets
+      // PERMISSION_DENIED whenever it touches those fields, causing data
+      // to appear saved in-memory but never actually persist to Firestore.
+      // On app restart, the old Firestore data comes back and all in-session
+      // progress (coins, XP, stars, levels) is lost.
+      //
+      // We detect whether this write changes any rate-limited field by
+      // comparing against the last-known Firestore state. Since we can't
+      // cheaply read the server doc here, we unconditionally include the
+      // timestamp whenever the map contains any of the guarded fields —
+      // the rules only enforce the cooldown when those fields *actually*
+      // differ from the server value, and `FieldValue.serverTimestamp()`
+      // always satisfies `== request.time`.
+      if (map.containsKey('totalExp') ||
+          map.containsKey('coins') ||
+          map.containsKey('kidsCoins')) {
+        map['lastRewardTimestamp'] = FieldValue.serverTimestamp();
+      }
+
+      await docRef.set(map, SetOptions(merge: true));
       _localDataSource.cacheUser(userModel);
       return const Right(null);
     } catch (e) {

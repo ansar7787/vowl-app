@@ -15,6 +15,7 @@ import 'package:vowl/features/auth/domain/usecases/claim_kids_daily_reward.dart'
 import 'package:vowl/features/auth/domain/usecases/claim_vip_gift.dart';
 import 'package:vowl/features/auth/domain/usecases/purchase_hint.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user.dart';
+import 'package:vowl/features/auth/domain/usecases/increment_xp.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -182,6 +183,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   final ClaimKidsDailyReward claimKidsDailyReward;
   final AwardKidsCoins awardKidsCoins;
   final UseHint useHint;
+  final IncrementXp incrementXp;
 
   /// [AuthBloc] is injected to read the current user and trigger profile
   /// refreshes after mutations. Note: this creates a BLoC-to-BLoC dependency.
@@ -200,6 +202,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     required this.claimKidsDailyReward,
     required this.awardKidsCoins,
     required this.useHint,
+    required this.incrementXp,
     required this.authBloc,
     required NetworkInfo networkInfo,
   }) : _networkInfo = networkInfo,
@@ -520,14 +523,9 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       if (hasError) return;
     }
 
-    // ── Bonus XP: still uses updateUser (no atomic XP-increment use case) ──
+    // ── Bonus XP: atomic increment with lastRewardTimestamp ──
     if (event.bonusXp > 0) {
-      final xpUser = authBloc.state.user;
-      if (xpUser == null) return;
-      final updatedUser = xpUser.copyWith(
-        totalExp: xpUser.totalExp + event.bonusXp,
-      );
-      await updateUser(UpdateUserParams(user: updatedUser));
+      await incrementXp(IncrementXpParams(amount: event.bonusXp));
     }
 
     emit(state.copyWith(isLoading: false));
@@ -584,14 +582,9 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       if (hasError) return;
     }
 
-    // ── Bonus XP: still uses updateUser (no atomic XP-increment use case) ──
+    // ── Bonus XP: atomic increment with lastRewardTimestamp ──
     if (event.bonusXp > 0) {
-      final xpUser = authBloc.state.user;
-      if (xpUser == null) return;
-      final updatedUser = xpUser.copyWith(
-        totalExp: xpUser.totalExp + event.bonusXp,
-      );
-      await updateUser(UpdateUserParams(user: updatedUser));
+      await incrementXp(IncrementXpParams(amount: event.bonusXp));
     }
 
     emit(state.copyWith(isLoading: false));

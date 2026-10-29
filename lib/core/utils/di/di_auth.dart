@@ -59,6 +59,7 @@ import 'package:vowl/features/auth/domain/usecases/repair_streak_free.dart';
 import 'package:vowl/features/auth/domain/usecases/purchase_permanent_xp_boost.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_streak_milestone.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_level_milestone.dart';
+import 'package:vowl/features/auth/domain/usecases/increment_xp.dart';
 import 'package:vowl/features/auth/domain/usecases/buy_kids_furniture.dart';
 import 'package:vowl/features/auth/domain/usecases/buy_vowl_mascot.dart';
 import 'package:vowl/features/auth/domain/usecases/buy_vowl_accessory.dart';
@@ -238,6 +239,9 @@ void initAuthFeature(GetIt sl) {
   sl.registerLazySingleton<ClaimLevelMilestone>(
     () => ClaimLevelMilestone(sl<GamificationRepository>()),
   );
+  sl.registerLazySingleton<IncrementXp>(
+    () => IncrementXp(sl<GamificationRepository>()),
+  );
   sl.registerLazySingleton<BuyKidsFurniture>(
     () => BuyKidsFurniture(sl<ShopRepository>()),
   );
@@ -292,6 +296,7 @@ void initAuthFeature(GetIt sl) {
       claimKidsDailyReward: sl<ClaimKidsDailyReward>(),
       awardKidsCoins: sl<AwardKidsCoins>(),
       useHint: sl<UseHint>(),
+      incrementXp: sl<IncrementXp>(),
       authBloc: sl<AuthBloc>(),
       networkInfo: sl<NetworkInfo>(),
     ),
@@ -309,6 +314,7 @@ void initAuthFeature(GetIt sl) {
       purchasePermanentXPBoost: sl<PurchasePermanentXPBoost>(),
       claimStreakMilestone: sl<ClaimStreakMilestone>(),
       claimLevelMilestone: sl<ClaimLevelMilestone>(),
+      incrementXp: sl<IncrementXp>(),
       networkInfo: sl<NetworkInfo>(),
     ),
     dispose: (bloc) => bloc.close(),

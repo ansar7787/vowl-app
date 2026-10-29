@@ -93,6 +93,17 @@ abstract class GamificationRepository {
   /// from a reward or promotion) — atomic via `FieldValue.increment`.
   Future<Either<Failure, void>> addGoldenKey({required int amount});
 
+  /// Atomically increments the user's [totalExp] by [amount] using
+  /// `FieldValue.increment`, with a `lastRewardTimestamp` to satisfy the
+  /// security-rules rate-limiter.
+  ///
+  /// This replaces the previous pattern of reading the full user, doing
+  /// `user.copyWith(totalExp: user.totalExp + amount)`, and writing the
+  /// entire document back via `updateUser()` — which would silently fail
+  /// Firestore security rules (missing `lastRewardTimestamp`) and cause
+  /// XP to be lost on app restart.
+  Future<Either<Failure, void>> incrementXp({required int amount});
+
   /// Claims the coin reward for reaching a [milestone]-day streak.
   ///
   /// The reward amount is **not** accepted from the caller — it is looked up

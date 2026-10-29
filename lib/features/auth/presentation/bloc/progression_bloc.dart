@@ -14,6 +14,7 @@ import 'package:vowl/features/auth/domain/usecases/purchase_streak_freeze.dart';
 import 'package:vowl/features/auth/domain/usecases/repair_streak.dart';
 import 'package:vowl/features/auth/domain/usecases/repair_streak_free.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user.dart';
+import 'package:vowl/features/auth/domain/usecases/increment_xp.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 // ============================================================================
@@ -182,6 +183,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   final PurchasePermanentXPBoost purchasePermanentXPBoost;
   final ClaimStreakMilestone claimStreakMilestone;
   final ClaimLevelMilestone claimLevelMilestone;
+  final IncrementXp incrementXp;
 
   // Prevents reprocessing the same [UserEntity] snapshot when the stream
   // fires multiple times with identical data. Relies on [UserEntity.operator==]
@@ -200,6 +202,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     required this.purchasePermanentXPBoost,
     required this.claimStreakMilestone,
     required this.claimLevelMilestone,
+    required this.incrementXp,
     required NetworkInfo networkInfo,
   }) : _networkInfo = networkInfo,
        super(const ProgressionState()) {
@@ -687,21 +690,12 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     );
   }
 
-  /// ⚠️ Not fixed — flagged. This is the same client-side,
-  /// non-transactional, unvalidated-amount pattern as the handlers above
-  /// (`user.totalExp + event.amount`, then a full-document `updateUser`
-  /// write), and in principle a modified client could dispatch this event
-  /// directly with an arbitrary `amount` to farm XP. It's left as-is rather
-  /// than force-fixed because, unlike the milestone claims, there's no
-  /// dedicated repository method backing a bare XP grant and no reference
-  /// table this review has visibility into for what a legitimate `amount`
-  /// should look like — inventing one blind risks being simply wrong. XP
-  /// (unlike coins/keys) isn't directly spendable, which makes this lower
-  /// severity than the fixes above, but not zero: `updateUserRewards`
-  /// doubles coin rewards once a user's derived level (from `totalExp`)
-  /// reaches 100, so unbounded XP inflation still has a downstream economic
-  /// effect. Recommend a dedicated, bounded `GamificationRepository` method
-  /// once the intended source/cap for bonus XP is decided.
+  /// ⚠️ Not fixed — flagged. See the class doc comment for the full
+  /// rationale on why this handler is flagged rather than force-fixed.
+  /// However, the write path is now fixed: it uses `incrementXp()` which
+  /// atomically increments `totalExp` with `lastRewardTimestamp`, satisfying
+  /// the Firestore security-rules rate-limiter. The old `updateUser()` path
+  /// silently failed and lost XP on restart.
   Future<void> _onAddXp(
     ProgressionAddXpRequested event,
     Emitter<ProgressionState> emit,
@@ -721,14 +715,8 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
       emit(state.copyWith(isLoading: false));
       return;
     }
-    final user = authBloc.state.user;
-    if (user == null) {
-      emit(state.copyWith(isLoading: false));
-      return;
-    }
 
-    final updatedUser = user.copyWith(totalExp: user.totalExp + event.amount);
-    final result = await updateUser(UpdateUserParams(user: updatedUser));
+    final result = await incrementXp(IncrementXpParams(amount: event.amount));
     result.fold(
       (failure) => emit(
         state.copyWith(

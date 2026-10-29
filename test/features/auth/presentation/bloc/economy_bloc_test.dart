@@ -12,6 +12,7 @@ import 'package:vowl/features/auth/domain/usecases/claim_daily_chest.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_kids_daily_reward.dart';
 import 'package:vowl/features/auth/domain/usecases/award_kids_coins.dart';
 import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
+import 'package:vowl/features/auth/domain/usecases/increment_xp.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -40,16 +41,21 @@ class MockAwardKidsCoins extends Mock implements AwardKidsCoins {}
 
 class MockUseHint extends Mock implements UseHint {}
 
+class MockIncrementXp extends Mock implements IncrementXp {}
+
 class MockAuthBloc extends Mock implements AuthBloc {}
 
 class FakeNoParams extends Fake implements NoParams {}
 
 class FakeUpdateUserCoinsParams extends Fake implements UpdateUserCoinsParams {}
 
+class FakeIncrementXpParams extends Fake implements IncrementXpParams {}
+
 void main() {
   setUpAll(() {
     registerFallbackValue(const NoParams());
     registerFallbackValue(FakeUpdateUserCoinsParams());
+    registerFallbackValue(FakeIncrementXpParams());
   });
 
   late EconomyBloc bloc;
@@ -62,6 +68,7 @@ void main() {
   late MockClaimKidsDailyReward mockClaimKidsDailyReward;
   late MockAwardKidsCoins mockAwardKidsCoins;
   late MockUseHint mockUseHint;
+  late MockIncrementXp mockIncrementXp;
   late MockAuthBloc mockAuthBloc;
   late MockNetworkInfo mockNetworkInfo;
 
@@ -79,6 +86,7 @@ void main() {
     mockClaimKidsDailyReward = MockClaimKidsDailyReward();
     mockAwardKidsCoins = MockAwardKidsCoins();
     mockUseHint = MockUseHint();
+    mockIncrementXp = MockIncrementXp();
     mockAuthBloc = MockAuthBloc();
 
     when(() => mockAuthBloc.state).thenReturn(
@@ -95,6 +103,7 @@ void main() {
       claimKidsDailyReward: mockClaimKidsDailyReward,
       awardKidsCoins: mockAwardKidsCoins,
       useHint: mockUseHint,
+      incrementXp: mockIncrementXp,
       authBloc: mockAuthBloc,
       networkInfo: mockNetworkInfo,
     );
