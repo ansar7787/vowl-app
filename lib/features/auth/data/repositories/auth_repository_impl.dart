@@ -453,7 +453,42 @@ class AuthRepositoryImpl
         return Left(AuthFailure('user-not-authenticated'));
       }
 
-      await user.sendEmailVerification();
+      firebase_auth.User activeUser = user;
+
+      // Ensure user session & token are freshly synced before dispatching
+      try {
+        await activeUser.reload();
+        activeUser = _firebaseAuth.currentUser ?? activeUser;
+      } catch (_) {}
+
+      // Resilient email dispatch with retry:
+      // Immediately after account creation, Firebase Auth backend needs a brief
+      // moment to replicate the account across its mail services. Retrying with
+      // backoff guarantees delivery without forcing the user to manually click Resend.
+      Object? lastException;
+      for (int attempt = 1; attempt <= 3; attempt++) {
+        try {
+          await activeUser.sendEmailVerification();
+          return const Right(null);
+        } catch (e) {
+          lastException = e;
+          if (e is firebase_auth.FirebaseAuthException &&
+              (e.code == 'too-many-requests' || e.code == 'quota-exceeded')) {
+            break;
+          }
+          if (attempt < 3) {
+            await Future.delayed(Duration(milliseconds: 600 * attempt));
+            try {
+              await activeUser.reload();
+              activeUser = _firebaseAuth.currentUser ?? activeUser;
+            } catch (_) {}
+          }
+        }
+      }
+
+      if (lastException != null) {
+        return Left(handleFirebaseException(lastException));
+      }
       return const Right(null);
     } catch (e) {
       return Left(handleFirebaseException(e));
