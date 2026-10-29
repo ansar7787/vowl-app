@@ -114,6 +114,7 @@ void initAuthFeature(GetIt sl) {
     () => GamificationRepositoryImpl(
       firebaseAuth: sl<FirebaseAuth>(),
       firestore: sl<FirebaseFirestore>(),
+      localDataSource: sl<AuthLocalDataSource>(),
     ),
   );
   sl.registerLazySingleton<ShopRepository>(

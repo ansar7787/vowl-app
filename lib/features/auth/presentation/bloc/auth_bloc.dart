@@ -258,7 +258,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   // Handlers
   // ---------------------------------------------------------------------------
 
-  void _onUserChanged(AuthUserChanged event, Emitter<AuthState> emit) {
+  Future<void> _onUserChanged(
+    AuthUserChanged event,
+    Emitter<AuthState> emit,
+  ) async {
     // CRITICAL: When logout or account deletion is in progress, ignore incoming user stream
     // events (e.g. Firestore update snapshots from FCM token deletion). This prevents
     // premature dismissal of the LoadingOverlay before cleanup and sign-out finish.
@@ -272,7 +275,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     _networkInfo.setPremiumOverride(event.user?.isPremium ?? false);
 
     if (event.user != null) {
-      final user = event.user!;
+      var user = event.user!;
       final current = state.user;
       if (current != null && current.id == user.id) {
         final reconciledUser = _reconcileUserProgression(
@@ -284,6 +287,20 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         );
         emit(AuthState.authenticated(reconciledUser));
         return;
+      }
+      // If no current in-memory user, check if disk cache has a non-empty displayName or email
+      if (user.displayName == null || user.displayName!.trim().isEmpty) {
+        try {
+          final cached = await _localDataSource.getCachedUser();
+          if (cached != null &&
+              cached.id == user.id &&
+              cached.displayName != null &&
+              cached.displayName!.trim().isNotEmpty) {
+            user = user.copyWith(
+              displayName: cached.displayName,
+            );
+          }
+        } catch (_) {}
       }
       _localDataSource.cacheUser(UserModel.fromEntity(user));
       emit(AuthState.authenticated(user));

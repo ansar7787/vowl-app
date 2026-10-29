@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/error/failures.dart';
+import 'package:vowl/features/auth/data/datasources/auth_local_data_source.dart';
 import 'package:vowl/features/auth/data/models/user_model.dart';
 import 'package:vowl/features/auth/data/repositories/firebase_failure_handler_mixin.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
@@ -55,6 +56,7 @@ class GamificationRepositoryImpl
     implements GamificationRepository {
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
+  final AuthLocalDataSource _localDataSource;
 
   /// Notifier holding the star rating earned in the most recently completed level.
   static final ValueNotifier<int> lastEarnedStars = ValueNotifier<int>(0);
@@ -63,8 +65,10 @@ class GamificationRepositoryImpl
   GamificationRepositoryImpl({
     firebase_auth.FirebaseAuth? firebaseAuth,
     FirebaseFirestore? firestore,
+    AuthLocalDataSource? localDataSource,
   }) : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance,
-       _firestore = firestore ?? FirebaseFirestore.instance;
+       _firestore = firestore ?? FirebaseFirestore.instance,
+       _localDataSource = localDataSource ?? AuthLocalDataSourceImpl();
 
   // ---------------------------------------------------------------------------
   // updateUserRewards
@@ -109,13 +113,28 @@ class GamificationRepositoryImpl
         final UserModel userData;
         if (isSelfHealingCreate) {
           // Self-healing: if the document was not provisioned yet (e.g. fresh signup
-          // or network delay), synthesize the root profile from the authenticated user
-          // so level progress, stars, and coins are NEVER dropped or rejected.
+          // or network delay), synthesize the root profile from the cached profile or
+          // authenticated user so level progress, stars, coins, and name are NEVER dropped.
+          final cachedUser = await _localDataSource.getCachedUser();
+          final effectiveName = (cachedUser != null &&
+                  cachedUser.id == user.uid &&
+                  cachedUser.displayName != null &&
+                  cachedUser.displayName!.trim().isNotEmpty)
+              ? cachedUser.displayName
+              : (user.displayName != null && user.displayName!.trim().isNotEmpty
+                  ? user.displayName
+                  : null);
+          final effectiveEmail = (cachedUser != null &&
+                  cachedUser.id == user.uid &&
+                  cachedUser.email.trim().isNotEmpty)
+              ? cachedUser.email
+              : (user.email ?? '');
+
           userData = UserModel(
             id: user.uid,
-            email: user.email ?? '',
-            displayName: user.displayName,
-            photoUrl: user.photoURL,
+            email: effectiveEmail,
+            displayName: effectiveName,
+            photoUrl: user.photoURL ?? cachedUser?.photoUrl,
             dailyXpHistory: const {},
             recentActivities: const [],
           );
@@ -200,11 +219,26 @@ class GamificationRepositoryImpl
       } else {
         final user = _firebaseAuth.currentUser;
         if (user == null) return Left(AuthFailure('user-not-logged-in'));
+        final cachedUser = await _localDataSource.getCachedUser();
+        final effectiveName = (cachedUser != null &&
+                cachedUser.id == user.uid &&
+                cachedUser.displayName != null &&
+                cachedUser.displayName!.trim().isNotEmpty)
+            ? cachedUser.displayName
+            : (user.displayName != null && user.displayName!.trim().isNotEmpty
+                ? user.displayName
+                : null);
+        final effectiveEmail = (cachedUser != null &&
+                cachedUser.id == user.uid &&
+                cachedUser.email.trim().isNotEmpty)
+            ? cachedUser.email
+            : (user.email ?? '');
+
         userData = UserModel(
           id: user.uid,
-          email: user.email ?? '',
-          displayName: user.displayName,
-          photoUrl: user.photoURL,
+          email: effectiveEmail,
+          displayName: effectiveName,
+          photoUrl: user.photoURL ?? cachedUser?.photoUrl,
           dailyXpHistory: const {},
           recentActivities: const [],
         );
@@ -430,7 +464,15 @@ class GamificationRepositoryImpl
         if (newLevel > currentUnlocked) {
           final maxLevels = CurriculumManifest.getLevels(categoryId);
           unlockedLevels[categoryId] = math.min(maxLevels, newLevel);
-          transaction.update(docRef, {'unlockedLevels': unlockedLevels});
+          if (!doc.exists || doc.data() == null) {
+            transaction.set(
+              docRef,
+              {'unlockedLevels': unlockedLevels},
+              SetOptions(merge: true),
+            );
+          } else {
+            transaction.update(docRef, {'unlockedLevels': unlockedLevels});
+          }
         }
       });
       return const Right(null);
@@ -476,7 +518,15 @@ class GamificationRepositoryImpl
             .toInt();
 
         currentStats[categoryId] = newScore;
-        transaction.update(docRef, {'categoryStats': currentStats});
+        if (!doc.exists || doc.data() == null) {
+          transaction.set(
+            docRef,
+            {'categoryStats': currentStats},
+            SetOptions(merge: true),
+          );
+        } else {
+          transaction.update(docRef, {'categoryStats': currentStats});
+        }
       });
       return const Right(null);
     } catch (e) {
@@ -494,9 +544,9 @@ class GamificationRepositoryImpl
       final user = _firebaseAuth.currentUser;
       if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
-      await _firestore.collection('users').doc(user.uid).update({
+      await _firestore.collection('users').doc(user.uid).set({
         'badges': FieldValue.arrayUnion([badgeId]),
-      });
+      }, SetOptions(merge: true));
       return const Right(null);
     } catch (e) {
       return Left(handleFirebaseException(e));
