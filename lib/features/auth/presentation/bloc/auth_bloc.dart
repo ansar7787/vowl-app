@@ -451,7 +451,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       await _clearAllLocalData().timeout(
         const Duration(seconds: 4),
         onTimeout: () {
-          if (kDebugMode) debugPrint('AuthBloc: Local cleanup timed out on logout');
+          if (kDebugMode) {
+            debugPrint('AuthBloc: Local cleanup timed out on logout');
+          }
         },
       );
 
@@ -613,7 +615,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       await _clearAllLocalData().timeout(
         const Duration(seconds: 4),
         onTimeout: () {
-          if (kDebugMode) debugPrint('AuthBloc: Local cleanup timed out on delete');
+          if (kDebugMode) {
+            debugPrint('AuthBloc: Local cleanup timed out on delete');
+          }
         },
       );
 
