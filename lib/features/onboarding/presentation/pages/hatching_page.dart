@@ -14,7 +14,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
-import 'package:vowl/core/utils/tts_voice_helper.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:confetti/confetti.dart';
 
 class _LocalPalette {
@@ -80,10 +80,11 @@ class _HatchingPageState extends State<HatchingPage> {
   void _preWarmTtsEngine() {
     try {
       if (sl.isRegistered<TtsService>()) {
-        sl<TtsService>();
-        TtsVoiceHelper.getSavedPreset().catchError(
-          (_) => TtsVoicePreset.clearGuide,
-        );
+        final locale = sl.isRegistered<LocaleService>()
+            ? sl<LocaleService>().currentLocale
+            : const Locale('en');
+        final ttsLang = _mapLocaleToTtsLanguage(locale.languageCode);
+        sl<TtsService>().preWarm(locale: ttsLang);
       }
     } catch (_) {}
   }
@@ -151,11 +152,24 @@ class _HatchingPageState extends State<HatchingPage> {
   Future<void> _speakIntroduction() async {
     if (!mounted) return;
 
-    // Safety fallback: if audio playback takes longer than 350ms or device
-    // is muted, start typewriter automatically so text is never stuck.
+    // Check if the user has globally muted sound / TTS
+    final prefs = sl.isRegistered<SharedPreferences>()
+        ? sl<SharedPreferences>()
+        : null;
+    final bool isMuted = !(prefs?.getBool('sound_enabled') ?? true);
+
+    if (isMuted) {
+      // Sound is muted: begin typewriter animation immediately without waiting
+      _startTypewriter();
+      return;
+    }
+
+    // Safety fallback: if hardware audio playback takes longer than 1500ms
+    // or native TTS engine fails to fire start handler, start typewriter automatically
+    // so dialogue text is never stuck.
     _ttsStartFallbackTimer?.cancel();
     _ttsStartFallbackTimer = Timer(
-      const Duration(milliseconds: 350),
+      const Duration(milliseconds: 1500),
       _startTypewriter,
     );
 
