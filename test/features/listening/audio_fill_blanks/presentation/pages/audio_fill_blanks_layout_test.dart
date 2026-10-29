@@ -401,6 +401,17 @@ void main() {
       expect(find.byKey(const ValueKey('options_list')), findsNothing);
     });
 
+    testWidgets('12b. SpeedChallengeTimer uses 15s for level < 8 and dynamic 35s+ for level >= 8 listen-and-type', (tester) async {
+      await pumpAudioFillBlanksScreen(tester, level: 1);
+      var timer = tester.widget<SpeedChallengeTimer>(find.byType(SpeedChallengeTimer));
+      expect(timer.durationSeconds, 15);
+
+      await pumpAudioFillBlanksScreen(tester, level: 8);
+      timer = tester.widget<SpeedChallengeTimer>(find.byType(SpeedChallengeTimer));
+      // Sample quest has correctAnswer 'fox' (1 word -> 30 + 5 = 35s)
+      expect(timer.durationSeconds, 35);
+    });
+
     testWidgets('13. Blind dictation confirmed callback dispatches SubmitAnswer(true)', (tester) async {
       await pumpAudioFillBlanksScreen(tester, level: 8);
 

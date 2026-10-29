@@ -89,6 +89,17 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
   }
 
   @override
+  void didUpdateWidget(covariant SpeedChallengeTimer oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.durationSeconds != widget.durationSeconds) {
+      _controller.duration = Duration(seconds: widget.durationSeconds);
+      if (!_controller.isAnimating && !_isExpired) {
+        _remainingSecondsNotifier.value = widget.durationSeconds;
+      }
+    }
+  }
+
+  @override
   void dispose() {
     _controller.removeListener(_onTick);
     _controller.removeStatusListener(_onStatus);
@@ -139,10 +150,12 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
   }
 
   /// Start (or restart) the timer.
-  void start() {
+  void start({int? newDurationSeconds}) {
     _isExpired = false;
     _lastTickSecond = -1;
-    _remainingSecondsNotifier.value = widget.durationSeconds;
+    final duration = newDurationSeconds ?? widget.durationSeconds;
+    _controller.duration = Duration(seconds: duration);
+    _remainingSecondsNotifier.value = duration;
     _controller.forward(from: 0.0);
   }
 

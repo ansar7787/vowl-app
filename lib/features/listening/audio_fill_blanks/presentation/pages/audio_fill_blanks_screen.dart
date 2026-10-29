@@ -246,135 +246,143 @@ class _AudioFillBlanksContent extends StatelessWidget {
     required this.onBlindSubmit,
   });
 
+  /// Computes the speed challenge duration in seconds.
+  ///
+  /// For beginner levels (< 8), multiple-choice selection is active and 15s is standard.
+  /// For future levels (>= 8), listen-and-type dictation is active: the learner must listen
+  /// to the audio, optionally replay, focus keyboard, type, and verify.
+  /// Dynamically computes a fair, robust timer duration: 30s baseline + 3s per word (min 5s, max 15s).
+  int get timerDurationSeconds {
+    final showBlindDictation = level >= 8;
+    if (!showBlindDictation) {
+      return 15;
+    }
+    final targetText = (quest.correctAnswer?.isNotEmpty == true
+            ? quest.correctAnswer!
+            : (quest.missingWord?.isNotEmpty == true
+                ? quest.missingWord!
+                : (quest.textToSpeak ?? '')))
+        .trim();
+    final wordCount = targetText.isNotEmpty
+        ? targetText.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).length
+        : 1;
+    final typingBuffer = (wordCount * 3).clamp(5, 15);
+    return 30 + typingBuffer;
+  }
+
   @override
   Widget build(BuildContext context) {
     final showBlindDictation = level >= 8 && !isAnswered;
 
-    return Stack(
-      children: [
-        RawScrollbar(
-          controller: scrollController,
-          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-          radius: Radius.circular(8.r),
-          thickness: 4.w,
-          child: CustomScrollView(
-            controller: scrollController,
-            physics: const BouncingScrollPhysics(),
-            slivers: [
-              SliverPadding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-                sliver: SliverToBoxAdapter(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SizedBox(height: 6.h),
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 16.h),
-                        child: SpeedChallengeTimer(
-                          key: timerKey,
-                          durationSeconds: 15,
-                          primaryColor: theme.primaryColor,
-                          onTimeUp: () {
-                            if (isAnswered) return;
-                            onBlindSubmit(
-                              false,
-                            ); // Default to wrong on time out
-                          },
-                        ),
-                      ),
-                      AudioFillBlanksInstruction(
-                        key: const ValueKey('audio_fill_blanks_instruction'),
-                        instruction: InstructionHelper.getInstruction(quest),
-                        color: theme.primaryColor,
-                      ),
-                      SizedBox(height: 18.h),
-                      AudioFillBlanksJar(
-                        key: const ValueKey('audio_fill_blanks_jar'),
-                        color: theme.primaryColor,
-                        onTap: onPlayAudio,
-                      ),
-                      SizedBox(height: 22.h),
-                      ValueListenableBuilder<double>(
-                        valueListenable: revealProgressNotifier,
-                        builder: (context, progress, _) {
-                          return AudioFillBlanksCanvas(
-                            key: const ValueKey('audio_fill_blanks_canvas'),
-                            text:
-                                (isCorrect == true && quest.textToSpeak != null)
-                                ? quest.textToSpeak!
-                                : (quest.textWithBlanks ?? ''),
-                            revealProgress: (isAnswered && isCorrect == true)
-                                ? 1.0
-                                : progress,
-                            onSmear: onSmear,
-                            primaryColor: theme.primaryColor,
-                            isDark: isDark,
-                            imageUrl: null,
-                            isCorrectState: isCorrect,
-                          );
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SliverToBoxAdapter(
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    left: 24.w,
-                    right: 24.w,
-                    top: 16.h,
-                    bottom:
-                        (isAnswered ? 200.h : 40.h) +
-                        MediaQuery.of(context).viewInsets.bottom,
-                  ),
-                  child: AnimatedSize(
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                    alignment: Alignment.bottomCenter,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        AnimatedSwitcher(
-                          duration: const Duration(milliseconds: 300),
-                          child: showBlindDictation
-                              ? SizedBox(
-                                  key: const ValueKey('spacer'),
-                                  height: 380.h,
-                                )
-                              : _buildOptions(context, quest, theme),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        Positioned.fill(
-          child: AnimatedSwitcher(
-            duration: const Duration(milliseconds: 300),
-            transitionBuilder: (child, animation) =>
-                FadeTransition(opacity: animation, child: child),
-            child: showBlindDictation
-                ? Align(
-                    key: const ValueKey('dictation'),
-                    alignment: Alignment.bottomCenter,
-                    child: BlindDictationWrapper(
-                      expectedText:
-                          quest.correctAnswer ?? quest.textToSpeak ?? '',
+    return RawScrollbar(
+      controller: scrollController,
+      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+      radius: Radius.circular(8.r),
+      thickness: 4.w,
+      child: CustomScrollView(
+        controller: scrollController,
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          SliverPadding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+            sliver: SliverToBoxAdapter(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(height: 6.h),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 16.h),
+                    child: SpeedChallengeTimer(
+                      key: timerKey,
+                      durationSeconds: timerDurationSeconds,
                       primaryColor: theme.primaryColor,
-                      isPositioned: false,
-                      onReplayAudio: onPlayAudio,
-                      onConfirmed: () => onBlindSubmit(true),
-                      onSkipped: () => onBlindSubmit(false),
+                      onTimeUp: () {
+                        if (isAnswered) return;
+                        onBlindSubmit(
+                          false,
+                        ); // Default to wrong on time out
+                      },
                     ),
-                  )
-                : const SizedBox.shrink(key: ValueKey('empty')),
+                  ),
+                  AudioFillBlanksInstruction(
+                    key: const ValueKey('audio_fill_blanks_instruction'),
+                    instruction: InstructionHelper.getInstruction(quest),
+                    color: theme.primaryColor,
+                  ),
+                  SizedBox(height: 18.h),
+                  AudioFillBlanksJar(
+                    key: const ValueKey('audio_fill_blanks_jar'),
+                    color: theme.primaryColor,
+                    onTap: onPlayAudio,
+                  ),
+                  SizedBox(height: 22.h),
+                  ValueListenableBuilder<double>(
+                    valueListenable: revealProgressNotifier,
+                    builder: (context, progress, _) {
+                      return AudioFillBlanksCanvas(
+                        key: const ValueKey('audio_fill_blanks_canvas'),
+                        text:
+                            (isCorrect == true && quest.textToSpeak != null)
+                            ? quest.textToSpeak!
+                            : (quest.textWithBlanks ?? ''),
+                        revealProgress: (isAnswered && isCorrect == true)
+                            ? 1.0
+                            : progress,
+                        onSmear: onSmear,
+                        primaryColor: theme.primaryColor,
+                        isDark: isDark,
+                        imageUrl: null,
+                        isCorrectState: isCorrect,
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
           ),
-        ),
-      ],
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: 24.w,
+                right: 24.w,
+                top: 16.h,
+                bottom:
+                    (isAnswered ? 200.h : 40.h) +
+                    MediaQuery.of(context).viewInsets.bottom,
+              ),
+              child: AnimatedSize(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeInOut,
+                alignment: Alignment.bottomCenter,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 300),
+                      child: showBlindDictation
+                          ? BlindDictationWrapper(
+                              key: ValueKey('dictation_${quest.id}'),
+                              expectedText: quest.correctAnswer?.isNotEmpty == true
+                                  ? quest.correctAnswer!
+                                  : (quest.missingWord?.isNotEmpty == true
+                                      ? quest.missingWord!
+                                      : (quest.textToSpeak ?? '')),
+                              primaryColor: theme.primaryColor,
+                              isPositioned: false,
+                              onReplayAudio: onPlayAudio,
+                              onConfirmed: () => onBlindSubmit(true),
+                              onSkipped: () => onBlindSubmit(false),
+                            )
+                          : _buildOptions(context, quest, theme),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 

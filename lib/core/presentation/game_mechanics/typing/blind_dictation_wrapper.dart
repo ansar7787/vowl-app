@@ -1,5 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -61,6 +62,7 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
   late final SmartTypoController _controller;
   final FocusNode _focusNode = FocusNode();
 
+  final ValueNotifier<bool> _isFocused = ValueNotifier(false);
   final ValueNotifier<bool> _hasError = ValueNotifier(false);
   final ValueNotifier<int> _attempts = ValueNotifier(0);
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
@@ -74,12 +76,38 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
         _controller.showDiff = false;
       }
     });
+    _focusNode.addListener(_onFocusChange);
+  }
+
+  void _onFocusChange() {
+    if (mounted) {
+      _isFocused.value = _focusNode.hasFocus;
+    }
+  }
+
+  @override
+  void didUpdateWidget(covariant BlindDictationWrapper oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.expectedText != widget.expectedText) {
+      _controller.dispose();
+      _controller = SmartTypoController(expectedText: widget.expectedText);
+      _controller.addListener(() {
+        if (_controller.showDiff) {
+          _controller.showDiff = false;
+        }
+      });
+      _hasError.value = false;
+      _attempts.value = 0;
+      _isSubmitting.value = false;
+    }
   }
 
   @override
   void dispose() {
     _controller.dispose();
+    _focusNode.removeListener(_onFocusChange);
     _focusNode.dispose();
+    _isFocused.dispose();
     _hasError.dispose();
     _attempts.dispose();
     _isSubmitting.dispose();
@@ -153,51 +181,24 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
               child: ValueListenableBuilder<bool>(
                 valueListenable: _hasError,
                 builder: (context, hasError, _) {
-                  return Container(
-                    padding: EdgeInsets.fromLTRB(
-                      24.w,
-                      20.h,
-                      24.w,
-                      MediaQuery.of(context).viewInsets.bottom + 32.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: bgColor,
-                      borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(32.r),
-                      ),
-                      border: Border.all(
-                        color: hasError
-                            ? errorColor.withValues(alpha: 0.5)
-                            : widget.primaryColor.withValues(alpha: 0.2),
-                        width: 1.5,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: hasError
-                              ? errorColor.withValues(alpha: 0.15)
-                              : widget.primaryColor.withValues(alpha: 0.15),
-                          blurRadius: 30,
-                          offset: const Offset(0, -8),
-                        ),
-                      ],
-                    ),
-                    child: SafeArea(
-                      top: false,
-                      child: SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            // Handle bar
-                            Container(
-                              width: 48.w,
-                              height: 4.h,
-                              decoration: BoxDecoration(
-                                color: subtitleColor.withValues(alpha: 0.3),
-                                borderRadius: BorderRadius.circular(2.r),
-                              ),
+                  final innerColumn = Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      // Handle bar
+                      if (widget.isPositioned) ...[
+                        Center(
+                          child: Container(
+                            width: 48.w,
+                            height: 4.h,
+                            decoration: BoxDecoration(
+                              color: subtitleColor.withValues(alpha: 0.3),
+                              borderRadius: BorderRadius.circular(2.r),
                             ),
-                            SizedBox(height: 16.h),
+                          ),
+                        ),
+                        SizedBox(height: 16.h),
+                      ],
 
                             // Header
                             Row(
@@ -298,20 +299,61 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                             SizedBox(height: 24.h),
 
                             // Text Input
-                            Container(
+                            ValueListenableBuilder<bool>(
+                              valueListenable: _isFocused,
+                              builder: (context, isFocused, _) {
+                                final borderColor = hasError
+                                    ? errorColor
+                                    : (isFocused
+                                        ? widget.primaryColor
+                                        : widget.primaryColor.withValues(
+                                            alpha: isDark ? 0.55 : 0.45,
+                                          ));
+                                final borderWidth =
+                                    (hasError || isFocused) ? 2.0.w : 1.5.w;
+                                final fieldBgColor = hasError
+                                    ? errorColor.withValues(
+                                        alpha: isDark ? 0.12 : 0.05,
+                                      )
+                                    : (isFocused
+                                        ? widget.primaryColor.withValues(
+                                            alpha: isDark ? 0.10 : 0.045,
+                                          )
+                                        : (isDark
+                                            ? Colors.white.withValues(
+                                                alpha: 0.06,
+                                              )
+                                            : widget.primaryColor.withValues(
+                                                alpha: 0.035,
+                                              )));
+
+                                return Container(
+                                  width: double.infinity,
+                                  clipBehavior: Clip.antiAlias,
                                   decoration: BoxDecoration(
-                                    color: isDark
-                                        ? Colors.white.withValues(alpha: 0.05)
-                                        : Colors.black.withValues(alpha: 0.02),
+                                    color: fieldBgColor,
                                     borderRadius: BorderRadius.circular(16.r),
                                     border: Border.all(
-                                      color: hasError
-                                          ? errorColor.withValues(alpha: 0.5)
-                                          : widget.primaryColor.withValues(
-                                              alpha: 0.3,
-                                            ),
-                                      width: 1.5,
+                                      color: borderColor,
+                                      width: borderWidth,
                                     ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: (hasError
+                                                ? errorColor
+                                                : (isFocused
+                                                    ? widget.primaryColor
+                                                    : widget.primaryColor
+                                                        .withValues(
+                                                          alpha: 0.5,
+                                                        )))
+                                            .withValues(
+                                              alpha: isDark ? 0.15 : 0.08,
+                                            ),
+                                        blurRadius: isFocused ? 10 : 6,
+                                        offset: const Offset(0, 2),
+                                      ),
+                                    ],
                                   ),
                                   child: Stack(
                                     children: [
@@ -381,7 +423,9 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                                   ),
                                 )
                                 .animate(target: hasError ? 1 : 0)
-                                .shakeX(amount: 5, duration: 400.ms),
+                                .shakeX(amount: 5, duration: 400.ms);
+                              },
+                            ),
 
                             SizedBox(height: 24.h),
 
@@ -444,17 +488,86 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                                 );
                               },
                             ),
-                          ],
-                        ),
+                    ],
+                  );
+
+                  return Container(
+                    width: double.infinity,
+                    padding: widget.isPositioned
+                        ? EdgeInsets.fromLTRB(
+                            24.w,
+                            20.h,
+                            24.w,
+                            MediaQuery.of(context).viewInsets.bottom + 32.h,
+                          )
+                        : EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+                    decoration: BoxDecoration(
+                      color: bgColor,
+                      borderRadius: widget.isPositioned
+                          ? BorderRadius.vertical(
+                              top: Radius.circular(32.r),
+                            )
+                          : BorderRadius.circular(24.r),
+                      border: Border.all(
+                        color: hasError
+                            ? errorColor.withValues(alpha: 0.5)
+                            : widget.primaryColor.withValues(
+                                alpha: isDark ? 0.35 : 0.25,
+                              ),
+                        width: 1.5.w,
                       ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: hasError
+                              ? errorColor.withValues(alpha: 0.15)
+                              : widget.primaryColor.withValues(alpha: 0.15),
+                          blurRadius: widget.isPositioned ? 30 : 20,
+                          offset: widget.isPositioned
+                              ? const Offset(0, -8)
+                              : const Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    child: SafeArea(
+                      top: false,
+                      bottom: widget.isPositioned,
+                      child: widget.isPositioned
+                          ? SingleChildScrollView(
+                              physics: const BouncingScrollPhysics(),
+                              child: innerColumn,
+                            )
+                          : innerColumn,
                     ),
                   );
                 },
               ),
-            )
-            .animate()
-            .slideY(begin: 1.0, end: 0, duration: 400.ms, curve: Curves.easeOut)
-            .fadeIn(duration: 300.ms);
+            );
+
+    final reduceMotion =
+        MediaQuery.disableAnimationsOf(context) ||
+        VowlMotion.lowAnimationModeOverride.value;
+
+    final animatedContent = reduceMotion
+        ? content
+        : widget.isPositioned
+            ? content
+                .animate()
+                .slideY(
+                  begin: 1.0,
+                  end: 0,
+                  duration: 400.ms,
+                  curve: Curves.easeOut,
+                )
+                .fadeIn(duration: 300.ms)
+            : content
+                .animate()
+                .slideY(
+                  begin: 0.12,
+                  end: 0,
+                  duration: 350.ms,
+                  curve: Curves.easeOutCubic,
+                )
+                .fadeIn(duration: 250.ms);
 
     if (widget.isPositioned) {
       return Positioned(
@@ -464,11 +577,11 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
         right: 0,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
-          children: [Flexible(child: content)],
+          children: [Flexible(child: animatedContent)],
         ),
       );
     }
 
-    return content;
+    return animatedContent;
   }
 }
