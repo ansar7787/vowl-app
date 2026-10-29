@@ -157,6 +157,43 @@ void main() {
         ),
       ],
     );
+
+    blocTest<AuthBloc, AuthState>(
+      'should preserve displayName and photoUrl when remote snapshot has null or empty identity',
+      build: () => bloc,
+      seed: () => AuthState.authenticated(
+        tUser.copyWith(
+          coins: 10,
+          displayName: 'Real Name',
+          photoUrl: 'https://example.com/avatar.png',
+        ),
+      ),
+      act: (bloc) => userStreamController.add(
+        tUser.copyWith(
+          coins: 20,
+          displayName: null,
+          photoUrl: null,
+        ),
+      ),
+      expect: () => [
+        isA<AuthState>()
+            .having(
+              (s) => s.user?.coins,
+              'coins',
+              20,
+            )
+            .having(
+              (s) => s.user?.displayName,
+              'displayName',
+              'Real Name',
+            )
+            .having(
+              (s) => s.user?.photoUrl,
+              'photoUrl',
+              'https://example.com/avatar.png',
+            ),
+      ],
+    );
   });
 
   group('AuthLogoutRequested', () {

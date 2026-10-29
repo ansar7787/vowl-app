@@ -288,10 +288,12 @@ class AuthRepositoryImpl
         recentActivities: const [],
       );
       try {
+        final map = newUser.toMap();
+        map['lastRewardTimestamp'] = FieldValue.serverTimestamp();
         await _firestore
             .collection('users')
             .doc(newUser.id)
-            .set(newUser.toMap());
+            .set(map, SetOptions(merge: true));
         await _localDataSource.cacheUser(newUser);
       } catch (e) {
         _log('AuthRepository: getCurrentUser provisioning write failed: $e');
@@ -352,6 +354,20 @@ class AuthRepositoryImpl
   Future<Either<Failure, bool>> logInWithGoogle() async {
     try {
       final isNewUser = await _remoteDataSource.logInWithGoogle();
+      final current = _firebaseAuth.currentUser;
+      if (current != null) {
+        final model = UserModel(
+          id: current.uid,
+          email: current.email ?? '',
+          displayName: current.displayName,
+          photoUrl: current.photoURL,
+          lastLoginDate: DateTime.now(),
+          currentStreak: 1,
+          dailyXpHistory: const {},
+          recentActivities: const [],
+        );
+        await _localDataSource.cacheUser(model);
+      }
       return Right(isNewUser);
     } catch (e) {
       return Left(handleFirebaseException(e));

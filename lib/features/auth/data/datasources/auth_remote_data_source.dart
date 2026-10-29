@@ -108,7 +108,12 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     // AuthRepositoryImpl.getCurrentUser() self-heals by provisioning the
     // document on the next read if it's still missing.
     try {
-      await _firestore.collection('users').doc(newUser.id).set(newUser.toMap());
+      final map = newUser.toMap();
+      map['lastRewardTimestamp'] = FieldValue.serverTimestamp();
+      await _firestore
+          .collection('users')
+          .doc(newUser.id)
+          .set(map, SetOptions(merge: true));
     } catch (e, stack) {
       di.sl<AppLogger>().error(
         'AuthRemoteDataSource: Firestore provisioning write after signUp failed: $e',
@@ -235,7 +240,9 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       // already exists; don't fail this call over a transient Firestore
       // write error and leave the caller unsure whether sign-in worked.
       try {
-        await userDocRef.set(newUser.toMap());
+        final map = newUser.toMap();
+        map['lastRewardTimestamp'] = FieldValue.serverTimestamp();
+        await userDocRef.set(map, SetOptions(merge: true));
       } catch (e, stack) {
         di.sl<AppLogger>().error(
           'AuthRemoteDataSource: Firestore provisioning write after Google sign-in failed: $e',

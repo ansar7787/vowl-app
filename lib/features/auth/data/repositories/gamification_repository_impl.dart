@@ -104,18 +104,24 @@ class GamificationRepositoryImpl
         transaction,
       ) async {
         final doc = await transaction.get(docRef);
-        if (!doc.exists || doc.data() == null) {
-          return Left(ServerFailure('user-data-not-found'));
-        }
+        final bool isSelfHealingCreate = !doc.exists || doc.data() == null;
 
-        // Parse once via UserModel.fromMap instead of hand-rolling defensive
-        // casts for each of the 7 fields this method touches — that parsing
-        // already exists, is more defensive (e.g. it survives a Timestamp
-        // stored as an ISO string), and is exercised everywhere else a user
-        // document is read. Every collection below is a fresh, independent
-        // copy, so mutating it can't leak into the UserModel's own internal
-        // state or into a discarded retry attempt.
-        final userData = UserModel.fromMap(doc.data()!);
+        final UserModel userData;
+        if (isSelfHealingCreate) {
+          // Self-healing: if the document was not provisioned yet (e.g. fresh signup
+          // or network delay), synthesize the root profile from the authenticated user
+          // so level progress, stars, and coins are NEVER dropped or rejected.
+          userData = UserModel(
+            id: user.uid,
+            email: user.email ?? '',
+            displayName: user.displayName,
+            photoUrl: user.photoURL,
+            dailyXpHistory: const {},
+            recentActivities: const [],
+          );
+        } else {
+          userData = UserModel.fromMap(doc.data()!);
+        }
 
         final updates = _computeRewardUpdates(
           userData: userData,
@@ -130,8 +136,15 @@ class GamificationRepositoryImpl
           claimChestTier: claimChestTier,
         );
 
-        // ---- Atomic update ----
-        transaction.update(docRef, updates);
+        if (isSelfHealingCreate) {
+          final initialMap = userData.toMap();
+          initialMap.addAll(updates);
+          initialMap['lastRewardTimestamp'] = FieldValue.serverTimestamp();
+          transaction.set(docRef, initialMap);
+        } else {
+          // ---- Atomic update ----
+          transaction.update(docRef, updates);
+        }
 
         return const Right<Failure, void>(null);
       });
@@ -179,11 +192,23 @@ class GamificationRepositoryImpl
   }) async {
     try {
       final doc = await docRef.get(const GetOptions(source: Source.cache));
-      if (!doc.exists || doc.data() == null) {
-        return Left(ServerFailure('user-data-not-found'));
-      }
+      final bool isDocInCache = doc.exists && doc.data() != null;
 
-      final userData = UserModel.fromMap(doc.data() as Map<String, dynamic>);
+      final UserModel userData;
+      if (isDocInCache) {
+        userData = UserModel.fromMap(doc.data() as Map<String, dynamic>);
+      } else {
+        final user = _firebaseAuth.currentUser;
+        if (user == null) return Left(AuthFailure('user-not-logged-in'));
+        userData = UserModel(
+          id: user.uid,
+          email: user.email ?? '',
+          displayName: user.displayName,
+          photoUrl: user.photoURL,
+          dailyXpHistory: const {},
+          recentActivities: const [],
+        );
+      }
 
       final updates = _computeRewardUpdates(
         userData: userData,
@@ -206,7 +231,14 @@ class GamificationRepositoryImpl
       // Atomic update (Queued offline)
       // Fire-and-forget: do NOT await. In the Firebase SDK, awaiting an update
       // while offline hangs the Future indefinitely until the internet returns.
-      docRef.update(updates).catchError((_) {});
+      if (isDocInCache) {
+        docRef.update(updates).catchError((_) {});
+      } else {
+        final initialMap = userData.toMap();
+        initialMap.addAll(updates);
+        initialMap['lastRewardTimestamp'] = FieldValue.serverTimestamp();
+        docRef.set(initialMap, SetOptions(merge: true)).catchError((_) {});
+      }
 
       return const Right<Failure, void>(null);
     } catch (e) {
