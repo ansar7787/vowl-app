@@ -55,5 +55,43 @@ void main() {
     expect(find.text('30s'), findsOneWidget);
     expect(find.text('+5 speed bonus'), findsNothing);
   });
+
+  testWidgets('SpeedChallengeTimer updates duration via didUpdateWidget', (
+    WidgetTester tester,
+  ) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(() {
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+    });
+
+    final durationNotifier = ValueNotifier<int>(15);
+
+    await tester.pumpWidget(
+      ScreenUtilInit(
+        designSize: const Size(390, 844),
+        builder: (context, _) => ValueListenableBuilder<int>(
+          valueListenable: durationNotifier,
+          builder: (context, duration, _) => MaterialApp(
+            home: Scaffold(
+              body: SpeedChallengeTimer(
+                durationSeconds: duration,
+                autoStart: false,
+                onTimeUp: () {},
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+
+    await tester.pumpAndSettle();
+    expect(find.text('15s'), findsOneWidget);
+
+    durationNotifier.value = 35;
+    await tester.pumpAndSettle();
+    expect(find.text('35s'), findsOneWidget);
+  });
 }
 
