@@ -174,27 +174,38 @@ class CustomSnackBar {
                 ),
 
                 // Dismiss button
-                Semantics(
-                  label: 'Dismiss',
-                  button: true,
-                  child: Material(
-                    color: Colors.transparent,
-                    child: InkWell(
-                      onTap: () {
-                        if (context.mounted) {
-                          ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                        }
-                      },
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 14.w),
-                        child: Icon(
-                          Icons.close_rounded,
-                          color: subtextColor,
-                          size: 18.r,
+                Builder(
+                  builder: (snackContext) {
+                    return Semantics(
+                      label: 'Dismiss',
+                      button: true,
+                      child: GestureDetector(
+                        behavior: HitTestBehavior.opaque,
+                        onTap: () {
+                          try {
+                            ScaffoldMessenger.of(
+                              snackContext,
+                            ).hideCurrentSnackBar();
+                          } catch (_) {
+                            if (context.mounted) {
+                              ScaffoldMessenger.of(
+                                context,
+                              ).hideCurrentSnackBar();
+                            }
+                          }
+                        },
+                        child: Container(
+                          width: 44.w,
+                          alignment: Alignment.center,
+                          child: Icon(
+                            Icons.close_rounded,
+                            color: subtextColor,
+                            size: 18.r,
+                          ),
                         ),
                       ),
-                    ),
-                  ),
+                    );
+                  },
                 ),
               ],
             ),

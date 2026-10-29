@@ -80,9 +80,13 @@ void main() {
     authStateController = StreamController<AuthState>.broadcast();
 
     when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(const UserEntity(id: '1', email: 'test@vowl.com')),
+      AuthState.authenticated(
+        const UserEntity(id: '1', email: 'test@vowl.com'),
+      ),
     );
-    when(() => mockAuthBloc.stream).thenAnswer((_) => authStateController.stream);
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => authStateController.stream);
 
     bloc = ProfileBloc(
       updateProfilePicture: mockUpdateProfilePicture,
@@ -107,32 +111,35 @@ void main() {
   });
 
   group('ProfileState and isPhotoForUser', () {
-    test('isPhotoForUser returns true only when userId matches photoUserId', () {
-      const stateWithPhoto = ProfileState(
-        photoUrl: 'https://vowl.app/avatar.jpg',
-        photoUserId: 'user_1',
-      );
-      expect(stateWithPhoto.isPhotoForUser('user_1'), isTrue);
-      expect(stateWithPhoto.isPhotoForUser('user_2'), isFalse);
-      expect(stateWithPhoto.isPhotoForUser(null), isFalse);
+    test(
+      'isPhotoForUser returns true only when userId matches photoUserId',
+      () {
+        const stateWithPhoto = ProfileState(
+          photoUrl: 'https://vowl.app/avatar.jpg',
+          photoUserId: 'user_1',
+        );
+        expect(stateWithPhoto.isPhotoForUser('user_1'), isTrue);
+        expect(stateWithPhoto.isPhotoForUser('user_2'), isFalse);
+        expect(stateWithPhoto.isPhotoForUser(null), isFalse);
 
-      const stateWithoutPhoto = ProfileState(
-        photoUrl: null,
-        photoUserId: 'user_1',
-      );
-      expect(stateWithoutPhoto.isPhotoForUser('user_1'), isFalse);
+        const stateWithoutPhoto = ProfileState(
+          photoUrl: null,
+          photoUserId: 'user_1',
+        );
+        expect(stateWithoutPhoto.isPhotoForUser('user_1'), isFalse);
 
-      const stateWithoutUserId = ProfileState(
-        photoUrl: 'https://vowl.app/avatar.jpg',
-        photoUserId: null,
-      );
-      expect(stateWithoutUserId.isPhotoForUser('user_1'), isFalse);
-    });
+        const stateWithoutUserId = ProfileState(
+          photoUrl: 'https://vowl.app/avatar.jpg',
+          photoUserId: null,
+        );
+        expect(stateWithoutUserId.isPhotoForUser('user_1'), isFalse);
+      },
+    );
   });
 
   group('ProfileUpdateDisplayNameRequested', () {
     blocTest<ProfileBloc, ProfileState>(
-      'should call updateDisplayName and emit message on success',
+      'should call updateDisplayName and emit message on success with isPhotoUploading: false',
       build: () {
         when(
           () => mockUpdateDisplayName(any()),
@@ -142,22 +149,14 @@ void main() {
       act: (bloc) =>
           bloc.add(const ProfileUpdateDisplayNameRequested('New Name')),
       expect: () => [
-        isA<ProfileState>().having(
-          (s) => s.isLoading,
-          'isLoading',
-          true,
-        ),
         isA<ProfileState>()
-            .having(
-              (s) => s.message,
-              'message',
-              'profile.display_name_updated',
-            )
-            .having(
-              (s) => s.isLoading,
-              'isLoading',
-              false,
-            ),
+            .having((s) => s.isLoading, 'isLoading', true)
+            .having((s) => s.isPhotoUploading, 'isPhotoUploading', false)
+            .having((s) => s.message, 'message', isNull),
+        isA<ProfileState>()
+            .having((s) => s.message, 'message', 'profile.display_name_updated')
+            .having((s) => s.isLoading, 'isLoading', false)
+            .having((s) => s.isPhotoUploading, 'isPhotoUploading', false),
       ],
       verify: (_) {
         verify(() => mockUpdateDisplayName('New Name')).called(1);
@@ -167,26 +166,47 @@ void main() {
 
   group('ProfileUpdatePictureRequested', () {
     blocTest<ProfileBloc, ProfileState>(
-      'should set photoUrl and photoUserId on successful picture update',
+      'should set isPhotoUploading: true, then photoUrl and isPhotoUploading: false on success',
       build: () {
-        when(() => mockUpdateProfilePicture(any()))
-            .thenAnswer((_) async => const Right('https://vowl.app/avatar.jpg'));
+        when(
+          () => mockUpdateProfilePicture(any()),
+        ).thenAnswer((_) async => const Right('https://vowl.app/avatar.jpg'));
         return bloc;
       },
       act: (bloc) =>
           bloc.add(const ProfileUpdatePictureRequested('/path/to/pic.png')),
       expect: () => [
-        isA<ProfileState>().having((s) => s.isLoading, 'isLoading', true),
+        isA<ProfileState>()
+            .having((s) => s.isLoading, 'isLoading', true)
+            .having((s) => s.isPhotoUploading, 'isPhotoUploading', true)
+            .having((s) => s.message, 'message', isNull),
         isA<ProfileState>()
             .having((s) => s.isLoading, 'isLoading', false)
+            .having((s) => s.isPhotoUploading, 'isPhotoUploading', false)
             .having((s) => s.message, 'message', 'profile.picture_updated')
-            .having((s) => s.photoUrl, 'photoUrl', 'https://vowl.app/avatar.jpg')
+            .having(
+              (s) => s.photoUrl,
+              'photoUrl',
+              'https://vowl.app/avatar.jpg',
+            )
             .having((s) => s.photoUserId, 'photoUserId', '1'),
       ],
       verify: (_) {
         verify(() => mockUpdateProfilePicture('/path/to/pic.png')).called(1);
         verify(() => mockAuthBloc.add(const AuthReloadUser())).called(1);
       },
+    );
+  });
+
+  group('ProfileClearMessage', () {
+    blocTest<ProfileBloc, ProfileState>(
+      'should clear message when ProfileClearMessage is dispatched',
+      seed: () => const ProfileState(message: 'profile.picture_updated'),
+      build: () => bloc,
+      act: (bloc) => bloc.add(const ProfileClearMessage()),
+      expect: () => [
+        isA<ProfileState>().having((s) => s.message, 'message', isNull),
+      ],
     );
   });
 

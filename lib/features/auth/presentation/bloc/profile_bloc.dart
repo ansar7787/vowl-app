@@ -33,6 +33,11 @@ class ProfileClearPurchaseFeedback extends ProfileEvent {
   const ProfileClearPurchaseFeedback();
 }
 
+/// Clears transient feedback or notification messages after display.
+class ProfileClearMessage extends ProfileEvent {
+  const ProfileClearMessage();
+}
+
 /// Clears immediate optimistic profile photo and its user association.
 class ProfileClearImmediatePhoto extends ProfileEvent {
   const ProfileClearImmediatePhoto();
@@ -199,6 +204,7 @@ class ProfileUpdateBuddyRoomRequested extends ProfileEvent {
 class ProfileState extends Equatable {
   final String? message;
   final bool isLoading;
+  final bool isPhotoUploading;
   final String? lastPurchaseType;
   final bool? lastPurchaseSuccess;
 
@@ -214,6 +220,7 @@ class ProfileState extends Equatable {
   const ProfileState({
     this.message,
     this.isLoading = false,
+    this.isPhotoUploading = false,
     this.lastPurchaseType,
     this.lastPurchaseSuccess,
     this.photoUrl,
@@ -230,6 +237,7 @@ class ProfileState extends Equatable {
   ProfileState copyWith({
     String? Function()? message,
     bool? isLoading,
+    bool? isPhotoUploading,
     String? Function()? lastPurchaseType,
     bool? Function()? lastPurchaseSuccess,
     String? Function()? photoUrl,
@@ -238,6 +246,7 @@ class ProfileState extends Equatable {
     return ProfileState(
       message: message != null ? message() : this.message,
       isLoading: isLoading ?? this.isLoading,
+      isPhotoUploading: isPhotoUploading ?? this.isPhotoUploading,
       lastPurchaseType: lastPurchaseType != null
           ? lastPurchaseType()
           : this.lastPurchaseType,
@@ -253,6 +262,7 @@ class ProfileState extends Equatable {
   List<Object?> get props => [
     message,
     isLoading,
+    isPhotoUploading,
     lastPurchaseType,
     lastPurchaseSuccess,
     photoUrl,
@@ -306,12 +316,11 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     on<ProfileUpdateDisplayNameRequested>(_onUpdateDisplayName);
     on<ProfileUpdatePictureRequested>(_onUpdatePicture);
     on<ProfileClearImmediatePhoto>(
-      (_, emit) => emit(
-        state.copyWith(
-          photoUrl: () => null,
-          photoUserId: () => null,
-        ),
-      ),
+      (_, emit) =>
+          emit(state.copyWith(photoUrl: () => null, photoUserId: () => null)),
+    );
+    on<ProfileClearMessage>(
+      (_, emit) => emit(state.copyWith(message: () => null)),
     );
     on<ProfileUpdateMascotRequested>(_onUpdateMascot);
     on<ProfileBuyAccessoryRequested>(_onBuyAccessory);
@@ -370,14 +379,21 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       emit(
         state.copyWith(
           isLoading: false,
+          isPhotoUploading: false,
           message: () => AuthErrorHandler.getKey('network-unreachable'),
         ),
       );
       return;
     }
-    emit(state.copyWith(isLoading: true));
+    emit(
+      state.copyWith(
+        isLoading: true,
+        isPhotoUploading: false,
+        message: () => null,
+      ),
+    );
     if (!_isAuthenticated) {
-      emit(state.copyWith(isLoading: false));
+      emit(state.copyWith(isLoading: false, isPhotoUploading: false));
       return;
     }
     final result = await updateDisplayName(event.displayName);
@@ -385,6 +401,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       (failure) => emit(
         state.copyWith(
           isLoading: false,
+          isPhotoUploading: false,
           message: () => AuthErrorHandler.getKey(failure.message),
         ),
       ),
@@ -397,6 +414,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         emit(
           state.copyWith(
             isLoading: false,
+            isPhotoUploading: false,
             message: () => 'profile.display_name_updated',
           ),
         );
@@ -414,14 +432,21 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       emit(
         state.copyWith(
           isLoading: false,
+          isPhotoUploading: false,
           message: () => AuthErrorHandler.getKey('network-unreachable'),
         ),
       );
       return;
     }
-    emit(state.copyWith(isLoading: true));
+    emit(
+      state.copyWith(
+        isLoading: true,
+        isPhotoUploading: true,
+        message: () => null,
+      ),
+    );
     if (!_isAuthenticated) {
-      emit(state.copyWith(isLoading: false));
+      emit(state.copyWith(isLoading: false, isPhotoUploading: false));
       return;
     }
     final result = await updateProfilePicture(event.filePath);
@@ -429,6 +454,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       (failure) => emit(
         state.copyWith(
           isLoading: false,
+          isPhotoUploading: false,
           message: () => AuthErrorHandler.getKey(failure.message),
         ),
       ),
@@ -444,6 +470,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         emit(
           state.copyWith(
             isLoading: false,
+            isPhotoUploading: false,
             message: () => 'profile.picture_updated',
             photoUrl: () => downloadUrl,
             photoUserId: () => currentUserId,
@@ -468,7 +495,13 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       );
       return;
     }
-    emit(state.copyWith(isLoading: true));
+    emit(
+      state.copyWith(
+        isLoading: true,
+        isPhotoUploading: false,
+        message: () => null,
+      ),
+    );
     if (!_isAuthenticated) {
       emit(state.copyWith(isLoading: false));
       return;
@@ -502,7 +535,13 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       );
       return;
     }
-    emit(state.copyWith(isLoading: true));
+    emit(
+      state.copyWith(
+        isLoading: true,
+        isPhotoUploading: false,
+        message: () => null,
+      ),
+    );
     if (!_isAuthenticated) {
       emit(state.copyWith(isLoading: false));
       return;
@@ -538,7 +577,13 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       );
       return;
     }
-    emit(state.copyWith(isLoading: true));
+    emit(
+      state.copyWith(
+        isLoading: true,
+        isPhotoUploading: false,
+        message: () => null,
+      ),
+    );
     if (!_isAuthenticated) {
       emit(state.copyWith(isLoading: false));
       return;
@@ -578,7 +623,13 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       );
       return;
     }
-    emit(state.copyWith(isLoading: true));
+    emit(
+      state.copyWith(
+        isLoading: true,
+        isPhotoUploading: false,
+        message: () => null,
+      ),
+    );
     if (!_isAuthenticated) {
       emit(state.copyWith(isLoading: false));
       return;
@@ -628,7 +679,13 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       );
       return;
     }
-    emit(state.copyWith(isLoading: true));
+    emit(
+      state.copyWith(
+        isLoading: true,
+        isPhotoUploading: false,
+        message: () => null,
+      ),
+    );
     if (!_isAuthenticated) {
       emit(state.copyWith(isLoading: false));
       return;
@@ -670,7 +727,13 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       );
       return;
     }
-    emit(state.copyWith(isLoading: true));
+    emit(
+      state.copyWith(
+        isLoading: true,
+        isPhotoUploading: false,
+        message: () => null,
+      ),
+    );
     if (!_isAuthenticated) {
       emit(state.copyWith(isLoading: false));
       return;
@@ -714,7 +777,13 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       );
       return;
     }
-    emit(state.copyWith(isLoading: true));
+    emit(
+      state.copyWith(
+        isLoading: true,
+        isPhotoUploading: false,
+        message: () => null,
+      ),
+    );
     if (!_isAuthenticated) {
       emit(state.copyWith(isLoading: false));
       return;
@@ -726,6 +795,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       (failure) => emit(
         state.copyWith(
           isLoading: false,
+          isPhotoUploading: false,
           message: () => AuthErrorHandler.getKey(failure.message),
           lastPurchaseType: () => 'vowl_mascot',
           lastPurchaseSuccess: () => false,
@@ -736,6 +806,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         emit(
           state.copyWith(
             isLoading: false,
+            isPhotoUploading: false,
             lastPurchaseType: () => 'vowl_mascot',
             lastPurchaseSuccess: () => true,
           ),
@@ -757,12 +828,19 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       emit(
         state.copyWith(
           isLoading: false,
+          isPhotoUploading: false,
           message: () => AuthErrorHandler.getKey('network-unreachable'),
         ),
       );
       return;
     }
-    emit(state.copyWith(isLoading: true));
+    emit(
+      state.copyWith(
+        isLoading: true,
+        isPhotoUploading: false,
+        message: () => null,
+      ),
+    );
     if (!_isAuthenticated) {
       emit(state.copyWith(isLoading: false));
       return;
@@ -774,6 +852,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       (failure) => emit(
         state.copyWith(
           isLoading: false,
+          isPhotoUploading: false,
           message: () => AuthErrorHandler.getKey(failure.message),
           lastPurchaseType: () => 'vowl_accessory',
           lastPurchaseSuccess: () => false,
@@ -784,6 +863,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         emit(
           state.copyWith(
             isLoading: false,
+            isPhotoUploading: false,
             lastPurchaseType: () => 'vowl_accessory',
             lastPurchaseSuccess: () => true,
           ),
@@ -806,7 +886,13 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       );
       return;
     }
-    emit(state.copyWith(isLoading: true));
+    emit(
+      state.copyWith(
+        isLoading: true,
+        isPhotoUploading: false,
+        message: () => null,
+      ),
+    );
     if (!_isAuthenticated) {
       emit(state.copyWith(isLoading: false));
       return;
@@ -847,7 +933,13 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       );
       return;
     }
-    emit(state.copyWith(isLoading: true));
+    emit(
+      state.copyWith(
+        isLoading: true,
+        isPhotoUploading: false,
+        message: () => null,
+      ),
+    );
     if (!_isAuthenticated) {
       emit(state.copyWith(isLoading: false));
       return;
@@ -902,7 +994,13 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       );
       return;
     }
-    emit(state.copyWith(isLoading: true));
+    emit(
+      state.copyWith(
+        isLoading: true,
+        isPhotoUploading: false,
+        message: () => null,
+      ),
+    );
     if (!_isAuthenticated) {
       emit(state.copyWith(isLoading: false));
       return;
@@ -946,7 +1044,13 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       );
       return;
     }
-    emit(state.copyWith(isLoading: true));
+    emit(
+      state.copyWith(
+        isLoading: true,
+        isPhotoUploading: false,
+        message: () => null,
+      ),
+    );
     if (!_isAuthenticated) {
       emit(state.copyWith(isLoading: false));
       return;
@@ -986,7 +1090,13 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       );
       return;
     }
-    emit(state.copyWith(isLoading: true));
+    emit(
+      state.copyWith(
+        isLoading: true,
+        isPhotoUploading: false,
+        message: () => null,
+      ),
+    );
     if (!_isAuthenticated) {
       emit(state.copyWith(isLoading: false));
       return;

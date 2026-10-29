@@ -107,10 +107,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           BlocListener<ProfileBloc, ProfileState>(
             listenWhen: (prev, curr) =>
-                prev.isLoading != curr.isLoading ||
+                (prev.isPhotoUploading != curr.isPhotoUploading &&
+                    !curr.isPhotoUploading) ||
                 (curr.message != null && prev.message != curr.message),
             listener: (context, profileState) {
-              if (!profileState.isLoading && _pendingLocalPhotoPath != null) {
+              if (!profileState.isPhotoUploading &&
+                  _pendingLocalPhotoPath != null) {
                 setState(() {
                   _pendingLocalPhotoPath = null;
                 });
@@ -118,10 +120,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
               final msg = profileState.message;
               if (msg != null && msg.isNotEmpty) {
-                final isSuccess = msg == 'profile.picture_updated';
-                final isError = msg.contains('error') ||
+                final isSuccess =
+                    msg == 'profile.picture_updated' ||
+                    msg == 'profile.display_name_updated';
+                final isError =
+                    msg.contains('error') ||
                     msg.contains('failed') ||
-                    msg.contains('unreachable');
+                    msg.contains('unreachable') ||
+                    msg.contains('invalid');
 
                 if (isSuccess) {
                   try {
@@ -133,18 +139,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   } catch (_) {}
                 }
 
+                final fallback = msg == 'profile.picture_updated'
+                    ? 'Profile photo updated successfully!'
+                    : msg == 'profile.display_name_updated'
+                    ? 'Display name updated successfully!'
+                    : isSuccess
+                    ? 'Updated successfully!'
+                    : 'Failed to update profile.';
+
                 CustomSnackBar.show(
                   context: context,
-                  message: context.tr(
-                    msg,
-                    fallback: isSuccess
-                        ? 'Profile photo updated successfully!'
-                        : 'Failed to update photo.',
-                  ),
+                  message: context.tr(msg, fallback: fallback),
                   type: isSuccess
                       ? CustomSnackBarType.success
                       : CustomSnackBarType.error,
                 );
+
+                context.read<ProfileBloc>().add(const ProfileClearMessage());
               }
             },
           ),
@@ -230,8 +241,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                               curr.photoUrl ||
                                                           prev.photoUserId !=
                                                               curr.photoUserId ||
-                                                          prev.isLoading !=
-                                                              curr.isLoading,
+                                                          prev.isPhotoUploading !=
+                                                              curr.isPhotoUploading,
                                                       builder: (context, profileState) {
                                                         final immediatePhoto =
                                                             _pendingLocalPhotoPath ??
@@ -243,8 +254,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                                       .photoUrl
                                                                 : null);
                                                         final isUploading =
-                                                            profileState.isLoading ||
-                                                            _pendingLocalPhotoPath != null;
+                                                            profileState
+                                                                .isPhotoUploading ||
+                                                            _pendingLocalPhotoPath !=
+                                                                null;
                                                         return ProfileHeader(
                                                           user: user,
                                                           immediatePhotoUrl:
@@ -310,8 +323,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                                   curr.photoUrl ||
                                                               prev.photoUserId !=
                                                                   curr.photoUserId ||
-                                                              prev.isLoading !=
-                                                                  curr.isLoading,
+                                                              prev.isPhotoUploading !=
+                                                                  curr.isPhotoUploading,
                                                           builder: (context, profileState) {
                                                             final immediatePhoto =
                                                                 _pendingLocalPhotoPath ??
@@ -323,10 +336,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                                           .photoUrl
                                                                     : null);
                                                             final isUploading =
-                                                                profileState.isLoading ||
-                                                                _pendingLocalPhotoPath != null;
+                                                                profileState
+                                                                    .isPhotoUploading ||
+                                                                _pendingLocalPhotoPath !=
+                                                                    null;
                                                             return Stack(
-                                                              alignment: Alignment.center,
+                                                              alignment:
+                                                                  Alignment
+                                                                      .center,
                                                               children: [
                                                                 UserAvatar(
                                                                   photoUrl:
@@ -338,19 +355,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                                   Positioned.fill(
                                                                     child: Container(
                                                                       decoration: const BoxDecoration(
-                                                                        shape: BoxShape.circle,
-                                                                        color: Colors.black54,
+                                                                        shape: BoxShape
+                                                                            .circle,
+                                                                        color: Colors
+                                                                            .black54,
                                                                       ),
                                                                       child: Center(
                                                                         child: SizedBox(
-                                                                          width: 16.r,
-                                                                          height: 16.r,
+                                                                          width:
+                                                                              16.r,
+                                                                          height:
+                                                                              16.r,
                                                                           child: CircularProgressIndicator(
-                                                                            strokeWidth: 2,
-                                                                            value: VowlMotion.lowAnimationModeOverride.value
+                                                                            strokeWidth:
+                                                                                2,
+                                                                            value:
+                                                                                VowlMotion.lowAnimationModeOverride.value
                                                                                 ? 0.75
                                                                                 : null,
-                                                                            color: Colors.white,
+                                                                            color:
+                                                                                Colors.white,
                                                                           ),
                                                                         ),
                                                                       ),
@@ -633,8 +657,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           ),
                                         ),
                                         SizedBox(
-                                          height: 120.h +
-                                              MediaQuery.paddingOf(context).bottom,
+                                          height:
+                                              120.h +
+                                              MediaQuery.paddingOf(
+                                                context,
+                                              ).bottom,
                                         ),
                                       ],
                                     ),
@@ -941,9 +968,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 24.h + MediaQuery.paddingOf(context).bottom,
-              ),
+              SizedBox(height: 24.h + MediaQuery.paddingOf(context).bottom),
             ],
           ),
         ),
@@ -1215,10 +1240,6 @@ class ProfileShimmerLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: CircularProgressIndicator(),
-      ),
-    );
+    return const Scaffold(body: Center(child: CircularProgressIndicator()));
   }
 }
