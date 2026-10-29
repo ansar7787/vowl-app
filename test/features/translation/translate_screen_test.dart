@@ -50,6 +50,13 @@ class FakeTtsService implements TtsService {
   bool isSpeaking = false;
 
   @override
+  Future<void> preWarm({
+    String? locale,
+    TtsVoicePreset? preset,
+    bool isKids = false,
+  }) async {}
+
+  @override
   Future<void> speak(
     String text, {
     double? rate,
