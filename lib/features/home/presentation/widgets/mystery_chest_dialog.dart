@@ -74,10 +74,10 @@ class _MysteryChestDialogState extends State<MysteryChestDialog> {
       EconomyClaimDailyChestRequested(totalCoins),
     );
 
-    // Wait for the full animation sequence + viewing time, then auto-close.
+    // Wait for the snappy animation sequence + comfortable viewing time, then auto-close.
     // Stored so it can be cancelled if the dialog is dismissed early or user taps COLLECT.
     _autoCloseTimer?.cancel();
-    _autoCloseTimer = Timer(const Duration(milliseconds: 3200), () {
+    _autoCloseTimer = Timer(const Duration(milliseconds: 2200), () {
       if (mounted && Navigator.of(context).canPop()) {
         Navigator.of(context).pop();
       }

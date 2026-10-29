@@ -187,13 +187,13 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
       duration: const Duration(milliseconds: 1400),
     );
 
-    // 3) Lottie opening sequence (950ms total — snappy, punchy)
+    // 3) Lottie opening sequence (650ms total — ultra-snappy, zero drag)
     //    Natural Lottie is 150 frames @ 30fps = 5s.
-    //    Running in 950ms means ~5.2x speed, making the 34-frame anticipation
-    //    rumble take exactly ~215ms, then lid pops with explosive energy!
+    //    Running in 650ms means the 32-frame anticipation rumble takes only ~140ms,
+    //    after which the lid snaps open fast and punchy!
     _lottieCtrl = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 950),
+      duration: const Duration(milliseconds: 650),
     );
 
     // Sunburst rays flare up right at lid-pop (0.20 – 0.40)
@@ -210,38 +210,38 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
       ),
     );
 
-    // Reward card slides up (0.32 – 0.60)
-    _rewardSlide = Tween<double>(begin: 36.0, end: 0.0).animate(
+    // Reward card slides up (0.28 – 0.55)
+    _rewardSlide = Tween<double>(begin: 32.0, end: 0.0).animate(
       CurvedAnimation(
         parent: _lottieCtrl,
-        curve: const Interval(0.32, 0.60, curve: Curves.easeOutCubic),
+        curve: const Interval(0.28, 0.55, curve: Curves.easeOutCubic),
       ),
     );
     _rewardFade = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _lottieCtrl,
-        curve: const Interval(0.32, 0.52, curve: Curves.easeOut),
+        curve: const Interval(0.28, 0.48, curve: Curves.easeOut),
       ),
     );
 
-    // Action button & close button fade in right after reward (0.50 – 0.72)
+    // Action button & close button fade in right after reward (0.45 – 0.68)
     _ctaFade = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _lottieCtrl,
-        curve: const Interval(0.50, 0.72, curve: Curves.easeOut),
+        curve: const Interval(0.45, 0.68, curve: Curves.easeOut),
       ),
     );
     _ctaScale = Tween<double>(begin: 0.85, end: 1.0).animate(
       CurvedAnimation(
         parent: _lottieCtrl,
-        curve: const Interval(0.50, 0.75, curve: Curves.easeOutBack),
+        curve: const Interval(0.45, 0.70, curve: Curves.easeOutBack),
       ),
     );
 
-    // 4) Reward Card Micro-Bounce (320ms spring)
+    // 4) Reward Card Micro-Bounce (260ms spring)
     _rewardCardCtrl = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 320),
+      duration: const Duration(milliseconds: 260),
     );
     _rewardScale = TweenSequence<double>([
       TweenSequenceItem(
@@ -335,9 +335,9 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
       return;
     }
 
-    // ── 215ms: Exact Lid Pop Moment ──
+    // ── 140ms: Exact Lid Pop Moment ──
     // Fire Green + Gold confetti eruption immediately when the lid snaps open!
-    Future.delayed(const Duration(milliseconds: 215), () {
+    Future.delayed(const Duration(milliseconds: 140), () {
       if (!mounted) return;
       widget.confettiController.play();
       try {
@@ -345,8 +345,8 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
       } catch (_) {}
     });
 
-    // ── 220ms: Rays & Glow ──
-    Future.delayed(const Duration(milliseconds: 220), () {
+    // ── 150ms: Rays & Glow ──
+    Future.delayed(const Duration(milliseconds: 150), () {
       if (!mounted) return;
       if (!VowlMotion.shouldReduceMotion(context)) {
         if (!_rayRotationCtrl.isAnimating) _rayRotationCtrl.repeat();
@@ -356,8 +356,8 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
       }
     });
 
-    // ── 340ms: Reward Card Pop & Coin Roll ──
-    Future.delayed(const Duration(milliseconds: 340), () {
+    // ── 240ms: Reward Card Pop & Coin Roll ──
+    Future.delayed(const Duration(milliseconds: 240), () {
       if (!mounted) return;
       _rewardCardCtrl.forward();
       _coinRollCtrl.forward();
@@ -387,13 +387,13 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
     super.dispose();
   }
 
-  /// Varied celebratory shapes: Gold Coins, Emerald Diamonds, Ribbons, and Stars.
+  /// Varied celebratory shapes: Gold Coins, Emerald Diamonds, and Ribbons.
   /// All shapes are mathematically centered at (cx, cy) so they spin cleanly on their true axes.
   Path _createCelebrationPath(Size size) {
     final path = Path();
     final cx = size.width / 2;
     final cy = size.height / 2;
-    final shapeType = _particleRandom.nextInt(4);
+    final shapeType = _particleRandom.nextInt(3);
 
     switch (shapeType) {
       case 0: // Metallic ribbon strip
@@ -410,7 +410,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
         path.addOval(
           Rect.fromCircle(center: Offset(cx, cy), radius: radius),
         );
-      case 2: // Emerald gem / diamond
+      default: // Emerald gem / diamond
         final hw = size.width * 0.42;
         final hh = size.height * 0.45;
         path
@@ -418,15 +418,6 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
           ..lineTo(cx + hw, cy)
           ..lineTo(cx, cy + hh)
           ..lineTo(cx - hw, cy)
-          ..close();
-      default: // 4-pointed sparkle star
-        final r = math.min(size.width, size.height) * 0.45;
-        path
-          ..moveTo(cx, cy - r)
-          ..quadraticBezierTo(cx, cy, cx + r, cy)
-          ..quadraticBezierTo(cx, cy, cx, cy + r)
-          ..quadraticBezierTo(cx, cy, cx - r, cy)
-          ..quadraticBezierTo(cx, cy, cx, cy - r)
           ..close();
     }
     return path;
@@ -466,20 +457,22 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
                       widget.onClose();
                     }
                   },
-                  child: VowlMotion.shouldReduceMotion(context)
-                      ? Container(
-                          color: Colors.black.withValues(
-                            alpha: 0.85 * _entranceFade.value,
-                          ),
-                        )
-                      : BackdropFilter(
-                          filter: ui.ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-                          child: Container(
+                  child: RepaintBoundary(
+                    child: VowlMotion.shouldReduceMotion(context)
+                        ? Container(
                             color: Colors.black.withValues(
-                              alpha: 0.72 * _entranceFade.value,
+                              alpha: 0.85 * _entranceFade.value,
+                            ),
+                          )
+                        : BackdropFilter(
+                            filter: ui.ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+                            child: Container(
+                              color: Colors.black.withValues(
+                                alpha: 0.72 * _entranceFade.value,
+                              ),
                             ),
                           ),
-                        ),
+                  ),
                 ),
               ),
 
@@ -531,22 +524,24 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
               // ── 3) Celebration Confetti Layer (Erupts directly out of chest mouth across full screen) ──
               Positioned.fill(
                 child: IgnorePointer(
-                  child: Align(
-                    alignment: const Alignment(0.0, -0.06),
-                    child: ConfettiWidget(
-                      confettiController: widget.confettiController,
-                      blastDirectionality: BlastDirectionality.explosive,
-                      shouldLoop: false,
-                      colors: _ChestPalette.confettiColors,
-                      numberOfParticles: 16,
-                      gravity: 0.18,
-                      emissionFrequency: 0.05,
-                      maxBlastForce: 45,
-                      minBlastForce: 20,
-                      particleDrag: 0.03,
-                      minimumSize: const Size(12, 12),
-                      maximumSize: const Size(22, 18),
-                      createParticlePath: _createCelebrationPath,
+                  child: RepaintBoundary(
+                    child: Align(
+                      alignment: const Alignment(0.0, -0.06),
+                      child: ConfettiWidget(
+                        confettiController: widget.confettiController,
+                        blastDirectionality: BlastDirectionality.explosive,
+                        shouldLoop: false,
+                        colors: _ChestPalette.confettiColors,
+                        numberOfParticles: 16,
+                        gravity: 0.18,
+                        emissionFrequency: 0.05,
+                        maxBlastForce: 45,
+                        minBlastForce: 20,
+                        particleDrag: 0.03,
+                        minimumSize: const Size(12, 12),
+                        maximumSize: const Size(22, 18),
+                        createParticlePath: _createCelebrationPath,
+                      ),
                     ),
                   ),
                 ),
@@ -730,19 +725,21 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
               if (_hasTriggeredOpen && _sunburstFade.value > 0.01)
                 _buildSunburstRays(chestColor),
 
-              // ── Vector Lottie Chest (950ms fast timeline) ──
+              // ── Vector Lottie Chest (650ms fast timeline) ──
               Transform.scale(
                 scale: _hasTriggeredOpen
                     ? (1.0 + (_glowPulseCtrl.value * 0.02))
                     : (1.0 + (_idlePulseCtrl.value * 0.03)),
-                child: Lottie.asset(
-                  'assets/lottie/chest.json',
-                  controller: _lottieCtrl,
-                  width: 280.r,
-                  height: 280.r,
-                  fit: BoxFit.contain,
-                  errorBuilder: (context, error, stackTrace) =>
-                      _buildFallbackImage(context),
+                child: RepaintBoundary(
+                  child: Lottie.asset(
+                    'assets/lottie/chest.json',
+                    controller: _lottieCtrl,
+                    width: 280.r,
+                    height: 280.r,
+                    fit: BoxFit.contain,
+                    errorBuilder: (context, error, stackTrace) =>
+                        _buildFallbackImage(context),
+                  ),
                 ),
               ),
             ],
@@ -810,11 +807,13 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
           scale: _sunburstScale.value,
           child: Transform.rotate(
             angle: rotation,
-            child: CustomPaint(
-              size: Size(300.r, 300.r),
-              painter: _SunburstPainter(
-                color: chestColor,
-                rayCount: 16,
+            child: RepaintBoundary(
+              child: CustomPaint(
+                size: Size(300.r, 300.r),
+                painter: _SunburstPainter(
+                  color: chestColor,
+                  rayCount: 16,
+                ),
               ),
             ),
           ),
