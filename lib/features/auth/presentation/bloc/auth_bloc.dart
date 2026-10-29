@@ -526,10 +526,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   /// Harmonizes a fresh remote user snapshot with any optimistic in-memory progression.
   /// Guarantees that in-flight or lagging Firestore snapshots can NEVER revert or relock
   /// completed levels or active progression nodes.
+  ///
+  /// FIX (CRITICAL — DATA REGRESSION): Previously only protected [completedLevels]
+  /// and [unlockedLevels]. When a Firestore write was silently rejected by security
+  /// rules (e.g. missing lastRewardTimestamp), the next snapshot carried stale values
+  /// for [coins], [totalExp], [kidsCoins], and [starRatings], snapping the UI back
+  /// to old data. Now also takes the maximum of those numeric/map fields so that
+  /// in-session progress is never visually reverted by a lagging snapshot.
   UserEntity _reconcileUserProgression({
     required UserEntity remoteUser,
     required UserEntity currentUser,
   }) {
+    // ---- Completed levels: union of both sets ----
     final mergedCompleted = Map<String, List<int>>.from(
       remoteUser.completedLevels.map((k, v) => MapEntry(k, List<int>.from(v))),
     );
@@ -539,15 +547,44 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       mergedCompleted[k] = combined;
     });
 
+    // ---- Unlocked levels: take the higher value per category ----
     final mergedUnlocked = Map<String, int>.from(remoteUser.unlockedLevels);
     currentUser.unlockedLevels.forEach((k, v) {
       final existing = mergedUnlocked[k] ?? 1;
       mergedUnlocked[k] = math.max(existing, v);
     });
 
+    // ---- Star ratings: take the higher star count per level per category ----
+    final mergedStarRatings = remoteUser.starRatings.map(
+      (k, v) => MapEntry(k, Map<String, int>.from(v)),
+    );
+    currentUser.starRatings.forEach((category, levels) {
+      final existing = mergedStarRatings[category] ?? <String, int>{};
+      levels.forEach((levelKey, stars) {
+        final existingStars = existing[levelKey] ?? 0;
+        existing[levelKey] = math.max(existingStars, stars);
+      });
+      mergedStarRatings[category] = existing;
+    });
+
+    // ---- Coins, XP, kidsCoins: never let a stale snapshot reduce them ----
+    final reconciledCoins = math.max(remoteUser.coins, currentUser.coins);
+    final reconciledTotalExp = math.max(
+      remoteUser.totalExp,
+      currentUser.totalExp,
+    );
+    final reconciledKidsCoins = math.max(
+      remoteUser.kidsCoins,
+      currentUser.kidsCoins,
+    );
+
     return remoteUser.copyWith(
       completedLevels: mergedCompleted,
       unlockedLevels: mergedUnlocked,
+      starRatings: mergedStarRatings,
+      coins: reconciledCoins,
+      totalExp: reconciledTotalExp,
+      kidsCoins: reconciledKidsCoins,
     );
   }
 

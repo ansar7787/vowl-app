@@ -836,6 +836,30 @@ class GamificationRepositoryImpl
   }
 
   // ---------------------------------------------------------------------------
+  // incrementXp
+  // ---------------------------------------------------------------------------
+
+  @override
+  Future<Either<Failure, void>> incrementXp({required int amount}) async {
+    try {
+      final user = _firebaseAuth.currentUser;
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
+
+      // Pure additive credit with `lastRewardTimestamp` to satisfy the
+      // Firestore security-rules rate-limiter — same atomic pattern as
+      // `addGoldenKey`, extended with the timestamp the anti-cheat guard
+      // requires for any write touching `totalExp`.
+      await _firestore.collection('users').doc(user.uid).update({
+        'totalExp': FieldValue.increment(amount),
+        'lastRewardTimestamp': FieldValue.serverTimestamp(),
+      });
+      return const Right(null);
+    } catch (e) {
+      return Left(handleFirebaseException(e));
+    }
+  }
+
+  // ---------------------------------------------------------------------------
   // claimStreakMilestone
   // ---------------------------------------------------------------------------
 

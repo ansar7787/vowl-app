@@ -10,6 +10,7 @@ import 'package:vowl/features/auth/domain/usecases/repair_streak_free.dart';
 import 'package:vowl/features/auth/domain/usecases/purchase_permanent_xp_boost.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_streak_milestone.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_level_milestone.dart';
+import 'package:vowl/features/auth/domain/usecases/increment_xp.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
@@ -40,14 +41,19 @@ class MockClaimStreakMilestone extends Mock implements ClaimStreakMilestone {}
 
 class MockClaimLevelMilestone extends Mock implements ClaimLevelMilestone {}
 
+class MockIncrementXp extends Mock implements IncrementXp {}
+
 class FakeNoParams extends Fake implements NoParams {}
 
 class FakeUpdateUserParams extends Fake implements UpdateUserParams {}
+
+class FakeIncrementXpParams extends Fake implements IncrementXpParams {}
 
 void main() {
   setUpAll(() {
     registerFallbackValue(const NoParams());
     registerFallbackValue(FakeUpdateUserParams());
+    registerFallbackValue(FakeIncrementXpParams());
   });
 
   late ProgressionBloc bloc;
@@ -61,6 +67,7 @@ void main() {
   late MockPurchasePermanentXPBoost mockPurchasePermanentXPBoost;
   late MockClaimStreakMilestone mockClaimStreakMilestone;
   late MockClaimLevelMilestone mockClaimLevelMilestone;
+  late MockIncrementXp mockIncrementXp;
   late MockNetworkInfo mockNetworkInfo;
 
   setUp(() {
@@ -77,6 +84,7 @@ void main() {
     mockPurchasePermanentXPBoost = MockPurchasePermanentXPBoost();
     mockClaimStreakMilestone = MockClaimStreakMilestone();
     mockClaimLevelMilestone = MockClaimLevelMilestone();
+    mockIncrementXp = MockIncrementXp();
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(UserEntity(id: '1', email: 'test@vowl.com')),
@@ -93,6 +101,7 @@ void main() {
       purchasePermanentXPBoost: mockPurchasePermanentXPBoost,
       claimStreakMilestone: mockClaimStreakMilestone,
       claimLevelMilestone: mockClaimLevelMilestone,
+      incrementXp: mockIncrementXp,
       networkInfo: mockNetworkInfo,
     );
   });
