@@ -302,58 +302,65 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                             ValueListenableBuilder<bool>(
                               valueListenable: _isFocused,
                               builder: (context, isFocused, _) {
-                                final borderColor = hasError
+                                final activeBorderColor = hasError
                                     ? errorColor
                                     : (isFocused
                                         ? widget.primaryColor
                                         : widget.primaryColor.withValues(
-                                            alpha: isDark ? 0.55 : 0.45,
+                                            alpha: isDark ? 0.6 : 0.45,
                                           ));
-                                final borderWidth =
+                                final activeBorderWidth =
                                     (hasError || isFocused) ? 2.0.w : 1.5.w;
-                                final fieldBgColor = hasError
-                                    ? errorColor.withValues(
-                                        alpha: isDark ? 0.12 : 0.05,
-                                      )
-                                    : (isFocused
-                                        ? widget.primaryColor.withValues(
-                                            alpha: isDark ? 0.10 : 0.045,
-                                          )
-                                        : (isDark
-                                            ? Colors.white.withValues(
-                                                alpha: 0.06,
-                                              )
-                                            : widget.primaryColor.withValues(
-                                                alpha: 0.035,
-                                              )));
+                                final fieldBgColor = Color.alphaBlend(
+                                  hasError
+                                      ? errorColor.withValues(
+                                          alpha: isDark ? 0.12 : 0.05,
+                                        )
+                                      : (isFocused
+                                          ? widget.primaryColor.withValues(
+                                              alpha: isDark ? 0.10 : 0.045,
+                                            )
+                                          : (isDark
+                                              ? Colors.white.withValues(
+                                                  alpha: 0.06,
+                                                )
+                                              : widget.primaryColor.withValues(
+                                                  alpha: 0.035,
+                                                ))),
+                                  bgColor,
+                                );
+
+                                final inputBorder = OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16.r),
+                                  borderSide: BorderSide(
+                                    color: activeBorderColor,
+                                    width: activeBorderWidth,
+                                  ),
+                                );
 
                                 return Container(
                                   width: double.infinity,
-                                  clipBehavior: Clip.antiAlias,
                                   decoration: BoxDecoration(
-                                    color: fieldBgColor,
                                     borderRadius: BorderRadius.circular(16.r),
-                                    border: Border.all(
-                                      color: borderColor,
-                                      width: borderWidth,
-                                    ),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: (hasError
-                                                ? errorColor
-                                                : (isFocused
-                                                    ? widget.primaryColor
-                                                    : widget.primaryColor
-                                                        .withValues(
-                                                          alpha: 0.5,
-                                                        )))
-                                            .withValues(
-                                              alpha: isDark ? 0.15 : 0.08,
+                                    boxShadow: isDark
+                                        ? null
+                                        : [
+                                            BoxShadow(
+                                              color: (hasError
+                                                      ? errorColor
+                                                      : (isFocused
+                                                          ? widget.primaryColor
+                                                          : widget.primaryColor
+                                                              .withValues(
+                                                                alpha: 0.35,
+                                                              )))
+                                                  .withValues(
+                                                    alpha: 0.08,
+                                                  ),
+                                              blurRadius: isFocused ? 10 : 6,
+                                              offset: const Offset(0, 2),
                                             ),
-                                        blurRadius: isFocused ? 10 : 6,
-                                        offset: const Offset(0, 2),
-                                      ),
-                                    ],
+                                          ],
                                   ),
                                   child: Stack(
                                     children: [
@@ -375,6 +382,8 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                                         },
                                         onSubmitted: (_) => _onSubmit(),
                                         decoration: InputDecoration(
+                                          filled: true,
+                                          fillColor: fieldBgColor,
                                           hintText: 'Type here...',
                                           hintStyle: TextStyle(
                                             fontFamily: 'Outfit',
@@ -390,9 +399,11 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                                             top: 16.h,
                                             bottom: 32.h,
                                           ),
-                                          border: InputBorder.none,
-                                          enabledBorder: InputBorder.none,
-                                          focusedBorder: InputBorder.none,
+                                          border: inputBorder,
+                                          enabledBorder: inputBorder,
+                                          focusedBorder: inputBorder,
+                                          errorBorder: inputBorder,
+                                          focusedErrorBorder: inputBorder,
                                         ),
                                       ),
                                       Positioned(
