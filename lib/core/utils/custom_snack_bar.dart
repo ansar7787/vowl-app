@@ -27,10 +27,22 @@ enum CustomSnackBarType {
 class CustomSnackBar {
   CustomSnackBar._(); // Non-instantiable.
 
+  static String? _lastMessage;
+  static CustomSnackBarType? _lastType;
+  static int? _lastShownEpochMs;
+
+  /// Visible for testing to reset debounce state.
+  @visibleForTesting
+  static void resetDebounce() {
+    _lastMessage = null;
+    _lastType = null;
+    _lastShownEpochMs = null;
+  }
+
   /// Shows a themed floating alert.
   ///
   /// [context] must be mounted — this is enforced by an early guard.
-  /// [duration] defaults to 4 seconds but can be shortened for ephemeral
+  /// [duration] defaults to 3 seconds but can be shortened for ephemeral
   /// confirmations (e.g., clipboard copy).
   static void show({
     required BuildContext context,
@@ -39,6 +51,20 @@ class CustomSnackBar {
     Duration duration = const Duration(seconds: 3),
   }) {
     if (!context.mounted) return;
+
+    final trimmed = message.trim();
+    if (trimmed.isEmpty) return;
+
+    final now = DateTime.now().millisecondsSinceEpoch;
+    if (_lastMessage == trimmed &&
+        _lastType == type &&
+        _lastShownEpochMs != null &&
+        (now - _lastShownEpochMs!) < 750) {
+      return;
+    }
+    _lastMessage = trimmed;
+    _lastType = type;
+    _lastShownEpochMs = now;
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
 

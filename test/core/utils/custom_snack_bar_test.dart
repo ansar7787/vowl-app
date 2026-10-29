@@ -13,6 +13,7 @@ void main() {
   late MockLocaleService mockLocaleService;
 
   setUp(() {
+    CustomSnackBar.resetDebounce();
     mockLocaleService = MockLocaleService();
     when(
       () => mockLocaleService.tr(
@@ -144,5 +145,45 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Ephemeral dialog alert'), findsNothing);
+  });
+
+  testWidgets('CustomSnackBar deduplicates identical rapid calls', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      ScreenUtilInit(
+        designSize: const Size(390, 844),
+        builder: (context, child) => MaterialApp(
+          home: Scaffold(
+            body: Builder(
+              builder: (ctx) => Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Trigger twice simultaneously
+                    CustomSnackBar.show(
+                      context: ctx,
+                      message: 'Duplicate alert',
+                      type: CustomSnackBarType.success,
+                    );
+                    CustomSnackBar.show(
+                      context: ctx,
+                      message: 'Duplicate alert',
+                      type: CustomSnackBarType.success,
+                    );
+                  },
+                  child: const Text('Spam'),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+
+    await tester.tap(find.text('Spam'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
+
+    expect(find.text('Duplicate alert'), findsOneWidget);
   });
 }

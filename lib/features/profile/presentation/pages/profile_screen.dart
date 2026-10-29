@@ -72,94 +72,59 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     return Scaffold(
       backgroundColor: bgColor,
-      body: MultiBlocListener(
-        listeners: [
-          BlocListener<AuthBloc, AuthState>(
-            listenWhen: (prev, curr) =>
-                curr.message != null && prev.message != curr.message,
-            listener: (context, authState) {
-              final msg = authState.message!;
-              final isWarning =
-                  msg.contains('security') || msg.contains('cancelled');
-              final isSuccessMsg =
-                  msg == 'auth.email_verification_sent' ||
-                  msg == 'settings_dialogs.account_deleted_success';
-              final isErrorMsg =
-                  msg.contains('error') ||
-                  msg.contains('failed') ||
-                  msg.contains('unreachable') ||
-                  msg.contains('invalid');
-              CustomSnackBar.show(
-                context: context,
-                message: context.tr(msg),
-                type: isSuccessMsg
-                    ? CustomSnackBarType.success
-                    : (isErrorMsg ||
-                          (authState.status == AuthStatus.unauthenticated &&
-                              !isWarning))
-                    ? CustomSnackBarType.error
-                    : isWarning
-                    ? CustomSnackBarType.warning
-                    : CustomSnackBarType.info,
-              );
-              context.read<AuthBloc>().add(const AuthClearMessage());
-            },
-          ),
-          BlocListener<ProfileBloc, ProfileState>(
-            listenWhen: (prev, curr) =>
-                (prev.isPhotoUploading != curr.isPhotoUploading &&
-                    !curr.isPhotoUploading) ||
-                (curr.message != null && prev.message != curr.message),
-            listener: (context, profileState) {
-              if (!profileState.isPhotoUploading &&
-                  _pendingLocalPhotoPath != null) {
-                setState(() {
-                  _pendingLocalPhotoPath = null;
-                });
-              }
+      body: BlocListener<ProfileBloc, ProfileState>(
+        listenWhen: (prev, curr) =>
+            (prev.isPhotoUploading != curr.isPhotoUploading &&
+                !curr.isPhotoUploading) ||
+            (curr.message != null && prev.message != curr.message),
+        listener: (context, profileState) {
+          if (!profileState.isPhotoUploading &&
+              _pendingLocalPhotoPath != null) {
+            setState(() {
+              _pendingLocalPhotoPath = null;
+            });
+          }
 
-              final msg = profileState.message;
-              if (msg != null && msg.isNotEmpty) {
-                final isSuccess =
-                    msg == 'profile.picture_updated' ||
-                    msg == 'profile.display_name_updated';
-                final isError =
-                    msg.contains('error') ||
-                    msg.contains('failed') ||
-                    msg.contains('unreachable') ||
-                    msg.contains('invalid');
+          final msg = profileState.message;
+          if (msg != null && msg.isNotEmpty) {
+            final isSuccess =
+                msg == 'profile.picture_updated' ||
+                msg == 'profile.display_name_updated';
+            final isError =
+                msg.contains('error') ||
+                msg.contains('failed') ||
+                msg.contains('unreachable') ||
+                msg.contains('invalid');
 
-                if (isSuccess) {
-                  try {
-                    di.sl<HapticService>().success();
-                  } catch (_) {}
-                } else if (isError) {
-                  try {
-                    di.sl<HapticService>().error();
-                  } catch (_) {}
-                }
+            if (isSuccess) {
+              try {
+                di.sl<HapticService>().success();
+              } catch (_) {}
+            } else if (isError) {
+              try {
+                di.sl<HapticService>().error();
+              } catch (_) {}
+            }
 
-                final fallback = msg == 'profile.picture_updated'
-                    ? 'Profile photo updated successfully!'
-                    : msg == 'profile.display_name_updated'
-                    ? 'Display name updated successfully!'
-                    : isSuccess
-                    ? 'Updated successfully!'
-                    : 'Failed to update profile.';
+            final fallback = msg == 'profile.picture_updated'
+                ? 'Profile photo updated successfully!'
+                : msg == 'profile.display_name_updated'
+                ? 'Display name updated successfully!'
+                : isSuccess
+                ? 'Updated successfully!'
+                : 'Failed to update profile.';
 
-                CustomSnackBar.show(
-                  context: context,
-                  message: context.tr(msg, fallback: fallback),
-                  type: isSuccess
-                      ? CustomSnackBarType.success
-                      : CustomSnackBarType.error,
-                );
+            CustomSnackBar.show(
+              context: context,
+              message: context.tr(msg, fallback: fallback),
+              type: isSuccess
+                  ? CustomSnackBarType.success
+                  : CustomSnackBarType.error,
+            );
 
-                context.read<ProfileBloc>().add(const ProfileClearMessage());
-              }
-            },
-          ),
-        ],
+            context.read<ProfileBloc>().add(const ProfileClearMessage());
+          }
+        },
         child: BlocSelector<AuthBloc, AuthState, bool>(
           selector: (state) => state.status == AuthStatus.loggingOut,
           builder: (context, isLoggingOut) {
