@@ -1,10 +1,8 @@
 import 'dart:async';
 import 'dart:math';
 import 'package:confetti/confetti.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/home/presentation/widgets/mystery_chest_overlay.dart';
@@ -23,13 +21,12 @@ class _MysteryChestDialogState extends State<MysteryChestDialog> {
   Timer? _autoCloseTimer;
   final ValueNotifier<bool> _chestOpened = ValueNotifier(false);
   final ValueNotifier<int> _rewardAmount = ValueNotifier(0);
-  bool _confettiPlayed = false;
 
   @override
   void initState() {
     super.initState();
     _confettiController = ConfettiController(
-      duration: const Duration(seconds: 2),
+      duration: const Duration(milliseconds: 800),
     );
   }
 
@@ -44,15 +41,6 @@ class _MysteryChestDialogState extends State<MysteryChestDialog> {
 
   Future<void> _openChest() async {
     if (_chestOpened.value || !mounted) return;
-
-    // Fire haptics for the "shake" phase
-    try {
-      Haptics.vibrate(HapticsType.heavy);
-    } catch (e) {
-      // Haptics are a non-critical enhancement; some devices/emulators don't
-      // support them. Swallow but keep a debug-only trace for diagnosis.
-      if (kDebugMode) debugPrint('MysteryChestDialog: haptics unavailable: $e');
-    }
 
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
@@ -82,27 +70,15 @@ class _MysteryChestDialogState extends State<MysteryChestDialog> {
     _rewardAmount.value = totalCoins;
     _chestOpened.value = true;
 
-    // Second haptic burst at the exact lid-pop moment (~480ms into the animation)
-    Future.delayed(const Duration(milliseconds: 480), () {
-      try {
-        Haptics.vibrate(HapticsType.success);
-      } catch (_) {}
-    });
-
-    if (!_confettiPlayed) {
-      _confettiPlayed = true;
-      // Confetti is now triggered by the overlay animation at the right moment
-    }
-
     context.read<EconomyBloc>().add(
       EconomyClaimDailyChestRequested(totalCoins),
     );
 
     // Wait for the full animation sequence + viewing time, then auto-close.
-    // Stored so it can be cancelled if the dialog is dismissed early.
+    // Stored so it can be cancelled if the dialog is dismissed early or user taps COLLECT.
     _autoCloseTimer?.cancel();
-    _autoCloseTimer = Timer(const Duration(milliseconds: 4000), () {
-      if (mounted) {
+    _autoCloseTimer = Timer(const Duration(milliseconds: 3200), () {
+      if (mounted && Navigator.of(context).canPop()) {
         Navigator.of(context).pop();
       }
     });
@@ -124,7 +100,9 @@ class _MysteryChestDialogState extends State<MysteryChestDialog> {
             onOpen: _openChest,
             onClose: () {
               _autoCloseTimer?.cancel();
-              Navigator.of(context).pop();
+              if (mounted && Navigator.of(context).canPop()) {
+                Navigator.of(context).pop();
+              }
             },
             confettiController: _confettiController,
           ),
