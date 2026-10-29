@@ -88,39 +88,51 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     // Persist the display name in Firebase Auth for downstream consumers
     // (e.g., profile screens that read from FirebaseAuth.currentUser).
     await firebaseUser.updateDisplayName(name);
+    try {
+      await firebaseUser.reload();
+    } catch (_) {}
+
+    final currentFirebaseUser = _firebaseAuth.currentUser ?? firebaseUser;
+
+    // Force auth token refresh across platform channels before Firestore checks security rules
+    try {
+      await currentFirebaseUser.getIdToken(true);
+    } catch (_) {}
 
     final newUser = UserModel(
-      id: firebaseUser.uid,
+      id: currentFirebaseUser.uid,
       email: email,
       displayName: name,
-      photoUrl: firebaseUser.photoURL,
+      photoUrl: currentFirebaseUser.photoURL,
       lastLoginDate: DateTime.now(),
       currentStreak: 1,
       dailyXpHistory: const {},
       recentActivities: const [],
     );
 
-    // Best-effort: the Auth account (the critical step) already exists at
-    // this point. If this write fails (offline, transient Firestore error),
-    // don't fail the whole signUp and strand the caller on an error screen
-    // for an account that was actually created successfully — that would
-    // send them into a confusing "email already in use" loop on retry.
-    // AuthRepositoryImpl.getCurrentUser() self-heals by provisioning the
-    // document on the next read if it's still missing.
-    try {
-      final map = newUser.toMap();
-      map['lastRewardTimestamp'] = FieldValue.serverTimestamp();
-      await _firestore
-          .collection('users')
-          .doc(newUser.id)
-          .set(map, SetOptions(merge: true));
-    } catch (e, stack) {
-      di.sl<AppLogger>().error(
-        'AuthRemoteDataSource: Firestore provisioning write after signUp failed: $e',
-        error: e,
-        stackTrace: stack,
-        tag: 'AuthRemoteDataSource',
-      );
+    // Resilient provisioning: attempt write with retries so token propagation
+    // across native platform channels is given time to sync to Firestore.
+    final map = newUser.toMap();
+    map['lastRewardTimestamp'] = FieldValue.serverTimestamp();
+    for (int attempt = 1; attempt <= 3; attempt++) {
+      try {
+        await _firestore
+            .collection('users')
+            .doc(newUser.id)
+            .set(map, SetOptions(merge: true));
+        break;
+      } catch (e, stack) {
+        if (attempt == 3) {
+          di.sl<AppLogger>().error(
+            'AuthRemoteDataSource: Firestore provisioning write after signUp failed after 3 attempts: $e',
+            error: e,
+            stackTrace: stack,
+            tag: 'AuthRemoteDataSource',
+          );
+        } else {
+          await Future.delayed(Duration(milliseconds: 300 * attempt));
+        }
+      }
     }
 
     return newUser;

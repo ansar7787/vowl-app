@@ -246,7 +246,10 @@ class AppRouter {
               60;
 
       if (isNewUser) {
-        final name = currentUser.displayName ?? 'Traveler';
+        final authName = authState.user?.displayName;
+        final name = (authName != null && authName.trim().isNotEmpty)
+            ? authName
+            : (currentUser.displayName ?? 'Traveler');
         return '$hatchingRoute?name=${Uri.encodeComponent(name)}';
       }
       // Route directly to the appropriate home based on age gate status

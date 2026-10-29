@@ -94,7 +94,11 @@ class _LoginViewState extends State<LoginView> {
                 final user = sl.isRegistered<FirebaseAuth>()
                     ? sl<FirebaseAuth>().currentUser
                     : null;
-                final name = user?.displayName ?? 'Traveler';
+                final authName =
+                    context.read<AuthBloc>().state.user?.displayName;
+                final name = (authName != null && authName.trim().isNotEmpty)
+                    ? authName
+                    : (user?.displayName ?? 'Traveler');
                 context.go(
                   '${AppRouter.hatchingRoute}?name=${Uri.encodeComponent(name)}',
                 );

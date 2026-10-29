@@ -217,12 +217,30 @@ class AuthRepositoryImpl
     try {
       final cached = await _localDataSource.getCachedUser();
       if (cached != null && cached.id == firebaseUser.uid) {
-        _emit(
-          cached.copyWith(
-            isEmailVerified:
-                firebaseUser.emailVerified || cached.isEmailVerified,
-          ),
+        final effectiveName = (cached.displayName != null &&
+                cached.displayName!.trim().isNotEmpty)
+            ? cached.displayName
+            : (firebaseUser.displayName != null &&
+                    firebaseUser.displayName!.trim().isNotEmpty
+                ? firebaseUser.displayName
+                : null);
+
+        final resolvedUser = cached.copyWith(
+          isEmailVerified:
+              firebaseUser.emailVerified || cached.isEmailVerified,
+          displayName: effectiveName,
         );
+        // Self-heal to Firestore in background so missing document is created
+        try {
+          final map = resolvedUser.toMap();
+          map['lastRewardTimestamp'] = FieldValue.serverTimestamp();
+          _firestore
+              .collection('users')
+              .doc(resolvedUser.id)
+              .set(map, SetOptions(merge: true))
+              .catchError((_) {});
+        } catch (_) {}
+        _emit(resolvedUser);
         return;
       }
     } catch (_) {}
@@ -276,17 +294,35 @@ class AuthRepositoryImpl
       }
 
       // Firestore document missing — provision it and return the new entity.
-      final newUser = UserModel(
-        id: firebaseUser.uid,
-        email: firebaseUser.email ?? '',
-        displayName: firebaseUser.displayName,
-        photoUrl: firebaseUser.photoURL,
-        lastLoginDate: DateTime.now(),
-        currentStreak: 1,
-        isEmailVerified: firebaseUser.emailVerified,
-        dailyXpHistory: const {},
-        recentActivities: const [],
-      );
+      final effectiveName = (cached != null &&
+              cached.id == firebaseUser.uid &&
+              cached.displayName != null &&
+              cached.displayName!.trim().isNotEmpty)
+          ? cached.displayName
+          : firebaseUser.displayName;
+      final effectiveEmail = (cached != null &&
+              cached.id == firebaseUser.uid &&
+              cached.email.trim().isNotEmpty)
+          ? cached.email
+          : (firebaseUser.email ?? '');
+
+      final newUser = (cached != null && cached.id == firebaseUser.uid)
+          ? cached.copyWith(
+              isEmailVerified:
+                  firebaseUser.emailVerified || cached.isEmailVerified,
+              displayName: effectiveName,
+            )
+          : UserModel(
+              id: firebaseUser.uid,
+              email: effectiveEmail,
+              displayName: effectiveName,
+              photoUrl: firebaseUser.photoURL,
+              lastLoginDate: DateTime.now(),
+              currentStreak: 1,
+              isEmailVerified: firebaseUser.emailVerified,
+              dailyXpHistory: const {},
+              recentActivities: const [],
+            );
       try {
         final map = newUser.toMap();
         map['lastRewardTimestamp'] = FieldValue.serverTimestamp();
@@ -327,6 +363,7 @@ class AuthRepositoryImpl
         password: password,
       );
       await _localDataSource.cacheUser(userModel);
+      _emit(userModel);
       return Right(userModel);
     } catch (e) {
       return Left(handleFirebaseException(e));
@@ -431,19 +468,76 @@ class AuthRepositoryImpl
         await user.reload();
         final refreshedUser = _firebaseAuth.currentUser;
         if (refreshedUser != null) {
-          final doc = await _firestore
-              .collection('users')
-              .doc(refreshedUser.uid)
-              .get();
-          if (doc.exists && doc.data() != null) {
+          final cached = await _localDataSource.getCachedUser();
+          DocumentSnapshot<Map<String, dynamic>>? doc;
+          try {
+            doc = await _firestore
+                .collection('users')
+                .doc(refreshedUser.uid)
+                .get();
+          } catch (_) {}
+
+          if (doc != null && doc.exists && doc.data() != null) {
             final userModel = UserModel.fromMap(doc.data()!);
+            final effectiveName = (userModel.displayName != null &&
+                    userModel.displayName!.trim().isNotEmpty)
+                ? userModel.displayName
+                : ((cached != null &&
+                        cached.id == refreshedUser.uid &&
+                        cached.displayName != null &&
+                        cached.displayName!.trim().isNotEmpty)
+                    ? cached.displayName
+                    : refreshedUser.displayName);
+
             final resolvedUser = userModel.copyWith(
+              displayName: effectiveName,
               isEmailVerified: refreshedUser.emailVerified,
             );
             await _localDataSource.cacheUser(resolvedUser);
             _emit(resolvedUser);
           } else {
-            _emit(_minimalUserFrom(refreshedUser));
+            // Firestore doc missing: self-heal from cached user or auth credentials
+            // so we NEVER emit a blank minimal user that wipes identity.
+            final effectiveName = (cached != null &&
+                    cached.id == refreshedUser.uid &&
+                    cached.displayName != null &&
+                    cached.displayName!.trim().isNotEmpty)
+                ? cached.displayName
+                : refreshedUser.displayName;
+            final effectiveEmail = (cached != null &&
+                    cached.id == refreshedUser.uid &&
+                    cached.email.trim().isNotEmpty)
+                ? cached.email
+                : (refreshedUser.email ?? '');
+
+            final resolvedUser = (cached != null && cached.id == refreshedUser.uid)
+                ? cached.copyWith(
+                    displayName: effectiveName,
+                    isEmailVerified: refreshedUser.emailVerified,
+                  )
+                : UserModel(
+                    id: refreshedUser.uid,
+                    email: effectiveEmail,
+                    displayName: effectiveName,
+                    photoUrl: refreshedUser.photoURL,
+                    lastLoginDate: DateTime.now(),
+                    currentStreak: 1,
+                    isEmailVerified: refreshedUser.emailVerified,
+                    dailyXpHistory: const {},
+                    recentActivities: const [],
+                  );
+
+            try {
+              final map = resolvedUser.toMap();
+              map['lastRewardTimestamp'] = FieldValue.serverTimestamp();
+              await _firestore
+                  .collection('users')
+                  .doc(resolvedUser.id)
+                  .set(map, SetOptions(merge: true));
+            } catch (_) {}
+
+            await _localDataSource.cacheUser(resolvedUser);
+            _emit(resolvedUser);
           }
         }
       }
