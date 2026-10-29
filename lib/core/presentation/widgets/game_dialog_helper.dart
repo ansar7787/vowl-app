@@ -74,31 +74,31 @@ class GameDialogHelper {
     _sound.playLevelComplete();
     _haptic.success();
 
-    // ── Offline play quota tracking ──────────────────────────────────────
-    // When a free user completes a level while offline, increment the gate
-    // counter. After [OfflinePlayGateService.maxOfflineLevels] completions,
-    // the ConnectivityWrapper will hard-block until reconnection — ensuring
-    // ad revenue isn't permanently bypassed by airplane-mode abuse.
-    // Premium users are unaffected: NetworkInfo.setPremiumOverride makes
-    // their stream always report online, so this path never fires for them.
-    // Fire-and-forget: showCompletion is synchronous void; the quota update
-    // is registered before the next StreamBuilder rebuild in ConnectivityWrapper.
-    di
-        .sl<NetworkInfo>()
-        .isConnected
-        .then((connected) {
-          if (!connected) {
-            OfflinePlayGateService.instance.recordOfflineLevel();
-          }
-        })
-        .catchError((_) {
-          // Network check failed — treat as offline to be safe
-          OfflinePlayGateService.instance.recordOfflineLevel();
-        });
-
     final authState = context.read<AuthBloc>().state;
     final userLevel = authState.user?.level ?? 1;
     final isPremium = authState.user?.isPremium ?? false;
+
+    // ── Offline play quota tracking ──────────────────────────────────────
+    // When a free user completes a level while offline, increment the gate
+    // counter immediately. After [OfflinePlayGateService.maxOfflineLevels] completions,
+    // the ConnectivityWrapper will block further gameplay until reconnection.
+    // Premium users are unaffected: they have unlimited offline play with NO
+    // internet requirement.
+    if (!isPremium) {
+      final network = di.sl<NetworkInfo>();
+      if (network.isCurrentlyOffline) {
+        OfflinePlayGateService.instance.recordOfflineLevel(isPremium: false);
+      } else {
+        network.isConnected.then((connected) {
+          if (!connected) {
+            OfflinePlayGateService.instance.recordOfflineLevel(isPremium: false);
+          }
+        }).catchError((_) {
+          // Network check failed — treat as offline to be safe
+          OfflinePlayGateService.instance.recordOfflineLevel(isPremium: false);
+        });
+      }
+    }
 
     // Premium VIPs automatically receive the 3x coins multiplier (30 coins) natively
     // inside the authoritative updateUserRewards Firestore transaction. No secondary

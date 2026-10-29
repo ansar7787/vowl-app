@@ -220,6 +220,7 @@
     "subtitle": "5개의 핵심 퀘스트를 완료하여 150 코인을 획득하세요",
     "title": "초보자 발견 퀘스트"
   },
+  "beginner_quest": {},
   "categories": {
     "accent": "억양",
     "all": "모두",
@@ -241,7 +242,7 @@
   "category_games": {
     "game_stars": "게임 스타",
     "games": "게임",
-    "levels_count_short": "{}/{} LVLS",
+    "levels_count_short": "{}/{} 레벨",
     "mastery_summary_label": "{}% 숙련도, {} 중 {} 단계 완료",
     "mission_progress": "임무 진행 상태: {}%",
     "overall_mastery": "전반적인 숙련도",
@@ -352,15 +353,28 @@
   "connectivity": {
     "go_premium": "프리미엄으로 오프라인에서 플레이",
     "no_ad_cached": "오프라인에서는 광고를 이용할 수 없습니다. 계속하려면 다시 연결해 주세요.",
+    "no_ad_cached_hint": "보너스 오프라인 플레이가 필요하신가요? 보상 광고를 불러오려면 한 번 연결하거나 프리미엄으로 업그레이드하세요.",
     "no_internet_for_ads": "인터넷 연결이 없습니다. 광고를 보려면 네트워크를 확인하세요.",
     "offline_banner": "오프라인으로 플레이하기",
     "offline_banner_with_count": "오프라인 플레이 · {0}/{1}가 왼쪽에서 플레이함",
+    "offline_single_play_left": "오프라인 · 1회 남음!",
+    "offline_quota_exhausted_pill": "오프라인 · 0회 재생 남음",
+    "offline_info_sheet_title": "오프라인 무료 플레이",
+    "offline_info_sheet_quota": "{0}의 {1} 무료 오프라인 플레이가 남았습니다",
+    "offline_info_sheet_online_perk": "언제든 Wi-Fi나 모바일 데이터를 연결하여 무제한 무료 플레이를 복원하세요!",
+    "offline_info_sheet_premium_perk": "프리미엄 회원은 광고 없이 무제한 오프라인 플레이를 즐길 수 있습니다.",
+    "premium_offline_unlimited_desc": "광고 없이 어디서나 무제한 오프라인 플레이",
     "quota_subtitle": "오프라인에서 {0} 레벨을 플레이했습니다. 계속 플레이하려면 다시 연결하거나 광고를 시청하세요!",
+    "quota_subtitle_no_ad": "오프라인에서 {0} 레벨을 플레이했습니다. 무제한 무료 플레이를 복원하려면 다시 연결하세요!",
+    "still_offline": "인터넷 연결이 감지되지 않았습니다. Wi-Fi 또는 데이터를 확인해주세요.",
     "quota_title": "오프라인 한도에 도달했습니다",
     "retry_button": "연결 재시도",
     "retry_label": "인터넷 연결 재시도",
     "subtitle": "신호가 끊겼습니다. 계속하려면 연결을 다시 설정하세요.",
     "title": "연결 끊김",
+    "unlimited_online_title": "온라인 플레이는 항상 무제한입니다",
+    "unlimited_online_desc": "제한 없이 무료로 계속 플레이하려면 Wi-Fi 또는 모바일 데이터를 켜세요!",
+    "watch_ad_cached_desc": "기기에 저장됨 · 오프라인 재생",
     "watch_ad_continue": "광고 시청 시 +3 레벨",
     "no_internet_title": "연결 끊김"
   },
@@ -487,7 +501,7 @@
     "title": "퀘스트 사용 불가"
   },
   "game_progress": {
-    "level_label": "LEVEL {}",
+    "level_label": "레벨 {}",
     "lives_label": "{} 남은 생명",
     "progress_label": "진행 상황: {} 퍼센트"
   },
@@ -1044,7 +1058,10 @@
     "chest_tap_unveil": "탭하여 공개하기",
     "chest_tap_vip_loot": "VIP 전리품 받으려면 탭하세요",
     "chest_treasure_unlocked": "보물 잠금 해제",
+    "chest_vip_coins_collected": "VIP 보너스 코인",
     "chest_vip_gift": "VIP 데일리 선물",
+    "chest_vip_multiplier_applied": "독점 3배 프로 멀티플라이 적용",
+    "chest_vip_unlocked": "VIP 금고 잠금 해제!",
     "cl_levels_target": "{0} → {1} 수준",
     "coins": "동전",
     "coins_value_label": "{} 동전",
@@ -2657,9 +2674,12 @@
     "weekly_motivation_title": "일요일 복습 시간"
   },
   "onboarding": {
+    "continue": "계속",
     "get_started": "시작하기",
+    "have_account": "이미 계정이 있으신가요?",
+    "log_in": "로그인",
     "skip": "건너뛰기",
-    "welcome": "Vowl에 오신 것을 환영합니다!"
+    "step_indicator": "{1}의 단계 {0}"
   },
   "practice": {
     "go_premium": "무제한 마스터리 잠금 해제",
@@ -2749,6 +2769,11 @@
     "continue_learning": "계속 배우기"
   },
   "profile": {
+    "picture_updated": "프로필 사진이 성공적으로 업데이트되었습니다!",
+    "display_name_updated": "표시 이름이 성공적으로 업데이트되었습니다!",
+    "picture_update_failed": "프로필 사진 업데이트에 실패했습니다.",
+    "name_update_failed": "표시 이름을 업데이트하지 못했습니다.",
+    "update_failed": "프로필 업데이트에 실패했습니다.",
     "uploading": "업로드 중",
     "admin_dashboard": "관리자 대시보드",
     "adventure_stats": "모험 통계",

@@ -353,15 +353,28 @@
   "connectivity": {
     "go_premium": "プレミアムでオフライン再生",
     "no_ad_cached": "オフラインでは広告を利用できません。続行するには再接続してください。",
+    "no_ad_cached_hint": "オフラインプレイのボーナスが必要ですか?一度接続してリワード広告を読み込むか、プレミアムにアップグレードしてください。",
     "no_internet_for_ads": "インターネットに接続されていません。広告を見るにはネットワークを確認してください。",
     "offline_banner": "オフラインでプレイする",
     "offline_banner_with_count": "オフラインでプレイ · {0}/{1} が残りのプレイ",
+    "offline_single_play_left": "オフライン・残り1プレイ！",
+    "offline_quota_exhausted_pill": "オフライン · 残り 0 プレイ",
+    "offline_info_sheet_title": "オフライン無料プレイ",
+    "offline_info_sheet_quota": "{0} / {1}_ の無料オフライン プレイが残っています",
+    "offline_info_sheet_online_perk": "いつでも Wi-Fi またはモバイル データに接続して、無制限の無料プレイを復元しましょう!",
+    "offline_info_sheet_premium_perk": "プレミアム会員は、広告なしで無制限のオフライン プレイをお楽しみいただけます。",
+    "premium_offline_unlimited_desc": "広告なしでどこでも無制限のオフラインプレイが可能",
     "quota_subtitle": "オフラインで {0} レベルをプレイしました。プレイを続けるには再接続するか広告を見てください！",
+    "quota_subtitle_no_ad": "{0} レベルをオフラインでプレイしました。再接続すると無制限の無料プレイが復元されます!",
+    "still_offline": "インターネット接続が検出されませんでした。 Wi-Fi またはデータを確認してください。",
     "quota_title": "オフラインの上限に達しました",
     "retry_button": "接続を再試行",
     "retry_label": "インターネット接続を再試行",
     "subtitle": "信号が中断されました。続行するには接続を再確立してください。",
     "title": "接続が失われました",
+    "unlimited_online_title": "オンラインプレイはいつでも無制限",
+    "unlimited_online_desc": "Wi-Fi またはモバイル データをオンにすると、制限なく無料でプレイし続けることができます。",
+    "watch_ad_cached_desc": "デバイスに保存 · オフラインで再生",
     "watch_ad_continue": "広告を見てレベル+3",
     "no_internet_title": "接続が中断されました"
   },
@@ -1045,7 +1058,10 @@
     "chest_tap_unveil": "タップして公開",
     "chest_tap_vip_loot": "タップしてVIP戦利品を受け取る",
     "chest_treasure_unlocked": "宝物を解放",
+    "chest_vip_coins_collected": "VIPボーナスコイン",
     "chest_vip_gift": "VIPデイリーギフト",
+    "chest_vip_multiplier_applied": "独自の 3X PRO マルチプライヤーを適用",
+    "chest_vip_unlocked": "VIP保管庫がロック解除されました!",
     "cl_levels_target": "{0} → {1} レベル",
     "coins": "コイン",
     "coins_value_label": "{} コイン",
@@ -2658,9 +2674,12 @@
     "weekly_motivation_title": "日曜日の復習セッション"
   },
   "onboarding": {
+    "continue": "続ける",
     "get_started": "始める",
+    "have_account": "すでにアカウントをお持ちですか?",
+    "log_in": "ログイン",
     "skip": "スキップ",
-    "welcome": "Vowlへようこそ！"
+    "step_indicator": "ステップ {0} / {1}"
   },
   "practice": {
     "go_premium": "無制限の習熟を解き放つ",
@@ -2750,6 +2769,11 @@
     "continue_learning": "学び続ける"
   },
   "profile": {
+    "picture_updated": "プロフィール写真が正常に更新されました。",
+    "display_name_updated": "表示名が正常に更新されました。",
+    "picture_update_failed": "プロフィール写真の更新に失敗しました。",
+    "name_update_failed": "表示名の更新に失敗しました。",
+    "update_failed": "プロファイルの更新に失敗しました。",
     "uploading": "アップロード中",
     "admin_dashboard": "管理者ダッシュボード",
     "adventure_stats": "冒険の統計",

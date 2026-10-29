@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/presentation/pages/offline_quota_exhausted_page.dart';
@@ -71,13 +72,41 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
     AppRouter.streakRoute,
     AppRouter.levelRoute,
     AppRouter.kidsZoneRoute,
-    AppRouter.kidsHomeRoute,
     AppRouter.kidsBuddyBoutiqueRoute,
   };
+
+  /// Evaluates whether [path] is a non-gameplay screen where offline gameplay
+  /// quota blocking should never be displayed (e.g. login, map, profile, boutique).
+  static bool _isNonGameplayRoute(String path) {
+    if (path.isEmpty ||
+        path == '/' ||
+        path == AppRouter.initialRoute ||
+        path == AppRouter.splashRoute) {
+      return true;
+    }
+    if (_nonGameplayRoutes.contains(path)) return true;
+    if (path.startsWith('/kids/map')) return true;
+    if (path == AppRouter.kidsStickerBookRoute ||
+        path == AppRouter.kidsMascotSelectionRoute ||
+        path == AppRouter.kidsRoomRoute) {
+      return true;
+    }
+    return false;
+  }
 
   @override
   void initState() {
     super.initState();
+    try {
+      final matches =
+          AppRouter.router.routerDelegate.currentConfiguration.matches;
+      if (matches.isNotEmpty) {
+        _currentLocation.value = matches.last.matchedLocation;
+      } else {
+        _currentLocation.value =
+            AppRouter.router.routerDelegate.currentConfiguration.uri.path;
+      }
+    } catch (_) {}
     AppRouter.router.routerDelegate.addListener(_onRouteChange);
   }
 
@@ -126,15 +155,21 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
 
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
     final adService = di.sl<AdService>();
-    adService.showInterstitialAd(
-      isPremium: isPremium,
-      force: true, // Bypass frequency/cooldown gates on reconnect
-      onDismissed: () {
-        _isShowingReconnectAd = false;
-        gate.resetQuotaAfterAd();
-        if (mounted) _refreshTrigger.value++;
-      },
-    );
+    try {
+      adService.showInterstitialAd(
+        isPremium: isPremium,
+        force: true, // Bypass frequency/cooldown gates on reconnect
+        onDismissed: () {
+          _isShowingReconnectAd = false;
+          gate.resetQuotaAfterAd();
+          if (mounted) _refreshTrigger.value++;
+        },
+      );
+    } catch (_) {
+      _isShowingReconnectAd = false;
+      gate.resetQuotaAfterAd();
+      if (mounted) _refreshTrigger.value++;
+    }
   }
 
   /// Called when user watches a rewarded ad while offline for +3 levels.
@@ -159,7 +194,7 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
 
         final gate = OfflinePlayGateService.instance;
 
-        // ── Handle online transition ────────────────────────────────────
+        // â”€â”€ Handle online transition â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         if (!isOffline && _wasOffline) {
           // User came back online
           gate.markReconnected();
@@ -186,7 +221,7 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
                     final bool shouldShowQuotaBlock =
                         isOffline &&
                         isQuotaExhausted &&
-                        !_nonGameplayRoutes.contains(currentLocation);
+                        !_isNonGameplayRoute(currentLocation);
 
                     // 3. Soft banner: offline but within grace period, not on silent route
                     final bool shouldShowBanner =
@@ -221,8 +256,12 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
                                       if (AppRouter.router.canPop()) {
                                         AppRouter.router.pop();
                                       } else {
+                                        final isAdult =
+                                            AgeGateService.isAdultCached;
                                         AppRouter.router.go(
-                                          AppRouter.homeRoute,
+                                          isAdult
+                                              ? AppRouter.homeRoute
+                                              : AppRouter.kidsZoneRoute,
                                         );
                                       }
                                     },
@@ -233,12 +272,14 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
                           ),
                         ),
                         if (shouldShowBanner)
-                          const Positioned(
+                          Positioned(
                             top: 0,
                             left: 0,
                             right: 0,
                             child: OfflineBanner(
-                              key: ValueKey('connectivity_soft_banner'),
+                              key: ValueKey(
+                                'connectivity_soft_banner_${gate.remainingOfflinePlays}',
+                              ),
                             ),
                           ),
                       ],

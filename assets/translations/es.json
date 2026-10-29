@@ -353,15 +353,28 @@
   "connectivity": {
     "go_premium": "Juega sin conexión con Premium",
     "no_ad_cached": "No hay anuncios disponibles sin conexión. Vuelva a conectarse para continuar.",
+    "no_ad_cached_hint": "¿Necesitas jugadas extra sin conexión? Conéctese una vez para cargar anuncios recompensados ​​o actualice a Premium.",
     "no_internet_for_ads": "Sin conexión a Internet. Verifique su red para ver anuncios.",
     "offline_banner": "Jugar sin conexión",
     "offline_banner_with_count": "Jugando sin conexión · {0}/{1} juega a la izquierda",
+    "offline_single_play_left": "Sin conexión · ¡Queda 1 reproducción!",
+    "offline_quota_exhausted_pill": "Sin conexión · Quedan 0 reproducciones",
+    "offline_info_sheet_title": "Jugadas gratis sin conexión",
+    "offline_info_sheet_quota": "{0} de {1} reproducciones gratuitas sin conexión restantes",
+    "offline_info_sheet_online_perk": "¡Conéctate a Wi-Fi o datos móviles en cualquier momento para restaurar el juego gratuito ilimitado!",
+    "offline_info_sheet_premium_perk": "Los miembros Premium disfrutan de juegos ilimitados sin conexión y sin anuncios.",
+    "premium_offline_unlimited_desc": "Juego ilimitado sin conexión en todas partes y sin anuncios",
     "quota_subtitle": "Has jugado {0} niveles sin conexión. ¡Vuelve a conectarte o mira un anuncio para seguir jugando!",
+    "quota_subtitle_no_ad": "Has jugado {0} niveles sin conexión. ¡Vuelve a conectarte para restaurar el juego gratuito ilimitado!",
+    "still_offline": "No se detectó conexión a Internet. Por favor revisa Wi-Fi o datos.",
     "quota_title": "LÍMITE SIN CONEXIÓN ALCANZADO",
     "retry_button": "REINTENTAR CONEXIÓN",
     "retry_label": "Reintentar conexión a internet",
     "subtitle": "La señal ha sido interrumpida. Restablezca la conexión para continuar.",
     "title": "CONEXIÓN PERDIDA",
+    "unlimited_online_title": "El juego en línea es siempre ilimitado",
+    "unlimited_online_desc": "¡Activa Wi-Fi o datos móviles para seguir jugando gratis sin límites!",
+    "watch_ad_cached_desc": "Guardado en el dispositivo · Se reproduce sin conexión",
     "watch_ad_continue": "VER ANUNCIO PARA +3 NIVELES",
     "no_internet_title": "Conexión interrumpida"
   },
@@ -929,12 +942,12 @@
     "time_up": "¡Se acabó el tiempo!",
     "todays_topic": "EL TEMA DE HOY",
     "topic_vocab_instruction": "Ordena las palabras en el grupo correcto.",
-    "total_xp": "XP",
+    "total_xp": "experiencia",
     "triple_coins_button": "MONEDAS TRIPLES",
     "triple_coins_line": "Mira un anuncio para TRIPLICAR tus MONEDAS a {}!",
     "triple_reward_desc": "¡Mira un anuncio corto para multiplicar tus recompensas!",
     "triple_up_action": "Mira un anuncio para triplicar tus recompensas",
-    "triple_up_label": "TRIPLE UP (x)",
+    "triple_up_label": "TRIPLE ARRIBA (x)",
     "try_again": "Inténtalo de nuevo",
     "unlock_level_title": "¡Desbloquea los siguientes 3 niveles!",
     "use_hint": "Usa la pista ({} izquierda)",
@@ -1045,7 +1058,10 @@
     "chest_tap_unveil": "TOCA PARA REVELAR",
     "chest_tap_vip_loot": "TOCA PARA RECLAMAR BOTÍN VIP",
     "chest_treasure_unlocked": "TESORO DESBLOQUEADO",
+    "chest_vip_coins_collected": "MONEDAS DE BONIFICACIÓN VIP",
     "chest_vip_gift": "REGALO DIARIO VIP",
+    "chest_vip_multiplier_applied": "MULTIPLICADOR EXCLUSIVO 3X PRO APLICADO",
+    "chest_vip_unlocked": "¡BÓVEDA VIP DESBLOQUEADA!",
     "cl_levels_target": "{0} → Niveles de {1}",
     "coins": "MONEDAS",
     "coins_value_label": "{} monedas",
@@ -2539,7 +2555,7 @@
     "title": "Tabla de posiciones",
     "top_challengers": "Principales Retadores",
     "updated_at": "Actualizado {}",
-    "xp": "XP",
+    "xp": "experiencia",
     "you": "Tú",
     "your_standing": "Tu Posición"
   },
@@ -2658,9 +2674,12 @@
     "weekly_motivation_title": "Sesión de repaso del domingo"
   },
   "onboarding": {
+    "continue": "Continuar",
     "get_started": "Comenzar",
+    "have_account": "¿Ya tienes una cuenta?",
+    "log_in": "Iniciar sesión",
     "skip": "Saltar",
-    "welcome": "¡Bienvenido a Vowl!"
+    "step_indicator": "Paso {0} de {1}"
   },
   "practice": {
     "go_premium": "Desbloquea Maestría Ilimitada",
@@ -2734,7 +2753,7 @@
     "success_subtitle": "¡Bienvenido a Vowl Pro. Tu viaje de aprendizaje de élite comienza ahora!",
     "success_title": "ACTUALIZACIÓN EXITOSA",
     "terms": "Términos",
-    "title": "Vowl Premium",
+    "title": "Vocal Premium",
     "transaction_id_label": "ID de transacción",
     "valid_until": "Válido hasta:",
     "verified_pro_badge": "PRO VERIFICADO",
@@ -2750,6 +2769,11 @@
     "continue_learning": "Continuar aprendiendo"
   },
   "profile": {
+    "picture_updated": "¡Foto de perfil actualizada exitosamente!",
+    "display_name_updated": "¡El nombre para mostrar se actualizó correctamente!",
+    "picture_update_failed": "No se pudo actualizar la foto de perfil.",
+    "name_update_failed": "No se pudo actualizar el nombre para mostrar.",
+    "update_failed": "No se pudo actualizar el perfil.",
     "uploading": "SUBIENDO",
     "admin_dashboard": "Panel de administración",
     "adventure_stats": "Estadísticas de Aventura",
@@ -2776,7 +2800,7 @@
     "hall_of_fame_progress": "Progreso de la Colección",
     "hall_of_fame_vacant": "SALA DE LA FAMA VACANTE",
     "hall_of_fame_vacant_subtitle": "Reclama hitos para mostrar tus trofeos legendarios aquí.",
-    "id_badge": "ID",
+    "id_badge": "identificación",
     "kids_room_subtitle": "¡Juega, personaliza y explora tu habitación!",
     "kids_room_title": "Habitación de niños",
     "kids_stickers": "Pegatinas para niños",
@@ -2839,7 +2863,7 @@
   "quest_archive": {
     "completed": "COMPLETADO: {}%",
     "global_progress": "PROGRESO DEL ARCHIVO GLOBAL",
-    "level": "Lv.{}",
+    "level": "Nivel{}",
     "levels_cleared": "{}/{} NIVELES",
     "mastery": "{}% DOMINIO",
     "new_badge": "Nuevo",
@@ -2858,7 +2882,7 @@
     "status_initiate": "INICIAR",
     "status_legendary": "legendario",
     "title": "ARCHIVO DE BÚSQUEDAS",
-    "xp_power": "XP POWER"
+    "xp_power": "POTENCIA XP"
   },
   "quest_sequence": {
     "all_parts_done": "¡Todas las partes completadas!",
@@ -3032,7 +3056,7 @@
     "yes_disable": "Sí, desactivar"
   },
   "snackbar": {
-    "error": "Error",
+    "error": "error",
     "info": "Información",
     "success": "Éxito",
     "warning": "Advertencia"
@@ -3116,7 +3140,7 @@
     "not_enough_stars_desc": "¡Necesitas {} estrellas más para abrir este cofre!",
     "not_enough_stars_title": "NO HAY SUFICIENTES ESTRELLAS",
     "not_enough_toys_title": "NO HAY SUFICIENTES JUGUETES",
-    "ok": "OK",
+    "ok": "bien",
     "order_error": "No se puede procesar el pago en este momento. Por favor, inténtelo de nuevo más tarde.",
     "out_of_ads_today": "Sin anuncios hoy",
     "premium_bypass_gates": "¡Los usuarios premium evitan todas las barreras!",
@@ -3141,7 +3165,7 @@
     "use_key_to_unlock": "USA 1 LLAVE PARA ABRIR",
     "vault_subtitle": "¡Recoge estrellas para desbloquear recompensas masivas!",
     "vault_title": "Bóveda Estelar",
-    "vowl_premium_label": "VOWL PREMIUM",
+    "vowl_premium_label": "VOCA PREMIUM",
     "watch_ad_for_key": "Ver anuncio para la llave",
     "watch_ad_key": "Ver anuncio para la llave",
     "watch_ad_magic_stars": "Ver anuncio para +2 estrellas de magia",
@@ -4147,7 +4171,7 @@
   "vowl_mascot": {
     "action_disconnect": "DESCONECTAR",
     "action_link": "ENLACE",
-    "elite_fallback_name": "Vowl Elite",
+    "elite_fallback_name": "Vocal Élite",
     "elite_interface_label": "INTERFAZ ELITE:",
     "equipped_status": "Equipado",
     "feedback_augment_integrated": "¡Integración aumentada!",
@@ -4171,7 +4195,7 @@
     "majestic_guidance_active": "ORIENTACIÓN MAJESTUOSA",
     "pet_action": "Acaricia a tu mascota",
     "sanctuary_linked": "ENLACE DE SANTUARIO",
-    "title": "VOWL ELITE"
+    "title": "ÉLITE DE VOCA"
   },
   "welcome_showcase": {
     "continue_btn": "Continuar",

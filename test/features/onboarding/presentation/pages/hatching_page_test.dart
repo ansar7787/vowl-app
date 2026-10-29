@@ -63,6 +63,8 @@ void main() {
       ),
     ).thenAnswer((_) async {});
     when(() => mockTts.stop()).thenAnswer((_) async {});
+    when(() => mockTts.isSpeakingNotifier).thenReturn(ValueNotifier<bool>(false));
+    when(() => mockTts.isSpeaking).thenReturn(false);
     when(() => mockLocale.currentLocale).thenReturn(const Locale('en'));
     when(
       () => mockLocale.tr(

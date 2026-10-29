@@ -201,6 +201,10 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       expect(find.text('WATCH AD FOR +3 LEVELS'), findsNothing);
+      expect(
+        find.text("You've played 3 levels offline. Reconnect to restore unlimited free play!"),
+        findsOneWidget,
+      );
       expect(find.text('RETRY CONNECTION'), findsOneWidget);
     });
 
@@ -253,7 +257,7 @@ void main() {
       expect(find.byType(VowlButtonSpinner), findsOneWidget);
       expect(retryCalledCount, 1);
 
-      // Tap again while checking — must be guarded and not re-invoke
+      // Tap again while checking â€” must be guarded and not re-invoke
       await tester.tap(find.byType(VowlButtonSpinner));
       await tester.pump();
       expect(retryCalledCount, 1);

@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
@@ -138,16 +139,29 @@ class GameFeedbackCard extends StatelessWidget {
     final bool showEducationalInfo = success || isFinalFailure;
     final bool showPedagogicalFields = showEducationalInfo && !isTwoStageGame;
 
+    final mediaQuery = MediaQuery.of(context);
+    // Use viewPadding.bottom to accurately detect physical hardware or software
+    // navigation bars (e.g. 3-button navigation = 48-56dp) vs gesture insets (16-24dp).
+    final bottomInset = mediaQuery.viewPadding.bottom > 0
+        ? mediaQuery.viewPadding.bottom
+        : mediaQuery.padding.bottom;
+    final extraBottomSpace = math.max(16.0, 16.h);
+    final bottomPadding = bottomInset > 0
+        ? (bottomInset + extraBottomSpace)
+        : math.max(24.0, 24.h);
+    final maxHeight = mediaQuery.size.height * 0.85;
+
     return ClipRRect(
-      borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+      borderRadius: BorderRadius.vertical(top: Radius.circular(36.r)),
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.all(28.r),
+        constraints: BoxConstraints(maxHeight: maxHeight),
+        padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, bottomPadding),
         decoration: BoxDecoration(
           color: isDark
               ? Colors.black.withValues(alpha: 0.85)
               : Colors.white.withValues(alpha: 0.95),
-          borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(36.r)),
           border: Border.all(
             color: Colors.white.withValues(alpha: 0.1),
             width: 1.5,
@@ -160,123 +174,129 @@ class GameFeedbackCard extends StatelessWidget {
             ),
           ],
         ),
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _buildResultRow(context, icon, title, gradient),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Flexible(
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    _buildResultRow(context, icon, title, gradient),
 
-              if (showEducationalInfo && customContent != null) ...[
-                SizedBox(height: 16.h),
-                customContent!,
-              ],
+                    if (showEducationalInfo && customContent != null) ...[
+                      SizedBox(height: 16.h),
+                      customContent!,
+                    ],
 
-              // Correct answer card (when available on final failure)
-              if (showEducationalInfo &&
-                  correctAnswer != null &&
-                  correctAnswer!.trim().isNotEmpty) ...[
-                SizedBox(height: 16.h),
-                PedagogicalRuleBox(
-                  icon: Icons.check_circle_outline_rounded,
-                  capsKey: 'games.correct_answer_caps',
-                  capsFallback: 'CORRECT ANSWER',
-                  titleKey: 'games.correct_answer',
-                  titleFallback: 'Correct Answer',
-                  rule: correctAnswer!,
-                  shadowColor: shadowColor,
-                  isDark: isDark,
-                  isKids: isKids,
+                    // Correct answer card (when available on final failure)
+                    if (showEducationalInfo &&
+                        correctAnswer != null &&
+                        correctAnswer!.trim().isNotEmpty) ...[
+                      SizedBox(height: 16.h),
+                      PedagogicalRuleBox(
+                        icon: Icons.check_circle_outline_rounded,
+                        capsKey: 'games.correct_answer_caps',
+                        capsFallback: 'CORRECT ANSWER',
+                        titleKey: 'games.correct_answer',
+                        titleFallback: 'Correct Answer',
+                        rule: correctAnswer!,
+                        shadowColor: shadowColor,
+                        isDark: isDark,
+                        isKids: isKids,
+                      ),
+                    ],
+
+                    // Single pedagogical rule (Grammar, Kids Fun Fact, etc.)
+                    if (showPedagogicalFields &&
+                        ruleContent != null &&
+                        ruleContent!.trim().isNotEmpty) ...[
+                      SizedBox(height: 16.h),
+                      PedagogicalRuleBox(
+                        icon: Icons.menu_book_rounded,
+                        capsKey: '',
+                        capsFallback: ruleTitle ?? 'RULE',
+                        titleKey: '',
+                        titleFallback: ruleTitle ?? 'Rule',
+                        rule: ruleContent!,
+                        shadowColor: shadowColor,
+                        isDark: isDark,
+                        isKids: isKids,
+                      ),
+                    ],
+
+                    // Multiple pedagogical rules (Accent prosody, Elite Mastery patterns)
+                    if (showPedagogicalFields && pedagogicalRules != null) ...[
+                      for (final item in pedagogicalRules!) ...[
+                        SizedBox(height: 16.h),
+                        PedagogicalRuleBox(
+                          icon: item.icon,
+                          capsKey: '',
+                          capsFallback: item.title.toUpperCase(),
+                          titleKey: '',
+                          titleFallback: item.title,
+                          rule: item.rule,
+                          shadowColor: shadowColor,
+                          isDark: isDark,
+                          isKids: isKids,
+                        ),
+                      ],
+                    ],
+
+                    // Explanation card with interactive Translate & TTS Speaker buttons
+                    if (showEducationalInfo &&
+                        explanation != null &&
+                        explanation!.trim().isNotEmpty) ...[
+                      SizedBox(height: 16.h),
+                      _ExplanationCard(
+                        originalExplanation: explanation!,
+                        accentColor: shadowColor,
+                        isDark: isDark,
+                        isKids: isKids,
+                      ),
+                    ],
+
+                    if (showPedagogicalFields &&
+                        sampleAnswer != null &&
+                        sampleAnswer!.trim().isNotEmpty) ...[
+                      SizedBox(height: 16.h),
+                      PedagogicalRuleBox(
+                        icon: Icons.lightbulb_outline_rounded,
+                        capsKey: 'games.sample_answer_caps',
+                        capsFallback: 'SAMPLE ANSWER',
+                        titleKey: 'games.sample_answer',
+                        titleFallback: 'Sample Answer',
+                        rule: sampleAnswer!,
+                        shadowColor: shadowColor,
+                        isDark: isDark,
+                        isKids: isKids,
+                      ),
+                    ],
+
+                    if (showPedagogicalFields &&
+                        requiredPoints != null &&
+                        requiredPoints!.isNotEmpty) ...[
+                      SizedBox(height: 16.h),
+                      PedagogicalRuleBox(
+                        icon: Icons.checklist_rounded,
+                        capsKey: 'games.required_points_caps',
+                        capsFallback: 'REQUIRED POINTS',
+                        titleKey: 'games.required_points',
+                        titleFallback: 'Required Points',
+                        rule: requiredPoints!.join("\n• "),
+                        shadowColor: shadowColor,
+                        isDark: isDark,
+                        isKids: isKids,
+                      ),
+                    ],
+                  ],
                 ),
-              ],
-
-              // Single pedagogical rule (Grammar, Kids Fun Fact, etc.)
-              if (showPedagogicalFields &&
-                  ruleContent != null &&
-                  ruleContent!.trim().isNotEmpty) ...[
-                SizedBox(height: 16.h),
-                PedagogicalRuleBox(
-                  icon: Icons.menu_book_rounded,
-                  capsKey: '',
-                  capsFallback: ruleTitle ?? 'RULE',
-                  titleKey: '',
-                  titleFallback: ruleTitle ?? 'Rule',
-                  rule: ruleContent!,
-                  shadowColor: shadowColor,
-                  isDark: isDark,
-                  isKids: isKids,
-                ),
-              ],
-
-              // Multiple pedagogical rules (Accent prosody, Elite Mastery patterns)
-              if (showPedagogicalFields && pedagogicalRules != null) ...[
-                for (final item in pedagogicalRules!) ...[
-                  SizedBox(height: 16.h),
-                  PedagogicalRuleBox(
-                    icon: item.icon,
-                    capsKey: '',
-                    capsFallback: item.title.toUpperCase(),
-                    titleKey: '',
-                    titleFallback: item.title,
-                    rule: item.rule,
-                    shadowColor: shadowColor,
-                    isDark: isDark,
-                    isKids: isKids,
-                  ),
-                ],
-              ],
-
-              // Explanation card with interactive Translate & TTS Speaker buttons
-              if (showEducationalInfo &&
-                  explanation != null &&
-                  explanation!.trim().isNotEmpty) ...[
-                SizedBox(height: 16.h),
-                _ExplanationCard(
-                  originalExplanation: explanation!,
-                  accentColor: shadowColor,
-                  isDark: isDark,
-                  isKids: isKids,
-                ),
-              ],
-
-              if (showPedagogicalFields &&
-                  sampleAnswer != null &&
-                  sampleAnswer!.trim().isNotEmpty) ...[
-                SizedBox(height: 16.h),
-                PedagogicalRuleBox(
-                  icon: Icons.lightbulb_outline_rounded,
-                  capsKey: 'games.sample_answer_caps',
-                  capsFallback: 'SAMPLE ANSWER',
-                  titleKey: 'games.sample_answer',
-                  titleFallback: 'Sample Answer',
-                  rule: sampleAnswer!,
-                  shadowColor: shadowColor,
-                  isDark: isDark,
-                  isKids: isKids,
-                ),
-              ],
-
-              if (showPedagogicalFields &&
-                  requiredPoints != null &&
-                  requiredPoints!.isNotEmpty) ...[
-                SizedBox(height: 16.h),
-                PedagogicalRuleBox(
-                  icon: Icons.checklist_rounded,
-                  capsKey: 'games.required_points_caps',
-                  capsFallback: 'REQUIRED POINTS',
-                  titleKey: 'games.required_points',
-                  titleFallback: 'Required Points',
-                  rule: requiredPoints!.join("\n• "),
-                  shadowColor: shadowColor,
-                  isDark: isDark,
-                  isKids: isKids,
-                ),
-              ],
-
-              SizedBox(height: 28.h),
-              _buildActionButton(context, buttonText, gradient, shadowColor),
-            ],
-          ),
+              ),
+            ),
+            SizedBox(height: 18.h),
+            _buildActionButton(context, buttonText, gradient, shadowColor),
+          ],
         ),
       ),
     );
@@ -348,7 +368,7 @@ class GameFeedbackCard extends StatelessWidget {
       },
       child: Container(
         width: double.infinity,
-        height: 65.h,
+        height: math.max(54.0, 60.h),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.r),
           gradient: LinearGradient(

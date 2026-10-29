@@ -73,7 +73,7 @@
     "tier_beginner": "Débutant",
     "tier_expert": "expert",
     "tier_master": "Maître",
-    "tier_novice": "Novice",
+    "tier_novice": "Débutant",
     "time_days_ago": "{}d il y a",
     "time_hours_ago": "{}h il y a",
     "time_just_now": "À l'instant",
@@ -107,7 +107,7 @@
     "check_spam_hint": "Vous ne l'avez pas reçu ? Veuillez vérifier votre dossier de courrier indésirable.",
     "email_field_hint_forgot_password": "Entrez votre adresse e-mail",
     "email_field_hint_generic": "Adresse e-mail",
-    "email_field_label": "Email",
+    "email_field_label": "Courriel",
     "email_hint_full": "Entrez votre adresse e-mail",
     "email_hint_short": "Entrez votre adresse e-mail",
     "email_verification_sent": "Lien de vérification envoyé ! Jetez un coup d'œil rapide à votre boîte de réception.",
@@ -249,7 +249,7 @@
     "percent_completed": "{}% TERMINÉ",
     "power": "POUVOIR",
     "rank_beginner": "DÉBUTANT",
-    "rank_novice": "NOVICE",
+    "rank_novice": "DÉBUTANT",
     "rank_scholar": "ERUDIT",
     "rank_virtuoso": "VIRTUOSE",
     "mastered": "maîtrisé",
@@ -353,15 +353,28 @@
   "connectivity": {
     "go_premium": "Jouer hors ligne avec Premium",
     "no_ad_cached": "Aucune publicité disponible hors ligne. Veuillez vous reconnecter pour continuer.",
+    "no_ad_cached_hint": "Besoin de jeux bonus hors ligne ? Connectez-vous une fois pour charger des annonces avec récompense ou passer à Premium.",
     "no_internet_for_ads": "Pas de connexion Internet. Veuillez vérifier votre réseau pour regarder des publicités.",
     "offline_banner": "Jouer hors ligne",
     "offline_banner_with_count": "Jouer hors ligne · {0}/{1} joue à gauche",
+    "offline_single_play_left": "Hors ligne · 1 partie restante !",
+    "offline_quota_exhausted_pill": "Hors ligne · 0 écoute restante",
+    "offline_info_sheet_title": "Jeux gratuits hors ligne",
+    "offline_info_sheet_quota": "Il reste {0} de {1} lectures hors ligne gratuites",
+    "offline_info_sheet_online_perk": "Connectez-vous au Wi-Fi ou aux données mobiles à tout moment pour restaurer un jeu gratuit et illimité !",
+    "offline_info_sheet_premium_perk": "Les membres Premium bénéficient d’un jeu hors ligne illimité sans publicité.",
+    "premium_offline_unlimited_desc": "Jouez hors ligne illimité partout sans publicité",
     "quota_subtitle": "Vous avez joué à {0} niveaux hors ligne. Reconnectez-vous ou regardez une annonce pour continuer à jouer !",
+    "quota_subtitle_no_ad": "Vous avez joué aux niveaux {0} hors ligne. Reconnectez-vous pour restaurer le jeu gratuit et illimité !",
+    "still_offline": "Aucune connexion Internet détectée. Veuillez vérifier le Wi-Fi ou les données.",
     "quota_title": "LIMITE HORS LIGNE ATTEINTE",
     "retry_button": "RÉESSAYER LA CONNEXION",
     "retry_label": "Réessayer la connexion Internet",
     "subtitle": "Le signal a été interrompu. Veuillez rétablir la connexion pour continuer.",
     "title": "CONNEXION PERDUE",
+    "unlimited_online_title": "Le jeu en ligne est toujours illimité",
+    "unlimited_online_desc": "Activez le Wi-Fi ou les données mobiles pour continuer à jouer gratuitement et sans limites !",
+    "watch_ad_cached_desc": "Enregistré sur l'appareil · Lecture hors ligne",
     "watch_ad_continue": "REGARDER LA PUBLICITÉ POUR +3 NIVEAUX",
     "no_internet_title": "Connexion interrompue"
   },
@@ -454,7 +467,7 @@
     "search_hint": "Recherche de fonctionnalités et de jeux...",
     "subtitle": "Trouvez n'importe quel jeu, outil ou laboratoire pratique dans Vowl",
     "title": "Explorer toutes les fonctionnalités",
-    "tour_pill": "Tour"
+    "tour_pill": "Visite"
   },
   "game": {
     "audio_clue_activated": "INDICE AUDIO ACTIVÉ",
@@ -1033,7 +1046,7 @@
     "all_letters_used": "Toutes les lettres sont placées. Touchez n'importe quelle lettre ci-dessus pour la retirer.",
     "already_completed_title": "Défi terminé !",
     "avatar_progress_label": "Avatar de maîtrise, {}% de progression vers le niveau suivant",
-    "badges": "BADGES",
+    "badges": "INSIGNES",
     "challenge_bypassed": "DÉFI FRANCHI",
     "challenge_bypassed_desc": "Vous avez contourné le défi d'aujourd'hui en regardant une publicité.",
     "chest_claimed": "RÉCLAMÉ !",
@@ -1045,7 +1058,10 @@
     "chest_tap_unveil": "TOUCHEZ POUR DÉVOILER",
     "chest_tap_vip_loot": "TOUCHEZ POUR RÉCLAMER LE BUTIN VIP",
     "chest_treasure_unlocked": "TRÉSOR DÉVERROUILLÉ",
+    "chest_vip_coins_collected": "PIÈCES BONUS VIP",
     "chest_vip_gift": "CADEAU QUOTIDIEN VIP",
+    "chest_vip_multiplier_applied": "MULTIPLICATEUR EXCLUSIF 3X PRO APPLIQUÉ",
+    "chest_vip_unlocked": "COFFRE VIP DÉBLOQUÉ !",
     "cl_levels_target": "{0} → Niveaux {1}",
     "coins": "PIÈCES",
     "coins_value_label": "{} pièces",
@@ -1128,7 +1144,7 @@
     "quest_journey_progress_label": "Progression du voyage",
     "quests_count": "{} QUÊTES",
     "rank": "RANG",
-    "rank_commander": "COMMANDER",
+    "rank_commander": "COMMANDANT",
     "rank_elite": "ÉLITE",
     "rank_label": "Rang",
     "rank_legend": "LÉGENDE",
@@ -1155,7 +1171,7 @@
     "tools_explore_all": "Explorer tout",
     "tools_explore_all_label": "Explorez toutes les 50+ fonctionnalités et outils",
     "tools_explore_count": "50+ OUTILS",
-    "tools_instant": "Instant",
+    "tools_instant": "Instantané",
     "tools_kids_fun": "Amusement et Apprentissage",
     "tools_kids_zone": "Espace Enfants",
     "tools_kids_zone_tip": "Jeux sûrs et ludiques conçus pour les jeunes apprenants",
@@ -1251,7 +1267,7 @@
       "rule_1": "Décidez si le nom est spécifique",
       "rule_2": "Fais éclater l'orbe d'article correspondant",
       "tip": "ASTUCE PROFESSIONNELLE : Utilisez « the » lorsque vous parlez d'une chose spécifique, et « a » ou « an » lorsque vous parlez de quelque chose en général.",
-      "title": "Article Orb"
+      "title": "Orbe d'article"
     },
     "audioFillBlanks": {
       "actionText": "Commencer le décodage",
@@ -2571,7 +2587,7 @@
     "complete_default": "La victoire est à vous ! {}",
     "complete_elite_mastery": "Conquérant d'élite ! {}",
     "complete_grammar": "Maître de la grammaire ! {}",
-    "complete_kids": "Super Star! {}",
+    "complete_kids": "Super étoile ! {}",
     "complete_listening": "Parfaite Pitch ! {}",
     "complete_reading": "Maître du savoir ! {}",
     "complete_roleplay": "Acteur star ! {}",
@@ -2658,9 +2674,12 @@
     "weekly_motivation_title": "Séance de révision du dimanche"
   },
   "onboarding": {
+    "continue": "Continuer",
     "get_started": "Commencer",
+    "have_account": "Vous avez déjà un compte ?",
+    "log_in": "Connectez-vous",
     "skip": "Passer",
-    "welcome": "Bienvenue chez Vowl !"
+    "step_indicator": "Étape {0} de {1}"
   },
   "practice": {
     "go_premium": "Déverrouillez la maîtrise illimitée",
@@ -2750,6 +2769,11 @@
     "continue_learning": "Continuer à apprendre"
   },
   "profile": {
+    "picture_updated": "Photo de profil mise à jour avec succès !",
+    "display_name_updated": "Le nom d'affichage a été mis à jour avec succès !",
+    "picture_update_failed": "Échec de la mise à jour de la photo de profil.",
+    "name_update_failed": "Échec de la mise à jour du nom d'affichage.",
+    "update_failed": "Échec de la mise à jour du profil.",
     "uploading": "TÉLÉVERSEMENT",
     "admin_dashboard": "Tableau de bord administrateur",
     "adventure_stats": "Statistiques d'aventure",
@@ -2769,14 +2793,14 @@
     "empty_vault": "Le coffre est vide. Jouez à des jeux pour débloquer des meubles légendaires pour votre mascotte !",
     "enter_new_name_hint": "Entrez un nouveau nom",
     "filter_legendary": "Légendaire",
-    "filter_standard": "Standard",
+    "filter_standard": "Norme",
     "golden_keys_subtitle": "Obtenez plus de clés pour débloquer les portes instantanément !",
     "golden_keys_title": "Clés dorées",
     "hall_of_fame": "Temple de la renommée",
     "hall_of_fame_progress": "Progression de la collection",
     "hall_of_fame_vacant": "SALLE DE LA RÉPUTATION VACANTE",
     "hall_of_fame_vacant_subtitle": "Réclamez des étapes pour afficher vos trophées légendaires ici.",
-    "id_badge": "ID",
+    "id_badge": "pièce d'identité",
     "kids_room_subtitle": "Jouez, personnalisez et explorez votre chambre !",
     "kids_room_title": "Chambre d'enfants",
     "kids_stickers": "Autocollants pour enfants",
@@ -2839,7 +2863,7 @@
   "quest_archive": {
     "completed": "TERMINÉ : {}%",
     "global_progress": "PROGRÈS DE L'ARCHIVE MONDIALE",
-    "level": "Lv.{}",
+    "level": "Niv.{}",
     "levels_cleared": "{}/{} NIVEAUX",
     "mastery": "{}% MAÎTRISE",
     "new_badge": "NOUVEAU",
@@ -2851,14 +2875,14 @@
     "search_hint": "Rechercher des quêtes...",
     "status": "STATUT",
     "status_adventurer": "Aventurier",
-    "status_champion": "CHAMPION",
+    "status_champion": "CHAMPIONNAIRE",
     "status_conqueror": "CONQUÉRANT",
     "status_explorer": "EXPLORATEUR",
     "status_grandmaster": "GRAND MAÎTRE",
     "status_initiate": "INITIER",
     "status_legendary": "LÉGENDAIRE",
     "title": "ARCHIVE DE QUÊTE",
-    "xp_power": "XP POWER"
+    "xp_power": "PUISSANCE XP"
   },
   "quest_sequence": {
     "all_parts_done": "Toutes les parties terminées !",
@@ -2962,7 +2986,7 @@
     "danger_zone": "Zone de danger",
     "delete_account": "Supprimer le compte",
     "email_error": "Impossible d'ouvrir votre application de messagerie.",
-    "explorer": "Explorer",
+    "explorer": "Explorateur",
     "free_account": "COMPTE GRATUIT",
     "game_sounds": "Sons de jeu",
     "game_sounds_subtitle": "Célébratoire ressemble à des acclamations",
@@ -3033,7 +3057,7 @@
   },
   "snackbar": {
     "error": "Erreur",
-    "info": "Info",
+    "info": "Informations",
     "success": "Succès",
     "warning": "Avertissement"
   },
@@ -4147,7 +4171,7 @@
   "vowl_mascot": {
     "action_disconnect": "DÉCONNECTER",
     "action_link": "LIEN",
-    "elite_fallback_name": "Vowl Elite",
+    "elite_fallback_name": "Vowl Élite",
     "elite_interface_label": "INTERFACE D'ÉLITE :",
     "equipped_status": "Équipé",
     "feedback_augment_integrated": "Augment intégré !",
@@ -4171,7 +4195,7 @@
     "majestic_guidance_active": "ORIENTATION MAJESTUEUSE",
     "pet_action": "Caressez votre mascotte",
     "sanctuary_linked": "SANCTUAIRE LIÉ",
-    "title": "VOWL ELITE"
+    "title": "VOWL ÉLITE"
   },
   "welcome_showcase": {
     "continue_btn": "Continuer",
