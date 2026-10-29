@@ -78,6 +78,14 @@ abstract class TtsService {
     double normalRate = 0.8,
     double slowRate = 0.32,
   });
+
+  /// Pre-warms the native TTS engine, applying preset and language in the background
+  /// to eliminate audio synthesis latency when [speak] is subsequently invoked.
+  Future<void> preWarm({
+    String? locale,
+    TtsVoicePreset? preset,
+    bool isKids = false,
+  }) async {}
 }
 
 /// Concrete high-performance implementation of [TtsService] integrating with the `flutter_tts` package.
@@ -216,6 +224,37 @@ class TtsServiceImpl implements TtsService {
         'TtsService: Error reloading voice preset',
         error: e,
       );
+    }
+  }
+
+  @override
+  Future<void> preWarm({
+    String? locale,
+    TtsVoicePreset? preset,
+    bool isKids = false,
+  }) async {
+    await _initFuture;
+    try {
+      final targetPreset = preset ?? await TtsVoiceHelper.getSavedPreset();
+      final targetLocale = locale ?? 'en-US';
+      final bool needsCalibration = _activeEnginePreset != targetPreset ||
+          _activeIsKids != isKids ||
+          _activeLocale != targetLocale;
+
+      if (needsCalibration) {
+        await TtsVoiceHelper.applyPresetToTts(
+          _flutterTts,
+          preset: targetPreset,
+          isKids: isKids,
+          explicitLocale: targetLocale,
+        );
+        _activeEnginePreset = targetPreset;
+        _activeIsKids = isKids;
+        _activeLocale = targetLocale;
+        _activeRate = isKids ? 0.42 : 0.44;
+      }
+    } catch (e) {
+      sl<AppLogger>().warning('TtsService: preWarm failed: $e', tag: 'TTS');
     }
   }
 
