@@ -148,24 +148,7 @@ class SettingsDialogs {
                       fallback: 'Sign Out',
                     ),
                     color: Colors.red,
-                    onPressed: () async {
-                      final networkInfo = di.sl.isRegistered<NetworkInfo>()
-                          ? di.sl<NetworkInfo>()
-                          : null;
-                      if (networkInfo != null && !await networkInfo.hasRealConnection) {
-                        if (context.mounted) {
-                          CustomSnackBar.show(
-                            context: context,
-                            message: context.tr(
-                              'auth.error.network_unreachable',
-                              fallback:
-                                  'No internet connection. Please check your network and try again.',
-                            ),
-                            type: CustomSnackBarType.error,
-                          );
-                        }
-                        return;
-                      }
+                    onPressed: () {
                       if (dialogContext.mounted) {
                         Navigator.pop(dialogContext);
                       }
@@ -1257,27 +1240,7 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
                       ),
                       color: Colors.red,
                       onPressed: isConfirmed && !isDeleting
-                          ? () async {
-                              final networkInfo =
-                                  di.sl.isRegistered<NetworkInfo>()
-                                      ? di.sl<NetworkInfo>()
-                                      : null;
-                              if (networkInfo != null &&
-                                  !await networkInfo.hasRealConnection) {
-                                if (context.mounted) {
-                                  Navigator.pop(context);
-                                  CustomSnackBar.show(
-                                    context: context,
-                                    message: context.tr(
-                                      'auth.error.network_unreachable',
-                                      fallback:
-                                          'No internet connection. Please check your network and try again.',
-                                    ),
-                                    type: CustomSnackBarType.error,
-                                  );
-                                }
-                                return;
-                              }
+                          ? () {
                               _isDeleting.value = true;
                               widget.authBloc.add(
                                 const AuthDeleteAccountRequested(),

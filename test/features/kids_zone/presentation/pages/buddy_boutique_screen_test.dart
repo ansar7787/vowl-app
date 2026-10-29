@@ -387,7 +387,7 @@ void main() {
         childSafe: any(named: 'childSafe'),
         onUserEarnedReward: any(named: 'onUserEarnedReward'),
         onDismissed: any(named: 'onDismissed'),
-      )).thenAnswer((invocation) {
+      )).thenAnswer((invocation) async {
         final onReward = invocation.namedArguments[#onUserEarnedReward] as Function(RewardItem);
         onReward(FakeRewardItem());
         final onDismiss = invocation.namedArguments[#onDismissed] as VoidCallback;

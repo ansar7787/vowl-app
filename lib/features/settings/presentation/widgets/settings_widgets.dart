@@ -1,7 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
-import 'package:vowl/core/network/network_info.dart';
-import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -387,27 +385,9 @@ class SettingsLogoutButton extends StatelessWidget {
             child: Material(
               color: Colors.transparent,
               child: InkWell(
-                onTap: () async {
-                  final networkInfo = di.sl.isRegistered<NetworkInfo>()
-                      ? di.sl<NetworkInfo>()
-                      : null;
-                  if (networkInfo != null && !await networkInfo.hasRealConnection) {
-                    if (context.mounted) {
-                      CustomSnackBar.show(
-                        context: context,
-                        message: context.tr(
-                          'auth.error.network_unreachable',
-                          fallback:
-                              'No internet connection. Please check your network and try again.',
-                        ),
-                        type: CustomSnackBarType.error,
-                      );
-                    }
-                    return;
-                  }
-                  if (context.mounted) {
-                    SettingsDialogs.showLogout(context);
-                  }
+                onTap: () {
+                  di.sl<HapticService>().warning();
+                  SettingsDialogs.showLogout(context);
                 },
                 borderRadius: BorderRadius.circular(24.r),
                 child: Padding(

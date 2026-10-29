@@ -40,14 +40,53 @@ abstract class NetworkInfo {
   /// sign out) are caught by [FirebaseFailureHandlerMixin] and surfaced as
   /// [NetworkFailure] → the user sees a clear "No internet" error message.
   void setPremiumOverride(bool isPremium);
+
+  /// Synchronous snapshot of the current network connectivity status.
+  AppNetworkStatus get currentStatus => AppNetworkStatus.online;
+
+  /// Resolves true immediately if the device is currently detected as offline
+  /// and does not have an active premium override.
+  bool get isCurrentlyOffline => false;
 }
 
 /// Concrete high-performance implementation of the [NetworkInfo] contract.
 class NetworkInfoImpl implements NetworkInfo {
   final InternetConnection _connectionChecker;
   bool _isPremiumOverride = false;
+  AppNetworkStatus _currentStatus = AppNetworkStatus.online;
+  StreamSubscription<InternetStatus>? _statusSubscription;
 
-  NetworkInfoImpl(this._connectionChecker);
+  NetworkInfoImpl(this._connectionChecker) {
+    // Keep _currentStatus continuously synchronized without blocking network ping delays
+    _statusSubscription = _connectionChecker.onStatusChange.listen((status) {
+      _currentStatus = (status == InternetStatus.connected)
+          ? AppNetworkStatus.online
+          : AppNetworkStatus.offline;
+    });
+
+    // Seed initial interface state immediately
+    _connectionChecker.internetStatus.then((status) {
+      _currentStatus = (status == InternetStatus.connected)
+          ? AppNetworkStatus.online
+          : AppNetworkStatus.offline;
+    }).catchError((_) {
+      _currentStatus = AppNetworkStatus.offline;
+    });
+  }
+
+  /// Cancels background status subscription upon teardown.
+  void dispose() {
+    _statusSubscription?.cancel();
+    _statusSubscription = null;
+  }
+
+  @override
+  AppNetworkStatus get currentStatus =>
+      _isPremiumOverride ? AppNetworkStatus.online : _currentStatus;
+
+  @override
+  bool get isCurrentlyOffline =>
+      !_isPremiumOverride && _currentStatus == AppNetworkStatus.offline;
 
   @override
   void setPremiumOverride(bool isPremium) {

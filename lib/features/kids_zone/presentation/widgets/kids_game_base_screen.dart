@@ -1,5 +1,7 @@
+import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/offline_play_gate_service.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -152,6 +154,16 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                   level: widget.level,
                 ),
               );
+            } catch (_) {}
+            try {
+              final authState = context.read<AuthBloc>().state;
+              final isPremium = authState.user?.isPremium ?? false;
+              if (di.sl.isRegistered<NetworkInfo>()) {
+                final network = di.sl<NetworkInfo>();
+                if (!isPremium && network.isCurrentlyOffline) {
+                  OfflinePlayGateService.instance.recordOfflineLevel(isPremium: false);
+                }
+              }
             } catch (_) {}
             audio.playLevelCompleteSFX();
             KidsGameDialogs.showCompletionDialog(

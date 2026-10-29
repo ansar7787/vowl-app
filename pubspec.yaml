@@ -53,6 +53,7 @@ dependencies:
   confetti: ^0.8.0
   flutter_animate: ^4.5.2
   flutter_svg: ^2.0.10
+  lottie: ^3.3.3
   lucide_icons: ^0.257.0
   cupertino_icons: ^1.0.8
 
@@ -62,19 +63,19 @@ dependencies:
   audioplayers: ^6.5.1
   flutter_tts: ^4.2.5
   speech_to_text: ^7.1.0
-  record: any
+  record: ^6.2.1
   image_picker: ^1.2.1
 
   # ===========================================================================
   # Google ML Kit (On-Device Intelligence)
   # ===========================================================================
-  google_mlkit_translation: any
-  google_mlkit_language_id: any
-  google_mlkit_smart_reply: any
-  google_mlkit_text_recognition: any
+  google_mlkit_translation: ^0.14.0
+  google_mlkit_language_id: ^0.14.0
+  google_mlkit_smart_reply: ^0.14.0
+  google_mlkit_text_recognition: ^0.16.0
   google_mlkit_digital_ink_recognition: 0.14.0
-  google_mlkit_entity_extraction: any
-  google_mlkit_image_labeling: any
+  google_mlkit_entity_extraction: ^0.16.0
+  google_mlkit_image_labeling: ^0.15.0
 
   # ===========================================================================
   # Monetization, Subscriptions & Store Engagement
@@ -169,6 +170,7 @@ flutter:
     - .env
     - assets/data/
     - assets/illustrations/
+    - assets/lottie/
     - assets/images/vowly_head.webp
     - assets/images/chest_3d.webp
     - assets/images/closed_chest_3d.webp
@@ -215,7 +217,6 @@ flutter:
     - assets/curriculum/kids/weather/
     - assets/curriculum/kids/professions/
     - assets/images/mascot/
-    - assets/fonts/
     - assets/legal/
 
   fonts:

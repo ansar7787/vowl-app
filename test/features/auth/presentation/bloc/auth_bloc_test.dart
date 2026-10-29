@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/features/auth/domain/usecases/get_user_stream.dart';
 import 'package:vowl/features/auth/domain/usecases/log_out.dart';
 import 'package:vowl/features/auth/domain/usecases/reload_user.dart';
@@ -183,6 +184,92 @@ void main() {
       verify: (_) {
         verify(() => mockLogOut(any())).called(1);
       },
+    );
+
+    blocTest<AuthBloc, AuthState>(
+      'should emit [loggingOut, authenticated] with network-unreachable if offline',
+      build: () {
+        when(() => mockNetworkInfo.hasRealConnection).thenAnswer((_) async => false);
+        return bloc;
+      },
+      seed: () => AuthState.authenticated(tUser),
+      act: (bloc) => bloc.add(const AuthLogoutRequested()),
+      expect: () => [
+        isA<AuthState>().having((s) => s.status, 'status', AuthStatus.loggingOut),
+        isA<AuthState>()
+            .having((s) => s.status, 'status', AuthStatus.authenticated)
+            .having((s) => s.message, 'message', 'auth.error.network_unreachable'),
+      ],
+    );
+
+    blocTest<AuthBloc, AuthState>(
+      'should ignore intermediate AuthUserChanged events while status is loggingOut',
+      build: () {
+        when(() => mockLogOut(any())).thenAnswer((_) async {
+          // Simulate slow logout during which an asynchronous Firestore snapshot arrives
+          bloc.add(AuthUserChanged(tUser));
+          await Future<void>.delayed(const Duration(milliseconds: 20));
+          return const Right(null);
+        });
+        return bloc;
+      },
+      seed: () => AuthState.authenticated(tUser),
+      act: (bloc) => bloc.add(const AuthLogoutRequested()),
+      wait: const Duration(milliseconds: 100),
+      expect: () => [
+        isA<AuthState>().having(
+          (s) => s.status,
+          'status',
+          AuthStatus.loggingOut,
+        ),
+        isA<AuthState>().having(
+          (s) => s.status,
+          'status',
+          AuthStatus.unauthenticated,
+        ),
+      ],
+    );
+  });
+
+  group('AuthDeleteAccountRequested', () {
+    blocTest<AuthBloc, AuthState>(
+      'should emit [loggingOut, unauthenticated] with success message when delete succeeds',
+      build: () {
+        when(() => mockDeleteAccount(any())).thenAnswer(
+          (_) async => const Right<Failure, void>(null) as Either<Failure, void>,
+        );
+        when(() => mockLogOut(any())).thenAnswer(
+          (_) async => const Right<Failure, void>(null) as Either<Failure, void>,
+        );
+        return bloc;
+      },
+      seed: () => AuthState.authenticated(tUser),
+      act: (bloc) => bloc.add(const AuthDeleteAccountRequested()),
+      expect: () => [
+        isA<AuthState>().having((s) => s.status, 'status', AuthStatus.loggingOut),
+        isA<AuthState>()
+            .having((s) => s.status, 'status', AuthStatus.unauthenticated)
+            .having((s) => s.message, 'message', 'settings_dialogs.account_deleted_success'),
+      ],
+      verify: (_) {
+        verify(() => mockDeleteAccount(any())).called(1);
+      },
+    );
+
+    blocTest<AuthBloc, AuthState>(
+      'should emit [loggingOut, authenticated] with network-unreachable when offline',
+      build: () {
+        when(() => mockNetworkInfo.hasRealConnection).thenAnswer((_) async => false);
+        return bloc;
+      },
+      seed: () => AuthState.authenticated(tUser),
+      act: (bloc) => bloc.add(const AuthDeleteAccountRequested()),
+      expect: () => [
+        isA<AuthState>().having((s) => s.status, 'status', AuthStatus.loggingOut),
+        isA<AuthState>()
+            .having((s) => s.status, 'status', AuthStatus.authenticated)
+            .having((s) => s.message, 'message', 'auth.error.network_unreachable'),
+      ],
     );
   });
 

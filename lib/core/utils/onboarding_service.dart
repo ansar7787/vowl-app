@@ -26,6 +26,15 @@ class OnboardingService {
   /// [loadCached] has executed during app startup.
   static bool get isCompletedCached => _cachedIsCompleted;
 
+  /// Synchronously updates the in-memory cache without touching disk.
+  ///
+  /// Called by [AuthBloc._clearAllLocalData] after it restores the onboarding
+  /// key back into SharedPreferences post-clear, so the router redirect never
+  /// flickers to the onboarding page during the same session.
+  static void refreshCacheFromValue(bool value) {
+    _cachedIsCompleted = value;
+  }
+
   /// Pre-loads the onboarding completion state into memory.
   ///
   /// Executed in parallel with other essential services in `main.dart`.

@@ -1,3 +1,4 @@
+import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:async';
 import 'dart:ui';
@@ -27,9 +28,9 @@ class _LocalPalette {
 /// this page is specifically designed for the offline play quota system.
 /// It provides three monetization-friendly exit paths:
 ///
-///  1. **RECONNECT** — user reconnects, interstitial ad plays, quota resets.
-///  2. **WATCH AD** — cached rewarded ad plays, grants +3 offline levels.
-///  3. **GO PREMIUM** — unlimited offline play upsell.
+///  1. **RECONNECT** — user reconnects, restoring UNLIMITED free play.
+///  2. **WATCH AD** — cached rewarded ad plays offline, granting +3 plays.
+///  3. **GO PREMIUM** — 100% unlimited offline play everywhere with zero ads.
 class OfflineQuotaExhaustedPage extends StatefulWidget {
   final Future<void> Function() onRetry;
   final VoidCallback onAdWatched;
@@ -100,6 +101,19 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
     Haptics.vibrate(HapticsType.selection);
     try {
       await widget.onRetry();
+      if (mounted && di.sl.isRegistered<NetworkInfo>()) {
+        final isStillOffline = di.sl<NetworkInfo>().isCurrentlyOffline;
+        if (isStillOffline) {
+          CustomSnackBar.show(
+            context: context,
+            message: context.tr(
+              'connectivity.still_offline',
+              fallback: 'No internet connection detected. Please check Wi-Fi or data.',
+            ),
+            type: CustomSnackBarType.warning,
+          );
+        }
+      }
     } finally {
       if (mounted) {
         _isChecking = false;
@@ -249,13 +263,22 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                         .moveY(begin: 10, end: 0);
                   }
 
+                  final String subtitleText = hasAdReady
+                      ? context.tr(
+                          'connectivity.quota_subtitle',
+                          args: [gate.offlineLevelsPlayed.toString()],
+                          fallback:
+                              'You\'ve played ${gate.offlineLevelsPlayed} levels offline. Reconnect or watch an ad to keep playing!',
+                        )
+                      : context.tr(
+                          'connectivity.quota_subtitle_no_ad',
+                          args: [gate.offlineLevelsPlayed.toString()],
+                          fallback:
+                              'You\'ve played ${gate.offlineLevelsPlayed} levels offline. Reconnect to restore unlimited free play!',
+                        );
+
                   Widget subtitle = Text(
-                    context.tr(
-                      'connectivity.quota_subtitle',
-                      args: [gate.offlineLevelsPlayed.toString()],
-                      fallback:
-                          'You\'ve played ${gate.offlineLevelsPlayed} levels offline. Reconnect or watch an ad to keep playing!',
-                    ),
+                    subtitleText,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -270,6 +293,17 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                       delay: 400.ms,
                       duration: 600.ms,
                     );
+                  }
+
+                  // ── Hero Unlimited Reassurance Card ─────────────────────────────
+                  // Directly addresses user confusion: clarifies that connecting
+                  // to the internet restores UNLIMITED free play instantly.
+                  Widget unlimitedCard = _UnlimitedPlayCard(isDark: isDark);
+                  if (!reduceMotion) {
+                    unlimitedCard = unlimitedCard
+                        .animate()
+                        .fadeIn(delay: 450.ms, duration: 600.ms)
+                        .moveY(begin: 10, end: 0);
                   }
 
                   Widget? watchAdBtn;
@@ -381,6 +415,28 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                         .moveY(begin: 10, end: 0);
                   }
 
+                  Widget? adHint;
+                  if (!hasAdReady) {
+                    adHint = Padding(
+                      padding: EdgeInsets.only(top: 8.h),
+                      child: Text(
+                        context.tr(
+                          'connectivity.no_ad_cached_hint',
+                          fallback:
+                              'Need bonus offline plays? Connect once to load rewarded ads or upgrade to Premium.',
+                        ),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.5.sp,
+                          fontWeight: FontWeight.w500,
+                          color: isDark ? Colors.white38 : AppColors.slate500,
+                          height: 1.35,
+                        ),
+                      ),
+                    );
+                  }
+
                   return SingleChildScrollView(
                     padding: EdgeInsets.symmetric(
                       horizontal: 24.w,
@@ -394,18 +450,21 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           iconCounter,
-                          SizedBox(height: 36.h),
+                          SizedBox(height: 28.h),
                           title,
-                          SizedBox(height: 12.h),
+                          SizedBox(height: 10.h),
                           subtitle,
-                          SizedBox(height: 40.h),
+                          SizedBox(height: 20.h),
+                          unlimitedCard,
+                          SizedBox(height: 24.h),
                           if (watchAdBtn != null) ...[
                             watchAdBtn,
-                            SizedBox(height: 16.h),
+                            SizedBox(height: 14.h),
                           ],
                           reconnectBtn,
-                          SizedBox(height: 20.h),
+                          SizedBox(height: 16.h),
                           premiumBtn,
+                          ?adHint,
                         ],
                       ),
                     ),
@@ -450,6 +509,84 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
 // ---------------------------------------------------------------------------
 // Private sub-widgets
 // ---------------------------------------------------------------------------
+
+class _UnlimitedPlayCard extends StatelessWidget {
+  final bool isDark;
+  const _UnlimitedPlayCard({required this.isDark});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      decoration: BoxDecoration(
+        color: isDark
+            ? AppColors.emerald950.withValues(alpha: 0.35)
+            : AppColors.emerald50.withValues(alpha: 0.85),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: isDark
+              ? AppColors.emerald500.withValues(alpha: 0.4)
+              : AppColors.emerald400.withValues(alpha: 0.6),
+          width: 1,
+        ),
+      ),
+      child: Row(
+        children: [
+          Container(
+            padding: EdgeInsets.all(8.r),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: isDark
+                  ? AppColors.emerald500.withValues(alpha: 0.2)
+                  : AppColors.emerald500.withValues(alpha: 0.15),
+            ),
+            child: Icon(
+              LucideIcons.infinity,
+              color: isDark ? AppColors.emerald400 : AppColors.emerald600,
+              size: 20.r,
+            ),
+          ),
+          SizedBox(width: 12.w),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  context.tr(
+                    'connectivity.unlimited_online_title',
+                    fallback: 'Online Play is Always Unlimited',
+                  ),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w700,
+                    color: isDark ? Colors.white : AppColors.slate900,
+                  ),
+                ),
+                SizedBox(height: 2.h),
+                Text(
+                  context.tr(
+                    'connectivity.unlimited_online_desc',
+                    fallback:
+                        'Turn on Wi-Fi or mobile data to continue playing for free without limits!',
+                  ),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.5.sp,
+                    fontWeight: FontWeight.w400,
+                    color: isDark ? Colors.white70 : AppColors.slate600,
+                    height: 1.35,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
 class _QuotaIcon extends StatelessWidget {
   final bool isDark;

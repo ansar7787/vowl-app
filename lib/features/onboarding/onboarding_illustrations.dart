@@ -144,29 +144,29 @@ class _SpeechScene extends StatelessWidget {
               painter: _RingsPainter(
                 center: const Offset(180, 124),
                 t: ambient.value,
-                visible: _seg(entrance, .05, .4),
+                visible: _seg(entrance, .06, .45),
               ),
             ),
           ),
         ),
         _fx(both, 'speech', 'mic', (c) {
-          final e = _seg(entrance, 0, .35);
+          final e = _seg(entrance, 0, .42);
           return _shift(0, _wave(ambient) * 4 + (1 - e) * 10, _fade(e, c));
         }),
         _fx(both, 'speech', 'bubbleA', (c) {
-          final e = _seg(entrance, .1, .45, Curves.easeOutBack);
+          final e = _seg(entrance, .12, .54, Curves.easeOutBack);
           return _fade(e, _scaleAt(106, 112, .6 + .4 * e, c));
         }),
         _fx(both, 'speech', 'bubbleB', (c) {
-          final e = _seg(entrance, .18, .55, Curves.easeOutBack);
+          final e = _seg(entrance, .20, .62, Curves.easeOutBack);
           return _fade(e, _scaleAt(254, 112, .6 + .4 * e, c));
         }),
         _fx(both, 'speech', 'puzzle', (c) {
-          final e = _seg(entrance, .25, .65);
+          final e = _seg(entrance, .28, .72);
           return _fade(e, _shift(0, (1 - e) * 14 + _wave(ambient) * 3, c));
         }),
         _fx(both, 'speech', 'tile', (c) {
-          final e = _seg(entrance, .3, .7);
+          final e = _seg(entrance, .36, .80);
           return _fade(e, _shift(0, (1 - e) * 14 - _wave(ambient) * 3, c));
         }),
       ],
@@ -230,26 +230,26 @@ class _ScanScene extends StatelessWidget {
                 painter: _ScanPainter(
                   frame: _frame,
                   t: ambient.value,
-                  visible: _seg(entrance, 0, .25),
+                  visible: _seg(entrance, 0, .36),
                 ),
               ),
             ),
           ),
         ),
         _fx(both, 'scan', 'book', (c) {
-          final e = _seg(entrance, .1, .5);
+          final e = _seg(entrance, .12, .56);
           return _fade(e, _shift(-(1 - e) * 16, 0, c));
         }),
         _fx(both, 'scan', 'cardPlant', (c) {
-          final e = _seg(entrance, .2, .6);
+          final e = _seg(entrance, .22, .66);
           return _fade(e, _shift(0, (1 - e) * 12 + _wave(ambient) * 2, c));
         }),
         _fx(both, 'scan', 'chipOffline', (c) {
-          final e = _seg(entrance, .3, .65);
+          final e = _seg(entrance, .32, .74);
           return _fade(e, _shift(0, (1 - e) * 6, c));
         }),
         _fx(both, 'scan', 'chipLangs', (c) {
-          final e = _seg(entrance, .38, .72);
+          final e = _seg(entrance, .40, .82);
           return _fade(e, _shift(0, (1 - e) * 6, c));
         }),
       ],
@@ -354,7 +354,12 @@ class _RewardsScene extends StatelessWidget {
     Widget item(String name, int i, double sign) => _fx(both, 'rewards', name, (
       c,
     ) {
-      final e = _seg(entrance, .12 + i * .08, .5 + i * .08, Curves.easeOutBack);
+      final e = _seg(
+        entrance,
+        .15 + i * .09,
+        .58 + i * .09,
+        Curves.easeOutBack,
+      );
       return _fade(e, _shift(0, (1 - e) * 14 + _wave(ambient) * 3 * sign, c));
     });
 
@@ -366,7 +371,7 @@ class _RewardsScene extends StatelessWidget {
           child: AnimatedBuilder(
             animation: both,
             builder: (context, _) {
-              final fall = _seg(entrance, 0, .75, Curves.easeOutQuad);
+              final fall = _seg(entrance, 0, .85, Curves.easeOutQuad);
               return Stack(
                 clipBehavior: Clip.none,
                 children: [
@@ -396,8 +401,8 @@ class _RewardsScene extends StatelessWidget {
         ),
         // Album: one bounce on entry, then a barely-there hover.
         _fx(both, 'rewards', 'album', (c) {
-          final pop = _seg(entrance, 0, .4, Curves.easeOutBack);
-          final hop = math.sin(math.pi * _seg(entrance, 0, .45, Curves.linear));
+          final pop = _seg(entrance, 0, .46, Curves.easeOutBack);
+          final hop = math.sin(math.pi * _seg(entrance, 0, .50, Curves.linear));
           return _fade(
             pop,
             _scaleAt(
@@ -412,7 +417,7 @@ class _RewardsScene extends StatelessWidget {
         item('glasses', 1, -1),
         item('gift', 2, 1),
         _fx(both, 'rewards', 'medal', (c) {
-          final e = _seg(entrance, .35, .72, Curves.easeOutBack);
+          final e = _seg(entrance, .40, .82, Curves.easeOutBack);
           return _fade(
             e,
             _scaleAt(65, 246, (.8 + .2 * e) * (1 + .04 * _wave(ambient)), c),
@@ -437,7 +442,7 @@ class _ProgressScene extends StatelessWidget {
       children: [
         _still('progress', 'base'),
         _fx(both, 'progress', 'card', (c) {
-          final e = _seg(entrance, 0, .35);
+          final e = _seg(entrance, 0, .42);
           return _fade(e, _shift(0, (1 - e) * 14, c));
         }),
         // Buddy head as the profile avatar (the only place the buddy appears).
@@ -455,7 +460,7 @@ class _ProgressScene extends StatelessWidget {
                 errorBuilder: (_, _, _) => const SizedBox.shrink(),
               ),
             ),
-            builder: (context, child) => _fade(_seg(entrance, 0, .25), child!),
+            builder: (context, child) => _fade(_seg(entrance, 0, .32), child!),
           ),
         ),
         Positioned.fill(
@@ -467,7 +472,7 @@ class _ProgressScene extends StatelessWidget {
         ),
         // Globe: gentle float + tiny tilt.
         _fx(both, 'progress', 'globe', (c) {
-          final e = _seg(entrance, 0, .35);
+          final e = _seg(entrance, 0, .42);
           return _fade(
             e,
             _shift(
@@ -479,14 +484,14 @@ class _ProgressScene extends StatelessWidget {
         }),
         for (var i = 0; i < 3; i++)
           _fx(entrance, 'progress', 'chip${i + 1}', (c) {
-            final e = _seg(entrance, .2 + i * .08, .52 + i * .08);
+            final e = _seg(entrance, .24 + i * .09, .62 + i * .09);
             return _fade(e, _shift(0, (1 - e) * 6, c));
           }),
         _fx(
           entrance,
           'progress',
           'waves',
-          (c) => _fade(_seg(entrance, .25, .65), c),
+          (c) => _fade(_seg(entrance, .30, .75), c),
         ),
       ],
     );
@@ -507,7 +512,7 @@ class _ChartPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     const baseline = 204.0, left = 52.0, step = 23.0, barW = 15.0, maxH = 66.0;
     for (var i = 0; i < _targets.length; i++) {
-      final h = maxH * _targets[i] * _p(.06 + i * .08, .48 + i * .08);
+      final h = maxH * _targets[i] * _p(.08 + i * .08, .54 + i * .08);
       if (h <= 0) continue;
       final hero = i == _targets.length - 1;
       final x = left + i * step, y = baseline - h;
@@ -539,7 +544,7 @@ class _ChartPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round
       ..color = const Color(0xFFE0E7FF);
     canvas.drawCircle(c, r, track);
-    final sweep = 2 * math.pi * .72 * _p(.15, .62);
+    final sweep = 2 * math.pi * .72 * _p(.18, .70);
     if (sweep > 0) {
       canvas.drawArc(
         Rect.fromCircle(center: c, radius: r),

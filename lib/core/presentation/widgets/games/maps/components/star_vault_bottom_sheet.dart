@@ -9,7 +9,6 @@ import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/ad_service.dart';
-import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
@@ -341,14 +340,6 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
         );
       },
     );
-
-    // Safety timeout in case ad fails to load without dismissing
-    Future.delayed(const Duration(seconds: 3), () {
-      if (mounted && _isProcessing) {
-        _isProcessing = false;
-        _updateState();
-      }
-    });
   }
 
   @override
@@ -373,6 +364,9 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
         final magicStars = starsData.magicStars;
         final claimedTier = categoryStars['claimed_chests'] ?? 0;
         final isPremium = user.isPremium;
+        final isKidsMode = UserGameConstants.kKidsGameTypes.contains(
+          widget.gameType,
+        );
 
         // Find next target
         int nextTierIndex = claimedTier;
@@ -988,8 +982,9 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
 
                               SizedBox(height: 32.h),
 
-                              // Magic Star Ad Button (hidden for premium users)
-                              if (!isPremium &&
+                              // Magic Star Ad Button (hidden for kids games and premium users)
+                              if (!isKidsMode &&
+                                  !isPremium &&
                                   claimedTier < _chestTiers.length &&
                                   totalStars < nextRequirement) ...[
                                 Padding(

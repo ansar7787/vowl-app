@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -49,6 +50,13 @@ class OfflinePlayGateService extends ChangeNotifier {
   /// once an ad has been shown after reconnection.
   bool _pendingReconnectAdReset = false;
 
+  final StreamController<int> _remainingPlaysController =
+      StreamController<int>.broadcast();
+
+  /// Reactive stream emitting the current number of remaining offline plays
+  /// whenever the quota updates in real time.
+  Stream<int> get onRemainingPlaysChange => _remainingPlaysController.stream;
+
   /// Whether the offline grace quota has been exhausted.
   bool get isOfflineQuotaExhausted => _offlineLevelsPlayed >= maxOfflineLevels;
 
@@ -61,6 +69,13 @@ class OfflinePlayGateService extends ChangeNotifier {
 
   /// Whether a reconnect-triggered ad reset is pending.
   bool get hasPendingReconnectReset => _pendingReconnectAdReset;
+
+  void _notify() {
+    if (!_remainingPlaysController.isClosed) {
+      _remainingPlaysController.add(remainingOfflinePlays);
+    }
+    notifyListeners();
+  }
 
   /// Loads the persisted counter from [SharedPreferences].
   ///
@@ -83,19 +98,24 @@ class OfflinePlayGateService extends ChangeNotifier {
         _offlineLevelsPlayed = 0;
         await prefs.remove(_kOfflineLevelsKey);
         await prefs.remove(_kOfflineTimestampKey);
+        _notify();
         return;
       }
     }
 
     _offlineLevelsPlayed = storedCount;
+    _notify();
   }
 
   /// Records that a level was completed while offline.
+  /// If [isPremium] is true, this is a no-op because premium users have
+  /// unlimited offline gameplay without internet.
   /// Returns `true` if the quota is now exhausted (should block further play).
-  bool recordOfflineLevel() {
+  bool recordOfflineLevel({bool isPremium = false}) {
+    if (isPremium) return false;
     _offlineLevelsPlayed++;
     _persist();
-    notifyListeners();
+    _notify();
     return isOfflineQuotaExhausted;
   }
 
@@ -119,7 +139,7 @@ class OfflinePlayGateService extends ChangeNotifier {
     _offlineLevelsPlayed = 0;
     _pendingReconnectAdReset = false;
     _persist(clear: true);
-    notifyListeners();
+    _notify();
   }
 
   /// Grants additional offline plays after watching a rewarded ad.
@@ -133,7 +153,7 @@ class OfflinePlayGateService extends ChangeNotifier {
     );
     _pendingReconnectAdReset = false;
     _persist();
-    notifyListeners();
+    _notify();
   }
 
   /// Persists the current counter and timestamp to [SharedPreferences].

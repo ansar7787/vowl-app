@@ -37,6 +37,7 @@ class KidsTollGateBottomSheet {
     if (levelsToUnlock == 1) {
       sheetDesc = context.tr(
         'games.magic_lock_desc_1',
+        args: [maxLevels.toString()],
         fallback:
             'Use 1 Key or watch a video to unlock the final Level $maxLevels!',
       );

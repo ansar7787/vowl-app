@@ -246,7 +246,7 @@ void main() {
           isPremium: any(named: 'isPremium'),
           onUserEarnedReward: any(named: 'onUserEarnedReward'),
           onDismissed: any(named: 'onDismissed'),
-        )).thenAnswer((inv) {
+        )).thenAnswer((inv) async {
       final onReward = inv.namedArguments[#onUserEarnedReward] as dynamic;
       onReward?.call(RewardItem(1, 'coin'));
     });

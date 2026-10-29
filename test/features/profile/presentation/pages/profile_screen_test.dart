@@ -337,6 +337,22 @@ void main() {
       await tester.pumpWidget(const SizedBox());
     });
 
+    testWidgets('renders active LoadingOverlay when auth status is loggingOut',
+        (tester) async {
+      when(() => mockAuthBloc.state).thenReturn(
+        AuthState.authenticated(testUser).copyWith(status: AuthStatus.loggingOut),
+      );
+
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pump();
+
+      expect(find.byType(LoadingOverlay), findsOneWidget);
+      final overlay = tester.widget<LoadingOverlay>(find.byType(LoadingOverlay));
+      expect(overlay.isLoading, isTrue);
+
+      await tester.pumpWidget(const SizedBox());
+    });
+
     testWidgets('renders CustomScrollView and ProfileHeader when authenticated',
         (tester) async {
       await pumpProfileScreen(tester);
@@ -359,10 +375,13 @@ void main() {
       expect(find.text('SCHOLAR'), findsOneWidget);
     });
 
-    testWidgets('displays immediate photo from ProfileState when present',
+    testWidgets('displays immediate photo from ProfileState when present for matching user',
         (tester) async {
       when(() => mockProfileBloc.state).thenReturn(
-        const ProfileState(photoUrl: 'https://example.com/fresh_avatar.jpg'),
+        const ProfileState(
+          photoUrl: 'https://example.com/fresh_avatar.jpg',
+          photoUserId: 'user_profile_123',
+        ),
       );
 
       await tester.pumpWidget(createWidgetUnderTest());
@@ -370,6 +389,24 @@ void main() {
 
       final header = tester.widget<ProfileHeader>(find.byType(ProfileHeader));
       expect(header.immediatePhotoUrl, 'https://example.com/fresh_avatar.jpg');
+
+      await tester.pumpWidget(const SizedBox());
+    });
+
+    testWidgets('does NOT display immediate photo if photo belongs to another user account',
+        (tester) async {
+      when(() => mockProfileBloc.state).thenReturn(
+        const ProfileState(
+          photoUrl: 'https://example.com/other_user_avatar.jpg',
+          photoUserId: 'other_user_999',
+        ),
+      );
+
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pump(const Duration(milliseconds: 700));
+
+      final header = tester.widget<ProfileHeader>(find.byType(ProfileHeader));
+      expect(header.immediatePhotoUrl, isNull);
 
       await tester.pumpWidget(const SizedBox());
     });
@@ -650,7 +687,7 @@ void main() {
     });
   });
 
-  group('Group 11: Preferences & Sign Out', () {
+  group('Group 11: Preferences Navigation', () {
     testWidgets('renders Settings tile in preferences and tapping routes to settings',
         (tester) async {
       await pumpProfileScreen(tester);
@@ -664,17 +701,11 @@ void main() {
       verify(() => mockHapticService.light()).called(greaterThanOrEqualTo(1));
     });
 
-    testWidgets('tapping SIGN OUT ACCOUNT displays confirmation dialog',
+    testWidgets('omits redundant sign out button from profile screen',
         (tester) async {
       await pumpProfileScreen(tester);
 
-      final signOutBtn = find.text('SIGN OUT ACCOUNT');
-      expect(signOutBtn, findsOneWidget);
-
-      await scrollToAndTap(tester, signOutBtn);
-
-      expect(find.text('Sign Out?'), findsOneWidget);
-      verify(() => mockHapticService.warning()).called(greaterThanOrEqualTo(1));
+      expect(find.text('SIGN OUT ACCOUNT'), findsNothing);
     });
   });
 

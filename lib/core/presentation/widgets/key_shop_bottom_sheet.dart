@@ -36,10 +36,11 @@ class KeyShopBottomSheet {
 
     showModalBottomSheet(
       context: context,
+      useRootNavigator: true,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       barrierColor: Colors.black.withValues(alpha: 0.6),
-      builder: (context) {
+      builder: (sheetContext) {
         return _KeyShopContent(
           parentContext: context,
           isKidsMode: isKidsMode,
@@ -103,771 +104,821 @@ class _KeyShopContentState extends State<_KeyShopContent> {
     final isPremium =
         widget.parentContext.read<AuthBloc>().state.user?.isPremium ?? false;
 
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTap: () => Navigator.pop(context),
-      child: ValueListenableBuilder<int>(
-        valueListenable: _stateHash,
-        builder: (context, _, child) {
-          return GestureDetector(
-            onTap: () {}, // Prevent taps on the sheet content from closing it
-            child: Container(
-              padding: EdgeInsets.all(24.r),
-              decoration: BoxDecoration(
-                color: Theme.of(context).brightness == Brightness.dark
-                    ? AppColors.slate800
-                    : Colors.white,
-                borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-                border: Border.all(
-                  color: widget.primaryColor.withValues(alpha: 0.3),
-                  width: 1.5.w,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: widget.primaryColor.withValues(alpha: 0.15),
-                    blurRadius: 24.r,
-                    offset: Offset(0, -4.h),
+    return PopScope(
+      canPop: !_isProcessing,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () {
+          if (!_isProcessing) {
+            Navigator.pop(context);
+          }
+        },
+        child: ValueListenableBuilder<int>(
+          valueListenable: _stateHash,
+          builder: (context, _, child) {
+            return GestureDetector(
+              onTap: () {}, // Prevent taps on the sheet content from closing it
+              child: Container(
+                padding: EdgeInsets.all(24.r),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? AppColors.slate800
+                      : Colors.white,
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(32.r),
                   ),
-                ],
-              ),
-              child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // Drag handle
-                    Center(
-                      child: Container(
-                        width: 40.w,
-                        height: 4.h,
-                        margin: EdgeInsets.only(bottom: 16.h),
-                        decoration: BoxDecoration(
-                          color: Colors.grey.withValues(alpha: 0.3),
-                          borderRadius: BorderRadius.circular(2.r),
+                  border: Border.all(
+                    color: widget.primaryColor.withValues(alpha: 0.3),
+                    width: 1.5.w,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: widget.primaryColor.withValues(alpha: 0.15),
+                      blurRadius: 24.r,
+                      offset: Offset(0, -4.h),
+                    ),
+                  ],
+                ),
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // Drag handle
+                      Center(
+                        child: Container(
+                          width: 40.w,
+                          height: 4.h,
+                          margin: EdgeInsets.only(bottom: 16.h),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withValues(alpha: 0.3),
+                            borderRadius: BorderRadius.circular(2.r),
+                          ),
                         ),
                       ),
-                    ),
-                    Builder(
-                      builder: (ctx) {
-                        final keyIcon = Container(
-                          padding: EdgeInsets.all(16.r),
-                          decoration: BoxDecoration(
-                            color: widget.primaryColor.withValues(alpha: 0.2),
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: widget.primaryColor.withValues(alpha: 0.4),
-                              width: 1.w,
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: widget.primaryColor.withValues(
-                                  alpha: 0.2,
-                                ),
-                                blurRadius: 16.r,
-                              ),
-                            ],
-                          ),
-                          child: Icon(
-                            Icons.key_rounded,
-                            size: 56.r,
-                            color: widget.primaryColor,
-                          ),
-                        );
-                        if (VowlMotion.shouldReduceMotion(ctx)) {
-                          return keyIcon;
-                        }
-                        return keyIcon
-                            .animate(onPlay: (c) => c.repeat())
-                            .shimmer(
-                              duration: 2.seconds,
-                              delay: 1.seconds,
-                              color: Colors.white.withValues(alpha: 0.4),
-                            );
-                      },
-                    ),
-                    SizedBox(height: 16.h),
-                    Text(
-                      context.tr(
-                        'store.golden_key_title_short',
-                        fallback: 'Golden Key',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 24.sp,
-                        fontWeight: FontWeight.w900,
-                        color: widget.primaryColor,
-                        letterSpacing: 1.0,
-                      ),
-                    ),
-                    SizedBox(height: 4.h),
-                    Text(
-                      context.tr(
-                        'store.golden_key_desc_short',
-                        fallback: 'Unlocks map gates.',
-                      ),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        color: Colors.grey.shade500,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 24.h),
-
-                    // Purchase with Coins
-                    BlocBuilder<AuthBloc, AuthState>(
-                      builder: (context, authState) {
-                        final user = authState.user;
-                        final userCoins = widget.isKidsMode
-                            ? (user?.kidsCoins ?? 0)
-                            : (user?.coins ?? 0);
-                        const int cost = 150;
-
-                        return ScaleButton(
-                          onTap: () async {
-                            if (_isProcessing) return;
-
-                            if (userCoins < cost) {
-                              showDialog(
-                                context: context,
-                                builder: (ctx) => ModernGameDialog(
-                                  title: widget.isKidsMode
-                                      ? context.tr(
-                                          'store.not_enough_toys_title',
-                                          fallback: 'NOT ENOUGH TOYS',
-                                        )
-                                      : context.tr(
-                                          'store.not_enough_coins_title',
-                                          fallback: 'NOT ENOUGH COINS',
-                                        ),
-                                  description: context.tr(
-                                    'store.not_enough_currency_desc',
-                                    args: [
-                                      '$cost',
-                                      widget.isKidsMode
-                                          ? context.tr('store.toys_lower')
-                                          : context.tr('store.coins_lower'),
-                                    ],
-                                    fallback:
-                                        'You need $cost ${widget.isKidsMode ? 'toys' : 'coins'} to get a key!',
-                                  ),
-                                  buttonText: context.tr(
-                                    'games.keep_playing',
-                                    fallback: 'KEEP PLAYING',
-                                  ),
-                                  isSuccess: false,
-                                  onButtonPressed: () =>
-                                      Navigator.of(ctx).pop(),
-                                ),
-                              );
-                              return;
-                            }
-
-                            _isProcessing = true;
-                            _updateState();
-
-                            final result = await di
-                                .sl<PurchaseGoldenKey>()
-                                .call(
-                                  PurchaseGoldenKeyParams(
-                                    cost: cost,
-                                    isKidsMode: widget.isKidsMode,
-                                  ),
-                                );
-
-                            if (!mounted) return;
-                            _isProcessing = false;
-                            _updateState();
-
-                            // BUG FIX (SILENT FAILURE): previously only the
-                            // success branch (`result.isRight()`) was handled -
-                            // if the purchase failed server-side (insufficient
-                            // funds detected server-side, network error,
-                            // concurrent-spend race, etc.), the sheet had
-                            // already closed and NOTHING told the user their
-                            // 150 coins purchase didn't go through. `.fold()`
-                            // now handles both outcomes explicitly.
-                            result.fold(
-                              (failure) {
-                                showDialog(
-                                  context: context,
-                                  builder: (ctx) => ModernGameDialog(
-                                    title: context.tr(
-                                      'store.purchase_failed_title',
-                                      fallback: 'PURCHASE FAILED',
-                                    ),
-                                    description: context.tr(
-                                      'store.purchase_failed_desc',
-                                      fallback:
-                                          'Something went wrong and your coins were not spent. Please try again.',
-                                    ),
-                                    buttonText: context
-                                        .tr('common.ok', fallback: 'OK')
-                                        .toUpperCase(),
-                                    isSuccess: false,
-                                    onButtonPressed: () =>
-                                        Navigator.of(ctx).pop(),
-                                  ),
-                                );
-                              },
-                              (_) {
-                                widget.parentContext.read<AuthBloc>().add(
-                                  const AuthReloadUser(),
-                                );
-                                di.sl<HapticService>().success();
-                                showDialog(
-                                  context: context,
-                                  builder: (ctx) => Material(
-                                    type: MaterialType.transparency,
-                                    child: Stack(
-                                      alignment: Alignment.center,
-                                      children: [
-                                        ModernGameDialog(
-                                          title: context.tr(
-                                            'store.got_key_title',
-                                            fallback: 'GOT A KEY!',
-                                          ),
-                                          description: context.tr(
-                                            'store.got_key_desc',
-                                            fallback: 'You got a Golden Key!',
-                                          ),
-                                          buttonText: context.tr(
-                                            'store.awesome',
-                                            fallback: 'AWESOME',
-                                          ),
-                                          isSuccess: true,
-                                          onButtonPressed: () {
-                                            Navigator.of(ctx).pop();
-                                            if (mounted && context.mounted) {
-                                              Navigator.of(context).pop();
-                                            }
-                                          },
-                                        ),
-                                        const Positioned.fill(
-                                          child: IgnorePointer(
-                                            child: GameConfetti(),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                          child: Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.symmetric(vertical: 14.h),
+                      Builder(
+                        builder: (ctx) {
+                          final keyIcon = Container(
+                            padding: EdgeInsets.all(16.r),
                             decoration: BoxDecoration(
-                              color: userCoins >= cost
-                                  ? widget.primaryColor
-                                  : AppColors.slate400,
-                              borderRadius: BorderRadius.circular(16.r),
+                              color: widget.primaryColor.withValues(alpha: 0.2),
+                              shape: BoxShape.circle,
                               border: Border.all(
-                                color: Colors.black.withValues(alpha: 0.1),
+                                color: widget.primaryColor.withValues(
+                                  alpha: 0.4,
+                                ),
                                 width: 1.w,
                               ),
-                              boxShadow: userCoins >= cost
-                                  ? [
-                                      BoxShadow(
-                                        color: widget.primaryColor.withValues(
-                                          alpha: 0.3,
-                                        ),
-                                        offset: Offset(0, 4.h),
-                                        blurRadius: 12.r,
-                                      ),
-                                    ]
-                                  : [],
-                            ),
-                            alignment: Alignment.center,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.toll_rounded,
-                                  color: Colors.white.withValues(
-                                    alpha: userCoins >= cost ? 1.0 : 0.8,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: widget.primaryColor.withValues(
+                                    alpha: 0.2,
                                   ),
-                                  size: 20.r,
-                                ),
-                                SizedBox(width: 8.w),
-                                Text(
-                                  widget.isKidsMode
-                                      ? context.tr(
-                                          'store.buy_for_toys',
-                                          args: ['$cost'],
-                                          fallback: '$cost Toys',
-                                        )
-                                      : context.tr(
-                                          'store.buy_for_coins',
-                                          args: ['$cost'],
-                                          fallback: '$cost Coins',
-                                        ),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w800,
-                                    color: Colors.white.withValues(
-                                      alpha: userCoins >= cost ? 1.0 : 0.8,
-                                    ),
-                                    letterSpacing: 0.5,
-                                  ),
+                                  blurRadius: 16.r,
                                 ),
                               ],
                             ),
-                          ),
-                        );
-                      },
-                    ),
-
-                    if (!isPremium) ...[
+                            child: Icon(
+                              Icons.key_rounded,
+                              size: 56.r,
+                              color: widget.primaryColor,
+                            ),
+                          );
+                          if (VowlMotion.shouldReduceMotion(ctx)) {
+                            return keyIcon;
+                          }
+                          return keyIcon
+                              .animate(onPlay: (c) => c.repeat())
+                              .shimmer(
+                                duration: 2.seconds,
+                                delay: 1.seconds,
+                                color: Colors.white.withValues(alpha: 0.4),
+                              );
+                        },
+                      ),
                       SizedBox(height: 16.h),
+                      Text(
+                        context.tr(
+                          'store.golden_key_title_short',
+                          fallback: 'Golden Key',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 24.sp,
+                          fontWeight: FontWeight.w900,
+                          color: widget.primaryColor,
+                          letterSpacing: 1.0,
+                        ),
+                      ),
+                      SizedBox(height: 4.h),
+                      Text(
+                        context.tr(
+                          'store.golden_key_desc_short',
+                          fallback: 'Unlocks map gates.',
+                        ),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          color: Colors.grey.shade500,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 24.h),
 
-                      // Secondary Actions Row
-                      Row(
-                      children: [
-                        Expanded(
-                          child: ScaleButton(
-                            onTap: () {
-                              if (_isProcessing) return;
+                      // Purchase with Coins
+                      BlocBuilder<AuthBloc, AuthState>(
+                        builder: (context, authState) {
+                          final user = authState.user;
+                          final userCoins = widget.isKidsMode
+                              ? (user?.kidsCoins ?? 0)
+                              : (user?.coins ?? 0);
+                          const int cost = 150;
 
-                              if (_remainingClaims <= 0) {
-                                _outOfAdsShake++;
-                                _updateState();
-                                showDialog(
-                                  context: context,
-                                  builder: (ctx) => ModernGameDialog(
-                                    title: context.tr(
-                                      'store.limit_reached_title',
-                                      fallback: 'DAILY LIMIT REACHED',
-                                    ),
-                                    description: context.tr(
-                                      'store.limit_reached_desc',
-                                      fallback:
-                                          'You have claimed all your free keys for today! Come back tomorrow or visit the Premium Store for unlimited access.',
-                                    ),
-                                    buttonText: context.tr(
-                                      'store.got_it',
-                                      fallback: 'GOT IT',
-                                    ),
-                                    isSuccess: false,
-                                    onButtonPressed: () =>
-                                        Navigator.of(ctx).pop(),
-                                    customIcon: Icon(
-                                      Icons.lock_clock_rounded,
-                                      color: Colors.orange,
-                                      size: 48.sp,
-                                    ),
-                                  ),
-                                );
-                                return;
-                              }
-                              final adService = di.sl<AdService>();
-                              _isProcessing = true;
-                              _updateState();
-                              bool rewardEarned = false;
+                          return ScaleButton(
+                            onTap: _isProcessing
+                                ? null
+                                : () async {
+                                    if (_isProcessing) return;
 
-                              adService.showRewardedAd(
-                                context: context,
-                                isPremium: isPremium,
-                                // FIX: COPPA compliance — when the key shop is opened
-                                // from Kids Zone (isKidsMode: true), force child-safe
-                                // ad parameters.
-                                childSafe: widget.isKidsMode,
-                                onUserEarnedReward: (_) {
-                                  rewardEarned = true;
-                                },
-                                onDismissed: () async {
-                                  if (!mounted) return;
-                                  _isProcessing = false;
-                                  _updateState();
-
-                                  if (!rewardEarned) return;
-
-                                  _isProcessing = true;
-                                  _updateState();
-
-                                  final result = await di
-                                      .sl<AddGoldenKey>()
-                                      .call(
-                                        const AddGoldenKeyParams(amount: 1),
-                                      );
-
-                                  // Increment limits even if the widget unmounts during the API call,
-                                  // but only if the API call was successful.
-                                  if (result.isRight()) {
-                                    await RewardLimitService.incrementClaimCount(
-                                      'keys',
-                                    );
-                                  }
-
-                                  if (!mounted) return;
-                                  _isProcessing = false;
-                                  _updateState();
-
-                                  // BUG FIX: Show dialogs inside onDismissed instead of
-                                  // onUserEarnedReward to prevent the Ad overlay from
-                                  // blocking or prematurely killing the dialogs.
-                                  result.fold(
-                                    (failure) {
+                                    if (userCoins < cost) {
                                       showDialog(
                                         context: context,
                                         builder: (ctx) => ModernGameDialog(
-                                          title: context.tr(
-                                            'store.reward_failed_title',
-                                            fallback: 'REWARD FAILED',
-                                          ),
+                                          title: widget.isKidsMode
+                                              ? context.tr(
+                                                  'store.not_enough_toys_title',
+                                                  fallback: 'NOT ENOUGH TOYS',
+                                                )
+                                              : context.tr(
+                                                  'store.not_enough_coins_title',
+                                                  fallback: 'NOT ENOUGH COINS',
+                                                ),
                                           description: context.tr(
-                                            'store.reward_failed_desc',
+                                            'store.not_enough_currency_desc',
+                                            args: [
+                                              '$cost',
+                                              widget.isKidsMode
+                                                  ? context.tr(
+                                                      'store.toys_lower',
+                                                    )
+                                                  : context.tr(
+                                                      'store.coins_lower',
+                                                    ),
+                                            ],
                                             fallback:
-                                                "We couldn't grant your reward. Please contact support if this keeps happening.",
+                                                'You need $cost ${widget.isKidsMode ? 'toys' : 'coins'} to get a key!',
                                           ),
-                                          buttonText: context
-                                              .tr('common.ok', fallback: 'OK')
-                                              .toUpperCase(),
+                                          buttonText: context.tr(
+                                            'games.keep_playing',
+                                            fallback: 'KEEP PLAYING',
+                                          ),
                                           isSuccess: false,
                                           onButtonPressed: () =>
                                               Navigator.of(ctx).pop(),
                                         ),
                                       );
-                                    },
-                                    (_) {
-                                      widget.parentContext.read<AuthBloc>().add(
-                                        const AuthReloadUser(),
-                                      );
-                                      di.sl<HapticService>().success();
-                                      showDialog(
-                                        context: context,
-                                        builder: (ctx) => Material(
-                                          type: MaterialType.transparency,
-                                          child: Stack(
-                                            alignment: Alignment.center,
-                                            children: [
-                                              ModernGameDialog(
-                                                title: context.tr(
-                                                  'store.reward_unlocked_title',
-                                                  fallback: 'REWARD UNLOCKED!',
+                                      return;
+                                    }
+
+                                    _isProcessing = true;
+                                    _updateState();
+
+                                    final result = await di
+                                        .sl<PurchaseGoldenKey>()
+                                        .call(
+                                          PurchaseGoldenKeyParams(
+                                            cost: cost,
+                                            isKidsMode: widget.isKidsMode,
+                                          ),
+                                        );
+
+                                    if (!mounted) return;
+                                    _isProcessing = false;
+                                    _updateState();
+
+                                    // BUG FIX (SILENT FAILURE): previously only the
+                                    // success branch (`result.isRight()`) was handled -
+                                    // if the purchase failed server-side (insufficient
+                                    // funds detected server-side, network error,
+                                    // concurrent-spend race, etc.), the sheet had
+                                    // already closed and NOTHING told the user their
+                                    // 150 coins purchase didn't go through. `.fold()`
+                                    // now handles both outcomes explicitly.
+                                    result.fold(
+                                      (failure) {
+                                        showDialog(
+                                          context: context,
+                                          builder: (ctx) => ModernGameDialog(
+                                            title: context.tr(
+                                              'store.purchase_failed_title',
+                                              fallback: 'PURCHASE FAILED',
+                                            ),
+                                            description: context.tr(
+                                              'store.purchase_failed_desc',
+                                              fallback:
+                                                  'Something went wrong and your coins were not spent. Please try again.',
+                                            ),
+                                            buttonText: context
+                                                .tr('common.ok', fallback: 'OK')
+                                                .toUpperCase(),
+                                            isSuccess: false,
+                                            onButtonPressed: () =>
+                                                Navigator.of(ctx).pop(),
+                                          ),
+                                        );
+                                      },
+                                      (_) {
+                                        widget.parentContext
+                                            .read<AuthBloc>()
+                                            .add(const AuthReloadUser());
+                                        di.sl<HapticService>().success();
+                                        showDialog(
+                                          context: context,
+                                          builder: (ctx) => Material(
+                                            type: MaterialType.transparency,
+                                            child: Stack(
+                                              alignment: Alignment.center,
+                                              children: [
+                                                ModernGameDialog(
+                                                  title: context.tr(
+                                                    'store.got_key_title',
+                                                    fallback: 'GOT A KEY!',
+                                                  ),
+                                                  description: context.tr(
+                                                    'store.got_key_desc',
+                                                    fallback:
+                                                        'You got a Golden Key!',
+                                                  ),
+                                                  buttonText: context.tr(
+                                                    'store.awesome',
+                                                    fallback: 'AWESOME',
+                                                  ),
+                                                  isSuccess: true,
+                                                  onButtonPressed: () {
+                                                    Navigator.of(ctx).pop();
+                                                    if (mounted &&
+                                                        context.mounted) {
+                                                      Navigator.of(
+                                                        context,
+                                                      ).pop();
+                                                    }
+                                                  },
                                                 ),
-                                                description: context.tr(
-                                                  'store.got_key_desc',
-                                                  fallback:
-                                                      'You got a Golden Key!',
+                                                const Positioned.fill(
+                                                  child: IgnorePointer(
+                                                    child: GameConfetti(),
+                                                  ),
                                                 ),
-                                                buttonText: context.tr(
-                                                  'store.awesome',
-                                                  fallback: 'AWESOME',
+                                              ],
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  },
+                            child: Container(
+                              width: double.infinity,
+                              padding: EdgeInsets.symmetric(vertical: 14.h),
+                              decoration: BoxDecoration(
+                                color: userCoins >= cost
+                                    ? widget.primaryColor
+                                    : AppColors.slate400,
+                                borderRadius: BorderRadius.circular(16.r),
+                                border: Border.all(
+                                  color: Colors.black.withValues(alpha: 0.1),
+                                  width: 1.w,
+                                ),
+                                boxShadow: userCoins >= cost
+                                    ? [
+                                        BoxShadow(
+                                          color: widget.primaryColor.withValues(
+                                            alpha: 0.3,
+                                          ),
+                                          offset: Offset(0, 4.h),
+                                          blurRadius: 12.r,
+                                        ),
+                                      ]
+                                    : [],
+                              ),
+                              alignment: Alignment.center,
+                              child: _isProcessing
+                                  ? SizedBox(
+                                      height: 22.r,
+                                      width: 22.r,
+                                      child: const CircularProgressIndicator(
+                                        strokeWidth: 2.5,
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                              Colors.white,
+                                            ),
+                                      ),
+                                    )
+                                  : Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Icons.toll_rounded,
+                                          color: Colors.white.withValues(
+                                            alpha: userCoins >= cost
+                                                ? 1.0
+                                                : 0.8,
+                                          ),
+                                          size: 20.r,
+                                        ),
+                                        SizedBox(width: 8.w),
+                                        Text(
+                                          widget.isKidsMode
+                                              ? context.tr(
+                                                  'store.buy_for_toys',
+                                                  args: ['$cost'],
+                                                  fallback: '$cost Toys',
+                                                )
+                                              : context.tr(
+                                                  'store.buy_for_coins',
+                                                  args: ['$cost'],
+                                                  fallback: '$cost Coins',
                                                 ),
-                                                isSuccess: true,
-                                                onButtonPressed: () {
-                                                  Navigator.of(ctx).pop();
-                                                  if (mounted &&
-                                                      context.mounted) {
-                                                    Navigator.of(context).pop();
-                                                  }
-                                                },
-                                              ),
-                                              const Positioned.fill(
-                                                child: IgnorePointer(
-                                                  child: GameConfetti(),
-                                                ),
-                                              ),
-                                            ],
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 16.sp,
+                                            fontWeight: FontWeight.w800,
+                                            color: Colors.white.withValues(
+                                              alpha: userCoins >= cost
+                                                  ? 1.0
+                                                  : 0.8,
+                                            ),
+                                            letterSpacing: 0.5,
                                           ),
                                         ),
+                                      ],
+                                    ),
+                            ),
+                          );
+                        },
+                      ),
+
+                      if (!isPremium) ...[
+                        SizedBox(height: 16.h),
+
+                        // Secondary Actions Row
+                        Row(
+                          children: [
+                            Expanded(
+                              child: ScaleButton(
+                                onTap: () {
+                                  if (_isProcessing) return;
+
+                                  if (_remainingClaims <= 0) {
+                                    _outOfAdsShake++;
+                                    _updateState();
+                                    showDialog(
+                                      context: context,
+                                      builder: (ctx) => ModernGameDialog(
+                                        title: context.tr(
+                                          'store.limit_reached_title',
+                                          fallback: 'DAILY LIMIT REACHED',
+                                        ),
+                                        description: context.tr(
+                                          'store.limit_reached_desc',
+                                          fallback:
+                                              'You have claimed all your free keys for today! Come back tomorrow or visit the Premium Store for unlimited access.',
+                                        ),
+                                        buttonText: context.tr(
+                                          'store.got_it',
+                                          fallback: 'GOT IT',
+                                        ),
+                                        isSuccess: false,
+                                        onButtonPressed: () =>
+                                            Navigator.of(ctx).pop(),
+                                        customIcon: Icon(
+                                          Icons.lock_clock_rounded,
+                                          color: Colors.orange,
+                                          size: 48.sp,
+                                        ),
+                                      ),
+                                    );
+                                    return;
+                                  }
+                                  final adService = di.sl<AdService>();
+                                  _isProcessing = true;
+                                  _updateState();
+                                  bool rewardEarned = false;
+
+                                  adService.showRewardedAd(
+                                    context: context,
+                                    isPremium: isPremium,
+                                    // FIX: COPPA compliance — when the key shop is opened
+                                    // from Kids Zone (isKidsMode: true), force child-safe
+                                    // ad parameters.
+                                    childSafe: widget.isKidsMode,
+                                    onUserEarnedReward: (_) {
+                                      rewardEarned = true;
+                                    },
+                                    onDismissed: () async {
+                                      if (!mounted) return;
+                                      _isProcessing = false;
+                                      _updateState();
+
+                                      if (!rewardEarned) return;
+
+                                      _isProcessing = true;
+                                      _updateState();
+
+                                      final result = await di
+                                          .sl<AddGoldenKey>()
+                                          .call(
+                                            const AddGoldenKeyParams(amount: 1),
+                                          );
+
+                                      // Increment limits even if the widget unmounts during the API call,
+                                      // but only if the API call was successful.
+                                      if (result.isRight()) {
+                                        await RewardLimitService.incrementClaimCount(
+                                          'keys',
+                                        );
+                                      }
+
+                                      if (!mounted) return;
+                                      _isProcessing = false;
+                                      _updateState();
+
+                                      // BUG FIX: Show dialogs inside onDismissed instead of
+                                      // onUserEarnedReward to prevent the Ad overlay from
+                                      // blocking or prematurely killing the dialogs.
+                                      result.fold(
+                                        (failure) {
+                                          showDialog(
+                                            context: context,
+                                            builder: (ctx) => ModernGameDialog(
+                                              title: context.tr(
+                                                'store.reward_failed_title',
+                                                fallback: 'REWARD FAILED',
+                                              ),
+                                              description: context.tr(
+                                                'store.reward_failed_desc',
+                                                fallback:
+                                                    "We couldn't grant your reward. Please contact support if this keeps happening.",
+                                              ),
+                                              buttonText: context
+                                                  .tr(
+                                                    'common.ok',
+                                                    fallback: 'OK',
+                                                  )
+                                                  .toUpperCase(),
+                                              isSuccess: false,
+                                              onButtonPressed: () =>
+                                                  Navigator.of(ctx).pop(),
+                                            ),
+                                          );
+                                        },
+                                        (_) {
+                                          widget.parentContext
+                                              .read<AuthBloc>()
+                                              .add(const AuthReloadUser());
+                                          di.sl<HapticService>().success();
+                                          showDialog(
+                                            context: context,
+                                            builder: (ctx) => Material(
+                                              type: MaterialType.transparency,
+                                              child: Stack(
+                                                alignment: Alignment.center,
+                                                children: [
+                                                  ModernGameDialog(
+                                                    title: context.tr(
+                                                      'store.reward_unlocked_title',
+                                                      fallback:
+                                                          'REWARD UNLOCKED!',
+                                                    ),
+                                                    description: context.tr(
+                                                      'store.got_key_desc',
+                                                      fallback:
+                                                          'You got a Golden Key!',
+                                                    ),
+                                                    buttonText: context.tr(
+                                                      'store.awesome',
+                                                      fallback: 'AWESOME',
+                                                    ),
+                                                    isSuccess: true,
+                                                    onButtonPressed: () {
+                                                      Navigator.of(ctx).pop();
+                                                      if (mounted &&
+                                                          context.mounted) {
+                                                        Navigator.of(
+                                                          context,
+                                                        ).pop();
+                                                      }
+                                                    },
+                                                  ),
+                                                  const Positioned.fill(
+                                                    child: IgnorePointer(
+                                                      child: GameConfetti(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          );
+                                        },
                                       );
                                     },
                                   );
                                 },
-                              );
-                            },
-                            child: ShakeableWrapper(
-                              shakeCount: _outOfAdsShake,
-                              child: Container(
-                                width: double.infinity,
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 12.h,
-                                  horizontal: 8.w,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: _remainingClaims <= 0
-                                      ? (Theme.of(context).brightness ==
-                                                Brightness.dark
-                                            ? Colors.white.withValues(
-                                                alpha: 0.02,
-                                              )
-                                            : AppColors.slate50)
-                                      : (Theme.of(context).brightness ==
-                                                Brightness.dark
-                                            ? Colors.white.withValues(
-                                                alpha: 0.05,
-                                              )
-                                            : AppColors.slate100),
-                                  borderRadius: BorderRadius.circular(16.r),
-                                  border: Border.all(
-                                    color: _remainingClaims <= 0
-                                        ? (Theme.of(context).brightness ==
-                                                  Brightness.dark
-                                              ? Colors.white.withValues(
-                                                  alpha: 0.05,
-                                                )
-                                              : AppColors.slate200)
-                                        : (Theme.of(context).brightness ==
-                                                  Brightness.dark
-                                              ? Colors.white.withValues(
-                                                  alpha: 0.1,
-                                                )
-                                              : AppColors.slate300),
-                                    width: 1.5.w,
-                                  ),
-                                ),
-                                alignment: Alignment.center,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(
-                                      _isLoadingLimits
-                                          ? Icons.hourglass_empty_rounded
-                                          : _remainingClaims <= 0
-                                          ? Icons.lock_clock_rounded
-                                          : isPremium
-                                          ? Icons.redeem_rounded
-                                          : Icons.play_circle_fill_rounded,
+                                child: ShakeableWrapper(
+                                  shakeCount: _outOfAdsShake,
+                                  child: Container(
+                                    width: double.infinity,
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: 12.h,
+                                      horizontal: 8.w,
+                                    ),
+                                    decoration: BoxDecoration(
                                       color: _remainingClaims <= 0
-                                          ? AppColors.slate500
+                                          ? (Theme.of(context).brightness ==
+                                                    Brightness.dark
+                                                ? Colors.white.withValues(
+                                                    alpha: 0.02,
+                                                  )
+                                                : AppColors.slate50)
                                           : (Theme.of(context).brightness ==
                                                     Brightness.dark
-                                                ? Colors.white70
-                                                : AppColors.slate700),
-                                      size: 18.r,
-                                    ),
-                                    SizedBox(width: 6.w),
-                                    Flexible(
-                                      child: FittedBox(
-                                        fit: BoxFit.scaleDown,
-                                        child: Text(
-                                          _isLoadingLimits
-                                              ? context.tr(
-                                                  'store.loading_ad',
-                                                  fallback: 'Loading Ad...',
-                                                )
-                                              : _remainingClaims <= 0
-                                              ? context.tr(
-                                                  'store.out_of_ads_today',
-                                                  fallback: 'Out of Ads Today',
-                                                )
-                                              : isPremium
-                                              ? context.tr(
-                                                  'store.claim_free_key',
-                                                  fallback: 'Claim Free Key',
-                                                )
-                                              : context.tr(
-                                                  'store.watch_ad_key',
-                                                  fallback: 'Watch Ad for Key',
-                                                ),
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 14.sp,
-                                            fontWeight: FontWeight.w800,
-                                            color: _remainingClaims <= 0
-                                                ? AppColors.slate500
-                                                : (Theme.of(
-                                                            context,
-                                                          ).brightness ==
-                                                          Brightness.dark
-                                                      ? Colors.white70
-                                                      : AppColors.slate700),
-                                            letterSpacing: 0.5,
-                                          ),
-                                        ),
+                                                ? Colors.white.withValues(
+                                                    alpha: 0.05,
+                                                  )
+                                                : AppColors.slate100),
+                                      borderRadius: BorderRadius.circular(16.r),
+                                      border: Border.all(
+                                        color: _remainingClaims <= 0
+                                            ? (Theme.of(context).brightness ==
+                                                      Brightness.dark
+                                                  ? Colors.white.withValues(
+                                                      alpha: 0.05,
+                                                    )
+                                                  : AppColors.slate200)
+                                            : (Theme.of(context).brightness ==
+                                                      Brightness.dark
+                                                  ? Colors.white.withValues(
+                                                      alpha: 0.1,
+                                                    )
+                                                  : AppColors.slate300),
+                                        width: 1.5.w,
                                       ),
                                     ),
-                                  ],
+                                    alignment: Alignment.center,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          _isLoadingLimits
+                                              ? Icons.hourglass_empty_rounded
+                                              : _remainingClaims <= 0
+                                              ? Icons.lock_clock_rounded
+                                              : isPremium
+                                              ? Icons.redeem_rounded
+                                              : Icons.play_circle_fill_rounded,
+                                          color: _remainingClaims <= 0
+                                              ? AppColors.slate500
+                                              : (Theme.of(context).brightness ==
+                                                        Brightness.dark
+                                                    ? Colors.white70
+                                                    : AppColors.slate700),
+                                          size: 18.r,
+                                        ),
+                                        SizedBox(width: 6.w),
+                                        Flexible(
+                                          child: FittedBox(
+                                            fit: BoxFit.scaleDown,
+                                            child: Text(
+                                              _isLoadingLimits
+                                                  ? context.tr(
+                                                      'store.loading_ad',
+                                                      fallback: 'Loading Ad...',
+                                                    )
+                                                  : _remainingClaims <= 0
+                                                  ? context.tr(
+                                                      'store.out_of_ads_today',
+                                                      fallback:
+                                                          'Out of Ads Today',
+                                                    )
+                                                  : isPremium
+                                                  ? context.tr(
+                                                      'store.claim_free_key',
+                                                      fallback:
+                                                          'Claim Free Key',
+                                                    )
+                                                  : context.tr(
+                                                      'store.watch_ad_key',
+                                                      fallback:
+                                                          'Watch Ad for Key',
+                                                    ),
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 14.sp,
+                                                fontWeight: FontWeight.w800,
+                                                color: _remainingClaims <= 0
+                                                    ? AppColors.slate500
+                                                    : (Theme.of(
+                                                                context,
+                                                              ).brightness ==
+                                                              Brightness.dark
+                                                          ? Colors.white70
+                                                          : AppColors.slate700),
+                                                letterSpacing: 0.5,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ),
-                        SizedBox(width: 12.w),
-                        Expanded(
-                          child: ScaleButton(
-                            onTap: () async {
-                              if (widget.isKidsMode) {
-                                final passed = await ParentalGateDialog.show(
-                                  context,
-                                );
-                                if (!passed || !context.mounted) return;
-                              }
-                              if (!context.mounted) return;
-                              Navigator.pop(context);
-                              PremiumStoreBottomSheet.show(
-                                context: widget.parentContext,
-                                isKidsMode: widget.isKidsMode,
-                              );
-                            },
-                            child: Container(
-                              width: double.infinity,
-                              padding: EdgeInsets.symmetric(
-                                vertical: 12.h,
-                                horizontal: 8.w,
-                              ),
-                              decoration: BoxDecoration(
-                                color:
-                                    Theme.of(context).brightness ==
-                                        Brightness.dark
-                                    ? Colors.white.withValues(alpha: 0.05)
-                                    : AppColors.slate100,
-                                borderRadius: BorderRadius.circular(16.r),
-                                border: Border.all(
-                                  color:
-                                      Theme.of(context).brightness ==
-                                          Brightness.dark
-                                      ? Colors.white.withValues(alpha: 0.1)
-                                      : AppColors.slate300,
-                                  width: 1.5.w,
-                                ),
-                              ),
-                              alignment: Alignment.center,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.storefront_rounded,
+                            SizedBox(width: 12.w),
+                            Expanded(
+                              child: ScaleButton(
+                                onTap: () async {
+                                  if (widget.isKidsMode) {
+                                    final passed =
+                                        await ParentalGateDialog.show(context);
+                                    if (!passed || !context.mounted) return;
+                                  }
+                                  if (!context.mounted) return;
+                                  Navigator.pop(context);
+                                  PremiumStoreBottomSheet.show(
+                                    context: widget.parentContext,
+                                    isKidsMode: widget.isKidsMode,
+                                  );
+                                },
+                                child: Container(
+                                  width: double.infinity,
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 12.h,
+                                    horizontal: 8.w,
+                                  ),
+                                  decoration: BoxDecoration(
                                     color:
                                         Theme.of(context).brightness ==
                                             Brightness.dark
-                                        ? Colors.white70
-                                        : AppColors.slate700,
-                                    size: 18.r,
-                                  ),
-                                  SizedBox(width: 6.w),
-                                  Flexible(
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: Text(
-                                        context.tr(
-                                          'store.get_more_coins_keys',
-                                          fallback: 'Store',
-                                        ),
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.w800,
-                                          color:
-                                              Theme.of(context).brightness ==
-                                                  Brightness.dark
-                                              ? Colors.white70
-                                              : AppColors.slate700,
-                                          letterSpacing: 0.5,
-                                        ),
-                                      ),
+                                        ? Colors.white.withValues(alpha: 0.05)
+                                        : AppColors.slate100,
+                                    borderRadius: BorderRadius.circular(16.r),
+                                    border: Border.all(
+                                      color:
+                                          Theme.of(context).brightness ==
+                                              Brightness.dark
+                                          ? Colors.white.withValues(alpha: 0.1)
+                                          : AppColors.slate300,
+                                      width: 1.5.w,
                                     ),
                                   ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-
-                    SizedBox(height: 24.h),
-
-                      // Premium bypass info
-                      ScaleButton(
-                        onTap: () {
-                          Navigator.pop(context);
-                          widget.parentContext.push(AppRouter.premiumRoute);
-                        },
-                        child: Container(
-                          width: double.infinity,
-                          padding: EdgeInsets.symmetric(
-                            vertical: 16.h,
-                            horizontal: 16.w,
-                          ),
-                          decoration: BoxDecoration(
-                            color: const Color(
-                              0xFFF59E0B,
-                            ).withValues(alpha: 0.08),
-                            borderRadius: BorderRadius.circular(20.r),
-                            border: Border.all(
-                              color: const Color(
-                                0xFFF59E0B,
-                              ).withValues(alpha: 0.3),
-                              width: 1.w,
-                            ),
-                          ),
-                          child: Row(
-                            children: [
-                              Container(
-                                padding: EdgeInsets.all(8.r),
-                                decoration: BoxDecoration(
-                                  color: const Color(
-                                    0xFFF59E0B,
-                                  ).withValues(alpha: 0.2),
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Icon(
-                                  Icons.workspace_premium_rounded,
-                                  color: AppColors.amber500,
-                                  size: 24.r,
-                                ),
-                              ),
-                              SizedBox(width: 12.w),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      context.tr(
-                                        'store.tired_of_keys',
-                                        fallback: 'Tired of Keys?',
-                                      ),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 16.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: AppColors.amber500,
-                                      ),
-                                    ),
-                                    SizedBox(height: 2.h),
-                                    Text(
-                                      context.tr(
-                                        'store.premium_bypass_gates',
-                                        fallback:
-                                            'Premium users bypass all gates!',
-                                      ),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.w600,
+                                  alignment: Alignment.center,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.storefront_rounded,
                                         color:
                                             Theme.of(context).brightness ==
                                                 Brightness.dark
                                             ? Colors.white70
-                                            : Colors.black54,
+                                            : AppColors.slate700,
+                                        size: 18.r,
                                       ),
-                                    ),
-                                  ],
+                                      SizedBox(width: 6.w),
+                                      Flexible(
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: Text(
+                                            context.tr(
+                                              'store.get_more_coins_keys',
+                                              fallback: 'Store',
+                                            ),
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 14.sp,
+                                              fontWeight: FontWeight.w800,
+                                              color:
+                                                  Theme.of(
+                                                        context,
+                                                      ).brightness ==
+                                                      Brightness.dark
+                                                  ? Colors.white70
+                                                  : AppColors.slate700,
+                                              letterSpacing: 0.5,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                              Icon(
-                                Icons.chevron_right_rounded,
-                                color: AppColors.amber500,
-                                size: 24.r,
+                            ),
+                          ],
+                        ),
+
+                        SizedBox(height: 24.h),
+
+                        // Premium bypass info
+                        ScaleButton(
+                          onTap: () {
+                            Navigator.pop(context);
+                            widget.parentContext.push(AppRouter.premiumRoute);
+                          },
+                          child: Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.symmetric(
+                              vertical: 16.h,
+                              horizontal: 16.w,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color(
+                                0xFFF59E0B,
+                              ).withValues(alpha: 0.08),
+                              borderRadius: BorderRadius.circular(20.r),
+                              border: Border.all(
+                                color: const Color(
+                                  0xFFF59E0B,
+                                ).withValues(alpha: 0.3),
+                                width: 1.w,
                               ),
-                            ],
+                            ),
+                            child: Row(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.all(8.r),
+                                  decoration: BoxDecoration(
+                                    color: const Color(
+                                      0xFFF59E0B,
+                                    ).withValues(alpha: 0.2),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    Icons.workspace_premium_rounded,
+                                    color: AppColors.amber500,
+                                    size: 24.r,
+                                  ),
+                                ),
+                                SizedBox(width: 12.w),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        context.tr(
+                                          'store.tired_of_keys',
+                                          fallback: 'Tired of Keys?',
+                                        ),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w900,
+                                          color: AppColors.amber500,
+                                        ),
+                                      ),
+                                      SizedBox(height: 2.h),
+                                      Text(
+                                        context.tr(
+                                          'store.premium_bypass_gates',
+                                          fallback:
+                                              'Premium users bypass all gates!',
+                                        ),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 12.sp,
+                                          fontWeight: FontWeight.w600,
+                                          color:
+                                              Theme.of(context).brightness ==
+                                                  Brightness.dark
+                                              ? Colors.white70
+                                              : Colors.black54,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.chevron_right_rounded,
+                                  color: AppColors.amber500,
+                                  size: 24.r,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
 
-                    SizedBox(height: MediaQuery.of(context).padding.bottom),
-                  ],
+                      SizedBox(height: MediaQuery.of(context).padding.bottom),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }

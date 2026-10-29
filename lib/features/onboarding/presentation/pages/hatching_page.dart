@@ -14,6 +14,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/tts_voice_helper.dart';
 import 'package:confetti/confetti.dart';
 
 class _LocalPalette {
@@ -38,22 +39,53 @@ class HatchingPage extends StatefulWidget {
 class _HatchingPageState extends State<HatchingPage> {
   /// 0: Egg shown | 1: Cracking | 2: Hatched | 3: Introduction
   final ValueNotifier<int> _stage = ValueNotifier(0);
+  final ValueNotifier<bool> _typewriterStarted = ValueNotifier(false);
+  final ValueNotifier<bool> _showFullText = ValueNotifier(false);
   final ConfettiController _confettiController = ConfettiController(
     duration: const Duration(seconds: 3),
   );
   Timer? _hatchTimer;
+  Timer? _ttsStartFallbackTimer;
+  void Function()? _ttsSpeakingListener;
+
+  @override
+  void initState() {
+    super.initState();
+    _preWarmTtsEngine();
+  }
 
   @override
   void dispose() {
     _hatchTimer?.cancel();
+    _ttsStartFallbackTimer?.cancel();
     try {
+      if (sl.isRegistered<TtsService>() && _ttsSpeakingListener != null) {
+        sl<TtsService>().isSpeakingNotifier.removeListener(
+          _ttsSpeakingListener!,
+        );
+      }
       if (sl.isRegistered<TtsService>()) {
         sl<TtsService>().stop();
       }
     } catch (_) {}
     _confettiController.dispose();
+    _typewriterStarted.dispose();
+    _showFullText.dispose();
     _stage.dispose();
     super.dispose();
+  }
+
+  /// Pre-warms the native TTS engine, voice list, and preferences in the background
+  /// while the user is viewing and tapping the egg, removing the 1-2s delay.
+  void _preWarmTtsEngine() {
+    try {
+      if (sl.isRegistered<TtsService>()) {
+        sl<TtsService>();
+        TtsVoiceHelper.getSavedPreset().catchError(
+          (_) => TtsVoicePreset.clearGuide,
+        );
+      }
+    } catch (_) {}
   }
 
   /// Maps a locale language code to a TTS-compatible language tag.
@@ -86,6 +118,7 @@ class _HatchingPageState extends State<HatchingPage> {
     if (_stage.value == 0) {
       sl<HapticService>().selection();
       _stage.value = 1;
+      _preWarmTtsEngine();
 
       _hatchTimer = Timer(const Duration(milliseconds: 1500), () {
         if (mounted) {
@@ -108,19 +141,63 @@ class _HatchingPageState extends State<HatchingPage> {
     args: [widget.userName],
   );
 
+  void _startTypewriter() {
+    _ttsStartFallbackTimer?.cancel();
+    if (mounted && !_typewriterStarted.value) {
+      _typewriterStarted.value = true;
+    }
+  }
+
   Future<void> _speakIntroduction() async {
     if (!mounted) return;
+
+    // Safety fallback: if audio playback takes longer than 350ms or device
+    // is muted, start typewriter automatically so text is never stuck.
+    _ttsStartFallbackTimer?.cancel();
+    _ttsStartFallbackTimer = Timer(
+      const Duration(milliseconds: 350),
+      _startTypewriter,
+    );
+
     try {
-      final locale = sl<LocaleService>().currentLocale;
-      final ttsLang = _mapLocaleToTtsLanguage(locale.languageCode);
       if (sl.isRegistered<TtsService>()) {
-        await sl<TtsService>().speak(
-          _getIntroMessage(context),
-          locale: ttsLang,
-          rate: 0.5,
-        );
+        final tts = sl<TtsService>();
+
+        _ttsSpeakingListener = () {
+          try {
+            if (tts.isSpeaking) {
+              if (_ttsSpeakingListener != null) {
+                tts.isSpeakingNotifier.removeListener(_ttsSpeakingListener!);
+                _ttsSpeakingListener = null;
+              }
+              _startTypewriter();
+            }
+          } catch (_) {
+            _startTypewriter();
+          }
+        };
+
+        if (tts.isSpeaking) {
+          _startTypewriter();
+        } else {
+          try {
+            tts.isSpeakingNotifier.addListener(_ttsSpeakingListener!);
+          } catch (_) {
+            _startTypewriter();
+          }
+        }
+
+        final locale = sl.isRegistered<LocaleService>()
+            ? sl<LocaleService>().currentLocale
+            : const Locale('en');
+        final ttsLang = _mapLocaleToTtsLanguage(locale.languageCode);
+
+        await tts.speak(_getIntroMessage(context), locale: ttsLang, rate: 0.5);
+      } else {
+        _startTypewriter();
       }
     } catch (e) {
+      _startTypewriter();
       if (kDebugMode) debugPrint('HatchingPage: TTS speak failed: $e');
     }
   }
@@ -177,7 +254,7 @@ class _HatchingPageState extends State<HatchingPage> {
                                     _buildStatusText(context, currentStage),
                                   ],
                                 ),
-                                // Bottom CTA — pre-allocated height prevents CLS
+                                // Bottom CTA â€” pre-allocated height prevents CLS
                                 Padding(
                                   padding: EdgeInsets.only(bottom: 16.h),
                                   child: AnimatedSize(
@@ -333,57 +410,91 @@ class _HatchingPageState extends State<HatchingPage> {
       final introMessage = _getIntroMessage(context);
       return Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: TweenAnimationBuilder<int>(
-          key: ValueKey('hatching_status_$currentStage'),
-          tween: IntTween(begin: 0, end: introMessage.length),
-          duration: Duration(milliseconds: introMessage.length * 40),
-          builder: (context, value, child) {
-            return GlassTile(
-              padding: EdgeInsets.all(20.r),
-              borderRadius: BorderRadius.circular(24.r),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.format_quote_rounded,
-                        color: AppColors.indigo500.withValues(alpha: 0.5),
-                        size: 24.r,
-                      ),
-                      SizedBox(width: 8.w),
-                      Text(
-                        "Owly",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.indigo500,
-                          letterSpacing: 1.2,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 12.h),
-                  Text(
-                    introMessage.substring(
-                      0,
-                      value.clamp(0, introMessage.length),
-                    ),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      height: 1.5,
-                      fontWeight: FontWeight.w600,
-                      color: textColor,
-                    ),
-                  ),
-                ],
-              ),
-            );
+        child: GestureDetector(
+          onTap: () {
+            // Tapping dialogue card reveals full text immediately for fast readers
+            _showFullText.value = true;
           },
+          child: ValueListenableBuilder<bool>(
+            valueListenable: _showFullText,
+            builder: (context, showFull, _) {
+              return ValueListenableBuilder<bool>(
+                valueListenable: _typewriterStarted,
+                builder: (context, started, _) {
+                  final int targetLength = (!started && !showFull)
+                      ? 0
+                      : introMessage.length;
+                  // Paced at 75ms per character to match 0.5 TTS cadence (~12-13 chars/sec)
+                  final int durationMs = showFull
+                      ? 0
+                      : (introMessage.length * 75);
+
+                  return TweenAnimationBuilder<int>(
+                    key: ValueKey(
+                      'hatching_status_${currentStage}_${showFull}_$started',
+                    ),
+                    tween: IntTween(
+                      begin: showFull ? introMessage.length : 0,
+                      end: targetLength,
+                    ),
+                    duration: Duration(milliseconds: durationMs),
+                    builder: (context, value, child) {
+                      return GlassTile(
+                        padding: EdgeInsets.all(20.r),
+                        borderRadius: BorderRadius.circular(24.r),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.format_quote_rounded,
+                                  color: AppColors.indigo500.withValues(
+                                    alpha: 0.5,
+                                  ),
+                                  size: 24.r,
+                                ),
+                                SizedBox(width: 8.w),
+                                Text(
+                                  "Owly",
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.indigo500,
+                                    letterSpacing: 1.2,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 12.h),
+                            ConstrainedBox(
+                              constraints: BoxConstraints(minHeight: 50.h),
+                              child: Text(
+                                introMessage.substring(
+                                  0,
+                                  value.clamp(0, introMessage.length),
+                                ),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  height: 1.5,
+                                  fontWeight: FontWeight.w600,
+                                  color: textColor,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                },
+              );
+            },
+          ),
         ),
       );
     }
@@ -449,7 +560,7 @@ class _HatchingPageState extends State<HatchingPage> {
           ),
         ),
       ),
-      // FIX (H6): Reduced delay from 2s to 600ms — less user impatience.
+      // FIX (H6): Reduced delay from 2s to 600ms â€” less user impatience.
     ).animate().fadeIn(delay: 600.ms).slideY(begin: 0.2, end: 0);
   }
 }

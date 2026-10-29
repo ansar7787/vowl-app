@@ -554,7 +554,7 @@ void main() {
           onUserEarnedReward: any(named: 'onUserEarnedReward'),
           onDismissed: any(named: 'onDismissed'),
         ),
-      ).thenAnswer((invocation) {
+      ).thenAnswer((invocation) async {
         final onDismissed = invocation.namedArguments[#onDismissed] as VoidCallback?;
         onDismissed?.call();
       });

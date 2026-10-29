@@ -27,10 +27,22 @@ enum CustomSnackBarType {
 class CustomSnackBar {
   CustomSnackBar._(); // Non-instantiable.
 
+  static String? _lastMessage;
+  static CustomSnackBarType? _lastType;
+  static int? _lastShownEpochMs;
+
+  /// Visible for testing to reset debounce state.
+  @visibleForTesting
+  static void resetDebounce() {
+    _lastMessage = null;
+    _lastType = null;
+    _lastShownEpochMs = null;
+  }
+
   /// Shows a themed floating alert.
   ///
   /// [context] must be mounted — this is enforced by an early guard.
-  /// [duration] defaults to 4 seconds but can be shortened for ephemeral
+  /// [duration] defaults to 3 seconds but can be shortened for ephemeral
   /// confirmations (e.g., clipboard copy).
   static void show({
     required BuildContext context,
@@ -39,6 +51,20 @@ class CustomSnackBar {
     Duration duration = const Duration(seconds: 3),
   }) {
     if (!context.mounted) return;
+
+    final trimmed = message.trim();
+    if (trimmed.isEmpty) return;
+
+    final now = DateTime.now().millisecondsSinceEpoch;
+    if (_lastMessage == trimmed &&
+        _lastType == type &&
+        _lastShownEpochMs != null &&
+        (now - _lastShownEpochMs!) < 750) {
+      return;
+    }
+    _lastMessage = trimmed;
+    _lastType = type;
+    _lastShownEpochMs = now;
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -174,27 +200,38 @@ class CustomSnackBar {
                 ),
 
                 // Dismiss button
-                Semantics(
-                  label: 'Dismiss',
-                  button: true,
-                  child: Material(
-                    color: Colors.transparent,
-                    child: InkWell(
-                      onTap: () {
-                        if (context.mounted) {
-                          ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                        }
-                      },
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 14.w),
-                        child: Icon(
-                          Icons.close_rounded,
-                          color: subtextColor,
-                          size: 18.r,
+                Builder(
+                  builder: (snackContext) {
+                    return Semantics(
+                      label: 'Dismiss',
+                      button: true,
+                      child: GestureDetector(
+                        behavior: HitTestBehavior.opaque,
+                        onTap: () {
+                          try {
+                            ScaffoldMessenger.of(
+                              snackContext,
+                            ).hideCurrentSnackBar();
+                          } catch (_) {
+                            if (context.mounted) {
+                              ScaffoldMessenger.of(
+                                context,
+                              ).hideCurrentSnackBar();
+                            }
+                          }
+                        },
+                        child: Container(
+                          width: 44.w,
+                          alignment: Alignment.center,
+                          child: Icon(
+                            Icons.close_rounded,
+                            color: subtextColor,
+                            size: 18.r,
+                          ),
                         ),
                       ),
-                    ),
-                  ),
+                    );
+                  },
                 ),
               ],
             ),
