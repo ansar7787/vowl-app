@@ -260,7 +260,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
       return;
     }
     final user = authBloc.state.user;
-    if (user == null || _lastProcessedUser == user) {
+    if (user == null || user.id.trim().isEmpty || _lastProcessedUser == user) {
       emit(state.copyWith(isLoading: false));
       return;
     }

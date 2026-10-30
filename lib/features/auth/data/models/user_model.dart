@@ -100,9 +100,14 @@ class UserModel extends UserEntity {
   ///
   /// Prefer this constructor for Firestore reads. [fromJson] is an alias kept
   /// for backwards compatibility with any REST/cache layer.
-  factory UserModel.fromMap(Map<String, dynamic> map) {
+  factory UserModel.fromMap(Map<String, dynamic> map, [String? documentId]) {
+    final parsedId = (map['id'] as String?)?.trim();
+    final effectiveId = (parsedId != null && parsedId.isNotEmpty)
+        ? parsedId
+        : (documentId?.trim() ?? '');
+
     return UserModel(
-      id: (map['id'] as String?) ?? '',
+      id: effectiveId,
       email: (map['email'] as String?) ?? '',
       displayName: map['displayName'] as String?,
       photoUrl: map['photoUrl'] as String?,

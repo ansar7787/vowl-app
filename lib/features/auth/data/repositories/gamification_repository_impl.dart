@@ -139,7 +139,7 @@ class GamificationRepositoryImpl
             recentActivities: const [],
           );
         } else {
-          userData = UserModel.fromMap(doc.data()!);
+          userData = UserModel.fromMap(doc.data()!, doc.id);
         }
 
         final updates = _computeRewardUpdates(
@@ -215,7 +215,7 @@ class GamificationRepositoryImpl
 
       final UserModel userData;
       if (isDocInCache) {
-        userData = UserModel.fromMap(doc.data() as Map<String, dynamic>);
+        userData = UserModel.fromMap(doc.data() as Map<String, dynamic>, doc.id);
       } else {
         final user = _firebaseAuth.currentUser;
         if (user == null) return Left(AuthFailure('user-not-logged-in'));
