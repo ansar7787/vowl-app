@@ -23,7 +23,7 @@ class InAppPurchaseService {
   InAppPurchase get _iap => testIapInstance ?? InAppPurchase.instance;
   StreamSubscription<List<PurchaseDetails>>? _subscription;
 
-  // Product IDs matching what you'll configure in Play Console
+  // Product IDs matching what you configure in Google Play Console
   static const String premiumWeekly = 'vowl_premium_weekly';
   static const String premiumMonthly = 'vowl_premium_monthly';
   static const String premiumYearly = 'vowl_premium_yearly';
@@ -39,6 +39,71 @@ class InAppPurchaseService {
     coinPack500,
     coinPack1000,
   };
+
+  /// Resolves the Google Play Billing product ID for a given subscription plan.
+  /// Matches on plan ID, name, duration, or index so it never mistakenly defaults to monthly.
+  static String getPremiumProductId({
+    String? planId,
+    String? planName,
+    int? days,
+    int? index,
+  }) {
+    final id = (planId ?? '').toLowerCase().trim();
+    final name = (planName ?? '').toLowerCase().trim();
+    final d = days ?? 0;
+
+    // 1. Weekly checks:
+    if (id == 'weekly' ||
+        id == premiumWeekly ||
+        id.contains('week') ||
+        name.contains('week') ||
+        (d > 0 && d <= 14) ||
+        index == 0) {
+      return premiumWeekly;
+    }
+
+    // 2. Yearly checks:
+    if (id == 'yearly' ||
+        id == premiumYearly ||
+        id.contains('year') ||
+        id.contains('annual') ||
+        name.contains('year') ||
+        name.contains('annual') ||
+        d >= 180 ||
+        index == 2) {
+      return premiumYearly;
+    }
+
+    // 3. Monthly checks / default:
+    return premiumMonthly;
+  }
+
+  /// Resolves the Google Play Billing product ID for a given coin pack (100, 500, 1000 coins).
+  static String getCoinPackProductId({
+    String? packId,
+    int? coins,
+    int? index,
+  }) {
+    final id = (packId ?? '').toLowerCase().trim();
+    final c = coins ?? 0;
+
+    if (id.contains('500') ||
+        id.contains('explorer') ||
+        c == 500 ||
+        c == 1200 ||
+        index == 1) {
+      return coinPack500;
+    }
+    if (id.contains('1000') ||
+        id.contains('master') ||
+        c == 1000 ||
+        c == 4000 ||
+        index == 2) {
+      return coinPack1000;
+    }
+
+    return coinPack100;
+  }
 
   List<ProductDetails> products = [];
   bool isAvailable = false;
@@ -162,15 +227,34 @@ class InAppPurchaseService {
 
   Future<void> buyProduct(ProductDetails product) async {
     final purchaseParam = PurchaseParam(productDetails: product);
+    bool launched = false;
 
-    // All products are consumable:
-    // - Coin packs are obviously consumable (one-time credit).
-    // - Premium plans are TIME-LIMITED (weekly/monthly/yearly) with no
-    //   auto-renewal ("one-time payment, no recurring charges"), so they
-    //   must also be consumable. Using buyNonConsumable would make Google
-    //   Play treat them as permanent one-time purchases, blocking
-    //   re-purchase after expiry and restoring expired premium forever.
-    final launched = await _iap.buyConsumable(purchaseParam: purchaseParam);
+    try {
+      if (_isPremiumProduct(product.id)) {
+        // Subscriptions in Google Play Billing and StoreKit must be purchased
+        // via buyNonConsumable. Calling buyConsumable on subscriptions throws DEVELOPER_ERROR.
+        launched = await _iap.buyNonConsumable(purchaseParam: purchaseParam);
+      } else {
+        // Coins are consumable items
+        launched = await _iap.buyConsumable(purchaseParam: purchaseParam);
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('IAP purchase launch error, attempting alternative mode: $e');
+      }
+      try {
+        if (_isPremiumProduct(product.id)) {
+          launched = await _iap.buyConsumable(purchaseParam: purchaseParam);
+        } else {
+          launched = await _iap.buyNonConsumable(purchaseParam: purchaseParam);
+        }
+      } catch (fallbackError) {
+        if (kDebugMode) {
+          debugPrint('IAP fallback failed: $fallbackError');
+        }
+      }
+    }
+
     if (!launched) {
       onPurchaseError?.call('Could not launch purchase. Please try again.');
     }

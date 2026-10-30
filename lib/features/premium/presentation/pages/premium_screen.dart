@@ -1256,20 +1256,12 @@ class _PremiumScreenState extends State<PremiumScreen> {
         // When Google Play is selected, find the matching product price
         String? googlePlayPrice;
         if (_selectedPaymentMethod == PaymentMethod.googlePlay) {
-          String productId;
-          switch (plan.id) {
-            case 'weekly':
-              productId = InAppPurchaseService.premiumWeekly;
-              break;
-            case 'monthly':
-              productId = InAppPurchaseService.premiumMonthly;
-              break;
-            case 'yearly':
-              productId = InAppPurchaseService.premiumYearly;
-              break;
-            default:
-              productId = InAppPurchaseService.premiumMonthly;
-          }
+          final productId = InAppPurchaseService.getPremiumProductId(
+            planId: plan.id,
+            planName: plan.name,
+            days: plan.days,
+            index: index,
+          );
           final iap = InAppPurchaseService.instance;
           final match = iap.products.where((p) => p.id == productId);
           if (match.isNotEmpty) {
@@ -1503,20 +1495,12 @@ class _PremiumScreenState extends State<PremiumScreen> {
     if (_selectedPaymentMethod == PaymentMethod.googlePlay) {
       // Use the ACTUAL Google Play price (localized, with correct currency)
       // instead of guessing with a hardcoded 30% markup.
-      String productId;
-      switch (selectedPlan.id) {
-        case 'weekly':
-          productId = InAppPurchaseService.premiumWeekly;
-          break;
-        case 'monthly':
-          productId = InAppPurchaseService.premiumMonthly;
-          break;
-        case 'yearly':
-          productId = InAppPurchaseService.premiumYearly;
-          break;
-        default:
-          productId = InAppPurchaseService.premiumMonthly;
-      }
+      final productId = InAppPurchaseService.getPremiumProductId(
+        planId: selectedPlan.id,
+        planName: selectedPlan.name,
+        days: selectedPlan.days,
+        index: _selectedPlanIndexVal,
+      );
       final iap = InAppPurchaseService.instance;
       final matchingProducts = iap.products.where((p) => p.id == productId);
       if (matchingProducts.isNotEmpty) {
@@ -1666,20 +1650,12 @@ class _PremiumScreenState extends State<PremiumScreen> {
       }
 
       if (_selectedPaymentMethod == PaymentMethod.googlePlay) {
-        String productId;
-        switch (plan.id) {
-          case 'weekly':
-            productId = InAppPurchaseService.premiumWeekly;
-            break;
-          case 'monthly':
-            productId = InAppPurchaseService.premiumMonthly;
-            break;
-          case 'yearly':
-            productId = InAppPurchaseService.premiumYearly;
-            break;
-          default:
-            productId = InAppPurchaseService.premiumMonthly;
-        }
+        final productId = InAppPurchaseService.getPremiumProductId(
+          planId: plan.id,
+          planName: plan.name,
+          days: plan.days,
+          index: _selectedPlanIndexVal,
+        );
 
         final iap = InAppPurchaseService.instance;
         try {
@@ -1707,6 +1683,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 // the receipt AND grants premium on the server. Now refresh
                 // the local user state to reflect the new premium status.
                 if (mounted) {
+                  context.read<AuthBloc>().add(const AuthRefreshUser());
                   context.read<AuthBloc>().add(const AuthReloadUser());
                   di.sl<HapticService>().success();
                   _confettiController.play();

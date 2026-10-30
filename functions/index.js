@@ -865,17 +865,36 @@ exports.validateIAPReceipt = onCall(async (request) => {
 
     const androidPublisher = google.androidpublisher({ version: 'v3', auth });
 
-    // Verify the purchase with Google Play
-    const response = await androidPublisher.purchases.products.get({
-      packageName: 'com.vowl.app',
-      productId: productId,
-      token: purchaseToken,
-    });
+    // Verify the purchase with Google Play (Supports both Subscriptions & In-App Products)
+    let purchaseStateValid = false;
+    if (grantType === 'premium') {
+      try {
+        const subResponse = await androidPublisher.purchases.subscriptions.get({
+          packageName: 'com.vowl.app',
+          subscriptionId: productId,
+          token: purchaseToken,
+        });
+        const paymentState = subResponse.data.paymentState;
+        purchaseStateValid = (paymentState === 1 || paymentState === 2 || !subResponse.data.cancelReason);
+      } catch (subErr) {
+        // Fallback to in-app product verification if configured as managed product
+        const prodResponse = await androidPublisher.purchases.products.get({
+          packageName: 'com.vowl.app',
+          productId: productId,
+          token: purchaseToken,
+        });
+        purchaseStateValid = (prodResponse.data.purchaseState === 0);
+      }
+    } else {
+      const prodResponse = await androidPublisher.purchases.products.get({
+        packageName: 'com.vowl.app',
+        productId: productId,
+        token: purchaseToken,
+      });
+      purchaseStateValid = (prodResponse.data.purchaseState === 0);
+    }
 
-    const purchase = response.data;
-
-    // Check purchase state (0 = purchased, 1 = canceled)
-    if (purchase.purchaseState !== 0) {
+    if (!purchaseStateValid) {
       throw new HttpsError('failed-precondition', 'Purchase is not valid');
     }
 
@@ -895,6 +914,7 @@ exports.validateIAPReceipt = onCall(async (request) => {
       // Map IAP product IDs to coin pack IDs in Firestore
       const productToPackMap = {
         vowl_coins_100: 'starter_pack',
+        vowl_coins_110: 'starter_pack',
         vowl_coins_500: 'explorer_pack',
         vowl_coins_1000: 'master_pack',
       };
@@ -1005,7 +1025,7 @@ exports.validateIAPReceipt = onCall(async (request) => {
         premiumExpiryDate: admin.firestore.Timestamp.fromDate(expiryDate),
         lastPurchaseToken: purchaseToken,
         lastPurchaseProductId: productId,
-        lastPurchaseDate: now,
+        lastPurchaseDate: admin.firestore.FieldValue.serverTimestamp(),
       });
 
       console.log(
