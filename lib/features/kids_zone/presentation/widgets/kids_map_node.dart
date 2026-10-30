@@ -3,6 +3,7 @@ import 'dart:async';
 import 'dart:math' as math;
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -131,6 +132,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
 
   void _handleBuddyTap() {
     _buddyMessageTimer?.cancel();
+    HapticFeedback.lightImpact();
 
     // Trigger state change animation
     _buddyState.value = VowlMascotState.happy;
@@ -155,7 +157,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
 
     di.sl<TtsService>().speak(msg.replaceAll(RegExp(r'[^\w\s\!]'), ''));
 
-    _buddyMessageTimer = Timer(const Duration(seconds: 3), () {
+    _buddyMessageTimer = Timer(const Duration(seconds: 4), () {
       if (mounted) {
         _buddyMessage.value = null;
         _buddyState.value = VowlMascotState.neutral;
@@ -163,118 +165,112 @@ class _KidsMapNodeState extends State<KidsMapNode> {
     });
   }
 
-  Widget _buildBuddy(BuildContext context, {required bool isNearRightEdge}) {
-    return BlocBuilder<AuthBloc, AuthState>(
-      builder: (context, authState) {
-        return GestureDetector(
-          onTap: _handleBuddyTap,
-          behavior: HitTestBehavior.opaque,
-          child: ListenableBuilder(
-            listenable: Listenable.merge([_buddyMessage, _buddyState]),
-            builder: (context, _) {
-              return Stack(
-                clipBehavior: Clip.none,
-                alignment: Alignment.center,
-                children: [
-                  // 10/10 Bouncy Comic Cloud Bubble
-                  if (_buddyMessage.value != null)
-                    Positioned(
-                      top: -30.h,
-                      right: isNearRightEdge ? 45.r : null,
-                      left: !isNearRightEdge ? 45.r : null,
-                      child: _buildBuddySpeechBubble(
-                        _buddyMessage.value!,
-                        isNearRightEdge,
-                      ),
-                    ),
-
-                  VowlMascot(
-                        size: 55.r,
-                        state: _buddyState.value,
-                        useFloatingAnimation: true,
-                        isKidsMode: true,
-                      )
-                      .animate(target: _buddyMessage.value != null ? 1 : 0)
-                      .shake(hz: 10, curve: Curves.easeInOut)
-                      .scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.2, 1.2),
-                        duration: 200.ms,
-                        curve: Curves.easeOutCubic,
-                      )
-                      .then()
-                      .scale(
-                        begin: const Offset(1.2, 1.2),
-                        end: const Offset(1, 1),
-                        duration: 200.ms,
-                      ),
-                ],
-              );
-            },
-          ),
-        ).animate().scale(curve: Curves.easeOutCubic).fadeIn();
-      },
+  Widget _buildBuddy(BuildContext context) {
+    return Semantics(
+      button: true,
+      label: context.tr(
+        'category_map.mascot_marker_action',
+        fallback: 'Get a cheer from your mascot',
+      ),
+      child: GestureDetector(
+        onTap: _handleBuddyTap,
+        behavior: HitTestBehavior.opaque,
+        child: ValueListenableBuilder<VowlMascotState>(
+          valueListenable: _buddyState,
+          builder: (context, state, _) {
+            return ValueListenableBuilder<String?>(
+              valueListenable: _buddyMessage,
+              builder: (context, message, _) {
+                return VowlMascot(
+                  size: 55.r,
+                  state: state,
+                  useFloatingAnimation: true,
+                  isKidsMode: true,
+                )
+                .animate(target: message != null ? 1 : 0)
+                .shake(hz: 10, curve: Curves.easeInOut)
+                .scale(
+                  begin: const Offset(1, 1),
+                  end: const Offset(1.2, 1.2),
+                  duration: 200.ms,
+                  curve: Curves.easeOutCubic,
+                )
+                .then()
+                .scale(
+                  begin: const Offset(1.2, 1.2),
+                  end: const Offset(1, 1),
+                  duration: 200.ms,
+                );
+              },
+            );
+          },
+        ),
+      ).animate().scale(curve: Curves.easeOutCubic).fadeIn(),
     );
   }
 
-  Widget _buildBuddySpeechBubble(String text, bool isNearRightEdge) {
-    Widget bubble =
-        Container(
-          constraints: BoxConstraints(maxWidth: 180.w),
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(28.r),
-              topRight: Radius.circular(28.r),
-              bottomLeft: isNearRightEdge
-                  ? Radius.circular(28.r)
-                  : Radius.circular(2.r),
-              bottomRight: isNearRightEdge
-                  ? Radius.circular(2.r)
-                  : Radius.circular(28.r),
+  Widget _buildBuddySpeechBubble(
+    String text, {
+    required bool isTailOnRight,
+    required double maxWidth,
+  }) {
+    Widget bubble = GestureDetector(
+      onTap: _handleBuddyTap,
+      child: Container(
+        constraints: BoxConstraints(maxWidth: maxWidth),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(24.r),
+            topRight: Radius.circular(24.r),
+            bottomLeft: isTailOnRight
+                ? Radius.circular(24.r)
+                : Radius.circular(2.r),
+            bottomRight: isTailOnRight
+                ? Radius.circular(2.r)
+                : Radius.circular(24.r),
+          ),
+          border: Border.all(color: widget.primaryColor, width: 3.5.r),
+          boxShadow: [
+            BoxShadow(
+              color: widget.primaryColor.withValues(alpha: 0.25),
+              blurRadius: 14.r,
+              offset: Offset(0, 6.h),
             ),
-            border: Border.all(color: widget.primaryColor, width: 4.r),
-            boxShadow: [
-              BoxShadow(
-                color: widget.primaryColor.withValues(alpha: 0.3),
-                blurRadius: 15.r,
-                offset: Offset(0, 8.h),
-              ),
+          ],
+        ),
+        child: AutoSizeText(
+          text,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontFamilyFallback: const [
+              'Noto Color Emoji',
+              'Apple Color Emoji',
+              'Segoe UI Emoji',
             ],
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w900,
+            color: AppColors.slate800,
           ),
-          child: AutoSizeText(
-            text,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontFamilyFallback: const [
-                'Noto Color Emoji',
-                'Apple Color Emoji',
-                'Segoe UI Emoji',
-              ],
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w900,
-              color: AppColors.slate800,
-            ),
-            textAlign: TextAlign.center,
-            minFontSize: 10,
-            maxLines: 4,
-            overflow: TextOverflow.ellipsis,
-          ),
-        ).animate().scale(
-          alignment: isNearRightEdge
-              ? Alignment.bottomRight
-              : Alignment.bottomLeft,
-          curve: Curves.elasticOut,
-          duration: 700.ms,
-        );
+          textAlign: TextAlign.center,
+          minFontSize: 10,
+          maxLines: 4,
+          overflow: TextOverflow.ellipsis,
+        ),
+      ),
+    ).animate().scale(
+      alignment: isTailOnRight ? Alignment.bottomRight : Alignment.bottomLeft,
+      curve: Curves.elasticOut,
+      duration: 500.ms,
+    );
 
     if (!VowlMotion.shouldReduceMotion(context)) {
       bubble = bubble
-          .animate(onPlay: (c) => c.repeat(reverse: true), delay: 700.ms)
+          .animate(onPlay: (c) => c.repeat(reverse: true), delay: 500.ms)
           .scale(
             begin: const Offset(1.0, 1.0),
-            end: const Offset(1.05, 1.05),
+            end: const Offset(1.04, 1.04),
             duration: 1.5.seconds,
             curve: Curves.easeInOutSine,
           );
@@ -797,6 +793,33 @@ class _KidsMapNodeState extends State<KidsMapNode> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final bool isNodeOnRight = (widget.currentOffset + 50.r) > (screenWidth / 2);
+
+    // Buddy sits on the inner/opposite side of the node towards the screen center
+    final double buddyLeft = isNodeOnRight
+        ? (widget.currentOffset - 48.r).clamp(10.w, screenWidth - 65.r)
+        : (widget.currentOffset + 92.r).clamp(10.w, screenWidth - 65.r);
+
+    // Bubble width is responsive and never exceeds available screen width
+    final double maxBubbleWidth = math.min(180.w, screenWidth - 28.w);
+
+    // Opposite-side positioning: if node is on the right, bubble extends into the spacious
+    // left/center of the screen; if node is on the left, bubble extends into the spacious right/center.
+    final double rawBubbleLeft = isNodeOnRight
+        ? (buddyLeft + 10.r - maxBubbleWidth)
+        : (buddyLeft + 45.r);
+
+    // Absolute screen-boundary clamping: never clips off left (12.w) or right (screenWidth - 12.w)
+    final double clampedBubbleLeft = rawBubbleLeft.clamp(
+      12.w,
+      math.max(12.w, screenWidth - maxBubbleWidth - 12.w),
+    );
+
+    // Tail smartly points back at Buddy depending on which side the bubble actually settled on
+    final bool isTailOnRight =
+        (clampedBubbleLeft + (maxBubbleWidth / 2)) < (buddyLeft + 27.r);
+
     final isDark = Theme.of(context).brightness == Brightness.dark;
     // In Kids UI, locked nodes should be clean, opaque bubbles (White in light, Slate in dark)
     // This perfectly blocks the path line without looking muddy.
@@ -919,20 +942,28 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                 },
               ),
             ),
-            if (widget.isCurrent)
+            if (widget.isCurrent) ...[
               Positioned(
-                left: widget.currentOffset > 0.5.sw
-                    ? widget.currentOffset -
-                          50
-                              .r // Buddy sits neatly to the left of the node
-                    : widget.currentOffset +
-                          90.r, // Buddy sits neatly to the right of the node
+                left: buddyLeft,
                 top: 25.h,
-                child: _buildBuddy(
-                  context,
-                  isNearRightEdge: widget.currentOffset > 0.5.sw,
-                ),
+                child: _buildBuddy(context),
               ),
+              ValueListenableBuilder<String?>(
+                valueListenable: _buddyMessage,
+                builder: (context, message, _) {
+                  if (message == null) return const SizedBox.shrink();
+                  return Positioned(
+                    left: clampedBubbleLeft,
+                    top: 2.h,
+                    child: _buildBuddySpeechBubble(
+                      message,
+                      isTailOnRight: isTailOnRight,
+                      maxWidth: maxBubbleWidth,
+                    ),
+                  );
+                },
+              ),
+            ],
             if (widget.level == 10 ||
                 widget.level == 50 ||
                 widget.level == 100 ||

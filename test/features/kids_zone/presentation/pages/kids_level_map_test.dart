@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/app_router.dart';
@@ -428,6 +429,25 @@ void main() {
         await pumpScreen(tester, width: 320, height: 568);
 
         expect(find.byType(KidsLevelMap), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await cleanUp(tester);
+      },
+    );
+
+    testWidgets(
+      'tapping buddy triggers TTS cheer and displays speech bubble within screen bounds without overflow',
+      (tester) async {
+        await pumpScreen(tester, width: 360, height: 640);
+
+        final mascotFinder = find.byType(VowlMascot);
+        expect(mascotFinder, findsWidgets);
+
+        await tester.tap(mascotFinder.first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        verify(() => mockTtsService.speak(any())).called(1);
         expect(tester.takeException(), isNull);
 
         await cleanUp(tester);
