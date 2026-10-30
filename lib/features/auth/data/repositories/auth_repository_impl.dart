@@ -171,7 +171,7 @@ class AuthRepositoryImpl
   ) {
     try {
       if (doc.exists && doc.data() != null) {
-        final userModel = UserModel.fromMap(doc.data()!);
+        final userModel = UserModel.fromMap(doc.data()!, doc.id);
         final resolvedUser = userModel.copyWith(
           isEmailVerified:
               firebaseUser.emailVerified || userModel.isEmailVerified,
@@ -272,6 +272,7 @@ class AuthRepositoryImpl
           try {
             final user = UserModel.fromMap(
               doc.data()!,
+              doc.id,
             ).copyWith(isEmailVerified: firebaseUser.emailVerified);
             await _localDataSource.cacheUser(user);
             return Right(user);
@@ -513,7 +514,7 @@ class AuthRepositoryImpl
           } catch (_) {}
 
           if (doc != null && doc.exists && doc.data() != null) {
-            final userModel = UserModel.fromMap(doc.data()!);
+            final userModel = UserModel.fromMap(doc.data()!, doc.id);
             final effectiveName = (userModel.displayName != null &&
                     userModel.displayName!.trim().isNotEmpty)
                 ? userModel.displayName

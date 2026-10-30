@@ -50,7 +50,13 @@ class UserRepositoryImpl
   @override
   Future<Either<Failure, void>> updateUser(UserEntity user) async {
     try {
-      final docRef = _firestore.collection('users').doc(user.id);
+      final effectiveUid = user.id.trim().isNotEmpty
+          ? user.id.trim()
+          : _firebaseAuth.currentUser?.uid;
+      if (effectiveUid == null || effectiveUid.isEmpty) {
+        return Left(ServerFailure('user-not-authenticated'));
+      }
+      final docRef = _firestore.collection('users').doc(effectiveUid);
       // UserModel.fromEntity is the single source of truth for the
       // entity→model field mapping (see its doc comment) — previously this
       // method hand-listed all ~48 fields itself, which meant a field added
@@ -177,7 +183,7 @@ class UserRepositoryImpl
           return Left(AuthFailure('user-data-not-found'));
         }
 
-        final userData = UserModel.fromMap(doc.data()!);
+        final userData = UserModel.fromMap(doc.data()!, doc.id);
 
         if (!userData.isPremium) {
           _log('UserRepository: claimVipGift rejected — user is not premium.');

@@ -2,95 +2,207 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: users
+    // Document ID: {userId} (matches request.auth.uid)
+    // Fields:
+    //   - id: string (required) - Firebase Auth UID
+    //   - email: string (required) - user's email address
+    //   - displayName: string (optional) - user's display name
+    //   - photoUrl: string (optional) - URL to profile avatar
+    //   - fcmToken: string (optional) - FCM device registration token
+    //   - coins: int (optional, default 0) - standard coin balance
+    //   - totalExp: int (optional, default 0) - lifetime experience points
+    //   - isAdmin: bool (optional, default false) - admin privileges flag
+    //   - isPremium: bool (optional, default false) - VIP subscription status
+    //   - premiumExpiryDate: timestamp (optional) - VIP expiration date
+    //   - currentStreak: int (optional, default 0) - daily login streak
+    //   - lastLoginDate: timestamp (optional) - timestamp of last login
+    //   - isEmailVerified: bool (optional, default false) - email verification flag
+    //   - categoryStats: map (optional) - category progress percentages
+    //   - unlockedLevels: map (optional) - map of unlocked level indices
+    //   - completedLevels: map (optional) - map of completed level lists
+    //   - starRatings: map (optional) - map of star ratings per level
+    //   - badges: list (optional) - list of badge IDs
+    //   - streakFreezes: int (optional) - count of streak freeze tokens
+    //   - hintCount: int (optional) - hint balance
+    //   - hintPacks: int (optional) - hint pack balance
+    //   - doubleXP: int (optional) - double XP balance
+    //   - doubleXPExpiry: timestamp (optional) - active double XP expiration
+    //   - dailyXpHistory: map (optional) - daily XP history
+    //   - recentActivities: list (optional) - list of recent activity entries
+    //   - lastVipGiftDate: timestamp (optional) - last claimed VIP gift
+    //   - lastDailyRewardDate: timestamp (optional) - last claimed daily reward
+    //   - lastKidsDailyRewardDate: timestamp (optional) - last claimed kids reward
+    //   - kidsCoins: int (optional, default 0) - kids coin balance
+    //   - kidsStickers: list (optional) - unlocked sticker IDs
+    //   - kidsMascot: string (optional) - equipped mascot
+    //   - kidsEquippedSticker: string (optional) - equipped sticker
+    //   - kidsOwnedAccessories: list (optional) - owned accessory IDs
+    //   - kidsEquippedAccessory: string (optional) - equipped accessory
+    //   - vowlMascot: string (optional) - adult mascot ID
+    //   - vowlEquippedAccessory: string (optional) - adult equipped accessory
+    //   - vowlOwnedAccessories: list (optional) - adult owned accessory IDs
+    //   - vowlOwnedMascots: list (optional) - adult owned mascot IDs
+    //   - claimedStreakMilestones: list (optional) - claimed streak milestones
+    //   - claimedLevelMilestones: list (optional) - claimed level milestones
+    //   - coinHistory: list (optional) - ledger of coin adjustments
+    //   - hasPermanentXPBoost: bool (optional) - permanent boost flag
+    //   - lastFreeSpinDate: timestamp (optional) - last free wheel spin
+    //   - lastAdSpinDate: timestamp (optional) - last ad wheel spin
+    //   - adSpinsUsedToday: int (optional) - count of ad spins used today
+    //   - kidsOwnedFurniture: list (optional) - owned furniture IDs
+    //   - kidsEquippedFurniture: map (optional) - equipped furniture map
+    //   - keys / goldenKeys: int (optional, default 0) - keys count
+    //   - lastRewardTimestamp: timestamp (optional) - rate limit timestamp
+    //
+    // Subcollection: users/{userId}/errorJournal/{errorId}
+    // Fields:
+    //   - gameType: string (< 100 chars)
+    //   - question: string (< 1000 chars)
+    //   - userAnswer: string (< 1000 chars)
+    //   - correctAnswer: string (< 1000 chars)
+    //   - level: dynamic
+    //   - options: list (< 20 items)
+    //   - timestamp: timestamp (server timestamp required)
+    //
+    // Collection: metadata/{cacheDoc}
+    //   - leaderboard_cache / kids_leaderboard_cache: precomputed top users
+    //
+    // Collection: orders/{orderId}
+    //   - userId: string (matches buyer's auth uid)
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('isAdmin', false) == true;
+    }
+
     // ─── USER DATA ───────────────────────────────────────────────────
     match /users/{userId} {
-      // Users can only READ their own profile
-      allow read: if request.auth != null && request.auth.uid == userId;
+      // Users can only READ their own profile (PII protection)
+      allow read: if isOwner(userId);
 
-      // CREATE: Only own document, prevent spoofing isAdmin
-      allow create: if request.auth != null && request.auth.uid == userId
-        && (!('isAdmin' in request.resource.data) || request.resource.data.isAdmin == false);
+      // CREATE: Only own document, prevent spoofing isAdmin or isPremium
+      allow create: if isOwner(userId)
+        && (!('isAdmin' in request.resource.data) || request.resource.data.isAdmin == false)
+        && (!('isPremium' in request.resource.data) || request.resource.data.isPremium == false);
 
-      // UPDATE: Only own document with basic anti-cheat guards
-      allow update: if request.auth != null && request.auth.uid == userId
-        && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['isAdmin'])
-        // CRITICAL: Prevent users from making themselves premium.
-        // Only Cloud Functions (verifyPayment) run as admin and can bypass this.
+      // UPDATE: Only own document with robust anti-cheat & rate-limit guards.
+      // Defensively guards against resource == null (merge writes creating documents)
+      // and missing map properties to eliminate runtime CEL exceptions (PERMISSION_DENIED).
+      allow update: if isOwner(userId)
         && (
-          !request.resource.data.diff(resource.data).affectedKeys().hasAny(['isPremium', 'premiumExpiryDate'])
-          || request.resource.data.isPremium == false // Client can only revoke/reset, not grant
-        )
-        // Sanity checks for progression (prevent jumping to 1M XP instantly)
-        && (
-          !request.resource.data.diff(resource.data).affectedKeys().hasAny(['totalExp'])
-          || (request.resource.data.totalExp <= resource.data.totalExp + 2000 
-              && request.resource.data.totalExp >= resource.data.totalExp)
-        )
-        // MONEY SECURITY: Prevent adding huge amounts of coins from the client
-        // Normal game rewards are 10-50. Buying a key subtracts 150.
-        && (
-          !request.resource.data.diff(resource.data).affectedKeys().hasAny(['coins'])
-          || (
-            request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedLevelMilestones', 'claimedStreakMilestones'])
-              ? request.resource.data.coins <= resource.data.coins + 15000 // Milestone rewards can be huge
-              : request.resource.data.coins <= resource.data.coins + 250 // Max 250 earned at once for normal games
-          )
-        )
-        && (
-          !request.resource.data.diff(resource.data).affectedKeys().hasAny(['kidsCoins'])
-          || (request.resource.data.kidsCoins <= resource.data.kidsCoins + 250) // Max 250 earned at once
-        )
-        // ANTI-SPAM: Enforce a strict 2-second rate limit on ANY rewards (XP or Coins)
-        // This prevents hackers from bypassing the max-per-write limits by sending 100 writes/sec.
-        && (
-          !request.resource.data.diff(resource.data).affectedKeys().hasAny(['totalExp', 'coins', 'kidsCoins'])
-          || (
-            // Bypass rate limit if it's a purchase/penalty (values are decreasing or staying the same)
-            (
-              request.resource.data.get('totalExp', 0) <= resource.data.get('totalExp', 0) &&
-              request.resource.data.get('coins', 0) <= resource.data.get('coins', 0) &&
-              request.resource.data.get('kidsCoins', 0) <= resource.data.get('kidsCoins', 0)
-            )
-            // Bypass rate limit for milestone claims (already protected by array uniqueness check)
-            || request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedLevelMilestones', 'claimedStreakMilestones'])
-            // If they increased normally, enforce the timestamp cooldown with robust type checking
-            || (
-              request.resource.data.lastRewardTimestamp == request.time &&
-              (
-                !('lastRewardTimestamp' in resource.data) || 
-                resource.data.lastRewardTimestamp == null ||
-                !(resource.data.lastRewardTimestamp is timestamp) ||
-                request.time >= resource.data.lastRewardTimestamp + duration.value(2, 's')
+          resource == null
+            // Fresh document creation via merge-write (e.g., SetOptions(merge: true))
+            ? (
+                (!('isAdmin' in request.resource.data) || request.resource.data.isAdmin == false)
+                && (!('isPremium' in request.resource.data) || request.resource.data.isPremium == false)
               )
-            )
-          )
-        )
-        // KEY SECURITY: Prevent granting oneself infinite keys
-        && (
-          !request.resource.data.diff(resource.data).affectedKeys().hasAny(['goldenKeys'])
-          || (request.resource.data.goldenKeys <= resource.data.goldenKeys + 1) // Can only gain 1 at a time (ads/store)
+            // Existing document update
+            : (
+                !request.resource.data.diff(resource.data).affectedKeys().hasAny(['isAdmin'])
+                // CRITICAL: Prevent users from making themselves premium.
+                // Only Cloud Functions (verifyPayment) run as admin and can bypass this.
+                && (
+                  !request.resource.data.diff(resource.data).affectedKeys().hasAny(['isPremium', 'premiumExpiryDate'])
+                  || request.resource.data.get('isPremium', false) == false // Client can only revoke/reset, not grant
+                )
+                // Sanity checks for progression (prevent jumping to 1M XP instantly)
+                && (
+                  !request.resource.data.diff(resource.data).affectedKeys().hasAny(['totalExp'])
+                  || (
+                    request.resource.data.get('totalExp', 0) <= resource.data.get('totalExp', 0) + 2000 
+                    && request.resource.data.get('totalExp', 0) >= resource.data.get('totalExp', 0)
+                  )
+                )
+                // MONEY SECURITY: Prevent adding huge amounts of coins from the client
+                // Normal game rewards are 10-50. Buying a key subtracts 150.
+                && (
+                  !request.resource.data.diff(resource.data).affectedKeys().hasAny(['coins'])
+                  || (
+                    request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedLevelMilestones', 'claimedStreakMilestones'])
+                      ? request.resource.data.get('coins', 0) <= resource.data.get('coins', 0) + 15000 // Milestone rewards can be huge
+                      : request.resource.data.get('coins', 0) <= resource.data.get('coins', 0) + 250 // Max 250 earned at once for normal games
+                  )
+                )
+                && (
+                  !request.resource.data.diff(resource.data).affectedKeys().hasAny(['kidsCoins'])
+                  || (request.resource.data.get('kidsCoins', 0) <= resource.data.get('kidsCoins', 0) + 250) // Max 250 earned at once
+                )
+                // ANTI-SPAM: Enforce a strict 2-second rate limit on ANY rewards (XP or Coins)
+                // This prevents hackers from bypassing the max-per-write limits by sending 100 writes/sec.
+                && (
+                  !request.resource.data.diff(resource.data).affectedKeys().hasAny(['totalExp', 'coins', 'kidsCoins'])
+                  || (
+                    // Bypass rate limit if it's a purchase/penalty (values are decreasing or staying the same)
+                    (
+                      request.resource.data.get('totalExp', 0) <= resource.data.get('totalExp', 0) &&
+                      request.resource.data.get('coins', 0) <= resource.data.get('coins', 0) &&
+                      request.resource.data.get('kidsCoins', 0) <= resource.data.get('kidsCoins', 0)
+                    )
+                    // Bypass rate limit for milestone claims (already protected by array uniqueness check)
+                    || request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedLevelMilestones', 'claimedStreakMilestones'])
+                    // If they increased normally, enforce the timestamp cooldown with robust type checking
+                    || (
+                      ('lastRewardTimestamp' in request.resource.data) &&
+                      request.resource.data.lastRewardTimestamp == request.time &&
+                      (
+                        !('lastRewardTimestamp' in resource.data) || 
+                        resource.data.lastRewardTimestamp == null ||
+                        !(resource.data.lastRewardTimestamp is timestamp) ||
+                        request.time >= resource.data.lastRewardTimestamp + duration.value(2, 's')
+                      )
+                    )
+                  )
+                )
+                // KEY SECURITY: Prevent granting oneself infinite keys (protects both 'goldenKeys' and 'keys')
+                && (
+                  !request.resource.data.diff(resource.data).affectedKeys().hasAny(['goldenKeys', 'keys'])
+                  || (
+                    request.resource.data.get('goldenKeys', 0) <= resource.data.get('goldenKeys', 0) + 1
+                    && request.resource.data.get('keys', 0) <= resource.data.get('keys', 0) + 1
+                  )
+                )
+              )
         );
 
       // DELETE: Only own document
-      allow delete: if request.auth != null && request.auth.uid == userId;
+      allow delete: if isOwner(userId);
       
       // ERROR JOURNAL: Allow users to log and clear their wrong answers
       match /errorJournal/{errorId} {
         // Users can read and dismiss (delete) their own logs
-        allow read, delete: if request.auth != null && request.auth.uid == userId;
+        allow read, delete: if isOwner(userId);
         
-        // Strict create and update rules to prevent hackers from spamming huge payloads
-        // Update is necessary for deduplication (bumping the timestamp on existing mistakes)
-        allow create, update: if request.auth != null 
-          && request.auth.uid == userId
+        // Strict create and update rules to prevent spamming huge payloads
+        // Update is necessary for deduplication (bumping timestamp on existing mistakes)
+        allow create, update: if isOwner(userId)
           // FIELD WHITELIST: Prevents injecting arbitrary junk fields to inflate document size
           && request.resource.data.keys().hasOnly(['gameType', 'question', 'userAnswer', 'correctAnswer', 'level', 'timestamp', 'options'])
-          // MAXIMUM payload length for strings (Prevents uploading massive fake logs to spike storage costs)
-          && (!('gameType' in request.resource.data) || request.resource.data.gameType.size() < 100)
-          && (!('question' in request.resource.data) || request.resource.data.question.size() < 1000)
-          && (!('userAnswer' in request.resource.data) || request.resource.data.userAnswer.size() < 1000)
-          && (!('correctAnswer' in request.resource.data) || request.resource.data.correctAnswer.size() < 1000)
-          && (!('options' in request.resource.data) || request.resource.data.options.size() < 20)
+          // MAXIMUM payload length for strings and lists (Prevents storage DoS)
+          && (!('gameType' in request.resource.data) || (request.resource.data.gameType is string && request.resource.data.gameType.size() < 100))
+          && (!('question' in request.resource.data) || (request.resource.data.question is string && request.resource.data.question.size() < 1000))
+          && (!('userAnswer' in request.resource.data) || (request.resource.data.userAnswer is string && request.resource.data.userAnswer.size() < 1000))
+          && (!('correctAnswer' in request.resource.data) || (request.resource.data.correctAnswer is string && request.resource.data.correctAnswer.size() < 1000))
+          && (!('options' in request.resource.data) || (request.resource.data.options is list && request.resource.data.options.size() < 20))
           // Ensures the timestamp is a true server-side timestamp
           && request.resource.data.timestamp == request.time;
       }
@@ -98,90 +210,83 @@ service cloud.firestore {
 
     // ─── GLOBAL METADATA ─────────────────────────────────────────────
     match /metadata/leaderboard_cache {
-      // Allow all users to read the pre-calculated rankings (1 Read instead of 50)
-      allow read: if request.auth != null;
-      
-      // SECURITY: Only Cloud Functions (admin SDK) can write leaderboard data.
-      // Prevents users from injecting fake rankings via direct Firestore writes.
+      // Allow all users to read pre-calculated rankings
+      allow read: if isAuthenticated();
+      // SECURITY: Only Cloud Functions (admin SDK) can write leaderboard data
       allow write: if false;
     }
 
     match /metadata/kids_leaderboard_cache {
-      // Allow all users to read the pre-calculated kids rankings
-      allow read: if request.auth != null;
-      
-      // SECURITY: Only Cloud Functions (admin SDK) can write leaderboard data.
+      // Allow all users to read pre-calculated kids rankings
+      allow read: if isAuthenticated();
+      // SECURITY: Only Cloud Functions (admin SDK) can write leaderboard data
       allow write: if false;
     }
 
     // ─── RATE LIMITING (Server-Side Only) ─────────────────────────────
-    // Used by Cloud Functions for per-user payment rate limiting.
-    // Clients must never read or write rate limit documents directly.
     match /rate_limits/{document=**} {
       allow read, write: if false;
     }
 
     // ─── CURRICULUM & QUEST DATA ─────────────────────────────────────
     match /coinPacks/{document=**} {
-      allow read: if request.auth != null;
-      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
     }
     match /quests/{document=**} {
-      allow read: if request.auth != null;
-      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
     }
     match /speaking_quests/{document=**} {
-      allow read: if request.auth != null;
-      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
     }
     match /reading_quests/{document=**} {
-      allow read: if request.auth != null;
-      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
     }
     match /grammar_quests/{document=**} {
-      allow read: if request.auth != null;
-      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
     }
     match /kids_quests/{document=**} {
-      allow read: if request.auth != null;
-      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
     }
     match /curriculum/{document=**} {
-      allow read: if request.auth != null;
-      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
     }
     match /vocabulary_quests/{document=**} {
-      allow read: if request.auth != null;
-      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
     }
     match /roleplay_quests/{document=**} {
-      allow read: if request.auth != null;
-      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
     }
     match /listening_quests/{document=**} {
-      allow read: if request.auth != null;
-      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
     }
     match /accent_quests/{document=**} {
-      allow read: if request.auth != null;
-      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
     }
 
     // ─── SUBSCRIPTION PLANS ──────────────────────────────────
     match /subscriptionPlans/{document=**} {
-      allow read: if request.auth != null;
-      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
     }
 
     // ─── ORDERS (server-created, client-readable) ───────────
-    // Orders are created by Cloud Functions only.
-    // Users can read their own orders (for transaction history).
     match /orders/{orderId} {
-      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+      allow read: if isAuthenticated() && resource.data.get('userId', '') == request.auth.uid;
       allow write: if false; // Server-only via admin SDK
     }
 
-    // ─── LEGACY / OTHER ─────────────────────────────────────────────
+    // ─── DEFAULT DENY ─────────────────────────────────────────────
     match /{document=**} {
       allow read, write: if false;
     }

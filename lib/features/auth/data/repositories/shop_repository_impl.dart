@@ -136,7 +136,7 @@ class ShopRepositoryImpl
           return Left(ServerFailure('user-data-not-found'));
         }
 
-        final userData = UserModel.fromMap(doc.data()!);
+        final userData = UserModel.fromMap(doc.data()!, doc.id);
         final now = DateTime.now();
         final lastGift = userData.lastDailyRewardDate;
 
@@ -206,7 +206,7 @@ class ShopRepositoryImpl
         // `as Timestamp` cast — the raw cast would throw if this field was
         // ever anything else (an ISO string from a migration, for example),
         // where UserModel's parser already handles that defensively.
-        final userData = UserModel.fromMap(doc.data()!);
+        final userData = UserModel.fromMap(doc.data()!, doc.id);
         final lastClaim = userData.lastDailyRewardDate;
         if (lastClaim != null &&
             _isSameCalendarDay(lastClaim, DateTime.now())) {
@@ -260,7 +260,7 @@ class ShopRepositoryImpl
         }
 
         // Same defensive-parsing rationale as claimDailyChest above.
-        final userData = UserModel.fromMap(doc.data()!);
+        final userData = UserModel.fromMap(doc.data()!, doc.id);
         final lastClaim = userData.lastKidsDailyRewardDate;
         if (lastClaim != null &&
             _isSameCalendarDay(lastClaim, DateTime.now())) {

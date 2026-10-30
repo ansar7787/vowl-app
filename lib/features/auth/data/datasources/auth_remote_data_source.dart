@@ -119,7 +119,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         await _firestore
             .collection('users')
             .doc(newUser.id)
-            .set(map, SetOptions(merge: true));
+            .set(map);
         break;
       } catch (e, stack) {
         if (attempt == 3) {
@@ -129,6 +129,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
             stackTrace: stack,
             tag: 'AuthRemoteDataSource',
           );
+          rethrow;
         } else {
           await Future.delayed(Duration(milliseconds: 300 * attempt));
         }
@@ -171,6 +172,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       if (doc.exists && doc.data() != null) {
         return UserModel.fromMap(
           doc.data()!,
+          doc.id,
         ).copyWith(isEmailVerified: firebaseUser.emailVerified);
       }
     } catch (e) {
