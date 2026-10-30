@@ -68,6 +68,7 @@ void main() {
     expect(find.byType(VerifyEmailIconHeader), findsOneWidget);
     expect(find.byType(VerifyEmailStatusText), findsOneWidget);
     expect(find.text('verify@vowl.app'), findsOneWidget);
+    expect(find.byType(OpenEmailAppButton), findsOneWidget);
     expect(find.byType(VerifyConfirmationButton), findsOneWidget);
     expect(find.byType(VerifyLogoutButton), findsOneWidget);
   });

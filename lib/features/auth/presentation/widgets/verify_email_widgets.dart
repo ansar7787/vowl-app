@@ -43,6 +43,25 @@ class VerifyEmailIconHeader extends StatelessWidget {
 }
 
 // ---------------------------------------------------------------------------
+// Delivery Status Enum
+// ---------------------------------------------------------------------------
+
+/// Real-time status for the verification email delivery lifecycle.
+enum EmailDeliveryStatus {
+  /// Initial idle state.
+  idle,
+
+  /// Actively dispatching the verification email.
+  sending,
+
+  /// Successfully dispatched to the recipient's mail provider.
+  sent,
+
+  /// Automated dispatch encountered an error or rate-limit.
+  failed,
+}
+
+// ---------------------------------------------------------------------------
 // Status Text
 // ---------------------------------------------------------------------------
 
@@ -51,8 +70,15 @@ class VerifyEmailStatusText extends StatelessWidget {
   /// The recipient email address to which the verification link was dispatched.
   final String? email;
 
+  /// Current delivery lifecycle status for visual feedback.
+  final EmailDeliveryStatus deliveryStatus;
+
   /// Creates a [VerifyEmailStatusText] with an optional recipient [email].
-  const VerifyEmailStatusText({super.key, this.email});
+  const VerifyEmailStatusText({
+    super.key,
+    this.email,
+    this.deliveryStatus = EmailDeliveryStatus.idle,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -128,6 +154,11 @@ class VerifyEmailStatusText extends StatelessWidget {
             ),
           ),
         ],
+        // Live delivery status pill
+        if (deliveryStatus != EmailDeliveryStatus.idle) ...[
+          SizedBox(height: 12.h),
+          _buildDeliveryStatusPill(context, isDark),
+        ],
         SizedBox(height: 14.h),
         Container(
           padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
@@ -171,6 +202,144 @@ class VerifyEmailStatusText extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildDeliveryStatusPill(BuildContext context, bool isDark) {
+    Color bg;
+    Color border;
+    Color textColor;
+    Widget leading;
+    String text;
+
+    switch (deliveryStatus) {
+      case EmailDeliveryStatus.sending:
+        bg = AppColors.indigo500.withValues(alpha: 0.08);
+        border = AppColors.indigo500.withValues(alpha: 0.25);
+        textColor = AppColors.indigo500;
+        leading = SizedBox(
+          width: 14.r,
+          height: 14.r,
+          child: CircularProgressIndicator(
+            strokeWidth: 2,
+            valueColor: AlwaysStoppedAnimation<Color>(textColor),
+          ),
+        );
+        text = context.tr(
+          'auth.sending_verification_link',
+          fallback: 'Sending verification link...',
+        );
+        break;
+      case EmailDeliveryStatus.sent:
+        bg = Colors.green.withValues(alpha: 0.08);
+        border = Colors.green.withValues(alpha: 0.25);
+        textColor = isDark ? Colors.greenAccent : Colors.green.shade700;
+        leading = Icon(Icons.check_circle_rounded, size: 16.r, color: textColor);
+        text = context.tr(
+          'auth.verification_link_sent_badge',
+          fallback: 'Verification link sent to your inbox!',
+        );
+        break;
+      case EmailDeliveryStatus.failed:
+        bg = Colors.amber.withValues(alpha: 0.1);
+        border = Colors.amber.withValues(alpha: 0.3);
+        textColor = isDark ? Colors.amberAccent : Colors.amber.shade900;
+        leading = Icon(Icons.error_outline_rounded, size: 16.r, color: textColor);
+        text = context.tr(
+          'auth.verification_send_failed_badge',
+          fallback: "Couldn't send automatically. Tap Resend below.",
+        );
+        break;
+      case EmailDeliveryStatus.idle:
+        return const SizedBox.shrink();
+    }
+
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 300),
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 7.h),
+      decoration: BoxDecoration(
+        color: bg,
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: border, width: 1.2),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          leading,
+          SizedBox(width: 8.w),
+          Flexible(
+            child: Text(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w600,
+                color: textColor,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Open Email App Button
+// ---------------------------------------------------------------------------
+
+/// Primary prominent action button enabling the user to launch their default email application.
+class OpenEmailAppButton extends StatelessWidget {
+  /// Callback triggered when opening the device's mail client.
+  final VoidCallback onPressed;
+
+  /// Creates an [OpenEmailAppButton].
+  const OpenEmailAppButton({super.key, required this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      button: true,
+      label: context.tr(
+        'auth.open_email_app_semantic',
+        fallback: 'Open default email application',
+      ),
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.indigo500,
+          foregroundColor: Colors.white,
+          minimumSize: Size(double.infinity, 56.h),
+          elevation: 2,
+          shadowColor: AppColors.indigo500.withValues(alpha: 0.35),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16.r),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.mail_rounded, size: 20.r, color: Colors.white),
+            SizedBox(width: 10.w),
+            Flexible(
+              child: Text(
+                context.tr('auth.open_email_app', fallback: 'Open Email App'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 0.3,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

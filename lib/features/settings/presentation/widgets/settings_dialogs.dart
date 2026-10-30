@@ -615,8 +615,13 @@ class SettingsDialogs {
       barrierColor: Colors.black54,
       transitionDuration: const Duration(milliseconds: 300),
       pageBuilder: (dialogContext, anim1, anim2) => Center(
-        child: Material(
-          color: Colors.transparent,
+        child: Dialog(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          insetPadding: EdgeInsets.symmetric(
+            horizontal: 24.w,
+            vertical: 24.h,
+          ),
           child: _FinalDeleteDialogContent(
             authBloc: authBloc,
             dialogWidth: _dialogWidth(context, 320.w),
@@ -1167,97 +1172,103 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
 
           return PopScope(
             canPop: !isDeleting,
-            child: LoadingOverlay(
-              isLoading: isDeleting,
-              message: context.tr(
-                'settings_dialogs.deleting_account',
-                fallback: 'Deleting account...',
-              ),
-              child: GlassTile(
-                width: widget.dialogWidth,
-                padding: EdgeInsets.all(32.r),
-                borderRadius: BorderRadius.circular(40.r),
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(40.r),
+              child: LoadingOverlay(
+                isLoading: isDeleting,
+                message: context.tr(
+                  'settings_dialogs.deleting_account',
+                  fallback: 'Deleting account...',
+                ),
+                child: GlassTile(
+                  width: widget.dialogWidth,
+                  padding: EdgeInsets.all(32.r),
+                  borderRadius: BorderRadius.circular(40.r),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          context.tr(
+                            'settings_dialogs.final_warning',
+                            fallback: 'Final Warning',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 24.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.red,
+                          ),
+                        ),
+                      SizedBox(height: 16.h),
                       Text(
                         context.tr(
-                          'settings_dialogs.final_warning',
-                          fallback: 'Final Warning',
+                          'settings_dialogs.type_delete',
+                          fallback:
+                              'Type "DELETE" below to confirm account removal.',
                         ),
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 24.sp,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.red,
+                          fontSize: 14.sp,
+                          color: isDark ? Colors.white60 : Colors.black54,
                         ),
                       ),
-                    SizedBox(height: 16.h),
-                    Text(
-                      context.tr(
-                        'settings_dialogs.type_delete',
-                        fallback:
-                            'Type "DELETE" below to confirm account removal.',
-                      ),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        color: isDark ? Colors.white60 : Colors.black54,
-                      ),
-                    ),
-                    SizedBox(height: 24.h),
-                    TextField(
-                      controller: _confirmController,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        color: isDark ? Colors.white : AppColors.slate900,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      decoration: InputDecoration(
-                        hintText: deleteWord,
-                        hintStyle: TextStyle(
+                      SizedBox(height: 24.h),
+                      TextField(
+                        controller: _confirmController,
+                        textAlign: TextAlign.center,
+                        textInputAction: TextInputAction.done,
+                        onSubmitted: (_) => FocusScope.of(context).unfocus(),
+                        style: TextStyle(
                           fontFamily: 'Outfit',
-                          color: isDark ? Colors.white10 : Colors.black12,
+                          color: isDark ? Colors.white : AppColors.slate900,
+                          fontWeight: FontWeight.bold,
                         ),
-                        filled: true,
-                        fillColor: isDark
-                            ? Colors.white.withValues(alpha: 0.05)
-                            : Colors.black.withValues(alpha: 0.05),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                          borderSide: BorderSide.none,
+                        decoration: InputDecoration(
+                          hintText: deleteWord,
+                          hintStyle: TextStyle(
+                            fontFamily: 'Outfit',
+                            color: isDark ? Colors.white10 : Colors.black12,
+                          ),
+                          filled: true,
+                          fillColor: isDark
+                              ? Colors.white.withValues(alpha: 0.05)
+                              : Colors.black.withValues(alpha: 0.05),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16.r),
+                            borderSide: BorderSide.none,
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(height: 32.h),
-                    _PrimaryButton(
-                      label: context.tr(
-                        'settings_dialogs.delete_forever',
-                        fallback: 'Delete Forever',
+                      SizedBox(height: 32.h),
+                      _PrimaryButton(
+                        label: context.tr(
+                          'settings_dialogs.delete_forever',
+                          fallback: 'Delete Forever',
+                        ),
+                        color: Colors.red,
+                        onPressed: isConfirmed && !isDeleting
+                            ? () {
+                                FocusScope.of(context).unfocus();
+                                _isDeleting.value = true;
+                                widget.authBloc.add(
+                                  const AuthDeleteAccountRequested(),
+                                );
+                              }
+                            : null,
                       ),
-                      color: Colors.red,
-                      onPressed: isConfirmed && !isDeleting
-                          ? () {
-                              _isDeleting.value = true;
-                              widget.authBloc.add(
-                                const AuthDeleteAccountRequested(),
-                              );
-                            }
-                          : null,
-                    ),
-                    SizedBox(height: 12.h),
-                    _SecondaryTextButton(
-                      label: context.tr(
-                        'settings_dialogs.nevermind',
-                        fallback: 'Nevermind',
+                      SizedBox(height: 12.h),
+                      _SecondaryTextButton(
+                        label: context.tr(
+                          'settings_dialogs.nevermind',
+                          fallback: 'Nevermind',
+                        ),
+                        isDark: isDark,
+                        onPressed: isDeleting ? null : () => Navigator.pop(context),
                       ),
-                      isDark: isDark,
-                      onPressed: isDeleting ? null : () => Navigator.pop(context),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
