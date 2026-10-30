@@ -112,14 +112,19 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
     // Resilient provisioning: attempt write with retries so token propagation
     // across native platform channels is given time to sync to Firestore.
+    // Use SetOptions(merge: true) and omit null fcmToken so any token previously
+    // written by NotificationService on app boot is cleanly preserved.
     final map = newUser.toMap();
+    if (map['fcmToken'] == null) {
+      map.remove('fcmToken');
+    }
     map['lastRewardTimestamp'] = FieldValue.serverTimestamp();
     for (int attempt = 1; attempt <= 3; attempt++) {
       try {
         await _firestore
             .collection('users')
             .doc(newUser.id)
-            .set(map);
+            .set(map, SetOptions(merge: true));
         break;
       } catch (e, stack) {
         if (attempt == 3) {
@@ -129,7 +134,8 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
             stackTrace: stack,
             tag: 'AuthRemoteDataSource',
           );
-          rethrow;
+          // Firebase Auth user was already created successfully. Do not block
+          // the signup flow so verification email dispatch and onboarding proceed.
         } else {
           await Future.delayed(Duration(milliseconds: 300 * attempt));
         }

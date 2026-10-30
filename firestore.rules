@@ -103,7 +103,12 @@ service cloud.firestore {
       // CREATE: Only own document, prevent spoofing isAdmin or isPremium
       allow create: if isOwner(userId)
         && (!('isAdmin' in request.resource.data) || request.resource.data.isAdmin == false)
-        && (!('isPremium' in request.resource.data) || request.resource.data.isPremium == false);
+        && (!('isPremium' in request.resource.data) || request.resource.data.isPremium == false)
+        && request.resource.data.get('totalExp', 0) <= 2000
+        && request.resource.data.get('coins', 0) <= 250
+        && request.resource.data.get('kidsCoins', 0) <= 250
+        && request.resource.data.get('goldenKeys', 0) <= 1
+        && request.resource.data.get('keys', 0) <= 1;
 
       // UPDATE: Only own document with robust anti-cheat & rate-limit guards.
       // Defensively guards against resource == null (merge writes creating documents)
@@ -115,10 +120,18 @@ service cloud.firestore {
             ? (
                 (!('isAdmin' in request.resource.data) || request.resource.data.isAdmin == false)
                 && (!('isPremium' in request.resource.data) || request.resource.data.isPremium == false)
+                && request.resource.data.get('totalExp', 0) <= 2000
+                && request.resource.data.get('coins', 0) <= 250
+                && request.resource.data.get('kidsCoins', 0) <= 250
+                && request.resource.data.get('goldenKeys', 0) <= 1
+                && request.resource.data.get('keys', 0) <= 1
               )
             // Existing document update
             : (
-                !request.resource.data.diff(resource.data).affectedKeys().hasAny(['isAdmin'])
+                // CRITICAL: Prevent users from escalating to admin privileges.
+                // Admins can update isAdmin, and setting/keeping isAdmin: false is permitted (e.g. initial profile provisioning).
+                (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['isAdmin'])
+                  || (isAdmin() || request.resource.data.get('isAdmin', false) == false))
                 // CRITICAL: Prevent users from making themselves premium.
                 // Only Cloud Functions (verifyPayment) run as admin and can bypass this.
                 && (
