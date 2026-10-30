@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -10,6 +9,7 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/auth_error_handler.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/email_launcher.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -123,21 +123,17 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
   }
 
   Future<void> _openEmailApp() async {
-    final emailUri = Uri(scheme: 'mailto');
     try {
-      if (await canLaunchUrl(emailUri)) {
-        await launchUrl(emailUri, mode: LaunchMode.externalApplication);
-      } else {
-        if (mounted) {
-          _showSnackBar(
-            context.tr(
-              'auth.cannot_open_email_app',
-              fallback:
-                  'Could not open email app. Please check your inbox manually.',
-            ),
-            CustomSnackBarType.info,
-          );
-        }
+      final success = await EmailLauncher.openInbox();
+      if (!success && mounted) {
+        _showSnackBar(
+          context.tr(
+            'auth.cannot_open_email_app',
+            fallback:
+                'Could not open email app. Please check your inbox manually.',
+          ),
+          CustomSnackBarType.info,
+        );
       }
     } catch (_) {
       if (mounted) {
