@@ -202,7 +202,7 @@ class KidsTollGateBottomSheet {
                                 // shows the newly unlocked levels without
                                 // requiring a manual reload.
                                 parentContext.read<AuthBloc>().add(
-                                  const AuthReloadUser(),
+                                  const AuthRefreshUser(),
                                 );
                                 showDialog(
                                   context: parentContext,

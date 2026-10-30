@@ -330,10 +330,11 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                       (_) {
                                         widget.parentContext
                                             .read<AuthBloc>()
-                                            .add(const AuthReloadUser());
+                                            .add(const AuthRefreshUser());
                                         di.sl<HapticService>().success();
                                         showDialog(
                                           context: context,
+                                          barrierDismissible: false,
                                           builder: (ctx) => Material(
                                             type: MaterialType.transparency,
                                             child: Stack(
@@ -575,10 +576,11 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                         (_) {
                                           widget.parentContext
                                               .read<AuthBloc>()
-                                              .add(const AuthReloadUser());
+                                              .add(const AuthRefreshUser());
                                           di.sl<HapticService>().success();
                                           showDialog(
                                             context: context,
+                                            barrierDismissible: false,
                                             builder: (ctx) => Material(
                                               type: MaterialType.transparency,
                                               child: Stack(

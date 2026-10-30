@@ -584,16 +584,19 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       mergedStarRatings[category] = existing;
     });
 
-    // ---- Coins, XP, kidsCoins: never let a stale snapshot reduce them ----
-    final reconciledCoins = math.max(remoteUser.coins, currentUser.coins);
+    // ---- XP: XP is strictly monotonic, so preserve highest in-memory progress ----
     final reconciledTotalExp = math.max(
       remoteUser.totalExp,
       currentUser.totalExp,
     );
-    final reconciledKidsCoins = math.max(
-      remoteUser.kidsCoins,
-      currentUser.kidsCoins,
-    );
+
+    // Note: Currency balances ([coins], [kidsCoins]) are spendable accounts,
+    // NOT monotonic progression metrics. When a user spends coins (e.g. buying
+    // Golden Keys, streak repairs, streak freezes, or hints), [remoteUser.coins]
+    // is intentionally lower than [currentUser.coins]. Taking math.max() here
+    // was a critical bug that prevented coins from ever being spent in-memory.
+    // [remoteUser.coins] and [remoteUser.kidsCoins] from Firestore transactions
+    // are the authoritative source of truth and are preserved directly.
 
     // ---- Identity (Name & Photo): Never let a minimal/stale snapshot wipe them ----
     final reconciledDisplayName = (remoteUser.displayName != null &&
@@ -611,9 +614,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       completedLevels: mergedCompleted,
       unlockedLevels: mergedUnlocked,
       starRatings: mergedStarRatings,
-      coins: reconciledCoins,
       totalExp: reconciledTotalExp,
-      kidsCoins: reconciledKidsCoins,
     );
   }
 

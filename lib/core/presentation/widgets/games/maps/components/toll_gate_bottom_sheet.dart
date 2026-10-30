@@ -246,7 +246,7 @@ class TollGateBottomSheet {
                                 // FIX: Refresh user data so the map
                                 // immediately shows newly unlocked levels.
                                 parentContext.read<AuthBloc>().add(
-                                  const AuthReloadUser(),
+                                  const AuthRefreshUser(),
                                 );
                                 showDialog(
                                   context: parentContext,
