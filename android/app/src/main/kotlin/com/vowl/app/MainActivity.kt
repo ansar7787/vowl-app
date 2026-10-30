@@ -1,13 +1,59 @@
 package com.vowl.app
 
+import android.content.ActivityNotFoundException
+import android.content.Context
+import android.content.Intent
 import android.content.pm.ActivityInfo
-import android.os.Bundle
 import android.graphics.Color
+import android.net.Uri
+import android.os.Bundle
 import androidx.core.view.WindowCompat
 import io.flutter.embedding.android.FlutterActivity
-import android.content.Context
+import io.flutter.embedding.engine.FlutterEngine
+import io.flutter.plugin.common.MethodChannel
 
 class MainActivity : FlutterActivity() {
+    private val EMAIL_CHANNEL = "com.vowl.app/email_launcher"
+
+    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
+        super.configureFlutterEngine(flutterEngine)
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, EMAIL_CHANNEL)
+            .setMethodCallHandler { call, result ->
+                if (call.method == "openEmailInbox") {
+                    try {
+                        // 1. Primary: open default email application directly to its Main / Inbox dashboard
+                        val emailAppIntent = Intent(Intent.ACTION_MAIN).apply {
+                            addCategory(Intent.CATEGORY_APP_EMAIL)
+                            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        }
+                        if (emailAppIntent.resolveActivity(packageManager) != null) {
+                            startActivity(emailAppIntent)
+                            result.success(true)
+                            return@setMethodCallHandler
+                        }
+
+                        // 2. Secondary fallback: generic mail view intent
+                        val mailtoIntent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:")).apply {
+                            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        }
+                        if (mailtoIntent.resolveActivity(packageManager) != null) {
+                            startActivity(mailtoIntent)
+                            result.success(true)
+                            return@setMethodCallHandler
+                        }
+
+                        result.success(false)
+                    } catch (e: ActivityNotFoundException) {
+                        result.success(false)
+                    } catch (e: Exception) {
+                        result.success(false)
+                    }
+                } else {
+                    result.notImplemented()
+                }
+            }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         // Lock portrait orientation at the native level (belt-and-suspenders with manifest)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
