@@ -88,6 +88,12 @@ class UserRepositoryImpl
         map['lastRewardTimestamp'] = FieldValue.serverTimestamp();
       }
 
+      // Preserve active device FCM push token when merging domain entities
+      // where fcmToken was not tracked in memory.
+      if (map['fcmToken'] == null) {
+        map.remove('fcmToken');
+      }
+
       await docRef.set(map, SetOptions(merge: true));
       _localDataSource.cacheUser(userModel);
       return const Right(null);
