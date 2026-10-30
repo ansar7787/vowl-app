@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verify Email • Vowl</title>
+    <title>Account Verification • Vowl</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -214,6 +214,12 @@
             transform: translateY(0);
         }
 
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         .btn-secondary {
             background: transparent;
             color: var(--slate-600);
@@ -228,6 +234,53 @@
             color: var(--dark);
             transform: none;
             box-shadow: none;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 18px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(241, 245, 249, 0.8);
+            border: 1.5px solid var(--card-border);
+            border-radius: 14px;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--dark);
+            transition: all 0.2s ease;
+            outline: none;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .form-input {
+                background: rgba(30, 41, 59, 0.7);
+            }
+        }
+
+        .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+        }
+
+        .form-error {
+            color: #EF4444;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 8px;
+            margin-bottom: 12px;
+            text-align: left;
+            display: none;
         }
 
         .footer-note {
@@ -251,19 +304,43 @@
             <div class="icon-wrapper icon-loading">
                 <div class="spinner"></div>
             </div>
-            <h1>Verifying Your Email</h1>
-            <p>Please wait a moment while we verify your account credentials...</p>
+            <h1 id="loading-title">Verifying Credentials</h1>
+            <p id="loading-desc">Please wait a moment while we process your request...</p>
         </div>
 
-        <!-- 2. SUCCESS STATE -->
+        <!-- 2. RESET PASSWORD FORM STATE -->
+        <div id="reset-password-state" style="display: none;">
+            <div class="icon-wrapper icon-loading" style="background: rgba(79, 70, 229, 0.1);">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+            </div>
+            <h1>Reset Password</h1>
+            <p id="reset-user-email">Enter a new secure password for your Vowl account.</p>
+            <form id="reset-form" onsubmit="return false;">
+                <div class="form-group">
+                    <label class="form-label" for="new-password">New Password</label>
+                    <input class="form-input" type="password" id="new-password" placeholder="At least 6 characters" required autocomplete="new-password">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="confirm-password">Confirm Password</label>
+                    <input class="form-input" type="password" id="confirm-password" placeholder="Re-enter password" required autocomplete="new-password">
+                </div>
+                <div class="form-error" id="password-match-error">Passwords do not match</div>
+                <button type="submit" class="btn" id="save-password-btn">Save New Password</button>
+            </form>
+        </div>
+
+        <!-- 3. SUCCESS STATE -->
         <div id="success-state" style="display: none;">
             <div class="icon-wrapper icon-success">
                 <svg class="checkmark" viewBox="0 0 52 52">
                     <path d="M14 27 l8 8 l16 -16"/>
                 </svg>
             </div>
-            <h1>Email Verified!</h1>
-            <p>Your Vowl account is officially active. You're ready to start your gamified English learning adventure!</p>
+            <h1 id="success-title">Email Verified!</h1>
+            <p id="success-desc">Your Vowl account is officially active. You're ready to start your gamified English learning adventure!</p>
             <a href="vowl://verify-email" class="btn" id="app-button">
                 Open Vowl App
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -271,10 +348,10 @@
                     <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
             </a>
-            <div class="footer-note">Already in the mobile app? It will detect your verification automatically within 3 seconds.</div>
+            <div class="footer-note" id="success-note">Already in the mobile app? It will detect your verification automatically within 3 seconds.</div>
         </div>
 
-        <!-- 3. ERROR / RECOVERY STATE -->
+        <!-- 4. ERROR / RECOVERY STATE -->
         <div id="error-state" style="display: none;">
             <div class="icon-wrapper icon-error">
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -284,8 +361,8 @@
                 </svg>
             </div>
             <h1 id="error-title">Link Expired or Used</h1>
-            <p id="error-desc">This verification link is invalid or has already been used. If you've already verified, you can proceed straight to the app.</p>
-            <a href="vowl://verify-email" class="btn">Open Vowl App</a>
+            <p id="error-desc">This link is invalid or has already expired. If you've already completed this step, you can proceed straight to the app.</p>
+            <a href="vowl://verify-email" class="btn" id="error-app-btn">Open Vowl App</a>
             <a href="/" class="btn btn-secondary">Visit Vowl Homepage</a>
         </div>
     </div>
@@ -293,7 +370,12 @@
     <!-- Firebase SDK Logic -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-        import { getAuth, applyActionCode } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+        import { 
+            getAuth, 
+            applyActionCode, 
+            verifyPasswordResetCode, 
+            confirmPasswordReset 
+        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyCQW28i4Mcb7qx4BCB4kY_KPher_-g_Bhc",
@@ -312,49 +394,138 @@
         const oobCode = urlParams.get('oobCode');
 
         const loadingState = document.getElementById('loading-state');
+        const resetPasswordState = document.getElementById('reset-password-state');
         const successState = document.getElementById('success-state');
         const errorState = document.getElementById('error-state');
         const errorTitle = document.getElementById('error-title');
         const errorDesc = document.getElementById('error-desc');
+        const successTitle = document.getElementById('success-title');
+        const successDesc = document.getElementById('success-desc');
+        const successNote = document.getElementById('success-note');
+        const appButton = document.getElementById('app-button');
 
         function showState(state) {
             loadingState.style.display = 'none';
+            resetPasswordState.style.display = 'none';
             successState.style.display = 'none';
             errorState.style.display = 'none';
-            if (state === 'success') successState.style.display = 'block';
-            else if (state === 'error') errorState.style.display = 'block';
-            else loadingState.style.display = 'block';
+
+            if (state === 'reset-password') {
+                resetPasswordState.style.display = 'block';
+            } else if (state === 'success') {
+                successState.style.display = 'block';
+            } else if (state === 'error') {
+                errorState.style.display = 'block';
+            } else {
+                loadingState.style.display = 'block';
+            }
         }
 
         async function handleAction() {
             if (!mode || !oobCode) {
                 errorTitle.textContent = "Invalid Request";
-                errorDesc.textContent = "The link appears to be incomplete. Please check your verification email and click the link again.";
+                errorDesc.textContent = "The link appears to be incomplete. Please check your email and click the link again.";
                 showState('error');
                 return;
             }
 
             if (mode === 'verifyEmail') {
+                document.getElementById('loading-title').textContent = "Verifying Your Email";
+                document.getElementById('loading-desc').textContent = "Please wait a moment while we verify your account credentials...";
                 try {
                     await applyActionCode(auth, oobCode);
+                    successTitle.textContent = "Email Verified!";
+                    successDesc.textContent = "Your Vowl account is officially active. You're ready to start your gamified English learning adventure!";
+                    appButton.setAttribute('href', 'vowl://verify-email');
                     showState('success');
                 } catch (error) {
-                    // If error code is auth/invalid-action-code, it often means user tapped the link twice
                     if (error.code === 'auth/invalid-action-code') {
-                        errorTitle.textContent = "Already Verified!";
-                        errorDesc.textContent = "This verification link has already been used. Your account is verified and ready to go!";
+                        successTitle.textContent = "Already Verified!";
+                        successDesc.textContent = "This email verification link has already been used. Your account is verified and ready to go!";
+                        appButton.setAttribute('href', 'vowl://verify-email');
+                        showState('success');
                     } else {
                         errorTitle.textContent = "Verification Failed";
                         errorDesc.textContent = error.message || "An error occurred while verifying your email. Please try logging in or request a new link.";
+                        showState('error');
                     }
+                }
+            } else if (mode === 'resetPassword') {
+                document.getElementById('loading-title').textContent = "Validating Reset Link";
+                document.getElementById('loading-desc').textContent = "Checking your password reset security code...";
+                try {
+                    const email = await verifyPasswordResetCode(auth, oobCode);
+                    if (email) {
+                        document.getElementById('reset-user-email').textContent = `Enter a new password for ${email}.`;
+                    }
+                    showState('reset-password');
+                } catch (error) {
+                    errorTitle.textContent = "Reset Link Expired";
+                    errorDesc.textContent = "This password reset link is invalid or has already expired. Please request a new password reset from the Vowl app.";
+                    showState('error');
+                }
+            } else if (mode === 'recoverEmail' || mode === 'verifyAndChangeEmail') {
+                document.getElementById('loading-title').textContent = "Updating Email";
+                document.getElementById('loading-desc').textContent = "Processing your email change request...";
+                try {
+                    await applyActionCode(auth, oobCode);
+                    successTitle.textContent = "Email Updated!";
+                    successDesc.textContent = "Your email address changes have been confirmed. You can now continue learning in Vowl.";
+                    appButton.setAttribute('href', 'vowl://login');
+                    successNote.textContent = "You can now log into Vowl with your updated email address.";
+                    showState('success');
+                } catch (error) {
+                    errorTitle.textContent = "Update Failed";
+                    errorDesc.textContent = error.message || "This email recovery link is invalid or has expired.";
                     showState('error');
                 }
             } else {
-                // Future password reset or other actions fallback
                 errorTitle.textContent = "Action Not Supported";
-                errorDesc.textContent = "This page currently handles email verification. Please use the mobile app for other account actions.";
+                errorDesc.textContent = "This page handles email verification and password resets. Please use the mobile app for other actions.";
                 showState('error');
             }
+        }
+
+        // Handle password reset submission
+        const resetForm = document.getElementById('reset-form');
+        if (resetForm) {
+            resetForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const newPassword = document.getElementById('new-password').value;
+                const confirmPassword = document.getElementById('confirm-password').value;
+                const matchError = document.getElementById('password-match-error');
+                const submitBtn = document.getElementById('save-password-btn');
+
+                if (newPassword.length < 6) {
+                    matchError.textContent = "Password must be at least 6 characters long.";
+                    matchError.style.display = 'block';
+                    return;
+                }
+
+                if (newPassword !== confirmPassword) {
+                    matchError.textContent = "Passwords do not match.";
+                    matchError.style.display = 'block';
+                    return;
+                }
+
+                matchError.style.display = 'none';
+                submitBtn.disabled = true;
+                submitBtn.textContent = "Saving Password...";
+
+                try {
+                    await confirmPasswordReset(auth, oobCode, newPassword);
+                    successTitle.textContent = "Password Changed!";
+                    successDesc.textContent = "Your password has been successfully updated. You can now log into Vowl with your new password!";
+                    appButton.setAttribute('href', 'vowl://login');
+                    successNote.textContent = "You can now return to the Vowl mobile app to log in.";
+                    showState('success');
+                } catch (err) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "Save New Password";
+                    matchError.textContent = err.message || "Failed to update password. Please try again.";
+                    matchError.style.display = 'block';
+                }
+            });
         }
 
         // Run auto-verification immediately on page load
@@ -362,4 +533,3 @@
     </script>
 </body>
 </html>
-

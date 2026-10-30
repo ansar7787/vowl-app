@@ -58,6 +58,13 @@
                 <category
                     android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
+            <!-- Deep linking with custom scheme (vowl://) -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="vowl"/>
+            </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
