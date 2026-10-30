@@ -328,9 +328,15 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                         );
                                       },
                                       (_) {
-                                        widget.parentContext
-                                            .read<AuthBloc>()
-                                            .add(const AuthRefreshUser());
+                                        if (di.sl.isRegistered<AuthBloc>()) {
+                                          di.sl<AuthBloc>().add(
+                                            const AuthRefreshUser(),
+                                          );
+                                        } else {
+                                          widget.parentContext
+                                              .read<AuthBloc>()
+                                              .add(const AuthRefreshUser());
+                                        }
                                         di.sl<HapticService>().success();
                                         showDialog(
                                           context: context,
@@ -574,9 +580,15 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                           );
                                         },
                                         (_) {
-                                          widget.parentContext
-                                              .read<AuthBloc>()
-                                              .add(const AuthRefreshUser());
+                                          if (di.sl.isRegistered<AuthBloc>()) {
+                                            di.sl<AuthBloc>().add(
+                                              const AuthRefreshUser(),
+                                            );
+                                          } else {
+                                            widget.parentContext
+                                                .read<AuthBloc>()
+                                                .add(const AuthRefreshUser());
+                                          }
                                           di.sl<HapticService>().success();
                                           showDialog(
                                             context: context,
