@@ -20,6 +20,7 @@ import 'package:vowl/core/utils/story_service.dart';
 import 'package:vowl/core/presentation/widgets/story_dialogue_box.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_star_vault_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 /// Screen displaying the sequential level progression map for a specific kids game.
@@ -115,6 +116,9 @@ class _KidsLevelMapState extends State<KidsLevelMap>
 
   @override
   void dispose() {
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl<TtsService>().stop();
+    }
     _scrollController.dispose();
 
     _entryController.dispose();
@@ -391,36 +395,52 @@ class _KidsLevelMapState extends State<KidsLevelMap>
               final isDark = Theme.of(context).brightness == Brightness.dark;
               return AbsorbPointer(
                 absorbing: _isUnlockAnimating.value,
-                child: Scaffold(
-                  backgroundColor: bgColor,
-                  body: Stack(
-                    children: [
-                      _buildBackground(context),
-                      CustomScrollView(
-                        controller: _scrollController,
-                        physics: _isUnlockAnimating.value
-                            ? const NeverScrollableScrollPhysics()
-                            : const BouncingScrollPhysics(),
-                        slivers: [
-                          SliverAppBar(
-                            pinned: false,
-                            floating: false,
-                            snap: false,
-                            automaticallyImplyLeading: false,
-                            backgroundColor: Colors.transparent,
-                            surfaceTintColor: Colors.transparent,
-                            elevation: 0,
-                            toolbarHeight: 50.h,
-                            title: Align(
-                              alignment: Alignment.centerLeft,
-                              child: ScaleButton(
-                                onTap: () {
-                                  if (context.canPop()) {
-                                    context.pop();
-                                  } else {
-                                    context.go('/home');
-                                  }
-                                },
+                child: PopScope(
+                  canPop: false,
+                  onPopInvokedWithResult: (didPop, result) {
+                    if (didPop) return;
+                    if (di.sl.isRegistered<TtsService>()) {
+                      di.sl<TtsService>().stop();
+                    }
+                    if (context.canPop()) {
+                      context.pop();
+                    } else {
+                      context.go('/home');
+                    }
+                  },
+                  child: Scaffold(
+                    backgroundColor: bgColor,
+                    body: Stack(
+                      children: [
+                        _buildBackground(context),
+                        CustomScrollView(
+                          controller: _scrollController,
+                          physics: _isUnlockAnimating.value
+                              ? const NeverScrollableScrollPhysics()
+                              : const BouncingScrollPhysics(),
+                          slivers: [
+                            SliverAppBar(
+                              pinned: false,
+                              floating: false,
+                              snap: false,
+                              automaticallyImplyLeading: false,
+                              backgroundColor: Colors.transparent,
+                              surfaceTintColor: Colors.transparent,
+                              elevation: 0,
+                              toolbarHeight: 50.h,
+                              title: Align(
+                                alignment: Alignment.centerLeft,
+                                child: ScaleButton(
+                                  onTap: () {
+                                    if (di.sl.isRegistered<TtsService>()) {
+                                      di.sl<TtsService>().stop();
+                                    }
+                                    if (context.canPop()) {
+                                      context.pop();
+                                    } else {
+                                      context.go('/home');
+                                    }
+                                  },
                                 child: Container(
                                   width: 36.r,
                                   height: 36.r,
@@ -577,7 +597,8 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                     ],
                   ),
                 ),
-              );
+              ),
+            );
             },
           );
         },
@@ -730,11 +751,16 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         final totalStars = gameplayStars + magicStars;
 
         return ScaleButton(
-          onTap: () => KidsStarVaultBottomSheet.show(
-            context,
-            widget.gameType,
-            widget.primaryColor,
-          ),
+          onTap: () {
+            if (di.sl.isRegistered<TtsService>()) {
+              di.sl<TtsService>().stop();
+            }
+            KidsStarVaultBottomSheet.show(
+              context,
+              widget.gameType,
+              widget.primaryColor,
+            );
+          },
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
             decoration: BoxDecoration(
@@ -785,11 +811,16 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         final keys = state.user?.keys ?? 0;
 
         return ScaleButton(
-          onTap: () => KeyShopBottomSheet.show(
-            context: context,
-            isKidsMode: true,
-            primaryColor: widget.primaryColor,
-          ),
+          onTap: () {
+            if (di.sl.isRegistered<TtsService>()) {
+              di.sl<TtsService>().stop();
+            }
+            KeyShopBottomSheet.show(
+              context: context,
+              isKidsMode: true,
+              primaryColor: widget.primaryColor,
+            );
+          },
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
             decoration: BoxDecoration(
