@@ -194,6 +194,36 @@ void main() {
             ),
       ],
     );
+
+    blocTest<AuthBloc, AuthState>(
+      'should correctly update coins and kidsCoins when spent (coins decreased in remote snapshot)',
+      build: () => bloc,
+      seed: () => AuthState.authenticated(
+        tUser.copyWith(
+          coins: 150,
+          kidsCoins: 150,
+        ),
+      ),
+      act: (bloc) => userStreamController.add(
+        tUser.copyWith(
+          coins: 0,
+          kidsCoins: 0,
+        ),
+      ),
+      expect: () => [
+        isA<AuthState>()
+            .having(
+              (s) => s.user?.coins,
+              'coins',
+              0,
+            )
+            .having(
+              (s) => s.user?.kidsCoins,
+              'kidsCoins',
+              0,
+            ),
+      ],
+    );
   });
 
   group('AuthLogoutRequested', () {
