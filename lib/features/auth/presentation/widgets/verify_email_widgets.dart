@@ -114,10 +114,10 @@ class VerifyEmailStatusText extends StatelessWidget {
         if (email != null && email!.isNotEmpty) ...[
           SizedBox(height: 16.h),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 9.h),
+            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
             decoration: BoxDecoration(
               color: AppColors.indigo500.withValues(alpha: 0.08),
-              borderRadius: BorderRadius.circular(24.r),
+              borderRadius: BorderRadius.circular(20.r),
               border: Border.all(
                 color: AppColors.indigo500.withValues(alpha: 0.18),
                 width: 1.2,
@@ -134,8 +134,7 @@ class VerifyEmailStatusText extends StatelessWidget {
                   color: AppColors.indigo500,
                 ),
                 SizedBox(width: 8.w),
-                ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: 240.w),
+                Flexible(
                   child: Text(
                     email!,
                     style: TextStyle(
@@ -144,8 +143,10 @@ class VerifyEmailStatusText extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                       color: AppColors.indigo500,
                       letterSpacing: 0.2,
+                      height: 1.3,
                     ),
-                    maxLines: 1,
+                    maxLines: 2,
+                    softWrap: true,
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.center,
                   ),
@@ -276,9 +277,12 @@ class VerifyEmailStatusText extends StatelessWidget {
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w600,
                 color: textColor,
+                height: 1.3,
               ),
-              maxLines: 1,
+              maxLines: 2,
+              softWrap: true,
               overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
             ),
           ),
         ],
