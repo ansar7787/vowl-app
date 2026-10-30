@@ -230,18 +230,13 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
             previous.status != current.status ||
             previous.user != current.user,
         builder: (context, state) {
-          return ListenableBuilder(
-            listenable: Listenable.merge([
-              _isLoggingOut,
-              _canResendEmail,
-              _secondsRemaining,
-              _deliveryStatus,
-            ]),
-            builder: (context, _) {
-              final bgColor = _bgColor(context);
+          final bgColor = _bgColor(context);
 
+          return ValueListenableBuilder<bool>(
+            valueListenable: _isLoggingOut,
+            builder: (context, isLoggingOut, _) {
               // Show loading while signing out
-              if (_isLoggingOut.value ||
+              if (isLoggingOut ||
                   state.status == AuthStatus.loggingOut ||
                   state.status == AuthStatus.unauthenticated) {
                 return Scaffold(
@@ -267,9 +262,13 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                               children: [
                                 const VerifyEmailIconHeader(),
                                 SizedBox(height: 28.h),
-                                VerifyEmailStatusText(
-                                  email: state.user?.email,
-                                  deliveryStatus: _deliveryStatus.value,
+                                ValueListenableBuilder<EmailDeliveryStatus>(
+                                  valueListenable: _deliveryStatus,
+                                  builder: (context, status, _) =>
+                                      VerifyEmailStatusText(
+                                    email: state.user?.email,
+                                    deliveryStatus: status,
+                                  ),
                                 ),
                                 SizedBox(height: 32.h),
                                 OpenEmailAppButton(
@@ -280,10 +279,16 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                                   onPressed: _triggerVerificationCheck,
                                 ),
                                 SizedBox(height: 14.h),
-                                ResendEmailButton(
-                                  canResendEmail: _canResendEmail.value,
-                                  secondsRemaining: _secondsRemaining.value,
-                                  onPressed: _requestVerificationEmail,
+                                ListenableBuilder(
+                                  listenable: Listenable.merge([
+                                    _canResendEmail,
+                                    _secondsRemaining,
+                                  ]),
+                                  builder: (context, _) => ResendEmailButton(
+                                    canResendEmail: _canResendEmail.value,
+                                    secondsRemaining: _secondsRemaining.value,
+                                    onPressed: _requestVerificationEmail,
+                                  ),
                                 ),
                                 SizedBox(height: 12.h),
                                 VerifyLogoutButton(
