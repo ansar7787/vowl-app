@@ -1146,28 +1146,32 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
       bloc: widget.authBloc,
       listenWhen: (prev, curr) => curr.message != null && prev.message != curr.message,
       listener: (context, state) {
-        if (_isDeleting.value && state.message != null) {
+        if (_isDeleting.value && state.message != null && mounted) {
           final isSuccess = state.message!.contains('success');
-          // Dismiss the dialog so the user is returned to the screen and can see feedback
-          Navigator.pop(context);
           final rootContext = Navigator.of(
             context,
             rootNavigator: true,
           ).context;
-          CustomSnackBar.show(
-            context: rootContext,
-            message: rootContext.tr(state.message!),
-            type: isSuccess
-                ? CustomSnackBarType.success
-                : CustomSnackBarType.error,
-          );
+          // Dismiss the dialog so the user is returned to the screen and can see feedback
+          Navigator.pop(context);
+          if (rootContext.mounted) {
+            CustomSnackBar.show(
+              context: rootContext,
+              message: rootContext.tr(state.message!),
+              type: isSuccess
+                  ? CustomSnackBarType.success
+                  : CustomSnackBarType.error,
+            );
+          }
           widget.authBloc.add(const AuthClearMessage());
         }
       },
       child: ListenableBuilder(
         listenable: Listenable.merge([_confirmController, _isDeleting]),
         builder: (context, child) {
-          final isConfirmed = _confirmController.text.trim() == deleteWord;
+          final isConfirmed =
+              _confirmController.text.trim().toUpperCase() ==
+              deleteWord.toUpperCase();
           final isDeleting = _isDeleting.value;
 
           return PopScope(

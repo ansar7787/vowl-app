@@ -209,6 +209,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
             ),
             CustomSnackBarType.success,
           );
+          context.read<AuthBloc>().add(const AuthClearMessage());
           return;
         }
 
@@ -221,10 +222,13 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
             context.tr(AuthErrorHandler.getKey(state.message!)),
             CustomSnackBarType.error,
           );
+          context.read<AuthBloc>().add(const AuthClearMessage());
         }
       },
       child: BlocBuilder<AuthBloc, AuthState>(
-        buildWhen: (previous, current) => previous.status != current.status,
+        buildWhen: (previous, current) =>
+            previous.status != current.status ||
+            previous.user != current.user,
         builder: (context, state) {
           return ListenableBuilder(
             listenable: Listenable.merge([
@@ -264,11 +268,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                                 const VerifyEmailIconHeader(),
                                 SizedBox(height: 28.h),
                                 VerifyEmailStatusText(
-                                  email: context
-                                      .read<AuthBloc>()
-                                      .state
-                                      .user
-                                      ?.email,
+                                  email: state.user?.email,
                                   deliveryStatus: _deliveryStatus.value,
                                 ),
                                 SizedBox(height: 32.h),
