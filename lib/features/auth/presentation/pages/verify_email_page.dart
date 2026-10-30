@@ -1,18 +1,19 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/auth_error_handler.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/widgets/verify_email_widgets.dart';
-import 'package:vowl/core/network/network_info.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -42,8 +43,11 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
   Timer? _verificationTimer;
   Timer? _resendCooldownTimer;
 
+  bool _hasAutoDispatched = false;
+  final ValueNotifier<EmailDeliveryStatus> _deliveryStatus =
+      ValueNotifier(EmailDeliveryStatus.sending);
   final ValueNotifier<bool> _canResendEmail = ValueNotifier(false);
-  final ValueNotifier<int> _secondsRemaining = ValueNotifier(30);
+  final ValueNotifier<int> _secondsRemaining = ValueNotifier(15);
   final ValueNotifier<bool> _isLoggingOut = ValueNotifier(false);
 
   @override
@@ -51,12 +55,20 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
     super.initState();
     _startVerificationPolling();
     _startResendCooldown();
+    // Auto-dispatch verification email reliably on mount via AuthBloc
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted && !_hasAutoDispatched) {
+        _hasAutoDispatched = true;
+        _requestVerificationEmail();
+      }
+    });
   }
 
   @override
   void dispose() {
     _verificationTimer?.cancel();
     _resendCooldownTimer?.cancel();
+    _deliveryStatus.dispose();
     _canResendEmail.dispose();
     _secondsRemaining.dispose();
     _isLoggingOut.dispose();
@@ -82,16 +94,17 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
   }
 
   // ---------------------------------------------------------------------------
-  // Email resend
+  // Email resend & app launch
   // ---------------------------------------------------------------------------
 
   void _requestVerificationEmail() {
+    _deliveryStatus.value = EmailDeliveryStatus.sending;
     context.read<AuthBloc>().add(const AuthSendEmailVerificationRequested());
   }
 
   void _startResendCooldown() {
     _canResendEmail.value = false;
-    _secondsRemaining.value = 30;
+    _secondsRemaining.value = 15;
 
     _resendCooldownTimer?.cancel();
     _resendCooldownTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
@@ -107,6 +120,37 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
         timer.cancel();
       }
     });
+  }
+
+  Future<void> _openEmailApp() async {
+    final emailUri = Uri(scheme: 'mailto');
+    try {
+      if (await canLaunchUrl(emailUri)) {
+        await launchUrl(emailUri, mode: LaunchMode.externalApplication);
+      } else {
+        if (mounted) {
+          _showSnackBar(
+            context.tr(
+              'auth.cannot_open_email_app',
+              fallback:
+                  'Could not open email app. Please check your inbox manually.',
+            ),
+            CustomSnackBarType.info,
+          );
+        }
+      }
+    } catch (_) {
+      if (mounted) {
+        _showSnackBar(
+          context.tr(
+            'auth.cannot_open_email_app',
+            fallback:
+                'Could not open email app. Please check your inbox manually.',
+          ),
+          CustomSnackBarType.info,
+        );
+      }
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -156,6 +200,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
         // context.tr() — this was the one message on this screen that
         // could never have been localized.
         if (state.message == 'auth.email_verification_sent') {
+          _deliveryStatus.value = EmailDeliveryStatus.sent;
           _startResendCooldown();
           _showSnackBar(
             context.tr(
@@ -171,6 +216,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
         if (state.message != null &&
             state.message != 'auth.email_verification_sent') {
           _isLoggingOut.value = false;
+          _deliveryStatus.value = EmailDeliveryStatus.failed;
           _showSnackBar(
             context.tr(AuthErrorHandler.getKey(state.message!)),
             CustomSnackBarType.error,
@@ -185,6 +231,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
               _isLoggingOut,
               _canResendEmail,
               _secondsRemaining,
+              _deliveryStatus,
             ]),
             builder: (context, _) {
               final bgColor = _bgColor(context);
@@ -215,25 +262,30 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 const VerifyEmailIconHeader(),
-                                SizedBox(height: 32.h),
+                                SizedBox(height: 28.h),
                                 VerifyEmailStatusText(
                                   email: context
                                       .read<AuthBloc>()
                                       .state
                                       .user
                                       ?.email,
+                                  deliveryStatus: _deliveryStatus.value,
                                 ),
-                                SizedBox(height: 40.h),
+                                SizedBox(height: 32.h),
+                                OpenEmailAppButton(
+                                  onPressed: _openEmailApp,
+                                ),
+                                SizedBox(height: 14.h),
+                                VerifyConfirmationButton(
+                                  onPressed: _triggerVerificationCheck,
+                                ),
+                                SizedBox(height: 14.h),
                                 ResendEmailButton(
                                   canResendEmail: _canResendEmail.value,
                                   secondsRemaining: _secondsRemaining.value,
                                   onPressed: _requestVerificationEmail,
                                 ),
-                                SizedBox(height: 16.h),
-                                VerifyConfirmationButton(
-                                  onPressed: _triggerVerificationCheck,
-                                ),
-                                SizedBox(height: 16.h),
+                                SizedBox(height: 12.h),
                                 VerifyLogoutButton(
                                   onPressed: () async {
                                     final authBloc = context.read<AuthBloc>();
