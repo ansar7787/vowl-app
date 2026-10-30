@@ -17,6 +17,7 @@ import 'package:vowl/core/utils/coin_packs_service.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:vowl/core/services/in_app_purchase_service.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -162,6 +163,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
 
       // Successfully granted by backend! Refresh the user profile to show updated balances
       if (mounted) {
+        context.read<AuthBloc>().add(const AuthRefreshUser());
         context.read<AuthBloc>().add(const AuthReloadUser());
         _isProcessing = false;
         _updateState();
@@ -249,23 +251,47 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     final packTitle = context.tr(pack.titleKey, fallback: pack.titleFallback);
 
     if (_useGooglePlay) {
-      String productId;
-      if (pack.id == 'starter_pack') {
-        productId = InAppPurchaseService.coinPack100;
-      } else if (pack.id == 'explorer_pack') {
-        productId = InAppPurchaseService.coinPack500;
-      } else if (pack.id == 'master_pack') {
-        productId = InAppPurchaseService.coinPack1000;
-      } else {
-        productId = InAppPurchaseService.coinPack100;
-      }
+      final productId = InAppPurchaseService.getCoinPackProductId(
+        packId: pack.id,
+        coins: pack.coins,
+        index: _activePacks.indexOf(pack),
+      );
 
       final iap = InAppPurchaseService.instance;
+      ProductDetails? product;
+      final matching = iap.products.where((p) => p.id == productId).toList();
+      if (matching.isNotEmpty) {
+        product = matching.first;
+      } else {
+        final coinMatches = iap.products
+            .where((p) => p.id.contains('${pack.coins}') || p.id.contains('coin'))
+            .toList();
+        if (coinMatches.isNotEmpty) {
+          product = coinMatches.first;
+        }
+      }
+
+      if (product == null) {
+        if (!mounted) return;
+        _isProcessing = false;
+        _updateState();
+        _pendingPack = null;
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'store.product_not_found',
+            fallback: 'Product not found. Please try again later.',
+          ),
+          type: CustomSnackBarType.error,
+        );
+        return;
+      }
+
       try {
-        final product = iap.products.firstWhere((p) => p.id == productId);
         iap.onPurchaseSuccess = (purchase) {
           if (!mounted) return;
           di.sl<HapticService>().success();
+          context.read<AuthBloc>().add(const AuthRefreshUser());
           context.read<AuthBloc>().add(const AuthReloadUser());
           _isProcessing = false;
           _updateState();
@@ -1120,16 +1146,11 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                             // For Razorpay (India), show ₹ price from Firestore.
                             String priceText;
                             if (_useGooglePlay) {
-                              String productId;
-                              if (pack.id == 'starter_pack') {
-                                productId = InAppPurchaseService.coinPack100;
-                              } else if (pack.id == 'explorer_pack') {
-                                productId = InAppPurchaseService.coinPack500;
-                              } else if (pack.id == 'master_pack') {
-                                productId = InAppPurchaseService.coinPack1000;
-                              } else {
-                                productId = InAppPurchaseService.coinPack100;
-                              }
+                              final productId = InAppPurchaseService.getCoinPackProductId(
+                                packId: pack.id,
+                                coins: pack.coins,
+                                index: _activePacks.indexOf(pack),
+                              );
                               final iap = InAppPurchaseService.instance;
                               final match = iap.products.where(
                                 (p) => p.id == productId,

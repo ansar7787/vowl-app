@@ -265,6 +265,9 @@ void main() {
       purchaseParam: any(named: 'purchaseParam'),
       autoConsume: any(named: 'autoConsume'),
     )).thenAnswer((_) async => true);
+    when(() => mockIap.buyNonConsumable(
+      purchaseParam: any(named: 'purchaseParam'),
+    )).thenAnswer((_) async => true);
     when(() => mockIap.restorePurchases(applicationUserName: any(named: 'applicationUserName')))
         .thenAnswer((_) async {});
     when(() => mockIap.completePurchase(any())).thenAnswer((_) async {});
@@ -418,11 +421,11 @@ void main() {
   // GROUP 4: Purchase Launching & Consumable Pass Handling
   // =========================================================================
   group('Group 4: Purchase Launching & Consumable Pass Handling', () {
-    test('buyProduct invokes buyConsumable with product parameter', () async {
+    test('buyProduct invokes buyNonConsumable for subscriptions', () async {
       await service.buyProduct(weeklyProduct);
 
       final captured = verify(
-        () => mockIap.buyConsumable(
+        () => mockIap.buyNonConsumable(
           purchaseParam: captureAny(named: 'purchaseParam'),
         ),
       ).captured.single as PurchaseParam;
@@ -430,10 +433,24 @@ void main() {
       expect(captured.productDetails.id, equals(InAppPurchaseService.premiumWeekly));
     });
 
-    test('buyProduct triggers onPurchaseError callback when buyConsumable returns false', () async {
+    test('buyProduct invokes buyConsumable for coin packs', () async {
+      await service.buyProduct(coinProduct);
+
+      final captured = verify(
+        () => mockIap.buyConsumable(
+          purchaseParam: captureAny(named: 'purchaseParam'),
+        ),
+      ).captured.single as PurchaseParam;
+
+      expect(captured.productDetails.id, equals(InAppPurchaseService.coinPack100));
+    });
+
+    test('buyProduct triggers onPurchaseError callback when launch returns false', () async {
+      when(() => mockIap.buyNonConsumable(
+        purchaseParam: any(named: 'purchaseParam'),
+      )).thenAnswer((_) async => false);
       when(() => mockIap.buyConsumable(
         purchaseParam: any(named: 'purchaseParam'),
-        autoConsume: any(named: 'autoConsume'),
       )).thenAnswer((_) async => false);
 
       String? errorReceived;
