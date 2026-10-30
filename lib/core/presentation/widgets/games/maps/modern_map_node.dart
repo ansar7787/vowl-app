@@ -88,6 +88,9 @@ class _ModernMapNodeState extends State<ModernMapNode> {
   @override
   void dispose() {
     _buddyMessageTimer?.cancel();
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl<TtsService>().stop();
+    }
     _buddyMessageNotifier.dispose();
     super.dispose();
   }
@@ -661,6 +664,11 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                       ),
                       child: ScaleButton(
                         onTap: () async {
+                          _buddyMessageTimer?.cancel();
+                          _buddyMessageNotifier.value = null;
+                          if (di.sl.isRegistered<TtsService>()) {
+                            di.sl<TtsService>().stop();
+                          }
                           if (isTollGateSegment) {
                             if (widget.levelNumber >
                                 widget.completedLevels + 1) {

@@ -125,6 +125,9 @@ class _KidsMapNodeState extends State<KidsMapNode> {
   @override
   void dispose() {
     _buddyMessageTimer?.cancel();
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl<TtsService>().stop();
+    }
     _buddyMessage.dispose();
     _buddyState.dispose();
     super.dispose();
@@ -460,6 +463,13 @@ class _KidsMapNodeState extends State<KidsMapNode> {
 
     return ScaleButton(
       onTap: () {
+        _buddyMessageTimer?.cancel();
+        _buddyMessage.value = null;
+        _buddyState.value = VowlMascotState.neutral;
+        if (di.sl.isRegistered<TtsService>()) {
+          di.sl<TtsService>().stop();
+        }
+
         if (widget.isTollGate) {
           final completedLevels =
               context
@@ -744,6 +754,12 @@ class _KidsMapNodeState extends State<KidsMapNode> {
   }
 
   Future<void> _navigateToGame(BuildContext context, int level) async {
+    _buddyMessageTimer?.cancel();
+    _buddyMessage.value = null;
+    _buddyState.value = VowlMascotState.neutral;
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl<TtsService>().stop();
+    }
     final routeMap = {
       'alphabet': AppRouter.kidsAlphabetRoute,
       'numbers': AppRouter.kidsNumbersRoute,

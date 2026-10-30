@@ -139,6 +139,7 @@ void main() {
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockStoryService.getStoryBeat(any(), any(), any())).thenReturn(null);
     when(() => mockTtsService.speak(any())).thenAnswer((_) async {});
+    when(() => mockTtsService.stop()).thenAnswer((_) async {});
     when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
 
     when(() => mockAuthBloc.state).thenReturn(
@@ -450,6 +451,22 @@ void main() {
         verify(() => mockTtsService.speak(any())).called(1);
         expect(tester.takeException(), isNull);
 
+        await cleanUp(tester);
+      },
+    );
+
+    testWidgets(
+      'tapping playable level node stops active TTS playback',
+      (tester) async {
+        await pumpScreen(tester);
+
+        final level2Finder = find.text('2');
+        expect(level2Finder, findsOneWidget);
+
+        await tester.tap(level2Finder, warnIfMissed: false);
+        await tester.pump();
+
+        verify(() => mockTtsService.stop()).called(greaterThanOrEqualTo(1));
         await cleanUp(tester);
       },
     );

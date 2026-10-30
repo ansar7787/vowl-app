@@ -22,6 +22,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/data/services/asset_quest_service.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/star_vault_bottom_sheet.dart';
+import 'package:vowl/core/utils/tts_service.dart';
 
 import 'package:vowl/core/presentation/widgets/games/maps/modern_map_node.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/glass_map_header.dart';
@@ -293,6 +294,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   @override
   void dispose() {
     _buddyMessageTimer?.cancel();
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl<TtsService>().stop();
+    }
     _scrollController.dispose();
     _entryController.dispose();
     _unlockPathController.dispose();
@@ -476,6 +480,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
         canPop: false,
         onPopInvokedWithResult: (didPop, result) {
           if (didPop) return;
+          if (di.sl.isRegistered<TtsService>()) {
+            di.sl<TtsService>().stop();
+          }
           if (context.canPop()) {
             context.pop();
           } else {
@@ -524,6 +531,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                               ),
                               child: ScaleButton(
                                 onTap: () {
+                                  if (di.sl.isRegistered<TtsService>()) {
+                                    di.sl<TtsService>().stop();
+                                  }
                                   if (context.canPop()) {
                                     context.pop();
                                   } else {
@@ -797,11 +807,16 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             fallback: 'Star Vault, $totalStars stars',
           ),
           child: ScaleButton(
-            onTap: () => StarVaultBottomSheet.show(
-              context,
-              widget.gameType,
-              theme.primaryColor,
-            ),
+            onTap: () {
+              if (di.sl.isRegistered<TtsService>()) {
+                di.sl<TtsService>().stop();
+              }
+              StarVaultBottomSheet.show(
+                context,
+                widget.gameType,
+                theme.primaryColor,
+              );
+            },
             child: ExcludeSemantics(
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
@@ -869,11 +884,16 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             fallback: 'Golden Keys, $keys keys',
           ),
           child: ScaleButton(
-            onTap: () => KeyShopBottomSheet.show(
-              context: context,
-              isKidsMode: false,
-              primaryColor: theme.primaryColor,
-            ),
+            onTap: () {
+              if (di.sl.isRegistered<TtsService>()) {
+                di.sl<TtsService>().stop();
+              }
+              KeyShopBottomSheet.show(
+                context: context,
+                isKidsMode: false,
+                primaryColor: theme.primaryColor,
+              );
+            },
             child: ExcludeSemantics(
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
