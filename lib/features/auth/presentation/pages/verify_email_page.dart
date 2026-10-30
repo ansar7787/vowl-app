@@ -249,10 +249,16 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                     SafeArea(
                       child: Center(
                         child: SingleChildScrollView(
-                          padding: EdgeInsets.all(24.w),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20.w,
+                            vertical: 24.h,
+                          ),
                           child: GlassTile(
-                            padding: EdgeInsets.all(32.r),
-                            borderRadius: BorderRadius.circular(40.r),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 20.w,
+                              vertical: 28.h,
+                            ),
+                            borderRadius: BorderRadius.circular(32.r),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [

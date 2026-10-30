@@ -116,4 +116,30 @@ void main() {
 
     verify(() => mockAuthBloc.add(const AuthLogoutRequested())).called(1);
   });
+
+  testWidgets('renders long email on narrow screen without overflow', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(320, 640);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    const longUser = UserEntity(
+      id: 'user123',
+      email: 'supercalifragilisticexpialidocious.email@extraordinarylongdomainname.com',
+      displayName: 'Verification Tester',
+      isEmailVerified: false,
+    );
+    when(() => mockAuthBloc.state).thenReturn(
+      AuthState.authenticated(longUser),
+    );
+
+    await tester.pumpWidget(createWidgetUnderTest());
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
+
+    expect(tester.takeException(), isNull);
+    expect(find.byType(VerifyEmailStatusText), findsOneWidget);
+  });
 }
