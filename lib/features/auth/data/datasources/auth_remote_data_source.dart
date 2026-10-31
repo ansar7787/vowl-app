@@ -244,11 +244,37 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     final userDoc = await userDocRef.get();
     final isNewUser = !userDoc.exists;
 
+    // Resolve a robust, human-readable display name if Google returns null/empty
+    String? resolvedName = user.displayName?.trim();
+    if (resolvedName == null ||
+        resolvedName.isEmpty ||
+        resolvedName.toLowerCase() == 'unknown user' ||
+        resolvedName.toLowerCase() == 'unknown') {
+      if (user.email != null && user.email!.contains('@')) {
+        final prefix = user.email!
+            .split('@')
+            .first
+            .replaceAll(RegExp(r'[._\-+0-9]+'), ' ')
+            .trim();
+        if (prefix.isNotEmpty) {
+          resolvedName = prefix
+              .split(' ')
+              .where((s) => s.isNotEmpty)
+              .map((w) => w[0].toUpperCase() + (w.length > 1 ? w.substring(1).toLowerCase() : ''))
+              .join(' ');
+        }
+      }
+      resolvedName ??= 'Vowl Learner';
+      try {
+        await user.updateDisplayName(resolvedName);
+      } catch (_) {}
+    }
+
     if (isNewUser) {
       final newUser = UserModel(
         id: user.uid,
         email: user.email ?? '',
-        displayName: user.displayName,
+        displayName: resolvedName,
         photoUrl: user.photoURL,
         isAdmin: false,
         lastLoginDate: DateTime.now(),
@@ -270,6 +296,20 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
           stackTrace: stack,
           tag: 'AuthRemoteDataSource',
         );
+      }
+    } else {
+      // Self-heal existing user doc if displayName was null, empty, or 'Unknown User'
+      final existingData = userDoc.data();
+      final existingName = (existingData?['displayName'] as String?)?.trim();
+      if (existingName == null ||
+          existingName.isEmpty ||
+          existingName.toLowerCase() == 'unknown user' ||
+          existingName.toLowerCase() == 'unknown') {
+        try {
+          await userDocRef.set({
+            'displayName': resolvedName,
+          }, SetOptions(merge: true));
+        } catch (_) {}
       }
     }
 
@@ -308,10 +348,18 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   /// written back to Firestore, so the real profile is recovered as soon as
   /// a subsequent read succeeds.
   UserModel _minimalUserFrom(User firebaseUser) {
+    final rawName = firebaseUser.displayName?.trim();
+    final sanitizedName = (rawName != null &&
+            rawName.isNotEmpty &&
+            rawName.toLowerCase() != 'unknown user' &&
+            rawName.toLowerCase() != 'unknown')
+        ? rawName
+        : null;
+
     return UserModel(
       id: firebaseUser.uid,
       email: firebaseUser.email ?? '',
-      displayName: firebaseUser.displayName,
+      displayName: sanitizedName,
       photoUrl: firebaseUser.photoURL,
       isEmailVerified: firebaseUser.emailVerified,
       lastDailyRewardDate: DateTime.now(), // Defensively prevents false startup daily reward triggers

@@ -69,10 +69,11 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
         try {
           final data = Map<String, dynamic>.from(doc.data());
           data['id'] = (data['id'] as String?) ?? doc.id;
-          users.add(UserModel.fromMap(data));
+          final user = UserModel.fromMap(data);
+          users.add(user);
           usersData.add({
             'id': data['id'],
-            'displayName': data['displayName'],
+            'displayName': user.safeDisplayName,
             'photoUrl': data['photoUrl'],
             'totalExp': data['totalExp'],
             'currentStreak': data['currentStreak'],
@@ -166,11 +167,12 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
         try {
           final data = Map<String, dynamic>.from(doc.data());
           data['id'] = (data['id'] as String?) ?? doc.id;
-          users.add(UserModel.fromMap(data));
+          final user = UserModel.fromMap(data);
+          users.add(user);
 
           usersData.add({
             'id': data['id'],
-            'displayName': data['displayName'],
+            'displayName': user.safeDisplayName,
             'photoUrl': data['photoUrl'],
             'kidsCoins': data['kidsCoins'] ?? 0,
             'currentStreak': data['currentStreak'],

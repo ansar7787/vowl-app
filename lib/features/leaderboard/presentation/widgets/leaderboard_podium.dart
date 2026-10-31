@@ -133,13 +133,16 @@ class _PodiumSlot extends StatelessWidget {
     final glowColor = colors[0];
     final delay = rank == 3 ? 0 : (rank == 2 ? 150 : 300);
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    final safeDisplayName = user.getSafeDisplayName(
+      fallback: context.tr('leaderboard.player', fallback: 'Player'),
+    );
 
     final slotContent = Semantics(
       // FIX (HIGH-5): Screen readers now announce the rank, player name,
       // levels cleared, and XP for each podium position.
       // FIX (HIGH-2): "Player" fallback localised via context.tr().
       label:
-          'Rank $rank: ${user.displayName ?? context.tr("leaderboard.player", fallback: 'Player')}. '
+          'Rank $rank: $safeDisplayName. '
           '$levelsCleared levels cleared. $score $scoreLabel.',
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -324,7 +327,7 @@ class _PodiumSlot extends StatelessWidget {
                       children: [
                         Flexible(
                           child: AutoSizeText(
-                            (user.displayName ?? 'Player').split(' ').first,
+                            safeDisplayName.split(' ').first,
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: isFirst ? 11.sp : 9.sp,

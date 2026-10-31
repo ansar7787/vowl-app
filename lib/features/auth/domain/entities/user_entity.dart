@@ -412,6 +412,37 @@ class UserEntity {
     return 150 + ((level - 201) % 50);
   }
 
+  /// Returns a clean, production-grade display name.
+  /// If [displayName] is null, empty, or a legacy sentinel like "Unknown User",
+  /// it gracefully derives a formatted name from [email] (capitalized) or returns [fallback].
+  String getSafeDisplayName({String fallback = 'Vowl Learner'}) {
+    final name = displayName?.trim();
+    if (name != null &&
+        name.isNotEmpty &&
+        name.toLowerCase() != 'unknown user' &&
+        name.toLowerCase() != 'unknown') {
+      return name;
+    }
+    if (email.isNotEmpty && email.contains('@')) {
+      final prefix = email.split('@').first.replaceAll(RegExp(r'[._\-+0-9]+'), ' ').trim();
+      if (prefix.isNotEmpty) {
+        return prefix
+            .split(' ')
+            .where((s) => s.isNotEmpty)
+            .map((w) => w[0].toUpperCase() + (w.length > 1 ? w.substring(1).toLowerCase() : ''))
+            .join(' ');
+      }
+      final rawPrefix = email.split('@').first.trim();
+      if (rawPrefix.isNotEmpty) {
+        return rawPrefix[0].toUpperCase() + rawPrefix.substring(1);
+      }
+    }
+    return fallback;
+  }
+
+  /// Convenience getter returning [getSafeDisplayName] with the default fallback.
+  String get safeDisplayName => getSafeDisplayName();
+
   // ---------------------------------------------------------------------------
   // copyWith — supports explicit null to clear optional fields
   // ---------------------------------------------------------------------------

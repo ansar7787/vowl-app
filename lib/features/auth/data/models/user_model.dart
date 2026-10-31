@@ -109,7 +109,7 @@ class UserModel extends UserEntity {
     return UserModel(
       id: effectiveId,
       email: (map['email'] as String?) ?? '',
-      displayName: map['displayName'] as String?,
+      displayName: _sanitizeDisplayName(map['displayName'], map['email']),
       photoUrl: map['photoUrl'] as String?,
       fcmToken: map['fcmToken'] as String?,
       coins: (map['coins'] as num?)?.toInt() ?? 0,
@@ -547,6 +547,39 @@ class UserModel extends UserEntity {
   // ---------------------------------------------------------------------------
   // Private parsing helpers
   // ---------------------------------------------------------------------------
+
+  /// Safely resolves and sanitizes a display name from Firestore data.
+  /// Prevents "Unknown User" or empty sentinels from contaminating user profiles.
+  /// Derives from email if present, otherwise returns null.
+  static String? _sanitizeDisplayName(dynamic rawName, dynamic rawEmail) {
+    if (rawName is String) {
+      final trimmed = rawName.trim();
+      if (trimmed.isNotEmpty &&
+          trimmed.toLowerCase() != 'unknown user' &&
+          trimmed.toLowerCase() != 'unknown') {
+        return trimmed;
+      }
+    }
+    if (rawEmail is String && rawEmail.contains('@')) {
+      final prefix = rawEmail
+          .split('@')
+          .first
+          .replaceAll(RegExp(r'[._\-+0-9]+'), ' ')
+          .trim();
+      if (prefix.isNotEmpty) {
+        return prefix
+            .split(' ')
+            .where((s) => s.isNotEmpty)
+            .map((w) => w[0].toUpperCase() + (w.length > 1 ? w.substring(1).toLowerCase() : ''))
+            .join(' ');
+      }
+      final rawPrefix = rawEmail.split('@').first.trim();
+      if (rawPrefix.isNotEmpty) {
+        return rawPrefix[0].toUpperCase() + rawPrefix.substring(1);
+      }
+    }
+    return null;
+  }
 
   /// Safely parses a date-time value from a Firestore field which may be a
   /// [Timestamp], ISO-8601 [String], unix epoch [int], or null.
