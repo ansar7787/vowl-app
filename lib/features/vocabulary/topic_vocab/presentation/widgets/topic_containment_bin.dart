@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// Visual containment bin into which topical words are categorized with plasma fluid fill animations.
@@ -40,30 +42,39 @@ class TopicContainmentBin extends StatelessWidget {
         VowlMotion.lowAnimationModeOverride.value;
     const IconData bucketIcon = Icons.folder_open_rounded;
 
+    final isMidnight = context.isMidnight;
+    final outerBg = isDark
+        ? (isMidnight ? AppColors.midnightSurface : AppColors.slate900)
+        : Colors.white;
+
     final outerContainer = Container(
       width: 130.w,
       height: 155.h,
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F172A) : const Color(0xFF1E293B),
+        color: outerBg,
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(14.r),
           bottom: Radius.circular(24.r),
         ),
         border: Border.all(
           color: isHinted
-              ? Colors.white
-              : color.withValues(alpha: 0.4),
+              ? (isDark ? Colors.white : AppColors.indigo500)
+              : (isDark
+                  ? color.withValues(alpha: 0.4)
+                  : color.withValues(alpha: 0.3)),
           width: isHinted ? 3.0 : 1.5,
         ),
         boxShadow: [
           if (isHinted)
-            const BoxShadow(
-              color: Colors.white,
+            BoxShadow(
+              color: isDark
+                  ? Colors.white
+                  : AppColors.indigo500.withValues(alpha: 0.4),
               blurRadius: 20,
               spreadRadius: 1,
             ),
           BoxShadow(
-            color: color.withValues(alpha: 0.2),
+            color: color.withValues(alpha: isDark ? 0.2 : 0.08),
             blurRadius: 16,
             spreadRadius: -4,
           ),
@@ -92,7 +103,9 @@ class TopicContainmentBin extends StatelessWidget {
               width: 114.w,
               height: 124.h,
               decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.04),
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.04)
+                    : AppColors.slate100.withValues(alpha: 0.6),
                 borderRadius: BorderRadius.circular(18.r),
               ),
               child: ClipRRect(
@@ -127,7 +140,10 @@ class TopicContainmentBin extends StatelessWidget {
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 11.sp,
-                                          color: Colors.white.withValues(alpha: 0.95),
+                                          color: isDark
+                                              ? Colors.white
+                                                  .withValues(alpha: 0.95)
+                                              : AppColors.slate800,
                                           fontWeight: FontWeight.w600,
                                           letterSpacing: 0.2,
                                         ),

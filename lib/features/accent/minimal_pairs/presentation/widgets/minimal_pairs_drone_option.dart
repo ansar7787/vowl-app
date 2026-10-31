@@ -1,4 +1,6 @@
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -65,7 +67,11 @@ class MinimalPairsDroneOption extends StatelessWidget {
     final bool correct = index == correctIndex;
 
     Color borderColor = color.withValues(alpha: isDark ? 0.35 : 0.25);
-    Color cardBg = isDark ? const Color(0xFF1E2230) : Colors.white;
+    Color cardBg = isDark
+        ? (context.isMidnight
+            ? AppColors.midnightSurface
+            : const Color(0xFF1E2230))
+        : Colors.white;
 
     if (isAnswered && isSelected) {
       borderColor = correct ? tokens.gameCorrect : tokens.gameIncorrect;

@@ -153,6 +153,36 @@ class AppTheme {
       ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
     ),
+    dialogTheme: const DialogThemeData(
+      backgroundColor: Colors.white,
+      surfaceTintColor: Colors.transparent,
+      elevation: 3,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+      ),
+    ),
+    bottomSheetTheme: const BottomSheetThemeData(
+      backgroundColor: Colors.white,
+      surfaceTintColor: Colors.transparent,
+      elevation: 4,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+    ),
+    cardTheme: CardThemeData(
+      color: cardLight,
+      surfaceTintColor: Colors.transparent,
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: const BorderSide(color: borderLight),
+      ),
+    ),
+    popupMenuTheme: const PopupMenuThemeData(
+      color: Colors.white,
+      surfaceTintColor: Colors.transparent,
+      elevation: 3,
+    ),
   );
 
   // ---------------------------------------------------------------------------
@@ -233,6 +263,36 @@ class AppTheme {
         borderSide: const BorderSide(color: primaryIndigoDark, width: 2),
       ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+    ),
+    dialogTheme: const DialogThemeData(
+      backgroundColor: cardDark,
+      surfaceTintColor: Colors.transparent,
+      elevation: 3,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+      ),
+    ),
+    bottomSheetTheme: const BottomSheetThemeData(
+      backgroundColor: scaffoldDark,
+      surfaceTintColor: Colors.transparent,
+      elevation: 4,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+    ),
+    cardTheme: CardThemeData(
+      color: cardDark,
+      surfaceTintColor: Colors.transparent,
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: const BorderSide(color: borderDark),
+      ),
+    ),
+    popupMenuTheme: const PopupMenuThemeData(
+      color: cardDark,
+      surfaceTintColor: Colors.transparent,
+      elevation: 3,
     ),
   );
 
@@ -317,6 +377,36 @@ class AppTheme {
         borderSide: const BorderSide(color: primaryIndigoDark, width: 2),
       ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+    ),
+    dialogTheme: const DialogThemeData(
+      backgroundColor: midnightCardBase,
+      surfaceTintColor: Colors.transparent,
+      elevation: 3,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+      ),
+    ),
+    bottomSheetTheme: const BottomSheetThemeData(
+      backgroundColor: midnightCardBase,
+      surfaceTintColor: Colors.transparent,
+      elevation: 4,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+    ),
+    cardTheme: CardThemeData(
+      color: midnightCardBase,
+      surfaceTintColor: Colors.transparent,
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: const BorderSide(color: cardDark),
+      ),
+    ),
+    popupMenuTheme: const PopupMenuThemeData(
+      color: midnightCardBase,
+      surfaceTintColor: Colors.transparent,
+      elevation: 3,
     ),
   );
 

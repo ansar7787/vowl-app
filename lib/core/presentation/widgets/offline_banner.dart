@@ -7,6 +7,7 @@ import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/offline_play_gate_service.dart';
@@ -179,9 +180,10 @@ class OfflineBanner extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
               decoration: BoxDecoration(
-                color: (isDark ? AppColors.slate900 : Colors.white).withValues(
-                  alpha: 0.95,
-                ),
+                color: (bottomSheetContext.isMidnight
+                        ? AppColors.midnightSurface
+                        : (isDark ? AppColors.slate900 : Colors.white))
+                    .withValues(alpha: 0.95),
                 borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
                 border: Border(
                   top: BorderSide(

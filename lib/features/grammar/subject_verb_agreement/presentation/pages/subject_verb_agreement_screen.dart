@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -624,7 +625,11 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
           vertical: isCompact ? 14.h : 20.h,
         ),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E2230) : Colors.white,
+          color: isDark
+              ? (context.isMidnight
+                  ? AppColors.midnightSurface
+                  : const Color(0xFF1E2230))
+              : Colors.white,
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
             color: (theme.primaryColor as Color).withValues(
@@ -695,7 +700,11 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
               ? AppColors.gameCorrect.withValues(alpha: 0.15)
               : (isWrong
                     ? AppColors.gameIncorrect.withValues(alpha: 0.15)
-                    : (isDark ? const Color(0xFF1E2230) : Colors.white)),
+                    : (isDark
+                          ? (context.isMidnight
+                              ? AppColors.midnightSurface
+                              : const Color(0xFF1E2230))
+                          : Colors.white)),
           border: Border.all(
             color: isCorrect
                 ? AppColors.gameCorrect

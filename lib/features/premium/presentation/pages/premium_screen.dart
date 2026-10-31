@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -612,12 +613,18 @@ class _PremiumScreenState extends State<PremiumScreen> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(28.r),
         gradient: isDark
-            ? const LinearGradient(
-                colors: [
-                  Color(0xFF0F172A),
-                  Color(0xFF1E1B4B),
-                  Color(0xFF0A0F1D),
-                ],
+            ? LinearGradient(
+                colors: context.isMidnight
+                    ? const [
+                        AppColors.midnightSurface,
+                        Color(0xFF0F172A),
+                        Colors.black,
+                      ]
+                    : const [
+                        Color(0xFF0F172A),
+                        Color(0xFF1E1B4B),
+                        Color(0xFF0A0F1D),
+                      ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               )
@@ -2005,7 +2012,11 @@ class _ContactPhoneBottomSheetState extends State<_ContactPhoneBottomSheet> {
         bottom: MediaQuery.of(context).viewInsets.bottom + 24.h,
       ),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F172A) : Colors.white,
+        color: isDark
+            ? (context.isMidnight
+                ? AppColors.midnightSurface
+                : const Color(0xFF0F172A))
+            : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
         border: Border.all(
           color: isDark

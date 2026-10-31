@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -41,7 +42,9 @@ class SceneDescriptionActivePromptCard extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
         decoration: BoxDecoration(
           color: isDark
-              ? _LocalPalette.color0f0f1a
+              ? (context.isMidnight
+                  ? AppColors.midnightSurface
+                  : _LocalPalette.color0f0f1a)
               : primaryColor.withValues(alpha: 0.04),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(

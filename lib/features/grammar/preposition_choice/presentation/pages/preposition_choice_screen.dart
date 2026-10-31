@@ -14,6 +14,7 @@ import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/preposition_choice/presentation/widgets/preposition_choice_instruction.dart';
 import 'package:vowl/features/grammar/preposition_choice/presentation/widgets/preposition_path_painter.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 
 /// Screen presenting the preposition choice game exercise.
 class PrepositionChoiceScreen extends StatefulWidget {
@@ -624,6 +625,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
                   isCorrect: isCorrectNotifier.value ?? false,
                   targetNode: _targetNode.value,
                   isDark: isDark,
+                  isMidnight: context.isMidnight,
                   isCompact: isCompact,
                 ),
               ),

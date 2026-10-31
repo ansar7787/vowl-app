@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 
 class _LocalPalette {
@@ -34,7 +36,9 @@ class DailyExpressionUsagePanel extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       decoration: BoxDecoration(
         color: isDark
-            ? _LocalPalette.color0f0f1a
+            ? (context.isMidnight
+                ? AppColors.midnightSurface
+                : _LocalPalette.color0f0f1a)
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(

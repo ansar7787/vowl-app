@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
@@ -64,7 +65,11 @@ class WritingEmailHexSlot extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
               decoration: BoxDecoration(
                 color: isDark
-                    ? (hasData ? const Color(0xFF1E2230) : const Color(0xFF161922))
+                    ? (context.isMidnight
+                        ? (hasData ? AppColors.midnightSurface : Colors.black)
+                        : (hasData
+                            ? const Color(0xFF1E2230)
+                            : const Color(0xFF161922)))
                     : (hasData ? Colors.white : const Color(0xFFF8FAFC)),
                 borderRadius: BorderRadius.circular(14.r),
                 border: Border.all(
