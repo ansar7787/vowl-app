@@ -72,7 +72,7 @@ class AppUpdateDialog extends StatelessWidget {
         : context.tr(
             'update.default_notes',
             fallback:
-                '• Performance enhancements & smoother animations\n• Leaderboard navigation & theme refinements\n• Bug fixes to keep your learning seamless',
+                '• Performance enhancements & smoother animations\n• Stability upgrades & user experience polish\n• Bug fixes to keep your learning seamless',
           );
 
     final card = PopScope(
