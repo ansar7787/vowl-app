@@ -87,19 +87,31 @@ class InAppPurchaseService {
     final id = (packId ?? '').toLowerCase().trim();
     final c = coins ?? 0;
 
-    if (id.contains('500') ||
-        id.contains('explorer') ||
-        c == 500 ||
-        c == 1200 ||
-        index == 1) {
-      return coinPack500;
+    // 1. Starter pack (100 coins / index 0)
+    if (id == 'starter_pack' ||
+        id.contains('starter') ||
+        id.contains('100') ||
+        index == 0 ||
+        (c > 0 && c <= 200)) {
+      return coinPack100;
     }
-    if (id.contains('1000') ||
+
+    // 2. Master pack (1000 coins / index 2)
+    if (id == 'master_pack' ||
         id.contains('master') ||
-        c == 1000 ||
-        c == 4000 ||
-        index == 2) {
+        id.contains('1000') ||
+        index == 2 ||
+        c >= 3000) {
       return coinPack1000;
+    }
+
+    // 3. Explorer pack (500 coins / index 1)
+    if (id == 'explorer_pack' ||
+        id.contains('explorer') ||
+        id.contains('500') ||
+        index == 1 ||
+        (c >= 400 && c <= 2000)) {
+      return coinPack500;
     }
 
     return coinPack100;
