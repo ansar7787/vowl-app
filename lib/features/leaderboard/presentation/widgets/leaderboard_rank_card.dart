@@ -21,6 +21,7 @@ class LeaderboardRankCard extends StatelessWidget {
   final List<UserEntity> allUsers;
   final bool isKids;
   final double collapseProgress;
+  final VoidCallback? onTap;
   static const int _totalLevels = AppConstants.totalCurriculumLevels;
   static const int _totalKidsLevels = 25;
 
@@ -29,6 +30,7 @@ class LeaderboardRankCard extends StatelessWidget {
     required this.allUsers,
     this.isKids = false,
     this.collapseProgress = 0.0,
+    this.onTap,
   });
 
   @override
@@ -299,11 +301,19 @@ class LeaderboardRankCard extends StatelessWidget {
       ),
     );
 
+    final interactiveCard = onTap != null
+        ? GestureDetector(
+            onTap: onTap,
+            behavior: HitTestBehavior.opaque,
+            child: card,
+          )
+        : card;
+
     if (VowlMotion.shouldReduceMotion(context)) {
-      return card;
+      return interactiveCard;
     }
 
-    return card
+    return interactiveCard
         .animate()
         .fadeIn(duration: const Duration(milliseconds: 350))
         .slideY(begin: -0.05, end: 0, curve: Curves.easeOutCubic);

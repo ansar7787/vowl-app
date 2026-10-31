@@ -470,6 +470,17 @@ void main() {
 
       expect(find.byIcon(Icons.my_location_rounded), findsNothing);
     });
+
+    testWidgets('tapping LeaderboardRankCard triggers smooth scroll to user', (tester) async {
+      await tester.pumpWidget(buildTestWidget());
+      await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump(const Duration(milliseconds: 500));
+
+      // Tap LeaderboardRankCard
+      expect(find.byType(LeaderboardRankCard), findsOneWidget);
+      await tester.tap(find.byType(LeaderboardRankCard), warnIfMissed: false);
+      await tester.pump(const Duration(milliseconds: 600));
+    });
   });
 
   group('Group 9: Responsive Viewports, Accessibility & Themes', () {

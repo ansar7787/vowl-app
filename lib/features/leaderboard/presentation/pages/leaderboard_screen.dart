@@ -158,26 +158,85 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     super.dispose();
   }
 
-  /// Approximate scroll offset to the current user's rank tile.
-  /// Header + podium + sticky card ≈ fixed overhead; each tile ≈ 74.h.
+  /// Smoothly scrolls the viewport so that the current user's card lands
+  /// dead-center in the visible screen (between the top pinned header and bottom bar).
+  /// If the user is on the podium (ranks 1-3), it scrolls to the very top.
+  /// If the user is unranked, a friendly floating info message is displayed.
   void _scrollToMe() {
     final rankIndex = widget.state.users.indexWhere(
       (u) => u.id == widget.currentUser?.id,
     );
-    if (rankIndex < 3) return; // User is on podium, no need to scroll
 
-    // Approximate overhead: header(70) + podium(280) + spacing(64) + sticky(110) + section(40)
-    final overheadEstimate = 564.0;
-    final tileHeight = 74.0;
-    final targetOffset = overheadEstimate + ((rankIndex - 3) * tileHeight);
-    final clampedOffset = targetOffset.clamp(
+    if (rankIndex < 0) {
+      HapticFeedback.lightImpact();
+      ScaffoldMessenger.of(context).hideCurrentSnackBar();
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            context.tr(
+              'leaderboard.unranked_info',
+              fallback: 'Complete lessons to join the global leaderboard!',
+            ),
+            style: const TextStyle(fontFamily: 'Outfit'),
+          ),
+          backgroundColor: AppColors.slate800,
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.r),
+          ),
+          duration: const Duration(seconds: 3),
+        ),
+      );
+      return;
+    }
+
+    HapticFeedback.mediumImpact();
+
+    if (!_scrollController.hasClients) return;
+
+    // User is on the podium (ranks 1-3): scroll smoothly to top to view podium
+    if (rankIndex < 3) {
+      _scrollController.animateTo(
+        0.0,
+        duration: const Duration(milliseconds: 600),
+        curve: Curves.easeOutCubic,
+      );
+      return;
+    }
+
+    // Responsive height of the podium (matches LeaderboardPodium formula)
+    final screenHeight = MediaQuery.sizeOf(context).height;
+    final podiumHeight = (screenHeight * 0.40).clamp(220.0, 320.0);
+
+    // Exact cumulative overhead before rank 4-N SliverList:
+    // topPadding(16.h) + header(~52.h) + spacing(24.h) + podium + spacing(12.h)
+    // + stickyHeaderMaxExtent(135.h) + sectionDivider(38.h)
+    final overhead = 16.h + 52.h + 24.h + podiumHeight + 12.h + 135.h + 38.h;
+
+    // Each rank tile slot in SliverList (card height + 10.h bottom spacing)
+    final tileHeight = 74.h;
+    final tileIndex = rankIndex - 3;
+    final tileCenterOffset = overhead + (tileIndex * tileHeight) + (tileHeight / 2.0);
+
+    // Visible viewport dimensions
+    final viewportHeight = _scrollController.position.hasViewportDimension
+        ? _scrollController.position.viewportDimension
+        : screenHeight;
+    final pinnedHeaderHeight = 80.h;
+    final bottomBarPadding = 104.h + MediaQuery.paddingOf(context).bottom;
+
+    // Center point in visible viewport between pinned top header and bottom bar
+    final visibleCenter = pinnedHeaderHeight +
+        ((viewportHeight - pinnedHeaderHeight - bottomBarPadding) / 2.0);
+
+    // Scroll offset so tile's vertical center lands exactly on visibleCenter
+    final targetOffset = (tileCenterOffset - visibleCenter).clamp(
       0.0,
       _scrollController.position.maxScrollExtent,
     );
 
-    HapticFeedback.mediumImpact();
     _scrollController.animateTo(
-      clampedOffset,
+      targetOffset,
       duration: const Duration(milliseconds: 600),
       curve: Curves.easeOutCubic,
     );
@@ -309,6 +368,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                   child: LeaderboardRankCard(
                     allUsers: widget.state.users,
                     isKids: widget.state.isKids,
+                    onTap: _scrollToMe,
                   ),
                 ),
               ),
@@ -652,6 +712,7 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
                 allUsers: (child as LeaderboardRankCard).allUsers,
                 isKids: (child as LeaderboardRankCard).isKids,
                 collapseProgress: collapseProgress,
+                onTap: (child as LeaderboardRankCard).onTap,
               ),
             ),
           ),
