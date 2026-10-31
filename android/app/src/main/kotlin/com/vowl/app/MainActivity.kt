@@ -8,11 +8,11 @@ import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
-import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 
-class MainActivity : FlutterActivity() {
+class MainActivity : FlutterFragmentActivity() {
     private val EMAIL_CHANNEL = "com.vowl.app/email_launcher"
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
