@@ -201,3 +201,4 @@ In Firebase Console, set:
 In Firebase Console, set:
 * `ad_frequency_multiplier` = `0.0`
 * *Result:* All interstitial ads stop showing immediately worldwide.
+
