@@ -9,14 +9,48 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/utils/app_update_service.dart';
+import 'package:vowl/core/presentation/widgets/app_update_dialog.dart';
 
 /// Root application scaffold wrapping top-level tab destinations in a stateful shell.
-class MainWrapper extends StatelessWidget {
+class MainWrapper extends StatefulWidget {
   /// Navigation shell governing indexed stack tab routing.
   final StatefulNavigationShell navigationShell;
 
   /// Creates a [MainWrapper] with [navigationShell].
   const MainWrapper({required this.navigationShell, super.key});
+
+  @visibleForTesting
+  static void resetSessionCheck() {
+    _MainWrapperState._hasCheckedForUpdateThisSession = false;
+  }
+
+  @override
+  State<MainWrapper> createState() => _MainWrapperState();
+}
+
+class _MainWrapperState extends State<MainWrapper> {
+  static bool _hasCheckedForUpdateThisSession = false;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _checkUpdate());
+  }
+
+  Future<void> _checkUpdate() async {
+    if (_hasCheckedForUpdateThisSession || !mounted) return;
+    _hasCheckedForUpdateThisSession = true;
+
+    if (!di.sl.isRegistered<AppUpdateService>()) return;
+
+    final updateService = di.sl<AppUpdateService>();
+    final updateInfo = await updateService.checkForUpdate();
+
+    if (updateInfo.hasUpdate && mounted) {
+      await AppUpdateDialog.show(context, updateInfo: updateInfo);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +62,7 @@ class MainWrapper extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       extendBody: true,
-      body: navigationShell,
+      body: widget.navigationShell,
       bottomNavigationBar: RepaintBoundary(
         child: Container(
           height: 82.h,
@@ -165,7 +199,7 @@ class MainWrapper extends StatelessWidget {
     String label,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isSelected = navigationShell.currentIndex == index;
+    final isSelected = widget.navigationShell.currentIndex == index;
     const accentColor = IllustrationColors.brightBlue;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
@@ -267,7 +301,7 @@ class MainWrapper extends StatelessWidget {
   }
 
   void _onTap(BuildContext context, int index) {
-    if (navigationShell.currentIndex == index) {
+    if (widget.navigationShell.currentIndex == index) {
       final String? controllerName = switch (index) {
         0 => 'home',
         1 => 'games',
@@ -292,9 +326,9 @@ class MainWrapper extends StatelessWidget {
       }
     }
 
-    navigationShell.goBranch(
+    widget.navigationShell.goBranch(
       index,
-      initialLocation: index == navigationShell.currentIndex,
+      initialLocation: index == widget.navigationShell.currentIndex,
     );
   }
 }

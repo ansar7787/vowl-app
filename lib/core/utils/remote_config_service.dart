@@ -32,6 +32,15 @@ abstract class RemoteConfigService {
   /// Gets the minimum client application version required to run.
   String get minAppVersion;
 
+  /// Gets the latest released application version available on stores.
+  String get latestAppVersion;
+
+  /// Gets release notes for the current update (optional custom bullet points).
+  String get updateReleaseNotes;
+
+  /// Gets an optional custom store URL or override for the app update.
+  String get updateStoreUrl;
+
   /// Gets the standard coins rewarded per quest victory.
   int get coinsPerVictory;
 
@@ -59,6 +68,9 @@ class FirebaseRemoteConfigService implements RemoteConfigService {
   static const String keyAdFrequencyMultiplier = 'ad_frequency_multiplier';
   static const String keyTripleRewardsEnabled = 'triple_rewards_enabled';
   static const String keyMinAppVersion = 'min_app_version';
+  static const String keyLatestAppVersion = 'latest_app_version';
+  static const String keyUpdateReleaseNotes = 'update_release_notes';
+  static const String keyUpdateStoreUrl = 'update_store_url';
   static const String keyLevelDifficultyModifier = 'level_difficulty_modifier';
   static const String keyCoinsPerVictory = 'coins_per_victory';
   static const String keyKidsCoinsPerVictory = 'kids_coins_per_victory';
@@ -82,6 +94,9 @@ class FirebaseRemoteConfigService implements RemoteConfigService {
         keyAdFrequencyMultiplier: 1.0,
         keyTripleRewardsEnabled: true,
         keyMinAppVersion: '1.0.0',
+        keyLatestAppVersion: '1.0.0',
+        keyUpdateReleaseNotes: '',
+        keyUpdateStoreUrl: '',
         keyLevelDifficultyModifier: 1.0,
         keyCoinsPerVictory: 10,
         keyKidsCoinsPerVictory: 5,
@@ -121,6 +136,15 @@ class FirebaseRemoteConfigService implements RemoteConfigService {
 
   @override
   String get minAppVersion => _remoteConfig.getString(keyMinAppVersion);
+
+  @override
+  String get latestAppVersion => _remoteConfig.getString(keyLatestAppVersion);
+
+  @override
+  String get updateReleaseNotes => _remoteConfig.getString(keyUpdateReleaseNotes);
+
+  @override
+  String get updateStoreUrl => _remoteConfig.getString(keyUpdateStoreUrl);
 
   @override
   int get coinsPerVictory => _remoteConfig.getInt(keyCoinsPerVictory);
