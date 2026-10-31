@@ -150,11 +150,25 @@ class _LeaderboardContent extends StatefulWidget {
 }
 
 class _LeaderboardContentState extends State<_LeaderboardContent> {
-  final ScrollController _scrollController = ScrollController();
+  late final ScrollController _scrollController;
+  bool _ownsScrollController = false;
+
+  @override
+  void initState() {
+    super.initState();
+    if (di.sl.isRegistered<ScrollController>(instanceName: 'leaderboard')) {
+      _scrollController = di.sl<ScrollController>(instanceName: 'leaderboard');
+    } else {
+      _scrollController = ScrollController();
+      _ownsScrollController = true;
+    }
+  }
 
   @override
   void dispose() {
-    _scrollController.dispose();
+    if (_ownsScrollController) {
+      _scrollController.dispose();
+    }
     super.dispose();
   }
 
@@ -257,6 +271,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         backgroundColor: Colors.transparent,
         color: AppColors.indigo500,
         child: CustomScrollView(
+          controller: _scrollController,
           physics: const AlwaysScrollableScrollPhysics(
             parent: BouncingScrollPhysics(),
           ),

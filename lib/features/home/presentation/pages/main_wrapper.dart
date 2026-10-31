@@ -268,21 +268,22 @@ class MainWrapper extends StatelessWidget {
 
   void _onTap(BuildContext context, int index) {
     if (navigationShell.currentIndex == index) {
-      if (index == 0 &&
-          di.sl.isRegistered<ScrollController>(instanceName: 'home')) {
-        final homeController = di.sl<ScrollController>(instanceName: 'home');
-        if (homeController.hasClients) {
-          homeController.animateTo(
-            0.0,
-            duration: const Duration(milliseconds: 500),
-            curve: Curves.fastOutSlowIn,
-          );
-        }
-      } else if (index == 1 &&
-          di.sl.isRegistered<ScrollController>(instanceName: 'games')) {
-        final gamesController = di.sl<ScrollController>(instanceName: 'games');
-        if (gamesController.hasClients) {
-          gamesController.animateTo(
+      final String? controllerName = switch (index) {
+        0 => 'home',
+        1 => 'games',
+        2 => di.sl.isRegistered<ScrollController>(instanceName: 'leaderboard')
+            ? 'leaderboard'
+            : 'ranks',
+        3 => 'profile',
+        _ => null,
+      };
+
+      if (controllerName != null &&
+          di.sl.isRegistered<ScrollController>(instanceName: controllerName)) {
+        final controller =
+            di.sl<ScrollController>(instanceName: controllerName);
+        if (controller.hasClients) {
+          controller.animateTo(
             0.0,
             duration: const Duration(milliseconds: 500),
             curve: Curves.fastOutSlowIn,

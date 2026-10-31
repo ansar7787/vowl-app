@@ -54,10 +54,26 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   final ImagePicker _picker = ImagePicker();
   String? _pendingLocalPhotoPath;
+  late final ScrollController _scrollController;
+  bool _ownsScrollController = false;
 
   @override
   void initState() {
     super.initState();
+    if (di.sl.isRegistered<ScrollController>(instanceName: 'profile')) {
+      _scrollController = di.sl<ScrollController>(instanceName: 'profile');
+    } else {
+      _scrollController = ScrollController();
+      _ownsScrollController = true;
+    }
+  }
+
+  @override
+  void dispose() {
+    if (_ownsScrollController) {
+      _scrollController.dispose();
+    }
+    super.dispose();
   }
 
   @override
@@ -151,6 +167,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       children: [
                         const MeshGradientBackground(showLetters: false),
                         CustomScrollView(
+                          controller: _scrollController,
                           physics: const AlwaysScrollableScrollPhysics(
                             parent: BouncingScrollPhysics(),
                           ),

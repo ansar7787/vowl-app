@@ -232,4 +232,16 @@ Future<void> initExternalAndCore(GetIt sl) async {
     () => ScrollController(),
     instanceName: 'games',
   );
+  sl.registerLazySingleton<ScrollController>(
+    () => ScrollController(),
+    instanceName: 'leaderboard',
+  );
+  sl.registerLazySingleton<ScrollController>(
+    () => sl<ScrollController>(instanceName: 'leaderboard'),
+    instanceName: 'ranks',
+  );
+  sl.registerLazySingleton<ScrollController>(
+    () => ScrollController(),
+    instanceName: 'profile',
+  );
 }
