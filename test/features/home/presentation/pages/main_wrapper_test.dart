@@ -16,6 +16,8 @@ void main() {
   late MockLocaleService mockLocaleService;
   late ScrollController homeScrollController;
   late ScrollController gamesScrollController;
+  late ScrollController leaderboardScrollController;
+  late ScrollController profileScrollController;
 
   setUpAll(() {
     mockLocaleService = MockLocaleService();
@@ -43,12 +45,20 @@ void main() {
 
     homeScrollController = ScrollController();
     gamesScrollController = ScrollController();
+    leaderboardScrollController = ScrollController();
+    profileScrollController = ScrollController();
 
     if (di.sl.isRegistered<ScrollController>(instanceName: 'home')) {
       di.sl.unregister<ScrollController>(instanceName: 'home');
     }
     if (di.sl.isRegistered<ScrollController>(instanceName: 'games')) {
       di.sl.unregister<ScrollController>(instanceName: 'games');
+    }
+    if (di.sl.isRegistered<ScrollController>(instanceName: 'leaderboard')) {
+      di.sl.unregister<ScrollController>(instanceName: 'leaderboard');
+    }
+    if (di.sl.isRegistered<ScrollController>(instanceName: 'profile')) {
+      di.sl.unregister<ScrollController>(instanceName: 'profile');
     }
     if (di.sl.isRegistered<LocaleService>()) {
       di.sl.unregister<LocaleService>();
@@ -62,6 +72,14 @@ void main() {
       gamesScrollController,
       instanceName: 'games',
     );
+    di.sl.registerSingleton<ScrollController>(
+      leaderboardScrollController,
+      instanceName: 'leaderboard',
+    );
+    di.sl.registerSingleton<ScrollController>(
+      profileScrollController,
+      instanceName: 'profile',
+    );
     di.sl.registerSingleton<LocaleService>(mockLocaleService);
   });
 
@@ -72,11 +90,19 @@ void main() {
     if (di.sl.isRegistered<ScrollController>(instanceName: 'games')) {
       di.sl.unregister<ScrollController>(instanceName: 'games');
     }
+    if (di.sl.isRegistered<ScrollController>(instanceName: 'leaderboard')) {
+      di.sl.unregister<ScrollController>(instanceName: 'leaderboard');
+    }
+    if (di.sl.isRegistered<ScrollController>(instanceName: 'profile')) {
+      di.sl.unregister<ScrollController>(instanceName: 'profile');
+    }
     if (di.sl.isRegistered<LocaleService>()) {
       di.sl.unregister<LocaleService>();
     }
     homeScrollController.dispose();
     gamesScrollController.dispose();
+    leaderboardScrollController.dispose();
+    profileScrollController.dispose();
     VowlMotion.lowAnimationModeOverride.value = false;
   });
 
@@ -127,8 +153,18 @@ void main() {
               routes: [
                 GoRoute(
                   path: '/ranks',
-                  builder: (context, state) => const Scaffold(
-                    body: Center(child: Text('Ranks Screen Content')),
+                  builder: (context, state) => ListView(
+                    controller: di.sl<ScrollController>(instanceName: 'leaderboard'),
+                    children: [
+                      const Text('Ranks Screen Content'),
+                      ...List.generate(
+                        40,
+                        (i) => SizedBox(
+                          height: 60,
+                          child: Text('Ranks Item $i'),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -137,8 +173,18 @@ void main() {
               routes: [
                 GoRoute(
                   path: '/profile',
-                  builder: (context, state) => const Scaffold(
-                    body: Center(child: Text('Profile Screen Content')),
+                  builder: (context, state) => ListView(
+                    controller: di.sl<ScrollController>(instanceName: 'profile'),
+                    children: [
+                      const Text('Profile Screen Content'),
+                      ...List.generate(
+                        40,
+                        (i) => SizedBox(
+                          height: 60,
+                          child: Text('Profile Item $i'),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -351,6 +397,54 @@ void main() {
 
         // Should have animated to top 0.0
         expect(gamesScrollController.offset, 0.0);
+      },
+    );
+
+    testWidgets(
+      're-tapping active Ranks tab animates leaderboardScrollController to 0.0',
+      (tester) async {
+        await pumpMainWrapper(tester);
+
+        // Switch to Ranks tab
+        await tester.tap(find.bySemanticsLabel('Ranks'));
+        await tester.pumpAndSettle();
+
+        // Scroll down Ranks list
+        leaderboardScrollController.jumpTo(250);
+        await tester.pumpAndSettle();
+        expect(leaderboardScrollController.offset, 250);
+
+        // Re-tap active Ranks tab
+        final ranksTab = find.bySemanticsLabel('Ranks');
+        await tester.tap(ranksTab);
+        await tester.pumpAndSettle();
+
+        // Should have animated to top 0.0
+        expect(leaderboardScrollController.offset, 0.0);
+      },
+    );
+
+    testWidgets(
+      're-tapping active Profile tab animates profileScrollController to 0.0',
+      (tester) async {
+        await pumpMainWrapper(tester);
+
+        // Switch to Profile tab
+        await tester.tap(find.bySemanticsLabel('Profile'));
+        await tester.pumpAndSettle();
+
+        // Scroll down Profile list
+        profileScrollController.jumpTo(250);
+        await tester.pumpAndSettle();
+        expect(profileScrollController.offset, 250);
+
+        // Re-tap active Profile tab
+        final profileTab = find.bySemanticsLabel('Profile');
+        await tester.tap(profileTab);
+        await tester.pumpAndSettle();
+
+        // Should have animated to top 0.0
+        expect(profileScrollController.offset, 0.0);
       },
     );
 
