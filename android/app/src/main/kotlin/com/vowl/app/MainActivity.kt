@@ -7,7 +7,7 @@ import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
-import androidx.core.view.WindowCompat
+import androidx.activity.enableEdgeToEdge
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
@@ -55,15 +55,18 @@ class MainActivity : FlutterActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Lock portrait orientation at the native level (belt-and-suspenders with manifest)
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        // Modern Android 15 edge-to-edge support with backward compatibility
+        enableEdgeToEdge()
 
-        // Enable edge-to-edge: tells the system this app draws behind system bars
-        // and needs correct inset reporting (critical for 3-button navigation)
-        WindowCompat.setDecorFitsSystemWindows(window, false)
+        // Lock portrait orientation on standard mobile phones (width < 600dp);
+        // allow adaptive layout on tablets and foldables (Android 16 large-screen compliant)
+        val isTablet = resources.configuration.smallestScreenWidthDp >= 600
+        if (!isTablet) {
+            requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        }
 
-        // Request highest available display refresh rate (e.g. 90Hz/120Hz)
-        // Eliminates MIUI / HyperOS 45Hz/60Hz dynamic refresh throttling on Redmi and POCO devices
+        // Request highest available display refresh rate (e.g. 90Hz/120Hz/144Hz)
+        // Guarantees maximum hardware smoothness across all phone brands (Samsung, OnePlus, Motorola, Xiaomi, POCO)
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
             try {
                 val currentDisplay = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
