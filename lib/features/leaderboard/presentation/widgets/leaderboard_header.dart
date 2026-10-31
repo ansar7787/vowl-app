@@ -224,7 +224,7 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader> {
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,
                         fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white38 : AppColors.slate400,
+                        color: isDark ? Colors.white60 : AppColors.slate600,
                       ),
                     ),
                   ],

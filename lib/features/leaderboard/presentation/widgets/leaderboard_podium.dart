@@ -131,6 +131,7 @@ class _PodiumSlot extends StatelessWidget {
         : context.tr('leaderboard.xp', fallback: 'XP');
     final isMe = currentUserId != null && user.id == currentUserId;
     final glowColor = colors[0];
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final delay = rank == 3 ? 0 : (rank == 2 ? 150 : 300);
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final safeDisplayName = user.getSafeDisplayName(
@@ -355,7 +356,7 @@ class _PodiumSlot extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 2.h),
-                    // Primary score — single metric, no clutter
+                    // Primary score — single metric, high-contrast across light/dark
                     AutoSizeText(
                       '$score $scoreLabel',
                       maxLines: 1,
@@ -364,7 +365,11 @@ class _PodiumSlot extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: isFirst ? 9.sp : 7.sp,
                         fontWeight: FontWeight.w800,
-                        color: colors[0].withValues(alpha: 0.9),
+                        color: rank == 2
+                            ? (isDark
+                                ? _LocalPalette.colorc0c0c0
+                                : AppColors.slate700)
+                            : colors[0].withValues(alpha: 0.9),
                         height: 1.1,
                       ),
                     ),

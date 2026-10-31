@@ -409,7 +409,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w800,
-                          color: isDark ? Colors.white54 : Colors.black45,
+                          color: isDark ? Colors.white60 : AppColors.slate600,
                           letterSpacing: 1.2,
                         ),
                       ),
@@ -547,7 +547,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                             fontFamily: 'Outfit',
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w700,
-                            color: isDark ? Colors.white54 : Colors.black45,
+                            color: isDark ? Colors.white70 : AppColors.slate700,
                             height: 1.4,
                           ),
                         ),
@@ -568,7 +568,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                             fontFamily: 'Outfit',
                             fontSize: 11.sp,
                             fontWeight: FontWeight.w500,
-                            color: isDark ? Colors.white30 : Colors.black26,
+                            color: isDark ? Colors.white54 : AppColors.slate500,
                           ),
                         ),
                       ],
@@ -868,7 +868,7 @@ class _LeaderboardToggle extends StatelessWidget {
                         Icons.public_rounded,
                         color: !isKidsMode
                             ? Colors.white
-                            : (isDark ? Colors.white54 : Colors.black54),
+                            : (isDark ? Colors.white60 : AppColors.slate600),
                         size: 15.r,
                       ),
                       SizedBox(width: 5.w),
@@ -883,7 +883,7 @@ class _LeaderboardToggle extends StatelessWidget {
                           fontSize: 13.sp,
                           color: !isKidsMode
                               ? Colors.white
-                              : (isDark ? Colors.white54 : Colors.black54),
+                              : (isDark ? Colors.white60 : AppColors.slate600),
                         ),
                       ),
                     ],
@@ -926,7 +926,7 @@ class _LeaderboardToggle extends StatelessWidget {
                         Icons.child_care_rounded,
                         color: isKidsMode
                             ? Colors.white
-                            : (isDark ? Colors.white54 : Colors.black54),
+                            : (isDark ? Colors.white60 : AppColors.slate600),
                         size: 15.r,
                       ),
                       SizedBox(width: 5.w),
@@ -941,7 +941,7 @@ class _LeaderboardToggle extends StatelessWidget {
                           fontSize: 13.sp,
                           color: isKidsMode
                               ? Colors.white
-                              : (isDark ? Colors.white54 : Colors.black54),
+                              : (isDark ? Colors.white60 : AppColors.slate600),
                         ),
                       ),
                     ],
