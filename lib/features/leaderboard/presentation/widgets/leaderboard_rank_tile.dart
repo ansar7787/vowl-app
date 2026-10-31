@@ -47,9 +47,9 @@ class LeaderboardRankTile extends StatelessWidget {
         : rank <= 25
         ? _LocalPalette.color06b6d4
         : AppColors.slate400;
-    final displayName =
-        user.displayName ??
-        context.tr('leaderboard.player', fallback: 'Player');
+    final displayName = user.getSafeDisplayName(
+      fallback: context.tr('leaderboard.player', fallback: 'Player'),
+    );
 
     return Semantics(
       // FIX (HIGH-5): Full rank information announced for screen readers.

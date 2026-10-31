@@ -755,6 +755,41 @@ exports.sendStreakReminders = onSchedule('0 20 * * *', async (event) => {
 });
 
 // --------------------------------------------------
+// Helper to resolve clean, human-readable display names for leaderboard entries.
+// Sanitizes null, empty strings, and legacy "Unknown User" / "Unknown" values.
+// Synthesizes a clean capitalized name from email if present, or defaults to "Vowl Learner".
+function resolveDisplayName(data) {
+  if (!data) return 'Vowl Learner';
+
+  const rawName = typeof data.displayName === 'string' ? data.displayName.trim() : '';
+  if (rawName && rawName.toLowerCase() !== 'unknown user' && rawName.toLowerCase() !== 'unknown') {
+    return rawName;
+  }
+
+  const rawUsername = typeof data.username === 'string' ? data.username.trim() : '';
+  if (rawUsername && rawUsername.toLowerCase() !== 'unknown user' && rawUsername.toLowerCase() !== 'unknown') {
+    return rawUsername;
+  }
+
+  if (typeof data.email === 'string' && data.email.includes('@')) {
+    const emailPrefix = data.email.split('@')[0].replace(/[._\-+0-9]+/g, ' ').trim();
+    if (emailPrefix) {
+      const formatted = emailPrefix
+        .split(' ')
+        .filter(Boolean)
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
+      if (formatted) return formatted;
+    }
+    const fallbackPrefix = data.email.split('@')[0].trim();
+    if (fallbackPrefix) {
+      return fallbackPrefix.charAt(0).toUpperCase() + fallbackPrefix.slice(1);
+    }
+  }
+
+  return 'Vowl Learner';
+}
+
 // Calculates top 50 users server-side to prevent Cache Stampedes on mobile clients.
 exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
   const db = admin.firestore();
@@ -773,7 +808,7 @@ exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
       const data = doc.data();
       usersData.push({
         id: doc.id,
-        displayName: data.displayName || 'Unknown User',
+        displayName: resolveDisplayName(data),
         photoUrl: data.photoUrl || null,
         totalExp: data.totalExp || 0,
         currentStreak: data.currentStreak || 0,
@@ -809,7 +844,7 @@ exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
       const data = doc.data();
       kidsData.push({
         id: doc.id,
-        displayName: data.displayName || 'Unknown User',
+        displayName: resolveDisplayName(data),
         photoUrl: data.photoUrl || null,
         kidsCoins: data.kidsCoins || 0,
         currentStreak: data.currentStreak || 0,

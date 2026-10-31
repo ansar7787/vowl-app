@@ -58,5 +58,43 @@ void main() {
       );
       expect(premiumUserAlreadyClaimed.isVipGiftAvailable, false);
     });
+
+    test('getSafeDisplayName returns valid displayName when present', () {
+      final user = tUser.copyWith(displayName: 'Alice Johnson');
+      expect(user.getSafeDisplayName(), 'Alice Johnson');
+      expect(user.safeDisplayName, 'Alice Johnson');
+    });
+
+    test('getSafeDisplayName sanitizes "Unknown User" and formats from email', () {
+      const user = UserEntity(
+        id: '2',
+        email: 'alex.smith@example.com',
+        displayName: 'Unknown User',
+        dailyXpHistory: {},
+      );
+      expect(user.getSafeDisplayName(), 'Alex Smith');
+      expect(user.safeDisplayName, 'Alex Smith');
+    });
+
+    test('getSafeDisplayName sanitizes "unknown" and formats dotted/dashed email prefix', () {
+      const user = UserEntity(
+        id: '3',
+        email: 'john_doe-42@example.com',
+        displayName: 'Unknown',
+        dailyXpHistory: {},
+      );
+      expect(user.getSafeDisplayName(), 'John Doe');
+    });
+
+    test('getSafeDisplayName uses custom fallback when name is invalid and email is empty', () {
+      const user = UserEntity(
+        id: '99',
+        email: '',
+        displayName: 'Unknown User',
+        dailyXpHistory: {},
+      );
+      expect(user.getSafeDisplayName(fallback: 'Champion'), 'Champion');
+      expect(user.safeDisplayName, 'Vowl Learner');
+    });
   });
 }

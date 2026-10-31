@@ -164,11 +164,12 @@ class LeaderboardRankCard extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                         ),
                         Text(
-                          currentUser.displayName ??
-                              context.tr(
-                                'leaderboard.player',
-                                fallback: 'Player',
-                              ),
+                          currentUser.getSafeDisplayName(
+                            fallback: context.tr(
+                              'leaderboard.player',
+                              fallback: 'Player',
+                            ),
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 15.sp,
