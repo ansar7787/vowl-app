@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'package:flutter/services.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
@@ -5,9 +7,10 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/leaderboard/domain/utils/leaderboard_countdown_helper.dart';
 
 /// Animated header title displaying syllabus ranking descriptions and cache freshness timestamp.
-class LeaderboardHeader extends StatelessWidget {
+class LeaderboardHeader extends StatefulWidget {
   final DateTime lastUpdated;
   final bool isKids;
 
@@ -18,9 +21,67 @@ class LeaderboardHeader extends StatelessWidget {
   });
 
   @override
+  State<LeaderboardHeader> createState() => _LeaderboardHeaderState();
+}
+
+class _LeaderboardHeaderState extends State<LeaderboardHeader> {
+  Timer? _countdownTimer;
+
+  @override
+  void initState() {
+    super.initState();
+    // Refresh countdown badge every 30 seconds to keep remaining time accurate
+    _countdownTimer = Timer.periodic(const Duration(seconds: 30), (_) {
+      if (mounted) setState(() {});
+    });
+  }
+
+  @override
+  void dispose() {
+    _countdownTimer?.cancel();
+    super.dispose();
+  }
+
+  void _showUpdateInfo(BuildContext context) {
+    HapticFeedback.lightImpact();
+    ScaffoldMessenger.of(context).hideCurrentSnackBar();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Row(
+          children: [
+            Icon(Icons.info_outline_rounded, color: Colors.white, size: 20.r),
+            SizedBox(width: 10.w),
+            Expanded(
+              child: Text(
+                context.tr(
+                  'leaderboard.updates_info',
+                  fallback:
+                      'Rankings refresh automatically every 4 hours. Play quests to climb the leaderboard in the next update!',
+                ),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        ),
+        backgroundColor: AppColors.slate800,
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(14.r),
+        ),
+        duration: const Duration(seconds: 4),
+      ),
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final timeAgo = _formatTimeAgo(context, lastUpdated);
+    final timeUntilNext = LeaderboardCountdownHelper.getRemainingFormatted();
+    final timeAgo = _formatTimeAgo(context, widget.lastUpdated);
 
     final header = Semantics(
       // FIX (HIGH-5): Screen readers now announce the leaderboard title,
@@ -60,7 +121,7 @@ class LeaderboardHeader extends StatelessWidget {
                       children: [
                         Flexible(
                           child: Text(
-                            isKids
+                            widget.isKids
                                 ? context.tr(
                                     'leaderboard.kids_title',
                                     fallback: 'Kids Leaderboard',
@@ -81,41 +142,61 @@ class LeaderboardHeader extends StatelessWidget {
                           ),
                         ),
                         ExcludeSemantics(
-                          // The parent Semantics already announces timeAgo.
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 8.w,
-                              vertical: 4.h,
-                            ),
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.1)
-                                  : Colors.black.withValues(alpha: 0.05),
-                              borderRadius: BorderRadius.circular(20.r),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(
-                                  Icons.update_rounded,
+                          child: GestureDetector(
+                            onTap: () => _showUpdateInfo(context),
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 10.w,
+                                vertical: 5.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? AppColors.indigo500.withValues(
+                                        alpha: 0.20,
+                                      )
+                                    : AppColors.indigo500.withValues(
+                                        alpha: 0.08,
+                                      ),
+                                borderRadius: BorderRadius.circular(20.r),
+                                border: Border.all(
                                   color: isDark
-                                      ? Colors.white54
-                                      : AppColors.slate500,
-                                  size: 12.r,
+                                      ? AppColors.indigo500.withValues(
+                                          alpha: 0.4,
+                                        )
+                                      : AppColors.indigo500.withValues(
+                                          alpha: 0.2,
+                                        ),
+                                  width: 1,
                                 ),
-                                SizedBox(width: 4.w),
-                                Text(
-                                  timeAgo,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 10.sp,
-                                    fontWeight: FontWeight.w700,
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Icons.update_rounded,
                                     color: isDark
-                                        ? Colors.white54
-                                        : AppColors.slate500,
+                                        ? AppColors.blue300
+                                        : AppColors.indigo500,
+                                    size: 12.r,
                                   ),
-                                ),
-                              ],
+                                  SizedBox(width: 5.w),
+                                  Text(
+                                    context.tr(
+                                      'leaderboard.next_update_in',
+                                      fallback: 'Next in {0}',
+                                      args: [timeUntilNext],
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.w800,
+                                      color: isDark
+                                          ? AppColors.blue300
+                                          : AppColors.indigo500,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -123,7 +204,7 @@ class LeaderboardHeader extends StatelessWidget {
                     ),
                     SizedBox(height: 2.h),
                     Text(
-                      isKids
+                      widget.isKids
                           ? context.tr(
                               'leaderboard.kids_subtitle',
                               fallback: 'See how your child ranks globally!',
