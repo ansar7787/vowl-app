@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -38,18 +40,24 @@ class WordSnapTargetCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
+    final isMidnight = AppTheme.isMidnight(context);
     final length = puzzle.letterCount;
 
     final cardBgGradient = LinearGradient(
-      colors: isDark
-          ? [
-              const Color(0xFF2E081D).withValues(alpha: 0.55),
-              const Color(0xFF0F172A).withValues(alpha: 0.78),
+      colors: isMidnight
+          ? const [
+              AppColors.midnightSurface,
+              Colors.black,
             ]
-          : [
-              Colors.white,
-              const Color(0xFFFDF2F8),
-            ],
+          : (isDark
+              ? [
+                  const Color(0xFF2E081D).withValues(alpha: 0.55),
+                  const Color(0xFF0F172A).withValues(alpha: 0.78),
+                ]
+              : const [
+                  Colors.white,
+                  Color(0xFFFDF2F8),
+                ]),
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
     );

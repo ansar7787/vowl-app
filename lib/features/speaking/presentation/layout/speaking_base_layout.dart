@@ -166,11 +166,7 @@ class SpeakingBaseLayout extends StatelessWidget {
       },
       feedbackBuilder: (context, state) {
         if (state is! SpeakingLoaded) return const SizedBox.shrink();
-        final theme = LevelThemeHelper.getTheme(
-          'speaking',
-          level: level,
-          isDark: isDark,
-        );
+        final theme = LevelThemeHelper.of(context, 'speaking', level: level);
 
         final quest = state.currentQuest;
         String? explanation = quest.explanation;

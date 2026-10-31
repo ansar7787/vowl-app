@@ -120,13 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight =
-        (Theme.of(context).brightness == Brightness.dark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black);
-    final bgColor = isMidnight
-        ? Colors.black
-        : (isDark ? AppColors.slate900 : Colors.white);
+    final bgColor = Theme.of(context).scaffoldBackgroundColor;
 
     return Scaffold(
       backgroundColor: bgColor,

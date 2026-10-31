@@ -1,14 +1,10 @@
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/radar_beacon_painter.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color131326 = Color(0xFF131326);
-}
 
 /// Interactive scenic radar canvas presenting hotspot beacons that users tap to describe.
 class SceneDescriptionScenicRadarMap extends StatelessWidget {
@@ -52,6 +48,7 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final isMidnight = AppTheme.isMidnight(context);
     final disableAnimations =
         MediaQuery.maybeOf(context)?.disableAnimations == true ||
         VowlMotion.lowAnimationModeOverride.value;
@@ -61,7 +58,9 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
       width: 1.sw,
       height: 240.h,
       decoration: BoxDecoration(
-        color: isDark ? _LocalPalette.color131326 : Colors.white,
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? AppColors.slate900 : Colors.white),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: isDark ? Colors.white12 : Colors.black12),
         boxShadow: [

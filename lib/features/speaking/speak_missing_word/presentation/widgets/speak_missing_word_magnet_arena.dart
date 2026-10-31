@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -52,6 +53,7 @@ class SpeakMissingWordMagnetArena extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = AppTheme.isMidnight(context);
     final double arenaHeight = 240.h;
     final double radius = 100.w;
     final double pullRatio = pullForce;
@@ -78,7 +80,9 @@ class SpeakMissingWordMagnetArena extends StatelessWidget {
             alignment: Alignment.center,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: isDark ? const Color(0xFF131326) : Colors.white,
+              color: isMidnight
+                  ? AppColors.midnightSurface
+                  : (isDark ? AppColors.slate900 : Colors.white),
               border: Border.all(
                 color: primaryColor.withValues(alpha: 0.8),
                 width: 2.w,

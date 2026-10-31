@@ -80,7 +80,7 @@ class VocabularyBaseLayout extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     // Compute theme ONCE — shared by header, feedback, and mascot builders.
     final theme = VocabLevelTheme.from(
-      LevelThemeHelper.getTheme(gameType.name, isDark: isDark, level: level),
+      LevelThemeHelper.of(context, gameType.name, level: level),
     );
 
     final config = GameScaffoldConfig(

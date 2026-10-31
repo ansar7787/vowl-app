@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color131326 = Color(0xFF131326);
-  static const Color color1b1b33 = Color(0xFF1B1B33);
-  static const Color color0f0f1d = Color(0xFF0F0F1D);
-}
 
 /// Contextual mission briefing card rendering situational dialogue and objectives.
 class SituationSpeakingBriefingCard extends StatefulWidget {
@@ -85,6 +80,8 @@ class _SituationSpeakingBriefingCardState
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = AppTheme.isMidnight(context);
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(24.r),
       child: GestureDetector(
@@ -98,14 +95,16 @@ class _SituationSpeakingBriefingCardState
           width: 1.sw,
           constraints: BoxConstraints(minHeight: 180.h),
           decoration: BoxDecoration(
-            color: widget.isDark ? _LocalPalette.color131326 : Colors.white,
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (widget.isDark ? AppColors.slate900 : Colors.white),
             borderRadius: BorderRadius.circular(24.r),
             border: Border.all(
               color: _isFinishedTyping || widget.isAnswered
                   ? widget.primaryColor.withValues(alpha: 0.35)
                   : widget.isDark
                       ? Colors.white.withValues(alpha: 0.08)
-                      : const Color(0xFFE2E8F0),
+                      : AppColors.slate200,
               width: 1.5,
             ),
             boxShadow: [
@@ -125,12 +124,20 @@ class _SituationSpeakingBriefingCardState
                 constraints: BoxConstraints(minHeight: 180.h),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: widget.isDark
-                        ? [_LocalPalette.color1b1b33, _LocalPalette.color0f0f1d]
-                        : [
-                            widget.primaryColor.withValues(alpha: 0.04),
-                            Colors.white,
-                          ],
+                    colors: isMidnight
+                        ? const [
+                            AppColors.midnightSurface,
+                            Colors.black,
+                          ]
+                        : (widget.isDark
+                            ? const [
+                                AppColors.slate800,
+                                AppColors.slate950,
+                              ]
+                            : [
+                                widget.primaryColor.withValues(alpha: 0.04),
+                                Colors.white,
+                              ]),
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),

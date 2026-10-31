@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 
 /// Row of draggable word chips acting as ammo to fire into target sentence blanks.
 class CompleteSentenceBallistaAmmo extends StatelessWidget {
@@ -26,6 +28,8 @@ class CompleteSentenceBallistaAmmo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = AppTheme.isMidnight(context);
+
     return Semantics(
       label: 'Word options. Tap or drag a word to complete the sentence.',
       child: Wrap(
@@ -38,7 +42,9 @@ class CompleteSentenceBallistaAmmo extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 12.h),
               decoration: BoxDecoration(
-                color: isDark ? const Color(0xFF1E1E2C) : Colors.white,
+                color: isMidnight
+                    ? AppColors.midnightSurface
+                    : (isDark ? AppColors.slate900 : Colors.white),
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
                   color: color.withValues(alpha: isDark ? 0.6 : 0.7),

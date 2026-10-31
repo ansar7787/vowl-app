@@ -17,10 +17,6 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color020617 = Color(0xFF020617);
-}
 
 /// Comprehensive curriculum library page for exploring, filtering, and launching all games.
 class QuestLibraryPage extends StatefulWidget {
@@ -164,7 +160,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
         Theme.of(context).scaffoldBackgroundColor == Colors.black);
 
     final bgColor = isMidnight
-        ? _LocalPalette.color020617
+        ? Colors.black
         : (isDark ? AppColors.slate900 : AppColors.slate50);
     final contentColor = Theme.of(context).colorScheme.onSurface;
 
@@ -1056,7 +1052,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
             decoration: BoxDecoration(
               color: isDark
                   ? Colors.white.withValues(alpha: 0.06)
-                  : Colors.white.withValues(alpha: 0.7),
+                  : Colors.white,
               borderRadius: BorderRadius.circular(24.r),
               border: Border.all(
                 color: isMastered
@@ -1260,7 +1256,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
               decoration: BoxDecoration(
                 color: isDark
                     ? Colors.white.withValues(alpha: 0.06)
-                    : Colors.white.withValues(alpha: 0.7),
+                    : Colors.white,
                 borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
                   color: isMastered

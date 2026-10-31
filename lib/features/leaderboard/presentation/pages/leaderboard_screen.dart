@@ -56,7 +56,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
         Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? AppColors.slate900 : Colors.white);
+        : (isDark ? AppColors.slate900 : AppColors.slate50);
 
     return BlocProvider(
       create: (_) =>
@@ -850,12 +850,12 @@ class _LeaderboardToggle extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark
             ? Colors.black.withValues(alpha: 0.4)
-            : Colors.white.withValues(alpha: 0.6),
+            : AppColors.slate100,
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: isDark
               ? Colors.white.withValues(alpha: 0.1)
-              : Colors.black.withValues(alpha: 0.05),
+              : AppColors.slate200,
           width: 1,
         ),
       ),

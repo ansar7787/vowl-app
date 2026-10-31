@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color131326 = Color(0xFF131326);
-}
+import 'package:vowl/core/theme/app_theme.dart';
 
 /// Guide banner instructing users how to select scenic items to describe.
 class SceneDescriptionExplorerGuideCard extends StatelessWidget {
@@ -17,6 +13,8 @@ class SceneDescriptionExplorerGuideCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = AppTheme.isMidnight(context);
+
     return Semantics(
       container: true,
       label: 'Tap any item on the scene above to describe it aloud.',
@@ -25,9 +23,11 @@ class SceneDescriptionExplorerGuideCard extends StatelessWidget {
         width: 1.sw,
         padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 14.h),
         decoration: BoxDecoration(
-          color: isDark
-              ? _LocalPalette.color131326
-              : Colors.black.withValues(alpha: 0.02),
+          color: isMidnight
+              ? AppColors.midnightSurface
+              : (isDark
+                  ? AppColors.slate900
+                  : Colors.black.withValues(alpha: 0.02)),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(color: isDark ? Colors.white12 : Colors.black12),
         ),

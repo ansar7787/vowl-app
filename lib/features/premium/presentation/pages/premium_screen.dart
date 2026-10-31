@@ -29,10 +29,6 @@ import 'package:vowl/core/services/in_app_purchase_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color020617 = Color(0xFF020617);
-}
 
 class _IndiaPhoneInputFormatter extends TextInputFormatter {
   @override
@@ -383,9 +379,11 @@ class _PremiumScreenState extends State<PremiumScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final backgroundColor = isDark
-        ? _LocalPalette.color020617
-        : AppColors.slate50;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final backgroundColor = isMidnight
+        ? Colors.black
+        : (isDark ? AppColors.slate900 : AppColors.slate50);
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(

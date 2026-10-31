@@ -240,7 +240,9 @@ class LevelThemeHelper {
     Color bgBottom;
 
     if (isDark) {
-      bgTop = hsl.withLightness(0.15).withSaturation(0.6).toColor();
+      bgTop = isMidnight
+          ? _LocalPalette.color000000
+          : hsl.withLightness(0.15).withSaturation(0.6).toColor();
       bgBottom = isMidnight ? _LocalPalette.color000000 : AppColors.slate900;
     } else {
       bgTop = hsl.withLightness(0.95).toColor();
@@ -259,6 +261,26 @@ class LevelThemeHelper {
       title: _getCategoryTitle(normalized).toUpperCase(),
       icon: _getCategoryIcon(normalized),
       category: gameCategory,
+    );
+  }
+
+  /// Resolves the level theme automatically using [context]'s theme mode.
+  ///
+  /// Correctly handles Light, Dark, and Midnight (AMOLED) modes without
+  /// requiring manual boolean flag passing.
+  static ThemeResult of(
+    BuildContext context,
+    String gameType, {
+    int level = 1,
+  }) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    return getTheme(
+      gameType,
+      level: level,
+      isDark: isDark,
+      isMidnight: isMidnight,
     );
   }
 
@@ -311,7 +333,9 @@ class LevelThemeHelper {
 
     if (isDark) {
       // Background is a very dark version of the primary color for immersion
-      bgTop = primaryHsl.withLightness(0.12).withSaturation(0.5).toColor();
+      bgTop = isMidnight
+          ? _LocalPalette.color000000
+          : primaryHsl.withLightness(0.12).withSaturation(0.5).toColor();
       bgBottom = isMidnight ? _LocalPalette.color000000 : AppColors.slate900;
     } else {
       bgTop = primaryHsl.withLightness(0.92).toColor();

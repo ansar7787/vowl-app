@@ -392,9 +392,12 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final theme = LevelThemeHelper.getCategoryTheme(
       widget.categoryId,
       isDark: isDark,
+      isMidnight: isMidnight,
     );
     // PERF: context.select instead of context.watch — this widget only
     // ever reads `state.user`, so only rebuild when that reference

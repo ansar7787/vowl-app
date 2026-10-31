@@ -429,6 +429,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return ValueListenableBuilder<int>(
       valueListenable: _stateHash,
@@ -440,7 +442,9 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                 child: Container(
                   height: MediaQuery.of(context).size.height * 0.85,
                   decoration: BoxDecoration(
-                    color: isDark ? AppColors.slate900 : AppColors.slate50,
+                    color: isMidnight
+                        ? Colors.black
+                        : (isDark ? AppColors.slate900 : AppColors.slate50),
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(40.r),
                     ),
@@ -1021,7 +1025,11 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
             child: Container(
               padding: EdgeInsets.all(20.r),
               decoration: BoxDecoration(
-                color: isDark ? AppColors.slate800 : Colors.white,
+                color: (isDark &&
+                        Theme.of(context).scaffoldBackgroundColor ==
+                            Colors.black)
+                    ? AppColors.midnightSurface
+                    : (isDark ? AppColors.slate800 : Colors.white),
                 borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
                   color: pack.isBestValue

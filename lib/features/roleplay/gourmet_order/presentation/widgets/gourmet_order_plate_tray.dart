@@ -1,13 +1,9 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color131326 = Color(0xFF131326);
-}
 
 /// Tray displaying available menu items, ingredients, and course choices.
 class GourmetOrderPlateTray extends StatelessWidget {
@@ -54,6 +50,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = AppTheme.isMidnight(context);
     final reduceMotion =
         MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
@@ -62,7 +59,9 @@ class GourmetOrderPlateTray extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.all(18.w),
       decoration: BoxDecoration(
-        color: isDark ? AppColors.deepDark : Colors.white,
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? AppColors.slate900 : Colors.white),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: color.withValues(alpha: 0.16)),
         boxShadow: [
@@ -112,6 +111,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
                 options[i],
                 prices.length > i ? prices[i] : "\$3.50",
                 i,
+                isMidnight: isMidnight,
               ),
             ),
           ),
@@ -126,7 +126,12 @@ class GourmetOrderPlateTray extends StatelessWidget {
     return content;
   }
 
-  Widget _buildDraggablePlate(String item, String price, int index) {
+  Widget _buildDraggablePlate(
+    String item,
+    String price,
+    int index, {
+    bool isMidnight = false,
+  }) {
     final bool isSelected = selectedItems.contains(item);
 
     Color plateColor = color;
@@ -146,6 +151,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
         isSelected,
         isDark,
         isDraggingFeedback: true,
+        isMidnight: isMidnight,
       ),
       childWhenDragging: Opacity(
         opacity: 0.3,
@@ -156,6 +162,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
           isSelected,
           isDark,
           isDraggingFeedback: false,
+          isMidnight: isMidnight,
         ),
       ),
       child: InkWell(
@@ -169,6 +176,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
           isSelected,
           isDark,
           isDraggingFeedback: false,
+          isMidnight: isMidnight,
         ),
       ),
     );
@@ -181,6 +189,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
     bool isSelected,
     bool isDark, {
     required bool isDraggingFeedback,
+    bool isMidnight = false,
   }) {
     return Material(
       color: Colors.transparent,
@@ -196,7 +205,9 @@ class GourmetOrderPlateTray extends StatelessWidget {
             borderRadius: BorderRadius.circular(16.r),
             color: isSelected
                 ? color
-                : (isDark ? _LocalPalette.color131326 : Colors.white),
+                : (isMidnight
+                    ? AppColors.midnightSurface
+                    : (isDark ? AppColors.slate900 : Colors.white)),
             border: Border.all(
               color: isSelected
                   ? Colors.white

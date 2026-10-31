@@ -177,10 +177,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme(
-      widget.gameType.name,
-      isDark: isDark,
-    );
+    final theme = LevelThemeHelper.of(context, widget.gameType.name);
 
     final resolvedMascotId =
         widget.mascotId ??

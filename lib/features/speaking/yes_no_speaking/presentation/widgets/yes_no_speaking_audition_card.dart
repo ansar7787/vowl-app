@@ -1,13 +1,9 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color1e1e2c = Color(0xFF1E1E2C);
-}
 
 /// Audition question card presenting the statement or query for yes/no evaluation.
 class YesNoSpeakingAuditionCard extends StatelessWidget {
@@ -34,12 +30,15 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = AppTheme.isMidnight(context);
     final sampleAnswerText = quest.sampleAnswer ?? "";
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       decoration: BoxDecoration(
-        color: isDark ? _LocalPalette.color1e1e2c : Colors.white,
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? AppColors.slate900 : Colors.white),
         borderRadius: BorderRadius.circular(24.r),
         boxShadow: [
           BoxShadow(

@@ -132,7 +132,7 @@ class RoleplayBaseLayout extends StatelessWidget {
 
       headerBuilder: (context, state, progress, lives) {
         final isDark = Theme.of(context).brightness == Brightness.dark;
-        final theme = LevelThemeHelper.getTheme('roleplay', level: level);
+        final theme = LevelThemeHelper.of(context, 'roleplay', level: level);
         final quest = state is RoleplayLoaded ? state.currentQuestOrNull : null;
         final hintUsed = state is RoleplayLoaded ? state.hintUsed : false;
 
@@ -159,7 +159,7 @@ class RoleplayBaseLayout extends StatelessWidget {
       feedbackBuilder: (context, state) {
         if (state is! RoleplayLoaded) return const SizedBox.shrink();
         final isDark = Theme.of(context).brightness == Brightness.dark;
-        final theme = LevelThemeHelper.getTheme('roleplay', level: level);
+        final theme = LevelThemeHelper.of(context, 'roleplay', level: level);
 
         final quest = state.currentQuest;
         String? explanation = quest.explanation;

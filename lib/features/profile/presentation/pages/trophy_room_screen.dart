@@ -17,7 +17,6 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color color020617 = Color(0xFF020617);
   static const Color color33201c = Color(0xFF33201C);
   static const Color colorfef3c7 = Color(0xFFFEF3C7);
   static const Color color451a03 = Color(0xFF451A03);
@@ -52,7 +51,7 @@ class _TrophyRoomView extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return Scaffold(
-      backgroundColor: isMidnight ? _LocalPalette.color020617 : null,
+      backgroundColor: isMidnight ? Colors.black : null,
       body: Stack(
         children: [
           if (!isMidnight)

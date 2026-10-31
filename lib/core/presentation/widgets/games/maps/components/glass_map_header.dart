@@ -24,17 +24,21 @@ class GlassMapHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final gameTheme = LevelThemeHelper.getTheme(gameType, isDark: isDark);
+    final gameTheme = LevelThemeHelper.of(context, gameType);
     final coins = user?.coins ?? 0;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
       child: Container(
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.08)
-              : Colors.white.withValues(alpha: 0.6),
+          color: isMidnight
+              ? AppColors.midnightSurface
+              : (isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : Colors.white.withValues(alpha: 0.92)),
           borderRadius: BorderRadius.circular(32.r),
           border: Border.all(color: theme.primaryColor.withValues(alpha: 0.2)),
           boxShadow: [

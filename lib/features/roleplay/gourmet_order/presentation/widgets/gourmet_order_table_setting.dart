@@ -1,14 +1,12 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_steam_painter.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color07070f = Color(0xFF07070F);
-}
 
 /// Interactive table setting destination where plated items are arranged.
 class GourmetOrderTableSetting extends StatefulWidget {
@@ -76,6 +74,7 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
           ? tokens.gameCorrect
           : tokens.gameIncorrect;
     }
+    final isMidnight = AppTheme.isMidnight(context);
 
     return DragTarget<String>(
       key: const Key('gourmet_order_table_drag_target'),
@@ -107,9 +106,11 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
               height: 195.r,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: widget.isDark
-                    ? _LocalPalette.color07070f
-                    : Colors.black.withValues(alpha: 0.02),
+                color: isMidnight
+                    ? AppColors.midnightSurface
+                    : (widget.isDark
+                        ? AppColors.slate900
+                        : Colors.black.withValues(alpha: 0.02)),
                 border: Border.all(
                   color: ringColor.withValues(
                     alpha: isActiveGlow ? 0.75 : 0.25,

@@ -1,13 +1,9 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color131326 = Color(0xFF131326);
-}
 
 /// Tray displaying potential clinical symptoms and diagnostic choices.
 class MedicalConsultDiagnosticTray extends StatelessWidget {
@@ -51,12 +47,15 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final isMidnight = AppTheme.isMidnight(context);
     return Container(
       key: const Key('medical_consult_diagnostic_tray'),
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
       decoration: BoxDecoration(
-        color: isDark ? AppColors.deepDark : Colors.white,
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? AppColors.slate900 : Colors.white),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: isDark
@@ -131,9 +130,11 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: isChecked
                         ? cardColor
-                        : (isDark
-                              ? _LocalPalette.color131326
-                              : Colors.grey.shade100),
+                        : (isMidnight
+                            ? AppColors.midnightSurface
+                            : (isDark
+                                ? AppColors.slate900
+                                : AppColors.slate100)),
                     borderRadius: BorderRadius.circular(12.r),
                     border: Border.all(
                       color: isChecked

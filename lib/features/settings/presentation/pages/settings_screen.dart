@@ -565,15 +565,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   Widget _buildAppBar(BuildContext context, bool isDark) {
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final barBg = isMidnight
+        ? Colors.black
+        : (isDark ? AppColors.slate900 : AppColors.slate50);
+
     return SliverAppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
       pinned: true,
       centerTitle: true,
       flexibleSpace: Container(
-        color: (isDark ? AppColors.slate900 : AppColors.slate50).withValues(
-          alpha: 0.95,
-        ),
+        color: barBg.withValues(alpha: 0.95),
       ),
       leading: IconButton(
         icon: Container(

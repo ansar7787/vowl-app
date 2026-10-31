@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/domain/models/word_mixer_puzzle.dart';
@@ -27,17 +28,23 @@ class WordMixerInfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
+    final isMidnight = AppTheme.isMidnight(context);
 
     final cardBgGradient = LinearGradient(
-      colors: isDark
-          ? [
-              const Color(0xFF26123D).withValues(alpha: 0.65),
-              const Color(0xFF0F172A).withValues(alpha: 0.85),
+      colors: isMidnight
+          ? const [
+              AppColors.midnightSurface,
+              Colors.black,
             ]
-          : [
-              Colors.white,
-              const Color(0xFFFAF5FF),
-            ],
+          : (isDark
+              ? [
+                  const Color(0xFF26123D).withValues(alpha: 0.65),
+                  const Color(0xFF0F172A).withValues(alpha: 0.85),
+                ]
+              : const [
+                  Colors.white,
+                  Color(0xFFFAF5FF),
+                ]),
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
     );

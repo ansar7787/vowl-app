@@ -1,5 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -10,11 +11,6 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color0c0c1a = Color(0xFF0C0C1A);
-  static const Color color1e1e2c = Color(0xFF1E1E2C);
-}
 
 /// Sentence rearrangement jigsaw mechanic that presents shuffled word blocks.
 class DynamicJigsawWrapper extends StatefulWidget {
@@ -263,10 +259,14 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
-    final bgColor = isDark ? _LocalPalette.color0c0c1a : Colors.white;
+    final bgColor = isMidnight
+        ? Colors.black
+        : (isDark ? AppColors.slate900 : Colors.white);
     final textColor = isDark ? Colors.white : AppColors.slate900;
-    final subtitleColor = isDark ? Colors.white60 : Colors.black54;
+    final subtitleColor = isDark ? Colors.white70 : AppColors.slate600;
     final errorColor = tokens.gameIncorrect;
 
     final content = Material(
@@ -829,12 +829,15 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
     Color textColor, {
     double scale = 1.0,
   }) {
+    final isMidnight = AppTheme.isMidnight(context);
     return Transform.scale(
       scale: scale,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
         decoration: BoxDecoration(
-          color: isDark ? _LocalPalette.color1e1e2c : Colors.white,
+          color: isMidnight
+              ? AppColors.midnightSurface
+              : (isDark ? AppColors.slate800 : Colors.white),
           borderRadius: BorderRadius.circular(14.r),
           border: Border.all(
             color: isDark
