@@ -810,7 +810,7 @@ void main() {
 
       expect(find.text('VOWL NEST'), findsOneWidget);
       final scaffold = tester.widget<Scaffold>(find.byType(Scaffold));
-      expect(scaffold.backgroundColor, const Color(0xFF020617));
+      expect(scaffold.backgroundColor, Colors.black);
     });
 
     testWidgets('handles 1.3x text scaling without layout errors', (
