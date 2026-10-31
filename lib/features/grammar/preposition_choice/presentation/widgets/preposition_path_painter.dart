@@ -25,6 +25,9 @@ class PrepositionPathPainter extends CustomPainter {
   /// Whether dark theme styling is active.
   final bool isDark;
 
+  /// Whether pure AMOLED midnight styling is active.
+  final bool isMidnight;
+
   /// Whether compact layout spacing should be used.
   final bool isCompact;
 
@@ -37,6 +40,7 @@ class PrepositionPathPainter extends CustomPainter {
     required this.isCorrect,
     required this.targetNode,
     required this.isDark,
+    this.isMidnight = false,
     required this.isCompact,
   });
 
@@ -99,7 +103,9 @@ class PrepositionPathPainter extends CustomPainter {
           ..color = isDark
               ? (isTarget
                     ? AppColors.gameCorrect.withValues(alpha: 0.25)
-                    : const Color(0xFF1E2230))
+                    : (isMidnight
+                          ? AppColors.midnightSurface
+                          : const Color(0xFF1E2230)))
               : (isTarget
                     ? AppColors.gameCorrect.withValues(alpha: 0.15)
                     : Colors.white),

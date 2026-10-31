@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 /// Regional map badge showcasing the geographic dialect territory under study.
@@ -33,8 +35,11 @@ class DialectDrillRegionMap extends StatelessWidget {
       iconData = Icons.location_on_outlined;
     }
 
+    final baseDark = context.isMidnight
+        ? AppColors.midnightSurface
+        : const Color(0xFF1E2230);
     final cardBg = isDark
-        ? Color.alphaBlend(color.withValues(alpha: 0.08), const Color(0xFF1E2230))
+        ? Color.alphaBlend(color.withValues(alpha: 0.08), baseDark)
         : Color.alphaBlend(color.withValues(alpha: 0.04), Colors.white);
 
     Widget card = Container(

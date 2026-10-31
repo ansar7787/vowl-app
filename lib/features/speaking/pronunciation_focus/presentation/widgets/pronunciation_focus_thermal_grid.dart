@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/features/speaking/pronunciation_focus/presentation/widgets/thermal_grid_painter.dart';
 
 class _LocalPalette {
@@ -39,7 +41,9 @@ class PronunciationFocusThermalGrid extends StatelessWidget {
         height: 110.h,
         decoration: BoxDecoration(
           color: isDark
-              ? _LocalPalette.color0c0c16
+              ? (context.isMidnight
+                  ? AppColors.midnightSurface
+                  : _LocalPalette.color0c0c16)
               : Colors.black.withValues(alpha: 0.02),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(

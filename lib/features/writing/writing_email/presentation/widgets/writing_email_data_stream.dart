@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 
 /// Stream list containing draggable candidates for email section slots.
 class WritingEmailDataStream extends StatelessWidget {
@@ -100,7 +102,11 @@ class WritingEmailDataStream extends StatelessWidget {
                           vertical: 14.h,
                         ),
                         decoration: BoxDecoration(
-                          color: isDark ? const Color(0xFF1E2230) : Colors.white,
+                          color: isDark
+                              ? (context.isMidnight
+                                  ? AppColors.midnightSurface
+                                  : const Color(0xFF1E2230))
+                              : Colors.white,
                           borderRadius: BorderRadius.circular(14.r),
                           border: Border.all(
                             color: color.withValues(

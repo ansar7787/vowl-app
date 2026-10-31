@@ -38,6 +38,26 @@ void main() {
       expect(tokens!.surface, AppColors.midnightSurface);
       expect(tokens.textPrimary, Colors.white);
     });
+
+    test('Dialog and BottomSheet themes enforce zero surface tint and authentic backgrounds', () {
+      final light = AppTheme.lightTheme;
+      expect(light.dialogTheme.surfaceTintColor, Colors.transparent);
+      expect(light.bottomSheetTheme.surfaceTintColor, Colors.transparent);
+      expect(light.dialogTheme.backgroundColor, Colors.white);
+      expect(light.bottomSheetTheme.backgroundColor, Colors.white);
+
+      final dark = AppTheme.darkTheme;
+      expect(dark.dialogTheme.surfaceTintColor, Colors.transparent);
+      expect(dark.bottomSheetTheme.surfaceTintColor, Colors.transparent);
+      expect(dark.dialogTheme.backgroundColor, AppTheme.cardDark);
+      expect(dark.bottomSheetTheme.backgroundColor, AppTheme.scaffoldDark);
+
+      final midnight = AppTheme.midnightTheme;
+      expect(midnight.dialogTheme.surfaceTintColor, Colors.transparent);
+      expect(midnight.bottomSheetTheme.surfaceTintColor, Colors.transparent);
+      expect(midnight.dialogTheme.backgroundColor, AppTheme.midnightCardBase);
+      expect(midnight.bottomSheetTheme.backgroundColor, AppTheme.midnightCardBase);
+    });
   });
 
   group('LevelThemeHelper AMOLED & Context Resolution', () {

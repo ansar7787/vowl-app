@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -78,7 +79,11 @@ class _TopicDraggableWordState extends State<TopicDraggableWord> {
                     width: 156.w,
                     height: 64.h,
                     decoration: BoxDecoration(
-                      color: widget.isDark ? AppColors.slate800 : Colors.white,
+                      color: widget.isDark
+                          ? (context.isMidnight
+                              ? AppColors.midnightSurface
+                              : AppColors.slate800)
+                          : Colors.white,
                       borderRadius: BorderRadius.circular(16.r),
                       border: Border.all(
                         color: widget.primaryColor.withValues(

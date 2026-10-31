@@ -1,4 +1,6 @@
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -89,7 +91,11 @@ class DialectDrillTransmissionTower extends StatelessWidget {
           ? color.withValues(alpha: 0.12)
           : color.withValues(alpha: 0.05);
     } else {
-      cardBg = isDark ? const Color(0xFF1E2230) : Colors.white;
+      cardBg = isDark
+          ? (context.isMidnight
+              ? AppColors.midnightSurface
+              : const Color(0xFF1E2230))
+          : Colors.white;
     }
 
     String displayLabel = label.replaceAll(RegExp(r'\(.*\)'), '').trim();
