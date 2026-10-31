@@ -43,6 +43,16 @@ void main() {
       expect(model.safeDisplayName, 'Tony Stark');
     });
 
+    test('replaces "Vowl Learner" case-insensitively with clean email derivation', () {
+      final model = UserModel.fromMap({
+        'id': 'u6',
+        'email': 'ayesha.khan@gmail.com',
+        'displayName': 'Vowl Learner',
+      });
+      expect(model.displayName, 'Ayesha Khan');
+      expect(model.safeDisplayName, 'Ayesha Khan');
+    });
+
     test('falls back gracefully when neither displayName nor email are valid', () {
       final model = UserModel.fromMap({
         'id': 'u5',

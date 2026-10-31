@@ -762,12 +762,18 @@ function resolveDisplayName(data) {
   if (!data) return 'Vowl Learner';
 
   const rawName = typeof data.displayName === 'string' ? data.displayName.trim() : '';
-  if (rawName && rawName.toLowerCase() !== 'unknown user' && rawName.toLowerCase() !== 'unknown') {
+  if (rawName &&
+      rawName.toLowerCase() !== 'unknown user' &&
+      rawName.toLowerCase() !== 'unknown' &&
+      rawName.toLowerCase() !== 'vowl learner') {
     return rawName;
   }
 
   const rawUsername = typeof data.username === 'string' ? data.username.trim() : '';
-  if (rawUsername && rawUsername.toLowerCase() !== 'unknown user' && rawUsername.toLowerCase() !== 'unknown') {
+  if (rawUsername &&
+      rawUsername.toLowerCase() !== 'unknown user' &&
+      rawUsername.toLowerCase() !== 'unknown' &&
+      rawUsername.toLowerCase() !== 'vowl learner') {
     return rawUsername;
   }
 

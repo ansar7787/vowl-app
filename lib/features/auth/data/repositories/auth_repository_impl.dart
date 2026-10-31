@@ -172,10 +172,100 @@ class AuthRepositoryImpl
     try {
       if (doc.exists && doc.data() != null) {
         final userModel = UserModel.fromMap(doc.data()!, doc.id);
-        final resolvedUser = userModel.copyWith(
+        var resolvedUser = userModel.copyWith(
           isEmailVerified:
               firebaseUser.emailVerified || userModel.isEmailVerified,
         );
+
+        // Self-heal display name and photo from Firebase Auth or Google providerData
+        // if Firestore currently has null, empty, 'unknown user', or generic 'vowl learner'
+        final currentName = resolvedUser.displayName?.trim();
+        final isNameGeneric = currentName == null ||
+            currentName.isEmpty ||
+            currentName.toLowerCase() == 'unknown user' ||
+            currentName.toLowerCase() == 'unknown' ||
+            currentName.toLowerCase() == 'vowl learner';
+
+        String? bestName;
+        String? bestPhoto;
+
+        if (isNameGeneric) {
+          final fbName = firebaseUser.displayName?.trim();
+          if (fbName != null &&
+              fbName.isNotEmpty &&
+              fbName.toLowerCase() != 'unknown user' &&
+              fbName.toLowerCase() != 'unknown' &&
+              fbName.toLowerCase() != 'vowl learner') {
+            bestName = fbName;
+          }
+
+          if (bestName == null) {
+            for (final info in firebaseUser.providerData) {
+              final pName = info.displayName?.trim();
+              if (pName != null &&
+                  pName.isNotEmpty &&
+                  pName.toLowerCase() != 'unknown user' &&
+                  pName.toLowerCase() != 'unknown' &&
+                  pName.toLowerCase() != 'vowl learner') {
+                bestName = pName;
+                break;
+              }
+            }
+          }
+
+          if (bestName == null) {
+            final derived = resolvedUser.getSafeDisplayName();
+            if (derived != 'Vowl Learner') {
+              bestName = derived;
+            }
+          }
+        }
+
+        final currentPhoto = resolvedUser.photoUrl?.trim();
+        if (currentPhoto == null || currentPhoto.isEmpty) {
+          final fbPhoto = firebaseUser.photoURL?.trim();
+          if (fbPhoto != null && fbPhoto.isNotEmpty) {
+            bestPhoto = fbPhoto;
+          } else {
+            for (final info in firebaseUser.providerData) {
+              final pPhoto = info.photoURL?.trim();
+              if (pPhoto != null && pPhoto.isNotEmpty) {
+                bestPhoto = pPhoto;
+                break;
+              }
+            }
+          }
+        }
+
+        final updates = <String, dynamic>{};
+        if (bestName != null && bestName.isNotEmpty) {
+          resolvedUser = resolvedUser.copyWith(displayName: bestName);
+          updates['displayName'] = bestName;
+        }
+        if (bestPhoto != null && bestPhoto.isNotEmpty) {
+          resolvedUser = resolvedUser.copyWith(photoUrl: bestPhoto);
+          updates['photoUrl'] = bestPhoto;
+        }
+
+        if (updates.isNotEmpty) {
+          _firestore
+              .collection('users')
+              .doc(firebaseUser.uid)
+              .set(updates, SetOptions(merge: true))
+              .catchError((_) {});
+
+          if (bestName != null) {
+            try {
+              firebaseUser.updateDisplayName(bestName).catchError((_) {});
+            } catch (_) {}
+          }
+          if (bestPhoto != null) {
+            try {
+              firebaseUser.updatePhotoURL(bestPhoto).catchError((_) {});
+            } catch (_) {}
+          }
+        }
+
         _localDataSource.cacheUser(resolvedUser);
         _emit(resolvedUser);
       } else {
@@ -651,11 +741,61 @@ class AuthRepositoryImpl
   // ---------------------------------------------------------------------------
 
   UserModel _minimalUserFrom(firebase_auth.User firebaseUser) {
+    String? resolvedName = firebaseUser.displayName?.trim();
+    String? resolvedPhoto = firebaseUser.photoURL;
+
+    for (final info in firebaseUser.providerData) {
+      if (resolvedName == null ||
+          resolvedName.isEmpty ||
+          resolvedName.toLowerCase() == 'unknown user' ||
+          resolvedName.toLowerCase() == 'unknown' ||
+          resolvedName.toLowerCase() == 'vowl learner') {
+        final infoName = info.displayName?.trim();
+        if (infoName != null &&
+            infoName.isNotEmpty &&
+            infoName.toLowerCase() != 'unknown user' &&
+            infoName.toLowerCase() != 'unknown' &&
+            infoName.toLowerCase() != 'vowl learner') {
+          resolvedName = infoName;
+        }
+      }
+      if (resolvedPhoto == null || resolvedPhoto.isEmpty) {
+        final infoPhoto = info.photoURL;
+        if (infoPhoto != null && infoPhoto.isNotEmpty) {
+          resolvedPhoto = infoPhoto;
+        }
+      }
+    }
+
+    if (resolvedName == null ||
+        resolvedName.isEmpty ||
+        resolvedName.toLowerCase() == 'unknown user' ||
+        resolvedName.toLowerCase() == 'unknown' ||
+        resolvedName.toLowerCase() == 'vowl learner') {
+      final emailCandidate = (firebaseUser.email ?? '').trim();
+      if (emailCandidate.contains('@')) {
+        final prefix = emailCandidate
+            .split('@')
+            .first
+            .replaceAll(RegExp(r'[._\-+0-9]+'), ' ')
+            .trim();
+        if (prefix.isNotEmpty) {
+          resolvedName = prefix
+              .split(' ')
+              .where((s) => s.isNotEmpty)
+              .map((w) =>
+                  w[0].toUpperCase() +
+                  (w.length > 1 ? w.substring(1).toLowerCase() : ''))
+              .join(' ');
+        }
+      }
+    }
+
     return UserModel(
       id: firebaseUser.uid,
       email: firebaseUser.email ?? '',
-      displayName: firebaseUser.displayName,
-      photoUrl: firebaseUser.photoURL,
+      displayName: resolvedName,
+      photoUrl: resolvedPhoto,
       isEmailVerified: firebaseUser.emailVerified,
       lastDailyRewardDate: DateTime.now(), // Defensively prevents false startup daily reward triggers
       dailyXpHistory: const {},

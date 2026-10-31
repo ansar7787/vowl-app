@@ -385,19 +385,61 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   /// written back to Firestore, so the real profile is recovered as soon as
   /// a subsequent read succeeds.
   UserModel _minimalUserFrom(User firebaseUser) {
-    final rawName = firebaseUser.displayName?.trim();
-    final sanitizedName = (rawName != null &&
-            rawName.isNotEmpty &&
-            rawName.toLowerCase() != 'unknown user' &&
-            rawName.toLowerCase() != 'unknown')
-        ? rawName
-        : null;
+    String? resolvedName = firebaseUser.displayName?.trim();
+    String? resolvedPhoto = firebaseUser.photoURL;
+
+    for (final info in firebaseUser.providerData) {
+      if (resolvedName == null ||
+          resolvedName.isEmpty ||
+          resolvedName.toLowerCase() == 'unknown user' ||
+          resolvedName.toLowerCase() == 'unknown' ||
+          resolvedName.toLowerCase() == 'vowl learner') {
+        final infoName = info.displayName?.trim();
+        if (infoName != null &&
+            infoName.isNotEmpty &&
+            infoName.toLowerCase() != 'unknown user' &&
+            infoName.toLowerCase() != 'unknown' &&
+            infoName.toLowerCase() != 'vowl learner') {
+          resolvedName = infoName;
+        }
+      }
+      if (resolvedPhoto == null || resolvedPhoto.isEmpty) {
+        final infoPhoto = info.photoURL;
+        if (infoPhoto != null && infoPhoto.isNotEmpty) {
+          resolvedPhoto = infoPhoto;
+        }
+      }
+    }
+
+    if (resolvedName == null ||
+        resolvedName.isEmpty ||
+        resolvedName.toLowerCase() == 'unknown user' ||
+        resolvedName.toLowerCase() == 'unknown' ||
+        resolvedName.toLowerCase() == 'vowl learner') {
+      final emailCandidate = (firebaseUser.email ?? '').trim();
+      if (emailCandidate.contains('@')) {
+        final prefix = emailCandidate
+            .split('@')
+            .first
+            .replaceAll(RegExp(r'[._\-+0-9]+'), ' ')
+            .trim();
+        if (prefix.isNotEmpty) {
+          resolvedName = prefix
+              .split(' ')
+              .where((s) => s.isNotEmpty)
+              .map((w) =>
+                  w[0].toUpperCase() +
+                  (w.length > 1 ? w.substring(1).toLowerCase() : ''))
+              .join(' ');
+        }
+      }
+    }
 
     return UserModel(
       id: firebaseUser.uid,
       email: firebaseUser.email ?? '',
-      displayName: sanitizedName,
-      photoUrl: firebaseUser.photoURL,
+      displayName: resolvedName,
+      photoUrl: resolvedPhoto,
       isEmailVerified: firebaseUser.emailVerified,
       lastDailyRewardDate: DateTime.now(), // Defensively prevents false startup daily reward triggers
       dailyXpHistory: const {},
