@@ -46,7 +46,7 @@ class LeaderboardRankTile extends StatelessWidget {
         ? AppColors.blue500
         : rank <= 25
         ? _LocalPalette.color06b6d4
-        : AppColors.slate400;
+        : (isDark ? AppColors.slate400 : AppColors.slate700);
     final displayName = user.getSafeDisplayName(
       fallback: context.tr('leaderboard.player', fallback: 'Player'),
     );
@@ -194,7 +194,7 @@ class LeaderboardRankTile extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 10.sp,
                             fontWeight: FontWeight.w600,
-                            color: isDark ? AppColors.slate400 : Colors.black54,
+                            color: isDark ? AppColors.slate400 : AppColors.slate600,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),

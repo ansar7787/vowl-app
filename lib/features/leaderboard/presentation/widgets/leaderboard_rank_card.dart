@@ -270,9 +270,9 @@ class LeaderboardRankCard extends StatelessWidget {
                                     fontFamily: 'Outfit',
                                     fontSize: 9.sp,
                                     fontWeight: FontWeight.w700,
-                                    color: secondaryTextColor.withValues(
-                                      alpha: 0.6,
-                                    ),
+                                    color: isDark
+                                        ? Colors.white70
+                                        : AppColors.slate600,
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -283,9 +283,9 @@ class LeaderboardRankCard extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize: 9.sp,
                                   fontWeight: FontWeight.w700,
-                                  color: secondaryTextColor.withValues(
-                                    alpha: 0.6,
-                                  ),
+                                  color: isDark
+                                      ? Colors.white70
+                                      : AppColors.slate600,
                                 ),
                               ),
                             ],
