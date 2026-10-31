@@ -62,6 +62,33 @@ class MainActivity : FlutterActivity() {
         // and needs correct inset reporting (critical for 3-button navigation)
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
+        // Request highest available display refresh rate (e.g. 90Hz/120Hz)
+        // Eliminates MIUI / HyperOS 45Hz/60Hz dynamic refresh throttling on Redmi and POCO devices
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            try {
+                val currentDisplay = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
+                    display
+                } else {
+                    @Suppress("DEPRECATION")
+                    windowManager.defaultDisplay
+                }
+                val modes = currentDisplay?.supportedModes
+                if (!modes.isNullOrEmpty()) {
+                    var bestMode = modes[0]
+                    for (mode in modes) {
+                        if (mode.refreshRate > bestMode.refreshRate) {
+                            bestMode = mode
+                        }
+                    }
+                    if (bestMode.refreshRate > 60f) {
+                        val params = window.attributes
+                        params.preferredDisplayModeId = bestMode.modeId
+                        window.attributes = params
+                    }
+                }
+            } catch (_: Exception) {}
+        }
+
         // Read theme preference before super.onCreate to prevent flicker
         val prefs = getSharedPreferences("FlutterSharedPreferences", Context.MODE_PRIVATE)
         val isDarkMode = prefs.getBoolean("flutter.dark_mode", false)
