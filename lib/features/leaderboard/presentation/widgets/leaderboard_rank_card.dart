@@ -10,7 +10,6 @@ import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/leaderboard/domain/utils/leaderboard_countdown_helper.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -144,79 +143,48 @@ class LeaderboardRankCard extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          isRanked
-                              ? context.tr(
-                                  'leaderboard.your_standing',
-                                  fallback: 'Your Standing',
-                                )
-                              : context.tr(
-                                  'leaderboard.join_competition',
-                                  fallback: 'Join Competition',
-                                ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 8.sp,
-                            fontWeight: FontWeight.w900,
-                            color: secondaryTextColor,
-                            letterSpacing: 2,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        Text(
-                          currentUser.getSafeDisplayName(
-                            fallback: context.tr(
-                              'leaderboard.player',
-                              fallback: 'Player',
+                        FittedBox(
+                          fit: BoxFit.scaleDown,
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            isRanked
+                                ? context.tr(
+                                    'leaderboard.your_standing',
+                                    fallback: 'Your Standing',
+                                  )
+                                : context.tr(
+                                    'leaderboard.join_competition',
+                                    fallback: 'Join Competition',
+                                  ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 8.sp,
+                              fontWeight: FontWeight.w900,
+                              color: secondaryTextColor,
+                              letterSpacing: 2,
                             ),
+                            maxLines: 1,
                           ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 15.sp,
-                            fontWeight: FontWeight.w900,
-                            color: contrastColor,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
                         ),
-                        if (!isRanked) ...[
-                          SizedBox(height: 3.h),
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                Icons.timer_outlined,
-                                size: 10.r,
-                                color: isDark
-                                    ? AppColors.blue300
-                                    : AppColors.indigo500,
+                        FittedBox(
+                          fit: BoxFit.scaleDown,
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            currentUser.getSafeDisplayName(
+                              fallback: context.tr(
+                                'leaderboard.player',
+                                fallback: 'Player',
                               ),
-                              SizedBox(width: 4.w),
-                              Flexible(
-                                child: Text(
-                                  context.tr(
-                                    'leaderboard.unranked_countdown',
-                                    fallback: 'Plays count in next update ({0})',
-                                    args: [
-                                      LeaderboardCountdownHelper.getRemainingFormatted(),
-                                    ],
-                                  ),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 9.sp,
-                                    fontWeight: FontWeight.w700,
-                                    color: isDark
-                                        ? AppColors.blue300
-                                        : AppColors.indigo500,
-                                  ),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                            ],
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 15.sp,
+                              fontWeight: FontWeight.w900,
+                              color: contrastColor,
+                            ),
+                            maxLines: 1,
                           ),
-                        ],
+                        ),
                       ],
                     ),
                   ),
