@@ -22,10 +22,6 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color020617 = Color(0xFF020617);
-}
 
 /// Companion mascot screen for equipping skins, backgrounds, and styling avatars.
 class VowlMascotScreen extends StatefulWidget {
@@ -90,7 +86,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final primaryColor = Theme.of(context).primaryColor;
     final surfaceColor = isMidnight
-        ? _LocalPalette.color020617
+        ? Colors.black
         : (isDark ? AppColors.slate900 : Colors.white);
     final textColor = isDark ? Colors.white : AppColors.slate900;
 

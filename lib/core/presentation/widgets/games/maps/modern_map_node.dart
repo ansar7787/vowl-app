@@ -181,9 +181,9 @@ class _ModernMapNodeState extends State<ModernMapNode> {
   }
 
   Widget _buildMascotMarker(BuildContext context) {
-    final theme = LevelThemeHelper.getTheme(
+    final theme = LevelThemeHelper.of(
+      context,
       widget.gameType,
-      isDark: widget.isDark,
     );
     final user = context.read<AuthBloc>().state.user;
     final mascotId = user?.vowlMascot ?? 'vowl_prime';
@@ -300,6 +300,10 @@ class _ModernMapNodeState extends State<ModernMapNode> {
     bool isNextZone,
     Color tierColor,
   ) {
+    final isMidnight = widget.isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final darkNodeBase = isMidnight ? Colors.black : AppColors.slate900;
+
     Widget circleWidget = Container(
       width: isCurrent ? 96.r : 88.r,
       height: isCurrent ? 96.r : 88.r,
@@ -318,7 +322,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
               : [
                   widget.isDark
                       ? Color.lerp(
-                          AppColors.slate900,
+                          darkNodeBase,
                           widget.theme.primaryColor,
                           0.08,
                         )!
@@ -329,7 +333,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                         )!,
                   widget.isDark
                       ? Color.lerp(
-                          AppColors.slate900,
+                          darkNodeBase,
                           widget.theme.primaryColor,
                           0.03,
                         )!

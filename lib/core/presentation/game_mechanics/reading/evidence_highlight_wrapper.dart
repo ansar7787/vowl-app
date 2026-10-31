@@ -9,10 +9,6 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color0c0c1a = Color(0xFF0C0C1A);
-}
 
 /// A text passage with tappable words for evidence-based highlighting.
 ///
@@ -270,9 +266,13 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final bgColor = isDark ? _LocalPalette.color0c0c1a : Colors.white;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final bgColor = isMidnight
+        ? Colors.black
+        : (isDark ? AppColors.slate900 : Colors.white);
     final textColor = isDark ? Colors.white : AppColors.slate900;
-    final subtitleColor = isDark ? Colors.white60 : Colors.black54;
+    final subtitleColor = isDark ? Colors.white70 : AppColors.slate600;
 
     final content =
         Material(

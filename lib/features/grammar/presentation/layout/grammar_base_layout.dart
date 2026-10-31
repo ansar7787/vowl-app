@@ -93,11 +93,7 @@ class GrammarBaseLayout extends StatelessWidget {
       ),
       onRestoreLife: () => context.read<GrammarBloc>().add(const RestoreLife()),
       headerBuilder: (context, state, progress, lives) {
-        final theme = LevelThemeHelper.getTheme(
-          'grammar',
-          isDark: isDark,
-          level: level,
-        );
+        final theme = LevelThemeHelper.of(context, 'grammar', level: level);
         final currentQuest = state is GrammarLoaded
             ? state.currentQuestOrNull
             : null;
@@ -132,11 +128,7 @@ class GrammarBaseLayout extends StatelessWidget {
       },
       feedbackBuilder: (context, state) {
         if (state is! GrammarLoaded) return const SizedBox.shrink();
-        final theme = LevelThemeHelper.getTheme(
-          'grammar',
-          level: level,
-          isDark: isDark,
-        );
+        final theme = LevelThemeHelper.of(context, 'grammar', level: level);
 
         final quest = state.currentQuest;
         String? explanation = quest.explanation;

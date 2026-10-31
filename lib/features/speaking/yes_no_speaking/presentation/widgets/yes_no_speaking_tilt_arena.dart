@@ -1,14 +1,11 @@
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/track_painter.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color07070f = Color(0xFF07070F);
-}
 
 /// Interactive tilt arena with physics-based sliding ball snapping toward Yes or No poles.
 class YesNoSpeakingTiltArena extends StatelessWidget {
@@ -48,6 +45,7 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final isMidnight = AppTheme.isMidnight(context);
     final double trackWidth = 280.w;
 
     return Container(
@@ -55,9 +53,11 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
       height: 140.h,
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       decoration: BoxDecoration(
-        color: isDark
-            ? _LocalPalette.color07070f
-            : Colors.black.withValues(alpha: 0.02),
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark
+                ? AppColors.slate900
+                : Colors.black.withValues(alpha: 0.02)),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: isDark

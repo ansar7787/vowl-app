@@ -1,4 +1,6 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
@@ -6,10 +8,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_radar_painter.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color07070f = Color(0xFF07070F);
-}
 
 /// Interactive full-body diagnostic scan bay widget.
 class MedicalConsultScanBay extends StatelessWidget {
@@ -141,15 +139,18 @@ class MedicalConsultScanBay extends StatelessWidget {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    final isMidnight = AppTheme.isMidnight(context);
 
     return Container(
       key: const Key('medical_consult_scan_bay'),
       width: double.infinity,
       height: 330.h,
       decoration: BoxDecoration(
-        color: isDark
-            ? _LocalPalette.color07070f
-            : Colors.black.withValues(alpha: 0.02),
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark
+                ? AppColors.slate900
+                : Colors.black.withValues(alpha: 0.02)),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: isDark

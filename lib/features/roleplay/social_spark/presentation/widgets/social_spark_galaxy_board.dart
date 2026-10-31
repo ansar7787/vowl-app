@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,10 +8,6 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/social_spark/presentation/widgets/social_spark_painter.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color07070f = Color(0xFF07070F);
-}
 
 /// Interactive starry constellation board for chaining words into conversation sparks.
 class SocialSparkGalaxyBoard extends StatelessWidget {
@@ -100,14 +97,18 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
           starOffsets.add(Offset(cx, cy));
         }
 
+        final isMidnight = AppTheme.isMidnight(context);
+
         return Container(
           key: const Key('social_spark_galaxy_board'),
           width: width,
           height: containerHeight,
           decoration: BoxDecoration(
-            color: isDark
-                ? _LocalPalette.color07070f
-                : Colors.black.withValues(alpha: 0.02),
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (isDark
+                    ? AppColors.slate900
+                    : Colors.black.withValues(alpha: 0.02)),
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
               color: isDark

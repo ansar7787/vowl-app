@@ -1,5 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
@@ -10,11 +11,6 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/ml_monetization_controller.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color131326 = Color(0xFF131326);
-}
 
 /// Interactive conversational exchange stage rendering partner cues and user speech cards.
 class DialogueRoleplayExchangeStage extends StatelessWidget {
@@ -135,12 +131,16 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
     );
     final bool isPlaceholder = isUser && !isAnswered && (content == placeholderText);
 
+    final isMidnight = AppTheme.isMidnight(context);
+
     return Container(
       key: cardKey,
       width: double.infinity,
       padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
-        color: isDark ? _LocalPalette.color131326 : Colors.white,
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? AppColors.slate900 : Colors.white),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: borderCol, width: highlight ? 2 : 1),
         boxShadow: highlight

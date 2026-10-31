@@ -1,15 +1,11 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_equalizer_painter.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color2a2a3e = Color(0xFF2A2A3E);
-  static const Color color131326 = Color(0xFF131326);
-}
 
 /// Interactive rotary equalizer console allowing players to dial into response strategies.
 class ConflictResolverDialConsole extends StatelessWidget {
@@ -72,6 +68,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = AppTheme.isMidnight(context);
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final double dialDiameter = 180.r;
     final Offset dialCenter = Offset(dialDiameter / 2, dialDiameter / 2);
@@ -161,12 +158,17 @@ class ConflictResolverDialConsole extends StatelessWidget {
                         gradient: LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          colors: isDark
-                              ? [
-                                  _LocalPalette.color2a2a3e,
-                                  _LocalPalette.color131326,
+                          colors: isMidnight
+                              ? const [
+                                  AppColors.slate800,
+                                  AppColors.midnightSurface,
                                 ]
-                              : [Colors.white, const Color(0xFFF1F5F9)],
+                              : (isDark
+                                  ? const [
+                                      AppColors.slate700,
+                                      AppColors.slate900,
+                                    ]
+                                  : const [Colors.white, AppColors.slate100]),
                         ),
                         boxShadow: [
                           BoxShadow(

@@ -1,3 +1,5 @@
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -6,12 +8,6 @@ import 'package:vowl/features/speaking/daily_expression/presentation/widgets/scr
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color131326 = Color(0xFF131326);
-  static const Color color1e1e38 = Color(0xFF1E1E38);
-  static const Color color111124 = Color(0xFF111124);
-}
 
 /// Interactive scratch-card panel concealing an idiom until revealed by gesture or tap.
 class DailyExpressionScratchPanel extends StatelessWidget {
@@ -56,6 +52,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool reduceMotion = MediaQuery.disableAnimationsOf(context) ||
         VowlMotion.lowAnimationModeOverride.value;
+    final isMidnight = AppTheme.isMidnight(context);
 
     return Semantics(
       label: scratchProgressNotifier.value >= 1.0
@@ -68,7 +65,9 @@ class DailyExpressionScratchPanel extends StatelessWidget {
           width: 1.sw,
           constraints: BoxConstraints(minHeight: 190.h),
           decoration: BoxDecoration(
-            color: isDark ? _LocalPalette.color131326 : Colors.white,
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (isDark ? AppColors.slate900 : Colors.white),
             borderRadius: BorderRadius.circular(24.r),
             border: Border.all(
               color: isDark
@@ -94,12 +93,20 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                   Container(
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: isDark
-                            ? [
-                                _LocalPalette.color1e1e38,
-                                _LocalPalette.color111124,
+                        colors: isMidnight
+                            ? const [
+                                AppColors.midnightSurface,
+                                Colors.black,
                               ]
-                            : [primaryColor.withValues(alpha: 0.2), Colors.white],
+                            : (isDark
+                                ? const [
+                                    AppColors.slate800,
+                                    AppColors.slate950,
+                                  ]
+                                : [
+                                    primaryColor.withValues(alpha: 0.2),
+                                    Colors.white,
+                                  ]),
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),

@@ -1,14 +1,12 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 import 'package:vowl/core/theme/vowl_motion.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color07070f = Color(0xFF07070F);
-}
 
 /// Panel displaying the interviewer's question, demeanor, and real-time reaction.
 class JobInterviewInterviewerPanel extends StatelessWidget {
@@ -54,15 +52,18 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
               : Icons.business_center_rounded);
 
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
+    final isMidnight = AppTheme.isMidnight(context);
 
     Widget content = Container(
       key: const Key('job_interview_interviewer_panel'),
       width: double.infinity,
       padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
-        color: isDark
-            ? _LocalPalette.color07070f
-            : Colors.black.withValues(alpha: 0.02),
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark
+                ? AppColors.slate900
+                : Colors.black.withValues(alpha: 0.02)),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: reaction != null

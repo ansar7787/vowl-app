@@ -66,12 +66,10 @@ class GameScaffold<S> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
     // Default theme mapping; category specifics can still override internally if needed
-    final theme = LevelThemeHelper.getTheme(
+    final theme = LevelThemeHelper.of(
+      context,
       config.gameType.name,
-      isDark: isDark,
       level: config.level,
     );
 

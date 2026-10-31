@@ -18,11 +18,6 @@ import 'components/shadow_waveform_visualizer.dart';
 import 'components/shadow_playback_button.dart';
 import 'components/shadow_eval_controls.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color0c0c1a = Color(0xFF0C0C1A);
-  static const Color color22c55e = Color(0xFF22C55E);
-}
 
 /// Enhanced speaking self-evaluation with visual waveform comparison.
 ///
@@ -350,9 +345,13 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final bgColor = isDark ? _LocalPalette.color0c0c1a : Colors.white;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final bgColor = isMidnight
+        ? Colors.black
+        : (isDark ? AppColors.slate900 : Colors.white);
     final textColor = isDark ? Colors.white : AppColors.slate900;
-    final subtitleColor = isDark ? Colors.white60 : Colors.black54;
+    final subtitleColor = isDark ? Colors.white70 : AppColors.slate600;
 
     final content = Material(
       type: MaterialType.transparency,
@@ -702,7 +701,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                             'eval.you',
                                             fallback: 'YOU',
                                           ),
-                                          color: _LocalPalette.color22c55e,
+                                          color: AppColors.emerald500,
                                           isActive:
                                               isPlaying &&
                                               playingLabel == 'YOU',

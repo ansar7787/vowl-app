@@ -251,7 +251,9 @@
     "rank_beginner": "BEGINNER",
     "rank_novice": "NOVICE",
     "rank_scholar": "SCHOLAR",
-    "rank_virtuoso": "VIRTUOSO"
+    "rank_virtuoso": "VIRTUOSO",
+    "mastered": "MASTERED",
+    "perfect": "PERFECT"
   },
   "category_map": {
     "cheer_boom": "Level {}! Boom! Perfect progress!",
@@ -351,16 +353,30 @@
   "connectivity": {
     "go_premium": "Play Offline with Premium",
     "no_ad_cached": "No ad available offline. Please reconnect to continue.",
+    "no_ad_cached_hint": "Need bonus offline plays? Connect once to load rewarded ads or upgrade to Premium.",
     "no_internet_for_ads": "No internet connection. Please check your network to watch ads.",
     "offline_banner": "Playing offline",
     "offline_banner_with_count": "Playing offline · {0}/{1} plays left",
+    "offline_single_play_left": "Offline · 1 play left!",
+    "offline_quota_exhausted_pill": "Offline · 0 plays left",
+    "offline_info_sheet_title": "Offline Free Plays",
+    "offline_info_sheet_quota": "{0} of {1} free offline plays left",
+    "offline_info_sheet_online_perk": "Connect to Wi-Fi or mobile data anytime to restore unlimited free play!",
+    "offline_info_sheet_premium_perk": "Premium members enjoy unlimited offline play with zero ads.",
+    "premium_offline_unlimited_desc": "Unlimited offline play everywhere with zero ads",
     "quota_subtitle": "You've played {0} levels offline. Reconnect or watch an ad to keep playing!",
+    "quota_subtitle_no_ad": "You've played {0} levels offline. Reconnect to restore unlimited free play!",
+    "still_offline": "No internet connection detected. Please check Wi-Fi or data.",
     "quota_title": "OFFLINE LIMIT REACHED",
     "retry_button": "RETRY CONNECTION",
     "retry_label": "Retry internet connection",
     "subtitle": "The signal has been interrupted. Please re-establish the connection to continue.",
     "title": "CONNECTION LOST",
-    "watch_ad_continue": "WATCH AD FOR +3 LEVELS"
+    "unlimited_online_title": "Online Play is Always Unlimited",
+    "unlimited_online_desc": "Turn on Wi-Fi or mobile data to continue playing for free without limits!",
+    "watch_ad_cached_desc": "Saved on device · Plays offline",
+    "watch_ad_continue": "WATCH AD FOR +3 LEVELS",
+    "no_internet_title": "Connection Interrupted"
   },
   "daily_words": {
     "come_back_tomorrow": "Great job! You finished Lesson {}.",
@@ -424,7 +440,8 @@
     "unlock_hints_plural": "Unlock {0} Hints",
     "watch_ad_button": "Watch ad to earn {} coins",
     "ways_to_earn": "Ways to Earn",
-    "where_to_spend": "Where to Spend"
+    "where_to_spend": "Where to Spend",
+    "hints_unlimited": "Unlimited hints"
   },
   "error": {
     "return_to_base": "RETURN TO BASE",
@@ -960,7 +977,40 @@
       "title": "Writing"
     },
     "writingEmail_instruction": "Drag the parts to put the email in the right order.",
-    "xp_earned": "+{} XP"
+    "xp_earned": "+{} XP",
+    "audioTrueFalse_instruction": "Is this statement True or False? Listen carefully.",
+    "detailSpotlight_instruction": "Listen closely and tap the matching detail",
+    "dialect_note": "Dialect Note",
+    "emotionRecognition_instruction": "How is the speaker feeling?",
+    "emphasis_rule": "Emphasis Rule",
+    "failed_to_show_ad": "Failed to show ad. Please check your internet and try again.",
+    "fastSpeechDecoder_instruction": "Listen to the fast speech and choose the correct sentence.",
+    "flow_rule": "Flow Rule",
+    "kids_animals_drag": "Drag the animal to the binoculars or tap to choose!",
+    "kids_family_done": "Perfect match! Family photo placed!",
+    "kids_food_done": "Delicious! Order served correctly!",
+    "kids_fruits_done": "Fresh pick! Correct fruit chosen!",
+    "level_unlocked_success_1": "Final Level Unlocked! Go for the Grand Finale!",
+    "level_unlocked_success_2": "Final 2 Levels Unlocked!",
+    "listeningInference_instruction": "Listen carefully and deduce what is implied.",
+    "magic_lock_desc_1": "Use 1 Key or watch a video to unlock the final Level {0}!",
+    "magic_lock_desc_2": "Use 1 Key or watch a video to unlock the final 2 levels!",
+    "magic_lock_success_1": "Final Level Unlocked! Have fun!",
+    "magic_lock_success_2": "Final 2 Levels Unlocked!",
+    "meaning_shift": "Meaning Shift",
+    "modulation_pattern": "Modulation Pattern",
+    "pacing_rule": "Pacing Rule",
+    "phonetic_rule": "Phonetic Rule",
+    "pitch_rule": "Pitch Rule",
+    "semantic_sequence_logic_title": "Sequence Logic",
+    "semantic_shadowing_focus_title": "Shadowing Focus",
+    "semantic_spelling_pattern_title": "Spelling Rule",
+    "semantic_target_sound_title": "Target Accent",
+    "semantic_usage_context_title": "Usage Context",
+    "stress_rule": "Stress Rule",
+    "unlock_final_2_levels": "Unlock Final 2 Levels!",
+    "unlock_final_level": "Unlock Final Level!",
+    "vip_bonus_line": "VIP Member Perk: 3x Coin Bonus Applied!"
   },
   "general": {
     "all": "All",
@@ -982,7 +1032,9 @@
     "pro_tip_generic": "PRO TIP: Look for context clues! Eliminating unlikely options often reveals the truth.",
     "pro_tip_tts": "Pro tip: Look for context clues.",
     "use_hint_semantic": "Use hint ({0} remaining)",
-    "watch_ad_semantic": "Watch ad to earn a hint"
+    "watch_ad_semantic": "Watch ad to earn a hint",
+    "review_hint_semantic": "Review hint",
+    "use_hint_premium_semantic": "Use hint"
   },
   "hints": {
     "dim_title": "Light is Dim...",
@@ -1006,7 +1058,10 @@
     "chest_tap_unveil": "TAP TO UNVEIL",
     "chest_tap_vip_loot": "TAP TO CLAIM VIP LOOT",
     "chest_treasure_unlocked": "TREASURE UNLOCKED",
+    "chest_vip_coins_collected": "VIP BONUS COINS",
     "chest_vip_gift": "VIP DAILY GIFT",
+    "chest_vip_multiplier_applied": "EXCLUSIVE 3X PRO MULTIPLIER APPLIED",
+    "chest_vip_unlocked": "VIP VAULT UNLOCKED!",
     "cl_levels_target": "{0} → {1} Levels",
     "coins": "COINS",
     "coins_value_label": "{} coins",
@@ -1167,15 +1222,6 @@
       "rule_1": "Pick the right phrase",
       "rule_2": "Say it out loud",
       "tip": "PRO TIP: Don't stress about being perfect! Just focus on the melody and how the words flow together.",
-      "title": "Accent Shadowing"
-    },
-    "accentshadowing": {
-      "actionText": "Start Shadowing",
-      "objective": "Speak clearly to match the exact accent and rhythm of the speaker. Practicing this helps you speak clearly so everyone can easily understand you.",
-      "rule_0": "Listen to the example",
-      "rule_1": "Record your voice",
-      "rule_2": "Match the accent",
-      "tip": "PRO TIP: Pay close attention to which syllables are stressed — it makes a huge difference!",
       "title": "Accent Shadowing"
     },
     "alphabet": {
@@ -1572,7 +1618,8 @@
       "swipe_instruction": "Swipe left to review, right if you got it",
       "tap_to_reveal": "Tap card to flip",
       "tip": "Tip: If you are unsure of a word, review it again to help lock it into memory.",
-      "title": "Vocabulary Flashcards"
+      "title": "Vocabulary Flashcards",
+      "completed": "Practice Complete!"
     },
     "food": {
       "actionText": "Let's Cook",
@@ -2722,6 +2769,11 @@
     "continue_learning": "Continue Learning"
   },
   "profile": {
+    "picture_updated": "Profile photo updated successfully!",
+    "display_name_updated": "Display name updated successfully!",
+    "picture_update_failed": "Failed to update profile photo.",
+    "name_update_failed": "Failed to update display name.",
+    "update_failed": "Failed to update profile.",
     "uploading": "UPLOADING",
     "admin_dashboard": "Admin Dashboard",
     "adventure_stats": "Adventure Stats",
@@ -2908,7 +2960,8 @@
     "hearts_remaining": "{} of {} lives remaining",
     "hint_used": "Hint already used",
     "speaker_with_emotion": "{}, feeling {}",
-    "typing_indicator": "Typing..."
+    "typing_indicator": "Typing...",
+    "view_instructions": "View level instructions"
   },
   "router": {
     "error": {
@@ -2964,7 +3017,8 @@
     "terms_url": "https://vowl-official.github.io/vowl-legal/terms.html",
     "title": "Settings",
     "translation_language": "Translation Language",
-    "translation_language_subtitle": "Used for hints and explanations in games"
+    "translation_language_subtitle": "Used for hints and explanations in games",
+    "language_selection_subtitle": "App interface language"
   },
   "settings_dialogs": {
     "account_deleted_success": "Your account has been successfully deleted.",
@@ -3020,7 +3074,9 @@
     "sound_wave_transcriber": "SOUND WAVE TRANSCRIBER!",
     "verbal_vortex": "VERBAL VORTEX DRIVER!",
     "visual_masterpiece": "VISUAL MASTERPIECE!",
-    "your_response": "YOUR RESPONSE"
+    "your_response": "YOUR RESPONSE",
+    "pronunciation_focus_complete": "PHONETIC MASTER!",
+    "repeat_sentence_completed": "REPEAT SENTENCE COMPLETED!"
   },
   "store": {
     "ad_free_unlimited": "Ad-Free & Unlimited",
@@ -3113,7 +3169,10 @@
     "watch_ad_for_key": "Watch Ad for Key",
     "watch_ad_key": "Watch Ad for Key",
     "watch_ad_magic_stars": "Watch Ad for +2 Magic Stars",
-    "your_stars": "Your Stars"
+    "your_stars": "Your Stars",
+    "toll_need_key_desc_1": "You need 1 Golden Key to unlock the final Level {0}.",
+    "toll_need_key_desc_2": "You need 1 Golden Key to unlock the final 2 levels.",
+    "vault_stars": "Vault Stars"
   },
   "story": {
     "adventure_log": "ADVENTURE LOG",
@@ -3134,7 +3193,6 @@
     "accent_beat_3": "Halfway to 100! Your pronunciation is incredibly smooth and easy to understand.",
     "accent_beat_4": "Level 100! You can now speak clearly and naturally with anyone in the world.",
     "accent_beat_5": "Level 200 reached! You have completely mastered clear and natural English pronunciation.",
-    "accentshadowing": "Listen closely, pick the correct answer, and then shadow the native pronunciation.",
     "accentshadowing_beat_0": "Listen closely, pick the correct answer, and then shadow the native pronunciation.",
     "accentshadowing_beat_1": "Great start! You're already picking up on how locals actually talk.",
     "accentshadowing_beat_2": "You're getting the hang of it! Your voice is starting to flow much more naturally.",
@@ -4049,7 +4107,10 @@
     "type_sentence_desc": "Type a short sentence in your native language, and ML Kit will automatically detect it.",
     "type_to_translate": "Type something to translate...",
     "watch_ad_button": "Watch Ad ( Translations)",
-    "words_count": "{} words"
+    "words_count": "{} words",
+    "download_ready_msg": "{0} is downloaded and ready for offline use.",
+    "fast_offline_desc": "Fast offline translation • One-time setup per language",
+    "pack_deleted": "{0} pack removed."
   },
   "vocabulary": {
     "analyzing": "Analyzing objects...",

@@ -1,13 +1,10 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color07070f = Color(0xFF07070F);
-}
 
 /// Terminal text and tile response composer for emergency communications.
 class EmergencyHubTerminalInput extends StatefulWidget {
@@ -167,6 +164,7 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
       );
     }
 
+    final isMidnight = AppTheme.isMidnight(context);
     final accentColor =
         widget.isDark ? Colors.amberAccent : Colors.amber.shade900;
 
@@ -174,9 +172,11 @@ class _EmergencyHubTerminalInputState extends State<EmergencyHubTerminalInput> {
       width: double.infinity,
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
-        color: widget.isDark
-            ? _LocalPalette.color07070f
-            : Colors.white,
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (widget.isDark
+                ? AppColors.slate900
+                : Colors.white),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: widget.isDark

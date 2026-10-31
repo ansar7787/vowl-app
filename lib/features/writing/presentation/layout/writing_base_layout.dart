@@ -92,11 +92,7 @@ class WritingBaseLayout extends StatelessWidget {
 
       headerBuilder: (context, state, progress, lives) {
         final isDark = Theme.of(context).brightness == Brightness.dark;
-        final theme = LevelThemeHelper.getTheme(
-          'writing',
-          isDark: isDark,
-          level: level,
-        );
+        final theme = LevelThemeHelper.of(context, 'writing', level: level);
         final currentQuest = state is WritingLoaded
             ? state.currentQuestOrNull
             : null;
@@ -116,11 +112,7 @@ class WritingBaseLayout extends StatelessWidget {
         );
       },
       mascotBuilder: (context, state, lives) {
-        final theme = LevelThemeHelper.getTheme(
-          'writing',
-          isDark: Theme.of(context).brightness == Brightness.dark,
-          level: level,
-        );
+        final theme = LevelThemeHelper.of(context, 'writing', level: level);
         return WritingPeekingMascot(
           state: state,
           lives: lives,
@@ -132,11 +124,7 @@ class WritingBaseLayout extends StatelessWidget {
       feedbackBuilder: (context, state) {
         if (state is! WritingLoaded) return const SizedBox.shrink();
         final isDark = Theme.of(context).brightness == Brightness.dark;
-        final theme = LevelThemeHelper.getTheme(
-          'writing',
-          isDark: isDark,
-          level: level,
-        );
+        final theme = LevelThemeHelper.of(context, 'writing', level: level);
         final quest = state.currentQuest;
         final explanation = quest.explanation;
         final ruleContent = quest.context ?? quest.situation ?? explanation;

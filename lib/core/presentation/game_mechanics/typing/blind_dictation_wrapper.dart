@@ -1,5 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,10 +14,6 @@ import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_bu
 
 import 'package:vowl/core/presentation/game_mechanics/typing/smart_typo_controller.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color0c0c1a = Color(0xFF0C0C1A);
-}
 
 /// Audio dictation mechanic where text is hidden and the user types what they hear.
 class BlindDictationWrapper extends StatefulWidget {
@@ -170,9 +167,12 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final bgColor = isDark ? _LocalPalette.color0c0c1a : Colors.white;
+    final isMidnight = AppTheme.isMidnight(context);
+    final bgColor = isMidnight
+        ? Colors.black
+        : (isDark ? AppColors.slate900 : Colors.white);
     final textColor = isDark ? Colors.white : AppColors.slate900;
-    final subtitleColor = isDark ? Colors.white60 : Colors.black54;
+    final subtitleColor = isDark ? Colors.white70 : AppColors.slate600;
     final errorColor = tokens.gameIncorrect;
 
     final content =

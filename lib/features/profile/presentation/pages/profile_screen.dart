@@ -12,6 +12,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -858,6 +859,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   void _showImageSourceSheet(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = AppTheme.isMidnight(context);
     showModalBottomSheet(
       context: context,
       useRootNavigator: true,
@@ -866,7 +868,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
       builder: (context) => Container(
         padding: EdgeInsets.all(32.w),
         decoration: BoxDecoration(
-          color: isDark ? AppColors.slate900 : Colors.white,
+          color: isMidnight
+              ? AppColors.midnightSurface
+              : (isDark ? AppColors.slate900 : Colors.white),
           borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
           border: Border.all(
             color: isDark
@@ -1064,6 +1068,7 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = AppTheme.isMidnight(context);
 
     return Container(
       padding: EdgeInsets.only(
@@ -1073,7 +1078,9 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
         ),
       ),
       decoration: BoxDecoration(
-        color: isDark ? AppColors.slate800 : Colors.white,
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? AppColors.slate800 : Colors.white),
         borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
         border: Border.all(
           color: isDark

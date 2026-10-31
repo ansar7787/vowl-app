@@ -1,13 +1,11 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_valve_painter.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color07070f = Color(0xFF07070F);
-}
 
 /// Interactive emergency pressure valve chamber allowing players to manually align system pressure.
 class EmergencyHubValveChamber extends StatelessWidget {
@@ -50,15 +48,18 @@ class EmergencyHubValveChamber extends StatelessWidget {
     final double size = 200.r;
     final Offset center = Offset(size / 2, size / 2);
 
+    final isMidnight = AppTheme.isMidnight(context);
     final bool isValveAligned = rotation >= 0.85;
 
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 22.h),
       decoration: BoxDecoration(
-        color: isDark
-            ? _LocalPalette.color07070f
-            : Colors.white,
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark
+                ? AppColors.slate900
+                : Colors.white),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: isDark

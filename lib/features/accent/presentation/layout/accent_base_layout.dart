@@ -72,7 +72,7 @@ class AccentBaseLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme('accent', level: level);
+    final theme = LevelThemeHelper.of(context, 'accent', level: level);
 
     // Subscribes only to vowlMascot changes — not every AuthState emission.
     final mascotId = context.select<AuthBloc, String>(

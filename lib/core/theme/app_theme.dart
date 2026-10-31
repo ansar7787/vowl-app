@@ -319,4 +319,33 @@ class AppTheme {
       contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
     ),
   );
+
+  /// Returns whether the active theme in [context] is Midnight (AMOLED) mode.
+  static bool isMidnight(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark &&
+      Theme.of(context).scaffoldBackgroundColor == Colors.black;
 }
+
+/// Convenient, production-grade BuildContext extensions for theme detection
+/// and token consumption across all widgets.
+extension AppThemeContextExtension on BuildContext {
+  /// Whether the active theme is dark (either explicitly dark or midnight).
+  bool get isDark => Theme.of(this).brightness == Brightness.dark;
+
+  /// Whether the active theme is the pure AMOLED Midnight mode.
+  ///
+  /// Detected synchronously and fast via scaffoldBackgroundColor == Colors.black,
+  /// avoiding any expensive subscriptions or context dependencies.
+  bool get isMidnight =>
+      isDark && Theme.of(this).scaffoldBackgroundColor == Colors.black;
+
+  /// The active [AppColorTokens] matching the current theme state.
+  ///
+  /// Guarantees a non-null return value with safe fallbacks.
+  AppColorTokens get tokens =>
+      Theme.of(this).extension<AppColorTokens>() ??
+      (isMidnight
+          ? AppColorTokens.midnight
+          : (isDark ? AppColorTokens.dark : AppColorTokens.light));
+}
+

@@ -20,7 +20,6 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color color020617 = Color(0xFF020617);
   static const Color color38bdf8 = Color(0xFF38BDF8);
 }
 
@@ -49,7 +48,7 @@ class _StreakScreenState extends State<StreakScreen> {
         (Theme.of(context).brightness == Brightness.dark &&
         Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
-        ? _LocalPalette.color020617
+        ? Colors.black
         : (isDark ? AppColors.slate900 : AppColors.slate50);
     final contentColor = Theme.of(context).colorScheme.onSurface;
 
@@ -171,9 +170,11 @@ class _StreakScreenState extends State<StreakScreen> {
         right: 20.w,
       ),
       decoration: BoxDecoration(
-        color: isDark
-            ? AppColors.slate900.withValues(alpha: 0.92)
-            : Colors.white.withValues(alpha: 0.92),
+        color: (isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black)
+            ? Colors.black.withValues(alpha: 0.94)
+            : (isDark
+                ? AppColors.slate900.withValues(alpha: 0.92)
+                : Colors.white.withValues(alpha: 0.92)),
         border: Border(
           bottom: BorderSide(
             color: (isDark ? Colors.white : Colors.black).withValues(

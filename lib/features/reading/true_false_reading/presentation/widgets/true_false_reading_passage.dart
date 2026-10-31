@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 
 /// Card widget presenting the reading passage referenced in the true or false statement.
 class TrueFalseReadingPassage extends StatelessWidget {
@@ -26,6 +28,8 @@ class TrueFalseReadingPassage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = AppTheme.isMidnight(context);
+
     return Semantics(
       label:
           'Passage: $passage.${onPlayAudio != null ? " Double tap audio button to listen." : ""}',
@@ -34,7 +38,9 @@ class TrueFalseReadingPassage extends StatelessWidget {
         width: double.infinity,
         padding: EdgeInsets.all(18.r),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E1E2C) : Colors.white,
+          color: isMidnight
+              ? AppColors.midnightSurface
+              : (isDark ? AppColors.slate900 : Colors.white),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
             color: color.withValues(alpha: isDark ? 0.2 : 0.15),

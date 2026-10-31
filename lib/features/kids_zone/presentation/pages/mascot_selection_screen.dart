@@ -17,7 +17,6 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color color020617 = Color(0xFF020617);
   static const Color color1e1b4b = Color(0xFF1E1B4B);
   static const Color color312e81 = Color(0xFF312E81);
   static const Color colore0f2fe = Color(0xFFE0F2FE);
@@ -46,7 +45,7 @@ class MascotSelectionScreen extends StatelessWidget {
         children: [
           MeshGradientBackground(
             colors: isMidnight
-                ? [Colors.black, _LocalPalette.color020617, AppColors.slate900]
+                ? [Colors.black, Colors.black, Colors.black]
                 : (isDark
                       ? [
                           AppColors.slate900,

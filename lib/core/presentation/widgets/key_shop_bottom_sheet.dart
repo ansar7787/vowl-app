@@ -121,9 +121,12 @@ class _KeyShopContentState extends State<_KeyShopContent> {
               child: Container(
                 padding: EdgeInsets.all(24.r),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).brightness == Brightness.dark
-                      ? AppColors.slate800
-                      : Colors.white,
+                  color: (Theme.of(context).brightness == Brightness.dark &&
+                          Theme.of(context).scaffoldBackgroundColor == Colors.black)
+                      ? AppColors.midnightSurface
+                      : (Theme.of(context).brightness == Brightness.dark
+                          ? AppColors.slate800
+                          : Colors.white),
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(32.r),
                   ),

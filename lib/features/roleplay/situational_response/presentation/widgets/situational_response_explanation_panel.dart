@@ -1,13 +1,10 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color131326 = Color(0xFF131326);
-}
 
 /// Panel providing detailed cultural, linguistic, and contextual feedback.
 class SituationalResponseExplanationPanel extends StatelessWidget {
@@ -31,6 +28,7 @@ class SituationalResponseExplanationPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final isMidnight = AppTheme.isMidnight(context);
     final Color cardColor = (isCorrect ?? false)
         ? tokens.gameCorrect
         : Colors.orangeAccent;
@@ -39,7 +37,9 @@ class SituationalResponseExplanationPanel extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
-        color: isDark ? _LocalPalette.color131326 : Colors.white,
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? AppColors.slate900 : Colors.white),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: cardColor.withValues(alpha: 0.25),
