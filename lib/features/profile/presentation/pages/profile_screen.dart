@@ -369,8 +369,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                         SizedBox(width: 10.w),
                                                         Flexible(
                                                           child: Text(
-                                                            user.displayName ??
-                                                                'Explorer',
+                                                            (user.displayName != null &&
+                                                                    user.displayName!.trim().isNotEmpty)
+                                                                ? user.displayName!.trim()
+                                                                : user.getSafeDisplayName(
+                                                                    fallback: context.tr(
+                                                                      'profile.default_explorer_name',
+                                                                      fallback: 'Explorer',
+                                                                    ),
+                                                                  ),
                                                             maxLines: 1,
                                                             overflow:
                                                                 TextOverflow
