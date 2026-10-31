@@ -1,16 +1,14 @@
-# ─── Flutter ─────────────────────────────────────────────────────
+# ─── Flutter Embedding ───────────────────────────────────────────
 -keep class io.flutter.app.** { *; }
 -keep class io.flutter.plugin.** { *; }
 -keep class io.flutter.util.** { *; }
 -keep class io.flutter.view.** { *; }
--keep class io.flutter.** { *; }
--keep class io.flutter.plugins.** { *; }
 
-# ─── Firebase ────────────────────────────────────────────────────
--keep class com.google.firebase.** { *; }
--keep class com.google.android.gms.** { *; }
+# ─── Firebase & Google Play Services ─────────────────────────────
+# Allows R8 to obfuscate internal classes while preserving necessary entrypoints
 -dontwarn com.google.firebase.**
 -dontwarn com.google.android.gms.**
+-dontwarn com.google.ads.**
 
 # ─── Firebase Crashlytics ────────────────────────────────────────
 -keepattributes SourceFile,LineNumberTable
@@ -30,24 +28,16 @@
     @proguard.annotation.Keep *;
 }
 
-# ─── Google Mobile Ads ───────────────────────────────────────────
--keep class com.google.ads.** { *; }
--keep class com.google.android.gms.ads.** { *; }
-
 # ─── SafeDevice (Root/Jailbreak detection) ───────────────────────
 -keep class com.apparence.safe_device.** { *; }
 
-# ─── General ─────────────────────────────────────────────────────
+# ─── General Reflection & Desugaring ─────────────────────────────
 -keepattributes Signature
 -keepattributes *Annotation*
 -keep class sun.misc.Unsafe { *; }
 -dontwarn java.nio.file.*
 -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
 
-# ─── Google Play Core (Fixes R8 Build Error) ─────────────────────
--keep class com.google.android.play.core.** { *; }
+# ─── Google Play Core & ML Kit ───────────────────────────────────
 -dontwarn com.google.android.play.core.**
-
-# ML Kit Text Recognition Fix
--keep class com.google.mlkit.** { *; }
 -dontwarn com.google.mlkit.**
