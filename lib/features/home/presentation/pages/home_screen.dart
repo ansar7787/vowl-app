@@ -25,6 +25,7 @@ import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_motivation_card.dart';
 import 'package:vowl/features/home/presentation/widgets/review_mistakes_home_card.dart';
 import 'package:vowl/features/home/presentation/widgets/mystery_chest_dialog.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
 import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
@@ -155,15 +156,35 @@ class _HomeScreenState extends State<HomeScreen> {
                 previous.isDailyRewardAvailable !=
                     current.isDailyRewardAvailable &&
                 current.isDailyRewardAvailable,
-            listener: (context, state) {
-              if (!_hasCheckedDailyChestThisSession) {
-                _hasCheckedDailyChestThisSession = true;
-                showDialog(
-                  context: context,
-                  barrierDismissible: false,
-                  builder: (context) => const MysteryChestDialog(),
-                );
-              }
+            listener: (context, state) async {
+              if (_hasCheckedDailyChestThisSession) return;
+              _hasCheckedDailyChestThisSession = true;
+
+              final userId = context.read<AuthBloc>().state.user?.id;
+
+              // Double-guard against midnight time-zone skew or fast restarts
+              // using persistent SharedPreferences.
+              try {
+                final prefs = await SharedPreferences.getInstance();
+                final nowLocal = DateTime.now().toLocal();
+                final todayStr =
+                    '${nowLocal.year}-${nowLocal.month.toString().padLeft(2, '0')}-${nowLocal.day.toString().padLeft(2, '0')}';
+                final localDate =
+                    prefs.getString('last_daily_mystery_claimed_date');
+                final userDate = userId != null && userId.isNotEmpty
+                    ? prefs.getString('last_daily_mystery_claimed_date_$userId')
+                    : null;
+                if (localDate == todayStr || userDate == todayStr) {
+                  return;
+                }
+              } catch (_) {}
+
+              if (!context.mounted) return;
+              showDialog(
+                context: context,
+                barrierDismissible: false,
+                builder: (context) => const MysteryChestDialog(),
+              );
             },
           ),
         ],
@@ -214,7 +235,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 RefreshIndicator(
                   onRefresh: () async {
                     context.read<AuthBloc>().add(const AuthReloadUser());
-                    _hasCheckedDailyChestThisSession = false;
+                    // Keep _hasCheckedDailyChestThisSession intact during pull-to-refresh
+                    // so users are never interrupted with a modal dialog while browsing.
                     context.read<EconomyBloc>().add(
                       const EconomyCheckDailyRewardRequested(),
                     );

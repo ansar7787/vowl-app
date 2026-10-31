@@ -584,14 +584,19 @@ class UserModel extends UserEntity {
 
   /// Safely parses a date-time value from a Firestore field which may be a
   /// [Timestamp], ISO-8601 [String], unix epoch [int], or null.
+  /// Always normalizes to device-local time to prevent calendar day mismatches
+  /// when comparing with [DateTime.now()].
   static DateTime? _parseDateTime(dynamic value) {
     if (value == null) return null;
-    if (value is Timestamp) return value.toDate();
-    if (value is String) return DateTime.tryParse(value);
-    if (value is int) return DateTime.fromMillisecondsSinceEpoch(value);
+    if (value is Timestamp) return value.toDate().toLocal();
+    if (value is String) return DateTime.tryParse(value)?.toLocal();
+    if (value is int) {
+      return DateTime.fromMillisecondsSinceEpoch(value).toLocal();
+    }
     // Last resort: attempt toDate() for legacy Firestore objects.
     try {
-      return (value as dynamic).toDate() as DateTime;
+      final dynamic d = value;
+      return (d.toDate() as DateTime).toLocal();
     } catch (_) {
       return null;
     }

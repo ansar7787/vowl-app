@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/home/presentation/widgets/mystery_chest_overlay.dart';
@@ -42,7 +43,26 @@ class _MysteryChestDialogState extends State<MysteryChestDialog> {
   Future<void> _openChest() async {
     if (_chestOpened.value || !mounted) return;
 
-    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+    final user = context.read<AuthBloc>().state.user;
+    final isPremium = user?.isPremium ?? false;
+    final userId = user?.id;
+
+    // Eager local lock: immediately persist to SharedPreferences on tap so even
+    // an abrupt app exit/kill cannot lose claim state for today.
+    try {
+      final nowLocal = DateTime.now().toLocal();
+      final todayStr =
+          '${nowLocal.year}-${nowLocal.month.toString().padLeft(2, '0')}-${nowLocal.day.toString().padLeft(2, '0')}';
+      unawaited(
+        SharedPreferences.getInstance().then((prefs) {
+          prefs.setString('last_daily_mystery_claimed_date', todayStr);
+          prefs.setString('last_daily_mystery_date', todayStr);
+          if (userId != null && userId.isNotEmpty) {
+            prefs.setString('last_daily_mystery_claimed_date_$userId', todayStr);
+          }
+        }).catchError((_) {}),
+      );
+    } catch (_) {}
 
     // NOTE: this roll is computed client-side for the reveal animation only.
     // The authoritative reward MUST be validated/issued by the backend when

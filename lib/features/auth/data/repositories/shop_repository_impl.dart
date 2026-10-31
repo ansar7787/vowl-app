@@ -208,9 +208,14 @@ class ShopRepositoryImpl
         // where UserModel's parser already handles that defensively.
         final userData = UserModel.fromMap(doc.data()!, doc.id);
         final lastClaim = userData.lastDailyRewardDate;
-        if (lastClaim != null &&
-            _isSameCalendarDay(lastClaim, DateTime.now())) {
-          return Left(AuthFailure('daily-chest-already-claimed'));
+        if (lastClaim != null) {
+          final now = DateTime.now();
+          final isSameDay = _isSameCalendarDay(lastClaim, now);
+          final isFuture =
+              lastClaim.isAfter(now.add(const Duration(minutes: 5)));
+          if (isSameDay || isFuture) {
+            return Left(AuthFailure('daily-chest-already-claimed'));
+          }
         }
 
         final history = _recordCoinHistory(
@@ -262,9 +267,14 @@ class ShopRepositoryImpl
         // Same defensive-parsing rationale as claimDailyChest above.
         final userData = UserModel.fromMap(doc.data()!, doc.id);
         final lastClaim = userData.lastKidsDailyRewardDate;
-        if (lastClaim != null &&
-            _isSameCalendarDay(lastClaim, DateTime.now())) {
-          return Left(AuthFailure('kids-daily-reward-already-claimed'));
+        if (lastClaim != null) {
+          final now = DateTime.now();
+          final isSameDay = _isSameCalendarDay(lastClaim, now);
+          final isFuture =
+              lastClaim.isAfter(now.add(const Duration(minutes: 5)));
+          if (isSameDay || isFuture) {
+            return Left(AuthFailure('kids-daily-reward-already-claimed'));
+          }
         }
 
         transaction.update(docRef, {
@@ -684,9 +694,13 @@ class ShopRepositoryImpl
   }
 
   /// True if [a] and [b] fall on the same calendar day (year/month/day) in
-  /// local time. Used by every "claim once per day" guard in this file.
-  static bool _isSameCalendarDay(DateTime a, DateTime b) =>
-      a.year == b.year && a.month == b.month && a.day == b.day;
+  /// local time. Normalizes both instances with `.toLocal()` to prevent
+  /// time-zone skew between UTC timestamps and device local time around midnight.
+  static bool _isSameCalendarDay(DateTime a, DateTime b) {
+    final la = a.toLocal();
+    final lb = b.toLocal();
+    return la.year == lb.year && la.month == lb.month && la.day == lb.day;
+  }
 
   void _log(String message) {
     if (kDebugMode) debugPrint(message);
