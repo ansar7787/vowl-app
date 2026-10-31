@@ -742,7 +742,10 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       final userClaimedDate = user.id.isNotEmpty
           ? prefs.getString('last_daily_mystery_claimed_date_${user.id}')
           : null;
-      if (localClaimedDate == dateStr || userClaimedDate == dateStr) {
+      final isClaimedLocally = user.id.isNotEmpty
+          ? userClaimedDate == dateStr
+          : localClaimedDate == dateStr;
+      if (isClaimedLocally) {
         emit(state.copyWith(isDailyRewardAvailable: false));
         return;
       }

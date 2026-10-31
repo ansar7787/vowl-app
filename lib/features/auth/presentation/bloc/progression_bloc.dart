@@ -278,12 +278,18 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
       return;
     }
 
-    final lastDateOnly = DateTime(
-      lastLogin.year,
-      lastLogin.month,
-      lastLogin.day,
+    final localLastLogin = lastLogin.toLocal();
+    final localNow = now.toLocal();
+    final lastDateOnly = DateTime.utc(
+      localLastLogin.year,
+      localLastLogin.month,
+      localLastLogin.day,
     );
-    final nowDateOnly = DateTime(now.year, now.month, now.day);
+    final nowDateOnly = DateTime.utc(
+      localNow.year,
+      localNow.month,
+      localNow.day,
+    );
     final dayDifference = nowDateOnly.difference(lastDateOnly).inDays;
 
     if (dayDifference == 0) {
