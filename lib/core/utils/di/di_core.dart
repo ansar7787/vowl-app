@@ -24,6 +24,7 @@ import 'package:vowl/core/utils/praise_service.dart';
 import 'package:vowl/core/utils/analytics_service.dart';
 import 'package:vowl/core/utils/security_service.dart';
 import 'package:vowl/core/utils/remote_config_service.dart';
+import 'package:vowl/core/utils/app_update_service.dart';
 import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/review_service.dart';
 import 'package:vowl/core/utils/subscription_plans_service.dart';
@@ -103,6 +104,11 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<SecurityService>(() => SecurityService());
   sl.registerLazySingleton<RemoteConfigService>(
     () => RemoteConfigService(sl<FirebaseRemoteConfig>()),
+  );
+  sl.registerLazySingleton<AppUpdateService>(
+    () => AppUpdateServiceImpl(
+      remoteConfig: sl<RemoteConfigService>(),
+    ),
   );
   // FIX (HIGH — RESOURCE LEAK): NotificationService.dispose() already
   // existed (cancels 4 StreamSubscriptions: onMessage, onTokenRefresh,
