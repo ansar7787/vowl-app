@@ -254,9 +254,13 @@ class UserRepositoryImpl
   }
 
   /// True if [a] and [b] fall on the same calendar day (year/month/day) in
-  /// local time. Used by the various "claim once per day" guards.
-  static bool _isSameCalendarDay(DateTime a, DateTime b) =>
-      a.year == b.year && a.month == b.month && a.day == b.day;
+  /// local time. Normalizes both instances with `.toLocal()` to prevent
+  /// time-zone skew between UTC timestamps and device local time around midnight.
+  static bool _isSameCalendarDay(DateTime a, DateTime b) {
+    final la = a.toLocal();
+    final lb = b.toLocal();
+    return la.year == lb.year && la.month == lb.month && la.day == lb.day;
+  }
 
   /// Debug-only log helper. Produces no output in release builds.
   void _log(String message) {

@@ -595,11 +595,16 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     EconomyClaimDailyChestRequested event,
     Emitter<EconomyState> emit,
   ) async {
+    // Eagerly lock claim state locally on disk and memory so rapid app restart
+    // can never trigger a second claim or show the overlay again.
+    await _markDailyMysteryClaimedToday(event.amount);
+
     if (state.isLoading) return;
     if (!(await _networkInfo.isConnected)) {
       emit(
         state.copyWith(
           isLoading: false,
+          isDailyRewardAvailable: false,
           message: () => AuthErrorHandler.getKey('network-unreachable'),
         ),
       );
@@ -607,7 +612,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     }
     emit(state.copyWith(isLoading: true));
     if (!_isAuthenticated) {
-      emit(state.copyWith(isLoading: false));
+      emit(state.copyWith(isLoading: false, isDailyRewardAvailable: false));
       return;
     }
     _log('EconomyBloc: Claiming daily chest (${event.amount} coins)…');
@@ -628,6 +633,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
         emit(
           state.copyWith(
             isLoading: false,
+            isDailyRewardAvailable: false,
             message: () => AuthErrorHandler.getKey(failure.message),
           ),
         );
@@ -687,7 +693,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     final currentUser = authBloc.state.user;
     try {
       final prefs = await SharedPreferences.getInstance();
-      final today = DateTime.now();
+      final today = DateTime.now().toLocal();
       final dateStr =
           '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
       await prefs.setString('last_daily_mystery_claimed_date', dateStr);
@@ -702,7 +708,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     try {
       if (currentUser != null) {
         final updatedUser = currentUser.copyWith(
-          lastDailyRewardDate: DateTime.now(),
+          lastDailyRewardDate: DateTime.now().toLocal(),
           coins: currentUser.coins + bonusCoins,
         );
         if (di.sl.isRegistered<AuthLocalDataSource>()) {
@@ -724,7 +730,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       return;
     }
 
-    final today = DateTime.now();
+    final today = DateTime.now().toLocal();
     final dateStr =
         '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
 
@@ -776,12 +782,13 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   // ---------------------------------------------------------------------------
 
   /// True if [a] and [b] fall on the same calendar day (year/month/day) in
-  /// local time. The same "already claimed today?" comparison this repeats
-  /// exists independently in several repository implementations too (Dart's
-  /// per-file privacy means none of them can share one helper) — see the
-  /// review notes for the full list.
-  static bool _isSameCalendarDay(DateTime a, DateTime b) =>
-      a.year == b.year && a.month == b.month && a.day == b.day;
+  /// device-local time. Normalizes both instances with `.toLocal()` to guard
+  /// against time-zone skew (e.g. UTC vs local time around midnight).
+  static bool _isSameCalendarDay(DateTime a, DateTime b) {
+    final la = a.toLocal();
+    final lb = b.toLocal();
+    return la.year == lb.year && la.month == lb.month && la.day == lb.day;
+  }
 
   void _log(String message) {
     if (kDebugMode) debugPrint(message);
