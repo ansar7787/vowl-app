@@ -556,7 +556,8 @@ class UserModel extends UserEntity {
       final trimmed = rawName.trim();
       if (trimmed.isNotEmpty &&
           trimmed.toLowerCase() != 'unknown user' &&
-          trimmed.toLowerCase() != 'unknown') {
+          trimmed.toLowerCase() != 'unknown' &&
+          trimmed.toLowerCase() != 'vowl learner') {
         return trimmed;
       }
     }

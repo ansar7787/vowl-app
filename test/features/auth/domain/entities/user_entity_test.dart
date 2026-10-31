@@ -86,6 +86,17 @@ void main() {
       expect(user.getSafeDisplayName(), 'John Doe');
     });
 
+    test('getSafeDisplayName sanitizes "Vowl Learner" and formats from email', () {
+      const user = UserEntity(
+        id: '4',
+        email: 'ayesha.friend@example.com',
+        displayName: 'Vowl Learner',
+        dailyXpHistory: {},
+      );
+      expect(user.getSafeDisplayName(), 'Ayesha Friend');
+      expect(user.safeDisplayName, 'Ayesha Friend');
+    });
+
     test('getSafeDisplayName uses custom fallback when name is invalid and email is empty', () {
       const user = UserEntity(
         id: '99',

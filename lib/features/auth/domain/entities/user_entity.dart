@@ -420,7 +420,8 @@ class UserEntity {
     if (name != null &&
         name.isNotEmpty &&
         name.toLowerCase() != 'unknown user' &&
-        name.toLowerCase() != 'unknown') {
+        name.toLowerCase() != 'unknown' &&
+        name.toLowerCase() != 'vowl learner') {
       return name;
     }
     if (email.isNotEmpty && email.contains('@')) {
