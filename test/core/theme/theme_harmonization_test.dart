@@ -4,6 +4,7 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_theme.dart';
+import 'package:vowl/core/theme/category_colors.dart';
 
 void main() {
   group('Theme Harmonization & Design Tokens', () {
@@ -40,6 +41,40 @@ void main() {
   });
 
   group('LevelThemeHelper AMOLED & Context Resolution', () {
+    test('Every category maintains its unique identity color across all 3 theme modes', () {
+      final categoryExpectedColors = {
+        'speaking': CategoryColors.speaking,
+        'listening': CategoryColors.listening,
+        'reading': CategoryColors.reading,
+        'writing': CategoryColors.writing,
+        'grammar': CategoryColors.grammar,
+        'vocabulary': CategoryColors.vocabulary,
+        'accent': CategoryColors.accent,
+        'roleplay': CategoryColors.roleplay,
+        'elitemastery': CategoryColors.eliteMastery,
+      };
+
+      for (final entry in categoryExpectedColors.entries) {
+        final cat = entry.key;
+        final expectedColor = entry.value;
+
+        // Verify base color
+        expect(LevelThemeHelper.getCategoryBaseColor(cat), expectedColor);
+
+        // Verify light mode preserves exact category primary color
+        final lightTheme = LevelThemeHelper.getCategoryTheme(cat, isDark: false, isMidnight: false);
+        expect(lightTheme.primaryColor, expectedColor);
+
+        // Verify dark mode preserves exact category primary color
+        final darkTheme = LevelThemeHelper.getCategoryTheme(cat, isDark: true, isMidnight: false);
+        expect(darkTheme.primaryColor, expectedColor);
+
+        // Verify midnight mode preserves exact category primary color
+        final midnightTheme = LevelThemeHelper.getCategoryTheme(cat, isDark: true, isMidnight: true);
+        expect(midnightTheme.primaryColor, expectedColor);
+      }
+    });
+
     test('LevelThemeHelper produces pure black bgTop and bgBottom in Midnight mode', () {
       final categories = [
         'accent',
