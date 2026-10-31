@@ -120,25 +120,28 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Flexible(
-                          child: Text(
-                            widget.isKids
-                                ? context.tr(
-                                    'leaderboard.kids_title',
-                                    fallback: 'Kids Leaderboard',
-                                  )
-                                : context.tr(
-                                    'leaderboard.title',
-                                    fallback: 'Leaderboard',
-                                  ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 22.sp,
-                              fontWeight: FontWeight.w900,
-                              color: Theme.of(context).colorScheme.onSurface,
-                              letterSpacing: 1,
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              widget.isKids
+                                  ? context.tr(
+                                      'leaderboard.kids_title',
+                                      fallback: 'Kids Leaderboard',
+                                    )
+                                  : context.tr(
+                                      'leaderboard.title',
+                                      fallback: 'Leaderboard',
+                                    ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 22.sp,
+                                fontWeight: FontWeight.w900,
+                                color: Theme.of(context).colorScheme.onSurface,
+                                letterSpacing: 1,
+                              ),
+                              maxLines: 1,
                             ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                         ExcludeSemantics(
@@ -146,8 +149,8 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader> {
                             onTap: () => _showUpdateInfo(context),
                             child: Container(
                               padding: EdgeInsets.symmetric(
-                                horizontal: 10.w,
-                                vertical: 5.h,
+                                horizontal: 9.w,
+                                vertical: 4.h,
                               ),
                               decoration: BoxDecoration(
                                 color: isDark
@@ -179,20 +182,24 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader> {
                                         : AppColors.indigo500,
                                     size: 12.r,
                                   ),
-                                  SizedBox(width: 5.w),
-                                  Text(
-                                    context.tr(
-                                      'leaderboard.next_update_in',
-                                      fallback: 'Next in {0}',
-                                      args: [timeUntilNext],
-                                    ),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 10.sp,
-                                      fontWeight: FontWeight.w800,
-                                      color: isDark
-                                          ? AppColors.blue300
-                                          : AppColors.indigo500,
+                                  SizedBox(width: 4.w),
+                                  FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: Text(
+                                      context.tr(
+                                        'leaderboard.next_update_in',
+                                        fallback: 'Next in {0}',
+                                        args: [timeUntilNext],
+                                      ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: isDark
+                                            ? AppColors.blue300
+                                            : AppColors.indigo500,
+                                      ),
+                                      maxLines: 1,
                                     ),
                                   ),
                                 ],
