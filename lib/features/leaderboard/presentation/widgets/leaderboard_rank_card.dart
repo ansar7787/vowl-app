@@ -116,13 +116,19 @@ class LeaderboardRankCard extends StatelessWidget {
                       ],
                     ),
                     child: Center(
-                      child: Text(
-                        isRanked ? '#$rank' : '?',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.white,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 4.w),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            isRanked ? '#$rank' : '?',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -277,6 +283,7 @@ class LeaderboardRankCard extends StatelessWidget {
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
+                              SizedBox(width: 8.w),
                               Text(
                                 '$levelsCleared / $maxLevels',
                                 style: TextStyle(

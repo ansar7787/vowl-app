@@ -224,8 +224,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
 
     // Exact cumulative overhead before rank 4-N SliverList:
     // topPadding(16.h) + header(~52.h) + spacing(24.h) + podium + spacing(12.h)
-    // + stickyHeaderMaxExtent(135.h) + sectionDivider(38.h)
-    final overhead = 16.h + 52.h + 24.h + podiumHeight + 12.h + 135.h + 38.h;
+    // + stickyHeaderMaxExtent(145.h) + sectionDivider(38.h)
+    final overhead = 16.h + 52.h + 24.h + podiumHeight + 12.h + 145.h + 38.h;
 
     // Each rank tile slot in SliverList (card height + 10.h bottom spacing)
     final tileHeight = 74.h;
@@ -236,7 +236,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     final viewportHeight = _scrollController.position.hasViewportDimension
         ? _scrollController.position.viewportDimension
         : screenHeight;
-    final pinnedHeaderHeight = 80.h;
+    final pinnedHeaderHeight = 88.h;
     final bottomBarPadding = 104.h + MediaQuery.paddingOf(context).bottom;
 
     // Center point in visible viewport between pinned top header and bottom bar
@@ -378,8 +378,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               SliverPersistentHeader(
                 pinned: true,
                 delegate: _StickyRankCardDelegate(
-                  minHeight: 80.h,
-                  maxHeight: 135.h,
+                  minHeight: 88.h,
+                  maxHeight: 145.h,
                   child: LeaderboardRankCard(
                     allUsers: widget.state.users,
                     isKids: widget.state.isKids,
@@ -605,59 +605,67 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
           Positioned(
             bottom: 104.h + MediaQuery.paddingOf(context).bottom,
             right: 20.w,
-            child: GestureDetector(
-              onTap: _scrollToMe,
-              child:
-                  Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 14.w,
-                          vertical: 10.h,
-                        ),
-                        decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [
-                              AppColors.indigo500,
-                              IllustrationColors.brightBlue,
+            child: Semantics(
+              button: true,
+              label: context.tr(
+                'leaderboard.find_me_label',
+                fallback: 'Scroll to my rank (#{0})',
+                args: ['${rankIndex + 1}'],
+              ),
+              child: GestureDetector(
+                onTap: _scrollToMe,
+                child:
+                    Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 14.w,
+                            vertical: 10.h,
+                          ),
+                          decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              colors: [
+                                AppColors.indigo500,
+                                IllustrationColors.brightBlue,
+                              ],
+                            ),
+                            borderRadius: BorderRadius.circular(24.r),
+                            boxShadow: [
+                              BoxShadow(
+                                color: const Color(
+                                  0xFF6366F1,
+                                ).withValues(alpha: 0.4),
+                                blurRadius: 16,
+                                offset: const Offset(0, 4),
+                              ),
                             ],
                           ),
-                          borderRadius: BorderRadius.circular(24.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(
-                                0xFF6366F1,
-                              ).withValues(alpha: 0.4),
-                              blurRadius: 16,
-                              offset: const Offset(0, 4),
-                            ),
-                          ],
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              Icons.my_location_rounded,
-                              color: Colors.white,
-                              size: 16.r,
-                            ),
-                            SizedBox(width: 6.w),
-                            Text(
-                              '#${rankIndex + 1}',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.w900,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.my_location_rounded,
                                 color: Colors.white,
+                                size: 16.r,
                               ),
-                            ),
-                          ],
+                              SizedBox(width: 6.w),
+                              Text(
+                                '#${rankIndex + 1}',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 13.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ).animateIf(
+                          context,
+                          (w) => w
+                              .animate()
+                              .fadeIn(duration: 400.ms, delay: 800.ms)
+                              .slideY(begin: 0.3, end: 0, curve: Curves.easeOutCubic),
                         ),
-                      ).animateIf(
-                        context,
-                        (w) => w
-                            .animate()
-                            .fadeIn(duration: 400.ms, delay: 800.ms)
-                            .slideY(begin: 0.3, end: 0, curve: Curves.easeOutCubic),
-                      ),
+              ),
             ),
           ),
       ],
@@ -693,6 +701,8 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
     bool overlapsContent,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     // When pinned (shrinkOffset > 10), content scrolls beneath this header.
     // A solid frosted backdrop + bottom shadow prevents the "ghost card"
     // overlap where glassmorphic tiles bleed through.
@@ -705,7 +715,9 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
     // PERF: Avoid heavy BackdropFilter(sigma: 24) on every scroll frame.
     // When pinned, a solid high-opacity color (0.96) occludes content beneath
     // cleanly without forcing expensive GPU offscreen render passes during scroll.
-    final backdropColor = (isDark ? AppColors.slate900 : Colors.white)
+    final backdropColor = (isMidnight
+            ? Colors.black
+            : (isDark ? AppColors.slate900 : Colors.white))
         .withValues(alpha: isPinned ? 0.96 : 0.7);
 
     return ClipRect(
