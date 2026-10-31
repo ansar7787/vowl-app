@@ -174,7 +174,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 final userDate = userId != null && userId.isNotEmpty
                     ? prefs.getString('last_daily_mystery_claimed_date_$userId')
                     : null;
-                if (localDate == todayStr || userDate == todayStr) {
+                final isClaimedLocally = userId != null && userId.isNotEmpty
+                    ? userDate == todayStr
+                    : localDate == todayStr;
+                if (isClaimedLocally) {
                   return;
                 }
               } catch (_) {}

@@ -139,12 +139,13 @@ class ShopRepositoryImpl
         final userData = UserModel.fromMap(doc.data()!, doc.id);
         final now = DateTime.now();
         final lastGift = userData.lastDailyRewardDate;
-
-        final bool available =
-            lastGift == null || !_isSameCalendarDay(lastGift, now);
-
-        if (!available) {
-          return Left(AuthFailure('daily-gift-already-claimed'));
+        if (lastGift != null) {
+          final isSameDay = _isSameCalendarDay(lastGift, now);
+          final isFuture =
+              lastGift.isAfter(now.add(const Duration(minutes: 5)));
+          if (isSameDay || isFuture) {
+            return Left(AuthFailure('daily-gift-already-claimed'));
+          }
         }
 
         // Reward scales with the day of month to provide variety.

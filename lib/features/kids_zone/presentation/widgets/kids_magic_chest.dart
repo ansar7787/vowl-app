@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
@@ -39,8 +40,30 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
   void initState() {
     super.initState();
     _startTimer();
+    _restoreLocalClaim();
     // Update immediately so the countdown shows on first render
     WidgetsBinding.instance.addPostFrameCallback((_) => _updateCountdown());
+  }
+
+  Future<void> _restoreLocalClaim() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      if (!mounted) return;
+      final user = context.read<AuthBloc>().state.user;
+      final userId = user?.id;
+      final key = userId != null && userId.isNotEmpty
+          ? 'last_kids_daily_reward_time_$userId'
+          : 'last_kids_daily_reward_time';
+      final millis = prefs.getInt(key);
+      if (millis != null) {
+        final storedTime = DateTime.fromMillisecondsSinceEpoch(millis);
+        if (_lastClaimedLocally.value == null ||
+            storedTime.isAfter(_lastClaimedLocally.value!)) {
+          _lastClaimedLocally.value = storedTime;
+          _updateCountdown();
+        }
+      }
+    } catch (_) {}
   }
 
   @override
@@ -121,6 +144,17 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                       final claimTime = DateTime.now();
                       _isClaiming.value = true;
                       _lastClaimedLocally.value = claimTime;
+
+                      final user = context.read<AuthBloc>().state.user;
+                      final userId = user?.id;
+                      final key = userId != null && userId.isNotEmpty
+                          ? 'last_kids_daily_reward_time_$userId'
+                          : 'last_kids_daily_reward_time';
+                      unawaited(
+                        SharedPreferences.getInstance().then((prefs) {
+                          prefs.setInt(key, claimTime.millisecondsSinceEpoch);
+                        }).catchError((_) {}),
+                      );
 
                       widget
                           .onClaimed(); // Trigger confetti/animations in parent
