@@ -394,17 +394,37 @@ class AuthRepositoryImpl
       final isNewUser = await _remoteDataSource.logInWithGoogle();
       final current = _firebaseAuth.currentUser;
       if (current != null) {
-        final model = UserModel(
-          id: current.uid,
-          email: current.email ?? '',
-          displayName: current.displayName,
-          photoUrl: current.photoURL,
+        try {
+          await current.reload();
+        } catch (_) {}
+        final activeUser = _firebaseAuth.currentUser ?? current;
+
+        // Fetch authoritative fresh profile from Firestore so local cache has real data
+        UserModel? model;
+        try {
+          final doc =
+              await _firestore.collection('users').doc(activeUser.uid).get();
+          if (doc.exists && doc.data() != null) {
+            model = UserModel.fromMap(doc.data()!, doc.id);
+          }
+        } catch (_) {}
+
+        model ??= UserModel(
+          id: activeUser.uid,
+          email: activeUser.email ?? '',
+          displayName: (activeUser.displayName != null &&
+                  activeUser.displayName!.trim().isNotEmpty)
+              ? activeUser.displayName!.trim()
+              : 'Vowl Learner',
+          photoUrl: activeUser.photoURL,
           lastLoginDate: DateTime.now(),
           currentStreak: 1,
           dailyXpHistory: const {},
           recentActivities: const [],
         );
+
         await _localDataSource.cacheUser(model);
+        _emit(model);
       }
       return Right(isNewUser);
     } catch (e) {

@@ -244,14 +244,26 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     final userDoc = await userDocRef.get();
     final isNewUser = !userDoc.exists;
 
-    // Resolve a robust, human-readable display name if Google returns null/empty
-    String? resolvedName = user.displayName?.trim();
-    if (resolvedName == null ||
-        resolvedName.isEmpty ||
-        resolvedName.toLowerCase() == 'unknown user' ||
-        resolvedName.toLowerCase() == 'unknown') {
-      if (user.email != null && user.email!.contains('@')) {
-        final prefix = user.email!
+    // 1. Resolve authoritative display name: prioritize Google OAuth profile first,
+    // then Firebase Auth user, then formatted email prefix, with safe fallback.
+    final googleName = googleUser.displayName?.trim();
+    final firebaseName = user.displayName?.trim();
+    String? resolvedName;
+
+    if (googleName != null &&
+        googleName.isNotEmpty &&
+        googleName.toLowerCase() != 'unknown user' &&
+        googleName.toLowerCase() != 'unknown') {
+      resolvedName = googleName;
+    } else if (firebaseName != null &&
+        firebaseName.isNotEmpty &&
+        firebaseName.toLowerCase() != 'unknown user' &&
+        firebaseName.toLowerCase() != 'unknown') {
+      resolvedName = firebaseName;
+    } else {
+      final emailCandidate = (user.email ?? googleUser.email).trim();
+      if (emailCandidate.isNotEmpty && emailCandidate.contains('@')) {
+        final prefix = emailCandidate
             .split('@')
             .first
             .replaceAll(RegExp(r'[._\-+0-9]+'), ' ')
@@ -260,22 +272,35 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
           resolvedName = prefix
               .split(' ')
               .where((s) => s.isNotEmpty)
-              .map((w) => w[0].toUpperCase() + (w.length > 1 ? w.substring(1).toLowerCase() : ''))
+              .map((w) =>
+                  w[0].toUpperCase() +
+                  (w.length > 1 ? w.substring(1).toLowerCase() : ''))
               .join(' ');
         }
       }
-      resolvedName ??= 'Vowl Learner';
-      try {
-        await user.updateDisplayName(resolvedName);
-      } catch (_) {}
     }
+    resolvedName = (resolvedName != null && resolvedName.trim().isNotEmpty)
+        ? resolvedName.trim()
+        : 'Vowl Learner';
+
+    // 2. Resolve photo URL: prioritize Google OAuth avatar, then Firebase Auth avatar.
+    final resolvedPhotoUrl = googleUser.photoUrl ?? user.photoURL;
+
+    // 3. Immediately update and reload Firebase Auth user so currentUser.displayName matches
+    try {
+      await user.updateDisplayName(resolvedName);
+      if (resolvedPhotoUrl != null && resolvedPhotoUrl.isNotEmpty) {
+        await user.updatePhotoURL(resolvedPhotoUrl);
+      }
+      await user.reload();
+    } catch (_) {}
 
     if (isNewUser) {
       final newUser = UserModel(
         id: user.uid,
-        email: user.email ?? '',
+        email: user.email ?? googleUser.email,
         displayName: resolvedName,
-        photoUrl: user.photoURL,
+        photoUrl: resolvedPhotoUrl,
         isAdmin: false,
         lastLoginDate: DateTime.now(),
         currentStreak: 1,
@@ -298,17 +323,29 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         );
       }
     } else {
-      // Self-heal existing user doc if displayName was null, empty, or 'Unknown User'
+      // Self-heal existing user doc if displayName was null, empty, 'Unknown User',
+      // or stuck on the generic fallback 'Vowl Learner' when a real Google name is available.
       final existingData = userDoc.data();
       final existingName = (existingData?['displayName'] as String?)?.trim();
-      if (existingName == null ||
+      final isExistingGeneric = existingName == null ||
           existingName.isEmpty ||
           existingName.toLowerCase() == 'unknown user' ||
-          existingName.toLowerCase() == 'unknown') {
+          existingName.toLowerCase() == 'unknown' ||
+          existingName.toLowerCase() == 'vowl learner';
+
+      final updates = <String, dynamic>{};
+      if (isExistingGeneric && resolvedName != 'Vowl Learner') {
+        updates['displayName'] = resolvedName;
+      }
+      final existingPhoto = (existingData?['photoUrl'] as String?)?.trim();
+      if ((existingPhoto == null || existingPhoto.isEmpty) &&
+          resolvedPhotoUrl != null &&
+          resolvedPhotoUrl.isNotEmpty) {
+        updates['photoUrl'] = resolvedPhotoUrl;
+      }
+      if (updates.isNotEmpty) {
         try {
-          await userDocRef.set({
-            'displayName': resolvedName,
-          }, SetOptions(merge: true));
+          await userDocRef.set(updates, SetOptions(merge: true));
         } catch (_) {}
       }
     }

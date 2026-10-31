@@ -720,9 +720,14 @@ class CommandPod extends StatelessWidget {
 
   Widget _buildDynamicGreeting(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final name =
-        user.displayName?.split(' ').first ??
-        context.tr('home.default_seeker_name', fallback: 'Seeker');
+    final rawName =
+        (user.displayName != null && user.displayName!.trim().isNotEmpty)
+            ? user.displayName!.trim()
+            : user.getSafeDisplayName(
+                fallback:
+                    context.tr('home.default_seeker_name', fallback: 'Seeker'),
+              );
+    final name = rawName.split(' ').first;
     final hour = DateTime.now().hour;
     String greeting = context.tr('home.greeting_default', fallback: 'Hello');
     if (hour >= 5 && hour < 12) {
