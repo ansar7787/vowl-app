@@ -18,7 +18,7 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/home/presentation/widgets/bento_arena.dart';
-import 'package:vowl/features/home/presentation/widgets/command_pod.dart';
+import 'package:vowl/features/home/presentation/widgets/home_hero_header.dart';
 import 'package:vowl/features/home/presentation/widgets/continue_learning_card.dart';
 import 'package:vowl/features/home/presentation/widgets/inline_notification_card.dart';
 import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
@@ -267,10 +267,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
-                          child: CommandPod(
-                            user: user,
-                            mode: CommandPodMode.headerOnly,
-                          ),
+                          child: HomeHeroHeader(user: user),
                         ),
                       ),
 

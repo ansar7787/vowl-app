@@ -27,7 +27,7 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/features/home/presentation/pages/home_screen.dart';
 import 'package:vowl/features/home/presentation/widgets/bento_arena.dart';
-import 'package:vowl/features/home/presentation/widgets/command_pod.dart';
+import 'package:vowl/features/home/presentation/widgets/home_hero_header.dart';
 import 'package:vowl/features/home/presentation/widgets/continue_learning_card.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_motivation_card.dart';
 import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
@@ -314,7 +314,7 @@ void main() {
         await tester.pump();
 
         expect(find.byType(HomeShimmerLoading), findsOneWidget);
-        expect(find.byType(CommandPod), findsNothing);
+        expect(find.byType(HomeHeroHeader), findsNothing);
       },
     );
 
@@ -358,19 +358,19 @@ void main() {
 
   group('Group 2: Main Home Feed Initial Layout & Hero Header', () {
     testWidgets(
-      'renders hero header CommandPod with user display name and Commander rank badge',
+      'renders hero header HomeHeroHeader with user display name, level badge, and habit focus',
       (tester) async {
         await pumpHomeScreen(tester);
 
-        expect(find.byType(CommandPod), findsOneWidget);
-        expect(find.text('Aria'), findsOneWidget);
+        expect(find.byType(HomeHeroHeader), findsOneWidget);
+        expect(find.textContaining('Aria'), findsOneWidget);
         expect(find.text('15'), findsOneWidget); // Level 15 badge
-        expect(find.text('COMMANDER'), findsOneWidget);
+        expect(find.text('1 lesson to reach daily goal'), findsOneWidget);
       },
     );
 
     testWidgets(
-      'renders Rookie rank badge for a level 1 user',
+      'renders level 1 and habit focus for a new learner',
       (tester) async {
         const rookieUser = UserEntity(
           id: 'user_rookie',
@@ -393,8 +393,9 @@ void main() {
 
         await pumpHomeScreen(tester);
 
-        expect(find.text('ROOKIE'), findsOneWidget);
+        expect(find.textContaining('New Learner'), findsOneWidget);
         expect(find.text('1'), findsWidgets);
+        expect(find.text('1 lesson to reach daily goal'), findsOneWidget);
       },
     );
   });
@@ -436,7 +437,7 @@ void main() {
 
         expect(find.byType(UnifiedStatsRow), findsOneWidget);
         expect(find.text('12'), findsWidgets); // Current streak
-        expect(find.text('350'), findsOneWidget); // Coins
+        expect(find.descendant(of: find.byType(UnifiedStatsRow), matching: find.text('350')), findsOneWidget); // Coins in UnifiedStatsRow
         expect(find.text('2'), findsWidgets); // Badges count
         expect(find.text('#1'), findsWidgets); // Global rank from mock repo
       },
