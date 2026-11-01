@@ -726,8 +726,9 @@ class _WordGamesBottomSheet extends StatelessWidget {
             color: IllustrationColors.vibrantPink,
             isDark: isDark,
             onTap: () {
+              final router = GoRouter.of(context);
               Navigator.of(context).pop();
-              context.push(AppRouter.wordSnapRoute);
+              router.push(AppRouter.wordSnapRoute);
             },
           ),
           SizedBox(height: 10.h),
@@ -747,8 +748,9 @@ class _WordGamesBottomSheet extends StatelessWidget {
             color: IllustrationColors.richPurple,
             isDark: isDark,
             onTap: () {
+              final router = GoRouter.of(context);
               Navigator.of(context).pop();
-              context.push(AppRouter.wordMixerRoute);
+              router.push(AppRouter.wordMixerRoute);
             },
           ),
         ],
@@ -967,8 +969,9 @@ class _ToolsDirectoryBottomSheet extends StatelessWidget {
                           color: tool.color,
                           isDark: isDark,
                           onTap: () {
+                            final router = GoRouter.of(context);
                             Navigator.of(context).pop();
-                            context.push(tool.route);
+                            router.push(tool.route);
                           },
                         ),
                       ),
@@ -982,8 +985,12 @@ class _ToolsDirectoryBottomSheet extends StatelessWidget {
           // Bottom Trigger to Full App Feature Catalog (100+ Features)
           ScaleButton(
             onTap: () {
+              final nav = Navigator.of(context, rootNavigator: true);
+              final rootContext = nav.context;
               Navigator.of(context).pop();
-              FeatureDirectoryBottomSheet.show(context);
+              if (rootContext.mounted) {
+                FeatureDirectoryBottomSheet.show(rootContext);
+              }
             },
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
