@@ -1,27 +1,35 @@
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/game_helper.dart';
-import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
-/// Bento grid component showcasing core language arenas and curriculum progression.
+/// Bento arena curriculum hub showcasing the 9 sequential language disciplines.
+///
+/// Features:
+/// 1. Top Spotlight Focus Hero Card (Active or Foundational Discipline).
+/// 2. 2-Column Bento Subgrid with subtle authentic category-tinted borders.
+/// 3. The Discipline Bubble Dock: interactive toggle displaying upcoming category
+///    bubbles with harmonized colors, haptic feedback, and smooth expansion.
 class BentoArena extends StatefulWidget {
   /// Current authenticated [user] entity.
   final UserEntity user;
 
-  /// Whether the arena displays in compact/collapsed mode.
+  /// Whether the arena begins in compact/collapsed mode.
   final bool collapsed;
 
-  /// Creates a [BentoArena] for [user].
+  /// Creates a [BentoArena] instance.
   const BentoArena({super.key, required this.user, this.collapsed = false});
 
-  static const List<QuestType> _journeySteps = [
+  /// Canonical sequential learning journey order across all 9 disciplines.
+  static const List<QuestType> journeySteps = [
     QuestType.vocabulary, // Step 1: Words
     QuestType.listening, // Step 2: Input
     QuestType.reading, // Step 3: Literacy
@@ -32,6 +40,30 @@ class BentoArena extends StatefulWidget {
     QuestType.roleplay, // Step 8: Mastery
     QuestType.eliteMastery, // Step 9: Legendary
   ];
+
+  /// Returns the human-readable, title-cased display title for a [QuestType].
+  static String formatCategoryTitle(QuestType type) {
+    switch (type) {
+      case QuestType.vocabulary:
+        return 'Vocabulary';
+      case QuestType.listening:
+        return 'Listening';
+      case QuestType.reading:
+        return 'Reading';
+      case QuestType.grammar:
+        return 'Grammar';
+      case QuestType.writing:
+        return 'Writing';
+      case QuestType.speaking:
+        return 'Speaking';
+      case QuestType.accent:
+        return 'Accent';
+      case QuestType.roleplay:
+        return 'Roleplay';
+      case QuestType.eliteMastery:
+        return 'Elite Mastery';
+    }
+  }
 
   @override
   State<BentoArena> createState() => _BentoArenaState();
@@ -46,160 +78,91 @@ class _BentoArenaState extends State<BentoArena> {
     _isExpanded = ValueNotifier(!widget.collapsed);
   }
 
-  /// Returns the indices of the 3 categories to show in collapsed mode:
-  /// the first uncompleted category and its neighbors.
-  List<int> _getCollapsedIndices() {
-    final steps = BentoArena._journeySteps;
-    // Find first uncompleted category
-    int focusIndex = 0;
-    for (int i = 0; i < steps.length; i++) {
-      final cleared = widget.user.getTotalCategoryLevelsCleared(steps[i]);
-      final max = widget.user.getMaxCategoryLevels(steps[i]);
-      if (max > 0 && cleared < max) {
-        focusIndex = i;
-        break;
-      }
-    }
-    // Show: previous, current, next (clamped to bounds)
-    final start = (focusIndex - 1).clamp(0, steps.length - 3);
-    return [start, start + 1, start + 2];
-  }
-
   @override
   void dispose() {
     _isExpanded.dispose();
     super.dispose();
   }
 
+  /// Returns the index of the first uncompleted discipline in the curriculum.
+  int _getFocusIndex() {
+    final steps = BentoArena.journeySteps;
+    for (int i = 0; i < steps.length; i++) {
+      final cleared = widget.user.getTotalCategoryLevelsCleared(steps[i]);
+      final max = widget.user.getMaxCategoryLevels(steps[i]);
+      if (max > 0 && cleared < max) {
+        return i;
+      }
+    }
+    return 0;
+  }
+
+  void _triggerHaptic() {
+    try {
+      di.sl<HapticService>().selection();
+    } catch (_) {}
+  }
+
+  void _navigateToCategory(BuildContext context, QuestType type) {
+    _triggerHaptic();
+    context.push(
+      '${AppRouter.categoryGamesRoute}?category=${Uri.encodeQueryComponent(type.name)}',
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isRtl = Directionality.of(context) == TextDirection.rtl;
-    final allSteps = BentoArena._journeySteps;
+    final focusIndex = _getFocusIndex();
+    final allSteps = BentoArena.journeySteps;
 
-    // Determine which steps to render
-    final collapsedIndices = _getCollapsedIndices();
+    // Step 1: Foundational / Hero Discipline
+    final heroStep = allSteps[0];
+    final isHeroFocus = focusIndex == 0;
+
+    // Steps 2 to 5: Core 2x2 Bento Disciplines
+    final coreSteps = allSteps.sublist(1, 5);
+
+    // Steps 6 to 9: Advanced Disciplines (in dock when collapsed, in grid when expanded)
+    final advancedSteps = allSteps.sublist(5);
 
     return ValueListenableBuilder<bool>(
       valueListenable: _isExpanded,
       builder: (context, isExpanded, _) {
-        final visibleSteps = isExpanded
-            ? List.generate(allSteps.length, (i) => i)
-            : collapsedIndices;
-
         return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Stack(
-              children: [
-                // The Journey Path Line
-                Positioned.fill(
-                  child: RepaintBoundary(
-                    child: CustomPaint(
-                      painter: JourneyPathPainter(
-                        isDark: isDark,
-                        isRtl: isRtl,
-                        stepsCount: visibleSteps.length,
-                        types: visibleSteps.map((i) => allSteps[i]).toList(),
-                      ),
-                    ),
-                  ),
-                ),
-                // The Step Cards
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20.h),
-                  child: Column(
-                    children: List.generate(visibleSteps.length, (vi) {
-                      final actualIndex = visibleSteps[vi];
-                      final isLeft = vi % 2 == 0;
-                      final isLast = vi == visibleSteps.length - 1;
-                      // Mirror the zig-zag so the journey still visually winds
-                      // from the reading-start side in RTL locales.
-                      final visualLeft = isRtl ? !isLeft : isLeft;
-                      return Padding(
-                        padding: EdgeInsets.only(bottom: isLast ? 0 : 40.h),
-                        child: Align(
-                          alignment: visualLeft
-                              ? Alignment.centerLeft
-                              : Alignment.centerRight,
-                          child: FractionallySizedBox(
-                            widthFactor: 0.85,
-                            child: _BentoCategoryTile(
-                              type: allSteps[actualIndex],
-                              user: widget.user,
-                              step: actualIndex + 1,
-                              isLeft: visualLeft,
-                            ),
-                          ),
-                        ),
-                      );
-                    }),
-                  ),
-                ),
-              ],
+            // 1. LEAD FOCUS HERO CARD (Step 1)
+            _BentoHeroCard(
+              type: heroStep,
+              user: widget.user,
+              step: 1,
+              totalSteps: allSteps.length,
+              isCurrentFocus: isHeroFocus,
+              onTap: () => _navigateToCategory(context, heroStep),
+            ),
+            SizedBox(height: 10.h),
+
+            // 2. 2-COLUMN BENTO SUBGRID (Steps 2 to 5, plus Steps 6 to 9 when expanded)
+            _BentoSubgrid(
+              steps: isExpanded ? allSteps.sublist(1) : coreSteps,
+              user: widget.user,
+              focusIndex: focusIndex,
+              onCategoryTap: (type) => _navigateToCategory(context, type),
             ),
 
-            // Expand / Collapse button
+            // 3. THE DISCIPLINE BUBBLE DOCK (Expander Toggle & Teaser Bubbles)
             if (widget.collapsed) ...[
-              SizedBox(height: 16.h),
-              Center(
-                child: ScaleButton(
-                  onTap: () => _isExpanded.value = !_isExpanded.value,
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 24.w,
-                      vertical: 12.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.indigo500.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(20.r),
-                      border: Border.all(
-                        color: AppColors.indigo500.withValues(alpha: 0.3),
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Flexible(
-                          child: Text(
-                            isExpanded
-                                ? context.tr(
-                                    'home.show_less',
-                                    fallback: 'Show Less',
-                                  )
-                                : context.tr(
-                                    'home.see_all_categories',
-                                    fallback: 'See All 9 Categories',
-                                  ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w800,
-                              color: AppColors.indigo500,
-                              letterSpacing: 0.5,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        SizedBox(width: 8.w),
-                        AnimatedRotation(
-                          turns: isExpanded ? 0.5 : 0,
-                          duration: const Duration(milliseconds: 300),
-                          child: Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: const Color(
-                              0xFF6366F1,
-                            ).withValues(alpha: 0.7),
-                            size: 20.r,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+              SizedBox(height: 12.h),
+              _DisciplineBubbleDock(
+                isExpanded: isExpanded,
+                advancedSteps: advancedSteps,
+                isDark: isDark,
+                onToggleExpand: () {
+                  _triggerHaptic();
+                  _isExpanded.value = !_isExpanded.value;
+                },
+                onCategoryTap: (type) => _navigateToCategory(context, type),
               ),
             ],
           ],
@@ -209,18 +172,23 @@ class _BentoArenaState extends State<BentoArena> {
   }
 }
 
-class _BentoCategoryTile extends StatelessWidget {
-  const _BentoCategoryTile({
-    required this.type,
-    required this.user,
-    required this.step,
-    required this.isLeft,
-  });
-
+/// The prominent Hero Card for the foundational discipline (Step 1).
+class _BentoHeroCard extends StatelessWidget {
   final QuestType type;
   final UserEntity user;
   final int step;
-  final bool isLeft;
+  final int totalSteps;
+  final bool isCurrentFocus;
+  final VoidCallback onTap;
+
+  const _BentoHeroCard({
+    required this.type,
+    required this.user,
+    required this.step,
+    required this.totalSteps,
+    required this.isCurrentFocus,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -229,9 +197,11 @@ class _BentoCategoryTile extends StatelessWidget {
     final icon = GameHelper.getIconForCategory(type);
     final totalCleared = user.getTotalCategoryLevelsCleared(type);
     final maxLevels = user.getMaxCategoryLevels(type);
+    final progress =
+        maxLevels > 0 ? (totalCleared / maxLevels).clamp(0.0, 1.0) : 0.0;
+    final isCompleted = maxLevels > 0 && totalCleared >= maxLevels;
+    final categoryName = BentoArena.formatCategoryTitle(type);
 
-    // Progress matches the text exactly (total / max)
-    final progress = maxLevels > 0 ? (totalCleared / maxLevels) : 0.0;
     final stepLabel = context.tr(
       'home.step',
       fallback: 'Step',
@@ -239,208 +209,234 @@ class _BentoCategoryTile extends StatelessWidget {
     );
     final levelsLabel = context.tr(
       'home.levels_cleared_max',
-      fallback: 'Max Levels Cleared',
+      fallback: '$totalCleared of $maxLevels Levels Cleared',
       args: [totalCleared.toString(), maxLevels.toString()],
     );
 
     return Semantics(
       button: true,
-      label: '$stepLabel ${type.name}. $levelsLabel',
+      label: '$stepLabel $categoryName. $levelsLabel',
       child: ScaleButton(
-        onTap: () => context.push(
-          '${AppRouter.categoryGamesRoute}?category=${Uri.encodeQueryComponent(type.name)}',
-        ),
-        child: ExcludeSemantics(
-          child: Container(
-            decoration: BoxDecoration(
-              color: isDark ? AppColors.slate900 : AppColors.slate50,
-              borderRadius: BorderRadius.circular(28.r),
-              boxShadow: [
-                BoxShadow(
-                  color: color.withValues(alpha: 0.1),
-                  blurRadius: 30,
-                  offset: const Offset(0, 15),
-                ),
-              ],
+        onTap: onTap,
+        child: Container(
+          padding: EdgeInsets.all(16.r),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF131A29) : Colors.white,
+            borderRadius: BorderRadius.circular(22.r),
+            border: Border.all(
+              color: color.withValues(alpha: isDark ? 0.30 : 0.22),
+              width: 1.2.r,
             ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(28.r),
-              child: Container(
-                padding: EdgeInsets.all(20.r),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: isDark
-                        ? [
-                            Colors.white.withValues(alpha: 0.12),
-                            Colors.white.withValues(alpha: 0.05),
-                          ]
-                        : [Colors.white, Colors.white.withValues(alpha: 0.8)],
-                  ),
-                  borderRadius: BorderRadius.circular(28.r),
-                  border: Border.all(
-                    color: color.withValues(alpha: isDark ? 0.3 : 0.2),
-                    width: 1.5,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: isDark
-                          ? Colors.black.withValues(alpha: 0.05)
-                          : color.withValues(alpha: 0.08),
-                      blurRadius: 20,
-                      offset: const Offset(0, 10),
-                    ),
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    if (isLeft) ...[
-                      // Icon Container with Pulse
-                      Container(
-                        padding: EdgeInsets.all(14.r),
-                        decoration: BoxDecoration(
-                          color: color.withValues(alpha: 0.1),
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: color.withValues(alpha: 0.2),
-                              blurRadius: 10,
-                              spreadRadius: 2,
-                            ),
-                          ],
-                        ),
-                        child: Icon(icon, color: color, size: 26.r),
+            boxShadow: [
+              BoxShadow(
+                color: color.withValues(alpha: isDark ? 0.10 : 0.05),
+                blurRadius: 18.r,
+                offset: Offset(0, 6.r),
+              ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Top Header Row
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // Status Pill
+                  Flexible(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10.w,
+                        vertical: 4.h,
                       ),
-                      SizedBox(width: 20.w),
-                    ],
-                    // Content Section
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: isLeft
-                            ? CrossAxisAlignment.start
-                            : CrossAxisAlignment.end,
+                      decoration: BoxDecoration(
+                        color: isCompleted
+                            ? AppColors.emerald500.withValues(
+                                alpha: isDark ? 0.16 : 0.10,
+                              )
+                            : color.withValues(alpha: isDark ? 0.14 : 0.08),
+                        borderRadius: BorderRadius.circular(100.r),
+                        border: Border.all(
+                          color: isCompleted
+                              ? AppColors.emerald500.withValues(
+                                  alpha: isDark ? 0.35 : 0.25,
+                                )
+                              : color.withValues(alpha: isDark ? 0.32 : 0.22),
+                          width: 1.r,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
-                          // Step Badge
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 10.w,
-                              vertical: 4.h,
+                          if (isCompleted) ...[
+                            Icon(
+                              Icons.check_circle_rounded,
+                              size: 12.r,
+                              color: AppColors.emerald500,
                             ),
-                            decoration: BoxDecoration(
-                              color: color.withValues(alpha: 0.15),
-                              borderRadius: BorderRadius.circular(20.r),
-                              border: Border.all(
-                                color: color.withValues(alpha: 0.3),
+                            SizedBox(width: 4.w),
+                          ] else if (isCurrentFocus) ...[
+                            Container(
+                              width: 6.r,
+                              height: 6.r,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: color,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: color.withValues(alpha: 0.6),
+                                    blurRadius: 4.r,
+                                  ),
+                                ],
                               ),
                             ),
+                            SizedBox(width: 5.w),
+                          ],
+                          Flexible(
                             child: Text(
-                              stepLabel,
+                              isCompleted
+                                  ? 'COMPLETED'
+                                  : isCurrentFocus
+                                  ? 'CURRENT FOCUS'
+                                  : 'STEP $step',
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w900,
-                                color: color,
-                                letterSpacing: 1.5,
+                                fontSize: 10.5.sp,
+                                fontWeight: FontWeight.w800,
+                                color: isCompleted ? AppColors.emerald500 : color,
+                                letterSpacing: 0.6,
                               ),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
                           ),
-                          SizedBox(height: 12.h),
-                          // Title
-                          FittedBox(
-                            fit: BoxFit.scaleDown,
-                            alignment: isLeft
-                                ? Alignment.centerLeft
-                                : Alignment.centerRight,
-                            child: Text(
-                              type.name.toUpperCase(),
-                              maxLines: 1,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w900,
-                                color: isDark
-                                    ? Colors.white
-                                    : AppColors.slate900,
-                                letterSpacing: 1.2,
-                                height: 1,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 12.h),
-                          // Progress
-                          _bentoProgressLine(context, progress, color),
-                          SizedBox(height: 6.h),
-                          Text(
-                            levelsLabel,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w800,
-                              color: color,
-                              letterSpacing: 0.5,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
                         ],
                       ),
                     ),
-                    if (!isLeft) ...[
-                      SizedBox(width: 20.w),
-                      // Icon Container with Pulse
-                      Container(
-                        padding: EdgeInsets.all(14.r),
-                        decoration: BoxDecoration(
-                          color: color.withValues(alpha: 0.1),
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: color.withValues(alpha: 0.2),
-                              blurRadius: 10,
-                              spreadRadius: 2,
-                            ),
-                          ],
-                        ),
-                        child: Icon(icon, color: color, size: 26.r),
+                  ),
+                  SizedBox(width: 8.w),
+                  // Step Indicator
+                  Text(
+                    'Step $step of $totalSteps',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isDark ? AppColors.slate400 : AppColors.slate500,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 14.h),
+
+              // Middle Body Row (Icon + Titles)
+              Row(
+                children: [
+                  Container(
+                    width: 44.r,
+                    height: 44.r,
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: isDark ? 0.14 : 0.09),
+                      borderRadius: BorderRadius.circular(14.r),
+                      border: Border.all(
+                        color: color.withValues(alpha: isDark ? 0.30 : 0.20),
+                        width: 1.r,
                       ),
-                    ],
-                  ],
+                    ),
+                    child: Center(
+                      child: Icon(icon, color: color, size: 24.r),
+                    ),
+                  ),
+                  SizedBox(width: 12.w),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '$categoryName Arena',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w900,
+                            color: isDark ? Colors.white : AppColors.slate900,
+                            letterSpacing: -0.2,
+                            height: 1.15,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        SizedBox(height: 3.h),
+                        Text(
+                          levelsLabel,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.5.sp,
+                            fontWeight: FontWeight.w600,
+                            color: isDark
+                                ? AppColors.slate400
+                                : AppColors.slate500,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 14.h),
+
+              // Bottom Progress Bar Row (Solid Color - No Gradients)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Flexible(
+                    child: Text(
+                      'Curriculum Progress',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.5.sp,
+                        fontWeight: FontWeight.w700,
+                        color: isDark ? AppColors.slate400 : AppColors.slate500,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  SizedBox(width: 8.w),
+                  Text(
+                    '${(progress * 100).toInt()}%',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w800,
+                      color: color,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 6.h),
+              Container(
+                height: 6.h,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate200,
+                  borderRadius: BorderRadius.circular(100.r),
+                ),
+                child: FractionallySizedBox(
+                  alignment: Alignment.centerLeft,
+                  widthFactor: progress.clamp(0.02, 1.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: color, // Authentic Solid Category Color
+                      borderRadius: BorderRadius.circular(100.r),
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _bentoProgressLine(
-    BuildContext context,
-    double progress,
-    Color color,
-  ) {
-    return Container(
-      height: 4.h,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(10.r),
-      ),
-      child: FractionallySizedBox(
-        alignment: isLeft ? Alignment.centerLeft : Alignment.centerRight,
-        widthFactor: progress.clamp(
-          0.02,
-          1.0,
-        ), // Minimum 2% visibility so it's never completely invisible
-        child: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [color, color.withValues(alpha: 0.6)],
-            ),
-            borderRadius: BorderRadius.circular(10.r),
+            ],
           ),
         ),
       ),
@@ -448,122 +444,459 @@ class _BentoCategoryTile extends StatelessWidget {
   }
 }
 
-/// Paints the curved learning journey path linking sequential bento quest arena nodes.
-class JourneyPathPainter extends CustomPainter {
-  /// Whether dark theme styling is active.
-  final bool isDark;
+/// 2-Column Bento Subgrid rendering curriculum discipline tiles.
+class _BentoSubgrid extends StatelessWidget {
+  final List<QuestType> steps;
+  final UserEntity user;
+  final int focusIndex;
+  final ValueChanged<QuestType> onCategoryTap;
 
-  /// Whether the interface direction is right-to-left.
-  final bool isRtl;
-
-  /// The total count of curriculum step nodes along the path.
-  final int stepsCount;
-
-  /// The sequence of quest types positioned along the journey.
-  final List<QuestType> types;
-
-  /// Creates a [JourneyPathPainter] instance.
-  JourneyPathPainter({
-    required this.isDark,
-    required this.isRtl,
-    required this.stepsCount,
-    required this.types,
+  const _BentoSubgrid({
+    required this.steps,
+    required this.user,
+    required this.focusIndex,
+    required this.onCategoryTap,
   });
 
   @override
-  void paint(Canvas canvas, Size size) {
-    final stepHeight = size.height / stepsCount;
-    final List<Offset> points = [];
+  Widget build(BuildContext context) {
+    final rows = <Widget>[];
+    for (int i = 0; i < steps.length; i += 2) {
+      final leftType = steps[i];
+      final rightType = (i + 1 < steps.length) ? steps[i + 1] : null;
 
-    // 1. Calculate Points
-    for (int i = 0; i < stepsCount; i++) {
-      final isLeft = i % 2 == 0;
-      final visualLeft = isRtl ? !isLeft : isLeft;
-      final x = visualLeft ? size.width * 0.15 : size.width * 0.85;
-      final y = (i * stepHeight) + (stepHeight / 2);
-      points.add(Offset(x, y));
-    }
+      // Find real canonical step index (1-based)
+      final leftCanonicalIndex = BentoArena.journeySteps.indexOf(leftType) + 1;
+      final rightCanonicalIndex = rightType != null
+          ? BentoArena.journeySteps.indexOf(rightType) + 1
+          : null;
 
-    // 2. Draw the Triple Fiber-Optic Path
-    for (int i = 0; i < points.length - 1; i++) {
-      final p1 = points[i];
-      final p2 = points[i + 1];
-      final c1 = GameHelper.getCategoryColor(types[i].name);
-      final c2 = GameHelper.getCategoryColor(types[i + 1].name);
-
-      final segmentPath = Path();
-      segmentPath.moveTo(p1.dx, p1.dy);
-      final midY = (p1.dy + p2.dy) / 2;
-      segmentPath.cubicTo(p1.dx, midY, p2.dx, midY, p2.dx, p2.dy);
-
-      // We still use a slight fade for extra smoothness, but the "Solid Mask" will do the heavy lifting
-      final List<Color> colors = [
-        c1.withValues(alpha: 0.1),
-        c1.withValues(alpha: 0.4),
-        c2.withValues(alpha: 0.4),
-        c2.withValues(alpha: 0.1),
-      ];
-      final stops = [0.0, 0.2, 0.8, 1.0];
-
-      final basePaint = Paint()
-        ..style = PaintingStyle.stroke
-        ..strokeCap = StrokeCap.round
-        ..shader = LinearGradient(
-          colors: colors,
-          stops: stops,
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        ).createShader(Rect.fromPoints(p1, p2));
-
-      // --- Draw 3 Sharp Fiber Lines ---
-
-      // 1. Center Core
-      canvas.drawPath(segmentPath, basePaint..strokeWidth = 2.r);
-
-      // 2. Left Fiber
-      canvas.save();
-      canvas.translate(-5.w, 0);
-      canvas.drawPath(
-        segmentPath,
-        basePaint
-          ..strokeWidth = 0.8.r
-          ..shader = LinearGradient(
-            colors: colors.map((c) => c.withValues(alpha: c.a * 0.5)).toList(),
-            stops: stops,
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ).createShader(Rect.fromPoints(p1, p2)),
+      rows.add(
+        Padding(
+          padding: EdgeInsets.only(bottom: 10.h),
+          child: Row(
+            children: [
+              Expanded(
+                child: _BentoGridCell(
+                  type: leftType,
+                  user: user,
+                  step: leftCanonicalIndex,
+                  isCurrentFocus: (leftCanonicalIndex - 1) == focusIndex,
+                  onTap: () => onCategoryTap(leftType),
+                ),
+              ),
+              SizedBox(width: 10.w),
+              Expanded(
+                child: rightType != null
+                    ? _BentoGridCell(
+                        type: rightType,
+                        user: user,
+                        step: rightCanonicalIndex!,
+                        isCurrentFocus: (rightCanonicalIndex - 1) == focusIndex,
+                        onTap: () => onCategoryTap(rightType),
+                      )
+                    : const SizedBox.shrink(),
+              ),
+            ],
+          ),
+        ),
       );
-      canvas.restore();
-
-      // 3. Right Fiber
-      canvas.save();
-      canvas.translate(5.w, 0);
-      canvas.drawPath(segmentPath, basePaint..strokeWidth = 0.8.r);
-      canvas.restore();
     }
 
-    // 3. Draw Nodes (Glow Dots)
-    for (int i = 0; i < points.length; i++) {
-      final p = points[i];
-      final c = GameHelper.getCategoryColor(types[i].name);
-
-      canvas.drawCircle(
-        p,
-        12.r,
-        Paint()
-          ..color = c.withValues(alpha: 0.1)
-          ..maskFilter = MaskFilter.blur(BlurStyle.normal, 8.r),
-      );
-
-      canvas.drawCircle(p, 5.r, Paint()..color = c.withValues(alpha: 0.4));
-    }
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: rows,
+    );
   }
+}
+
+/// Inset Bento Cell representing a single discipline in the 2-column grid.
+class _BentoGridCell extends StatelessWidget {
+  final QuestType type;
+  final UserEntity user;
+  final int step;
+  final bool isCurrentFocus;
+  final VoidCallback onTap;
+
+  const _BentoGridCell({
+    required this.type,
+    required this.user,
+    required this.step,
+    required this.isCurrentFocus,
+    required this.onTap,
+  });
 
   @override
-  bool shouldRepaint(covariant JourneyPathPainter oldDelegate) =>
-      oldDelegate.isDark != isDark ||
-      oldDelegate.isRtl != isRtl ||
-      oldDelegate.stepsCount != stepsCount ||
-      !listEquals(oldDelegate.types, types);
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final color = GameHelper.getCategoryColor(type.name);
+    final icon = GameHelper.getIconForCategory(type);
+    final totalCleared = user.getTotalCategoryLevelsCleared(type);
+    final maxLevels = user.getMaxCategoryLevels(type);
+    final progress =
+        maxLevels > 0 ? (totalCleared / maxLevels).clamp(0.0, 1.0) : 0.0;
+    final isCompleted = maxLevels > 0 && totalCleared >= maxLevels;
+    final categoryName = BentoArena.formatCategoryTitle(type);
+
+    final stepLabel = context.tr(
+      'home.step',
+      fallback: 'Step',
+      args: [step.toString()],
+    );
+    final levelsLabel = context.tr(
+      'home.levels_cleared_max',
+      fallback: '$totalCleared / $maxLevels Cleared',
+      args: [totalCleared.toString(), maxLevels.toString()],
+    );
+
+    return Semantics(
+      button: true,
+      label: '$stepLabel $categoryName. $levelsLabel',
+      child: ScaleButton(
+        onTap: onTap,
+        child: Container(
+          constraints: BoxConstraints(minHeight: 104.h),
+          padding: EdgeInsets.all(12.r),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF131A29) : Colors.white,
+            borderRadius: BorderRadius.circular(18.r),
+            border: Border.all(
+              color: color.withValues(alpha: isDark ? 0.30 : 0.22),
+              width: 1.2.r,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: color.withValues(alpha: isDark ? 0.08 : 0.04),
+                blurRadius: 10.r,
+                offset: Offset(0, 3.r),
+              ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // Top Cell Header (Halo Icon + Step Pill)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    width: 32.r,
+                    height: 32.r,
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: isDark ? 0.14 : 0.09),
+                      borderRadius: BorderRadius.circular(10.r),
+                      border: Border.all(
+                        color: color.withValues(alpha: isDark ? 0.25 : 0.16),
+                        width: 1.r,
+                      ),
+                    ),
+                    child: Center(
+                      child: Icon(icon, color: color, size: 16.r),
+                    ),
+                  ),
+                  SizedBox(width: 4.w),
+                  Flexible(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 6.w,
+                        vertical: 2.5.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: isCompleted
+                            ? AppColors.emerald500.withValues(
+                                alpha: isDark ? 0.15 : 0.10,
+                              )
+                            : color.withValues(alpha: isDark ? 0.12 : 0.08),
+                        borderRadius: BorderRadius.circular(6.r),
+                      ),
+                      child: Text(
+                        isCompleted
+                            ? '✓ DONE'
+                            : isCurrentFocus
+                            ? 'FOCUS'
+                            : 'STEP $step',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w800,
+                          color: isCompleted ? AppColors.emerald500 : color,
+                          letterSpacing: 0.5,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 8.h),
+
+              // Title & Levels Count
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    categoryName,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                      letterSpacing: -0.2,
+                      height: 1.15,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  SizedBox(height: 2.h),
+                  Text(
+                    '$totalCleared / $maxLevels Cleared',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.5.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isDark ? AppColors.slate400 : AppColors.slate500,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+              SizedBox(height: 6.h),
+
+              // Solid Progress Line
+              Container(
+                height: 4.h,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.06)
+                      : AppColors.slate200,
+                  borderRadius: BorderRadius.circular(100.r),
+                ),
+                child: FractionallySizedBox(
+                  alignment: Alignment.centerLeft,
+                  widthFactor: progress.clamp(0.02, 1.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: color, // Solid Category Color
+                      borderRadius: BorderRadius.circular(100.r),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// The Discipline Bubble Dock: interactive expander shelf showing upcoming discipline bubbles.
+class _DisciplineBubbleDock extends StatelessWidget {
+  final bool isExpanded;
+  final List<QuestType> advancedSteps;
+  final bool isDark;
+  final VoidCallback onToggleExpand;
+  final ValueChanged<QuestType> onCategoryTap;
+
+  const _DisciplineBubbleDock({
+    required this.isExpanded,
+    required this.advancedSteps,
+    required this.isDark,
+    required this.onToggleExpand,
+    required this.onCategoryTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+      decoration: BoxDecoration(
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.03)
+            : Colors.white,
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.08)
+              : AppColors.slate200,
+          width: 1.r,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.20)
+                : AppColors.slate900.withValues(alpha: 0.03),
+            blurRadius: 10.r,
+            offset: Offset(0, 3.r),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // Header Row: Title & Subtitle on left, Pill Button on right
+          Wrap(
+            alignment: WrapAlignment.spaceBetween,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            runSpacing: 8.h,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    isExpanded ? 'All 9 Arenas Active' : 'More Arenas',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                      letterSpacing: -0.2,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  SizedBox(height: 2.h),
+                  Text(
+                    isExpanded
+                        ? 'Tap to collapse view'
+                        : '${advancedSteps.length} arenas ready to explore',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.5.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isDark ? AppColors.slate400 : AppColors.slate500,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+              ScaleButton(
+                onTap: onToggleExpand,
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 6.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.indigo500.withValues(
+                      alpha: isDark ? 0.15 : 0.08,
+                    ),
+                    borderRadius: BorderRadius.circular(100.r),
+                    border: Border.all(
+                      color: AppColors.indigo500.withValues(
+                        alpha: isDark ? 0.35 : 0.25,
+                      ),
+                      width: 1.r,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Flexible(
+                        child: Text(
+                          isExpanded
+                              ? context.tr(
+                                  'home.show_less',
+                                  fallback: 'Show Less',
+                                )
+                              : context.tr(
+                                  'home.see_all_categories',
+                                  fallback: 'See All 9 Categories',
+                                ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w800,
+                            color: AppColors.indigo500,
+                            letterSpacing: 0.4,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      SizedBox(width: 4.w),
+                      AnimatedRotation(
+                        turns: isExpanded ? 0.5 : 0,
+                        duration: const Duration(milliseconds: 250),
+                        child: Icon(
+                          Icons.keyboard_arrow_down_rounded,
+                          color: AppColors.indigo500,
+                          size: 16.r,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          // Discipline Bubbles Row (Visible only in collapsed mode)
+          if (!isExpanded) ...[
+            SizedBox(height: 10.h),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              clipBehavior: Clip.none,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: advancedSteps.map((type) {
+                  final color = GameHelper.getCategoryColor(type.name);
+                  final icon = GameHelper.getIconForCategory(type);
+                  final categoryName =
+                      BentoArena.formatCategoryTitle(type);
+
+                  return Padding(
+                    padding: EdgeInsets.only(right: 10.w),
+                    child: Semantics(
+                      button: true,
+                      label: '$categoryName discipline',
+                      child: ScaleButton(
+                        onTap: () => onCategoryTap(type),
+                        child: Container(
+                          width: 36.r,
+                          height: 36.r,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: color.withValues(alpha: isDark ? 0.14 : 0.10),
+                            border: Border.all(
+                              color: color.withValues(
+                                alpha: isDark ? 0.30 : 0.22,
+                              ),
+                              width: 1.2.r,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: color.withValues(
+                                  alpha: isDark ? 0.15 : 0.08,
+                                ),
+                                blurRadius: 6.r,
+                                offset: Offset(0, 2.r),
+                              ),
+                            ],
+                          ),
+                          child: Center(
+                            child: Icon(
+                              icon,
+                              color: color, // Category Color Matched
+                              size: 18.r,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
 }
