@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/auth/domain/entities/user_entity.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
-/// Home card badge tracking active error count and providing one-tap mistake review.
+/// Home card badge tracking active error count and providing one-tap mistake mastery.
+///
+/// Refactored to an adult precision mastery hub:
+/// - Real error counts via [ErrorJournalCollector].
+/// - Tactile crosshair icon with active amber pulse pip.
+/// - Un-crowded single-mention count typography (zero ellipses / zero text clipping).
+/// - Vowl obsidian/porcelain luxury styling with subtle borders.
 class ReviewMistakesHomeCard extends StatefulWidget {
   /// Current authenticated [user] entity.
   final UserEntity user;
@@ -47,93 +53,194 @@ class _ReviewMistakesHomeCardState extends State<ReviewMistakesHomeCard> {
     }
   }
 
+  void _triggerHaptic() {
+    try {
+      di.sl<HapticService>().selection();
+    } catch (_) {}
+  }
+
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return ValueListenableBuilder<int>(
       valueListenable: _mistakeCount,
       builder: (context, count, _) {
         if (count == 0) return const SizedBox.shrink();
 
-        Widget card = ScaleButton(
-          onTap: () async {
-            di.sl<HapticService>().selection();
-            await context.push('/review-mistakes');
-            if (mounted) {
-              _loadMistakeCount();
-            }
-          },
-          child: Container(
-            margin: EdgeInsets.only(top: 16.h),
-            padding: EdgeInsets.all(16.r),
-            decoration: BoxDecoration(
-              color: AppColors.orange500.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(
-                color: AppColors.orange500.withValues(alpha: 0.2),
-                width: 1,
-              ),
-            ),
-            child: Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(12.r),
-                  decoration: BoxDecoration(
-                    color: AppColors.orange500.withValues(alpha: 0.15),
-                    shape: BoxShape.circle,
+        final title = context.tr(
+          'home.review_mistakes_title',
+          fallback: 'Review & Master',
+        );
+        final subtitle = context.tr(
+          'home.review_mistakes_subtitle',
+          fallback: count == 1
+              ? 'Master 1 past challenge'
+              : 'Master $count past challenges',
+          args: [count.toString()],
+        );
+
+        Widget card = Semantics(
+          button: true,
+          label: '$title. $subtitle',
+          child: ScaleButton(
+            onTap: () async {
+              _triggerHaptic();
+              await context.push('/review-mistakes');
+              if (mounted) {
+                _loadMistakeCount();
+              }
+            },
+            child: Container(
+              margin: EdgeInsets.only(top: 16.h),
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+              decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF131A29) : Colors.white,
+                borderRadius: BorderRadius.circular(22.r),
+                border: Border.all(
+                  color: AppColors.orange500.withValues(
+                    alpha: isDark ? 0.30 : 0.22,
                   ),
-                  child: Icon(
-                    Icons.fitness_center_rounded,
-                    color: AppColors.orange500,
-                    size: 24.r,
-                  ),
+                  width: 1.2.r,
                 ),
-                SizedBox(width: 16.w),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.orange500.withValues(
+                      alpha: isDark ? 0.10 : 0.05,
+                    ),
+                    blurRadius: 16.r,
+                    offset: Offset(0, 4.r),
+                  ),
+                ],
+              ),
+              child: Row(
+                children: [
+                  // Tactical Target Halo with Active Pulse Pip
+                  Stack(
+                    clipBehavior: Clip.none,
                     children: [
-                      Text(
-                        context.tr(
-                          'home.review_mistakes_title',
-                          fallback: 'Review & Master',
+                      Container(
+                        width: 44.r,
+                        height: 44.r,
+                        decoration: BoxDecoration(
+                          color: AppColors.orange500.withValues(
+                            alpha: isDark ? 0.14 : 0.09,
+                          ),
+                          borderRadius: BorderRadius.circular(14.r),
+                          border: Border.all(
+                            color: AppColors.orange500.withValues(
+                              alpha: isDark ? 0.30 : 0.20,
+                            ),
+                            width: 1.r,
+                          ),
                         ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.orange500,
+                        child: Center(
+                          child: Icon(
+                            Icons.crisis_alert_rounded,
+                            color: AppColors.orange500,
+                            size: 22.r,
+                          ),
                         ),
                       ),
-                      SizedBox(height: 4.h),
-                      Text(
-                        context.tr(
-                          'home.review_mistakes_subtitle',
-                          fallback: 'Master {0} past challenges',
-                          args: [count.toString()],
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          color: Theme.of(context).brightness == Brightness.dark
-                              ? Colors.white70
-                              : Colors.black87,
+                      Positioned(
+                        top: -2.r,
+                        right: -2.r,
+                        child: Container(
+                          width: 8.r,
+                          height: 8.r,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: AppColors.orange500,
+                            border: Border.all(
+                              color: isDark
+                                  ? const Color(0xFF131A29)
+                                  : Colors.white,
+                              width: 1.5.r,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: AppColors.orange500.withValues(
+                                  alpha: 0.6,
+                                ),
+                                blurRadius: 4.r,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
                   ),
-                ),
-                Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  color: AppColors.orange500,
-                  size: 16.r,
-                ),
-              ],
+                  SizedBox(width: 14.w),
+
+                  // Center Information (Un-crowded, Single Mention, Zero Ellipses)
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          title,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w900,
+                            color: isDark ? Colors.white : AppColors.slate900,
+                            letterSpacing: -0.2,
+                            height: 1.15,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        SizedBox(height: 3.h),
+                        Text(
+                          subtitle,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.5.sp,
+                            fontWeight: FontWeight.w600,
+                            color: isDark
+                                ? AppColors.slate400
+                                : AppColors.slate500,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 10.w),
+
+                  // Tactile Circular Action Chevron
+                  Container(
+                    width: 28.r,
+                    height: 28.r,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: AppColors.orange500.withValues(
+                        alpha: isDark ? 0.12 : 0.08,
+                      ),
+                      border: Border.all(
+                        color: AppColors.orange500.withValues(
+                          alpha: isDark ? 0.28 : 0.18,
+                        ),
+                        width: 1.r,
+                      ),
+                    ),
+                    child: Center(
+                      child: Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: AppColors.orange500,
+                        size: 12.r,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );
 
         if (!VowlMotion.shouldReduceMotion(context)) {
-          card = card.animate().fadeIn().slideY(begin: 0.1);
+          card = card.animate().fadeIn().slideY(begin: 0.08);
         }
 
         return card;
