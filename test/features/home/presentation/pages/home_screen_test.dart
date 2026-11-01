@@ -758,7 +758,11 @@ void main() {
       (tester) async {
         await pumpHomeScreen(tester);
 
-        homeScrollController.jumpTo(1050);
+        await tester.scrollUntilVisible(
+          find.byType(DiscoveryDeck),
+          300,
+          scrollable: find.byType(Scrollable).first,
+        );
         await tester.pumpAndSettle();
 
         expect(find.text('DISCOVERY HUB'), findsOneWidget);
@@ -771,7 +775,11 @@ void main() {
       (tester) async {
         await pumpHomeScreen(tester);
 
-        homeScrollController.jumpTo(1050);
+        await tester.scrollUntilVisible(
+          find.byType(DiscoveryDeck),
+          300,
+          scrollable: find.byType(Scrollable).first,
+        );
         await tester.pumpAndSettle();
 
         final discoveryDeck = find.byType(DiscoveryDeck);
@@ -795,7 +803,11 @@ void main() {
       (tester) async {
         await pumpHomeScreen(tester);
 
-        homeScrollController.jumpTo(1400);
+        await tester.scrollUntilVisible(
+          find.byType(DailyMotivationCard),
+          300,
+          scrollable: find.byType(Scrollable).first,
+        );
         await tester.pumpAndSettle();
 
         expect(find.byType(DailyMotivationCard), findsOneWidget);

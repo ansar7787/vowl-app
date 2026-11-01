@@ -1,423 +1,388 @@
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/presentation/feature_catalog/feature_directory_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/core/presentation/feature_catalog/feature_directory_bottom_sheet.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color colorbe123c = Color(0xFFBE123C);
-  static const Color color059669 = Color(0xFF059669);
-}
-
-/// Horizontal scrolling tools strip with a **two-tier visual hierarchy**:
+/// Production-hardened Tools & Utilities Hub (Piece 8).
 ///
-/// ## Design Architecture (10/10 Standard)
-/// 1. **Featured Hero Cards** (first 3): Full-gradient background with
-///    decorative icon watermark, emoji mascot, and larger touch target.
-///    These communicate "start here" through visual weight.
-/// 2. **Compact Utility Cards** (remaining): Glass-tile treatment with
-///    icon + title + metadata pill. Visually lighter = "more options."
-/// 3. **7 unique hues** with ≥40° color-wheel separation.
-/// 4. **blur: 0** on GlassTile to avoid BackdropFilter stacking.
-/// 5. **Right-edge fade** signals scroll continuity.
-/// 6. **Responsive card width** adapts to screen size (SE → Pro Max).
-/// 7. **Long-press tooltip** on every card for discoverability.
+/// Implements **Concept 1: Swiss Duo + 2×2 Precision Bento Grid (Zero Scroll Master)**:
+/// 1. **Kids Zone (Flagship Swiss Card)**: High-prominence, child-safe phonics & games portal.
+/// 2. **Daily Words (Flagship Swiss Card)**: Daily 5-word curated vocabulary accelerator.
+/// 3. **2×2 Precision Bento Grid**:
+///    - **Photo Vocab** (AI Vision Camera)
+///    - **Scan & Learn** (OCR Document Reader)
+///    - **Translate** (50+ Languages Offline)
+///    - **Word Games** (Word Snap & Word Mixer Modal Launcher)
+/// 4. **Compact 32px Directory Pill**: Direct access to all 7 tools and the full catalog.
+///
+/// Zero horizontal scroll drop-off, single-line typography, zero ellipses, and 320dp small-screen safe.
 class ToolsStrip extends StatelessWidget {
   /// Creates a [ToolsStrip] widget.
   const ToolsStrip({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    // Responsive card width: adapts from SE (320dp) to Pro Max (430dp).
-    // Featured cards are wider; compact cards use the narrower size.
-    final compactWidth = (screenWidth * 0.29).clamp(90.0, 130.0).w;
-    final featuredWidth = (screenWidth * 0.42).clamp(140.0, 190.0).w;
-
-    final tools = [
-      // ── FEATURED TIER (gradient hero cards) ───────────────────────
-      _ToolDef(
-        title: context.tr('home.tools_kids_zone', fallback: 'Kids Zone'),
-        subtitle: context.tr('home.tools_kids_fun', fallback: 'Fun & Learn'),
-        tooltip: context.tr(
-          'home.tools_kids_zone_tip',
-          fallback: 'Safe, playful games designed for young learners',
-        ),
-        icon: Icons.child_care_rounded,
-        emoji: '🧩',
-        color: AppColors.rose500, // Rose — 0°
-        darkColor: _LocalPalette.colorbe123c,
-        route: AppRouter.kidsZoneRoute,
-        requiresAd: false,
-        isFeatured: true,
+    return Semantics(
+      container: true,
+      label: context.tr(
+        'home.tools_shelf_label',
+        fallback: 'Explore & Tools: Daily learning utilities and games',
       ),
-      _ToolDef(
-        title: context.tr('home.tools_daily_words', fallback: 'Daily Words'),
-        subtitle: context.tr('home.tools_daily_new', fallback: 'New Today'),
-        tooltip: context.tr(
-          'home.tools_daily_words_tip',
-          fallback: 'Fresh vocabulary words curated every day',
-        ),
-        icon: Icons.menu_book_rounded,
-        emoji: '📖',
-        color: AppColors.amber500, // Amber — 45°
-        darkColor: AppColors.amber600,
-        route: AppRouter.dailyWordsRoute,
-        requiresAd: false,
-        isFeatured: true,
-      ),
-      _ToolDef(
-        title: context.tr('home.translation_title', fallback: 'Translate'),
-        subtitle: context.tr('home.tools_offline_ready', fallback: '50+ Langs'),
-        tooltip: context.tr(
-          'home.tools_translate_tip',
-          fallback: 'Offline translation for 50+ languages',
-        ),
-        icon: Icons.translate_rounded,
-        emoji: '💬',
-        color: AppColors.emerald500, // Emerald — 160°
-        darkColor: _LocalPalette.color059669,
-        route: AppRouter.translateRoute,
-        requiresAd: false,
-        isFeatured: true,
-      ),
-
-      // ── COMPACT TIER (utility cards) ──────────────────────────────
-      _ToolDef(
-        title: context.tr('home.tools_photo_vocab', fallback: 'Photo Vocab'),
-        subtitle: context.tr('home.tools_ai_powered', fallback: 'AI Powered'),
-        tooltip: context.tr(
-          'home.tools_photo_vocab_tip',
-          fallback: 'Point your camera to learn new words instantly',
-        ),
-        icon: Icons.camera_alt_rounded,
-        color: AppColors.blue500, // Blue — 220°
-        route: AppRouter.photoVocabularyRoute,
-        requiresAd: false,
-      ),
-      _ToolDef(
-        title: context.tr('home.tools_scan_learn', fallback: 'Scan & Learn'),
-        subtitle: context.tr('home.tools_instant', fallback: 'Instant'),
-        tooltip: context.tr(
-          'home.tools_scan_learn_tip',
-          fallback: 'Scan any text to get instant definitions',
-        ),
-        icon: Icons.document_scanner_rounded,
-        color: AppColors.teal500, // Teal — 175°
-        route: AppRouter.scanAndLearnRoute,
-        requiresAd: false,
-      ),
-      _ToolDef(
-        title: context.tr('home.tools_word_snap', fallback: 'Word Snap'),
-        subtitle: context.tr('home.tools_brain_game', fallback: 'Brain Game'),
-        tooltip: context.tr(
-          'home.tools_word_snap_tip',
-          fallback: 'Match words and meanings in a fast-paced memory game',
-        ),
-        icon: Icons.extension_rounded,
-        color: IllustrationColors.vibrantPink, // Pink — 330°
-        route: AppRouter.wordSnapRoute,
-        requiresAd: false,
-      ),
-      _ToolDef(
-        title: context.tr('home.tools_word_mixer', fallback: 'Word Mixer'),
-        subtitle: context.tr('home.tools_challenge', fallback: 'Challenge'),
-        tooltip: context.tr(
-          'home.tools_word_mixer_tip',
-          fallback: 'Combine letters to form words under pressure',
-        ),
-        icon: Icons.sort_by_alpha_rounded,
-        color: IllustrationColors.richPurple, // Purple — 270°
-        route: AppRouter.wordMixerRoute,
-        requiresAd: false,
-      ),
-    ];
-
-    return Stack(
-      children: [
-        // ── Scrollable cards ─────────────────────────────────────────
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          physics: const BouncingScrollPhysics(),
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ...tools.asMap().entries.map((entry) {
-                final isDark = Theme.of(context).brightness == Brightness.dark;
-                final index = entry.key;
-                final tool = entry.value;
-
-                final Widget card = tool.isFeatured
-                    ? _FeaturedToolCard(
-                        def: tool,
-                        isDark: isDark,
-                        width: featuredWidth,
-                        index: index,
-                      )
-                    : _CompactToolCard(
-                        def: tool,
-                        isDark: isDark,
-                        width: compactWidth,
-                        index: index,
-                      );
-
-                return Padding(
-                  padding: EdgeInsets.only(right: 12.w),
-                  child: card,
-                );
-              }),
-              _ExploreAllCard(
-                width: compactWidth,
-                isDark: Theme.of(context).brightness == Brightness.dark,
-                onTap: () => FeatureDirectoryBottomSheet.show(context),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // ── 1. SWISS HORIZON CARD 1: KIDS LEARNING ZONE ──────────────────
+            _SwissHorizonCard(
+              tag: context.tr('home.tools_kids_tag', fallback: 'KIDS'),
+              title: context.tr('home.tools_kids_zone', fallback: 'Kids Zone'),
+              subtitle: context.tr(
+                'home.tools_kids_fun',
+                fallback: 'Fun learning games',
               ),
-            ],
-          ),
+              icon: Icons.child_care_rounded,
+              color: AppColors.rose500,
+              onTap: () => _handleNavigation(context, AppRouter.kidsZoneRoute),
+              isDark: isDark,
+            ),
+            SizedBox(height: 10.h),
+
+            // ── 2. SWISS HORIZON CARD 2: DAILY VOCABULARY ───────────────────
+            _SwissHorizonCard(
+              tag: context.tr('home.tools_daily_tag', fallback: 'TODAY'),
+              title: context.tr(
+                'home.tools_daily_words',
+                fallback: 'Daily Words',
+              ),
+              subtitle: context.tr(
+                'home.tools_daily_desc',
+                fallback: '5 new words today',
+              ),
+              icon: Icons.menu_book_rounded,
+              color: AppColors.amber500,
+              onTap: () => _handleNavigation(context, AppRouter.dailyWordsRoute),
+              isDark: isDark,
+            ),
+            SizedBox(height: 10.h),
+
+            // ── 3. 2×2 PRECISION BENTO SUBGRID (ZERO HORIZONTAL SCROLL) ─────
+            Row(
+              children: [
+                Expanded(
+                  child: _BentoSubCell(
+                    tag: context.tr(
+                      'home.tools_photo_tag',
+                      fallback: 'AI VISION',
+                    ),
+                    title: context.tr(
+                      'home.tools_photo_vocab',
+                      fallback: 'Photo Vocab',
+                    ),
+                    subtitle: context.tr(
+                      'home.tools_photo_sub',
+                      fallback: 'AI Camera',
+                    ),
+                    icon: Icons.camera_alt_rounded,
+                    color: AppColors.blue500,
+                    onTap: () => _handleNavigation(
+                      context,
+                      AppRouter.photoVocabularyRoute,
+                    ),
+                    isDark: isDark,
+                  ),
+                ),
+                SizedBox(width: 10.w),
+                Expanded(
+                  child: _BentoSubCell(
+                    tag: context.tr(
+                      'home.tools_scan_tag',
+                      fallback: 'OCR SCAN',
+                    ),
+                    title: context.tr(
+                      'home.tools_scan_learn',
+                      fallback: 'Scan & Learn',
+                    ),
+                    subtitle: context.tr(
+                      'home.tools_scan_sub',
+                      fallback: 'Text Reader',
+                    ),
+                    icon: Icons.document_scanner_rounded,
+                    color: AppColors.teal500,
+                    onTap: () =>
+                        _handleNavigation(context, AppRouter.scanAndLearnRoute),
+                    isDark: isDark,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10.h),
+            Row(
+              children: [
+                Expanded(
+                  child: _BentoSubCell(
+                    tag: context.tr(
+                      'home.tools_translate_tag',
+                      fallback: 'OFFLINE',
+                    ),
+                    title: context.tr(
+                      'home.translation_title',
+                      fallback: 'Translate',
+                    ),
+                    subtitle: context.tr(
+                      'home.tools_translate_sub',
+                      fallback: '50+ Languages',
+                    ),
+                    icon: Icons.translate_rounded,
+                    color: AppColors.emerald500,
+                    onTap: () =>
+                        _handleNavigation(context, AppRouter.translateRoute),
+                    isDark: isDark,
+                  ),
+                ),
+                SizedBox(width: 10.w),
+                Expanded(
+                  child: _BentoSubCell(
+                    tag: context.tr('home.tools_games_tag', fallback: 'GAMES'),
+                    title: context.tr(
+                      'home.tools_word_games',
+                      fallback: 'Word Games',
+                    ),
+                    subtitle: context.tr(
+                      'home.tools_games_sub',
+                      fallback: 'Snap & Mixer',
+                    ),
+                    icon: Icons.extension_rounded,
+                    color: IllustrationColors.vibrantPink,
+                    onTap: () => _showWordGamesModal(context),
+                    isDark: isDark,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10.h),
+
+            // ── 4. COMPACT 32px DIRECTORY TRIGGER (DISCOVER ALL 7 TOOLS) ────
+            _DirectoryPillTrigger(
+              isDark: isDark,
+              onTap: () => _showToolsDirectoryModal(context),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Navigation & Modal Handlers
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  void _handleNavigation(
+    BuildContext context,
+    String route, {
+    bool requiresAd = false,
+  }) {
+    try {
+      di.sl<HapticService>().selection();
+    } catch (_) {}
+
+    if (!requiresAd) {
+      context.push(route);
+      return;
+    }
+
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+    if (isPremium) {
+      context.push(route);
+      return;
+    }
+
+    try {
+      di.sl<AdService>().showRewardedAd(
+        context: context,
+        isPremium: isPremium,
+        childSafe: false,
+        onUserEarnedReward: (_) => context.push(route),
+        onDismissed: () {},
+      );
+    } catch (_) {
+      context.push(route);
+    }
+  }
+
+  void _showWordGamesModal(BuildContext context) {
+    try {
+      di.sl<HapticService>().selection();
+    } catch (_) {}
+    _WordGamesBottomSheet.show(context);
+  }
+
+  void _showToolsDirectoryModal(BuildContext context) {
+    try {
+      di.sl<HapticService>().selection();
+    } catch (_) {}
+    _ToolsDirectoryBottomSheet.show(context);
+  }
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// Data Model
+// 1. SWISS HORIZON CARD (Kids Zone & Daily Words)
 // ═══════════════════════════════════════════════════════════════════════════════
 
-class _ToolDef {
+class _SwissHorizonCard extends StatelessWidget {
+  final String tag;
   final String title;
   final String subtitle;
-  final String? tooltip;
   final IconData icon;
-  final String? emoji;
   final Color color;
-  final Color? darkColor;
-  final String route;
-  final bool requiresAd;
-  final bool isFeatured;
+  final VoidCallback onTap;
+  final bool isDark;
 
-  const _ToolDef({
+  const _SwissHorizonCard({
+    required this.tag,
     required this.title,
     required this.subtitle,
-    this.tooltip,
     required this.icon,
-    this.emoji,
     required this.color,
-    this.darkColor,
-    required this.route,
-    required this.requiresAd,
-    this.isFeatured = false,
-  });
-}
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// Shared tap/ad handler
-// ═══════════════════════════════════════════════════════════════════════════════
-
-void _handleToolTap(BuildContext context, _ToolDef def) {
-  di.sl<HapticService>().light();
-  if (!def.requiresAd) {
-    context.push(def.route);
-    return;
-  }
-  final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
-  if (isPremium) {
-    context.push(def.route);
-    return;
-  }
-  di.sl<AdService>().showRewardedAd(
-    context: context,
-    isPremium: isPremium,
-    childSafe: false,
-    onUserEarnedReward: (_) => context.push(def.route),
-    onDismissed: () {},
-  );
-}
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// FEATURED HERO CARD — Gradient background, emoji mascot, watermark icon
-// ═══════════════════════════════════════════════════════════════════════════════
-
-class _FeaturedToolCard extends StatelessWidget {
-  final _ToolDef def;
-  final bool isDark;
-  final double width;
-  final int index;
-
-  const _FeaturedToolCard({
-    required this.def,
+    required this.onTap,
     required this.isDark,
-    required this.width,
-    required this.index,
   });
 
   @override
   Widget build(BuildContext context) {
-    final darkShade = def.darkColor ?? def.color;
-
     return Semantics(
       button: true,
-      label: '${def.title} — ${def.subtitle}',
-      child: Tooltip(
-        message: def.tooltip ?? def.subtitle,
-        preferBelow: true,
-        triggerMode: TooltipTriggerMode.longPress,
-        showDuration: const Duration(seconds: 3),
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-        margin: EdgeInsets.symmetric(horizontal: 24.w),
-        decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.surface,
-          borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(color: def.color.withValues(alpha: 0.5), width: 1),
-          boxShadow: [
-            BoxShadow(
-              color: def.color.withValues(alpha: 0.2),
-              blurRadius: 16,
-              spreadRadius: 4,
-              offset: const Offset(0, 4),
+      label: '$title. $subtitle',
+      child: ScaleButton(
+        onTap: onTap,
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF131A29) : Colors.white,
+            borderRadius: BorderRadius.circular(18.r),
+            border: Border.all(
+              color: color.withValues(alpha: isDark ? 0.30 : 0.22),
+              width: 1.2.r,
             ),
-          ],
-        ),
-        textStyle: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 12.sp,
-          fontWeight: FontWeight.w600,
-          color: Theme.of(context).colorScheme.onSurface,
-          height: 1.3,
-        ),
-        child: ScaleButton(
-          onTap: () => _handleToolTap(context, def),
-          child: ExcludeSemantics(
-            child: RepaintBoundary(
-              child: Container(
-                width: width,
-                clipBehavior: Clip.hardEdge,
-                padding: EdgeInsets.all(16.r),
+            boxShadow: [
+              BoxShadow(
+                color: color.withValues(alpha: isDark ? 0.08 : 0.04),
+                blurRadius: 10.r,
+                offset: Offset(0, 3.r),
+              ),
+            ],
+          ),
+          child: Row(
+            children: [
+              // Tactical Halo Icon Box
+              Container(
+                width: 42.r,
+                height: 42.r,
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [def.color, darkShade],
+                  color: color.withValues(alpha: isDark ? 0.14 : 0.09),
+                  borderRadius: BorderRadius.circular(13.r),
+                  border: Border.all(
+                    color: color.withValues(alpha: isDark ? 0.28 : 0.18),
+                    width: 1.r,
                   ),
-                  borderRadius: BorderRadius.circular(24.r),
                 ),
-                child: Stack(
+                child: Center(child: Icon(icon, color: color, size: 21.r)),
+              ),
+              SizedBox(width: 12.w),
+
+              // Text Hierarchy (Tag on top so title has 100% width, never wraps)
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    // ── Watermark icon ──────────────────────────────
-                    Positioned(
-                      right: -12.r,
-                      bottom: -8.r,
-                      child: Icon(
-                        def.icon,
-                        size: 80.r,
-                        color: Colors.white.withValues(alpha: 0.08),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 6.w,
+                        vertical: 2.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: color.withValues(alpha: isDark ? 0.16 : 0.10),
+                        borderRadius: BorderRadius.circular(4.r),
+                      ),
+                      child: Text(
+                        tag,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 9.sp,
+                          fontWeight: FontWeight.w800,
+                          color: color,
+                          letterSpacing: 0.6,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
-
-                    // ── Content ─────────────────────────────────────
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // Emoji mascot + chevron row
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            // Emoji in frosted circle
-                            Container(
-                              padding: EdgeInsets.all(8.r),
-                              decoration: BoxDecoration(
-                                color: Colors.white.withValues(alpha: 0.18),
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: Colors.white.withValues(alpha: 0.25),
-                                  width: 1,
-                                ),
-                              ),
-                              child: Text(
-                                def.emoji ?? '✨',
-                                style: TextStyle(fontSize: 18.sp, height: 1.1),
-                              ),
-                            ),
-                            // Go arrow
-                            Container(
-                              padding: EdgeInsets.all(6.r),
-                              decoration: BoxDecoration(
-                                color: Colors.white.withValues(alpha: 0.15),
-                                shape: BoxShape.circle,
-                              ),
-                              child: Icon(
-                                Icons.arrow_outward_rounded,
-                                color: Colors.white.withValues(alpha: 0.9),
-                                size: 16.r,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 14.h),
-
-                        // Title
-                        FittedBox(
-                          fit: BoxFit.scaleDown,
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            def.title,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 15.sp,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.white,
-                              letterSpacing: -0.3,
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 4.h),
-
-                        // Subtitle pill
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 8.w,
-                            vertical: 3.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.15),
-                            borderRadius: BorderRadius.circular(8.r),
-                            border: Border.all(
-                              color: Colors.white.withValues(alpha: 0.2),
-                              width: 0.5,
-                            ),
-                          ),
-                          child: Text(
-                            def.subtitle.toUpperCase(),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white.withValues(alpha: 0.9),
-                              letterSpacing: 0.8,
-                            ),
-                          ),
-                        ),
-                      ],
+                    SizedBox(height: 2.h),
+                    Text(
+                      title,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w800,
+                        color: isDark
+                            ? const Color(0xFFF8FAFC)
+                            : const Color(0xFF0F172A),
+                        letterSpacing: -0.2,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    SizedBox(height: 2.h),
+                    Text(
+                      subtitle,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.5.sp,
+                        fontWeight: FontWeight.w500,
+                        color: isDark
+                            ? const Color(0xFF94A3B8)
+                            : const Color(0xFF64748B),
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ],
                 ),
               ),
-            ),
+              SizedBox(width: 8.w),
+
+              // Action Arrow Circle
+              Container(
+                width: 26.r,
+                height: 26.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: color.withValues(alpha: isDark ? 0.12 : 0.08),
+                ),
+                child: Center(
+                  child: Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    size: 11.r,
+                    color: color,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -426,137 +391,140 @@ class _FeaturedToolCard extends StatelessWidget {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// COMPACT UTILITY CARD — Glass tile, icon + title + metadata
+// 2. 2×2 BENTO SUB-CELL (Symmetrical, Single Line Text, Zero Ellipses)
 // ═══════════════════════════════════════════════════════════════════════════════
 
-class _CompactToolCard extends StatelessWidget {
-  final _ToolDef def;
+class _BentoSubCell extends StatelessWidget {
+  final String tag;
+  final String title;
+  final String subtitle;
+  final IconData icon;
+  final Color color;
+  final VoidCallback onTap;
   final bool isDark;
-  final double width;
-  final int index;
 
-  const _CompactToolCard({
-    required this.def,
+  const _BentoSubCell({
+    required this.tag,
+    required this.title,
+    required this.subtitle,
+    required this.icon,
+    required this.color,
+    required this.onTap,
     required this.isDark,
-    required this.width,
-    required this.index,
   });
 
   @override
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: '${def.title} — ${def.subtitle}',
-      child: Tooltip(
-        message: def.tooltip ?? def.subtitle,
-        preferBelow: true,
-        triggerMode: TooltipTriggerMode.longPress,
-        showDuration: const Duration(seconds: 3),
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-        margin: EdgeInsets.symmetric(horizontal: 24.w),
-        decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.surface,
-          borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(color: def.color.withValues(alpha: 0.5), width: 1),
-          boxShadow: [
-            BoxShadow(
-              color: def.color.withValues(alpha: 0.2),
-              blurRadius: 16,
-              spreadRadius: 4,
-              offset: const Offset(0, 4),
+      label: '$title. $subtitle',
+      child: ScaleButton(
+        onTap: onTap,
+        child: Container(
+          constraints: BoxConstraints(minHeight: 96.h),
+          padding: EdgeInsets.all(12.r),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF131A29) : Colors.white,
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: color.withValues(alpha: isDark ? 0.28 : 0.20),
+              width: 1.2.r,
             ),
-          ],
-        ),
-        textStyle: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 12.sp,
-          fontWeight: FontWeight.w600,
-          color: Theme.of(context).colorScheme.onSurface,
-          height: 1.3,
-        ),
-        child: ScaleButton(
-          onTap: () => _handleToolTap(context, def),
-          child: ExcludeSemantics(
-            child: RepaintBoundary(
-              child: GlassTile(
-                // blur: 0 disables BackdropFilter — critical for multiple
-                // cards in a scroll list. Gradient overlay provides the look.
-                blur: 0,
-                showShadow: false,
-                borderRadius: BorderRadius.circular(24.r),
-                borderColor: def.color.withValues(alpha: isDark ? 0.25 : 0.15),
-                padding: EdgeInsets.all(16.r),
-                child: SizedBox(
-                  width: width,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // ── Icon container with subtle colored glow ────
-                      Container(
-                        padding: EdgeInsets.all(10.r),
-                        decoration: BoxDecoration(
-                          color: def.color.withValues(alpha: 0.12),
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: def.color.withValues(alpha: 0.15),
-                              blurRadius: 12,
-                              spreadRadius: 1,
-                            ),
-                          ],
-                        ),
-                        child: Icon(def.icon, color: def.color, size: 20.r),
-                      ),
-                      SizedBox(height: 16.h),
-
-                      // ── Title ──────────────────────────────────────
-                      FittedBox(
-                        fit: BoxFit.scaleDown,
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          def.title,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w900,
-                            color: Theme.of(context).colorScheme.onSurface,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 4.h),
-
-                      // ── Contextual metadata pill ───────────────────
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 8.w,
-                          vertical: 3.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: def.color.withValues(alpha: 0.08),
-                          borderRadius: BorderRadius.circular(8.r),
-                          border: Border.all(
-                            color: def.color.withValues(alpha: 0.12),
-                            width: 0.5,
-                          ),
-                        ),
-                        child: Text(
-                          def.subtitle.toUpperCase(),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w700,
-                            color: def.color,
-                            letterSpacing: 0.8,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+            boxShadow: [
+              BoxShadow(
+                color: color.withValues(alpha: isDark ? 0.08 : 0.03),
+                blurRadius: 8.r,
+                offset: Offset(0, 2.r),
               ),
-            ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // Top Cell Header (Halo Icon + Mini Tag Pill)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    width: 32.r,
+                    height: 32.r,
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: isDark ? 0.14 : 0.09),
+                      borderRadius: BorderRadius.circular(9.r),
+                      border: Border.all(
+                        color: color.withValues(alpha: isDark ? 0.25 : 0.16),
+                        width: 1.r,
+                      ),
+                    ),
+                    child: Center(child: Icon(icon, color: color, size: 17.r)),
+                  ),
+                  SizedBox(width: 4.w),
+                  Flexible(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 5.w,
+                        vertical: 2.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: color.withValues(alpha: isDark ? 0.14 : 0.08),
+                        borderRadius: BorderRadius.circular(4.r),
+                      ),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          tag,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 8.5.sp,
+                            fontWeight: FontWeight.w800,
+                            color: color,
+                            letterSpacing: 0.5,
+                          ),
+                          maxLines: 1,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 8.h),
+
+              // Title and 1-Line Helper
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.5.sp,
+                      fontWeight: FontWeight.w800,
+                      color: isDark
+                          ? const Color(0xFFF8FAFC)
+                          : const Color(0xFF0F172A),
+                      letterSpacing: -0.2,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  SizedBox(height: 2.h),
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w500,
+                      color: isDark
+                          ? const Color(0xFF94A3B8)
+                          : const Color(0xFF64748B),
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
@@ -564,13 +532,551 @@ class _CompactToolCard extends StatelessWidget {
   }
 }
 
-class _ExploreAllCard extends StatelessWidget {
-  final double width;
+// ═══════════════════════════════════════════════════════════════════════════════
+// 3. COMPACT 32px DIRECTORY TRIGGER PILL (Sleek, Minimal, Space-Saving)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+class _DirectoryPillTrigger extends StatelessWidget {
   final bool isDark;
   final VoidCallback onTap;
 
-  const _ExploreAllCard({
-    required this.width,
+  const _DirectoryPillTrigger({required this.isDark, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      button: true,
+      label: context.tr(
+        'home.tools_directory_label',
+        fallback: 'Directory: Browse all 7 learning tools',
+      ),
+      child: ScaleButton(
+        onTap: onTap,
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 7.h),
+          decoration: BoxDecoration(
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.04)
+                : Colors.black.withValues(alpha: 0.03),
+            borderRadius: BorderRadius.circular(100.r),
+            border: Border.all(
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.08)
+                  : Colors.black.withValues(alpha: 0.07),
+              width: 1.r,
+            ),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(LucideIcons.grid, size: 13.r, color: AppColors.emerald500),
+              SizedBox(width: 6.w),
+              Flexible(
+                child: Text(
+                  context.tr(
+                    'home.tools_directory_pill',
+                    fallback: 'Directory (7 Tools)',
+                  ),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.5.sp,
+                    fontWeight: FontWeight.w700,
+                    color: isDark
+                        ? const Color(0xFF94A3B8)
+                        : const Color(0xFF475569),
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              SizedBox(width: 4.w),
+              Icon(
+                Icons.arrow_forward_ios_rounded,
+                size: 10.r,
+                color: AppColors.emerald500,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// 4. WORD GAMES MODAL SHEET (Word Snap & Word Mixer direct selection)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+class _WordGamesBottomSheet extends StatelessWidget {
+  const _WordGamesBottomSheet();
+
+  static Future<void> show(BuildContext context) {
+    return showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (_) => const _WordGamesBottomSheet(),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Container(
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF131A29) : Colors.white,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
+        border: Border(
+          top: BorderSide(
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.1)
+                : Colors.black.withValues(alpha: 0.08),
+            width: 1.r,
+          ),
+        ),
+      ),
+      padding: EdgeInsets.fromLTRB(
+        20.w,
+        14.h,
+        20.w,
+        MediaQuery.of(context).padding.bottom + 20.h,
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // Drag handle
+          Center(
+            child: Container(
+              width: 36.w,
+              height: 4.h,
+              decoration: BoxDecoration(
+                color: isDark ? Colors.white24 : Colors.black26,
+                borderRadius: BorderRadius.circular(2.r),
+              ),
+            ),
+          ),
+          SizedBox(height: 16.h),
+
+          // Header
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      context.tr(
+                        'home.tools_games_sheet_title',
+                        fallback: 'Brain Word Games',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w800,
+                        color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    SizedBox(height: 2.h),
+                    Text(
+                      context.tr(
+                        'home.tools_games_sheet_sub',
+                        fallback: 'Vocabulary & anagram challenges',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        color: isDark
+                            ? const Color(0xFF94A3B8)
+                            : const Color(0xFF64748B),
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(width: 8.w),
+              IconButton(
+                onPressed: () => Navigator.of(context).pop(),
+                icon: Icon(
+                  Icons.close_rounded,
+                  size: 20.r,
+                  color: isDark ? Colors.white70 : Colors.black54,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 16.h),
+
+          // Game 1: Word Snap
+          _ModalFeatureRow(
+            title: context.tr('home.tools_word_snap', fallback: 'Word Snap'),
+            subtitle: context.tr(
+              'home.tools_word_snap_tip',
+              fallback: 'Match words and definitions against the clock',
+            ),
+            badge: context.tr('home.tools_snap_badge', fallback: 'MEMORY MATCH'),
+            icon: Icons.extension_rounded,
+            color: IllustrationColors.vibrantPink,
+            isDark: isDark,
+            onTap: () {
+              Navigator.of(context).pop();
+              context.push(AppRouter.wordSnapRoute);
+            },
+          ),
+          SizedBox(height: 10.h),
+
+          // Game 2: Word Mixer
+          _ModalFeatureRow(
+            title: context.tr('home.tools_word_mixer', fallback: 'Word Mixer'),
+            subtitle: context.tr(
+              'home.tools_word_mixer_tip',
+              fallback: 'Unscramble letters into words under pressure',
+            ),
+            badge: context.tr(
+              'home.tools_mixer_badge',
+              fallback: 'ANAGRAM SPRINT',
+            ),
+            icon: Icons.sort_by_alpha_rounded,
+            color: IllustrationColors.richPurple,
+            isDark: isDark,
+            onTap: () {
+              Navigator.of(context).pop();
+              context.push(AppRouter.wordMixerRoute);
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// 5. TOOLS DIRECTORY MODAL SHEET (Displays all 7 tools with instant access)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+class _ToolsDirectoryBottomSheet extends StatelessWidget {
+  const _ToolsDirectoryBottomSheet();
+
+  static Future<void> show(BuildContext context) {
+    return showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (_) => const _ToolsDirectoryBottomSheet(),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    final tools = [
+      _DirectoryItemDef(
+        title: context.tr('home.tools_kids_zone', fallback: 'Kids Zone'),
+        subtitle: context.tr(
+          'home.tools_kids_zone_tip',
+          fallback: 'Safe, playful games designed for young learners',
+        ),
+        badge: 'KIDS PORTAL',
+        icon: Icons.child_care_rounded,
+        color: AppColors.rose500,
+        route: AppRouter.kidsZoneRoute,
+      ),
+      _DirectoryItemDef(
+        title: context.tr('home.tools_daily_words', fallback: 'Daily Words'),
+        subtitle: context.tr(
+          'home.tools_daily_words_tip',
+          fallback: 'Fresh vocabulary words curated every day',
+        ),
+        badge: 'NEW TODAY',
+        icon: Icons.menu_book_rounded,
+        color: AppColors.amber500,
+        route: AppRouter.dailyWordsRoute,
+      ),
+      _DirectoryItemDef(
+        title: context.tr('home.tools_photo_vocab', fallback: 'Photo Vocab'),
+        subtitle: context.tr(
+          'home.tools_photo_vocab_tip',
+          fallback: 'Point your camera to learn new words instantly',
+        ),
+        badge: 'AI VISION',
+        icon: Icons.camera_alt_rounded,
+        color: AppColors.blue500,
+        route: AppRouter.photoVocabularyRoute,
+      ),
+      _DirectoryItemDef(
+        title: context.tr('home.tools_scan_learn', fallback: 'Scan & Learn'),
+        subtitle: context.tr(
+          'home.tools_scan_learn_tip',
+          fallback: 'Scan any text to get instant definitions',
+        ),
+        badge: 'OCR SCAN',
+        icon: Icons.document_scanner_rounded,
+        color: AppColors.teal500,
+        route: AppRouter.scanAndLearnRoute,
+      ),
+      _DirectoryItemDef(
+        title: context.tr('home.translation_title', fallback: 'Translate'),
+        subtitle: context.tr(
+          'home.tools_translate_tip',
+          fallback: 'Offline translation for 50+ languages',
+        ),
+        badge: 'OFFLINE',
+        icon: Icons.translate_rounded,
+        color: AppColors.emerald500,
+        route: AppRouter.translateRoute,
+      ),
+      _DirectoryItemDef(
+        title: context.tr('home.tools_word_snap', fallback: 'Word Snap'),
+        subtitle: context.tr(
+          'home.tools_word_snap_tip',
+          fallback: 'Match words and meanings in a fast-paced memory game',
+        ),
+        badge: 'MEMORY GAME',
+        icon: Icons.extension_rounded,
+        color: IllustrationColors.vibrantPink,
+        route: AppRouter.wordSnapRoute,
+      ),
+      _DirectoryItemDef(
+        title: context.tr('home.tools_word_mixer', fallback: 'Word Mixer'),
+        subtitle: context.tr(
+          'home.tools_word_mixer_tip',
+          fallback: 'Combine letters to form words under pressure',
+        ),
+        badge: 'ANAGRAM SPRINT',
+        icon: Icons.sort_by_alpha_rounded,
+        color: IllustrationColors.richPurple,
+        route: AppRouter.wordMixerRoute,
+      ),
+    ];
+
+    return Container(
+      constraints: BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height * 0.85,
+      ),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF131A29) : Colors.white,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
+        border: Border(
+          top: BorderSide(
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.1)
+                : Colors.black.withValues(alpha: 0.08),
+            width: 1.r,
+          ),
+        ),
+      ),
+      padding: EdgeInsets.fromLTRB(
+        20.w,
+        14.h,
+        20.w,
+        MediaQuery.of(context).padding.bottom + 16.h,
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // Drag handle
+          Center(
+            child: Container(
+              width: 36.w,
+              height: 4.h,
+              decoration: BoxDecoration(
+                color: isDark ? Colors.white24 : Colors.black26,
+                borderRadius: BorderRadius.circular(2.r),
+              ),
+            ),
+          ),
+          SizedBox(height: 14.h),
+
+          // Header
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      context.tr(
+                        'home.tools_all_title',
+                        fallback: 'Tools & Utilities (7)',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 18.5.sp,
+                        fontWeight: FontWeight.w800,
+                        color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    SizedBox(height: 2.h),
+                    Text(
+                      context.tr(
+                        'home.tools_all_sub',
+                        fallback: 'All learning accelerators and tools in Vowl',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        color: isDark
+                            ? const Color(0xFF94A3B8)
+                            : const Color(0xFF64748B),
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(width: 8.w),
+              IconButton(
+                onPressed: () => Navigator.of(context).pop(),
+                icon: Icon(
+                  Icons.close_rounded,
+                  size: 20.r,
+                  color: isDark ? Colors.white70 : Colors.black54,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 12.h),
+
+          // Scrollable List of All 7 Tools
+          Flexible(
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                children: tools
+                    .map(
+                      (tool) => Padding(
+                        padding: EdgeInsets.only(bottom: 8.h),
+                        child: _ModalFeatureRow(
+                          title: tool.title,
+                          subtitle: tool.subtitle,
+                          badge: tool.badge,
+                          icon: tool.icon,
+                          color: tool.color,
+                          isDark: isDark,
+                          onTap: () {
+                            Navigator.of(context).pop();
+                            context.push(tool.route);
+                          },
+                        ),
+                      ),
+                    )
+                    .toList(),
+              ),
+            ),
+          ),
+          SizedBox(height: 12.h),
+
+          // Bottom Trigger to Full App Feature Catalog (100+ Features)
+          ScaleButton(
+            onTap: () {
+              Navigator.of(context).pop();
+              FeatureDirectoryBottomSheet.show(context);
+            },
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.05)
+                    : Colors.black.withValues(alpha: 0.04),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.1)
+                      : Colors.black.withValues(alpha: 0.08),
+                  width: 1.r,
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    LucideIcons.compass,
+                    size: 15.r,
+                    color: AppColors.indigo500,
+                  ),
+                  SizedBox(width: 8.w),
+                  Flexible(
+                    child: Text(
+                      context.tr(
+                        'home.tools_browse_full_catalog',
+                        fallback: 'Browse 100+ Games & Full App Catalog',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.indigo500,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  SizedBox(width: 4.w),
+                  Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    size: 10.r,
+                    color: AppColors.indigo500,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// Helper Models & Row Widget for Modal Sheets
+// ═══════════════════════════════════════════════════════════════════════════════
+
+class _DirectoryItemDef {
+  final String title;
+  final String subtitle;
+  final String badge;
+  final IconData icon;
+  final Color color;
+  final String route;
+
+  const _DirectoryItemDef({
+    required this.title,
+    required this.subtitle,
+    required this.badge,
+    required this.icon,
+    required this.color,
+    required this.route,
+  });
+}
+
+class _ModalFeatureRow extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final String badge;
+  final IconData icon;
+  final Color color;
+  final bool isDark;
+  final VoidCallback onTap;
+
+  const _ModalFeatureRow({
+    required this.title,
+    required this.subtitle,
+    required this.badge,
+    required this.icon,
+    required this.color,
     required this.isDark,
     required this.onTap,
   });
@@ -579,102 +1085,108 @@ class _ExploreAllCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: context.tr(
-        'home.tools_explore_all_label',
-        fallback: 'Explore all 50+ features and tools',
-      ),
+      label: '$title. $subtitle',
       child: ScaleButton(
-        onTap: () {
-          di.sl<HapticService>().selection();
-          onTap();
-        },
-        child: ExcludeSemantics(
-          child: RepaintBoundary(
-            child: GlassTile(
-              blur: 0,
-              showShadow: false,
-              borderRadius: BorderRadius.circular(24.r),
-              borderColor: AppColors.indigo500.withValues(
-                alpha: isDark ? 0.35 : 0.25,
+        onTap: onTap,
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
+          decoration: BoxDecoration(
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.03)
+                : Colors.black.withValues(alpha: 0.02),
+            borderRadius: BorderRadius.circular(14.r),
+            border: Border.all(
+              color: color.withValues(alpha: isDark ? 0.22 : 0.15),
+              width: 1.r,
+            ),
+          ),
+          child: Row(
+            children: [
+              Container(
+                width: 36.r,
+                height: 36.r,
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: isDark ? 0.14 : 0.09),
+                  borderRadius: BorderRadius.circular(10.r),
+                  border: Border.all(
+                    color: color.withValues(alpha: isDark ? 0.25 : 0.16),
+                    width: 1.r,
+                  ),
+                ),
+                child: Center(child: Icon(icon, color: color, size: 18.r)),
               ),
-              padding: EdgeInsets.all(16.r),
-              child: SizedBox(
-                width: width,
+              SizedBox(width: 12.w),
+              Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: AppColors.indigo500.withValues(alpha: 0.15),
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppColors.indigo500.withValues(alpha: 0.15),
-                            blurRadius: 8,
-                            spreadRadius: 1,
+                    Row(
+                      children: [
+                        Flexible(
+                          child: Text(
+                            title,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w800,
+                              color: isDark
+                                  ? Colors.white
+                                  : const Color(0xFF0F172A),
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
-                        ],
-                      ),
-                      child: Icon(
-                        LucideIcons.compass,
-                        color: AppColors.indigo500,
-                        size: 20.r,
-                      ),
+                        ),
+                        SizedBox(width: 6.w),
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 5.w,
+                            vertical: 1.5.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: color.withValues(
+                              alpha: isDark ? 0.16 : 0.10,
+                            ),
+                            borderRadius: BorderRadius.circular(4.r),
+                          ),
+                          child: Text(
+                            badge,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 8.5.sp,
+                              fontWeight: FontWeight.w800,
+                              color: color,
+                              letterSpacing: 0.5,
+                            ),
+                            maxLines: 1,
+                          ),
+                        ),
+                      ],
                     ),
-                    SizedBox(height: 16.h),
-                    FittedBox(
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        context.tr(
-                          'home.tools_explore_all',
-                          fallback: 'Explore All',
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w700,
-                          color: Theme.of(context).colorScheme.onSurface,
-                        ),
+                    SizedBox(height: 2.h),
+                    Text(
+                      subtitle,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.5.sp,
+                        color: isDark
+                            ? const Color(0xFF94A3B8)
+                            : const Color(0xFF64748B),
                       ),
-                    ),
-                    SizedBox(height: 4.h),
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 8.w,
-                        vertical: 3.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: AppColors.indigo500.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(8.r),
-                        border: Border.all(
-                          color: AppColors.indigo500.withValues(alpha: 0.2),
-                          width: 0.5,
-                        ),
-                      ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          context.tr(
-                            'home.tools_explore_count',
-                            fallback: '50+ TOOLS',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.indigo500,
-                            letterSpacing: 0.8,
-                          ),
-                        ),
-                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ],
                 ),
               ),
-            ),
+              SizedBox(width: 6.w),
+              Icon(
+                Icons.arrow_forward_ios_rounded,
+                size: 11.r,
+                color: isDark ? Colors.white38 : Colors.black26,
+              ),
+            ],
           ),
         ),
       ),
