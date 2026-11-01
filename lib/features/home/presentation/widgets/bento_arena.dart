@@ -129,19 +129,21 @@ class _BentoArenaState extends State<BentoArena> {
     return ValueListenableBuilder<bool>(
       valueListenable: _isExpanded,
       builder: (context, isExpanded, _) {
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            // 1. LEAD FOCUS HERO CARD (Step 1)
-            _BentoHeroCard(
-              type: heroStep,
-              user: widget.user,
-              step: 1,
-              totalSteps: allSteps.length,
-              isCurrentFocus: isHeroFocus,
-              onTap: () => _navigateToCategory(context, heroStep),
-            ),
-            SizedBox(height: 10.h),
+        return Padding(
+          padding: EdgeInsets.only(top: 14.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // 1. LEAD FOCUS HERO CARD (Step 1)
+              _BentoHeroCard(
+                type: heroStep,
+                user: widget.user,
+                step: 1,
+                totalSteps: allSteps.length,
+                isCurrentFocus: isHeroFocus,
+                onTap: () => _navigateToCategory(context, heroStep),
+              ),
+              SizedBox(height: 10.h),
 
             // 2. 2-COLUMN BENTO SUBGRID (Steps 2 to 5, plus Steps 6 to 9 when expanded)
             _BentoSubgrid(
@@ -166,9 +168,10 @@ class _BentoArenaState extends State<BentoArena> {
               ),
             ],
           ],
-        );
-      },
-    );
+        ),
+      );
+    },
+  );
   }
 }
 
@@ -651,7 +654,7 @@ class _BentoGridCell extends StatelessWidget {
                   ),
                   SizedBox(height: 2.h),
                   Text(
-                    '$totalCleared / $maxLevels Cleared',
+                    levelsLabel,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.5.sp,
