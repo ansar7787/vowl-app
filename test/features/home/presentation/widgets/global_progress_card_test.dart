@@ -239,6 +239,24 @@ void main() {
       expect(find.text('#3'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
+
+    testWidgets('renders cleanly under 1.3x accessibility text scaling without overflow', (tester) async {
+      tester.platformDispatcher.textScaleFactorTestValue = 1.3;
+      addTearDown(() => tester.platformDispatcher.clearTextScaleFactorTestValue());
+
+      final user = buildUser(totalLevelsCompleted: 120);
+      await pumpSubject(
+        tester,
+        user: user,
+        globalRank: 19,
+        width: 320,
+        height: 568,
+      );
+
+      expect(find.text('Curriculum Mastery'), findsOneWidget);
+      expect(find.text('#19'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
   });
 }
 

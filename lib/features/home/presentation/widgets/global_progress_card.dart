@@ -263,8 +263,8 @@ class GlobalProgressCard extends StatelessWidget {
 
               // Metric Row: Large Count + Percentage Badge
               Row(
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Row(
@@ -275,7 +275,7 @@ class GlobalProgressCard extends StatelessWidget {
                           '$completed',
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 24.sp,
+                            fontSize: 22.sp,
                             fontWeight: FontWeight.w900,
                             color: AppColors.indigo500,
                             height: 1,
@@ -291,7 +291,7 @@ class GlobalProgressCard extends StatelessWidget {
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 12.sp,
+                              fontSize: 11.5.sp,
                               fontWeight: FontWeight.w700,
                               color: isDark
                                   ? AppColors.slate400
@@ -305,9 +305,10 @@ class GlobalProgressCard extends StatelessWidget {
                       ],
                     ),
                   ),
+                  SizedBox(width: 6.w),
                   Container(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 8.w,
+                      horizontal: 7.w,
                       vertical: 3.h,
                     ),
                     decoration: BoxDecoration(
@@ -324,7 +325,7 @@ class GlobalProgressCard extends StatelessWidget {
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 11.5.sp,
+                        fontSize: 11.sp,
                         fontWeight: FontWeight.w800,
                         color: AppColors.indigo500,
                         height: 1.1,
@@ -369,44 +370,38 @@ class GlobalProgressCard extends StatelessWidget {
 
               // Milestone Sub-Footer
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.shield_outlined,
-                        size: 13.r,
-                        color: AppColors.indigo500,
-                      ),
-                      SizedBox(width: 4.w),
-                      Text(
-                        'Stage ${_getCurriculumStageNumber(completed)}: ${_getCurriculumStageName(context, completed)}',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w800,
-                          color: AppColors.indigo500,
-                        ),
-                        maxLines: 1,
-                      ),
-                    ],
+                  Icon(
+                    Icons.shield_outlined,
+                    size: 13.r,
+                    color: AppColors.indigo500,
                   ),
+                  SizedBox(width: 4.w),
                   Flexible(
                     child: Text(
-                      _getMilestoneRemainingText(context, completed),
+                      'Stage ${_getCurriculumStageNumber(completed)}: ${_getCurriculumStageName(context, completed)}',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isDark
-                            ? AppColors.slate400
-                            : AppColors.slate500,
+                        fontWeight: FontWeight.w800,
+                        color: AppColors.indigo500,
                       ),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.end,
                     ),
+                  ),
+                  SizedBox(width: 8.w),
+                  Text(
+                    _getMilestoneRemainingText(context, completed),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isDark
+                          ? AppColors.slate400
+                          : AppColors.slate500,
+                    ),
+                    maxLines: 1,
                   ),
                 ],
               ),
