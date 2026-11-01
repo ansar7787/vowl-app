@@ -96,6 +96,10 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
 
     if (status.isGranted) {
       di.sl<HapticService>().success();
+      try {
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setBool('notifications_enabled', true);
+      } catch (_) {}
       await _animationController.reverse();
       if (mounted) _isVisible.value = false;
     } else {
@@ -126,6 +130,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
   @override
   void dispose() {
     _animationController.dispose();
+    _isVisible.dispose();
     super.dispose();
   }
 
