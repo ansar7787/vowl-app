@@ -1,71 +1,31 @@
 import 'dart:async';
-import 'package:flutter/foundation.dart';
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:intl/intl.dart';
 import 'package:go_router/go_router.dart';
-import 'package:vowl/core/utils/app_router.dart';
-import 'package:vowl/core/utils/locale_service.dart';
+import 'package:intl/intl.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color4f46e5 = Color(0xFF4F46E5);
-  static const Color color332000 = Color(0xFF332000);
-  static const Color colorfff7ed = Color(0xFFFFF7ED);
-  static const Color colorfcd34d = Color(0xFFFCD34D);
-  static const Color colorc2740a = Color(0xFFC2740A);
-}
-
-/// Lifecycle of the daily hoot content, kept distinct from the text
-/// itself so the UI can tell "still loading" apart from "loaded, but
-/// nothing was configured for today" without inspecting strings.
+/// Lifecycle of the daily hoot content.
 enum _HootStatus { loading, ready, fallback }
 
-/// Design tokens for this card. Pulling these out of the widget tree
-/// makes the few genuinely brand-specific colors easy to audit and
-/// keeps the build method focused on layout rather than hex values.
-class _VowlCardPalette {
-  // NOTE: #6366F1 measures ~4.47:1 against white, just under the 4.5:1
-  // WCAG AA threshold for normal-weight text under 18pt/24px (see the
-  // design write-up for the full contrast table). It's kept here for
-  // backgrounds, icons, and the badge border, where 3:1 is sufficient.
-  // For the eyebrow label and CTA text we use [textSafeIndigo], which
-  // clears AA with real margin.
-  static Color indigo = AppColors.indigo500;
-  static const Color textSafeIndigo =
-      _LocalPalette.color4f46e5; // ~6.3:1 on white
-  static const Color darkCard = AppColors.slate800;
-  static const Color darkSecondaryText = AppColors.slate400;
-  static const Color lightSecondaryText = AppColors.slate500;
-  static const Color lightSurfaceAlt = AppColors.slate50;
-  static const Color amber = AppColors.amber500;
-  static const Color amberDarkText = AppColors.amber400;
-  static const Color amberLightText = AppColors.amber600;
-  static const Color amberDarkBg = _LocalPalette.color332000;
-  static const Color amberLightBg = _LocalPalette.colorfff7ed;
-
-  // Streak milestone tiers: at 7/30/100+ days the badge shifts to a
-  // slightly richer tone so long streaks read as more valuable without
-  // introducing a whole new color language.
-  static Color streakTextFor(int streak, bool isDark) {
-    if (streak >= 100) {
-      return isDark ? AppColors.gold : KidsColors.warmAmber;
-    }
-    if (streak >= 30) {
-      return isDark ? _LocalPalette.colorfcd34d : _LocalPalette.colorc2740a;
-    }
-    return isDark ? amberDarkText : amberLightText;
-  }
-}
-
-/// Daily motivation card presenting linguistic tips, calendar trivia, and streak affirmations.
+/// Daily motivation card presenting linguistic tips, calendar trivia, and language notes.
+///
+/// Styled as an editorial journal card with:
+/// - Real calendar date and curated theme tags.
+/// - Left-aligned, readable typography with zero clipping and zero ellipses.
+/// - Dynamic topic practice navigation with haptic feedback.
 class DailyMotivationCard extends StatefulWidget {
   /// Current consecutive day streak tally.
   final int streakCount;
@@ -85,41 +45,39 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
 
   late final AnimationController _entranceController;
   late final Animation<double> _fadeIn;
-  late final Animation<Offset> _slideIn;
 
-  final ValueNotifier<bool> _pressed = ValueNotifier(false);
-
-  /// Day the current content was loaded for ('year-month-day'). Compared
-  /// against today's date so the card can refresh itself after midnight.
   String? _loadedDay;
   Timer? _midnightTimer;
 
-  // Shown only if the JSON cannot be read or has nothing for today. It is a
-  // real calendar lesson rather than generic motivation, and the title avoids
-  // every keyword that _handleNavigation uses for routing.
   static const String _fallbackQuote =
       "A day name and a date are different things: 'Monday' is the weekday, "
       "and 'March 9' tells you which Monday.";
   static const String _fallbackTitle = "Calendar Tip";
+
+  bool _initialized = false;
 
   @override
   void initState() {
     super.initState();
     _entranceController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 520),
+      duration: const Duration(milliseconds: 400),
     );
     _fadeIn = CurvedAnimation(
       parent: _entranceController,
       curve: Curves.easeOutCubic,
     );
-    _slideIn = Tween<Offset>(
-      begin: const Offset(0, 0.04),
-      end: Offset.zero,
-    ).animate(_fadeIn);
     WidgetsBinding.instance.addObserver(this);
-    _loadDailyHoot();
-    _scheduleMidnightRefresh();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_initialized) {
+      _initialized = true;
+      _loadDailyHoot();
+      _scheduleMidnightRefresh();
+    }
   }
 
   @override
@@ -130,13 +88,11 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
     _hootTitle.dispose();
     _hootText.dispose();
     _status.dispose();
-    _pressed.dispose();
     super.dispose();
   }
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    // The app may have been in the background across midnight.
     if (state == AppLifecycleState.resumed) {
       _refreshIfDayChanged();
       _scheduleMidnightRefresh();
@@ -148,9 +104,6 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
     return '${n.year}-${n.month}-${n.day}';
   }
 
-  /// Reloads today's content when the calendar day has moved on since the
-  /// card last loaded. The setState also refreshes the date line, which is
-  /// read from DateTime.now() on every build.
   void _refreshIfDayChanged() {
     if (!mounted || _loadedDay == _todayKey()) return;
     _entranceController.reset();
@@ -158,8 +111,6 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
     setState(() {});
   }
 
-  /// Fires just after the next local midnight so a card left open on screen
-  /// switches to the new day's message without a restart.
   void _scheduleMidnightRefresh() {
     _midnightTimer?.cancel();
     final now = DateTime.now();
@@ -174,9 +125,6 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
     );
   }
 
-  /// Formats the header date. DateFormat throws if date symbols for the
-  /// locale were never initialised, so fall back to English rather than
-  /// crashing the home screen.
   String _formatToday(String locale, DateTime now) {
     try {
       return DateFormat('EEEE, d MMM', locale).format(now);
@@ -185,41 +133,24 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
     }
   }
 
-  /// Resolves which message index to show for [date] out of
-  /// [messageCount] entries. Pure and unit-testable on purpose.
-  ///
-  /// The previous implementation indexed by day-*of-year* modulo the
-  /// message count. Day-of-year resets to 1 every January 1st, so for
-  /// any fixed calendar day the same index was produced *every single
-  /// year* (Jan 1 always mapped to index 1; most other dates only ever
-  /// shifted by the one day a leap year adds). With 100 messages per
-  /// month, that meant the "hundred unique messages" pool was never
-  /// actually reached — most days repeated the same message annually.
-  ///
-  /// This version indexes by day-*of-month* and shifts the starting
-  /// offset by 31 for every calendar year. Since gcd(31, 100) == 1,
-  /// the mapping for any fixed day-of-month walks through the entire
-  /// 100-message pool before repeating — a ~100 year period instead of
-  /// repeating the very next year.
   @visibleForTesting
   static int resolveMessageIndex(DateTime date, int messageCount) {
     if (messageCount <= 0) return 0;
-    final int dayOfMonth = date.day - 1; // 0-based
+    final int dayOfMonth = date.day - 1;
     return (date.year * 31 + dayOfMonth) % messageCount;
   }
 
   Future<void> _loadDailyHoot() async {
     try {
-      final String jsonString = await rootBundle.loadString(
+      final assetBundle = mounted ? DefaultAssetBundle.of(context) : rootBundle;
+      final String jsonString = await assetBundle.loadString(
         'assets/curriculum/calendar/vowl_calendar.json',
       );
       final Map<String, dynamic> data = json.decode(jsonString);
 
       final now = DateTime.now();
       _loadedDay = '${now.year}-${now.month}-${now.day}';
-      // Built by hand, not with DateFormat: DateFormat follows the default
-      // locale and can emit non-Latin digits (e.g. Bengali or Arabic), which
-      // would never match the ASCII keys in the JSON file.
+
       String two(int v) => v.toString().padLeft(2, '0');
       final String monthKey = two(now.month);
       final String dateKey = '$monthKey-${two(now.day)}';
@@ -253,9 +184,6 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
       _status.value = foundNothing ? _HootStatus.fallback : _HootStatus.ready;
       _entranceController.forward();
     } catch (e, stack) {
-      // Surfaced for debugging rather than swallowed silently — a
-      // malformed asset should be visible in logs, even though the
-      // user still sees a graceful fallback quote either way.
       if (kDebugMode) {
         debugPrint(
           'DailyMotivationCard: failed to load hoot content: $e\n$stack',
@@ -270,7 +198,12 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
   }
 
   void _handleNavigation() {
-    HapticFeedback.lightImpact();
+    try {
+      di.sl<HapticService>().selection();
+    } catch (_) {
+      HapticFeedback.lightImpact();
+    }
+
     final title = _hootTitle.value?.toLowerCase() ?? '';
     String route = AppRouter.libraryRoute;
 
@@ -298,299 +231,309 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
   @override
   Widget build(BuildContext context) {
     return ListenableBuilder(
-      listenable: Listenable.merge([_hootTitle, _hootText, _status, _pressed]),
+      listenable: Listenable.merge([_hootTitle, _hootText, _status]),
       builder: (context, _) {
         final theme = Theme.of(context);
         final isDark = theme.brightness == Brightness.dark;
         final locale = Localizations.localeOf(context).toString();
         final now = DateTime.now();
         final dateString = _formatToday(locale, now);
+        final title = _hootTitle.value ?? _fallbackTitle;
+        final quoteText = _hootText.value ?? _fallbackQuote;
 
-        final card = Container(
-          width: double.infinity,
-          constraints: const BoxConstraints(maxWidth: 600),
-          clipBehavior: Clip.hardEdge,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(32.r),
-            color: isDark ? _VowlCardPalette.darkCard : Colors.white,
-            boxShadow: isDark
-                ? null
-                : [
-                    BoxShadow(
-                      color: _VowlCardPalette.indigo.withValues(alpha: 0.12),
-                      blurRadius: 40,
-                      offset: const Offset(0, 16),
+        return Semantics(
+          button: true,
+          label: '$title. $quoteText. Double tap to explore topic.',
+          child: Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(16.r),
+            decoration: BoxDecoration(
+              color: isDark ? const Color(0xFF111827) : Colors.white,
+              borderRadius: BorderRadius.circular(20.r),
+              border: Border.all(
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.indigo500.withValues(alpha: 0.16),
+                width: 1.r,
+              ),
+              boxShadow: isDark
+                  ? null
+                  : [
+                      BoxShadow(
+                        color: AppColors.indigo500.withValues(alpha: 0.04),
+                        blurRadius: 16,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // 1. Header Row: Date & Topic Tag
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // Date Badge
+                    Expanded(
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.calendar_today_rounded,
+                            size: 13.r,
+                            color: isDark
+                                ? const Color(0xFF94A3B8)
+                                : const Color(0xFF64748B),
+                          ),
+                          SizedBox(width: 6.w),
+                          Flexible(
+                            child: Text(
+                              dateString,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.5.sp,
+                                fontWeight: FontWeight.w700,
+                                color: isDark
+                                    ? const Color(0xFF94A3B8)
+                                    : const Color(0xFF64748B),
+                                letterSpacing: -0.1,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    SizedBox(width: 8.w),
+
+                    // Topic Pill
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 7.w,
+                        vertical: 2.5.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.indigo500.withValues(
+                          alpha: isDark ? 0.18 : 0.10,
+                        ),
+                        borderRadius: BorderRadius.circular(6.r),
+                        border: Border.all(
+                          color: AppColors.indigo500.withValues(
+                            alpha: isDark ? 0.32 : 0.20,
+                          ),
+                          width: 1.r,
+                        ),
+                      ),
+                      child: Text(
+                        title.toUpperCase(),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 9.5.sp,
+                          fontWeight: FontWeight.w800,
+                          color: isDark
+                              ? const Color(0xFFA5B4FC)
+                              : const Color(0xFF4F46E5),
+                          letterSpacing: 0.6,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ],
-            border: Border.all(
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.08)
-                  : _VowlCardPalette.indigo.withValues(alpha: 0.15),
-              width: 1,
-            ),
-          ),
-          child: Stack(
-            children: [
-              Positioned(
-                right: -30.w,
-                top: -20.h,
-                // Decorative watermark. A calendar icon fits the short
-                // calendar lessons better than a quotation mark, which
-                // suggested quoted sayings rather than practical tips.
-                child: Icon(
-                  Icons.calendar_month_rounded,
-                  size: 180.r,
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.04)
-                      : _VowlCardPalette.indigo.withValues(alpha: 0.04),
                 ),
-              ),
-              Positioned.fill(
-                child: Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Colors.transparent,
-                        _VowlCardPalette.indigo.withValues(
-                          alpha: isDark ? 0.05 : 0.02,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(24.r),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 52.r,
-                          height: 52.r,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
+
+                SizedBox(height: 12.h),
+
+                // 2. Editorial Quote Body (Left-aligned, zero ellipses, zero overflow)
+                _status.value == _HootStatus.loading
+                    ? _buildShimmer(isDark)
+                    : FadeTransition(
+                        opacity: _fadeIn,
+                        child: Text(
+                          '"$quoteText"',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.5.sp,
+                            fontWeight: FontWeight.w600,
+                            height: 1.45,
                             color: isDark
-                                ? Colors.white.withValues(alpha: 0.05)
-                                : _VowlCardPalette.lightSurfaceAlt,
-                            border: Border.all(
+                                ? const Color(0xFFF1F5F9)
+                                : const Color(0xFF1E293B),
+                          ),
+                          softWrap: true,
+                        ),
+                      ),
+
+                SizedBox(height: 14.h),
+
+                // 3. Footer Row: Mascot Identity & Action Button
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // Identity
+                    Expanded(
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            width: 24.r,
+                            height: 24.r,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
                               color: isDark
-                                  ? Colors.white.withValues(alpha: 0.1)
-                                  : Colors.black.withValues(alpha: 0.05),
-                              width: 1,
+                                  ? Colors.white.withValues(alpha: 0.06)
+                                  : const Color(0xFFF1F5F9),
+                            ),
+                            child: Center(
+                              child: _SafeMascot(size: 18.r),
                             ),
                           ),
-                          child: Center(
-                            child: VowlMascot(
-                              size: 38.r,
-                              useFloatingAnimation: false,
-                              state: VowlMascotState.happy,
+                          SizedBox(width: 7.w),
+                          Flexible(
+                            child: Text(
+                              context.tr(
+                                'home.daily_note_footer',
+                                fallback: 'Daily Language Note',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w600,
+                                color: isDark
+                                    ? const Color(0xFF94A3B8)
+                                    : const Color(0xFF64748B),
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
-                        ),
-                        SizedBox(width: 16.w),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                (_hootTitle.value ??
-                                        context.tr(
-                                          'home.daily_wisdom',
-                                          fallback: 'DAILY WISDOM',
-                                        ))
-                                    .toUpperCase(),
-                                style: TextStyle(
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w900,
-                                  fontFamily: 'Outfit',
-                                  letterSpacing: 1.8,
-                                  // textSafeIndigo, not the raw brand indigo:
-                                  // this label sits right at AA's small-text
-                                  // threshold and this shade clears it cleanly.
-                                  color: _VowlCardPalette.textSafeIndigo,
-                                ),
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              SizedBox(height: 2.h),
-                              Text(
-                                dateString,
-                                style: TextStyle(
-                                  fontSize: 13.sp,
-                                  fontWeight: FontWeight.w600,
-                                  fontFamily: 'Outfit',
-                                  color: isDark
-                                      ? _VowlCardPalette.darkSecondaryText
-                                      : _VowlCardPalette.lightSecondaryText,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 8.w),
-                        _StreakBadge(
-                          streakCount: widget.streakCount,
-                          isDark: isDark,
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                    SizedBox(height: 28.h),
-                    _status.value == _HootStatus.loading
-                        ? _buildShimmerQuote(isDark)
-                        : FadeTransition(
-                            opacity: _fadeIn,
-                            child: SlideTransition(
-                              position: _slideIn,
-                              child: SizedBox(
-                                width: double.infinity,
-                                child: Text(
-                                  "${_hootText.value}",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w700,
-                                    fontFamily: 'Outfit',
-                                    height: 1.5,
-                                    color: isDark
-                                        ? Colors.white
-                                        : AppColors.slate900,
-                                  ),
-                                ),
+
+                    SizedBox(width: 8.w),
+
+                    // Action Button
+                    ScaleButton(
+                      onTap: _handleNavigation,
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10.w,
+                          vertical: 5.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppColors.indigo500.withValues(
+                            alpha: isDark ? 0.16 : 0.10,
+                          ),
+                          borderRadius: BorderRadius.circular(8.r),
+                          border: Border.all(
+                            color: AppColors.indigo500.withValues(
+                              alpha: isDark ? 0.30 : 0.22,
+                            ),
+                            width: 1.r,
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              context.tr(
+                                'home.practice_topic',
+                                fallback: 'Practice Topic',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w800,
+                                color: isDark
+                                    ? const Color(0xFFA5B4FC)
+                                    : const Color(0xFF4F46E5),
                               ),
                             ),
-                          ),
-                    SizedBox(height: 32.h),
-                    GestureDetector(
-                      onTap: _handleNavigation,
-                      onTapDown: (_) => _pressed.value = true,
-                      onTapUp: (_) => _pressed.value = false,
-                      onTapCancel: () => _pressed.value = false,
-                      child: AnimatedScale(
-                        scale: _pressed.value ? 0.96 : 1.0,
-                        duration: const Duration(milliseconds: 120),
-                        curve: Curves.easeOut,
-                        child: Container(
-                          width: double.infinity,
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 14.h,
-                          ),
-                          decoration: BoxDecoration(
-                            // textSafeIndigo, not the lighter brand indigo:
-                            // white text on this fill measures about 6.3:1,
-                            // clearing WCAG AA for normal-size text.
-                            color: _VowlCardPalette.textSafeIndigo,
-                            borderRadius: BorderRadius.circular(16.r),
-                            boxShadow: [
-                              BoxShadow(
-                                color: _VowlCardPalette.textSafeIndigo
-                                    .withValues(alpha: 0.3),
-                                blurRadius: 12,
-                                offset: const Offset(0, 4),
-                              ),
-                            ],
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Flexible(
-                                child: AutoSizeText(
-                                  context.tr(
-                                    'home.start_next_task',
-                                    fallback: 'Start Next Task',
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  maxLines: 2,
-                                  minFontSize: 10,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    // Pure white on the darker textSafeIndigo
-                                    // fill (see the decoration above).
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w800,
-                                    fontFamily: 'Outfit',
-                                    fontSize: 15.sp,
-                                    letterSpacing: 0.5,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(width: 8.w),
-                              Icon(
-                                Icons.play_arrow_rounded,
-                                color: Colors.white,
-                                size: 24.r,
-                              ),
-                            ],
-                          ),
+                            SizedBox(width: 3.w),
+                            Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              size: 9.r,
+                              color: isDark
+                                  ? const Color(0xFFA5B4FC)
+                                  : const Color(0xFF4F46E5),
+                            ),
+                          ],
                         ),
                       ),
                     ),
                   ],
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        );
-
-        return Semantics(
-          button: true,
-          // excludeSemantics collapses the whole card into this one
-          // announcement. Without it, a screen reader can still land on
-          // the title, date, quote, and streak count as separate stops,
-          // repeating everything this label already says.
-          excludeSemantics: true,
-          onTap: _handleNavigation,
-          label: _semanticsLabel(),
-          child: card,
         );
       },
     );
   }
 
-  /// Screen-reader announcement. Adds a full stop after the message only
-  /// when it does not already end with sentence punctuation, so the label
-  /// never reads "..".
-  String _semanticsLabel() {
-    final title = _hootTitle.value ?? _fallbackTitle;
-    final text = _hootText.value ?? 'Loading...';
-    final endsWithStop = RegExp(r'''[.!?]['"]?$''').hasMatch(text);
-    return '$title. $text${endsWithStop ? '' : '.'} '
-        '${widget.streakCount} day streak. Double tap to start next task.';
-  }
-
-  Widget _buildShimmerQuote(bool isDark) {
+  Widget _buildShimmer(bool isDark) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _ShimmerLine(width: double.infinity, isDark: isDark),
-        SizedBox(height: 8.h),
-        _ShimmerLine(width: 200.w, isDark: isDark),
-        SizedBox(height: 8.h),
-        _ShimmerLine(width: 120.w, isDark: isDark),
+        _ShimmerBlock(width: double.infinity, height: 16.h, isDark: isDark),
+        SizedBox(height: 6.h),
+        _ShimmerBlock(width: 220.w, height: 16.h, isDark: isDark),
       ],
     );
   }
 }
 
-/// Animated shimmer placeholder shown while content loads. A moving
-/// gradient sweep reads as noticeably more premium than a static
-/// translucent block for very little extra code.
-class _ShimmerLine extends StatefulWidget {
-  final double width;
-  final bool isDark;
+/// Fallback-safe mascot widget that checks for [AuthBloc] presence before attempting
+/// to build [VowlMascot], avoiding missing provider assertions in isolated contexts.
+class _SafeMascot extends StatelessWidget {
+  final double size;
 
-  const _ShimmerLine({required this.width, required this.isDark});
+  const _SafeMascot({required this.size});
 
   @override
-  State<_ShimmerLine> createState() => _ShimmerLineState();
+  Widget build(BuildContext context) {
+    try {
+      final hasAuthBloc =
+          context.findAncestorWidgetOfExactType<BlocProvider<AuthBloc>>() !=
+          null;
+      if (hasAuthBloc) {
+        return VowlMascot(
+          size: size,
+          useFloatingAnimation: false,
+          state: VowlMascotState.happy,
+        );
+      }
+    } catch (_) {}
+
+    return Icon(
+      Icons.auto_awesome_rounded,
+      size: size * 0.75,
+      color: AppColors.indigo500,
+    );
+  }
 }
 
-class _ShimmerLineState extends State<_ShimmerLine>
+class _ShimmerBlock extends StatefulWidget {
+  final double width;
+  final double height;
+  final bool isDark;
+
+  const _ShimmerBlock({
+    required this.width,
+    required this.height,
+    required this.isDark,
+  });
+
+  @override
+  State<_ShimmerBlock> createState() => _ShimmerBlockState();
+}
+
+class _ShimmerBlockState extends State<_ShimmerBlock>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
 
@@ -619,15 +562,15 @@ class _ShimmerLineState extends State<_ShimmerLine>
         : Colors.black.withValues(alpha: 0.05);
     final highlightColor = widget.isDark
         ? Colors.white.withValues(alpha: 0.12)
-        : Colors.black.withValues(alpha: 0.10);
+        : Colors.black.withValues(alpha: 0.08);
 
     return AnimatedBuilder(
       animation: _controller,
-      builder: (context, child) {
+      builder: (context, _) {
+        final t = _controller.value;
         return ShaderMask(
           blendMode: BlendMode.srcATop,
           shaderCallback: (bounds) {
-            final t = _controller.value;
             return LinearGradient(
               begin: Alignment(-1.0 + 3.0 * t, 0),
               end: Alignment(0.0 + 3.0 * t, 0),
@@ -637,113 +580,14 @@ class _ShimmerLineState extends State<_ShimmerLine>
           },
           child: Container(
             width: widget.width,
-            height: 22.h,
+            height: widget.height,
             decoration: BoxDecoration(
               color: baseColor,
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(6.r),
             ),
           ),
         );
       },
-    );
-  }
-}
-
-class _StreakBadge extends StatefulWidget {
-  final int streakCount;
-  final bool isDark;
-
-  const _StreakBadge({required this.streakCount, required this.isDark});
-
-  @override
-  State<_StreakBadge> createState() => _StreakBadgeState();
-}
-
-class _StreakBadgeState extends State<_StreakBadge>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _popController;
-  late final Animation<double> _pop;
-
-  @override
-  void initState() {
-    super.initState();
-    _popController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 420),
-    );
-    _pop = Tween<double>(begin: 0.6, end: 1.0).animate(
-      CurvedAnimation(parent: _popController, curve: Curves.elasticOut),
-    );
-    _popController.forward();
-  }
-
-  @override
-  void didUpdateWidget(covariant _StreakBadge oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    // Re-plays the little "pop" whenever the streak number actually
-    // changes (e.g. the user just completed today's task), so the
-    // badge itself becomes a small reward moment rather than a static
-    // counter.
-    if (oldWidget.streakCount != widget.streakCount) {
-      _popController.forward(from: 0);
-    }
-  }
-
-  @override
-  void dispose() {
-    _popController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final textColor = _VowlCardPalette.streakTextFor(
-      widget.streakCount,
-      widget.isDark,
-    );
-    return ScaleTransition(
-      scale: _pop,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: widget.isDark
-              ? _VowlCardPalette.amberDarkBg
-              : _VowlCardPalette.amberLightBg,
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: _VowlCardPalette.amber.withValues(alpha: 0.4),
-          ),
-          boxShadow: widget.isDark
-              ? null
-              : [
-                  BoxShadow(
-                    color: _VowlCardPalette.amber.withValues(alpha: 0.15),
-                    blurRadius: 8,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              Icons.local_fire_department_rounded,
-              color: _VowlCardPalette.amber,
-              size: 18.r,
-            ),
-            SizedBox(width: 6.w),
-            Text(
-              '${widget.streakCount}',
-              style: TextStyle(
-                fontWeight: FontWeight.w900,
-                fontFamily: 'Outfit',
-                fontSize: 15.sp,
-                color: textColor,
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

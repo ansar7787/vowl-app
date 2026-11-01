@@ -1,24 +1,20 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:go_router/go_router.dart';
-import 'package:vowl/core/utils/app_router.dart';
-import 'package:vowl/core/presentation/widgets/animated_page_indicator.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color color06b6d4 = Color(0xFF06B6D4);
-}
-
-/// Carousel deck featuring promotional banners, novel challenges, and discovery paths.
-class DiscoveryDeck extends StatefulWidget {
+/// Discovery Hub widget presenting curated quest sequences in an Apex Cockpit layout:
+/// - Flagship Hero Card: Adaptive "For You" smart recommendation.
+/// - 3-Cell Superpower Row: Daily Duo, Speed Blitz, and Grammar Pro.
+///
+/// 100% visible with zero horizontal swiping, zero battery-draining loops,
+/// and zero text clipping or ellipses on narrow viewports.
+class DiscoveryDeck extends StatelessWidget {
   /// Current authenticated [user] entity.
   final UserEntity user;
 
@@ -32,197 +28,110 @@ class DiscoveryDeck extends StatefulWidget {
     required this.onLaunchQuest,
   });
 
-  @override
-  State<DiscoveryDeck> createState() => _DiscoveryDeckState();
-}
-
-class _DiscoveryDeckState extends State<DiscoveryDeck> {
-  late PageController _pageController;
-  final ValueNotifier<int> _currentPage = ValueNotifier(0);
-
-  @override
-  void initState() {
-    super.initState();
-    _pageController = PageController(viewportFraction: 0.85, initialPage: 0);
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    _currentPage.dispose();
-    super.dispose();
+  void _triggerHaptic() {
+    try {
+      di.sl<HapticService>().selection();
+    } catch (_) {}
   }
 
   @override
   Widget build(BuildContext context) {
-    final isRtl = Directionality.of(context) == TextDirection.rtl;
-    final discoveryItems = [
-      (
-        title: context.tr('home.discovery_foryou_title', fallback: 'For You'),
-        subtitle: context.tr(
-          'home.discovery_foryou_subtitle',
-          fallback: 'Smart recommendation based on your progress',
-        ),
-        icon: Icons.lightbulb_outline_rounded,
-        color: AppColors.indigo500, // Indigo — unique
-        quests: 3,
-        difficulty: context.tr(
-          'home.discovery_diff_adaptive',
-          fallback: 'Adaptive',
-        ),
-        onTap: () => widget.onLaunchQuest('smart_recommendation'),
-      ),
-      (
-        title: context.tr(
-          'home.discovery_dailyduo_title',
-          fallback: 'Daily Duo',
-        ),
-        subtitle: context.tr(
-          'home.discovery_dailyduo_subtitle',
-          fallback: 'Vocal warm-up followed by reading mastery',
-        ),
-        icon: Icons.auto_awesome_motion_rounded,
-        color: _LocalPalette.color06b6d4, // Cyan — was duplicate indigo
-        quests: 2,
-        difficulty: context.tr(
-          'home.discovery_diff_medium',
-          fallback: 'Medium',
-        ),
-        onTap: () => widget.onLaunchQuest('daily_duo'),
-      ),
-      (
-        title: context.tr(
-          'home.discovery_speedblitz_title',
-          fallback: 'Speed Blitz',
-        ),
-        subtitle: context.tr(
-          'home.discovery_speedblitz_subtitle',
-          fallback: 'High-speed challenges to sharpen focus',
-        ),
-        icon: Icons.bolt_rounded,
-        color: IllustrationColors.warmOrange,
-        quests: 3,
-        difficulty: context.tr('home.discovery_diff_hard', fallback: 'Hard'),
-        onTap: () => widget.onLaunchQuest('speed_blitz'),
-      ),
-      (
-        title: context.tr(
-          'home.discovery_grammarpro_title',
-          fallback: 'Grammar Pro',
-        ),
-        subtitle: context.tr(
-          'home.discovery_grammarpro_subtitle',
-          fallback: 'Elite structural drills for sentence mastery',
-        ),
-        icon: Icons.verified_user_rounded,
-        color: AppColors.emerald500,
-        quests: 3,
-        difficulty: context.tr(
-          'home.discovery_diff_expert',
-          fallback: 'Expert',
-        ),
-        onTap: () => widget.onLaunchQuest('grammar_pro'),
-      ),
-      (
-        title: context.tr('home.discovery_seemore_title', fallback: 'See More'),
-        subtitle: context.tr(
-          'home.discovery_seemore_subtitle',
-          fallback: 'Explore full library',
-        ),
-        icon: Icons.explore_rounded,
-        color: AppColors.rose500, // Rose
-        quests: -1,
-        difficulty: context.tr('home.discovery_diff_all', fallback: 'All'),
-        onTap: () => context.push(AppRouter.libraryRoute),
-      ),
-    ];
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return MediaQuery.withClampedTextScaling(
-      // These are fixed-height carousel cards by design; clamp local text
-      // scale so very large OS accessibility settings can't overflow them,
-      // while the rest of the app remains freely scalable.
-      minScaleFactor: 1.0,
-      maxScaleFactor: 1.3,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Column(
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          ConstrainedBox(
-            constraints: BoxConstraints(minHeight: 180.h, maxHeight: 240.h),
-            child: SizedBox(
-              height: 220.h,
-              child: PageView.builder(
-                controller: _pageController,
-                physics: const BouncingScrollPhysics(),
-                onPageChanged: (int page) {
-                  _currentPage.value = page;
-                },
-                itemCount: discoveryItems.length,
-                itemBuilder: (context, index) {
-                  final item = discoveryItems[index];
-
-                  return AnimatedBuilder(
-                    animation: _pageController,
-                    builder: (context, child) {
-                      double page;
-                      try {
-                        page =
-                            _pageController.page ??
-                            _currentPage.value.toDouble();
-                      } catch (_) {
-                        page = _currentPage.value.toDouble();
-                      }
-
-                      // Calculate how centered the card is (1.0 = center, 0.0 = far away)
-                      final double diff = (page - index).abs();
-                      final double activeFactor = (1 - diff).clamp(0.0, 1.0);
-
-                      // Scale from 0.9 to 1.0 based on center proximity
-                      final double scale = 0.9 + (activeFactor * 0.1);
-
-                      return Transform.scale(
-                        scale: scale,
-                        child: _DiscoveryCollectionCard(
-                          title: item.title,
-                          subtitle: item.subtitle,
-                          icon: item.icon,
-                          color: item.color,
-                          quests: item.quests,
-                          difficulty: item.difficulty,
-                          isSelected: activeFactor > 0.8,
-                          isRtl: isRtl,
-                          index: index,
-                          onTap: item.onTap,
-                        ),
-                      );
-                    },
-                  );
-                },
-              ),
+          // 1. Flagship Hero Card: Adaptive "For You"
+          _HeroFlagshipQuestCard(
+            isDark: isDark,
+            title: context.tr('home.discovery_foryou_title', fallback: 'For You'),
+            badge: context.tr('home.discovery_diff_adaptive', fallback: 'Adaptive'),
+            subtitle: context.tr(
+              'home.discovery_foryou_subtitle',
+              fallback: 'Personalized to your practice',
             ),
-          ),
-          SizedBox(height: 16.h),
-          ValueListenableBuilder<int>(
-            valueListenable: _currentPage,
-            builder: (context, currentPage, _) {
-              return Semantics(
-                label: context.tr(
-                  'home.discovery_page_indicator',
-                  fallback: 'Page',
-                  args: [
-                    (currentPage + 1).toString(),
-                    discoveryItems.length.toString(),
-                  ],
-                ),
-                child: AnimatedPageIndicator(
-                  itemCount: discoveryItems.length,
-                  currentIndex: currentPage,
-                  itemColors: discoveryItems.map((e) => e.color).toList(),
-                  activeWidth: 28.w,
-                  inactiveWidth: 8.r,
-                  height: 6.r,
-                ),
-              );
+            onTap: () {
+              _triggerHaptic();
+              onLaunchQuest('smart_recommendation');
             },
+          ),
+
+          SizedBox(height: 10.h),
+
+          // 2. 3-Cell Superpower Row
+          Row(
+            children: [
+              // Cell 1: Daily Duo
+              Expanded(
+                child: _DiscoverySubCell(
+                  isDark: isDark,
+                  icon: Icons.auto_awesome_motion_rounded,
+                  color: const Color(0xFF06B6D4), // Cyan
+                  title: context.tr(
+                    'home.discovery_dailyduo_title',
+                    fallback: 'Daily Duo',
+                  ),
+                  tag: context.tr(
+                    'home.quests_count',
+                    fallback: '2 Quests',
+                    args: ['2'],
+                  ),
+                  onTap: () {
+                    _triggerHaptic();
+                    onLaunchQuest('daily_duo');
+                  },
+                ),
+              ),
+              SizedBox(width: 8.w),
+
+              // Cell 2: Speed Blitz
+              Expanded(
+                child: _DiscoverySubCell(
+                  isDark: isDark,
+                  icon: Icons.bolt_rounded,
+                  color: IllustrationColors.warmOrange,
+                  title: context.tr(
+                    'home.discovery_speedblitz_title',
+                    fallback: 'Speed Blitz',
+                  ),
+                  tag: context.tr(
+                    'home.quests_count',
+                    fallback: '3 Quests',
+                    args: ['3'],
+                  ),
+                  onTap: () {
+                    _triggerHaptic();
+                    onLaunchQuest('speed_blitz');
+                  },
+                ),
+              ),
+              SizedBox(width: 8.w),
+
+              // Cell 3: Grammar Pro
+              Expanded(
+                child: _DiscoverySubCell(
+                  isDark: isDark,
+                  icon: Icons.verified_user_rounded,
+                  color: AppColors.emerald500,
+                  title: context.tr(
+                    'home.discovery_grammarpro_title',
+                    fallback: 'Grammar Pro',
+                  ),
+                  tag: context.tr(
+                    'home.quests_count',
+                    fallback: '3 Quests',
+                    args: ['3'],
+                  ),
+                  onTap: () {
+                    _triggerHaptic();
+                    onLaunchQuest('grammar_pro');
+                  },
+                ),
+              ),
+            ],
           ),
         ],
       ),
@@ -230,318 +139,295 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
   }
 }
 
-class _DiscoveryCollectionCard extends StatelessWidget {
-  const _DiscoveryCollectionCard({
+/// Hero flagship horizon card for personalized adaptive recommendations.
+class _HeroFlagshipQuestCard extends StatelessWidget {
+  final bool isDark;
+  final String title;
+  final String badge;
+  final String subtitle;
+  final VoidCallback onTap;
+
+  const _HeroFlagshipQuestCard({
+    required this.isDark,
     required this.title,
+    required this.badge,
     required this.subtitle,
-    required this.icon,
-    required this.color,
-    required this.quests,
-    required this.difficulty,
-    required this.isSelected,
-    required this.isRtl,
-    required this.index,
     required this.onTap,
   });
-
-  final String title;
-  final String subtitle;
-  final IconData icon;
-  final Color color;
-  final int quests;
-  final String difficulty;
-  final bool isSelected;
-  final bool isRtl;
-  final int index;
-  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label:
-          '$title, $subtitle, ${context.tr('home.quests_count', fallback: 'Quests', args: [quests.toString()])}, $difficulty',
+      label: '$title, $badge, $subtitle. Double tap to start quest sequence.',
       child: ScaleButton(
         onTap: onTap,
         child: Container(
-          height: 200.h,
-          margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
-          child: ExcludeSemantics(
-            child: GlassTile(
-              borderRadius: BorderRadius.circular(28.r),
-              padding: EdgeInsets.zero,
-              showShadow: false,
-              blur: 0,
-              borderColor: isSelected
-                  ? color.withValues(alpha: 0.5)
-                  : Colors.white.withValues(alpha: 0.1),
-              child: Stack(
-                children: [
-                  // Decorative Background Icon
-                  if (index % 2 == 1)
-                    PositionedDirectional(
-                      end: -10,
-                      bottom: -20,
-                      child: Transform.rotate(
-                        angle: -0.2,
-                        child: Icon(
-                          icon,
-                          size: 160.r,
-                          color: color.withValues(
-                            alpha: isSelected ? 0.08 : 0.03,
-                          ),
-                        ),
-                      ),
-                    )
-                  else
-                    PositionedDirectional(
-                      end: -20,
-                      top: -20,
-                      child: Icon(
-                        icon,
-                        size: 140.r,
-                        color: color.withValues(
-                          alpha: isSelected ? 0.08 : 0.03,
-                        ),
-                      ),
+          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF111827) : Colors.white,
+            borderRadius: BorderRadius.circular(18.r),
+            border: Border.all(
+              color: isDark
+                  ? AppColors.indigo500.withValues(alpha: 0.28)
+                  : AppColors.indigo500.withValues(alpha: 0.22),
+              width: 1.r,
+            ),
+            boxShadow: isDark
+                ? null
+                : [
+                    BoxShadow(
+                      color: AppColors.indigo500.withValues(alpha: 0.06),
+                      blurRadius: 14,
+                      offset: const Offset(0, 4),
                     ),
+                  ],
+          ),
+          child: Row(
+            children: [
+              // Leading Halo Icon
+              Container(
+                width: 42.r,
+                height: 42.r,
+                decoration: BoxDecoration(
+                  color: AppColors.indigo500.withValues(
+                    alpha: isDark ? 0.18 : 0.12,
+                  ),
+                  borderRadius: BorderRadius.circular(12.r),
+                  border: Border.all(
+                    color: AppColors.indigo500.withValues(
+                      alpha: isDark ? 0.35 : 0.25,
+                    ),
+                    width: 1.r,
+                  ),
+                ),
+                child: Center(
+                  child: Icon(
+                    Icons.lightbulb_rounded,
+                    size: 22.r,
+                    color: isDark
+                        ? const Color(0xFFA5B4FC)
+                        : AppColors.indigo500,
+                  ),
+                ),
+              ),
+              SizedBox(width: 12.w),
 
-                  // Content Layer
-                  Padding(
-                    padding: EdgeInsets.all(24.r),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+              // Title, Badge, and Subtitle
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Row(
                       children: [
-                        // Category Tag & Difficulty Row
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Expanded(
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 10.w,
-                                  vertical: 4.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: color.withValues(alpha: 0.15),
-                                  borderRadius: BorderRadius.circular(12.r),
-                                  border: Border.all(
-                                    color: color.withValues(alpha: 0.2),
-                                    width: 1,
-                                  ),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Stack(
-                                      alignment: Alignment.center,
-                                      children: [
-                                        Container(
-                                          width: 6,
-                                          height: 6,
-                                          decoration: BoxDecoration(
-                                            color: color.withValues(alpha: 0.4),
-                                            shape: BoxShape.circle,
-                                          ),
-                                        ),
-                                        Builder(
-                                          builder: (context) {
-                                            final reduceMotion =
-                                                VowlMotion.shouldReduceMotion(
-                                                  context,
-                                                );
-                                            Widget circle = Container(
-                                              width: 12,
-                                              height: 12,
-                                              decoration: BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                border: Border.all(
-                                                  color: color.withValues(
-                                                    alpha: 0.5,
-                                                  ),
-                                                  width: 1,
-                                                ),
-                                              ),
-                                            );
-                                            if (!reduceMotion) {
-                                              circle = circle
-                                                  .animate(
-                                                    onPlay: (c) => c.repeat(),
-                                                  )
-                                                  .scale(
-                                                    begin: const Offset(
-                                                      0.5,
-                                                      0.5,
-                                                    ),
-                                                    end: const Offset(2, 2),
-                                                    duration: 2.seconds,
-                                                    curve: Curves.easeOutExpo,
-                                                  )
-                                                  .fadeOut(duration: 2.seconds);
-                                            }
-                                            return circle;
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(width: 8.w),
-                                    Flexible(
-                                      child: Text(
-                                        title.toUpperCase(),
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 9.sp,
-                                          fontWeight: FontWeight.w900,
-                                          color: color,
-                                          letterSpacing: 2.2,
-                                        ),
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 8.w),
-                            _buildDifficultyBadge(difficulty, color),
-                          ],
-                        ),
-                        SizedBox(height: 16.h),
-
-                        // Main Subtitle
-                        Expanded(
+                        Flexible(
                           child: Text(
-                            subtitle,
+                            title,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 20.sp,
-                              fontWeight: FontWeight.w900,
-                              color: Theme.of(context).colorScheme.onSurface,
-                              height: 1.15,
+                              fontSize: 14.5.sp,
+                              fontWeight: FontWeight.w800,
+                              color: isDark
+                                  ? const Color(0xFFF8FAFC)
+                                  : const Color(0xFF0F172A),
+                              letterSpacing: -0.2,
                             ),
-                            maxLines: 2,
+                            maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
-
-                        // Action Footer
-                        Row(
-                          children: [
-                            _buildQuestCount(context, quests, color),
-                            const Spacer(),
-                            _buildStartButton(color, isRtl),
-                          ],
+                        SizedBox(width: 6.w),
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 6.w,
+                            vertical: 2.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: AppColors.indigo500.withValues(
+                              alpha: isDark ? 0.20 : 0.12,
+                            ),
+                            borderRadius: BorderRadius.circular(5.r),
+                          ),
+                          child: Text(
+                            badge.toUpperCase(),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 9.sp,
+                              fontWeight: FontWeight.w900,
+                              color: isDark
+                                  ? const Color(0xFFA5B4FC)
+                                  : AppColors.indigo500,
+                              letterSpacing: 0.5,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
                       ],
                     ),
+                    SizedBox(height: 3.h),
+                    Text(
+                      subtitle,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.5.sp,
+                        fontWeight: FontWeight.w500,
+                        color: isDark
+                            ? const Color(0xFF94A3B8)
+                            : const Color(0xFF64748B),
+                        height: 1.25,
+                      ),
+                      maxLines: 2,
+                      softWrap: true,
+                    ),
+                  ],
+                ),
+              ),
+
+              SizedBox(width: 10.w),
+
+              // Action Pill
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+                decoration: BoxDecoration(
+                  color: AppColors.indigo500,
+                  borderRadius: BorderRadius.circular(100.r),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      context.tr('home.play', fallback: 'Play'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(width: 3.w),
+                    Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      size: 9.r,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Compact superpower quest cell for the 3-column row.
+class _DiscoverySubCell extends StatelessWidget {
+  final bool isDark;
+  final IconData icon;
+  final Color color;
+  final String title;
+  final String tag;
+  final VoidCallback onTap;
+
+  const _DiscoverySubCell({
+    required this.isDark,
+    required this.icon,
+    required this.color,
+    required this.title,
+    required this.tag,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      button: true,
+      label: '$title, $tag. Double tap to start quest.',
+      child: ScaleButton(
+        onTap: onTap,
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 10.h),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF111827) : Colors.white,
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.08)
+                  : Colors.black.withValues(alpha: 0.07),
+              width: 1.r,
+            ),
+            boxShadow: isDark
+                ? null
+                : [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.02),
+                      blurRadius: 8,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // Halo Icon
+              Container(
+                width: 30.r,
+                height: 30.r,
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: isDark ? 0.16 : 0.10),
+                  borderRadius: BorderRadius.circular(10.r),
+                  border: Border.all(
+                    color: color.withValues(alpha: isDark ? 0.32 : 0.20),
+                    width: 1.r,
                   ),
-                ],
+                ),
+                child: Center(
+                  child: Icon(icon, size: 16.r, color: color),
+                ),
               ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+              SizedBox(height: 6.h),
 
-  Widget _buildDifficultyBadge(String text, Color color) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-      decoration: BoxDecoration(
-        // Was 0.05 opacity — invisible. Now 0.12 for readable contrast.
-        color: color.withValues(alpha: 0.12),
-        borderRadius: BorderRadius.circular(8.r),
-        border: Border.all(color: color.withValues(alpha: 0.2), width: 0.5),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.psychology_rounded, size: 12.r, color: color),
-          SizedBox(width: 4.w),
-          Flexible(
-            child: Text(
-              text.toUpperCase(),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                // Was 8sp — illegible. Bumped to 10sp minimum.
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w800,
-                color: color,
-                letterSpacing: 0.5,
+              // Title (with scale-down fit to prevent any wrapping or overflow)
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  title,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w800,
+                    color: isDark
+                        ? const Color(0xFFF8FAFC)
+                        : const Color(0xFF0F172A),
+                    letterSpacing: -0.2,
+                  ),
+                  maxLines: 1,
+                ),
               ),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            ),
+              SizedBox(height: 2.h),
+
+              // Tag / Quest Count
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  tag,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w700,
+                    color: color,
+                  ),
+                  maxLines: 1,
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
-    );
-  }
-
-  Widget _buildQuestCount(BuildContext context, int count, Color color) {
-    if (count < 0) return const SizedBox.shrink();
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          padding: EdgeInsets.all(6.r),
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
-            shape: BoxShape.circle,
-          ),
-          // gamepad/list icon better communicates "N playable quests".
-          child: Icon(Icons.videogame_asset_rounded, size: 12.r, color: color),
-        ),
-        SizedBox(width: 8.w),
-        Text(
-          context.tr(
-            'home.quests_count',
-            fallback: 'Quests',
-            args: [count.toString()],
-          ),
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 10.sp,
-            fontWeight: FontWeight.w900,
-            color: color,
-            letterSpacing: 1.2,
-          ),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-        ),
-      ],
-    );
-  }
-
-  Widget _buildStartButton(Color color, bool isRtl) {
-    return Builder(
-      builder: (context) {
-        final reduceMotion = VowlMotion.shouldReduceMotion(context);
-        Widget button = Container(
-          padding: EdgeInsets.all(12.r),
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.12),
-            shape: BoxShape.circle,
-            border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
-          ),
-          child: Icon(
-            isRtl ? Icons.arrow_outward_rounded : Icons.arrow_outward_rounded,
-            size: 16.r,
-            color: color,
-          ),
-        );
-        if (!reduceMotion) {
-          button = button
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .shimmer(
-                delay: 1.seconds,
-                duration: 2500.ms,
-                color: color.withValues(alpha: 0.3),
-              );
-        }
-        return button;
-      },
     );
   }
 }

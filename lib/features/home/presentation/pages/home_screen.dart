@@ -404,9 +404,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         subtitle: context.tr(
                           'home.discovery_hub_subtitle',
-                          fallback: 'curated quest sequences',
+                          fallback: 'Targeted skill tracks',
                         ),
                         categoryColor: IllustrationColors.brightBlue,
+                        onSeeAll: () => context.push(AppRouter.libraryRoute),
                       ),
                       SliverToBoxAdapter(
                         child: DiscoveryDeck(
@@ -417,13 +418,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
 
                       // --------------------------------------------------
-                      // 8. DAILY WISDOM
+                      // 8. DAILY NOTE / LANGUAGE NOTE
                       // --------------------------------------------------
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverList(
                           delegate: SliverChildListDelegate([
-                            SizedBox(height: 32.h),
+                            SizedBox(height: 24.h),
                             DailyMotivationCard(
                               streakCount: user.currentStreak,
                             ),
