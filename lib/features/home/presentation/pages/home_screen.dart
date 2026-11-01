@@ -249,6 +249,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   displacement: 40.h,
                   child: CustomScrollView(
                     controller: di.sl<ScrollController>(instanceName: 'home'),
+                    cacheExtent: 350.0,
                     physics: const AlwaysScrollableScrollPhysics(
                       parent: BouncingScrollPhysics(),
                     ),
