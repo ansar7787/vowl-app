@@ -10,7 +10,6 @@ import 'package:go_router/go_router.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/error/failures.dart';
-import 'package:vowl/core/presentation/feature_catalog/feature_directory_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_theme.dart';
@@ -734,7 +733,7 @@ void main() {
     );
 
     testWidgets(
-      'tapping See All in Explore & Tools opens FeatureDirectoryBottomSheet',
+      'tapping See All in Explore & Tools opens Tools Directory bottom sheet',
       (tester) async {
         await pumpHomeScreen(tester);
 
@@ -747,7 +746,7 @@ void main() {
         await tester.tap(seeAllButtons.last);
         await tester.pumpAndSettle();
 
-        expect(find.byType(FeatureDirectoryBottomSheet), findsOneWidget);
+        expect(find.text('Tools & Utilities (7)'), findsOneWidget);
       },
     );
   });

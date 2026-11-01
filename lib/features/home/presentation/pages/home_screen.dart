@@ -31,7 +31,6 @@ import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
 import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/onboarding_service.dart';
-import 'package:vowl/core/presentation/feature_catalog/feature_directory_bottom_sheet.dart';
 
 /// Primary home dashboard screen presenting daily activities, streak stats, and arenas.
 class HomeScreen extends StatefulWidget {
@@ -391,8 +390,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           fallback: 'Your learning toolkit',
                         ),
                         categoryColor: AppColors.emerald500,
-                        onSeeAll: () =>
-                            FeatureDirectoryBottomSheet.show(context),
+                        onSeeAll: () => ToolsStrip.showToolsDirectory(context),
                       ),
                       const SliverToBoxAdapter(child: ToolsStrip()),
 

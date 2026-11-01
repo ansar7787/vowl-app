@@ -31,6 +31,14 @@ class ToolsStrip extends StatelessWidget {
   /// Creates a [ToolsStrip] widget.
   const ToolsStrip({super.key});
 
+  /// Opens the dedicated Tools & Utilities Directory modal sheet.
+  static Future<void> showToolsDirectory(BuildContext context) {
+    try {
+      di.sl<HapticService>().selection();
+    } catch (_) {}
+    return _ToolsDirectoryBottomSheet.show(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -662,8 +670,31 @@ class _WordGamesBottomSheet extends StatelessWidget {
 
           // Header
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              Container(
+                width: 38.r,
+                height: 38.r,
+                decoration: BoxDecoration(
+                  color: IllustrationColors.vibrantPink.withValues(
+                    alpha: isDark ? 0.16 : 0.10,
+                  ),
+                  borderRadius: BorderRadius.circular(12.r),
+                  border: Border.all(
+                    color: IllustrationColors.vibrantPink.withValues(
+                      alpha: isDark ? 0.32 : 0.22,
+                    ),
+                    width: 1.r,
+                  ),
+                ),
+                child: Center(
+                  child: Icon(
+                    Icons.extension_rounded,
+                    size: 20.r,
+                    color: IllustrationColors.vibrantPink,
+                  ),
+                ),
+              ),
+              SizedBox(width: 12.w),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -678,6 +709,7 @@ class _WordGamesBottomSheet extends StatelessWidget {
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w800,
                         color: isDark ? Colors.white : const Color(0xFF0F172A),
+                        letterSpacing: -0.3,
                       ),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
@@ -686,11 +718,12 @@ class _WordGamesBottomSheet extends StatelessWidget {
                     Text(
                       context.tr(
                         'home.tools_games_sheet_sub',
-                        fallback: 'Vocabulary & anagram challenges',
+                        fallback: 'Speed vocabulary & anagram challenges',
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 12.sp,
+                        fontSize: 11.5.sp,
+                        fontWeight: FontWeight.w500,
                         color: isDark
                             ? const Color(0xFF94A3B8)
                             : const Color(0xFF64748B),
@@ -704,10 +737,20 @@ class _WordGamesBottomSheet extends StatelessWidget {
               SizedBox(width: 8.w),
               IconButton(
                 onPressed: () => Navigator.of(context).pop(),
-                icon: Icon(
-                  Icons.close_rounded,
-                  size: 20.r,
-                  color: isDark ? Colors.white70 : Colors.black54,
+                icon: Container(
+                  width: 30.r,
+                  height: 30.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : Colors.black.withValues(alpha: 0.05),
+                  ),
+                  child: Icon(
+                    Icons.close_rounded,
+                    size: 17.r,
+                    color: isDark ? Colors.white70 : Colors.black54,
+                  ),
                 ),
               ),
             ],
@@ -900,8 +943,31 @@ class _ToolsDirectoryBottomSheet extends StatelessWidget {
 
           // Header
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              Container(
+                width: 38.r,
+                height: 38.r,
+                decoration: BoxDecoration(
+                  color: AppColors.emerald500.withValues(
+                    alpha: isDark ? 0.16 : 0.10,
+                  ),
+                  borderRadius: BorderRadius.circular(12.r),
+                  border: Border.all(
+                    color: AppColors.emerald500.withValues(
+                      alpha: isDark ? 0.32 : 0.22,
+                    ),
+                    width: 1.r,
+                  ),
+                ),
+                child: Center(
+                  child: Icon(
+                    LucideIcons.layoutGrid,
+                    size: 19.r,
+                    color: AppColors.emerald500,
+                  ),
+                ),
+              ),
+              SizedBox(width: 12.w),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -913,9 +979,10 @@ class _ToolsDirectoryBottomSheet extends StatelessWidget {
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 18.5.sp,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w800,
                         color: isDark ? Colors.white : const Color(0xFF0F172A),
+                        letterSpacing: -0.3,
                       ),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
@@ -924,11 +991,12 @@ class _ToolsDirectoryBottomSheet extends StatelessWidget {
                     Text(
                       context.tr(
                         'home.tools_all_sub',
-                        fallback: 'All learning accelerators and tools in Vowl',
+                        fallback: '7 high-impact learning accelerators',
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 12.sp,
+                        fontSize: 11.5.sp,
+                        fontWeight: FontWeight.w500,
                         color: isDark
                             ? const Color(0xFF94A3B8)
                             : const Color(0xFF64748B),
@@ -942,10 +1010,20 @@ class _ToolsDirectoryBottomSheet extends StatelessWidget {
               SizedBox(width: 8.w),
               IconButton(
                 onPressed: () => Navigator.of(context).pop(),
-                icon: Icon(
-                  Icons.close_rounded,
-                  size: 20.r,
-                  color: isDark ? Colors.white70 : Colors.black54,
+                icon: Container(
+                  width: 30.r,
+                  height: 30.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : Colors.black.withValues(alpha: 0.05),
+                  ),
+                  child: Icon(
+                    Icons.close_rounded,
+                    size: 17.r,
+                    color: isDark ? Colors.white70 : Colors.black54,
+                  ),
                 ),
               ),
             ],
@@ -1096,31 +1174,38 @@ class _ModalFeatureRow extends StatelessWidget {
       child: ScaleButton(
         onTap: onTap,
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
+          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 11.h),
           decoration: BoxDecoration(
             color: isDark
-                ? Colors.white.withValues(alpha: 0.03)
-                : Colors.black.withValues(alpha: 0.02),
-            borderRadius: BorderRadius.circular(14.r),
+                ? const Color(0xFF161E2E)
+                : const Color(0xFFF8FAFC),
+            borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
-              color: color.withValues(alpha: isDark ? 0.22 : 0.15),
-              width: 1.r,
+              color: color.withValues(alpha: isDark ? 0.25 : 0.16),
+              width: 1.2.r,
             ),
+            boxShadow: [
+              BoxShadow(
+                color: color.withValues(alpha: isDark ? 0.05 : 0.02),
+                blurRadius: 6.r,
+                offset: Offset(0, 2.r),
+              ),
+            ],
           ),
           child: Row(
             children: [
               Container(
-                width: 36.r,
-                height: 36.r,
+                width: 38.r,
+                height: 38.r,
                 decoration: BoxDecoration(
                   color: color.withValues(alpha: isDark ? 0.14 : 0.09),
-                  borderRadius: BorderRadius.circular(10.r),
+                  borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(
-                    color: color.withValues(alpha: isDark ? 0.25 : 0.16),
+                    color: color.withValues(alpha: isDark ? 0.28 : 0.18),
                     width: 1.r,
                   ),
                 ),
-                child: Center(child: Icon(icon, color: color, size: 18.r)),
+                child: Center(child: Icon(icon, color: color, size: 19.r)),
               ),
               SizedBox(width: 12.w),
               Expanded(
@@ -1135,11 +1220,12 @@ class _ModalFeatureRow extends StatelessWidget {
                             title,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 14.sp,
+                              fontSize: 14.5.sp,
                               fontWeight: FontWeight.w800,
                               color: isDark
-                                  ? Colors.white
+                                  ? const Color(0xFFF8FAFC)
                                   : const Color(0xFF0F172A),
+                              letterSpacing: -0.2,
                             ),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
@@ -1148,14 +1234,14 @@ class _ModalFeatureRow extends StatelessWidget {
                         SizedBox(width: 6.w),
                         Container(
                           padding: EdgeInsets.symmetric(
-                            horizontal: 5.w,
-                            vertical: 1.5.h,
+                            horizontal: 6.w,
+                            vertical: 2.h,
                           ),
                           decoration: BoxDecoration(
                             color: color.withValues(
                               alpha: isDark ? 0.16 : 0.10,
                             ),
-                            borderRadius: BorderRadius.circular(4.r),
+                            borderRadius: BorderRadius.circular(5.r),
                           ),
                           child: Text(
                             badge,
@@ -1171,12 +1257,13 @@ class _ModalFeatureRow extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 2.h),
+                    SizedBox(height: 2.5.h),
                     Text(
                       subtitle,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.5.sp,
+                        fontWeight: FontWeight.w500,
                         color: isDark
                             ? const Color(0xFF94A3B8)
                             : const Color(0xFF64748B),
@@ -1187,11 +1274,21 @@ class _ModalFeatureRow extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(width: 6.w),
-              Icon(
-                Icons.arrow_forward_ios_rounded,
-                size: 11.r,
-                color: isDark ? Colors.white38 : Colors.black26,
+              SizedBox(width: 8.w),
+              Container(
+                width: 26.r,
+                height: 26.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: color.withValues(alpha: isDark ? 0.12 : 0.08),
+                ),
+                child: Center(
+                  child: Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    size: 10.r,
+                    color: color,
+                  ),
+                ),
               ),
             ],
           ),
