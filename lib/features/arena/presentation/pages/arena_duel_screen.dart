@@ -164,40 +164,67 @@ class _ArenaDuelView extends StatelessWidget {
                 SizedBox(height: 16.h),
 
                 // Question Box
-                Container(
-                  padding: EdgeInsets.all(20.w),
-                  decoration: BoxDecoration(
-                    color: isDark ? AppColors.midnightSurface : Colors.white,
-                    borderRadius: BorderRadius.circular(16.r),
-                    border: Border.all(color: borderColor),
-                  ),
-                  child: Column(
-                    children: [
-                      Text(
-                        'QUESTION ${state.currentQuestionIndex + 1} OF ${state.session?.questions.length ?? 5}',
-                        style: TextStyle(
-                          fontSize: 11.sp,
-                          letterSpacing: 1.0,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.indigo500,
-                        ),
+                Builder(
+                  builder: (_) {
+                    final disciplineLabel = _getDisciplineLabel(q.question);
+                    final disciplineColor = _getDisciplineColor(q.question);
+                    return Container(
+                      padding: EdgeInsets.all(18.w),
+                      decoration: BoxDecoration(
+                        color: isDark ? AppColors.midnightSurface : Colors.white,
+                        borderRadius: BorderRadius.circular(16.r),
+                        border: Border.all(color: borderColor),
                       ),
-                      SizedBox(height: 12.h),
-                      Text(
-                        q.question,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 17.sp,
-                          fontWeight: FontWeight.w800,
-                          height: 1.3,
-                          color: textPrimary,
-                        ),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                                decoration: BoxDecoration(
+                                  color: disciplineColor.withValues(alpha: 0.12),
+                                  borderRadius: BorderRadius.circular(6.r),
+                                ),
+                                child: Text(
+                                  disciplineLabel,
+                                  style: TextStyle(
+                                    fontSize: 9.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: disciplineColor,
+                                    letterSpacing: 0.8,
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                'ROUND ${state.currentQuestionIndex + 1} OF ${state.session?.questions.length ?? 5}',
+                                style: TextStyle(
+                                  fontSize: 10.sp,
+                                  letterSpacing: 0.8,
+                                  fontWeight: FontWeight.w700,
+                                  color: textSecondary,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 12.h),
+                          Text(
+                            q.question,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w800,
+                              height: 1.35,
+                              color: textPrimary,
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    );
+                  },
                 ),
 
-                SizedBox(height: 16.h),
+                SizedBox(height: 14.h),
 
                 // Options List
                 Expanded(
@@ -225,6 +252,37 @@ class _ArenaDuelView extends StatelessWidget {
                     },
                   ),
                 ),
+
+                // Live Explanation Card when answered
+                if (state.isAnswered && q.explanation.isNotEmpty) ...[
+                  SizedBox(height: 8.h),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+                    decoration: BoxDecoration(
+                      color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF1F5F9),
+                      borderRadius: BorderRadius.circular(12.r),
+                      border: Border.all(color: borderColor),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(LucideIcons.lightbulb, size: 15.sp, color: const Color(0xFFF59E0B)),
+                        SizedBox(width: 8.w),
+                        Expanded(
+                          child: Text(
+                            q.explanation,
+                            style: TextStyle(
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w500,
+                              height: 1.35,
+                              color: textSecondary,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ],
             ),
           );
@@ -233,6 +291,28 @@ class _ArenaDuelView extends StatelessWidget {
     ),
   );
 }
+
+  String _getDisciplineLabel(String questionText) {
+    final lower = questionText.toLowerCase();
+    if (lower.contains('synonym')) return 'WORD CLASH • SYNONYM';
+    if (lower.contains('opposite') || lower.contains('antonym')) return 'WORD CLASH • ANTONYM';
+    if (lower.contains('idiom')) return 'PHRASE DUEL • IDIOM';
+    if (lower.contains('collocation') || lower.contains('natural pair')) return 'PHRASE DUEL • COLLOCATION';
+    if (lower.contains('particle') || lower.contains('phrasal')) return 'PHRASE DUEL • PHRASAL VERB';
+    if (lower.contains('academic')) return 'SENTENCE STRIKE • ACADEMIC';
+    return 'CONTEXT CLUES • VOCABULARY';
+  }
+
+  Color _getDisciplineColor(String questionText) {
+    final lower = questionText.toLowerCase();
+    if (lower.contains('synonym')) return AppColors.indigo500;
+    if (lower.contains('opposite') || lower.contains('antonym')) return const Color(0xFFF59E0B);
+    if (lower.contains('idiom')) return const Color(0xFF06B6D4);
+    if (lower.contains('collocation') || lower.contains('natural pair')) return const Color(0xFF10B981);
+    if (lower.contains('particle') || lower.contains('phrasal')) return const Color(0xFF8B5CF6);
+    if (lower.contains('academic')) return const Color(0xFFEC4899);
+    return AppColors.indigo500;
+  }
 
   Widget _buildOptionButton({
     required BuildContext context,
