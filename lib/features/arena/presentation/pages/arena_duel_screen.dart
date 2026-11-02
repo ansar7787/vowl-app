@@ -304,7 +304,7 @@ class _ArenaDuelView extends StatelessWidget {
     if (lower.contains('collocation') || lower.contains('natural pair')) return 'PHRASE DUEL • COLLOCATION';
     if (lower.contains('particle') || lower.contains('phrasal')) return 'PHRASE DUEL • PHRASAL VERB';
     if (lower.contains('academic')) return 'SENTENCE STRIKE • ACADEMIC';
-    return 'CONTEXT CLUES • VOCABULARY';
+    return 'CONTEXT BLITZ • INFERENCE';
   }
 
   Color _getDisciplineColor(String questionText) {
@@ -315,7 +315,7 @@ class _ArenaDuelView extends StatelessWidget {
     if (lower.contains('collocation') || lower.contains('natural pair')) return const Color(0xFF10B981);
     if (lower.contains('particle') || lower.contains('phrasal')) return const Color(0xFF8B5CF6);
     if (lower.contains('academic')) return const Color(0xFFEC4899);
-    return AppColors.indigo500;
+    return const Color(0xFF0EA5E9);
   }
 
   Widget _buildOptionButton({
