@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -184,12 +185,58 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     super.dispose();
   }
 
+  LeaderboardTimeframe _timeframe = LeaderboardTimeframe.thisWeek;
+
+  /// Deterministic sort ensuring consistency across timeframes:
+  /// - Kids: Levels completed (primary), daily streak (tie-breaker), coins (fallback)
+  /// - This Week: Weekly XP (primary), daily streak (tie-breaker), levels, total XP
+  /// - All-Time: Lifetime total XP (primary), daily streak (tie-breaker), levels
+  List<UserEntity> get _sortedUsers {
+    final list = List<UserEntity>.from(widget.state.users);
+    if (widget.state.isKids) {
+      list.sort((a, b) {
+        final aLevels = a.kidsTotalLevelsCompleted;
+        final bLevels = b.kidsTotalLevelsCompleted;
+        if (bLevels != aLevels) return bLevels.compareTo(aLevels);
+        if (b.currentStreak != a.currentStreak) {
+          return b.currentStreak.compareTo(a.currentStreak);
+        }
+        return b.kidsCoins.compareTo(a.kidsCoins);
+      });
+    } else if (_timeframe == LeaderboardTimeframe.thisWeek) {
+      list.sort((a, b) {
+        final aWeekly = a.currentWeeklyExp;
+        final bWeekly = b.currentWeeklyExp;
+        if (bWeekly != aWeekly) return bWeekly.compareTo(aWeekly);
+        if (b.currentStreak != a.currentStreak) {
+          return b.currentStreak.compareTo(a.currentStreak);
+        }
+        if (b.totalLevelsCompleted != a.totalLevelsCompleted) {
+          return b.totalLevelsCompleted.compareTo(a.totalLevelsCompleted);
+        }
+        return b.totalExp.compareTo(a.totalExp);
+      });
+    } else {
+      list.sort((a, b) {
+        if (b.totalExp != a.totalExp) {
+          return b.totalExp.compareTo(a.totalExp);
+        }
+        if (b.currentStreak != a.currentStreak) {
+          return b.currentStreak.compareTo(a.currentStreak);
+        }
+        return b.totalLevelsCompleted.compareTo(a.totalLevelsCompleted);
+      });
+    }
+    return list;
+  }
+
   /// Smoothly scrolls the viewport so that the current user's card lands
   /// dead-center in the visible screen (between the top pinned header and bottom bar).
   /// If the user is on the podium (ranks 1-3), it scrolls to the very top.
   /// If the user is unranked, a friendly floating info message is displayed.
   void _scrollToMe() {
-    final rankIndex = widget.state.users.indexWhere(
+    final users = _sortedUsers;
+    final rankIndex = users.indexWhere(
       (u) => u.id == widget.currentUser?.id,
     );
 
@@ -386,7 +433,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
       final repo = di.sl<ArenaRepository>();
       final session = await repo.quickMatch(
         currentUser: currentUser,
-        leaderboardUsers: widget.state.users,
+        leaderboardUsers: _sortedUsers,
       );
       if (mounted) {
         Navigator.of(context).push(ArenaDuelScreen.route(session: session));
@@ -503,8 +550,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
       );
     }
 
+    final users = _sortedUsers;
+    final isWeekly = _timeframe == LeaderboardTimeframe.thisWeek;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
-    final rankIndex = widget.state.users.indexWhere(
+    final rankIndex = users.indexWhere(
       (u) => u.id == widget.currentUser?.id,
     );
     final showFindMe = rankIndex >= 6; // Only show if not naturally visible
@@ -544,8 +593,22 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                 ),
               ),
 
-              // Weekly League Podium Rewards Banner (Podium Prizes + Unclaimed Reward Safety Net)
+              // Timeframe selector (This Week vs All-Time Hall of Fame)
               if (!widget.state.isKids)
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(24.w, 10.h, 24.w, 4.h),
+                    child: _LeaderboardTimeframeSelector(
+                      timeframe: _timeframe,
+                      onChanged: (selected) {
+                        setState(() => _timeframe = selected);
+                      },
+                    ),
+                  ),
+                ),
+
+              // Weekly League Podium Rewards Banner (Visible in Weekly mode)
+              if (!widget.state.isKids && isWeekly)
                 SliverToBoxAdapter(
                   child: WeeklyLeagueRewardsBanner(
                     currentUser: widget.currentUser,
@@ -554,15 +617,22 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                   ),
                 ),
 
-              SliverToBoxAdapter(child: SizedBox(height: 24.h)),
+              // All-Time Hall of Fame Banner (Visible in All-Time mode)
+              if (!widget.state.isKids && !isWeekly)
+                const SliverToBoxAdapter(
+                  child: _HallOfFameBanner(),
+                ),
+
+              SliverToBoxAdapter(child: SizedBox(height: 18.h)),
 
               // Podium (Top 3)
               SliverToBoxAdapter(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: LeaderboardPodium(
-                    top3: widget.state.users.take(3).toList(),
+                    top3: users.take(3).toList(),
                     isKids: widget.state.isKids,
+                    isWeekly: isWeekly,
                     currentUserId: widget.currentUser?.id,
                   ),
                 ),
@@ -577,8 +647,9 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                   minHeight: 88.h,
                   maxHeight: 145.h,
                   child: LeaderboardRankCard(
-                    allUsers: widget.state.users,
+                    allUsers: users,
                     isKids: widget.state.isKids,
+                    isWeekly: isWeekly,
                     onTap: _scrollToMe,
                   ),
                 ),
@@ -588,8 +659,9 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               if (!widget.state.isKids && widget.currentUser != null)
                 SliverToBoxAdapter(
                   child: LeaderboardOvertakeHud(
-                    allUsers: widget.state.users,
+                    allUsers: users,
                     currentUser: widget.currentUser!,
+                    isWeekly: isWeekly,
                     onOvertakeTap: () => context.push(AppRouter.gamesRoute),
                   ),
                 ),
@@ -648,19 +720,19 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               ),
 
               // Rank 4-N list
-              if (widget.state.users.length > 3)
+              if (users.length > 3)
                 SliverPadding(
                   padding: EdgeInsets.symmetric(horizontal: 24.w),
                   sliver: SliverList(
                     delegate: SliverChildBuilderDelegate((context, index) {
                       final userIndex = index + 3;
-                      if (userIndex >= widget.state.users.length) {
+                      if (userIndex >= users.length) {
                         return const SizedBox.shrink();
                       }
-                      final user = widget.state.users[userIndex];
+                      final user = users[userIndex];
                       final rank = userIndex + 1;
                       final isMe = widget.currentUser?.id == user.id;
-                      final isLast = userIndex == widget.state.users.length - 1;
+                      final isLast = userIndex == users.length - 1;
 
                       final reduceMotion = VowlMotion.shouldReduceMotion(
                         context,
@@ -671,6 +743,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                           user: user,
                           rank: rank,
                           isMe: isMe,
+                          isKids: widget.state.isKids,
+                          isWeekly: isWeekly,
                           onTap: () => _handleTileTap(user, rank, isMe),
                         ),
                       );
@@ -1182,6 +1256,211 @@ class _LeaderboardToggle extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Timeframe enumeration & selector
+// ---------------------------------------------------------------------------
+
+enum LeaderboardTimeframe {
+  thisWeek,
+  allTime,
+}
+
+class _LeaderboardTimeframeSelector extends StatelessWidget {
+  final LeaderboardTimeframe timeframe;
+  final ValueChanged<LeaderboardTimeframe> onChanged;
+
+  const _LeaderboardTimeframeSelector({
+    required this.timeframe,
+    required this.onChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isWeekly = timeframe == LeaderboardTimeframe.thisWeek;
+
+    return Container(
+      height: 38.h,
+      padding: EdgeInsets.all(3.r),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF0F172A) : AppColors.slate100,
+        borderRadius: BorderRadius.circular(19.r),
+        border: Border.all(
+          color: isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200,
+          width: 1,
+        ),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: GestureDetector(
+              onTap: () {
+                HapticFeedback.lightImpact();
+                onChanged(LeaderboardTimeframe.thisWeek);
+              },
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                curve: Curves.easeOutCubic,
+                decoration: BoxDecoration(
+                  color: isWeekly ? AppColors.indigo500 : Colors.transparent,
+                  borderRadius: BorderRadius.circular(16.r),
+                  boxShadow: isWeekly
+                      ? [
+                          BoxShadow(
+                            color: AppColors.indigo500.withValues(alpha: 0.35),
+                            blurRadius: 6,
+                            offset: const Offset(0, 1),
+                          ),
+                        ]
+                      : null,
+                ),
+                alignment: Alignment.center,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        LucideIcons.zap,
+                        size: 13.sp,
+                        color: isWeekly ? Colors.white : (isDark ? Colors.white60 : AppColors.slate600),
+                      ),
+                      SizedBox(width: 5.w),
+                      Text(
+                        'This Week (League)',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 12.sp,
+                          color: isWeekly ? Colors.white : (isDark ? Colors.white60 : AppColors.slate600),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: GestureDetector(
+              onTap: () {
+                HapticFeedback.lightImpact();
+                onChanged(LeaderboardTimeframe.allTime);
+              },
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                curve: Curves.easeOutCubic,
+                decoration: BoxDecoration(
+                  color: !isWeekly ? AppColors.amber500 : Colors.transparent,
+                  borderRadius: BorderRadius.circular(16.r),
+                  boxShadow: !isWeekly
+                      ? [
+                          BoxShadow(
+                            color: AppColors.amber500.withValues(alpha: 0.35),
+                            blurRadius: 6,
+                            offset: const Offset(0, 1),
+                          ),
+                        ]
+                      : null,
+                ),
+                alignment: Alignment.center,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        LucideIcons.crown,
+                        size: 13.sp,
+                        color: !isWeekly ? Colors.white : (isDark ? Colors.white60 : AppColors.slate600),
+                      ),
+                      SizedBox(width: 5.w),
+                      Text(
+                        'All-Time (Hall of Fame)',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 12.sp,
+                          color: !isWeekly ? Colors.white : (isDark ? Colors.white60 : AppColors.slate600),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// All-Time Hall of Fame Banner
+// ---------------------------------------------------------------------------
+
+class _HallOfFameBanner extends StatelessWidget {
+  const _HallOfFameBanner();
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final surfaceColor = isDark ? const Color(0xFF0F172A) : Colors.white;
+    final borderColor = isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200;
+    final titleColor = isDark ? Colors.white : AppColors.slate900;
+    final subColor = isDark ? AppColors.slate400 : AppColors.slate600;
+
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      decoration: BoxDecoration(
+        color: surfaceColor,
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(color: borderColor, width: 1.r),
+      ),
+      child: Row(
+        children: [
+          Container(
+            padding: EdgeInsets.all(8.r),
+            decoration: BoxDecoration(
+              color: AppColors.amber500.withValues(alpha: 0.12),
+              borderRadius: BorderRadius.circular(12.r),
+            ),
+            child: Icon(LucideIcons.crown, color: AppColors.amber500, size: 18.sp),
+          ),
+          SizedBox(width: 12.w),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Hall of Fame Masters',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w700,
+                    color: titleColor,
+                  ),
+                ),
+                SizedBox(height: 2.h),
+                Text(
+                  'Lifetime XP earned across all quests & practice duels',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    color: subColor,
+                  ),
+                ),
+              ],
             ),
           ),
         ],

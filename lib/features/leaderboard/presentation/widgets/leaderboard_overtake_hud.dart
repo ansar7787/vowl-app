@@ -10,12 +10,14 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 class LeaderboardOvertakeHud extends StatelessWidget {
   final List<UserEntity> allUsers;
   final UserEntity currentUser;
+  final bool isWeekly;
   final VoidCallback onOvertakeTap;
 
   const LeaderboardOvertakeHud({
     super.key,
     required this.allUsers,
     required this.currentUser,
+    this.isWeekly = true,
     required this.onOvertakeTap,
   });
 
@@ -64,7 +66,9 @@ class LeaderboardOvertakeHud extends StatelessWidget {
     // Rival directly ahead of current user
     final rivalAhead = allUsers[myIndex - 1];
     final rivalRank = myRank - 1;
-    final xpDiff = (rivalAhead.totalExp - currentUser.totalExp).clamp(1, 999999);
+    final myScore = isWeekly ? currentUser.currentWeeklyExp : currentUser.totalExp;
+    final rivalScore = isWeekly ? rivalAhead.currentWeeklyExp : rivalAhead.totalExp;
+    final xpDiff = (rivalScore - myScore).clamp(1, 999999);
     final rivalName = rivalAhead.safeDisplayName;
 
     final droppedRanks = (currentUser.previousRank != null && currentUser.previousRank! < myRank)

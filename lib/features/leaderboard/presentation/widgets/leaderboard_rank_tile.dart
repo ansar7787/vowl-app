@@ -21,6 +21,7 @@ class LeaderboardRankTile extends StatelessWidget {
   final int rank;
   final bool isMe;
   final bool isKids;
+  final bool isWeekly;
   final VoidCallback? onTap;
 
   const LeaderboardRankTile({
@@ -29,6 +30,7 @@ class LeaderboardRankTile extends StatelessWidget {
     required this.rank,
     required this.isMe,
     this.isKids = false,
+    this.isWeekly = true,
     this.onTap,
   });
 
@@ -38,10 +40,14 @@ class LeaderboardRankTile extends StatelessWidget {
     final levelsCleared = isKids
         ? user.kidsTotalLevelsCompleted
         : user.totalLevelsCompleted;
-    final score = isKids ? user.kidsCoins : user.totalExp;
+    final score = isKids
+        ? user.kidsTotalLevelsCompleted
+        : (isWeekly ? user.currentWeeklyExp : user.totalExp);
     final scoreLabel = isKids
-        ? context.tr('leaderboard.coins', fallback: 'Coins')
-        : context.tr('leaderboard.xp', fallback: 'XP');
+        ? context.tr('leaderboard.levels', fallback: 'Levels')
+        : (isWeekly
+            ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
+            : context.tr('leaderboard.xp', fallback: 'XP'));
     final tierColor = rank <= 5
         ? AppColors.indigo500
         : rank <= 10

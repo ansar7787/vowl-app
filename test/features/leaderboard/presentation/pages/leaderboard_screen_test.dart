@@ -39,12 +39,16 @@ void main() {
   late StreamController<LeaderboardState> leaderboardStateController;
 
   final now = DateTime.now();
+  final todayUtc = DateTime.now().toUtc();
+  final todayKey =
+      '${todayUtc.year}-${todayUtc.month.toString().padLeft(2, '0')}-${todayUtc.day.toString().padLeft(2, '0')}';
 
   final testCurrentUser = UserEntity(
     id: 'user_me',
     email: 'alice@vowl.app',
     displayName: 'Alice Champion',
     totalExp: 8400,
+    dailyXpHistory: {todayKey: 8400},
     currentStreak: 15,
     kidsCoins: 120,
     completedLevels: {
@@ -59,6 +63,7 @@ void main() {
       email: 'bob@vowl.app',
       displayName: 'Bob The Master',
       totalExp: 15200,
+      dailyXpHistory: {todayKey: 15200},
       currentStreak: 45,
       kidsCoins: 500,
       completedLevels: {
@@ -71,6 +76,7 @@ void main() {
       email: 'charlie@vowl.app',
       displayName: 'Charlie Prodigy',
       totalExp: 12100,
+      dailyXpHistory: {todayKey: 12100},
       currentStreak: 30,
       kidsCoins: 420,
       completedLevels: {
@@ -83,6 +89,7 @@ void main() {
       email: 'diana@vowl.app',
       displayName: 'Diana Star',
       totalExp: 10500,
+      dailyXpHistory: {todayKey: 10500},
       currentStreak: 25,
       kidsCoins: 380,
       completedLevels: {
@@ -95,6 +102,7 @@ void main() {
       email: 'evan@vowl.app',
       displayName: 'Evan Great',
       totalExp: 9500,
+      dailyXpHistory: {todayKey: 9500},
       currentStreak: 8,
       completedLevels: {
         'reading': List.generate(60, (i) => i + 1),
@@ -105,6 +113,7 @@ void main() {
       email: 'fiona@vowl.app',
       displayName: 'Fiona Swift',
       totalExp: 9100,
+      dailyXpHistory: {todayKey: 9100},
       currentStreak: 6,
       completedLevels: {
         'reading': List.generate(55, (i) => i + 1),
@@ -115,6 +124,7 @@ void main() {
       email: 'george@vowl.app',
       displayName: 'George Sharp',
       totalExp: 8800,
+      dailyXpHistory: {todayKey: 8800},
       currentStreak: 12,
       completedLevels: {
         'reading': List.generate(50, (i) => i + 1),
@@ -126,6 +136,7 @@ void main() {
       email: 'hannah@vowl.app',
       displayName: 'Hannah Bold',
       totalExp: 7500,
+      dailyXpHistory: {todayKey: 7500},
       currentStreak: 4,
       completedLevels: {
         'reading': List.generate(35, (i) => i + 1),
@@ -136,6 +147,7 @@ void main() {
       email: 'ian@vowl.app',
       displayName: 'Ian Brave',
       totalExp: 6800,
+      dailyXpHistory: {todayKey: 6800},
       currentStreak: 5,
       completedLevels: {
         'reading': List.generate(30, (i) => i + 1),
@@ -146,6 +158,7 @@ void main() {
       email: 'julia@vowl.app',
       displayName: 'Julia Bright',
       totalExp: 6200,
+      dailyXpHistory: {todayKey: 6200},
       currentStreak: 3,
       completedLevels: {
         'reading': List.generate(25, (i) => i + 1),
@@ -219,7 +232,9 @@ void main() {
           textScaler: TextScaler.linear(fontScale),
         ),
         child: MaterialApp(
-          theme: theme ?? AppTheme.lightTheme,
+          theme: (theme ?? AppTheme.lightTheme).copyWith(
+            splashFactory: InkRipple.splashFactory,
+          ),
           home: BlocProvider<AuthBloc>.value(
             value: mockAuthBloc,
             child: LeaderboardScreen(isKids: isKids),
@@ -323,7 +338,6 @@ void main() {
 
       expect(find.byType(LeaderboardHeader), findsOneWidget);
       expect(find.byType(LeaderboardPodium), findsOneWidget);
-      expect(find.byType(LeaderboardRankCard), findsOneWidget);
 
       // Verify Header details
       expect(find.text('Leaderboard'), findsOneWidget);
@@ -337,6 +351,12 @@ void main() {
       expect(find.textContaining('15200'), findsOneWidget);
       expect(find.textContaining('12100'), findsOneWidget);
       expect(find.textContaining('10500'), findsOneWidget);
+
+      // Scroll down slightly so sticky LeaderboardRankCard enters layout
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -250));
+      await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump(const Duration(seconds: 1));
+      expect(find.byType(LeaderboardRankCard), findsOneWidget);
 
       // Verify Sticky Rank Card details for currentUser (Rank 7)
       expect(find.text('Your Standing'), findsOneWidget);
@@ -352,12 +372,12 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('Top Challengers'), findsOneWidget);
-
       // Scroll down to reveal ranks in the list
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -350));
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -750));
       await tester.pump(const Duration(milliseconds: 500));
       await tester.pump(const Duration(seconds: 1));
+
+      expect(find.text('Top Challengers'), findsOneWidget);
 
       // Rank 4 & 5
       expect(find.text('Evan Great'), findsOneWidget);
@@ -427,7 +447,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
 
       expect(find.text('Kids Leaderboard'), findsOneWidget);
-      expect(find.textContaining('Coins'), findsWidgets);
+      expect(find.textContaining('Levels'), findsWidgets);
     });
   });
 
@@ -475,6 +495,10 @@ void main() {
       await tester.pumpWidget(buildTestWidget());
       await tester.pump(const Duration(milliseconds: 500));
       await tester.pump(const Duration(milliseconds: 500));
+
+      // Scroll to reveal LeaderboardRankCard
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -250));
+      await tester.pump(const Duration(milliseconds: 300));
 
       // Tap LeaderboardRankCard
       expect(find.byType(LeaderboardRankCard), findsOneWidget);

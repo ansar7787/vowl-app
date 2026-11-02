@@ -537,51 +537,96 @@ exports.checkPremiumExpiry = onSchedule('0 3 * * *', async (event) => {
   console.log(`Revoked premium for ${expiredUsers.size} users.`);
 });
 
+// --------------------------------------------------
+// Calculates total XP earned in current ISO week (Monday-Sunday)
+// from user.dailyXpHistory entries.
+function getWeeklyExp(user, now = new Date()) {
+  const history = user.dailyXpHistory;
+  if (!history || typeof history !== 'object') {
+    return user.weeklyExp || 0;
+  }
+  const nowUtc = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+  const dayOfWeek = nowUtc.getUTCDay();
+  const daysSinceMonday = (dayOfWeek + 6) % 7;
+  const mondayUtc = new Date(nowUtc.getTime() - daysSinceMonday * 24 * 60 * 60 * 1000);
+  let total = 0;
+  for (let i = 0; i < 7; i++) {
+    const day = new Date(mondayUtc.getTime() + i * 24 * 60 * 60 * 1000);
+    const key = `${day.getUTCFullYear()}-${String(day.getUTCMonth() + 1).padStart(2, '0')}-${String(day.getUTCDate()).padStart(2, '0')}`;
+    const xp = history[key];
+    if (typeof xp === 'number') total += xp;
+  }
+  return total;
+}
+
 // 🏆 THE WEEKLY RECAP
 // Runs every Sunday at 11:59 PM (Final Results)
+// Ranks by Weekly XP earned this week so real weekly learners win podium recognition!
 exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
   const db = admin.firestore();
 
-  // 1. Get Top 100 learners by Total XP
+  // 1. Get learners to evaluate this week's active performance
   const snapshot = await db
     .collection('users')
-    .orderBy('totalExp', 'desc')
-    .limit(100)
+    .limit(500)
     .get();
 
   if (snapshot.empty) return;
 
+  const activeLearners = [];
+  snapshot.forEach((doc) => {
+    const user = doc.data();
+    const weeklyXp = getWeeklyExp(user);
+    if (weeklyXp > 0) {
+      activeLearners.push({
+        id: doc.id,
+        user: user,
+        weeklyXp: weeklyXp,
+        currentStreak: user.currentStreak || 0,
+      });
+    }
+  });
+
+  // Sort by Weekly XP DESC, tie-breaker currentStreak DESC
+  activeLearners.sort((a, b) => {
+    if (b.weeklyXp !== a.weeklyXp) return b.weeklyXp - a.weeklyXp;
+    return b.currentStreak - a.currentStreak;
+  });
+
+  if (activeLearners.length === 0) return;
+
+  const top100 = activeLearners.slice(0, 100);
   const messages = [];
   const seenTokens = new Set();
   const duplicateCleanups = [];
   let rank = 1;
 
-  snapshot.forEach((doc) => {
-    const user = doc.data();
+  top100.forEach((item) => {
+    const docId = item.id;
+    const user = item.user;
     const token = user.fcmToken;
 
     if (token) {
       if (seenTokens.has(token)) {
-        // Device token already claimed by a higher-ranked / active user
         duplicateCleanups.push(
-          doc.ref.update({ fcmToken: admin.firestore.FieldValue.delete() }),
+          db.collection('users').doc(docId).update({ fcmToken: admin.firestore.FieldValue.delete() }),
         );
         return;
       }
       seenTokens.add(token);
 
       let title = 'Weekly Recap \u{1F4CA}';
-      let body = `You placed #${rank} in the global rankings this week. Keep up the strong consistency!`;
+      let body = `You placed #${rank} in the global league this week (${item.weeklyXp} XP)!`;
 
       if (rank === 1) {
         title = '1st place this week! \u{1F451}';
-        body = 'Outstanding achievement — you finished #1 on the global leaderboard!';
+        body = `Champion! You won #1 in the weekly league with ${item.weeklyXp} XP! Podium VIP unlocked.`;
       } else if (rank === 2) {
         title = '2nd place this week! \u{1F948}';
-        body = 'Incredible performance! You earned the silver podium spot this week.';
+        body = `Silver podium spot secured with ${item.weeklyXp} XP! 1-Day VIP unlocked.`;
       } else if (rank === 3) {
         title = '3rd place this week! \u{1F949}';
-        body = 'Podium finish! You earned bronze on the global leaderboard.';
+        body = `Bronze podium finish with ${item.weeklyXp} XP! 150 Coins unlocked.`;
       }
 
       messages.push({
@@ -592,7 +637,7 @@ exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
         },
         data: {
           path: '/leaderboard',
-          targetUserId: doc.id,
+          targetUserId: docId,
         },
         android: {
           priority: 'high',
@@ -862,6 +907,7 @@ exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
         totalExp: data.totalExp || 0,
         currentStreak: data.currentStreak || 0,
         completedLevels: data.completedLevels || {},
+        dailyXpHistory: data.dailyXpHistory || {},
         isPremium: data.isPremium || false,
       });
     });
@@ -896,6 +942,7 @@ exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
         displayName: resolveDisplayName(data),
         photoUrl: data.photoUrl || null,
         kidsCoins: data.kidsCoins || 0,
+        kidsTotalLevelsCompleted: typeof data.kidsTotalLevelsCompleted === 'number' ? data.kidsTotalLevelsCompleted : 0,
         currentStreak: data.currentStreak || 0,
         completedLevels: data.completedLevels || {},
         isPremium: data.isPremium || false,
