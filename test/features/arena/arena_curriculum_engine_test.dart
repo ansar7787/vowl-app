@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vowl/core/data/services/asset_quest_service.dart';
-import 'package:vowl/features/arena/data/utils/arena_question_generator.dart';
+import 'package:vowl/features/arena/data/services/arena_curriculum_engine.dart';
 
 class FakeQuestService implements QuestService {
   @override
@@ -26,9 +26,9 @@ class FakeQuestService implements QuestService {
 }
 
 void main() {
-  group('ArenaQuestionGenerator', () {
+  group('ArenaCurriculumEngine', () {
     test('generates exactly 5 questions by default', () {
-      final questions = ArenaQuestionGenerator.generateQuestions();
+      final questions = ArenaCurriculumEngine.generateQuestions();
       expect(questions.length, 5);
       for (final q in questions) {
         expect(q.question.isNotEmpty, true);
@@ -40,8 +40,8 @@ void main() {
 
     test('generates identical questions when given the same seed (deterministic matchmaking)', () {
       const seed = 12345;
-      final sessionA = ArenaQuestionGenerator.generateQuestions(seed: seed);
-      final sessionB = ArenaQuestionGenerator.generateQuestions(seed: seed);
+      final sessionA = ArenaCurriculumEngine.generateQuestions(seed: seed);
+      final sessionB = ArenaCurriculumEngine.generateQuestions(seed: seed);
 
       expect(sessionA.length, sessionB.length);
       for (var i = 0; i < sessionA.length; i++) {
@@ -52,13 +52,13 @@ void main() {
     });
 
     test('supports custom question count', () {
-      final questions = ArenaQuestionGenerator.generateQuestions(count: 3);
+      final questions = ArenaCurriculumEngine.generateQuestions(count: 3);
       expect(questions.length, 3);
     });
 
     test('supports 7 distinct curriculum disciplines spanning 200 levels each', () {
-      expect(ArenaQuestionGenerator.kSupportedGameTypes.length, 7);
-      expect(ArenaQuestionGenerator.kSupportedGameTypes, containsAll([
+      expect(ArenaCurriculumEngine.kSupportedGameTypes.length, 7);
+      expect(ArenaCurriculumEngine.kSupportedGameTypes, containsAll([
         'synonymSearch',
         'antonymSearch',
         'collocations',
@@ -71,7 +71,7 @@ void main() {
 
     test('generateQuestionsAsync loads authentic curriculum quests via QuestService', () async {
       final fakeService = FakeQuestService();
-      final questions = await ArenaQuestionGenerator.generateQuestionsAsync(
+      final questions = await ArenaCurriculumEngine.generateQuestionsAsync(
         count: 5,
         seed: 42,
         questService: fakeService,
@@ -88,7 +88,7 @@ void main() {
     });
 
     test('generateQuestionsAsync gracefully falls back when QuestService fails or is null', () async {
-      final questions = await ArenaQuestionGenerator.generateQuestionsAsync(
+      final questions = await ArenaCurriculumEngine.generateQuestionsAsync(
         count: 5,
         seed: 99,
         questService: null,
