@@ -99,6 +99,7 @@ class _ArenaDuelView extends StatelessWidget {
                 rivalScore: state.rivalScore,
                 rivalName: rivalName,
                 payoutCoins: state.payoutCoins,
+                roomCode: state.session?.roomCode ?? '',
                 onRematch: () {
                   Navigator.of(dialogCtx).pop();
                   if (authState.status == AuthStatus.authenticated && authState.user != null) {

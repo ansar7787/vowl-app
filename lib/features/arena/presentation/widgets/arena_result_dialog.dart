@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
@@ -11,6 +12,7 @@ class ArenaResultDialog extends StatelessWidget {
   final int rivalScore;
   final String rivalName;
   final int payoutCoins;
+  final String roomCode;
   final VoidCallback onRematch;
   final VoidCallback onClose;
 
@@ -22,6 +24,7 @@ class ArenaResultDialog extends StatelessWidget {
     required this.rivalScore,
     required this.rivalName,
     required this.payoutCoins,
+    this.roomCode = '',
     required this.onRematch,
     required this.onClose,
   });
@@ -145,6 +148,40 @@ class ArenaResultDialog extends StatelessWidget {
             ),
 
             SizedBox(height: 20.h),
+
+            if (isWinner) ...[
+              OutlinedButton.icon(
+                onPressed: () {
+                  final code = roomCode.isNotEmpty ? roomCode : 'VOWL';
+                  final message = '⚔️ I just won a 1v1 English Duel on Vowl with $myScore points against $rivalName!\n'
+                      'Can you beat my vocabulary score? Duel me now:\n'
+                      'https://vowl.app/duel/$code';
+                  SharePlus.instance.share(
+                    ShareParams(
+                      text: message,
+                      subject: '1v1 English Duel Victory!',
+                    ),
+                  );
+                },
+                icon: Icon(LucideIcons.share2, size: 16.sp, color: AppColors.indigo500),
+                label: Text(
+                  'Share Victory (Brag!)',
+                  style: TextStyle(
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.indigo500,
+                  ),
+                ),
+                style: OutlinedButton.styleFrom(
+                  side: const BorderSide(color: AppColors.indigo500),
+                  padding: EdgeInsets.symmetric(vertical: 12.h),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.r),
+                  ),
+                ),
+              ),
+              SizedBox(height: 8.h),
+            ],
 
             // Rematch Button (Double or Nothing)
             ElevatedButton.icon(
