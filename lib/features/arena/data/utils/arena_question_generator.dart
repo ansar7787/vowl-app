@@ -1,4 +1,7 @@
 import 'dart:math';
+import 'package:flutter/foundation.dart';
+import 'package:vowl/core/data/services/asset_quest_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 
 class ArenaQuestionGenerator {
@@ -105,6 +108,121 @@ class ArenaQuestionGenerator {
 
     final selected = bank.take(count).toList();
     return selected.map((q) => ArenaQuestion.fromMap(q)).toList();
+  }
+
+  /// Generates dynamic questions loaded directly from Vowl's authentic
+  /// game curriculum assets (synonymSearch, antonymSearch, idioms, academicWord).
+  /// Falls back to the curated bank if offline or in headless test environments.
+  static Future<List<ArenaQuestion>> generateQuestionsAsync({
+    int count = 5,
+    int? seed,
+    QuestService? questService,
+  }) async {
+    final rand = Random(seed ?? DateTime.now().millisecondsSinceEpoch);
+    final service = questService ??
+        (di.sl.isRegistered<AssetQuestService>()
+            ? di.sl<AssetQuestService>()
+            : null);
+
+    if (service != null) {
+      try {
+        const gameTypes = [
+          'synonymSearch',
+          'antonymSearch',
+          'idioms',
+          'academicWord',
+          'contextClues',
+        ];
+        final questions = <ArenaQuestion>[];
+        final shuffledGameTypes = List<String>.from(gameTypes)..shuffle(rand);
+
+        for (final gameType in shuffledGameTypes) {
+          if (questions.length >= count) break;
+          // Random level batch between 1 and 30 for balanced difficulty
+          final level = rand.nextInt(30) + 1;
+          try {
+            final quests = await service.getQuests(gameType, level);
+            final shuffledQuests = List<Map<String, dynamic>>.from(quests)
+              ..shuffle(rand);
+            for (final q in shuffledQuests) {
+              final converted = _tryConvertCurriculumQuest(q, gameType);
+              if (converted != null &&
+                  !questions.any((existing) => existing.question == converted.question)) {
+                questions.add(converted);
+                if (questions.length >= count) break;
+              }
+            }
+          } catch (_) {
+            // Silently continue if level not yet unlocked in curriculum
+          }
+        }
+
+        if (questions.length >= count) {
+          return questions.take(count).toList();
+        }
+      } catch (e) {
+        debugPrint('[ArenaQuestionGenerator] Curriculum quest load fallback: $e');
+      }
+    }
+
+    // Deterministic fallback to verified question bank
+    return generateQuestions(count: count, seed: seed);
+  }
+
+  static ArenaQuestion? _tryConvertCurriculumQuest(
+    Map<String, dynamic> quest,
+    String gameType,
+  ) {
+    try {
+      final optionsRaw = quest['options'];
+      if (optionsRaw is! List || optionsRaw.length < 2) return null;
+      final options = optionsRaw.map((e) => e.toString().trim()).toList();
+
+      final correctAnswer =
+          (quest['correctAnswer'] ?? quest['answer'] ?? '').toString().trim();
+      if (correctAnswer.isEmpty) return null;
+
+      final correctIndex = options.indexWhere(
+        (opt) => opt.toLowerCase() == correctAnswer.toLowerCase(),
+      );
+      if (correctIndex == -1) return null;
+
+      String questionText;
+      final word = quest['word']?.toString().trim();
+      final instruction = quest['instruction']?.toString().trim();
+
+      if (gameType == 'synonymSearch' && word != null && word.isNotEmpty) {
+        questionText = 'What is the synonym for "$word"?';
+      } else if (gameType == 'antonymSearch' && word != null && word.isNotEmpty) {
+        questionText = 'What is the antonym for "$word"?';
+      } else if (gameType == 'idioms') {
+        if (instruction != null && instruction.contains('___')) {
+          questionText = instruction;
+        } else if (word != null && word.isNotEmpty) {
+          questionText = 'What does the idiom "$word" mean?';
+        } else {
+          questionText = instruction ?? 'Select the correct meaning:';
+        }
+      } else {
+        questionText = (instruction != null && instruction.isNotEmpty)
+            ? (word != null ? '$instruction ("$word")' : instruction)
+            : 'Choose the correct answer:';
+      }
+
+      final explanation = (quest['explanation'] ??
+              quest['hint'] ??
+              'Vowl authentic curriculum challenge.')
+          .toString();
+
+      return ArenaQuestion(
+        question: questionText,
+        options: options,
+        correctIndex: correctIndex,
+        explanation: explanation,
+      );
+    } catch (_) {
+      return null;
+    }
   }
 }
 

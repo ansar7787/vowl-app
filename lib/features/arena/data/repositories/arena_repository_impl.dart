@@ -29,7 +29,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
 
     try {
       final seed = DateTime.now().millisecondsSinceEpoch;
-      final questions = ArenaQuestionGenerator.generateQuestions(seed: seed);
+      final questions = await ArenaQuestionGenerator.generateQuestionsAsync(seed: seed);
 
       try {
         // 2. Poll live Firestore queue for 3 seconds
@@ -150,7 +150,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
 
     try {
       final seed = DateTime.now().millisecondsSinceEpoch;
-      final questions = ArenaQuestionGenerator.generateQuestions(seed: seed);
+      final questions = await ArenaQuestionGenerator.generateQuestionsAsync(seed: seed);
       final accuracy = (0.95 - (rivalRank * 0.015)).clamp(0.65, 0.95);
 
       final roomCode = 'VOWL-RIVAL-${(Random().nextInt(900) + 100)}';
@@ -185,7 +185,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
     try {
       final roomCode = 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
       final seed = DateTime.now().millisecondsSinceEpoch;
-      final questions = ArenaQuestionGenerator.generateQuestions(seed: seed);
+      final questions = await ArenaQuestionGenerator.generateQuestionsAsync(seed: seed);
 
       final session = ArenaDuelSession(
         roomCode: roomCode,

@@ -9,9 +9,11 @@ import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/home/presentation/widgets/category_shelf.dart';
@@ -880,15 +882,131 @@ class _PvpArenaHeroCard extends StatefulWidget {
 class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
   bool _isLoading = false;
 
+  void _showRefuelDialog() {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight ? AppColors.midnightSurface : (isDark ? AppColors.slate800 : Colors.white);
+    final textPrimary = isDark ? Colors.white : AppColors.slate900;
+    final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
+
+    showDialog(
+      context: context,
+      builder: (dialogCtx) => Dialog(
+        backgroundColor: cardBg,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
+        child: Padding(
+          padding: EdgeInsets.all(20.r),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 52.r,
+                height: 52.r,
+                decoration: BoxDecoration(
+                  color: AppColors.amber500.withValues(alpha: 0.15),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(LucideIcons.coins, color: AppColors.amber500, size: 28.r),
+              ),
+              SizedBox(height: 14.h),
+              Text(
+                'Need 30 Coins for 1v1 Arena?',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w800,
+                  color: textPrimary,
+                ),
+              ),
+              SizedBox(height: 6.h),
+              Text(
+                'You need 30🪙 to enter the duel stake. Watch a short video to instantly claim +30 Coins and jump into the arena!',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 13.sp,
+                  color: textSecondary,
+                ),
+              ),
+              SizedBox(height: 20.h),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(dialogCtx).pop();
+                  _watchAdForCoins();
+                },
+                icon: Icon(LucideIcons.video, size: 16.r, color: Colors.white),
+                label: Text(
+                  'Watch Video (+30🪙)',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.amber500,
+                  foregroundColor: Colors.white,
+                  minimumSize: Size(double.infinity, 44.h),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.r),
+                  ),
+                ),
+              ),
+              SizedBox(height: 8.h),
+              TextButton(
+                onPressed: () => Navigator.of(dialogCtx).pop(),
+                child: Text(
+                  'Maybe Later',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    color: textSecondary,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _watchAdForCoins() {
+    final adService = di.sl<AdService>();
+    adService.showRewardedAd(
+      context: context,
+      isPremium: widget.user.isPremium,
+      onDismissed: () {},
+      onUserEarnedReward: (_) async {
+        try {
+          if (di.sl.isRegistered<UpdateUserCoins>()) {
+            await di.sl<UpdateUserCoins>()(
+              const UpdateUserCoinsParams(
+                amountChange: 30,
+                title: 'Arena Refuel',
+              ),
+            );
+          }
+          if (mounted) {
+            context.read<AuthBloc>().add(AuthRefreshUser());
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('🎉 +30 Coins added! You can now start the duel!'),
+                backgroundColor: AppColors.emerald500,
+              ),
+            );
+          }
+        } catch (e) {
+          debugPrint('[_PvpArenaHeroCard] Refuel reward error: $e');
+        }
+      },
+    );
+  }
+
   Future<void> _startQuickMatch() async {
     if (_isLoading) return;
     if (widget.user.coins < 30) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('You need at least 30 coins to enter a 1v1 duel!'),
-          backgroundColor: AppColors.rose500,
-        ),
-      );
+      _showRefuelDialog();
       return;
     }
 
@@ -920,12 +1038,7 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
   Future<void> _createDuelInvite() async {
     if (_isLoading) return;
     if (widget.user.coins < 30) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('You need at least 30 coins to create a duel stake!'),
-          backgroundColor: AppColors.rose500,
-        ),
-      );
+      _showRefuelDialog();
       return;
     }
 
