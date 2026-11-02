@@ -164,28 +164,35 @@ class BeginnerMilestoneCard extends StatelessWidget {
             SizedBox(height: 10.h),
 
             // Bypass Button for ambitious learners
-            ScaleButton(
-              onTap: () {
-                try {
-                  di.sl<HapticService>().selection();
-                } catch (_) {}
-                onUnlockNow();
-              },
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12.w,
-                  vertical: 6.h,
-                ),
-                child: Text(
-                  context.tr(
-                    'home.show_all_features',
-                    fallback: 'Explore all features now →',
+            Semantics(
+              button: true,
+              label: context.tr(
+                'home.show_all_features',
+                fallback: 'Explore all features now',
+              ),
+              child: ScaleButton(
+                onTap: () {
+                  try {
+                    di.sl<HapticService>().selection();
+                  } catch (_) {}
+                  onUnlockNow();
+                },
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12.w,
+                    vertical: 6.h,
                   ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.indigo500,
+                  child: Text(
+                    context.tr(
+                      'home.show_all_features',
+                      fallback: 'Explore all features now →',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.indigo500,
+                    ),
                   ),
                 ),
               ),

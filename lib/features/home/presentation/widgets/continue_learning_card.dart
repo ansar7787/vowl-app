@@ -286,8 +286,8 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
           );
 
     final semanticLabel = isNewUser
-        ? '$title. $categoryLabel.'
-        : '$title. $categoryLabel. $_cleared out of ${milestone.target} levels cleared.';
+        ? '$missionBadgeText. $title. $categoryLabel.'
+        : '$missionBadgeText. $title. $categoryLabel. $_cleared out of ${milestone.target} levels cleared.';
 
     final card = Semantics(
       button: true,
