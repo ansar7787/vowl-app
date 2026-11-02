@@ -33,7 +33,12 @@ import 'package:confetti/confetti.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/presentation/widgets/snap_quiz_dialog.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/snap_quiz_generator.dart';
+import 'package:vowl/features/scan_and_learn/domain/entities/scanned_word_token.dart';
+import 'package:vowl/features/scan_and_learn/presentation/widgets/interactive_ocr_reader.dart';
+import 'package:vowl/features/scan_and_learn/presentation/widgets/smart_word_inspector_sheet.dart';
 
 /// OCR camera scanner screen that extracts real-world text using Google ML Kit,
 /// analyzes extracted vocabulary, and provides interactive translations and bounties.
@@ -74,6 +79,41 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
   bool _bountiesLoadedVal = false;
   int _dailyBountyCount = 0;
   Set<String> _savedSnippets = {};
+  ScannedWordToken? _selectedToken;
+
+  void _onSelectToken(ScannedWordToken token) {
+    setState(() {
+      _selectedToken = token;
+    });
+    SmartWordInspectorSheet.show(
+      context,
+      token: token,
+      onStartChallenge: () => _startWordChallenge(token.cleanWord),
+    );
+  }
+
+  void _startWordChallenge(String word) {
+    final cleanWord = word.trim();
+    if (cleanWord.isEmpty) return;
+
+    final alts = _recognizedTextVal?.blocks
+        .expand((b) => b.text.split(RegExp(r'\s+')))
+        .map((w) => w.replaceAll(RegExp(r'[^\w]'), ''))
+        .where((w) => w.length > 3)
+        .take(10)
+        .toList();
+
+    final quests = SnapQuizGenerator.generate3QuestionLevel(
+      targetWord: cleanWord,
+      alternativeDetectedWords: alts,
+    );
+
+    SnapQuizDialog.show(
+      context,
+      quests: quests,
+      title: 'SIGN CHALLENGE',
+    );
+  }
 
   late final AnimationController _scannerController;
   late ConfettiController _confettiController;
@@ -533,8 +573,10 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                   if (!_isProcessingVal &&
                       !_hasErrorVal &&
                       _recognizedTextVal != null &&
-                      _recognizedTextVal!.blocks.isNotEmpty)
+                      _recognizedTextVal!.blocks.isNotEmpty) ...[
                     _buildScanSummary(isDark),
+                    _buildInteractiveOcrReaderSliver(isDark),
+                  ],
                   _buildSliverResults(isDark),
                 ],
 
@@ -716,6 +758,26 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
           ),
         ),
       ).animate().fadeIn(duration: 400.ms),
+    );
+  }
+
+  Widget _buildInteractiveOcrReaderSliver(bool isDark) {
+    return SliverToBoxAdapter(
+      child: InteractiveOcrReader(
+        recognizedText: _recognizedTextVal!,
+        selectedToken: _selectedToken,
+        onSelectToken: _onSelectToken,
+        onStartChallenge: () {
+          final firstWord = _recognizedTextVal!.blocks.first.text
+              .split(RegExp(r'\s+'))
+              .firstWhere(
+                (w) => w.length > 3,
+                orElse: () =>
+                    _currentBountyVal.isNotEmpty ? _currentBountyVal : 'Sign',
+              );
+          _startWordChallenge(firstWord);
+        },
+      ),
     );
   }
 

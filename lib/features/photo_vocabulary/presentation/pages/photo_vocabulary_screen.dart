@@ -33,6 +33,10 @@ import 'package:confetti/confetti.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/presentation/widgets/snap_quiz_dialog.dart';
+import 'package:vowl/core/utils/snap_quiz_generator.dart';
+import 'package:vowl/features/photo_vocabulary/domain/entities/visual_object_target.dart';
+import 'package:vowl/features/photo_vocabulary/presentation/widgets/visual_object_badges.dart';
 
 /// Visual object recognition screen that classifies camera and photo images
 /// using Google ML Kit Image Labeling to teach contextual vocabulary and rewards.
@@ -74,6 +78,30 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
   int _dailyBountyCountVal = 0;
   static const int _dailyBountyLimit = 3;
   Set<String> _savedWords = {};
+  VisualObjectTarget? _selectedVisualObject;
+
+  void _onSelectVisualObject(VisualObjectTarget obj) {
+    setState(() {
+      _selectedVisualObject = obj;
+    });
+  }
+
+  void _startObjectChallenge(VisualObjectTarget obj) {
+    final alts = _labelsVal?.map((l) => l.label).toList();
+    final quests = SnapQuizGenerator.generate3QuestionLevel(
+      targetWord: obj.label,
+      definition: obj.definition,
+      exampleSentence: obj.example,
+      ipa: obj.ipa,
+      alternativeDetectedWords: alts,
+    );
+
+    SnapQuizDialog.show(
+      context,
+      quests: quests,
+      title: 'OBJECT CHALLENGE',
+    );
+  }
 
   void _updateState() {
     if (mounted) setState(() {});
@@ -545,8 +573,10 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                   if (!_isProcessingVal &&
                       !_hasErrorVal &&
                       _labelsVal != null &&
-                      _labelsVal!.isNotEmpty)
+                      _labelsVal!.isNotEmpty) ...[
                     _buildPhotoSummary(isDark),
+                    _buildVisualObjectBadgesSliver(isDark),
+                  ],
                   _buildSliverResults(isDark),
                 ],
 
@@ -754,6 +784,28 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
           ),
         ),
       ).animate().fadeIn(duration: 400.ms),
+    );
+  }
+
+  Widget _buildVisualObjectBadgesSliver(bool isDark) {
+    if (_labelsVal == null || _labelsVal!.isEmpty) {
+      return const SliverToBoxAdapter(child: SizedBox.shrink());
+    }
+
+    final visualObjects = _labelsVal!.map((label) {
+      return VisualObjectTarget.fromImageLabel(label);
+    }).toList();
+
+    return SliverToBoxAdapter(
+      child: VisualObjectBadges(
+        objects: visualObjects,
+        selectedObject: _selectedVisualObject,
+        onSelectObject: _onSelectVisualObject,
+        onStartChallenge: () {
+          final target = _selectedVisualObject ?? visualObjects.first;
+          _startObjectChallenge(target);
+        },
+      ),
     );
   }
 
