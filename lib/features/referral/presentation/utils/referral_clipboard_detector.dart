@@ -6,11 +6,11 @@ import 'package:vowl/features/referral/presentation/widgets/referral_claim_dialo
 class ReferralClipboardDetector {
   ReferralClipboardDetector._();
 
-  static final RegExp _kCodePattern = RegExp(r'^VOWL-[A-Za-z0-9]{4,12}$');
+  static final RegExp _kCodePattern = RegExp(r'VOWL-[A-Za-z0-9]{4,12}', caseSensitive: false);
   static String? _lastDetectedCode;
 
-  /// Checks the system clipboard for a Vowl referral code.
-  /// If found, and the user hasn't claimed a referral yet, prompts a dialog.
+  /// Checks the system clipboard for a Vowl referral code or invite message.
+  /// If found, and the user hasn't claimed a referral yet, prompts a claim dialog.
   static Future<void> checkAndPrompt({
     required BuildContext context,
     required UserEntity user,
@@ -20,24 +20,27 @@ class ReferralClipboardDetector {
 
     try {
       final data = await Clipboard.getData(Clipboard.kTextPlain);
-      final text = data?.text?.trim().toUpperCase();
+      final text = data?.text?.trim();
 
       if (text == null || text.isEmpty) return;
-      if (text == _lastDetectedCode) return;
-      if (user.referralCode != null && user.referralCode!.toUpperCase() == text) return;
 
-      if (_kCodePattern.hasMatch(text)) {
-        _lastDetectedCode = text;
+      final match = _kCodePattern.firstMatch(text);
+      if (match != null) {
+        final code = match.group(0)!.toUpperCase();
+        if (code == _lastDetectedCode) return;
+        if (user.referralCode != null && user.referralCode!.toUpperCase() == code) return;
+
+        _lastDetectedCode = code;
 
         if (!context.mounted) return;
 
         showDialog(
           context: context,
           builder: (dialogContext) => ReferralClaimDialog(
-            initialCode: text,
-            onClaim: (code) {
+            initialCode: code,
+            onClaim: (submittedCode) {
               Navigator.of(dialogContext).pop();
-              onClaim(code);
+              onClaim(submittedCode);
             },
           ),
         );
@@ -47,3 +50,4 @@ class ReferralClipboardDetector {
     }
   }
 }
+

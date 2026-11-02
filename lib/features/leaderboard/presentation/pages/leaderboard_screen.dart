@@ -368,6 +368,34 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     }
   }
 
+  void _startQuickMatch() async {
+    final currentUser = widget.currentUser;
+    if (currentUser == null) return;
+
+    if (currentUser.coins < 30) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('You need at least 30 coins to enter a duel stake!'),
+          backgroundColor: AppColors.rose500,
+        ),
+      );
+      return;
+    }
+
+    try {
+      final repo = di.sl<ArenaRepository>();
+      final session = await repo.quickMatch(
+        currentUser: currentUser,
+        leaderboardUsers: widget.state.users,
+      );
+      if (mounted) {
+        Navigator.of(context).push(ArenaDuelScreen.route(session: session));
+      }
+    } catch (e) {
+      debugPrint('[LeaderboardScreen] Quick match error: $e');
+    }
+  }
+
   void _shareRoomCodeChallenge(UserEntity rival) async {
     final currentUser = widget.currentUser;
     if (currentUser == null) return;
@@ -512,6 +540,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                   child: WeeklyLeagueRewardsBanner(
                     currentUser: widget.currentUser,
                     onClaimReward: _handleClaimWeeklyLeagueReward,
+                    onQuickMatch: _startQuickMatch,
                   ),
                 ),
 

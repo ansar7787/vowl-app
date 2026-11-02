@@ -41,3 +41,4 @@ abstract class ReferralRepository {
     required UserEntity user,
   });
 }
+

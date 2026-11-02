@@ -272,3 +272,4 @@ class ReferralStatsCard extends StatelessWidget {
     );
   }
 }
+

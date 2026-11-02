@@ -7,7 +7,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/features/arena/domain/entities/arena_duel_state.dart';
+import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 import 'package:vowl/features/arena/presentation/bloc/arena_duel_cubit.dart';
 import 'package:vowl/features/arena/presentation/bloc/arena_duel_state.dart';

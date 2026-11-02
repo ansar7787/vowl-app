@@ -32,6 +32,8 @@ import 'package:vowl/features/home/presentation/widgets/beginner_milestone_card.
 import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/onboarding_service.dart';
+import 'package:vowl/features/referral/domain/repositories/referral_repository.dart';
+import 'package:vowl/features/referral/presentation/utils/referral_clipboard_detector.dart';
 
 /// Primary home dashboard screen presenting daily activities, streak stats, and arenas.
 class HomeScreen extends StatefulWidget {
@@ -64,6 +66,30 @@ class _HomeScreenState extends State<HomeScreen> {
           OnboardingService.evaluateUserProgress(
             authState.user!.totalLevelsCompleted,
           );
+          if (!authState.user!.hasClaimedReferral) {
+            ReferralClipboardDetector.checkAndPrompt(
+              context: context,
+              user: authState.user!,
+              onClaim: (code) async {
+                final repo = di.sl<ReferralRepository>();
+                final result = await repo.claimReferralCode(
+                  code: code,
+                  user: authState.user!,
+                );
+                if (mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(result.message),
+                      backgroundColor: result.success ? AppColors.emerald500 : AppColors.rose500,
+                    ),
+                  );
+                  if (result.success) {
+                    context.read<AuthBloc>().add(const AuthRefreshUser());
+                  }
+                }
+              },
+            );
+          }
         }
       }
     });

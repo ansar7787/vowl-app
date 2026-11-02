@@ -221,3 +221,4 @@ class _ReferralClaimDialogState extends State<ReferralClaimDialog> {
     );
   }
 }
+

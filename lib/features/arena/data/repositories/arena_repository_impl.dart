@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/arena/data/utils/arena_question_generator.dart';
-import 'package:vowl/features/arena/domain/entities/arena_duel_state.dart';
+import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 
 class ArenaRepositoryImpl implements ArenaRepository {
@@ -338,3 +338,4 @@ class ArenaRepositoryImpl implements ArenaRepository {
     );
   }
 }
+

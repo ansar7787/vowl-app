@@ -7,7 +7,6 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/features/referral/domain/entities/referral_info.dart';
 import 'package:vowl/features/referral/domain/repositories/referral_repository.dart';
 import 'package:vowl/features/referral/presentation/bloc/referral_cubit.dart';
 import 'package:vowl/features/referral/presentation/bloc/referral_state.dart';
@@ -29,9 +28,7 @@ class ReferralHubScreen extends StatelessWidget {
     return BlocProvider(
       create: (_) {
         final cubit = ReferralCubit(
-          repository: di.sl.isRegistered<ReferralRepository>()
-              ? di.sl<ReferralRepository>()
-              : ReferralRepositoryImplFallback(),
+          repository: di.sl<ReferralRepository>(),
         );
         final authState = context.read<AuthBloc>().state;
         if (authState.status == AuthStatus.authenticated && authState.user != null) {
@@ -309,36 +306,4 @@ class _ReferralHubView extends StatelessWidget {
       ),
     );
   }
-}
-
-/// Fallback factory if get_it injection has not yet registered ReferralRepository
-class ReferralRepositoryImplFallback implements ReferralRepository {
-  @override
-  Future<String> getOrCreateReferralCode(UserEntity user) async =>
-      user.referralCode ?? 'VOWL-${user.id.substring(0, 4).toUpperCase()}';
-
-  @override
-  Future<ReferralClaimResult> claimReferralCode({
-    required String code,
-    required UserEntity user,
-  }) async =>
-      ReferralClaimResult.failure('Referral service initializing. Please retry in a moment.');
-
-  @override
-  Future<void> onFriendCompletedLevelOne({
-    required String friendUserId,
-    required String referrerCode,
-  }) async {}
-
-  @override
-  Future<List<AmbassadorLeaderboardItem>> getMonthlyAmbassadorLeaderboard({
-    String? monthKey,
-  }) async =>
-      [];
-
-  @override
-  Future<AmbassadorRewardClaimResult> claimMonthlyAmbassadorReward({
-    required UserEntity user,
-  }) async =>
-      AmbassadorRewardClaimResult.failure('Reward calculation in progress.');
 }

@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:math';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
-import 'package:vowl/features/arena/domain/entities/arena_duel_state.dart';
+import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 import 'package:vowl/features/arena/presentation/bloc/arena_duel_state.dart';
 
@@ -157,3 +157,4 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
     }
   }
 }
+

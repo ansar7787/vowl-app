@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'package:vowl/features/arena/domain/entities/arena_duel_state.dart';
+import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 
 class ArenaQuestionGenerator {
   ArenaQuestionGenerator._();
@@ -107,3 +107,4 @@ class ArenaQuestionGenerator {
     return selected.map((q) => ArenaQuestion.fromMap(q)).toList();
   }
 }
+

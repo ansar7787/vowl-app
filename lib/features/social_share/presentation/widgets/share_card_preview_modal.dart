@@ -105,3 +105,4 @@ class _ShareCardPreviewModalState extends State<ShareCardPreviewModal> {
     );
   }
 }
+

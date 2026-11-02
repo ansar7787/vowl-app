@@ -237,6 +237,7 @@ void main() async {
   try {
     await di.sl<NotificationService>().init();
     await di.sl<NotificationService>().scheduleWeeklyMotivation();
+    await di.sl<NotificationService>().scheduleSundayLeagueResetReminder();
   } catch (e) {
     if (kDebugMode) {
       debugPrint('Warning: NotificationService initialization failed: $e');

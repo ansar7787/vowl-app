@@ -1,5 +1,5 @@
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
-import 'package:vowl/features/arena/domain/entities/arena_duel_state.dart';
+import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 
 abstract class ArenaRepository {
   /// Quick match: polls live Firestore queue for 3 seconds.
@@ -55,3 +55,4 @@ abstract class ArenaRepository {
     required String userId,
   });
 }
+

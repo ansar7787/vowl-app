@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:vowl/features/arena/domain/entities/arena_duel_state.dart';
+import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 
 @immutable
 class ArenaDuelState {
@@ -75,3 +75,4 @@ class ArenaDuelState {
     );
   }
 }
+

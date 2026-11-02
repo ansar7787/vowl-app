@@ -11,11 +11,13 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 class WeeklyLeagueRewardsBanner extends StatefulWidget {
   final UserEntity? currentUser;
   final Function(int rank, int vipDays, int coins, String weekKey)? onClaimReward;
+  final VoidCallback? onQuickMatch;
 
   const WeeklyLeagueRewardsBanner({
     super.key,
     this.currentUser,
     this.onClaimReward,
+    this.onQuickMatch,
   });
 
   @override
@@ -154,6 +156,46 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
             ),
           ),
 
+          // Quick Match 30-Coin Duel CTA
+          if (widget.onQuickMatch != null && widget.currentUser != null) ...[
+            SizedBox(height: 10.h),
+            Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: () {
+                  if (di.sl.isRegistered<HapticService>()) {
+                    di.sl<HapticService>().light();
+                  }
+                  widget.onQuickMatch?.call();
+                },
+                borderRadius: BorderRadius.circular(10.r),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+                  decoration: BoxDecoration(
+                    color: AppColors.indigo500.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(10.r),
+                    border: Border.all(color: AppColors.indigo500.withValues(alpha: 0.3)),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(LucideIcons.swords, size: 14.sp, color: AppColors.indigo500),
+                      SizedBox(width: 8.w),
+                      Text(
+                        'Quick Duel (30 Coins) · 3s Instant Match',
+                        style: TextStyle(
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w700,
+                          color: isDark ? Colors.white : AppColors.indigo600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+
           // Unclaimed Offline Win-Back Banner
           if (hasUnclaimedLastWeek) ...[
             SizedBox(height: 10.h),
@@ -242,3 +284,4 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
     );
   }
 }
+

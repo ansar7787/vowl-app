@@ -231,3 +231,4 @@ class RivalChallengeSheet extends StatelessWidget {
     );
   }
 }
+
