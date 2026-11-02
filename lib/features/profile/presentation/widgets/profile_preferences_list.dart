@@ -25,6 +25,17 @@ class ProfilePreferencesList extends StatelessWidget {
       blur: 0,
       child: Column(
         children: [
+          if (!user.isKidsModeOnly)
+            _buildPreferenceTile(
+              context,
+              'Ambassador Program',
+              Icons.card_giftcard_rounded,
+              AppColors.indigo500,
+              () {
+                di.sl<HapticService>().light();
+                context.push(AppRouter.referralRoute);
+              },
+            ),
           _buildPreferenceTile(
             context,
             context.tr('settings.title', fallback: 'Settings'),

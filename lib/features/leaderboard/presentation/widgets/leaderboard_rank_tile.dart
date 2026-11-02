@@ -21,6 +21,7 @@ class LeaderboardRankTile extends StatelessWidget {
   final int rank;
   final bool isMe;
   final bool isKids;
+  final VoidCallback? onTap;
 
   const LeaderboardRankTile({
     super.key,
@@ -28,6 +29,7 @@ class LeaderboardRankTile extends StatelessWidget {
     required this.rank,
     required this.isMe,
     this.isKids = false,
+    this.onTap,
   });
 
   @override
@@ -61,7 +63,7 @@ class LeaderboardRankTile extends StatelessWidget {
           '$levelsCleared levels cleared.'
           '${isMe ? " ${context.tr('leaderboard.this_is_you', fallback: 'This is you!')}" : ""}',
       child: GlassTile(
-        padding: EdgeInsets.symmetric(horizontal: 14.r, vertical: 12.r),
+        padding: EdgeInsets.zero,
         borderRadius: BorderRadius.circular(18.r),
         // PERF: blur: 0 disables BackdropFilter in the scroll list.
         // With 50+ tiles, each BackdropFilter creates an offscreen render
@@ -82,8 +84,15 @@ class LeaderboardRankTile extends StatelessWidget {
                 : AppColors.slate800)
             : Colors.white,
         borderWidth: isMe ? 1.5 : 1,
-        child: Row(
-          children: [
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: BorderRadius.circular(18.r),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 14.r, vertical: 12.r),
+              child: Row(
+                children: [
             // Rank number & Change Indicator
             SizedBox(
               width: 44.w,
@@ -235,7 +244,10 @@ class LeaderboardRankTile extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ),
+  ),
+),
+);
   }
 
   Widget _buildRankChangeIndicator(int previousRank, int currentRank) {

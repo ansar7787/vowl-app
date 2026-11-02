@@ -20,6 +20,18 @@ import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_podiu
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_card.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:go_router/go_router.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
+import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
+import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_overtake_hud.dart';
+import 'package:vowl/features/leaderboard/presentation/widgets/weekly_league_rewards_banner.dart';
+import 'package:vowl/features/leaderboard/presentation/widgets/rival_challenge_sheet.dart';
+import 'package:vowl/features/leaderboard/presentation/widgets/prestige_trophy_sheet.dart';
+import 'package:vowl/features/social_share/domain/entities/share_card_data.dart';
+import 'package:vowl/features/social_share/presentation/widgets/share_card_preview_modal.dart';
 
 /// Main leaderboard rankings screen featuring podium top 3 positions,
 /// personal rank card, and toggleable standard/kids leaderboards.
@@ -256,6 +268,142 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     );
   }
 
+  Future<void> _handleClaimWeeklyLeagueReward(
+    int rank,
+    int vipDays,
+    int coins,
+    String weekKey,
+  ) async {
+    final currentUser = widget.currentUser;
+    if (currentUser == null) return;
+
+    final now = DateTime.now();
+    final DateTime? newExpiry;
+    if (vipDays > 0) {
+      if (currentUser.isPremium &&
+          currentUser.premiumExpiryDate != null &&
+          currentUser.premiumExpiryDate!.isAfter(now)) {
+        newExpiry = currentUser.premiumExpiryDate!.add(Duration(days: vipDays));
+      } else {
+        newExpiry = now.add(Duration(days: vipDays));
+      }
+    } else {
+      newExpiry = null;
+    }
+
+    final updatedKeys = [...currentUser.claimedWeeklyRewardWeekKeys, weekKey];
+    try {
+      await FirebaseFirestore.instance.collection('users').doc(currentUser.id).update({
+        'claimedWeeklyRewardWeekKeys': updatedKeys,
+        if (coins > 0) 'coins': FieldValue.increment(coins),
+        if (vipDays > 0) ...{
+          'isPremium': true,
+          'premiumExpiryDate': Timestamp.fromDate(newExpiry!),
+        },
+        'lastRewardTimestamp': FieldValue.serverTimestamp(),
+      });
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: AppColors.emerald500,
+            content: Text(
+              '🎉 Reward Claimed! Enjoy your $vipDays day${vipDays > 1 ? "s" : ""} VIP & $coins coins.',
+              style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+            ),
+          ),
+        );
+      }
+    } catch (e) {
+      debugPrint('[LeaderboardScreen] Claim weekly error: $e');
+    }
+  }
+
+  void _handleTileTap(UserEntity user, int rank, bool isMe) {
+    if (isMe) {
+      PrestigeTrophySheet.show(
+        context: context,
+        user: user,
+        rank: rank,
+        onShareRank: () => _showShareCard(user, rank),
+      );
+    } else if (!widget.state.isKids && widget.currentUser != null) {
+      RivalChallengeSheet.show(
+        context: context,
+        rival: user,
+        rivalRank: rank,
+        currentUser: widget.currentUser!,
+        onStartDuel: () => _startDuelWithRival(user, rank),
+        onShareRoomCode: () => _shareRoomCodeChallenge(user),
+      );
+    }
+  }
+
+  void _startDuelWithRival(UserEntity rival, int rank) async {
+    final currentUser = widget.currentUser;
+    if (currentUser == null) return;
+
+    if (currentUser.coins < 30) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('You need at least 30 coins to enter a duel stake!'),
+          backgroundColor: AppColors.rose500,
+        ),
+      );
+      return;
+    }
+
+    try {
+      final repo = di.sl<ArenaRepository>();
+      final session = await repo.challengeRivalDirectly(
+        currentUser: currentUser,
+        rival: rival,
+        rivalRank: rank,
+      );
+      if (mounted) {
+        Navigator.of(context).push(ArenaDuelScreen.route(session: session));
+      }
+    } catch (e) {
+      debugPrint('[LeaderboardScreen] Start duel error: $e');
+    }
+  }
+
+  void _shareRoomCodeChallenge(UserEntity rival) async {
+    final currentUser = widget.currentUser;
+    if (currentUser == null) return;
+
+    try {
+      final repo = di.sl<ArenaRepository>();
+      final session = await repo.createRoomCode(currentUser: currentUser);
+      final message = '⚔️ I bet 30 coins you can\'t beat my score on Vowl!\n'
+          'Enter room code ${session.roomCode} to duel me now:\n'
+          'https://vowl.app/duel/${session.roomCode}';
+      await SharePlus.instance.share(
+        ShareParams(
+          text: message,
+          subject: '1v1 English Duel Challenge!',
+        ),
+      );
+      if (mounted) {
+        Navigator.of(context).push(ArenaDuelScreen.route(session: session));
+      }
+    } catch (e) {
+      debugPrint('[LeaderboardScreen] Share room code error: $e');
+    }
+  }
+
+  void _showShareCard(UserEntity user, int rank) {
+    final data = ShareCardData.fromRank(
+      userName: user.safeDisplayName,
+      userPhotoUrl: user.photoUrl,
+      rank: rank,
+      totalXp: user.totalExp,
+      streak: user.currentStreak,
+      referralCode: user.referralCode,
+    );
+    ShareCardPreviewModal.show(context: context, data: data);
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -358,6 +506,15 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                 ),
               ),
 
+              // Weekly League Podium Rewards Banner (Podium Prizes + Unclaimed Reward Safety Net)
+              if (!widget.state.isKids)
+                SliverToBoxAdapter(
+                  child: WeeklyLeagueRewardsBanner(
+                    currentUser: widget.currentUser,
+                    onClaimReward: _handleClaimWeeklyLeagueReward,
+                  ),
+                ),
+
               SliverToBoxAdapter(child: SizedBox(height: 24.h)),
 
               // Podium (Top 3)
@@ -387,6 +544,16 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                   ),
                 ),
               ),
+
+              // Overtake Alert HUD (XP gap to next player, dropped rank alert)
+              if (!widget.state.isKids && widget.currentUser != null)
+                SliverToBoxAdapter(
+                  child: LeaderboardOvertakeHud(
+                    allUsers: widget.state.users,
+                    currentUser: widget.currentUser!,
+                    onOvertakeTap: () => context.push(AppRouter.gamesRoute),
+                  ),
+                ),
 
               // Section label with divider
               SliverToBoxAdapter(
@@ -465,6 +632,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                           user: user,
                           rank: rank,
                           isMe: isMe,
+                          onTap: () => _handleTileTap(user, rank, isMe),
                         ),
                       );
 

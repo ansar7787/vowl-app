@@ -64,5 +64,63 @@ void main() {
       expect(model.safeDisplayName, 'Vowl Learner');
     });
   });
+
+  group('UserModel Referral & PvP serialization', () {
+    test('handles default referral and duel values correctly', () {
+      final model = UserModel.fromMap({
+        'id': 'u10',
+        'email': 'player@vowl.app',
+      });
+      expect(model.hasClaimedReferral, false);
+      expect(model.totalReferralsCount, 0);
+      expect(model.monthlyReferralsCount, 0);
+      expect(model.currentReferralMonthKey, isNull);
+      expect(model.claimedAmbassadorRewardMonthKeys, isEmpty);
+      expect(model.claimedWeeklyRewardWeekKeys, isEmpty);
+      expect(model.dailyDuelsPlayedToday, 0);
+      expect(model.duelWins, 0);
+      expect(model.duelLosses, 0);
+      expect(model.duelWinRate, 0.0);
+    });
+
+    test('serializes and deserializes referral and duel fields correctly', () {
+      final now = DateTime.utc(2026, 11, 2, 10, 0);
+      final model = UserModel(
+        id: 'u11',
+        email: 'ambassador@vowl.app',
+        dailyXpHistory: const {},
+        referralCode: 'VOWL-TEST',
+        referredBy: 'VOWL-INVITER',
+        hasClaimedReferral: true,
+        totalReferralsCount: 15,
+        monthlyReferralsCount: 5,
+        currentReferralMonthKey: '2026-11',
+        claimedAmbassadorRewardMonthKeys: const ['2026-10'],
+        claimedWeeklyRewardWeekKeys: const ['2026-W43'],
+        dailyDuelsPlayedToday: 3,
+        lastDuelDate: now,
+        duelWins: 8,
+        duelLosses: 2,
+      );
+
+      expect(model.duelWinRate, 80.0);
+      expect(model.activeMonthlyReferralsCount, 5);
+
+      final map = model.toMap();
+      final reconstructed = UserModel.fromMap(map);
+
+      expect(reconstructed.referralCode, 'VOWL-TEST');
+      expect(reconstructed.referredBy, 'VOWL-INVITER');
+      expect(reconstructed.hasClaimedReferral, true);
+      expect(reconstructed.totalReferralsCount, 15);
+      expect(reconstructed.monthlyReferralsCount, 5);
+      expect(reconstructed.currentReferralMonthKey, '2026-11');
+      expect(reconstructed.claimedAmbassadorRewardMonthKeys, ['2026-10']);
+      expect(reconstructed.claimedWeeklyRewardWeekKeys, ['2026-W43']);
+      expect(reconstructed.dailyDuelsPlayedToday, 3);
+      expect(reconstructed.duelWins, 8);
+      expect(reconstructed.duelLosses, 2);
+    });
+  });
 }
 

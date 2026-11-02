@@ -21,6 +21,7 @@ import 'package:vowl/features/profile/presentation/pages/review_mistakes_screen.
 
 import 'package:vowl/features/scan_and_learn/presentation/pages/scan_and_learn_screen.dart';
 import 'package:vowl/features/photo_vocabulary/presentation/pages/photo_vocabulary_screen.dart';
+import 'package:vowl/features/referral/presentation/pages/referral_hub_screen.dart';
 
 import 'package:vowl/core/utils/app_router.dart';
 
@@ -207,6 +208,13 @@ class HomeRoutes {
       path: AppRouter.kidsLeaderboardRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
         child: const LeaderboardScreen(isKids: true),
+        state: state,
+      ),
+    ),
+    GoRoute(
+      path: AppRouter.referralRoute,
+      pageBuilder: (context, state) => fadeTransitionPage(
+        child: const ReferralHubScreen(),
         state: state,
       ),
     ),
