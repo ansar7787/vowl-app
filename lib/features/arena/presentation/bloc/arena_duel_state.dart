@@ -7,6 +7,12 @@ class ArenaDuelState {
   final int currentQuestionIndex;
   final int myScore;
   final int rivalScore;
+  final int myCorrectCount;
+  final int rivalCorrectCount;
+  final int myTotalTimeMs;
+  final int rivalTotalTimeMs;
+  final bool isSpeedTieBreak;
+  final double speedDiffSeconds;
   final int? selectedOption;
   final bool isAnswered;
   final bool? isCorrect;
@@ -23,6 +29,12 @@ class ArenaDuelState {
     this.currentQuestionIndex = 0,
     this.myScore = 0,
     this.rivalScore = 0,
+    this.myCorrectCount = 0,
+    this.rivalCorrectCount = 0,
+    this.myTotalTimeMs = 0,
+    this.rivalTotalTimeMs = 0,
+    this.isSpeedTieBreak = false,
+    this.speedDiffSeconds = 0.0,
     this.selectedOption,
     this.isAnswered = false,
     this.isCorrect,
@@ -46,6 +58,12 @@ class ArenaDuelState {
     int? currentQuestionIndex,
     int? myScore,
     int? rivalScore,
+    int? myCorrectCount,
+    int? rivalCorrectCount,
+    int? myTotalTimeMs,
+    int? rivalTotalTimeMs,
+    bool? isSpeedTieBreak,
+    double? speedDiffSeconds,
     int? selectedOption,
     bool? isAnswered,
     bool? isCorrect,
@@ -62,6 +80,12 @@ class ArenaDuelState {
       currentQuestionIndex: currentQuestionIndex ?? this.currentQuestionIndex,
       myScore: myScore ?? this.myScore,
       rivalScore: rivalScore ?? this.rivalScore,
+      myCorrectCount: myCorrectCount ?? this.myCorrectCount,
+      rivalCorrectCount: rivalCorrectCount ?? this.rivalCorrectCount,
+      myTotalTimeMs: myTotalTimeMs ?? this.myTotalTimeMs,
+      rivalTotalTimeMs: rivalTotalTimeMs ?? this.rivalTotalTimeMs,
+      isSpeedTieBreak: isSpeedTieBreak ?? this.isSpeedTieBreak,
+      speedDiffSeconds: speedDiffSeconds ?? this.speedDiffSeconds,
       selectedOption: selectedOption,
       isAnswered: isAnswered ?? this.isAnswered,
       isCorrect: isCorrect,
@@ -75,4 +99,3 @@ class ArenaDuelState {
     );
   }
 }
-

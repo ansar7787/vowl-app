@@ -7,6 +7,18 @@ import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 class ArenaQuestionGenerator {
   ArenaQuestionGenerator._();
 
+  /// Primary curriculum games containing rich multiple-choice questions
+  /// spanning 200 levels each (~1,000 authentic questions per discipline).
+  static const List<String> kSupportedGameTypes = [
+    'synonymSearch', // Word Clash: Synonyms
+    'antonymSearch', // Word Clash: Antonyms
+    'collocations',  // Phrase Duel: Natural word pairs
+    'idioms',        // Phrase Duel: Idioms & expressions
+    'academicWord',  // Sentence Strike: Academic vocabulary
+    'contextClues',  // Context Clues: Deductive sentence reasoning
+    'phrasalVerbs',  // Phrase Duel: Particles & phrasal verbs
+  ];
+
   static const List<Map<String, dynamic>> _kQuestionBank = [
     {
       'question': 'What is the closest synonym for "Resilient"?',
@@ -110,8 +122,11 @@ class ArenaQuestionGenerator {
     return selected.map((q) => ArenaQuestion.fromMap(q)).toList();
   }
 
-  /// Generates dynamic questions loaded directly from Vowl's authentic
-  /// game curriculum assets (synonymSearch, antonymSearch, idioms, academicWord).
+  /// Generates dynamic questions sampled truly randomly across Vowl's 200 curriculum levels
+  /// and 7 distinct language disciplines (synonyms, antonyms, collocations, idioms,
+  /// academic words, context clues, and phrasal verbs).
+  ///
+  /// Across 7 games * 200 levels * 4 quests/level = ~5,600 authentic questions!
   /// Falls back to the curated bank if offline or in headless test environments.
   static Future<List<ArenaQuestion>> generateQuestionsAsync({
     int count = 5,
@@ -126,26 +141,20 @@ class ArenaQuestionGenerator {
 
     if (service != null) {
       try {
-        const gameTypes = [
-          'synonymSearch',
-          'antonymSearch',
-          'idioms',
-          'academicWord',
-          'contextClues',
-        ];
         final questions = <ArenaQuestion>[];
-        final shuffledGameTypes = List<String>.from(gameTypes)..shuffle(rand);
+        // Shuffle disciplines to ensure cross-discipline blitz
+        final shuffledGameTypes = List<String>.from(kSupportedGameTypes)..shuffle(rand);
 
         for (final gameType in shuffledGameTypes) {
           if (questions.length >= count) break;
-          // Random level batch between 1 and 30 for balanced difficulty
-          final level = rand.nextInt(30) + 1;
+          // True random sampling across all 200 levels
+          final level = rand.nextInt(200) + 1;
           try {
             final quests = await service.getQuests(gameType, level);
-            final shuffledQuests = List<Map<String, dynamic>>.from(quests)
-              ..shuffle(rand);
+            if (quests.isEmpty) continue;
+            final shuffledQuests = List<Map<String, dynamic>>.from(quests)..shuffle(rand);
             for (final q in shuffledQuests) {
-              final converted = _tryConvertCurriculumQuest(q, gameType);
+              final converted = _tryConvertCurriculumQuest(q, gameType, rand);
               if (converted != null &&
                   !questions.any((existing) => existing.question == converted.question)) {
                 questions.add(converted);
@@ -153,11 +162,42 @@ class ArenaQuestionGenerator {
               }
             }
           } catch (_) {
-            // Silently continue if level not yet unlocked in curriculum
+            // Silently continue if level not yet accessible
           }
         }
 
-        if (questions.length >= count) {
+        // If we still need more questions, sample additional random levels
+        if (questions.length < count) {
+          for (int attempt = 0; attempt < 15 && questions.length < count; attempt++) {
+            final randomType = kSupportedGameTypes[rand.nextInt(kSupportedGameTypes.length)];
+            final randomLevel = rand.nextInt(200) + 1;
+            try {
+              final quests = await service.getQuests(randomType, randomLevel);
+              final shuffledQuests = List<Map<String, dynamic>>.from(quests)..shuffle(rand);
+              for (final q in shuffledQuests) {
+                final converted = _tryConvertCurriculumQuest(q, randomType, rand);
+                if (converted != null &&
+                    !questions.any((existing) => existing.question == converted.question)) {
+                  questions.add(converted);
+                  if (questions.length >= count) break;
+                }
+              }
+            } catch (_) {}
+          }
+        }
+
+        // Fill any remaining shortfall with deterministic curated bank
+        if (questions.length < count) {
+          final fallback = generateQuestions(count: count, seed: seed);
+          for (final q in fallback) {
+            if (!questions.any((existing) => existing.question == q.question)) {
+              questions.add(q);
+              if (questions.length >= count) break;
+            }
+          }
+        }
+
+        if (questions.isNotEmpty) {
           return questions.take(count).toList();
         }
       } catch (e) {
@@ -165,13 +205,14 @@ class ArenaQuestionGenerator {
       }
     }
 
-    // Deterministic fallback to verified question bank
+    // Deterministic fallback to verified question bank if offline or testing
     return generateQuestions(count: count, seed: seed);
   }
 
   static ArenaQuestion? _tryConvertCurriculumQuest(
     Map<String, dynamic> quest,
     String gameType,
+    Random rand,
   ) {
     try {
       final optionsRaw = quest['options'];
@@ -182,26 +223,68 @@ class ArenaQuestionGenerator {
           (quest['correctAnswer'] ?? quest['answer'] ?? '').toString().trim();
       if (correctAnswer.isEmpty) return null;
 
-      final correctIndex = options.indexWhere(
+      final originalCorrectIndex = options.indexWhere(
         (opt) => opt.toLowerCase() == correctAnswer.toLowerCase(),
       );
-      if (correctIndex == -1) return null;
+      if (originalCorrectIndex == -1) return null;
 
       String questionText;
       final word = quest['word']?.toString().trim();
       final instruction = quest['instruction']?.toString().trim();
+      final contextSentence = quest['contextSentence']?.toString().trim();
+      final passage = quest['passage']?.toString().trim();
+      final sentence = quest['sentence']?.toString().trim();
+      final hint = quest['hint']?.toString().trim();
 
       if (gameType == 'synonymSearch' && word != null && word.isNotEmpty) {
-        questionText = 'What is the synonym for "$word"?';
+        questionText = 'What is the closest synonym for "$word"?';
       } else if (gameType == 'antonymSearch' && word != null && word.isNotEmpty) {
-        questionText = 'What is the antonym for "$word"?';
+        questionText = 'What is the opposite of "$word"?';
       } else if (gameType == 'idioms') {
         if (instruction != null && instruction.contains('___')) {
           questionText = instruction;
         } else if (word != null && word.isNotEmpty) {
           questionText = 'What does the idiom "$word" mean?';
+        } else if (hint != null && hint.toUpperCase().startsWith('DEFINITION:')) {
+          questionText = hint.replaceFirst(RegExp(r'DEFINITION:\s*', caseSensitive: false), '').trim();
         } else {
-          questionText = instruction ?? 'Select the correct meaning:';
+          questionText = instruction ?? 'Select the correct idiom:';
+        }
+      } else if (gameType == 'collocations') {
+        if (contextSentence != null && contextSentence.contains('___')) {
+          questionText = contextSentence;
+        } else if (word != null && word.isNotEmpty) {
+          questionText = 'Complete the natural collocation with "$word":';
+        } else {
+          questionText = instruction ?? 'Choose the word that forms a natural pair:';
+        }
+      } else if (gameType == 'phrasalVerbs') {
+        if (contextSentence != null && contextSentence.contains('___')) {
+          questionText = contextSentence;
+        } else if (word != null && word.isNotEmpty) {
+          questionText = 'Select the correct particle for "$word":';
+        } else {
+          questionText = instruction ?? 'Complete the phrasal verb:';
+        }
+      } else if (gameType == 'academicWord') {
+        if (passage != null && passage.contains('[TARGET]')) {
+          questionText = passage.replaceAll('[TARGET]', '_____');
+        } else if (contextSentence != null && contextSentence.contains('___')) {
+          questionText = contextSentence;
+        } else if (word != null && word.isNotEmpty) {
+          questionText = 'Choose the academic definition for "$word":';
+        } else {
+          questionText = instruction ?? 'Select the best word to complete the sentence:';
+        }
+      } else if (gameType == 'contextClues') {
+        if (sentence != null && sentence.contains('[TARGET]')) {
+          questionText = sentence.replaceAll('[TARGET]', '_____');
+        } else if (contextSentence != null && contextSentence.contains('___')) {
+          questionText = contextSentence;
+        } else if (word != null && word.isNotEmpty) {
+          questionText = 'Infer the contextual meaning of "$word":';
+        } else {
+          questionText = instruction ?? 'Analyze the sentence to deduce the meaning:';
         }
       } else {
         questionText = (instruction != null && instruction.isNotEmpty)
@@ -214,10 +297,16 @@ class ArenaQuestionGenerator {
               'Vowl authentic curriculum challenge.')
           .toString();
 
+      // Deterministically shuffle options using rand to eliminate positional bias
+      final shuffledOptions = List<String>.from(options)..shuffle(rand);
+      final newCorrectIndex = shuffledOptions.indexWhere(
+        (opt) => opt.toLowerCase() == correctAnswer.toLowerCase(),
+      );
+
       return ArenaQuestion(
         question: questionText,
-        options: options,
-        correctIndex: correctIndex,
+        options: shuffledOptions,
+        correctIndex: newCorrectIndex != -1 ? newCorrectIndex : originalCorrectIndex,
         explanation: explanation,
       );
     } catch (_) {
@@ -225,4 +314,3 @@ class ArenaQuestionGenerator {
     }
   }
 }
-

@@ -10,6 +10,7 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
   final ArenaRepository _repository;
   Timer? _questionTimer;
   StreamSubscription<ArenaDuelSession>? _roomSub;
+  int _questionStartTime = 0;
 
   ArenaDuelCubit({required ArenaRepository repository})
       : _repository = repository,
@@ -48,7 +49,14 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
 
   void _startQuestionTimer(UserEntity currentUser) {
     _questionTimer?.cancel();
-    emit(state.copyWith(timeRemaining: 10, isAnswered: false, selectedOption: null, isCorrect: null));
+    _questionStartTime = DateTime.now().millisecondsSinceEpoch;
+
+    emit(state.copyWith(
+      timeRemaining: 10,
+      isAnswered: false,
+      selectedOption: null,
+      isCorrect: null,
+    ));
 
     // Simulate ghost opponent answering
     if (state.session?.isGhostRival == true) {
@@ -68,14 +76,23 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
   void _simulateGhostAnswer() {
     final accuracy = state.session?.ghostAccuracy ?? 0.8;
     final delaySeconds = Random().nextInt(3) + 2; // Answers in 2-4 seconds
+    final ghostElapsedMs = (delaySeconds * 1000) + Random().nextInt(600);
 
     Future.delayed(Duration(seconds: delaySeconds), () {
       if (isClosed || state.isCompleted) return;
       final isRivalCorrect = Random().nextDouble() <= accuracy;
-      if (isRivalCorrect) {
-        final speedBonus = max(10, 100 - (delaySeconds * 10));
-        emit(state.copyWith(rivalScore: state.rivalScore + speedBonus));
-      }
+      final speedBonus = isRivalCorrect ? max(10, 100 - (delaySeconds * 10)) : 0;
+      final newRivalScore = state.rivalScore + speedBonus;
+      final newRivalCorrect = isRivalCorrect
+          ? state.rivalCorrectCount + 1
+          : state.rivalCorrectCount;
+      final newRivalTime = state.rivalTotalTimeMs + ghostElapsedMs;
+
+      emit(state.copyWith(
+        rivalScore: newRivalScore,
+        rivalCorrectCount: newRivalCorrect,
+        rivalTotalTimeMs: newRivalTime,
+      ));
     });
   }
 
@@ -83,16 +100,25 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
     if (state.isAnswered || state.currentQuestion == null) return;
     _questionTimer?.cancel();
 
+    final now = DateTime.now().millisecondsSinceEpoch;
+    final elapsedMs = _questionStartTime > 0
+        ? (now - _questionStartTime).clamp(300, 10000)
+        : (10 - state.timeRemaining) * 1000;
+
     final q = state.currentQuestion!;
     final isCorrect = index == q.correctIndex;
     final speedPoints = isCorrect ? max(20, state.timeRemaining * 10) : 0;
     final newMyScore = state.myScore + speedPoints;
+    final newMyCorrect = isCorrect ? state.myCorrectCount + 1 : state.myCorrectCount;
+    final newMyTime = state.myTotalTimeMs + elapsedMs;
 
     emit(state.copyWith(
       selectedOption: index,
       isAnswered: true,
       isCorrect: isCorrect,
       myScore: newMyScore,
+      myCorrectCount: newMyCorrect,
+      myTotalTimeMs: newMyTime,
     ));
 
     // Submit score to live room if live
@@ -114,7 +140,12 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
   }
 
   void _onTimeExpired(UserEntity currentUser) {
-    emit(state.copyWith(isAnswered: true, isCorrect: false));
+    final newMyTime = state.myTotalTimeMs + 10000;
+    emit(state.copyWith(
+      isAnswered: true,
+      isCorrect: false,
+      myTotalTimeMs: newMyTime,
+    ));
     Future.delayed(const Duration(milliseconds: 1000), () {
       if (isClosed) return;
       _advanceToNextQuestion(currentUser);
@@ -136,14 +167,30 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
   Future<void> _finalizeMatch(UserEntity currentUser) async {
     _questionTimer?.cancel();
 
-    final isWinner = state.myScore > state.rivalScore;
-    final isDraw = state.myScore == state.rivalScore;
-    final payout = isDraw ? 30 : (isWinner ? 50 : 10);
+    final bool isScoreTie = state.myScore == state.rivalScore;
+    final bool isWinner;
+    final bool isSpeedTieBreak;
+    final double speedDiff;
+
+    if (!isScoreTie) {
+      isWinner = state.myScore > state.rivalScore;
+      isSpeedTieBreak = false;
+      speedDiff = 0.0;
+    } else {
+      // ZERO-TIE RESOLUTION: Decisive millisecond tiebreaker
+      isSpeedTieBreak = true;
+      isWinner = state.myTotalTimeMs <= state.rivalTotalTimeMs;
+      speedDiff = ((state.rivalTotalTimeMs - state.myTotalTimeMs).abs()) / 1000.0;
+    }
+
+    final payout = isWinner ? 50 : 10;
 
     emit(state.copyWith(
       isCompleted: true,
       isWinner: isWinner,
-      isDraw: isDraw,
+      isDraw: false,
+      isSpeedTieBreak: isSpeedTieBreak,
+      speedDiffSeconds: speedDiff,
       payoutCoins: payout,
     ));
 
@@ -152,9 +199,8 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
         roomCode: state.session!.roomCode,
         currentUser: currentUser,
         isWinner: isWinner,
-        isDraw: isDraw,
+        isDraw: false,
       );
     }
   }
 }
-
