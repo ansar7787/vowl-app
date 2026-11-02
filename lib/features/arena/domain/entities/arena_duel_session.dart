@@ -7,12 +7,14 @@ class ArenaQuestion {
   final List<String> options;
   final int correctIndex;
   final String explanation;
+  final String? discipline;
 
   const ArenaQuestion({
     required this.question,
     required this.options,
     required this.correctIndex,
     required this.explanation,
+    this.discipline,
   });
 
   Map<String, dynamic> toMap() {
@@ -21,6 +23,7 @@ class ArenaQuestion {
       'options': options,
       'correctIndex': correctIndex,
       'explanation': explanation,
+      if (discipline != null) 'discipline': discipline,
     };
   }
 
@@ -33,6 +36,7 @@ class ArenaQuestion {
           const [],
       correctIndex: (map['correctIndex'] as num?)?.toInt() ?? 0,
       explanation: map['explanation'] as String? ?? '',
+      discipline: map['discipline'] as String?,
     );
   }
 }

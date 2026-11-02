@@ -166,8 +166,8 @@ class _ArenaDuelView extends StatelessWidget {
                 // Question Box
                 Builder(
                   builder: (_) {
-                    final disciplineLabel = _getDisciplineLabel(q.question);
-                    final disciplineColor = _getDisciplineColor(q.question);
+                    final disciplineLabel = _getDisciplineLabel(q);
+                    final disciplineColor = _getDisciplineColor(q);
                     return Container(
                       padding: EdgeInsets.all(18.w),
                       decoration: BoxDecoration(
@@ -296,25 +296,50 @@ class _ArenaDuelView extends StatelessWidget {
   );
 }
 
-  String _getDisciplineLabel(String questionText) {
-    final lower = questionText.toLowerCase();
-    if (lower.contains('synonym')) return 'WORD CLASH • SYNONYM';
-    if (lower.contains('opposite') || lower.contains('antonym')) return 'WORD CLASH • ANTONYM';
-    if (lower.contains('idiom')) return 'PHRASE DUEL • IDIOM';
-    if (lower.contains('collocation') || lower.contains('natural pair')) return 'PHRASE DUEL • COLLOCATION';
-    if (lower.contains('particle') || lower.contains('phrasal')) return 'PHRASE DUEL • PHRASAL VERB';
-    if (lower.contains('academic')) return 'SENTENCE STRIKE • ACADEMIC';
+  String _getDisciplineLabel(ArenaQuestion q) {
+    final disc = q.discipline;
+    final lower = q.question.toLowerCase();
+
+    if (disc == 'word_clash' ||
+        lower.contains('synonym') ||
+        lower.contains('antonym') ||
+        lower.contains('opposite')) {
+      if (lower.contains('opposite') || lower.contains('antonym')) {
+        return 'WORD CLASH • ANTONYM';
+      }
+      return 'WORD CLASH • SYNONYM';
+    }
+
+    if (disc == 'phrase_duel' ||
+        lower.contains('idiom') ||
+        lower.contains('collocation') ||
+        lower.contains('natural pair') ||
+        lower.contains('particle') ||
+        lower.contains('phrasal')) {
+      if (lower.contains('idiom')) return 'PHRASE DUEL • IDIOM';
+      if (lower.contains('particle') || lower.contains('phrasal')) {
+        return 'PHRASE DUEL • PHRASAL VERB';
+      }
+      return 'PHRASE DUEL • COLLOCATION';
+    }
+
+    if (disc == 'sentence_strike' ||
+        lower.contains('academic') ||
+        lower.contains('precision')) {
+      return 'SENTENCE STRIKE • ACADEMIC';
+    }
+
     return 'CONTEXT BLITZ • INFERENCE';
   }
 
-  Color _getDisciplineColor(String questionText) {
-    final lower = questionText.toLowerCase();
-    if (lower.contains('synonym')) return AppColors.indigo500;
-    if (lower.contains('opposite') || lower.contains('antonym')) return const Color(0xFFF59E0B);
-    if (lower.contains('idiom')) return const Color(0xFF06B6D4);
-    if (lower.contains('collocation') || lower.contains('natural pair')) return const Color(0xFF10B981);
-    if (lower.contains('particle') || lower.contains('phrasal')) return const Color(0xFF8B5CF6);
-    if (lower.contains('academic')) return const Color(0xFFEC4899);
+  Color _getDisciplineColor(ArenaQuestion q) {
+    final label = _getDisciplineLabel(q);
+    if (label.contains('SYNONYM')) return AppColors.indigo500;
+    if (label.contains('ANTONYM')) return const Color(0xFFF59E0B);
+    if (label.contains('IDIOM')) return const Color(0xFF06B6D4);
+    if (label.contains('COLLOCATION')) return const Color(0xFF10B981);
+    if (label.contains('PHRASAL')) return const Color(0xFF8B5CF6);
+    if (label.contains('SENTENCE STRIKE')) return const Color(0xFFEC4899);
     return const Color(0xFF0EA5E9);
   }
 

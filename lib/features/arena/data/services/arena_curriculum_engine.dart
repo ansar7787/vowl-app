@@ -33,90 +33,105 @@ class ArenaCurriculumEngine {
       'options': ['Fragile', 'Enduring', 'Hesitant', 'Trivial'],
       'correctIndex': 1,
       'explanation': 'Resilient means able to withstand or recover quickly from difficult conditions.',
+      'discipline': 'word_clash',
     },
     {
       'question': 'Choose the word that means "Brief and clearly expressed":',
       'options': ['Verbose', 'Ambiguous', 'Concise', 'Prolix'],
       'correctIndex': 2,
       'explanation': 'Concise means expressing much in few words; succinct and clear.',
+      'discipline': 'sentence_strike',
     },
     {
       'question': 'What is the opposite of "Authentic"?',
       'options': ['Genuine', 'Spurious', 'Credible', 'Legitimate'],
       'correctIndex': 1,
       'explanation': 'Spurious means not being what it purports to be; fake or counterfeit.',
+      'discipline': 'word_clash',
     },
     {
       'question': 'Complete the idiom: "Bite the ______"',
       'options': ['Apple', 'Bullet', 'Tongue', 'Dust'],
       'correctIndex': 1,
       'explanation': '"Bite the bullet" means to face a difficult situation with courage.',
+      'discipline': 'phrase_duel',
     },
     {
       'question': 'Select the word that means "Excessively talkative":',
       'options': ['Taciturn', 'Garrulous', 'Reticent', 'Laconic'],
       'correctIndex': 1,
       'explanation': 'Garrulous means excessively talkative, especially on trivial matters.',
+      'discipline': 'sentence_strike',
     },
     {
       'question': 'What does the idiom "Spill the beans" mean?',
       'options': ['Make a mess', 'Reveal a secret', 'Cook dinner', 'Lose patience'],
       'correctIndex': 1,
       'explanation': '"Spill the beans" is an informal idiom meaning to disclose secret information.',
+      'discipline': 'phrase_duel',
     },
     {
       'question': 'Choose the closest synonym for "Meticulous":',
       'options': ['Careless', 'Thorough', 'Impatient', 'Slapdash'],
       'correctIndex': 1,
       'explanation': 'Meticulous means showing great attention to detail; very careful and precise.',
+      'discipline': 'word_clash',
     },
     {
       'question': 'What is the opposite of "Obscure"?',
       'options': ['Enigmatic', 'Prominent', 'Cryptic', 'Vague'],
       'correctIndex': 1,
       'explanation': 'Obscure means not discovered or known about; its opposite is prominent or famous.',
+      'discipline': 'word_clash',
     },
     {
       'question': 'Select the word that means "A sudden, powerful forward movement":',
       'options': ['Ebb', 'Surge', 'Halt', 'Retreat'],
       'correctIndex': 1,
       'explanation': 'Surge means a sudden powerful forward or upward movement.',
+      'discipline': 'sentence_strike',
     },
     {
       'question': 'Complete the phrase: "Burn the midnight ______"',
       'options': ['Candle', 'Oil', 'Wood', 'Paper'],
       'correctIndex': 1,
       'explanation': '"Burn the midnight oil" means to work or study late into the night.',
+      'discipline': 'phrase_duel',
     },
     {
       'question': 'Which word describes someone who is "Fluent and persuasive in speech"?',
       'options': ['Incoherent', 'Eloquent', 'Hesitant', 'Muddled'],
       'correctIndex': 1,
       'explanation': 'Eloquent means fluent or persuasive in speaking or writing.',
+      'discipline': 'sentence_strike',
     },
     {
       'question': 'What is the closest antonym for "Arrogant"?',
       'options': ['Proud', 'Humble', 'Haughty', 'Boastful'],
       'correctIndex': 1,
       'explanation': 'Arrogant means having an exaggerated sense of one\'s own importance; opposite is humble.',
+      'discipline': 'word_clash',
     },
     {
       'question': 'Select the correct meaning of "Pragmatic":',
       'options': ['Impractical', 'Dealing with things sensibly and realistically', 'Overly idealistic', 'Careless'],
       'correctIndex': 1,
       'explanation': 'Pragmatic means dealing with things sensibly and realistically based on practical considerations.',
+      'discipline': 'sentence_strike',
     },
     {
       'question': 'Complete the idiom: "Actions speak louder than ______"',
       'options': ['Echoes', 'Words', 'Speeches', 'Promises'],
       'correctIndex': 1,
       'explanation': '"Actions speak louder than words" emphasizes that what someone does is more meaningful than what they say.',
+      'discipline': 'phrase_duel',
     },
     {
       'question': 'What is the synonym for "Exemplary"?',
       'options': ['Commendable', 'Mediocre', 'Flawed', 'Questionable'],
       'correctIndex': 0,
       'explanation': 'Exemplary means representing the best of its kind; commendable or worthy of imitation.',
+      'discipline': 'word_clash',
     },
   ];
 
@@ -259,6 +274,27 @@ class ArenaCurriculumEngine {
     }
   }
 
+  static String resolveDiscipline(String gameType) {
+    switch (gameType) {
+      case 'word_clash':
+      case 'synonymSearch':
+      case 'antonymSearch':
+        return 'word_clash';
+      case 'phrase_duel':
+      case 'collocations':
+      case 'idioms':
+      case 'phrasalVerbs':
+        return 'phrase_duel';
+      case 'sentence_strike':
+      case 'academicWord':
+        return 'sentence_strike';
+      case 'context_blitz':
+      case 'contextClues':
+      default:
+        return 'context_blitz';
+    }
+  }
+
   static Future<void> _pickQuestionFromMode(
     String mode,
     Random rand,
@@ -279,11 +315,12 @@ class ArenaCurriculumEngine {
 
       final Map<String, dynamic> data = jsonDecode(jsonString);
       final rawQuests = data['quests'] as List<dynamic>? ?? [];
+      final discipline = data['discipline'] as String? ?? mode;
       if (rawQuests.isNotEmpty) {
         final shuffled = List<dynamic>.from(rawQuests)..shuffle(rand);
         for (final item in shuffled) {
           final qMap = Map<String, dynamic>.from(item as Map);
-          final q = _tryConvertCurriculumQuest(qMap, mode, rand);
+          final q = _tryConvertCurriculumQuest(qMap, discipline, rand);
           if (q != null &&
               !destination.any((existing) => existing.question == q.question)) {
             destination.add(q);
@@ -402,6 +439,7 @@ class ArenaCurriculumEngine {
         options: shuffledOptions,
         correctIndex: newCorrectIndex != -1 ? newCorrectIndex : originalCorrectIndex,
         explanation: explanation,
+        discipline: resolveDiscipline(gameType),
       );
     } catch (_) {
       return null;
