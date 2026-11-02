@@ -880,7 +880,7 @@ class _PvpArenaHeroCard extends StatefulWidget {
 class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
   bool _isLoading = false;
 
-  Future<void> _startQuickMatch(BuildContext context) async {
+  Future<void> _startQuickMatch() async {
     if (_isLoading) return;
     if (widget.user.coins < 30) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -917,7 +917,7 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
     }
   }
 
-  Future<void> _createDuelInvite(BuildContext context) async {
+  Future<void> _createDuelInvite() async {
     if (_isLoading) return;
     if (widget.user.coins < 30) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -1065,7 +1065,7 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
                 Expanded(
                   flex: 3,
                   child: ScaleButton(
-                    onTap: _isLoading ? null : () => _startQuickMatch(context),
+                    onTap: _isLoading ? null : _startQuickMatch,
                     child: Container(
                       height: 40.h,
                       alignment: Alignment.center,
@@ -1116,7 +1116,7 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
                 Expanded(
                   flex: 2,
                   child: ScaleButton(
-                    onTap: _isLoading ? null : () => _createDuelInvite(context),
+                    onTap: _isLoading ? null : _createDuelInvite,
                     child: Container(
                       height: 40.h,
                       alignment: Alignment.center,

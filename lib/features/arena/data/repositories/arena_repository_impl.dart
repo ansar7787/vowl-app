@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
+import 'package:vowl/features/auth/data/models/user_model.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/arena/data/utils/arena_question_generator.dart';
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
@@ -26,95 +27,117 @@ class ArenaRepositoryImpl implements ArenaRepository {
     // 1. Deduct entry stake (30 coins)
     await _deductEntryStake(currentUser.id);
 
-    final seed = DateTime.now().millisecondsSinceEpoch;
-    final questions = ArenaQuestionGenerator.generateQuestions(seed: seed);
-
     try {
-      // 2. Poll live Firestore queue for 3 seconds
-      final queueRef = _firestore.collection('arena_queue');
-      final activeQueue = await queueRef
-          .where('userId', isNotEqualTo: currentUser.id)
-          .limit(1)
-          .get()
-          .timeout(const Duration(seconds: 3));
+      final seed = DateTime.now().millisecondsSinceEpoch;
+      final questions = ArenaQuestionGenerator.generateQuestions(seed: seed);
 
-      if (activeQueue.docs.isNotEmpty) {
-        final oppDoc = activeQueue.docs.first;
-        final oppData = oppDoc.data();
-        final oppId = oppData['userId'] as String;
-        final oppName = oppData['displayName'] as String? ?? 'Challenger';
-        final oppPhoto = oppData['photoUrl'] as String?;
+      try {
+        // 2. Poll live Firestore queue for 3 seconds
+        final queueRef = _firestore.collection('arena_queue');
+        final activeQueue = await queueRef
+            .where('userId', isNotEqualTo: currentUser.id)
+            .limit(1)
+            .get()
+            .timeout(const Duration(seconds: 3));
 
-        // Delete from queue and form live room
-        await queueRef.doc(oppDoc.id).delete();
+        if (activeQueue.docs.isNotEmpty) {
+          final oppDoc = activeQueue.docs.first;
+          final oppData = oppDoc.data();
+          final oppId = oppData['userId'] as String;
+          final oppName = oppData['displayName'] as String? ?? 'Challenger';
+          final oppPhoto = oppData['photoUrl'] as String?;
 
-        final roomCode = 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
-        final session = ArenaDuelSession(
-          roomCode: roomCode,
-          hostId: oppId,
-          hostName: oppName,
-          hostPhotoUrl: oppPhoto,
-          guestId: currentUser.id,
-          guestName: currentUser.safeDisplayName,
-          guestPhotoUrl: currentUser.photoUrl,
-          stake: _kStakeCoins,
-          pot: _kStakeCoins * 2,
-          status: 'in_progress',
-          questions: questions,
-          createdAt: DateTime.now(),
-        );
+          // Delete from queue and form live room
+          await queueRef.doc(oppDoc.id).delete();
 
-        await _firestore.collection('arena_rooms').doc(roomCode).set({
-          'roomCode': roomCode,
-          'hostId': oppId,
-          'hostName': oppName,
-          'hostPhotoUrl': oppPhoto,
-          'guestId': currentUser.id,
-          'guestName': currentUser.safeDisplayName,
-          'guestPhotoUrl': currentUser.photoUrl,
-          'stake': _kStakeCoins,
-          'pot': _kStakeCoins * 2,
-          'status': 'in_progress',
-          'hostScore': 0,
-          'guestScore': 0,
-          'questions': questions.map((q) => q.toMap()).toList(),
-          'createdAt': FieldValue.serverTimestamp(),
-        }).timeout(_kNetworkTimeout);
+          final roomCode = 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
+          final session = ArenaDuelSession(
+            roomCode: roomCode,
+            hostId: oppId,
+            hostName: oppName,
+            hostPhotoUrl: oppPhoto,
+            guestId: currentUser.id,
+            guestName: currentUser.safeDisplayName,
+            guestPhotoUrl: currentUser.photoUrl,
+            stake: _kStakeCoins,
+            pot: _kStakeCoins * 2,
+            status: 'in_progress',
+            questions: questions,
+            createdAt: DateTime.now(),
+          );
 
-        return session;
+          await _firestore.collection('arena_rooms').doc(roomCode).set({
+            'roomCode': roomCode,
+            'hostId': oppId,
+            'hostName': oppName,
+            'hostPhotoUrl': oppPhoto,
+            'guestId': currentUser.id,
+            'guestName': currentUser.safeDisplayName,
+            'guestPhotoUrl': currentUser.photoUrl,
+            'stake': _kStakeCoins,
+            'pot': _kStakeCoins * 2,
+            'status': 'in_progress',
+            'hostScore': 0,
+            'guestScore': 0,
+            'questions': questions.map((q) => q.toMap()).toList(),
+            'createdAt': FieldValue.serverTimestamp(),
+          }).timeout(_kNetworkTimeout);
+
+          return session;
+        }
+      } catch (_) {
+        // Fall through to 3-second smart fallback
       }
-    } catch (_) {
-      // Fall through to 3-second smart fallback
+
+      // 3. Fallback: Select real player from Leaderboard as Ghost Rival (0s wait time!)
+      var candidates = leaderboardUsers.where((u) => u.id != currentUser.id).toList();
+      if (candidates.isEmpty) {
+        try {
+          final cacheDoc = await _firestore.collection('leaderboard_cache').doc('global').get();
+          final rawUsers = cacheDoc.data()?['users'];
+          if (cacheDoc.exists && rawUsers is List) {
+            final list = rawUsers
+                .whereType<Map>()
+                .map((u) => UserModel.fromMap(Map<String, dynamic>.from(u)))
+                .where((u) => u.id.isNotEmpty && u.id != currentUser.id)
+                .toList();
+            if (list.isNotEmpty) candidates = list;
+          }
+        } catch (_) {}
+      }
+
+      final rival = candidates.isNotEmpty
+          ? candidates[Random().nextInt(candidates.length)]
+          : null;
+
+      final rivalName = rival?.safeDisplayName ?? 'Global Challenger';
+      final rivalPhoto = rival?.photoUrl;
+      final rivalRank = (rival != null && candidates.isNotEmpty)
+          ? candidates.indexOf(rival) + 1
+          : 10;
+      final accuracy = (0.90 - (rivalRank * 0.01)).clamp(0.65, 0.95);
+
+      final roomCode = 'VOWL-GHOST-${(Random().nextInt(900) + 100)}';
+      return ArenaDuelSession(
+        roomCode: roomCode,
+        hostId: currentUser.id,
+        hostName: currentUser.safeDisplayName,
+        hostPhotoUrl: currentUser.photoUrl,
+        guestId: rival?.id ?? 'ghost_challenger',
+        guestName: rivalName,
+        guestPhotoUrl: rivalPhoto,
+        stake: _kStakeCoins,
+        pot: _kStakeCoins * 2,
+        status: 'in_progress',
+        isGhostRival: true,
+        ghostAccuracy: accuracy,
+        questions: questions,
+        createdAt: DateTime.now(),
+      );
+    } catch (e) {
+      await _refundEntryStake(currentUser.id);
+      rethrow;
     }
-
-    // 3. Fallback: Select real player from Leaderboard as Ghost Rival (0s wait time!)
-    final candidates = leaderboardUsers.where((u) => u.id != currentUser.id).toList();
-    final rival = candidates.isNotEmpty
-        ? candidates[Random().nextInt(candidates.length)]
-        : null;
-
-    final rivalName = rival?.safeDisplayName ?? 'Global Challenger';
-    final rivalPhoto = rival?.photoUrl;
-    final rivalRank = candidates.indexOf(rival ?? candidates.first) + 1;
-    final accuracy = (0.90 - (rivalRank * 0.01)).clamp(0.65, 0.95);
-
-    final roomCode = 'VOWL-GHOST-${(Random().nextInt(900) + 100)}';
-    return ArenaDuelSession(
-      roomCode: roomCode,
-      hostId: currentUser.id,
-      hostName: currentUser.safeDisplayName,
-      hostPhotoUrl: currentUser.photoUrl,
-      guestId: rival?.id ?? 'ghost_challenger',
-      guestName: rivalName,
-      guestPhotoUrl: rivalPhoto,
-      stake: _kStakeCoins,
-      pot: _kStakeCoins * 2,
-      status: 'in_progress',
-      isGhostRival: true,
-      ghostAccuracy: accuracy,
-      questions: questions,
-      createdAt: DateTime.now(),
-    );
   }
 
   @override
@@ -125,27 +148,32 @@ class ArenaRepositoryImpl implements ArenaRepository {
   }) async {
     await _deductEntryStake(currentUser.id);
 
-    final seed = DateTime.now().millisecondsSinceEpoch;
-    final questions = ArenaQuestionGenerator.generateQuestions(seed: seed);
-    final accuracy = (0.95 - (rivalRank * 0.015)).clamp(0.65, 0.95);
+    try {
+      final seed = DateTime.now().millisecondsSinceEpoch;
+      final questions = ArenaQuestionGenerator.generateQuestions(seed: seed);
+      final accuracy = (0.95 - (rivalRank * 0.015)).clamp(0.65, 0.95);
 
-    final roomCode = 'VOWL-RIVAL-${(Random().nextInt(900) + 100)}';
-    return ArenaDuelSession(
-      roomCode: roomCode,
-      hostId: currentUser.id,
-      hostName: currentUser.safeDisplayName,
-      hostPhotoUrl: currentUser.photoUrl,
-      guestId: rival.id,
-      guestName: rival.safeDisplayName,
-      guestPhotoUrl: rival.photoUrl,
-      stake: _kStakeCoins,
-      pot: _kStakeCoins * 2,
-      status: 'in_progress',
-      isGhostRival: true,
-      ghostAccuracy: accuracy,
-      questions: questions,
-      createdAt: DateTime.now(),
-    );
+      final roomCode = 'VOWL-RIVAL-${(Random().nextInt(900) + 100)}';
+      return ArenaDuelSession(
+        roomCode: roomCode,
+        hostId: currentUser.id,
+        hostName: currentUser.safeDisplayName,
+        hostPhotoUrl: currentUser.photoUrl,
+        guestId: rival.id,
+        guestName: rival.safeDisplayName,
+        guestPhotoUrl: rival.photoUrl,
+        stake: _kStakeCoins,
+        pot: _kStakeCoins * 2,
+        status: 'in_progress',
+        isGhostRival: true,
+        ghostAccuracy: accuracy,
+        questions: questions,
+        createdAt: DateTime.now(),
+      );
+    } catch (e) {
+      await _refundEntryStake(currentUser.id);
+      rethrow;
+    }
   }
 
   @override
@@ -154,37 +182,42 @@ class ArenaRepositoryImpl implements ArenaRepository {
   }) async {
     await _deductEntryStake(currentUser.id);
 
-    final roomCode = 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
-    final seed = DateTime.now().millisecondsSinceEpoch;
-    final questions = ArenaQuestionGenerator.generateQuestions(seed: seed);
+    try {
+      final roomCode = 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
+      final seed = DateTime.now().millisecondsSinceEpoch;
+      final questions = ArenaQuestionGenerator.generateQuestions(seed: seed);
 
-    final session = ArenaDuelSession(
-      roomCode: roomCode,
-      hostId: currentUser.id,
-      hostName: currentUser.safeDisplayName,
-      hostPhotoUrl: currentUser.photoUrl,
-      stake: _kStakeCoins,
-      pot: _kStakeCoins * 2,
-      status: 'waiting',
-      questions: questions,
-      createdAt: DateTime.now(),
-    );
+      final session = ArenaDuelSession(
+        roomCode: roomCode,
+        hostId: currentUser.id,
+        hostName: currentUser.safeDisplayName,
+        hostPhotoUrl: currentUser.photoUrl,
+        stake: _kStakeCoins,
+        pot: _kStakeCoins * 2,
+        status: 'waiting',
+        questions: questions,
+        createdAt: DateTime.now(),
+      );
 
-    await _firestore.collection('arena_rooms').doc(roomCode).set({
-      'roomCode': roomCode,
-      'hostId': currentUser.id,
-      'hostName': currentUser.safeDisplayName,
-      'hostPhotoUrl': currentUser.photoUrl,
-      'stake': _kStakeCoins,
-      'pot': _kStakeCoins * 2,
-      'status': 'waiting',
-      'hostScore': 0,
-      'guestScore': 0,
-      'questions': questions.map((q) => q.toMap()).toList(),
-      'createdAt': FieldValue.serverTimestamp(),
-    }).timeout(_kNetworkTimeout);
+      await _firestore.collection('arena_rooms').doc(roomCode).set({
+        'roomCode': roomCode,
+        'hostId': currentUser.id,
+        'hostName': currentUser.safeDisplayName,
+        'hostPhotoUrl': currentUser.photoUrl,
+        'stake': _kStakeCoins,
+        'pot': _kStakeCoins * 2,
+        'status': 'waiting',
+        'hostScore': 0,
+        'guestScore': 0,
+        'questions': questions.map((q) => q.toMap()).toList(),
+        'createdAt': FieldValue.serverTimestamp(),
+      }).timeout(_kNetworkTimeout);
 
-    return session;
+      return session;
+    } catch (e) {
+      await _refundEntryStake(currentUser.id);
+      rethrow;
+    }
   }
 
   @override
@@ -214,15 +247,20 @@ class ArenaRepositoryImpl implements ArenaRepository {
 
     await _deductEntryStake(currentUser.id);
 
-    await docRef.update({
-      'guestId': currentUser.id,
-      'guestName': currentUser.safeDisplayName,
-      'guestPhotoUrl': currentUser.photoUrl,
-      'status': 'in_progress',
-    }).timeout(_kNetworkTimeout);
+    try {
+      await docRef.update({
+        'guestId': currentUser.id,
+        'guestName': currentUser.safeDisplayName,
+        'guestPhotoUrl': currentUser.photoUrl,
+        'status': 'in_progress',
+      }).timeout(_kNetworkTimeout);
 
-    final updatedSnap = await docRef.get();
-    return _mapSession(cleanCode, updatedSnap.data()!);
+      final updatedSnap = await docRef.get();
+      return _mapSession(cleanCode, updatedSnap.data()!);
+    } catch (e) {
+      await _refundEntryStake(currentUser.id);
+      rethrow;
+    }
   }
 
   @override
@@ -315,6 +353,16 @@ class ArenaRepositoryImpl implements ArenaRepository {
     } catch (e) {
       debugPrint('[ArenaRepositoryImpl] Deduct stake error: $e');
       rethrow;
+    }
+  }
+
+  Future<void> _refundEntryStake(String userId) async {
+    try {
+      await _firestore.collection('users').doc(userId).update({
+        'coins': FieldValue.increment(_kStakeCoins),
+      }).timeout(_kNetworkTimeout);
+    } catch (e) {
+      debugPrint('[ArenaRepositoryImpl] Refund stake error: $e');
     }
   }
 
