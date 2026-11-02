@@ -1285,16 +1285,21 @@ class _LeaderboardTimeframeSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final isWeekly = timeframe == LeaderboardTimeframe.thisWeek;
 
     return Container(
       height: 38.h,
       padding: EdgeInsets.all(3.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F172A) : AppColors.slate100,
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? const Color(0xFF0F172A) : AppColors.slate100),
         borderRadius: BorderRadius.circular(19.r),
         border: Border.all(
-          color: isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200,
+          color: isMidnight
+              ? Colors.white.withValues(alpha: 0.12)
+              : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200),
           width: 1,
         ),
       ),
@@ -1414,8 +1419,13 @@ class _HallOfFameBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final surfaceColor = isDark ? const Color(0xFF0F172A) : Colors.white;
-    final borderColor = isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200;
+    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final surfaceColor = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF0F172A) : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
     final titleColor = isDark ? Colors.white : AppColors.slate900;
     final subColor = isDark ? AppColors.slate400 : AppColors.slate600;
 

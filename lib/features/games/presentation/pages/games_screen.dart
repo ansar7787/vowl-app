@@ -958,11 +958,13 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
         Theme.of(context).brightness == Brightness.dark &&
         Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
-        ? const Color(0xFF0F172A)
+        ? AppColors.midnightSurface
         : (widget.isDark ? AppColors.slate800 : Colors.white);
-    final borderColor = widget.isDark
-        ? Colors.white.withValues(alpha: 0.08)
-        : AppColors.slate200;
+    final borderColor = isMidnight
+        ? const Color(0xFF1E293B)
+        : (widget.isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate200);
     final titleColor = widget.isDark ? Colors.white : AppColors.slate900;
     final subColor = widget.isDark ? AppColors.slate400 : AppColors.slate600;
 
