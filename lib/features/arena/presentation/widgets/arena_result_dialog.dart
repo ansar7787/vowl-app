@@ -83,10 +83,10 @@ class ArenaResultDialog extends StatelessWidget {
         borderRadius: BorderRadius.circular(24.r),
         side: BorderSide(color: borderColor, width: 1.2.w),
       ),
-      insetPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
+      insetPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
       child: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(22.w),
+          padding: EdgeInsets.all(18.w),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -140,7 +140,7 @@ class ArenaResultDialog extends StatelessWidget {
 
               // 2. Head-to-Head Telemetry Card
               Container(
-                padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 16.w),
+                padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 12.w),
                 decoration: BoxDecoration(
                   color: cardBg,
                   borderRadius: BorderRadius.circular(16.r),
@@ -154,37 +154,68 @@ class ArenaResultDialog extends StatelessWidget {
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
                             children: [
+                              CircleAvatar(
+                                radius: 10.r,
+                                backgroundColor: isWinner
+                                    ? AppColors.emerald500.withValues(alpha: 0.15)
+                                    : (isDark ? AppColors.slate800 : const Color(0xFFE2E8F0)),
+                                backgroundImage: myPhotoUrl != null && myPhotoUrl!.isNotEmpty
+                                    ? NetworkImage(myPhotoUrl!)
+                                    : null,
+                                child: myPhotoUrl == null || myPhotoUrl!.isEmpty
+                                    ? Text(
+                                        myName.isNotEmpty ? myName[0].toUpperCase() : 'Y',
+                                        style: TextStyle(
+                                          fontSize: 9.sp,
+                                          fontWeight: FontWeight.w800,
+                                          color: textPrimary,
+                                        ),
+                                      )
+                                    : null,
+                              ),
+                              SizedBox(width: 4.w),
                               if (isWinner) ...[
-                                Icon(LucideIcons.crown, size: 13.sp, color: const Color(0xFFF59E0B)),
-                                SizedBox(width: 4.w),
+                                Icon(LucideIcons.crown, size: 12.sp, color: const Color(0xFFF59E0B)),
+                                SizedBox(width: 2.w),
                               ],
-                              Text(
-                                'You',
-                                style: TextStyle(
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w700,
-                                  color: textSecondary,
+                              Flexible(
+                                child: Text(
+                                  myName.isNotEmpty ? myName : 'You',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: textSecondary,
+                                  ),
                                 ),
                               ),
                             ],
                           ),
                           SizedBox(height: 4.h),
-                          Text(
-                            '$myScore',
-                            style: TextStyle(
-                              fontSize: 24.sp,
-                              fontWeight: FontWeight.w900,
-                              color: isWinner ? AppColors.emerald500 : textPrimary,
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              '$myScore',
+                              style: TextStyle(
+                                fontSize: 24.sp,
+                                fontWeight: FontWeight.w900,
+                                color: isWinner ? AppColors.emerald500 : textPrimary,
+                              ),
                             ),
                           ),
                           SizedBox(height: 2.h),
-                          Text(
-                            '$myCorrectCount/5 • ${(myTotalTimeMs / 1000).toStringAsFixed(1)}s',
-                            style: TextStyle(
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w600,
-                              color: textSecondary,
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              '$myCorrectCount/5 • ${(myTotalTimeMs / 1000).toStringAsFixed(1)}s',
+                              style: TextStyle(
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w600,
+                                color: textSecondary,
+                              ),
                             ),
                           ),
                         ],
@@ -214,14 +245,35 @@ class ArenaResultDialog extends StatelessWidget {
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
                             children: [
+                              CircleAvatar(
+                                radius: 10.r,
+                                backgroundColor: !isWinner
+                                    ? AppColors.emerald500.withValues(alpha: 0.15)
+                                    : (isDark ? AppColors.slate800 : const Color(0xFFE2E8F0)),
+                                backgroundImage: rivalPhotoUrl != null && rivalPhotoUrl!.isNotEmpty
+                                    ? NetworkImage(rivalPhotoUrl!)
+                                    : null,
+                                child: rivalPhotoUrl == null || rivalPhotoUrl!.isEmpty
+                                    ? Text(
+                                        rivalName.isNotEmpty ? rivalName[0].toUpperCase() : 'R',
+                                        style: TextStyle(
+                                          fontSize: 9.sp,
+                                          fontWeight: FontWeight.w800,
+                                          color: textPrimary,
+                                        ),
+                                      )
+                                    : null,
+                              ),
+                              SizedBox(width: 4.w),
                               if (!isWinner) ...[
-                                Icon(LucideIcons.crown, size: 13.sp, color: const Color(0xFFF59E0B)),
-                                SizedBox(width: 4.w),
+                                Icon(LucideIcons.crown, size: 12.sp, color: const Color(0xFFF59E0B)),
+                                SizedBox(width: 2.w),
                               ],
                               Flexible(
                                 child: Text(
-                                  rivalName,
+                                  rivalName.isNotEmpty ? rivalName : 'Rival',
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -234,21 +286,27 @@ class ArenaResultDialog extends StatelessWidget {
                             ],
                           ),
                           SizedBox(height: 4.h),
-                          Text(
-                            '$rivalScore',
-                            style: TextStyle(
-                              fontSize: 24.sp,
-                              fontWeight: FontWeight.w900,
-                              color: !isWinner ? AppColors.emerald500 : textPrimary,
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              '$rivalScore',
+                              style: TextStyle(
+                                fontSize: 24.sp,
+                                fontWeight: FontWeight.w900,
+                                color: !isWinner ? AppColors.emerald500 : textPrimary,
+                              ),
                             ),
                           ),
                           SizedBox(height: 2.h),
-                          Text(
-                            '$rivalCorrectCount/5 • ${(rivalTotalTimeMs / 1000).toStringAsFixed(1)}s',
-                            style: TextStyle(
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w600,
-                              color: textSecondary,
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              '$rivalCorrectCount/5 • ${(rivalTotalTimeMs / 1000).toStringAsFixed(1)}s',
+                              style: TextStyle(
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w600,
+                                color: textSecondary,
+                              ),
                             ),
                           ),
                         ],
@@ -274,16 +332,20 @@ class ArenaResultDialog extends StatelessWidget {
                       children: [
                         Icon(LucideIcons.coins, size: 14.sp, color: const Color(0xFFF59E0B)),
                         SizedBox(width: 6.w),
-                        Text(
-                          'COIN SETTLEMENT',
-                          style: TextStyle(
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: 1.1,
-                            color: textSecondary,
+                        Flexible(
+                          child: Text(
+                            'COIN SETTLEMENT',
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w800,
+                              letterSpacing: 1.1,
+                              color: textSecondary,
+                            ),
                           ),
                         ),
-                        const Spacer(),
+                        SizedBox(width: 6.w),
                         Container(
                           padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 2.h),
                           decoration: BoxDecoration(
@@ -309,7 +371,15 @@ class ArenaResultDialog extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Stake Paid', style: TextStyle(fontSize: 11.sp, color: textSecondary)),
+                        Flexible(
+                          child: Text(
+                            'Stake Paid',
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(fontSize: 11.sp, color: textSecondary),
+                          ),
+                        ),
+                        SizedBox(width: 8.w),
                         Text('30 🪙', style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w700, color: textPrimary)),
                       ],
                     ),
@@ -317,10 +387,15 @@ class ArenaResultDialog extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          isWinner ? 'Prize Claimed' : 'Consolation Return',
-                          style: TextStyle(fontSize: 11.sp, color: textSecondary),
+                        Flexible(
+                          child: Text(
+                            isWinner ? 'Prize Claimed' : 'Consolation Return',
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(fontSize: 11.sp, color: textSecondary),
+                          ),
                         ),
+                        SizedBox(width: 8.w),
                         Text(
                           '+$payoutCoins 🪙',
                           style: TextStyle(
@@ -391,7 +466,7 @@ class ArenaResultDialog extends StatelessWidget {
                     );
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 12.h),
+                    padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.w),
                     decoration: BoxDecoration(
                       color: AppColors.indigo500.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12.r),
@@ -402,12 +477,17 @@ class ArenaResultDialog extends StatelessWidget {
                       children: [
                         Icon(LucideIcons.share2, size: 15.sp, color: AppColors.indigo500),
                         SizedBox(width: 8.w),
-                        Text(
-                          'Share Victory (Brag!)',
-                          style: TextStyle(
-                            fontSize: 13.sp,
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.indigo500,
+                        Flexible(
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              'Share Victory (Brag!)',
+                              style: TextStyle(
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w700,
+                                color: AppColors.indigo500,
+                              ),
+                            ),
                           ),
                         ),
                       ],
@@ -421,7 +501,7 @@ class ArenaResultDialog extends StatelessWidget {
               ScaleButton(
                 onTap: onRematch,
                 child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 14.h),
+                  padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 12.w),
                   decoration: BoxDecoration(
                     color: const Color(0xFFEA580C),
                     borderRadius: BorderRadius.circular(12.r),
@@ -438,12 +518,17 @@ class ArenaResultDialog extends StatelessWidget {
                     children: [
                       Icon(LucideIcons.flame, size: 18.sp, color: Colors.white),
                       SizedBox(width: 8.w),
-                      Text(
-                        '🔥 Rematch (Double or Nothing!)',
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
+                      Flexible(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            '🔥 Rematch (Double or Nothing!)',
+                            style: TextStyle(
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                       ),
                     ],
@@ -500,30 +585,37 @@ class _MetricPill extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 8.w),
+        padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 4.w),
         decoration: BoxDecoration(
           color: cardBg,
           borderRadius: BorderRadius.circular(12.r),
           border: Border.all(color: borderColor),
         ),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Icon(icon, size: 14.sp, color: textSecondary),
             SizedBox(height: 3.h),
-            Text(
-              value,
-              style: TextStyle(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w800,
-                color: textPrimary,
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                value,
+                style: TextStyle(
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w800,
+                  color: textPrimary,
+                ),
               ),
             ),
-            Text(
-              label,
-              style: TextStyle(
-                fontSize: 9.sp,
-                fontWeight: FontWeight.w500,
-                color: textSecondary,
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                label,
+                style: TextStyle(
+                  fontSize: 9.sp,
+                  fontWeight: FontWeight.w500,
+                  color: textSecondary,
+                ),
               ),
             ),
           ],

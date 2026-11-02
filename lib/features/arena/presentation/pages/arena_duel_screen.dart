@@ -180,19 +180,23 @@ class _ArenaDuelView extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Container(
-                                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
-                                decoration: BoxDecoration(
-                                  color: disciplineColor.withValues(alpha: 0.12),
-                                  borderRadius: BorderRadius.circular(6.r),
-                                ),
-                                child: Text(
-                                  disciplineLabel,
-                                  style: TextStyle(
-                                    fontSize: 9.sp,
-                                    fontWeight: FontWeight.w800,
-                                    color: disciplineColor,
-                                    letterSpacing: 0.8,
+                              Flexible(
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                                  decoration: BoxDecoration(
+                                    color: disciplineColor.withValues(alpha: 0.12),
+                                    borderRadius: BorderRadius.circular(6.r),
+                                  ),
+                                  child: Text(
+                                    disciplineLabel,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                      fontSize: 9.sp,
+                                      fontWeight: FontWeight.w800,
+                                      color: disciplineColor,
+                                      letterSpacing: 0.8,
+                                    ),
                                   ),
                                 ),
                               ),
