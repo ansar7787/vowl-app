@@ -60,11 +60,26 @@ class SnapQuizGenerator {
     // ─────────────────────────────────────────────────────────────────────────
     // Question 1: Word Recognition & Meaning (Multiple Choice)
     // ─────────────────────────────────────────────────────────────────────────
+    final List<String> q1DistractorDefs = [];
+    for (final d in distractors) {
+      final dEntry = PhotoVocabularyDictionary.getEntry(d);
+      if (dEntry.definition != resolvedDef && !q1DistractorDefs.contains(dEntry.definition)) {
+        q1DistractorDefs.add(dEntry.definition);
+      }
+    }
+    final fallbackWords = ['Chair', 'Clock', 'Pen', 'Window', 'Book', 'Laptop'];
+    for (final f in fallbackWords) {
+      if (q1DistractorDefs.length >= 3) break;
+      if (f.toLowerCase() != cleanWord.toLowerCase()) {
+        final fDef = PhotoVocabularyDictionary.getEntry(f).definition;
+        if (fDef != resolvedDef && !q1DistractorDefs.contains(fDef)) {
+          q1DistractorDefs.add(fDef);
+        }
+      }
+    }
     final q1Options = [
       resolvedDef,
-      'A device used for measuring the passage of time.',
-      'A physical piece of furniture designed for sitting.',
-      'A handheld tool used for writing or drawing on paper.',
+      ...q1DistractorDefs.take(3),
     ]..shuffle(_random);
     final q1CorrectIndex = q1Options.indexOf(resolvedDef);
 
@@ -119,7 +134,7 @@ class SnapQuizGenerator {
     // Question 3: Real-World Sentence Placement (Active Fill-in)
     // ─────────────────────────────────────────────────────────────────────────
     final clozeSentence = resolvedExample.replaceAll(
-      RegExp(r'\b' + RegExp.escape(cleanWord) + r'\b', caseSensitive: false),
+      RegExp(r'\b' + RegExp.escape(cleanWord) + r'(s|es|d|ed|ing)?\b', caseSensitive: false),
       '______',
     );
     final effectiveSentence = clozeSentence.contains('______')
@@ -154,3 +169,4 @@ class SnapQuizGenerator {
     return [word.substring(0, mid), word.substring(mid)];
   }
 }
+

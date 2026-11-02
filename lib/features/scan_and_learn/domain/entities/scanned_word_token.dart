@@ -84,3 +84,4 @@ class ScannedWordToken extends Equatable {
         isKeyword,
       ];
 }
+
