@@ -305,12 +305,24 @@ class ArenaCurriculumEngine {
       String jsonString;
       try {
         jsonString = await rootBundle.loadString(
-          'assets/curriculum/arena/$mode/batch_$batchNum.json',
+          'assets/curriculum/arena/$mode/${mode}_batch_$batchNum.json',
         );
       } catch (_) {
-        jsonString = await rootBundle.loadString(
-          'assets/curriculum/arena/$mode/batch_1.json',
-        );
+        try {
+          jsonString = await rootBundle.loadString(
+            'assets/curriculum/arena/$mode/batch_$batchNum.json',
+          );
+        } catch (_) {
+          try {
+            jsonString = await rootBundle.loadString(
+              'assets/curriculum/arena/$mode/${mode}_batch_1.json',
+            );
+          } catch (_) {
+            jsonString = await rootBundle.loadString(
+              'assets/curriculum/arena/$mode/batch_1.json',
+            );
+          }
+        }
       }
 
       final Map<String, dynamic> data = jsonDecode(jsonString);
