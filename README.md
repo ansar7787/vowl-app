@@ -1,4 +1,4 @@
-﻿<!-- markdownlint-disable MD033 MD041 MD029 -->
+<!-- markdownlint-disable MD033 MD041 MD029 -->
 <div align="center">
   <img src="assets/images/vowly_mascot.png" alt="Vowl mascot" width="140"/>
   <h1>Vowl</h1>
@@ -51,6 +51,53 @@ Demo video: [Watch on YouTube](PASTE_YOUR_VIDEO_LINK_HERE)
 
 ## Features
 
+### 1v1 Staking Arena & PvP Duels
+
+- **Live Matchmaking**: 3-second rapid match pairing with coin stakes (30🪙 entry stake, 50🪙 winner prize).
+- **Custom Room Invites**: Instant room code generation with direct viral sharing links (`https://vowl.app/duel/{code}`).
+- **Staking Safety Net**: Automatic coin refunds if network pairing or opponent connection drops unexpectedly.
+- **Real-Time Overtake HUD**: In-game alerts notifying learners the exact moment their score passes their closest rival.
+
+### Dual-Timeframe Leaderboard & Weekly League System
+
+- **Dual-Timeframe Rankings**: Switch seamlessly between **"This Week"** (resets Sunday 23:59:59 UTC) and **"All Time"**.
+- **Weekly League Tiers & Countdown**: Tier rewards banner with a live countdown timer to the weekly reset.
+- **Hall of Fame**: Visual celebration showcasing past weekly league champions.
+- **Transparent Progression Logic**: Deterministic, unmocked ranking (XP primary, Streak secondary, Last Active timestamp tiebreaker).
+
+### On-Device Vision Learning Studio
+
+- **100% Free On-Device Machine Learning**: Powered by Google ML Kit (Text Recognition & Image Labeling) with **$0.00 cloud API costs** and complete offline resilience.
+- **Scan & Learn**: Scan any book, sign, menu, or receipt with instant interactive word-tap, CEFR classification, and pronunciation audio.
+- **Photo Vocabulary**: 210 curated daily photo missions with zero artificial repetition.
+- **Word Bank Integration**: Save any scanned word directly into the user's personal review deck (`DailyWordsService`).
+- **Freemium Scan Quota**: 3 free scans per day; rewarded video ads for extra scans; unlimited scans for VIP subscribers.
+
+### Viral Referral & VIP Extension Engine
+
+- **Milestone Rewards**: Earn coins, gems, and VIP days by inviting friends (`https://vowl.app/ref/{code}`).
+- **Fair Dual-Status Granting**: Free users unlock fresh VIP days (+3 days for milestone #1), while active Premium subscribers have their expiration date extended automatically.
+- **Fraud Prevention**: Device and account verification preventing self-referral and loop exploits.
+
+### Sound Design & Dynamic Audio Hierarchy
+
+- **Dual-Player Isolation**: Dedicated primary player for instant micro-interactions (clicks, correct/wrong) and independent overlay player for victory fanfares so celebratory audio never clips gameplay feedback.
+- **Dynamic Combo Pitch Scaling**: Pitch ascends with consecutive streaks (1.00x → 1.12x → 1.25x).
+- **Non-Punitive Feedback**: Gentle wooden clunk on mistakes, preventing anxiety and encouraging persistence.
+- **Comparative Dual-Speed TTS**: Natural speech followed by slowed articulation for listening mastery.
+- **Coin Tally Chime**: Rapid micro-ticker chimes synced with victory coin counter animations.
+
+### Timezone-Aware Psychology Notifications
+
+- **Global Reset Alignment**: Weekly league resets at Sunday 23:59:59 UTC across all players worldwide.
+- **Local Timezone Scheduling**: Daily engagement notifications (9:00 AM morning motivation, 8:00 PM evening streak saver) execute strictly according to the learner's **device local timezone**, ensuring international users are never disturbed during sleep.
+
+### Tri-Theme Design System
+
+- **Light Mode**: Clean, high-readability slate surfaces (`AppColors.slate50` background, pure white cards).
+- **Dark Mode**: Premium deep slate surfaces (`AppColors.slate900` background, `AppColors.slate800` cards).
+- **Midnight AMOLED Mode**: Pure black canvas (`Colors.black` scaffold, `AppColors.midnightSurface` cards, and subtle `0xFF1E293B` borders) engineered for OLED battery saving and zero eye glare.
+
 ### Games and curriculum
 
 - 100+ game types, including vocabulary, grammar, pronunciation, typing, matching, and listening comprehension.
@@ -100,24 +147,29 @@ The project uses a feature-first structure:
 
 ```text
 lib/
- â”œâ”€â”€ core/
- â”‚    â”œâ”€â”€ presentation/      # Shared mixins and base widgets (e.g. GameScreenMixin)
- â”‚    â”œâ”€â”€ theme/             # AppTheme, dimensions, colors
- â”‚    â””â”€â”€ utils/             # Helpers, lifecycle handlers
- â”œâ”€â”€ features/
- â”‚    â”œâ”€â”€ auth/              # OAuth, email login, legal consents
- â”‚    â”œâ”€â”€ home/              # Dashboards, category shelves
- â”‚    â”œâ”€â”€ games/             # The 100+ game types
- â”‚    â”œâ”€â”€ kids_zone/         # Parental gate, kids UI
- â”‚    â”œâ”€â”€ profile/           # Streaks, leaderboards, settings
- â”‚    â””â”€â”€ monetization/      # IAP repositories, paywalls
- â”œâ”€â”€ config/                 # Environment variables, keys
- â””â”€â”€ main.dart               # Entry point and DI setup
-extensions/                  # Infrastructure-as-Code for Firebase Extensions
- â””â”€â”€ delete-user-data.env    # Safe, non-secret configuration (Firebase Best Practice)
+├── core/
+│   ├── presentation/      # Shared mixins and base widgets (e.g. GameScreenMixin)
+│   ├── theme/             # AppTheme (Light/Dark/Midnight), color tokens, dimensions
+│   └── utils/             # SoundService, HapticService, notification schedulers
+├── features/
+│   ├── arena/             # 1v1 Staking Arena, matchmaking, duels
+│   ├── auth/              # OAuth, email login, legal consents
+│   ├── games/             # The 100+ game types & category maps
+│   ├── home/              # Bento dashboard, quick stats, daily goal
+│   ├── kids_zone/         # Parental gate, kids curriculum
+│   ├── leaderboard/       # Dual-timeframe rankings, leagues, Hall of Fame
+│   ├── monetization/      # IAP repositories, paywalls, coin packs
+│   ├── photo_vocabulary/  # On-device visual object missions (ML Kit)
+│   ├── profile/           # Streaks, trophy room, settings
+│   ├── referral/          # Viral invite engine, VIP extension
+│   └── scan_and_learn/    # On-device real-world OCR & word inspector (ML Kit)
+├── config/                # Environment variables, keys
+└── main.dart              # Entry point and DI setup
+extensions/                # Infrastructure-as-Code for Firebase Extensions
+└── delete-user-data.env   # Safe, non-secret configuration (Firebase Best Practice)
 functions/
- â”œâ”€â”€ index.js                # Server-side purchase validation (Node.js)
- â””â”€â”€ package.json            # googleapis, firebase-admin
+├── index.js               # Server-side purchase validation (Node.js)
+└── package.json           # googleapis, firebase-admin
 ```
 
 > **Note on Infrastructure-as-Code:** The `extensions/` directory is safely committed to source control following Firebase's modern "Extensions-as-Code" architecture. It contains structural configuration parameters (like Firestore deletion paths) and no sensitive secrets, ensuring infrastructure reproducibility across environments.
