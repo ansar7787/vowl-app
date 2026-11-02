@@ -116,7 +116,7 @@ class SoundServiceImpl implements SoundService {
 
   void _logError(String message, {Object? error}) {
     if (di.sl.isRegistered<AppLogger>()) {
-      _logError(message, error: error);
+      di.sl<AppLogger>().error(message, error: error);
     }
   }
 
