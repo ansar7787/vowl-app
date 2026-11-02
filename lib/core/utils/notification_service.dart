@@ -463,6 +463,7 @@ class NotificationService {
 
       await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
         'fcmToken': token,
+        'timeZoneOffsetMinutes': DateTime.now().timeZoneOffset.inMinutes,
       }, SetOptions(merge: true));
 
       if (kDebugMode) {

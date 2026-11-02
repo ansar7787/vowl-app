@@ -627,32 +627,75 @@ exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
   }
 });
 
-// 🔥 STREAK REMINDER
-// Runs daily at 8:00 PM — nudges users who haven't logged in today
-exports.sendStreakReminders = onSchedule('0 20 * * *', async (event) => {
+// 🔥 TIMEZONE-AWARE STREAK REMINDER
+// Runs hourly at minute 0 — nudges users whose LOCAL device time is 8:00 PM (20:00)
+// and who have not yet logged in / practiced today in their own local time zone.
+// Eliminates middle-of-the-night notifications for global users (India, US, UK, Asia).
+exports.sendStreakReminders = onSchedule('0 * * * *', async (event) => {
   const db = admin.firestore();
+  const nowUtc = new Date();
 
-  // Get start of today (UTC)
-  const now = new Date();
-  const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
-  // Find users with active streaks who haven't logged in today
+  // Find users with active streaks
   const usersAtRisk = await db
     .collection('users')
     .where('currentStreak', '>', 0)
-    .where('lastLoginDate', '<', admin.firestore.Timestamp.fromDate(startOfDay))
     .limit(500)
     .get();
 
   if (usersAtRisk.empty) {
-    console.log('No streak-at-risk users found.');
+    return;
+  }
+
+  // Filter in memory: Only users whose LOCAL time is currently 8:00 PM (20:00)
+  // and who haven't logged in during their current local calendar day.
+  const eligibleDocs = [];
+  usersAtRisk.docs.forEach((doc) => {
+    const user = doc.data();
+    if (!user.fcmToken) return;
+
+    // Default to UTC (0) if user has not yet reported their offset
+    const offsetMinutes = typeof user.timeZoneOffsetMinutes === 'number'
+      ? user.timeZoneOffsetMinutes
+      : 0;
+
+    // Calculate user's current local wall-clock time
+    const userLocalTime = new Date(nowUtc.getTime() + offsetMinutes * 60 * 1000);
+    const userLocalHour = userLocalTime.getUTCHours();
+
+    // 🎯 PSYCHOLOGY WINDOW: Only trigger at 8:00 PM (hour 20) in the user's country!
+    // This protects users from sleep disruptions (10 PM - 8 AM) and work interruptions.
+    if (userLocalHour !== 20) {
+      return;
+    }
+
+    // Calculate start of user's local day in UTC epoch milliseconds
+    const startOfUserLocalDayUtcMillis =
+      Date.UTC(
+        userLocalTime.getUTCFullYear(),
+        userLocalTime.getUTCMonth(),
+        userLocalTime.getUTCDate(),
+        0, 0, 0, 0
+      ) - (offsetMinutes * 60 * 1000);
+
+    const lastLoginMillis = user.lastLoginDate?.toMillis
+      ? user.lastLoginDate.toMillis()
+      : (user.lastLoginDate instanceof Date ? user.lastLoginDate.getTime() : 0);
+
+    if (lastLoginMillis >= startOfUserLocalDayUtcMillis) {
+      // User has already logged in or practiced today in their timezone!
+      return;
+    }
+
+    eligibleDocs.push(doc);
+  });
+
+  if (eligibleDocs.length === 0) {
     return;
   }
 
   // Production-grade deduplication: If a device token is linked to multiple accounts
-  // (e.g. user switched accounts on the same phone without clean logout),
-  // prioritize the account that logged in most recently and prune duplicate associations.
-  const sortedDocs = [...usersAtRisk.docs].sort((a, b) => {
+  // prioritize the account that logged in most recently.
+  const sortedDocs = [...eligibleDocs].sort((a, b) => {
     const timeA = a.data().lastLoginDate?.toMillis ? a.data().lastLoginDate.toMillis() : 0;
     const timeB = b.data().lastLoginDate?.toMillis ? b.data().lastLoginDate.toMillis() : 0;
     return timeB - timeA;
