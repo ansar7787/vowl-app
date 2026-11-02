@@ -115,6 +115,14 @@ service cloud.firestore {
     //   - winnerId: string (optional)
     //   - questions: list (optional, <= 20 items)
     //
+    // Collection: arena_queue/{queueId}
+    // Document ID: {queueId} (e.g. unique ticket ID or user UID)
+    // Fields:
+    //   - userId: string (required) - Firebase Auth UID of queued player
+    //   - displayName: string (optional, <= 100 chars) - challenger display name
+    //   - photoUrl: string (optional, <= 1000 chars) - challenger photo URL
+    //   - createdAt: timestamp (required) - server timestamp of queue entry
+    //
     // Collection: metadata/{cacheDoc}
     //   - leaderboard_cache / kids_leaderboard_cache: precomputed top users
     //
@@ -212,6 +220,14 @@ service cloud.firestore {
         && (!('questions' in data) || (data.questions is list && data.questions.size() <= 20))
         && (!('hostReady' in data) || data.hostReady is bool)
         && (!('guestReady' in data) || data.guestReady is bool);
+    }
+
+    // Validates 1v1 PvP Arena Queue ticket schema and bounds
+    function isValidArenaQueue(data) {
+      return data.userId is string && data.userId.size() > 0 && data.userId.size() <= 128
+        && data.createdAt is timestamp
+        && (!('displayName' in data) || data.displayName == null || (data.displayName is string && data.displayName.size() <= 100))
+        && (!('photoUrl' in data) || data.photoUrl == null || (data.photoUrl is string && data.photoUrl.size() <= 1000));
     }
 
     // ─── USER DATA ───────────────────────────────────────────────────
@@ -472,6 +488,25 @@ service cloud.firestore {
 
       // Only host can cancel / dissolve an arena room
       allow delete: if isAuthenticated() && request.auth.uid == resource.data.hostId;
+    }
+
+    // ─── 1v1 PVP MATCHMAKING QUEUE ────────────────────────────────────
+    match /arena_queue/{queueId} {
+      // Authenticated players can query the queue to discover opponents
+      allow read: if isAuthenticated();
+
+      // Players can enter the queue with their own auth UID and server timestamp
+      allow create: if isAuthenticated()
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.createdAt == request.time
+        && isValidArenaQueue(request.resource.data);
+
+      // Queue entries are ephemeral tickets: updates are disallowed
+      allow update: if false;
+
+      // Authenticated players can delete: either the queue entry owner canceling/leaving,
+      // or another authenticated player popping/matching them into an arena duel
+      allow delete: if isAuthenticated();
     }
 
     // ─── GLOBAL METADATA ─────────────────────────────────────────────
