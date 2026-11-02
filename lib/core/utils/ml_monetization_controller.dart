@@ -116,10 +116,16 @@ class MlMonetizationController {
     if (!context.mounted) return;
 
     if (result == 'premium') {
-      Navigator.push(
+      await Navigator.push(
         context,
         MaterialPageRoute(builder: (_) => const PremiumScreen()),
       );
+      if (!context.mounted) return;
+      final updatedIsPremium =
+          context.read<AuthBloc>().state.user?.isPremium ?? false;
+      if (updatedIsPremium) {
+        onSuccess();
+      }
     } else if (result == 'ad') {
       di.sl<AdService>().showRewardedAd(
         context: context,
