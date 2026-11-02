@@ -44,47 +44,56 @@ class ArenaRepositoryImpl implements ArenaRepository {
         if (activeQueue.docs.isNotEmpty) {
           final oppDoc = activeQueue.docs.first;
           final oppData = oppDoc.data();
-          final oppId = oppData['userId'] as String;
-          final oppName = oppData['displayName'] as String? ?? 'Challenger';
-          final oppPhoto = oppData['photoUrl'] as String?;
-          final roomCode = oppData['roomCode'] as String? ?? 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
+          final createdAt = (oppData['createdAt'] as Timestamp?)?.toDate();
+          final isStale = createdAt != null &&
+              DateTime.now().difference(createdAt).inSeconds > 15;
 
-          // Delete from queue and form live room
-          await queueRef.doc(oppDoc.id).delete();
+          if (isStale) {
+            // Delete stale/abandoned queue ticket to keep collection clean
+            await queueRef.doc(oppDoc.id).delete();
+          } else {
+            final oppId = oppData['userId'] as String;
+            final oppName = oppData['displayName'] as String? ?? 'Challenger';
+            final oppPhoto = oppData['photoUrl'] as String?;
+            final roomCode = oppData['roomCode'] as String? ?? 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
 
-          final session = ArenaDuelSession(
-            roomCode: roomCode,
-            hostId: oppId,
-            hostName: oppName,
-            hostPhotoUrl: oppPhoto,
-            guestId: currentUser.id,
-            guestName: currentUser.safeDisplayName,
-            guestPhotoUrl: currentUser.photoUrl,
-            stake: _kStakeCoins,
-            pot: _kStakeCoins * 2,
-            status: 'in_progress',
-            questions: questions,
-            createdAt: DateTime.now(),
-          );
+            // Delete from queue and form live room
+            await queueRef.doc(oppDoc.id).delete();
 
-          await _firestore.collection('arena_rooms').doc(roomCode).set({
-            'roomCode': roomCode,
-            'hostId': oppId,
-            'hostName': oppName,
-            'hostPhotoUrl': oppPhoto,
-            'guestId': currentUser.id,
-            'guestName': currentUser.safeDisplayName,
-            'guestPhotoUrl': currentUser.photoUrl,
-            'stake': _kStakeCoins,
-            'pot': _kStakeCoins * 2,
-            'status': 'in_progress',
-            'hostScore': 0,
-            'guestScore': 0,
-            'questions': questions.map((q) => q.toMap()).toList(),
-            'createdAt': FieldValue.serverTimestamp(),
-          }).timeout(_kNetworkTimeout);
+            final session = ArenaDuelSession(
+              roomCode: roomCode,
+              hostId: oppId,
+              hostName: oppName,
+              hostPhotoUrl: oppPhoto,
+              guestId: currentUser.id,
+              guestName: currentUser.safeDisplayName,
+              guestPhotoUrl: currentUser.photoUrl,
+              stake: _kStakeCoins,
+              pot: _kStakeCoins * 2,
+              status: 'in_progress',
+              questions: questions,
+              createdAt: DateTime.now(),
+            );
 
-          return session;
+            await _firestore.collection('arena_rooms').doc(roomCode).set({
+              'roomCode': roomCode,
+              'hostId': oppId,
+              'hostName': oppName,
+              'hostPhotoUrl': oppPhoto,
+              'guestId': currentUser.id,
+              'guestName': currentUser.safeDisplayName,
+              'guestPhotoUrl': currentUser.photoUrl,
+              'stake': _kStakeCoins,
+              'pot': _kStakeCoins * 2,
+              'status': 'in_progress',
+              'hostScore': 0,
+              'guestScore': 0,
+              'questions': questions.map((q) => q.toMap()).toList(),
+              'createdAt': FieldValue.serverTimestamp(),
+            }).timeout(_kNetworkTimeout);
+
+            return session;
+          }
         } else {
           // B. No human waiting: register ticket and listen for 3s
           final myRoomCode = 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';

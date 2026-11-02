@@ -166,6 +166,7 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
 
   Future<void> _finalizeMatch(UserEntity currentUser) async {
     _questionTimer?.cancel();
+    _roomSub?.cancel();
 
     final bool isScoreTie = state.myScore == state.rivalScore;
     final bool isWinner;
