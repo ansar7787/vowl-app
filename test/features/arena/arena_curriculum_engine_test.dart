@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vowl/core/data/services/asset_quest_service.dart';
 import 'package:vowl/features/arena/data/services/arena_curriculum_engine.dart';
+import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 
 class FakeQuestService implements QuestService {
   @override
@@ -99,6 +100,43 @@ void main() {
         expect(q.question.isNotEmpty, true);
         expect(q.options.length, 4);
       }
+    });
+
+    test('resolveDiscipline maps all curriculum game types correctly', () {
+      expect(ArenaCurriculumEngine.resolveDiscipline('word_clash'), 'word_clash');
+      expect(ArenaCurriculumEngine.resolveDiscipline('synonymSearch'), 'word_clash');
+      expect(ArenaCurriculumEngine.resolveDiscipline('antonymSearch'), 'word_clash');
+
+      expect(ArenaCurriculumEngine.resolveDiscipline('phrase_duel'), 'phrase_duel');
+      expect(ArenaCurriculumEngine.resolveDiscipline('collocations'), 'phrase_duel');
+      expect(ArenaCurriculumEngine.resolveDiscipline('idioms'), 'phrase_duel');
+      expect(ArenaCurriculumEngine.resolveDiscipline('phrasalVerbs'), 'phrase_duel');
+
+      expect(ArenaCurriculumEngine.resolveDiscipline('sentence_strike'), 'sentence_strike');
+      expect(ArenaCurriculumEngine.resolveDiscipline('academicWord'), 'sentence_strike');
+
+      expect(ArenaCurriculumEngine.resolveDiscipline('context_blitz'), 'context_blitz');
+      expect(ArenaCurriculumEngine.resolveDiscipline('contextClues'), 'context_blitz');
+    });
+
+    test('ArenaQuestion serializes and deserializes discipline accurately', () {
+      final question = ArenaQuestion(
+        question: 'What is the closest synonym for "Resilient"?',
+        options: ['Fragile', 'Enduring', 'Hesitant', 'Trivial'],
+        correctIndex: 1,
+        explanation: 'Resilient means durable.',
+        discipline: 'word_clash',
+      );
+
+      final map = question.toMap();
+      expect(map['discipline'], 'word_clash');
+
+      final reconstructed = ArenaQuestion.fromMap(map);
+      expect(reconstructed.discipline, 'word_clash');
+      expect(reconstructed.question, question.question);
+      expect(reconstructed.options, question.options);
+      expect(reconstructed.correctIndex, question.correctIndex);
+      expect(reconstructed.explanation, question.explanation);
     });
   });
 }
