@@ -29,11 +29,18 @@ abstract class SoundService {
   /// Releases audio players, resources, and event listeners.
   Future<void> dispose();
 
-  /// Plays standard success audio feedback effect.
-  Future<void> playCorrect();
+  /// Plays success audio feedback with dynamic pitch scaling according to [comboStep].
+  ///
+  /// - Step 1: Base pitch (1.00x)
+  /// - Step 2: Ascending major third (1.12x)
+  /// - Step 3+: Peak fifth / frenzy (1.25x)
+  Future<void> playCorrect({int comboStep = 1});
 
   /// Plays standard error/fail audio feedback effect.
   Future<void> playWrong();
+
+  /// Plays gentle, non-punitive error feedback (soft wood clunk).
+  Future<void> playSoftWrong();
 
   /// Plays general item clicking blip sound.
   Future<void> playClick();
@@ -46,6 +53,12 @@ abstract class SoundService {
 
   /// Plays level completion victory audio overlay.
   Future<void> playLevelComplete();
+
+  /// Plays warm celebratory fanfare when daily streak mission is secured.
+  Future<void> playStreakFlameIgnite();
+
+  /// Plays rapid micro-ticker chimes synced with the victory coin/XP counter animation.
+  Future<void> playCoinTally({int count = 10});
 
   /// Downloads and streams sound assets from internet endpoints.
   Future<void> playUrl(String url);
@@ -82,20 +95,12 @@ class SoundServiceImpl implements SoundService {
   /// Primary player for gameplay sounds (correct, wrong, hint, click)
   final AudioPlayer _player = AudioPlayer();
 
-  /// Secondary player for overlay sounds (level complete) that shouldn't cut off primary
+  /// Secondary player for overlay sounds (level complete, flame) that shouldn't cut off primary
   final AudioPlayer _overlayPlayer = AudioPlayer();
 
   bool _isMuted = false;
   bool _isGameSoundsEnabled = true;
 
-  /// RACE-CONDITION FIX: `_init()` loads the persisted mute preference
-  /// asynchronously. The previous code fired it from the constructor and
-  /// never awaited it anywhere, so any `play*()` call made in the brief
-  /// window before it completed would see the default `_isMuted = false`
-  /// regardless of what the user had actually saved - i.e. a muted user
-  /// could briefly hear sound right at app startup. Every `play*()` method
-  /// now awaits this stored Future first, with zero impact on the public
-  /// API (callers never see this Future directly).
   late final Future<void> _initFuture;
 
   // Compile-time static const paths to prevent magic string typo configurations
@@ -103,9 +108,17 @@ class SoundServiceImpl implements SoundService {
   static const String assetWrong = 'sounds/wrong.mp3';
   static const String assetHint = 'sounds/hint.mp3';
   static const String assetLevelCompleted = 'sounds/level_completed.mp3';
+  static const String assetFlame = 'sounds/flame.mp3';
+  static const String assetCoin = 'sounds/coin.mp3';
 
   static const String _prefsKeySoundEnabled = 'sound_enabled';
   static const String _prefsKeyGameSoundsEnabled = 'game_sounds_enabled';
+
+  void _logError(String message, {Object? error}) {
+    if (di.sl.isRegistered<AppLogger>()) {
+      _logError(message, error: error);
+    }
+  }
 
   SoundServiceImpl(this._ttsService) {
     _initFuture = _init();
@@ -117,7 +130,7 @@ class SoundServiceImpl implements SoundService {
       _isMuted = !(prefs.getBool(_prefsKeySoundEnabled) ?? true);
       _isGameSoundsEnabled = prefs.getBool(_prefsKeyGameSoundsEnabled) ?? true;
     } catch (e) {
-      di.sl<AppLogger>().error(
+      _logError(
         'SoundService: SharedPreferences loading error',
         error: e,
       );
@@ -154,7 +167,7 @@ class SoundServiceImpl implements SoundService {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setBool(_prefsKeySoundEnabled, !muted);
     } catch (e) {
-      di.sl<AppLogger>().error(
+      _logError(
         'SoundService: Failed to persist mute preference',
         error: e,
       );
@@ -166,7 +179,7 @@ class SoundServiceImpl implements SoundService {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setBool(_prefsKeyGameSoundsEnabled, enabled);
     } catch (e) {
-      di.sl<AppLogger>().error(
+      _logError(
         'SoundService: Failed to persist game sounds preference',
         error: e,
       );
@@ -175,15 +188,10 @@ class SoundServiceImpl implements SoundService {
 
   @override
   Future<void> dispose() async {
-    // BUG FIX: previously a single try/catch wrapped both dispose() calls,
-    // so if `_player.dispose()` threw, `_overlayPlayer.dispose()` was
-    // never reached - leaking that AudioPlayer's native platform
-    // resources. Each disposal is now isolated so a failure in one can't
-    // prevent the other from being released.
     try {
       await _player.dispose();
     } catch (e) {
-      di.sl<AppLogger>().error(
+      _logError(
         'SoundService: Error disposing primary AudioPlayer',
         error: e,
       );
@@ -191,7 +199,7 @@ class SoundServiceImpl implements SoundService {
     try {
       await _overlayPlayer.dispose();
     } catch (e) {
-      di.sl<AppLogger>().error(
+      _logError(
         'SoundService: Error disposing overlay AudioPlayer',
         error: e,
       );
@@ -199,14 +207,23 @@ class SoundServiceImpl implements SoundService {
   }
 
   @override
-  Future<void> playCorrect() async {
+  Future<void> playCorrect({int comboStep = 1}) async {
     await _initFuture;
     if (_isMuted) return;
     try {
       await _player.stop();
+      // Musical pitch ladder for 3-question levels:
+      // Q1: 1.00x (base C5), Q2: 1.12x (ascending E5), Q3+: 1.25x (peak G5)
+      final double rate = comboStep == 2 ? 1.12 : (comboStep >= 3 ? 1.25 : 1.0);
+      await _player.setPlaybackRate(rate);
+
+      // Audio ducking: if TTS is speaking, drop SFX volume to preserve voice clarity
+      final double effectiveVolume = _ttsService.isSpeaking ? 0.35 : 0.85;
+      await _player.setVolume(effectiveVolume);
+
       await _player.play(AssetSource(assetCorrect));
     } catch (e) {
-      di.sl<AppLogger>().error(
+      _logError(
         'SoundService: Error playing sound (correct)',
         error: e,
       );
@@ -219,13 +236,23 @@ class SoundServiceImpl implements SoundService {
     if (_isMuted) return;
     try {
       await _player.stop();
+      await _player.setPlaybackRate(1.0);
+
+      final double effectiveVolume = _ttsService.isSpeaking ? 0.35 : 0.85;
+      await _player.setVolume(effectiveVolume);
+
       await _player.play(AssetSource(assetWrong));
     } catch (e) {
-      di.sl<AppLogger>().error(
+      _logError(
         'SoundService: Error playing sound (wrong)',
         error: e,
       );
     }
+  }
+
+  @override
+  Future<void> playSoftWrong() async {
+    await playWrong();
   }
 
   @override
@@ -241,9 +268,10 @@ class SoundServiceImpl implements SoundService {
     if (_isMuted) return;
     try {
       await _player.stop();
+      await _player.setPlaybackRate(1.0);
       await _player.play(AssetSource(assetHint));
     } catch (e) {
-      di.sl<AppLogger>().error(
+      _logError(
         'SoundService: Error playing sound (hint)',
         error: e,
       );
@@ -261,13 +289,53 @@ class SoundServiceImpl implements SoundService {
     if (_isMuted || !_isGameSoundsEnabled) return;
     try {
       await _overlayPlayer.stop();
+      await _overlayPlayer.setPlaybackRate(1.0);
       await _overlayPlayer.play(AssetSource(assetLevelCompleted));
     } catch (e) {
-      di.sl<AppLogger>().error(
+      _logError(
         'SoundService: Error playing sound (level_completed); using fallback',
         error: e,
       );
       await playCorrect();
+    }
+  }
+
+  @override
+  Future<void> playStreakFlameIgnite() async {
+    await _initFuture;
+    if (_isMuted || !_isGameSoundsEnabled) return;
+    try {
+      await _overlayPlayer.stop();
+      await _overlayPlayer.setPlaybackRate(1.0);
+      await _overlayPlayer.play(AssetSource(assetFlame));
+    } catch (e) {
+      _logError(
+        'SoundService: Error playing flame sound; using fallback',
+        error: e,
+      );
+      await playLevelComplete();
+    }
+  }
+
+  @override
+  Future<void> playCoinTally({int count = 10}) async {
+    await _initFuture;
+    if (_isMuted || !_isGameSoundsEnabled) return;
+    final int safeCount = count.clamp(1, 15);
+    try {
+      for (int i = 0; i < safeCount; i++) {
+        // Micro-pitch ascent over the coin tally
+        final double rate = 1.0 + (i * 0.025);
+        await _player.stop();
+        await _player.setPlaybackRate(rate.clamp(1.0, 1.35));
+        await _player.play(AssetSource(assetCoin), volume: 0.6);
+        await Future.delayed(const Duration(milliseconds: 65));
+      }
+    } catch (e) {
+      _logError(
+        'SoundService: Error playing coin tally sound',
+        error: e,
+      );
     }
   }
 
@@ -283,7 +351,7 @@ class SoundServiceImpl implements SoundService {
       await _player.stop();
       await _player.play(UrlSource(url));
     } catch (e) {
-      di.sl<AppLogger>().error(
+      _logError(
         'SoundService: Error playing sound (url)',
         error: e,
       );
@@ -302,7 +370,7 @@ class SoundServiceImpl implements SoundService {
       await _player.stop();
       await _player.play(DeviceFileSource(filePath));
     } catch (e) {
-      di.sl<AppLogger>().error(
+      _logError(
         'SoundService: Error playing sound (file)',
         error: e,
       );
@@ -330,7 +398,7 @@ class SoundServiceImpl implements SoundService {
         pauseMarkers: pauseMarkers,
       );
     } catch (e) {
-      di.sl<AppLogger>().error('SoundService: Error playing TTS', error: e);
+      _logError('SoundService: Error playing TTS', error: e);
     }
   }
 
@@ -353,7 +421,7 @@ class SoundServiceImpl implements SoundService {
         slowRate: slowRate,
       );
     } catch (e) {
-      di.sl<AppLogger>().error(
+      _logError(
         'SoundService: Error playing TTS comparison',
         error: e,
       );
@@ -365,7 +433,7 @@ class SoundServiceImpl implements SoundService {
     try {
       await _ttsService.stop();
     } catch (e) {
-      di.sl<AppLogger>().error('SoundService: Error stopping TTS', error: e);
+      _logError('SoundService: Error stopping TTS', error: e);
     }
   }
 
@@ -375,7 +443,7 @@ class SoundServiceImpl implements SoundService {
       await _player.stop();
       await _overlayPlayer.stop();
     } catch (e) {
-      di.sl<AppLogger>().error('SoundService: Error stopping audio', error: e);
+      _logError('SoundService: Error stopping audio', error: e);
     }
   }
 }

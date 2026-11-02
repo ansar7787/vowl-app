@@ -11,6 +11,7 @@ import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -296,6 +297,9 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
         onTap: () {
           try {
             di.sl<HapticService>().selection();
+            if (isTodayActive && di.sl.isRegistered<SoundService>()) {
+              di.sl<SoundService>().playStreakFlameIgnite();
+            }
           } catch (_) {}
           context.push(
             '${AppRouter.categoryGamesRoute}?category=${Uri.encodeQueryComponent(_nextType.name)}',
