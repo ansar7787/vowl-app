@@ -220,4 +220,58 @@ void main() {
       expect(find.byType(ContinueLearningCard), findsOneWidget);
     },
   );
+
+  testWidgets(
+    'displays urgent habit spotlight when streak is pending today',
+    (tester) async {
+      final now = DateTime.now();
+      final yesterdayKey =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${(now.day - 1).toString().padLeft(2, '0')}';
+      final user = UserEntity(
+        id: 'user_streak',
+        email: 'streak@vowl.app',
+        currentStreak: 5,
+        dailyXpHistory: {yesterdayKey: 50},
+        completedLevels: const {
+          'flashcards': [1, 2, 3],
+        },
+      );
+
+      await tester.pumpWidget(createSubject(user: user));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 600));
+
+      expect(find.text("TODAY'S MISSION • 3 MIN TO SECURE STREAK"), findsOneWidget);
+      expect(find.text('Secure'), findsOneWidget);
+      expect(find.byIcon(Icons.local_fire_department_rounded), findsOneWidget);
+      expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);
+      expect(find.textContaining('protect your 5d streak'), findsOneWidget);
+    },
+  );
+
+  testWidgets(
+    'displays secured habit badge when streak is completed today',
+    (tester) async {
+      final now = DateTime.now();
+      final todayKey =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+      final user = UserEntity(
+        id: 'user_secured',
+        email: 'secured@vowl.app',
+        currentStreak: 6,
+        dailyXpHistory: {todayKey: 100},
+        completedLevels: const {
+          'flashcards': [1, 2, 3, 4],
+        },
+      );
+
+      await tester.pumpWidget(createSubject(user: user));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 600));
+
+      expect(find.text("TODAY'S STREAK SECURED ⭐"), findsOneWidget);
+      expect(find.text('Resume'), findsOneWidget);
+      expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);
+    },
+  );
 }

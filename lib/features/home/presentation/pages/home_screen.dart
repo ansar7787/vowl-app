@@ -28,6 +28,7 @@ import 'package:vowl/features/home/presentation/widgets/mystery_chest_dialog.dar
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
+import 'package:vowl/features/home/presentation/widgets/beginner_milestone_card.dart';
 import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/onboarding_service.dart';
@@ -45,6 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final ValueNotifier<int?> _globalRank = ValueNotifier(null);
   final ValueNotifier<bool> _isRankLoading = ValueNotifier(true);
   bool _hasCheckedDailyChestThisSession = false;
+  bool _bypassBeginnerGate = false;
 
   @override
   void initState() {
@@ -325,98 +327,122 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
 
                       // --------------------------------------------------
-                      SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        sliver: SliverToBoxAdapter(
-                          child: Column(
-                            children: [
-                              SizedBox(height: 24.h),
-                              HomeSectionHeader(
-                                title: context.tr(
-                                  'home.quest_arena_title',
-                                  fallback: 'Quest Arena',
+                      // 4. PROGRESSIVE RPG GATING (Beginner Lock vs Full Cockpit)
+                      // --------------------------------------------------
+                      if (!_bypassBeginnerGate && user.totalLevelsCompleted < 2) ...[
+                        SliverPadding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          sliver: SliverToBoxAdapter(
+                            child: Column(
+                              children: [
+                                SizedBox(height: 24.h),
+                                BeginnerMilestoneCard(
+                                  user: user,
+                                  onUnlockNow: () => setState(
+                                    () => _bypassBeginnerGate = true,
+                                  ),
                                 ),
-                                subtitle: context.tr(
-                                  'home.quest_arena_subtitle',
-                                  fallback: 'Pick up where you left off',
-                                ),
-                                localizedTitleKey: 'home.quest_arena_title',
-                                localizedSubtitleKey:
+                              ],
+                            ),
+                          ),
+                        ),
+                      ] else ...[
+                        // --------------------------------------------------
+                        // 4. CURRICULUM BENTO ARENA + WEAK-SPOT REVIEW
+                        // --------------------------------------------------
+                        SliverPadding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          sliver: SliverToBoxAdapter(
+                            child: Column(
+                              children: [
+                                SizedBox(height: 24.h),
+                                HomeSectionHeader(
+                                  title: context.tr(
+                                    'home.quest_arena_title',
+                                    fallback: 'Quest Arena',
+                                  ),
+                                  subtitle: context.tr(
                                     'home.quest_arena_subtitle',
-                                categoryColor: AppColors.indigo500,
-                                onSeeAll: () =>
-                                    context.push(AppRouter.libraryRoute),
-                              ),
-                              BentoArena(user: user, collapsed: true),
-                              if (!user.isKidsModeOnly)
-                                ReviewMistakesHomeCard(user: user),
-                            ],
+                                    fallback: 'Pick up where you left off',
+                                  ),
+                                  localizedTitleKey: 'home.quest_arena_title',
+                                  localizedSubtitleKey:
+                                      'home.quest_arena_subtitle',
+                                  categoryColor: AppColors.indigo500,
+                                  onSeeAll: () =>
+                                      context.push(AppRouter.libraryRoute),
+                                ),
+                                BentoArena(user: user, collapsed: true),
+                                if (!user.isKidsModeOnly)
+                                  ReviewMistakesHomeCard(user: user),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
 
-                      // --------------------------------------------------
-                      // 5. PROGRESS CARD (Total levels + Rank)
-                      // --------------------------------------------------
-                      SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        sliver: SliverToBoxAdapter(
-                          child: Column(
-                            children: [
-                              SizedBox(height: 24.h),
-                              ValueListenableBuilder<int?>(
-                                valueListenable: _globalRank,
-                                builder: (context, rank, child) {
-                                  return GlobalProgressCard(
-                                    user: user,
-                                    globalRank: rank,
-                                  );
-                                },
-                              ),
-                            ],
+                        // --------------------------------------------------
+                        // 5. PROGRESS CARD (Total levels + Rank)
+                        // --------------------------------------------------
+                        SliverPadding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          sliver: SliverToBoxAdapter(
+                            child: Column(
+                              children: [
+                                SizedBox(height: 24.h),
+                                ValueListenableBuilder<int?>(
+                                  valueListenable: _globalRank,
+                                  builder: (context, rank, child) {
+                                    return GlobalProgressCard(
+                                      user: user,
+                                      globalRank: rank,
+                                    );
+                                  },
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
 
-                      // --------------------------------------------------
-                      // 6. EXPLORE & TOOLS (Horizontal strip)
-                      // --------------------------------------------------
-                      HomeSliverSectionHeader(
-                        title: context.tr(
-                          'home.tools_title',
-                          fallback: 'Explore & Tools',
+                        // --------------------------------------------------
+                        // 6. EXPLORE & TOOLS (Horizontal strip)
+                        // --------------------------------------------------
+                        HomeSliverSectionHeader(
+                          title: context.tr(
+                            'home.tools_title',
+                            fallback: 'Explore & Tools',
+                          ),
+                          subtitle: context.tr(
+                            'home.tools_subtitle',
+                            fallback: 'Your learning toolkit',
+                          ),
+                          categoryColor: AppColors.emerald500,
+                          onSeeAll: () => ToolsStrip.showToolsDirectory(context),
                         ),
-                        subtitle: context.tr(
-                          'home.tools_subtitle',
-                          fallback: 'Your learning toolkit',
-                        ),
-                        categoryColor: AppColors.emerald500,
-                        onSeeAll: () => ToolsStrip.showToolsDirectory(context),
-                      ),
-                      const SliverToBoxAdapter(child: ToolsStrip()),
+                        const SliverToBoxAdapter(child: ToolsStrip()),
 
-                      // --------------------------------------------------
-                      // 7. DISCOVERY HUB (Quest Recommendations)
-                      // --------------------------------------------------
-                      HomeSliverSectionHeader(
-                        title: context.tr(
-                          'home.discovery_hub_title',
-                          fallback: 'Discovery Hub',
+                        // --------------------------------------------------
+                        // 7. DISCOVERY HUB (Quest Recommendations)
+                        // --------------------------------------------------
+                        HomeSliverSectionHeader(
+                          title: context.tr(
+                            'home.discovery_hub_title',
+                            fallback: 'Discovery Hub',
+                          ),
+                          subtitle: context.tr(
+                            'home.discovery_hub_subtitle',
+                            fallback: 'Targeted skill tracks',
+                          ),
+                          categoryColor: IllustrationColors.brightBlue,
+                          onSeeAll: () => context.push(AppRouter.libraryRoute),
                         ),
-                        subtitle: context.tr(
-                          'home.discovery_hub_subtitle',
-                          fallback: 'Targeted skill tracks',
+                        SliverToBoxAdapter(
+                          child: DiscoveryDeck(
+                            user: user,
+                            onLaunchQuest: (id) =>
+                                _launchThemedQuest(context, id),
+                          ),
                         ),
-                        categoryColor: IllustrationColors.brightBlue,
-                        onSeeAll: () => context.push(AppRouter.libraryRoute),
-                      ),
-                      SliverToBoxAdapter(
-                        child: DiscoveryDeck(
-                          user: user,
-                          onLaunchQuest: (id) =>
-                              _launchThemedQuest(context, id),
-                        ),
-                      ),
+                      ],
 
                       // --------------------------------------------------
                       // 8. DAILY NOTE / LANGUAGE NOTE

@@ -71,22 +71,7 @@ class HomeHeroHeader extends StatelessWidget {
   }
 
   /// Evaluates whether the user has already completed learning activity today.
-  static bool isTodayActive(UserEntity user) {
-    final now = DateTime.now();
-    final todayKey =
-        '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
-    if ((user.dailyXpHistory[todayKey] ?? 0) > 0) {
-      return true;
-    }
-    if (user.lastLoginDate != null &&
-        user.lastLoginDate!.year == now.year &&
-        user.lastLoginDate!.month == now.month &&
-        user.lastLoginDate!.day == now.day &&
-        user.currentStreak > 0) {
-      return true;
-    }
-    return false;
-  }
+  static bool isTodayActive(UserEntity user) => user.isTodayActive;
 
   @override
   Widget build(BuildContext context) {

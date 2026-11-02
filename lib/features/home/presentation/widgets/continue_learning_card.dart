@@ -175,6 +175,8 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     final color = GameHelper.getQuestTypeColor(_nextType);
     final icon = GameHelper.getIconForCategory(_nextType);
     final isNewUser = user.totalLevelsCompleted == 0;
+    final isTodayActive = user.isTodayActive;
+    final currentStreak = user.currentStreak;
 
     final categoryLabel = _nextType.name.toUpperCase().replaceAllMapped(
       RegExp(r'(?<=[a-z])(?=[A-Z])'),
@@ -195,8 +197,42 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
 
     final remaining = milestone.target - _cleared;
 
+    final String missionBadgeText;
+    final Color missionBadgeColor;
+    final IconData missionBadgeIcon;
+
+    if (!isTodayActive) {
+      missionBadgeColor = AppColors.amber500;
+      missionBadgeIcon = Icons.local_fire_department_rounded;
+      if (currentStreak > 0) {
+        missionBadgeText = context.tr(
+          'home.mission_secure_streak',
+          fallback: "TODAY'S MISSION • 3 MIN TO SECURE STREAK",
+        );
+      } else {
+        missionBadgeText = context.tr(
+          'home.mission_start_streak',
+          fallback: "TODAY'S MISSION • 3 MIN TO START STREAK",
+        );
+      }
+    } else {
+      missionBadgeColor = AppColors.emerald500;
+      missionBadgeIcon = Icons.check_circle_rounded;
+      missionBadgeText = context.tr(
+        'home.mission_streak_secured',
+        fallback: "TODAY'S STREAK SECURED ⭐",
+      );
+    }
+
     final String subtitle;
-    if (isNewUser) {
+    if (!isTodayActive && currentStreak > 0) {
+      subtitle = context.tr(
+        'home.protect_streak_subtitle',
+        fallback:
+            'Complete 1 level today to protect your {}d streak • Milestone {}',
+        args: [currentStreak.toString(), milestone.target.toString()],
+      );
+    } else if (isNewUser) {
       subtitle = context.tr(
         'home.first_step_in_category',
         fallback: 'First step in {} • Milestone: {}',
@@ -219,6 +255,25 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
         'home.milestone_completed',
         fallback: 'Milestone ${milestone.target} completed! Keep mastering',
         args: [milestone.target.toString()],
+      );
+    }
+
+    final String ctaLabel;
+
+    if (!isTodayActive && currentStreak > 0) {
+      ctaLabel = context.tr(
+        'home.secure_streak_btn',
+        fallback: 'Secure',
+      );
+    } else if (isNewUser) {
+      ctaLabel = context.tr(
+        'home.start',
+        fallback: 'Start',
+      );
+    } else {
+      ctaLabel = context.tr(
+        'home.resume',
+        fallback: 'Resume',
       );
     }
 
@@ -263,16 +318,23 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                     : null,
                 borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
-                  color: color.withValues(alpha: isDark ? 0.32 : 0.20),
-                  width: 1.2,
+                  color: !isTodayActive
+                      ? color.withValues(alpha: isDark ? 0.60 : 0.45)
+                      : (isDark
+                          ? AppColors.emerald500.withValues(alpha: 0.35)
+                          : AppColors.emerald500.withValues(alpha: 0.25)),
+                  width: !isTodayActive ? 1.5 : 1.2,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: isDark
-                        ? color.withValues(alpha: 0.12)
-                        : Colors.black.withValues(alpha: 0.05),
-                    blurRadius: 22,
-                    offset: const Offset(0, 8),
+                    color: !isTodayActive
+                        ? color.withValues(alpha: isDark ? 0.24 : 0.15)
+                        : (isDark
+                            ? color.withValues(alpha: 0.10)
+                            : Colors.black.withValues(alpha: 0.04)),
+                    blurRadius: !isTodayActive ? 22 : 16,
+                    spreadRadius: !isTodayActive ? 1 : 0,
+                    offset: const Offset(0, 6),
                   ),
                 ],
               ),
@@ -284,9 +346,9 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                     top: 0,
                     bottom: 0,
                     child: Container(
-                      width: 3.5.r,
+                      width: !isTodayActive ? 4.r : 3.5.r,
                       decoration: BoxDecoration(
-                        color: color,
+                        color: !isTodayActive ? color : AppColors.emerald500,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(24.r),
                           bottomLeft: Radius.circular(24.r),
@@ -313,6 +375,52 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      // ── Habit Mission Badge (Urgent vs Secured) ───────────
+                      Container(
+                        margin: EdgeInsets.only(bottom: 10.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 9.w,
+                          vertical: 3.5.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: missionBadgeColor.withValues(
+                            alpha: isDark ? 0.14 : 0.08,
+                          ),
+                          borderRadius: BorderRadius.circular(100.r),
+                          border: Border.all(
+                            color: missionBadgeColor.withValues(
+                              alpha: isDark ? 0.32 : 0.22,
+                            ),
+                            width: 1,
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              missionBadgeIcon,
+                              color: missionBadgeColor,
+                              size: 12.r,
+                            ),
+                            SizedBox(width: 5.w),
+                            Flexible(
+                              child: Text(
+                                missionBadgeText,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: missionBadgeColor,
+                                  letterSpacing: 0.6,
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
                       // Top Row: Category Pill (Left) & Real Level Tag (Right)
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -528,8 +636,10 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                                 borderRadius: BorderRadius.circular(12.r),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: color.withValues(alpha: 0.35),
-                                    blurRadius: 8,
+                                    color: color.withValues(
+                                      alpha: !isTodayActive ? 0.45 : 0.32,
+                                    ),
+                                    blurRadius: !isTodayActive ? 10 : 8,
                                     offset: const Offset(0, 2),
                                   ),
                                 ],
@@ -538,15 +648,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
-                                    isNewUser
-                                        ? context.tr(
-                                            'home.start',
-                                            fallback: 'Start',
-                                          )
-                                        : context.tr(
-                                            'home.resume',
-                                            fallback: 'Resume',
-                                          ),
+                                    ctaLabel,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: 12.sp,
@@ -571,6 +673,34 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                   ),
                 ],
               ),
+            ).animateIf(
+              context,
+              (w) => !isTodayActive
+                  ? w
+                      .animate(
+                        onPlay: (controller) =>
+                            controller.repeat(reverse: true),
+                      )
+                      .boxShadow(
+                        begin: BoxShadow(
+                          color: color.withValues(
+                            alpha: isDark ? 0.16 : 0.10,
+                          ),
+                          blurRadius: 18,
+                          offset: const Offset(0, 4),
+                        ),
+                        end: BoxShadow(
+                          color: color.withValues(
+                            alpha: isDark ? 0.40 : 0.26,
+                          ),
+                          blurRadius: 28,
+                          spreadRadius: 2,
+                          offset: const Offset(0, 8),
+                        ),
+                        duration: 2200.ms,
+                        curve: Curves.easeInOut,
+                      )
+                  : w,
             ),
           ),
         ),

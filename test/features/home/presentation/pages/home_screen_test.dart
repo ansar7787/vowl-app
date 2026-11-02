@@ -26,6 +26,7 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/features/home/presentation/pages/home_screen.dart';
 import 'package:vowl/features/home/presentation/widgets/bento_arena.dart';
+import 'package:vowl/features/home/presentation/widgets/beginner_milestone_card.dart';
 import 'package:vowl/features/home/presentation/widgets/home_hero_header.dart';
 import 'package:vowl/features/home/presentation/widgets/continue_learning_card.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_motivation_card.dart';
@@ -659,6 +660,9 @@ void main() {
           id: 'local',
           email: 'guest@vowl.app',
           displayName: 'Guest Learner',
+          completedLevels: {
+            'vocabulary': [1, 2],
+          },
         );
         when(() => mockAuthBloc.state).thenReturn(
           AuthState.authenticated(guestUser),
@@ -963,6 +967,62 @@ void main() {
 
         expect(find.byType(HomeScreen), findsOneWidget);
         expect(tester.takeException(), isNull);
+      },
+    );
+  });
+
+  group('Group 15: Progressive RPG Gating', () {
+    testWidgets(
+      'renders BeginnerMilestoneCard for beginner with totalLevelsCompleted < 2',
+      (tester) async {
+        const beginnerUser = UserEntity(
+          id: 'beg_user',
+          email: 'beg@vowl.app',
+          displayName: 'Beginner Learner',
+          totalExp: 0,
+          currentStreak: 1,
+        );
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(beginnerUser),
+        );
+
+        await pumpHomeScreen(tester);
+
+        expect(find.byType(BeginnerMilestoneCard), findsOneWidget);
+        expect(find.byType(BentoArena), findsNothing);
+        expect(find.byType(ToolsStrip), findsNothing);
+      },
+    );
+
+    testWidgets(
+      'tapping bypass button in BeginnerMilestoneCard reveals full cockpit including BentoArena and ToolsStrip',
+      (tester) async {
+        const beginnerUser = UserEntity(
+          id: 'beg_user',
+          email: 'beg@vowl.app',
+          displayName: 'Beginner Learner',
+          totalExp: 0,
+          currentStreak: 1,
+        );
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(beginnerUser),
+        );
+
+        await pumpHomeScreen(tester);
+
+        expect(find.byType(BeginnerMilestoneCard), findsOneWidget);
+        final bypassBtn = find.text('Explore all features now →');
+        expect(bypassBtn, findsOneWidget);
+
+        await tester.tap(bypassBtn);
+        await tester.pumpAndSettle();
+
+        expect(find.byType(BeginnerMilestoneCard), findsNothing);
+        expect(find.byType(BentoArena), findsOneWidget);
+
+        homeScrollController.jumpTo(650);
+        await tester.pumpAndSettle();
+        expect(find.byType(ToolsStrip), findsOneWidget);
       },
     );
   });

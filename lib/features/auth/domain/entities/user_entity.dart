@@ -351,6 +351,24 @@ class UserEntity {
         last.day != now.day;
   }
 
+  /// Whether the user has logged learning activity or secured their daily streak today.
+  bool get isTodayActive {
+    final now = DateTime.now();
+    final todayKey =
+        '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+    if ((dailyXpHistory[todayKey] ?? 0) > 0) {
+      return true;
+    }
+    if (lastLoginDate != null &&
+        lastLoginDate!.year == now.year &&
+        lastLoginDate!.month == now.month &&
+        lastLoginDate!.day == now.day &&
+        currentStreak > 0) {
+      return true;
+    }
+    return false;
+  }
+
   // ---------------------------------------------------------------------------
   // Mastery getters (delegates to QuestType subtypes)
   // ---------------------------------------------------------------------------
