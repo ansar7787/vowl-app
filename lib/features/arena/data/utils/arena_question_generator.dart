@@ -142,7 +142,7 @@ class ArenaQuestionGenerator {
 
     // 1. Dedicated 1v1 Arena Batches (assets/curriculum/arena/)
     try {
-      final arenaBatches = await _loadDedicatedArenaBatches(rand);
+      final arenaBatches = await _loadDedicatedArenaBatches(rand, count: count);
       for (final q in arenaBatches) {
         if (!questions.any((existing) => existing.question == q.question)) {
           questions.add(q);
@@ -222,8 +222,8 @@ class ArenaQuestionGenerator {
   }
 
   /// Loads dedicated 1v1 Arena batches from `assets/curriculum/arena/`
-  /// supporting up to 20 batches per discipline.
-  static Future<List<ArenaQuestion>> _loadDedicatedArenaBatches(Random rand) async {
+  /// supporting up to 20 batches per discipline, aiming for [count] questions.
+  static Future<List<ArenaQuestion>> _loadDedicatedArenaBatches(Random rand, {int count = 5}) async {
     try {
       const modes = [
         'word_clash',
@@ -234,40 +234,58 @@ class ArenaQuestionGenerator {
       final dedicated = <ArenaQuestion>[];
       final shuffledModes = List<String>.from(modes)..shuffle(rand);
 
+      // Pass 1: 1 question per discipline for true cross-discipline balance
       for (final mode in shuffledModes) {
-        try {
-          final batchNum = rand.nextInt(20) + 1;
-          String jsonString;
-          try {
-            jsonString = await rootBundle.loadString(
-              'assets/curriculum/arena/$mode/batch_$batchNum.json',
-            );
-          } catch (_) {
-            jsonString = await rootBundle.loadString(
-              'assets/curriculum/arena/$mode/batch_1.json',
-            );
-          }
-
-          final Map<String, dynamic> data = jsonDecode(jsonString);
-          final rawQuests = data['quests'] as List<dynamic>? ?? [];
-          if (rawQuests.isNotEmpty) {
-            final shuffled = List<dynamic>.from(rawQuests)..shuffle(rand);
-            for (final item in shuffled) {
-              final qMap = Map<String, dynamic>.from(item as Map);
-              final q = _tryConvertCurriculumQuest(qMap, mode, rand);
-              if (q != null &&
-                  !dedicated.any((existing) => existing.question == q.question)) {
-                dedicated.add(q);
-                break; // 1 per mode for diverse blitz
-              }
-            }
-          }
-        } catch (_) {}
+        if (dedicated.length >= count) break;
+        await _pickQuestionFromMode(mode, rand, dedicated);
       }
+
+      // Pass 2: If we still need questions to reach target count (e.g. 5th question),
+      // sample from random disciplines
+      for (int i = 0; i < 5 && dedicated.length < count; i++) {
+        final mode = modes[rand.nextInt(modes.length)];
+        await _pickQuestionFromMode(mode, rand, dedicated);
+      }
+
       return dedicated;
     } catch (_) {
       return [];
     }
+  }
+
+  static Future<void> _pickQuestionFromMode(
+    String mode,
+    Random rand,
+    List<ArenaQuestion> destination,
+  ) async {
+    try {
+      final batchNum = rand.nextInt(20) + 1;
+      String jsonString;
+      try {
+        jsonString = await rootBundle.loadString(
+          'assets/curriculum/arena/$mode/batch_$batchNum.json',
+        );
+      } catch (_) {
+        jsonString = await rootBundle.loadString(
+          'assets/curriculum/arena/$mode/batch_1.json',
+        );
+      }
+
+      final Map<String, dynamic> data = jsonDecode(jsonString);
+      final rawQuests = data['quests'] as List<dynamic>? ?? [];
+      if (rawQuests.isNotEmpty) {
+        final shuffled = List<dynamic>.from(rawQuests)..shuffle(rand);
+        for (final item in shuffled) {
+          final qMap = Map<String, dynamic>.from(item as Map);
+          final q = _tryConvertCurriculumQuest(qMap, mode, rand);
+          if (q != null &&
+              !destination.any((existing) => existing.question == q.question)) {
+            destination.add(q);
+            break;
+          }
+        }
+      }
+    } catch (_) {}
   }
 
   static ArenaQuestion? _tryConvertCurriculumQuest(
@@ -301,6 +319,10 @@ class ArenaQuestionGenerator {
           quest['question'] != null &&
           quest['question'].toString().trim().isNotEmpty) {
         questionText = quest['question'].toString().trim();
+      } else if (quest.containsKey('prompt') &&
+          quest['prompt'] != null &&
+          quest['prompt'].toString().trim().isNotEmpty) {
+        questionText = quest['prompt'].toString().trim();
       } else if (gameType == 'synonymSearch' && word != null && word.isNotEmpty) {
         questionText = 'What is the closest synonym for "$word"?';
       } else if (gameType == 'antonymSearch' && word != null && word.isNotEmpty) {
@@ -358,6 +380,7 @@ class ArenaQuestionGenerator {
       }
 
       final explanation = (quest['explanation'] ??
+              quest['detail'] ??
               quest['hint'] ??
               'Vowl authentic curriculum challenge.')
           .toString();
