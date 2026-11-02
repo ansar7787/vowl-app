@@ -32,13 +32,14 @@ class ArenaRepositoryImpl implements ArenaRepository {
       final questions = await ArenaQuestionGenerator.generateQuestionsAsync(seed: seed);
 
       try {
-        // 2. Poll live Firestore queue for 3 seconds
         final queueRef = _firestore.collection('arena_queue');
+
+        // A. Check if a human challenger is already waiting in queue
         final activeQueue = await queueRef
             .where('userId', isNotEqualTo: currentUser.id)
             .limit(1)
             .get()
-            .timeout(const Duration(seconds: 3));
+            .timeout(const Duration(seconds: 2));
 
         if (activeQueue.docs.isNotEmpty) {
           final oppDoc = activeQueue.docs.first;
@@ -46,11 +47,11 @@ class ArenaRepositoryImpl implements ArenaRepository {
           final oppId = oppData['userId'] as String;
           final oppName = oppData['displayName'] as String? ?? 'Challenger';
           final oppPhoto = oppData['photoUrl'] as String?;
+          final roomCode = oppData['roomCode'] as String? ?? 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
 
           // Delete from queue and form live room
           await queueRef.doc(oppDoc.id).delete();
 
-          final roomCode = 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
           final session = ArenaDuelSession(
             roomCode: roomCode,
             hostId: oppId,
@@ -84,6 +85,46 @@ class ArenaRepositoryImpl implements ArenaRepository {
           }).timeout(_kNetworkTimeout);
 
           return session;
+        } else {
+          // B. No human waiting: register ticket and listen for 3s
+          final myRoomCode = 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
+          final myTicketRef = queueRef.doc(currentUser.id);
+          await myTicketRef.set({
+            'userId': currentUser.id,
+            'displayName': currentUser.safeDisplayName,
+            'photoUrl': currentUser.photoUrl,
+            'roomCode': myRoomCode,
+            'createdAt': FieldValue.serverTimestamp(),
+          });
+
+          final completer = Completer<ArenaDuelSession?>();
+          final sub = _firestore
+              .collection('arena_rooms')
+              .doc(myRoomCode)
+              .snapshots()
+              .listen((snap) {
+            if (snap.exists && snap.data()?['guestId'] != null) {
+              if (!completer.isCompleted) {
+                completer.complete(_mapSession(myRoomCode, snap.data()!));
+              }
+            }
+          });
+
+          ArenaDuelSession? liveMatched;
+          try {
+            liveMatched = await completer.future.timeout(const Duration(seconds: 3));
+          } catch (_) {
+            // 3-second timeout: no human joined
+          } finally {
+            await sub.cancel();
+            try {
+              await myTicketRef.delete();
+            } catch (_) {}
+          }
+
+          if (liveMatched != null) {
+            return liveMatched;
+          }
         }
       } catch (_) {
         // Fall through to 3-second smart fallback
