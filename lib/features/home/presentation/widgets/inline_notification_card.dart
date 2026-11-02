@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/foundation.dart';
@@ -32,11 +33,11 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 600),
+      duration: const Duration(milliseconds: 400),
     );
     _scaleAnimation = CurvedAnimation(
       parent: _animationController,
-      curve: Curves.elasticOut,
+      curve: Curves.easeOutCubic,
     );
     _checkPermissionStatus();
   }
@@ -95,6 +96,10 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
 
     if (status.isGranted) {
       di.sl<HapticService>().success();
+      try {
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setBool('notifications_enabled', true);
+      } catch (_) {}
       await _animationController.reverse();
       if (mounted) _isVisible.value = false;
     } else {
@@ -125,90 +130,43 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
   @override
   void dispose() {
     _animationController.dispose();
+    _isVisible.dispose();
     super.dispose();
   }
 
   String _getDynamicTitle() {
-    final hour = DateTime.now().hour;
     final streak = widget.streak;
 
     if (streak >= 3) {
-      final streakTitles = [
-        context.tr(
-          'notification_card.streak_protect',
-          args: [streak.toString()],
-          fallback: 'Protect your {}-Day Streak!',
-        ),
-        context.tr(
-          'notification_card.streak_strong',
-          args: [streak.toString()],
-          fallback: '{} days strong! Keep it up.',
-        ),
-        context.tr(
-          'notification_card.streak_unstoppable',
-          fallback: 'Unstoppable! Protect your streak.',
-        ),
-        context.tr(
-          'notification_card.streak_dont_lose',
-          args: [streak.toString()],
-          fallback: "Don't lose your {}-day progress!",
-        ),
-      ];
-      return streakTitles[hour % streakTitles.length];
+      return context.tr(
+        'notification_card.streak_protect',
+        args: [streak.toString()],
+        fallback: 'Save your {}-day streak',
+      );
     } else if (streak == 1 || streak == 2) {
-      final starterTitles = [
-        context.tr(
-          'notification_card.starter_on_roll',
-          fallback: 'You are on a roll!',
-        ),
-        context.tr(
-          'notification_card.starter_momentum',
-          fallback: 'Keep the momentum going!',
-        ),
-        context.tr(
-          'notification_card.starter_begun',
-          fallback: 'Your journey has just begun!',
-        ),
-      ];
-      return starterTitles[hour % starterTitles.length];
+      return context.tr(
+        'notification_card.starter_momentum',
+        fallback: 'Keep your momentum going!',
+      );
     }
 
     // Streak is 0
-    if (hour < 12) {
-      return context.tr(
-        'notification_card.morning_quest',
-        fallback: 'Morning Quest Ready!',
-      );
-    } else if (hour < 17) {
-      return context.tr(
-        'notification_card.afternoon_practice',
-        fallback: 'Afternoon Practice?',
-      );
-    } else if (hour < 21) {
-      return context.tr(
-        'notification_card.evening_boost',
-        fallback: 'Evening Knowledge Boost',
-      );
-    } else {
-      return context.tr(
-        'notification_card.night_owl',
-        fallback: 'Night Owl Training',
-      );
-    }
+    return context.tr(
+      'notification_card.morning_quest',
+      fallback: 'Never miss your daily quest!',
+    );
   }
 
   String _getDynamicSubtitle() {
     if (widget.streak >= 3) {
       return context.tr(
-        'notification_card.subtitle_streak',
-        fallback:
-            'Enable notifications so Owly can remind you to protect your streak.',
+        'notification_card.subtitle_streak_short',
+        fallback: 'Daily alert before midnight',
       );
     }
     return context.tr(
-      'notification_card.subtitle_default',
-      fallback:
-          'Turn on notifications so Owly can remind you to practice daily.',
+      'notification_card.subtitle_default_short',
+      fallback: 'Daily reminders at your best time',
     );
   }
 
@@ -225,239 +183,160 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
 
         return SizeTransition(
           sizeFactor: _animationController,
+          axisAlignment: 0.0,
           child: ScaleTransition(
             scale: _scaleAnimation,
             child: Padding(
-              padding: EdgeInsets.only(
-                left: 24.w,
-                right: 24.w,
-                top: 24.h,
-                bottom: 8.h,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 6.h),
               child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surface,
-                  borderRadius: BorderRadius.circular(24.r),
+                  color: isDark
+                      ? AppColors.slate900.withValues(alpha: 0.90)
+                      : Colors.white.withValues(alpha: 0.96),
+                  borderRadius: BorderRadius.circular(16.r),
                   border: Border.all(
                     color: IllustrationColors.warmOrange.withValues(
-                      alpha: 0.15,
+                      alpha: isDark ? 0.30 : 0.22,
                     ),
                     width: 1.0,
                   ),
                   boxShadow: [
                     BoxShadow(
                       color: IllustrationColors.warmOrange.withValues(
-                        alpha: 0.08,
+                        alpha: isDark ? 0.12 : 0.06,
                       ),
-                      blurRadius: 24.r,
-                      offset: const Offset(0, 8),
+                      blurRadius: 16.r,
+                      offset: const Offset(0, 3),
                     ),
                   ],
                 ),
-                child: Stack(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: EdgeInsets.all(20.r),
-                      child: Row(
+                    // Notification Icon with glowing tint
+                    Container(
+                      width: 32.r,
+                      height: 32.r,
+                      decoration: BoxDecoration(
+                        color: IllustrationColors.warmOrange.withValues(
+                          alpha: isDark ? 0.20 : 0.12,
+                        ),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Center(
+                        child: Icon(
+                          Icons.notifications_active_rounded,
+                          color: IllustrationColors.warmOrange,
+                          size: 16.r,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10.w),
+
+                    // Texts column (Mix 1: Crisp Punch, short & readable)
+                    Expanded(
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
                         children: [
-                          ExcludeSemantics(
-                            child: Container(
-                              width: 48.r,
-                              height: 48.r,
-                              decoration: BoxDecoration(
-                                color: const Color(
-                                  0xFFF97316,
-                                ).withValues(alpha: 0.15),
-                                shape: BoxShape.circle,
+                          Semantics(
+                            header: true,
+                            child: Text(
+                              title,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w800,
+                                color: isDark
+                                    ? Colors.white
+                                    : AppColors.slate900,
+                                height: 1.15,
                               ),
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.notifications_active_rounded,
-                                    color: IllustrationColors.warmOrange,
-                                    size: 24.r,
-                                  ),
-                                  PositionedDirectional(
-                                    top: 10.r,
-                                    end: 12.r,
-                                    child: Container(
-                                      width: 10.r,
-                                      height: 10.r,
-                                      decoration: BoxDecoration(
-                                        color: AppColors.red500,
-                                        shape: BoxShape.circle,
-                                        border: Border.all(
-                                          color: isDark
-                                              ? AppColors.slate800
-                                              : Colors.white,
-                                          width: 1.5.r,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
-                          SizedBox(width: 16.w),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.only(
-                                    end: 24.w,
-                                  ),
-                                  child: Semantics(
-                                    header: true,
-                                    child: Text(
-                                      title,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 16.sp,
-                                        fontWeight: FontWeight.w700,
-                                        color: isDark
-                                            ? Colors.white
-                                            : AppColors.slate900,
-                                      ),
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 4.h),
-                                Text(
-                                  subtitle,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w500,
-                                    color: isDark
-                                        ? Colors.white60
-                                        : Colors.black54,
-                                  ),
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                                SizedBox(height: 16.h),
-                                Row(
-                                  children: [
-                                    Expanded(
-                                      child: SizedBox(
-                                        height: 44.h,
-                                        child: ElevatedButton(
-                                          onPressed: _requestPermission,
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: const Color(
-                                              0xFFF97316,
-                                            ),
-                                            foregroundColor: Colors.white,
-                                            elevation: 0,
-                                            padding: EdgeInsets.zero,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(12.r),
-                                            ),
-                                          ),
-                                          child: Text(
-                                            context.tr(
-                                              'notification_card.remind_me',
-                                              fallback: 'Remind Me',
-                                            ),
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 14.sp,
-                                              fontWeight: FontWeight.w700,
-                                              letterSpacing: 0.5,
-                                            ),
-                                            maxLines: 1,
-                                            overflow: TextOverflow.ellipsis,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(width: 12.w),
-                                    Expanded(
-                                      child: SizedBox(
-                                        height: 44.h,
-                                        child: TextButton(
-                                          onPressed: _dismissCard,
-                                          style: TextButton.styleFrom(
-                                            foregroundColor: isDark
-                                                ? Colors.white70
-                                                : Colors.black54,
-                                            backgroundColor: isDark
-                                                ? Colors.white.withValues(
-                                                    alpha: 0.05,
-                                                  )
-                                                : Colors.black.withValues(
-                                                    alpha: 0.05,
-                                                  ),
-                                            padding: EdgeInsets.zero,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(12.r),
-                                            ),
-                                          ),
-                                          child: Text(
-                                            context.tr(
-                                              'notification_card.not_now',
-                                              fallback: 'Not Now',
-                                            ),
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 14.sp,
-                                              fontWeight: FontWeight.w700,
-                                              letterSpacing: 0.5,
-                                            ),
-                                            maxLines: 1,
-                                            overflow: TextOverflow.ellipsis,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
+                          SizedBox(height: 2.h),
+                          Text(
+                            subtitle,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w500,
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.65)
+                                  : AppColors.slate600,
+                              height: 1.1,
                             ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ],
                       ),
                     ),
-                    PositionedDirectional(
-                      top: 0,
-                      end: 0,
-                      child: Semantics(
-                        button: true,
-                        label: context.tr('common.close', fallback: 'Close'),
-                        child: GestureDetector(
-                          onTap: _dismissCard,
-                          behavior: HitTestBehavior.opaque,
-                          child: Container(
-                            // Fixed 48x48 invisible hit area anchored at the
-                            // card's corner; centering the original 24x24 glyph
-                            // inside it reproduces the exact same visual offset
-                            // (12,12) the design had, while satisfying the 48dp
-                            // minimum accessible touch target.
-                            width: 48.r,
-                            height: 48.r,
-                            alignment: Alignment.center,
-                            child: Container(
-                              padding: EdgeInsets.all(4.r),
-                              decoration: BoxDecoration(
-                                color: isDark
-                                    ? Colors.white.withValues(alpha: 0.1)
-                                    : Colors.black.withValues(alpha: 0.05),
-                                shape: BoxShape.circle,
+                    SizedBox(width: 8.w),
+
+                    // Remind Me Action Pill
+                    ScaleButton(
+                      onTap: _requestPermission,
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12.w,
+                          vertical: 7.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: IllustrationColors.warmOrange,
+                          borderRadius: BorderRadius.circular(12.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: IllustrationColors.warmOrange.withValues(
+                                alpha: 0.35,
                               ),
-                              child: Icon(
-                                Icons.close_rounded,
-                                size: 16.r,
-                                color: isDark ? Colors.white54 : Colors.black54,
-                              ),
+                              blurRadius: 6,
+                              offset: const Offset(0, 2),
                             ),
+                          ],
+                        ),
+                        child: Text(
+                          context.tr(
+                            'notification_card.remind_me',
+                            fallback: 'Remind Me',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.white,
+                            letterSpacing: 0.3,
+                            height: 1.1,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 4.w),
+
+                    // Accessible Dismiss (✕)
+                    Semantics(
+                      button: true,
+                      label: context.tr('common.close', fallback: 'Close'),
+                      child: GestureDetector(
+                        onTap: _dismissCard,
+                        behavior: HitTestBehavior.opaque,
+                        child: Container(
+                          width: 28.r,
+                          height: 28.r,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: isDark
+                                ? Colors.white.withValues(alpha: 0.08)
+                                : Colors.black.withValues(alpha: 0.05),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.close_rounded,
+                            size: 14.r,
+                            color: isDark ? Colors.white60 : AppColors.slate500,
                           ),
                         ),
                       ),

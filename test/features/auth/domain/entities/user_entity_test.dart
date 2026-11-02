@@ -107,5 +107,45 @@ void main() {
       expect(user.getSafeDisplayName(fallback: 'Champion'), 'Champion');
       expect(user.safeDisplayName, 'Vowl Learner');
     });
+
+    test('isTodayActive correctly evaluates activity from dailyXpHistory and login streak', () {
+      final now = DateTime.now();
+      final todayKey =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+      final yesterdayKey =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${(now.day - 1).toString().padLeft(2, '0')}';
+
+      // 1. Inactive user with empty history
+      const inactiveUser = UserEntity(
+        id: 'inact',
+        email: 'inact@vowl.app',
+      );
+      expect(inactiveUser.isTodayActive, false);
+
+      // 2. Active user with XP logged today
+      final activeXpUser = UserEntity(
+        id: 'act_xp',
+        email: 'act@vowl.app',
+        dailyXpHistory: {todayKey: 50},
+      );
+      expect(activeXpUser.isTodayActive, true);
+
+      // 3. Inactive user with only yesterday XP
+      final yesterdayXpUser = UserEntity(
+        id: 'yest_xp',
+        email: 'yest@vowl.app',
+        dailyXpHistory: {yesterdayKey: 50},
+      );
+      expect(yesterdayXpUser.isTodayActive, false);
+
+      // 4. Active user logged in today with active streak
+      final loggedInStreakUser = UserEntity(
+        id: 'login_streak',
+        email: 'login@vowl.app',
+        lastLoginDate: now,
+        currentStreak: 4,
+      );
+      expect(loggedInStreakUser.isTodayActive, true);
+    });
   });
 }

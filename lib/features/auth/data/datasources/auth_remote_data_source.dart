@@ -119,6 +119,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       map.remove('fcmToken');
     }
     map['lastRewardTimestamp'] = FieldValue.serverTimestamp();
+    map['timeZoneOffsetMinutes'] = DateTime.now().timeZoneOffset.inMinutes;
     for (int attempt = 1; attempt <= 3; attempt++) {
       try {
         await _firestore
@@ -313,6 +314,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       try {
         final map = newUser.toMap();
         map['lastRewardTimestamp'] = FieldValue.serverTimestamp();
+        map['timeZoneOffsetMinutes'] = DateTime.now().timeZoneOffset.inMinutes;
         await userDocRef.set(map, SetOptions(merge: true));
       } catch (e, stack) {
         di.sl<AppLogger>().error(
@@ -333,7 +335,9 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
           existingName.toLowerCase() == 'unknown' ||
           existingName.toLowerCase() == 'vowl learner';
 
-      final updates = <String, dynamic>{};
+      final updates = <String, dynamic>{
+        'timeZoneOffsetMinutes': DateTime.now().timeZoneOffset.inMinutes,
+      };
       if (isExistingGeneric && resolvedName != 'Vowl Learner') {
         updates['displayName'] = resolvedName;
       }

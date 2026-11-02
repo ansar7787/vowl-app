@@ -21,6 +21,8 @@ class LeaderboardRankTile extends StatelessWidget {
   final int rank;
   final bool isMe;
   final bool isKids;
+  final bool isWeekly;
+  final VoidCallback? onTap;
 
   const LeaderboardRankTile({
     super.key,
@@ -28,6 +30,8 @@ class LeaderboardRankTile extends StatelessWidget {
     required this.rank,
     required this.isMe,
     this.isKids = false,
+    this.isWeekly = true,
+    this.onTap,
   });
 
   @override
@@ -36,10 +40,14 @@ class LeaderboardRankTile extends StatelessWidget {
     final levelsCleared = isKids
         ? user.kidsTotalLevelsCompleted
         : user.totalLevelsCompleted;
-    final score = isKids ? user.kidsCoins : user.totalExp;
+    final score = isKids
+        ? user.kidsTotalLevelsCompleted
+        : (isWeekly ? user.currentWeeklyExp : user.totalExp);
     final scoreLabel = isKids
-        ? context.tr('leaderboard.coins', fallback: 'Coins')
-        : context.tr('leaderboard.xp', fallback: 'XP');
+        ? context.tr('leaderboard.levels', fallback: 'Levels')
+        : (isWeekly
+            ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
+            : context.tr('leaderboard.xp', fallback: 'XP'));
     final tierColor = rank <= 5
         ? AppColors.indigo500
         : rank <= 10
@@ -61,7 +69,7 @@ class LeaderboardRankTile extends StatelessWidget {
           '$levelsCleared levels cleared.'
           '${isMe ? " ${context.tr('leaderboard.this_is_you', fallback: 'This is you!')}" : ""}',
       child: GlassTile(
-        padding: EdgeInsets.symmetric(horizontal: 14.r, vertical: 12.r),
+        padding: EdgeInsets.zero,
         borderRadius: BorderRadius.circular(18.r),
         // PERF: blur: 0 disables BackdropFilter in the scroll list.
         // With 50+ tiles, each BackdropFilter creates an offscreen render
@@ -82,8 +90,15 @@ class LeaderboardRankTile extends StatelessWidget {
                 : AppColors.slate800)
             : Colors.white,
         borderWidth: isMe ? 1.5 : 1,
-        child: Row(
-          children: [
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: BorderRadius.circular(18.r),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 14.r, vertical: 12.r),
+              child: Row(
+                children: [
             // Rank number & Change Indicator
             SizedBox(
               width: 44.w,
@@ -235,7 +250,10 @@ class LeaderboardRankTile extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ),
+  ),
+),
+);
   }
 
   Widget _buildRankChangeIndicator(int previousRank, int currentRank) {

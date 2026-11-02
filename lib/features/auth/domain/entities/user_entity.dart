@@ -226,6 +226,48 @@ class UserEntity {
   /// Timestamp of the most recent kids game played.
   final DateTime? kidsLastGameDate;
 
+  // ---------------------------------------------------------------------------
+  // Viral Social & Ambassador Engine (persisted)
+  // ---------------------------------------------------------------------------
+  /// Unique viral referral code assigned to user (e.g. 'VOWL-7K9A').
+  final String? referralCode;
+
+  /// Referral code or user id of the ambassador who invited this user.
+  final String? referredBy;
+
+  /// Whether this user has already entered an invite code and claimed onboarding bonus.
+  final bool hasClaimedReferral;
+
+  /// Lifetime count of friends who joined via this user's code and completed Level 1.
+  final int totalReferralsCount;
+
+  /// Monthly count of completed referrals for the current Monthly Ambassador Cup.
+  final int monthlyReferralsCount;
+
+  /// Year-Month key (e.g. '2026-11') tracking the active Ambassador Cup cycle.
+  final String? currentReferralMonthKey;
+
+  /// Month keys (e.g. ['2026-10']) for which Ambassador Cup podium rewards have been claimed.
+  final List<String> claimedAmbassadorRewardMonthKeys;
+
+  /// Week keys (e.g. ['2026-W44']) for which Sunday Weekly Leaderboard rewards have been claimed.
+  final List<String> claimedWeeklyRewardWeekKeys;
+
+  // ---------------------------------------------------------------------------
+  // 1v1 PvP Arena & Duels (persisted)
+  // ---------------------------------------------------------------------------
+  /// Number of 1v1 PvP staking duels played today.
+  final int dailyDuelsPlayedToday;
+
+  /// Timestamp of the last 1v1 PvP staking duel played.
+  final DateTime? lastDuelDate;
+
+  /// Total count of 1v1 PvP staking duel victories.
+  final int duelWins;
+
+  /// Total count of 1v1 PvP staking duel losses.
+  final int duelLosses;
+
   /// Creates a [UserEntity] instance.
   const UserEntity({
     required this.id,
@@ -289,6 +331,18 @@ class UserEntity {
     this.kidsLastFeedTime,
     this.kidsGamesPlayedToday = 0,
     this.kidsLastGameDate,
+    this.referralCode,
+    this.referredBy,
+    this.hasClaimedReferral = false,
+    this.totalReferralsCount = 0,
+    this.monthlyReferralsCount = 0,
+    this.currentReferralMonthKey,
+    this.claimedAmbassadorRewardMonthKeys = const [],
+    this.claimedWeeklyRewardWeekKeys = const [],
+    this.dailyDuelsPlayedToday = 0,
+    this.lastDuelDate,
+    this.duelWins = 0,
+    this.duelLosses = 0,
   });
 
   // ---------------------------------------------------------------------------
@@ -349,6 +403,41 @@ class UserEntity {
     return last.year != now.year ||
         last.month != now.month ||
         last.day != now.day;
+  }
+
+  /// Whether the user has logged learning activity or secured their daily streak today.
+  bool get isTodayActive {
+    final now = DateTime.now();
+    final todayKey =
+        '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+    if ((dailyXpHistory[todayKey] ?? 0) > 0) {
+      return true;
+    }
+    if (lastLoginDate != null &&
+        lastLoginDate!.year == now.year &&
+        lastLoginDate!.month == now.month &&
+        lastLoginDate!.day == now.day &&
+        currentStreak > 0) {
+      return true;
+    }
+    return false;
+  }
+
+  /// Computes the total XP earned in the current ISO week (Monday through Sunday)
+  /// by summing entries in [dailyXpHistory] matching the dates of this week.
+  /// Automatically rolls over to 0 on Monday 00:00 UTC without database wipes.
+  int get currentWeeklyExp {
+    if (dailyXpHistory.isEmpty) return 0;
+    final now = DateTime.now().toUtc();
+    final daysSinceMonday = (now.weekday - 1) % 7;
+    final monday = DateTime.utc(now.year, now.month, now.day).subtract(Duration(days: daysSinceMonday));
+    var sum = 0;
+    for (int i = 0; i < 7; i++) {
+      final day = monday.add(Duration(days: i));
+      final key = '${day.year}-${day.month.toString().padLeft(2, '0')}-${day.day.toString().padLeft(2, '0')}';
+      sum += dailyXpHistory[key] ?? 0;
+    }
+    return sum;
   }
 
   // ---------------------------------------------------------------------------
@@ -444,6 +533,25 @@ class UserEntity {
   /// Convenience getter returning [getSafeDisplayName] with the default fallback.
   String get safeDisplayName => getSafeDisplayName();
 
+  /// Effective monthly referrals count, automatically zeroing if the month rolled over.
+  int get activeMonthlyReferralsCount {
+    final now = DateTime.now().toUtc();
+    final thisMonthKey = '${now.year}-${now.month.toString().padLeft(2, '0')}';
+    if (currentReferralMonthKey == thisMonthKey) {
+      return monthlyReferralsCount;
+    }
+    return 0;
+  }
+
+  /// Total 1v1 PvP staking duels played.
+  int get totalDuelsPlayed => duelWins + duelLosses;
+
+  /// Win rate percentage in 1v1 PvP staking duels (0.0 to 100.0).
+  double get duelWinRate {
+    if (totalDuelsPlayed == 0) return 0.0;
+    return (duelWins / totalDuelsPlayed) * 100.0;
+  }
+
   // ---------------------------------------------------------------------------
   // copyWith — supports explicit null to clear optional fields
   // ---------------------------------------------------------------------------
@@ -489,6 +597,14 @@ class UserEntity {
     int? kidsRoomLevel,
     String? kidsRoomTheme,
     int? kidsGamesPlayedToday,
+    bool? hasClaimedReferral,
+    int? totalReferralsCount,
+    int? monthlyReferralsCount,
+    List<String>? claimedAmbassadorRewardMonthKeys,
+    List<String>? claimedWeeklyRewardWeekKeys,
+    int? dailyDuelsPlayedToday,
+    int? duelWins,
+    int? duelLosses,
 
     // Nullable fields use Object? + _absent sentinel so callers can pass null
     // explicitly to clear the value, or omit entirely to preserve existing.
@@ -511,6 +627,10 @@ class UserEntity {
     Object? kidsLastCareDate = _absent,
     Object? kidsLastFeedTime = _absent,
     Object? kidsLastGameDate = _absent,
+    Object? referralCode = _absent,
+    Object? referredBy = _absent,
+    Object? currentReferralMonthKey = _absent,
+    Object? lastDuelDate = _absent,
   }) {
     return UserEntity(
       id: id,
@@ -557,6 +677,16 @@ class UserEntity {
       kidsRoomLevel: kidsRoomLevel ?? this.kidsRoomLevel,
       kidsRoomTheme: kidsRoomTheme ?? this.kidsRoomTheme,
       kidsGamesPlayedToday: kidsGamesPlayedToday ?? this.kidsGamesPlayedToday,
+      hasClaimedReferral: hasClaimedReferral ?? this.hasClaimedReferral,
+      totalReferralsCount: totalReferralsCount ?? this.totalReferralsCount,
+      monthlyReferralsCount: monthlyReferralsCount ?? this.monthlyReferralsCount,
+      claimedAmbassadorRewardMonthKeys: claimedAmbassadorRewardMonthKeys ??
+          this.claimedAmbassadorRewardMonthKeys,
+      claimedWeeklyRewardWeekKeys:
+          claimedWeeklyRewardWeekKeys ?? this.claimedWeeklyRewardWeekKeys,
+      dailyDuelsPlayedToday: dailyDuelsPlayedToday ?? this.dailyDuelsPlayedToday,
+      duelWins: duelWins ?? this.duelWins,
+      duelLosses: duelLosses ?? this.duelLosses,
       // Nullable: sentinel pattern — explicit null clears; absent preserves.
       displayName: identical(displayName, _absent)
           ? this.displayName
@@ -615,6 +745,18 @@ class UserEntity {
       kidsLastGameDate: identical(kidsLastGameDate, _absent)
           ? this.kidsLastGameDate
           : kidsLastGameDate as DateTime?,
+      referralCode: identical(referralCode, _absent)
+          ? this.referralCode
+          : referralCode as String?,
+      referredBy: identical(referredBy, _absent)
+          ? this.referredBy
+          : referredBy as String?,
+      currentReferralMonthKey: identical(currentReferralMonthKey, _absent)
+          ? this.currentReferralMonthKey
+          : currentReferralMonthKey as String?,
+      lastDuelDate: identical(lastDuelDate, _absent)
+          ? this.lastDuelDate
+          : lastDuelDate as DateTime?,
     );
   }
 
@@ -686,7 +828,23 @@ class UserEntity {
         other.kidsCareStreak == kidsCareStreak &&
         other.kidsRoomLevel == kidsRoomLevel &&
         other.kidsRoomTheme == kidsRoomTheme &&
-        other.kidsLastFeedTime == kidsLastFeedTime;
+        other.kidsLastFeedTime == kidsLastFeedTime &&
+        other.kidsGamesPlayedToday == kidsGamesPlayedToday &&
+        other.kidsLastGameDate == kidsLastGameDate &&
+        other.referralCode == referralCode &&
+        other.referredBy == referredBy &&
+        other.hasClaimedReferral == hasClaimedReferral &&
+        other.totalReferralsCount == totalReferralsCount &&
+        other.monthlyReferralsCount == monthlyReferralsCount &&
+        other.currentReferralMonthKey == currentReferralMonthKey &&
+        _listEq.equals(other.claimedAmbassadorRewardMonthKeys,
+            claimedAmbassadorRewardMonthKeys) &&
+        _listEq.equals(
+            other.claimedWeeklyRewardWeekKeys, claimedWeeklyRewardWeekKeys) &&
+        other.dailyDuelsPlayedToday == dailyDuelsPlayedToday &&
+        other.lastDuelDate == lastDuelDate &&
+        other.duelWins == duelWins &&
+        other.duelLosses == duelLosses;
   }
 
   @override
@@ -758,6 +916,22 @@ class UserEntity {
       kidsRoomTheme,
       kidsLastFeedTime,
     ]);
-    return Object.hash(h1, h2, h3);
+    final h4 = Object.hashAll([
+      kidsGamesPlayedToday,
+      kidsLastGameDate,
+      referralCode,
+      referredBy,
+      hasClaimedReferral,
+      totalReferralsCount,
+      monthlyReferralsCount,
+      currentReferralMonthKey,
+      _listEq.hash(claimedAmbassadorRewardMonthKeys),
+      _listEq.hash(claimedWeeklyRewardWeekKeys),
+      dailyDuelsPlayedToday,
+      lastDuelDate,
+      duelWins,
+      duelLosses,
+    ]);
+    return Object.hash(h1, h2, h3, h4);
   }
 }

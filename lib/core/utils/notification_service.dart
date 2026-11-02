@@ -463,6 +463,7 @@ class NotificationService {
 
       await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
         'fcmToken': token,
+        'timeZoneOffsetMinutes': DateTime.now().timeZoneOffset.inMinutes,
       }, SetOptions(merge: true));
 
       if (kDebugMode) {
@@ -1017,6 +1018,90 @@ class NotificationService {
     return scheduledDate;
   }
 
+  /// SCHEDULES SUNDAY LEAGUE RESET NOTIFICATION (Sunday 8:00 PM)
+  ///
+  /// Alerts players 4 hours before weekly leaderboard ranks lock.
+  /// Timing: Sundays at 8:00 PM (20:00) local time.
+  Future<void> scheduleSundayLeagueResetReminder() async {
+    final enabled = await _areNotificationsEnabled;
+    if (!enabled) {
+      await _localNotifications.cancel(id: leaderboardNotificationId);
+      return;
+    }
+
+    await _localNotifications.cancel(id: leaderboardNotificationId);
+
+    const AndroidNotificationDetails androidDetails =
+        AndroidNotificationDetails(
+          weeklyChannelId,
+          'Weekly League Alerts',
+          channelDescription: 'Sunday league reset reminders and podium rewards',
+          importance: Importance.high,
+          priority: Priority.high,
+        );
+
+    const DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
+      presentAlert: true,
+      presentBadge: true,
+      presentSound: true,
+    );
+
+    const NotificationDetails platformDetails = NotificationDetails(
+      android: androidDetails,
+      iOS: iosDetails,
+    );
+
+    bool useExact = true;
+    if (Platform.isAndroid) {
+      useExact = await Permission.scheduleExactAlarm.isGranted;
+    }
+
+    final location = _currentLocation;
+
+    await _localNotifications.zonedSchedule(
+      id: leaderboardNotificationId,
+      title: _t(
+        'notifications.league_reset_title',
+        fallback: 'Weekly League Reset: 4 Hours Left! \u{1F3C6}',
+      ),
+      body: _t(
+        'notifications.league_reset_body',
+        fallback: 'Podium spots earn up to 3 Days Free VIP! Secure your rank now.',
+      ),
+      scheduledDate: _nextInstanceOfSundayEvening(location),
+      notificationDetails: platformDetails,
+      androidScheduleMode: useExact
+          ? AndroidScheduleMode.exactAllowWhileIdle
+          : AndroidScheduleMode.inexactAllowWhileIdle,
+      matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime,
+      payload: AppRouter.leaderboardRoute,
+    );
+
+    if (kDebugMode) {
+      debugPrint('Scheduled Sunday league reset reminder for Sundays at 8:00 PM');
+    }
+  }
+
+  /// Returns the next Sunday at 8:00 PM (20:00) local time.
+  tz.TZDateTime _nextInstanceOfSundayEvening(tz.Location location) {
+    final tz.TZDateTime now = tz.TZDateTime.now(location);
+    tz.TZDateTime scheduledDate = tz.TZDateTime(
+      location,
+      now.year,
+      now.month,
+      now.day,
+      20, // 8 PM
+      0,
+    );
+    while (scheduledDate.weekday != DateTime.sunday) {
+      scheduledDate = scheduledDate.add(const Duration(days: 1));
+    }
+    if (scheduledDate.isBefore(now)) {
+      scheduledDate = scheduledDate.add(const Duration(days: 7));
+    }
+    return scheduledDate;
+  }
+
   /// SCHEDULES A LEADERBOARD CHALLENGE NOTIFICATION
   ///
   /// Called after a game session completes to encourage competitive play.
@@ -1241,6 +1326,7 @@ class NotificationService {
       }
     } else {
       await scheduleWeeklyMotivation();
+      await scheduleSundayLeagueResetReminder();
       if (kDebugMode) {
         debugPrint('NotificationService: Notifications re-enabled by user.');
       }

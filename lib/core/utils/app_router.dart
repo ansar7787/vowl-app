@@ -59,6 +59,8 @@ class AppRouter {
   static const String questSequenceRoute = '/quest-sequence';
   static const String scanAndLearnRoute = '/scan-and-learn';
   static const String photoVocabularyRoute = '/photo-vocabulary';
+  static const String referralRoute = '/referral';
+  static const String arenaRoute = '/arena';
 
   // Daily Words
   static const String dailyWordsRoute = DailyWordsRoutes.dailyWordsRoute;

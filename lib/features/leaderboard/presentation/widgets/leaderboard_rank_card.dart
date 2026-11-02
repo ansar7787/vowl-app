@@ -29,9 +29,12 @@ class LeaderboardRankCard extends StatelessWidget {
     super.key,
     required this.allUsers,
     this.isKids = false,
+    this.isWeekly = true,
     this.collapseProgress = 0.0,
     this.onTap,
   });
+
+  final bool isWeekly;
 
   @override
   Widget build(BuildContext context) {

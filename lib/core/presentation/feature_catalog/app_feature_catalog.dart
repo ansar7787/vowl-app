@@ -51,6 +51,53 @@ class AppFeatureCatalog {
   AppFeatureCatalog._();
 
   static const List<AppFeatureItem> allFeatures = [
+    // ── 0. High-Priority Social & PvP Engines ──────────────────────────────
+    AppFeatureItem(
+      id: 'pvp_staking_arena',
+      title: '1v1 Staking Arena',
+      subtitle: 'Live 30-coin English duels, instant 3-second smart matching & rematches',
+      badge: '30🪙 Duel',
+      icon: LucideIcons.swords,
+      accentColor: AppColors.amber500,
+      category: FeatureCategory.gaming,
+      route: AppRouter.leaderboardRoute,
+      isHighlight: true,
+      keywords: [
+        'arena',
+        'pvp',
+        'duel',
+        '1v1',
+        'staking',
+        'stake',
+        'challenge',
+        'rival',
+        'quick match',
+        'double or nothing',
+        'rematch',
+      ],
+    ),
+    AppFeatureItem(
+      id: 'ambassador_referral_hub',
+      title: 'Ambassador Program & Referral Hub',
+      subtitle: 'Invite friends to earn 100 Bonus Coins, 1-Day VIP trials & Monthly Cup prizes',
+      badge: 'Free VIP & Coins',
+      icon: LucideIcons.gift,
+      accentColor: AppColors.indigo500,
+      category: FeatureCategory.gaming,
+      route: AppRouter.referralRoute,
+      isHighlight: true,
+      keywords: [
+        'referral',
+        'invite',
+        'friends',
+        'ambassador',
+        'earn coins',
+        'free vip',
+        'code',
+        'bonus',
+        'monthly cup',
+      ],
+    ),
     // ── 1. 100+ Games across 9 Adult Pillars ────────────────────────────────
     AppFeatureItem(
       id: 'games_hub',

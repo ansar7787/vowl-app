@@ -1,0 +1,226 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+
+class ReferralClaimDialog extends StatefulWidget {
+  final Function(String code) onClaim;
+  final bool isLoading;
+  final String? errorMessage;
+  final String? initialCode;
+
+  const ReferralClaimDialog({
+    super.key,
+    required this.onClaim,
+    this.isLoading = false,
+    this.errorMessage,
+    this.initialCode,
+  });
+
+  @override
+  State<ReferralClaimDialog> createState() => _ReferralClaimDialogState();
+}
+
+class _ReferralClaimDialogState extends State<ReferralClaimDialog> {
+  late final TextEditingController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController(text: widget.initialCode ?? '');
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppColorTokens>();
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    final surfaceColor = isDark ? AppColors.midnightSurface : (tokens?.surface ?? Colors.white);
+    final borderColor = isDark ? AppColors.slate800 : (tokens?.border ?? const Color(0xFFE2E8F0));
+    final textPrimary = isDark ? Colors.white : (tokens?.textPrimary ?? const Color(0xFF0F172A));
+    final textSecondary = isDark ? AppColors.slate400 : (tokens?.textSecondary ?? const Color(0xFF64748B));
+
+    return Dialog(
+      backgroundColor: surfaceColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.r),
+        side: BorderSide(color: borderColor, width: 1.w),
+      ),
+      insetPadding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(22.w),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+            // Icon & Header
+            Center(
+              child: Container(
+                width: 48.w,
+                height: 48.w,
+                decoration: BoxDecoration(
+                  color: AppColors.indigo500.withValues(alpha: 0.15),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  LucideIcons.gift,
+                  size: 24.sp,
+                  color: AppColors.indigo500,
+                ),
+              ),
+            ),
+            SizedBox(height: 14.h),
+            Text(
+              'Enter Invite Code',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 17.sp,
+                fontWeight: FontWeight.w700,
+                color: textPrimary,
+              ),
+            ),
+            SizedBox(height: 6.h),
+            Text(
+              'Enter a friend\'s ambassador code to unlock 100 Bonus Coins and a 1-Day VIP Trial.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 12.sp,
+                color: textSecondary,
+              ),
+            ),
+            SizedBox(height: 18.h),
+
+            // Input field
+            TextField(
+              controller: _controller,
+              textCapitalization: TextCapitalization.characters,
+              autocorrect: false,
+              enableSuggestions: false,
+              style: TextStyle(
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w700,
+                letterSpacing: 1.2,
+                color: textPrimary,
+              ),
+              decoration: InputDecoration(
+                hintText: 'e.g. VOWL-ALEX892',
+                hintStyle: TextStyle(
+                  fontSize: 14.sp,
+                  letterSpacing: 0.5,
+                  color: isDark ? AppColors.slate600 : const Color(0xFF94A3B8),
+                ),
+                prefixIcon: Icon(
+                  LucideIcons.tag,
+                  size: 16.sp,
+                  color: AppColors.indigo500,
+                ),
+                filled: true,
+                fillColor: isDark ? const Color(0xFF070A12) : const Color(0xFFF8FAFC),
+                contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12.r),
+                  borderSide: BorderSide(color: borderColor),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12.r),
+                  borderSide: BorderSide(color: borderColor),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12.r),
+                  borderSide: BorderSide(color: AppColors.indigo500, width: 1.5.w),
+                ),
+              ),
+            ),
+
+            if (widget.errorMessage != null) ...[
+              SizedBox(height: 10.h),
+              Text(
+                widget.errorMessage!,
+                style: TextStyle(
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.rose500,
+                ),
+              ),
+            ],
+
+            SizedBox(height: 20.h),
+
+            // Action buttons
+            Row(
+              children: [
+                Expanded(
+                  child: TextButton(
+                    onPressed: widget.isLoading ? null : () => Navigator.of(context).pop(),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.symmetric(vertical: 12.h),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                      ),
+                    ),
+                    child: Text(
+                      'Cancel',
+                      style: TextStyle(
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w600,
+                        color: textSecondary,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 10.w),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: widget.isLoading
+                        ? null
+                        : () {
+                            final code = _controller.text.trim();
+                            if (code.isNotEmpty) {
+                              widget.onClaim(code);
+                            }
+                          },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.indigo500,
+                      foregroundColor: Colors.white,
+                      padding: EdgeInsets.symmetric(vertical: 12.h),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                      ),
+                      elevation: 0,
+                    ),
+                    child: widget.isLoading
+                        ? SizedBox(
+                            width: 18.w,
+                            height: 18.w,
+                            child: const CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: Colors.white,
+                            ),
+                          )
+                        : Text(
+                            'Claim Reward',
+                            style: TextStyle(
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+}
+

@@ -17,6 +17,10 @@ Widget _wrap(
     designSize: const Size(390, 844),
     minTextAdapt: true,
     builder: (context, _) => MaterialApp(
+      theme: ThemeData(
+        useMaterial3: true,
+        splashFactory: InkRipple.splashFactory,
+      ),
       home: MediaQuery(
         data: MediaQueryData(
           size: size,

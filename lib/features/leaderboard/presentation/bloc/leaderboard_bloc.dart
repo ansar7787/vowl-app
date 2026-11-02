@@ -39,24 +39,22 @@ class LeaderboardBloc extends Bloc<LeaderboardEvent, LeaderboardState> {
               final aLevels = a.kidsTotalLevelsCompleted;
               final bLevels = b.kidsTotalLevelsCompleted;
               if (bLevels != aLevels) return bLevels.compareTo(aLevels);
-              if (b.kidsCoins != a.kidsCoins) {
-                return b.kidsCoins.compareTo(a.kidsCoins);
-              }
               if (b.currentStreak != a.currentStreak) {
                 return b.currentStreak.compareTo(a.currentStreak);
+              }
+              return b.kidsCoins.compareTo(a.kidsCoins);
+            } else {
+              // Default to Weekly XP ranking with daily streak as primary tie-breaker
+              final aWeekly = a.currentWeeklyExp;
+              final bWeekly = b.currentWeeklyExp;
+              if (bWeekly != aWeekly) return bWeekly.compareTo(aWeekly);
+              if (b.currentStreak != a.currentStreak) {
+                return b.currentStreak.compareTo(a.currentStreak);
+              }
+              if (b.totalLevelsCompleted != a.totalLevelsCompleted) {
+                return b.totalLevelsCompleted.compareTo(a.totalLevelsCompleted);
               }
               return b.totalExp.compareTo(a.totalExp);
-            } else {
-              final aLevels = a.totalLevelsCompleted;
-              final bLevels = b.totalLevelsCompleted;
-              if (bLevels != aLevels) return bLevels.compareTo(aLevels);
-              if (b.totalExp != a.totalExp) {
-                return b.totalExp.compareTo(a.totalExp);
-              }
-              if (b.currentStreak != a.currentStreak) {
-                return b.currentStreak.compareTo(a.currentStreak);
-              }
-              return b.coins.compareTo(a.coins);
             }
           });
 

@@ -428,7 +428,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
     emit(lockedState);
 
     if (event.isCorrect) {
-      soundService.playCorrect();
+      soundService.playCorrect(comboStep: s.currentIndex + 1);
       hapticService.success();
     } else {
       soundService.playWrong();

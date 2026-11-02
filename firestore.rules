@@ -58,6 +58,18 @@ service cloud.firestore {
     //   - kidsEquippedFurniture: map (optional) - equipped furniture map
     //   - keys / goldenKeys: int (optional, default 0) - keys count
     //   - lastRewardTimestamp: timestamp (optional) - rate limit timestamp
+    //   - referralCode: string (optional, 6-16 chars) - user's own viral referral code
+    //   - referredBy: string (optional, 6-16 chars) - code of the ambassador who referred user
+    //   - hasClaimedReferral: bool (optional, default false) - referral welcome bonus claimed flag
+    //   - totalReferralsCount: int (optional, default 0) - lifetime successful referral conversions
+    //   - monthlyReferralsCount: int (optional, default 0) - active month referral count
+    //   - currentReferralMonthKey: string (optional, e.g. '2026-11') - ambassador tracking month
+    //   - claimedAmbassadorRewardMonthKeys: list (optional) - list of claimed month keys
+    //   - claimedWeeklyRewardWeekKeys: list (optional) - list of claimed week keys
+    //   - dailyDuelsPlayedToday: int (optional, default 0) - 1v1 staking duels played today
+    //   - lastDuelDate: timestamp (optional) - timestamp of last 1v1 staking duel played
+    //   - duelWins: int (optional, default 0) - lifetime 1v1 staking duel victories
+    //   - duelLosses: int (optional, default 0) - lifetime 1v1 staking duel defeats
     //
     // Subcollection: users/{userId}/errorJournal/{errorId}
     // Fields:
@@ -68,6 +80,48 @@ service cloud.firestore {
     //   - level: dynamic
     //   - options: list (< 20 items)
     //   - timestamp: timestamp (server timestamp required)
+    //
+    // Collection: referrals/{referralCode}
+    // Document ID: {referralCode} (e.g. 'VOWL-7K9A', uppercase alphanumeric with hyphens, 6-16 chars)
+    // Fields:
+    //   - code: string (required, 6-16 chars) - referral code matching doc id
+    //   - ownerId: string (required) - Firebase Auth UID of code owner
+    //   - ownerName: string (required, <= 100 chars) - ambassador display name
+    //   - ownerPhotoUrl: string (optional, <= 1000 chars) - ambassador photo URL
+    //   - createdAt: timestamp (required) - creation timestamp
+    //   - successfulCount: int (required, default 0) - total friends completed level 1
+    //   - monthlyCount: int (required, default 0) - monthly friends completed level 1
+    //   - currentMonthKey: string (required, e.g. '2026-11') - active ambassador cup month
+    //   - lastReferralTimestamp: timestamp (optional) - last friend conversion timestamp
+    //
+    // Collection: arena_rooms/{roomCode}
+    // Document ID: {roomCode} (e.g. 'VOWL-DUEL-882', uppercase alphanumeric with hyphens, 6-20 chars)
+    // Fields:
+    //   - roomCode / code: string (optional, <= 20 chars)
+    //   - hostId: string (required) - host user UID
+    //   - hostName: string (optional, <= 100 chars)
+    //   - hostPhotoUrl: string (optional, <= 1000 chars)
+    //   - guestId: string (optional) - guest user UID
+    //   - guestName: string (optional, <= 100 chars)
+    //   - guestPhotoUrl: string (optional, <= 1000 chars)
+    //   - stake: int (required, must be 30) - 1v1 staking entry fee
+    //   - status: string (optional, <= 30 chars, e.g. 'waiting', 'active', 'completed', 'cancelled')
+    //   - createdAt: timestamp (required) - room creation timestamp
+    //   - updatedAt: timestamp (optional)
+    //   - hostScore: int (optional)
+    //   - guestScore: int (optional)
+    //   - hostFinished: bool (optional)
+    //   - guestFinished: bool (optional)
+    //   - winnerId: string (optional)
+    //   - questions: list (optional, <= 20 items)
+    //
+    // Collection: arena_queue/{queueId}
+    // Document ID: {queueId} (e.g. unique ticket ID or user UID)
+    // Fields:
+    //   - userId: string (required) - Firebase Auth UID of queued player
+    //   - displayName: string (optional, <= 100 chars) - challenger display name
+    //   - photoUrl: string (optional, <= 1000 chars) - challenger photo URL
+    //   - createdAt: timestamp (required) - server timestamp of queue entry
     //
     // Collection: metadata/{cacheDoc}
     //   - leaderboard_cache / kids_leaderboard_cache: precomputed top users
@@ -95,12 +149,93 @@ service cloud.firestore {
         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('isAdmin', false) == true;
     }
 
+    // Base expiration timestamp for calculating VIP extensions
+    function baseExpiryTime() {
+      return ('premiumExpiryDate' in resource.data) && (resource.data.premiumExpiryDate is timestamp) && resource.data.premiumExpiryDate > request.time
+        ? resource.data.premiumExpiryDate
+        : request.time;
+    }
+
+    // Validates legitimate in-app VIP reward claims (Referral trial, Weekly reward, Ambassador Cup)
+    function isLegitimatePremiumRewardClaim() {
+      return request.resource.data.get('premiumExpiryDate', null) is timestamp
+        && request.resource.data.premiumExpiryDate >= request.time
+        && (
+          // 1. Referral Onboarding Bonus: 1-Day VIP Trial (max 2 days buffer)
+          (
+            resource.data.get('hasClaimedReferral', false) == false
+            && request.resource.data.get('hasClaimedReferral', false) == true
+            && request.resource.data.premiumExpiryDate <= baseExpiryTime() + duration.value(2, 'd')
+          )
+          // 2. Sunday Weekly Leaderboard Reward: max 3 days extension (4 days buffer)
+          || (
+            request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedWeeklyRewardWeekKeys'])
+            && request.resource.data.get('claimedWeeklyRewardWeekKeys', []) is list
+            && request.resource.data.get('claimedWeeklyRewardWeekKeys', []).size() == resource.data.get('claimedWeeklyRewardWeekKeys', []).size() + 1
+            && request.resource.data.premiumExpiryDate <= baseExpiryTime() + duration.value(4, 'd')
+          )
+          // 3. Monthly Ambassador Cup Reward: max 31 days extension (32 days buffer)
+          || (
+            request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedAmbassadorRewardMonthKeys'])
+            && request.resource.data.get('claimedAmbassadorRewardMonthKeys', []) is list
+            && request.resource.data.get('claimedAmbassadorRewardMonthKeys', []).size() == resource.data.get('claimedAmbassadorRewardMonthKeys', []).size() + 1
+            && request.resource.data.premiumExpiryDate <= baseExpiryTime() + duration.value(32, 'd')
+          )
+        );
+    }
+
+    // Validates referral document schema and bounds
+    function isValidReferralData(data) {
+      return data.keys().hasOnly(['code', 'ownerId', 'ownerName', 'ownerPhotoUrl', 'createdAt', 'successfulCount', 'monthlyCount', 'currentMonthKey', 'lastReferralTimestamp'])
+        && data.code is string && data.code.size() >= 6 && data.code.size() <= 16
+        && data.ownerId is string && data.ownerId.size() > 0 && data.ownerId.size() <= 128
+        && data.ownerName is string && data.ownerName.size() <= 100
+        && (!('ownerPhotoUrl' in data) || data.ownerPhotoUrl == null || (data.ownerPhotoUrl is string && data.ownerPhotoUrl.size() <= 1000))
+        && data.createdAt is timestamp
+        && data.successfulCount is int && data.successfulCount >= 0
+        && data.monthlyCount is int && data.monthlyCount >= 0
+        && data.currentMonthKey is string && data.currentMonthKey.size() <= 10
+        && (!('lastReferralTimestamp' in data) || data.lastReferralTimestamp == null || data.lastReferralTimestamp is timestamp);
+    }
+
+    // Validates 1v1 PvP Arena Room schema and bounds
+    function isValidArenaRoom(data) {
+      return data.hostId is string && data.hostId.size() > 0 && data.hostId.size() <= 128
+        && data.stake is int && data.stake == 30
+        && data.createdAt is timestamp
+        && (!('code' in data) || (data.code is string && data.code.size() <= 20))
+        && (!('roomCode' in data) || (data.roomCode is string && data.roomCode.size() <= 20))
+        && (!('hostName' in data) || data.hostName == null || (data.hostName is string && data.hostName.size() <= 100))
+        && (!('hostPhotoUrl' in data) || data.hostPhotoUrl == null || (data.hostPhotoUrl is string && data.hostPhotoUrl.size() <= 1000))
+        && (!('guestId' in data) || data.guestId == null || (data.guestId is string && data.guestId.size() <= 128))
+        && (!('guestName' in data) || data.guestName == null || (data.guestName is string && data.guestName.size() <= 100))
+        && (!('guestPhotoUrl' in data) || data.guestPhotoUrl == null || (data.guestPhotoUrl is string && data.guestPhotoUrl.size() <= 1000))
+        && (!('status' in data) || (data.status is string && data.status.size() <= 30))
+        && (!('updatedAt' in data) || data.updatedAt == null || data.updatedAt is timestamp)
+        && (!('hostScore' in data) || (data.hostScore is int && data.hostScore >= 0 && data.hostScore <= 1000))
+        && (!('guestScore' in data) || (data.guestScore is int && data.guestScore >= 0 && data.guestScore <= 1000))
+        && (!('hostFinished' in data) || data.hostFinished is bool)
+        && (!('guestFinished' in data) || data.guestFinished is bool)
+        && (!('winnerId' in data) || data.winnerId == null || (data.winnerId is string && data.winnerId.size() <= 128))
+        && (!('questions' in data) || (data.questions is list && data.questions.size() <= 20))
+        && (!('hostReady' in data) || data.hostReady is bool)
+        && (!('guestReady' in data) || data.guestReady is bool);
+    }
+
+    // Validates 1v1 PvP Arena Queue ticket schema and bounds
+    function isValidArenaQueue(data) {
+      return data.userId is string && data.userId.size() > 0 && data.userId.size() <= 128
+        && data.createdAt is timestamp
+        && (!('displayName' in data) || data.displayName == null || (data.displayName is string && data.displayName.size() <= 100))
+        && (!('photoUrl' in data) || data.photoUrl == null || (data.photoUrl is string && data.photoUrl.size() <= 1000));
+    }
+
     // ─── USER DATA ───────────────────────────────────────────────────
     match /users/{userId} {
       // Users can only READ their own profile (PII protection)
       allow read: if isOwner(userId);
 
-      // CREATE: Only own document, prevent spoofing isAdmin or isPremium
+      // CREATE: Only own document, prevent spoofing isAdmin, isPremium, or initial referral / duel counters
       allow create: if isOwner(userId)
         && (!('isAdmin' in request.resource.data) || request.resource.data.isAdmin == false)
         && (!('isPremium' in request.resource.data) || request.resource.data.isPremium == false)
@@ -108,7 +243,13 @@ service cloud.firestore {
         && request.resource.data.get('coins', 0) <= 250
         && request.resource.data.get('kidsCoins', 0) <= 250
         && request.resource.data.get('goldenKeys', 0) <= 1
-        && request.resource.data.get('keys', 0) <= 1;
+        && request.resource.data.get('keys', 0) <= 1
+        && request.resource.data.get('hasClaimedReferral', false) == false
+        && request.resource.data.get('totalReferralsCount', 0) == 0
+        && request.resource.data.get('monthlyReferralsCount', 0) == 0
+        && request.resource.data.get('dailyDuelsPlayedToday', 0) == 0
+        && request.resource.data.get('duelWins', 0) == 0
+        && request.resource.data.get('duelLosses', 0) == 0;
 
       // UPDATE: Only own document with robust anti-cheat & rate-limit guards.
       // Defensively guards against resource == null (merge writes creating documents)
@@ -125,6 +266,12 @@ service cloud.firestore {
                 && request.resource.data.get('kidsCoins', 0) <= 250
                 && request.resource.data.get('goldenKeys', 0) <= 1
                 && request.resource.data.get('keys', 0) <= 1
+                && request.resource.data.get('hasClaimedReferral', false) == false
+                && request.resource.data.get('totalReferralsCount', 0) == 0
+                && request.resource.data.get('monthlyReferralsCount', 0) == 0
+                && request.resource.data.get('dailyDuelsPlayedToday', 0) == 0
+                && request.resource.data.get('duelWins', 0) == 0
+                && request.resource.data.get('duelLosses', 0) == 0
               )
             // Existing document update
             : (
@@ -132,11 +279,16 @@ service cloud.firestore {
                 // Admins can update isAdmin, and setting/keeping isAdmin: false is permitted (e.g. initial profile provisioning).
                 (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['isAdmin'])
                   || (isAdmin() || request.resource.data.get('isAdmin', false) == false))
-                // CRITICAL: Prevent users from making themselves premium.
-                // Only Cloud Functions (verifyPayment) run as admin and can bypass this.
+                // CRITICAL: Prevent users from arbitrarily making themselves premium.
+                // Allowed if:
+                // a) isAdmin(), OR
+                // b) Client-side reset/revocation (isPremium == false), OR
+                // c) Legitimate in-app reward claim (Referral trial, Weekly reward, Ambassador Cup)
                 && (
                   !request.resource.data.diff(resource.data).affectedKeys().hasAny(['isPremium', 'premiumExpiryDate'])
-                  || request.resource.data.get('isPremium', false) == false // Client can only revoke/reset, not grant
+                  || isAdmin()
+                  || request.resource.data.get('isPremium', false) == false
+                  || isLegitimatePremiumRewardClaim()
                 )
                 // Sanity checks for progression (prevent jumping to 1M XP instantly)
                 && (
@@ -147,13 +299,13 @@ service cloud.firestore {
                   )
                 )
                 // MONEY SECURITY: Prevent adding huge amounts of coins from the client
-                // Normal game rewards are 10-50. Buying a key subtracts 150.
+                // Normal game rewards are 10-50. Staking duels award +50 (win) or +10 (consolation). Entry fee subtracts 30.
                 && (
                   !request.resource.data.diff(resource.data).affectedKeys().hasAny(['coins'])
                   || (
-                    request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedLevelMilestones', 'claimedStreakMilestones'])
-                      ? request.resource.data.get('coins', 0) <= resource.data.get('coins', 0) + 15000 // Milestone rewards can be huge
-                      : request.resource.data.get('coins', 0) <= resource.data.get('coins', 0) + 250 // Max 250 earned at once for normal games
+                    request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedLevelMilestones', 'claimedStreakMilestones', 'claimedAmbassadorRewardMonthKeys', 'claimedWeeklyRewardWeekKeys'])
+                      ? request.resource.data.get('coins', 0) <= resource.data.get('coins', 0) + 15000 // Milestone & tournament rewards can be larger
+                      : request.resource.data.get('coins', 0) <= resource.data.get('coins', 0) + 250 // Max 250 earned at once for normal games, referrals, and duels
                   )
                 )
                 && (
@@ -165,14 +317,14 @@ service cloud.firestore {
                 && (
                   !request.resource.data.diff(resource.data).affectedKeys().hasAny(['totalExp', 'coins', 'kidsCoins'])
                   || (
-                    // Bypass rate limit if it's a purchase/penalty (values are decreasing or staying the same)
+                    // Bypass rate limit if it's a purchase/entry-fee/penalty (values are decreasing or staying the same)
                     (
                       request.resource.data.get('totalExp', 0) <= resource.data.get('totalExp', 0) &&
                       request.resource.data.get('coins', 0) <= resource.data.get('coins', 0) &&
                       request.resource.data.get('kidsCoins', 0) <= resource.data.get('kidsCoins', 0)
                     )
-                    // Bypass rate limit for milestone claims (already protected by array uniqueness check)
-                    || request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedLevelMilestones', 'claimedStreakMilestones'])
+                    // Bypass rate limit for milestone & tournament claims (already protected by array uniqueness check)
+                    || request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedLevelMilestones', 'claimedStreakMilestones', 'claimedAmbassadorRewardMonthKeys', 'claimedWeeklyRewardWeekKeys'])
                     // If they increased normally, enforce the timestamp cooldown with robust type checking
                     || (
                       ('lastRewardTimestamp' in request.resource.data) &&
@@ -193,6 +345,31 @@ service cloud.firestore {
                     request.resource.data.get('goldenKeys', 0) <= resource.data.get('goldenKeys', 0) + 1
                     && request.resource.data.get('keys', 0) <= resource.data.get('keys', 0) + 1
                   )
+                )
+                // 1v1 DUEL STATS INTEGRITY: Prevent jumping duel statistics
+                && (
+                  !request.resource.data.diff(resource.data).affectedKeys().hasAny(['duelWins'])
+                  || request.resource.data.get('duelWins', 0) <= resource.data.get('duelWins', 0) + 1
+                )
+                && (
+                  !request.resource.data.diff(resource.data).affectedKeys().hasAny(['duelLosses'])
+                  || request.resource.data.get('duelLosses', 0) <= resource.data.get('duelLosses', 0) + 1
+                )
+                && (
+                  !request.resource.data.diff(resource.data).affectedKeys().hasAny(['dailyDuelsPlayedToday'])
+                  || request.resource.data.get('dailyDuelsPlayedToday', 0) <= resource.data.get('dailyDuelsPlayedToday', 0) + 1
+                  || request.resource.data.get('dailyDuelsPlayedToday', 0) == 0
+                )
+                // IMMUTABILITY: Prevent modifying referral identities once set
+                && (
+                  !request.resource.data.diff(resource.data).affectedKeys().hasAny(['referralCode'])
+                  || !('referralCode' in resource.data) || resource.data.referralCode == null || resource.data.referralCode == ''
+                  || request.resource.data.referralCode == resource.data.referralCode
+                )
+                && (
+                  !request.resource.data.diff(resource.data).affectedKeys().hasAny(['referredBy'])
+                  || !('referredBy' in resource.data) || resource.data.referredBy == null || resource.data.referredBy == ''
+                  || request.resource.data.referredBy == resource.data.referredBy
                 )
               )
         );
@@ -219,6 +396,117 @@ service cloud.firestore {
           // Ensures the timestamp is a true server-side timestamp
           && request.resource.data.timestamp == request.time;
       }
+    }
+
+    // ─── VIRAL REFERRAL ENGINE & AMBASSADOR CUP ───────────────────────
+    match /referrals/{referralCode} {
+      // Authenticated users can look up referral codes and query leaderboards
+      allow read: if isAuthenticated();
+
+      // Only authenticated users can register their own unique referral code
+      allow create: if isAuthenticated()
+        && referralCode.size() >= 6 && referralCode.size() <= 16
+        && request.resource.data.ownerId == request.auth.uid
+        && request.resource.data.code == referralCode
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.successfulCount == 0
+        && request.resource.data.monthlyCount == 0
+        && isValidReferralData(request.resource.data);
+
+      // Updates are strictly governed:
+      // A. Owner can update metadata (name, photo, or rollover month) but CANNOT inflate successfulCount
+      // B. An invited friend can atomically increment successfulCount and monthlyCount by exactly 1 upon completing Level 1
+      allow update: if isAuthenticated()
+        && isValidReferralData(request.resource.data)
+        && request.resource.data.code == resource.data.code
+        && request.resource.data.ownerId == resource.data.ownerId
+        && request.resource.data.createdAt == resource.data.createdAt
+        && (
+          // Case A: Owner update
+          (
+            request.auth.uid == resource.data.ownerId
+            && request.resource.data.successfulCount == resource.data.successfulCount
+            && (
+              !request.resource.data.diff(resource.data).affectedKeys().hasAny(['monthlyCount'])
+              || request.resource.data.monthlyCount == resource.data.monthlyCount
+              || request.resource.data.monthlyCount == 0
+            )
+          )
+          // Case B: Invited friend completing Level 1
+          || (
+            request.auth.uid != resource.data.ownerId
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['successfulCount', 'monthlyCount', 'currentMonthKey', 'lastReferralTimestamp'])
+            && request.resource.data.get('ownerName', '') == resource.data.get('ownerName', '')
+            && request.resource.data.get('ownerPhotoUrl', null) == resource.data.get('ownerPhotoUrl', null)
+            && request.resource.data.successfulCount == resource.data.get('successfulCount', 0) + 1
+            && (
+              request.resource.data.monthlyCount == resource.data.get('monthlyCount', 0) + 1
+              || request.resource.data.monthlyCount == 1
+            )
+            && (
+              !('lastReferralTimestamp' in request.resource.data)
+              || request.resource.data.lastReferralTimestamp == request.time
+            )
+          )
+        );
+
+      // Deletion is strictly prohibited to preserve ambassador history and link integrity
+      allow delete: if false;
+    }
+
+    // ─── 1v1 PVP STAKING ARENA ───────────────────────────────────────
+    match /arena_rooms/{roomCode} {
+      // Authenticated users can list/read rooms to discover lobbies and observe duel progress
+      allow read: if isAuthenticated();
+
+      // Host creates the arena room with fixed stake of 30 coins
+      allow create: if isAuthenticated()
+        && roomCode.size() >= 6 && roomCode.size() <= 20
+        && request.resource.data.hostId == request.auth.uid
+        && request.resource.data.stake == 30
+        && request.resource.data.createdAt == request.time
+        && (!('guestId' in request.resource.data) || request.resource.data.guestId == null)
+        && isValidArenaRoom(request.resource.data);
+
+      // Host, joined guest, or new guest joining an open room can update game state
+      allow update: if isAuthenticated()
+        && (
+          request.auth.uid == resource.data.hostId
+          || request.auth.uid == resource.data.get('guestId', '')
+          || (resource.data.get('guestId', null) == null && request.resource.data.guestId == request.auth.uid)
+        )
+        // Immutable room parameters
+        && request.resource.data.hostId == resource.data.hostId
+        && request.resource.data.stake == 30
+        && request.resource.data.createdAt == resource.data.createdAt
+        // Once guestId is set, prevent hijacking by a third player
+        && (
+          resource.data.get('guestId', null) == null
+          || request.resource.data.get('guestId', null) == resource.data.guestId
+        )
+        && isValidArenaRoom(request.resource.data);
+
+      // Only host can cancel / dissolve an arena room
+      allow delete: if isAuthenticated() && request.auth.uid == resource.data.hostId;
+    }
+
+    // ─── 1v1 PVP MATCHMAKING QUEUE ────────────────────────────────────
+    match /arena_queue/{queueId} {
+      // Authenticated players can query the queue to discover opponents
+      allow read: if isAuthenticated();
+
+      // Players can enter the queue with their own auth UID and server timestamp
+      allow create: if isAuthenticated()
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.createdAt == request.time
+        && isValidArenaQueue(request.resource.data);
+
+      // Queue entries are ephemeral tickets: updates are disallowed
+      allow update: if false;
+
+      // Authenticated players can delete: either the queue entry owner canceling/leaving,
+      // or another authenticated player popping/matching them into an arena duel
+      allow delete: if isAuthenticated();
     }
 
     // ─── GLOBAL METADATA ─────────────────────────────────────────────

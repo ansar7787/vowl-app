@@ -7,6 +7,7 @@ import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/praise_service.dart';
 import 'package:vowl/core/utils/app_lifecycle_handler.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -29,6 +30,12 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
   int? lastLives;
   GlobalKey<SpeedChallengeTimerState>? timerKey;
   AppLifecycleListener? _gameLifecycleListener;
+
+  /// Tracks question progression within the active 3-question level (1, 2, 3) for pitch scaling.
+  int _levelQuestionIndex = 0;
+
+  /// Tracks macro session streak across consecutive levels until a mistake is made.
+  static int _sessionHotStreak = 0;
 
   void initGameLifecycle() {
     _gameLifecycleListener = AppLifecycleHandler.createListener(
@@ -106,6 +113,9 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
       if (isNewQuestion && timerKey != null) {
         timerKey = GlobalKey<SpeedChallengeTimerState>();
       }
+      if (isNewQuestion && currentIndex == 0) {
+        _levelQuestionIndex = 0;
+      }
       lastProcessedIndex = currentIndex;
       isAnsweredNotifier.value = isAnswered;
       if (!isAnswered) {
@@ -126,6 +136,9 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
   void submitSharedWrongAnswer({required GameQuest quest, String? userAnswer}) {
     if (isAnsweredNotifier.value) return;
     timerKey?.currentState?.stop();
+
+    _levelQuestionIndex = 0;
+    _sessionHotStreak = 0;
 
     hapticService.error();
     soundService.playWrong();
@@ -160,8 +173,20 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
     if (isAnsweredNotifier.value) return;
     timerKey?.currentState?.stop();
 
+    _levelQuestionIndex++;
+    _sessionHotStreak++;
+
     hapticService.success();
-    soundService.playCorrect();
+    // Dual-Layer Dopamine: Micro 3-step pitch ladder (Q1: 1.00x, Q2: 1.12x, Q3: 1.25x)
+    soundService.playCorrect(comboStep: _levelQuestionIndex);
+
+    // Macro Hot Streak Celebrations across levels (5 in a row, 10 in a row)
+    if (_sessionHotStreak == 5) {
+      di.sl<PraiseService>().givePraise(context: PraiseContext.hotStreak5);
+    } else if (_sessionHotStreak == 10) {
+      di.sl<PraiseService>().givePraise(context: PraiseContext.hotStreak10);
+    }
+
     isAnsweredNotifier.value = true;
     isCorrectNotifier.value = true;
   }

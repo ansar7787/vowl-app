@@ -90,6 +90,18 @@ class UserModel extends UserEntity {
     super.kidsLastFeedTime,
     super.kidsGamesPlayedToday,
     super.kidsLastGameDate,
+    super.referralCode,
+    super.referredBy,
+    super.hasClaimedReferral,
+    super.totalReferralsCount,
+    super.monthlyReferralsCount,
+    super.currentReferralMonthKey,
+    super.claimedAmbassadorRewardMonthKeys,
+    super.claimedWeeklyRewardWeekKeys,
+    super.dailyDuelsPlayedToday,
+    super.lastDuelDate,
+    super.duelWins,
+    super.duelLosses,
   });
 
   // ---------------------------------------------------------------------------
@@ -178,6 +190,22 @@ class UserModel extends UserEntity {
       kidsLastFeedTime: _parseDateTime(map['kidsLastFeedTime']),
       kidsGamesPlayedToday: (map['kidsGamesPlayedToday'] as num?)?.toInt() ?? 0,
       kidsLastGameDate: _parseDateTime(map['kidsLastGameDate']),
+      referralCode: map['referralCode'] as String?,
+      referredBy: map['referredBy'] as String?,
+      hasClaimedReferral: (map['hasClaimedReferral'] as bool?) ?? false,
+      totalReferralsCount: (map['totalReferralsCount'] as num?)?.toInt() ?? 0,
+      monthlyReferralsCount:
+          (map['monthlyReferralsCount'] as num?)?.toInt() ?? 0,
+      currentReferralMonthKey: map['currentReferralMonthKey'] as String?,
+      claimedAmbassadorRewardMonthKeys:
+          _parseStringList(map['claimedAmbassadorRewardMonthKeys']),
+      claimedWeeklyRewardWeekKeys:
+          _parseStringList(map['claimedWeeklyRewardWeekKeys']),
+      dailyDuelsPlayedToday:
+          (map['dailyDuelsPlayedToday'] as num?)?.toInt() ?? 0,
+      lastDuelDate: _parseDateTime(map['lastDuelDate']),
+      duelWins: (map['duelWins'] as num?)?.toInt() ?? 0,
+      duelLosses: (map['duelLosses'] as num?)?.toInt() ?? 0,
     );
   }
 
@@ -257,6 +285,19 @@ class UserModel extends UserEntity {
       kidsLastFeedTime: entity.kidsLastFeedTime,
       kidsGamesPlayedToday: entity.kidsGamesPlayedToday,
       kidsLastGameDate: entity.kidsLastGameDate,
+      referralCode: entity.referralCode,
+      referredBy: entity.referredBy,
+      hasClaimedReferral: entity.hasClaimedReferral,
+      totalReferralsCount: entity.totalReferralsCount,
+      monthlyReferralsCount: entity.monthlyReferralsCount,
+      currentReferralMonthKey: entity.currentReferralMonthKey,
+      claimedAmbassadorRewardMonthKeys:
+          entity.claimedAmbassadorRewardMonthKeys,
+      claimedWeeklyRewardWeekKeys: entity.claimedWeeklyRewardWeekKeys,
+      dailyDuelsPlayedToday: entity.dailyDuelsPlayedToday,
+      lastDuelDate: entity.lastDuelDate,
+      duelWins: entity.duelWins,
+      duelLosses: entity.duelLosses,
     );
   }
 
@@ -353,6 +394,19 @@ class UserModel extends UserEntity {
       'kidsLastGameDate': kidsLastGameDate != null
           ? Timestamp.fromDate(kidsLastGameDate!)
           : null,
+      'referralCode': referralCode,
+      'referredBy': referredBy,
+      'hasClaimedReferral': hasClaimedReferral,
+      'totalReferralsCount': totalReferralsCount,
+      'monthlyReferralsCount': monthlyReferralsCount,
+      'currentReferralMonthKey': currentReferralMonthKey,
+      'claimedAmbassadorRewardMonthKeys': claimedAmbassadorRewardMonthKeys,
+      'claimedWeeklyRewardWeekKeys': claimedWeeklyRewardWeekKeys,
+      'dailyDuelsPlayedToday': dailyDuelsPlayedToday,
+      'lastDuelDate':
+          lastDuelDate != null ? Timestamp.fromDate(lastDuelDate!) : null,
+      'duelWins': duelWins,
+      'duelLosses': duelLosses,
     };
   }
 
@@ -418,6 +472,14 @@ class UserModel extends UserEntity {
     int? kidsRoomLevel,
     String? kidsRoomTheme,
     int? kidsGamesPlayedToday,
+    bool? hasClaimedReferral,
+    int? totalReferralsCount,
+    int? monthlyReferralsCount,
+    List<String>? claimedAmbassadorRewardMonthKeys,
+    List<String>? claimedWeeklyRewardWeekKeys,
+    int? dailyDuelsPlayedToday,
+    int? duelWins,
+    int? duelLosses,
     // Nullable sentinel fields
     Object? displayName = _absent,
     Object? photoUrl = _absent,
@@ -438,6 +500,10 @@ class UserModel extends UserEntity {
     Object? kidsLastCareDate = _absent,
     Object? kidsLastFeedTime = _absent,
     Object? kidsLastGameDate = _absent,
+    Object? referralCode = _absent,
+    Object? referredBy = _absent,
+    Object? currentReferralMonthKey = _absent,
+    Object? lastDuelDate = _absent,
   }) {
     return UserModel(
       id: id,
@@ -483,6 +549,18 @@ class UserModel extends UserEntity {
       kidsRoomLevel: kidsRoomLevel ?? this.kidsRoomLevel,
       kidsRoomTheme: kidsRoomTheme ?? this.kidsRoomTheme,
       kidsGamesPlayedToday: kidsGamesPlayedToday ?? this.kidsGamesPlayedToday,
+      hasClaimedReferral: hasClaimedReferral ?? this.hasClaimedReferral,
+      totalReferralsCount: totalReferralsCount ?? this.totalReferralsCount,
+      monthlyReferralsCount:
+          monthlyReferralsCount ?? this.monthlyReferralsCount,
+      claimedAmbassadorRewardMonthKeys: claimedAmbassadorRewardMonthKeys ??
+          this.claimedAmbassadorRewardMonthKeys,
+      claimedWeeklyRewardWeekKeys:
+          claimedWeeklyRewardWeekKeys ?? this.claimedWeeklyRewardWeekKeys,
+      dailyDuelsPlayedToday:
+          dailyDuelsPlayedToday ?? this.dailyDuelsPlayedToday,
+      duelWins: duelWins ?? this.duelWins,
+      duelLosses: duelLosses ?? this.duelLosses,
       // Sentinel nullable fields
       displayName: identical(displayName, _absent)
           ? this.displayName
@@ -541,6 +619,18 @@ class UserModel extends UserEntity {
       kidsLastGameDate: identical(kidsLastGameDate, _absent)
           ? this.kidsLastGameDate
           : kidsLastGameDate as DateTime?,
+      referralCode: identical(referralCode, _absent)
+          ? this.referralCode
+          : referralCode as String?,
+      referredBy: identical(referredBy, _absent)
+          ? this.referredBy
+          : referredBy as String?,
+      currentReferralMonthKey: identical(currentReferralMonthKey, _absent)
+          ? this.currentReferralMonthKey
+          : currentReferralMonthKey as String?,
+      lastDuelDate: identical(lastDuelDate, _absent)
+          ? this.lastDuelDate
+          : lastDuelDate as DateTime?,
     );
   }
 

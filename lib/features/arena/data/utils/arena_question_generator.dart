@@ -1,0 +1,110 @@
+import 'dart:math';
+import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
+
+class ArenaQuestionGenerator {
+  ArenaQuestionGenerator._();
+
+  static const List<Map<String, dynamic>> _kQuestionBank = [
+    {
+      'question': 'What is the closest synonym for "Resilient"?',
+      'options': ['Fragile', 'Enduring', 'Hesitant', 'Trivial'],
+      'correctIndex': 1,
+      'explanation': 'Resilient means able to withstand or recover quickly from difficult conditions.',
+    },
+    {
+      'question': 'Choose the word that means "Brief and clearly expressed":',
+      'options': ['Verbose', 'Ambiguous', 'Concise', 'Prolix'],
+      'correctIndex': 2,
+      'explanation': 'Concise means expressing much in few words; succinct and clear.',
+    },
+    {
+      'question': 'What is the opposite of "Authentic"?',
+      'options': ['Genuine', 'Spurious', 'Credible', 'Legitimate'],
+      'correctIndex': 1,
+      'explanation': 'Spurious means not being what it purports to be; fake or counterfeit.',
+    },
+    {
+      'question': 'Complete the idiom: "Bite the ______"',
+      'options': ['Apple', 'Bullet', 'Tongue', 'Dust'],
+      'correctIndex': 1,
+      'explanation': '"Bite the bullet" means to face a difficult situation with courage.',
+    },
+    {
+      'question': 'Select the word that means "Excessively talkative":',
+      'options': ['Taciturn', 'Garrulous', 'Reticent', 'Laconic'],
+      'correctIndex': 1,
+      'explanation': 'Garrulous means excessively talkative, especially on trivial matters.',
+    },
+    {
+      'question': 'What does the idiom "Spill the beans" mean?',
+      'options': ['Make a mess', 'Reveal a secret', 'Cook dinner', 'Lose patience'],
+      'correctIndex': 1,
+      'explanation': '"Spill the beans" is an informal idiom meaning to disclose secret information.',
+    },
+    {
+      'question': 'Choose the closest synonym for "Meticulous":',
+      'options': ['Careless', 'Thorough', 'Impatient', 'Slapdash'],
+      'correctIndex': 1,
+      'explanation': 'Meticulous means showing great attention to detail; very careful and precise.',
+    },
+    {
+      'question': 'What is the opposite of "Obscure"?',
+      'options': ['Enigmatic', 'Prominent', 'Cryptic', 'Vague'],
+      'correctIndex': 1,
+      'explanation': 'Obscure means not discovered or known about; its opposite is prominent or famous.',
+    },
+    {
+      'question': 'Select the word that means "A sudden, powerful forward movement":',
+      'options': ['Ebb', 'Surge', 'Halt', 'Retreat'],
+      'correctIndex': 1,
+      'explanation': 'Surge means a sudden powerful forward or upward movement.',
+    },
+    {
+      'question': 'Complete the phrase: "Burn the midnight ______"',
+      'options': ['Candle', 'Oil', 'Wood', 'Paper'],
+      'correctIndex': 1,
+      'explanation': '"Burn the midnight oil" means to work or study late into the night.',
+    },
+    {
+      'question': 'Which word describes someone who is "Fluent and persuasive in speech"?',
+      'options': ['Incoherent', 'Eloquent', 'Hesitant', 'Muddled'],
+      'correctIndex': 1,
+      'explanation': 'Eloquent means fluent or persuasive in speaking or writing.',
+    },
+    {
+      'question': 'What is the closest antonym for "Arrogant"?',
+      'options': ['Proud', 'Humble', 'Haughty', 'Boastful'],
+      'correctIndex': 1,
+      'explanation': 'Arrogant means having an exaggerated sense of one\'s own importance; opposite is humble.',
+    },
+    {
+      'question': 'Select the correct meaning of "Pragmatic":',
+      'options': ['Impractical', 'Dealing with things sensibly and realistically', 'Overly idealistic', 'Careless'],
+      'correctIndex': 1,
+      'explanation': 'Pragmatic means dealing with things sensibly and realistically based on practical considerations.',
+    },
+    {
+      'question': 'Complete the idiom: "Actions speak louder than ______"',
+      'options': ['Echoes', 'Words', 'Speeches', 'Promises'],
+      'correctIndex': 1,
+      'explanation': '"Actions speak louder than words" emphasizes that what someone does is more meaningful than what they say.',
+    },
+    {
+      'question': 'What is the synonym for "Exemplary"?',
+      'options': ['Commendable', 'Mediocre', 'Flawed', 'Questionable'],
+      'correctIndex': 0,
+      'explanation': 'Exemplary means representing the best of its kind; commendable or worthy of imitation.',
+    },
+  ];
+
+  /// Generates a list of [count] questions (default 5) deterministically based on [seed].
+  static List<ArenaQuestion> generateQuestions({int count = 5, int? seed}) {
+    final rand = Random(seed ?? DateTime.now().millisecondsSinceEpoch);
+    final bank = List<Map<String, dynamic>>.from(_kQuestionBank);
+    bank.shuffle(rand);
+
+    final selected = bank.take(count).toList();
+    return selected.map((q) => ArenaQuestion.fromMap(q)).toList();
+  }
+}
+

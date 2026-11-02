@@ -1,4 +1,5 @@
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/praise_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
@@ -74,6 +75,10 @@ class GameDialogHelper {
     _sound.playLevelComplete();
     _haptic.success();
 
+    if (mistakesMade == 0) {
+      di.sl<PraiseService>().givePraise(context: PraiseContext.flawless);
+    }
+
     final authState = context.read<AuthBloc>().state;
     final userLevel = authState.user?.level ?? 1;
     final isPremium = authState.user?.isPremium ?? false;
@@ -146,6 +151,12 @@ class GameDialogHelper {
 
     if (context.mounted) {
       Overlay.of(context).insert(overlayEntry);
+    }
+
+    if (effectiveCoins > 0) {
+      Future.delayed(const Duration(milliseconds: 600), () {
+        _sound.playCoinTally(count: effectiveCoins);
+      });
     }
 
     showDialog(
@@ -389,6 +400,7 @@ class GameDialogHelper {
           fallback:
               'Your current progress for this level will be lost. Are you sure?',
         );
+
     showDialog(
       context: context,
       barrierDismissible: true,
@@ -440,6 +452,7 @@ class GameDialogHelper {
   }) {
     final resolvedTitle =
         title ?? context.tr('games.hint', fallback: 'Hint').toUpperCase();
+
     showDialog(
       context: context,
       builder: (dialogCtx) => ModernGameDialog(

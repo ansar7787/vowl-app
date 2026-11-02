@@ -1,41 +1,37 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:go_router/go_router.dart';
+import 'package:collection/collection.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:collection/collection.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
-/// The single most important element on the home screen.
+/// Primary action & learning momentum card on the home screen (The Apex Momentum Cockpit).
 ///
-/// Resolves the user's next category to play and presents a prominent
-/// "Continue" CTA that answers the #1 user question: "What should I do next?"
+/// Directs learners to their next curriculum category using an intelligent
+/// two-tier algorithm ("True Resume" from recent activity, falling back to
+/// "Skill Balancing" across core competencies).
 ///
-/// ## Design Philosophy (10/10 Production Standard)
-/// 1. **Rich two-tone gradient** with depth — not a flat same-color block.
-/// 2. **Large decorative background icon** — breaks the flat surface.
-/// 3. **Dynamic motivational subtitle** — streak-aware, progress-aware, time-aware.
-/// 4. **Milestone progress** — shows "next milestone" instead of raw total.
-/// 5. **StatefulWidget** — caches computation, guards entrance animation.
-/// 6. **Subtle background shimmer** — premium alive feel.
-/// 7. **Next game preview** — creates anticipation for what's ahead.
-/// 8. **Dark mode adaptive** — no hardcoded white assumptions.
-/// 9. **Haptic feedback** — physical "click" on tap.
+/// Features:
+/// 1. **Solid Category Color**: Progress bar uses the pure, authentic category color (zero gradients).
+/// 2. **100% Real Progression Data**: Dynamically calculates cleared levels, milestone targets, and remaining steps.
+/// 3. **Non-glaring Cockpit Aesthetics**: Sophisticated obsidian/slate elevation in dark mode, crisp porcelain in light mode.
+/// 4. **Tactile Spring Navigation**: Seamlessly routes to the Category Games Hub via [ScaleButton].
 class ContinueLearningCard extends StatefulWidget {
-  /// Current authenticated [user] entity. May be null in shimmer/loading mode.
+  /// Current authenticated [user] entity. Null in loading or shimmer mode.
   final UserEntity? user;
 
-  /// Whether the card is currently resolving logic or fetching data.
+  /// Whether the card is currently fetching data or resolving state.
   final bool isLoading;
 
   /// Creates a [ContinueLearningCard] for [user].
@@ -46,17 +42,16 @@ class ContinueLearningCard extends StatefulWidget {
   });
 
   /// Shimmer placeholder constructor for pre-load and loading states.
-  const ContinueLearningCard.shimmer({
-    super.key,
-  })  : user = null,
-        isLoading = true;
+  const ContinueLearningCard.shimmer({super.key})
+    : user = null,
+      isLoading = true;
 
   @override
   State<ContinueLearningCard> createState() => _ContinueLearningCardState();
 }
 
 class _ContinueLearningCardState extends State<ContinueLearningCard> {
-  /// The canonical learning journey order (same as BentoArena).
+  /// Canonical learning journey order (aligned with BentoArena).
   static const List<QuestType> _journeyOrder = [
     QuestType.vocabulary,
     QuestType.listening,
@@ -69,7 +64,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     QuestType.eliteMastery,
   ];
 
-  // ── Cached state ────────────────────────────────────────────────────────
+  // ── Cached State ────────────────────────────────────────────────────────
   QuestType _nextType = QuestType.vocabulary;
   int _cleared = 0;
   int _max = 0;
@@ -88,7 +83,8 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
   void didUpdateWidget(covariant ContinueLearningCard oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (widget.user != null && !widget.isLoading) {
-      if (oldWidget.user != widget.user || oldWidget.isLoading != widget.isLoading) {
+      if (oldWidget.user != widget.user ||
+          oldWidget.isLoading != widget.isLoading) {
         _computeState();
       }
     }
@@ -102,16 +98,13 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     _max = user.getMaxCategoryLevels(_nextType);
   }
 
-  /// Implements a "Hybrid" algorithm for the absolute best UX:
-  /// 1. "True Resume": First, checks `recentActivities` to find the exact
-  ///    category the user was just playing. If it's not finished, it recommends it.
-  /// 2. "Skill Balancing": If they have no recent activities, or they just 100%
-  ///    completed their last category, it falls back to recommending the category
-  ///    where they have the LOWEST progress, forcing a well-rounded skillset.
+  /// Implements a hybrid algorithm for optimal learning momentum:
+  /// 1. "True Resume": Inspects `recentActivities` for the exact unfinished quest category.
+  /// 2. "Skill Balancing": Falls back to the available category with the lowest progress.
   QuestType _resolveNextCategory(UserEntity user) {
     if (user.totalLevelsCompleted == 0) return QuestType.vocabulary;
 
-    // 1. "True Resume": Check what they were literally just doing.
+    // 1. "True Resume": Check last played quest.
     for (final activity in user.recentActivities) {
       if (activity['type'] == 'quest') {
         final gameTypeStr = activity['gameType'] as String?;
@@ -124,14 +117,14 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
             final cleared = user.getTotalCategoryLevelsCleared(type);
             final max = user.getMaxCategoryLevels(type);
             if (max > 0 && cleared < max) {
-              return type; // Perfect match: Pick up exactly where they left off.
+              return type;
             }
           }
         }
       }
     }
 
-    // 2. "Skill Balancing": Fallback to the lowest progress category.
+    // 2. "Skill Balancing": Lowest progress category fallback.
     QuestType recommendedType = _journeyOrder.first;
     int lowestCleared = 999999;
 
@@ -139,24 +132,20 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
       final cleared = user.getTotalCategoryLevelsCleared(type);
       final max = user.getMaxCategoryLevels(type);
 
-      // Only consider categories that actually have levels available
-      if (max > 0) {
-        if (cleared < lowestCleared) {
-          lowestCleared = cleared;
-          recommendedType = type;
-        }
+      if (max > 0 && cleared < lowestCleared) {
+        lowestCleared = cleared;
+        recommendedType = type;
       }
     }
 
     return recommendedType;
   }
 
-  /// Returns the (base, target) milestone dynamically to ensure tight, achievable gaps.
+  /// Returns achievable milestone chunk targets (10, 25, 50, 100).
   ({int baseTarget, int target}) _getNextMilestone() {
     int baseTarget = 0;
     int target = 0;
 
-    // Dynamic chunk sizes: Keep the gap small and achievable.
     if (_cleared < 50) {
       baseTarget = (_cleared ~/ 10) * 10;
       target = baseTarget + 10;
@@ -176,29 +165,22 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     return (baseTarget: baseTarget, target: target);
   }
 
-  /// Generates a complementary darker shade for the gradient endpoint.
-  Color _getDarkerShade(Color base) {
-    final hsl = HSLColor.fromColor(base);
-    return hsl
-        .withLightness((hsl.lightness - 0.15).clamp(0.08, 0.85))
-        .withSaturation((hsl.saturation + 0.1).clamp(0.0, 1.0))
-        .toColor();
-  }
-
   @override
   Widget build(BuildContext context) {
     if (widget.isLoading || widget.user == null) {
       return _buildShimmer(context);
     }
 
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final user = widget.user!;
     final color = GameHelper.getQuestTypeColor(_nextType);
-    final darkColor = _getDarkerShade(color);
     final icon = GameHelper.getIconForCategory(_nextType);
     final isNewUser = user.totalLevelsCompleted == 0;
+    final isTodayActive = user.isTodayActive;
+    final currentStreak = user.currentStreak;
 
     final categoryLabel = _nextType.name.toUpperCase().replaceAllMapped(
-      RegExp('(?<=[a-z])(?=[A-Z])'),
+      RegExp(r'(?<=[a-z])(?=[A-Z])'),
       (m) => ' ',
     );
 
@@ -207,7 +189,6 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
         : context.tr('home.continue_learning', fallback: 'Continue Learning');
 
     final milestone = _getNextMilestone();
-
     final chunkSpan = milestone.target - milestone.baseTarget;
     final progressInChunk = _cleared - milestone.baseTarget;
 
@@ -215,9 +196,99 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
         ? (progressInChunk / chunkSpan).clamp(0.0, 1.0)
         : (_cleared >= _max && _max > 0 ? 1.0 : 0.0);
 
+    final remaining = milestone.target - _cleared;
+
+    final String missionBadgeText;
+    final Color missionBadgeColor;
+    final IconData missionBadgeIcon;
+
+    if (!isTodayActive) {
+      missionBadgeColor = AppColors.amber500;
+      missionBadgeIcon = Icons.local_fire_department_rounded;
+      if (currentStreak > 0) {
+        missionBadgeText = context.tr(
+          'home.mission_secure_streak',
+          fallback: "TODAY'S MISSION • 3 MIN TO SECURE STREAK",
+        );
+      } else {
+        missionBadgeText = context.tr(
+          'home.mission_start_streak',
+          fallback: "TODAY'S MISSION • 3 MIN TO START STREAK",
+        );
+      }
+    } else {
+      missionBadgeColor = AppColors.emerald500;
+      missionBadgeIcon = Icons.check_circle_rounded;
+      missionBadgeText = context.tr(
+        'home.mission_streak_secured',
+        fallback: "TODAY'S STREAK SECURED ⭐",
+      );
+    }
+
+    final String subtitle;
+    if (!isTodayActive && currentStreak > 0) {
+      subtitle = context.tr(
+        'home.protect_streak_subtitle',
+        fallback:
+            'Complete 1 level today to protect your {}d streak • Milestone {}',
+        args: [currentStreak.toString(), milestone.target.toString()],
+      );
+    } else if (isNewUser) {
+      subtitle = context.tr(
+        'home.first_step_in_category',
+        fallback: 'First step in {} • Milestone: {}',
+        args: [categoryLabel, milestone.target.toString()],
+      );
+    } else if (remaining > 1) {
+      subtitle = context.tr(
+        'home.levels_to_reach_milestone',
+        fallback: '$remaining levels to reach Milestone ${milestone.target}',
+        args: [remaining.toString(), milestone.target.toString()],
+      );
+    } else if (remaining == 1) {
+      subtitle = context.tr(
+        'home.level_to_reach_milestone',
+        fallback: '1 level to reach Milestone ${milestone.target}',
+        args: [milestone.target.toString()],
+      );
+    } else {
+      subtitle = context.tr(
+        'home.milestone_completed',
+        fallback: 'Milestone ${milestone.target} completed! Keep mastering',
+        args: [milestone.target.toString()],
+      );
+    }
+
+    final String ctaLabel;
+
+    if (!isTodayActive && currentStreak > 0) {
+      ctaLabel = context.tr(
+        'home.secure_streak_btn',
+        fallback: 'Secure',
+      );
+    } else if (isNewUser) {
+      ctaLabel = context.tr(
+        'home.start',
+        fallback: 'Start',
+      );
+    } else {
+      ctaLabel = context.tr(
+        'home.resume',
+        fallback: 'Resume',
+      );
+    }
+
+    final String levelsTag = isNewUser
+        ? context.tr('home.new_journey', fallback: 'New Journey')
+        : context.tr(
+            'home.levels_cleared_tag',
+            fallback: '$_cleared Levels Cleared',
+            args: [_cleared.toString()],
+          );
+
     final semanticLabel = isNewUser
-        ? '$title. $categoryLabel.'
-        : '$title. $categoryLabel. $_cleared out of ${milestone.target} levels cleared.';
+        ? '$missionBadgeText. $title. $categoryLabel.'
+        : '$missionBadgeText. $title. $categoryLabel. $_cleared out of ${milestone.target} levels cleared.';
 
     final card = Semantics(
       button: true,
@@ -226,6 +297,9 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
         onTap: () {
           try {
             di.sl<HapticService>().selection();
+            if (isTodayActive && di.sl.isRegistered<SoundService>()) {
+              di.sl<SoundService>().playStreakFlameIgnite();
+            }
           } catch (_) {}
           context.push(
             '${AppRouter.categoryGamesRoute}?category=${Uri.encodeQueryComponent(_nextType.name)}',
@@ -235,344 +309,445 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
           child: RepaintBoundary(
             child: Container(
               width: double.infinity,
-              padding: EdgeInsets.all(22.r),
+              padding: EdgeInsets.all(20.r),
               clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [color, darkColor],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+                color: isDark ? const Color(0xFF131A29) : Colors.white,
+                gradient: isDark
+                    ? const LinearGradient(
+                        colors: [Color(0xFF131A29), Color(0xFF0D1320)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      )
+                    : null,
+                borderRadius: BorderRadius.circular(24.r),
+                border: Border.all(
+                  color: !isTodayActive
+                      ? color.withValues(alpha: isDark ? 0.60 : 0.45)
+                      : (isDark
+                          ? AppColors.emerald500.withValues(alpha: 0.35)
+                          : AppColors.emerald500.withValues(alpha: 0.25)),
+                  width: !isTodayActive ? 1.5 : 1.2,
                 ),
-                borderRadius: BorderRadius.circular(28.r),
                 boxShadow: [
                   BoxShadow(
-                    color: color.withValues(alpha: 0.35),
-                    blurRadius: 30,
-                    offset: const Offset(0, 12),
-                  ),
-                  // Inner glow for depth
-                  BoxShadow(
-                    color: darkColor.withValues(alpha: 0.2),
-                    blurRadius: 60,
-                    offset: const Offset(0, 20),
-                    spreadRadius: -10,
+                    color: !isTodayActive
+                        ? color.withValues(alpha: isDark ? 0.24 : 0.15)
+                        : (isDark
+                            ? color.withValues(alpha: 0.10)
+                            : Colors.black.withValues(alpha: 0.04)),
+                    blurRadius: !isTodayActive ? 22 : 16,
+                    spreadRadius: !isTodayActive ? 1 : 0,
+                    offset: const Offset(0, 6),
                   ),
                 ],
               ),
               child: Stack(
                 children: [
-                  // ── Decorative background icon ─────────────────────
+                  // ── Subtle Accent Border Glow on Left Edge ───────────
                   Positioned(
-                    right: -15.r,
-                    top: -10.r,
-                    child: Icon(
-                      icon,
-                      size: 120.r,
-                      color: Colors.white.withValues(alpha: 0.06),
-                    ),
-                  ),
-                  // ── Subtle radial glow overlay ─────────────────────
-                  Positioned(
-                    left: -40.r,
-                    bottom: -40.r,
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
                     child: Container(
-                      width: 160.r,
-                      height: 160.r,
+                      width: !isTodayActive ? 4.r : 3.5.r,
                       decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: RadialGradient(
-                          colors: [
-                            Colors.white.withValues(alpha: 0.08),
-                            Colors.transparent,
-                          ],
+                        color: !isTodayActive ? color : AppColors.emerald500,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(24.r),
+                          bottomLeft: Radius.circular(24.r),
                         ),
                       ),
                     ),
                   ),
-                  // ── Main content ───────────────────────────────────
+
+                  // ── Elegant Watermark Glyph ─────────────────────────
+                  Positioned(
+                    right: -10.r,
+                    top: -10.r,
+                    child: Icon(
+                      icon,
+                      size: 106.r,
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.035)
+                          : color.withValues(alpha: 0.045),
+                    ),
+                  ),
+
+                  // ── Main Cockpit Content ────────────────────────────
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      // Top row: Category icon + eyebrow label
+                      // ── Habit Mission Badge (Urgent vs Secured) ───────────
+                      Container(
+                        margin: EdgeInsets.only(bottom: 10.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 9.w,
+                          vertical: 3.5.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: missionBadgeColor.withValues(
+                            alpha: isDark ? 0.14 : 0.08,
+                          ),
+                          borderRadius: BorderRadius.circular(100.r),
+                          border: Border.all(
+                            color: missionBadgeColor.withValues(
+                              alpha: isDark ? 0.32 : 0.22,
+                            ),
+                            width: 1,
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              missionBadgeIcon,
+                              color: missionBadgeColor,
+                              size: 12.r,
+                            ),
+                            SizedBox(width: 5.w),
+                            Flexible(
+                              child: Text(
+                                missionBadgeText,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: missionBadgeColor,
+                                  letterSpacing: 0.6,
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // Top Row: Category Pill (Left) & Real Level Tag (Right)
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          // Category icon in frosted circle
-                          Container(
-                            padding: EdgeInsets.all(10.r),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.15),
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: Colors.white.withValues(alpha: 0.2),
-                                width: 1,
+                          // Category pill
+                          Flexible(
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 10.w,
+                                vertical: 4.5.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: color.withValues(alpha: isDark ? 0.14 : 0.08),
+                                borderRadius: BorderRadius.circular(100.r),
+                                border: Border.all(
+                                  color: color.withValues(alpha: isDark ? 0.28 : 0.20),
+                                  width: 1,
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(icon, color: color, size: 13.r),
+                                  SizedBox(width: 5.w),
+                                  Flexible(
+                                    child: Text(
+                                      categoryLabel,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.5.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: color,
+                                        letterSpacing: 0.8,
+                                      ),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            child: Icon(icon, color: Colors.white, size: 20.r),
                           ),
-                          // Category eyebrow pill
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 12.w,
-                              vertical: 5.h,
+                          SizedBox(width: 8.w),
+
+                          // Real levels tag
+                          Text(
+                            levelsTag,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w700,
+                              color: isDark ? AppColors.slate400 : AppColors.slate500,
                             ),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.15),
-                              borderRadius: BorderRadius.circular(12.r),
-                              border: Border.all(
-                                color: Colors.white.withValues(alpha: 0.2),
-                                width: 1,
-                              ),
-                            ),
-                            child: Text(
-                              categoryLabel,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w800,
-                                color: Colors.white.withValues(alpha: 0.95),
-                                letterSpacing: 1.5,
-                              ),
-                              maxLines: 1,
-                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ],
                       ),
-                      SizedBox(height: 16.h),
+                      SizedBox(height: 12.h),
 
                       // Title
                       Text(
                         title,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 22.sp,
+                          fontSize: 20.sp,
                           fontWeight: FontWeight.w900,
-                          color: Colors.white,
-                          letterSpacing: -0.5,
-                          height: 1.1,
+                          color: isDark ? Colors.white : AppColors.slate900,
+                          letterSpacing: -0.4,
+                          height: 1.15,
                         ),
                       ),
+                      SizedBox(height: 4.h),
 
-                      // ── Bottom section: Progress + Play button ─────
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Expanded(
-                            child: isNewUser
-                                ? _buildNewUserSection(context)
-                                : _buildProgressSection(
-                                    context,
-                                    milestone.target,
-                                    milestoneProgress,
-                                  ),
+                      // Contextual Subtitle
+                      Text(
+                        subtitle,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.5.sp,
+                          fontWeight: FontWeight.w500,
+                          color: isDark ? AppColors.slate300 : AppColors.slate600,
+                          height: 1.2,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      SizedBox(height: 16.h),
+
+                      // ── Inset Cockpit Bottom Tray ────────────────────
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 14.w,
+                          vertical: 10.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.035)
+                              : AppColors.slate50,
+                          borderRadius: BorderRadius.circular(16.r),
+                          border: Border.all(
+                            color: isDark
+                                ? Colors.white.withValues(alpha: 0.06)
+                                : Colors.black.withValues(alpha: 0.04),
+                            width: 1,
                           ),
-                          SizedBox(width: 16.w),
-                          // ── Floating Play Button ───────────────────
-                          _buildPlayButton(color),
-                        ],
+                        ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            // Progress bar & label
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          context.tr(
+                                            'home.milestone_progress',
+                                            fallback: 'Milestone Progress',
+                                          ),
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 11.sp,
+                                            fontWeight: FontWeight.w700,
+                                            color: isDark
+                                                ? AppColors.slate400
+                                                : AppColors.slate500,
+                                          ),
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ),
+                                      SizedBox(width: 6.w),
+                                      Text(
+                                        '$_cleared / ${milestone.target}',
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 11.sp,
+                                          fontWeight: FontWeight.w800,
+                                          color: color,
+                                        ),
+                                        maxLines: 1,
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 6.h),
+
+                                  // Milestone progress bar with SOLID category color
+                                  RepaintBoundary(
+                                    child: Stack(
+                                      children: [
+                                        // Track
+                                        Container(
+                                          height: 6.h,
+                                          width: double.infinity,
+                                          decoration: BoxDecoration(
+                                            color: isDark
+                                                ? Colors.white.withValues(
+                                                    alpha: 0.08,
+                                                  )
+                                                : AppColors.slate200,
+                                            borderRadius:
+                                                BorderRadius.circular(100.r),
+                                          ),
+                                        ),
+                                        // Fill: Solid authentic category color (NO gradient)
+                                        FractionallySizedBox(
+                                          widthFactor: milestoneProgress.clamp(
+                                            isNewUser ? 0.02 : 0.04,
+                                            1.0,
+                                          ),
+                                          child: Container(
+                                            height: 6.h,
+                                            decoration: BoxDecoration(
+                                              color: color,
+                                              borderRadius:
+                                                  BorderRadius.circular(100.r),
+                                            ),
+                                          ).animateIf(
+                                            context,
+                                            (w) => w.animate().scaleX(
+                                                  begin: 0,
+                                                  end: 1,
+                                                  duration: 800.ms,
+                                                  curve: Curves.easeOutQuart,
+                                                  alignment:
+                                                      Alignment.centerLeft,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 14.w),
+
+                            // Tactile Primary Button
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 14.w,
+                                vertical: 9.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: color,
+                                borderRadius: BorderRadius.circular(12.r),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: color.withValues(
+                                      alpha: !isTodayActive ? 0.45 : 0.32,
+                                    ),
+                                    blurRadius: !isTodayActive ? 10 : 8,
+                                    offset: const Offset(0, 2),
+                                  ),
+                                ],
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    ctaLabel,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w800,
+                                      color: Colors.white,
+                                      letterSpacing: 0.3,
+                                    ),
+                                  ),
+                                  SizedBox(width: 4.w),
+                                  Icon(
+                                    Icons.play_arrow_rounded,
+                                    color: Colors.white,
+                                    size: 16.r,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ],
               ),
+            ).animateIf(
+              context,
+              (w) => !isTodayActive
+                  ? w
+                      .animate(
+                        onPlay: (controller) =>
+                            controller.repeat(reverse: true),
+                      )
+                      .boxShadow(
+                        begin: BoxShadow(
+                          color: color.withValues(
+                            alpha: isDark ? 0.16 : 0.10,
+                          ),
+                          blurRadius: 18,
+                          offset: const Offset(0, 4),
+                        ),
+                        end: BoxShadow(
+                          color: color.withValues(
+                            alpha: isDark ? 0.40 : 0.26,
+                          ),
+                          blurRadius: 28,
+                          spreadRadius: 2,
+                          offset: const Offset(0, 8),
+                        ),
+                        duration: 2200.ms,
+                        curve: Curves.easeInOut,
+                      )
+                  : w,
             ),
           ),
         ),
       ),
     );
 
-    // Entrance animation: only fire once, not on every BLoC rebuild.
+    // Entrance animation: fires once upon mount
     if (!_hasAnimated) {
       _hasAnimated = true;
       if (VowlMotion.shouldReduceMotion(context)) return card;
       return card
           .animate()
-          .fadeIn(duration: 600.ms)
-          .slideY(begin: 0.08, end: 0);
+          .fadeIn(duration: 500.ms)
+          .slideY(begin: 0.06, end: 0, curve: Curves.easeOutCubic);
     }
     return card;
   }
 
-  /// New user CTA — encourages first interaction.
-  Widget _buildNewUserSection(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Icon(Icons.rocket_launch_rounded, color: Colors.white, size: 16.r),
-            SizedBox(width: 8.w),
-            Expanded(
-              child: Text(
-                context.tr('home.ready_to_start', fallback: 'Ready to launch!'),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w800,
-                  color: Colors.white,
-                ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-          ],
-        ),
-        SizedBox(height: 6.h),
-        Text(
-          context.tr('home.zero_xp_hint', fallback: 'Earn your first XP today'),
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 12.sp,
-            fontWeight: FontWeight.w600,
-            color: Colors.white.withValues(alpha: 0.7),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildProgressSection(
-    BuildContext context,
-    int target,
-    double milestoneProgress,
-  ) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        // Milestone progress header
-        Text(
-          context.tr(
-            'home.cl_levels_target',
-            fallback: '$_cleared → $target Levels',
-            args: [_cleared.toString(), target.toString()],
-          ),
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 11.sp,
-            fontWeight: FontWeight.w700,
-            color: Colors.white.withValues(alpha: 0.85),
-            letterSpacing: 0.3,
-          ),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-        ),
-        SizedBox(height: 8.h),
-
-        // Milestone progress bar with glow
-        RepaintBoundary(
-          child: Stack(
-            children: [
-              // Track
-              Container(
-                height: 6.h,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.15),
-                  borderRadius: BorderRadius.circular(100.r),
-                ),
-              ),
-              // Fill
-              FractionallySizedBox(
-                widthFactor: milestoneProgress.clamp(0.02, 1.0),
-                child:
-                    Container(
-                          height: 6.h,
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                Colors.white,
-                                Colors.white.withValues(alpha: 0.85),
-                              ],
-                            ),
-                            borderRadius: BorderRadius.circular(100.r),
-                          ),
-                        ).animateIf(
-                          context,
-                          (w) => w
-                              .animate()
-                              .scaleX(
-                                begin: 0,
-                                end: 1,
-                                duration: 800.ms,
-                                curve: Curves.easeOutQuart,
-                                alignment: Alignment.centerLeft,
-                              )
-                              .then()
-                              .shimmer(
-                                delay: 400.ms,
-                                duration: 1800.ms,
-                                color: Colors.white.withValues(alpha: 0.5),
-                              ),
-                        ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  /// The prominent floating play button with spring animation.
-  Widget _buildPlayButton(Color color) {
-    return Container(
-      padding: EdgeInsets.all(12.r),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        shape: BoxShape.circle,
-        border: Border.all(
-          color: Colors.white.withValues(alpha: 0.8),
-          width: 2,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.15),
-            blurRadius: 12,
-            offset: const Offset(0, 4),
-          ),
-          BoxShadow(
-            color: color.withValues(alpha: 0.3),
-            blurRadius: 20,
-            spreadRadius: -4,
-          ),
-        ],
-      ),
-      child: Icon(Icons.play_arrow_rounded, color: color, size: 26.r),
-    ).animateIf(
-      context,
-      (w) => w.animate().scale(
-        begin: const Offset(0.8, 0.8),
-        end: const Offset(1, 1),
-        duration: 800.ms,
-        curve: Curves.easeOutCubic,
-      ),
-    );
-  }
-
-  /// Shimmer skeleton matching the exact proportions of the loaded card.
+  /// Shimmer skeleton matching the exact proportions of the Apex Cockpit card.
   Widget _buildShimmer(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final baseBg = isDark
-        ? AppColors.slate800.withValues(alpha: 0.6)
-        : Colors.white.withValues(alpha: 0.85);
+        ? const Color(0xFF131A29)
+        : Colors.white;
     final borderColor = isDark
         ? Colors.white.withValues(alpha: 0.08)
-        : Colors.black.withValues(alpha: 0.05);
+        : Colors.black.withValues(alpha: 0.06);
 
     return RepaintBoundary(
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.all(22.r),
+        padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
           color: baseBg,
-          borderRadius: BorderRadius.circular(28.r),
+          borderRadius: BorderRadius.circular(24.r),
           border: Border.all(color: borderColor),
           boxShadow: [
             BoxShadow(
               color: isDark
-                  ? Colors.black.withValues(alpha: 0.25)
-                  : AppColors.indigo500.withValues(alpha: 0.08),
-              blurRadius: 24,
-              offset: const Offset(0, 10),
+                  ? Colors.black.withValues(alpha: 0.20)
+                  : Colors.black.withValues(alpha: 0.04),
+              blurRadius: 20,
+              offset: const Offset(0, 8),
             ),
           ],
         ),
@@ -580,53 +755,92 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Top row: Category icon in frosted circle + category eyebrow pill
+            // Top row: Category pill on left + level tag on right
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ShimmerLoading.circular(width: 40.r, height: 40.r),
                 ShimmerLoading.rounded(
                   width: 90.w,
-                  height: 24.h,
-                  borderRadius: 12.r,
+                  height: 22.h,
+                  borderRadius: 100.r,
+                ),
+                ShimmerLoading.rounded(
+                  width: 80.w,
+                  height: 14.h,
+                  borderRadius: 4.r,
                 ),
               ],
             ),
-            SizedBox(height: 20.h),
+            SizedBox(height: 14.h),
 
             // Title shimmer
             ShimmerLoading.rounded(
-              width: 175.w,
-              height: 24.h,
-              borderRadius: 8.r,
+              width: 170.w,
+              height: 22.h,
+              borderRadius: 6.r,
             ),
-            SizedBox(height: 20.h),
+            SizedBox(height: 6.h),
 
-            // Bottom section: Milestone & progress bar on left, play button on right
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ShimmerLoading.rounded(
-                        width: 110.w,
-                        height: 12.h,
-                        borderRadius: 4.r,
-                      ),
-                      SizedBox(height: 10.h),
-                      ShimmerLoading.rounded(
-                        width: double.infinity,
-                        height: 8.h,
-                        borderRadius: 4.r,
-                      ),
-                    ],
-                  ),
+            // Subtitle shimmer
+            ShimmerLoading.rounded(
+              width: 210.w,
+              height: 14.h,
+              borderRadius: 4.r,
+            ),
+            SizedBox(height: 18.h),
+
+            // Inset tray shimmer
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.02)
+                    : AppColors.slate50,
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.04)
+                      : Colors.black.withValues(alpha: 0.03),
                 ),
-                SizedBox(width: 16.w),
-                ShimmerLoading.circular(width: 44.r, height: 44.r),
-              ],
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            ShimmerLoading.rounded(
+                              width: 90.w,
+                              height: 12.h,
+                              borderRadius: 4.r,
+                            ),
+                            ShimmerLoading.rounded(
+                              width: 32.w,
+                              height: 12.h,
+                              borderRadius: 4.r,
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 8.h),
+                        ShimmerLoading.rounded(
+                          width: double.infinity,
+                          height: 6.h,
+                          borderRadius: 100.r,
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 14.w),
+                  ShimmerLoading.rounded(
+                    width: 76.w,
+                    height: 32.h,
+                    borderRadius: 12.r,
+                  ),
+                ],
+              ),
             ),
           ],
         ),

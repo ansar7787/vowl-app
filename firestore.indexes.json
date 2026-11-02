@@ -15,6 +15,14 @@
         { "fieldPath": "totalExp", "order": "DESCENDING" },
         { "fieldPath": "coins", "order": "DESCENDING" }
       ]
+    },
+    {
+      "collectionGroup": "referrals",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "currentMonthKey", "order": "ASCENDING" },
+        { "fieldPath": "monthlyCount", "order": "DESCENDING" }
+      ]
     }
   ],
   "fieldOverrides": []

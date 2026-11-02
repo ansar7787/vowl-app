@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -20,6 +21,18 @@ import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_podiu
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_card.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:go_router/go_router.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
+import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
+import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_overtake_hud.dart';
+import 'package:vowl/features/leaderboard/presentation/widgets/weekly_league_rewards_banner.dart';
+import 'package:vowl/features/leaderboard/presentation/widgets/rival_challenge_sheet.dart';
+import 'package:vowl/features/leaderboard/presentation/widgets/prestige_trophy_sheet.dart';
+import 'package:vowl/features/social_share/domain/entities/share_card_data.dart';
+import 'package:vowl/features/social_share/presentation/widgets/share_card_preview_modal.dart';
 
 /// Main leaderboard rankings screen featuring podium top 3 positions,
 /// personal rank card, and toggleable standard/kids leaderboards.
@@ -172,12 +185,58 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     super.dispose();
   }
 
+  LeaderboardTimeframe _timeframe = LeaderboardTimeframe.thisWeek;
+
+  /// Deterministic sort ensuring consistency across timeframes:
+  /// - Kids: Levels completed (primary), daily streak (tie-breaker), coins (fallback)
+  /// - This Week: Weekly XP (primary), daily streak (tie-breaker), levels, total XP
+  /// - All-Time: Lifetime total XP (primary), daily streak (tie-breaker), levels
+  List<UserEntity> get _sortedUsers {
+    final list = List<UserEntity>.from(widget.state.users);
+    if (widget.state.isKids) {
+      list.sort((a, b) {
+        final aLevels = a.kidsTotalLevelsCompleted;
+        final bLevels = b.kidsTotalLevelsCompleted;
+        if (bLevels != aLevels) return bLevels.compareTo(aLevels);
+        if (b.currentStreak != a.currentStreak) {
+          return b.currentStreak.compareTo(a.currentStreak);
+        }
+        return b.kidsCoins.compareTo(a.kidsCoins);
+      });
+    } else if (_timeframe == LeaderboardTimeframe.thisWeek) {
+      list.sort((a, b) {
+        final aWeekly = a.currentWeeklyExp;
+        final bWeekly = b.currentWeeklyExp;
+        if (bWeekly != aWeekly) return bWeekly.compareTo(aWeekly);
+        if (b.currentStreak != a.currentStreak) {
+          return b.currentStreak.compareTo(a.currentStreak);
+        }
+        if (b.totalLevelsCompleted != a.totalLevelsCompleted) {
+          return b.totalLevelsCompleted.compareTo(a.totalLevelsCompleted);
+        }
+        return b.totalExp.compareTo(a.totalExp);
+      });
+    } else {
+      list.sort((a, b) {
+        if (b.totalExp != a.totalExp) {
+          return b.totalExp.compareTo(a.totalExp);
+        }
+        if (b.currentStreak != a.currentStreak) {
+          return b.currentStreak.compareTo(a.currentStreak);
+        }
+        return b.totalLevelsCompleted.compareTo(a.totalLevelsCompleted);
+      });
+    }
+    return list;
+  }
+
   /// Smoothly scrolls the viewport so that the current user's card lands
   /// dead-center in the visible screen (between the top pinned header and bottom bar).
   /// If the user is on the podium (ranks 1-3), it scrolls to the very top.
   /// If the user is unranked, a friendly floating info message is displayed.
   void _scrollToMe() {
-    final rankIndex = widget.state.users.indexWhere(
+    final users = _sortedUsers;
+    final rankIndex = users.indexWhere(
       (u) => u.id == widget.currentUser?.id,
     );
 
@@ -256,6 +315,180 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     );
   }
 
+  Future<void> _handleClaimWeeklyLeagueReward(
+    int rank,
+    int vipDays,
+    int coins,
+    String weekKey,
+  ) async {
+    final currentUser = widget.currentUser;
+    if (currentUser == null) return;
+
+    final now = DateTime.now();
+    final DateTime? newExpiry;
+    if (vipDays > 0) {
+      if (currentUser.isPremium &&
+          currentUser.premiumExpiryDate != null &&
+          currentUser.premiumExpiryDate!.isAfter(now)) {
+        newExpiry = currentUser.premiumExpiryDate!.add(Duration(days: vipDays));
+      } else {
+        newExpiry = now.add(Duration(days: vipDays));
+      }
+    } else {
+      newExpiry = null;
+    }
+
+    final updatedKeys = [...currentUser.claimedWeeklyRewardWeekKeys, weekKey];
+    try {
+      await FirebaseFirestore.instance.collection('users').doc(currentUser.id).update({
+        'claimedWeeklyRewardWeekKeys': updatedKeys,
+        if (coins > 0) 'coins': FieldValue.increment(coins),
+        if (vipDays > 0) ...{
+          'isPremium': true,
+          'premiumExpiryDate': Timestamp.fromDate(newExpiry!),
+        },
+        'lastRewardTimestamp': FieldValue.serverTimestamp(),
+      });
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: AppColors.emerald500,
+            content: Text(
+              '🎉 Reward Claimed! Enjoy your $vipDays day${vipDays > 1 ? "s" : ""} VIP & $coins coins.',
+              style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+            ),
+          ),
+        );
+      }
+    } catch (e) {
+      debugPrint('[LeaderboardScreen] Claim weekly error: $e');
+    }
+  }
+
+  void _handleTileTap(UserEntity user, int rank, bool isMe) {
+    if (isMe) {
+      PrestigeTrophySheet.show(
+        context: context,
+        user: user,
+        rank: rank,
+        onShareRank: () => _showShareCard(user, rank),
+      );
+    } else if (!widget.state.isKids && widget.currentUser != null) {
+      RivalChallengeSheet.show(
+        context: context,
+        rival: user,
+        rivalRank: rank,
+        currentUser: widget.currentUser!,
+        onStartDuel: () => _startDuelWithRival(user, rank),
+        onShareRoomCode: () => _shareRoomCodeChallenge(user),
+      );
+    }
+  }
+
+  void _startDuelWithRival(UserEntity rival, int rank) async {
+    final currentUser = widget.currentUser;
+    if (currentUser == null) return;
+
+    if (currentUser.coins < 30) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('You need at least 30 coins to enter a duel stake!'),
+          backgroundColor: AppColors.rose500,
+        ),
+      );
+      return;
+    }
+
+    try {
+      final repo = di.sl<ArenaRepository>();
+      final session = await repo.challengeRivalDirectly(
+        currentUser: currentUser,
+        rival: rival,
+        rivalRank: rank,
+      );
+      if (mounted) {
+        Navigator.of(context).push(ArenaDuelScreen.route(session: session));
+      }
+    } catch (e) {
+      debugPrint('[LeaderboardScreen] Start duel error: $e');
+    }
+  }
+
+  void _startQuickMatch() async {
+    final currentUser = widget.currentUser;
+    if (currentUser == null) return;
+
+    if (currentUser.coins < 30) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('You need at least 30 coins to enter a duel stake!'),
+          backgroundColor: AppColors.rose500,
+        ),
+      );
+      return;
+    }
+
+    try {
+      final repo = di.sl<ArenaRepository>();
+      final session = await repo.quickMatch(
+        currentUser: currentUser,
+        leaderboardUsers: _sortedUsers,
+      );
+      if (mounted) {
+        Navigator.of(context).push(ArenaDuelScreen.route(session: session));
+      }
+    } catch (e) {
+      debugPrint('[LeaderboardScreen] Quick match error: $e');
+    }
+  }
+
+  void _shareRoomCodeChallenge(UserEntity rival) async {
+    final currentUser = widget.currentUser;
+    if (currentUser == null) return;
+
+    if (currentUser.coins < 30) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('You need at least 30 coins to create a duel stake!'),
+          backgroundColor: AppColors.rose500,
+        ),
+      );
+      return;
+    }
+
+    try {
+      final repo = di.sl<ArenaRepository>();
+      final session = await repo.createRoomCode(currentUser: currentUser);
+      final message = '⚔️ I bet 30 coins you can\'t beat my score on Vowl!\n'
+          'Enter room code ${session.roomCode} to duel me now:\n'
+          'https://vowl.app/duel/${session.roomCode}';
+      await SharePlus.instance.share(
+        ShareParams(
+          text: message,
+          subject: '1v1 English Duel Challenge!',
+        ),
+      );
+      if (mounted) {
+        Navigator.of(context).push(ArenaDuelScreen.route(session: session));
+      }
+    } catch (e) {
+      debugPrint('[LeaderboardScreen] Share room code error: $e');
+    }
+  }
+
+  void _showShareCard(UserEntity user, int rank) {
+    final data = ShareCardData.fromRank(
+      userName: user.safeDisplayName,
+      userPhotoUrl: user.photoUrl,
+      rank: rank,
+      totalXp: user.totalExp,
+      streak: user.currentStreak,
+      referralCode: user.referralCode,
+    );
+    ShareCardPreviewModal.show(context: context, data: data);
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -317,8 +550,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
       );
     }
 
+    final users = _sortedUsers;
+    final isWeekly = _timeframe == LeaderboardTimeframe.thisWeek;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
-    final rankIndex = widget.state.users.indexWhere(
+    final rankIndex = users.indexWhere(
       (u) => u.id == widget.currentUser?.id,
     );
     final showFindMe = rankIndex >= 6; // Only show if not naturally visible
@@ -358,15 +593,46 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                 ),
               ),
 
-              SliverToBoxAdapter(child: SizedBox(height: 24.h)),
+              // Timeframe selector (This Week vs All-Time Hall of Fame)
+              if (!widget.state.isKids)
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(24.w, 10.h, 24.w, 4.h),
+                    child: _LeaderboardTimeframeSelector(
+                      timeframe: _timeframe,
+                      onChanged: (selected) {
+                        setState(() => _timeframe = selected);
+                      },
+                    ),
+                  ),
+                ),
+
+              // Weekly League Podium Rewards Banner (Visible in Weekly mode)
+              if (!widget.state.isKids && isWeekly)
+                SliverToBoxAdapter(
+                  child: WeeklyLeagueRewardsBanner(
+                    currentUser: widget.currentUser,
+                    onClaimReward: _handleClaimWeeklyLeagueReward,
+                    onQuickMatch: _startQuickMatch,
+                  ),
+                ),
+
+              // All-Time Hall of Fame Banner (Visible in All-Time mode)
+              if (!widget.state.isKids && !isWeekly)
+                const SliverToBoxAdapter(
+                  child: _HallOfFameBanner(),
+                ),
+
+              SliverToBoxAdapter(child: SizedBox(height: 18.h)),
 
               // Podium (Top 3)
               SliverToBoxAdapter(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: LeaderboardPodium(
-                    top3: widget.state.users.take(3).toList(),
+                    top3: users.take(3).toList(),
                     isKids: widget.state.isKids,
+                    isWeekly: isWeekly,
                     currentUserId: widget.currentUser?.id,
                   ),
                 ),
@@ -381,12 +647,24 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                   minHeight: 88.h,
                   maxHeight: 145.h,
                   child: LeaderboardRankCard(
-                    allUsers: widget.state.users,
+                    allUsers: users,
                     isKids: widget.state.isKids,
+                    isWeekly: isWeekly,
                     onTap: _scrollToMe,
                   ),
                 ),
               ),
+
+              // Overtake Alert HUD (XP gap to next player, dropped rank alert)
+              if (!widget.state.isKids && widget.currentUser != null)
+                SliverToBoxAdapter(
+                  child: LeaderboardOvertakeHud(
+                    allUsers: users,
+                    currentUser: widget.currentUser!,
+                    isWeekly: isWeekly,
+                    onOvertakeTap: () => context.push(AppRouter.gamesRoute),
+                  ),
+                ),
 
               // Section label with divider
               SliverToBoxAdapter(
@@ -442,19 +720,19 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               ),
 
               // Rank 4-N list
-              if (widget.state.users.length > 3)
+              if (users.length > 3)
                 SliverPadding(
                   padding: EdgeInsets.symmetric(horizontal: 24.w),
                   sliver: SliverList(
                     delegate: SliverChildBuilderDelegate((context, index) {
                       final userIndex = index + 3;
-                      if (userIndex >= widget.state.users.length) {
+                      if (userIndex >= users.length) {
                         return const SizedBox.shrink();
                       }
-                      final user = widget.state.users[userIndex];
+                      final user = users[userIndex];
                       final rank = userIndex + 1;
                       final isMe = widget.currentUser?.id == user.id;
-                      final isLast = userIndex == widget.state.users.length - 1;
+                      final isLast = userIndex == users.length - 1;
 
                       final reduceMotion = VowlMotion.shouldReduceMotion(
                         context,
@@ -465,6 +743,9 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                           user: user,
                           rank: rank,
                           isMe: isMe,
+                          isKids: widget.state.isKids,
+                          isWeekly: isWeekly,
+                          onTap: () => _handleTileTap(user, rank, isMe),
                         ),
                       );
 
@@ -975,6 +1256,221 @@ class _LeaderboardToggle extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Timeframe enumeration & selector
+// ---------------------------------------------------------------------------
+
+enum LeaderboardTimeframe {
+  thisWeek,
+  allTime,
+}
+
+class _LeaderboardTimeframeSelector extends StatelessWidget {
+  final LeaderboardTimeframe timeframe;
+  final ValueChanged<LeaderboardTimeframe> onChanged;
+
+  const _LeaderboardTimeframeSelector({
+    required this.timeframe,
+    required this.onChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isWeekly = timeframe == LeaderboardTimeframe.thisWeek;
+
+    return Container(
+      height: 38.h,
+      padding: EdgeInsets.all(3.r),
+      decoration: BoxDecoration(
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? const Color(0xFF0F172A) : AppColors.slate100),
+        borderRadius: BorderRadius.circular(19.r),
+        border: Border.all(
+          color: isMidnight
+              ? Colors.white.withValues(alpha: 0.12)
+              : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200),
+          width: 1,
+        ),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: GestureDetector(
+              onTap: () {
+                HapticFeedback.lightImpact();
+                onChanged(LeaderboardTimeframe.thisWeek);
+              },
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                curve: Curves.easeOutCubic,
+                decoration: BoxDecoration(
+                  color: isWeekly ? AppColors.indigo500 : Colors.transparent,
+                  borderRadius: BorderRadius.circular(16.r),
+                  boxShadow: isWeekly
+                      ? [
+                          BoxShadow(
+                            color: AppColors.indigo500.withValues(alpha: 0.35),
+                            blurRadius: 6,
+                            offset: const Offset(0, 1),
+                          ),
+                        ]
+                      : null,
+                ),
+                alignment: Alignment.center,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        LucideIcons.zap,
+                        size: 13.sp,
+                        color: isWeekly ? Colors.white : (isDark ? Colors.white60 : AppColors.slate600),
+                      ),
+                      SizedBox(width: 5.w),
+                      Text(
+                        'This Week (League)',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 12.sp,
+                          color: isWeekly ? Colors.white : (isDark ? Colors.white60 : AppColors.slate600),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: GestureDetector(
+              onTap: () {
+                HapticFeedback.lightImpact();
+                onChanged(LeaderboardTimeframe.allTime);
+              },
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                curve: Curves.easeOutCubic,
+                decoration: BoxDecoration(
+                  color: !isWeekly ? AppColors.amber500 : Colors.transparent,
+                  borderRadius: BorderRadius.circular(16.r),
+                  boxShadow: !isWeekly
+                      ? [
+                          BoxShadow(
+                            color: AppColors.amber500.withValues(alpha: 0.35),
+                            blurRadius: 6,
+                            offset: const Offset(0, 1),
+                          ),
+                        ]
+                      : null,
+                ),
+                alignment: Alignment.center,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        LucideIcons.crown,
+                        size: 13.sp,
+                        color: !isWeekly ? Colors.white : (isDark ? Colors.white60 : AppColors.slate600),
+                      ),
+                      SizedBox(width: 5.w),
+                      Text(
+                        'All-Time (Hall of Fame)',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 12.sp,
+                          color: !isWeekly ? Colors.white : (isDark ? Colors.white60 : AppColors.slate600),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// All-Time Hall of Fame Banner
+// ---------------------------------------------------------------------------
+
+class _HallOfFameBanner extends StatelessWidget {
+  const _HallOfFameBanner();
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final surfaceColor = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF0F172A) : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
+    final titleColor = isDark ? Colors.white : AppColors.slate900;
+    final subColor = isDark ? AppColors.slate400 : AppColors.slate600;
+
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      decoration: BoxDecoration(
+        color: surfaceColor,
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(color: borderColor, width: 1.r),
+      ),
+      child: Row(
+        children: [
+          Container(
+            padding: EdgeInsets.all(8.r),
+            decoration: BoxDecoration(
+              color: AppColors.amber500.withValues(alpha: 0.12),
+              borderRadius: BorderRadius.circular(12.r),
+            ),
+            child: Icon(LucideIcons.crown, color: AppColors.amber500, size: 18.sp),
+          ),
+          SizedBox(width: 12.w),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Hall of Fame Masters',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w700,
+                    color: titleColor,
+                  ),
+                ),
+                SizedBox(height: 2.h),
+                Text(
+                  'Lifetime XP earned across all quests & practice duels',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    color: subColor,
+                  ),
+                ),
+              ],
             ),
           ),
         ],

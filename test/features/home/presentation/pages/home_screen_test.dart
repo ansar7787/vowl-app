@@ -10,7 +10,6 @@ import 'package:go_router/go_router.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/error/failures.dart';
-import 'package:vowl/core/presentation/feature_catalog/feature_directory_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_theme.dart';
@@ -27,7 +26,8 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/features/home/presentation/pages/home_screen.dart';
 import 'package:vowl/features/home/presentation/widgets/bento_arena.dart';
-import 'package:vowl/features/home/presentation/widgets/command_pod.dart';
+import 'package:vowl/features/home/presentation/widgets/beginner_milestone_card.dart';
+import 'package:vowl/features/home/presentation/widgets/home_hero_header.dart';
 import 'package:vowl/features/home/presentation/widgets/continue_learning_card.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_motivation_card.dart';
 import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
@@ -314,7 +314,7 @@ void main() {
         await tester.pump();
 
         expect(find.byType(HomeShimmerLoading), findsOneWidget);
-        expect(find.byType(CommandPod), findsNothing);
+        expect(find.byType(HomeHeroHeader), findsNothing);
       },
     );
 
@@ -358,19 +358,19 @@ void main() {
 
   group('Group 2: Main Home Feed Initial Layout & Hero Header', () {
     testWidgets(
-      'renders hero header CommandPod with user display name and Commander rank badge',
+      'renders hero header HomeHeroHeader with user display name, level badge, and habit focus',
       (tester) async {
         await pumpHomeScreen(tester);
 
-        expect(find.byType(CommandPod), findsOneWidget);
-        expect(find.text('Aria'), findsOneWidget);
+        expect(find.byType(HomeHeroHeader), findsOneWidget);
+        expect(find.textContaining('Aria'), findsOneWidget);
         expect(find.text('15'), findsOneWidget); // Level 15 badge
-        expect(find.text('COMMANDER'), findsOneWidget);
+        expect(find.text('1 lesson to reach daily goal'), findsOneWidget);
       },
     );
 
     testWidgets(
-      'renders Rookie rank badge for a level 1 user',
+      'renders level 1 and habit focus for a new learner',
       (tester) async {
         const rookieUser = UserEntity(
           id: 'user_rookie',
@@ -393,8 +393,9 @@ void main() {
 
         await pumpHomeScreen(tester);
 
-        expect(find.text('ROOKIE'), findsOneWidget);
+        expect(find.textContaining('New Learner'), findsOneWidget);
         expect(find.text('1'), findsWidgets);
+        expect(find.text('1 lesson to reach daily goal'), findsOneWidget);
       },
     );
   });
@@ -436,7 +437,7 @@ void main() {
 
         expect(find.byType(UnifiedStatsRow), findsOneWidget);
         expect(find.text('12'), findsWidgets); // Current streak
-        expect(find.text('350'), findsOneWidget); // Coins
+        expect(find.descendant(of: find.byType(UnifiedStatsRow), matching: find.text('350')), findsOneWidget); // Coins in UnifiedStatsRow
         expect(find.text('2'), findsWidgets); // Badges count
         expect(find.text('#1'), findsWidgets); // Global rank from mock repo
       },
@@ -659,6 +660,9 @@ void main() {
           id: 'local',
           email: 'guest@vowl.app',
           displayName: 'Guest Learner',
+          completedLevels: {
+            'vocabulary': [1, 2],
+          },
         );
         when(() => mockAuthBloc.state).thenReturn(
           AuthState.authenticated(guestUser),
@@ -733,7 +737,7 @@ void main() {
     );
 
     testWidgets(
-      'tapping See All in Explore & Tools opens FeatureDirectoryBottomSheet',
+      'tapping See All in Explore & Tools opens Tools Directory bottom sheet',
       (tester) async {
         await pumpHomeScreen(tester);
 
@@ -746,7 +750,7 @@ void main() {
         await tester.tap(seeAllButtons.last);
         await tester.pumpAndSettle();
 
-        expect(find.byType(FeatureDirectoryBottomSheet), findsOneWidget);
+        expect(find.text('Tools & Utilities (7)'), findsOneWidget);
       },
     );
   });
@@ -757,7 +761,11 @@ void main() {
       (tester) async {
         await pumpHomeScreen(tester);
 
-        homeScrollController.jumpTo(1050);
+        await tester.scrollUntilVisible(
+          find.byType(DiscoveryDeck),
+          300,
+          scrollable: find.byType(Scrollable).first,
+        );
         await tester.pumpAndSettle();
 
         expect(find.text('DISCOVERY HUB'), findsOneWidget);
@@ -770,7 +778,11 @@ void main() {
       (tester) async {
         await pumpHomeScreen(tester);
 
-        homeScrollController.jumpTo(1050);
+        await tester.scrollUntilVisible(
+          find.byType(DiscoveryDeck),
+          300,
+          scrollable: find.byType(Scrollable).first,
+        );
         await tester.pumpAndSettle();
 
         final discoveryDeck = find.byType(DiscoveryDeck);
@@ -794,7 +806,11 @@ void main() {
       (tester) async {
         await pumpHomeScreen(tester);
 
-        homeScrollController.jumpTo(1400);
+        await tester.scrollUntilVisible(
+          find.byType(DailyMotivationCard),
+          300,
+          scrollable: find.byType(Scrollable).first,
+        );
         await tester.pumpAndSettle();
 
         expect(find.byType(DailyMotivationCard), findsOneWidget);
@@ -951,6 +967,62 @@ void main() {
 
         expect(find.byType(HomeScreen), findsOneWidget);
         expect(tester.takeException(), isNull);
+      },
+    );
+  });
+
+  group('Group 15: Progressive RPG Gating', () {
+    testWidgets(
+      'renders BeginnerMilestoneCard for beginner with totalLevelsCompleted < 2',
+      (tester) async {
+        const beginnerUser = UserEntity(
+          id: 'beg_user',
+          email: 'beg@vowl.app',
+          displayName: 'Beginner Learner',
+          totalExp: 0,
+          currentStreak: 1,
+        );
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(beginnerUser),
+        );
+
+        await pumpHomeScreen(tester);
+
+        expect(find.byType(BeginnerMilestoneCard), findsOneWidget);
+        expect(find.byType(BentoArena), findsNothing);
+        expect(find.byType(ToolsStrip), findsNothing);
+      },
+    );
+
+    testWidgets(
+      'tapping bypass button in BeginnerMilestoneCard reveals full cockpit including BentoArena and ToolsStrip',
+      (tester) async {
+        const beginnerUser = UserEntity(
+          id: 'beg_user',
+          email: 'beg@vowl.app',
+          displayName: 'Beginner Learner',
+          totalExp: 0,
+          currentStreak: 1,
+        );
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(beginnerUser),
+        );
+
+        await pumpHomeScreen(tester);
+
+        expect(find.byType(BeginnerMilestoneCard), findsOneWidget);
+        final bypassBtn = find.text('Explore all features now →');
+        expect(bypassBtn, findsOneWidget);
+
+        await tester.tap(bypassBtn);
+        await tester.pumpAndSettle();
+
+        expect(find.byType(BeginnerMilestoneCard), findsNothing);
+        expect(find.byType(BentoArena), findsOneWidget);
+
+        homeScrollController.jumpTo(650);
+        await tester.pumpAndSettle();
+        expect(find.byType(ToolsStrip), findsOneWidget);
       },
     );
   });

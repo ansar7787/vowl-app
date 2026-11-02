@@ -20,12 +20,14 @@ class _LocalPalette {
 class LeaderboardPodium extends StatelessWidget {
   final List<UserEntity> top3;
   final bool isKids;
+  final bool isWeekly;
   final String? currentUserId;
 
   const LeaderboardPodium({
     super.key,
     required this.top3,
     this.isKids = false,
+    this.isWeekly = true,
     this.currentUserId,
   });
 
@@ -53,6 +55,7 @@ class LeaderboardPodium extends StatelessWidget {
                   rank: 2,
                   maxHeight: maxPodiumHeight,
                   isKids: isKids,
+                  isWeekly: isWeekly,
                   currentUserId: currentUserId,
                 ),
               )
@@ -68,6 +71,7 @@ class LeaderboardPodium extends StatelessWidget {
                 rank: 1,
                 maxHeight: maxPodiumHeight,
                 isKids: isKids,
+                isWeekly: isWeekly,
                 currentUserId: currentUserId,
               ),
             ),
@@ -82,6 +86,7 @@ class LeaderboardPodium extends StatelessWidget {
                   rank: 3,
                   maxHeight: maxPodiumHeight,
                   isKids: isKids,
+                  isWeekly: isWeekly,
                   currentUserId: currentUserId,
                 ),
               )
@@ -103,6 +108,7 @@ class _PodiumSlot extends StatelessWidget {
   final int rank;
   final double maxHeight;
   final bool isKids;
+  final bool isWeekly;
   final String? currentUserId;
 
   const _PodiumSlot({
@@ -110,6 +116,7 @@ class _PodiumSlot extends StatelessWidget {
     required this.rank,
     required this.maxHeight,
     this.isKids = false,
+    this.isWeekly = true,
     this.currentUserId,
   });
 
@@ -125,10 +132,14 @@ class _PodiumSlot extends StatelessWidget {
     final levelsCleared = isKids
         ? user.kidsTotalLevelsCompleted
         : user.totalLevelsCompleted;
-    final score = isKids ? user.kidsCoins : user.totalExp;
+    final score = isKids
+        ? user.kidsTotalLevelsCompleted
+        : (isWeekly ? user.currentWeeklyExp : user.totalExp);
     final scoreLabel = isKids
-        ? context.tr('leaderboard.coins', fallback: 'Coins')
-        : context.tr('leaderboard.xp', fallback: 'XP');
+        ? context.tr('leaderboard.levels', fallback: 'Levels')
+        : (isWeekly
+            ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
+            : context.tr('leaderboard.xp', fallback: 'XP'));
     final isMe = currentUserId != null && user.id == currentUserId;
     final glowColor = colors[0];
     final isDark = Theme.of(context).brightness == Brightness.dark;

@@ -86,6 +86,15 @@ import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc
 import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/features/translation/presentation/bloc/translation_bloc.dart';
 
+// Referral
+import 'package:vowl/features/referral/domain/repositories/referral_repository.dart';
+import 'package:vowl/features/referral/data/repositories/referral_repository_impl.dart';
+import 'package:vowl/features/referral/presentation/bloc/referral_cubit.dart';
+
+// Arena 1v1
+import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
+import 'package:vowl/features/arena/data/repositories/arena_repository_impl.dart';
+
 // Shared use cases
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
@@ -114,6 +123,8 @@ void initFeatures(GetIt sl) {
   _initKidsZone(sl);
   _initEliteMastery(sl);
   _initTranslation(sl);
+  _initReferral(sl);
+  _initArena(sl);
 }
 
 // ── Reading ───────────────────────────────────────────────────────────────────
@@ -468,5 +479,24 @@ void _initEliteMastery(GetIt sl) {
 void _initTranslation(GetIt sl) {
   sl.registerFactory<TranslationBloc>(
     () => TranslationBloc(service: sl<TranslationService>()),
+  );
+}
+
+// ── Referral ────────────────────────────────────────────────────────────────
+
+void _initReferral(GetIt sl) {
+  sl.registerLazySingleton<ReferralRepository>(
+    () => ReferralRepositoryImpl(sl<FirebaseFirestore>()),
+  );
+  sl.registerFactory<ReferralCubit>(
+    () => ReferralCubit(repository: sl<ReferralRepository>()),
+  );
+}
+
+// ── Arena 1v1 ───────────────────────────────────────────────────────────────
+
+void _initArena(GetIt sl) {
+  sl.registerLazySingleton<ArenaRepository>(
+    () => ArenaRepositoryImpl(sl<FirebaseFirestore>()),
   );
 }
