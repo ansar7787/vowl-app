@@ -95,9 +95,18 @@ class _ArenaDuelView extends StatelessWidget {
               builder: (dialogCtx) => ArenaResultDialog(
                 isWinner: state.isWinner,
                 isDraw: state.isDraw,
+                isSpeedTieBreak: state.isSpeedTieBreak,
+                speedDiffSeconds: state.speedDiffSeconds,
                 myScore: state.myScore,
                 rivalScore: state.rivalScore,
+                myCorrectCount: state.myCorrectCount,
+                rivalCorrectCount: state.rivalCorrectCount,
+                myTotalTimeMs: state.myTotalTimeMs,
+                rivalTotalTimeMs: state.rivalTotalTimeMs,
                 rivalName: rivalName,
+                rivalPhotoUrl: state.session?.guestPhotoUrl ?? state.session?.hostPhotoUrl,
+                myName: authState.user?.safeDisplayName ?? 'You',
+                myPhotoUrl: authState.user?.photoUrl,
                 payoutCoins: state.payoutCoins,
                 roomCode: state.session?.roomCode ?? '',
                 onRematch: () {
