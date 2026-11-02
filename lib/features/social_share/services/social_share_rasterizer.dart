@@ -34,6 +34,17 @@ class SocialShareRasterizer {
       final pngBytes = byteData.buffer.asUint8List();
 
       final tempDir = await getTemporaryDirectory();
+
+      // Clean up previous milestone temp files safely
+      try {
+        final existingFiles = tempDir.listSync();
+        for (final entity in existingFiles) {
+          if (entity is File && entity.path.contains('vowl_milestone_')) {
+            entity.deleteSync();
+          }
+        }
+      } catch (_) {}
+
       final filePath = '${tempDir.path}/vowl_milestone_${DateTime.now().millisecondsSinceEpoch}.png';
       final file = File(filePath);
       await file.writeAsBytes(pngBytes);
@@ -46,10 +57,14 @@ class SocialShareRasterizer {
         ),
       );
 
-      // Clean up temp file
-      if (await file.exists()) {
-        await file.delete().catchError((_) => file);
-      }
+      // Defer cleanup by 2 minutes to allow target apps (WhatsApp, Instagram) to read/copy the file without race condition
+      Future.delayed(const Duration(minutes: 2), () async {
+        try {
+          if (await file.exists()) {
+            await file.delete();
+          }
+        } catch (_) {}
+      });
     } catch (e) {
       debugPrint('[SocialShareRasterizer] Error capturing share card: $e');
     }

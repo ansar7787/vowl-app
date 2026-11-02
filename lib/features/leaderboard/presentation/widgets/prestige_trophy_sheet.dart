@@ -53,10 +53,11 @@ class PrestigeTrophySheet extends StatelessWidget {
         borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
         border: Border.all(color: borderColor, width: 1.w),
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
           // Drag handle
           Center(
             child: Container(
@@ -172,8 +173,9 @@ class PrestigeTrophySheet extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildStatItem(
     String label,
@@ -198,6 +200,8 @@ class PrestigeTrophySheet extends StatelessWidget {
           SizedBox(height: 6.h),
           Text(
             value,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(
               fontSize: 14.sp,
               fontWeight: FontWeight.w800,

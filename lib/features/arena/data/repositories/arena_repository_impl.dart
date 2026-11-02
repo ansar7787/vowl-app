@@ -304,11 +304,17 @@ class ArenaRepositoryImpl implements ArenaRepository {
 
   Future<void> _deductEntryStake(String userId) async {
     try {
+      final userDoc = await _firestore.collection('users').doc(userId).get().timeout(_kNetworkTimeout);
+      final currentCoins = (userDoc.data()?['coins'] as num?)?.toInt() ?? 0;
+      if (currentCoins < _kStakeCoins) {
+        throw Exception('Insufficient coins for duel stake.');
+      }
       await _firestore.collection('users').doc(userId).update({
         'coins': FieldValue.increment(-_kStakeCoins),
       }).timeout(_kNetworkTimeout);
     } catch (e) {
       debugPrint('[ArenaRepositoryImpl] Deduct stake error: $e');
+      rethrow;
     }
   }
 

@@ -99,19 +99,25 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  Icon(LucideIcons.flame, size: 16.sp, color: const Color(0xFFF59E0B)),
-                  SizedBox(width: 6.w),
-                  Text(
-                    'Weekly League Podium',
-                    style: TextStyle(
-                      fontSize: 13.sp,
-                      fontWeight: FontWeight.w700,
-                      color: textPrimary,
+              Expanded(
+                child: Row(
+                  children: [
+                    Icon(LucideIcons.flame, size: 16.sp, color: const Color(0xFFF59E0B)),
+                    SizedBox(width: 6.w),
+                    Flexible(
+                      child: Text(
+                        'Weekly League Podium',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w700,
+                          color: textPrimary,
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
@@ -181,12 +187,16 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                     children: [
                       Icon(LucideIcons.swords, size: 14.sp, color: AppColors.indigo500),
                       SizedBox(width: 8.w),
-                      Text(
-                        'Quick Duel (30 Coins) · 3s Instant Match',
-                        style: TextStyle(
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w700,
-                          color: isDark ? Colors.white : AppColors.indigo600,
+                      Flexible(
+                        child: Text(
+                          'Quick Duel (30 Coins) · 3s Instant Match',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w700,
+                            color: isDark ? Colors.white : AppColors.indigo600,
+                          ),
                         ),
                       ),
                     ],

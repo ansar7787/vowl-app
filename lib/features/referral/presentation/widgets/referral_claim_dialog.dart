@@ -54,12 +54,13 @@ class _ReferralClaimDialogState extends State<ReferralClaimDialog> {
         side: BorderSide(color: borderColor, width: 1.w),
       ),
       insetPadding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Padding(
-        padding: EdgeInsets.all(22.w),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(22.w),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
             // Icon & Header
             Center(
               child: Container(
@@ -218,7 +219,8 @@ class _ReferralClaimDialogState extends State<ReferralClaimDialog> {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 }
 

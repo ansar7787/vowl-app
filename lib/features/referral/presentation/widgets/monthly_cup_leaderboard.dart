@@ -39,20 +39,27 @@ class MonthlyCupLeaderboard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  Icon(LucideIcons.trophy, size: 18.sp, color: const Color(0xFFF59E0B)),
-                  SizedBox(width: 8.w),
-                  Text(
-                    'Monthly Ambassador Cup',
-                    style: TextStyle(
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w700,
-                      color: textPrimary,
+              Expanded(
+                child: Row(
+                  children: [
+                    Icon(LucideIcons.trophy, size: 18.sp, color: const Color(0xFFF59E0B)),
+                    SizedBox(width: 8.w),
+                    Flexible(
+                      child: Text(
+                        'Monthly Ambassador Cup',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w700,
+                          color: textPrimary,
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
+              SizedBox(width: 8.w),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                 decoration: BoxDecoration(

@@ -52,55 +52,57 @@ class _ShareCardPreviewModalState extends State<ShareCardPreviewModal> {
       backgroundColor: Colors.transparent,
       elevation: 0,
       insetPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // Close button at top right
-          Align(
-            alignment: Alignment.topRight,
-            child: IconButton(
-              icon: Icon(LucideIcons.x, color: Colors.white, size: 24.sp),
-              onPressed: () => Navigator.of(context).pop(),
-            ),
-          ),
-          SizedBox(height: 8.h),
-
-          // The card wrapped in RepaintBoundary for capture
-          RepaintBoundary(
-            key: _boundaryKey,
-            child: MilestoneShareCardWidget(data: widget.data),
-          ),
-
-          SizedBox(height: 20.h),
-
-          // Action Button
-          SizedBox(
-            width: 340.w,
-            child: ElevatedButton.icon(
-              onPressed: _isSharing ? null : _handleShare,
-              icon: _isSharing
-                  ? SizedBox(
-                      width: 16.w,
-                      height: 16.w,
-                      child: const CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
-                    )
-                  : Icon(LucideIcons.share2, size: 18.sp),
-              label: Text(
-                _isSharing ? 'Generating Image...' : 'Share Card to Stories / WhatsApp',
-                style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w700),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // Close button at top right
+            Align(
+              alignment: Alignment.topRight,
+              child: IconButton(
+                icon: Icon(LucideIcons.x, color: Colors.white, size: 24.sp),
+                onPressed: () => Navigator.of(context).pop(),
               ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.indigo500,
-                foregroundColor: Colors.white,
-                padding: EdgeInsets.symmetric(vertical: 14.h),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(14.r),
+            ),
+            SizedBox(height: 8.h),
+
+            // The card wrapped in RepaintBoundary for capture
+            RepaintBoundary(
+              key: _boundaryKey,
+              child: MilestoneShareCardWidget(data: widget.data),
+            ),
+
+            SizedBox(height: 20.h),
+
+            // Action Button
+            SizedBox(
+              width: 340.w,
+              child: ElevatedButton.icon(
+                onPressed: _isSharing ? null : _handleShare,
+                icon: _isSharing
+                    ? SizedBox(
+                        width: 16.w,
+                        height: 16.w,
+                        child: const CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                      )
+                    : Icon(LucideIcons.share2, size: 18.sp),
+                label: Text(
+                  _isSharing ? 'Generating Image...' : 'Share Card to Stories / WhatsApp',
+                  style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w700),
                 ),
-                elevation: 0,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.indigo500,
+                  foregroundColor: Colors.white,
+                  padding: EdgeInsets.symmetric(vertical: 14.h),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14.r),
+                  ),
+                  elevation: 0,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

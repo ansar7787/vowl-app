@@ -56,8 +56,14 @@ class _ArenaDuelView extends StatelessWidget {
     final textSecondary = isDark ? AppColors.slate400 : (tokens?.textSecondary ?? const Color(0xFF64748B));
     final borderColor = isDark ? AppColors.slate800 : (tokens?.border ?? const Color(0xFFE2E8F0));
 
-    return Scaffold(
-      backgroundColor: backgroundColor,
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) {
+        if (didPop) return;
+        _confirmExit(context);
+      },
+      child: Scaffold(
+        backgroundColor: backgroundColor,
       appBar: AppBar(
         backgroundColor: isDark ? AppColors.midnightSurface : (tokens?.surface ?? Colors.white),
         elevation: 0,
@@ -214,8 +220,9 @@ class _ArenaDuelView extends StatelessWidget {
           );
         },
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildOptionButton({
     required BuildContext context,
@@ -368,6 +375,15 @@ class _ArenaDuelView extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
+              final cubit = context.read<ArenaDuelCubit>();
+              final session = cubit.state.session;
+              final authState = context.read<AuthBloc>().state;
+              if (session != null && authState.user != null) {
+                di.sl<ArenaRepository>().forfeitMatch(
+                  roomCode: session.roomCode,
+                  userId: authState.user!.id,
+                );
+              }
               Navigator.of(dialogCtx).pop();
               Navigator.of(context).pop();
             },
@@ -380,15 +396,29 @@ class _ArenaDuelView extends StatelessWidget {
   }
 
   void _triggerRematch(BuildContext context, dynamic user) async {
-    final repo = di.sl<ArenaRepository>();
-    final newSession = await repo.quickMatch(
-      currentUser: user,
-      leaderboardUsers: const [],
-    );
-    if (context.mounted) {
-      Navigator.of(context).pushReplacement(
-        ArenaDuelScreen.route(session: newSession),
+    if (user.coins < 30) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('You need at least 30 coins for a rematch stake!'),
+          backgroundColor: AppColors.rose500,
+        ),
       );
+      return;
+    }
+
+    try {
+      final repo = di.sl<ArenaRepository>();
+      final newSession = await repo.quickMatch(
+        currentUser: user,
+        leaderboardUsers: const [],
+      );
+      if (context.mounted) {
+        Navigator.of(context).pushReplacement(
+          ArenaDuelScreen.route(session: newSession),
+        );
+      }
+    } catch (e) {
+      debugPrint('[ArenaDuelScreen] Rematch error: $e');
     }
   }
 }

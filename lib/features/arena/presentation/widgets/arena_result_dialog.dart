@@ -48,9 +48,10 @@ class ArenaResultDialog extends StatelessWidget {
         side: BorderSide(color: borderColor, width: 1.w),
       ),
       insetPadding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Padding(
-        padding: EdgeInsets.all(24.w),
-        child: Column(
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(24.w),
+          child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -105,28 +106,39 @@ class ArenaResultDialog extends StatelessWidget {
                 border: Border.all(color: borderColor),
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Column(
-                    children: [
-                      Text('You', style: TextStyle(fontSize: 11.sp, color: textSecondary)),
-                      SizedBox(height: 2.h),
-                      Text(
-                        '$myScore',
-                        style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w800, color: AppColors.indigo500),
-                      ),
-                    ],
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text('You', style: TextStyle(fontSize: 11.sp, color: textSecondary)),
+                        SizedBox(height: 2.h),
+                        Text(
+                          '$myScore',
+                          style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w800, color: AppColors.indigo500),
+                        ),
+                      ],
+                    ),
                   ),
-                  Text('VS', style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w900, color: textSecondary)),
-                  Column(
-                    children: [
-                      Text(rivalName, maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 11.sp, color: textSecondary)),
-                      SizedBox(height: 2.h),
-                      Text(
-                        '$rivalScore',
-                        style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w800, color: const Color(0xFFF59E0B)),
-                      ),
-                    ],
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.w),
+                    child: Text('VS', style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w900, color: textSecondary)),
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text(
+                          rivalName,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontSize: 11.sp, color: textSecondary),
+                        ),
+                        SizedBox(height: 2.h),
+                        Text(
+                          '$rivalScore',
+                          style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w800, color: const Color(0xFFF59E0B)),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -170,6 +182,7 @@ class ArenaResultDialog extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 }

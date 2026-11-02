@@ -63,10 +63,11 @@ class RivalChallengeSheet extends StatelessWidget {
         borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
         border: Border.all(color: borderColor, width: 1.w),
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
           // Drag handle
           Center(
             child: Container(
@@ -186,14 +187,14 @@ class RivalChallengeSheet extends StatelessWidget {
 
           // Room Code Button
           OutlinedButton.icon(
-            onPressed: () {
+            onPressed: hasEnoughCoins ? () {
               Navigator.of(context).pop();
               onShareRoomCode();
-            },
-            icon: Icon(LucideIcons.share2, size: 16.sp, color: textPrimary),
+            } : null,
+            icon: Icon(LucideIcons.share2, size: 16.sp, color: hasEnoughCoins ? textPrimary : textSecondary),
             label: Text(
-              'Share Room Code Challenge',
-              style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w600, color: textPrimary),
+              hasEnoughCoins ? 'Share Room Code Challenge' : 'Need 30 Coins to Challenge',
+              style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w600, color: hasEnoughCoins ? textPrimary : textSecondary),
             ),
             style: OutlinedButton.styleFrom(
               padding: EdgeInsets.symmetric(vertical: 12.h),
@@ -205,8 +206,9 @@ class RivalChallengeSheet extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildStakeColumn(String title, String value, Color color, bool isDark) {
     return Column(

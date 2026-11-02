@@ -36,6 +36,10 @@ class ReferralStatsCard extends StatelessWidget {
     final textPrimary = isDark ? Colors.white : (tokens?.textPrimary ?? const Color(0xFF0F172A));
     final textSecondary = isDark ? AppColors.slate400 : (tokens?.textSecondary ?? const Color(0xFF64748B));
 
+    final nowUtc = DateTime.now().toUtc();
+    final nextMonthUtc = DateTime.utc(nowUtc.year, nowUtc.month + 1, 1);
+    final daysRemainingInMonth = nextMonthUtc.difference(nowUtc).inDays.clamp(0, 31);
+
     return Container(
       padding: EdgeInsets.all(18.w),
       decoration: BoxDecoration(
@@ -67,7 +71,7 @@ class ReferralStatsCard extends StatelessWidget {
                 child: _buildCounterTile(
                   title: 'Monthly Cup',
                   value: '$monthlyCount',
-                  subtitle: 'Ends in ${DateTime.now().toUtc().month == 12 ? 31 : 30 - DateTime.now().toUtc().day}d',
+                  subtitle: 'Ends in ${daysRemainingInMonth}d',
                   icon: LucideIcons.trophy,
                   accentColor: const Color(0xFFF59E0B),
                   isDark: isDark,

@@ -103,6 +103,8 @@ class LeaderboardOvertakeHud extends StatelessWidget {
                   droppedRanks > 0
                       ? '⚠️ Passed by $droppedRanks player${droppedRanks > 1 ? "s" : ""} today!'
                       : '⚡ $xpDiff XP to pass $rivalName',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w700,
@@ -111,6 +113,8 @@ class LeaderboardOvertakeHud extends StatelessWidget {
                 ),
                 Text(
                   'Play a quick quest to take Rank #$rivalRank',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontSize: 10.sp,
                     color: isDark ? AppColors.slate400 : (tokens?.textSecondary ?? const Color(0xFF64748B)),

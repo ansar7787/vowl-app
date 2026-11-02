@@ -22,6 +22,8 @@ import 'package:vowl/features/profile/presentation/pages/review_mistakes_screen.
 import 'package:vowl/features/scan_and_learn/presentation/pages/scan_and_learn_screen.dart';
 import 'package:vowl/features/photo_vocabulary/presentation/pages/photo_vocabulary_screen.dart';
 import 'package:vowl/features/referral/presentation/pages/referral_hub_screen.dart';
+import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
+import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
 
 import 'package:vowl/core/utils/app_router.dart';
 
@@ -217,6 +219,22 @@ class HomeRoutes {
         child: const ReferralHubScreen(),
         state: state,
       ),
+    ),
+    GoRoute(
+      path: AppRouter.arenaRoute,
+      pageBuilder: (context, state) {
+        final session = state.extra as ArenaDuelSession?;
+        if (session == null) {
+          return fadeTransitionPage(
+            child: const LeaderboardScreen(),
+            state: state,
+          );
+        }
+        return fadeTransitionPage(
+          child: ArenaDuelScreen(initialSession: session),
+          state: state,
+        );
+      },
     ),
   ];
 }

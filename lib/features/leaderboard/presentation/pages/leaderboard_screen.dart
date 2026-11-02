@@ -400,6 +400,16 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     final currentUser = widget.currentUser;
     if (currentUser == null) return;
 
+    if (currentUser.coins < 30) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('You need at least 30 coins to create a duel stake!'),
+          backgroundColor: AppColors.rose500,
+        ),
+      );
+      return;
+    }
+
     try {
       final repo = di.sl<ArenaRepository>();
       final session = await repo.createRoomCode(currentUser: currentUser);

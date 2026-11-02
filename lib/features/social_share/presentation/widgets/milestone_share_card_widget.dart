@@ -61,6 +61,8 @@ class MilestoneShareCardWidget extends StatelessWidget {
           Text(
             data.userName,
             textAlign: TextAlign.center,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(
               fontSize: 18.sp,
               fontWeight: FontWeight.w800,
@@ -165,12 +167,16 @@ class MilestoneShareCardWidget extends StatelessWidget {
                 children: [
                   Icon(LucideIcons.gift, size: 14.sp, color: AppColors.indigo500),
                   SizedBox(width: 8.w),
-                  Text(
-                    'Use code: ${data.referralCode} for +100 Coins & Free VIP',
-                    style: TextStyle(
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
+                  Flexible(
+                    child: Text(
+                      'Use code: ${data.referralCode} for +100 Coins & Free VIP',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],
