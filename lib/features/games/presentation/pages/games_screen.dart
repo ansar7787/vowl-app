@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lucide_icons/lucide_icons.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
+import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -100,6 +104,12 @@ class GamesScreen extends StatelessWidget {
       user: user,
       isDark: isDark,
     ),
+    if (!user.isKidsModeOnly)
+      _PvpArenaHeroCard(
+        key: const ValueKey('pvp_arena_hero_card'),
+        user: user,
+        isDark: isDark,
+      ),
     // Kids Zone — visually differentiated section
     _KidsGameSection(
       key: const ValueKey('kids_game_section'),
@@ -843,6 +853,316 @@ class _QuestHubShimmer extends StatelessWidget {
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 1v1 Staking Arena Hero Card
+// ---------------------------------------------------------------------------
+
+class _PvpArenaHeroCard extends StatefulWidget {
+  final UserEntity user;
+  final bool isDark;
+
+  const _PvpArenaHeroCard({
+    super.key,
+    required this.user,
+    required this.isDark,
+  });
+
+  @override
+  State<_PvpArenaHeroCard> createState() => _PvpArenaHeroCardState();
+}
+
+class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
+  bool _isLoading = false;
+
+  Future<void> _startQuickMatch(BuildContext context) async {
+    if (_isLoading) return;
+    if (widget.user.coins < 30) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('You need at least 30 coins to enter a 1v1 duel!'),
+          backgroundColor: AppColors.rose500,
+        ),
+      );
+      return;
+    }
+
+    setState(() => _isLoading = true);
+    try {
+      final repo = di.sl<ArenaRepository>();
+      final session = await repo.quickMatch(
+        currentUser: widget.user,
+        leaderboardUsers: const [],
+      );
+      if (mounted) {
+        Navigator.of(context).push(ArenaDuelScreen.route(session: session));
+      }
+    } catch (e) {
+      debugPrint('[_PvpArenaHeroCard] Quick match error: $e');
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Could not start duel. Please try again!'),
+            backgroundColor: AppColors.rose500,
+          ),
+        );
+      }
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
+    }
+  }
+
+  Future<void> _createDuelInvite(BuildContext context) async {
+    if (_isLoading) return;
+    if (widget.user.coins < 30) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('You need at least 30 coins to create a duel stake!'),
+          backgroundColor: AppColors.rose500,
+        ),
+      );
+      return;
+    }
+
+    setState(() => _isLoading = true);
+    try {
+      final repo = di.sl<ArenaRepository>();
+      final session = await repo.createRoomCode(currentUser: widget.user);
+      final message = '⚔️ I bet 30 coins you can\'t beat my score on Vowl!\n'
+          'Enter room code ${session.roomCode} to duel me now:\n'
+          'https://vowl.app/duel/${session.roomCode}';
+      await SharePlus.instance.share(
+        ShareParams(
+          text: message,
+          subject: '1v1 English Duel Challenge!',
+        ),
+      );
+      if (mounted) {
+        Navigator.of(context).push(ArenaDuelScreen.route(session: session));
+      }
+    } catch (e) {
+      debugPrint('[_PvpArenaHeroCard] Create duel invite error: $e');
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isMidnight =
+        Theme.of(context).brightness == Brightness.dark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? const Color(0xFF0F172A)
+        : (widget.isDark ? AppColors.slate800 : Colors.white);
+    final borderColor = widget.isDark
+        ? Colors.white.withValues(alpha: 0.08)
+        : AppColors.slate200;
+    final titleColor = widget.isDark ? Colors.white : AppColors.slate900;
+    final subColor = widget.isDark ? AppColors.slate400 : AppColors.slate600;
+
+    return Padding(
+      padding: EdgeInsets.fromLTRB(24.w, 4.h, 24.w, 12.h),
+      child: Container(
+        padding: EdgeInsets.all(18.r),
+        decoration: BoxDecoration(
+          color: cardBg,
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(color: borderColor, width: 1.r),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: widget.isDark ? 0.25 : 0.04),
+              blurRadius: 16.r,
+              offset: Offset(0, 4.h),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(10.r),
+                  decoration: BoxDecoration(
+                    color: AppColors.amber500.withValues(alpha: 0.14),
+                    borderRadius: BorderRadius.circular(14.r),
+                  ),
+                  child: Icon(
+                    LucideIcons.swords,
+                    color: AppColors.amber500,
+                    size: 20.r,
+                  ),
+                ),
+                SizedBox(width: 12.w),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Flexible(
+                            child: Text(
+                              '1v1 Staking Arena',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w700,
+                                color: titleColor,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          SizedBox(width: 6.w),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 6.w,
+                              vertical: 2.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: AppColors.amber500.withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(6.r),
+                            ),
+                            child: Text(
+                              'LIVE',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 9.sp,
+                                fontWeight: FontWeight.w900,
+                                color: AppColors.amber500,
+                                letterSpacing: 0.6,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 2.h),
+                      Text(
+                        'Stake 30🪙 · 3s match · Winner takes 50🪙',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          color: subColor,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 14.h),
+            Row(
+              children: [
+                Expanded(
+                  flex: 3,
+                  child: ScaleButton(
+                    onTap: _isLoading ? null : () => _startQuickMatch(context),
+                    child: Container(
+                      height: 40.h,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: AppColors.amber500,
+                        borderRadius: BorderRadius.circular(12.r),
+                      ),
+                      child: _isLoading
+                          ? SizedBox(
+                              width: 18.r,
+                              height: 18.r,
+                              child: const CircularProgressIndicator(
+                                strokeWidth: 2,
+                                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                              ),
+                            )
+                          : FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 8.w),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      LucideIcons.zap,
+                                      color: Colors.white,
+                                      size: 14.sp,
+                                    ),
+                                    SizedBox(width: 6.w),
+                                    Text(
+                                      'Quick Duel (30🪙)',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 13.sp,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 10.w),
+                Expanded(
+                  flex: 2,
+                  child: ScaleButton(
+                    onTap: _isLoading ? null : () => _createDuelInvite(context),
+                    child: Container(
+                      height: 40.h,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: widget.isDark
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : AppColors.slate100,
+                        borderRadius: BorderRadius.circular(12.r),
+                        border: Border.all(
+                          color: borderColor,
+                          width: 1.r,
+                        ),
+                      ),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 6.w),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                LucideIcons.userPlus,
+                                color: titleColor,
+                                size: 13.sp,
+                              ),
+                              SizedBox(width: 4.w),
+                              Text(
+                                'Invite',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: titleColor,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
