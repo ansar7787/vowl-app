@@ -1,5 +1,7 @@
+import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:vowl/core/data/services/asset_quest_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
@@ -122,12 +124,9 @@ class ArenaQuestionGenerator {
     return selected.map((q) => ArenaQuestion.fromMap(q)).toList();
   }
 
-  /// Generates dynamic questions sampled truly randomly across Vowl's 200 curriculum levels
-  /// and 7 distinct language disciplines (synonyms, antonyms, collocations, idioms,
-  /// academic words, context clues, and phrasal verbs).
-  ///
-  /// Across 7 games * 200 levels * 4 quests/level = ~5,600 authentic questions!
-  /// Falls back to the curated bank if offline or in headless test environments.
+  /// Generates dynamic questions sampled from dedicated 1v1 Arena batches
+  /// (`assets/curriculum/arena/`) and across Vowl's 200 curriculum levels
+  /// in 7 distinct disciplines (`assets/curriculum/vocabulary/`).
   static Future<List<ArenaQuestion>> generateQuestionsAsync({
     int count = 5,
     int? seed,
@@ -139,9 +138,22 @@ class ArenaQuestionGenerator {
             ? di.sl<AssetQuestService>()
             : null);
 
-    if (service != null) {
+    final questions = <ArenaQuestion>[];
+
+    // 1. Dedicated 1v1 Arena Batches (assets/curriculum/arena/)
+    try {
+      final arenaBatches = await _loadDedicatedArenaBatches(rand);
+      for (final q in arenaBatches) {
+        if (!questions.any((existing) => existing.question == q.question)) {
+          questions.add(q);
+          if (questions.length >= count) break;
+        }
+      }
+    } catch (_) {}
+
+    // 2. Expanded 5,600+ Curriculum Questions (assets/curriculum/vocabulary/)
+    if (service != null && questions.length < count) {
       try {
-        final questions = <ArenaQuestion>[];
         // Shuffle disciplines to ensure cross-discipline blitz
         final shuffledGameTypes = List<String>.from(kSupportedGameTypes)..shuffle(rand);
 
@@ -185,28 +197,77 @@ class ArenaQuestionGenerator {
             } catch (_) {}
           }
         }
-
-        // Fill any remaining shortfall with deterministic curated bank
-        if (questions.length < count) {
-          final fallback = generateQuestions(count: count, seed: seed);
-          for (final q in fallback) {
-            if (!questions.any((existing) => existing.question == q.question)) {
-              questions.add(q);
-              if (questions.length >= count) break;
-            }
-          }
-        }
-
-        if (questions.isNotEmpty) {
-          return questions.take(count).toList();
-        }
       } catch (e) {
         debugPrint('[ArenaQuestionGenerator] Curriculum quest load fallback: $e');
       }
     }
 
+    // 3. Fill any remaining shortfall with deterministic curated bank
+    if (questions.length < count) {
+      final fallback = generateQuestions(count: count, seed: seed);
+      for (final q in fallback) {
+        if (!questions.any((existing) => existing.question == q.question)) {
+          questions.add(q);
+          if (questions.length >= count) break;
+        }
+      }
+    }
+
+    if (questions.isNotEmpty) {
+      return questions.take(count).toList();
+    }
+
     // Deterministic fallback to verified question bank if offline or testing
     return generateQuestions(count: count, seed: seed);
+  }
+
+  /// Loads dedicated 1v1 Arena batches from `assets/curriculum/arena/`
+  /// supporting up to 20 batches per discipline.
+  static Future<List<ArenaQuestion>> _loadDedicatedArenaBatches(Random rand) async {
+    try {
+      const modes = [
+        'word_clash',
+        'phrase_duel',
+        'sentence_strike',
+        'context_clues',
+      ];
+      final dedicated = <ArenaQuestion>[];
+      final shuffledModes = List<String>.from(modes)..shuffle(rand);
+
+      for (final mode in shuffledModes) {
+        try {
+          final batchNum = rand.nextInt(20) + 1;
+          String jsonString;
+          try {
+            jsonString = await rootBundle.loadString(
+              'assets/curriculum/arena/${mode}_batch_$batchNum.json',
+            );
+          } catch (_) {
+            jsonString = await rootBundle.loadString(
+              'assets/curriculum/arena/${mode}_batch_1.json',
+            );
+          }
+
+          final Map<String, dynamic> data = jsonDecode(jsonString);
+          final rawQuests = data['quests'] as List<dynamic>? ?? [];
+          if (rawQuests.isNotEmpty) {
+            final shuffled = List<dynamic>.from(rawQuests)..shuffle(rand);
+            for (final item in shuffled) {
+              final qMap = Map<String, dynamic>.from(item as Map);
+              final q = _tryConvertCurriculumQuest(qMap, mode, rand);
+              if (q != null &&
+                  !dedicated.any((existing) => existing.question == q.question)) {
+                dedicated.add(q);
+                break; // 1 per mode for diverse blitz
+              }
+            }
+          }
+        } catch (_) {}
+      }
+      return dedicated;
+    } catch (_) {
+      return [];
+    }
   }
 
   static ArenaQuestion? _tryConvertCurriculumQuest(
@@ -236,7 +297,11 @@ class ArenaQuestionGenerator {
       final sentence = quest['sentence']?.toString().trim();
       final hint = quest['hint']?.toString().trim();
 
-      if (gameType == 'synonymSearch' && word != null && word.isNotEmpty) {
+      if (quest.containsKey('question') &&
+          quest['question'] != null &&
+          quest['question'].toString().trim().isNotEmpty) {
+        questionText = quest['question'].toString().trim();
+      } else if (gameType == 'synonymSearch' && word != null && word.isNotEmpty) {
         questionText = 'What is the closest synonym for "$word"?';
       } else if (gameType == 'antonymSearch' && word != null && word.isNotEmpty) {
         questionText = 'What is the opposite of "$word"?';
