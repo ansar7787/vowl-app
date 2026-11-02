@@ -269,9 +269,11 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
     if (image == null) return;
     if (!mounted) return;
 
-    // Trigger Monetization Gate before processing
+    // Trigger Monetization Gate with 3 Free Daily Scans
     MlMonetizationController.attemptFeature(
       context,
+      featureKey: 'scan_and_learn',
+      freeDailyLimit: 3,
       featureIcon: Icons.document_scanner_rounded,
       featureTitle: context.tr(
         'translation.scan_learn_title',
@@ -283,7 +285,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
       ),
       adButtonLabel: context.tr(
         'translation.scan_learn_ad',
-        fallback: 'Watch Ad to Scan',
+        fallback: 'Watch Ad (+1 Bonus Scan)',
       ),
       onSuccess: () => _processImage(image!.path),
     );

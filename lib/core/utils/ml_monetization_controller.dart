@@ -2,38 +2,30 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/utils/ad_service.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/features/premium/presentation/pages/premium_screen.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/locale_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/premium/presentation/pages/premium_screen.dart';
 
 /// Unified monetization gate for ALL ML Kit features.
 ///
-/// Generalizes the pattern from [TranslationMonetizationController] into a
-/// reusable controller that any ML feature can use. The dialog presents
-/// the same premium-quality glassmorphic UI with:
-///   - A "Get Premium" path (navigates to PremiumScreen)
-///   - A "Watch Ad" path (shows Rewarded Ad, then calls [onSuccess])
-///
-/// Usage:
-/// ```dart
-/// MlMonetizationController.attemptFeature(
-///   context,
-///   featureIcon: Icons.smart_toy_rounded,
-///   featureTitle: 'AI Smart Reply',
-///   featureSubtitle: 'Get AI-powered conversation suggestions',
-///   adButtonLabel: 'Watch Ad (1 Suggestion)',
-///   onSuccess: () => _showSmartReplies(),
-/// );
-/// ```
+/// Supports both hard-gated features and high-retention Freemium Daily Quotas
+/// (e.g. 3 free daily camera scans per feature). Free users can experience the
+/// full value before hitting a monetization gate, while Premium users enjoy
+/// 100% unlimited daily usage with zero ads.
 class MlMonetizationController {
   /// Attempts to use an ML feature, gating behind ads for free users.
   ///
-  /// [onSuccess] is called if the user is Premium, or if they successfully
-  /// watch a rewarded ad.
+  /// When [featureKey] and [freeDailyLimit] are provided, grants [freeDailyLimit]
+  /// free uses per calendar day (resetting at midnight). Once the quota is
+  /// exhausted (attempt 4+), displays the monetization gate offering Rewarded
+  /// Ads (+1 bonus scan) or Vowl Premium.
+  ///
+  /// Premium users always bypass immediately with zero ads.
   static Future<void> attemptFeature(
     BuildContext context, {
     required VoidCallback onSuccess,
@@ -41,27 +33,80 @@ class MlMonetizationController {
     required String featureTitle,
     required String featureSubtitle,
     required String adButtonLabel,
+    String? featureKey,
+    int? freeDailyLimit,
     bool isKidsZone = false,
   }) async {
     final authState = context.read<AuthBloc>().state;
     final isPremium = authState.user?.isPremium ?? false;
 
-    // Premium users bypass all gates.
+    // 1. Premium users bypass all gates unconditionally
     if (isPremium) {
       onSuccess();
       return;
     }
 
-    // Free users see the upsell dialog.
+    // 2. Check Daily Free Quota if configured
+    if (featureKey != null && freeDailyLimit != null && freeDailyLimit > 0) {
+      try {
+        final prefs = di.sl.isRegistered<SharedPreferences>()
+            ? di.sl<SharedPreferences>()
+            : await SharedPreferences.getInstance();
+
+        final today = DateTime.now().toIso8601String().substring(0, 10);
+        final dateKey = 'ml_quota_date_$featureKey';
+        final countKey = 'ml_quota_count_$featureKey';
+
+        final lastDate = prefs.getString(dateKey) ?? '';
+        int currentCount = prefs.getInt(countKey) ?? 0;
+
+        // Reset on date change
+        if (lastDate != today) {
+          currentCount = 0;
+          await prefs.setString(dateKey, today);
+          await prefs.setInt(countKey, 0);
+        }
+
+        // Within daily free quota: consume 1 free scan and execute
+        if (currentCount < freeDailyLimit) {
+          await prefs.setInt(countKey, currentCount + 1);
+          onSuccess();
+          return;
+        }
+      } catch (_) {
+        // Fail-open on storage failure to ensure uninterrupted learning
+        onSuccess();
+        return;
+      }
+    }
+
+    // 3. Free quota exhausted or hard-gated feature — show upsell dialog
     if (!context.mounted) return;
+
+    final isQuotaExhausted = featureKey != null && freeDailyLimit != null;
+    final title = isQuotaExhausted
+        ? context.tr(
+            'translation.daily_quota_title',
+            args: [freeDailyLimit.toString(), freeDailyLimit.toString()],
+            fallback: 'DAILY SCANS USED ($freeDailyLimit/$freeDailyLimit)',
+          )
+        : featureTitle;
+    final subtitle = isQuotaExhausted
+        ? context.tr(
+            'translation.daily_quota_desc',
+            args: [freeDailyLimit.toString()],
+            fallback: 'You’ve used your $freeDailyLimit free daily scans! Watch 1 quick ad for a bonus scan, or get Unlimited Scans with Vowl Premium.',
+          )
+        : featureSubtitle;
+
     final result = await showModalBottomSheet<String>(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (ctx) => _MlFeatureGateDialog(
         featureIcon: featureIcon,
-        featureTitle: featureTitle,
-        featureSubtitle: featureSubtitle,
+        featureTitle: title,
+        featureSubtitle: subtitle,
         adButtonLabel: adButtonLabel,
         isKidsZone: isKidsZone,
         onSuccess: onSuccess,
@@ -83,6 +128,48 @@ class MlMonetizationController {
         onUserEarnedReward: (_) => onSuccess(),
         onDismissed: () {},
       );
+    }
+  }
+
+  /// Returns the number of remaining free daily uses for [featureKey] today.
+  static Future<int> getRemainingDailyScans(
+    String featureKey, {
+    int freeDailyLimit = 3,
+  }) async {
+    try {
+      final prefs = di.sl.isRegistered<SharedPreferences>()
+          ? di.sl<SharedPreferences>()
+          : await SharedPreferences.getInstance();
+
+      final today = DateTime.now().toIso8601String().substring(0, 10);
+      final dateKey = 'ml_quota_date_$featureKey';
+      final countKey = 'ml_quota_count_$featureKey';
+
+      final lastDate = prefs.getString(dateKey) ?? '';
+      final currentCount = (lastDate == today) ? (prefs.getInt(countKey) ?? 0) : 0;
+
+      final remaining = freeDailyLimit - currentCount;
+      return remaining > 0 ? remaining : 0;
+    } catch (_) {
+      return freeDailyLimit;
+    }
+  }
+
+  /// Returns the number of used daily scans for [featureKey] today.
+  static Future<int> getUsedDailyScans(String featureKey) async {
+    try {
+      final prefs = di.sl.isRegistered<SharedPreferences>()
+          ? di.sl<SharedPreferences>()
+          : await SharedPreferences.getInstance();
+
+      final today = DateTime.now().toIso8601String().substring(0, 10);
+      final dateKey = 'ml_quota_date_$featureKey';
+      final countKey = 'ml_quota_count_$featureKey';
+
+      final lastDate = prefs.getString(dateKey) ?? '';
+      return (lastDate == today) ? (prefs.getInt(countKey) ?? 0) : 0;
+    } catch (_) {
+      return 0;
     }
   }
 }
@@ -130,9 +217,10 @@ class _MlFeatureGateDialog extends StatelessWidget {
                   : Colors.black.withValues(alpha: 0.05),
             ),
           ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
               // ── Drag handle ─────────────────────────────────────────
               Container(
                 width: 40.w,
@@ -219,17 +307,21 @@ class _MlFeatureGateDialog extends StatelessWidget {
                         size: 20.r,
                       ),
                       SizedBox(width: 8.w),
-                      Text(
-                        context.tr(
-                          'translation.get_premium_button',
-                          fallback: 'Get Vowl Premium',
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontWeight: FontWeight.w900,
-                          fontSize: 16.sp,
-                          color: Colors.white,
-                          letterSpacing: 1,
+                      Flexible(
+                        child: Text(
+                          context.tr(
+                            'translation.get_premium_button',
+                            fallback: 'Get Vowl Premium',
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontWeight: FontWeight.w900,
+                            fontSize: 16.sp,
+                            color: Colors.white,
+                            letterSpacing: 1,
+                          ),
                         ),
                       ),
                     ],
@@ -266,13 +358,17 @@ class _MlFeatureGateDialog extends StatelessWidget {
                         size: 20.r,
                       ),
                       SizedBox(width: 8.w),
-                      Text(
-                        adButtonLabel,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15.sp,
-                          color: isDark ? Colors.white70 : Colors.black54,
+                      Flexible(
+                        child: Text(
+                          adButtonLabel,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15.sp,
+                            color: isDark ? Colors.white70 : Colors.black54,
+                          ),
                         ),
                       ),
                     ],
@@ -283,6 +379,7 @@ class _MlFeatureGateDialog extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ),
+  );
   }
 }

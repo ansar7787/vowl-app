@@ -260,9 +260,11 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     if (image == null) return;
     if (!mounted) return;
 
-    // Trigger Monetization Gate before processing
+    // Trigger Monetization Gate with 3 Free Daily Scans
     MlMonetizationController.attemptFeature(
       context,
+      featureKey: 'photo_vocabulary',
+      freeDailyLimit: 3,
       featureIcon: Icons.camera_alt_rounded,
       featureTitle: context.tr(
         'vocabulary.photo_vocab_title',
@@ -274,7 +276,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
       ),
       adButtonLabel: context.tr(
         'vocabulary.photo_vocab_ad',
-        fallback: 'Watch Ad to Analyze',
+        fallback: 'Watch Ad (+1 Bonus Scan)',
       ),
       onSuccess: () => _processImage(image!.path),
     );
