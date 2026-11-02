@@ -141,7 +141,7 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
     _sessionHotStreak = 0;
 
     hapticService.error();
-    soundService.playSoftWrong();
+    soundService.playWrong();
 
     final authState = context.read<AuthBloc>().state;
     if (authState.status == AuthStatus.authenticated &&
