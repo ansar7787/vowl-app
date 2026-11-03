@@ -107,15 +107,6 @@ class _SituationSpeakingBriefingCardState
                       : AppColors.slate200,
               width: 1.5,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: widget.isDark
-                    ? Colors.black.withValues(alpha: 0.25)
-                    : widget.primaryColor.withValues(alpha: 0.06),
-                blurRadius: 16.r,
-                offset: const Offset(0, 4),
-              ),
-            ],
           ),
           child: Stack(
             children: [

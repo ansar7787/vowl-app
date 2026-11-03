@@ -122,7 +122,7 @@ class _KidsGameEntryCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(24.r),
             padding: EdgeInsets.all(18.r),
             usePremiumStyle: true,
-            showShadow: true,
+            showShadow: false,
             blur: 0, // PERF: Disable BackdropFilter in scroll lists
             glassOpacity: 1.0,
             borderColor: cardBorderColor,

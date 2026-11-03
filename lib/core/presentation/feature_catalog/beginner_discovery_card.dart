@@ -492,15 +492,6 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
           color: borderColor,
           width: 1.0,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(
-              alpha: isMidnight ? 0.35 : (isDark ? 0.20 : 0.03),
-            ),
-            blurRadius: 14.r,
-            offset: Offset(0, 3.h),
-          ),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -710,13 +701,6 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
                       : AppColors.slate100)),
           width: 1.0,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.03),
-            blurRadius: 8.r,
-            offset: Offset(0, 2.h),
-          ),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -882,13 +866,6 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
               color: AppColors.amber500.withValues(alpha: 0.5),
               width: 1.4,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.amber500.withValues(alpha: 0.18),
-                blurRadius: 18.r,
-                offset: Offset(0, 4.h),
-              ),
-            ],
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,

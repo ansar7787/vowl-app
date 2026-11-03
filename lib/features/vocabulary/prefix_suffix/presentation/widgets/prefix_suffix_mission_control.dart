@@ -33,13 +33,6 @@ class PrefixSuffixMissionControl extends StatelessWidget {
           color: primaryColor.withValues(alpha: 0.25),
           width: 1.2,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: primaryColor.withValues(alpha: 0.04),
-            blurRadius: 8,
-            offset: const Offset(0, 3),
-          ),
-        ],
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,

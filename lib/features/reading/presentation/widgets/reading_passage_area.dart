@@ -59,13 +59,6 @@ class ReadingPassageArea extends StatelessWidget {
                     : AppColors.slate100),
             width: 1,
           ),
-          boxShadow: [
-            BoxShadow(
-              color: primaryColor.withValues(alpha: 0.05),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
-            ),
-          ],
         ),
         child: Scrollbar(
           thumbVisibility: true,

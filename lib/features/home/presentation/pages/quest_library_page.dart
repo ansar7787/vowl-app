@@ -477,15 +477,6 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
             color: cardBg,
             borderRadius: BorderRadius.circular(24.r),
             border: Border.all(color: borderColor, width: 1.0),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(
-                  alpha: isMidnight ? 0.35 : (isDark ? 0.20 : 0.04),
-                ),
-                blurRadius: 20,
-                offset: const Offset(0, 6),
-              ),
-            ],
           ),
           child: ExcludeSemantics(
             child: Column(
@@ -733,17 +724,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: Container(
-        decoration: BoxDecoration(
-          boxShadow: isDark
-              ? null
-              : [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.03),
-                    blurRadius: 15,
-                    offset: const Offset(0, 5),
-                  ),
-                ],
-        ),
+        decoration: const BoxDecoration(),
         child: TextField(
           controller: _searchController,
           textInputAction: TextInputAction.search,
@@ -1083,13 +1064,6 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                     : cardBorder,
                 width: isMastered ? 1.5 : 1,
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: isDark ? 0.15 : 0.04),
-                  blurRadius: 12,
-                  offset: const Offset(0, 4),
-                ),
-              ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -1295,13 +1269,6 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       : cardBorder,
                   width: isMastered ? 1.5 : 1,
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: isDark ? 0.15 : 0.04),
-                    blurRadius: 16,
-                    offset: const Offset(0, 6),
-                  ),
-                ],
               ),
               child: IntrinsicHeight(
                 child: Row(

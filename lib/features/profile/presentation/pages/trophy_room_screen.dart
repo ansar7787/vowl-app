@@ -289,13 +289,6 @@ class _TrophyRoomView extends StatelessWidget {
           decoration: BoxDecoration(
             color: isDark ? AppColors.slate800 : AppColors.slate100,
             borderRadius: BorderRadius.circular(30.r),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.05),
-                blurRadius: 10,
-                offset: const Offset(0, 4),
-              ),
-            ],
           ),
           child: LayoutBuilder(
             builder: (context, constraints) {
@@ -313,13 +306,6 @@ class _TrophyRoomView extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: isDark ? AppColors.slate700 : Colors.white,
                         borderRadius: BorderRadius.circular(24.r),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withValues(alpha: 0.08),
-                            blurRadius: 8,
-                            offset: const Offset(0, 2),
-                          ),
-                        ],
                       ),
                     ),
                   ),

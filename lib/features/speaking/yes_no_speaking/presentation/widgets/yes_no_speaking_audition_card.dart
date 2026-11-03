@@ -40,20 +40,6 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
             ? AppColors.midnightSurface
             : (isDark ? AppColors.slate900 : Colors.white),
         borderRadius: BorderRadius.circular(24.r),
-        boxShadow: [
-          BoxShadow(
-            color: isDark
-                ? Colors.black.withValues(alpha: 0.35)
-                : Colors.black.withValues(alpha: 0.04),
-            blurRadius: 16,
-            offset: const Offset(0, 6),
-          ),
-          BoxShadow(
-            color: primaryColor.withValues(alpha: isDark ? 0.12 : 0.05),
-            blurRadius: 24,
-            spreadRadius: -4,
-          ),
-        ],
         border: Border.all(
           color: primaryColor.withValues(alpha: isDark ? 0.25 : 0.15),
           width: 1.5,

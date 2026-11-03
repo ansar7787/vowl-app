@@ -45,7 +45,7 @@ class GlassTile extends StatelessWidget {
     this.borderColor,
     this.borderWidth,
     this.usePremiumStyle = true,
-    this.showShadow = true,
+    this.showShadow = false,
     this.border,
   });
 

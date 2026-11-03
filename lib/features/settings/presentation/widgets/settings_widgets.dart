@@ -353,17 +353,8 @@ class SettingsLogoutButton extends StatelessWidget {
     return Semantics(
       label: context.tr('settings.sign_out', fallback: 'SIGN OUT ACCOUNT'),
       button: true,
-      child: Container(
+      child: SizedBox(
         width: double.infinity,
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.red.withValues(alpha: 0.15),
-              blurRadius: 25,
-              offset: const Offset(0, 10),
-            ),
-          ],
-        ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(24.r),
           child: Container(

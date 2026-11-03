@@ -126,13 +126,6 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
                   ? Colors.white.withValues(alpha: 0.08)
                   : AppColors.slate100),
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
-          ),
-        ],
       ),
       child: Column(
         children: [

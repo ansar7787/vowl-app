@@ -40,13 +40,6 @@ class PitchPatternMatchPromptCard extends StatelessWidget {
           color: color.withValues(alpha: isDark ? 0.25 : 0.18),
           width: 1.5,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.25 : 0.04),
-            blurRadius: 12,
-            offset: const Offset(0, 4),
-          ),
-        ],
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,

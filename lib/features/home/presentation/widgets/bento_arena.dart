@@ -238,15 +238,6 @@ class _BentoHeroCard extends StatelessWidget {
                       : AppColors.slate100),
               width: 1.r,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(
-                  alpha: isMidnight ? 0.35 : (isDark ? 0.20 : 0.03),
-                ),
-                blurRadius: 16.r,
-                offset: Offset(0, 4.r),
-              ),
-            ],
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -585,15 +576,6 @@ class _BentoGridCell extends StatelessWidget {
                       : AppColors.slate100),
               width: 1.r,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(
-                  alpha: isMidnight ? 0.30 : (isDark ? 0.15 : 0.02),
-                ),
-                blurRadius: 10.r,
-                offset: Offset(0, 2.r),
-              ),
-            ],
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -752,15 +734,6 @@ class _DisciplineBubbleDock extends StatelessWidget {
                   : AppColors.slate100),
           width: 1.r,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: isDark
-                ? Colors.black.withValues(alpha: 0.20)
-                : AppColors.slate900.withValues(alpha: 0.03),
-            blurRadius: 10.r,
-            offset: Offset(0, 3.r),
-          ),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

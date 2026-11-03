@@ -179,15 +179,6 @@ class _HeroDashboard extends StatelessWidget {
           color: cardBg,
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(color: borderColor, width: 1.0),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(
-                alpha: isMidnight ? 0.35 : (isDark ? 0.20 : 0.03),
-              ),
-              blurRadius: 18.r,
-              offset: Offset(0, 4.r),
-            ),
-          ],
         ),
         child: Column(
           children: [
@@ -433,15 +424,6 @@ class _GamesAppBar extends StatelessWidget {
                 color: pillBorder,
                 width: 1.0,
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(
-                    alpha: isMidnight ? 0.35 : (isDark ? 0.20 : 0.04),
-                  ),
-                  blurRadius: 10.r,
-                  offset: Offset(0, 2.r),
-                ),
-              ],
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -1142,13 +1124,6 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
           color: cardBg,
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(color: borderColor, width: 1.r),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: widget.isDark ? 0.25 : 0.04),
-              blurRadius: 16.r,
-              offset: Offset(0, 4.h),
-            ),
-          ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

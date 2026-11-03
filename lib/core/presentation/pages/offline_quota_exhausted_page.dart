@@ -629,13 +629,6 @@ class _QuotaIcon extends StatelessWidget {
               color: Colors.amber.withValues(alpha: 0.3),
               width: 2,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.amber.withValues(alpha: isDark ? 0.1 : 0.06),
-                blurRadius: 20,
-                spreadRadius: 4,
-              ),
-            ],
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

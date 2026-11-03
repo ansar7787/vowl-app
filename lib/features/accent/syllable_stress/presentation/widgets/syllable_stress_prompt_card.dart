@@ -34,13 +34,6 @@ class SyllableStressPromptCard extends StatelessWidget {
           color: color.withValues(alpha: isDark ? 0.22 : 0.18),
           width: 1.5,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: color.withValues(alpha: isDark ? 0.06 : 0.05),
-            blurRadius: 16,
-            offset: const Offset(0, 4),
-          ),
-        ],
       ),
       child: Stack(
         children: [

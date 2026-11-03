@@ -481,15 +481,6 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
           ),
           width: 1.5,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: isDark
-                ? Colors.black.withValues(alpha: 0.35)
-                : primaryColor.withValues(alpha: 0.06),
-            blurRadius: 18,
-            offset: const Offset(0, 4),
-          ),
-        ],
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,

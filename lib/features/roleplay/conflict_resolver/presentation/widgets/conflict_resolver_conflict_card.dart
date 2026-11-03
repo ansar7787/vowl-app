@@ -69,15 +69,6 @@ class ConflictResolverConflictCard extends StatelessWidget {
           color: emotionalColor.withValues(alpha: isDark ? 0.22 : 0.16),
           width: 1.5,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: isDark
-                ? Colors.black.withValues(alpha: 0.25)
-                : emotionalColor.withValues(alpha: 0.08),
-            blurRadius: 16,
-            offset: const Offset(0, 4),
-          ),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

@@ -235,14 +235,6 @@ class _WordSnapAssemblyCardState extends State<WordSnapAssemblyCard>
                         : widget.primaryColor.withValues(alpha: 0.2)),
                 width: 1.5.w,
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: (_hasError ? AppColors.rose500 : widget.primaryColor)
-                      .withValues(alpha: isDark ? 0.15 : 0.05),
-                  blurRadius: 18,
-                  offset: const Offset(0, 6),
-                ),
-              ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

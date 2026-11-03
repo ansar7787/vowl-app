@@ -362,16 +362,6 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                                                       .withValues(alpha: 0.18),
                                                   width: 1.2,
                                                 ),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: theme.primaryColor
-                                                        .withValues(
-                                                          alpha: 0.04,
-                                                        ),
-                                                    blurRadius: 24,
-                                                    spreadRadius: 2,
-                                                  ),
-                                                ],
                                               ),
                                               child: Wrap(
                                                 alignment: WrapAlignment.center,

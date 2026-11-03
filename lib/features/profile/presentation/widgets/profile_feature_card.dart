@@ -57,7 +57,7 @@ class ProfileFeatureCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(24.r),
         padding: EdgeInsets.all(20.w),
         blur: 0,
-        showShadow: true,
+        showShadow: false,
         glassOpacity: 1.0,
         borderColor: cardBorderColor,
         borderWidth: 1.0,

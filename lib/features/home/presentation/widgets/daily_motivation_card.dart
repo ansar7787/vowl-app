@@ -262,15 +262,6 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
                         : AppColors.slate100),
                 width: 1.r,
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(
-                    alpha: isMidnight ? 0.35 : (isDark ? 0.20 : 0.03),
-                  ),
-                  blurRadius: 16,
-                  offset: const Offset(0, 4),
-                ),
-              ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

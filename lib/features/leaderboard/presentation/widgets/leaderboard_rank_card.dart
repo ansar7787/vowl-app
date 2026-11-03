@@ -69,21 +69,7 @@ class LeaderboardRankCard extends StatelessWidget {
                 '${(progress * 100).toStringAsFixed(1)}% complete.'
           : '${context.tr('leaderboard.join_competition', fallback: 'Join Competition')}. '
                 '$levelsCleared ${context.tr('leaderboard.levels_cleared', fallback: 'Levels Cleared')}.',
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(24.r),
-          boxShadow: [
-            BoxShadow(
-              color: const Color(
-                0xFF3B82F6,
-              ).withValues(alpha: isDark ? 0.20 : 0.12),
-              blurRadius: 16,
-              spreadRadius: 0,
-              offset: const Offset(0, 4),
-            ),
-          ],
-        ),
-        child: GlassTile(
+      child: GlassTile(
           padding: EdgeInsets.symmetric(
             horizontal: 16.w,
             vertical: 12.h - (4.h * collapseProgress),
@@ -310,8 +296,7 @@ class LeaderboardRankCard extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
 
     final interactiveCard = onTap != null
         ? GestureDetector(

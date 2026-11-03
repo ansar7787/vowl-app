@@ -36,16 +36,6 @@ class PhrasalVerbsLiteralComparison extends StatelessWidget {
           color: color.withValues(alpha: isDark ? 0.25 : 0.2),
           width: 1.2,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: isDark
-                ? Colors.black.withValues(alpha: 0.25)
-                : color.withValues(alpha: 0.06),
-            blurRadius: 16,
-            spreadRadius: 0,
-            offset: const Offset(0, 4),
-          ),
-        ],
       ),
       child: Column(
         children: [

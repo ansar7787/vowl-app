@@ -182,15 +182,6 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
               color: glassColor,
               borderRadius: BorderRadius.circular(32.r),
               border: Border.all(color: borderColor, width: 1.5),
-              boxShadow: [
-                BoxShadow(
-                  color: isDark
-                      ? Colors.black.withValues(alpha: 0.3)
-                      : widget.primaryColor.withValues(alpha: 0.1),
-                  blurRadius: 30,
-                  offset: const Offset(0, 10),
-                ),
-              ],
             ),
             child: child,
           );

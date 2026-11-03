@@ -63,14 +63,6 @@ class StoryDialogueBox extends StatelessWidget {
                                     : AppColors.slate100),
                             width: 1.5,
                           ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: beat.themeColor.withValues(alpha: 0.2),
-                              blurRadius: 40,
-                              spreadRadius: -10,
-                              offset: const Offset(0, 20),
-                            ),
-                          ],
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,

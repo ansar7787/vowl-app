@@ -100,15 +100,6 @@ class WordSnapHintCard extends StatelessWidget {
                         : AppColors.slate200),
                 width: isExpanded ? 1.5.w : 1.w,
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: isExpanded
-                      ? primaryColor.withValues(alpha: isDark ? 0.15 : 0.06)
-                      : Colors.black.withValues(alpha: isDark ? 0.15 : 0.03),
-                  blurRadius: isExpanded ? 16 : 8,
-                  offset: const Offset(0, 4),
-                ),
-              ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

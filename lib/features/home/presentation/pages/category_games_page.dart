@@ -735,7 +735,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                       padding: EdgeInsets.all(24.r),
                       glassOpacity: 1.0,
                       blur: 0,
-                      showShadow: true,
+                      showShadow: false,
                       usePremiumStyle: true,
                       borderColor: cardBorderColor,
                       borderWidth: 1.0,

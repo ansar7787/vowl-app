@@ -176,7 +176,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                         child: GlassTile(
                           borderRadius: BorderRadius.circular(24.r),
                           usePremiumStyle: true,
-                          showShadow: true,
+                          showShadow: false,
                           blur: 0,
                           glassOpacity: 1.0,
                           borderColor: isMidnight

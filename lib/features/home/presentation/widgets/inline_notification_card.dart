@@ -305,15 +305,6 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                               : AppColors.slate100),
                       width: 1.0,
                     ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(
-                          alpha: isMidnight ? 0.35 : (isDark ? 0.20 : 0.03),
-                        ),
-                        blurRadius: 16.r,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
                   ),
                   child: Padding(
                     padding: EdgeInsets.symmetric(

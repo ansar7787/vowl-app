@@ -74,15 +74,6 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                   ? Colors.white10
                   : Colors.black.withValues(alpha: 0.08),
             ),
-            boxShadow: [
-              BoxShadow(
-                color: isDark
-                    ? Colors.black38
-                    : Colors.black.withValues(alpha: 0.06),
-                blurRadius: 16.r,
-                offset: const Offset(0, 4),
-              ),
-            ],
           ),
           child: ValueListenableBuilder<double>(
             valueListenable: scratchProgressNotifier,

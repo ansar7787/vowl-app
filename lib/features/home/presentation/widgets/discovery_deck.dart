@@ -179,15 +179,6 @@ class _HeroFlagshipQuestCard extends StatelessWidget {
                       : AppColors.slate100),
               width: 1.r,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(
-                  alpha: isMidnight ? 0.35 : (isDark ? 0.20 : 0.03),
-                ),
-                blurRadius: 14,
-                offset: const Offset(0, 4),
-              ),
-            ],
           ),
           child: Row(
             children: [
@@ -371,15 +362,6 @@ class _DiscoverySubCell extends StatelessWidget {
                       : AppColors.slate100),
               width: 1.r,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(
-                  alpha: isMidnight ? 0.30 : (isDark ? 0.15 : 0.02),
-                ),
-                blurRadius: 8,
-                offset: const Offset(0, 2),
-              ),
-            ],
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,

@@ -52,15 +52,6 @@ class DialectDrillRegionMap extends StatelessWidget {
           color: color.withValues(alpha: isDark ? 0.3 : 0.2),
           width: 1.2,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: isDark
-                ? Colors.black.withValues(alpha: 0.2)
-                : color.withValues(alpha: 0.08),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
-        ],
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,

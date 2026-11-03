@@ -32,13 +32,6 @@ class PitchModulationPromptCard extends StatelessWidget {
           color: color.withValues(alpha: isDark ? 0.25 : 0.18),
           width: 1.5,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.03),
-            blurRadius: 10,
-            offset: const Offset(0, 3),
-          ),
-        ],
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,

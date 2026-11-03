@@ -385,16 +385,6 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
                                         : Colors.black.withValues(alpha: 0.05),
                                     width: 1,
                                   ),
-                                  boxShadow: [
-                                    if (!isDark)
-                                      BoxShadow(
-                                        color: Colors.black.withValues(
-                                          alpha: 0.03,
-                                        ),
-                                        blurRadius: 8.r,
-                                        offset: Offset(0, 2.h),
-                                      ),
-                                  ],
                                 ),
                                 child: Row(
                                   children: [

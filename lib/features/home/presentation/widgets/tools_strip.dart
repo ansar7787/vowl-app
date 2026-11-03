@@ -294,15 +294,6 @@ class _SwissHorizonCard extends StatelessWidget {
                       : AppColors.slate100),
               width: 1.r,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(
-                  alpha: isMidnight ? 0.30 : (isDark ? 0.15 : 0.02),
-                ),
-                blurRadius: 10.r,
-                offset: Offset(0, 2.r),
-              ),
-            ],
           ),
           child: Row(
             children: [
@@ -456,15 +447,6 @@ class _BentoSubCell extends StatelessWidget {
                       : AppColors.slate100),
               width: 1.r,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(
-                  alpha: isMidnight ? 0.30 : (isDark ? 0.15 : 0.02),
-                ),
-                blurRadius: 8.r,
-                offset: Offset(0, 2.r),
-              ),
-            ],
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -1224,15 +1206,6 @@ class _ModalFeatureRow extends StatelessWidget {
                       : AppColors.slate100),
               width: 1.r,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(
-                  alpha: isMidnight ? 0.30 : (isDark ? 0.15 : 0.02),
-                ),
-                blurRadius: 6.r,
-                offset: Offset(0, 2.r),
-              ),
-            ],
           ),
           child: Row(
             children: [

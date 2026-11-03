@@ -33,13 +33,6 @@ class SummarizeStoryManuscript extends StatelessWidget {
           color: color.withValues(alpha: 0.25),
           width: 1.5,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: color.withValues(alpha: 0.08),
-            blurRadius: 16,
-            offset: const Offset(0, 4),
-          ),
-        ],
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(18.5.r),

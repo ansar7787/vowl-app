@@ -342,25 +342,6 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                                   width: double.infinity,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(16.r),
-                                    boxShadow: isDark
-                                        ? null
-                                        : [
-                                            BoxShadow(
-                                              color: (hasError
-                                                      ? errorColor
-                                                      : (isFocused
-                                                          ? widget.primaryColor
-                                                          : widget.primaryColor
-                                                              .withValues(
-                                                                alpha: 0.35,
-                                                              )))
-                                                  .withValues(
-                                                    alpha: 0.08,
-                                                  ),
-                                              blurRadius: isFocused ? 10 : 6,
-                                              offset: const Offset(0, 2),
-                                            ),
-                                          ],
                                   ),
                                   child: Stack(
                                     children: [

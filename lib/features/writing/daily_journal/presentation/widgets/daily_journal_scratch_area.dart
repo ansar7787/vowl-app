@@ -56,16 +56,6 @@ class DailyJournalScratchArea extends StatelessWidget {
               : const Color(0xFFE5D5C5), // Subtle paper border
           width: 1.5,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: isDark
-                ? Colors.black26
-                : const Color(0xFFD3C5B5).withValues(alpha: 0.3),
-            blurRadius: 15,
-            spreadRadius: -2,
-            offset: const Offset(0, 4), // Paper drop shadow
-          ),
-        ],
       ),
       child: Column(
         children: [

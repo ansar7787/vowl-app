@@ -126,7 +126,7 @@ class _GameEntryCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(24.r),
             padding: EdgeInsets.all(18.r),
             usePremiumStyle: true,
-            showShadow: true,
+            showShadow: false,
             blur: 0,
             glassOpacity: 1.0,
             borderColor: cardBorderColor,
