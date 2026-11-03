@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,10 +24,11 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 /// "Skill Balancing" across core competencies).
 ///
 /// Features:
-/// 1. **Solid Category Color**: Progress bar uses the pure, authentic category color (zero gradients).
-/// 2. **100% Real Progression Data**: Dynamically calculates cleared levels, milestone targets, and remaining steps.
+/// 1. **Compact 1-Row Header**: Category pill on left, habit urgency badge on right. Zero badge stacking.
+/// 2. **Punchy 1-Line Subtitle**: Short, motivating phrasing that fits on 1 line across small, medium, and large screens.
 /// 3. **Non-glaring Cockpit Aesthetics**: Sophisticated obsidian/slate elevation in dark mode, crisp porcelain in light mode.
-/// 4. **Tactile Spring Navigation**: Seamlessly routes to the Category Games Hub via [ScaleButton].
+/// 4. **Solid Category Color**: Progress bar uses the pure, authentic category color (zero gradients).
+/// 5. **Zero Overflow & No Ellipses**: Balanced paddings with AutoSizeText dynamic scaling on every phone form factor.
 class ContinueLearningCard extends StatefulWidget {
   /// Current authenticated [user] entity. Null in loading or shimmer mode.
   final UserEntity? user;
@@ -141,6 +143,30 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     return recommendedType;
   }
 
+  /// Formats category type into a readable title string.
+  String _formatCategoryTitle(QuestType type) {
+    switch (type) {
+      case QuestType.vocabulary:
+        return 'Vocabulary';
+      case QuestType.listening:
+        return 'Listening';
+      case QuestType.reading:
+        return 'Reading';
+      case QuestType.grammar:
+        return 'Grammar';
+      case QuestType.writing:
+        return 'Writing';
+      case QuestType.speaking:
+        return 'Speaking';
+      case QuestType.accent:
+        return 'Accent';
+      case QuestType.roleplay:
+        return 'Roleplay';
+      case QuestType.eliteMastery:
+        return 'Mastery';
+    }
+  }
+
   /// Returns achievable milestone chunk targets (10, 25, 50, 100).
   ({int baseTarget, int target}) _getNextMilestone() {
     int baseTarget = 0;
@@ -178,6 +204,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     final isNewUser = user.totalLevelsCompleted == 0;
     final isTodayActive = user.isTodayActive;
     final currentStreak = user.currentStreak;
+    final categoryDisplayName = _formatCategoryTitle(_nextType);
 
     final categoryLabel = _nextType.name.toUpperCase().replaceAllMapped(
       RegExp(r'(?<=[a-z])(?=[A-Z])'),
@@ -198,63 +225,72 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
 
     final remaining = milestone.target - _cleared;
 
+    // ── Concise Status Badges (Fits horizontally without squeezing) ──
     final String missionBadgeText;
     final Color missionBadgeColor;
     final IconData missionBadgeIcon;
 
-    if (!isTodayActive) {
+    if (isNewUser) {
+      missionBadgeColor = color;
+      missionBadgeIcon = Icons.explore_rounded;
+      missionBadgeText = context.tr(
+        'home.mission_day_one',
+        fallback: 'DAY 1 JOURNEY',
+      );
+    } else if (!isTodayActive) {
       missionBadgeColor = AppColors.amber500;
-      missionBadgeIcon = Icons.local_fire_department_rounded;
       if (currentStreak > 0) {
+        missionBadgeIcon = Icons.local_fire_department_rounded;
         missionBadgeText = context.tr(
-          'home.mission_secure_streak',
-          fallback: "TODAY'S MISSION • 3 MIN TO SECURE STREAK",
+          'home.mission_3min_protect',
+          fallback: '3 MIN GOAL',
         );
       } else {
+        missionBadgeIcon = Icons.bolt_rounded;
         missionBadgeText = context.tr(
-          'home.mission_start_streak',
-          fallback: "TODAY'S MISSION • 3 MIN TO START STREAK",
+          'home.mission_start_streak_badge',
+          fallback: 'DAILY MISSION',
         );
       }
     } else {
       missionBadgeColor = AppColors.emerald500;
       missionBadgeIcon = Icons.check_circle_rounded;
       missionBadgeText = context.tr(
-        'home.mission_streak_secured',
-        fallback: "TODAY'S STREAK SECURED ⭐",
+        'home.mission_streak_secured_badge',
+        fallback: 'STREAK ACTIVE',
       );
     }
 
+    // ── Crisp, Punchy 1-Line Subtitle (Fits smoothly on all screen widths) ──
     final String subtitle;
     if (!isTodayActive && currentStreak > 0) {
       subtitle = context.tr(
-        'home.protect_streak_subtitle',
-        fallback:
-            'Complete 1 level today to protect your {}d streak • Milestone {}',
+        'home.protect_streak_subtitle_short',
+        fallback: '1 level to protect your {}d streak • Milestone {}',
         args: [currentStreak.toString(), milestone.target.toString()],
       );
     } else if (isNewUser) {
       subtitle = context.tr(
-        'home.first_step_in_category',
-        fallback: 'First step in {} • Milestone: {}',
-        args: [categoryLabel, milestone.target.toString()],
+        'home.first_step_in_category_short',
+        fallback: 'First step in {} • Goal {}',
+        args: [categoryDisplayName, milestone.target.toString()],
       );
     } else if (remaining > 1) {
       subtitle = context.tr(
-        'home.levels_to_reach_milestone',
-        fallback: '$remaining levels to reach Milestone ${milestone.target}',
+        'home.levels_to_reach_milestone_short',
+        fallback: '$remaining levels to Milestone ${milestone.target}',
         args: [remaining.toString(), milestone.target.toString()],
       );
     } else if (remaining == 1) {
       subtitle = context.tr(
-        'home.level_to_reach_milestone',
-        fallback: '1 level to reach Milestone ${milestone.target}',
+        'home.level_to_reach_milestone_short',
+        fallback: '1 level to Milestone ${milestone.target}',
         args: [milestone.target.toString()],
       );
     } else {
       subtitle = context.tr(
-        'home.milestone_completed',
-        fallback: 'Milestone ${milestone.target} completed! Keep mastering',
+        'home.milestone_completed_short',
+        fallback: 'Milestone ${milestone.target} cleared • Keep mastering',
         args: [milestone.target.toString()],
       );
     }
@@ -278,17 +314,9 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
       );
     }
 
-    final String levelsTag = isNewUser
-        ? context.tr('home.new_journey', fallback: 'New Journey')
-        : context.tr(
-            'home.levels_cleared_tag',
-            fallback: '$_cleared Levels Cleared',
-            args: [_cleared.toString()],
-          );
-
     final semanticLabel = isNewUser
-        ? '$missionBadgeText. $title. $categoryLabel.'
-        : '$missionBadgeText. $title. $categoryLabel. $_cleared out of ${milestone.target} levels cleared.';
+        ? '$missionBadgeText. $title. $categoryDisplayName.'
+        : '$missionBadgeText. $title. $categoryDisplayName. $_cleared out of ${milestone.target} levels cleared.';
 
     final card = Semantics(
       button: true,
@@ -309,8 +337,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
           child: RepaintBoundary(
             child: Container(
               width: double.infinity,
-              padding: EdgeInsets.all(20.r),
-              clipBehavior: Clip.hardEdge,
+              clipBehavior: Clip.antiAlias,
               decoration: BoxDecoration(
                 color: isDark ? const Color(0xFF131A29) : Colors.white,
                 gradient: isDark
@@ -336,7 +363,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                         : (isDark
                             ? color.withValues(alpha: 0.10)
                             : Colors.black.withValues(alpha: 0.04)),
-                    blurRadius: !isTodayActive ? 22 : 16,
+                    blurRadius: !isTodayActive ? 20 : 16,
                     spreadRadius: !isTodayActive ? 1 : 0,
                     offset: const Offset(0, 6),
                   ),
@@ -344,7 +371,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
               ),
               child: Stack(
                 children: [
-                  // ── Subtle Accent Border Glow on Left Edge ───────────
+                  // ── Subtle Accent Border Glow on Left Edge (Flush with card border) ──
                   Positioned(
                     left: 0,
                     top: 0,
@@ -361,319 +388,321 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                     ),
                   ),
 
-                  // ── Elegant Watermark Glyph ─────────────────────────
+                  // ── Elegant Watermark Glyph (Clipped cleanly in background) ──
                   Positioned(
                     right: -10.r,
                     top: -10.r,
-                    child: Icon(
-                      icon,
-                      size: 106.r,
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.035)
-                          : color.withValues(alpha: 0.045),
+                    child: IgnorePointer(
+                      child: Icon(
+                        icon,
+                        size: 104.r,
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.035)
+                            : color.withValues(alpha: 0.045),
+                      ),
                     ),
                   ),
 
-                  // ── Main Cockpit Content ────────────────────────────
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      // ── Habit Mission Badge (Urgent vs Secured) ───────────
-                      Container(
-                        margin: EdgeInsets.only(bottom: 10.h),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 9.w,
-                          vertical: 3.5.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: missionBadgeColor.withValues(
-                            alpha: isDark ? 0.14 : 0.08,
-                          ),
-                          borderRadius: BorderRadius.circular(100.r),
-                          border: Border.all(
-                            color: missionBadgeColor.withValues(
-                              alpha: isDark ? 0.32 : 0.22,
-                            ),
-                            width: 1,
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
+                  // ── Main Cockpit Content with Calibrated Padding ──
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(16.w, 14.h, 14.w, 14.h),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        // ── Top Header Row: Category Pill (Left) & Mission Status (Right) ──
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Icon(
-                              missionBadgeIcon,
-                              color: missionBadgeColor,
-                              size: 12.r,
-                            ),
-                            SizedBox(width: 5.w),
+                            // Category Pill
                             Flexible(
-                              child: Text(
-                                missionBadgeText,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: missionBadgeColor,
-                                  letterSpacing: 0.6,
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 10.w,
+                                  vertical: 4.5.h,
                                 ),
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
+                                decoration: BoxDecoration(
+                                  color: color.withValues(
+                                    alpha: isDark ? 0.14 : 0.08,
+                                  ),
+                                  borderRadius: BorderRadius.circular(100.r),
+                                  border: Border.all(
+                                    color: color.withValues(
+                                      alpha: isDark ? 0.28 : 0.20,
+                                    ),
+                                    width: 1,
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(icon, color: color, size: 13.5.r),
+                                    SizedBox(width: 5.w),
+                                    Flexible(
+                                      child: AutoSizeText(
+                                        categoryLabel,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 11.sp,
+                                          fontWeight: FontWeight.w700,
+                                          color: color,
+                                          letterSpacing: 0.5,
+                                        ),
+                                        maxLines: 1,
+                                        minFontSize: 9,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-                          ],
-                        ),
-                      ),
+                            SizedBox(width: 8.w),
 
-                      // Top Row: Category Pill (Left) & Real Level Tag (Right)
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          // Category pill
-                          Flexible(
-                            child: Container(
+                            // Habit Mission Status Pill
+                            Container(
                               padding: EdgeInsets.symmetric(
                                 horizontal: 10.w,
                                 vertical: 4.5.h,
                               ),
                               decoration: BoxDecoration(
-                                color: color.withValues(alpha: isDark ? 0.14 : 0.08),
+                                color: missionBadgeColor.withValues(
+                                  alpha: isDark ? 0.16 : 0.08,
+                                ),
                                 borderRadius: BorderRadius.circular(100.r),
                                 border: Border.all(
-                                  color: color.withValues(alpha: isDark ? 0.28 : 0.20),
+                                  color: missionBadgeColor.withValues(
+                                    alpha: isDark ? 0.32 : 0.22,
+                                  ),
                                   width: 1,
                                 ),
                               ),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  Icon(icon, color: color, size: 13.r),
-                                  SizedBox(width: 5.w),
-                                  Flexible(
-                                    child: Text(
-                                      categoryLabel,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 10.5.sp,
-                                        fontWeight: FontWeight.w800,
-                                        color: color,
-                                        letterSpacing: 0.8,
-                                      ),
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
+                                  Icon(
+                                    missionBadgeIcon,
+                                    color: missionBadgeColor,
+                                    size: 13.r,
                                   ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 8.w),
-
-                          // Real levels tag
-                          Text(
-                            levelsTag,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w700,
-                              color: isDark ? AppColors.slate400 : AppColors.slate500,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 12.h),
-
-                      // Title
-                      Text(
-                        title,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isDark ? Colors.white : AppColors.slate900,
-                          letterSpacing: -0.4,
-                          height: 1.15,
-                        ),
-                      ),
-                      SizedBox(height: 4.h),
-
-                      // Contextual Subtitle
-                      Text(
-                        subtitle,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.5.sp,
-                          fontWeight: FontWeight.w500,
-                          color: isDark ? AppColors.slate300 : AppColors.slate600,
-                          height: 1.2,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      SizedBox(height: 16.h),
-
-                      // ── Inset Cockpit Bottom Tray ────────────────────
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 14.w,
-                          vertical: 10.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.035)
-                              : AppColors.slate50,
-                          borderRadius: BorderRadius.circular(16.r),
-                          border: Border.all(
-                            color: isDark
-                                ? Colors.white.withValues(alpha: 0.06)
-                                : Colors.black.withValues(alpha: 0.04),
-                            width: 1,
-                          ),
-                        ),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            // Progress bar & label
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          context.tr(
-                                            'home.milestone_progress',
-                                            fallback: 'Milestone Progress',
-                                          ),
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 11.sp,
-                                            fontWeight: FontWeight.w700,
-                                            color: isDark
-                                                ? AppColors.slate400
-                                                : AppColors.slate500,
-                                          ),
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                      SizedBox(width: 6.w),
-                                      Text(
-                                        '$_cleared / ${milestone.target}',
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 11.sp,
-                                          fontWeight: FontWeight.w800,
-                                          color: color,
-                                        ),
-                                        maxLines: 1,
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(height: 6.h),
-
-                                  // Milestone progress bar with SOLID category color
-                                  RepaintBoundary(
-                                    child: Stack(
-                                      children: [
-                                        // Track
-                                        Container(
-                                          height: 6.h,
-                                          width: double.infinity,
-                                          decoration: BoxDecoration(
-                                            color: isDark
-                                                ? Colors.white.withValues(
-                                                    alpha: 0.08,
-                                                  )
-                                                : AppColors.slate200,
-                                            borderRadius:
-                                                BorderRadius.circular(100.r),
-                                          ),
-                                        ),
-                                        // Fill: Solid authentic category color (NO gradient)
-                                        FractionallySizedBox(
-                                          widthFactor: milestoneProgress.clamp(
-                                            isNewUser ? 0.02 : 0.04,
-                                            1.0,
-                                          ),
-                                          child: Container(
-                                            height: 6.h,
-                                            decoration: BoxDecoration(
-                                              color: color,
-                                              borderRadius:
-                                                  BorderRadius.circular(100.r),
-                                            ),
-                                          ).animateIf(
-                                            context,
-                                            (w) => w.animate().scaleX(
-                                                  begin: 0,
-                                                  end: 1,
-                                                  duration: 800.ms,
-                                                  curve: Curves.easeOutQuart,
-                                                  alignment:
-                                                      Alignment.centerLeft,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(width: 14.w),
-
-                            // Tactile Primary Button
-                            Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 14.w,
-                                vertical: 9.h,
-                              ),
-                              decoration: BoxDecoration(
-                                color: color,
-                                borderRadius: BorderRadius.circular(12.r),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: color.withValues(
-                                      alpha: !isTodayActive ? 0.45 : 0.32,
-                                    ),
-                                    blurRadius: !isTodayActive ? 10 : 8,
-                                    offset: const Offset(0, 2),
-                                  ),
-                                ],
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
+                                  SizedBox(width: 4.5.w),
                                   Text(
-                                    ctaLabel,
+                                    missionBadgeText,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.w800,
-                                      color: Colors.white,
-                                      letterSpacing: 0.3,
+                                      fontSize: 10.5.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: missionBadgeColor,
+                                      letterSpacing: 0.4,
                                     ),
-                                  ),
-                                  SizedBox(width: 4.w),
-                                  Icon(
-                                    Icons.play_arrow_rounded,
-                                    color: Colors.white,
-                                    size: 16.r,
+                                    maxLines: 1,
                                   ),
                                 ],
                               ),
                             ),
                           ],
                         ),
-                      ),
-                    ],
+                        SizedBox(height: 10.h),
+
+                        // Title
+                        Text(
+                          title,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 19.sp,
+                            fontWeight: FontWeight.w700,
+                            color: isDark ? Colors.white : AppColors.slate900,
+                            letterSpacing: -0.3,
+                            height: 1.2,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        SizedBox(height: 3.h),
+
+                        // Contextual Subtitle (Crisp & punchy, fits on 1 line across phones)
+                        Text(
+                          subtitle,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.5.sp,
+                            fontWeight: FontWeight.w500,
+                            color: isDark
+                                ? AppColors.slate300
+                                : AppColors.slate600,
+                            height: 1.3,
+                          ),
+                          maxLines: 2,
+                          softWrap: true,
+                        ),
+                        SizedBox(height: 12.h),
+
+                        // ── Inset Cockpit Bottom Tray ────────────────────
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 12.w,
+                            vertical: 9.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: isDark
+                                ? Colors.white.withValues(alpha: 0.035)
+                                : AppColors.slate50,
+                            borderRadius: BorderRadius.circular(16.r),
+                            border: Border.all(
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.06)
+                                  : AppColors.slate200,
+                              width: 1,
+                            ),
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              // Progress bar & label
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.baseline,
+                                      textBaseline: TextBaseline.alphabetic,
+                                      children: [
+                                        Flexible(
+                                          child: AutoSizeText(
+                                            context.tr(
+                                              'home.milestone_progress',
+                                              fallback: 'Milestone Progress',
+                                            ),
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 11.5.sp,
+                                              fontWeight: FontWeight.w600,
+                                              color: isDark
+                                                  ? AppColors.slate400
+                                                  : AppColors.slate600,
+                                            ),
+                                            maxLines: 1,
+                                            minFontSize: 9,
+                                          ),
+                                        ),
+                                        SizedBox(width: 6.w),
+                                        Text(
+                                          '$_cleared / ${milestone.target}',
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 11.5.sp,
+                                            fontWeight: FontWeight.w700,
+                                            color: color,
+                                          ),
+                                          maxLines: 1,
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(height: 6.h),
+
+                                    // Milestone progress bar with SOLID category color
+                                    RepaintBoundary(
+                                      child: Stack(
+                                        children: [
+                                          // Track
+                                          Container(
+                                            height: 6.h,
+                                            width: double.infinity,
+                                            decoration: BoxDecoration(
+                                              color: isDark
+                                                  ? Colors.white.withValues(
+                                                      alpha: 0.08,
+                                                    )
+                                                  : AppColors.slate200,
+                                              borderRadius:
+                                                  BorderRadius.circular(100.r),
+                                            ),
+                                          ),
+                                          // Fill: Solid authentic category color (NO gradient)
+                                          FractionallySizedBox(
+                                            widthFactor:
+                                                milestoneProgress.clamp(
+                                              isNewUser ? 0.02 : 0.04,
+                                              1.0,
+                                            ),
+                                            child: Container(
+                                              height: 6.h,
+                                              decoration: BoxDecoration(
+                                                color: color,
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        100.r),
+                                              ),
+                                            ).animateIf(
+                                              context,
+                                              (w) => w.animate().scaleX(
+                                                    begin: 0,
+                                                    end: 1,
+                                                    duration: 800.ms,
+                                                    curve: Curves.easeOutQuart,
+                                                    alignment:
+                                                        Alignment.centerLeft,
+                                                  ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(width: 12.w),
+
+                              // Tactile Primary Button
+                              Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 14.w,
+                                  vertical: 8.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: color,
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: color.withValues(
+                                        alpha: !isTodayActive ? 0.45 : 0.30,
+                                      ),
+                                      blurRadius: !isTodayActive ? 10 : 6,
+                                      offset: const Offset(0, 2),
+                                    ),
+                                  ],
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      ctaLabel,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.5.sp,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white,
+                                        letterSpacing: 0.3,
+                                      ),
+                                    ),
+                                    SizedBox(width: 4.w),
+                                    Icon(
+                                      Icons.play_arrow_rounded,
+                                      color: Colors.white,
+                                      size: 16.r,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -723,12 +752,10 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     return card;
   }
 
-  /// Shimmer skeleton matching the exact proportions of the Apex Cockpit card.
+  /// Shimmer skeleton precisely matching the compact proportions.
   Widget _buildShimmer(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final baseBg = isDark
-        ? const Color(0xFF131A29)
-        : Colors.white;
+    final baseBg = isDark ? const Color(0xFF131A29) : Colors.white;
     final borderColor = isDark
         ? Colors.white.withValues(alpha: 0.08)
         : Colors.black.withValues(alpha: 0.06);
@@ -736,7 +763,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     return RepaintBoundary(
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.all(20.r),
+        clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
           color: baseBg,
           borderRadius: BorderRadius.circular(24.r),
@@ -746,103 +773,106 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
               color: isDark
                   ? Colors.black.withValues(alpha: 0.20)
                   : Colors.black.withValues(alpha: 0.04),
-              blurRadius: 20,
-              offset: const Offset(0, 8),
+              blurRadius: 18,
+              offset: const Offset(0, 6),
             ),
           ],
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // Top row: Category pill on left + level tag on right
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ShimmerLoading.rounded(
-                  width: 90.w,
-                  height: 22.h,
-                  borderRadius: 100.r,
-                ),
-                ShimmerLoading.rounded(
-                  width: 80.w,
-                  height: 14.h,
-                  borderRadius: 4.r,
-                ),
-              ],
-            ),
-            SizedBox(height: 14.h),
-
-            // Title shimmer
-            ShimmerLoading.rounded(
-              width: 170.w,
-              height: 22.h,
-              borderRadius: 6.r,
-            ),
-            SizedBox(height: 6.h),
-
-            // Subtitle shimmer
-            ShimmerLoading.rounded(
-              width: 210.w,
-              height: 14.h,
-              borderRadius: 4.r,
-            ),
-            SizedBox(height: 18.h),
-
-            // Inset tray shimmer
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.02)
-                    : AppColors.slate50,
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.04)
-                      : Colors.black.withValues(alpha: 0.03),
-                ),
-              ),
-              child: Row(
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(16.w, 14.h, 14.w, 14.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // Top row: Category pill on left + status badge on right
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            ShimmerLoading.rounded(
-                              width: 90.w,
-                              height: 12.h,
-                              borderRadius: 4.r,
-                            ),
-                            ShimmerLoading.rounded(
-                              width: 32.w,
-                              height: 12.h,
-                              borderRadius: 4.r,
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 8.h),
-                        ShimmerLoading.rounded(
-                          width: double.infinity,
-                          height: 6.h,
-                          borderRadius: 100.r,
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(width: 14.w),
                   ShimmerLoading.rounded(
-                    width: 76.w,
-                    height: 32.h,
-                    borderRadius: 12.r,
+                    width: 95.w,
+                    height: 22.h,
+                    borderRadius: 100.r,
+                  ),
+                  ShimmerLoading.rounded(
+                    width: 85.w,
+                    height: 22.h,
+                    borderRadius: 100.r,
                   ),
                 ],
               ),
-            ),
-          ],
+              SizedBox(height: 10.h),
+
+              // Title shimmer
+              ShimmerLoading.rounded(
+                width: 150.w,
+                height: 20.h,
+                borderRadius: 6.r,
+              ),
+              SizedBox(height: 3.h),
+
+              // Subtitle shimmer
+              ShimmerLoading.rounded(
+                width: 200.w,
+                height: 13.h,
+                borderRadius: 4.r,
+              ),
+              SizedBox(height: 12.h),
+
+              // Inset tray shimmer
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 9.h),
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.02)
+                      : AppColors.slate50,
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.04)
+                        : Colors.black.withValues(alpha: 0.03),
+                  ),
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              ShimmerLoading.rounded(
+                                width: 85.w,
+                                height: 12.h,
+                                borderRadius: 4.r,
+                              ),
+                              ShimmerLoading.rounded(
+                                width: 28.w,
+                                height: 12.h,
+                                borderRadius: 4.r,
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 6.h),
+                          ShimmerLoading.rounded(
+                            width: double.infinity,
+                            height: 6.h,
+                            borderRadius: 100.r,
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(width: 12.w),
+                    ShimmerLoading.rounded(
+                      width: 68.w,
+                      height: 30.h,
+                      borderRadius: 12.r,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

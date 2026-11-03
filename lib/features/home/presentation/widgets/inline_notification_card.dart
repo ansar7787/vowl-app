@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
@@ -141,19 +142,19 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
       return context.tr(
         'notification_card.streak_protect',
         args: [streak.toString()],
-        fallback: 'Save your {}-day streak',
+        fallback: "Save your {}-day streak!",
       );
     } else if (streak == 1 || streak == 2) {
       return context.tr(
         'notification_card.starter_momentum',
-        fallback: 'Keep your momentum going!',
+        fallback: "Keep your streak going!",
       );
     }
 
     // Streak is 0
     return context.tr(
       'notification_card.morning_quest',
-      fallback: 'Never miss your daily quest!',
+      fallback: 'Start your streak today!',
     );
   }
 
@@ -161,12 +162,18 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
     if (widget.streak >= 3) {
       return context.tr(
         'notification_card.subtitle_streak_short',
-        fallback: 'Daily alert before midnight',
+        fallback: "A quick alert before midnight so you never lose it",
+      );
+    } else if (widget.streak == 1 || widget.streak == 2) {
+      return context.tr(
+        'notification_card.subtitle_momentum',
+        fallback: 'A quick daily reminder to help you hit a 7-day streak',
       );
     }
+
     return context.tr(
       'notification_card.subtitle_default_short',
-      fallback: 'Daily reminders at your best time',
+      fallback: 'A quick 2-minute reminder so you never miss a day',
     );
   }
 
@@ -186,162 +193,207 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
           axisAlignment: 0.0,
           child: ScaleTransition(
             scale: _scaleAnimation,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 6.h),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-                decoration: BoxDecoration(
-                  color: isDark
-                      ? AppColors.slate900.withValues(alpha: 0.90)
-                      : Colors.white.withValues(alpha: 0.96),
-                  borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(
-                    color: IllustrationColors.warmOrange.withValues(
-                      alpha: isDark ? 0.30 : 0.22,
-                    ),
-                    width: 1.0,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
+            child: MediaQuery.withClampedTextScaling(
+              maxScaleFactor: 1.25,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 6.h),
+                child: Container(
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    color: isDark
+                        ? const Color(0xFF131A29)
+                        : Colors.white,
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
                       color: IllustrationColors.warmOrange.withValues(
-                        alpha: isDark ? 0.12 : 0.06,
+                        alpha: isDark ? 0.30 : 0.22,
                       ),
-                      blurRadius: 16.r,
-                      offset: const Offset(0, 3),
+                      width: 1.0,
                     ),
-                  ],
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    // Notification Icon with glowing tint
-                    Container(
-                      width: 32.r,
-                      height: 32.r,
-                      decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
                         color: IllustrationColors.warmOrange.withValues(
-                          alpha: isDark ? 0.20 : 0.12,
+                          alpha: isDark ? 0.12 : 0.06,
                         ),
-                        shape: BoxShape.circle,
+                        blurRadius: 16.r,
+                        offset: const Offset(0, 3),
                       ),
-                      child: Center(
-                        child: Icon(
-                          Icons.notifications_active_rounded,
-                          color: IllustrationColors.warmOrange,
-                          size: 16.r,
-                        ),
-                      ),
+                    ],
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14.w,
+                      vertical: 10.h,
                     ),
-                    SizedBox(width: 10.w),
-
-                    // Texts column (Mix 1: Crisp Punch, short & readable)
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Semantics(
-                            header: true,
-                            child: Text(
-                              title,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.w800,
-                                color: isDark
-                                    ? Colors.white
-                                    : AppColors.slate900,
-                                height: 1.15,
-                              ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          SizedBox(height: 2.h),
-                          Text(
-                            subtitle,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w500,
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.65)
-                                  : AppColors.slate600,
-                              height: 1.1,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(width: 8.w),
-
-                    // Remind Me Action Pill
-                    ScaleButton(
-                      onTap: _requestPermission,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 12.w,
-                          vertical: 7.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: IllustrationColors.warmOrange,
-                          borderRadius: BorderRadius.circular(12.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: IllustrationColors.warmOrange.withValues(
-                                alpha: 0.35,
-                              ),
-                              blurRadius: 6,
-                              offset: const Offset(0, 2),
-                            ),
-                          ],
-                        ),
-                        child: Text(
-                          context.tr(
-                            'notification_card.remind_me',
-                            fallback: 'Remind Me',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w800,
-                            color: Colors.white,
-                            letterSpacing: 0.3,
-                            height: 1.1,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 4.w),
-
-                    // Accessible Dismiss (✕)
-                    Semantics(
-                      button: true,
-                      label: context.tr('common.close', fallback: 'Close'),
-                      child: GestureDetector(
-                        onTap: _dismissCard,
-                        behavior: HitTestBehavior.opaque,
-                        child: Container(
-                          width: 28.r,
-                          height: 28.r,
-                          alignment: Alignment.center,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        // Leading Notification Icon — Vertically Centered Anchor
+                        Container(
+                          width: 36.r,
+                          height: 36.r,
                           decoration: BoxDecoration(
-                            color: isDark
-                                ? Colors.white.withValues(alpha: 0.08)
-                                : Colors.black.withValues(alpha: 0.05),
+                            color: IllustrationColors.warmOrange.withValues(
+                              alpha: isDark ? 0.20 : 0.12,
+                            ),
                             shape: BoxShape.circle,
                           ),
-                          child: Icon(
-                            Icons.close_rounded,
-                            size: 14.r,
-                            color: isDark ? Colors.white60 : AppColors.slate500,
+                          child: Center(
+                            child: Icon(
+                              Icons.notifications_active_rounded,
+                              color: IllustrationColors.warmOrange,
+                              size: 18.r,
+                            ),
                           ),
                         ),
-                      ),
+                        SizedBox(width: 10.w),
+
+                        // Main Content (Title Row + Subtitle/CTA Row)
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              // Row 1: Full-Width Title + Pinned Top-Right Close
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Expanded(
+                                    child: Semantics(
+                                      header: true,
+                                      child: AutoSizeText(
+                                        title,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 13.5.sp,
+                                          fontWeight: FontWeight.w700,
+                                          color: isDark
+                                              ? Colors.white
+                                              : AppColors.slate900,
+                                          height: 1.15,
+                                        ),
+                                        maxLines: 1,
+                                        minFontSize: 11,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 6.w),
+
+                                  // Pinned Close Button (✕) with generous hit box
+                                  Semantics(
+                                    button: true,
+                                    label: context.tr(
+                                      'common.close',
+                                      fallback: 'Close',
+                                    ),
+                                    child: GestureDetector(
+                                      onTap: _dismissCard,
+                                      behavior: HitTestBehavior.opaque,
+                                      child: SizedBox(
+                                        width: 32.r,
+                                        height: 32.r,
+                                        child: Center(
+                                          child: Container(
+                                            width: 19.r,
+                                            height: 19.r,
+                                            alignment: Alignment.center,
+                                            decoration: BoxDecoration(
+                                              color: isDark
+                                                  ? Colors.white.withValues(
+                                                      alpha: 0.08,
+                                                    )
+                                                  : Colors.black.withValues(
+                                                      alpha: 0.05,
+                                                    ),
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: Icon(
+                                              Icons.close_rounded,
+                                              size: 11.5.r,
+                                              color: isDark
+                                                  ? Colors.white60
+                                                  : AppColors.slate500,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              // Tight, professional typography gap between title and subtitle
+                              SizedBox(height: 3.h),
+
+                              // Row 2: Subtitle on Left (2 lines) + Remind Me CTA on Bottom-Right
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      subtitle,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 11.5.sp,
+                                        fontWeight: FontWeight.w500,
+                                        color: isDark
+                                            ? Colors.white.withValues(
+                                                alpha: 0.65,
+                                              )
+                                            : AppColors.slate600,
+                                        height: 1.2,
+                                      ),
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                  SizedBox(width: 8.w),
+
+                                  // Remind Me Action Pill
+                                  ScaleButton(
+                                    onTap: _requestPermission,
+                                    child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 11.w,
+                                        vertical: 6.h,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: IllustrationColors.warmOrange,
+                                        borderRadius:
+                                            BorderRadius.circular(9.r),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: IllustrationColors.warmOrange
+                                                .withValues(alpha: 0.35),
+                                            blurRadius: 5,
+                                            offset: const Offset(0, 1.5),
+                                          ),
+                                        ],
+                                      ),
+                                      child: Text(
+                                        context.tr(
+                                          'notification_card.remind_me',
+                                          fallback: 'Remind Me',
+                                        ),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 11.sp,
+                                          fontWeight: FontWeight.w700,
+                                          color: Colors.white,
+                                          letterSpacing: 0.2,
+                                          height: 1.1,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ),
             ),

@@ -138,7 +138,7 @@ void main() {
       expect(find.byType(ContinueLearningCard), findsOneWidget);
       expect(find.text('VOCABULARY'), findsOneWidget);
       expect(find.text('Continue Learning'), findsOneWidget);
-      expect(find.text('14 Levels Cleared'), findsOneWidget);
+      expect(find.text('14 / 20'), findsOneWidget);
       expect(find.text('Resume'), findsOneWidget);
       expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);
     },
@@ -157,7 +157,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 600));
 
       expect(find.text('Start Your Journey'), findsOneWidget);
-      expect(find.text('New Journey'), findsOneWidget);
+      expect(find.text('DAY 1 JOURNEY'), findsOneWidget);
       expect(find.text('Start'), findsOneWidget);
       expect(find.textContaining('First step in'), findsOneWidget);
     },
@@ -241,7 +241,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 600));
 
-      expect(find.text("TODAY'S MISSION • 3 MIN TO SECURE STREAK"), findsOneWidget);
+      expect(find.text('3 MIN GOAL'), findsOneWidget);
       expect(find.text('Secure'), findsOneWidget);
       expect(find.byIcon(Icons.local_fire_department_rounded), findsOneWidget);
       expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);
@@ -269,7 +269,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 600));
 
-      expect(find.text("TODAY'S STREAK SECURED ⭐"), findsOneWidget);
+      expect(find.text('STREAK ACTIVE'), findsOneWidget);
       expect(find.text('Resume'), findsOneWidget);
       expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);
     },

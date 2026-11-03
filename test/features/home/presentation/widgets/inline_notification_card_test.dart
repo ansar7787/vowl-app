@@ -120,10 +120,11 @@ void main() {
 
       // Notification card renders when not dismissed
       expect(find.byType(InlineNotificationCard), findsOneWidget);
-      expect(find.text('Save your 14-day streak'), findsOneWidget);
-      expect(find.text('Daily alert before midnight'), findsOneWidget);
+      expect(find.text("Save your 14-day streak!"), findsOneWidget);
+      expect(find.text("A quick alert before midnight so you never lose it"), findsOneWidget);
       expect(find.text('Remind Me'), findsOneWidget);
       expect(find.byIcon(Icons.close_rounded), findsOneWidget);
+      expect(find.byIcon(Icons.notifications_active_rounded), findsOneWidget);
     },
   );
 
@@ -134,8 +135,9 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('Keep your momentum going!'), findsOneWidget);
-      expect(find.text('Daily reminders at your best time'), findsOneWidget);
+      expect(find.text("Keep your streak going!"), findsOneWidget);
+      expect(find.text("A quick daily reminder to help you hit a 7-day streak"), findsOneWidget);
+      expect(find.byIcon(Icons.notifications_active_rounded), findsOneWidget);
     },
   );
 
@@ -146,8 +148,9 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('Never miss your daily quest!'), findsOneWidget);
-      expect(find.text('Daily reminders at your best time'), findsOneWidget);
+      expect(find.text("Start your streak today!"), findsOneWidget);
+      expect(find.text("A quick 2-minute reminder so you never miss a day"), findsOneWidget);
+      expect(find.byIcon(Icons.notifications_active_rounded), findsOneWidget);
     },
   );
 
@@ -167,7 +170,7 @@ void main() {
       verify(() => mockHapticService.light()).called(1);
 
       // Card is dismissed and collapsed away
-      expect(find.text('Save your 14-day streak'), findsNothing);
+      expect(find.text("Save your 14-day streak!"), findsNothing);
     },
   );
 
@@ -184,7 +187,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('Save your 14-day streak'), findsNothing);
+      expect(find.text("Save your 14-day streak!"), findsNothing);
     },
   );
 
