@@ -26,18 +26,25 @@ class InlineNotificationCard extends StatefulWidget {
   /// Synchronously pre-evaluates fast SharedPreferences constraints (cooldown, settings)
   /// and kicks off OS permission verification in the background.
   static void prewarm(SharedPreferences prefs) {
+    // 1. Respect user setting if explicitly disabled in app settings
     final bool appSettingsEnabled =
         prefs.getBool('notifications_enabled') ?? true;
-    final bool isPermanentlyDenied =
-        prefs.getBool('notification_permission_permanently_denied') ?? false;
-    final bool isGranted =
-        prefs.getBool('notification_permission_granted') ?? false;
-
-    if (isGranted || isPermanentlyDenied || !appSettingsEnabled) {
+    if (!appSettingsEnabled) {
       cachedShouldShow = false;
       return;
     }
 
+    // 2. If user already granted permission, never prompt again
+    final bool isGranted =
+        prefs.getBool('notification_permission_granted') ?? false;
+    if (isGranted) {
+      cachedShouldShow = false;
+      return;
+    }
+
+    // 3. 7-Day Cooldown Check:
+    // If user dismissed the card or previously denied permission,
+    // wait 7 full days before re-prompting.
     final int? lastDismissedMs = prefs.getInt(
       'notification_card_dismissed_time',
     );
@@ -54,18 +61,14 @@ class InlineNotificationCard extends StatefulWidget {
       }
     }
 
-    // Default to true so Frame 1 renders immediately if not blocked by prefs
+    // Cooldown has expired (or first run): card renders immediately on Frame 1!
     cachedShouldShow = true;
 
     // Asynchronously verify actual OS permission status in background
     Permission.notification.status.then((status) {
-      if (status.isGranted || status.isPermanentlyDenied) {
+      if (status.isGranted) {
         cachedShouldShow = false;
-        prefs.setBool('notification_permission_granted', status.isGranted);
-        prefs.setBool(
-          'notification_permission_permanently_denied',
-          status.isPermanentlyDenied,
-        );
+        prefs.setBool('notification_permission_granted', true);
       }
     }).catchError((_) {});
   }
@@ -109,20 +112,33 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
       if (!mounted) return;
 
       final bool isGranted = status.isGranted;
-      final bool isDeniedForever = status.isPermanentlyDenied;
 
-      // Update cached values
-      await prefs.setBool('notification_permission_granted', isGranted);
-      await prefs.setBool(
-        'notification_permission_permanently_denied',
-        isDeniedForever,
-      );
+      // Update cached granted flag if permission is active in OS
+      if (isGranted) {
+        await prefs.setBool('notification_permission_granted', true);
+      }
 
-      // If user explicitly disabled notifications from Settings Screen, we respect that too.
+      // If user explicitly disabled notifications from Settings Screen, respect that
       final bool appSettingsEnabled =
           prefs.getBool('notifications_enabled') ?? true;
 
-      if (isGranted || isDeniedForever || !appSettingsEnabled) {
+      // 7-day cooldown check
+      final int? lastDismissedMs = prefs.getInt(
+        'notification_card_dismissed_time',
+      );
+      bool isCooldownActive = false;
+      if (lastDismissedMs != null) {
+        final lastDismissedDate = DateTime.fromMillisecondsSinceEpoch(
+          lastDismissedMs,
+        );
+        final daysDifference = DateTime.now()
+            .difference(lastDismissedDate)
+            .inDays;
+        isCooldownActive = daysDifference < 7;
+      }
+
+      // Hide card if granted, settings disabled, or cooldown active (< 7 days)
+      if (isGranted || !appSettingsEnabled || isCooldownActive) {
         InlineNotificationCard.cachedShouldShow = false;
         if (_isVisible.value) {
           await _animationController.reverse();
@@ -131,35 +147,13 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
         return;
       }
 
-      // Cooldown logic: don't show every single time if they dismissed it.
-      final int? lastDismissedMs = prefs.getInt(
-        'notification_card_dismissed_time',
-      );
-      if (lastDismissedMs != null) {
-        final lastDismissedDate = DateTime.fromMillisecondsSinceEpoch(
-          lastDismissedMs,
-        );
-        final daysDifference = DateTime.now()
-            .difference(lastDismissedDate)
-            .inDays;
-        if (daysDifference < 7) {
-          InlineNotificationCard.cachedShouldShow = false;
-          if (_isVisible.value) {
-            await _animationController.reverse();
-            if (mounted) _isVisible.value = false;
-          }
-          return;
-        }
-      }
-
+      // Cooldown expired and permission not yet granted: display card
       InlineNotificationCard.cachedShouldShow = true;
       if (!_isVisible.value) {
         _isVisible.value = true;
         _animationController.forward();
       }
     } catch (e) {
-      // Permission/preferences lookup failures should never crash the home
-      // feed — simply keep the card hidden and trace it in debug builds.
       if (kDebugMode) {
         debugPrint('InlineNotificationCard: permission check failed: $e');
       }
@@ -171,6 +165,15 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
 
   Future<void> _requestPermission() async {
     di.sl<HapticService>().selection();
+    final currentStatus = await Permission.notification.status;
+    if (!mounted) return;
+
+    if (currentStatus.isPermanentlyDenied) {
+      await openAppSettings();
+      _dismissCard();
+      return;
+    }
+
     final status = await Permission.notification.request();
     if (!mounted) return;
 

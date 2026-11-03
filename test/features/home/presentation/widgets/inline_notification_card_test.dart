@@ -74,6 +74,9 @@ void main() {
         if (methodCall.method == 'requestPermissions') {
           return {17: 0};
         }
+        if (methodCall.method == 'openAppSettings') {
+          return true;
+        }
         return null;
       },
     );
@@ -245,6 +248,72 @@ void main() {
 
       expect(find.byType(InlineNotificationCard), findsOneWidget);
       expect(find.text("Save your 14-day streak!"), findsOneWidget);
+    },
+  );
+
+  testWidgets(
+    'reappears and renders after 7-day cooldown expires for previously denied user',
+    (tester) async {
+      final expiredDismissal =
+          DateTime.now().subtract(const Duration(days: 8)).millisecondsSinceEpoch;
+      SharedPreferences.setMockInitialValues({
+        'notification_card_dismissed_time': expiredDismissal,
+      });
+
+      final prefs = await SharedPreferences.getInstance();
+      InlineNotificationCard.prewarm(prefs);
+
+      await tester.pumpWidget(createSubject(streak: 14));
+      await tester.pump();
+
+      expect(find.byType(InlineNotificationCard), findsOneWidget);
+      expect(find.text("Save your 14-day streak!"), findsOneWidget);
+    },
+  );
+
+  testWidgets(
+    'reappears after 7 days even if OS permission is permanently denied, and Remind Me opens app settings',
+    (tester) async {
+      bool openedSettings = false;
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+          .setMockMethodCallHandler(
+        const MethodChannel('flutter.baseflow.com/permissions/methods'),
+        (MethodCall methodCall) async {
+          if (methodCall.method == 'checkPermissionStatus') {
+            // 4 = PermissionStatus.permanentlyDenied
+            return 4;
+          }
+          if (methodCall.method == 'openAppSettings') {
+            openedSettings = true;
+            return true;
+          }
+          return null;
+        },
+      );
+
+      final expiredDismissal =
+          DateTime.now().subtract(const Duration(days: 8)).millisecondsSinceEpoch;
+      SharedPreferences.setMockInitialValues({
+        'notification_card_dismissed_time': expiredDismissal,
+      });
+
+      final prefs = await SharedPreferences.getInstance();
+      InlineNotificationCard.prewarm(prefs);
+
+      await tester.pumpWidget(createSubject(streak: 14));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 100));
+
+      // Card remains visible even though OS is permanently denied
+      expect(find.byType(InlineNotificationCard), findsOneWidget);
+      expect(find.text("Remind Me"), findsOneWidget);
+
+      // Tap Remind Me
+      await tester.tap(find.text("Remind Me"));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+
+      expect(openedSettings, isTrue);
     },
   );
 }
