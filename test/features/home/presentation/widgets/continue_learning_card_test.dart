@@ -241,7 +241,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 600));
 
-      expect(find.text('3 MIN GOAL'), findsOneWidget);
+      expect(find.text('DAILY GOAL'), findsOneWidget);
       expect(find.text('Secure'), findsOneWidget);
       expect(find.byIcon(Icons.local_fire_department_rounded), findsOneWidget);
       expect(find.byIcon(Icons.play_arrow_rounded), findsOneWidget);

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
 // ---------------------------------------------------------------------------
@@ -332,36 +331,49 @@ class HomeShimmerLoading extends StatelessWidget {
             SizedBox(height: 24.h),
 
             // 3. 4-Card Unified Stats Row Shimmer (Streak | Coins | Badges | Rank)
-            Row(
-              children: [
-                Expanded(
-                  child: _buildStatTileSkeleton(
-                    valueWidth: 26.w,
-                    labelWidth: 36.w,
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 8.h),
+              decoration: BoxDecoration(
+                color: cardBg,
+                borderRadius: BorderRadius.circular(22.r),
+                border: Border.all(color: borderColor),
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: _buildStatTileSkeleton(
+                      valueWidth: 26.w,
+                      labelWidth: 36.w,
+                      isDark: isDark,
+                    ),
                   ),
-                ),
-                SizedBox(width: 8.w),
-                Expanded(
-                  child: _buildStatTileSkeleton(
-                    valueWidth: 34.w,
-                    labelWidth: 30.w,
+                  SizedBox(width: 4.w),
+                  Expanded(
+                    child: _buildStatTileSkeleton(
+                      valueWidth: 34.w,
+                      labelWidth: 30.w,
+                      isDark: isDark,
+                    ),
                   ),
-                ),
-                SizedBox(width: 8.w),
-                Expanded(
-                  child: _buildStatTileSkeleton(
-                    valueWidth: 22.w,
-                    labelWidth: 38.w,
+                  SizedBox(width: 4.w),
+                  Expanded(
+                    child: _buildStatTileSkeleton(
+                      valueWidth: 22.w,
+                      labelWidth: 38.w,
+                      isDark: isDark,
+                    ),
                   ),
-                ),
-                SizedBox(width: 8.w),
-                Expanded(
-                  child: _buildStatTileSkeleton(
-                    valueWidth: 28.w,
-                    labelWidth: 26.w,
+                  SizedBox(width: 4.w),
+                  Expanded(
+                    child: _buildStatTileSkeleton(
+                      valueWidth: 28.w,
+                      labelWidth: 26.w,
+                      isDark: isDark,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             SizedBox(height: 28.h),
 
@@ -389,31 +401,40 @@ class HomeShimmerLoading extends StatelessWidget {
   static Widget _buildStatTileSkeleton({
     required double valueWidth,
     required double labelWidth,
+    required bool isDark,
   }) {
-    return GlassTile(
-      borderRadius: BorderRadius.circular(20.r),
-      padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 4.w),
-      blur: 0,
-      child: SizedBox(
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ShimmerLoading.circular(width: 28.r, height: 28.r),
-            SizedBox(height: 6.h),
-            ShimmerLoading.rounded(
-              width: valueWidth,
-              height: 14.h,
-              borderRadius: 4.r,
-            ),
-            SizedBox(height: 5.h),
-            ShimmerLoading.rounded(
-              width: labelWidth,
-              height: 8.h,
-              borderRadius: 3.r,
-            ),
-          ],
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 2.w),
+      decoration: BoxDecoration(
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.02)
+            : AppColors.slate50,
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.04)
+              : Colors.black.withValues(alpha: 0.03),
+          width: 1,
         ),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ShimmerLoading.circular(width: 28.r, height: 28.r),
+          SizedBox(height: 7.h),
+          ShimmerLoading.rounded(
+            width: valueWidth,
+            height: 14.h,
+            borderRadius: 4.r,
+          ),
+          SizedBox(height: 5.h),
+          ShimmerLoading.rounded(
+            width: labelWidth,
+            height: 9.h,
+            borderRadius: 3.r,
+          ),
+        ],
       ),
     );
   }

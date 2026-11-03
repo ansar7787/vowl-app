@@ -423,6 +423,17 @@ class UserEntity {
     return false;
   }
 
+  /// Total XP earned today based on [dailyXpHistory].
+  int get todayExp {
+    final now = DateTime.now();
+    final todayKey =
+        '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+    return dailyXpHistory[todayKey] ?? 0;
+  }
+
+  /// Whether the user has completed at least one learning lesson or earned XP today.
+  bool get hasCompletedDailyGoal => todayExp > 0;
+
   /// Computes the total XP earned in the current ISO week (Monday through Sunday)
   /// by summing entries in [dailyXpHistory] matching the dates of this week.
   /// Automatically rolls over to 0 on Monday 00:00 UTC without database wipes.

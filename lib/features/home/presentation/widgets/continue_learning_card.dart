@@ -202,7 +202,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     final color = GameHelper.getQuestTypeColor(_nextType);
     final icon = GameHelper.getIconForCategory(_nextType);
     final isNewUser = user.totalLevelsCompleted == 0;
-    final isTodayActive = user.isTodayActive;
+    final isTodayActive = user.hasCompletedDailyGoal;
     final currentStreak = user.currentStreak;
     final categoryDisplayName = _formatCategoryTitle(_nextType);
 
@@ -242,8 +242,8 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
       if (currentStreak > 0) {
         missionBadgeIcon = Icons.local_fire_department_rounded;
         missionBadgeText = context.tr(
-          'home.mission_3min_protect',
-          fallback: '3 MIN GOAL',
+          'home.mission_daily_goal',
+          fallback: 'DAILY GOAL',
         );
       } else {
         missionBadgeIcon = Icons.bolt_rounded;
@@ -266,32 +266,30 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     if (!isTodayActive && currentStreak > 0) {
       subtitle = context.tr(
         'home.protect_streak_subtitle_short',
-        fallback: '1 level to protect your {}d streak • Milestone {}',
-        args: [currentStreak.toString(), milestone.target.toString()],
+        fallback: '1 level to protect your {}d streak',
+        args: [currentStreak.toString()],
       );
     } else if (isNewUser) {
       subtitle = context.tr(
         'home.first_step_in_category_short',
-        fallback: 'First step in {} • Goal {}',
-        args: [categoryDisplayName, milestone.target.toString()],
+        fallback: 'First step in {}',
+        args: [categoryDisplayName],
       );
     } else if (remaining > 1) {
       subtitle = context.tr(
         'home.levels_to_reach_milestone_short',
-        fallback: '$remaining levels to Milestone ${milestone.target}',
-        args: [remaining.toString(), milestone.target.toString()],
+        fallback: '$remaining levels to reach next goal',
+        args: [remaining.toString()],
       );
     } else if (remaining == 1) {
       subtitle = context.tr(
         'home.level_to_reach_milestone_short',
-        fallback: '1 level to Milestone ${milestone.target}',
-        args: [milestone.target.toString()],
+        fallback: '1 level to reach next goal',
       );
     } else {
       subtitle = context.tr(
         'home.milestone_completed_short',
-        fallback: 'Milestone ${milestone.target} cleared • Keep mastering',
-        args: [milestone.target.toString()],
+        fallback: 'Goal completed • Keep mastering',
       );
     }
 
@@ -356,18 +354,6 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                           : AppColors.emerald500.withValues(alpha: 0.25)),
                   width: !isTodayActive ? 1.5 : 1.2,
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: !isTodayActive
-                        ? color.withValues(alpha: isDark ? 0.24 : 0.15)
-                        : (isDark
-                            ? color.withValues(alpha: 0.10)
-                            : Colors.black.withValues(alpha: 0.04)),
-                    blurRadius: !isTodayActive ? 20 : 16,
-                    spreadRadius: !isTodayActive ? 1 : 0,
-                    offset: const Offset(0, 6),
-                  ),
-                ],
               ),
               child: Stack(
                 children: [
@@ -388,17 +374,21 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                     ),
                   ),
 
-                  // ── Elegant Watermark Glyph (Clipped cleanly in background) ──
+                  // ── Elegant Watermark Glyph (Vertically centered in open right-side space) ──
                   Positioned(
                     right: -10.r,
-                    top: -10.r,
-                    child: IgnorePointer(
-                      child: Icon(
-                        icon,
-                        size: 104.r,
-                        color: isDark
-                            ? Colors.white.withValues(alpha: 0.035)
-                            : color.withValues(alpha: 0.045),
+                    top: 0,
+                    bottom: 0,
+                    child: Align(
+                      alignment: const Alignment(1.0, -0.12),
+                      child: IgnorePointer(
+                        child: Icon(
+                          icon,
+                          size: 92.r,
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.055)
+                              : color.withValues(alpha: 0.075),
+                        ),
                       ),
                     ),
                   ),
@@ -706,34 +696,6 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                   ),
                 ],
               ),
-            ).animateIf(
-              context,
-              (w) => !isTodayActive
-                  ? w
-                      .animate(
-                        onPlay: (controller) =>
-                            controller.repeat(reverse: true),
-                      )
-                      .boxShadow(
-                        begin: BoxShadow(
-                          color: color.withValues(
-                            alpha: isDark ? 0.16 : 0.10,
-                          ),
-                          blurRadius: 18,
-                          offset: const Offset(0, 4),
-                        ),
-                        end: BoxShadow(
-                          color: color.withValues(
-                            alpha: isDark ? 0.40 : 0.26,
-                          ),
-                          blurRadius: 28,
-                          spreadRadius: 2,
-                          offset: const Offset(0, 8),
-                        ),
-                        duration: 2200.ms,
-                        curve: Curves.easeInOut,
-                      )
-                  : w,
             ),
           ),
         ),
@@ -768,15 +730,6 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
           color: baseBg,
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(color: borderColor),
-          boxShadow: [
-            BoxShadow(
-              color: isDark
-                  ? Colors.black.withValues(alpha: 0.20)
-                  : Colors.black.withValues(alpha: 0.04),
-              blurRadius: 18,
-              offset: const Offset(0, 6),
-            ),
-          ],
         ),
         child: Padding(
           padding: EdgeInsets.fromLTRB(16.w, 14.h, 14.w, 14.h),
