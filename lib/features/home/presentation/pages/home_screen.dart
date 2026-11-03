@@ -24,8 +24,7 @@ import 'package:vowl/features/home/presentation/widgets/inline_notification_card
 import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_motivation_card.dart';
 import 'package:vowl/features/home/presentation/widgets/review_mistakes_home_card.dart';
-import 'package:vowl/features/home/presentation/widgets/mystery_chest_dialog.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vowl/features/home/presentation/widgets/daily_mystery_chest_card.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
 import 'package:vowl/features/home/presentation/widgets/beginner_milestone_card.dart';
@@ -47,7 +46,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final ValueNotifier<int?> _globalRank = ValueNotifier(null);
   final ValueNotifier<bool> _isRankLoading = ValueNotifier(true);
-  bool _hasCheckedDailyChestThisSession = false;
   bool _bypassBeginnerGate = false;
 
   @override
@@ -172,49 +170,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 context.read<ProgressionBloc>().add(
                   const ProgressionResetRequested(),
                 );
-                _hasCheckedDailyChestThisSession = false;
                 _globalRank.value = null;
                 _isRankLoading.value = false;
               }
-            },
-          ),
-          BlocListener<EconomyBloc, EconomyState>(
-            listenWhen: (previous, current) =>
-                previous.isDailyRewardAvailable !=
-                    current.isDailyRewardAvailable &&
-                current.isDailyRewardAvailable,
-            listener: (context, state) async {
-              if (_hasCheckedDailyChestThisSession) return;
-              _hasCheckedDailyChestThisSession = true;
-
-              final userId = context.read<AuthBloc>().state.user?.id;
-
-              // Double-guard against midnight time-zone skew or fast restarts
-              // using persistent SharedPreferences.
-              try {
-                final prefs = await SharedPreferences.getInstance();
-                final nowLocal = DateTime.now().toLocal();
-                final todayStr =
-                    '${nowLocal.year}-${nowLocal.month.toString().padLeft(2, '0')}-${nowLocal.day.toString().padLeft(2, '0')}';
-                final localDate =
-                    prefs.getString('last_daily_mystery_claimed_date');
-                final userDate = userId != null && userId.isNotEmpty
-                    ? prefs.getString('last_daily_mystery_claimed_date_$userId')
-                    : null;
-                final isClaimedLocally = userId != null && userId.isNotEmpty
-                    ? userDate == todayStr
-                    : localDate == todayStr;
-                if (isClaimedLocally) {
-                  return;
-                }
-              } catch (_) {}
-
-              if (!context.mounted) return;
-              showDialog(
-                context: context,
-                barrierDismissible: false,
-                builder: (context) => const MysteryChestDialog(),
-              );
             },
           ),
         ],
@@ -265,8 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 RefreshIndicator(
                   onRefresh: () async {
                     context.read<AuthBloc>().add(const AuthReloadUser());
-                    // Keep _hasCheckedDailyChestThisSession intact during pull-to-refresh
-                    // so users are never interrupted with a modal dialog while browsing.
+                    // Re-check daily reward availability on pull-to-refresh
                     context.read<EconomyBloc>().add(
                       const EconomyCheckDailyRewardRequested(),
                     );
@@ -306,6 +263,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: InlineNotificationCard(
                           streak: user.currentStreak,
                         ),
+                      ),
+
+                      // --------------------------------------------------
+                      // 1.6 DAILY MYSTERY CHEST (Conditional Inline Claim)
+                      // --------------------------------------------------
+                      const SliverToBoxAdapter(
+                        child: DailyMysteryChestCard(),
                       ),
 
                       // --------------------------------------------------
