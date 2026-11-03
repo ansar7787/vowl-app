@@ -21,6 +21,7 @@ void main() {
   late MockLocaleService mockLocaleService;
 
   setUp(() {
+    InlineNotificationCard.cachedShouldShow = null;
     VowlMotion.lowAnimationModeOverride.value = true;
     mockHapticService = MockHapticService();
     mockLocaleService = MockLocaleService();
@@ -79,6 +80,7 @@ void main() {
   });
 
   tearDown(() {
+    InlineNotificationCard.cachedShouldShow = null;
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(
       const MethodChannel('flutter.baseflow.com/permissions/methods'),
@@ -228,6 +230,21 @@ void main() {
 
       expect(find.byType(InlineNotificationCard), findsOneWidget);
       expect(tester.takeException(), isNull);
+    },
+  );
+
+  testWidgets(
+    'renders instantly on Frame 1 when prewarmed without delay',
+    (tester) async {
+      final prefs = await SharedPreferences.getInstance();
+      InlineNotificationCard.prewarm(prefs);
+
+      await tester.pumpWidget(createSubject(streak: 14));
+      // Immediate Frame 1 check without needing pump duration
+      await tester.pump();
+
+      expect(find.byType(InlineNotificationCard), findsOneWidget);
+      expect(find.text("Save your 14-day streak!"), findsOneWidget);
     },
   );
 }

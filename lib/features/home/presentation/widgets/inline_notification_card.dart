@@ -19,22 +19,76 @@ class InlineNotificationCard extends StatefulWidget {
   /// Creates an [InlineNotificationCard] for [streak].
   const InlineNotificationCard({super.key, required this.streak});
 
+  /// In-memory cache of whether the card should be displayed.
+  /// Allows Frame-1 instantaneous rendering without waiting for OS bridge calls.
+  static bool? cachedShouldShow;
+
+  /// Synchronously pre-evaluates fast SharedPreferences constraints (cooldown, settings)
+  /// and kicks off OS permission verification in the background.
+  static void prewarm(SharedPreferences prefs) {
+    final bool appSettingsEnabled =
+        prefs.getBool('notifications_enabled') ?? true;
+    final bool isPermanentlyDenied =
+        prefs.getBool('notification_permission_permanently_denied') ?? false;
+    final bool isGranted =
+        prefs.getBool('notification_permission_granted') ?? false;
+
+    if (isGranted || isPermanentlyDenied || !appSettingsEnabled) {
+      cachedShouldShow = false;
+      return;
+    }
+
+    final int? lastDismissedMs = prefs.getInt(
+      'notification_card_dismissed_time',
+    );
+    if (lastDismissedMs != null) {
+      final lastDismissedDate = DateTime.fromMillisecondsSinceEpoch(
+        lastDismissedMs,
+      );
+      final daysDifference = DateTime.now()
+          .difference(lastDismissedDate)
+          .inDays;
+      if (daysDifference < 7) {
+        cachedShouldShow = false;
+        return;
+      }
+    }
+
+    // Default to true so Frame 1 renders immediately if not blocked by prefs
+    cachedShouldShow = true;
+
+    // Asynchronously verify actual OS permission status in background
+    Permission.notification.status.then((status) {
+      if (status.isGranted || status.isPermanentlyDenied) {
+        cachedShouldShow = false;
+        prefs.setBool('notification_permission_granted', status.isGranted);
+        prefs.setBool(
+          'notification_permission_permanently_denied',
+          status.isPermanentlyDenied,
+        );
+      }
+    }).catchError((_) {});
+  }
+
   @override
   State<InlineNotificationCard> createState() => _InlineNotificationCardState();
 }
 
 class _InlineNotificationCardState extends State<InlineNotificationCard>
     with SingleTickerProviderStateMixin {
-  final ValueNotifier<bool> _isVisible = ValueNotifier(false);
+  late final ValueNotifier<bool> _isVisible;
   late AnimationController _animationController;
   late Animation<double> _scaleAnimation;
 
   @override
   void initState() {
     super.initState();
+    final initialVisible = InlineNotificationCard.cachedShouldShow ?? false;
+    _isVisible = ValueNotifier(initialVisible);
     _animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 400),
+      value: initialVisible ? 1.0 : 0.0,
     );
     _scaleAnimation = CurvedAnimation(
       parent: _animationController,
@@ -45,19 +99,35 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
 
   Future<void> _checkPermissionStatus() async {
     try {
-      final prefs = await SharedPreferences.getInstance();
-      final bool isGranted = await Permission.notification.isGranted;
-      final bool isDeniedForever =
-          await Permission.notification.isPermanentlyDenied;
+      final results = await Future.wait([
+        SharedPreferences.getInstance(),
+        Permission.notification.status,
+      ]);
+      final prefs = results[0] as SharedPreferences;
+      final status = results[1] as PermissionStatus;
 
       if (!mounted) return;
+
+      final bool isGranted = status.isGranted;
+      final bool isDeniedForever = status.isPermanentlyDenied;
+
+      // Update cached values
+      await prefs.setBool('notification_permission_granted', isGranted);
+      await prefs.setBool(
+        'notification_permission_permanently_denied',
+        isDeniedForever,
+      );
 
       // If user explicitly disabled notifications from Settings Screen, we respect that too.
       final bool appSettingsEnabled =
           prefs.getBool('notifications_enabled') ?? true;
 
       if (isGranted || isDeniedForever || !appSettingsEnabled) {
-        _isVisible.value = false;
+        InlineNotificationCard.cachedShouldShow = false;
+        if (_isVisible.value) {
+          await _animationController.reverse();
+          if (mounted) _isVisible.value = false;
+        }
         return;
       }
 
@@ -73,20 +143,29 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
             .difference(lastDismissedDate)
             .inDays;
         if (daysDifference < 7) {
-          _isVisible.value = false;
+          InlineNotificationCard.cachedShouldShow = false;
+          if (_isVisible.value) {
+            await _animationController.reverse();
+            if (mounted) _isVisible.value = false;
+          }
           return;
         }
       }
 
-      _isVisible.value = true;
-      _animationController.forward();
+      InlineNotificationCard.cachedShouldShow = true;
+      if (!_isVisible.value) {
+        _isVisible.value = true;
+        _animationController.forward();
+      }
     } catch (e) {
       // Permission/preferences lookup failures should never crash the home
       // feed — simply keep the card hidden and trace it in debug builds.
       if (kDebugMode) {
         debugPrint('InlineNotificationCard: permission check failed: $e');
       }
-      if (mounted) _isVisible.value = false;
+      if (mounted && InlineNotificationCard.cachedShouldShow != true) {
+        _isVisible.value = false;
+      }
     }
   }
 
@@ -100,7 +179,9 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
       try {
         final prefs = await SharedPreferences.getInstance();
         await prefs.setBool('notifications_enabled', true);
+        await prefs.setBool('notification_permission_granted', true);
       } catch (_) {}
+      InlineNotificationCard.cachedShouldShow = false;
       await _animationController.reverse();
       if (mounted) _isVisible.value = false;
     } else {
@@ -110,6 +191,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
 
   Future<void> _dismissCard() async {
     di.sl<HapticService>().light();
+    InlineNotificationCard.cachedShouldShow = false;
     try {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setInt(
