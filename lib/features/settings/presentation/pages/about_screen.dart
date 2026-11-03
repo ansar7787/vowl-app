@@ -43,7 +43,7 @@ class _AboutScreenState extends State<AboutScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final bgColor = isDark ? AppColors.slate900 : AppColors.slate50;
+    final bgColor = isDark ? AppColors.slate900 : AppColors.white;
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -206,7 +206,7 @@ class _AboutScreenState extends State<AboutScreen> {
       pinned: true,
       centerTitle: true,
       flexibleSpace: Container(
-        color: (isDark ? AppColors.slate900 : AppColors.slate50).withValues(
+        color: (isDark ? AppColors.slate900 : AppColors.white).withValues(
           alpha: 0.94,
         ),
       ),

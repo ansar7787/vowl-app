@@ -83,7 +83,7 @@ class AdventureXPScreen extends StatelessWidget {
               Theme.of(context).scaffoldBackgroundColor == Colors.black);
           final bgColor = isMidnight
               ? Colors.black
-              : (isDark ? AppColors.slate900 : AppColors.slate50);
+              : (isDark ? AppColors.slate900 : AppColors.white);
           return Scaffold(
             backgroundColor: bgColor,
             body: BlocBuilder<AuthBloc, AuthState>(

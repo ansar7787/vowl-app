@@ -536,12 +536,12 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                           decoration: BoxDecoration(
                             color: isDark
                                 ? Colors.white.withValues(alpha: 0.035)
-                                : AppColors.slate50,
+                                : Colors.white,
                             borderRadius: BorderRadius.circular(16.r),
                             border: Border.all(
                               color: isDark
                                   ? Colors.white.withValues(alpha: 0.06)
-                                  : AppColors.slate200,
+                                  : AppColors.slate100,
                               width: 1,
                             ),
                           ),
@@ -777,7 +777,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                 decoration: BoxDecoration(
                   color: isDark
                       ? Colors.white.withValues(alpha: 0.02)
-                      : AppColors.slate50,
+                      : Colors.white,
                   borderRadius: BorderRadius.circular(16.r),
                   border: Border.all(
                     color: isDark

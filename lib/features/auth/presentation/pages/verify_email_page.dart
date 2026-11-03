@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/network/network_info.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/holographic_card.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_colors.dart';
@@ -165,7 +165,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
         Theme.of(context).scaffoldBackgroundColor == Colors.black);
     return isMidnight
         ? _LocalPalette.color000000
-        : (isDark ? AppColors.slate900 : AppColors.slate50);
+        : (isDark ? AppColors.slate900 : AppColors.white);
   }
 
   // ---------------------------------------------------------------------------
@@ -253,12 +253,9 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                             horizontal: 20.w,
                             vertical: 24.h,
                           ),
-                          child: GlassTile(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 20.w,
-                              vertical: 28.h,
-                            ),
-                            borderRadius: BorderRadius.circular(32.r),
+                          child: HolographicCard(
+                            padding: 24,
+                            borderRadius: 32,
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [

@@ -1172,7 +1172,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
                         vertical: 10.h,
                       ),
                       decoration: BoxDecoration(
-                        color: isDark ? AppColors.slate800 : AppColors.slate50,
+                        color: isDark ? AppColors.slate800 : AppColors.slate100,
                         borderRadius: BorderRadius.circular(12.r),
                       ),
                       child: Row(

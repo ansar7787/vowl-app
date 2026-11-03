@@ -87,8 +87,8 @@ class _MainWrapperState extends State<MainWrapper> {
                                   ? Colors.white.withValues(alpha: 0.12)
                                   : (isDark
                                         ? AppColors.slate700
-                                        : AppColors.slate200),
-                              width: 1.5,
+                                        : AppColors.slate100),
+                              width: 1.0,
                             ),
                             boxShadow: [
                               BoxShadow(
@@ -119,8 +119,8 @@ class _MainWrapperState extends State<MainWrapper> {
                                       ? Colors.white.withValues(alpha: 0.12)
                                       : (isDark
                                             ? AppColors.slate700.withValues(alpha: 0.6)
-                                            : AppColors.slate200),
-                                  width: 1.5,
+                                            : AppColors.slate100),
+                                  width: 1.0,
                                 ),
                                 boxShadow: [
                                   BoxShadow(

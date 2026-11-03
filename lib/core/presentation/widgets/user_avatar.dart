@@ -114,9 +114,9 @@ class UserAvatar extends StatelessWidget {
     if (isNetwork) {
       final cacheSize = (size * 2.5).round().clamp(80, 800);
       final shimmerBase =
-          isDark ? AppColors.slate800 : AppColors.slate200;
+          isDark ? AppColors.slate800 : AppColors.slate100;
       final shimmerHighlight =
-          isDark ? AppColors.slate700 : AppColors.slate100;
+          isDark ? AppColors.slate700 : AppColors.white;
 
       return CachedNetworkImage(
         imageUrl: url,

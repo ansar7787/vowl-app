@@ -64,7 +64,7 @@ class _TrophyRoomView extends StatelessWidget {
                       _LocalPalette.color33201c, // Deep gold tint
                     ]
                   : [
-                      AppColors.slate50,
+                      AppColors.white,
                       AppColors.slate100,
                       _LocalPalette.colorfef3c7, // Light gold tint
                     ],

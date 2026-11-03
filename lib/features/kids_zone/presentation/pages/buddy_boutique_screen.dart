@@ -65,7 +65,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
         Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? _LocalPalette.color1e3a8a : AppColors.slate50);
+        : (isDark ? _LocalPalette.color1e3a8a : AppColors.white);
 
     return Scaffold(
       backgroundColor: bgColor,

@@ -69,7 +69,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
         Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? AppColors.slate900 : AppColors.slate50);
+        : (isDark ? AppColors.slate900 : AppColors.white);
 
     return BlocProvider(
       create: (_) =>
@@ -1136,7 +1136,7 @@ class _LeaderboardToggle extends StatelessWidget {
         border: Border.all(
           color: isDark
               ? Colors.white.withValues(alpha: 0.1)
-              : AppColors.slate200,
+              : AppColors.slate100,
           width: 1,
         ),
       ),
@@ -1299,7 +1299,7 @@ class _LeaderboardTimeframeSelector extends StatelessWidget {
         border: Border.all(
           color: isMidnight
               ? Colors.white.withValues(alpha: 0.12)
-              : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200),
+              : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100),
           width: 1,
         ),
       ),
@@ -1425,7 +1425,7 @@ class _HallOfFameBanner extends StatelessWidget {
         : (isDark ? const Color(0xFF0F172A) : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
     final titleColor = isDark ? Colors.white : AppColors.slate900;
     final subColor = isDark ? AppColors.slate400 : AppColors.slate600;
 

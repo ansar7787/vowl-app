@@ -227,13 +227,13 @@ class _HatchingPageState extends State<HatchingPage> {
         statusBarBrightness: isDark ? Brightness.dark : Brightness.light,
         systemNavigationBarColor: isDark
             ? AppColors.slate900
-            : AppColors.slate50,
+            : AppColors.white,
         systemNavigationBarIconBrightness: isDark
             ? Brightness.light
             : Brightness.dark,
       ),
       child: Scaffold(
-        backgroundColor: isDark ? AppColors.slate900 : AppColors.slate50,
+        backgroundColor: isDark ? AppColors.slate900 : AppColors.white,
         body: ValueListenableBuilder<int>(
           valueListenable: _stage,
           builder: (context, currentStage, child) {

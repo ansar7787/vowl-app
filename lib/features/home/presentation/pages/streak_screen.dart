@@ -49,7 +49,7 @@ class _StreakScreenState extends State<StreakScreen> {
         Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? AppColors.slate900 : AppColors.slate50);
+        : (isDark ? AppColors.slate900 : AppColors.white);
     final contentColor = Theme.of(context).colorScheme.onSurface;
 
     return Scaffold(

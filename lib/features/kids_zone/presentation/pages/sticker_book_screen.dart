@@ -75,7 +75,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
         return Scaffold(
           backgroundColor: isMidnight
               ? Colors.black
-              : (isDark ? AppColors.slate900 : AppColors.slate50),
+              : (isDark ? AppColors.slate900 : AppColors.white),
           body: Stack(
             children: [
               // Living Background - updated for cleaner look in light mode

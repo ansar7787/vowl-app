@@ -408,7 +408,7 @@ class HomeShimmerLoading extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark
             ? Colors.white.withValues(alpha: 0.02)
-            : AppColors.slate50,
+            : AppColors.slate100,
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
           color: isDark

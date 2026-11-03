@@ -42,14 +42,14 @@ class AppTheme {
   // Palette — Light mode surfaces (delegating to AppColors)
   // ---------------------------------------------------------------------------
 
-  /// Light scaffold background (Slate 50).
-  static const Color scaffoldLight = AppColors.slate50;
+  /// Light scaffold background (pure white).
+  static const Color scaffoldLight = AppColors.white;
 
   /// Light card surface (pure white).
   static const Color cardLight = AppColors.white;
 
-  /// Light border colour (Slate 200).
-  static const Color borderLight = AppColors.slate200;
+  /// Light border colour (Slate 100 — subtle & clean).
+  static const Color borderLight = AppColors.slate100;
 
   // ---------------------------------------------------------------------------
   // Palette — Dark mode surfaces (delegating to AppColors)
@@ -89,6 +89,7 @@ class AppTheme {
       secondary: secondaryEmerald,
       tertiary: accentAmber,
       surface: cardLight,
+      surfaceTint: Colors.transparent,
       primaryContainer: primaryIndigoTintLight,
     ),
     scaffoldBackgroundColor: scaffoldLight,
@@ -112,6 +113,7 @@ class AppTheme {
       backgroundColor: primaryIndigo,
       foregroundColor: Colors.white,
       elevation: 0,
+      surfaceTintColor: Colors.transparent,
       centerTitle: true,
       titleTextStyle: TextStyle(
         fontFamily: 'Outfit',

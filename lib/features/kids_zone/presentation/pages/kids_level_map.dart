@@ -382,7 +382,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                       )
                     : Color.alphaBlend(
                         widget.primaryColor.withAlpha(60),
-                        AppColors.slate50,
+                        AppColors.white,
                       ));
 
           return ListenableBuilder(

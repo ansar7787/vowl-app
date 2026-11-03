@@ -161,7 +161,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
 
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? AppColors.slate900 : AppColors.slate50);
+        : (isDark ? AppColors.slate900 : AppColors.white);
     final contentColor = Theme.of(context).colorScheme.onSurface;
 
     final authState = context.watch<AuthBloc>().state;

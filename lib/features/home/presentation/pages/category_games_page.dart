@@ -95,7 +95,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
 
     if (user == null) {
       return Scaffold(
-        backgroundColor: isDark ? AppColors.slate900 : AppColors.slate50,
+        backgroundColor: isDark ? AppColors.slate900 : AppColors.white,
         body: SafeArea(
           child: GameShimmerLoading(primaryColor: theme.primaryColor),
         ),

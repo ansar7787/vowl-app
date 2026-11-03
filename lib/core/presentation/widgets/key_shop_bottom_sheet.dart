@@ -656,7 +656,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                                 ? Colors.white.withValues(
                                                     alpha: 0.02,
                                                   )
-                                                : AppColors.slate50)
+                                                : AppColors.slate100)
                                           : (Theme.of(context).brightness ==
                                                     Brightness.dark
                                                 ? Colors.white.withValues(
@@ -671,7 +671,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                                   ? Colors.white.withValues(
                                                       alpha: 0.05,
                                                     )
-                                                  : AppColors.slate200)
+                                                  : AppColors.slate100)
                                             : (Theme.of(context).brightness ==
                                                       Brightness.dark
                                                   ? Colors.white.withValues(

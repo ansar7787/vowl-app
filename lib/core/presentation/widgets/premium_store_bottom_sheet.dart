@@ -444,7 +444,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                   decoration: BoxDecoration(
                     color: isMidnight
                         ? Colors.black
-                        : (isDark ? AppColors.slate900 : AppColors.slate50),
+                        : (isDark ? AppColors.slate900 : AppColors.white),
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(40.r),
                     ),

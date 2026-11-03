@@ -179,34 +179,15 @@ class _GlassOverlay extends StatelessWidget {
             (color!.r > 0.85 && color!.g > 0.85 && color!.b > 0.85));
 
     if (!hasBlur) {
-      final reduceMotion = VowlMotion.shouldReduceMotion(context);
       final baseColor = isDark
           ? ((color == null || isWhiteBased) ? defaultDarkSurface : color!)
           : (color ?? Colors.white);
 
-      final opacity = reduceMotion
-          ? 1.0
-          : (glassOpacity ?? (isDark ? (isMidnight ? 0.98 : 0.94) : 0.88));
+      final opacity =
+          glassOpacity ?? (isDark ? (isMidnight ? 0.98 : 0.94) : 1.0);
 
       return Container(
-        decoration: BoxDecoration(
-          color: isDark ? baseColor.withValues(alpha: opacity) : null,
-          gradient: isDark
-              ? null
-              : LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    baseColor.withValues(
-                      alpha: (opacity * 1.02).clamp(0.0, 1.0),
-                    ),
-                    baseColor.withValues(alpha: opacity),
-                    baseColor.withValues(
-                      alpha: (opacity * 0.95).clamp(0.0, 1.0),
-                    ),
-                  ],
-                ),
-        ),
+        color: baseColor.withValues(alpha: opacity),
       );
     }
 

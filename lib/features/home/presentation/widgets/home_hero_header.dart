@@ -460,7 +460,7 @@ class HomeHeroHeader extends StatelessWidget {
         : Colors.white.withValues(alpha: 0.95);
     final borderColor = isDark
         ? AppColors.slate700.withValues(alpha: 0.6)
-        : AppColors.slate200;
+        : AppColors.slate100;
 
     return Semantics(
       container: true,

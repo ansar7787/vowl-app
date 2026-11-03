@@ -327,7 +327,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                           0.08,
                         )!
                       : Color.lerp(
-                          AppColors.slate50,
+                          AppColors.slate100,
                           widget.theme.primaryColor,
                           0.08,
                         )!,
@@ -338,7 +338,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                           0.03,
                         )!
                       : Color.lerp(
-                          AppColors.slate50,
+                          AppColors.slate100,
                           widget.theme.primaryColor,
                           0.03,
                         )!,

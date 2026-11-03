@@ -425,7 +425,7 @@ class _BentoHeroCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: isDark
                       ? Colors.white.withValues(alpha: 0.08)
-                      : AppColors.slate200,
+                      : AppColors.slate100,
                   borderRadius: BorderRadius.circular(100.r),
                 ),
                 child: FractionallySizedBox(
@@ -675,7 +675,7 @@ class _BentoGridCell extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: isDark
                       ? Colors.white.withValues(alpha: 0.06)
-                      : AppColors.slate200,
+                      : AppColors.slate100,
                   borderRadius: BorderRadius.circular(100.r),
                 ),
                 child: FractionallySizedBox(
@@ -725,7 +725,7 @@ class _DisciplineBubbleDock extends StatelessWidget {
         border: Border.all(
           color: isDark
               ? Colors.white.withValues(alpha: 0.08)
-              : AppColors.slate200,
+              : AppColors.slate100,
           width: 1.r,
         ),
         boxShadow: [

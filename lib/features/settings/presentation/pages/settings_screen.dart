@@ -569,7 +569,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final barBg = isMidnight
         ? Colors.black
-        : (isDark ? AppColors.slate900 : AppColors.slate50);
+        : (isDark ? AppColors.slate900 : AppColors.white);
 
     return SliverAppBar(
       backgroundColor: Colors.transparent,

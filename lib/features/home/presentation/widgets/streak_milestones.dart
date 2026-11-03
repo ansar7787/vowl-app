@@ -269,7 +269,7 @@ class _StreakMilestonesState extends State<StreakMilestones> {
                                               ? Colors.white.withValues(
                                                   alpha: 0.03,
                                                 )
-                                              : AppColors.slate50)),
+                                              : AppColors.slate100)),
                               borderRadius: BorderRadius.circular(24.r),
                               border: Border.all(
                                 color: isClaimed

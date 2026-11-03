@@ -319,16 +319,16 @@ class AppColorTokens extends ThemeExtension<AppColorTokens> {
     // Surfaces
     surface: AppColors.white,
     surfaceVariant: AppColors.slate100,
-    surfaceDim: AppColors.slate50,
+    surfaceDim: AppColors.white,
     // Text
     textPrimary: AppColors.slate900,
     textSecondary: AppColors.slate600,
     textTertiary: AppColors.slate400,
     textDisabled: AppColors.slate300,
     // Borders
-    border: AppColors.slate200,
+    border: AppColors.slate100,
     borderSubtle: _LocalPalette.colorf1f5f9, // slate100 — barely visible
-    divider: AppColors.slate200,
+    divider: AppColors.slate100,
     // Success
     success: AppColors.emerald500,
     successContainer: AppColors.emerald50,

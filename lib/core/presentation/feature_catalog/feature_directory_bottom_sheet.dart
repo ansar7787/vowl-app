@@ -362,14 +362,14 @@ class _FeatureDirectoryBottomSheetState
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16.r),
                       borderSide: BorderSide(
-                        color: isDark ? Colors.white12 : AppColors.slate200,
+                        color: isDark ? Colors.white12 : AppColors.slate100,
                         width: 1.0,
                       ),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16.r),
                       borderSide: BorderSide(
-                        color: isDark ? Colors.white12 : AppColors.slate200,
+                        color: isDark ? Colors.white12 : AppColors.slate100,
                         width: 1.0,
                       ),
                     ),

@@ -1,13 +1,12 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-class _LocalPalette {
-  _LocalPalette._();
-  static const Color colorf3f4f6 = Color(0xFFF3F4F6);
-}
+import 'package:vowl/core/theme/app_colors.dart';
 
 /// Shared decoration builder for auth input fields.
+///
+/// Implements Instagram/modern mobile input styling: clean high-contrast
+/// surface with a crisp 1px neutral border, legible hint text, and an active
+/// brand focus outline.
 InputDecoration buildAuthDecoration({
   required BuildContext context,
   required Color contrastColor,
@@ -15,47 +14,59 @@ InputDecoration buildAuthDecoration({
   required IconData prefixIcon,
   Widget? suffixIcon,
 }) {
+  final isDark = Theme.of(context).brightness == Brightness.dark;
+  final primaryColor = Theme.of(context).colorScheme.primary;
+
   return InputDecoration(
     hintText: hint,
     hintStyle: TextStyle(
       fontFamily: 'Outfit',
-      color: contrastColor.withValues(alpha: 0.5),
+      color: isDark ? Colors.white38 : AppColors.slate400,
+      fontSize: 15.sp,
     ),
     errorStyle: TextStyle(
       fontFamily: 'Outfit',
-      color: Colors.red,
-      fontWeight: FontWeight.bold,
+      color: AppColors.red500,
+      fontWeight: FontWeight.w600,
       fontSize: 12.sp,
     ),
-    prefixIcon: Icon(prefixIcon, color: contrastColor.withValues(alpha: 0.5)),
+    prefixIcon: Icon(
+      prefixIcon,
+      color: isDark ? Colors.white54 : AppColors.slate400,
+      size: 22.r,
+    ),
     suffixIcon: suffixIcon,
     filled: true,
-    fillColor: Theme.of(context).brightness == Brightness.dark
-        ? AppColors.slate800
-        : _LocalPalette.colorf3f4f6,
+    fillColor: isDark ? AppColors.slate800 : AppColors.white,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),
-      borderSide: BorderSide.none,
+      borderSide: BorderSide(
+        color: isDark ? AppColors.slate700 : AppColors.slate200,
+        width: 1.0,
+      ),
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),
-      borderSide: BorderSide.none,
+      borderSide: BorderSide(
+        color: isDark ? AppColors.slate700 : AppColors.slate200,
+        width: 1.0,
+      ),
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),
       borderSide: BorderSide(
-        color: Theme.of(context).colorScheme.primary,
+        color: primaryColor,
         width: 1.5,
       ),
     ),
     errorBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),
-      borderSide: const BorderSide(color: Colors.red, width: 2),
+      borderSide: const BorderSide(color: AppColors.red500, width: 1.5),
     ),
     focusedErrorBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),
-      borderSide: const BorderSide(color: Colors.red, width: 2.5),
+      borderSide: const BorderSide(color: AppColors.red500, width: 2.0),
     ),
-    contentPadding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
+    contentPadding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 18.w),
   );
 }
