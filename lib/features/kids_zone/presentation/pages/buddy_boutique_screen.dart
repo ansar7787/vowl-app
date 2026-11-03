@@ -195,7 +195,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
           final user = state.user;
 
           return Container(
-            margin: EdgeInsets.fromLTRB(24.w, 30.h, 24.w, 24.h),
+            margin: EdgeInsets.fromLTRB(20.w, 30.h, 20.w, 24.h),
             decoration: BoxDecoration(
               color: isDark ? AppColors.slate800 : Colors.white,
               borderRadius: BorderRadius.circular(35.r),
@@ -211,7 +211,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
               ],
             ),
             child: Padding(
-              padding: EdgeInsets.fromLTRB(24.w, 32.h, 24.w, 24.h),
+              padding: EdgeInsets.fromLTRB(20.w, 32.h, 20.w, 24.h),
               child: Column(
                 children: [
                   Row(
@@ -344,7 +344,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
         builder: (context, state) {
           final coins = state.user?.kidsCoins ?? 0;
           return Container(
-            margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
+            margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
             padding: EdgeInsets.all(24.r),
             decoration: BoxDecoration(
               color: isDark ? AppColors.slate800 : Colors.white,
@@ -410,7 +410,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
         child: TabBar(
           controller: _tabController,
           isScrollable: true,
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           indicatorColor: Colors.transparent,
           dividerColor: Colors.transparent,
           tabAlignment: TabAlignment.start,
@@ -515,7 +515,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
               );
 
         return SliverPadding(
-          padding: EdgeInsets.all(24.r),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
           sliver: SliverGrid(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,

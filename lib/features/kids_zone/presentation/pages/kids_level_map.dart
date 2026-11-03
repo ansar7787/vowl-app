@@ -584,14 +584,14 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                       // Global Star Vault FAB
                       Positioned(
                         bottom: 32.h,
-                        right: 24.w,
+                        right: 20.w,
                         child: _buildStarVaultButton(),
                       ),
 
                       // Golden Keys FAB
                       Positioned(
                         bottom: 32.h,
-                        left: 24.w,
+                        left: 20.w,
                         child: _buildGoldenKeysButton(),
                       ),
                     ],
@@ -608,7 +608,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
 
   Widget _buildChunkyMapHeader(dynamic user, bool isDark) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
       child: Container(
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(

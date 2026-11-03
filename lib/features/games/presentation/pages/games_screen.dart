@@ -20,7 +20,6 @@ import 'package:vowl/features/home/presentation/widgets/category_shelf.dart';
 import 'package:vowl/features/games/presentation/widgets/kids_category_shelf.dart';
 import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/presentation/feature_catalog/beginner_discovery_card.dart';
 import 'package:vowl/core/theme/app_colors.dart';
@@ -159,16 +158,37 @@ class _HeroDashboard extends StatelessWidget {
     final progress = totalLevels > 0 ? totalCleared / totalLevels : 0.0;
     final percent = (progress * 100).toStringAsFixed(1);
 
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
+
     final contentColor = isDark ? Colors.white : AppColors.slate900;
 
     return Padding(
-      padding: EdgeInsets.fromLTRB(24.w, 16.h, 24.w, 8.h),
-      child: GlassTile(
-        borderRadius: BorderRadius.circular(28.r),
+      padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 8.h),
+      child: Container(
         padding: EdgeInsets.all(20.r),
-        usePremiumStyle: true,
-        showShadow: true,
-        blur: 0,
+        decoration: BoxDecoration(
+          color: cardBg,
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(color: borderColor, width: 1.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(
+                alpha: isMidnight ? 0.35 : (isDark ? 0.20 : 0.03),
+              ),
+              blurRadius: 18.r,
+              offset: Offset(0, 4.r),
+            ),
+          ],
+        ),
         child: Column(
           children: [
             // Top Row: Mastery ring + stats
@@ -308,13 +328,26 @@ class _StatPill extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return Expanded(
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
         decoration: BoxDecoration(
-          color: color.withValues(alpha: isDark ? 0.08 : 0.06),
+          color: isMidnight
+              ? const Color(0xFF101726)
+              : (isDark
+                  ? const Color(0xFF1A2234)
+                  : color.withValues(alpha: 0.06)),
           borderRadius: BorderRadius.circular(14.r),
-          border: Border.all(color: color.withValues(alpha: 0.1)),
+          border: Border.all(
+            color: isMidnight
+                ? Colors.white.withValues(alpha: 0.08)
+                : (isDark
+                    ? Colors.white.withValues(alpha: 0.06)
+                    : AppColors.slate100),
+            width: 1.0,
+          ),
         ),
         child: Column(
           children: [
@@ -366,9 +399,23 @@ class _GamesAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final pillBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark
+            ? const Color(0xFF1E293B).withValues(alpha: 0.90)
+            : Colors.white.withValues(alpha: 0.90));
+    final pillBorder = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
+
     return SliverAppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
+      surfaceTintColor: Colors.transparent,
       pinned: true,
       centerTitle: true,
       expandedHeight: 120.h,
@@ -380,15 +427,21 @@ class _GamesAppBar extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
             decoration: BoxDecoration(
-              color: isDark
-                  ? const Color(0xFF1E293B).withValues(alpha: 0.85)
-                  : Colors.white.withValues(alpha: 0.90),
+              color: pillBg,
               borderRadius: BorderRadius.circular(20.r),
               border: Border.all(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.12)
-                    : Colors.black.withValues(alpha: 0.06),
+                color: pillBorder,
+                width: 1.0,
               ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(
+                    alpha: isMidnight ? 0.35 : (isDark ? 0.20 : 0.04),
+                  ),
+                  blurRadius: 10.r,
+                  offset: Offset(0, 2.r),
+                ),
+              ],
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -463,9 +516,9 @@ class _GameSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 32.h),
+        SizedBox(height: 24.h),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: _GameSectionHeader(
             titleKey: titleKey,
             subtitleKey: subtitleKey,
@@ -508,9 +561,9 @@ class _KidsGameSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 32.h),
+        SizedBox(height: 24.h),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: _GameSectionHeader(
             titleKey: 'kids_zone.title',
             subtitleKey: 'kids_zone.subtitle',
@@ -762,7 +815,7 @@ class _QuestHubShimmer extends StatelessWidget {
       child: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
         child: Padding(
-          padding: EdgeInsets.all(24.r),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1072,17 +1125,17 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
         Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
-        : (widget.isDark ? AppColors.slate800 : Colors.white);
+        : (widget.isDark ? const Color(0xFF131A29) : Colors.white);
     final borderColor = isMidnight
-        ? const Color(0xFF1E293B)
+        ? Colors.white.withValues(alpha: 0.12)
         : (widget.isDark
             ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate200);
+            : AppColors.slate100);
     final titleColor = widget.isDark ? Colors.white : AppColors.slate900;
     final subColor = widget.isDark ? AppColors.slate400 : AppColors.slate600;
 
     return Padding(
-      padding: EdgeInsets.fromLTRB(24.w, 4.h, 24.w, 12.h),
+      padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 12.h),
       child: Container(
         padding: EdgeInsets.all(18.r),
         decoration: BoxDecoration(

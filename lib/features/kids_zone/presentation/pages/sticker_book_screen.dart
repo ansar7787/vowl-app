@@ -360,7 +360,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
         controller: _tabController,
         isScrollable: true,
         physics: const BouncingScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         indicatorSize: TabBarIndicatorSize.label,
         labelPadding: EdgeInsets.symmetric(horizontal: 8.w),
         dividerColor: Colors.transparent,
@@ -490,7 +490,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
     final earnedStickers = state.user?.kidsStickers ?? [];
 
     return GridView.builder(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
       physics: const BouncingScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,

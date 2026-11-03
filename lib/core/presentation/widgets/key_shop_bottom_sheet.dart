@@ -119,7 +119,12 @@ class _KeyShopContentState extends State<_KeyShopContent> {
             return GestureDetector(
               onTap: () {}, // Prevent taps on the sheet content from closing it
               child: Container(
-                padding: EdgeInsets.all(24.r),
+                padding: EdgeInsets.fromLTRB(
+                  20.w,
+                  16.h,
+                  20.w,
+                  24.h + MediaQuery.paddingOf(context).bottom,
+                ),
                 decoration: BoxDecoration(
                   color: (Theme.of(context).brightness == Brightness.dark &&
                           Theme.of(context).scaffoldBackgroundColor == Colors.black)
@@ -131,8 +136,13 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                     top: Radius.circular(32.r),
                   ),
                   border: Border.all(
-                    color: widget.primaryColor.withValues(alpha: 0.3),
-                    width: 1.5.w,
+                    color: (Theme.of(context).brightness == Brightness.dark &&
+                            Theme.of(context).scaffoldBackgroundColor == Colors.black)
+                        ? Colors.white.withValues(alpha: 0.12)
+                        : (Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : AppColors.slate100),
+                    width: 1.0,
                   ),
                   boxShadow: [
                     BoxShadow(

@@ -250,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       // 1. HERO HEADER (Identity & XP)
                       // --------------------------------------------------
                       SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
                         sliver: SliverToBoxAdapter(
                           child: HomeHeroHeader(user: user),
                         ),
@@ -276,7 +276,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       // 2. PRIMARY CTA — "Continue Learning"
                       // --------------------------------------------------
                       SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
@@ -291,7 +291,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       // 3. UNIFIED STATS ROW (Streak | Coins | Badges | Level)
                       // --------------------------------------------------
                       SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
@@ -321,7 +321,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       // --------------------------------------------------
                       if (!_bypassBeginnerGate && user.totalLevelsCompleted < 2) ...[
                         SliverPadding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          padding: EdgeInsets.symmetric(horizontal: 20.w),
                           sliver: SliverToBoxAdapter(
                             child: Column(
                               children: [
@@ -341,7 +341,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         // 4. CURRICULUM BENTO ARENA + WEAK-SPOT REVIEW
                         // --------------------------------------------------
                         SliverPadding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          padding: EdgeInsets.symmetric(horizontal: 20.w),
                           sliver: SliverToBoxAdapter(
                             child: Column(
                               children: [
@@ -374,7 +374,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         // 5. PROGRESS CARD (Total levels + Rank)
                         // --------------------------------------------------
                         SliverPadding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          padding: EdgeInsets.symmetric(horizontal: 20.w),
                           sliver: SliverToBoxAdapter(
                             child: Column(
                               children: [
@@ -438,7 +438,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       // 8. DAILY NOTE / LANGUAGE NOTE
                       // --------------------------------------------------
                       SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
                         sliver: SliverList(
                           delegate: SliverChildListDelegate([
                             SizedBox(height: 24.h),

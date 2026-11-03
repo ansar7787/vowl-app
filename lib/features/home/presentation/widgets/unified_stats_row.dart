@@ -60,25 +60,33 @@ class UnifiedStatsRow extends StatelessWidget {
 
     final currentUser = user!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     final shelfWidget = RepaintBoundary(
       child: Container(
         width: double.infinity,
         padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 8.h),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF131A29) : Colors.white,
+          color: isMidnight
+              ? AppColors.midnightSurface
+              : (isDark ? const Color(0xFF131A29) : Colors.white),
           gradient: isDark
-              ? const LinearGradient(
-                  colors: [Color(0xFF131A29), Color(0xFF0F1522)],
+              ? LinearGradient(
+                  colors: isMidnight
+                      ? const [Color(0xFF0B0F19), Color(0xFF060910)]
+                      : const [Color(0xFF131A29), Color(0xFF0F1522)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 )
               : null,
           borderRadius: BorderRadius.circular(22.r),
           border: Border.all(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.08)
-                : Colors.black.withValues(alpha: 0.06),
+            color: isMidnight
+                ? Colors.white.withValues(alpha: 0.12)
+                : (isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.slate100),
             width: 1,
           ),
         ),
@@ -257,17 +265,23 @@ class UnifiedStatsRow extends StatelessWidget {
 
   Widget _buildShimmerShelf(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF131A29) : Colors.white,
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? const Color(0xFF131A29) : Colors.white),
         borderRadius: BorderRadius.circular(22.r),
         border: Border.all(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.08)
-              : Colors.black.withValues(alpha: 0.06),
+          color: isMidnight
+              ? Colors.white.withValues(alpha: 0.12)
+              : (isDark
+                  ? Colors.white.withValues(alpha: 0.08)
+                  : AppColors.slate100),
         ),
       ),
       child: Row(

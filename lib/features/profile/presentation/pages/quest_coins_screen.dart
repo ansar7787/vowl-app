@@ -196,11 +196,14 @@ class VowlCoinsScreen extends StatelessWidget {
 
                       // ── Body Content ──
                       SliverPadding(
-                        padding: EdgeInsets.all(24.r),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 20.w,
+                          vertical: 20.h,
+                        ),
                         sliver: SliverList(
                           delegate: SliverChildListDelegate([
                             _buildCoinBalanceCard(context, user),
-                            SizedBox(height: 32.h),
+                            SizedBox(height: 24.h),
                             _buildActionSection(
                               context,
                               title: context.tr(
@@ -231,7 +234,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                 ],
                               ],
                             ),
-                            SizedBox(height: 32.h),
+                            SizedBox(height: 24.h),
                             _buildActionSection(
                               context,
                               title: context.tr(
@@ -275,10 +278,10 @@ class VowlCoinsScreen extends StatelessWidget {
                                 _buildHintStore(context, user),
                               ],
                             ),
-                            SizedBox(height: 32.h),
+                            SizedBox(height: 24.h),
                             // ── Buy Coins with Real Money ──
                             _buildBuyCoinsCard(context),
-                            SizedBox(height: 32.h),
+                            SizedBox(height: 24.h),
                             _buildCoinHistory(context, user),
                             SizedBox(height: 48.h),
                           ]),
@@ -413,14 +416,16 @@ class VowlCoinsScreen extends StatelessWidget {
       padding: EdgeInsets.all(32.r),
       borderRadius: BorderRadius.circular(28.r),
       borderColor: isDark
-          ? AppColors.slate700
-          : AppColors.slate300,
+          ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
+              ? Colors.white.withValues(alpha: 0.12)
+              : Colors.white.withValues(alpha: 0.08))
+          : AppColors.slate100,
       color: isDark
           ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
               ? AppColors.midnightSurface
               : AppColors.slate800)
           : Colors.white,
-      borderWidth: 1.5,
+      borderWidth: 1.0,
       child: SizedBox(
         width: double.infinity,
         child: Column(

@@ -80,7 +80,7 @@ class _TrophyRoomView extends StatelessWidget {
 
                 SliverToBoxAdapter(
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -95,7 +95,7 @@ class _TrophyRoomView extends StatelessWidget {
                   ),
                 ),
 
-                _buildBadgeGrid(context, isDark),
+                _buildBadgeGrid(context, isDark, isMidnight),
 
                 SliverToBoxAdapter(child: SizedBox(height: 80.h)),
               ],
@@ -446,7 +446,7 @@ class _TrophyRoomView extends StatelessWidget {
     );
   }
 
-  Widget _buildBadgeGrid(BuildContext context, bool isDark) {
+  Widget _buildBadgeGrid(BuildContext context, bool isDark, bool isMidnight) {
     return BlocBuilder<TrophyRoomCubit, TrophyRoomState>(
       builder: (context, state) {
         final totalSlots =
@@ -454,7 +454,7 @@ class _TrophyRoomView extends StatelessWidget {
             state.filteredLockedBadges.length;
 
         return SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           sliver: SliverGrid(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
@@ -467,6 +467,7 @@ class _TrophyRoomView extends StatelessWidget {
                 return _buildBadgeCard(
                   state.filteredEarnedBadges[index],
                   isDark,
+                  isMidnight,
                   index,
                   state.currentFilter,
                 );
@@ -475,6 +476,7 @@ class _TrophyRoomView extends StatelessWidget {
                 return _buildLockedSlot(
                   state.filteredLockedBadges[lockedIndex],
                   isDark,
+                  isMidnight,
                   index,
                   state.currentFilter,
                 );
@@ -489,11 +491,19 @@ class _TrophyRoomView extends StatelessWidget {
   Widget _buildBadgeCard(
     String badgeId,
     bool isDark,
+    bool isMidnight,
     int index,
     TrophyFilter filter,
   ) {
     final isLegendary = TrophyRoomCubit.isLegendary(badgeId);
     final colorPair = _getCategoryColors(badgeId, isLegendary);
+    final borderColor = isLegendary
+        ? AppColors.gold.withValues(alpha: 0.8)
+        : (isMidnight
+            ? Colors.white.withValues(alpha: 0.12)
+            : (isDark
+                ? Colors.white.withValues(alpha: 0.08)
+                : AppColors.slate100));
 
     return ScaleButton(
       key: ValueKey('${filter.name}_${badgeId}_$index'),
@@ -502,7 +512,7 @@ class _TrophyRoomView extends StatelessWidget {
         blur: 0,
         borderRadius: BorderRadius.circular(20.r),
         padding: EdgeInsets.all(2.r),
-        borderColor: colorPair[0].withValues(alpha: 0.3),
+        borderColor: borderColor,
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(18.r),
@@ -525,8 +535,12 @@ class _TrophyRoomView extends StatelessWidget {
             border: Border.all(
               color: isLegendary
                   ? AppColors.gold.withValues(alpha: 0.8)
-                  : colorPair[0].withValues(alpha: 0.5),
-              width: isLegendary ? 2.5 : 1.5,
+                  : (isMidnight
+                      ? Colors.white.withValues(alpha: 0.12)
+                      : (isDark
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : AppColors.slate100)),
+              width: isLegendary ? 2.5 : 1.0,
             ),
             boxShadow: isLegendary
                 ? [
@@ -582,21 +596,31 @@ class _TrophyRoomView extends StatelessWidget {
   Widget _buildLockedSlot(
     String badgeId,
     bool isDark,
+    bool isMidnight,
     int index,
     TrophyFilter filter,
   ) {
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
+    final bgColor = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark
+            ? AppColors.slate800
+            : AppColors.slate50);
+
     return GlassTile(
       blur: 0,
       key: ValueKey('${filter.name}_locked_$badgeId'),
       borderRadius: BorderRadius.circular(20.r),
       padding: EdgeInsets.all(2.r),
-      borderColor: isDark ? AppColors.slate700 : AppColors.slate300,
+      borderColor: borderColor,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18.r),
-          color: isDark
-              ? AppColors.slate800
-              : Colors.black.withValues(alpha: 0.02),
+          color: bgColor,
         ),
         child: Stack(
           children: [

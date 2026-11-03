@@ -158,7 +158,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                   SliverToBoxAdapter(
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                        horizontal: 24.w,
+                        horizontal: 20.w,
                         vertical: 16.h,
                       ),
                       child: Text(
@@ -181,9 +181,9 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                 // 4. Game Grid/List (Staggered Entrance)
                 SliverPadding(
                   padding: EdgeInsets.fromLTRB(
-                    24.w,
+                    20.w,
                     hasBlueprint ? 8.h : 32.h,
-                    24.w,
+                    20.w,
                     // 10/10 Optimization: Replaced hardcoded 100.h with dynamic safe area calculations
                     MediaQuery.of(context).padding.bottom + 32.h,
                   ),
@@ -410,6 +410,17 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
         : 0.0;
     final rankText = _CategoryGamesLogic.getRank(context, targetProgress);
 
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+    final cardBorder = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
+
     return Semantics(
           label: context.tr(
             'category_games.mastery_summary_label',
@@ -421,29 +432,24 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
             ],
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: Container(
               padding: EdgeInsets.all(24.r),
               decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.08)
-                    : Colors.white.withValues(alpha: 0.6),
-                borderRadius: BorderRadius.circular(32.r),
-                border: Border.all(
-                  color: theme.primaryColor.withValues(alpha: 0.2),
+                color: cardBg,
+                borderRadius: BorderRadius.circular(24.r),
+                border: Border.all(color: cardBorder, width: 1.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(
+                        alpha: isMidnight ? 0.35 : (isDark ? 0.20 : 0.04),
+                      ),
+                      blurRadius: 20,
+                      offset: const Offset(0, 6),
+                    ),
+                  ],
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    // 10/10 Dark Mode Polish: Replaced invisible black shadow with a subtle ambient theme color glow in dark mode
-                    color: isDark
-                        ? theme.primaryColor.withValues(alpha: 0.08)
-                        : Colors.black.withValues(alpha: 0.05),
-                    blurRadius: isDark ? 30 : 20,
-                    offset: const Offset(0, 10),
-                  ),
-                ],
-              ),
-              child: ExcludeSemantics(
+                child: ExcludeSemantics(
                 child: Column(
                   children: [
                     Row(
@@ -680,6 +686,13 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
 
     final displayColor = theme.primaryColor;
     final contentColor = Theme.of(context).colorScheme.onSurface;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBorderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
 
     // Abstract the math out of the widget parameters to ensure raw floats are clean
     final double cardProgress =
@@ -718,11 +731,14 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                   children: [
                     // Main Card Body
                     GlassTile(
-                      borderRadius: BorderRadius.circular(32.r),
+                      borderRadius: BorderRadius.circular(24.r),
                       padding: EdgeInsets.all(24.r),
-                      glassOpacity: 0.15,
-                      showShadow: false,
+                      glassOpacity: 1.0,
+                      blur: 0,
+                      showShadow: true,
                       usePremiumStyle: true,
+                      borderColor: cardBorderColor,
+                      borderWidth: 1.0,
                       child: Row(
                         children: [
                           SizedBox(width: 60.r), // Spacer for the floating icon

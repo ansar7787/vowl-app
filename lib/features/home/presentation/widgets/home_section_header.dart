@@ -181,11 +181,11 @@ class HomeSliverSectionHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       sliver: SliverToBoxAdapter(
         child: Column(
           children: [
-            SizedBox(height: 32.h),
+            SizedBox(height: 24.h),
             HomeSectionHeader(
               title: title,
               subtitle: subtitle,

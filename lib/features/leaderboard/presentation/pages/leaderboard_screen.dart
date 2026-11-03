@@ -97,7 +97,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                       builder: (context, isKidsMode, _) {
                         return Padding(
                           padding: EdgeInsets.symmetric(
-                            horizontal: 24.w,
+                            horizontal: 20.w,
                             vertical: 4.h,
                           ),
                           child: _LeaderboardToggle(
@@ -585,7 +585,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               // Header with last-updated timestamp
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: LeaderboardHeader(
                     lastUpdated: widget.state.lastUpdated,
                     isKids: widget.state.isKids,
@@ -597,7 +597,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               if (!widget.state.isKids)
                 SliverToBoxAdapter(
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(24.w, 10.h, 24.w, 4.h),
+                    padding: EdgeInsets.fromLTRB(20.w, 10.h, 20.w, 4.h),
                     child: _LeaderboardTimeframeSelector(
                       timeframe: _timeframe,
                       onChanged: (selected) {
@@ -628,7 +628,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               // Podium (Top 3)
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: LeaderboardPodium(
                     top3: users.take(3).toList(),
                     isKids: widget.state.isKids,
@@ -670,7 +670,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               SliverToBoxAdapter(
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 24.w,
+                    horizontal: 20.w,
                     vertical: 12.h,
                   ),
                   child: Row(
@@ -722,7 +722,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               // Rank 4-N list
               if (users.length > 3)
                 SliverPadding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   sliver: SliverList(
                     delegate: SliverChildBuilderDelegate((context, index) {
                       final userIndex = index + 3;
@@ -1009,7 +1009,7 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
           // Rank card content
           Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 24.w,
+              horizontal: 20.w,
               vertical: 12.h - (4.h * collapseProgress),
             ),
             child: OverflowBox(
@@ -1430,7 +1430,7 @@ class _HallOfFameBanner extends StatelessWidget {
     final subColor = isDark ? AppColors.slate400 : AppColors.slate600;
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: surfaceColor,

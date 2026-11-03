@@ -15,7 +15,17 @@ InputDecoration buildAuthDecoration({
   Widget? suffixIcon,
 }) {
   final isDark = Theme.of(context).brightness == Brightness.dark;
+  final isMidnight = isDark &&
+      Theme.of(context).scaffoldBackgroundColor == Colors.black;
   final primaryColor = Theme.of(context).colorScheme.primary;
+
+  final fieldFill = isMidnight
+      ? const Color(0xFF070B14)
+      : (isDark ? AppColors.slate800 : AppColors.white);
+
+  final fieldBorder = isMidnight
+      ? Colors.white.withValues(alpha: 0.14)
+      : (isDark ? AppColors.slate700 : AppColors.slate200);
 
   return InputDecoration(
     hintText: hint,
@@ -37,18 +47,18 @@ InputDecoration buildAuthDecoration({
     ),
     suffixIcon: suffixIcon,
     filled: true,
-    fillColor: isDark ? AppColors.slate800 : AppColors.white,
+    fillColor: fieldFill,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),
       borderSide: BorderSide(
-        color: isDark ? AppColors.slate700 : AppColors.slate200,
+        color: fieldBorder,
         width: 1.0,
       ),
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),
       borderSide: BorderSide(
-        color: isDark ? AppColors.slate700 : AppColors.slate200,
+        color: fieldBorder,
         width: 1.0,
       ),
     ),

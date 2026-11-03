@@ -227,11 +227,22 @@ class _WordBankScreenState extends State<WordBankScreen> {
   }
 
   Widget _buildSearchBar(BuildContext context, bool isDark) {
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? AppColors.slate800 : Colors.white);
+    final cardBorder = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate200);
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 6.h),
       child: Container(
         decoration: BoxDecoration(
-          color: isDark ? AppColors.slate800 : Colors.white,
+          color: cardBg,
           borderRadius: BorderRadius.circular(16.r),
           boxShadow: [
             BoxShadow(
@@ -241,9 +252,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
             ),
           ],
           border: Border.all(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.08)
-                : AppColors.slate200,
+            color: cardBorder,
             width: 1,
           ),
         ),

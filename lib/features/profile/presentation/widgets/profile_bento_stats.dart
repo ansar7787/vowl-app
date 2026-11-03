@@ -204,12 +204,24 @@ class _BentoWideCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBorderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
+
     return ScaleButton(
       onTap: onTap,
       child: GlassTile(
-        borderRadius: BorderRadius.circular(32.r),
-        padding: EdgeInsets.all(24.w),
+        borderRadius: BorderRadius.circular(24.r),
+        padding: EdgeInsets.all(20.w),
         blur: 0,
+        showShadow: true,
+        glassOpacity: 1.0,
+        borderColor: cardBorderColor,
+        borderWidth: 1.0,
         child: Column(
           children: [
             Row(
@@ -306,15 +318,28 @@ class _StatPod extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBorderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
+
     return ScaleButton(
       onTap: () {
         di.sl<HapticService>().selection();
         onTap();
       },
       child: GlassTile(
-        borderRadius: BorderRadius.circular(32.r),
-        padding: EdgeInsets.all(20.w),
+        borderRadius: BorderRadius.circular(24.r),
+        padding: EdgeInsets.all(18.w),
         blur: 0,
+        showShadow: true,
+        glassOpacity: 1.0,
+        borderColor: cardBorderColor,
+        borderWidth: 1.0,
         child: SizedBox(
           width: double.infinity,
           child: Column(

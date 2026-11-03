@@ -163,13 +163,13 @@ class AdventureXPScreen extends StatelessWidget {
                           // ── Body Content ────────────────────────────
                           SliverToBoxAdapter(
                             child: Padding(
-                              padding: EdgeInsets.fromLTRB(24.r, 24.r, 24.r, 0),
+                              padding: EdgeInsets.fromLTRB(20.w, 24.h, 20.w, 0),
                               child: AdventureTotalXpCard(user: user),
                             ),
                           ),
                           SliverToBoxAdapter(
                             child: Padding(
-                              padding: EdgeInsets.symmetric(vertical: 24.r),
+                              padding: EdgeInsets.symmetric(vertical: 24.h),
                               child: AdventureDailyXpChart(
                                 history: user.dailyXpHistory,
                               ),
@@ -177,19 +177,19 @@ class AdventureXPScreen extends StatelessWidget {
                           ),
                           SliverToBoxAdapter(
                             child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.r),
+                              padding: EdgeInsets.symmetric(horizontal: 20.w),
                               child: AdventureMasteryGrid(user: user),
                             ),
                           ),
                           SliverToBoxAdapter(
                             child: Padding(
-                              padding: EdgeInsets.symmetric(vertical: 32.r),
+                              padding: EdgeInsets.symmetric(vertical: 24.h),
                               child: AdventureStoreSection(user: user),
                             ),
                           ),
                           SliverToBoxAdapter(
                             child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.r),
+                              padding: EdgeInsets.symmetric(horizontal: 20.w),
                               child: AdventureRecentActivities(user: user),
                             ),
                           ),
@@ -197,10 +197,10 @@ class AdventureXPScreen extends StatelessWidget {
                             SliverToBoxAdapter(
                               child: Padding(
                                 padding: EdgeInsets.fromLTRB(
-                                  24.r,
-                                  24.r,
-                                  24.r,
-                                  48.r,
+                                  20.w,
+                                  24.h,
+                                  20.w,
+                                  48.h,
                                 ),
                                 child: const AdRewardCard(
                                   margin: EdgeInsets.zero,

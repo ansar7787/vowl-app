@@ -50,11 +50,17 @@ class _ArenaDuelView extends StatelessWidget {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>();
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
-    final backgroundColor = isDark ? const Color(0xFF070A12) : const Color(0xFFF8FAFC);
+    final backgroundColor = isMidnight
+        ? Colors.black
+        : (isDark ? AppColors.slate900 : Colors.white);
     final textPrimary = isDark ? Colors.white : (tokens?.textPrimary ?? const Color(0xFF0F172A));
     final textSecondary = isDark ? AppColors.slate400 : (tokens?.textSecondary ?? const Color(0xFF64748B));
-    final borderColor = isDark ? AppColors.slate800 : (tokens?.border ?? const Color(0xFFE2E8F0));
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     return PopScope(
       canPop: false,
@@ -65,7 +71,10 @@ class _ArenaDuelView extends StatelessWidget {
       child: Scaffold(
         backgroundColor: backgroundColor,
       appBar: AppBar(
-        backgroundColor: isDark ? AppColors.midnightSurface : (tokens?.surface ?? Colors.white),
+        backgroundColor: isMidnight
+            ? Colors.black
+            : (isDark ? AppColors.slate900 : Colors.white),
+        surfaceTintColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
           icon: Icon(LucideIcons.x, size: 20.sp, color: textPrimary),
@@ -143,7 +152,7 @@ class _ArenaDuelView extends StatelessWidget {
               : state.session?.guestPhotoUrl;
 
           return Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -168,10 +177,14 @@ class _ArenaDuelView extends StatelessWidget {
                   builder: (_) {
                     final disciplineLabel = _getDisciplineLabel(q);
                     final disciplineColor = _getDisciplineColor(q);
+                    final isMidnight = isDark &&
+                        Theme.of(context).scaffoldBackgroundColor == Colors.black;
                     return Container(
                       padding: EdgeInsets.all(18.w),
                       decoration: BoxDecoration(
-                        color: isDark ? AppColors.midnightSurface : Colors.white,
+                        color: isMidnight
+                            ? AppColors.midnightSurface
+                            : (isDark ? AppColors.slate800 : Colors.white),
                         borderRadius: BorderRadius.circular(16.r),
                         border: Border.all(color: borderColor),
                       ),
@@ -459,7 +472,9 @@ class _ArenaDuelView extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
               decoration: BoxDecoration(
-                color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF1F5F9),
+                color: (isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black)
+                    ? AppColors.midnightSurface
+                    : (isDark ? AppColors.slate800 : const Color(0xFFF1F5F9)),
                 borderRadius: BorderRadius.circular(12.r),
                 border: Border.all(color: borderColor),
               ),

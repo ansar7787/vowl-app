@@ -487,7 +487,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     ];
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: GlassTile(
         borderRadius: BorderRadius.circular(24.r),
         padding: EdgeInsets.all(6.r),
@@ -594,7 +594,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     final crossAxisCount = MediaQuery.sizeOf(context).width > 600 ? 3 : 2;
 
     return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       sliver: SliverList(
         delegate: SliverChildListDelegate([
           _buildSectionHeader(
@@ -680,7 +680,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     final crossAxisCount = MediaQuery.sizeOf(context).width > 600 ? 3 : 2;
 
     return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       sliver: SliverList(
         delegate: SliverChildListDelegate([
           _buildSectionHeader(
@@ -1472,8 +1472,8 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                 ),
               ),
               padding: EdgeInsets.only(
-                left: 24.w,
-                right: 24.w,
+                left: 20.w,
+                right: 20.w,
                 bottom: bottomPad,
               ),
               child: ExcludeSemantics(

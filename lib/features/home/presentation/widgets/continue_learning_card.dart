@@ -198,6 +198,8 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final user = widget.user!;
     final color = GameHelper.getQuestTypeColor(_nextType);
     final icon = GameHelper.getIconForCategory(_nextType);
@@ -337,23 +339,36 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
               width: double.infinity,
               clipBehavior: Clip.antiAlias,
               decoration: BoxDecoration(
-                color: isDark ? const Color(0xFF131A29) : Colors.white,
+                color: isMidnight
+                    ? AppColors.midnightSurface
+                    : (isDark ? const Color(0xFF131A29) : Colors.white),
                 gradient: isDark
-                    ? const LinearGradient(
-                        colors: [Color(0xFF131A29), Color(0xFF0D1320)],
+                    ? LinearGradient(
+                        colors: isMidnight
+                            ? const [Color(0xFF0B0F19), Color(0xFF060910)]
+                            : const [Color(0xFF131A29), Color(0xFF0D1320)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       )
                     : null,
                 borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
-                  color: !isTodayActive
-                      ? color.withValues(alpha: isDark ? 0.60 : 0.45)
+                  color: isMidnight
+                      ? Colors.white.withValues(alpha: 0.12)
                       : (isDark
-                          ? AppColors.emerald500.withValues(alpha: 0.35)
-                          : AppColors.emerald500.withValues(alpha: 0.25)),
-                  width: !isTodayActive ? 1.5 : 1.2,
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : AppColors.slate100),
+                  width: 1.0,
                 ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(
+                      alpha: isMidnight ? 0.35 : (isDark ? 0.20 : 0.03),
+                    ),
+                    blurRadius: 18.r,
+                    offset: Offset(0, 4.r),
+                  ),
+                ],
               ),
               child: Stack(
                 children: [
@@ -717,10 +732,16 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
   /// Shimmer skeleton precisely matching the compact proportions.
   Widget _buildShimmer(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final baseBg = isDark ? const Color(0xFF131A29) : Colors.white;
-    final borderColor = isDark
-        ? Colors.white.withValues(alpha: 0.08)
-        : Colors.black.withValues(alpha: 0.06);
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final baseBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
 
     return RepaintBoundary(
       child: Container(

@@ -37,6 +37,8 @@ class LeaderboardRankTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final levelsCleared = isKids
         ? user.kidsTotalLevelsCompleted
         : user.totalLevelsCompleted;
@@ -79,17 +81,17 @@ class LeaderboardRankTile extends StatelessWidget {
         showShadow: false,
         borderColor: isMe
             ? (isDark
-                  ? AppColors.blue500.withValues(alpha: 0.5)
-                  : AppColors.indigo500.withValues(alpha: 0.3))
-            : (isDark
-                  ? AppColors.slate700
-                  : AppColors.slate300.withValues(alpha: 0.6)),
-        color: isDark
-            ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
-                ? AppColors.midnightSurface
-                : AppColors.slate800)
-            : Colors.white,
-        borderWidth: isMe ? 1.5 : 1,
+                  ? AppColors.blue500.withValues(alpha: 0.6)
+                  : AppColors.indigo500.withValues(alpha: 0.5))
+            : (isMidnight
+                  ? Colors.white.withValues(alpha: 0.12)
+                  : (isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate100)),
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? const Color(0xFF131A29) : Colors.white),
+        borderWidth: 1.0,
         child: Material(
           color: Colors.transparent,
           child: InkWell(

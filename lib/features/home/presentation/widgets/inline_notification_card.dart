@@ -269,6 +269,8 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return ValueListenableBuilder<bool>(
       valueListenable: _isVisible,
       builder: (context, isVisible, _) {
@@ -285,24 +287,28 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
             child: MediaQuery.withClampedTextScaling(
               maxScaleFactor: 1.25,
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 6.h),
+                padding: EdgeInsets.fromLTRB(20.w, 14.h, 20.w, 0),
                 child: Container(
                   clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(
-                    color: isDark
-                        ? const Color(0xFF131A29)
-                        : Colors.white,
+                    color: isMidnight
+                        ? AppColors.midnightSurface
+                        : (isDark
+                            ? const Color(0xFF131A29)
+                            : Colors.white),
                     borderRadius: BorderRadius.circular(16.r),
                     border: Border.all(
-                      color: IllustrationColors.warmOrange.withValues(
-                        alpha: isDark ? 0.30 : 0.22,
-                      ),
+                      color: isMidnight
+                          ? Colors.white.withValues(alpha: 0.12)
+                          : (isDark
+                              ? Colors.white.withValues(alpha: 0.08)
+                              : AppColors.slate100),
                       width: 1.0,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: IllustrationColors.warmOrange.withValues(
-                          alpha: isDark ? 0.12 : 0.06,
+                        color: Colors.black.withValues(
+                          alpha: isMidnight ? 0.35 : (isDark ? 0.20 : 0.03),
                         ),
                         blurRadius: 16.r,
                         offset: const Offset(0, 3),

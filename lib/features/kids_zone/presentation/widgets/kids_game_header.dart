@@ -61,7 +61,7 @@ class KidsGameHeader extends StatelessWidget {
     }
 
     return Padding(
-      padding: EdgeInsets.only(left: 16.w, right: 16.w, top: 6.h, bottom: 2.h),
+      padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 6.h, bottom: 2.h),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [

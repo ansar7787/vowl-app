@@ -48,16 +48,25 @@ class _ReferralHubView extends StatelessWidget {
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).extension<AppColorTokens>();
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
-    final backgroundColor = isDark ? const Color(0xFF070A12) : const Color(0xFFF8FAFC);
+    final backgroundColor = isMidnight
+        ? Colors.black
+        : (isDark ? AppColors.slate900 : Colors.white);
     final textPrimary = isDark ? Colors.white : (tokens?.textPrimary ?? const Color(0xFF0F172A));
     final textSecondary = isDark ? AppColors.slate400 : (tokens?.textSecondary ?? const Color(0xFF64748B));
-    final borderColor = isDark ? AppColors.slate800 : (tokens?.border ?? const Color(0xFFE2E8F0));
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
-        backgroundColor: isDark ? AppColors.midnightSurface : (tokens?.surface ?? Colors.white),
+        backgroundColor: isMidnight
+            ? Colors.black
+            : (isDark ? AppColors.slate900 : Colors.white),
+        surfaceTintColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
           icon: Icon(LucideIcons.arrowLeft, size: 20.sp, color: textPrimary),
@@ -127,7 +136,7 @@ class _ReferralHubView extends StatelessWidget {
             onRefresh: () => context.read<ReferralCubit>().init(user),
             child: SingleChildScrollView(
               physics: const AlwaysScrollableScrollPhysics(),
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -146,7 +155,7 @@ class _ReferralHubView extends StatelessWidget {
                   SizedBox(height: 16.h),
 
                   // How It Works Rules Card
-                  _buildHowItWorksCard(isDark, borderColor, textPrimary, textSecondary),
+                  _buildHowItWorksCard(isDark, isMidnight, borderColor, textPrimary, textSecondary),
 
                   SizedBox(height: 16.h),
 
@@ -168,6 +177,7 @@ class _ReferralHubView extends StatelessWidget {
 
   Widget _buildHowItWorksCard(
     bool isDark,
+    bool isMidnight,
     Color borderColor,
     Color textPrimary,
     Color textSecondary,
@@ -175,7 +185,9 @@ class _ReferralHubView extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(18.w),
       decoration: BoxDecoration(
-        color: isDark ? AppColors.midnightSurface : Colors.white,
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? AppColors.slate800 : Colors.white),
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: borderColor, width: 1.w),
       ),

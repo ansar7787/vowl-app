@@ -130,7 +130,7 @@ class _BentoArenaState extends State<BentoArena> {
       valueListenable: _isExpanded,
       builder: (context, isExpanded, _) {
         return Padding(
-          padding: EdgeInsets.only(top: 14.h),
+          padding: EdgeInsets.only(top: 16.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -196,6 +196,8 @@ class _BentoHeroCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final color = GameHelper.getCategoryColor(type.name);
     final icon = GameHelper.getIconForCategory(type);
     final totalCleared = user.getTotalCategoryLevelsCleared(type);
@@ -224,17 +226,25 @@ class _BentoHeroCard extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(16.r),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF131A29) : Colors.white,
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (isDark ? const Color(0xFF131A29) : Colors.white),
             borderRadius: BorderRadius.circular(22.r),
             border: Border.all(
-              color: color.withValues(alpha: isDark ? 0.30 : 0.22),
-              width: 1.2.r,
+              color: isMidnight
+                  ? Colors.white.withValues(alpha: 0.12)
+                  : (isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate100),
+              width: 1.r,
             ),
             boxShadow: [
               BoxShadow(
-                color: color.withValues(alpha: isDark ? 0.10 : 0.05),
-                blurRadius: 18.r,
-                offset: Offset(0, 6.r),
+                color: Colors.black.withValues(
+                  alpha: isMidnight ? 0.35 : (isDark ? 0.20 : 0.03),
+                ),
+                blurRadius: 16.r,
+                offset: Offset(0, 4.r),
               ),
             ],
           ),
@@ -532,6 +542,8 @@ class _BentoGridCell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final color = GameHelper.getCategoryColor(type.name);
     final icon = GameHelper.getIconForCategory(type);
     final totalCleared = user.getTotalCategoryLevelsCleared(type);
@@ -561,17 +573,25 @@ class _BentoGridCell extends StatelessWidget {
           constraints: BoxConstraints(minHeight: 104.h),
           padding: EdgeInsets.all(12.r),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF131A29) : Colors.white,
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (isDark ? const Color(0xFF131A29) : Colors.white),
             borderRadius: BorderRadius.circular(18.r),
             border: Border.all(
-              color: color.withValues(alpha: isDark ? 0.30 : 0.22),
-              width: 1.2.r,
+              color: isMidnight
+                  ? Colors.white.withValues(alpha: 0.12)
+                  : (isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate100),
+              width: 1.r,
             ),
             boxShadow: [
               BoxShadow(
-                color: color.withValues(alpha: isDark ? 0.08 : 0.04),
+                color: Colors.black.withValues(
+                  alpha: isMidnight ? 0.30 : (isDark ? 0.15 : 0.02),
+                ),
                 blurRadius: 10.r,
-                offset: Offset(0, 3.r),
+                offset: Offset(0, 2.r),
               ),
             ],
           ),
@@ -715,6 +735,8 @@ class _DisciplineBubbleDock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
       decoration: BoxDecoration(
@@ -723,9 +745,11 @@ class _DisciplineBubbleDock extends StatelessWidget {
             : Colors.white,
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.08)
-              : AppColors.slate100,
+          color: isMidnight
+              ? Colors.white.withValues(alpha: 0.12)
+              : (isDark
+                  ? Colors.white.withValues(alpha: 0.08)
+                  : AppColors.slate100),
           width: 1.r,
         ),
         boxShadow: [

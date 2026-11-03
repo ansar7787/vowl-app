@@ -124,7 +124,7 @@ class GameScaffold<S> extends StatelessWidget {
                                       padding: config.disablePadding
                                           ? EdgeInsets.zero
                                           : EdgeInsets.symmetric(
-                                              horizontal: 16.w,
+                                              horizontal: 20.w,
                                             ),
                                       child: config.child,
                                     ),
@@ -133,7 +133,7 @@ class GameScaffold<S> extends StatelessWidget {
                                       ? config.child
                                       : Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 16.w,
+                                            horizontal: 20.w,
                                           ),
                                           child: config.child,
                                         )),

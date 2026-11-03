@@ -39,6 +39,8 @@ class LeaderboardRankCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     // Reactively watch for current user profile changes only.
     final currentUser = context.select<AuthBloc, UserEntity?>(
       (bloc) => bloc.state.user,
@@ -88,15 +90,15 @@ class LeaderboardRankCard extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(24.r),
           blur: 0,
-          borderColor: isDark
-              ? AppColors.blue500.withValues(alpha: 0.5)
-              : AppColors.indigo500.withValues(alpha: 0.3),
-          color: isDark
-              ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
-                  ? AppColors.midnightSurface
-                  : AppColors.slate800)
-              : Colors.white,
-          borderWidth: 1.5,
+          borderColor: isMidnight
+              ? Colors.white.withValues(alpha: 0.12)
+              : (isDark
+                  ? Colors.white.withValues(alpha: 0.08)
+                  : AppColors.slate100),
+          color: isMidnight
+              ? AppColors.midnightSurface
+              : (isDark ? const Color(0xFF131A29) : Colors.white),
+          borderWidth: 1.0,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

@@ -81,7 +81,7 @@ class AdventureStoreSection extends StatelessWidget {
           children: [
             // ── Section header with coin balance ──
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.r),
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -102,7 +102,7 @@ class AdventureStoreSection extends StatelessWidget {
                             letterSpacing: 1.5,
                           ),
                         ),
-                        SizedBox(height: 4.r),
+                        SizedBox(height: 4.h),
                         Text(
                           context.tr(
                             'adventure.store_subtitle',
@@ -149,14 +149,14 @@ class AdventureStoreSection extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 16.r),
+            SizedBox(height: 16.h),
 
             // ── Store items ──
             SizedBox(
-              height: 100.r,
+              height: 100.h,
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.symmetric(horizontal: 24.r),
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
                 physics: const BouncingScrollPhysics(),
                 itemCount: offers.length,
                 separatorBuilder: (context, index) => SizedBox(width: 12.r),

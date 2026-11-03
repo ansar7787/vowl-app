@@ -688,14 +688,14 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                     // Star Vault FAB
                     Positioned(
                       bottom: 32.h + bottomInset,
-                      right: 24.w,
+                      right: 20.w,
                       child: _buildStarVaultButton(theme),
                     ),
 
                     // Golden Keys FAB
                     Positioned(
                       bottom: 32.h + bottomInset,
-                      left: 24.w,
+                      left: 20.w,
                       child: _buildGoldenKeysButton(theme),
                     ), // end of Positioned
                   ],

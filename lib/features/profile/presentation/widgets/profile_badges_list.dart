@@ -52,6 +52,8 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final totalBadges = BadgeConstants.badges.length;
     final earnedBadgesList = BadgeConstants.badges
         .where((b) => widget.user.claimedLevelMilestones.contains(b.minLevel))
@@ -61,7 +63,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
       return Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: GlassTile(
               width: double.infinity,
               padding: EdgeInsets.all(32.w),
@@ -107,7 +109,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
           SizedBox(height: 16.h),
           // Progress counter below the empty state card
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: _buildProgressCounter(context, 0, totalBadges),
           ),
         ],
@@ -118,7 +120,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
       children: [
         // Badge progress counter
         Padding(
-          padding: EdgeInsets.only(left: 24.w, right: 24.w, bottom: 16.h),
+          padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 16.h),
           child: _buildProgressCounter(
             context,
             earnedBadgesList.length,
@@ -172,14 +174,17 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                           borderRadius: BorderRadius.circular(32.r),
                         ),
                         child: GlassTile(
-                          borderRadius: BorderRadius.circular(32.r),
+                          borderRadius: BorderRadius.circular(24.r),
                           usePremiumStyle: true,
-                          showShadow: false,
+                          showShadow: true,
                           blur: 0,
-                          border: Border.all(
-                            color: badge.color.withValues(alpha: 0.5),
-                            width: 1.5,
-                          ),
+                          glassOpacity: 1.0,
+                          borderColor: isMidnight
+                              ? Colors.white.withValues(alpha: 0.12)
+                              : (isDark
+                                  ? Colors.white.withValues(alpha: 0.08)
+                                  : AppColors.slate100),
+                          borderWidth: 1.0,
                           child: Stack(
                             children: [
                               // Abstract glowing background meshes (optimized blur radii)

@@ -70,10 +70,10 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
 
     final surfaceColor = isMidnight
         ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : (tokens?.surface ?? Colors.white));
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
     final borderColor = isMidnight
-        ? const Color(0xFF1E293B)
-        : (isDark ? AppColors.slate800 : (tokens?.border ?? const Color(0xFFE2E8F0)));
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
     final textPrimary = isDark ? Colors.white : (tokens?.textPrimary ?? const Color(0xFF0F172A));
     final textSecondary = isDark ? AppColors.slate400 : (tokens?.textSecondary ?? const Color(0xFF64748B));
 
@@ -90,11 +90,11 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
         !widget.currentUser!.claimedWeeklyRewardWeekKeys.contains(prevWeekKey);
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
       padding: EdgeInsets.all(14.w),
       decoration: BoxDecoration(
         color: surfaceColor,
-        borderRadius: BorderRadius.circular(14.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: borderColor, width: 1.w),
       ),
       child: Column(

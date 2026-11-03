@@ -208,6 +208,8 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
     }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
     // Main Card Widget wrapped in Semantics for accessibility
@@ -220,21 +222,36 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
         width: double.infinity,
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF131A29) : Colors.white,
+          color: isMidnight
+              ? AppColors.midnightSurface
+              : (isDark ? const Color(0xFF131A29) : Colors.white),
           gradient: isDark
-              ? const LinearGradient(
-                  colors: [Color(0xFF161F33), Color(0xFF0F1524)],
+              ? LinearGradient(
+                  colors: isMidnight
+                      ? const [Color(0xFF0B0F19), Color(0xFF060910)]
+                      : const [Color(0xFF161F33), Color(0xFF0F1524)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 )
               : null,
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
-            color: AppColors.amber500.withValues(
-              alpha: isDark ? 0.35 : 0.28,
-            ),
-            width: 1.2,
+            color: isMidnight
+                ? Colors.white.withValues(alpha: 0.12)
+                : (isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.slate100),
+            width: 1.0,
           ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(
+                alpha: isMidnight ? 0.35 : (isDark ? 0.20 : 0.03),
+              ),
+              blurRadius: 16.r,
+              offset: Offset(0, 4.r),
+            ),
+          ],
         ),
         child: Stack(
           alignment: Alignment.center,
@@ -437,7 +454,7 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
       child: ScaleTransition(
         scale: _scaleAnimation,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 6.h),
+          padding: EdgeInsets.fromLTRB(20.w, 14.h, 20.w, 0),
           child: cardContent,
         ),
       ),

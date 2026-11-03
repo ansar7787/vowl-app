@@ -455,12 +455,18 @@ class HomeHeroHeader extends StatelessWidget {
     required bool isDark,
     required bool todayActive,
   }) {
-    final capsuleBg = isDark
-        ? AppColors.slate900.withValues(alpha: 0.90)
-        : Colors.white.withValues(alpha: 0.95);
-    final borderColor = isDark
-        ? AppColors.slate700.withValues(alpha: 0.6)
-        : AppColors.slate100;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final capsuleBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark
+            ? AppColors.slate900.withValues(alpha: 0.90)
+            : Colors.white.withValues(alpha: 0.95));
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.14)
+        : (isDark
+            ? AppColors.slate700.withValues(alpha: 0.6)
+            : AppColors.slate100);
 
     return Semantics(
       container: true,

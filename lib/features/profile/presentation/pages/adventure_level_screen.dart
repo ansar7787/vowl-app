@@ -216,7 +216,7 @@ class AdventureLevelScreen extends StatelessWidget {
                       // ── Body Content ──
                       SliverToBoxAdapter(
                         child: Padding(
-                          padding: EdgeInsets.fromLTRB(24.r, 24.r, 24.r, 0),
+                          padding: EdgeInsets.fromLTRB(20.w, 24.h, 20.w, 0),
                           child: _buildMainLevelCard(
                             context,
                             currentLevel,
@@ -227,7 +227,7 @@ class AdventureLevelScreen extends StatelessWidget {
                       SliverToBoxAdapter(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
-                            horizontal: 24.r,
+                            horizontal: 20.w,
                             vertical: 24.h,
                           ),
                           child: _buildXPProgressDetails(context, user),
@@ -238,7 +238,7 @@ class AdventureLevelScreen extends StatelessWidget {
                       ),
                       SliverToBoxAdapter(
                         child: Padding(
-                          padding: EdgeInsets.fromLTRB(24.r, 32.h, 24.r, 0),
+                          padding: EdgeInsets.fromLTRB(20.w, 32.h, 20.w, 0),
                           child: _buildMilestones(context, user),
                         ),
                       ),
@@ -247,7 +247,7 @@ class AdventureLevelScreen extends StatelessWidget {
                       if (!user.isPremium)
                         SliverToBoxAdapter(
                           child: Padding(
-                            padding: EdgeInsets.fromLTRB(24.r, 24.h, 24.r, 48.h),
+                            padding: EdgeInsets.fromLTRB(20.w, 24.h, 20.w, 48.h),
                             child: const AdRewardCard(margin: EdgeInsets.zero),
                           ),
                         ),
@@ -502,7 +502,7 @@ class AdventureLevelScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Text(
             context.tr(
               'adventure.level_mastery_perks_header',
@@ -522,7 +522,7 @@ class AdventureLevelScreen extends StatelessWidget {
           height: 156.h,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             physics: const AlwaysScrollableScrollPhysics(
               parent: BouncingScrollPhysics(),
             ),
@@ -836,7 +836,7 @@ class AdventureLevelScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.fromLTRB(24.w, 32.h, 24.w, 0),
+          padding: EdgeInsets.fromLTRB(20.w, 32.h, 20.w, 0),
           child: Text(
             'HINT SHOP',
             style: TextStyle(
@@ -851,7 +851,7 @@ class AdventureLevelScreen extends StatelessWidget {
         if (!user.isPremium) ...[
           SizedBox(height: 16.h),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: HintAdCard(
               title: 'Quick Hint',
               subtitle: 'Watch ad for +1 Hint',
@@ -863,7 +863,7 @@ class AdventureLevelScreen extends StatelessWidget {
           height: 100.h,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             physics: const AlwaysScrollableScrollPhysics(
               parent: BouncingScrollPhysics(),
             ),

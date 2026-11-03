@@ -34,7 +34,7 @@ class LeaderboardOvertakeHud extends StatelessWidget {
     // If Rank 1
     if (myRank == 1) {
       return Container(
-        margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+        margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 6.h),
         padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
         decoration: BoxDecoration(
           color: const Color(0xFFF59E0B).withValues(alpha: isDark ? 0.12 : 0.08),
@@ -76,7 +76,7 @@ class LeaderboardOvertakeHud extends StatelessWidget {
         : 0;
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+      margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 6.h),
       padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
       decoration: BoxDecoration(
         color: droppedRanks > 0

@@ -266,9 +266,9 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                           else
                             SliverPadding(
                               padding: EdgeInsets.fromLTRB(
-                                24.w,
+                                20.w,
                                 24.h,
-                                24.w,
+                                20.w,
                                 100.h,
                               ),
                               sliver: SliverList(
@@ -448,6 +448,17 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     final totalLevels = _allSubtypes.length * 200;
     final progress = totalLevels > 0 ? (clearedLevels / totalLevels) : 0.0;
 
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
+
     return Semantics(
       label: context.tr(
         'quest_archive.mastery',
@@ -459,20 +470,20 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Container(
           padding: EdgeInsets.all(24.r),
           decoration: BoxDecoration(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.08)
-                : Colors.white.withValues(alpha: 0.6),
-            borderRadius: BorderRadius.circular(32.r),
-            border: Border.all(color: AppColors.blue500.withValues(alpha: 0.2)),
+            color: cardBg,
+            borderRadius: BorderRadius.circular(24.r),
+            border: Border.all(color: borderColor, width: 1.0),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withValues(alpha: 0.05),
+                color: Colors.black.withValues(
+                  alpha: isMidnight ? 0.35 : (isDark ? 0.20 : 0.04),
+                ),
                 blurRadius: 20,
-                offset: const Offset(0, 10),
+                offset: const Offset(0, 6),
               ),
             ],
           ),
@@ -710,8 +721,17 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   }
 
   Widget _buildSearchField(bool isDark, Color contentColor) {
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final fieldFill = isMidnight
+        ? const Color(0xFF070B14)
+        : (isDark ? AppColors.slate800 : Colors.white);
+    final fieldBorder = isMidnight
+        ? Colors.white.withValues(alpha: 0.14)
+        : (isDark ? AppColors.slate700 : AppColors.slate200);
+
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: Container(
         decoration: BoxDecoration(
           boxShadow: isDark
@@ -763,24 +783,19 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
               },
             ),
             filled: true,
-            fillColor: isDark
-                ? AppColors
-                      .slate800 // slate-800
-                : Colors.white,
+            fillColor: fieldFill,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20.r),
               borderSide: BorderSide(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.1)
-                    : Colors.black.withValues(alpha: 0.05),
+                color: fieldBorder,
+                width: 1.0,
               ),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20.r),
               borderSide: BorderSide(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.1)
-                    : Colors.black.withValues(alpha: 0.05),
+                color: fieldBorder,
+                width: 1.0,
               ),
             ),
             focusedBorder: OutlineInputBorder(
@@ -803,7 +818,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         itemCount: _categories.length,
         itemBuilder: (context, index) {
           final cat = _categories[index];
@@ -896,13 +911,13 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     );
 
     return Padding(
-      padding: EdgeInsets.only(top: 28.h),
+      padding: EdgeInsets.only(top: 24.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // ── Section Header ──
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: Row(
               children: [
                 Container(
@@ -1001,7 +1016,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
               itemCount: subtypes.length,
               itemBuilder: (context, index) {
                 return Padding(
@@ -1036,6 +1051,16 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     final isNew =
         !user.categoryStats.containsKey(subtype.name) && completedCount == 0;
     final contentColor = Theme.of(context).colorScheme.onSurface;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+    final cardBorder = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
 
     return Semantics(
       button: true,
@@ -1050,14 +1075,12 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
             width: 148.w,
             padding: EdgeInsets.all(16.r),
             decoration: BoxDecoration(
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.06)
-                  : Colors.white,
+              color: cardBg,
               borderRadius: BorderRadius.circular(24.r),
               border: Border.all(
                 color: isMastered
                     ? AppColors.gold.withValues(alpha: 0.4)
-                    : catColor.withValues(alpha: isDark ? 0.15 : 0.1),
+                    : cardBorder,
                 width: isMastered ? 1.5 : 1,
               ),
               boxShadow: [
@@ -1241,6 +1264,16 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     final completedPercent = totalLevels > 0
         ? (completedCount / totalLevels * 100).toInt()
         : 0;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+    final cardBorder = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
 
     return Semantics(
       button: true,
@@ -1254,14 +1287,12 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
           child: ExcludeSemantics(
             child: Container(
               decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.06)
-                    : Colors.white,
+                color: cardBg,
                 borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
                   color: isMastered
                       ? AppColors.gold.withValues(alpha: 0.4)
-                      : displayColor.withValues(alpha: isDark ? 0.12 : 0.08),
+                      : cardBorder,
                   width: isMastered ? 1.5 : 1,
                 ),
                 boxShadow: [

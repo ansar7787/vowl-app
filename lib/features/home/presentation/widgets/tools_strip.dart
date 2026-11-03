@@ -50,7 +50,7 @@ class ToolsStrip extends StatelessWidget {
         fallback: 'Explore & Tools: Daily learning utilities and games',
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisSize: MainAxisSize.min,
@@ -272,6 +272,8 @@ class _SwissHorizonCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return Semantics(
       button: true,
       label: '$title. $subtitle',
@@ -280,17 +282,25 @@ class _SwissHorizonCard extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF131A29) : Colors.white,
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (isDark ? const Color(0xFF131A29) : Colors.white),
             borderRadius: BorderRadius.circular(18.r),
             border: Border.all(
-              color: color.withValues(alpha: isDark ? 0.30 : 0.22),
-              width: 1.2.r,
+              color: isMidnight
+                  ? Colors.white.withValues(alpha: 0.12)
+                  : (isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate100),
+              width: 1.r,
             ),
             boxShadow: [
               BoxShadow(
-                color: color.withValues(alpha: isDark ? 0.08 : 0.04),
+                color: Colors.black.withValues(
+                  alpha: isMidnight ? 0.30 : (isDark ? 0.15 : 0.02),
+                ),
                 blurRadius: 10.r,
-                offset: Offset(0, 3.r),
+                offset: Offset(0, 2.r),
               ),
             ],
           ),
@@ -423,6 +433,8 @@ class _BentoSubCell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return Semantics(
       button: true,
       label: '$title. $subtitle',
@@ -432,15 +444,23 @@ class _BentoSubCell extends StatelessWidget {
           constraints: BoxConstraints(minHeight: 96.h),
           padding: EdgeInsets.all(12.r),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF131A29) : Colors.white,
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (isDark ? const Color(0xFF131A29) : Colors.white),
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
-              color: color.withValues(alpha: isDark ? 0.28 : 0.20),
-              width: 1.2.r,
+              color: isMidnight
+                  ? Colors.white.withValues(alpha: 0.12)
+                  : (isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate100),
+              width: 1.r,
             ),
             boxShadow: [
               BoxShadow(
-                color: color.withValues(alpha: isDark ? 0.08 : 0.03),
+                color: Colors.black.withValues(
+                  alpha: isMidnight ? 0.30 : (isDark ? 0.15 : 0.02),
+                ),
                 blurRadius: 8.r,
                 offset: Offset(0, 2.r),
               ),
@@ -631,16 +651,22 @@ class _WordGamesBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return Container(
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF131A29) : Colors.white,
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? const Color(0xFF131A29) : Colors.white),
         borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
         border: Border(
           top: BorderSide(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.1)
-                : Colors.black.withValues(alpha: 0.08),
+            color: isMidnight
+                ? Colors.white.withValues(alpha: 0.14)
+                : (isDark
+                    ? Colors.white.withValues(alpha: 0.1)
+                    : AppColors.slate100),
             width: 1.r,
           ),
         ),
@@ -821,6 +847,8 @@ class _ToolsDirectoryBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     final tools = [
       _DirectoryItemDef(
@@ -907,13 +935,17 @@ class _ToolsDirectoryBottomSheet extends StatelessWidget {
         maxHeight: MediaQuery.of(context).size.height * 0.85,
       ),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF131A29) : Colors.white,
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? const Color(0xFF131A29) : Colors.white),
         borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
         border: Border(
           top: BorderSide(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.1)
-                : Colors.black.withValues(alpha: 0.08),
+            color: isMidnight
+                ? Colors.white.withValues(alpha: 0.14)
+                : (isDark
+                    ? Colors.white.withValues(alpha: 0.1)
+                    : AppColors.slate100),
             width: 1.r,
           ),
         ),
@@ -1168,6 +1200,8 @@ class _ModalFeatureRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return Semantics(
       button: true,
       label: '$title. $subtitle',
@@ -1176,17 +1210,25 @@ class _ModalFeatureRow extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 11.h),
           decoration: BoxDecoration(
-            color: isDark
-                ? const Color(0xFF161E2E)
-                : const Color(0xFFF8FAFC),
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (isDark
+                    ? const Color(0xFF161E2E)
+                    : const Color(0xFFF8FAFC)),
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
-              color: color.withValues(alpha: isDark ? 0.25 : 0.16),
-              width: 1.2.r,
+              color: isMidnight
+                  ? Colors.white.withValues(alpha: 0.12)
+                  : (isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate100),
+              width: 1.r,
             ),
             boxShadow: [
               BoxShadow(
-                color: color.withValues(alpha: isDark ? 0.05 : 0.02),
+                color: Colors.black.withValues(
+                  alpha: isMidnight ? 0.30 : (isDark ? 0.15 : 0.02),
+                ),
                 blurRadius: 6.r,
                 offset: Offset(0, 2.r),
               ),

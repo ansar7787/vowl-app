@@ -379,7 +379,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                     _showBackConfirmation(context, user),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(left: 16.w, top: 4.h),
+                                padding: EdgeInsets.only(left: 20.w, top: 4.h),
                                 child: KidsRoomDailyCareCard(
                                   user: user,
                                   hasPlayed: hasPlayedToday,
