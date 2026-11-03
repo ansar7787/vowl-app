@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math' as math;
 import 'package:confetti/confetti.dart';
 import 'package:vowl/core/theme/app_colors.dart';
@@ -607,6 +608,7 @@ class _HomeFloatingCoinState extends State<_HomeFloatingCoin>
   late Animation<double> _animY;
   late Animation<double> _animScale;
   late Animation<double> _animOpacity;
+  Timer? _delayTimer;
 
   @override
   void initState() {
@@ -638,13 +640,14 @@ class _HomeFloatingCoinState extends State<_HomeFloatingCoin>
       TweenSequenceItem(tween: Tween<double>(begin: 1.0, end: 0.0), weight: 15),
     ]).animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
 
-    Future.delayed(Duration(milliseconds: widget.delay), () {
+    _delayTimer = Timer(Duration(milliseconds: widget.delay), () {
       if (mounted) _controller.forward();
     });
   }
 
   @override
   void dispose() {
+    _delayTimer?.cancel();
     _controller.dispose();
     super.dispose();
   }
