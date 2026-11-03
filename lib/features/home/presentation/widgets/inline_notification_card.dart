@@ -9,6 +9,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
 /// Contextual prompt card nudging users to grant notification permissions to protect streaks.
@@ -183,6 +184,9 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
         final prefs = await SharedPreferences.getInstance();
         await prefs.setBool('notifications_enabled', true);
         await prefs.setBool('notification_permission_granted', true);
+        if (di.sl.isRegistered<NotificationService>()) {
+          di.sl<NotificationService>().onNotificationPreferenceChanged(true);
+        }
       } catch (_) {}
       InlineNotificationCard.cachedShouldShow = false;
       await _animationController.reverse();

@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/home/presentation/widgets/inline_notification_card.dart';
 
@@ -14,21 +15,29 @@ class MockHapticService extends Mock implements HapticService {}
 
 class MockLocaleService extends Mock implements LocaleService {}
 
+class MockNotificationService extends Mock implements NotificationService {}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   late MockHapticService mockHapticService;
   late MockLocaleService mockLocaleService;
+  late MockNotificationService mockNotificationService;
 
   setUp(() {
     InlineNotificationCard.cachedShouldShow = null;
     VowlMotion.lowAnimationModeOverride.value = true;
     mockHapticService = MockHapticService();
     mockLocaleService = MockLocaleService();
+    mockNotificationService = MockNotificationService();
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
+
+    when(
+      () => mockNotificationService.onNotificationPreferenceChanged(any()),
+    ).thenAnswer((_) async {});
 
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
     when(
@@ -60,6 +69,11 @@ void main() {
     }
     di.sl.registerSingleton<LocaleService>(mockLocaleService);
     initLocaleServiceReference(mockLocaleService);
+
+    if (di.sl.isRegistered<NotificationService>()) {
+      di.sl.unregister<NotificationService>();
+    }
+    di.sl.registerSingleton<NotificationService>(mockNotificationService);
 
     SharedPreferences.setMockInitialValues({});
 
@@ -94,6 +108,9 @@ void main() {
     }
     if (di.sl.isRegistered<LocaleService>()) {
       di.sl.unregister<LocaleService>();
+    }
+    if (di.sl.isRegistered<NotificationService>()) {
+      di.sl.unregister<NotificationService>();
     }
   });
 
@@ -314,6 +331,46 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
 
       expect(openedSettings, isTrue);
+    },
+  );
+
+  testWidgets(
+    'tapping Remind Me when granted triggers success haptics, sets prefs, and calls NotificationService',
+    (tester) async {
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+          .setMockMethodCallHandler(
+        const MethodChannel('flutter.baseflow.com/permissions/methods'),
+        (MethodCall methodCall) async {
+          if (methodCall.method == 'checkPermissionStatus') {
+            // 0 = denied (not permanently)
+            return 0;
+          }
+          if (methodCall.method == 'requestPermissions') {
+            // 1 = PermissionStatus.granted for permission index 17 (notification)
+            return {17: 1};
+          }
+          return null;
+        },
+      );
+
+      final prefs = await SharedPreferences.getInstance();
+      InlineNotificationCard.prewarm(prefs);
+
+      await tester.pumpWidget(createSubject(streak: 14));
+      await tester.pump();
+
+      expect(find.byType(InlineNotificationCard), findsOneWidget);
+      expect(find.text("Remind Me"), findsOneWidget);
+
+      await tester.tap(find.text("Remind Me"));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+
+      verify(() => mockHapticService.success()).called(1);
+      verify(() => mockNotificationService.onNotificationPreferenceChanged(true)).called(1);
+
+      expect(prefs.getBool('notifications_enabled'), isTrue);
+      expect(prefs.getBool('notification_permission_granted'), isTrue);
     },
   );
 }
