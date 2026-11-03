@@ -80,7 +80,7 @@ class AppUpdateDialog extends StatelessWidget {
       child: Center(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
             child: Material(
               color: Colors.transparent,
               child: GlassTile(

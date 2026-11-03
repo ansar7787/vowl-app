@@ -43,7 +43,7 @@ class WordSnapCompletedView extends StatelessWidget {
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             padding: EdgeInsets.symmetric(
-              horizontal: 24.w,
+              horizontal: 20.w,
               vertical: 16.h,
             ).copyWith(
               bottom: MediaQuery.of(context).padding.bottom + 24.h,

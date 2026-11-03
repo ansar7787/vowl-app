@@ -100,7 +100,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                       }
                       return SliverToBoxAdapter(
                         child: Padding(
-                          padding: EdgeInsets.fromLTRB(24.w, 16.h, 24.w, 40.h),
+                          padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 40.h),
                           child: _buildWatchAndEarn(context, isDark),
                         ),
                       );
@@ -343,11 +343,17 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       child: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
           final coins = state.user?.kidsCoins ?? 0;
+          final isMidnight = isDark &&
+              (Theme.of(context).scaffoldBackgroundColor == Colors.black ||
+                  Theme.of(context).scaffoldBackgroundColor ==
+                      AppColors.midnightBase);
           return Container(
             margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
             padding: EdgeInsets.all(24.r),
             decoration: BoxDecoration(
-              color: isDark ? AppColors.slate800 : Colors.white,
+              color: isMidnight
+                  ? AppColors.midnightSurface
+                  : (isDark ? AppColors.slate800 : Colors.white),
               borderRadius: BorderRadius.circular(32.r),
               border: Border.all(color: Colors.amber, width: 3.w),
               boxShadow: [
@@ -546,6 +552,10 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     required bool isOwned,
     required bool isEquipped,
   }) {
+    final isMidnight = isDark &&
+        (Theme.of(context).scaffoldBackgroundColor == Colors.black ||
+            Theme.of(context).scaffoldBackgroundColor ==
+                AppColors.midnightBase);
     final itemColor = item['color'] as Color;
     return ScaleButton(
       onTap: () => _handleItemAction(context, item, isOwned, isEquipped),
@@ -553,7 +563,9 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
         decoration: BoxDecoration(
           color: isEquipped
               ? itemColor.withValues(alpha: 0.1)
-              : (isDark ? AppColors.slate800 : Colors.white),
+              : (isMidnight
+                  ? AppColors.midnightCard
+                  : (isDark ? AppColors.slate800 : Colors.white)),
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(color: itemColor, width: 3.w),
           boxShadow: [

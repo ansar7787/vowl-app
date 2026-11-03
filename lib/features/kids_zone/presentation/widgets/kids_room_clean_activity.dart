@@ -186,7 +186,7 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
                           child: BackdropFilter(
                             filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
                             child: Container(
-                              margin: EdgeInsets.symmetric(horizontal: 24.w),
+                              margin: EdgeInsets.symmetric(horizontal: 20.w),
                               padding: EdgeInsets.all(32.r),
                               decoration: BoxDecoration(
                                 color: Colors.white.withValues(alpha: 0.7),

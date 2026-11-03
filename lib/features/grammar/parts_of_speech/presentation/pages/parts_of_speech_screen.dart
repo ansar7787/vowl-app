@@ -441,7 +441,7 @@ class _PosQuestLayout extends StatelessWidget {
   Widget _buildGrammarRule(String rule, Color primaryColor) {
     return Container(
       key: const ValueKey('grammar_rule_box'),
-      margin: EdgeInsets.symmetric(horizontal: 24.w),
+      margin: EdgeInsets.symmetric(horizontal: 20.w),
       padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 7.h),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.08),

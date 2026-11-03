@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 
 /// Premium audio-playback row used in the listening game.
@@ -25,20 +26,31 @@ class ListeningAudioPlayer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = isDark &&
+        (Theme.of(context).scaffoldBackgroundColor == AppColors.midnightBase ||
+            Theme.of(context).colorScheme.surface == AppColors.midnightSurface ||
+            Theme.of(context).colorScheme.surface == AppColors.midnightBase);
+
     return Semantics(
       container: true,
       label: 'Audio player. Tap the play button to hear the audio clip.',
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
+        margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
         padding: EdgeInsets.all(16.r),
         decoration: BoxDecoration(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.1)
-              : Colors.white.withValues(alpha: 0.5),
+          color: isMidnight
+              ? AppColors.midnightCard
+              : (isDark
+                  ? Colors.white.withValues(alpha: 0.1)
+                  : Colors.white.withValues(alpha: 0.5)),
           borderRadius: BorderRadius.circular(30.r),
           border: Border.all(
-            color: theme.primaryColor.withValues(alpha: 0.3),
-            width: 1.5,
+            color: isMidnight
+                ? Colors.white.withValues(alpha: 0.12)
+                : (isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.slate100),
+            width: 1,
           ),
         ),
         child: Row(

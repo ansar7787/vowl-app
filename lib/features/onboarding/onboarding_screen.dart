@@ -384,7 +384,7 @@ class _Header extends StatelessWidget {
     final effectiveInk = isDark ? AppColors.indigo400 : ink;
 
     return Padding(
-      padding: const EdgeInsets.fromLTRB(24, 6, 12, 0),
+      padding: const EdgeInsets.fromLTRB(20, 6, 12, 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -468,7 +468,7 @@ class _SlidePageState extends State<_SlidePage>
 
         return SingleChildScrollView(
           physics: const ClampingScrollPhysics(),
-          padding: const EdgeInsets.symmetric(horizontal: 24),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: ConstrainedBox(
             constraints: BoxConstraints(minHeight: c.maxHeight),
             child: IntrinsicHeight(
@@ -779,7 +779,7 @@ class _BottomBar extends StatelessWidget {
     final effectiveInk = isDark ? AppColors.indigo400 : slide.ink;
 
     return Padding(
-      padding: const EdgeInsets.fromLTRB(24, 12, 24, 20),
+      padding: const EdgeInsets.fromLTRB(20, 12, 20, 20),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

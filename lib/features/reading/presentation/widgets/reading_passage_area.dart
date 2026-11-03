@@ -31,25 +31,33 @@ class ReadingPassageArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final isMidnight = isDark &&
+        (Theme.of(context).scaffoldBackgroundColor == AppColors.midnightBase ||
+            Theme.of(context).colorScheme.surface == AppColors.midnightSurface ||
+            Theme.of(context).colorScheme.surface == AppColors.midnightBase);
 
     Widget container = Semantics(
       label: 'Reading passage: $passage',
       // The Text inside is redundant to the label above for screen readers.
       excludeSemantics: true,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
+        margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
         padding: EdgeInsets.all(16.r),
         constraints: BoxConstraints(maxHeight: 200.h),
         decoration: BoxDecoration(
-          color: isDark
-              ? Colors.black.withValues(alpha: 0.2)
-              : Colors.white.withValues(alpha: 0.8),
+          color: isMidnight
+              ? AppColors.midnightCard
+              : (isDark
+                  ? Colors.black.withValues(alpha: 0.2)
+                  : Colors.white.withValues(alpha: 0.8)),
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.1)
-                : primaryColor.withValues(alpha: 0.15),
-            width: 1.5,
+            color: isMidnight
+                ? Colors.white.withValues(alpha: 0.12)
+                : (isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.slate100),
+            width: 1,
           ),
           boxShadow: [
             BoxShadow(

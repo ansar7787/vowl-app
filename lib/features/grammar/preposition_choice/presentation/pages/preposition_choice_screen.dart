@@ -333,7 +333,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
                                                   'grammar_rule_box',
                                                 ),
                                                 margin: EdgeInsets.symmetric(
-                                                  horizontal: 24.w,
+                                                  horizontal: 20.w,
                                                 ),
                                                 padding: EdgeInsets.symmetric(
                                                   horizontal: 16.w,
@@ -413,7 +413,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
                                                 );
                                             final contextCard = Padding(
                                               padding: EdgeInsets.symmetric(
-                                                horizontal: 24.w,
+                                                horizontal: 20.w,
                                               ),
                                               child: Container(
                                                 key: const ValueKey(

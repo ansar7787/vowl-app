@@ -90,7 +90,7 @@ class TollGateBottomSheet {
           child: GestureDetector(
             onTap: () {}, // Prevent taps on the sheet content from closing it
             child: Container(
-              padding: EdgeInsets.all(24.r),
+              padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 24.h),
               decoration: BoxDecoration(
                 color: (Theme.of(context).brightness == Brightness.dark &&
                         Theme.of(context).scaffoldBackgroundColor == Colors.black)

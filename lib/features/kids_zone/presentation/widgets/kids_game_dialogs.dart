@@ -63,7 +63,7 @@ class KidsGameDialogs {
                 Center(
                   child:
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
                         child: KidsDialogContainer(
                           primaryColor: primaryColor,
                           title: context.tr(
@@ -405,7 +405,7 @@ class KidsGameDialogs {
         insetPadding: EdgeInsets.zero,
         child: Center(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: KidsDialogContainer(
                 primaryColor: AppColors.indigo500, // Moody purple/indigo
                 title: context.tr(
@@ -531,11 +531,14 @@ class KidsGameDialogs {
         child: Dialog(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          insetPadding: EdgeInsets.symmetric(horizontal: 24.w),
+          insetPadding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Container(
             padding: EdgeInsets.all(20.w),
             decoration: BoxDecoration(
-              color: isDark ? AppColors.slate800 : Colors.white,
+              color: (isDark &&
+                      Theme.of(context).scaffoldBackgroundColor == Colors.black)
+                  ? AppColors.midnightSurface
+                  : (isDark ? AppColors.slate800 : Colors.white),
               borderRadius: BorderRadius.circular(40.r),
               border: Border.all(
                 color: AppColors.violet500,

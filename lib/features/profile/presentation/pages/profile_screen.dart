@@ -1102,7 +1102,7 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(32.w),
+              padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 24.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

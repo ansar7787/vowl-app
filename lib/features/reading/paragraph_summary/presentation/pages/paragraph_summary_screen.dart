@@ -188,7 +188,7 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
                         physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [
@@ -258,7 +258,7 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
                           ),
                           if (_isDistilled.value)
                             SliverPadding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              padding: EdgeInsets.symmetric(horizontal: 20.w),
                               sliver: SliverToBoxAdapter(
                                 child: ParagraphSummaryOptionRack(
                                   options: quest.options ?? [],

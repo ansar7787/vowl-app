@@ -327,20 +327,35 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
     bool isAnswered, {
     bool isFeedback = false,
   }) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+
     return Container(
       constraints: BoxConstraints(minWidth: 120.w),
-      padding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 24.w),
+      padding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 20.w),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? AppColors.slate800 : Colors.white),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: isFeedback ? widget.primaryColor : Colors.grey.shade300,
+          color: isFeedback
+              ? widget.primaryColor
+              : (isMidnight
+                  ? Colors.white.withValues(alpha: 0.12)
+                  : (isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : Colors.grey.shade300)),
           width: isFeedback ? 3 : 2,
         ),
         // Chunky 3D Duolingo-style bottom shadow
         boxShadow: [
           if (!isFeedback)
-            BoxShadow(color: Colors.grey.shade300, offset: const Offset(0, 6)),
+            BoxShadow(
+              color: isDark ? Colors.black26 : Colors.grey.shade300,
+              offset: const Offset(0, 6),
+            ),
         ],
       ),
       child: AutoSizeText(

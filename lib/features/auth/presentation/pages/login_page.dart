@@ -203,7 +203,7 @@ class _LoginViewState extends State<LoginView> {
                                     ),
                                     child: Padding(
                                       padding: EdgeInsets.symmetric(
-                                        horizontal: 24.w,
+                                        horizontal: 20.w,
                                         vertical: 10.h,
                                       ),
                                       child: Form(

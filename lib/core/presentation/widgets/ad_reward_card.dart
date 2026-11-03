@@ -124,7 +124,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
     return Container(
       margin:
           widget.margin ??
-          EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+          EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
       child: ValueListenableBuilder<int>(
         valueListenable: _stateHash,
         builder: (context, _, child) {

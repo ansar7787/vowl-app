@@ -45,10 +45,14 @@ class TranslationMonetizationController {
       context: context,
       builder: (ctx) {
         final isDark = Theme.of(ctx).brightness == Brightness.dark;
+        final isMidnight = isDark &&
+            (Theme.of(ctx).scaffoldBackgroundColor == AppColors.midnightBase ||
+                Theme.of(ctx).colorScheme.surface == AppColors.midnightSurface ||
+                Theme.of(ctx).colorScheme.surface == AppColors.midnightBase);
         return Dialog(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          insetPadding: EdgeInsets.symmetric(horizontal: 24.w),
+          insetPadding: EdgeInsets.symmetric(horizontal: 20.w),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(28.r),
             child: BackdropFilter(
@@ -56,11 +60,17 @@ class TranslationMonetizationController {
               child: Container(
                 padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 24.h),
                 decoration: BoxDecoration(
-                  color: isDark
-                      ? AppColors.slate900.withValues(alpha: 0.85)
-                      : Colors.white.withValues(alpha: 0.9),
+                  color: isMidnight
+                      ? AppColors.midnightSurface
+                      : (isDark
+                          ? AppColors.slate900.withValues(alpha: 0.85)
+                          : Colors.white.withValues(alpha: 0.9)),
                   border: Border.all(
-                    color: Colors.white.withValues(alpha: 0.2),
+                    color: isMidnight
+                        ? Colors.white.withValues(alpha: 0.12)
+                        : (isDark
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : AppColors.slate100),
                     width: 1,
                   ),
                   borderRadius: BorderRadius.circular(28.r),

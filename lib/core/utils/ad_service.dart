@@ -817,6 +817,10 @@ class _AdLoadingDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        (Theme.of(context).scaffoldBackgroundColor == AppColors.midnightBase ||
+            Theme.of(context).colorScheme.surface == AppColors.midnightSurface ||
+            Theme.of(context).colorScheme.surface == AppColors.midnightBase);
 
     return PopScope(
       canPop: false,
@@ -828,15 +832,21 @@ class _AdLoadingDialog extends StatelessWidget {
           type: MaterialType.transparency,
           child: Container(
             width: 280.w,
-            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 28.h),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
             decoration: BoxDecoration(
-              color: isDark
-                  ? const Color(0xFF1E293B).withValues(alpha: 0.95)
-                  : Colors.white.withValues(alpha: 0.95),
+              color: isMidnight
+                  ? AppColors.midnightSurface
+                  : (isDark
+                      ? const Color(0xFF1E293B).withValues(alpha: 0.95)
+                      : Colors.white.withValues(alpha: 0.95)),
               borderRadius: BorderRadius.circular(28.r),
               border: Border.all(
-                color: isDark ? Colors.white12 : Colors.black12,
-                width: 1.5.r,
+                color: isMidnight
+                    ? Colors.white.withValues(alpha: 0.12)
+                    : (isDark
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : AppColors.slate100),
+                width: 1,
               ),
               boxShadow: [
                 BoxShadow(

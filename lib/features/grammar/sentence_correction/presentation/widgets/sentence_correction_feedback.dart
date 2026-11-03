@@ -57,7 +57,7 @@ class SentenceCorrectionFeedback extends StatelessWidget {
     }
 
     final feedback = Container(
-      margin: EdgeInsets.symmetric(horizontal: 24.w),
+      margin: EdgeInsets.symmetric(horizontal: 20.w),
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
       decoration: BoxDecoration(
         color: tokens.gameIncorrect.withValues(alpha: 0.05),

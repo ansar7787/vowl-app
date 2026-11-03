@@ -767,7 +767,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                       child: BackdropFilter(
                         filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
                         child: Container(
-                          margin: EdgeInsets.symmetric(horizontal: 24.w),
+                          margin: EdgeInsets.symmetric(horizontal: 20.w),
                           padding: EdgeInsets.symmetric(
                             horizontal: 20.w,
                             vertical: 14.h,

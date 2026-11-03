@@ -106,7 +106,7 @@ class _HintAdCardState extends State<HintAdCard> {
       child: Container(
         margin:
             widget.margin ??
-            EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+            EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
         child: GlassTile(
           borderRadius: BorderRadius.circular(24.r),
           padding: EdgeInsets.all(20.r),

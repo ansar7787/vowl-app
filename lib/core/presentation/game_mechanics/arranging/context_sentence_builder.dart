@@ -147,11 +147,17 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        (Theme.of(context).scaffoldBackgroundColor == AppColors.midnightBase ||
+            Theme.of(context).colorScheme.surface == AppColors.midnightSurface ||
+            Theme.of(context).colorScheme.surface == AppColors.midnightBase);
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
-    final glassColor = isDark
-        ? Colors.black.withValues(alpha: 0.85) // Highly opaque for dark mode
-        : Colors.white.withValues(alpha: 0.95); // Nearly solid for light mode
+    final glassColor = isMidnight
+        ? AppColors.midnightCard
+        : (isDark
+            ? Colors.black.withValues(alpha: 0.85) // Highly opaque for dark mode
+            : Colors.white.withValues(alpha: 0.95)); // Nearly solid for light mode
 
     final textColor = isDark ? Colors.white : AppColors.slate900;
     final subtitleColor = isDark ? Colors.white70 : Colors.black87;
@@ -165,9 +171,11 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
               ? tokens.gameCorrect.withValues(alpha: 0.5)
               : status == _BuilderStatus.error
               ? tokens.gameIncorrect.withValues(alpha: 0.5)
-              : isDark
-              ? widget.primaryColor.withValues(alpha: 0.3)
-              : Colors.white.withValues(alpha: 0.8);
+              : isMidnight
+              ? Colors.white.withValues(alpha: 0.12)
+              : (isDark
+                  ? Colors.white.withValues(alpha: 0.08)
+                  : AppColors.slate100);
 
           return Container(
             decoration: BoxDecoration(
@@ -196,15 +204,15 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 24.w,
-                      vertical: 24.h,
+                      horizontal: 20.w,
+                      vertical: 20.h,
                     ),
                     child: _buildFormContent(isDark, subtitleColor, textColor),
                   ),
                 ),
               )
             : Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
                 child: _buildFormContent(isDark, subtitleColor, textColor),
               ),
       ),

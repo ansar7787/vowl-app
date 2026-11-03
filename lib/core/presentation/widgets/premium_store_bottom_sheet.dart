@@ -479,7 +479,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
 
                       // Header
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
                         child: Row(
                           children: [
                             Container(
@@ -568,7 +568,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                         child: Stack(
                           children: [
                             ListView(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              padding: EdgeInsets.symmetric(horizontal: 20.w),
                               physics: const BouncingScrollPhysics(),
                               children: [
                                 // Vowl Premium Subscription Upsell
@@ -577,7 +577,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                     .fadeIn()
                                     .moveX(begin: -20, end: 0, delay: 100.ms),
 
-                                SizedBox(height: 32.h),
+                                SizedBox(height: 24.h),
 
                                 Text(
                                   context.tr(
@@ -1034,7 +1034,13 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                 border: Border.all(
                   color: pack.isBestValue
                       ? color
-                      : (isDark ? Colors.white10 : Colors.black12),
+                      : ((isDark &&
+                              Theme.of(context).scaffoldBackgroundColor ==
+                                  Colors.black)
+                          ? Colors.white.withValues(alpha: 0.12)
+                          : (isDark
+                              ? Colors.white.withValues(alpha: 0.08)
+                              : AppColors.slate100)),
                   width: pack.isBestValue ? 2.w : 1.w,
                 ),
                 boxShadow: [

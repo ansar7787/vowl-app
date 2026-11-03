@@ -25,11 +25,15 @@ class KidsRoomDecorSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).brightness == Brightness.dark
-            ? AppColors.slate800
-            : Colors.white,
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? AppColors.slate800 : Colors.white),
         borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
         border: Border.all(color: Colors.amber, width: 4.w),
         boxShadow: [
@@ -40,7 +44,7 @@ class KidsRoomDecorSheet extends StatelessWidget {
         top: false,
         child: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.all(24.r),
+            padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 24.h),
             child: DefaultTabController(
               length: 2,
               child: Column(

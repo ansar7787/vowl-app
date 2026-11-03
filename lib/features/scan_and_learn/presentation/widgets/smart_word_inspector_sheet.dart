@@ -92,6 +92,8 @@ class _SmartWordInspectorSheetState extends State<SmartWordInspectorSheet> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final entry = ScanVocabularyDictionary.getEntry(widget.token.cleanWord);
 
     final String cefr = widget.token.cefr ?? _inferCefr(widget.token.cleanWord);
@@ -103,12 +105,20 @@ class _SmartWordInspectorSheetState extends State<SmartWordInspectorSheet> {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
         child: Container(
-          padding: EdgeInsets.fromLTRB(24.w, 16.h, 24.w, 32.h),
+          padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 32.h),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF0F172A).withValues(alpha: 0.95) : Colors.white.withValues(alpha: 0.95),
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (isDark
+                    ? const Color(0xFF0F172A).withValues(alpha: 0.95)
+                    : Colors.white.withValues(alpha: 0.95)),
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
             border: Border.all(
-              color: isDark ? Colors.white.withValues(alpha: 0.12) : Colors.black.withValues(alpha: 0.08),
+              color: isMidnight
+                  ? Colors.white.withValues(alpha: 0.12)
+                  : (isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate100),
             ),
           ),
           child: Column(

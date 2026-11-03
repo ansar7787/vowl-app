@@ -312,7 +312,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                                       SizedBox(height: 12.h),
                                       Padding(
                                         padding: EdgeInsets.symmetric(
-                                          horizontal: 24.w,
+                                          horizontal: 20.w,
                                         ),
                                         child: Text(
                                           "Tap the incorrect word, then choose the correct replacement.",
@@ -339,7 +339,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                                               'sentence_correction_context_card',
                                             ),
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
+                                              horizontal: 20.w,
                                             ),
                                             child: Container(
                                               width: double.infinity,
@@ -451,7 +451,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                                       // Status Hint
                                       Padding(
                                         padding: EdgeInsets.symmetric(
-                                          horizontal: 24.w,
+                                          horizontal: 20.w,
                                         ),
                                         child: Row(
                                           mainAxisAlignment:
@@ -573,7 +573,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
                                 SliverToBoxAdapter(
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(
-                                      horizontal: 24.w,
+                                      horizontal: 20.w,
                                     ),
                                     child: TypeToConfirmOverlay(
                                       expectedText:
