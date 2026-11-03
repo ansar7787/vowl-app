@@ -168,7 +168,11 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                         );
                         widget.showNotification(
                           context,
-                          "Hooray! You earned $amount coins!",
+                          context.tr(
+                            'kids_zone.earned_coins_notification',
+                            fallback: 'Hooray! You earned +$amount coins!',
+                            args: [amount.toString()],
+                          ),
                         );
                         di.sl<SoundService>().playCoinTally(count: 8);
                       }

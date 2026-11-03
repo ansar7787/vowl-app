@@ -3,6 +3,7 @@ import 'package:confetti/confetti.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -55,13 +56,13 @@ class _HomeScreenState extends State<HomeScreen> {
   late final ConfettiController _confettiController;
   final ValueNotifier<List<Map<String, dynamic>>> _activeCoins = ValueNotifier([]);
 
-  static const List<Color> _greenConfettiColors = [
-    AppColors.emerald400,
-    AppColors.emerald500,
-    AppColors.emerald600,
-    Color(0xFF34D399),
-    Color(0xFF059669),
-    AppColors.amber400,
+  static const List<Color> _celebrationConfettiColors = [
+    Color(0xFFFFD700), // Brilliant Gold
+    AppColors.amber500, // Warm Amber
+    AppColors.emerald500, // Emerald Green
+    AppColors.rose500, // Festive Rose
+    AppColors.violet500, // Royal Violet
+    Color(0xFF38BDF8), // Electric Sky Blue
   ];
 
   @override
@@ -194,10 +195,19 @@ class _HomeScreenState extends State<HomeScreen> {
     // Batch assign once — avoids 15 duplicate widget rebuilds
     _activeCoins.value = newCoins;
 
-    // Clean up entire coin layer once the final coin has arrived
+    // Clean up entire coin layer once the final coin has arrived and show success snackbar
     Future.delayed(Duration(milliseconds: 950 + (count * 60)), () {
       if (mounted) {
         _activeCoins.value = [];
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'home.chest_coins_claimed_snackbar',
+            fallback: 'Awesome! You received +{0} coins!',
+            args: [coins.toString()],
+          ),
+          type: CustomSnackBarType.success,
+        );
       }
     });
   }
@@ -517,7 +527,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
 
-                // ── Celebratory Full-Screen Emerald Green Confetti ───────────
+                // ── Celebratory Full-Screen Multi-Color Confetti ─────────────
                 IgnorePointer(
                   child: Align(
                     alignment: Alignment.topCenter,
@@ -525,10 +535,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       confettiController: _confettiController,
                       blastDirectionality: BlastDirectionality.explosive,
                       shouldLoop: false,
-                      colors: _greenConfettiColors,
-                      numberOfParticles: 28,
+                      colors: _celebrationConfettiColors,
+                      numberOfParticles: 30,
                       emissionFrequency: 0.04,
-                      gravity: 0.28,
+                      gravity: 0.25,
                     ),
                   ),
                 ),
