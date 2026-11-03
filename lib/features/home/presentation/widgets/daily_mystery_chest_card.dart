@@ -1,6 +1,5 @@
 import 'dart:math' as math;
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:confetti/confetti.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -29,7 +28,12 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 /// - Dual `SizeTransition` + `ScaleTransition` "eating" collapse animation
 ///   that smoothly folds the card to 0dp height once claimed.
 class DailyMysteryChestCard extends StatefulWidget {
-  const DailyMysteryChestCard({super.key});
+  final void Function({required Offset originOffset, required int coins})? onClaimed;
+
+  const DailyMysteryChestCard({
+    super.key,
+    this.onClaimed,
+  });
 
   @override
   State<DailyMysteryChestCard> createState() => _DailyMysteryChestCardState();
@@ -40,21 +44,11 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
   late final AnimationController _collapseController;
   late final Animation<double> _scaleAnimation;
   late final Animation<double> _sizeAnimation;
-  late final ConfettiController _confettiController;
 
   bool _isClaimedLocally = false;
   bool _isClaiming = false;
   int? _awardedCoins;
   String? _lastUserId;
-
-  static const List<Color> _greenConfettiColors = [
-    AppColors.emerald400,
-    AppColors.emerald500,
-    AppColors.emerald600,
-    Color(0xFF34D399),
-    Color(0xFF059669),
-    AppColors.amber400,
-  ];
 
   @override
   void initState() {
@@ -76,10 +70,6 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
       ),
     );
 
-    _confettiController = ConfettiController(
-      duration: const Duration(milliseconds: 700),
-    );
-
     _verifyLocalClaimStatus();
   }
 
@@ -97,7 +87,6 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
   @override
   void dispose() {
     _collapseController.dispose();
-    _confettiController.dispose();
     super.dispose();
   }
 
@@ -159,9 +148,13 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
       }
     } catch (_) {}
 
-    // 3. Fire multi-toned green confetti burst
-    if (!VowlMotion.shouldReduceMotion(context)) {
-      _confettiController.play();
+    // 3. Trigger screen-level unclipped confetti & luxury flying coins
+    if (widget.onClaimed != null) {
+      final renderBox = context.findRenderObject() as RenderBox?;
+      final origin = renderBox != null
+          ? renderBox.localToGlobal(renderBox.size.center(Offset.zero))
+          : Offset(1.sw * 0.5, 1.sh * 0.28);
+      widget.onClaimed!(originOffset: origin, coins: totalCoins);
     }
 
     // 4. Dispatch claim to Firestore via EconomyBloc
@@ -185,8 +178,8 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
       await prefs.setString('last_daily_mystery_claimed_date', todayStr);
     } catch (_) {}
 
-    // 6. Hold victory state briefly, then execute "eating animation" collapse
-    await Future.delayed(const Duration(milliseconds: 650));
+    // 6. Hold victory state while coins arrive at top bar, then execute smooth collapse
+    await Future.delayed(const Duration(milliseconds: 1150));
     if (!mounted) return;
 
     await _collapseController.forward();
@@ -419,20 +412,6 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
             ),
           ),
         ),
-
-          // Confetti particle overlay anchored to the center of the card
-          Positioned(
-            top: -10,
-            child: ConfettiWidget(
-              confettiController: _confettiController,
-              blastDirectionality: BlastDirectionality.explosive,
-              shouldLoop: false,
-              colors: _greenConfettiColors,
-              numberOfParticles: 20,
-              emissionFrequency: 0.05,
-              gravity: 0.35,
-            ),
-          ),
         ],
       ),
     ),

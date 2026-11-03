@@ -477,13 +477,6 @@ class HomeHeroHeader extends StatelessWidget {
           color: capsuleBg,
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(color: borderColor, width: 1),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.05),
-              blurRadius: 10,
-              offset: const Offset(0, 3),
-            ),
-          ],
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,

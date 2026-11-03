@@ -170,7 +170,7 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                           context,
                           "Hooray! You earned $amount coins!",
                         );
-                        di.sl<SoundService>().playCorrect();
+                        di.sl<SoundService>().playCoinTally(count: 8);
                       }
 
                       await Future.delayed(const Duration(seconds: 2));

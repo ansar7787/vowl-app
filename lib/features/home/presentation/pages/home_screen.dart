@@ -1,5 +1,8 @@
+import 'dart:math' as math;
+import 'package:confetti/confetti.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -48,9 +51,25 @@ class _HomeScreenState extends State<HomeScreen> {
   final ValueNotifier<bool> _isRankLoading = ValueNotifier(true);
   bool _bypassBeginnerGate = false;
 
+  final math.Random _random = math.Random();
+  late final ConfettiController _confettiController;
+  final ValueNotifier<List<Map<String, dynamic>>> _activeCoins = ValueNotifier([]);
+
+  static const List<Color> _greenConfettiColors = [
+    AppColors.emerald400,
+    AppColors.emerald500,
+    AppColors.emerald600,
+    Color(0xFF34D399),
+    Color(0xFF059669),
+    AppColors.amber400,
+  ];
+
   @override
   void initState() {
     super.initState();
+    _confettiController = ConfettiController(
+      duration: const Duration(milliseconds: 1400),
+    );
     _fetchGlobalRank();
     // Initial check for reward availability
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -139,9 +158,48 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
+    _confettiController.dispose();
+    _activeCoins.dispose();
     _globalRank.dispose();
     _isRankLoading.dispose();
     super.dispose();
+  }
+
+  void _spawnCoins({required Offset originOffset, required int coins}) {
+    if (!VowlMotion.shouldReduceMotion(context)) {
+      _confettiController.play();
+    }
+
+    final screenWidth = MediaQuery.of(context).size.width;
+    final topPadding = MediaQuery.of(context).padding.top;
+    // Target is the Coins pill inside HomeHeroHeader's top right dual-metric HUD
+    final targetOffset = Offset(screenWidth - 48.w, topPadding + 28.h);
+
+    final count = math.min(15, math.max(8, coins ~/ 3));
+    for (int i = 0; i < count; i++) {
+      final id = DateTime.now().millisecondsSinceEpoch + i;
+      final spreadX = (_random.nextDouble() - 0.5) * 80.w;
+      final spreadY = (_random.nextDouble() - 0.5) * 24.h;
+
+      final currentList = List<Map<String, dynamic>>.from(_activeCoins.value);
+      currentList.add({
+        'id': id,
+        'startX': originOffset.dx + spreadX,
+        'startY': originOffset.dy + spreadY,
+        'targetX': targetOffset.dx,
+        'targetY': targetOffset.dy,
+        'delay': i * 60,
+      });
+      _activeCoins.value = currentList;
+
+      Future.delayed(Duration(milliseconds: 900 + (i * 60)), () {
+        if (mounted) {
+          final updatedList = List<Map<String, dynamic>>.from(_activeCoins.value);
+          updatedList.removeWhere((c) => c['id'] == id);
+          _activeCoins.value = updatedList;
+        }
+      });
+    }
   }
 
   @override
@@ -268,8 +326,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       // --------------------------------------------------
                       // 1.6 DAILY MYSTERY CHEST (Conditional Inline Claim)
                       // --------------------------------------------------
-                      const SliverToBoxAdapter(
-                        child: DailyMysteryChestCard(),
+                      SliverToBoxAdapter(
+                        child: DailyMysteryChestCard(
+                          onClaimed: _spawnCoins,
+                        ),
                       ),
 
                       // --------------------------------------------------
@@ -456,6 +516,38 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
+
+                // ── Celebratory Full-Screen Emerald Green Confetti ───────────
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: ConfettiWidget(
+                    confettiController: _confettiController,
+                    blastDirectionality: BlastDirectionality.explosive,
+                    shouldLoop: false,
+                    colors: _greenConfettiColors,
+                    numberOfParticles: 28,
+                    emissionFrequency: 0.04,
+                    gravity: 0.28,
+                  ),
+                ),
+
+                // ── Floating Luxury Gold Coins Trajectory Layer ─────────────
+                ValueListenableBuilder<List<Map<String, dynamic>>>(
+                  valueListenable: _activeCoins,
+                  builder: (context, coins, _) {
+                    return Stack(
+                      children: coins.map((coin) {
+                        return _HomeFloatingCoin(
+                          startX: coin['startX'],
+                          startY: coin['startY'],
+                          targetX: coin['targetX'],
+                          targetY: coin['targetY'],
+                          delay: coin['delay'],
+                        );
+                      }).toList(),
+                    );
+                  },
+                ),
               ],
             );
           },
@@ -472,6 +564,122 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     context.push(
       '${AppRouter.questSequenceRoute}?id=${Uri.encodeQueryComponent(questId)}',
+    );
+  }
+}
+
+/// A luxury gold coin widget that arcs smoothly from the mystery chest card
+/// into the top-right Coins HUD capsule in [HomeHeroHeader].
+class _HomeFloatingCoin extends StatefulWidget {
+  final double startX, startY, targetX, targetY;
+  final int delay;
+
+  const _HomeFloatingCoin({
+    required this.startX,
+    required this.startY,
+    required this.targetX,
+    required this.targetY,
+    required this.delay,
+  });
+
+  @override
+  State<_HomeFloatingCoin> createState() => _HomeFloatingCoinState();
+}
+
+class _HomeFloatingCoinState extends State<_HomeFloatingCoin>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animX;
+  late Animation<double> _animY;
+  late Animation<double> _animScale;
+  late Animation<double> _animOpacity;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 750),
+    );
+
+    _animX = Tween<double>(
+      begin: widget.startX,
+      end: widget.targetX,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOutCubic));
+
+    // Upward curved arc into the top-right coin capsule
+    _animY = Tween<double>(
+      begin: widget.startY,
+      end: widget.targetY,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInQuad));
+
+    _animScale = TweenSequence([
+      TweenSequenceItem(tween: Tween<double>(begin: 0.2, end: 1.35), weight: 35),
+      TweenSequenceItem(tween: Tween<double>(begin: 1.35, end: 0.8), weight: 65),
+    ]).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
+
+    _animOpacity = TweenSequence([
+      TweenSequenceItem(tween: Tween<double>(begin: 0.0, end: 1.0), weight: 15),
+      TweenSequenceItem(tween: Tween<double>(begin: 1.0, end: 1.0), weight: 70),
+      TweenSequenceItem(tween: Tween<double>(begin: 1.0, end: 0.0), weight: 15),
+    ]).animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
+
+    Future.delayed(Duration(milliseconds: widget.delay), () {
+      if (mounted) _controller.forward();
+    });
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) {
+        return Positioned(
+          left: _animX.value - 13.r,
+          top: _animY.value - 13.r,
+          child: Opacity(
+            opacity: _animOpacity.value,
+            child: Transform.scale(
+              scale: _animScale.value,
+              child: Container(
+                width: 26.r,
+                height: 26.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFFFFDF00), Color(0xFFF59E0B)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.amber500.withValues(alpha: 0.45),
+                      blurRadius: 8.r,
+                    ),
+                  ],
+                  border: Border.all(
+                    color: Colors.white.withValues(alpha: 0.9),
+                    width: 1.5.r,
+                  ),
+                ),
+                child: Center(
+                  child: Icon(
+                    Icons.paid_rounded,
+                    color: Colors.white,
+                    size: 15.r,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }
