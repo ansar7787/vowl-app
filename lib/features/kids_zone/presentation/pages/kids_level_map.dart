@@ -200,14 +200,16 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     await WidgetsBinding.instance.endOfFrame;
     if (mounted) _confettiController.play();
 
-    // 7. Wait for ALL confetti particles to fully fall and settle before
-    //    re-enabling touch/scroll. The confetti controller runs for 2s,
-    //    particles need ~1.5s more to physically fall off screen.
-    await Future.delayed(const Duration(milliseconds: 3500));
-    if (mounted) {
-      _celebratingLevel.value = null;
-      _isUnlockAnimating.value = false;
-    }
+    // 7. Instantly unlock user touch & scroll so the user can tap the unlocked node
+    //    or scroll immediately without being locked out. Confetti continues to float in background.
+    _isUnlockAnimating.value = false;
+
+    // 8. Clean up celebrating level state in background after confetti natural duration completes
+    Future.delayed(const Duration(milliseconds: 2500), () {
+      if (mounted) {
+        _celebratingLevel.value = null;
+      }
+    });
   }
 
   void _scrollToUnlockedLevel({int delayMs = 1500, bool animate = true}) {
