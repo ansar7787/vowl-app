@@ -45,6 +45,7 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
   bool _isClaimedLocally = false;
   bool _isClaiming = false;
   int? _awardedCoins;
+  String? _lastUserId;
 
   static const List<Color> _greenConfettiColors = [
     AppColors.emerald400,
@@ -80,6 +81,17 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
     );
 
     _verifyLocalClaimStatus();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final currentUserId = context.read<AuthBloc>().state.user?.id;
+    if (currentUserId != _lastUserId) {
+      _lastUserId = currentUserId;
+      _isClaimedLocally = false;
+      _verifyLocalClaimStatus();
+    }
   }
 
   @override
@@ -185,67 +197,73 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
 
   @override
   Widget build(BuildContext context) {
-    if (_isClaimedLocally) {
-      return const SizedBox.shrink();
-    }
-
     final isRewardAvailable = context.select<EconomyBloc, bool>(
       (bloc) => bloc.state.isDailyRewardAvailable,
     );
 
-    if (!isRewardAvailable) {
+    // If already claimed locally, or if reward is unavailable and not actively claiming,
+    // collapse to SizedBox.shrink().
+    if (_isClaimedLocally || (!isRewardAvailable && !_isClaiming)) {
       return const SizedBox.shrink();
     }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
-    // Main Card Widget
-    Widget cardContent = Container(
-      width: double.infinity,
-      clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF131A29) : Colors.white,
-        gradient: isDark
-            ? const LinearGradient(
-                colors: [Color(0xFF161F33), Color(0xFF0F1524)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              )
-            : null,
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(
-          color: AppColors.amber500.withValues(
-            alpha: isDark ? 0.35 : 0.28,
+    // Main Card Widget wrapped in Semantics for accessibility
+    Widget cardContent = Semantics(
+      button: true,
+      label: _awardedCoins != null
+          ? context.tr('home.chest_coins_collected', fallback: 'Coins collected')
+          : '${context.tr('home.chest_daily_mystery', fallback: 'Daily mystery')}, ${context.tr('home.chest_tap_unveil', fallback: 'Tap to unveil')}',
+      child: Container(
+        width: double.infinity,
+        clipBehavior: Clip.antiAlias,
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF131A29) : Colors.white,
+          gradient: isDark
+              ? const LinearGradient(
+                  colors: [Color(0xFF161F33), Color(0xFF0F1524)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                )
+              : null,
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: AppColors.amber500.withValues(
+              alpha: isDark ? 0.35 : 0.28,
+            ),
+            width: 1.2,
           ),
-          width: 1.2,
         ),
-      ),
-      child: Stack(
-        alignment: Alignment.center,
-        clipBehavior: Clip.none,
-        children: [
-          // Subtle warm glow accent along the left edge
-          Positioned(
-            left: 0,
-            top: 0,
-            bottom: 0,
-            child: Container(
-              width: 3.5.r,
-              decoration: BoxDecoration(
-                color: AppColors.amber500,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20.r),
-                  bottomLeft: Radius.circular(20.r),
+        child: Stack(
+          alignment: Alignment.center,
+          clipBehavior: Clip.none,
+          children: [
+            // Subtle warm glow accent along the left edge
+            Positioned(
+              left: 0,
+              top: 0,
+              bottom: 0,
+              child: Container(
+                width: 3.5.r,
+                decoration: BoxDecoration(
+                  color: AppColors.amber500,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20.r),
+                    bottomLeft: Radius.circular(20.r),
+                  ),
                 ),
               ),
             ),
-          ),
 
-          // Main horizontal capsule content
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-            child: Row(
+            // Main horizontal capsule content with full-card tap recognition
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: _handleClaim,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+                child: Row(
               children: [
                 // Glowing circular gift badge
                 Container(
@@ -392,6 +410,7 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
               ],
             ),
           ),
+        ),
 
           // Confetti particle overlay anchored to the center of the card
           Positioned(
@@ -408,7 +427,8 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
           ),
         ],
       ),
-    );
+    ),
+  );
 
     // Eating animation: smooth reverse SizeTransition (vertical shrink) + ScaleTransition
     Widget animatedCard = SizeTransition(
