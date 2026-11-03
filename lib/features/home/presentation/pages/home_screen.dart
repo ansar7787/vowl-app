@@ -176,13 +176,13 @@ class _HomeScreenState extends State<HomeScreen> {
     final targetOffset = Offset(screenWidth - 48.w, topPadding + 28.h);
 
     final count = math.min(15, math.max(8, coins ~/ 3));
+    final newCoins = <Map<String, dynamic>>[];
     for (int i = 0; i < count; i++) {
       final id = DateTime.now().millisecondsSinceEpoch + i;
       final spreadX = (_random.nextDouble() - 0.5) * 80.w;
       final spreadY = (_random.nextDouble() - 0.5) * 24.h;
 
-      final currentList = List<Map<String, dynamic>>.from(_activeCoins.value);
-      currentList.add({
+      newCoins.add({
         'id': id,
         'startX': originOffset.dx + spreadX,
         'startY': originOffset.dy + spreadY,
@@ -190,16 +190,16 @@ class _HomeScreenState extends State<HomeScreen> {
         'targetY': targetOffset.dy,
         'delay': i * 60,
       });
-      _activeCoins.value = currentList;
-
-      Future.delayed(Duration(milliseconds: 900 + (i * 60)), () {
-        if (mounted) {
-          final updatedList = List<Map<String, dynamic>>.from(_activeCoins.value);
-          updatedList.removeWhere((c) => c['id'] == id);
-          _activeCoins.value = updatedList;
-        }
-      });
     }
+    // Batch assign once — avoids 15 duplicate widget rebuilds
+    _activeCoins.value = newCoins;
+
+    // Clean up entire coin layer once the final coin has arrived
+    Future.delayed(Duration(milliseconds: 950 + (count * 60)), () {
+      if (mounted) {
+        _activeCoins.value = [];
+      }
+    });
   }
 
   @override
@@ -518,35 +518,39 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
 
                 // ── Celebratory Full-Screen Emerald Green Confetti ───────────
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: ConfettiWidget(
-                    confettiController: _confettiController,
-                    blastDirectionality: BlastDirectionality.explosive,
-                    shouldLoop: false,
-                    colors: _greenConfettiColors,
-                    numberOfParticles: 28,
-                    emissionFrequency: 0.04,
-                    gravity: 0.28,
+                IgnorePointer(
+                  child: Align(
+                    alignment: Alignment.topCenter,
+                    child: ConfettiWidget(
+                      confettiController: _confettiController,
+                      blastDirectionality: BlastDirectionality.explosive,
+                      shouldLoop: false,
+                      colors: _greenConfettiColors,
+                      numberOfParticles: 28,
+                      emissionFrequency: 0.04,
+                      gravity: 0.28,
+                    ),
                   ),
                 ),
 
                 // ── Floating Luxury Gold Coins Trajectory Layer ─────────────
-                ValueListenableBuilder<List<Map<String, dynamic>>>(
-                  valueListenable: _activeCoins,
-                  builder: (context, coins, _) {
-                    return Stack(
-                      children: coins.map((coin) {
-                        return _HomeFloatingCoin(
-                          startX: coin['startX'],
-                          startY: coin['startY'],
-                          targetX: coin['targetX'],
-                          targetY: coin['targetY'],
-                          delay: coin['delay'],
-                        );
-                      }).toList(),
-                    );
-                  },
+                IgnorePointer(
+                  child: ValueListenableBuilder<List<Map<String, dynamic>>>(
+                    valueListenable: _activeCoins,
+                    builder: (context, coins, _) {
+                      return Stack(
+                        children: coins.map((coin) {
+                          return _HomeFloatingCoin(
+                            startX: coin['startX'],
+                            startY: coin['startY'],
+                            targetX: coin['targetX'],
+                            targetY: coin['targetY'],
+                            delay: coin['delay'],
+                          );
+                        }).toList(),
+                      );
+                    },
+                  ),
                 ),
               ],
             );

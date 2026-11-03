@@ -151,7 +151,7 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
     // 3. Trigger screen-level unclipped confetti & luxury flying coins
     if (widget.onClaimed != null) {
       final renderBox = context.findRenderObject() as RenderBox?;
-      final origin = renderBox != null
+      final origin = (renderBox != null && renderBox.hasSize)
           ? renderBox.localToGlobal(renderBox.size.center(Offset.zero))
           : Offset(1.sw * 0.5, 1.sh * 0.28);
       widget.onClaimed!(originOffset: origin, coins: totalCoins);
