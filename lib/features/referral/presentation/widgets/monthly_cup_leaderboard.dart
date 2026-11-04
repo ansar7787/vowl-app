@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
+import 'package:vowl/core/presentation/widgets/vowl_micro_loader.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/referral/domain/entities/referral_info.dart';
 
@@ -215,11 +216,7 @@ class MonthlyCupLeaderboard extends StatelessWidget {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
                     ),
                     child: isClaimingPastMonth
-                        ? SizedBox(
-                            width: 12.r,
-                            height: 12.r,
-                            child: const CircularProgressIndicator(strokeWidth: 2),
-                          )
+                        ? const VowlMicroLoader(size: 14, color: Color(0xFFD97706))
                         : Text(
                             'Claim',
                             style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w800),

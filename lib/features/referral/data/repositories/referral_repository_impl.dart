@@ -23,8 +23,9 @@ class ReferralRepositoryImpl implements ReferralRepository {
 
   static String _getPreviousMonthKey([DateTime? date]) {
     final now = (date ?? DateTime.now()).toUtc();
-    final prev = DateTime.utc(now.year, now.month - 1, 1);
-    return '${prev.year}-${prev.month.toString().padLeft(2, '0')}';
+    final prevYear = now.month == 1 ? now.year - 1 : now.year;
+    final prevMonth = now.month == 1 ? 12 : now.month - 1;
+    return '$prevYear-${prevMonth.toString().padLeft(2, '0')}';
   }
 
   @override

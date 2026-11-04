@@ -401,9 +401,26 @@ class ArenaRepositoryImpl implements ArenaRepository {
   }) async {
     try {
       final docRef = _firestore.collection('arena_rooms').doc(roomCode.trim().toUpperCase());
-      await docRef.update({
-        'status': 'abandoned',
-      });
+      final snap = await docRef.get().timeout(_kNetworkTimeout);
+      if (snap.exists) {
+        final data = snap.data();
+        final status = data?['status'] as String?;
+        final guestId = data?['guestId'] as String?;
+        final hostId = data?['hostId'] as String?;
+
+        // If room is still waiting and no opponent joined yet, dissolve room and refund the host
+        if (status == 'waiting' && (guestId == null || guestId.isEmpty)) {
+          await docRef.delete().timeout(_kNetworkTimeout);
+          if (hostId == userId) {
+            await _refundEntryStake(userId);
+          }
+          return;
+        }
+
+        await docRef.update({
+          'status': 'abandoned',
+        }).timeout(_kNetworkTimeout);
+      }
     } catch (_) {}
   }
 

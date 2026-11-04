@@ -7,21 +7,25 @@ import 'package:vowl/core/theme/app_colors.dart';
 class ArenaQuitMatchDialog extends StatelessWidget {
   final VoidCallback onStay;
   final VoidCallback onForfeit;
+  final bool isWaitingLobby;
 
   const ArenaQuitMatchDialog({
     super.key,
     required this.onStay,
     required this.onForfeit,
+    this.isWaitingLobby = false,
   });
 
   static Future<bool?> show({
     required BuildContext context,
     required VoidCallback onForfeit,
+    bool isWaitingLobby = false,
   }) {
     return showDialog<bool>(
       context: context,
       barrierDismissible: false,
       builder: (ctx) => ArenaQuitMatchDialog(
+        isWaitingLobby: isWaitingLobby,
         onStay: () => Navigator.of(ctx).pop(false),
         onForfeit: () {
           Navigator.of(ctx).pop(true);
@@ -59,23 +63,23 @@ class ArenaQuitMatchDialog extends StatelessWidget {
                 width: 64.r,
                 height: 64.r,
                 decoration: BoxDecoration(
-                  color: AppColors.rose500.withValues(alpha: 0.12),
+                  color: (isWaitingLobby ? const Color(0xFFF59E0B) : AppColors.rose500).withValues(alpha: 0.12),
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: AppColors.rose500.withValues(alpha: 0.25),
+                    color: (isWaitingLobby ? const Color(0xFFF59E0B) : AppColors.rose500).withValues(alpha: 0.25),
                     width: 2.r,
                   ),
                 ),
                 child: Icon(
-                  LucideIcons.alertTriangle,
+                  isWaitingLobby ? LucideIcons.doorOpen : LucideIcons.alertTriangle,
                   size: 28.sp,
-                  color: AppColors.rose500,
+                  color: isWaitingLobby ? const Color(0xFFF59E0B) : AppColors.rose500,
                 ),
               ),
             ),
             SizedBox(height: 18.h),
             Text(
-              'Forfeit 1v1 Arena Duel?',
+              isWaitingLobby ? 'Cancel Room Lobby?' : 'Forfeit 1v1 Arena Duel?',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -86,7 +90,9 @@ class ArenaQuitMatchDialog extends StatelessWidget {
             ),
             SizedBox(height: 8.h),
             Text(
-              'Leaving mid-match will immediately count as a forfeit defeat. Your 30-coin stake will be transferred to your opponent.',
+              isWaitingLobby
+                  ? 'No opponent has joined yet. Leaving now will dissolve the room and refund your 30-coin stake immediately.'
+                  : 'Leaving mid-match will immediately count as a forfeit defeat. Your 30-coin stake will be transferred to your opponent.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -96,7 +102,7 @@ class ArenaQuitMatchDialog extends StatelessWidget {
               ),
             ),
             SizedBox(height: 22.h),
-            // Primary Action: Stay & Fight
+            // Primary Action
             ElevatedButton(
               onPressed: onStay,
               style: ElevatedButton.styleFrom(
@@ -111,10 +117,14 @@ class ArenaQuitMatchDialog extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(LucideIcons.swords, size: 16.sp, color: Colors.white),
+                  Icon(
+                    isWaitingLobby ? LucideIcons.clock : LucideIcons.swords,
+                    size: 16.sp,
+                    color: Colors.white,
+                  ),
                   SizedBox(width: 8.w),
                   Text(
-                    'Stay & Fight',
+                    isWaitingLobby ? 'Keep Waiting' : 'Stay & Fight',
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 14.sp,
@@ -125,24 +135,28 @@ class ArenaQuitMatchDialog extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10.h),
-            // Secondary Action: Forfeit
+            // Secondary Action
             OutlinedButton(
               onPressed: onForfeit,
               style: OutlinedButton.styleFrom(
-                foregroundColor: AppColors.rose500,
-                side: BorderSide(color: AppColors.rose500.withValues(alpha: 0.4)),
+                foregroundColor: isWaitingLobby ? textSecondary : AppColors.rose500,
+                side: BorderSide(
+                  color: isWaitingLobby
+                      ? borderColor
+                      : AppColors.rose500.withValues(alpha: 0.4),
+                ),
                 padding: EdgeInsets.symmetric(vertical: 12.h),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14.r),
                 ),
               ),
               child: Text(
-                'Forfeit Match (-30 🪙)',
+                isWaitingLobby ? 'Cancel Lobby (Refund 30 🪙)' : 'Forfeit Match (-30 🪙)',
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 13.sp,
                   fontWeight: FontWeight.w700,
-                  color: AppColors.rose500,
+                  color: isWaitingLobby ? textSecondary : AppColors.rose500,
                 ),
               ),
             ),
