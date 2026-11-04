@@ -148,11 +148,7 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen>
             quest.correctAnswer?.toLowerCase());
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = true;
-      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
       hapticService.error();
       soundService.playWrong();

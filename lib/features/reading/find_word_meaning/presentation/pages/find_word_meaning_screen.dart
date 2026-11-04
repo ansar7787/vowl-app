@@ -80,8 +80,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
     _pendingSelectedIndex.value = index;
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
+      playCorrectAudio();
       _showSentenceBuilder.value = true;
       Future.delayed(const Duration(milliseconds: 600), () {
         if (mounted && _scrollController.hasClients) {
@@ -102,7 +101,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
 
   void _onSentenceBuilderComplete() {
     _showSentenceBuilder.value = false;
-    context.read<ReadingBloc>().add(const SubmitAnswer(true));
+    submitCorrectAnswer();
   }
 
   @override

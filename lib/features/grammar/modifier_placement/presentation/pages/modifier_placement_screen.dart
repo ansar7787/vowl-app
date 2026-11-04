@@ -106,8 +106,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen>
     bool isCorrect = normResult == normAnswer;
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
+      playCorrectAudio();
       _assembledSentence.value = quest.correctAnswer;
       _pendingJigsaw.value = true;
 

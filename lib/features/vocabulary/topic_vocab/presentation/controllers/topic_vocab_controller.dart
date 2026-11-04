@@ -180,12 +180,8 @@ class TopicVocabController extends ChangeNotifier {
     notifyListeners();
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
       onSubmitAnswer(true);
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
       onSubmitAnswer(false, quest: currentQuest, userAnswer: word);
     }
   }

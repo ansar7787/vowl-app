@@ -137,12 +137,8 @@ class WordFormationController extends ChangeNotifier {
     notifyListeners();
 
     if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
       onSubmitAnswer(true);
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
       onSubmitAnswer(false, quest: lastQuest, userAnswer: wrongWord);
     }
   }

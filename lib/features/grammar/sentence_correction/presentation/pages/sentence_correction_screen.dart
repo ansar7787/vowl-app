@@ -191,8 +191,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen>
     _optionSelectionCorrect.value = isOptionCorrect;
 
     if (overallCorrect) {
-      hapticService.heavy();
-      soundService.playCorrect();
+      playCorrectAudio();
       isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
       // Wait for Phase 2

@@ -210,11 +210,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen>
     if (isAnsweredNotifier.value) return;
 
     if (nailedIt) {
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = true;
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<EliteMasteryBloc>().add(const SubmitEliteAnswer(true));
+      submitCorrectAnswer();
     } else {
       final expectedText =
           (quest.sentences != null &&

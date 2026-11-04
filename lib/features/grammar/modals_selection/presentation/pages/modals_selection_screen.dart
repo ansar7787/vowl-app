@@ -79,8 +79,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen>
     bool isCorrect = _selectedIndex.value == correctIndex;
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
+      playCorrectAudio();
       _pendingJigsaw.value = true;
 
       // Auto-scroll to show the second stage (TypeToConfirm Jigsaw) at the bottom

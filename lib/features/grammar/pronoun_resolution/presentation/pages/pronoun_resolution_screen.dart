@@ -88,8 +88,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen>
     bool isCorrect = nodeIndex == correctIndex;
 
     if (isCorrect) {
-      hapticService.heavy();
-      soundService.playCorrect();
+      playCorrectAudio();
       _targetIndex.value = nodeIndex;
 
       if (hasSecondStage) {

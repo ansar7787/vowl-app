@@ -225,9 +225,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
       return;
     }
 
-    hapticService.success();
-    soundService.playCorrect();
-
+    playCorrectAudio();
     _showSpeakToConfirm.value = true;
     _isSubmitting.value = false;
   }

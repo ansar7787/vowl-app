@@ -90,8 +90,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen>
         connector.trim().toLowerCase() == targetAnswer.trim().toLowerCase();
 
     if (isCorrect) {
-      hapticService.heavy();
-      soundService.playCorrect();
+      playCorrectAudio();
       _draggingConnector.value = connector;
       _pendingTypeSubmit.value = true;
       Future.delayed(const Duration(milliseconds: 100), () {

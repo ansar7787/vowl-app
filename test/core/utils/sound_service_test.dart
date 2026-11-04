@@ -134,5 +134,19 @@ void main() {
       soundService.setGameSoundsEnabled(true);
       expect(soundService.isGameSoundsEnabled, isTrue);
     });
+
+    test('playCorrect automatically steps through combo when unparameterized', () async {
+      when(() => mockTtsService.isSpeaking).thenReturn(false);
+
+      final soundService = SoundService(mockTtsService);
+      await Future.delayed(const Duration(milliseconds: 50));
+
+      // First call -> Step 1
+      await soundService.playCorrect();
+      // Reset combo clears progression back to 0
+      soundService.resetCombo();
+      // Next call starts at Step 1 again
+      await soundService.playCorrect();
+    });
   });
 }

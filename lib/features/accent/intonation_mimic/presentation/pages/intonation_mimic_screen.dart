@@ -152,8 +152,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
     bool isCorrect = index == correct;
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
+      playCorrectAudio();
       isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
       // Wait for Phase 2

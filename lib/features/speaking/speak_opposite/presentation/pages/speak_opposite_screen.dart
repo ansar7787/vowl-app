@@ -118,9 +118,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
     isCorrectNotifier.value = nailedIt;
 
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<SpeakingBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
       hapticService.error();
       soundService.playWrong();

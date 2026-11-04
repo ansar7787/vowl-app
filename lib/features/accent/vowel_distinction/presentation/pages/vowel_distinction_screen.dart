@@ -132,8 +132,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen>
     bool isCorrect = index == correct;
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
+      playCorrectAudio();
       isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
       // Do NOT submit yet. Wait for Phase 2.

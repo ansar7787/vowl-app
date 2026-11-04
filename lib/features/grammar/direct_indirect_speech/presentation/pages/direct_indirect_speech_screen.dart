@@ -113,8 +113,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
     bool isCorrect = index == correctIndex;
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
+      playCorrectAudio();
       isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
       _rotation.value = 3.14159265359;

@@ -31,11 +31,15 @@ abstract class SoundService {
 
   /// Plays success audio feedback with dynamic harmonic step according to [comboStep].
   ///
+  /// - Step 0 (default / omitted): Automatically advances within the active 3-question level (1 -> 2 -> 3)
   /// - Step 1: Base C5 marimba chime (sounds/correct_1.mp3)
   /// - Step 2: Ascending E5 major third bell (sounds/correct_2.mp3)
   /// - Step 3: Peak G5 fifth chime (sounds/correct_3.mp3)
   /// - Step 4+: High octave C6 frenzy arpeggio (sounds/correct_frenzy.mp3)
-  Future<void> playCorrect({int comboStep = 1});
+  Future<void> playCorrect({int comboStep = 0});
+
+  /// Resets the internal question combo counter.
+  void resetCombo();
 
   /// Plays standard error/fail audio feedback effect.
   Future<void> playWrong();
@@ -138,6 +142,7 @@ class SoundServiceImpl implements SoundService {
 
   DateTime? _lastCorrectPlayTime;
   int _lastComboStep = 0;
+  int _autoComboStep = 0;
   DateTime? _lastWrongPlayTime;
 
   void _logError(String message, {Object? error}) {
@@ -233,22 +238,39 @@ class SoundServiceImpl implements SoundService {
   }
 
   @override
-  Future<void> playCorrect({int comboStep = 1}) async {
+  void resetCombo() {
+    _autoComboStep = 0;
+    _lastComboStep = 0;
+  }
+
+  @override
+  Future<void> playCorrect({int comboStep = 0}) async {
     await _initFuture;
     if (_isMuted) return;
+
+    final int resolvedStep;
+    if (comboStep <= 0) {
+      _autoComboStep = (_autoComboStep % 3) + 1;
+      resolvedStep = _autoComboStep;
+    } else {
+      resolvedStep = comboStep;
+      if (comboStep <= 3) {
+        _autoComboStep = comboStep;
+      }
+    }
 
     final now = DateTime.now();
     // Debounce duplicate triggers within 250ms (e.g. UI mixin + BLoC double trigger):
     // If a request arrives within 250ms of an active playback:
-    // - If it has a lower or equal comboStep, skip it to prevent cutting off the active chord
+    // - If it has a lower or equal resolvedStep, skip it to prevent cutting off the active chord
     if (_lastCorrectPlayTime != null &&
         now.difference(_lastCorrectPlayTime!).inMilliseconds < 250) {
-      if (comboStep <= _lastComboStep) {
+      if (resolvedStep <= _lastComboStep) {
         return;
       }
     }
     _lastCorrectPlayTime = now;
-    _lastComboStep = comboStep;
+    _lastComboStep = resolvedStep;
 
     try {
       await _player.stop();
@@ -259,11 +281,11 @@ class SoundServiceImpl implements SoundService {
 
       // Select dedicated harmonic audio asset (zero runtime pitch shift required, 100% device safe)
       final String assetToPlay;
-      if (comboStep <= 1) {
+      if (resolvedStep <= 1) {
         assetToPlay = assetCorrect1;
-      } else if (comboStep == 2) {
+      } else if (resolvedStep == 2) {
         assetToPlay = assetCorrect2;
-      } else if (comboStep == 3) {
+      } else if (resolvedStep == 3) {
         assetToPlay = assetCorrect3;
       } else {
         assetToPlay = assetCorrectFrenzy;
@@ -283,6 +305,7 @@ class SoundServiceImpl implements SoundService {
 
   @override
   Future<void> playWrong() async {
+    resetCombo();
     await _initFuture;
     if (_isMuted) return;
 
@@ -345,6 +368,7 @@ class SoundServiceImpl implements SoundService {
 
   @override
   Future<void> playLevelComplete() async {
+    resetCombo();
     await _initFuture;
     if (_isMuted || !_isGameSoundsEnabled) return;
     try {

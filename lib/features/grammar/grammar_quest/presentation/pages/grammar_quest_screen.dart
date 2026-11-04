@@ -70,8 +70,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
     }
 
     if (correct) {
-      hapticService.success();
-      soundService.playCorrect();
+      playCorrectAudio();
       _pendingTypeSubmit.value = true;
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted && _scrollController.hasClients) {

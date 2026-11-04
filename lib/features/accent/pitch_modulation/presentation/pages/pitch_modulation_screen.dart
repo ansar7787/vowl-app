@@ -203,8 +203,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
     bool isCorrect = index == correct;
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
+      playCorrectAudio();
       _state.value = state.copyWith(
         selectedIndex: index,
         dialRotation: index == 0 ? -0.8 : 0.8,
@@ -242,10 +241,8 @@ class _PitchModulationScreenState extends State<PitchModulationScreen>
     _state.value = state.copyWith(isAnswered: true, isCorrect: nailedIt);
 
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
       context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
-      context.read<AccentBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
       final currentQuest = _lastQuest ??
           ((context.read<AccentBloc>().state is AccentLoaded)

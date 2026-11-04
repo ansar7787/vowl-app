@@ -94,8 +94,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen>
     _selectedIndex.value = index;
 
     if (index == correct) {
-      hapticService.success();
-      soundService.playCorrect();
+      playCorrectAudio();
       isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
       // Wait for Phase 2

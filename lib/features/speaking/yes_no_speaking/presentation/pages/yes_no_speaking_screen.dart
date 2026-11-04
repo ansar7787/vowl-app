@@ -204,9 +204,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen>
 
     if (nailedIt) {
       showConfettiNotifier.value = true;
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<SpeakingBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
       hapticService.error();
       soundService.playWrong();

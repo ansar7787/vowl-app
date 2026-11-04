@@ -81,8 +81,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
     bool isCorrect = article.toLowerCase() == correctAnswer.toLowerCase();
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
+      playCorrectAudio();
       _selectedArticle.value = article;
       _pendingJigsaw.value = true;
       _scrollToBottom();

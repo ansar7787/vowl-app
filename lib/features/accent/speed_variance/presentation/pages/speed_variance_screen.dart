@@ -166,8 +166,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
     bool isCorrect = index == correct;
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
+      playCorrectAudio();
       isFirstStagePassedNotifier.value = true;
       _timerKey.currentState?.stop();
       _scrollToBottom();

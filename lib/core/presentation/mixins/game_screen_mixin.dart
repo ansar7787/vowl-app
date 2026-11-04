@@ -37,6 +37,16 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
   /// Tracks macro session streak across consecutive levels until a mistake is made.
   static int _sessionHotStreak = 0;
 
+  /// Prevents duplicate audio playback when both stage-1 selection and stage-2 confirmation occur.
+  bool _audioPlayedForCurrentQuestion = false;
+
+  /// Returns the current question step within the active level (1, 2, 3, or 4 for frenzy).
+  int get currentComboStep {
+    if (_sessionHotStreak >= 5) return 4;
+    final int target = lastProcessedIndex >= 0 ? lastProcessedIndex + 1 : _levelQuestionIndex + 1;
+    return target.clamp(1, 3);
+  }
+
   @visibleForTesting
   static void resetSessionHotStreak() {
     _sessionHotStreak = 0;
@@ -121,6 +131,9 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
       if (isNewQuestion && currentIndex == 0) {
         _levelQuestionIndex = 0;
       }
+      if (isNewQuestion) {
+        _audioPlayedForCurrentQuestion = false;
+      }
       lastProcessedIndex = currentIndex;
       isAnsweredNotifier.value = isAnswered;
       if (!isAnswered) {
@@ -144,6 +157,7 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
 
     _levelQuestionIndex = 0;
     _sessionHotStreak = 0;
+    _audioPlayedForCurrentQuestion = false;
 
     hapticService.error();
     soundService.playWrong();
@@ -174,19 +188,19 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
     isCorrectNotifier.value = false;
   }
 
-  void submitSharedCorrectAnswer() {
-    if (isAnsweredNotifier.value) return;
-    timerKey?.currentState?.stop();
+  /// Triggers the dedicated harmonic audio feedback for a correct intermediate or final answer.
+  /// Prevents duplicate audio playback if both stage-1 tap and stage-2 confirmation trigger audio.
+  void playCorrectAudio({int? comboStep}) {
+    if (_audioPlayedForCurrentQuestion) return;
+    _audioPlayedForCurrentQuestion = true;
 
     _levelQuestionIndex++;
     _sessionHotStreak++;
 
     hapticService.success();
-    // Dual-Layer Dopamine: Dedicated harmonic ladder (Q1: Step 1, Q2: Step 2, Q3: Step 3, 5+ Streak: Frenzy)
-    final int effectiveCombo = _sessionHotStreak >= 5 ? 4 : _levelQuestionIndex;
+    final int effectiveCombo = comboStep ?? (_sessionHotStreak >= 5 ? 4 : _levelQuestionIndex);
     soundService.playCorrect(comboStep: effectiveCombo);
 
-    // Macro Hot Streak Celebrations across levels (5 in a row, 10 in a row)
     if (_sessionHotStreak == 5) {
       if (di.sl.isRegistered<PraiseService>()) {
         di.sl<PraiseService>().givePraise(context: PraiseContext.hotStreak5);
@@ -195,6 +209,15 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
       if (di.sl.isRegistered<PraiseService>()) {
         di.sl<PraiseService>().givePraise(context: PraiseContext.hotStreak10);
       }
+    }
+  }
+
+  void submitSharedCorrectAnswer() {
+    if (isAnsweredNotifier.value) return;
+    timerKey?.currentState?.stop();
+
+    if (!_audioPlayedForCurrentQuestion) {
+      playCorrectAudio();
     }
 
     isAnsweredNotifier.value = true;

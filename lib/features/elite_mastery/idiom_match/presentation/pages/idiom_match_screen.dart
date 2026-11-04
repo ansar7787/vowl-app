@@ -141,12 +141,8 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
     if (isAnsweredNotifier.value) return;
 
     if (nailedIt) {
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = true;
-      hapticService.success();
-      soundService.playCorrect();
       context.read<EliteMasteryBloc>().add(const EliteSpeakConfirmed(5));
-      context.read<EliteMasteryBloc>().add(const SubmitEliteAnswer(true));
+      submitCorrectAnswer();
     } else {
       final expectedText =
           quest.options != null &&

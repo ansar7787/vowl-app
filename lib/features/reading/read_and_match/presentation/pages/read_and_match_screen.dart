@@ -180,11 +180,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen>
       }
 
       if (isCorrect) {
-        hapticService.success();
-        soundService.playCorrect();
-        isAnsweredNotifier.value = true;
-        isCorrectNotifier.value = true;
-        context.read<ReadingBloc>().add(const SubmitAnswer(true));
+        submitCorrectAnswer();
       } else {
         submitWrongAnswer(quest: quest, userAnswer: 'Mismatched pairs');
         Future.delayed(const Duration(milliseconds: 1500), () {

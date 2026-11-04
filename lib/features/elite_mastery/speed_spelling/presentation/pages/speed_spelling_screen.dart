@@ -139,11 +139,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
     _attempts.value++;
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = true;
-      context.read<EliteMasteryBloc>().add(const SubmitEliteAnswer(true));
+      submitCorrectAnswer();
     } else {
       submitWrongAnswer(quest: quest, userAnswer: _currentInput.value);
     }
