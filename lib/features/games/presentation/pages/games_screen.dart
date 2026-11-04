@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -1018,8 +1019,8 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
       final repo = di.sl<ArenaRepository>();
       final session = await repo.createRoomCode(currentUser: widget.user);
       final message = '⚔️ I bet 30 coins you can\'t beat my score on Vowl!\n'
-          'Enter room code ${session.roomCode} to duel me now:\n'
-          'https://vowl.app/duel/${session.roomCode}';
+          'Enter room code ${session.roomCode} in Vowl to duel me now, or tap:\n'
+          'https://vowl-acbc5.web.app/duel/${session.roomCode}';
       await SharePlus.instance.share(
         ShareParams(
           text: message,
@@ -1034,6 +1035,170 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
     } finally {
       if (mounted) setState(() => _isLoading = false);
     }
+  }
+
+  void _showJoinRoomDialog() {
+    if (widget.user.coins < 30) {
+      _showRefuelDialog();
+      return;
+    }
+
+    final controller = TextEditingController();
+    bool isJoining = false;
+
+    showDialog(
+      context: context,
+      builder: (dialogCtx) => StatefulBuilder(
+        builder: (ctx, setDialogState) {
+          final isDark = Theme.of(ctx).brightness == Brightness.dark;
+          final isMidnight = isDark && Theme.of(ctx).scaffoldBackgroundColor == Colors.black;
+          final cardBg = isMidnight ? AppColors.midnightSurface : (isDark ? AppColors.slate800 : Colors.white);
+          final textPrimary = isDark ? Colors.white : AppColors.slate900;
+          final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
+          final borderCol = isDark ? AppColors.slate700 : AppColors.slate200;
+
+          return Dialog(
+            backgroundColor: cardBg,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
+            child: Padding(
+              padding: EdgeInsets.all(20.r),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(8.r),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        child: Icon(LucideIcons.swords, color: const Color(0xFFF59E0B), size: 18.sp),
+                      ),
+                      SizedBox(width: 10.w),
+                      Text(
+                        'Join 1v1 Arena Duel',
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w800,
+                          color: textPrimary,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 12.h),
+                  Text(
+                    'Enter the room code shared by your friend to join the 30-coin duel:',
+                    style: TextStyle(fontSize: 12.sp, color: textSecondary, height: 1.4),
+                  ),
+                  SizedBox(height: 16.h),
+                  TextField(
+                    controller: controller,
+                    textCapitalization: TextCapitalization.characters,
+                    style: TextStyle(
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 1.5,
+                      color: textPrimary,
+                    ),
+                    decoration: InputDecoration(
+                      hintText: 'e.g. VOWL-DUEL-882',
+                      hintStyle: TextStyle(
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w500,
+                        letterSpacing: 1,
+                        color: textSecondary.withValues(alpha: 0.6),
+                      ),
+                      filled: true,
+                      fillColor: isDark ? const Color(0xFF070A12) : const Color(0xFFF1F5F9),
+                      contentPadding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.r),
+                        borderSide: BorderSide(color: borderCol),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.r),
+                        borderSide: BorderSide(color: borderCol),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.r),
+                        borderSide: const BorderSide(color: AppColors.indigo500, width: 1.5),
+                      ),
+                      suffixIcon: IconButton(
+                        icon: Icon(LucideIcons.clipboard, size: 16.sp, color: textSecondary),
+                        onPressed: () async {
+                          final clip = await Clipboard.getData(Clipboard.kTextPlain);
+                          if (clip?.text != null) {
+                            controller.text = clip!.text!.trim().toUpperCase();
+                          }
+                        },
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 18.h),
+                  ElevatedButton(
+                    onPressed: isJoining
+                        ? null
+                        : () async {
+                            final code = controller.text.trim().toUpperCase();
+                            if (code.isEmpty) return;
+
+                            setDialogState(() => isJoining = true);
+                            try {
+                              final repo = di.sl<ArenaRepository>();
+                              final session = await repo.joinRoom(
+                                roomCode: code,
+                                currentUser: widget.user,
+                              );
+                              if (dialogCtx.mounted) Navigator.of(dialogCtx).pop();
+                              if (mounted) {
+                                Navigator.of(context).push(ArenaDuelScreen.route(session: session));
+                              }
+                            } catch (e) {
+                              setDialogState(() => isJoining = false);
+                              if (mounted) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text('Could not join room: ${e.toString().replaceAll("Exception: ", "")}'),
+                                    backgroundColor: AppColors.rose500,
+                                  ),
+                                );
+                              }
+                            }
+                          },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFF59E0B),
+                      foregroundColor: Colors.white,
+                      padding: EdgeInsets.symmetric(vertical: 12.h),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
+                    ),
+                    child: isJoining
+                        ? SizedBox(
+                            width: 18.r,
+                            height: 18.r,
+                            child: const CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                          )
+                        : Text(
+                            'Enter Duel (30🪙)',
+                            style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w800),
+                          ),
+                  ),
+                  SizedBox(height: 6.h),
+                  TextButton(
+                    onPressed: () => Navigator.of(dialogCtx).pop(),
+                    child: Text(
+                      'Cancel',
+                      style: TextStyle(fontSize: 12.sp, color: textSecondary),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
+    );
   }
 
   @override
@@ -1139,65 +1304,62 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
               ],
             ),
             SizedBox(height: 14.h),
+            ScaleButton(
+              onTap: _isLoading ? null : _startQuickMatch,
+              child: Container(
+                width: double.infinity,
+                height: 42.h,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: AppColors.amber500,
+                  borderRadius: BorderRadius.circular(12.r),
+                ),
+                child: _isLoading
+                    ? SizedBox(
+                        width: 18.r,
+                        height: 18.r,
+                        child: const CircularProgressIndicator(
+                          strokeWidth: 2,
+                          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                        ),
+                      )
+                    : FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 8.w),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                LucideIcons.zap,
+                                color: Colors.white,
+                                size: 14.sp,
+                              ),
+                              SizedBox(width: 6.w),
+                              Text(
+                                'Quick Duel (30🪙)',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 13.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+              ),
+            ),
+            SizedBox(height: 8.h),
             Row(
               children: [
                 Expanded(
-                  flex: 3,
                   child: ScaleButton(
-                    onTap: _isLoading ? null : _startQuickMatch,
+                    onTap: _isLoading ? null : _showJoinRoomDialog,
                     child: Container(
-                      height: 40.h,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: AppColors.amber500,
-                        borderRadius: BorderRadius.circular(12.r),
-                      ),
-                      child: _isLoading
-                          ? SizedBox(
-                              width: 18.r,
-                              height: 18.r,
-                              child: const CircularProgressIndicator(
-                                strokeWidth: 2,
-                                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                              ),
-                            )
-                          : FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 8.w),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(
-                                      LucideIcons.zap,
-                                      color: Colors.white,
-                                      size: 14.sp,
-                                    ),
-                                    SizedBox(width: 6.w),
-                                    Text(
-                                      'Quick Duel (30🪙)',
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 13.sp,
-                                        fontWeight: FontWeight.w700,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                    ),
-                  ),
-                ),
-                SizedBox(width: 10.w),
-                Expanded(
-                  flex: 2,
-                  child: ScaleButton(
-                    onTap: _isLoading ? null : _createDuelInvite,
-                    child: Container(
-                      height: 40.h,
+                      height: 38.h,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         color: widget.isDark
@@ -1212,7 +1374,54 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
                       child: FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 6.w),
+                          padding: EdgeInsets.symmetric(horizontal: 8.w),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                LucideIcons.keyRound,
+                                color: titleColor,
+                                size: 13.sp,
+                              ),
+                              SizedBox(width: 5.w),
+                              Text(
+                                'Join Code',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: titleColor,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 8.w),
+                Expanded(
+                  child: ScaleButton(
+                    onTap: _isLoading ? null : _createDuelInvite,
+                    child: Container(
+                      height: 38.h,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: widget.isDark
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : AppColors.slate100,
+                        borderRadius: BorderRadius.circular(12.r),
+                        border: Border.all(
+                          color: borderColor,
+                          width: 1.r,
+                        ),
+                      ),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 8.w),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -1222,9 +1431,9 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
                                 color: titleColor,
                                 size: 13.sp,
                               ),
-                              SizedBox(width: 4.w),
+                              SizedBox(width: 5.w),
                               Text(
-                                'Invite',
+                                'Invite Friend',
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 12.sp,

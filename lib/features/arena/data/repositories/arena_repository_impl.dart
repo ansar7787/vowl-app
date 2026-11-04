@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vowl/features/auth/data/models/user_model.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/arena/data/services/arena_curriculum_engine.dart';
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
@@ -139,43 +138,19 @@ class ArenaRepositoryImpl implements ArenaRepository {
         // Fall through to 3-second smart fallback
       }
 
-      // 3. Fallback: Select real player from Leaderboard as Ghost Rival (0s wait time!)
-      var candidates = leaderboardUsers.where((u) => u.id != currentUser.id).toList();
-      if (candidates.isEmpty) {
-        try {
-          final cacheDoc = await _firestore.collection('leaderboard_cache').doc('global').get();
-          final rawUsers = cacheDoc.data()?['users'];
-          if (cacheDoc.exists && rawUsers is List) {
-            final list = rawUsers
-                .whereType<Map>()
-                .map((u) => UserModel.fromMap(Map<String, dynamic>.from(u)))
-                .where((u) => u.id.isNotEmpty && u.id != currentUser.id)
-                .toList();
-            if (list.isNotEmpty) candidates = list;
-          }
-        } catch (_) {}
-      }
+      // 3. Fallback: Instant matchmaking with transparent Vowl AI Challenger (0s wait time)
+      const rivalName = 'Vowl AI Challenger';
+      const accuracy = 0.80;
+      final roomCode = 'VOWL-AI-${(Random().nextInt(900) + 100)}';
 
-      final rival = candidates.isNotEmpty
-          ? candidates[Random().nextInt(candidates.length)]
-          : null;
-
-      final rivalName = rival?.safeDisplayName ?? 'Global Challenger';
-      final rivalPhoto = rival?.photoUrl;
-      final rivalRank = (rival != null && candidates.isNotEmpty)
-          ? candidates.indexOf(rival) + 1
-          : 10;
-      final accuracy = (0.90 - (rivalRank * 0.01)).clamp(0.65, 0.95);
-
-      final roomCode = 'VOWL-GHOST-${(Random().nextInt(900) + 100)}';
       return ArenaDuelSession(
         roomCode: roomCode,
         hostId: currentUser.id,
         hostName: currentUser.safeDisplayName,
         hostPhotoUrl: currentUser.photoUrl,
-        guestId: rival?.id ?? 'ghost_challenger',
+        guestId: 'vowl_ai_challenger',
         guestName: rivalName,
-        guestPhotoUrl: rivalPhoto,
+        guestPhotoUrl: null, // Renders dedicated AI Bot Avatar in UI
         stake: _kStakeCoins,
         pot: _kStakeCoins * 2,
         status: 'in_progress',

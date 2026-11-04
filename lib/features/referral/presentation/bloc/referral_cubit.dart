@@ -48,7 +48,7 @@ class ReferralCubit extends Cubit<ReferralState> {
   Future<void> shareCode(String code) async {
     final message = '🚀 Join me on Vowl to level up your English skills!\n'
         'Use my invite code $code to unlock 100 Bonus Coins + 1 Day VIP Trial immediately:\n'
-        'https://vowl.app/invite/$code';
+        'https://vowl-acbc5.web.app/invite/$code';
 
     await SharePlus.instance.share(
       ShareParams(

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Invitation - Vowl English Learning</title>
+    <meta name="description" content="Claim 100 free coins and VIP access on Vowl English Learning app!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-dark: #3730A3;
+            --emerald: #10B981;
+            --amber: #F59E0B;
+            --dark: #0A0F1D;
+            --surface: #131A2B;
+            --border: rgba(255, 255, 255, 0.1);
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: radial-gradient(circle at 50% 0%, #1E1B4B 0%, #0A0F1D 70%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 460px;
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 32px 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 60px -15px rgba(79, 70, 229, 0.25);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-accent {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.4) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .brand {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: white;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+        }
+        .brand span { color: var(--amber); }
+
+        .icon-shield {
+            width: 76px;
+            height: 76px;
+            background: linear-gradient(135deg, #4F46E5, #818CF8);
+            border-radius: 50%;
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            font-size: 34px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(79, 70, 229, 0.15);
+            color: #A5B4FC;
+            border: 1px solid rgba(79, 70, 229, 0.35);
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 1.85rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .code-box {
+            background: #070A12;
+            border: 2px dashed rgba(79, 70, 229, 0.5);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 22px;
+        }
+        .code-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #94A3B8;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .code-value {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #818CF8;
+            letter-spacing: 2px;
+            user-select: all;
+            margin-bottom: 10px;
+            word-break: break-all;
+        }
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .btn-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 20px;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #4F46E5, #6366F1);
+            color: white;
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
+        }
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 12px 25px rgba(79, 70, 229, 0.45);
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .instructions {
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .instructions strong { color: white; }
+        .instructions ol { margin-left: 18px; }
+
+        .testing-link {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.78rem;
+            color: #818CF8;
+            text-decoration: none;
+        }
+        .testing-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="glow-accent"></div>
+        <div class="brand">VOWL<span>.</span></div>
+
+        <div class="icon-shield">🎁</div>
+
+        <div class="badge">VIP Referral Pass</div>
+        <h1>+100 Coins &amp; VIP Access</h1>
+        <p class="subtitle">You've been invited to join Vowl. Use this ambassador pass to unlock starter coins and compete on the global leaderboard.</p>
+
+        <div class="code-box">
+            <div class="code-label">Invite Code</div>
+            <div class="code-value" id="inviteCodeDisplay">LOADING...</div>
+            <button class="copy-btn" id="copyBtn" onclick="copyCode()">📋 Copy Code</button>
+        </div>
+
+        <div class="btn-stack">
+            <a class="btn btn-primary" id="openAppBtn" href="#">
+                🎁 Claim in Vowl App
+            </a>
+            <a class="btn btn-secondary" id="playStoreBtn" href="https://play.google.com/store/apps/details?id=com.vowl.app" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3.609 1.814L13.793 12 3.61 22.186c-.234-.236-.379-.57-.379-.942V2.756c0-.372.145-.706.378-.942zm11.24 11.24l2.094 2.094-11.83 6.83 9.736-8.924zm0-2.108L5.113 2.022l11.83 6.83-2.094 2.094zm1.485 1.054l3.774 2.18c.65.376.65.989 0 1.365l-3.774 2.18-2.37-2.37 2.37-2.355z"/>
+                </svg>
+                Get Vowl on Google Play
+            </a>
+        </div>
+
+        <div class="instructions">
+            <strong>How to claim your bonus:</strong>
+            <ol>
+                <li>Tap <strong>Claim in Vowl App</strong> above.</li>
+                <li>Or open Vowl, go to <strong>Profile &gt; Ambassador Hub</strong>, and enter your code.</li>
+                <li>Instantly receive +100 bonus coins and start your English adventure!</li>
+            </ol>
+        </div>
+
+        <a class="testing-link" href="https://play.google.com/apps/testing/com.vowl.app" target="_blank" rel="noopener">
+            Enrolled in Google Play Closed Testing? Click here
+        </a>
+    </div>
+
+    <script>
+        function getInviteCode() {
+            const parts = window.location.pathname.split('/').filter(Boolean);
+            if (parts.length >= 2 && parts[0].toLowerCase() === 'invite') {
+                return parts[1].toUpperCase();
+            }
+            const params = new URLSearchParams(window.location.search);
+            if (params.has('code')) {
+                return params.get('code').toUpperCase();
+            }
+            return 'VOWL-VIP-100';
+        }
+
+        const inviteCode = getInviteCode();
+        document.getElementById('inviteCodeDisplay').textContent = inviteCode;
+
+        const deepLinkUrl = 'vowl://invite/' + encodeURIComponent(inviteCode);
+        document.getElementById('openAppBtn').href = deepLinkUrl;
+
+        // Auto-attempt redirect to the app
+        window.onload = function() {
+            setTimeout(function() {
+                window.location.href = deepLinkUrl;
+            }, 300);
+        };
+
+        function copyCode() {
+            navigator.clipboard.writeText(inviteCode).then(function() {
+                const btn = document.getElementById('copyBtn');
+                btn.textContent = '✓ Copied!';
+                setTimeout(function() {
+                    btn.textContent = '📋 Copy Code';
+                }, 2000);
+            }).catch(function() {
+                alert('Invite code: ' + inviteCode);
+            });
+        }
+    </script>
+</body>
+</html>
+

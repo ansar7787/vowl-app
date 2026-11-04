@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:share_plus/share_plus.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/features/social_share/domain/entities/share_card_data.dart';
+import 'package:vowl/features/social_share/presentation/widgets/share_card_preview_modal.dart';
 
 class ArenaResultDialog extends StatelessWidget {
   final bool isWinner;
@@ -23,6 +24,7 @@ class ArenaResultDialog extends StatelessWidget {
   final String? myPhotoUrl;
   final int payoutCoins;
   final String roomCode;
+  final bool isAiRival;
   final VoidCallback onRematch;
   final VoidCallback onClose;
 
@@ -44,6 +46,7 @@ class ArenaResultDialog extends StatelessWidget {
     this.myPhotoUrl,
     required this.payoutCoins,
     this.roomCode = '',
+    this.isAiRival = false,
     required this.onRematch,
     required this.onClose,
   });
@@ -247,26 +250,57 @@ class ArenaResultDialog extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              CircleAvatar(
-                                radius: 10.r,
-                                backgroundColor: !isWinner
-                                    ? AppColors.emerald500.withValues(alpha: 0.15)
-                                    : (isDark ? AppColors.slate800 : const Color(0xFFE2E8F0)),
-                                backgroundImage: rivalPhotoUrl != null && rivalPhotoUrl!.isNotEmpty
-                                    ? NetworkImage(rivalPhotoUrl!)
-                                    : null,
-                                child: rivalPhotoUrl == null || rivalPhotoUrl!.isEmpty
-                                    ? Text(
-                                        rivalName.isNotEmpty ? rivalName[0].toUpperCase() : 'R',
-                                        style: TextStyle(
-                                          fontSize: 9.sp,
-                                          fontWeight: FontWeight.w800,
-                                          color: textPrimary,
-                                        ),
-                                      )
-                                    : null,
-                              ),
+                              if (isAiRival && (rivalPhotoUrl == null || rivalPhotoUrl!.isEmpty))
+                                Container(
+                                  width: 20.r,
+                                  height: 20.r,
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    gradient: LinearGradient(
+                                      colors: [Color(0xFF06B6D4), Color(0xFF3B82F6)],
+                                    ),
+                                  ),
+                                  child: Icon(LucideIcons.bot, size: 12.sp, color: Colors.white),
+                                )
+                              else
+                                CircleAvatar(
+                                  radius: 10.r,
+                                  backgroundColor: !isWinner
+                                      ? AppColors.emerald500.withValues(alpha: 0.15)
+                                      : (isDark ? AppColors.slate800 : const Color(0xFFE2E8F0)),
+                                  backgroundImage: rivalPhotoUrl != null && rivalPhotoUrl!.isNotEmpty
+                                      ? NetworkImage(rivalPhotoUrl!)
+                                      : null,
+                                  child: rivalPhotoUrl == null || rivalPhotoUrl!.isEmpty
+                                      ? Text(
+                                          rivalName.isNotEmpty ? rivalName[0].toUpperCase() : 'R',
+                                          style: TextStyle(
+                                            fontSize: 9.sp,
+                                            fontWeight: FontWeight.w800,
+                                            color: textPrimary,
+                                          ),
+                                        )
+                                      : null,
+                                ),
                               SizedBox(width: 4.w),
+                              if (isAiRival) ...[
+                                Container(
+                                  padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF06B6D4).withValues(alpha: 0.15),
+                                    borderRadius: BorderRadius.circular(3.r),
+                                  ),
+                                  child: Text(
+                                    'AI',
+                                    style: TextStyle(
+                                      fontSize: 7.sp,
+                                      fontWeight: FontWeight.w800,
+                                      color: const Color(0xFF06B6D4),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 3.w),
+                              ],
                               if (!isWinner) ...[
                                 Icon(LucideIcons.crown, size: 12.sp, color: const Color(0xFFF59E0B)),
                                 SizedBox(width: 2.w),
@@ -454,14 +488,17 @@ class ArenaResultDialog extends StatelessWidget {
                 ScaleButton(
                   onTap: () {
                     final code = roomCode.isNotEmpty ? roomCode : 'VOWL';
-                    final message =
-                        '⚔️ I just won a 1v1 English Duel on Vowl with $myScore points against $rivalName!\n'
-                        'Can you beat my vocabulary reflexes? Duel me now:\n'
-                        'https://vowl.app/duel/$code';
-                    SharePlus.instance.share(
-                      ShareParams(
-                        text: message,
-                        subject: '1v1 English Duel Victory!',
+                    ShareCardPreviewModal.show(
+                      context: context,
+                      data: ShareCardData.fromArenaVictory(
+                        userName: myName,
+                        userPhotoUrl: myPhotoUrl,
+                        myScore: myScore,
+                        rivalScore: rivalScore,
+                        rivalName: isAiRival ? 'Vowl AI Challenger' : rivalName,
+                        roomCode: code,
+                        payoutCoins: payoutCoins,
+                        isAiRival: isAiRival,
                       ),
                     );
                   },
@@ -481,7 +518,7 @@ class ArenaResultDialog extends StatelessWidget {
                           child: FittedBox(
                             fit: BoxFit.scaleDown,
                             child: Text(
-                              'Share Victory (Brag!)',
+                              'Share Victory Card (Photo & Code)',
                               style: TextStyle(
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.w700,

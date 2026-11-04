@@ -13,13 +13,20 @@ import 'package:vowl/features/referral/presentation/bloc/referral_state.dart';
 import 'package:vowl/features/referral/presentation/widgets/monthly_cup_leaderboard.dart';
 import 'package:vowl/features/referral/presentation/widgets/referral_claim_dialog.dart';
 import 'package:vowl/features/referral/presentation/widgets/referral_stats_card.dart';
+import 'package:vowl/features/social_share/domain/entities/share_card_data.dart';
+import 'package:vowl/features/social_share/presentation/widgets/share_card_preview_modal.dart';
 
 class ReferralHubScreen extends StatelessWidget {
-  const ReferralHubScreen({super.key});
+  final String? initialInviteCode;
 
-  static Route<void> route() {
+  const ReferralHubScreen({
+    super.key,
+    this.initialInviteCode,
+  });
+
+  static Route<void> route({String? initialInviteCode}) {
     return MaterialPageRoute(
-      builder: (_) => const ReferralHubScreen(),
+      builder: (_) => ReferralHubScreen(initialInviteCode: initialInviteCode),
     );
   }
 
@@ -36,13 +43,33 @@ class ReferralHubScreen extends StatelessWidget {
         }
         return cubit;
       },
-      child: const _ReferralHubView(),
+      child: _ReferralHubView(initialInviteCode: initialInviteCode),
     );
   }
 }
 
-class _ReferralHubView extends StatelessWidget {
-  const _ReferralHubView();
+class _ReferralHubView extends StatefulWidget {
+  final String? initialInviteCode;
+
+  const _ReferralHubView({this.initialInviteCode});
+
+  @override
+  State<_ReferralHubView> createState() => _ReferralHubViewState();
+}
+
+class _ReferralHubViewState extends State<_ReferralHubView> {
+  bool _hasTriggeredAutoClaim = false;
+
+  void _checkAutoClaim(UserEntity user) {
+    if (_hasTriggeredAutoClaim || widget.initialInviteCode == null) return;
+    if (user.hasClaimedReferral) return;
+    _hasTriggeredAutoClaim = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        _showClaimDialog(context, user, initialCode: widget.initialInviteCode);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -131,6 +158,7 @@ class _ReferralHubView extends StatelessWidget {
           }
 
           final code = state.referralCode ?? 'VOWL-XXXX';
+          _checkAutoClaim(user);
 
           return RefreshIndicator(
             onRefresh: () => context.read<ReferralCubit>().init(user),
@@ -148,7 +176,16 @@ class _ReferralHubView extends StatelessWidget {
                     hasClaimedReferral: user.hasClaimedReferral,
                     isCopied: state.copiedToClipboard,
                     onCopy: () => context.read<ReferralCubit>().copyCode(code),
-                    onShare: () => context.read<ReferralCubit>().shareCode(code),
+                    onShare: () {
+                      ShareCardPreviewModal.show(
+                        context: context,
+                        data: ShareCardData.fromReferral(
+                          userName: user.safeDisplayName,
+                          userPhotoUrl: user.photoUrl,
+                          referralCode: code,
+                        ),
+                      );
+                    },
                     onEnterCode: () => _showClaimDialog(context, user),
                   ),
 
@@ -297,7 +334,7 @@ class _ReferralHubView extends StatelessWidget {
     );
   }
 
-  void _showClaimDialog(BuildContext context, UserEntity user) {
+  void _showClaimDialog(BuildContext context, UserEntity user, {String? initialCode}) {
     final cubit = context.read<ReferralCubit>();
     showDialog(
       context: context,
@@ -305,6 +342,7 @@ class _ReferralHubView extends StatelessWidget {
         bloc: cubit,
         builder: (context, state) {
           return ReferralClaimDialog(
+            initialCode: initialCode,
             isLoading: state.isClaiming,
             errorMessage: state.claimError,
             onClaim: (code) async {

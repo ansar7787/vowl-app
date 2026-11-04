@@ -118,6 +118,7 @@ class _ArenaDuelView extends StatelessWidget {
                 myPhotoUrl: authState.user?.photoUrl,
                 payoutCoins: state.payoutCoins,
                 roomCode: state.session?.roomCode ?? '',
+                isAiRival: state.session?.isGhostRival ?? false,
                 onRematch: () {
                   Navigator.of(dialogCtx).pop();
                   if (authState.status == AuthStatus.authenticated && authState.user != null) {
@@ -168,6 +169,7 @@ class _ArenaDuelView extends StatelessWidget {
                   totalQuestions: state.session?.questions.length ?? 5,
                   timeRemaining: state.timeRemaining,
                   isDark: isDark,
+                  isAiRival: state.session?.isGhostRival ?? false,
                 ),
 
                 SizedBox(height: 16.h),

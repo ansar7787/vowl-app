@@ -15,6 +15,7 @@ class ArenaScoreHud extends StatelessWidget {
   final int totalQuestions;
   final int timeRemaining;
   final bool isDark;
+  final bool isAiRival;
 
   const ArenaScoreHud({
     super.key,
@@ -28,6 +29,7 @@ class ArenaScoreHud extends StatelessWidget {
     required this.totalQuestions,
     required this.timeRemaining,
     required this.isDark,
+    this.isAiRival = false,
   });
 
   @override
@@ -108,15 +110,81 @@ class ArenaScoreHud extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text(
-                      rivalName,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w700,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        if (isAiRival) ...[
+                          Container(
+                            padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 1.5.h),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFF06B6D4).withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(4.r),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(LucideIcons.bot, size: 9.sp, color: const Color(0xFF06B6D4)),
+                                SizedBox(width: 3.w),
+                                Text(
+                                  'AI',
+                                  style: TextStyle(
+                                    fontSize: 8.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: const Color(0xFF06B6D4),
+                                    letterSpacing: 0.5,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(width: 4.w),
+                        ] else ...[
+                          Container(
+                            padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 1.5.h),
+                            decoration: BoxDecoration(
+                              color: AppColors.emerald500.withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(4.r),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Container(
+                                  width: 5.r,
+                                  height: 5.r,
+                                  decoration: const BoxDecoration(
+                                    color: AppColors.emerald500,
+                                    shape: BoxShape.circle,
+                                  ),
+                                ),
+                                SizedBox(width: 3.w),
+                                Text(
+                                  'LIVE',
+                                  style: TextStyle(
+                                    fontSize: 8.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: AppColors.emerald500,
+                                    letterSpacing: 0.5,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(width: 4.w),
+                        ],
+                        Flexible(
+                          child: Text(
+                            rivalName,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w700,
+                              color: isDark ? Colors.white : const Color(0xFF0F172A),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     Text(
                       '$rivalScore pts',
@@ -130,7 +198,21 @@ class ArenaScoreHud extends StatelessWidget {
                 ),
               ),
               SizedBox(width: 8.w),
-              UserAvatar(photoUrl: rivalPhotoUrl, size: 36.r),
+              if (isAiRival && (rivalPhotoUrl == null || rivalPhotoUrl!.isEmpty))
+                Container(
+                  width: 36.r,
+                  height: 36.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFF06B6D4), Color(0xFF3B82F6)],
+                    ),
+                    border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
+                  ),
+                  child: Icon(LucideIcons.bot, color: Colors.white, size: 20.sp),
+                )
+              else
+                UserAvatar(photoUrl: rivalPhotoUrl, size: 36.r),
             ],
           ),
 
