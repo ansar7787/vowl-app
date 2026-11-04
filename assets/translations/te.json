@@ -220,6 +220,7 @@
     "subtitle": "150 కాయిన్లను పొందడానికి 5 కోర్ క్వెస్ట్స్ పూర్తి చేయండి",
     "title": "ప్రారంభిక ఆవిష్కరణ కొరస్కులు"
   },
+  "beginner_quest": {},
   "categories": {
     "accent": "ఉచ్చారణ",
     "all": "అందరూ",
@@ -352,15 +353,28 @@
   "connectivity": {
     "go_premium": "ప్రీమియమ్ తో ఆఫ్లైన్‌లో ఆడి",
     "no_ad_cached": "ఆఫ్లైన్‌లో ఎలాంటి ప్రకటన లభించదు. కొనసాగడానికి దయచేసి మళ్లీ కనెక్ట్ అవ్వండి.",
+    "no_ad_cached_hint": "Need bonus offline plays? Connect once to load rewarded ads or upgrade to Premium.",
     "no_internet_for_ads": "ఇంటర్నెట్ కనెక్షన్ లేదు. ప్రకటనలు చూడటానికి దయచేసి మీ నెట్‌వర్క్‌ను తనిఖీ చేయండి.",
     "offline_banner": "ఆఫ్లైన్ ఆడటం",
     "offline_banner_with_count": "ఆఫ్లైన్ లో ఆడడం · {0}/{1} ఆడినవి మిగిలింది",
+    "offline_single_play_left": "Offline · 1 play left!",
+    "offline_quota_exhausted_pill": "Offline · 0 plays left",
+    "offline_info_sheet_title": "Offline Free Plays",
+    "offline_info_sheet_quota": "{0} of {1} free offline plays left",
+    "offline_info_sheet_online_perk": "Connect to Wi-Fi or mobile data anytime to restore unlimited free play!",
+    "offline_info_sheet_premium_perk": "Premium members enjoy unlimited offline play with zero ads.",
+    "premium_offline_unlimited_desc": "Unlimited offline play everywhere with zero ads",
     "quota_subtitle": "మీరు {0} స్థాయిలను ఆఫ్‌లైన్‌లో ఆడారు. ఆడటాన్ని కొనసాగించడానికి మళ్లీ కనెక్ట్ అవ్వండి లేదా ఒక ప్రకటన చూడండి!",
+    "quota_subtitle_no_ad": "You've played {0} levels offline. Reconnect to restore unlimited free play!",
+    "still_offline": "No internet connection detected. Please check Wi-Fi or data.",
     "quota_title": "ఆఫ్‌లైన్ పరిమితి దాటింది",
     "retry_button": "కనెక్షన్‌ను మళ్లీ ప్రయత్నించండి",
     "retry_label": "ఇంటర్నెట్ కనెక్షన్ మరల ప్రయత్నించండి",
     "subtitle": "సిగ్నల్ రావడం నిలిచింది. కొనసాగించడానికి దయచేసి కనెక్షన్‌ను తిరిగి స్థాపించండి.",
     "title": "కనెక్షన్ కోల్పోయింది",
+    "unlimited_online_title": "Online Play is Always Unlimited",
+    "unlimited_online_desc": "Turn on Wi-Fi or mobile data to continue playing for free without limits!",
+    "watch_ad_cached_desc": "Saved on device · Plays offline",
     "watch_ad_continue": "మరిన్ని 3 దశల కోసం ప్రకటన చూడండి",
     "no_internet_title": "కనెక్షన్ విరమించబడింది"
   },
@@ -1044,7 +1058,10 @@
     "chest_tap_unveil": "తెలిసేటట్లు తాకండి",
     "chest_tap_vip_loot": "వీ ఐ పి చోరి పొందడానికి తాకండి",
     "chest_treasure_unlocked": "ధనాన్ని చేరుకున్నారు",
+    "chest_vip_coins_collected": "VIP BONUS COINS",
     "chest_vip_gift": "విఐపీ డైలీ గిఫ్ట్",
+    "chest_vip_multiplier_applied": "EXCLUSIVE 3X PRO MULTIPLIER APPLIED",
+    "chest_vip_unlocked": "VIP VAULT UNLOCKED!",
     "cl_levels_target": "{0} → {1} స్థాయిలు",
     "coins": "నాణేలు",
     "coins_value_label": "{} నాణేలు",
@@ -1177,7 +1194,30 @@
     "unscramble_word": "అక్షరాలను మెలికలతో క్రమావత్తం చేసి పదాన్ని రూపొందించండి",
     "word_mixer": "పద మిక్సర్",
     "word_mixer_master": "వర్డ్ మిక్సర్ మాస్టర్!",
-    "zero_xp_hint": "నేం మీ మొదటి XP ను సంపాదించండి"
+    "zero_xp_hint": "నేం మీ మొదటి XP ను సంపాదించండి",
+    "resume": "Resume",
+    "start": "Start",
+    "milestone_progress": "Milestone Progress",
+    "levels_cleared_tag": "{} Levels Cleared",
+    "new_journey": "New Journey",
+    "levels_to_reach_milestone": "{} levels to reach Milestone {}",
+    "level_to_reach_milestone": "1 level to reach Milestone {}",
+    "milestone_completed": "Milestone {} completed! Keep mastering",
+    "first_step_in_category": "First step in {} • Milestone: {}",
+    "mission_daily_goal": "DAILY GOAL",
+    "mission_streak_secured": "STREAK SECURED",
+    "habit_protect_action": "Secure",
+    "habit_protect_desc": "1 level to protect your streak",
+    "habit_secured_desc": "Streak protected for today!",
+    "daily_goal_completed": "Daily goal completed ⭐",
+    "habit_focus": "1 lesson to reach daily goal",
+    "avatar_semantics_label": "Profile avatar, Level {0}",
+    "mascot_semantics_label": "Companion mascot: {0}",
+    "protect_streak_subtitle_short": "1 level to protect your {}d streak",
+    "first_step_in_category_short": "First step in {}",
+    "levels_to_reach_milestone_short": "{} levels to reach next goal",
+    "level_to_reach_milestone_short": "1 level to reach next goal",
+    "milestone_completed_short": "Goal completed • Keep mastering"
   },
   "instructions": {
     "academicWord": {
@@ -2531,13 +2571,16 @@
     "levels_cleared": "స్థాయిలు క్లియర్ అయ్యాయి",
     "lvs": "Lv. {}",
     "mins_ago": "{} నిమిషాల కిందట",
+    "next_update_in": "Next in {}",
     "player": "ఆటగాడు",
     "rank": "స్థాయి",
     "subtitle": "మీరు ప్రపంచవ్యాప్తంగా ఎలా ర్యాంక్ ఉన్నారో చూడండి!",
     "this_is_you": "ఇది నువ్వు!",
     "title": "లీడర్‌బోర్డ్",
     "top_challengers": "ప్రధాన పోటీదారులు",
+    "unranked_countdown": "Plays count in next update ({})",
     "updated_at": "నవీకరించబడింది {}",
+    "updates_info": "Rankings refresh automatically every 4 hours. Play quests to boost your standing!",
     "xp": "ఎక్స్‌పి",
     "you": "నువ్వు",
     "your_standing": "మీ స్థానం"
@@ -2631,21 +2674,16 @@
     "ranks": "హోదాలు"
   },
   "notification_card": {
-    "afternoon_practice": "మధ్యాహ్నం సాధన?",
-    "evening_boost": "సాయంత్రం జ్ఞాన మరింత",
     "morning_quest": "ఉదయం క్వెస్ట్ రెడీ!",
-    "night_owl": "రాత్రి పక్షి శిక్షణ",
     "not_now": "ఇప్పుడే కాదు",
     "remind_me": "నాకు గుర్తుచేశారు",
-    "starter_begun": "మీ ప్రయాణం ఈ మరుసటి దశలో ప్రారంభమైంది!",
     "starter_momentum": "గతాన్ని కొనసాగించండి!",
-    "starter_on_roll": "మీరు బాగా కొనసాగుతున్నారు!",
-    "streak_dont_lose": "మీ {}-రోజుల పురోగతిని కోల్పోకండి!",
     "streak_protect": "మీ {}-రోజుల స్ట్రీక్‌ని రక్షించుకోండి!",
-    "streak_strong": "{} రోజులుగా అద్భుతమైన స్ట్రీక్! అలాగే కొనసాగించండి.",
-    "streak_unstoppable": "అడ్డుకోలేని దృఢ సంకల్పం! మీ శ్రేణిని రక్షించుకోండి.",
     "subtitle_default": "ప్రతిరోజూ ప్రాక్టీస్ చేయడానికి ఓవ్లీ మీరు గుర్తు చేస్తుంది కాబట్టి నోటిఫికేషన్స్ ఆన్ చేయండి.",
-    "subtitle_streak": "ఓవర్లీ notifications ను సాధ్యంచేయండి, తద్వారా మీ streak ను రక్షించమని అది మిమ్మల్ని గుర్తు చేయగలదు."
+    "subtitle_default_short": "A quick 2-minute reminder so you never miss a day",
+    "subtitle_momentum": "A quick daily reminder to help you hit a 7-day streak",
+    "subtitle_streak": "ఓవర్లీ notifications ను సాధ్యంచేయండి, తద్వారా మీ streak ను రక్షించమని అది మిమ్మల్ని గుర్తు చేయగలదు.",
+    "subtitle_streak_short": "A quick alert before midnight so you never lose it"
   },
   "notifications": {
     "fcm_default_body": "ఇప్పుడే కొత్తది ఏమిటో చూడండి!",
@@ -2657,9 +2695,12 @@
     "weekly_motivation_title": "ఆదివారం సమీక్ష సెషన్"
   },
   "onboarding": {
+    "continue": "Continue",
     "get_started": "ప్రారంభించండి",
+    "have_account": "Already have an account? ",
+    "log_in": "Log In",
     "skip": "దాటవేయి",
-    "welcome": "వౌల్‌కి స్వాగతం!"
+    "step_indicator": "Step {0} of {1}"
   },
   "practice": {
     "go_premium": "అనంత నైపుణ్యాన్ని ఆన్‌లాక్ చేయండి",
@@ -2749,6 +2790,11 @@
     "continue_learning": "అభ్యసించడం కొనసాగించండి"
   },
   "profile": {
+    "picture_updated": "Profile photo updated successfully!",
+    "display_name_updated": "Display name updated successfully!",
+    "picture_update_failed": "Failed to update profile photo.",
+    "name_update_failed": "Failed to update display name.",
+    "update_failed": "Failed to update profile.",
     "uploading": "UPLOADING",
     "admin_dashboard": "అడ్మిన్ డ్యాష్‌బోర్డు",
     "adventure_stats": "Adventure Stats",
