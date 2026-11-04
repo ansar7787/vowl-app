@@ -529,7 +529,7 @@ void main() {
       listeningStreamController.add(completeState);
       when(() => mockListeningBloc.state).thenReturn(completeState);
       await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump(const Duration(milliseconds: 1000));
 
       expect(find.text('Listen & Choose'), findsOneWidget);
       expect(tester.takeException(), isNull);

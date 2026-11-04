@@ -299,9 +299,11 @@ void main() {
       await tester.pumpAndSettle();
 
       // Tap Toys tab to find Golden Bell
+      await tester.ensureVisible(find.text('Toys'));
       await tester.tap(find.text('Toys'));
       await tester.pumpAndSettle();
 
+      await tester.ensureVisible(find.text('Golden Bell'));
       await tester.tap(find.text('Golden Bell'));
       await tester.pump();
 

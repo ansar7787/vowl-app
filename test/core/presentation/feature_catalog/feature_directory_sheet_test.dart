@@ -91,6 +91,11 @@ void main() {
 
         expect(find.text('Explore All Features'), findsOneWidget);
         expect(find.text('100+ Games Hub'), findsOneWidget);
+        await tester.scrollUntilVisible(
+          find.text('Speaking & Speech Recognition'),
+          150,
+          scrollable: find.byType(Scrollable).last,
+        );
         expect(find.text('Speaking & Speech Recognition'), findsOneWidget);
         expect(tester.takeException(), isNull);
 

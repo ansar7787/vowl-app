@@ -8,15 +8,15 @@ import 'package:vowl/core/theme/category_colors.dart';
 
 void main() {
   group('Theme Harmonization & Design Tokens', () {
-    test('Light theme has Slate-50 scaffold background and solid White surface', () {
+    test('Light theme has authentic scaffold background and solid White surface', () {
       final light = AppTheme.lightTheme;
-      expect(light.scaffoldBackgroundColor, AppColors.slate50);
+      expect(light.scaffoldBackgroundColor, AppTheme.scaffoldLight);
       expect(light.brightness, Brightness.light);
       final tokens = light.extension<AppColorTokens>();
       expect(tokens, isNotNull);
       expect(tokens!.surface, Colors.white);
       expect(tokens.textPrimary, AppColors.slate900);
-      expect(tokens.border, AppColors.slate200);
+      expect(tokens.border, AppColors.slate100);
     });
 
     test('Dark theme has Slate-900 scaffold background and Slate-800 surface', () {

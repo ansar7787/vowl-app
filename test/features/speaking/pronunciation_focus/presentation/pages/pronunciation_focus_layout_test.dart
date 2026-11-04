@@ -1017,6 +1017,17 @@ void main() {
       testWidgets('8.4 hint button displays available hint count badge', (
         tester,
       ) async {
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(
+            const UserEntity(
+              id: 'test_user',
+              email: 'test@vowl.app',
+              displayName: 'Test Phonetic Master',
+              isPremium: false,
+              hintCount: 3,
+            ),
+          ),
+        );
         await pumpPronunciationFocusScreen(tester);
         expect(
           find.descendant(

@@ -200,7 +200,8 @@ void main() {
     blocTest<KidsBloc, KidsState>(
       'should prune duplicate quest and complete level when final question is answered correctly',
       build: () {
-        when(() => mockSoundService.playCorrect()).thenAnswer((_) async => {});
+        when(() => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')))
+            .thenAnswer((_) async => {});
         when(() => mockHapticService.success()).thenAnswer((_) async => {});
         when(() => mockUpdateUserRewards(any()))
             .thenAnswer((_) async => const Right(null));
