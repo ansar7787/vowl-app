@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Vowl</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-dark: #3730A3;
+            --amber: #F59E0B;
+            --dark: #0A0F1D;
+            --surface: #131A2B;
+            --border: rgba(255, 255, 255, 0.1);
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: radial-gradient(circle at 50% 0%, #1E1B4B 0%, #0A0F1D 70%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+            text-align: center;
+        }
+        .container {
+            max-width: 460px;
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 36px 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .brand {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 24px;
+        }
+        .brand span { color: var(--amber); }
+        .icon {
+            font-size: 52px;
+            margin-bottom: 16px;
+        }
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        .btn-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 20px;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 800;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #4F46E5, #6366F1);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.14);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="brand">VOWL<span>.</span></div>
+        <div class="icon">🧭</div>
+        <h1>Page Not Found</h1>
+        <p>The page you're looking for doesn't exist or has moved. Looking to practice English or join an invite?</p>
+        <div class="btn-stack">
+            <a class="btn btn-primary" href="/">
+                🏠 Visit Vowl Home
+            </a>
+            <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.vowl.app" target="_blank" rel="noopener">
+                📱 Get Vowl on Google Play
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -236,9 +236,9 @@
         </div>
 
         <div class="btn-stack">
-            <a class="btn btn-primary" id="openAppBtn" href="#">
+            <button class="btn btn-primary" id="openAppBtn" onclick="openInApp()">
                 ⚔️ Open in Vowl App
-            </a>
+            </button>
             <a class="btn btn-secondary" id="playStoreBtn" href="https://play.google.com/store/apps/details?id=com.vowl.app" target="_blank" rel="noopener">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M3.609 1.814L13.793 12 3.61 22.186c-.234-.236-.379-.57-.379-.942V2.756c0-.372.145-.706.378-.942zm11.24 11.24l2.094 2.094-11.83 6.83 9.736-8.924zm0-2.108L5.113 2.022l11.83 6.83-2.094 2.094zm1.485 1.054l3.774 2.18c.65.376.65.989 0 1.365l-3.774 2.18-2.37-2.37 2.37-2.355z"/>
@@ -250,9 +250,9 @@
         <div class="instructions">
             <strong>How to join:</strong>
             <ol>
-                <li>Tap <strong>Open in Vowl App</strong> above.</li>
-                <li>Or open Vowl, go to <strong>Arena &gt; Join Code</strong>, and paste your code.</li>
-                <li>New to Vowl? Install the app to claim your free starting coins and accept the duel!</li>
+                <li>Tap <strong>Open in Vowl App</strong> if already installed.</li>
+                <li>Or tap <strong>Get Vowl on Google Play</strong> to download.</li>
+                <li>In Vowl, go to <strong>Arena &gt; Join Code</strong>, and paste your code.</li>
             </ol>
         </div>
 
@@ -278,14 +278,16 @@
         document.getElementById('roomCodeDisplay').textContent = roomCode;
 
         const deepLinkUrl = 'vowl://duel/' + encodeURIComponent(roomCode);
-        document.getElementById('openAppBtn').href = deepLinkUrl;
+        const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.vowl.app';
 
-        // Auto-attempt redirect to the app
-        window.onload = function() {
+        function openInApp() {
+            window.location.href = deepLinkUrl;
             setTimeout(function() {
-                window.location.href = deepLinkUrl;
-            }, 300);
-        };
+                if (document.hasFocus()) {
+                    window.location.href = playStoreUrl;
+                }
+            }, 1200);
+        }
 
         function copyCode() {
             navigator.clipboard.writeText(roomCode).then(function() {
@@ -298,6 +300,13 @@
                 alert('Room code: ' + roomCode);
             });
         }
+
+        // Auto-copy room code into clipboard so Vowl auto-detects it
+        window.onload = function() {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(roomCode).catch(function() {});
+            }
+        };
     </script>
 </body>
 </html>
