@@ -203,6 +203,9 @@ class VowlCoinsScreen extends StatelessWidget {
                         sliver: SliverList(
                           delegate: SliverChildListDelegate([
                             _buildCoinBalanceCard(context, user),
+                            SizedBox(height: 16.h),
+                            // ── Buy Coins with Real Money (Prominently placed at top) ──
+                            _buildBuyCoinsCard(context),
                             SizedBox(height: 24.h),
                             _buildActionSection(
                               context,
@@ -275,12 +278,10 @@ class VowlCoinsScreen extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                _buildHintStore(context, user),
+                                if (!user.isPremium)
+                                  _buildHintStore(context, user),
                               ],
                             ),
-                            SizedBox(height: 24.h),
-                            // ── Buy Coins with Real Money ──
-                            _buildBuyCoinsCard(context),
                             SizedBox(height: 24.h),
                             _buildCoinHistory(context, user),
                             SizedBox(height: 48.h),
@@ -1454,6 +1455,11 @@ class VowlCoinsScreen extends StatelessWidget {
         return context.tr(
           'coin_history.ambassador_cup_reward',
           fallback: 'Ambassador Cup Prize',
+        );
+      case 'coin_history.weekly_league_reward':
+        return context.tr(
+          'coin_history.weekly_league_reward',
+          fallback: 'Weekly League Reward',
         );
       default:
         // Legacy raw-English entries or unknown keys — display as-is.

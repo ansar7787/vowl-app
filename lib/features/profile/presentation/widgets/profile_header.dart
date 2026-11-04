@@ -83,22 +83,23 @@ class ProfileHeader extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Theme.of(context).colorScheme.surface,
-                  boxShadow: [
-                    BoxShadow(
-                      color: glowColor.withValues(
-                        alpha: isPremium ? 0.35 : 0.1,
-                      ),
-                      blurRadius: isPremium ? 20 : 16,
-                      spreadRadius: isPremium ? 1 : 0,
-                      offset: const Offset(0, 6),
-                    ),
-                    if (user.level >= 200)
-                      BoxShadow(
-                        color: AppColors.amber500.withValues(alpha: 0.3),
-                        blurRadius: 12,
-                        spreadRadius: 2,
-                      ),
-                  ],
+                  boxShadow: isPremium
+                      ? null
+                      : [
+                          BoxShadow(
+                            color: glowColor.withValues(
+                              alpha: 0.1,
+                            ),
+                            blurRadius: 16,
+                            offset: const Offset(0, 6),
+                          ),
+                          if (user.level >= 200)
+                            BoxShadow(
+                              color: AppColors.amber500.withValues(alpha: 0.3),
+                              blurRadius: 12,
+                              spreadRadius: 2,
+                            ),
+                        ],
                 ),
                 child: SizedBox(
                   width: 132.r,

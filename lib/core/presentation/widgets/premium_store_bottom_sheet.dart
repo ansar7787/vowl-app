@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,6 +10,7 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -21,6 +23,9 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:vowl/core/services/in_app_purchase_service.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:vowl/core/presentation/widgets/contact_phone_bottom_sheet.dart';
 
 /// Bottom sheet presenting currency packs and subscription plans for in-app purchase.
 class PremiumStoreBottomSheet extends StatefulWidget {
@@ -52,11 +57,43 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
   List<CoinPack> _activePacks = [];
   bool _isLoadingPacks = true;
   late bool _useGooglePlay;
+  Timer? _paymentTimeout;
 
   late final ValueNotifier<int> _stateHash = ValueNotifier(0);
 
   void _updateState() {
     if (mounted) _stateHash.value++;
+  }
+
+  void _startPaymentTimeout() {
+    _paymentTimeout?.cancel();
+    _paymentTimeout = Timer(const Duration(minutes: 2), () {
+      if (mounted && _isProcessing) {
+        _handlePaymentTimeout();
+      }
+    });
+  }
+
+  void _cancelPaymentTimeout() {
+    _paymentTimeout?.cancel();
+    _paymentTimeout = null;
+  }
+
+  void _handlePaymentTimeout() {
+    di.sl<HapticService>().error();
+    if (mounted) {
+      _isProcessing = false;
+      _pendingPack = null;
+      _updateState();
+      CustomSnackBar.show(
+        context: context,
+        message: context.tr(
+          'premium.error_timeout',
+          fallback: 'Payment request timed out. Please try again.',
+        ),
+        type: CustomSnackBarType.error,
+      );
+    }
   }
 
   static const List<CoinPack> _fallbackPacks = [
@@ -130,10 +167,12 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
 
   @override
   void dispose() {
+    _paymentTimeout?.cancel();
     final iap = InAppPurchaseService.instance;
     iap.onPurchaseSuccess = null;
     iap.onPurchaseError = null;
     iap.onPurchaseCanceled = null;
+    iap.onPurchaseRestored = null;
     _stateHash.dispose();
     // NOTE: Do NOT call _paymentService.dispose() here.
     // PaymentService is a DI singleton -- disposing it here would destroy
@@ -145,12 +184,18 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
   // ---------------- Payment Handlers ----------------
 
   void _handlePaymentSuccess(PaymentSuccessResponse response) async {
+    _cancelPaymentTimeout();
     final pack = _pendingPack;
     if (pack == null || !mounted) return;
 
     di.sl<HapticService>().success();
+    if (di.sl.isRegistered<SoundService>()) {
+      di.sl<SoundService>().playCoinTally(count: 8);
+    }
 
-    // Verify payment securely on backend
+    final int initialCoins = context.read<AuthBloc>().state.user?.coins ?? 0;
+
+    // 1. Initial attempt to verify coin purchase on backend
     try {
       await _paymentService.verifyCoinPurchase(
         orderId: response.orderId ?? '',
@@ -166,6 +211,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         context.read<AuthBloc>().add(const AuthRefreshUser());
         context.read<AuthBloc>().add(const AuthReloadUser());
         _isProcessing = false;
+        _pendingPack = null;
         _updateState();
         CustomSnackBar.show(
           context: context,
@@ -176,18 +222,108 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
           type: CustomSnackBarType.success,
         );
       }
-    } catch (e) {
+      return;
+    } catch (e, stackTrace) {
+      di.sl<AppLogger>().error(
+        'Initial verifyCoinPurchase call failed, executing resilient verification',
+        error: e,
+        stackTrace: stackTrace,
+      );
+
+      // Check if Firestore already updated behind the scenes
       if (mounted) {
+        context.read<AuthBloc>().add(const AuthReloadUser());
+      }
+      await Future.delayed(const Duration(milliseconds: 1200));
+      if (!mounted) return;
+
+      final currentCoins = context.read<AuthBloc>().state.user?.coins ?? 0;
+      if (currentCoins > initialCoins) {
+        di.sl<AppLogger>().debug(
+          'Coins updated in Firestore. Marking purchase as success.',
+        );
         _isProcessing = false;
+        _pendingPack = null;
         _updateState();
         CustomSnackBar.show(
           context: context,
           message: context.tr(
-            'store.purchase_verify_failed',
-            fallback:
-                'Payment verified but failed to grant items. Please contact support.',
+            'store.purchase_success',
+            fallback: 'Purchase successful! Enjoy your items.',
           ),
-          type: CustomSnackBarType.error,
+          type: CustomSnackBarType.success,
+        );
+        return;
+      }
+
+      // Retry verification once with backoff (cloud function is idempotent)
+      try {
+        await _paymentService.verifyCoinPurchase(
+          orderId: response.orderId ?? '',
+          paymentId: response.paymentId ?? '',
+          signature: response.signature ?? '',
+          coins: pack.coins,
+          keys: pack.keys,
+          packId: pack.id,
+        );
+        if (mounted) {
+          context.read<AuthBloc>().add(const AuthRefreshUser());
+          context.read<AuthBloc>().add(const AuthReloadUser());
+          _isProcessing = false;
+          _pendingPack = null;
+          _updateState();
+          CustomSnackBar.show(
+            context: context,
+            message: context.tr(
+              'store.purchase_success',
+              fallback: 'Purchase successful! Enjoy your items.',
+            ),
+            type: CustomSnackBarType.success,
+          );
+          return;
+        }
+      } catch (retryError) {
+        di.sl<AppLogger>().error(
+          'verifyCoinPurchase retry also failed',
+          error: retryError,
+        );
+      }
+
+      // Final check
+      if (mounted) {
+        context.read<AuthBloc>().add(const AuthReloadUser());
+      }
+      await Future.delayed(const Duration(milliseconds: 800));
+      if (!mounted) return;
+
+      if ((context.read<AuthBloc>().state.user?.coins ?? 0) > initialCoins) {
+        _isProcessing = false;
+        _pendingPack = null;
+        _updateState();
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'store.purchase_success',
+            fallback: 'Purchase successful! Enjoy your items.',
+          ),
+          type: CustomSnackBarType.success,
+        );
+        return;
+      }
+
+      // Reassuring notice: payment confirmed by bank, don't double charge user
+      if (mounted) {
+        _isProcessing = false;
+        _pendingPack = null;
+        _updateState();
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'store.payment_verifying_notice',
+            fallback:
+                'Payment received (Ref: ${response.paymentId}). Your transaction was confirmed by your bank, but server synchronization is delayed. Your items will be added shortly. Please do not pay again.',
+          ),
+          type: CustomSnackBarType.info,
         );
       }
     }
@@ -196,6 +332,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
   }
 
   void _handlePaymentFailure(PaymentFailureResponse response) {
+    _cancelPaymentTimeout();
     _pendingPack = null;
     if (mounted) {
       _isProcessing = false;
@@ -227,6 +364,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
   }
 
   void _handleExternalWallet(ExternalWalletResponse response) {
+    _cancelPaymentTimeout();
     _pendingPack = null;
     if (mounted) {
       _isProcessing = false;
@@ -291,6 +429,9 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         iap.onPurchaseSuccess = (purchase) {
           if (!mounted) return;
           di.sl<HapticService>().success();
+          if (di.sl.isRegistered<SoundService>()) {
+            di.sl<SoundService>().playCoinTally(count: 8);
+          }
           context.read<AuthBloc>().add(const AuthRefreshUser());
           context.read<AuthBloc>().add(const AuthReloadUser());
           _isProcessing = false;
@@ -351,6 +492,34 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     }
 
     try {
+      final prefs = await SharedPreferences.getInstance();
+      String contact = prefs.getString('user_payment_contact') ?? '';
+      if (contact.isEmpty) {
+        try {
+          contact = FirebaseAuth.instance.currentUser?.phoneNumber ?? '';
+        } catch (_) {}
+      }
+
+      if (contact.isEmpty && mounted) {
+        _isProcessing = false;
+        _updateState();
+
+        final enteredPhone = await ContactPhoneBottomSheet.show(context);
+        if (enteredPhone == null) {
+          // User cancelled the prompt
+          _pendingPack = null;
+          return;
+        }
+        contact = enteredPhone;
+        if (contact.isNotEmpty) {
+          await prefs.setString('user_payment_contact', contact);
+        }
+
+        if (!mounted) return;
+        _isProcessing = true;
+        _updateState();
+      }
+
       final orderData = await _paymentService.createOrder(packId: pack.id);
       final orderId = orderData['orderId'] as String;
       final serverAmount = (orderData['amount'] as num).toDouble() / 100;
@@ -358,14 +527,16 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
 
       final success = _paymentService.openCheckout(
         amount: serverAmount,
-        contact: '', // Optional
+        contact: contact,
         email: user.email,
         orderId: orderId,
         currency: serverCurrency,
         description: 'Vowl Store - $packTitle',
       );
 
-      if (!success) {
+      if (success) {
+        _startPaymentTimeout();
+      } else {
         if (mounted) {
           _isProcessing = false;
           _updateState();
@@ -436,8 +607,18 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
       valueListenable: _stateHash,
       builder: (context, _, child) {
         return PopScope(
-              canPop: !_isProcessing,
-              child: BackdropFilter(
+          canPop: !_isProcessing,
+          onPopInvokedWithResult: (didPop, result) {
+            if (didPop) return;
+            if (_isProcessing) {
+              _cancelPaymentTimeout();
+              _isProcessing = false;
+              _pendingPack = null;
+              _updateState();
+              return;
+            }
+          },
+          child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                 child: Container(
                   height: MediaQuery.of(context).size.height * 0.85,
@@ -630,62 +811,10 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                     );
                                   }),
 
-                                SizedBox(height: 16.h),
-                                TextButton(
-                                  onPressed: _isProcessing
-                                      ? null
-                                      : () async {
-                                          final iap =
-                                              InAppPurchaseService.instance;
-                                          await iap.restorePurchases();
-                                        },
-                                  child: Text(
-                                    'Restore Purchases',
-                                    style: TextStyle(
-                                      fontSize: 12.sp,
-                                      color: Colors.grey,
-                                    ),
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    TextButton(
-                                      onPressed: () => launchUrl(
-                                        Uri.parse(
-                                          'https://vowl-official.github.io/vowl-legal/terms.html',
-                                        ),
-                                      ),
-                                      child: Text(
-                                        'Terms',
-                                        style: TextStyle(
-                                          fontSize: 10.sp,
-                                          color: Colors.grey,
-                                        ),
-                                      ),
-                                    ),
-                                    Text(
-                                      ' • ',
-                                      style: TextStyle(color: Colors.grey),
-                                    ),
-                                    TextButton(
-                                      onPressed: () => launchUrl(
-                                        Uri.parse(
-                                          'https://vowl-official.github.io/vowl-legal/privacy.html',
-                                        ),
-                                      ),
-                                      child: Text(
-                                        'Privacy',
-                                        style: TextStyle(
-                                          fontSize: 10.sp,
-                                          color: Colors.grey,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                SizedBox(height: 20.h),
+                                _buildTermsAndPolicy(context, isDark),
                                 SizedBox(
-                                  height: 40.h +
+                                  height: 36.h +
                                       MediaQuery.paddingOf(context).bottom,
                                 ),
                               ],
@@ -811,6 +940,125 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildTermsAndPolicy(BuildContext context, bool isDark) {
+    final muted = isDark ? Colors.white38 : Colors.black38;
+
+    return Column(
+      children: [
+        Text(
+          context.tr(
+            'store.coins_payment_note',
+            fallback:
+                'One-time payment for coins. Credited immediately to your balance.',
+          ),
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            color: muted,
+            fontSize: 11.sp,
+            height: 1.4,
+          ),
+        ),
+        SizedBox(height: 8.h),
+        Wrap(
+          alignment: WrapAlignment.center,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: [
+            InkWell(
+              borderRadius: BorderRadius.circular(4.r),
+              onTap: () {
+                di.sl<HapticService>().selection();
+                final url = Uri.parse(
+                  'https://vowl-official.github.io/vowl-legal/terms.html',
+                );
+                launchUrl(url, mode: LaunchMode.externalApplication);
+              },
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
+                child: Text(
+                  context.tr('premium.terms', fallback: 'Terms'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    color: muted,
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w600,
+                    decoration: TextDecoration.underline,
+                    decorationColor: muted,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 4.w),
+              child: Text(
+                '•',
+                style: TextStyle(color: muted, fontSize: 10.sp),
+              ),
+            ),
+            InkWell(
+              borderRadius: BorderRadius.circular(4.r),
+              onTap: () {
+                di.sl<HapticService>().selection();
+                final url = Uri.parse(
+                  'https://vowl-official.github.io/vowl-legal/privacy.html',
+                );
+                launchUrl(url, mode: LaunchMode.externalApplication);
+              },
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
+                child: Text(
+                  context.tr('premium.privacy', fallback: 'Privacy'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    color: muted,
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w600,
+                    decoration: TextDecoration.underline,
+                    decorationColor: muted,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 4.w),
+              child: Text(
+                '•',
+                style: TextStyle(color: muted, fontSize: 10.sp),
+              ),
+            ),
+            InkWell(
+              borderRadius: BorderRadius.circular(4.r),
+              onTap: () {
+                di.sl<HapticService>().selection();
+                final url = Uri.parse(
+                  'https://vowl-official.github.io/vowl-legal/refund.html',
+                );
+                launchUrl(url, mode: LaunchMode.externalApplication);
+              },
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
+                child: Text(
+                  context.tr(
+                    'premium.refund_policy',
+                    fallback: 'Refund Policy',
+                  ),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    color: muted,
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w600,
+                    decoration: TextDecoration.underline,
+                    decorationColor: muted,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 

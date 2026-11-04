@@ -38,6 +38,11 @@ void main() {
     when(
       () => mockNotificationService.onNotificationPreferenceChanged(any()),
     ).thenAnswer((_) async {});
+    when(
+      () => mockNotificationService.requestPermissions(),
+    ).thenAnswer((_) async {
+      return true;
+    });
 
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
     when(

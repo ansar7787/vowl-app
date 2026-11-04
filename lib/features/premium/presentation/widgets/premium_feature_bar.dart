@@ -121,10 +121,10 @@ class ModernFeatureBar extends StatelessWidget {
               ),
               _buildListFeature(
                 context,
-                icon: LucideIcons.zap,
+                icon: LucideIcons.flame,
                 title: context.tr(
-                  'premium.feature_2x_speed',
-                  fallback: '2X SPEED',
+                  'premium.feature_streak_repair',
+                  fallback: 'VIP Streak Repair',
                 ),
                 color: AppColors.amber500,
               ),

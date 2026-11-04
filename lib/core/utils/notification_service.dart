@@ -15,10 +15,15 @@ import 'dart:io';
 import 'dart:async';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/firebase_options.dart';
 
 @pragma('vm:entry-point')
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  await Firebase.initializeApp();
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  } catch (_) {}
   if (kDebugMode) {
     debugPrint("Handling a background message: ${message.messageId}");
   }
@@ -33,16 +38,15 @@ Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 /// DI container, or AppRouter. The only safe action is to persist the
 /// payload so that the main isolate can pick it up on startup.
 @pragma('vm:entry-point')
-void onDidReceiveBackgroundNotificationResponse(NotificationResponse response) {
-  // We cannot navigate here — no router, no DI, no widget tree.
-  // Instead, persist the payload to SharedPreferences so the main
-  // isolate can read it during init() and set pendingDeepLink.
+Future<void> onDidReceiveBackgroundNotificationResponse(
+  NotificationResponse response,
+) async {
   final payload = response.payload;
   if (payload != null && payload.isNotEmpty) {
-    // SharedPreferences.getInstance() is safe to call from any isolate.
-    SharedPreferences.getInstance().then((prefs) {
-      prefs.setString('pending_notification_route', payload);
-    });
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('pending_notification_route', payload);
+    } catch (_) {}
   }
 }
 
@@ -75,8 +79,10 @@ class NotificationService {
 
   static const int streakReminderNotificationId = 101;
   static const int weeklyMotivationNotificationId = 202;
-  static const int leaderboardNotificationId = 303;
-  static const int milestoneNotificationId = 404;
+  static const int sundayLeagueResetNotificationId = 303;
+  static const int leaderboardChallengeNotificationId = 304;
+  static const int leaderboardNotificationId = 303; // Legacy alias for backward compatibility
+  static const int milestoneNotificationId = 606;
   static const int dailyWordsReminderNotificationId = 505;
   static const int maxLocalNotificationModulo = 100000;
 
@@ -146,9 +152,13 @@ class NotificationService {
 
     // 3. Initialize Local Notifications
     const AndroidInitializationSettings androidSettings =
-        AndroidInitializationSettings('@mipmap/ic_launcher');
+        AndroidInitializationSettings('@drawable/ic_launcher_monochrome');
     const DarwinInitializationSettings iosSettings =
-        DarwinInitializationSettings();
+        DarwinInitializationSettings(
+          requestAlertPermission: false,
+          requestBadgePermission: false,
+          requestSoundPermission: false,
+        );
 
     const InitializationSettings initSettings = InitializationSettings(
       android: androidSettings,
@@ -178,7 +188,7 @@ class NotificationService {
     );
 
     // 4. Create Notification Channels (Android 8.0+)
-    if (Platform.isAndroid) {
+    if (!kIsWeb && Platform.isAndroid) {
       final androidPlugin = _localNotifications
           .resolvePlatformSpecificImplementation<
             AndroidFlutterLocalNotificationsPlugin
@@ -219,6 +229,23 @@ class NotificationService {
       }
     }
 
+    // 4b. Configure iOS Foreground Notification Presentation Options
+    if (!kIsWeb && (Platform.isIOS || Platform.isMacOS)) {
+      try {
+        await _fcm.setForegroundNotificationPresentationOptions(
+          alert: true,
+          badge: true,
+          sound: true,
+        );
+      } catch (e) {
+        if (kDebugMode) {
+          debugPrint(
+            'NotificationService: error setting foreground presentation options: $e',
+          );
+        }
+      }
+    }
+
     // 5. Handle Foreground Messages with memory-safe subscriptions
     _onMessageSubscription = FirebaseMessaging.onMessage.listen((
       RemoteMessage message,
@@ -241,16 +268,32 @@ class NotificationService {
           return;
         }
 
-        showNotification(
-          message.notification!.title ??
-              _t('notifications.fcm_default_title', fallback: 'Vowl Update'),
-          message.notification!.body ??
-              _t(
-                'notifications.fcm_default_body',
-                fallback: "Check out what's new!",
-              ),
-          payload: message.data['path'] as String?,
-        );
+        final notification = message.notification;
+        if (notification != null) {
+          // On Android, FCM does not display foreground notifications natively,
+          // so we present it locally via flutter_local_notifications.
+          // On iOS, setForegroundNotificationPresentationOptions already displays it natively;
+          // presenting it locally would cause an annoying duplicate banner.
+          if (!kIsWeb && Platform.isAndroid) {
+            showNotification(
+              notification.title ??
+                  _t('notifications.fcm_default_title', fallback: 'Vowl Update'),
+              notification.body ??
+                  _t(
+                    'notifications.fcm_default_body',
+                    fallback: "Check out what's new!",
+                  ),
+              payload: message.data['path'] as String?,
+            );
+          }
+        } else if (message.data.containsKey('title') && message.data.containsKey('body')) {
+          // Data-only message: Neither platform shows native UI, so present locally on both
+          showNotification(
+            message.data['title'] as String,
+            message.data['body'] as String,
+            payload: message.data['path'] as String?,
+          );
+        }
       }
     });
 
@@ -423,28 +466,39 @@ class NotificationService {
   }
 
   /// Saves the current FCM token to the authenticated user's Firestore document.
-  Future<void> _saveFCMTokenToFirestore() async {
-    try {
-      final token = await _fcm.getToken().timeout(
-        const Duration(seconds: 3),
-        onTimeout: () => null,
-      );
-      if (token == null) {
+  /// Uses a resilient retry loop with exponential backoff (up to [maxRetries])
+  /// to ensure freshly minted tokens (e.g. after logout) are never silently lost.
+  Future<void> _saveFCMTokenToFirestore({int maxRetries = 3}) async {
+    int attempts = 0;
+    while (attempts < maxRetries) {
+      attempts++;
+      try {
+        final token = await _fcm.getToken().timeout(
+          const Duration(seconds: 5),
+          onTimeout: () => null,
+        );
+        if (token != null && token.isNotEmpty) {
+          if (kDebugMode) {
+            debugPrint(
+              'NotificationService: FCM token acquired on attempt $attempts',
+            );
+          }
+          await _updateTokenInFirestore(token);
+          return;
+        }
+      } catch (e) {
         if (kDebugMode) {
           debugPrint(
-            'NotificationService: FCM token is null or timed out, skipping save.',
+            'NotificationService: FCM token fetch error on attempt $attempts: $e',
           );
         }
-        return;
       }
-      if (kDebugMode) {
-        debugPrint('FCM_TOKEN_INITIALIZED');
+      if (attempts < maxRetries) {
+        await Future.delayed(Duration(seconds: attempts));
       }
-      await _updateTokenInFirestore(token);
-    } catch (e) {
-      if (kDebugMode) {
-        debugPrint('NotificationService: Error saving FCM token: $e');
-      }
+    }
+    if (kDebugMode) {
+      debugPrint('NotificationService: FCM token acquisition exhausted all retries.');
     }
   }
 
@@ -464,10 +518,12 @@ class NotificationService {
       await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
         'fcmToken': token,
         'timeZoneOffsetMinutes': DateTime.now().timeZoneOffset.inMinutes,
+        'platform': Platform.operatingSystem,
+        'lastTokenUpdate': FieldValue.serverTimestamp(),
       }, SetOptions(merge: true));
 
       if (kDebugMode) {
-        debugPrint('NotificationService: FCM token saved to Firestore.');
+        debugPrint('NotificationService: FCM token saved to Firestore for user ${user.uid}.');
       }
     } catch (e) {
       if (kDebugMode) {
@@ -478,58 +534,82 @@ class NotificationService {
     }
   }
 
+  /// Called when a user successfully signs in or switches accounts.
+  ///
+  /// Saves the FCM token with retries and immediately reschedules all
+  /// personalized reminders for the active user session.
+  Future<void> onUserSignedIn(User user) async {
+    if (kDebugMode) {
+      debugPrint(
+        'NotificationService: User signed in (${user.uid}). Rescheduling reminders...',
+      );
+    }
+    unawaited(_saveFCMTokenToFirestore(maxRetries: 3));
+
+    final enabled = await _areNotificationsEnabled;
+    if (!enabled) return;
+
+    try {
+      await scheduleWeeklyMotivation();
+      await scheduleSundayLeagueResetReminder();
+      await scheduleDailyWordsReminder();
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('NotificationService: Error rescheduling reminders on sign-in: $e');
+      }
+    }
+  }
+
   /// CRASH-PROOF PERMISSIONS
   ///
-  /// BUG FIX: this previously returned a `Future<void>` that completed
-  /// immediately — *before* the deferred `addPostFrameCallback` work even
-  /// started — because the callback wasn't connected to the returned
-  /// Future at all. Any caller doing `await requestPermissions();` would
-  /// proceed as if permissions had been resolved when nothing had actually
-  /// happened yet. A Completer now makes the returned Future genuinely
-  /// resolve only once the permission flow (deferred to after the current
-  /// frame, exactly as before, to avoid requesting permissions mid-build)
-  /// has finished.
-  Future<void> requestPermissions() async {
-    final completer = Completer<void>();
+  /// Requests remote FCM permissions, Android 13+ POST_NOTIFICATIONS, and checks
+  /// exact alarm support. Upon grant, saves the FCM token and reschedules all reminders.
+  /// Returns `true` if permissions were granted, `false` otherwise.
+  Future<bool> requestPermissions() async {
+    try {
+      final NotificationSettings settings = await _fcm.requestPermission(
+        alert: true,
+        badge: true,
+        sound: true,
+        provisional: false,
+      );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      try {
-        NotificationSettings settings = await _fcm.requestPermission(
-          alert: true,
-          badge: true,
-          sound: true,
-          provisional: false,
-        );
+      bool isGranted = settings.authorizationStatus == AuthorizationStatus.authorized ||
+          settings.authorizationStatus == AuthorizationStatus.provisional;
 
-        if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-          if (kDebugMode) {
-            debugPrint('User granted Firebase notification permission');
-          }
-          await _saveFCMTokenToFirestore();
-        }
-
-        // Request Local Notification permission for Android 13+
-        if (Platform.isAndroid) {
-          final status = await Permission.notification.status;
-          if (status.isDenied) {
-            await Permission.notification.request();
-          }
-
-          final alarmStatus = await Permission.scheduleExactAlarm.status;
-          if (alarmStatus.isDenied) {
-            await Permission.scheduleExactAlarm.request();
-          }
-        }
-      } catch (e) {
+      if (isGranted) {
         if (kDebugMode) {
-          debugPrint('Error requesting notification permissions: $e');
+          debugPrint('User granted Firebase notification permission');
         }
-      } finally {
-        if (!completer.isCompleted) completer.complete();
+        await _saveFCMTokenToFirestore(maxRetries: 3);
       }
-    });
 
-    return completer.future;
+      // Request Local Notification permission for Android 13+
+      if (!kIsWeb && Platform.isAndroid) {
+        final status = await Permission.notification.request();
+        isGranted = status.isGranted;
+
+        final alarmStatus = await Permission.scheduleExactAlarm.status;
+        if (alarmStatus.isDenied) {
+          // Check status without throwing user out of app; inexact fallback handles the rest
+          await Permission.scheduleExactAlarm.request();
+        }
+      }
+
+      if (isGranted) {
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setBool('notifications_enabled', true);
+        await prefs.setBool('notification_permission_granted', true);
+        await onNotificationPreferenceChanged(true);
+      }
+
+      return isGranted;
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('Error requesting notification permissions: $e');
+      }
+      return false;
+    }
   }
 
   Future<void> showNotification(
@@ -548,6 +628,8 @@ class NotificationService {
           importance: Importance.max,
           priority: Priority.high,
           showWhen: true,
+          icon: '@drawable/ic_launcher_monochrome',
+          color: Color(0xFF6366F1),
         );
 
     const DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
@@ -602,6 +684,8 @@ class NotificationService {
           channelDescription: 'Keeps you motivated to learn!',
           importance: Importance.max,
           priority: Priority.high,
+          icon: '@drawable/ic_launcher_monochrome',
+          color: Color(0xFF6366F1),
         );
 
     const DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
@@ -616,7 +700,7 @@ class NotificationService {
     );
 
     bool useExact = true;
-    if (Platform.isAndroid) {
+    if (!kIsWeb && Platform.isAndroid) {
       useExact = await Permission.scheduleExactAlarm.isGranted;
     }
 
@@ -813,6 +897,8 @@ class NotificationService {
           channelDescription: 'Used for game updates and daily words',
           importance: Importance.max,
           priority: Priority.high,
+          icon: '@drawable/ic_launcher_monochrome',
+          color: Color(0xFF6366F1),
         );
 
     const DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
@@ -827,7 +913,7 @@ class NotificationService {
     );
 
     bool useExact = true;
-    if (Platform.isAndroid) {
+    if (!kIsWeb && Platform.isAndroid) {
       useExact = await Permission.scheduleExactAlarm.isGranted;
     }
 
@@ -859,7 +945,9 @@ class NotificationService {
     final String title;
     final String body;
 
-    if (dueWords != null && dueWords.isNotEmpty) {
+    final hasSpecificWords = dueWords != null && dueWords.isNotEmpty;
+
+    if (hasSpecificWords) {
       title = _t(
         'notifications.daily_words_review_title',
         fallback: 'Spaced Repetition Review 📚',
@@ -903,6 +991,7 @@ class NotificationService {
       );
     }
 
+    // Dynamic one-shot if specific due words were passed, recurring daily if generic
     await _localNotifications.zonedSchedule(
       id: dailyWordsReminderNotificationId,
       title: title,
@@ -912,13 +1001,14 @@ class NotificationService {
       androidScheduleMode: useExact
           ? AndroidScheduleMode.exactAllowWhileIdle
           : AndroidScheduleMode.inexactAllowWhileIdle,
-      matchDateTimeComponents: DateTimeComponents.time,
+      matchDateTimeComponents:
+          hasSpecificWords ? null : DateTimeComponents.time,
       payload: AppRouter.dailyWordsRoute,
     );
 
     if (kDebugMode) {
       debugPrint(
-        'Scheduled daily words reminder for 9:00 AM local time (due: ${dueWords?.length ?? 0}, streak: $streak)',
+        'Scheduled daily words reminder for 9:00 AM local time (due: ${dueWords?.length ?? 0}, streak: $streak, recurring: ${!hasSpecificWords})',
       );
     }
   }
@@ -943,6 +1033,8 @@ class NotificationService {
           channelDescription: 'Sunday motivation!',
           importance: Importance.high,
           priority: Priority.high,
+          icon: '@drawable/ic_launcher_monochrome',
+          color: Color(0xFF6366F1),
         );
 
     const DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
@@ -957,7 +1049,7 @@ class NotificationService {
     );
 
     bool useExact = true;
-    if (Platform.isAndroid) {
+    if (!kIsWeb && Platform.isAndroid) {
       useExact = await Permission.scheduleExactAlarm.isGranted;
     }
 
@@ -1025,11 +1117,11 @@ class NotificationService {
   Future<void> scheduleSundayLeagueResetReminder() async {
     final enabled = await _areNotificationsEnabled;
     if (!enabled) {
-      await _localNotifications.cancel(id: leaderboardNotificationId);
+      await _localNotifications.cancel(id: sundayLeagueResetNotificationId);
       return;
     }
 
-    await _localNotifications.cancel(id: leaderboardNotificationId);
+    await _localNotifications.cancel(id: sundayLeagueResetNotificationId);
 
     const AndroidNotificationDetails androidDetails =
         AndroidNotificationDetails(
@@ -1038,6 +1130,8 @@ class NotificationService {
           channelDescription: 'Sunday league reset reminders and podium rewards',
           importance: Importance.high,
           priority: Priority.high,
+          icon: '@drawable/ic_launcher_monochrome',
+          color: Color(0xFF6366F1),
         );
 
     const DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
@@ -1052,14 +1146,14 @@ class NotificationService {
     );
 
     bool useExact = true;
-    if (Platform.isAndroid) {
+    if (!kIsWeb && Platform.isAndroid) {
       useExact = await Permission.scheduleExactAlarm.isGranted;
     }
 
     final location = _currentLocation;
 
     await _localNotifications.zonedSchedule(
-      id: leaderboardNotificationId,
+      id: sundayLeagueResetNotificationId,
       title: _t(
         'notifications.league_reset_title',
         fallback: 'Weekly League Reset: 4 Hours Left! \u{1F3C6}',
@@ -1109,12 +1203,12 @@ class NotificationService {
   Future<void> scheduleLeaderboardChallenge() async {
     final enabled = await _areNotificationsEnabled;
     if (!enabled) {
-      await _localNotifications.cancel(id: leaderboardNotificationId);
+      await _localNotifications.cancel(id: leaderboardChallengeNotificationId);
       return;
     }
 
     // Cancel existing to avoid stacking
-    await _localNotifications.cancel(id: leaderboardNotificationId);
+    await _localNotifications.cancel(id: leaderboardChallengeNotificationId);
 
     const AndroidNotificationDetails androidDetails =
         AndroidNotificationDetails(
@@ -1123,6 +1217,8 @@ class NotificationService {
           channelDescription: 'Game updates and challenges',
           importance: Importance.high,
           priority: Priority.high,
+          icon: '@drawable/ic_launcher_monochrome',
+          color: Color(0xFF6366F1),
         );
 
     const DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
@@ -1137,7 +1233,7 @@ class NotificationService {
     );
 
     bool useExact = true;
-    if (Platform.isAndroid) {
+    if (!kIsWeb && Platform.isAndroid) {
       useExact = await Permission.scheduleExactAlarm.isGranted;
     }
 
@@ -1171,7 +1267,7 @@ class NotificationService {
         leaderboardMessages[_idRandom.nextInt(leaderboardMessages.length)];
 
     await _localNotifications.zonedSchedule(
-      id: leaderboardNotificationId,
+      id: leaderboardChallengeNotificationId,
       title: _t('notifications.leaderboard_title', fallback: msg.title),
       body: _t('notifications.leaderboard_body', fallback: msg.body),
       scheduledDate: scheduledDate,
@@ -1206,6 +1302,8 @@ class NotificationService {
           importance: Importance.max,
           priority: Priority.high,
           showWhen: true,
+          icon: '@drawable/ic_launcher_monochrome',
+          color: Color(0xFF6366F1),
         );
 
     const DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
@@ -1247,12 +1345,12 @@ class NotificationService {
     try {
       final user = FirebaseAuth.instance.currentUser;
       if (user != null) {
-        // 1. Remove fcmToken from Firestore while still authenticated (max 2s)
+        // 1. Remove fcmToken from Firestore while still authenticated (max 5s)
         await FirebaseFirestore.instance
             .collection('users')
             .doc(user.uid)
             .update({'fcmToken': FieldValue.delete()})
-            .timeout(const Duration(seconds: 2), onTimeout: () {});
+            .timeout(const Duration(seconds: 5), onTimeout: () {});
         if (kDebugMode) {
           debugPrint(
             'NotificationService: FCM token cleared from Firestore for ${user.uid}',
@@ -1267,11 +1365,11 @@ class NotificationService {
       }
     }
 
-    // 2. Invalidate local device FCM token on Firebase servers and cancel reminders in parallel (max 2s)
+    // 2. Invalidate local device FCM token on Firebase servers and cancel reminders in parallel (max 5s)
     await Future.wait([
       _fcm
           .deleteToken()
-          .timeout(const Duration(seconds: 2), onTimeout: () {})
+          .timeout(const Duration(seconds: 5), onTimeout: () {})
           .then((_) {
             if (kDebugMode) {
               debugPrint('NotificationService: Local FCM token deleted from device.');

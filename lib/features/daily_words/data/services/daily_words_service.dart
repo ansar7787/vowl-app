@@ -1,4 +1,4 @@
-import 'dart:convert';
+﻿import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -10,9 +10,9 @@ import 'package:vowl/features/daily_words/domain/entities/word_progress.dart';
 /// JSON assets, persisting learned-word progress, and implementing the
 /// Leitner spaced-repetition scheduling algorithm.
 ///
-/// **Zero server cost** — all data is local JSON + SharedPreferences.
+/// **Zero server cost** â€” all data is local JSON + SharedPreferences.
 class DailyWordsService {
-  // ── Constants ───────────────────────────────────────────────────────────────
+  // â”€â”€ Constants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   /// Total number of day files available in the corpus (75 files x 10 days = 750 days).
   static const int totalDays = 750;
@@ -33,10 +33,10 @@ class DailyWordsService {
   static const String _keyLongestStreak = 'daily_words_longest_streak';
   static const String _keyTotalWordsLearned = 'daily_words_total_learned';
 
-  /// Leitner box → days until next review.
+  /// Leitner box â†’ days until next review.
   static const List<int> _leitnerIntervals = [0, 1, 3, 7, 14, 30];
 
-  // ── Cached state ────────────────────────────────────────────────────────────
+  // â”€â”€ Cached state â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   bool _isInitialized = false;
   int _currentDay = 1;
@@ -49,7 +49,7 @@ class DailyWordsService {
   DailyWordSet? _cachedWordSet;
   Map<String, WordProgress> _wordBank = {};
 
-  // ── Public getters ──────────────────────────────────────────────────────────
+  // â”€â”€ Public getters â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   bool get isInitialized => _isInitialized;
   int get currentDay => _currentDay;
@@ -126,7 +126,7 @@ class DailyWordsService {
     }).toList();
   }
 
-  // ── Initialisation ──────────────────────────────────────────────────────────
+  // â”€â”€ Initialisation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   /// Loads persisted state from SharedPreferences. Call once at app start.
   Future<void> init() async {
@@ -163,7 +163,7 @@ class DailyWordsService {
     }
   }
 
-  // ── Day rollover ────────────────────────────────────────────────────────────
+  // â”€â”€ Day rollover â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   Future<void> _checkDailyRollover() async {
     final today = _todayString();
@@ -187,10 +187,10 @@ class DailyWordsService {
         );
         final diff = todayCalendarDay.difference(lastCalendarDay).inDays;
         if (diff == 1) {
-          // Consecutive calendar day — increment streak
+          // Consecutive calendar day â€” increment streak
           _streak++;
         } else if (diff > 1) {
-          // One or more days missed — reset streak
+          // One or more days missed â€” reset streak
           _streak = 1;
         }
       }
@@ -207,7 +207,7 @@ class DailyWordsService {
     await _persist();
   }
 
-  // ── Load today's words ──────────────────────────────────────────────────────
+  // â”€â”€ Load today's words â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   /// Loads the current day's word set from local JSON assets.
   /// If today's session is already completed, loads the completed day's words so
@@ -263,7 +263,7 @@ class DailyWordsService {
     }
   }
 
-  // ── Word completion ─────────────────────────────────────────────────────────
+  // â”€â”€ Word completion â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   /// Marks a word as learned (Box 1) or mastered (Box 3) and adds it to the Word Bank.
   ///
@@ -277,7 +277,7 @@ class DailyWordsService {
 
     final today = _todayString();
     final nextReview = targetBox >= 3
-        ? '' // Mastered — recall verified!
+        ? '' // Mastered â€” recall verified!
         : _calculateNextReview(today, 1); // Box 1 = review tomorrow
 
     final isNewLearn = existing == null || existing.box == 0;
@@ -350,7 +350,7 @@ class DailyWordsService {
     }
 
     final nextReview = newBox >= 3
-        ? '' // Mastered — no more reviews needed
+        ? '' // Mastered â€” no more reviews needed
         : _calculateNextReview(today, _leitnerIntervals[newBox]);
 
     _wordBank[wordId] = existing.copyWith(
@@ -378,7 +378,7 @@ class DailyWordsService {
     await _persist();
   }
 
-  // ── Word Bank search ────────────────────────────────────────────────────────
+  // â”€â”€ Word Bank search â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   /// Searches the Word Bank for words matching the [query].
   ///
@@ -411,7 +411,7 @@ class DailyWordsService {
     return results.take(limit).toList();
   }
 
-  // ── Word details lookup ─────────────────────────────────────────────────────
+  // â”€â”€ Word details lookup â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   /// Retrieves full word details (phonetic, definition, example) for a word ID.
   Future<DailyWord?> getWordDetails(String wordId) async {
@@ -435,7 +435,7 @@ class DailyWordsService {
     return null;
   }
 
-  // ── Statistics ──────────────────────────────────────────────────────────────
+  // â”€â”€ Statistics â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   /// Returns a map of mastery statistics.
   Map<String, int> get masteryStats {
@@ -466,23 +466,27 @@ class DailyWordsService {
     };
   }
 
-  // ── Reset ───────────────────────────────────────────────────────────────────
+  // â”€â”€ Reset â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   /// Resets all daily words progress. Called on account deletion / logout.
   Future<void> reset() async {
     _isInitialized = false;
     _currentDay = 1;
+    _completedDay = 0;
     _streak = 0;
     _longestStreak = 0;
     _totalWordsLearned = 0;
     _lastOpenDate = '';
+    _lastCompletedDate = '';
     _cachedWordSet = null;
     _wordBank.clear();
 
     try {
       final prefs = await SharedPreferences.getInstance();
       await prefs.remove(_keyCurrentDay);
+      await prefs.remove(_keyCompletedDay);
       await prefs.remove(_keyLastOpenDate);
+      await prefs.remove(_keyLastCompletedDate);
       await prefs.remove(_keyWordBank);
       await prefs.remove(_keyStreak);
       await prefs.remove(_keyLongestStreak);
@@ -494,7 +498,7 @@ class DailyWordsService {
     }
   }
 
-  // ── Private helpers ─────────────────────────────────────────────────────────
+  // â”€â”€ Private helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   String _todayString() {
     final now = DateTime.now();

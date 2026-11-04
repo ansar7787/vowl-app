@@ -334,9 +334,16 @@ void main() {
       await tester.pumpWidget(buildTestWidget());
       await tester.pumpAndSettle();
 
+      final scrollable = find.byType(Scrollable).first;
+      await tester.scrollUntilVisible(
+        find.text('WAYS TO EARN'),
+        50.0,
+        scrollable: scrollable,
+      );
+      await tester.pumpAndSettle();
+
       expect(find.text('WAYS TO EARN'), findsOneWidget);
 
-      final scrollable = find.byType(Scrollable).first;
       await tester.scrollUntilVisible(
         find.text('Maintain Daily Streak'),
         100.0,

@@ -26,6 +26,7 @@ import 'package:go_router/go_router.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_overtake_hud.dart';
@@ -351,10 +352,19 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     }
 
     final updatedKeys = [...currentUser.claimedWeeklyRewardWeekKeys, weekKey];
+    final coinHistoryEntry = {
+      'titleKey': 'coin_history.weekly_league_reward',
+      'amount': coins,
+      'isEarned': true,
+      'timestamp': Timestamp.now(),
+    };
     try {
       await FirebaseFirestore.instance.collection('users').doc(currentUser.id).update({
         'claimedWeeklyRewardWeekKeys': updatedKeys,
-        if (coins > 0) 'coins': FieldValue.increment(coins),
+        if (coins > 0) ...{
+          'coins': FieldValue.increment(coins),
+          'coinHistory': FieldValue.arrayUnion([coinHistoryEntry]),
+        },
         if (vipDays > 0) ...{
           'isPremium': true,
           'premiumExpiryDate': Timestamp.fromDate(newExpiry!),
@@ -363,6 +373,12 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
       });
 
       if (mounted) {
+        di.sl<HapticService>().success();
+        if (di.sl.isRegistered<SoundService>()) {
+          di.sl<SoundService>().playCoinTally(count: 8);
+        }
+        context.read<AuthBloc>().add(const AuthRefreshUser());
+        context.read<AuthBloc>().add(const AuthReloadUser());
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             backgroundColor: AppColors.emerald500,
