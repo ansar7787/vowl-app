@@ -224,38 +224,45 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
                     ),
                   ),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'ROOM CODE',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 9.sp,
-                              fontWeight: FontWeight.w800,
-                              letterSpacing: 1.2,
-                              color: textSecondary,
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'ROOM CODE',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 9.sp,
+                                fontWeight: FontWeight.w800,
+                                letterSpacing: 1.2,
+                                color: textSecondary,
+                              ),
                             ),
-                          ),
-                          SizedBox(height: 2.h),
-                          Text(
-                            widget.roomCode!.toUpperCase(),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w900,
-                              letterSpacing: 2,
-                              color: textPrimary,
+                            SizedBox(height: 2.h),
+                            Text(
+                              widget.roomCode!.toUpperCase(),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 15.sp,
+                                fontWeight: FontWeight.w900,
+                                letterSpacing: 1.5,
+                                color: textPrimary,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
+                      SizedBox(width: 8.w),
                       Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           IconButton(
+                            visualDensity: VisualDensity.compact,
+                            padding: EdgeInsets.all(6.r),
+                            constraints: const BoxConstraints(),
                             icon: Icon(LucideIcons.copy, size: 18.sp, color: const Color(0xFFF59E0B)),
                             tooltip: 'Copy Code',
                             onPressed: () {
@@ -269,7 +276,11 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
                               );
                             },
                           ),
+                          SizedBox(width: 8.w),
                           IconButton(
+                            visualDensity: VisualDensity.compact,
+                            padding: EdgeInsets.all(6.r),
+                            constraints: const BoxConstraints(),
                             icon: Icon(LucideIcons.share2, size: 18.sp, color: const Color(0xFFF59E0B)),
                             tooltip: 'Share Duel Invite',
                             onPressed: () {
