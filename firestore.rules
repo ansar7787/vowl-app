@@ -51,9 +51,6 @@ service cloud.firestore {
     //   - claimedLevelMilestones: list (optional) - claimed level milestones
     //   - coinHistory: list (optional) - ledger of coin adjustments
     //   - hasPermanentXPBoost: bool (optional) - permanent boost flag
-    //   - lastFreeSpinDate: timestamp (optional) - last free wheel spin
-    //   - lastAdSpinDate: timestamp (optional) - last ad wheel spin
-    //   - adSpinsUsedToday: int (optional) - count of ad spins used today
     //   - kidsOwnedFurniture: list (optional) - owned furniture IDs
     //   - kidsEquippedFurniture: map (optional) - equipped furniture map
     //   - keys / goldenKeys: int (optional, default 0) - keys count
