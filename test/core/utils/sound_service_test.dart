@@ -148,5 +148,15 @@ void main() {
       // Next call starts at Step 1 again
       await soundService.playCorrect();
     });
+
+    test('playGameOver plays without throwing and resets combo', () async {
+      when(() => mockTtsService.isSpeaking).thenReturn(false);
+
+      final soundService = SoundService(mockTtsService);
+      await Future.delayed(const Duration(milliseconds: 50));
+
+      await soundService.playGameOver();
+      expect(soundService.isMuted, isFalse);
+    });
   });
 }

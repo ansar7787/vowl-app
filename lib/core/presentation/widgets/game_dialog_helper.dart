@@ -164,7 +164,8 @@ class GameDialogHelper {
     if (effectiveCoins > 0) {
       coinTallyTimer = Timer(const Duration(milliseconds: 450), () {
         try {
-          _sound.playCoinTally(count: effectiveCoins);
+          // Keep tactile feedback synced with visual coin counter without
+          // drowning out the hero level_completed victory fanfare.
           _haptic.selection();
         } catch (_) {}
       });
@@ -288,8 +289,9 @@ class GameDialogHelper {
     String? adButtonText,
   }) {
     if (!context.mounted) return;
-    // Removed _sound.playWrong() and _haptic.error() here to prevent double
-    // negative feedback when transitioning from a wrong answer to Game Over.
+    // Play dedicated gentle, non-punitive defeat sting with tactile warning cue.
+    _sound.playGameOver();
+    _haptic.warning();
 
     final resolvedTitle =
         title ?? context.tr('games.game_over_title', fallback: 'Game Over');

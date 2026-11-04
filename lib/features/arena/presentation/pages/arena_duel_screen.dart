@@ -174,6 +174,15 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                     }
                   }
 
+                  if (state.timeRemaining == 3 && !state.isCompleted && !state.isWaitingForGuest) {
+                    if (di.sl.isRegistered<SoundService>()) {
+                      di.sl<SoundService>().playArenaCountdown();
+                    }
+                    if (di.sl.isRegistered<HapticService>()) {
+                      di.sl<HapticService>().warning();
+                    }
+                  }
+
                   if (state.isCompleted) {
                     if (di.sl.isRegistered<SoundService>()) {
                       if (state.isWinner) {
