@@ -79,7 +79,10 @@ class LanguageSelectionBottomSheet extends StatefulWidget {
 class _LanguageSelectionBottomSheetState
     extends State<LanguageSelectionBottomSheet> {
   final TextEditingController _searchController = TextEditingController();
-  final TranslationService _translationService = di.sl<TranslationService>();
+  final TranslationService _translationService =
+      di.sl.isRegistered<TranslationService>()
+          ? di.sl<TranslationService>()
+          : TranslationService();
 
   List<String> _allLanguages = [];
   List<String> _filteredLanguages = [];

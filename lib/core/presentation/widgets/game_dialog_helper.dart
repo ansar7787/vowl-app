@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/praise_service.dart';
 import 'package:flutter/material.dart';
@@ -75,7 +76,7 @@ class GameDialogHelper {
     _sound.playLevelComplete();
     _haptic.success();
 
-    if (mistakesMade == 0) {
+    if (mistakesMade == 0 && di.sl.isRegistered<PraiseService>()) {
       di.sl<PraiseService>().givePraise(context: PraiseContext.flawless);
     }
 
@@ -89,20 +90,22 @@ class GameDialogHelper {
     // the ConnectivityWrapper will block further gameplay until reconnection.
     // Premium users are unaffected: they have unlimited offline play with NO
     // internet requirement.
-    if (!isPremium) {
-      final network = di.sl<NetworkInfo>();
-      if (network.isCurrentlyOffline) {
-        OfflinePlayGateService.instance.recordOfflineLevel(isPremium: false);
-      } else {
-        network.isConnected.then((connected) {
-          if (!connected) {
-            OfflinePlayGateService.instance.recordOfflineLevel(isPremium: false);
-          }
-        }).catchError((_) {
-          // Network check failed — treat as offline to be safe
+    if (!isPremium && di.sl.isRegistered<NetworkInfo>()) {
+      try {
+        final network = di.sl<NetworkInfo>();
+        if (network.isCurrentlyOffline == true) {
           OfflinePlayGateService.instance.recordOfflineLevel(isPremium: false);
-        });
-      }
+        } else {
+          network.isConnected.then((connected) {
+            if (!connected) {
+              OfflinePlayGateService.instance.recordOfflineLevel(isPremium: false);
+            }
+          }).catchError((_) {
+            // Network check failed — treat as offline to be safe
+            OfflinePlayGateService.instance.recordOfflineLevel(isPremium: false);
+          });
+        }
+      } catch (_) {}
     }
 
     // Premium VIPs automatically receive the 3x coins multiplier (30 coins) natively
@@ -153,9 +156,12 @@ class GameDialogHelper {
       Overlay.of(context).insert(overlayEntry);
     }
 
+    Timer? coinTallyTimer;
     if (effectiveCoins > 0) {
-      Future.delayed(const Duration(milliseconds: 600), () {
-        _sound.playCoinTally(count: effectiveCoins);
+      coinTallyTimer = Timer(const Duration(milliseconds: 300), () {
+        try {
+          _sound.playCoinTally(count: effectiveCoins);
+        } catch (_) {}
       });
     }
 
@@ -257,7 +263,9 @@ class GameDialogHelper {
           ),
         ],
       ),
-    );
+    ).whenComplete(() {
+      coinTallyTimer?.cancel();
+    });
   }
 
   // ─── Game Over ────────────────────────────────────────────────────────

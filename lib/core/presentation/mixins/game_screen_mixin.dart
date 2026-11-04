@@ -37,6 +37,11 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
   /// Tracks macro session streak across consecutive levels until a mistake is made.
   static int _sessionHotStreak = 0;
 
+  @visibleForTesting
+  static void resetSessionHotStreak() {
+    _sessionHotStreak = 0;
+  }
+
   void initGameLifecycle() {
     _gameLifecycleListener = AppLifecycleHandler.createListener(
       onPause: onGamePaused,
@@ -182,9 +187,13 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
 
     // Macro Hot Streak Celebrations across levels (5 in a row, 10 in a row)
     if (_sessionHotStreak == 5) {
-      di.sl<PraiseService>().givePraise(context: PraiseContext.hotStreak5);
+      if (di.sl.isRegistered<PraiseService>()) {
+        di.sl<PraiseService>().givePraise(context: PraiseContext.hotStreak5);
+      }
     } else if (_sessionHotStreak == 10) {
-      di.sl<PraiseService>().givePraise(context: PraiseContext.hotStreak10);
+      if (di.sl.isRegistered<PraiseService>()) {
+        di.sl<PraiseService>().givePraise(context: PraiseContext.hotStreak10);
+      }
     }
 
     isAnsweredNotifier.value = true;
