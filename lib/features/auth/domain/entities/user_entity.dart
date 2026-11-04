@@ -76,8 +76,8 @@ class UserEntity {
   /// Timestamp of the user's most recent login.
   final DateTime? lastLoginDate;
 
-  /// Whether the user has an active premium subscription.
-  final bool isPremium;
+  /// Raw underlying premium subscription flag.
+  final bool _rawIsPremium;
 
   /// Whether the user's email address has been verified.
   final bool isEmailVerified;
@@ -287,7 +287,7 @@ class UserEntity {
     this.currentStreak = 0,
     this.lastLoginDate,
     this.isEmailVerified = false,
-    this.isPremium = false,
+    bool isPremium = false,
     this.premiumExpiryDate,
     this.categoryStats = const {},
     // Single source of truth via UserGameConstants — no more inline duplication.
@@ -351,7 +351,7 @@ class UserEntity {
     this.lastDuelDate,
     this.duelWins = 0,
     this.duelLosses = 0,
-  });
+  }) : _rawIsPremium = isPremium;
 
   // ---------------------------------------------------------------------------
   // Derived getters
@@ -404,11 +404,15 @@ class UserEntity {
 
   /// Whether the user has an active premium subscription.
   /// Automatically checks if [premiumExpiryDate] has passed.
-  bool get hasActivePremium {
-    if (!isPremium) return false;
-    if (premiumExpiryDate == null) return true;
-    return premiumExpiryDate!.isAfter(DateTime.now());
-  }
+  bool get isPremium =>
+      _rawIsPremium &&
+      (premiumExpiryDate == null || premiumExpiryDate!.isAfter(DateTime.now()));
+
+  /// Raw stored premium flag before date evaluation.
+  bool get rawIsPremium => _rawIsPremium;
+
+  /// Alias for [isPremium], ensuring active status.
+  bool get hasActivePremium => isPremium;
 
   /// Whether the user is eligible to claim today's VIP gift.
   bool get isVipGiftAvailable {
@@ -682,7 +686,7 @@ class UserEntity {
       hintPacks: hintPacks ?? this.hintPacks,
       isAdmin: isAdmin ?? this.isAdmin,
       isEmailVerified: isEmailVerified ?? this.isEmailVerified,
-      isPremium: isPremium ?? this.isPremium,
+      isPremium: isPremium ?? _rawIsPremium,
       kidsCoins: kidsCoins ?? this.kidsCoins,
       kidsOwnedAccessories: kidsOwnedAccessories ?? this.kidsOwnedAccessories,
       kidsStickers: kidsStickers ?? this.kidsStickers,

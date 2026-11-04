@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/presentation/widgets/vowl_micro_loader.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/social_share/domain/entities/share_card_data.dart';
 import 'package:vowl/features/social_share/presentation/widgets/milestone_share_card_widget.dart';
@@ -95,11 +96,7 @@ class _ShareCardPreviewModalState extends State<ShareCardPreviewModal> {
               child: ElevatedButton.icon(
                 onPressed: _isSharing ? null : _handleShare,
                 icon: _isSharing
-                    ? SizedBox(
-                        width: 16.w,
-                        height: 16.w,
-                        child: const CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
-                      )
+                    ? const VowlMicroLoader(size: 16, color: Colors.white)
                     : Icon(LucideIcons.share2, size: 18.sp),
                 label: Text(
                   _isSharing ? 'Generating Image...' : 'Share Card to Stories / WhatsApp',

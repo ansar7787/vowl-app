@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/presentation/widgets/vowl_micro_loader.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
@@ -205,13 +206,9 @@ class _ReferralClaimDialogState extends State<ReferralClaimDialog> {
                       elevation: 0,
                     ),
                     child: widget.isLoading
-                        ? SizedBox(
-                            width: 18.w,
-                            height: 18.w,
-                            child: const CircularProgressIndicator(
-                              strokeWidth: 2,
-                              color: Colors.white,
-                            ),
+                        ? VowlMicroLoader(
+                            size: 16.w,
+                            color: Colors.white,
                           )
                         : Text(
                             'Claim Reward',

@@ -194,6 +194,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                         },
                         onClose: () {
                           Navigator.of(dialogCtx).pop();
+                          context.read<AuthBloc>().add(const AuthReloadUser());
                           Navigator.of(context).pop();
                         },
                       ),
@@ -512,19 +513,29 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
   }
 
   void _confirmExit(BuildContext context) {
+    final cubit = context.read<ArenaDuelCubit>();
+    if (cubit.state.isCompleted) {
+      context.read<AuthBloc>().add(const AuthReloadUser());
+      Navigator.of(context).pop();
+      return;
+    }
+
+    final isWaiting = cubit.state.isWaitingForGuest;
+
     ArenaQuitMatchDialog.show(
       context: context,
-      onForfeit: () {
-        final cubit = context.read<ArenaDuelCubit>();
+      isWaitingLobby: isWaiting,
+      onForfeit: () async {
         final session = cubit.state.session;
         final authState = context.read<AuthBloc>().state;
         if (session != null && authState.user != null) {
-          di.sl<ArenaRepository>().forfeitMatch(
+          await di.sl<ArenaRepository>().forfeitMatch(
             roomCode: session.roomCode,
             userId: authState.user!.id,
           );
         }
-        if (mounted) {
+        if (context.mounted) {
+          context.read<AuthBloc>().add(const AuthReloadUser());
           Navigator.of(context).pop();
         }
       },
