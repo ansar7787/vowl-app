@@ -450,6 +450,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
       await _firestore.collection('users').doc(userId).update({
         'coins': FieldValue.increment(_kStakeCoins),
         'coinHistory': updatedHistory,
+        'lastRewardTimestamp': FieldValue.serverTimestamp(),
       }).timeout(_kNetworkTimeout);
     } catch (e) {
       debugPrint('[ArenaRepositoryImpl] Refund stake error: $e');

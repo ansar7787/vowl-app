@@ -230,9 +230,10 @@ class ReferralRepositoryImpl implements ReferralRepository {
       final currentMonth = _getCurrentMonthKey();
       final storedMonth = data['currentMonthKey'] as String? ?? currentMonth;
 
-      // Update the referral document
+      // Update the referral document atomically
       final Map<String, dynamic> referralUpdates = {
         'successfulCount': FieldValue.increment(1),
+        'lastReferralTimestamp': FieldValue.serverTimestamp(),
       };
 
       if (storedMonth == currentMonth) {
@@ -244,53 +245,73 @@ class ReferralRepositoryImpl implements ReferralRepository {
       }
 
       await _firestore.collection('referrals').doc(cleanCode).update(referralUpdates);
+    } catch (e) {
+      debugPrint('[ReferralRepositoryImpl] onFriendCompletedLevelOne error: $e');
+    }
+  }
 
-      // Reward the ambassador: 100 Coins + 1 Day VIP with coin history
-      final ambassadorUserDoc = await _firestore.collection('users').doc(ownerId).get().timeout(_kNetworkTimeout);
-      if (ambassadorUserDoc.exists && ambassadorUserDoc.data() != null) {
-        final ambData = ambassadorUserDoc.data()!;
-        final now = DateTime.now();
-        final rawExpiry = ambData['premiumExpiryDate'];
-        DateTime? existingExpiry;
-        if (rawExpiry is Timestamp) {
-          existingExpiry = rawExpiry.toDate();
-        }
+  @override
+  Future<int> syncAmbassadorRewards(UserEntity user) async {
+    final code = user.referralCode?.trim().toUpperCase();
+    if (code == null || code.isEmpty) {
+      return 0;
+    }
 
-        final bool isAlreadyVip = (ambData['isPremium'] as bool? ?? false) &&
-            existingExpiry != null &&
-            existingExpiry.isAfter(now);
+    try {
+      final refDoc = await _firestore.collection('referrals').doc(code).get().timeout(_kNetworkTimeout);
+      if (!refDoc.exists || refDoc.data() == null) {
+        return 0;
+      }
 
-        final DateTime newExpiry = isAlreadyVip
-            ? existingExpiry.add(const Duration(days: 1))
-            : now.add(const Duration(days: 1));
+      final data = refDoc.data()!;
+      final successfulCount = (data['successfulCount'] as num?)?.toInt() ?? 0;
+      final monthlyCount = (data['monthlyCount'] as num?)?.toInt() ?? 0;
+      final currentMonth = (data['currentMonthKey'] as String?) ?? _getCurrentMonthKey();
 
-        final ambMonth = ambData['currentReferralMonthKey'] as String? ?? currentMonth;
-        final bool isNewMonth = ambMonth != currentMonth;
+      final pendingDiff = successfulCount - user.totalReferralsCount;
+      if (pendingDiff <= 0) {
+        return 0;
+      }
 
-        final rawHistory = (ambData['coinHistory'] as List<dynamic>?)
-                ?.map((e) => Map<String, dynamic>.from(e as Map))
-                .toList() ??
-            [];
-        final updatedHistory = _recordCoinHistory(
+      final now = DateTime.now();
+      final DateTime newExpiry;
+      if (user.hasActivePremium && user.premiumExpiryDate != null) {
+        newExpiry = user.premiumExpiryDate!.add(Duration(days: pendingDiff));
+      } else {
+        newExpiry = now.add(Duration(days: pendingDiff));
+      }
+
+      final userDoc = await _firestore.collection('users').doc(user.id).get().timeout(_kNetworkTimeout);
+      var rawHistory = (userDoc.data()?['coinHistory'] as List<dynamic>?)
+              ?.map((e) => Map<String, dynamic>.from(e as Map))
+              .toList() ??
+          [];
+
+      final coinsEarned = pendingDiff * 100;
+      for (var i = 0; i < pendingDiff; i++) {
+        rawHistory = _recordCoinHistory(
           rawHistory,
           titleKey: 'coin_history.referral_reward',
           amount: 100,
           isEarned: true,
         );
-
-        await _firestore.collection('users').doc(ownerId).update({
-          'totalReferralsCount': FieldValue.increment(1),
-          'monthlyReferralsCount': isNewMonth ? 1 : FieldValue.increment(1),
-          'currentReferralMonthKey': currentMonth,
-          'coins': FieldValue.increment(100),
-          'isPremium': true,
-          'premiumExpiryDate': Timestamp.fromDate(newExpiry),
-          'coinHistory': updatedHistory,
-          'lastRewardTimestamp': FieldValue.serverTimestamp(),
-        });
       }
+
+      await _firestore.collection('users').doc(user.id).update({
+        'totalReferralsCount': successfulCount,
+        'monthlyReferralsCount': monthlyCount,
+        'currentReferralMonthKey': currentMonth,
+        'coins': FieldValue.increment(coinsEarned),
+        'isPremium': true,
+        'premiumExpiryDate': Timestamp.fromDate(newExpiry),
+        'coinHistory': rawHistory,
+        'lastRewardTimestamp': FieldValue.serverTimestamp(),
+      }).timeout(_kNetworkTimeout);
+
+      return pendingDiff;
     } catch (e) {
-      debugPrint('[ReferralRepositoryImpl] onFriendCompletedLevelOne error: $e');
+      debugPrint('[ReferralRepositoryImpl] syncAmbassadorRewards error: $e');
+      return 0;
     }
   }
 

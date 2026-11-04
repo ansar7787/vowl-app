@@ -12,7 +12,7 @@ class ReferralCubit extends Cubit<ReferralState> {
       : _repository = repository,
         super(const ReferralState());
 
-  /// Initializes the referral hub: generates/fetches code, loads active month cup leaderboard.
+  /// Initializes the referral hub: generates/fetches code, syncs any pending ambassador rewards, and loads active month cup leaderboard.
   Future<void> init(UserEntity user) async {
     emit(state.copyWith(
       isLoading: true,
@@ -22,12 +22,14 @@ class ReferralCubit extends Cubit<ReferralState> {
 
     try {
       final code = await _repository.getOrCreateReferralCode(user);
+      final syncedCount = await _repository.syncAmbassadorRewards(user);
       final leaderboard = await _repository.getMonthlyAmbassadorLeaderboard();
 
       emit(state.copyWith(
         isLoading: false,
         referralCode: code,
         ambassadorLeaderboard: leaderboard,
+        syncedAmbassadorRewardCount: syncedCount > 0 ? syncedCount : null,
       ));
     } catch (_) {
       emit(state.copyWith(isLoading: false));

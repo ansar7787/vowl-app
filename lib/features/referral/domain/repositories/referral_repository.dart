@@ -40,5 +40,11 @@ abstract class ReferralRepository {
   Future<AmbassadorRewardClaimResult> claimMonthlyAmbassadorReward({
     required UserEntity user,
   });
+
+  /// Checks whether any referred friends have completed Level 1 since the last sync.
+  /// If new conversions are found on the user's referral document, credits 100 coins
+  /// and 1 Day VIP extension per friend, updates the user's document, and returns
+  /// the number of newly credited referrals (0 if none).
+  Future<int> syncAmbassadorRewards(UserEntity user);
 }
 
