@@ -306,8 +306,11 @@ class ArenaRepositoryImpl implements ArenaRepository {
     required int score,
     required bool isHost,
   }) async {
+    final cleanCode = roomCode.trim().toUpperCase();
+    if (cleanCode.startsWith('VOWL-AI-')) return;
+
     try {
-      final docRef = _firestore.collection('arena_rooms').doc(roomCode.trim().toUpperCase());
+      final docRef = _firestore.collection('arena_rooms').doc(cleanCode);
       await docRef.update({
         isHost ? 'hostScore' : 'guestScore': score,
         'lastHeartbeat': FieldValue.serverTimestamp(),
@@ -385,13 +388,16 @@ class ArenaRepositoryImpl implements ArenaRepository {
       debugPrint('[ArenaRepositoryImpl] completeMatch user update error: $e');
     }
 
-    try {
-      final docRef = _firestore.collection('arena_rooms').doc(roomCode.trim().toUpperCase());
-      await docRef.update({
-        'status': 'completed',
-        if (isWinner) 'winnerId': currentUser.id,
-      });
-    } catch (_) {}
+    final cleanCode = roomCode.trim().toUpperCase();
+    if (!cleanCode.startsWith('VOWL-AI-')) {
+      try {
+        final docRef = _firestore.collection('arena_rooms').doc(cleanCode);
+        await docRef.update({
+          'status': 'completed',
+          if (isWinner) 'winnerId': currentUser.id,
+        });
+      } catch (_) {}
+    }
   }
 
   @override
@@ -399,8 +405,11 @@ class ArenaRepositoryImpl implements ArenaRepository {
     required String roomCode,
     required String userId,
   }) async {
+    final cleanCode = roomCode.trim().toUpperCase();
+    if (cleanCode.startsWith('VOWL-AI-')) return;
+
     try {
-      final docRef = _firestore.collection('arena_rooms').doc(roomCode.trim().toUpperCase());
+      final docRef = _firestore.collection('arena_rooms').doc(cleanCode);
       final snap = await docRef.get().timeout(_kNetworkTimeout);
       if (snap.exists) {
         final data = snap.data();

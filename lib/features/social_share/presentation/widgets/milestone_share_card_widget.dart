@@ -34,6 +34,7 @@ class MilestoneShareCardWidget extends StatelessWidget {
           // Header: App Icon & Brand Logo
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(10.r),
@@ -42,6 +43,15 @@ class MilestoneShareCardWidget extends StatelessWidget {
                   width: 32.w,
                   height: 32.w,
                   fit: BoxFit.cover,
+                  errorBuilder: (ctx, err, stack) => Container(
+                    width: 32.w,
+                    height: 32.w,
+                    decoration: BoxDecoration(
+                      color: AppColors.indigo500,
+                      borderRadius: BorderRadius.circular(10.r),
+                    ),
+                    child: Icon(LucideIcons.sparkles, size: 18.sp, color: Colors.white),
+                  ),
                 ),
               ),
               SizedBox(width: 10.w),
@@ -49,6 +59,16 @@ class MilestoneShareCardWidget extends StatelessWidget {
                 'assets/images/vowl_logo.webp',
                 height: 22.h,
                 fit: BoxFit.contain,
+                errorBuilder: (ctx, err, stack) => Text(
+                  'VOWL',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w900,
+                    letterSpacing: 2,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ],
           ),
