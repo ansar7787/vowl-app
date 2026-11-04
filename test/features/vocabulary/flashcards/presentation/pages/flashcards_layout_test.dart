@@ -235,6 +235,11 @@ void main() {
         locale: any(named: 'locale'),
       ),
     ).thenAnswer((_) async {});
+    when(
+      () => mockSoundService.playCorrect(
+        comboStep: any(named: 'comboStep'),
+      ),
+    ).thenAnswer((_) async {});
     when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
     when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
     when(() => mockSoundService.playHint()).thenAnswer((_) async {});
@@ -607,7 +612,9 @@ void main() {
       await tester.pump(const Duration(milliseconds: 400));
 
       verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
+      verify(
+        () => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
+      ).called(1);
       verify(() => mockVocabularyBloc.add(const SubmitAnswer(true))).called(1);
     });
 
@@ -682,7 +689,9 @@ void main() {
       await tester.pump(const Duration(milliseconds: 400));
 
       verify(() => mockHapticService.success()).called(1);
-      verify(() => mockSoundService.playCorrect()).called(1);
+      verify(
+        () => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
+      ).called(1);
       verify(() => mockVocabularyBloc.add(const SubmitAnswer(true))).called(1);
     });
 
@@ -889,6 +898,71 @@ void main() {
       expect(find.byType(GameFeedbackCard), findsOneWidget);
       expect(find.text('TRY AGAIN'), findsWidgets);
     });
+
+    testWidgets(
+      'tapping CONTINUE on final question with isFinalFailure dispatches NextQuestion and resets card when re-prompted',
+      (tester) async {
+        await pumpScreen(tester);
+
+        // Advance to quest 2 (the final question, as sample quests length is 2)
+        final q2State = testLoadedState.copyWith(
+          currentIndex: 1,
+          answerStatus: AnswerStatus.unanswered,
+        );
+        when(() => mockVocabularyBloc.state).thenReturn(q2State);
+        vocabularyStreamController.add(q2State);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        // Flip to back and answer wrong on the final question
+        await tester.tap(find.byType(FlashcardSwipeFront));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.tap(find.text('Again'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
+
+        // Emit final failure on last question (currentIndex: 1, 2 quests total)
+        final finalFailureState = testLoadedState.copyWith(
+          currentIndex: 1,
+          answerStatus: AnswerStatus.incorrect,
+          wrongCount: 2,
+          isFinalFailure: true,
+          livesRemaining: 1,
+        );
+        when(() => mockVocabularyBloc.state).thenReturn(finalFailureState);
+        vocabularyStreamController.add(finalFailureState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(find.byType(GameFeedbackCard), findsOneWidget);
+        final continueBtn = find.text('CONTINUE');
+        expect(continueBtn, findsOneWidget);
+
+        await tester.tap(continueBtn);
+        await tester.pump();
+
+        verify(() => mockVocabularyBloc.add(const NextQuestion())).called(1);
+
+        // Now BLoC emits re-prompt state for the final question:
+        final repromptState = testLoadedState.copyWith(
+          currentIndex: 1,
+          answerStatus: AnswerStatus.unanswered,
+          wrongCount: 0,
+          isFinalFailure: false,
+          livesRemaining: 1,
+        );
+        when(() => mockVocabularyBloc.state).thenReturn(repromptState);
+        vocabularyStreamController.add(repromptState);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pump(const Duration(milliseconds: 500));
+
+        // Card should be reset to front face, ready for another attempt without deadlock!
+        expect(find.byType(GameFeedbackCard), findsNothing);
+        expect(find.byType(FlashcardSwipeFront), findsOneWidget);
+      },
+    );
 
     testWidgets('advancing to next question resets card to unflipped state', (
       tester,

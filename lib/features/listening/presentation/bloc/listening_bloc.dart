@@ -233,7 +233,14 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState>
       _completeLevel(s, emit);
     } else {
       // Wrong on the final question — allow one more attempt.
-      emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
+      emit(
+        s.copyWith(
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        ),
+      );
     }
   }
 

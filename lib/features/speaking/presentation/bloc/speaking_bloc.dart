@@ -260,6 +260,8 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
             hintUsed: false,
             removedIndices: const [],
             isLetterRevealed: false,
+            wrongCount: 0,
+            isFinalFailure: false,
           ),
         );
       }

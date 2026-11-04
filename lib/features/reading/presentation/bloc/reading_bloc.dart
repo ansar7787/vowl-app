@@ -272,7 +272,14 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
       // 2. Background persistence (fire-and-forget, parallelized, 0ms lag)
       _persistLevelCompletion(s.livesRemaining);
     } else {
-      emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
+      emit(
+        s.copyWith(
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        ),
+      );
     }
   }
 

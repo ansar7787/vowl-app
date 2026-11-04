@@ -193,7 +193,7 @@ void main() {
     blocTest<VocabularyBloc, VocabularyState>(
       'should emit state with answerStatus: AnswerStatus.correct when answer is correct',
       build: () {
-        when(() => mockSoundService.playCorrect()).thenAnswer((_) async => {});
+        when(() => mockSoundService.playCorrect(comboStep: any(named: 'comboStep'))).thenAnswer((_) async => {});
         when(() => mockHapticService.success()).thenAnswer((_) async => {});
         return bloc;
       },
@@ -201,7 +201,7 @@ void main() {
       act: (bloc) => bloc.add(SubmitAnswer(true)),
       expect: () => [tLoadedState.copyWith(answerStatus: AnswerStatus.correct)],
       verify: (_) {
-        verify(() => mockSoundService.playCorrect()).called(1);
+        verify(() => mockSoundService.playCorrect(comboStep: any(named: 'comboStep'))).called(1);
         verify(() => mockHapticService.success()).called(1);
       },
     );
@@ -283,6 +283,29 @@ void main() {
           currentIndex: 1,
           answerStatus: AnswerStatus.unanswered,
           hintUsed: false,
+        ),
+      ],
+    );
+
+    blocTest<VocabularyBloc, VocabularyState>(
+      'should re-prompt the last question clearing isFinalFailure and wrongCount when answer was not correct',
+      build: () => bloc,
+      seed: () => tLoadedState.copyWith(
+        currentIndex: tQuests.length - 1,
+        answerStatus: AnswerStatus.incorrect,
+        isFinalFailure: true,
+        wrongCount: 2,
+        livesRemaining: 1,
+      ),
+      act: (bloc) => bloc.add(const NextQuestion()),
+      expect: () => [
+        tLoadedState.copyWith(
+          currentIndex: tQuests.length - 1,
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+          livesRemaining: 1,
         ),
       ],
     );

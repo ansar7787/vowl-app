@@ -249,7 +249,14 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
       await _completeLevel(s, emit);
     } else {
       // Wrong answer on the final question — stay and retry.
-      emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
+      emit(
+        s.copyWith(
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        ),
+      );
     }
   }
 
