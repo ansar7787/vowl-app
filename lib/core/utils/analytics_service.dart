@@ -21,8 +21,6 @@ class AnalyticsService {
   static const String _kEventLevelFail = 'level_fail';
   static const String _kEventAdImpression = 'ad_impression';
   static const String _kEventRescueLifeUsed = 'rescue_life_used';
-  static const String _kEventDailySpinUsed = 'daily_spin_used';
-  static const String _kEventDailySpinAdWatched = 'daily_spin_ad_watched';
   static const String _kEventQuestStarted = 'quest_started';
   static const String _kEventStreakMilestone = 'streak_milestone';
   static const String _kEventPurchaseAttempt = 'purchase_attempt';
@@ -89,16 +87,6 @@ class AnalyticsService {
       _kParamGameType: gameType,
       _kParamLevel: level,
     });
-  }
-
-  /// Reports a daily spin wheel usage.
-  Future<void> logDailySpinUsed() async {
-    await _safeLog(_kEventDailySpinUsed);
-  }
-
-  /// Reports a rewarded-ad watch for spin multiplication.
-  Future<void> logDailySpinAdWatched() async {
-    await _safeLog(_kEventDailySpinAdWatched);
   }
 
   /// Reports when a user starts a quest (session begin).

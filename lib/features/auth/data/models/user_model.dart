@@ -73,9 +73,6 @@ class UserModel extends UserEntity {
     super.claimedLevelMilestones,
     super.coinHistory,
     super.hasPermanentXPBoost,
-    super.lastFreeSpinDate,
-    super.lastAdSpinDate,
-    super.adSpinsUsedToday,
     super.kidsOwnedFurniture,
     super.kidsEquippedFurniture,
     super.keys,
@@ -172,9 +169,6 @@ class UserModel extends UserEntity {
       claimedLevelMilestones: _parseIntList(map['claimedLevelMilestones']),
       coinHistory: _parseDynamicMapList(map['coinHistory']),
       hasPermanentXPBoost: (map['hasPermanentXPBoost'] as bool?) ?? false,
-      lastFreeSpinDate: _parseDateTime(map['lastFreeSpinDate']),
-      lastAdSpinDate: _parseDateTime(map['lastAdSpinDate']),
-      adSpinsUsedToday: (map['adSpinsUsedToday'] as num?)?.toInt() ?? 0,
       kidsOwnedFurniture: map['kidsOwnedFurniture'] != null
           ? _parseStringList(map['kidsOwnedFurniture'])
           : UserGameConstants.kDefaultKidsOwnedFurniture,
@@ -277,9 +271,6 @@ class UserModel extends UserEntity {
       claimedLevelMilestones: entity.claimedLevelMilestones,
       coinHistory: entity.coinHistory,
       hasPermanentXPBoost: entity.hasPermanentXPBoost,
-      lastFreeSpinDate: entity.lastFreeSpinDate,
-      lastAdSpinDate: entity.lastAdSpinDate,
-      adSpinsUsedToday: entity.adSpinsUsedToday,
       kidsOwnedFurniture: entity.kidsOwnedFurniture,
       kidsEquippedFurniture: entity.kidsEquippedFurniture,
       keys: entity.keys,
@@ -378,13 +369,6 @@ class UserModel extends UserEntity {
       'claimedLevelMilestones': claimedLevelMilestones,
       'coinHistory': coinHistory,
       'hasPermanentXPBoost': hasPermanentXPBoost,
-      'lastFreeSpinDate': lastFreeSpinDate != null
-          ? Timestamp.fromDate(lastFreeSpinDate!)
-          : null,
-      'lastAdSpinDate': lastAdSpinDate != null
-          ? Timestamp.fromDate(lastAdSpinDate!)
-          : null,
-      'adSpinsUsedToday': adSpinsUsedToday,
       'kidsOwnedFurniture': kidsOwnedFurniture,
       'kidsEquippedFurniture': kidsEquippedFurniture,
       'keys': keys,
@@ -470,7 +454,6 @@ class UserModel extends UserEntity {
     int? totalExp,
     Map<String, int>? unlockedLevels,
     bool? hasPermanentXPBoost,
-    int? adSpinsUsedToday,
     List<String>? vowlOwnedAccessories,
     List<String>? vowlOwnedMascots,
     List<String>? kidsOwnedFurniture,
@@ -509,8 +492,6 @@ class UserModel extends UserEntity {
     Object? kidsEquippedAccessory = _absent,
     Object? vowlMascot = _absent,
     Object? vowlEquippedAccessory = _absent,
-    Object? lastFreeSpinDate = _absent,
-    Object? lastAdSpinDate = _absent,
     Object? kidsLastCareDate = _absent,
     Object? kidsLastFeedTime = _absent,
     Object? kidsLastGameDate = _absent,
@@ -548,7 +529,6 @@ class UserModel extends UserEntity {
       totalExp: totalExp ?? this.totalExp,
       unlockedLevels: unlockedLevels ?? this.unlockedLevels,
       hasPermanentXPBoost: hasPermanentXPBoost ?? this.hasPermanentXPBoost,
-      adSpinsUsedToday: adSpinsUsedToday ?? this.adSpinsUsedToday,
       vowlOwnedAccessories: vowlOwnedAccessories ?? this.vowlOwnedAccessories,
       vowlOwnedMascots: vowlOwnedMascots ?? this.vowlOwnedMascots,
       kidsOwnedFurniture: kidsOwnedFurniture ?? this.kidsOwnedFurniture,
@@ -620,12 +600,6 @@ class UserModel extends UserEntity {
       vowlEquippedAccessory: identical(vowlEquippedAccessory, _absent)
           ? this.vowlEquippedAccessory
           : vowlEquippedAccessory as String?,
-      lastFreeSpinDate: identical(lastFreeSpinDate, _absent)
-          ? this.lastFreeSpinDate
-          : lastFreeSpinDate as DateTime?,
-      lastAdSpinDate: identical(lastAdSpinDate, _absent)
-          ? this.lastAdSpinDate
-          : lastAdSpinDate as DateTime?,
       kidsLastCareDate: identical(kidsLastCareDate, _absent)
           ? this.kidsLastCareDate
           : kidsLastCareDate as DateTime?,

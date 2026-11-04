@@ -172,15 +172,6 @@ class UserEntity {
   /// Whether the user owns a permanent XP boost.
   final bool hasPermanentXPBoost;
 
-  /// Timestamp of the last free wheel spin.
-  final DateTime? lastFreeSpinDate;
-
-  /// Timestamp of the last rewarded ad wheel spin.
-  final DateTime? lastAdSpinDate;
-
-  /// Number of rewarded ad spins used today.
-  final int adSpinsUsedToday;
-
   /// List of furniture item IDs owned in kids room.
   final List<String> kidsOwnedFurniture;
 
@@ -322,9 +313,6 @@ class UserEntity {
     this.claimedLevelMilestones = const [],
     this.coinHistory = const [],
     this.hasPermanentXPBoost = false,
-    this.lastFreeSpinDate,
-    this.lastAdSpinDate,
-    this.adSpinsUsedToday = 0,
     this.keys = 0,
     this.previousRank,
     this.previousRankWeekKey,
@@ -613,7 +601,6 @@ class UserEntity {
     int? totalExp,
     Map<String, int>? unlockedLevels,
     bool? hasPermanentXPBoost,
-    int? adSpinsUsedToday,
     List<String>? vowlOwnedAccessories,
     List<String>? vowlOwnedMascots,
     List<String>? kidsOwnedFurniture,
@@ -654,8 +641,6 @@ class UserEntity {
     Object? kidsEquippedAccessory = _absent,
     Object? vowlMascot = _absent,
     Object? vowlEquippedAccessory = _absent,
-    Object? lastFreeSpinDate = _absent,
-    Object? lastAdSpinDate = _absent,
     Object? kidsLastCareDate = _absent,
     Object? kidsLastFeedTime = _absent,
     Object? kidsLastGameDate = _absent,
@@ -694,7 +679,6 @@ class UserEntity {
       totalExp: totalExp ?? this.totalExp,
       unlockedLevels: unlockedLevels ?? this.unlockedLevels,
       hasPermanentXPBoost: hasPermanentXPBoost ?? this.hasPermanentXPBoost,
-      adSpinsUsedToday: adSpinsUsedToday ?? this.adSpinsUsedToday,
       vowlOwnedAccessories: vowlOwnedAccessories ?? this.vowlOwnedAccessories,
       vowlOwnedMascots: vowlOwnedMascots ?? this.vowlOwnedMascots,
       kidsOwnedFurniture: kidsOwnedFurniture ?? this.kidsOwnedFurniture,
@@ -764,12 +748,6 @@ class UserEntity {
       vowlEquippedAccessory: identical(vowlEquippedAccessory, _absent)
           ? this.vowlEquippedAccessory
           : vowlEquippedAccessory as String?,
-      lastFreeSpinDate: identical(lastFreeSpinDate, _absent)
-          ? this.lastFreeSpinDate
-          : lastFreeSpinDate as DateTime?,
-      lastAdSpinDate: identical(lastAdSpinDate, _absent)
-          ? this.lastAdSpinDate
-          : lastAdSpinDate as DateTime?,
       kidsLastCareDate: identical(kidsLastCareDate, _absent)
           ? this.kidsLastCareDate
           : kidsLastCareDate as DateTime?,
@@ -851,9 +829,6 @@ class UserEntity {
         _listEq.equals(other.claimedLevelMilestones, claimedLevelMilestones) &&
         _deepEq.equals(other.coinHistory, coinHistory) &&
         other.hasPermanentXPBoost == hasPermanentXPBoost &&
-        other.lastFreeSpinDate == lastFreeSpinDate &&
-        other.lastAdSpinDate == lastAdSpinDate &&
-        other.adSpinsUsedToday == adSpinsUsedToday &&
         _listEq.equals(other.kidsOwnedFurniture, kidsOwnedFurniture) &&
         _mapEq.equals(other.kidsEquippedFurniture, kidsEquippedFurniture) &&
         other.keys == keys &&
@@ -939,9 +914,6 @@ class UserEntity {
     ]);
     final h3 = Object.hashAll([
       hasPermanentXPBoost,
-      lastFreeSpinDate,
-      lastAdSpinDate,
-      adSpinsUsedToday,
       _listEq.hash(kidsOwnedFurniture),
       _mapEq.hash(kidsEquippedFurniture),
       keys,
