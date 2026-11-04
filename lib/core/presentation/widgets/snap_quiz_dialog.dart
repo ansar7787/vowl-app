@@ -121,7 +121,11 @@ class _SnapQuizDialogState extends State<SnapQuizDialog> {
         }
 
         if (_mistakesMade == 0 && di.sl.isRegistered<PraiseService>()) {
-          di.sl<PraiseService>().givePraise(context: PraiseContext.flawless);
+          Timer(const Duration(milliseconds: 1400), () {
+            try {
+              di.sl<PraiseService>().givePraise(context: PraiseContext.flawless);
+            } catch (_) {}
+          });
         }
 
         // Authoritatively persist 10 coins into user economy

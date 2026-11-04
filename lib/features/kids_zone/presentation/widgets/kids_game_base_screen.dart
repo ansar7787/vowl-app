@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/app_logger.dart';
@@ -168,7 +169,11 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             } catch (_) {}
             audio.playLevelCompleteSFX();
             if (di.sl.isRegistered<PraiseService>()) {
-              di.sl<PraiseService>().givePraise(context: PraiseContext.flawless);
+              Timer(const Duration(milliseconds: 1400), () {
+                try {
+                  di.sl<PraiseService>().givePraise(context: PraiseContext.flawless);
+                } catch (_) {}
+              });
             }
             KidsGameDialogs.showCompletionDialog(
               context: context,

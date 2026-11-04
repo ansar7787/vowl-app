@@ -181,8 +181,8 @@ class PraiseServiceImpl implements PraiseService {
       fallback: pool[index],
     );
 
-    // Play through the injected TtsService (DIP compliant) with clear, energetic rate
-    _ttsService.speak(phrase, rate: 0.9);
+    // Play through the injected TtsService (DIP compliant) with natural, encouraging rate
+    _ttsService.speak(phrase);
   }
 
   @override
