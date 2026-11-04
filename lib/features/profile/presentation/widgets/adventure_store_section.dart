@@ -9,6 +9,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
@@ -47,7 +48,7 @@ class AdventureStoreSection extends StatelessWidget {
           'adventure.double_xp_desc',
           fallback: '2x Multiplier (24hr active)',
         ),
-        'cost': 300,
+        'cost': UserGameConstants.kDoubleXpCost,
         'icon': Icons.bolt_rounded,
         'color': IllustrationColors.brightBlue,
         'type': 'warp',

@@ -175,10 +175,16 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
       return;
     }
 
-    final status = await Permission.notification.request();
+    final bool isGranted;
+    if (di.sl.isRegistered<NotificationService>()) {
+      isGranted = await di.sl<NotificationService>().requestPermissions();
+    } else {
+      final status = await Permission.notification.request();
+      isGranted = status.isGranted;
+    }
     if (!mounted) return;
 
-    if (status.isGranted) {
+    if (isGranted) {
       di.sl<HapticService>().success();
       try {
         final prefs = await SharedPreferences.getInstance();

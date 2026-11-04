@@ -7,12 +7,15 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:flutter/foundation.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
-import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:go_router/go_router.dart';
+import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -176,60 +179,44 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
           _buildShopItem(
             context,
             title: context.tr('streak.repair_title', fallback: 'STREAK REPAIR'),
-            subtitle: context.tr(
-              'streak.repair_subtitle',
-              fallback: 'Melt the ice and restore your flame from yesterday.',
-            ),
+            subtitle: !user.isPremium
+                ? context.tr(
+                    'streak.repair_premium_required',
+                    fallback:
+                        'Exclusive to Premium. Upgrade to restore your flame.',
+                  )
+                : context.tr(
+                    'streak.repair_subtitle',
+                    fallback: 'Melt the ice and restore your flame from yesterday.',
+                  ),
             icon: LucideIcons.flame,
             color: _LocalPalette.colorff5f6d,
-            cost: 200,
+            cost: 0,
             currentCoins: user.coins,
-            isDisabled: user.currentStreak > 0,
-            onTap: user.currentStreak > 0
-                ? null
-                : () => _handlePurchase(
-                    context,
-                    name: context.tr(
-                      'adventure.streak_repair',
-                      fallback: 'Streak Repair',
-                    ),
-                    cost: 200,
-                    currentCoins: user.coins,
-                    action: () => context.read<ProgressionBloc>().add(
-                      const ProgressionRepairStreakRequested(200),
-                    ),
-                  ),
-            onAdTap: user.currentStreak > 0
-                ? null
-                : () {
-                    final adService = di.sl<AdService>();
-                    adService.showRewardedAd(
-                      context: context,
-                      isPremium: user.isPremium,
-                      onDismissed: () {},
-                      onUserEarnedReward: (reward) {
-                        // BUG FIX: this callback can fire many seconds after
-                        // the user started watching the rewarded ad — long
-                        // enough that they may have already navigated away
-                        // from this screen. Using `context` past that point
-                        // without checking it's still mounted risks calling
-                        // `context.read` on a deactivated element and crashing.
-                        if (!context.mounted) return;
-                        context.read<ProgressionBloc>().add(
-                          const ProgressionRepairStreakWithAdRequested(),
+            isPremiumOnly: true,
+            isUserPremium: user.isPremium,
+            isDisabled: user.isPremium && user.currentStreak > 0,
+            onTap: !user.isPremium
+                ? () {
+                    di.sl<HapticService>().selection();
+                    context.push(AppRouter.premiumRoute);
+                  }
+                : (user.currentStreak > 0
+                    ? null
+                    : () {
+                        di.sl<HapticService>().success();
+                        _executePurchase(
+                          context,
+                          name: context.tr(
+                            'adventure.streak_repair',
+                            fallback: 'Streak Repair',
+                          ),
+                          action: () => context.read<ProgressionBloc>().add(
+                            const ProgressionRepairStreakFreeRequested(),
+                          ),
                         );
-                        try {
-                          Haptics.vibrate(HapticsType.success);
-                        } catch (e) {
-                          if (kDebugMode) {
-                            debugPrint(
-                              'StreakBoostersShop: haptics unavailable: $e',
-                            );
-                          }
-                        }
-                      },
-                    );
-                  },
+                      }),
+            onAdTap: null, // Rewarded ad / free coin bypass removed per production policy
           ),
           SizedBox(height: 16.h),
           _buildShopItem(
@@ -271,17 +258,19 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
             ),
             icon: LucideIcons.zap,
             color: _LocalPalette.colorfcd34d,
-            cost: 300,
+            cost: UserGameConstants.kDoubleXpCost,
             isActive: user.isDoubleXPActive,
             activeUntil: user.doubleXPExpiry,
             currentCoins: user.coins,
             onTap: () => _handlePurchase(
               context,
               name: context.tr('adventure.double_xp', fallback: 'Double XP'),
-              cost: 300,
+              cost: UserGameConstants.kDoubleXpCost,
               currentCoins: user.coins,
               action: () => context.read<ProgressionBloc>().add(
-                const ProgressionActivateDoubleXPRequested(300),
+                const ProgressionActivateDoubleXPRequested(
+                  UserGameConstants.kDoubleXpCost,
+                ),
               ),
             ),
           ),
@@ -522,6 +511,8 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
     bool isActive = false,
     bool isDisabled = false,
     DateTime? activeUntil,
+    bool isPremiumOnly = false,
+    bool isUserPremium = false,
   }) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final canAfford = currentCoins >= cost;
@@ -531,17 +522,21 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
         ? context.tr('streak.status_not_needed', fallback: 'NOT NEEDED')
         : (isActive
               ? context.tr('streak.status_active', fallback: 'ACTIVE')
-              : (canAfford
-                    ? context.tr(
-                        'streak.cost_label',
-                        args: [cost.toString()],
-                        fallback: '$cost coins',
-                      )
-                    : context.tr(
-                        'streak.cant_afford_label',
-                        args: [cost.toString()],
-                        fallback: 'Need $cost coins',
-                      )));
+              : (isPremiumOnly && !isUserPremium
+                    ? 'VIP ONLY'
+                    : (isPremiumOnly && isUserPremium
+                        ? 'FREE WITH VIP'
+                        : (canAfford
+                            ? context.tr(
+                                'streak.cost_label',
+                                args: [cost.toString()],
+                                fallback: '$cost coins',
+                              )
+                            : context.tr(
+                                'streak.cant_afford_label',
+                                args: [cost.toString()],
+                                fallback: 'Need $cost coins',
+                              )))));
 
     return Semantics(
       button: !isDisabled && !isActive,
@@ -747,44 +742,122 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                   ),
                   if (!isDisabled && !isActive) ...[
                     SizedBox(width: 8.w),
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 10.w,
-                        vertical: 6.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: canAfford
-                            ? color.withValues(alpha: 0.1)
-                            : Colors.red.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(12.r),
-                        border: Border.all(
+                    if (isPremiumOnly && !isUserPremium)
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10.w,
+                          vertical: 6.h,
+                        ),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [AppColors.indigo500, AppColors.violet500],
+                          ),
+                          borderRadius: BorderRadius.circular(12.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.indigo500.withValues(alpha: 0.3),
+                              blurRadius: 6,
+                              offset: const Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              LucideIcons.crown,
+                              color: Colors.white,
+                              size: 13.r,
+                            ),
+                            SizedBox(width: 4.w),
+                            Text(
+                              'VIP',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    else if (isPremiumOnly && isUserPremium)
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10.w,
+                          vertical: 6.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppColors.emerald500.withValues(alpha: 0.12),
+                          borderRadius: BorderRadius.circular(12.r),
+                          border: Border.all(
+                            color: AppColors.emerald500.withValues(alpha: 0.35),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              LucideIcons.sparkles,
+                              color: AppColors.emerald500,
+                              size: 13.r,
+                            ),
+                            SizedBox(width: 4.w),
+                            Text(
+                              context.tr(
+                                'streak.restore_label',
+                                fallback: 'RESTORE',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w900,
+                                color: AppColors.emerald500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    else
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10.w,
+                          vertical: 6.h,
+                        ),
+                        decoration: BoxDecoration(
                           color: canAfford
-                              ? color.withValues(alpha: 0.3)
-                              : Colors.red.withValues(alpha: 0.3),
+                              ? color.withValues(alpha: 0.1)
+                              : Colors.red.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(12.r),
+                          border: Border.all(
+                            color: canAfford
+                                ? color.withValues(alpha: 0.3)
+                                : Colors.red.withValues(alpha: 0.3),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              LucideIcons.circleDollarSign,
+                              color: canAfford ? color : Colors.red,
+                              size: 14.r,
+                            ),
+                            SizedBox(width: 4.w),
+                            Text(
+                              '$cost',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w900,
+                                color: canAfford ? color : Colors.red,
+                              ),
+                              maxLines: 1,
+                            ),
+                          ],
                         ),
                       ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                            LucideIcons.circleDollarSign,
-                            color: canAfford ? color : Colors.red,
-                            size: 14.r,
-                          ),
-                          SizedBox(width: 4.w),
-                          Text(
-                            '$cost',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w900,
-                              color: canAfford ? color : Colors.red,
-                            ),
-                            maxLines: 1,
-                          ),
-                        ],
-                      ),
-                    ),
                   ],
                   if (onAdTap != null && !isDisabled) ...[
                     SizedBox(width: 8.w),

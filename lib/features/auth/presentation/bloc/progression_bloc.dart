@@ -39,6 +39,10 @@ class ProgressionRepairStreakWithAdRequested extends ProgressionEvent {
   const ProgressionRepairStreakWithAdRequested();
 }
 
+class ProgressionRepairStreakFreeRequested extends ProgressionEvent {
+  const ProgressionRepairStreakFreeRequested();
+}
+
 class ProgressionPurchaseStreakFreezeRequested extends ProgressionEvent {
   final int cost;
   const ProgressionPurchaseStreakFreezeRequested(this.cost);
@@ -207,6 +211,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
        super(const ProgressionState()) {
     on<ProgressionRepairStreakRequested>(_onRepairStreak);
     on<ProgressionRepairStreakWithAdRequested>(_onRepairStreakWithAd);
+    on<ProgressionRepairStreakFreeRequested>(_onRepairStreakFree);
     on<ProgressionPurchaseStreakFreezeRequested>(_onPurchaseStreakFreeze);
     on<ProgressionActivateDoubleXPRequested>(_onActivateDoubleXP);
     on<ProgressionClaimStreakMilestoneRequested>(_onClaimStreakMilestone);
@@ -272,6 +277,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
       // First-ever login: initialize lastLoginDate, streak starts at 0 until first lesson
       final updatedUser = user.copyWith(currentStreak: 0, lastLoginDate: now);
       await updateUser(UpdateUserParams(user: updatedUser));
+      notificationService.scheduleStreakReminder(0);
       emit(state.copyWith(isLoading: false));
       return;
     }
@@ -417,6 +423,18 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
         );
         authBloc.add(const AuthRefreshUser());
       },
+    );
+  }
+
+  /// Repairs the streak for free for VIP/Premium members via the transaction-safe
+  /// [GamificationRepository.repairStreakFree].
+  Future<void> _onRepairStreakFree(
+    ProgressionRepairStreakFreeRequested event,
+    Emitter<ProgressionState> emit,
+  ) async {
+    return _onRepairStreakWithAd(
+      const ProgressionRepairStreakWithAdRequested(),
+      emit,
     );
   }
 

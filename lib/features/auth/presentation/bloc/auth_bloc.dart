@@ -22,6 +22,8 @@ import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/auth_error_handler.dart';
+import 'package:vowl/features/daily_words/data/services/daily_words_service.dart';
+import 'package:firebase_auth/firebase_auth.dart' as fb_auth;
 import 'package:flutter/painting.dart' show imageCache;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/onboarding_service.dart';
@@ -304,7 +306,24 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       }
       _localDataSource.cacheUser(UserModel.fromEntity(user));
       emit(AuthState.authenticated(user));
+
+      // Reschedule notifications & sync FCM token for the active user session
+      try {
+        final firebaseUser = fb_auth.FirebaseAuth.instance.currentUser;
+        if (firebaseUser != null && di.sl.isRegistered<NotificationService>()) {
+          unawaited(di.sl<NotificationService>().onUserSignedIn(firebaseUser));
+        }
+      } catch (e) {
+        if (kDebugMode) {
+          debugPrint('AuthBloc: could not access FirebaseAuth on user sign-in: $e');
+        }
+      }
     } else {
+      if (state.user != null && di.sl.isRegistered<NotificationService>()) {
+        try {
+          unawaited(di.sl<NotificationService>().unregisterUserOnLogout());
+        } catch (_) {}
+      }
       emit(const AuthState.unauthenticated());
     }
   }
@@ -432,7 +451,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       }
     }
 
-    // 3. Unbind the device push token from Firestore and cancel scheduled local
+    // 3. Reset in-memory DailyWordsService state so learned words don't leak across accounts
+    try {
+      if (di.sl.isRegistered<DailyWordsService>()) {
+        await di.sl<DailyWordsService>().reset();
+      }
+    } catch (e) {
+      if (kDebugMode) debugPrint('AuthBloc: DailyWordsService reset failed: $e');
+    }
+
+    // 4. Unbind the device push token from Firestore and cancel scheduled local
     // notifications so notifications from this account never fire for the NEXT user.
     try {
       await di.sl<NotificationService>().unregisterUserOnLogout();

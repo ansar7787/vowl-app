@@ -57,6 +57,9 @@ abstract final class UserGameConstants {
   /// XP multiplier granted when Double XP power-up is active (2×).
   static const double kDoubleXpMultiplier = 2.0;
 
+  /// Standard coin cost to activate the 24-hour Double XP boost.
+  static const int kDoubleXpCost = 1000;
+
   /// Fraction of base XP awarded when replaying an already-completed level.
   static const double kReplayXpFraction = 0.0;
 

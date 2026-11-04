@@ -62,7 +62,7 @@ void main() {
     email: 'aria.xp@vowl.app',
     displayName: 'Aria XP',
     totalExp: 2645,
-    coins: 850,
+    coins: 1500,
     streakFreezes: 1,
     hasPermanentXPBoost: false,
     dailyXpHistory: {
@@ -90,7 +90,7 @@ void main() {
   setUpAll(() {
     registerFallbackValue(const ProgressionClearMessageRequested());
     registerFallbackValue(const ProgressionPurchaseStreakFreezeRequested(150));
-    registerFallbackValue(const ProgressionActivateDoubleXPRequested(300));
+    registerFallbackValue(const ProgressionActivateDoubleXPRequested(1000));
   });
 
   setUp(() async {
@@ -381,7 +381,7 @@ void main() {
       }
 
       verify(() => mockProgressionBloc.add(
-            const ProgressionActivateDoubleXPRequested(300),
+            const ProgressionActivateDoubleXPRequested(1000),
           )).called(1);
     });
   });

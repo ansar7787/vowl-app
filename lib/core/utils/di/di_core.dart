@@ -116,7 +116,7 @@ Future<void> initExternalAndCore(GetIt sl) async {
   // called it, so those subscriptions lived for the process lifetime even
   // across a `sl.reset()`. Wiring `dispose:` here closes that gap.
   sl.registerLazySingleton<NotificationService>(
-    () => NotificationService(),
+    () => NotificationService(localeService: sl<LocaleService>()),
     dispose: (service) => service.dispose(),
   );
   sl.registerLazySingleton<NetworkInfo>(

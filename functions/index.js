@@ -575,35 +575,50 @@ function getWeeklyExp(user, now = new Date()) {
 exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
   const db = admin.firestore();
 
-  // 1. Get learners to evaluate this week's active performance
-  const snapshot = await db
-    .collection('users')
-    .limit(500)
-    .get();
-
-  if (snapshot.empty) return;
-
+  // 1. Paginated retrieval of learners to evaluate this week's active performance
   const activeLearners = [];
-  snapshot.forEach((doc) => {
-    const user = doc.data();
-    const weeklyXp = getWeeklyExp(user);
-    if (weeklyXp > 0) {
-      activeLearners.push({
-        id: doc.id,
-        user: user,
-        weeklyXp: weeklyXp,
-        currentStreak: user.currentStreak || 0,
-      });
+  let lastDoc = null;
+  const BATCH_SIZE = 500;
+  const MAX_EVALUATED = 5000;
+  let totalEvaluated = 0;
+
+  while (totalEvaluated < MAX_EVALUATED) {
+    let query = db
+      .collection('users')
+      .orderBy(admin.firestore.FieldPath.documentId())
+      .limit(BATCH_SIZE);
+    if (lastDoc) {
+      query = query.startAfter(lastDoc);
     }
-  });
+    const snapshot = await query.get();
+    if (snapshot.empty) break;
+
+    totalEvaluated += snapshot.docs.length;
+    lastDoc = snapshot.docs[snapshot.docs.length - 1];
+
+    snapshot.docs.forEach((doc) => {
+      const user = doc.data();
+      const weeklyXp = getWeeklyExp(user);
+      if (weeklyXp > 0) {
+        activeLearners.push({
+          id: doc.id,
+          user: user,
+          weeklyXp: weeklyXp,
+          currentStreak: user.currentStreak || 0,
+        });
+      }
+    });
+
+    if (snapshot.docs.length < BATCH_SIZE) break;
+  }
+
+  if (activeLearners.length === 0) return;
 
   // Sort by Weekly XP DESC, tie-breaker currentStreak DESC
   activeLearners.sort((a, b) => {
     if (b.weeklyXp !== a.weeklyXp) return b.weeklyXp - a.weeklyXp;
     return b.currentStreak - a.currentStreak;
   });
-
-  if (activeLearners.length === 0) return;
 
   const top100 = activeLearners.slice(0, 100);
   const currentWeekKey = getIsoWeekKey(new Date());
@@ -625,79 +640,134 @@ exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
     console.error('Error persisting weekly previousRank batch:', err);
   }
 
-  const messages = [];
-  const seenTokens = new Set();
+  // Deduplicate tokens by prioritizing the user who logged in most recently.
+  // Cleans up stale tokens from older accounts to prevent cross-account notification bleeding.
+  const tokenOwners = new Map();
   const duplicateCleanups = [];
-  let rank = 1;
 
-  top100.forEach((item) => {
-    const docId = item.id;
-    const user = item.user;
-    const token = user.fcmToken;
+  top100.forEach((item, index) => {
+    const token = item.user.fcmToken;
+    if (!token) return;
+    const loginMillis = item.user.lastLoginDate?.toMillis
+      ? item.user.lastLoginDate.toMillis()
+      : (item.user.lastLoginDate instanceof Date ? item.user.lastLoginDate.getTime() : 0);
 
-    if (token) {
-      if (seenTokens.has(token)) {
+    if (!tokenOwners.has(token)) {
+      tokenOwners.set(token, { ...item, rank: index + 1, loginMillis });
+    } else {
+      const existing = tokenOwners.get(token);
+      if (loginMillis > existing.loginMillis) {
         duplicateCleanups.push(
-          db.collection('users').doc(docId).update({ fcmToken: admin.firestore.FieldValue.delete() }),
+          db.collection('users').doc(existing.id).update({ fcmToken: admin.firestore.FieldValue.delete() })
         );
-        return;
+        tokenOwners.set(token, { ...item, rank: index + 1, loginMillis });
+      } else {
+        duplicateCleanups.push(
+          db.collection('users').doc(item.id).update({ fcmToken: admin.firestore.FieldValue.delete() })
+        );
       }
-      seenTokens.add(token);
-
-      let title = 'Weekly Recap \u{1F4CA}';
-      let body = `You placed #${rank} in the global league this week (${item.weeklyXp} XP)!`;
-
-      if (rank === 1) {
-        title = '1st place this week! \u{1F451}';
-        body = `Champion! You won #1 in the weekly league with ${item.weeklyXp} XP! 7-Day VIP & 500 Coins ready to claim.`;
-      } else if (rank === 2) {
-        title = '2nd place this week! \u{1F948}';
-        body = `Silver podium finish with ${item.weeklyXp} XP! 3-Day VIP & 300 Coins ready to claim.`;
-      } else if (rank === 3) {
-        title = '3rd place this week! \u{1F949}';
-        body = `Bronze podium finish with ${item.weeklyXp} XP! 1-Day VIP & 200 Coins ready to claim.`;
-      } else if (rank <= 10) {
-        title = 'Top 10 Finish! \u{1F3C5}';
-        body = `You finished #${rank} in the weekly league with ${item.weeklyXp} XP! 100 Coins ready to claim.`;
-      }
-
-      messages.push({
-        token: token,
-        notification: {
-          title: title,
-          body: body,
-        },
-        data: {
-          path: '/leaderboard',
-          targetUserId: docId,
-        },
-        android: {
-          priority: 'high',
-          notification: {
-            clickAction: 'FLUTTER_NOTIFICATION_CLICK',
-            channelId: 'vowl_weekly_channel',
-          },
-        },
-      });
     }
-    rank++;
   });
 
   if (duplicateCleanups.length > 0) {
     try {
       await Promise.all(duplicateCleanups);
+      console.log(`Weekly Recap: cleaned up ${duplicateCleanups.length} stale duplicate tokens.`);
     } catch (e) {
       console.warn('Stale token cleanup error:', e);
     }
   }
 
-  // 2. Efficient Batch Sending (sendEach)
+  const messages = [];
+  tokenOwners.forEach((item) => {
+    const docId = item.id;
+    const rank = item.rank;
+    const token = item.user.fcmToken;
+
+    let title = 'Weekly Recap \u{1F4CA}';
+    let body = `You placed #${rank} in the global league this week (${item.weeklyXp} XP)!`;
+
+    if (rank === 1) {
+      title = '1st place this week! \u{1F451}';
+      body = `Champion! You won #1 in the weekly league with ${item.weeklyXp} XP! 7-Day VIP & 500 Coins ready to claim.`;
+    } else if (rank === 2) {
+      title = '2nd place this week! \u{1F948}';
+      body = `Silver podium finish with ${item.weeklyXp} XP! 3-Day VIP & 300 Coins ready to claim.`;
+    } else if (rank === 3) {
+      title = '3rd place this week! \u{1F949}';
+      body = `Bronze podium finish with ${item.weeklyXp} XP! 1-Day VIP & 200 Coins ready to claim.`;
+    } else if (rank <= 10) {
+      title = 'Top 10 Finish! \u{1F3C5}';
+      body = `You finished #${rank} in the weekly league with ${item.weeklyXp} XP! 100 Coins ready to claim.`;
+    }
+
+    messages.push({
+      token: token,
+      notification: {
+        title: title,
+        body: body,
+      },
+      data: {
+        path: '/leaderboard',
+        targetUserId: docId,
+      },
+      android: {
+        priority: 'high',
+        notification: {
+          clickAction: 'FLUTTER_NOTIFICATION_CLICK',
+          channelId: 'vowl_weekly_channel',
+        },
+      },
+      apns: {
+        payload: {
+          aps: {
+            sound: 'default',
+            badge: 1,
+          },
+        },
+      },
+    });
+  });
+
+  // 2. Efficient Batch Sending (sendEach) with Invalid Token Pruning
   if (messages.length > 0) {
     try {
       const response = await admin.messaging().sendEach(messages);
       console.log(
-        `Successfully sent ${response.successCount} ranking notifications.`,
+        `Successfully sent ${response.successCount} ranking notifications. Failed: ${response.failureCount}`,
       );
+
+      // Clean up invalid or unregistered tokens
+      const cleanupPromises = [];
+      response.responses.forEach((resp, idx) => {
+        if (
+          resp.error &&
+          (resp.error.code === 'messaging/registration-token-not-registered' ||
+            resp.error.code === 'messaging/invalid-registration-token')
+        ) {
+          const failedToken = messages[idx].token;
+          cleanupPromises.push(
+            db.collection('users')
+              .where('fcmToken', '==', failedToken)
+              .get()
+              .then((snapshot) => {
+                const deletes = [];
+                snapshot.forEach((d) => {
+                  deletes.push(
+                    d.ref.update({
+                      fcmToken: admin.firestore.FieldValue.delete(),
+                    })
+                  );
+                });
+                return Promise.all(deletes);
+              })
+          );
+        }
+      });
+      if (cleanupPromises.length > 0) {
+        await Promise.all(cleanupPromises);
+        console.log(`Weekly Recap: pruned ${cleanupPromises.length} dead/unregistered tokens.`);
+      }
     } catch (error) {
       console.error('Error sending batch notifications:', error);
     }
@@ -712,59 +782,72 @@ exports.sendStreakReminders = onSchedule('0 * * * *', async (event) => {
   const db = admin.firestore();
   const nowUtc = new Date();
 
-  // Find users with active streaks
-  const usersAtRisk = await db
-    .collection('users')
-    .where('currentStreak', '>', 0)
-    .limit(500)
-    .get();
-
-  if (usersAtRisk.empty) {
-    return;
-  }
-
-  // Filter in memory: Only users whose LOCAL time is currently 8:00 PM (20:00)
-  // and who haven't logged in during their current local calendar day.
+  // Paginated query for users with active streaks in batches of 500
+  let lastDoc = null;
   const eligibleDocs = [];
-  usersAtRisk.docs.forEach((doc) => {
-    const user = doc.data();
-    if (!user.fcmToken) return;
+  const BATCH_SIZE = 500;
+  const MAX_EVALUATED = 5000;
+  let totalEvaluated = 0;
 
-    // Default to UTC (0) if user has not yet reported their offset
-    const offsetMinutes = typeof user.timeZoneOffsetMinutes === 'number'
-      ? user.timeZoneOffsetMinutes
-      : 0;
+  while (totalEvaluated < MAX_EVALUATED) {
+    let query = db
+      .collection('users')
+      .where('currentStreak', '>', 0)
+      .orderBy('currentStreak')
+      .limit(BATCH_SIZE);
 
-    // Calculate user's current local wall-clock time
-    const userLocalTime = new Date(nowUtc.getTime() + offsetMinutes * 60 * 1000);
-    const userLocalHour = userLocalTime.getUTCHours();
-
-    // 🎯 PSYCHOLOGY WINDOW: Only trigger at 8:00 PM (hour 20) in the user's country!
-    // This protects users from sleep disruptions (10 PM - 8 AM) and work interruptions.
-    if (userLocalHour !== 20) {
-      return;
+    if (lastDoc) {
+      query = query.startAfter(lastDoc);
     }
 
-    // Calculate start of user's local day in UTC epoch milliseconds
-    const startOfUserLocalDayUtcMillis =
-      Date.UTC(
-        userLocalTime.getUTCFullYear(),
-        userLocalTime.getUTCMonth(),
-        userLocalTime.getUTCDate(),
-        0, 0, 0, 0
-      ) - (offsetMinutes * 60 * 1000);
+    const snapshot = await query.get();
+    if (snapshot.empty) break;
 
-    const lastLoginMillis = user.lastLoginDate?.toMillis
-      ? user.lastLoginDate.toMillis()
-      : (user.lastLoginDate instanceof Date ? user.lastLoginDate.getTime() : 0);
+    totalEvaluated += snapshot.docs.length;
+    lastDoc = snapshot.docs[snapshot.docs.length - 1];
 
-    if (lastLoginMillis >= startOfUserLocalDayUtcMillis) {
-      // User has already logged in or practiced today in their timezone!
-      return;
-    }
+    snapshot.docs.forEach((doc) => {
+      const user = doc.data();
+      if (!user.fcmToken) return;
 
-    eligibleDocs.push(doc);
-  });
+      // Default to UTC (0) if user has not yet reported their offset
+      const offsetMinutes = typeof user.timeZoneOffsetMinutes === 'number'
+        ? user.timeZoneOffsetMinutes
+        : 0;
+
+      // Calculate user's current local wall-clock time
+      const userLocalTime = new Date(nowUtc.getTime() + offsetMinutes * 60 * 1000);
+      const userLocalHour = userLocalTime.getUTCHours();
+
+      // 🎯 PSYCHOLOGY WINDOW: Only trigger at 8:00 PM (hour 20) in the user's country!
+      // This protects users from sleep disruptions (10 PM - 8 AM) and work interruptions.
+      if (userLocalHour !== 20) {
+        return;
+      }
+
+      // Calculate start of user's local day in UTC epoch milliseconds
+      const startOfUserLocalDayUtcMillis =
+        Date.UTC(
+          userLocalTime.getUTCFullYear(),
+          userLocalTime.getUTCMonth(),
+          userLocalTime.getUTCDate(),
+          0, 0, 0, 0
+        ) - (offsetMinutes * 60 * 1000);
+
+      const lastLoginMillis = user.lastLoginDate?.toMillis
+        ? user.lastLoginDate.toMillis()
+        : (user.lastLoginDate instanceof Date ? user.lastLoginDate.getTime() : 0);
+
+      if (lastLoginMillis >= startOfUserLocalDayUtcMillis) {
+        // User has already logged in or practiced today in their timezone!
+        return;
+      }
+
+      eligibleDocs.push(doc);
+    });
+
+    if (snapshot.docs.length < BATCH_SIZE) break;
+  }
 
   if (eligibleDocs.length === 0) {
     return;
@@ -819,6 +902,14 @@ exports.sendStreakReminders = onSchedule('0 * * * *', async (event) => {
           notification: {
             clickAction: 'FLUTTER_NOTIFICATION_CLICK',
             channelId: 'vowl_streak_channel',
+          },
+        },
+        apns: {
+          payload: {
+            aps: {
+              sound: 'default',
+              badge: 1,
+            },
           },
         },
       });
@@ -929,9 +1020,16 @@ exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
       .get();
 
     const usersData = [];
+    const now = new Date();
 
     snapshot.forEach((doc) => {
       const data = doc.data();
+      const isUserPremium =
+        data.isPremium === true &&
+        (!data.premiumExpiryDate ||
+          (data.premiumExpiryDate.toDate &&
+            data.premiumExpiryDate.toDate() > now));
+
       usersData.push({
         id: doc.id,
         displayName: resolveDisplayName(data),
@@ -940,7 +1038,7 @@ exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
         currentStreak: data.currentStreak || 0,
         completedLevels: data.completedLevels || {},
         dailyXpHistory: data.dailyXpHistory || {},
-        isPremium: data.isPremium || false,
+        isPremium: isUserPremium,
       });
     });
 
@@ -969,6 +1067,12 @@ exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
 
     kidsSnapshot.forEach((doc) => {
       const data = doc.data();
+      const isKidsUserPremium =
+        data.isPremium === true &&
+        (!data.premiumExpiryDate ||
+          (data.premiumExpiryDate.toDate &&
+            data.premiumExpiryDate.toDate() > now));
+
       kidsData.push({
         id: doc.id,
         displayName: resolveDisplayName(data),
@@ -977,7 +1081,7 @@ exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
         kidsTotalLevelsCompleted: typeof data.kidsTotalLevelsCompleted === 'number' ? data.kidsTotalLevelsCompleted : 0,
         currentStreak: data.currentStreak || 0,
         completedLevels: data.completedLevels || {},
-        isPremium: data.isPremium || false,
+        isPremium: isKidsUserPremium,
       });
     });
 

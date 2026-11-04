@@ -168,12 +168,12 @@ service cloud.firestore {
             && request.resource.data.get('hasClaimedReferral', false) == true
             && request.resource.data.premiumExpiryDate <= baseExpiryTime() + duration.value(2, 'd')
           )
-          // 2. Sunday Weekly Leaderboard Reward: max 3 days extension (4 days buffer)
+          // 2. Sunday Weekly Leaderboard Reward: max 7 days extension (8 days buffer)
           || (
             request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedWeeklyRewardWeekKeys'])
             && request.resource.data.get('claimedWeeklyRewardWeekKeys', []) is list
             && request.resource.data.get('claimedWeeklyRewardWeekKeys', []).size() == resource.data.get('claimedWeeklyRewardWeekKeys', []).size() + 1
-            && request.resource.data.premiumExpiryDate <= baseExpiryTime() + duration.value(4, 'd')
+            && request.resource.data.premiumExpiryDate <= baseExpiryTime() + duration.value(8, 'd')
           )
           // 3. Monthly Ambassador Cup Reward: max 31 days extension (32 days buffer)
           || (

@@ -41,3 +41,6 @@
 # ─── Google Play Core & ML Kit ───────────────────────────────────
 -dontwarn com.google.android.play.core.**
 -dontwarn com.google.mlkit.**
+
+# ─── Flutter Local Notifications ─────────────────────────────────
+-keep class com.dexterous.flutterlocalnotifications.** { *; }

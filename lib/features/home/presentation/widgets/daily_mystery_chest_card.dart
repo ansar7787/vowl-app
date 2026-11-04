@@ -158,7 +158,8 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
     }
 
     // 4. Dispatch claim to Firestore via EconomyBloc
-    final userId = context.read<AuthBloc>().state.user?.id;
+    final currentUser = context.read<AuthBloc>().state.user;
+    final userId = currentUser?.id;
     context.read<EconomyBloc>().add(
       EconomyClaimDailyChestRequested(totalCoins),
     );

@@ -17,7 +17,11 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
+import 'package:vowl/core/presentation/widgets/premium_store_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
@@ -532,24 +536,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       ],
                                     ),
 
-                                    // ── 2. Key Shop (inline, compact) ──
-                                    if (!user.isPremium)
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          SizedBox(height: 16.h),
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 20.w,
-                                            ),
-                                            child: _buildKeyShopBanner(
-                                              context,
-                                              user,
-                                            ),
+                                    // ── 2. Coin Store (Premium) / Key Shop (Regular) ──
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(height: 16.h),
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 20.w,
                                           ),
-                                        ],
-                                      ),
+                                          child: _buildKeyShopBanner(
+                                            context,
+                                            user,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
 
                                     // ── 3. Hall of Fame ──
                                     Column(
@@ -626,6 +629,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           child: user.isPremium
                                               ? _buildPremiumActiveBanner(
                                                   context,
+                                                  user,
                                                 )
                                               : _buildPremiumBanner(context),
                                         ),
@@ -710,20 +714,77 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Widget _buildPremiumActiveBanner(BuildContext context) {
+  Widget _buildPremiumActiveBanner(BuildContext context, UserEntity user) {
+    final bool isGiftReady = user.isVipGiftAvailable;
     return ProfileFeatureCard(
       iconContent: Icon(
-        LucideIcons.checkCircle,
+        isGiftReady ? LucideIcons.gift : LucideIcons.checkCircle,
         color: Colors.white,
         size: 24.r,
       ),
       color: AppColors.emerald500,
       shadowColor: _LocalPalette.color059669,
       title: context.tr('profile.premium_active', fallback: 'Premium Active'),
-      subtitle: context.tr(
-        'profile.premium_active_subtitle',
-        fallback: 'Enjoying your exclusive perks.',
-      ),
+      subtitle: isGiftReady
+          ? context.tr(
+              'profile.vip_gift_ready',
+              fallback: 'Daily VIP reward ready! +100 Coins',
+            )
+          : context.tr(
+              'profile.premium_active_subtitle',
+              fallback: 'Enjoying your exclusive perks.',
+            ),
+      bottomContent: isGiftReady
+          ? Padding(
+              padding: EdgeInsets.only(top: 4.h),
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.amber500,
+                    foregroundColor: Colors.black,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14.r),
+                    ),
+                    padding: EdgeInsets.symmetric(
+                      vertical: 10.h,
+                      horizontal: 16.w,
+                    ),
+                  ),
+                  icon: const Icon(LucideIcons.sparkles, size: 18),
+                  label: Text(
+                    context.tr(
+                      'profile.claim_vip_gift',
+                      fallback: 'Claim Daily VIP +100 Coins',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontWeight: FontWeight.w800,
+                      fontSize: 14.sp,
+                    ),
+                  ),
+                  onPressed: () {
+                    di.sl<HapticService>().success();
+                    if (di.sl.isRegistered<SoundService>()) {
+                      di.sl<SoundService>().playCoinTally(count: 6);
+                    }
+                    context.read<EconomyBloc>().add(
+                          const EconomyClaimVipGiftRequested(),
+                        );
+                    CustomSnackBar.show(
+                      context: context,
+                      message: context.tr(
+                        'profile.vip_gift_claimed',
+                        fallback: 'Claimed +100 VIP bonus coins!',
+                      ),
+                      type: CustomSnackBarType.success,
+                    );
+                  },
+                ),
+              ),
+            )
+          : null,
       onTap: () {
         di.sl<HapticService>().selection();
         context.push(AppRouter.premiumRoute);
@@ -773,7 +834,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget _buildKeyShopBanner(BuildContext context, dynamic user) {
-    if (user.isPremium == true) return const SizedBox.shrink();
+    if (user.isPremium == true) {
+      return ProfileFeatureCard(
+        iconContent: Icon(
+          Icons.monetization_on_rounded,
+          color: Colors.white,
+          size: 24.r,
+        ),
+        color: AppColors.amber500,
+        shadowColor: AppColors.amber600,
+        title: context.tr('store.title', fallback: 'Coin Store'),
+        subtitle: context.tr(
+          'store.subtitle',
+          fallback: 'Get coin packs to power up your progress!',
+        ),
+        onTap: () {
+          di.sl<HapticService>().selection();
+          PremiumStoreBottomSheet.show(context: context);
+        },
+      );
+    }
     final keys = user.keys ?? 0;
 
     return ProfileFeatureCard(

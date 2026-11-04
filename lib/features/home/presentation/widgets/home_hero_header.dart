@@ -241,6 +241,11 @@ class HomeHeroHeader extends StatelessWidget {
     required Color rankColor,
     required bool reduceMotion,
   }) {
+    final isPremium = user.isPremium;
+    final ringColor = isPremium
+        ? AppColors.amber500
+        : AppColors.indigo500;
+
     return SizedBox(
       width: 56.r,
       height: 56.r,
@@ -276,8 +281,10 @@ class HomeHeroHeader extends StatelessWidget {
                         strokeWidth: 2.5.r,
                         backgroundColor: isDark
                             ? Colors.white.withValues(alpha: 0.1)
-                            : AppColors.indigo500.withValues(alpha: 0.12),
-                        color: AppColors.indigo500,
+                            : (isPremium
+                                ? AppColors.amber500.withValues(alpha: 0.15)
+                                : AppColors.indigo500.withValues(alpha: 0.12)),
+                        color: ringColor,
                         strokeCap: StrokeCap.round,
                       ),
                     ),
@@ -289,21 +296,29 @@ class HomeHeroHeader extends StatelessWidget {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: isDark ? AppColors.slate900 : Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppColors.indigo500.withValues(
-                              alpha: isDark ? 0.2 : 0.08,
-                            ),
-                            blurRadius: 8,
-                            offset: const Offset(0, 2),
-                          ),
-                        ],
+                        border: isPremium
+                            ? Border.all(
+                                color: AppColors.amber500,
+                                width: 2.r,
+                              )
+                            : null,
+                        boxShadow: isPremium
+                            ? null
+                            : [
+                                BoxShadow(
+                                  color: ringColor.withValues(
+                                    alpha: isDark ? 0.2 : 0.08,
+                                  ),
+                                  blurRadius: 8,
+                                  offset: const Offset(0, 2),
+                                ),
+                              ],
                       ),
                       child: UserAvatar(
                         photoUrl: user.photoUrl,
                         size: 46.r,
                         fallbackIcon: Icons.person_rounded,
-                        iconColor: AppColors.indigo500,
+                        iconColor: ringColor,
                         iconSize: 24.r,
                       ),
                     ),

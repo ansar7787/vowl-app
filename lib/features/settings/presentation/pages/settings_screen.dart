@@ -113,16 +113,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Future<void> _toggleNotifications(bool value) async {
     if (value) {
-      final isGranted = await Permission.notification.isGranted;
       final isDenied = await Permission.notification.isPermanentlyDenied;
-      if (!isGranted) {
-        if (isDenied) {
-          await openAppSettings();
-          return;
-        }
-        final status = await Permission.notification.request();
-        if (!status.isGranted) return;
+      if (isDenied) {
+        await openAppSettings();
+        return;
       }
+      final bool isGranted;
+      if (di.sl.isRegistered<NotificationService>()) {
+        isGranted = await di.sl<NotificationService>().requestPermissions();
+      } else {
+        final status = await Permission.notification.request();
+        isGranted = status.isGranted;
+      }
+      if (!isGranted) return;
     } else {
       if (!mounted) return;
       final confirm = await SettingsDialogs.showDisableNotificationConfirmation(

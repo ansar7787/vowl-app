@@ -799,6 +799,10 @@ class GamificationRepositoryImpl
       final user = _firebaseAuth.currentUser;
       if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
+      final actualCost = cost >= UserGameConstants.kDoubleXpCost
+          ? cost
+          : UserGameConstants.kDoubleXpCost;
+
       final docRef = _firestore.collection('users').doc(user.uid);
       return await _firestore.runTransaction<Either<Failure, void>>((
         transaction,
@@ -810,20 +814,20 @@ class GamificationRepositoryImpl
 
         final data = doc.data()!;
         final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
-        if (currentCoins < cost) {
+        if (currentCoins < actualCost) {
           return Left(AuthFailure('insufficient-coins'));
         }
 
         final history = _recordCoinHistory(
           _parseMapList(data['coinHistory']),
           titleKey: 'coin_history.purchased_double_xp',
-          amount: -cost,
+          amount: -actualCost,
           isEarned: false,
         );
 
         final expiry = DateTime.now().add(const Duration(hours: 24));
         transaction.update(docRef, {
-          'coins': currentCoins - cost,
+          'coins': currentCoins - actualCost,
           'doubleXP': 1,
           'doubleXPExpiry': Timestamp.fromDate(expiry),
           'coinHistory': history,
