@@ -23,6 +23,14 @@
         { "fieldPath": "currentMonthKey", "order": "ASCENDING" },
         { "fieldPath": "monthlyCount", "order": "DESCENDING" }
       ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "isPremium", "order": "ASCENDING" },
+        { "fieldPath": "premiumExpiryDate", "order": "ASCENDING" }
+      ]
     }
   ],
   "fieldOverrides": []
