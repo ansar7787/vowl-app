@@ -34,14 +34,22 @@ class KidsAudioService {
     await prefs.setBool(_sfxKey, enabled);
   }
 
-  /// Plays the celebration success sound effect with pitch scaling for combo step.
+  /// Plays the celebration success sound effect with dedicated harmonic ladder according to [comboStep].
   Future<void> playSuccessSFX({int comboStep = 1}) async {
     if (!(await isSfxEnabled())) return;
     try {
       await _sfxPlayer.stop();
-      final double rate = comboStep == 2 ? 1.12 : (comboStep >= 3 ? 1.25 : 1.0);
-      await _sfxPlayer.setPlaybackRate(rate);
-      await _sfxPlayer.play(AssetSource('sounds/correct.mp3'), volume: 0.85);
+      final String assetToPlay;
+      if (comboStep <= 1) {
+        assetToPlay = 'sounds/correct_1.mp3';
+      } else if (comboStep == 2) {
+        assetToPlay = 'sounds/correct_2.mp3';
+      } else if (comboStep == 3) {
+        assetToPlay = 'sounds/correct_3.mp3';
+      } else {
+        assetToPlay = 'sounds/correct_frenzy.mp3';
+      }
+      await _sfxPlayer.play(AssetSource(assetToPlay), volume: 0.85);
     } catch (e) {
       if (di.sl.isRegistered<AppLogger>()) {
         di.sl<AppLogger>().warning("Kids SFX Success Error: $e", tag: 'KidsZone');
