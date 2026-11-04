@@ -77,6 +77,9 @@ abstract class SoundService {
   /// Plays gentle, non-punitive minor consolation sting for Arena 1v1 losses.
   Future<void> playArenaDefeat();
 
+  /// Plays comforting, non-punitive defeat audio when user runs out of lives in a game.
+  Future<void> playGameOver();
+
   /// Downloads and streams sound assets from internet endpoints.
   Future<void> playUrl(String url);
 
@@ -136,6 +139,7 @@ class SoundServiceImpl implements SoundService {
   static const String assetArenaCountdown = 'sounds/arena_countdown.mp3';
   static const String assetArenaVictory = 'sounds/arena_victory.mp3';
   static const String assetArenaDefeat = 'sounds/arena_defeat.mp3';
+  static const String assetGameOver = 'sounds/game_over.mp3';
 
   static const String _prefsKeySoundEnabled = 'sound_enabled';
   static const String _prefsKeyGameSoundsEnabled = 'game_sounds_enabled';
@@ -465,6 +469,23 @@ class SoundServiceImpl implements SoundService {
       await _overlayPlayer.play(AssetSource(assetArenaDefeat), volume: 0.75);
     } catch (e) {
       _logError('SoundService: Error playing arena defeat', error: e);
+    }
+  }
+
+  @override
+  Future<void> playGameOver() async {
+    resetCombo();
+    await _initFuture;
+    if (_isMuted || !_isGameSoundsEnabled) return;
+    try {
+      await _overlayPlayer.stop();
+      await _overlayPlayer.setPlaybackRate(1.0);
+      await _overlayPlayer.play(AssetSource(assetGameOver), volume: 0.85);
+    } catch (e) {
+      _logError('SoundService: Error playing game over sound', error: e);
+      try {
+        await _overlayPlayer.play(AssetSource(assetArenaDefeat), volume: 0.75);
+      } catch (_) {}
     }
   }
 
