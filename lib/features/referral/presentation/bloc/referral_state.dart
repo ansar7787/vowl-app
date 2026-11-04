@@ -14,6 +14,7 @@ class ReferralState {
   final int lifetimeReferrals;
   final int monthlyReferrals;
   final bool copiedToClipboard;
+  final int? syncedAmbassadorRewardCount;
 
   const ReferralState({
     this.isLoading = false,
@@ -27,6 +28,7 @@ class ReferralState {
     this.lifetimeReferrals = 0,
     this.monthlyReferrals = 0,
     this.copiedToClipboard = false,
+    this.syncedAmbassadorRewardCount,
   });
 
   ReferralState copyWith({
@@ -41,6 +43,7 @@ class ReferralState {
     int? lifetimeReferrals,
     int? monthlyReferrals,
     bool? copiedToClipboard,
+    int? syncedAmbassadorRewardCount,
   }) {
     return ReferralState(
       isLoading: isLoading ?? this.isLoading,
@@ -55,6 +58,7 @@ class ReferralState {
       lifetimeReferrals: lifetimeReferrals ?? this.lifetimeReferrals,
       monthlyReferrals: monthlyReferrals ?? this.monthlyReferrals,
       copiedToClipboard: copiedToClipboard ?? this.copiedToClipboard,
+      syncedAmbassadorRewardCount: syncedAmbassadorRewardCount,
     );
   }
 }

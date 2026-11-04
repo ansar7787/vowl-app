@@ -112,6 +112,7 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
       body: BlocConsumer<ReferralCubit, ReferralState>(
         listener: (context, state) {
           if (state.claimSuccess != null) {
+            context.read<AuthBloc>().add(const AuthReloadUser());
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 backgroundColor: AppColors.emerald500,
@@ -124,6 +125,9 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
             );
           }
           if (state.cupRewardClaimResult != null) {
+            if (state.cupRewardClaimResult!.success) {
+              context.read<AuthBloc>().add(const AuthReloadUser());
+            }
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 backgroundColor: state.cupRewardClaimResult!.success
@@ -132,6 +136,21 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
                 behavior: SnackBarBehavior.floating,
                 content: Text(
                   state.cupRewardClaimResult!.message,
+                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+                ),
+              ),
+            );
+          }
+          if (state.syncedAmbassadorRewardCount != null && state.syncedAmbassadorRewardCount! > 0) {
+            context.read<AuthBloc>().add(const AuthReloadUser());
+            final count = state.syncedAmbassadorRewardCount!;
+            final coins = count * 100;
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                backgroundColor: AppColors.emerald500,
+                behavior: SnackBarBehavior.floating,
+                content: Text(
+                  '🎉 $count invited friend(s) finished Adventure Level 1! You received +$coins Coins & +$count Day VIP Pass!',
                   style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
                 ),
               ),
