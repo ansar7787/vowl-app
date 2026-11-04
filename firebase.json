@@ -4,8 +4,24 @@
     "cleanUrls": true,
     "rewrites": [
       {
+        "source": "/arena",
+        "destination": "/duel.html"
+      },
+      {
+        "source": "/arena/**",
+        "destination": "/duel.html"
+      },
+      {
+        "source": "/duel",
+        "destination": "/duel.html"
+      },
+      {
         "source": "/duel/**",
         "destination": "/duel.html"
+      },
+      {
+        "source": "/invite",
+        "destination": "/invite.html"
       },
       {
         "source": "/invite/**",
