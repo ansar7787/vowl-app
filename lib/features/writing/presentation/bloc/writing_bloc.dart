@@ -191,7 +191,7 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
         ),
       );
     } else {
-      await soundService.playCorrect();
+      await soundService.playCorrect(comboStep: s.currentIndex + 1);
       await hapticService.success();
 
       emit(

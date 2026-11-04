@@ -152,7 +152,7 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState>
     );
 
     if (event.isCorrect) {
-      soundService.playCorrect();
+      soundService.playCorrect(comboStep: s.currentIndex + 1);
       hapticService.success();
       emit(
         s.copyWith(
