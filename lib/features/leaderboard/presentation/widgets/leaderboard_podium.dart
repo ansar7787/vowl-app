@@ -369,7 +369,7 @@ class _PodiumSlot extends StatelessWidget {
                     SizedBox(height: 2.h),
                     // Primary score — single metric, high-contrast across light/dark
                     AutoSizeText(
-                      '$score $scoreLabel',
+                      isKids ? '$score Levels · ${user.kidsCoins} ⭐' : '$score $scoreLabel',
                       maxLines: 1,
                       minFontSize: 5,
                       style: TextStyle(
@@ -384,7 +384,7 @@ class _PodiumSlot extends StatelessWidget {
                         height: 1.1,
                       ),
                     ),
-                    if (user.previousRank != null) ...[
+                    if (!isKids && isWeekly && user.previousRank != null) ...[
                       SizedBox(height: 2.h),
                       _buildRankChangeIndicator(user.previousRank!, rank),
                     ],

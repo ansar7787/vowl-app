@@ -17,7 +17,6 @@ import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/home/presentation/widgets/category_shelf.dart';
-import 'package:vowl/features/games/presentation/widgets/kids_category_shelf.dart';
 import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -26,7 +25,6 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
-  static const Color colorff4081 = Color(0xFFFF4081);
   static const Color colorffa000 = Color(0xFFFFA000);
 }
 
@@ -111,11 +109,6 @@ class GamesScreen extends StatelessWidget {
         user: user,
         isDark: isDark,
       ),
-    // Kids Zone — visually differentiated section
-    _KidsGameSection(
-      key: const ValueKey('kids_game_section'),
-      user: user,
-    ),
     // Adult categories with progress headers
     ...QuestType.values.map((type) {
       return _GameSection(
@@ -527,46 +520,6 @@ class _GameSection extends StatelessWidget {
   }
 }
 
-// ---------------------------------------------------------------------------
-// Kids game section — visually differentiated
-// ---------------------------------------------------------------------------
-
-class _KidsGameSection extends StatelessWidget {
-  final UserEntity user;
-
-  const _KidsGameSection({super.key, required this.user});
-
-  @override
-  Widget build(BuildContext context) {
-    const color = _LocalPalette.colorff4081; // Bright pink for Kids Zone
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(height: 24.h),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: _GameSectionHeader(
-            titleKey: 'kids_zone.title',
-            subtitleKey: 'kids_zone.subtitle',
-            fallbackTitle: 'Kids Zone',
-            fallbackSubtitle: 'Play & Learn',
-            color: color,
-            isKidsZone: true,
-            onSeeAll: () => context.push('/kids-zone'),
-          ),
-        ),
-        SizedBox(height: 16.h),
-        KidsCategoryShelf(user: user),
-      ],
-    );
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Section header — progress-aware with category mastery indicator
-// ---------------------------------------------------------------------------
-
 class _GameSectionHeader extends StatelessWidget {
   final String titleKey;
   final String subtitleKey;
@@ -577,7 +530,6 @@ class _GameSectionHeader extends StatelessWidget {
   final int gamesStarted;
   final int totalGames;
   final double progress;
-  final bool isKidsZone;
   final bool isEliteMastery;
 
   const _GameSectionHeader({
@@ -590,7 +542,6 @@ class _GameSectionHeader extends StatelessWidget {
     this.gamesStarted = 0,
     this.totalGames = 0,
     this.progress = 0.0,
-    this.isKidsZone = false,
     this.isEliteMastery = false,
   });
 
@@ -650,21 +601,6 @@ class _GameSectionHeader extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
-                      // Kids Zone badge
-                      if (isKidsZone) ...[
-                        SizedBox(width: 8.w),
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 6.w,
-                            vertical: 2.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: color.withValues(alpha: 0.15),
-                            borderRadius: BorderRadius.circular(6.r),
-                          ),
-                          child: Text('🎈', style: TextStyle(fontSize: 10.sp)),
-                        ),
-                      ],
                       // Elite Mastery gold badge
                       if (isEliteMastery) ...[
                         SizedBox(width: 8.w),
@@ -733,7 +669,7 @@ class _GameSectionHeader extends StatelessWidget {
           ],
         ),
         // Phase 1: Category progress indicator
-        if (totalGames > 0 && !isKidsZone) ...[
+        if (totalGames > 0) ...[
           SizedBox(height: 10.h),
           Padding(
             padding: EdgeInsetsDirectional.only(start: 16.w),

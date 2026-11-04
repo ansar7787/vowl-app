@@ -120,7 +120,7 @@ class LeaderboardRankTile extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  if (user.previousRank != null) ...[
+                  if (!isKids && isWeekly && user.previousRank != null) ...[
                     SizedBox(height: 2.h),
                     _buildRankChangeIndicator(user.previousRank!, rank),
                   ],
@@ -206,7 +206,9 @@ class LeaderboardRankTile extends StatelessWidget {
                     children: [
                       Flexible(
                         child: Text(
-                          '$score $scoreLabel · ${user.currentStreak}',
+                          isKids
+                              ? '$score Levels · ${user.kidsCoins} Stars'
+                              : '$score $scoreLabel · ${user.currentStreak}',
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 10.sp,
@@ -218,34 +220,38 @@ class LeaderboardRankTile extends StatelessWidget {
                       ),
                       SizedBox(width: 3.w),
                       Icon(
-                        LucideIcons.flame,
-                        size: 11.r,
-                        color: IllustrationColors.warmOrange,
+                        isKids ? Icons.star_rounded : LucideIcons.flame,
+                        size: 12.r,
+                        color: isKids ? AppColors.amber500 : IllustrationColors.warmOrange,
                       ),
                     ],
                   ),
                 ],
               ),
             ),
-            // Levels cleared badge
+            // Levels cleared / Stars badge
             Container(
               padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
               decoration: BoxDecoration(
-                color: tierColor.withValues(alpha: 0.08),
+                color: (isKids ? AppColors.amber500 : tierColor).withValues(alpha: 0.08),
                 borderRadius: BorderRadius.circular(10.r),
-                border: Border.all(color: tierColor.withValues(alpha: 0.15)),
+                border: Border.all(
+                  color: (isKids ? AppColors.amber500 : tierColor).withValues(alpha: 0.25),
+                ),
               ),
               child: Text(
-                context.tr(
-                  'leaderboard.lvs',
-                  fallback: 'Lv. {0}',
-                  args: [levelsCleared.toString()],
-                ),
+                isKids
+                    ? '${user.kidsCoins} ⭐'
+                    : context.tr(
+                        'leaderboard.lvs',
+                        fallback: 'Lv. {0}',
+                        args: [levelsCleared.toString()],
+                      ),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 11.sp,
                   fontWeight: FontWeight.w900,
-                  color: tierColor,
+                  color: isKids ? AppColors.amber500 : tierColor,
                 ),
               ),
             ),

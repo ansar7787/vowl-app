@@ -17,6 +17,7 @@ import 'package:vowl/features/leaderboard/presentation/pages/leaderboard_screen.
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_header.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_podium.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_card.dart';
+import 'package:vowl/features/leaderboard/presentation/widgets/weekly_league_rewards_banner.dart';
 
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
 
@@ -252,8 +253,9 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       expect(find.byType(LeaderboardShimmerLoading), findsOneWidget);
-      expect(find.text('Global Ranks'), findsOneWidget);
-      expect(find.text('Kids Zone'), findsOneWidget);
+      expect(find.text('Weekly League'), findsOneWidget);
+      expect(find.text('Hall of Fame'), findsOneWidget);
+      expect(find.text('Kids Zone'), findsNothing);
       verify(() => mockLeaderboardBloc.add(const LoadLeaderboard(isKids: false))).called(1);
     });
 
@@ -322,7 +324,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
       await tester.pump(const Duration(milliseconds: 500));
 
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -300));
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -600));
       await tester.pump(const Duration(milliseconds: 300));
 
       expect(find.text('Complete more quests to climb the ranks!'), findsOneWidget);
@@ -361,8 +363,13 @@ void main() {
       // Verify Sticky Rank Card details for currentUser (Rank 7)
       expect(find.text('Your Standing'), findsOneWidget);
       expect(find.text('#7'), findsWidgets); // In rank card and rank tile/FindMe
-      expect(find.textContaining('42 / '), findsOneWidget);
-      expect(find.textContaining('All Quests'), findsOneWidget);
+      expect(
+        find.descendant(
+          of: find.byType(LeaderboardRankCard),
+          matching: find.text('8400 Weekly XP'),
+        ),
+        findsOneWidget,
+      );
     });
   });
 
@@ -416,29 +423,32 @@ void main() {
     });
   });
 
-  group('Group 6: Kids Zone vs Global Toggle', () {
-    testWidgets('toggles between Global Ranks and Kids Zone views', (tester) async {
+  group('Group 6: Main Leaderboard Hero Switch & Dedicated Kids Leaderboard', () {
+    testWidgets('toggles between Weekly League and Hall of Fame views on main leaderboard', (tester) async {
       await tester.pumpWidget(buildTestWidget());
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('Global Ranks'), findsOneWidget);
-      expect(find.text('Kids Zone'), findsOneWidget);
+      expect(find.text('Weekly League'), findsOneWidget);
+      expect(find.text('Hall of Fame'), findsOneWidget);
+      expect(find.text('Kids Zone'), findsNothing);
 
-      // Tap Kids Zone
-      await tester.tap(find.text('Kids Zone'));
+      // Initially in Weekly League mode
+      expect(find.byType(WeeklyLeagueRewardsBanner), findsOneWidget);
+
+      // Tap Hall of Fame
+      await tester.tap(find.text('Hall of Fame'));
       await tester.pump(const Duration(milliseconds: 300));
 
-      verify(() => mockLeaderboardBloc.add(const LoadLeaderboard(isKids: true))).called(1);
+      expect(find.text('Hall of Fame Masters'), findsOneWidget);
 
-      // Tap Global Ranks back
-      await tester.tap(find.text('Global Ranks'));
+      // Tap Weekly League back
+      await tester.tap(find.text('Weekly League'));
       await tester.pump(const Duration(milliseconds: 300));
 
-      // 1 from initial create + 1 from toggle back = 2 calls with isKids: false
-      verify(() => mockLeaderboardBloc.add(const LoadLeaderboard(isKids: false))).called(2);
+      expect(find.byType(WeeklyLeagueRewardsBanner), findsOneWidget);
     });
 
-    testWidgets('renders Kids Leaderboard header and Coins label when isKids is true', (tester) async {
+    testWidgets('renders Kids Leaderboard header, back button, and Levels label when isKids is true', (tester) async {
       when(() => mockLeaderboardBloc.state)
           .thenReturn(LeaderboardLoaded(testUsersList, now, isKids: true));
 
@@ -447,6 +457,8 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
 
       expect(find.text('Kids Leaderboard'), findsOneWidget);
+      expect(find.byIcon(Icons.arrow_back_rounded), findsOneWidget);
+      expect(find.text('Weekly League'), findsNothing);
       expect(find.textContaining('Levels'), findsWidgets);
     });
   });

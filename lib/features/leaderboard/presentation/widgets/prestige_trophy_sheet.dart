@@ -26,6 +26,8 @@ class PrestigeTrophySheet extends StatelessWidget {
   }) {
     return showModalBottomSheet(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (_) => PrestigeTrophySheet(
@@ -52,14 +54,21 @@ class PrestigeTrophySheet extends StatelessWidget {
     final textPrimary = isDark ? Colors.white : (tokens?.textPrimary ?? const Color(0xFF0F172A));
     final textSecondary = isDark ? AppColors.slate400 : (tokens?.textSecondary ?? const Color(0xFF64748B));
 
+    // Resilient safe-area clearance for older 3-button navigation, gesture bars & keyboards
+    final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
+    final systemBottomPadding = MediaQuery.viewPaddingOf(context).bottom;
+    final safeBottom = (systemBottomPadding > 0 ? systemBottomPadding : 24.h) + bottomInset + 12.h;
+
     return Container(
-      padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, 28.h),
+      padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, safeBottom),
       decoration: BoxDecoration(
         color: surfaceColor,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
         border: Border.all(color: borderColor, width: 1.w),
       ),
-      child: SingleChildScrollView(
+      child: SafeArea(
+        top: false,
+        child: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -180,7 +189,8 @@ class PrestigeTrophySheet extends StatelessWidget {
         ],
       ),
     ),
-  );
+  ),
+);
 }
 
   Widget _buildStatItem(
