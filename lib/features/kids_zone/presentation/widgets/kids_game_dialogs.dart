@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -390,6 +391,9 @@ class KidsGameDialogs {
     required BuildContext context,
     required Color primaryColor,
   }) {
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl<HapticService>().warning();
+    }
     final adService = di.sl<AdService>();
     final kidsBloc = context.read<KidsBloc>();
     final navigator = Navigator.of(context);

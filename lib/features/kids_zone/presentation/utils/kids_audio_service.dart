@@ -91,6 +91,22 @@ class KidsAudioService {
     }
   }
 
+  /// Plays the game over defeat sound effect.
+  Future<void> playGameOverSFX() async {
+    if (!(await isSfxEnabled())) return;
+    try {
+      await _sfxPlayer.stop();
+      await _sfxPlayer.play(
+        AssetSource('sounds/game_over.mp3'),
+        volume: 0.85,
+      );
+    } catch (e) {
+      if (di.sl.isRegistered<AppLogger>()) {
+        di.sl<AppLogger>().warning("Kids SFX Game Over Error: $e", tag: 'KidsZone');
+      }
+    }
+  }
+
   /// Disposes of the underlying audio player.
   void dispose() {
     _sfxPlayer.dispose();

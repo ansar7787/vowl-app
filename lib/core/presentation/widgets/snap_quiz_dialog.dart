@@ -110,8 +110,8 @@ class _SnapQuizDialogState extends State<SnapQuizDialog> {
         if (di.sl.isRegistered<SoundService>()) {
           di.sl<SoundService>().playLevelComplete();
           _tallyTimer = Timer(const Duration(milliseconds: 350), () {
-            if (mounted && di.sl.isRegistered<SoundService>()) {
-              di.sl<SoundService>().playCoinTally(count: 10);
+            if (mounted && di.sl.isRegistered<HapticService>()) {
+              di.sl<HapticService>().selection();
             }
           });
         }

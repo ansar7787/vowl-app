@@ -57,6 +57,7 @@ class _ArenaDuelView extends StatefulWidget {
 
 class _ArenaDuelViewState extends State<_ArenaDuelView> {
   StreamSubscription<AppNetworkStatus>? _networkSubscription;
+  Timer? _countdownTimer;
   bool _isOffline = false;
   bool _hasTriggeredMatchFound = false;
 
@@ -78,6 +79,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
 
   @override
   void dispose() {
+    _countdownTimer?.cancel();
     _networkSubscription?.cancel();
     super.dispose();
   }
@@ -168,6 +170,14 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                     _hasTriggeredMatchFound = true;
                     if (di.sl.isRegistered<SoundService>()) {
                       di.sl<SoundService>().playArenaMatchFound();
+                      _countdownTimer?.cancel();
+                      _countdownTimer = Timer(const Duration(milliseconds: 380), () {
+                        if (mounted && di.sl.isRegistered<SoundService>()) {
+                          try {
+                            di.sl<SoundService>().playArenaCountdown();
+                          } catch (_) {}
+                        }
+                      });
                     }
                     if (di.sl.isRegistered<HapticService>()) {
                       di.sl<HapticService>().heavy();
@@ -175,9 +185,6 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                   }
 
                   if (state.timeRemaining == 3 && !state.isCompleted && !state.isWaitingForGuest) {
-                    if (di.sl.isRegistered<SoundService>()) {
-                      di.sl<SoundService>().playArenaCountdown();
-                    }
                     if (di.sl.isRegistered<HapticService>()) {
                       di.sl<HapticService>().warning();
                     }
