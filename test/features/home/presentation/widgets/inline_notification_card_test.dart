@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/home/presentation/widgets/inline_notification_card.dart';
 
@@ -14,20 +15,29 @@ class MockHapticService extends Mock implements HapticService {}
 
 class MockLocaleService extends Mock implements LocaleService {}
 
+class MockNotificationService extends Mock implements NotificationService {}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   late MockHapticService mockHapticService;
   late MockLocaleService mockLocaleService;
+  late MockNotificationService mockNotificationService;
 
   setUp(() {
+    InlineNotificationCard.cachedShouldShow = null;
     VowlMotion.lowAnimationModeOverride.value = true;
     mockHapticService = MockHapticService();
     mockLocaleService = MockLocaleService();
+    mockNotificationService = MockNotificationService();
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
+
+    when(
+      () => mockNotificationService.onNotificationPreferenceChanged(any()),
+    ).thenAnswer((_) async {});
 
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
     when(
@@ -60,6 +70,11 @@ void main() {
     di.sl.registerSingleton<LocaleService>(mockLocaleService);
     initLocaleServiceReference(mockLocaleService);
 
+    if (di.sl.isRegistered<NotificationService>()) {
+      di.sl.unregister<NotificationService>();
+    }
+    di.sl.registerSingleton<NotificationService>(mockNotificationService);
+
     SharedPreferences.setMockInitialValues({});
 
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
@@ -73,12 +88,16 @@ void main() {
         if (methodCall.method == 'requestPermissions') {
           return {17: 0};
         }
+        if (methodCall.method == 'openAppSettings') {
+          return true;
+        }
         return null;
       },
     );
   });
 
   tearDown(() {
+    InlineNotificationCard.cachedShouldShow = null;
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(
       const MethodChannel('flutter.baseflow.com/permissions/methods'),
@@ -89,6 +108,9 @@ void main() {
     }
     if (di.sl.isRegistered<LocaleService>()) {
       di.sl.unregister<LocaleService>();
+    }
+    if (di.sl.isRegistered<NotificationService>()) {
+      di.sl.unregister<NotificationService>();
     }
   });
 
@@ -120,10 +142,11 @@ void main() {
 
       // Notification card renders when not dismissed
       expect(find.byType(InlineNotificationCard), findsOneWidget);
-      expect(find.text('Save your 14-day streak'), findsOneWidget);
-      expect(find.text('Daily alert before midnight'), findsOneWidget);
+      expect(find.text("Save your 14-day streak!"), findsOneWidget);
+      expect(find.text("A quick alert before midnight so you never lose it"), findsOneWidget);
       expect(find.text('Remind Me'), findsOneWidget);
       expect(find.byIcon(Icons.close_rounded), findsOneWidget);
+      expect(find.byIcon(Icons.notifications_active_rounded), findsOneWidget);
     },
   );
 
@@ -134,8 +157,9 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('Keep your momentum going!'), findsOneWidget);
-      expect(find.text('Daily reminders at your best time'), findsOneWidget);
+      expect(find.text("Keep your streak going!"), findsOneWidget);
+      expect(find.text("A quick daily reminder to help you hit a 7-day streak"), findsOneWidget);
+      expect(find.byIcon(Icons.notifications_active_rounded), findsOneWidget);
     },
   );
 
@@ -146,8 +170,9 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('Never miss your daily quest!'), findsOneWidget);
-      expect(find.text('Daily reminders at your best time'), findsOneWidget);
+      expect(find.text("Start your streak today!"), findsOneWidget);
+      expect(find.text("A quick 2-minute reminder so you never miss a day"), findsOneWidget);
+      expect(find.byIcon(Icons.notifications_active_rounded), findsOneWidget);
     },
   );
 
@@ -167,7 +192,7 @@ void main() {
       verify(() => mockHapticService.light()).called(1);
 
       // Card is dismissed and collapsed away
-      expect(find.text('Save your 14-day streak'), findsNothing);
+      expect(find.text("Save your 14-day streak!"), findsNothing);
     },
   );
 
@@ -184,7 +209,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));
 
-      expect(find.text('Save your 14-day streak'), findsNothing);
+      expect(find.text("Save your 14-day streak!"), findsNothing);
     },
   );
 
@@ -225,6 +250,127 @@ void main() {
 
       expect(find.byType(InlineNotificationCard), findsOneWidget);
       expect(tester.takeException(), isNull);
+    },
+  );
+
+  testWidgets(
+    'renders instantly on Frame 1 when prewarmed without delay',
+    (tester) async {
+      final prefs = await SharedPreferences.getInstance();
+      InlineNotificationCard.prewarm(prefs);
+
+      await tester.pumpWidget(createSubject(streak: 14));
+      // Immediate Frame 1 check without needing pump duration
+      await tester.pump();
+
+      expect(find.byType(InlineNotificationCard), findsOneWidget);
+      expect(find.text("Save your 14-day streak!"), findsOneWidget);
+    },
+  );
+
+  testWidgets(
+    'reappears and renders after 7-day cooldown expires for previously denied user',
+    (tester) async {
+      final expiredDismissal =
+          DateTime.now().subtract(const Duration(days: 8)).millisecondsSinceEpoch;
+      SharedPreferences.setMockInitialValues({
+        'notification_card_dismissed_time': expiredDismissal,
+      });
+
+      final prefs = await SharedPreferences.getInstance();
+      InlineNotificationCard.prewarm(prefs);
+
+      await tester.pumpWidget(createSubject(streak: 14));
+      await tester.pump();
+
+      expect(find.byType(InlineNotificationCard), findsOneWidget);
+      expect(find.text("Save your 14-day streak!"), findsOneWidget);
+    },
+  );
+
+  testWidgets(
+    'reappears after 7 days even if OS permission is permanently denied, and Remind Me opens app settings',
+    (tester) async {
+      bool openedSettings = false;
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+          .setMockMethodCallHandler(
+        const MethodChannel('flutter.baseflow.com/permissions/methods'),
+        (MethodCall methodCall) async {
+          if (methodCall.method == 'checkPermissionStatus') {
+            // 4 = PermissionStatus.permanentlyDenied
+            return 4;
+          }
+          if (methodCall.method == 'openAppSettings') {
+            openedSettings = true;
+            return true;
+          }
+          return null;
+        },
+      );
+
+      final expiredDismissal =
+          DateTime.now().subtract(const Duration(days: 8)).millisecondsSinceEpoch;
+      SharedPreferences.setMockInitialValues({
+        'notification_card_dismissed_time': expiredDismissal,
+      });
+
+      final prefs = await SharedPreferences.getInstance();
+      InlineNotificationCard.prewarm(prefs);
+
+      await tester.pumpWidget(createSubject(streak: 14));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 100));
+
+      // Card remains visible even though OS is permanently denied
+      expect(find.byType(InlineNotificationCard), findsOneWidget);
+      expect(find.text("Remind Me"), findsOneWidget);
+
+      // Tap Remind Me
+      await tester.tap(find.text("Remind Me"));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+
+      expect(openedSettings, isTrue);
+    },
+  );
+
+  testWidgets(
+    'tapping Remind Me when granted triggers success haptics, sets prefs, and calls NotificationService',
+    (tester) async {
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+          .setMockMethodCallHandler(
+        const MethodChannel('flutter.baseflow.com/permissions/methods'),
+        (MethodCall methodCall) async {
+          if (methodCall.method == 'checkPermissionStatus') {
+            // 0 = denied (not permanently)
+            return 0;
+          }
+          if (methodCall.method == 'requestPermissions') {
+            // 1 = PermissionStatus.granted for permission index 17 (notification)
+            return {17: 1};
+          }
+          return null;
+        },
+      );
+
+      final prefs = await SharedPreferences.getInstance();
+      InlineNotificationCard.prewarm(prefs);
+
+      await tester.pumpWidget(createSubject(streak: 14));
+      await tester.pump();
+
+      expect(find.byType(InlineNotificationCard), findsOneWidget);
+      expect(find.text("Remind Me"), findsOneWidget);
+
+      await tester.tap(find.text("Remind Me"));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+
+      verify(() => mockHapticService.success()).called(1);
+      verify(() => mockNotificationService.onNotificationPreferenceChanged(true)).called(1);
+
+      expect(prefs.getBool('notifications_enabled'), isTrue);
+      expect(prefs.getBool('notification_permission_granted'), isTrue);
     },
   );
 }

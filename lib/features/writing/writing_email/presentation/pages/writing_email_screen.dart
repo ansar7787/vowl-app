@@ -272,7 +272,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                         physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [
@@ -326,7 +326,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen>
                           ),
                           SliverToBoxAdapter(
                             child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              padding: EdgeInsets.symmetric(horizontal: 20.w),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [

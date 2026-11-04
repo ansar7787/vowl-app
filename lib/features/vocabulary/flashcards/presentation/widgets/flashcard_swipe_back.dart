@@ -88,19 +88,6 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                 : widget.color.withValues(alpha: 0.3),
             width: 1.5,
           ),
-          boxShadow: [
-            BoxShadow(
-              color: widget.color.withValues(alpha: 0.2),
-              blurRadius: 30,
-              offset: const Offset(0, 15),
-              spreadRadius: -5,
-            ),
-            BoxShadow(
-              color: Colors.black.withValues(alpha: widget.isDark ? 0.4 : 0.08),
-              blurRadius: 20,
-              offset: const Offset(0, 10),
-            ),
-          ],
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(24.r),

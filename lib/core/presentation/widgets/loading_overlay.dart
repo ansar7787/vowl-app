@@ -171,7 +171,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
 
         // 2. Solid color tint layer
         ColoredBox(
-          color: (isDark ? AppColors.slate950 : AppColors.slate50).withValues(
+          color: (isDark ? AppColors.slate950 : AppColors.white).withValues(
             alpha: 0.85,
           ),
         ),

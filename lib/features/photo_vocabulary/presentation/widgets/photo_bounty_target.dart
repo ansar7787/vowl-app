@@ -564,10 +564,14 @@ class _BountyInfoDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        (Theme.of(context).scaffoldBackgroundColor == AppColors.midnightBase ||
+            Theme.of(context).colorScheme.surface == AppColors.midnightSurface ||
+            Theme.of(context).colorScheme.surface == AppColors.midnightBase);
 
     return Dialog(
       backgroundColor: Colors.transparent,
-      insetPadding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+      insetPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
       elevation: 0,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(24.r),
@@ -576,17 +580,25 @@ class _BountyInfoDialog extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.all(22.r),
             decoration: BoxDecoration(
-              color: isDark
-                  ? Colors.black.withValues(alpha: 0.82)
-                  : Colors.white.withValues(alpha: 0.96),
+              color: isMidnight
+                  ? AppColors.midnightSurface
+                  : (isDark
+                      ? Colors.black.withValues(alpha: 0.82)
+                      : Colors.white.withValues(alpha: 0.96)),
               borderRadius: BorderRadius.circular(24.r),
               border: Border.all(
-                color: accentColor.withValues(alpha: 0.35),
-                width: 1.5.w,
+                color: isMidnight
+                    ? Colors.white.withValues(alpha: 0.12)
+                    : (isDark
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : AppColors.slate100),
+                width: 1,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: accentColor.withValues(alpha: 0.2),
+                  color: isDark
+                      ? Colors.black.withValues(alpha: 0.3)
+                      : accentColor.withValues(alpha: 0.2),
                   blurRadius: 20,
                   offset: const Offset(0, 8),
                 ),

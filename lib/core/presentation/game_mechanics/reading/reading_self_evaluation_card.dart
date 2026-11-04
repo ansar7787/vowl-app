@@ -216,13 +216,6 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
           color: widget.primaryColor.withValues(alpha: 0.3),
           width: 2,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: widget.primaryColor.withValues(alpha: 0.1),
-            blurRadius: 16,
-            offset: const Offset(0, 4),
-          ),
-        ],
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,

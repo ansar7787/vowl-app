@@ -54,13 +54,6 @@ class DailyJournalPrompt extends StatelessWidget {
           color: primaryColor.withValues(alpha: 0.28),
           width: 1.5,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: primaryColor.withValues(alpha: 0.08),
-            blurRadius: 16,
-            offset: const Offset(0, 6),
-          ),
-        ],
       ),
       child: Stack(
         children: [

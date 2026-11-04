@@ -40,13 +40,6 @@ class IntonationMimicPromptCard extends StatelessWidget {
           color: color.withValues(alpha: isDark ? 0.22 : 0.18),
           width: 1.2,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: color.withValues(alpha: isDark ? 0.06 : 0.04),
-            blurRadius: 14,
-            offset: const Offset(0, 3),
-          ),
-        ],
       ),
       child: Stack(
         children: [

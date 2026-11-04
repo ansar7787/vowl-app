@@ -8,6 +8,8 @@ import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class _LocalPalette {
   _LocalPalette._();
@@ -22,6 +24,7 @@ class LeaderboardPodium extends StatelessWidget {
   final bool isKids;
   final bool isWeekly;
   final String? currentUserId;
+  final void Function(UserEntity user, int rank, bool isMe)? onUserTap;
 
   const LeaderboardPodium({
     super.key,
@@ -29,6 +32,7 @@ class LeaderboardPodium extends StatelessWidget {
     this.isKids = false,
     this.isWeekly = true,
     this.currentUserId,
+    this.onUserTap,
   });
 
   @override
@@ -57,6 +61,7 @@ class LeaderboardPodium extends StatelessWidget {
                   isKids: isKids,
                   isWeekly: isWeekly,
                   currentUserId: currentUserId,
+                  onUserTap: onUserTap,
                 ),
               )
             else
@@ -73,6 +78,7 @@ class LeaderboardPodium extends StatelessWidget {
                 isKids: isKids,
                 isWeekly: isWeekly,
                 currentUserId: currentUserId,
+                onUserTap: onUserTap,
               ),
             ),
 
@@ -88,6 +94,7 @@ class LeaderboardPodium extends StatelessWidget {
                   isKids: isKids,
                   isWeekly: isWeekly,
                   currentUserId: currentUserId,
+                  onUserTap: onUserTap,
                 ),
               )
             else
@@ -110,6 +117,7 @@ class _PodiumSlot extends StatelessWidget {
   final bool isKids;
   final bool isWeekly;
   final String? currentUserId;
+  final void Function(UserEntity user, int rank, bool isMe)? onUserTap;
 
   const _PodiumSlot({
     required this.user,
@@ -118,6 +126,7 @@ class _PodiumSlot extends StatelessWidget {
     this.isKids = false,
     this.isWeekly = true,
     this.currentUserId,
+    this.onUserTap,
   });
 
   @override
@@ -369,7 +378,7 @@ class _PodiumSlot extends StatelessWidget {
                     SizedBox(height: 2.h),
                     // Primary score — single metric, high-contrast across light/dark
                     AutoSizeText(
-                      '$score $scoreLabel',
+                      isKids ? '$score Levels · ${user.kidsCoins} ⭐' : '$score $scoreLabel',
                       maxLines: 1,
                       minFontSize: 5,
                       style: TextStyle(
@@ -384,7 +393,7 @@ class _PodiumSlot extends StatelessWidget {
                         height: 1.1,
                       ),
                     ),
-                    if (user.previousRank != null) ...[
+                    if (!isKids && isWeekly && user.previousRank != null) ...[
                       SizedBox(height: 2.h),
                       _buildRankChangeIndicator(user.previousRank!, rank),
                     ],
@@ -397,11 +406,22 @@ class _PodiumSlot extends StatelessWidget {
       ),
     );
 
+    final interactiveSlot = GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () {
+        if (di.sl.isRegistered<HapticService>()) {
+          di.sl<HapticService>().selection();
+        }
+        onUserTap?.call(user, rank, isMe);
+      },
+      child: slotContent,
+    );
+
     if (reduceMotion) {
-      return slotContent;
+      return interactiveSlot;
     }
 
-    return slotContent
+    return interactiveSlot
         .animate(delay: delay.ms)
         .fadeIn(
           duration: const Duration(milliseconds: 350),

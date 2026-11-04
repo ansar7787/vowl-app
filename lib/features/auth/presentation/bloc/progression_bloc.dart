@@ -4,7 +4,6 @@ import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/utils/auth_error_handler.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/core/utils/notification_service.dart';
-import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/domain/usecases/activate_double_xp.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_level_milestone.dart';
@@ -270,10 +269,9 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     final lastLogin = user.lastLoginDate;
 
     if (lastLogin == null) {
-      // First-ever login
-      final updatedUser = user.copyWith(currentStreak: 1, lastLoginDate: now);
+      // First-ever login: initialize lastLoginDate, streak starts at 0 until first lesson
+      final updatedUser = user.copyWith(currentStreak: 0, lastLoginDate: now);
       await updateUser(UpdateUserParams(user: updatedUser));
-      notificationService.scheduleStreakReminder(1);
       emit(state.copyWith(isLoading: false));
       return;
     }
@@ -292,87 +290,49 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     );
     final dayDifference = nowDateOnly.difference(lastDateOnly).inDays;
 
-    if (dayDifference == 0) {
-      // Already processed today
+    if (dayDifference <= 1) {
+      // 0 = already opened today.
+      // 1 = consecutive day. Streak is active / not broken!
+      // In the real-world standard, today's streak is pending until completing today's daily lesson.
       notificationService.scheduleStreakReminder(user.currentStreak);
       emit(state.copyWith(isLoading: false));
       return;
     }
 
-    if (dayDifference == 1) {
-      // Consecutive day — increment streak. The streak/lastLoginDate update
-      // itself stays on the client-computed + updateUser path (unlike the
-      // purchase/claim handlers below, this is a broad multi-field state
-      // transition with shield/auto-shield branches — not a narrow,
-      // template-able "spend X get Y" operation, so redesigning it into a
-      // transaction isn't a safe change to make without much deeper
-      // context on every edge case it needs to preserve).
+    // dayDifference > 1 — missed day! Check for streak protection
+    final hasShield = user.streakFreezes > 0;
+    final hasAutoShield = user.level >= 50;
+
+    if (hasShield || hasAutoShield) {
       final updatedUser = user.copyWith(
-        currentStreak: user.currentStreak + 1,
-        lastLoginDate: now,
+        streakFreezes: hasAutoShield
+            ? user.streakFreezes
+            : user.streakFreezes - 1,
+        lastLoginDate: now.subtract(const Duration(days: 1)),
       );
-      final newStreak = updatedUser.currentStreak;
-
-      final result = await updateUser(UpdateUserParams(user: updatedUser));
-      if (result.isRight()) {
-        notificationService.scheduleStreakReminder(newStreak);
-        emit(state.copyWith(streakUpdatedToday: true, isLoading: false));
-
-        // Milestone auto-claim now goes through the same atomic,
-        // server-validated ClaimStreakMilestone use case as the
-        // user-triggered claim flow, instead of being folded into the
-        // updatedUser.copyWith(...) above. That previous version *did*
-        // already check claimedStreakMilestones before crediting (so this
-        // specific path was not the exploitable one — see class doc), but
-        // it was still a non-transactional read-then-write, so a second
-        // near-simultaneous trigger (e.g. two sessions) could still race.
-        // The cheap local .contains check here just avoids a pointless
-        // network round trip in the common case where the streak has
-        // looped back through an already-claimed number after a reset.
-        final isNewMilestone =
-            UserGameConstants.kStreakMilestoneRewards.containsKey(newStreak) &&
-            !user.claimedStreakMilestones.contains(newStreak);
-        if (isNewMilestone) {
-          await claimStreakMilestone(newStreak);
-        }
-      } else {
-        emit(state.copyWith(isLoading: false));
-      }
+      await updateUser(UpdateUserParams(user: updatedUser));
+      notificationService.scheduleStreakReminder(updatedUser.currentStreak);
+      emit(
+        state.copyWith(
+          isLoading: false,
+          streakUpdatedToday: true,
+          message: () => hasAutoShield
+              ? 'progression.elite_shield_protected'
+              : 'progression.streak_shield_activated',
+        ),
+      );
     } else {
-      // Missed day — check for streak protection
-      final hasShield = user.streakFreezes > 0;
-      final hasAutoShield = user.level >= 50;
-
-      if (hasShield || hasAutoShield) {
-        final updatedUser = user.copyWith(
-          streakFreezes: hasAutoShield
-              ? user.streakFreezes
-              : user.streakFreezes - 1,
-          lastLoginDate: now,
-        );
-        await updateUser(UpdateUserParams(user: updatedUser));
-        notificationService.scheduleStreakReminder(updatedUser.currentStreak);
-        emit(
-          state.copyWith(
-            isLoading: false,
-            streakUpdatedToday: true,
-            message: () => hasAutoShield
-                ? 'progression.elite_shield_protected'
-                : 'progression.streak_shield_activated',
-          ),
-        );
-      } else {
-        final updatedUser = user.copyWith(currentStreak: 1, lastLoginDate: now);
-        await updateUser(UpdateUserParams(user: updatedUser));
-        notificationService.scheduleStreakReminder(1);
-        emit(
-          state.copyWith(
-            isLoading: false,
-            streakUpdatedToday: true,
-            message: () => 'progression.streak_lost_reset',
-          ),
-        );
-      }
+      // Reset streak to 0 so Streak Repair can be used!
+      final updatedUser = user.copyWith(currentStreak: 0, lastLoginDate: now);
+      await updateUser(UpdateUserParams(user: updatedUser));
+      notificationService.scheduleStreakReminder(0);
+      emit(
+        state.copyWith(
+          isLoading: false,
+          streakUpdatedToday: true,
+          message: () => 'progression.streak_lost_reset',
+        ),
+      );
     }
   }
 

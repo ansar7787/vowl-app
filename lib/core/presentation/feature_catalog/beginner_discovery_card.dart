@@ -454,7 +454,7 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
         child: ScaleTransition(
           scale: _eatingScale,
           child: Padding(
-            padding: EdgeInsets.fromLTRB(24.w, 12.h, 24.w, 8.h),
+            padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, 8.h),
             child: cardContent,
           ),
         ),
@@ -471,31 +471,27 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
     int completedCount,
     double progress,
   ) {
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
+
     return Container(
       clipBehavior: Clip.antiAlias,
       padding: EdgeInsets.fromLTRB(0, 11.h, 0, 10.h),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: isDark
-              ? const [Color(0xFF161928), Color(0xFF10121B)]
-              : const [Colors.white, Color(0xFFF8FAFD)],
-        ),
+        color: cardBg,
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.08)
-              : AppColors.indigo500.withValues(alpha: 0.12),
-          width: 1.2,
+          color: borderColor,
+          width: 1.0,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.25 : 0.04),
-            blurRadius: 14.r,
-            offset: Offset(0, 3.h),
-          ),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -679,31 +675,32 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
     bool isDone,
     bool isDark,
   ) {
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final card = Container(
       width: 140.w,
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: isDark
+        color: isMidnight
             ? (isDone
-                  ? AppColors.emerald500.withValues(alpha: 0.04)
-                  : Colors.white.withValues(alpha: 0.04))
-            : (isDone ? const Color(0xFFF0FDF4) : Colors.white),
+                ? AppColors.emerald500.withValues(alpha: 0.08)
+                : const Color(0xFF101726))
+            : (isDark
+                ? (isDone
+                    ? AppColors.emerald500.withValues(alpha: 0.06)
+                    : const Color(0xFF182030))
+                : (isDone ? const Color(0xFFF0FDF4) : Colors.white)),
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
           color: isDone
-              ? AppColors.emerald500.withValues(alpha: 0.25)
-              : (isDark
-                    ? Colors.white.withValues(alpha: 0.07)
-                    : Colors.black.withValues(alpha: 0.06)),
-          width: 1.1,
+              ? AppColors.emerald500.withValues(alpha: 0.35)
+              : (isMidnight
+                  ? Colors.white.withValues(alpha: 0.10)
+                  : (isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate100)),
+          width: 1.0,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.03),
-            blurRadius: 8.r,
-            offset: Offset(0, 2.h),
-          ),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -869,13 +866,6 @@ class _BeginnerDiscoveryCardState extends State<BeginnerDiscoveryCard>
               color: AppColors.amber500.withValues(alpha: 0.5),
               width: 1.4,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.amber500.withValues(alpha: 0.18),
-                blurRadius: 18.r,
-                offset: Offset(0, 4.h),
-              ),
-            ],
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,

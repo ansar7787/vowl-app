@@ -33,16 +33,6 @@ class ContextCluesCaseFileBackground extends StatelessWidget {
                   Colors.black.withValues(alpha: 0.08)),
           width: 1.5,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: isDark
-                ? Colors.black.withValues(alpha: 0.3)
-                : (accentColor?.withValues(alpha: 0.08) ??
-                    Colors.black.withValues(alpha: 0.05)),
-            blurRadius: 20,
-            offset: const Offset(0, 8),
-          ),
-        ],
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(18.5.r),

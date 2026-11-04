@@ -55,15 +55,6 @@ class ContextualUsageCard extends StatelessWidget {
           ),
           width: 1.5,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: (isDark ? Colors.black : color).withValues(
-              alpha: isAnswered ? 0.12 : 0.05,
-            ),
-            blurRadius: isAnswered ? 24 : 16,
-            offset: Offset(0, isAnswered ? 8 : 4),
-          ),
-        ],
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,

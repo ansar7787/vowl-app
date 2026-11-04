@@ -89,15 +89,6 @@ class EmergencyHubTelexCard extends StatelessWidget {
           color: tokens.gameIncorrect.withValues(alpha: isDark ? 0.4 : 0.25),
           width: 1.5,
         ),
-        boxShadow: isDark
-            ? []
-            : [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.04),
-                  blurRadius: 12,
-                  offset: const Offset(0, 4),
-                ),
-              ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

@@ -53,7 +53,7 @@ class ProgressDashboardScreen extends StatelessWidget {
                     _buildHeader(context, isDark),
                     Expanded(
                       child: SingleChildScrollView(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
                         physics: const AlwaysScrollableScrollPhysics(
                           parent: BouncingScrollPhysics(),
                         ),

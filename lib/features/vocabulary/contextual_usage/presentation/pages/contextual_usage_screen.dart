@@ -378,7 +378,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen>
         MediaQuery.maybeOf(context)?.disableAnimations ?? false;
 
     final widget = Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: ConstrainedBox(
         constraints: BoxConstraints(maxWidth: 310.w),
         child: Text(

@@ -24,6 +24,7 @@ import 'package:vowl/features/photo_vocabulary/presentation/pages/photo_vocabula
 import 'package:vowl/features/referral/presentation/pages/referral_hub_screen.dart';
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
+import 'package:vowl/features/arena/presentation/pages/arena_deep_link_resolver_screen.dart';
 
 import 'package:vowl/core/utils/app_router.dart';
 
@@ -232,6 +233,26 @@ class HomeRoutes {
         }
         return fadeTransitionPage(
           child: ArenaDuelScreen(initialSession: session),
+          state: state,
+        );
+      },
+    ),
+    GoRoute(
+      path: AppRouter.duelRoute,
+      pageBuilder: (context, state) {
+        final roomCode = state.pathParameters['roomCode'] ?? '';
+        return fadeTransitionPage(
+          child: ArenaDeepLinkResolverScreen(roomCode: roomCode),
+          state: state,
+        );
+      },
+    ),
+    GoRoute(
+      path: AppRouter.inviteRoute,
+      pageBuilder: (context, state) {
+        final code = state.pathParameters['code'];
+        return fadeTransitionPage(
+          child: ReferralHubScreen(initialInviteCode: code),
           state: state,
         );
       },

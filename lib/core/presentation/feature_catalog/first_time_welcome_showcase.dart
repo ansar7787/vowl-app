@@ -95,6 +95,8 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final bottomInset = MediaQuery.of(context).padding.bottom;
     final slide = _slides[_currentPage];
 
@@ -109,15 +111,19 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
             maxHeight: MediaQuery.of(context).size.height * 0.88,
           ),
           decoration: BoxDecoration(
-            color: isDark
-                ? const Color(0xFF11131E).withValues(alpha: 0.97)
-                : Colors.white.withValues(alpha: 0.98),
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (isDark
+                    ? const Color(0xFF11131E).withValues(alpha: 0.97)
+                    : Colors.white.withValues(alpha: 0.98)),
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
             border: Border(
               top: BorderSide(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.1)
-                    : Colors.black.withValues(alpha: 0.08),
+                color: isMidnight
+                    ? Colors.white.withValues(alpha: 0.12)
+                    : (isDark
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : AppColors.slate100),
                 width: 1.2,
               ),
             ),
@@ -379,16 +385,6 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
                                         : Colors.black.withValues(alpha: 0.05),
                                     width: 1,
                                   ),
-                                  boxShadow: [
-                                    if (!isDark)
-                                      BoxShadow(
-                                        color: Colors.black.withValues(
-                                          alpha: 0.03,
-                                        ),
-                                        blurRadius: 8.r,
-                                        offset: Offset(0, 2.h),
-                                      ),
-                                  ],
                                 ),
                                 child: Row(
                                   children: [

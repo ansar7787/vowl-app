@@ -359,7 +359,7 @@ class ProfileHeader extends StatelessWidget {
         if (user.email.isNotEmpty) ...[
           SizedBox(height: isPremium ? 4.h : 6.h),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: Text(

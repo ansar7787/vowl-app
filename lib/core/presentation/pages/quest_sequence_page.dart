@@ -163,8 +163,12 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return Scaffold(
-      backgroundColor: isDark ? AppColors.slate900 : Colors.white,
+      backgroundColor: isMidnight
+          ? Colors.black
+          : (isDark ? AppColors.slate900 : Colors.white),
       body: Stack(
         children: [
           const MeshGradientBackground(showLetters: false),
@@ -184,10 +188,10 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                         child: IntrinsicHeight(
                           child: Padding(
                             padding: EdgeInsets.fromLTRB(
-                              24.w,
+                              20.w,
                               10.h,
-                              24.w,
-                              24.w,
+                              20.w,
+                              24.h,
                             ),
                             child: Column(
                               children: [
@@ -198,7 +202,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                                   totalQuests: widget.quests.length,
                                   progress: _progress,
                                 ),
-                                SizedBox(height: 32.h),
+                                SizedBox(height: 24.h),
                                 _ProgressBar(
                                   isDark: isDark,
                                   progress: _progress,

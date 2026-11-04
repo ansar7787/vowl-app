@@ -166,7 +166,7 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
     );
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+      margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -227,9 +227,16 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
     String tierLabel,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
     final displayColor = theme.primaryColor;
     final contentColor = Theme.of(context).colorScheme.onSurface;
+    final cardBorderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
 
     return ScaleButton(
       onTap: () async {
@@ -243,9 +250,12 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
       child: GlassTile(
         borderRadius: BorderRadius.circular(20.r),
         padding: EdgeInsets.all(16.r),
-        glassOpacity: 0.15,
+        glassOpacity: 1.0,
+        blur: 0,
         showShadow: false,
         usePremiumStyle: true,
+        borderColor: cardBorderColor,
+        borderWidth: 1.0,
         child: Row(
           children: [
             Container(

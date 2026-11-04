@@ -554,30 +554,39 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
           onTap: isDisabled ? null : onTap,
           borderRadius: BorderRadius.circular(24.r),
           child: ExcludeSemantics(
-            child: Container(
-              padding: EdgeInsets.all(20.r),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.05)
-                    : Colors.white.withValues(alpha: 0.7),
-                borderRadius: BorderRadius.circular(24.r),
-                border: Border.all(
-                  color: isDisabled
-                      ? Colors.white.withValues(alpha: 0.05)
-                      : (canAfford
-                            ? color.withValues(alpha: 0.2)
-                            : Colors.grey.withValues(alpha: 0.2)),
-                  width: 1.5,
-                ),
-                boxShadow: [
-                  if (canAfford)
-                    BoxShadow(
-                      color: color.withValues(alpha: 0.05),
-                      blurRadius: 15,
-                      offset: const Offset(0, 8),
+            child: Builder(
+              builder: (ctx) {
+                final isMidnight = isDark &&
+                    Theme.of(ctx).scaffoldBackgroundColor == Colors.black;
+                final cardBg = isMidnight
+                    ? AppColors.midnightSurface
+                    : (isDark ? AppColors.slate800 : Colors.white);
+                final cardBorder = isMidnight
+                    ? Colors.white.withValues(alpha: 0.12)
+                    : (isDark
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : AppColors.slate100);
+
+                return Container(
+                  padding: EdgeInsets.all(20.r),
+                  decoration: BoxDecoration(
+                    color: cardBg,
+                    borderRadius: BorderRadius.circular(24.r),
+                    border: Border.all(
+                      color: isDisabled
+                          ? (isDark ? Colors.white10 : AppColors.slate200)
+                          : cardBorder,
+                      width: 1.0,
                     ),
-                ],
-              ),
+                    boxShadow: [
+                      if (canAfford && !isDark)
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.04),
+                          blurRadius: 10,
+                          offset: const Offset(0, 4),
+                        ),
+                    ],
+                  ),
               child: Row(
                 children: [
                   !isDisabled
@@ -841,10 +850,12 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                   ],
                 ],
               ),
-            ),
-          ),
+            );
+          },
         ),
       ),
-    );
-  }
+    ),
+  ),
+);
+}
 }

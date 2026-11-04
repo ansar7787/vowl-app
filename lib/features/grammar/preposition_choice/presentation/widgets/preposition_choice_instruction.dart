@@ -34,7 +34,7 @@ class PrepositionChoiceInstruction extends StatelessWidget {
       label: text,
       child: Container(
         key: const ValueKey('preposition_choice_instruction'),
-        margin: EdgeInsets.symmetric(horizontal: 24.w),
+        margin: EdgeInsets.symmetric(horizontal: 20.w),
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         decoration: BoxDecoration(
           color: primaryColor.withValues(alpha: 0.1),

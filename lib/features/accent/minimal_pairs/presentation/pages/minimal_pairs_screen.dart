@@ -277,7 +277,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen>
                                           children: [
                                             Padding(
                                               padding: EdgeInsets.symmetric(
-                                                horizontal: 24.w,
+                                                horizontal: 20.w,
                                               ),
                                               child: Column(
                                                 mainAxisAlignment:

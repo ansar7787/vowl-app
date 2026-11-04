@@ -54,7 +54,7 @@ class ListeningHeader extends StatelessWidget {
       label:
           'Game header — level $level, $lives ${lives == 1 ? "life" : "lives"} remaining',
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Row(
           children: [
             Expanded(

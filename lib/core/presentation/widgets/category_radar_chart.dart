@@ -106,23 +106,26 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
     if (_blueprint == null) return const SizedBox.shrink();
 
     final displayColor = widget.primaryColor;
+    final isMidnight = widget.isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 24.w),
+      margin: EdgeInsets.symmetric(horizontal: 20.w),
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: widget.isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : Colors.white.withValues(alpha: 0.6),
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (widget.isDark
+                ? AppColors.slate800
+                : Colors.white),
         borderRadius: BorderRadius.circular(32.r),
-        border: Border.all(color: widget.primaryColor.withValues(alpha: 0.2)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
-          ),
-        ],
+        border: Border.all(
+          color: isMidnight
+              ? Colors.white.withValues(alpha: 0.12)
+              : (widget.isDark
+                  ? Colors.white.withValues(alpha: 0.08)
+                  : AppColors.slate100),
+        ),
       ),
       child: Column(
         children: [

@@ -44,7 +44,7 @@ class SentenceCorrectionOptionsPanel extends StatelessWidget {
     final isOptionSelected = selectedOption != null;
 
     final panel = Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: Container(
         width: double.infinity,
         padding: EdgeInsets.all(20.r),

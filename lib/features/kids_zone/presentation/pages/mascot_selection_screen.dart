@@ -37,7 +37,7 @@ class MascotSelectionScreen extends StatelessWidget {
         Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? AppColors.slate900 : AppColors.slate50);
+        : (isDark ? AppColors.slate900 : AppColors.white);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -66,7 +66,7 @@ class MascotSelectionScreen extends StatelessWidget {
                 elevation: 0,
                 leadingWidth: 80.w,
                 leading: Padding(
-                  padding: EdgeInsets.only(left: 24.w, top: 8.h, bottom: 8.h),
+                  padding: EdgeInsets.only(left: 20.w, top: 8.h, bottom: 8.h),
                   child: ScaleButton(
                     onTap: () => context.pop(),
                     child: Container(
@@ -99,7 +99,7 @@ class MascotSelectionScreen extends StatelessWidget {
               ),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: Column(
                     children: [
                       SizedBox(height: 10.h),

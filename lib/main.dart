@@ -38,6 +38,7 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/features/daily_words/data/services/daily_words_service.dart';
+import 'package:vowl/features/home/presentation/widgets/inline_notification_card.dart';
 
 import 'firebase_options.dart';
 
@@ -249,6 +250,7 @@ void main() async {
     final prefs = await SharedPreferences.getInstance();
     VowlMotion.lowAnimationModeOverride.value =
         prefs.getBool('low_animation_mode') ?? false;
+    InlineNotificationCard.prewarm(prefs);
   } catch (e) {
     if (kDebugMode) {
       debugPrint('Warning: Failed to load low_animation_mode pref: $e');

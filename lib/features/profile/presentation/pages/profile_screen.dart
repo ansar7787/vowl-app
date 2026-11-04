@@ -85,7 +85,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? AppColors.slate900 : AppColors.slate50);
+        : (isDark ? AppColors.slate900 : AppColors.white);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -423,7 +423,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         SizedBox(height: 14.h),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 24.w,
+                                            horizontal: 20.w,
                                           ),
                                           child: const VowlMascotCard(),
                                         ),
@@ -438,7 +438,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       children: [
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 24.w,
+                                            horizontal: 20.w,
                                           ),
                                           child: _buildSectionHeader(
                                             context,
@@ -448,17 +448,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(height: 12.h),
+                                        SizedBox(height: 16.h),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 24.w,
+                                            horizontal: 20.w,
                                           ),
                                           child: ProfileBentoStats(user: user),
                                         ),
                                         SizedBox(height: 16.h),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 24.w,
+                                            horizontal: 20.w,
                                           ),
                                           child: ProfileFeatureCard(
                                             iconContent: Icon(
@@ -495,7 +495,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           SizedBox(height: 16.h),
                                           Padding(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
+                                              horizontal: 20.w,
                                             ),
                                             child: ProfileFeatureCard(
                                               iconContent: Icon(
@@ -541,7 +541,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           SizedBox(height: 16.h),
                                           Padding(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
+                                              horizontal: 20.w,
                                             ),
                                             child: _buildKeyShopBanner(
                                               context,
@@ -556,10 +556,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        SizedBox(height: 40.h),
+                                        SizedBox(height: 24.h),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 24.w,
+                                            horizontal: 20.w,
                                           ),
                                           child: _buildSectionHeader(
                                             context,
@@ -569,7 +569,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(height: 20.h),
+                                        SizedBox(height: 16.h),
                                         ProfileBadgesList(user: user),
                                       ],
                                     ),
@@ -581,10 +581,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          SizedBox(height: 40.h),
+                                          SizedBox(height: 24.h),
                                           Padding(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
+                                              horizontal: 20.w,
                                             ),
                                             child: _buildSectionHeader(
                                               context,
@@ -594,17 +594,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               ),
                                             ),
                                           ),
-                                          SizedBox(height: 20.h),
+                                          SizedBox(height: 16.h),
                                           Padding(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
+                                              horizontal: 20.w,
                                             ),
                                             child: _buildKidsRoomCard(context),
                                           ),
                                           SizedBox(height: 16.h),
                                           Padding(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
+                                              horizontal: 20.w,
                                             ),
                                             child: ProfileStickersProgress(
                                               user: user,
@@ -618,10 +618,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        SizedBox(height: 40.h),
+                                        SizedBox(height: 24.h),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 24.w,
+                                            horizontal: 20.w,
                                           ),
                                           child: user.isPremium
                                               ? _buildPremiumActiveBanner(
@@ -637,10 +637,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        SizedBox(height: 40.h),
+                                        SizedBox(height: 24.h),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 24.w,
+                                            horizontal: 20.w,
                                           ),
                                           child: ProfilePreferencesList(
                                             user: user,
@@ -1102,7 +1102,7 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(32.w),
+              padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 24.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

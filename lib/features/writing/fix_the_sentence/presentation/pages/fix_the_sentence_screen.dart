@@ -273,7 +273,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
                         physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [
@@ -366,7 +366,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
                                   SizedBox(height: 28.h),
                                   Padding(
                                     padding: EdgeInsets.symmetric(
-                                      horizontal: 24.w,
+                                      horizontal: 20.w,
                                     ),
                                     child: TypeToConfirmOverlay(
                                       expectedText:

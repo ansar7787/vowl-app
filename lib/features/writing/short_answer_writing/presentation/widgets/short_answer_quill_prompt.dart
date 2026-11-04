@@ -33,13 +33,6 @@ class ShortAnswerQuillPrompt extends StatelessWidget {
           color: color.withValues(alpha: isDark ? 0.25 : 0.2),
           width: 1.2,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

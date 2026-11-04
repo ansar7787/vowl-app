@@ -53,15 +53,6 @@ class EssayDraftingDataStream extends StatelessWidget {
                 color: color.withValues(alpha: isDark ? 0.35 : 0.25),
                 width: 1.5,
               ),
-        boxShadow: [
-          BoxShadow(
-            color: color.withValues(
-              alpha: isFeedback ? 0.4 : (isDark ? 0.2 : 0.06),
-            ),
-            blurRadius: isFeedback ? 18 : 8,
-            offset: Offset(0, isFeedback ? 6 : 2),
-          ),
-        ],
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,

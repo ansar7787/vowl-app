@@ -273,7 +273,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen>
                         physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [

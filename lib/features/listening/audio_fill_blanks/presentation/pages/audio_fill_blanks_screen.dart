@@ -284,7 +284,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         slivers: [
           SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
             sliver: SliverToBoxAdapter(
               child: Column(
                 mainAxisSize: MainAxisSize.min,

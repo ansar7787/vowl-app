@@ -41,13 +41,6 @@ class ElevatorPitchPromptCard extends StatelessWidget {
           color: color.withValues(alpha: isDark ? 0.22 : 0.15),
           width: 1.5,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
-            blurRadius: 12,
-            offset: const Offset(0, 4),
-          ),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

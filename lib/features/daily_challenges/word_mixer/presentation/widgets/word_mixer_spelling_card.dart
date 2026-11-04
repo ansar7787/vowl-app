@@ -224,15 +224,6 @@ class _WordMixerSpellingCardState extends State<WordMixerSpellingCard>
                   : widget.primaryColor.withValues(alpha: isDark ? 0.35 : 0.22)),
           width: 1.5.w,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: _isSuccess
-                ? AppColors.emerald500.withValues(alpha: 0.2)
-                : widget.primaryColor.withValues(alpha: isDark ? 0.15 : 0.06),
-            blurRadius: 20,
-            offset: const Offset(0, 6),
-          ),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

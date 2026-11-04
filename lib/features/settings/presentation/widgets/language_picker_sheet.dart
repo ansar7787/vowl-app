@@ -227,14 +227,14 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16.r),
                         borderSide: BorderSide(
-                          color: isDark ? Colors.white12 : AppColors.slate200,
+                          color: isDark ? Colors.white12 : AppColors.slate100,
                           width: 1.0,
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16.r),
                         borderSide: BorderSide(
-                          color: isDark ? Colors.white12 : AppColors.slate200,
+                          color: isDark ? Colors.white12 : AppColors.slate100,
                           width: 1.0,
                         ),
                       ),
@@ -348,7 +348,7 @@ class _LanguageTile extends StatelessWidget {
                       )
                     : (isDark
                           ? Colors.white.withValues(alpha: 0.03)
-                          : AppColors.slate50),
+                          : AppColors.slate100),
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
                   color: isActive

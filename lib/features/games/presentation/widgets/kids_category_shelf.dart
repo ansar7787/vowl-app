@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/illustration_colors.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -64,7 +65,7 @@ class _KidsCategoryShelfState extends State<KidsCategoryShelf>
             physics: const AlwaysScrollableScrollPhysics(
               parent: BouncingScrollPhysics(),
             ),
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             addAutomaticKeepAlives: false,
             itemCount: games.length,
             itemBuilder: (context, index) {
@@ -91,11 +92,19 @@ class _KidsGameEntryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final color = metadata.color;
     final displayColor = color;
     final title = metadata.gridTitle; // e.g. "ABC"
     final subtitle = metadata.subtitle; // e.g. "Letters & Phonics"
     final icon = metadata.icon;
+    final cardBorderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
 
     return Semantics(
       button: true,
@@ -110,12 +119,14 @@ class _KidsGameEntryCard extends StatelessWidget {
         child: ExcludeSemantics(
           child: GlassTile(
             width: 150.w,
-            borderRadius: BorderRadius.circular(30.r),
+            borderRadius: BorderRadius.circular(24.r),
             padding: EdgeInsets.all(18.r),
             usePremiumStyle: true,
             showShadow: false,
             blur: 0, // PERF: Disable BackdropFilter in scroll lists
-            glassOpacity: 0.15,
+            glassOpacity: 1.0,
+            borderColor: cardBorderColor,
+            borderWidth: 1.0,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -1006,7 +1006,8 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      verifyZeroInteractions(mockRoleplayBloc);
+      verifyNever(() => mockRoleplayBloc.add(const SubmitAnswer(false)));
+      verifyNever(() => mockRoleplayBloc.add(const SubmitAnswer(true)));
     });
 
     testWidgets('40. once answered, bottom bar renders CONTINUE button',

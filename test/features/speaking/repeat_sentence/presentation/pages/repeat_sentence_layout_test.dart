@@ -764,6 +764,17 @@ void main() {
       testWidgets('6.4 hint button displays available hint count badge', (
         tester,
       ) async {
+        when(() => mockAuthBloc.state).thenReturn(
+          AuthState.authenticated(
+            const UserEntity(
+              id: 'test_user',
+              email: 'test@vowl.app',
+              displayName: 'Test Echo Quester',
+              isPremium: false,
+              hintCount: 3,
+            ),
+          ),
+        );
         await pumpRepeatSentenceScreen(tester);
         expect(
           find.descendant(

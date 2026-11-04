@@ -82,7 +82,7 @@ class _TenseMasteryTimelineSliderState
     return Container(
       height: 110.h,
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: LayoutBuilder(
         builder: (context, constraints) {
           final trackWidth = constraints.maxWidth;

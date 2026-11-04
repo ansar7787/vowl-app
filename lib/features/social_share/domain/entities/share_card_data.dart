@@ -1,7 +1,10 @@
 import 'package:flutter/foundation.dart';
 
+enum ShareCardType { rank, streak, arenaVictory, referral }
+
 @immutable
 class ShareCardData {
+  final ShareCardType type;
   final String userName;
   final String? userPhotoUrl;
   final int? rank;
@@ -12,7 +15,16 @@ class ShareCardData {
   final String subtitle;
   final String? referralCode;
 
+  // 1v1 Arena Duel details
+  final int? myScore;
+  final int? rivalScore;
+  final String? rivalName;
+  final String? roomCode;
+  final int? payoutCoins;
+  final bool isAiRival;
+
   const ShareCardData({
+    this.type = ShareCardType.rank,
     required this.userName,
     this.userPhotoUrl,
     this.rank,
@@ -22,7 +34,55 @@ class ShareCardData {
     required this.title,
     required this.subtitle,
     this.referralCode,
+    this.myScore,
+    this.rivalScore,
+    this.rivalName,
+    this.roomCode,
+    this.payoutCoins,
+    this.isAiRival = false,
   });
+
+  factory ShareCardData.fromArenaVictory({
+    required String userName,
+    String? userPhotoUrl,
+    required int myScore,
+    required int rivalScore,
+    required String rivalName,
+    required String roomCode,
+    required int payoutCoins,
+    bool isAiRival = false,
+  }) {
+    return ShareCardData(
+      type: ShareCardType.arenaVictory,
+      userName: userName,
+      userPhotoUrl: userPhotoUrl,
+      myScore: myScore,
+      rivalScore: rivalScore,
+      rivalName: rivalName,
+      roomCode: roomCode,
+      payoutCoins: payoutCoins,
+      isAiRival: isAiRival,
+      title: '1v1 ARENA CHAMPION',
+      subtitle: isAiRival
+          ? 'Conquered Vowl AI Challenger'
+          : 'Defeated $rivalName in Staking Duel',
+    );
+  }
+
+  factory ShareCardData.fromReferral({
+    required String userName,
+    String? userPhotoUrl,
+    required String referralCode,
+  }) {
+    return ShareCardData(
+      type: ShareCardType.referral,
+      userName: userName,
+      userPhotoUrl: userPhotoUrl,
+      referralCode: referralCode,
+      title: 'OFFICIAL VIP INVITATION',
+      subtitle: 'Unlock 100 Bonus Coins & VIP Trial on Vowl',
+    );
+  }
 
   factory ShareCardData.fromRank({
     required String userName,
@@ -33,6 +93,7 @@ class ShareCardData {
     String? referralCode,
   }) {
     return ShareCardData(
+      type: ShareCardType.rank,
       userName: userName,
       userPhotoUrl: userPhotoUrl,
       rank: rank,
@@ -52,6 +113,7 @@ class ShareCardData {
     String? referralCode,
   }) {
     return ShareCardData(
+      type: ShareCardType.streak,
       userName: userName,
       userPhotoUrl: userPhotoUrl,
       streak: streak,

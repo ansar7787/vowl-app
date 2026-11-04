@@ -400,7 +400,7 @@ class _IdiomsScreenState extends State<IdiomsScreen>
         _buildHeaderBadge(color, isCompact: isCompact),
         SizedBox(height: isCompact ? 6.h : 10.h),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Text(
             "Guess the idiom that matches the emoji clues",
             textAlign: TextAlign.center,

@@ -268,7 +268,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                                               Expanded(
                                                 child: Padding(
                                                   padding: EdgeInsets.symmetric(
-                                                    horizontal: 24.w,
+                                                    horizontal: 20.w,
                                                   ),
                                                   child: Stack(
                                                     alignment: Alignment.center,

@@ -458,7 +458,13 @@ Every game test suite MUST rigorously satisfy:
     10. Discovery Hub Carousel: Section header rendering ("DISCOVERY HUB"), `DiscoveryDeck` rendering, themed quest card tap launching `/quest-sequence?id=smart_recommendation`.
     11. Daily Wisdom Card: `DailyMotivationCard` rendering with current streak count.
     12. Pull-to-Refresh Interaction: `RefreshIndicator` triggering `AuthReloadUser` and `EconomyCheckDailyRewardRequested` without timeout or deadlocks.
-    13. MultiBlocListener State Triggers: `EconomyCheckDailyRewardRequested` dispatch on initial mount, `EconomyResetRequested` and `ProgressionResetRequested` dispatch on unauthenticated transition, `MysteryChestDialog` presentation when `isDailyRewardAvailable` transitions to true.
+    13. MultiBlocListener State Triggers: `EconomyCheckDailyRewardRequested` dispatch on initial mount, `EconomyResetRequested` and `ProgressionResetRequested` dispatch on unauthenticated transition, `DailyMysteryChestCard` presentation when `isDailyRewardAvailable` transitions to true.
+- [x] **14.1.1** `daily_mystery_chest_card_test.dart` (Widget Test) — ✅ `[DONE - 6/6 tests passing]`
+  - Validates non-intrusive inline daily mystery card with dual eating collapse animation (`SizeTransition` + `ScaleTransition`):
+    1. Reward Availability Gating: Renders nothing when `isDailyRewardAvailable` is false; renders vector gift icon and sparkles when true.
+    2. Local Persistence Double-Guard: Hides card when user already claimed today in `SharedPreferences`.
+    3. Claim Celebration & Collapse: Tapping CLAIM triggers `HapticService.success()`, `SoundService.playCoinTally()`, dispatches `EconomyClaimDailyChestRequested`, and collapses smoothly to 0dp.
+    4. Accessibility & Viewports: Compact mobile layout (320x568) zero overflow, Light and Dark theme modes.
 - [x] **14.2** `main_wrapper_test.dart` (Shell Navigation Test) — ✅ `[DONE - 16/16 tests passing]`
   - Validates full `MainWrapper` shell navigation and bottom navigation bar mechanics across 5 groups (16 tests):
     1. Initial Shell Rendering & Active Indicator: Renders all 4 navigation items with correct icons and Semantics labels, displays active pill with label "Home" and active icon `Icons.home_rounded`, inactive tabs show outline icons without text labels, renders glass container with `BackdropFilter` blur and rounded clipping.

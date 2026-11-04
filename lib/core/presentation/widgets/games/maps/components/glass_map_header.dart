@@ -30,7 +30,7 @@ class GlassMapHeader extends StatelessWidget {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
       child: Container(
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
@@ -41,13 +41,6 @@ class GlassMapHeader extends StatelessWidget {
                     : Colors.white.withValues(alpha: 0.92)),
           borderRadius: BorderRadius.circular(32.r),
           border: Border.all(color: theme.primaryColor.withValues(alpha: 0.2)),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.05),
-              blurRadius: 20,
-              offset: const Offset(0, 10),
-            ),
-          ],
         ),
         child: Row(
           children: [

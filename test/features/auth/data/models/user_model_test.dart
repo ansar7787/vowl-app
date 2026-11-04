@@ -121,6 +121,31 @@ void main() {
       expect(reconstructed.duelWins, 8);
       expect(reconstructed.duelLosses, 2);
     });
+
+    test('serializes and deserializes weekly league previousRank and previousRankWeekKey correctly', () {
+      final model = UserModel(
+        id: 'u12',
+        email: 'league.winner@vowl.app',
+        dailyXpHistory: const {},
+        previousRank: 1,
+        previousRankWeekKey: '2026-W45',
+        claimedWeeklyRewardWeekKeys: const ['2026-W44'],
+      );
+
+      final map = model.toMap();
+      final reconstructed = UserModel.fromMap(map);
+
+      expect(reconstructed.previousRank, 1);
+      expect(reconstructed.previousRankWeekKey, '2026-W45');
+      expect(reconstructed.claimedWeeklyRewardWeekKeys, ['2026-W44']);
+
+      final copy = reconstructed.copyWith(
+        previousRank: 2,
+        previousRankWeekKey: '2026-W46',
+      );
+      expect(copy.previousRank, 2);
+      expect(copy.previousRankWeekKey, '2026-W46');
+    });
   });
 }
 

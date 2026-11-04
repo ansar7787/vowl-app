@@ -30,10 +30,10 @@ class SettingsDialogs {
   // Shared helpers
   // ---------------------------------------------------------------------------
 
-  /// Clamps the dialog content width to screen width minus 48px padding.
+  /// Clamps the dialog content width to screen width minus 40.w padding (20.w on each side).
   /// Prevents GlassTile from overflowing on 320px-wide phones.
   static double _dialogWidth(BuildContext context, double nominal) {
-    return math.min(nominal, MediaQuery.of(context).size.width - 48);
+    return math.min(nominal, MediaQuery.of(context).size.width - 40.w);
   }
 
   static Widget _dialogTransition(Animation<double> anim, Widget child) {
@@ -619,7 +619,7 @@ class SettingsDialogs {
           backgroundColor: Colors.transparent,
           elevation: 0,
           insetPadding: EdgeInsets.symmetric(
-            horizontal: 24.w,
+            horizontal: 20.w,
             vertical: 24.h,
           ),
           child: _FinalDeleteDialogContent(

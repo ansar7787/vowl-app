@@ -104,7 +104,7 @@ class EliteGameHeader extends StatelessWidget {
         args: [level.toString(), lives.toString()],
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Row(
           children: [
             Expanded(

@@ -557,12 +557,18 @@ void main() {
       verify(() => mockReadingBloc.add(const SubmitAnswer(true))).called(1);
 
       // Subsequent taps should be locked out
+      await tester.ensureVisible(find.byKey(const ValueKey('slot_FALSE')));
+      await tester.pump(const Duration(milliseconds: 100));
       await tester.tap(find.byKey(const ValueKey('slot_FALSE')), warnIfMissed: false);
       await tester.pump(const Duration(milliseconds: 300));
+      await tester.ensureVisible(find.byKey(const ValueKey('slot_TRUE')));
+      await tester.pump(const Duration(milliseconds: 100));
       await tester.tap(find.byKey(const ValueKey('slot_TRUE')), warnIfMissed: false);
       await tester.pump(const Duration(milliseconds: 300));
 
       verifyNever(() => mockReadingBloc.add(const SubmitAnswer(false)));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
     });
 
     testWidgets('tapping continue button dispatches NextQuestion', (

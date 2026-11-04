@@ -77,6 +77,13 @@ void main() {
             return const Scaffold(body: Text('Coins Screen'));
           },
         ),
+        GoRoute(
+          path: AppRouter.vowlMascotRoute,
+          builder: (context, state) {
+            navigatedRoutes.add(AppRouter.vowlMascotRoute);
+            return const Scaffold(body: Text('Mascot Screen'));
+          },
+        ),
       ],
     );
 
@@ -200,6 +207,21 @@ void main() {
 
       verify(() => mockHapticService.selection()).called(1);
       expect(navigatedRoutes, contains(AppRouter.profileRoute));
+    },
+  );
+
+  testWidgets(
+    'tapping companion mascot pin navigates to /mascot and triggers haptics',
+    (tester) async {
+      await tester.pumpWidget(createSubject(user: testUserCommander));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 400));
+
+      await tester.tap(find.text('🦉'));
+      await tester.pumpAndSettle();
+
+      verify(() => mockHapticService.selection()).called(1);
+      expect(navigatedRoutes, contains(AppRouter.vowlMascotRoute));
     },
   );
 

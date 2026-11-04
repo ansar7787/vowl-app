@@ -82,6 +82,8 @@ class GlobalProgressCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final completed = user.totalLevelsCompleted;
     final progress = totalLevels > 0
         ? (completed / totalLevels).clamp(0.0, 1.0)
@@ -116,23 +118,18 @@ class GlobalProgressCard extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF131A29) : Colors.white,
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (isDark ? const Color(0xFF131A29) : Colors.white),
             borderRadius: BorderRadius.circular(22.r),
             border: Border.all(
-              color: AppColors.indigo500.withValues(
-                alpha: isDark ? 0.30 : 0.22,
-              ),
-              width: 1.2.r,
+              color: isMidnight
+                  ? Colors.white.withValues(alpha: 0.12)
+                  : (isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate100),
+              width: 1.r,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.indigo500.withValues(
-                  alpha: isDark ? 0.10 : 0.05,
-                ),
-                blurRadius: 16.r,
-                offset: Offset(0, 4.r),
-              ),
-            ],
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

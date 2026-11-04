@@ -45,9 +45,6 @@ class SituationalResponseExplanationPanel extends StatelessWidget {
           color: cardColor.withValues(alpha: 0.25),
           width: 1.5,
         ),
-        boxShadow: [
-          BoxShadow(color: cardColor.withValues(alpha: 0.1), blurRadius: 12),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

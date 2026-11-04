@@ -59,13 +59,6 @@ class WordMixerInfoCard extends StatelessWidget {
           color: primaryColor.withValues(alpha: isDark ? 0.35 : 0.22),
           width: 1.5.w,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: primaryColor.withValues(alpha: isDark ? 0.18 : 0.07),
-            blurRadius: 20,
-            offset: const Offset(0, 6),
-          ),
-        ],
       ),
       child: Column(
         children: [

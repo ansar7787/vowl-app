@@ -257,8 +257,8 @@ void main() {
     });
   });
 
-  group('GamesScreen - Kids Zone Section & Navigation', () {
-    testWidgets('renders Kids Zone shelf and balloon badge', (tester) async {
+  group('GamesScreen - Syllabus Decoupling & Adult Category Focus', () {
+    testWidgets('does not render Kids Zone shelf in adult Games Quest Hub', (tester) async {
       tester.view.physicalSize = const Size(800, 3000);
       tester.view.devicePixelRatio = 1.0;
       addTearDown(tester.view.resetPhysicalSize);
@@ -268,41 +268,8 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      gamesScrollController.jumpTo(600);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.text('KIDS ZONE'), findsOneWidget);
-      expect(find.text('Play & Learn'), findsOneWidget);
-      expect(find.text('🎈'), findsOneWidget);
-      expect(find.byType(KidsCategoryShelf), findsOneWidget);
-    });
-
-    testWidgets('navigates to /kids-zone on tapping See All in Kids Zone header', (
-      tester,
-    ) async {
-      tester.view.physicalSize = const Size(800, 3000);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
-
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      gamesScrollController.jumpTo(600);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      final seeAllButtons = find.text('SEE ALL');
-      expect(seeAllButtons, findsWidgets);
-
-      // Tap the first 'SEE ALL' button which belongs to Kids Zone
-      await tester.tap(seeAllButtons.first);
-      await tester.pumpAndSettle();
-
-      expect(navigatedRoutes, contains('/kids-zone'));
-      expect(find.text('Kids Zone Destination'), findsOneWidget);
+      expect(find.text('KIDS ZONE'), findsNothing);
+      expect(find.byType(KidsCategoryShelf), findsNothing);
     });
   });
 
@@ -358,8 +325,8 @@ void main() {
       final seeAllButtons = find.text('SEE ALL');
       expect(seeAllButtons, findsWidgets);
 
-      // Tap the second 'SEE ALL' button which belongs to Speaking (first is Kids Zone)
-      await tester.tap(seeAllButtons.at(1));
+      // Tap the first 'SEE ALL' button which belongs to Speaking
+      await tester.tap(seeAllButtons.first);
       await tester.pumpAndSettle();
 
       expect(navigatedRoutes, contains('/category-games?category=speaking'));

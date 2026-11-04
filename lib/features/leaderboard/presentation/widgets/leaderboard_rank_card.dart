@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/constants/app_constants.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -22,8 +21,6 @@ class LeaderboardRankCard extends StatelessWidget {
   final bool isKids;
   final double collapseProgress;
   final VoidCallback? onTap;
-  static const int _totalLevels = AppConstants.totalCurriculumLevels;
-  static const int _totalKidsLevels = 25;
 
   const LeaderboardRankCard({
     super.key,
@@ -39,6 +36,8 @@ class LeaderboardRankCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     // Reactively watch for current user profile changes only.
     final currentUser = context.select<AuthBloc, UserEntity?>(
       (bloc) => bloc.state.user,
@@ -49,54 +48,61 @@ class LeaderboardRankCard extends StatelessWidget {
     final rank = rankIndex != -1 ? rankIndex + 1 : 0;
     final isRanked = rank > 0;
 
-    final levelsCleared = isKids
-        ? currentUser.kidsTotalLevelsCompleted
-        : currentUser.totalLevelsCompleted;
-    final maxLevels = isKids ? _totalKidsLevels : _totalLevels;
-    final progress = (levelsCleared / maxLevels).clamp(0.0, 1.0);
+    final String primaryScoreText;
+    final String statusZoneText;
+    final double relativeProgress;
+
+    if (isKids) {
+      primaryScoreText = '${currentUser.kidsTotalLevelsCompleted} Levels Mastered';
+      statusZoneText = '${currentUser.kidsCoins} Stars ⭐ Collected';
+      final topLevels = allUsers.isNotEmpty ? allUsers.first.kidsTotalLevelsCompleted : 1;
+      relativeProgress = topLevels > 0 ? (currentUser.kidsTotalLevelsCompleted / topLevels).clamp(0.05, 1.0) : 0.05;
+    } else if (isWeekly) {
+      primaryScoreText = '${currentUser.currentWeeklyExp} Weekly XP';
+      if (rank >= 1 && rank <= 3) {
+        statusZoneText = '🏆 Podium Zone · VIP + Coins Reward';
+      } else if (rank >= 4 && rank <= 10) {
+        statusZoneText = '⚡ Top 10 Division · 100c Reward';
+      } else if (isRanked) {
+        statusZoneText = '🏃 Contender Zone · Push for Top 10';
+      } else {
+        statusZoneText = 'Join this week\'s league race!';
+      }
+      final topWeeklyXp = allUsers.isNotEmpty ? allUsers.first.currentWeeklyExp : 1;
+      relativeProgress = topWeeklyXp > 0 ? (currentUser.currentWeeklyExp / topWeeklyXp).clamp(0.05, 1.0) : 0.05;
+    } else {
+      primaryScoreText = '${currentUser.totalExp} Lifetime XP';
+      statusZoneText = '${currentUser.totalLevelsCompleted} Quests · ${currentUser.currentStreak}d Streak 🔥';
+      final topTotalXp = allUsers.isNotEmpty ? allUsers.first.totalExp : 1;
+      relativeProgress = topTotalXp > 0 ? (currentUser.totalExp / topTotalXp).clamp(0.05, 1.0) : 0.05;
+    }
+
     final contrastColor = Theme.of(context).colorScheme.onSurface;
     final secondaryTextColor = isDark ? Colors.white60 : AppColors.slate500;
 
     final card = Semantics(
-      // FIX (HIGH-5): Full accessibility label so TalkBack/VoiceOver
-      // announces the user's rank and progress in one utterance.
       label: isRanked
           ? '${context.tr('leaderboard.your_standing', fallback: 'Your Standing')}. '
                 '${context.tr('leaderboard.rank', fallback: 'Rank')}: $rank. '
-                '$levelsCleared ${context.tr('leaderboard.levels_cleared', fallback: 'Levels Cleared')}. '
-                '${(progress * 100).toStringAsFixed(1)}% complete.'
+                '$primaryScoreText. $statusZoneText.'
           : '${context.tr('leaderboard.join_competition', fallback: 'Join Competition')}. '
-                '$levelsCleared ${context.tr('leaderboard.levels_cleared', fallback: 'Levels Cleared')}.',
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(24.r),
-          boxShadow: [
-            BoxShadow(
-              color: const Color(
-                0xFF3B82F6,
-              ).withValues(alpha: isDark ? 0.20 : 0.12),
-              blurRadius: 16,
-              spreadRadius: 0,
-              offset: const Offset(0, 4),
-            ),
-          ],
-        ),
-        child: GlassTile(
+                '$primaryScoreText.',
+      child: GlassTile(
           padding: EdgeInsets.symmetric(
             horizontal: 16.w,
             vertical: 12.h - (4.h * collapseProgress),
           ),
           borderRadius: BorderRadius.circular(24.r),
           blur: 0,
-          borderColor: isDark
-              ? AppColors.blue500.withValues(alpha: 0.5)
-              : AppColors.indigo500.withValues(alpha: 0.3),
-          color: isDark
-              ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
-                  ? AppColors.midnightSurface
-                  : AppColors.slate800)
-              : Colors.white,
-          borderWidth: 1.5,
+          borderColor: isMidnight
+              ? Colors.white.withValues(alpha: 0.12)
+              : (isDark
+                  ? Colors.white.withValues(alpha: 0.08)
+                  : AppColors.slate100),
+          color: isMidnight
+              ? AppColors.midnightSurface
+              : (isDark ? const Color(0xFF131A29) : Colors.white),
+          borderWidth: 1.0,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -228,7 +234,7 @@ class LeaderboardRankCard extends StatelessWidget {
                               TweenAnimationBuilder<double>(
                                 tween: Tween(
                                   begin: 0.0,
-                                  end: progress.clamp(0.02, 1.0),
+                                  end: relativeProgress.clamp(0.05, 1.0),
                                 ),
                                 duration: const Duration(milliseconds: 800),
                                 curve: Curves.easeOutCubic,
@@ -260,42 +266,28 @@ class LeaderboardRankCard extends StatelessWidget {
                             children: [
                               Flexible(
                                 child: Text(
-                                  isKids
-                                      ? context.tr(
-                                          'leaderboard.all_kids_quests',
-                                          fallback: 'Kids Quests ({0}%)',
-                                          args: [
-                                            (progress * 100).toStringAsFixed(0),
-                                          ],
-                                        )
-                                      : context.tr(
-                                          'leaderboard.all_quests',
-                                          fallback: 'All Quests ({0}%)',
-                                          args: [
-                                            (progress * 100).toStringAsFixed(0),
-                                          ],
-                                        ),
+                                  statusZoneText,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
-                                    fontSize: 9.sp,
+                                    fontSize: 10.sp,
                                     fontWeight: FontWeight.w700,
                                     color: isDark
                                         ? Colors.white70
-                                        : AppColors.slate600,
+                                        : AppColors.slate700,
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
                               SizedBox(width: 8.w),
                               Text(
-                                '$levelsCleared / $maxLevels',
+                                primaryScoreText,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 9.sp,
-                                  fontWeight: FontWeight.w700,
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w800,
                                   color: isDark
-                                      ? Colors.white70
-                                      : AppColors.slate600,
+                                      ? _LocalPalette.color60a5fa
+                                      : AppColors.indigo600,
                                 ),
                               ),
                             ],
@@ -308,8 +300,7 @@ class LeaderboardRankCard extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
 
     final interactiveCard = onTap != null
         ? GestureDetector(

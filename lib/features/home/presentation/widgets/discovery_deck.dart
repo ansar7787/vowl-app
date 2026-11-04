@@ -39,7 +39,7 @@ class DiscoveryDeck extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -157,6 +157,8 @@ class _HeroFlagshipQuestCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return Semantics(
       button: true,
       label: '$title, $badge, $subtitle. Double tap to start quest sequence.',
@@ -165,23 +167,18 @@ class _HeroFlagshipQuestCard extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF111827) : Colors.white,
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (isDark ? const Color(0xFF111827) : Colors.white),
             borderRadius: BorderRadius.circular(18.r),
             border: Border.all(
-              color: isDark
-                  ? AppColors.indigo500.withValues(alpha: 0.28)
-                  : AppColors.indigo500.withValues(alpha: 0.22),
+              color: isMidnight
+                  ? Colors.white.withValues(alpha: 0.12)
+                  : (isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate100),
               width: 1.r,
             ),
-            boxShadow: isDark
-                ? null
-                : [
-                    BoxShadow(
-                      color: AppColors.indigo500.withValues(alpha: 0.06),
-                      blurRadius: 14,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
           ),
           child: Row(
             children: [
@@ -343,6 +340,8 @@ class _DiscoverySubCell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return Semantics(
       button: true,
       label: '$title, $tag. Double tap to start quest.',
@@ -351,23 +350,18 @@ class _DiscoverySubCell extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 10.h),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF111827) : Colors.white,
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (isDark ? const Color(0xFF111827) : Colors.white),
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.08)
-                  : Colors.black.withValues(alpha: 0.07),
+              color: isMidnight
+                  ? Colors.white.withValues(alpha: 0.12)
+                  : (isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.slate100),
               width: 1.r,
             ),
-            boxShadow: isDark
-                ? null
-                : [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.02),
-                      blurRadius: 8,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,

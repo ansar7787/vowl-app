@@ -344,7 +344,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen>
                                                       Widget ruleChip = Padding(
                                                         padding:
                                                             EdgeInsets.symmetric(
-                                                              horizontal: 24.w,
+                                                              horizontal: 20.w,
                                                             ),
                                                         child: Container(
                                                           padding:

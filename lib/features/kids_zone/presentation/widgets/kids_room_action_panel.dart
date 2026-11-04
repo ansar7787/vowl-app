@@ -84,7 +84,7 @@ class KidsRoomActionPanel extends StatelessWidget {
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             clipBehavior: Clip.none,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

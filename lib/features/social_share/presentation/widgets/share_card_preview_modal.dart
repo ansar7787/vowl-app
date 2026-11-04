@@ -32,13 +32,28 @@ class _ShareCardPreviewModalState extends State<ShareCardPreviewModal> {
 
   Future<void> _handleShare() async {
     setState(() => _isSharing = true);
-    final inviteCopy = widget.data.referralCode != null
-        ? 'Join me on Vowl using code ${widget.data.referralCode} to claim 100 Bonus Coins & Free VIP!'
-        : 'Leveling up my English skills on Vowl!';
+
+    final String shareText;
+    if (widget.data.type == ShareCardType.arenaVictory) {
+      final code = widget.data.roomCode ?? 'VOWL';
+      shareText = '⚔️ I just won a 1v1 English Duel on Vowl with ${widget.data.myScore ?? 0} points!\n'
+          'Can you beat my vocabulary reflexes? Enter room code: $code in the app, or tap:\n'
+          'https://vowl-acbc5.web.app/duel/$code';
+    } else if (widget.data.type == ShareCardType.referral) {
+      final code = widget.data.referralCode ?? '';
+      shareText = '🚀 Join me on Vowl to level up your English skills!\n'
+          'Use my invite code $code to unlock 100 Bonus Coins + Free VIP access immediately:\n'
+          'https://vowl-acbc5.web.app/invite/$code';
+    } else {
+      final inviteCopy = widget.data.referralCode != null
+          ? 'Join me on Vowl using code ${widget.data.referralCode} to claim 100 Bonus Coins & Free VIP!'
+          : 'Leveling up my English skills on Vowl!';
+      shareText = '🏆 ${widget.data.title} on Vowl!\n$inviteCopy\nhttps://vowl-acbc5.web.app';
+    }
 
     await SocialShareRasterizer.captureAndShare(
       boundaryKey: _boundaryKey,
-      shareText: '🏆 ${widget.data.title} on Vowl!\n$inviteCopy\nhttps://vowl.app',
+      shareText: shareText,
       subject: widget.data.title,
     );
     if (mounted) {

@@ -423,7 +423,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                           );
                                         },
                                       ),
-                                      SizedBox(height: 32.h),
+                                      SizedBox(height: 24.h),
                                     ],
                                   ),
                                   Column(
@@ -474,7 +474,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                           _loadTranslationLanguageName();
                                         },
                                       ),
-                                      SizedBox(height: 32.h),
+                                      SizedBox(height: 24.h),
                                     ],
                                   ),
                                   Column(
@@ -483,7 +483,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     children: [
                                       // FIX (HIGH-4): Sections extracted to private widgets.
                                       _SettingsAccountGroup(isDark: isDark),
-                                      SizedBox(height: 32.h),
+                                      SizedBox(height: 24.h),
                                     ],
                                   ),
                                   Column(
@@ -499,7 +499,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                         onLegalTap: (title) =>
                                             _handleLegalLink(context, title),
                                       ),
-                                      SizedBox(height: 32.h),
+                                      SizedBox(height: 24.h),
                                     ],
                                   ),
                                   Column(
@@ -510,7 +510,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                         onClearCache: () =>
                                             _handleClearCache(context),
                                       ),
-                                      SizedBox(height: 40.h),
+                                      SizedBox(height: 24.h),
                                     ],
                                   ),
                                   Column(
@@ -569,7 +569,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final barBg = isMidnight
         ? Colors.black
-        : (isDark ? AppColors.slate900 : AppColors.slate50);
+        : (isDark ? AppColors.slate900 : AppColors.white);
 
     return SliverAppBar(
       backgroundColor: Colors.transparent,

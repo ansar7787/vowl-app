@@ -329,7 +329,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen>
                         physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
                             sliver: SliverToBoxAdapter(
                               child: Column(
                                 children: [

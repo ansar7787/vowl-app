@@ -89,7 +89,7 @@ class AccentHeader extends StatelessWidget {
     final hintShouldGlow = lives < 3 && !isAnswered && !hintUsed;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: Row(
         children: [
           Expanded(

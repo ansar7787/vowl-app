@@ -471,7 +471,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
 
                               // Progress
                               Container(
-                                margin: EdgeInsets.symmetric(horizontal: 24.w),
+                                margin: EdgeInsets.symmetric(horizontal: 20.w),
                                 padding: EdgeInsets.all(20.r),
                                 decoration: BoxDecoration(
                                   color: widget.primaryColor.withValues(
@@ -611,7 +611,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
 
                               // Progress toward next chest
                               Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                padding: EdgeInsets.symmetric(horizontal: 20.w),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -697,7 +697,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                         initialScrollOffset: initialOffset,
                                       ),
                                       padding: EdgeInsets.symmetric(
-                                        horizontal: 24.w,
+                                        horizontal: 20.w,
                                       ),
                                       itemCount: _chestTiers.length,
                                       itemBuilder: (context, index) {
@@ -993,7 +993,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                   totalStars < nextRequirement) ...[
                                 Padding(
                                   padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
+                                    horizontal: 20.w,
                                   ),
                                   child: ScaleButton(
                                     onTap: _watchAdForMagicStars,

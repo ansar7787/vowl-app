@@ -117,7 +117,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
         (isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? AppColors.slate900 : AppColors.slate50);
+        : (isDark ? AppColors.slate900 : AppColors.white);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -614,7 +614,7 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
               borderRadius: BorderRadius.circular(16.r),
             ),
             alignment: Alignment.centerRight,
-            padding: EdgeInsets.only(right: 24.w),
+            padding: EdgeInsets.only(right: 20.w),
             child: Icon(LucideIcons.trash2, color: Colors.white, size: 24.r),
           ),
           confirmDismiss: (_) async => true,
@@ -1079,9 +1079,9 @@ class _ReviewMistakesScreenState extends State<ReviewMistakesScreen> {
       builder: (context) {
         return Container(
           padding: EdgeInsets.fromLTRB(
-            24.w,
+            20.w,
             32.h,
-            24.w,
+            20.w,
             24.h + MediaQuery.paddingOf(context).bottom,
           ),
           decoration: BoxDecoration(

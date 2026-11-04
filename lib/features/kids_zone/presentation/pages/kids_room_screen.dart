@@ -336,7 +336,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
               final isDark = Theme.of(context).brightness == Brightness.dark;
               final bgColor = isMidnight
                   ? Colors.black
-                  : (isDark ? AppColors.slate900 : AppColors.slate50);
+                  : (isDark ? AppColors.slate900 : AppColors.white);
               final now = DateTime.now();
               final isGameToday =
                   user.kidsLastGameDate != null &&
@@ -379,7 +379,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                     _showBackConfirmation(context, user),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(left: 16.w, top: 4.h),
+                                padding: EdgeInsets.only(left: 20.w, top: 4.h),
                                 child: KidsRoomDailyCareCard(
                                   user: user,
                                   hasPlayed: hasPlayedToday,
@@ -767,7 +767,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                       child: BackdropFilter(
                         filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
                         child: Container(
-                          margin: EdgeInsets.symmetric(horizontal: 24.w),
+                          margin: EdgeInsets.symmetric(horizontal: 20.w),
                           padding: EdgeInsets.symmetric(
                             horizontal: 20.w,
                             vertical: 14.h,

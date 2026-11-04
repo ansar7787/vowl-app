@@ -537,6 +537,16 @@ exports.checkPremiumExpiry = onSchedule('0 3 * * *', async (event) => {
   console.log(`Revoked premium for ${expiredUsers.size} users.`);
 });
 
+// Calculates ISO-8601 week key (e.g. '2026-W45') matching client app
+function getIsoWeekKey(d = new Date()) {
+  const date = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  const dayNum = date.getUTCDay() || 7;
+  date.setUTCDate(date.getUTCDate() + 4 - dayNum);
+  const yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
+  const weekNo = Math.floor(((date - yearStart) / 86400000) / 7) + 1;
+  return `${date.getUTCFullYear()}-W${String(weekNo).padStart(2, '0')}`;
+}
+
 // --------------------------------------------------
 // Calculates total XP earned in current ISO week (Monday-Sunday)
 // from user.dailyXpHistory entries.
@@ -596,6 +606,25 @@ exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
   if (activeLearners.length === 0) return;
 
   const top100 = activeLearners.slice(0, 100);
+  const currentWeekKey = getIsoWeekKey(new Date());
+
+  // 1.5 Batch write previousRank and previousRankWeekKey so users can claim weekly rewards!
+  const rankBatch = db.batch();
+  top100.forEach((item, index) => {
+    const rank = index + 1;
+    const docRef = db.collection('users').doc(item.id);
+    rankBatch.update(docRef, {
+      previousRank: rank,
+      previousRankWeekKey: currentWeekKey,
+    });
+  });
+  try {
+    await rankBatch.commit();
+    console.log(`Successfully persisted previousRank & weekKey (${currentWeekKey}) for ${top100.length} users.`);
+  } catch (err) {
+    console.error('Error persisting weekly previousRank batch:', err);
+  }
+
   const messages = [];
   const seenTokens = new Set();
   const duplicateCleanups = [];
@@ -620,13 +649,16 @@ exports.sendWeeklyRankings = onSchedule('59 23 * * 0', async (event) => {
 
       if (rank === 1) {
         title = '1st place this week! \u{1F451}';
-        body = `Champion! You won #1 in the weekly league with ${item.weeklyXp} XP! Podium VIP unlocked.`;
+        body = `Champion! You won #1 in the weekly league with ${item.weeklyXp} XP! 7-Day VIP & 500 Coins ready to claim.`;
       } else if (rank === 2) {
         title = '2nd place this week! \u{1F948}';
-        body = `Silver podium spot secured with ${item.weeklyXp} XP! 1-Day VIP unlocked.`;
+        body = `Silver podium finish with ${item.weeklyXp} XP! 3-Day VIP & 300 Coins ready to claim.`;
       } else if (rank === 3) {
         title = '3rd place this week! \u{1F949}';
-        body = `Bronze podium finish with ${item.weeklyXp} XP! 150 Coins unlocked.`;
+        body = `Bronze podium finish with ${item.weeklyXp} XP! 1-Day VIP & 200 Coins ready to claim.`;
+      } else if (rank <= 10) {
+        title = 'Top 10 Finish! \u{1F3C5}';
+        body = `You finished #${rank} in the weekly league with ${item.weeklyXp} XP! 100 Coins ready to claim.`;
       }
 
       messages.push({

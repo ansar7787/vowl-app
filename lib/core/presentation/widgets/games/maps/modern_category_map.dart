@@ -378,15 +378,18 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     await WidgetsBinding.instance.endOfFrame;
     if (mounted) _confettiController.play();
 
-    // 7. Wait for ALL confetti particles to fully fall and settle before
-    //    re-enabling touch/scroll. The confetti controller runs for 2s,
-    //    particles need ~1.5s more to physically fall off screen.
-    await Future.delayed(const Duration(milliseconds: 3500));
-    if (mounted) {
-      _celebratingLevel = null;
-      _isSequenceAnimating = false;
-      _updateState();
-    }
+    // 7. Instantly unlock user touch & scroll so the user can tap the unlocked node
+    //    or scroll immediately without being locked out. Confetti continues to float in background.
+    _isSequenceAnimating = false;
+    _updateState();
+
+    // 8. Clean up celebrating level state in background after confetti natural duration completes
+    Future.delayed(const Duration(milliseconds: 2500), () {
+      if (mounted) {
+        _celebratingLevel = null;
+        _updateState();
+      }
+    });
   }
 
   @override
@@ -688,14 +691,14 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                     // Star Vault FAB
                     Positioned(
                       bottom: 32.h + bottomInset,
-                      right: 24.w,
+                      right: 20.w,
                       child: _buildStarVaultButton(theme),
                     ),
 
                     // Golden Keys FAB
                     Positioned(
                       bottom: 32.h + bottomInset,
-                      left: 24.w,
+                      left: 20.w,
                       child: _buildGoldenKeysButton(theme),
                     ), // end of Positioned
                   ],

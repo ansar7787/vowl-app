@@ -165,6 +165,7 @@ class MockInAppPurchasePlatform extends InAppPurchasePlatform
 
   @override
   Future<bool> buyNonConsumable({required PurchaseParam purchaseParam}) async {
+    lastBoughtProduct = purchaseParam.productDetails;
     return true;
   }
 

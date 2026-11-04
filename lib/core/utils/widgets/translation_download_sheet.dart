@@ -125,6 +125,8 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
     return ListenableBuilder(
@@ -132,10 +134,22 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
       builder: (context, _) {
         return Container(
           width: double.infinity,
-          padding: EdgeInsets.all(32.r),
+          padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 32.h),
           decoration: BoxDecoration(
-            color: isDark ? AppColors.slate900 : Colors.white,
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (isDark ? AppColors.slate900 : Colors.white),
             borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+            border: Border(
+              top: BorderSide(
+                color: isMidnight
+                    ? Colors.white.withValues(alpha: 0.12)
+                    : (isDark
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : AppColors.slate100),
+                width: 1,
+              ),
+            ),
             boxShadow: [
               BoxShadow(
                 color: Colors.blueAccent.withValues(alpha: 0.15),

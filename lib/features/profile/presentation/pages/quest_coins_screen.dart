@@ -83,7 +83,7 @@ class VowlCoinsScreen extends StatelessWidget {
         Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? AppColors.slate900 : AppColors.slate50);
+        : (isDark ? AppColors.slate900 : AppColors.white);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -196,11 +196,14 @@ class VowlCoinsScreen extends StatelessWidget {
 
                       // ── Body Content ──
                       SliverPadding(
-                        padding: EdgeInsets.all(24.r),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 20.w,
+                          vertical: 20.h,
+                        ),
                         sliver: SliverList(
                           delegate: SliverChildListDelegate([
                             _buildCoinBalanceCard(context, user),
-                            SizedBox(height: 32.h),
+                            SizedBox(height: 24.h),
                             _buildActionSection(
                               context,
                               title: context.tr(
@@ -231,7 +234,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                 ],
                               ],
                             ),
-                            SizedBox(height: 32.h),
+                            SizedBox(height: 24.h),
                             _buildActionSection(
                               context,
                               title: context.tr(
@@ -275,10 +278,10 @@ class VowlCoinsScreen extends StatelessWidget {
                                 _buildHintStore(context, user),
                               ],
                             ),
-                            SizedBox(height: 32.h),
+                            SizedBox(height: 24.h),
                             // ── Buy Coins with Real Money ──
                             _buildBuyCoinsCard(context),
-                            SizedBox(height: 32.h),
+                            SizedBox(height: 24.h),
                             _buildCoinHistory(context, user),
                             SizedBox(height: 48.h),
                           ]),
@@ -413,14 +416,16 @@ class VowlCoinsScreen extends StatelessWidget {
       padding: EdgeInsets.all(32.r),
       borderRadius: BorderRadius.circular(28.r),
       borderColor: isDark
-          ? AppColors.slate700
-          : AppColors.slate300,
+          ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
+              ? Colors.white.withValues(alpha: 0.12)
+              : Colors.white.withValues(alpha: 0.08))
+          : AppColors.slate100,
       color: isDark
           ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
               ? AppColors.midnightSurface
               : AppColors.slate800)
           : Colors.white,
-      borderWidth: 1.5,
+      borderWidth: 1.0,
       child: SizedBox(
         width: double.infinity,
         child: Column(
@@ -587,20 +592,22 @@ class VowlCoinsScreen extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          _glanceItem(
-            context,
-            Icons.lightbulb_rounded,
-            isPremium
-                ? context.tr(
-                    'economy.hints_unlimited',
-                    fallback: 'Unlimited hints',
-                  )
-                : context.tr(
-                    'economy.hints_available',
-                    fallback: '$hints hints available',
-                    args: [hints.toString()],
-                  ),
-            AppColors.amber500,
+          Flexible(
+            child: _glanceItem(
+              context,
+              Icons.lightbulb_rounded,
+              isPremium
+                  ? context.tr(
+                      'economy.hints_unlimited',
+                      fallback: 'Unlimited hints',
+                    )
+                  : context.tr(
+                      'economy.hints_available',
+                      fallback: '$hints hints available',
+                      args: [hints.toString()],
+                    ),
+              AppColors.amber500,
+            ),
           ),
         ],
       ),
@@ -615,17 +622,22 @@ class VowlCoinsScreen extends StatelessWidget {
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
         Icon(icon, color: color, size: 16.r),
         SizedBox(width: 8.w),
-        Text(
-          value,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 13.sp,
-            fontWeight: FontWeight.w700,
-            color: isDark ? Colors.white70 : AppColors.slate700,
-            letterSpacing: 0.3,
+        Flexible(
+          child: Text(
+            value,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 13.sp,
+              fontWeight: FontWeight.w700,
+              color: isDark ? Colors.white70 : AppColors.slate700,
+              letterSpacing: 0.3,
+            ),
           ),
         ),
       ],
@@ -1054,17 +1066,21 @@ class VowlCoinsScreen extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text(
-              context.tr('economy.coin_ledger', fallback: 'COIN LEDGER'),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w800,
-                color: isDark ? Colors.white38 : AppColors.slate500,
-                letterSpacing: 1.2,
+            Expanded(
+              child: Text(
+                context.tr('economy.coin_ledger', fallback: 'COIN LEDGER'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w800,
+                  color: isDark ? Colors.white38 : AppColors.slate500,
+                  letterSpacing: 1.2,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
-            const Spacer(),
+            SizedBox(width: 8.w),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
               decoration: BoxDecoration(
@@ -1249,6 +1265,7 @@ class VowlCoinsScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12.r),
                     ),
                     child: Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
                           Icons.monetization_on_rounded,

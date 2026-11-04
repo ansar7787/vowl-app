@@ -49,7 +49,7 @@ class WordMixerCompletedView extends StatelessWidget {
     return Center(
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

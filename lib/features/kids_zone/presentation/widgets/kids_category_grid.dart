@@ -125,7 +125,7 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
             .toList();
 
         return Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -380,7 +380,10 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
         child: Container(
           padding: EdgeInsets.all(20.r),
           decoration: BoxDecoration(
-            color: widget.isDark ? AppColors.slate800 : Colors.white,
+            color: (widget.isDark &&
+                    Theme.of(context).scaffoldBackgroundColor == Colors.black)
+                ? AppColors.midnightSurface
+                : (widget.isDark ? AppColors.slate800 : Colors.white),
             borderRadius: BorderRadius.circular(32.r),
             border: Border.all(color: color, width: 3.w),
             boxShadow: [

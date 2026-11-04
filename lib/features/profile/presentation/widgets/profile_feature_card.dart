@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -42,12 +43,24 @@ class ProfileFeatureCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBorderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark
+            ? Colors.white.withValues(alpha: 0.08)
+            : AppColors.slate100);
+
     return ScaleButton(
       onTap: onTap,
       child: GlassTile(
         borderRadius: BorderRadius.circular(24.r),
         padding: EdgeInsets.all(20.w),
         blur: 0,
+        showShadow: false,
+        glassOpacity: 1.0,
+        borderColor: cardBorderColor,
+        borderWidth: 1.0,
         child: Column(
           children: [
             Row(

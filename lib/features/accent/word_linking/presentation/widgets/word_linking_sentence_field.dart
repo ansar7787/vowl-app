@@ -139,13 +139,13 @@ class _WordLinkingSentenceFieldState extends State<WordLinkingSentenceField> {
       decoration: BoxDecoration(
         color: isDark
             ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate50,
+            : Colors.white,
         borderRadius: BorderRadius.circular(14.r),
         border: Border.all(
           color: isDark
               ? Colors.white.withValues(alpha: 0.12)
-              : AppColors.slate200,
-          width: 1.5,
+              : AppColors.slate100,
+          width: 1.0,
         ),
       ),
       child: Text(

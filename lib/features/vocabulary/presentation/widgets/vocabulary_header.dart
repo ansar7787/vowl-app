@@ -97,7 +97,7 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
     final primaryColor = widget.theme.primaryColor;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: Row(
         children: [
           // ── Progress + lives ──────────────────────────────────────────

@@ -383,7 +383,10 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 onTap: () => FocusScope.of(context).unfocus(),
                 behavior: HitTestBehavior.translucent,
                 child: Scaffold(
-                  backgroundColor: isDark ? AppColors.slate900 : Colors.white,
+                  backgroundColor: (isDark &&
+                          Theme.of(context).scaffoldBackgroundColor == Colors.black)
+                      ? Colors.black
+                      : (isDark ? AppColors.slate900 : Colors.white),
                   body: Stack(
                     children: [
                       const MeshGradientBackground(showLetters: false),
@@ -517,7 +520,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
     TranslationState state,
   ) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(16.w, 12.h, 16.w, 8.h),
+      padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, 8.h),
       child: Row(
         children: [
           Semantics(

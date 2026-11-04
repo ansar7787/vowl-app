@@ -281,7 +281,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                               ),
                                               Padding(
                                                 padding: EdgeInsets.symmetric(
-                                                  horizontal: 24.w,
+                                                  horizontal: 20.w,
                                                 ),
                                                 child:
                                                     QuestionFormatterInstruction(
@@ -305,7 +305,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                       ),
                                                       margin:
                                                           EdgeInsets.symmetric(
-                                                            horizontal: 24.w,
+                                                            horizontal: 20.w,
                                                           ),
                                                       padding:
                                                           EdgeInsets.symmetric(
@@ -371,7 +371,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                               Padding(
                                                     padding:
                                                         EdgeInsets.symmetric(
-                                                          horizontal: 24.w,
+                                                          horizontal: 20.w,
                                                         ),
                                                     child: ValueListenableBuilder<double>(
                                                       valueListenable:
@@ -544,7 +544,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                                     Padding(
                                                       padding:
                                                           EdgeInsets.symmetric(
-                                                            horizontal: 24.w,
+                                                            horizontal: 20.w,
                                                           ),
                                                       child: TypeToConfirmOverlay(
                                                         expectedText:

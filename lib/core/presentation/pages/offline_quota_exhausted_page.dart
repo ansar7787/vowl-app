@@ -173,6 +173,8 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final adService = di.sl<AdService>();
     final hasAdReady = adService.isRewardedAdLoaded;
     final gate = OfflinePlayGateService.instance;
@@ -191,9 +193,10 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
 
           // 2. Solid color tint overlay
           Container(
-            color: (isDark ? AppColors.slate900 : Colors.white).withValues(
-              alpha: 0.92,
-            ),
+            color: (isMidnight
+                    ? AppColors.midnightSurface
+                    : (isDark ? AppColors.slate900 : Colors.white))
+                .withValues(alpha: 0.95),
           ),
 
           // 3. Background glow accents
@@ -371,7 +374,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                     child: Container(
                       padding: EdgeInsets.symmetric(
                         vertical: 14.h,
-                        horizontal: 24.w,
+                        horizontal: 20.w,
                       ),
                       decoration: BoxDecoration(
                         color: Colors.amber.withValues(alpha: 0.12),
@@ -439,7 +442,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
 
                   return SingleChildScrollView(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 24.w,
+                      horizontal: 20.w,
                       vertical: 24.h,
                     ),
                     child: ConstrainedBox(
@@ -626,13 +629,6 @@ class _QuotaIcon extends StatelessWidget {
               color: Colors.amber.withValues(alpha: 0.3),
               width: 2,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.amber.withValues(alpha: isDark ? 0.1 : 0.06),
-                blurRadius: 20,
-                spreadRadius: 4,
-              ),
-            ],
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

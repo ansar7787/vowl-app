@@ -327,7 +327,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                           0.08,
                         )!
                       : Color.lerp(
-                          AppColors.slate50,
+                          AppColors.slate100,
                           widget.theme.primaryColor,
                           0.08,
                         )!,
@@ -338,7 +338,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                           0.03,
                         )!
                       : Color.lerp(
-                          AppColors.slate50,
+                          AppColors.slate100,
                           widget.theme.primaryColor,
                           0.03,
                         )!,
@@ -715,25 +715,27 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                                         widget.levelNumber == 50 ||
                                         widget.levelNumber == 100 ||
                                         widget.levelNumber == 200;
-                                    return ConfettiWidget(
-                                      confettiController:
-                                          widget.confettiController,
-                                      blastDirectionality:
-                                          BlastDirectionality.explosive,
-                                      shouldLoop: false,
-                                      emissionFrequency: isMilestone
-                                          ? 0.05
-                                          : 0.1,
-                                      numberOfParticles: isMilestone ? 20 : 5,
-                                      gravity: isMilestone ? 0.1 : 0.2,
-                                      colors: const [
-                                        Colors.green,
-                                        Colors.blue,
-                                        Colors.pink,
-                                        Colors.orange,
-                                        Colors.purple,
-                                        Colors.amber,
-                                      ],
+                                    return IgnorePointer(
+                                      child: ConfettiWidget(
+                                        confettiController:
+                                            widget.confettiController,
+                                        blastDirectionality:
+                                            BlastDirectionality.explosive,
+                                        shouldLoop: false,
+                                        emissionFrequency: isMilestone
+                                            ? 0.05
+                                            : 0.1,
+                                        numberOfParticles: isMilestone ? 20 : 5,
+                                        gravity: isMilestone ? 0.1 : 0.2,
+                                        colors: const [
+                                          Colors.green,
+                                          Colors.blue,
+                                          Colors.pink,
+                                          Colors.orange,
+                                          Colors.purple,
+                                          Colors.amber,
+                                        ],
+                                      ),
                                     );
                                   },
                                 ),

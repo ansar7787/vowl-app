@@ -219,21 +219,25 @@ class _HatchingPageState extends State<HatchingPage> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return AnnotatedRegion<SystemUiOverlayStyle>(
       // FIX (H1): System UI adapts to theme instead of forcing light.
       value: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
         statusBarBrightness: isDark ? Brightness.dark : Brightness.light,
-        systemNavigationBarColor: isDark
-            ? AppColors.slate900
-            : AppColors.slate50,
+        systemNavigationBarColor: isMidnight
+            ? Colors.black
+            : (isDark ? AppColors.slate900 : AppColors.white),
         systemNavigationBarIconBrightness: isDark
             ? Brightness.light
             : Brightness.dark,
       ),
       child: Scaffold(
-        backgroundColor: isDark ? AppColors.slate900 : AppColors.slate50,
+        backgroundColor: isMidnight
+            ? Colors.black
+            : (isDark ? AppColors.slate900 : AppColors.white),
         body: ValueListenableBuilder<int>(
           valueListenable: _stage,
           builder: (context, currentStage, child) {
@@ -252,7 +256,7 @@ class _HatchingPageState extends State<HatchingPage> {
                           ),
                           child: Padding(
                             padding: EdgeInsets.symmetric(
-                              horizontal: 24.w,
+                              horizontal: 20.w,
                               vertical: 24.h,
                             ),
                             child: Column(
@@ -423,7 +427,7 @@ class _HatchingPageState extends State<HatchingPage> {
     if (currentStage >= 2) {
       final introMessage = _getIntroMessage(context);
       return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: GestureDetector(
           onTap: () {
             // Tapping dialogue card reveals full text immediately for fast readers

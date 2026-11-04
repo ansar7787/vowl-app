@@ -25,6 +25,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:go_router/go_router.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_overtake_hud.dart';
@@ -45,36 +46,23 @@ class LeaderboardScreen extends StatefulWidget {
 }
 
 class _LeaderboardScreenState extends State<LeaderboardScreen> {
-  late final ValueNotifier<bool> _isKidsMode;
-
-  @override
-  void initState() {
-    super.initState();
-    _isKidsMode = ValueNotifier(widget.isKids);
-  }
-
-  @override
-  void dispose() {
-    _isKidsMode.dispose();
-    super.dispose();
-  }
+  LeaderboardTimeframe _timeframe = LeaderboardTimeframe.thisWeek;
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    // FIX (MEDIUM-1): Use context.select instead of context.watch to scope
-    // rebuilds to only the isMidnight boolean, not the entire ThemeCubit state.
+    // Scoped rebuilds to only the isMidnight boolean, not the entire ThemeCubit state.
     final isMidnight =
         (Theme.of(context).brightness == Brightness.dark &&
         Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? AppColors.slate900 : AppColors.slate50);
+        : (isDark ? AppColors.slate900 : AppColors.white);
 
     return BlocProvider(
       create: (_) =>
           di.sl<LeaderboardBloc>()
-            ..add(LoadLeaderboard(isKids: _isKidsMode.value)),
+            ..add(LoadLeaderboard(isKids: widget.isKids)),
       child: Scaffold(
         backgroundColor: bgColor,
         body: BlocBuilder<LeaderboardBloc, LeaderboardState>(
@@ -90,29 +78,49 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                 // Content Layer
                 Column(
                   children: [
-                    SizedBox(height: MediaQuery.of(context).padding.top + 8.h),
-
-                    ValueListenableBuilder<bool>(
-                      valueListenable: _isKidsMode,
-                      builder: (context, isKidsMode, _) {
-                        return Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 24.w,
-                            vertical: 4.h,
-                          ),
-                          child: _LeaderboardToggle(
-                            isKidsMode: isKidsMode,
-                            onToggle: (bool isKids) {
-                              if (isKidsMode == isKids) return;
-                              _isKidsMode.value = isKids;
-                              context.read<LeaderboardBloc>().add(
-                                LoadLeaderboard(isKids: isKids),
-                              );
-                            },
-                          ),
-                        );
-                      },
-                    ),
+                    if (widget.isKids) ...[
+                      Padding(
+                        padding: EdgeInsets.only(
+                          top: MediaQuery.of(context).padding.top + 6.h,
+                          left: 8.w,
+                          right: 20.w,
+                          bottom: 4.h,
+                        ),
+                        child: Row(
+                          children: [
+                            IconButton(
+                              icon: const Icon(Icons.arrow_back_rounded),
+                              color: isDark ? Colors.white : AppColors.slate900,
+                              tooltip: context.tr('common.back', fallback: 'Back to Kids Zone'),
+                              onPressed: () => Navigator.of(context).pop(),
+                            ),
+                            Text(
+                              'Kids Zone',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w700,
+                                color: isDark ? Colors.white70 : AppColors.slate600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ] else ...[
+                      SizedBox(height: MediaQuery.of(context).padding.top + 8.h),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 20.w,
+                          vertical: 4.h,
+                        ),
+                        child: _LeaderboardHeroSwitch(
+                          timeframe: _timeframe,
+                          onChanged: (selected) {
+                            setState(() => _timeframe = selected);
+                          },
+                        ),
+                      ),
+                    ],
 
                     Expanded(
                       child: Builder(
@@ -121,6 +129,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                             return _LeaderboardContent(
                               state: state,
                               currentUser: currentUser,
+                              timeframe: _timeframe,
                             );
                           } else if (state is LeaderboardLoading ||
                               state is LeaderboardInitial) {
@@ -130,7 +139,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                               message: state.message,
                               onRetry: () =>
                                   context.read<LeaderboardBloc>().add(
-                                    LoadLeaderboard(isKids: _isKidsMode.value),
+                                    LoadLeaderboard(isKids: widget.isKids),
                                   ),
                             );
                           }
@@ -155,8 +164,13 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
 class _LeaderboardContent extends StatefulWidget {
   final LeaderboardLoaded state;
   final UserEntity? currentUser;
+  final LeaderboardTimeframe timeframe;
 
-  const _LeaderboardContent({required this.state, required this.currentUser});
+  const _LeaderboardContent({
+    required this.state,
+    required this.currentUser,
+    this.timeframe = LeaderboardTimeframe.thisWeek,
+  });
 
   @override
   State<_LeaderboardContent> createState() => _LeaderboardContentState();
@@ -185,8 +199,6 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     super.dispose();
   }
 
-  LeaderboardTimeframe _timeframe = LeaderboardTimeframe.thisWeek;
-
   /// Deterministic sort ensuring consistency across timeframes:
   /// - Kids: Levels completed (primary), daily streak (tie-breaker), coins (fallback)
   /// - This Week: Weekly XP (primary), daily streak (tie-breaker), levels, total XP
@@ -203,7 +215,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         }
         return b.kidsCoins.compareTo(a.kidsCoins);
       });
-    } else if (_timeframe == LeaderboardTimeframe.thisWeek) {
+    } else if (widget.timeframe == LeaderboardTimeframe.thisWeek) {
       list.sort((a, b) {
         final aWeekly = a.currentWeeklyExp;
         final bWeekly = b.currentWeeklyExp;
@@ -461,8 +473,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
       final repo = di.sl<ArenaRepository>();
       final session = await repo.createRoomCode(currentUser: currentUser);
       final message = '⚔️ I bet 30 coins you can\'t beat my score on Vowl!\n'
-          'Enter room code ${session.roomCode} to duel me now:\n'
-          'https://vowl.app/duel/${session.roomCode}';
+          'Enter room code ${session.roomCode} in Vowl to duel me now, or tap:\n'
+          'https://vowl-acbc5.web.app/duel/${session.roomCode}';
       await SharePlus.instance.share(
         ShareParams(
           text: message,
@@ -475,6 +487,178 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     } catch (e) {
       debugPrint('[LeaderboardScreen] Share room code error: $e');
     }
+  }
+
+  void _showJoinRoomDialog() {
+    final currentUser = widget.currentUser;
+    if (currentUser == null) return;
+
+    if (currentUser.coins < 30) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('You need at least 30 coins to enter a duel stake!'),
+          backgroundColor: AppColors.rose500,
+        ),
+      );
+      return;
+    }
+
+    final controller = TextEditingController();
+    bool isJoining = false;
+
+    showDialog(
+      context: context,
+      builder: (dialogCtx) => StatefulBuilder(
+        builder: (ctx, setDialogState) {
+          final isDark = Theme.of(ctx).brightness == Brightness.dark;
+          final isMidnight = isDark && Theme.of(ctx).scaffoldBackgroundColor == Colors.black;
+          final cardBg = isMidnight ? AppColors.midnightSurface : (isDark ? AppColors.slate800 : Colors.white);
+          final textPrimary = isDark ? Colors.white : AppColors.slate900;
+          final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
+          final borderCol = isDark ? AppColors.slate700 : AppColors.slate200;
+
+          return Dialog(
+            backgroundColor: cardBg,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
+            child: Padding(
+              padding: EdgeInsets.all(20.r),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(8.r),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        child: Icon(LucideIcons.swords, color: const Color(0xFFF59E0B), size: 18.sp),
+                      ),
+                      SizedBox(width: 10.w),
+                      Text(
+                        'Join 1v1 Arena Duel',
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w800,
+                          color: textPrimary,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 12.h),
+                  Text(
+                    'Enter the room code shared by your friend to join the 30-coin duel:',
+                    style: TextStyle(fontSize: 12.sp, color: textSecondary, height: 1.4),
+                  ),
+                  SizedBox(height: 16.h),
+                  TextField(
+                    controller: controller,
+                    textCapitalization: TextCapitalization.characters,
+                    style: TextStyle(
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 1.5,
+                      color: textPrimary,
+                    ),
+                    decoration: InputDecoration(
+                      hintText: 'e.g. VOWL-DUEL-882',
+                      hintStyle: TextStyle(
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w500,
+                        letterSpacing: 1,
+                        color: textSecondary.withValues(alpha: 0.6),
+                      ),
+                      filled: true,
+                      fillColor: isDark ? const Color(0xFF070A12) : const Color(0xFFF1F5F9),
+                      contentPadding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.r),
+                        borderSide: BorderSide(color: borderCol),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.r),
+                        borderSide: BorderSide(color: borderCol),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.r),
+                        borderSide: const BorderSide(color: AppColors.indigo500, width: 1.5),
+                      ),
+                      suffixIcon: IconButton(
+                        icon: Icon(LucideIcons.clipboard, size: 16.sp, color: textSecondary),
+                        onPressed: () async {
+                          final clip = await Clipboard.getData(Clipboard.kTextPlain);
+                          if (clip?.text != null) {
+                            controller.text = clip!.text!.trim().toUpperCase();
+                          }
+                        },
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 18.h),
+                  ElevatedButton(
+                    onPressed: isJoining
+                        ? null
+                        : () async {
+                            final code = controller.text.trim().toUpperCase();
+                            if (code.isEmpty) return;
+
+                            setDialogState(() => isJoining = true);
+                            try {
+                              final repo = di.sl<ArenaRepository>();
+                              final session = await repo.joinRoom(
+                                roomCode: code,
+                                currentUser: currentUser,
+                              );
+                              if (dialogCtx.mounted) Navigator.of(dialogCtx).pop();
+                              if (mounted) {
+                                Navigator.of(context).push(ArenaDuelScreen.route(session: session));
+                              }
+                            } catch (e) {
+                              setDialogState(() => isJoining = false);
+                              if (mounted) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text('Could not join room: ${e.toString().replaceAll("Exception: ", "")}'),
+                                    backgroundColor: AppColors.rose500,
+                                  ),
+                                );
+                              }
+                            }
+                          },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFF59E0B),
+                      foregroundColor: Colors.white,
+                      padding: EdgeInsets.symmetric(vertical: 12.h),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
+                    ),
+                    child: isJoining
+                        ? SizedBox(
+                            width: 18.r,
+                            height: 18.r,
+                            child: const CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                          )
+                        : Text(
+                            'Enter Duel (30🪙)',
+                            style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w800),
+                          ),
+                  ),
+                  SizedBox(height: 6.h),
+                  TextButton(
+                    onPressed: () => Navigator.of(dialogCtx).pop(),
+                    child: Text(
+                      'Cancel',
+                      style: TextStyle(fontSize: 12.sp, color: textSecondary),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
+    );
   }
 
   void _showShareCard(UserEntity user, int rank) {
@@ -551,7 +735,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     }
 
     final users = _sortedUsers;
-    final isWeekly = _timeframe == LeaderboardTimeframe.thisWeek;
+    final isWeekly = widget.timeframe == LeaderboardTimeframe.thisWeek;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
     final rankIndex = users.indexWhere(
       (u) => u.id == widget.currentUser?.id,
@@ -585,27 +769,13 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               // Header with last-updated timestamp
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: LeaderboardHeader(
                     lastUpdated: widget.state.lastUpdated,
                     isKids: widget.state.isKids,
                   ),
                 ),
               ),
-
-              // Timeframe selector (This Week vs All-Time Hall of Fame)
-              if (!widget.state.isKids)
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(24.w, 10.h, 24.w, 4.h),
-                    child: _LeaderboardTimeframeSelector(
-                      timeframe: _timeframe,
-                      onChanged: (selected) {
-                        setState(() => _timeframe = selected);
-                      },
-                    ),
-                  ),
-                ),
 
               // Weekly League Podium Rewards Banner (Visible in Weekly mode)
               if (!widget.state.isKids && isWeekly)
@@ -619,8 +789,11 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
 
               // All-Time Hall of Fame Banner (Visible in All-Time mode)
               if (!widget.state.isKids && !isWeekly)
-                const SliverToBoxAdapter(
-                  child: _HallOfFameBanner(),
+                SliverToBoxAdapter(
+                  child: _HallOfFameBanner(
+                    onChallenge: _startQuickMatch,
+                    onJoinCode: _showJoinRoomDialog,
+                  ),
                 ),
 
               SliverToBoxAdapter(child: SizedBox(height: 18.h)),
@@ -628,12 +801,13 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               // Podium (Top 3)
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: LeaderboardPodium(
                     top3: users.take(3).toList(),
                     isKids: widget.state.isKids,
                     isWeekly: isWeekly,
                     currentUserId: widget.currentUser?.id,
+                    onUserTap: (user, rank, isMe) => _handleTileTap(user, rank, isMe),
                   ),
                 ),
               ),
@@ -670,7 +844,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               SliverToBoxAdapter(
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 24.w,
+                    horizontal: 20.w,
                     vertical: 12.h,
                   ),
                   child: Row(
@@ -694,10 +868,12 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                       ),
                       SizedBox(width: 8.w),
                       Text(
-                        context.tr(
-                          'leaderboard.top_challengers',
-                          fallback: 'Top Challengers',
-                        ),
+                        widget.state.isKids
+                            ? 'Top Explorers'
+                            : context.tr(
+                                'leaderboard.top_challengers',
+                                fallback: 'Top Challengers',
+                              ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
@@ -722,7 +898,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               // Rank 4-N list
               if (users.length > 3)
                 SliverPadding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   sliver: SliverList(
                     delegate: SliverChildBuilderDelegate((context, index) {
                       final userIndex = index + 3;
@@ -1009,7 +1185,7 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
           // Rank card content
           Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 24.w,
+              horizontal: 20.w,
               vertical: 12.h - (4.h * collapseProgress),
             ),
             child: OverflowBox(
@@ -1116,156 +1292,8 @@ class _LeaderboardErrorView extends StatelessWidget {
   }
 }
 
-class _LeaderboardToggle extends StatelessWidget {
-  final bool isKidsMode;
-  final ValueChanged<bool> onToggle;
-
-  const _LeaderboardToggle({required this.isKidsMode, required this.onToggle});
-
-  @override
-  Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Container(
-      height: 48.h,
-      padding: EdgeInsets.all(3.r),
-      decoration: BoxDecoration(
-        color: isDark
-            ? Colors.black.withValues(alpha: 0.4)
-            : AppColors.slate100,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.1)
-              : AppColors.slate200,
-          width: 1,
-        ),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: GestureDetector(
-              onTap: () {
-                HapticFeedback.lightImpact();
-                onToggle(false);
-              },
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 250),
-                curve: Curves.easeOutCubic,
-                decoration: BoxDecoration(
-                  color: !isKidsMode ? AppColors.indigo500 : Colors.transparent,
-                  borderRadius: BorderRadius.circular(21.r),
-                  boxShadow: !isKidsMode
-                      ? [
-                          BoxShadow(
-                            color: const Color(
-                              0xFF6366F1,
-                            ).withValues(alpha: 0.4),
-                            blurRadius: 8,
-                            offset: const Offset(0, 2),
-                          ),
-                        ]
-                      : null,
-                ),
-                alignment: Alignment.center,
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.public_rounded,
-                        color: !isKidsMode
-                            ? Colors.white
-                            : (isDark ? Colors.white60 : AppColors.slate600),
-                        size: 15.r,
-                      ),
-                      SizedBox(width: 5.w),
-                      Text(
-                        context.tr(
-                          'leaderboard.global_ranks',
-                          fallback: 'Global Ranks',
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontWeight: FontWeight.w800,
-                          fontSize: 13.sp,
-                          color: !isKidsMode
-                              ? Colors.white
-                              : (isDark ? Colors.white60 : AppColors.slate600),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Expanded(
-            child: GestureDetector(
-              onTap: () {
-                HapticFeedback.lightImpact();
-                onToggle(true);
-              },
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 250),
-                curve: Curves.easeOutCubic,
-                decoration: BoxDecoration(
-                  color: isKidsMode ? AppColors.rose500 : Colors.transparent,
-                  borderRadius: BorderRadius.circular(21.r),
-                  boxShadow: isKidsMode
-                      ? [
-                          BoxShadow(
-                            color: const Color(
-                              0xFFF43F5E,
-                            ).withValues(alpha: 0.4),
-                            blurRadius: 8,
-                            offset: const Offset(0, 2),
-                          ),
-                        ]
-                      : null,
-                ),
-                alignment: Alignment.center,
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.child_care_rounded,
-                        color: isKidsMode
-                            ? Colors.white
-                            : (isDark ? Colors.white60 : AppColors.slate600),
-                        size: 15.r,
-                      ),
-                      SizedBox(width: 5.w),
-                      Text(
-                        context.tr(
-                          'leaderboard.kids_zone',
-                          fallback: 'Kids Zone',
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontWeight: FontWeight.w800,
-                          fontSize: 13.sp,
-                          color: isKidsMode
-                              ? Colors.white
-                              : (isDark ? Colors.white60 : AppColors.slate600),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 // ---------------------------------------------------------------------------
-// Timeframe enumeration & selector
+// Timeframe enumeration
 // ---------------------------------------------------------------------------
 
 enum LeaderboardTimeframe {
@@ -1273,11 +1301,15 @@ enum LeaderboardTimeframe {
   allTime,
 }
 
-class _LeaderboardTimeframeSelector extends StatelessWidget {
+// ---------------------------------------------------------------------------
+// Primary Hero Segmented Switch: Weekly League vs Hall of Fame
+// ---------------------------------------------------------------------------
+
+class _LeaderboardHeroSwitch extends StatelessWidget {
   final LeaderboardTimeframe timeframe;
   final ValueChanged<LeaderboardTimeframe> onChanged;
 
-  const _LeaderboardTimeframeSelector({
+  const _LeaderboardHeroSwitch({
     required this.timeframe,
     required this.onChanged,
   });
@@ -1285,21 +1317,24 @@ class _LeaderboardTimeframeSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final isWeekly = timeframe == LeaderboardTimeframe.thisWeek;
 
     return Container(
-      height: 38.h,
-      padding: EdgeInsets.all(3.r),
+      height: 48.h,
+      padding: EdgeInsets.all(4.r),
       decoration: BoxDecoration(
         color: isMidnight
             ? AppColors.midnightSurface
             : (isDark ? const Color(0xFF0F172A) : AppColors.slate100),
-        borderRadius: BorderRadius.circular(19.r),
+        borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: isMidnight
               ? Colors.white.withValues(alpha: 0.12)
-              : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200),
+              : (isDark
+                  ? Colors.white.withValues(alpha: 0.08)
+                  : AppColors.slate200),
           width: 1,
         ),
       ),
@@ -1308,24 +1343,23 @@ class _LeaderboardTimeframeSelector extends StatelessWidget {
           Expanded(
             child: GestureDetector(
               onTap: () {
+                if (isWeekly) return;
                 HapticFeedback.lightImpact();
                 onChanged(LeaderboardTimeframe.thisWeek);
               },
               child: AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
+                duration: const Duration(milliseconds: 250),
                 curve: Curves.easeOutCubic,
                 decoration: BoxDecoration(
-                  color: isWeekly ? AppColors.indigo500 : Colors.transparent,
-                  borderRadius: BorderRadius.circular(16.r),
-                  boxShadow: isWeekly
-                      ? [
-                          BoxShadow(
-                            color: AppColors.indigo500.withValues(alpha: 0.35),
-                            blurRadius: 6,
-                            offset: const Offset(0, 1),
-                          ),
-                        ]
+                  gradient: isWeekly
+                      ? const LinearGradient(
+                          colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        )
                       : null,
+                  color: isWeekly ? null : Colors.transparent,
+                  borderRadius: BorderRadius.circular(20.r),
                 ),
                 alignment: Alignment.center,
                 child: FittedBox(
@@ -1335,17 +1369,25 @@ class _LeaderboardTimeframeSelector extends StatelessWidget {
                     children: [
                       Icon(
                         LucideIcons.zap,
-                        size: 13.sp,
-                        color: isWeekly ? Colors.white : (isDark ? Colors.white60 : AppColors.slate600),
+                        size: 15.sp,
+                        color: isWeekly
+                            ? Colors.white
+                            : (isDark ? Colors.white60 : AppColors.slate600),
                       ),
-                      SizedBox(width: 5.w),
+                      SizedBox(width: 6.w),
                       Text(
-                        'This Week (League)',
+                        context.tr(
+                          'leaderboard.weekly_league',
+                          fallback: 'Weekly League',
+                        ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 12.sp,
-                          color: isWeekly ? Colors.white : (isDark ? Colors.white60 : AppColors.slate600),
+                          fontWeight: FontWeight.w800,
+                          fontSize: 13.sp,
+                          color: isWeekly
+                              ? Colors.white
+                              : (isDark ? Colors.white70 : AppColors.slate700),
+                          letterSpacing: 0.3,
                         ),
                       ),
                     ],
@@ -1357,24 +1399,23 @@ class _LeaderboardTimeframeSelector extends StatelessWidget {
           Expanded(
             child: GestureDetector(
               onTap: () {
+                if (!isWeekly) return;
                 HapticFeedback.lightImpact();
                 onChanged(LeaderboardTimeframe.allTime);
               },
               child: AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
+                duration: const Duration(milliseconds: 250),
                 curve: Curves.easeOutCubic,
                 decoration: BoxDecoration(
-                  color: !isWeekly ? AppColors.amber500 : Colors.transparent,
-                  borderRadius: BorderRadius.circular(16.r),
-                  boxShadow: !isWeekly
-                      ? [
-                          BoxShadow(
-                            color: AppColors.amber500.withValues(alpha: 0.35),
-                            blurRadius: 6,
-                            offset: const Offset(0, 1),
-                          ),
-                        ]
+                  gradient: !isWeekly
+                      ? const LinearGradient(
+                          colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        )
                       : null,
+                  color: !isWeekly ? null : Colors.transparent,
+                  borderRadius: BorderRadius.circular(20.r),
                 ),
                 alignment: Alignment.center,
                 child: FittedBox(
@@ -1384,17 +1425,25 @@ class _LeaderboardTimeframeSelector extends StatelessWidget {
                     children: [
                       Icon(
                         LucideIcons.crown,
-                        size: 13.sp,
-                        color: !isWeekly ? Colors.white : (isDark ? Colors.white60 : AppColors.slate600),
+                        size: 15.sp,
+                        color: !isWeekly
+                            ? Colors.white
+                            : (isDark ? Colors.white60 : AppColors.slate600),
                       ),
-                      SizedBox(width: 5.w),
+                      SizedBox(width: 6.w),
                       Text(
-                        'All-Time (Hall of Fame)',
+                        context.tr(
+                          'leaderboard.hall_of_fame',
+                          fallback: 'Hall of Fame',
+                        ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 12.sp,
-                          color: !isWeekly ? Colors.white : (isDark ? Colors.white60 : AppColors.slate600),
+                          fontWeight: FontWeight.w800,
+                          fontSize: 13.sp,
+                          color: !isWeekly
+                              ? Colors.white
+                              : (isDark ? Colors.white70 : AppColors.slate700),
+                          letterSpacing: 0.3,
                         ),
                       ),
                     ],
@@ -1414,23 +1463,26 @@ class _LeaderboardTimeframeSelector extends StatelessWidget {
 // ---------------------------------------------------------------------------
 
 class _HallOfFameBanner extends StatelessWidget {
-  const _HallOfFameBanner();
+  final VoidCallback? onChallenge;
+  final VoidCallback? onJoinCode;
+  const _HallOfFameBanner({this.onChallenge, this.onJoinCode});
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final surfaceColor = isMidnight
         ? AppColors.midnightSurface
         : (isDark ? const Color(0xFF0F172A) : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200);
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
     final titleColor = isDark ? Colors.white : AppColors.slate900;
     final subColor = isDark ? AppColors.slate400 : AppColors.slate600;
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: surfaceColor,
@@ -1473,6 +1525,85 @@ class _HallOfFameBanner extends StatelessWidget {
               ],
             ),
           ),
+          if (onChallenge != null || onJoinCode != null) ...[
+            SizedBox(width: 8.w),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (onChallenge != null)
+                  ElevatedButton(
+                    onPressed: () {
+                      if (di.sl.isRegistered<HapticService>()) {
+                        di.sl<HapticService>().light();
+                      }
+                      onChallenge?.call();
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.amber500,
+                      foregroundColor: Colors.white,
+                      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
+                      minimumSize: Size.zero,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.r),
+                      ),
+                      elevation: 0,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(LucideIcons.swords, size: 11.sp, color: Colors.white),
+                        SizedBox(width: 3.w),
+                        Text(
+                          'Duel',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                if (onJoinCode != null) ...[
+                  SizedBox(width: 6.w),
+                  OutlinedButton(
+                    onPressed: () {
+                      if (di.sl.isRegistered<HapticService>()) {
+                        di.sl<HapticService>().light();
+                      }
+                      onJoinCode?.call();
+                    },
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: titleColor,
+                      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
+                      minimumSize: Size.zero,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      side: BorderSide(color: borderColor),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.r),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(LucideIcons.keyRound, size: 11.sp, color: titleColor),
+                        SizedBox(width: 3.w),
+                        Text(
+                          'Join',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ],
         ],
       ),
     );

@@ -547,7 +547,7 @@ class _KidsTransportLayoutState extends State<KidsTransportLayout> {
   /// Steel Truss Gantry Top Header
   Widget _buildGantryTrussTop() {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 24.w),
+      margin: EdgeInsets.symmetric(horizontal: 20.w),
       height: 10.h,
       decoration: BoxDecoration(
         color: _TransportPalette.gantryTruss,

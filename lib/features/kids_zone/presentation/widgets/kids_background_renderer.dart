@@ -105,7 +105,7 @@ class KidsBackgroundRenderer extends StatelessWidget {
             ]
           : [
               primaryColor.withAlpha(60),
-              AppColors.slate50,
+              AppColors.white,
               primaryColor.withAlpha(40),
             ];
     }

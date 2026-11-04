@@ -193,6 +193,9 @@ class UserEntity {
   /// Previous leaderboard rank.
   final int? previousRank;
 
+  /// ISO week key associated with previous leaderboard rank (e.g. '2026-W45').
+  final String? previousRankWeekKey;
+
   // ---------------------------------------------------------------------------
   // Kids Room — Buddy Lifecycle (persisted)
   // ---------------------------------------------------------------------------
@@ -321,6 +324,7 @@ class UserEntity {
     this.adSpinsUsedToday = 0,
     this.keys = 0,
     this.previousRank,
+    this.previousRankWeekKey,
     this.kidsBuddyMood = 'happy',
     this.kidsBuddyEnergy = 100,
     this.kidsBuddyHunger = 0,
@@ -422,6 +426,17 @@ class UserEntity {
     }
     return false;
   }
+
+  /// Total XP earned today based on [dailyXpHistory].
+  int get todayExp {
+    final now = DateTime.now();
+    final todayKey =
+        '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+    return dailyXpHistory[todayKey] ?? 0;
+  }
+
+  /// Whether the user has completed at least one learning lesson or earned XP today.
+  bool get hasCompletedDailyGoal => todayExp > 0;
 
   /// Computes the total XP earned in the current ISO week (Monday through Sunday)
   /// by summing entries in [dailyXpHistory] matching the dates of this week.
@@ -590,6 +605,7 @@ class UserEntity {
     List<Map<String, dynamic>>? recentActivities,
     int? keys,
     int? previousRank,
+    String? previousRankWeekKey,
     String? kidsBuddyMood,
     int? kidsBuddyEnergy,
     int? kidsBuddyHunger,
@@ -670,6 +686,7 @@ class UserEntity {
       recentActivities: recentActivities ?? this.recentActivities,
       keys: keys ?? this.keys,
       previousRank: previousRank ?? this.previousRank,
+      previousRankWeekKey: previousRankWeekKey ?? this.previousRankWeekKey,
       kidsBuddyMood: kidsBuddyMood ?? this.kidsBuddyMood,
       kidsBuddyEnergy: kidsBuddyEnergy ?? this.kidsBuddyEnergy,
       kidsBuddyHunger: kidsBuddyHunger ?? this.kidsBuddyHunger,
@@ -821,6 +838,7 @@ class UserEntity {
         _mapEq.equals(other.kidsEquippedFurniture, kidsEquippedFurniture) &&
         other.keys == keys &&
         other.previousRank == previousRank &&
+        other.previousRankWeekKey == previousRankWeekKey &&
         other.kidsBuddyMood == kidsBuddyMood &&
         other.kidsBuddyEnergy == kidsBuddyEnergy &&
         other.kidsBuddyHunger == kidsBuddyHunger &&
@@ -907,6 +925,7 @@ class UserEntity {
       _mapEq.hash(kidsEquippedFurniture),
       keys,
       previousRank,
+      previousRankWeekKey,
       kidsBuddyMood,
       kidsBuddyEnergy,
       kidsBuddyHunger,

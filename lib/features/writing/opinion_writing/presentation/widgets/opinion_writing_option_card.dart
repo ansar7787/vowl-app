@@ -51,13 +51,7 @@ class OpinionWritingIdeaCard extends StatelessWidget {
                     offset: const Offset(0, 4),
                   ),
                 ]
-              : [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.03),
-                    blurRadius: 6,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
+              : null,
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -165,13 +159,6 @@ class OpinionWritingDraftedCard extends StatelessWidget {
             color: borderColor,
             width: isAnswered ? 1.5 : 1.0,
           ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.02),
-              blurRadius: 4,
-              offset: const Offset(0, 1),
-            ),
-          ],
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,

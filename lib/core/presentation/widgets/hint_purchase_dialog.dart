@@ -62,7 +62,7 @@ class HintPurchaseDialog {
       context: context,
       builder: (ctx) => Center(
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 24.w),
+          margin: EdgeInsets.symmetric(horizontal: 20.w),
           child: GlassTile(
             borderRadius: BorderRadius.circular(32.r),
             padding: EdgeInsets.all(24.r),

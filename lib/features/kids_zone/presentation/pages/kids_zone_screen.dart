@@ -127,7 +127,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
         Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? AppColors.slate900 : AppColors.slate50);
+        : (isDark ? AppColors.slate900 : AppColors.white);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -186,7 +186,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                   ),
 
                   SliverPadding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
                     sliver: SliverToBoxAdapter(
                       child: Column(
                         children: [
@@ -207,7 +207,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                   ),
 
                   SliverPadding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
                     sliver: SliverToBoxAdapter(
                       child: KidsMagicChest(
                         onClaimed: _spawnCoins,
@@ -442,7 +442,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
         Center(child: _buildKeyShopButton(context)),
         SizedBox(width: 8.w),
         Padding(
-          padding: EdgeInsets.only(right: 16.w),
+          padding: EdgeInsets.only(right: 20.w),
           child: Center(child: _buildCoinBadge(context, coins, contrastColor)),
         ),
       ],

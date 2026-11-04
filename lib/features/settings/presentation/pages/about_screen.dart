@@ -43,7 +43,7 @@ class _AboutScreenState extends State<AboutScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final bgColor = isDark ? AppColors.slate900 : AppColors.slate50;
+    final bgColor = isDark ? AppColors.slate900 : AppColors.white;
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -206,7 +206,7 @@ class _AboutScreenState extends State<AboutScreen> {
       pinned: true,
       centerTitle: true,
       flexibleSpace: Container(
-        color: (isDark ? AppColors.slate900 : AppColors.slate50).withValues(
+        color: (isDark ? AppColors.slate900 : AppColors.white).withValues(
           alpha: 0.94,
         ),
       ),
@@ -251,17 +251,24 @@ class _AboutScreenState extends State<AboutScreen> {
     required bool isDark,
     VoidCallback? onTap,
   }) {
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? AppColors.slate800 : Colors.white);
+    final cardBorder = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+
     return GestureDetector(
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         decoration: BoxDecoration(
-          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+          color: cardBg,
           borderRadius: BorderRadius.circular(16.r),
           border: Border.all(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.1)
-                : Colors.black.withValues(alpha: 0.05),
+            color: cardBorder,
           ),
         ),
         child: Row(
@@ -313,17 +320,24 @@ class _AboutScreenState extends State<AboutScreen> {
     required bool isDark,
     required VoidCallback onTap,
   }) {
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? AppColors.slate800 : Colors.white);
+    final cardBorder = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+
     return GestureDetector(
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         decoration: BoxDecoration(
-          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+          color: cardBg,
           borderRadius: BorderRadius.circular(16.r),
           border: Border.all(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.1)
-                : Colors.black.withValues(alpha: 0.05),
+            color: cardBorder,
           ),
         ),
         child: Row(

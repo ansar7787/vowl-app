@@ -44,12 +44,7 @@ class StreakHero extends StatelessWidget {
     const color = IllustrationColors.warmOrange;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
-    final now = DateTime.now();
-    final hasPlayedToday =
-        user.lastLoginDate != null &&
-        user.lastLoginDate!.year == now.year &&
-        user.lastLoginDate!.month == now.month &&
-        user.lastLoginDate!.day == now.day;
+    final hasPlayedToday = user.hasCompletedDailyGoal;
 
     final String statusText;
     if (streak >= 30) {
@@ -204,42 +199,32 @@ class StreakHero extends StatelessWidget {
                               delay: 400.ms,
                             );
                     }(),
+                    SizedBox(height: 6.h),
+                    () {
+                      final status = AutoSizeText(
+                        statusText,
+                        maxLines: 1,
+                        minFontSize: 9,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w800,
+                          color: color,
+                          letterSpacing: 1.5,
+                        ),
+                      );
+                      return reduceMotion
+                          ? status
+                          : status.animate().fadeIn(
+                              duration: 600.ms,
+                              delay: 500.ms,
+                            );
+                    }(),
                   ],
                 ),
-                SizedBox(height: 24.h),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 10.w,
-                    vertical: 8.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(20.r),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(LucideIcons.sparkles, color: color, size: 14.r),
-                      SizedBox(width: 10.w),
-                      Flexible(
-                        child: AutoSizeText(
-                          statusText,
-                          maxLines: 1,
-                          minFontSize: 8,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w800,
-                            color: color,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
                 if (!hasPlayedToday && streak > 0) ...[
-                  SizedBox(height: 8.h),
+                  SizedBox(height: 14.h),
                   Builder(
                     builder: (context) {
                       Widget container = Container(

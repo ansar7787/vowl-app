@@ -79,7 +79,7 @@ class GrammarGameHeader extends StatelessWidget {
         : (isLoaded ? (state as GrammarLoaded).hintUsed : false);
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: Row(
         children: [
           Expanded(

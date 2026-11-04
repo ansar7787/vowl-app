@@ -276,11 +276,19 @@ class PremiumFailureOverlay extends StatelessWidget {
       buttonsWidget = buttonsWidget.animate().fadeIn(delay: 500.ms);
     }
 
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+
     Widget content = Container(
       padding: EdgeInsets.all(32.r),
-      margin: EdgeInsets.symmetric(horizontal: 24.w),
+      margin: EdgeInsets.symmetric(horizontal: 20.w),
       decoration: BoxDecoration(
-        color: const Color(0xFF13141C).withValues(alpha: 0.95),
+        color: isMidnight
+            ? AppColors.midnightSurface
+            : (isDark
+                ? const Color(0xFF13141C).withValues(alpha: 0.95)
+                : Colors.white),
         borderRadius: BorderRadius.circular(32.r),
         border: Border.all(
           color: AppColors.rose500.withValues(alpha: 0.4),

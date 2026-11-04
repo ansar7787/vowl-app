@@ -52,7 +52,7 @@ void main() {
       expect(enFile.existsSync(), isTrue, reason: 'assets/translations/en.json must exist');
       final enJson = jsonDecode(enFile.readAsStringSync()) as Map<String, dynamic>;
       enFlat = flatten(enJson);
-      expect(enFlat.length, equals(3758), reason: 'en.json must have exactly 3758 leaf keys');
+      expect(enFlat.length, equals(3795), reason: 'en.json must have exactly 3795 leaf keys');
     });
 
     for (final lang in supportedLangs.where((l) => l != 'en')) {

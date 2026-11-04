@@ -31,6 +31,8 @@ class BeginnerMilestoneCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cleared = user.totalLevelsCompleted.clamp(0, 2);
     final progress = (cleared / 2.0).clamp(0.05, 1.0);
 
@@ -39,21 +41,18 @@ class BeginnerMilestoneCard extends StatelessWidget {
         width: double.infinity,
         padding: EdgeInsets.all(16.r),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF131A29) : Colors.white,
+          color: isMidnight
+              ? AppColors.midnightSurface
+              : (isDark ? const Color(0xFF131A29) : Colors.white),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
-            color: AppColors.indigo500.withValues(alpha: isDark ? 0.32 : 0.20),
-            width: 1.2,
+            color: isMidnight
+                ? Colors.white.withValues(alpha: 0.12)
+                : (isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.slate100),
+            width: 1.0,
           ),
-          boxShadow: [
-            BoxShadow(
-              color: isDark
-                  ? AppColors.indigo500.withValues(alpha: 0.10)
-                  : Colors.black.withValues(alpha: 0.04),
-              blurRadius: 18,
-              offset: const Offset(0, 6),
-            ),
-          ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

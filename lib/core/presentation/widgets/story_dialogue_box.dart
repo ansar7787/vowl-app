@@ -30,11 +30,13 @@ class StoryDialogueBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return Material(
       color: Colors.transparent,
       child: Center(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child:
               ClipRRect(
                     borderRadius: BorderRadius.circular(32.r),
@@ -47,22 +49,20 @@ class StoryDialogueBox extends StatelessWidget {
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: isDark
-                              ? Colors.black.withValues(alpha: 0.7)
-                              : Colors.white.withValues(alpha: 0.85),
+                          color: isMidnight
+                              ? AppColors.midnightSurface
+                              : (isDark
+                                  ? AppColors.slate900
+                                  : Colors.white),
                           borderRadius: BorderRadius.circular(32.r),
                           border: Border.all(
-                            color: Colors.white.withValues(alpha: 0.2),
+                            color: isMidnight
+                                ? Colors.white.withValues(alpha: 0.12)
+                                : (isDark
+                                    ? Colors.white.withValues(alpha: 0.08)
+                                    : AppColors.slate100),
                             width: 1.5,
                           ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: beat.themeColor.withValues(alpha: 0.2),
-                              blurRadius: 40,
-                              spreadRadius: -10,
-                              offset: const Offset(0, 20),
-                            ),
-                          ],
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,

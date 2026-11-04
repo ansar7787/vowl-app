@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vowl/core/presentation/utils/vowl_assets.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
@@ -71,7 +72,10 @@ class HomeHeroHeader extends StatelessWidget {
   }
 
   /// Evaluates whether the user has already completed learning activity today.
-  static bool isTodayActive(UserEntity user) => user.isTodayActive;
+  static bool isTodayActive(UserEntity user) => user.hasCompletedDailyGoal;
+
+  /// Evaluates whether the user has already completed their daily learning goal today.
+  static bool isDailyGoalCompleted(UserEntity user) => user.hasCompletedDailyGoal;
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +87,7 @@ class HomeHeroHeader extends StatelessWidget {
     final safeExp = user.totalExp > 0 ? user.totalExp : 0;
     final progress = ((safeExp % 100) / 100.0).clamp(0.02, 1.0);
     final rank = rankForLevel(user.level);
-    final todayActive = isTodayActive(user);
+    final todayActive = isDailyGoalCompleted(user);
 
     final displayName = _resolveDisplayName(context);
     final greeting = _resolveGreeting(context);
@@ -237,139 +241,210 @@ class HomeHeroHeader extends StatelessWidget {
     required Color rankColor,
     required bool reduceMotion,
   }) {
-    return Semantics(
-      button: true,
-      label: context.tr(
-        'home.avatar_semantics_label',
-        fallback: 'Profile avatar, Level {0}',
-        args: [user.level.toString()],
-      ),
-      child: ScaleButton(
-        onTap: () {
-          _triggerHaptic();
-          context.push(AppRouter.profileRoute);
-        },
-        child: SizedBox(
-          width: 56.r,
-          height: 56.r,
-          child: Stack(
-            alignment: Alignment.center,
-            clipBehavior: Clip.none,
-            children: [
-              // XP Progress Halo
-              SizedBox(
+    return SizedBox(
+      width: 56.r,
+      height: 56.r,
+      child: Stack(
+        alignment: Alignment.center,
+        clipBehavior: Clip.none,
+        children: [
+          // Inner Avatar Circle & XP Halo -> opens Profile
+          Semantics(
+            button: true,
+            label: context.tr(
+              'home.avatar_semantics_label',
+              fallback: 'Profile avatar, Level {0}',
+              args: [user.level.toString()],
+            ),
+            child: ScaleButton(
+              onTap: () {
+                _triggerHaptic();
+                context.push(AppRouter.profileRoute);
+              },
+              child: SizedBox(
                 width: 56.r,
                 height: 56.r,
-                child: CircularProgressIndicator(
-                  value: progress,
-                  strokeWidth: 2.5.r,
-                  backgroundColor: isDark
-                      ? Colors.white.withValues(alpha: 0.1)
-                      : AppColors.indigo500.withValues(alpha: 0.12),
-                  color: AppColors.indigo500,
-                  strokeCap: StrokeCap.round,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    // XP Progress Halo
+                    SizedBox(
+                      width: 56.r,
+                      height: 56.r,
+                      child: CircularProgressIndicator(
+                        value: progress,
+                        strokeWidth: 2.5.r,
+                        backgroundColor: isDark
+                            ? Colors.white.withValues(alpha: 0.1)
+                            : AppColors.indigo500.withValues(alpha: 0.12),
+                        color: AppColors.indigo500,
+                        strokeCap: StrokeCap.round,
+                      ),
+                    ),
+
+                    // Inner Avatar Circle
+                    Container(
+                      width: 46.r,
+                      height: 46.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: isDark ? AppColors.slate900 : Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.indigo500.withValues(
+                              alpha: isDark ? 0.2 : 0.08,
+                            ),
+                            blurRadius: 8,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: UserAvatar(
+                        photoUrl: user.photoUrl,
+                        size: 46.r,
+                        fallbackIcon: Icons.person_rounded,
+                        iconColor: AppColors.indigo500,
+                        iconSize: 24.r,
+                      ),
+                    ),
+                  ],
                 ),
               ),
+            ),
+          ),
 
-              // Inner Avatar Circle
-              Container(
-                width: 46.r,
-                height: 46.r,
+          // Docked Companion / Buddy Pin (Top-Left) -> opens Mascot
+          PositionedDirectional(
+            start: -2.w,
+            top: -2.h,
+            child: _buildBuddyPin(context, isDark: isDark),
+          ),
+
+          // Docked Level Badge (Bottom-Right) -> opens Profile
+          PositionedDirectional(
+            end: -2.w,
+            bottom: -2.h,
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () {
+                _triggerHaptic();
+                context.push(AppRouter.profileRoute);
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 1.5.h),
                 decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: isDark ? AppColors.slate900 : Colors.white,
+                  color: rankColor,
+                  borderRadius: BorderRadius.circular(10.r),
+                  border: Border.all(
+                    color: isDark ? AppColors.slate950 : Colors.white,
+                    width: 1.5,
+                  ),
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.indigo500.withValues(
-                        alpha: isDark ? 0.2 : 0.08,
-                      ),
-                      blurRadius: 8,
+                      color: rankColor.withValues(alpha: 0.35),
+                      blurRadius: 6,
                       offset: const Offset(0, 2),
                     ),
                   ],
                 ),
-                child: UserAvatar(
-                  photoUrl: user.photoUrl,
-                  size: 46.r,
-                  fallbackIcon: Icons.person_rounded,
-                  iconColor: AppColors.indigo500,
-                  iconSize: 24.r,
-                ),
-              ),
-
-              // Docked Companion / Buddy Pin (Top-Left)
-              PositionedDirectional(
-                start: -2.w,
-                top: -2.h,
-                child: Container(
-                  width: 18.r,
-                  height: 18.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: const LinearGradient(
-                      colors: [Color(0xFFF59E0B), Color(0xFF6366F1)],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    border: Border.all(
-                      color: isDark ? AppColors.slate950 : Colors.white,
-                      width: 1.5,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.25),
-                        blurRadius: 4,
-                      ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Icon(
-                      Icons.auto_awesome_rounded,
-                      size: 9.r,
-                      color: Colors.white,
-                    ),
+                child: Text(
+                  '${user.level}',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w900,
+                    color: rankColor.computeLuminance() > 0.5
+                        ? Colors.black
+                        : Colors.white,
+                    height: 1,
                   ),
                 ),
               ),
-
-              // Docked Level Badge (Bottom-Right)
-              PositionedDirectional(
-                end: -2.w,
-                bottom: -2.h,
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 1.5.h),
-                  decoration: BoxDecoration(
-                    color: rankColor,
-                    borderRadius: BorderRadius.circular(10.r),
-                    border: Border.all(
-                      color: isDark ? AppColors.slate950 : Colors.white,
-                      width: 1.5,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: rankColor.withValues(alpha: 0.35),
-                        blurRadius: 6,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
-                  ),
-                  child: Text(
-                    '${user.level}',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w900,
-                      color: rankColor.computeLuminance() > 0.5
-                          ? Colors.black
-                          : Colors.white,
-                      height: 1,
-                    ),
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
+        ],
+      ),
+    );
+  }
+
+  /// Docked companion mascot pin displaying the user's active buddy.
+  Widget _buildBuddyPin(BuildContext context, {required bool isDark}) {
+    final mascotId = user.vowlMascot ?? 'vowl_prime';
+    final isVowly = mascotId == 'vowly';
+    final emoji = VowlAssets.mascotMap[mascotId] ?? '🦉';
+    final mascotName = VowlAssets.mascotNames[mascotId] ?? mascotId;
+    final reduceMotion = VowlMotion.shouldReduceMotion(context);
+
+    final pin = Container(
+      width: 20.r,
+      height: 20.r,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: isDark ? AppColors.slate900 : Colors.white,
+        border: Border.all(
+          color: isDark ? AppColors.slate950 : Colors.white,
+          width: 1.5,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: isDark ? 0.35 : 0.15),
+            blurRadius: 4,
+            offset: const Offset(0, 1),
+          ),
+        ],
+      ),
+      child: ClipOval(
+        child: Center(
+          child: isVowly
+              ? Image.asset(
+                  VowlAssets.vowlyNeutral,
+                  width: 14.r,
+                  height: 14.r,
+                  fit: BoxFit.contain,
+                  errorBuilder: (_, _, _) => Text(
+                    '🦉',
+                    style: TextStyle(
+                      fontSize: 10.sp,
+                      height: 1.0,
+                    ),
+                  ),
+                )
+              : Text(
+                  emoji,
+                  style: TextStyle(
+                    fontSize: 10.5.sp,
+                    height: 1.0,
+                  ),
+                ),
+        ),
+      ),
+    );
+
+    final animatedPin = reduceMotion
+        ? pin
+        : pin
+            .animate(onPlay: (controller) => controller.repeat(reverse: true))
+            .scale(
+              begin: const Offset(1.0, 1.0),
+              end: const Offset(1.08, 1.08),
+              duration: 2000.ms,
+              curve: Curves.easeInOut,
+            );
+
+    return Semantics(
+      button: true,
+      label: context.tr(
+        'home.mascot_semantics_label',
+        fallback: 'Companion mascot: {0}',
+        args: [mascotName],
+      ),
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () {
+          _triggerHaptic();
+          context.push(AppRouter.vowlMascotRoute);
+        },
+        child: animatedPin,
       ),
     );
   }
@@ -380,12 +455,18 @@ class HomeHeroHeader extends StatelessWidget {
     required bool isDark,
     required bool todayActive,
   }) {
-    final capsuleBg = isDark
-        ? AppColors.slate900.withValues(alpha: 0.90)
-        : Colors.white.withValues(alpha: 0.95);
-    final borderColor = isDark
-        ? AppColors.slate700.withValues(alpha: 0.6)
-        : AppColors.slate200;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final capsuleBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark
+            ? AppColors.slate900.withValues(alpha: 0.90)
+            : Colors.white.withValues(alpha: 0.95));
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.14)
+        : (isDark
+            ? AppColors.slate700.withValues(alpha: 0.6)
+            : AppColors.slate100);
 
     return Semantics(
       container: true,
@@ -396,13 +477,6 @@ class HomeHeroHeader extends StatelessWidget {
           color: capsuleBg,
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(color: borderColor, width: 1),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.05),
-              blurRadius: 10,
-              offset: const Offset(0, 3),
-            ),
-          ],
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,

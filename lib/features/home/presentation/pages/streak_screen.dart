@@ -49,7 +49,7 @@ class _StreakScreenState extends State<StreakScreen> {
         Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final bgColor = isMidnight
         ? Colors.black
-        : (isDark ? AppColors.slate900 : AppColors.slate50);
+        : (isDark ? AppColors.slate900 : AppColors.white);
     final contentColor = Theme.of(context).colorScheme.onSurface;
 
     return Scaffold(
@@ -88,12 +88,12 @@ class _StreakScreenState extends State<StreakScreen> {
                         RepaintBoundary(child: StreakHero(user: user)),
                         SizedBox(height: 24.h),
                         RepaintBoundary(child: StreakCalendar(user: user)),
-                        SizedBox(height: 32.h),
+                        SizedBox(height: 24.h),
                         RepaintBoundary(child: StreakMilestones(user: user)),
-                        SizedBox(height: 32.h),
+                        SizedBox(height: 24.h),
                         RepaintBoundary(child: StreakBoostersShop(user: user)),
                         if (!user.isPremium) ...[
-                          SizedBox(height: 32.h),
+                          SizedBox(height: 24.h),
                           // Earn More Coins section — contextualizes the ad card
                           // within the streak/booster economy
                           Text(

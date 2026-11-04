@@ -138,7 +138,7 @@ void main() {
 
         expect(find.byType(MeshGradientBackground), findsOneWidget);
         expect(find.text('About'), findsOneWidget);
-        expect(find.byIcon(Icons.school_rounded), findsOneWidget);
+        expect(find.byType(Image), findsOneWidget);
         expect(find.text('Vowl'), findsOneWidget);
         expect(find.text('English Language Learning App'), findsOneWidget);
         expect(find.text('Version 2.4.0'), findsOneWidget);
@@ -362,7 +362,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 200));
 
       final scaffold = tester.widget<Scaffold>(find.byType(Scaffold));
-      expect(scaffold.backgroundColor, AppColors.slate50);
+      expect(scaffold.backgroundColor, AppColors.white);
     });
   });
 }

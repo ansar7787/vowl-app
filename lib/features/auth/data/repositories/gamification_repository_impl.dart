@@ -374,11 +374,54 @@ class GamificationRepositoryImpl
     // ---- Daily XP history ----
     final now = DateTime.now();
     final todayKey = _dateKey(now);
+    final bool isFirstLessonToday = (dailyHistory[todayKey] ?? 0) == 0;
     dailyHistory[todayKey] = (dailyHistory[todayKey] ?? 0) + finalXpIncrease;
     _trimOldestDailyEntries(
       dailyHistory,
       UserGameConstants.kDailyXpHistoryLimit,
     );
+
+    // ---- Streak updates on first real lesson completion today ----
+    int? updatedStreak;
+    DateTime? updatedLastLoginDate;
+
+    if (!isVaultReward && isFirstLessonToday) {
+      int newStreak = 1;
+      if (userData.lastLoginDate != null) {
+        final localLast = userData.lastLoginDate!.toLocal();
+        final localNow = now.toLocal();
+        final lastDateOnly = DateTime.utc(
+          localLast.year,
+          localLast.month,
+          localLast.day,
+        );
+        final nowDateOnly = DateTime.utc(
+          localNow.year,
+          localNow.month,
+          localNow.day,
+        );
+        final dayDiff = nowDateOnly.difference(lastDateOnly).inDays;
+
+        if (dayDiff <= 1) {
+          // Same day or consecutive day: advance streak
+          newStreak = (userData.currentStreak > 0) ? userData.currentStreak + 1 : 1;
+        } else {
+          // Missed 1+ days: check if protected by shield or Elite Level 50 auto-shield
+          final hasShield = userData.streakFreezes > 0 || userData.level >= 50;
+          if (hasShield && userData.currentStreak > 0) {
+            newStreak = userData.currentStreak + 1;
+          } else {
+            // Unshielded gap: streak broken, reset to 1 on completion
+            newStreak = 1;
+          }
+        }
+      } else {
+        newStreak = 1;
+      }
+
+      updatedStreak = newStreak;
+      updatedLastLoginDate = now;
+    }
 
     // ---- Recent activities ----
     if (!isVaultReward) {
@@ -426,7 +469,7 @@ class GamificationRepositoryImpl
       );
     }
 
-    return {
+    final updates = <String, dynamic>{
       'totalExp': userData.totalExp + finalXpIncrease,
       (isKidsGame ? 'kidsCoins' : 'coins'): FieldValue.increment(
         finalCoinIncrease,
@@ -439,6 +482,15 @@ class GamificationRepositoryImpl
       'unlockedLevels': unlockedLevels,
       'starRatings': starRatings,
     };
+
+    if (updatedStreak != null) {
+      updates['currentStreak'] = updatedStreak;
+    }
+    if (updatedLastLoginDate != null) {
+      updates['lastLoginDate'] = Timestamp.fromDate(updatedLastLoginDate);
+    }
+
+    return updates;
   }
 
   // ---------------------------------------------------------------------------  // updateUnlockedLevel

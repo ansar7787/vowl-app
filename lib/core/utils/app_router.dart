@@ -61,6 +61,8 @@ class AppRouter {
   static const String photoVocabularyRoute = '/photo-vocabulary';
   static const String referralRoute = '/referral';
   static const String arenaRoute = '/arena';
+  static const String duelRoute = '/duel/:roomCode';
+  static const String inviteRoute = '/invite/:code';
 
   // Daily Words
   static const String dailyWordsRoute = DailyWordsRoutes.dailyWordsRoute;
@@ -180,8 +182,11 @@ class AppRouter {
     // 2. Logout in progress — do not redirect mid-transition.
     if (authState.status == AuthStatus.loggingOut) return null;
 
-    // 3. Unauthenticated — check onboarding gate first.
+    // 3. Unauthenticated — capture duel/invite deep links before forcing onboarding/login.
     if (!isAuthenticated) {
+      if (path.startsWith('/duel/') || path.startsWith('/invite/')) {
+        AppRouter.pendingDeepLink = state.uri.toString();
+      }
       if (!OnboardingService.isCompletedCached) {
         return isOnboardingRoute ? null : onboardingRoute;
       }

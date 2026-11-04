@@ -276,7 +276,7 @@ class _AudioTrueFalseContentState extends State<_AudioTrueFalseContent> {
             slivers: [
               SliverPadding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: 24.w,
+                  horizontal: 20.w,
                   vertical: 24.h,
                 ),
                 sliver: SliverToBoxAdapter(
@@ -324,7 +324,7 @@ class _AudioTrueFalseContentState extends State<_AudioTrueFalseContent> {
               SliverToBoxAdapter(
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 24.w,
+                    horizontal: 20.w,
                     vertical: 16.h,
                   ),
                   child: AudioTrueFalseVerdictButtons(

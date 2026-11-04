@@ -79,7 +79,10 @@ class LanguageSelectionBottomSheet extends StatefulWidget {
 class _LanguageSelectionBottomSheetState
     extends State<LanguageSelectionBottomSheet> {
   final TextEditingController _searchController = TextEditingController();
-  final TranslationService _translationService = di.sl<TranslationService>();
+  final TranslationService _translationService =
+      di.sl.isRegistered<TranslationService>()
+          ? di.sl<TranslationService>()
+          : TranslationService();
 
   List<String> _allLanguages = [];
   List<String> _filteredLanguages = [];
@@ -545,14 +548,14 @@ class _LanguageSelectionBottomSheetState
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16.r),
                     borderSide: BorderSide(
-                      color: isDark ? Colors.white12 : AppColors.slate200,
+                      color: isDark ? Colors.white12 : AppColors.slate100,
                       width: 1.0,
                     ),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16.r),
                     borderSide: BorderSide(
-                      color: isDark ? Colors.white12 : AppColors.slate200,
+                      color: isDark ? Colors.white12 : AppColors.slate100,
                       width: 1.0,
                     ),
                   ),
@@ -790,7 +793,7 @@ class _LanguageSelectionBottomSheetState
         decoration: BoxDecoration(
           color: isDark
               ? Colors.white.withValues(alpha: 0.03)
-              : AppColors.slate50,
+              : AppColors.slate100,
           borderRadius: BorderRadius.circular(16.r),
           border: Border.all(
             color: isDark
@@ -868,7 +871,7 @@ class _LanguageSelectionBottomSheetState
                   ? AppColors.indigo500.withValues(alpha: isDark ? 0.15 : 0.08)
                   : (isDark
                         ? Colors.white.withValues(alpha: 0.03)
-                        : AppColors.slate50),
+                        : AppColors.slate100),
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: isActive

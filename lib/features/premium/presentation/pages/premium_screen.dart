@@ -384,7 +384,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final backgroundColor = isMidnight
         ? Colors.black
-        : (isDark ? AppColors.slate900 : AppColors.slate50);
+        : (isDark ? AppColors.slate900 : AppColors.white);
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(

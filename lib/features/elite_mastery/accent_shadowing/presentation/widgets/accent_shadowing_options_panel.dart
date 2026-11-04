@@ -97,7 +97,7 @@ class AccentShadowingOptionsPanel extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16.r),
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
                 usePremiumStyle: true,
-                showShadow: true,
+                showShadow: false,
                 color: isDark ? Colors.black.withValues(alpha: 0.3) : null,
                 border: Border.all(
                   color: isCorrect

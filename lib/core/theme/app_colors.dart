@@ -177,15 +177,21 @@ class AppColors {
   /// Slate 100 — light surface variant.
   static const Color slate100 = Color(0xFFF1F5F9);
 
-  /// Slate 50 — light scaffold background.
+  /// Slate 50 — soft neutral light tint / dark mode primary text.
   static const Color slate50 = Color(0xFFF8FAFC);
 
   // ─────────────────────────────────────────────────────────────────────────
   // Deep Dark — Midnight / AMOLED surfaces
   // ─────────────────────────────────────────────────────────────────────────
 
+  /// Pure black canvas base for midnight AMOLED mode.
+  static const Color midnightBase = Color(0xFF000000);
+
   /// Near-black card base for midnight mode.
   static const Color midnightSurface = Color(0xFF0B0F19);
+
+  /// Card surface fill for midnight mode.
+  static const Color midnightCard = Color(0xFF0B0F19);
 
   /// Deep dark background for immersive game UIs.
   static const Color deepDark = Color(0xFF0F0F1B);

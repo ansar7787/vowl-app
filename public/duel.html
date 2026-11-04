@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1v1 English Duel Challenge - Vowl</title>
+    <meta name="description" content="Accept the 1v1 English duel challenge on Vowl and play for 50 coins!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-dark: #3730A3;
+            --amber: #F59E0B;
+            --amber-dark: #D97706;
+            --dark: #0A0F1D;
+            --surface: #131A2B;
+            --surface-card: #1E293B;
+            --border: rgba(255, 255, 255, 0.1);
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: radial-gradient(circle at 50% 0%, #1E1B4B 0%, #0A0F1D 70%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 460px;
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 32px 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 60px -15px rgba(245, 158, 11, 0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-accent {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.35) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .brand {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: white;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+        }
+        .brand span { color: var(--amber); }
+
+        .icon-shield {
+            width: 76px;
+            height: 76px;
+            background: linear-gradient(135deg, #F59E0B, #D97706);
+            border-radius: 50%;
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+        .icon-shield svg {
+            width: 38px;
+            height: 38px;
+            fill: white;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.15);
+            color: #FBBF24;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 1.85rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .code-box {
+            background: #070A12;
+            border: 2px dashed rgba(245, 158, 11, 0.45);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 22px;
+        }
+        .code-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #94A3B8;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .code-value {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #FBBF24;
+            letter-spacing: 2px;
+            user-select: all;
+            margin-bottom: 10px;
+            word-break: break-all;
+        }
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .btn-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 20px;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #F59E0B, #D97706);
+            color: white;
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
+        }
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 12px 25px rgba(245, 158, 11, 0.45);
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .instructions {
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .instructions strong { color: white; }
+        .instructions ol { margin-left: 18px; }
+
+        .testing-link {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.78rem;
+            color: #818CF8;
+            text-decoration: none;
+        }
+        .testing-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="glow-accent"></div>
+        <div class="brand">VOWL<span>.</span></div>
+
+        <div class="icon-shield">
+            <svg viewBox="0 0 24 24">
+                <path d="M14.5 17.5L3 6V3h3l11.5 11.5M14.5 6.5L17.5 3.5 20.5 6.5 17.5 9.5M19 14.5L16 17.5M19 8.5L20.5 10 13.5 17 12 15.5M5.5 18.5l-2.5 2.5 2-2z"/>
+            </svg>
+        </div>
+
+        <div class="badge">1v1 Arena Duel</div>
+        <h1>You've Been Challenged!</h1>
+        <p class="subtitle">A friend staked 30 coins that you can't beat their score in rapid English mastery.</p>
+
+        <div class="code-box">
+            <div class="code-label">Room Code</div>
+            <div class="code-value" id="roomCodeDisplay">LOADING...</div>
+            <button class="copy-btn" id="copyBtn" onclick="copyCode()">📋 Copy Code</button>
+        </div>
+
+        <div class="btn-stack">
+            <a class="btn btn-primary" id="openAppBtn" href="#">
+                ⚔️ Open in Vowl App
+            </a>
+            <a class="btn btn-secondary" id="playStoreBtn" href="https://play.google.com/store/apps/details?id=com.vowl.app" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3.609 1.814L13.793 12 3.61 22.186c-.234-.236-.379-.57-.379-.942V2.756c0-.372.145-.706.378-.942zm11.24 11.24l2.094 2.094-11.83 6.83 9.736-8.924zm0-2.108L5.113 2.022l11.83 6.83-2.094 2.094zm1.485 1.054l3.774 2.18c.65.376.65.989 0 1.365l-3.774 2.18-2.37-2.37 2.37-2.355z"/>
+                </svg>
+                Get Vowl on Google Play
+            </a>
+        </div>
+
+        <div class="instructions">
+            <strong>How to join:</strong>
+            <ol>
+                <li>Tap <strong>Open in Vowl App</strong> above.</li>
+                <li>Or open Vowl, go to <strong>Arena &gt; Join Code</strong>, and paste your code.</li>
+                <li>New to Vowl? Install the app to claim your free starting coins and accept the duel!</li>
+            </ol>
+        </div>
+
+        <a class="testing-link" href="https://play.google.com/apps/testing/com.vowl.app" target="_blank" rel="noopener">
+            Enrolled in Google Play Closed Testing? Click here
+        </a>
+    </div>
+
+    <script>
+        function getRoomCode() {
+            const parts = window.location.pathname.split('/').filter(Boolean);
+            if (parts.length >= 2 && parts[0].toLowerCase() === 'duel') {
+                return parts[1].toUpperCase();
+            }
+            const params = new URLSearchParams(window.location.search);
+            if (params.has('code')) {
+                return params.get('code').toUpperCase();
+            }
+            return 'VOWL-DUEL-888';
+        }
+
+        const roomCode = getRoomCode();
+        document.getElementById('roomCodeDisplay').textContent = roomCode;
+
+        const deepLinkUrl = 'vowl://duel/' + encodeURIComponent(roomCode);
+        document.getElementById('openAppBtn').href = deepLinkUrl;
+
+        // Auto-attempt redirect to the app
+        window.onload = function() {
+            setTimeout(function() {
+                window.location.href = deepLinkUrl;
+            }, 300);
+        };
+
+        function copyCode() {
+            navigator.clipboard.writeText(roomCode).then(function() {
+                const btn = document.getElementById('copyBtn');
+                btn.textContent = '✓ Copied!';
+                setTimeout(function() {
+                    btn.textContent = '📋 Copy Code';
+                }, 2000);
+            }).catch(function() {
+                alert('Room code: ' + roomCode);
+            });
+        }
+    </script>
+</body>
+</html>
+

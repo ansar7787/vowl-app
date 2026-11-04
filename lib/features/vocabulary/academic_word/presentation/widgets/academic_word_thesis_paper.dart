@@ -107,17 +107,6 @@ class AcademicWordThesisPaper extends StatelessWidget {
     return BoxDecoration(
       color: isDark ? AcademicWordColors.cardDark : Colors.white,
       borderRadius: BorderRadius.circular(20.r),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black.withValues(alpha: isDark ? 0.35 : 0.08),
-          blurRadius: 24,
-          offset: const Offset(0, 10),
-        ),
-        BoxShadow(
-          color: color.withValues(alpha: isDark ? 0.08 : 0.05),
-          blurRadius: 36,
-        ),
-      ],
       border: Border.all(
         color: isDark
             ? color.withValues(alpha: 0.25)

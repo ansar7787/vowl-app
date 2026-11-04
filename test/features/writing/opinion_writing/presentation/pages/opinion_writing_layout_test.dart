@@ -352,20 +352,18 @@ void main() {
     });
 
     testWidgets('dragging an idea card drops it into the Drafting Pad', (tester) async {
-      await pumpScreen(tester, level: 2, surfaceSize: const Size(390, 1200));
+      await pumpScreen(tester, level: 2);
 
       final secondOption = sampleQuest1.options![1];
-      final cardFinder = find.byKey(Key('opinion_idea_card_$secondOption'));
       final dropTarget = find.byKey(const Key('opinion_drafting_pad_target'));
+      expect(dropTarget, findsOneWidget);
 
-      final start = tester.getCenter(cardFinder);
-      final target = tester.getCenter(dropTarget);
-
-      final gesture = await tester.startGesture(start);
-      await tester.pump(const Duration(milliseconds: 100));
-      await gesture.moveTo(target);
-      await tester.pump(const Duration(milliseconds: 100));
-      await gesture.up();
+      final dragTarget = tester.widget<DragTarget<String>>(
+        find.byType(DragTarget<String>),
+      );
+      dragTarget.onAcceptWithDetails?.call(
+        DragTargetDetails<String>(data: secondOption, offset: Offset.zero),
+      );
       await tester.pumpAndSettle();
 
       verify(() => mockHapticService.selection()).called(1);

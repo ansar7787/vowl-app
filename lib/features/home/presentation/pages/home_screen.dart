@@ -1,5 +1,10 @@
+import 'dart:async';
+import 'dart:math' as math;
+import 'package:confetti/confetti.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,8 +29,7 @@ import 'package:vowl/features/home/presentation/widgets/inline_notification_card
 import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_motivation_card.dart';
 import 'package:vowl/features/home/presentation/widgets/review_mistakes_home_card.dart';
-import 'package:vowl/features/home/presentation/widgets/mystery_chest_dialog.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vowl/features/home/presentation/widgets/daily_mystery_chest_card.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
 import 'package:vowl/features/home/presentation/widgets/beginner_milestone_card.dart';
@@ -47,12 +51,27 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final ValueNotifier<int?> _globalRank = ValueNotifier(null);
   final ValueNotifier<bool> _isRankLoading = ValueNotifier(true);
-  bool _hasCheckedDailyChestThisSession = false;
   bool _bypassBeginnerGate = false;
+
+  final math.Random _random = math.Random();
+  late final ConfettiController _confettiController;
+  final ValueNotifier<List<Map<String, dynamic>>> _activeCoins = ValueNotifier([]);
+
+  static const List<Color> _celebrationConfettiColors = [
+    Color(0xFFFFD700), // Brilliant Gold
+    AppColors.amber500, // Warm Amber
+    AppColors.emerald500, // Emerald Green
+    AppColors.rose500, // Festive Rose
+    AppColors.violet500, // Royal Violet
+    Color(0xFF38BDF8), // Electric Sky Blue
+  ];
 
   @override
   void initState() {
     super.initState();
+    _confettiController = ConfettiController(
+      duration: const Duration(milliseconds: 1400),
+    );
     _fetchGlobalRank();
     // Initial check for reward availability
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -141,9 +160,57 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
+    _confettiController.dispose();
+    _activeCoins.dispose();
     _globalRank.dispose();
     _isRankLoading.dispose();
     super.dispose();
+  }
+
+  void _spawnCoins({required Offset originOffset, required int coins}) {
+    if (!VowlMotion.shouldReduceMotion(context)) {
+      _confettiController.play();
+    }
+
+    final screenWidth = MediaQuery.of(context).size.width;
+    final topPadding = MediaQuery.of(context).padding.top;
+    // Target is the Coins pill inside HomeHeroHeader's top right dual-metric HUD
+    final targetOffset = Offset(screenWidth - 48.w, topPadding + 28.h);
+
+    final count = math.min(15, math.max(8, coins ~/ 3));
+    final newCoins = <Map<String, dynamic>>[];
+    for (int i = 0; i < count; i++) {
+      final id = DateTime.now().millisecondsSinceEpoch + i;
+      final spreadX = (_random.nextDouble() - 0.5) * 80.w;
+      final spreadY = (_random.nextDouble() - 0.5) * 24.h;
+
+      newCoins.add({
+        'id': id,
+        'startX': originOffset.dx + spreadX,
+        'startY': originOffset.dy + spreadY,
+        'targetX': targetOffset.dx,
+        'targetY': targetOffset.dy,
+        'delay': i * 60,
+      });
+    }
+    // Batch assign once — avoids 15 duplicate widget rebuilds
+    _activeCoins.value = newCoins;
+
+    // Clean up entire coin layer once the final coin has arrived and show success snackbar
+    Future.delayed(Duration(milliseconds: 950 + (count * 60)), () {
+      if (mounted) {
+        _activeCoins.value = [];
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'home.chest_coins_claimed_snackbar',
+            fallback: 'Awesome! You received +{0} coins!',
+            args: [coins.toString()],
+          ),
+          type: CustomSnackBarType.success,
+        );
+      }
+    });
   }
 
   @override
@@ -172,49 +239,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 context.read<ProgressionBloc>().add(
                   const ProgressionResetRequested(),
                 );
-                _hasCheckedDailyChestThisSession = false;
                 _globalRank.value = null;
                 _isRankLoading.value = false;
               }
-            },
-          ),
-          BlocListener<EconomyBloc, EconomyState>(
-            listenWhen: (previous, current) =>
-                previous.isDailyRewardAvailable !=
-                    current.isDailyRewardAvailable &&
-                current.isDailyRewardAvailable,
-            listener: (context, state) async {
-              if (_hasCheckedDailyChestThisSession) return;
-              _hasCheckedDailyChestThisSession = true;
-
-              final userId = context.read<AuthBloc>().state.user?.id;
-
-              // Double-guard against midnight time-zone skew or fast restarts
-              // using persistent SharedPreferences.
-              try {
-                final prefs = await SharedPreferences.getInstance();
-                final nowLocal = DateTime.now().toLocal();
-                final todayStr =
-                    '${nowLocal.year}-${nowLocal.month.toString().padLeft(2, '0')}-${nowLocal.day.toString().padLeft(2, '0')}';
-                final localDate =
-                    prefs.getString('last_daily_mystery_claimed_date');
-                final userDate = userId != null && userId.isNotEmpty
-                    ? prefs.getString('last_daily_mystery_claimed_date_$userId')
-                    : null;
-                final isClaimedLocally = userId != null && userId.isNotEmpty
-                    ? userDate == todayStr
-                    : localDate == todayStr;
-                if (isClaimedLocally) {
-                  return;
-                }
-              } catch (_) {}
-
-              if (!context.mounted) return;
-              showDialog(
-                context: context,
-                barrierDismissible: false,
-                builder: (context) => const MysteryChestDialog(),
-              );
             },
           ),
         ],
@@ -265,8 +292,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 RefreshIndicator(
                   onRefresh: () async {
                     context.read<AuthBloc>().add(const AuthReloadUser());
-                    // Keep _hasCheckedDailyChestThisSession intact during pull-to-refresh
-                    // so users are never interrupted with a modal dialog while browsing.
+                    // Re-check daily reward availability on pull-to-refresh
                     context.read<EconomyBloc>().add(
                       const EconomyCheckDailyRewardRequested(),
                     );
@@ -293,7 +319,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       // 1. HERO HEADER (Identity & XP)
                       // --------------------------------------------------
                       SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
                         sliver: SliverToBoxAdapter(
                           child: HomeHeroHeader(user: user),
                         ),
@@ -309,10 +335,19 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
 
                       // --------------------------------------------------
+                      // 1.6 DAILY MYSTERY CHEST (Conditional Inline Claim)
+                      // --------------------------------------------------
+                      SliverToBoxAdapter(
+                        child: DailyMysteryChestCard(
+                          onClaimed: _spawnCoins,
+                        ),
+                      ),
+
+                      // --------------------------------------------------
                       // 2. PRIMARY CTA — "Continue Learning"
                       // --------------------------------------------------
                       SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
@@ -327,7 +362,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       // 3. UNIFIED STATS ROW (Streak | Coins | Badges | Level)
                       // --------------------------------------------------
                       SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
@@ -357,7 +392,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       // --------------------------------------------------
                       if (!_bypassBeginnerGate && user.totalLevelsCompleted < 2) ...[
                         SliverPadding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          padding: EdgeInsets.symmetric(horizontal: 20.w),
                           sliver: SliverToBoxAdapter(
                             child: Column(
                               children: [
@@ -377,7 +412,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         // 4. CURRICULUM BENTO ARENA + WEAK-SPOT REVIEW
                         // --------------------------------------------------
                         SliverPadding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          padding: EdgeInsets.symmetric(horizontal: 20.w),
                           sliver: SliverToBoxAdapter(
                             child: Column(
                               children: [
@@ -410,7 +445,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         // 5. PROGRESS CARD (Total levels + Rank)
                         // --------------------------------------------------
                         SliverPadding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          padding: EdgeInsets.symmetric(horizontal: 20.w),
                           sliver: SliverToBoxAdapter(
                             child: Column(
                               children: [
@@ -474,7 +509,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       // 8. DAILY NOTE / LANGUAGE NOTE
                       // --------------------------------------------------
                       SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
                         sliver: SliverList(
                           delegate: SliverChildListDelegate([
                             SizedBox(height: 24.h),
@@ -490,6 +525,42 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ],
+                  ),
+                ),
+
+                // ── Celebratory Full-Screen Multi-Color Confetti ─────────────
+                IgnorePointer(
+                  child: Align(
+                    alignment: Alignment.topCenter,
+                    child: ConfettiWidget(
+                      confettiController: _confettiController,
+                      blastDirectionality: BlastDirectionality.explosive,
+                      shouldLoop: false,
+                      colors: _celebrationConfettiColors,
+                      numberOfParticles: 30,
+                      emissionFrequency: 0.04,
+                      gravity: 0.25,
+                    ),
+                  ),
+                ),
+
+                // ── Floating Luxury Gold Coins Trajectory Layer ─────────────
+                IgnorePointer(
+                  child: ValueListenableBuilder<List<Map<String, dynamic>>>(
+                    valueListenable: _activeCoins,
+                    builder: (context, coins, _) {
+                      return Stack(
+                        children: coins.map((coin) {
+                          return _HomeFloatingCoin(
+                            startX: coin['startX'],
+                            startY: coin['startY'],
+                            targetX: coin['targetX'],
+                            targetY: coin['targetY'],
+                            delay: coin['delay'],
+                          );
+                        }).toList(),
+                      );
+                    },
                   ),
                 ),
               ],
@@ -508,6 +579,124 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     context.push(
       '${AppRouter.questSequenceRoute}?id=${Uri.encodeQueryComponent(questId)}',
+    );
+  }
+}
+
+/// A luxury gold coin widget that arcs smoothly from the mystery chest card
+/// into the top-right Coins HUD capsule in [HomeHeroHeader].
+class _HomeFloatingCoin extends StatefulWidget {
+  final double startX, startY, targetX, targetY;
+  final int delay;
+
+  const _HomeFloatingCoin({
+    required this.startX,
+    required this.startY,
+    required this.targetX,
+    required this.targetY,
+    required this.delay,
+  });
+
+  @override
+  State<_HomeFloatingCoin> createState() => _HomeFloatingCoinState();
+}
+
+class _HomeFloatingCoinState extends State<_HomeFloatingCoin>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animX;
+  late Animation<double> _animY;
+  late Animation<double> _animScale;
+  late Animation<double> _animOpacity;
+  Timer? _delayTimer;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 750),
+    );
+
+    _animX = Tween<double>(
+      begin: widget.startX,
+      end: widget.targetX,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOutCubic));
+
+    // Upward curved arc into the top-right coin capsule
+    _animY = Tween<double>(
+      begin: widget.startY,
+      end: widget.targetY,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInQuad));
+
+    _animScale = TweenSequence([
+      TweenSequenceItem(tween: Tween<double>(begin: 0.2, end: 1.35), weight: 35),
+      TweenSequenceItem(tween: Tween<double>(begin: 1.35, end: 0.8), weight: 65),
+    ]).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
+
+    _animOpacity = TweenSequence([
+      TweenSequenceItem(tween: Tween<double>(begin: 0.0, end: 1.0), weight: 15),
+      TweenSequenceItem(tween: Tween<double>(begin: 1.0, end: 1.0), weight: 70),
+      TweenSequenceItem(tween: Tween<double>(begin: 1.0, end: 0.0), weight: 15),
+    ]).animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
+
+    _delayTimer = Timer(Duration(milliseconds: widget.delay), () {
+      if (mounted) _controller.forward();
+    });
+  }
+
+  @override
+  void dispose() {
+    _delayTimer?.cancel();
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) {
+        return Positioned(
+          left: _animX.value - 13.r,
+          top: _animY.value - 13.r,
+          child: Opacity(
+            opacity: _animOpacity.value,
+            child: Transform.scale(
+              scale: _animScale.value,
+              child: Container(
+                width: 26.r,
+                height: 26.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFFFFDF00), Color(0xFFF59E0B)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.amber500.withValues(alpha: 0.45),
+                      blurRadius: 8.r,
+                    ),
+                  ],
+                  border: Border.all(
+                    color: Colors.white.withValues(alpha: 0.9),
+                    width: 1.5.r,
+                  ),
+                ),
+                child: Center(
+                  child: Icon(
+                    Icons.paid_rounded,
+                    color: Colors.white,
+                    size: 15.r,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

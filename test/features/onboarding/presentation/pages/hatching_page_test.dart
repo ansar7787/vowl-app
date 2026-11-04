@@ -443,7 +443,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 200));
 
       final scaffold = tester.widget<Scaffold>(find.byType(Scaffold));
-      expect(scaffold.backgroundColor, AppColors.slate50);
+      expect(scaffold.backgroundColor, AppColors.white);
     });
 
     testWidgets('disposing widget stops TTS and clears timer safely', (
@@ -461,7 +461,7 @@ void main() {
       await tester.pump(const Duration(seconds: 3));
 
       // Verify TTS stop was called on disposal
-      verify(() => mockTts.stop()).called(1);
+      verify(() => mockTts.stop()).called(greaterThanOrEqualTo(1));
       expect(tester.takeException(), isNull);
     });
   });

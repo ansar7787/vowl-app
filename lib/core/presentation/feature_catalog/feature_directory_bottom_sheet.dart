@@ -122,6 +122,8 @@ class _FeatureDirectoryBottomSheetState
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final mediaQuery = MediaQuery.of(context);
     final bottomInset = mediaQuery.padding.bottom;
     final viewInsetsBottom = mediaQuery.viewInsets.bottom;
@@ -138,15 +140,19 @@ class _FeatureDirectoryBottomSheetState
             maxHeight: mediaQuery.size.height * 0.90,
           ),
           decoration: BoxDecoration(
-            color: isDark
-                ? const Color(0xFF13141C).withValues(alpha: 0.96)
-                : Colors.white.withValues(alpha: 0.97),
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (isDark
+                    ? const Color(0xFF13141C).withValues(alpha: 0.96)
+                    : Colors.white.withValues(alpha: 0.97)),
             borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
             border: Border(
               top: BorderSide(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.08)
-                    : Colors.black.withValues(alpha: 0.06),
+                color: isMidnight
+                    ? Colors.white.withValues(alpha: 0.12)
+                    : (isDark
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : AppColors.slate100),
               ),
             ),
           ),
@@ -362,14 +368,14 @@ class _FeatureDirectoryBottomSheetState
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16.r),
                       borderSide: BorderSide(
-                        color: isDark ? Colors.white12 : AppColors.slate200,
+                        color: isDark ? Colors.white12 : AppColors.slate100,
                         width: 1.0,
                       ),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16.r),
                       borderSide: BorderSide(
-                        color: isDark ? Colors.white12 : AppColors.slate200,
+                        color: isDark ? Colors.white12 : AppColors.slate100,
                         width: 1.0,
                       ),
                     ),
@@ -420,7 +426,7 @@ class _FeatureDirectoryBottomSheetState
                     ? Center(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
-                            horizontal: 24.w,
+                            horizontal: 20.w,
                             vertical: 32.h,
                           ),
                           child: Column(
@@ -532,7 +538,7 @@ class _FeatureDirectoryBottomSheetState
                         separatorBuilder: (_, _) => SizedBox(height: 8.h),
                         itemBuilder: (context, index) {
                           final item = features[index];
-                          return _buildFeatureCard(item, isDark);
+                          return _buildFeatureCard(item, isDark, isMidnight);
                         },
                       ),
               ),
@@ -616,7 +622,7 @@ class _FeatureDirectoryBottomSheetState
     );
   }
 
-  Widget _buildFeatureCard(AppFeatureItem item, bool isDark) {
+  Widget _buildFeatureCard(AppFeatureItem item, bool isDark, bool isMidnight) {
     final semanticLabel =
         '${item.title}, ${item.category.label}. '
         '${item.badge != null ? "${item.badge!}. " : ""}'
@@ -635,20 +641,26 @@ class _FeatureDirectoryBottomSheetState
             constraints: BoxConstraints(minHeight: 74.h),
             padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
             decoration: BoxDecoration(
-              color: isDark
+              color: isMidnight
                   ? (item.isHighlight
-                        ? item.accentColor.withValues(alpha: 0.08)
-                        : const Color(0xFF1A1C26))
-                  : (item.isHighlight
-                        ? item.accentColor.withValues(alpha: 0.04)
-                        : Colors.white),
+                        ? item.accentColor.withValues(alpha: 0.12)
+                        : AppColors.midnightSurface)
+                  : (isDark
+                        ? (item.isHighlight
+                              ? item.accentColor.withValues(alpha: 0.08)
+                              : const Color(0xFF1A1C26))
+                        : (item.isHighlight
+                              ? item.accentColor.withValues(alpha: 0.04)
+                              : Colors.white)),
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: item.isHighlight
                     ? item.accentColor.withValues(alpha: isDark ? 0.35 : 0.25)
-                    : (isDark
-                          ? Colors.white.withValues(alpha: 0.06)
-                          : const Color(0xFFE2E8F0)),
+                    : (isMidnight
+                          ? Colors.white.withValues(alpha: 0.12)
+                          : (isDark
+                                ? Colors.white.withValues(alpha: 0.08)
+                                : AppColors.slate100)),
                 width: 1.0,
               ),
             ),

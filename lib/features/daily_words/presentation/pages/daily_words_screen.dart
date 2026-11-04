@@ -850,7 +850,10 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
           },
           child: Scaffold(
             resizeToAvoidBottomInset: false,
-            backgroundColor: isDark ? AppColors.slate900 : Colors.white,
+            backgroundColor: (isDark &&
+                    Theme.of(context).scaffoldBackgroundColor == Colors.black)
+                ? Colors.black
+                : (isDark ? AppColors.slate900 : Colors.white),
             body: Stack(
               children: [
                 const MeshGradientBackground(showLetters: false),
@@ -973,7 +976,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
                 child: Row(
                   children: [
                     Semantics(
@@ -1128,7 +1131,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 14.w,
+                    horizontal: 20.w,
                     vertical: 12.h,
                   ),
                   child: SlideTransition(

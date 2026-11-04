@@ -49,14 +49,6 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
             : Colors.black.withValues(alpha: 0.08),
         width: 1.2,
       ),
-      boxShadow: [
-        if (!isDark)
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.03),
-            blurRadius: 10,
-            offset: const Offset(0, 3),
-          ),
-      ],
     );
 
     if (startIdx == -1 || endIdx == -1) {

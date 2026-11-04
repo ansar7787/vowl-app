@@ -247,7 +247,7 @@ class StreakCalendar extends StatelessWidget {
               currentStreak: user.currentStreak,
             );
 
-            final bool isPlayed = xp > 0 || isStreakDay;
+            final bool isPlayed = isToday ? xp > 0 : (xp > 0 || isStreakDay);
             final bool isFrozen = xp == 0 && isStreakDay && !isToday;
 
             final dayLabel = isFuture

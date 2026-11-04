@@ -134,15 +134,6 @@ class _WordMixerHintCardState extends State<WordMixerHintCard> {
                         : AppColors.slate200),
                 width: expanded ? 1.5.w : 1.w,
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: expanded
-                      ? widget.primaryColor.withValues(alpha: isDark ? 0.15 : 0.06)
-                      : Colors.black.withValues(alpha: isDark ? 0.15 : 0.03),
-                  blurRadius: expanded ? 16 : 8,
-                  offset: const Offset(0, 4),
-                ),
-              ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

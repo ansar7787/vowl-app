@@ -138,6 +138,8 @@ class GameFeedbackCard extends StatelessWidget {
 
     final bool showEducationalInfo = success || isFinalFailure;
     final bool showPedagogicalFields = showEducationalInfo && !isTwoStageGame;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     final mediaQuery = MediaQuery.of(context);
     // Use viewPadding.bottom to accurately detect physical hardware or software
@@ -156,14 +158,18 @@ class GameFeedbackCard extends StatelessWidget {
       child: Container(
         width: double.infinity,
         constraints: BoxConstraints(maxHeight: maxHeight),
-        padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, bottomPadding),
+        padding: EdgeInsets.fromLTRB(20.w, 20.h, 20.w, bottomPadding),
         decoration: BoxDecoration(
-          color: isDark
-              ? Colors.black.withValues(alpha: 0.85)
-              : Colors.white.withValues(alpha: 0.95),
+          color: isMidnight
+              ? AppColors.midnightSurface
+              : (isDark ? AppColors.slate900 : Colors.white),
           borderRadius: BorderRadius.vertical(top: Radius.circular(36.r)),
           border: Border.all(
-            color: Colors.white.withValues(alpha: 0.1),
+            color: isMidnight
+                ? Colors.white.withValues(alpha: 0.12)
+                : (isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : AppColors.slate100),
             width: 1.5,
           ),
           boxShadow: [

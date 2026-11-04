@@ -41,7 +41,7 @@ class AdventureDailyXpChart extends StatelessWidget {
       children: [
         // ── Section header with weekly total ──
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.r),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -71,11 +71,11 @@ class AdventureDailyXpChart extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 16.r),
+        SizedBox(height: 16.h),
 
         // ── Chart or empty state ──
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.r),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: GlassTile(
             blur: 0,
             padding: EdgeInsets.all(20.r),

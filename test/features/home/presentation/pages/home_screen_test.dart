@@ -33,7 +33,7 @@ import 'package:vowl/features/home/presentation/widgets/daily_motivation_card.da
 import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 import 'package:vowl/features/home/presentation/widgets/global_progress_card.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
-import 'package:vowl/features/home/presentation/widgets/mystery_chest_dialog.dart';
+import 'package:vowl/features/home/presentation/widgets/daily_mystery_chest_card.dart';
 import 'package:vowl/features/home/presentation/widgets/review_mistakes_home_card.dart';
 import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
@@ -881,7 +881,7 @@ void main() {
     );
 
     testWidgets(
-      'presents MysteryChestDialog when EconomyState.isDailyRewardAvailable transitions to true',
+      'displays DailyMysteryChestCard when EconomyState.isDailyRewardAvailable transitions to true',
       (tester) async {
         final economyStreamController =
             StreamController<EconomyState>.broadcast();
@@ -893,7 +893,7 @@ void main() {
 
         await pumpHomeScreen(tester);
 
-        expect(find.byType(MysteryChestDialog), findsNothing);
+        expect(find.text('DAILY MYSTERY'), findsNothing);
 
         // Emit reward available
         economyStreamController.add(
@@ -902,7 +902,8 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
 
-        expect(find.byType(MysteryChestDialog), findsOneWidget);
+        expect(find.byType(DailyMysteryChestCard), findsOneWidget);
+        expect(find.text('DAILY MYSTERY'), findsOneWidget);
 
         await economyStreamController.close();
       },
