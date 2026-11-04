@@ -1420,6 +1420,41 @@ class VowlCoinsScreen extends StatelessWidget {
           'coin_history.purchased_coin_pack',
           fallback: 'Purchased Coin Pack',
         );
+      case 'coin_history.arena_duel_stake':
+        return context.tr(
+          'coin_history.arena_duel_stake',
+          fallback: '1v1 Arena Duel Stake',
+        );
+      case 'coin_history.arena_duel_win':
+        return context.tr(
+          'coin_history.arena_duel_win',
+          fallback: '1v1 Arena Victory Bounty',
+        );
+      case 'coin_history.arena_duel_consolation':
+        return context.tr(
+          'coin_history.arena_duel_consolation',
+          fallback: '1v1 Arena Consolation Prize',
+        );
+      case 'coin_history.arena_duel_refund':
+        return context.tr(
+          'coin_history.arena_duel_refund',
+          fallback: '1v1 Arena Draw Refund',
+        );
+      case 'coin_history.referral_welcome':
+        return context.tr(
+          'coin_history.referral_welcome',
+          fallback: 'Referral Welcome Bonus',
+        );
+      case 'coin_history.referral_reward':
+        return context.tr(
+          'coin_history.referral_reward',
+          fallback: 'Ambassador Referral Reward',
+        );
+      case 'coin_history.ambassador_cup_reward':
+        return context.tr(
+          'coin_history.ambassador_cup_reward',
+          fallback: 'Ambassador Cup Prize',
+        );
       default:
         // Legacy raw-English entries or unknown keys — display as-is.
         return rawKey;

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math' as math;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
@@ -6,11 +7,13 @@ import 'package:flutter/foundation.dart';
 
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/error/failures.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/data/datasources/auth_local_data_source.dart';
 import 'package:vowl/features/auth/data/models/user_model.dart';
 import 'package:vowl/features/auth/data/repositories/firebase_failure_handler_mixin.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/repositories/gamification_repository.dart';
+import 'package:vowl/features/referral/domain/repositories/referral_repository.dart';
 
 /// Concrete implementation of [GamificationRepository] handling atomic writes
 /// and progress tracking.
@@ -469,10 +472,40 @@ class GamificationRepositoryImpl
       );
     }
 
+    // ---- Anti-Fraud Referral Milestone Activation: Adventure Level 1 ----
+    int referralBonusCoins = 0;
+    final bool activatesReferral = !isVaultReward &&
+        level == 1 &&
+        userData.pendingReferralCode != null &&
+        userData.pendingReferralCode!.trim().isNotEmpty &&
+        !userData.hasClaimedReferral;
+
+    if (activatesReferral) {
+      referralBonusCoins = 100;
+      coinHistoryList = _recordCoinHistory(
+        coinHistoryList,
+        titleKey: 'coin_history.referral_welcome',
+        amount: 100,
+        isEarned: true,
+      );
+
+      final pendingCode = userData.pendingReferralCode!.trim().toUpperCase();
+      try {
+        if (di.sl.isRegistered<ReferralRepository>()) {
+          unawaited(di.sl<ReferralRepository>().onFriendCompletedLevelOne(
+            friendUserId: userData.id,
+            referrerCode: pendingCode,
+          ));
+        }
+      } catch (e) {
+        debugPrint('[GamificationRepositoryImpl] Friend milestone notify error: $e');
+      }
+    }
+
     final updates = <String, dynamic>{
       'totalExp': userData.totalExp + finalXpIncrease,
       (isKidsGame ? 'kidsCoins' : 'coins'): FieldValue.increment(
-        finalCoinIncrease,
+        finalCoinIncrease + referralBonusCoins,
       ),
       'lastRewardTimestamp': FieldValue.serverTimestamp(),
       'coinHistory': coinHistoryList,
@@ -482,6 +515,22 @@ class GamificationRepositoryImpl
       'unlockedLevels': unlockedLevels,
       'starRatings': starRatings,
     };
+
+    if (activatesReferral) {
+      final pendingCode = userData.pendingReferralCode!.trim().toUpperCase();
+      updates['hasClaimedReferral'] = true;
+      updates['referredBy'] = pendingCode;
+      updates['pendingReferralCode'] = null;
+
+      final DateTime newExpiry;
+      if (userData.hasActivePremium && userData.premiumExpiryDate != null) {
+        newExpiry = userData.premiumExpiryDate!.add(const Duration(days: 1));
+      } else {
+        newExpiry = now.add(const Duration(days: 1));
+      }
+      updates['isPremium'] = true;
+      updates['premiumExpiryDate'] = Timestamp.fromDate(newExpiry);
+    }
 
     if (updatedStreak != null) {
       updates['currentStreak'] = updatedStreak;

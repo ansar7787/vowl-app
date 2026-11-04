@@ -145,7 +145,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
     // latency, reduce Firestore reads, and make the screen open instantaneously.
     // Plans will be lazily loaded only if the user explicitly taps "Extend Membership".
     final user = context.read<AuthBloc>().state.user;
-    if (user?.isPremium == true && !_showExtendPlans) {
+    if (user?.hasActivePremium == true && !_showExtendPlans) {
       return;
     }
 
@@ -255,7 +255,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
       await Future.delayed(const Duration(milliseconds: 1200));
       if (!mounted) return;
 
-      if (context.read<AuthBloc>().state.user?.isPremium == true) {
+      if (context.read<AuthBloc>().state.user?.hasActivePremium == true) {
         di.sl<AppLogger>().debug(
           'User already has active premium status in Firestore. Displaying success overlay.',
         );
@@ -290,7 +290,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
       await Future.delayed(const Duration(milliseconds: 800));
       if (!mounted) return;
 
-      if (context.read<AuthBloc>().state.user?.isPremium == true) {
+      if (context.read<AuthBloc>().state.user?.hasActivePremium == true) {
         triggerCelebration();
         return;
       }
@@ -1023,7 +1023,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   Widget _buildScrollableBody() {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final user = context.watch<AuthBloc>().state.user;
-    final isPremium = user?.isPremium ?? false;
+    final isPremium = user?.hasActivePremium ?? false;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -1032,6 +1032,35 @@ class _PremiumScreenState extends State<PremiumScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           if (!isPremium) ...[
+            if (user?.premiumExpiryDate != null) ...[
+              SizedBox(height: 12.h),
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+                decoration: BoxDecoration(
+                  color: AppColors.rose500.withValues(alpha: 0.12),
+                  borderRadius: BorderRadius.circular(12.r),
+                  border: Border.all(color: AppColors.rose500.withValues(alpha: 0.3)),
+                ),
+                child: Row(
+                  children: [
+                    Icon(LucideIcons.alertCircle, color: AppColors.rose500, size: 16.sp),
+                    SizedBox(width: 8.w),
+                    Expanded(
+                      child: Text(
+                        'Your Pro Membership expired on ${DateFormat.yMMMd().format(user!.premiumExpiryDate!.toLocal())}. Renew below to restore VIP benefits!',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          color: isDark ? Colors.white : AppColors.slate900,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
             SizedBox(height: 16.h),
             const PremiumHero(),
             SizedBox(height: 24.h),

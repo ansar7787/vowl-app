@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
+import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/arena/data/services/arena_curriculum_engine.dart';
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
@@ -316,6 +317,25 @@ class ArenaRepositoryImpl implements ArenaRepository {
     }
   }
 
+  static List<Map<String, dynamic>> _recordCoinHistory(
+    List<Map<String, dynamic>> existing, {
+    required String titleKey,
+    required int amount,
+    required bool isEarned,
+  }) {
+    final updated = List<Map<String, dynamic>>.from(existing)
+      ..insert(0, {
+        'titleKey': titleKey,
+        'amount': amount,
+        'isEarned': isEarned,
+        'date': DateTime.now().toIso8601String(),
+      });
+    if (updated.length > UserGameConstants.kActivityHistoryLimit) {
+      return updated.sublist(0, UserGameConstants.kActivityHistoryLimit);
+    }
+    return updated;
+  }
+
   @override
   Future<void> completeMatch({
     required String roomCode,
@@ -324,24 +344,46 @@ class ArenaRepositoryImpl implements ArenaRepository {
     required bool isDraw,
   }) async {
     final int payout;
+    final String titleKey;
     if (isDraw) {
       payout = _kStakeCoins; // 30 back to each
+      titleKey = 'coin_history.arena_duel_refund';
     } else if (isWinner) {
       payout = _kWinnerPayout; // 50 to winner
+      titleKey = 'coin_history.arena_duel_win';
     } else {
       payout = _kLoserPayout; // 10 to loser
+      titleKey = 'coin_history.arena_duel_consolation';
     }
 
-    // Update user profile in Firestore
-    final userRef = _firestore.collection('users').doc(currentUser.id);
-    await userRef.update({
-      'coins': FieldValue.increment(payout),
-      if (isWinner) 'duelWins': FieldValue.increment(1),
-      if (!isWinner && !isDraw) 'duelLosses': FieldValue.increment(1),
-      'dailyDuelsPlayedToday': FieldValue.increment(1),
-      'lastDuelDate': FieldValue.serverTimestamp(),
-      'lastRewardTimestamp': FieldValue.serverTimestamp(),
-    });
+    try {
+      final userDoc = await _firestore.collection('users').doc(currentUser.id).get().timeout(_kNetworkTimeout);
+      final rawHistory = (userDoc.data()?['coinHistory'] as List<dynamic>?)
+              ?.map((e) => Map<String, dynamic>.from(e as Map))
+              .toList() ??
+          [];
+      final updatedHistory = _recordCoinHistory(
+        rawHistory,
+        titleKey: titleKey,
+        amount: payout,
+        isEarned: true,
+      );
+
+      // Update user profile in Firestore
+      final userRef = _firestore.collection('users').doc(currentUser.id);
+      await userRef.update({
+        'coins': FieldValue.increment(payout),
+        if (isWinner) 'totalExp': FieldValue.increment(5), // +5 XP TO DUEL WINNER
+        if (isWinner) 'duelWins': FieldValue.increment(1),
+        if (!isWinner && !isDraw) 'duelLosses': FieldValue.increment(1),
+        'dailyDuelsPlayedToday': FieldValue.increment(1),
+        'coinHistory': updatedHistory,
+        'lastDuelDate': FieldValue.serverTimestamp(),
+        'lastRewardTimestamp': FieldValue.serverTimestamp(),
+      });
+    } catch (e) {
+      debugPrint('[ArenaRepositoryImpl] completeMatch user update error: $e');
+    }
 
     try {
       final docRef = _firestore.collection('arena_rooms').doc(roomCode.trim().toUpperCase());
@@ -372,8 +414,19 @@ class ArenaRepositoryImpl implements ArenaRepository {
       if (currentCoins < _kStakeCoins) {
         throw Exception('Insufficient coins for duel stake.');
       }
+      final rawHistory = (userDoc.data()?['coinHistory'] as List<dynamic>?)
+              ?.map((e) => Map<String, dynamic>.from(e as Map))
+              .toList() ??
+          [];
+      final updatedHistory = _recordCoinHistory(
+        rawHistory,
+        titleKey: 'coin_history.arena_duel_stake',
+        amount: -_kStakeCoins,
+        isEarned: false,
+      );
       await _firestore.collection('users').doc(userId).update({
         'coins': FieldValue.increment(-_kStakeCoins),
+        'coinHistory': updatedHistory,
       }).timeout(_kNetworkTimeout);
     } catch (e) {
       debugPrint('[ArenaRepositoryImpl] Deduct stake error: $e');
@@ -383,8 +436,20 @@ class ArenaRepositoryImpl implements ArenaRepository {
 
   Future<void> _refundEntryStake(String userId) async {
     try {
+      final userDoc = await _firestore.collection('users').doc(userId).get().timeout(_kNetworkTimeout);
+      final rawHistory = (userDoc.data()?['coinHistory'] as List<dynamic>?)
+              ?.map((e) => Map<String, dynamic>.from(e as Map))
+              .toList() ??
+          [];
+      final updatedHistory = _recordCoinHistory(
+        rawHistory,
+        titleKey: 'coin_history.arena_duel_refund',
+        amount: _kStakeCoins,
+        isEarned: true,
+      );
       await _firestore.collection('users').doc(userId).update({
         'coins': FieldValue.increment(_kStakeCoins),
+        'coinHistory': updatedHistory,
       }).timeout(_kNetworkTimeout);
     } catch (e) {
       debugPrint('[ArenaRepositoryImpl] Refund stake error: $e');

@@ -364,6 +364,16 @@ class AuthRepositoryImpl
               doc.data()!,
               doc.id,
             ).copyWith(isEmailVerified: firebaseUser.emailVerified);
+
+            // Auto-heal expired subscription status in Firestore
+            if (doc.data()?['isPremium'] == true && !user.isPremium) {
+              unawaited(_firestore
+                  .collection('users')
+                  .doc(firebaseUser.uid)
+                  .update({'isPremium': false})
+                  .catchError((_) {}));
+            }
+
             await _localDataSource.cacheUser(user);
             return Right(user);
           } catch (e, stack) {
@@ -625,6 +635,16 @@ class AuthRepositoryImpl
 
           if (doc != null && doc.exists && doc.data() != null) {
             final userModel = UserModel.fromMap(doc.data()!, doc.id);
+
+            // Auto-heal expired subscription status in Firestore
+            if (doc.data()?['isPremium'] == true && !userModel.isPremium) {
+              unawaited(_firestore
+                  .collection('users')
+                  .doc(refreshedUser.uid)
+                  .update({'isPremium': false})
+                  .catchError((_) {}));
+            }
+
             final effectiveName = (userModel.displayName != null &&
                     userModel.displayName!.trim().isNotEmpty)
                 ? userModel.displayName

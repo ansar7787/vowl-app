@@ -64,6 +64,28 @@ void main() {
       expect(item.rewardTier.vipDays, 0);
       expect(item.rewardTier.coins, 0);
     });
+
+    test('strictly assigns none tier if referralCount is 0, even for top ranks', () {
+      const rankOneZeroRef = AmbassadorLeaderboardItem(
+        userId: 'u0',
+        displayName: 'Zero Ref Player',
+        referralCount: 0,
+        rank: 1,
+      );
+      expect(rankOneZeroRef.rewardTier, AmbassadorRewardTier.none);
+      expect(rankOneZeroRef.rewardTier.vipDays, 0);
+      expect(rankOneZeroRef.rewardTier.coins, 0);
+
+      const rankFiveZeroRef = AmbassadorLeaderboardItem(
+        userId: 'u5',
+        displayName: 'Zero Ref Top 10',
+        referralCount: 0,
+        rank: 5,
+      );
+      expect(rankFiveZeroRef.rewardTier, AmbassadorRewardTier.none);
+      expect(rankFiveZeroRef.rewardTier.vipDays, 0);
+      expect(rankFiveZeroRef.rewardTier.coins, 0);
+    });
   });
 
   group('ReferralClaimResult', () {
@@ -74,9 +96,22 @@ void main() {
         referrerName: 'John',
       );
       expect(res.success, true);
+      expect(res.isPending, false);
       expect(res.coinsAwarded, 100);
       expect(res.vipDaysAwarded, 1);
       expect(res.referrerName, 'John');
+    });
+
+    test('pending factory creates valid milestone pending object', () {
+      final res = ReferralClaimResult.pending(
+        referrerName: 'Alice',
+      );
+      expect(res.success, true);
+      expect(res.isPending, true);
+      expect(res.coinsAwarded, 0);
+      expect(res.vipDaysAwarded, 0);
+      expect(res.referrerName, 'Alice');
+      expect(res.message.contains('Adventure Level 1'), true);
     });
 
     test('failure factory creates valid object', () {

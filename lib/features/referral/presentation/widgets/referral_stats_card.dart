@@ -9,6 +9,10 @@ class ReferralStatsCard extends StatelessWidget {
   final int lifetimeCount;
   final int monthlyCount;
   final bool hasClaimedReferral;
+  final String? pendingReferralCode;
+  final String? referredBy;
+  final bool hasActivePremium;
+  final DateTime? premiumExpiryDate;
   final bool isCopied;
   final VoidCallback onCopy;
   final VoidCallback onShare;
@@ -20,11 +24,21 @@ class ReferralStatsCard extends StatelessWidget {
     required this.lifetimeCount,
     required this.monthlyCount,
     required this.hasClaimedReferral,
+    this.pendingReferralCode,
+    this.referredBy,
+    this.hasActivePremium = false,
+    this.premiumExpiryDate,
     required this.isCopied,
     required this.onCopy,
     required this.onShare,
     required this.onEnterCode,
   });
+
+  String _formatDate(DateTime dt) {
+    final local = dt.toLocal();
+    final months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return '${months[local.month - 1]} ${local.day}, ${local.year}';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -174,6 +188,48 @@ class ReferralStatsCard extends StatelessWidget {
             ),
           ),
 
+          SizedBox(height: 12.h),
+
+          // VIP Stacking Status Banner
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+            decoration: BoxDecoration(
+              color: hasActivePremium
+                  ? const Color(0xFFF59E0B).withValues(alpha: 0.12)
+                  : AppColors.indigo500.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(10.r),
+              border: Border.all(
+                color: hasActivePremium
+                    ? const Color(0xFFF59E0B).withValues(alpha: 0.3)
+                    : AppColors.indigo500.withValues(alpha: 0.2),
+              ),
+            ),
+            child: Row(
+              children: [
+                Icon(
+                  hasActivePremium ? LucideIcons.crown : LucideIcons.sparkles,
+                  size: 15.sp,
+                  color: hasActivePremium ? const Color(0xFFF59E0B) : AppColors.indigo500,
+                ),
+                SizedBox(width: 8.w),
+                Expanded(
+                  child: Text(
+                    hasActivePremium && premiumExpiryDate != null
+                        ? 'VIP Active until ${_formatDate(premiumExpiryDate!)} • Each friend extends by +24 Hours'
+                        : 'Get 100 Coins + 1 Day VIP for each friend who completes Level 1!',
+                    style: TextStyle(
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w600,
+                      color: hasActivePremium
+                          ? (isDark ? const Color(0xFFFCD34D) : const Color(0xFFB45309))
+                          : (isDark ? const Color(0xFFA5B4FC) : const Color(0xFF4338CA)),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
           SizedBox(height: 14.h),
 
           // Primary Share Button
@@ -181,7 +237,7 @@ class ReferralStatsCard extends StatelessWidget {
             onPressed: onShare,
             icon: Icon(LucideIcons.share2, size: 16.sp),
             label: Text(
-              'Share Invite Link',
+              'Share Invite Link & Card',
               style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w700),
             ),
             style: ElevatedButton.styleFrom(
@@ -195,9 +251,72 @@ class ReferralStatsCard extends StatelessWidget {
             ),
           ),
 
-          // Claim friend code entry (only visible if user hasn't claimed one yet)
-          if (!hasClaimedReferral) ...[
-            SizedBox(height: 10.h),
+          // Section 1 Code Status / Input
+          SizedBox(height: 12.h),
+          if (hasClaimedReferral) ...[
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+              decoration: BoxDecoration(
+                color: AppColors.emerald500.withValues(alpha: 0.12),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(color: AppColors.emerald500.withValues(alpha: 0.3)),
+              ),
+              child: Row(
+                children: [
+                  Icon(LucideIcons.checkCircle2, size: 16.sp, color: AppColors.emerald500),
+                  SizedBox(width: 8.w),
+                  Expanded(
+                    child: Text(
+                      'Invite Pass Claimed (${referredBy ?? 'Ambassador'}) • 100 Coins & VIP Active!',
+                      style: TextStyle(
+                        fontSize: 11.5.sp,
+                        fontWeight: FontWeight.w600,
+                        color: isDark ? Colors.white : const Color(0xFF065F46),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ] else if (pendingReferralCode != null && pendingReferralCode!.isNotEmpty) ...[
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+              decoration: BoxDecoration(
+                color: const Color(0xFFF59E0B).withValues(alpha: 0.12),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(color: const Color(0xFFF59E0B).withValues(alpha: 0.35)),
+              ),
+              child: Row(
+                children: [
+                  Icon(LucideIcons.clock, size: 16.sp, color: const Color(0xFFF59E0B)),
+                  SizedBox(width: 8.w),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Pass "$pendingReferralCode" Saved!',
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w800,
+                            color: isDark ? const Color(0xFFFCD34D) : const Color(0xFFB45309),
+                          ),
+                        ),
+                        SizedBox(height: 2.h),
+                        Text(
+                          'Complete Adventure Level 1 to activate your 100 Coins & 1 Day VIP!',
+                          style: TextStyle(
+                            fontSize: 11.sp,
+                            color: textSecondary,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ] else ...[
             TextButton.icon(
               onPressed: onEnterCode,
               icon: Icon(
@@ -206,7 +325,7 @@ class ReferralStatsCard extends StatelessWidget {
                 color: AppColors.indigo500,
               ),
               label: Text(
-                'Have a friend\'s code? Claim 100 Coins + 1 Day VIP',
+                'Have a friend\'s code? Enter pass for 100 Coins + 1 Day VIP',
                 style: TextStyle(
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w600,

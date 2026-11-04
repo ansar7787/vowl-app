@@ -93,6 +93,7 @@ class UserModel extends UserEntity {
     super.kidsLastGameDate,
     super.referralCode,
     super.referredBy,
+    super.pendingReferralCode,
     super.hasClaimedReferral,
     super.totalReferralsCount,
     super.monthlyReferralsCount,
@@ -119,6 +120,11 @@ class UserModel extends UserEntity {
         ? parsedId
         : (documentId?.trim() ?? '');
 
+    final parsedPremiumExpiry = _parseDateTime(map['premiumExpiryDate']);
+    final rawIsPremium = (map['isPremium'] as bool?) ?? false;
+    final effectiveIsPremium = rawIsPremium &&
+        (parsedPremiumExpiry == null || parsedPremiumExpiry.isAfter(DateTime.now()));
+
     return UserModel(
       id: effectiveId,
       email: (map['email'] as String?) ?? '',
@@ -131,8 +137,8 @@ class UserModel extends UserEntity {
       currentStreak: (map['currentStreak'] as num?)?.toInt() ?? 0,
       lastLoginDate: _parseDateTime(map['lastLoginDate']),
       isEmailVerified: (map['isEmailVerified'] as bool?) ?? false,
-      isPremium: (map['isPremium'] as bool?) ?? false,
-      premiumExpiryDate: _parseDateTime(map['premiumExpiryDate']),
+      isPremium: effectiveIsPremium,
+      premiumExpiryDate: parsedPremiumExpiry,
       categoryStats: _parseIntMap(map['categoryStats']),
       unlockedLevels: map['unlockedLevels'] != null
           ? _parseIntMap(map['unlockedLevels'])
@@ -194,6 +200,7 @@ class UserModel extends UserEntity {
       kidsLastGameDate: _parseDateTime(map['kidsLastGameDate']),
       referralCode: map['referralCode'] as String?,
       referredBy: map['referredBy'] as String?,
+      pendingReferralCode: map['pendingReferralCode'] as String?,
       hasClaimedReferral: (map['hasClaimedReferral'] as bool?) ?? false,
       totalReferralsCount: (map['totalReferralsCount'] as num?)?.toInt() ?? 0,
       monthlyReferralsCount:
@@ -290,6 +297,7 @@ class UserModel extends UserEntity {
       kidsLastGameDate: entity.kidsLastGameDate,
       referralCode: entity.referralCode,
       referredBy: entity.referredBy,
+      pendingReferralCode: entity.pendingReferralCode,
       hasClaimedReferral: entity.hasClaimedReferral,
       totalReferralsCount: entity.totalReferralsCount,
       monthlyReferralsCount: entity.monthlyReferralsCount,
@@ -329,7 +337,7 @@ class UserModel extends UserEntity {
           ? Timestamp.fromDate(lastLoginDate!)
           : null,
       'isEmailVerified': isEmailVerified,
-      'isPremium': isPremium,
+      'isPremium': isPremium && (premiumExpiryDate == null || premiumExpiryDate!.isAfter(DateTime.now())),
       'premiumExpiryDate': premiumExpiryDate != null
           ? Timestamp.fromDate(premiumExpiryDate!)
           : null,
@@ -400,6 +408,7 @@ class UserModel extends UserEntity {
           : null,
       'referralCode': referralCode,
       'referredBy': referredBy,
+      'pendingReferralCode': pendingReferralCode,
       'hasClaimedReferral': hasClaimedReferral,
       'totalReferralsCount': totalReferralsCount,
       'monthlyReferralsCount': monthlyReferralsCount,
@@ -507,6 +516,7 @@ class UserModel extends UserEntity {
     Object? kidsLastGameDate = _absent,
     Object? referralCode = _absent,
     Object? referredBy = _absent,
+    Object? pendingReferralCode = _absent,
     Object? currentReferralMonthKey = _absent,
     Object? lastDuelDate = _absent,
   }) {
@@ -631,6 +641,9 @@ class UserModel extends UserEntity {
       referredBy: identical(referredBy, _absent)
           ? this.referredBy
           : referredBy as String?,
+      pendingReferralCode: identical(pendingReferralCode, _absent)
+          ? this.pendingReferralCode
+          : pendingReferralCode as String?,
       currentReferralMonthKey: identical(currentReferralMonthKey, _absent)
           ? this.currentReferralMonthKey
           : currentReferralMonthKey as String?,

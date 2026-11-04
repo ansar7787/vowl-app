@@ -238,6 +238,9 @@ class UserEntity {
   /// Referral code or user id of the ambassador who invited this user.
   final String? referredBy;
 
+  /// Referral code entered by user awaiting completion of Adventure Level 1 to activate bonus.
+  final String? pendingReferralCode;
+
   /// Whether this user has already entered an invite code and claimed onboarding bonus.
   final bool hasClaimedReferral;
 
@@ -337,6 +340,7 @@ class UserEntity {
     this.kidsLastGameDate,
     this.referralCode,
     this.referredBy,
+    this.pendingReferralCode,
     this.hasClaimedReferral = false,
     this.totalReferralsCount = 0,
     this.monthlyReferralsCount = 0,
@@ -398,9 +402,17 @@ class UserEntity {
     return doubleXPExpiry!.isAfter(DateTime.now());
   }
 
+  /// Whether the user has an active premium subscription.
+  /// Automatically checks if [premiumExpiryDate] has passed.
+  bool get hasActivePremium {
+    if (!isPremium) return false;
+    if (premiumExpiryDate == null) return true;
+    return premiumExpiryDate!.isAfter(DateTime.now());
+  }
+
   /// Whether the user is eligible to claim today's VIP gift.
   bool get isVipGiftAvailable {
-    if (!isPremium) return false;
+    if (!hasActivePremium) return false;
     if (lastVipGiftDate == null) return true;
     final now = DateTime.now();
     final last = lastVipGiftDate!;
@@ -645,6 +657,7 @@ class UserEntity {
     Object? kidsLastGameDate = _absent,
     Object? referralCode = _absent,
     Object? referredBy = _absent,
+    Object? pendingReferralCode = _absent,
     Object? currentReferralMonthKey = _absent,
     Object? lastDuelDate = _absent,
   }) {
@@ -768,6 +781,9 @@ class UserEntity {
       referredBy: identical(referredBy, _absent)
           ? this.referredBy
           : referredBy as String?,
+      pendingReferralCode: identical(pendingReferralCode, _absent)
+          ? this.pendingReferralCode
+          : pendingReferralCode as String?,
       currentReferralMonthKey: identical(currentReferralMonthKey, _absent)
           ? this.currentReferralMonthKey
           : currentReferralMonthKey as String?,
@@ -851,6 +867,7 @@ class UserEntity {
         other.kidsLastGameDate == kidsLastGameDate &&
         other.referralCode == referralCode &&
         other.referredBy == referredBy &&
+        other.pendingReferralCode == pendingReferralCode &&
         other.hasClaimedReferral == hasClaimedReferral &&
         other.totalReferralsCount == totalReferralsCount &&
         other.monthlyReferralsCount == monthlyReferralsCount &&
@@ -940,6 +957,7 @@ class UserEntity {
       kidsLastGameDate,
       referralCode,
       referredBy,
+      pendingReferralCode,
       hasClaimedReferral,
       totalReferralsCount,
       monthlyReferralsCount,
