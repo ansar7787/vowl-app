@@ -330,6 +330,8 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
         currentState.copyWith(
           answerStatus: AnswerStatus.unanswered,
           isHintVisible: false,
+          wrongCount: 0,
+          isFinalFailure: false,
         ),
       );
     }

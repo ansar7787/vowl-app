@@ -344,7 +344,14 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
       }
     } else {
       // Wrong answer on the final quest — stay for retry.
-      emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
+      emit(
+        s.copyWith(
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        ),
+      );
     }
   }
 

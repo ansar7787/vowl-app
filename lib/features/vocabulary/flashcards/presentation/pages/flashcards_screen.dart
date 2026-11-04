@@ -82,6 +82,11 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
   }
 
   @override
+  void onQuestionReset() {
+    _controller.reset(true);
+  }
+
+  @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -189,8 +194,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
       final isRetry =
           !isNew &&
           !state.answerStatus.isAnswered &&
-          _controller.isAnswered &&
-          !state.isFinalFailure;
+          _controller.isAnswered;
 
       onVocabularyStateChanged(context, state);
 

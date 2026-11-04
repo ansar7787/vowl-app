@@ -265,7 +265,14 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
     }
 
     if (s.answerStatus != AnswerStatus.correct) {
-      emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
+      emit(
+        s.copyWith(
+          answerStatus: AnswerStatus.unanswered,
+          hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
+        ),
+      );
       return;
     }
 

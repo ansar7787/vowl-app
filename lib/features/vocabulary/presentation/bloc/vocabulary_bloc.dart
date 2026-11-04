@@ -256,7 +256,12 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
         _handleLevelComplete(s, emit);
       } else {
         emit(
-          s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false),
+          s.copyWith(
+            answerStatus: AnswerStatus.unanswered,
+            hintUsed: false,
+            wrongCount: 0,
+            isFinalFailure: false,
+          ),
         );
       }
       return;

@@ -249,6 +249,8 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
         currentState.copyWith(
           answerStatus: AnswerStatus.unanswered,
           hintUsed: false,
+          wrongCount: 0,
+          isFinalFailure: false,
         ),
       );
     }

@@ -552,6 +552,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
               answerStatus: AnswerStatus.unanswered,
               hintUsed: false,
               wrongCount: 0,
+              isFinalFailure: false,
             ),
           );
         }
