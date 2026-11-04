@@ -95,17 +95,13 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
         quest.correctAnswer?.trim().toLowerCase();
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = true;
-
       if (quest.clueWords != null && quest.clueWords!.isNotEmpty) {
+        playCorrectAudio();
         Future.delayed(const Duration(milliseconds: 600), () {
           if (mounted) _showEvidence.value = true;
         });
       } else {
-        context.read<ReadingBloc>().add(const SubmitAnswer(true));
+        submitCorrectAnswer();
       }
     } else {
       submitWrongAnswer(quest: quest, userAnswer: selectedText);
@@ -113,11 +109,9 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen>
   }
 
   void _onEvidenceFound() {
-    hapticService.success();
-    soundService.playCorrect();
     _showEvidence.value = false;
     _evidenceFound.value = true;
-    context.read<ReadingBloc>().add(const SubmitAnswer(true));
+    submitCorrectAnswer();
   }
 
   @override

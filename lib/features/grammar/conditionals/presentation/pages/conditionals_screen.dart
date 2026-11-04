@@ -89,8 +89,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen>
     bool isCorrect = nodeIndex == correctIndex;
 
     if (isCorrect) {
-      hapticService.heavy();
-      soundService.playCorrect();
+      playCorrectAudio();
       isFirstStagePassedNotifier.value = true;
       _targetIndex.value = nodeIndex;
     } else {

@@ -78,8 +78,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen>
     bool isCorrect = nodeIndex == correctIndex;
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
+      playCorrectAudio();
       _targetNode.value = nodeIndex;
       isCorrectNotifier.value = true;
       _pendingJigsaw.value = true;

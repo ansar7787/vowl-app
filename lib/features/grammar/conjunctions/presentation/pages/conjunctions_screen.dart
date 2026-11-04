@@ -128,8 +128,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
     bool isCorrect = conj == options[correctIndex];
 
     if (isCorrect) {
-      hapticService.heavy();
-      soundService.playCorrect();
+      playCorrectAudio();
       _placedBrick.value = conj;
       _pendingJigsaw.value = true;
       _scrollToBottom();

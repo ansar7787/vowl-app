@@ -128,14 +128,9 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
       return;
     }
 
-    isAnsweredNotifier.value = true;
-    isCorrectNotifier.value = true;
-
-    hapticService.success();
-    soundService.playCorrect();
     // Award bonus coins for finding evidence
     context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5));
-    context.read<ReadingBloc>().add(const SubmitAnswer(true));
+    submitCorrectAnswer();
   }
 
   @override

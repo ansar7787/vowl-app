@@ -104,8 +104,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen>
     bool isCorrect = index == correct;
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
+      playCorrectAudio();
       isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
       // Wait for Phase 2

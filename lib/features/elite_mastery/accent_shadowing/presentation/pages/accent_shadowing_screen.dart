@@ -90,15 +90,11 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen>
     if (isAnsweredNotifier.value) return;
 
     if (nailedIt) {
-      isAnsweredNotifier.value = true;
-      isCorrectNotifier.value = true;
       _matchedIndices.value = Set.from(
         Iterable.generate(100),
       ); // Highlight all on success
-      hapticService.success();
-      soundService.playCorrect();
       context.read<EliteMasteryBloc>().add(const EliteSpeakConfirmed(5));
-      context.read<EliteMasteryBloc>().add(const SubmitEliteAnswer(true));
+      submitCorrectAnswer();
     } else {
       submitWrongAnswer(quest: quest, userAnswer: 'Needs Practice');
     }

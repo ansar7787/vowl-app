@@ -121,9 +121,7 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
     _bloomProgress.value = nailedIt ? 1.0 : 0.0;
 
     if (nailedIt) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<SpeakingBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
       hapticService.error();
       soundService.playWrong();

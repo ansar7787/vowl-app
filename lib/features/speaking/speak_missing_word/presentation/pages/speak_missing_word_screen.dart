@@ -223,9 +223,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     isCorrectNotifier.value = isOverallCorrect;
 
     if (isOverallCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
-      context.read<SpeakingBloc>().add(const SubmitAnswer(true));
+      submitCorrectAnswer();
     } else {
       hapticService.error();
       soundService.playWrong();

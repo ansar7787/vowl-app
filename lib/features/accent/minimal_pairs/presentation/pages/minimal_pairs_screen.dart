@@ -144,8 +144,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen>
     _selectedDroneIndex.value = index;
 
     if (correct) {
-      hapticService.success();
-      soundService.playCorrect();
+      playCorrectAudio();
       isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
       // Do NOT submit yet! Wait for Phase 2.

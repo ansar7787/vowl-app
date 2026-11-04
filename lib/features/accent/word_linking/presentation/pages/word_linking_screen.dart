@@ -94,8 +94,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen>
         selectedPair.toLowerCase().trim() == correctPair.toLowerCase().trim();
 
     if (isCorrect) {
-      hapticService.success();
-      soundService.playCorrect();
+      playCorrectAudio();
       isFirstStagePassedNotifier.value = true;
       _scrollToBottom();
       // Wait for Phase 2

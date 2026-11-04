@@ -327,9 +327,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen>
       return;
     }
 
-    hapticService.success();
-    soundService.playCorrect();
-
+    playCorrectAudio();
     _showSpeakToConfirm.value = true;
     _isSubmitting.value = false;
   }

@@ -365,9 +365,6 @@ class PrefixSuffixController extends ChangeNotifier {
     notifyListeners();
 
     if (nailedIt) {
-      _soundService.playCorrect();
-      _hapticService.success();
-
       final correctWord = getTargetWord(quest);
       if (correctWord.isNotEmpty) {
         _ttsService.speak(correctWord);
