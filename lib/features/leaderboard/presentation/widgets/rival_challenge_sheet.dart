@@ -78,6 +78,7 @@ class RivalChallengeSheet extends StatelessWidget {
       ),
       child: SafeArea(
         top: false,
+        bottom: false,
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -164,7 +165,9 @@ class RivalChallengeSheet extends StatelessWidget {
                             ],
                           ),
                           SizedBox(height: 4.h),
-                          Row(
+                          Wrap(
+                            spacing: 6.w,
+                            runSpacing: 4.h,
                             children: [
                               _buildPill(
                                 icon: LucideIcons.zap,
@@ -172,7 +175,6 @@ class RivalChallengeSheet extends StatelessWidget {
                                 color: AppColors.indigo500,
                                 isDark: isDark,
                               ),
-                              SizedBox(width: 6.w),
                               _buildPill(
                                 icon: LucideIcons.flame,
                                 label: '${rival.currentStreak}d streak',
@@ -212,16 +214,29 @@ class RivalChallengeSheet extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        _buildStakeColumn('Entry Stake', '30 Coins', const Color(0xFFF59E0B), isDark),
-                        Container(
-                          padding: EdgeInsets.all(8.r),
-                          decoration: BoxDecoration(
-                            color: AppColors.indigo500.withValues(alpha: 0.15),
-                            shape: BoxShape.circle,
+                        Flexible(
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: _buildStakeColumn('Entry Stake', '30 Coins', const Color(0xFFF59E0B), isDark),
                           ),
-                          child: Icon(LucideIcons.swords, size: 20.sp, color: AppColors.indigo500),
                         ),
-                        _buildStakeColumn('Winner Takes', '50 Coins', const Color(0xFF10B981), isDark),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 6.w),
+                          child: Container(
+                            padding: EdgeInsets.all(8.r),
+                            decoration: BoxDecoration(
+                              color: AppColors.indigo500.withValues(alpha: 0.15),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(LucideIcons.swords, size: 20.sp, color: AppColors.indigo500),
+                          ),
+                        ),
+                        Flexible(
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: _buildStakeColumn('Winner Takes', '50 Coins', const Color(0xFF10B981), isDark),
+                          ),
+                        ),
                       ],
                     ),
                     SizedBox(height: 12.h),
@@ -232,12 +247,17 @@ class RivalChallengeSheet extends StatelessWidget {
                       children: [
                         Icon(LucideIcons.shieldCheck, size: 14.sp, color: textSecondary),
                         SizedBox(width: 6.w),
-                        Text(
-                          'Consolation: +10 Coins to runner-up • Instant 60s duel',
-                          style: TextStyle(
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w500,
-                            color: textSecondary,
+                        Flexible(
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              'Consolation: +10 Coins to runner-up • Instant 60s duel',
+                              style: TextStyle(
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w500,
+                                color: textSecondary,
+                              ),
+                            ),
                           ),
                         ),
                       ],
@@ -269,9 +289,12 @@ class RivalChallengeSheet extends StatelessWidget {
                   onStartDuel();
                 } : null,
                 icon: Icon(LucideIcons.swords, size: 18.sp),
-                label: Text(
-                  hasEnoughCoins ? 'Challenge to 1v1 Arena Duel' : 'Need 30 Coins to Duel',
-                  style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w800),
+                label: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    hasEnoughCoins ? 'Challenge to 1v1 Arena Duel' : 'Need 30 Coins to Duel',
+                    style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w800),
+                  ),
                 ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.indigo500,
@@ -295,12 +318,15 @@ class RivalChallengeSheet extends StatelessWidget {
                   onShareRoomCode();
                 } : null,
                 icon: Icon(LucideIcons.share2, size: 16.sp, color: hasEnoughCoins ? textPrimary : textSecondary),
-                label: Text(
-                  'Share Room Code Challenge',
-                  style: TextStyle(
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w600,
-                    color: hasEnoughCoins ? textPrimary : textSecondary,
+                label: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    'Share Room Code Challenge',
+                    style: TextStyle(
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w600,
+                      color: hasEnoughCoins ? textPrimary : textSecondary,
+                    ),
                   ),
                 ),
                 style: OutlinedButton.styleFrom(

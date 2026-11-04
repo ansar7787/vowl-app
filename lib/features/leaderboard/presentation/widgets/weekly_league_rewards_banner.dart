@@ -114,9 +114,12 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
 
     // Check offline win-back: Did user finish top 10 last week and hasn't claimed?
     final prevWeekKey = WeeklyLeagueRewardsBanner.getPreviousWeekKey();
-    final hasUnclaimedLastWeek = widget.currentUser != null &&
-        (widget.currentUser!.previousRank != null && widget.currentUser!.previousRank! <= 10) &&
-        !widget.currentUser!.claimedWeeklyRewardWeekKeys.contains(prevWeekKey);
+    final user = widget.currentUser;
+    final targetWeekKey = user?.previousRankWeekKey ?? prevWeekKey;
+    final hasUnclaimedLastWeek = user != null &&
+        (user.previousRank != null && user.previousRank! <= 10) &&
+        (user.previousRankWeekKey == null || user.previousRankWeekKey == prevWeekKey) &&
+        !user.claimedWeeklyRewardWeekKeys.contains(targetWeekKey);
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
@@ -432,7 +435,7 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                       if (di.sl.isRegistered<HapticService>()) {
                         di.sl<HapticService>().selection();
                       }
-                      _openCelebrationDialog(prevWeekKey);
+                      _openCelebrationDialog(targetWeekKey);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: IllustrationColors.premiumGold,

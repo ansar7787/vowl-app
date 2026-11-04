@@ -68,6 +68,7 @@ class PrestigeTrophySheet extends StatelessWidget {
       ),
       child: SafeArea(
         top: false,
+        bottom: false,
         child: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -172,9 +173,12 @@ class PrestigeTrophySheet extends StatelessWidget {
               onShareRank();
             },
             icon: Icon(LucideIcons.share2, size: 18.sp),
-            label: Text(
-              '🏆 Share My Rank',
-              style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w700),
+            label: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                '🏆 Share My Rank',
+                style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w700),
+              ),
             ),
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.indigo500,

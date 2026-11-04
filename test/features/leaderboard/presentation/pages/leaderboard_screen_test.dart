@@ -18,6 +18,7 @@ import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_heade
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_podium.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_card.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/weekly_league_rewards_banner.dart';
+import 'package:vowl/features/leaderboard/presentation/widgets/rival_challenge_sheet.dart';
 
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
 
@@ -51,6 +52,7 @@ void main() {
     totalExp: 8400,
     dailyXpHistory: {todayKey: 8400},
     currentStreak: 15,
+    coins: 100,
     kidsCoins: 120,
     completedLevels: {
       'reading': List.generate(42, (i) => i + 1),
@@ -419,7 +421,26 @@ void main() {
         ),
         findsOneWidget,
       );
+    });
 
+    testWidgets('tapping podium slot opens RivalChallengeSheet for rivals', (tester) async {
+      await tester.pumpWidget(buildTestWidget());
+      await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump(const Duration(milliseconds: 500));
+
+      // Scroll so Bob on the podium is visible within 800x600 test viewport
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -180));
+      await tester.pump(const Duration(milliseconds: 500));
+
+      // Tap Bob (Rank 1 champion on podium)
+      expect(find.text('Bob'), findsOneWidget);
+      await tester.tap(find.text('Bob'));
+      await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump(const Duration(milliseconds: 500));
+
+      expect(find.byType(RivalChallengeSheet), findsOneWidget);
+      expect(find.text('Bob The Master'), findsOneWidget);
+      expect(find.text('Challenge to 1v1 Arena Duel'), findsOneWidget);
     });
   });
 

@@ -634,6 +634,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                     isKids: widget.state.isKids,
                     isWeekly: isWeekly,
                     currentUserId: widget.currentUser?.id,
+                    onUserTap: (user, rank, isMe) => _handleTileTap(user, rank, isMe),
                   ),
                 ),
               ),
@@ -694,10 +695,12 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                       ),
                       SizedBox(width: 8.w),
                       Text(
-                        context.tr(
-                          'leaderboard.top_challengers',
-                          fallback: 'Top Challengers',
-                        ),
+                        widget.state.isKids
+                            ? 'Top Explorers'
+                            : context.tr(
+                                'leaderboard.top_challengers',
+                                fallback: 'Top Challengers',
+                              ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
