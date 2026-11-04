@@ -178,7 +178,7 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
         ),
       );
     } else {
-      soundService.playCorrect();
+      soundService.playCorrect(comboStep: currentState.currentIndex + 1);
       hapticService.success();
 
       emit(

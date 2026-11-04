@@ -162,7 +162,7 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
           isFinalFailure: false,
         ),
       );
-      soundService.playCorrect();
+      soundService.playCorrect(comboStep: s.currentIndex + 1);
       hapticService.success();
     } else {
       final r = processWrongAnswer(s);
@@ -200,7 +200,7 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
           isFinalFailure: false,
         ),
       );
-      soundService.playCorrect();
+      soundService.playCorrect(comboStep: s.currentIndex + 1);
       hapticService.success();
     } else {
       final r = processWrongAnswer(s);

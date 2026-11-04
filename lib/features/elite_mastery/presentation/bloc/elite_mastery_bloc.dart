@@ -193,7 +193,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
         ),
       );
     } else {
-      soundService.playCorrect();
+      soundService.playCorrect(comboStep: currentState.currentIndex + 1);
       hapticService.success();
       emit(
         currentState.copyWith(

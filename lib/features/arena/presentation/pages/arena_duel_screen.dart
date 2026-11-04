@@ -7,6 +7,7 @@ import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
@@ -57,6 +58,7 @@ class _ArenaDuelView extends StatefulWidget {
 class _ArenaDuelViewState extends State<_ArenaDuelView> {
   StreamSubscription<AppNetworkStatus>? _networkSubscription;
   bool _isOffline = false;
+  bool _hasTriggeredMatchFound = false;
 
   @override
   void initState() {
@@ -162,7 +164,27 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
             Expanded(
               child: BlocConsumer<ArenaDuelCubit, ArenaDuelState>(
                 listener: (context, state) {
+                  if (!state.isWaitingForGuest && !state.isCompleted && state.currentQuestion != null && !_hasTriggeredMatchFound) {
+                    _hasTriggeredMatchFound = true;
+                    if (di.sl.isRegistered<SoundService>()) {
+                      di.sl<SoundService>().playArenaMatchFound();
+                    }
+                    if (di.sl.isRegistered<HapticService>()) {
+                      di.sl<HapticService>().heavy();
+                    }
+                  }
+
                   if (state.isCompleted) {
+                    if (di.sl.isRegistered<SoundService>()) {
+                      if (state.isWinner) {
+                        di.sl<SoundService>().playArenaVictory();
+                      } else if (state.isDraw) {
+                        di.sl<SoundService>().playLevelComplete();
+                      } else {
+                        di.sl<SoundService>().playArenaDefeat();
+                      }
+                    }
+
                     final authState = context.read<AuthBloc>().state;
                     final rivalName = state.session?.guestName ?? 'Rival';
                     showDialog(
@@ -337,8 +359,24 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                         borderColor: borderColor,
                         textPrimary: textPrimary,
                         onTap: () {
-                          if (di.sl.isRegistered<HapticService>()) {
-                            di.sl<HapticService>().light();
+                          if (state.isAnswered) return;
+                          final isCorrect = idx == q.correctIndex;
+                          if (isCorrect) {
+                            if (di.sl.isRegistered<HapticService>()) {
+                              di.sl<HapticService>().success();
+                            }
+                            if (di.sl.isRegistered<SoundService>()) {
+                              di.sl<SoundService>().playCorrect(
+                                comboStep: state.currentQuestionIndex + 1,
+                              );
+                            }
+                          } else {
+                            if (di.sl.isRegistered<HapticService>()) {
+                              di.sl<HapticService>().error();
+                            }
+                            if (di.sl.isRegistered<SoundService>()) {
+                              di.sl<SoundService>().playWrong();
+                            }
                           }
                           context.read<ArenaDuelCubit>().selectOption(idx, user);
                         },

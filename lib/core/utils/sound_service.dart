@@ -29,11 +29,12 @@ abstract class SoundService {
   /// Releases audio players, resources, and event listeners.
   Future<void> dispose();
 
-  /// Plays success audio feedback with dynamic pitch scaling according to [comboStep].
+  /// Plays success audio feedback with dynamic harmonic step according to [comboStep].
   ///
-  /// - Step 1: Base pitch (1.00x)
-  /// - Step 2: Ascending major third (1.12x)
-  /// - Step 3+: Peak fifth / frenzy (1.25x)
+  /// - Step 1: Base C5 marimba chime (sounds/correct_1.mp3)
+  /// - Step 2: Ascending E5 major third bell (sounds/correct_2.mp3)
+  /// - Step 3: Peak G5 fifth chime (sounds/correct_3.mp3)
+  /// - Step 4+: High octave C6 frenzy arpeggio (sounds/correct_frenzy.mp3)
   Future<void> playCorrect({int comboStep = 1});
 
   /// Plays standard error/fail audio feedback effect.
@@ -57,8 +58,20 @@ abstract class SoundService {
   /// Plays warm celebratory fanfare when daily streak mission is secured.
   Future<void> playStreakFlameIgnite();
 
-  /// Plays rapid micro-ticker chimes synced with the victory coin/XP counter animation.
+  /// Plays fluid rolling coin cascade sound synced with victory and reward animations.
   Future<void> playCoinTally({int count = 10});
+
+  /// Plays metallic blade clash when an Arena 1v1 duel opponent is matched.
+  Future<void> playArenaMatchFound();
+
+  /// Plays tense 3-2-1 tick-tick-ding countdown for duel starts.
+  Future<void> playArenaCountdown();
+
+  /// Plays heroic brass victory fanfare for Arena 1v1 wins.
+  Future<void> playArenaVictory();
+
+  /// Plays gentle, non-punitive minor consolation sting for Arena 1v1 losses.
+  Future<void> playArenaDefeat();
 
   /// Downloads and streams sound assets from internet endpoints.
   Future<void> playUrl(String url);
@@ -105,14 +118,27 @@ class SoundServiceImpl implements SoundService {
 
   // Compile-time static const paths to prevent magic string typo configurations
   static const String assetCorrect = 'sounds/correct.mp3';
+  static const String assetCorrect1 = 'sounds/correct_1.mp3';
+  static const String assetCorrect2 = 'sounds/correct_2.mp3';
+  static const String assetCorrect3 = 'sounds/correct_3.mp3';
+  static const String assetCorrectFrenzy = 'sounds/correct_frenzy.mp3';
   static const String assetWrong = 'sounds/wrong.mp3';
   static const String assetHint = 'sounds/hint.mp3';
   static const String assetLevelCompleted = 'sounds/level_completed.mp3';
   static const String assetFlame = 'sounds/flame.mp3';
   static const String assetCoin = 'sounds/coin.mp3';
+  static const String assetCoinCascade = 'sounds/coin_cascade.mp3';
+  static const String assetArenaClash = 'sounds/arena_clash.mp3';
+  static const String assetArenaCountdown = 'sounds/arena_countdown.mp3';
+  static const String assetArenaVictory = 'sounds/arena_victory.mp3';
+  static const String assetArenaDefeat = 'sounds/arena_defeat.mp3';
 
   static const String _prefsKeySoundEnabled = 'sound_enabled';
   static const String _prefsKeyGameSoundsEnabled = 'game_sounds_enabled';
+
+  DateTime? _lastCorrectPlayTime;
+  int _lastComboStep = 0;
+  DateTime? _lastWrongPlayTime;
 
   void _logError(String message, {Object? error}) {
     if (di.sl.isRegistered<AppLogger>()) {
@@ -210,23 +236,48 @@ class SoundServiceImpl implements SoundService {
   Future<void> playCorrect({int comboStep = 1}) async {
     await _initFuture;
     if (_isMuted) return;
+
+    final now = DateTime.now();
+    // Debounce duplicate triggers within 250ms (e.g. UI mixin + BLoC double trigger):
+    // If a request arrives within 250ms of an active playback:
+    // - If it has a lower or equal comboStep, skip it to prevent cutting off the active chord
+    if (_lastCorrectPlayTime != null &&
+        now.difference(_lastCorrectPlayTime!).inMilliseconds < 250) {
+      if (comboStep <= _lastComboStep) {
+        return;
+      }
+    }
+    _lastCorrectPlayTime = now;
+    _lastComboStep = comboStep;
+
     try {
       await _player.stop();
-      // Musical pitch ladder for 3-question levels:
-      // Q1: 1.00x (base C5), Q2: 1.12x (ascending E5), Q3+: 1.25x (peak G5)
-      final double rate = comboStep == 2 ? 1.12 : (comboStep >= 3 ? 1.25 : 1.0);
-      await _player.setPlaybackRate(rate);
 
       // Audio ducking: if TTS is speaking, drop SFX volume to preserve voice clarity
       final double effectiveVolume = _ttsService.isSpeaking ? 0.35 : 0.85;
       await _player.setVolume(effectiveVolume);
 
-      await _player.play(AssetSource(assetCorrect));
+      // Select dedicated harmonic audio asset (zero runtime pitch shift required, 100% device safe)
+      final String assetToPlay;
+      if (comboStep <= 1) {
+        assetToPlay = assetCorrect1;
+      } else if (comboStep == 2) {
+        assetToPlay = assetCorrect2;
+      } else if (comboStep == 3) {
+        assetToPlay = assetCorrect3;
+      } else {
+        assetToPlay = assetCorrectFrenzy;
+      }
+
+      await _player.play(AssetSource(assetToPlay));
     } catch (e) {
       _logError(
-        'SoundService: Error playing sound (correct)',
+        'SoundService: Error playing sound (correct); falling back to base',
         error: e,
       );
+      try {
+        await _player.play(AssetSource(assetCorrect));
+      } catch (_) {}
     }
   }
 
@@ -234,6 +285,15 @@ class SoundServiceImpl implements SoundService {
   Future<void> playWrong() async {
     await _initFuture;
     if (_isMuted) return;
+
+    final now = DateTime.now();
+    // Debounce duplicate wrong answer triggers within 250ms
+    if (_lastWrongPlayTime != null &&
+        now.difference(_lastWrongPlayTime!).inMilliseconds < 250) {
+      return;
+    }
+    _lastWrongPlayTime = now;
+
     try {
       await _player.stop();
       await _player.setPlaybackRate(1.0);
@@ -321,21 +381,66 @@ class SoundServiceImpl implements SoundService {
   Future<void> playCoinTally({int count = 10}) async {
     await _initFuture;
     if (_isMuted || !_isGameSoundsEnabled) return;
-    final int safeCount = count.clamp(1, 15);
     try {
-      for (int i = 0; i < safeCount; i++) {
-        // Micro-pitch ascent over the coin tally
-        final double rate = 1.0 + (i * 0.025);
-        await _player.stop();
-        await _player.setPlaybackRate(rate.clamp(1.0, 1.35));
-        await _player.play(AssetSource(assetCoin), volume: 0.6);
-        await Future.delayed(const Duration(milliseconds: 65));
-      }
+      await _player.stop();
+      await _player.play(AssetSource(assetCoinCascade), volume: 0.75);
     } catch (e) {
       _logError(
-        'SoundService: Error playing coin tally sound',
+        'SoundService: Error playing coin cascade sound; using fallback',
         error: e,
       );
+      try {
+        await _player.play(AssetSource(assetCoin), volume: 0.7);
+      } catch (_) {}
+    }
+  }
+
+  @override
+  Future<void> playArenaMatchFound() async {
+    await _initFuture;
+    if (_isMuted || !_isGameSoundsEnabled) return;
+    try {
+      await _overlayPlayer.stop();
+      await _overlayPlayer.play(AssetSource(assetArenaClash), volume: 0.85);
+    } catch (e) {
+      _logError('SoundService: Error playing arena clash', error: e);
+    }
+  }
+
+  @override
+  Future<void> playArenaCountdown() async {
+    await _initFuture;
+    if (_isMuted || !_isGameSoundsEnabled) return;
+    try {
+      await _player.stop();
+      await _player.play(AssetSource(assetArenaCountdown), volume: 0.8);
+    } catch (e) {
+      _logError('SoundService: Error playing arena countdown', error: e);
+    }
+  }
+
+  @override
+  Future<void> playArenaVictory() async {
+    await _initFuture;
+    if (_isMuted || !_isGameSoundsEnabled) return;
+    try {
+      await _overlayPlayer.stop();
+      await _overlayPlayer.play(AssetSource(assetArenaVictory), volume: 0.9);
+    } catch (e) {
+      _logError('SoundService: Error playing arena victory', error: e);
+      await playLevelComplete();
+    }
+  }
+
+  @override
+  Future<void> playArenaDefeat() async {
+    await _initFuture;
+    if (_isMuted || !_isGameSoundsEnabled) return;
+    try {
+      await _overlayPlayer.stop();
+      await _overlayPlayer.play(AssetSource(assetArenaDefeat), volume: 0.75);
+    } catch (e) {
+      _logError('SoundService: Error playing arena defeat', error: e);
     }
   }
 

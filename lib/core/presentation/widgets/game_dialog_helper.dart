@@ -77,7 +77,11 @@ class GameDialogHelper {
     _haptic.success();
 
     if (mistakesMade == 0 && di.sl.isRegistered<PraiseService>()) {
-      di.sl<PraiseService>().givePraise(context: PraiseContext.flawless);
+      Timer(const Duration(milliseconds: 850), () {
+        try {
+          di.sl<PraiseService>().givePraise(context: PraiseContext.flawless);
+        } catch (_) {}
+      });
     }
 
     final authState = context.read<AuthBloc>().state;
@@ -158,9 +162,10 @@ class GameDialogHelper {
 
     Timer? coinTallyTimer;
     if (effectiveCoins > 0) {
-      coinTallyTimer = Timer(const Duration(milliseconds: 300), () {
+      coinTallyTimer = Timer(const Duration(milliseconds: 450), () {
         try {
           _sound.playCoinTally(count: effectiveCoins);
+          _haptic.selection();
         } catch (_) {}
       });
     }

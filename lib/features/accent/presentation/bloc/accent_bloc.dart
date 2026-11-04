@@ -226,7 +226,7 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
         ),
       );
     } else {
-      soundService.playCorrect();
+      soundService.playCorrect(comboStep: s.currentIndex + 1);
       hapticService.success();
 
       emit(

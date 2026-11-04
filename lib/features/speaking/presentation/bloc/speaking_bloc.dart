@@ -214,7 +214,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
         ),
       );
     } else {
-      unawaited(soundService.playCorrect());
+      unawaited(soundService.playCorrect(comboStep: s.currentIndex + 1));
       unawaited(hapticService.success());
       emit(
         s.copyWith(

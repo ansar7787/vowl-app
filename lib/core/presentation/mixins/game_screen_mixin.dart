@@ -182,8 +182,9 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
     _sessionHotStreak++;
 
     hapticService.success();
-    // Dual-Layer Dopamine: Micro 3-step pitch ladder (Q1: 1.00x, Q2: 1.12x, Q3: 1.25x)
-    soundService.playCorrect(comboStep: _levelQuestionIndex);
+    // Dual-Layer Dopamine: Dedicated harmonic ladder (Q1: Step 1, Q2: Step 2, Q3: Step 3, 5+ Streak: Frenzy)
+    final int effectiveCombo = _sessionHotStreak >= 5 ? 4 : _levelQuestionIndex;
+    soundService.playCorrect(comboStep: effectiveCombo);
 
     // Macro Hot Streak Celebrations across levels (5 in a row, 10 in a row)
     if (_sessionHotStreak == 5) {

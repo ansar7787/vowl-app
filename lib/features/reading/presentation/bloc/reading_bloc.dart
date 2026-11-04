@@ -187,7 +187,7 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
     }
 
     if (event.isCorrect) {
-      soundService.playCorrect();
+      soundService.playCorrect(comboStep: s.currentIndex + 1);
       hapticService.success();
       emit(
         s.copyWith(

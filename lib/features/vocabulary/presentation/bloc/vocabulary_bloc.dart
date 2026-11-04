@@ -191,7 +191,7 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     if (s.livesRemaining <= 0) return;
 
     if (event.isCorrect) {
-      await soundService.playCorrect();
+      await soundService.playCorrect(comboStep: s.currentIndex + 1);
       await hapticService.success();
 
       emit(
