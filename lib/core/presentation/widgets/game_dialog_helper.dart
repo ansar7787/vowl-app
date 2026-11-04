@@ -77,7 +77,7 @@ class GameDialogHelper {
     _haptic.success();
 
     if (mistakesMade == 0 && di.sl.isRegistered<PraiseService>()) {
-      Timer(const Duration(milliseconds: 850), () {
+      Timer(const Duration(milliseconds: 1400), () {
         try {
           di.sl<PraiseService>().givePraise(context: PraiseContext.flawless);
         } catch (_) {}

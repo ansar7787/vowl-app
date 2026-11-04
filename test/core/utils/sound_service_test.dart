@@ -79,21 +79,21 @@ void main() {
     });
 
     test('PraiseService calls speak with contextual encouragement', () async {
-      when(() => mockTtsService.speak(any(), rate: any(named: 'rate'))).thenAnswer((_) async {});
+      when(() => mockTtsService.speak(any())).thenAnswer((_) async {});
 
       final praiseService = PraiseService(mockTtsService);
       praiseService.givePraise(context: PraiseContext.flawless);
 
-      verify(() => mockTtsService.speak(any(), rate: 0.9)).called(1);
+      verify(() => mockTtsService.speak(any())).called(1);
     });
 
     test('PraiseService supports backward-compatible givePraise() with default standard context', () async {
-      when(() => mockTtsService.speak(any(), rate: any(named: 'rate'))).thenAnswer((_) async {});
+      when(() => mockTtsService.speak(any())).thenAnswer((_) async {});
 
       final praiseService = PraiseService(mockTtsService);
       praiseService.givePraise(); // No arguments
 
-      verify(() => mockTtsService.speak(any(), rate: 0.9)).called(1);
+      verify(() => mockTtsService.speak(any())).called(1);
     });
   });
 

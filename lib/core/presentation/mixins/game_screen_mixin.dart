@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -203,11 +204,19 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
 
     if (_sessionHotStreak == 5) {
       if (di.sl.isRegistered<PraiseService>()) {
-        di.sl<PraiseService>().givePraise(context: PraiseContext.hotStreak5);
+        Timer(const Duration(milliseconds: 400), () {
+          try {
+            di.sl<PraiseService>().givePraise(context: PraiseContext.hotStreak5);
+          } catch (_) {}
+        });
       }
     } else if (_sessionHotStreak == 10) {
       if (di.sl.isRegistered<PraiseService>()) {
-        di.sl<PraiseService>().givePraise(context: PraiseContext.hotStreak10);
+        Timer(const Duration(milliseconds: 400), () {
+          try {
+            di.sl<PraiseService>().givePraise(context: PraiseContext.hotStreak10);
+          } catch (_) {}
+        });
       }
     }
   }
