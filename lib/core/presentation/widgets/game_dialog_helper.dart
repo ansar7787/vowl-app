@@ -290,8 +290,12 @@ class GameDialogHelper {
   }) {
     if (!context.mounted) return;
     // Play dedicated gentle, non-punitive defeat sting with tactile warning cue.
-    _sound.playGameOver();
-    _haptic.warning();
+    try {
+      _sound.playGameOver();
+    } catch (_) {}
+    try {
+      _haptic.warning();
+    } catch (_) {}
 
     final resolvedTitle =
         title ?? context.tr('games.game_over_title', fallback: 'Game Over');

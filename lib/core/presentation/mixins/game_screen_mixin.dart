@@ -199,8 +199,11 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
     _sessionHotStreak++;
 
     hapticService.success();
-    final int effectiveCombo = comboStep ?? (_sessionHotStreak >= 5 ? 4 : _levelQuestionIndex);
-    soundService.playCorrect(comboStep: effectiveCombo);
+    if (comboStep != null) {
+      soundService.playCorrect(comboStep: comboStep);
+    } else {
+      soundService.playCorrect();
+    }
 
     if (_sessionHotStreak == 5) {
       if (di.sl.isRegistered<PraiseService>()) {
