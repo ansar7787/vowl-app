@@ -19,6 +19,7 @@ class AmbassadorLeaderboardItem {
 
   /// The prize tier earned based on final ranking.
   AmbassadorRewardTier get rewardTier {
+    if (referralCount < 1) return AmbassadorRewardTier.none;
     if (rank == 1) return AmbassadorRewardTier.gold;
     if (rank == 2) return AmbassadorRewardTier.silver;
     if (rank == 3) return AmbassadorRewardTier.bronze;
@@ -33,7 +34,8 @@ enum AmbassadorRewardTier {
   silver(vipDays: 7, coins: 0, title: '🥈 2nd Place', prizeDescription: '1 Week Free VIP'),
   bronze(vipDays: 3, coins: 500, title: '🥉 3rd Place', prizeDescription: '500 Coins + 3 Days VIP'),
   topTen(vipDays: 0, coins: 200, title: '🏅 Top 10', prizeDescription: '200 Coins'),
-  participant(vipDays: 0, coins: 0, title: 'Ambassador', prizeDescription: 'Community Badge');
+  participant(vipDays: 0, coins: 0, title: 'Ambassador', prizeDescription: 'Community Badge'),
+  none(vipDays: 0, coins: 0, title: 'No Referrals', prizeDescription: '1+ referrals needed to qualify');
 
   final int vipDays;
   final int coins;
@@ -52,6 +54,7 @@ enum AmbassadorRewardTier {
 @immutable
 class ReferralClaimResult {
   final bool success;
+  final bool isPending;
   final String message;
   final int coinsAwarded;
   final int vipDaysAwarded;
@@ -59,6 +62,7 @@ class ReferralClaimResult {
 
   const ReferralClaimResult({
     required this.success,
+    this.isPending = false,
     required this.message,
     this.coinsAwarded = 0,
     this.vipDaysAwarded = 0,
@@ -72,6 +76,7 @@ class ReferralClaimResult {
   }) {
     return ReferralClaimResult(
       success: true,
+      isPending: false,
       message: 'Invite code accepted! Enjoy $coinsAwarded coins and $vipDaysAwarded day VIP trial.',
       coinsAwarded: coinsAwarded,
       vipDaysAwarded: vipDaysAwarded,
@@ -79,9 +84,22 @@ class ReferralClaimResult {
     );
   }
 
+  factory ReferralClaimResult.pending({
+    required String referrerName,
+    String? message,
+  }) {
+    return ReferralClaimResult(
+      success: true,
+      isPending: true,
+      message: message ?? 'Invite code saved! Complete Adventure Level 1 to activate your 100 Bonus Coins and 1 Day VIP pass.',
+      referrerName: referrerName,
+    );
+  }
+
   factory ReferralClaimResult.failure(String error) {
     return ReferralClaimResult(
       success: false,
+      isPending: false,
       message: error,
     );
   }

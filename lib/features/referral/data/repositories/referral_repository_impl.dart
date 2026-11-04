@@ -87,6 +87,25 @@ class ReferralRepositoryImpl implements ReferralRepository {
     }
   }
 
+  List<Map<String, dynamic>> _recordCoinHistory(
+    List<Map<String, dynamic>> existingHistory, {
+    required String titleKey,
+    required int amount,
+    required bool isEarned,
+  }) {
+    final updated = List<Map<String, dynamic>>.from(existingHistory);
+    updated.insert(0, {
+      'amount': amount,
+      'isEarned': isEarned,
+      'titleKey': titleKey,
+      'date': DateTime.now().toIso8601String(),
+    });
+    if (updated.length > 50) {
+      return updated.sublist(0, 50);
+    }
+    return updated;
+  }
+
   @override
   Future<ReferralClaimResult> claimReferralCode({
     required String code,
@@ -100,6 +119,10 @@ class ReferralRepositoryImpl implements ReferralRepository {
 
     if (user.hasClaimedReferral) {
       return ReferralClaimResult.failure('You have already claimed an invite bonus on this account.');
+    }
+
+    if (user.pendingReferralCode != null && user.pendingReferralCode!.toUpperCase() == cleanCode) {
+      return ReferralClaimResult.failure('You already have this referral code pending! Complete Adventure Level 1 to activate.');
     }
 
     if (user.referralCode != null && user.referralCode!.toUpperCase() == cleanCode) {
@@ -122,31 +145,66 @@ class ReferralRepositoryImpl implements ReferralRepository {
         return ReferralClaimResult.failure('You cannot claim your own invite code.');
       }
 
-      // Calculate Smart VIP extension for invited friend: +1 Day VIP Trial
-      final now = DateTime.now();
-      final DateTime newExpiry;
-      if (user.isPremium && user.premiumExpiryDate != null && user.premiumExpiryDate!.isAfter(now)) {
-        newExpiry = user.premiumExpiryDate!.add(const Duration(days: 1));
+      // Check whether user has already completed Adventure Level 1 in any category
+      final hasCompletedLevelOne = user.completedLevels.values.any((levels) => levels.contains(1));
+
+      if (hasCompletedLevelOne) {
+        // Milestone already met: activate bonus immediately!
+        final now = DateTime.now();
+        final DateTime newExpiry;
+        if (user.hasActivePremium && user.premiumExpiryDate != null) {
+          newExpiry = user.premiumExpiryDate!.add(const Duration(days: 1));
+        } else {
+          newExpiry = now.add(const Duration(days: 1));
+        }
+
+        final userDoc = await _firestore.collection('users').doc(user.id).get().timeout(_kNetworkTimeout);
+        final rawHistory = (userDoc.data()?['coinHistory'] as List<dynamic>?)
+                ?.map((e) => Map<String, dynamic>.from(e as Map))
+                .toList() ??
+            [];
+        final updatedHistory = _recordCoinHistory(
+          rawHistory,
+          titleKey: 'coin_history.referral_welcome',
+          amount: 100,
+          isEarned: true,
+        );
+
+        final userRef = _firestore.collection('users').doc(user.id);
+        await userRef.update({
+          'hasClaimedReferral': true,
+          'referredBy': cleanCode,
+          'pendingReferralCode': null,
+          'coins': FieldValue.increment(100),
+          'isPremium': true,
+          'premiumExpiryDate': Timestamp.fromDate(newExpiry),
+          'coinHistory': updatedHistory,
+          'lastRewardTimestamp': FieldValue.serverTimestamp(),
+        }).timeout(_kNetworkTimeout);
+
+        // Notify and reward the ambassador
+        unawaited(onFriendCompletedLevelOne(
+          friendUserId: user.id,
+          referrerCode: cleanCode,
+        ));
+
+        return ReferralClaimResult.success(
+          coinsAwarded: 100,
+          vipDaysAwarded: 1,
+          referrerName: ownerName,
+        );
       } else {
-        newExpiry = now.add(const Duration(days: 1));
+        // Milestone not yet met: save pending code to activate upon Level 1 completion
+        await _firestore.collection('users').doc(user.id).update({
+          'pendingReferralCode': cleanCode,
+          'referredBy': cleanCode,
+        }).timeout(_kNetworkTimeout);
+
+        return ReferralClaimResult.pending(
+          referrerName: ownerName,
+          message: 'Referral pass saved! Complete Adventure Level 1 to activate your 100 Bonus Coins & 1 Day VIP pass!',
+        );
       }
-
-      // Atomically update user's profile: +100 Coins, +1 Day VIP, mark claimed
-      final userRef = _firestore.collection('users').doc(user.id);
-      await userRef.update({
-        'hasClaimedReferral': true,
-        'referredBy': cleanCode,
-        'coins': FieldValue.increment(100),
-        'isPremium': true,
-        'premiumExpiryDate': Timestamp.fromDate(newExpiry),
-        'lastRewardTimestamp': FieldValue.serverTimestamp(),
-      }).timeout(_kNetworkTimeout);
-
-      return ReferralClaimResult.success(
-        coinsAwarded: 100,
-        vipDaysAwarded: 1,
-        referrerName: ownerName,
-      );
     } catch (e) {
       debugPrint('[ReferralRepositoryImpl] claimReferralCode error: $e');
       return ReferralClaimResult.failure('Could not claim code. Please check your network and try again.');
@@ -187,7 +245,7 @@ class ReferralRepositoryImpl implements ReferralRepository {
 
       await _firestore.collection('referrals').doc(cleanCode).update(referralUpdates);
 
-      // Reward the ambassador: 100 Coins + 1 Day VIP
+      // Reward the ambassador: 100 Coins + 1 Day VIP with coin history
       final ambassadorUserDoc = await _firestore.collection('users').doc(ownerId).get().timeout(_kNetworkTimeout);
       if (ambassadorUserDoc.exists && ambassadorUserDoc.data() != null) {
         final ambData = ambassadorUserDoc.data()!;
@@ -209,6 +267,17 @@ class ReferralRepositoryImpl implements ReferralRepository {
         final ambMonth = ambData['currentReferralMonthKey'] as String? ?? currentMonth;
         final bool isNewMonth = ambMonth != currentMonth;
 
+        final rawHistory = (ambData['coinHistory'] as List<dynamic>?)
+                ?.map((e) => Map<String, dynamic>.from(e as Map))
+                .toList() ??
+            [];
+        final updatedHistory = _recordCoinHistory(
+          rawHistory,
+          titleKey: 'coin_history.referral_reward',
+          amount: 100,
+          isEarned: true,
+        );
+
         await _firestore.collection('users').doc(ownerId).update({
           'totalReferralsCount': FieldValue.increment(1),
           'monthlyReferralsCount': isNewMonth ? 1 : FieldValue.increment(1),
@@ -216,6 +285,7 @@ class ReferralRepositoryImpl implements ReferralRepository {
           'coins': FieldValue.increment(100),
           'isPremium': true,
           'premiumExpiryDate': Timestamp.fromDate(newExpiry),
+          'coinHistory': updatedHistory,
           'lastRewardTimestamp': FieldValue.serverTimestamp(),
         });
       }
@@ -235,7 +305,7 @@ class ReferralRepositoryImpl implements ReferralRepository {
           .collection('referrals')
           .where('currentMonthKey', isEqualTo: effectiveMonth)
           .orderBy('monthlyCount', descending: true)
-          .limit(10)
+          .limit(50)
           .get()
           .timeout(_kNetworkTimeout);
 
@@ -288,14 +358,16 @@ class ReferralRepositoryImpl implements ReferralRepository {
       final rank = entry.rank;
       final tier = entry.rewardTier;
 
-      if (tier == AmbassadorRewardTier.participant) {
-        return AmbassadorRewardClaimResult.failure('Ambassador rewards start at Top 10.');
+      if (entry.referralCount < 1 ||
+          tier == AmbassadorRewardTier.none ||
+          tier == AmbassadorRewardTier.participant) {
+        return AmbassadorRewardClaimResult.failure('Ambassador Cup rewards require at least 1 referral.');
       }
 
       final now = DateTime.now();
       final DateTime? newExpiry;
       if (tier.vipDays > 0) {
-        if (user.isPremium && user.premiumExpiryDate != null && user.premiumExpiryDate!.isAfter(now)) {
+        if (user.hasActivePremium && user.premiumExpiryDate != null) {
           newExpiry = user.premiumExpiryDate!.add(Duration(days: tier.vipDays));
         } else {
           newExpiry = now.add(Duration(days: tier.vipDays));
@@ -315,6 +387,20 @@ class ReferralRepositoryImpl implements ReferralRepository {
         },
         'lastRewardTimestamp': FieldValue.serverTimestamp(),
       };
+
+      if (tier.coins > 0) {
+        final userDoc = await _firestore.collection('users').doc(user.id).get().timeout(_kNetworkTimeout);
+        final rawHistory = (userDoc.data()?['coinHistory'] as List<dynamic>?)
+                ?.map((e) => Map<String, dynamic>.from(e as Map))
+                .toList() ??
+            [];
+        updates['coinHistory'] = _recordCoinHistory(
+          rawHistory,
+          titleKey: 'coin_history.ambassador_cup_reward',
+          amount: tier.coins,
+          isEarned: true,
+        );
+      }
 
       await _firestore.collection('users').doc(user.id).update(updates).timeout(_kNetworkTimeout);
 

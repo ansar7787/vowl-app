@@ -152,8 +152,21 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
           }
 
           if (state.isLoading && state.referralCode == null) {
-            return const Center(
-              child: CircularProgressIndicator(strokeWidth: 2),
+            return Center(
+              child: Padding(
+                padding: EdgeInsets.all(24.w),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(LucideIcons.sparkles, size: 32.sp, color: AppColors.indigo500),
+                    SizedBox(height: 12.h),
+                    Text(
+                      'Loading Ambassador Hub...',
+                      style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w700, color: textPrimary),
+                    ),
+                  ],
+                ),
+              ),
             );
           }
 
@@ -174,6 +187,10 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
                     lifetimeCount: user.totalReferralsCount,
                     monthlyCount: user.activeMonthlyReferralsCount,
                     hasClaimedReferral: user.hasClaimedReferral,
+                    pendingReferralCode: user.pendingReferralCode,
+                    referredBy: user.referredBy,
+                    hasActivePremium: user.hasActivePremium,
+                    premiumExpiryDate: user.premiumExpiryDate,
                     isCopied: state.copiedToClipboard,
                     onCopy: () => context.read<ReferralCubit>().copyCode(code),
                     onShare: () {
@@ -200,6 +217,11 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
                   MonthlyCupLeaderboard(
                     items: state.ambassadorLeaderboard,
                     isLoading: state.isLoading,
+                    currentUserId: user.id,
+                    myMonthlyReferrals: user.activeMonthlyReferralsCount,
+                    onClaimPastMonth: () => context.read<ReferralCubit>().claimMonthlyCupReward(user),
+                    isClaimingPastMonth: state.isClaimingCupReward,
+                    hasUnclaimedPastMonth: user.activeMonthlyReferralsCount > 0,
                   ),
 
                   SizedBox(height: 24.h),

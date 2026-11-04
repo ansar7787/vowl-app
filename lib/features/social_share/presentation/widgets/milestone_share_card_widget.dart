@@ -135,7 +135,7 @@ class MilestoneShareCardWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10.r),
                     ),
                     child: Text(
-                      '+50 Coins Bounty Won 🪙',
+                      '+50 Coins 🪙 • +5 XP ⚡ Won',
                       style: TextStyle(
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w800,

@@ -3,11 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
+import 'package:vowl/features/arena/presentation/widgets/arena_matching_loader.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 /// Transparent deep link landing screen for resolving and entering 1v1 duel invites.
@@ -47,6 +49,19 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
         });
       }
       return;
+    }
+
+    if (di.sl.isRegistered<NetworkInfo>()) {
+      final isOnline = await di.sl<NetworkInfo>().hasRealConnection;
+      if (!isOnline) {
+        if (mounted) {
+          setState(() {
+            _isLoading = false;
+            _errorMessage = 'An active internet connection is required to join an Arena Duel. Please check your network connection and try again.';
+          });
+        }
+        return;
+      }
     }
 
     if (user.coins < 30) {
@@ -89,6 +104,18 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
     final cardBg = isMidnight ? AppColors.midnightSurface : (isDark ? const Color(0xFF1E293B) : Colors.white);
     final textPrimary = isDark ? Colors.white : AppColors.slate900;
     final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
+
+    if (_isLoading) {
+      return Scaffold(
+        backgroundColor: bgColor,
+        body: SafeArea(
+          child: ArenaMatchingLoader(
+            roomCode: widget.roomCode.toUpperCase(),
+            customMessage: 'Entering Arena Duel chamber...',
+          ),
+        ),
+      );
+    }
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -147,7 +174,7 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                   ),
                   SizedBox(height: 20.h),
                   Text(
-                    _isLoading ? 'Entering Arena Duel...' : (_errorMessage != null ? 'Duel Unavailable' : 'Duel Ready!'),
+                    _errorMessage != null ? 'Duel Unavailable' : 'Duel Ready!',
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 20.sp,
@@ -174,20 +201,7 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                     ),
                   ),
                   SizedBox(height: 16.h),
-                  if (_isLoading) ...[
-                    SizedBox(height: 10.h),
-                    const CircularProgressIndicator(color: AppColors.amber500),
-                    SizedBox(height: 14.h),
-                    Text(
-                      'Connecting to duel session & loading questions...',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        color: textSecondary,
-                      ),
-                    ),
-                  ] else if (_errorMessage != null) ...[
+                  if (_errorMessage != null) ...[
                     Text(
                       _errorMessage!,
                       textAlign: TextAlign.center,

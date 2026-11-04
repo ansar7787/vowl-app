@@ -1,7 +1,9 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -11,6 +13,8 @@ import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 import 'package:vowl/features/arena/presentation/bloc/arena_duel_cubit.dart';
 import 'package:vowl/features/arena/presentation/bloc/arena_duel_state.dart';
+import 'package:vowl/features/arena/presentation/widgets/arena_matching_loader.dart';
+import 'package:vowl/features/arena/presentation/widgets/arena_quit_match_dialog.dart';
 import 'package:vowl/features/arena/presentation/widgets/arena_result_dialog.dart';
 import 'package:vowl/features/arena/presentation/widgets/arena_score_hud.dart';
 
@@ -43,8 +47,38 @@ class ArenaDuelScreen extends StatelessWidget {
   }
 }
 
-class _ArenaDuelView extends StatelessWidget {
+class _ArenaDuelView extends StatefulWidget {
   const _ArenaDuelView();
+
+  @override
+  State<_ArenaDuelView> createState() => _ArenaDuelViewState();
+}
+
+class _ArenaDuelViewState extends State<_ArenaDuelView> {
+  StreamSubscription<AppNetworkStatus>? _networkSubscription;
+  bool _isOffline = false;
+
+  @override
+  void initState() {
+    super.initState();
+    if (di.sl.isRegistered<NetworkInfo>()) {
+      final networkInfo = di.sl<NetworkInfo>();
+      _isOffline = networkInfo.isCurrentlyOffline;
+      _networkSubscription = networkInfo.onStatusChange.listen((status) {
+        if (mounted) {
+          setState(() {
+            _isOffline = status == AppNetworkStatus.offline;
+          });
+        }
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _networkSubscription?.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -70,80 +104,120 @@ class _ArenaDuelView extends StatelessWidget {
       },
       child: Scaffold(
         backgroundColor: backgroundColor,
-      appBar: AppBar(
-        backgroundColor: isMidnight
-            ? Colors.black
-            : (isDark ? AppColors.slate900 : Colors.white),
-        surfaceTintColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(LucideIcons.x, size: 20.sp, color: textPrimary),
-          onPressed: () => _confirmExit(context),
+        appBar: AppBar(
+          backgroundColor: isMidnight
+              ? Colors.black
+              : (isDark ? AppColors.slate900 : Colors.white),
+          surfaceTintColor: Colors.transparent,
+          elevation: 0,
+          leading: IconButton(
+            icon: Icon(LucideIcons.x, size: 20.sp, color: textPrimary),
+            onPressed: () => _confirmExit(context),
+          ),
+          title: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(LucideIcons.swords, size: 18.sp, color: const Color(0xFFF59E0B)),
+              SizedBox(width: 8.w),
+              Text(
+                '1v1 Arena Duel',
+                style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w800, color: textPrimary),
+              ),
+            ],
+          ),
+          centerTitle: true,
         ),
-        title: Row(
-          mainAxisSize: MainAxisSize.min,
+        body: Column(
           children: [
-            Icon(LucideIcons.swords, size: 18.sp, color: const Color(0xFFF59E0B)),
-            SizedBox(width: 8.w),
-            Text(
-              '1v1 Arena Duel',
-              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w800, color: textPrimary),
-            ),
-          ],
-        ),
-        centerTitle: true,
-      ),
-      body: BlocConsumer<ArenaDuelCubit, ArenaDuelState>(
-        listener: (context, state) {
-          if (state.isCompleted) {
-            final authState = context.read<AuthBloc>().state;
-            final rivalName = state.session?.guestName ?? 'Rival';
-            showDialog(
-              context: context,
-              barrierDismissible: false,
-              builder: (dialogCtx) => ArenaResultDialog(
-                isWinner: state.isWinner,
-                isDraw: state.isDraw,
-                isSpeedTieBreak: state.isSpeedTieBreak,
-                speedDiffSeconds: state.speedDiffSeconds,
-                myScore: state.myScore,
-                rivalScore: state.rivalScore,
-                myCorrectCount: state.myCorrectCount,
-                rivalCorrectCount: state.rivalCorrectCount,
-                myTotalTimeMs: state.myTotalTimeMs,
-                rivalTotalTimeMs: state.rivalTotalTimeMs,
-                rivalName: rivalName,
-                rivalPhotoUrl: state.session?.guestPhotoUrl ?? state.session?.hostPhotoUrl,
-                myName: authState.user?.safeDisplayName ?? 'You',
-                myPhotoUrl: authState.user?.photoUrl,
-                payoutCoins: state.payoutCoins,
-                roomCode: state.session?.roomCode ?? '',
-                isAiRival: state.session?.isGhostRival ?? false,
-                onRematch: () {
-                  Navigator.of(dialogCtx).pop();
-                  if (authState.status == AuthStatus.authenticated && authState.user != null) {
-                    _triggerRematch(context, authState.user!);
+            if (_isOffline)
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF59E0B),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.15),
+                      blurRadius: 4,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(LucideIcons.wifiOff, size: 14.sp, color: Colors.black87),
+                    SizedBox(width: 8.w),
+                    Text(
+                      'Reconnecting to Arena... Checking network connection',
+                      style: TextStyle(
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.black87,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            Expanded(
+              child: BlocConsumer<ArenaDuelCubit, ArenaDuelState>(
+                listener: (context, state) {
+                  if (state.isCompleted) {
+                    final authState = context.read<AuthBloc>().state;
+                    final rivalName = state.session?.guestName ?? 'Rival';
+                    showDialog(
+                      context: context,
+                      barrierDismissible: false,
+                      builder: (dialogCtx) => ArenaResultDialog(
+                        isWinner: state.isWinner,
+                        isDraw: state.isDraw,
+                        isSpeedTieBreak: state.isSpeedTieBreak,
+                        speedDiffSeconds: state.speedDiffSeconds,
+                        myScore: state.myScore,
+                        rivalScore: state.rivalScore,
+                        myCorrectCount: state.myCorrectCount,
+                        rivalCorrectCount: state.rivalCorrectCount,
+                        myTotalTimeMs: state.myTotalTimeMs,
+                        rivalTotalTimeMs: state.rivalTotalTimeMs,
+                        rivalName: rivalName,
+                        rivalPhotoUrl: state.session?.guestPhotoUrl ?? state.session?.hostPhotoUrl,
+                        myName: authState.user?.safeDisplayName ?? 'You',
+                        myPhotoUrl: authState.user?.photoUrl,
+                        payoutCoins: state.payoutCoins,
+                        roomCode: state.session?.roomCode ?? '',
+                        isAiRival: state.session?.isGhostRival ?? false,
+                        onRematch: () {
+                          Navigator.of(dialogCtx).pop();
+                          if (authState.status == AuthStatus.authenticated && authState.user != null) {
+                            _triggerRematch(context, authState.user!);
+                          }
+                        },
+                        onClose: () {
+                          Navigator.of(dialogCtx).pop();
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    );
                   }
                 },
-                onClose: () {
-                  Navigator.of(dialogCtx).pop();
-                  Navigator.of(context).pop();
-                },
-              ),
-            );
-          }
-        },
-        builder: (context, state) {
-          final authState = context.watch<AuthBloc>().state;
-          final user = authState.status == AuthStatus.authenticated ? authState.user : null;
-          if (user == null) return const SizedBox.shrink();
+                builder: (context, state) {
+                  final authState = context.watch<AuthBloc>().state;
+                  final user = authState.status == AuthStatus.authenticated ? authState.user : null;
+                  if (user == null) return const SizedBox.shrink();
 
-          if (state.isWaitingForGuest) {
-            return _buildWaitingLobby(context, state, isDark, borderColor, textPrimary, textSecondary);
-          }
+                  if (state.isWaitingForGuest) {
+                    return ArenaMatchingLoader(
+                      roomCode: state.session?.roomCode,
+                      showShareCode: true,
+                    );
+                  }
 
-          final q = state.currentQuestion;
-          if (q == null) return const Center(child: CircularProgressIndicator());
+                  final q = state.currentQuestion;
+                  if (q == null) {
+                    return const ArenaMatchingLoader(
+                      customMessage: 'Loading next vocabulary duel...',
+                    );
+                  }
 
           final rivalName = state.session?.guestId == user.id
               ? (state.session?.hostName ?? 'Host')
@@ -308,8 +382,11 @@ class _ArenaDuelView extends StatelessWidget {
         },
       ),
     ),
-  );
-}
+  ],
+),
+      ),
+    );
+  }
 
   String _getDisciplineLabel(ArenaQuestion q) {
     final disc = q.discipline;
@@ -434,100 +511,23 @@ class _ArenaDuelView extends StatelessWidget {
     );
   }
 
-  Widget _buildWaitingLobby(
-    BuildContext context,
-    ArenaDuelState state,
-    bool isDark,
-    Color borderColor,
-    Color textPrimary,
-    Color textSecondary,
-  ) {
-    final code = state.session?.roomCode ?? 'VOWL-DUEL';
-
-    return Center(
-      child: Padding(
-        padding: EdgeInsets.all(24.w),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              width: 60.w,
-              height: 60.w,
-              decoration: BoxDecoration(
-                color: AppColors.indigo500.withValues(alpha: 0.15),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(LucideIcons.swords, size: 28.sp, color: AppColors.indigo500),
-            ),
-            SizedBox(height: 16.h),
-            Text(
-              'Waiting for Opponent',
-              style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w800, color: textPrimary),
-            ),
-            SizedBox(height: 6.h),
-            Text(
-              'Share this room code with a friend to begin the 30-coin duel:',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 12.sp, color: textSecondary),
-            ),
-            SizedBox(height: 16.h),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-              decoration: BoxDecoration(
-                color: (isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black)
-                    ? AppColors.midnightSurface
-                    : (isDark ? AppColors.slate800 : const Color(0xFFF1F5F9)),
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(color: borderColor),
-              ),
-              child: Text(
-                code,
-                style: TextStyle(
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 2,
-                  color: AppColors.indigo500,
-                ),
-              ),
-            ),
-            SizedBox(height: 24.h),
-            const CircularProgressIndicator(strokeWidth: 2),
-          ],
-        ),
-      ),
-    );
-  }
-
   void _confirmExit(BuildContext context) {
-    showDialog(
+    ArenaQuitMatchDialog.show(
       context: context,
-      builder: (dialogCtx) => AlertDialog(
-        title: const Text('Forfeit Duel?'),
-        content: const Text('Leaving mid-match will forfeit your 30-coin stake.'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(dialogCtx).pop(),
-            child: const Text('Stay & Fight'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              final cubit = context.read<ArenaDuelCubit>();
-              final session = cubit.state.session;
-              final authState = context.read<AuthBloc>().state;
-              if (session != null && authState.user != null) {
-                di.sl<ArenaRepository>().forfeitMatch(
-                  roomCode: session.roomCode,
-                  userId: authState.user!.id,
-                );
-              }
-              Navigator.of(dialogCtx).pop();
-              Navigator.of(context).pop();
-            },
-            style: ElevatedButton.styleFrom(backgroundColor: AppColors.rose500),
-            child: const Text('Forfeit'),
-          ),
-        ],
-      ),
+      onForfeit: () {
+        final cubit = context.read<ArenaDuelCubit>();
+        final session = cubit.state.session;
+        final authState = context.read<AuthBloc>().state;
+        if (session != null && authState.user != null) {
+          di.sl<ArenaRepository>().forfeitMatch(
+            roomCode: session.roomCode,
+            userId: authState.user!.id,
+          );
+        }
+        if (mounted) {
+          Navigator.of(context).pop();
+        }
+      },
     );
   }
 

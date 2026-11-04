@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/onboarding_service.dart';
 import 'package:vowl/core/presentation/feature_catalog/vowl_showcase_catalog.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/referral/presentation/pages/referral_hub_screen.dart';
 
 /// Ultra-modern showcase modal for on-demand feature discovery (e.g. from Feature Directory).
 class FirstTimeWelcomeShowcase extends StatefulWidget {
@@ -580,6 +581,25 @@ class _FirstTimeWelcomeShowcaseState extends State<FirstTimeWelcomeShowcase> {
                         ),
                       ),
                     ),
+                    if (_currentPage == _slides.length - 1) ...[
+                      SizedBox(height: 10.h),
+                      TextButton.icon(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          Navigator.of(context).push(ReferralHubScreen.route());
+                        },
+                        icon: Icon(LucideIcons.gift, size: 14.sp, color: slide.accentColor),
+                        label: Text(
+                          'Have a Friend\'s Referral Code? Enter Pass',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w600,
+                            color: slide.accentColor,
+                          ),
+                        ),
+                      ),
+                    ],
                   ],
                 ),
               ),

@@ -440,6 +440,31 @@ class ArenaResultDialog extends StatelessWidget {
                         ),
                       ],
                     ),
+                    if (isWinner) ...[
+                      SizedBox(height: 4.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Flexible(
+                            child: Text(
+                              'Victory Duel Bonus',
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(fontSize: 11.sp, color: textSecondary),
+                            ),
+                          ),
+                          SizedBox(width: 8.w),
+                          Text(
+                            '+5 XP ⚡',
+                            style: TextStyle(
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w800,
+                              color: const Color(0xFF6366F1),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ],
                 ),
               ),
