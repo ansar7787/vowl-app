@@ -184,6 +184,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             );
           }
         } else if (state is KidsGameOver) {
+          audio.playGameOverSFX();
           KidsGameDialogs.showGameOverDialog(
             context: context,
             primaryColor: widget.primaryColor,
