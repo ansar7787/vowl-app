@@ -160,8 +160,6 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
         user ?? (mounted ? context.read<AuthBloc>().state.user : null);
     if (activeUser == null) return;
 
-    _isLaunching = false;
-
     if (_isFinished) {
       _updateState();
       return;
@@ -184,9 +182,6 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
       _currentIndex = computedIndex.clamp(0, _quests.length);
       _saveStepProgress();
       _updateState();
-      if (_currentIndex >= _quests.length && !_isLaunching) {
-        _finishSequence();
-      }
     } else {
       _updateState();
     }
@@ -322,7 +317,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     } finally {
       if (mounted) {
         _isLaunching = false;
-        _syncProgressWithUser();
+        _updateState();
       }
     }
 
@@ -353,7 +348,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
         context.read<AuthBloc>().add(const AuthRefreshUser());
       } catch (_) {}
 
-      if (_currentIndex >= _quests.length && !_isLaunching) {
+      if (_currentIndex >= _quests.length) {
         _finishSequence();
       }
     } else {
