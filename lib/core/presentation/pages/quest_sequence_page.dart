@@ -10,9 +10,11 @@ import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
+import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 
@@ -105,6 +107,12 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
         }
         if (restoredQuests.isNotEmpty && mounted) {
           _quests = restoredQuests;
+          DiscoveryHelper.setCachedTrack(
+            widget.sequenceId,
+            userId,
+            restoredQuests,
+            date: todayStr,
+          );
         }
       } else if (_quests.isNotEmpty) {
         // First launch today: cache today's quest track
@@ -114,6 +122,12 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
         await prefs.setString(
           'vowl_sequence_quests_${widget.sequenceId}_$userId',
           '$todayStr|$payload',
+        );
+        DiscoveryHelper.setCachedTrack(
+          widget.sequenceId,
+          userId,
+          _quests,
+          date: todayStr,
         );
       }
 
@@ -131,7 +145,49 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
           }
         }
       }
+
+      // 4. Directly reconcile progress with UserEntity.completedLevels
+      if (mounted) {
+        _syncProgressWithUser(user);
+      }
     } catch (_) {}
+  }
+
+  void _syncProgressWithUser([UserEntity? user]) {
+    final activeUser =
+        user ?? (mounted ? context.read<AuthBloc>().state.user : null);
+    if (activeUser == null) return;
+
+    _isLaunching = false;
+
+    if (_isFinished) {
+      _updateState();
+      return;
+    }
+
+    int computedIndex = 0;
+    for (int i = 0; i < _quests.length; i++) {
+      final q = _quests[i];
+      final subtype = q.subtype?.name ?? '';
+      final isCleared =
+          activeUser.completedLevels[subtype]?.contains(q.difficulty) ?? false;
+      if (isCleared) {
+        computedIndex = i + 1;
+      } else {
+        break;
+      }
+    }
+
+    if (computedIndex > _currentIndex) {
+      _currentIndex = computedIndex.clamp(0, _quests.length);
+      _saveStepProgress();
+      _updateState();
+      if (_currentIndex >= _quests.length) {
+        _finishSequence();
+      }
+    } else {
+      _updateState();
+    }
   }
 
   Future<void> _saveStepProgress() async {
@@ -264,7 +320,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     } finally {
       if (mounted) {
         _isLaunching = false;
-        _updateState();
+        _syncProgressWithUser();
       }
     }
 
@@ -277,9 +333,13 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     final isSuccess = result == true || isLevelCompletedNatively;
 
     if (isSuccess) {
-      _currentIndex++;
-      _updateState();
-      await _saveStepProgress();
+      final prevIndex = _currentIndex;
+      _syncProgressWithUser(user);
+      if (_currentIndex == prevIndex && _currentIndex < _quests.length) {
+        _currentIndex++;
+        _saveStepProgress();
+        _updateState();
+      }
       if (!mounted) return;
 
       try {
@@ -367,11 +427,16 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     final isMidnight =
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
-    return Scaffold(
-      backgroundColor: isMidnight
-          ? Colors.black
-          : (isDark ? AppColors.slate900 : Colors.white),
-      body: Stack(
+    return BlocListener<AuthBloc, AuthState>(
+      listenWhen: (previous, current) => previous.user != current.user,
+      listener: (context, state) {
+        _syncProgressWithUser(state.user);
+      },
+      child: Scaffold(
+        backgroundColor: isMidnight
+            ? Colors.black
+            : (isDark ? AppColors.slate900 : Colors.white),
+        body: Stack(
         children: [
           const MeshGradientBackground(showLetters: false),
           ValueListenableBuilder<int>(
@@ -511,8 +576,9 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
           ),
         ],
       ),
-    );
-  }
+    ),
+  );
+}
 }
 
 // ---------------------------------------------------------------------------

@@ -33,11 +33,49 @@ class DiscoveryHelper {
 
   // ── Public API ────────────────────────────────────────────────────────────
 
+  static final Map<String, _DailyTrackCache> _trackCache = {};
+
+  /// Clears in-memory daily track cache (useful for testing or date rollover).
+  static void clearTrackCache() {
+    _trackCache.clear();
+  }
+
+  /// Sets or warms the daily track cache.
+  static void setCachedTrack(
+    String sequenceId,
+    String userId,
+    List<GameQuest> quests, {
+    String? date,
+  }) {
+    final now = DateTime.now();
+    final todayStr = date ??
+        '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+    final key = '${sequenceId}_$userId';
+    _trackCache[key] = _DailyTrackCache(date: todayStr, quests: quests);
+  }
+
   /// Resolves dynamic quest lists based on hub sequence configurations.
+  /// Caches the generated track per sequence, user, and calendar day so
+  /// in-session level completions do not prematurely bump uncompleted steps.
   static List<GameQuest> getQuestsForSequence(
     String sequenceId,
     UserEntity user,
   ) {
+    final now = DateTime.now();
+    final todayStr =
+        '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+    final key = '${sequenceId}_${user.id}';
+    final cached = _trackCache[key];
+    if (cached != null && cached.date == todayStr) {
+      return cached.quests;
+    }
+
+    final quests = _resolveQuests(sequenceId, user);
+    _trackCache[key] = _DailyTrackCache(date: todayStr, quests: quests);
+    return quests;
+  }
+
+  static List<GameQuest> _resolveQuests(String sequenceId, UserEntity user) {
     switch (sequenceId) {
       case 'daily_duo':
       case 'daily_workout':
@@ -312,4 +350,11 @@ extension GameQuestX on GameQuest {
       visualConfig: visualConfig,
     );
   }
+}
+
+class _DailyTrackCache {
+  final String date;
+  final List<GameQuest> quests;
+
+  const _DailyTrackCache({required this.date, required this.quests});
 }

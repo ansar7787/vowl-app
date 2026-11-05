@@ -5,6 +5,10 @@ import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
 void main() {
+  setUp(() {
+    DiscoveryHelper.clearTrackCache();
+  });
+
   const baseUser = UserEntity(
     id: 'test_user_discovery',
     email: 'test@vowl.app',

@@ -7,6 +7,9 @@ import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/network/network_info.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/presentation/pages/quest_sequence_page.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -29,6 +32,8 @@ class MockHapticService extends Mock implements HapticService {}
 
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
+class MockAdService extends Mock implements AdService {}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -38,6 +43,7 @@ void main() {
   late MockSoundService mockSoundService;
   late MockHapticService mockHapticService;
   late MockNetworkInfo mockNetworkInfo;
+  late MockAdService mockAdService;
 
   const testUser = UserEntity(
     id: 'user_quest_test',
@@ -62,6 +68,17 @@ void main() {
     mockSoundService = MockSoundService();
     mockHapticService = MockHapticService();
     mockNetworkInfo = MockNetworkInfo();
+    mockAdService = MockAdService();
+
+    when(() => mockAdService.recordLevelCompletion()).thenReturn(false);
+    when(() => mockAdService.showInterstitialAd(
+      onDismissed: any(named: 'onDismissed'),
+      isPremium: any(named: 'isPremium'),
+      force: any(named: 'force'),
+    )).thenAnswer((invocation) {
+      final callback = invocation.namedArguments[#onDismissed] as VoidCallback;
+      callback();
+    });
 
     when(() => mockLocale.currentLocale).thenReturn(const Locale('en'));
     when(() => mockLocale.tr(
@@ -112,10 +129,14 @@ void main() {
     if (di.sl.isRegistered<AuthBloc>()) di.sl.unregister<AuthBloc>();
     di.sl.registerLazySingleton<AuthBloc>(() => mockAuthBloc);
 
+    if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
+    di.sl.registerLazySingleton<AdService>(() => mockAdService);
+
     initLocaleServiceReference(mockLocale);
   });
 
   tearDown(() {
+    if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
     if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
     if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
     if (di.sl.isRegistered<NetworkInfo>()) di.sl.unregister<NetworkInfo>();
@@ -327,8 +348,10 @@ void main() {
       ];
 
       for (var i = 0; i < iconQuests.length; i++) {
+        SharedPreferences.setMockInitialValues({});
+        DiscoveryHelper.clearTrackCache();
         await tester.pumpWidget(buildQuestSequenceHarness(
-          sequenceId: 'daily_duo',
+          sequenceId: 'icon_seq_$i',
           quests: [iconQuests[i]],
         ));
         await tester.pump();
@@ -672,6 +695,83 @@ void main() {
       final prefs = await SharedPreferences.getInstance();
       final savedStep = prefs.getString('vowl_sequence_step_daily_duo_user_quest_test');
       expect(savedStep, equals('${todayStr}_1'));
+    });
+
+    testWidgets('completing Part 1 via GameDialogHelper advances to Part 2 seamlessly', (tester) async {
+      setViewport(tester, const Size(390, 950));
+
+      final router = GoRouter(
+        initialLocation: '/sequence',
+        routes: [
+          GoRoute(
+            path: '/sequence',
+            builder: (context, state) => QuestSequencePage(
+              sequenceId: 'daily_duo',
+              quests: sampleQuests,
+            ),
+          ),
+          GoRoute(
+            path: '/game',
+            builder: (gameCtx, state) {
+              return Scaffold(
+                body: Center(
+                  child: ElevatedButton(
+                    key: const Key('trigger_completion_btn'),
+                    onPressed: () {
+                      GameDialogHelper.showCompletion(
+                        gameCtx,
+                        xp: 15,
+                        coins: 10,
+                        gameType: 'repeatSentence',
+                        level: 1,
+                      );
+                    },
+                    child: const Text('TRIGGER COMPLETION'),
+                  ),
+                ),
+              );
+            },
+          ),
+        ],
+      );
+
+      await tester.pumpWidget(ScreenUtilInit(
+        designSize: const Size(390, 844),
+        builder: (context, child) => MultiBlocProvider(
+          providers: [
+            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+            BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+          ],
+          child: MaterialApp.router(
+            routerConfig: router,
+          ),
+        ),
+      ));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      // Tap Start Part 1
+      await tester.tap(find.text('Start Part 1'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 400));
+
+      // Trigger completion dialog
+      await tester.tap(find.byKey(const Key('trigger_completion_btn')));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 1500));
+
+      // The dialog is visible! Find OK / CONTINUE button on ModernGameDialog
+      final okBtn = find.text('OK');
+      expect(okBtn, findsOneWidget);
+
+      // Tap OK
+      await tester.tap(okBtn);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 1000));
+
+      // NOW: We should be back on QuestSequencePage!
+      // And Part 2 should be active!
+      expect(find.text('Start Part 2'), findsOneWidget);
     });
 
     testWidgets('fully completed sequence restores all steps completed today', (tester) async {
