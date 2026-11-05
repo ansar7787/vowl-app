@@ -253,10 +253,11 @@ void main() {
       },
     );
 
-    test('preserves user-scoped vowl_sequence and daily_words keys across logout', () async {
+    test('preserves user-scoped vowl_sequence, daily_words, and scan/photo keys across logout', () async {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString('vowl_sequence_completed_rapid_recall_user_1', '2026-11-05');
       await prefs.setString('daily_words_user_1_last_completed_date', '2026-11-05');
+      await prefs.setStringList('scan_saved_snippets', ['snippet_1', 'snippet_2']);
       await prefs.setString('transient_session_secret', 'secret123');
 
       when(() => mockLogOut(any())).thenAnswer((_) async => const Right(null));
@@ -267,6 +268,7 @@ void main() {
 
       expect(prefs.getString('vowl_sequence_completed_rapid_recall_user_1'), equals('2026-11-05'));
       expect(prefs.getString('daily_words_user_1_last_completed_date'), equals('2026-11-05'));
+      expect(prefs.getStringList('scan_saved_snippets'), equals(['snippet_1', 'snippet_2']));
       expect(prefs.getString('transient_session_secret'), isNull);
     });
 

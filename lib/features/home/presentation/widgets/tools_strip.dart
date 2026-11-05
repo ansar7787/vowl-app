@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_words/data/services/daily_words_service.dart';
+import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 
 /// Production-hardened Tools & Utilities Hub (The 7 Apex Tools & Word Games).
 ///
@@ -71,12 +72,25 @@ class _ToolsStripState extends State<ToolsStrip> {
   @override
   void initState() {
     super.initState();
+    DiscoveryDeck.dailyCompletionNotifier.addListener(_onDailyCompletionChanged);
     if (widget.isExpandedNotifier != null) {
       _isExpanded = widget.isExpandedNotifier!;
     } else {
       _isExpanded = ToolsStrip.globalExpansionNotifier;
       _isExpanded.value = !widget.collapsed;
     }
+  }
+
+  void _onDailyCompletionChanged() {
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
+  @override
+  void dispose() {
+    DiscoveryDeck.dailyCompletionNotifier.removeListener(_onDailyCompletionChanged);
+    super.dispose();
   }
 
   @override

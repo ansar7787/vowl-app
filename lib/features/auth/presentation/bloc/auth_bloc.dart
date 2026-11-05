@@ -417,26 +417,22 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
       if (!isAccountDeletion) {
         for (final key in prefs.getKeys()) {
-          if (key.startsWith('vowl_sequence_') || key.startsWith('daily_words_')) {
-            final sVal = prefs.getString(key);
-            if (sVal != null) {
-              userScopedStrings[key] = sVal;
-              continue;
-            }
-            final iVal = prefs.getInt(key);
-            if (iVal != null) {
-              userScopedInts[key] = iVal;
-              continue;
-            }
-            final bVal = prefs.getBool(key);
-            if (bVal != null) {
-              userScopedBools[key] = bVal;
-              continue;
-            }
-            final slVal = prefs.getStringList(key);
-            if (slVal != null) {
-              userScopedStringLists[key] = slVal;
-              continue;
+          if (key.startsWith('vowl_sequence_') ||
+              key.startsWith('daily_words_') ||
+              key.startsWith('scan_') ||
+              key.startsWith('photo_')) {
+            final val = prefs.get(key);
+            if (val is String) {
+              userScopedStrings[key] = val;
+            } else if (val is int) {
+              userScopedInts[key] = val;
+            } else if (val is bool) {
+              userScopedBools[key] = val;
+            } else if (val is List<String>) {
+              userScopedStringLists[key] = val;
+            } else if (val is List) {
+              userScopedStringLists[key] =
+                  val.map((e) => e.toString()).toList();
             }
           }
         }

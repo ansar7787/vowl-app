@@ -8,28 +8,36 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/daily_words/data/services/daily_words_service.dart';
+import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
 
 class MockHapticService extends Mock implements HapticService {}
 
 class MockLocaleService extends Mock implements LocaleService {}
 
+class MockDailyWordsService extends Mock implements DailyWordsService {}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   late MockHapticService mockHapticService;
   late MockLocaleService mockLocaleService;
+  late MockDailyWordsService mockDailyWordsService;
   late List<String> navigatedRoutes;
 
   setUp(() {
     VowlMotion.lowAnimationModeOverride.value = true;
     mockHapticService = MockHapticService();
     mockLocaleService = MockLocaleService();
+    mockDailyWordsService = MockDailyWordsService();
     navigatedRoutes = [];
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
+    when(() => mockDailyWordsService.isTodayCompleted).thenReturn(false);
+    when(() => mockDailyWordsService.currentDay).thenReturn(1);
     when(
       () => mockLocaleService.tr(
         any(),
@@ -52,6 +60,11 @@ void main() {
     }
     di.sl.registerSingleton<LocaleService>(mockLocaleService);
     initLocaleServiceReference(mockLocaleService);
+
+    if (di.sl.isRegistered<DailyWordsService>()) {
+      di.sl.unregister<DailyWordsService>();
+    }
+    di.sl.registerSingleton<DailyWordsService>(mockDailyWordsService);
   });
 
   tearDown(() {
@@ -60,6 +73,9 @@ void main() {
     }
     if (di.sl.isRegistered<LocaleService>()) {
       di.sl.unregister<LocaleService>();
+    }
+    if (di.sl.isRegistered<DailyWordsService>()) {
+      di.sl.unregister<DailyWordsService>();
     }
   });
 
@@ -317,6 +333,20 @@ void main() {
 
       expect(find.byType(ToolsStrip), findsOneWidget);
       expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('dynamically updates when DiscoveryDeck.notifySequenceCompleted() is invoked', (tester) async {
+      when(() => mockDailyWordsService.isTodayCompleted).thenReturn(false);
+      await tester.pumpWidget(createSubject());
+      await tester.pumpAndSettle();
+
+      expect(find.text('TODAY'), findsOneWidget);
+
+      when(() => mockDailyWordsService.isTodayCompleted).thenReturn(true);
+      DiscoveryDeck.notifySequenceCompleted();
+      await tester.pumpAndSettle();
+
+      expect(find.text('COMPLETED ✓'), findsOneWidget);
     });
   });
 }
