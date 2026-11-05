@@ -15,13 +15,13 @@ import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/home/presentation/widgets/global_progress_card.dart';
 import 'package:vowl/features/leaderboard/domain/repositories/leaderboard_repository.dart';
+import 'package:vowl/features/leaderboard/domain/utils/leaderboard_ranking_helper.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
-import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/home/presentation/widgets/bento_arena.dart';
 import 'package:vowl/features/home/presentation/widgets/home_hero_header.dart';
 import 'package:vowl/features/home/presentation/widgets/continue_learning_card.dart';
@@ -130,20 +130,16 @@ class _HomeScreenState extends State<HomeScreen> {
       result.fold((_) {
         if (mounted) _isRankLoading.value = false;
       }, (data) {
-        final sorted = List<UserEntity>.from(data.users)
-          ..sort((a, b) {
-            final aL = a.totalLevelsCompleted;
-            final bL = b.totalLevelsCompleted;
-            if (bL != aL) return bL.compareTo(aL);
-            if (b.totalExp != a.totalExp) {
-              return b.totalExp.compareTo(a.totalExp);
-            }
-            return b.currentStreak.compareTo(a.currentStreak);
-          });
         final currentUser = context.read<AuthBloc>().state.user;
+        final sorted = LeaderboardRankingHelper.sortAllTime(
+          data.users,
+          currentUser: currentUser,
+        );
         if (currentUser != null && mounted) {
-          final idx = sorted.indexWhere((u) => u.id == currentUser.id);
-          _globalRank.value = idx >= 0 ? idx + 1 : null;
+          _globalRank.value = LeaderboardRankingHelper.getRankPosition(
+            sorted,
+            currentUser.id,
+          );
         }
         if (mounted) _isRankLoading.value = false;
       });
@@ -409,7 +405,30 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ] else ...[
                         // --------------------------------------------------
-                        // 4. CURRICULUM BENTO ARENA + WEAK-SPOT REVIEW
+                        // 4. DAILY PRACTICE (Micro-Workouts & Targeted Skill Drills)
+                        // --------------------------------------------------
+                        HomeSliverSectionHeader(
+                          title: context.tr(
+                            'home.daily_practice_title',
+                            fallback: 'Daily Practice',
+                          ),
+                          subtitle: context.tr(
+                            'home.daily_practice_subtitle',
+                            fallback: 'Targeted daily workouts',
+                          ),
+                          categoryColor: IllustrationColors.brightBlue,
+                          onSeeAll: () => context.push(AppRouter.libraryRoute),
+                        ),
+                        SliverToBoxAdapter(
+                          child: DiscoveryDeck(
+                            user: user,
+                            onLaunchQuest: (id) =>
+                                _launchThemedQuest(context, id),
+                          ),
+                        ),
+
+                        // --------------------------------------------------
+                        // 5. CURRICULUM BENTO ARENA + WEAK-SPOT REVIEW
                         // --------------------------------------------------
                         SliverPadding(
                           padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -442,7 +461,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
 
                         // --------------------------------------------------
-                        // 5. PROGRESS CARD (Total levels + Rank)
+                        // 6. PROGRESS CARD (Total levels + Rank)
                         // --------------------------------------------------
                         SliverPadding(
                           padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -465,7 +484,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
 
                         // --------------------------------------------------
-                        // 6. EXPLORE & TOOLS (Horizontal strip)
+                        // 7. EXPLORE & TOOLS (Horizontal strip)
                         // --------------------------------------------------
                         HomeSliverSectionHeader(
                           title: context.tr(
@@ -477,32 +496,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             fallback: 'Your learning toolkit',
                           ),
                           categoryColor: AppColors.emerald500,
-                          onSeeAll: () => ToolsStrip.showToolsDirectory(context),
+                          onSeeAll: () => ToolsStrip.toggleExpanded(context),
                         ),
                         const SliverToBoxAdapter(child: ToolsStrip()),
-
-                        // --------------------------------------------------
-                        // 7. DISCOVERY HUB (Quest Recommendations)
-                        // --------------------------------------------------
-                        HomeSliverSectionHeader(
-                          title: context.tr(
-                            'home.discovery_hub_title',
-                            fallback: 'Discovery Hub',
-                          ),
-                          subtitle: context.tr(
-                            'home.discovery_hub_subtitle',
-                            fallback: 'Targeted skill tracks',
-                          ),
-                          categoryColor: IllustrationColors.brightBlue,
-                          onSeeAll: () => context.push(AppRouter.libraryRoute),
-                        ),
-                        SliverToBoxAdapter(
-                          child: DiscoveryDeck(
-                            user: user,
-                            onLaunchQuest: (id) =>
-                                _launchThemedQuest(context, id),
-                          ),
-                        ),
                       ],
 
                       // --------------------------------------------------
@@ -571,15 +567,16 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void _launchThemedQuest(BuildContext context, String questId) {
+  void _launchThemedQuest(BuildContext context, String questId) async {
     try {
       Haptics.vibrate(HapticsType.medium);
     } catch (e) {
       if (kDebugMode) debugPrint('HomeScreen: haptics unavailable: $e');
     }
-    context.push(
+    await context.push(
       '${AppRouter.questSequenceRoute}?id=${Uri.encodeQueryComponent(questId)}',
     );
+    DiscoveryDeck.notifySequenceCompleted();
   }
 }
 

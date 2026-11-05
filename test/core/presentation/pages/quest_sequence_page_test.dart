@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/presentation/pages/quest_sequence_page.dart';
@@ -54,6 +55,7 @@ void main() {
   }
 
   setUp(() {
+    SharedPreferences.setMockInitialValues({});
     mockLocale = MockLocaleService();
     mockAuthBloc = MockAuthBloc();
     mockEconomyBloc = MockEconomyBloc();
@@ -229,7 +231,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('DAILY DUO'), findsOneWidget);
+      expect(find.text('DAILY WORKOUT'), findsOneWidget);
       expect(find.text('Part 1 of 2'), findsOneWidget);
       expect(find.text('quest_sequences.repeat_sentence'), findsOneWidget);
       expect(find.text('Start Part 1'), findsOneWidget);
@@ -246,7 +248,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('SPEED BLITZ'), findsOneWidget);
+      expect(find.text('RAPID RECALL'), findsOneWidget);
     });
 
     testWidgets('renders grammar_pro title correctly', (tester) async {
@@ -259,7 +261,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('GRAMMAR PRO'), findsOneWidget);
+      expect(find.text('SENTENCE LAB'), findsOneWidget);
     });
 
     testWidgets('renders default fallback title for unknown sequenceId', (tester) async {
@@ -285,7 +287,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('DAILY DUO'), findsOneWidget);
+      expect(find.text('DAILY WORKOUT'), findsOneWidget);
       expect(find.text('Completed'), findsOneWidget);
       expect(find.text('SUMMARY'), findsOneWidget);
       expect(find.text('All parts completed!'), findsOneWidget);
@@ -548,7 +550,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       expect(tester.takeException(), isNull);
-      expect(find.text('SPEED BLITZ'), findsOneWidget);
+      expect(find.text('RAPID RECALL'), findsOneWidget);
     });
 
     testWidgets('tablet layout (800x1280) renders without overflow', (tester) async {
@@ -563,7 +565,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       expect(tester.takeException(), isNull);
-      expect(find.text('GRAMMAR PRO'), findsOneWidget);
+      expect(find.text('SENTENCE LAB'), findsOneWidget);
     });
 
     testWidgets('dark theme applies AppColors.slate900 background', (tester) async {

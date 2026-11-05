@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -21,6 +22,7 @@ void main() {
   late List<String> launchedQuests;
 
   setUp(() {
+    SharedPreferences.setMockInitialValues({});
     VowlMotion.lowAnimationModeOverride.value = true;
     mockHapticService = MockHapticService();
     mockLocaleService = MockLocaleService();
@@ -110,73 +112,74 @@ void main() {
   }
 
   group('Piece 9: DiscoveryDeck Architecture & Rendering Tests', () {
-    testWidgets('renders Flagship Hero Card: For You (Adaptive)', (tester) async {
+    testWidgets('renders Flagship Hero Card: Smart Focus (Adaptive AI)', (tester) async {
       await tester.pumpWidget(createTestWidget());
       await tester.pumpAndSettle();
 
-      expect(find.text('For You'), findsOneWidget);
-      expect(find.text('ADAPTIVE'), findsOneWidget);
-      expect(find.text('Personalized to your practice'), findsOneWidget);
+      expect(find.text('Smart Focus'), findsOneWidget);
+      expect(find.text('ADAPTIVE AI'), findsOneWidget);
+      expect(find.text('Targeted practice for your weakest skills'), findsOneWidget);
       expect(find.text('Play'), findsOneWidget);
       expect(find.byIcon(Icons.lightbulb_rounded), findsOneWidget);
     });
 
-    testWidgets('renders 3-Cell Superpower Row: Daily Duo, Speed Blitz, Grammar Pro', (tester) async {
+    testWidgets('renders 3-Cell Superpower Row: Daily Workout, Rapid Recall, Sentence Lab', (tester) async {
       await tester.pumpWidget(createTestWidget());
       await tester.pumpAndSettle();
 
-      expect(find.text('Daily Duo'), findsOneWidget);
-      expect(find.text('2 Quests'), findsOneWidget);
+      expect(find.text('Daily Workout'), findsOneWidget);
+      expect(find.text('2 Steps'), findsOneWidget);
       expect(find.byIcon(Icons.auto_awesome_motion_rounded), findsOneWidget);
 
-      expect(find.text('Speed Blitz'), findsOneWidget);
-      expect(find.text('3 Quests'), findsNWidgets(2)); // Speed Blitz and Grammar Pro both have 3 Quests
+      expect(find.text('Rapid Recall'), findsOneWidget);
+      expect(find.text('Speed Drill'), findsOneWidget);
       expect(find.byIcon(Icons.bolt_rounded), findsOneWidget);
 
-      expect(find.text('Grammar Pro'), findsOneWidget);
-      expect(find.byIcon(Icons.verified_user_rounded), findsOneWidget);
+      expect(find.text('Sentence Lab'), findsOneWidget);
+      expect(find.text('Syntax'), findsOneWidget);
+      expect(find.byIcon(Icons.architecture_rounded), findsOneWidget);
     });
   });
 
   group('Piece 9: DiscoveryDeck Interaction & Navigation Tests', () {
-    testWidgets('tapping For You hero card launches smart_recommendation and triggers haptic', (tester) async {
+    testWidgets('tapping Smart Focus hero card launches smart_recommendation and triggers haptic', (tester) async {
       await tester.pumpWidget(createTestWidget());
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('For You'));
+      await tester.tap(find.text('Smart Focus'));
       await tester.pumpAndSettle();
 
       expect(launchedQuests, ['smart_recommendation']);
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('tapping Daily Duo subcell launches daily_duo and triggers haptic', (tester) async {
+    testWidgets('tapping Daily Workout subcell launches daily_duo and triggers haptic', (tester) async {
       await tester.pumpWidget(createTestWidget());
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('Daily Duo'));
+      await tester.tap(find.text('Daily Workout'));
       await tester.pumpAndSettle();
 
       expect(launchedQuests, ['daily_duo']);
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('tapping Speed Blitz subcell launches speed_blitz and triggers haptic', (tester) async {
+    testWidgets('tapping Rapid Recall subcell launches speed_blitz and triggers haptic', (tester) async {
       await tester.pumpWidget(createTestWidget());
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('Speed Blitz'));
+      await tester.tap(find.text('Rapid Recall'));
       await tester.pumpAndSettle();
 
       expect(launchedQuests, ['speed_blitz']);
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('tapping Grammar Pro subcell launches grammar_pro and triggers haptic', (tester) async {
+    testWidgets('tapping Sentence Lab subcell launches grammar_pro and triggers haptic', (tester) async {
       await tester.pumpWidget(createTestWidget());
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('Grammar Pro'));
+      await tester.tap(find.text('Sentence Lab'));
       await tester.pumpAndSettle();
 
       expect(launchedQuests, ['grammar_pro']);
@@ -189,10 +192,10 @@ void main() {
       await tester.pumpWidget(createTestWidget(width: 320, height: 568));
       await tester.pumpAndSettle();
 
-      expect(find.text('For You'), findsOneWidget);
-      expect(find.text('Daily Duo'), findsOneWidget);
-      expect(find.text('Speed Blitz'), findsOneWidget);
-      expect(find.text('Grammar Pro'), findsOneWidget);
+      expect(find.text('Smart Focus'), findsOneWidget);
+      expect(find.text('Daily Workout'), findsOneWidget);
+      expect(find.text('Rapid Recall'), findsOneWidget);
+      expect(find.text('Sentence Lab'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
@@ -200,10 +203,10 @@ void main() {
       await tester.pumpWidget(createTestWidget(textScale: 1.3));
       await tester.pumpAndSettle();
 
-      expect(find.text('For You'), findsOneWidget);
-      expect(find.text('Daily Duo'), findsOneWidget);
-      expect(find.text('Speed Blitz'), findsOneWidget);
-      expect(find.text('Grammar Pro'), findsOneWidget);
+      expect(find.text('Smart Focus'), findsOneWidget);
+      expect(find.text('Daily Workout'), findsOneWidget);
+      expect(find.text('Rapid Recall'), findsOneWidget);
+      expect(find.text('Sentence Lab'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
@@ -211,9 +214,61 @@ void main() {
       await tester.pumpWidget(createTestWidget(brightness: Brightness.light));
       await tester.pumpAndSettle();
 
-      expect(find.text('For You'), findsOneWidget);
-      expect(find.text('Daily Duo'), findsOneWidget);
+      expect(find.text('Smart Focus'), findsOneWidget);
+      expect(find.text('Daily Workout'), findsOneWidget);
       expect(tester.takeException(), isNull);
+    });
+  });
+
+  group('Piece 9: DiscoveryDeck Daily Completion & Midnight Reset Tests', () {
+    testWidgets('displays COMPLETED TODAY and COMPLETED tags when sequences finished today', (tester) async {
+      final now = DateTime.now();
+      final todayStr = '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+      SharedPreferences.setMockInitialValues({
+        'vowl_sequence_completed_smart_recommendation_${testUser.id}': todayStr,
+        'vowl_sequence_completed_daily_duo_${testUser.id}': todayStr,
+      });
+
+      await tester.pumpWidget(createTestWidget());
+      await tester.pumpAndSettle();
+
+      expect(find.text('COMPLETED TODAY ✓'), findsOneWidget);
+      expect(find.text('COMPLETED ✓'), findsOneWidget);
+      // Other uncompleted cells remain in default state
+      expect(find.text('Speed Drill'), findsOneWidget);
+      expect(find.text('Syntax'), findsOneWidget);
+    });
+
+    testWidgets('resets to normal state when completion date was yesterday', (tester) async {
+      SharedPreferences.setMockInitialValues({
+        'vowl_sequence_completed_smart_recommendation_${testUser.id}': '2020-01-01',
+        'vowl_sequence_completed_daily_duo_${testUser.id}': '2020-01-01',
+      });
+
+      await tester.pumpWidget(createTestWidget());
+      await tester.pumpAndSettle();
+
+      expect(find.text('ADAPTIVE AI'), findsOneWidget);
+      expect(find.text('2 Steps'), findsOneWidget);
+      expect(find.text('COMPLETED TODAY ✓'), findsNothing);
+    });
+
+    testWidgets('dynamic update via notifySequenceCompleted updates mounted widget without rebuild', (tester) async {
+      final now = DateTime.now();
+      final todayStr = '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+      SharedPreferences.setMockInitialValues({});
+
+      await tester.pumpWidget(createTestWidget());
+      await tester.pumpAndSettle();
+
+      expect(find.text('ADAPTIVE AI'), findsOneWidget);
+
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('vowl_sequence_completed_smart_recommendation_${testUser.id}', todayStr);
+      DiscoveryDeck.notifySequenceCompleted();
+      await tester.pumpAndSettle();
+
+      expect(find.text('COMPLETED TODAY ✓'), findsOneWidget);
     });
   });
 }

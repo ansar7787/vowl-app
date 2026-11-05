@@ -133,7 +133,15 @@ class HomeRoutes {
           routes: [
             GoRoute(
               path: leaderboardRoute,
-              builder: (context, state) => const LeaderboardScreen(),
+              builder: (context, state) {
+                final isGlobal = state.uri.queryParameters['tab'] == 'global' ||
+                    state.extra == LeaderboardTimeframe.allTime;
+                return LeaderboardScreen(
+                  initialTimeframe: isGlobal
+                      ? LeaderboardTimeframe.allTime
+                      : LeaderboardTimeframe.thisWeek,
+                );
+              },
             ),
           ],
         ),

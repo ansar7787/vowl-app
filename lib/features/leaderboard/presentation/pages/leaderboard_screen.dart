@@ -17,6 +17,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/leaderboard/presentation/bloc/leaderboard_bloc.dart';
 import 'package:vowl/features/leaderboard/presentation/bloc/leaderboard_bloc_event_state.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_header.dart';
+import 'package:vowl/features/leaderboard/domain/utils/leaderboard_ranking_helper.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_podium.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_card.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_tile.dart';
@@ -40,14 +41,36 @@ import 'package:vowl/features/social_share/presentation/widgets/share_card_previ
 /// personal rank card, and toggleable standard/kids leaderboards.
 class LeaderboardScreen extends StatefulWidget {
   final bool isKids;
-  const LeaderboardScreen({super.key, this.isKids = false});
+  final LeaderboardTimeframe initialTimeframe;
+
+  const LeaderboardScreen({
+    super.key,
+    this.isKids = false,
+    this.initialTimeframe = LeaderboardTimeframe.thisWeek,
+  });
 
   @override
   State<LeaderboardScreen> createState() => _LeaderboardScreenState();
 }
 
 class _LeaderboardScreenState extends State<LeaderboardScreen> {
-  LeaderboardTimeframe _timeframe = LeaderboardTimeframe.thisWeek;
+  late LeaderboardTimeframe _timeframe;
+
+  @override
+  void initState() {
+    super.initState();
+    _timeframe = widget.initialTimeframe;
+  }
+
+  @override
+  void didUpdateWidget(covariant LeaderboardScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.initialTimeframe != oldWidget.initialTimeframe) {
+      setState(() {
+        _timeframe = widget.initialTimeframe;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -200,47 +223,27 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     super.dispose();
   }
 
-  /// Deterministic sort ensuring consistency across timeframes:
+  /// Deterministic sort ensuring consistency across timeframes via [LeaderboardRankingHelper]:
   /// - Kids: Levels completed (primary), daily streak (tie-breaker), coins (fallback)
   /// - This Week: Weekly XP (primary), daily streak (tie-breaker), levels, total XP
   /// - All-Time: Lifetime total XP (primary), daily streak (tie-breaker), levels
   List<UserEntity> get _sortedUsers {
-    final list = List<UserEntity>.from(widget.state.users);
     if (widget.state.isKids) {
-      list.sort((a, b) {
-        final aLevels = a.kidsTotalLevelsCompleted;
-        final bLevels = b.kidsTotalLevelsCompleted;
-        if (bLevels != aLevels) return bLevels.compareTo(aLevels);
-        if (b.currentStreak != a.currentStreak) {
-          return b.currentStreak.compareTo(a.currentStreak);
-        }
-        return b.kidsCoins.compareTo(a.kidsCoins);
-      });
+      return LeaderboardRankingHelper.sortKids(
+        widget.state.users,
+        currentUser: widget.currentUser,
+      );
     } else if (widget.timeframe == LeaderboardTimeframe.thisWeek) {
-      list.sort((a, b) {
-        final aWeekly = a.currentWeeklyExp;
-        final bWeekly = b.currentWeeklyExp;
-        if (bWeekly != aWeekly) return bWeekly.compareTo(aWeekly);
-        if (b.currentStreak != a.currentStreak) {
-          return b.currentStreak.compareTo(a.currentStreak);
-        }
-        if (b.totalLevelsCompleted != a.totalLevelsCompleted) {
-          return b.totalLevelsCompleted.compareTo(a.totalLevelsCompleted);
-        }
-        return b.totalExp.compareTo(a.totalExp);
-      });
+      return LeaderboardRankingHelper.sortWeekly(
+        widget.state.users,
+        currentUser: widget.currentUser,
+      );
     } else {
-      list.sort((a, b) {
-        if (b.totalExp != a.totalExp) {
-          return b.totalExp.compareTo(a.totalExp);
-        }
-        if (b.currentStreak != a.currentStreak) {
-          return b.currentStreak.compareTo(a.currentStreak);
-        }
-        return b.totalLevelsCompleted.compareTo(a.totalLevelsCompleted);
-      });
+      return LeaderboardRankingHelper.sortAllTime(
+        widget.state.users,
+        currentUser: widget.currentUser,
+      );
     }
-    return list;
   }
 
   /// Smoothly scrolls the viewport so that the current user's card lands

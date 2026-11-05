@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/app_router_game_resolvers.dart';
 import 'package:vowl/core/utils/navigation_helpers.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/modern_category_map.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/home/presentation/pages/category_games_page.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -202,7 +204,14 @@ class GameRoutes {
       path: questSequenceRoute,
       pageBuilder: (context, state) {
         final sequenceId = state.uri.queryParameters['id'] ?? 'daily_duo';
-        final user = di.sl<AuthBloc>().state.user;
+        UserEntity? user;
+        try {
+          user = context.read<AuthBloc>().state.user;
+        } catch (_) {
+          try {
+            user = di.sl<AuthBloc>().state.user;
+          } catch (_) {}
+        }
         final quests = user != null
             ? DiscoveryHelper.getQuestsForSequence(sequenceId, user)
             : <GameQuest>[];

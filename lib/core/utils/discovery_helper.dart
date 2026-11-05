@@ -1,37 +1,17 @@
-import 'dart:math';
 import 'package:vowl/core/data/constants/curriculum_manifest.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
-/// Helper coordinator to calculate dynamic sequence paths and custom quest
-/// mixes for the discovery hub.
+/// Helper coordinator to calculate curriculum-synced sequence paths and
+/// custom quest mixes for the discovery hub.
 ///
-/// ### Localisation
-/// FIX (HIGH-5): All user-facing instruction strings were previously hardcoded
-/// English literals passed directly into [GameQuest.instruction]. These have
-/// been replaced with localisation keys. The presentation layer is responsible
-/// for translating them:
-/// ```dart
-/// Text(context.tr(quest.instruction))
-/// ```
-///
-/// ### Quest instruction keys declared here
-/// ```
-/// quest_sequences.strengthen_weak_spots
-/// quest_sequences.play_to_strengths
-/// quest_sequences.wildcard_challenge
-/// quest_sequences.speaking_warm_up
-/// quest_sequences.ear_training
-/// quest_sequences.comprehension_focus
-/// quest_sequences.read_react
-/// quest_sequences.listen_answer
-/// quest_sequences.rapid_pronunciation
-/// quest_sequences.category_skill_enhance
-/// ```
+/// ### Determinism & Curriculum Alignment
+/// Quests directly target the user's active game levels from the curriculum map
+/// ([UserEntity.unlockedLevels]). When a user clears a level in a quest sequence,
+/// their actual level in that game on the map is permanently updated and
+/// all XP/Coins are credited natively through the game engine.
 class DiscoveryHelper {
   const DiscoveryHelper._(); // Non-instantiable.
-
-  static final Random _random = Random();
 
   // ── Localisation key constants ────────────────────────────────────────────
 
@@ -60,15 +40,43 @@ class DiscoveryHelper {
   ) {
     switch (sequenceId) {
       case 'daily_duo':
+      case 'daily_workout':
         return _generateDailyDuo(user);
       case 'speed_blitz':
+      case 'rapid_recall':
         return _generateSpeedBlitz(user);
       case 'grammar_pro':
+      case 'sentence_lab':
         return _generateGrammarPro(user);
       case 'smart_recommendation':
+      case 'smart_focus':
         return _generateSmartRecommendation(user);
       default:
         return _generateRandomQuest(user);
+    }
+  }
+
+  /// Primary curriculum subtype for each syllabus category.
+  static GameSubtype primarySubtypeForCategory(QuestType type) {
+    switch (type) {
+      case QuestType.speaking:
+        return GameSubtype.repeatSentence;
+      case QuestType.listening:
+        return GameSubtype.audioMultipleChoice;
+      case QuestType.reading:
+        return GameSubtype.readAndAnswer;
+      case QuestType.writing:
+        return GameSubtype.sentenceBuilder;
+      case QuestType.grammar:
+        return GameSubtype.tenseMastery;
+      case QuestType.vocabulary:
+        return GameSubtype.flashcards;
+      case QuestType.accent:
+        return GameSubtype.minimalPairs;
+      case QuestType.roleplay:
+        return GameSubtype.branchingDialogue;
+      case QuestType.eliteMastery:
+        return GameSubtype.storyBuilder;
     }
   }
 
@@ -76,7 +84,7 @@ class DiscoveryHelper {
 
   static List<GameQuest> _generateSmartRecommendation(UserEntity user) {
     QuestType lowestType = QuestType.speaking;
-    int lowestProgress = 9999;
+    int lowestProgress = 999999;
     QuestType favoriteType = QuestType.vocabulary;
     int highestProgress = -1;
     bool allZero = true;
@@ -96,118 +104,129 @@ class DiscoveryHelper {
     }
 
     if (allZero) {
-      final types = QuestType.values;
-      lowestType = types[_random.nextInt(types.length)];
-      favoriteType = types[_random.nextInt(types.length)];
+      return [
+        _getQuestForSubtype(
+          user,
+          GameSubtype.flashcards,
+          _kPlayToStrengths,
+        ),
+        _getQuestForSubtype(
+          user,
+          GameSubtype.audioMultipleChoice,
+          _kEarTraining,
+        ),
+        _getQuestForSubtype(
+          user,
+          GameSubtype.repeatSentence,
+          _kSpeakingWarmUp,
+        ),
+      ];
     }
 
-    final randomType =
-        QuestType.values[_random.nextInt(QuestType.values.length)];
+    if (favoriteType == lowestType) {
+      favoriteType = QuestType.values.firstWhere(
+        (t) => t != lowestType,
+        orElse: () => QuestType.reading,
+      );
+    }
 
-    // FIX (HIGH-5): tr() keys instead of raw English instruction strings.
+    final challengeTypes = [
+      QuestType.speaking,
+      QuestType.accent,
+      QuestType.roleplay,
+    ]..removeWhere((t) => t == lowestType || t == favoriteType);
+
+    final challengeType = challengeTypes.isNotEmpty
+        ? challengeTypes.first
+        : QuestType.writing;
+
     return [
-      _getRandomGameForCategory(
+      _getQuestForSubtype(
         user,
-        lowestType,
-      ).copyWith(instruction: _kStrengthenWeakSpots),
-      _getRandomGameForCategory(
+        primarySubtypeForCategory(lowestType),
+        _kStrengthenWeakSpots,
+      ),
+      _getQuestForSubtype(
         user,
-        favoriteType,
-      ).copyWith(instruction: _kPlayToStrengths),
-      _getRandomGameForCategory(
+        primarySubtypeForCategory(favoriteType),
+        _kPlayToStrengths,
+      ),
+      _getQuestForSubtype(
         user,
-        randomType,
-      ).copyWith(instruction: _kWildcardChallenge),
+        primarySubtypeForCategory(challengeType),
+        _kWildcardChallenge,
+      ),
     ];
   }
 
   static List<GameQuest> _generateDailyDuo(UserEntity user) {
-    final speakingGame = _getRandomGameForCategory(user, QuestType.speaking);
-    final isListening = _random.nextBool();
-    final secondGame = _getRandomGameForCategory(
-      user,
-      isListening ? QuestType.listening : QuestType.reading,
-    );
-
+    // Daily Workout:
+    // Step 1: Speaking Warm-up (Repeat Sentence at user's current unlocked level)
+    // Step 2: Comprehension Focus (Read & Answer at user's current unlocked level)
     return [
-      // FIX (HIGH-5): tr() keys.
-      speakingGame.copyWith(instruction: _kSpeakingWarmUp),
-      secondGame.copyWith(
-        instruction: isListening ? _kEarTraining : _kComprehensionFocus,
+      _getQuestForSubtype(
+        user,
+        GameSubtype.repeatSentence,
+        _kSpeakingWarmUp,
+      ),
+      _getQuestForSubtype(
+        user,
+        GameSubtype.readAndAnswer,
+        _kComprehensionFocus,
       ),
     ];
   }
 
   static List<GameQuest> _generateSpeedBlitz(UserEntity user) {
-    // FIX (HIGH-5): tr() keys.
+    // Rapid Recall:
+    // Step 1: Speed Reading (Reading Speed Check)
+    // Step 2: Rapid Listening (Fast Speech Decoder)
+    // Step 3: Pronunciation Clarity (Minimal Pairs)
     return [
-      _getRandomGameForCategory(
+      _getQuestForSubtype(
         user,
-        QuestType.reading,
-      ).copyWith(instruction: _kReadReact),
-      _getRandomGameForCategory(
+        GameSubtype.readingSpeedCheck,
+        _kReadReact,
+      ),
+      _getQuestForSubtype(
         user,
-        QuestType.listening,
-      ).copyWith(instruction: _kListenAnswer),
-      _getRandomGameForCategory(
+        GameSubtype.fastSpeechDecoder,
+        _kListenAnswer,
+      ),
+      _getQuestForSubtype(
         user,
-        QuestType.accent,
-      ).copyWith(instruction: _kRapidPronunciation),
+        GameSubtype.minimalPairs,
+        _kRapidPronunciation,
+      ),
     ];
   }
 
   static List<GameQuest> _generateGrammarPro(UserEntity user) {
-    // Use a Set to deduplicate by subtype identity.
-    // VERIFIED (previously an open question, now confirmed by reading
-    // game_quest.dart directly): GameQuest extends Equatable with a props
-    // list that includes `subtype` alongside every other field, and
-    // `_getQuestForSubtype` derives every field deterministically from
-    // `subtype` + the user's current level for that subtype - so two
-    // draws of the same subtype always produce fully equal GameQuest
-    // instances. This Set-based dedup therefore works correctly as
-    // written; no additional `==` override is needed on GameQuest.
-    final grammarGames = <GameQuest>{};
-    int attempts = 0;
-    while (grammarGames.length < 3 && attempts < 10) {
-      grammarGames.add(_getRandomGameForCategory(user, QuestType.grammar));
-      attempts++;
-    }
-
-    final list = grammarGames.toList();
-
-    // Safety pad: guarantee exactly 3 quests.
-    int fallbackAttempts = 0;
-    while (list.length < 3 && fallbackAttempts < 10) {
-      list.add(_getRandomGameForCategory(user, QuestType.writing));
-      fallbackAttempts++;
-    }
-
-    return list;
+    // Sentence Lab:
+    // Step 1: Word Reorder (Sentence Structure)
+    // Step 2: Tense Mastery (Grammar Mechanics)
+    // Step 3: Clause Connector (Complex Sentences)
+    return [
+      _getQuestForSubtype(
+        user,
+        GameSubtype.wordReorder,
+        _kCategorySkillEnhance,
+      ),
+      _getQuestForSubtype(
+        user,
+        GameSubtype.tenseMastery,
+        _kStrengthenWeakSpots,
+      ),
+      _getQuestForSubtype(
+        user,
+        GameSubtype.clauseConnector,
+        _kPlayToStrengths,
+      ),
+    ];
   }
 
   static List<GameQuest> _generateRandomQuest(UserEntity user) {
-    final randomType =
-        QuestType.values[_random.nextInt(QuestType.values.length)];
-    return [_getRandomGameForCategory(user, randomType)];
-  }
-
-  static GameQuest _getRandomGameForCategory(UserEntity user, QuestType type) {
-    // CODE CLEANLINESS FIX: previously filtered via
-    // `.where((s) => !s.isLegacy)`. Cross-checked directly against
-    // `GameSubtypeX.isLegacy`'s definition in game_quest.dart: it's
-    // documented there as "Always `false`... no code path can ever set
-    // this to `true`". The filter was therefore a guaranteed no-op -
-    // removing it changes no behavior, just removes dead code that
-    // implied a filtering step that never actually filtered anything.
-    final subtypes = type.subtypes;
-    if (subtypes.isEmpty) {
-      final fallback = GameSubtype.values;
-      final subtype = fallback[_random.nextInt(fallback.length)];
-      // FIX (HIGH-5): tr() key.
-      return _getQuestForSubtype(user, subtype, _kCategorySkillEnhance);
-    }
-    final subtype = subtypes[_random.nextInt(subtypes.length)];
-    return _getQuestForSubtype(user, subtype, _kCategorySkillEnhance);
+    return [_getQuestForSubtype(user, GameSubtype.repeatSentence, _kCategorySkillEnhance)];
   }
 
   static GameQuest _getQuestForSubtype(
@@ -215,15 +234,41 @@ class DiscoveryHelper {
     GameSubtype subtype,
     String instructionKey,
   ) {
-    final maxLevels = CurriculumManifest.getLevels(subtype.name);
-    final currentLevel = (user.unlockedLevels[subtype.name] ?? 1).clamp(
+    GameSubtype activeSubtype = subtype;
+    int maxLevels = CurriculumManifest.getLevels(activeSubtype.name);
+    int userLevel = user.unlockedLevels[activeSubtype.name] ?? 1;
+
+    final isMastered = (maxLevels > 0) &&
+        ((user.completedLevels[activeSubtype.name]?.contains(maxLevels) ?? false) ||
+            ((user.completedLevels[activeSubtype.name]?.length ?? 0) >= maxLevels) ||
+            (userLevel > maxLevels));
+
+    // If the preferred game subtype has been completely mastered,
+    // seamlessly rotate to the next uncompleted game in the same category!
+    if (maxLevels > 0 && isMastered) {
+      for (final alt in activeSubtype.category.subtypes) {
+        final altMax = CurriculumManifest.getLevels(alt.name);
+        final altMastered = (altMax > 0) &&
+            ((user.completedLevels[alt.name]?.contains(altMax) ?? false) ||
+                ((user.completedLevels[alt.name]?.length ?? 0) >= altMax) ||
+                ((user.unlockedLevels[alt.name] ?? 1) > altMax));
+        if (altMax > 0 && !altMastered) {
+          activeSubtype = alt;
+          maxLevels = altMax;
+          userLevel = user.unlockedLevels[alt.name] ?? 1;
+          break;
+        }
+      }
+    }
+
+    final currentLevel = userLevel.clamp(
       1,
       maxLevels > 0 ? maxLevels : 50,
     );
     return GameQuest(
-      id: '${subtype.name}_$currentLevel',
-      type: subtype.category,
-      subtype: subtype,
+      id: '${activeSubtype.name}_$currentLevel',
+      type: activeSubtype.category,
+      subtype: activeSubtype,
       instruction: instructionKey,
       difficulty: currentLevel,
     );
@@ -241,6 +286,8 @@ extension GameQuestX on GameQuest {
     GameSubtype? subtype,
     String? instruction,
     int? difficulty,
+    int? xpReward,
+    int? coinReward,
   }) {
     return GameQuest(
       id: id ?? this.id,
@@ -248,6 +295,21 @@ extension GameQuestX on GameQuest {
       subtype: subtype ?? this.subtype,
       instruction: instruction ?? this.instruction,
       difficulty: difficulty ?? this.difficulty,
+      xpReward: xpReward ?? this.xpReward,
+      coinReward: coinReward ?? this.coinReward,
+      interactionType: interactionType,
+      livesAllowed: livesAllowed,
+      options: options,
+      correctAnswerIndex: correctAnswerIndex,
+      correctAnswer: correctAnswer,
+      correctAnswerCategory: correctAnswerCategory,
+      question: question,
+      sentence: sentence,
+      targetWord: targetWord,
+      hint: hint,
+      explanation: explanation,
+      textToSpeak: textToSpeak,
+      visualConfig: visualConfig,
     );
   }
 }
