@@ -466,9 +466,13 @@ void main() {
       // Complete Part 1
       await tester.tap(find.byKey(const Key('complete_game_btn')).last);
       await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(); // Executes post-frame callback that triggers _startNextGame()
-      await tester.pump(const Duration(milliseconds: 300));
+      await tester.pump(const Duration(milliseconds: 500));
+
+      // Part 1 is completed, road map now presents Start Part 2
+      expect(find.text('Start Part 2'), findsOneWidget);
+      await tester.tap(find.text('Start Part 2'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
 
       // Complete Part 2
       expect(find.byKey(const Key('complete_game_btn')), findsWidgets);

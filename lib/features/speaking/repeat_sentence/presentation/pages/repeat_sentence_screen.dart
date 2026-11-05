@@ -49,8 +49,8 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen>
 
   @override
   String getCompletionTitle(BuildContext context) => context.tr(
-        'speaking_games.repeat_sentence_completed',
-        fallback: 'REPEAT SENTENCE COMPLETED!',
+        'games.level_complete_caps',
+        fallback: 'LEVEL COMPLETE!',
       );
 
   final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);

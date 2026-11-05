@@ -163,9 +163,14 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
 
     if (!mounted) return;
     _isLaunching = false;
-    _updateState();
 
-    if (result == true) {
+    // Dual verification: route returned true OR the level was marked completed natively in AuthBloc
+    final user = context.read<AuthBloc>().state.user;
+    final isLevelCompletedNatively = user != null &&
+        (user.completedLevels[subtype]?.contains(level) ?? false);
+    final isSuccess = result == true || isLevelCompletedNatively;
+
+    if (isSuccess) {
       _currentIndex++;
       _updateState();
       try {
@@ -177,14 +182,11 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
         context.read<AuthBloc>().add(const AuthRefreshUser());
       } catch (_) {}
 
-      if (_currentIndex < widget.quests.length) {
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          if (mounted) _startNextGame();
-        });
-      } else {
+      if (_currentIndex >= widget.quests.length) {
         _finishSequence();
       }
     } else {
+      _updateState();
       GameDialogHelper.showPremiumSnackBar(
         context,
         context.tr(
@@ -978,6 +980,7 @@ class _BottomActionDock extends StatelessWidget {
         ),
       ),
       child: ScaleButton(
+        debounceDuration: const Duration(milliseconds: 100),
         onTap: onAction,
         child: Container(
           width: double.infinity,
