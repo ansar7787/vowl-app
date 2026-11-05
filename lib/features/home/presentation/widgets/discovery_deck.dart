@@ -283,41 +283,75 @@ class _HeroFlagshipQuestCard extends StatelessWidget {
           ),
           child: Row(
             children: [
-              // Leading Halo Icon
-              Container(
-                width: 42.r,
-                height: 42.r,
-                decoration: BoxDecoration(
-                  color: isCompleted
-                      ? AppColors.emerald500.withValues(
-                          alpha: isDark ? 0.20 : 0.14,
-                        )
-                      : AppColors.indigo500.withValues(
-                          alpha: isDark ? 0.18 : 0.12,
-                        ),
-                  borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(
-                    color: isCompleted
-                        ? AppColors.emerald500.withValues(
-                            alpha: isDark ? 0.40 : 0.28,
-                          )
-                        : AppColors.indigo500.withValues(
-                            alpha: isDark ? 0.35 : 0.25,
-                          ),
-                    width: 1.r,
-                  ),
-                ),
-                child: Center(
-                  child: Icon(
-                    isCompleted ? Icons.check_circle_rounded : Icons.lightbulb_rounded,
-                    size: 22.r,
-                    color: isCompleted
-                        ? (isDark ? const Color(0xFF6EE7B7) : AppColors.emerald500)
-                        : (isDark
+              // Leading Halo Icon with overlaid completion badge
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Container(
+                    width: 42.r,
+                    height: 42.r,
+                    decoration: BoxDecoration(
+                      color: isCompleted
+                          ? AppColors.indigo500.withValues(
+                              alpha: isDark ? 0.20 : 0.14,
+                            )
+                          : AppColors.indigo500.withValues(
+                              alpha: isDark ? 0.18 : 0.12,
+                            ),
+                      borderRadius: BorderRadius.circular(12.r),
+                      border: Border.all(
+                        color: isCompleted
+                            ? AppColors.emerald500.withValues(
+                                alpha: isDark ? 0.45 : 0.30,
+                              )
+                            : AppColors.indigo500.withValues(
+                                alpha: isDark ? 0.35 : 0.25,
+                              ),
+                        width: 1.r,
+                      ),
+                    ),
+                    child: Center(
+                      child: Icon(
+                        Icons.lightbulb_rounded,
+                        size: 22.r,
+                        color: isDark
                             ? const Color(0xFFA5B4FC)
-                            : AppColors.indigo500),
+                            : AppColors.indigo500,
+                      ),
+                    ),
                   ),
-                ),
+                  if (isCompleted)
+                    Positioned(
+                      top: -3.r,
+                      right: -3.r,
+                      child: Container(
+                        width: 14.r,
+                        height: 14.r,
+                        decoration: BoxDecoration(
+                          color: AppColors.emerald500,
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: isDark ? const Color(0xFF111827) : Colors.white,
+                            width: 1.5.r,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.emerald500.withValues(alpha: 0.4),
+                              blurRadius: 4,
+                              offset: const Offset(0, 1),
+                            ),
+                          ],
+                        ),
+                        child: Center(
+                          child: Icon(
+                            Icons.check_rounded,
+                            size: 9.r,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
               ),
               SizedBox(width: 12.w),
 
@@ -492,35 +526,67 @@ class _DiscoverySubCell extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Halo Icon
-              Container(
-                width: 30.r,
-                height: 30.r,
-                decoration: BoxDecoration(
-                  color: isCompleted
-                      ? AppColors.emerald500.withValues(
-                          alpha: isDark ? 0.20 : 0.12,
-                        )
-                      : color.withValues(alpha: isDark ? 0.16 : 0.10),
-                  borderRadius: BorderRadius.circular(10.r),
-                  border: Border.all(
-                    color: isCompleted
-                        ? AppColors.emerald500.withValues(
-                            alpha: isDark ? 0.40 : 0.25,
-                          )
-                        : color.withValues(alpha: isDark ? 0.32 : 0.20),
-                    width: 1.r,
+              // Halo Icon with overlaid completion badge
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Container(
+                    width: 30.r,
+                    height: 30.r,
+                    decoration: BoxDecoration(
+                      color: isCompleted
+                          ? color.withValues(alpha: isDark ? 0.20 : 0.12)
+                          : color.withValues(alpha: isDark ? 0.16 : 0.10),
+                      borderRadius: BorderRadius.circular(10.r),
+                      border: Border.all(
+                        color: isCompleted
+                            ? AppColors.emerald500.withValues(
+                                alpha: isDark ? 0.40 : 0.25,
+                              )
+                            : color.withValues(alpha: isDark ? 0.32 : 0.20),
+                        width: 1.r,
+                      ),
+                    ),
+                    child: Center(
+                      child: Icon(
+                        icon,
+                        size: 16.r,
+                        color: color,
+                      ),
+                    ),
                   ),
-                ),
-                child: Center(
-                  child: Icon(
-                    isCompleted ? Icons.check_rounded : icon,
-                    size: 16.r,
-                    color: isCompleted
-                        ? (isDark ? const Color(0xFF6EE7B7) : AppColors.emerald500)
-                        : color,
-                  ),
-                ),
+                  if (isCompleted)
+                    Positioned(
+                      top: -3.r,
+                      right: -3.r,
+                      child: Container(
+                        width: 12.r,
+                        height: 12.r,
+                        decoration: BoxDecoration(
+                          color: AppColors.emerald500,
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: isDark ? const Color(0xFF111827) : Colors.white,
+                            width: 1.5.r,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.emerald500.withValues(alpha: 0.4),
+                              blurRadius: 4,
+                              offset: const Offset(0, 1),
+                            ),
+                          ],
+                        ),
+                        child: Center(
+                          child: Icon(
+                            Icons.check_rounded,
+                            size: 8.r,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
               ),
               SizedBox(height: 6.h),
 

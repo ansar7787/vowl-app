@@ -11,6 +11,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/daily_words/data/services/daily_words_service.dart';
 
 /// Production-hardened Tools & Utilities Hub (The 7 Apex Tools & Word Games).
 ///
@@ -81,6 +82,8 @@ class _ToolsStripState extends State<ToolsStrip> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final bool isDailyWordsDone = di.sl.isRegistered<DailyWordsService>() &&
+        di.sl<DailyWordsService>().isTodayCompleted;
 
     return Semantics(
       container: true,
@@ -118,20 +121,25 @@ class _ToolsStripState extends State<ToolsStrip> {
 
                 // ── 2. SWISS HORIZON CARD 2: DAILY VOCABULARY ───────────────────
                 _SwissHorizonCard(
-                  tag: context.tr('home.tools_daily_tag', fallback: 'TODAY'),
+                  tag: isDailyWordsDone
+                      ? context.tr('home.tools_daily_completed', fallback: 'COMPLETED ✓')
+                      : context.tr('home.tools_daily_tag', fallback: 'TODAY'),
                   title: context.tr(
                     'home.tools_daily_words',
                     fallback: 'Daily Words',
                   ),
-                  subtitle: context.tr(
-                    'home.tools_daily_desc',
-                    fallback: '5 new words today',
-                  ),
+                  subtitle: isDailyWordsDone
+                      ? context.tr('home.tools_daily_all_learned', fallback: 'All 5 words mastered today!')
+                      : context.tr(
+                          'home.tools_daily_desc',
+                          fallback: '5 new words today',
+                        ),
                   icon: Icons.menu_book_rounded,
                   color: AppColors.amber500,
                   onTap: () =>
                       _handleNavigation(context, AppRouter.dailyWordsRoute),
                   isDark: isDark,
+                  isCompleted: isDailyWordsDone,
                 ),
                 SizedBox(height: 10.h),
 
@@ -346,6 +354,7 @@ class _SwissHorizonCard extends StatelessWidget {
   final Color color;
   final VoidCallback onTap;
   final bool isDark;
+  final bool isCompleted;
 
   const _SwissHorizonCard({
     required this.tag,
@@ -355,6 +364,7 @@ class _SwissHorizonCard extends StatelessWidget {
     required this.color,
     required this.onTap,
     required this.isDark,
+    this.isCompleted = false,
   });
 
   @override
@@ -375,29 +385,75 @@ class _SwissHorizonCard extends StatelessWidget {
                 : (isDark ? const Color(0xFF131A29) : Colors.white),
             borderRadius: BorderRadius.circular(18.r),
             border: Border.all(
-              color: isMidnight
-                  ? Colors.white.withValues(alpha: 0.12)
-                  : (isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : AppColors.slate100),
+              color: isCompleted
+                  ? AppColors.emerald500.withValues(
+                      alpha: isDark ? 0.35 : 0.25,
+                    )
+                  : (isMidnight
+                      ? Colors.white.withValues(alpha: 0.12)
+                      : (isDark
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : AppColors.slate100)),
               width: 1.r,
             ),
           ),
           child: Row(
             children: [
-              // Tactical Halo Icon Box
-              Container(
-                width: 42.r,
-                height: 42.r,
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: isDark ? 0.14 : 0.09),
-                  borderRadius: BorderRadius.circular(13.r),
-                  border: Border.all(
-                    color: color.withValues(alpha: isDark ? 0.28 : 0.18),
-                    width: 1.r,
+              // Tactical Halo Icon Box with overlaid completion badge
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Container(
+                    width: 42.r,
+                    height: 42.r,
+                    decoration: BoxDecoration(
+                      color: isCompleted
+                          ? color.withValues(alpha: isDark ? 0.18 : 0.12)
+                          : color.withValues(alpha: isDark ? 0.14 : 0.09),
+                      borderRadius: BorderRadius.circular(13.r),
+                      border: Border.all(
+                        color: isCompleted
+                            ? AppColors.emerald500.withValues(
+                                alpha: isDark ? 0.45 : 0.30,
+                              )
+                            : color.withValues(alpha: isDark ? 0.28 : 0.18),
+                        width: 1.r,
+                      ),
+                    ),
+                    child: Center(child: Icon(icon, color: color, size: 21.r)),
                   ),
-                ),
-                child: Center(child: Icon(icon, color: color, size: 21.r)),
+                  if (isCompleted)
+                    Positioned(
+                      top: -3.r,
+                      right: -3.r,
+                      child: Container(
+                        width: 14.r,
+                        height: 14.r,
+                        decoration: BoxDecoration(
+                          color: AppColors.emerald500,
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: isDark ? const Color(0xFF131A29) : Colors.white,
+                            width: 1.5.r,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.emerald500.withValues(alpha: 0.4),
+                              blurRadius: 4,
+                              offset: const Offset(0, 1),
+                            ),
+                          ],
+                        ),
+                        child: Center(
+                          child: Icon(
+                            Icons.check_rounded,
+                            size: 9.r,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
               ),
               SizedBox(width: 12.w),
 
@@ -413,7 +469,11 @@ class _SwissHorizonCard extends StatelessWidget {
                         vertical: 2.h,
                       ),
                       decoration: BoxDecoration(
-                        color: color.withValues(alpha: isDark ? 0.16 : 0.10),
+                        color: isCompleted
+                            ? AppColors.emerald500.withValues(
+                                alpha: isDark ? 0.20 : 0.12,
+                              )
+                            : color.withValues(alpha: isDark ? 0.16 : 0.10),
                         borderRadius: BorderRadius.circular(4.r),
                       ),
                       child: Text(
@@ -422,7 +482,9 @@ class _SwissHorizonCard extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 9.sp,
                           fontWeight: FontWeight.w800,
-                          color: color,
+                          color: isCompleted
+                              ? (isDark ? const Color(0xFF6EE7B7) : AppColors.emerald500)
+                              : color,
                           letterSpacing: 0.6,
                         ),
                         maxLines: 1,
