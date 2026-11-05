@@ -187,7 +187,11 @@ class GameDialogHelper {
                     Navigator.of(dialogCtx).pop();
                     if (context.mounted) {
                       context.read<AuthBloc>().add(const AuthRefreshUser());
-                      Navigator.of(context).pop(popResult);
+                      try {
+                        context.pop(popResult);
+                      } catch (_) {
+                        Navigator.of(context).pop(popResult);
+                      }
                       Future.delayed(const Duration(milliseconds: 300), () {
                         router.push('/review-mistakes');
                       });
@@ -212,7 +216,11 @@ class GameDialogHelper {
                   isPremium: isPremium,
                   onDismissed: () {
                     if (context.mounted) {
-                      Navigator.of(context).pop(popResult);
+                      try {
+                        context.pop(popResult);
+                      } catch (_) {
+                        Navigator.of(context).pop(popResult);
+                      }
                     }
                   },
                 );
@@ -252,7 +260,11 @@ class GameDialogHelper {
                             color: AppColors.emerald500,
                           );
                         }
-                        Navigator.of(context).pop(popResult);
+                        try {
+                          context.pop(popResult);
+                        } catch (_) {
+                          Navigator.of(context).pop(popResult);
+                        }
                       },
                     );
                   }

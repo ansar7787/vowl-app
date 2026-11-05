@@ -38,6 +38,7 @@ class QuestSequencePage extends StatefulWidget {
 }
 
 class _QuestSequencePageState extends State<QuestSequencePage> {
+  late List<GameQuest> _quests;
   int _currentIndex = 0;
   bool _isLaunching = false;
 
@@ -45,6 +46,107 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
 
   void _updateState() {
     if (mounted) _stateHash.value++;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _quests = List<GameQuest>.from(widget.quests);
+    _restoreProgress();
+  }
+
+  Future<void> _restoreProgress() async {
+    try {
+      final user = context.read<AuthBloc>().state.user;
+      final userId = user?.id ?? 'guest';
+      final prefs = await SharedPreferences.getInstance();
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+
+      // 1. Check if the sequence was fully completed today
+      final completedToday = prefs.getString(
+        'vowl_sequence_completed_${widget.sequenceId}_$userId',
+      );
+      if (completedToday == todayStr) {
+        if (mounted) {
+          _currentIndex = _quests.length;
+          _updateState();
+        }
+        return;
+      }
+
+      // 2. Restore today's locked quests if already cached today
+      final questsVal = prefs.getString(
+        'vowl_sequence_quests_${widget.sequenceId}_$userId',
+      );
+      if (questsVal != null && questsVal.startsWith('$todayStr|')) {
+        final payload = questsVal.substring(todayStr.length + 1);
+        final questEntries = payload.split(';');
+        final restoredQuests = <GameQuest>[];
+        for (final entry in questEntries) {
+          if (entry.isEmpty) continue;
+          final parts = entry.split(':');
+          if (parts.length >= 3) {
+            final subtypeStr = parts[0];
+            final level = int.tryParse(parts[1]) ?? 1;
+            final instruction = parts[2];
+            final subtype = GameSubtype.fromString(subtypeStr);
+            restoredQuests.add(
+              GameQuest(
+                id: '${subtype.name}_$level',
+                type: subtype.category,
+                subtype: subtype,
+                instruction: instruction,
+                difficulty: level,
+              ),
+            );
+          }
+        }
+        if (restoredQuests.isNotEmpty && mounted) {
+          _quests = restoredQuests;
+        }
+      } else if (_quests.isNotEmpty) {
+        // First launch today: cache today's quest track
+        final payload = _quests
+            .map((q) => '${q.subtype?.name ?? ''}:${q.difficulty}:${q.instruction}')
+            .join(';');
+        await prefs.setString(
+          'vowl_sequence_quests_${widget.sequenceId}_$userId',
+          '$todayStr|$payload',
+        );
+      }
+
+      // 3. Restore current step index for today
+      final stepVal = prefs.getString(
+        'vowl_sequence_step_${widget.sequenceId}_$userId',
+      );
+      if (stepVal != null && stepVal.startsWith('${todayStr}_')) {
+        final parts = stepVal.split('_');
+        if (parts.length >= 2) {
+          final savedStep = int.tryParse(parts[1]);
+          if (savedStep != null && mounted) {
+            _currentIndex = savedStep.clamp(0, _quests.length);
+            _updateState();
+          }
+        }
+      }
+    } catch (_) {}
+  }
+
+  Future<void> _saveStepProgress() async {
+    try {
+      final user = context.read<AuthBloc>().state.user;
+      final userId = user?.id ?? 'guest';
+      final prefs = await SharedPreferences.getInstance();
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+      await prefs.setString(
+        'vowl_sequence_step_${widget.sequenceId}_$userId',
+        '${todayStr}_$_currentIndex',
+      );
+    } catch (_) {}
   }
 
   @override
@@ -127,11 +229,11 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     }
   }
 
-  bool get _isFinished => _currentIndex >= widget.quests.length;
+  bool get _isFinished => _currentIndex >= _quests.length;
 
-  double get _progress => widget.quests.isEmpty
+  double get _progress => _quests.isEmpty
       ? 1.0
-      : (_currentIndex / widget.quests.length).clamp(0.0, 1.0);
+      : (_currentIndex / _quests.length).clamp(0.0, 1.0);
 
   // ── Navigation ────────────────────────────────────────────────────────────
 
@@ -146,7 +248,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     _isLaunching = true;
     _updateState();
 
-    final quest = widget.quests[_currentIndex];
+    final quest = _quests[_currentIndex];
     final subtype = quest.subtype?.name ?? '';
     final category = quest.subtype != null
         ? quest.subtype!.category.serializedName
@@ -159,10 +261,14 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
       result = await context.push(route);
     } catch (_) {
       // Navigation failure treated as cancellation.
+    } finally {
+      if (mounted) {
+        _isLaunching = false;
+        _updateState();
+      }
     }
 
     if (!mounted) return;
-    _isLaunching = false;
 
     // Dual verification: route returned true OR the level was marked completed natively in AuthBloc
     final user = context.read<AuthBloc>().state.user;
@@ -173,6 +279,9 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     if (isSuccess) {
       _currentIndex++;
       _updateState();
+      await _saveStepProgress();
+      if (!mounted) return;
+
       try {
         di.sl<HapticService>().selection();
       } catch (_) {}
@@ -182,7 +291,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
         context.read<AuthBloc>().add(const AuthRefreshUser());
       } catch (_) {}
 
-      if (_currentIndex >= widget.quests.length) {
+      if (_currentIndex >= _quests.length) {
         _finishSequence();
       }
     } else {
@@ -216,6 +325,10 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
       await prefs.setString(
         'vowl_sequence_completed_${widget.sequenceId}_$userId',
         todayStr,
+      );
+      await prefs.setString(
+        'vowl_sequence_step_${widget.sequenceId}_$userId',
+        '${todayStr}_${_quests.length}',
       );
       DiscoveryDeck.notifySequenceCompleted();
     } catch (_) {}
@@ -276,7 +389,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                         badge: _sequenceBadge,
                         sequenceTitle: _sequenceTitle,
                         currentIndex: _currentIndex,
-                        totalQuests: widget.quests.length,
+                        totalQuests: _quests.length,
                         accentColor: _sequenceColor,
                       ),
                     ),
@@ -300,7 +413,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                       padding: EdgeInsets.symmetric(horizontal: 20.w),
                       child: _TrackBriefingMetaBar(
                         isDark: isDark,
-                        totalQuests: widget.quests.length,
+                        totalQuests: _quests.length,
                         accentColor: _sequenceColor,
                       ),
                     ),
@@ -309,7 +422,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
 
                     // Scrollable Connected Stepper Roadmap
                     Expanded(
-                      child: widget.quests.isEmpty
+                      child: _quests.isEmpty
                           ? Center(
                               child: Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -324,15 +437,15 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                               padding: EdgeInsets.fromLTRB(20.w, 6.h, 20.w, 20.h),
                               child: Column(
                                 children: List.generate(
-                                  widget.quests.length,
+                                  _quests.length,
                                   (index) {
-                                    final quest = widget.quests[index];
+                                    final quest = _quests[index];
                                     final isCompleted = index < _currentIndex;
                                     final isCurrent =
                                         index == _currentIndex && !_isFinished;
                                     final isLocked = index > _currentIndex;
                                     final isLast =
-                                        index == widget.quests.length - 1;
+                                        index == _quests.length - 1;
 
                                     return _ConnectedStepperRow(
                                       index: index,
@@ -341,7 +454,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                                       isCurrent: isCurrent,
                                       isLocked: isLocked,
                                       quest: quest,
-                                      totalQuests: widget.quests.length,
+                                      totalQuests: _quests.length,
                                       isDark: isDark,
                                       accentColor: _sequenceColor,
                                       onCardTap: isCurrent
@@ -371,7 +484,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                     ),
 
                     // Fixed Floating Bottom Action Dock
-                    if (widget.quests.isNotEmpty)
+                    if (_quests.isNotEmpty)
                       _BottomActionDock(
                         isDark: isDark,
                         isMidnight: isMidnight,
@@ -379,7 +492,17 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                         isFinished: _isFinished,
                         currentIndex: _currentIndex,
                         accentColor: _sequenceColor,
-                        onAction: _isLaunching ? null : _startNextGame,
+                        onAction: _isLaunching
+                            ? null
+                            : (_isFinished
+                                ? () {
+                                    if (context.canPop()) {
+                                      context.pop();
+                                    } else {
+                                      context.go('/home');
+                                    }
+                                  }
+                                : _startNextGame),
                       ),
                   ],
                 ),

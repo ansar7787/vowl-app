@@ -619,4 +619,79 @@ void main() {
       expect(tester.takeException(), isNull);
     });
   });
+
+  // =========================================================================
+  // GROUP 7: Daily Step & Quest Progress Persistence
+  // =========================================================================
+  group('Group 7: Daily Step & Quest Progress Persistence', () {
+    testWidgets('restores today saved step progress to resume at Part 2', (tester) async {
+      setViewport(tester);
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+
+      SharedPreferences.setMockInitialValues({
+        'vowl_sequence_step_daily_duo_user_quest_test': '${todayStr}_1',
+      });
+
+      await tester.pumpWidget(buildQuestSequenceHarness(
+        sequenceId: 'daily_duo',
+        quests: sampleQuests,
+      ));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      // Part 2 should be active now
+      expect(find.text('Start Part 2'), findsOneWidget);
+      expect(find.text('Part 2 of 2'), findsOneWidget);
+    });
+
+    testWidgets('completing Part 1 saves step progress to SharedPreferences', (tester) async {
+      setViewport(tester);
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+
+      await tester.pumpWidget(buildQuestSequenceHarness(
+        sequenceId: 'daily_duo',
+        quests: sampleQuests,
+      ));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      // Tap Start Part 1
+      await tester.tap(find.text('Start Part 1'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 400));
+
+      // Complete game
+      await tester.tap(find.byKey(const Key('complete_game_btn')));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+
+      final prefs = await SharedPreferences.getInstance();
+      final savedStep = prefs.getString('vowl_sequence_step_daily_duo_user_quest_test');
+      expect(savedStep, equals('${todayStr}_1'));
+    });
+
+    testWidgets('fully completed sequence restores all steps completed today', (tester) async {
+      setViewport(tester);
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+
+      SharedPreferences.setMockInitialValues({
+        'vowl_sequence_completed_daily_duo_user_quest_test': todayStr,
+      });
+
+      await tester.pumpWidget(buildQuestSequenceHarness(
+        sequenceId: 'daily_duo',
+        quests: sampleQuests,
+      ));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(find.text('FINISH'), findsOneWidget);
+    });
+  });
 }
