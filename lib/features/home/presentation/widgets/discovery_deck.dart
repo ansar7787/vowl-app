@@ -91,7 +91,16 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
         'grammar_pro',
       ]) {
         final val = prefs.getString('vowl_sequence_completed_${id}_$userId');
-        newMap[id] = val == todayStr;
+        final alias = id == 'daily_duo'
+            ? 'daily_workout'
+            : (id == 'speed_blitz'
+                ? 'rapid_recall'
+                : (id == 'grammar_pro'
+                    ? 'sentence_lab'
+                    : 'smart_focus'));
+        final aliasVal =
+            prefs.getString('vowl_sequence_completed_${alias}_$userId');
+        newMap[id] = val == todayStr || aliasVal == todayStr;
       }
       if (mounted) {
         setState(() {

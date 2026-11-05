@@ -40,6 +40,26 @@ class DiscoveryHelper {
     _trackCache.clear();
   }
 
+  /// Canonical identifier mapping to unify legacy and modern sequence alias keys.
+  static String canonicalSequenceId(String sequenceId) {
+    switch (sequenceId) {
+      case 'daily_workout':
+      case 'daily_duo':
+        return 'daily_duo';
+      case 'rapid_recall':
+      case 'speed_blitz':
+        return 'speed_blitz';
+      case 'sentence_lab':
+      case 'grammar_pro':
+        return 'grammar_pro';
+      case 'smart_focus':
+      case 'smart_recommendation':
+        return 'smart_recommendation';
+      default:
+        return sequenceId;
+    }
+  }
+
   /// Sets or warms the daily track cache.
   static void setCachedTrack(
     String sequenceId,
@@ -50,7 +70,8 @@ class DiscoveryHelper {
     final now = DateTime.now();
     final todayStr = date ??
         '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
-    final key = '${sequenceId}_$userId';
+    final canonical = canonicalSequenceId(sequenceId);
+    final key = '${canonical}_$userId';
     _trackCache[key] = _DailyTrackCache(date: todayStr, quests: quests);
   }
 
@@ -64,13 +85,14 @@ class DiscoveryHelper {
     final now = DateTime.now();
     final todayStr =
         '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
-    final key = '${sequenceId}_${user.id}';
+    final canonical = canonicalSequenceId(sequenceId);
+    final key = '${canonical}_${user.id}';
     final cached = _trackCache[key];
     if (cached != null && cached.date == todayStr) {
       return cached.quests;
     }
 
-    final quests = _resolveQuests(sequenceId, user);
+    final quests = _resolveQuests(canonical, user);
     _trackCache[key] = _DailyTrackCache(date: todayStr, quests: quests);
     return quests;
   }

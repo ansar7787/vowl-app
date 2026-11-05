@@ -49,6 +49,9 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
   AppLifecycleListener? _lifecycleListener;
   Animation<double>? _secondaryAnimation;
 
+  String get _canonicalId =>
+      DiscoveryHelper.canonicalSequenceId(widget.sequenceId);
+
   late final ValueNotifier<int> _stateHash = ValueNotifier(0);
 
   void _updateState() {
@@ -100,8 +103,12 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
       final todayStr =
           '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
 
+      final canonicalId = _canonicalId;
+
       // 1. Check if the sequence was fully completed today
       final completedToday = prefs.getString(
+        'vowl_sequence_completed_${canonicalId}_$userId',
+      ) ?? prefs.getString(
         'vowl_sequence_completed_${widget.sequenceId}_$userId',
       );
       if (completedToday == todayStr) {
@@ -115,6 +122,8 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
 
       // 2. Restore today's locked quests if already cached today
       final questsVal = prefs.getString(
+        'vowl_sequence_quests_${canonicalId}_$userId',
+      ) ?? prefs.getString(
         'vowl_sequence_quests_${widget.sequenceId}_$userId',
       );
       if (questsVal != null && questsVal.startsWith('$todayStr|')) {
@@ -143,7 +152,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
         if (restoredQuests.isNotEmpty && mounted) {
           _quests = restoredQuests;
           DiscoveryHelper.setCachedTrack(
-            widget.sequenceId,
+            canonicalId,
             userId,
             restoredQuests,
             date: todayStr,
@@ -155,11 +164,11 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
             .map((q) => '${q.subtype?.name ?? ''}:${q.difficulty}:${q.instruction}')
             .join(';');
         await prefs.setString(
-          'vowl_sequence_quests_${widget.sequenceId}_$userId',
+          'vowl_sequence_quests_${canonicalId}_$userId',
           '$todayStr|$payload',
         );
         DiscoveryHelper.setCachedTrack(
-          widget.sequenceId,
+          canonicalId,
           userId,
           _quests,
           date: todayStr,
@@ -168,6 +177,8 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
 
       // 3. Restore current step index for today
       final stepVal = prefs.getString(
+        'vowl_sequence_step_${canonicalId}_$userId',
+      ) ?? prefs.getString(
         'vowl_sequence_step_${widget.sequenceId}_$userId',
       );
       if (stepVal != null && stepVal.startsWith('${todayStr}_')) {
@@ -230,9 +241,15 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
       final todayStr =
           '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
       await prefs.setString(
-        'vowl_sequence_step_${widget.sequenceId}_$userId',
+        'vowl_sequence_step_${_canonicalId}_$userId',
         '${todayStr}_$_currentIndex',
       );
+      if (widget.sequenceId != _canonicalId) {
+        await prefs.setString(
+          'vowl_sequence_step_${widget.sequenceId}_$userId',
+          '${todayStr}_$_currentIndex',
+        );
+      }
     } catch (_) {}
   }
 
@@ -419,13 +436,23 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
       final todayStr =
           '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
       await prefs.setString(
-        'vowl_sequence_completed_${widget.sequenceId}_$userId',
+        'vowl_sequence_completed_${_canonicalId}_$userId',
         todayStr,
       );
       await prefs.setString(
-        'vowl_sequence_step_${widget.sequenceId}_$userId',
+        'vowl_sequence_step_${_canonicalId}_$userId',
         '${todayStr}_${_quests.length}',
       );
+      if (widget.sequenceId != _canonicalId) {
+        await prefs.setString(
+          'vowl_sequence_completed_${widget.sequenceId}_$userId',
+          todayStr,
+        );
+        await prefs.setString(
+          'vowl_sequence_step_${widget.sequenceId}_$userId',
+          '${todayStr}_${_quests.length}',
+        );
+      }
       DiscoveryDeck.notifySequenceCompleted();
     } catch (_) {}
 
@@ -645,7 +672,13 @@ class _Header extends StatelessWidget {
     return Row(
       children: [
         ScaleButton(
-          onTap: () => context.pop(),
+          onTap: () {
+            if (context.canPop()) {
+              context.pop();
+            } else {
+              context.go('/home');
+            }
+          },
           child: Container(
             padding: EdgeInsets.all(10.r),
             decoration: BoxDecoration(
