@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,6 +11,7 @@ import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
+import 'package:vowl/core/utils/app_lifecycle_handler.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -44,6 +46,8 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
   int _currentIndex = 0;
   bool _isLaunching = false;
   bool _hasFinishedSequence = false;
+  AppLifecycleListener? _lifecycleListener;
+  Animation<double>? _secondaryAnimation;
 
   late final ValueNotifier<int> _stateHash = ValueNotifier(0);
 
@@ -52,9 +56,38 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final modalRoute = ModalRoute.of(context);
+    if (modalRoute != null &&
+        modalRoute.secondaryAnimation != _secondaryAnimation) {
+      _secondaryAnimation?.removeStatusListener(_onSecondaryAnimationStatus);
+      _secondaryAnimation = modalRoute.secondaryAnimation;
+      _secondaryAnimation?.addStatusListener(_onSecondaryAnimationStatus);
+    }
+  }
+
+  void _onSecondaryAnimationStatus(AnimationStatus status) {
+    if (status == AnimationStatus.dismissed) {
+      if (mounted) {
+        _isLaunching = false;
+        _syncProgressWithUser();
+      }
+    }
+  }
+
+  @override
   void initState() {
     super.initState();
     _quests = List<GameQuest>.from(widget.quests);
+    _lifecycleListener = AppLifecycleHandler.createListener(
+      onResume: () {
+        if (mounted) {
+          _isLaunching = false;
+          _syncProgressWithUser();
+        }
+      },
+    );
     _restoreProgress();
   }
 
@@ -156,6 +189,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
   }
 
   void _syncProgressWithUser([UserEntity? user]) {
+    _isLaunching = false;
     final activeUser =
         user ?? (mounted ? context.read<AuthBloc>().state.user : null);
     if (activeUser == null) return;
@@ -204,6 +238,8 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
 
   @override
   void dispose() {
+    _secondaryAnimation?.removeStatusListener(_onSecondaryAnimationStatus);
+    _lifecycleListener?.dispose();
     _stateHash.dispose();
     super.dispose();
   }

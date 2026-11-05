@@ -188,7 +188,11 @@ class GameDialogHelper {
                     if (context.mounted) {
                       context.read<AuthBloc>().add(const AuthRefreshUser());
                       try {
-                        context.pop(popResult);
+                        if (router.canPop()) {
+                          router.pop(popResult);
+                        } else {
+                          Navigator.of(context).pop(popResult);
+                        }
                       } catch (_) {
                         Navigator.of(context).pop(popResult);
                       }
@@ -217,7 +221,11 @@ class GameDialogHelper {
                   onDismissed: () {
                     if (context.mounted) {
                       try {
-                        context.pop(popResult);
+                        if (GoRouter.of(context).canPop()) {
+                          GoRouter.of(context).pop(popResult);
+                        } else {
+                          Navigator.of(context).pop(popResult);
+                        }
                       } catch (_) {
                         Navigator.of(context).pop(popResult);
                       }
@@ -261,7 +269,11 @@ class GameDialogHelper {
                           );
                         }
                         try {
-                          context.pop(popResult);
+                          if (GoRouter.of(context).canPop()) {
+                            GoRouter.of(context).pop(popResult);
+                          } else {
+                            Navigator.of(context).pop(popResult);
+                          }
                         } catch (_) {
                           Navigator.of(context).pop(popResult);
                         }
