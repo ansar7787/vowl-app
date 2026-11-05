@@ -318,6 +318,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           debugPrint('AuthBloc: could not access FirebaseAuth on user sign-in: $e');
         }
       }
+
+      // Initialize user-scoped DailyWordsService progress
+      try {
+        if (di.sl.isRegistered<DailyWordsService>()) {
+          unawaited(di.sl<DailyWordsService>().init(userId: user.id));
+        }
+      } catch (e) {
+        if (kDebugMode) {
+          debugPrint('AuthBloc: DailyWordsService init failed: $e');
+        }
+      }
     } else {
       if (state.user != null && di.sl.isRegistered<NotificationService>()) {
         try {
@@ -361,15 +372,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   /// Clears all local session data that must not survive a user change.
   ///
-  /// Shared between [_onLogoutRequested] and [_onDeleteAccountRequested]
-  /// to guarantee identical cleanup for both flows.
-  Future<void> _clearAllLocalData() async {
+  /// When [isAccountDeletion] is false (standard logout), user-scoped daily
+  /// progression and workout completion keys are preserved in SharedPreferences
+  /// so switching or re-authenticating with the same account does not cause
+  /// daily completion data loss. When [isAccountDeletion] is true, all data is permanently purged.
+  Future<void> _clearAllLocalData({bool isAccountDeletion = false}) async {
     // 1. Clear in-memory image cache immediately so stale profile photos / avatars
     // from the previous user don't flash on the next sign-in.
     imageCache.clear();
     imageCache.clearLiveImages();
 
-    // 2. Clear SharedPreferences immediately (in ~5ms) while preserving device-scoped settings.
+    // 2. Clear SharedPreferences immediately while preserving device-scoped settings
+    // and user-scoped sequence/daily keys.
     try {
       final prefs = await SharedPreferences.getInstance();
 
@@ -394,6 +408,39 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       // Accessibility & audio preferences are device-scoped, not user-scoped.
       final lowAnimationMode = prefs.getBool('low_animation_mode');
       final gameSoundsEnabled = prefs.getBool('game_sounds_enabled');
+
+      // Preserve user-scoped sequence and daily progress keys on normal logout
+      final userScopedStrings = <String, String>{};
+      final userScopedInts = <String, int>{};
+      final userScopedBools = <String, bool>{};
+      final userScopedStringLists = <String, List<String>>{};
+
+      if (!isAccountDeletion) {
+        for (final key in prefs.getKeys()) {
+          if (key.startsWith('vowl_sequence_') || key.startsWith('daily_words_')) {
+            final sVal = prefs.getString(key);
+            if (sVal != null) {
+              userScopedStrings[key] = sVal;
+              continue;
+            }
+            final iVal = prefs.getInt(key);
+            if (iVal != null) {
+              userScopedInts[key] = iVal;
+              continue;
+            }
+            final bVal = prefs.getBool(key);
+            if (bVal != null) {
+              userScopedBools[key] = bVal;
+              continue;
+            }
+            final slVal = prefs.getStringList(key);
+            if (slVal != null) {
+              userScopedStringLists[key] = slVal;
+              continue;
+            }
+          }
+        }
+      }
 
       await prefs.clear();
 
@@ -445,6 +492,22 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       if (gameSoundsEnabled != null) {
         await prefs.setBool('game_sounds_enabled', gameSoundsEnabled);
       }
+
+      // Restore user-scoped entries on normal logout
+      if (!isAccountDeletion) {
+        for (final entry in userScopedStrings.entries) {
+          await prefs.setString(entry.key, entry.value);
+        }
+        for (final entry in userScopedInts.entries) {
+          await prefs.setInt(entry.key, entry.value);
+        }
+        for (final entry in userScopedBools.entries) {
+          await prefs.setBool(entry.key, entry.value);
+        }
+        for (final entry in userScopedStringLists.entries) {
+          await prefs.setStringList(entry.key, entry.value);
+        }
+      }
     } catch (e) {
       if (kDebugMode) {
         debugPrint('AuthBloc: SharedPreferences cleanup failed: $e');
@@ -454,7 +517,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     // 3. Reset in-memory DailyWordsService state so learned words don't leak across accounts
     try {
       if (di.sl.isRegistered<DailyWordsService>()) {
-        await di.sl<DailyWordsService>().reset();
+        if (isAccountDeletion) {
+          await di.sl<DailyWordsService>().reset();
+        } else {
+          di.sl<DailyWordsService>().resetInMemory();
+        }
       }
     } catch (e) {
       if (kDebugMode) debugPrint('AuthBloc: DailyWordsService reset failed: $e');
@@ -493,7 +560,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     try {
       // Defensive timeout on local data cleanup (max 4 seconds)
-      await _clearAllLocalData().timeout(
+      await _clearAllLocalData(isAccountDeletion: false).timeout(
         const Duration(seconds: 4),
         onTimeout: () {
           if (kDebugMode) {
@@ -707,7 +774,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     try {
       // C-03: Clear ALL local data with defensive timeout (max 4 seconds)
-      await _clearAllLocalData().timeout(
+      await _clearAllLocalData(isAccountDeletion: true).timeout(
         const Duration(seconds: 4),
         onTimeout: () {
           if (kDebugMode) {

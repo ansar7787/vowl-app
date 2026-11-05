@@ -142,47 +142,47 @@ void main() {
   });
 
   group('Piece 9: DiscoveryDeck Interaction & Navigation Tests', () {
-    testWidgets('tapping Smart Focus hero card launches smart_recommendation and triggers haptic', (tester) async {
+    testWidgets('tapping Smart Focus hero card launches smart_focus and triggers haptic', (tester) async {
       await tester.pumpWidget(createTestWidget());
       await tester.pumpAndSettle();
 
       await tester.tap(find.text('Smart Focus'));
       await tester.pumpAndSettle();
 
-      expect(launchedQuests, ['smart_recommendation']);
+      expect(launchedQuests, ['smart_focus']);
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('tapping Daily Workout subcell launches daily_duo and triggers haptic', (tester) async {
+    testWidgets('tapping Daily Workout subcell launches daily_workout and triggers haptic', (tester) async {
       await tester.pumpWidget(createTestWidget());
       await tester.pumpAndSettle();
 
       await tester.tap(find.text('Daily Workout'));
       await tester.pumpAndSettle();
 
-      expect(launchedQuests, ['daily_duo']);
+      expect(launchedQuests, ['daily_workout']);
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('tapping Rapid Recall subcell launches speed_blitz and triggers haptic', (tester) async {
+    testWidgets('tapping Rapid Recall subcell launches rapid_recall and triggers haptic', (tester) async {
       await tester.pumpWidget(createTestWidget());
       await tester.pumpAndSettle();
 
       await tester.tap(find.text('Rapid Recall'));
       await tester.pumpAndSettle();
 
-      expect(launchedQuests, ['speed_blitz']);
+      expect(launchedQuests, ['rapid_recall']);
       verify(() => mockHapticService.selection()).called(1);
     });
 
-    testWidgets('tapping Sentence Lab subcell launches grammar_pro and triggers haptic', (tester) async {
+    testWidgets('tapping Sentence Lab subcell launches sentence_lab and triggers haptic', (tester) async {
       await tester.pumpWidget(createTestWidget());
       await tester.pumpAndSettle();
 
       await tester.tap(find.text('Sentence Lab'));
       await tester.pumpAndSettle();
 
-      expect(launchedQuests, ['grammar_pro']);
+      expect(launchedQuests, ['sentence_lab']);
       verify(() => mockHapticService.selection()).called(1);
     });
   });

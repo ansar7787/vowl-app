@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
+import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
@@ -49,10 +50,10 @@ class DiscoveryDeck extends StatefulWidget {
 
 class _DiscoveryDeckState extends State<DiscoveryDeck> {
   Map<String, bool> _completedSequences = const {
-    'smart_recommendation': false,
-    'daily_duo': false,
-    'speed_blitz': false,
-    'grammar_pro': false,
+    'smart_focus': false,
+    'daily_workout': false,
+    'rapid_recall': false,
+    'sentence_lab': false,
   };
 
   @override
@@ -85,22 +86,16 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
       final userId = widget.user.id;
       final newMap = <String, bool>{};
       for (final id in [
-        'smart_recommendation',
-        'daily_duo',
-        'speed_blitz',
-        'grammar_pro',
+        'smart_focus',
+        'daily_workout',
+        'rapid_recall',
+        'sentence_lab',
       ]) {
+        final legacyId = DiscoveryHelper.legacySequenceId(id);
         final val = prefs.getString('vowl_sequence_completed_${id}_$userId');
-        final alias = id == 'daily_duo'
-            ? 'daily_workout'
-            : (id == 'speed_blitz'
-                ? 'rapid_recall'
-                : (id == 'grammar_pro'
-                    ? 'sentence_lab'
-                    : 'smart_focus'));
-        final aliasVal =
-            prefs.getString('vowl_sequence_completed_${alias}_$userId');
-        newMap[id] = val == todayStr || aliasVal == todayStr;
+        final legacyVal =
+            prefs.getString('vowl_sequence_completed_${legacyId}_$userId');
+        newMap[id] = val == todayStr || legacyVal == todayStr;
       }
       if (mounted) {
         setState(() {
@@ -119,10 +114,10 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isSmartFocusDone = _completedSequences['smart_recommendation'] ?? false;
-    final isDailyWorkoutDone = _completedSequences['daily_duo'] ?? false;
-    final isRapidRecallDone = _completedSequences['speed_blitz'] ?? false;
-    final isSentenceLabDone = _completedSequences['grammar_pro'] ?? false;
+    final isSmartFocusDone = _completedSequences['smart_focus'] ?? false;
+    final isDailyWorkoutDone = _completedSequences['daily_workout'] ?? false;
+    final isRapidRecallDone = _completedSequences['rapid_recall'] ?? false;
+    final isSentenceLabDone = _completedSequences['sentence_lab'] ?? false;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -144,7 +139,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
             ),
             onTap: () {
               _triggerHaptic();
-              widget.onLaunchQuest('smart_recommendation');
+              widget.onLaunchQuest('smart_focus');
             },
           ),
 
@@ -172,7 +167,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
                         ),
                   onTap: () {
                     _triggerHaptic();
-                    widget.onLaunchQuest('daily_duo');
+                    widget.onLaunchQuest('daily_workout');
                   },
                 ),
               ),
@@ -197,7 +192,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
                         ),
                   onTap: () {
                     _triggerHaptic();
-                    widget.onLaunchQuest('speed_blitz');
+                    widget.onLaunchQuest('rapid_recall');
                   },
                 ),
               ),
@@ -222,7 +217,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
                         ),
                   onTap: () {
                     _triggerHaptic();
-                    widget.onLaunchQuest('grammar_pro');
+                    widget.onLaunchQuest('sentence_lab');
                   },
                 ),
               ),

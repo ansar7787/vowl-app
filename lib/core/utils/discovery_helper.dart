@@ -41,7 +41,28 @@ class DiscoveryHelper {
   }
 
   /// Canonical identifier mapping to unify legacy and modern sequence alias keys.
+  /// Canonical IDs are the modern production names: daily_workout, rapid_recall, sentence_lab, smart_focus.
   static String canonicalSequenceId(String sequenceId) {
+    switch (sequenceId) {
+      case 'daily_workout':
+      case 'daily_duo':
+        return 'daily_workout';
+      case 'rapid_recall':
+      case 'speed_blitz':
+        return 'rapid_recall';
+      case 'sentence_lab':
+      case 'grammar_pro':
+        return 'sentence_lab';
+      case 'smart_focus':
+      case 'smart_recommendation':
+        return 'smart_focus';
+      default:
+        return sequenceId;
+    }
+  }
+
+  /// Maps modern canonical IDs back to legacy development codenames for backward compatibility.
+  static String legacySequenceId(String sequenceId) {
     switch (sequenceId) {
       case 'daily_workout':
       case 'daily_duo':

@@ -203,7 +203,7 @@ class GameRoutes {
     GoRoute(
       path: questSequenceRoute,
       pageBuilder: (context, state) {
-        final sequenceId = state.uri.queryParameters['id'] ?? 'daily_duo';
+        final sequenceId = state.uri.queryParameters['id'] ?? 'daily_workout';
         UserEntity? user;
         try {
           user = context.read<AuthBloc>().state.user;

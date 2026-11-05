@@ -128,5 +128,34 @@ void main() {
       expect(quests[0].difficulty, 7);
     });
   });
+
+  group('DiscoveryHelper Canonical & Legacy ID Mapping Tests', () {
+    test('maps legacy codenames to modern canonical sequence IDs', () {
+      expect(DiscoveryHelper.canonicalSequenceId('daily_duo'), equals('daily_workout'));
+      expect(DiscoveryHelper.canonicalSequenceId('speed_blitz'), equals('rapid_recall'));
+      expect(DiscoveryHelper.canonicalSequenceId('grammar_pro'), equals('sentence_lab'));
+      expect(DiscoveryHelper.canonicalSequenceId('smart_recommendation'), equals('smart_focus'));
+      expect(DiscoveryHelper.canonicalSequenceId('daily_workout'), equals('daily_workout'));
+      expect(DiscoveryHelper.canonicalSequenceId('rapid_recall'), equals('rapid_recall'));
+      expect(DiscoveryHelper.canonicalSequenceId('sentence_lab'), equals('sentence_lab'));
+      expect(DiscoveryHelper.canonicalSequenceId('smart_focus'), equals('smart_focus'));
+    });
+
+    test('maps modern canonical IDs back to legacy development codenames', () {
+      expect(DiscoveryHelper.legacySequenceId('daily_workout'), equals('daily_duo'));
+      expect(DiscoveryHelper.legacySequenceId('rapid_recall'), equals('speed_blitz'));
+      expect(DiscoveryHelper.legacySequenceId('sentence_lab'), equals('grammar_pro'));
+      expect(DiscoveryHelper.legacySequenceId('smart_focus'), equals('smart_recommendation'));
+      expect(DiscoveryHelper.legacySequenceId('daily_duo'), equals('daily_duo'));
+    });
+
+    test('resolves quests equivalently using canonical or legacy identifiers', () {
+      final modern = DiscoveryHelper.getQuestsForSequence('daily_workout', baseUser);
+      final legacy = DiscoveryHelper.getQuestsForSequence('daily_duo', baseUser);
+      expect(modern.length, equals(legacy.length));
+      expect(modern[0].subtype, equals(legacy[0].subtype));
+      expect(modern[1].subtype, equals(legacy[1].subtype));
+    });
+  });
 }
 

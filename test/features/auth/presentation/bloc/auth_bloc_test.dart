@@ -253,6 +253,23 @@ void main() {
       },
     );
 
+    test('preserves user-scoped vowl_sequence and daily_words keys across logout', () async {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('vowl_sequence_completed_rapid_recall_user_1', '2026-11-05');
+      await prefs.setString('daily_words_user_1_last_completed_date', '2026-11-05');
+      await prefs.setString('transient_session_secret', 'secret123');
+
+      when(() => mockLogOut(any())).thenAnswer((_) async => const Right(null));
+
+      bloc.add(const AuthLogoutRequested());
+      await untilCalled(() => mockLogOut(any()));
+      await Future<void>.delayed(const Duration(milliseconds: 50));
+
+      expect(prefs.getString('vowl_sequence_completed_rapid_recall_user_1'), equals('2026-11-05'));
+      expect(prefs.getString('daily_words_user_1_last_completed_date'), equals('2026-11-05'));
+      expect(prefs.getString('transient_session_secret'), isNull);
+    });
+
     blocTest<AuthBloc, AuthState>(
       'should emit [loggingOut, authenticated] with network-unreachable if offline',
       build: () {
