@@ -43,6 +43,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
   late List<GameQuest> _quests;
   int _currentIndex = 0;
   bool _isLaunching = false;
+  bool _hasFinishedSequence = false;
 
   late final ValueNotifier<int> _stateHash = ValueNotifier(0);
 
@@ -72,6 +73,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
       );
       if (completedToday == todayStr) {
         if (mounted) {
+          _hasFinishedSequence = true;
           _currentIndex = _quests.length;
           _updateState();
         }
@@ -182,7 +184,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
       _currentIndex = computedIndex.clamp(0, _quests.length);
       _saveStepProgress();
       _updateState();
-      if (_currentIndex >= _quests.length) {
+      if (_currentIndex >= _quests.length && !_isLaunching) {
         _finishSequence();
       }
     } else {
@@ -351,7 +353,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
         context.read<AuthBloc>().add(const AuthRefreshUser());
       } catch (_) {}
 
-      if (_currentIndex >= _quests.length) {
+      if (_currentIndex >= _quests.length && !_isLaunching) {
         _finishSequence();
       }
     } else {
@@ -369,6 +371,9 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
   }
 
   void _finishSequence() async {
+    if (_hasFinishedSequence) return;
+    _hasFinishedSequence = true;
+
     // Refresh user state so any completed level changes sync to the map immediately
     try {
       context.read<AuthBloc>().add(const AuthRefreshUser());

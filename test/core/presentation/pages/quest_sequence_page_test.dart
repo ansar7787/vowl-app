@@ -774,6 +774,85 @@ void main() {
       expect(find.text('Start Part 2'), findsOneWidget);
     });
 
+    testWidgets('completing Part 2 finishes sequence and shows QUEST COMPLETED! dialog', (tester) async {
+      setViewport(tester, const Size(390, 950));
+
+      final router = GoRouter(
+        initialLocation: '/sequence',
+        routes: [
+          GoRoute(
+            path: '/sequence',
+            builder: (context, state) => QuestSequencePage(
+              sequenceId: 'daily_duo',
+              quests: sampleQuests,
+            ),
+          ),
+          GoRoute(
+            path: '/game',
+            builder: (gameCtx, state) {
+              return Scaffold(
+                body: Center(
+                  child: ElevatedButton(
+                    key: const Key('trigger_completion_btn_part2'),
+                    onPressed: () {
+                      GameDialogHelper.showCompletion(
+                        gameCtx,
+                        xp: 15,
+                        coins: 10,
+                        gameType: 'readAndAnswer',
+                        level: 1,
+                      );
+                    },
+                    child: const Text('TRIGGER PART 2 COMPLETION'),
+                  ),
+                ),
+              );
+            },
+          ),
+        ],
+      );
+
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+      SharedPreferences.setMockInitialValues({
+        'vowl_sequence_step_daily_duo_user_quest_test': '${todayStr}_1',
+      });
+
+      await tester.pumpWidget(ScreenUtilInit(
+        designSize: const Size(390, 844),
+        builder: (context, child) => MultiBlocProvider(
+          providers: [
+            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+            BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+          ],
+          child: MaterialApp.router(
+            routerConfig: router,
+          ),
+        ),
+      ));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(find.text('Start Part 2'), findsOneWidget);
+
+      await tester.tap(find.text('Start Part 2'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 400));
+
+      await tester.tap(find.byKey(const Key('trigger_completion_btn_part2')));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 1500));
+
+      final okBtn = find.text('OK');
+      expect(okBtn, findsOneWidget);
+      await tester.tap(okBtn);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 1000));
+
+      expect(find.text('QUEST COMPLETED!'), findsOneWidget);
+    });
+
     testWidgets('fully completed sequence restores all steps completed today', (tester) async {
       setViewport(tester);
       final now = DateTime.now();
