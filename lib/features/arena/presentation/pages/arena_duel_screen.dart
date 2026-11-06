@@ -356,6 +356,11 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                                 isAnswered: hudState.isAnswered,
                                 isDark: isDark,
                                 isAiRival: hudState.session?.isGhostRival ?? false,
+                                aiTierLabel: hudState.session?.ghostAccuracy != null
+                                    ? (hudState.session!.ghostAccuracy >= 0.86
+                                        ? 'HARD'
+                                        : (hudState.session!.ghostAccuracy >= 0.74 ? 'MED' : 'EASY'))
+                                    : null,
                               );
                             },
                           ),

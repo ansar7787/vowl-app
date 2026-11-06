@@ -11,6 +11,7 @@ import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 
 class ArenaRepositoryImpl implements ArenaRepository {
   final FirebaseFirestore _firestore;
+  int _sessionConsecutiveWins = 0;
 
   static const Duration _kNetworkTimeout = Duration(seconds: 10);
   static const int _kStakeCoins = 30;
@@ -142,7 +143,11 @@ class ArenaRepositoryImpl implements ArenaRepository {
       }
 
       // 3. Fallback: If no real human player queued within 8s, match with calibrated Computer/AI
-      final aiOpponent = ArenaAiOpponent.forPlayerLevel(currentUser.level);
+      // via 3-Pillar Skill-Based Matchmaking (Career Win Rate + Level + Session Streak).
+      final aiOpponent = ArenaAiOpponent.forPlayer(
+        currentUser,
+        consecutiveWins: _sessionConsecutiveWins,
+      );
       final roomCode = 'VOWL-AI-${(Random().nextInt(900) + 100)}';
 
       return ArenaDuelSession(
@@ -351,6 +356,12 @@ class ArenaRepositoryImpl implements ArenaRepository {
     required bool isWinner,
     required bool isDraw,
   }) async {
+    if (isWinner) {
+      _sessionConsecutiveWins++;
+    } else if (!isDraw) {
+      _sessionConsecutiveWins = 0;
+    }
+
     final int payout;
     final String titleKey;
     if (isDraw) {
@@ -410,6 +421,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
     required String roomCode,
     required String userId,
   }) async {
+    _sessionConsecutiveWins = 0;
     final cleanCode = roomCode.trim().toUpperCase();
     if (cleanCode.startsWith('VOWL-AI-') || cleanCode.startsWith('VOWL-RIVAL-')) return;
 

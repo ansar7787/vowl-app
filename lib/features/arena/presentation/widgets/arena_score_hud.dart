@@ -20,6 +20,7 @@ class ArenaScoreHud extends StatefulWidget {
   final bool isAnswered;
   final bool isDark;
   final bool isAiRival;
+  final String? aiTierLabel;
   final bool animateTimer;
 
   const ArenaScoreHud({
@@ -36,6 +37,7 @@ class ArenaScoreHud extends StatefulWidget {
     this.isAnswered = false,
     required this.isDark,
     this.isAiRival = false,
+    this.aiTierLabel,
     this.animateTimer = true,
   });
 
@@ -149,8 +151,13 @@ class _ArenaScoreHudState extends State<ArenaScoreHud>
     final String badgeLabel;
 
     if (widget.isAiRival) {
-      if (widget.rivalName.contains('(')) {
-        displayRivalName = widget.rivalName.split('(').first.trim();
+      displayRivalName = widget.rivalName.contains('(')
+          ? widget.rivalName.split('(').first.trim()
+          : widget.rivalName;
+      if (widget.aiTierLabel != null && widget.aiTierLabel!.isNotEmpty) {
+        final raw = widget.aiTierLabel!.toUpperCase();
+        badgeLabel = raw == 'MEDIUM' ? 'MED' : raw;
+      } else if (widget.rivalName.contains('(')) {
         final rawTier = widget.rivalName
             .split('(')
             .last
@@ -159,7 +166,6 @@ class _ArenaScoreHudState extends State<ArenaScoreHud>
             .toUpperCase();
         badgeLabel = rawTier == 'MEDIUM' ? 'MED' : rawTier;
       } else {
-        displayRivalName = widget.rivalName;
         badgeLabel = 'EASY';
       }
     } else {
