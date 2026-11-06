@@ -14,6 +14,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/auth/domain/usecases/increment_xp.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_challenges/word_snap/domain/models/word_snap_puzzle.dart';
@@ -113,7 +114,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
       if (mounted) {
         GameDialogHelper.showCompletion(
           context,
-          xp: 15,
+          xp: 0,
           coins: 0,
           title: context.tr(
             'vocabulary.practice_complete',
@@ -145,9 +146,13 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
       ),
     );
 
+    if (di.sl.isRegistered<IncrementXp>()) {
+      di.sl<IncrementXp>().call(const IncrementXpParams(amount: 5));
+    }
+
     GameDialogHelper.showCompletion(
       context,
-      xp: 50,
+      xp: 5,
       coins: 10,
       title: context.tr(
         'vocabulary.word_snap_master',

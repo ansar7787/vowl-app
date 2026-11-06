@@ -14,6 +14,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/features/auth/domain/usecases/increment_xp.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/domain/models/word_mixer_puzzle.dart';
@@ -133,7 +134,7 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
       // Practice mode reward dialog
       GameDialogHelper.showCompletion(
         context,
-        xp: 20,
+        xp: 0,
         coins: 0,
         title: context.tr('home.practice_complete', fallback: 'Practice Complete!'),
         description: context.tr(
@@ -161,9 +162,13 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
       ),
     );
 
+    if (di.sl.isRegistered<IncrementXp>()) {
+      di.sl<IncrementXp>().call(const IncrementXpParams(amount: 5));
+    }
+
     GameDialogHelper.showCompletion(
       context,
-      xp: 50,
+      xp: 5,
       coins: 10,
       title: context.tr(
         'home.word_mixer_master',
