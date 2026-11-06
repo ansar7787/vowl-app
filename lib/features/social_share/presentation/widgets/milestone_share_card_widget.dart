@@ -97,34 +97,43 @@ class MilestoneShareCardWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Subtle Brand Mark (Left)
+              // Subtle Brand Mark (Left) with Official Play Store App Icon
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Container(
-                    width: 20.r,
-                    height: 20.r,
-                    decoration: BoxDecoration(
-                      color: AppColors.indigo500.withValues(alpha: 0.15),
-                      borderRadius: BorderRadius.circular(6.r),
-                    ),
-                    alignment: Alignment.center,
-                    child: Text(
-                      'V',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w900,
-                        color: AppColors.indigo500,
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(6.r),
+                    child: Image.asset(
+                      'assets/images/playstore/play_store.png',
+                      width: 22.r,
+                      height: 22.r,
+                      fit: BoxFit.cover,
+                      errorBuilder: (ctx, err, stack) => Container(
+                        width: 22.r,
+                        height: 22.r,
+                        decoration: BoxDecoration(
+                          color: AppColors.indigo500.withValues(alpha: 0.15),
+                          borderRadius: BorderRadius.circular(6.r),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          'V',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w900,
+                            color: AppColors.indigo500,
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                  SizedBox(width: 6.w),
+                  SizedBox(width: 7.w),
                   Text(
                     'VOWL',
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 11.5.sp,
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.w900,
                       letterSpacing: 2.0,
                       color: logoColor,
