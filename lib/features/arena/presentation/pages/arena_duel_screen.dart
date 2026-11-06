@@ -312,7 +312,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
 
                   return Padding(
                     padding: EdgeInsets.symmetric(
-                      horizontal: AppSpacing.screen,
+                      horizontal: AppSpacing.compact,
                       vertical: 12.h,
                     ),
                     child: Column(
@@ -1223,7 +1223,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
   }) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: AppSpacing.screen,
+        horizontal: AppSpacing.compact,
         vertical: 16.h,
       ),
       child: Column(
