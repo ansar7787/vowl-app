@@ -133,7 +133,7 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             border: Border.all(
-                              color: const Color(0xFFF59E0B).withValues(alpha: opacity1 * 0.5),
+                              color: AppColors.indigo500.withValues(alpha: opacity1 * 0.5),
                               width: 2.r,
                             ),
                           ),
@@ -148,13 +148,13 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         gradient: const LinearGradient(
-                          colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
+                          colors: [AppColors.indigo500, AppColors.indigo600],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(0xFFF59E0B).withValues(alpha: 0.4),
+                            color: AppColors.indigo500.withValues(alpha: 0.4),
                             blurRadius: 20,
                             spreadRadius: 2,
                           ),
@@ -190,7 +190,7 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w800,
                   letterSpacing: 1.5,
-                  color: const Color(0xFFF59E0B),
+                  color: AppColors.indigo500,
                 ),
               ),
               SizedBox(height: 6.h),
@@ -220,7 +220,7 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
                     color: isDark ? const Color(0xFF070A12) : const Color(0xFFF1F5F9),
                     borderRadius: BorderRadius.circular(16.r),
                     border: Border.all(
-                      color: const Color(0xFFF59E0B).withValues(alpha: 0.35),
+                      color: AppColors.indigo500.withValues(alpha: 0.35),
                       width: 1.5,
                     ),
                   ),
@@ -241,16 +241,19 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
                               ),
                             ),
                             SizedBox(height: 2.h),
-                            Text(
-                              widget.roomCode!.toUpperCase(),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 15.sp,
-                                fontWeight: FontWeight.w900,
-                                letterSpacing: 1.5,
-                                color: textPrimary,
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                widget.roomCode!.toUpperCase(),
+                                maxLines: 1,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.w900,
+                                  letterSpacing: 1.5,
+                                  color: textPrimary,
+                                ),
                               ),
                             ),
                           ],
@@ -264,7 +267,7 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
                             visualDensity: VisualDensity.compact,
                             padding: EdgeInsets.all(6.r),
                             constraints: const BoxConstraints(),
-                            icon: Icon(LucideIcons.copy, size: 18.sp, color: const Color(0xFFF59E0B)),
+                            icon: Icon(LucideIcons.copy, size: 18.sp, color: AppColors.indigo500),
                             tooltip: 'Copy Code',
                             onPressed: () {
                               Clipboard.setData(ClipboardData(text: widget.roomCode!.toUpperCase()));
@@ -281,16 +284,17 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
                             visualDensity: VisualDensity.compact,
                             padding: EdgeInsets.all(6.r),
                             constraints: const BoxConstraints(),
-                            icon: Icon(LucideIcons.share2, size: 18.sp, color: const Color(0xFFF59E0B)),
+                            icon: Icon(LucideIcons.share2, size: 18.sp, color: AppColors.indigo500),
                             tooltip: 'Share Duel Invite',
                             onPressed: () {
                               final code = widget.roomCode!.toUpperCase();
                               SharePlus.instance.share(
                                 ShareParams(
-                                  text: '⚔️ Accept my 1v1 Arena Vocabulary Duel on Vowl!\n'
-                                      'Room Code: $code\n'
-                                      'Tap to duel: https://vowl-acbc5.web.app/arena?code=$code',
-                                  subject: '⚔️ Vowl Arena Duel Invitation',
+                                  text: '⚔️ I\'m waiting for you in the Vowl 1v1 Arena!\n'
+                                      'Room Code: $code\n\n'
+                                      'Tap the link to join our vocabulary duel:\n'
+                                      'https://vowl-acbc5.web.app/duel/$code',
+                                  subject: '⚔️ 1v1 Vocabulary Duel Challenge',
                                 ),
                               );
                             },

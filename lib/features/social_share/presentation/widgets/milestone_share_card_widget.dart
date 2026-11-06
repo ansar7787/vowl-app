@@ -6,6 +6,13 @@ import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/features/social_share/domain/entities/share_card_data.dart';
 
+/// Production multi-theme milestone share card supporting dynamic Light and Dark modes.
+///
+/// Cleanly handles:
+/// - 1v1 Arena Duel Invites (`arenaInvite`)
+/// - 1v1 Arena Victories (`arenaVictory`)
+/// - Ambassador & Referral codes (`referral`)
+/// - Leaderboard Rank & Daily Streaks (`rank`, `streak`)
 class MilestoneShareCardWidget extends StatelessWidget {
   final ShareCardData data;
 
@@ -13,18 +20,40 @@ class MilestoneShareCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    final cardBg = isDark
+        ? const Color(0xFF0B0F19)
+        : Colors.white;
+    final metricBg = isDark
+        ? const Color(0xFF070A12)
+        : const Color(0xFFF8FAFC);
+    final borderColor = isDark
+        ? const Color(0xFF1E293B)
+        : const Color(0xFFE2E8F0);
+    final textPrimary = isDark ? Colors.white : AppColors.slate900;
+    final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
+    final logoColor = isDark ? Colors.white : AppColors.indigo600;
+
     return Container(
       width: 340.w,
       padding: EdgeInsets.all(AppSpacing.cardSpacious),
       decoration: BoxDecoration(
-        color: const Color(0xFF0B0F19), // Solid luxury obsidian
+        color: cardBg,
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: const Color(0xFF1E293B), width: 1.5.w),
+        border: Border.all(
+          color: isDark
+              ? AppColors.indigo500.withValues(alpha: 0.25)
+              : AppColors.indigo500.withValues(alpha: 0.20),
+          width: 1.5.w,
+        ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.6),
-            blurRadius: 30,
-            offset: const Offset(0, 15),
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.55)
+                : AppColors.indigo500.withValues(alpha: 0.10),
+            blurRadius: 28,
+            offset: const Offset(0, 12),
           ),
         ],
       ),
@@ -32,7 +61,7 @@ class MilestoneShareCardWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // Header: Brand Logo
+          // 1. Header: Vowl Brand Logo
           Center(
             child: Image.asset(
               'assets/images/vowl_logo.webp',
@@ -44,65 +73,149 @@ class MilestoneShareCardWidget extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 22.sp,
                   fontWeight: FontWeight.w900,
-                  letterSpacing: 2,
-                  color: Colors.white,
+                  letterSpacing: 2.5,
+                  color: logoColor,
                 ),
               ),
             ),
           ),
 
-          SizedBox(height: 24.h),
+          SizedBox(height: 20.h),
 
-          // User Avatar & Name
-          UserAvatar(photoUrl: data.userPhotoUrl, size: 68.r),
-          SizedBox(height: 12.h),
+          // 2. User Avatar & Display Name
+          UserAvatar(photoUrl: data.userPhotoUrl, size: 64.r),
+          SizedBox(height: 10.h),
           Text(
             data.userName,
             textAlign: TextAlign.center,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
+            softWrap: true,
             style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 18.sp,
               fontWeight: FontWeight.w800,
-              color: Colors.white,
+              color: textPrimary,
             ),
           ),
-          SizedBox(height: 4.h),
+          SizedBox(height: 3.h),
           Text(
             data.title,
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 13.sp,
-              fontWeight: FontWeight.w600,
+              fontFamily: 'Outfit',
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.6,
               color: AppColors.indigo500,
             ),
           ),
 
-          SizedBox(height: 20.h),
+          SizedBox(height: 18.h),
 
-          // Metric Highlight Box
+          // 3. Highlight Metric Box
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
             decoration: BoxDecoration(
-              color: const Color(0xFF070A12),
+              color: metricBg,
               borderRadius: BorderRadius.circular(16.r),
-              border: Border.all(color: const Color(0xFF1E293B)),
+              border: Border.all(color: borderColor),
             ),
             child: Column(
               children: [
-                if (data.type == ShareCardType.arenaVictory) ...[
+                // Case A: 1v1 Arena Invite Challenge
+                if (data.type == ShareCardType.arenaInvite) ...[
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(LucideIcons.swords, size: 24.sp, color: const Color(0xFFF59E0B)),
+                      Container(
+                        padding: EdgeInsets.all(5.r),
+                        decoration: BoxDecoration(
+                          color: AppColors.indigo500.withValues(alpha: 0.15),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          LucideIcons.swords,
+                          size: 16.sp,
+                          color: AppColors.indigo500,
+                        ),
+                      ),
                       SizedBox(width: 8.w),
                       Text(
-                        'ARENA DUEL VICTORY',
+                        '1v1 DUEL CHALLENGE',
                         style: TextStyle(
+                          fontFamily: 'Outfit',
                           fontSize: 11.sp,
                           letterSpacing: 1.2,
                           fontWeight: FontWeight.w800,
-                          color: const Color(0xFFF59E0B),
+                          color: AppColors.indigo500,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 8.h),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? AppColors.indigo950.withValues(alpha: 0.4)
+                          : AppColors.indigo50,
+                      borderRadius: BorderRadius.circular(8.r),
+                      border: Border.all(
+                        color: AppColors.indigo500.withValues(alpha: 0.3),
+                      ),
+                    ),
+                    child: Text(
+                      data.roomCode ?? 'VOWL-DUEL',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: 2.0,
+                        color: isDark ? Colors.white : AppColors.indigo600,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 8.h),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.5.h),
+                    decoration: BoxDecoration(
+                      color: AppColors.amber500.withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(8.r),
+                      border: Border.all(
+                        color: AppColors.amber500.withValues(alpha: 0.3),
+                      ),
+                    ),
+                    child: Text(
+                      'Stake 30🪙 • Winner Takes 50🪙 + 5 XP',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.5.sp,
+                        fontWeight: FontWeight.w800,
+                        color: AppColors.amber500,
+                      ),
+                    ),
+                  ),
+                ]
+                // Case B: 1v1 Arena Victory
+                else if (data.type == ShareCardType.arenaVictory) ...[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        LucideIcons.trophy,
+                        size: 20.sp,
+                        color: AppColors.amber500,
+                      ),
+                      SizedBox(width: 8.w),
+                      Text(
+                        'DUEL VICTORY',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          letterSpacing: 1.2,
+                          fontWeight: FontWeight.w800,
+                          color: AppColors.amber500,
                         ),
                       ),
                     ],
@@ -111,72 +224,83 @@ class MilestoneShareCardWidget extends StatelessWidget {
                   Text(
                     '${data.myScore ?? 0} PTS',
                     style: TextStyle(
-                      fontSize: 34.sp,
+                      fontFamily: 'Outfit',
+                      fontSize: 32.sp,
                       fontWeight: FontWeight.w900,
-                      color: Colors.white,
+                      color: textPrimary,
                     ),
                   ),
-                  SizedBox(height: 4.h),
+                  SizedBox(height: 2.h),
                   Text(
                     'vs ${data.rivalName ?? 'Rival'} (${data.rivalScore ?? 0} pts)',
                     style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.slate400,
+                      color: textSecondary,
                     ),
                   ),
                   SizedBox(height: 6.h),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
+                      color: AppColors.amber500.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(10.r),
                     ),
                     child: Text(
                       '+50 Coins 🪙 • +5 XP ⚡ Won',
                       style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w800,
-                        color: const Color(0xFFF59E0B),
+                        color: AppColors.amber500,
                       ),
                     ),
                   ),
-                ] else if (data.type == ShareCardType.referral) ...[
-                  Icon(LucideIcons.gift, size: 28.sp, color: const Color(0xFF8B5CF6)),
+                ]
+                // Case C: Referral & Ambassador Program
+                else if (data.type == ShareCardType.referral) ...[
+                  Icon(LucideIcons.gift, size: 28.sp, color: AppColors.violet500),
                   SizedBox(height: 6.h),
                   Text(
                     '+100 COINS & VIP ACCESS',
                     style: TextStyle(
-                      fontSize: 18.sp,
+                      fontFamily: 'Outfit',
+                      fontSize: 17.sp,
                       fontWeight: FontWeight.w900,
-                      color: Colors.white,
+                      color: textPrimary,
                     ),
                   ),
                   SizedBox(height: 4.h),
                   Text(
-                    'Join my English mastery circle on Vowl',
+                    'Join my English circle on Vowl',
                     style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 11.sp,
-                      color: AppColors.slate400,
+                      color: textSecondary,
                     ),
                   ),
-                ] else if (data.rank != null) ...[
+                ]
+                // Case D: Global Rank
+                else if (data.rank != null) ...[
                   Text(
                     'GLOBAL LEAGUE',
                     style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 10.sp,
                       letterSpacing: 1.2,
                       fontWeight: FontWeight.w700,
-                      color: AppColors.slate400,
+                      color: textSecondary,
                     ),
                   ),
                   SizedBox(height: 2.h),
                   Text(
                     '#${data.rank}',
                     style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 36.sp,
                       fontWeight: FontWeight.w900,
-                      color: const Color(0xFFF59E0B),
+                      color: AppColors.amber500,
                     ),
                   ),
                   SizedBox(height: 4.h),
@@ -184,32 +308,37 @@ class MilestoneShareCardWidget extends StatelessWidget {
                     data.subtitle,
                     textAlign: TextAlign.center,
                     style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 11.sp,
-                      color: AppColors.slate400,
+                      color: textSecondary,
                     ),
                   ),
-                ] else if (data.streak != null) ...[
+                ]
+                // Case E: Daily Streak
+                else if (data.streak != null) ...[
                   Text(
                     'STREAK RECORD',
                     style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 10.sp,
                       letterSpacing: 1.2,
                       fontWeight: FontWeight.w700,
-                      color: AppColors.slate400,
+                      color: textSecondary,
                     ),
                   ),
                   SizedBox(height: 2.h),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(LucideIcons.flame, size: 28.sp, color: const Color(0xFFF59E0B)),
+                      Icon(LucideIcons.flame, size: 28.sp, color: AppColors.amber500),
                       SizedBox(width: 6.w),
                       Text(
                         '${data.streak} DAYS',
                         style: TextStyle(
+                          fontFamily: 'Outfit',
                           fontSize: 30.sp,
                           fontWeight: FontWeight.w900,
-                          color: Colors.white,
+                          color: textPrimary,
                         ),
                       ),
                     ],
@@ -219,8 +348,9 @@ class MilestoneShareCardWidget extends StatelessWidget {
                     data.subtitle,
                     textAlign: TextAlign.center,
                     style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 11.sp,
-                      color: AppColors.slate400,
+                      color: textSecondary,
                     ),
                   ),
                 ],
@@ -228,31 +358,36 @@ class MilestoneShareCardWidget extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 20.h),
+          SizedBox(height: 18.h),
 
-          // Footer: Code Action
-          if (data.type == ShareCardType.arenaVictory) ...[
+          // 4. Footer Code Pill
+          if (data.type == ShareCardType.arenaInvite ||
+              data.type == ShareCardType.arenaVictory) ...[
             Container(
               padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
               decoration: BoxDecoration(
-                color: const Color(0xFFF59E0B).withValues(alpha: 0.12),
+                color: AppColors.indigo500.withValues(alpha: 0.12),
                 borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(color: const Color(0xFFF59E0B).withValues(alpha: 0.25)),
+                border: Border.all(
+                  color: AppColors.indigo500.withValues(alpha: 0.25),
+                ),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(LucideIcons.swords, size: 14.sp, color: const Color(0xFFF59E0B)),
+                  Icon(LucideIcons.swords, size: 14.sp, color: AppColors.indigo500),
                   SizedBox(width: 8.w),
                   Flexible(
                     child: Text(
-                      'Rematch Code: ${data.roomCode ?? "VOWL"} (Enter in app)',
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                      'Duel Code: ${data.roomCode ?? "VOWL"} • Enter in Vowl app',
+                      maxLines: 2,
+                      softWrap: true,
+                      textAlign: TextAlign.center,
                       style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 11.sp,
                         fontWeight: FontWeight.w700,
-                        color: Colors.white,
+                        color: isDark ? Colors.white : AppColors.indigo600,
                       ),
                     ),
                   ),
@@ -265,7 +400,9 @@ class MilestoneShareCardWidget extends StatelessWidget {
               decoration: BoxDecoration(
                 color: AppColors.indigo500.withValues(alpha: 0.12),
                 borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(color: AppColors.indigo500.withValues(alpha: 0.25)),
+                border: Border.all(
+                  color: AppColors.indigo500.withValues(alpha: 0.25),
+                ),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -274,13 +411,15 @@ class MilestoneShareCardWidget extends StatelessWidget {
                   SizedBox(width: 8.w),
                   Flexible(
                     child: Text(
-                      'Use code: ${data.referralCode} for +100 Coins & Free VIP',
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                      'Use code: ${data.referralCode} for +100 Coins & VIP',
+                      maxLines: 2,
+                      softWrap: true,
+                      textAlign: TextAlign.center,
                       style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 11.sp,
                         fontWeight: FontWeight.w700,
-                        color: Colors.white,
+                        color: isDark ? Colors.white : AppColors.indigo600,
                       ),
                     ),
                   ),
@@ -293,4 +432,3 @@ class MilestoneShareCardWidget extends StatelessWidget {
     );
   }
 }
-

@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/arena/data/services/arena_curriculum_engine.dart';
+import 'package:vowl/features/arena/data/utils/arena_ai_difficulty_engine.dart';
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 
@@ -121,9 +122,10 @@ class ArenaRepositoryImpl implements ArenaRepository {
 
           ArenaDuelSession? liveMatched;
           try {
-            liveMatched = await completer.future.timeout(const Duration(seconds: 3));
+            // Real-world queue wait: Listen for up to 8 seconds for a real human player
+            liveMatched = await completer.future.timeout(const Duration(seconds: 8));
           } catch (_) {
-            // 3-second timeout: no human joined
+            // 8-second timeout: no human joined in active queue
           } finally {
             await sub.cancel();
             try {
@@ -136,27 +138,26 @@ class ArenaRepositoryImpl implements ArenaRepository {
           }
         }
       } catch (_) {
-        // Fall through to 3-second smart fallback
+        // Fall through to calibrated Computer/AI opponent
       }
 
-      // 3. Fallback: Instant matchmaking with transparent Vowl AI Challenger (0s wait time)
-      const rivalName = 'Vowl AI Challenger';
-      const accuracy = 0.80;
-      final roomCode = 'VOWL-AI-${(Random().nextInt(900) + 100)}';
+      // 3. Fallback: If no real human player queued within 8s, match with calibrated Computer/AI
+      final aiOpponent = ArenaAiOpponent.forPlayerLevel(currentUser.level);
+      final roomCode = 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
 
       return ArenaDuelSession(
         roomCode: roomCode,
         hostId: currentUser.id,
         hostName: currentUser.safeDisplayName,
         hostPhotoUrl: currentUser.photoUrl,
-        guestId: 'vowl_ai_challenger',
-        guestName: rivalName,
-        guestPhotoUrl: null, // Renders dedicated AI Bot Avatar in UI
+        guestId: aiOpponent.id,
+        guestName: aiOpponent.displayName,
+        guestPhotoUrl: null,
         stake: _kStakeCoins,
         pot: _kStakeCoins * 2,
         status: 'in_progress',
         isGhostRival: true,
-        ghostAccuracy: accuracy,
+        ghostAccuracy: aiOpponent.accuracy,
         questions: questions,
         createdAt: DateTime.now(),
       );
@@ -265,6 +266,10 @@ class ArenaRepositoryImpl implements ArenaRepository {
     if (hostId == currentUser.id) {
       // Re-joining own room
       return _mapSession(cleanCode, data);
+    }
+
+    if (data['status'] != 'waiting') {
+      throw Exception('This duel room is no longer accepting challengers.');
     }
 
     if (data['guestId'] != null && data['guestId'] != currentUser.id) {
@@ -458,6 +463,11 @@ class ArenaRepositoryImpl implements ArenaRepository {
       debugPrint('[ArenaRepositoryImpl] Deduct stake error: $e');
       rethrow;
     }
+  }
+
+  @override
+  Future<void> refundStake({required String userId}) async {
+    await _refundEntryStake(userId);
   }
 
   Future<void> _refundEntryStake(String userId) async {

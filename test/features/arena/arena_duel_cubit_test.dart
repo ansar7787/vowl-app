@@ -9,6 +9,7 @@ class FakeArenaRepository implements ArenaRepository {
   bool completeMatchCalled = false;
   bool lastIsWinner = false;
   bool lastIsDraw = false;
+  StreamController<ArenaDuelSession>? roomStreamController;
 
   @override
   Future<ArenaDuelSession> quickMatch({
@@ -35,7 +36,8 @@ class FakeArenaRepository implements ArenaRepository {
   }) async => throw UnimplementedError();
 
   @override
-  Stream<ArenaDuelSession> listenToRoom(String roomCode) => const Stream.empty();
+  Stream<ArenaDuelSession> listenToRoom(String roomCode) =>
+      roomStreamController?.stream ?? const Stream.empty();
 
   @override
   Future<void> submitScore({
@@ -60,6 +62,11 @@ class FakeArenaRepository implements ArenaRepository {
   @override
   Future<void> forfeitMatch({
     required String roomCode,
+    required String userId,
+  }) async {}
+
+  @override
+  Future<void> refundStake({
     required String userId,
   }) async {}
 }
@@ -141,6 +148,30 @@ void main() {
       expect(cubit.state.speedDiffSeconds, greaterThan(0.0));
       expect(cubit.state.speedDiffSeconds, lessThanOrEqualTo(1.6));
 
+      await cubit.close();
+    });
+
+    test('awards immediate victory when opponent abandons match mid-game', () async {
+      final repo = FakeArenaRepository();
+      final controller = StreamController<ArenaDuelSession>.broadcast();
+      repo.roomStreamController = controller;
+
+      final cubit = ArenaDuelCubit(repository: repo);
+      cubit.startSession(session, user);
+
+      // Opponent forfeits/abandons the room
+      final abandonedSession = session.copyWith(status: 'abandoned');
+      controller.add(abandonedSession);
+
+      await Future<void>.delayed(const Duration(milliseconds: 60));
+
+      expect(cubit.state.isCompleted, true);
+      expect(cubit.state.isWinner, true);
+      expect(cubit.state.payoutCoins, 50);
+      expect(repo.completeMatchCalled, true);
+      expect(repo.lastIsWinner, true);
+
+      await controller.close();
       await cubit.close();
     });
   });

@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:share_plus/share_plus.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 
 import 'package:vowl/core/utils/locale_service.dart';
@@ -14,10 +13,15 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
+import 'package:vowl/features/arena/presentation/pages/arena_lobby_waiting_screen.dart';
+import 'package:vowl/features/arena/presentation/pages/arena_matchmaking_screen.dart';
+import 'package:vowl/features/social_share/domain/entities/share_card_data.dart';
+import 'package:vowl/features/social_share/presentation/widgets/share_card_preview_modal.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/vowl_micro_loader.dart';
 import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -620,8 +624,8 @@ class _QuickResumeHeroCard extends StatelessWidget {
                                 // Game Title
                                 Text(
                                   metadata.title,
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 2,
+                                  softWrap: true,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 18.sp,
@@ -634,8 +638,8 @@ class _QuickResumeHeroCard extends StatelessWidget {
                                 // Category Name
                                 Text(
                                   metadata.categoryName,
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 2,
+                                  softWrap: true,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 12.sp,
@@ -829,7 +833,7 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
               ),
               SizedBox(height: 14.h),
               Text(
-                'Need 30 Coins for 1v1 Arena?',
+                'Need 30 Coins for 1v1 Duel?',
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 17.sp,
@@ -839,7 +843,7 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
               ),
               SizedBox(height: 6.h),
               Text(
-                'You need 30🪙 to enter the duel stake. Watch a short video to instantly claim +30 Coins and jump into the arena!',
+                'You need 30🪙 to enter this duel. Watch a short video to instantly refuel +30 Coins and jump into the arena!',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -921,35 +925,25 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
     );
   }
 
+  DateTime? _lastMatchTapTime;
+
   Future<void> _startQuickMatch() async {
+    final now = DateTime.now();
+    if (_lastMatchTapTime != null &&
+        now.difference(_lastMatchTapTime!) < const Duration(milliseconds: 750)) {
+      return;
+    }
+    _lastMatchTapTime = now;
+
     if (_isLoading) return;
     if (widget.user.coins < 30) {
       _showRefuelDialog();
       return;
     }
 
-    setState(() => _isLoading = true);
-    try {
-      final repo = di.sl<ArenaRepository>();
-      final session = await repo.quickMatch(
-        currentUser: widget.user,
-        leaderboardUsers: const [],
-      );
-      if (mounted) {
-        Navigator.of(context).push(ArenaDuelScreen.route(session: session));
-      }
-    } catch (e) {
-      debugPrint('[_PvPArenaCard] Quick match error: $e');
-      if (mounted) {
-        CustomSnackBar.show(
-          context: context,
-          message: 'Could not start duel. Please try again!',
-          type: CustomSnackBarType.error,
-        );
-      }
-    } finally {
-      if (mounted) setState(() => _isLoading = false);
-    }
+    Navigator.of(context).push(
+      ArenaMatchmakingScreen.route(user: widget.user),
+    );
   }
 
   void _showJoinRoomDialog() {
@@ -960,6 +954,23 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
 
     final controller = TextEditingController();
     bool isJoining = false;
+    String? clipboardCandidate;
+
+    // Check clipboard for potential duel code
+    Clipboard.getData(Clipboard.kTextPlain).then((clip) {
+      final text = clip?.text?.trim().toUpperCase();
+      if (text != null && text.isNotEmpty) {
+        String extracted = text;
+        if (extracted.contains('/DUEL/')) {
+          extracted = extracted.split('/DUEL/').last.split('?').first.trim();
+        } else if (extracted.contains('CODE=')) {
+          extracted = extracted.split('CODE=').last.split('&').first.trim();
+        }
+        if (extracted.length >= 4 && extracted.length <= 16 && !extracted.contains(' ')) {
+          clipboardCandidate = extracted;
+        }
+      }
+    }).catchError((_) {});
 
     showDialog(
       context: context,
@@ -970,63 +981,180 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
               Theme.of(ctx).scaffoldBackgroundColor == Colors.black;
           final cardBg = isMidnight
               ? AppColors.midnightSurface
-              : (isDark ? AppColors.slate800 : Colors.white);
+              : (isDark ? const Color(0xFF131A29) : Colors.white);
           final textPrimary = isDark ? Colors.white : AppColors.slate900;
           final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
-          final borderCol = isDark ? AppColors.slate700 : AppColors.slate200;
+          final borderCol = isDark
+              ? AppColors.indigo500.withValues(alpha: 0.22)
+              : AppColors.indigo500.withValues(alpha: 0.16);
 
           return Dialog(
             backgroundColor: cardBg,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.r),
+              borderRadius: BorderRadius.circular(24.r),
+              side: BorderSide(color: borderCol, width: 1.0),
             ),
-            child: Padding(
+            child: SingleChildScrollView(
               padding: EdgeInsets.all(AppSpacing.cardSpacious),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  // Header Row: Swords icon + Title
                   Row(
                     children: [
                       Container(
                         padding: EdgeInsets.all(8.r),
                         decoration: BoxDecoration(
-                          color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
+                          color: AppColors.indigo500.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(10.r),
                         ),
                         child: Icon(
                           LucideIcons.swords,
-                          color: const Color(0xFFF59E0B),
+                          color: AppColors.indigo500,
                           size: 18.sp,
                         ),
                       ),
                       SizedBox(width: 10.w),
-                      Text(
-                        'Join 1v1 Arena Duel',
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w800,
-                          color: textPrimary,
+                      Expanded(
+                        child: Text(
+                          'Join 1v1 Duel',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 17.sp,
+                            fontWeight: FontWeight.w800,
+                            color: textPrimary,
+                          ),
                         ),
+                      ),
+                      IconButton(
+                        visualDensity: VisualDensity.compact,
+                        padding: EdgeInsets.zero,
+                        constraints: const BoxConstraints(),
+                        icon: Icon(LucideIcons.x, size: 18.sp, color: textSecondary),
+                        onPressed: () => Navigator.of(dialogCtx).pop(),
                       ),
                     ],
                   ),
+
                   SizedBox(height: 12.h),
-                  Text(
-                    'Enter room code shared by friend (30🪙 stake):',
-                    style: TextStyle(fontSize: 12.sp, color: textSecondary),
+
+                  // Stake Badge
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                    decoration: BoxDecoration(
+                      color: AppColors.amber500.withValues(alpha: 0.14),
+                      borderRadius: BorderRadius.circular(8.r),
+                      border: Border.all(
+                        color: AppColors.amber500.withValues(alpha: 0.3),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(LucideIcons.coins, size: 13.r, color: AppColors.amber500),
+                        SizedBox(width: 5.w),
+                        Text(
+                          'Entry: 30🪙 • Winner Takes: 50🪙 + 5 XP',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.5.sp,
+                            fontWeight: FontWeight.w800,
+                            color: AppColors.amber500,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
+
                   SizedBox(height: 14.h),
+
+                  Text(
+                    'Enter the room code shared by your challenger:',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      color: textSecondary,
+                    ),
+                  ),
+
+                  SizedBox(height: 10.h),
+
+                  // Smart Clipboard Paste Chip (if detected)
+                  if (clipboardCandidate != null && controller.text.isEmpty) ...[
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: GestureDetector(
+                        onTap: () {
+                          controller.text = clipboardCandidate!;
+                          setDialogState(() {});
+                        },
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                          margin: EdgeInsets.only(bottom: 8.h),
+                          decoration: BoxDecoration(
+                            color: AppColors.indigo500.withValues(alpha: 0.12),
+                            borderRadius: BorderRadius.circular(8.r),
+                            border: Border.all(
+                              color: AppColors.indigo500.withValues(alpha: 0.25),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(LucideIcons.clipboardPaste, size: 12.r, color: AppColors.indigo500),
+                              SizedBox(width: 4.w),
+                              Text(
+                                'Paste "$clipboardCandidate"',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: AppColors.indigo500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+
+                  // Input Box
                   TextField(
                     controller: controller,
                     textCapitalization: TextCapitalization.characters,
                     style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w800,
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 2.0,
                       color: textPrimary,
                     ),
+                    onChanged: (_) => setDialogState(() {}),
                     decoration: InputDecoration(
                       hintText: 'e.g. VOWL-DUEL-882',
+                      hintStyle: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 0.5,
+                        color: textSecondary.withValues(alpha: 0.6),
+                      ),
+                      prefixIcon: Icon(
+                        LucideIcons.keyRound,
+                        size: 16.r,
+                        color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+                      ),
+                      suffixIcon: controller.text.isNotEmpty
+                          ? IconButton(
+                              icon: Icon(LucideIcons.x, size: 14.r, color: textSecondary),
+                              onPressed: () {
+                                controller.clear();
+                                setDialogState(() {});
+                              },
+                            )
+                          : null,
                       filled: true,
                       fillColor: isDark
                           ? const Color(0xFF070A12)
@@ -1039,27 +1167,30 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                         borderRadius: BorderRadius.circular(12.r),
                         borderSide: BorderSide(color: borderCol),
                       ),
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          LucideIcons.clipboard,
-                          size: 16.sp,
-                          color: textSecondary,
-                        ),
-                        onPressed: () async {
-                          final clip = await Clipboard.getData(Clipboard.kTextPlain);
-                          if (clip?.text != null) {
-                            controller.text = clip!.text!.trim().toUpperCase();
-                          }
-                        },
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.r),
+                        borderSide: BorderSide(color: borderCol),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.r),
+                        borderSide: const BorderSide(color: AppColors.indigo500, width: 1.5),
                       ),
                     ),
                   ),
-                  SizedBox(height: 16.h),
+
+                  SizedBox(height: 18.h),
+
+                  // Submit Button
                   ElevatedButton(
                     onPressed: isJoining
                         ? null
                         : () async {
-                            final code = controller.text.trim().toUpperCase();
+                            String code = controller.text.trim().toUpperCase();
+                            if (code.contains('/DUEL/')) {
+                              code = code.split('/DUEL/').last.split('?').first.trim();
+                            } else if (code.contains('CODE=')) {
+                              code = code.split('CODE=').last.split('&').first.trim();
+                            }
                             if (code.isEmpty) return;
 
                             setDialogState(() => isJoining = true);
@@ -1078,33 +1209,41 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                             } catch (e) {
                               setDialogState(() => isJoining = false);
                               if (mounted) {
+                                final errorMsg = e.toString().replaceFirst('Exception: ', '').trim();
                                 CustomSnackBar.show(
                                   context: context,
-                                  message: 'Could not join room: $e',
+                                  message: errorMsg.isNotEmpty ? errorMsg : 'Could not join duel room.',
                                   type: CustomSnackBarType.error,
                                 );
                               }
                             }
                           },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFF59E0B),
+                      backgroundColor: AppColors.indigo500,
                       foregroundColor: Colors.white,
+                      minimumSize: Size(double.infinity, 44.h),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.r),
                       ),
+                      elevation: 0,
                     ),
                     child: isJoining
-                        ? SizedBox(
-                            width: 18.r,
-                            height: 18.r,
-                            child: const CircularProgressIndicator(
-                              strokeWidth: 2,
-                              color: Colors.white,
-                            ),
+                        ? const VowlMicroLoader(
+                            color: Colors.white,
+                            size: 16,
                           )
-                        : const Text('Enter Duel (30🪙)'),
+                        : Text(
+                            'Enter Duel (30🪙)',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
                   ),
-                  SizedBox(height: 6.h),
+
+                  SizedBox(height: 8.h),
+
                   TextButton(
                     onPressed: () => Navigator.of(dialogCtx).pop(),
                     child: Text(
@@ -1136,20 +1275,32 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
     try {
       final repo = di.sl<ArenaRepository>();
       final session = await repo.createRoomCode(currentUser: widget.user);
-      final message = '⚔️ I bet 30 coins you can\'t beat my score on Vowl!\n'
-          'Enter room code ${session.roomCode} in Vowl to duel me now, or tap:\n'
-          'https://vowl-acbc5.web.app/duel/${session.roomCode}';
-      await SharePlus.instance.share(
-        ShareParams(
-          text: message,
-          subject: '1v1 English Duel Challenge!',
-        ),
-      );
+
       if (mounted) {
-        Navigator.of(context).push(ArenaDuelScreen.route(session: session));
+        // 1. Navigate to dedicated full-screen Waiting Lobby
+        Navigator.of(context).push(
+          ArenaLobbyWaitingScreen.route(session: session),
+        );
+
+        // 2. Open rich photo Share Card modal immediately
+        ShareCardPreviewModal.show(
+          context: context,
+          data: ShareCardData.fromDuelInvite(
+            userName: widget.user.safeDisplayName,
+            userPhotoUrl: widget.user.photoUrl,
+            roomCode: session.roomCode,
+          ),
+        );
       }
     } catch (e) {
       debugPrint('[_PvPArenaCard] Create duel invite error: $e');
+      if (mounted) {
+        CustomSnackBar.show(
+          context: context,
+          message: 'Could not create invite room. Please try again!',
+          type: CustomSnackBarType.error,
+        );
+      }
     } finally {
       if (mounted) setState(() => _isLoading = false);
     }
@@ -1162,28 +1313,32 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
     final cardBg = isMidnight
         ? AppColors.midnightSurface
         : (widget.isDark ? const Color(0xFF131A29) : Colors.white);
-    final borderColor = isMidnight
-        ? Colors.white.withValues(alpha: 0.12)
-        : (widget.isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+    final cardBorder = isMidnight
+        ? AppColors.indigo500.withValues(alpha: 0.25)
+        : (widget.isDark
+            ? AppColors.indigo500.withValues(alpha: 0.20)
+            : AppColors.indigo500.withValues(alpha: 0.16));
+    final secondaryBg = widget.isDark
+        ? AppColors.indigo950.withValues(alpha: 0.35)
+        : AppColors.indigo50.withValues(alpha: 0.70);
+    final secondaryBorder = widget.isDark
+        ? AppColors.indigo400.withValues(alpha: 0.22)
+        : AppColors.indigo500.withValues(alpha: 0.20);
+    final secondaryTextColor =
+        widget.isDark ? Colors.white : AppColors.indigo600;
+    final secondaryIconColor =
+        widget.isDark ? AppColors.indigo400 : AppColors.indigo500;
 
     return Padding(
       padding: EdgeInsets.fromLTRB(AppSpacing.screen, 4.h, AppSpacing.screen, 8.h),
       child: Container(
-        padding: EdgeInsets.all(14.r),
         decoration: BoxDecoration(
           color: cardBg,
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
-            color: AppColors.amber500.withValues(alpha: 0.35),
+            color: cardBorder,
             width: 1.0,
           ),
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.amber500.withValues(alpha: widget.isDark ? 0.12 : 0.05),
-              blurRadius: 14,
-              offset: const Offset(0, 4),
-            ),
-          ],
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20.r),
@@ -1197,31 +1352,36 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                   height: 80.r,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: AppColors.amber500.withValues(alpha: widget.isDark ? 0.08 : 0.05),
+                    color: AppColors.indigo500
+                        .withValues(alpha: widget.isDark ? 0.08 : 0.04),
                   ),
                 ),
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Top Row: Swords Icon + Title & Badges + Full Subtitle
+              Padding(
+                padding: EdgeInsets.all(14.r),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                  // Top Row: Swords Icon + Title & Badges + Subtitle
                   Row(
                     children: [
                       Container(
                         width: 44.r,
                         height: 44.r,
                         decoration: BoxDecoration(
-                          color: AppColors.amber500.withValues(alpha: 0.15),
+                          color: AppColors.indigo500.withValues(alpha: 0.12),
                           shape: BoxShape.circle,
                           border: Border.all(
-                            color: AppColors.amber500.withValues(alpha: 0.3),
+                            color: AppColors.indigo500.withValues(alpha: 0.25),
                             width: 1.0,
                           ),
                         ),
                         child: Center(
                           child: Icon(
                             LucideIcons.swords,
-                            color: AppColors.amber500,
+                            color: widget.isDark
+                                ? AppColors.indigo400
+                                : AppColors.indigo500,
                             size: 22.r,
                           ),
                         ),
@@ -1231,51 +1391,84 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Wrap(
-                              crossAxisAlignment: WrapCrossAlignment.center,
-                              spacing: 6.w,
-                              runSpacing: 4.h,
+                            Row(
                               children: [
-                                Text(
-                                  '1v1 PvP Duel',
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 15.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: widget.isDark ? Colors.white : AppColors.slate900,
+                                Expanded(
+                                  child: Text(
+                                    context.tr('games.pvp_title',
+                                        fallback: '1v1 Duel'),
+                                    maxLines: 2,
+                                    softWrap: true,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 15.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: widget.isDark
+                                          ? Colors.white
+                                          : AppColors.slate900,
+                                    ),
                                   ),
                                 ),
+                                SizedBox(width: 8.w),
                                 Container(
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 7.w,
-                                    vertical: 2.h,
+                                    vertical: 2.5.h,
                                   ),
                                   decoration: BoxDecoration(
-                                    color: AppColors.amber500.withValues(alpha: 0.15),
+                                    color: AppColors.amber500
+                                        .withValues(alpha: 0.14),
                                     borderRadius: BorderRadius.circular(6.r),
-                                  ),
-                                  child: Text(
-                                    'WIN 50🪙 + 5 XP',
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 9.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: AppColors.amber500,
+                                    border: Border.all(
+                                      color: AppColors.amber500
+                                          .withValues(alpha: 0.30),
+                                      width: 0.8,
                                     ),
+                                  ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Text(
+                                        'WIN 50🪙',
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 9.5.sp,
+                                          fontWeight: FontWeight.w900,
+                                          color: AppColors.amber500,
+                                        ),
+                                      ),
+                                      Text(
+                                        ' +5 XP',
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 9.5.sp,
+                                          fontWeight: FontWeight.w800,
+                                          color: widget.isDark
+                                              ? AppColors.indigo400
+                                              : AppColors.indigo500,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],
                             ),
                             SizedBox(height: 3.h),
                             Text(
-                              'Stake 30🪙 to enter • Real-time live battle vs rivals',
+                              context.tr(
+                                'games.pvp_subtitle',
+                                fallback:
+                                    '30🪙 entry • 5-round live vocabulary duel',
+                              ),
                               maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
+                              softWrap: true,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 11.sp,
+                                fontSize: 11.5.sp,
                                 fontWeight: FontWeight.w500,
-                                color: widget.isDark ? Colors.white70 : AppColors.slate600,
+                                color: widget.isDark
+                                    ? AppColors.slate400
+                                    : AppColors.slate600,
                               ),
                             ),
                           ],
@@ -1286,7 +1479,7 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
 
                   SizedBox(height: 12.h),
 
-                  // Bottom Row: 3 Action Buttons Placed Underneath for Maximum Comfort
+                  // Bottom Row: 3 Action Buttons Placed Underneath
                   Row(
                     children: [
                       // 1. Primary Quick Match Battle CTA
@@ -1299,32 +1492,34 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               gradient: const LinearGradient(
-                                colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
+                                colors: [
+                                  AppColors.indigo500,
+                                  AppColors.indigo600,
+                                ],
                               ),
                               borderRadius: BorderRadius.circular(10.r),
                               boxShadow: [
                                 BoxShadow(
-                                  color: AppColors.amber500.withValues(alpha: 0.35),
+                                  color: AppColors.indigo500
+                                      .withValues(alpha: 0.35),
                                   blurRadius: 8,
                                   offset: const Offset(0, 2),
                                 ),
                               ],
                             ),
                             child: _isLoading
-                                ? SizedBox(
-                                    width: 14.r,
-                                    height: 14.r,
-                                    child: const CircularProgressIndicator(
-                                      strokeWidth: 2,
-                                      color: Colors.white,
-                                    ),
+                                ? const VowlMicroLoader(
+                                    color: Colors.white,
+                                    size: 14,
                                   )
                                 : FittedBox(
                                     fit: BoxFit.scaleDown,
                                     child: Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: 6.w),
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 6.w),
                                       child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Icon(
                                             LucideIcons.swords,
@@ -1333,13 +1528,13 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                                           ),
                                           SizedBox(width: 5.w),
                                           Text(
-                                            'BATTLE (30🪙)',
+                                            'Battle (30🪙)',
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
-                                              fontSize: 11.sp,
-                                              fontWeight: FontWeight.w900,
+                                              fontSize: 11.5.sp,
+                                              fontWeight: FontWeight.w800,
                                               color: Colors.white,
-                                              letterSpacing: 0.5,
+                                              letterSpacing: 0.2,
                                             ),
                                           ),
                                         ],
@@ -1359,32 +1554,31 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                             height: 36.h,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              color: widget.isDark
-                                  ? Colors.white.withValues(alpha: 0.08)
-                                  : AppColors.slate100,
+                              color: secondaryBg,
                               borderRadius: BorderRadius.circular(10.r),
-                              border: Border.all(color: borderColor),
+                              border: Border.all(color: secondaryBorder),
                             ),
                             child: FittedBox(
                               fit: BoxFit.scaleDown,
                               child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 6.w),
+                                padding:
+                                    EdgeInsets.symmetric(horizontal: 6.w),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Icon(
                                       LucideIcons.keyRound,
                                       size: 13.r,
-                                      color: widget.isDark ? Colors.white : AppColors.slate800,
+                                      color: secondaryIconColor,
                                     ),
                                     SizedBox(width: 4.w),
                                     Text(
-                                      'JOIN CODE',
+                                      'Join Code',
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 11.sp,
-                                        fontWeight: FontWeight.w800,
-                                        color: widget.isDark ? Colors.white : AppColors.slate800,
+                                        fontWeight: FontWeight.w700,
+                                        color: secondaryTextColor,
                                       ),
                                     ),
                                   ],
@@ -1404,32 +1598,31 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                             height: 36.h,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              color: widget.isDark
-                                  ? Colors.white.withValues(alpha: 0.08)
-                                  : AppColors.slate100,
+                              color: secondaryBg,
                               borderRadius: BorderRadius.circular(10.r),
-                              border: Border.all(color: borderColor),
+                              border: Border.all(color: secondaryBorder),
                             ),
                             child: FittedBox(
                               fit: BoxFit.scaleDown,
                               child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 6.w),
+                                padding:
+                                    EdgeInsets.symmetric(horizontal: 6.w),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Icon(
                                       LucideIcons.userPlus,
                                       size: 13.r,
-                                      color: widget.isDark ? Colors.white : AppColors.slate800,
+                                      color: secondaryIconColor,
                                     ),
                                     SizedBox(width: 4.w),
                                     Text(
-                                      'INVITE',
+                                      'Invite',
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 11.sp,
-                                        fontWeight: FontWeight.w800,
-                                        color: widget.isDark ? Colors.white : AppColors.slate800,
+                                        fontWeight: FontWeight.w700,
+                                        color: secondaryTextColor,
                                       ),
                                     ),
                                   ],
@@ -1443,12 +1636,13 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 }
 
 // ---------------------------------------------------------------------------
@@ -1546,8 +1740,8 @@ class _QuickDrillsRow extends StatelessWidget {
                     SizedBox(height: 10.h),
                     Text(
                       'Word Snap',
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      softWrap: true,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 13.sp,
@@ -1558,8 +1752,8 @@ class _QuickDrillsRow extends StatelessWidget {
                     SizedBox(height: 2.h),
                     Text(
                       '60s Daily Blitz',
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      softWrap: true,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
@@ -1648,8 +1842,8 @@ class _QuickDrillsRow extends StatelessWidget {
                     SizedBox(height: 10.h),
                     Text(
                       'Word Mixer',
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      softWrap: true,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 13.sp,
@@ -1660,8 +1854,8 @@ class _QuickDrillsRow extends StatelessWidget {
                     SizedBox(height: 2.h),
                     Text(
                       'Anagram Puzzle',
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      softWrap: true,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
@@ -1806,15 +2000,18 @@ class _CurriculumMasteryCard extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Flexible(
-                                child: Text(
-                                  '$tierName Tier',
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 13.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: isDark ? Colors.white : AppColors.slate900,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    '$tierName Tier',
+                                    maxLines: 1,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: isDark ? Colors.white : AppColors.slate900,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -1933,8 +2130,8 @@ class _CategoryFilterDock extends StatelessWidget {
                             fallback: selectedCategory!.name.toUpperCase(),
                           ).toUpperCase()
                         : context.tr('games.title', fallback: 'QUEST ARCHIVE'),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                    softWrap: true,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 13.sp,
@@ -2446,7 +2643,7 @@ class _QuestGridCard extends StatelessWidget {
                 Text(
                   metadata.title,
                   maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+                  softWrap: true,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 13.sp,
@@ -2458,8 +2655,8 @@ class _QuestGridCard extends StatelessWidget {
                 SizedBox(height: 3.h),
                 Text(
                   metadata.categoryName,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                  softWrap: true,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 8.sp,

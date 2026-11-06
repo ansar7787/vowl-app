@@ -18,6 +18,7 @@ class ArenaDuelState {
   final bool? isCorrect;
   final int timeRemaining;
   final bool isCompleted;
+  final bool isWaitingForOpponentFinish;
   final bool isWinner;
   final bool isDraw;
   final int payoutCoins;
@@ -38,8 +39,9 @@ class ArenaDuelState {
     this.selectedOption,
     this.isAnswered = false,
     this.isCorrect,
-    this.timeRemaining = 10,
+    this.timeRemaining = 15,
     this.isCompleted = false,
+    this.isWaitingForOpponentFinish = false,
     this.isWinner = false,
     this.isDraw = false,
     this.payoutCoins = 0,
@@ -69,6 +71,7 @@ class ArenaDuelState {
     bool? isCorrect,
     int? timeRemaining,
     bool? isCompleted,
+    bool? isWaitingForOpponentFinish,
     bool? isWinner,
     bool? isDraw,
     int? payoutCoins,
@@ -91,6 +94,7 @@ class ArenaDuelState {
       isCorrect: isCorrect,
       timeRemaining: timeRemaining ?? this.timeRemaining,
       isCompleted: isCompleted ?? this.isCompleted,
+      isWaitingForOpponentFinish: isWaitingForOpponentFinish ?? this.isWaitingForOpponentFinish,
       isWinner: isWinner ?? this.isWinner,
       isDraw: isDraw ?? this.isDraw,
       payoutCoins: payoutCoins ?? this.payoutCoins,

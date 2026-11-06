@@ -54,5 +54,10 @@ abstract class ArenaRepository {
     required String roomCode,
     required String userId,
   });
+
+  /// Refunds the 30-coin entry stake if matchmaking or a waiting room is dissolved before the match starts.
+  Future<void> refundStake({
+    required String userId,
+  });
 }
 

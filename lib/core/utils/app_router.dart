@@ -21,6 +21,7 @@ import 'package:vowl/features/daily_words/daily_words_routes.dart';
 import 'package:vowl/features/translation/translation_routes.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/presentation/pages/word_mixer_screen.dart';
 import 'package:vowl/features/daily_challenges/word_snap/presentation/pages/word_snap_screen.dart';
+import 'package:vowl/features/arena/presentation/pages/arena_deep_link_resolver_screen.dart';
 
 /// Central declarative application router configuring all modular feature routes,
 /// navigation redirects (auth gates, age gates), deep-linking, and analytics observers.
@@ -149,6 +150,20 @@ class AppRouter {
       GoRoute(
         path: wordMixerRoute,
         builder: (context, state) => const WordMixerScreen(),
+      ),
+      GoRoute(
+        path: duelRoute,
+        builder: (context, state) {
+          final roomCode = state.pathParameters['roomCode'] ?? '';
+          return ArenaDeepLinkResolverScreen(roomCode: roomCode);
+        },
+      ),
+      GoRoute(
+        path: '/invite/:roomCode',
+        builder: (context, state) {
+          final roomCode = state.pathParameters['roomCode'] ?? '';
+          return ArenaDeepLinkResolverScreen(roomCode: roomCode);
+        },
       ),
     ],
     // FIX (HIGH-6): Replace bare Text with an actionable error page that
