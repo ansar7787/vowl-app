@@ -34,17 +34,18 @@ class ArenaScoreHud extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-      decoration: BoxDecoration(
-        color: isDark ? AppColors.midnightSurface : Colors.white,
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: isDark ? AppColors.slate800 : const Color(0xFFE2E8F0),
-          width: 1.w,
+    return RepaintBoundary(
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          color: isDark ? AppColors.midnightSurface : Colors.white,
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(
+            color: isDark ? AppColors.slate800 : const Color(0xFFE2E8F0),
+            width: 1.w,
+          ),
         ),
-      ),
-      child: Column(
+        child: Column(
         children: [
           Row(
             children: [
@@ -219,7 +220,8 @@ class ArenaScoreHud extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
+    ),
+  );
+}
 }
 

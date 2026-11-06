@@ -60,6 +60,7 @@ class _ArenaDuelView extends StatefulWidget {
 }
 
 class _ArenaDuelViewState extends State<_ArenaDuelView> {
+  static final _quoteRegex = RegExp(r'"([^"]+)"');
   StreamSubscription<AppNetworkStatus>? _networkSubscription;
   Timer? _countdownTimer;
   bool _isOffline = false;
@@ -177,6 +178,13 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
               ),
             Expanded(
               child: BlocConsumer<ArenaDuelCubit, ArenaDuelState>(
+                buildWhen: (prev, curr) =>
+                    prev.isWaitingForGuest != curr.isWaitingForGuest ||
+                    prev.isWaitingForOpponentFinish != curr.isWaitingForOpponentFinish ||
+                    (prev.currentQuestion == null) != (curr.currentQuestion == null) ||
+                    prev.session?.roomCode != curr.session?.roomCode ||
+                    prev.session?.guestId != curr.session?.guestId ||
+                    prev.isCompleted != curr.isCompleted,
                 listener: (context, state) {
                   if (!state.isWaitingForGuest &&
                       !state.isCompleted &&
@@ -302,15 +310,6 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                     );
                   }
 
-                  final isWordClash = q.discipline == 'word_clash' ||
-                      q.question.toLowerCase().contains('synonym') ||
-                      q.question.toLowerCase().contains('antonym') ||
-                      q.question.toLowerCase().contains('opposite');
-                  final isShortOptions = q.options.every(
-                    (opt) => opt.trim().length <= 14 && !opt.trim().contains(' '),
-                  );
-                  final shouldUseGrid = isWordClash && isShortOptions;
-
                   return Padding(
                     padding: EdgeInsets.symmetric(
                       horizontal: AppSpacing.screen,
@@ -319,118 +318,165 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        // Live Score HUD
-                        ArenaScoreHud(
-                          myName: user.safeDisplayName,
-                          myPhotoUrl: user.photoUrl,
-                          myScore: state.myScore,
-                          rivalName: rivalName,
-                          rivalPhotoUrl: rivalPhoto,
-                          rivalScore: state.rivalScore,
-                          currentQuestionIndex: state.currentQuestionIndex,
-                          totalQuestions: state.session?.questions.length ?? 5,
-                          timeRemaining: state.timeRemaining,
-                          isDark: isDark,
-                          isAiRival: state.session?.isGhostRival ?? false,
+                        // Live Score HUD: Isolated rebuilds for countdown & real-time points
+                        RepaintBoundary(
+                          child: BlocBuilder<ArenaDuelCubit, ArenaDuelState>(
+                            buildWhen: (prev, curr) =>
+                                prev.timeRemaining != curr.timeRemaining ||
+                                prev.myScore != curr.myScore ||
+                                prev.rivalScore != curr.rivalScore ||
+                                prev.currentQuestionIndex != curr.currentQuestionIndex,
+                            builder: (context, hudState) {
+                              return ArenaScoreHud(
+                                myName: user.safeDisplayName,
+                                myPhotoUrl: user.photoUrl,
+                                myScore: hudState.myScore,
+                                rivalName: rivalName,
+                                rivalPhotoUrl: rivalPhoto,
+                                rivalScore: hudState.rivalScore,
+                                currentQuestionIndex: hudState.currentQuestionIndex,
+                                totalQuestions: hudState.session?.questions.length ?? 5,
+                                timeRemaining: hudState.timeRemaining,
+                                isDark: isDark,
+                                isAiRival: hudState.session?.isGhostRival ?? false,
+                              );
+                            },
+                          ),
                         ),
 
                         SizedBox(height: 14.h),
 
-                        // Discipline-Specific Hero Card
-                        _buildDisciplineHero(
-                          context: context,
-                          q: q,
-                          state: state,
-                          isDark: isDark,
-                          isMidnight: isMidnight,
-                          borderColor: borderColor,
-                          textPrimary: textPrimary,
-                          textSecondary: textSecondary,
-                        ),
-
-                        SizedBox(height: 14.h),
-
-                        // Interactive Options Section (2x2 Grid for Speed Clash vs Sleek Precision List)
+                        // Discipline Hero Card, Options, and Explanation:
+                        // Isolated to only rebuild on question transition or answer tap (0 timer ticks)
                         Expanded(
-                          child: shouldUseGrid
-                              ? GridView.builder(
-                                  padding: EdgeInsets.zero,
-                                  physics: const BouncingScrollPhysics(),
-                                  itemCount: q.options.length,
-                                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 2,
-                                    mainAxisSpacing: 10.h,
-                                    crossAxisSpacing: 10.w,
-                                    childAspectRatio: 2.2,
-                                  ),
-                                  itemBuilder: (context, idx) {
-                                    final option = q.options[idx];
-                                    return _buildGridOptionButton(
-                                      context: context,
-                                      index: idx,
-                                      text: option,
-                                      state: state,
-                                      correctIndex: q.correctIndex,
-                                      isDark: isDark,
-                                      borderColor: borderColor,
-                                      textPrimary: textPrimary,
-                                      onTap: () => _handleAnswerTap(idx, q, state, user),
-                                    );
-                                  },
-                                )
-                              : ListView.separated(
-                                  padding: EdgeInsets.zero,
-                                  physics: const BouncingScrollPhysics(),
-                                  itemCount: q.options.length,
-                                  separatorBuilder: (_, _) => SizedBox(height: 10.h),
-                                  itemBuilder: (context, idx) {
-                                    final option = q.options[idx];
-                                    return _buildOptionButton(
-                                      context: context,
-                                      index: idx,
-                                      text: option,
-                                      state: state,
-                                      correctIndex: q.correctIndex,
-                                      isDark: isDark,
-                                      borderColor: borderColor,
-                                      textPrimary: textPrimary,
-                                      onTap: () => _handleAnswerTap(idx, q, state, user),
-                                    );
-                                  },
-                                ),
-                        ),
+                          child: BlocBuilder<ArenaDuelCubit, ArenaDuelState>(
+                            buildWhen: (prev, curr) =>
+                                prev.currentQuestionIndex != curr.currentQuestionIndex ||
+                                prev.isAnswered != curr.isAnswered ||
+                                prev.selectedOption != curr.selectedOption ||
+                                prev.currentQuestion != curr.currentQuestion,
+                            builder: (context, qState) {
+                              final activeQ = qState.currentQuestion;
+                              if (activeQ == null) return const SizedBox.shrink();
 
-                        // Live Academic Explanation Card when answered
-                        if (state.isAnswered && q.explanation.isNotEmpty) ...[
-                          SizedBox(height: 8.h),
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
-                            decoration: BoxDecoration(
-                              color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF1F5F9),
-                              borderRadius: BorderRadius.circular(12.r),
-                              border: Border.all(color: borderColor),
-                            ),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Icon(LucideIcons.lightbulb, size: 15.sp, color: const Color(0xFFF59E0B)),
-                                SizedBox(width: 8.w),
-                                Expanded(
-                                  child: Text(
-                                    q.explanation,
-                                    softWrap: true,
-                                    style: TextStyle(
-                                      fontSize: 11.sp,
-                                      fontWeight: FontWeight.w500,
-                                      height: 1.35,
-                                      color: textSecondary,
+                              final isWordClash = activeQ.discipline == 'word_clash' ||
+                                  activeQ.question.toLowerCase().contains('synonym') ||
+                                  activeQ.question.toLowerCase().contains('antonym') ||
+                                  activeQ.question.toLowerCase().contains('opposite');
+                              final isShortOptions = activeQ.options.every(
+                                (opt) => opt.trim().length <= 14 && !opt.trim().contains(' '),
+                              );
+                              final shouldUseGrid = isWordClash && isShortOptions;
+
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  // Discipline-Specific Hero Card
+                                  RepaintBoundary(
+                                    child: _buildDisciplineHero(
+                                      context: context,
+                                      q: activeQ,
+                                      state: qState,
+                                      isDark: isDark,
+                                      isMidnight: isMidnight,
+                                      borderColor: borderColor,
+                                      textPrimary: textPrimary,
+                                      textSecondary: textSecondary,
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
+
+                                  SizedBox(height: 14.h),
+
+                                  // Interactive Options Section (2x2 Grid for Speed Clash vs Sleek Precision List)
+                                  Expanded(
+                                    child: RepaintBoundary(
+                                      child: shouldUseGrid
+                                          ? GridView.builder(
+                                              padding: EdgeInsets.zero,
+                                              physics: const BouncingScrollPhysics(),
+                                              itemCount: activeQ.options.length,
+                                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                                crossAxisCount: 2,
+                                                mainAxisSpacing: 10.h,
+                                                crossAxisSpacing: 10.w,
+                                                childAspectRatio: 2.2,
+                                              ),
+                                              itemBuilder: (context, idx) {
+                                                final option = activeQ.options[idx];
+                                                return _buildGridOptionButton(
+                                                  context: context,
+                                                  index: idx,
+                                                  text: option,
+                                                  state: qState,
+                                                  correctIndex: activeQ.correctIndex,
+                                                  isDark: isDark,
+                                                  borderColor: borderColor,
+                                                  textPrimary: textPrimary,
+                                                  onTap: () => _handleAnswerTap(idx, activeQ, qState, user),
+                                                );
+                                              },
+                                            )
+                                          : ListView.separated(
+                                              padding: EdgeInsets.zero,
+                                              physics: const BouncingScrollPhysics(),
+                                              itemCount: activeQ.options.length,
+                                              separatorBuilder: (_, _) => SizedBox(height: 10.h),
+                                              itemBuilder: (context, idx) {
+                                                final option = activeQ.options[idx];
+                                                return _buildOptionButton(
+                                                  context: context,
+                                                  index: idx,
+                                                  text: option,
+                                                  state: qState,
+                                                  correctIndex: activeQ.correctIndex,
+                                                  isDark: isDark,
+                                                  borderColor: borderColor,
+                                                  textPrimary: textPrimary,
+                                                  onTap: () => _handleAnswerTap(idx, activeQ, qState, user),
+                                                );
+                                              },
+                                            ),
+                                    ),
+                                  ),
+
+                                  // Live Academic Explanation Card when answered
+                                  if (qState.isAnswered && activeQ.explanation.isNotEmpty) ...[
+                                    SizedBox(height: 8.h),
+                                    RepaintBoundary(
+                                      child: Container(
+                                        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+                                        decoration: BoxDecoration(
+                                          color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF1F5F9),
+                                          borderRadius: BorderRadius.circular(12.r),
+                                          border: Border.all(color: borderColor),
+                                        ),
+                                        child: Row(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Icon(LucideIcons.lightbulb, size: 15.sp, color: const Color(0xFFF59E0B)),
+                                            SizedBox(width: 8.w),
+                                            Expanded(
+                                              child: Text(
+                                                activeQ.explanation,
+                                                softWrap: true,
+                                                style: TextStyle(
+                                                  fontSize: 11.sp,
+                                                  fontWeight: FontWeight.w500,
+                                                  height: 1.35,
+                                                  color: textSecondary,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ],
+                              );
+                            },
                           ),
-                        ],
+                        ),
                       ],
                     ),
                   );
@@ -554,7 +600,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
     final isAntonym = lower.contains('opposite') || lower.contains('antonym');
     final accentColor = isAntonym ? AppColors.amber500 : AppColors.indigo500;
 
-    final quoteMatch = RegExp(r'"([^"]+)"').firstMatch(q.question);
+    final quoteMatch = _quoteRegex.firstMatch(q.question);
     final targetWord = quoteMatch?.group(1);
 
     final cardBg = isMidnight

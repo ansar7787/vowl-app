@@ -322,49 +322,51 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
                       Expanded(
                         child: Column(
                           children: [
-                            SizedBox(
-                              width: 54.r,
-                              height: 54.r,
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  AnimatedBuilder(
-                                    animation: _radarAnimation,
-                                    builder: (context, _) {
-                                      final scale = 0.85 + (_radarAnimation.value * 0.35);
-                                      final opacity = (1.0 - _radarAnimation.value).clamp(0.0, 1.0);
-                                      return Container(
-                                        width: 54.r * scale,
-                                        height: 54.r * scale,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                            color: AppColors.indigo500.withValues(alpha: opacity * 0.45),
-                                            width: 1.5,
+                            RepaintBoundary(
+                              child: SizedBox(
+                                width: 54.r,
+                                height: 54.r,
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    AnimatedBuilder(
+                                      animation: _radarAnimation,
+                                      builder: (context, _) {
+                                        final scale = 0.85 + (_radarAnimation.value * 0.35);
+                                        final opacity = (1.0 - _radarAnimation.value).clamp(0.0, 1.0);
+                                        return Container(
+                                          width: 54.r * scale,
+                                          height: 54.r * scale,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            border: Border.all(
+                                              color: AppColors.indigo500.withValues(alpha: opacity * 0.45),
+                                              width: 1.5,
+                                            ),
                                           ),
+                                        );
+                                      },
+                                    ),
+                                    Container(
+                                      width: 44.r,
+                                      height: 44.r,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: isDark
+                                            ? const Color(0xFF1E293B)
+                                            : const Color(0xFFF1F5F9),
+                                        border: Border.all(
+                                          color: AppColors.indigo500.withValues(alpha: 0.3),
                                         ),
-                                      );
-                                    },
-                                  ),
-                                  Container(
-                                    width: 44.r,
-                                    height: 44.r,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: isDark
-                                          ? const Color(0xFF1E293B)
-                                          : const Color(0xFFF1F5F9),
-                                      border: Border.all(
-                                        color: AppColors.indigo500.withValues(alpha: 0.3),
+                                      ),
+                                      child: Icon(
+                                        LucideIcons.userPlus,
+                                        size: 20.r,
+                                        color: isDark ? AppColors.indigo400 : AppColors.indigo500,
                                       ),
                                     ),
-                                    child: Icon(
-                                      LucideIcons.userPlus,
-                                      size: 20.r,
-                                      color: isDark ? AppColors.indigo400 : AppColors.indigo500,
-                                    ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                             SizedBox(height: 8.h),

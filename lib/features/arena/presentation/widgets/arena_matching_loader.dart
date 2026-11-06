@@ -114,69 +114,71 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              // Animated Clashing Blades with Pulsing Radar Rings
-              SizedBox(
-                width: 120.r,
-                height: 120.r,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    // Outer Pulsing Radar Waves
-                    AnimatedBuilder(
-                      animation: _pulseAnimation,
-                      builder: (context, child) {
-                        final scale1 = 0.8 + (_pulseAnimation.value * 0.45);
-                        final opacity1 = (1.0 - _pulseAnimation.value).clamp(0.0, 1.0);
-                        return Container(
-                          width: 110.r * scale1,
-                          height: 110.r * scale1,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: AppColors.indigo500.withValues(alpha: opacity1 * 0.5),
-                              width: 2.r,
+              // Animated Clashing Blades with Pulsing Radar Rings (Isolated with RepaintBoundary)
+              RepaintBoundary(
+                child: SizedBox(
+                  width: 120.r,
+                  height: 120.r,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      // Outer Pulsing Radar Waves
+                      AnimatedBuilder(
+                        animation: _pulseAnimation,
+                        builder: (context, child) {
+                          final scale1 = 0.8 + (_pulseAnimation.value * 0.45);
+                          final opacity1 = (1.0 - _pulseAnimation.value).clamp(0.0, 1.0);
+                          return Container(
+                            width: 110.r * scale1,
+                            height: 110.r * scale1,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: AppColors.indigo500.withValues(alpha: opacity1 * 0.5),
+                                width: 2.r,
+                              ),
                             ),
-                          ),
-                        );
-                      },
-                    ),
-
-                    // Inner Core Glow
-                    Container(
-                      width: 74.r,
-                      height: 74.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: const LinearGradient(
-                          colors: [AppColors.indigo500, AppColors.indigo600],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppColors.indigo500.withValues(alpha: 0.4),
-                            blurRadius: 20,
-                            spreadRadius: 2,
-                          ),
-                        ],
+                          );
+                        },
                       ),
-                    ),
 
-                    // Clashing Swords Icon with Rocking Rotation
-                    AnimatedBuilder(
-                      animation: _swordRotation,
-                      builder: (context, child) {
-                        return Transform.rotate(
-                          angle: _swordRotation.value * math.pi,
-                          child: Icon(
-                            LucideIcons.swords,
-                            size: 34.sp,
-                            color: Colors.white,
+                      // Inner Core Glow
+                      Container(
+                        width: 74.r,
+                        height: 74.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: const LinearGradient(
+                            colors: [AppColors.indigo500, AppColors.indigo600],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
                           ),
-                        );
-                      },
-                    ),
-                  ],
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.indigo500.withValues(alpha: 0.4),
+                              blurRadius: 20,
+                              spreadRadius: 2,
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // Clashing Swords Icon with Rocking Rotation
+                      AnimatedBuilder(
+                        animation: _swordRotation,
+                        builder: (context, child) {
+                          return Transform.rotate(
+                            angle: _swordRotation.value * math.pi,
+                            child: Icon(
+                              LucideIcons.swords,
+                              size: 34.sp,
+                              color: Colors.white,
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
 

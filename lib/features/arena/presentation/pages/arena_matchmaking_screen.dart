@@ -368,50 +368,52 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen>
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        // Pulsing Radar Rings
-        SizedBox(
-          width: 140.r,
-          height: 140.r,
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              AnimatedBuilder(
-                animation: _radarAnimation,
-                builder: (context, _) {
-                  final scale = 0.8 + (_radarAnimation.value * 0.45);
-                  final opacity = (1.0 - _radarAnimation.value).clamp(0.0, 1.0);
-                  return Container(
-                    width: 130.r * scale,
-                    height: 130.r * scale,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: AppColors.indigo500.withValues(alpha: opacity * 0.5),
-                        width: 2.0,
+        // Pulsing Radar Rings (Isolated with RepaintBoundary)
+        RepaintBoundary(
+          child: SizedBox(
+            width: 140.r,
+            height: 140.r,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                AnimatedBuilder(
+                  animation: _radarAnimation,
+                  builder: (context, _) {
+                    final scale = 0.8 + (_radarAnimation.value * 0.45);
+                    final opacity = (1.0 - _radarAnimation.value).clamp(0.0, 1.0);
+                    return Container(
+                      width: 130.r * scale,
+                      height: 130.r * scale,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: AppColors.indigo500.withValues(alpha: opacity * 0.5),
+                          width: 2.0,
+                        ),
                       ),
-                    ),
-                  );
-                },
-              ),
-              Container(
-                width: 76.r,
-                height: 76.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: cardBg,
-                  border: Border.all(color: AppColors.indigo500, width: 2.0),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.indigo500.withValues(alpha: 0.35),
-                      blurRadius: 18,
-                    ),
-                  ],
+                    );
+                  },
                 ),
-                child: Center(
-                  child: UserAvatar(photoUrl: widget.user.photoUrl, size: 68.r),
+                Container(
+                  width: 76.r,
+                  height: 76.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: cardBg,
+                    border: Border.all(color: AppColors.indigo500, width: 2.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.indigo500.withValues(alpha: 0.35),
+                        blurRadius: 18,
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: UserAvatar(photoUrl: widget.user.photoUrl, size: 68.r),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
 
@@ -487,12 +489,13 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen>
 
         SizedBox(height: 24.h),
 
-        // Face-Off Cards Slam
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Left Card: You
-            SlideTransition(
+        // Face-Off Cards Slam (Isolated with RepaintBoundary)
+        RepaintBoundary(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Left Card: You
+              SlideTransition(
               position: Tween<Offset>(
                 begin: const Offset(-1.2, 0),
                 end: Offset.zero,
@@ -643,6 +646,7 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen>
             ),
           ],
         ),
+      ),
 
         SizedBox(height: 18.h),
 
