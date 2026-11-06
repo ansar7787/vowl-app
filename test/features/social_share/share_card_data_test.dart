@@ -17,7 +17,7 @@ void main() {
       expect(card.rank, 3);
       expect(card.totalXp, 1540);
       expect(card.streak, 12);
-      expect(card.title, 'Rank #3 Global Standing');
+      expect(card.title, 'Rank #3 on Vowl');
       expect(card.subtitle, '1540 Total XP · 12-Day Streak');
       expect(card.referralCode, 'VOWL-ALEX892');
     });
@@ -33,8 +33,28 @@ void main() {
       expect(card.userName, 'Sarah');
       expect(card.streak, 30);
       expect(card.title, '30-Day Learning Streak');
-      expect(card.subtitle, 'Committed to English mastery on Vowl');
+      expect(card.subtitle, '30 days of learning English on Vowl');
       expect(card.referralCode, 'VOWL-SARAH123');
+    });
+
+    test('creates arena victory share card correctly with real rival name', () {
+      final card = ShareCardData.fromArenaVictory(
+        userName: 'Ansar',
+        myScore: 450,
+        rivalScore: 320,
+        rivalName: 'John',
+        roomCode: 'VOWL99',
+        payoutCoins: 50,
+      );
+
+      expect(card.userName, 'Ansar');
+      expect(card.myScore, 450);
+      expect(card.rivalScore, 320);
+      expect(card.rivalName, 'John');
+      expect(card.title, '1v1 DUEL WINNER');
+      expect(card.subtitle, 'Beat John in a 1v1 English Duel');
+      expect(card.roomCode, 'VOWL99');
+      expect(card.payoutCoins, 50);
     });
   });
 }

@@ -342,7 +342,7 @@ class MilestoneShareCardWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10.r),
                     ),
                     child: Text(
-                      '+50 Coins 🪙 • +5 XP ⚡ Won',
+                      '${data.payoutCoins ?? 50} Coins 🪙 + 5 XP ⚡ Won',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
