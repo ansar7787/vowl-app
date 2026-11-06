@@ -14,7 +14,6 @@ class FakeArenaRepository implements ArenaRepository {
   @override
   Future<ArenaDuelSession> quickMatch({
     required UserEntity currentUser,
-    required List<UserEntity> leaderboardUsers,
   }) async => throw UnimplementedError();
 
   @override

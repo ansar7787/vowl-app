@@ -2,13 +2,12 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/arena/domain/entities/arena_duel_session.dart';
 
 abstract class ArenaRepository {
-  /// Quick match: polls live Firestore queue for 3 seconds.
+  /// Quick match: polls live Firestore queue for an opponent.
   /// If another live player is waiting, pairs immediately.
-  /// Otherwise, falls back instantly to a Ghost Rival chosen from [leaderboardUsers]
-  /// playing at their real accuracy rating (0-second wait time!).
+  /// Otherwise, falls back to a calibrated Computer/AI opponent via
+  /// 3-Pillar Skill-Based Matchmaking (SBMM).
   Future<ArenaDuelSession> quickMatch({
     required UserEntity currentUser,
-    required List<UserEntity> leaderboardUsers,
   });
 
   /// Challenges a specific player picked from the Leaderboard as a Ghost Rival

@@ -13,7 +13,10 @@ void main() {
       );
 
       expect(opponent.displayName, 'Computer');
-      expect(['EASY', 'MEDIUM', 'HARD'], contains(opponent.tierLabel));
+      expect(
+        [ArenaAiDifficultyTier.easy, ArenaAiDifficultyTier.medium, ArenaAiDifficultyTier.hard],
+        contains(opponent.tier),
+      );
       expect(opponent.accuracy, inInclusiveRange(0.60, 0.94));
     });
 
@@ -33,7 +36,6 @@ void main() {
           isNot(equals(ArenaAiDifficultyTier.easy)),
           reason: 'Roll $i for master player should never result in Easy tier',
         );
-        expect(['MEDIUM', 'HARD'], contains(opponent.tierLabel));
         expect(opponent.accuracy, inInclusiveRange(0.75, 0.94));
       }
     });
@@ -94,11 +96,13 @@ void main() {
       expect(opponent.tier, isNot(equals(ArenaAiDifficultyTier.easy)));
     });
 
-    test('Backwards-compatible forPlayerLevel functions reliably', () {
-      final easyOpponent = ArenaAiOpponent.forPlayerLevel(3, random: Random(1));
+    test('calculateSkillMatchedOpponent produces reliable opponent for novice', () {
+      final easyOpponent = ArenaAiOpponent.calculateSkillMatchedOpponent(
+        playerLevel: 3,
+        random: Random(1),
+      );
       expect(easyOpponent.displayName, 'Computer');
-      expect(easyOpponent.minResponseSeconds, inInclusiveRange(2, 3));
-      expect(easyOpponent.maxResponseSeconds, inInclusiveRange(3, 5));
+      expect(easyOpponent.accuracy, inInclusiveRange(0.60, 0.94));
     });
   });
 }

@@ -116,7 +116,6 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen>
       final repo = di.sl<ArenaRepository>();
       final session = await repo.quickMatch(
         currentUser: widget.user,
-        leaderboardUsers: const [],
       );
 
       if (_isCanceled || !mounted) {

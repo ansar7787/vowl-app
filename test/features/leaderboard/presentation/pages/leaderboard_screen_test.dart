@@ -317,8 +317,9 @@ void main() {
     });
 
     testWidgets('renders empty placeholder under podium when users length <= 3', (tester) async {
-      // Top 3 only
+      // Top 3 only, with currentUser in the top 3 so total count <= 3
       final top3Only = testUsersList.take(3).toList();
+      when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(top3Only.first));
       when(() => mockLeaderboardBloc.state)
           .thenReturn(LeaderboardLoaded(top3Only, now, isKids: false));
 

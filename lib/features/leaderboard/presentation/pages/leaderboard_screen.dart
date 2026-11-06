@@ -450,7 +450,6 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
       final repo = di.sl<ArenaRepository>();
       final session = await repo.quickMatch(
         currentUser: currentUser,
-        leaderboardUsers: _sortedUsers,
       );
       if (mounted) {
         Navigator.of(context).push(ArenaDuelScreen.route(session: session));

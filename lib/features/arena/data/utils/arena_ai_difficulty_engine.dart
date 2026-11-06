@@ -20,20 +20,14 @@ enum ArenaAiDifficultyTier {
 class ArenaAiOpponent {
   final String id;
   final String displayName;
-  final String tierLabel;
   final ArenaAiDifficultyTier tier;
   final double accuracy;
-  final int minResponseSeconds;
-  final int maxResponseSeconds;
 
   const ArenaAiOpponent({
     required this.id,
     required this.displayName,
-    required this.tierLabel,
     required this.tier,
     required this.accuracy,
-    required this.minResponseSeconds,
-    required this.maxResponseSeconds,
   });
 
   /// 3-Pillar Skill-Based Matchmaking (SBMM) factory.
@@ -52,17 +46,6 @@ class ArenaAiOpponent {
       winRate: user.duelWinRate,
       totalDuels: user.totalDuelsPlayed,
       consecutiveWins: consecutiveWins,
-      random: random,
-    );
-  }
-
-  /// Backwards-compatible factory based on player level.
-  factory ArenaAiOpponent.forPlayerLevel(int level, {Random? random}) {
-    return calculateSkillMatchedOpponent(
-      playerLevel: level,
-      winRate: 50.0,
-      totalDuels: 0,
-      consecutiveWins: 0,
       random: random,
     );
   }
@@ -151,11 +134,8 @@ class ArenaAiOpponent {
         return ArenaAiOpponent(
           id: 'computer_easy',
           displayName: 'Computer',
-          tierLabel: 'EASY',
           tier: ArenaAiDifficultyTier.easy,
           accuracy: double.parse(rawAcc.toStringAsFixed(2)),
-          minResponseSeconds: 3,
-          maxResponseSeconds: 5,
         );
       case ArenaAiDifficultyTier.medium:
         // Accuracy: 76% to 82% with micro-jitter
@@ -163,11 +143,8 @@ class ArenaAiOpponent {
         return ArenaAiOpponent(
           id: 'computer_medium',
           displayName: 'Computer',
-          tierLabel: 'MEDIUM',
           tier: ArenaAiDifficultyTier.medium,
           accuracy: double.parse(rawAcc.toStringAsFixed(2)),
-          minResponseSeconds: 2,
-          maxResponseSeconds: 4,
         );
       case ArenaAiDifficultyTier.hard:
         // Accuracy: 88% to 94% with micro-jitter
@@ -175,11 +152,8 @@ class ArenaAiOpponent {
         return ArenaAiOpponent(
           id: 'computer_hard',
           displayName: 'Computer',
-          tierLabel: 'HARD',
           tier: ArenaAiDifficultyTier.hard,
           accuracy: double.parse(rawAcc.toStringAsFixed(2)),
-          minResponseSeconds: 2,
-          maxResponseSeconds: 3,
         );
     }
   }

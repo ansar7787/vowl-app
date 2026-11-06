@@ -24,7 +24,6 @@ class ArenaRepositoryImpl implements ArenaRepository {
   @override
   Future<ArenaDuelSession> quickMatch({
     required UserEntity currentUser,
-    required List<UserEntity> leaderboardUsers,
   }) async {
     // 1. Deduct entry stake (30 coins)
     await _deductEntryStake(currentUser.id);
