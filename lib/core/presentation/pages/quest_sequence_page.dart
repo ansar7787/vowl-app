@@ -10,6 +10,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/utils/app_lifecycle_handler.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
@@ -51,6 +52,69 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
 
   String get _canonicalId =>
       DiscoveryHelper.canonicalSequenceId(widget.sequenceId);
+
+  String get _activeUserId {
+    try {
+      final user = context.read<AuthBloc>().state.user;
+      if (user != null && user.id.isNotEmpty) return user.id;
+    } catch (_) {}
+    try {
+      final user = di.sl<AuthBloc>().state.user;
+      if (user != null && user.id.isNotEmpty) return user.id;
+    } catch (_) {}
+    return 'guest';
+  }
+
+  Future<void> _recordSequenceCompletionLocally() async {
+    try {
+      final userId = _activeUserId;
+      final prefs = await SharedPreferences.getInstance();
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+
+      final canonicalId = _canonicalId;
+      final legacyId = DiscoveryHelper.legacySequenceId(canonicalId);
+
+      // 1. Canonical ID scoped to current user
+      await prefs.setString(
+        'vowl_sequence_completed_${canonicalId}_$userId',
+        todayStr,
+      );
+      await prefs.setString(
+        'vowl_sequence_step_${canonicalId}_$userId',
+        '${todayStr}_${_quests.length}',
+      );
+
+      // 2. Legacy ID scoped to current user
+      if (legacyId != canonicalId) {
+        await prefs.setString(
+          'vowl_sequence_completed_${legacyId}_$userId',
+          todayStr,
+        );
+        await prefs.setString(
+          'vowl_sequence_step_${legacyId}_$userId',
+          '${todayStr}_${_quests.length}',
+        );
+      }
+
+      // 3. Fallback guest keys for cross-lookup resilience
+      if (userId != 'guest') {
+        await prefs.setString(
+          'vowl_sequence_completed_${canonicalId}_guest',
+          todayStr,
+        );
+        if (legacyId != canonicalId) {
+          await prefs.setString(
+            'vowl_sequence_completed_${legacyId}_guest',
+            todayStr,
+          );
+        }
+      }
+
+      DiscoveryDeck.notifySequenceCompleted();
+    } catch (_) {}
+  }
 
   late final ValueNotifier<int> _stateHash = ValueNotifier(0);
 
@@ -96,21 +160,23 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
 
   Future<void> _restoreProgress() async {
     try {
-      final user = context.read<AuthBloc>().state.user;
-      final userId = user?.id ?? 'guest';
+      final userId = _activeUserId;
       final prefs = await SharedPreferences.getInstance();
       final now = DateTime.now();
       final todayStr =
           '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
 
       final canonicalId = _canonicalId;
+      final legacyId = DiscoveryHelper.legacySequenceId(canonicalId);
 
       // 1. Check if the sequence was fully completed today
-      final completedToday = prefs.getString(
-        'vowl_sequence_completed_${canonicalId}_$userId',
-      ) ?? prefs.getString(
-        'vowl_sequence_completed_${widget.sequenceId}_$userId',
-      );
+      final completedToday =
+          prefs.getString('vowl_sequence_completed_${canonicalId}_$userId') ??
+          prefs.getString('vowl_sequence_completed_${legacyId}_$userId') ??
+          prefs.getString('vowl_sequence_completed_${canonicalId}_guest') ??
+          prefs.getString(
+            'vowl_sequence_completed_${widget.sequenceId}_$userId',
+          );
       if (completedToday == todayStr) {
         if (mounted) {
           _hasFinishedSequence = true;
@@ -121,11 +187,9 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
       }
 
       // 2. Restore today's locked quests if already cached today
-      final questsVal = prefs.getString(
-        'vowl_sequence_quests_${canonicalId}_$userId',
-      ) ?? prefs.getString(
-        'vowl_sequence_quests_${widget.sequenceId}_$userId',
-      );
+      final questsVal =
+          prefs.getString('vowl_sequence_quests_${canonicalId}_$userId') ??
+          prefs.getString('vowl_sequence_quests_${widget.sequenceId}_$userId');
       if (questsVal != null && questsVal.startsWith('$todayStr|')) {
         final payload = questsVal.substring(todayStr.length + 1);
         final questEntries = payload.split(';');
@@ -161,7 +225,10 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
       } else if (_quests.isNotEmpty) {
         // First launch today: cache today's quest track
         final payload = _quests
-            .map((q) => '${q.subtype?.name ?? ''}:${q.difficulty}:${q.instruction}')
+            .map(
+              (q) =>
+                  '${q.subtype?.name ?? ''}:${q.difficulty}:${q.instruction}',
+            )
             .join(';');
         await prefs.setString(
           'vowl_sequence_quests_${canonicalId}_$userId',
@@ -176,11 +243,9 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
       }
 
       // 3. Restore current step index for today
-      final stepVal = prefs.getString(
-        'vowl_sequence_step_${canonicalId}_$userId',
-      ) ?? prefs.getString(
-        'vowl_sequence_step_${widget.sequenceId}_$userId',
-      );
+      final stepVal =
+          prefs.getString('vowl_sequence_step_${canonicalId}_$userId') ??
+          prefs.getString('vowl_sequence_step_${widget.sequenceId}_$userId');
       if (stepVal != null && stepVal.startsWith('${todayStr}_')) {
         final parts = stepVal.split('_');
         if (parts.length >= 2) {
@@ -194,18 +259,27 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
 
       // 4. Directly reconcile progress with UserEntity.completedLevels
       if (mounted) {
-        _syncProgressWithUser(user);
+        _syncProgressWithUser();
       }
     } catch (_) {}
   }
 
   void _syncProgressWithUser([UserEntity? user]) {
     _isLaunching = false;
-    final activeUser =
-        user ?? (mounted ? context.read<AuthBloc>().state.user : null);
+    UserEntity? activeUser = user;
+    if (activeUser == null && mounted) {
+      try {
+        activeUser = context.read<AuthBloc>().state.user;
+      } catch (_) {
+        try {
+          activeUser = di.sl<AuthBloc>().state.user;
+        } catch (_) {}
+      }
+    }
     if (activeUser == null) return;
 
     if (_isFinished) {
+      _recordSequenceCompletionLocally();
       _updateState();
       return;
     }
@@ -226,16 +300,21 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     if (computedIndex > _currentIndex) {
       _currentIndex = computedIndex.clamp(0, _quests.length);
       _saveStepProgress();
+      if (_currentIndex >= _quests.length) {
+        _recordSequenceCompletionLocally();
+      }
       _updateState();
     } else {
+      if (_currentIndex >= _quests.length) {
+        _recordSequenceCompletionLocally();
+      }
       _updateState();
     }
   }
 
   Future<void> _saveStepProgress() async {
     try {
-      final user = context.read<AuthBloc>().state.user;
-      final userId = user?.id ?? 'guest';
+      final userId = _activeUserId;
       final prefs = await SharedPreferences.getInstance();
       final now = DateTime.now();
       final todayStr =
@@ -244,11 +323,21 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
         'vowl_sequence_step_${_canonicalId}_$userId',
         '${todayStr}_$_currentIndex',
       );
-      if (widget.sequenceId != _canonicalId) {
+      final legacyId = DiscoveryHelper.legacySequenceId(_canonicalId);
+      if (legacyId != _canonicalId) {
+        await prefs.setString(
+          'vowl_sequence_step_${legacyId}_$userId',
+          '${todayStr}_$_currentIndex',
+        );
+      }
+      if (widget.sequenceId != _canonicalId && widget.sequenceId != legacyId) {
         await prefs.setString(
           'vowl_sequence_step_${widget.sequenceId}_$userId',
           '${todayStr}_$_currentIndex',
         );
+      }
+      if (_currentIndex >= _quests.length) {
+        await _recordSequenceCompletionLocally();
       }
     } catch (_) {}
   }
@@ -337,9 +426,8 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
 
   bool get _isFinished => _currentIndex >= _quests.length;
 
-  double get _progress => _quests.isEmpty
-      ? 1.0
-      : (_currentIndex / _quests.length).clamp(0.0, 1.0);
+  double get _progress =>
+      _quests.isEmpty ? 1.0 : (_currentIndex / _quests.length).clamp(0.0, 1.0);
 
   // ── Navigation ────────────────────────────────────────────────────────────
 
@@ -378,7 +466,8 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
 
     // Dual verification: route returned true OR the level was marked completed natively in AuthBloc
     final user = context.read<AuthBloc>().state.user;
-    final isLevelCompletedNatively = user != null &&
+    final isLevelCompletedNatively =
+        user != null &&
         (user.completedLevels[subtype]?.contains(level) ?? false);
     final isSuccess = result == true || isLevelCompletedNatively;
 
@@ -418,6 +507,31 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     }
   }
 
+  Future<void> _replayQuest(GameQuest quest) async {
+    if (_isLaunching) return;
+    if (!mounted) return;
+    _isLaunching = true;
+    _updateState();
+
+    final subtype = quest.subtype?.name ?? '';
+    final category = quest.subtype != null
+        ? quest.subtype!.category.serializedName
+        : (quest.type?.serializedName ?? 'speaking');
+    final level = quest.difficulty;
+    final route = '/game?category=$category&subtype=$subtype&level=$level';
+
+    try {
+      await context.push(route);
+    } catch (_) {
+      // Navigation failure treated as cancellation.
+    } finally {
+      if (mounted) {
+        _isLaunching = false;
+        _updateState();
+      }
+    }
+  }
+
   void _finishSequence() async {
     if (_hasFinishedSequence) return;
     _hasFinishedSequence = true;
@@ -428,33 +542,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     } catch (_) {}
 
     // Record today's completion locally in SharedPreferences for daily practice cards
-    try {
-      final user = context.read<AuthBloc>().state.user;
-      final userId = user?.id ?? 'guest';
-      final prefs = await SharedPreferences.getInstance();
-      final now = DateTime.now();
-      final todayStr =
-          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
-      await prefs.setString(
-        'vowl_sequence_completed_${_canonicalId}_$userId',
-        todayStr,
-      );
-      await prefs.setString(
-        'vowl_sequence_step_${_canonicalId}_$userId',
-        '${todayStr}_${_quests.length}',
-      );
-      if (widget.sequenceId != _canonicalId) {
-        await prefs.setString(
-          'vowl_sequence_completed_${widget.sequenceId}_$userId',
-          todayStr,
-        );
-        await prefs.setString(
-          'vowl_sequence_step_${widget.sequenceId}_$userId',
-          '${todayStr}_${_quests.length}',
-        );
-      }
-      DiscoveryDeck.notifySequenceCompleted();
-    } catch (_) {}
+    await _recordSequenceCompletionLocally();
 
     if (!mounted) return;
 
@@ -500,80 +588,86 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
             ? Colors.black
             : (isDark ? AppColors.slate900 : Colors.white),
         body: Stack(
-        children: [
-          const MeshGradientBackground(showLetters: false),
-          ValueListenableBuilder<int>(
-            valueListenable: _stateHash,
-            builder: (context, _, child) {
-              return SafeArea(
-                bottom: false,
-                child: Column(
-                  children: [
-                    // Top Track Briefing Header
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(20.w, 10.h, 20.w, 0),
-                      child: _Header(
-                        isDark: isDark,
-                        badge: _sequenceBadge,
-                        sequenceTitle: _sequenceTitle,
-                        currentIndex: _currentIndex,
-                        totalQuests: _quests.length,
-                        accentColor: _sequenceColor,
+          children: [
+            const MeshGradientBackground(showLetters: false),
+            ValueListenableBuilder<int>(
+              valueListenable: _stateHash,
+              builder: (context, _, child) {
+                return SafeArea(
+                  bottom: false,
+                  child: Column(
+                    children: [
+                      // Top Track Briefing Header
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(20.w, 10.h, 20.w, 0),
+                        child: _Header(
+                          isDark: isDark,
+                          badge: _sequenceBadge,
+                          sequenceTitle: _sequenceTitle,
+                          currentIndex: _currentIndex,
+                          totalQuests: _quests.length,
+                          accentColor: _sequenceColor,
+                        ),
                       ),
-                    ),
 
-                    SizedBox(height: 14.h),
+                      SizedBox(height: 14.h),
 
-                    // Sleek Rounded Progress Bar
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20.w),
-                      child: _ProgressBar(
-                        isDark: isDark,
-                        progress: _progress,
-                        color: _sequenceColor,
+                      // Sleek Rounded Progress Bar
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                        child: _ProgressBar(
+                          isDark: isDark,
+                          progress: _progress,
+                          color: _sequenceColor,
+                        ),
                       ),
-                    ),
 
-                    SizedBox(height: 14.h),
+                      SizedBox(height: 14.h),
 
-                    // Track Meta Bar (Duration + Curriculum Sync)
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20.w),
-                      child: _TrackBriefingMetaBar(
-                        isDark: isDark,
-                        totalQuests: _quests.length,
-                        accentColor: _sequenceColor,
+                      // Track Meta Bar (Duration + Curriculum Sync)
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                        child: _TrackBriefingMetaBar(
+                          isDark: isDark,
+                          totalQuests: _quests.length,
+                          accentColor: _sequenceColor,
+                        ),
                       ),
-                    ),
 
-                    SizedBox(height: 14.h),
+                      SizedBox(height: 14.h),
 
-                    // Scrollable Connected Stepper Roadmap
-                    Expanded(
-                      child: _quests.isEmpty
-                          ? Center(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 20.w),
-                                child: _SummaryEmptyCard(
-                                  isDark: isDark,
-                                  onFinish: _finishSequence,
+                      // Scrollable Connected Stepper Roadmap
+                      Expanded(
+                        child: _quests.isEmpty
+                            ? Center(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 20.w,
+                                  ),
+                                  child: _SummaryEmptyCard(
+                                    isDark: isDark,
+                                    onFinish: _finishSequence,
+                                  ),
                                 ),
-                              ),
-                            )
-                          : SingleChildScrollView(
-                              physics: const BouncingScrollPhysics(),
-                              padding: EdgeInsets.fromLTRB(20.w, 6.h, 20.w, 20.h),
-                              child: Column(
-                                children: List.generate(
-                                  _quests.length,
-                                  (index) {
+                              )
+                            : SingleChildScrollView(
+                                physics: const BouncingScrollPhysics(),
+                                padding: EdgeInsets.fromLTRB(
+                                  20.w,
+                                  6.h,
+                                  20.w,
+                                  20.h,
+                                ),
+                                child: Column(
+                                  children: List.generate(_quests.length, (
+                                    index,
+                                  ) {
                                     final quest = _quests[index];
                                     final isCompleted = index < _currentIndex;
                                     final isCurrent =
                                         index == _currentIndex && !_isFinished;
                                     final isLocked = index > _currentIndex;
-                                    final isLast =
-                                        index == _quests.length - 1;
+                                    final isLast = index == _quests.length - 1;
 
                                     return _ConnectedStepperRow(
                                       index: index,
@@ -587,61 +681,71 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                                       accentColor: _sequenceColor,
                                       onCardTap: isCurrent
                                           ? _startNextGame
-                                          : (isLocked
-                                              ? () {
-                                                  try {
-                                                    di.sl<HapticService>().selection();
-                                                  } catch (_) {}
-                                                  GameDialogHelper.showPremiumSnackBar(
-                                                    context,
-                                                    context.tr(
-                                                      'quest_sequence.complete_current_first',
-                                                      fallback:
-                                                          'Complete the current part to unlock this step.',
-                                                    ),
-                                                    icon: Icons.lock_outline_rounded,
-                                                    color: AppColors.slate700,
-                                                  );
-                                                }
-                                              : null),
+                                          : (isCompleted
+                                                ? () => _replayQuest(quest)
+                                                : (isLocked
+                                                      ? () {
+                                                          try {
+                                                            di
+                                                                .sl<
+                                                                  HapticService
+                                                                >()
+                                                                .selection();
+                                                          } catch (_) {}
+                                                          GameDialogHelper.showPremiumSnackBar(
+                                                            context,
+                                                            context.tr(
+                                                              'quest_sequence.complete_current_first',
+                                                              fallback:
+                                                                  'Complete the current part to unlock this step.',
+                                                            ),
+                                                            icon: Icons
+                                                                .lock_outline_rounded,
+                                                            color: AppColors
+                                                                .slate700,
+                                                          );
+                                                        }
+                                                      : null)),
                                     );
-                                  },
+                                  }),
                                 ),
                               ),
-                            ),
-                    ),
-
-                    // Fixed Floating Bottom Action Dock
-                    if (_quests.isNotEmpty)
-                      _BottomActionDock(
-                        isDark: isDark,
-                        isMidnight: isMidnight,
-                        isLaunching: _isLaunching,
-                        isFinished: _isFinished,
-                        currentIndex: _currentIndex,
-                        accentColor: _sequenceColor,
-                        onAction: _isLaunching
-                            ? null
-                            : (_isFinished
-                                ? () {
-                                    if (context.canPop()) {
-                                      context.pop();
-                                    } else {
-                                      context.go('/home');
-                                    }
-                                  }
-                                : _startNextGame),
                       ),
-                  ],
-                ),
-              );
-            },
-          ),
-        ],
+
+                      // Fixed Floating Bottom Action Dock
+                      if (_quests.isNotEmpty)
+                        _BottomActionDock(
+                          isDark: isDark,
+                          isMidnight: isMidnight,
+                          isLaunching: _isLaunching,
+                          isFinished: _isFinished,
+                          currentIndex: _currentIndex,
+                          accentColor: _sequenceColor,
+                          onAction: _isLaunching
+                              ? null
+                              : (_isFinished
+                                    ? () async {
+                                        await _recordSequenceCompletionLocally();
+                                        if (context.mounted) {
+                                          if (context.canPop()) {
+                                            context.pop();
+                                          } else {
+                                            context.go('/home');
+                                          }
+                                        }
+                                      }
+                                    : _startNextGame),
+                        ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
       ),
-    ),
-  );
-}
+    );
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -703,9 +807,14 @@ class _Header extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 6.w,
+                      vertical: 2.h,
+                    ),
                     decoration: BoxDecoration(
-                      color: accentColor.withValues(alpha: isDark ? 0.22 : 0.12),
+                      color: accentColor.withValues(
+                        alpha: isDark ? 0.22 : 0.12,
+                      ),
                       borderRadius: BorderRadius.circular(4.r),
                     ),
                     child: Text(
@@ -822,7 +931,9 @@ class _TrackBriefingMetaBar extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withValues(alpha: 0.05) : AppColors.slate100,
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.05)
+            : AppColors.slate100,
         borderRadius: BorderRadius.circular(12.r),
         border: Border.all(
           color: isDark
@@ -864,11 +975,7 @@ class _TrackBriefingMetaBar extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(
-                  Icons.verified_rounded,
-                  size: 14.r,
-                  color: accentColor,
-                ),
+                Icon(Icons.verified_rounded, size: 14.r, color: accentColor),
                 SizedBox(width: 4.w),
                 Flexible(
                   child: Text(
@@ -942,8 +1049,8 @@ class _ConnectedStepperRow extends StatelessWidget {
                     color: isCompleted
                         ? AppColors.emerald500
                         : (isCurrent
-                            ? accentColor
-                            : (isDark ? Colors.white12 : AppColors.slate200)),
+                              ? accentColor
+                              : (isDark ? Colors.white12 : AppColors.slate200)),
                     boxShadow: isCurrent
                         ? [
                             BoxShadow(
@@ -959,10 +1066,12 @@ class _ConnectedStepperRow extends StatelessWidget {
                       isCompleted
                           ? Icons.check_rounded
                           : (isCurrent
-                              ? Icons.play_arrow_rounded
-                              : Icons.lock_outline_rounded),
+                                ? Icons.play_arrow_rounded
+                                : Icons.lock_outline_rounded),
                       size: 16.r,
-                      color: isLocked && !isDark ? AppColors.slate500 : Colors.white,
+                      color: isLocked && !isDark
+                          ? AppColors.slate500
+                          : Colors.white,
                     ),
                   ),
                 ),
@@ -999,9 +1108,13 @@ class _ConnectedStepperRow extends StatelessWidget {
                     border: Border.all(
                       color: isCurrent
                           ? accentColor.withValues(alpha: 0.7)
-                          : (isDark
-                              ? Colors.white.withValues(alpha: 0.08)
-                              : AppColors.slate200),
+                          : (isCompleted
+                                ? AppColors.emerald500.withValues(
+                                    alpha: isDark ? 0.35 : 0.25,
+                                  )
+                                : (isDark
+                                      ? Colors.white.withValues(alpha: 0.08)
+                                      : AppColors.slate200)),
                       width: isCurrent ? 1.5.r : 1.r,
                     ),
                     boxShadow: isCurrent
@@ -1061,7 +1174,9 @@ class _ConnectedStepperRow extends StatelessWidget {
                               vertical: 2.h,
                             ),
                             decoration: BoxDecoration(
-                              color: isDark ? Colors.white10 : AppColors.slate100,
+                              color: isDark
+                                  ? Colors.white10
+                                  : AppColors.slate100,
                               borderRadius: BorderRadius.circular(6.r),
                             ),
                             child: Text(
@@ -1070,7 +1185,9 @@ class _ConnectedStepperRow extends StatelessWidget {
                                 fontFamily: 'Outfit',
                                 fontSize: 9.sp,
                                 fontWeight: FontWeight.w800,
-                                color: isDark ? Colors.white70 : AppColors.slate600,
+                                color: isDark
+                                    ? Colors.white70
+                                    : AppColors.slate600,
                               ),
                             ),
                           ),
@@ -1122,21 +1239,44 @@ class _ConnectedStepperRow extends StatelessWidget {
                           if (isCompleted)
                             Container(
                               padding: EdgeInsets.symmetric(
-                                horizontal: 6.w,
-                                vertical: 2.h,
+                                horizontal: 8.w,
+                                vertical: 3.h,
                               ),
                               decoration: BoxDecoration(
-                                color: AppColors.emerald500.withValues(alpha: 0.15),
-                                borderRadius: BorderRadius.circular(4.r),
-                              ),
-                              child: Text(
-                                context.tr('quest_sequence.step_completed', fallback: 'COMPLETED'),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 9.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: AppColors.emerald500,
+                                color: AppColors.emerald500.withValues(
+                                  alpha: 0.15,
                                 ),
+                                borderRadius: BorderRadius.circular(6.r),
+                                border: Border.all(
+                                  color: AppColors.emerald500.withValues(
+                                    alpha: 0.35,
+                                  ),
+                                  width: 1.r,
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Icons.replay_rounded,
+                                    size: 11.r,
+                                    color: AppColors.emerald500,
+                                  ),
+                                  SizedBox(width: 4.w),
+                                  Text(
+                                    context.tr(
+                                      'quest_sequence.practice_again',
+                                      fallback: 'PRACTICE AGAIN',
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 9.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: AppColors.emerald500,
+                                      letterSpacing: 0.3,
+                                    ),
+                                  ),
+                                ],
                               ),
                             )
                           else if (isCurrent)
@@ -1150,7 +1290,10 @@ class _ConnectedStepperRow extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(4.r),
                               ),
                               child: Text(
-                                context.tr('quest_sequence.current_step', fallback: 'CURRENT STEP'),
+                                context.tr(
+                                  'quest_sequence.current_step',
+                                  fallback: 'CURRENT STEP',
+                                ),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 9.sp,
@@ -1166,15 +1309,22 @@ class _ConnectedStepperRow extends StatelessWidget {
                                 vertical: 2.h,
                               ),
                               decoration: BoxDecoration(
-                                color: isDark ? Colors.white10 : AppColors.slate100,
+                                color: isDark
+                                    ? Colors.white10
+                                    : AppColors.slate100,
                               ),
                               child: Text(
-                                context.tr('quest_sequence.step_locked', fallback: 'UP NEXT'),
+                                context.tr(
+                                  'quest_sequence.step_locked',
+                                  fallback: 'UP NEXT',
+                                ),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 9.sp,
                                   fontWeight: FontWeight.w700,
-                                  color: isDark ? Colors.white38 : AppColors.slate400,
+                                  color: isDark
+                                      ? Colors.white38
+                                      : AppColors.slate400,
                                 ),
                               ),
                             ),
@@ -1228,11 +1378,13 @@ class _BottomActionDock extends StatelessWidget {
         color: isMidnight
             ? Colors.black.withValues(alpha: 0.95)
             : (isDark
-                ? AppColors.slate900.withValues(alpha: 0.95)
-                : Colors.white.withValues(alpha: 0.95)),
+                  ? AppColors.slate900.withValues(alpha: 0.95)
+                  : Colors.white.withValues(alpha: 0.95)),
         border: Border(
           top: BorderSide(
-            color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
+            color: isDark
+                ? Colors.white10
+                : Colors.black.withValues(alpha: 0.05),
             width: 1,
           ),
         ),
@@ -1259,14 +1411,18 @@ class _BottomActionDock extends StatelessWidget {
           ),
           child: Text(
             isLaunching
-                ? context.tr('common.loading', fallback: 'Loading...').toUpperCase()
+                ? context
+                      .tr('common.loading', fallback: 'Loading...')
+                      .toUpperCase()
                 : isFinished
-                    ? context.tr('quest_sequence.finish_button', fallback: 'FINISH').toUpperCase()
-                    : context.tr(
-                        'quest_sequence.start_part_button',
-                        fallback: 'Start Part',
-                        args: ['${currentIndex + 1}'],
-                      ),
+                ? context
+                      .tr('quest_sequence.finish_button', fallback: 'FINISH')
+                      .toUpperCase()
+                : context.tr(
+                    'quest_sequence.start_part_button',
+                    fallback: 'Start Part',
+                    args: ['${currentIndex + 1}'],
+                  ),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 16.sp,
@@ -1294,7 +1450,7 @@ class _SummaryEmptyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GlassTile(
-      padding: EdgeInsets.all(28.r),
+      padding: EdgeInsets.all(AppSpacing.cardSpacious),
       borderRadius: BorderRadius.circular(24.r),
       child: Column(
         mainAxisSize: MainAxisSize.min,

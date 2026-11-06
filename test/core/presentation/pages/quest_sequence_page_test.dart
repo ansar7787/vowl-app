@@ -872,5 +872,134 @@ void main() {
 
       expect(find.text('FINISH'), findsOneWidget);
     });
+
+    testWidgets('tapping a completed part card allows replay / practice mode', (tester) async {
+      setViewport(tester);
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+
+      SharedPreferences.setMockInitialValues({
+        'vowl_sequence_completed_daily_duo_user_quest_test': todayStr,
+      });
+
+      bool gamePushed = false;
+      final router = GoRouter(
+        initialLocation: '/quest-sequence',
+        routes: [
+          GoRoute(
+            path: '/quest-sequence',
+            builder: (context, state) => QuestSequencePage(
+              sequenceId: 'daily_duo',
+              quests: sampleQuests,
+            ),
+          ),
+          GoRoute(
+            path: '/game',
+            builder: (context, state) {
+              gamePushed = true;
+              return const Scaffold(body: Text('GAME SCREEN'));
+            },
+          ),
+        ],
+      );
+
+      await tester.pumpWidget(ScreenUtilInit(
+        designSize: const Size(390, 844),
+        builder: (context, child) => MultiBlocProvider(
+          providers: [
+            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+            BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+          ],
+          child: MaterialApp.router(
+            routerConfig: router,
+          ),
+        ),
+      ));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(find.text('PRACTICE AGAIN'), findsNWidgets(2));
+
+      // Tap on the first completed step card
+      await tester.tap(find.text('Repeat Sentence'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(gamePushed, isTrue);
+      expect(find.text('GAME SCREEN'), findsOneWidget);
+    });
+
+    testWidgets('tapping bottom dock FINISH button when finished records completion and pops safely', (tester) async {
+      setViewport(tester);
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+
+      // Start with no completion recorded, but steps finished
+      SharedPreferences.setMockInitialValues({
+        'vowl_sequence_step_daily_workout_user_quest_test': '${todayStr}_2',
+      });
+
+      final router = GoRouter(
+        initialLocation: '/home',
+        routes: [
+          GoRoute(
+            path: '/home',
+            builder: (context, state) => Scaffold(
+              body: TextButton(
+                onPressed: () => context.push('/quest-sequence'),
+                child: const Text('GO TO QUEST'),
+              ),
+            ),
+          ),
+          GoRoute(
+            path: '/quest-sequence',
+            builder: (context, state) => QuestSequencePage(
+              sequenceId: 'daily_workout',
+              quests: sampleQuests,
+            ),
+          ),
+        ],
+      );
+
+      await tester.pumpWidget(ScreenUtilInit(
+        designSize: const Size(390, 844),
+        builder: (context, child) => MultiBlocProvider(
+          providers: [
+            BlocProvider<AuthBloc>.value(value: mockAuthBloc),
+            BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
+          ],
+          child: MaterialApp.router(
+            routerConfig: router,
+          ),
+        ),
+      ));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      // Go from Home to Quest Sequence
+      await tester.tap(find.text('GO TO QUEST'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(find.text('FINISH'), findsOneWidget);
+
+      // Tap FINISH button
+      await tester.tap(find.text('FINISH'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      final prefs = await SharedPreferences.getInstance();
+      expect(
+        prefs.getString('vowl_sequence_completed_daily_workout_user_quest_test'),
+        equals(todayStr),
+      );
+      expect(
+        prefs.getString('vowl_sequence_completed_daily_duo_user_quest_test'),
+        equals(todayStr),
+      );
+      expect(find.text('GO TO QUEST'), findsOneWidget);
+    });
   });
 }
