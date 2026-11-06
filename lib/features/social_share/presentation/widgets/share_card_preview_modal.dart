@@ -38,7 +38,7 @@ class _ShareCardPreviewModalState extends State<ShareCardPreviewModal> {
     if (widget.data.type == ShareCardType.arenaVictory) {
       final code = widget.data.roomCode ?? 'VOWL';
       shareText = '⚔️ I just won a 1v1 English Duel on Vowl with ${widget.data.myScore ?? 0} points!\n'
-          'Can you beat my vocabulary reflexes? Enter room code: $code in the app, or tap:\n'
+          'Can you beat my score? Enter room code: $code in the app, or tap:\n'
           'https://vowl-acbc5.web.app/duel/$code';
     } else if (widget.data.type == ShareCardType.arenaInvite) {
       final code = widget.data.roomCode ?? 'VOWL';

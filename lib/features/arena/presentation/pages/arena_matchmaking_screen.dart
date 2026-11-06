@@ -59,11 +59,10 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen>
   Timer? _countdownTimer;
 
   static const List<String> _statusMessages = [
-    'Scanning active players in regional lobby...',
-    'Matching skill ratings & discipline...',
-    'Expanding search across global arena...',
-    'Checking queue for live challenger...',
-    'Finalizing player match...',
+    'Finding an opponent...',
+    'Matching skill levels...',
+    'Checking for live players...',
+    'Preparing duel...',
   ];
 
   @override

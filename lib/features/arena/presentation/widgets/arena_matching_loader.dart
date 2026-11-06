@@ -34,11 +34,10 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
 
   int _messageIndex = 0;
   static const List<String> _statusMessages = [
-    'Searching for a challenger...',
-    'Synchronizing arena duel chamber...',
-    'Sharpening vocabulary blades...',
-    'Matching skill ratings & discipline...',
-    'Preparing speed questions...',
+    'Finding an opponent...',
+    'Connecting to match...',
+    'Setting up questions...',
+    'Almost ready...',
   ];
 
   @override

@@ -45,7 +45,7 @@ class MilestoneShareCardWidget extends StatelessWidget {
         tagColor = AppColors.indigo500;
         break;
       case ShareCardType.arenaVictory:
-        tagLabel = '#ARENA VICTORY';
+        tagLabel = '#DUEL WINNER';
         tagIcon = LucideIcons.trophy;
         tagColor = AppColors.amber500;
         break;
@@ -367,7 +367,7 @@ class MilestoneShareCardWidget extends StatelessWidget {
                   ),
                   SizedBox(height: 4.h),
                   Text(
-                    'Join my English circle on Vowl',
+                    'Learn English with me on Vowl',
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 11.sp,
@@ -523,7 +523,7 @@ class MilestoneShareCardWidget extends StatelessWidget {
                       Icon(LucideIcons.zap, size: 14.sp, color: AppColors.amber500),
                       SizedBox(width: 6.w),
                       Text(
-                        'ARENA CHAMPION',
+                        '1v1 DUEL WINNER',
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 13.sp,
@@ -536,7 +536,7 @@ class MilestoneShareCardWidget extends StatelessWidget {
                   ),
                   SizedBox(height: 4.h),
                   Text(
-                    'Play 1v1 PvP vocabulary battles on Vowl',
+                    'Play 1v1 English duels on Vowl',
                     textAlign: TextAlign.center,
                     softWrap: true,
                     style: TextStyle(
@@ -583,7 +583,7 @@ class MilestoneShareCardWidget extends StatelessWidget {
                   ),
                   SizedBox(height: 4.h),
                   Text(
-                    'Enter code in Vowl app for +100 Coins & VIP Access',
+                    'Enter code in Vowl app for 100 free coins',
                     textAlign: TextAlign.center,
                     softWrap: true,
                     style: TextStyle(

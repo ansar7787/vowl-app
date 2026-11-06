@@ -62,10 +62,10 @@ class ShareCardData {
       roomCode: roomCode,
       payoutCoins: payoutCoins,
       isAiRival: isAiRival,
-      title: '1v1 ARENA CHAMPION',
+      title: '1v1 DUEL WINNER',
       subtitle: rivalName.isNotEmpty
-          ? 'Defeated $rivalName in 1v1 Vocabulary Duel'
-          : '1v1 Vocabulary Duel Victory',
+          ? 'Beat $rivalName in a 1v1 English Duel'
+          : '1v1 English Duel Victory',
     );
   }
 
@@ -81,7 +81,7 @@ class ShareCardData {
       roomCode: roomCode,
       payoutCoins: 50,
       title: '1v1 DUEL CHALLENGE',
-      subtitle: 'Enter room code on Vowl to battle live!',
+      subtitle: 'Enter room code on Vowl to play live!',
     );
   }
 
@@ -95,8 +95,8 @@ class ShareCardData {
       userName: userName,
       userPhotoUrl: userPhotoUrl,
       referralCode: referralCode,
-      title: 'OFFICIAL VIP INVITATION',
-      subtitle: 'Unlock 100 Bonus Coins & VIP Trial on Vowl',
+      title: 'INVITE FROM $userName',
+      subtitle: 'Get 100 free coins & test your English on Vowl',
     );
   }
 
@@ -115,7 +115,7 @@ class ShareCardData {
       rank: rank,
       totalXp: totalXp,
       streak: streak,
-      title: 'Rank #$rank Global Standing',
+      title: 'Rank #$rank on Vowl',
       subtitle: '$totalXp Total XP · $streak-Day Streak',
       referralCode: referralCode,
     );
@@ -135,7 +135,7 @@ class ShareCardData {
       streak: streak,
       totalXp: totalXp,
       title: '$streak-Day Learning Streak',
-      subtitle: 'Committed to English mastery on Vowl',
+      subtitle: '$streak days of learning English on Vowl',
       referralCode: referralCode,
     );
   }

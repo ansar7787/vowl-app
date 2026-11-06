@@ -80,6 +80,7 @@ void main() {
             rivalName: 'Emperor Napoleon Bonaparte the Emperor',
             payoutCoins: 50,
             roomCode: 'VOWL-DUEL-999',
+            showConfetti: false,
             onRematch: () {},
             onClose: () {},
           ),

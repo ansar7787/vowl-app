@@ -223,6 +223,13 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                         di.sl<SoundService>().playArenaDefeat();
                       }
                     }
+                    if (di.sl.isRegistered<HapticService>()) {
+                      if (state.isWinner) {
+                        di.sl<HapticService>().success();
+                      } else {
+                        di.sl<HapticService>().selection();
+                      }
+                    }
 
                     final authState = context.read<AuthBloc>().state;
                     final isHost = authState.user?.id == state.session?.hostId;
@@ -1497,7 +1504,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                 ),
                 SizedBox(height: 8.h),
                 Text(
-                  'Awaiting final round submission from rival...',
+                  'Waiting for rival to finish...',
                   softWrap: true,
                   style: TextStyle(
                     fontSize: 11.sp,
@@ -1511,7 +1518,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
 
           SizedBox(height: 20.h),
 
-          // Zero-Tie Resolution Card
+          // Speed Tiebreaker Card
           Container(
             padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
             decoration: BoxDecoration(
@@ -1529,7 +1536,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Zero-Tie Speed Precision Active',
+                        'Speed Tiebreaker Active',
                         softWrap: true,
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -1540,7 +1547,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                       ),
                       SizedBox(height: 2.h),
                       Text(
-                        'If total points match, the duel is decided by millisecond response speed. Every fraction of a second counts.',
+                        'If points tie, the faster player wins. Every second counts!',
                         softWrap: true,
                         style: TextStyle(
                           fontSize: 11.sp,

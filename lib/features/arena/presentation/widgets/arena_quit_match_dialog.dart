@@ -85,7 +85,7 @@ class ArenaQuitMatchDialog extends StatelessWidget {
                     ),
                     SizedBox(width: 5.w),
                     Text(
-                      isWaitingLobby ? 'LOBBY DISSOLUTION' : 'FORFEIT WARNING',
+                      isWaitingLobby ? 'LEAVING ROOM' : 'FORFEIT WARNING',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 9.5.sp,
@@ -138,8 +138,8 @@ class ArenaQuitMatchDialog extends StatelessWidget {
             // Body Explanation
             Text(
               isWaitingLobby
-                  ? 'No opponent has joined yet. Leaving now will dissolve the room and refund your 30 coins immediately.'
-                  : 'Leaving mid-match will count as a forfeit defeat. Your 30 coins will be awarded to your opponent.',
+                  ? 'No opponent has joined yet. Leaving now will close the room and refund your 30 coins.'
+                  : 'Leaving mid-match counts as a forfeit. Your 30 coins will be awarded to your opponent.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
