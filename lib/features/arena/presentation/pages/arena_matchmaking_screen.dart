@@ -2,11 +2,13 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
+import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -26,7 +28,8 @@ class ArenaMatchmakingScreen extends StatefulWidget {
   const ArenaMatchmakingScreen({super.key, required this.user});
 
   static Route<void> route({required UserEntity user}) {
-    return MaterialPageRoute(
+    return MaterialPageRoute<void>(
+      fullscreenDialog: true,
       builder: (_) => ArenaMatchmakingScreen(user: user),
     );
   }
@@ -198,7 +201,7 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen>
 
   void _launchDuel() {
     if (_session == null || !mounted) return;
-    Navigator.of(context).pushReplacement(
+    Navigator.of(context, rootNavigator: true).pushReplacement(
       ArenaDuelScreen.route(session: _session!),
     );
   }
@@ -210,7 +213,12 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen>
     await _refundIfCanceled();
 
     if (mounted) {
-      Navigator.of(context).pop();
+      final nav = Navigator.of(context, rootNavigator: true);
+      if (nav.canPop()) {
+        nav.pop();
+      } else {
+        GoRouter.of(context).go(AppRouter.gamesRoute);
+      }
     }
   }
 
@@ -247,12 +255,11 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen>
     final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
 
     return PopScope(
-      canPop: _stage == _MatchStage.searching,
+      canPop: false,
       onPopInvokedWithResult: (didPop, _) {
-        if (didPop) {
-          _isCanceled = true;
-          _searchTickerTimer?.cancel();
-          _refundIfCanceled();
+        if (didPop) return;
+        if (_stage == _MatchStage.searching) {
+          _handleCancel();
         }
       },
       child: Scaffold(

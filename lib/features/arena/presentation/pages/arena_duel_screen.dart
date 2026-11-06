@@ -2,11 +2,13 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
+import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
@@ -29,7 +31,8 @@ class ArenaDuelScreen extends StatelessWidget {
   const ArenaDuelScreen({super.key, required this.initialSession});
 
   static Route<void> route({required ArenaDuelSession session}) {
-    return MaterialPageRoute(
+    return MaterialPageRoute<void>(
+      fullscreenDialog: true,
       builder: (_) => ArenaDuelScreen(initialSession: session),
     );
   }
@@ -269,7 +272,12 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                         onClose: () {
                           Navigator.of(dialogCtx).pop();
                           context.read<AuthBloc>().add(const AuthReloadUser());
-                          Navigator.of(context).pop();
+                          final nav = Navigator.of(context, rootNavigator: true);
+                          if (nav.canPop()) {
+                            nav.pop();
+                          } else {
+                            GoRouter.of(context).go(AppRouter.gamesRoute);
+                          }
                         },
                       ),
                     );
@@ -1572,7 +1580,12 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
     final cubit = context.read<ArenaDuelCubit>();
     if (cubit.state.isCompleted) {
       context.read<AuthBloc>().add(const AuthReloadUser());
-      Navigator.of(context).pop();
+      final nav = Navigator.of(context, rootNavigator: true);
+      if (nav.canPop()) {
+        nav.pop();
+      } else {
+        GoRouter.of(context).go(AppRouter.gamesRoute);
+      }
       return;
     }
 
@@ -1592,7 +1605,12 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
         }
         if (context.mounted) {
           context.read<AuthBloc>().add(const AuthReloadUser());
-          Navigator.of(context).pop();
+          final nav = Navigator.of(context, rootNavigator: true);
+          if (nav.canPop()) {
+            nav.pop();
+          } else {
+            GoRouter.of(context).go(AppRouter.gamesRoute);
+          }
         }
       },
     );
@@ -1610,7 +1628,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
       return;
     }
 
-    Navigator.of(context).pushReplacement(
+    Navigator.of(context, rootNavigator: true).pushReplacement(
       ArenaMatchmakingScreen.route(user: user),
     );
   }

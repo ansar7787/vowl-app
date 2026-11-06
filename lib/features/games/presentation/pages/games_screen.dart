@@ -941,7 +941,7 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
       return;
     }
 
-    Navigator.of(context).push(
+    Navigator.of(context, rootNavigator: true).push(
       ArenaMatchmakingScreen.route(user: widget.user),
     );
   }
@@ -1202,7 +1202,7 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                               );
                               if (dialogCtx.mounted) Navigator.of(dialogCtx).pop();
                               if (mounted) {
-                                Navigator.of(context).push(
+                                Navigator.of(context, rootNavigator: true).push(
                                   ArenaDuelScreen.route(session: session),
                                 );
                               }
@@ -1278,7 +1278,7 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
 
       if (mounted) {
         // 1. Navigate to dedicated full-screen Waiting Lobby
-        Navigator.of(context).push(
+        Navigator.of(context, rootNavigator: true).push(
           ArenaLobbyWaitingScreen.route(session: session),
         );
 

@@ -97,7 +97,7 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
       );
 
       if (mounted) {
-        Navigator.of(context).pushReplacement(
+        Navigator.of(context, rootNavigator: true).pushReplacement(
           ArenaDuelScreen.route(session: session),
         );
       }

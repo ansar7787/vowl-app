@@ -28,6 +28,11 @@ import 'package:vowl/features/arena/presentation/pages/arena_deep_link_resolver_
 class AppRouter {
   AppRouter._(); // Non-instantiable.
 
+  /// Global navigator key for the root Navigator, allowing full-screen modal overlays
+  /// and dialogs to be pushed above the bottom navigation shell.
+  static final GlobalKey<NavigatorState> rootNavigatorKey =
+      GlobalKey<NavigatorState>(debugLabel: 'rootNavigator');
+
   // ── Route path constants ──────────────────────────────────────────────────
 
   /// Pending deep-link destination URL to route to once initialization finishes.
@@ -124,6 +129,7 @@ class AppRouter {
 
   /// The global [GoRouter] instance configured with observers, redirects, and routes.
   static final GoRouter router = GoRouter(
+    navigatorKey: rootNavigatorKey,
     initialLocation: initialRoute,
     observers: [
       // Guard: FirebaseAnalyticsObserver is only attached when Firebase is

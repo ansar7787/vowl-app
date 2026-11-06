@@ -50,8 +50,13 @@ class ArenaQuitMatchDialog extends StatelessWidget {
 
     final accentColor = isWaitingLobby ? AppColors.indigo500 : AppColors.rose500;
 
-    return Dialog(
-      backgroundColor: cardBg,
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop) onStay();
+      },
+      child: Dialog(
+        backgroundColor: cardBg,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(24.r),
         side: BorderSide(color: borderColor, width: 1.5.r),
@@ -247,6 +252,7 @@ class ArenaQuitMatchDialog extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 }

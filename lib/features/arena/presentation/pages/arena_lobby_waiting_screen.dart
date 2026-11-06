@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/core/presentation/widgets/vowl_micro_loader.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
+import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
@@ -35,7 +37,8 @@ class ArenaLobbyWaitingScreen extends StatefulWidget {
   const ArenaLobbyWaitingScreen({super.key, required this.session});
 
   static Route<void> route({required ArenaDuelSession session}) {
-    return MaterialPageRoute(
+    return MaterialPageRoute<void>(
+      fullscreenDialog: true,
       builder: (_) => ArenaLobbyWaitingScreen(session: session),
     );
   }
@@ -98,7 +101,7 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
       duration: const Duration(seconds: 2),
     );
 
-    Navigator.of(context).pushReplacement(
+    Navigator.of(context, rootNavigator: true).pushReplacement(
       ArenaDuelScreen.route(session: activeSession),
     );
   }
@@ -138,11 +141,23 @@ class _ArenaLobbyWaitingScreenState extends State<ArenaLobbyWaitingScreen>
             message: 'Room dissolved. 30 coins have been refunded.',
             type: CustomSnackBarType.info,
           );
-          Navigator.of(context).pop();
+          final nav = Navigator.of(context, rootNavigator: true);
+          if (nav.canPop()) {
+            nav.pop();
+          } else {
+            GoRouter.of(context).go(AppRouter.gamesRoute);
+          }
         }
       } catch (e) {
         debugPrint('[ArenaLobbyWaitingScreen] Cancel room error: $e');
-        if (mounted) Navigator.of(context).pop();
+        if (mounted) {
+          final nav = Navigator.of(context, rootNavigator: true);
+          if (nav.canPop()) {
+            nav.pop();
+          } else {
+            GoRouter.of(context).go(AppRouter.gamesRoute);
+          }
+        }
       }
     }
   }

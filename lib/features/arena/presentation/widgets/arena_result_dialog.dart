@@ -619,21 +619,28 @@ class ArenaResultDialog extends StatelessWidget {
       ),
     );
 
-    if (!isWinner || !showConfetti) {
-      return dialog;
-    }
+    final content = (!isWinner || !showConfetti)
+        ? dialog
+        : Stack(
+            alignment: Alignment.center,
+            clipBehavior: Clip.none,
+            children: [
+              dialog,
+              const Positioned.fill(
+                child: IgnorePointer(
+                  child: RepaintBoundary(child: GameConfetti(shouldPop: true)),
+                ),
+              ),
+            ],
+          );
 
-    return Stack(
-      alignment: Alignment.center,
-      clipBehavior: Clip.none,
-      children: [
-        dialog,
-        const Positioned.fill(
-          child: IgnorePointer(
-            child: RepaintBoundary(child: GameConfetti(shouldPop: true)),
-          ),
-        ),
-      ],
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        onClose();
+      },
+      child: content,
     );
   }
 }

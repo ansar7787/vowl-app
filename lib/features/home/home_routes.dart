@@ -231,6 +231,7 @@ class HomeRoutes {
     ),
     GoRoute(
       path: AppRouter.arenaRoute,
+      parentNavigatorKey: AppRouter.rootNavigatorKey,
       pageBuilder: (context, state) {
         final session = state.extra as ArenaDuelSession?;
         if (session == null) {
