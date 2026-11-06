@@ -225,7 +225,6 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
     _advanceTimer?.cancel();
     _finishTimer?.cancel();
     _roomSub?.cancel();
-    _roomSub?.cancel();
 
     final bool isScoreTie = state.myScore == state.rivalScore;
     final bool isWinner;

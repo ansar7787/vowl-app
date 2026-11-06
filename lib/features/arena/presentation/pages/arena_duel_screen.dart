@@ -217,6 +217,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                   }
 
                   if (state.isCompleted) {
+                    context.read<AuthBloc>().add(const AuthReloadUser());
                     if (di.sl.isRegistered<SoundService>()) {
                       if (state.isWinner) {
                         di.sl<SoundService>().playArenaVictory();
@@ -1622,19 +1623,21 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
   }
 
   void _triggerRematch(BuildContext context, dynamic user) {
-    if (user is! UserEntity) return;
+    final authState = context.read<AuthBloc>().state;
+    final currentUser = authState.user ?? (user is UserEntity ? user : null);
+    if (currentUser == null) return;
 
-    if (user.coins < 30) {
+    if (currentUser.coins < 30) {
       CustomSnackBar.show(
         context: context,
-        message: 'You need at least 30 coins to enter a rematch!',
+        message: 'You need at least 30 coins to enter a rematch! (Balance: ${currentUser.coins}🪙)',
         type: CustomSnackBarType.warning,
       );
       return;
     }
 
     Navigator.of(context, rootNavigator: true).pushReplacement(
-      ArenaMatchmakingScreen.route(user: user),
+      ArenaMatchmakingScreen.route(user: currentUser),
     );
   }
 }
