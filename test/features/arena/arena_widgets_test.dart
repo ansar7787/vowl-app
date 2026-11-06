@@ -106,5 +106,37 @@ void main() {
       await tester.tap(find.text('Cancel'));
       expect(canceled, true);
     });
+
+    testWidgets('ArenaRefuelDialog displays VIP instant refuel for premium users', (
+      tester,
+    ) async {
+      bool refueled = false;
+
+      await tester.pumpWidget(
+        _wrapWithScreenUtil(
+          ArenaRefuelDialog(
+            currentCoins: 8,
+            requiredCoins: 30,
+            isPremium: true,
+            onWatchAd: () {
+              refueled = true;
+            },
+            onCancel: () {},
+          ),
+        ),
+      );
+
+      expect(find.text('Not Enough Coins'), findsOneWidget);
+      expect(find.text('8 🪙'), findsOneWidget);
+      expect(find.text('30 🪙'), findsOneWidget);
+      expect(
+        find.text('As a VIP member, refuel 30 coins instantly with zero ads.'),
+        findsOneWidget,
+      );
+      expect(find.text('VIP Instant Refuel (+30🪙)'), findsOneWidget);
+
+      await tester.tap(find.text('VIP Instant Refuel (+30🪙)'));
+      expect(refueled, true);
+    });
   });
 }

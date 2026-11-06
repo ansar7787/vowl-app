@@ -112,10 +112,35 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
     }
   }
 
-  void _watchAdForRefuel() {
+  void _watchAdForRefuel() async {
     final authState = context.read<AuthBloc>().state;
     final user = authState.user;
     if (user == null) return;
+
+    if (user.isPremium) {
+      try {
+        if (di.sl.isRegistered<UpdateUserCoins>()) {
+          await di.sl<UpdateUserCoins>()(
+            const UpdateUserCoinsParams(
+              amountChange: 30,
+              title: 'VIP Arena Refuel',
+            ),
+          );
+        }
+        if (mounted) {
+          context.read<AuthBloc>().add(const AuthRefreshUser());
+          CustomSnackBar.show(
+            context: context,
+            message: '👑 +30 VIP Coins added! Entering the duel...',
+            type: CustomSnackBarType.success,
+          );
+          _resolveAndJoin();
+        }
+      } catch (e) {
+        debugPrint('[ArenaDeepLinkResolverScreen] VIP Refuel error: $e');
+      }
+      return;
+    }
 
     final adService = di.sl<AdService>();
     adService.showRewardedAd(
@@ -332,7 +357,9 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                     ),
                     SizedBox(height: 12.h),
                     Text(
-                      'Watch a short video to get 30 coins and accept this duel.',
+                      context.watch<AuthBloc>().state.user?.isPremium == true
+                          ? 'As a VIP member, refuel 30 coins instantly with zero ads.'
+                          : 'Watch a short video to get 30 coins and accept this duel.',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Outfit',
@@ -349,15 +376,24 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                         height: 46.h,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
+                          gradient: context.watch<AuthBloc>().state.user?.isPremium == true
+                              ? const LinearGradient(
+                                  colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                )
+                              : const LinearGradient(
+                                  colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                ),
                           borderRadius: BorderRadius.circular(12.r),
                           boxShadow: [
                             BoxShadow(
-                              color: const Color(0xFFF59E0B).withValues(alpha: 0.32),
+                              color: (context.watch<AuthBloc>().state.user?.isPremium == true
+                                      ? const Color(0xFF6366F1)
+                                      : const Color(0xFFF59E0B))
+                                  .withValues(alpha: 0.32),
                               blurRadius: 8,
                               offset: const Offset(0, 3),
                             ),
@@ -366,10 +402,18 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(LucideIcons.video, size: 16.sp, color: Colors.white),
+                            Icon(
+                              context.watch<AuthBloc>().state.user?.isPremium == true
+                                  ? LucideIcons.crown
+                                  : LucideIcons.video,
+                              size: 16.sp,
+                              color: Colors.white,
+                            ),
                             SizedBox(width: 8.w),
                             Text(
-                              'Watch Video (+30🪙)',
+                              context.watch<AuthBloc>().state.user?.isPremium == true
+                                  ? 'VIP Instant Refuel (+30🪙)'
+                                  : 'Watch Video (+30🪙)',
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 14.sp,

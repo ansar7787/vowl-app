@@ -121,6 +121,15 @@ class ModernFeatureBar extends StatelessWidget {
               ),
               _buildListFeature(
                 context,
+                icon: LucideIcons.swords,
+                title: context.tr(
+                  'premium.feature_arena_refuel',
+                  fallback: 'Instant 1v1 Arena Refuel (Zero Ads)',
+                ),
+                color: AppColors.indigo500,
+              ),
+              _buildListFeature(
+                context,
                 icon: LucideIcons.flame,
                 title: context.tr(
                   'premium.feature_streak_repair',

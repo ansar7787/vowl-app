@@ -798,8 +798,37 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
       context: context,
       currentCoins: liveUser.coins,
       requiredCoins: 30,
-      onWatchAd: _watchAdForCoins,
+      isPremium: liveUser.isPremium,
+      onWatchAd: () => _refuelCoins(liveUser),
     );
+  }
+
+  Future<void> _refuelCoins(UserEntity liveUser) async {
+    if (liveUser.isPremium) {
+      try {
+        if (di.sl.isRegistered<UpdateUserCoins>()) {
+          await di.sl<UpdateUserCoins>()(
+            const UpdateUserCoinsParams(
+              amountChange: 30,
+              title: 'VIP Arena Refuel',
+            ),
+          );
+        }
+        if (mounted) {
+          context.read<AuthBloc>().add(AuthRefreshUser());
+          CustomSnackBar.show(
+            context: context,
+            message: '👑 +30 VIP Coins added! Ready to enter duel.',
+            type: CustomSnackBarType.success,
+          );
+        }
+      } catch (e) {
+        debugPrint('[_PvPArenaCard] VIP refuel error: $e');
+      }
+      return;
+    }
+
+    _watchAdForCoins();
   }
 
   void _watchAdForCoins() {

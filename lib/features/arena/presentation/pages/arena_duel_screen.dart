@@ -1635,7 +1635,35 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
         context: context,
         currentCoins: currentUser.coins,
         requiredCoins: 30,
-        onWatchAd: () {
+        isPremium: currentUser.isPremium,
+        onWatchAd: () async {
+          if (currentUser.isPremium) {
+            try {
+              if (di.sl.isRegistered<UpdateUserCoins>()) {
+                await di.sl<UpdateUserCoins>()(
+                  const UpdateUserCoinsParams(
+                    amountChange: 30,
+                    title: 'VIP Arena Refuel',
+                  ),
+                );
+              }
+              if (context.mounted) {
+                context.read<AuthBloc>().add(const AuthReloadUser());
+                CustomSnackBar.show(
+                  context: context,
+                  message: '👑 +30 VIP Coins added! Entering rematch...',
+                  type: CustomSnackBarType.success,
+                );
+                Navigator.of(context, rootNavigator: true).pushReplacement(
+                  ArenaMatchmakingScreen.route(user: currentUser),
+                );
+              }
+            } catch (e) {
+              debugPrint('[ArenaDuelScreen] VIP Rematch refuel error: $e');
+            }
+            return;
+          }
+
           final adService = di.sl<AdService>();
           adService.showRewardedAd(
             context: context,

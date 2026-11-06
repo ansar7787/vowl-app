@@ -10,6 +10,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 class ArenaRefuelDialog extends StatelessWidget {
   final int currentCoins;
   final int requiredCoins;
+  final bool isPremium;
   final VoidCallback onWatchAd;
   final VoidCallback onCancel;
 
@@ -17,6 +18,7 @@ class ArenaRefuelDialog extends StatelessWidget {
     super.key,
     required this.currentCoins,
     this.requiredCoins = 30,
+    this.isPremium = false,
     required this.onWatchAd,
     required this.onCancel,
   });
@@ -25,6 +27,7 @@ class ArenaRefuelDialog extends StatelessWidget {
     required BuildContext context,
     required int currentCoins,
     int requiredCoins = 30,
+    bool isPremium = false,
     required VoidCallback onWatchAd,
   }) {
     return showDialog<bool>(
@@ -33,6 +36,7 @@ class ArenaRefuelDialog extends StatelessWidget {
       builder: (ctx) => ArenaRefuelDialog(
         currentCoins: currentCoins,
         requiredCoins: requiredCoins,
+        isPremium: isPremium,
         onWatchAd: () {
           Navigator.of(ctx).pop(true);
           onWatchAd();
@@ -184,7 +188,9 @@ class ArenaRefuelDialog extends StatelessWidget {
 
               // 4. Concise, Human Subtitle
               Text(
-                'Watch a short video to get 30 coins.',
+                isPremium
+                    ? 'As a VIP member, refuel 30 coins instantly with zero ads.'
+                    : 'Watch a short video to get 30 coins.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -197,42 +203,60 @@ class ArenaRefuelDialog extends StatelessWidget {
 
               SizedBox(height: 20.h),
 
-              // 5. Primary Action Button (Golden gradient)
+              // 5. Primary Action Button
               ScaleButton(
                 onTap: onWatchAd,
                 child: Container(
                   height: 46.h,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
+                    gradient: isPremium
+                        ? const LinearGradient(
+                            colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          )
+                        : const LinearGradient(
+                            colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
                     borderRadius: BorderRadius.circular(12.r),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFFF59E0B).withValues(alpha: 0.32),
+                        color: (isPremium
+                                ? const Color(0xFF6366F1)
+                                : const Color(0xFFF59E0B))
+                            .withValues(alpha: 0.32),
                         blurRadius: 8,
                         offset: const Offset(0, 3),
                       ),
                     ],
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(LucideIcons.video, size: 16.sp, color: Colors.white),
-                      SizedBox(width: 8.w),
-                      Text(
-                        'Watch Video (+30🪙)',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w800,
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          isPremium ? LucideIcons.crown : LucideIcons.video,
+                          size: 16.sp,
                           color: Colors.white,
                         ),
-                      ),
-                    ],
+                        SizedBox(width: 8.w),
+                        Text(
+                          isPremium
+                              ? 'VIP Instant Refuel (+30🪙)'
+                              : 'Watch Video (+30🪙)',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
