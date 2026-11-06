@@ -26,7 +26,6 @@ import 'package:vowl/core/presentation/widgets/vowl_micro_loader.dart';
 import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
-import 'package:vowl/core/presentation/feature_catalog/beginner_discovery_card.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
@@ -126,23 +125,17 @@ class _GamesScreenState extends State<GamesScreen> {
                       ),
                       sliver: SliverList(
                         delegate: SliverChildListDelegate([
-                          // 1. Beginner Quest Onboarding (if active)
-                        BeginnerDiscoveryCard(
-                          key: const ValueKey('beginner_discovery'),
-                          user: user,
-                        ),
+                          // 1. Quick Resume Hero Card (1-Tap Direct Play)
+                          _QuickResumeHeroCard(user: user, isDark: isDark),
 
-                        // 2. Quick Resume Hero Card (1-Tap Direct Play)
-                        _QuickResumeHeroCard(user: user, isDark: isDark),
+                          // 2. 1v1 PvP Staking Arena (Full-Width Flagship Card)
+                          _PvPArenaCard(user: user, isDark: isDark),
 
-                        // 3. 1v1 PvP Staking Arena (Full-Width Flagship Card)
-                        _PvPArenaCard(user: user, isDark: isDark),
+                          // 3. Quick Speed Drills (Word Snap & Word Mixer)
+                          _QuickDrillsRow(isDark: isDark),
 
-                        // 4. Quick Speed Drills (Word Snap & Word Mixer)
-                        _QuickDrillsRow(isDark: isDark),
-
-                        // 5. Curriculum Mastery Tier Card (Replaces 0.1% bar)
-                        _CurriculumMasteryCard(user: user, isDark: isDark),
+                          // 4. Curriculum Mastery Tier Card (Replaces 0.1% bar)
+                          _CurriculumMasteryCard(user: user, isDark: isDark),
 
                         // 6. Category Filter Dock & Search
                         _CategoryFilterDock(
