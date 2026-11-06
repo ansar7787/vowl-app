@@ -6,6 +6,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
@@ -83,7 +84,7 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
         setState(() {
           _isLoading = false;
           _isCoinRefuelNeeded = true;
-          _errorMessage = 'You need 30 coins to enter this duel. Your current balance is ${user.coins} coins.';
+          _errorMessage = null;
         });
       }
       return;
@@ -135,7 +136,7 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
             context.read<AuthBloc>().add(const AuthRefreshUser());
             CustomSnackBar.show(
               context: context,
-              message: '🎉 +30 Coins added! Entering the duel...',
+              message: '+30 Coins added! Entering the duel...',
               type: CustomSnackBarType.success,
             );
             _resolveAndJoin();
@@ -199,18 +200,20 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                     height: 68.r,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: _errorMessage != null && !_isCoinRefuelNeeded
-                            ? [AppColors.rose500, AppColors.rose700]
-                            : [AppColors.indigo500, AppColors.indigo600],
+                        colors: _isCoinRefuelNeeded
+                            ? [const Color(0xFFF59E0B), const Color(0xFFD97706)]
+                            : (_errorMessage != null
+                                ? [AppColors.rose500, AppColors.rose700]
+                                : [AppColors.indigo500, AppColors.indigo600]),
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: (_errorMessage != null && !_isCoinRefuelNeeded
-                                  ? AppColors.rose500
-                                  : AppColors.indigo500)
+                          color: (_isCoinRefuelNeeded
+                                  ? const Color(0xFFF59E0B)
+                                  : (_errorMessage != null ? AppColors.rose500 : AppColors.indigo500))
                               .withValues(alpha: 0.35),
                           blurRadius: 16,
                           offset: const Offset(0, 6),
@@ -230,7 +233,7 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                   SizedBox(height: 20.h),
                   Text(
                     _isCoinRefuelNeeded
-                        ? 'Coins Needed'
+                        ? 'Not Enough Coins'
                         : (_errorMessage != null ? 'Duel Unavailable' : 'Duel Ready!'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -261,7 +264,141 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                     ),
                   ),
                   SizedBox(height: 16.h),
-                  if (_errorMessage != null) ...[
+                  if (_isCoinRefuelNeeded) ...[
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+                      decoration: BoxDecoration(
+                        color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
+                        borderRadius: BorderRadius.circular(14.r),
+                        border: Border.all(color: borderColor),
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Column(
+                              children: [
+                                Text(
+                                  'YOUR BALANCE',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w700,
+                                    letterSpacing: 0.8,
+                                    color: textSecondary,
+                                  ),
+                                ),
+                                SizedBox(height: 3.h),
+                                Text(
+                                  '${context.watch<AuthBloc>().state.user?.coins ?? 0} 🪙',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 15.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: AppColors.amber500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(width: 1.w, height: 26.h, color: borderColor),
+                          Expanded(
+                            child: Column(
+                              children: [
+                                Text(
+                                  'ENTRY FEE',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w700,
+                                    letterSpacing: 0.8,
+                                    color: textSecondary,
+                                  ),
+                                ),
+                                SizedBox(height: 3.h),
+                                Text(
+                                  '30 🪙',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 15.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: textPrimary,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 12.h),
+                    Text(
+                      'Watch a short video to get 30 coins and accept this duel.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.5.sp,
+                        fontWeight: FontWeight.w500,
+                        color: textSecondary,
+                        height: 1.35,
+                      ),
+                    ),
+                    SizedBox(height: 20.h),
+                    ScaleButton(
+                      onTap: _watchAdForRefuel,
+                      child: Container(
+                        height: 46.h,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(12.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0xFFF59E0B).withValues(alpha: 0.32),
+                              blurRadius: 8,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(LucideIcons.video, size: 16.sp, color: Colors.white),
+                            SizedBox(width: 8.w),
+                            Text(
+                              'Watch Video (+30🪙)',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 10.h),
+                    ScaleButton(
+                      onTap: () => context.go(AppRouter.homeRoute),
+                      child: Container(
+                        height: 36.h,
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Go Home',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w700,
+                            color: textSecondary,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ] else if (_errorMessage != null) ...[
                     Text(
                       _errorMessage!,
                       textAlign: TextAlign.center,
@@ -274,24 +411,7 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                     ),
                     SizedBox(height: 24.h),
 
-                    // Primary Action Button (Refuel, Auth, or Retry)
-                    if (_isCoinRefuelNeeded) ...[
-                      ElevatedButton.icon(
-                        onPressed: _watchAdForRefuel,
-                        icon: const Icon(LucideIcons.video, size: 16, color: Colors.white),
-                        label: const Text('Watch Video (+30🪙 Refuel)'),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.amber500,
-                          foregroundColor: Colors.white,
-                          minimumSize: Size(double.infinity, 44.h),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12.r),
-                          ),
-                          elevation: 0,
-                        ),
-                      ),
-                      SizedBox(height: 10.h),
-                    ] else if (_isAuthNeeded) ...[
+                    if (_isAuthNeeded) ...[
                       ElevatedButton(
                         onPressed: () => context.go(AppRouter.loginRoute),
                         style: ElevatedButton.styleFrom(
@@ -323,7 +443,7 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
                             child: const Text('Go Home'),
                           ),
                         ),
-                        if (!_isCoinRefuelNeeded && !_isAuthNeeded) ...[
+                        if (!_isAuthNeeded) ...[
                           SizedBox(width: 12.w),
                           Expanded(
                             child: ElevatedButton(

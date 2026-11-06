@@ -15,6 +15,7 @@ import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_duel_screen.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_lobby_waiting_screen.dart';
 import 'package:vowl/features/arena/presentation/pages/arena_matchmaking_screen.dart';
+import 'package:vowl/features/arena/presentation/widgets/arena_refuel_dialog.dart';
 import 'package:vowl/features/social_share/domain/entities/share_card_data.dart';
 import 'package:vowl/features/social_share/presentation/widgets/share_card_preview_modal.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -799,106 +800,21 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
   bool _isLoading = false;
 
   void _showRefuelDialog() {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight =
-        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
-    final cardBg = isMidnight
-        ? AppColors.midnightSurface
-        : (isDark ? AppColors.slate800 : Colors.white);
-    final textPrimary = isDark ? Colors.white : AppColors.slate900;
-    final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
-
-    showDialog(
+    final liveUser = context.read<AuthBloc>().state.user ?? widget.user;
+    ArenaRefuelDialog.show(
       context: context,
-      builder: (dialogCtx) => Dialog(
-        backgroundColor: cardBg,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
-        child: Padding(
-          padding: EdgeInsets.all(AppSpacing.cardSpacious),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                width: 52.r,
-                height: 52.r,
-                decoration: BoxDecoration(
-                  color: AppColors.amber500.withValues(alpha: 0.15),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  LucideIcons.coins,
-                  color: AppColors.amber500,
-                  size: 28.r,
-                ),
-              ),
-              SizedBox(height: 14.h),
-              Text(
-                'Need 30 Coins for 1v1 Duel?',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 17.sp,
-                  fontWeight: FontWeight.w800,
-                  color: textPrimary,
-                ),
-              ),
-              SizedBox(height: 6.h),
-              Text(
-                'You need 30🪙 to enter this duel. Watch a short video to instantly refuel +30 Coins and jump into the arena!',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  color: textSecondary,
-                ),
-              ),
-              SizedBox(height: 18.h),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.of(dialogCtx).pop();
-                  _watchAdForCoins();
-                },
-                icon: Icon(LucideIcons.video, size: 16.r, color: Colors.white),
-                label: Text(
-                  'Watch Video (+30🪙)',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.amber500,
-                  foregroundColor: Colors.white,
-                  minimumSize: Size(double.infinity, 44.h),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                ),
-              ),
-              SizedBox(height: 8.h),
-              TextButton(
-                onPressed: () => Navigator.of(dialogCtx).pop(),
-                child: Text(
-                  'Maybe Later',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    color: textSecondary,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      currentCoins: liveUser.coins,
+      requiredCoins: 30,
+      onWatchAd: _watchAdForCoins,
     );
   }
 
   void _watchAdForCoins() {
     final adService = di.sl<AdService>();
+    final liveUser = context.read<AuthBloc>().state.user ?? widget.user;
     adService.showRewardedAd(
       context: context,
-      isPremium: widget.user.isPremium,
+      isPremium: liveUser.isPremium,
       onDismissed: () {},
       onUserEarnedReward: (_) async {
         try {
@@ -914,7 +830,7 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
             context.read<AuthBloc>().add(AuthRefreshUser());
             CustomSnackBar.show(
               context: context,
-              message: '🎉 +30 Coins added! You can now start the duel!',
+              message: '+30 Coins added! Ready to enter duel.',
               type: CustomSnackBarType.success,
             );
           }

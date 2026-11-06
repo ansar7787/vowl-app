@@ -24,6 +24,9 @@ import 'package:vowl/features/arena/presentation/pages/arena_matchmaking_screen.
 import 'package:vowl/features/arena/presentation/widgets/arena_quit_match_dialog.dart';
 import 'package:vowl/features/arena/presentation/widgets/arena_result_dialog.dart';
 import 'package:vowl/features/arena/presentation/widgets/arena_score_hud.dart';
+import 'package:vowl/features/arena/presentation/widgets/arena_refuel_dialog.dart';
+import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 
 class ArenaDuelScreen extends StatelessWidget {
   final ArenaDuelSession initialSession;
@@ -1628,10 +1631,43 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
     if (currentUser == null) return;
 
     if (currentUser.coins < 30) {
-      CustomSnackBar.show(
+      ArenaRefuelDialog.show(
         context: context,
-        message: 'You need at least 30 coins to enter a rematch! (Balance: ${currentUser.coins}🪙)',
-        type: CustomSnackBarType.warning,
+        currentCoins: currentUser.coins,
+        requiredCoins: 30,
+        onWatchAd: () {
+          final adService = di.sl<AdService>();
+          adService.showRewardedAd(
+            context: context,
+            isPremium: currentUser.isPremium,
+            onDismissed: () {},
+            onUserEarnedReward: (_) async {
+              try {
+                if (di.sl.isRegistered<UpdateUserCoins>()) {
+                  await di.sl<UpdateUserCoins>()(
+                    const UpdateUserCoinsParams(
+                      amountChange: 30,
+                      title: 'Arena Duel Refuel',
+                    ),
+                  );
+                }
+                if (context.mounted) {
+                  context.read<AuthBloc>().add(const AuthReloadUser());
+                  CustomSnackBar.show(
+                    context: context,
+                    message: '+30 Coins added! Entering rematch...',
+                    type: CustomSnackBarType.success,
+                  );
+                  Navigator.of(context, rootNavigator: true).pushReplacement(
+                    ArenaMatchmakingScreen.route(user: currentUser),
+                  );
+                }
+              } catch (e) {
+                debugPrint('[ArenaDuelScreen] Rematch refuel error: $e');
+              }
+            },
+          );
+        },
       );
       return;
     }
