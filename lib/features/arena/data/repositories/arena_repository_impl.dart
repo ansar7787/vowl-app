@@ -143,7 +143,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
 
       // 3. Fallback: If no real human player queued within 8s, match with calibrated Computer/AI
       final aiOpponent = ArenaAiOpponent.forPlayerLevel(currentUser.level);
-      final roomCode = 'VOWL-DUEL-${(Random().nextInt(900) + 100)}';
+      final roomCode = 'VOWL-AI-${(Random().nextInt(900) + 100)}';
 
       return ArenaDuelSession(
         roomCode: roomCode,
@@ -312,7 +312,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
     required bool isHost,
   }) async {
     final cleanCode = roomCode.trim().toUpperCase();
-    if (cleanCode.startsWith('VOWL-AI-')) return;
+    if (cleanCode.startsWith('VOWL-AI-') || cleanCode.startsWith('VOWL-RIVAL-')) return;
 
     try {
       final docRef = _firestore.collection('arena_rooms').doc(cleanCode);
@@ -394,7 +394,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
     }
 
     final cleanCode = roomCode.trim().toUpperCase();
-    if (!cleanCode.startsWith('VOWL-AI-')) {
+    if (!cleanCode.startsWith('VOWL-AI-') && !cleanCode.startsWith('VOWL-RIVAL-')) {
       try {
         final docRef = _firestore.collection('arena_rooms').doc(cleanCode);
         await docRef.update({
@@ -411,7 +411,7 @@ class ArenaRepositoryImpl implements ArenaRepository {
     required String userId,
   }) async {
     final cleanCode = roomCode.trim().toUpperCase();
-    if (cleanCode.startsWith('VOWL-AI-')) return;
+    if (cleanCode.startsWith('VOWL-AI-') || cleanCode.startsWith('VOWL-RIVAL-')) return;
 
     try {
       final docRef = _firestore.collection('arena_rooms').doc(cleanCode);

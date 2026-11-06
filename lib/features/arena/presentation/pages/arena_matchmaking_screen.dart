@@ -502,7 +502,7 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen>
               ).animate(_slideAnimation),
               child: Container(
                 width: 120.w,
-                constraints: BoxConstraints(minHeight: 130.h),
+                height: 145.h,
                 padding: EdgeInsets.all(12.r),
                 decoration: BoxDecoration(
                   color: cardBg,
@@ -510,22 +510,27 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen>
                   border: Border.all(color: borderColor, width: 1.5),
                 ),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    UserAvatar(photoUrl: widget.user.photoUrl, size: 52.r),
-                    SizedBox(height: 8.h),
-                    Text(
-                      widget.user.safeDisplayName,
-                      maxLines: 2,
-                      softWrap: true,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w800,
-                        color: textPrimary,
-                      ),
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        UserAvatar(photoUrl: widget.user.photoUrl, size: 52.r),
+                        SizedBox(height: 8.h),
+                        Text(
+                          widget.user.safeDisplayName,
+                          maxLines: 2,
+                          softWrap: true,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w800,
+                            color: textPrimary,
+                          ),
+                        ),
+                      ],
                     ),
-                    const Spacer(),
                     Text(
                       'You',
                       style: TextStyle(
@@ -581,7 +586,7 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen>
               ).animate(_slideAnimation),
               child: Container(
                 width: 120.w,
-                constraints: BoxConstraints(minHeight: 130.h),
+                height: 145.h,
                 padding: EdgeInsets.all(12.r),
                 decoration: BoxDecoration(
                   color: cardBg,
@@ -589,46 +594,51 @@ class _ArenaMatchmakingScreenState extends State<ArenaMatchmakingScreen>
                   border: Border.all(color: borderColor, width: 1.5),
                 ),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    if (_session?.isGhostRival == true && (rivalPhoto == null || rivalPhoto.isEmpty))
-                      Container(
-                        width: 52.r,
-                        height: 52.r,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: const LinearGradient(
-                            colors: [Color(0xFF06B6D4), Color(0xFF3B82F6)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
-                          border: Border.all(
-                            color: Colors.white.withValues(alpha: 0.2),
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        if (_session?.isGhostRival == true && (rivalPhoto == null || rivalPhoto.isEmpty))
+                          Container(
+                            width: 52.r,
+                            height: 52.r,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: const LinearGradient(
+                                colors: [Color(0xFF06B6D4), Color(0xFF3B82F6)],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ),
+                              border: Border.all(
+                                color: Colors.white.withValues(alpha: 0.2),
+                              ),
+                            ),
+                            child: Center(
+                              child: Icon(
+                                LucideIcons.bot,
+                                color: Colors.white,
+                                size: 26.r,
+                              ),
+                            ),
+                          )
+                        else
+                          UserAvatar(photoUrl: rivalPhoto, size: 52.r),
+                        SizedBox(height: 8.h),
+                        Text(
+                          rivalName,
+                          maxLines: 2,
+                          softWrap: true,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w800,
+                            color: textPrimary,
                           ),
                         ),
-                        child: Center(
-                          child: Icon(
-                            LucideIcons.bot,
-                            color: Colors.white,
-                            size: 26.r,
-                          ),
-                        ),
-                      )
-                    else
-                      UserAvatar(photoUrl: rivalPhoto, size: 52.r),
-                    SizedBox(height: 8.h),
-                    Text(
-                      rivalName,
-                      maxLines: 2,
-                      softWrap: true,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w800,
-                        color: textPrimary,
-                      ),
+                      ],
                     ),
-                    const Spacer(),
                     Text(
                       _session?.isGhostRival == true ? 'AI Opponent' : 'Live Player',
                       style: TextStyle(
