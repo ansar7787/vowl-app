@@ -58,14 +58,14 @@ void main() {
         ),
       );
 
-      expect(find.text('Forfeit 1v1 Arena Duel?'), findsOneWidget);
-      expect(find.textContaining('Your 30 coins will be awarded to your opponent'), findsOneWidget);
-      expect(find.text('Stay & Fight'), findsOneWidget);
-      expect(find.text('Forfeit Match (-30🪙)'), findsOneWidget);
+      expect(find.text('Forfeit Match?'), findsOneWidget);
+      expect(find.textContaining('lose your 30 coins'), findsOneWidget);
+      expect(find.text('Keep Playing'), findsOneWidget);
+      expect(find.text('Forfeit (-30🪙)'), findsOneWidget);
 
-      await tester.ensureVisible(find.text('Forfeit Match (-30🪙)'));
+      await tester.ensureVisible(find.text('Forfeit (-30🪙)'));
       await tester.pumpAndSettle();
-      await tester.tap(find.text('Forfeit Match (-30🪙)'));
+      await tester.tap(find.text('Forfeit (-30🪙)'));
       expect(forfeited, true);
     });
   });

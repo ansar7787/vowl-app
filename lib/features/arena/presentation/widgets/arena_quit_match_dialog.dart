@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
-/// Modern confirmation modal for exiting/forfeiting an active Arena duel or canceling room lobby.
+/// Clean, human-centered confirmation modal for exiting/forfeiting an active Arena match
+/// or leaving a private room lobby. Free of AI buzzwords, clutter, and redundant text.
 class ArenaQuitMatchDialog extends StatelessWidget {
   final VoidCallback onStay;
   final VoidCallback onForfeit;
@@ -57,202 +59,117 @@ class ArenaQuitMatchDialog extends StatelessWidget {
       },
       child: Dialog(
         backgroundColor: cardBg,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(24.r),
-        side: BorderSide(color: borderColor, width: 1.5.r),
-      ),
-      elevation: 16,
-      child: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            // Status Tag
-            Center(
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
-                decoration: BoxDecoration(
-                  color: accentColor.withValues(alpha: 0.14),
-                  borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(
-                    color: accentColor.withValues(alpha: 0.35),
-                    width: 1,
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      isWaitingLobby ? LucideIcons.doorOpen : LucideIcons.alertTriangle,
-                      size: 11.sp,
-                      color: accentColor,
-                    ),
-                    SizedBox(width: 5.w),
-                    Text(
-                      isWaitingLobby ? 'LEAVING ROOM' : 'FORFEIT WARNING',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 9.5.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 1.0,
-                        color: accentColor,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(height: 12.h),
-
-            // Icon Emblem
-            Center(
-              child: Container(
-                width: 52.r,
-                height: 52.r,
+        insetPadding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 24.h),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.r),
+          side: BorderSide(color: borderColor, width: 1.2.r),
+        ),
+        elevation: 16,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 22.h),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // 1. Clean Alert Icon
+              Container(
+                width: 48.r,
+                height: 48.r,
                 decoration: BoxDecoration(
                   color: accentColor.withValues(alpha: 0.12),
                   shape: BoxShape.circle,
-                  border: Border.all(
-                    color: accentColor.withValues(alpha: 0.28),
-                    width: 2.r,
+                ),
+                child: Center(
+                  child: Icon(
+                    isWaitingLobby ? LucideIcons.doorOpen : LucideIcons.alertTriangle,
+                    size: 24.r,
+                    color: accentColor,
                   ),
                 ),
-                child: Icon(
-                  isWaitingLobby ? LucideIcons.doorOpen : LucideIcons.swords,
-                  size: 24.sp,
-                  color: accentColor,
+              ),
+              SizedBox(height: 14.h),
+
+              // 2. Direct, Natural Title
+              Text(
+                isWaitingLobby ? 'Leave Room?' : 'Forfeit Match?',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w800,
+                  color: textPrimary,
                 ),
               ),
-            ),
-            SizedBox(height: 12.h),
+              SizedBox(height: 8.h),
 
-            // Dialog Title
-            Text(
-              isWaitingLobby ? 'Cancel Room Lobby?' : 'Forfeit 1v1 Arena Duel?',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w800,
-                color: textPrimary,
+              // 3. Clear, Single-Sentence Explanation
+              Text(
+                isWaitingLobby
+                    ? 'No opponent has joined yet. Leaving will close this room and return your 30 coins.'
+                    : 'If you leave now, you forfeit this match and lose your 30 coins.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w500,
+                  color: textSecondary,
+                  height: 1.4,
+                ),
               ),
-            ),
-            SizedBox(height: 8.h),
 
-            // Body Explanation
-            Text(
-              isWaitingLobby
-                  ? 'No opponent has joined yet. Leaving now will close the room and refund your 30 coins.'
-                  : 'Leaving mid-match counts as a forfeit. Your 30 coins will be awarded to your opponent.',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 12.5.sp,
-                color: textSecondary,
-                height: 1.35,
-              ),
-            ),
+              SizedBox(height: 22.h),
 
-            SizedBox(height: 14.h),
-
-            // Consequence Breakdown Pill
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
-              decoration: BoxDecoration(
-                color: isDark ? const Color(0xFF0B101D) : const Color(0xFFF1F5F9),
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(color: borderColor),
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    isWaitingLobby ? LucideIcons.shieldCheck : LucideIcons.alertCircle,
-                    size: 16.sp,
-                    color: isWaitingLobby ? AppColors.emerald500 : AppColors.rose500,
-                  ),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: Text(
-                      isWaitingLobby
-                          ? 'Zero penalty: 30 coins returned to your balance'
-                          : 'Immediate forfeit: Defeat recorded & 30🪙 lost',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.w700,
-                        color: isWaitingLobby ? AppColors.emerald500 : AppColors.rose500,
+              // 4. Primary Action: Safe & Encouraging
+              ScaleButton(
+                onTap: onStay,
+                child: Container(
+                  height: 46.h,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: AppColors.indigo500,
+                    borderRadius: BorderRadius.circular(12.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.indigo500.withValues(alpha: 0.3),
+                        blurRadius: 8,
+                        offset: const Offset(0, 3),
                       ),
-                    ),
+                    ],
                   ),
-                ],
-              ),
-            ),
-
-            SizedBox(height: 20.h),
-
-            // Primary Action: Stay & Fight
-            ElevatedButton(
-              onPressed: onStay,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.indigo500,
-                foregroundColor: Colors.white,
-                padding: EdgeInsets.symmetric(vertical: 14.h),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(14.r),
-                ),
-                elevation: 0,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    isWaitingLobby ? LucideIcons.clock : LucideIcons.swords,
-                    size: 16.sp,
-                    color: Colors.white,
-                  ),
-                  SizedBox(width: 8.w),
-                  Text(
-                    isWaitingLobby ? 'Keep Waiting' : 'Stay & Fight',
+                  child: Text(
+                    isWaitingLobby ? 'Keep Waiting' : 'Keep Playing',
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w800,
+                      color: Colors.white,
                     ),
                   ),
-                ],
-              ),
-            ),
-            SizedBox(height: 10.h),
-            // Secondary Action
-            OutlinedButton(
-              onPressed: onForfeit,
-              style: OutlinedButton.styleFrom(
-                foregroundColor: isWaitingLobby ? textSecondary : AppColors.rose500,
-                side: BorderSide(
-                  color: isWaitingLobby
-                      ? borderColor
-                      : AppColors.rose500.withValues(alpha: 0.4),
-                ),
-                padding: EdgeInsets.symmetric(vertical: 12.h),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(14.r),
                 ),
               ),
-              child: Text(
-                isWaitingLobby ? 'Cancel Lobby (Refund 30🪙)' : 'Forfeit Match (-30🪙)',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w700,
-                  color: isWaitingLobby ? textSecondary : AppColors.rose500,
+
+              SizedBox(height: 10.h),
+
+              // 5. Destructive Action: Transparent & Uncluttered
+              ScaleButton(
+                onTap: onForfeit,
+                child: Container(
+                  height: 38.h,
+                  alignment: Alignment.center,
+                  child: Text(
+                    isWaitingLobby ? 'Leave Room' : 'Forfeit (-30🪙)',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isWaitingLobby ? textSecondary : AppColors.rose500,
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
-    ),
-  );
-}
+    );
+  }
 }
