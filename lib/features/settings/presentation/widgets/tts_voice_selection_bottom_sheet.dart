@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/app_router.dart';
@@ -292,6 +293,23 @@ class _TtsVoiceSelectionBottomSheetState
     Navigator.of(context).pop(safePreset);
   }
 
+  Future<void> _openTtsStore() async {
+    di.sl<HapticService>().selection();
+    final marketUri = Uri.parse('market://details?id=com.google.android.tts');
+    final webUri = Uri.parse('https://play.google.com/store/apps/details?id=com.google.android.tts');
+    try {
+      if (await canLaunchUrl(marketUri)) {
+        await launchUrl(marketUri, mode: LaunchMode.externalApplication);
+      } else {
+        await launchUrl(webUri, mode: LaunchMode.externalApplication);
+      }
+    } catch (_) {
+      try {
+        await launchUrl(webUri, mode: LaunchMode.externalApplication);
+      } catch (_) {}
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -428,22 +446,54 @@ class _TtsVoiceSelectionBottomSheetState
                         color: AppColors.rose500.withValues(alpha: 0.35),
                       ),
                     ),
-                    child: Row(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(
-                          Icons.warning_amber_rounded,
-                          color: AppColors.rose500,
-                          size: 20.r,
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.warning_amber_rounded,
+                              color: AppColors.rose500,
+                              size: 20.r,
+                            ),
+                            SizedBox(width: 10.w),
+                            Expanded(
+                              child: Text(
+                                'No Text-to-Speech engine detected on this device. Voice previews and audio may be unavailable until a speech engine is installed.',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  color: isDark ? Colors.white70 : Colors.black87,
+                                  height: 1.35,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        SizedBox(width: 10.w),
-                        Expanded(
-                          child: Text(
-                            'No Text-to-Speech engine detected on this device. Voice previews and audio may be unavailable until a speech engine is installed in system settings.',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              color: isDark ? Colors.white70 : Colors.black87,
-                              height: 1.35,
+                        SizedBox(height: 10.h),
+                        ScaleButton(
+                          onTap: _openTtsStore,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+                            decoration: BoxDecoration(
+                              color: AppColors.rose500,
+                              borderRadius: BorderRadius.circular(10.r),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Icons.download_rounded, color: Colors.white, size: 16.r),
+                                SizedBox(width: 6.w),
+                                Text(
+                                  'Install Speech Services',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
