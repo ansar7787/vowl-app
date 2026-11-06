@@ -7,6 +7,7 @@ import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -602,11 +603,10 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
 
   void _triggerRematch(BuildContext context, dynamic user) async {
     if (user.coins < 30) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('You need at least 30 coins for a rematch stake!'),
-          backgroundColor: AppColors.rose500,
-        ),
+      CustomSnackBar.show(
+        context: context,
+        message: 'You need at least 30 coins for a rematch stake!',
+        type: CustomSnackBarType.warning,
       );
       return;
     }

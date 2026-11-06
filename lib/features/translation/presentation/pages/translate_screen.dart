@@ -14,6 +14,7 @@ import 'package:vowl/core/presentation/widgets/premium_lock_card.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
@@ -210,17 +211,14 @@ class _TranslateScreenState extends State<TranslateScreen> {
       final hasPerm = await _speech.initializeStt();
       if (!hasPerm) {
         if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                context.tr(
-                  'translation.mic_permission_required',
-                  fallback:
-                      'Microphone permission is required for voice input.',
-                ),
-              ),
-              behavior: SnackBarBehavior.floating,
+          CustomSnackBar.show(
+            context: context,
+            message: context.tr(
+              'translation.mic_permission_required',
+              fallback:
+                  'Microphone permission is required for voice input.',
             ),
+            type: CustomSnackBarType.warning,
           );
         }
         return;
@@ -1468,27 +1466,15 @@ class _TranslateScreenState extends State<TranslateScreen> {
                               ClipboardData(text: state.translatedText),
                             );
                             _haptics.success();
-                            ScaffoldMessenger.of(context)
-                              ..clearSnackBars()
-                              ..showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    context.tr(
-                                      'common.copied',
-                                      fallback: 'Copied to clipboard',
-                                    ),
-                                    style: const TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  behavior: SnackBarBehavior.floating,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12.r),
-                                  ),
-                                  duration: const Duration(seconds: 2),
-                                ),
-                              );
+                            CustomSnackBar.show(
+                              context: context,
+                              message: context.tr(
+                                'common.copied',
+                                fallback: 'Copied to clipboard',
+                              ),
+                              type: CustomSnackBarType.success,
+                              duration: const Duration(seconds: 2),
+                            );
                           },
                           borderRadius: BorderRadius.circular(16.r),
                           child: Container(

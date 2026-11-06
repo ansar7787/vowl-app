@@ -5,6 +5,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -114,47 +115,33 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
         listener: (context, state) {
           if (state.claimSuccess != null) {
             context.read<AuthBloc>().add(const AuthReloadUser());
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                backgroundColor: AppColors.emerald500,
-                behavior: SnackBarBehavior.floating,
-                content: Text(
-                  state.claimSuccess!.message,
-                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-                ),
-              ),
+            CustomSnackBar.show(
+              context: context,
+              message: state.claimSuccess!.message,
+              type: CustomSnackBarType.success,
             );
           }
           if (state.cupRewardClaimResult != null) {
             if (state.cupRewardClaimResult!.success) {
               context.read<AuthBloc>().add(const AuthReloadUser());
             }
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                backgroundColor: state.cupRewardClaimResult!.success
-                    ? AppColors.emerald500
-                    : AppColors.rose500,
-                behavior: SnackBarBehavior.floating,
-                content: Text(
-                  state.cupRewardClaimResult!.message,
-                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-                ),
-              ),
+            CustomSnackBar.show(
+              context: context,
+              message: state.cupRewardClaimResult!.message,
+              type: state.cupRewardClaimResult!.success
+                  ? CustomSnackBarType.success
+                  : CustomSnackBarType.error,
             );
           }
           if (state.syncedAmbassadorRewardCount != null && state.syncedAmbassadorRewardCount! > 0) {
             context.read<AuthBloc>().add(const AuthReloadUser());
             final count = state.syncedAmbassadorRewardCount!;
             final coins = count * 100;
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                backgroundColor: AppColors.emerald500,
-                behavior: SnackBarBehavior.floating,
-                content: Text(
+            CustomSnackBar.show(
+              context: context,
+              message:
                   '🎉 $count invited friend(s) finished Adventure Level 1! You received +$coins Coins & +$count Day VIP Pass!',
-                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-                ),
-              ),
+              type: CustomSnackBarType.success,
             );
           }
         },

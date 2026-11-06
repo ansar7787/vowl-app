@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 /// Modern clashing-swords loader with animated radar pulse and dynamic status copy.
 /// Replaces outdated default circular progress indicators for all Arena matching & loading states.
@@ -267,12 +268,11 @@ class _ArenaMatchingLoaderState extends State<ArenaMatchingLoader>
                             tooltip: 'Copy Code',
                             onPressed: () {
                               Clipboard.setData(ClipboardData(text: widget.roomCode!.toUpperCase()));
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('Room code copied to clipboard! Share it with a friend.'),
-                                  duration: Duration(seconds: 2),
-                                  backgroundColor: Color(0xFF10B981),
-                                ),
+                              CustomSnackBar.show(
+                                context: context,
+                                message: 'Room code copied to clipboard! Share it with a friend.',
+                                type: CustomSnackBarType.success,
+                                duration: const Duration(seconds: 2),
                               );
                             },
                           ),

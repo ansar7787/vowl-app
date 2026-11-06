@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/leaderboard/domain/utils/leaderboard_countdown_helper.dart';
 
@@ -44,36 +45,15 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader> {
 
   void _showUpdateInfo(BuildContext context) {
     HapticFeedback.lightImpact();
-    ScaffoldMessenger.of(context).hideCurrentSnackBar();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Row(
-          children: [
-            Icon(Icons.info_outline_rounded, color: Colors.white, size: 20.r),
-            SizedBox(width: 10.w),
-            Expanded(
-              child: Text(
-                context.tr(
-                  'leaderboard.updates_info',
-                  fallback:
-                      'Rankings refresh automatically every 4 hours. Play quests to climb the leaderboard in the next update!',
-                ),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ],
-        ),
-        backgroundColor: AppColors.slate800,
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14.r),
-        ),
-        duration: const Duration(seconds: 4),
+    CustomSnackBar.show(
+      context: context,
+      message: context.tr(
+        'leaderboard.updates_info',
+        fallback:
+            'Rankings refresh automatically every 4 hours. Play quests to climb the leaderboard in the next update!',
       ),
+      type: CustomSnackBarType.info,
+      duration: const Duration(seconds: 4),
     );
   }
 

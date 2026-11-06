@@ -2,6 +2,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
@@ -259,23 +260,13 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
 
     if (rankIndex < 0) {
       HapticFeedback.lightImpact();
-      ScaffoldMessenger.of(context).hideCurrentSnackBar();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            context.tr(
-              'leaderboard.unranked_info',
-              fallback: 'Complete lessons to join the global leaderboard!',
-            ),
-            style: const TextStyle(fontFamily: 'Outfit'),
-          ),
-          backgroundColor: AppColors.slate800,
-          behavior: SnackBarBehavior.floating,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.r),
-          ),
-          duration: const Duration(seconds: 3),
+      CustomSnackBar.show(
+        context: context,
+        message: context.tr(
+          'leaderboard.unranked_info',
+          fallback: 'Complete lessons to join the global leaderboard!',
         ),
+        type: CustomSnackBarType.info,
       );
       return;
     }
@@ -383,14 +374,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
         }
         context.read<AuthBloc>().add(const AuthRefreshUser());
         context.read<AuthBloc>().add(const AuthReloadUser());
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            backgroundColor: AppColors.emerald500,
-            content: Text(
-              '🎉 Reward Claimed! Enjoy your $vipDays day${vipDays > 1 ? "s" : ""} VIP & $coins coins.',
-              style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
-            ),
-          ),
+        CustomSnackBar.show(
+          context: context,
+          message: '🎉 Reward Claimed! Enjoy your $vipDays day${vipDays > 1 ? "s" : ""} VIP & $coins coins.',
+          type: CustomSnackBarType.success,
         );
       }
     } catch (e) {
@@ -423,11 +410,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     if (currentUser == null) return;
 
     if (currentUser.coins < 30) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('You need at least 30 coins to enter a duel stake!'),
-          backgroundColor: AppColors.rose500,
-        ),
+      CustomSnackBar.show(
+        context: context,
+        message: 'You need at least 30 coins to enter a duel stake!',
+        type: CustomSnackBarType.warning,
       );
       return;
     }
@@ -452,11 +438,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     if (currentUser == null) return;
 
     if (currentUser.coins < 30) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('You need at least 30 coins to enter a duel stake!'),
-          backgroundColor: AppColors.rose500,
-        ),
+      CustomSnackBar.show(
+        context: context,
+        message: 'You need at least 30 coins to enter a duel stake!',
+        type: CustomSnackBarType.warning,
       );
       return;
     }
@@ -480,11 +465,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     if (currentUser == null) return;
 
     if (currentUser.coins < 30) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('You need at least 30 coins to create a duel stake!'),
-          backgroundColor: AppColors.rose500,
-        ),
+      CustomSnackBar.show(
+        context: context,
+        message: 'You need at least 30 coins to create a duel stake!',
+        type: CustomSnackBarType.warning,
       );
       return;
     }
@@ -514,11 +498,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
     if (currentUser == null) return;
 
     if (currentUser.coins < 30) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('You need at least 30 coins to enter a duel stake!'),
-          backgroundColor: AppColors.rose500,
-        ),
+      CustomSnackBar.show(
+        context: context,
+        message: 'You need at least 30 coins to enter a duel stake!',
+        type: CustomSnackBarType.warning,
       );
       return;
     }
@@ -638,11 +621,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                             } catch (e) {
                               setDialogState(() => isJoining = false);
                               if (mounted) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text('Could not join room: ${e.toString().replaceAll("Exception: ", "")}'),
-                                    backgroundColor: AppColors.rose500,
-                                  ),
+                                CustomSnackBar.show(
+                                  context: context,
+                                  message: 'Could not join room: ${e.toString().replaceAll("Exception: ", "")}',
+                                  type: CustomSnackBarType.error,
                                 );
                               }
                             }

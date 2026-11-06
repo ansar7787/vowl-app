@@ -7,6 +7,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
@@ -75,26 +76,14 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
   Future<void> _checkHandwriting(BuildContext context, KidsLoaded state) async {
     if (_currentInk == null || _currentInk!.strokes.isEmpty) {
       di.sl<HapticService>().warning();
-      ScaffoldMessenger.of(context).hideCurrentSnackBar();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            context.tr(
-              'kids_zone.handwriting_draw_first',
-              fallback: 'Use chalk to draw on the board first!',
-            ),
-            style: const TextStyle(
-              fontFamily: 'Outfit',
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          duration: const Duration(seconds: 2),
-          behavior: SnackBarBehavior.floating,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16.r),
-          ),
-          backgroundColor: widget.primaryColor,
+      CustomSnackBar.show(
+        context: context,
+        message: context.tr(
+          'kids_zone.handwriting_draw_first',
+          fallback: 'Use chalk to draw on the board first!',
         ),
+        type: CustomSnackBarType.warning,
+        duration: const Duration(seconds: 2),
       );
       return;
     }
