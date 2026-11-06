@@ -30,10 +30,35 @@ class PremiumFailureOverlay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+    final borderColor = isDark
+        ? AppColors.rose500.withValues(alpha: 0.35)
+        : AppColors.rose500.withValues(alpha: 0.22);
+    final textPrimary = isDark ? Colors.white : AppColors.slate900;
+    final textSecondary = isDark ? AppColors.slate300 : AppColors.slate600;
+    final textMuted = isDark ? AppColors.slate400 : AppColors.slate500;
+    final helpBoxBg = isDark
+        ? Colors.white.withValues(alpha: 0.04)
+        : const Color(0xFFF8FAFC);
+    final helpBoxBorder = isDark
+        ? Colors.white.withValues(alpha: 0.08)
+        : AppColors.slate200;
+    final closeBtnBg = isDark
+        ? AppColors.slate800.withValues(alpha: 0.6)
+        : const Color(0xFFF1F5F9);
+    final closeBtnBorder = isDark
+        ? AppColors.slate700
+        : AppColors.slate200;
 
     Widget iconWidget = Container(
-      width: 90.r,
-      height: 90.r,
+      width: 86.r,
+      height: 86.r,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: const LinearGradient(
@@ -43,17 +68,19 @@ class PremiumFailureOverlay extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFFE11D48).withValues(alpha: 0.5),
+            color: const Color(0xFFE11D48).withValues(alpha: isDark ? 0.45 : 0.25),
             blurRadius: 20,
-            offset: const Offset(0, 10),
+            offset: const Offset(0, 8),
           ),
         ],
         border: Border.all(
-          color: Colors.white.withValues(alpha: 0.5),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.4)
+              : AppColors.rose500.withValues(alpha: 0.35),
           width: 2,
         ),
       ),
-      child: Icon(LucideIcons.alertTriangle, color: Colors.white, size: 44.r),
+      child: Icon(LucideIcons.alertTriangle, color: Colors.white, size: 40.r),
     );
 
     if (!reduceMotion) {
@@ -64,8 +91,10 @@ class PremiumFailureOverlay extends StatelessWidget {
     }
 
     Widget titleWidget = ShaderMask(
-      shaderCallback: (bounds) => const LinearGradient(
-        colors: [_LocalPalette.colorfb7185, AppColors.rose700],
+      shaderCallback: (bounds) => LinearGradient(
+        colors: isDark
+            ? const [_LocalPalette.colorfb7185, AppColors.rose500]
+            : const [Color(0xFFE11D48), Color(0xFFBE123C)],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       ).createShader(bounds),
@@ -74,7 +103,7 @@ class PremiumFailureOverlay extends StatelessWidget {
         textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 26.sp,
+          fontSize: 24.sp,
           fontWeight: FontWeight.w900,
           color: Colors.white,
           letterSpacing: 0.5,
@@ -96,21 +125,27 @@ class PremiumFailureOverlay extends StatelessWidget {
         padding: EdgeInsets.only(bottom: 16.h),
         child: Container(
           width: double.infinity,
-          padding: EdgeInsets.all(16.r),
+          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
           decoration: BoxDecoration(
-            color: Colors.black.withValues(alpha: 0.2),
+            color: isDark
+                ? AppColors.red900.withValues(alpha: 0.35)
+                : AppColors.red50,
             borderRadius: BorderRadius.circular(12.r),
-            border: Border.all(color: AppColors.rose500.withValues(alpha: 0.3)),
+            border: Border.all(
+              color: isDark
+                  ? AppColors.rose500.withValues(alpha: 0.3)
+                  : AppColors.rose500.withValues(alpha: 0.25),
+            ),
           ),
           child: Text(
             errorMessage!,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 13.sp,
-              color: _LocalPalette.colorfb7185,
+              fontSize: 12.5.sp,
+              color: isDark ? _LocalPalette.colorfb7185 : AppColors.rose700,
               height: 1.4,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
             ),
           ),
         ),
@@ -133,9 +168,10 @@ class PremiumFailureOverlay extends StatelessWidget {
       textAlign: TextAlign.center,
       style: TextStyle(
         fontFamily: 'Outfit',
-        fontSize: 15.sp,
-        color: Colors.white.withValues(alpha: 0.8),
+        fontSize: 14.sp,
+        color: textSecondary,
         height: 1.4,
+        fontWeight: FontWeight.w400,
       ),
     );
 
@@ -145,11 +181,11 @@ class PremiumFailureOverlay extends StatelessWidget {
 
     Widget helpWidget = Container(
       width: double.infinity,
-      padding: EdgeInsets.all(12.r),
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.05),
+        color: helpBoxBg,
         borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+        border: Border.all(color: helpBoxBorder),
       ),
       child: Column(
         children: [
@@ -157,12 +193,12 @@ class PremiumFailureOverlay extends StatelessWidget {
             context.tr('premium.need_help', fallback: 'Need help?'),
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              color: Colors.white.withValues(alpha: 0.6),
+              fontSize: 11.5.sp,
+              color: textMuted,
               fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(height: 6.h),
+          SizedBox(height: 4.h),
           GestureDetector(
             onTap: () {
               final uri = Uri(
@@ -181,10 +217,10 @@ class PremiumFailureOverlay extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 13.sp,
-                color: _LocalPalette.color8b9cf7,
+                color: isDark ? _LocalPalette.color8b9cf7 : AppColors.indigo600,
                 fontWeight: FontWeight.w700,
                 decoration: TextDecoration.underline,
-                decorationColor: _LocalPalette.color8b9cf7,
+                decorationColor: isDark ? _LocalPalette.color8b9cf7 : AppColors.indigo600,
               ),
             ),
           ),
@@ -205,23 +241,21 @@ class PremiumFailureOverlay extends StatelessWidget {
             child: ScaleButton(
               onTap: onClose,
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 16.h),
+                padding: EdgeInsets.symmetric(vertical: 14.h),
                 decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(24.r),
-                  border: Border.all(
-                    color: Colors.white.withValues(alpha: 0.2),
-                  ),
+                  color: closeBtnBg,
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(color: closeBtnBorder),
                 ),
                 child: Text(
                   context.tr('common.close', fallback: 'Close').toUpperCase(),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    color: Colors.white,
-                    fontWeight: FontWeight.w900,
+                    color: textPrimary,
+                    fontWeight: FontWeight.w800,
                     fontSize: 13.sp,
-                    letterSpacing: 1,
+                    letterSpacing: 0.8,
                   ),
                 ),
               ),
@@ -237,34 +271,41 @@ class PremiumFailureOverlay extends StatelessWidget {
             child: ScaleButton(
               onTap: onRetry,
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 16.h),
+                padding: EdgeInsets.symmetric(vertical: 14.h),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [_LocalPalette.colorfb7185, AppColors.rose700],
+                    colors: [Color(0xFFF43F5E), Color(0xFFBE123C)],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
-                  borderRadius: BorderRadius.circular(24.r),
+                  borderRadius: BorderRadius.circular(16.r),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFFE11D48).withValues(alpha: 0.4),
-                      blurRadius: 15,
-                      offset: const Offset(0, 5),
+                      color: const Color(0xFFE11D48).withValues(alpha: isDark ? 0.4 : 0.25),
+                      blurRadius: 12,
+                      offset: const Offset(0, 4),
                     ),
                   ],
                 ),
-                child: Text(
-                  context
-                      .tr('premium.retry_button', fallback: 'RETRY')
-                      .toUpperCase(),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    color: Colors.white,
-                    fontWeight: FontWeight.w900,
-                    fontSize: 14.sp,
-                    letterSpacing: 1.2,
-                  ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(LucideIcons.refreshCw, size: 14.sp, color: Colors.white),
+                    SizedBox(width: 6.w),
+                    Text(
+                      context
+                          .tr('premium.retry_button', fallback: 'RETRY')
+                          .toUpperCase(),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 13.5.sp,
+                        letterSpacing: 1.0,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -277,29 +318,24 @@ class PremiumFailureOverlay extends StatelessWidget {
       buttonsWidget = buttonsWidget.animate().fadeIn(delay: 500.ms);
     }
 
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight =
-        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
-
     Widget content = Container(
       padding: EdgeInsets.all(AppSpacing.cardSpacious),
       margin: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
       decoration: BoxDecoration(
-        color: isMidnight
-            ? AppColors.midnightSurface
-            : (isDark
-                ? const Color(0xFF13141C).withValues(alpha: 0.95)
-                : Colors.white),
-        borderRadius: BorderRadius.circular(32.r),
+        color: cardBg,
+        borderRadius: BorderRadius.circular(28.r),
         border: Border.all(
-          color: AppColors.rose500.withValues(alpha: 0.4),
-          width: 1.5,
+          color: borderColor,
+          width: 1.2,
         ),
         boxShadow: [
           BoxShadow(
-            color: AppColors.rose500.withValues(alpha: 0.15),
-            blurRadius: 50,
-            spreadRadius: 10,
+            color: isDark
+                ? AppColors.rose500.withValues(alpha: 0.15)
+                : AppColors.rose500.withValues(alpha: 0.08),
+            blurRadius: isDark ? 50 : 32,
+            spreadRadius: isDark ? 10 : 2,
+            offset: isDark ? Offset.zero : const Offset(0, 10),
           ),
         ],
       ),
@@ -315,7 +351,7 @@ class PremiumFailureOverlay extends StatelessWidget {
               ),
               child: iconWidget,
             ),
-            SizedBox(height: 28.h),
+            SizedBox(height: 24.h),
             titleWidget,
             SizedBox(height: 12.h),
             // ignore: use_null_aware_elements
@@ -323,7 +359,7 @@ class PremiumFailureOverlay extends StatelessWidget {
             bodyWidget,
             SizedBox(height: 16.h),
             helpWidget,
-            SizedBox(height: 32.h),
+            SizedBox(height: 28.h),
             buttonsWidget,
           ],
         ),

@@ -1216,9 +1216,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
   }
 
   Widget _buildCompletedOverlay() {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Positioned.fill(
       child: Container(
-        color: Colors.black.withValues(alpha: 0.75),
+        color: Colors.black.withValues(alpha: isDark ? 0.75 : 0.55),
         child: Center(
           child: _paymentSuccessVal == true
               ? PremiumSuccessOverlay(
