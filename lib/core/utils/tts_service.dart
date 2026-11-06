@@ -199,6 +199,7 @@ class TtsServiceImpl implements TtsService {
       // Cache SharedPreferences in memory to evaluate app mute state instantly without circular references
       _prefs = await SharedPreferences.getInstance();
       _engineStatus = TtsEngineStatus.ready;
+      TtsErrorNotifier.instance.clear();
     } catch (e) {
       _engineStatus = TtsEngineStatus.initFailed;
       TtsErrorNotifier.instance.report(TtsErrorType.initFailed);
@@ -242,6 +243,9 @@ class TtsServiceImpl implements TtsService {
     _activeSessionId++;
     _setupDefaultHandlers();
     try {
+      if (_engineStatus != TtsEngineStatus.ready) {
+        await _initTts();
+      }
       final preset = await TtsVoiceHelper.getSavedPreset(force: true);
       _activeEnginePreset = preset;
       _activeIsKids = false;
@@ -299,6 +303,9 @@ class TtsServiceImpl implements TtsService {
     void Function(dynamic error)? onError,
   }) async {
     await _initFuture;
+    if (_engineStatus != TtsEngineStatus.ready) {
+      await _initTts();
+    }
     _watchdogTimer?.cancel();
     final sessionId = ++_activeSessionId;
 

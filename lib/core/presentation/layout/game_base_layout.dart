@@ -106,8 +106,8 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
                 ? CustomSnackBarType.warning
                 : CustomSnackBarType.error,
           );
+          TtsErrorNotifier.instance.clear();
         });
-        TtsErrorNotifier.instance.clear();
       }
     };
     TtsErrorNotifier.instance.errorNotifier.addListener(_ttsErrorListener!);

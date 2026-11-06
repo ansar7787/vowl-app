@@ -471,31 +471,69 @@ class _TtsVoiceSelectionBottomSheetState
                           ],
                         ),
                         SizedBox(height: 10.h),
-                        ScaleButton(
-                          onTap: _openTtsStore,
-                          child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-                            decoration: BoxDecoration(
-                              color: AppColors.rose500,
-                              borderRadius: BorderRadius.circular(10.r),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(Icons.download_rounded, color: Colors.white, size: 16.r),
-                                SizedBox(width: 6.w),
-                                Text(
-                                  'Install Speech Services',
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.white,
-                                  ),
+                        Wrap(
+                          spacing: 8.w,
+                          runSpacing: 8.h,
+                          children: [
+                            ScaleButton(
+                              onTap: _openTtsStore,
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+                                decoration: BoxDecoration(
+                                  color: AppColors.rose500,
+                                  borderRadius: BorderRadius.circular(10.r),
                                 ),
-                              ],
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(Icons.download_rounded, color: Colors.white, size: 16.r),
+                                    SizedBox(width: 6.w),
+                                    Text(
+                                      'Install Speech Services',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
-                          ),
+                            ScaleButton(
+                              onTap: () async {
+                                di.sl<HapticService>().selection();
+                                if (di.sl.isRegistered<TtsService>()) {
+                                  await di.sl<TtsService>().reloadVoice();
+                                  if (mounted) setState(() {});
+                                }
+                              },
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+                                decoration: BoxDecoration(
+                                  color: isDark ? Colors.white12 : Colors.black12,
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(Icons.refresh_rounded, color: isDark ? Colors.white70 : Colors.black87, size: 16.r),
+                                    SizedBox(width: 6.w),
+                                    Text(
+                                      'Check Again',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: isDark ? Colors.white70 : Colors.black87,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
