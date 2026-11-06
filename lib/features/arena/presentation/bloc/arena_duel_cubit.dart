@@ -10,6 +10,8 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
   final ArenaRepository _repository;
   Timer? _questionTimer;
   Timer? _ghostTimer;
+  Timer? _advanceTimer;
+  Timer? _finishTimer;
   StreamSubscription<ArenaDuelSession>? _roomSub;
   int _questionStartTime = 0;
 
@@ -21,6 +23,8 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
   Future<void> close() {
     _questionTimer?.cancel();
     _ghostTimer?.cancel();
+    _advanceTimer?.cancel();
+    _finishTimer?.cancel();
     _roomSub?.cancel();
     return super.close();
   }
@@ -159,7 +163,8 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
     }
 
     // Delay 1.5 seconds to show correct answer before advancing
-    Future.delayed(const Duration(milliseconds: 1500), () {
+    _advanceTimer?.cancel();
+    _advanceTimer = Timer(const Duration(milliseconds: 1500), () {
       if (isClosed) return;
       _advanceToNextQuestion(currentUser);
     });
@@ -172,7 +177,8 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
       isCorrect: false,
       myTotalTimeMs: newMyTime,
     ));
-    Future.delayed(const Duration(milliseconds: 1000), () {
+    _advanceTimer?.cancel();
+    _advanceTimer = Timer(const Duration(milliseconds: 1000), () {
       if (isClosed) return;
       _advanceToNextQuestion(currentUser);
     });
@@ -189,7 +195,8 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
       if (!isGhost && hasGuest) {
         emit(state.copyWith(isWaitingForOpponentFinish: true));
         // Fallback auto-finalize after 12s if opponent lags
-        Future.delayed(const Duration(seconds: 12), () {
+        _finishTimer?.cancel();
+        _finishTimer = Timer(const Duration(seconds: 12), () {
           if (!isClosed && !state.isCompleted) {
             _finalizeMatch(currentUser);
           }
@@ -197,7 +204,8 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
       } else if (isGhost) {
         // Natural 1.2s suspense pause before victory screen
         emit(state.copyWith(isWaitingForOpponentFinish: true));
-        Future.delayed(const Duration(milliseconds: 1200), () {
+        _finishTimer?.cancel();
+        _finishTimer = Timer(const Duration(milliseconds: 1200), () {
           if (!isClosed && !state.isCompleted) {
             _finalizeMatch(currentUser);
           }
@@ -214,6 +222,9 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
   Future<void> _finalizeMatch(UserEntity currentUser) async {
     _questionTimer?.cancel();
     _ghostTimer?.cancel();
+    _advanceTimer?.cancel();
+    _finishTimer?.cancel();
+    _roomSub?.cancel();
     _roomSub?.cancel();
 
     final bool isScoreTie = state.myScore == state.rivalScore;
@@ -256,6 +267,8 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
   Future<void> _finalizeForfeitWin(UserEntity currentUser) async {
     _questionTimer?.cancel();
     _ghostTimer?.cancel();
+    _advanceTimer?.cancel();
+    _finishTimer?.cancel();
     _roomSub?.cancel();
 
     emit(state.copyWith(
