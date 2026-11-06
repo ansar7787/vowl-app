@@ -332,7 +332,8 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                                 prev.timeRemaining != curr.timeRemaining ||
                                 prev.myScore != curr.myScore ||
                                 prev.rivalScore != curr.rivalScore ||
-                                prev.currentQuestionIndex != curr.currentQuestionIndex,
+                                prev.currentQuestionIndex != curr.currentQuestionIndex ||
+                                prev.isAnswered != curr.isAnswered,
                             builder: (context, hudState) {
                               return ArenaScoreHud(
                                 myName: user.safeDisplayName,
@@ -344,6 +345,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                                 currentQuestionIndex: hudState.currentQuestionIndex,
                                 totalQuestions: hudState.session?.questions.length ?? 5,
                                 timeRemaining: hudState.timeRemaining,
+                                isAnswered: hudState.isAnswered,
                                 isDark: isDark,
                                 isAiRival: hudState.session?.isGhostRival ?? false,
                               );

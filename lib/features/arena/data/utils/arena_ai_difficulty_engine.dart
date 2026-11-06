@@ -31,7 +31,7 @@ class ArenaAiOpponent {
     if (level <= 10) {
       return const ArenaAiOpponent(
         id: 'computer_easy',
-        displayName: 'Computer (Easy)',
+        displayName: 'Computer',
         tierLabel: 'EASY',
         tier: ArenaAiDifficultyTier.easy,
         accuracy: 0.65,
@@ -41,7 +41,7 @@ class ArenaAiOpponent {
     } else if (level <= 25) {
       return const ArenaAiOpponent(
         id: 'computer_medium',
-        displayName: 'Computer (Medium)',
+        displayName: 'Computer',
         tierLabel: 'MEDIUM',
         tier: ArenaAiDifficultyTier.medium,
         accuracy: 0.80,
@@ -51,7 +51,7 @@ class ArenaAiOpponent {
     } else {
       return const ArenaAiOpponent(
         id: 'computer_hard',
-        displayName: 'Computer (Hard)',
+        displayName: 'Computer',
         tierLabel: 'HARD',
         tier: ArenaAiDifficultyTier.hard,
         accuracy: 0.90,
