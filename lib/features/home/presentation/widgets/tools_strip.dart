@@ -401,7 +401,7 @@ class _SwissHorizonCard extends StatelessWidget {
             border: Border.all(
               color: isCompleted
                   ? AppColors.emerald500.withValues(
-                      alpha: isDark ? 0.35 : 0.25,
+                      alpha: isDark ? 0.22 : 0.16,
                     )
                   : (isMidnight
                       ? Colors.white.withValues(alpha: 0.12)

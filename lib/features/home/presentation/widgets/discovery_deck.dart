@@ -288,15 +288,15 @@ class _HeroFlagshipQuestCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(18.r),
             border: Border.all(
               color: isCompleted
-                  ? (isDark
-                        ? AppColors.emerald500.withValues(alpha: 0.50)
-                        : AppColors.emerald500.withValues(alpha: 0.35))
+                  ? AppColors.emerald500.withValues(
+                      alpha: isDark ? 0.22 : 0.16,
+                    )
                   : (isMidnight
                         ? Colors.white.withValues(alpha: 0.12)
                         : (isDark
                               ? Colors.white.withValues(alpha: 0.08)
                               : AppColors.slate100)),
-              width: isCompleted ? 1.5.r : 1.r,
+              width: 1.r,
             ),
           ),
           child: Row(
@@ -537,15 +537,15 @@ class _DiscoverySubCell extends StatelessWidget {
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
               color: isCompleted
-                  ? (isDark
-                        ? AppColors.emerald500.withValues(alpha: 0.50)
-                        : AppColors.emerald500.withValues(alpha: 0.35))
+                  ? AppColors.emerald500.withValues(
+                      alpha: isDark ? 0.22 : 0.16,
+                    )
                   : (isMidnight
                         ? Colors.white.withValues(alpha: 0.12)
                         : (isDark
                               ? Colors.white.withValues(alpha: 0.08)
                               : AppColors.slate100)),
-              width: isCompleted ? 1.5.r : 1.r,
+              width: 1.r,
             ),
           ),
           child: Column(
