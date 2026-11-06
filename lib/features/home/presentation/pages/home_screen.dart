@@ -97,11 +97,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   user: authState.user!,
                 );
                 if (mounted) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(result.message),
-                      backgroundColor: result.success ? AppColors.emerald500 : AppColors.rose500,
-                    ),
+                  CustomSnackBar.show(
+                    context: context,
+                    message: result.message,
+                    type: result.success
+                        ? CustomSnackBarType.success
+                        : CustomSnackBarType.error,
                   );
                   if (result.success) {
                     context.read<AuthBloc>().add(const AuthRefreshUser());

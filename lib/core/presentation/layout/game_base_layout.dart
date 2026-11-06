@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_error_notifier.dart';
@@ -96,13 +97,16 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
     _ttsErrorListener = () {
       final error = TtsErrorNotifier.instance.errorNotifier.value;
       if (error != null && mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(error.userMessage),
-            behavior: SnackBarBehavior.floating,
-            duration: const Duration(seconds: 4),
-          ),
-        );
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (!mounted) return;
+          CustomSnackBar.show(
+            context: context,
+            message: error.userMessage,
+            type: error.type == TtsErrorType.noEngine
+                ? CustomSnackBarType.warning
+                : CustomSnackBarType.error,
+          );
+        });
         TtsErrorNotifier.instance.clear();
       }
     };

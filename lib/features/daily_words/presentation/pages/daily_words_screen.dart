@@ -791,15 +791,13 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       }
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              context.tr(
-                'translation.downloading',
-                fallback: 'Downloading language model... Please wait.',
-              ),
-            ),
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'translation.downloading',
+            fallback: 'Downloading language model... Please wait.',
           ),
+          type: CustomSnackBarType.info,
         );
       }
     }

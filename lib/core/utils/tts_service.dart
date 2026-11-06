@@ -133,11 +133,44 @@ class TtsServiceImpl implements TtsService {
 
   Future<void> _initTts() async {
     try {
-      // Check if a TTS engine is actually installed on the device
-      final dynamic isAvailable = await _flutterTts.isLanguageAvailable(
-        'en-US',
-      );
-      if (isAvailable == false || isAvailable == 0) {
+      // Check if a TTS engine is available on the device with retries
+      // to accommodate asynchronous Android OS IPC service binding.
+      bool hasEngine = false;
+      bool isLangAvailable = false;
+
+      for (int attempt = 0; attempt < 3; attempt++) {
+        try {
+          final dynamic engines = await _flutterTts.getEngines;
+          if (engines is List && engines.isNotEmpty) {
+            hasEngine = true;
+          }
+          final dynamic isAvailable = await _flutterTts.isLanguageAvailable(
+            'en-US',
+          );
+          if (isAvailable == true || isAvailable == 1) {
+            hasEngine = true;
+            isLangAvailable = true;
+            break;
+          }
+        } catch (_) {}
+
+        if (attempt < 2) {
+          await Future<void>.delayed(const Duration(milliseconds: 200));
+        }
+      }
+
+      // Fallback check on platforms/devices where getEngines or isLanguageAvailable is erratic
+      if (!hasEngine && !isLangAvailable) {
+        try {
+          final dynamic voices = await _flutterTts.getVoices;
+          if (voices is List && voices.isNotEmpty) {
+            hasEngine = true;
+          }
+        } catch (_) {}
+      }
+
+      // If truly no engine exists anywhere on the device:
+      if (!hasEngine && !isLangAvailable) {
         _engineStatus = TtsEngineStatus.noEngine;
         TtsErrorNotifier.instance.report(TtsErrorType.noEngine);
         sl<AppLogger>().warning(
@@ -357,11 +390,16 @@ class TtsServiceImpl implements TtsService {
     await _initFuture;
 
     if (_engineStatus != TtsEngineStatus.ready) {
-      sl<AppLogger>().warning(
-        'TtsService: Cannot speak — engine status: $_engineStatus',
-        tag: 'TTS',
-      );
-      return;
+      // Lazy self-healing: if previously not ready due to async initialization race,
+      // re-check whether the engine has bound before abandoning the utterance.
+      await _initTts();
+      if (_engineStatus != TtsEngineStatus.ready) {
+        sl<AppLogger>().warning(
+          'TtsService: Cannot speak — engine status: $_engineStatus',
+          tag: 'TTS',
+        );
+        return;
+      }
     }
 
     // Evaluate if the application is muted dynamically from local cache (zero circular dependency on SoundService)

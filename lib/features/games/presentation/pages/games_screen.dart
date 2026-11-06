@@ -24,6 +24,7 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/presentation/feature_catalog/beginner_discovery_card.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -965,11 +966,10 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
           }
           if (mounted) {
             context.read<AuthBloc>().add(AuthRefreshUser());
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('🎉 +30 Coins added! You can now start the duel!'),
-                backgroundColor: AppColors.emerald500,
-              ),
+            CustomSnackBar.show(
+              context: context,
+              message: '🎉 +30 Coins added! You can now start the duel!',
+              type: CustomSnackBarType.success,
             );
           }
         } catch (e) {
@@ -999,11 +999,10 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
     } catch (e) {
       debugPrint('[_PvpArenaHeroCard] Quick match error: $e');
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Could not start duel. Please try again!'),
-            backgroundColor: AppColors.rose500,
-          ),
+        CustomSnackBar.show(
+          context: context,
+          message: 'Could not start duel. Please try again!',
+          type: CustomSnackBarType.error,
         );
       }
     } finally {
@@ -1162,11 +1161,10 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
                             } catch (e) {
                               setDialogState(() => isJoining = false);
                               if (mounted) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text('Could not join room: ${e.toString().replaceAll("Exception: ", "")}'),
-                                    backgroundColor: AppColors.rose500,
-                                  ),
+                                CustomSnackBar.show(
+                                  context: context,
+                                  message: 'Could not join room: ${e.toString().replaceAll("Exception: ", "")}',
+                                  type: CustomSnackBarType.error,
                                 );
                               }
                             }
