@@ -5,8 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
+
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/app_router.dart';
@@ -17,29 +18,64 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/features/home/presentation/widgets/category_shelf.dart';
 import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/presentation/feature_catalog/beginner_discovery_card.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
+import 'package:vowl/core/theme/illustration_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/data/constants/curriculum_manifest.dart';
+import 'package:vowl/features/games/presentation/widgets/kids_category_shelf.dart';
 
 class _LocalPalette {
   _LocalPalette._();
   static const Color colorffa000 = Color(0xFFFFA000);
+  static const Color colorc0c0c0 = Color(0xFFC0C0C0);
+  static const Color colorcd7f32 = Color(0xFFCD7F32);
 }
 
-/// Main game hub screen providing access to all syllabus learning categories,
-/// interactive mini-games, and the Kids Zone carousel.
-class GamesScreen extends StatelessWidget {
+// ---------------------------------------------------------------------------
+// Main GamesScreen (Quest Hub & Arena)
+// ---------------------------------------------------------------------------
+
+/// 10/10 Games Hub screen featuring 1-tap quick resume, 1v1 PvP staking arena,
+/// motivational curriculum mastery tiers, instant keyword search, and responsive 2-column quest cards.
+class GamesScreen extends StatefulWidget {
   const GamesScreen({super.key});
 
   @override
+  State<GamesScreen> createState() => _GamesScreenState();
+}
+
+class _GamesScreenState extends State<GamesScreen> {
+  QuestType? _selectedCategory; // null = 'All'
+  String _searchQuery = '';
+  late final TextEditingController _searchController;
+
+  @override
+  void initState() {
+    super.initState();
+    _searchController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  void _triggerHaptic() {
+    try {
+      Haptics.vibrate(HapticsType.light);
+    } catch (_) {}
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final isMidnight =
-        (Theme.of(context).brightness == Brightness.dark &&
+    final isMidnight = (Theme.of(context).brightness == Brightness.dark &&
         Theme.of(context).scaffoldBackgroundColor == Colors.black);
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isMidnight
@@ -56,333 +92,182 @@ class GamesScreen extends StatelessWidget {
 
           if (user == null) return const _QuestHubShimmer();
 
-          final sections = _buildSections(context, user, isDark);
+          // Kids Mode isolation
+          if (user.isKidsModeOnly) {
+            return _buildKidsHub(context, user, isDark, isMidnight);
+          }
 
           return Stack(
             children: [
               const MeshGradientBackground(showLetters: false),
-              CustomScrollView(
-                controller: di.sl<ScrollController>(instanceName: 'games'),
-                physics: const AlwaysScrollableScrollPhysics(
-                  parent: BouncingScrollPhysics(),
-                ),
-                slivers: [
-                  _GamesAppBar(isDark: isDark, user: user),
-                  SliverPadding(
-                    padding: EdgeInsets.only(
-                      bottom: 120.h + MediaQuery.paddingOf(context).bottom,
-                    ),
-                    sliver: SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        (context, index) => sections[index],
-                        childCount: sections.length,
-                        addAutomaticKeepAlives: true,
-                        addRepaintBoundaries: true,
+              RefreshIndicator(
+                onRefresh: () async {
+                  context.read<AuthBloc>().add(const AuthRefreshUser());
+                },
+                color: AppColors.blue500,
+                backgroundColor: isMidnight
+                    ? AppColors.midnightSurface
+                    : (isDark ? AppColors.slate800 : Colors.white),
+                child: CustomScrollView(
+                  controller: di.sl<ScrollController>(instanceName: 'games'),
+                  physics: const AlwaysScrollableScrollPhysics(
+                    parent: BouncingScrollPhysics(),
+                  ),
+                  slivers: [
+                    _GamesAppBar(isDark: isDark, user: user),
+                    SliverPadding(
+                      padding: EdgeInsets.only(
+                        bottom: 120.h + MediaQuery.paddingOf(context).bottom,
                       ),
+                      sliver: SliverList(
+                        delegate: SliverChildListDelegate([
+                          // 1. Beginner Quest Onboarding (if active)
+                        BeginnerDiscoveryCard(
+                          key: const ValueKey('beginner_discovery'),
+                          user: user,
+                        ),
+
+                        // 2. Quick Resume Hero Card (1-Tap Direct Play)
+                        _QuickResumeHeroCard(user: user, isDark: isDark),
+
+                        // 3. 1v1 PvP Staking Arena (Full-Width Flagship Card)
+                        _PvPArenaCard(user: user, isDark: isDark),
+
+                        // 4. Quick Speed Drills (Word Snap & Word Mixer)
+                        _QuickDrillsRow(isDark: isDark),
+
+                        // 5. Curriculum Mastery Tier Card (Replaces 0.1% bar)
+                        _CurriculumMasteryCard(user: user, isDark: isDark),
+
+                        // 6. Category Filter Dock & Search
+                        _CategoryFilterDock(
+                          selectedCategory: _selectedCategory,
+                          searchController: _searchController,
+                          searchQuery: _searchQuery,
+                          isDark: isDark,
+                          onCategorySelected: (cat) {
+                            _triggerHaptic();
+                            setState(() => _selectedCategory = cat);
+                          },
+                          onSearchChanged: (q) {
+                            setState(() => _searchQuery = q.trim().toLowerCase());
+                          },
+                        ),
+
+                        // 7. Responsive 2-Column Quest Cards Grid (With Smooth Category Transition)
+                        AnimatedSwitcher(
+                          duration: VowlMotion.shouldReduceMotion(context)
+                              ? Duration.zero
+                              : const Duration(milliseconds: 250),
+                          switchInCurve: Curves.easeOutCubic,
+                          switchOutCurve: Curves.easeInCubic,
+                          layoutBuilder: (currentChild, previousChildren) => Stack(
+                            alignment: Alignment.topCenter,
+                            children: [
+                              ...previousChildren,
+                              ?currentChild,
+                            ],
+                          ),
+                          child: KeyedSubtree(
+                            key: ValueKey<String>(
+                              '${_selectedCategory?.name ?? "all"}_$_searchQuery',
+                            ),
+                            child: _QuestCardsGrid(
+                              user: user,
+                              isDark: isDark,
+                              selectedCategory: _selectedCategory,
+                              searchQuery: _searchQuery,
+                            ),
+                          ),
+                        ),
+                      ]),
                     ),
                   ),
                 ],
               ),
-            ],
-          );
+            ),
+          ],
+        );
         },
       ),
     );
   }
 
-  List<Widget> _buildSections(
+  Widget _buildKidsHub(
     BuildContext context,
     UserEntity user,
     bool isDark,
-  ) => [
-    if (!user.isKidsModeOnly)
-      BeginnerDiscoveryCard(
-        key: const ValueKey('beginner_discovery'),
-        user: user,
-      ),
-    // Phase 1: Hero Dashboard
-    _HeroDashboard(
-      key: const ValueKey('hero_dashboard'),
-      user: user,
-      isDark: isDark,
-    ),
-    if (!user.isKidsModeOnly)
-      _PvpArenaHeroCard(
-        key: const ValueKey('pvp_arena_hero_card'),
-        user: user,
-        isDark: isDark,
-      ),
-    // Adult categories with progress headers
-    ...QuestType.values.map((type) {
-      return _GameSection(
-        key: ValueKey('quest_section_${type.name}'),
-        titleKey: 'games.${type.serializedName}.title',
-        subtitleKey: 'games.${type.serializedName}.subtitle',
-        type: type,
-        user: user,
-      );
-    }),
-  ];
-}
-
-// ---------------------------------------------------------------------------
-// Phase 1: Hero Dashboard — total mastery at a glance
-// ---------------------------------------------------------------------------
-
-class _HeroDashboard extends StatelessWidget {
-  final UserEntity user;
-  final bool isDark;
-
-  const _HeroDashboard({super.key, required this.user, required this.isDark});
-
-  @override
-  Widget build(BuildContext context) {
-    // Compute overall stats
-    int totalCleared = 0;
-    int totalGames = 0;
-    for (final type in QuestType.values) {
-      final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
-      totalGames += subtypes.length;
-      for (final s in subtypes) {
-        totalCleared += (user.completedLevels[s.name]?.length ?? 0).clamp(
-          0,
-          200,
-        );
-      }
-    }
-    final totalLevels = totalGames * 200;
-    final progress = totalLevels > 0 ? totalCleared / totalLevels : 0.0;
-    final percent = (progress * 100).toStringAsFixed(1);
-
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
-    final cardBg = isMidnight
-        ? AppColors.midnightSurface
-        : (isDark ? const Color(0xFF131A29) : Colors.white);
-    final borderColor = isMidnight
-        ? Colors.white.withValues(alpha: 0.12)
-        : (isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
-
-    final contentColor = isDark ? Colors.white : AppColors.slate900;
-
-    return Padding(
-      padding: EdgeInsets.fromLTRB(AppSpacing.screen, 16.h, AppSpacing.screen, 8.h),
-      child: Container(
-        padding: EdgeInsets.all(AppSpacing.cardSpacious),
-        decoration: BoxDecoration(
-          color: cardBg,
-          borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(color: borderColor, width: 1.0),
-        ),
-        child: Column(
-          children: [
-            // Top Row: Mastery ring + stats
-            Row(
-              children: [
-                // Circular progress ring
-                SizedBox(
-                  width: 56.r,
-                  height: 56.r,
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      SizedBox(
-                        width: 56.r,
-                        height: 56.r,
-                        child: CircularProgressIndicator(
-                          value: progress.clamp(0.02, 1.0),
-                          backgroundColor: const Color(
-                            0xFF3B82F6,
-                          ).withValues(alpha: 0.1),
-                          valueColor: const AlwaysStoppedAnimation<Color>(
-                            AppColors.blue500,
-                          ),
-                          strokeWidth: 4.r,
-                          strokeCap: StrokeCap.round,
-                        ),
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            '$percent%',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w900,
-                              color: AppColors.blue500,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(width: 16.w),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        context.tr(
-                          'games.core_mastery',
-                          fallback: 'CORE MASTERY',
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 9.sp,
-                          fontWeight: FontWeight.w800,
-                          color: AppColors.blue500,
-                          letterSpacing: 1.5,
-                        ),
-                      ),
-                      SizedBox(height: 4.h),
-                      Text(
-                        context.tr(
-                          'games.levels_cleared',
-                          fallback: '$totalCleared Levels Cleared',
-                          args: [totalCleared.toString()],
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w900,
-                          color: contentColor,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 16.h),
-            // Bottom Row: 3 stat pills
-            Row(
-              children: [
-                _StatPill(
-                  icon: Icons.sports_esports_rounded,
-                  label: context.tr('games.core_games', fallback: 'Core Games'),
-                  value: '$totalGames',
-                  isDark: isDark,
-                ),
-                SizedBox(width: 8.w),
-                _StatPill(
-                  icon: Icons.local_fire_department_rounded,
-                  label: context.tr('games.streak', fallback: 'Streak'),
-                  value: '${user.currentStreak}',
-                  isDark: isDark,
-                  color: AppColors.red500,
-                ),
-                SizedBox(width: 8.w),
-                _StatPill(
-                  icon: Icons.bolt_rounded,
-                  label: context.tr('games.total_xp', fallback: 'XP'),
-                  value: _formatNumber(user.totalExp),
-                  isDark: isDark,
-                  color: AppColors.amber500,
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  static String _formatNumber(int n) {
-    if (n >= 1000000) return '${(n / 1000000).toStringAsFixed(1)}M';
-    if (n >= 1000) return '${(n / 1000).toStringAsFixed(1)}K';
-    return '$n';
-  }
-}
-
-class _StatPill extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final String value;
-  final bool isDark;
-  final Color color;
-
-  const _StatPill({
-    required this.icon,
-    required this.label,
-    required this.value,
-    required this.isDark,
-    this.color = AppColors.blue500,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final isMidnight = isDark &&
-        Theme.of(context).scaffoldBackgroundColor == Colors.black;
-    return Expanded(
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: isMidnight
-              ? const Color(0xFF101726)
-              : (isDark
-                  ? const Color(0xFF1A2234)
-                  : color.withValues(alpha: 0.06)),
-          borderRadius: BorderRadius.circular(14.r),
-          border: Border.all(
-            color: isMidnight
-                ? Colors.white.withValues(alpha: 0.08)
-                : (isDark
-                    ? Colors.white.withValues(alpha: 0.06)
-                    : AppColors.slate100),
-            width: 1.0,
+    bool isMidnight,
+  ) {
+    return Stack(
+      children: [
+        const MeshGradientBackground(showLetters: false),
+        CustomScrollView(
+          controller: di.sl<ScrollController>(instanceName: 'games'),
+          physics: const AlwaysScrollableScrollPhysics(
+            parent: BouncingScrollPhysics(),
           ),
-        ),
-        child: Column(
-          children: [
-            Icon(icon, color: color, size: 16.r),
-            SizedBox(height: 4.h),
-            FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                value,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : AppColors.slate900,
-                ),
+          slivers: [
+            _GamesAppBar(isDark: isDark, user: user, isKids: true),
+            SliverPadding(
+              padding: EdgeInsets.fromLTRB(
+                AppSpacing.screen,
+                16.h,
+                AppSpacing.screen,
+                120.h + MediaQuery.paddingOf(context).bottom,
               ),
-            ),
-            FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                label.toUpperCase(),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 7.sp,
-                  fontWeight: FontWeight.w800,
-                  color: (isDark ? Colors.white : Colors.black).withValues(
-                    alpha: 0.4,
+              sliver: SliverList(
+                delegate: SliverChildListDelegate([
+                  Text(
+                    context.tr(
+                      'games.kids_zone_title',
+                      fallback: 'Kids Learning Zone',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 22.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                    ),
                   ),
-                  letterSpacing: 0.8,
-                ),
+                  SizedBox(height: 4.h),
+                  Text(
+                    context.tr(
+                      'games.kids_zone_subtitle',
+                      fallback: 'Educational games for early learners',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      color: isDark ? Colors.white60 : AppColors.slate600,
+                    ),
+                  ),
+                  SizedBox(height: 18.h),
+                  KidsCategoryShelf(user: user),
+                ]),
               ),
             ),
           ],
         ),
-      ),
+      ],
     );
   }
 }
 
 // ---------------------------------------------------------------------------
-// Glass App Bar — with user context stats
+// 1. Sticky Glass App Bar with Live Coin & Streak Stats
 // ---------------------------------------------------------------------------
 
 class _GamesAppBar extends StatelessWidget {
   final bool isDark;
   final UserEntity user;
+  final bool isKids;
 
-  const _GamesAppBar({required this.isDark, required this.user});
+  const _GamesAppBar({
+    required this.isDark,
+    required this.user,
+    this.isKids = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -391,8 +276,8 @@ class _GamesAppBar extends StatelessWidget {
     final pillBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark
-            ? const Color(0xFF1E293B).withValues(alpha: 0.90)
-            : Colors.white.withValues(alpha: 0.90));
+            ? const Color(0xFF1E293B).withValues(alpha: 0.92)
+            : Colors.white.withValues(alpha: 0.92));
     final pillBorder = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
         : (isDark
@@ -405,432 +290,143 @@ class _GamesAppBar extends StatelessWidget {
       surfaceTintColor: Colors.transparent,
       pinned: true,
       centerTitle: true,
-      expandedHeight: 120.h,
+      expandedHeight: 110.h,
       flexibleSpace: FlexibleSpaceBar(
         collapseMode: CollapseMode.pin,
         centerTitle: true,
         title: FittedBox(
           fit: BoxFit.scaleDown,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-            decoration: BoxDecoration(
-              color: pillBg,
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(
-                color: pillBorder,
-                width: 1.0,
-              ),
-            ),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
+                // Title Pill
                 Container(
-                  padding: EdgeInsets.all(6.r),
+                  padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 7.h),
                   decoration: BoxDecoration(
-                    color: AppColors.blue500.withValues(alpha: 0.15),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    Icons.auto_awesome_mosaic_rounded,
-                    color: AppColors.blue500,
-                    size: 14.r,
-                  ),
-                ),
-                SizedBox(width: 10.w),
-                Text(
-                  context.tr('games.quest_hub', fallback: 'Quest Hub'),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : AppColors.slate900,
-                    letterSpacing: 2.0,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Game category section with progress-aware header
-// ---------------------------------------------------------------------------
-
-class _GameSection extends StatelessWidget {
-  final String titleKey;
-  final String subtitleKey;
-  final QuestType type;
-  final UserEntity user;
-
-  const _GameSection({
-    super.key,
-    required this.titleKey,
-    required this.subtitleKey,
-    required this.type,
-    required this.user,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final color = GameHelper.getCategoryColor(type.name);
-    final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
-
-    // Calculate category progress for the header
-    int gamesStarted = 0;
-    int totalCleared = 0;
-    for (final s in subtypes) {
-      final cleared = user.completedLevels[s.name]?.length ?? 0;
-      if (cleared > 0) gamesStarted++;
-      totalCleared += cleared.clamp(0, 200);
-    }
-    final totalLevels = subtypes.length * 200;
-    final progress = totalLevels > 0 ? totalCleared / totalLevels : 0.0;
-    final isEliteMastery = type == QuestType.eliteMastery;
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(height: 24.h),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
-          child: _GameSectionHeader(
-            titleKey: titleKey,
-            subtitleKey: subtitleKey,
-            fallbackTitle: type == QuestType.eliteMastery
-                ? 'Elite Mastery'
-                : type.name[0].toUpperCase() + type.name.substring(1),
-            fallbackSubtitle: type == QuestType.eliteMastery
-                ? 'Prestige Challenges'
-                : 'Master this skill',
-            color: color,
-            gamesStarted: gamesStarted,
-            totalGames: subtypes.length,
-            progress: progress,
-            isEliteMastery: isEliteMastery,
-            onSeeAll: () => context.push(
-              '${AppRouter.categoryGamesRoute}?category=${type.name}',
-            ),
-          ),
-        ),
-        SizedBox(height: 16.h),
-        CategoryShelf(user: user, subtypes: subtypes),
-      ],
-    );
-  }
-}
-
-class _GameSectionHeader extends StatelessWidget {
-  final String titleKey;
-  final String subtitleKey;
-  final String? fallbackTitle;
-  final String? fallbackSubtitle;
-  final Color color;
-  final VoidCallback? onSeeAll;
-  final int gamesStarted;
-  final int totalGames;
-  final double progress;
-  final bool isEliteMastery;
-
-  const _GameSectionHeader({
-    required this.titleKey,
-    required this.subtitleKey,
-    this.fallbackTitle,
-    this.fallbackSubtitle,
-    required this.color,
-    this.onSeeAll,
-    this.gamesStarted = 0,
-    this.totalGames = 0,
-    this.progress = 0.0,
-    this.isEliteMastery = false,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // Colour-coded indicator bar
-            Container(
-              width: 4.w,
-              height: 36.h,
-              decoration: BoxDecoration(
-                gradient: isEliteMastery
-                    ? const LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [AppColors.gold, _LocalPalette.colorffa000],
-                      )
-                    : null,
-                color: isEliteMastery ? null : color,
-                borderRadius: BorderRadius.circular(2.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.3),
-                    blurRadius: 8,
-                    spreadRadius: 1,
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(width: 12.w),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Flexible(
-                        child: Text(
-                          context
-                              .tr(titleKey, fallback: fallbackTitle)
-                              .toUpperCase(),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w900,
-                            color: isDark ? Colors.white : AppColors.slate900,
-                            letterSpacing: 1.2,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
+                    color: pillBg,
+                    borderRadius: BorderRadius.circular(20.r),
+                    border: Border.all(color: pillBorder, width: 1.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.06),
+                        blurRadius: 12,
+                        offset: const Offset(0, 4),
                       ),
-                      // Elite Mastery gold badge
-                      if (isEliteMastery) ...[
-                        SizedBox(width: 8.w),
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 6.w,
-                            vertical: 2.h,
-                          ),
-                          decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              colors: [
-                                AppColors.gold,
-                                _LocalPalette.colorffa000,
-                              ],
-                            ),
-                            borderRadius: BorderRadius.circular(6.r),
-                          ),
-                          child: Text('👑', style: TextStyle(fontSize: 10.sp)),
-                        ),
-                      ],
                     ],
                   ),
-                  SizedBox(height: 2.h),
-                  Text(
-                    context.tr(subtitleKey, fallback: fallbackSubtitle),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w600,
-                      color: isDark ? Colors.white38 : AppColors.slate500,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            if (onSeeAll != null)
-              ScaleButton(
-                onTap: () {
-                  try {
-                    Haptics.vibrate(HapticsType.light);
-                  } catch (_) {}
-                  onSeeAll!();
-                },
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 12.w,
-                    vertical: 6.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(12.r),
-                    border: Border.all(color: color.withValues(alpha: 0.2)),
-                  ),
-                  child: Text(
-                    context.tr('common.see_all', fallback: 'SEE ALL'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w900,
-                      color: color,
-                      letterSpacing: 1.0,
-                    ),
-                  ),
-                ),
-              ),
-          ],
-        ),
-        // Phase 1: Category progress indicator
-        if (totalGames > 0) ...[
-          SizedBox(height: 10.h),
-          Padding(
-            padding: EdgeInsetsDirectional.only(start: 16.w),
-            child: Row(
-              children: [
-                // Mini progress bar
-                Expanded(
-                  child: Container(
-                    height: 3.h,
-                    decoration: BoxDecoration(
-                      color: color.withValues(alpha: 0.08),
-                      borderRadius: BorderRadius.circular(2.r),
-                    ),
-                    child: FractionallySizedBox(
-                      alignment: AlignmentDirectional.centerStart,
-                      widthFactor: progress.clamp(0.01, 1.0),
-                      child: Container(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(5.r),
                         decoration: BoxDecoration(
-                          color: color.withValues(alpha: 0.6),
-                          borderRadius: BorderRadius.circular(2.r),
+                          color: AppColors.blue500.withValues(alpha: 0.15),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          isKids
+                              ? Icons.child_care_rounded
+                              : Icons.sports_esports_rounded,
+                          color: AppColors.blue500,
+                          size: 14.r,
                         ),
                       ),
+                      SizedBox(width: 8.w),
+                      Text(
+                        isKids
+                            ? context.tr('games.tools_kids_zone', fallback: 'Kids Zone')
+                            : context.tr('games.quest_hub', fallback: 'Quest Hub'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w900,
+                          color: isDark ? Colors.white : AppColors.slate900,
+                          letterSpacing: 1.5,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                SizedBox(width: 8.w),
+
+                // Live Coins Pill (Tap opens Treasury / Quest Coins screen)
+                ScaleButton(
+                  onTap: () {
+                    try {
+                      Haptics.vibrate(HapticsType.light);
+                    } catch (_) {}
+                    context.push(AppRouter.questCoinsRoute);
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 7.h),
+                    decoration: BoxDecoration(
+                      color: pillBg,
+                      borderRadius: BorderRadius.circular(20.r),
+                      border: Border.all(color: pillBorder, width: 1.0),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(LucideIcons.coins, color: AppColors.amber500, size: 14.r),
+                        SizedBox(width: 5.w),
+                        Text(
+                          '${user.coins}',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w900,
+                            color: isDark ? Colors.white : AppColors.slate900,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                SizedBox(width: 10.w),
-                Text(
-                  context.tr(
-                    'games.section_progress',
-                    fallback: '$gamesStarted/$totalGames Started',
-                    args: [gamesStarted.toString(), totalGames.toString()],
-                  ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 9.sp,
-                    fontWeight: FontWeight.w700,
-                    color: (isDark ? Colors.white : Colors.black).withValues(
-                      alpha: 0.3,
+
+                SizedBox(width: 6.w),
+
+                // Live Streak Pill (Tap opens Streak Calendar)
+                ScaleButton(
+                  onTap: () {
+                    try {
+                      Haptics.vibrate(HapticsType.light);
+                    } catch (_) {}
+                    context.push(AppRouter.streakRoute);
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 7.h),
+                    decoration: BoxDecoration(
+                      color: pillBg,
+                      borderRadius: BorderRadius.circular(20.r),
+                      border: Border.all(color: pillBorder, width: 1.0),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.local_fire_department_rounded,
+                          color: AppColors.red500,
+                          size: 15.r,
+                        ),
+                        SizedBox(width: 4.w),
+                        Text(
+                          '${user.currentStreak}',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w900,
+                            color: isDark ? Colors.white : AppColors.slate900,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
               ],
             ),
-          ),
-        ],
-      ],
-    );
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Phase 4: Shimmer loading skeleton for Quest Hub
-// ---------------------------------------------------------------------------
-
-class _QuestHubShimmer extends StatelessWidget {
-  const _QuestHubShimmer();
-
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: SingleChildScrollView(
-        physics: const NeverScrollableScrollPhysics(),
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: AppSpacing.screen,
-            vertical: 24.h,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 60.h),
-              // Hero dashboard shimmer
-              ShimmerLoading.rounded(height: 140.h, borderRadius: 28),
-              SizedBox(height: 32.h),
-              // Section header shimmer
-              Row(
-                children: [
-                  ShimmerLoading.rounded(
-                    width: 4.w,
-                    height: 36.h,
-                    borderRadius: 2,
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ShimmerLoading.rounded(
-                          width: 120.w,
-                          height: 18.h,
-                          borderRadius: 6,
-                        ),
-                        SizedBox(height: 4.h),
-                        ShimmerLoading.rounded(
-                          width: 80.w,
-                          height: 12.h,
-                          borderRadius: 4,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 16.h),
-              // Shelf shimmer
-              SizedBox(
-                height: 215.h,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 3,
-                  itemBuilder: (context, i) => Padding(
-                    padding: EdgeInsets.only(right: 16.w),
-                    child: ShimmerLoading.rounded(
-                      width: 150.w,
-                      height: 215.h,
-                      borderRadius: 30,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 32.h),
-              // Second section shimmer
-              Row(
-                children: [
-                  ShimmerLoading.rounded(
-                    width: 4.w,
-                    height: 36.h,
-                    borderRadius: 2,
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ShimmerLoading.rounded(
-                      width: 140.w,
-                      height: 18.h,
-                      borderRadius: 6,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 16.h),
-              SizedBox(
-                height: 215.h,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 3,
-                  itemBuilder: (context, i) => Padding(
-                    padding: EdgeInsets.only(right: 16.w),
-                    child: ShimmerLoading.rounded(
-                      width: 150.w,
-                      height: 215.h,
-                      borderRadius: 30,
-                    ),
-                  ),
-                ),
-              ),
-            ],
           ),
         ),
       ),
@@ -839,30 +435,372 @@ class _QuestHubShimmer extends StatelessWidget {
 }
 
 // ---------------------------------------------------------------------------
-// 1v1 Staking Arena Hero Card
+// 2. Quick Resume Hero Card (Kills 5-Tap Friction with 1-Tap Play)
 // ---------------------------------------------------------------------------
 
-class _PvpArenaHeroCard extends StatefulWidget {
+class _QuickResumeInfo {
+  final GameSubtype subtype;
+  final String category;
+  final int activeLevel;
+  final int maxLevels;
+  final double progress;
+
+  const _QuickResumeInfo({
+    required this.subtype,
+    required this.category,
+    required this.activeLevel,
+    required this.maxLevels,
+    required this.progress,
+  });
+
+  static _QuickResumeInfo resolve(UserEntity user) {
+    GameSubtype? bestSubtype;
+    int highestCleared = -1;
+
+    // Prioritize an in-progress game (started but not mastered)
+    for (final type in QuestType.values) {
+      for (final s in type.subtypes) {
+        if (s.isLegacy) continue;
+        final cleared = user.completedLevels[s.name]?.length ?? 0;
+        final maxL = CurriculumManifest.getLevels(s.name);
+        if (cleared > 0 && cleared < maxL && cleared > highestCleared) {
+          highestCleared = cleared;
+          bestSubtype = s;
+        }
+      }
+    }
+
+    // Fallback 1: Any started game
+    if (bestSubtype == null) {
+      for (final type in QuestType.values) {
+        for (final s in type.subtypes) {
+          if (s.isLegacy) continue;
+          final cleared = user.completedLevels[s.name]?.length ?? 0;
+          if (cleared > highestCleared) {
+            highestCleared = cleared;
+            bestSubtype = s;
+          }
+        }
+      }
+    }
+
+    // Fallback 2: Default for brand new learners
+    bestSubtype ??= GameSubtype.sentenceBuilder;
+
+    final cleared = user.completedLevels[bestSubtype.name]?.length ?? 0;
+    final maxL = CurriculumManifest.getLevels(bestSubtype.name);
+    final activeLevel = (cleared >= maxL ? maxL : cleared + 1).clamp(
+      1,
+      maxL > 0 ? maxL : 20,
+    );
+    final progress = maxL > 0 ? (cleared / maxL).clamp(0.0, 1.0) : 0.0;
+    final category = GameHelper.getCategoryForSubtype(bestSubtype);
+
+    return _QuickResumeInfo(
+      subtype: bestSubtype,
+      category: category,
+      activeLevel: activeLevel,
+      maxLevels: maxL > 0 ? maxL : 20,
+      progress: progress,
+    );
+  }
+}
+
+class _QuickResumeHeroCard extends StatelessWidget {
   final UserEntity user;
   final bool isDark;
 
-  const _PvpArenaHeroCard({
-    super.key,
-    required this.user,
-    required this.isDark,
-  });
+  const _QuickResumeHeroCard({required this.user, required this.isDark});
 
   @override
-  State<_PvpArenaHeroCard> createState() => _PvpArenaHeroCardState();
+  Widget build(BuildContext context) {
+    final info = _QuickResumeInfo.resolve(user);
+    final metadata = GameHelper.getGameMetadata(info.subtype, isDark: isDark);
+    final color = metadata.color;
+
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+
+    return Padding(
+      padding: EdgeInsets.fromLTRB(AppSpacing.screen, 8.h, AppSpacing.screen, 8.h),
+      child: ScaleButton(
+        onTap: () {
+          try {
+            Haptics.vibrate(HapticsType.light);
+          } catch (_) {}
+          context.push(
+            '${AppRouter.levelsRoute}?category=${Uri.encodeQueryComponent(info.category)}&gameType=${Uri.encodeQueryComponent(info.subtype.name)}',
+          );
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            color: cardBg,
+            borderRadius: BorderRadius.circular(24.r),
+            border: Border.all(color: borderColor, width: 1.0),
+            boxShadow: [
+              BoxShadow(
+                color: color.withValues(alpha: isDark ? 0.15 : 0.06),
+                blurRadius: 18,
+                offset: const Offset(0, 6),
+              ),
+            ],
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(24.r),
+            child: Stack(
+              children: [
+                // Subtle ambient glow behind the top-right circle
+                Positioned(
+                  right: -15.w,
+                  top: -15.h,
+                  child: Container(
+                    width: 110.r,
+                    height: 110.r,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: color.withValues(alpha: isDark ? 0.14 : 0.08),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(AppSpacing.cardSpacious),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Top Row: Info on Left, Resumed Game Icon in Top-Right Circle
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                // QUICK RESUME Tag
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 8.w,
+                                    vertical: 3.5.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: color.withValues(alpha: 0.15),
+                                    borderRadius: BorderRadius.circular(8.r),
+                                  ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(
+                                        LucideIcons.playCircle,
+                                        size: 11.r,
+                                        color: color,
+                                      ),
+                                      SizedBox(width: 4.w),
+                                      Text(
+                                        context.tr(
+                                          'games.quick_resume',
+                                          fallback: 'QUICK RESUME',
+                                        ),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 9.sp,
+                                          fontWeight: FontWeight.w900,
+                                          color: color,
+                                          letterSpacing: 1.0,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(height: 8.h),
+                                // Game Title
+                                Text(
+                                  metadata.title,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 18.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: isDark ? Colors.white : AppColors.slate900,
+                                    letterSpacing: -0.2,
+                                  ),
+                                ),
+                                SizedBox(height: 2.h),
+                                // Category Name
+                                Text(
+                                  metadata.categoryName,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: color,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(width: 12.w),
+                          // Top-right circular design displaying the resumed game icon
+                          Container(
+                            width: 48.r,
+                            height: 48.r,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: color.withValues(alpha: isDark ? 0.22 : 0.12),
+                              border: Border.all(
+                                color: color.withValues(alpha: isDark ? 0.40 : 0.25),
+                                width: 1.5,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: color.withValues(alpha: isDark ? 0.20 : 0.10),
+                                  blurRadius: 10,
+                                  offset: const Offset(0, 3),
+                                ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Icon(
+                                metadata.icon,
+                                color: color,
+                                size: 24.r,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(height: 16.h),
+
+                      // Bottom Row: Level text on top, Progress bar underneath & 1-Tap Play CTA
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                // Progress count placed on top of the progress bar
+                                Text(
+                                  '${context.tr('level_label_short', args: [info.activeLevel.toString()], fallback: 'Level ${info.activeLevel}')} / ${info.maxLevels}',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 11.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: isDark ? Colors.white60 : AppColors.slate500,
+                                  ),
+                                ),
+                                SizedBox(height: 6.h),
+                                // Progress bar underneath the text
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(4.r),
+                                  child: LinearProgressIndicator(
+                                    value: info.progress.clamp(0.04, 1.0),
+                                    minHeight: 6.h,
+                                    backgroundColor: color.withValues(alpha: 0.12),
+                                    valueColor: AlwaysStoppedAnimation<Color>(color),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(width: 16.w),
+                          // 1-Tap Play Button
+                          ScaleButton(
+                            onTap: () {
+                              try {
+                                Haptics.vibrate(HapticsType.medium);
+                              } catch (_) {}
+                              context.push(
+                                '/game?category=${Uri.encodeQueryComponent(info.category)}&gameType=${Uri.encodeQueryComponent(info.subtype.name)}&level=${info.activeLevel}',
+                              );
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 16.w,
+                                vertical: 9.h,
+                              ),
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [color, color.withValues(alpha: 0.85)],
+                                ),
+                                borderRadius: BorderRadius.circular(14.r),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: color.withValues(alpha: 0.35),
+                                    blurRadius: 10,
+                                    offset: const Offset(0, 3),
+                                  ),
+                                ],
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Icons.play_arrow_rounded,
+                                    color: Colors.white,
+                                    size: 16.r,
+                                  ),
+                                  SizedBox(width: 4.w),
+                                  Text(
+                                    context.tr('game.continue_button', fallback: 'PLAY'),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white,
+                                      letterSpacing: 0.8,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
-class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
+// ---------------------------------------------------------------------------
+// 3. 1v1 PvP Staking Arena (Full-Width Flagship Card, Reduced Height)
+// ---------------------------------------------------------------------------
+
+class _PvPArenaCard extends StatefulWidget {
+  final UserEntity user;
+  final bool isDark;
+
+  const _PvPArenaCard({required this.user, required this.isDark});
+
+  @override
+  State<_PvPArenaCard> createState() => _PvPArenaCardState();
+}
+
+class _PvPArenaCardState extends State<_PvPArenaCard> {
   bool _isLoading = false;
 
   void _showRefuelDialog() {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
-    final cardBg = isMidnight ? AppColors.midnightSurface : (isDark ? AppColors.slate800 : Colors.white);
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? AppColors.slate800 : Colors.white);
     final textPrimary = isDark ? Colors.white : AppColors.slate900;
     final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
 
@@ -883,14 +821,18 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
                   color: AppColors.amber500.withValues(alpha: 0.15),
                   shape: BoxShape.circle,
                 ),
-                child: Icon(LucideIcons.coins, color: AppColors.amber500, size: 28.r),
+                child: Icon(
+                  LucideIcons.coins,
+                  color: AppColors.amber500,
+                  size: 28.r,
+                ),
               ),
               SizedBox(height: 14.h),
               Text(
                 'Need 30 Coins for 1v1 Arena?',
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 18.sp,
+                  fontSize: 17.sp,
                   fontWeight: FontWeight.w800,
                   color: textPrimary,
                 ),
@@ -901,11 +843,11 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 13.sp,
+                  fontSize: 12.sp,
                   color: textSecondary,
                 ),
               ),
-              SizedBox(height: 20.h),
+              SizedBox(height: 18.h),
               ElevatedButton.icon(
                 onPressed: () {
                   Navigator.of(dialogCtx).pop();
@@ -916,7 +858,7 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
                   'Watch Video (+30🪙)',
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 14.sp,
+                    fontSize: 13.sp,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -973,7 +915,7 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
             );
           }
         } catch (e) {
-          debugPrint('[_PvpArenaHeroCard] Refuel reward error: $e');
+          debugPrint('[_PvPArenaCard] Refuel reward error: $e');
         }
       },
     );
@@ -997,7 +939,7 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
         Navigator.of(context).push(ArenaDuelScreen.route(session: session));
       }
     } catch (e) {
-      debugPrint('[_PvpArenaHeroCard] Quick match error: $e');
+      debugPrint('[_PvPArenaCard] Quick match error: $e');
       if (mounted) {
         CustomSnackBar.show(
           context: context,
@@ -1008,6 +950,179 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
     } finally {
       if (mounted) setState(() => _isLoading = false);
     }
+  }
+
+  void _showJoinRoomDialog() {
+    if (widget.user.coins < 30) {
+      _showRefuelDialog();
+      return;
+    }
+
+    final controller = TextEditingController();
+    bool isJoining = false;
+
+    showDialog(
+      context: context,
+      builder: (dialogCtx) => StatefulBuilder(
+        builder: (ctx, setDialogState) {
+          final isDark = Theme.of(ctx).brightness == Brightness.dark;
+          final isMidnight = isDark &&
+              Theme.of(ctx).scaffoldBackgroundColor == Colors.black;
+          final cardBg = isMidnight
+              ? AppColors.midnightSurface
+              : (isDark ? AppColors.slate800 : Colors.white);
+          final textPrimary = isDark ? Colors.white : AppColors.slate900;
+          final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
+          final borderCol = isDark ? AppColors.slate700 : AppColors.slate200;
+
+          return Dialog(
+            backgroundColor: cardBg,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.r),
+            ),
+            child: Padding(
+              padding: EdgeInsets.all(AppSpacing.cardSpacious),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(8.r),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        child: Icon(
+                          LucideIcons.swords,
+                          color: const Color(0xFFF59E0B),
+                          size: 18.sp,
+                        ),
+                      ),
+                      SizedBox(width: 10.w),
+                      Text(
+                        'Join 1v1 Arena Duel',
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w800,
+                          color: textPrimary,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 12.h),
+                  Text(
+                    'Enter room code shared by friend (30🪙 stake):',
+                    style: TextStyle(fontSize: 12.sp, color: textSecondary),
+                  ),
+                  SizedBox(height: 14.h),
+                  TextField(
+                    controller: controller,
+                    textCapitalization: TextCapitalization.characters,
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w800,
+                      color: textPrimary,
+                    ),
+                    decoration: InputDecoration(
+                      hintText: 'e.g. VOWL-DUEL-882',
+                      filled: true,
+                      fillColor: isDark
+                          ? const Color(0xFF070A12)
+                          : const Color(0xFFF1F5F9),
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 14.w,
+                        vertical: 12.h,
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.r),
+                        borderSide: BorderSide(color: borderCol),
+                      ),
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          LucideIcons.clipboard,
+                          size: 16.sp,
+                          color: textSecondary,
+                        ),
+                        onPressed: () async {
+                          final clip = await Clipboard.getData(Clipboard.kTextPlain);
+                          if (clip?.text != null) {
+                            controller.text = clip!.text!.trim().toUpperCase();
+                          }
+                        },
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 16.h),
+                  ElevatedButton(
+                    onPressed: isJoining
+                        ? null
+                        : () async {
+                            final code = controller.text.trim().toUpperCase();
+                            if (code.isEmpty) return;
+
+                            setDialogState(() => isJoining = true);
+                            try {
+                              final repo = di.sl<ArenaRepository>();
+                              final session = await repo.joinRoom(
+                                roomCode: code,
+                                currentUser: widget.user,
+                              );
+                              if (dialogCtx.mounted) Navigator.of(dialogCtx).pop();
+                              if (mounted) {
+                                Navigator.of(context).push(
+                                  ArenaDuelScreen.route(session: session),
+                                );
+                              }
+                            } catch (e) {
+                              setDialogState(() => isJoining = false);
+                              if (mounted) {
+                                CustomSnackBar.show(
+                                  context: context,
+                                  message: 'Could not join room: $e',
+                                  type: CustomSnackBarType.error,
+                                );
+                              }
+                            }
+                          },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFF59E0B),
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12.r),
+                      ),
+                    ),
+                    child: isJoining
+                        ? SizedBox(
+                            width: 18.r,
+                            height: 18.r,
+                            child: const CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: Colors.white,
+                            ),
+                          )
+                        : const Text('Enter Duel (30🪙)'),
+                  ),
+                  SizedBox(height: 6.h),
+                  TextButton(
+                    onPressed: () => Navigator.of(dialogCtx).pop(),
+                    child: Text(
+                      'Cancel',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        color: textSecondary,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
+    ).then((_) => controller.dispose());
   }
 
   Future<void> _createDuelInvite() async {
@@ -1034,430 +1149,1539 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
         Navigator.of(context).push(ArenaDuelScreen.route(session: session));
       }
     } catch (e) {
-      debugPrint('[_PvpArenaHeroCard] Create duel invite error: $e');
+      debugPrint('[_PvPArenaCard] Create duel invite error: $e');
     } finally {
       if (mounted) setState(() => _isLoading = false);
     }
   }
 
-  void _showJoinRoomDialog() {
-    if (widget.user.coins < 30) {
-      _showRefuelDialog();
-      return;
-    }
-
-    final controller = TextEditingController();
-    bool isJoining = false;
-
-    showDialog(
-      context: context,
-      builder: (dialogCtx) => StatefulBuilder(
-        builder: (ctx, setDialogState) {
-          final isDark = Theme.of(ctx).brightness == Brightness.dark;
-          final isMidnight = isDark && Theme.of(ctx).scaffoldBackgroundColor == Colors.black;
-          final cardBg = isMidnight ? AppColors.midnightSurface : (isDark ? AppColors.slate800 : Colors.white);
-          final textPrimary = isDark ? Colors.white : AppColors.slate900;
-          final textSecondary = isDark ? AppColors.slate400 : AppColors.slate600;
-          final borderCol = isDark ? AppColors.slate700 : AppColors.slate200;
-
-          return Dialog(
-            backgroundColor: cardBg,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
-            child: Padding(
-              padding: EdgeInsets.all(AppSpacing.cardSpacious),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(8.r),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
-                          borderRadius: BorderRadius.circular(10.r),
-                        ),
-                        child: Icon(LucideIcons.swords, color: const Color(0xFFF59E0B), size: 18.sp),
-                      ),
-                      SizedBox(width: 10.w),
-                      Text(
-                        'Join 1v1 Arena Duel',
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w800,
-                          color: textPrimary,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 12.h),
-                  Text(
-                    'Enter the room code shared by your friend to join the 30-coin duel:',
-                    style: TextStyle(fontSize: 12.sp, color: textSecondary, height: 1.4),
-                  ),
-                  SizedBox(height: 16.h),
-                  TextField(
-                    controller: controller,
-                    textCapitalization: TextCapitalization.characters,
-                    style: TextStyle(
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 1.5,
-                      color: textPrimary,
-                    ),
-                    decoration: InputDecoration(
-                      hintText: 'e.g. VOWL-DUEL-882',
-                      hintStyle: TextStyle(
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 1,
-                        color: textSecondary.withValues(alpha: 0.6),
-                      ),
-                      filled: true,
-                      fillColor: isDark ? const Color(0xFF070A12) : const Color(0xFFF1F5F9),
-                      contentPadding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12.r),
-                        borderSide: BorderSide(color: borderCol),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12.r),
-                        borderSide: BorderSide(color: borderCol),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12.r),
-                        borderSide: const BorderSide(color: AppColors.indigo500, width: 1.5),
-                      ),
-                      suffixIcon: IconButton(
-                        icon: Icon(LucideIcons.clipboard, size: 16.sp, color: textSecondary),
-                        onPressed: () async {
-                          final clip = await Clipboard.getData(Clipboard.kTextPlain);
-                          if (clip?.text != null) {
-                            controller.text = clip!.text!.trim().toUpperCase();
-                          }
-                        },
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 18.h),
-                  ElevatedButton(
-                    onPressed: isJoining
-                        ? null
-                        : () async {
-                            final code = controller.text.trim().toUpperCase();
-                            if (code.isEmpty) return;
-
-                            setDialogState(() => isJoining = true);
-                            try {
-                              final repo = di.sl<ArenaRepository>();
-                              final session = await repo.joinRoom(
-                                roomCode: code,
-                                currentUser: widget.user,
-                              );
-                              if (dialogCtx.mounted) Navigator.of(dialogCtx).pop();
-                              if (mounted) {
-                                Navigator.of(context).push(ArenaDuelScreen.route(session: session));
-                              }
-                            } catch (e) {
-                              setDialogState(() => isJoining = false);
-                              if (mounted) {
-                                CustomSnackBar.show(
-                                  context: context,
-                                  message: 'Could not join room: ${e.toString().replaceAll("Exception: ", "")}',
-                                  type: CustomSnackBarType.error,
-                                );
-                              }
-                            }
-                          },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFF59E0B),
-                      foregroundColor: Colors.white,
-                      padding: EdgeInsets.symmetric(vertical: 12.h),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
-                    ),
-                    child: isJoining
-                        ? SizedBox(
-                            width: 18.r,
-                            height: 18.r,
-                            child: const CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
-                          )
-                        : Text(
-                            'Enter Duel (30🪙)',
-                            style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w800),
-                          ),
-                  ),
-                  SizedBox(height: 6.h),
-                  TextButton(
-                    onPressed: () => Navigator.of(dialogCtx).pop(),
-                    child: Text(
-                      'Cancel',
-                      style: TextStyle(fontSize: 12.sp, color: textSecondary),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    final isMidnight =
-        Theme.of(context).brightness == Brightness.dark &&
+    final isMidnight = widget.isDark &&
         Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
         : (widget.isDark ? const Color(0xFF131A29) : Colors.white);
     final borderColor = isMidnight
         ? Colors.white.withValues(alpha: 0.12)
-        : (widget.isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.slate100);
-    final titleColor = widget.isDark ? Colors.white : AppColors.slate900;
-    final subColor = widget.isDark ? AppColors.slate400 : AppColors.slate600;
+        : (widget.isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
 
     return Padding(
-      padding: EdgeInsets.fromLTRB(
-        AppSpacing.screen,
-        4.h,
-        AppSpacing.screen,
-        12.h,
-      ),
+      padding: EdgeInsets.fromLTRB(AppSpacing.screen, 4.h, AppSpacing.screen, 8.h),
       child: Container(
-        padding: EdgeInsets.all(AppSpacing.cardSpacious),
+        padding: EdgeInsets.all(14.r),
         decoration: BoxDecoration(
           color: cardBg,
-          borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(color: borderColor, width: 1.r),
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: AppColors.amber500.withValues(alpha: 0.35),
+            width: 1.0,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.amber500.withValues(alpha: widget.isDark ? 0.12 : 0.05),
+              blurRadius: 14,
+              offset: const Offset(0, 4),
+            ),
+          ],
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(10.r),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20.r),
+          child: Stack(
+            children: [
+              Positioned(
+                right: -10.w,
+                top: -10.h,
+                child: Container(
+                  width: 80.r,
+                  height: 80.r,
                   decoration: BoxDecoration(
-                    color: AppColors.amber500.withValues(alpha: 0.14),
-                    borderRadius: BorderRadius.circular(14.r),
-                  ),
-                  child: Icon(
-                    LucideIcons.swords,
-                    color: AppColors.amber500,
-                    size: 20.r,
+                    shape: BoxShape.circle,
+                    color: AppColors.amber500.withValues(alpha: widget.isDark ? 0.08 : 0.05),
                   ),
                 ),
-                SizedBox(width: 12.w),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Top Row: Swords Icon + Title & Badges + Full Subtitle
+                  Row(
                     children: [
-                      Row(
-                        children: [
-                          Flexible(
-                            child: Text(
-                              '1v1 Staking Arena',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w700,
-                                color: titleColor,
-                              ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
+                      Container(
+                        width: 44.r,
+                        height: 44.r,
+                        decoration: BoxDecoration(
+                          color: AppColors.amber500.withValues(alpha: 0.15),
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: AppColors.amber500.withValues(alpha: 0.3),
+                            width: 1.0,
                           ),
-                          SizedBox(width: 6.w),
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 6.w,
-                              vertical: 2.h,
-                            ),
-                            decoration: BoxDecoration(
-                              color: AppColors.amber500.withValues(alpha: 0.15),
-                              borderRadius: BorderRadius.circular(6.r),
-                            ),
-                            child: Text(
-                              'LIVE',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 9.sp,
-                                fontWeight: FontWeight.w900,
-                                color: AppColors.amber500,
-                                letterSpacing: 0.6,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 2.h),
-                      Text(
-                        'Stake 30🪙 · 3s match · Winner takes 50🪙',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          color: subColor,
-                          fontWeight: FontWeight.w500,
                         ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
+                        child: Center(
+                          child: Icon(
+                            LucideIcons.swords,
+                            color: AppColors.amber500,
+                            size: 22.r,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 12.w),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Wrap(
+                              crossAxisAlignment: WrapCrossAlignment.center,
+                              spacing: 6.w,
+                              runSpacing: 4.h,
+                              children: [
+                                Text(
+                                  '1v1 PvP Duel',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 15.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: widget.isDark ? Colors.white : AppColors.slate900,
+                                  ),
+                                ),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 7.w,
+                                    vertical: 2.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.amber500.withValues(alpha: 0.15),
+                                    borderRadius: BorderRadius.circular(6.r),
+                                  ),
+                                  child: Text(
+                                    'WIN 50🪙 + 5 XP',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 9.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: AppColors.amber500,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 3.h),
+                            Text(
+                              'Stake 30🪙 to enter • Real-time live battle vs rivals',
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w500,
+                                color: widget.isDark ? Colors.white70 : AppColors.slate600,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
-                ),
-              ],
-            ),
-            SizedBox(height: 14.h),
-            ScaleButton(
-              onTap: _isLoading ? null : _startQuickMatch,
-              child: Container(
-                width: double.infinity,
-                height: 42.h,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: AppColors.amber500,
-                  borderRadius: BorderRadius.circular(12.r),
-                ),
-                child: _isLoading
-                    ? SizedBox(
-                        width: 18.r,
-                        height: 18.r,
-                        child: const CircularProgressIndicator(
-                          strokeWidth: 2,
-                          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                        ),
-                      )
-                    : FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8.w),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                LucideIcons.zap,
-                                color: Colors.white,
-                                size: 14.sp,
+
+                  SizedBox(height: 12.h),
+
+                  // Bottom Row: 3 Action Buttons Placed Underneath for Maximum Comfort
+                  Row(
+                    children: [
+                      // 1. Primary Quick Match Battle CTA
+                      Expanded(
+                        flex: 5,
+                        child: ScaleButton(
+                          onTap: _isLoading ? null : _startQuickMatch,
+                          child: Container(
+                            height: 36.h,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
                               ),
-                              SizedBox(width: 6.w),
-                              Text(
-                                'Quick Duel (30🪙)',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 13.sp,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white,
+                              borderRadius: BorderRadius.circular(10.r),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: AppColors.amber500.withValues(alpha: 0.35),
+                                  blurRadius: 8,
+                                  offset: const Offset(0, 2),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
+                            child: _isLoading
+                                ? SizedBox(
+                                    width: 14.r,
+                                    height: 14.r,
+                                    child: const CircularProgressIndicator(
+                                      strokeWidth: 2,
+                                      color: Colors.white,
+                                    ),
+                                  )
+                                : FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(horizontal: 6.w),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Icon(
+                                            LucideIcons.swords,
+                                            size: 14.r,
+                                            color: Colors.white,
+                                          ),
+                                          SizedBox(width: 5.w),
+                                          Text(
+                                            'BATTLE (30🪙)',
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 11.sp,
+                                              fontWeight: FontWeight.w900,
+                                              color: Colors.white,
+                                              letterSpacing: 0.5,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
                           ),
                         ),
                       ),
+                      SizedBox(width: 8.w),
+                      // 2. Join Code Button
+                      Expanded(
+                        flex: 4,
+                        child: ScaleButton(
+                          onTap: _showJoinRoomDialog,
+                          child: Container(
+                            height: 36.h,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: widget.isDark
+                                  ? Colors.white.withValues(alpha: 0.08)
+                                  : AppColors.slate100,
+                              borderRadius: BorderRadius.circular(10.r),
+                              border: Border.all(color: borderColor),
+                            ),
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 6.w),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      LucideIcons.keyRound,
+                                      size: 13.r,
+                                      color: widget.isDark ? Colors.white : AppColors.slate800,
+                                    ),
+                                    SizedBox(width: 4.w),
+                                    Text(
+                                      'JOIN CODE',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 11.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: widget.isDark ? Colors.white : AppColors.slate800,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      // 3. Invite Friend Button
+                      Expanded(
+                        flex: 3,
+                        child: ScaleButton(
+                          onTap: _isLoading ? null : _createDuelInvite,
+                          child: Container(
+                            height: 36.h,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: widget.isDark
+                                  ? Colors.white.withValues(alpha: 0.08)
+                                  : AppColors.slate100,
+                              borderRadius: BorderRadius.circular(10.r),
+                              border: Border.all(color: borderColor),
+                            ),
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 6.w),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      LucideIcons.userPlus,
+                                      size: 13.r,
+                                      color: widget.isDark ? Colors.white : AppColors.slate800,
+                                    ),
+                                    SizedBox(width: 4.w),
+                                    Text(
+                                      'INVITE',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 11.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: widget.isDark ? Colors.white : AppColors.slate800,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 4. Quick Speed Drills: Word Snap & Word Mixer (Dual Card Row)
+// ---------------------------------------------------------------------------
+
+class _QuickDrillsRow extends StatelessWidget {
+  final bool isDark;
+
+  const _QuickDrillsRow({required this.isDark});
+
+  @override
+  Widget build(BuildContext context) {
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+
+    return Padding(
+      padding: EdgeInsets.fromLTRB(AppSpacing.screen, 0, AppSpacing.screen, 8.h),
+      child: Row(
+        children: [
+          // Left Card: Word Snap
+          Expanded(
+            child: ScaleButton(
+              onTap: () {
+                try {
+                  Haptics.vibrate(HapticsType.light);
+                } catch (_) {}
+                context.push(AppRouter.wordSnapRoute);
+              },
+              child: Container(
+                padding: EdgeInsets.all(12.r),
+                decoration: BoxDecoration(
+                  color: cardBg,
+                  borderRadius: BorderRadius.circular(18.r),
+                  border: Border.all(
+                    color: AppColors.rose500.withValues(alpha: 0.28),
+                    width: 1.0,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.rose500.withValues(alpha: isDark ? 0.08 : 0.04),
+                      blurRadius: 10,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(6.r),
+                          decoration: BoxDecoration(
+                            color: AppColors.rose500.withValues(alpha: 0.15),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            LucideIcons.zap,
+                            color: AppColors.rose500,
+                            size: 14.r,
+                          ),
+                        ),
+                        SizedBox(width: 4.w),
+                        Flexible(
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 5.w,
+                              vertical: 2.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: AppColors.rose500.withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(6.r),
+                            ),
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                'WIN 10🪙 + 5 XP',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 8.5.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: AppColors.rose500,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10.h),
+                    Text(
+                      'Word Snap',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w900,
+                        color: isDark ? Colors.white : AppColors.slate900,
+                      ),
+                    ),
+                    SizedBox(height: 2.h),
+                    Text(
+                      '60s Daily Blitz',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        color: isDark ? Colors.white60 : AppColors.slate500,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-            SizedBox(height: 8.h),
-            Row(
-              children: [
-                Expanded(
-                  child: ScaleButton(
-                    onTap: _isLoading ? null : _showJoinRoomDialog,
-                    child: Container(
-                      height: 38.h,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: widget.isDark
-                            ? Colors.white.withValues(alpha: 0.08)
-                            : AppColors.slate100,
-                        borderRadius: BorderRadius.circular(12.r),
-                        border: Border.all(
-                          color: borderColor,
-                          width: 1.r,
+          ),
+
+          SizedBox(width: 10.w),
+
+          // Right Card: Word Mixer
+          Expanded(
+            child: ScaleButton(
+              onTap: () {
+                try {
+                  Haptics.vibrate(HapticsType.light);
+                } catch (_) {}
+                context.push(AppRouter.wordMixerRoute);
+              },
+              child: Container(
+                padding: EdgeInsets.all(12.r),
+                decoration: BoxDecoration(
+                  color: cardBg,
+                  borderRadius: BorderRadius.circular(18.r),
+                  border: Border.all(
+                    color: AppColors.violet500.withValues(alpha: 0.28),
+                    width: 1.0,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.violet500.withValues(alpha: isDark ? 0.08 : 0.04),
+                      blurRadius: 10,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(6.r),
+                          decoration: BoxDecoration(
+                            color: AppColors.violet500.withValues(alpha: 0.15),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            LucideIcons.shuffle,
+                            color: AppColors.violet500,
+                            size: 14.r,
+                          ),
                         ),
-                      ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8.w),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                LucideIcons.keyRound,
-                                color: titleColor,
-                                size: 13.sp,
-                              ),
-                              SizedBox(width: 5.w),
-                              Text(
-                                'Join Code',
+                        SizedBox(width: 4.w),
+                        Flexible(
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 5.w,
+                              vertical: 2.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: AppColors.violet500.withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(6.r),
+                            ),
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                'WIN 10🪙 + 5 XP',
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 12.sp,
+                                  fontSize: 8.5.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: AppColors.violet500,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10.h),
+                    Text(
+                      'Word Mixer',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w900,
+                        color: isDark ? Colors.white : AppColors.slate900,
+                      ),
+                    ),
+                    SizedBox(height: 2.h),
+                    Text(
+                      'Anagram Puzzle',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        color: isDark ? Colors.white60 : AppColors.slate500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 5. Curriculum Mastery Card (Replaces the Demoralizing 0.1% Bar)
+// ---------------------------------------------------------------------------
+
+class _CurriculumMasteryCard extends StatelessWidget {
+  final UserEntity user;
+  final bool isDark;
+
+  const _CurriculumMasteryCard({required this.user, required this.isDark});
+
+  @override
+  Widget build(BuildContext context) {
+    // Calculate total levels cleared across all non-legacy syllabus games
+    int totalCleared = user.totalLevelsCompleted;
+    if (totalCleared == 0) {
+      for (final type in QuestType.values) {
+        for (final s in type.subtypes) {
+          if (s.isLegacy) continue;
+          totalCleared += (user.completedLevels[s.name]?.length ?? 0);
+        }
+      }
+    }
+
+    // Determine current authentic Vowl mastery tier
+    final String tierName;
+    final String badgeEmoji;
+    final Color tierColor;
+    final int tierMin;
+    final int tierMax;
+    final String nextTierName;
+    final String nextTierEmoji;
+
+    if (totalCleared < 25) {
+      tierName = context.tr('adventure.tier_beginner', fallback: 'Beginner');
+      badgeEmoji = '🥉';
+      tierColor = AppColors.amber500;
+      tierMin = 0;
+      tierMax = 25;
+      nextTierName = context.tr('adventure.tier_novice', fallback: 'Novice');
+      nextTierEmoji = '🥈';
+    } else if (totalCleared < 75) {
+      tierName = context.tr('adventure.tier_novice', fallback: 'Novice');
+      badgeEmoji = '🥈';
+      tierColor = _LocalPalette.colorc0c0c0;
+      tierMin = 25;
+      tierMax = 75;
+      nextTierName = context.tr('adventure.tier_adept', fallback: 'Adept');
+      nextTierEmoji = '🥇';
+    } else if (totalCleared < 150) {
+      tierName = context.tr('adventure.tier_adept', fallback: 'Adept');
+      badgeEmoji = '🥇';
+      tierColor = AppColors.gold;
+      tierMin = 75;
+      tierMax = 150;
+      nextTierName = context.tr('adventure.tier_expert', fallback: 'Expert');
+      nextTierEmoji = '💎';
+    } else if (totalCleared < 300) {
+      tierName = context.tr('adventure.tier_expert', fallback: 'Expert');
+      badgeEmoji = '💎';
+      tierColor = const Color(0xFF38BDF8);
+      tierMin = 150;
+      tierMax = 300;
+      nextTierName = context.tr('adventure.tier_master', fallback: 'Master');
+      nextTierEmoji = '👑';
+    } else {
+      tierName = context.tr('adventure.tier_master', fallback: 'Master');
+      badgeEmoji = '👑';
+      tierColor = const Color(0xFFA855F7);
+      tierMin = 300;
+      tierMax = 500;
+      nextTierName = '';
+      nextTierEmoji = '';
+    }
+
+    final levelsInTier = (totalCleared - tierMin).clamp(0, tierMax - tierMin);
+    final tierSpan = tierMax - tierMin;
+    final progress = tierSpan > 0 ? (levelsInTier / tierSpan).clamp(0.04, 1.0) : 1.0;
+    final toNext = tierMax - totalCleared;
+
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+
+    return Padding(
+      padding: EdgeInsets.fromLTRB(AppSpacing.screen, 4.h, AppSpacing.screen, 8.h),
+      child: ScaleButton(
+        onTap: () {
+          Haptics.vibrate(HapticsType.light);
+          context.push(AppRouter.trophyRoomRoute);
+        },
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+          decoration: BoxDecoration(
+            color: cardBg,
+            borderRadius: BorderRadius.circular(18.r),
+            border: Border.all(color: borderColor, width: 1.0),
+          ),
+          child: Row(
+            children: [
+              Container(
+                width: 38.r,
+                height: 38.r,
+                decoration: BoxDecoration(
+                  color: tierColor.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(12.r),
+                ),
+                alignment: Alignment.center,
+                child: Text(badgeEmoji, style: TextStyle(fontSize: 18.sp)),
+              ),
+              SizedBox(width: 12.w),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Flexible(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  '$tierName Tier',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: isDark ? Colors.white : AppColors.slate900,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 4.w),
+                              Text(
+                                '($totalCleared lvls)',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: titleColor,
+                                  color: isDark ? Colors.white54 : AppColors.slate500,
                                 ),
                               ),
                             ],
                           ),
                         ),
+                        SizedBox(width: 8.w),
+                        Flexible(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Flexible(
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  alignment: Alignment.centerRight,
+                                  child: Text(
+                                    toNext > 0
+                                        ? '$toNext to $nextTierName $nextTierEmoji'
+                                        : 'Mastered! 👑',
+                                    maxLines: 1,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: tierColor,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 2.w),
+                              Icon(
+                                Icons.chevron_right_rounded,
+                                size: 14.r,
+                                color: tierColor,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 6.h),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(3.r),
+                      child: LinearProgressIndicator(
+                        value: progress,
+                        minHeight: 5.h,
+                        backgroundColor: tierColor.withValues(alpha: 0.15),
+                        valueColor: AlwaysStoppedAnimation<Color>(tierColor),
                       ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 6. Category Filter Dock & Inline Search Bar
+// ---------------------------------------------------------------------------
+
+class _CategoryFilterDock extends StatelessWidget {
+  final QuestType? selectedCategory;
+  final TextEditingController searchController;
+  final String searchQuery;
+  final bool isDark;
+  final ValueChanged<QuestType?> onCategorySelected;
+  final ValueChanged<String> onSearchChanged;
+
+  const _CategoryFilterDock({
+    required this.selectedCategory,
+    required this.searchController,
+    required this.searchQuery,
+    required this.isDark,
+    required this.onCategorySelected,
+    required this.onSearchChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final categories = QuestType.values;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+
+    return Padding(
+      padding: EdgeInsets.only(top: 8.h, bottom: 0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Section Title & Search Field with optional Category Deep Dive
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                  child: Text(
+                    selectedCategory != null
+                        ? context.tr(
+                            'games.${selectedCategory!.serializedName}.title',
+                            fallback: selectedCategory!.name.toUpperCase(),
+                          ).toUpperCase()
+                        : context.tr('games.title', fallback: 'QUEST ARCHIVE'),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1.2,
+                      color: isDark ? Colors.white70 : AppColors.slate700,
                     ),
                   ),
                 ),
                 SizedBox(width: 8.w),
-                Expanded(
-                  child: ScaleButton(
-                    onTap: _isLoading ? null : _createDuelInvite,
+                if (selectedCategory != null)
+                  ScaleButton(
+                    onTap: () {
+                      try {
+                        Haptics.vibrate(HapticsType.light);
+                      } catch (_) {}
+                      context.push(
+                        '${AppRouter.categoryGamesRoute}?category=${selectedCategory!.name}',
+                      );
+                    },
                     child: Container(
-                      height: 38.h,
-                      alignment: Alignment.center,
+                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
                       decoration: BoxDecoration(
-                        color: widget.isDark
-                            ? Colors.white.withValues(alpha: 0.08)
-                            : AppColors.slate100,
-                        borderRadius: BorderRadius.circular(12.r),
+                        color: GameHelper.getCategoryColor(selectedCategory!.name)
+                            .withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(10.r),
                         border: Border.all(
-                          color: borderColor,
-                          width: 1.r,
+                          color: GameHelper.getCategoryColor(selectedCategory!.name)
+                              .withValues(alpha: 0.3),
                         ),
                       ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8.w),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                LucideIcons.userPlus,
-                                color: titleColor,
-                                size: 13.sp,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            context.tr('common.see_all', fallback: 'DEEP DIVE'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w900,
+                              color: GameHelper.getCategoryColor(
+                                selectedCategory!.name,
                               ),
-                              SizedBox(width: 5.w),
-                              Text(
-                                'Invite Friend',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: titleColor,
-                                ),
-                              ),
-                            ],
+                              letterSpacing: 0.8,
+                            ),
                           ),
-                        ),
+                          SizedBox(width: 3.w),
+                          Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            size: 9.r,
+                            color: GameHelper.getCategoryColor(
+                              selectedCategory!.name,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
+                  )
+                else
+                  // 100+ Games Flagship Counter Badge (1-Tap Navigates to Quest Archive Screen)
+                  ScaleButton(
+                    onTap: () {
+                      try {
+                        Haptics.vibrate(HapticsType.light);
+                      } catch (_) {}
+                      context.push(AppRouter.libraryRoute);
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                      decoration: BoxDecoration(
+                        color: AppColors.blue500.withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(10.r),
+                        border: Border.all(
+                          color: AppColors.blue500.withValues(alpha: 0.28),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.sports_esports_rounded,
+                            size: 13.r,
+                            color: AppColors.blue500,
+                          ),
+                          SizedBox(width: 5.w),
+                          Text(
+                            '100+ Games',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w900,
+                              color: AppColors.blue500,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                          SizedBox(width: 3.w),
+                          Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            size: 8.r,
+                            color: AppColors.blue500,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+
+          SizedBox(height: 10.h),
+
+          // Quick Search Input - Clean, World-Class Standard Native Field
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+            child: TextField(
+              controller: searchController,
+              onChanged: onSearchChanged,
+              textInputAction: TextInputAction.search,
+              onSubmitted: (_) => FocusScope.of(context).unfocus(),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w600,
+                color: isDark ? Colors.white : AppColors.slate900,
+              ),
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: isMidnight
+                    ? AppColors.midnightSurface
+                    : (isDark ? const Color(0xFF161F33) : Colors.white),
+                hintText: context.tr(
+                  'category_games.search_hint',
+                  fallback: 'Search 100+ games, topics & skills...',
+                ),
+                hintStyle: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w500,
+                  color: isDark ? Colors.white38 : AppColors.slate400,
+                ),
+                prefixIcon: Icon(
+                  LucideIcons.search,
+                  size: 18.r,
+                  color: isDark ? Colors.white38 : AppColors.slate400,
+                ),
+                suffixIcon: searchQuery.isNotEmpty
+                    ? IconButton(
+                        icon: Icon(
+                          Icons.close_rounded,
+                          size: 18.r,
+                          color: isDark ? Colors.white60 : AppColors.slate600,
+                        ),
+                        splashRadius: 18.r,
+                        onPressed: () {
+                          searchController.clear();
+                          onSearchChanged('');
+                        },
+                      )
+                    : null,
+                contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16.r),
+                  borderSide: BorderSide(
+                    color: isMidnight
+                        ? Colors.white.withValues(alpha: 0.12)
+                        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200),
+                    width: 1.0,
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16.r),
+                  borderSide: const BorderSide(
+                    color: AppColors.blue500,
+                    width: 1.5,
+                  ),
+                ),
+              ),
+            ),
+          ),
+
+          SizedBox(height: 8.h),
+
+          // Horizontal Category Tab Pills - Full Bleed Edge-to-Edge Scroll
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+            child: Row(
+              children: [
+                // "All" Pill (100 games across all 9 categories)
+                _FilterPill(
+                  label: context.tr(
+                    'categories.all',
+                    fallback: 'All (${GameSubtype.values.length})',
+                  ),
+                  icon: Icons.auto_awesome_mosaic_rounded,
+                  isSelected: selectedCategory == null,
+                  color: AppColors.blue500,
+                  isDark: isDark,
+                  onTap: () => onCategorySelected(null),
+                ),
+                SizedBox(width: 8.w),
+                // Category Pills
+                ...categories.map((type) {
+                  final isSelected = selectedCategory == type;
+                  final color = GameHelper.getCategoryColor(type.name);
+                  final icon = GameHelper.getIconForCategory(type);
+                  final title = context.tr(
+                    'games.${type.serializedName}.title',
+                    fallback: type.name[0].toUpperCase() + type.name.substring(1),
+                  );
+
+                  return Padding(
+                    padding: EdgeInsets.only(right: 8.w),
+                    child: _FilterPill(
+                      label: title,
+                      icon: icon,
+                      isSelected: isSelected,
+                      color: color,
+                      isDark: isDark,
+                      onTap: () => onCategorySelected(type),
+                    ),
+                  );
+                }),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _FilterPill extends StatelessWidget {
+  final String label;
+  final IconData icon;
+  final bool isSelected;
+  final Color color;
+  final bool isDark;
+  final VoidCallback onTap;
+
+  const _FilterPill({
+    required this.label,
+    required this.icon,
+    required this.isSelected,
+    required this.color,
+    required this.isDark,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+
+    final pillBg = isSelected
+        ? color
+        : (isMidnight
+            ? AppColors.midnightSurface
+            : (isDark ? const Color(0xFF161F33) : Colors.white));
+    final pillBorder = isSelected
+        ? color
+        : (isMidnight
+            ? Colors.white.withValues(alpha: 0.12)
+            : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate200));
+
+    return Builder(
+      builder: (pillCtx) {
+        return ScaleButton(
+          onTap: () {
+            Scrollable.ensureVisible(
+              pillCtx,
+              alignment: 0.5,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOutCubic,
+            );
+            onTap();
+          },
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            curve: Curves.easeOutCubic,
+            padding: EdgeInsets.symmetric(
+              horizontal: isSelected ? 12.w : 10.w,
+              vertical: 7.h,
+            ),
+            decoration: BoxDecoration(
+              color: pillBg,
+              borderRadius: BorderRadius.circular(14.r),
+              border: Border.all(color: pillBorder, width: 1.0),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  icon,
+                  size: 13.r,
+                  color: isSelected
+                      ? Colors.white
+                      : (isDark ? Colors.white70 : AppColors.slate700),
+                ),
+                SizedBox(width: 5.w),
+                Text(
+                  label,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    fontWeight: isSelected ? FontWeight.w900 : FontWeight.w700,
+                    color: isSelected
+                        ? Colors.white
+                        : (isDark ? Colors.white70 : AppColors.slate800),
                   ),
                 ),
               ],
             ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 7. Responsive 2-Column Quest Cards Grid (With 1-Tap Play & Map Fallback)
+// ---------------------------------------------------------------------------
+
+class _QuestCardsGrid extends StatelessWidget {
+  final UserEntity user;
+  final bool isDark;
+  final QuestType? selectedCategory;
+  final String searchQuery;
+
+  const _QuestCardsGrid({
+    required this.user,
+    required this.isDark,
+    required this.selectedCategory,
+    required this.searchQuery,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    // Gather matching subtypes
+    final List<GameSubtype> filtered = [];
+
+    final categoriesToScan = selectedCategory != null
+        ? [selectedCategory!]
+        : QuestType.values;
+
+    for (final type in categoriesToScan) {
+      for (final s in type.subtypes) {
+        if (s.isLegacy) continue;
+
+        if (searchQuery.isNotEmpty) {
+          final metadata = GameHelper.getGameMetadata(s, isDark: isDark);
+          final matchesTitle = metadata.title.toLowerCase().contains(searchQuery);
+          final matchesCat = metadata.categoryName.toLowerCase().contains(searchQuery);
+          final matchesName = s.name.toLowerCase().contains(searchQuery);
+          if (!matchesTitle && !matchesCat && !matchesName) continue;
+        }
+
+        filtered.add(s);
+      }
+    }
+
+    if (filtered.isEmpty) {
+      final categoryLabel = selectedCategory != null
+          ? GameHelper.getCategoryForSubtype(selectedCategory!.subtypes.first).toUpperCase()
+          : null;
+      return Padding(
+        padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 32.h),
+        child: Center(
+          child: Column(
+            children: [
+              Icon(
+                LucideIcons.searchX,
+                size: 36.r,
+                color: isDark ? Colors.white30 : AppColors.slate300,
+              ),
+              SizedBox(height: 8.h),
+              Text(
+                categoryLabel != null
+                    ? 'No quests found in $categoryLabel for "$searchQuery"'
+                    : 'No quests found for "$searchQuery"',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w700,
+                  color: isDark ? Colors.white60 : AppColors.slate500,
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+      child: MediaQuery.withClampedTextScaling(
+        minScaleFactor: 1.0,
+        maxScaleFactor: 1.3,
+        child: GridView.builder(
+          padding: EdgeInsets.only(top: 8.h, bottom: 16.h),
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 10.w,
+            mainAxisSpacing: 10.h,
+            childAspectRatio: 0.88,
+          ),
+          itemCount: filtered.length,
+          itemBuilder: (context, index) {
+            final subtype = filtered[index];
+            return _QuestGridCard(subtype: subtype, user: user, isDark: isDark);
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class _QuestGridCard extends StatelessWidget {
+  final GameSubtype subtype;
+  final UserEntity user;
+  final bool isDark;
+
+  const _QuestGridCard({
+    required this.subtype,
+    required this.user,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final metadata = GameHelper.getGameMetadata(subtype, isDark: isDark);
+    final displayColor = metadata.color;
+    final category = GameHelper.getCategoryForSubtype(subtype);
+
+    final maxLevels = CurriculumManifest.getLevels(subtype.name);
+    final levelsCleared = (user.completedLevels[subtype.name]?.length ?? 0)
+        .clamp(0, maxLevels);
+    final isMastered = levelsCleared >= maxLevels;
+    final currentLevel = isMastered ? maxLevels : levelsCleared + 1;
+    final isNew = levelsCleared == 0 &&
+        !user.categoryStats.containsKey(subtype.name);
+
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? const Color(0xFF131A29) : Colors.white);
+    final borderColor = isMidnight
+        ? Colors.white.withValues(alpha: 0.12)
+        : (isDark ? Colors.white.withValues(alpha: 0.08) : AppColors.slate100);
+
+    return ScaleButton(
+      // Tapping card body opens level roadmap
+      onTap: () {
+        context.push(
+          '${AppRouter.levelsRoute}?category=${Uri.encodeQueryComponent(category)}&gameType=${Uri.encodeQueryComponent(subtype.name)}',
+        );
+      },
+      child: Container(
+        padding: EdgeInsets.all(12.r),
+        decoration: BoxDecoration(
+          color: cardBg,
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(color: borderColor, width: 1.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
+              blurRadius: 8,
+              offset: const Offset(0, 3),
+            ),
           ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // Top row: Icon + Level Badge
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(8.r),
+                  decoration: BoxDecoration(
+                    color: displayColor.withValues(alpha: 0.12),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(metadata.icon, color: displayColor, size: 18.r),
+                ),
+                _buildCardBadge(
+                  context,
+                  isNew,
+                  isMastered,
+                  currentLevel,
+                  levelsCleared,
+                  displayColor,
+                ),
+              ],
+            ),
+
+            // Middle: Title & Category
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  metadata.title,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isDark ? Colors.white : AppColors.slate900,
+                    height: 1.15,
+                  ),
+                ),
+                SizedBox(height: 3.h),
+                Text(
+                  metadata.categoryName,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 8.sp,
+                    fontWeight: FontWeight.w800,
+                    color: displayColor,
+                    letterSpacing: 0.8,
+                  ),
+                ),
+              ],
+            ),
+
+            // Bottom CTA: Direct Play Button (1-Tap Entry!)
+            ScaleButton(
+              onTap: () {
+                try {
+                  Haptics.vibrate(HapticsType.light);
+                } catch (_) {}
+                context.push(
+                  '/game?category=${Uri.encodeQueryComponent(category)}&gameType=${Uri.encodeQueryComponent(subtype.name)}&level=$currentLevel',
+                );
+              },
+              child: Container(
+                width: double.infinity,
+                height: 28.h,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: displayColor.withValues(alpha: isDark ? 0.2 : 0.12),
+                  borderRadius: BorderRadius.circular(8.r),
+                  border: Border.all(
+                    color: displayColor.withValues(alpha: 0.3),
+                    width: 1.0,
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.play_arrow_rounded,
+                      color: displayColor,
+                      size: 14.r,
+                    ),
+                    SizedBox(width: 3.w),
+                    Text(
+                      'PLAY',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w900,
+                        color: displayColor,
+                        letterSpacing: 0.8,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCardBadge(
+    BuildContext context,
+    bool isNew,
+    bool isMastered,
+    int currentLevel,
+    int levelsCleared,
+    Color color,
+  ) {
+    if (isNew) {
+      return Container(
+        padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.15),
+          borderRadius: BorderRadius.circular(6.r),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
+        ),
+        child: Text(
+          'NEW',
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 8.sp,
+            fontWeight: FontWeight.w900,
+            color: color,
+          ),
+        ),
+      );
+    }
+
+    if (isMastered) {
+      return Container(
+        padding: EdgeInsets.all(3.r),
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [IllustrationColors.premiumGold, _LocalPalette.colorffa000],
+          ),
+          shape: BoxShape.circle,
+        ),
+        child: Icon(Icons.check_rounded, color: Colors.white, size: 12.r),
+      );
+    }
+
+    // Tier color ring
+    Color ringColor = color;
+    if (levelsCleared >= 100) {
+      ringColor = IllustrationColors.premiumGold;
+    } else if (levelsCleared >= 50) {
+      ringColor = _LocalPalette.colorc0c0c0;
+    } else if (levelsCleared >= 25) {
+      ringColor = _LocalPalette.colorcd7f32;
+    }
+
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+      decoration: BoxDecoration(
+        color: ringColor.withValues(alpha: 0.12),
+        borderRadius: BorderRadius.circular(6.r),
+        border: Border.all(color: ringColor.withValues(alpha: 0.3)),
+      ),
+      child: Text(
+        'LVL $currentLevel',
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 9.sp,
+          fontWeight: FontWeight.w900,
+          color: ringColor,
+        ),
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 8. Shimmer Loading Skeleton Matching the New 10/10 Layout
+// ---------------------------------------------------------------------------
+
+class _QuestHubShimmer extends StatelessWidget {
+  const _QuestHubShimmer();
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: SingleChildScrollView(
+        physics: const NeverScrollableScrollPhysics(),
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSpacing.screen,
+            vertical: 20.h,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Top Bar Shimmer
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ShimmerLoading.rounded(width: 130.w, height: 36.h, borderRadius: 18),
+                  Row(
+                    children: [
+                      ShimmerLoading.rounded(width: 60.w, height: 36.h, borderRadius: 18),
+                      SizedBox(width: 6.w),
+                      ShimmerLoading.rounded(width: 50.w, height: 36.h, borderRadius: 18),
+                    ],
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 20.h),
+
+              // Quick Resume Card Shimmer
+              ShimmerLoading.rounded(height: 150.h, borderRadius: 24),
+
+              SizedBox(height: 12.h),
+
+              // Dual Action Row Shimmer
+              Row(
+                children: [
+                  Expanded(
+                    child: ShimmerLoading.rounded(height: 130.h, borderRadius: 20),
+                  ),
+                  SizedBox(width: 10.w),
+                  Expanded(
+                    child: ShimmerLoading.rounded(height: 130.h, borderRadius: 20),
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 12.h),
+
+              // Milestone Shimmer
+              ShimmerLoading.rounded(height: 58.h, borderRadius: 18),
+
+              SizedBox(height: 16.h),
+
+              // Dock Pills Shimmer
+              Row(
+                children: [
+                  ShimmerLoading.rounded(width: 70.w, height: 30.h, borderRadius: 12),
+                  SizedBox(width: 6.w),
+                  ShimmerLoading.rounded(width: 90.w, height: 30.h, borderRadius: 12),
+                  SizedBox(width: 6.w),
+                  ShimmerLoading.rounded(width: 90.w, height: 30.h, borderRadius: 12),
+                ],
+              ),
+
+              SizedBox(height: 16.h),
+
+              // 2-Column Grid Shimmer
+              Row(
+                children: [
+                  Expanded(
+                    child: ShimmerLoading.rounded(height: 160.h, borderRadius: 20),
+                  ),
+                  SizedBox(width: 10.w),
+                  Expanded(
+                    child: ShimmerLoading.rounded(height: 160.h, borderRadius: 20),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

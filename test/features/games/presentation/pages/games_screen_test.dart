@@ -6,7 +6,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vowl/core/presentation/feature_catalog/beginner_discovery_card.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -17,7 +16,6 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/games/presentation/pages/games_screen.dart';
 import 'package:vowl/features/games/presentation/widgets/kids_category_shelf.dart';
-import 'package:vowl/features/home/presentation/widgets/category_shelf.dart';
 
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
 
@@ -99,52 +97,77 @@ void main() {
           inv.namedArguments[#fallback] as String? ??
           inv.positionalArguments.first as String,
     );
+
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(testUser),
     );
+    when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream.empty());
+
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
+    when(() => mockEconomyBloc.stream).thenAnswer((_) => const Stream.empty());
   });
 
   tearDown(() {
     gamesScrollController.dispose();
-    if (di.sl.isRegistered<ScrollController>(instanceName: 'games')) {
-      di.sl.unregister<ScrollController>(instanceName: 'games');
-    }
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
   });
 
-  Widget createWidgetUnderTest({
-    ThemeMode themeMode = ThemeMode.light,
-    GoRouter? customRouter,
-  }) {
-    final router =
-        customRouter ??
-        GoRouter(
-          initialLocation: '/games',
-          routes: [
-            GoRoute(
-              path: '/games',
-              builder: (context, state) => const GamesScreen(),
-            ),
-            GoRoute(
-              path: '/kids-zone',
-              builder: (context, state) {
-                navigatedRoutes.add('/kids-zone');
-                return const Scaffold(body: Text('Kids Zone Destination'));
-              },
-            ),
-            GoRoute(
-              path: '/category-games',
-              builder: (context, state) {
-                final category = state.uri.queryParameters['category'] ?? '';
-                navigatedRoutes.add('/category-games?category=$category');
-                return Scaffold(body: Text('Category Games: $category'));
-              },
-            ),
-          ],
-        );
+  Widget createWidgetUnderTest({ThemeMode themeMode = ThemeMode.light}) {
+    final router = GoRouter(
+      initialLocation: '/games',
+      routes: [
+        GoRoute(
+          path: '/games',
+          builder: (context, state) => const GamesScreen(),
+        ),
+        GoRoute(
+          path: '/game',
+          builder: (context, state) {
+            navigatedRoutes.add(state.uri.toString());
+            return Scaffold(
+              body: Center(
+                child: Text('Game Screen: ${state.uri.queryParameters['gameType']}'),
+              ),
+            );
+          },
+        ),
+        GoRoute(
+          path: '/levels',
+          builder: (context, state) {
+            navigatedRoutes.add(state.uri.toString());
+            return Scaffold(
+              body: Center(
+                child: Text('Level Map: ${state.uri.queryParameters['gameType']}'),
+              ),
+            );
+          },
+        ),
+        GoRoute(
+          path: '/category-games',
+          builder: (context, state) {
+            navigatedRoutes.add(state.uri.toString());
+            return Scaffold(
+              body: Center(
+                child: Text('Category Games: ${state.uri.queryParameters['category']}'),
+              ),
+            );
+          },
+        ),
+        GoRoute(
+          path: '/word-snap',
+          builder: (context, state) {
+            navigatedRoutes.add(state.uri.toString());
+            return const Scaffold(body: Center(child: Text('Word Snap')));
+          },
+        ),
+        GoRoute(
+          path: '/word-mixer',
+          builder: (context, state) {
+            navigatedRoutes.add(state.uri.toString());
+            return const Scaffold(body: Center(child: Text('Word Mixer')));
+          },
+        ),
+      ],
+    );
 
     return MultiBlocProvider(
       providers: [
@@ -176,14 +199,13 @@ void main() {
       await tester.pumpWidget(createWidgetUnderTest());
       await tester.pump();
 
-      // Shimmer loading should render when user is null
       expect(find.byType(CustomScrollView), findsNothing);
       expect(find.byType(Scaffold), findsOneWidget);
     });
   });
 
-  group('GamesScreen - Authenticated Header & Hero Dashboard Tests', () {
-    testWidgets('renders Quest Hub App Bar and Hero Mastery Dashboard cleanly', (
+  group('GamesScreen - Authenticated Header & 10/10 Components', () {
+    testWidgets('renders Quest Hub App Bar with user coins and streak stats', (
       tester,
     ) async {
       tester.view.physicalSize = const Size(800, 2400);
@@ -195,29 +217,15 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      // App bar elements
       expect(find.text('Quest Hub'), findsOneWidget);
-      expect(find.byIcon(Icons.auto_awesome_mosaic_rounded), findsOneWidget);
-
-      // Scroll down so Hero Mastery Dashboard is visible
-      gamesScrollController.jumpTo(400);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      // Hero Dashboard elements
-      expect(find.text('CORE MASTERY'), findsOneWidget);
-      expect(find.textContaining('Levels Cleared'), findsOneWidget);
-      expect(find.text('STREAK'), findsOneWidget);
-      expect(find.text('XP'), findsOneWidget);
-      expect(find.text('CORE GAMES'), findsOneWidget);
-      expect(find.text('12'), findsOneWidget); // currentStreak
-      expect(find.text('4.5K'), findsOneWidget); // 4500 XP formatted
+      expect(find.text('350'), findsOneWidget); // User coins
+      expect(find.text('12'), findsOneWidget); // User streak
     });
 
-    testWidgets('displays BeginnerDiscoveryCard for standard adult learners', (
+    testWidgets('renders Quick Resume Hero Card with active game and PLAY button', (
       tester,
     ) async {
-      tester.view.physicalSize = const Size(800, 1200);
+      tester.view.physicalSize = const Size(800, 2400);
       tester.view.devicePixelRatio = 1.0;
       addTearDown(tester.view.resetPhysicalSize);
       addTearDown(tester.view.resetDevicePixelRatio);
@@ -226,13 +234,79 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(BeginnerDiscoveryCard), findsOneWidget);
+      expect(find.text('QUICK RESUME'), findsOneWidget);
+      expect(find.text('PLAY'), findsWidgets);
+      // Ensure no raw translation placeholder "{}" is rendered
+      expect(find.textContaining('{}'), findsNothing);
+      // Verify progress level text under progress bar
+      expect(find.textContaining(' / 20'), findsOneWidget);
+      // Verify linear progress indicator is rendered
+      expect(find.byType(LinearProgressIndicator), findsWidgets);
     });
 
-    testWidgets('hides BeginnerDiscoveryCard when user is in kidsModeOnly', (
+    testWidgets('renders 1v1 PvP Duel and Quick Drills with exact production rewards', (
       tester,
     ) async {
-      tester.view.physicalSize = const Size(800, 1200);
+      tester.view.physicalSize = const Size(800, 2400);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(find.text('1v1 PvP Duel'), findsOneWidget);
+      expect(find.text('Word Snap'), findsOneWidget);
+      expect(find.text('Word Mixer'), findsOneWidget);
+      expect(find.text('60s Daily Blitz'), findsOneWidget);
+      expect(find.text('Anagram Puzzle'), findsOneWidget);
+      // Exact production rewards verified from repository implementations
+      expect(find.text('WIN 50🪙 + 5 XP'), findsOneWidget); // 1v1 duel winner
+      expect(find.text('WIN 10🪙 + 5 XP'), findsWidgets); // Word Snap & Word Mixer daily challenge
+      expect(find.text('+50 XP'), findsNothing); // 50 XP economy inflation bug fixed
+      expect(find.text('+40 XP'), findsNothing); // Erroneous placeholder absent
+    });
+
+    testWidgets('renders Curriculum Mastery Card with achievable tier', (
+      tester,
+    ) async {
+      tester.view.physicalSize = const Size(800, 2400);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(find.textContaining('Beginner Tier'), findsOneWidget);
+    });
+
+    testWidgets('renders Category Filter Dock and search field', (
+      tester,
+    ) async {
+      tester.view.physicalSize = const Size(800, 2400);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+
+      await tester.pumpWidget(createWidgetUnderTest());
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(find.text('QUEST ARCHIVE'), findsOneWidget);
+      expect(find.text('100+ Games'), findsOneWidget);
+      expect(find.text('All (100)'), findsOneWidget);
+      expect(find.byType(TextField), findsOneWidget);
+    });
+  });
+
+  group('GamesScreen - Kids Mode & Isolation', () {
+    testWidgets('renders Kids Zone shelf when in kidsModeOnly', (
+      tester,
+    ) async {
+      tester.view.physicalSize = const Size(800, 2400);
       tester.view.devicePixelRatio = 1.0;
       addTearDown(tester.view.resetPhysicalSize);
       addTearDown(tester.view.resetDevicePixelRatio);
@@ -242,7 +316,7 @@ void main() {
         email: 'kid@vowl.app',
         totalExp: 0,
         completedLevels: {
-          'handwriting': [1],
+          'kids_alphabet': [1],
         },
       );
       when(() => mockAuthBloc.state).thenReturn(
@@ -253,84 +327,8 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(BeginnerDiscoveryCard), findsNothing);
-    });
-  });
-
-  group('GamesScreen - Syllabus Decoupling & Adult Category Focus', () {
-    testWidgets('does not render Kids Zone shelf in adult Games Quest Hub', (tester) async {
-      tester.view.physicalSize = const Size(800, 3000);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
-
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.text('KIDS ZONE'), findsNothing);
-      expect(find.byType(KidsCategoryShelf), findsNothing);
-    });
-  });
-
-  group('GamesScreen - Adult Category Sections & Shelves', () {
-    testWidgets('renders category shelves for core curriculum games', (
-      tester,
-    ) async {
-      tester.view.physicalSize = const Size(800, 3000);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
-
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      // Scroll to adult category sections
-      gamesScrollController.jumpTo(2200);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.text('SPEAKING'), findsWidgets);
-      expect(find.byType(CategoryShelf), findsWidgets);
-
-      // Scroll to the bottom of the curriculum to verify Elite Mastery
-      gamesScrollController.jumpTo(
-        gamesScrollController.position.maxScrollExtent,
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      expect(find.text('ELITE MASTERY'), findsWidgets);
-      expect(find.text('👑'), findsOneWidget);
-    });
-
-    testWidgets('navigates to category games page on tapping category See all', (
-      tester,
-    ) async {
-      tester.view.physicalSize = const Size(800, 3000);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
-
-      await tester.pumpWidget(createWidgetUnderTest());
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      // Scroll so Speaking category is well in view
-      gamesScrollController.jumpTo(500);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 500));
-
-      final seeAllButtons = find.text('SEE ALL');
-      expect(seeAllButtons, findsWidgets);
-
-      // Tap the first 'SEE ALL' button which belongs to Speaking
-      await tester.tap(seeAllButtons.first);
-      await tester.pumpAndSettle();
-
-      expect(navigatedRoutes, contains('/category-games?category=speaking'));
-      expect(find.text('Category Games: speaking'), findsOneWidget);
+      expect(find.byType(KidsCategoryShelf), findsOneWidget);
+      expect(find.text('1v1 PvP Duel'), findsNothing); // Adult PvP hidden
     });
   });
 
@@ -368,4 +366,3 @@ void main() {
     });
   });
 }
-
