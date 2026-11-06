@@ -133,6 +133,9 @@ class TtsServiceImpl implements TtsService {
 
   Future<void> _initTts() async {
     try {
+      // Yield slightly to allow native Android TextToSpeech service binding to establish
+      await Future<void>.delayed(const Duration(milliseconds: 350));
+
       // Check if a TTS engine is available on the device with retries
       // to accommodate asynchronous Android OS IPC service binding.
       bool hasEngine = false;
