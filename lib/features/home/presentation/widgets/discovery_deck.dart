@@ -282,17 +282,15 @@ class _HeroFlagshipQuestCard extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
           decoration: BoxDecoration(
-            color: isCompleted
-                ? (isDark ? const Color(0xFF0F261E) : const Color(0xFFF0FDF4))
-                : (isMidnight
-                      ? AppColors.midnightSurface
-                      : (isDark ? const Color(0xFF111827) : Colors.white)),
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (isDark ? const Color(0xFF111827) : Colors.white),
             borderRadius: BorderRadius.circular(18.r),
             border: Border.all(
               color: isCompleted
                   ? (isDark
-                        ? AppColors.emerald500.withValues(alpha: 0.60)
-                        : AppColors.emerald500.withValues(alpha: 0.45))
+                        ? AppColors.emerald500.withValues(alpha: 0.50)
+                        : AppColors.emerald500.withValues(alpha: 0.35))
                   : (isMidnight
                         ? Colors.white.withValues(alpha: 0.12)
                         : (isDark
@@ -533,17 +531,15 @@ class _DiscoverySubCell extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 10.h),
           decoration: BoxDecoration(
-            color: isCompleted
-                ? (isDark ? const Color(0xFF0F261E) : const Color(0xFFF0FDF4))
-                : (isMidnight
-                      ? AppColors.midnightSurface
-                      : (isDark ? const Color(0xFF111827) : Colors.white)),
+            color: isMidnight
+                ? AppColors.midnightSurface
+                : (isDark ? const Color(0xFF111827) : Colors.white),
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
               color: isCompleted
                   ? (isDark
-                        ? AppColors.emerald500.withValues(alpha: 0.60)
-                        : AppColors.emerald500.withValues(alpha: 0.45))
+                        ? AppColors.emerald500.withValues(alpha: 0.50)
+                        : AppColors.emerald500.withValues(alpha: 0.35))
                   : (isMidnight
                         ? Colors.white.withValues(alpha: 0.12)
                         : (isDark
