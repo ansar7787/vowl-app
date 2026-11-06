@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -432,9 +433,9 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
             ],
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
             child: Container(
-              padding: EdgeInsets.all(24.r),
+              padding: EdgeInsets.all(AppSpacing.card),
               decoration: BoxDecoration(
                 color: cardBg,
                 borderRadius: BorderRadius.circular(24.r),
@@ -732,7 +733,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                     // Main Card Body
                     GlassTile(
                       borderRadius: BorderRadius.circular(24.r),
-                      padding: EdgeInsets.all(24.r),
+                      padding: EdgeInsets.all(AppSpacing.card),
                       glassOpacity: 1.0,
                       blur: 0,
                       showShadow: false,

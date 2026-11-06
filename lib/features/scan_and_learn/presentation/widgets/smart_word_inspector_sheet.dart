@@ -31,6 +31,8 @@ class SmartWordInspectorSheet extends StatefulWidget {
   }) {
     return showModalBottomSheet<void>(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (ctx) => SmartWordInspectorSheet(
@@ -100,12 +102,19 @@ class _SmartWordInspectorSheetState extends State<SmartWordInspectorSheet> {
     final String definition = widget.token.definition ?? entry.meaning;
     final String tip = widget.token.grammarTip ?? entry.realWorldTip;
 
+    final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
+    final systemBottomPadding = MediaQuery.viewPaddingOf(context).bottom;
+    final safeBottom =
+        (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
+        bottomInset +
+        12.h;
+
     return ClipRRect(
       borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
         child: Container(
-          padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 32.h),
+          padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, safeBottom),
           decoration: BoxDecoration(
             color: isMidnight
                 ? AppColors.midnightSurface

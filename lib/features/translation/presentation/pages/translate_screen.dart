@@ -12,6 +12,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/premium_lock_card.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -402,7 +403,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                 child: SingleChildScrollView(
                                   controller: _scrollController,
                                   padding: EdgeInsets.symmetric(
-                                    horizontal: 20.w,
+                                    horizontal: AppSpacing.screen,
                                   ),
                                   physics: const BouncingScrollPhysics(),
                                   child: Column(
@@ -520,7 +521,12 @@ class _TranslateScreenState extends State<TranslateScreen> {
     TranslationState state,
   ) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, 8.h),
+      padding: EdgeInsets.fromLTRB(
+        AppSpacing.screen,
+        12.h,
+        AppSpacing.screen,
+        8.h,
+      ),
       child: Row(
         children: [
           Semantics(
@@ -919,7 +925,12 @@ class _TranslateScreenState extends State<TranslateScreen> {
       child: ValueListenableBuilder<bool>(
         valueListenable: _isFocused,
         builder: (context, focused, child) => GlassTile(
-          padding: EdgeInsets.fromLTRB(16.w, 14.h, 16.w, 14.h),
+          padding: EdgeInsets.fromLTRB(
+            AppSpacing.card,
+            14.h,
+            AppSpacing.card,
+            14.h,
+          ),
           borderColor: focused
               ? AppColors.indigo500.withValues(alpha: 0.5)
               : (isDark
@@ -1359,7 +1370,12 @@ class _TranslateScreenState extends State<TranslateScreen> {
         final targetLang = state.currentTargetLanguage ?? 'Spanish';
 
         return GlassTile(
-          padding: EdgeInsets.fromLTRB(16.w, 14.h, 16.w, 14.h),
+          padding: EdgeInsets.fromLTRB(
+            AppSpacing.card,
+            14.h,
+            AppSpacing.card,
+            14.h,
+          ),
           borderColor: isDark
               ? Colors.white.withValues(alpha: 0.08)
               : AppColors.slate200.withValues(alpha: 0.8),

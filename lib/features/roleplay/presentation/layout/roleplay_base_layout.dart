@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
@@ -119,6 +120,7 @@ class RoleplayBaseLayout extends StatelessWidget {
       showConfetti: showConfetti,
       useScrolling: useScrolling,
       disablePadding: disablePadding,
+      horizontalPadding: AppSpacing.compact,
     );
 
     return GameBaseLayout<RoleplayBloc, RoleplayState>(
@@ -208,7 +210,7 @@ class RoleplayBaseLayout extends StatelessWidget {
     final soundService = di.sl<SoundService>();
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      padding: EdgeInsets.symmetric(horizontal: AppSpacing.compact),
       child: Row(
         children: [
           Expanded(

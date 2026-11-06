@@ -23,6 +23,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/presentation/feature_catalog/beginner_discovery_card.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -166,9 +167,9 @@ class _HeroDashboard extends StatelessWidget {
     final contentColor = isDark ? Colors.white : AppColors.slate900;
 
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 8.h),
+      padding: EdgeInsets.fromLTRB(AppSpacing.screen, 16.h, AppSpacing.screen, 8.h),
       child: Container(
-        padding: EdgeInsets.all(20.r),
+        padding: EdgeInsets.all(AppSpacing.cardSpacious),
         decoration: BoxDecoration(
           color: cardBg,
           borderRadius: BorderRadius.circular(24.r),
@@ -494,7 +495,7 @@ class _GameSection extends StatelessWidget {
       children: [
         SizedBox(height: 24.h),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
           child: _GameSectionHeader(
             titleKey: titleKey,
             subtitleKey: subtitleKey,
@@ -734,7 +735,10 @@ class _QuestHubShimmer extends StatelessWidget {
       child: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSpacing.screen,
+            vertical: 24.h,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -867,7 +871,7 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
         backgroundColor: cardBg,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
         child: Padding(
-          padding: EdgeInsets.all(20.r),
+          padding: EdgeInsets.all(AppSpacing.cardSpacious),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -1061,7 +1065,7 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
             backgroundColor: cardBg,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
             child: Padding(
-              padding: EdgeInsets.all(20.r),
+              padding: EdgeInsets.all(AppSpacing.cardSpacious),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -1218,9 +1222,14 @@ class _PvpArenaHeroCardState extends State<_PvpArenaHeroCard> {
     final subColor = widget.isDark ? AppColors.slate400 : AppColors.slate600;
 
     return Padding(
-      padding: EdgeInsets.fromLTRB(20.w, 4.h, 20.w, 12.h),
+      padding: EdgeInsets.fromLTRB(
+        AppSpacing.screen,
+        4.h,
+        AppSpacing.screen,
+        12.h,
+      ),
       child: Container(
-        padding: EdgeInsets.all(18.r),
+        padding: EdgeInsets.all(AppSpacing.cardSpacious),
         decoration: BoxDecoration(
           color: cardBg,
           borderRadius: BorderRadius.circular(24.r),

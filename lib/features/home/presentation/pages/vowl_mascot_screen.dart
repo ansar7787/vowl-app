@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'dart:ui';
 import 'package:intl/intl.dart' hide TextDirection;
@@ -1040,7 +1041,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
               borderRadius: BorderRadius.circular(28.r),
               blur: 0,
               child: Container(
-                padding: EdgeInsets.all(24.r),
+                padding: EdgeInsets.all(AppSpacing.cardSpacious),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(28.r),
                   border: Border.all(

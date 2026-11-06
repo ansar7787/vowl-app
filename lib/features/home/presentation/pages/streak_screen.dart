@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -82,7 +83,12 @@ class _StreakScreenState extends State<StreakScreen> {
 
                   // 3. Main Streak Metrics/Contents
                   SliverPadding(
-                    padding: EdgeInsets.fromLTRB(20.w, 24.h, 20.w, 100.h),
+                    padding: EdgeInsets.fromLTRB(
+                      AppSpacing.screen,
+                      24.h,
+                      AppSpacing.screen,
+                      100.h,
+                    ),
                     sliver: SliverList(
                       delegate: SliverChildListDelegate([
                         RepaintBoundary(child: StreakHero(user: user)),
@@ -166,8 +172,8 @@ class _StreakScreenState extends State<StreakScreen> {
       padding: EdgeInsets.only(
         top: MediaQuery.of(context).padding.top + 12.h,
         bottom: 16.h,
-        left: 20.w,
-        right: 20.w,
+        left: AppSpacing.screen,
+        right: AppSpacing.screen,
       ),
       decoration: BoxDecoration(
         color: (isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black)

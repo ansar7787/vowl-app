@@ -18,6 +18,7 @@ import 'package:vowl/features/auth/presentation/bloc/login_cubit.dart';
 import 'package:vowl/features/auth/presentation/widgets/login_widgets.dart';
 import 'package:vowl/features/home/presentation/widgets/vowly_auth_companion.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 
 /// Screen providing user sign-in options via email/password and Google OAuth.
 class LoginPage extends StatelessWidget {
@@ -203,7 +204,7 @@ class _LoginViewState extends State<LoginView> {
                                     ),
                                     child: Padding(
                                       padding: EdgeInsets.symmetric(
-                                        horizontal: 20.w,
+                                        horizontal: AppSpacing.spacious,
                                         vertical: 10.h,
                                       ),
                                       child: Form(

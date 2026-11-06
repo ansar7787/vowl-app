@@ -19,6 +19,7 @@ import '../bloc/elite_mastery_bloc.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 
 /// Base scaffold and presentation wrapper for all Elite Mastery game screens.
 class EliteBaseLayout extends StatelessWidget {
@@ -139,6 +140,7 @@ class EliteBaseLayout extends StatelessWidget {
       showConfetti: showConfetti,
       useScrolling: useScrolling,
       disablePadding: disablePadding,
+      horizontalPadding: AppSpacing.compact,
     );
 
     return GameBaseLayout<EliteMasteryBloc, EliteMasteryState>(

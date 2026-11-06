@@ -17,6 +17,7 @@ import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/core/utils/image_utils.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 
 /// All settings-related dialogs in one place.
 ///
@@ -101,7 +102,7 @@ class SettingsDialogs {
           color: Colors.transparent,
           child: GlassTile(
             width: width,
-            padding: EdgeInsets.all(32.r),
+            padding: EdgeInsets.all(AppSpacing.cardSpacious),
             borderRadius: BorderRadius.circular(40.r),
             child: SingleChildScrollView(
               child: Column(
@@ -203,7 +204,7 @@ class SettingsDialogs {
           color: Colors.transparent,
           child: GlassTile(
             width: width,
-            padding: EdgeInsets.all(32.r),
+            padding: EdgeInsets.all(AppSpacing.cardSpacious),
             borderRadius: BorderRadius.circular(40.r),
             child: SingleChildScrollView(
               child: Column(
@@ -316,7 +317,7 @@ class SettingsDialogs {
           color: Colors.transparent,
           child: GlassTile(
             width: width,
-            padding: EdgeInsets.all(32.r),
+            padding: EdgeInsets.all(AppSpacing.cardSpacious),
             borderRadius: BorderRadius.circular(40.r),
             child: SingleChildScrollView(
               child: Column(
@@ -419,7 +420,7 @@ class SettingsDialogs {
           color: Colors.transparent,
           child: GlassTile(
             width: width,
-            padding: EdgeInsets.all(32.r),
+            padding: EdgeInsets.all(AppSpacing.cardSpacious),
             borderRadius: BorderRadius.circular(40.r),
             child: SingleChildScrollView(
               child: Column(
@@ -538,7 +539,7 @@ class SettingsDialogs {
           color: Colors.transparent,
           child: GlassTile(
             width: width,
-            padding: EdgeInsets.all(32.r),
+            padding: EdgeInsets.all(AppSpacing.cardSpacious),
             borderRadius: BorderRadius.circular(40.r),
             child: SingleChildScrollView(
               child: Column(
@@ -678,7 +679,7 @@ class SettingsDialogs {
           color: Colors.transparent,
           child: GlassTile(
             width: width,
-            padding: EdgeInsets.all(32.r),
+            padding: EdgeInsets.all(AppSpacing.cardSpacious),
             borderRadius: BorderRadius.circular(40.r),
             child: SingleChildScrollView(
               child: Column(
@@ -896,7 +897,7 @@ class _EditProfileDialogContentState extends State<_EditProfileDialogContent> {
 
     return GlassTile(
       width: widget.dialogWidth,
-      padding: EdgeInsets.all(32.r),
+      padding: EdgeInsets.all(AppSpacing.cardSpacious),
       borderRadius: BorderRadius.circular(40.r),
       child: SingleChildScrollView(
         child: Column(
@@ -1186,7 +1187,7 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
                 ),
                 child: GlassTile(
                   width: widget.dialogWidth,
-                  padding: EdgeInsets.all(32.r),
+                  padding: EdgeInsets.all(AppSpacing.cardSpacious),
                   borderRadius: BorderRadius.circular(40.r),
                   child: SingleChildScrollView(
                     child: Column(

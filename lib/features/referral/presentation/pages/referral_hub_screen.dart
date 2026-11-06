@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -173,7 +174,7 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
           if (state.isLoading && state.referralCode == null) {
             return Center(
               child: Padding(
-                padding: EdgeInsets.all(24.w),
+                padding: AppSpacing.spaciousPadding,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -196,7 +197,7 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
             onRefresh: () => context.read<ReferralCubit>().init(user),
             child: SingleChildScrollView(
               physics: const AlwaysScrollableScrollPhysics(),
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+              padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 16.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -261,7 +262,7 @@ class _ReferralHubViewState extends State<_ReferralHubView> {
     Color textSecondary,
   ) {
     return Container(
-      padding: EdgeInsets.all(18.w),
+      padding: EdgeInsets.all(AppSpacing.card),
       decoration: BoxDecoration(
         color: isMidnight
             ? AppColors.midnightSurface

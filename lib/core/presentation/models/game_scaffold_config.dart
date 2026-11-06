@@ -16,6 +16,7 @@ class GameScaffoldConfig {
   final bool useScrolling;
   final bool disablePadding;
   final bool resizeToAvoidBottomInset;
+  final double? horizontalPadding;
 
   const GameScaffoldConfig({
     required this.gameType,
@@ -30,5 +31,6 @@ class GameScaffoldConfig {
     this.useScrolling = false,
     this.disablePadding = false,
     this.resizeToAvoidBottomInset = false,
+    this.horizontalPadding,
   });
 }

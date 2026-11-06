@@ -11,6 +11,7 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/animated_kids_asset.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
@@ -379,7 +380,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                     _showBackConfirmation(context, user),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(left: 20.w, top: 4.h),
+                                padding: EdgeInsets.only(left: AppSpacing.screen, top: 4.h),
                                 child: KidsRoomDailyCareCard(
                                   user: user,
                                   hasPlayed: hasPlayedToday,
@@ -767,9 +768,9 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                       child: BackdropFilter(
                         filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
                         child: Container(
-                          margin: EdgeInsets.symmetric(horizontal: 20.w),
+                          margin: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
                           padding: EdgeInsets.symmetric(
-                            horizontal: 20.w,
+                            horizontal: AppSpacing.cardSpacious,
                             vertical: 14.h,
                           ),
                           decoration: BoxDecoration(
@@ -1033,7 +1034,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         : 'OWLY';
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 6.h),
+      padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 6.h),
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(20.r),

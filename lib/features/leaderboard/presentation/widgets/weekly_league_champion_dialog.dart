@@ -6,6 +6,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -231,7 +232,7 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
     return Dialog(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      insetPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
+      insetPadding: EdgeInsets.symmetric(horizontal: AppSpacing.screen, vertical: 24.h),
       child: Stack(
         alignment: Alignment.center,
         clipBehavior: Clip.none,
@@ -262,7 +263,7 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
               borderRadius: BorderRadius.circular(30.r),
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 24.h),
+                padding: EdgeInsets.symmetric(horizontal: AppSpacing.cardSpacious, vertical: 24.h),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [

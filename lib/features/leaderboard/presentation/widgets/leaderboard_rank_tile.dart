@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -98,7 +99,10 @@ class LeaderboardRankTile extends StatelessWidget {
             onTap: onTap,
             borderRadius: BorderRadius.circular(18.r),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 14.r, vertical: 12.r),
+              padding: EdgeInsets.symmetric(
+                horizontal: AppSpacing.cardCompact,
+                vertical: 12.h,
+              ),
               child: Row(
                 children: [
             // Rank number & Change Indicator

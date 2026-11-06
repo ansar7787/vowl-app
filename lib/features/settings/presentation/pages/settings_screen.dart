@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
@@ -366,9 +367,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         SliverToBoxAdapter(
                           child: Padding(
                             padding: EdgeInsets.fromLTRB(
-                              20.w,
+                              AppSpacing.screen,
                               10.h,
-                              20.w,
+                              AppSpacing.screen,
                               MediaQuery.of(context).padding.bottom + 32.h,
                             ),
                             child: Builder(
@@ -387,7 +388,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                         builder: (context, user) {
                                           if (user == null) {
                                             return Container(
-                                              padding: EdgeInsets.all(16.r),
+                                              padding: EdgeInsets.all(AppSpacing.card),
                                               decoration: BoxDecoration(
                                                 color: Colors.red.withValues(
                                                   alpha: 0.1,

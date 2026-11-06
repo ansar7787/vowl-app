@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/arena/domain/repositories/arena_repository.dart';
@@ -122,9 +123,9 @@ class _ArenaDeepLinkResolverScreenState extends State<ArenaDeepLinkResolverScree
       body: SafeArea(
         child: Center(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.spacious),
             child: Container(
-              padding: EdgeInsets.all(28.r),
+              padding: EdgeInsets.all(AppSpacing.cardSpacious),
               decoration: BoxDecoration(
                 color: cardBg,
                 borderRadius: BorderRadius.circular(24.r),

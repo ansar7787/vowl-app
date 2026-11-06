@@ -1,4 +1,5 @@
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -146,15 +147,25 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     final isDark = Theme.of(context).brightness == Brightness.dark;
     showModalBottomSheet(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
+      isScrollControlled: true,
       backgroundColor: isDark ? const Color(0xFF1E293B) : Colors.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
       ),
-      builder: (context) {
-        return SafeArea(
-          child: Padding(
-            padding: EdgeInsets.all(24.r),
-            child: Column(
+      builder: (sheetContext) {
+        final bottomInset = MediaQuery.viewInsetsOf(sheetContext).bottom;
+        final systemBottomPadding =
+            MediaQuery.viewPaddingOf(sheetContext).bottom;
+        final safeBottom =
+            (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
+            bottomInset +
+            12.h;
+
+        return Padding(
+          padding: EdgeInsets.fromLTRB(AppSpacing.screen, 24.h, AppSpacing.screen, safeBottom),
+          child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -216,10 +227,9 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                 ),
               ],
             ),
-          ),
-        );
-      },
-    );
+          );
+        },
+      );
   }
 
   @override

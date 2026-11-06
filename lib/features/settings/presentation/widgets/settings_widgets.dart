@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -457,7 +458,7 @@ class SettingsProfileSection extends StatelessWidget {
           '${context.tr("settings.tap_to_edit_profile", fallback: "Tap to edit profile")}',
       button: true,
       child: GlassTile(
-        padding: EdgeInsets.all(24.r),
+        padding: EdgeInsets.all(AppSpacing.cardSpacious),
         borderRadius: BorderRadius.circular(32.r),
         blur: 0,
         child: Row(

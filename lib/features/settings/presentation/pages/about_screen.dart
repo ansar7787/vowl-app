@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -59,9 +60,9 @@ class _AboutScreenState extends State<AboutScreen> {
               SliverToBoxAdapter(
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(
-                    20.w,
+                    AppSpacing.screen,
                     40.h,
-                    20.w,
+                    AppSpacing.screen,
                     MediaQuery.of(context).padding.bottom + 32.h,
                   ),
                   child: Column(
@@ -263,7 +264,7 @@ class _AboutScreenState extends State<AboutScreen> {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        padding: EdgeInsets.symmetric(horizontal: AppSpacing.card, vertical: 12.h),
         decoration: BoxDecoration(
           color: cardBg,
           borderRadius: BorderRadius.circular(16.r),
@@ -332,7 +333,7 @@ class _AboutScreenState extends State<AboutScreen> {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+        padding: EdgeInsets.symmetric(horizontal: AppSpacing.card, vertical: 16.h),
         decoration: BoxDecoration(
           color: cardBg,
           borderRadius: BorderRadius.circular(16.r),

@@ -9,6 +9,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -264,7 +265,7 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
               behavior: HitTestBehavior.opaque,
               onTap: _handleClaim,
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+                padding: EdgeInsets.symmetric(horizontal: AppSpacing.cardCompact, vertical: 8.h),
                 child: Row(
               children: [
                 // Glowing circular gift badge
@@ -425,7 +426,7 @@ class _DailyMysteryChestCardState extends State<DailyMysteryChestCard>
       child: ScaleTransition(
         scale: _scaleAnimation,
         child: Padding(
-          padding: EdgeInsets.fromLTRB(20.w, 14.h, 20.w, 0),
+          padding: EdgeInsets.fromLTRB(AppSpacing.screen, 14.h, AppSpacing.screen, 0),
           child: cardContent,
         ),
       ),

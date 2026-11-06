@@ -101,6 +101,15 @@ class AccentContentBody extends StatelessWidget {
           );
         }
 
+        if (constraints.maxWidth > 600) {
+          content = Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 520),
+              child: content,
+            ),
+          );
+        }
+
         return content;
       },
     );

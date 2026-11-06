@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 
 /// Premium audio-playback row used in the listening game.
@@ -35,8 +36,8 @@ class ListeningAudioPlayer extends StatelessWidget {
       container: true,
       label: 'Audio player. Tap the play button to hear the audio clip.',
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-        padding: EdgeInsets.all(16.r),
+        margin: EdgeInsets.symmetric(vertical: 10.h),
+        padding: EdgeInsets.all(AppSpacing.card),
         decoration: BoxDecoration(
           color: isMidnight
               ? AppColors.midnightCard

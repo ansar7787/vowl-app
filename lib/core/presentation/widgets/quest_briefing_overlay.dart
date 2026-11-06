@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -99,7 +100,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                         Container(
                               width: 0.85.sw,
                               constraints: const BoxConstraints(maxWidth: 450),
-                              padding: EdgeInsets.all(24.r),
+                              padding: EdgeInsets.all(AppSpacing.cardSpacious),
                               decoration: BoxDecoration(
                                 color: Colors.white.withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(40.r),

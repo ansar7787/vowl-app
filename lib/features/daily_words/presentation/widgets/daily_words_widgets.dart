@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/daily_words/domain/entities/daily_word.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
 /// Interactive front side of a daily flashcard displaying word text, phonetics,
@@ -710,7 +711,7 @@ class DailyWordsErrorView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: EdgeInsets.all(24.r),
+        padding: AppSpacing.spaciousPadding,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

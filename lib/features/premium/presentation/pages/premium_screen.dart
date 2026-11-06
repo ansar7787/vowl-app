@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
@@ -635,7 +636,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
           ),
         ],
       ),
-      padding: EdgeInsets.all(22.r),
+      padding: EdgeInsets.all(AppSpacing.cardSpacious),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -783,7 +784,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
           // Expiry & Countdown Banner
           Container(
             width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.card, vertical: 12.h),
             decoration: BoxDecoration(
               color: isDark
                   ? Colors.white.withValues(alpha: 0.05)
@@ -1004,7 +1005,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
     final isPremium = user?.hasActivePremium ?? false;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w),
+      padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -1422,7 +1423,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
-        padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
+        padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: AppSpacing.card),
         decoration: BoxDecoration(
           color: isSelected
               ? AppColors.indigo500.withValues(alpha: 0.15)

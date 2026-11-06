@@ -34,6 +34,7 @@ void main() {
   });
 
   tearDown(() {
+    CustomSnackBar.resetDebounce();
     if (di.sl.isRegistered<LocaleService>()) {
       di.sl.unregister<LocaleService>();
     }
@@ -185,5 +186,7 @@ void main() {
     await tester.pump(const Duration(milliseconds: 300));
 
     expect(find.text('Duplicate alert'), findsOneWidget);
+    await tester.pump(const Duration(seconds: 3));
+    await tester.pumpAndSettle();
   });
 }

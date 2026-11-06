@@ -30,6 +30,12 @@ class KidsRoomFoodSheet extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight =
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
+    final systemBottomPadding = MediaQuery.viewPaddingOf(context).bottom;
+    final safeBottom =
+        (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
+        bottomInset +
+        12.h;
 
     return Container(
       decoration: BoxDecoration(
@@ -46,7 +52,7 @@ class KidsRoomFoodSheet extends StatelessWidget {
         top: false,
         child: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 24.h),
+            padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, safeBottom),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -151,6 +157,8 @@ class KidsRoomFoodSheet extends StatelessWidget {
   }) {
     showModalBottomSheet(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (context) =>

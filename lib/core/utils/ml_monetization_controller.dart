@@ -101,6 +101,8 @@ class MlMonetizationController {
 
     final result = await showModalBottomSheet<String>(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (ctx) => _MlFeatureGateDialog(
@@ -200,18 +202,19 @@ class _MlFeatureGateDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
+    final systemBottomPadding = MediaQuery.viewPaddingOf(context).bottom;
+    final safeBottom =
+        (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
+        bottomInset +
+        12.h;
 
     return ClipRRect(
       borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
         child: Container(
-          padding: EdgeInsets.fromLTRB(
-            24.w,
-            24.h,
-            24.w,
-            24.h + MediaQuery.paddingOf(context).bottom,
-          ),
+          padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, safeBottom),
           decoration: BoxDecoration(
             color: isDark
                 ? Colors.black.withValues(alpha: 0.7)

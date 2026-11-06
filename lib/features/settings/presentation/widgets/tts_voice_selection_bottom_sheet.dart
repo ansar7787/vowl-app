@@ -38,6 +38,8 @@ class TtsVoiceSelectionBottomSheet extends StatefulWidget {
   }) async {
     final result = await showModalBottomSheet<TtsVoicePreset>(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (ctx) => TtsVoiceSelectionBottomSheet(
@@ -293,7 +295,12 @@ class _TtsVoiceSelectionBottomSheetState
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final bottomInset = MediaQuery.of(context).padding.bottom;
+    final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
+    final systemBottomPadding = MediaQuery.viewPaddingOf(context).bottom;
+    final safeBottom =
+        (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
+        bottomInset +
+        12.h;
     final isUserPremium = _isPremium;
 
     return Container(
@@ -317,7 +324,7 @@ class _TtsVoiceSelectionBottomSheetState
         left: 20.w,
         right: 20.w,
         top: 14.h,
-        bottom: bottomInset + 16.h,
+        bottom: safeBottom,
       ),
       child: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(

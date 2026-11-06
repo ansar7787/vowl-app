@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -58,7 +59,7 @@ class ModernGameDialog extends StatelessWidget {
         blur: 20,
         glassOpacity: isDark ? 0.1 : 0.6,
         child: Padding(
-          padding: EdgeInsets.all(28.r),
+          padding: EdgeInsets.all(AppSpacing.cardSpacious),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

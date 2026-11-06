@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/services/daily_challenge_service.dart';
@@ -282,7 +283,7 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
 
         // ── Main Game Content ───────────────────────────────────────────────
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
           sliver: SliverList(
             delegate: SliverChildListDelegate([
               SizedBox(height: 8.h),

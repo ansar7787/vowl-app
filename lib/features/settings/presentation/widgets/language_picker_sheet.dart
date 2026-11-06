@@ -17,6 +17,7 @@ class LanguagePickerSheet extends StatefulWidget {
       context: context,
       isScrollControlled: true,
       useRootNavigator: true,
+      useSafeArea: true,
       backgroundColor: Colors.transparent,
       builder: (_) => const LanguagePickerSheet(),
     );

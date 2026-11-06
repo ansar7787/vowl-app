@@ -6,6 +6,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -266,7 +267,10 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
               : state.session?.guestPhotoUrl;
 
           return Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+            padding: EdgeInsets.symmetric(
+              horizontal: AppSpacing.screen,
+              vertical: 12.h,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -295,7 +299,7 @@ class _ArenaDuelViewState extends State<_ArenaDuelView> {
                     final isMidnight = isDark &&
                         Theme.of(context).scaffoldBackgroundColor == Colors.black;
                     return Container(
-                      padding: EdgeInsets.all(18.w),
+                      padding: EdgeInsets.all(AppSpacing.card),
                       decoration: BoxDecoration(
                         color: isMidnight
                             ? AppColors.midnightSurface

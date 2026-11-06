@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'reading_peeking_mascot.dart';
 
 /// The main scrollable / non-scrollable content area that hosts the question
@@ -74,8 +75,8 @@ class ReadingContentArea extends StatelessWidget {
     final keyboardInset = MediaQuery.viewInsetsOf(context).bottom;
     if (disablePadding) return EdgeInsets.zero;
     return EdgeInsets.only(
-      left: 24.w,
-      right: 24.w,
+      left: AppSpacing.screen,
+      right: AppSpacing.screen,
       top: 20.h,
       bottom: (isAnswered ? 200.h : 40.h) + keyboardInset,
     );

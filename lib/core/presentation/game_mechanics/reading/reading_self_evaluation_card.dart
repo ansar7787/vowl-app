@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -208,7 +209,7 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
   }) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(24.r),
+      padding: EdgeInsets.all(AppSpacing.card),
       decoration: BoxDecoration(
         color: isDark ? AppColors.slate800 : Colors.white,
         borderRadius: BorderRadius.circular(24.r),

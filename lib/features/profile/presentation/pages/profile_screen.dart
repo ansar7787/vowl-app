@@ -12,6 +12,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -427,7 +428,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         SizedBox(height: 14.h),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 20.w,
+                                            horizontal: AppSpacing.screen,
                                           ),
                                           child: const VowlMascotCard(),
                                         ),
@@ -442,7 +443,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       children: [
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 20.w,
+                                            horizontal: AppSpacing.screen,
                                           ),
                                           child: _buildSectionHeader(
                                             context,
@@ -455,14 +456,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         SizedBox(height: 16.h),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 20.w,
+                                            horizontal: AppSpacing.screen,
                                           ),
                                           child: ProfileBentoStats(user: user),
                                         ),
                                         SizedBox(height: 16.h),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 20.w,
+                                            horizontal: AppSpacing.screen,
                                           ),
                                           child: ProfileFeatureCard(
                                             iconContent: Icon(
@@ -499,7 +500,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           SizedBox(height: 16.h),
                                           Padding(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 20.w,
+                                              horizontal: AppSpacing.screen,
                                             ),
                                             child: ProfileFeatureCard(
                                               iconContent: Icon(
@@ -544,7 +545,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         SizedBox(height: 16.h),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 20.w,
+                                            horizontal: AppSpacing.screen,
                                           ),
                                           child: _buildKeyShopBanner(
                                             context,
@@ -562,7 +563,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         SizedBox(height: 24.h),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 20.w,
+                                            horizontal: AppSpacing.screen,
                                           ),
                                           child: _buildSectionHeader(
                                             context,
@@ -587,7 +588,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           SizedBox(height: 24.h),
                                           Padding(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 20.w,
+                                              horizontal: AppSpacing.screen,
                                             ),
                                             child: _buildSectionHeader(
                                               context,
@@ -600,14 +601,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           SizedBox(height: 16.h),
                                           Padding(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 20.w,
+                                              horizontal: AppSpacing.screen,
                                             ),
                                             child: _buildKidsRoomCard(context),
                                           ),
                                           SizedBox(height: 16.h),
                                           Padding(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 20.w,
+                                              horizontal: AppSpacing.screen,
                                             ),
                                             child: ProfileStickersProgress(
                                               user: user,
@@ -624,7 +625,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         SizedBox(height: 24.h),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 20.w,
+                                            horizontal: AppSpacing.screen,
                                           ),
                                           child: user.isPremium
                                               ? _buildPremiumActiveBanner(
@@ -644,7 +645,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         SizedBox(height: 24.h),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            horizontal: 20.w,
+                                            horizontal: AppSpacing.screen,
                                           ),
                                           child: ProfilePreferencesList(
                                             user: user,
@@ -892,6 +893,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       context: context,
       isScrollControlled: true,
       useRootNavigator: true,
+      useSafeArea: true,
       backgroundColor: Colors.transparent,
       builder: (context) => _EditNameSheetContent(currentName: currentName),
     );
@@ -943,10 +945,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
     showModalBottomSheet(
       context: context,
       useRootNavigator: true,
+      useSafeArea: true,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (context) => Container(
-        padding: EdgeInsets.all(32.w),
+        padding: EdgeInsets.fromLTRB(AppSpacing.screen, 24.h, AppSpacing.screen, 32.h),
         decoration: BoxDecoration(
           color: isMidnight
               ? AppColors.midnightSurface
@@ -1182,7 +1185,7 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 24.h),
+              padding: EdgeInsets.fromLTRB(AppSpacing.screen, 16.h, AppSpacing.screen, 24.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

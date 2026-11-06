@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 
 import 'onboarding_illustrations.dart';
@@ -384,7 +385,7 @@ class _Header extends StatelessWidget {
     final effectiveInk = isDark ? AppColors.indigo400 : ink;
 
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 6, 12, 0),
+      padding: EdgeInsets.fromLTRB(AppSpacing.spacious, 6, 12, 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -468,7 +469,7 @@ class _SlidePageState extends State<_SlidePage>
 
         return SingleChildScrollView(
           physics: const ClampingScrollPhysics(),
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: AppSpacing.spaciousPadding,
           child: ConstrainedBox(
             constraints: BoxConstraints(minHeight: c.maxHeight),
             child: IntrinsicHeight(
@@ -779,7 +780,7 @@ class _BottomBar extends StatelessWidget {
     final effectiveInk = isDark ? AppColors.indigo400 : slide.ink;
 
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 12, 20, 20),
+      padding: EdgeInsets.fromLTRB(AppSpacing.spacious, 12, AppSpacing.spacious, 20),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

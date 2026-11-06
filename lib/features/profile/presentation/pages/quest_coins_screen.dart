@@ -20,6 +20,7 @@ import 'package:vowl/core/presentation/widgets/hint_purchase_dialog.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/presentation/widgets/premium_store_bottom_sheet.dart';
 
@@ -414,7 +415,7 @@ class VowlCoinsScreen extends StatelessWidget {
 
     return GlassTile(
       blur: 0,
-      padding: EdgeInsets.all(32.r),
+      padding: EdgeInsets.all(AppSpacing.cardSpacious),
       borderRadius: BorderRadius.circular(28.r),
       borderColor: isDark
           ? (Theme.of(context).scaffoldBackgroundColor == Colors.black
@@ -1110,7 +1111,7 @@ class VowlCoinsScreen extends StatelessWidget {
         if (recentHistory.isEmpty)
           GlassTile(
             blur: 0,
-            padding: EdgeInsets.all(32.r),
+            padding: EdgeInsets.all(AppSpacing.cardSpacious),
             borderRadius: BorderRadius.circular(24.r),
             borderColor: isDark
                 ? Colors.white.withValues(alpha: 0.05)

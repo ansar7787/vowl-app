@@ -1,4 +1,5 @@
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -66,7 +67,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: GlassTile(
               width: double.infinity,
-              padding: EdgeInsets.all(32.w),
+              padding: EdgeInsets.all(AppSpacing.cardSpacious),
               borderRadius: BorderRadius.circular(32.r),
               blur: 0,
               child: Column(

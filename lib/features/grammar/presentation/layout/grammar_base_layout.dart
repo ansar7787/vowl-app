@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
@@ -82,6 +83,7 @@ class GrammarBaseLayout extends StatelessWidget {
       showConfetti: showConfetti,
       useScrolling: useScrolling,
       disablePadding: disablePadding,
+      horizontalPadding: AppSpacing.compact,
     );
 
     return GameBaseLayout<GrammarBloc, GrammarState>(

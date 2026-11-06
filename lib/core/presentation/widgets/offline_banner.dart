@@ -170,15 +170,25 @@ class OfflineBanner extends StatelessWidget {
     Haptics.vibrate(HapticsType.selection);
     showModalBottomSheet<void>(
       context: context,
+      useRootNavigator: true,
+      useSafeArea: true,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (bottomSheetContext) {
+        final bottomInset = MediaQuery.viewInsetsOf(bottomSheetContext).bottom;
+        final systemBottomPadding =
+            MediaQuery.viewPaddingOf(bottomSheetContext).bottom;
+        final safeBottom =
+            (systemBottomPadding > 0 ? systemBottomPadding : 24.h) +
+            bottomInset +
+            12.h;
+
         return ClipRRect(
           borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+              padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, safeBottom),
               decoration: BoxDecoration(
                 color: (bottomSheetContext.isMidnight
                         ? AppColors.midnightSurface
@@ -192,10 +202,8 @@ class OfflineBanner extends StatelessWidget {
                   ),
                 ),
               ),
-              child: SafeArea(
-                top: false,
-                child: SingleChildScrollView(
-                  child: Column(
+              child: SingleChildScrollView(
+                child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                     // Sheet handle
@@ -411,7 +419,6 @@ class OfflineBanner extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
             ),
           ),
         );

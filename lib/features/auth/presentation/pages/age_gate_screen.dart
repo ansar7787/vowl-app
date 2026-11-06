@@ -46,6 +46,8 @@ class _AgeGateScreenState extends State<AgeGateScreen> {
     if (!isAdult) {
       final confirm = await showModalBottomSheet<bool>(
         context: context,
+        useRootNavigator: true,
+        useSafeArea: true,
         backgroundColor: Colors.transparent,
         isScrollControlled: true,
         builder: (ctx) {

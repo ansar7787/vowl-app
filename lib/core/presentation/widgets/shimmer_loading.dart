@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 
 // ---------------------------------------------------------------------------
 // Core shimmer block
@@ -83,7 +84,10 @@ class GameShimmerLoading extends StatelessWidget {
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
       child: Padding(
-        padding: EdgeInsets.all(24.r),
+        padding: EdgeInsets.symmetric(
+          horizontal: AppSpacing.screen,
+          vertical: 24.h,
+        ),
         child: Column(
           children: [
             SizedBox(height: 20.h),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/presentation/widgets/user_avatar.dart';
 import 'package:vowl/features/social_share/domain/entities/share_card_data.dart';
 
@@ -14,7 +15,7 @@ class MilestoneShareCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 340.w,
-      padding: EdgeInsets.all(24.w),
+      padding: EdgeInsets.all(AppSpacing.cardSpacious),
       decoration: BoxDecoration(
         color: const Color(0xFF0B0F19), // Solid luxury obsidian
         borderRadius: BorderRadius.circular(24.r),

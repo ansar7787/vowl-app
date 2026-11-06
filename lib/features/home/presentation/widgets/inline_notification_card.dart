@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -293,7 +294,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
             child: MediaQuery.withClampedTextScaling(
               maxScaleFactor: 1.25,
               child: Padding(
-                padding: EdgeInsets.fromLTRB(20.w, 14.h, 20.w, 0),
+                padding: EdgeInsets.fromLTRB(AppSpacing.screen, 14.h, AppSpacing.screen, 0),
                 child: Container(
                   clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(
@@ -314,7 +315,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                   ),
                   child: Padding(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 14.w,
+                      horizontal: AppSpacing.cardCompact,
                       vertical: 10.h,
                     ),
                     child: Row(

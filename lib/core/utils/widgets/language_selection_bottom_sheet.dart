@@ -59,6 +59,7 @@ class LanguageSelectionBottomSheet extends StatefulWidget {
       context: context,
       isScrollControlled: true,
       useRootNavigator: true,
+      useSafeArea: true,
       backgroundColor: Colors.transparent,
       builder: (ctx) => LanguageSelectionBottomSheet(
         isSource: isSource,

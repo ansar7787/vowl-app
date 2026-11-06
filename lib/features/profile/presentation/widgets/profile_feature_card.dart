@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -55,7 +56,7 @@ class ProfileFeatureCard extends StatelessWidget {
       onTap: onTap,
       child: GlassTile(
         borderRadius: BorderRadius.circular(24.r),
-        padding: EdgeInsets.all(20.w),
+        padding: EdgeInsets.all(AppSpacing.card),
         blur: 0,
         showShadow: false,
         glassOpacity: 1.0,

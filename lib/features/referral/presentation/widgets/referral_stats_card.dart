@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 
 class ReferralStatsCard extends StatelessWidget {
   final String referralCode;
@@ -61,7 +62,7 @@ class ReferralStatsCard extends StatelessWidget {
     final daysRemainingInMonth = nextMonthUtc.difference(nowUtc).inDays.clamp(0, 31);
 
     return Container(
-      padding: EdgeInsets.all(18.w),
+      padding: EdgeInsets.all(AppSpacing.card),
       decoration: BoxDecoration(
         color: surfaceColor,
         borderRadius: BorderRadius.circular(16.r),
