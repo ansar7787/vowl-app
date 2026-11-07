@@ -102,7 +102,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(find.text('Gold Division'), findsOneWidget);
+    expect(find.text('Weekly Rewards'), findsOneWidget);
     expect(find.text('Live'), findsOneWidget);
     expect(find.text('1st'), findsOneWidget);
     expect(find.text('7d VIP'), findsOneWidget);

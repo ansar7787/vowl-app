@@ -8,6 +8,7 @@ import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/leaderboard/presentation/widgets/weekly_league_champion_dialog.dart';
 
@@ -138,48 +139,64 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // Header: Division Tier & Live Countdown
+          // Header: League Title & Unified Live Countdown
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              // Left: Brand League Pill (Solid indigo, zero gradients)
               Flexible(
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   alignment: Alignment.centerLeft,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 4.5.h),
+                    decoration: BoxDecoration(
+                      color: AppColors.indigo500,
+                      borderRadius: BorderRadius.circular(8.r),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(LucideIcons.zap, size: 12.sp, color: Colors.white),
+                        SizedBox(width: 4.w),
+                        Text(
+                          context.tr(
+                            'leaderboard.weekly_rewards',
+                            fallback: 'Weekly Rewards',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(width: 8.w),
+
+              // Right: Unified Live Status & Countdown Capsule
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerRight,
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.5.h),
+                  decoration: BoxDecoration(
+                    color: isDark ? const Color(0xFF1E293B) : const Color(0xFFF1F5F9),
+                    borderRadius: BorderRadius.circular(10.r),
+                    border: Border.all(color: borderColor),
+                  ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      // Emerald live dot
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                        decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
-                          ),
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(LucideIcons.zap, size: 12.sp, color: Colors.white),
-                            SizedBox(width: 4.w),
-                            Text(
-                              'Gold Division',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.white,
-                                letterSpacing: 0.5,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 8.w),
-                      // Pulsing Live Indicator
-                      Container(
-                        width: 7.r,
-                        height: 7.r,
+                        width: 6.5.r,
+                        height: 6.5.r,
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: AppColors.emerald500,
@@ -191,31 +208,23 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 11.sp,
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w800,
                           color: AppColors.emerald500,
                         ),
                       ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(width: 8.w),
-              // Time Left Capsule
-              FittedBox(
-                fit: BoxFit.scaleDown,
-                alignment: Alignment.centerRight,
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-                  decoration: BoxDecoration(
-                    color: isDark ? const Color(0xFF1E293B) : const Color(0xFFF1F5F9),
-                    borderRadius: BorderRadius.circular(10.r),
-                    border: Border.all(color: borderColor),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(LucideIcons.clock, size: 12.sp, color: textSecondary),
-                      SizedBox(width: 5.w),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 5.w),
+                        child: Text(
+                          '·',
+                          style: TextStyle(
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w900,
+                            color: textSecondary,
+                          ),
+                        ),
+                      ),
+                      Icon(LucideIcons.clock, size: 11.sp, color: textSecondary),
+                      SizedBox(width: 4.w),
                       Text(
                         remainingText,
                         style: TextStyle(
