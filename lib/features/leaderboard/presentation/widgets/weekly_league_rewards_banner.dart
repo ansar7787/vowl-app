@@ -143,37 +143,34 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // Left: Brand League Pill (Solid indigo, zero gradients)
+              // Left: Card Section Title (Clean typography with reward icon, no duplicate button pill)
               Flexible(
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   alignment: Alignment.centerLeft,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 4.5.h),
-                    decoration: BoxDecoration(
-                      color: AppColors.indigo500,
-                      borderRadius: BorderRadius.circular(8.r),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(LucideIcons.zap, size: 12.sp, color: Colors.white),
-                        SizedBox(width: 4.w),
-                        Text(
-                          context.tr(
-                            'leaderboard.weekly_rewards',
-                            fallback: 'Weekly Rewards',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white,
-                            letterSpacing: 0.5,
-                          ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        LucideIcons.gift,
+                        size: 14.sp,
+                        color: const Color(0xFFF59E0B),
+                      ),
+                      SizedBox(width: 6.w),
+                      Text(
+                        context.tr(
+                          'leaderboard.weekly_rewards',
+                          fallback: 'Weekly Rewards',
                         ),
-                      ],
-                    ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w800,
+                          color: isDark ? Colors.white : AppColors.slate900,
+                          letterSpacing: 0.2,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
