@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/app_spacing.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -122,7 +123,12 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
         !user.claimedWeeklyRewardWeekKeys.contains(targetWeekKey);
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
+      margin: EdgeInsets.only(
+        left: AppSpacing.screen,
+        right: AppSpacing.screen,
+        top: 6.h,
+        bottom: 0,
+      ),
       padding: EdgeInsets.all(16.w),
       decoration: BoxDecoration(
         color: surfaceColor,
@@ -234,8 +240,9 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
               Expanded(
                 child: _buildPrizeColumn(
                   rankLabel: '1st',
-                  icon: LucideIcons.crown,
-                  rewardText: '7d VIP\n+500c',
+                  icon: LucideIcons.trophy,
+                  vipText: '7d VIP',
+                  coinAmount: 500,
                   accentColor: const Color(0xFFF59E0B),
                   isDark: isDark,
                 ),
@@ -245,7 +252,8 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                 child: _buildPrizeColumn(
                   rankLabel: '2nd',
                   icon: LucideIcons.medal,
-                  rewardText: '3d VIP\n+300c',
+                  vipText: '3d VIP',
+                  coinAmount: 300,
                   accentColor: const Color(0xFF94A3B8),
                   isDark: isDark,
                 ),
@@ -255,7 +263,8 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                 child: _buildPrizeColumn(
                   rankLabel: '3rd',
                   icon: LucideIcons.award,
-                  rewardText: '1d VIP\n+200c',
+                  vipText: '1d VIP',
+                  coinAmount: 200,
                   accentColor: const Color(0xFFD97706),
                   isDark: isDark,
                 ),
@@ -265,104 +274,14 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                 child: _buildPrizeColumn(
                   rankLabel: '4-10th',
                   icon: LucideIcons.zap,
-                  rewardText: '100\nCoins',
+                  vipText: 'Top 10',
+                  coinAmount: 100,
                   accentColor: AppColors.indigo500,
                   isDark: isDark,
                 ),
               ),
             ],
           ),
-
-          // High-Energy Quick Duel Action Bar
-          if (widget.onQuickMatch != null && widget.currentUser != null) ...[
-            SizedBox(height: 12.h),
-            Material(
-              color: Colors.transparent,
-              child: InkWell(
-                onTap: () {
-                  if (di.sl.isRegistered<HapticService>()) {
-                    di.sl<HapticService>().light();
-                  }
-                  widget.onQuickMatch?.call();
-                },
-                borderRadius: BorderRadius.circular(14.r),
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        AppColors.indigo500.withValues(alpha: isDark ? 0.22 : 0.12),
-                        AppColors.blue500.withValues(alpha: isDark ? 0.16 : 0.08),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(14.r),
-                    border: Border.all(
-                      color: AppColors.indigo500.withValues(alpha: 0.35),
-                      width: 1.w,
-                    ),
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(6.r),
-                        decoration: BoxDecoration(
-                          color: AppColors.indigo500,
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        child: Icon(LucideIcons.swords, size: 14.sp, color: Colors.white),
-                      ),
-                      SizedBox(width: 10.w),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '1v1 Arena Duel · Stake 30 Coins',
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w800,
-                                color: isDark ? Colors.white : AppColors.slate900,
-                              ),
-                            ),
-                            Text(
-                              'Win 50 Coins & gain weekly XP instantly',
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w500,
-                                color: textSecondary,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                        decoration: BoxDecoration(
-                          color: AppColors.indigo500.withValues(alpha: 0.15),
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        child: Text(
-                          'Duel ⚡',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w900,
-                            color: AppColors.indigo500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
 
           // Unclaimed Offline Win-Back Banner
           if (hasUnclaimedLastWeek) ...[
@@ -381,13 +300,6 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                   color: IllustrationColors.premiumGold.withValues(alpha: 0.5),
                   width: 1.5.w,
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: IllustrationColors.premiumGold.withValues(alpha: 0.2),
-                    blurRadius: 12,
-                    offset: const Offset(0, 3),
-                  ),
-                ],
               ),
               child: Row(
                 children: [
@@ -470,12 +382,13 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
   Widget _buildPrizeColumn({
     required String rankLabel,
     required IconData icon,
-    required String rewardText,
+    required String vipText,
+    required int coinAmount,
     required Color accentColor,
     required bool isDark,
   }) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
         borderRadius: BorderRadius.circular(12.r),
@@ -506,17 +419,40 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                 ),
               ],
             ),
-            SizedBox(height: 4.h),
+            SizedBox(height: 3.h),
             Text(
-              rewardText,
+              vipText,
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w800,
                 color: isDark ? Colors.white : AppColors.slate900,
-                height: 1.2,
+                height: 1.1,
               ),
+            ),
+            SizedBox(height: 3.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.monetization_on_rounded,
+                  size: 11.sp,
+                  color: const Color(0xFFF59E0B),
+                ),
+                SizedBox(width: 2.w),
+                Text(
+                  '+$coinAmount',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w900,
+                    color: const Color(0xFFF59E0B),
+                    height: 1.1,
+                  ),
+                ),
+              ],
             ),
           ],
         ),

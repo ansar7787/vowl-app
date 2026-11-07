@@ -45,8 +45,8 @@ class LeaderboardPodium extends StatelessWidget {
     // Capping at 40% of screen height keeps the podium proportional.
     return LayoutBuilder(
       builder: (context, constraints) {
-        final maxPodiumHeight = (MediaQuery.of(context).size.height * 0.40)
-            .clamp(220.0, 320.0);
+        final maxPodiumHeight = (MediaQuery.sizeOf(context).height * 0.24)
+            .clamp(185.0, 210.0);
 
         return Row(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -132,11 +132,11 @@ class _PodiumSlot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isFirst = rank == 1;
-    final avatarSize = isFirst ? 72.r : 56.r;
+    final avatarSize = isFirst ? 62.r : 50.r;
     // Scale podium column heights proportionally against the max height.
     final podiumHeight = isFirst
-        ? maxHeight * 0.46
-        : (rank == 2 ? maxHeight * 0.36 : maxHeight * 0.30);
+        ? maxHeight * 0.50
+        : (rank == 2 ? maxHeight * 0.40 : maxHeight * 0.34);
     final colors = _rankColors(rank);
     final levelsCleared = isKids
         ? user.kidsTotalLevelsCompleted
@@ -150,7 +150,6 @@ class _PodiumSlot extends StatelessWidget {
             ? context.tr('leaderboard.weekly_xp', fallback: 'Weekly XP')
             : context.tr('leaderboard.xp', fallback: 'XP'));
     final isMe = currentUserId != null && user.id == currentUserId;
-    final glowColor = colors[0];
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final delay = rank == 3 ? 0 : (rank == 2 ? 150 : 300);
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
@@ -168,104 +167,49 @@ class _PodiumSlot extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          // Crown for 1st place — extracted to avoid unnecessary rebuilds
-          if (isFirst) ...[const _AnimatedCrown(), SizedBox(height: 2.h)],
-
-          // Avatar with glow ring + rank badge
+          // Avatar with single bold champion ring + rank badge
           Stack(
+            clipBehavior: Clip.none,
             alignment: Alignment.center,
             children: [
-              // Glow ring — isolated in RepaintBoundary to avoid repainting entire column
-              RepaintBoundary(
-                child: reduceMotion
-                    ? Container(
-                        width: avatarSize + 12,
-                        height: avatarSize + 12,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: glowColor.withValues(
-                              alpha: isMe ? 0.7 : 0.4,
-                            ),
-                            width: isMe ? 3.0 : 2.5,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: glowColor.withValues(
-                                alpha: isMe ? 0.35 : 0.2,
-                              ),
-                              blurRadius: isMe ? 14 : 10,
-                              spreadRadius: isMe ? 2 : 1,
-                            ),
-                          ],
-                        ),
-                      )
-                    : Container(
-                            width: avatarSize + 12,
-                            height: avatarSize + 12,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: glowColor.withValues(
-                                  alpha: isMe ? 0.7 : 0.4,
-                                ),
-                                width: isMe ? 3.0 : 2.5,
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: glowColor.withValues(
-                                    alpha: isMe ? 0.35 : 0.2,
-                                  ),
-                                  blurRadius: isMe ? 14 : 10,
-                                  spreadRadius: isMe ? 2 : 1,
-                                ),
-                              ],
-                            ),
-                          )
-                          .animate(onPlay: (c) => c.repeat(reverse: true))
-                          .scaleXY(
-                            begin: 1.0,
-                            end: isFirst ? 1.06 : 1.0,
-                            duration: 1500.ms,
-                          )
-                          .fade(begin: 0.85, end: 1.0),
-              ),
-              // Photo
+              // Single bold athletic champion border directly around avatar
               Container(
                 width: avatarSize,
                 height: avatarSize,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
+                  gradient: LinearGradient(
+                    colors: colors,
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
                   border: Border.all(
-                    color: colors[0].withValues(alpha: 0.7),
-                    width: isFirst ? 3 : 2,
+                    color: Colors.white.withValues(alpha: isMe ? 0.6 : 0.3),
+                    width: 1,
                   ),
                 ),
-                child: Padding(
-                  padding: EdgeInsets.all(3.r),
-                  child: UserAvatar(
-                    photoUrl: user.photoUrl,
-                    size: avatarSize - 8,
-                  ),
+                padding: EdgeInsets.all(isFirst ? 3.r : 2.5.r),
+                child: UserAvatar(
+                  photoUrl: user.photoUrl,
+                  size: avatarSize - (isFirst ? 6.r : 5.r),
                 ),
               ),
-              // Rank badge
+
+              // Rank badge (#1, #2, #3)
               Positioned(
-                bottom: 0,
+                bottom: -5.h,
                 child: Container(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 10.w,
-                    vertical: 3.h,
+                    horizontal: 9.w,
+                    vertical: 2.5.h,
                   ),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(colors: colors),
                     borderRadius: BorderRadius.circular(10.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: colors[0].withValues(alpha: 0.4),
-                        blurRadius: 6,
-                      ),
-                    ],
+                    border: Border.all(
+                      color: Colors.white.withValues(alpha: 0.35),
+                      width: 1,
+                    ),
                   ),
                   child: Text(
                     '#$rank',
@@ -278,11 +222,12 @@ class _PodiumSlot extends StatelessWidget {
                   ),
                 ),
               ),
+
               // "YOU" badge — only visible when current user is on podium
               if (isMe)
                 Positioned(
-                  top: 0,
-                  right: 0,
+                  top: -2.h,
+                  right: -4.w,
                   child: Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: 6.w,
@@ -291,18 +236,16 @@ class _PodiumSlot extends StatelessWidget {
                     decoration: BoxDecoration(
                       gradient: LinearGradient(colors: colors),
                       borderRadius: BorderRadius.circular(8.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: colors[0].withValues(alpha: 0.5),
-                          blurRadius: 6,
-                        ),
-                      ],
+                      border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.3),
+                        width: 1,
+                      ),
                     ),
                     child: Text(
                       context.tr('leaderboard.you', fallback: 'You'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 7.sp,
+                        fontSize: 8.5.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.white,
                         letterSpacing: 0.5,
@@ -313,7 +256,7 @@ class _PodiumSlot extends StatelessWidget {
             ],
           ),
 
-          SizedBox(height: 6.h),
+          SizedBox(height: 8.h),
 
           // Podium column
           Container(
@@ -351,7 +294,7 @@ class _PodiumSlot extends StatelessWidget {
                             safeDisplayName.split(' ').first,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: isFirst ? 11.sp : 9.sp,
+                              fontSize: isFirst ? 12.sp : 10.5.sp,
                               fontWeight: FontWeight.w900,
                               color: MeshGradientBackground.getContrastColor(
                                 context,
@@ -359,7 +302,7 @@ class _PodiumSlot extends StatelessWidget {
                               height: 1.1,
                             ),
                             maxLines: 1,
-                            minFontSize: 6,
+                            minFontSize: 8,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.center,
                           ),
@@ -380,10 +323,10 @@ class _PodiumSlot extends StatelessWidget {
                     AutoSizeText(
                       isKids ? '$score Levels · ${user.kidsCoins} ⭐' : '$score $scoreLabel',
                       maxLines: 1,
-                      minFontSize: 5,
+                      minFontSize: 7,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: isFirst ? 9.sp : 7.sp,
+                        fontSize: isFirst ? 10.sp : 9.sp,
                         fontWeight: FontWeight.w800,
                         color: rank == 2
                             ? (isDark
@@ -511,26 +454,5 @@ class _PodiumSlot extends StatelessWidget {
       default:
         return [AppColors.blue500, AppColors.indigo500];
     }
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Private: animated crown — extracted so parent rebuilds don't restart the
-// floating animation from frame 0.
-// ---------------------------------------------------------------------------
-
-class _AnimatedCrown extends StatelessWidget {
-  const _AnimatedCrown();
-
-  @override
-  Widget build(BuildContext context) {
-    if (VowlMotion.shouldReduceMotion(context)) {
-      return Text('👑', style: TextStyle(fontSize: 22.sp));
-    }
-    return RepaintBoundary(
-      child: Text('👑', style: TextStyle(fontSize: 22.sp))
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(begin: -2, end: 2, duration: 1500.ms, curve: Curves.easeInOut),
-    );
   }
 }

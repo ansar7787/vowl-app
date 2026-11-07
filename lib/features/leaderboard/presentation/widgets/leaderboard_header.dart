@@ -8,7 +8,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/leaderboard/domain/utils/leaderboard_countdown_helper.dart';
 
 /// Animated header title displaying syllabus ranking descriptions and cache freshness timestamp.
 class LeaderboardHeader extends StatefulWidget {
@@ -31,8 +30,8 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader> {
   @override
   void initState() {
     super.initState();
-    // Refresh countdown badge every 30 seconds to keep remaining time accurate
-    _countdownTimer = Timer.periodic(const Duration(seconds: 30), (_) {
+    // Refresh time-ago timestamp badge every minute to keep display accurate
+    _countdownTimer = Timer.periodic(const Duration(minutes: 1), (_) {
       if (mounted) setState(() {});
     });
   }
@@ -60,7 +59,6 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final timeUntilNext = LeaderboardCountdownHelper.getRemainingFormatted();
     final timeAgo = _formatTimeAgo(context, widget.lastUpdated);
 
     final header = Semantics(
@@ -167,9 +165,8 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader> {
                                     fit: BoxFit.scaleDown,
                                     child: Text(
                                       context.tr(
-                                        'leaderboard.next_update_in',
-                                        fallback: 'Next in {0}',
-                                        args: [timeUntilNext],
+                                        'leaderboard.live_sync',
+                                        fallback: 'Live Sync',
                                       ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
@@ -203,7 +200,7 @@ class _LeaderboardHeaderState extends State<LeaderboardHeader> {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w700,
                         color: isDark ? Colors.white60 : AppColors.slate600,
                       ),
                     ),

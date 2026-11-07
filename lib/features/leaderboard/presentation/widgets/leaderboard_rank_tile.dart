@@ -107,22 +107,25 @@ class LeaderboardRankTile extends StatelessWidget {
                 children: [
             // Rank number & Change Indicator
             SizedBox(
-              width: 44.w,
+              width: 32.w,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    '$rank',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: -1,
-                      color: isDark
-                          ? tierColor.withValues(alpha: 0.9)
-                          : tierColor.withValues(alpha: 0.8),
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      '$rank',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: -1,
+                        color: isDark
+                            ? tierColor.withValues(alpha: 0.9)
+                            : tierColor.withValues(alpha: 0.8),
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                   if (!isKids && isWeekly && user.previousRank != null) ...[
                     SizedBox(height: 2.h),
@@ -131,17 +134,17 @@ class LeaderboardRankTile extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(width: 12.w),
+            SizedBox(width: 8.w),
             // Avatar
             UserAvatar(
               photoUrl: user.photoUrl,
-              size: 40.r,
+              size: 36.r,
               border: Border.all(
                 color: tierColor.withValues(alpha: 0.25),
                 width: 1.5,
               ),
             ),
-            SizedBox(width: 12.w),
+            SizedBox(width: 8.w),
             // Name & XP row
             Expanded(
               child: Column(
@@ -155,7 +158,7 @@ class LeaderboardRankTile extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 13.sp,
-                            fontWeight: FontWeight.w800,
+                            fontWeight: FontWeight.w900,
                             color: MeshGradientBackground.getContrastColor(
                               context,
                             ),
@@ -193,10 +196,10 @@ class LeaderboardRankTile extends StatelessWidget {
                                 context.tr('leaderboard.you', fallback: 'You'),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 7.sp,
+                                  fontSize: 8.5.sp,
                                   fontWeight: FontWeight.w900,
                                   color: _LocalPalette.color60a5fa,
-                                  letterSpacing: 1,
+                                  letterSpacing: 0.5,
                                 ),
                               ),
                             ),
@@ -216,7 +219,7 @@ class LeaderboardRankTile extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 10.sp,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w700,
                             color: isDark ? AppColors.slate400 : AppColors.slate600,
                           ),
                           overflow: TextOverflow.ellipsis,
@@ -243,19 +246,22 @@ class LeaderboardRankTile extends StatelessWidget {
                   color: (isKids ? AppColors.amber500 : tierColor).withValues(alpha: 0.25),
                 ),
               ),
-              child: Text(
-                isKids
-                    ? '${user.kidsCoins} ⭐'
-                    : context.tr(
-                        'leaderboard.lvs',
-                        fallback: 'Lv. {0}',
-                        args: [levelsCleared.toString()],
-                      ),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.w900,
-                  color: isKids ? AppColors.amber500 : tierColor,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  isKids
+                      ? '${user.kidsCoins} ⭐'
+                      : context.tr(
+                          'leaderboard.lvs',
+                          fallback: 'Lv. {0}',
+                          args: [levelsCleared.toString()],
+                        ),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isKids ? AppColors.amber500 : tierColor,
+                  ),
                 ),
               ),
             ),

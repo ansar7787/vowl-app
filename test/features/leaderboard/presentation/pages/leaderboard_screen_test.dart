@@ -383,7 +383,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 500));
 
       // Scroll down to reveal ranks in the list
-      await tester.drag(find.byType(CustomScrollView), const Offset(0, -750));
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -550));
       await tester.pump(const Duration(milliseconds: 500));
       await tester.pump(const Duration(seconds: 1));
 
@@ -441,7 +441,7 @@ void main() {
 
       expect(find.byType(RivalChallengeSheet), findsOneWidget);
       expect(find.text('Bob The Master'), findsOneWidget);
-      expect(find.text('Challenge to 1v1 Arena Duel'), findsOneWidget);
+      expect(find.text('Sprint Quests to Overtake'), findsOneWidget);
     });
   });
 
@@ -456,18 +456,23 @@ void main() {
 
       // Initially in Weekly League mode
       expect(find.byType(WeeklyLeagueRewardsBanner), findsOneWidget);
+      expect(find.textContaining('Weekly XP'), findsWidgets);
 
       // Tap Hall of Fame
       await tester.tap(find.text('Hall of Fame'));
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('Hall of Fame Masters'), findsOneWidget);
+      // In Hall of Fame, weekly rewards banner is absent and standing shows Lifetime XP
+      expect(find.byType(WeeklyLeagueRewardsBanner), findsNothing);
+      expect(find.textContaining('Lifetime XP'), findsWidgets);
 
       // Tap Weekly League back
       await tester.tap(find.text('Weekly League'));
-      await tester.pump(const Duration(milliseconds: 300));
+      await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump(const Duration(seconds: 1));
 
       expect(find.byType(WeeklyLeagueRewardsBanner), findsOneWidget);
+      expect(find.textContaining('Weekly XP'), findsWidgets);
     });
 
     testWidgets('renders Kids Leaderboard header, back button, and Levels label when isKids is true', (tester) async {

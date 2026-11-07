@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -9,12 +10,14 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 class PrestigeTrophySheet extends StatelessWidget {
   final UserEntity user;
   final int rank;
+  final bool isWeekly;
   final VoidCallback onShareRank;
 
   const PrestigeTrophySheet({
     super.key,
     required this.user,
     required this.rank,
+    this.isWeekly = true,
     required this.onShareRank,
   });
 
@@ -22,17 +25,19 @@ class PrestigeTrophySheet extends StatelessWidget {
     required BuildContext context,
     required UserEntity user,
     required int rank,
+    bool isWeekly = true,
     required VoidCallback onShareRank,
   }) {
     return showModalBottomSheet(
       context: context,
       useRootNavigator: true,
-      useSafeArea: true,
+      useSafeArea: false,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (_) => PrestigeTrophySheet(
         user: user,
         rank: rank,
+        isWeekly: isWeekly,
         onShareRank: onShareRank,
       ),
     );
@@ -56,8 +61,11 @@ class PrestigeTrophySheet extends StatelessWidget {
 
     // Resilient safe-area clearance for older 3-button navigation, gesture bars & keyboards
     final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
-    final systemBottomPadding = MediaQuery.viewPaddingOf(context).bottom;
-    final safeBottom = (systemBottomPadding > 0 ? systemBottomPadding : 24.h) + bottomInset + 12.h;
+    final systemBottomPadding = math.max(
+      MediaQuery.paddingOf(context).bottom,
+      MediaQuery.viewPaddingOf(context).bottom,
+    );
+    final safeBottom = (systemBottomPadding > 0 ? systemBottomPadding : 16.h) + 20.h + bottomInset;
 
     return Container(
       padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, safeBottom),
@@ -135,9 +143,10 @@ class PrestigeTrophySheet extends StatelessWidget {
                 ),
                 SizedBox(height: 4.h),
                 Text(
-                  'Global League Standings',
+                  isWeekly ? 'Weekly League Standing' : 'Hall of Fame All-Time Standing',
                   style: TextStyle(
                     fontSize: 12.sp,
+                    fontWeight: FontWeight.w600,
                     color: textSecondary,
                   ),
                 ),
@@ -151,15 +160,42 @@ class PrestigeTrophySheet extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: _buildStatItem('Total XP', '${user.totalExp}', LucideIcons.zap, AppColors.indigo500, isDark, borderColor, textPrimary, textSecondary),
+                child: _buildStatItem(
+                  isWeekly ? 'Weekly XP' : 'Lifetime XP',
+                  '${isWeekly ? user.currentWeeklyExp : user.totalExp}',
+                  LucideIcons.zap,
+                  AppColors.indigo500,
+                  isDark,
+                  borderColor,
+                  textPrimary,
+                  textSecondary,
+                ),
               ),
               SizedBox(width: 10.w),
               Expanded(
-                child: _buildStatItem('Streak', '${user.currentStreak} Days', LucideIcons.flame, const Color(0xFFF59E0B), isDark, borderColor, textPrimary, textSecondary),
+                child: _buildStatItem(
+                  'Streak',
+                  '${user.currentStreak} Days',
+                  LucideIcons.flame,
+                  const Color(0xFFF59E0B),
+                  isDark,
+                  borderColor,
+                  textPrimary,
+                  textSecondary,
+                ),
               ),
               SizedBox(width: 10.w),
               Expanded(
-                child: _buildStatItem('Levels', '${user.totalLevelsCompleted}', LucideIcons.award, const Color(0xFF10B981), isDark, borderColor, textPrimary, textSecondary),
+                child: _buildStatItem(
+                  isWeekly ? 'Lifetime XP' : 'Quests',
+                  '${isWeekly ? user.totalExp : user.totalLevelsCompleted}',
+                  LucideIcons.award,
+                  const Color(0xFF10B981),
+                  isDark,
+                  borderColor,
+                  textPrimary,
+                  textSecondary,
+                ),
               ),
             ],
           ),
@@ -218,22 +254,29 @@ class PrestigeTrophySheet extends StatelessWidget {
         children: [
           Icon(icon, size: 16.sp, color: color),
           SizedBox(height: 6.h),
-          Text(
-            value,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w800,
-              color: textPrimary,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              value,
+              maxLines: 1,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w800,
+                color: textPrimary,
+              ),
             ),
           ),
           SizedBox(height: 2.h),
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 10.sp,
-              color: textSecondary,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              label,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                color: textSecondary,
+              ),
             ),
           ),
         ],

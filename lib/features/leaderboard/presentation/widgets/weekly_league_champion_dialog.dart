@@ -122,7 +122,7 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
       case 1:
         return context.tr(
           'leaderboard.champion_title_1',
-          fallback: 'LEAGUE CHAMPION 👑',
+          fallback: 'LEAGUE CHAMPION 🏆',
         );
       case 2:
         return context.tr(
@@ -332,7 +332,7 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
                     // Prize Cards Breakdown
                     if (widget.vipDays > 0) ...[
                       _buildRewardRow(
-                        icon: LucideIcons.crown,
+                        icon: LucideIcons.sparkles,
                         iconColor: IllustrationColors.premiumGold,
                         title: isCurrentlyVip
                             ? '+${widget.vipDays} Days VIP Extended!'
@@ -351,7 +351,7 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
                         iconColor: AppColors.amber500,
                         title: '+${widget.coins} Quest Coins',
                         subtitle:
-                            'Added directly to your treasury for duels & hints',
+                            'Added directly to your treasury for power-ups & hints',
                         isDark: isDark,
                       ),
                       SizedBox(height: 10.h),
@@ -360,17 +360,17 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
                     // Permanent / Weekly Flex Badge
                     _buildRewardRow(
                       icon: widget.rank == 1
-                          ? LucideIcons.sparkles
+                          ? LucideIcons.trophy
                           : LucideIcons.medal,
                       iconColor: _accentColor,
                       title: widget.rank == 1
-                          ? 'Golden Crown Avatar Aura'
+                          ? 'Golden Champion Avatar Aura'
                           : (widget.rank <= 3
                               ? 'Podium Laurels Profile Badge'
                               : 'Division Finisher Ribbons'),
                       subtitle: widget.rank == 1
                           ? 'Glows around your avatar in the league all week'
-                          : 'Showcased across your global profile and arena',
+                          : 'Showcased across your global profile and rankings',
                       isDark: isDark,
                     ),
 
@@ -390,13 +390,10 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
                             ],
                           ),
                           borderRadius: BorderRadius.circular(16.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: _accentColor.withValues(alpha: 0.4),
-                              blurRadius: 16,
-                              offset: const Offset(0, 4),
-                            ),
-                          ],
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.3),
+                            width: 1,
+                          ),
                         ),
                         alignment: Alignment.center,
                         child: _isClaiming

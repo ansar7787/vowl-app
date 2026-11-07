@@ -122,10 +122,10 @@ void main() {
     await tester.pump(const Duration(milliseconds: 500));
     await tester.pump(const Duration(milliseconds: 500));
 
-    expect(find.text('LEAGUE CHAMPION 👑'), findsOneWidget);
+    expect(find.text('LEAGUE CHAMPION 🏆'), findsOneWidget);
     expect(find.text('+7 Days Full VIP Unlocked!'), findsOneWidget);
     expect(find.text('+500 Quest Coins'), findsOneWidget);
-    expect(find.text('Golden Crown Avatar Aura'), findsOneWidget);
+    expect(find.text('Golden Champion Avatar Aura'), findsOneWidget);
 
     verify(() => mockSoundService.playLevelComplete()).called(1);
 
