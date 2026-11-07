@@ -246,15 +246,13 @@ class RivalChallengeSheet extends StatelessWidget {
                           ),
                         ),
 
-                        // Center: VS Pill
+                        // Center: VS Pill (Solid brand primary, zero AI gradients)
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 6.w),
                           child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 3.h),
+                            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
                             decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                colors: [AppColors.indigo500, Color(0xFFF59E0B)],
-                              ),
+                              color: AppColors.indigo500,
                               borderRadius: BorderRadius.circular(8.r),
                             ),
                             child: Text(
