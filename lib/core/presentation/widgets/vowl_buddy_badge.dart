@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/utils/vowl_assets.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
@@ -37,6 +38,9 @@ class VowlBuddyBadge extends StatelessWidget {
   /// Optional custom background color for the circular badge.
   final Color? backgroundColor;
 
+  /// Optional custom gradient for the circular badge.
+  final Gradient? gradient;
+
   /// Optional border surrounding the badge (e.g. when docked atop an avatar).
   final BoxBorder? border;
 
@@ -56,6 +60,7 @@ class VowlBuddyBadge extends StatelessWidget {
     this.onTap,
     this.animate = false,
     this.backgroundColor,
+    this.gradient,
     this.border,
     this.boxShadow,
     this.isKidsMode = false,
@@ -64,19 +69,66 @@ class VowlBuddyBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = isDark &&
+        Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final badgeDiameter = size ?? 24.r;
     final innerMascotSize = mascotSize ?? 18.r;
     final reduceMotion = VowlMotion.shouldReduceMotion(context);
 
-    final defaultBgColor = isDark
-        ? Colors.white.withValues(alpha: 0.08)
-        : const Color(0xFFF1F5F9);
+    // Premium Enamel / Glass Gradient (eliminates muddy dark-mode hole & washed-out light mode)
+    final Gradient defaultGradient = isMidnight
+        ? const LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xFF1E293B), Color(0xFF0F172A)],
+          )
+        : (isDark
+            ? LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  const Color(0xFF1E293B).withValues(alpha: 0.95),
+                  const Color(0xFF0F172A).withValues(alpha: 0.95),
+                ],
+              )
+            : const LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.white, Color(0xFFF8FAFC)],
+              ));
+
+    // Refined hairline border that catches light instead of pitch-black harshness
+    final BoxBorder defaultBorder = Border.all(
+      color: isMidnight
+          ? Colors.white.withValues(alpha: 0.24)
+          : (isDark
+              ? Colors.white.withValues(alpha: 0.22)
+              : AppColors.indigo500.withValues(alpha: 0.22)),
+      width: 1.2.r,
+    );
+
+    // Luminous brand elevation shadow
+    final List<BoxShadow> defaultShadow = [
+      BoxShadow(
+        color: isDark
+            ? AppColors.indigo500.withValues(alpha: 0.28)
+            : AppColors.indigo500.withValues(alpha: 0.14),
+        blurRadius: 6,
+        offset: const Offset(0, 1.5),
+      ),
+      BoxShadow(
+        color: Colors.black.withValues(alpha: isDark ? 0.35 : 0.06),
+        blurRadius: 3,
+        offset: const Offset(0, 1),
+      ),
+    ];
 
     final badgeDecoration = BoxDecoration(
       shape: BoxShape.circle,
-      color: backgroundColor ?? defaultBgColor,
-      border: border,
-      boxShadow: boxShadow,
+      color: (gradient != null || backgroundColor != null) ? backgroundColor : null,
+      gradient: backgroundColor != null ? null : (gradient ?? defaultGradient),
+      border: border ?? defaultBorder,
+      boxShadow: boxShadow ?? defaultShadow,
     );
 
     // Safely check if AuthBloc is present in context to build full VowlMascot

@@ -331,8 +331,8 @@ class HomeHeroHeader extends StatelessWidget {
 
           // Docked Companion / Buddy Pin (Top-Left) -> opens Mascot
           PositionedDirectional(
-            start: -2.w,
-            top: -2.h,
+            start: -4.w,
+            top: -4.h,
             child: _buildBuddyPin(context, isDark: isDark),
           ),
 
@@ -407,23 +407,17 @@ class HomeHeroHeader extends StatelessWidget {
           _triggerHaptic();
           context.push(AppRouter.vowlMascotRoute);
         },
-        child: VowlBuddyBadge(
-          size: 24.r,
-          mascotSize: 18.r,
-          mascotId: mascotId,
-          accessoryId: accessoryId,
-          animate: true,
-          border: Border.all(
-            color: isDark ? AppColors.slate950 : Colors.white,
-            width: 1.5,
+        child: Container(
+          // Generous hit target padding for ergonomics
+          padding: EdgeInsets.all(4.r),
+          color: Colors.transparent,
+          child: VowlBuddyBadge(
+            size: 26.r,
+            mascotSize: 20.r,
+            mascotId: mascotId,
+            accessoryId: accessoryId,
+            animate: true,
           ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: isDark ? 0.35 : 0.15),
-              blurRadius: 4,
-              offset: const Offset(0, 1),
-            ),
-          ],
         ),
       ),
     );
