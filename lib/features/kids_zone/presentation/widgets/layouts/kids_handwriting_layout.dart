@@ -352,16 +352,20 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                           },
                           onInkUpdated: (ink) {
                             if (state.answerStatus.isAnswered ||
-                                _isChecking.value)
+                                _isChecking.value) {
                               return;
+                            }
                             _currentInk = ink;
                             _hasInk.value = ink.strokes.isNotEmpty;
-                            if (_isCorrect != null) _isCorrect = null;
+                            if (_isCorrect != null) {
+                              _isCorrect = null;
+                            }
                           },
                           onClear: () {
                             if (state.answerStatus.isAnswered ||
-                                _isChecking.value)
+                                _isChecking.value) {
                               return;
+                            }
                             _currentInk = null;
                             _hasInk.value = false;
                             _isCorrect = null;

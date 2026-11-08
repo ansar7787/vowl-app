@@ -526,13 +526,18 @@ void main() {
     InAppPurchaseService.setCachedCountryCodeForTesting('IN');
 
     // DI Setup
-    if (di.sl.isRegistered<PaymentService>())
+    if (di.sl.isRegistered<PaymentService>()) {
       di.sl.unregister<PaymentService>();
+    }
     if (di.sl.isRegistered<SubscriptionPlansService>()) {
       di.sl.unregister<SubscriptionPlansService>();
     }
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
     if (di.sl.isRegistered<InternetConnection>()) {
       di.sl.unregister<InternetConnection>();
     }

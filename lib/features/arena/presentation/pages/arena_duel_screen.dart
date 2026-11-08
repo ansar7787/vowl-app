@@ -449,19 +449,27 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
                                     hudState.session?.isGhostRival ?? false,
                                 aiTierLabel: () {
                                   final session = hudState.session;
-                                  if (session == null || !session.isGhostRival)
+                                  if (session == null || !session.isGhostRival) {
                                     return null;
+                                  }
                                   final gid =
                                       session.guestId?.toLowerCase() ?? '';
-                                  if (gid.contains('hard')) return 'HARD';
-                                  if (gid.contains('medium') ||
-                                      gid.contains('med'))
-                                    return 'MED';
-                                  if (gid.contains('easy')) return 'EASY';
-                                  if (session.ghostAccuracy >= 0.86)
+                                  if (gid.contains('hard')) {
                                     return 'HARD';
-                                  if (session.ghostAccuracy >= 0.74)
+                                  }
+                                  if (gid.contains('medium') ||
+                                      gid.contains('med')) {
                                     return 'MED';
+                                  }
+                                  if (gid.contains('easy')) {
+                                    return 'EASY';
+                                  }
+                                  if (session.ghostAccuracy >= 0.86) {
+                                    return 'HARD';
+                                  }
+                                  if (session.ghostAccuracy >= 0.74) {
+                                    return 'MED';
+                                  }
                                   return 'EASY';
                                 }(),
                                 comboStreak: hudState.comboStreak,
@@ -484,8 +492,9 @@ class _ArenaDuelViewState extends State<_ArenaDuelView>
                                 prev.currentQuestion != curr.currentQuestion,
                             builder: (context, qState) {
                               final activeQ = qState.currentQuestion;
-                              if (activeQ == null)
+                              if (activeQ == null) {
                                 return const SizedBox.shrink();
+                              }
 
                               final isWordClash =
                                   activeQ.discipline == 'word_clash';

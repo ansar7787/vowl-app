@@ -416,8 +416,9 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
             ),
           );
         } catch (e) {
-          if (kDebugMode)
+          if (kDebugMode) {
             debugPrint('DailyWordsBloc: failed to update rewards: $e');
+          }
         }
       }
       try {
@@ -474,8 +475,9 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
           ),
         );
       } catch (e) {
-        if (kDebugMode)
+        if (kDebugMode) {
           debugPrint('DailyWordsBloc: failed to update rewards: $e');
+        }
       }
     }
     emit(

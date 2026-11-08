@@ -112,17 +112,30 @@ void main() {
 
     // Reset GetIt registrations safely
     if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
-    if (di.sl.isRegistered<StoryService>()) di.sl.unregister<StoryService>();
-    if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
-    if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
-    if (di.sl.isRegistered<AdService>()) di.sl.unregister<AdService>();
-    if (di.sl.isRegistered<RewardLimitService>())
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
+    if (di.sl.isRegistered<StoryService>()) {
+      di.sl.unregister<StoryService>();
+    }
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl.unregister<TtsService>();
+    }
+    if (di.sl.isRegistered<SoundService>()) {
+      di.sl.unregister<SoundService>();
+    }
+    if (di.sl.isRegistered<AdService>()) {
+      di.sl.unregister<AdService>();
+    }
+    if (di.sl.isRegistered<RewardLimitService>()) {
       di.sl.unregister<RewardLimitService>();
-    if (di.sl.isRegistered<UpdateUserRewards>())
+    }
+    if (di.sl.isRegistered<UpdateUserRewards>()) {
       di.sl.unregister<UpdateUserRewards>();
-    if (di.sl.isRegistered<PurchaseLevelUnlock>())
+    }
+    if (di.sl.isRegistered<PurchaseLevelUnlock>()) {
       di.sl.unregister<PurchaseLevelUnlock>();
+    }
 
     di.sl.registerSingleton<HapticService>(mockHapticService);
     di.sl.registerSingleton<LocaleService>(mockLocaleService);

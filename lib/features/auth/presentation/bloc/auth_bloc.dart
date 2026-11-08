@@ -516,8 +516,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         }
       }
     } catch (e) {
-      if (kDebugMode)
+      if (kDebugMode) {
         debugPrint('AuthBloc: DailyWordsService reset failed: $e');
+      }
     }
 
     // 4. Unbind the device push token from Firestore and cancel scheduled local
@@ -525,7 +526,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     try {
       await di.sl<NotificationService>().unregisterUserOnLogout();
     } catch (e) {
-      if (kDebugMode) debugPrint('AuthBloc: notification cleanup failed: $e');
+      if (kDebugMode) {
+        debugPrint('AuthBloc: notification cleanup failed: $e');
+      }
     }
   }
 

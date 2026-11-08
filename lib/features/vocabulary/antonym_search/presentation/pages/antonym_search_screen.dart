@@ -547,8 +547,9 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen>
     _isDraggingShard = false;
     if (_activeShardIndex.value != index ||
         _lastConstraints == null ||
-        _isAnimatingTap)
+        _isAnimatingTap) {
       return;
+    }
     final initial = _getInitialPosition(index);
     final offset = _shardOffsets[index]?.value ?? Offset.zero;
     final currentY = initial.dy + offset.dy;

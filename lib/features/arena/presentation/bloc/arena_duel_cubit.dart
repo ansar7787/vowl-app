@@ -113,14 +113,23 @@ class ArenaDuelCubit extends Cubit<ArenaDuelState> {
 
   ArenaAiDifficultyTier _getAiTier() {
     final guestId = state.session?.guestId?.toLowerCase() ?? '';
-    if (guestId.contains('hard')) return ArenaAiDifficultyTier.hard;
-    if (guestId.contains('medium') || guestId.contains('med'))
+    if (guestId.contains('hard')) {
+      return ArenaAiDifficultyTier.hard;
+    }
+    if (guestId.contains('medium') || guestId.contains('med')) {
       return ArenaAiDifficultyTier.medium;
-    if (guestId.contains('easy')) return ArenaAiDifficultyTier.easy;
+    }
+    if (guestId.contains('easy')) {
+      return ArenaAiDifficultyTier.easy;
+    }
 
     final acc = state.session?.ghostAccuracy ?? 0.80;
-    if (acc >= 0.86) return ArenaAiDifficultyTier.hard;
-    if (acc >= 0.72) return ArenaAiDifficultyTier.medium;
+    if (acc >= 0.86) {
+      return ArenaAiDifficultyTier.hard;
+    }
+    if (acc >= 0.72) {
+      return ArenaAiDifficultyTier.medium;
+    }
     return ArenaAiDifficultyTier.easy;
   }
 

@@ -129,51 +129,81 @@ void main() {
 
             for (int i = 0; i < str.length; i++) {
               final code = str.codeUnitAt(i);
-              if (code < 128) continue;
-              if (code <= 0x024F) continue; // Latin
-              if (code >= 0x0300 && code <= 0x036F) continue; // Combining marks
-              if (code >= 0x2000 && code <= 0x2BFF)
+              if (code < 128) {
+                continue;
+              }
+              if (code <= 0x024F) {
+                continue; // Latin
+              }
+              if (code >= 0x0300 && code <= 0x036F) {
+                continue; // Combining marks
+              }
+              if (code >= 0x2000 && code <= 0x2BFF) {
                 continue; // Punctuation & symbols
-              if (code >= 0x3000 && code <= 0x303F) continue; // CJK Punctuation
-              if (code >= 0xD800 && code <= 0xDFFF)
+              }
+              if (code >= 0x3000 && code <= 0x303F) {
+                continue; // CJK Punctuation
+              }
+              if (code >= 0xD800 && code <= 0xDFFF) {
                 continue; // Surrogates (emojis)
-              if (code >= 0xFF00 && code <= 0xFFEF) continue; // Fullwidth forms
+              }
+              if (code >= 0xFF00 && code <= 0xFFEF) {
+                continue; // Fullwidth forms
+              }
 
               // Language-specific allowed ranges:
               if (lang == 'ar' &&
                   ((code >= 0x0600 && code <= 0x08FF) ||
                       (code >= 0xFB50 && code <= 0xFDFF) ||
-                      (code >= 0xFE70 && code <= 0xFEFF)))
+                      (code >= 0xFE70 && code <= 0xFEFF))) {
                 continue;
-              if (lang == 'ru' && (code >= 0x0400 && code <= 0x04FF)) continue;
+              }
+              if (lang == 'ru' && (code >= 0x0400 && code <= 0x04FF)) {
+                continue;
+              }
               if (lang == 'bn' &&
                   ((code >= 0x0980 && code <= 0x09FF) ||
                       code == 0x0964 ||
-                      code == 0x0965))
+                      code == 0x0965)) {
                 continue;
+              }
               if ((lang == 'hi' || lang == 'mr') &&
-                  (code >= 0x0900 && code <= 0x097F))
+                  (code >= 0x0900 && code <= 0x097F)) {
                 continue;
-              if (lang == 'gu' && (code >= 0x0A80 && code <= 0x0AFF)) continue;
-              if (lang == 'ta' && (code >= 0x0B80 && code <= 0x0BFF)) continue;
-              if (lang == 'te' && (code >= 0x0C00 && code <= 0x0C7F)) continue;
-              if (lang == 'kn' && (code >= 0x0C80 && code <= 0x0CFF)) continue;
-              if (lang == 'ml' && (code >= 0x0D00 && code <= 0x0D7F)) continue;
+              }
+              if (lang == 'gu' && (code >= 0x0A80 && code <= 0x0AFF)) {
+                continue;
+              }
+              if (lang == 'ta' && (code >= 0x0B80 && code <= 0x0BFF)) {
+                continue;
+              }
+              if (lang == 'te' && (code >= 0x0C00 && code <= 0x0C7F)) {
+                continue;
+              }
+              if (lang == 'kn' && (code >= 0x0C80 && code <= 0x0CFF)) {
+                continue;
+              }
+              if (lang == 'ml' && (code >= 0x0D00 && code <= 0x0D7F)) {
+                continue;
+              }
               if (lang == 'ko' &&
                   ((code >= 0xAC00 && code <= 0xD7AF) ||
                       (code >= 0x1100 && code <= 0x11FF) ||
-                      (code >= 0x3130 && code <= 0x318F)))
+                      (code >= 0x3130 && code <= 0x318F))) {
                 continue;
+              }
               if (lang == 'ja' &&
                   ((code >= 0x3040 && code <= 0x309F) ||
                       (code >= 0x30A0 && code <= 0x30FF) ||
                       (code >= 0x4E00 && code <= 0x9FFF) ||
-                      (code >= 0x3400 && code <= 0x4DBF)))
+                      (code >= 0x3400 && code <= 0x4DBF))) {
                 continue;
+              }
               if (lang == 'zh' &&
                   ((code >= 0x4E00 && code <= 0x9FFF) ||
-                      (code >= 0x3400 && code <= 0x4DBF)))
+                      (code >= 0x3400 && code <= 0x4DBF))) {
                 continue;
+              }
 
               contaminatedKeys.add(
                 '${entry.key}: U+${code.toRadixString(16).toUpperCase()} ("${str[i]}") in "$str"',

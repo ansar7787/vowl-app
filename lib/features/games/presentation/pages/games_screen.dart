@@ -1173,8 +1173,9 @@ class _PvPArenaCardState extends State<_PvPArenaCard> {
                                 roomCode: code,
                                 currentUser: widget.user,
                               );
-                              if (dialogCtx.mounted)
+                              if (dialogCtx.mounted) {
                                 Navigator.of(dialogCtx).pop();
+                              }
                               if (mounted) {
                                 Navigator.of(
                                   context,

@@ -419,8 +419,9 @@ class ArenaRepositoryImpl implements ArenaRepository {
     required bool isHost,
   }) async {
     final cleanCode = roomCode.trim().toUpperCase();
-    if (cleanCode.startsWith('VOWL-AI-') || cleanCode.startsWith('VOWL-RIVAL-'))
+    if (cleanCode.startsWith('VOWL-AI-') || cleanCode.startsWith('VOWL-RIVAL-')) {
       return;
+    }
 
     try {
       final docRef = _firestore.collection('arena_rooms').doc(cleanCode);
@@ -585,8 +586,9 @@ class ArenaRepositoryImpl implements ArenaRepository {
   }) async {
     _sessionConsecutiveWins = 0;
     final cleanCode = roomCode.trim().toUpperCase();
-    if (cleanCode.startsWith('VOWL-AI-') || cleanCode.startsWith('VOWL-RIVAL-'))
+    if (cleanCode.startsWith('VOWL-AI-') || cleanCode.startsWith('VOWL-RIVAL-')) {
       return;
+    }
 
     try {
       final docRef = _firestore.collection('arena_rooms').doc(cleanCode);

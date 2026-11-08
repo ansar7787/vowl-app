@@ -96,19 +96,25 @@ void main() {
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
 
-    if (di.sl.isRegistered<ReferralRepository>())
+    if (di.sl.isRegistered<ReferralRepository>()) {
       di.sl.unregister<ReferralRepository>();
+    }
     di.sl.registerSingleton<ReferralRepository>(mockReferralRepo);
 
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
     di.sl.registerSingleton<HapticService>(mockHapticService);
   });
 
   tearDown(() {
     VowlMotion.lowAnimationModeOverride.value = false;
-    if (di.sl.isRegistered<ReferralRepository>())
+    if (di.sl.isRegistered<ReferralRepository>()) {
       di.sl.unregister<ReferralRepository>();
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
   });
 
   Widget buildSubject({required UserEntity user, int initialTab = 0}) {

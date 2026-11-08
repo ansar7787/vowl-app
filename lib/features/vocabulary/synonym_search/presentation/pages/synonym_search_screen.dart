@@ -128,8 +128,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   void _onShardDragStart(int index, DragStartDetails details) {
     if (isAnsweredNotifier.value ||
         _isWarping[index].value ||
-        _isAnimatingFlight)
+        _isAnimatingFlight) {
       return;
+    }
     _isDragging = true;
     if (_activeShardIndex.value != index) {
       _activeShardIndex.value = index;
@@ -141,9 +142,12 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   void _onShardDragUpdate(int index, DragUpdateDetails details) {
     if (isAnsweredNotifier.value ||
         _activeShardIndex.value != index ||
-        _isAnimatingFlight)
+        _isAnimatingFlight) {
       return;
-    if (_lastConstraints == null) return;
+    }
+    if (_lastConstraints == null) {
+      return;
+    }
 
     final currentOffset = _shardOffsets[index].value + details.delta;
     _shardOffsets[index].value = currentOffset;
@@ -151,7 +155,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     // Update trail
     final trail = List<Offset>.from(_shardTrails[index].value);
     trail.add(currentOffset);
-    if (trail.length > 10) trail.removeAt(0);
+    if (trail.length > 10) {
+      trail.removeAt(0);
+    }
     _shardTrails[index].value = trail;
 
     // Check for "near gate" haptic feedback
@@ -224,8 +230,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     if (isAnsweredNotifier.value ||
         _isWarping[index].value ||
         _isAnimatingFlight ||
-        _isDragging)
+        _isDragging) {
       return;
+    }
 
     if (_activeShardIndex.value == index) {
       // Tapping already-selected shard confirms and warps into center gate
@@ -250,7 +257,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     }
     final index = _activeShardIndex.value!;
     final options = quest.options ?? [];
-    if (index >= options.length) return;
+    if (index >= options.length) {
+      return;
+    }
 
     _animateAndWarp(index, options[index], quest);
   }
@@ -258,8 +267,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   void _animateAndWarp(int index, String text, VocabularyQuest quest) {
     if (_isWarping[index].value ||
         isAnsweredNotifier.value ||
-        _isAnimatingFlight)
+        _isAnimatingFlight) {
       return;
+    }
     _isAnimatingFlight = true;
 
     final reduceMotion = !mounted

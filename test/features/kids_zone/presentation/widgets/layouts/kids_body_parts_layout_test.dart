@@ -172,14 +172,21 @@ void main() {
       ),
     ).thenReturn(null);
 
-    if (di.sl.isRegistered<KidsTTSService>())
+    if (di.sl.isRegistered<KidsTTSService>()) {
       di.sl.unregister<KidsTTSService>();
+    }
     if (di.sl.isRegistered<KidsAudioService>()) {
       di.sl.unregister<KidsAudioService>();
     }
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
 
     di.sl.registerSingleton<KidsTTSService>(mockTTSService);
     di.sl.registerSingleton<KidsAudioService>(mockAudioService);

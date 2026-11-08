@@ -242,19 +242,32 @@ class WordMixerPuzzle {
   }
 
   static String _computeCefr(int length) {
-    if (length <= 4) return 'A2';
-    if (length <= 6) return 'B1';
-    if (length <= 8) return 'B2';
-    if (length <= 10) return 'C1';
+    if (length <= 4) {
+      return 'A2';
+    }
+    if (length <= 6) {
+      return 'B1';
+    }
+    if (length <= 8) {
+      return 'B2';
+    }
+    if (length <= 10) {
+      return 'C1';
+    }
     return 'C2';
   }
 
   static Color _computeDifficultyColor(String label, int length) {
     final normalized = label.toLowerCase();
-    if (normalized == 'easy' || length <= 4) return AppColors.emerald500;
-    if (normalized == 'medium' || length <= 6) return AppColors.amber500;
-    if (normalized == 'hard' || length <= 8)
+    if (normalized == 'easy' || length <= 4) {
+      return AppColors.emerald500;
+    }
+    if (normalized == 'medium' || length <= 6) {
+      return AppColors.amber500;
+    }
+    if (normalized == 'hard' || length <= 8) {
       return IllustrationColors.warmOrange;
+    }
     return AppColors.red500;
   }
 

@@ -148,15 +148,24 @@ void main() {
       () => mockLocaleService.tr(any()),
     ).thenAnswer((inv) => inv.positionalArguments.first as String);
 
-    if (di.sl.isRegistered<KidsTTSService>())
+    if (di.sl.isRegistered<KidsTTSService>()) {
       di.sl.unregister<KidsTTSService>();
-    if (di.sl.isRegistered<KidsAudioService>())
+    }
+    if (di.sl.isRegistered<KidsAudioService>()) {
       di.sl.unregister<KidsAudioService>();
-    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
-    if (di.sl.isRegistered<AppLogger>()) di.sl.unregister<AppLogger>();
-    if (di.sl.isRegistered<LocaleService>()) di.sl.unregister<LocaleService>();
-    if (di.sl.isRegistered<TranslationService>())
+    }
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<AppLogger>()) {
+      di.sl.unregister<AppLogger>();
+    }
+    if (di.sl.isRegistered<LocaleService>()) {
+      di.sl.unregister<LocaleService>();
+    }
+    if (di.sl.isRegistered<TranslationService>()) {
       di.sl.unregister<TranslationService>();
+    }
 
     final mockTranslationService = MockTranslationService();
     when(
