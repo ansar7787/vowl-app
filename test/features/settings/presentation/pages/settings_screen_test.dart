@@ -168,16 +168,6 @@ void main() {
     isPremium: false,
   );
 
-  const testPremiumUser = UserEntity(
-    id: 'user_settings_prem',
-    email: 'jon.snow@vowl.app',
-    displayName: 'Jon Snow',
-    currentStreak: 45,
-    totalExp: 9500,
-    coins: 2400,
-    isPremium: true,
-  );
-
   setUpAll(() async {
     setupFirebaseCoreMocks();
     await Firebase.initializeApp();
