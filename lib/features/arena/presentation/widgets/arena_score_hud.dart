@@ -407,7 +407,12 @@ class _ArenaScoreHudState extends State<ArenaScoreHud>
                       ),
                       border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
                     ),
-                    child: Icon(LucideIcons.bot, color: Colors.white, size: 20.sp),
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/vowly_head.webp',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   )
                 else
                   UserAvatar(photoUrl: widget.rivalPhotoUrl, size: 36.r),
